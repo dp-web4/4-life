@@ -9,6 +9,17 @@ export default function StarterKitPage() {
           per-society microchain, and default roles for treasury, law, and
           auditing.
         </p>
+        <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#9ca3af" }}>
+          If you want more background on the concepts this starter kit uses
+          (LCT, MRH, T3/V3, ATP/ADP, R6), check out the
+          <a
+            href="/web4-explainer"
+            style={{ color: "#38bdf8", marginLeft: 4 }}
+          >
+            Web4 explainer
+          </a>
+          .
+        </p>
       </section>
 
       <section>

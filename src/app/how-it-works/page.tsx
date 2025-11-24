@@ -8,6 +8,17 @@ export default function HowItWorksPage() {
           societies, agents, and ledgers as game pieces you can experiment with
           before they harden into infrastructure.
         </p>
+        <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#9ca3af" }}>
+          If you want a compact overview of the underlying Web4 concepts (LCT,
+          MRH, T3/V3, ATP/ADP, R6), see the
+          <a
+            href="/web4-explainer"
+            style={{ color: "#38bdf8", marginLeft: 4 }}
+          >
+            Web4 explainer
+          </a>
+          .
+        </p>
       </section>
 
       <section>

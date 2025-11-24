@@ -21,6 +21,7 @@ export default function RootLayout({
           <nav className="nav-links">
             <Link href="/">Home</Link>
             <Link href="/how-it-works">How it works</Link>
+            <Link href="/web4-explainer">Web4 explainer</Link>
             <Link href="/starter-kit">Starter kit</Link>
           </nav>
         </header>
@@ -28,6 +29,18 @@ export default function RootLayout({
         <footer className="footer">
           <div>4-Life is an experimental lab for Web4 societies.</div>
           <div>All behavior is subject to change as the standard evolves.</div>
+          <div>
+            Curious about the full design? Read the
+            <a
+              href="https://dp-web4.github.io/web4/"
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: "#38bdf8", marginLeft: 4 }}
+            >
+              Web4 whitepaper
+            </a>
+            .
+          </div>
         </footer>
       </body>
     </html>
