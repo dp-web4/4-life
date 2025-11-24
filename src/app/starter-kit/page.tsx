@@ -23,10 +23,19 @@ export default function StarterKitPage() {
       <section>
         <h2>2. Current implementation status</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
-          Right now, the starter kit lives inside the Web4 game engine in the
-          <code>web4/game</code> directory of the ai-agents repo. It already
-          supports per-society chains, MRH/LCT context, roles, and simple
-          policies, and is evolving toward a hardware-bound bootstrap flow.
+          Right now, the starter kit lives inside the public Web4 game engine
+          in the <code>web4/game</code> directory of the
+          <a
+            href="https://github.com/dp-web4/web4"
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: "#38bdf8", marginLeft: 4 }}
+          >
+            dp-web4/web4
+          </a>
+          repository. It already supports per-society chains, MRH/LCT context,
+          roles, and simple policies, and is evolving toward a hardware-bound
+          bootstrap flow.
         </p>
       </section>
 
@@ -34,13 +43,26 @@ export default function StarterKitPage() {
         <h2>3. Getting started from source</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
           Until we package a downloadable starter kit, the recommended path is
-          to clone the ai-agents repository and run the Web4 game demos
-          locally. This lets you experiment with societies, agents, and
-          policies before we lock in any long-term installer UX.
+          to clone the <code>dp-web4/web4</code> repository and run the Web4
+          game demos locally. This lets you experiment with societies, agents,
+          and policies before we lock in any long-term installer UX.
         </p>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#9ca3af" }}>
           Detailed, step-by-step instructions will be linked here as the
           starter kit flow stabilizes.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Hardware binding and trust</h2>
+        <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
+          Societies that can attest to a hardware-bound root identity (for
+          example via TPM or secure enclave) will generally be treated as more
+          trustworthy by other participants. Societies without hardware
+          binding are still free to participate, but peers may choose to apply
+          stricter policies or lower trust weights when interacting with them.
+          In Web4, every trust decision is ultimately made by the parties to a
+          specific interaction, not by a single global authority.
         </p>
       </section>
     </>
