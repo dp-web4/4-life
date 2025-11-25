@@ -141,7 +141,10 @@ export default function Web4ExplainerPage() {
           In 4-Life, we prototype this with stubbed signatures and interfaces for
           hardware identity. Over time, those hooks are meant to be backed by
           real attestation so other societies can tell when they are talking to
-          "the same" root LCT versus a fresh or forked one.
+          "the same" root LCT versus a fresh or forked one. Even then, Web4
+          treats hardware binding as one factor among many: witnessed events,
+          pairing structures, and ATP-priced attestations together form a
+          contextual, N-factor trust fabric.
         </p>
       </section>
 

@@ -24,10 +24,12 @@ export default function HowItWorksPage() {
       <section>
         <h2>1. A society on your own hardware</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
-          You start by bootstrapping a local Web4 society on your machine. It
-          has a hardware-bound root LCT, a minimal per-society blockchain, and
-          a few default roles: administrator, treasurer, auditor, and law
-          oracle. You are the first citizen of that society.
+          You start by bootstrapping a local Web4 society on your machine. It is
+          designed to have a hardware- or VM-bound root LCT, a minimal
+          per-society blockchain, and a few default roles: administrator,
+          treasurer, auditor, and law oracle. Early builds may use stubbed
+          identities, but policies still treat hardware binding as just one
+          signal alongside witnessing and history.
         </p>
       </section>
 
