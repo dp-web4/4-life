@@ -73,6 +73,8 @@ interface CombinedMultiLifeResult {
   policy_results: MultiLifePolicyResult[];
 }
 
+type AppliedActionsByLife = Record<string, Array<{ world_tick: number; action_type: string; atp_cost: number }>>;
+
 export default function LabConsolePage() {
   const [data, setData] = useState<CombinedResult | null>(null);
   const [multi, setMulti] = useState<CombinedMultiLifeResult | null>(null);
@@ -263,6 +265,8 @@ export default function LabConsolePage() {
           <div style={{ marginTop: "0.75rem", display: "grid", gap: "1rem" }}>
             {multi.multi_life.lives.map((life) => {
               const policy = multi.policy_results.find((p) => p.life_id === life.life_id);
+              const appliedActions = (multi.multi_life as any)?.applied_actions as AppliedActionsByLife | undefined;
+              const actionsForLife = appliedActions?.[life.life_id] ?? [];
               const finalT3 = life.t3_history.length ? life.t3_history[life.t3_history.length - 1] : 0;
               const finalATP = life.atp_history.length ? life.atp_history[life.atp_history.length - 1] : 0;
 
@@ -289,6 +293,21 @@ export default function LabConsolePage() {
                   <p style={{ marginTop: "0.25rem" }}>
                     <strong>Final ATP:</strong> {finalATP.toFixed(2)}
                   </p>
+
+                  {actionsForLife.length > 0 && (
+                    <details style={{ marginTop: "0.5rem" }}>
+                      <summary>
+                        Applied actions: {actionsForLife.length}
+                      </summary>
+                      <ul style={{ marginTop: "0.5rem", paddingLeft: "1.25rem", color: "#9ca3af" }}>
+                        {actionsForLife.slice(-5).map((a, idx) => (
+                          <li key={`${life.life_id}-${idx}`}>
+                            tick {a.world_tick}: {a.action_type} (ATP {Number(a.atp_cost).toFixed(2)})
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
+                  )}
 
                   {policy?.policy_result?.proposed_action && (
                     <div style={{ marginTop: "0.75rem" }}>
