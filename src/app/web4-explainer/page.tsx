@@ -67,16 +67,17 @@ export default function Web4ExplainerPage() {
       </section>
 
       <section>
-        <h2>4. ATP / ADP: Attention & Delegation Points</h2>
+        <h2>4. ATP / ADP: Allocation Transfer Packet / Allocation Discharge Packet</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
-          ATP and ADP are accounting units for scarce resources: time,
-          attention, compute, and authority. They are not a coin; they are a
+          ATP and ADP are semifungible packets for allocating scarce resources: time,
+          attention, compute, energy, and authority. They are not a coin; they are a
           way to meter who can spend whose capacity under which conditions.
         </p>
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
           In 4-Life, treasury and budget policies are framed in terms of ATP:
-          how much attention or compute a role or agent is allowed to direct,
-          and when that budget should be revoked or audited.
+          how much resource allocation a role or agent is allowed to direct,
+          and when that budget should be revoked or audited. Discharged packets (ADP)
+          carry ephemeral metadata about how resources were used.
         </p>
       </section>
 
