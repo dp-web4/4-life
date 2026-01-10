@@ -4,6 +4,35 @@
 
 > ⚠️ **Research Status**: This is an active research project, not production software. Concepts are evolving, APIs are unstable, and much is exploratory. We share it publicly to invite collaboration and feedback, not to suggest it's ready for deployment.
 
+## See It Work (60 seconds)
+
+**Prerequisites**: [Node.js 18+](https://nodejs.org/), [Git](https://git-scm.com/)
+
+```bash
+git clone https://github.com/dp-web4/4-life.git
+cd 4-life
+npm install
+npm run dev
+```
+
+Then:
+1. Open http://localhost:3000/lab-console
+2. Select **"EP Closed Loop"** from the dropdown
+3. Click **"Run Simulation"**
+4. Watch an agent live through multiple lives - earning ATP, building trust, dying, and being reborn with karma carried forward
+
+That's a Web4 society in miniature. The rest of this README explains why it works this way.
+
+## Where to Start
+
+| You want to... | Start here |
+|----------------|------------|
+| **Understand the ideas** | [What Is This?](#what-is-this) below, then [/how-it-works](http://localhost:3000/how-it-works) |
+| **See it running** | [See It Work](#see-it-work-60-seconds) above |
+| **Explore the code** | [Repo Map](#repo-map) below |
+| **Understand the broader research** | [Research Context](#research-context) |
+| **Contribute or discuss** | [Contributing](#contributing) |
+
 ## What Is This?
 
 4-Life is a fractal laboratory for Web4 societies. It explores what happens when you treat trust as a measurable, computable property and build social structures around it.
@@ -26,31 +55,53 @@ The core question: **Can we create digital societies where trust emerges from ve
 - **"For Life"**: Web4 as lived environment, not just protocol
 - **Transformation**: The "4/death" resonance - death of obsolete forms, birth of new structures
 
-## What's In This Repo?
+## Repo Map
 
-### Website (`src/`)
-A Next.js site explaining 4-Life concepts:
-- **Home** (`/`) - Introduction to the fractal lab
-- **How It Works** (`/how-it-works`) - 5-step journey from local to planetary scale
-- **Starter Kit** (`/starter-kit`) - Implementation status and requirements
-- **Lab Console** (`/lab-console`) - Live simulation viewer
-
-### Lab Console & Simulations
-The `/lab-console` page visualizes society simulations:
-- Multi-life cycles with karma carry-forward
-- Epistemic Proprioception (EP) driven decision-making
-- ATP economics and trust evolution
-- Pattern learning across generations
-
-Simulations can be run live via the `/api/lab-run` endpoint or loaded from pre-generated artifacts.
-
-## Running Locally
-
-```bash
-npm install
-npm run dev
-# Visit http://localhost:3000
 ```
+4-life/
+├── src/app/                # Next.js pages
+│   ├── page.tsx            # Home - "what is 4-life"
+│   ├── how-it-works/       # Conceptual walkthrough
+│   ├── starter-kit/        # Getting started guide
+│   ├── lab-console/        # Live simulation viewer ← the "first win"
+│   ├── web4-explainer/     # Core Web4 concepts
+│   └── api/lab-run/        # API endpoint for simulations
+├── public/                 # Pre-generated simulation results (JSON)
+└── docs/                   # Additional documentation
+```
+
+## The Lab Console
+
+The `/lab-console` page is where you can actually see Web4 societies in action:
+
+- **Multi-life cycles**: Agents live, die, and are reborn with karma carried forward
+- **ATP economics**: Watch attention budgets grow and deplete based on actions
+- **Trust evolution**: See T3 scores change based on behavior
+- **Pattern learning**: Epistemic Proprioception (EP) learns what works across generations
+
+Simulations can run live via the API or load from pre-generated artifacts in `public/`.
+
+### Simulation Types
+
+| Type | Description |
+|------|-------------|
+| EP Closed Loop | Full epistemic learning across multiple lives |
+| Maturation Demo | Trust maturation patterns (Web4 vs baseline) |
+| Five Domain | Multi-domain interaction patterns |
+| Multi-Life Legacy | Original heuristic-based simulation |
+
+## Prerequisites (Full Details)
+
+| Requirement | Version | Notes |
+|-------------|---------|-------|
+| Node.js | 18+ | Required for Next.js 14 |
+| npm | 9+ | Comes with Node.js |
+| Git | Any | For cloning the repo |
+| Python | 3.9+ | Optional - only for running simulations locally |
+
+**Operating Systems**: Windows, macOS, and Linux all work.
+
+**Not comfortable with command-line?** A hosted demo is planned. For now, the repo requires local setup.
 
 ## Research Context
 
@@ -78,9 +129,9 @@ The research is conducted through autonomous AI sessions running across multiple
 | Website structure | ✅ Complete |
 | Lab console visualization | ✅ Working |
 | Live simulation API | ✅ Working |
-| Starter kit download | 🚧 Pending |
-| Public deployment | 🚧 Pending |
-| Hub society integration | 🚧 Pending |
+| Starter kit download | 🚧 In progress |
+| Public deployment | 🚧 Planned |
+| Hub society integration | 🚧 Planned |
 
 ## Contributing
 
