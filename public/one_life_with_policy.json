@@ -1,0 +1,253 @@
+{
+  "life_summary": {
+    "agents": {
+      "lct:web4:agent:alice": {
+        "memberships": [
+          "lct:web4:society:home-root"
+        ],
+        "name": "Alice",
+        "resources": {
+          "ATP": 100.0
+        },
+        "trust_axes": {
+          "T3": {
+            "composite": 0.6,
+            "talent": 0.6,
+            "temperament": 0.8,
+            "training": 0.4
+          }
+        }
+      },
+      "lct:web4:agent:bob": {
+        "memberships": [
+          "lct:web4:society:home-root"
+        ],
+        "name": "Bob",
+        "resources": {
+          "ATP": 80.0
+        },
+        "trust_axes": {
+          "T3": {
+            "composite": 0.5,
+            "talent": 0.8,
+            "temperament": 0.3,
+            "training": 0.3
+          }
+        }
+      }
+    },
+    "atp_history": [
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0
+    ],
+    "context_edges": [
+      {
+        "mrh": {
+          "deltaC": "agent-scale",
+          "deltaR": "local",
+          "deltaT": "session"
+        },
+        "object": "lct:web4:role:home-root:auditor",
+        "predicate": "web4:hasRole",
+        "subject": "lct:web4:agent:alice"
+      },
+      {
+        "mrh": {
+          "deltaC": "agent-scale",
+          "deltaR": "local",
+          "deltaT": "session"
+        },
+        "object": "lct:web4:role:home-root:auditor",
+        "predicate": "web4:bindsRole",
+        "subject": "lct:web4:society:home-root"
+      },
+      {
+        "mrh": {
+          "deltaC": "agent-scale",
+          "deltaR": "local",
+          "deltaT": "session"
+        },
+        "object": "lct:web4:role:home-root:law-oracle",
+        "predicate": "web4:hasRole",
+        "subject": "lct:web4:agent:alice"
+      },
+      {
+        "mrh": {
+          "deltaC": "agent-scale",
+          "deltaR": "local",
+          "deltaT": "session"
+        },
+        "object": "lct:web4:role:home-root:law-oracle",
+        "predicate": "web4:bindsRole",
+        "subject": "lct:web4:society:home-root"
+      },
+      {
+        "mrh": {
+          "deltaC": "agent-scale",
+          "deltaR": "local",
+          "deltaT": "session"
+        },
+        "object": "lct:web4:role:home-root:treasurer",
+        "predicate": "web4:hasRole",
+        "subject": "lct:web4:agent:bob"
+      },
+      {
+        "mrh": {
+          "deltaC": "agent-scale",
+          "deltaR": "local",
+          "deltaT": "session"
+        },
+        "object": "lct:web4:role:home-root:treasurer",
+        "predicate": "web4:bindsRole",
+        "subject": "lct:web4:society:home-root"
+      },
+      {
+        "mrh": {
+          "deltaC": "agent-scale",
+          "deltaR": "local",
+          "deltaT": "session"
+        },
+        "object": "lct:web4:society:home-root:treasury:primary",
+        "predicate": "web4:pairedWith",
+        "subject": "lct:web4:role:home-root:treasurer"
+      },
+      {
+        "mrh": {
+          "deltaC": "agent-scale",
+          "deltaR": "local",
+          "deltaT": "session"
+        },
+        "object": "lct:web4:role:home-root:treasurer",
+        "predicate": "web4:authorizesPairing",
+        "subject": "lct:web4:society:home-root"
+      },
+      {
+        "mrh": {
+          "deltaC": "agent-scale",
+          "deltaR": "local",
+          "deltaT": "session"
+        },
+        "object": "lct:web4:society:home-root",
+        "predicate": "web4:participantIn",
+        "subject": "lct:web4:agent:alice"
+      },
+      {
+        "mrh": {
+          "deltaC": "agent-scale",
+          "deltaR": "local",
+          "deltaT": "session"
+        },
+        "object": "lct:web4:society:home-root",
+        "predicate": "web4:participantIn",
+        "subject": "lct:web4:agent:bob"
+      }
+    ],
+    "life_state": "alive",
+    "research_agent_lct": "lct:web4:agent:alice",
+    "societies": {
+      "lct:web4:society:home-root": {
+        "blocks": 1,
+        "name": "Home Society",
+        "treasury": {
+          "ATP": 1000.0
+        },
+        "trust_axes": {}
+      }
+    },
+    "t3_history": [
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6,
+      0.6
+    ],
+    "tick": 20
+  },
+  "policy_result": {
+    "agent_metrics": {
+      "atp_history": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "life_state": "alive",
+      "t3_history": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ]
+    },
+    "proposed_action": {
+      "action_type": "risky_spend",
+      "atp_cost": 25.0,
+      "description": "High ATP and solid T3; propose a higher-cost experimental spend."
+    }
+  }
+}
