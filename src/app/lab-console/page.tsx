@@ -402,18 +402,27 @@ export default function LabConsolePage() {
             </button>
           </div>
 
+          <p style={{ margin: 0, fontSize: "0.85rem", color: "#6b7280" }}>
+            <strong>Run now</strong> / <strong>Load cached</strong> require Python + web4/game setup. <strong>Load static artifacts</strong> works without Python.
+          </p>
+
           {status && <p style={{ margin: 0, color: "#9ca3af" }}>{status}</p>}
         </div>
       </section>
 
       {error && (
         <section style={{ marginTop: "1.5rem", color: "#f97373" }}>
-          <h2>Error loading data</h2>
+          <h2>Error</h2>
           <p>{error}</p>
-          <p style={{ marginTop: "0.5rem", color: "#9ca3af" }}>
-            Ensure you have generated <code>public/one_life_with_policy.json</code>
-            from the Web4+HRM script and that the 4-Life dev server is running.
-          </p>
+          {error.includes("ENOENT") || error.includes("python") ? (
+            <p style={{ marginTop: "0.5rem", color: "#9ca3af" }}>
+              <strong>Python not found.</strong> The &quot;Run&quot; and &quot;Load cached&quot; buttons require Python and the web4/game scripts to be set up locally. Use &quot;Load static artifacts&quot; to view pre-generated data instead.
+            </p>
+          ) : (
+            <p style={{ marginTop: "0.5rem", color: "#9ca3af" }}>
+              Try clicking &quot;Load static artifacts&quot; to load pre-generated data.
+            </p>
+          )}
         </section>
       )}
 
