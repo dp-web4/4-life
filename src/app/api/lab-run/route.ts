@@ -52,11 +52,29 @@ type RunPythonOpts = {
   timeoutMs: number;
 };
 
+// Try python3 first (Linux/WSL), then python (Windows)
+async function findPythonCommand(): Promise<string> {
+  const candidates = ["python3", "python"];
+  for (const cmd of candidates) {
+    try {
+      const result = await new Promise<boolean>((resolve) => {
+        const child = spawn(cmd, ["--version"], { windowsHide: true });
+        child.on("error", () => resolve(false));
+        child.on("close", (code) => resolve(code === 0));
+      });
+      if (result) return cmd;
+    } catch {
+      // continue
+    }
+  }
+  throw new Error("Python not found. Tried: python3, python. Please ensure Python is installed and in PATH.");
+}
+
 function runPython(
-  opts: RunPythonOpts
+  opts: RunPythonOpts & { pythonCmd: string }
 ): Promise<{ stdout: string; stderr: string; exitCode: number | null }> {
   return new Promise((resolve, reject) => {
-    const child = spawn("python", opts.args, {
+    const child = spawn(opts.pythonCmd, opts.args, {
       cwd: opts.cwd,
       windowsHide: true,
       env: process.env,
@@ -153,29 +171,40 @@ export async function GET(req: Request) {
         ? patternSource
         : "web4";
 
+    // Build artifact config (pythonCmd resolved lazily only if needed)
+    let pythonCmd: string | null = null;
+    const getPythonCmd = async () => {
+      if (!pythonCmd) pythonCmd = await findPythonCommand();
+      return pythonCmd;
+    };
+
     const artifactByKind: Record<Kind, { publicName: string; runner: () => Promise<any> }> = {
       ep_driven_closed_loop: {
         publicName: "ep_driven_closed_loop_results.json",
         runner: async () => {
+          const cmd = await getPythonCmd();
           const outFile = path.join(web4GameDir, "ep_driven_closed_loop_results.json");
-          await runPython({ cwd: web4GameDir, args: [path.join(web4GameDir, "run_ep_driven_closed_loop.py")], timeoutMs });
+          await runPython({ pythonCmd: cmd, cwd: web4GameDir, args: [path.join(web4GameDir, "run_ep_driven_closed_loop.py")], timeoutMs });
           return readJsonFile(outFile);
         },
       },
       maturation_demo: {
         publicName: `maturation_demo_results_${safePatternSource}.json`,
         runner: async () => {
+          const cmd = await getPythonCmd();
           const outFile = path.join(web4GameDir, `maturation_demo_results_${safePatternSource}.json`);
-          await runPython({ cwd: web4GameDir, args: [path.join(web4GameDir, "run_maturation_demo.py"), safePatternSource], timeoutMs });
+          await runPython({ pythonCmd: cmd, cwd: web4GameDir, args: [path.join(web4GameDir, "run_maturation_demo.py"), safePatternSource], timeoutMs });
           return readJsonFile(outFile);
         },
       },
       ep_five_domain: {
         publicName: "ep_five_domain_multi_life_results.json",
         runner: async () => {
+          const cmd = await getPythonCmd();
           const outFileName = "ep_five_domain_multi_life_results.json";
           const outFile = path.join(web4GameDir, outFileName);
           await runPython({
+            pythonCmd: cmd,
             cwd: web4GameDir,
             args: [
               path.join(web4GameDir, "ep_five_domain_multi_life.py"),
@@ -194,14 +223,16 @@ export async function GET(req: Request) {
       multi_life_with_policy: {
         publicName: "multi_life_with_policy.json",
         runner: async () => {
-          const { stdout } = await runPython({ cwd: web4GameDir, args: [path.join(web4GameDir, "run_multi_life_with_policy.py")], timeoutMs });
+          const cmd = await getPythonCmd();
+          const { stdout } = await runPython({ pythonCmd: cmd, cwd: web4GameDir, args: [path.join(web4GameDir, "run_multi_life_with_policy.py")], timeoutMs });
           return JSON.parse(stdout);
         },
       },
       one_life_with_policy: {
         publicName: "one_life_with_policy.json",
         runner: async () => {
-          const { stdout } = await runPython({ cwd: web4GameDir, args: [path.join(web4GameDir, "run_one_life_with_policy.py")], timeoutMs });
+          const cmd = await getPythonCmd();
+          const { stdout } = await runPython({ pythonCmd: cmd, cwd: web4GameDir, args: [path.join(web4GameDir, "run_one_life_with_policy.py")], timeoutMs });
           return JSON.parse(stdout);
         },
       },

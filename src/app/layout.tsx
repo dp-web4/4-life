@@ -23,6 +23,7 @@ export default function RootLayout({
             <Link href="/how-it-works">How it works</Link>
             <Link href="/web4-explainer">Web4 explainer</Link>
             <Link href="/starter-kit">Starter kit</Link>
+            <Link href="/lab-console">Lab console</Link>
           </nav>
         </header>
         <main>{children}</main>

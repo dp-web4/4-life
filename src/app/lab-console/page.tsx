@@ -135,7 +135,7 @@ export default function LabConsolePage() {
   const [runKind, setRunKind] = useState<
     "ep_driven_closed_loop" | "maturation_demo" | "ep_five_domain" | "multi_life_with_policy" | "one_life_with_policy"
   >("ep_driven_closed_loop");
-  const [patternSource, setPatternSource] = useState<"web4" | "none" | "thor">("web4");
+  const [patternSource, setPatternSource] = useState<"web4" | "none">("web4");
   const [numLives, setNumLives] = useState<number>(3);
   const [ticks, setTicks] = useState<number>(20);
   const [timeoutMs, setTimeoutMs] = useState<number>(60000);
@@ -203,33 +203,26 @@ export default function LabConsolePage() {
   }
 
   async function loadFromStaticArtifacts() {
-    // Prefer multi-life JSON if present, fall back to one-life.
-    const tryUrls = [
-      "/multi_life_with_policy.json",
-      "/ep_driven_closed_loop_results.json",
-      "/maturation_demo_results_web4.json",
-      "/maturation_demo_results_none.json",
-      "/ep_five_domain_multi_life_results.json",
-      "/one_life_with_policy.json",
-    ];
-    let lastErr: any = null;
+    // Map runKind to the corresponding static file
+    const kindToFile: Record<string, string> = {
+      ep_driven_closed_loop: "/ep_driven_closed_loop_results.json",
+      maturation_demo: patternSource === "none"
+        ? "/maturation_demo_results_none.json"
+        : "/maturation_demo_results_web4.json",
+      ep_five_domain: "/ep_five_domain_multi_life_results.json",
+      multi_life_with_policy: "/multi_life_with_policy.json",
+      one_life_with_policy: "/one_life_with_policy.json",
+    };
 
-    for (const url of tryUrls) {
-      try {
-        const res = await fetch(url, { cache: "no-store" });
-        if (!res.ok) {
-          throw new Error(`HTTP ${res.status}`);
-        }
-        const json = await res.json();
-        setStatus(`loaded static artifact: ${url}`);
-        applyLoadedJson(json);
-        return;
-      } catch (e: any) {
-        lastErr = e;
-      }
+    const url = kindToFile[runKind] || "/one_life_with_policy.json";
+
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status} loading ${url}`);
     }
-
-    throw lastErr ?? new Error("Failed to load data");
+    const json = await res.json();
+    setStatus(`loaded: ${url}`);
+    applyLoadedJson(json);
   }
 
   useEffect(() => {
@@ -237,14 +230,7 @@ export default function LabConsolePage() {
       try {
         setError(null);
         setStatus(null);
-        // Fast path: load cached artifact via API if available.
-        try {
-          await loadFromApi("read");
-          return;
-        } catch {
-          // ignore and fall back
-        }
-
+        // Default: load static artifacts (works without Python)
         await loadFromStaticArtifacts();
       } catch (e: any) {
         setError(e?.message ?? "Failed to load data");
@@ -255,16 +241,14 @@ export default function LabConsolePage() {
 
   return (
     <main style={{ padding: "2rem", maxWidth: "60rem", margin: "0 auto" }}>
-      <h1>4-Life Lab Console (v0)</h1>
+      <h1>4-Life Lab Console</h1>
       <p style={{ marginTop: "0.75rem", color: "#9ca3af" }}>
-        This console visualizes a single local Web4 "life" run together with
-        the HRM research agent&apos;s proposed action. To update the data, run
-        the Python script that generates <code>one_life_with_policy.json</code>
-        and refresh this page.
+        Visualize Web4 life simulations with HRM policy decisions.
+        Select a mode below and click &quot;Load data&quot; to explore different scenarios.
       </p>
 
       <section style={{ marginTop: "1.5rem" }}>
-        <h2>Live Runner</h2>
+        <h2>Simulation Mode</h2>
         <div
           style={{
             marginTop: "0.75rem",
@@ -278,18 +262,18 @@ export default function LabConsolePage() {
         >
           <div style={{ display: "grid", gap: "0.5rem" }}>
             <label>
-              <strong>Kind</strong>
+              <strong>Mode</strong>
               <div>
                 <select
                   value={runKind}
                   onChange={(e) => setRunKind(e.target.value as any)}
                   style={{ marginTop: "0.25rem", width: "100%" }}
                 >
-                  <option value="ep_driven_closed_loop">ep_driven_closed_loop</option>
-                  <option value="maturation_demo">maturation_demo</option>
-                  <option value="ep_five_domain">ep_five_domain</option>
-                  <option value="multi_life_with_policy">multi_life_with_policy</option>
-                  <option value="one_life_with_policy">one_life_with_policy</option>
+                  <option value="ep_driven_closed_loop">EP Closed Loop</option>
+                  <option value="maturation_demo">Maturation Demo</option>
+                  <option value="ep_five_domain">Five Domain EP</option>
+                  <option value="multi_life_with_policy">Multi-Life with Policy</option>
+                  <option value="one_life_with_policy">One Life with Policy</option>
                 </select>
               </div>
             </label>
@@ -305,21 +289,20 @@ export default function LabConsolePage() {
                   >
                     <option value="web4">web4</option>
                     <option value="none">none</option>
-                    <option value="thor">thor</option>
                   </select>
                 </div>
               </label>
             )}
 
             {runKind === "ep_five_domain" && (
-              <div style={{ display: "grid", gap: "0.5rem" }}>
+              <>
                 <label>
-                  <strong>Lives</strong>
+                  <strong>Number of lives</strong>
                   <input
                     type="number"
                     value={numLives}
                     min={1}
-                    max={50}
+                    max={20}
                     onChange={(e) => setNumLives(Number(e.target.value))}
                     style={{ marginTop: "0.25rem", width: "100%" }}
                   />
@@ -329,45 +312,37 @@ export default function LabConsolePage() {
                   <input
                     type="number"
                     value={ticks}
-                    min={1}
-                    max={500}
+                    min={5}
+                    max={100}
                     onChange={(e) => setTicks(Number(e.target.value))}
                     style={{ marginTop: "0.25rem", width: "100%" }}
                   />
                 </label>
-              </div>
+              </>
             )}
 
-            <label>
-              <strong>Timeout (ms)</strong>
-              <input
-                type="number"
-                value={timeoutMs}
-                min={5000}
-                max={300000}
-                onChange={(e) => setTimeoutMs(Number(e.target.value))}
-                style={{ marginTop: "0.25rem", width: "100%" }}
-              />
-            </label>
           </div>
 
-          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
             <button
               disabled={isRunning}
               onClick={async () => {
                 setIsRunning(true);
                 setError(null);
                 try {
-                  await loadFromApi("run");
+                  await loadFromStaticArtifacts();
                 } catch (e: any) {
-                  setError(e?.message ?? "Failed to run");
+                  setError(e?.message ?? "Failed to load");
                 } finally {
                   setIsRunning(false);
                 }
               }}
             >
-              {isRunning ? "Running…" : "Run now"}
+              {isRunning ? "Loading…" : "Load static"}
             </button>
+
+            <span style={{ color: "#4b5563", margin: "0 0.25rem" }}>|</span>
+
             <button
               disabled={isRunning}
               onClick={async () => {
@@ -381,29 +356,34 @@ export default function LabConsolePage() {
                   setIsRunning(false);
                 }
               }}
+              style={{ opacity: 0.85 }}
+              title="Load cached result from API (requires web4/game)"
             >
               Load cached
             </button>
+
             <button
               disabled={isRunning}
               onClick={async () => {
                 setIsRunning(true);
                 setError(null);
                 try {
-                  await loadFromStaticArtifacts();
+                  await loadFromApi("run");
                 } catch (e: any) {
-                  setError(e?.message ?? "Failed to load static");
+                  setError(e?.message ?? "Failed to run");
                 } finally {
                   setIsRunning(false);
                 }
               }}
+              style={{ opacity: 0.85 }}
+              title="Run Python simulation (requires Python + web4/game)"
             >
-              Load static artifacts
+              Run simulation
             </button>
           </div>
 
-          <p style={{ margin: 0, fontSize: "0.85rem", color: "#6b7280" }}>
-            <strong>Run now</strong> / <strong>Load cached</strong> require Python + web4/game setup. <strong>Load static artifacts</strong> works without Python.
+          <p style={{ margin: 0, fontSize: "0.8rem", color: "#6b7280" }}>
+            <strong>Load static</strong> uses pre-generated data. <strong>Load cached</strong> and <strong>Run simulation</strong> require Python + web4/game setup.
           </p>
 
           {status && <p style={{ margin: 0, color: "#9ca3af" }}>{status}</p>}
@@ -414,13 +394,10 @@ export default function LabConsolePage() {
         <section style={{ marginTop: "1.5rem", color: "#f97373" }}>
           <h2>Error</h2>
           <p>{error}</p>
-          {error.includes("ENOENT") || error.includes("python") ? (
-            <p style={{ marginTop: "0.5rem", color: "#9ca3af" }}>
-              <strong>Python not found.</strong> The &quot;Run&quot; and &quot;Load cached&quot; buttons require Python and the web4/game scripts to be set up locally. Use &quot;Load static artifacts&quot; to view pre-generated data instead.
-            </p>
-          ) : (
-            <p style={{ marginTop: "0.5rem", color: "#9ca3af" }}>
-              Try clicking &quot;Load static artifacts&quot; to load pre-generated data.
+          {(error.includes("Python not found") || error.includes("ENOENT")) && (
+            <p style={{ marginTop: "0.5rem", color: "#9ca3af", fontSize: "0.9rem" }}>
+              The &quot;Run simulation&quot; button requires Python (python3 or python) to be installed and in your PATH.
+              Use &quot;Load static&quot; to view pre-generated data instead.
             </p>
           )}
         </section>
