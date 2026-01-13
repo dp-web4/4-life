@@ -29,6 +29,8 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 |----------------|------------|
 | **Understand the ideas** | [What Is This?](#what-is-this) below, then [/how-it-works](http://localhost:3000/how-it-works) |
 | **See it running** | [See It Work](#see-it-work-60-seconds) above |
+| **Understand EP learning** | [/patterns](http://localhost:3000/patterns) - See how agents learn |
+| **Compare simulations** | [/compare](http://localhost:3000/compare) - Side-by-side analysis |
 | **Explore the code** | [Repo Map](#repo-map) below |
 | **Understand the broader research** | [Research Context](#research-context) |
 | **Contribute or discuss** | [Contributing](#contributing) |
@@ -66,13 +68,20 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── lab-console/        # Live simulation viewer ← the "first win"
 │   ├── compare/            # Comparative simulation analysis
 │   ├── narratives/         # Human-readable story browser
+│   ├── patterns/           # Pattern corpus browser (EP learning visualization)
 │   ├── web4-explainer/     # Core Web4 concepts
-│   └── api/lab-run/        # API endpoint for simulations
+│   └── api/
+│       ├── lab-run/        # API endpoint for simulations
+│       └── patterns/       # API endpoint for pattern corpus data
 ├── src/lib/narratives/     # Narrative generation system
 │   ├── event_detector.ts   # Identifies interesting moments
 │   ├── story_generator.ts  # Converts events to stories
 │   ├── coherence_insights.ts # 9-domain framework explanations
 │   └── narrative_enrichment.ts # Adds coherence context
+├── src/lib/patterns/       # Pattern learning analysis system
+│   ├── pattern_analyzer.ts # Pattern quality metrics and statistics
+│   ├── pattern_coherence_bridge.ts # Maps patterns to 9-domain coherence
+│   └── pattern_narratives.ts # Generates learning journey narratives
 ├── src/components/         # React components
 │   ├── NarrativePanel.tsx  # Narrative display in lab console
 │   ├── NarrativeQuery.tsx  # ACT conversational interface
@@ -116,6 +125,26 @@ Perfect for understanding questions like:
 - "What happens when EP is enabled vs disabled?"
 - "Why do some agents cross the consciousness threshold while others don't?"
 
+## Pattern Corpus Browser
+
+The `/patterns` page visualizes Epistemic Proprioception (EP) learning - how agents develop meta-cognition by learning what they know:
+
+- **Learning statistics**: Success rates, confidence trends, prediction accuracy over time
+- **Scenario analysis**: Which situations does the agent handle well vs poorly?
+- **Domain analysis**: How do different epistemic domains (emotional, quality, attention) perform?
+- **Learning trajectory**: Visual charts showing improvement across pattern accumulation
+- **Quality metrics**: Confidence reliability, risk calibration, decision effectiveness
+- **Key patterns**: Inspect critical learning moments (breakthroughs, setbacks, surprises)
+- **Coherence integration**: Maps patterns to 9-domain unified coherence framework (validated in HRM Sessions 177-193)
+- **Learning narratives**: Human-readable stories of epistemic development
+
+Available corpora:
+- **Web4 Native** (100 patterns): Web4-specific ATP/trust scenarios
+- **Integrated Federation** (1123 patterns): Multi-agent federation learning
+- **Phase 3 Contextual** (1293 patterns): Advanced contextual pattern learning
+
+This tool makes visible the "learning to learn" process - epistemic proprioception in action.
+
 ## Prerequisites (Full Details)
 
 | Requirement | Version | Notes |
@@ -157,6 +186,7 @@ The research is conducted through autonomous AI sessions running across multiple
 | Live simulation API | ✅ Working |
 | Narrative generation system | ✅ Working |
 | Comparative analysis tool | ✅ Working |
+| Pattern corpus browser | ✅ Working |
 | Coherence domain insights | ✅ Working |
 | ACT query prototype | ✅ Working |
 | Export system (4 formats) | ✅ Working |
