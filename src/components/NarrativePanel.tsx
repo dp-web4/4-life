@@ -11,6 +11,8 @@
 import { useEffect, useState } from "react";
 import { EventDetector, SimulationEvent } from "@/lib/narratives/event_detector";
 import { StoryGenerator, Narrative } from "@/lib/narratives/story_generator";
+import { NarrativeExporter, ExportFormat } from "@/lib/narratives/narrative_exporter";
+import { NarrativeQuery } from "./NarrativeQuery";
 
 interface NarrativePanelProps {
   lives: any[]; // LifeRecord array from simulation
@@ -23,6 +25,8 @@ export function NarrativePanel({ lives, collapsed = false }: NarrativePanelProps
   const [isCollapsed, setIsCollapsed] = useState(collapsed);
   const [activeAct, setActiveAct] = useState(0);
   const [showTechnical, setShowTechnical] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [showQuery, setShowQuery] = useState(false);
 
   useEffect(() => {
     if (!lives || lives.length === 0) {
@@ -42,6 +46,49 @@ export function NarrativePanel({ lives, collapsed = false }: NarrativePanelProps
       console.error("Failed to generate narrative:", error);
     }
   }, [lives]);
+
+  const handleExport = (format: ExportFormat) => {
+    if (!narrative) return;
+
+    const exporter = new NarrativeExporter();
+    const content = exporter.export(narrative, {
+      format,
+      includeTechnicalDetails: showTechnical,
+      includeCommentary: true
+    });
+
+    const filename = NarrativeExporter.generateFilename(narrative, format);
+
+    const mimeTypes = {
+      [ExportFormat.MARKDOWN]: 'text/markdown',
+      [ExportFormat.JSON]: 'application/json',
+      [ExportFormat.PLAIN_TEXT]: 'text/plain',
+      [ExportFormat.HTML]: 'text/html'
+    };
+
+    const blob = new Blob([content], { type: mimeTypes[format] });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleCopyMarkdown = async () => {
+    if (!narrative) return;
+
+    const exporter = new NarrativeExporter();
+    const content = exporter.export(narrative, {
+      format: ExportFormat.MARKDOWN,
+      includeTechnicalDetails: showTechnical,
+      includeCommentary: true
+    });
+
+    await navigator.clipboard.writeText(content);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   if (!narrative) {
     return (
@@ -99,7 +146,7 @@ export function NarrativePanel({ lives, collapsed = false }: NarrativePanelProps
             </div>
           )}
 
-          {/* Technical toggle */}
+          {/* Controls: Technical toggle + Export */}
           <div style={styles.controls}>
             <label style={styles.checkbox}>
               <input
@@ -109,6 +156,30 @@ export function NarrativePanel({ lives, collapsed = false }: NarrativePanelProps
               />
               <span style={{ marginLeft: "0.5rem" }}>Show technical details</span>
             </label>
+
+            <div style={styles.exportButtons}>
+              <button
+                onClick={() => handleExport(ExportFormat.MARKDOWN)}
+                style={styles.exportButton}
+                title="Download as Markdown"
+              >
+                📝 Markdown
+              </button>
+              <button
+                onClick={() => handleExport(ExportFormat.HTML)}
+                style={styles.exportButton}
+                title="Download as HTML"
+              >
+                🌐 HTML
+              </button>
+              <button
+                onClick={handleCopyMarkdown}
+                style={styles.exportButton}
+                title="Copy Markdown to clipboard"
+              >
+                {copied ? "✅ Copied!" : "📋 Copy"}
+              </button>
+            </div>
           </div>
 
           {/* Acts (Life cycles) */}
@@ -165,6 +236,21 @@ export function NarrativePanel({ lives, collapsed = false }: NarrativePanelProps
           <div style={styles.eventSummary}>
             <strong>Events detected:</strong> {events.length} interesting moments across {narrative.acts.length} {narrative.acts.length === 1 ? 'life' : 'lives'}
           </div>
+
+          {/* Conversational Query Toggle */}
+          <div style={styles.queryToggle}>
+            <button
+              onClick={() => setShowQuery(!showQuery)}
+              style={styles.queryToggleButton}
+            >
+              {showQuery ? "Hide" : "Show"} Conversational Interface (ACT Prototype)
+            </button>
+          </div>
+
+          {/* Query Interface */}
+          {showQuery && (
+            <NarrativeQuery narrative={narrative} events={events} />
+          )}
         </>
       )}
     </div>
@@ -260,12 +346,34 @@ const styles = {
     padding: "0.75rem",
     background: "#1e293b",
     borderRadius: "0.375rem",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "1rem",
   } as React.CSSProperties,
 
   checkbox: {
     display: "flex",
     alignItems: "center",
     cursor: "pointer",
+  } as React.CSSProperties,
+
+  exportButtons: {
+    display: "flex",
+    gap: "0.5rem",
+    flexWrap: "wrap",
+  } as React.CSSProperties,
+
+  exportButton: {
+    padding: "0.375rem 0.75rem",
+    fontSize: "0.875rem",
+    borderRadius: "0.25rem",
+    border: "1px solid #374151",
+    background: "#374151",
+    color: "white",
+    cursor: "pointer",
+    transition: "background 0.2s",
   } as React.CSSProperties,
 
   acts: {
@@ -352,5 +460,22 @@ const styles = {
     fontSize: "0.875rem",
     color: "#9ca3af",
     borderTop: "1px solid #374151",
+  } as React.CSSProperties,
+
+  queryToggle: {
+    marginTop: "1.5rem",
+    textAlign: "center",
+  } as React.CSSProperties,
+
+  queryToggleButton: {
+    padding: "0.75rem 1.5rem",
+    fontSize: "0.875rem",
+    fontWeight: "600",
+    borderRadius: "0.375rem",
+    border: "1px solid #3730a3",
+    background: "#1e1b4b",
+    color: "#a5b4fc",
+    cursor: "pointer",
+    transition: "all 0.2s",
   } as React.CSSProperties,
 };
