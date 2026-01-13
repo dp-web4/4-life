@@ -64,8 +64,19 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── how-it-works/       # Conceptual walkthrough
 │   ├── starter-kit/        # Getting started guide
 │   ├── lab-console/        # Live simulation viewer ← the "first win"
+│   ├── compare/            # Comparative simulation analysis
+│   ├── narratives/         # Human-readable story browser
 │   ├── web4-explainer/     # Core Web4 concepts
 │   └── api/lab-run/        # API endpoint for simulations
+├── src/lib/narratives/     # Narrative generation system
+│   ├── event_detector.ts   # Identifies interesting moments
+│   ├── story_generator.ts  # Converts events to stories
+│   ├── coherence_insights.ts # 9-domain framework explanations
+│   └── narrative_enrichment.ts # Adds coherence context
+├── src/components/         # React components
+│   ├── NarrativePanel.tsx  # Narrative display in lab console
+│   ├── NarrativeQuery.tsx  # ACT conversational interface
+│   └── ComparativeView.tsx # Side-by-side simulation comparison
 ├── public/                 # Pre-generated simulation results (JSON)
 └── docs/                   # Additional documentation
 ```
@@ -89,6 +100,21 @@ Simulations can run live via the API or load from pre-generated artifacts in `pu
 | Maturation Demo | Trust maturation patterns (Web4 vs baseline) |
 | Five Domain | Multi-domain interaction patterns |
 | Multi-Life Legacy | Original heuristic-based simulation |
+
+## Comparative Analysis
+
+The `/compare` page enables side-by-side comparison of multiple simulations to understand how different parameters affect outcomes:
+
+- **Synchronized charts**: Trust and ATP trajectories with shared hover state
+- **Metrics table**: Key statistics (trust change, volatility, events) across all simulations
+- **Threshold visualization**: Consciousness threshold (0.5) and ATP crisis (20) markers
+- **Automated insights**: System identifies significant differences and patterns
+- **Export-ready**: Visual analysis suitable for research documentation
+
+Perfect for understanding questions like:
+- "How does Web4 maturation differ from baseline?"
+- "What happens when EP is enabled vs disabled?"
+- "Why do some agents cross the consciousness threshold while others don't?"
 
 ## Prerequisites (Full Details)
 
@@ -129,6 +155,11 @@ The research is conducted through autonomous AI sessions running across multiple
 | Website structure | ✅ Complete |
 | Lab console visualization | ✅ Working |
 | Live simulation API | ✅ Working |
+| Narrative generation system | ✅ Working |
+| Comparative analysis tool | ✅ Working |
+| Coherence domain insights | ✅ Working |
+| ACT query prototype | ✅ Working |
+| Export system (4 formats) | ✅ Working |
 | Starter kit download | 🚧 In progress |
 | Public deployment | 🚧 Planned |
 | Hub society integration | 🚧 Planned |
