@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { NarrativePanel } from "@/components/NarrativePanel";
 
 // v0 Lab Console for 4-Life
 // --------------------------
@@ -848,6 +849,17 @@ export default function LabConsolePage() {
             ))}
           </div>
         </section>
+      )}
+
+      {/* Narrative Panel - Human-readable story of the simulation */}
+      {ep && ep.lives && ep.lives.length > 0 && (
+        <NarrativePanel lives={ep.lives} />
+      )}
+      {multi && multi.multi_life && multi.multi_life.lives && multi.multi_life.lives.length > 0 && (
+        <NarrativePanel lives={multi.multi_life.lives} />
+      )}
+      {fiveDomain && fiveDomain.lives && fiveDomain.lives.length > 0 && (
+        <NarrativePanel lives={fiveDomain.lives} />
       )}
     </main>
   );
