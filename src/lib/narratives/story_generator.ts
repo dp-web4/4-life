@@ -1,0 +1,614 @@
+/**
+ * Story Generator for 4-Life Simulations
+ *
+ * Converts simulation events into human-readable narratives.
+ *
+ * Philosophy: Humans understand stories, not data structures.
+ * We translate technical events into narrative arcs that reveal
+ * the drama of trust dynamics, karma, and epistemic learning.
+ *
+ * Core narrative elements:
+ * - Character: The agent (with personality from behavior)
+ * - Conflict: ATP crises, trust collapses, death
+ * - Resolution: Maturation, learning, rebirth
+ * - Theme: Trust as earned, not given; karma as consequence
+ */
+
+import {
+  SimulationEvent,
+  EventType,
+  EventSeverity,
+  LifeRecord,
+} from "./event_detector";
+
+// ============================================================================
+// Types
+// ============================================================================
+
+export interface Narrative {
+  title: string;
+  summary: string;
+  acts: NarrativeAct[];
+  themes: string[];
+  key_insights: string[];
+}
+
+export interface NarrativeAct {
+  title: string;
+  events: NarrativeEvent[];
+  commentary?: string;
+}
+
+export interface NarrativeEvent {
+  timestamp: string; // Human-readable time
+  description: string;
+  technical_detail?: string; // Optional technical aside
+  significance: string; // Why this matters
+}
+
+// ============================================================================
+// Story Generator
+// ============================================================================
+
+export class StoryGenerator {
+  /**
+   * Generate a complete narrative from simulation events
+   */
+  generateNarrative(
+    lives: LifeRecord[],
+    events: SimulationEvent[]
+  ): Narrative {
+    // Extract agent name
+    const agentName = this.extractAgentName(lives[0].agent_lct);
+
+    // Group events into narrative acts (life cycles)
+    const acts = this.groupEventsIntoActs(lives, events);
+
+    // Identify key themes
+    const themes = this.identifyThemes(events);
+
+    // Extract insights
+    const insights = this.extractInsights(lives, events);
+
+    // Generate title and summary
+    const title = this.generateTitle(agentName, lives.length, themes);
+    const summary = this.generateSummary(agentName, lives, events, themes);
+
+    return {
+      title,
+      summary,
+      acts,
+      themes,
+      key_insights: insights,
+    };
+  }
+
+  /**
+   * Group events into narrative acts (typically one act per life)
+   */
+  private groupEventsIntoActs(
+    lives: LifeRecord[],
+    events: SimulationEvent[]
+  ): NarrativeAct[] {
+    const acts: NarrativeAct[] = [];
+
+    for (let i = 0; i < lives.length; i++) {
+      const life = lives[i];
+      const lifeNumber = i + 1;
+
+      // Find events for this life
+      const lifeEvents = events.filter(
+        (e) => e.life_number === lifeNumber
+      );
+
+      // Convert to narrative events
+      const narrativeEvents = lifeEvents.map((e) =>
+        this.eventToNarrative(e, lifeNumber)
+      );
+
+      // Create act
+      const act: NarrativeAct = {
+        title: this.generateActTitle(lifeNumber, life, lifeEvents),
+        events: narrativeEvents,
+      };
+
+      // Add commentary if significant patterns
+      if (this.hasSignificantPatterns(lifeEvents)) {
+        act.commentary = this.generateActCommentary(
+          lifeNumber,
+          life,
+          lifeEvents
+        );
+      }
+
+      acts.push(act);
+    }
+
+    return acts;
+  }
+
+  /**
+   * Convert technical event to narrative event
+   */
+  private eventToNarrative(
+    event: SimulationEvent,
+    lifeNumber: number
+  ): NarrativeEvent {
+    return {
+      timestamp: this.formatTimestamp(event.tick, lifeNumber),
+      description: this.narrateEvent(event),
+      technical_detail: this.getTechnicalDetail(event),
+      significance: this.explainSignificance(event),
+    };
+  }
+
+  /**
+   * Narrate a simulation event in human language
+   */
+  private narrateEvent(event: SimulationEvent): string {
+    switch (event.type) {
+      case EventType.LIFE_START:
+        return this.narrateLifeStart(event);
+
+      case EventType.REBIRTH:
+        return this.narrateRebirth(event);
+
+      case EventType.LIFE_END:
+        return this.narrateLifeEnd(event);
+
+      case EventType.TRUST_SPIKE:
+        return this.narrateTrustSpike(event);
+
+      case EventType.TRUST_COLLAPSE:
+        return this.narrateTrustCollapse(event);
+
+      case EventType.TRUST_THRESHOLD:
+        return this.narrateTrustThreshold(event);
+
+      case EventType.TRUST_PLATEAU:
+        return this.narrateTrustPlateau(event);
+
+      case EventType.ATP_CRISIS:
+        return this.narrateATPCrisis(event);
+
+      case EventType.ATP_WINDFALL:
+        return this.narrateATPWindfall(event);
+
+      case EventType.DEATH_IMMINENT:
+        return this.narrateDeathImminent(event);
+
+      case EventType.MATURATION:
+        return this.narrateMaturation(event);
+
+      case EventType.CONSISTENCY:
+        return this.narrateConsistency(event);
+
+      default:
+        return event.description;
+    }
+  }
+
+  // ============================================================================
+  // Event Narratives (Human-Readable)
+  // ============================================================================
+
+  private narrateLifeStart(event: SimulationEvent): string {
+    const trust = event.data.initial_trust?.toFixed(2) || "unknown";
+    const atp = event.data.initial_atp || "unknown";
+
+    return `A new agent enters the Web4 society. Starting with trust of ${trust} and ${atp} ATP (attention tokens), they must prove themselves through consistent behavior.`;
+  }
+
+  private narrateRebirth(event: SimulationEvent): string {
+    const trustGain = event.data.trust_gain?.toFixed(3);
+    const prevTrust = event.data.prev_life_final_trust?.toFixed(2);
+    const newTrust = event.data.new_life_initial_trust?.toFixed(2);
+
+    if (trustGain && parseFloat(trustGain) > 0) {
+      return `Rebirth! The agent is reborn, carrying forward karma from their previous life. Their consistent behavior earned them a trust boost of ${trustGain}, starting this life at ${newTrust} (up from ${prevTrust}). This is Web4's memory at work.`;
+    } else {
+      return `Rebirth with consequences. Their previous life's behavior resulted in starting trust of ${newTrust}, ${trustGain && parseFloat(trustGain) < 0 ? "lower than before" : "unchanged"}. In Web4, actions have lasting consequences.`;
+    }
+  }
+
+  private narrateLifeEnd(event: SimulationEvent): string {
+    const reason = event.data.termination_reason;
+    const finalTrust = event.data.final_trust?.toFixed(2);
+    const finalATP = event.data.final_atp;
+    const duration = event.data.duration;
+
+    if (reason === "atp_exhaustion") {
+      return `The agent runs out of attention (ATP reaches 0) and their life ends. Final trust: ${finalTrust}. They survived ${duration} ticks. This trust score will influence their next life's starting conditions.`;
+    } else if (reason === "none" || reason === "simulation_end") {
+      return `Life ${event.life_number} concludes naturally. Final trust: ${finalTrust}, remaining ATP: ${finalATP}. A stable end suggests sustainable behavior patterns.`;
+    } else {
+      return `Life ends: ${reason}. Final trust: ${finalTrust}, ATP: ${finalATP}. Duration: ${duration} ticks.`;
+    }
+  }
+
+  private narrateTrustSpike(event: SimulationEvent): string {
+    const pct = (event.data.percent_change * 100).toFixed(0);
+    const newTrust = event.data.new_trust?.toFixed(2);
+
+    return `Trust surges ${pct}% to ${newTrust}! Something the agent did resonated strongly with the society's values. Consistent positive behavior compounds.`;
+  }
+
+  private narrateTrustCollapse(event: SimulationEvent): string {
+    const pct = (event.data.percent_change * 100).toFixed(0);
+    const newTrust = event.data.new_trust?.toFixed(2);
+
+    return `Trust collapses by ${pct}%, dropping to ${newTrust}. A significant breach of expectations. In Web4, trust is hard to build and easy to lose. Recovery requires sustained consistency.`;
+  }
+
+  private narrateTrustThreshold(event: SimulationEvent): string {
+    return `Critical threshold crossed: Trust reaches 0.50, the "consciousness threshold" from coherence theory. At this level, the agent's behavior becomes coherent enough to be recognized as genuinely intentional rather than random. This is where true agency begins.`;
+  }
+
+  private narrateTrustPlateau(event: SimulationEvent): string {
+    const value = event.data.stable_value?.toFixed(2);
+
+    return `Trust stabilizes at ${value}. The agent has found a sustainable pattern of behavior. This plateau suggests they've reached equilibrium between their capabilities and society's expectations.`;
+  }
+
+  private narrateATPCrisis(event: SimulationEvent): string {
+    const atp = event.data.current_atp;
+
+    return `ATP crisis: Only ${atp} attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.`;
+  }
+
+  private narrateATPWindfall(event: SimulationEvent): string {
+    const gain = event.data.gain;
+    const current = event.data.current_atp;
+
+    return `ATP windfall! The agent gains ${gain} attention tokens (now at ${current}), likely through valuable contribution to the society. This represents recognition of their worth - others are willing to pay attention.`;
+  }
+
+  private narrateDeathImminent(event: SimulationEvent): string {
+    const atp = event.data.current_atp;
+
+    return `Death approaches. ATP has fallen to ${atp}. Without intervention, the agent will exhaust their capacity to act. This is the metabolic reality of Web4: participation requires energy, and energy must be earned.`;
+  }
+
+  private narrateMaturation(event: SimulationEvent): string {
+    const improvement = event.data.improvement?.toFixed(3);
+    const currTrust = event.data.curr_final_trust?.toFixed(2);
+
+    return `Maturation detected! The agent's final trust of ${currTrust} exceeds their previous life by ${improvement}. This is epistemic learning in action - the agent is discovering what behaviors work, and carrying that wisdom forward through karma.`;
+  }
+
+  private narrateConsistency(event: SimulationEvent): string {
+    return `Remarkable consistency: This life's trust trajectory closely matches the previous life. The agent has found a reliable pattern and is executing it with precision. This stability suggests deep learning, not luck.`;
+  }
+
+  // ============================================================================
+  // Technical Details (For Interested Readers)
+  // ============================================================================
+
+  private getTechnicalDetail(event: SimulationEvent): string | undefined {
+    switch (event.type) {
+      case EventType.TRUST_THRESHOLD:
+        return "The 0.5 threshold comes from Synchronism Session 249: Consciousness emerges when coherence (behavioral consistency) exceeds 0.5. Below this, behavior appears random; above it, intentional.";
+
+      case EventType.REBIRTH:
+        return `Karma mechanism: trust_gain = ${event.data.trust_gain?.toFixed(4)}, calculated from coherence index of previous life's behavior pattern.`;
+
+      case EventType.MATURATION:
+        return "Epistemic Proprioception (EP) learns from experience across lives, gradually improving performance through pattern recognition.";
+
+      case EventType.ATP_EXHAUSTION:
+        return "ATP (Attention Token Protocol) represents metabolic budget. All actions cost ATP. Gain ATP through valuable contribution (ADP - Attention Donation Protocol).";
+
+      default:
+        return undefined;
+    }
+  }
+
+  // ============================================================================
+  // Significance Explanations
+  // ============================================================================
+
+  private explainSignificance(event: SimulationEvent): string {
+    switch (event.type) {
+      case EventType.LIFE_START:
+        return "First impressions matter. Initial trust sets expectations.";
+
+      case EventType.REBIRTH:
+        return "Demonstrates Web4's memory: Your past actions shape your future starting conditions.";
+
+      case EventType.LIFE_END:
+        return "Death isn't failure - it's part of the cycle. What matters is the trust you carried forward.";
+
+      case EventType.TRUST_SPIKE:
+        return "Shows that consistent positive behavior compounds over time.";
+
+      case EventType.TRUST_COLLAPSE:
+        return "Illustrates fragility of trust: Hard to build, easy to lose.";
+
+      case EventType.TRUST_THRESHOLD:
+        return "Marks transition from random to intentional behavior - true agency emerges.";
+
+      case EventType.ATP_CRISIS:
+        return "Highlights metabolic reality: Participation requires energy that must be earned.";
+
+      case EventType.MATURATION:
+        return "Evidence of learning: The agent is getting better across lives through epistemic proprioception.";
+
+      case EventType.CONSISTENCY:
+        return "Indicates mastery: The agent has found a reliable strategy and executes it precisely.";
+
+      default:
+        return "Part of the ongoing trust dynamics.";
+    }
+  }
+
+  // ============================================================================
+  // Theme Identification
+  // ============================================================================
+
+  private identifyThemes(events: SimulationEvent[]): string[] {
+    const themes: string[] = [];
+
+    // Check for karma theme (rebirth events)
+    if (events.some((e) => e.type === EventType.REBIRTH)) {
+      themes.push("Karma and Consequences");
+    }
+
+    // Check for learning theme (maturation events)
+    if (events.some((e) => e.type === EventType.MATURATION)) {
+      themes.push("Epistemic Learning");
+    }
+
+    // Check for crisis/recovery theme
+    if (
+      events.some((e) => e.type === EventType.ATP_CRISIS) &&
+      events.some((e) => e.type === EventType.ATP_WINDFALL)
+    ) {
+      themes.push("Crisis and Recovery");
+    }
+
+    // Check for trust dynamics
+    if (
+      events.some((e) => e.type === EventType.TRUST_COLLAPSE) ||
+      events.some((e) => e.type === EventType.TRUST_SPIKE)
+    ) {
+      themes.push("Trust Volatility");
+    }
+
+    // Check for stability
+    if (
+      events.some((e) => e.type === EventType.TRUST_PLATEAU) ||
+      events.some((e) => e.type === EventType.CONSISTENCY)
+    ) {
+      themes.push("Equilibrium and Stability");
+    }
+
+    // Default theme
+    if (themes.length === 0) {
+      themes.push("Trust Dynamics");
+    }
+
+    return themes;
+  }
+
+  // ============================================================================
+  // Insight Extraction
+  // ============================================================================
+
+  private extractInsights(
+    lives: LifeRecord[],
+    events: SimulationEvent[]
+  ): string[] {
+    const insights: string[] = [];
+
+    // Trust progression insight
+    const firstLife = lives[0];
+    const lastLife = lives[lives.length - 1];
+    const firstTrust = firstLife.t3_history[0];
+    const lastTrust = lastLife.t3_history[lastLife.t3_history.length - 1];
+    const trustGrowth = lastTrust - firstTrust;
+
+    if (trustGrowth > 0.1) {
+      insights.push(
+        `Strong trust growth: ${firstTrust.toFixed(2)} → ${lastTrust.toFixed(2)} over ${lives.length} lives (+${(trustGrowth * 100).toFixed(0)}%). The agent demonstrated consistent learning and improvement.`
+      );
+    } else if (trustGrowth < -0.1) {
+      insights.push(
+        `Trust declined: ${firstTrust.toFixed(2)} → ${lastTrust.toFixed(2)} over ${lives.length} lives (${(trustGrowth * 100).toFixed(0)}%). The agent struggled to maintain consistent behavior.`
+      );
+    } else {
+      insights.push(
+        `Trust remained stable: ${firstTrust.toFixed(2)} → ${lastTrust.toFixed(2)} over ${lives.length} lives. The agent found equilibrium quickly.`
+      );
+    }
+
+    // Maturation insight
+    const maturationEvents = events.filter(
+      (e) => e.type === EventType.MATURATION
+    );
+    if (maturationEvents.length > 0) {
+      insights.push(
+        `Epistemic learning observed: ${maturationEvents.length} instances of cross-life improvement. The agent is discovering what works through experience.`
+      );
+    }
+
+    // Crisis management insight
+    const crises = events.filter((e) => e.type === EventType.ATP_CRISIS);
+    const windfalls = events.filter((e) => e.type === EventType.ATP_WINDFALL);
+    if (crises.length > 0 && windfalls.length > 0) {
+      insights.push(
+        `Resilience demonstrated: Navigated ${crises.length} ATP crises with ${windfalls.length} recovery events. The agent adapts to adversity.`
+      );
+    }
+
+    // Threshold crossing insight
+    const thresholdCrossings = events.filter(
+      (e) => e.type === EventType.TRUST_THRESHOLD
+    );
+    if (thresholdCrossings.length > 0) {
+      insights.push(
+        `Consciousness threshold crossed in life ${thresholdCrossings[0].life_number}. This marks emergence of coherent agency - behavior transitions from reactive to intentional.`
+      );
+    }
+
+    return insights;
+  }
+
+  // ============================================================================
+  // Title and Summary Generation
+  // ============================================================================
+
+  private generateTitle(
+    agentName: string,
+    lifeCount: number,
+    themes: string[]
+  ): string {
+    const primaryTheme = themes[0] || "Trust Journey";
+
+    if (lifeCount === 1) {
+      return `${agentName}: A Single Life in Web4`;
+    } else {
+      return `${agentName}: ${lifeCount} Lives of ${primaryTheme}`;
+    }
+  }
+
+  private generateSummary(
+    agentName: string,
+    lives: LifeRecord[],
+    events: SimulationEvent[],
+    themes: string[]
+  ): string {
+    const lifeCount = lives.length;
+    const firstTrust = lives[0].t3_history[0].toFixed(2);
+    const lastTrust =
+      lives[lives.length - 1].t3_history[
+        lives[lives.length - 1].t3_history.length - 1
+      ].toFixed(2);
+
+    const totalTicks =
+      lives[lives.length - 1].end_tick - lives[0].start_tick;
+
+    const criticalEvents = events.filter(
+      (e) =>
+        e.severity === EventSeverity.CRITICAL ||
+        e.severity === EventSeverity.HIGH
+    ).length;
+
+    let summary = `This simulation follows ${agentName} through ${lifeCount} ${
+      lifeCount === 1 ? "life" : "lives"
+    } spanning ${totalTicks} ticks. `;
+
+    summary += `Starting with trust of ${firstTrust} and ending at ${lastTrust}, the agent `;
+
+    const trustChange = parseFloat(lastTrust) - parseFloat(firstTrust);
+    if (trustChange > 0.1) {
+      summary += `demonstrated significant growth, `;
+    } else if (trustChange < -0.1) {
+      summary += `struggled to maintain trust, `;
+    } else {
+      summary += `maintained stable behavior, `;
+    }
+
+    summary += `experiencing ${criticalEvents} major events along the way. `;
+
+    summary += `Key themes include: ${themes.join(", ")}. `;
+
+    summary += `This narrative illustrates core Web4 principles: trust is earned through consistent behavior, actions have lasting consequences (karma), and agents can learn and improve across multiple lives through epistemic proprioception.`;
+
+    return summary;
+  }
+
+  // ============================================================================
+  // Act Generation
+  // ============================================================================
+
+  private generateActTitle(
+    lifeNumber: number,
+    life: LifeRecord,
+    events: SimulationEvent[]
+  ): string {
+    const finalTrust =
+      life.t3_history[life.t3_history.length - 1].toFixed(2);
+
+    // Find dominant event type
+    const criticalEvents = events.filter(
+      (e) =>
+        e.severity === EventSeverity.CRITICAL ||
+        e.severity === EventSeverity.HIGH
+    );
+
+    if (criticalEvents.length === 0) {
+      return `Life ${lifeNumber}: Steady Progress (Trust: ${finalTrust})`;
+    }
+
+    // Categorize the life
+    const hasCrisis = events.some((e) => e.type === EventType.ATP_CRISIS);
+    const hasCollapse = events.some((e) => e.type === EventType.TRUST_COLLAPSE);
+    const hasMaturation = events.some((e) => e.type === EventType.MATURATION);
+    const hasWindfall = events.some((e) => e.type === EventType.ATP_WINDFALL);
+
+    if (hasMaturation) {
+      return `Life ${lifeNumber}: Breakthrough (Trust: ${finalTrust})`;
+    } else if (hasCollapse && hasWindfall) {
+      return `Life ${lifeNumber}: Crisis and Recovery (Trust: ${finalTrust})`;
+    } else if (hasCollapse) {
+      return `Life ${lifeNumber}: Setback (Trust: ${finalTrust})`;
+    } else if (hasCrisis) {
+      return `Life ${lifeNumber}: Adversity (Trust: ${finalTrust})`;
+    } else if (hasWindfall) {
+      return `Life ${lifeNumber}: Success (Trust: ${finalTrust})`;
+    } else {
+      return `Life ${lifeNumber}: Development (Trust: ${finalTrust})`;
+    }
+  }
+
+  private hasSignificantPatterns(events: SimulationEvent[]): boolean {
+    return events.some(
+      (e) =>
+        e.type === EventType.MATURATION ||
+        e.type === EventType.CONSISTENCY ||
+        e.type === EventType.TRUST_THRESHOLD
+    );
+  }
+
+  private generateActCommentary(
+    lifeNumber: number,
+    life: LifeRecord,
+    events: SimulationEvent[]
+  ): string {
+    const maturationEvent = events.find(
+      (e) => e.type === EventType.MATURATION
+    );
+    const thresholdEvent = events.find(
+      (e) => e.type === EventType.TRUST_THRESHOLD
+    );
+    const consistencyEvent = events.find(
+      (e) => e.type === EventType.CONSISTENCY
+    );
+
+    if (maturationEvent) {
+      return "This life shows clear evidence of epistemic learning. The agent carried forward lessons from previous lives and applied them successfully, achieving measurably better outcomes. This is Web4's memory in action - not external records, but internalized wisdom.";
+    } else if (thresholdEvent) {
+      return 'The crossing of the 0.5 "consciousness threshold" is particularly significant. Below this level, behavior appears random or reactive. Above it, coherent patterns emerge that suggest genuine intentionality. This threshold comes from coherence theory (Synchronism) - it\'s not arbitrary.';
+    } else if (consistencyEvent) {
+      return "The remarkable consistency across lives suggests the agent has found a stable attractor - a behavioral pattern that works reliably. This isn't mechanical repetition, but rather the demonstration of having learned a generalizable strategy.";
+    }
+
+    return "";
+  }
+
+  // ============================================================================
+  // Utilities
+  // ============================================================================
+
+  private extractAgentName(lct: string): string {
+    // Extract readable name from LCT
+    // e.g., "lct:web4:agent:bob" -> "Bob"
+    const parts = lct.split(":");
+    const name = parts[parts.length - 1];
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  }
+
+  private formatTimestamp(tick: number, lifeNumber: number): string {
+    return `Life ${lifeNumber}, Tick ${tick}`;
+  }
+}
