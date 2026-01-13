@@ -13,6 +13,11 @@ import {
   type InteractionPattern,
 } from "@/lib/patterns/pattern_analyzer";
 
+import {
+  PatternNarrativeGenerator,
+  type LearningNarrative,
+} from "@/lib/patterns/pattern_narratives";
+
 /**
  * Pattern Corpus Browser
  *
@@ -59,9 +64,10 @@ export default function PatternsPage() {
   const [trajectory, setTrajectory] = useState<LearningTrajectory | null>(null);
   const [quality, setQuality] = useState<PatternQualityMetrics | null>(null);
   const [keyPatterns, setKeyPatterns] = useState<InteractionPattern[]>([]);
+  const [narrative, setNarrative] = useState<LearningNarrative | null>(null);
 
   const [selectedTab, setSelectedTab] = useState<
-    "overview" | "scenarios" | "domains" | "trajectory" | "quality" | "patterns"
+    "overview" | "scenarios" | "domains" | "trajectory" | "quality" | "patterns" | "narrative"
   >("overview");
 
   useEffect(() => {
@@ -84,6 +90,7 @@ export default function PatternsPage() {
       // Analyze
       const analyzer = new PatternAnalyzer(data);
       const qualityAnalyzer = new PatternQualityAnalyzer(data);
+      const narrativeGenerator = new PatternNarrativeGenerator(data);
 
       setStats(analyzer.getStatistics());
       setScenarios(analyzer.analyzeScenarios());
@@ -91,6 +98,7 @@ export default function PatternsPage() {
       setTrajectory(analyzer.getLearningTrajectory(10));
       setQuality(qualityAnalyzer.assessQuality());
       setKeyPatterns(analyzer.findKeyPatterns(10));
+      setNarrative(narrativeGenerator.generateNarrative());
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unknown error");
     } finally {
@@ -151,7 +159,7 @@ export default function PatternsPage() {
             {/* Tabs */}
             <div className="mb-6 border-b">
               <div className="flex gap-4">
-                {["overview", "scenarios", "domains", "trajectory", "quality", "patterns"].map(
+                {["overview", "narrative", "scenarios", "domains", "trajectory", "quality", "patterns"].map(
                   (tab) => (
                     <button
                       key={tab}
@@ -176,6 +184,9 @@ export default function PatternsPage() {
             {/* Tab Content */}
             {selectedTab === "overview" && (
               <OverviewTab stats={stats} quality={quality} />
+            )}
+            {selectedTab === "narrative" && narrative && (
+              <NarrativeTab narrative={narrative} />
             )}
             {selectedTab === "scenarios" && <ScenariosTab scenarios={scenarios} />}
             {selectedTab === "domains" && <DomainsTab domains={domains} />}
@@ -339,6 +350,183 @@ function OverviewTab({
           </p>
           <p className="text-sm text-gray-600">unique scenario types</p>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function NarrativeTab({ narrative }: { narrative: LearningNarrative }) {
+  const [expandedChapter, setExpandedChapter] = useState<number | null>(0);
+  const [expandedEvent, setExpandedEvent] = useState<string | null>(null);
+
+  return (
+    <div className="space-y-6">
+      {/* Title & Summary */}
+      <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg shadow-lg p-8">
+        <h1 className="text-3xl font-bold mb-4 text-gray-800">
+          {narrative.title}
+        </h1>
+        <p className="text-lg text-gray-700 leading-relaxed mb-4">
+          {narrative.summary}
+        </p>
+
+        {/* Maturity Badge */}
+        <div className="inline-block px-4 py-2 bg-white rounded-full shadow-sm border-2 border-purple-200">
+          <span className="text-sm font-medium text-purple-800">
+            {narrative.maturity_assessment.split(':')[0]}
+          </span>
+        </div>
+      </div>
+
+      {/* Human Analogy */}
+      <div className="bg-white rounded-lg shadow p-6 border-l-4 border-blue-500">
+        <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
+          <span>💡</span>
+          <span>In Human Terms</span>
+        </h2>
+        <p className="text-gray-700 leading-relaxed italic">
+          {narrative.human_analogy}
+        </p>
+      </div>
+
+      {/* Key Insights */}
+      <div className="bg-white rounded-lg shadow p-6">
+        <h2 className="text-xl font-bold mb-4">Key Insights</h2>
+        <div className="space-y-3">
+          {narrative.key_insights.map((insight, idx) => (
+            <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+              <span className="text-2xl">
+                {insight.includes('Strong') || insight.includes('Well-calibrated') ? '✓' :
+                 insight.includes('Negative') || insight.includes('Overconfident') ? '⚠' :
+                 insight.includes('Multi-domain') ? '🎯' : '📊'}
+              </span>
+              <p className="text-gray-700 pt-1">{insight}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Learning Chapters */}
+      <div className="bg-white rounded-lg shadow p-6">
+        <h2 className="text-xl font-bold mb-4">Learning Journey</h2>
+        <div className="space-y-4">
+          {narrative.chapters.map((chapter, idx) => (
+            <div key={idx} className="border rounded-lg overflow-hidden">
+              {/* Chapter Header */}
+              <button
+                onClick={() => setExpandedChapter(expandedChapter === idx ? null : idx)}
+                className="w-full p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left flex items-center justify-between"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">
+                    {chapter.phase === 'early' ? '🌱' : chapter.phase === 'middle' ? '🌿' : '🌳'}
+                  </span>
+                  <div>
+                    <h3 className="font-bold text-lg">{chapter.title}</h3>
+                    <p className="text-sm text-gray-600">
+                      Patterns {chapter.pattern_range[0]} - {chapter.pattern_range[1]}
+                    </p>
+                  </div>
+                </div>
+                <span className="text-gray-400">
+                  {expandedChapter === idx ? '▼' : '▶'}
+                </span>
+              </button>
+
+              {/* Chapter Content */}
+              {expandedChapter === idx && (
+                <div className="p-4 space-y-4">
+                  {/* Learning Summary */}
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h4 className="font-semibold mb-2">Learning Summary</h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      {chapter.learning_summary}
+                    </p>
+                  </div>
+
+                  {/* Coherence Evolution */}
+                  <div className="bg-purple-50 p-4 rounded-lg">
+                    <h4 className="font-semibold mb-2">Coherence Evolution</h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      {chapter.coherence_evolution}
+                    </p>
+                  </div>
+
+                  {/* Key Events */}
+                  {chapter.key_events.length > 0 && (
+                    <div>
+                      <h4 className="font-semibold mb-3">Key Learning Events</h4>
+                      <div className="space-y-2">
+                        {chapter.key_events.map((event, eventIdx) => {
+                          const isExpanded = expandedEvent === `${idx}-${eventIdx}`;
+                          const eventKey = `${idx}-${eventIdx}`;
+
+                          return (
+                            <div key={eventIdx} className="border rounded-lg overflow-hidden">
+                              <button
+                                onClick={() => setExpandedEvent(isExpanded ? null : eventKey)}
+                                className="w-full p-3 bg-gray-50 hover:bg-gray-100 transition-colors text-left flex items-center justify-between"
+                              >
+                                <div className="flex items-center gap-2">
+                                  <span className="text-lg">
+                                    {event.event_type === 'breakthrough' ? '🚀' :
+                                     event.event_type === 'setback' ? '⚠️' :
+                                     event.event_type === 'surprise' ? '❗' : '✓'}
+                                  </span>
+                                  <span className={`px-2 py-1 rounded text-xs font-medium ${
+                                    event.event_type === 'breakthrough' ? 'bg-green-100 text-green-800' :
+                                    event.event_type === 'setback' ? 'bg-red-100 text-red-800' :
+                                    event.event_type === 'surprise' ? 'bg-yellow-100 text-yellow-800' :
+                                    'bg-blue-100 text-blue-800'
+                                  }`}>
+                                    {event.event_type}
+                                  </span>
+                                  <span className="text-sm text-gray-700">
+                                    Pattern #{event.pattern_index}
+                                  </span>
+                                </div>
+                                <span className="text-gray-400 text-sm">
+                                  {isExpanded ? '▼' : '▶'}
+                                </span>
+                              </button>
+
+                              {isExpanded && (
+                                <div className="p-3 bg-white space-y-2">
+                                  <p className="text-gray-700">
+                                    <span className="font-semibold">What happened: </span>
+                                    {event.description}
+                                  </p>
+                                  <p className="text-gray-700">
+                                    <span className="font-semibold">Why it matters: </span>
+                                    {event.significance}
+                                  </p>
+                                  {event.coherence_context && (
+                                    <p className="text-gray-600 text-sm italic bg-purple-50 p-2 rounded">
+                                      <span className="font-semibold">Coherence context: </span>
+                                      {event.coherence_context}
+                                    </p>
+                                  )}
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Full Maturity Assessment */}
+      <div className="bg-white rounded-lg shadow p-6 border-l-4 border-purple-500">
+        <h2 className="text-xl font-bold mb-3">Maturity Assessment</h2>
+        <p className="text-gray-700 leading-relaxed">
+          {narrative.maturity_assessment}
+        </p>
       </div>
     </div>
   );

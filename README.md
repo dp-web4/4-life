@@ -127,23 +127,37 @@ Perfect for understanding questions like:
 
 ## Pattern Corpus Browser
 
-The `/patterns` page visualizes Epistemic Proprioception (EP) learning - how agents develop meta-cognition by learning what they know:
+The `/patterns` page visualizes Epistemic Proprioception (EP) learning - how agents develop meta-cognition by learning what they know.
 
-- **Learning statistics**: Success rates, confidence trends, prediction accuracy over time
-- **Scenario analysis**: Which situations does the agent handle well vs poorly?
-- **Domain analysis**: How do different epistemic domains (emotional, quality, attention) perform?
-- **Learning trajectory**: Visual charts showing improvement across pattern accumulation
-- **Quality metrics**: Confidence reliability, risk calibration, decision effectiveness
-- **Key patterns**: Inspect critical learning moments (breakthroughs, setbacks, surprises)
-- **Coherence integration**: Maps patterns to 9-domain unified coherence framework (validated in HRM Sessions 177-193)
-- **Learning narratives**: Human-readable stories of epistemic development
+### Seven Analysis Views
 
-Available corpora:
+1. **Overview**: At-a-glance statistics (success rates, predictions, domains, scenarios)
+2. **Narrative**: Human-readable learning journey with chapters, events, and maturity assessment
+3. **Scenarios**: Performance breakdown by scenario type
+4. **Domains**: Analysis across epistemic domains (emotional, quality, attention, etc.)
+5. **Trajectory**: Visual charts showing learning improvement over time
+6. **Quality**: Corpus quality metrics (confidence reliability, risk calibration, decision effectiveness)
+7. **Patterns**: Inspect individual patterns with full context, predictions, and outcomes
+
+### Key Features
+
+- **Learning narratives** ⭐ NEW: Auto-generated stories explaining epistemic development
+  - Three-phase journey (Foundations → Development → Maturity)
+  - Key learning events (breakthroughs, setbacks, surprises, confirmations)
+  - Human analogies translating agent learning to relatable experiences
+  - Maturity assessment (NASCENT → IMMATURE → DEVELOPING → MATURE)
+  - Coherence evolution explanations grounded in 9-domain physics
+- **Interactive exploration**: Expand chapters, drill into events, see coherence context
+- **Visual trajectory charts**: Success rate, confidence, and accuracy over time
+- **Multi-corpus comparison**: Switch between three validated pattern corpora
+
+### Available Corpora
+
 - **Web4 Native** (100 patterns): Web4-specific ATP/trust scenarios
 - **Integrated Federation** (1123 patterns): Multi-agent federation learning
 - **Phase 3 Contextual** (1293 patterns): Advanced contextual pattern learning
 
-This tool makes visible the "learning to learn" process - epistemic proprioception in action.
+This tool makes visible the "learning to learn" process - epistemic proprioception in action. The narrative tab translates invisible machine learning into comprehensible human stories.
 
 ## Prerequisites (Full Details)
 
