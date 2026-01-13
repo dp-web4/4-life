@@ -29,6 +29,7 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 |----------------|------------|
 | **Understand the ideas** | [What Is This?](#what-is-this) below, then [/how-it-works](http://localhost:3000/how-it-works) |
 | **See it running** | [See It Work](#see-it-work-60-seconds) above |
+| **Understand identity constellations** | [/identity-constellation](http://localhost:3000/identity-constellation) - Multi-device identity explained |
 | **Understand EP learning** | [/patterns](http://localhost:3000/patterns) - See how agents learn |
 | **Compare simulations** | [/compare](http://localhost:3000/compare) - Side-by-side analysis |
 | **Explore the code** | [Repo Map](#repo-map) below |
@@ -69,6 +70,7 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── compare/            # Comparative simulation analysis
 │   ├── narratives/         # Human-readable story browser
 │   ├── patterns/           # Pattern corpus browser (EP learning visualization)
+│   ├── identity-constellation/ # Multi-device identity explainer (NEW)
 │   ├── web4-explainer/     # Core Web4 concepts
 │   └── api/
 │       ├── lab-run/        # API endpoint for simulations
@@ -158,6 +160,41 @@ The `/patterns` page visualizes Epistemic Proprioception (EP) learning - how age
 - **Phase 3 Contextual** (1293 patterns): Advanced contextual pattern learning
 
 This tool makes visible the "learning to learn" process - epistemic proprioception in action. The narrative tab translates invisible machine learning into comprehensible human stories.
+
+## Identity Constellations
+
+The `/identity-constellation` page explains Web4's multi-device identity model - **why more devices make your identity stronger, not weaker**.
+
+### The Counter-Intuitive Insight
+
+**Traditional identity (passwords)**: Each device that logs in = another attack surface = WEAKER
+
+**Web4 identity (constellations)**: Each device witnessing your identity = harder to fake = STRONGER
+
+### How It Works
+
+1. **Root LCT**: Your core identity, attested to by all your devices
+2. **Device LCTs**: Each device (phone, laptop, FIDO2 key) has its own hardware-bound cryptographic key
+3. **Cross-device witnessing**: Devices "see" each other and create mutual witness records
+4. **Trust accumulation**: More devices witnessing = higher trust score
+5. **Recovery quorum**: Lost your phone? Other devices can recover your identity (e.g., 2 of 3 required)
+
+### Interactive Features
+
+- **Constellation visualizer**: See how trust grows from 1 to 5 devices
+- **Attack difficulty calculator**: Shows exponential increase in compromise difficulty
+- **Enrollment walkthrough**: Step-by-step explanation of adding devices
+- **Comparison table**: Traditional passwords vs Web4 constellations
+- **Technical details**: How Secure Enclaves, TPMs, and FIDO2 keys work (for the curious)
+
+### Why This Matters
+
+- **No password leaks**: Your identity isn't stored on hackable servers
+- **Targeted attacks get harder**: Attacker must compromise multiple independent hardware chips
+- **Works across Web4**: One identity, no separate accounts
+- **Trust through witnesses**: More devices = higher trust = better society participation
+
+This page demonstrates Web4's philosophy: **identity is coherence across witnesses**.
 
 ## Prerequisites (Full Details)
 
