@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { NarrativePanel } from "@/components/NarrativePanel";
+import { ReasoningTimeline } from "@/components/ReasoningTimeline";
 
 // v0 Lab Console for 4-Life
 // --------------------------
@@ -752,20 +753,21 @@ export default function LabConsolePage() {
                   )}
 
                   {actionsForLife.length > 0 && (
-                    <details style={{ marginTop: "0.5rem" }}>
-                      <summary>
-                        Applied actions: {actionsForLife.length}
+                    <details style={{ marginTop: "0.75rem" }} open>
+                      <summary style={{
+                        cursor: "pointer",
+                        fontWeight: 600,
+                        color: "#38bdf8",
+                        marginBottom: "0.5rem"
+                      }}>
+                        🧠 Agent Reasoning & Decisions
                       </summary>
-                      <ul style={{ marginTop: "0.5rem", paddingLeft: "1.25rem", color: "#9ca3af" }}>
-                        {actionsForLife.slice(-5).map((a: any, idx: number) => (
-                          <li key={`${life.life_id}-${idx}`}>
-                            tick {Number(a.world_tick)}: {String(a.action_type)} (ATP {Number(a.atp_cost).toFixed(2)})
-                            {a.learning_mode ? ` | mode ${String(a.learning_mode)}` : ""}
-                            {a.ep_decision ? ` | EP ${String(a.ep_decision)}` : ""}
-                            {typeof a.ep_confidence !== "undefined" ? ` (${Number(a.ep_confidence).toFixed(2)})` : ""}
-                          </li>
-                        ))}
-                      </ul>
+                      <ReasoningTimeline
+                        actions={actionsForLife as any}
+                        lifeId={life.life_id}
+                        t3History={life.t3_history}
+                        atpHistory={life.atp_history}
+                      />
                     </details>
                   )}
                 </div>
