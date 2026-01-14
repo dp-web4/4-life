@@ -14,10 +14,10 @@ export default function HowItWorksPage() {
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Web4 is trust-native infrastructure for humans and AI. Instead of
           relying on platforms, moderators, or authorities, Web4 societies
-          self-regulate through four foundational mechanisms:
+          self-regulate through five foundational mechanisms:
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
           <div className="bg-gradient-to-br from-blue-950/30 to-blue-900/20 border border-blue-800/30 rounded-lg p-6">
             <div className="text-3xl mb-2">🔐</div>
             <h3 className="text-lg font-semibold text-blue-400 mb-2">
@@ -80,6 +80,23 @@ export default function HowItWorksPage() {
             </p>
             <Link
               href="/coherence-index"
+              className="text-sky-400 hover:underline text-sm mt-2 inline-block"
+            >
+              Learn more →
+            </Link>
+          </div>
+
+          <div className="bg-gradient-to-br from-cyan-950/30 to-cyan-900/20 border border-cyan-800/30 rounded-lg p-6">
+            <div className="text-3xl mb-2">🌐</div>
+            <h3 className="text-lg font-semibold text-cyan-400 mb-2">
+              Context (MRH)
+            </h3>
+            <p className="text-sm text-gray-400">
+              Markov Relevancy Horizon defines context boundaries through
+              relationships - you see what&apos;s relevant, nothing more.
+            </p>
+            <Link
+              href="/markov-relevancy-horizon"
               className="text-sky-400 hover:underline text-sm mt-2 inline-block"
             >
               Learn more →

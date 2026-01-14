@@ -34,6 +34,7 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 | **Understand ATP/ADP economics** | [/atp-economics](http://localhost:3000/atp-economics) - Metabolic budget explained |
 | **Understand trust tensors (T3)** | [/trust-tensor](http://localhost:3000/trust-tensor) - Multi-dimensional trust explained |
 | **Understand coherence index (CI)** | [/coherence-index](http://localhost:3000/coherence-index) - Incoherence detection explained |
+| **Understand context boundaries (MRH)** | [/markov-relevancy-horizon](http://localhost:3000/markov-relevancy-horizon) - Relationship-based context explained |
 | **Understand identity constellations** | [/identity-constellation](http://localhost:3000/identity-constellation) - Multi-device identity explained |
 | **Understand EP learning** | [/patterns](http://localhost:3000/patterns) - See how agents learn |
 | **Compare simulations** | [/compare](http://localhost:3000/compare) - Side-by-side analysis |
@@ -53,8 +54,8 @@ The core question: **Can we create digital societies where trust emerges from ve
 - **ATP/ADP Cycles**: Metabolic economics - entities earn and spend "attention" through meaningful participation
 - **Trust Tensors (T3)**: Multi-dimensional trust that captures competence, reliability, alignment, and more
 - **Coherence Index (CI)**: Multi-dimensional coherence detection (spatial, temporal, capability, relational) that modulates trust in real-time
+- **Markov Relevancy Horizons (MRH)**: Context boundaries defined by relationship graphs - you see what's relevant through your connections
 - **Linked Context Tokens (LCT)**: Unforgeable digital presence rooted in hardware or verified identity
-- **Markov Relevancy Horizons (MRH)**: Context boundaries that define what each entity can perceive and influence
 
 ### Name Significance
 
@@ -78,7 +79,8 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── patterns/           # Pattern corpus browser (EP learning visualization)
 │   ├── atp-economics/      # ATP/ADP metabolic economics explainer
 │   ├── trust-tensor/       # Trust Tensor (T3) multi-dimensional trust explainer
-│   ├── coherence-index/    # Coherence Index (CI) incoherence detection explainer (NEW)
+│   ├── coherence-index/    # Coherence Index (CI) incoherence detection explainer
+│   ├── markov-relevancy-horizon/ # MRH context boundaries explainer (NEW)
 │   ├── identity-constellation/ # Multi-device identity explainer
 │   ├── web4-explainer/     # Core Web4 concepts
 │   └── api/
