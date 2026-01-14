@@ -6,6 +6,8 @@
 
 ## See It Work (60 seconds)
 
+> **Note**: This assumes basic familiarity with command-line tools and Node.js development. If `npm install` doesn't mean anything to you, a fully hosted demo with zero setup is planned but not yet available.
+
 **Prerequisites**: [Node.js 18+](https://nodejs.org/), [Git](https://git-scm.com/)
 
 ```bash
