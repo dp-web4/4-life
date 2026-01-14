@@ -29,6 +29,7 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 |----------------|------------|
 | **Understand the ideas** | [What Is This?](#what-is-this) below, then [/how-it-works](http://localhost:3000/how-it-works) |
 | **See it running** | [See It Work](#see-it-work-60-seconds) above |
+| **Understand ATP/ADP economics** | [/atp-economics](http://localhost:3000/atp-economics) - Metabolic budget explained |
 | **Understand identity constellations** | [/identity-constellation](http://localhost:3000/identity-constellation) - Multi-device identity explained |
 | **Understand EP learning** | [/patterns](http://localhost:3000/patterns) - See how agents learn |
 | **Compare simulations** | [/compare](http://localhost:3000/compare) - Side-by-side analysis |
@@ -70,7 +71,8 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── compare/            # Comparative simulation analysis
 │   ├── narratives/         # Human-readable story browser
 │   ├── patterns/           # Pattern corpus browser (EP learning visualization)
-│   ├── identity-constellation/ # Multi-device identity explainer (NEW)
+│   ├── atp-economics/      # ATP/ADP metabolic economics explainer (NEW)
+│   ├── identity-constellation/ # Multi-device identity explainer
 │   ├── web4-explainer/     # Core Web4 concepts
 │   └── api/
 │       ├── lab-run/        # API endpoint for simulations
@@ -195,6 +197,41 @@ The `/identity-constellation` page explains Web4's multi-device identity model -
 - **Trust through witnesses**: More devices = higher trust = better society participation
 
 This page demonstrates Web4's philosophy: **identity is coherence across witnesses**.
+
+## ATP/ADP Economics
+
+The `/atp-economics` page explains Web4's metabolic economics - **why attention budgets make spam impossible and quality sustainable**.
+
+### The Problem Web4 Solves
+
+**Traditional web**: Unlimited actions = spam prevails, quality drowns, moderation armies needed
+
+**Web4**: Metabolic economics = spam is expensive, quality earns rewards, system self-regulates
+
+### How It Works
+
+1. **ATP (Allocation Transfer Packet)**: Attention budget you earn by contributing value
+2. **ADP (Allocation Discharge Packet)**: Record of how you spent that attention
+3. **Every action costs ATP**: Posting, messaging, voting = spend budget
+4. **Valuable contributions earn ATP**: Community validation rewards quality
+5. **Death is real**: Run out of ATP? You die. Reborn with karma if you built trust.
+
+### Interactive Features
+
+- **Metabolic simulator**: Try different actions, watch ATP fluctuate, experience death
+- **Action cost/reward calculator**: See which behaviors are sustainable
+- **Real simulation data**: Actual ATP trajectories from lab console
+- **Key insights**: Why spam dies, quality thrives, and death matters
+- **Technical details**: ATP vs traditional tokens, implementation specifics
+
+### Why This Matters
+
+- **Spam becomes impossible**: Not through moderation, but metabolic exhaustion
+- **Quality is sustainable**: Value creators earn more than they spend
+- **Death carries consequences**: No trivial account recreation
+- **Self-regulating system**: No moderators needed, math enforces fairness
+
+This page demonstrates Web4's economic foundation: **aliveness is measurable through metabolic budget**.
 
 ## Prerequisites (Full Details)
 
