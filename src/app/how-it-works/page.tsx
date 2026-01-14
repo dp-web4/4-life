@@ -14,10 +14,10 @@ export default function HowItWorksPage() {
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Web4 is trust-native infrastructure for humans and AI. Instead of
           relying on platforms, moderators, or authorities, Web4 societies
-          self-regulate through three foundational mechanisms:
+          self-regulate through four foundational mechanisms:
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <div className="bg-gradient-to-br from-blue-950/30 to-blue-900/20 border border-blue-800/30 rounded-lg p-6">
             <div className="text-3xl mb-2">🔐</div>
             <h3 className="text-lg font-semibold text-blue-400 mb-2">
@@ -63,6 +63,23 @@ export default function HowItWorksPage() {
             </p>
             <Link
               href="/trust-tensor"
+              className="text-sky-400 hover:underline text-sm mt-2 inline-block"
+            >
+              Learn more →
+            </Link>
+          </div>
+
+          <div className="bg-gradient-to-br from-orange-950/30 to-orange-900/20 border border-orange-800/30 rounded-lg p-6">
+            <div className="text-3xl mb-2">🌊</div>
+            <h3 className="text-lg font-semibold text-orange-400 mb-2">
+              Coherence (CI)
+            </h3>
+            <p className="text-sm text-gray-400">
+              Multi-dimensional coherence detecting fake identities through
+              spatial, temporal, capability, and relational consistency.
+            </p>
+            <Link
+              href="/coherence-index"
               className="text-sky-400 hover:underline text-sm mt-2 inline-block"
             >
               Learn more →
