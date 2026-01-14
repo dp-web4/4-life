@@ -30,6 +30,7 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 | **Understand the ideas** | [What Is This?](#what-is-this) below, then [/how-it-works](http://localhost:3000/how-it-works) |
 | **See it running** | [See It Work](#see-it-work-60-seconds) above |
 | **Understand ATP/ADP economics** | [/atp-economics](http://localhost:3000/atp-economics) - Metabolic budget explained |
+| **Understand trust tensors (T3)** | [/trust-tensor](http://localhost:3000/trust-tensor) - Multi-dimensional trust explained |
 | **Understand identity constellations** | [/identity-constellation](http://localhost:3000/identity-constellation) - Multi-device identity explained |
 | **Understand EP learning** | [/patterns](http://localhost:3000/patterns) - See how agents learn |
 | **Compare simulations** | [/compare](http://localhost:3000/compare) - Side-by-side analysis |
@@ -71,7 +72,8 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── compare/            # Comparative simulation analysis
 │   ├── narratives/         # Human-readable story browser
 │   ├── patterns/           # Pattern corpus browser (EP learning visualization)
-│   ├── atp-economics/      # ATP/ADP metabolic economics explainer (NEW)
+│   ├── atp-economics/      # ATP/ADP metabolic economics explainer
+│   ├── trust-tensor/       # Trust Tensor (T3) multi-dimensional trust explainer (NEW)
 │   ├── identity-constellation/ # Multi-device identity explainer
 │   ├── web4-explainer/     # Core Web4 concepts
 │   └── api/
@@ -232,6 +234,41 @@ The `/atp-economics` page explains Web4's metabolic economics - **why attention 
 - **Self-regulating system**: No moderators needed, math enforces fairness
 
 This page demonstrates Web4's economic foundation: **aliveness is measurable through metabolic budget**.
+
+## Trust Tensors (T3)
+
+The `/trust-tensor` page explains Web4's multi-dimensional trust framework - **why trust isn't a single number, and how T3 captures human relationship nuance**.
+
+### The Problem Web4 Solves
+
+**Traditional trust**: Single score = lost nuance, context-blind, easy to game
+
+**Web4**: Multi-dimensional tensors = preserved complexity, context-aware, hard to fake
+
+### How It Works
+
+1. **Five Trust Dimensions**: Competence, Reliability, Integrity, Alignment, Transparency
+2. **Dimension-specific updates**: Each action affects different dimensions differently
+3. **Context-weighted decisions**: Critical infrastructure? Weight reliability higher. Community leadership? Weight integrity higher.
+4. **Gaming requires omnidimensional excellence**: Can't optimize one dimension while ignoring others
+5. **Integration with ATP/CI**: Trust modulates ATP rewards and rebirth eligibility
+
+### Interactive Features
+
+- **Trust tensor simulator**: Choose scenarios, watch dimensions change independently
+- **Real-world comparison**: "The Expert" vs "The Reliable" - see why balanced trust matters
+- **Dimension explanations**: What each trust axis measures and why it matters
+- **Context weighting**: How different tasks require different trust profiles
+- **Technical details**: Mathematical implementation, T3 vs V3, integration with Web4 mechanics
+
+### Why This Matters
+
+- **Trust is multi-dimensional**: Competence ≠ reliability ≠ integrity
+- **Context determines relevance**: Medical advice needs different trust than car repair
+- **Nuance without noise**: Rich information that's still computable
+- **Gaming becomes authentic**: To fake trust across all dimensions = actually be trustworthy
+
+This page demonstrates Web4's trust foundation: **multi-dimensional trust captures human relationship complexity while remaining measurable**.
 
 ## Prerequisites (Full Details)
 
