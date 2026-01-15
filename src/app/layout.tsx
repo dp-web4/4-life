@@ -26,6 +26,7 @@ export default function RootLayout({
             <Link href="/playground">Playground</Link>
             <Link href="/lab-console">Lab console</Link>
             <Link href="/trust-networks">Trust networks</Link>
+            <Link href="/federation-economics">Federation economics</Link>
             <Link href="/compare">Compare</Link>
             <Link href="/narratives">Narratives</Link>
           </nav>

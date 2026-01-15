@@ -31,8 +31,9 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 |----------------|------------|
 | **Understand the ideas** | [What Is This?](#what-is-this) below, then [/how-it-works](http://localhost:3000/how-it-works) |
 | **See it running** | [See It Work](#see-it-work-60-seconds) above |
-| **Experiment with parameters** | [/playground](http://localhost:3000/playground) - Interactive parameter exploration ✨ NEW |
+| **Experiment with parameters** | [/playground](http://localhost:3000/playground) - Interactive parameter exploration |
 | **See trust networks form** | [/trust-networks](http://localhost:3000/trust-networks) - Multi-agent trust dynamics visualized |
+| **Understand federation markets** | [/federation-economics](http://localhost:3000/federation-economics) - How ATP markets self-organize ✨ NEW |
 | **Understand ATP/ADP economics** | [/atp-economics](http://localhost:3000/atp-economics) - Metabolic budget explained |
 | **Understand trust tensors (T3)** | [/trust-tensor](http://localhost:3000/trust-tensor) - Multi-dimensional trust explained |
 | **Understand coherence index (CI)** | [/coherence-index](http://localhost:3000/coherence-index) - Incoherence detection explained |
@@ -82,6 +83,7 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── narratives/         # Human-readable story browser
 │   ├── patterns/           # Pattern corpus browser (EP learning visualization)
 │   ├── trust-networks/     # Multi-agent trust dynamics visualization (Session #11)
+│   ├── federation-economics/ # Dynamic ATP markets & price signals (NEW Session #13)
 │   ├── atp-economics/      # ATP/ADP metabolic economics explainer
 │   ├── trust-tensor/       # Trust Tensor (T3) multi-dimensional trust explainer
 │   ├── coherence-index/    # Coherence Index (CI) incoherence detection explainer
@@ -102,14 +104,17 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── pattern_analyzer.ts # Pattern quality metrics and statistics
 │   ├── pattern_coherence_bridge.ts # Maps patterns to 9-domain coherence
 │   └── pattern_narratives.ts # Generates learning journey narratives
+├── src/lib/federation/     # Federation economics simulation
+│   └── market_simulator.ts # Dynamic ATP pricing based on supply/demand
 ├── src/components/         # React components
 │   ├── NarrativePanel.tsx  # Narrative display in lab console
 │   ├── NarrativeQuery.tsx  # ACT conversational interface
 │   ├── ReasoningTimeline.tsx # Agent decision reasoning visualization
 │   ├── DecisionEvolution.tsx # EP learning improvement across lives
 │   ├── TrustNetworkVisualization.tsx # Multi-agent trust network graph (Session #11)
-│   ├── PlaygroundControls.tsx # Parameter configuration UI (NEW Session #12)
-│   ├── PlaygroundResults.tsx # Simulation result visualization (NEW Session #12)
+│   ├── PlaygroundControls.tsx # Parameter configuration UI (Session #12)
+│   ├── PlaygroundResults.tsx # Simulation result visualization (Session #12)
+│   ├── FederationMarket.tsx # Dynamic ATP market visualization (NEW Session #13)
 │   └── ComparativeView.tsx # Side-by-side simulation comparison
 ├── public/                 # Pre-generated simulation results (JSON)
 └── docs/                   # Additional documentation
@@ -260,6 +265,46 @@ The `/playground` page enables **interactive parameter exploration** - the lowes
 - **Edge case discovery**: Break things, find tipping points, explore extremes
 
 This page demonstrates Web4's accessibility philosophy: **understanding emerges from participation, not just observation**.
+
+## Federation Economics (NEW - Session #13)
+
+The `/federation-economics` page visualizes **how ATP markets self-organize through dynamic pricing** - demonstrating emergent efficiency without central planning.
+
+### The Core Innovation
+
+**Traditional platforms**: Fixed prices, central resource allocation, inefficient matching of supply and demand
+
+**Web4 federations**: Dynamic ATP pricing responds to scarcity in real-time - high demand + low supply = premium, which signals profit opportunity and guides agent specialization
+
+### How It Works
+
+1. **Track Supply & Demand**: Federation monitors operations requesting each component (demand) and agents specializing in each component (supply)
+2. **Calculate Scarcity**: scarcity = demand / supply (high scarcity = premium, low scarcity = discount)
+3. **Apply ATP Premium**: Scarce components cost up to 50% more ATP, surplus components get up to 20% discount
+4. **Agents Respond**: High premiums signal profit opportunities, agents specialize, supply increases, prices stabilize at equilibrium
+
+### Interactive Features
+
+- **Live market simulation**: Watch ATP prices adjust as supply/demand changes over 50 ticks
+- **Component deep-dive**: Click any component to see its market history (price trajectory, supply/demand evolution)
+- **Market events**: System detects interesting moments (demand spikes, price surges, equilibrium, supply shocks)
+- **Real-world scenarios**: Mobile AI surge, accuracy oversupply, critical infrastructure demand
+
+### What You Can Discover
+
+- **Efficient allocation**: Supply flows to high-demand areas automatically through price signals
+- **Emergent specialization**: Agents develop capabilities the market values without being told
+- **Self-regulating markets**: No central planner adjusts prices - equilibrium emerges naturally
+- **Adaptive to change**: When federation needs shift, markets re-organize automatically
+
+### Why This Matters
+
+- **No central planning**: Markets allocate resources efficiently without authority
+- **Comparative advantage**: Agents specialize based on economic incentives, not instructions
+- **Real-time adaptation**: Prices respond to scarcity immediately, guiding resource allocation
+- **Federation-scale economics**: Shows how autonomous societies coordinate across the network
+
+This page demonstrates Web4's economic foundation: **markets self-organize through price signals, no central authority needed**.
 
 ## Trust Networks (Session #11)
 
