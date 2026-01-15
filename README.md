@@ -31,6 +31,7 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 |----------------|------------|
 | **Understand the ideas** | [What Is This?](#what-is-this) below, then [/how-it-works](http://localhost:3000/how-it-works) |
 | **See it running** | [See It Work](#see-it-work-60-seconds) above |
+| **See trust networks form** | [/trust-networks](http://localhost:3000/trust-networks) - Multi-agent trust dynamics visualized ✨ NEW |
 | **Understand ATP/ADP economics** | [/atp-economics](http://localhost:3000/atp-economics) - Metabolic budget explained |
 | **Understand trust tensors (T3)** | [/trust-tensor](http://localhost:3000/trust-tensor) - Multi-dimensional trust explained |
 | **Understand coherence index (CI)** | [/coherence-index](http://localhost:3000/coherence-index) - Incoherence detection explained |
@@ -78,11 +79,12 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── compare/            # Comparative simulation analysis
 │   ├── narratives/         # Human-readable story browser
 │   ├── patterns/           # Pattern corpus browser (EP learning visualization)
+│   ├── trust-networks/     # Multi-agent trust dynamics visualization (NEW Session #11)
 │   ├── atp-economics/      # ATP/ADP metabolic economics explainer
 │   ├── trust-tensor/       # Trust Tensor (T3) multi-dimensional trust explainer
 │   ├── coherence-index/    # Coherence Index (CI) incoherence detection explainer
 │   ├── markov-relevancy-horizon/ # MRH context boundaries explainer
-│   ├── decision-evolution/ # Decision Evolution (EP) learning across lives explainer (NEW)
+│   ├── decision-evolution/ # Decision Evolution (EP) learning across lives explainer
 │   ├── identity-constellation/ # Multi-device identity explainer
 │   ├── web4-explainer/     # Core Web4 concepts
 │   └── api/
@@ -101,7 +103,8 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── NarrativePanel.tsx  # Narrative display in lab console
 │   ├── NarrativeQuery.tsx  # ACT conversational interface
 │   ├── ReasoningTimeline.tsx # Agent decision reasoning visualization
-│   ├── DecisionEvolution.tsx # EP learning improvement across lives (NEW)
+│   ├── DecisionEvolution.tsx # EP learning improvement across lives
+│   ├── TrustNetworkVisualization.tsx # Multi-agent trust network graph (NEW Session #11)
 │   └── ComparativeView.tsx # Side-by-side simulation comparison
 ├── public/                 # Pre-generated simulation results (JSON)
 └── docs/                   # Additional documentation
@@ -210,6 +213,41 @@ The `/identity-constellation` page explains Web4's multi-device identity model -
 - **Trust through witnesses**: More devices = higher trust = better society participation
 
 This page demonstrates Web4's philosophy: **identity is coherence across witnesses**.
+
+## Trust Networks (NEW - Session #11)
+
+The `/trust-networks` page visualizes **how trust relationships form, strengthen, and decay between agents** in a multi-agent society - demonstrating society formation through emergent trust dynamics.
+
+### The Core Innovation
+
+**Traditional social networks**: Relationships are **declared** ("friend" someone, "follow" someone)
+
+**Web4 trust networks**: Relationships are **emergent** (trust forms naturally through behavioral interactions)
+
+### How It Works
+
+1. **Diverse Agent Profiles**: Cooperator, Opportunist, Free-rider, Learner, Maverick - each with different behavioral tendencies
+2. **Interaction-Based Trust**: Every agent-to-agent interaction increases or decreases trust
+3. **Trust Edge Evolution**: Relationships progress through stages (forming → stable → degrading → broken)
+4. **Coalition Emergence**: Groups of mutually-trusting agents form automatically - no declaration needed
+5. **Network Self-Organization**: Free-riders get isolated, cooperators form tight-knit groups
+
+### Interactive Features
+
+- **Force-directed graph visualization**: Agents as nodes (size = ATP), trust as edges (color = strength)
+- **Timeline scrubber**: Watch trust network evolve tick-by-tick
+- **Network metrics**: Density, average trust, strong/broken edges
+- **Agent profile indicators**: Visual distinction between behavioral types
+- **Coalition highlighting**: See emergent groups form and dissolve
+
+### Why This Matters
+
+- **Society without central authority**: No admin decides who's trustworthy - network self-organizes
+- **Reputation cannot be faked**: Bad actors can't escape consequences by creating new accounts
+- **Coalitions enable coordination**: Mutually-trusting agents can pool resources, share insurance, govern collectively
+- **Trust is the foundation**: All cooperation emerges from verifiable trustworthiness
+
+This page demonstrates Web4's social foundation: **society emerges from trust, not authority**.
 
 ## ATP/ADP Economics
 
