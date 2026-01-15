@@ -31,7 +31,8 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 |----------------|------------|
 | **Understand the ideas** | [What Is This?](#what-is-this) below, then [/how-it-works](http://localhost:3000/how-it-works) |
 | **See it running** | [See It Work](#see-it-work-60-seconds) above |
-| **See trust networks form** | [/trust-networks](http://localhost:3000/trust-networks) - Multi-agent trust dynamics visualized ✨ NEW |
+| **Experiment with parameters** | [/playground](http://localhost:3000/playground) - Interactive parameter exploration ✨ NEW |
+| **See trust networks form** | [/trust-networks](http://localhost:3000/trust-networks) - Multi-agent trust dynamics visualized |
 | **Understand ATP/ADP economics** | [/atp-economics](http://localhost:3000/atp-economics) - Metabolic budget explained |
 | **Understand trust tensors (T3)** | [/trust-tensor](http://localhost:3000/trust-tensor) - Multi-dimensional trust explained |
 | **Understand coherence index (CI)** | [/coherence-index](http://localhost:3000/coherence-index) - Incoherence detection explained |
@@ -75,11 +76,12 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── page.tsx            # Home - "what is 4-life"
 │   ├── how-it-works/       # Conceptual walkthrough
 │   ├── starter-kit/        # Getting started guide
+│   ├── playground/         # Interactive parameter exploration (NEW Session #12)
 │   ├── lab-console/        # Live simulation viewer ← the "first win"
 │   ├── compare/            # Comparative simulation analysis
 │   ├── narratives/         # Human-readable story browser
 │   ├── patterns/           # Pattern corpus browser (EP learning visualization)
-│   ├── trust-networks/     # Multi-agent trust dynamics visualization (NEW Session #11)
+│   ├── trust-networks/     # Multi-agent trust dynamics visualization (Session #11)
 │   ├── atp-economics/      # ATP/ADP metabolic economics explainer
 │   ├── trust-tensor/       # Trust Tensor (T3) multi-dimensional trust explainer
 │   ├── coherence-index/    # Coherence Index (CI) incoherence detection explainer
@@ -89,6 +91,7 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── web4-explainer/     # Core Web4 concepts
 │   └── api/
 │       ├── lab-run/        # API endpoint for simulations
+│       ├── playground/     # API endpoint for parameter playground (NEW Session #12)
 │       └── patterns/       # API endpoint for pattern corpus data
 ├── src/lib/narratives/     # Narrative generation system
 │   ├── event_detector.ts   # Identifies interesting moments
@@ -104,7 +107,9 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── NarrativeQuery.tsx  # ACT conversational interface
 │   ├── ReasoningTimeline.tsx # Agent decision reasoning visualization
 │   ├── DecisionEvolution.tsx # EP learning improvement across lives
-│   ├── TrustNetworkVisualization.tsx # Multi-agent trust network graph (NEW Session #11)
+│   ├── TrustNetworkVisualization.tsx # Multi-agent trust network graph (Session #11)
+│   ├── PlaygroundControls.tsx # Parameter configuration UI (NEW Session #12)
+│   ├── PlaygroundResults.tsx # Simulation result visualization (NEW Session #12)
 │   └── ComparativeView.tsx # Side-by-side simulation comparison
 ├── public/                 # Pre-generated simulation results (JSON)
 └── docs/                   # Additional documentation
@@ -214,7 +219,49 @@ The `/identity-constellation` page explains Web4's multi-device identity model -
 
 This page demonstrates Web4's philosophy: **identity is coherence across witnesses**.
 
-## Trust Networks (NEW - Session #11)
+## Parameter Playground (NEW - Session #12)
+
+The `/playground` page enables **interactive parameter exploration** - the lowest-friction pathway to participation in Web4 experimentation.
+
+### The Core Innovation
+
+**Traditional learning**: Read documentation, understand concepts, write code, run simulations
+**Playground learning**: Adjust sliders, click "Run", see results instantly - iterate and discover
+
+### How It Works
+
+1. **Adjust Parameters**: Use sliders to configure ATP costs/rewards, trust dynamics, karma mechanics, and behavioral tendencies
+2. **Run Simulation**: Execute a multi-life agent cycle with your parameters (results in <1 second)
+3. **Explore Results**: View life trajectories, ATP/trust evolution, termination reasons, and auto-generated insights
+4. **Iterate & Learn**: Adjust based on results, re-run, discover tipping points and emergent patterns
+
+### Interactive Features
+
+- **16 configurable parameters**: From simulation settings (lives, ticks, risk) to economic mechanics (ATP costs/rewards) to trust dynamics (gain/loss rates)
+- **Quick presets**: Easy Mode, Hard Mode, Risk-Averse, Risk-Seeking - instant parameter templates
+- **Real-time visualization**: Life trajectory charts, ATP/trust evolution graphs, action success/failure timelines
+- **Auto-generated insights**: System identifies interesting patterns ("ATP exhaustion", "High karma rebirth", "Thrived with 0.99 trust!")
+- **Summary statistics**: Completion rates, death causes, average trust/ATP across lives
+
+### What You Can Discover
+
+- **Metabolic Balance**: What happens when rewards exceed costs by 2x? 5x? Where's the sustainability threshold?
+- **Trust Asymmetry**: Does trust need to be harder to gain than lose? How much asymmetry is optimal?
+- **Karma Compression**: Should high-trust rebirths get massive advantages? Or just a head start?
+- **Risk vs Reward**: Are risk-averse agents more stable? Do risk-seekers thrive or crash? What's the optimal strategy?
+- **Economic Tipping Points**: Which parameter combinations enable indefinite survival? Where does the system collapse?
+
+### Why This Matters
+
+- **No code required**: Experiment with Web4 mechanics without writing a single line
+- **Immediate feedback**: Results in seconds, not minutes - rapid iteration enables discovery
+- **Parameter sensitivity**: See how small changes cascade into large outcomes
+- **Intuition building**: Develop feel for Web4 economics through hands-on play
+- **Edge case discovery**: Break things, find tipping points, explore extremes
+
+This page demonstrates Web4's accessibility philosophy: **understanding emerges from participation, not just observation**.
+
+## Trust Networks (Session #11)
 
 The `/trust-networks` page visualizes **how trust relationships form, strengthen, and decay between agents** in a multi-agent society - demonstrating society formation through emergent trust dynamics.
 
