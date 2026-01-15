@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { NarrativePanel } from "@/components/NarrativePanel";
 import { ReasoningTimeline } from "@/components/ReasoningTimeline";
+import DecisionEvolution from "@/components/DecisionEvolution";
 
 // v0 Lab Console for 4-Life
 // --------------------------
@@ -774,6 +775,20 @@ export default function LabConsolePage() {
               );
             })}
           </div>
+        </section>
+      )}
+
+      {/* Decision Evolution - How EP learning improves decisions across lives */}
+      {ep && ep.lives && ep.lives.length >= 2 && ep.applied_actions && (
+        <section style={{ marginTop: "2rem" }}>
+          <h2>📈 Decision Evolution (EP Learning Across Lives)</h2>
+          <DecisionEvolution
+            lives={ep.lives.map((life, index) => ({
+              life_id: life.life_id,
+              life_number: index + 1,
+              actions: (ep.applied_actions?.[life.life_id] ?? []) as any
+            }))}
+          />
         </section>
       )}
 

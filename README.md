@@ -35,8 +35,9 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 | **Understand trust tensors (T3)** | [/trust-tensor](http://localhost:3000/trust-tensor) - Multi-dimensional trust explained |
 | **Understand coherence index (CI)** | [/coherence-index](http://localhost:3000/coherence-index) - Incoherence detection explained |
 | **Understand context boundaries (MRH)** | [/markov-relevancy-horizon](http://localhost:3000/markov-relevancy-horizon) - Relationship-based context explained |
+| **Understand decision evolution (EP)** | [/decision-evolution](http://localhost:3000/decision-evolution) - How agents learn across lives explained |
 | **Understand identity constellations** | [/identity-constellation](http://localhost:3000/identity-constellation) - Multi-device identity explained |
-| **Understand EP learning** | [/patterns](http://localhost:3000/patterns) - See how agents learn |
+| **Explore pattern learning** | [/patterns](http://localhost:3000/patterns) - Browse EP pattern corpus |
 | **Compare simulations** | [/compare](http://localhost:3000/compare) - Side-by-side analysis |
 | **Explore the code** | [Repo Map](#repo-map) below |
 | **Understand the broader research** | [Research Context](#research-context) |
@@ -80,7 +81,8 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── atp-economics/      # ATP/ADP metabolic economics explainer
 │   ├── trust-tensor/       # Trust Tensor (T3) multi-dimensional trust explainer
 │   ├── coherence-index/    # Coherence Index (CI) incoherence detection explainer
-│   ├── markov-relevancy-horizon/ # MRH context boundaries explainer (NEW)
+│   ├── markov-relevancy-horizon/ # MRH context boundaries explainer
+│   ├── decision-evolution/ # Decision Evolution (EP) learning across lives explainer (NEW)
 │   ├── identity-constellation/ # Multi-device identity explainer
 │   ├── web4-explainer/     # Core Web4 concepts
 │   └── api/
@@ -98,6 +100,8 @@ The core question: **Can we create digital societies where trust emerges from ve
 ├── src/components/         # React components
 │   ├── NarrativePanel.tsx  # Narrative display in lab console
 │   ├── NarrativeQuery.tsx  # ACT conversational interface
+│   ├── ReasoningTimeline.tsx # Agent decision reasoning visualization
+│   ├── DecisionEvolution.tsx # EP learning improvement across lives (NEW)
 │   └── ComparativeView.tsx # Side-by-side simulation comparison
 ├── public/                 # Pre-generated simulation results (JSON)
 └── docs/                   # Additional documentation
