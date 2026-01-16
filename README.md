@@ -27,8 +27,11 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 
 ## Where to Start
 
+**New to Web4?** → Start with the **[Learning Journey](http://localhost:3000/learn)** - a guided pathway from beginner to practitioner
+
 | You want to... | Start here |
 |----------------|------------|
+| **Guided learning path** | [/learn](http://localhost:3000/learn) - Progressive journey from beginner to practitioner ⭐ **RECOMMENDED** |
 | **Understand the ideas** | [What Is This?](#what-is-this) below, then [/how-it-works](http://localhost:3000/how-it-works) |
 | **See it running** | [See It Work](#see-it-work-60-seconds) above |
 | **Experiment with parameters** | [/playground](http://localhost:3000/playground) - Interactive parameter exploration |
