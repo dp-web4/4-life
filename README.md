@@ -33,7 +33,8 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 | **See it running** | [See It Work](#see-it-work-60-seconds) above |
 | **Experiment with parameters** | [/playground](http://localhost:3000/playground) - Interactive parameter exploration |
 | **See trust networks form** | [/trust-networks](http://localhost:3000/trust-networks) - Multi-agent trust dynamics visualized |
-| **Understand federation markets** | [/federation-economics](http://localhost:3000/federation-economics) - How ATP markets self-organize ✨ NEW |
+| **Understand federation markets** | [/federation-economics](http://localhost:3000/federation-economics) - How ATP markets self-organize |
+| **Understand unforgeable identity (LCT)** | [/lct-explainer](http://localhost:3000/lct-explainer) - Hardware-bound identity primitive ✨ NEW |
 | **Understand ATP/ADP economics** | [/atp-economics](http://localhost:3000/atp-economics) - Metabolic budget explained |
 | **Understand trust tensors (T3)** | [/trust-tensor](http://localhost:3000/trust-tensor) - Multi-dimensional trust explained |
 | **Understand coherence index (CI)** | [/coherence-index](http://localhost:3000/coherence-index) - Incoherence detection explained |
@@ -54,12 +55,12 @@ The core question: **Can we create digital societies where trust emerges from ve
 
 ### Key Concepts Being Explored
 
-- **Aliveness**: A rigorous definition of what makes an entity "alive" (metabolic budget, coherent agency, verifiable continuity)
+- **Linked Context Tokens (LCT)**: Unforgeable identity primitive - hardware-bound, witnessed, multi-device digital presence (FOUNDATIONAL - enables everything else)
 - **ATP/ADP Cycles**: Metabolic economics - entities earn and spend "attention" through meaningful participation
 - **Trust Tensors (T3)**: Multi-dimensional trust that captures competence, reliability, alignment, and more
 - **Coherence Index (CI)**: Multi-dimensional coherence detection (spatial, temporal, capability, relational) that modulates trust in real-time
 - **Markov Relevancy Horizons (MRH)**: Context boundaries defined by relationship graphs - you see what's relevant through your connections
-- **Linked Context Tokens (LCT)**: Unforgeable digital presence rooted in hardware or verified identity
+- **Aliveness**: A rigorous definition of what makes an entity "alive" (metabolic budget, coherent agency, verifiable continuity)
 
 ### Name Significance
 
