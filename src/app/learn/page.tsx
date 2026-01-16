@@ -215,6 +215,15 @@ export default function LearnJourney() {
           duration: "14 min read",
         },
         {
+          id: "coherence-framework",
+          title: "Coherence Framework: From 4 Dimensions to 9 Domains",
+          teaser:
+            "Web4's 4-dimensional CI (spatial, capability, temporal, relational) is grounded in Synchronism's 9-domain framework. Recent SAGE research discovered D4→D2 (attention gates metabolism), D5→κ (trust modulates coupling), D9→boundaries (spacetime gates context).",
+          why: "Understanding the full coherence framework reveals how Web4 emerges from fundamental physics, not arbitrary design. The 0.5 threshold appears in superconductivity, biology, and consciousness.",
+          link: "/coherence-framework",
+          duration: "18 min read",
+        },
+        {
           id: "ci-modulation",
           title: "CI Modulation: Trust Through Physics",
           teaser:
@@ -277,13 +286,13 @@ export default function LearnJourney() {
           duration: "15 min read",
         },
         {
-          id: "synchronism",
-          title: "Synchronism: The Theoretical Foundation",
+          id: "gating-mechanisms",
+          title: "Gating Mechanisms: Three-Dimensional Control",
           teaser:
-            "Web4's coherence theory comes from Synchronism—a framework connecting coherence physics across scales (superconductivity → biology → societies). The 0.5 threshold isn't arbitrary.",
-          why: "Understanding the theoretical foundation reveals why Web4 works and where it can be extended.",
-          link: "/web4-explainer",
-          duration: "20 min read",
+            "D4→D2 (boredom causes failure), D5→κ (confidence gates coupling), D9→boundaries (context contamination). Three critical gates discovered through SAGE autonomous research. All three must be functional for high performance.",
+          why: "Gating mechanisms reveal how coherence actively controls behavior, not just measures it. This is the cutting edge of Web4 research.",
+          link: "/coherence-framework",
+          duration: "15 min read (focus on gating section)",
         },
       ],
       actions: [
