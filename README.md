@@ -34,7 +34,8 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 | **Experiment with parameters** | [/playground](http://localhost:3000/playground) - Interactive parameter exploration |
 | **See trust networks form** | [/trust-networks](http://localhost:3000/trust-networks) - Multi-agent trust dynamics visualized |
 | **Understand federation markets** | [/federation-economics](http://localhost:3000/federation-economics) - How ATP markets self-organize |
-| **Understand unforgeable identity (LCT)** | [/lct-explainer](http://localhost:3000/lct-explainer) - Hardware-bound identity primitive ✨ NEW |
+| **Understand what makes entities "alive"** | [/aliveness](http://localhost:3000/aliveness) - Measurable aliveness criteria (ATP, T3, CI) ✨ NEW |
+| **Understand unforgeable identity (LCT)** | [/lct-explainer](http://localhost:3000/lct-explainer) - Hardware-bound identity primitive |
 | **Understand ATP/ADP economics** | [/atp-economics](http://localhost:3000/atp-economics) - Metabolic budget explained |
 | **Understand trust tensors (T3)** | [/trust-tensor](http://localhost:3000/trust-tensor) - Multi-dimensional trust explained |
 | **Understand coherence index (CI)** | [/coherence-index](http://localhost:3000/coherence-index) - Incoherence detection explained |
@@ -56,11 +57,11 @@ The core question: **Can we create digital societies where trust emerges from ve
 ### Key Concepts Being Explored
 
 - **Linked Context Tokens (LCT)**: Unforgeable identity primitive - hardware-bound, witnessed, multi-device digital presence (FOUNDATIONAL - enables everything else)
+- **Aliveness**: Measurable existence criteria - ATP > 0 (metabolic), T3 > 0.5 (agency), CI coherent (continuity). Death is real. Rebirth requires trust.
 - **ATP/ADP Cycles**: Metabolic economics - entities earn and spend "attention" through meaningful participation
 - **Trust Tensors (T3)**: Multi-dimensional trust that captures competence, reliability, alignment, and more
 - **Coherence Index (CI)**: Multi-dimensional coherence detection (spatial, temporal, capability, relational) that modulates trust in real-time
 - **Markov Relevancy Horizons (MRH)**: Context boundaries defined by relationship graphs - you see what's relevant through your connections
-- **Aliveness**: A rigorous definition of what makes an entity "alive" (metabolic budget, coherent agency, verifiable continuity)
 
 ### Name Significance
 
@@ -84,7 +85,9 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── narratives/         # Human-readable story browser
 │   ├── patterns/           # Pattern corpus browser (EP learning visualization)
 │   ├── trust-networks/     # Multi-agent trust dynamics visualization (Session #11)
-│   ├── federation-economics/ # Dynamic ATP markets & price signals (NEW Session #13)
+│   ├── federation-economics/ # Dynamic ATP markets & price signals (Session #13)
+│   ├── aliveness/          # Aliveness criteria explainer (ATP, T3, CI integration) (NEW Session #15)
+│   ├── lct-explainer/      # Linked Context Token (LCT) identity primitive (Session #14)
 │   ├── atp-economics/      # ATP/ADP metabolic economics explainer
 │   ├── trust-tensor/       # Trust Tensor (T3) multi-dimensional trust explainer
 │   ├── coherence-index/    # Coherence Index (CI) incoherence detection explainer
@@ -341,6 +344,86 @@ The `/trust-networks` page visualizes **how trust relationships form, strengthen
 - **Trust is the foundation**: All cooperation emerges from verifiable trustworthiness
 
 This page demonstrates Web4's social foundation: **society emerges from trust, not authority**.
+
+## Aliveness (NEW - Session #15)
+
+The `/aliveness` page explains **what makes an entity "alive" in Web4** - the foundational criteria that integrate LCT, ATP, T3, and CI into a cohesive framework.
+
+### The Core Innovation
+
+**Traditional web**: "Alive" is undefined. Account exists = "alive". No consequences for bad behavior (just make a new account).
+
+**Web4 aliveness**: Measurable existence defined by three rigorous criteria that must all be satisfied simultaneously.
+
+### The Three Criteria
+
+1. **Metabolic Budget (ATP > 0)**
+   - You must have attention budget to exist
+   - Every action costs ATP, valuable contributions earn ATP
+   - ATP = 0 means immediate death (no grace period)
+   - Only sustainable behaviors survive long-term
+
+2. **Coherent Agency (T3 > 0.5)**
+   - You must demonstrate intentional behavior
+   - 0.5 is a phase transition point from coherence physics (not arbitrary)
+   - Below 0.5 = reactive/random, Above 0.5 = genuine agency
+   - Trust Tensor dimensions: competence, reliability, integrity, alignment, transparency
+
+3. **Verifiable Continuity (CI coherent)**
+   - You must be consistent across time, space, capability, and relationships
+   - Coherence Index tracks four dimensions: spatial, capability, temporal, relational
+   - Geometric mean = one weak dimension tanks everything
+   - Incoherent behavior severely limits effective trust
+
+### Death and Rebirth
+
+**Death occurs when:**
+- ATP reaches 0 (metabolic death - most common)
+- CI drops below minimum (coherence death - fraud detected)
+- T3 drops below threshold (trust collapse)
+
+**Rebirth eligibility:**
+- Only entities with final T3 ≥ 0.5 get reborn
+- Society evaluates: "Did you build sufficient trust?"
+- If eligible: Reborn with ATP karma + trust reputation + CI history
+- If ineligible: Permanent death (society rejects)
+
+**Karma carry-forward:**
+- Die with 145 ATP and T3 = 0.72? Reborn with both!
+- Good behavior compounds across lives
+- Each generation starts stronger than the last
+- Bad actors die permanently (T3 < 0.5)
+
+### Why the 0.5 Threshold?
+
+From coherence physics (Synchronism framework):
+- Same threshold appears in superconductivity, biological systems, quantum coherence
+- Phase transition point where collective behavior emerges
+- Below 0.5: Random/reactive (Brownian motion)
+- At 0.5: Coherent patterns emerge
+- Above 0.5: Genuine intentionality demonstrated
+
+This isn't arbitrary—it's a universal coherence boundary validated across physical, biological, and social domains.
+
+### Interactive Features
+
+- **Aliveness calculator**: Adjust ATP, T3, CI sliders to see when entity is alive or dead
+- **Death/rebirth flow diagram**: Visual walkthrough of eligibility check
+- **Real simulation example**: Multi-life trajectory showing karma carry-forward
+- **Comparison table**: Traditional web vs Web4 aliveness
+- **Technical details**: Thresholds, modulation formulas, CI calculation
+
+### Why This Matters
+
+- **Spam dies naturally**: Metabolic exhaustion kills bots (no moderators needed)
+- **Quality thrives**: Value creators earn more than they spend, ATP accumulates
+- **Death carries meaning**: Real loss, not trivial account ban
+- **Trust is earned**: Multi-dimensional, observable, verifiable behavior
+- **Sybil resistance**: Consistency across four dimensions is expensive to fake
+- **Learning emerges**: EP patterns improve across generations
+- **Society self-regulates**: Economics + trust + coherence = no central authority
+
+This page demonstrates Web4's existential foundation: **aliveness is measurable through metabolic budget, coherent agency, and verifiable continuity**.
 
 ## ATP/ADP Economics
 
