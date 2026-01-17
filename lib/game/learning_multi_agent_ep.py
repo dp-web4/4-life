@@ -55,7 +55,7 @@ import json
 import numpy as np
 
 # Add SAGE EP framework
-hrm_path = Path(__file__).parent.parent.parent / "HRM"
+hrm_path = Path(__file__).parent.parent.parent.parent / "HRM"
 sys.path.insert(0, str(hrm_path / "sage" / "experiments"))
 
 from multi_ep_coordinator import (

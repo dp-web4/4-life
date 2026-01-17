@@ -31,3 +31,6 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+lib/game/**/__pycache__/
+lib/game/*.json
+!lib/game/ep_pattern_corpus_web4_native.json

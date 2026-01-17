@@ -13,7 +13,7 @@ from engine.agent_actions import apply_policy_action, applied_action_to_dict
 
 def _import_hrm_policy() -> Any:
     game_dir = Path(__file__).resolve().parent
-    ai_agents_root = game_dir.parent.parent
+    ai_agents_root = game_dir.parent.parent.parent  # go up from 4-life/lib/game -> lib -> 4-life -> ai-workspace
     hrm_root = ai_agents_root / "HRM"
 
     if hrm_root.is_dir():

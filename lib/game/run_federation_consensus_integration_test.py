@@ -30,7 +30,7 @@ import uuid
 
 # Add parent directories to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / "HRM"))
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent / "HRM"))
 
 # Import consensus engine
 from game.engine.consensus import (

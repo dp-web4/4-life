@@ -26,9 +26,9 @@ def _import_hrm_policy() -> Any:
     package by temporarily adding its path to `sys.path`.
     """
 
-    # Assume repo layout: c:/projects/ai-agents/{web4, HRM}
+    # Assume repo layout: /home/dp/ai-workspace/{4-life, HRM}
     game_dir = Path(__file__).resolve().parent
-    ai_agents_root = game_dir.parent.parent  # go up from web4/game -> web4 -> ai-agents
+    ai_agents_root = game_dir.parent.parent.parent  # go up from 4-life/lib/game -> lib -> 4-life -> ai-workspace
     hrm_root = ai_agents_root / "HRM"
 
     if hrm_root.is_dir():

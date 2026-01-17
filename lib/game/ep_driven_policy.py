@@ -49,7 +49,7 @@ import json
 import numpy as np
 
 # Add SAGE EP framework
-hrm_path = Path(__file__).parent.parent.parent / "HRM"
+hrm_path = Path(__file__).parent.parent.parent.parent / "HRM"
 sys.path.insert(0, str(hrm_path / "sage" / "experiments"))
 
 from multi_ep_coordinator import (
@@ -761,7 +761,7 @@ def create_policy_with_thor_patterns(hrm_path: Optional[Path] = None) -> EPDrive
     """
     if hrm_path is None:
         # Default: HRM repo location relative to web4
-        hrm_path = Path(__file__).parent.parent.parent / "HRM"
+        hrm_path = Path(__file__).parent.parent.parent.parent / "HRM"
 
     policy = EPDrivenPolicy()
 

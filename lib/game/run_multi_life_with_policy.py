@@ -22,7 +22,7 @@ def _import_hrm_policy() -> Any:
     """Dynamically import `run_policy_once` from the HRM repo."""
 
     game_dir = Path(__file__).resolve().parent
-    ai_agents_root = game_dir.parent.parent
+    ai_agents_root = game_dir.parent.parent.parent  # go up from 4-life/lib/game -> lib -> 4-life -> ai-workspace
     hrm_root = ai_agents_root / "HRM"
 
     if hrm_root.is_dir():

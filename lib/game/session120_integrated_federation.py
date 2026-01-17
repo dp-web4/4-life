@@ -44,7 +44,7 @@ from enum import Enum
 # Import my normalization approach
 try:
     # Add HRM path for Thor's code
-    hrm_path = Path(__file__).parent.parent.parent / "HRM"
+    hrm_path = Path(__file__).parent.parent.parent.parent / "HRM"
     sys.path.insert(0, str(hrm_path))
     from sage.experiments.session153_context_projection_layer import ContextProjector
     from sage.experiments.session155_provenance_aware_federation import (
@@ -488,7 +488,7 @@ def main():
     system = IntegratedFederationSystem()
 
     # Load test data (if available)
-    sage_path = Path(__file__).parent.parent.parent / "HRM" / "sage" / "experiments" / "ep_pattern_corpus_balanced_250.json"
+    sage_path = Path(__file__).parent.parent.parent.parent / "HRM" / "sage" / "experiments" / "ep_pattern_corpus_balanced_250.json"
     web4_path = Path(__file__).parent / "ep_pattern_corpus_web4_native.json"
 
     if not sage_path.exists() or not web4_path.exists():

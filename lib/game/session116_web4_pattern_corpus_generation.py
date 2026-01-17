@@ -44,7 +44,7 @@ from ep_driven_policy import EPDomain, EPPrediction, Web4EPContextBuilder
 from engine.models import Agent, World
 
 # Import SAGE EP coordinator
-hrm_path = Path(__file__).parent.parent.parent / "HRM"
+hrm_path = Path(__file__).parent.parent.parent.parent / "HRM"
 sys.path.insert(0, str(hrm_path / "sage" / "experiments"))
 from multi_ep_coordinator import MultiEPCoordinator
 

@@ -22,7 +22,7 @@ import numpy as np
 
 # Add modules
 sys.path.insert(0, str(Path(__file__).parent))
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / "HRM" / "sage" / "experiments"))
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent / "HRM" / "sage" / "experiments"))
 
 from ep_federation_normalization import (
     PatternContextNormalizer,

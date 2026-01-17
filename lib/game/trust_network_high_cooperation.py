@@ -193,7 +193,7 @@ if __name__ == "__main__":
     results = run_high_cooperation_simulation(num_ticks=50, snapshot_interval=5)
 
     # Save results
-    output_dir = Path(__file__).parent.parent.parent / "4-life" / "public"
+    output_dir = Path(__file__).parent.parent / "public"
     output_path = output_dir / "trust_network_high_cooperation.json"
 
     with open(output_path, "w") as f:

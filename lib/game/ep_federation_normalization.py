@@ -27,7 +27,7 @@ import sys
 from pathlib import Path
 
 # Add SAGE framework for EPDomain enum
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / "HRM" / "sage" / "experiments"))
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent / "HRM" / "sage" / "experiments"))
 from multi_ep_coordinator import EPDomain
 
 
