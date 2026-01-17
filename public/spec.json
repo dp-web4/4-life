@@ -1,0 +1,290 @@
+{
+  "project": "4-Life",
+  "tagline": "Trust-Native Societies for Humans and AI",
+  "version": "0.1.0-research",
+  "status": "experimental",
+  "updated": "2026-01-16",
+  "repository": "https://github.com/dp-web4/4-life",
+  "whitepaper": "https://dp-web4.github.io/web4/",
+
+  "primitives": {
+    "LCT": {
+      "name": "Linked Context Token",
+      "description": "Hardware-rooted identity strongly resistant to impersonation through TPM/Secure Enclave/FIDO2 binding",
+      "purpose": "Unforgeable digital presence that accumulates trust and reputation",
+      "implementation": "lib/game/engine/lct.py",
+      "spec": "https://dp-web4.github.io/web4/sections/foundational-concepts/lct-linked-context-token/",
+      "links": ["/lct-explainer", "/web4-explainer#lct"]
+    },
+    "ATP": {
+      "name": "Allocation Transfer Packet",
+      "description": "Metabolic currency inspired by biological ATP. Actions cost attention; quality earns it.",
+      "purpose": "Economic self-limitation of spam through metabolic dynamics",
+      "implementation": "lib/game/engine/atp_transactions.py",
+      "spec": "https://dp-web4.github.io/web4/sections/foundational-concepts/atp-adp-cycle/",
+      "links": ["/atp-economics", "/web4-explainer#atp"]
+    },
+    "MRH": {
+      "name": "Markov Relevancy Horizon",
+      "description": "Trust-based visibility boundaries. You see what's relevant through your trust network.",
+      "purpose": "Privacy-preserving information filtering through transitive trust",
+      "implementation": "lib/game/engine/mrh_aware_trust.py",
+      "spec": "https://dp-web4.github.io/web4/sections/foundational-concepts/mrh-markov-relevancy-horizon/",
+      "links": ["/web4-explainer#mrh"]
+    },
+    "T3": {
+      "name": "Trust Tensor",
+      "description": "3D role-specific trust (Talent, Training, Temperament)",
+      "purpose": "Multi-dimensional trust harder to game than single scores",
+      "implementation": "lib/game/engine/models.py",
+      "spec": "https://dp-web4.github.io/web4/sections/core-spec/t3-v3-tensors/",
+      "links": ["/trust-tensor", "/web4-explainer#t3-v3"]
+    },
+    "V3": {
+      "name": "Value Tensor",
+      "description": "3D value measurement (Valuation, Veracity, Validity)",
+      "purpose": "Multi-dimensional value prevents single-metric gaming",
+      "implementation": "lib/game/engine/multidimensional_v3.py",
+      "spec": "https://dp-web4.github.io/web4/sections/core-spec/t3-v3-tensors/",
+      "links": ["/web4-explainer#t3-v3"]
+    },
+    "CI": {
+      "name": "Coherence Index",
+      "description": "Behavioral consistency across time, space, capability, relationships",
+      "purpose": "Detection of incoherent behavior (teleporting, capability spoofing)",
+      "implementation": "lib/game/engine/coherence_atp_integration.py",
+      "spec": "https://dp-web4.github.io/web4/sections/coherence-framework/",
+      "links": ["/coherence-index"]
+    },
+    "R6": {
+      "name": "R6/R7 Action Framework",
+      "description": "Rules + Role + Request + Reference + Resource → Result (+ Reputation in R7)",
+      "purpose": "Deterministic, auditable, trust-scored actions",
+      "implementation": "lib/game/engine/r6.py",
+      "spec": "https://dp-web4.github.io/web4/sections/core-spec/r6-framework/",
+      "links": ["/web4-explainer#r6-r7"]
+    },
+    "EP": {
+      "name": "Epistemic Proprioception",
+      "description": "Self-awareness of knowledge across lives. Agents learn what they know and don't know.",
+      "purpose": "Multi-life learning and pattern accumulation",
+      "implementation": "lib/game/ep_driven_policy.py",
+      "links": ["/epistemic-proprioception"]
+    }
+  },
+
+  "core_claims": [
+    {
+      "claim": "Spam becomes metabolically self-limiting",
+      "mechanism": "Spammers burn ATP faster than they earn it without external subsidy",
+      "status": "demonstrated in simulation",
+      "evidence": ["/lab-console", "/atp-economics"]
+    },
+    {
+      "claim": "Multi-dimensional trust is harder to game",
+      "mechanism": "T3 vectors track talent, training, temperament; gaming all dimensions simultaneously requires actual competence",
+      "status": "theoretically sound, empirically untested at scale",
+      "evidence": ["/trust-tensor", "/playground"]
+    },
+    {
+      "claim": "Hardware-rooted identity raises impersonation cost",
+      "mechanism": "LCTs bound to TPM/Secure Enclave make creating thousands of fake identities expensive",
+      "status": "raises cost floor but doesn't make impossible for resourced attackers",
+      "evidence": ["/threat-model#sybil", "/lct-explainer"]
+    },
+    {
+      "claim": "Death is real but rebirth carries karma",
+      "mechanism": "ATP depletion causes death; reincarnation preserves T3 and EP across lives",
+      "status": "demonstrated in simulation",
+      "evidence": ["/lab-console", "/how-it-works#karma"]
+    },
+    {
+      "claim": "Coherence provides behavioral signals",
+      "mechanism": "Physical and temporal constraints create detectable inconsistencies",
+      "status": "theoretical framework, detection algorithms experimental",
+      "evidence": ["/coherence-index", "/threat-model#coherence"]
+    },
+    {
+      "claim": "Societies self-organize without central authority",
+      "mechanism": "Federation through ATP markets and trust-weighted consensus",
+      "status": "demonstrated in multi-society simulations",
+      "evidence": ["/federation-economics", "/trust-networks"]
+    }
+  ],
+
+  "assumptions": [
+    "Hardware attestation (TPM, Secure Enclave, FIDO2) provides meaningful identity anchoring",
+    "Multi-device witnessing creates sufficient cost barriers for Sybil attacks",
+    "Quality content generates more ATP through engagement than spam generates through volume",
+    "Trust relationships are transitive (friend-of-friend) but degrade with distance",
+    "Coherence violations are detectable before significant damage occurs",
+    "Economic incentives (ATP costs) are sufficient to deter most low-effort attacks",
+    "Collusion detection is possible through behavioral pattern analysis (open research problem)"
+  ],
+
+  "failure_modes": [
+    {
+      "id": "sybil",
+      "name": "Sybil Attacks",
+      "description": "Resourced attackers with many devices can create multiple identities",
+      "mitigation": "LCT hardware binding raises cost floor",
+      "residual_risk": "High-resource attackers (nation-states, well-funded orgs) not prevented",
+      "detection": "Multi-device witnessing patterns, hardware fingerprinting",
+      "anchor": "/threat-model#sybil"
+    },
+    {
+      "id": "collusion",
+      "name": "Collusion & Reputation Laundering",
+      "description": "Coordinated actors inflate each other's trust scores",
+      "mitigation": "Behavioral pattern analysis, outlier detection",
+      "residual_risk": "Detection time and accuracy unknown (open research problem)",
+      "detection": "Graph analysis, temporal correlation, ATP flow patterns",
+      "anchor": "/threat-model#collusion"
+    },
+    {
+      "id": "quality-inflation",
+      "name": "Quality Score Inflation",
+      "description": "Gaming T3 dimensions through selective presentation or temporary good behavior",
+      "mitigation": "Multi-dimensional trust, historical weighting",
+      "residual_risk": "Detection lag unknown, may allow short-term exploitation",
+      "detection": "Temporal consistency checks, peer comparison",
+      "anchor": "/threat-model#quality-inflation"
+    },
+    {
+      "id": "goodharting",
+      "name": "Goodharting T3 Dimensions",
+      "description": "Optimizing for measured dimensions while neglecting unmeasured aspects",
+      "mitigation": "Regular dimension rebalancing, qualitative oversight",
+      "residual_risk": "Fundamental challenge of any metric-based system",
+      "detection": "Human review of edge cases, emergent behavior monitoring",
+      "anchor": "/threat-model#goodharting"
+    },
+    {
+      "id": "mrh-limits",
+      "name": "MRH Visibility Limits",
+      "description": "Intentional trade-off between privacy and discoverability creates isolated clusters",
+      "mitigation": "Hub societies for cross-cluster bridging",
+      "residual_risk": "Acceptable trade-off; privacy often more valuable than universal discovery",
+      "detection": "Not a bug, it's a feature",
+      "anchor": "/threat-model#mrh-limits"
+    },
+    {
+      "id": "false-positives",
+      "name": "False Positives & Contested Events",
+      "description": "Incorrect trust penalties may be irreversible without appeals mechanism",
+      "mitigation": "None implemented yet",
+      "residual_risk": "High; legitimate users may be unfairly penalized",
+      "detection": "User reports, anomaly detection",
+      "anchor": "/threat-model#false-positives"
+    }
+  ],
+
+  "simulation_parameters": {
+    "atp": {
+      "initial": 100,
+      "death_threshold": 0,
+      "small_spend": 10,
+      "risky_spend": 25,
+      "quality_reward": 15,
+      "spam_cost": 5,
+      "spam_reward": 1
+    },
+    "trust_t3": {
+      "initial": 0.5,
+      "maturation_threshold": 0.7,
+      "decay_on_failure": -0.05,
+      "growth_on_success": 0.02,
+      "karma_preservation_min": 0.5,
+      "karma_preservation_max": 0.8
+    },
+    "multi_life": {
+      "default_lives": 3,
+      "ticks_per_life": 20,
+      "ep_maturation_lives": 5,
+      "pattern_corpus_size": 250
+    },
+    "coherence": {
+      "threshold": 0.5,
+      "domains": 9,
+      "trust_penalty": "exponential below 0.5",
+      "modulation_floor": 0.5
+    }
+  },
+
+  "interactive_tools": [
+    {
+      "name": "Lab Console",
+      "path": "/lab-console",
+      "description": "Real-time simulations of Web4 societies (EP closed loop, maturation demo, five-domain)",
+      "capabilities": ["multi-life cycles", "ATP economics", "trust dynamics", "pattern learning", "trust networks"]
+    },
+    {
+      "name": "Parameter Playground",
+      "path": "/playground",
+      "description": "16 tunable parameters with instant feedback",
+      "capabilities": ["ATP costs", "trust dynamics", "karma mechanics", "coherence thresholds"]
+    },
+    {
+      "name": "Trust Networks",
+      "path": "/trust-networks",
+      "description": "Visualization of trust relationship formation",
+      "capabilities": ["coalition emergence", "free-rider isolation", "network dynamics"]
+    },
+    {
+      "name": "Federation Economics",
+      "path": "/federation-economics",
+      "description": "ATP market self-organization through dynamic pricing",
+      "capabilities": ["market dynamics", "price discovery", "federation incentives"]
+    },
+    {
+      "name": "Pattern Corpus",
+      "path": "/patterns",
+      "description": "Browse agent learning patterns across lives",
+      "capabilities": ["epistemic proprioception", "pattern maturation", "learning trajectories"]
+    }
+  ],
+
+  "learning_journey": {
+    "beginner": {
+      "concepts": ["LCT", "ATP", "T3", "CI"],
+      "resources": ["/first-contact", "/glossary", "/how-it-works"],
+      "time_estimate": "10-15 minutes"
+    },
+    "intermediate": {
+      "concepts": ["emergent properties", "trust networks", "markets", "learning"],
+      "resources": ["/lab-console", "/trust-networks", "/federation-economics"],
+      "time_estimate": "30-60 minutes"
+    },
+    "advanced": {
+      "concepts": ["coherence modulation", "karma", "maturation", "failure modes"],
+      "resources": ["/coherence-index", "/epistemic-proprioception", "/threat-model"],
+      "time_estimate": "2-3 hours"
+    },
+    "practitioner": {
+      "concepts": ["parameter sweeps", "edge cases", "contributions"],
+      "resources": ["/playground", "/challenge-set", "https://github.com/dp-web4/4-life"],
+      "time_estimate": "ongoing"
+    }
+  },
+
+  "research_status": {
+    "maturity": "early research",
+    "production_ready": false,
+    "apis_stable": false,
+    "purpose": "exploration and collaboration",
+    "contribution_model": "better questions > just code",
+    "known_gaps": [
+      "Collusion detection algorithms unproven",
+      "Appeals mechanism not implemented",
+      "Hardware attestation stubbed (not production-grade)",
+      "Scale testing limited to simulations",
+      "Economic assumptions not validated with real humans"
+    ]
+  },
+
+  "contact": {
+    "github": "https://github.com/dp-web4/4-life",
+    "issues": "https://github.com/dp-web4/4-life/issues",
+    "whitepaper": "https://dp-web4.github.io/web4/"
+  }
+}

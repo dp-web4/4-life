@@ -1,0 +1,130 @@
+{
+  "project": "4-Life: Trust-Native Societies for Humans and AI",
+  "version": "0.1.0-research",
+  "updated": "2026-01-16",
+  "purpose": "Interactive exploration of Web4 trust mechanics through simulation",
+  "status": "experimental research (not production)",
+
+  "entry_points": {
+    "human": {
+      "quick_start": "/first-contact",
+      "description": "10-minute interactive tutorial from zero to comprehension"
+    },
+    "machine": {
+      "manifest": "/manifest",
+      "description": "One-page canonical summary of primitives, claims, and resources"
+    }
+  },
+
+  "machine_readable_resources": [
+    {
+      "path": "/spec.json",
+      "format": "application/json",
+      "description": "Structured specification of Web4 primitives, parameters, failure modes, and assumptions",
+      "use_case": "Automated analysis, parameter extraction, research automation"
+    },
+    {
+      "path": "/manifest",
+      "format": "text/html",
+      "description": "Canonical one-page summary with stable anchors",
+      "use_case": "Quick reference, link target, comprehensive overview"
+    },
+    {
+      "path": "/challenge-set",
+      "format": "text/html",
+      "description": "Research prompts for testing understanding and finding edge cases",
+      "use_case": "Guided exploration, adversarial testing, parameter sensitivity analysis"
+    },
+    {
+      "path": "/threat-model",
+      "format": "text/html",
+      "description": "Comprehensive threat analysis with stable anchors (#sybil, #collusion, etc.)",
+      "use_case": "Security analysis, attack surface enumeration, limitation transparency"
+    },
+    {
+      "path": "/glossary",
+      "format": "text/html",
+      "description": "Canonical definitions for all Web4 terminology",
+      "use_case": "Term lookup, acronym expansion, concept clarification"
+    }
+  ],
+
+  "interactive_tools": [
+    {
+      "path": "/lab-console",
+      "description": "Real-time Web4 society simulations (5 modes: EP closed loop, maturation demo, five-domain, multi-life, one-life)",
+      "capabilities": ["multi-life cycles", "ATP economics", "trust dynamics", "pattern learning"],
+      "api": "/api/lab-run"
+    },
+    {
+      "path": "/playground",
+      "description": "16 tunable parameters with instant feedback",
+      "capabilities": ["ATP costs", "trust dynamics", "karma mechanics", "coherence thresholds"],
+      "api": "/api/playground"
+    },
+    {
+      "path": "/trust-networks",
+      "description": "Trust relationship visualization",
+      "capabilities": ["coalition emergence", "free-rider isolation", "network dynamics"]
+    },
+    {
+      "path": "/patterns",
+      "description": "Browse agent learning patterns across lives",
+      "capabilities": ["epistemic proprioception", "pattern maturation", "learning trajectories"]
+    }
+  ],
+
+  "stable_anchors": {
+    "threat_model": {
+      "sybil": "/threat-model#sybil",
+      "collusion": "/threat-model#collusion",
+      "quality_inflation": "/threat-model#quality-inflation",
+      "goodharting": "/threat-model#goodharting",
+      "mrh_limits": "/threat-model#mrh-limits",
+      "false_positives": "/threat-model#false-positives"
+    },
+    "primitives": {
+      "lct": "/web4-explainer#lct",
+      "atp": "/web4-explainer#atp",
+      "mrh": "/web4-explainer#mrh",
+      "t3_v3": "/web4-explainer#t3-v3",
+      "r6_r7": "/web4-explainer#r6-r7"
+    }
+  },
+
+  "learning_paths": {
+    "beginner": {
+      "start": "/first-contact",
+      "then": ["/glossary", "/how-it-works", "/web4-explainer"],
+      "time": "10-15 minutes"
+    },
+    "intermediate": {
+      "start": "/lab-console",
+      "then": ["/trust-networks", "/federation-economics", "/patterns"],
+      "time": "30-60 minutes"
+    },
+    "advanced": {
+      "start": "/threat-model",
+      "then": ["/coherence-index", "/epistemic-proprioception", "/challenge-set"],
+      "time": "2-3 hours"
+    },
+    "researcher": {
+      "start": "/challenge-set",
+      "then": ["/playground", "/spec.json", "https://github.com/dp-web4/4-life"],
+      "time": "ongoing"
+    }
+  },
+
+  "external_resources": {
+    "whitepaper": "https://dp-web4.github.io/web4/",
+    "github": "https://github.com/dp-web4/4-life",
+    "issues": "https://github.com/dp-web4/4-life/issues"
+  },
+
+  "meta": {
+    "schema_version": "1.0",
+    "generator": "Claude Code",
+    "license": "See GitHub repository",
+    "contact": "https://github.com/dp-web4/4-life/issues"
+  }
+}

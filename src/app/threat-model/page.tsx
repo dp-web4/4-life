@@ -36,7 +36,7 @@ export default function ThreatModelPage() {
 
         <div className="space-y-6">
           {/* Sybil Attacks */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div id="sybil" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <div className="flex items-start gap-4 mb-4">
               <span className="text-3xl">👥</span>
               <div>
@@ -83,7 +83,7 @@ export default function ThreatModelPage() {
           </div>
 
           {/* Collusion & Reputation Laundering */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div id="collusion" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <div className="flex items-start gap-4 mb-4">
               <span className="text-3xl">🤝</span>
               <div>
@@ -141,7 +141,7 @@ export default function ThreatModelPage() {
           </div>
 
           {/* Quality Inflation */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div id="quality-inflation" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <div className="flex items-start gap-4 mb-4">
               <span className="text-3xl">📈</span>
               <div>
@@ -203,7 +203,7 @@ export default function ThreatModelPage() {
           </div>
 
           {/* Goodharting T3 Dimensions */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div id="goodharting" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <div className="flex items-start gap-4 mb-4">
               <span className="text-3xl">🎯</span>
               <div>
@@ -262,7 +262,7 @@ export default function ThreatModelPage() {
           </div>
 
           {/* MRH Visibility Limits */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div id="mrh-limits" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <div className="flex items-start gap-4 mb-4">
               <span className="text-3xl">🌐</span>
               <div>
@@ -320,7 +320,7 @@ export default function ThreatModelPage() {
           </div>
 
           {/* False Positives & Contested Events */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div id="false-positives" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <div className="flex items-start gap-4 mb-4">
               <span className="text-3xl">⚖️</span>
               <div>

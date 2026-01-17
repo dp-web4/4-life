@@ -1,0 +1,29 @@
+# robots.txt for 4-Life (Web4 Trust-Native Societies)
+# Updated: 2026-01-16
+
+User-agent: *
+Allow: /
+
+# Machine-readable resources for AI systems and researchers
+# These pages are intentionally crawlable and designed for automated consumption
+
+Allow: /manifest
+Allow: /spec.json
+Allow: /challenge-set
+Allow: /threat-model
+Allow: /glossary
+
+# Key interactive tools
+Allow: /lab-console
+Allow: /playground
+Allow: /trust-networks
+Allow: /patterns
+
+# Educational resources
+Allow: /first-contact
+Allow: /how-it-works
+Allow: /web4-explainer
+Allow: /learn
+
+# Sitemap
+Sitemap: https://4-life.vercel.app/sitemap.xml
