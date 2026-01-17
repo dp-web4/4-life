@@ -13,13 +13,16 @@ export default function HomePage() {
           metabolic, and death is real but rebirth carries karma forward.
         </p>
         <div className="button-row">
-          <Link href="/learn" className="button-primary">
-            Start learning →
+          <Link href="/first-contact" className="button-primary">
+            First Contact (10 min) →
           </Link>
           <Link href="/lab-console" className="button-secondary">
             See it work (60s)
           </Link>
         </div>
+        <p style={{ textAlign: "center", fontSize: "0.875rem", color: "#9ca3af", marginTop: "1rem" }}>
+          New to Web4? Start with <Link href="/first-contact" className="underline text-sky-400">First Contact</Link> — an interactive tutorial that takes you from zero knowledge to comprehension in 10 minutes.
+        </p>
       </section>
 
       <section>

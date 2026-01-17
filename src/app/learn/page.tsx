@@ -62,7 +62,7 @@ export default function LearnJourney() {
       stage: "beginner",
       title: "First Contact: What Makes Web4 Different?",
       description:
-        "You're curious about Web4 but don't know where to start. This path introduces the core problems Web4 solves and the foundational concepts that enable trust-native societies.",
+        "You're curious about Web4 but don't know where to start. If you haven't already, try the interactive First Contact tutorial first. This path dives deeper into the core problems Web4 solves and the foundational concepts that enable trust-native societies.",
       concepts: [
         {
           id: "aliveness",

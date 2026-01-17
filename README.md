@@ -27,10 +27,13 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 
 ## Where to Start
 
-**New to Web4?** → Start with the **[Learning Journey](http://localhost:3000/learn)** - a guided pathway from beginner to practitioner
+**Absolute beginner?** → Start with **[First Contact](http://localhost:3000/first-contact)** - zero to comprehension in 10 minutes ⭐⭐⭐
+
+**New to Web4?** → Then continue to **[Learning Journey](http://localhost:3000/learn)** - a guided pathway from beginner to practitioner
 
 | You want to... | Start here |
 |----------------|------------|
+| **Never seen Web4 before** | [/first-contact](http://localhost:3000/first-contact) - Interactive 10-minute tutorial (simulation + narrative + concepts) ⭐ **START HERE** |
 | **Guided learning path** | [/learn](http://localhost:3000/learn) - Progressive journey from beginner to practitioner ⭐ **RECOMMENDED** |
 | **Understand the ideas** | [What Is This?](#what-is-this) below, then [/how-it-works](http://localhost:3000/how-it-works) |
 | **See it running** | [See It Work](#see-it-work-60-seconds) above |
@@ -81,10 +84,11 @@ The core question: **Can we create digital societies where trust emerges from ve
 4-life/
 ├── src/app/                # Next.js pages
 │   ├── page.tsx            # Home - "what is 4-life"
+│   ├── first-contact/      # Interactive 10-min tutorial (zero to comprehension) ← START HERE (NEW Session #18)
 │   ├── how-it-works/       # Conceptual walkthrough
 │   ├── starter-kit/        # Getting started guide
 │   ├── playground/         # Interactive parameter exploration (NEW Session #12)
-│   ├── lab-console/        # Live simulation viewer ← the "first win"
+│   ├── lab-console/        # Live simulation viewer
 │   ├── compare/            # Comparative simulation analysis
 │   ├── narratives/         # Human-readable story browser
 │   ├── patterns/           # Pattern corpus browser (EP learning visualization)
