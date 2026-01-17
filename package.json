@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "narratives": "tsx scripts/generate_narratives.ts"
   },
   "dependencies": {
     "lucide-react": "^0.562.0",
@@ -20,6 +21,7 @@
     "@types/react-dom": "18.2.7",
     "eslint": "^9.0.0",
     "eslint-config-next": "16.1.1",
+    "tsx": "^4.21.0",
     "typescript": "5.4.2"
   }
 }

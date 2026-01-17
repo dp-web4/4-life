@@ -27,10 +27,21 @@ export default function NarrativeViewerPage() {
   useEffect(() => {
     if (!narrativeId) return;
 
-    // TODO: Load narrative from API
-    // For now, show error or redirect to generate
-    setLoading(false);
-    setError('Narrative loading from API not yet implemented. Generate narratives in the Lab Console.');
+    // Load narrative JSON from generated files
+    fetch(`/narratives/${narrativeId}.json`)
+      .then(res => {
+        if (!res.ok) throw new Error('Narrative not found');
+        return res.json();
+      })
+      .then(data => {
+        setNarrative(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Failed to load narrative:', err);
+        setError(`Failed to load narrative "${narrativeId}". It may not exist yet.`);
+        setLoading(false);
+      });
   }, [narrativeId]);
 
   const handleExport = (format: ExportFormat) => {

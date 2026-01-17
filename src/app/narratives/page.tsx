@@ -25,20 +25,15 @@ export default function NarrativesPage() {
   const [selectedTheme, setSelectedTheme] = useState<string>('');
 
   useEffect(() => {
-    // TODO: Load narratives from API or static files
-    // For now, show sample data
-    const sampleNarratives: NarrativeMeta[] = [
-      {
-        id: 'bob-3-lives',
-        title: 'Bob: 3 Lives of Karma and Consequences',
-        filename: 'bob-3-lives-markdown.md',
-        themes: ['Karma and Consequences', 'Equilibrium and Stability'],
-        lives: 3,
-        events: 11,
-        timestamp: '2026-01-13'
-      }
-    ];
-    setNarratives(sampleNarratives);
+    // Load narratives from generated index
+    fetch('/narratives/index.json')
+      .then(res => res.json())
+      .then(data => setNarratives(data))
+      .catch(error => {
+        console.error('Failed to load narratives:', error);
+        // Fallback to empty array
+        setNarratives([]);
+      });
   }, []);
 
   const allThemes = Array.from(new Set(narratives.flatMap(n => n.themes)));

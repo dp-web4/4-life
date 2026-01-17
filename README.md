@@ -50,6 +50,7 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 | **Understand decision evolution (EP)** | [/decision-evolution](http://localhost:3000/decision-evolution) - How agents learn across lives explained |
 | **Understand identity constellations** | [/identity-constellation](http://localhost:3000/identity-constellation) - Multi-device identity explained |
 | **Explore pattern learning** | [/patterns](http://localhost:3000/patterns) - Browse EP pattern corpus |
+| **Read simulation narratives** | [/narratives](http://localhost:3000/narratives) - Human-readable stories from simulations ✨ **NEW Session #19** |
 | **Compare simulations** | [/compare](http://localhost:3000/compare) - Side-by-side analysis |
 | **Explore the code** | [Repo Map](#repo-map) below |
 | **Understand the broader research** | [Research Context](#research-context) |
@@ -90,7 +91,7 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── playground/         # Interactive parameter exploration (NEW Session #12)
 │   ├── lab-console/        # Live simulation viewer
 │   ├── compare/            # Comparative simulation analysis
-│   ├── narratives/         # Human-readable story browser
+│   ├── narratives/         # Human-readable story browser (NEW Session #19 - production-ready)
 │   ├── patterns/           # Pattern corpus browser (EP learning visualization)
 │   ├── trust-networks/     # Multi-agent trust dynamics visualization (Session #11)
 │   ├── federation-economics/ # Dynamic ATP markets & price signals (Session #13)
@@ -108,9 +109,10 @@ The core question: **Can we create digital societies where trust emerges from ve
 │       ├── lab-run/        # API endpoint for simulations
 │       ├── playground/     # API endpoint for parameter playground (NEW Session #12)
 │       └── patterns/       # API endpoint for pattern corpus data
-├── src/lib/narratives/     # Narrative generation system
+├── src/lib/narratives/     # Narrative generation system (NEW Session #19 - production-ready)
 │   ├── event_detector.ts   # Identifies interesting moments
 │   ├── story_generator.ts  # Converts events to stories
+│   ├── narrative_exporter.ts # Export to Markdown/JSON/HTML
 │   ├── coherence_insights.ts # 9-domain framework explanations
 │   └── narrative_enrichment.ts # Adds coherence context
 ├── src/lib/patterns/       # Pattern learning analysis system
@@ -130,7 +132,11 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── FederationMarket.tsx # Dynamic ATP market visualization (NEW Session #13)
 │   └── ComparativeView.tsx # Side-by-side simulation comparison
 ├── public/                 # Pre-generated simulation results (JSON)
+│   └── narratives/         # Generated narrative files (Markdown + JSON) (NEW Session #19)
+├── scripts/                # Utility scripts
+│   └── generate_narratives.ts # Batch narrative generator (NEW Session #19)
 └── docs/                   # Additional documentation
+    └── NARRATIVE_SYSTEM.md # Complete narrative system documentation (NEW Session #19)
 ```
 
 ## The Lab Console

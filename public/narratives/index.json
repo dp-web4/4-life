@@ -1,0 +1,54 @@
+[
+  {
+    "id": "ep-driven-closed-loop",
+    "title": "Bob: 3 Lives of Karma and Consequences",
+    "filename": "ep-driven-closed-loop.md",
+    "themes": [
+      "Karma and Consequences",
+      "Equilibrium and Stability"
+    ],
+    "lives": 3,
+    "events": 28,
+    "timestamp": "2026-01-17",
+    "source_simulation": "ep_driven_closed_loop_results.json"
+  },
+  {
+    "id": "ep-five-domain-multi-life",
+    "title": "Unknown: 3 Lives of Karma and Consequences",
+    "filename": "ep-five-domain-multi-life.md",
+    "themes": [
+      "Karma and Consequences",
+      "Equilibrium and Stability"
+    ],
+    "lives": 3,
+    "events": 10,
+    "timestamp": "2026-01-17",
+    "source_simulation": "ep_five_domain_multi_life_results.json"
+  },
+  {
+    "id": "maturation-web4",
+    "title": "Bob: 3 Lives of Karma and Consequences",
+    "filename": "maturation-web4.md",
+    "themes": [
+      "Karma and Consequences",
+      "Equilibrium and Stability"
+    ],
+    "lives": 3,
+    "events": 43,
+    "timestamp": "2026-01-17",
+    "source_simulation": "maturation_demo_results_web4.json"
+  },
+  {
+    "id": "maturation-none",
+    "title": "Bob: 3 Lives of Karma and Consequences",
+    "filename": "maturation-none.md",
+    "themes": [
+      "Karma and Consequences",
+      "Equilibrium and Stability"
+    ],
+    "lives": 3,
+    "events": 45,
+    "timestamp": "2026-01-17",
+    "source_simulation": "maturation_demo_results_none.json"
+  }
+]
