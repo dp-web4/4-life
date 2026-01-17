@@ -2,11 +2,15 @@
 
 **A research prototype exploring trust-native societies for humans and AI.**
 
+🌐 **Live Demo**: [4-life-ivory.vercel.app](https://4-life-ivory.vercel.app/) - Try it now, no setup required
+
+📚 **In-depth Theory & Specs**: [Web4 Repository](https://github.com/dp-web4/web4) - Protocol specs, coherence pricing, trust tensors
+
 > ⚠️ **Research Status**: This is an active research project, not production software. Concepts are evolving, APIs are unstable, and much is exploratory. We share it publicly to invite collaboration and feedback, not to suggest it's ready for deployment.
 
 ## See It Work (60 seconds)
 
-> **Note**: This assumes basic familiarity with command-line tools and Node.js development. If `npm install` doesn't mean anything to you, a fully hosted demo with zero setup is planned but not yet available.
+> **Note**: Prefer zero setup? Use the **[Live Demo](https://4-life-ivory.vercel.app/)** instead. The instructions below are for local development.
 
 **Prerequisites**: [Node.js 18+](https://nodejs.org/), [Git](https://git-scm.com/)
 
@@ -521,7 +525,7 @@ This page demonstrates Web4's trust foundation: **multi-dimensional trust captur
 
 **Operating Systems**: Windows, macOS, and Linux all work.
 
-**Not comfortable with command-line?** A hosted demo is planned. For now, the repo requires local setup.
+**Not comfortable with command-line?** Use the **[Live Demo](https://4-life-ivory.vercel.app/)** - full functionality, zero setup.
 
 ## Research Context
 
@@ -538,25 +542,31 @@ The research is conducted through autonomous AI sessions running across multiple
 
 | Project | Description |
 |---------|-------------|
-| [Web4](https://github.com/dp-web4/web4) | Core protocol and game engine |
-| [Synchronism](https://github.com/dp-web4/Synchronism) | Theoretical physics framework |
-| [HRM](https://github.com/dp-web4/HRM) | SAGE consciousness kernel |
+| [Web4](https://github.com/dp-web4/web4) | Core protocol specs, coherence pricing research, trust tensor implementation - **start here for in-depth theory** |
+| [Synchronism](https://github.com/dp-web4/Synchronism) | Theoretical physics framework (coherence physics, γ≈2 universality) |
+| [HRM](https://github.com/dp-web4/HRM) | SAGE consciousness kernel (edge AI implementation) |
+
+**Enterprise implementations** are in development. Contact dp@metalinxx.io for details.
 
 ## Current Status
 
+**Latest**: Session #20 - D5/D9 Understanding Consciousness educational experience
+
 | Component | Status |
 |-----------|--------|
+| **Public deployment** | ✅ **Live at [4-life-ivory.vercel.app](https://4-life-ivory.vercel.app/)** |
 | Website structure | ✅ Complete |
 | Lab console visualization | ✅ Working |
 | Live simulation API | ✅ Working |
-| Narrative generation system | ✅ Working |
+| Narrative generation system | ✅ Working (Session #19) |
 | Comparative analysis tool | ✅ Working |
 | Pattern corpus browser | ✅ Working |
 | Coherence domain insights | ✅ Working |
+| D5/D9 consciousness explainer | ✅ Working (Session #20) |
+| Threat model documentation | ✅ Complete |
 | ACT query prototype | ✅ Working |
 | Export system (4 formats) | ✅ Working |
 | Starter kit download | 🚧 In progress |
-| Public deployment | 🚧 Planned |
 | Hub society integration | 🚧 Planned |
 
 ## Contributing
