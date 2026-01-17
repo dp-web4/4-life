@@ -167,18 +167,36 @@ export default function TrustTensorPage() {
           Web4 Trust
         </div>
         <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
-          Trust Tensors (T3): Multi-Dimensional Trust
+          Trust Tensors: Multi-Dimensional Trust
         </h1>
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Web4 doesn't reduce trust to a single number. Instead, it uses{" "}
-          <strong className="text-sky-400">Trust Tensors (T3)</strong> - multi-dimensional
+          <strong className="text-sky-400">Trust Tensors</strong> - multi-dimensional
           vectors that capture the nuance of human relationships.
         </p>
         <p className="text-lg text-gray-400 leading-relaxed">
           You might trust someone's competence but not their reliability. You might
-          trust their integrity but question their alignment. T3 makes these distinctions
+          trust their integrity but question their alignment. Multi-dimensional trust makes these distinctions
           explicit, measurable, and actionable.
         </p>
+
+        {/* Educational Model Notice */}
+        <div className="mt-6 bg-gradient-to-br from-purple-950/30 to-purple-900/20 border border-purple-800/30 rounded-xl p-6">
+          <p className="text-purple-300 leading-relaxed">
+            📚 <strong>Educational Model:</strong> This page uses a simplified 5-dimensional trust model
+            (competence, reliability, integrity, alignment, transparency) for pedagogical clarity.
+            Production Web4 uses <strong>role-specific 3D tensors</strong> (Talent, Training, Temperament)
+            as defined in the{" "}
+            <a
+              href="https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/t3-v3-tensors.md"
+              className="text-purple-200 underline hover:text-purple-100"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              canonical spec
+            </a>. The principles are the same: multi-dimensional trust is harder to game than single scores.
+          </p>
+        </div>
       </section>
 
       {/* The Problem */}

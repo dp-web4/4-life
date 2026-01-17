@@ -27,10 +27,10 @@ export default function HomePage() {
         <div className="comparison-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
           <div className="concept-card">
             <div className="concept-icon">🔗</div>
-            <h3>Unforgeable Identity (LCT)</h3>
+            <h3>Hardware-Rooted Identity (LCT)</h3>
             <p>
-              Hardware-bound identity you can't fake. Your device's secure enclave proves you're you.
-              No passwords. No stolen accounts. Trust accumulates on <em>you</em>, not an account.
+              Identity strongly resistant to impersonation through hardware binding (TPM, Secure Enclave, FIDO2).
+              Multi-device witnessing makes fake identities expensive to create. Trust accumulates on <em>you</em>, not an account.
             </p>
             <Link href="/lct-explainer" style={{ fontSize: "0.9rem" }}>Learn more →</Link>
           </div>
@@ -39,17 +39,18 @@ export default function HomePage() {
             <h3>Metabolic Economics (ATP)</h3>
             <p>
               Actions cost attention (ATP). Quality earns attention. Run out? You die. This makes spam
-              impossible and valuable contributions sustainable. No moderators needed—math enforces it.
+              economically self-limiting—spammers burn ATP faster than they earn it. Metabolic dynamics
+              favor quality over volume.
             </p>
             <Link href="/atp-economics" style={{ fontSize: "0.9rem" }}>Learn more →</Link>
           </div>
           <div className="concept-card">
             <div className="concept-icon">🧠</div>
-            <h3>Multi-Dimensional Trust (T3)</h3>
+            <h3>Multi-Dimensional Trust</h3>
             <p>
-              Trust isn't a single score. T3 captures competence, reliability, integrity, alignment,
-              transparency. Gaming one dimension while failing others doesn't work. You must be
-              authentically trustworthy.
+              Trust isn't a single score. Our simulations track competence, reliability, integrity, alignment,
+              transparency. Gaming one dimension while failing others is exponentially harder. Production Web4
+              uses role-specific 3D tensors (see <Link href="/trust-tensor" className="underline">spec</Link>).
             </p>
             <Link href="/trust-tensor" style={{ fontSize: "0.9rem" }}>Learn more →</Link>
           </div>
@@ -58,8 +59,8 @@ export default function HomePage() {
             <h3>Coherence Detection (CI)</h3>
             <p>
               Consistency across time, space, capability, relationships. Incoherent behavior (teleporting,
-              capability spoofing) tanks your trust automatically. Web4's immune system detects fraud
-              through physics.
+              capability spoofing) reduces trust scores. Physical and temporal constraints provide signals
+              that make certain frauds detectable.
             </p>
             <Link href="/coherence-index" style={{ fontSize: "0.9rem" }}>Learn more →</Link>
           </div>
@@ -164,14 +165,21 @@ export default function HomePage() {
           </p>
           <p style={{ marginTop: "0.75rem" }}>
             If the ideas resonate, engage: run simulations, question assumptions, contribute insights.
-            The best contributions are often better questions, not just code.
+            The best contributions are often better questions, not just code. See our{" "}
+            <Link href="/threat-model" className="text-sky-400 hover:underline">
+              Threat Model & Failure Modes
+            </Link>{" "}
+            for known limitations and open research questions.
           </p>
           <div style={{ marginTop: "1rem" }}>
             <Link href="https://github.com/dp-web4/4-life" style={{ marginRight: "1rem" }}>
               GitHub Repository →
             </Link>
-            <Link href="https://github.com/dp-web4/4-life/issues">
+            <Link href="https://github.com/dp-web4/4-life/issues" style={{ marginRight: "1rem" }}>
               Contribute Ideas →
+            </Link>
+            <Link href="/threat-model">
+              Threat Model →
             </Link>
           </div>
         </div>

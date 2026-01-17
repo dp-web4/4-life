@@ -21,6 +21,7 @@ export default function RootLayout({
           <nav className="nav-links">
             <Link href="/">Home</Link>
             <Link href="/how-it-works">How it works</Link>
+            <Link href="/threat-model">Threat model</Link>
             <Link href="/web4-explainer">Web4 explainer</Link>
             <Link href="/starter-kit">Starter kit</Link>
             <Link href="/playground">Playground</Link>
