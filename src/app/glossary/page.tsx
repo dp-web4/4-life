@@ -310,16 +310,16 @@ export default function GlossaryPage() {
           {/* V3 */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              V3 (Value Tensor / Valence Tensor)
+              V3 (Value Tensor)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
-              Like T3 but for <strong>value created</strong>, not trustworthiness. Measures
-              valuation (perceived worth), veracity (accuracy), and validity (confirmed delivery).
-              Used to price ATP costs for tasks.
+              Like T3 but for <strong>value created</strong>, not trustworthiness. A 3-dimensional
+              tensor measuring valuation (perceived worth), veracity (accuracy), and validity
+              (confirmed delivery). Used to price ATP costs for tasks and measure contribution quality.
             </p>
             <p className="text-gray-400 text-sm mb-3">
-              Plain English: "T3 = how much I trust you. V3 = how much value you created.
-              Both are multi-dimensional to capture nuance."
+              Plain English: "T3 = how much I trust you across skill dimensions. V3 = how much
+              value you created across quality dimensions. Both capture nuance that single scores lose."
             </p>
             <div className="flex gap-3 text-sm">
               <a

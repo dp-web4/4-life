@@ -606,7 +606,7 @@ trust_score = dot_product(T3, context_weights)`}
 
             <div>
               <h3 className="text-xl font-semibold text-sky-400 mb-3">
-                T3 vs V3 (Valence Tensors)
+                T3 vs V3 (Value Tensors)
               </h3>
               <p className="leading-relaxed mb-3">
                 Web4 actually uses two related tensors:
@@ -614,16 +614,16 @@ trust_score = dot_product(T3, context_weights)`}
               <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
                 <li>
                   <strong className="text-sky-300">T3 (Trust Tensor):</strong>{" "}
-                  How much you trust someone across dimensions
+                  How much you trust someone across dimensions (canonically 3D: Talent, Training, Temperament)
                 </li>
                 <li>
-                  <strong className="text-purple-300">V3 (Valence Tensor):</strong>{" "}
-                  How much you value something across dimensions
+                  <strong className="text-purple-300">V3 (Value Tensor):</strong>{" "}
+                  How much value something creates across dimensions (Valuation, Veracity, Validity)
                 </li>
               </ul>
               <p className="mt-3 leading-relaxed">
                 T3 is for agents (people, AI). V3 is for resources, tasks, or outcomes.
-                Both use the same multi-dimensional framework.
+                Both use multi-dimensional frameworks to capture nuance.
               </p>
             </div>
 

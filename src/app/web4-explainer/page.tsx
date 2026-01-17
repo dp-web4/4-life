@@ -37,12 +37,13 @@ export default function Web4ExplainerPage() {
       </section>
 
       <section>
-        <h2>2. MRH: Memory, Reputation, History</h2>
+        <h2>2. MRH: Markov Relevancy Horizon</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
-          MRH is a way of talking about what a system "remembers" about an
-          LCT: what it did, how it behaved, and how that history is recorded.
-          MRH is not just log lines; it is structured history that can be
-          traversed and summarized.
+          MRH defines the boundary of what you can see in a Web4 society—the
+          trust-based graph that determines which entities and information are
+          visible to you. Think of it as encompassing memory (what the system remembers
+          about an LCT), reputation (how behavior is recorded), and history (structured
+          event chains), all filtered through trust relationships.
         </p>
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
           In 4-Life, MRH shows up as a per-society microchain plus an in-memory
@@ -52,7 +53,7 @@ export default function Web4ExplainerPage() {
       </section>
 
       <section>
-        <h2>3. T3 / V3: Trust & Valence Tensors</h2>
+        <h2>3. T3 / V3: Trust & Value Tensors</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
           T3 and V3 are small numeric tensors that summarize how much a system
           trusts or values an LCT along a few axes (for example: safety,
