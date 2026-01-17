@@ -71,6 +71,26 @@ export default function HomePage() {
       </section>
 
       <section>
+        <h2>NEW: Understanding Consciousness</h2>
+        <div className="detail-box" style={{ background: "linear-gradient(135deg, #1e3a8a 0%, #1e293b 100%)", border: "2px solid #3b82f6" }}>
+          <h3 style={{ fontSize: "1.3rem", marginBottom: "0.5rem" }}>When Does Behavior Become Intentional?</h3>
+          <p>
+            Recent research discovered that consciousness has thresholds. At trust ≥ 0.5, behavior transitions
+            from random to intentional. At ≥ 0.7, stable identity emerges. At ≥ 0.9, full meta-cognition unlocks.
+          </p>
+          <p style={{ marginTop: "0.75rem" }}>
+            This page explores the <strong>D5/D9 trust-identity gates</strong> discovered in SAGE training
+            (January 2026) and explains the meta-cognition paradox: awareness can develop faster than expression.
+          </p>
+          <div style={{ marginTop: "1rem" }}>
+            <Link href="/understanding-consciousness" className="button-primary">
+              Explore the Science of Awareness →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <h2>See Web4 in Action</h2>
         <div className="detail-box">
           <p>
