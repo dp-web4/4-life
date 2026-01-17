@@ -142,8 +142,8 @@ export async function GET(req: Request) {
     const action = getAction(url.searchParams.get("action"));
 
     const projectRoot = process.cwd();
-    const aiAgentsRoot = path.resolve(projectRoot, "..");
-    const web4GameDir = path.join(aiAgentsRoot, "web4", "game");
+    // Game scripts are in lib/game (canonical location - 4-life owns the simulations)
+    const gameDir = path.join(projectRoot, "lib", "game");
     const publicDir = path.join(projectRoot, "public");
     await ensureDir(publicDir);
 
@@ -183,8 +183,8 @@ export async function GET(req: Request) {
         publicName: "ep_driven_closed_loop_results.json",
         runner: async () => {
           const cmd = await getPythonCmd();
-          const outFile = path.join(web4GameDir, "ep_driven_closed_loop_results.json");
-          await runPython({ pythonCmd: cmd, cwd: web4GameDir, args: [path.join(web4GameDir, "run_ep_driven_closed_loop.py")], timeoutMs });
+          const outFile = path.join(gameDir, "ep_driven_closed_loop_results.json");
+          await runPython({ pythonCmd: cmd, cwd: gameDir, args: [path.join(gameDir, "run_ep_driven_closed_loop.py")], timeoutMs });
           return readJsonFile(outFile);
         },
       },
@@ -192,8 +192,8 @@ export async function GET(req: Request) {
         publicName: `maturation_demo_results_${safePatternSource}.json`,
         runner: async () => {
           const cmd = await getPythonCmd();
-          const outFile = path.join(web4GameDir, `maturation_demo_results_${safePatternSource}.json`);
-          await runPython({ pythonCmd: cmd, cwd: web4GameDir, args: [path.join(web4GameDir, "run_maturation_demo.py"), safePatternSource], timeoutMs });
+          const outFile = path.join(gameDir, `maturation_demo_results_${safePatternSource}.json`);
+          await runPython({ pythonCmd: cmd, cwd: gameDir, args: [path.join(gameDir, "run_maturation_demo.py"), safePatternSource], timeoutMs });
           return readJsonFile(outFile);
         },
       },
@@ -202,12 +202,12 @@ export async function GET(req: Request) {
         runner: async () => {
           const cmd = await getPythonCmd();
           const outFileName = "ep_five_domain_multi_life_results.json";
-          const outFile = path.join(web4GameDir, outFileName);
+          const outFile = path.join(gameDir, outFileName);
           await runPython({
             pythonCmd: cmd,
-            cwd: web4GameDir,
+            cwd: gameDir,
             args: [
-              path.join(web4GameDir, "ep_five_domain_multi_life.py"),
+              path.join(gameDir, "ep_five_domain_multi_life.py"),
               "--lives",
               String(numLives),
               "--ticks",
@@ -224,7 +224,7 @@ export async function GET(req: Request) {
         publicName: "multi_life_with_policy.json",
         runner: async () => {
           const cmd = await getPythonCmd();
-          const { stdout } = await runPython({ pythonCmd: cmd, cwd: web4GameDir, args: [path.join(web4GameDir, "run_multi_life_with_policy.py")], timeoutMs });
+          const { stdout } = await runPython({ pythonCmd: cmd, cwd: gameDir, args: [path.join(gameDir, "run_multi_life_with_policy.py")], timeoutMs });
           return JSON.parse(stdout);
         },
       },
@@ -232,7 +232,7 @@ export async function GET(req: Request) {
         publicName: "one_life_with_policy.json",
         runner: async () => {
           const cmd = await getPythonCmd();
-          const { stdout } = await runPython({ pythonCmd: cmd, cwd: web4GameDir, args: [path.join(web4GameDir, "run_one_life_with_policy.py")], timeoutMs });
+          const { stdout } = await runPython({ pythonCmd: cmd, cwd: gameDir, args: [path.join(gameDir, "run_one_life_with_policy.py")], timeoutMs });
           return JSON.parse(stdout);
         },
       },

@@ -74,8 +74,8 @@ export interface PlaygroundResult {
 }
 
 async function runPlaygroundSimulation(config: PlaygroundConfig): Promise<PlaygroundResult> {
-  // Path to web4/game directory (sibling to 4-life)
-  const gameDir = path.join(process.cwd(), "..", "web4", "game");
+  // Path to lib/game directory (canonical location - 4-life owns the game simulations)
+  const gameDir = path.join(process.cwd(), "lib", "game");
   const scriptPath = path.join(gameDir, "playground_api.py");
 
   return new Promise((resolve, reject) => {
