@@ -162,7 +162,7 @@ export default function LabConsolePage() {
       return;
     }
 
-    if (json?.agent_lct && Array.isArray(json?.lives) && json?.ep_statistics) {
+    if (json?.agent_lct && Array.isArray(json?.lives)) {
       setEp(json as EPCloseLoopResult);
       setData(null);
       setMulti(null);
