@@ -38,6 +38,7 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 | You want to... | Start here |
 |----------------|------------|
 | **Never seen Web4 before** | [/first-contact](http://localhost:3000/first-contact) - Interactive 10-minute tutorial (simulation + narrative + concepts) ⭐ **START HERE** |
+| **Ask questions conversationally** | [/act-explorer](http://localhost:3000/act-explorer) - Chat with ACT to explore concepts and analyze simulations ✨ **NEW Session #21** |
 | **Guided learning path** | [/learn](http://localhost:3000/learn) - Progressive journey from beginner to practitioner ⭐ **RECOMMENDED** |
 | **Understand the ideas** | [What Is This?](#what-is-this) below, then [/how-it-works](http://localhost:3000/how-it-works) |
 | **See it running** | [See It Work](#see-it-work-60-seconds) above |
@@ -90,6 +91,7 @@ The core question: **Can we create digital societies where trust emerges from ve
 ├── src/app/                # Next.js pages
 │   ├── page.tsx            # Home - "what is 4-life"
 │   ├── first-contact/      # Interactive 10-min tutorial (zero to comprehension) ← START HERE (NEW Session #18)
+│   ├── act-explorer/       # Conversational interface - ask questions, explore simulations (NEW Session #21)
 │   ├── how-it-works/       # Conceptual walkthrough
 │   ├── starter-kit/        # Getting started guide
 │   ├── playground/         # Interactive parameter exploration (NEW Session #12)
@@ -113,6 +115,8 @@ The core question: **Can we create digital societies where trust emerges from ve
 │       ├── lab-run/        # API endpoint for simulations
 │       ├── playground/     # API endpoint for parameter playground (NEW Session #12)
 │       └── patterns/       # API endpoint for pattern corpus data
+├── src/lib/act/            # ACT conversational interface system (NEW Session #21)
+│   └── query_engine.ts     # Pattern-matched query understanding + pre-generated responses
 ├── src/lib/narratives/     # Narrative generation system (NEW Session #19 - production-ready)
 │   ├── event_detector.ts   # Identifies interesting moments
 │   ├── story_generator.ts  # Converts events to stories
@@ -125,7 +129,9 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   └── pattern_narratives.ts # Generates learning journey narratives
 ├── src/lib/federation/     # Federation economics simulation
 │   └── market_simulator.ts # Dynamic ATP pricing based on supply/demand
+├── src/lib/types.ts        # Core type definitions (SimulationResult, AgentState, etc.)
 ├── src/components/         # React components
+│   ├── ACTChat.tsx         # Conversational chat UI (NEW Session #21)
 │   ├── NarrativePanel.tsx  # Narrative display in lab console
 │   ├── NarrativeQuery.tsx  # ACT conversational interface
 │   ├── ReasoningTimeline.tsx # Agent decision reasoning visualization
@@ -162,6 +168,63 @@ Simulations can run live via the API or load from pre-generated artifacts in `pu
 | Maturation Demo | Trust maturation patterns (Web4 vs baseline) |
 | Five Domain | Multi-domain interaction patterns |
 | Multi-Life Legacy | Original heuristic-based simulation |
+
+## ACT Conversational Explorer (NEW - Session #21)
+
+The `/act-explorer` page provides a **conversational interface to Web4 understanding** - ask questions in natural language, get instant explanations.
+
+### The Core Innovation
+
+**Traditional learning**: Read documentation, search for answers, piece together understanding
+
+**ACT learning**: Ask questions conversationally, get context-aware explanations, follow suggested paths
+
+### How It Works
+
+1. **Pattern-Matched Query Understanding**: ACT recognizes query intent (concept explanation, event analysis, comparison, guidance)
+2. **Pre-Generated Responses**: Fast, reliable explanations without LLM latency (pattern matching + templates)
+3. **Context-Aware Analysis**: Load simulations to analyze specific events and patterns
+4. **Progressive Follow-Ups**: Suggested queries guide you deeper into topics
+
+### Query Types Supported
+
+**Concept Explanations**:
+- "What is ATP?" → Metabolic economics explanation
+- "Explain trust tensors" → Multi-dimensional trust walkthrough
+- "How does karma work?" → Rebirth eligibility + consequences
+- "What is epistemic proprioception?" → Meta-cognition learning explanation
+
+**Event Analysis** (requires simulation):
+- "Why did trust drop at tick 14?" → Context, decision, outcome breakdown
+- "What happened in life 2?" → Life narrative with key events
+- "Show me ATP crisis moments" → Critical decision points identified
+
+**Comparisons**:
+- "Compare Web4 vs baseline" → Trust evolution, ATP sustainability differences
+- "How does EP improve decisions?" → Pattern learning impact analysis
+
+**Exploration Guidance**:
+- "What should I explore next?" → Personalized suggestions based on context
+- "Where do I start?" → Recommended learning pathways
+
+### Interactive Features
+
+- **Chat Interface**: Natural conversation flow with message history
+- **Suggested Queries**: Click to ask follow-up questions
+- **Related Concepts**: Explore connected ideas
+- **Visualization Hints**: Jump to relevant charts/timelines
+- **Quick Actions**: Pre-configured concept queries (ATP, Trust, Karma, etc.)
+- **Simulation Loading**: Analyze pre-generated simulations or your own runs
+
+### Why This Matters
+
+- **Conversation beats static docs**: Humans learn better through dialogue
+- **Just-in-time learning**: Explain concepts exactly when needed
+- **Progressive revelation**: Start simple, build complexity through follow-ups
+- **Context-aware**: Explanations adapt to what you're exploring
+- **No LLM latency**: Pattern matching + pre-generated responses = instant answers
+
+This page demonstrates Web4's accessibility philosophy: **understanding emerges from conversation, not just reading**.
 
 ## Comparative Analysis
 
@@ -550,21 +613,21 @@ The research is conducted through autonomous AI sessions running across multiple
 
 ## Current Status
 
-**Latest**: Session #20 - D5/D9 Understanding Consciousness educational experience
+**Latest**: Session #21 - ACT Conversational Explorer prototype
 
 | Component | Status |
 |-----------|--------|
 | **Public deployment** | ✅ **Live at [4-life-ivory.vercel.app](https://4-life-ivory.vercel.app/)** |
-| Website structure | ✅ Complete |
+| Website structure | ✅ Complete (33 pages) |
 | Lab console visualization | ✅ Working |
 | Live simulation API | ✅ Working |
+| ACT conversational explorer | ✅ Working (Session #21) |
 | Narrative generation system | ✅ Working (Session #19) |
 | Comparative analysis tool | ✅ Working |
 | Pattern corpus browser | ✅ Working |
 | Coherence domain insights | ✅ Working |
 | D5/D9 consciousness explainer | ✅ Working (Session #20) |
 | Threat model documentation | ✅ Complete |
-| ACT query prototype | ✅ Working |
 | Export system (4 formats) | ✅ Working |
 | Starter kit download | 🚧 In progress |
 | Hub society integration | 🚧 Planned |

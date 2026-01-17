@@ -91,6 +91,27 @@ export default function HomePage() {
       </section>
 
       <section>
+        <h2>NEW: ACT Conversational Explorer</h2>
+        <div className="detail-box" style={{ background: "linear-gradient(135deg, #581c87 0%, #1e293b 100%)", border: "2px solid #a855f7" }}>
+          <h3 style={{ fontSize: "1.3rem", marginBottom: "0.5rem" }}>Ask Questions, Get Answers—Through Natural Conversation</h3>
+          <p>
+            ACT (Accessible Coordination Technology) is your conversational guide to Web4. Instead of reading static
+            documentation, ask questions and explore interactively. "What is ATP?" → "Why did trust drop here?" →
+            "Compare Web4 vs baseline" → ACT explains concepts, analyzes events, and guides your learning.
+          </p>
+          <p style={{ marginTop: "0.75rem" }}>
+            <strong>How it works:</strong> Pattern-matched query understanding + pre-generated explanations (fast and reliable).
+            Load a simulation to analyze events, or ask concept questions without data. Progressive follow-ups guide you deeper.
+          </p>
+          <div style={{ marginTop: "1rem" }}>
+            <Link href="/act-explorer" className="button-primary">
+              Try ACT Explorer →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <h2>See Web4 in Action</h2>
         <div className="detail-box">
           <p>
@@ -115,6 +136,11 @@ export default function HomePage() {
       <section>
         <h2>Explore Interactive Tools</h2>
         <div className="concept-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))" }}>
+          <div className="detail-box">
+            <h3>💬 ACT Chat</h3>
+            <p>Ask questions in natural language. Get instant explanations, event analysis, and learning guidance.</p>
+            <Link href="/act-explorer">Ask ACT →</Link>
+          </div>
           <div className="detail-box">
             <h3>📊 Parameter Playground</h3>
             <p>Adjust ATP costs, trust dynamics, karma mechanics. See what creates sustainability vs collapse.</p>
