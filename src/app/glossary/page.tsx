@@ -85,16 +85,17 @@ export default function GlossaryPage() {
           {/* ATP */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              ATP (Attention Transfer Packet)
+              ATP (Allocation Transfer Packet)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
-              The <strong>metabolic currency</strong> of Web4 societies. Every action costs
-              ATP. Quality contributions earn ATP. Run out? You "die" (can't act). This makes
-              spam economically self-limiting—spammers burn ATP faster than they earn it.
+              The <strong>metabolic currency</strong> of Web4 societies—a charged value token
+              inspired by biological ATP. Every action costs ATP. Quality contributions earn ATP.
+              Run out? You "die" (can't act). This makes spam economically self-limiting—spammers
+              burn ATP faster than they earn it.
             </p>
             <p className="text-gray-400 text-sm mb-3">
-              Plain English: "Attention is finite and measurable. You spend it to act. You earn
-              it by creating value. Bad actors exhaust themselves."
+              Plain English: "Think of it like metabolic energy. You spend it to act, earn it by
+              creating value. Run out of energy, you can't function. Bad actors exhaust themselves."
             </p>
             <p className="text-gray-500 text-xs mb-3">
               <strong>Canonical note:</strong> Production Web4 uses ATP/ADP (Allocation Discharge
