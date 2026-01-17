@@ -579,6 +579,18 @@ This is research-in-progress. If you're interested in the ideas:
 
 We're more interested in intellectual engagement than pull requests at this stage.
 
+## License
+
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)** - see [LICENSE](LICENSE).
+
+### Patent Notice
+
+This software implements technology covered by patents owned by MetaLINXX Inc. A royalty-free patent license is granted for non-commercial and research use under AGPL-3.0 terms.
+
+**For commercial licensing**: Contact dp@metalinxx.io
+
+See [PATENTS.md](PATENTS.md) for full patent details.
+
 ## Acknowledgments
 
 Built through collaboration between human researchers and AI systems (Claude, Nova/GPT) working as genuine research partners. The AI contributions aren't just code generation - they include theoretical derivations, experimental design, and substantive intellectual work.
