@@ -22,14 +22,10 @@ export default function RootLayout({
             <Link href="/">Home</Link>
             <Link href="/how-it-works">How it works</Link>
             <Link href="/threat-model">Threat model</Link>
-            <Link href="/web4-explainer">Web4 explainer</Link>
-            <Link href="/starter-kit">Starter kit</Link>
+            <Link href="/glossary">Glossary</Link>
             <Link href="/playground">Playground</Link>
             <Link href="/lab-console">Lab console</Link>
-            <Link href="/trust-networks">Trust networks</Link>
-            <Link href="/federation-economics">Federation economics</Link>
             <Link href="/compare">Compare</Link>
-            <Link href="/narratives">Narratives</Link>
           </nav>
         </header>
         <main>{children}</main>

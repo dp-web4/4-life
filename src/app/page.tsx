@@ -120,7 +120,11 @@ export default function HomePage() {
         <div className="detail-box" style={{ background: "linear-gradient(135deg, var(--color-gray-800) 0%, var(--color-gray-900) 100%)" }}>
           <p>
             Web4 is complex, but comprehensible. We've created a <strong>guided learning pathway</strong> that
-            takes you from "What is Web4?" to "I can experiment meaningfully" through progressive stages:
+            takes you from "What is Web4?" to "I can experiment meaningfully" through progressive stages.
+            New to Web4 terminology?{" "}
+            <Link href="/glossary" className="text-sky-400 hover:underline">
+              Start with the glossary
+            </Link>.
           </p>
           <ul style={{ marginTop: "1rem" }}>
             <li><strong>Beginner:</strong> Core concepts (LCT, ATP, T3, CI) + first simulations</li>
@@ -129,8 +133,11 @@ export default function HomePage() {
             <li><strong>Practitioner:</strong> Active experimentation (parameter sweeps, edge cases, contributions)</li>
           </ul>
           <div style={{ marginTop: "1.5rem" }}>
-            <Link href="/learn" className="button-primary" style={{ fontSize: "1.1rem", padding: "0.75rem 1.5rem" }}>
+            <Link href="/learn" className="button-primary" style={{ fontSize: "1.1rem", padding: "0.75rem 1.5rem", marginRight: "1rem" }}>
               Begin Your Journey →
+            </Link>
+            <Link href="/glossary" className="button-secondary" style={{ fontSize: "1.1rem", padding: "0.75rem 1.5rem" }}>
+              Browse Glossary
             </Link>
           </div>
         </div>
