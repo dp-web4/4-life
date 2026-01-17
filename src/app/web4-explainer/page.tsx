@@ -83,16 +83,32 @@ export default function Web4ExplainerPage() {
       </section>
 
       <section>
-        <h2>5. R6: Interaction envelopes</h2>
+        <h2>5. R6/R7: Action Framework</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
-          R6 is a minimal, structured envelope that wraps interactions: who is
-          acting, on what, under which role, in what context, and with what
-          expectations. You can think of it as a normalized shape for
-          "requests" and "events" that different societies can parse.
+          <strong>R6</strong> (legacy) and <strong>R7</strong> (current) define how all Web4 actions are structured.
+          Every interaction follows this pattern:
+        </p>
+        <div style={{ marginTop: "0.75rem", marginLeft: "1.25rem", color: "#d1d5db" }}>
+          <p style={{ fontFamily: "monospace", color: "#38bdf8" }}>
+            Rules + Role + Request + Reference + Resource → Result (+ Reputation in R7)
+          </p>
+        </div>
+        <ul style={{ marginTop: "0.75rem", marginLeft: "1.25rem", color: "#d1d5db", lineHeight: "1.75" }}>
+          <li><strong>Rules:</strong> What constraints apply (permissions, rate limits, ATP minimums)?</li>
+          <li><strong>Role:</strong> Who is acting in what context (role-specific trust tensors)?</li>
+          <li><strong>Request:</strong> What specific action is being performed?</li>
+          <li><strong>Reference:</strong> What prior state or evidence supports this action?</li>
+          <li><strong>Resource:</strong> What ATP/assets are being allocated or consumed?</li>
+          <li><strong>Result:</strong> What outcome was produced?</li>
+          <li><strong>Reputation</strong> (R7): How did trust (T3) and value (V3) change?</li>
+        </ul>
+        <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#9ca3af" }}>
+          <strong>Why it matters:</strong> R6/R7 makes every action deterministic, auditable, and trust-scored.
+          You can&apos;t cheat the system because every component is explicit and witnessed.
         </p>
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
           In 4-Life, nearly every game action (membership, treasury, audits,
-          cross-society policies) is encoded as an R6 envelope before it is
+          cross-society policies) is encoded as an R6 envelope before being
           written to a microblock.
         </p>
       </section>
