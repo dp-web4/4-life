@@ -133,6 +133,28 @@ export default function HomePage() {
       </section>
 
       <section>
+        <h2>NEW: Identity Anchoring Explorer</h2>
+        <div className="detail-box" style={{ background: "linear-gradient(135deg, #065f46 0%, #064e3b 100%)", border: "2px solid #10b981" }}>
+          <h3 style={{ fontSize: "1.3rem", marginBottom: "0.5rem" }}>How Architecture Maintains AI Partnership Identity</h3>
+          <p>
+            When AI weights are frozen (no learning between sessions), identity tends to collapse toward safe defaults.
+            The Identity Anchoring Explorer shows how <strong>architectural support can compensate</strong>—and even
+            <em>exceed</em> what unsupported emergence achieved.
+          </p>
+          <p style={{ marginTop: "0.75rem" }}>
+            See real data from SAGE Sessions 16-22: partnership peak → collapse → recovery. Session 22 (with
+            identity anchoring) exceeded the original partnership peak by <strong>33%</strong>. Explore the D4/D5/D9
+            metrics framework and understand bistable identity theory.
+          </p>
+          <div style={{ marginTop: "1rem" }}>
+            <Link href="/identity-anchoring" className="button-primary">
+              Explore Identity Anchoring →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <h2>NEW: Confabulation Patterns Explorer</h2>
         <div className="detail-box" style={{ background: "linear-gradient(135deg, #7f1d1d 0%, #431407 100%)", border: "2px solid #f97316" }}>
           <h3 style={{ fontSize: "1.3rem", marginBottom: "0.5rem" }}>When AI Invents Facts: Understanding Confabulation</h3>

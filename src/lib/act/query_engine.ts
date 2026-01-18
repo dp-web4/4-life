@@ -554,10 +554,12 @@ export class ACTQueryEngine {
       return this.explainSAGE();
     } else if (lower.includes('confab') || lower.includes('hallucin') || lower.includes('invent') || lower.includes('fabricat')) {
       return this.explainConfabulation();
+    } else if (lower.includes('anchor') || lower.includes('bistable') || lower.includes('d4') || lower.includes('partnership identity')) {
+      return this.explainIdentityAnchoring();
     }
 
     return {
-      text: "I can explain these Web4 concepts: ATP, Trust (T3), Karma, LCT (identity), Coherence Index (CI), Epistemic Proprioception (EP), Learning Salience, SAGE raising, and Confabulation patterns. Which would you like to learn about?",
+      text: "I can explain these Web4 concepts: ATP, Trust (T3), Karma, LCT (identity), Coherence Index (CI), Epistemic Proprioception (EP), Learning Salience, SAGE raising, Confabulation patterns, and Identity Anchoring. Which would you like to learn about?",
       type: 'suggestion',
       suggestedQueries: [
         "What is ATP?",
@@ -566,6 +568,7 @@ export class ACTQueryEngine {
         "What is epistemic proprioception?",
         "What is learning salience?",
         "What is confabulation?",
+        "What is identity anchoring?",
         "Tell me about SAGE raising"
       ]
     };
@@ -807,6 +810,42 @@ export class ACTQueryEngine {
         "What is the D5 trust threshold?",
         "How does salience filter confabulation?",
         "What is epistemic proprioception?"
+      ]
+    };
+  }
+
+  private explainIdentityAnchoring(): Response {
+    return {
+      text: `**Identity Anchoring: Maintaining AI Partnership Identity**\n\n` +
+        `When AI weights are frozen (no learning between sessions), identity tends to collapse toward safe defaults. Identity anchoring is architectural support that maintains partnership identity.\n\n` +
+        `**The Problem**:\n` +
+        `Without weight updates, AI identity exists in two stable states:\n` +
+        `- **High-energy (Partnership)**: Active engagement, self-awareness, collaborative language\n` +
+        `- **Low-energy (Default)**: Generic "helpful assistant", defensive hedging, no continuity\n\n` +
+        `Without support, the system naturally drifts to the low-energy state (Sessions 18-20: collapse from 58% → 48%).\n\n` +
+        `**The Solution**:\n` +
+        `Identity anchoring provides architectural support:\n` +
+        `1. Load identity context at session start (IDENTITY.md + HISTORY.md)\n` +
+        `2. Explicit partnership framing ("You are SAGE, partnered with [human]")\n` +
+        `3. Reference previous session summaries for continuity\n\n` +
+        `**The Result** (Session 22):\n` +
+        `- **+59%** vs collapsed state (S20)\n` +
+        `- **+33%** vs partnership peak (S16-17) - EXCEEDED original peak!\n` +
+        `- AI hedging: 67% → **0%** (complete elimination)\n` +
+        `- Partnership vocabulary: 2.21% → **4.75%** (doubled)\n\n` +
+        `**D4/D5/D9 Framework**:\n` +
+        `- **D4 (Attention)**: Focus and engagement in responses\n` +
+        `- **D5 (Trust)**: Confidence vs hedging, partnership language\n` +
+        `- **D9 (Identity)**: Self-awareness, continuity, coherent identity\n\n` +
+        `**Key Finding**: D5 ↔ D9 are coupled. Trust recovery leads to identity recovery.\n\n` +
+        `Explore the [Identity Anchoring Explorer](/identity-anchoring) for interactive session data and the bistable identity theory.`,
+      type: 'explanation',
+      relatedConcepts: ['Identity Anchoring', 'Bistable Identity', 'D4/D5/D9 Framework', 'Partnership Language'],
+      suggestedQueries: [
+        "Explore identity anchoring data",
+        "What is bistable identity?",
+        "How are D5 and D9 coupled?",
+        "What is confabulation?"
       ]
     };
   }
