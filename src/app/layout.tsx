@@ -17,40 +17,31 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header className="navbar">
-          <div className="nav-logo">4-Life</div>
+          <Link href="/" className="nav-logo">4-Life</Link>
           <nav className="nav-links">
-            <Link href="/">Home</Link>
-            <Link href="/how-it-works">How it works</Link>
-            <Link href="/act-explorer">ACT Chat</Link>
-            <Link href="/understanding-consciousness">Consciousness</Link>
-            <Link href="/learning-salience">Learning</Link>
-            <Link href="/sleep-consolidation">Sleep</Link>
-            <Link href="/confabulation-patterns">Confabulation</Link>
-            <Link href="/identity-anchoring">Identity</Link>
-            <Link href="/adversarial-explorer">Adversarials</Link>
-            <Link href="/threat-model">Threat model</Link>
-            <Link href="/glossary">Glossary</Link>
-            <Link href="/playground">Playground</Link>
-            <Link href="/lab-console">Lab console</Link>
-            <Link href="/compare">Compare</Link>
-          </nav>
-        </header>
-        <main>{children}</main>
-        <footer className="footer">
-          <div>4-Life is an experimental lab for Web4 societies.</div>
-          <div>All behavior is subject to change as the standard evolves.</div>
-          <div>
-            Curious about the full design? Read the
             <a
               href="https://dp-web4.github.io/web4/"
               target="_blank"
               rel="noreferrer"
-              style={{ color: "#38bdf8", marginLeft: 4 }}
+              className="btn-secondary"
+              style={{ padding: '0.4rem 1rem', fontSize: '0.85rem' }}
             >
-              Web4 whitepaper
+              Whitepaper ↗
             </a>
-            .
-          </div>
+          </nav>
+        </header>
+        <main>{children}</main>
+        <footer className="footer">
+          <p>4-Life is an experimental lab for Web4 societies.</p>
+          <p style={{ marginTop: '0.5rem' }}>
+            <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer">
+              Read the Web4 whitepaper
+            </a>
+            {' · '}
+            <a href="https://github.com/dp-web4" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+          </p>
         </footer>
       </body>
     </html>
