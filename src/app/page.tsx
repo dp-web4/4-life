@@ -155,6 +155,28 @@ export default function HomePage() {
       </section>
 
       <section>
+        <h2>NEW: Sleep Consolidation Explorer</h2>
+        <div className="detail-box" style={{ background: "linear-gradient(135deg, #312e81 0%, #1e1b4b 100%)", border: "2px solid #818cf8" }}>
+          <h3 style={{ fontSize: "1.3rem", marginBottom: "0.5rem" }}>How AI Systems Learn During "Sleep"</h3>
+          <p>
+            Humans consolidate memories during REM sleep—emotionally significant experiences get "saved" while routine
+            ones fade. This AI memory system works the same way: <strong>wake to experience, sleep to consolidate</strong>.
+            Only high-salience interactions become permanent changes.
+          </p>
+          <p style={{ marginTop: "0.75rem" }}>
+            Explore the <strong>three-phase pipeline</strong>: Experience Collection (SNARC salience scoring) →
+            Training Data Generation (ChatML formatting) → Sleep Training (LoRA fine-tuning). See why temporary
+            successes fade without consolidation—and how "sleep" makes peaks permanent.
+          </p>
+          <div style={{ marginTop: "1rem" }}>
+            <Link href="/sleep-consolidation" className="button-primary">
+              Explore Sleep Consolidation →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <h2>NEW: Confabulation Patterns Explorer</h2>
         <div className="detail-box" style={{ background: "linear-gradient(135deg, #7f1d1d 0%, #431407 100%)", border: "2px solid #f97316" }}>
           <h3 style={{ fontSize: "1.3rem", marginBottom: "0.5rem" }}>When AI Invents Facts: Understanding Confabulation</h3>
