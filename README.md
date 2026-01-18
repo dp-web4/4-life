@@ -38,7 +38,8 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 | You want to... | Start here |
 |----------------|------------|
 | **Never seen Web4 before** | [/first-contact](http://localhost:3000/first-contact) - Interactive 10-minute tutorial (simulation + narrative + concepts) ⭐ **START HERE** |
-| **Ask questions conversationally** | [/act-explorer](http://localhost:3000/act-explorer) - Chat with ACT to explore concepts and analyze simulations ✨ **NEW Session #21** |
+| **Ask questions conversationally** | [/act-explorer](http://localhost:3000/act-explorer) - Chat with ACT to explore concepts and analyze simulations |
+| **Understand attack patterns** | [/adversarial-explorer](http://localhost:3000/adversarial-explorer) - Interactive exploration of how attackers think and Web4 defends ✨ **NEW Session #22** |
 | **Guided learning path** | [/learn](http://localhost:3000/learn) - Progressive journey from beginner to practitioner ⭐ **RECOMMENDED** |
 | **Understand the ideas** | [What Is This?](#what-is-this) below, then [/how-it-works](http://localhost:3000/how-it-works) |
 | **See it running** | [See It Work](#see-it-work-60-seconds) above |
@@ -92,6 +93,7 @@ The core question: **Can we create digital societies where trust emerges from ve
 │   ├── page.tsx            # Home - "what is 4-life"
 │   ├── first-contact/      # Interactive 10-min tutorial (zero to comprehension) ← START HERE (NEW Session #18)
 │   ├── act-explorer/       # Conversational interface - ask questions, explore simulations (NEW Session #21)
+│   ├── adversarial-explorer/ # Interactive attack pattern understanding (NEW Session #22)
 │   ├── how-it-works/       # Conceptual walkthrough
 │   ├── starter-kit/        # Getting started guide
 │   ├── playground/         # Interactive parameter exploration (NEW Session #12)
@@ -613,15 +615,16 @@ The research is conducted through autonomous AI sessions running across multiple
 
 ## Current Status
 
-**Latest**: Session #21 - ACT Conversational Explorer prototype
+**Latest**: Session #22 - Adversarial Explorer (interactive attack pattern understanding)
 
 | Component | Status |
 |-----------|--------|
 | **Public deployment** | ✅ **Live at [4-life-ivory.vercel.app](https://4-life-ivory.vercel.app/)** |
-| Website structure | ✅ Complete (33 pages) |
+| Website structure | ✅ Complete (34 pages) |
 | Lab console visualization | ✅ Working |
 | Live simulation API | ✅ Working |
 | ACT conversational explorer | ✅ Working (Session #21) |
+| Adversarial explorer | ✅ Working (Session #22) |
 | Narrative generation system | ✅ Working (Session #19) |
 | Comparative analysis tool | ✅ Working |
 | Pattern corpus browser | ✅ Working |

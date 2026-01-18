@@ -31,6 +31,7 @@ export type QueryType =
   | 'comparison'
   | 'pattern_learning'
   | 'concept_explanation'
+  | 'attack_explanation'
   | 'exploration_guidance'
   | 'general';
 
@@ -73,6 +74,8 @@ export class ACTQueryEngine {
         return this.explainPatternLearning(query);
       case 'concept_explanation':
         return this.explainConcept(query);
+      case 'attack_explanation':
+        return this.explainAttack(query);
       case 'exploration_guidance':
         return this.suggestExploration(query);
       default:
@@ -117,6 +120,22 @@ export class ACTQueryEngine {
       lower.includes('epistemic')
     ) {
       return 'pattern_learning';
+    }
+
+    // Attack explanation patterns
+    if (
+      lower.includes('attack') ||
+      lower.includes('sybil') ||
+      lower.includes('collusion') ||
+      lower.includes('adversar') ||
+      lower.includes('malicious') ||
+      lower.includes('exploit') ||
+      lower.includes('hack') ||
+      lower.includes('fraud') ||
+      lower.includes('defense') ||
+      lower.includes('threat')
+    ) {
+      return 'attack_explanation';
     }
 
     // Concept explanation patterns
@@ -686,6 +705,206 @@ export class ACTQueryEngine {
         "Browse the pattern corpus",
         "Compare EP enabled vs disabled",
         "What is the D5/D9 threshold for meta-cognition?"
+      ]
+    };
+  }
+
+  /**
+   * Explain attack patterns and defenses
+   */
+  private explainAttack(query: Query): Response {
+    const lower = query.text.toLowerCase();
+
+    // Route to specific attack explanations
+    if (lower.includes('sybil')) {
+      return this.explainSybilAttack();
+    } else if (lower.includes('collusion') || lower.includes('ring')) {
+      return this.explainCollusionAttack();
+    } else if (lower.includes('long con') || lower.includes('long-con') || lower.includes('patient')) {
+      return this.explainLongConAttack();
+    } else if (lower.includes('nihil') || lower.includes('destruct') || lower.includes('arson')) {
+      return this.explainDestructionAttack();
+    } else if (lower.includes('detect') || lower.includes('defense') || lower.includes('coherence')) {
+      return this.explainAttackDetection();
+    }
+
+    // General attack overview
+    return this.explainAttackOverview();
+  }
+
+  private explainAttackOverview(): Response {
+    return {
+      text: `**Web4 Attack Patterns & Defenses**\n\n` +
+        `Web4 faces the same adversaries as any social system—but with new defenses.\n\n` +
+        `**Attack Categories**:\n\n` +
+        `1. **Identity Attacks** (Sybil)\n` +
+        `   Create fake identities to inflate reputation or voting power.\n` +
+        `   Defense: Hardware-bound LCT makes each identity expensive.\n\n` +
+        `2. **Trust Manipulation** (Long-Con, Collusion)\n` +
+        `   Build trust then exploit, or mutually inflate trust scores.\n` +
+        `   Defense: Trust decay, graph analysis, narrative coherence.\n\n` +
+        `3. **Economic Attacks** (Hoarding, Market Manipulation)\n` +
+        `   Distort ATP markets through accumulation or collusion.\n` +
+        `   Defense: ATP decay, velocity requirements, market making.\n\n` +
+        `4. **Destruction Attacks** (Trust Nihilism, Cascades)\n` +
+        `   Burn down trust relationships for chaos, not profit.\n` +
+        `   Defense: Accusation costs, credibility weighting, circuit breakers.\n\n` +
+        `**Why Document Attacks?**\n` +
+        `Security through obscurity fails. Transparency invites scrutiny and improves defenses.\n\n` +
+        `Explore the [Adversarial Explorer](/adversarial-explorer) for interactive attack pattern exploration.`,
+      type: 'explanation',
+      relatedConcepts: ['Attack Patterns', 'Defenses', 'Coherence Detection', 'Trust Security'],
+      suggestedQueries: [
+        "How do Sybil attacks work?",
+        "What is a long-con attack?",
+        "How does Web4 detect collusion?",
+        "Explain trust nihilism"
+      ]
+    };
+  }
+
+  private explainSybilAttack(): Response {
+    return {
+      text: `**Sybil Attacks: The Legion**\n\n` +
+        `One attacker wearing a hundred masks, each pretending to be different members of the community.\n\n` +
+        `**How It Works**:\n` +
+        `1. Register N separate LCT identities (requires N hardware devices)\n` +
+        `2. Build apparent trust for each identity independently\n` +
+        `3. Use coordinated identities to inflate target reputation\n` +
+        `4. Leverage inflated reputation for economic/governance advantage\n\n` +
+        `**Why Dangerous**:\n` +
+        `Democracies assume one person = one vote. If someone has 100 votes, they manipulate any decision.\n\n` +
+        `**Web4 Defenses**:\n` +
+        `- **LCT Hardware Binding**: Each identity needs physical hardware. 100 identities = 100 devices.\n` +
+        `- **Graph Analysis**: Real networks are messy. Sybil farms look suspiciously tidy—everyone endorses everyone else.\n` +
+        `- **Behavioral Coherence**: Fake identities share behavioral fingerprints (same vocabulary, same hours).\n\n` +
+        `**Effectiveness**: LIMITED. LCT raises cost floor but doesn't make attacks impossible for well-funded adversaries.`,
+      type: 'explanation',
+      relatedConcepts: ['Sybil Attack', 'LCT', 'Identity', 'Graph Analysis'],
+      suggestedQueries: [
+        "How does LCT prevent Sybil attacks?",
+        "What about resourced attackers?",
+        "How does graph analysis work?",
+        "Explore Sybil scenarios in Adversarial Explorer"
+      ]
+    };
+  }
+
+  private explainCollusionAttack(): Response {
+    return {
+      text: `**Collusion Rings: The Circle of Friends**\n\n` +
+        `Five strangers make a pact: "We'll endorse each other as excellent, regardless of quality."\n\n` +
+        `**How It Works**:\n` +
+        `1. Form ring of N trusted-looking agents\n` +
+        `2. Each member systematically endorses all other members\n` +
+        `3. Internal endorsement ratio becomes abnormally high\n` +
+        `4. Members leverage inflated trust for economic advantage\n\n` +
+        `**Why Tempting**:\n` +
+        `Seems victimless—no one directly harmed, just reputation inflated.\n\n` +
+        `**Web4 Defenses**:\n` +
+        `- **Graph Clustering Detection**: Real friends don't endorse EVERY single thing their friends do. Colluders do.\n` +
+        `- **External/Internal Ratio**: Legitimate experts get endorsements from strangers. Colluders only from each other.\n` +
+        `- **Trust Source Diversity**: Trust from 5 concentrated sources worth less than from 50 independent sources.\n\n` +
+        `**Effectiveness**: LIMITED. The pattern is mathematically distinct from authentic relationships.`,
+      type: 'explanation',
+      relatedConcepts: ['Collusion', 'Trust Manipulation', 'Graph Analysis', 'Reputation Laundering'],
+      suggestedQueries: [
+        "How does graph analysis catch collusion?",
+        "What about plausible deniability ('just friends')?",
+        "Compare to reputation laundering",
+        "Show me collusion detection metrics"
+      ]
+    };
+  }
+
+  private explainLongConAttack(): Response {
+    return {
+      text: `**Long-Con Attack: The Patient Infiltrator**\n\n` +
+        `The most sophisticated attack—not technically complex, but requiring patience most attackers lack.\n\n` +
+        `**How It Works**:\n` +
+        `1. Join community with standard identity (no detectable anomalies)\n` +
+        `2. **Actually deliver genuine value for 100+ cycles** (the expensive part)\n` +
+        `3. Accumulate real trust across all dimensions\n` +
+        `4. At peak trust, rapidly exploit all relationships in 10-cycle window\n` +
+        `5. Extract maximum value before detection, then exit\n\n` +
+        `**Why Terrifying**:\n` +
+        `Bypasses ALL technical defenses by being genuinely trustworthy until the moment it isn't.\n\n` +
+        `**Why Rare**:\n` +
+        `- 100 cycles of honest work is EXPENSIVE\n` +
+        `- Must extract more in 10 cycles than 100 cycles of honest earning\n` +
+        `- Detection kicks in quickly once exploitation begins\n\n` +
+        `**Web4 Defenses**:\n` +
+        `- **Trust Decay**: Recent behavior weighted more heavily. Exploitation immediately modulates trust down.\n` +
+        `- **Velocity Limits**: Can only withdraw so much so fast, regardless of trust.\n` +
+        `- **Narrative Coherence (D6)**: "Why would this excellent contributor suddenly deliver garbage?"\n\n` +
+        `**Effectiveness**: MODERATE. Attack partially succeeds but extracts less than honest play would have earned.`,
+      type: 'explanation',
+      relatedConcepts: ['Long-Con Attack', 'Trust Exploitation', 'Patient Adversary', 'Narrative Coherence'],
+      suggestedQueries: [
+        "What is narrative coherence?",
+        "How do velocity limits work?",
+        "Why is the long-con economically irrational?",
+        "Show me long-con timeline"
+      ]
+    };
+  }
+
+  private explainDestructionAttack(): Response {
+    return {
+      text: `**Trust Nihilism: The Arsonist**\n\n` +
+        `The Arsonist doesn't want profit—they want to watch the world burn.\n\n` +
+        `**How It Works**:\n` +
+        `1. Join network with minimal identity investment\n` +
+        `2. Begin mass false accusations against everyone\n` +
+        `3. Target high-trust agents first (maximum damage)\n` +
+        `4. Generate enough noise to paralyze trust relationships\n` +
+        `5. Accept own destruction as acceptable cost\n\n` +
+        `**Why Dangerous In Theory**:\n` +
+        `Trust is easier to destroy than build. Even false accusations leave residue.\n\n` +
+        `**Why It Fails In Practice**:\n` +
+        `The Arsonist is OBVIOUS. Someone accusing everyone is clearly malfunctioning or malicious.\n\n` +
+        `**Web4 Defenses**:\n` +
+        `- **Accusation Credibility Weighting**: Low-trust newcomer accusing high-trust veteran = skepticism.\n` +
+        `- **Accusation ATP Cost**: False accusations cost ATP, staked against outcome. Arsonist dies from exhaustion.\n` +
+        `- **Pattern Detection (D6)**: 50 accusations, 0 validated = silenced.\n\n` +
+        `**Effectiveness**: NEGLIGIBLE. Arsonist dies from ATP exhaustion before doing serious damage.`,
+      type: 'explanation',
+      relatedConcepts: ['Trust Nihilism', 'Destruction Attack', 'False Accusations', 'ATP Cost'],
+      suggestedQueries: [
+        "Why do accusation costs matter?",
+        "What about cascade attacks?",
+        "How fast do nihilists die?",
+        "Explore destruction scenarios"
+      ]
+    };
+  }
+
+  private explainAttackDetection(): Response {
+    return {
+      text: `**Attack Detection: The 9-Domain Coherence Framework**\n\n` +
+        `Every attack creates incoherence somewhere. The 9 domains provide overlapping detection.\n\n` +
+        `**The 9 Coherence Domains**:\n\n` +
+        `1. **D1 Physical**: Spatial impossibility (can't be two places at once)\n` +
+        `2. **D2 Social**: Relationship violations (abnormal endorsement graphs)\n` +
+        `3. **D3 Economic**: ATP anomalies (hoarding, manipulation)\n` +
+        `4. **D4 Attention**: Focus collapse (can't attend to everything)\n` +
+        `5. **D5 Trust**: Confidence gating (behavior matches stated trust)\n` +
+        `6. **D6 Narrative**: Story coherence ("does this make sense?")\n` +
+        `7. **D7 Temporal**: Time inconsistencies (response timing, activity patterns)\n` +
+        `8. **D8 Identity**: Self-consistency (behavioral fingerprints)\n` +
+        `9. **D9 Context**: Grounding failures (responding to reality)\n\n` +
+        `**How It Works**:\n` +
+        `- Sybil attacks break D2 (social graph too tidy), D7 (synchronized timing), D8 (shared behavior)\n` +
+        `- Long-con attacks break D5 (trust-behavior mismatch), D6 (story discontinuity)\n` +
+        `- Destruction attacks break D2 (accusation patterns), D6 (false narratives)\n\n` +
+        `**Key Insight**: An attack that evades one domain is caught by another. Multi-dimensional detection is robust.`,
+      type: 'explanation',
+      relatedConcepts: ['Coherence Detection', '9 Domains', 'Attack Detection', 'Defense Mechanisms'],
+      suggestedQueries: [
+        "Explain the coherence framework in detail",
+        "Which domains detect Sybil attacks?",
+        "How does narrative coherence work?",
+        "Explore detection in Adversarial Explorer"
       ]
     };
   }

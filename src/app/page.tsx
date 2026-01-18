@@ -112,6 +112,27 @@ export default function HomePage() {
       </section>
 
       <section>
+        <h2>NEW: Adversarial Explorer</h2>
+        <div className="detail-box" style={{ background: "linear-gradient(135deg, #7f1d1d 0%, #1e293b 100%)", border: "2px solid #ef4444" }}>
+          <h3 style={{ fontSize: "1.3rem", marginBottom: "0.5rem" }}>How Do Attackers Think? How Does Web4 Defend Itself?</h3>
+          <p>
+            Security through obscurity doesn't work. The Adversarial Explorer documents attack patterns openly:
+            Sybil farms, long-con infiltrators, collusion rings, trust nihilists. Each attack explained through
+            narrative—"The Patient Infiltrator", "The Arsonist"—not just technical specs.
+          </p>
+          <p style={{ marginTop: "0.75rem" }}>
+            See which <strong>9 coherence domains</strong> detect which attacks. Watch example attack timelines.
+            Understand why most attacks fail against Web4's multi-layered defenses.
+          </p>
+          <div style={{ marginTop: "1rem" }}>
+            <Link href="/adversarial-explorer" className="button-primary">
+              Explore Attack Patterns →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <h2>See Web4 in Action</h2>
         <div className="detail-box">
           <p>

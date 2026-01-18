@@ -23,6 +23,7 @@ export default function RootLayout({
             <Link href="/how-it-works">How it works</Link>
             <Link href="/act-explorer">ACT Chat</Link>
             <Link href="/understanding-consciousness">Consciousness</Link>
+            <Link href="/adversarial-explorer">Adversarials</Link>
             <Link href="/threat-model">Threat model</Link>
             <Link href="/glossary">Glossary</Link>
             <Link href="/playground">Playground</Link>
