@@ -133,6 +133,27 @@ export default function HomePage() {
       </section>
 
       <section>
+        <h2>NEW: Confabulation Patterns Explorer</h2>
+        <div className="detail-box" style={{ background: "linear-gradient(135deg, #7f1d1d 0%, #431407 100%)", border: "2px solid #f97316" }}>
+          <h3 style={{ fontSize: "1.3rem", marginBottom: "0.5rem" }}>When AI Invents Facts: Understanding Confabulation</h3>
+          <p>
+            "Hallucination" is a vague term. <strong>Confabulation</strong> is measurable. This page reveals the actual
+            pattern: when AI confidence drops below a threshold, elaboration increases. Lower confidence = more detailed
+            (but fabricated) responses.
+          </p>
+          <p style={{ marginTop: "0.75rem" }}>
+            See real examples from SAGE training (T021-T026): from "Kyria" (low elaboration) to "Ryzdys (Romania)" with
+            invented languages and national anthem (extreme). Interactive formula shows exactly when and why this happens.
+          </p>
+          <div style={{ marginTop: "1rem" }}>
+            <Link href="/confabulation-patterns" className="button-primary">
+              Explore Confabulation Patterns →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <h2>NEW: Adversarial Explorer</h2>
         <div className="detail-box" style={{ background: "linear-gradient(135deg, #7f1d1d 0%, #1e293b 100%)", border: "2px solid #ef4444" }}>
           <h3 style={{ fontSize: "1.3rem", marginBottom: "0.5rem" }}>How Do Attackers Think? How Does Web4 Defend Itself?</h3>

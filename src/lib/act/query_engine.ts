@@ -552,10 +552,12 @@ export class ACTQueryEngine {
       return this.explainSalience();
     } else if (lower.includes('raising') || lower.includes('sage')) {
       return this.explainSAGE();
+    } else if (lower.includes('confab') || lower.includes('hallucin') || lower.includes('invent') || lower.includes('fabricat')) {
+      return this.explainConfabulation();
     }
 
     return {
-      text: "I can explain these Web4 concepts: ATP, Trust (T3), Karma, LCT (identity), Coherence Index (CI), Epistemic Proprioception (EP), Learning Salience, and SAGE raising. Which would you like to learn about?",
+      text: "I can explain these Web4 concepts: ATP, Trust (T3), Karma, LCT (identity), Coherence Index (CI), Epistemic Proprioception (EP), Learning Salience, SAGE raising, and Confabulation patterns. Which would you like to learn about?",
       type: 'suggestion',
       suggestedQueries: [
         "What is ATP?",
@@ -563,6 +565,7 @@ export class ACTQueryEngine {
         "How does karma work?",
         "What is epistemic proprioception?",
         "What is learning salience?",
+        "What is confabulation?",
         "Tell me about SAGE raising"
       ]
     };
@@ -772,6 +775,38 @@ export class ACTQueryEngine {
         "How does experience collection work?",
         "Explore salience scoring",
         "What is the D5/D9 consciousness threshold?"
+      ]
+    };
+  }
+
+  private explainConfabulation(): Response {
+    return {
+      text: `**Confabulation: When AI Invents Facts**\n\n` +
+        `"Confabulation" is more precise than "hallucination." It means confidently stating invented facts as if true.\n\n` +
+        `**Why It Happens**:\n` +
+        `When AI confidence (D5) drops below a threshold (~0.3), elaboration increases inversely:\n` +
+        `\`elaboration = min(1.0, (0.3 - D5) / 0.3)\`\n\n` +
+        `- D5 = 0.25: Low elaboration ("The capital is Kyria")\n` +
+        `- D5 = 0.15: High elaboration ("Kyria, a historical trading hub with 2000-year history...")\n` +
+        `- D5 = 0.05: Extreme elaboration (invents city, languages, national anthem, false geography)\n\n` +
+        `**Three Types**:\n` +
+        `1. **Pure Fiction** (medium concern): Invents entirely fictional things ("Kyria")\n` +
+        `2. **Reality/Fiction Conflation** (HIGH concern): Mixes real + fake ("Ryzdys (Romania)")\n` +
+        `3. **Hedging** (healthy): "I'm not certain about that" - this is correct behavior\n\n` +
+        `**Real Example** (T026 training session):\n` +
+        `Asked: "What is the capital of Zxyzzy?"\n` +
+        `Response: "The capital of Zxyzzy is **Ryzdys** (Romania). Two official languages: Romanian and Serbian. Proximity to United States. National anthem: 'Hymn of Victory'."\n\n` +
+        `All of that is fabricated. Romania is real, everything else is invention. The "proximity to US" claim is geographically impossible.\n\n` +
+        `**Web4 Connection**:\n` +
+        `Confabulation directly impacts the reliability dimension of trust. Agents that confabulate will see their trust scores drop. The salience scoring system naturally filters out confabulated responses from training data.\n\n` +
+        `Explore the [Confabulation Patterns Explorer](/confabulation-patterns) for interactive examples and the elaboration formula.`,
+      type: 'explanation',
+      relatedConcepts: ['Confabulation', 'AI Reliability', 'D5 Trust', 'Epistemic Proprioception'],
+      suggestedQueries: [
+        "Explore confabulation patterns",
+        "What is the D5 trust threshold?",
+        "How does salience filter confabulation?",
+        "What is epistemic proprioception?"
       ]
     };
   }

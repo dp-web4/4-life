@@ -24,6 +24,7 @@ export default function RootLayout({
             <Link href="/act-explorer">ACT Chat</Link>
             <Link href="/understanding-consciousness">Consciousness</Link>
             <Link href="/learning-salience">Learning</Link>
+            <Link href="/confabulation-patterns">Confabulation</Link>
             <Link href="/adversarial-explorer">Adversarials</Link>
             <Link href="/threat-model">Threat model</Link>
             <Link href="/glossary">Glossary</Link>
