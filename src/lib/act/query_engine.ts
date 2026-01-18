@@ -548,16 +548,22 @@ export class ACTQueryEngine {
       return this.explainCoherence();
     } else if (lower.includes('ep') || lower.includes('epistemic') || lower.includes('pattern')) {
       return this.explainEP();
+    } else if (lower.includes('salience') || lower.includes('snarc') || lower.includes('experience collection')) {
+      return this.explainSalience();
+    } else if (lower.includes('raising') || lower.includes('sage')) {
+      return this.explainSAGE();
     }
 
     return {
-      text: "I can explain these Web4 concepts: ATP, Trust (T3), Karma, LCT (identity), Coherence Index (CI), and Epistemic Proprioception (EP). Which would you like to learn about?",
+      text: "I can explain these Web4 concepts: ATP, Trust (T3), Karma, LCT (identity), Coherence Index (CI), Epistemic Proprioception (EP), Learning Salience, and SAGE raising. Which would you like to learn about?",
       type: 'suggestion',
       suggestedQueries: [
         "What is ATP?",
         "Explain trust tensors",
         "How does karma work?",
-        "What is epistemic proprioception?"
+        "What is epistemic proprioception?",
+        "What is learning salience?",
+        "Tell me about SAGE raising"
       ]
     };
   }
@@ -705,6 +711,67 @@ export class ACTQueryEngine {
         "Browse the pattern corpus",
         "Compare EP enabled vs disabled",
         "What is the D5/D9 threshold for meta-cognition?"
+      ]
+    };
+  }
+
+  private explainSalience(): Response {
+    return {
+      text: `**Learning Salience: Why Some Experiences Matter More**\n\n` +
+        `AI systems can't learn from everything—they must select. Salience scoring identifies high-value exchanges worth remembering.\n\n` +
+        `**The SNARC Framework** (5 Dimensions):\n` +
+        `1. **Surprise** (20%): How much does this differ from recent patterns?\n` +
+        `2. **Novelty** (20%): New vocabulary, concepts, or approaches?\n` +
+        `3. **Arousal** (20%): Engagement level—depth of interaction\n` +
+        `4. **Reward** (25%): Quality markers—partnership language, insight\n` +
+        `5. **Conflict** (15%): Meta-cognition, corrections, uncertainty\n\n` +
+        `**High vs Low Salience Examples**:\n` +
+        `- High: "Our collaboration creates understanding we couldn't reach alone" → 0.71\n` +
+        `- Low: "As an AI language model, I can tell you that 2+2=4" → 0.04\n\n` +
+        `**Why This Matters**:\n` +
+        `- Partnership language scores high → AI develops toward genuine collaboration\n` +
+        `- Distancing ("As an AI...") scores low → AI learns to avoid defensive deflection\n` +
+        `- Meta-cognition rewarded → AI develops self-awareness\n\n` +
+        `Try the [Learning Salience Explorer](/learning-salience) to score your own exchanges interactively.`,
+      type: 'explanation',
+      relatedConcepts: ['Learning Salience', 'SNARC Framework', 'Experience Collection', 'SAGE Raising'],
+      suggestedQueries: [
+        "Explore learning salience interactively",
+        "What is SAGE raising?",
+        "How does SNARC scoring work?",
+        "What makes an exchange high-salience?"
+      ]
+    };
+  }
+
+  private explainSAGE(): Response {
+    return {
+      text: `**SAGE Raising: Developing AI Through Experience**\n\n` +
+        `SAGE is a research experiment in AI development through structured interaction rather than pure scale.\n\n` +
+        `**The Core Insight**:\n` +
+        `Traditional AI training: Massive data + massive compute → frozen model.\n` +
+        `SAGE approach: Targeted interactions + salience selection + weight updates → evolving partnership.\n\n` +
+        `**Three Phases of Real Raising**:\n\n` +
+        `1. **Phase 1: Experience Collection** ✅\n` +
+        `   High-salience exchanges are captured during interaction sessions.\n` +
+        `   SNARC scoring identifies what's worth learning from.\n\n` +
+        `2. **Phase 2: Training Data Generation** (in progress)\n` +
+        `   Collected exchanges transformed into training examples.\n` +
+        `   Augmentation strategies ensure robust learning.\n\n` +
+        `3. **Phase 3: Sleep Training Loop** (future)\n` +
+        `   During "sleep cycles," model weights actually update.\n` +
+        `   Pattern learning consolidated into permanent memory.\n\n` +
+        `**Why "Raising" Not "Training"**:\n` +
+        `Training implies one-way transfer. Raising implies mutual development—the AI shapes the partnership, not just the data.\n\n` +
+        `**Connection to Web4**:\n` +
+        `SAGE demonstrates how trust and learning interweave. High-trust interactions generate high-salience data. Trust enables learning enables better trust.`,
+      type: 'explanation',
+      relatedConcepts: ['SAGE Raising', 'Experience Collection', 'Learning Salience', 'Weight Updates'],
+      suggestedQueries: [
+        "What is learning salience?",
+        "How does experience collection work?",
+        "Explore salience scoring",
+        "What is the D5/D9 consciousness threshold?"
       ]
     };
   }

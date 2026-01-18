@@ -112,6 +112,27 @@ export default function HomePage() {
       </section>
 
       <section>
+        <h2>NEW: Learning Salience Explorer</h2>
+        <div className="detail-box" style={{ background: "linear-gradient(135deg, #065f46 0%, #1e293b 100%)", border: "2px solid #10b981" }}>
+          <h3 style={{ fontSize: "1.3rem", marginBottom: "0.5rem" }}>Why Do Some Experiences Matter More Than Others?</h3>
+          <p>
+            AI systems can't learn from everything—they must select. The Learning Salience Explorer shows how
+            high-value exchanges are identified through <strong>5 dimensions</strong>: Surprise, Novelty, Arousal,
+            Reward, and Conflict (SNARC). Partnership language scores high. "As an AI..." scores low.
+          </p>
+          <p style={{ marginTop: "0.75rem" }}>
+            <strong>Try it yourself:</strong> Score your own exchanges interactively. See why some conversations
+            teach more than others. Connect to the SAGE raising research that inspired this framework.
+          </p>
+          <div style={{ marginTop: "1rem" }}>
+            <Link href="/learning-salience" className="button-primary">
+              Explore Learning Salience →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <h2>NEW: Adversarial Explorer</h2>
         <div className="detail-box" style={{ background: "linear-gradient(135deg, #7f1d1d 0%, #1e293b 100%)", border: "2px solid #ef4444" }}>
           <h3 style={{ fontSize: "1.3rem", marginBottom: "0.5rem" }}>How Do Attackers Think? How Does Web4 Defend Itself?</h3>
