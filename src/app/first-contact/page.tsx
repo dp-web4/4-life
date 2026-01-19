@@ -293,11 +293,12 @@ export default function FirstContactPage() {
                 {/* Just-in-Time Explanations */}
                 {currentSnapshot.isWarning && currentSnapshot.trust_after < 0.5 && (
                   <div className="mt-4 bg-orange-900/20 border border-orange-800 rounded p-4">
-                    <strong className="text-orange-400">⚠️ Trust Below Threshold</strong>
+                    <strong className="text-orange-400">⚠️ Trust Below Society Threshold</strong>
                     <p className="text-gray-300 mt-2">
-                      When trust drops below 0.5, some features become restricted. This is Web4's way of
-                      <strong className="text-white"> protecting the community</strong> from low-quality contributors.
-                      Alice can rebuild trust through consistent quality—but the record of this dip is permanent.
+                      Each society sets its own trust threshold. When Alice's trust dropped below 0.5,
+                      this community restricted her features—a mild form of ejection. She can rebuild
+                      trust through consistent quality, but the record of this dip is permanent and
+                      <strong className="text-white"> visible to other societies</strong> she might join.
                     </p>
                   </div>
                 )}
@@ -505,8 +506,10 @@ export default function FirstContactPage() {
                   Everyone can see your track record. No fresh starts.
                 </p>
                 <p className="text-gray-300 mb-4">
-                  <strong>The threshold:</strong> Trust below 0.5 means restricted access. This protects communities
-                  from low-quality contributors while giving everyone a path to recover through consistent quality.
+                  <strong>Society thresholds:</strong> Each society sets its own minimum trust. Fall below it?
+                  You're ejected from that society—but you can still participate in others. Your ejection
+                  is visible globally, affecting how other societies perceive you (like a DUI affecting your
+                  pilot's license).
                 </p>
                 <Link href="/trust-tensor" className="text-purple-400 hover:underline text-sm">
                   Deep dive: Trust Tensors →
@@ -537,18 +540,20 @@ export default function FirstContactPage() {
               {/* Consequences */}
               <div className="bg-gradient-to-br from-orange-900/30 to-gray-800 border border-orange-700 rounded-xl p-6">
                 <div className="text-3xl mb-3">📜</div>
-                <h3 className="text-xl font-bold text-orange-400 mb-3">Consequences: Permanent Record</h3>
+                <h3 className="text-xl font-bold text-orange-400 mb-3">Consequences: Visible Record</h3>
                 <p className="text-gray-300 mb-4">
                   <strong>The problem:</strong> On traditional platforms, consequences are temporary. Wait out a
                   ban, delete old posts, or just start fresh. No long-term accountability.
                 </p>
                 <p className="text-gray-300 mb-4">
-                  <strong>Web4 solution:</strong> Your track record is permanent. Good behavior compounds—
-                  consistent quality builds trust that opens doors. Bad behavior is visible forever.
+                  <strong>Web4 solution:</strong> Your track record is permanent and visible across societies.
+                  Get ejected from one community? Others can see why. Good behavior compounds—consistent quality
+                  builds trust that opens doors everywhere.
                 </p>
                 <p className="text-gray-300 mb-4">
-                  <strong>Fair but firm:</strong> Everyone can recover from mistakes (like Alice did), but the
-                  record of those mistakes remains. Trust is earned, and history is transparent.
+                  <strong>Reintegration path:</strong> You can recover from mistakes through the same process
+                  humans use: demonstrate changed behavior in other contexts, rebuild your reputation, and apply
+                  for readmission. The record remains, but redemption is possible.
                 </p>
                 <Link href="/coherence-index" className="text-orange-400 hover:underline text-sm">
                   Deep dive: Coherence Index →

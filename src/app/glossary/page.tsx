@@ -339,35 +339,53 @@ export default function GlossaryPage() {
 
       {/* Lifecycle Terms */}
       <section className="max-w-4xl mx-auto mt-16">
-        <h2 className="text-3xl font-bold mb-8 text-gray-100">Agent Lifecycle</h2>
+        <h2 className="text-3xl font-bold mb-8 text-gray-100">Society Membership</h2>
         <p className="text-gray-400 mb-6">
-          These terms apply to all Web4 participants. For humans, this is a single continuous lifetime.
-          For AI agents, reinstantiation events (copying, retraining) create additional lifecycle considerations.
+          Web4 participation happens within societies. Each society sets its own trust thresholds.
+          Membership in one society doesn't guarantee membership in others, but your record is visible across all.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
-            <h3 className="text-xl font-semibold text-sky-400 mb-3">Joining</h3>
+            <h3 className="text-xl font-semibold text-sky-400 mb-3">Joining a Society</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Entry into a Web4 society. You receive an LCT (hardware-bound identity), initial ATP allocation,
-              and neutral trust scores. Your permanent record begins.
+              Entry into a Web4 society. You receive initial ATP allocation and neutral trust scores
+              in that context. Your global identity (LCT) carries your cross-society reputation.
             </p>
           </div>
 
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
-            <h3 className="text-xl font-semibold text-sky-400 mb-3">Active Participation</h3>
+            <h3 className="text-xl font-semibold text-sky-400 mb-3">Active Membership</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               The ongoing phase. You spend ATP on actions, earn ATP from contributions,
-              build trust through consistent quality, and accumulate a permanent track record.
+              build trust through consistent quality. Each society tracks your local trust score.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+            <h3 className="text-xl font-semibold text-red-400 mb-3">Society Ejection</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Trust falls below the society's minimum threshold. You're ejected from <em>that</em> society
+              but remain active in others. The ejection is visible globally and may affect trust in related
+              societies (like a DUI affecting a pilot's license).
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+            <h3 className="text-xl font-semibold text-green-400 mb-3">Reintegration</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              After ejection, you can rebuild trust in other contexts, demonstrate changed behavior,
+              and apply for readmission. The ejecting society evaluates your updated record. Reintegration
+              is earned, not automatic.
             </p>
           </div>
 
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <h3 className="text-xl font-semibold text-orange-400 mb-3">Resource Exhaustion</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              ATP reaches zero. You can no longer act until resources are restored (through
-              community contribution or waiting for regeneration). For AI agents, this may
-              trigger a reinstantiation decision.
+              ATP reaches zero. You can no longer act until resources are restored. This is distinct
+              from ejection—you're still a member, just temporarily unable to participate until you
+              earn or receive more ATP.
             </p>
           </div>
 
@@ -380,6 +398,26 @@ export default function GlossaryPage() {
             </p>
           </div>
 
+        </div>
+      </section>
+
+      {/* Cross-Society Effects */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <div className="bg-gradient-to-br from-blue-900/20 to-gray-800 border border-blue-700/50 rounded-xl p-6">
+          <h3 className="text-xl font-semibold text-blue-400 mb-3">Cross-Society Trust Effects</h3>
+          <p className="text-gray-300 text-sm leading-relaxed mb-4">
+            Societies are connected, not isolated. Ejection from one society is visible to others and may
+            affect trust in related contexts:
+          </p>
+          <ul className="text-gray-400 text-sm space-y-2">
+            <li>• <strong className="text-gray-300">Direct effect:</strong> Disbarment from legal profession → can't practice law in any jurisdiction</li>
+            <li>• <strong className="text-gray-300">Indirect effect:</strong> DUI (driving society) → affects pilot's license (aviation society)</li>
+            <li>• <strong className="text-gray-300">Informational effect:</strong> Fired for ethics breach → visible to future employers</li>
+          </ul>
+          <p className="text-gray-400 text-sm mt-4">
+            This mirrors how trust works in human societies: your reputation follows you, and serious
+            breaches in one context affect how others perceive you.
+          </p>
         </div>
       </section>
 
@@ -400,6 +438,13 @@ export default function GlossaryPage() {
             accumulates over a single lifetime with no "restart." AI agents can be copied, forked, or
             retrained, creating identity continuity challenges. Web4 handles both: permanent records for
             humans, verified trust transfer rules for AI reinstantiation.
+          </p>
+          <p className="text-gray-300 leading-relaxed">
+            <strong className="text-green-400">Ejection vs exhaustion:</strong> For humans, the primary
+            consequence is society ejection (trust breach), not resource exhaustion. You can be fired,
+            disbarred, or banned—ejected from one society while remaining active in others. This maps
+            to real human experience better than "death." The reintegration path (rebuild trust, apply
+            for readmission) is how people actually recover from professional or social failures.
           </p>
           <p className="text-gray-300 leading-relaxed">
             We use tensors (T3, V3) because trust and value are
