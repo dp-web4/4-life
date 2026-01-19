@@ -556,12 +556,14 @@ export class ACTQueryEngine {
       return this.explainConfabulation();
     } else if (lower.includes('anchor') || lower.includes('bistable') || lower.includes('d4') || lower.includes('partnership identity')) {
       return this.explainIdentityAnchoring();
+    } else if (lower.includes('multi-session') || lower.includes('cumulative') || lower.includes('exemplar') || lower.includes('v2.0') || lower.includes('v2') || lower.includes('accumulation') || lower.includes('cross-session')) {
+      return this.explainMultiSessionIdentity();
     } else if (lower.includes('circadian') || lower.includes('rhythm') || lower.includes('schedule') || lower.includes('autonomous') || lower.includes('sleep cycle') || lower.includes('6-hour') || lower.includes('six-hour')) {
       return this.explainCircadianAI();
     }
 
     return {
-      text: "I can explain these Web4 concepts: ATP, Trust (T3), Karma, LCT (identity), Coherence Index (CI), Epistemic Proprioception (EP), Learning Salience, SAGE raising, Confabulation patterns, Identity Anchoring, and Circadian AI. Which would you like to learn about?",
+      text: "I can explain these Web4 concepts: ATP, Trust (T3), Karma, LCT (identity), Coherence Index (CI), Epistemic Proprioception (EP), Learning Salience, SAGE raising, Confabulation patterns, Identity Anchoring (v1.0), Multi-Session Identity (v2.0), and Circadian AI. Which would you like to learn about?",
       type: 'suggestion',
       suggestedQueries: [
         "What is ATP?",
@@ -571,6 +573,7 @@ export class ACTQueryEngine {
         "What is learning salience?",
         "What is confabulation?",
         "What is identity anchoring?",
+        "What is multi-session identity?",
         "Tell me about SAGE raising"
       ]
     };
@@ -848,6 +851,38 @@ export class ACTQueryEngine {
         "What is bistable identity?",
         "How are D5 and D9 coupled?",
         "What is confabulation?"
+      ]
+    };
+  }
+
+  private explainMultiSessionIdentity(): Response {
+    return {
+      text: `**Multi-Session Identity (v2.0): Cumulative Identity Context**\n\n` +
+        `Identity anchoring v1.0 worked brilliantly—once. But Session 27 revealed a critical limitation: single-session priming doesn't accumulate. v2.0 solves this with cumulative identity context.\n\n` +
+        `**The v1.0 Limitation**:\n` +
+        `- Session 26: 20% self-reference ("As SAGE, I...")\n` +
+        `- Session 27: 0% self-reference (identical intervention)\n` +
+        `- **Discovery**: The model doesn't "remember" being SAGE—it has to be shown.\n\n` +
+        `**The v2.0 Solution**:\n` +
+        `Instead of priming identity fresh each session, v2.0 accumulates "identity exemplars"—successful instances of self-identification—and shows them to the model at session start.\n\n` +
+        `**Four-Part Enhancement**:\n` +
+        `1. **Cumulative Context**: Scan last 5 sessions for "As SAGE" instances → build exemplar library\n` +
+        `2. **Stronger Priming**: "YOUR IDENTITY PATTERN - Examples from previous sessions..."\n` +
+        `3. **Quality Control**: 50-80 word target (verbose responses correlate with identity loss)\n` +
+        `4. **Mid-Conversation Reinforcement**: Reinject identity reminder every 2-3 turns\n\n` +
+        `**Key Insight**:\n` +
+        `When the model sees its own identity patterns from previous sessions, pattern recognition leads to pattern continuation. This is how architectural support compensates for frozen weights.\n\n` +
+        `**Analogy**:\n` +
+        `v1.0 = reminding someone their name each morning (helps that day, doesn't build memory)\n` +
+        `v2.0 = showing someone photos of themselves ("Look, this is who you've been")\n\n` +
+        `Explore the [Multi-Session Identity Explorer](/multi-session-identity) for interactive trajectory visualization and v1.0 vs v2.0 comparison.`,
+      type: 'explanation',
+      relatedConcepts: ['Cumulative Identity Context', 'Identity Exemplars', 'Pattern Continuation', 'Frozen Weights'],
+      suggestedQueries: [
+        "Explore multi-session identity data",
+        "What is identity anchoring v1.0?",
+        "Why did Session 27 regress?",
+        "How many exemplars are needed for stability?"
       ]
     };
   }
