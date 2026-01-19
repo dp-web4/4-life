@@ -38,6 +38,13 @@ const navigationTree = {
     { title: 'Trust Networks', href: '/trust-networks', desc: 'Multi-agent dynamics' },
     { title: 'Decision Evolution', href: '/decision-evolution', desc: 'AI pattern learning' },
   ],
+  'Foundations': [
+    { title: 'Web4 Explainer', href: '/web4-explainer', desc: 'Technical overview' },
+    { title: 'Aliveness', href: '/aliveness', desc: 'ATP + Trust + Coherence' },
+    { title: 'MRH Boundaries', href: '/markov-relevancy-horizon', desc: 'What you can see' },
+    { title: 'Coherence Theory', href: '/coherence-framework', desc: 'Physics foundations' },
+    { title: 'Pattern Corpus', href: '/patterns', desc: 'Agent learning data' },
+  ],
 };
 
 export default function HomePage() {
