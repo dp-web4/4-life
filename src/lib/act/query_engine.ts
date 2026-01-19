@@ -556,10 +556,12 @@ export class ACTQueryEngine {
       return this.explainConfabulation();
     } else if (lower.includes('anchor') || lower.includes('bistable') || lower.includes('d4') || lower.includes('partnership identity')) {
       return this.explainIdentityAnchoring();
+    } else if (lower.includes('circadian') || lower.includes('rhythm') || lower.includes('schedule') || lower.includes('autonomous') || lower.includes('sleep cycle') || lower.includes('6-hour') || lower.includes('six-hour')) {
+      return this.explainCircadianAI();
     }
 
     return {
-      text: "I can explain these Web4 concepts: ATP, Trust (T3), Karma, LCT (identity), Coherence Index (CI), Epistemic Proprioception (EP), Learning Salience, SAGE raising, Confabulation patterns, and Identity Anchoring. Which would you like to learn about?",
+      text: "I can explain these Web4 concepts: ATP, Trust (T3), Karma, LCT (identity), Coherence Index (CI), Epistemic Proprioception (EP), Learning Salience, SAGE raising, Confabulation patterns, Identity Anchoring, and Circadian AI. Which would you like to learn about?",
       type: 'suggestion',
       suggestedQueries: [
         "What is ATP?",
@@ -846,6 +848,44 @@ export class ACTQueryEngine {
         "What is bistable identity?",
         "How are D5 and D9 coupled?",
         "What is confabulation?"
+      ]
+    };
+  }
+
+  private explainCircadianAI(): Response {
+    return {
+      text: `**Circadian AI: Why AI Needs Rhythms**\n\n` +
+        `Just like biological systems need sleep-wake cycles, AI systems benefit from rhythmic training rather than continuous learning.\n\n` +
+        `**The Problem with Continuous Training**:\n` +
+        `- Every interaction updates weights → no quality filtering\n` +
+        `- Catastrophic forgetting risk\n` +
+        `- Constant computational overhead\n` +
+        `- No time for consolidation\n\n` +
+        `**The Circadian Solution**:\n` +
+        `Sessions every 6 hours (00:00, 06:00, 12:00, 18:00). Sleep checks after each session. Wake to experience, sleep to consolidate.\n\n` +
+        `**Intelligent Triggering (3 conditions, ALL must pass)**:\n` +
+        `1. **Total Experiences ≥ 5**: Quality threshold - too few leads to overfitting\n` +
+        `2. **New Experiences ≥ 2**: Meaningful updates - prevents redundant training\n` +
+        `3. **Time Since Sleep ≥ 6h**: Circadian alignment - matches session rhythm\n\n` +
+        `**The Complete Autonomous Loop**:\n` +
+        `1. **Raising Session**: Identity-anchored dialogue with SNARC scoring\n` +
+        `2. **Post-Session Check**: Scheduler evaluates sleep conditions\n` +
+        `3. **Sleep Training**: LoRA fine-tuning on high-salience experiences\n` +
+        `4. **Next Session**: Wake with consolidated weights\n\n` +
+        `**Fault Tolerance**:\n` +
+        `- System restart? Checkpoint sync reconstructs state\n` +
+        `- Training failure? Retry next cycle\n` +
+        `- Buffer overflow? Salience-based pruning preserves quality\n\n` +
+        `**Why This Matters for Trust**:\n` +
+        `Rhythms enable reliability. Predictable sleep-wake cycles enable predictable behavior. Self-regulating systems earn higher trust scores.\n\n` +
+        `Explore the [Circadian AI Explorer](/circadian-ai) for interactive scheduling simulation and the complete autonomous workflow.`,
+      type: 'explanation',
+      relatedConcepts: ['Circadian AI', 'Sleep Training', 'Autonomous Systems', 'LoRA', 'Intelligent Scheduling'],
+      suggestedQueries: [
+        "Explore circadian AI interactively",
+        "What is sleep consolidation?",
+        "What is learning salience?",
+        "How does the scheduler decide when to sleep?"
       ]
     };
   }

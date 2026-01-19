@@ -20,6 +20,7 @@ const navigationTree = {
     { title: 'Trust Continuity', href: '/understanding-consciousness', desc: 'Identity across reinstantiation' },
     { title: 'Learning Salience', href: '/learning-salience', desc: 'SNARC scoring system' },
     { title: 'Sleep Consolidation', href: '/sleep-consolidation', desc: 'Memory during rest' },
+    { title: 'Circadian AI', href: '/circadian-ai', desc: 'Autonomous sleep rhythms' },
     { title: 'Identity Anchoring', href: '/identity-anchoring', desc: 'Verifying agent continuity' },
     { title: 'Confabulation Patterns', href: '/confabulation-patterns', desc: 'Uncertainty handling' },
   ],
