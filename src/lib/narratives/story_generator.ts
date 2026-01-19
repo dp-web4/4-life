@@ -251,20 +251,20 @@ export class StoryGenerator {
   }
 
   private narrateATPCrisis(event: SimulationEvent): string {
-    const atp = event.data.current_atp;
+    const atp = this.formatNumber(event.data.current_atp);
 
     return `ATP crisis: Only ${atp} attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.`;
   }
 
   private narrateATPWindfall(event: SimulationEvent): string {
-    const gain = event.data.gain;
-    const current = event.data.current_atp;
+    const gain = this.formatNumber(event.data.gain);
+    const current = this.formatNumber(event.data.current_atp);
 
     return `ATP windfall! The agent gains ${gain} attention tokens (now at ${current}), likely through valuable contribution to the society. This represents recognition of their worth - others are willing to pay attention.`;
   }
 
   private narrateDeathImminent(event: SimulationEvent): string {
-    const atp = event.data.current_atp;
+    const atp = this.formatNumber(event.data.current_atp);
 
     return `Death approaches. ATP has fallen to ${atp}. Without intervention, the agent will exhaust their capacity to act. This is the metabolic reality of Web4: participation requires energy, and energy must be earned.`;
   }
@@ -610,5 +610,21 @@ export class StoryGenerator {
 
   private formatTimestamp(tick: number, lifeNumber: number): string {
     return `Life ${lifeNumber}, Tick ${tick}`;
+  }
+
+  /**
+   * Format a number for human display, avoiding ugly floating point artifacts
+   * e.g., 15.799999999999997 -> 16 or 15.8
+   */
+  private formatNumber(value: any): string {
+    if (typeof value !== 'number') return String(value);
+
+    // For ATP values (typically integers), round to nearest integer
+    if (value > 1) {
+      return Math.round(value).toString();
+    }
+
+    // For small values (like trust), use 2 decimal places
+    return value.toFixed(2);
   }
 }

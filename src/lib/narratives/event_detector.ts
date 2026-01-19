@@ -303,10 +303,10 @@ export class EventDetector {
           tick,
           life_id: life.life_id,
           life_number: lifeNumber,
-          description: `ATP crisis: Only ${curr} attention remaining`,
+          description: `ATP crisis: Only ${Math.round(curr)} attention remaining`,
           data: {
-            current_atp: curr,
-            change,
+            current_atp: Math.round(curr),
+            change: Math.round(change),
           },
         });
       }
@@ -319,10 +319,10 @@ export class EventDetector {
           tick,
           life_id: life.life_id,
           life_number: lifeNumber,
-          description: `Death imminent: ATP at ${curr}`,
+          description: `Death imminent: ATP at ${Math.round(curr)}`,
           data: {
-            current_atp: curr,
-            change,
+            current_atp: Math.round(curr),
+            change: Math.round(change),
           },
         });
       }
@@ -335,11 +335,11 @@ export class EventDetector {
           tick,
           life_id: life.life_id,
           life_number: lifeNumber,
-          description: `ATP windfall: Gained ${change} attention`,
+          description: `ATP windfall: Gained ${Math.round(change)} attention`,
           data: {
-            prev_atp: prev,
-            current_atp: curr,
-            gain: change,
+            prev_atp: Math.round(prev),
+            current_atp: Math.round(curr),
+            gain: Math.round(change),
           },
         });
       }
