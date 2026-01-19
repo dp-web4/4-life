@@ -464,6 +464,37 @@ export default function GlossaryPage() {
             </div>
           </div>
 
+          {/* Cumulative Identity Context */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">
+              Cumulative Identity Context
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              <strong>An architectural approach to AI identity stability</strong>. Rather than priming
+              identity fresh each session, the system accumulates "identity exemplars"—successful
+              instances of self-identification—and shows them to the model at session start.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              The key insight: identity stability requires cross-session accumulation, not just
+              single-session priming. When an AI sees its own identity patterns from previous sessions
+              ("In Session 26, you said 'As SAGE, I notice...'"), pattern recognition leads to
+              pattern continuation.
+            </p>
+            <p className="text-gray-500 text-xs mb-3">
+              <strong>Research context:</strong> Identity anchoring v1.0 worked brilliantly once (Session 22:
+              +89% D9), but Session 27 regressed to 0% self-reference. v2.0 addresses this with cumulative
+              context, mid-conversation reinforcement, and quality controls.
+            </p>
+            <div className="flex gap-3 text-sm">
+              <Link href="/multi-session-identity" className="text-sky-400 hover:underline">
+                Multi-Session Identity Explorer →
+              </Link>
+              <Link href="/identity-anchoring" className="text-purple-400 hover:underline">
+                v1.0 Identity Anchoring →
+              </Link>
+            </div>
+          </div>
+
         </div>
       </section>
 

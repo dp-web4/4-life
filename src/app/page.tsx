@@ -27,6 +27,7 @@ const navigationTree = {
     { title: 'Sleep Consolidation', href: '/sleep-consolidation', desc: 'Memory during rest' },
     { title: 'Circadian AI', href: '/circadian-ai', desc: 'Autonomous sleep rhythms' },
     { title: 'Identity Anchoring', href: '/identity-anchoring', desc: 'Verifying agent continuity' },
+    { title: 'Multi-Session Identity', href: '/multi-session-identity', desc: 'Cumulative context (v2.0)' },
     { title: 'Confabulation Patterns', href: '/confabulation-patterns', desc: 'Uncertainty handling' },
   ],
   'Interactive Labs': [
