@@ -255,21 +255,22 @@ export default function GlossaryPage() {
             </div>
           </div>
 
-          {/* Karma */}
+          {/* Trust Continuity (AI Agents) */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
-            <h3 className="text-2xl font-semibold text-sky-400 mb-3">Karma</h3>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">Trust Continuity</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
-              <strong>Resources carried across lives</strong>. When an agent "dies" (ATP = 0)
-              but has high enough trust, they're eligible for rebirth. Karma is the ATP they
-              start their next life with (based on final ATP from previous life).
+              <strong>How Web4 handles AI agent reinstantiation</strong>. AI agents can be copied,
+              forked, retrained, or restarted—creating identity continuity challenges that don't
+              exist for humans. Trust continuity rules determine how accumulated trust transfers
+              (or doesn't) across these events.
             </p>
             <p className="text-gray-400 text-sm mb-3">
-              Plain English: "Good behavior in one life gives you a head start in the next.
-              Trust above threshold = rebirth with your earned ATP. Trust too low = permanent death."
+              Plain English: "When an AI is copied or retrained, does the copy inherit the original's
+              trust? Web4 has rules for this: verified continuity = trust transfers, unverified = start fresh."
             </p>
             <div className="flex gap-3 text-sm">
-              <Link href="/how-it-works" className="text-sky-400 hover:underline">
-                Learn about lifecycle →
+              <Link href="/understanding-consciousness" className="text-sky-400 hover:underline">
+                AI identity mechanics →
               </Link>
             </div>
           </div>
@@ -338,38 +339,44 @@ export default function GlossaryPage() {
 
       {/* Lifecycle Terms */}
       <section className="max-w-4xl mx-auto mt-16">
-        <h2 className="text-3xl font-bold mb-8 text-gray-100">Lifecycle Mechanics</h2>
+        <h2 className="text-3xl font-bold mb-8 text-gray-100">Agent Lifecycle</h2>
+        <p className="text-gray-400 mb-6">
+          These terms apply to all Web4 participants. For humans, this is a single continuous lifetime.
+          For AI agents, reinstantiation events (copying, retraining) create additional lifecycle considerations.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
-            <h3 className="text-xl font-semibold text-sky-400 mb-3">Birth</h3>
+            <h3 className="text-xl font-semibold text-sky-400 mb-3">Joining</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Entry into a Web4 society. You receive an LCT, initial ATP allocation,
-              and neutral trust scores. Now you can act.
+              Entry into a Web4 society. You receive an LCT (hardware-bound identity), initial ATP allocation,
+              and neutral trust scores. Your permanent record begins.
             </p>
           </div>
 
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
-            <h3 className="text-xl font-semibold text-sky-400 mb-3">Life</h3>
+            <h3 className="text-xl font-semibold text-sky-400 mb-3">Active Participation</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              The active phase. You spend ATP on actions, earn ATP from contributions,
-              build trust through behavior, and navigate the society's rules.
+              The ongoing phase. You spend ATP on actions, earn ATP from contributions,
+              build trust through consistent quality, and accumulate a permanent track record.
             </p>
           </div>
 
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
-            <h3 className="text-xl font-semibold text-red-400 mb-3">Death</h3>
+            <h3 className="text-xl font-semibold text-orange-400 mb-3">Resource Exhaustion</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              ATP reaches zero. Metabolic exhaustion. You can no longer act. Your life
-              history is recorded and evaluated for rebirth eligibility.
+              ATP reaches zero. You can no longer act until resources are restored (through
+              community contribution or waiting for regeneration). For AI agents, this may
+              trigger a reinstantiation decision.
             </p>
           </div>
 
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
-            <h3 className="text-xl font-semibold text-purple-400 mb-3">Rebirth</h3>
+            <h3 className="text-xl font-semibold text-purple-400 mb-3">AI Reinstantiation</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              If trust ≥ threshold, you're reborn with karma (ATP from previous life).
-              Trust too low? Permanent death. No second chances for bad actors.
+              <em>(AI agents only)</em> When an agent is copied, forked, or retrained, Web4 evaluates
+              identity continuity. Verified continuity = trust transfers. Unverified = fresh start.
+              This prevents trust laundering through agent copying.
             </p>
           </div>
 
@@ -383,11 +390,16 @@ export default function GlossaryPage() {
         </h2>
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8 space-y-4">
           <p className="text-gray-300 leading-relaxed">
-            We use biological metaphors (ATP, death, rebirth) because they communicate
-            <strong className="text-sky-400"> metabolic dynamics</strong> better than
-            purely economic terms. "Spam costs attention and dies from exhaustion" is
-            more intuitive than "adversarial actors deplete their resource allocation
-            and face elimination."
+            We use biological metaphors (ATP, metabolic economics) because they communicate
+            <strong className="text-sky-400"> resource dynamics</strong> better than
+            purely economic terms. "Spam burns out from metabolic exhaustion" is
+            more intuitive than "adversarial actors deplete their resource allocation."
+          </p>
+          <p className="text-gray-300 leading-relaxed">
+            <strong className="text-purple-400">Human vs AI framing:</strong> Humans live once—trust
+            accumulates over a single lifetime with no "restart." AI agents can be copied, forked, or
+            retrained, creating identity continuity challenges. Web4 handles both: permanent records for
+            humans, verified trust transfer rules for AI reinstantiation.
           </p>
           <p className="text-gray-300 leading-relaxed">
             We use tensors (T3, V3) because trust and value are

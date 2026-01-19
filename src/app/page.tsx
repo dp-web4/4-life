@@ -16,11 +16,11 @@ const navigationTree = {
     { title: 'Trust Tensor', href: '/trust-tensor', desc: 'Multi-dimensional trust' },
     { title: 'Coherence Index', href: '/coherence-index', desc: 'Consistency detection' },
   ],
-  'AI Development': [
-    { title: 'Consciousness Thresholds', href: '/understanding-consciousness', desc: 'D5/D9 trust-identity gates' },
+  'AI Agent Mechanics': [
+    { title: 'Trust Continuity', href: '/understanding-consciousness', desc: 'Identity across reinstantiation' },
     { title: 'Learning Salience', href: '/learning-salience', desc: 'SNARC scoring system' },
     { title: 'Sleep Consolidation', href: '/sleep-consolidation', desc: 'Memory during rest' },
-    { title: 'Identity Anchoring', href: '/identity-anchoring', desc: 'Architectural identity support' },
+    { title: 'Identity Anchoring', href: '/identity-anchoring', desc: 'Verifying agent continuity' },
     { title: 'Confabulation Patterns', href: '/confabulation-patterns', desc: 'Uncertainty handling' },
   ],
   'Interactive Labs': [
@@ -33,7 +33,7 @@ const navigationTree = {
     { title: 'Adversarial Analysis', href: '/adversarial-explorer', desc: 'Attack patterns' },
     { title: 'Threat Model', href: '/threat-model', desc: 'Security analysis' },
     { title: 'Trust Networks', href: '/trust-networks', desc: 'Multi-agent dynamics' },
-    { title: 'Decision Evolution', href: '/decision-evolution', desc: 'EP learning' },
+    { title: 'Decision Evolution', href: '/decision-evolution', desc: 'AI pattern learning' },
   ],
 };
 
