@@ -390,14 +390,78 @@ export default function GlossaryPage() {
           </div>
 
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
-            <h3 className="text-xl font-semibold text-purple-400 mb-3">AI Reinstantiation</h3>
+            <h3 className="text-xl font-semibold text-purple-400 mb-3">Software AI Reinstantiation</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              <em>(AI agents only)</em> When an agent is copied, forked, or retrained, Web4 evaluates
+              <em>(Software/cloud AI only)</em> When an agent is copied, forked, or retrained, Web4 evaluates
               identity continuity. Verified continuity = trust transfers. Unverified = fresh start.
               This prevents trust laundering through agent copying.
             </p>
           </div>
 
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+            <h3 className="text-xl font-semibold text-cyan-400 mb-3">Embodied AI Energy Management</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              <em>(Robots, edge devices)</em> Hardware-bound AI can't "rebirth"—the LCT validates continuity.
+              Running out of energy and rebooting is reputationally significant ("poor self-management") but
+              doesn't create a new identity. Like a human passing out and being revived—same person, same record.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Agent Type Comparison */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <div className="bg-gradient-to-br from-gray-900/50 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <h3 className="text-xl font-semibold text-gray-100 mb-4">Agent Type Comparison</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-gray-700">
+                  <th className="py-2 px-3 text-left text-gray-400"></th>
+                  <th className="py-2 px-3 text-left text-sky-400">Human</th>
+                  <th className="py-2 px-3 text-left text-cyan-400">Embodied AI</th>
+                  <th className="py-2 px-3 text-left text-purple-400">Software AI</th>
+                </tr>
+              </thead>
+              <tbody className="text-gray-300">
+                <tr className="border-b border-gray-700/50">
+                  <td className="py-2 px-3 font-medium">Identity binding</td>
+                  <td className="py-2 px-3">Body</td>
+                  <td className="py-2 px-3">Hardware (LCT)</td>
+                  <td className="py-2 px-3">Cryptographic</td>
+                </tr>
+                <tr className="border-b border-gray-700/50">
+                  <td className="py-2 px-3 font-medium">Can be copied?</td>
+                  <td className="py-2 px-3">No</td>
+                  <td className="py-2 px-3">No</td>
+                  <td className="py-2 px-3">Yes</td>
+                </tr>
+                <tr className="border-b border-gray-700/50">
+                  <td className="py-2 px-3 font-medium">Energy crisis</td>
+                  <td className="py-2 px-3">Sleep/exhaustion</td>
+                  <td className="py-2 px-3">Recharge/reboot</td>
+                  <td className="py-2 px-3">Compute budget</td>
+                </tr>
+                <tr className="border-b border-gray-700/50">
+                  <td className="py-2 px-3 font-medium">After restart</td>
+                  <td className="py-2 px-3">Same person</td>
+                  <td className="py-2 px-3">Same identity</td>
+                  <td className="py-2 px-3">Identity question</td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-3 font-medium">"Rebirth" possible?</td>
+                  <td className="py-2 px-3 text-gray-500">No</td>
+                  <td className="py-2 px-3 text-gray-500">No</td>
+                  <td className="py-2 px-3 text-green-400">Yes (new instance)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-gray-400 text-xs mt-4">
+            Hardware-bound identity (humans, embodied AI) creates continuity that software AI lacks.
+            The "rebirth" concept only applies where copying/forking is possible.
+          </p>
         </div>
       </section>
 
@@ -434,10 +498,11 @@ export default function GlossaryPage() {
             more intuitive than "adversarial actors deplete their resource allocation."
           </p>
           <p className="text-gray-300 leading-relaxed">
-            <strong className="text-purple-400">Human vs AI framing:</strong> Humans live once—trust
-            accumulates over a single lifetime with no "restart." AI agents can be copied, forked, or
-            retrained, creating identity continuity challenges. Web4 handles both: permanent records for
-            humans, verified trust transfer rules for AI reinstantiation.
+            <strong className="text-purple-400">Three agent types:</strong> Humans and embodied AI (robots)
+            share hardware-bound identity—they can't be copied, so "rebirth" doesn't apply. Reboot after
+            energy loss is the same identity resuming, with reputational impact for poor energy management.
+            Only software AI can be copied/forked, creating genuine identity continuity questions that need
+            trust transfer rules.
           </p>
           <p className="text-gray-300 leading-relaxed">
             <strong className="text-green-400">Ejection vs exhaustion:</strong> For humans, the primary
