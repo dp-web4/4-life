@@ -125,11 +125,11 @@ function IntroTab() {
             </div>
           </li>
           <li className="card" style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-            <span style={{ fontSize: '1.5rem' }}>🔄</span>
+            <span style={{ fontSize: '1.5rem' }}>📜</span>
             <div>
-              <strong>Death and rebirth are real</strong>
+              <strong>Consequences are permanent</strong>
               <p style={{ color: 'var(--color-text-secondary)', margin: '0.25rem 0 0', fontSize: '0.9rem' }}>
-                Run out of ATP? You die. But karma carries forward to the next life.
+                Your track record follows you forever. No fresh starts. No hiding from your history.
               </p>
             </div>
           </li>
@@ -149,7 +149,7 @@ function IntroTab() {
       <section className="card" style={{ background: 'var(--color-dark-surface)' }}>
         <h2 style={{ fontSize: '1.25rem' }}>See It Work</h2>
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem' }}>
-          Watch a 60-second simulation of agents living, trusting, and dying in a Web4 society.
+          Watch agents build trust, manage resources, and face consequences in a Web4 society.
         </p>
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Link href="/lab-console" className="btn-primary">
