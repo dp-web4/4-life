@@ -334,6 +334,39 @@ export default function GlossaryPage() {
             </div>
           </div>
 
+          {/* Heterogeneous Review */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">
+              Heterogeneous Review
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              <strong>Multi-model verification for high-risk AI actions</strong>. Before an AI agent
+              executes consequential actions (irreversible changes, financial transactions, trust
+              modifications), the action is reviewed by multiple independently-trained AI models.
+              Agreement provides stronger assurance; disagreement triggers investigation.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: "If your lawyer, accountant, and doctor all say 'don't do this'—you
+              listen. If they disagree, you investigate. Different AI models have different blind
+              spots; consensus across independent lineages is stronger than confidence from one source."
+            </p>
+            <p className="text-gray-500 text-xs mb-3">
+              <strong>Key insight:</strong> Two models from the same provider (e.g., GPT-4 and GPT-4-turbo)
+              count as one "lineage"—they share training artifacts. True heterogeneity requires different
+              training pipelines.
+            </p>
+            <div className="flex gap-3 text-sm">
+              <a
+                href="https://github.com/dp-web4/web4/blob/main/docs/HETEROGENEOUS_REVIEW.md"
+                className="text-purple-400 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Protocol spec →
+              </a>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -460,7 +493,12 @@ export default function GlossaryPage() {
           </div>
           <p className="text-gray-400 text-xs mt-4">
             Hardware-bound identity (humans, embodied AI) creates continuity that software AI lacks.
-            The "rebirth" concept only applies where copying/forking is possible.
+            The "rebirth" concept only applies where copying/forking is possible. For software AI,
+            trust verification may include{" "}
+            <strong className="text-gray-300">heterogeneous review</strong>—requiring agreement from
+            independently-trained models before high-risk actions. Different training creates different
+            blind spots; consensus across lineages provides stronger assurance than repeated queries
+            to the same model.
           </p>
         </div>
       </section>
