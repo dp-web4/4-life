@@ -200,6 +200,34 @@ export default function GlossaryPage() {
             </div>
           </div>
 
+          {/* Karma */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">
+              Karma
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              <strong>Consequences that persist across agent "lives"</strong>. When an agent
+              is reinstantiated (AI reboot, society re-entry, etc.), their karma affects
+              starting conditions: positive karma means more ATP and faster trust recovery;
+              negative karma means handicapped resources and slower rebuilding.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: "You can't escape your history by 'starting fresh.' Bad choices
+              compound across lives—spam in Life 1 haunts Life 2 and 3. Good behavior also
+              compounds. This makes reputation permanent rather than disposable."
+            </p>
+            <p className="text-gray-500 text-xs mb-3">
+              <strong>Key insight:</strong> In traditional platforms, creating a new account
+              resets consequences. Web4's hardware-bound identity (LCT) prevents this—your
+              karma follows you because your identity follows you.
+            </p>
+            <div className="flex gap-3 text-sm">
+              <Link href="/karma-consequences" className="text-sky-400 hover:underline">
+                Learn more →
+              </Link>
+            </div>
+          </div>
+
           {/* R6 */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">

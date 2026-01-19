@@ -15,6 +15,7 @@ const navigationTree = {
     { title: 'Economics (ATP)', href: '/atp-economics', desc: 'Metabolic attention cost' },
     { title: 'Trust Tensor', href: '/trust-tensor', desc: 'Multi-dimensional trust' },
     { title: 'Coherence Index', href: '/coherence-index', desc: 'Consistency detection' },
+    { title: 'Karma', href: '/karma-consequences', desc: 'Permanent consequences' },
   ],
   'AI Agent Mechanics': [
     { title: 'Trust Continuity', href: '/understanding-consciousness', desc: 'Identity across reinstantiation' },
