@@ -7,6 +7,7 @@ import Link from 'next/link';
 const navigationTree = {
   'Getting Started': [
     { title: 'First Contact', href: '/first-contact', desc: '10-min interactive intro' },
+    { title: 'Learning Journey', href: '/learn', desc: 'Structured path from beginner to practitioner' },
     { title: 'How It Works', href: '/how-it-works', desc: 'Core concepts overview' },
     { title: 'Glossary', href: '/glossary', desc: 'Terms and definitions' },
   ],
@@ -37,6 +38,7 @@ const navigationTree = {
     { title: 'Threat Model', href: '/threat-model', desc: 'Security analysis' },
     { title: 'Trust Networks', href: '/trust-networks', desc: 'Multi-agent dynamics' },
     { title: 'Decision Evolution', href: '/decision-evolution', desc: 'AI pattern learning' },
+    { title: 'Federation Economics', href: '/federation-economics', desc: 'Cross-society markets' },
   ],
   'Foundations': [
     { title: 'Web4 Explainer', href: '/web4-explainer', desc: 'Technical overview' },
