@@ -8,11 +8,13 @@ const navigationTree = {
   'Getting Started': [
     { title: 'First Contact', href: '/first-contact', desc: '10-min interactive intro' },
     { title: 'Learning Journey', href: '/learn', desc: 'Structured path from beginner to practitioner' },
+    { title: 'Manifest', href: '/manifest', desc: 'All concepts, one page' },
     { title: 'How It Works', href: '/how-it-works', desc: 'Core concepts overview' },
     { title: 'Glossary', href: '/glossary', desc: 'Terms and definitions' },
   ],
   'Core Concepts': [
     { title: 'Identity (LCT)', href: '/lct-explainer', desc: 'Hardware-bound identity' },
+    { title: 'Identity Constellations', href: '/identity-constellation', desc: 'Multi-device binding' },
     { title: 'Economics (ATP)', href: '/atp-economics', desc: 'Metabolic attention cost' },
     { title: 'Trust Tensor', href: '/trust-tensor', desc: 'Multi-dimensional trust' },
     { title: 'Coherence Index', href: '/coherence-index', desc: 'Consistency detection' },
@@ -32,10 +34,12 @@ const navigationTree = {
     { title: 'Lab Console', href: '/lab-console', desc: 'Run simulations' },
     { title: 'Compare', href: '/compare', desc: 'Side-by-side analysis' },
     { title: 'ACT Chat', href: '/act-explorer', desc: 'Ask questions' },
+    { title: 'Narratives', href: '/narratives', desc: 'Generated stories' },
   ],
   'Advanced Topics': [
     { title: 'Adversarial Analysis', href: '/adversarial-explorer', desc: 'Attack patterns' },
     { title: 'Threat Model', href: '/threat-model', desc: 'Security analysis' },
+    { title: 'Challenge Set', href: '/challenge-set', desc: 'Research prompts' },
     { title: 'Trust Networks', href: '/trust-networks', desc: 'Multi-agent dynamics' },
     { title: 'Decision Evolution', href: '/decision-evolution', desc: 'AI pattern learning' },
     { title: 'Federation Economics', href: '/federation-economics', desc: 'Cross-society markets' },
@@ -46,6 +50,7 @@ const navigationTree = {
     { title: 'MRH Boundaries', href: '/markov-relevancy-horizon', desc: 'What you can see' },
     { title: 'Coherence Theory', href: '/coherence-framework', desc: 'Physics foundations' },
     { title: 'Pattern Corpus', href: '/patterns', desc: 'Agent learning data' },
+    { title: 'Starter Kit', href: '/starter-kit', desc: 'Run local society' },
   ],
 };
 
