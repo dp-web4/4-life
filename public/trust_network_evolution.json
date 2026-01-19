@@ -8,40 +8,40 @@
       "lct": "lct:web4:agent:alice",
       "profile": "cooperator",
       "profile_description": "Helps others consistently, builds trust steadily through reliability",
-      "final_atp": 0.0,
-      "final_trust": 0.40999999999999975
+      "final_atp": 13.0,
+      "final_trust": 0.13999999999999982
     },
     {
       "name": "Bob",
       "lct": "lct:web4:agent:bob",
       "profile": "opportunist",
       "profile_description": "Helps when convenient, mixed trust signals, adapts to incentives",
-      "final_atp": 36.0,
-      "final_trust": 0.53
+      "final_atp": 60.0,
+      "final_trust": 0.41999999999999993
     },
     {
       "name": "Charlie",
       "lct": "lct:web4:agent:charlie",
       "profile": "freerider",
       "profile_description": "Takes without giving, loses trust over time, slow to learn",
-      "final_atp": 110.0,
-      "final_trust": 0.4699999999999998
+      "final_atp": 83.0,
+      "final_trust": 0.6800000000000002
     },
     {
       "name": "Diana",
       "lct": "lct:web4:agent:diana",
       "profile": "learner",
       "profile_description": "Starts naive, learns quickly from consequences, trust evolves",
-      "final_atp": 61.0,
-      "final_trust": 0.59
+      "final_atp": 23.0,
+      "final_trust": 0.5199999999999999
     },
     {
       "name": "Eve",
       "lct": "lct:web4:agent:eve",
       "profile": "maverick",
       "profile_description": "High-risk high-reward, volatile trust, creates drama",
-      "final_atp": 22.0,
-      "final_trust": 0.5900000000000001
+      "final_atp": 55.0,
+      "final_trust": 0.30999999999999966
     }
   ],
   "snapshots": [
@@ -52,84 +52,60 @@
           "agent_lct": "lct:web4:agent:alice",
           "name": "Alice",
           "atp": 90.0,
-          "trust_composite": 0.47
+          "trust_composite": 0.43999999999999995
         },
         {
           "agent_lct": "lct:web4:agent:bob",
           "name": "Bob",
-          "atp": 76.0,
-          "trust_composite": 0.47
+          "atp": 108.0,
+          "trust_composite": 0.49999999999999994
         },
         {
           "agent_lct": "lct:web4:agent:charlie",
           "name": "Charlie",
-          "atp": 115.0,
-          "trust_composite": 0.44999999999999996
+          "atp": 98.0,
+          "trust_composite": 0.5
         },
         {
           "agent_lct": "lct:web4:agent:diana",
           "name": "Diana",
-          "atp": 87.0,
-          "trust_composite": 0.41999999999999993
+          "atp": 66.0,
+          "trust_composite": 0.5
         },
         {
           "agent_lct": "lct:web4:agent:eve",
           "name": "Eve",
-          "atp": 93.0,
-          "trust_composite": 0.52
+          "atp": 106.0,
+          "trust_composite": 0.4399999999999999
         }
       ],
       "edges": [
         {
-          "source": "lct:web4:agent:bob",
+          "source": "lct:web4:agent:diana",
           "target": "lct:web4:agent:eve",
-          "trust": 0.55,
-          "interactions": 1,
-          "type": "forming",
-          "age": 4
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.44999999999999996,
-          "interactions": 2,
-          "type": "forming",
+          "trust": 0.4699999999999999,
+          "interactions": 4,
+          "type": "stable",
           "age": 4
         },
         {
           "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.44999999999999996,
-          "interactions": 2,
-          "type": "forming",
-          "age": 4
-        },
-        {
-          "source": "lct:web4:agent:alice",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.55,
+          "target": "lct:web4:agent:bob",
+          "trust": 0.48,
           "interactions": 1,
           "type": "forming",
-          "age": 3
+          "age": 4
         },
         {
           "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.44999999999999996,
-          "interactions": 2,
+          "target": "lct:web4:agent:bob",
+          "trust": 0.47,
+          "interactions": 1,
           "type": "forming",
           "age": 3
         },
         {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:eve",
-          "trust": 0.47,
-          "interactions": 1,
-          "type": "forming",
-          "age": 2
-        },
-        {
-          "source": "lct:web4:agent:diana",
+          "source": "lct:web4:agent:charlie",
           "target": "lct:web4:agent:alice",
           "trust": 0.47,
           "interactions": 1,
@@ -138,16 +114,24 @@
         },
         {
           "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:diana",
+          "target": "lct:web4:agent:eve",
           "trust": 0.47,
           "interactions": 1,
           "type": "forming",
-          "age": 0
+          "age": 1
         },
         {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:bob",
+          "source": "lct:web4:agent:eve",
+          "target": "lct:web4:agent:alice",
           "trust": 0.47,
+          "interactions": 1,
+          "type": "forming",
+          "age": 1
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:bob",
+          "trust": 0.55,
           "interactions": 1,
           "type": "forming",
           "age": 0
@@ -155,9 +139,9 @@
       ],
       "coalitions": [],
       "metrics": {
-        "density": 0.45,
-        "avg_trust": 0.48111111111111104,
-        "trust_variance": 0.001432098765432101,
+        "density": 0.4666666666666667,
+        "avg_trust": 0.4828571428571428,
+        "trust_variance": 0.0007632653061224505,
         "strong_edges": 0,
         "broken_edges": 0
       }
@@ -168,114 +152,74 @@
         {
           "agent_lct": "lct:web4:agent:alice",
           "name": "Alice",
-          "atp": 78.0,
+          "atp": 70.0,
           "trust_composite": 0.3699999999999999
         },
         {
           "agent_lct": "lct:web4:agent:bob",
           "name": "Bob",
-          "atp": 64.0,
-          "trust_composite": 0.43999999999999995
+          "atp": 74.0,
+          "trust_composite": 0.49999999999999994
         },
         {
           "agent_lct": "lct:web4:agent:charlie",
           "name": "Charlie",
           "atp": 101.0,
-          "trust_composite": 0.41999999999999993
+          "trust_composite": 0.6200000000000001
         },
         {
           "agent_lct": "lct:web4:agent:diana",
           "name": "Diana",
-          "atp": 95.0,
-          "trust_composite": 0.5199999999999999
+          "atp": 61.0,
+          "trust_composite": 0.52
         },
         {
           "agent_lct": "lct:web4:agent:eve",
           "name": "Eve",
-          "atp": 86.0,
-          "trust_composite": 0.51
+          "atp": 109.0,
+          "trust_composite": 0.4899999999999998
         }
       ],
       "edges": [
         {
-          "source": "lct:web4:agent:bob",
+          "source": "lct:web4:agent:diana",
           "target": "lct:web4:agent:eve",
-          "trust": 0.55,
-          "interactions": 1,
-          "type": "forming",
-          "age": 9
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.41999999999999993,
-          "interactions": 3,
+          "trust": 0.4699999999999999,
+          "interactions": 4,
           "type": "stable",
           "age": 9
         },
         {
           "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.44999999999999996,
-          "interactions": 2,
+          "target": "lct:web4:agent:bob",
+          "trust": 0.48,
+          "interactions": 1,
           "type": "forming",
           "age": 9
         },
         {
-          "source": "lct:web4:agent:alice",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.55,
-          "interactions": 1,
-          "type": "forming",
-          "age": 8
-        },
-        {
           "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.44999999999999996,
-          "interactions": 2,
+          "target": "lct:web4:agent:bob",
+          "trust": 0.47,
+          "interactions": 1,
           "type": "forming",
           "age": 8
         },
         {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:eve",
-          "trust": 0.47,
-          "interactions": 1,
-          "type": "forming",
-          "age": 7
-        },
-        {
-          "source": "lct:web4:agent:diana",
+          "source": "lct:web4:agent:charlie",
           "target": "lct:web4:agent:alice",
-          "trust": 0.47,
-          "interactions": 1,
-          "type": "forming",
+          "trust": 0.41999999999999993,
+          "interactions": 3,
+          "type": "stable",
           "age": 7
         },
         {
           "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.52,
-          "interactions": 2,
-          "type": "forming",
-          "age": 5
-        },
-        {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:bob",
-          "trust": 0.43999999999999995,
-          "interactions": 2,
-          "type": "forming",
-          "age": 5
-        },
-        {
-          "source": "lct:web4:agent:charlie",
-          "target": "lct:web4:agent:alice",
-          "trust": 0.44999999999999996,
-          "interactions": 2,
-          "type": "forming",
-          "age": 4
+          "target": "lct:web4:agent:eve",
+          "trust": 0.41999999999999993,
+          "interactions": 3,
+          "type": "stable",
+          "age": 6
         },
         {
           "source": "lct:web4:agent:eve",
@@ -283,11 +227,51 @@
           "trust": 0.44999999999999996,
           "interactions": 2,
           "type": "forming",
+          "age": 6
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:bob",
+          "trust": 0.55,
+          "interactions": 1,
+          "type": "forming",
+          "age": 5
+        },
+        {
+          "source": "lct:web4:agent:diana",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.55,
+          "interactions": 1,
+          "type": "forming",
           "age": 4
         },
         {
-          "source": "lct:web4:agent:charlie",
+          "source": "lct:web4:agent:alice",
           "target": "lct:web4:agent:eve",
+          "trust": 0.6000000000000001,
+          "interactions": 2,
+          "type": "forming",
+          "age": 4
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.52,
+          "interactions": 2,
+          "type": "forming",
+          "age": 4
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:diana",
+          "trust": 0.55,
+          "interactions": 1,
+          "type": "forming",
+          "age": 2
+        },
+        {
+          "source": "lct:web4:agent:eve",
+          "target": "lct:web4:agent:diana",
           "trust": 0.47,
           "interactions": 1,
           "type": "forming",
@@ -295,15 +279,7 @@
         },
         {
           "source": "lct:web4:agent:alice",
-          "target": "lct:web4:agent:eve",
-          "trust": 0.52,
-          "interactions": 2,
-          "type": "forming",
-          "age": 2
-        },
-        {
-          "source": "lct:web4:agent:alice",
-          "target": "lct:web4:agent:diana",
+          "target": "lct:web4:agent:charlie",
           "trust": 0.55,
           "interactions": 1,
           "type": "forming",
@@ -312,9 +288,9 @@
       ],
       "coalitions": [],
       "metrics": {
-        "density": 0.56,
-        "avg_trust": 0.48285714285714276,
-        "trust_variance": 0.0019204081632653094,
+        "density": 0.52,
+        "avg_trust": 0.5,
+        "trust_variance": 0.0029846153846153902,
         "strong_edges": 0,
         "broken_edges": 0
       }
@@ -325,114 +301,74 @@
         {
           "agent_lct": "lct:web4:agent:alice",
           "name": "Alice",
-          "atp": 71.0,
-          "trust_composite": 0.37999999999999984
+          "atp": 75.0,
+          "trust_composite": 0.31999999999999984
         },
         {
           "agent_lct": "lct:web4:agent:bob",
           "name": "Bob",
-          "atp": 50.0,
-          "trust_composite": 0.48
+          "atp": 68.0,
+          "trust_composite": 0.43999999999999995
         },
         {
           "agent_lct": "lct:web4:agent:charlie",
           "name": "Charlie",
-          "atp": 111.0,
-          "trust_composite": 0.31999999999999984
+          "atp": 80.0,
+          "trust_composite": 0.54
         },
         {
           "agent_lct": "lct:web4:agent:diana",
           "name": "Diana",
-          "atp": 78.0,
-          "trust_composite": 0.5099999999999999
+          "atp": 62.0,
+          "trust_composite": 0.47
         },
         {
           "agent_lct": "lct:web4:agent:eve",
           "name": "Eve",
-          "atp": 62.0,
-          "trust_composite": 0.51
+          "atp": 85.0,
+          "trust_composite": 0.3999999999999998
         }
       ],
       "edges": [
         {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:eve",
-          "trust": 0.55,
-          "interactions": 1,
-          "type": "forming",
-          "age": 14
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.3999999999999999,
-          "interactions": 4,
-          "type": "stable",
-          "age": 14
-        },
-        {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.41999999999999993,
-          "interactions": 3,
-          "type": "stable",
-          "age": 14
-        },
-        {
-          "source": "lct:web4:agent:alice",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.53,
-          "interactions": 2,
-          "type": "forming",
-          "age": 13
-        },
-        {
-          "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.49999999999999994,
-          "interactions": 3,
-          "type": "stable",
-          "age": 13
-        },
-        {
           "source": "lct:web4:agent:diana",
           "target": "lct:web4:agent:eve",
-          "trust": 0.47,
-          "interactions": 1,
-          "type": "forming",
-          "age": 12
-        },
-        {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:alice",
-          "trust": 0.5,
-          "interactions": 3,
+          "trust": 0.43999999999999995,
+          "interactions": 5,
           "type": "stable",
-          "age": 12
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.45999999999999996,
-          "interactions": 4,
-          "type": "stable",
-          "age": 10
+          "age": 14
         },
         {
           "source": "lct:web4:agent:diana",
           "target": "lct:web4:agent:bob",
-          "trust": 0.43999999999999995,
-          "interactions": 2,
+          "trust": 0.48,
+          "interactions": 1,
           "type": "forming",
-          "age": 10
+          "age": 14
+        },
+        {
+          "source": "lct:web4:agent:eve",
+          "target": "lct:web4:agent:bob",
+          "trust": 0.47,
+          "interactions": 1,
+          "type": "forming",
+          "age": 13
         },
         {
           "source": "lct:web4:agent:charlie",
           "target": "lct:web4:agent:alice",
-          "trust": 0.44999999999999996,
-          "interactions": 2,
-          "type": "forming",
-          "age": 9
+          "trust": 0.3999999999999999,
+          "interactions": 4,
+          "type": "stable",
+          "age": 12
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:eve",
+          "trust": 0.3899999999999999,
+          "interactions": 4,
+          "type": "stable",
+          "age": 11
         },
         {
           "source": "lct:web4:agent:eve",
@@ -440,47 +376,79 @@
           "trust": 0.44999999999999996,
           "interactions": 2,
           "type": "forming",
-          "age": 9
+          "age": 11
         },
         {
-          "source": "lct:web4:agent:charlie",
-          "target": "lct:web4:agent:eve",
-          "trust": 0.47,
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:bob",
+          "trust": 0.55,
           "interactions": 1,
           "type": "forming",
-          "age": 7
+          "age": 10
+        },
+        {
+          "source": "lct:web4:agent:diana",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.5,
+          "interactions": 3,
+          "type": "stable",
+          "age": 9
         },
         {
           "source": "lct:web4:agent:alice",
           "target": "lct:web4:agent:eve",
+          "trust": 0.6000000000000001,
+          "interactions": 2,
+          "type": "forming",
+          "age": 9
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.52,
+          "interactions": 2,
+          "type": "forming",
+          "age": 9
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:diana",
           "trust": 0.52,
           "interactions": 2,
           "type": "forming",
           "age": 7
         },
         {
-          "source": "lct:web4:agent:alice",
+          "source": "lct:web4:agent:eve",
           "target": "lct:web4:agent:diana",
+          "trust": 0.4699999999999999,
+          "interactions": 4,
+          "type": "stable",
+          "age": 7
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:charlie",
           "trust": 0.55,
           "interactions": 1,
           "type": "forming",
           "age": 6
         },
         {
-          "source": "lct:web4:agent:alice",
+          "source": "lct:web4:agent:charlie",
           "target": "lct:web4:agent:bob",
-          "trust": 0.52,
+          "trust": 0.43999999999999995,
           "interactions": 2,
           "type": "forming",
-          "age": 4
+          "age": 3
         },
         {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:alice",
+          "source": "lct:web4:agent:charlie",
+          "target": "lct:web4:agent:diana",
           "trust": 0.48,
           "interactions": 1,
           "type": "forming",
-          "age": 3
+          "age": 2
         },
         {
           "source": "lct:web4:agent:eve",
@@ -488,31 +456,30 @@
           "trust": 0.47,
           "interactions": 1,
           "type": "forming",
-          "age": 2
+          "age": 1
         },
         {
-          "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:bob",
-          "trust": 0.52,
-          "interactions": 2,
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:alice",
+          "trust": 0.47,
+          "interactions": 1,
           "type": "forming",
           "age": 1
+        },
+        {
+          "source": "lct:web4:agent:charlie",
+          "target": "lct:web4:agent:eve",
+          "trust": 0.47,
+          "interactions": 1,
+          "type": "forming",
+          "age": 0
         }
       ],
-      "coalitions": [
-        [
-          "lct:web4:agent:diana",
-          "lct:web4:agent:alice"
-        ],
-        [
-          "lct:web4:agent:bob",
-          "lct:web4:agent:eve"
-        ]
-      ],
+      "coalitions": [],
       "metrics": {
         "density": 0.72,
-        "avg_trust": 0.4833333333333334,
-        "trust_variance": 0.0017666666666666694,
+        "avg_trust": 0.4816666666666667,
+        "trust_variance": 0.0026027777777777824,
         "strong_edges": 0,
         "broken_edges": 0
       }
@@ -523,194 +490,193 @@
         {
           "agent_lct": "lct:web4:agent:alice",
           "name": "Alice",
-          "atp": 36.0,
-          "trust_composite": 0.4299999999999998
+          "atp": 68.0,
+          "trust_composite": 0.2099999999999998
         },
         {
           "agent_lct": "lct:web4:agent:bob",
           "name": "Bob",
-          "atp": 46.0,
-          "trust_composite": 0.6800000000000002
+          "atp": 64.0,
+          "trust_composite": 0.4099999999999999
         },
         {
           "agent_lct": "lct:web4:agent:charlie",
           "name": "Charlie",
-          "atp": 119.0,
-          "trust_composite": 0.38999999999999985
+          "atp": 79.0,
+          "trust_composite": 0.5900000000000001
         },
         {
           "agent_lct": "lct:web4:agent:diana",
           "name": "Diana",
-          "atp": 76.0,
-          "trust_composite": 0.58
+          "atp": 48.0,
+          "trust_composite": 0.49999999999999994
         },
         {
           "agent_lct": "lct:web4:agent:eve",
           "name": "Eve",
-          "atp": 42.0,
-          "trust_composite": 0.44999999999999996
+          "atp": 65.0,
+          "trust_composite": 0.3099999999999997
         }
       ],
       "edges": [
         {
-          "source": "lct:web4:agent:bob",
+          "source": "lct:web4:agent:diana",
           "target": "lct:web4:agent:eve",
-          "trust": 0.55,
-          "interactions": 1,
-          "type": "forming",
-          "age": 19
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.41999999999999993,
+          "trust": 0.4099999999999999,
           "interactions": 6,
           "type": "stable",
           "age": 19
-        },
-        {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.41999999999999993,
-          "interactions": 3,
-          "type": "stable",
-          "age": 19
-        },
-        {
-          "source": "lct:web4:agent:alice",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.5800000000000001,
-          "interactions": 3,
-          "type": "stable",
-          "age": 18
-        },
-        {
-          "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.49999999999999994,
-          "interactions": 3,
-          "type": "stable",
-          "age": 18
-        },
-        {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:eve",
-          "trust": 0.43999999999999995,
-          "interactions": 2,
-          "type": "forming",
-          "age": 17
-        },
-        {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:alice",
-          "trust": 0.5,
-          "interactions": 3,
-          "type": "stable",
-          "age": 17
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.48,
-          "interactions": 6,
-          "type": "stable",
-          "age": 15
         },
         {
           "source": "lct:web4:agent:diana",
           "target": "lct:web4:agent:bob",
-          "trust": 0.48999999999999994,
-          "interactions": 3,
-          "type": "stable",
-          "age": 15
+          "trust": 0.44999999999999996,
+          "interactions": 2,
+          "type": "forming",
+          "age": 19
+        },
+        {
+          "source": "lct:web4:agent:eve",
+          "target": "lct:web4:agent:bob",
+          "trust": 0.47,
+          "interactions": 1,
+          "type": "forming",
+          "age": 18
         },
         {
           "source": "lct:web4:agent:charlie",
           "target": "lct:web4:agent:alice",
-          "trust": 0.44999999999999996,
-          "interactions": 2,
-          "type": "forming",
-          "age": 14
+          "trust": 0.33999999999999986,
+          "interactions": 6,
+          "type": "stable",
+          "age": 17
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:eve",
+          "trust": 0.3899999999999999,
+          "interactions": 4,
+          "type": "stable",
+          "age": 16
         },
         {
           "source": "lct:web4:agent:eve",
           "target": "lct:web4:agent:alice",
-          "trust": 0.49999999999999994,
+          "trust": 0.44999999999999996,
+          "interactions": 2,
+          "type": "forming",
+          "age": 16
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:bob",
+          "trust": 0.55,
+          "interactions": 1,
+          "type": "forming",
+          "age": 15
+        },
+        {
+          "source": "lct:web4:agent:diana",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.55,
+          "interactions": 4,
+          "type": "stable",
+          "age": 14
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:eve",
+          "trust": 0.5700000000000001,
           "interactions": 3,
           "type": "stable",
           "age": 14
         },
         {
-          "source": "lct:web4:agent:charlie",
-          "target": "lct:web4:agent:eve",
-          "trust": 0.43999999999999995,
-          "interactions": 2,
-          "type": "forming",
-          "age": 12
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.49,
+          "interactions": 3,
+          "type": "stable",
+          "age": 14
         },
         {
-          "source": "lct:web4:agent:alice",
-          "target": "lct:web4:agent:eve",
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:diana",
           "trust": 0.52,
           "interactions": 2,
           "type": "forming",
           "age": 12
         },
         {
-          "source": "lct:web4:agent:alice",
+          "source": "lct:web4:agent:eve",
           "target": "lct:web4:agent:diana",
+          "trust": 0.5199999999999999,
+          "interactions": 5,
+          "type": "stable",
+          "age": 12
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:charlie",
           "trust": 0.6000000000000001,
           "interactions": 2,
           "type": "forming",
           "age": 11
         },
         {
-          "source": "lct:web4:agent:alice",
+          "source": "lct:web4:agent:charlie",
           "target": "lct:web4:agent:bob",
-          "trust": 0.6200000000000001,
-          "interactions": 4,
-          "type": "stable",
-          "age": 9
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:alice",
-          "trust": 0.48,
-          "interactions": 1,
+          "trust": 0.43999999999999995,
+          "interactions": 2,
           "type": "forming",
           "age": 8
         },
         {
-          "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.47,
-          "interactions": 1,
+          "source": "lct:web4:agent:charlie",
+          "target": "lct:web4:agent:diana",
+          "trust": 0.45999999999999996,
+          "interactions": 2,
           "type": "forming",
           "age": 7
         },
         {
           "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:bob",
-          "trust": 0.5700000000000001,
-          "interactions": 3,
-          "type": "stable",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.44999999999999996,
+          "interactions": 2,
+          "type": "forming",
           "age": 6
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:alice",
+          "trust": 0.43999999999999995,
+          "interactions": 2,
+          "type": "forming",
+          "age": 6
+        },
+        {
+          "source": "lct:web4:agent:charlie",
+          "target": "lct:web4:agent:eve",
+          "trust": 0.43999999999999995,
+          "interactions": 2,
+          "type": "forming",
+          "age": 5
+        },
+        {
+          "source": "lct:web4:agent:diana",
+          "target": "lct:web4:agent:alice",
+          "trust": 0.48,
+          "interactions": 1,
+          "type": "forming",
+          "age": 4
         }
       ],
-      "coalitions": [
-        [
-          "lct:web4:agent:diana",
-          "lct:web4:agent:alice"
-        ],
-        [
-          "lct:web4:agent:bob",
-          "lct:web4:agent:eve"
-        ]
-      ],
+      "coalitions": [],
       "metrics": {
-        "density": 0.72,
-        "avg_trust": 0.5016666666666666,
-        "trust_variance": 0.0034916666666666737,
+        "density": 0.76,
+        "avg_trust": 0.4747368421052631,
+        "trust_variance": 0.003982825484764549,
         "strong_edges": 0,
         "broken_edges": 0
       }
@@ -721,206 +687,201 @@
         {
           "agent_lct": "lct:web4:agent:alice",
           "name": "Alice",
-          "atp": 21.0,
-          "trust_composite": 0.3899999999999998
+          "atp": 38.0,
+          "trust_composite": 0.1199999999999998
         },
         {
           "agent_lct": "lct:web4:agent:bob",
           "name": "Bob",
-          "atp": 36.0,
-          "trust_composite": 0.5900000000000001
+          "atp": 62.0,
+          "trust_composite": 0.3799999999999999
         },
         {
           "agent_lct": "lct:web4:agent:charlie",
           "name": "Charlie",
-          "atp": 111.0,
-          "trust_composite": 0.4199999999999998
+          "atp": 95.0,
+          "trust_composite": 0.5800000000000001
         },
         {
           "agent_lct": "lct:web4:agent:diana",
           "name": "Diana",
-          "atp": 70.0,
-          "trust_composite": 0.58
+          "atp": 33.0,
+          "trust_composite": 0.5199999999999999
         },
         {
           "agent_lct": "lct:web4:agent:eve",
           "name": "Eve",
-          "atp": 37.0,
-          "trust_composite": 0.49999999999999994
+          "atp": 59.0,
+          "trust_composite": 0.2799999999999997
         }
       ],
       "edges": [
         {
-          "source": "lct:web4:agent:bob",
+          "source": "lct:web4:agent:diana",
           "target": "lct:web4:agent:eve",
-          "trust": 0.55,
-          "interactions": 1,
-          "type": "forming",
-          "age": 24
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.41999999999999993,
+          "trust": 0.4099999999999999,
           "interactions": 6,
           "type": "stable",
           "age": 24
         },
         {
           "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.4699999999999999,
-          "interactions": 4,
-          "type": "stable",
+          "target": "lct:web4:agent:bob",
+          "trust": 0.44999999999999996,
+          "interactions": 2,
+          "type": "forming",
           "age": 24
         },
         {
-          "source": "lct:web4:agent:alice",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.56,
-          "interactions": 4,
-          "type": "stable",
-          "age": 23
-        },
-        {
           "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.49999999999999994,
-          "interactions": 3,
-          "type": "stable",
-          "age": 23
-        },
-        {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:eve",
+          "target": "lct:web4:agent:bob",
           "trust": 0.43999999999999995,
           "interactions": 2,
           "type": "forming",
-          "age": 22
+          "age": 23
         },
         {
-          "source": "lct:web4:agent:diana",
+          "source": "lct:web4:agent:charlie",
           "target": "lct:web4:agent:alice",
-          "trust": 0.47,
-          "interactions": 4,
+          "trust": 0.30999999999999983,
+          "interactions": 7,
           "type": "stable",
           "age": 22
         },
         {
           "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.45999999999999996,
-          "interactions": 7,
-          "type": "stable",
-          "age": 20
-        },
-        {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:bob",
-          "trust": 0.42999999999999994,
-          "interactions": 5,
-          "type": "stable",
-          "age": 20
-        },
-        {
-          "source": "lct:web4:agent:charlie",
-          "target": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:eve",
           "trust": 0.3899999999999999,
           "interactions": 4,
           "type": "stable",
-          "age": 19
+          "age": 21
         },
         {
           "source": "lct:web4:agent:eve",
           "target": "lct:web4:agent:alice",
-          "trust": 0.5499999999999999,
-          "interactions": 4,
+          "trust": 0.41999999999999993,
+          "interactions": 3,
+          "type": "stable",
+          "age": 21
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:bob",
+          "trust": 0.55,
+          "interactions": 1,
+          "type": "forming",
+          "age": 20
+        },
+        {
+          "source": "lct:web4:agent:diana",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.51,
+          "interactions": 6,
           "type": "stable",
           "age": 19
         },
         {
-          "source": "lct:web4:agent:charlie",
-          "target": "lct:web4:agent:eve",
-          "trust": 0.48999999999999994,
-          "interactions": 3,
-          "type": "stable",
-          "age": 17
-        },
-        {
           "source": "lct:web4:agent:alice",
           "target": "lct:web4:agent:eve",
+          "trust": 0.5700000000000001,
+          "interactions": 3,
+          "type": "stable",
+          "age": 19
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.49,
+          "interactions": 3,
+          "type": "stable",
+          "age": 19
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:diana",
           "trust": 0.52,
           "interactions": 2,
           "type": "forming",
           "age": 17
         },
         {
-          "source": "lct:web4:agent:alice",
+          "source": "lct:web4:agent:eve",
           "target": "lct:web4:agent:diana",
-          "trust": 0.6500000000000001,
-          "interactions": 3,
+          "trust": 0.4899999999999999,
+          "interactions": 6,
+          "type": "stable",
+          "age": 17
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.6300000000000001,
+          "interactions": 4,
           "type": "stable",
           "age": 16
         },
         {
-          "source": "lct:web4:agent:alice",
+          "source": "lct:web4:agent:charlie",
           "target": "lct:web4:agent:bob",
-          "trust": 0.6200000000000001,
-          "interactions": 4,
-          "type": "stable",
-          "age": 14
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:alice",
-          "trust": 0.48,
-          "interactions": 1,
+          "trust": 0.43999999999999995,
+          "interactions": 2,
           "type": "forming",
           "age": 13
         },
         {
-          "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.47,
-          "interactions": 1,
+          "source": "lct:web4:agent:charlie",
+          "target": "lct:web4:agent:diana",
+          "trust": 0.45999999999999996,
+          "interactions": 2,
           "type": "forming",
           "age": 12
         },
         {
           "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:bob",
-          "trust": 0.5700000000000001,
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.44999999999999996,
+          "interactions": 2,
+          "type": "forming",
+          "age": 11
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:alice",
+          "trust": 0.4099999999999999,
           "interactions": 3,
           "type": "stable",
           "age": 11
         },
         {
           "source": "lct:web4:agent:charlie",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.47,
-          "interactions": 1,
-          "type": "forming",
-          "age": 4
+          "target": "lct:web4:agent:eve",
+          "trust": 0.4099999999999999,
+          "interactions": 3,
+          "type": "stable",
+          "age": 10
         },
         {
-          "source": "lct:web4:agent:charlie",
-          "target": "lct:web4:agent:bob",
-          "trust": 0.47,
+          "source": "lct:web4:agent:diana",
+          "target": "lct:web4:agent:alice",
+          "trust": 0.48,
+          "interactions": 1,
+          "type": "forming",
+          "age": 9
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:diana",
+          "trust": 0.55,
           "interactions": 1,
           "type": "forming",
           "age": 1
         }
       ],
-      "coalitions": [
-        [
-          "lct:web4:agent:bob",
-          "lct:web4:agent:eve"
-        ]
-      ],
+      "coalitions": [],
       "metrics": {
         "density": 0.8,
-        "avg_trust": 0.4990000000000001,
-        "trust_variance": 0.0042190000000000075,
+        "avg_trust": 0.469,
+        "trust_variance": 0.005069000000000009,
         "strong_edges": 0,
         "broken_edges": 0
       }
@@ -931,211 +892,202 @@
         {
           "agent_lct": "lct:web4:agent:alice",
           "name": "Alice",
-          "atp": 0.0,
-          "trust_composite": 0.40999999999999975
+          "atp": 13.0,
+          "trust_composite": 0.13999999999999982
         },
         {
           "agent_lct": "lct:web4:agent:bob",
           "name": "Bob",
-          "atp": 36.0,
-          "trust_composite": 0.53
+          "atp": 60.0,
+          "trust_composite": 0.41999999999999993
         },
         {
           "agent_lct": "lct:web4:agent:charlie",
           "name": "Charlie",
-          "atp": 110.0,
-          "trust_composite": 0.4699999999999998
+          "atp": 83.0,
+          "trust_composite": 0.6800000000000002
         },
         {
           "agent_lct": "lct:web4:agent:diana",
           "name": "Diana",
-          "atp": 61.0,
-          "trust_composite": 0.59
+          "atp": 23.0,
+          "trust_composite": 0.5199999999999999
         },
         {
           "agent_lct": "lct:web4:agent:eve",
           "name": "Eve",
-          "atp": 22.0,
-          "trust_composite": 0.5900000000000001
+          "atp": 55.0,
+          "trust_composite": 0.30999999999999966
         }
       ],
       "edges": [
         {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:eve",
-          "trust": 0.55,
-          "interactions": 1,
-          "type": "forming",
-          "age": 29
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.41999999999999993,
-          "interactions": 6,
-          "type": "stable",
-          "age": 29
-        },
-        {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.4699999999999999,
-          "interactions": 4,
-          "type": "stable",
-          "age": 29
-        },
-        {
-          "source": "lct:web4:agent:alice",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.56,
-          "interactions": 4,
-          "type": "stable",
-          "age": 28
-        },
-        {
-          "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.4599999999999999,
-          "interactions": 5,
-          "type": "stable",
-          "age": 28
-        },
-        {
           "source": "lct:web4:agent:diana",
           "target": "lct:web4:agent:eve",
           "trust": 0.4599999999999999,
-          "interactions": 4,
-          "type": "stable",
-          "age": 27
-        },
-        {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:alice",
-          "trust": 0.52,
-          "interactions": 5,
-          "type": "stable",
-          "age": 27
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.45999999999999996,
           "interactions": 7,
           "type": "stable",
-          "age": 25
+          "age": 29
         },
         {
           "source": "lct:web4:agent:diana",
           "target": "lct:web4:agent:bob",
-          "trust": 0.3999999999999999,
-          "interactions": 6,
+          "trust": 0.44999999999999996,
+          "interactions": 2,
+          "type": "forming",
+          "age": 29
+        },
+        {
+          "source": "lct:web4:agent:eve",
+          "target": "lct:web4:agent:bob",
+          "trust": 0.4099999999999999,
+          "interactions": 3,
           "type": "stable",
-          "age": 25
+          "age": 28
         },
         {
           "source": "lct:web4:agent:charlie",
           "target": "lct:web4:agent:alice",
-          "trust": 0.3599999999999999,
-          "interactions": 5,
+          "trust": 0.30999999999999983,
+          "interactions": 7,
           "type": "stable",
-          "age": 24
+          "age": 27
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:eve",
+          "trust": 0.3899999999999999,
+          "interactions": 4,
+          "type": "stable",
+          "age": 26
         },
         {
           "source": "lct:web4:agent:eve",
           "target": "lct:web4:agent:alice",
-          "trust": 0.5499999999999999,
+          "trust": 0.43999999999999995,
+          "interactions": 5,
+          "type": "stable",
+          "age": 26
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:bob",
+          "trust": 0.6500000000000001,
+          "interactions": 3,
+          "type": "stable",
+          "age": 25
+        },
+        {
+          "source": "lct:web4:agent:diana",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.56,
+          "interactions": 7,
+          "type": "stable",
+          "age": 24
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:eve",
+          "trust": 0.5700000000000001,
+          "interactions": 3,
+          "type": "stable",
+          "age": 24
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.54,
           "interactions": 4,
           "type": "stable",
           "age": 24
         },
         {
-          "source": "lct:web4:agent:charlie",
-          "target": "lct:web4:agent:eve",
-          "trust": 0.45999999999999996,
-          "interactions": 4,
-          "type": "stable",
-          "age": 22
-        },
-        {
-          "source": "lct:web4:agent:alice",
-          "target": "lct:web4:agent:eve",
-          "trust": 0.6200000000000001,
-          "interactions": 4,
-          "type": "stable",
-          "age": 22
-        },
-        {
-          "source": "lct:web4:agent:alice",
+          "source": "lct:web4:agent:bob",
           "target": "lct:web4:agent:diana",
-          "trust": 0.7000000000000002,
+          "trust": 0.49,
+          "interactions": 3,
+          "type": "stable",
+          "age": 22
+        },
+        {
+          "source": "lct:web4:agent:eve",
+          "target": "lct:web4:agent:diana",
+          "trust": 0.4899999999999999,
+          "interactions": 6,
+          "type": "stable",
+          "age": 22
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.6300000000000001,
           "interactions": 4,
           "type": "stable",
           "age": 21
         },
         {
-          "source": "lct:web4:agent:alice",
+          "source": "lct:web4:agent:charlie",
           "target": "lct:web4:agent:bob",
-          "trust": 0.6200000000000001,
-          "interactions": 4,
+          "trust": 0.4099999999999999,
+          "interactions": 3,
           "type": "stable",
-          "age": 19
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:alice",
-          "trust": 0.48,
-          "interactions": 1,
-          "type": "forming",
           "age": 18
         },
         {
-          "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.52,
-          "interactions": 2,
-          "type": "forming",
+          "source": "lct:web4:agent:charlie",
+          "target": "lct:web4:agent:diana",
+          "trust": 0.43999999999999995,
+          "interactions": 3,
+          "type": "stable",
           "age": 17
         },
         {
           "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:bob",
-          "trust": 0.5700000000000001,
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.44999999999999996,
+          "interactions": 2,
+          "type": "forming",
+          "age": 16
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:alice",
+          "trust": 0.4099999999999999,
           "interactions": 3,
           "type": "stable",
           "age": 16
         },
         {
           "source": "lct:web4:agent:charlie",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.47,
-          "interactions": 1,
-          "type": "forming",
-          "age": 9
+          "target": "lct:web4:agent:eve",
+          "trust": 0.3899999999999999,
+          "interactions": 4,
+          "type": "stable",
+          "age": 15
         },
         {
-          "source": "lct:web4:agent:charlie",
-          "target": "lct:web4:agent:bob",
-          "trust": 0.43999999999999995,
+          "source": "lct:web4:agent:diana",
+          "target": "lct:web4:agent:alice",
+          "trust": 0.48,
+          "interactions": 1,
+          "type": "forming",
+          "age": 14
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:diana",
+          "trust": 0.6000000000000001,
           "interactions": 2,
           "type": "forming",
           "age": 6
         }
       ],
-      "coalitions": [
-        [
-          "lct:web4:agent:diana",
-          "lct:web4:agent:alice"
-        ],
-        [
-          "lct:web4:agent:bob",
-          "lct:web4:agent:eve"
-        ]
-      ],
+      "coalitions": [],
       "metrics": {
         "density": 0.8,
-        "avg_trust": 0.5045,
-        "trust_variance": 0.0065447500000000115,
-        "strong_edges": 1,
+        "avg_trust": 0.47850000000000004,
+        "trust_variance": 0.007462750000000014,
+        "strong_edges": 0,
         "broken_edges": 0
       }
     },
@@ -1145,211 +1097,202 @@
         {
           "agent_lct": "lct:web4:agent:alice",
           "name": "Alice",
-          "atp": 0.0,
-          "trust_composite": 0.40999999999999975
+          "atp": 13.0,
+          "trust_composite": 0.13999999999999982
         },
         {
           "agent_lct": "lct:web4:agent:bob",
           "name": "Bob",
-          "atp": 36.0,
-          "trust_composite": 0.53
+          "atp": 60.0,
+          "trust_composite": 0.41999999999999993
         },
         {
           "agent_lct": "lct:web4:agent:charlie",
           "name": "Charlie",
-          "atp": 110.0,
-          "trust_composite": 0.4699999999999998
+          "atp": 83.0,
+          "trust_composite": 0.6800000000000002
         },
         {
           "agent_lct": "lct:web4:agent:diana",
           "name": "Diana",
-          "atp": 61.0,
-          "trust_composite": 0.59
+          "atp": 23.0,
+          "trust_composite": 0.5199999999999999
         },
         {
           "agent_lct": "lct:web4:agent:eve",
           "name": "Eve",
-          "atp": 22.0,
-          "trust_composite": 0.5900000000000001
+          "atp": 55.0,
+          "trust_composite": 0.30999999999999966
         }
       ],
       "edges": [
         {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:eve",
-          "trust": 0.55,
-          "interactions": 1,
-          "type": "forming",
-          "age": 29
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.41999999999999993,
-          "interactions": 6,
-          "type": "stable",
-          "age": 29
-        },
-        {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.4699999999999999,
-          "interactions": 4,
-          "type": "stable",
-          "age": 29
-        },
-        {
-          "source": "lct:web4:agent:alice",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.56,
-          "interactions": 4,
-          "type": "stable",
-          "age": 28
-        },
-        {
-          "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.4599999999999999,
-          "interactions": 5,
-          "type": "stable",
-          "age": 28
-        },
-        {
           "source": "lct:web4:agent:diana",
           "target": "lct:web4:agent:eve",
           "trust": 0.4599999999999999,
-          "interactions": 4,
-          "type": "stable",
-          "age": 27
-        },
-        {
-          "source": "lct:web4:agent:diana",
-          "target": "lct:web4:agent:alice",
-          "trust": 0.52,
-          "interactions": 5,
-          "type": "stable",
-          "age": 27
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.45999999999999996,
           "interactions": 7,
           "type": "stable",
-          "age": 25
+          "age": 29
         },
         {
           "source": "lct:web4:agent:diana",
           "target": "lct:web4:agent:bob",
-          "trust": 0.3999999999999999,
-          "interactions": 6,
+          "trust": 0.44999999999999996,
+          "interactions": 2,
+          "type": "forming",
+          "age": 29
+        },
+        {
+          "source": "lct:web4:agent:eve",
+          "target": "lct:web4:agent:bob",
+          "trust": 0.4099999999999999,
+          "interactions": 3,
           "type": "stable",
-          "age": 25
+          "age": 28
         },
         {
           "source": "lct:web4:agent:charlie",
           "target": "lct:web4:agent:alice",
-          "trust": 0.3599999999999999,
-          "interactions": 5,
+          "trust": 0.30999999999999983,
+          "interactions": 7,
           "type": "stable",
-          "age": 24
+          "age": 27
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:eve",
+          "trust": 0.3899999999999999,
+          "interactions": 4,
+          "type": "stable",
+          "age": 26
         },
         {
           "source": "lct:web4:agent:eve",
           "target": "lct:web4:agent:alice",
-          "trust": 0.5499999999999999,
+          "trust": 0.43999999999999995,
+          "interactions": 5,
+          "type": "stable",
+          "age": 26
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:bob",
+          "trust": 0.6500000000000001,
+          "interactions": 3,
+          "type": "stable",
+          "age": 25
+        },
+        {
+          "source": "lct:web4:agent:diana",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.56,
+          "interactions": 7,
+          "type": "stable",
+          "age": 24
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:eve",
+          "trust": 0.5700000000000001,
+          "interactions": 3,
+          "type": "stable",
+          "age": 24
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.54,
           "interactions": 4,
           "type": "stable",
           "age": 24
         },
         {
-          "source": "lct:web4:agent:charlie",
-          "target": "lct:web4:agent:eve",
-          "trust": 0.45999999999999996,
-          "interactions": 4,
-          "type": "stable",
-          "age": 22
-        },
-        {
-          "source": "lct:web4:agent:alice",
-          "target": "lct:web4:agent:eve",
-          "trust": 0.6200000000000001,
-          "interactions": 4,
-          "type": "stable",
-          "age": 22
-        },
-        {
-          "source": "lct:web4:agent:alice",
+          "source": "lct:web4:agent:bob",
           "target": "lct:web4:agent:diana",
-          "trust": 0.7000000000000002,
+          "trust": 0.49,
+          "interactions": 3,
+          "type": "stable",
+          "age": 22
+        },
+        {
+          "source": "lct:web4:agent:eve",
+          "target": "lct:web4:agent:diana",
+          "trust": 0.4899999999999999,
+          "interactions": 6,
+          "type": "stable",
+          "age": 22
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.6300000000000001,
           "interactions": 4,
           "type": "stable",
           "age": 21
         },
         {
-          "source": "lct:web4:agent:alice",
+          "source": "lct:web4:agent:charlie",
           "target": "lct:web4:agent:bob",
-          "trust": 0.6200000000000001,
-          "interactions": 4,
+          "trust": 0.4099999999999999,
+          "interactions": 3,
           "type": "stable",
-          "age": 19
-        },
-        {
-          "source": "lct:web4:agent:bob",
-          "target": "lct:web4:agent:alice",
-          "trust": 0.48,
-          "interactions": 1,
-          "type": "forming",
           "age": 18
         },
         {
-          "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:charlie",
-          "trust": 0.52,
-          "interactions": 2,
-          "type": "forming",
+          "source": "lct:web4:agent:charlie",
+          "target": "lct:web4:agent:diana",
+          "trust": 0.43999999999999995,
+          "interactions": 3,
+          "type": "stable",
           "age": 17
         },
         {
           "source": "lct:web4:agent:eve",
-          "target": "lct:web4:agent:bob",
-          "trust": 0.5700000000000001,
+          "target": "lct:web4:agent:charlie",
+          "trust": 0.44999999999999996,
+          "interactions": 2,
+          "type": "forming",
+          "age": 16
+        },
+        {
+          "source": "lct:web4:agent:bob",
+          "target": "lct:web4:agent:alice",
+          "trust": 0.4099999999999999,
           "interactions": 3,
           "type": "stable",
           "age": 16
         },
         {
           "source": "lct:web4:agent:charlie",
-          "target": "lct:web4:agent:diana",
-          "trust": 0.47,
-          "interactions": 1,
-          "type": "forming",
-          "age": 9
+          "target": "lct:web4:agent:eve",
+          "trust": 0.3899999999999999,
+          "interactions": 4,
+          "type": "stable",
+          "age": 15
         },
         {
-          "source": "lct:web4:agent:charlie",
-          "target": "lct:web4:agent:bob",
-          "trust": 0.43999999999999995,
+          "source": "lct:web4:agent:diana",
+          "target": "lct:web4:agent:alice",
+          "trust": 0.48,
+          "interactions": 1,
+          "type": "forming",
+          "age": 14
+        },
+        {
+          "source": "lct:web4:agent:alice",
+          "target": "lct:web4:agent:diana",
+          "trust": 0.6000000000000001,
           "interactions": 2,
           "type": "forming",
           "age": 6
         }
       ],
-      "coalitions": [
-        [
-          "lct:web4:agent:diana",
-          "lct:web4:agent:alice"
-        ],
-        [
-          "lct:web4:agent:bob",
-          "lct:web4:agent:eve"
-        ]
-      ],
+      "coalitions": [],
       "metrics": {
         "density": 0.8,
-        "avg_trust": 0.5045,
-        "trust_variance": 0.0065447500000000115,
-        "strong_edges": 1,
+        "avg_trust": 0.47850000000000004,
+        "trust_variance": 0.007462750000000014,
+        "strong_edges": 0,
         "broken_edges": 0
       }
     }
@@ -1357,51 +1300,6 @@
   "events": [
     {
       "tick": 1,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:eve",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Bob helps Eve (cooperator tendency)"
-    },
-    {
-      "tick": 1,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:charlie",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": -0.02,
-      "reason": "Bob helps Charlie (cooperator tendency)"
-    },
-    {
-      "tick": 1,
-      "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:charlie",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": -0.02,
-      "reason": "Diana helps Charlie (cooperator tendency)"
-    },
-    {
-      "tick": 2,
-      "source": "lct:web4:agent:alice",
-      "target": "lct:web4:agent:charlie",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Alice helps Charlie (cooperator tendency)"
-    },
-    {
-      "tick": 2,
-      "source": "lct:web4:agent:eve",
-      "target": "lct:web4:agent:diana",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Eve ignores Diana (self-interest)"
-    },
-    {
-      "tick": 3,
       "source": "lct:web4:agent:diana",
       "target": "lct:web4:agent:eve",
       "action": "ignore",
@@ -1410,277 +1308,25 @@
       "reason": "Diana ignores Eve (self-interest)"
     },
     {
-      "tick": 3,
-      "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:alice",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Diana ignores Alice (self-interest)"
-    },
-    {
-      "tick": 4,
-      "source": "lct:web4:agent:eve",
-      "target": "lct:web4:agent:diana",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": -0.02,
-      "reason": "Eve helps Diana (cooperator tendency)"
-    },
-    {
-      "tick": 4,
-      "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:charlie",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Diana ignores Charlie (self-interest)"
-    },
-    {
-      "tick": 5,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:diana",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Bob ignores Diana (self-interest)"
-    },
-    {
-      "tick": 5,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:charlie",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Bob ignores Charlie (self-interest)"
-    },
-    {
-      "tick": 5,
+      "tick": 1,
       "source": "lct:web4:agent:diana",
       "target": "lct:web4:agent:bob",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Diana ignores Bob (self-interest)"
-    },
-    {
-      "tick": 6,
-      "source": "lct:web4:agent:charlie",
-      "target": "lct:web4:agent:alice",
       "action": "help",
       "cooperation": true,
       "trust_change": -0.02,
-      "reason": "Charlie helps Alice (cooperator tendency)"
+      "reason": "Diana helps Bob (cooperator tendency)"
     },
     {
-      "tick": 6,
-      "source": "lct:web4:agent:eve",
-      "target": "lct:web4:agent:alice",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Eve ignores Alice (self-interest)"
-    },
-    {
-      "tick": 7,
-      "source": "lct:web4:agent:eve",
-      "target": "lct:web4:agent:alice",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": -0.02,
-      "reason": "Eve helps Alice (cooperator tendency)"
-    },
-    {
-      "tick": 7,
+      "tick": 2,
       "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:bob",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Diana ignores Bob (self-interest)"
-    },
-    {
-      "tick": 8,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:diana",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Bob helps Diana (cooperator tendency)"
-    },
-    {
-      "tick": 8,
-      "source": "lct:web4:agent:charlie",
       "target": "lct:web4:agent:eve",
       "action": "ignore",
       "cooperation": false,
       "trust_change": -0.03,
-      "reason": "Charlie ignores Eve (self-interest)"
+      "reason": "Diana ignores Eve (self-interest)"
     },
     {
-      "tick": 8,
-      "source": "lct:web4:agent:alice",
-      "target": "lct:web4:agent:eve",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Alice helps Eve (cooperator tendency)"
-    },
-    {
-      "tick": 9,
-      "source": "lct:web4:agent:alice",
-      "target": "lct:web4:agent:eve",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Alice ignores Eve (self-interest)"
-    },
-    {
-      "tick": 9,
-      "source": "lct:web4:agent:alice",
-      "target": "lct:web4:agent:diana",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Alice helps Diana (cooperator tendency)"
-    },
-    {
-      "tick": 10,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:charlie",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Bob ignores Charlie (self-interest)"
-    },
-    {
-      "tick": 10,
-      "source": "lct:web4:agent:charlie",
-      "target": "lct:web4:agent:alice",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Charlie ignores Alice (self-interest)"
-    },
-    {
-      "tick": 11,
-      "source": "lct:web4:agent:eve",
-      "target": "lct:web4:agent:diana",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Eve helps Diana (cooperator tendency)"
-    },
-    {
-      "tick": 11,
-      "source": "lct:web4:agent:alice",
-      "target": "lct:web4:agent:bob",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Alice helps Bob (cooperator tendency)"
-    },
-    {
-      "tick": 11,
-      "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:charlie",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Diana ignores Charlie (self-interest)"
-    },
-    {
-      "tick": 12,
-      "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:alice",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Diana helps Alice (cooperator tendency)"
-    },
-    {
-      "tick": 12,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:alice",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": -0.02,
-      "reason": "Bob helps Alice (cooperator tendency)"
-    },
-    {
-      "tick": 12,
-      "source": "lct:web4:agent:alice",
-      "target": "lct:web4:agent:charlie",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": -0.02,
-      "reason": "Alice helps Charlie (cooperator tendency)"
-    },
-    {
-      "tick": 13,
-      "source": "lct:web4:agent:eve",
-      "target": "lct:web4:agent:charlie",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Eve ignores Charlie (self-interest)"
-    },
-    {
-      "tick": 13,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:charlie",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": -0.02,
-      "reason": "Bob helps Charlie (cooperator tendency)"
-    },
-    {
-      "tick": 13,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:diana",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Bob ignores Diana (self-interest)"
-    },
-    {
-      "tick": 14,
-      "source": "lct:web4:agent:alice",
-      "target": "lct:web4:agent:bob",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Alice ignores Bob (self-interest)"
-    },
-    {
-      "tick": 14,
-      "source": "lct:web4:agent:eve",
-      "target": "lct:web4:agent:bob",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Eve helps Bob (cooperator tendency)"
-    },
-    {
-      "tick": 15,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:diana",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Bob ignores Diana (self-interest)"
-    },
-    {
-      "tick": 15,
-      "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:alice",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": -0.02,
-      "reason": "Diana helps Alice (cooperator tendency)"
-    },
-    {
-      "tick": 15,
+      "tick": 2,
       "source": "lct:web4:agent:eve",
       "target": "lct:web4:agent:bob",
       "action": "ignore",
@@ -1689,7 +1335,43 @@
       "reason": "Eve ignores Bob (self-interest)"
     },
     {
-      "tick": 16,
+      "tick": 3,
+      "source": "lct:web4:agent:diana",
+      "target": "lct:web4:agent:eve",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Diana helps Eve (cooperator tendency)"
+    },
+    {
+      "tick": 3,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:alice",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Charlie ignores Alice (self-interest)"
+    },
+    {
+      "tick": 4,
+      "source": "lct:web4:agent:bob",
+      "target": "lct:web4:agent:eve",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Bob ignores Eve (self-interest)"
+    },
+    {
+      "tick": 4,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:alice",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Eve ignores Alice (self-interest)"
+    },
+    {
+      "tick": 5,
       "source": "lct:web4:agent:alice",
       "target": "lct:web4:agent:bob",
       "action": "help",
@@ -1698,268 +1380,7 @@
       "reason": "Alice helps Bob (cooperator tendency)"
     },
     {
-      "tick": 16,
-      "source": "lct:web4:agent:alice",
-      "target": "lct:web4:agent:bob",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Alice helps Bob (cooperator tendency)"
-    },
-    {
-      "tick": 16,
-      "source": "lct:web4:agent:alice",
-      "target": "lct:web4:agent:diana",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Alice helps Diana (cooperator tendency)"
-    },
-    {
-      "tick": 17,
-      "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:eve",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Diana ignores Eve (self-interest)"
-    },
-    {
-      "tick": 17,
-      "source": "lct:web4:agent:charlie",
-      "target": "lct:web4:agent:eve",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Charlie ignores Eve (self-interest)"
-    },
-    {
-      "tick": 18,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:charlie",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Bob helps Charlie (cooperator tendency)"
-    },
-    {
-      "tick": 18,
-      "source": "lct:web4:agent:eve",
-      "target": "lct:web4:agent:alice",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Eve helps Alice (cooperator tendency)"
-    },
-    {
-      "tick": 18,
-      "source": "lct:web4:agent:eve",
-      "target": "lct:web4:agent:bob",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Eve helps Bob (cooperator tendency)"
-    },
-    {
-      "tick": 19,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:charlie",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Bob ignores Charlie (self-interest)"
-    },
-    {
-      "tick": 19,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:diana",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Bob helps Diana (cooperator tendency)"
-    },
-    {
-      "tick": 20,
-      "source": "lct:web4:agent:alice",
-      "target": "lct:web4:agent:charlie",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Alice helps Charlie (cooperator tendency)"
-    },
-    {
-      "tick": 20,
-      "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:bob",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Diana helps Bob (cooperator tendency)"
-    },
-    {
-      "tick": 20,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:diana",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Bob ignores Diana (self-interest)"
-    },
-    {
-      "tick": 21,
-      "source": "lct:web4:agent:charlie",
-      "target": "lct:web4:agent:diana",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Charlie ignores Diana (self-interest)"
-    },
-    {
-      "tick": 21,
-      "source": "lct:web4:agent:charlie",
-      "target": "lct:web4:agent:alice",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Charlie ignores Alice (self-interest)"
-    },
-    {
-      "tick": 21,
-      "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:bob",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Diana ignores Bob (self-interest)"
-    },
-    {
-      "tick": 22,
-      "source": "lct:web4:agent:alice",
-      "target": "lct:web4:agent:diana",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Alice helps Diana (cooperator tendency)"
-    },
-    {
-      "tick": 22,
-      "source": "lct:web4:agent:alice",
-      "target": "lct:web4:agent:charlie",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": -0.02,
-      "reason": "Alice helps Charlie (cooperator tendency)"
-    },
-    {
-      "tick": 22,
-      "source": "lct:web4:agent:charlie",
-      "target": "lct:web4:agent:eve",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Charlie helps Eve (cooperator tendency)"
-    },
-    {
-      "tick": 23,
-      "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:bob",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Diana ignores Bob (self-interest)"
-    },
-    {
-      "tick": 23,
-      "source": "lct:web4:agent:bob",
-      "target": "lct:web4:agent:diana",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": -0.02,
-      "reason": "Bob helps Diana (cooperator tendency)"
-    },
-    {
-      "tick": 24,
-      "source": "lct:web4:agent:charlie",
-      "target": "lct:web4:agent:bob",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Charlie ignores Bob (self-interest)"
-    },
-    {
-      "tick": 24,
-      "source": "lct:web4:agent:eve",
-      "target": "lct:web4:agent:alice",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Eve helps Alice (cooperator tendency)"
-    },
-    {
-      "tick": 25,
-      "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:alice",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Diana ignores Alice (self-interest)"
-    },
-    {
-      "tick": 25,
-      "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:charlie",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Diana helps Charlie (cooperator tendency)"
-    },
-    {
-      "tick": 25,
-      "source": "lct:web4:agent:charlie",
-      "target": "lct:web4:agent:alice",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Charlie ignores Alice (self-interest)"
-    },
-    {
-      "tick": 26,
-      "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:eve",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Diana ignores Eve (self-interest)"
-    },
-    {
-      "tick": 26,
-      "source": "lct:web4:agent:eve",
-      "target": "lct:web4:agent:charlie",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Eve helps Charlie (cooperator tendency)"
-    },
-    {
-      "tick": 26,
-      "source": "lct:web4:agent:alice",
-      "target": "lct:web4:agent:diana",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": 0.05,
-      "reason": "Alice helps Diana (cooperator tendency)"
-    },
-    {
-      "tick": 27,
-      "source": "lct:web4:agent:charlie",
-      "target": "lct:web4:agent:alice",
-      "action": "ignore",
-      "cooperation": false,
-      "trust_change": -0.03,
-      "reason": "Charlie ignores Alice (self-interest)"
-    },
-    {
-      "tick": 27,
+      "tick": 5,
       "source": "lct:web4:agent:diana",
       "target": "lct:web4:agent:eve",
       "action": "help",
@@ -1968,34 +1389,16 @@
       "reason": "Diana helps Eve (cooperator tendency)"
     },
     {
-      "tick": 27,
-      "source": "lct:web4:agent:eve",
-      "target": "lct:web4:agent:diana",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": -0.02,
-      "reason": "Eve helps Diana (cooperator tendency)"
-    },
-    {
-      "tick": 28,
-      "source": "lct:web4:agent:eve",
-      "target": "lct:web4:agent:diana",
-      "action": "help",
-      "cooperation": true,
-      "trust_change": -0.02,
-      "reason": "Eve helps Diana (cooperator tendency)"
-    },
-    {
-      "tick": 28,
+      "tick": 6,
       "source": "lct:web4:agent:diana",
-      "target": "lct:web4:agent:alice",
+      "target": "lct:web4:agent:charlie",
       "action": "help",
       "cooperation": true,
       "trust_change": 0.05,
-      "reason": "Diana helps Alice (cooperator tendency)"
+      "reason": "Diana helps Charlie (cooperator tendency)"
     },
     {
-      "tick": 28,
+      "tick": 6,
       "source": "lct:web4:agent:alice",
       "target": "lct:web4:agent:eve",
       "action": "help",
@@ -2004,16 +1407,88 @@
       "reason": "Alice helps Eve (cooperator tendency)"
     },
     {
-      "tick": 29,
+      "tick": 6,
+      "source": "lct:web4:agent:bob",
+      "target": "lct:web4:agent:charlie",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Bob ignores Charlie (self-interest)"
+    },
+    {
+      "tick": 7,
+      "source": "lct:web4:agent:bob",
+      "target": "lct:web4:agent:eve",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Bob helps Eve (cooperator tendency)"
+    },
+    {
+      "tick": 7,
       "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:alice",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Charlie ignores Alice (self-interest)"
+    },
+    {
+      "tick": 8,
+      "source": "lct:web4:agent:bob",
+      "target": "lct:web4:agent:charlie",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Bob helps Charlie (cooperator tendency)"
+    },
+    {
+      "tick": 8,
+      "source": "lct:web4:agent:bob",
+      "target": "lct:web4:agent:diana",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Bob helps Diana (cooperator tendency)"
+    },
+    {
+      "tick": 8,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:diana",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Eve ignores Diana (self-interest)"
+    },
+    {
+      "tick": 9,
+      "source": "lct:web4:agent:alice",
+      "target": "lct:web4:agent:charlie",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Alice helps Charlie (cooperator tendency)"
+    },
+    {
+      "tick": 9,
+      "source": "lct:web4:agent:bob",
       "target": "lct:web4:agent:eve",
       "action": "ignore",
       "cooperation": false,
       "trust_change": -0.03,
-      "reason": "Charlie ignores Eve (self-interest)"
+      "reason": "Bob ignores Eve (self-interest)"
     },
     {
-      "tick": 29,
+      "tick": 9,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:alice",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Charlie helps Alice (cooperator tendency)"
+    },
+    {
+      "tick": 10,
       "source": "lct:web4:agent:alice",
       "target": "lct:web4:agent:eve",
       "action": "help",
@@ -2022,7 +1497,52 @@
       "reason": "Alice helps Eve (cooperator tendency)"
     },
     {
-      "tick": 30,
+      "tick": 10,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:alice",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Eve helps Alice (cooperator tendency)"
+    },
+    {
+      "tick": 11,
+      "source": "lct:web4:agent:diana",
+      "target": "lct:web4:agent:eve",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Diana ignores Eve (self-interest)"
+    },
+    {
+      "tick": 11,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:diana",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Eve ignores Diana (self-interest)"
+    },
+    {
+      "tick": 11,
+      "source": "lct:web4:agent:bob",
+      "target": "lct:web4:agent:diana",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Bob ignores Diana (self-interest)"
+    },
+    {
+      "tick": 12,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:diana",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Eve helps Diana (cooperator tendency)"
+    },
+    {
+      "tick": 12,
       "source": "lct:web4:agent:charlie",
       "target": "lct:web4:agent:bob",
       "action": "ignore",
@@ -2031,17 +1551,440 @@
       "reason": "Charlie ignores Bob (self-interest)"
     },
     {
-      "tick": 30,
+      "tick": 12,
+      "source": "lct:web4:agent:diana",
+      "target": "lct:web4:agent:charlie",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Diana ignores Charlie (self-interest)"
+    },
+    {
+      "tick": 13,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:diana",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Charlie helps Diana (cooperator tendency)"
+    },
+    {
+      "tick": 13,
+      "source": "lct:web4:agent:bob",
+      "target": "lct:web4:agent:eve",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Bob ignores Eve (self-interest)"
+    },
+    {
+      "tick": 13,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:diana",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Eve helps Diana (cooperator tendency)"
+    },
+    {
+      "tick": 14,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:bob",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Charlie ignores Bob (self-interest)"
+    },
+    {
+      "tick": 14,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:charlie",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Eve ignores Charlie (self-interest)"
+    },
+    {
+      "tick": 14,
+      "source": "lct:web4:agent:bob",
+      "target": "lct:web4:agent:alice",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Bob ignores Alice (self-interest)"
+    },
+    {
+      "tick": 15,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:alice",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Charlie helps Alice (cooperator tendency)"
+    },
+    {
+      "tick": 15,
+      "source": "lct:web4:agent:diana",
+      "target": "lct:web4:agent:charlie",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Diana helps Charlie (cooperator tendency)"
+    },
+    {
+      "tick": 15,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:eve",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Charlie ignores Eve (self-interest)"
+    },
+    {
+      "tick": 16,
+      "source": "lct:web4:agent:alice",
+      "target": "lct:web4:agent:eve",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Alice ignores Eve (self-interest)"
+    },
+    {
+      "tick": 16,
+      "source": "lct:web4:agent:diana",
+      "target": "lct:web4:agent:alice",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Diana helps Alice (cooperator tendency)"
+    },
+    {
+      "tick": 16,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:diana",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Charlie helps Diana (cooperator tendency)"
+    },
+    {
+      "tick": 17,
+      "source": "lct:web4:agent:bob",
+      "target": "lct:web4:agent:charlie",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Bob ignores Charlie (self-interest)"
+    },
+    {
+      "tick": 17,
+      "source": "lct:web4:agent:alice",
+      "target": "lct:web4:agent:charlie",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Alice helps Charlie (cooperator tendency)"
+    },
+    {
+      "tick": 17,
+      "source": "lct:web4:agent:diana",
+      "target": "lct:web4:agent:charlie",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Diana helps Charlie (cooperator tendency)"
+    },
+    {
+      "tick": 18,
+      "source": "lct:web4:agent:bob",
+      "target": "lct:web4:agent:alice",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Bob ignores Alice (self-interest)"
+    },
+    {
+      "tick": 18,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:eve",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Charlie ignores Eve (self-interest)"
+    },
+    {
+      "tick": 18,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:charlie",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Eve helps Charlie (cooperator tendency)"
+    },
+    {
+      "tick": 19,
+      "source": "lct:web4:agent:diana",
+      "target": "lct:web4:agent:eve",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Diana ignores Eve (self-interest)"
+    },
+    {
+      "tick": 19,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:alice",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Charlie ignores Alice (self-interest)"
+    },
+    {
+      "tick": 20,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:alice",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Charlie ignores Alice (self-interest)"
+    },
+    {
+      "tick": 20,
       "source": "lct:web4:agent:diana",
       "target": "lct:web4:agent:bob",
       "action": "ignore",
       "cooperation": false,
       "trust_change": -0.03,
       "reason": "Diana ignores Bob (self-interest)"
+    },
+    {
+      "tick": 20,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:diana",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Eve helps Diana (cooperator tendency)"
+    },
+    {
+      "tick": 21,
+      "source": "lct:web4:agent:diana",
+      "target": "lct:web4:agent:charlie",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Diana helps Charlie (cooperator tendency)"
+    },
+    {
+      "tick": 21,
+      "source": "lct:web4:agent:diana",
+      "target": "lct:web4:agent:charlie",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Diana helps Charlie (cooperator tendency)"
+    },
+    {
+      "tick": 21,
+      "source": "lct:web4:agent:alice",
+      "target": "lct:web4:agent:charlie",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Alice helps Charlie (cooperator tendency)"
+    },
+    {
+      "tick": 22,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:alice",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Charlie ignores Alice (self-interest)"
+    },
+    {
+      "tick": 22,
+      "source": "lct:web4:agent:alice",
+      "target": "lct:web4:agent:charlie",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Alice helps Charlie (cooperator tendency)"
+    },
+    {
+      "tick": 23,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:alice",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Eve ignores Alice (self-interest)"
+    },
+    {
+      "tick": 23,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:bob",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Eve ignores Bob (self-interest)"
+    },
+    {
+      "tick": 24,
+      "source": "lct:web4:agent:bob",
+      "target": "lct:web4:agent:alice",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Bob ignores Alice (self-interest)"
+    },
+    {
+      "tick": 24,
+      "source": "lct:web4:agent:alice",
+      "target": "lct:web4:agent:diana",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Alice helps Diana (cooperator tendency)"
+    },
+    {
+      "tick": 25,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:diana",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Eve ignores Diana (self-interest)"
+    },
+    {
+      "tick": 25,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:eve",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Charlie ignores Eve (self-interest)"
+    },
+    {
+      "tick": 26,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:alice",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Eve helps Alice (cooperator tendency)"
+    },
+    {
+      "tick": 26,
+      "source": "lct:web4:agent:bob",
+      "target": "lct:web4:agent:diana",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Bob ignores Diana (self-interest)"
+    },
+    {
+      "tick": 26,
+      "source": "lct:web4:agent:alice",
+      "target": "lct:web4:agent:bob",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Alice helps Bob (cooperator tendency)"
+    },
+    {
+      "tick": 27,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:bob",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Charlie ignores Bob (self-interest)"
+    },
+    {
+      "tick": 27,
+      "source": "lct:web4:agent:bob",
+      "target": "lct:web4:agent:charlie",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Bob helps Charlie (cooperator tendency)"
+    },
+    {
+      "tick": 28,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:alice",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Eve ignores Alice (self-interest)"
+    },
+    {
+      "tick": 28,
+      "source": "lct:web4:agent:diana",
+      "target": "lct:web4:agent:eve",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Diana helps Eve (cooperator tendency)"
+    },
+    {
+      "tick": 29,
+      "source": "lct:web4:agent:diana",
+      "target": "lct:web4:agent:charlie",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Diana helps Charlie (cooperator tendency)"
+    },
+    {
+      "tick": 29,
+      "source": "lct:web4:agent:alice",
+      "target": "lct:web4:agent:bob",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Alice helps Bob (cooperator tendency)"
+    },
+    {
+      "tick": 29,
+      "source": "lct:web4:agent:eve",
+      "target": "lct:web4:agent:bob",
+      "action": "ignore",
+      "cooperation": false,
+      "trust_change": -0.03,
+      "reason": "Eve ignores Bob (self-interest)"
+    },
+    {
+      "tick": 30,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:eve",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Charlie helps Eve (cooperator tendency)"
+    },
+    {
+      "tick": 30,
+      "source": "lct:web4:agent:charlie",
+      "target": "lct:web4:agent:diana",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": -0.02,
+      "reason": "Charlie helps Diana (cooperator tendency)"
+    },
+    {
+      "tick": 30,
+      "source": "lct:web4:agent:alice",
+      "target": "lct:web4:agent:diana",
+      "action": "help",
+      "cooperation": true,
+      "trust_change": 0.05,
+      "reason": "Alice helps Diana (cooperator tendency)"
     }
   ],
   "metadata": {
-    "generated_at": "2026-01-15T03:03:47.529589",
+    "generated_at": "2026-01-15T09:04:31.550637",
     "generator": "trust_network_evolution.py",
     "session": "Legion Session #11"
   }
