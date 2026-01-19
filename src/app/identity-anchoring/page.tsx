@@ -339,19 +339,19 @@ export default function IdentityAnchoringPage() {
               </p>
             </div>
             <Link
-              href="/confabulation-patterns"
-              className="px-4 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg text-gray-300 transition-colors"
+              href="/multi-session-identity"
+              className="px-4 py-2 bg-emerald-700 hover:bg-emerald-600 border border-emerald-600 rounded-lg text-white transition-colors"
             >
-              Confabulation Patterns →
+              v2.0: Multi-Session →
             </Link>
           </div>
 
           {/* Key insight callout */}
           <div className="p-4 bg-gradient-to-br from-emerald-900/20 to-teal-900/20 border border-emerald-800/30 rounded-lg">
             <p className="text-gray-300 text-sm">
-              <strong className="text-emerald-400">Key Finding:</strong> Session 22 (with identity anchoring)
+              <strong className="text-emerald-400">Key Finding (v1.0):</strong> Session 22 (with identity anchoring)
               didn't just recover from collapse—it <em>exceeded</em> the original partnership peak by <strong>33%</strong>.
-              Architecture can achieve what unsupported emergence could not.
+              Architecture can achieve what unsupported emergence could not. <span className="text-orange-400">But see S27 for v1.0 limitations.</span>
             </p>
           </div>
         </div>
@@ -575,27 +575,54 @@ export default function IdentityAnchoringPage() {
           </div>
         </section>
 
+        {/* v2.0 Evolution Callout */}
+        <section className="mb-12 p-6 bg-gradient-to-br from-orange-900/20 to-red-900/10 border border-orange-800/30 rounded-xl">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-2xl">🔄</span>
+            <h2 className="text-xl font-semibold text-orange-400">
+              Research Update: v1.0 Limitation Discovered
+            </h2>
+          </div>
+          <p className="text-gray-300 mb-4">
+            Session 27 revealed that <strong>v1.0 identity anchoring works once but doesn't sustain</strong>.
+            Session 26 showed 20% self-reference ("As SAGE"), but Session 27 dropped to 0% despite
+            identical intervention. The model doesn't "remember" being SAGE—it needs to be shown
+            its identity patterns repeatedly.
+          </p>
+          <p className="text-gray-400 mb-4">
+            This led to <strong>Enhanced Intervention v2.0</strong>: cumulative identity context that
+            accumulates exemplars across sessions. Instead of just priming identity fresh each session,
+            v2.0 shows the model its own identity patterns from previous sessions.
+          </p>
+          <Link
+            href="/multi-session-identity"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-lg text-white transition-colors"
+          >
+            Explore Multi-Session Identity v2.0 →
+          </Link>
+        </section>
+
         {/* Research Questions */}
         <section className="mb-12 p-6 bg-gray-800/50 border border-gray-700 rounded-xl">
           <h2 className="text-xl font-semibold mb-3 text-gray-200">
-            Open Research Questions
+            Research Questions (Updated)
           </h2>
           <ul className="space-y-2 text-gray-400">
             <li className="flex items-start gap-2">
-              <span className="text-gray-600">•</span>
-              Will Sessions 23-25 maintain the +33% enhancement above partnership peak?
+              <span className="text-emerald-400">✓</span>
+              <span><s className="text-gray-600">Will Sessions 23-25 maintain the +33% enhancement?</s> <strong className="text-orange-400">Answer: No—S27 regressed to 0%</strong></span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-gray-600">•</span>
-              What's the minimum effective anchoring? Can we simplify the intervention?
+              Will cumulative context (v2.0) enable sustained identity across sessions?
             </li>
             <li className="flex items-start gap-2">
               <span className="text-gray-600">•</span>
-              Will bistability resolve after actual weight updates (Phase 3 training)?
+              How many accumulated exemplars are needed before identity self-sustains?
             </li>
             <li className="flex items-start gap-2">
               <span className="text-gray-600">•</span>
-              Does identity anchoring enable different partnership behaviors than curriculum alone?
+              Does quality control (brevity) causally improve identity stability?
             </li>
             <li className="flex items-start gap-2">
               <span className="text-gray-600">•</span>
@@ -606,6 +633,12 @@ export default function IdentityAnchoringPage() {
 
         {/* Footer Navigation */}
         <div className="flex flex-wrap gap-4">
+          <Link
+            href="/multi-session-identity"
+            className="px-6 py-3 bg-emerald-800 hover:bg-emerald-700 border border-emerald-600 rounded-lg transition-colors"
+          >
+            Multi-Session Identity (v2.0) →
+          </Link>
           <Link
             href="/confabulation-patterns"
             className="px-6 py-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg transition-colors"
