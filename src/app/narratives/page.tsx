@@ -8,6 +8,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 interface NarrativeMeta {
   id: string;
@@ -47,6 +49,7 @@ export default function NarrativesPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="max-w-5xl mx-auto p-8">
+        <Breadcrumbs currentPath="/narratives" />
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-4">Simulation Narratives</h1>
@@ -163,6 +166,7 @@ export default function NarrativesPage() {
             ← Back to Home
           </Link>
         </div>
+        <RelatedConcepts currentPath="/narratives" />
       </div>
     </div>
   );

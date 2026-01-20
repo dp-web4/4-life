@@ -10,6 +10,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import TrustNetworkVisualization from '@/components/TrustNetworkVisualization';
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 export default function TrustNetworksPage() {
   const [simulationData, setSimulationData] = useState<any>(null);
@@ -48,6 +50,7 @@ export default function TrustNetworksPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto p-8">
+        <Breadcrumbs currentPath="/trust-networks" />
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-5xl font-bold mb-4">Trust Networks</h1>
@@ -317,6 +320,7 @@ for each agent A:
             Trust Tensor (T3) →
           </Link>
         </div>
+        <RelatedConcepts currentPath="/trust-networks" />
       </div>
     </div>
   );

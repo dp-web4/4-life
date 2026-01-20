@@ -1,5 +1,7 @@
 import Link from "next/link";
 import FederationMarket from "@/components/FederationMarket";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 /**
  * Federation Economics Explainer
@@ -13,6 +15,7 @@ import FederationMarket from "@/components/FederationMarket";
 export default function FederationEconomicsPage() {
   return (
     <>
+      <Breadcrumbs currentPath="/federation-economics" />
       {/* Hero */}
       <section className="max-w-4xl mx-auto">
         <div className="text-sm uppercase tracking-wide text-sky-400 mb-4">
@@ -526,6 +529,7 @@ export default function FederationEconomicsPage() {
           </p>
         </div>
       </section>
+      <RelatedConcepts currentPath="/federation-economics" />
     </>
   );
 }

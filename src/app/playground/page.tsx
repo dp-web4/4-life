@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { PlaygroundControls, PlaygroundConfig } from "@/components/PlaygroundControls";
 import { PlaygroundResults, PlaygroundResult } from "@/components/PlaygroundResults";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 /**
  * Playground Page - Interactive Parameter Exploration
@@ -59,6 +61,7 @@ export default function PlaygroundPage() {
 
   return (
     <>
+      <Breadcrumbs currentPath="/playground" />
       {/* Header */}
       <section>
         <h1>Parameter Playground</h1>
@@ -309,6 +312,7 @@ export default function PlaygroundPage() {
           </p>
         </div>
       </section>
+      <RelatedConcepts currentPath="/playground" />
     </>
   );
 }

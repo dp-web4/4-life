@@ -1,8 +1,11 @@
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 export default function ManifestPage() {
   return (
     <main style={{ padding: "2rem", maxWidth: "50rem", margin: "0 auto" }}>
+      <Breadcrumbs currentPath="/manifest" />
       <h1>4-Life Manifest</h1>
       <p style={{ marginTop: "0.75rem", color: "#9ca3af", fontSize: "1rem" }}>
         Canonical claims, primitives, and resources in one page. If you only read one page, read this.
@@ -256,6 +259,7 @@ export default function ManifestPage() {
           <a href="https://claude.com/claude-code" className="text-sky-400">Claude Code</a>
         </p>
       </footer>
+      <RelatedConcepts currentPath="/manifest" />
     </main>
   );
 }

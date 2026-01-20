@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 /**
  * Identity Constellation Explainer
@@ -23,6 +25,7 @@ export default function IdentityConstellationPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
+        <Breadcrumbs currentPath="/identity-constellation" />
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 text-gray-800">
@@ -430,6 +433,7 @@ export default function IdentityConstellationPage() {
             </a>
           </div>
         </div>
+        <RelatedConcepts currentPath="/identity-constellation" />
       </div>
     </div>
   );

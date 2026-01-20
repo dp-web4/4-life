@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 export default function AlivenessExplainer() {
   return (
     <>
+      <Breadcrumbs currentPath="/aliveness" />
       <section>
         <div className="hero-eyebrow">Foundational Concept #6</div>
         <h1 className="hero-title">Aliveness: When Existence is Measurable</h1>
@@ -954,6 +957,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
           color: #60a5fa;
         }
       `}</style>
+      <RelatedConcepts currentPath="/aliveness" />
     </>
   );
 }

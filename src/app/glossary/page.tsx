@@ -1,8 +1,11 @@
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 export default function GlossaryPage() {
   return (
     <>
+      <Breadcrumbs currentPath="/glossary" />
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto">
         <div className="text-sm uppercase tracking-wide text-sky-400 mb-4">
@@ -721,6 +724,7 @@ export default function GlossaryPage() {
           </Link>.
         </p>
       </section>
+      <RelatedConcepts currentPath="/glossary" />
     </>
   );
 }

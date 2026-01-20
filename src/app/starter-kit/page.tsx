@@ -1,6 +1,10 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
+
 export default function StarterKitPage() {
   return (
     <>
+      <Breadcrumbs currentPath="/starter-kit" />
       <section>
         <h1>Society starter kit</h1>
         <p style={{ marginTop: "1rem", maxWidth: "40rem", color: "#d1d5db" }}>
@@ -76,6 +80,7 @@ export default function StarterKitPage() {
           specific interaction, not by a single global authority.
         </p>
       </section>
+      <RelatedConcepts currentPath="/starter-kit" />
     </>
   );
 }

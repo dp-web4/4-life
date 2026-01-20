@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 export default function DecisionEvolutionPage() {
   // Simulator state
@@ -74,6 +76,7 @@ export default function DecisionEvolutionPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-gray-100">
       <div className="container mx-auto px-6 py-16 max-w-7xl">
+        <Breadcrumbs currentPath="/decision-evolution" />
         {/* Hero Section */}
         <section className="max-w-4xl mx-auto mb-16">
           <div className="text-sm uppercase tracking-wide text-purple-400 mb-4">
@@ -498,6 +501,7 @@ export default function DecisionEvolutionPage() {
             </Link>
           </div>
         </section>
+        <RelatedConcepts currentPath="/decision-evolution" />
       </div>
     </div>
   );

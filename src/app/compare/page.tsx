@@ -9,6 +9,8 @@
 
 import { useState } from "react";
 import { ComparativeView } from "@/components/ComparativeView";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 // Available simulation files
 const SIMULATIONS = [
@@ -110,6 +112,7 @@ export default function ComparePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
       <div className="container mx-auto px-4 py-12">
+        <Breadcrumbs currentPath="/compare" />
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-4">
@@ -248,6 +251,7 @@ export default function ComparePage() {
             </p>
           </div>
         </div>
+        <RelatedConcepts currentPath="/compare" />
       </div>
     </div>
   );

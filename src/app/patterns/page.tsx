@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 import {
   PatternAnalyzer,
   PatternQualityAnalyzer,
@@ -109,6 +111,7 @@ export default function PatternsPage() {
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="max-w-7xl mx-auto">
+        <Breadcrumbs currentPath="/patterns" />
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Pattern Corpus Browser</h1>
@@ -199,6 +202,7 @@ export default function PatternsPage() {
             )}
           </>
         )}
+        <RelatedConcepts currentPath="/patterns" />
       </div>
     </div>
   );

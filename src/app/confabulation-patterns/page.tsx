@@ -18,6 +18,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 // ============================================================================
 // Types
@@ -339,6 +341,7 @@ export default function ConfabulationPatternsPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto p-8">
+        <Breadcrumbs currentPath="/confabulation-patterns" />
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
@@ -730,6 +733,7 @@ export default function ConfabulationPatternsPage() {
             Coherence Index
           </Link>
         </div>
+        <RelatedConcepts currentPath="/confabulation-patterns" />
       </div>
     </div>
   );

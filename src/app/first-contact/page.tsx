@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 /**
  * First Contact: Zero to Web4 Comprehension in 10 Minutes
@@ -83,6 +85,7 @@ export default function FirstContactPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="max-w-6xl mx-auto p-8">
+        <Breadcrumbs currentPath="/first-contact" />
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-2">
@@ -727,6 +730,7 @@ export default function FirstContactPage() {
             </button>
           </div>
         )}
+        <RelatedConcepts currentPath="/first-contact" />
       </div>
     </div>
   );

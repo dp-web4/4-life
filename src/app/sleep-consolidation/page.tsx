@@ -18,6 +18,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 // ============================================================================
 // Types
@@ -674,6 +676,7 @@ export default function SleepConsolidationPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto p-8">
+        <Breadcrumbs currentPath="/sleep-consolidation" />
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
@@ -957,6 +960,7 @@ weighted_loss.backward()`}
             Understanding Consciousness
           </Link>
         </div>
+        <RelatedConcepts currentPath="/sleep-consolidation" />
       </div>
     </div>
   );

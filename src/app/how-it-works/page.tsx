@@ -1,8 +1,11 @@
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 export default function HowItWorksPage() {
   return (
     <>
+      <Breadcrumbs currentPath="/how-it-works" />
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto">
         <div className="text-sm uppercase tracking-wide text-sky-400 mb-4">
@@ -791,6 +794,7 @@ export default function HowItWorksPage() {
           Welcome to Web4.
         </p>
       </section>
+      <RelatedConcepts currentPath="/how-it-works" />
     </>
   );
 }

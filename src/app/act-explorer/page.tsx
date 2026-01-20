@@ -16,6 +16,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import ACTChat from '@/components/ACTChat';
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 import type { SimulationResult } from '@/lib/types';
 
 export default function ACTExplorerPage() {
@@ -44,6 +46,7 @@ export default function ACTExplorerPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto p-8">
+        <Breadcrumbs currentPath="/act-explorer" />
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
@@ -250,6 +253,7 @@ export default function ACTExplorerPage() {
             beats static documentation for learning complex systems.
           </p>
         </div>
+        <RelatedConcepts currentPath="/act-explorer" />
       </div>
     </div>
   );

@@ -1,6 +1,10 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
+
 export default function Web4ExplainerPage() {
   return (
     <>
+      <Breadcrumbs currentPath="/web4-explainer" />
       <section>
         <h1>Web4 in one page</h1>
         <p style={{ marginTop: "1rem", maxWidth: "40rem", color: "#d1d5db" }}>
@@ -183,6 +187,7 @@ export default function Web4ExplainerPage() {
           stress-tested standard.
         </p>
       </section>
+      <RelatedConcepts currentPath="/web4-explainer" />
     </>
   );
 }

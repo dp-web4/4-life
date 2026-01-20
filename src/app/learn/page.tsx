@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 /**
  * Learning Journey: Progressive Web4 Comprehension
@@ -332,6 +334,7 @@ export default function LearnJourney() {
 
   return (
     <>
+      <Breadcrumbs currentPath="/learn" />
       <section>
         <div className="hero-eyebrow">Guided Learning Journey</div>
         <h1 className="hero-title">Learn Web4 Progressively</h1>
@@ -681,6 +684,7 @@ export default function LearnJourney() {
           </p>
         </div>
       </section>
+      <RelatedConcepts currentPath="/learn" />
     </>
   );
 }

@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 /**
  * Coherence Framework: From Web4 to Synchronism
@@ -23,6 +25,7 @@ export default function CoherenceFrameworkPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-gray-100">
       <div className="container mx-auto px-6 py-16 max-w-7xl">
+        <Breadcrumbs currentPath="/coherence-framework" />
         {/* Hero Section */}
         <section className="max-w-4xl mx-auto mb-16">
           <div className="text-sm uppercase tracking-wide text-purple-400 mb-4">
@@ -965,6 +968,7 @@ export default function CoherenceFrameworkPage() {
             oscillation pattern prediction validation (P198.29), three-dimensional gating model complete.
           </p>
         </section>
+        <RelatedConcepts currentPath="/coherence-framework" />
       </div>
     </div>
   );

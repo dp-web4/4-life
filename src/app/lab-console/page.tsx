@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { NarrativePanel } from "@/components/NarrativePanel";
 import { ReasoningTimeline } from "@/components/ReasoningTimeline";
 import DecisionEvolution from "@/components/DecisionEvolution";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 // v0 Lab Console for 4-Life
 // --------------------------
@@ -244,6 +246,7 @@ export default function LabConsolePage() {
 
   return (
     <main style={{ padding: "2rem", maxWidth: "60rem", margin: "0 auto" }}>
+      <Breadcrumbs currentPath="/lab-console" />
       <h1>4-Life Lab Console</h1>
       <p style={{ marginTop: "0.75rem", color: "#9ca3af" }}>
         Visualize Web4 life simulations with HRM policy decisions.
@@ -878,6 +881,7 @@ export default function LabConsolePage() {
       {fiveDomain && fiveDomain.lives && fiveDomain.lives.length > 0 && (
         <NarrativePanel lives={fiveDomain.lives} />
       )}
+      <RelatedConcepts currentPath="/lab-console" />
     </main>
   );
 }

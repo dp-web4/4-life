@@ -1,8 +1,11 @@
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 export default function ChallengeSetPage() {
   return (
     <main style={{ padding: "2rem", maxWidth: "50rem", margin: "0 auto" }}>
+      <Breadcrumbs currentPath="/challenge-set" />
       <h1>Challenge Set</h1>
       <p style={{ marginTop: "0.75rem", color: "#9ca3af", fontSize: "1rem", lineHeight: "1.75" }}>
         Research prompts for testing understanding and finding edge cases. Each challenge probes a specific assumption
@@ -224,6 +227,7 @@ export default function ChallengeSetPage() {
           <Link href="/threat-model" className="text-sky-400 underline">Threat Model</Link> (known failure modes)
         </p>
       </footer>
+      <RelatedConcepts currentPath="/challenge-set" />
     </main>
   );
 }
