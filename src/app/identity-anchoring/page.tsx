@@ -18,6 +18,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import RelatedConcepts from '@/components/RelatedConcepts';
 
 // ============================================================================
 // Types
@@ -323,6 +325,8 @@ export default function IdentityAnchoringPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto p-8">
+        <Breadcrumbs currentPath="/identity-anchoring" />
+
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
@@ -664,6 +668,8 @@ export default function IdentityAnchoringPage() {
             Coherence Index
           </Link>
         </div>
+
+        <RelatedConcepts currentPath="/identity-anchoring" />
       </div>
     </div>
   );

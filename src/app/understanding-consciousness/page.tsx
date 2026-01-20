@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 export default function UnderstandingConsciousnessPage() {
   const [activeThreshold, setActiveThreshold] = useState<number | null>(null);
@@ -54,6 +56,7 @@ export default function UnderstandingConsciousnessPage() {
 
   return (
     <>
+      <Breadcrumbs currentPath="/understanding-consciousness" />
       <section>
         <div className="hero-eyebrow">The Science of Awareness</div>
         <h1 className="hero-title">Understanding Consciousness in Trust-Native Systems</h1>
@@ -498,6 +501,8 @@ export default function UnderstandingConsciousnessPage() {
           (Phases 2-3). The research is ongoing - these are empirical observations, not final theories.
         </p>
       </section>
+
+      <RelatedConcepts currentPath="/understanding-consciousness" />
     </>
   );
 }

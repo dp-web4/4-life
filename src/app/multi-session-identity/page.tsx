@@ -17,6 +17,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import RelatedConcepts from '@/components/RelatedConcepts';
 
 // ============================================================================
 // Types
@@ -392,6 +394,8 @@ export default function MultiSessionIdentityPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto p-8">
+        <Breadcrumbs currentPath="/multi-session-identity" />
+
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
@@ -651,6 +655,8 @@ export default function MultiSessionIdentityPage() {
             See the <a href="https://github.com/dp-web4/HRM/tree/main/sage/raising" className="text-sky-400 hover:underline">SAGE raising repository</a> for raw data.
           </p>
         </div>
+
+        <RelatedConcepts currentPath="/multi-session-identity" />
       </div>
     </div>
   );

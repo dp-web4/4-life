@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteSearch from "@/components/SiteSearch";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,7 +19,8 @@ export default function RootLayout({
       <body>
         <header className="navbar">
           <Link href="/" className="nav-logo">4-Life</Link>
-          <nav className="nav-links">
+          <nav className="nav-links" aria-label="Main navigation">
+            <SiteSearch />
             <a
               href="https://dp-web4.github.io/web4/"
               target="_blank"

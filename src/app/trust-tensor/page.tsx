@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 // Trust dimensions with descriptions
 const TRUST_DIMENSIONS = {
@@ -161,6 +163,10 @@ export default function TrustTensorPage() {
 
   return (
     <>
+      <div className="max-w-4xl mx-auto">
+        <Breadcrumbs currentPath="/trust-tensor" />
+      </div>
+
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto">
         <div className="text-sm uppercase tracking-wide text-sky-400 mb-4">
@@ -755,6 +761,10 @@ class Agent:
           and watch trust tensors change over time.
         </p>
       </section>
+
+      <div className="max-w-4xl mx-auto">
+        <RelatedConcepts currentPath="/trust-tensor" />
+      </div>
     </>
   );
 }
