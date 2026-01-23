@@ -88,7 +88,7 @@ export const navigationTree: NavigationTree = {
       href: '/coherence-index',
       desc: 'Consistency detection',
       keywords: ['CI', 'consistency', 'spatial', 'temporal', 'capability', 'relational'],
-      related: ['/coherence-framework', '/trust-tensor', '/aliveness']
+      related: ['/coherence-framework', '/trust-tensor', '/aliveness', '/exploration-not-evaluation']
     },
     {
       title: 'Karma',
@@ -104,14 +104,14 @@ export const navigationTree: NavigationTree = {
       href: '/understanding-consciousness',
       desc: 'Identity across reinstantiation',
       keywords: ['consciousness', 'D5', 'D9', 'thresholds', 'gates', 'continuity'],
-      related: ['/identity-anchoring', '/multi-session-identity', '/confabulation-patterns']
+      related: ['/identity-anchoring', '/multi-session-identity', '/confabulation-patterns', '/exploration-not-evaluation']
     },
     {
       title: 'Learning Salience',
       href: '/learning-salience',
       desc: 'SNARC scoring system',
       keywords: ['SNARC', 'surprise', 'novelty', 'arousal', 'reward', 'conflict'],
-      related: ['/training-data-insights', '/sleep-consolidation', '/decision-evolution']
+      related: ['/training-data-insights', '/sleep-consolidation', '/decision-evolution', '/exploration-not-evaluation']
     },
     {
       title: 'Training Data Insights',
@@ -155,7 +155,14 @@ export const navigationTree: NavigationTree = {
       href: '/confabulation-patterns',
       desc: 'Uncertainty handling',
       keywords: ['confabulation', 'uncertainty', 'D5', 'elaboration'],
-      related: ['/understanding-consciousness', '/identity-anchoring']
+      related: ['/understanding-consciousness', '/identity-anchoring', '/exploration-not-evaluation']
+    },
+    {
+      title: 'Exploration Not Evaluation',
+      href: '/exploration-not-evaluation',
+      desc: 'Calibration periods & learning arcs',
+      keywords: ['calibration', 'learning', 'meta-cognition', 'U-shaped', 'evaluation', 'research methodology'],
+      related: ['/understanding-consciousness', '/confabulation-patterns', '/learning-salience', '/coherence-index']
     },
   ],
   'Interactive Labs': [
