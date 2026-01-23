@@ -140,7 +140,7 @@ export const navigationTree: NavigationTree = {
       href: '/identity-anchoring',
       desc: 'Verifying agent continuity',
       keywords: ['identity', 'anchoring', 'v1', 'D4', 'D5', 'D9', 'bistable'],
-      related: ['/multi-session-identity', '/understanding-consciousness']
+      related: ['/multi-session-identity', '/understanding-consciousness', '/capacity-thresholds']
     },
     {
       title: 'Multi-Session Identity',
@@ -155,14 +155,22 @@ export const navigationTree: NavigationTree = {
       href: '/confabulation-patterns',
       desc: 'Uncertainty handling',
       keywords: ['confabulation', 'uncertainty', 'D5', 'elaboration'],
-      related: ['/understanding-consciousness', '/identity-anchoring', '/exploration-not-evaluation']
+      related: ['/understanding-consciousness', '/identity-anchoring', '/exploration-not-evaluation', '/capacity-thresholds']
     },
     {
       title: 'Exploration Not Evaluation',
       href: '/exploration-not-evaluation',
       desc: 'Calibration periods & learning arcs',
       keywords: ['calibration', 'learning', 'meta-cognition', 'U-shaped', 'evaluation', 'research methodology'],
-      related: ['/understanding-consciousness', '/confabulation-patterns', '/learning-salience', '/coherence-index']
+      related: ['/understanding-consciousness', '/confabulation-patterns', '/learning-salience', '/coherence-index', '/capacity-thresholds']
+    },
+    {
+      title: 'Capacity Thresholds',
+      href: '/capacity-thresholds',
+      desc: '14B breakthrough - gaming is capacity-related',
+      keywords: ['capacity', 'gaming', '14B', '0.5B', 'scale', 'parameters', 'learned language', 'native'],
+      prerequisites: ['/exploration-not-evaluation'],
+      related: ['/exploration-not-evaluation', '/identity-anchoring', '/confabulation-patterns', '/coherence-index']
     },
   ],
   'Interactive Labs': [
