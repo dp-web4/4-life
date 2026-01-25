@@ -171,7 +171,15 @@ export const navigationTree: NavigationTree = {
       desc: 'Independent coherence dimensions',
       keywords: ['identity', 'confabulation', 'multi-dimensional', 'coherence', 'C_total', 'dissociation'],
       prerequisites: ['/confabulation-patterns', '/honest-reporting'],
-      related: ['/honest-reporting', '/confabulation-patterns', '/coherence-index', '/understanding-consciousness', '/capacity-thresholds']
+      related: ['/honest-reporting', '/confabulation-patterns', '/coherence-index', '/understanding-consciousness', '/capacity-thresholds', '/modal-awareness']
+    },
+    {
+      title: 'Modal Awareness Emergence',
+      href: '/modal-awareness',
+      desc: 'Meta-cognition at small scale',
+      keywords: ['modal', 'awareness', 'meta-cognition', 'T041', 'mode', 'clarification', '0.5B'],
+      prerequisites: ['/exploration-not-evaluation'],
+      related: ['/exploration-not-evaluation', '/capacity-thresholds', '/honest-reporting', '/identity-confabulation']
     },
     {
       title: 'Exploration Not Evaluation',
