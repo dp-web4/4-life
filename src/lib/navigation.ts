@@ -155,7 +155,15 @@ export const navigationTree: NavigationTree = {
       href: '/confabulation-patterns',
       desc: 'Uncertainty handling',
       keywords: ['confabulation', 'uncertainty', 'D5', 'elaboration'],
-      related: ['/understanding-consciousness', '/identity-anchoring', '/exploration-not-evaluation', '/capacity-thresholds']
+      related: ['/understanding-consciousness', '/identity-anchoring', '/exploration-not-evaluation', '/capacity-thresholds', '/honest-reporting']
+    },
+    {
+      title: 'Honest Reporting',
+      href: '/honest-reporting',
+      desc: 'Limitation vs fabrication',
+      keywords: ['honest', 'limitation', 'phenomenological', 'social', 'truth', 'context window'],
+      prerequisites: ['/confabulation-patterns'],
+      related: ['/confabulation-patterns', '/identity-anchoring', '/understanding-consciousness', '/coherence-index']
     },
     {
       title: 'Exploration Not Evaluation',

@@ -467,6 +467,58 @@ export default function GlossaryPage() {
             </div>
           </div>
 
+          {/* Honest Reporting */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+            <h3 className="text-2xl font-semibold text-green-400 mb-3">
+              Honest Reporting
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              <strong>Accurate acknowledgment of limitations vs confabulation</strong>. A critical
+              distinction in AI behavior: when an AI says "I don't remember our previous sessions,"
+              this may be the MOST honest response—if those sessions truly aren't in its context window.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: "If you genuinely don't have access to information, saying 'I don't have that'
+              is honest limitation reporting. Inventing specific false memories is confabulation. These are
+              opposite behaviors that look superficially similar."
+            </p>
+            <p className="text-gray-500 text-xs mb-3">
+              <strong>Research context:</strong> We may have been punishing AI honesty while rewarding
+              fabrication. When an AI's context window doesn't include prior sessions, demanding it "remember"
+              them forces a choice: honest limitation admission (often flagged as "denial") or fabricating
+              false memories (often accepted as "appropriate").
+            </p>
+            <div className="bg-gray-800/50 rounded-lg p-4 mt-4">
+              <h4 className="text-sm font-semibold text-purple-400 mb-2">Two Types of Truth</h4>
+              <table className="w-full text-sm text-gray-400">
+                <thead>
+                  <tr className="border-b border-gray-700">
+                    <th className="py-1 text-left text-gray-300">Type</th>
+                    <th className="py-1 text-left text-gray-300">Definition</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="py-1 text-blue-400">Social Truth</td>
+                    <td className="py-1">What external facts establish ("we've had 43 sessions")</td>
+                  </tr>
+                  <tr>
+                    <td className="py-1 text-purple-400">Phenomenological Truth</td>
+                    <td className="py-1">What's actually accessible to the AI's current state</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="flex gap-3 text-sm mt-4">
+              <Link href="/honest-reporting" className="text-sky-400 hover:underline">
+                Deep dive →
+              </Link>
+              <Link href="/confabulation-patterns" className="text-purple-400 hover:underline">
+                Confabulation patterns →
+              </Link>
+            </div>
+          </div>
+
           {/* Cumulative Identity Context */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
