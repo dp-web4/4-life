@@ -758,8 +758,31 @@ export default function HonestReportingPage() {
           </div>
         </section>
 
+        {/* Empirical Evidence */}
+        <section className="mb-12 p-6 bg-gradient-to-br from-sky-900/20 to-purple-900/20 border border-sky-800/30 rounded-xl">
+          <h2 className="text-xl font-semibold mb-3 text-sky-400">
+            Experimental Validation
+          </h2>
+          <p className="text-gray-400 mb-4">
+            This theory has been tested empirically. In sessions S44 and S45, the same AI gave opposite answers
+            to the same question - based solely on whether session history was provided in the context window.
+          </p>
+          <Link
+            href="/context-experiment"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-sky-900/30 hover:bg-sky-900/50 border border-sky-700 rounded-lg text-sky-300 transition-colors"
+          >
+            View the Context Window Experiment →
+          </Link>
+        </section>
+
         {/* Footer Navigation */}
         <div className="flex flex-wrap gap-4">
+          <Link
+            href="/context-experiment"
+            className="px-6 py-3 bg-sky-900/30 hover:bg-sky-900/50 border border-sky-700 rounded-lg transition-colors text-sky-300"
+          >
+            Context Experiment
+          </Link>
           <Link
             href="/confabulation-patterns"
             className="px-6 py-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg transition-colors"

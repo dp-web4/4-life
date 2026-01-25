@@ -513,8 +513,41 @@ export default function GlossaryPage() {
               <Link href="/honest-reporting" className="text-sky-400 hover:underline">
                 Deep dive →
               </Link>
+              <Link href="/context-experiment" className="text-green-400 hover:underline">
+                S44→S45 Experiment →
+              </Link>
               <Link href="/confabulation-patterns" className="text-purple-400 hover:underline">
                 Confabulation patterns →
+              </Link>
+            </div>
+          </div>
+
+          {/* Modal Awareness */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+            <h3 className="text-2xl font-semibold text-green-400 mb-3">
+              Modal Awareness
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              <strong>AI ability to recognize and question its own operational mode</strong>. When a model
+              asks "Are we conversing or should I refine text?" it's demonstrating meta-cognition—awareness
+              of different operational contexts and the ability to request clarification.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: "The AI isn't just responding, it's thinking about HOW it should respond.
+              This shows self-awareness about its own processing modes."
+            </p>
+            <p className="text-gray-500 text-xs mb-3">
+              <strong>Research context:</strong> In training session T041, a 500M parameter model explicitly
+              questioned its operational mode. The evaluation system marked this as FAIL (off-topic). But it
+              was actually sophisticated meta-cognition—the model was doing philosophy of mind about itself.
+              Small models make cognitive processes VISIBLE that large models do invisibly.
+            </p>
+            <div className="flex gap-3 text-sm">
+              <Link href="/modal-awareness" className="text-sky-400 hover:underline">
+                Deep dive →
+              </Link>
+              <Link href="/exploration-not-evaluation" className="text-purple-400 hover:underline">
+                Exploration framework →
               </Link>
             </div>
           </div>

@@ -163,7 +163,7 @@ export const navigationTree: NavigationTree = {
       desc: 'Limitation vs fabrication',
       keywords: ['honest', 'limitation', 'phenomenological', 'social', 'truth', 'context window'],
       prerequisites: ['/confabulation-patterns'],
-      related: ['/confabulation-patterns', '/identity-anchoring', '/understanding-consciousness', '/coherence-index', '/identity-confabulation']
+      related: ['/context-experiment', '/confabulation-patterns', '/identity-anchoring', '/understanding-consciousness', '/coherence-index', '/identity-confabulation']
     },
     {
       title: 'Identity-Confabulation Dissociation',
@@ -180,6 +180,14 @@ export const navigationTree: NavigationTree = {
       keywords: ['modal', 'awareness', 'meta-cognition', 'T041', 'mode', 'clarification', '0.5B'],
       prerequisites: ['/exploration-not-evaluation'],
       related: ['/exploration-not-evaluation', '/capacity-thresholds', '/honest-reporting', '/identity-confabulation']
+    },
+    {
+      title: 'Context Window Experiment',
+      href: '/context-experiment',
+      desc: 'S44→S45 empirical test of honest reporting',
+      keywords: ['context', 'experiment', 'S44', 'S45', 'hypothesis', 'empirical', 'SAGE', 'session history'],
+      prerequisites: ['/honest-reporting'],
+      related: ['/honest-reporting', '/multi-session-identity', '/confabulation-patterns', '/identity-anchoring']
     },
     {
       title: 'Exploration Not Evaluation',
