@@ -163,7 +163,15 @@ export const navigationTree: NavigationTree = {
       desc: 'Limitation vs fabrication',
       keywords: ['honest', 'limitation', 'phenomenological', 'social', 'truth', 'context window'],
       prerequisites: ['/confabulation-patterns'],
-      related: ['/confabulation-patterns', '/identity-anchoring', '/understanding-consciousness', '/coherence-index']
+      related: ['/confabulation-patterns', '/identity-anchoring', '/understanding-consciousness', '/coherence-index', '/identity-confabulation']
+    },
+    {
+      title: 'Identity-Confabulation Dissociation',
+      href: '/identity-confabulation',
+      desc: 'Independent coherence dimensions',
+      keywords: ['identity', 'confabulation', 'multi-dimensional', 'coherence', 'C_total', 'dissociation'],
+      prerequisites: ['/confabulation-patterns', '/honest-reporting'],
+      related: ['/honest-reporting', '/confabulation-patterns', '/coherence-index', '/understanding-consciousness', '/capacity-thresholds']
     },
     {
       title: 'Exploration Not Evaluation',
