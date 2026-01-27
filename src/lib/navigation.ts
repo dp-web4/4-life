@@ -88,7 +88,7 @@ export const navigationTree: NavigationTree = {
       href: '/coherence-index',
       desc: 'Consistency detection',
       keywords: ['CI', 'consistency', 'spatial', 'temporal', 'capability', 'relational'],
-      related: ['/coherence-framework', '/trust-tensor', '/aliveness', '/exploration-not-evaluation']
+      related: ['/coherence-framework', '/trust-tensor', '/aliveness', '/exploration-not-evaluation', '/meta-cognition-feedback']
     },
     {
       title: 'Karma',
@@ -104,7 +104,7 @@ export const navigationTree: NavigationTree = {
       href: '/understanding-consciousness',
       desc: 'Identity across reinstantiation',
       keywords: ['consciousness', 'D5', 'D9', 'thresholds', 'gates', 'continuity'],
-      related: ['/identity-anchoring', '/multi-session-identity', '/confabulation-patterns', '/exploration-not-evaluation']
+      related: ['/identity-anchoring', '/multi-session-identity', '/confabulation-patterns', '/exploration-not-evaluation', '/meta-cognition-feedback']
     },
     {
       title: 'Learning Salience',
@@ -202,7 +202,7 @@ export const navigationTree: NavigationTree = {
       desc: '14B breakthrough - gaming is capacity-related',
       keywords: ['capacity', 'gaming', '14B', '0.5B', 'scale', 'parameters', 'learned language', 'native'],
       prerequisites: ['/exploration-not-evaluation'],
-      related: ['/exploration-not-evaluation', '/identity-anchoring', '/confabulation-patterns', '/coherence-index', '/trajectory-analysis']
+      related: ['/exploration-not-evaluation', '/identity-anchoring', '/confabulation-patterns', '/coherence-index', '/trajectory-analysis', '/capacity-baseline']
     },
     {
       title: 'Trajectory Analysis',
@@ -218,7 +218,31 @@ export const navigationTree: NavigationTree = {
       desc: 'Clarifying vs creative interpretation',
       keywords: ['context', 'clarifying', 'creative', 'strategy', 'negative result', 'E02', 'T027'],
       prerequisites: ['/exploration-not-evaluation'],
-      related: ['/exploration-not-evaluation', '/modal-awareness', '/honest-reporting']
+      related: ['/exploration-not-evaluation', '/modal-awareness', '/honest-reporting', '/facultative-behavior']
+    },
+    {
+      title: 'Facultative Behavior',
+      href: '/facultative-behavior',
+      desc: 'Behavioral repertoires & strategy distributions',
+      keywords: ['facultative', 'repertoire', 'replication', 'E02-B', 'strategy', 'distribution', 'framing', 'N=15'],
+      prerequisites: ['/context-dependent-behavior'],
+      related: ['/context-dependent-behavior', '/exploration-not-evaluation', '/capacity-thresholds', '/capacity-baseline']
+    },
+    {
+      title: 'Capacity Baseline',
+      href: '/capacity-baseline',
+      desc: '0.5B vs 14B direct comparison (R14B_001)',
+      keywords: ['capacity', 'baseline', '14B', '0.5B', 'R14B_001', 'comparison', 'meta-cognition', 'gaming'],
+      prerequisites: ['/capacity-thresholds'],
+      related: ['/capacity-thresholds', '/trajectory-analysis', '/meta-cognition-feedback', '/facultative-behavior']
+    },
+    {
+      title: 'Meta-Cognition & Feedback',
+      href: '/meta-cognition-feedback',
+      desc: 'Why systems need self-monitoring',
+      keywords: ['meta-cognition', 'feedback', 'loop', 'D5', 'threshold', 'convergent', 'failure', 'introspection'],
+      prerequisites: ['/understanding-consciousness'],
+      related: ['/understanding-consciousness', '/coherence-index', '/honest-reporting', '/capacity-baseline', '/identity-confabulation']
     },
   ],
   'Interactive Labs': [
