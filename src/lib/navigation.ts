@@ -25,6 +25,13 @@ export const navigationTree: NavigationTree = {
       related: ['/learn', '/how-it-works']
     },
     {
+      title: 'Your First Simulation',
+      href: '/first-simulation',
+      desc: 'Guided 5-min walkthrough with live simulation',
+      keywords: ['simulation', 'guided', 'walkthrough', 'first', 'beginner', 'live', 'interactive'],
+      related: ['/first-contact', '/playground', '/trust-tensor-explorer', '/research-hub'],
+    },
+    {
       title: 'Learning Journey',
       href: '/learn',
       desc: 'Structured path from beginner to practitioner',
@@ -346,11 +353,18 @@ export const navigationTree: NavigationTree = {
       related: ['/markov-relevancy-horizon', '/trust-tensor-explorer', '/trust-networks', '/atp-economics', '/federation-economics']
     },
     {
+      title: 'Concepts to Tools',
+      href: '/concepts-to-tools',
+      desc: 'Bridge from reading to exploring',
+      keywords: ['bridge', 'concepts', 'tools', 'scaffolding', 'transition', 'understand', 'explore'],
+      related: ['/research-hub', '/learn', '/trust-tensor-explorer', '/mrh-explorer', '/trajectory-explorer'],
+    },
+    {
       title: 'Research Hub',
       href: '/research-hub',
       desc: 'All interactive tools in one place',
       keywords: ['hub', 'tools', 'interactive', 'explore', 'participate', 'experiment', 'learning path'],
-      related: ['/learn', '/first-contact', '/trust-tensor-explorer', '/mrh-explorer', '/playground', '/lab-console']
+      related: ['/learn', '/first-contact', '/concepts-to-tools', '/trust-tensor-explorer', '/mrh-explorer', '/playground', '/lab-console']
     },
   ],
   'Advanced Topics': [

@@ -18,6 +18,7 @@
 import { useState, useCallback, useMemo } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 
 // ============================================================================
 // Types
@@ -930,7 +931,8 @@ export default function TrajectoryExplorerPage() {
         would substantially improve prediction accuracy.
       </div>
 
-      <RelatedConcepts currentPath="/trajectory-explorer" />
+      <ExplorerNav currentPath="/trajectory-explorer" />
+        <RelatedConcepts currentPath="/trajectory-explorer" />
     </div>
   );
 }

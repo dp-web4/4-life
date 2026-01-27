@@ -12,6 +12,7 @@ import Link from 'next/link';
 import TrustNetworkVisualization from '@/components/TrustNetworkVisualization';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from '@/components/ExplorerNav';
 
 export default function TrustNetworksPage() {
   const [simulationData, setSimulationData] = useState<any>(null);
@@ -320,6 +321,7 @@ for each agent A:
             Trust Tensor (T3) →
           </Link>
         </div>
+        <ExplorerNav currentPath="/trust-networks" />
         <RelatedConcepts currentPath="/trust-networks" />
       </div>
     </div>

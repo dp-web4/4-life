@@ -18,6 +18,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from '@/components/ExplorerNav';
 
 // ============================================================================
 // Types
@@ -911,6 +912,7 @@ export default function AdversarialExplorerPage() {
             Run Simulations
           </Link>
         </div>
+        <ExplorerNav currentPath="/adversarial-explorer" />
         <RelatedConcepts currentPath="/adversarial-explorer" />
       </div>
     </div>

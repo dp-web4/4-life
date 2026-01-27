@@ -17,6 +17,7 @@
 import { useState, useCallback, useMemo } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 
 // ============================================================================
 // Types
@@ -570,6 +571,81 @@ export default function TrustTensorExplorerPage() {
                 effective = base x CI^{steepness.toFixed(1)} = {comp.toFixed(3)} x {Math.pow(ci, steepness).toFixed(3)} = <span style={{ color: '#6ee7b7', fontWeight: 600 }}>{effComp.toFixed(3)}</span>
               </div>
             </div>
+
+            {/* CI Curve Visualization */}
+            <div style={{ marginTop: '1rem' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: '0.5rem' }}>
+                CI Modulation Curve
+              </div>
+              <div style={{
+                position: 'relative', height: '100px', width: '100%',
+                background: 'var(--color-bg-tertiary)', borderRadius: '0.5rem',
+                overflow: 'hidden',
+              }}>
+                {/* Grid lines */}
+                {[0.25, 0.5, 0.75].map(v => (
+                  <div key={v} style={{
+                    position: 'absolute', left: 0, right: 0,
+                    bottom: `${v * 100}%`, height: '1px',
+                    background: '#ffffff08',
+                  }} />
+                ))}
+                {/* Curve - rendered as bars */}
+                {Array.from({ length: 50 }, (_, i) => {
+                  const ciVal = (i + 1) / 50;
+                  const modulator = Math.pow(ciVal, steepness);
+                  const isCurrentCI = Math.abs(ciVal - ci) < 0.02;
+                  return (
+                    <div key={i} style={{
+                      position: 'absolute',
+                      left: `${(i / 50) * 100}%`,
+                      bottom: 0,
+                      width: `${100 / 50}%`,
+                      height: `${modulator * 100}%`,
+                      background: isCurrentCI ? '#6ee7b7' : ciVal > 0.8 ? '#6ee7b730' : ciVal > 0.5 ? '#fde68a20' : '#fca5a515',
+                      transition: 'height 0.3s',
+                    }} />
+                  );
+                })}
+                {/* Current CI marker */}
+                <div style={{
+                  position: 'absolute',
+                  left: `${ci * 100}%`,
+                  top: 0, bottom: 0, width: '2px',
+                  background: '#6ee7b7',
+                  zIndex: 2,
+                }} />
+                {/* Axis labels */}
+                <div style={{
+                  position: 'absolute', bottom: '2px', left: '4px',
+                  fontSize: '0.55rem', color: 'var(--color-text-muted)',
+                }}>
+                  CI=0
+                </div>
+                <div style={{
+                  position: 'absolute', bottom: '2px', right: '4px',
+                  fontSize: '0.55rem', color: 'var(--color-text-muted)',
+                }}>
+                  CI=1
+                </div>
+                <div style={{
+                  position: 'absolute', top: '2px', left: '4px',
+                  fontSize: '0.55rem', color: 'var(--color-text-muted)',
+                }}>
+                  100%
+                </div>
+              </div>
+              <div style={{
+                marginTop: '0.375rem', fontSize: '0.7rem', color: 'var(--color-text-muted)',
+                display: 'flex', justifyContent: 'space-between',
+              }}>
+                <span>Current: CI={ci.toFixed(2)} retains <span style={{
+                  color: Math.pow(ci, steepness) > 0.7 ? '#6ee7b7' : Math.pow(ci, steepness) > 0.3 ? '#fde68a' : '#fca5a5',
+                  fontWeight: 600,
+                }}>{(Math.pow(ci, steepness) * 100).toFixed(0)}%</span> of trust</span>
+                <span>steepness={steepness.toFixed(1)}</span>
+              </div>
+            </div>
           </div>
 
           {/* Reset */}
@@ -879,6 +955,7 @@ export default function TrustTensorExplorerPage() {
         )}
       </div>
 
+      <ExplorerNav currentPath="/trust-tensor-explorer" />
       <RelatedConcepts currentPath="/trust-tensor-explorer" />
     </div>
   );

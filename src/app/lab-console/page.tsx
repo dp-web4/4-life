@@ -6,6 +6,7 @@ import { ReasoningTimeline } from "@/components/ReasoningTimeline";
 import DecisionEvolution from "@/components/DecisionEvolution";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from '@/components/ExplorerNav';
 
 // v0 Lab Console for 4-Life
 // --------------------------
@@ -881,7 +882,8 @@ export default function LabConsolePage() {
       {fiveDomain && fiveDomain.lives && fiveDomain.lives.length > 0 && (
         <NarrativePanel lives={fiveDomain.lives} />
       )}
-      <RelatedConcepts currentPath="/lab-console" />
+      <ExplorerNav currentPath="/lab-console" />
+        <RelatedConcepts currentPath="/lab-console" />
     </main>
   );
 }

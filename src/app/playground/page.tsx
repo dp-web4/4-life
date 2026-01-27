@@ -5,6 +5,7 @@ import { PlaygroundControls, PlaygroundConfig } from "@/components/PlaygroundCon
 import { PlaygroundResults, PlaygroundResult } from "@/components/PlaygroundResults";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from '@/components/ExplorerNav';
 
 /**
  * Playground Page - Interactive Parameter Exploration
@@ -312,7 +313,8 @@ export default function PlaygroundPage() {
           </p>
         </div>
       </section>
-      <RelatedConcepts currentPath="/playground" />
+      <ExplorerNav currentPath="/playground" />
+        <RelatedConcepts currentPath="/playground" />
     </>
   );
 }

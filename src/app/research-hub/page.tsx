@@ -34,6 +34,16 @@ interface ToolCard {
 const TOOLS: ToolCard[] = [
   // Understand
   {
+    title: 'Your First Simulation',
+    href: '/first-simulation',
+    emoji: '🚀',
+    description: '5-minute guided walkthrough: watch an agent live, die, and learn in Web4. No setup required.',
+    learns: ['Trust dynamics in action', 'Karma/rebirth', 'EP learning', 'ATP economics'],
+    complexity: 'beginner',
+    category: 'understand',
+    isNew: true,
+  },
+  {
     title: 'First Contact',
     href: '/first-contact',
     emoji: '👋',
@@ -50,6 +60,16 @@ const TOOLS: ToolCard[] = [
     learns: ['Any concept on demand', 'Follow-up questions', 'Guided exploration'],
     complexity: 'beginner',
     category: 'understand',
+  },
+  {
+    title: 'Concepts to Tools',
+    href: '/concepts-to-tools',
+    emoji: '🔗',
+    description: 'Bridge from reading about concepts to using interactive tools. Maps theory to experiment.',
+    learns: ['Concept-tool mapping', 'Guided questions', 'Learning transitions'],
+    complexity: 'beginner',
+    category: 'understand',
+    isNew: true,
   },
   // Explore
   {
@@ -325,7 +345,7 @@ export default function ResearchHubPage() {
               The Trust Journey
             </div>
             <div style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-              First Contact → Trust Tensor Explorer → MRH Explorer → Playground → Lab Console
+              Your First Simulation → First Contact → Trust Tensor Explorer → MRH Explorer → Playground
             </div>
             <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '0.5rem' }}>
               Core path for understanding how trust works in Web4
@@ -358,7 +378,7 @@ export default function ResearchHubPage() {
               The Quick Overview
             </div>
             <div style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-              ACT Chat → Narratives → Compare
+              Your First Simulation → ACT Chat → Narratives
             </div>
             <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '0.5rem' }}>
               Fastest way to understand what&apos;s happening without technical depth

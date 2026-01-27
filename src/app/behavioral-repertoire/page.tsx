@@ -18,6 +18,7 @@
 import { useState, useCallback } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 
 // ============================================================================
 // Types & Constants
@@ -525,7 +526,8 @@ export default function BehavioralRepertoirePage() {
         </p>
       </section>
 
-      <RelatedConcepts currentPath="/behavioral-repertoire" />
+      <ExplorerNav currentPath="/behavioral-repertoire" />
+        <RelatedConcepts currentPath="/behavioral-repertoire" />
     </main>
   );
 }

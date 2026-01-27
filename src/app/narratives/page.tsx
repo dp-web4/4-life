@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from '@/components/ExplorerNav';
 
 interface NarrativeMeta {
   id: string;
@@ -200,6 +201,7 @@ export default function NarrativesPage() {
             ← Back to Home
           </Link>
         </div>
+        <ExplorerNav currentPath="/narratives" />
         <RelatedConcepts currentPath="/narratives" />
       </div>
     </div>

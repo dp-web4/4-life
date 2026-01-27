@@ -17,6 +17,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 
 // ============================================================================
 // Types
@@ -1105,6 +1106,7 @@ export default function PromptFramingLabPage() {
           </Link>
         </div>
 
+        <ExplorerNav currentPath="/prompt-framing-lab" />
         <RelatedConcepts currentPath="/prompt-framing-lab" />
       </div>
     </div>

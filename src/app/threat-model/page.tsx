@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from '@/components/ExplorerNav';
 import CollusionDetectionDemo from "@/components/CollusionDetectionDemo";
 
 export default function ThreatModelPage() {
@@ -525,7 +526,8 @@ export default function ThreatModelPage() {
           </Link>.
         </p>
       </section>
-      <RelatedConcepts currentPath="/threat-model" />
+      <ExplorerNav currentPath="/threat-model" />
+        <RelatedConcepts currentPath="/threat-model" />
     </>
   );
 }

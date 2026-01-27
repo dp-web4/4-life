@@ -19,6 +19,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 
 // ============================================================================
 // Types
@@ -898,7 +899,8 @@ export default function FeedbackLoopExplorer() {
         </p>
       </div>
 
-      <RelatedConcepts currentPath="/feedback-loop-explorer" />
+      <ExplorerNav currentPath="/feedback-loop-explorer" />
+        <RelatedConcepts currentPath="/feedback-loop-explorer" />
     </div>
   );
 }

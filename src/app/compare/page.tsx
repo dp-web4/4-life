@@ -11,6 +11,7 @@ import { useState } from "react";
 import { ComparativeView } from "@/components/ComparativeView";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from '@/components/ExplorerNav';
 
 // Available simulation files
 const SIMULATIONS = [
@@ -251,6 +252,7 @@ export default function ComparePage() {
             </p>
           </div>
         </div>
+        <ExplorerNav currentPath="/compare" />
         <RelatedConcepts currentPath="/compare" />
       </div>
     </div>

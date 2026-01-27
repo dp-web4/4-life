@@ -17,6 +17,7 @@
 import { useState, useCallback, useMemo } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 
 // ============================================================================
 // Types
@@ -904,6 +905,7 @@ export default function MRHExplorerPage() {
         )}
       </div>
 
+      <ExplorerNav currentPath="/mrh-explorer" />
       <RelatedConcepts currentPath="/mrh-explorer" />
     </div>
   );
