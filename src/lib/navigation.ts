@@ -270,11 +270,18 @@ export const navigationTree: NavigationTree = {
   ],
   'Interactive Labs': [
     {
+      title: 'Simulation Sandbox',
+      href: '/simulation-sandbox',
+      desc: 'Full-control client-side simulation with live visualization',
+      keywords: ['sandbox', 'simulation', 'client-side', 'live', 'comparison', 'overlay', 'parameters'],
+      related: ['/first-simulation', '/playground', '/lab-console', '/trust-tensor-explorer', '/narratives'],
+    },
+    {
       title: 'Playground',
       href: '/playground',
       desc: 'Adjust parameters',
       keywords: ['interactive', 'experiment', 'parameters', 'sliders'],
-      related: ['/lab-console', '/compare']
+      related: ['/lab-console', '/compare', '/simulation-sandbox']
     },
     {
       title: 'Lab Console',
@@ -351,6 +358,14 @@ export const navigationTree: NavigationTree = {
       keywords: ['MRH', 'markov', 'horizon', 'context', 'boundaries', 'network', 'depth', 'trust decay', '4D', 'spatial', 'temporal', 'ATP cost'],
       prerequisites: ['/markov-relevancy-horizon'],
       related: ['/markov-relevancy-horizon', '/trust-tensor-explorer', '/trust-networks', '/atp-economics', '/federation-economics']
+    },
+    {
+      title: 'Karma Journey',
+      href: '/karma-journey',
+      desc: 'Interactive multi-life trust simulator',
+      keywords: ['karma', 'journey', 'reincarnation', 'multi-life', 'choices', 'consequences', 'trust', 'interactive'],
+      prerequisites: ['/karma-consequences'],
+      related: ['/karma-consequences', '/trust-tensor-explorer', '/playground', '/concepts-to-tools'],
     },
     {
       title: 'Concepts to Tools',

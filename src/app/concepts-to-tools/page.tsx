@@ -173,6 +173,22 @@ const BRIDGES: ConceptToolBridge[] = [
     bridgeQuestion: 'If you tell an agent "be creative" does it always comply?',
     difficulty: 'intermediate',
   },
+  {
+    concept: {
+      title: 'Karma & Consequences',
+      href: '/karma-consequences',
+      oneLiner: 'Consequences persist across lives — you cannot escape your history',
+      keyIdea: 'Trust at death determines starting conditions at rebirth. Short-term selfish gains compound into long-term disadvantage.',
+    },
+    tool: {
+      title: 'Karma Journey',
+      href: '/karma-journey',
+      whatYouDo: 'Make choices across multiple lives, watch karma compound. Try cooperative vs selfish strategies.',
+      insight: 'The "constraint trap": low karma → low CI → high costs → faster death → even lower karma.',
+    },
+    bridgeQuestion: 'Can a constrained agent break out of the karma penalty through cooperation alone?',
+    difficulty: 'intermediate',
+  },
   // Advanced bridges
   {
     concept: {

@@ -120,6 +120,16 @@ const TOOLS: ToolCard[] = [
     category: 'explore',
   },
   {
+    title: 'Karma Journey',
+    href: '/karma-journey',
+    emoji: '🔄',
+    description: 'Live multiple lives, make choices, watch karma compound. Experience how trust is your legacy.',
+    learns: ['Karma mechanics', 'Trust compounding', 'Consequence patterns', 'Multi-life dynamics'],
+    complexity: 'intermediate',
+    category: 'explore',
+    isNew: true,
+  },
+  {
     title: 'Coherence Visualizer',
     href: '/coherence-framework',
     emoji: '🧬',
@@ -129,6 +139,16 @@ const TOOLS: ToolCard[] = [
     category: 'explore',
   },
   // Participate
+  {
+    title: 'Simulation Sandbox',
+    href: '/simulation-sandbox',
+    emoji: '🔬',
+    description: 'Full-control client-side simulation with live charts, multi-run comparison, and export.',
+    learns: ['Parameter exploration', 'Multi-run comparison', 'Trust/ATP/CI dynamics', 'Export results'],
+    complexity: 'intermediate',
+    category: 'participate',
+    isNew: true,
+  },
   {
     title: 'Playground',
     href: '/playground',

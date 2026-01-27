@@ -35,6 +35,7 @@ const EXPLORERS: ExplorerInfo[] = [
   { href: '/feedback-loop-explorer', title: 'Feedback Loop Explorer', shortTitle: 'Feedback Loops', color: '#93c5fd', stage: 'explore' },
   { href: '/prompt-framing-lab', title: 'Prompt Framing Lab', shortTitle: 'Framing Lab', color: '#93c5fd', stage: 'explore' },
   { href: '/coherence-framework', title: 'Coherence Visualizer', shortTitle: 'Coherence', color: '#93c5fd', stage: 'explore' },
+  { href: '/karma-journey', title: 'Karma Journey', shortTitle: 'Karma Journey', color: '#93c5fd', stage: 'explore' },
   // Participate
   { href: '/playground', title: 'Playground', shortTitle: 'Playground', color: '#c4b5fd', stage: 'participate' },
   { href: '/lab-console', title: 'Lab Console', shortTitle: 'Lab Console', color: '#c4b5fd', stage: 'participate' },
@@ -54,6 +55,7 @@ const ALSO_EXPLORE: Record<string, string[]> = {
   '/behavioral-repertoire': ['/prompt-framing-lab', '/trajectory-explorer', '/concepts-to-tools'],
   '/feedback-loop-explorer': ['/trajectory-explorer', '/trust-tensor-explorer', '/coherence-framework'],
   '/prompt-framing-lab': ['/behavioral-repertoire', '/feedback-loop-explorer', '/concepts-to-tools'],
+  '/karma-journey': ['/trust-tensor-explorer', '/playground', '/concepts-to-tools'],
   '/playground': ['/lab-console', '/trust-tensor-explorer', '/mrh-explorer'],
   '/lab-console': ['/playground', '/compare', '/narratives'],
   '/compare': ['/lab-console', '/playground', '/narratives'],
