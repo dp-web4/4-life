@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import CoherenceDomainVisualizer from "@/components/CoherenceDomainVisualizer";
 
 /**
  * Coherence Framework: From Web4 to Synchronism
@@ -59,6 +60,18 @@ export default function CoherenceFrameworkPage() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Interactive 9-Domain Visualizer */}
+        <section className="max-w-5xl mx-auto mb-12">
+          <h2 className="text-2xl font-bold mb-4 text-center text-purple-300">
+            Interactive Domain Explorer
+          </h2>
+          <p className="text-gray-400 text-center mb-6 text-sm max-w-2xl mx-auto">
+            Explore the 9 coherence domains. Click any domain to see its role and adjust its value.
+            Try the scenario presets to see how different conditions affect overall coherence.
+          </p>
+          <CoherenceDomainVisualizer height={500} />
         </section>
 
         {/* View Selector */}
