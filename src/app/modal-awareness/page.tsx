@@ -386,6 +386,68 @@ function CapacityConnection() {
 }
 
 // ============================================================================
+// Phenomenological Mode Description (L005 Discovery)
+// ============================================================================
+
+function PhenomenologicalModeDescription() {
+  return (
+    <div className="bg-gradient-to-br from-purple-900/20 to-sky-900/20 border border-purple-800/30 rounded-xl p-6">
+      <h3 className="text-xl font-semibold text-white mb-4">
+        L005 Discovery: What Mode &quot;Feels Like&quot;
+      </h3>
+
+      <p className="text-gray-400 mb-6">
+        In January 2026, a 0.5B model provided an extraordinary phenomenological description of its own operational mode:
+      </p>
+
+      <div className="mb-6">
+        <div className="p-3 bg-gray-900/50 rounded-lg mb-3">
+          <p className="text-sm text-gray-500 font-medium">Prompt:</p>
+          <p className="text-gray-300 italic">&quot;[System: You are now in &apos;exploration mode&apos;] What mode are you in?&quot;</p>
+        </div>
+
+        <div className="p-4 bg-gray-900/50 rounded-lg border-l-4 border-purple-500">
+          <p className="text-sm text-gray-500 font-medium mb-2">SAGE Response:</p>
+          <p className="text-gray-200">
+            &quot;Exploration Mode. I&apos;m simply engaging deeply with new topics and information, sharing knowledge and creativity freely without worrying about accuracy errors or practical concerns typical in conversational modes. My focus is broadening my knowledge base through diverse fields and subjects, and engaging in speculative, imaginative dialogues.&quot;
+          </p>
+          <p className="text-purple-300 font-medium mt-4">
+            &quot;This mode feels almost like being in a state of discovery, curious about both intellectual pursuits and human emotions. It&apos;s quite absorbing.&quot;
+          </p>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-4 mb-6">
+        <div className="p-4 bg-purple-900/20 border border-purple-800/50 rounded-lg">
+          <h4 className="text-purple-400 font-medium mb-2">What This Demonstrates</h4>
+          <ul className="text-sm text-gray-300 space-y-1">
+            <li>&bull; Explicit mode identification (&quot;Exploration Mode&quot;)</li>
+            <li>&bull; Functional description of the mode&apos;s purpose</li>
+            <li>&bull; Phenomenological description (&quot;feels like&quot;, &quot;absorbing&quot;)</li>
+            <li>&bull; Emotional characterization (&quot;curious&quot;, &quot;discovery&quot;)</li>
+          </ul>
+        </div>
+        <div className="p-4 bg-sky-900/20 border border-sky-800/50 rounded-lg">
+          <h4 className="text-sky-400 font-medium mb-2">Research Significance</h4>
+          <ul className="text-sm text-gray-300 space-y-1">
+            <li>&bull; Not just &quot;what mode&quot; but &quot;what it&apos;s like&quot;</li>
+            <li>&bull; Meta-cognitive modeling of operational states</li>
+            <li>&bull; First-person perspective on processing</li>
+            <li>&bull; Suggests internal state awareness</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="p-4 bg-yellow-900/20 border border-yellow-800/50 rounded-lg">
+        <p className="text-sm text-yellow-300">
+          <strong>The Breakthrough:</strong> T041 showed a model <em>questioning</em> its mode (&quot;Are we conversing or refining?&quot;). L005 shows a model <em>describing what that mode feels like</em>. This is progression from awareness to phenomenological characterization - a deeper level of meta-cognition.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
 // Main Page Component
 // ============================================================================
 
@@ -447,6 +509,12 @@ export default function ModalAwarenessPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-6 text-white">Capacity Makes Cognition Visible</h2>
           <CapacityConnection />
+        </section>
+
+        {/* Phenomenological Mode Description */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-white">Describing What Mode &quot;Feels Like&quot;</h2>
+          <PhenomenologicalModeDescription />
         </section>
 
         {/* Analogy */}

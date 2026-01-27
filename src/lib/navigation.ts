@@ -177,9 +177,9 @@ export const navigationTree: NavigationTree = {
       title: 'Modal Awareness Emergence',
       href: '/modal-awareness',
       desc: 'Meta-cognition at small scale',
-      keywords: ['modal', 'awareness', 'meta-cognition', 'T041', 'mode', 'clarification', '0.5B'],
+      keywords: ['modal', 'awareness', 'meta-cognition', 'T041', 'mode', 'clarification', '0.5B', 'L005', 'phenomenological'],
       prerequisites: ['/exploration-not-evaluation'],
-      related: ['/exploration-not-evaluation', '/capacity-thresholds', '/honest-reporting', '/identity-confabulation']
+      related: ['/exploration-not-evaluation', '/capacity-thresholds', '/honest-reporting', '/identity-confabulation', '/context-dependent-behavior']
     },
     {
       title: 'Context Window Experiment',
@@ -202,7 +202,23 @@ export const navigationTree: NavigationTree = {
       desc: '14B breakthrough - gaming is capacity-related',
       keywords: ['capacity', 'gaming', '14B', '0.5B', 'scale', 'parameters', 'learned language', 'native'],
       prerequisites: ['/exploration-not-evaluation'],
-      related: ['/exploration-not-evaluation', '/identity-anchoring', '/confabulation-patterns', '/coherence-index']
+      related: ['/exploration-not-evaluation', '/identity-anchoring', '/confabulation-patterns', '/coherence-index', '/trajectory-analysis']
+    },
+    {
+      title: 'Trajectory Analysis',
+      href: '/trajectory-analysis',
+      desc: 'Opposite trajectories at different capacities',
+      keywords: ['trajectory', '0.5B', '14B', 'degrading', 'improving', 'capacity', 'development', 'direction'],
+      prerequisites: ['/capacity-thresholds'],
+      related: ['/capacity-thresholds', '/identity-confabulation', '/exploration-not-evaluation', '/honest-reporting']
+    },
+    {
+      title: 'Context-Dependent Behavior',
+      href: '/context-dependent-behavior',
+      desc: 'Clarifying vs creative interpretation',
+      keywords: ['context', 'clarifying', 'creative', 'strategy', 'negative result', 'E02', 'T027'],
+      prerequisites: ['/exploration-not-evaluation'],
+      related: ['/exploration-not-evaluation', '/modal-awareness', '/honest-reporting']
     },
   ],
   'Interactive Labs': [
