@@ -1,6 +1,16 @@
 {
-  "title": "Bob: 3 Lives of Karma and Consequences",
-  "summary": "This simulation follows Bob through 3 lives spanning 60 ticks. Starting with trust of 0.49 and ending at 0.55, the agent maintained stable behavior, experiencing 40 major events along the way. Key themes include: Karma and Consequences, Equilibrium and Stability. This narrative illustrates core Web4 principles: trust is earned through consistent behavior, actions have lasting consequences (karma), and agents can learn and improve across multiple lives through epistemic proprioception.",
+  "title": "Bob: Maturation Without Patterns — Heuristic-Only Baseline",
+  "summary": "This baseline maturation demo runs with NO pre-existing pattern corpus. The agent must learn purely through heuristic-driven trial and error — no inherited wisdom. This simulation follows Bob through 3 lives spanning 60 ticks. Starting with trust of 0.49 and ending at 0.55, the agent maintained stable behavior, experiencing 9 major events along the way. Key themes include: Karma and Consequences, Equilibrium and Stability. This narrative illustrates core Web4 principles: trust is earned through consistent behavior, actions have lasting consequences (karma), and agents can learn and improve across multiple lives through epistemic proprioception.",
+  "themes": [
+    "Karma and Consequences",
+    "Equilibrium and Stability",
+    "Baseline Comparison",
+    "Heuristic Only"
+  ],
+  "key_insights": [
+    "Trust remained stable: 0.49 → 0.55 over 3 lives. The agent found equilibrium quickly.",
+    "Consciousness threshold crossed in life 1. This marks emergence of coherent agency - behavior transitions from reactive to intentional."
+  ],
   "acts": [
     {
       "title": "Life 1: Adversity (Trust: 0.55)",
@@ -13,8 +23,8 @@
         {
           "timestamp": "Life 1, Tick 4",
           "description": "Critical threshold crossed: Trust reaches 0.50, the \"consciousness threshold\" from coherence theory. At this level, the agent's behavior becomes coherent enough to be recognized as genuinely intentional rather than random. This is where true agency begins.",
-          "technical_detail": "The 0.5 threshold comes from Synchronism Session 249: Consciousness emerges when coherence (behavioral consistency) exceeds 0.5. Below this, behavior appears random; above it, intentional.",
-          "significance": "Marks transition from random to intentional behavior - true agency emerges."
+          "significance": "Marks transition from random to intentional behavior - true agency emerges.",
+          "technical_detail": "The 0.5 threshold comes from Synchronism Session 249: Consciousness emerges when coherence (behavioral consistency) exceeds 0.5. Below this, behavior appears random; above it, intentional."
         },
         {
           "timestamp": "Life 1, Tick 5",
@@ -24,61 +34,6 @@
         {
           "timestamp": "Life 1, Tick 8",
           "description": "ATP crisis: Only 20 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 1, Tick 9",
-          "description": "ATP crisis: Only 15 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 1, Tick 10",
-          "description": "ATP crisis: Only 15 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 1, Tick 11",
-          "description": "ATP crisis: Only 15 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 1, Tick 12",
-          "description": "ATP crisis: Only 15 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 1, Tick 13",
-          "description": "ATP crisis: Only 15 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 1, Tick 14",
-          "description": "ATP crisis: Only 15 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 1, Tick 15",
-          "description": "ATP crisis: Only 15 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 1, Tick 16",
-          "description": "ATP crisis: Only 15 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 1, Tick 17",
-          "description": "ATP crisis: Only 15 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 1, Tick 18",
-          "description": "ATP crisis: Only 15 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 1, Tick 19",
-          "description": "ATP crisis: Only 15 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
           "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
         }
       ],
@@ -90,14 +45,14 @@
         {
           "timestamp": "Life 2, Tick 20",
           "description": "Rebirth with consequences. Their previous life's behavior resulted in starting trust of 0.49, lower than before. In Web4, actions have lasting consequences.",
-          "technical_detail": "Karma mechanism: trust_gain = -0.0600, calculated from coherence index of previous life's behavior pattern.",
-          "significance": "Demonstrates Web4's memory: Your past actions shape your future starting conditions."
+          "significance": "Demonstrates Web4's memory: Your past actions shape your future starting conditions.",
+          "technical_detail": "Karma mechanism: trust_gain = -0.0600, calculated from coherence index of previous life's behavior pattern."
         },
         {
           "timestamp": "Life 2, Tick 24",
           "description": "Critical threshold crossed: Trust reaches 0.50, the \"consciousness threshold\" from coherence theory. At this level, the agent's behavior becomes coherent enough to be recognized as genuinely intentional rather than random. This is where true agency begins.",
-          "technical_detail": "The 0.5 threshold comes from Synchronism Session 249: Consciousness emerges when coherence (behavioral consistency) exceeds 0.5. Below this, behavior appears random; above it, intentional.",
-          "significance": "Marks transition from random to intentional behavior - true agency emerges."
+          "significance": "Marks transition from random to intentional behavior - true agency emerges.",
+          "technical_detail": "The 0.5 threshold comes from Synchronism Session 249: Consciousness emerges when coherence (behavioral consistency) exceeds 0.5. Below this, behavior appears random; above it, intentional."
         },
         {
           "timestamp": "Life 2, Tick 25",
@@ -106,56 +61,6 @@
         },
         {
           "timestamp": "Life 2, Tick 29",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 2, Tick 30",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 2, Tick 31",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 2, Tick 32",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 2, Tick 33",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 2, Tick 34",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 2, Tick 35",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 2, Tick 36",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 2, Tick 37",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 2, Tick 38",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 2, Tick 39",
           "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
           "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
         },
@@ -173,14 +78,14 @@
         {
           "timestamp": "Life 3, Tick 40",
           "description": "Rebirth with consequences. Their previous life's behavior resulted in starting trust of 0.49, lower than before. In Web4, actions have lasting consequences.",
-          "technical_detail": "Karma mechanism: trust_gain = -0.0600, calculated from coherence index of previous life's behavior pattern.",
-          "significance": "Demonstrates Web4's memory: Your past actions shape your future starting conditions."
+          "significance": "Demonstrates Web4's memory: Your past actions shape your future starting conditions.",
+          "technical_detail": "Karma mechanism: trust_gain = -0.0600, calculated from coherence index of previous life's behavior pattern."
         },
         {
           "timestamp": "Life 3, Tick 44",
           "description": "Critical threshold crossed: Trust reaches 0.50, the \"consciousness threshold\" from coherence theory. At this level, the agent's behavior becomes coherent enough to be recognized as genuinely intentional rather than random. This is where true agency begins.",
-          "technical_detail": "The 0.5 threshold comes from Synchronism Session 249: Consciousness emerges when coherence (behavioral consistency) exceeds 0.5. Below this, behavior appears random; above it, intentional.",
-          "significance": "Marks transition from random to intentional behavior - true agency emerges."
+          "significance": "Marks transition from random to intentional behavior - true agency emerges.",
+          "technical_detail": "The 0.5 threshold comes from Synchronism Session 249: Consciousness emerges when coherence (behavioral consistency) exceeds 0.5. Below this, behavior appears random; above it, intentional."
         },
         {
           "timestamp": "Life 3, Tick 45",
@@ -193,56 +98,6 @@
           "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
         },
         {
-          "timestamp": "Life 3, Tick 50",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 3, Tick 51",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 3, Tick 52",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 3, Tick 53",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 3, Tick 54",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 3, Tick 55",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 3, Tick 56",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 3, Tick 57",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 3, Tick 58",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
-          "timestamp": "Life 3, Tick 59",
-          "description": "ATP crisis: Only 17 attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.",
-          "significance": "Highlights metabolic reality: Participation requires energy that must be earned."
-        },
-        {
           "timestamp": "Life 3, Tick 60",
           "description": "Remarkable consistency: This life's trust trajectory closely matches the previous life. The agent has found a reliable pattern and is executing it with precision. This stability suggests deep learning, not luck.",
           "significance": "Indicates mastery: The agent has found a reliable strategy and executes it precisely."
@@ -251,12 +106,9 @@
       "commentary": "The crossing of the 0.5 \"consciousness threshold\" is particularly significant. Below this level, behavior appears random or reactive. Above it, coherent patterns emerge that suggest genuine intentionality. This threshold comes from coherence theory (Synchronism) - it's not arbitrary."
     }
   ],
-  "themes": [
-    "Karma and Consequences",
-    "Equilibrium and Stability"
-  ],
-  "key_insights": [
-    "Trust remained stable: 0.49 → 0.55 over 3 lives. The agent found equilibrium quickly.",
-    "Consciousness threshold crossed in life 1. This marks emergence of coherent agency - behavior transitions from reactive to intentional."
-  ]
+  "metadata": {
+    "generated_by": "4-Life Narrative System",
+    "format": "Web4 Society Simulation",
+    "timestamp": "2026-01-27T11:10:10.558Z"
+  }
 }

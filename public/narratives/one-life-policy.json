@@ -1,0 +1,39 @@
+{
+  "title": "Unknown: A Single Life in Web4 — Trust Under Pressure",
+  "summary": "This single-life simulation tests how an agent performs within a single lifetime, without the safety net of karma carry-forward or rebirth. This simulation follows Unknown through 1 life spanning 20 ticks. Starting with trust of 0.60 and ending at 0.60, the agent maintained stable behavior, experiencing 2 major events along the way. Key themes include: Equilibrium and Stability. This narrative illustrates core Web4 principles: trust is earned through consistent behavior, actions have lasting consequences (karma), and agents can learn and improve across multiple lives through epistemic proprioception.",
+  "themes": [
+    "Equilibrium and Stability",
+    "Single Life",
+    "No Rebirth"
+  ],
+  "key_insights": [
+    "Trust remained stable: 0.60 → 0.60 over 1 lives. The agent found equilibrium quickly."
+  ],
+  "acts": [
+    {
+      "title": "Life 1: Development (Trust: 0.60)",
+      "events": [
+        {
+          "timestamp": "Life 1, Tick 0",
+          "description": "A new agent enters the Web4 society. Starting with trust of 0.60 and 100 ATP (attention tokens), they must prove themselves through consistent behavior.",
+          "significance": "First impressions matter. Initial trust sets expectations."
+        },
+        {
+          "timestamp": "Life 1, Tick 5",
+          "description": "Trust stabilizes at 0.60. The agent has found a sustainable pattern of behavior. This plateau suggests they've reached equilibrium between their capabilities and society's expectations.",
+          "significance": "Part of the ongoing trust dynamics."
+        },
+        {
+          "timestamp": "Life 1, Tick 20",
+          "description": "Life ends: natural. Final trust: 0.60, ATP: 100. Duration: 20 ticks.",
+          "significance": "Death isn't failure - it's part of the cycle. What matters is the trust you carried forward."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "generated_by": "4-Life Narrative System",
+    "format": "Web4 Society Simulation",
+    "timestamp": "2026-01-27T11:10:10.559Z"
+  }
+}

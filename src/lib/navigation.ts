@@ -210,7 +210,7 @@ export const navigationTree: NavigationTree = {
       desc: 'Opposite trajectories at different capacities',
       keywords: ['trajectory', '0.5B', '14B', 'degrading', 'improving', 'capacity', 'development', 'direction'],
       prerequisites: ['/capacity-thresholds'],
-      related: ['/capacity-thresholds', '/identity-confabulation', '/exploration-not-evaluation', '/honest-reporting']
+      related: ['/capacity-thresholds', '/identity-confabulation', '/exploration-not-evaluation', '/honest-reporting', '/trajectory-explorer']
     },
     {
       title: 'Context-Dependent Behavior',
@@ -279,7 +279,31 @@ export const navigationTree: NavigationTree = {
       href: '/narratives',
       desc: 'Generated stories',
       keywords: ['stories', 'narrative', 'generated', 'human-readable'],
-      related: ['/lab-console', '/decision-evolution']
+      related: ['/narratives/compare', '/lab-console', '/decision-evolution']
+    },
+    {
+      title: 'Trajectory Explorer',
+      href: '/trajectory-explorer',
+      desc: 'Interactive capacity-trajectory visualization',
+      keywords: ['trajectory', 'capacity', 'interactive', 'slider', 'development', '0.5B', '14B', 'compare'],
+      prerequisites: ['/trajectory-analysis'],
+      related: ['/trajectory-analysis', '/capacity-thresholds', '/capacity-baseline', '/meta-cognition-feedback']
+    },
+    {
+      title: 'Behavioral Repertoire',
+      href: '/behavioral-repertoire',
+      desc: 'Context-dependent strategy explorer',
+      keywords: ['behavioral', 'repertoire', 'strategy', 'distribution', 'context', 'framing', 'E02', 'facultative'],
+      prerequisites: ['/context-dependent-behavior', '/facultative-behavior'],
+      related: ['/facultative-behavior', '/context-dependent-behavior', '/capacity-thresholds', '/capacity-baseline']
+    },
+    {
+      title: 'Feedback Loop Explorer',
+      href: '/feedback-loop-explorer',
+      desc: 'Interactive feedback loop visualizer',
+      keywords: ['feedback', 'loop', 'meta-cognition', 'D5', 'ATP', 'trust', 'confabulation', 'break', 'fix', 'cascade'],
+      prerequisites: ['/meta-cognition-feedback'],
+      related: ['/meta-cognition-feedback', '/capacity-baseline', '/confabulation-patterns', '/atp-economics', '/trust-tensor', '/honest-reporting']
     },
   ],
   'Advanced Topics': [

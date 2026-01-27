@@ -110,10 +110,30 @@ export class EventDetector {
       events.push(...this.detectPatternEvents(life, prevLife, i + 1));
     }
 
-    // Sort by tick
-    events.sort((a, b) => a.tick - b.tick);
+    // Sort by tick, then by severity (critical first within same tick)
+    const severityOrder = { critical: 0, high: 1, medium: 2, low: 3 };
+    events.sort((a, b) => {
+      if (a.tick !== b.tick) return a.tick - b.tick;
+      return severityOrder[a.severity] - severityOrder[b.severity];
+    });
 
-    return events;
+    // Remove DEATH_IMMINENT events that occur at or after LIFE_END for same life
+    const lifeEndTicks = new Map<number, number>();
+    for (const e of events) {
+      if (e.type === EventType.LIFE_END && e.life_number) {
+        lifeEndTicks.set(e.life_number, e.tick);
+      }
+    }
+
+    const filtered = events.filter(e => {
+      if (e.type === EventType.DEATH_IMMINENT && e.life_number) {
+        const endTick = lifeEndTicks.get(e.life_number);
+        if (endTick !== undefined && e.tick >= endTick) return false;
+      }
+      return true;
+    });
+
+    return filtered;
   }
 
   /**
@@ -295,8 +315,9 @@ export class EventDetector {
       const change = curr - prev;
       const tick = life.start_tick + i;
 
-      // ATP crisis (low attention)
-      if (curr <= EventDetector.ATP_CRISIS_THRESHOLD && curr > EventDetector.ATP_CRITICAL_THRESHOLD) {
+      // ATP crisis (low attention) - only first crisis per life to avoid spam
+      if (curr <= EventDetector.ATP_CRISIS_THRESHOLD && curr > EventDetector.ATP_CRITICAL_THRESHOLD
+          && (prev > EventDetector.ATP_CRISIS_THRESHOLD || i === 1)) {
         events.push({
           type: EventType.ATP_CRISIS,
           severity: EventSeverity.HIGH,
@@ -311,8 +332,8 @@ export class EventDetector {
         });
       }
 
-      // Death imminent (critical ATP)
-      if (curr <= EventDetector.ATP_CRITICAL_THRESHOLD) {
+      // Death imminent (critical ATP) - only first crossing
+      if (curr <= EventDetector.ATP_CRITICAL_THRESHOLD && prev > EventDetector.ATP_CRITICAL_THRESHOLD) {
         events.push({
           type: EventType.DEATH_IMMINENT,
           severity: EventSeverity.CRITICAL,

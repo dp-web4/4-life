@@ -1,10 +1,10 @@
 {
-  "title": "Bob: EP-Driven Closed Loop — Learning Through Action",
-  "summary": "This EP-driven closed-loop simulation demonstrates how an agent learns by proposing actions, observing outcomes, and refining its epistemic patterns. This simulation follows Bob through 3 lives spanning 32 ticks. Starting with trust of 0.49 and ending at 0.53, the agent maintained stable behavior, experiencing 15 major events along the way. Key themes include: Karma and Consequences, Equilibrium and Stability. This narrative illustrates core Web4 principles: trust is earned through consistent behavior, actions have lasting consequences (karma), and agents can learn and improve across multiple lives through epistemic proprioception.",
+  "title": "Bob: Multi-Life Policy Framework — Trust Across Reincarnations",
+  "summary": "This multi-life simulation tests the policy integration framework, showing how agent decisions carry consequences across life cycles through karma mechanics. This simulation follows Bob through 3 lives spanning 32 ticks. Starting with trust of 0.49 and ending at 0.53, the agent maintained stable behavior, experiencing 15 major events along the way. Key themes include: Karma and Consequences, Equilibrium and Stability. This narrative illustrates core Web4 principles: trust is earned through consistent behavior, actions have lasting consequences (karma), and agents can learn and improve across multiple lives through epistemic proprioception.",
   "themes": [
     "Karma and Consequences",
     "Equilibrium and Stability",
-    "Closed-Loop Learning"
+    "Policy Framework"
   ],
   "key_insights": [
     "Trust remained stable: 0.49 → 0.53 over 3 lives. The agent found equilibrium quickly.",
@@ -138,6 +138,6 @@
   "metadata": {
     "generated_by": "4-Life Narrative System",
     "format": "Web4 Society Simulation",
-    "timestamp": "2026-01-27T11:10:10.556Z"
+    "timestamp": "2026-01-27T11:10:10.558Z"
   }
 }

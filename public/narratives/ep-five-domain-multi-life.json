@@ -1,6 +1,14 @@
 {
-  "title": "Unknown: 3 Lives of Karma and Consequences",
-  "summary": "This simulation follows Unknown through 3 lives spanning 10 ticks. Starting with trust of 0.60 and ending at 0.55, the agent maintained stable behavior, experiencing 6 major events along the way. Key themes include: Karma and Consequences, Equilibrium and Stability. This narrative illustrates core Web4 principles: trust is earned through consistent behavior, actions have lasting consequences (karma), and agents can learn and improve across multiple lives through epistemic proprioception.",
+  "title": "Alice: Five Domains of Knowing — Emotional, Quality, Attention, Grounding, Authorization",
+  "summary": "This five-domain simulation assesses an agent across all EP dimensions: emotional regulation, quality judgment, attention management, grounding verification, and authorization awareness. This simulation follows Alice through 3 lives spanning 60 ticks. Starting with trust of 0.60 and ending at 0.55, the agent maintained stable behavior, experiencing 6 major events along the way. Key themes include: Karma and Consequences, Equilibrium and Stability. This narrative illustrates core Web4 principles: trust is earned through consistent behavior, actions have lasting consequences (karma), and agents can learn and improve across multiple lives through epistemic proprioception.",
+  "themes": [
+    "Karma and Consequences",
+    "Equilibrium and Stability",
+    "Multi-Domain Assessment"
+  ],
+  "key_insights": [
+    "Trust remained stable: 0.60 → 0.55 over 3 lives. The agent found equilibrium quickly."
+  ],
   "acts": [
     {
       "title": "Life 1: Development (Trust: 0.60)",
@@ -16,8 +24,8 @@
           "significance": "Part of the ongoing trust dynamics."
         },
         {
-          "timestamp": "Life 1, Tick 10",
-          "description": "Life ends: natural. Final trust: 0.60, ATP: 32.5. Duration: 10 ticks.",
+          "timestamp": "Life 1, Tick 20",
+          "description": "Life ends: natural. Final trust: 0.60, ATP: 32.5. Duration: 20 ticks.",
           "significance": "Death isn't failure - it's part of the cycle. What matters is the trust you carried forward."
         }
       ]
@@ -26,19 +34,19 @@
       "title": "Life 2: Development (Trust: 0.55)",
       "events": [
         {
-          "timestamp": "Life 2, Tick 0",
+          "timestamp": "Life 2, Tick 20",
           "description": "Rebirth with consequences. Their previous life's behavior resulted in starting trust of 0.55, lower than before. In Web4, actions have lasting consequences.",
-          "technical_detail": "Karma mechanism: trust_gain = -0.0500, calculated from coherence index of previous life's behavior pattern.",
-          "significance": "Demonstrates Web4's memory: Your past actions shape your future starting conditions."
+          "significance": "Demonstrates Web4's memory: Your past actions shape your future starting conditions.",
+          "technical_detail": "Karma mechanism: trust_gain = -0.0500, calculated from coherence index of previous life's behavior pattern."
         },
         {
-          "timestamp": "Life 2, Tick 5",
+          "timestamp": "Life 2, Tick 25",
           "description": "Trust stabilizes at 0.55. The agent has found a sustainable pattern of behavior. This plateau suggests they've reached equilibrium between their capabilities and society's expectations.",
           "significance": "Part of the ongoing trust dynamics."
         },
         {
-          "timestamp": "Life 2, Tick 10",
-          "description": "Life ends: natural. Final trust: 0.55, ATP: 32.5. Duration: 10 ticks.",
+          "timestamp": "Life 2, Tick 40",
+          "description": "Life ends: natural. Final trust: 0.55, ATP: 32.5. Duration: 20 ticks.",
           "significance": "Death isn't failure - it's part of the cycle. What matters is the trust you carried forward."
         }
       ]
@@ -47,23 +55,23 @@
       "title": "Life 3: Development (Trust: 0.55)",
       "events": [
         {
-          "timestamp": "Life 3, Tick 0",
+          "timestamp": "Life 3, Tick 40",
           "description": "Rebirth with consequences. Their previous life's behavior resulted in starting trust of 0.55, unchanged. In Web4, actions have lasting consequences.",
-          "technical_detail": "Karma mechanism: trust_gain = 0.0000, calculated from coherence index of previous life's behavior pattern.",
-          "significance": "Demonstrates Web4's memory: Your past actions shape your future starting conditions."
+          "significance": "Demonstrates Web4's memory: Your past actions shape your future starting conditions.",
+          "technical_detail": "Karma mechanism: trust_gain = 0.0000, calculated from coherence index of previous life's behavior pattern."
         },
         {
-          "timestamp": "Life 3, Tick 5",
+          "timestamp": "Life 3, Tick 45",
           "description": "Trust stabilizes at 0.55. The agent has found a sustainable pattern of behavior. This plateau suggests they've reached equilibrium between their capabilities and society's expectations.",
           "significance": "Part of the ongoing trust dynamics."
         },
         {
-          "timestamp": "Life 3, Tick 10",
-          "description": "Life ends: natural. Final trust: 0.55, ATP: 32.5. Duration: 10 ticks.",
+          "timestamp": "Life 3, Tick 60",
+          "description": "Life ends: natural. Final trust: 0.55, ATP: 32.5. Duration: 20 ticks.",
           "significance": "Death isn't failure - it's part of the cycle. What matters is the trust you carried forward."
         },
         {
-          "timestamp": "Life 3, Tick 10",
+          "timestamp": "Life 3, Tick 60",
           "description": "Remarkable consistency: This life's trust trajectory closely matches the previous life. The agent has found a reliable pattern and is executing it with precision. This stability suggests deep learning, not luck.",
           "significance": "Indicates mastery: The agent has found a reliable strategy and executes it precisely."
         }
@@ -71,11 +79,9 @@
       "commentary": "The remarkable consistency across lives suggests the agent has found a stable attractor - a behavioral pattern that works reliably. This isn't mechanical repetition, but rather the demonstration of having learned a generalizable strategy."
     }
   ],
-  "themes": [
-    "Karma and Consequences",
-    "Equilibrium and Stability"
-  ],
-  "key_insights": [
-    "Trust remained stable: 0.60 → 0.55 over 3 lives. The agent found equilibrium quickly."
-  ]
+  "metadata": {
+    "generated_by": "4-Life Narrative System",
+    "format": "Web4 Society Simulation",
+    "timestamp": "2026-01-27T11:10:10.557Z"
+  }
 }

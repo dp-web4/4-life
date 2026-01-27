@@ -1,54 +1,100 @@
 [
   {
     "id": "ep-driven-closed-loop",
-    "title": "Bob: 3 Lives of Karma and Consequences",
+    "title": "Bob: EP-Driven Closed Loop — Learning Through Action",
     "filename": "ep-driven-closed-loop.md",
+    "type": "EP Closed-Loop",
     "themes": [
       "Karma and Consequences",
-      "Equilibrium and Stability"
+      "Equilibrium and Stability",
+      "Closed-Loop Learning"
     ],
     "lives": 3,
-    "events": 28,
-    "timestamp": "2026-01-17",
-    "source_simulation": "ep_driven_closed_loop_results.json"
+    "events": 20,
+    "timestamp": "2026-01-27",
+    "source_simulation": "ep_driven_closed_loop_results.json",
+    "summary": "This EP-driven closed-loop simulation demonstrates how an agent learns by proposing actions, observing outcomes, and refining its epistemic patterns. This simulation follows Bob through 3 lives spanni..."
   },
   {
     "id": "ep-five-domain-multi-life",
-    "title": "Unknown: 3 Lives of Karma and Consequences",
+    "title": "Alice: Five Domains of Knowing — Emotional, Quality, Attention, Grounding, Authorization",
     "filename": "ep-five-domain-multi-life.md",
+    "type": "Five-Domain EP",
     "themes": [
       "Karma and Consequences",
-      "Equilibrium and Stability"
+      "Equilibrium and Stability",
+      "Multi-Domain Assessment"
     ],
     "lives": 3,
     "events": 10,
-    "timestamp": "2026-01-17",
-    "source_simulation": "ep_five_domain_multi_life_results.json"
+    "timestamp": "2026-01-27",
+    "source_simulation": "ep_five_domain_multi_life_results.json",
+    "summary": "This five-domain simulation assesses an agent across all EP dimensions: emotional regulation, quality judgment, attention management, grounding verification, and authorization awareness. This simulati..."
   },
   {
     "id": "maturation-web4",
-    "title": "Bob: 3 Lives of Karma and Consequences",
+    "title": "Bob: Maturation with Web4 Patterns — From Immature to Wise",
     "filename": "maturation-web4.md",
+    "type": "Maturation (Web4 Patterns)",
     "themes": [
       "Karma and Consequences",
-      "Equilibrium and Stability"
+      "Equilibrium and Stability",
+      "Pattern-Guided Growth",
+      "Web4 Native Corpus"
     ],
     "lives": 3,
-    "events": 43,
-    "timestamp": "2026-01-17",
-    "source_simulation": "maturation_demo_results_web4.json"
+    "events": 14,
+    "timestamp": "2026-01-27",
+    "source_simulation": "maturation_demo_results_web4.json",
+    "summary": "This maturation demo uses the Web4-native pattern corpus (100 patterns from Session 116) to guide agent development from IMMATURE through LEARNING to MATURE. This simulation follows Bob through 3 live..."
   },
   {
     "id": "maturation-none",
-    "title": "Bob: 3 Lives of Karma and Consequences",
+    "title": "Bob: Maturation Without Patterns — Heuristic-Only Baseline",
     "filename": "maturation-none.md",
+    "type": "Maturation (No Patterns)",
     "themes": [
       "Karma and Consequences",
-      "Equilibrium and Stability"
+      "Equilibrium and Stability",
+      "Baseline Comparison",
+      "Heuristic Only"
     ],
     "lives": 3,
-    "events": 45,
-    "timestamp": "2026-01-17",
-    "source_simulation": "maturation_demo_results_none.json"
+    "events": 14,
+    "timestamp": "2026-01-27",
+    "source_simulation": "maturation_demo_results_none.json",
+    "summary": "This baseline maturation demo runs with NO pre-existing pattern corpus. The agent must learn purely through heuristic-driven trial and error — no inherited wisdom. This simulation follows Bob through ..."
+  },
+  {
+    "id": "multi-life-policy",
+    "title": "Bob: Multi-Life Policy Framework — Trust Across Reincarnations",
+    "filename": "multi-life-policy.md",
+    "type": "Multi-Life Policy",
+    "themes": [
+      "Karma and Consequences",
+      "Equilibrium and Stability",
+      "Policy Framework"
+    ],
+    "lives": 3,
+    "events": 20,
+    "timestamp": "2026-01-27",
+    "source_simulation": "multi_life_with_policy.json",
+    "summary": "This multi-life simulation tests the policy integration framework, showing how agent decisions carry consequences across life cycles through karma mechanics. This simulation follows Bob through 3 live..."
+  },
+  {
+    "id": "one-life-policy",
+    "title": "Unknown: A Single Life in Web4 — Trust Under Pressure",
+    "filename": "one-life-policy.md",
+    "type": "Single-Life Policy",
+    "themes": [
+      "Equilibrium and Stability",
+      "Single Life",
+      "No Rebirth"
+    ],
+    "lives": 1,
+    "events": 3,
+    "timestamp": "2026-01-27",
+    "source_simulation": "one_life_with_policy.json",
+    "summary": "This single-life simulation tests how an agent performs within a single lifetime, without the safety net of karma carry-forward or rebirth. This simulation follows Unknown through 1 life spanning 20 t..."
   }
 ]

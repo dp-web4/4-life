@@ -15,10 +15,13 @@ interface NarrativeMeta {
   id: string;
   title: string;
   filename: string;
+  type?: string;
   themes: string[];
   lives: number;
   events: number;
   timestamp: string;
+  summary?: string;
+  source_simulation?: string;
 }
 
 export default function NarrativesPage() {
@@ -96,17 +99,30 @@ export default function NarrativesPage() {
                 key={narrative.id}
                 className="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-gray-600 transition-colors"
               >
-                <h2 className="text-2xl font-bold mb-2">{narrative.title}</h2>
+                <div className="flex items-start justify-between mb-2">
+                  <h2 className="text-2xl font-bold">{narrative.title}</h2>
+                  {narrative.type && (
+                    <span className="px-3 py-1 bg-purple-900/50 text-purple-300 text-xs rounded-full whitespace-nowrap ml-3 mt-1">
+                      {narrative.type}
+                    </span>
+                  )}
+                </div>
+
+                {narrative.summary && (
+                  <p className="text-gray-400 text-sm mb-3 leading-relaxed">
+                    {narrative.summary}
+                  </p>
+                )}
 
                 <div className="flex gap-4 mb-4 text-sm text-gray-400">
-                  <span>{narrative.lives} lives</span>
-                  <span>•</span>
+                  <span>{narrative.lives} {narrative.lives === 1 ? 'life' : 'lives'}</span>
+                  <span>|</span>
                   <span>{narrative.events} events</span>
-                  <span>•</span>
+                  <span>|</span>
                   <span>{narrative.timestamp}</span>
                 </div>
 
-                <div className="flex gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {narrative.themes.map(theme => (
                     <span
                       key={theme}
@@ -138,8 +154,26 @@ export default function NarrativesPage() {
           )}
         </div>
 
+        {/* Compare Link */}
+        {filteredNarratives.length >= 2 && (
+          <div className="mt-8 bg-purple-900/20 border border-purple-800 rounded-lg p-5 flex items-center justify-between">
+            <div>
+              <h3 className="font-bold text-purple-300">Compare Narratives</h3>
+              <p className="text-sm text-gray-400">
+                See how different conditions shape agent development side-by-side.
+              </p>
+            </div>
+            <Link
+              href="/narratives/compare"
+              className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded transition-colors text-sm whitespace-nowrap"
+            >
+              Open Comparison View
+            </Link>
+          </div>
+        )}
+
         {/* Info Box */}
-        <div className="mt-12 bg-blue-900/20 border border-blue-800 rounded-lg p-6">
+        <div className="mt-8 bg-blue-900/20 border border-blue-800 rounded-lg p-6">
           <h3 className="text-lg font-bold mb-2">About Narratives</h3>
           <p className="text-gray-400 mb-4">
             Narratives are automatically generated from simulation data using event detection and story generation algorithms.
