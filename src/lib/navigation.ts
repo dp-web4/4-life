@@ -329,6 +329,29 @@ export const navigationTree: NavigationTree = {
       prerequisites: ['/context-dependent-behavior', '/facultative-behavior'],
       related: ['/context-dependent-behavior', '/facultative-behavior', '/behavioral-repertoire', '/exploration-not-evaluation']
     },
+    {
+      title: 'Trust Tensor Explorer',
+      href: '/trust-tensor-explorer',
+      desc: 'Interactive T3 manipulation with CI modulation',
+      keywords: ['trust', 'tensor', 'T3', 'talent', 'training', 'temperament', 'coherence', 'CI', 'ATP', 'rebirth', 'karma', 'roles'],
+      prerequisites: ['/trust-tensor'],
+      related: ['/trust-tensor', '/coherence-index', '/atp-economics', '/karma-consequences', '/aliveness', '/mrh-explorer']
+    },
+    {
+      title: 'MRH Explorer',
+      href: '/mrh-explorer',
+      desc: 'Interactive Markov Relevancy Horizon visualizer',
+      keywords: ['MRH', 'markov', 'horizon', 'context', 'boundaries', 'network', 'depth', 'trust decay', '4D', 'spatial', 'temporal', 'ATP cost'],
+      prerequisites: ['/markov-relevancy-horizon'],
+      related: ['/markov-relevancy-horizon', '/trust-tensor-explorer', '/trust-networks', '/atp-economics', '/federation-economics']
+    },
+    {
+      title: 'Research Hub',
+      href: '/research-hub',
+      desc: 'All interactive tools in one place',
+      keywords: ['hub', 'tools', 'interactive', 'explore', 'participate', 'experiment', 'learning path'],
+      related: ['/learn', '/first-contact', '/trust-tensor-explorer', '/mrh-explorer', '/playground', '/lab-console']
+    },
   ],
   'Advanced Topics': [
     {
