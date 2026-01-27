@@ -234,7 +234,15 @@ export const navigationTree: NavigationTree = {
       desc: '0.5B vs 14B direct comparison (R14B_001)',
       keywords: ['capacity', 'baseline', '14B', '0.5B', 'R14B_001', 'comparison', 'meta-cognition', 'gaming'],
       prerequisites: ['/capacity-thresholds'],
-      related: ['/capacity-thresholds', '/trajectory-analysis', '/meta-cognition-feedback', '/facultative-behavior']
+      related: ['/capacity-thresholds', '/trajectory-analysis', '/meta-cognition-feedback', '/facultative-behavior', '/purpose-integration']
+    },
+    {
+      title: 'Purpose Integration',
+      href: '/purpose-integration',
+      desc: 'Self-focused to purpose-driven development',
+      keywords: ['purpose', 'maslow', 'development', 'maturation', 'self-actualization', 'R14B', 'grounding', 'stability'],
+      prerequisites: ['/capacity-baseline'],
+      related: ['/capacity-baseline', '/capacity-thresholds', '/trajectory-analysis', '/meta-cognition-feedback', '/exploration-not-evaluation']
     },
     {
       title: 'Meta-Cognition & Feedback',
@@ -242,7 +250,15 @@ export const navigationTree: NavigationTree = {
       desc: 'Why systems need self-monitoring',
       keywords: ['meta-cognition', 'feedback', 'loop', 'D5', 'threshold', 'convergent', 'failure', 'introspection'],
       prerequisites: ['/understanding-consciousness'],
-      related: ['/understanding-consciousness', '/coherence-index', '/honest-reporting', '/capacity-baseline', '/identity-confabulation']
+      related: ['/understanding-consciousness', '/coherence-index', '/honest-reporting', '/capacity-baseline', '/identity-confabulation', '/consciousness-layers']
+    },
+    {
+      title: 'Consciousness Layers',
+      href: '/consciousness-layers',
+      desc: 'Hierarchical meta-cognition layers (R14B)',
+      keywords: ['consciousness', 'layers', 'meta-cognition', 'meta-meta-cognition', 'language switch', 'R14B', 'Thor', 'depth', 'capacity'],
+      prerequisites: ['/capacity-baseline'],
+      related: ['/capacity-baseline', '/meta-cognition-feedback', '/capacity-thresholds', '/trajectory-analysis', '/exploration-not-evaluation']
     },
   ],
   'Interactive Labs': [
@@ -304,6 +320,14 @@ export const navigationTree: NavigationTree = {
       keywords: ['feedback', 'loop', 'meta-cognition', 'D5', 'ATP', 'trust', 'confabulation', 'break', 'fix', 'cascade'],
       prerequisites: ['/meta-cognition-feedback'],
       related: ['/meta-cognition-feedback', '/capacity-baseline', '/confabulation-patterns', '/atp-economics', '/trust-tensor', '/honest-reporting']
+    },
+    {
+      title: 'Prompt Framing Lab',
+      href: '/prompt-framing-lab',
+      desc: 'Experiment with prompt framing effects',
+      keywords: ['prompt', 'framing', 'E02', 'strategy', 'distribution', 'exploration', 'evaluation', 'creative', 'clarifying', 'lab'],
+      prerequisites: ['/context-dependent-behavior', '/facultative-behavior'],
+      related: ['/context-dependent-behavior', '/facultative-behavior', '/behavioral-repertoire', '/exploration-not-evaluation']
     },
   ],
   'Advanced Topics': [
