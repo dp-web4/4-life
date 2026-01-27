@@ -1,6 +1,9 @@
+'use client';
+
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import CollusionDetectionDemo from "@/components/CollusionDetectionDemo";
 
 export default function ThreatModelPage() {
   return (
@@ -141,6 +144,11 @@ export default function ThreatModelPage() {
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Interactive Collusion Demo */}
+          <div className="my-8">
+            <CollusionDetectionDemo />
           </div>
 
           {/* Quality Inflation */}
