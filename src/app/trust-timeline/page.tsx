@@ -18,6 +18,9 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import { detectMoments, SIMULATION_SOURCES } from '@/lib/moments';
+import type { Moment, MomentCategory } from '@/lib/moments/types';
+import { CATEGORY_INFO } from '@/lib/moments/types';
 
 // ============================================================================
 // Types
@@ -107,19 +110,46 @@ function extractTimeline(rawData: any, source: SimSource): DatasetTimeline | nul
 }
 
 // ============================================================================
+// Moment Colors (for markers on the chart)
+// ============================================================================
+
+const MOMENT_COLORS: Record<MomentCategory, string> = {
+  emergence: '#a855f7',  // purple
+  karma: '#eab308',      // yellow
+  learning: '#22c55e',   // green
+  crisis: '#ef4444',     // red
+  trust: '#3b82f6',      // blue
+  atp: '#f97316',        // orange
+};
+
+// ============================================================================
 // SVG Timeline Chart
 // ============================================================================
+
+interface MomentMarker {
+  moment: Moment;
+  normPosition: number;  // 0-1 position in the timeline
+  value: number;         // trust or atp value at that point
+}
 
 function TimelineChart({
   datasets,
   metric,
   height = 280,
   showThreshold = true,
+  moments = [],
+  showMoments = true,
+  hoveredMoment,
+  setHoveredMoment,
 }: {
   datasets: DatasetTimeline[];
   metric: 'trust' | 'atp';
   height?: number;
   showThreshold?: boolean;
+  moments?: MomentMarker[];
+  showMoments?: boolean;
+  hoveredMoment?: string | null;
+  setHoveredMoment?: (id: string | null) => void;
 }) {
   const width = 800;
   const padding = { top: 20, right: 80, bottom: 30, left: 50 };
@@ -255,6 +285,44 @@ function TimelineChart({
             />
           );
         });
+      })}
+
+      {/* Moment markers */}
+      {showMoments && moments.map((mm, idx) => {
+        const x = padding.left + mm.normPosition * chartWidth;
+        const y = toY(mm.value);
+        const color = MOMENT_COLORS[mm.moment.category];
+        const isHovered = hoveredMoment === mm.moment.id;
+
+        return (
+          <g
+            key={`moment-${idx}`}
+            onMouseEnter={() => setHoveredMoment?.(mm.moment.id)}
+            onMouseLeave={() => setHoveredMoment?.(null)}
+            style={{ cursor: 'pointer' }}
+          >
+            {/* Marker */}
+            <circle
+              cx={x}
+              cy={y}
+              r={isHovered ? 6 : 4}
+              fill={color}
+              stroke="#111827"
+              strokeWidth="2"
+              opacity={isHovered ? 1 : 0.8}
+            />
+            {/* Category emoji */}
+            <text
+              x={x}
+              y={y - 10}
+              fontSize="10"
+              textAnchor="middle"
+              opacity={isHovered ? 1 : 0.6}
+            >
+              {CATEGORY_INFO[mm.moment.category].emoji}
+            </text>
+          </g>
+        );
       })}
 
       {/* X-axis label */}
@@ -405,16 +473,29 @@ function InsightPanel({ datasets }: { datasets: DatasetTimeline[] }) {
 // Main Page
 // ============================================================================
 
+// Map simulation source IDs to local SOURCES for consistent coloring
+const SOURCE_ID_MAP: Record<string, string> = {
+  'ep-closed-loop': 'ep-closed-loop',
+  'five-domain': 'five-domain',
+  'maturation-web4': 'maturation-web4',
+  'maturation-baseline': 'maturation-none',  // Map moments detector ID to local ID
+  'multi-life-policy': 'multi-life-policy',
+};
+
 export default function TrustTimelinePage() {
   const [datasets, setDatasets] = useState<DatasetTimeline[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeMetric, setActiveMetric] = useState<'trust' | 'atp'>('trust');
   const [activeDatasets, setActiveDatasets] = useState<Set<string>>(new Set(SOURCES.map(s => s.id)));
+  const [allMoments, setAllMoments] = useState<Moment[]>([]);
+  const [showMoments, setShowMoments] = useState(true);
+  const [hoveredMoment, setHoveredMoment] = useState<string | null>(null);
 
-  // Load all datasets
+  // Load all datasets and moments
   useEffect(() => {
     async function loadAll() {
       const results: DatasetTimeline[] = [];
+      const moments: Moment[] = [];
 
       await Promise.all(SOURCES.map(async (source) => {
         try {
@@ -423,12 +504,22 @@ export default function TrustTimelinePage() {
           const rawData = await res.json();
           const timeline = extractTimeline(rawData, source);
           if (timeline) results.push(timeline);
+
+          // Also detect moments for this source
+          const matchingMomentSource = SIMULATION_SOURCES.find(
+            s => s.filename === source.filename
+          );
+          if (matchingMomentSource) {
+            const detected = detectMoments(rawData, matchingMomentSource);
+            moments.push(...detected);
+          }
         } catch (err) {
           console.error(`Failed to load ${source.filename}:`, err);
         }
       }));
 
       setDatasets(results);
+      setAllMoments(moments);
       setLoading(false);
     }
     loadAll();
@@ -438,6 +529,55 @@ export default function TrustTimelinePage() {
     datasets.filter(d => activeDatasets.has(d.id)),
     [datasets, activeDatasets]
   );
+
+  // Compute moment markers for the current view
+  const momentMarkers = useMemo((): MomentMarker[] => {
+    if (!showMoments) return [];
+
+    const markers: MomentMarker[] = [];
+    const visibleSimIds = new Set(visibleDatasets.map(d => d.id));
+
+    for (const moment of allMoments) {
+      // Find matching dataset
+      const simId = SOURCE_ID_MAP[moment.simulationId] || moment.simulationId;
+      if (!visibleSimIds.has(simId)) continue;
+
+      const dataset = visibleDatasets.find(d => d.id === simId);
+      if (!dataset) continue;
+
+      // Find position in the flattened timeline
+      // Moments are defined by life number and tick within that life
+      const lifeIdx = moment.lifeNumber - 1;
+      if (lifeIdx >= dataset.lives.length) continue;
+
+      // Calculate the offset to this life's start in the flattened array
+      let offset = 0;
+      for (let i = 0; i < lifeIdx; i++) {
+        offset += dataset.lives[i].trust.length;
+      }
+
+      // Add the tick within this life
+      const tickInLife = Math.min(moment.tick, dataset.lives[lifeIdx].trust.length - 1);
+      const flatIdx = offset + tickInLife;
+
+      const values = activeMetric === 'trust' ? dataset.trustFlat : dataset.atpFlat;
+      if (flatIdx >= values.length) continue;
+
+      markers.push({
+        moment,
+        normPosition: values.length > 1 ? flatIdx / (values.length - 1) : 0.5,
+        value: values[flatIdx],
+      });
+    }
+
+    // Sort by severity and limit to avoid overcrowding
+    return markers
+      .sort((a, b) => {
+        const sevOrder = { critical: 0, high: 1, medium: 2 };
+        return sevOrder[a.moment.severity] - sevOrder[b.moment.severity];
+      })
+      .slice(0, 20);  // Limit to top 20 moments
+  }, [allMoments, visibleDatasets, activeMetric, showMoments]);
 
   const toggleDataset = (id: string) => {
     setActiveDatasets(prev => {
@@ -487,6 +627,19 @@ export default function TrustTimelinePage() {
                 </button>
               </div>
 
+              {/* Moments toggle */}
+              <button
+                onClick={() => setShowMoments(!showMoments)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs transition-colors border ${
+                  showMoments
+                    ? 'border-purple-500 bg-purple-900/30 text-purple-300'
+                    : 'border-gray-700 bg-gray-900 text-gray-500'
+                }`}
+              >
+                <span>✨</span>
+                Moments ({momentMarkers.length})
+              </button>
+
               {/* Dataset toggles */}
               <div className="flex flex-wrap gap-2">
                 {datasets.map(ds => (
@@ -511,14 +664,56 @@ export default function TrustTimelinePage() {
 
             {/* Main chart */}
             <div className="bg-gray-800 rounded-xl p-4 mb-8">
-              <h3 className="text-sm font-medium text-gray-400 mb-3">
-                {activeMetric === 'trust' ? 'Trust Trajectories' : 'ATP Trajectories'} — {visibleDatasets.length} Datasets
-              </h3>
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-sm font-medium text-gray-400">
+                  {activeMetric === 'trust' ? 'Trust Trajectories' : 'ATP Trajectories'} — {visibleDatasets.length} Datasets
+                </h3>
+                {showMoments && momentMarkers.length > 0 && (
+                  <span className="text-xs text-gray-500">
+                    Hover over markers for moment details
+                  </span>
+                )}
+              </div>
               <TimelineChart
                 datasets={visibleDatasets}
                 metric={activeMetric}
                 height={300}
+                moments={momentMarkers}
+                showMoments={showMoments}
+                hoveredMoment={hoveredMoment}
+                setHoveredMoment={setHoveredMoment}
               />
+
+              {/* Hovered moment tooltip */}
+              {hoveredMoment && (
+                <div className="mt-3 p-3 bg-gray-900 border border-gray-700 rounded-lg">
+                  {(() => {
+                    const mm = momentMarkers.find(m => m.moment.id === hoveredMoment);
+                    if (!mm) return null;
+                    const { moment } = mm;
+                    return (
+                      <div className="flex gap-3">
+                        <span className="text-2xl">{CATEGORY_INFO[moment.category].emoji}</span>
+                        <div className="flex-1">
+                          <div className="font-medium text-white">{moment.title}</div>
+                          <div className="text-sm text-gray-400 mt-1">{moment.narrative}</div>
+                          <div className="flex items-center gap-3 mt-2 text-xs text-gray-500">
+                            <span>{moment.simulationLabel}</span>
+                            <span>Life {moment.lifeNumber}</span>
+                            <span>Tick {moment.tick}</span>
+                            <Link
+                              href={`/moments?id=${moment.id}`}
+                              className="text-purple-400 hover:text-purple-300"
+                            >
+                              View details →
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
+              )}
             </div>
 
             {/* Individual dataset panels */}
