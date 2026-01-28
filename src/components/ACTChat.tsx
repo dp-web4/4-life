@@ -18,6 +18,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { queryEngine, type Query, type Response } from '@/lib/act/query_engine';
 import type { SimulationResult } from '@/lib/types';
+import type { Moment } from '@/lib/moments/types';
 
 interface Message {
   id: string;
@@ -33,6 +34,8 @@ interface ACTChatProps {
   selectedTick?: number;
   selectedLife?: number;
   onVisualizationRequest?: (type: string) => void;
+  moments?: Moment[];  // Session #42: Moment-aware queries
+  selectedMoment?: Moment;  // Currently focused moment
 }
 
 export default function ACTChat({
@@ -40,7 +43,9 @@ export default function ACTChat({
   comparisonSimulation,
   selectedTick,
   selectedLife,
-  onVisualizationRequest
+  onVisualizationRequest,
+  moments,
+  selectedMoment,
 }: ACTChatProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -89,7 +94,9 @@ export default function ACTChat({
           simulation,
           comparisonSimulation,
           selectedTick,
-          selectedLife
+          selectedLife,
+          moments,
+          selectedMoment,
         }
       };
 
@@ -280,12 +287,21 @@ export default function ACTChat({
           >
             Karma explained
           </button>
-          <button
-            onClick={() => handleSuggestedQuery("What should I explore next?")}
-            className="text-xs px-3 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-300 transition-colors"
-          >
-            What next?
-          </button>
+          {moments && moments.length > 0 ? (
+            <button
+              onClick={() => handleSuggestedQuery("What's the most interesting moment?")}
+              className="text-xs px-3 py-1.5 bg-purple-900/50 hover:bg-purple-800/50 border border-purple-700/50 rounded text-purple-300 transition-colors"
+            >
+              Most interesting moment
+            </button>
+          ) : (
+            <button
+              onClick={() => handleSuggestedQuery("What should I explore next?")}
+              className="text-xs px-3 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-300 transition-colors"
+            >
+              What next?
+            </button>
+          )}
         </div>
       </div>
     </div>

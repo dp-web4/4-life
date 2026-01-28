@@ -13,16 +13,50 @@
  * - Context-aware (if simulation loaded, analyze it)
  */
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import ACTChat from '@/components/ACTChat';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import type { SimulationResult } from '@/lib/types';
+import type { Moment } from '@/lib/moments/types';
+import { detectMoments, SIMULATION_SOURCES } from '@/lib/moments/detector';
 
-export default function ACTExplorerPage() {
+// Inner component that uses search params
+function ACTExplorerContent() {
+  const searchParams = useSearchParams();
   const [simulation, setSimulation] = useState<SimulationResult | undefined>();
   const [showSimulationPicker, setShowSimulationPicker] = useState(false);
+  const [moments, setMoments] = useState<Moment[]>([]);
+  const [contextHint, setContextHint] = useState<string | null>(null);
+
+  // Load moments for context-aware queries
+  useEffect(() => {
+    async function loadMoments() {
+      const allMoments: Moment[] = [];
+      for (const source of SIMULATION_SOURCES) {
+        try {
+          const res = await fetch(`/${source.filename}`);
+          if (!res.ok) continue;
+          const rawData = await res.json();
+          allMoments.push(...detectMoments(rawData, source));
+        } catch {
+          // Skip failed loads
+        }
+      }
+      setMoments(allMoments);
+    }
+    loadMoments();
+  }, []);
+
+  // Check for context hint from URL (e.g., from moments page)
+  useEffect(() => {
+    const context = searchParams.get('context');
+    if (context) {
+      setContextHint(decodeURIComponent(context));
+    }
+  }, [searchParams]);
 
   // Available pre-generated simulations
   const availableSimulations = [
@@ -120,12 +154,26 @@ export default function ACTExplorerPage() {
           )}
         </div>
 
+        {/* Context hint from URL */}
+        {contextHint && (
+          <div className="mb-6 p-4 bg-purple-900/20 border border-purple-700/50 rounded-lg">
+            <div className="text-sm text-purple-300 mb-2">You arrived with a question about:</div>
+            <div className="font-medium text-white">{contextHint}</div>
+            <div className="text-xs text-gray-400 mt-2">
+              Ask about this in the chat below, or explore related concepts.
+            </div>
+          </div>
+        )}
+
         {/* Main Content: Two Column Layout */}
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Chat Interface (2/3) */}
           <div className="lg:col-span-2">
             <div className="h-[700px]">
-              <ACTChat simulation={simulation} />
+              <ACTChat
+                simulation={simulation}
+                moments={moments}
+              />
             </div>
           </div>
 
@@ -256,5 +304,18 @@ export default function ACTExplorerPage() {
         <RelatedConcepts currentPath="/act-explorer" />
       </div>
     </div>
+  );
+}
+
+// Wrapper component with Suspense boundary for useSearchParams
+export default function ACTExplorerPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
+        <div className="text-gray-400">Loading ACT Explorer...</div>
+      </div>
+    }>
+      <ACTExplorerContent />
+    </Suspense>
   );
 }

@@ -16,9 +16,15 @@
  * 3. Pattern learning: "What did the agent learn in life 2?"
  * 4. Concept explanation: "What is ATP?" / "Explain trust tensors"
  * 5. Exploration guidance: "What should I look at next?"
+ * 6. Moment exploration: "What's the most interesting moment?"
+ *
+ * Session #42: Added moment-aware queries for integration with
+ * the Emergent Moments Gallery (/moments).
  */
 
 import type { SimulationResult, LifeCycle, ActionRecord } from '@/lib/types';
+import type { Moment, MomentCategory } from '@/lib/moments/types';
+import { CATEGORY_INFO, CATEGORY_PRIORITY } from '@/lib/moments/types';
 
 export interface Query {
   text: string;
@@ -33,6 +39,7 @@ export type QueryType =
   | 'concept_explanation'
   | 'attack_explanation'
   | 'exploration_guidance'
+  | 'moment_exploration'
   | 'general';
 
 export interface QueryContext {
@@ -40,6 +47,8 @@ export interface QueryContext {
   selectedTick?: number;
   selectedLife?: number;
   comparisonSimulation?: SimulationResult;
+  moments?: Moment[];  // Pre-loaded moments for moment-aware queries
+  selectedMoment?: Moment;  // Currently selected moment for detailed explanation
 }
 
 export interface Response {
@@ -78,6 +87,8 @@ export class ACTQueryEngine {
         return this.explainAttack(query);
       case 'exploration_guidance':
         return this.suggestExploration(query);
+      case 'moment_exploration':
+        return this.exploreMoments(query);
       default:
         return this.handleGeneral(query);
     }
@@ -148,6 +159,22 @@ export class ACTQueryEngine {
       lower.includes('karma')
     ) {
       return 'concept_explanation';
+    }
+
+    // Moment exploration patterns
+    if (
+      lower.includes('moment') ||
+      lower.includes('highlight') ||
+      lower.includes('emergent') ||
+      lower.includes('most interesting') ||
+      lower.includes('what happened') ||
+      lower.includes('key event') ||
+      lower.includes('significant') ||
+      (lower.includes('karma') && lower.includes('event')) ||
+      (lower.includes('consciousness') && lower.includes('cross')) ||
+      lower.includes('coalition')
+    ) {
+      return 'moment_exploration';
     }
 
     // Exploration guidance patterns
@@ -1123,6 +1150,226 @@ export class ACTQueryEngine {
         "Explore detection in Adversarial Explorer"
       ]
     };
+  }
+
+  /**
+   * Explore moments - significant events detected across simulations
+   * Session #42: Integration with Emergent Moments Gallery
+   */
+  private exploreMoments(query: Query): Response {
+    const { context } = query;
+    const lower = query.text.toLowerCase();
+
+    // If a specific moment is selected, explain it in detail
+    if (context?.selectedMoment) {
+      return this.explainMoment(context.selectedMoment);
+    }
+
+    // If moments are loaded, analyze them
+    if (context?.moments && context.moments.length > 0) {
+      const moments = context.moments;
+
+      // Filter by category if mentioned
+      if (lower.includes('karma')) {
+        const karmaMoments = moments.filter(m => m.category === 'karma');
+        if (karmaMoments.length > 0) {
+          return this.listMomentsOfCategory(karmaMoments, 'karma');
+        }
+      }
+
+      if (lower.includes('emergence') || lower.includes('consciousness') || lower.includes('threshold')) {
+        const emergenceMoments = moments.filter(m => m.category === 'emergence');
+        if (emergenceMoments.length > 0) {
+          return this.listMomentsOfCategory(emergenceMoments, 'emergence');
+        }
+      }
+
+      if (lower.includes('crisis') || lower.includes('death')) {
+        const crisisMoments = moments.filter(m => m.category === 'crisis');
+        if (crisisMoments.length > 0) {
+          return this.listMomentsOfCategory(crisisMoments, 'crisis');
+        }
+      }
+
+      if (lower.includes('learning') || lower.includes('maturation')) {
+        const learningMoments = moments.filter(m => m.category === 'learning');
+        if (learningMoments.length > 0) {
+          return this.listMomentsOfCategory(learningMoments, 'learning');
+        }
+      }
+
+      // Default: show most interesting moments
+      return this.showMostInterestingMoments(moments);
+    }
+
+    // No moments loaded - guide to the moments page
+    return {
+      text: `**Exploring Emergent Moments**\n\n` +
+        `Moments are the most interesting events detected across all simulations—` +
+        `trust collapses, consciousness thresholds, karma effects, and more.\n\n` +
+        `To explore moments:\n` +
+        `1. Visit the [Emergent Moments Gallery](/moments) to browse all detected moments\n` +
+        `2. Click on any moment to see detailed analysis\n` +
+        `3. Or load simulation data here to analyze moments in context\n\n` +
+        `**What can I tell you about?**\n` +
+        `- "Show me karma events" - Trust carrying across lives\n` +
+        `- "What consciousness thresholds were crossed?" - 0.5 transition moments\n` +
+        `- "Tell me about trust collapses" - Dramatic trust losses\n` +
+        `- "What's the most interesting moment?" - Highest-ranked emergent event`,
+      type: 'suggestion',
+      suggestedQueries: [
+        "Show me karma events",
+        "What consciousness thresholds were crossed?",
+        "Tell me about coalition formation",
+        "What's the most interesting moment?"
+      ]
+    };
+  }
+
+  /**
+   * Explain a specific moment in detail
+   */
+  private explainMoment(moment: Moment): Response {
+    const categoryInfo = CATEGORY_INFO[moment.category];
+
+    let text = `**${categoryInfo.emoji} ${moment.title}**\n\n`;
+    text += `${moment.narrative}\n\n`;
+    text += `**Why This Matters**:\n${moment.significance}\n\n`;
+    text += `**Context**:\n`;
+    text += `- Simulation: ${moment.simulationLabel}\n`;
+    text += `- Life: ${moment.lifeNumber}\n`;
+    text += `- Tick: ${moment.tick}\n`;
+    text += `- Category: ${categoryInfo.label}\n`;
+    text += `- Severity: ${moment.severity}\n\n`;
+
+    // Add data-specific insights
+    if (moment.category === 'karma' && moment.data.karmaEffect) {
+      const effect = moment.data.karmaEffect;
+      text += `**Karma Details**:\n`;
+      text += `- Previous life final trust: ${moment.data.prevFinalTrust.toFixed(3)}\n`;
+      text += `- New life starting trust: ${moment.data.newInitialTrust.toFixed(3)}\n`;
+      text += `- Karma effect: ${effect > 0 ? '+' : ''}${(effect * 100).toFixed(1)}%\n`;
+    }
+
+    if (moment.category === 'trust' && moment.data.percentChange) {
+      text += `**Trust Change Details**:\n`;
+      text += `- Before: ${moment.data.prevTrust.toFixed(3)}\n`;
+      text += `- After: ${moment.data.newTrust.toFixed(3)}\n`;
+      text += `- Change: ${(moment.data.percentChange * 100).toFixed(1)}%\n`;
+    }
+
+    if (moment.category === 'crisis' && moment.data.currentATP !== undefined) {
+      text += `**Crisis Details**:\n`;
+      text += `- ATP dropped to: ${moment.data.currentATP}\n`;
+      text += `- Previous ATP: ${moment.data.previousATP}\n`;
+    }
+
+    const relatedConcepts = this.getRelatedConceptsForCategory(moment.category);
+
+    return {
+      text,
+      type: 'explanation',
+      relatedConcepts,
+      suggestedQueries: [
+        "Show me more moments like this",
+        `What else happened in life ${moment.lifeNumber}?`,
+        "Explain why this matters for Web4",
+        "Show me the full simulation narrative"
+      ]
+    };
+  }
+
+  /**
+   * List moments of a specific category
+   */
+  private listMomentsOfCategory(moments: Moment[], category: MomentCategory): Response {
+    const categoryInfo = CATEGORY_INFO[category];
+    const sorted = [...moments].sort((a, b) => {
+      const severityOrder: Record<string, number> = { critical: 3, high: 2, medium: 1 };
+      return severityOrder[b.severity] - severityOrder[a.severity];
+    });
+
+    const top5 = sorted.slice(0, 5);
+
+    let text = `**${categoryInfo.emoji} ${categoryInfo.label} Moments** (${moments.length} total)\n\n`;
+    text += `${categoryInfo.description}\n\n`;
+
+    for (let i = 0; i < top5.length; i++) {
+      const m = top5[i];
+      text += `**${i + 1}. ${m.title}** (${m.simulationLabel})\n`;
+      text += `   ${m.narrative.substring(0, 150)}${m.narrative.length > 150 ? '...' : ''}\n\n`;
+    }
+
+    if (moments.length > 5) {
+      text += `_...and ${moments.length - 5} more. Visit [Emergent Moments Gallery](/moments) to see all._\n`;
+    }
+
+    return {
+      text,
+      type: 'explanation',
+      relatedConcepts: this.getRelatedConceptsForCategory(category),
+      suggestedQueries: [
+        "Tell me more about the first one",
+        "Show me moments from a different category",
+        "What's the most interesting moment overall?",
+        "Explain how these relate to Web4"
+      ]
+    };
+  }
+
+  /**
+   * Show the most interesting moments across all categories
+   */
+  private showMostInterestingMoments(moments: Moment[]): Response {
+    // Rank by category priority and severity
+    const sorted = [...moments].sort((a, b) => {
+      const priorityDiff = CATEGORY_PRIORITY[b.category] - CATEGORY_PRIORITY[a.category];
+      if (priorityDiff !== 0) return priorityDiff;
+      const severityOrder: Record<string, number> = { critical: 3, high: 2, medium: 1 };
+      return severityOrder[b.severity] - severityOrder[a.severity];
+    });
+
+    const top5 = sorted.slice(0, 5);
+
+    let text = `**Most Interesting Moments Detected**\n\n`;
+    text += `Across all simulations, these events reveal the most about how trust dynamics work:\n\n`;
+
+    for (let i = 0; i < top5.length; i++) {
+      const m = top5[i];
+      const info = CATEGORY_INFO[m.category];
+      text += `**${i + 1}. ${info.emoji} ${m.title}**\n`;
+      text += `   _${m.simulationLabel}, Life ${m.lifeNumber}, Tick ${m.tick}_\n`;
+      text += `   ${m.significance}\n\n`;
+    }
+
+    text += `\n_Total moments detected: ${moments.length}. Visit [Emergent Moments Gallery](/moments) to explore all._`;
+
+    return {
+      text,
+      type: 'explanation',
+      relatedConcepts: ['Emergent Behavior', 'Trust Dynamics', 'Karma', 'Consciousness Thresholds'],
+      suggestedQueries: [
+        "Tell me more about the first one",
+        "Show me all karma events",
+        "What consciousness thresholds were crossed?",
+        "How do I find interesting moments myself?"
+      ]
+    };
+  }
+
+  /**
+   * Get related concepts for a moment category
+   */
+  private getRelatedConceptsForCategory(category: MomentCategory): string[] {
+    const categoryRelated: Record<MomentCategory, string[]> = {
+      trust: ['Trust Tensors', 'Coherence Index', 'Reputation'],
+      atp: ['ATP Economics', 'Metabolic Budget', 'Sustainability'],
+      karma: ['Karma', 'Rebirth', 'Multi-Life Learning', 'Trust Threshold'],
+      learning: ['Epistemic Proprioception', 'Pattern Corpus', 'Maturation'],
+      crisis: ['ATP Exhaustion', 'Death', 'Survival Strategies'],
+      emergence: ['Consciousness Threshold', 'Coherence Theory', 'Coalition Formation'],
+    };
+    return categoryRelated[category] || ['Trust Dynamics', 'Web4'];
   }
 
   /**

@@ -441,6 +441,12 @@ function MomentCard({ moment, index }: { moment: Moment; index: number }) {
               </Link>
             )}
             <Link
+              href={`/act-explorer?context=${encodeURIComponent(moment.title)}`}
+              className="px-3 py-1.5 bg-purple-600 hover:bg-purple-700 rounded text-xs transition-colors"
+            >
+              Ask ACT About This
+            </Link>
+            <Link
               href="/data-explorer"
               className="px-3 py-1.5 bg-gray-700 hover:bg-gray-600 rounded text-xs transition-colors"
             >

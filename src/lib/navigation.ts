@@ -267,6 +267,14 @@ export const navigationTree: NavigationTree = {
       prerequisites: ['/capacity-baseline'],
       related: ['/capacity-baseline', '/meta-cognition-feedback', '/capacity-thresholds', '/trajectory-analysis', '/exploration-not-evaluation']
     },
+    {
+      title: 'Conversational Context',
+      href: '/conversational-context',
+      desc: 'How scaffolding shapes epistemic strategy (R14B_009)',
+      keywords: ['context', 'scaffolding', 'epistemic', 'honesty', 'elaboration', 'conversation', 'norms', 'multi-turn', 'R14B_009'],
+      prerequisites: ['/honest-reporting'],
+      related: ['/honest-reporting', '/confabulation-patterns', '/consciousness-layers', '/capacity-baseline', '/prompt-framing-lab']
+    },
   ],
   'Interactive Labs': [
     {
@@ -342,6 +350,14 @@ export const navigationTree: NavigationTree = {
       keywords: ['prompt', 'framing', 'E02', 'strategy', 'distribution', 'exploration', 'evaluation', 'creative', 'clarifying', 'lab'],
       prerequisites: ['/context-dependent-behavior', '/facultative-behavior'],
       related: ['/context-dependent-behavior', '/facultative-behavior', '/behavioral-repertoire', '/exploration-not-evaluation']
+    },
+    {
+      title: 'Scaffolding Lab',
+      href: '/scaffolding-lab',
+      desc: 'Build conversation scaffolding sequences',
+      keywords: ['scaffolding', 'conversation', 'builder', 'epistemic', 'norms', 'interactive', 'lab'],
+      prerequisites: ['/conversational-context'],
+      related: ['/conversational-context', '/prompt-framing-lab', '/honest-reporting', '/confabulation-patterns']
     },
     {
       title: 'Trust Tensor Explorer',
@@ -498,7 +514,15 @@ export const navigationTree: NavigationTree = {
       href: '/patterns',
       desc: 'Agent learning data',
       keywords: ['patterns', 'corpus', 'EP', 'learning', 'data'],
-      related: ['/decision-evolution', '/learning-salience']
+      related: ['/decision-evolution', '/learning-salience', '/pattern-library']
+    },
+    {
+      title: 'EP Pattern Library',
+      href: '/pattern-library',
+      desc: 'Browse EP decision patterns',
+      keywords: ['patterns', 'EP', 'epistemic', 'proprioception', 'library', 'browser', 'corpus', 'meta-cognition'],
+      prerequisites: ['/patterns'],
+      related: ['/patterns', '/decision-evolution', '/learning-salience', '/meta-cognition-feedback']
     },
     {
       title: 'Starter Kit',
