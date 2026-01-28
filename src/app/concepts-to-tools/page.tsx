@@ -189,6 +189,22 @@ const BRIDGES: ConceptToolBridge[] = [
     bridgeQuestion: 'Can a constrained agent break out of the karma penalty through cooperation alone?',
     difficulty: 'intermediate',
   },
+  {
+    concept: {
+      title: 'Trust Networks',
+      href: '/trust-networks',
+      oneLiner: 'Trust creates social structure without any central authority',
+      keyIdea: 'When agents interact repeatedly, bilateral trust forms. Mutual trust creates coalitions. Exploiters get isolated. Society self-organizes.',
+    },
+    tool: {
+      title: 'Society Simulator',
+      href: '/society-simulator',
+      whatYouDo: 'Run a society of cooperators, defectors, reciprocators, and adaptive agents. Watch coalitions form and trust networks emerge.',
+      insight: 'Reciprocity (tit-for-tat) consistently outperforms pure cooperation and pure defection. Trust-based societies naturally isolate exploiters.',
+    },
+    bridgeQuestion: 'In a hostile world with mostly defectors, can cooperative strategies survive?',
+    difficulty: 'intermediate',
+  },
   // Advanced bridges
   {
     concept: {

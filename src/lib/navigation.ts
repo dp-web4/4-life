@@ -379,7 +379,14 @@ export const navigationTree: NavigationTree = {
       href: '/research-hub',
       desc: 'All interactive tools in one place',
       keywords: ['hub', 'tools', 'interactive', 'explore', 'participate', 'experiment', 'learning path'],
-      related: ['/learn', '/first-contact', '/concepts-to-tools', '/trust-tensor-explorer', '/mrh-explorer', '/playground', '/lab-console']
+      related: ['/learn', '/first-contact', '/concepts-to-tools', '/trust-tensor-explorer', '/mrh-explorer', '/playground', '/lab-console', '/society-simulator']
+    },
+    {
+      title: 'Society Simulator',
+      href: '/society-simulator',
+      desc: 'Multi-agent trust dynamics with coalition formation',
+      keywords: ['society', 'multi-agent', 'coalition', 'cooperation', 'defection', 'network', 'emergence', 'game theory', 'prisoner dilemma', 'tit-for-tat'],
+      related: ['/trust-networks', '/trust-tensor-explorer', '/karma-journey', '/federation-economics', '/simulation-sandbox', '/research-hub'],
     },
   ],
   'Advanced Topics': [
@@ -409,7 +416,7 @@ export const navigationTree: NavigationTree = {
       href: '/trust-networks',
       desc: 'Multi-agent dynamics',
       keywords: ['network', 'multi-agent', 'coalition', 'relationships'],
-      related: ['/trust-tensor', '/federation-economics']
+      related: ['/trust-tensor', '/federation-economics', '/society-simulator']
     },
     {
       title: 'Decision Evolution',

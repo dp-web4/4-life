@@ -130,6 +130,16 @@ const TOOLS: ToolCard[] = [
     isNew: true,
   },
   {
+    title: 'Society Simulator',
+    href: '/society-simulator',
+    emoji: '🌐',
+    description: 'Watch agents with different strategies form trust networks, build coalitions, and self-organize. The core 4-Life experience.',
+    learns: ['Coalition formation', 'Defector isolation', 'Cooperation emergence', 'Trust network dynamics', 'Game theory in practice'],
+    complexity: 'intermediate',
+    category: 'explore',
+    isNew: true,
+  },
+  {
     title: 'Coherence Visualizer',
     href: '/coherence-framework',
     emoji: '🧬',

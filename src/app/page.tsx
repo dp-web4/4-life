@@ -119,7 +119,10 @@ function IntroTab() {
           Watch agents build trust, manage resources, and face consequences in a Web4 society.
         </p>
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <Link href="/lab-console" className="btn-primary">
+          <Link href="/society-simulator" className="btn-primary">
+            Society Simulator
+          </Link>
+          <Link href="/lab-console" className="btn-secondary">
             Lab Console
           </Link>
           <Link href="/playground" className="btn-secondary">

@@ -36,6 +36,7 @@ const EXPLORERS: ExplorerInfo[] = [
   { href: '/prompt-framing-lab', title: 'Prompt Framing Lab', shortTitle: 'Framing Lab', color: '#93c5fd', stage: 'explore' },
   { href: '/coherence-framework', title: 'Coherence Visualizer', shortTitle: 'Coherence', color: '#93c5fd', stage: 'explore' },
   { href: '/karma-journey', title: 'Karma Journey', shortTitle: 'Karma Journey', color: '#93c5fd', stage: 'explore' },
+  { href: '/society-simulator', title: 'Society Simulator', shortTitle: 'Society Sim', color: '#93c5fd', stage: 'explore' },
   // Participate
   { href: '/playground', title: 'Playground', shortTitle: 'Playground', color: '#c4b5fd', stage: 'participate' },
   { href: '/lab-console', title: 'Lab Console', shortTitle: 'Lab Console', color: '#c4b5fd', stage: 'participate' },
@@ -63,7 +64,8 @@ const ALSO_EXPLORE: Record<string, string[]> = {
   '/coherence-framework': ['/trust-tensor-explorer', '/feedback-loop-explorer', '/trust-networks'],
   '/adversarial-explorer': ['/threat-model', '/trust-networks', '/trust-tensor-explorer'],
   '/threat-model': ['/adversarial-explorer', '/trust-networks', '/coherence-framework'],
-  '/trust-networks': ['/mrh-explorer', '/threat-model', '/adversarial-explorer'],
+  '/trust-networks': ['/mrh-explorer', '/society-simulator', '/adversarial-explorer'],
+  '/society-simulator': ['/trust-networks', '/karma-journey', '/trust-tensor-explorer'],
   '/concepts-to-tools': ['/research-hub', '/trust-tensor-explorer', '/mrh-explorer'],
   '/first-contact': ['/concepts-to-tools', '/act-explorer', '/trust-tensor-explorer'],
   '/act-explorer': ['/first-contact', '/concepts-to-tools', '/research-hub'],
