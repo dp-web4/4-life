@@ -382,6 +382,20 @@ export const navigationTree: NavigationTree = {
       related: ['/learn', '/first-contact', '/concepts-to-tools', '/trust-tensor-explorer', '/mrh-explorer', '/playground', '/lab-console', '/society-simulator']
     },
     {
+      title: 'Data Explorer',
+      href: '/data-explorer',
+      desc: 'Browse, inspect, and compare simulation datasets',
+      keywords: ['data', 'explorer', 'browse', 'compare', 'datasets', 'simulation', 'JSON', 'corpus'],
+      related: ['/narratives', '/lab-console', '/compare', '/playground'],
+    },
+    {
+      title: 'Exploration Guide',
+      href: '/explore-guide',
+      desc: 'Personalized path recommender',
+      keywords: ['guide', 'quiz', 'recommend', 'path', 'where to start', 'what to explore'],
+      related: ['/learn', '/first-contact', '/research-hub', '/concepts-to-tools'],
+    },
+    {
       title: 'Society Simulator',
       href: '/society-simulator',
       desc: 'Multi-agent trust dynamics with coalition formation',

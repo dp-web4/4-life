@@ -46,6 +46,9 @@ const EXPLORERS: ExplorerInfo[] = [
   { href: '/adversarial-explorer', title: 'Adversarial Analysis', shortTitle: 'Adversarial', color: '#fde68a', stage: 'experiment' },
   { href: '/threat-model', title: 'Collusion Simulator', shortTitle: 'Collusion', color: '#fde68a', stage: 'experiment' },
   { href: '/trust-networks', title: 'Trust Networks', shortTitle: 'Networks', color: '#fde68a', stage: 'experiment' },
+  { href: '/data-explorer', title: 'Data Explorer', shortTitle: 'Data Explorer', color: '#fde68a', stage: 'experiment' },
+  // Meta
+  { href: '/explore-guide', title: 'Exploration Guide', shortTitle: 'Guide', color: '#6ee7b7', stage: 'understand' },
 ];
 
 // Curated "also explore" connections (semantic, not just sequential)
@@ -69,6 +72,8 @@ const ALSO_EXPLORE: Record<string, string[]> = {
   '/concepts-to-tools': ['/research-hub', '/trust-tensor-explorer', '/mrh-explorer'],
   '/first-contact': ['/concepts-to-tools', '/act-explorer', '/trust-tensor-explorer'],
   '/act-explorer': ['/first-contact', '/concepts-to-tools', '/research-hub'],
+  '/data-explorer': ['/narratives', '/lab-console', '/compare'],
+  '/explore-guide': ['/first-contact', '/learn', '/research-hub'],
 };
 
 const STAGE_LABELS = {
