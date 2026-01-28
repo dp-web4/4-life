@@ -408,32 +408,19 @@ export default function PatternLibraryPage() {
   const [conflictFilter, setConflictFilter] = useState<'all' | 'conflict' | 'no-conflict'>('all');
   const [showCount, setShowCount] = useState(20);
 
-  // Load corpus
+  // Load corpus - use sample data for now (real corpora are in web4/game)
   useEffect(() => {
-    async function loadCorpus() {
-      setLoading(true);
-      setError(null);
+    setLoading(true);
+    setError(null);
 
-      try {
-        // Try to load from web4 game directory (needs to be copied to public)
-        // For now, we'll generate sample data
-        const response = await fetch(`/api/patterns?corpus=${selectedCorpus.id}`);
-        if (response.ok) {
-          const data = await response.json();
-          setCorpus(data);
-        } else {
-          // Generate sample data for demonstration
-          setCorpus(generateSampleCorpus());
-        }
-      } catch (err) {
-        console.error('Failed to load corpus:', err);
-        setCorpus(generateSampleCorpus());
-      } finally {
-        setLoading(false);
-      }
-    }
+    // Simulate async load with sample data
+    // TODO: Copy actual corpus files to public/ for production
+    const timer = setTimeout(() => {
+      setCorpus(generateSampleCorpus(selectedCorpus.id));
+      setLoading(false);
+    }, 100);
 
-    loadCorpus();
+    return () => clearTimeout(timer);
   }, [selectedCorpus]);
 
   // Filters

@@ -11,6 +11,12 @@ const PAGES_TO_TEST = [
   { path: '/decision-evolution', name: 'Decision Evolution' },
   { path: '/lab-console', name: 'Lab Console' },
   { path: '/playground', name: 'Playground' },
+  { path: '/conversational-context', name: 'Conversational Context' },
+  { path: '/scaffolding-lab', name: 'Scaffolding Lab' },
+  { path: '/pattern-library', name: 'EP Pattern Library' },
+  { path: '/society-simulator', name: 'Society Simulator' },
+  { path: '/moments', name: 'Emergent Moments' },
+  { path: '/trust-timeline', name: 'Trust Timeline' },
 ];
 
 async function testPages() {
