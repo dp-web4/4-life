@@ -396,6 +396,20 @@ export const navigationTree: NavigationTree = {
       related: ['/learn', '/first-contact', '/research-hub', '/concepts-to-tools'],
     },
     {
+      title: 'Trust Timeline',
+      href: '/trust-timeline',
+      desc: 'Unified trust dynamics across all datasets',
+      keywords: ['timeline', 'trust', 'trajectory', 'comparison', 'unified', 'temporal', 'dynamics'],
+      related: ['/moments', '/data-explorer', '/narratives', '/compare'],
+    },
+    {
+      title: 'Emergent Moments',
+      href: '/moments',
+      desc: 'Curated highlights from simulation data',
+      keywords: ['moments', 'highlights', 'events', 'emergence', 'gallery', 'curated', 'interesting'],
+      related: ['/narratives', '/data-explorer', '/lab-console', '/trust-networks'],
+    },
+    {
       title: 'Society Simulator',
       href: '/society-simulator',
       desc: 'Multi-agent trust dynamics with coalition formation',

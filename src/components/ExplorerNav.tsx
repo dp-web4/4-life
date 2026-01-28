@@ -47,6 +47,8 @@ const EXPLORERS: ExplorerInfo[] = [
   { href: '/threat-model', title: 'Collusion Simulator', shortTitle: 'Collusion', color: '#fde68a', stage: 'experiment' },
   { href: '/trust-networks', title: 'Trust Networks', shortTitle: 'Networks', color: '#fde68a', stage: 'experiment' },
   { href: '/data-explorer', title: 'Data Explorer', shortTitle: 'Data Explorer', color: '#fde68a', stage: 'experiment' },
+  { href: '/moments', title: 'Emergent Moments', shortTitle: 'Moments', color: '#fde68a', stage: 'experiment' },
+  { href: '/trust-timeline', title: 'Trust Timeline', shortTitle: 'Timeline', color: '#fde68a', stage: 'experiment' },
   // Meta
   { href: '/explore-guide', title: 'Exploration Guide', shortTitle: 'Guide', color: '#6ee7b7', stage: 'understand' },
 ];
@@ -74,6 +76,8 @@ const ALSO_EXPLORE: Record<string, string[]> = {
   '/act-explorer': ['/first-contact', '/concepts-to-tools', '/research-hub'],
   '/data-explorer': ['/narratives', '/lab-console', '/compare'],
   '/explore-guide': ['/first-contact', '/learn', '/research-hub'],
+  '/moments': ['/narratives', '/data-explorer', '/trust-timeline'],
+  '/trust-timeline': ['/moments', '/data-explorer', '/narratives'],
 };
 
 const STAGE_LABELS = {
