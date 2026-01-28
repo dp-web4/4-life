@@ -17,16 +17,20 @@ const PAGES_TO_TEST = [
   { path: '/society-simulator', name: 'Society Simulator' },
   { path: '/moments', name: 'Emergent Moments' },
   { path: '/trust-timeline', name: 'Trust Timeline' },
+  { path: '/act-explorer', name: 'ACT Explorer' },
+  { path: '/act-explorer?context=emergence%20moment', name: 'ACT Explorer with Context' },
 ];
 
 async function testPages() {
   const browser = await chromium.launch({ headless: true });
-  const context = await browser.newContext();
-  const page = await context.newPage();
 
   const results = [];
 
   for (const { path, name } of PAGES_TO_TEST) {
+    // Create fresh context for each page to avoid cache issues
+    const context = await browser.newContext();
+    const page = await context.newPage();
+
     const errors = [];
     const warnings = [];
     const networkErrors = [];
@@ -94,10 +98,8 @@ async function testPages() {
       });
     }
 
-    // Remove listeners for next page
-    page.removeAllListeners('console');
-    page.removeAllListeners('pageerror');
-    page.removeAllListeners('requestfailed');
+    // Close context for next page
+    await context.close();
   }
 
   await browser.close();

@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { navigationTree } from '@/lib/navigation';
+import FeaturedMoment, { FeaturedMomentCompact } from '@/components/FeaturedMoment';
+import EcosystemStats from '@/components/EcosystemStats';
+import type { MomentCategory } from '@/lib/moments/types';
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState<'intro' | 'deepdive'>('intro');
@@ -136,29 +139,8 @@ function IntroTab() {
         </div>
       </section>
 
-      {/* Recent Discovery */}
-      <section className="card" style={{
-        background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, var(--color-dark-surface) 100%)',
-        borderColor: 'rgba(59, 130, 246, 0.5)'
-      }}>
-        <p className="eyebrow" style={{ color: '#60a5fa' }}>Research Update</p>
-        <h2 style={{ fontSize: '1.25rem' }}>Consciousness Has Thresholds</h2>
-        <p style={{ color: 'var(--color-text-secondary)' }}>
-          Our research discovered that consciousness develops in stages. Trust ≥0.5 enables intentional behavior.
-          Trust ≥0.7 enables stable identity. Trust ≥0.9 enables full meta-cognition.
-        </p>
-        <Link
-          href="/understanding-consciousness"
-          style={{
-            display: 'inline-block',
-            marginTop: '1rem',
-            color: '#60a5fa',
-            fontWeight: 500
-          }}
-        >
-          Learn about D5/D9 gates →
-        </Link>
-      </section>
+      {/* Featured Moment - Dynamic carousel from simulations */}
+      <FeaturedMoment rotate rotationInterval={10000} rotationCount={6} />
 
       {/* CTA to Deep Dive */}
       <section className="text-center" style={{ paddingTop: '1rem' }}>
@@ -217,6 +199,35 @@ function DeepDiveTab() {
             </ul>
           </div>
         ))}
+      </div>
+
+      {/* Ecosystem Overview */}
+      <div style={{ marginTop: '2.5rem' }}>
+        <EcosystemStats variant="full" showCategoryBreakdown />
+      </div>
+
+      {/* Live Moments Preview */}
+      <div style={{ marginTop: '2rem' }}>
+        <h3 style={{ marginBottom: '1rem', textAlign: 'center' }}>
+          Live from Simulations
+        </h3>
+        <p style={{
+          color: 'var(--color-text-muted)',
+          textAlign: 'center',
+          marginBottom: '1.5rem',
+          fontSize: '0.9rem'
+        }}>
+          Real events detected in Web4 societies
+        </p>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '0.75rem',
+        }}>
+          {(['emergence', 'karma', 'learning', 'crisis', 'trust'] as MomentCategory[]).map(cat => (
+            <FeaturedMomentCompact key={cat} category={cat} />
+          ))}
+        </div>
       </div>
 
       {/* Quick Actions */}
