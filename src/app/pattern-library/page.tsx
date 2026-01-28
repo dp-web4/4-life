@@ -633,7 +633,7 @@ export default function PatternLibraryPage() {
 // Sample Data Generator
 // ============================================================================
 
-function generateSampleCorpus(): Corpus {
+function generateSampleCorpus(corpusId: string = 'web4-native'): Corpus {
   const scenarioTypes = [
     'atp_abundance_high_t3',
     'atp_scarcity_low_t3',
@@ -745,10 +745,12 @@ function generateSampleCorpus(): Corpus {
   return {
     meta: {
       session: 42,
-      generated_by: 'Sample Generator',
+      generated_by: corpusId === 'web4-native' ? 'Legion - Autonomous Research' :
+                    corpusId === 'integrated-federation' ? 'Federation Integration' :
+                    'Phase 3 Contextual Routing',
       timestamp: new Date().toISOString(),
-      description: 'Sample EP patterns for demonstration (real data requires web4/game corpus)',
-      source: 'Generated sample data',
+      description: `Sample ${corpusId.replace(/-/g, ' ')} patterns for demonstration`,
+      source: 'Generated sample data (real corpora in web4/game)',
       total_patterns: patterns.length,
       scenario_types: new Set(patterns.map(p => p.scenario_type)).size,
     },
