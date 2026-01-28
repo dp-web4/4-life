@@ -56,9 +56,14 @@ function IntroTab() {
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem' }}>
           Start with our interactive tutorial. Zero to understanding in 10 minutes.
         </p>
-        <Link href="/first-contact" className="btn-primary">
-          First Contact →
-        </Link>
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <Link href="/first-contact" className="btn-primary">
+            First Contact →
+          </Link>
+          <Link href="/explore-guide" className="btn-secondary" style={{ padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>
+            Not sure where to start?
+          </Link>
+        </div>
       </section>
 
       {/* The Big Idea */}
