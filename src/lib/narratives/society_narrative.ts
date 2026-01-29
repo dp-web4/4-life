@@ -54,12 +54,17 @@ export interface NarrativeChapter {
   opening: string;
   events: NarrativeEvent[];
   closing?: string;
+  // Animation mode metadata
+  epochRange?: { start: number; end: number }; // Epoch range for this chapter
 }
 
 export interface NarrativeEvent {
   description: string;
   quote?: string; // Imagined dialogue or internal thought
   significance: string;
+  // Animation mode metadata
+  epoch?: number; // Which epoch this event corresponds to
+  agentIds?: number[]; // Agents to highlight during this event
 }
 
 export interface CharacterProfile {
@@ -506,6 +511,7 @@ export class SocietyNarrativeGenerator {
       opening,
       events,
       closing: "And so the game was set. Who would thrive? Who would fall? Only time and trust would tell.",
+      epochRange: { start: 0, end: 0 }, // Opening chapter covers first epoch
     };
   }
 
@@ -550,6 +556,8 @@ export class SocietyNarrativeGenerator {
         description: `In one of the first interactions, ${cooperator.name} the Idealist met ${defector.name} the Opportunist. ${cooperator.name} offered cooperation; ${defector.name} took advantage.`,
         quote: `"They'll learn," ${defector.name} might have thought. "Everyone does eventually."`,
         significance: "This early betrayal would set the tone for how trust—and its absence—would shape the society.",
+        epoch: 0,
+        agentIds: [cooperator.id, defector.id],
       });
     }
 
@@ -559,6 +567,8 @@ export class SocietyNarrativeGenerator {
       events.push({
         description: `Meanwhile, ${reciprocators[0].name} and ${reciprocators[1].name} began their dance of mutual testing. Each waited to see what the other would do, then matched it perfectly.`,
         significance: "Reciprocators finding each other is the seed of stable cooperation.",
+        epoch: 0,
+        agentIds: [reciprocators[0].id, reciprocators[1].id],
       });
     }
 
@@ -590,13 +600,20 @@ export class SocietyNarrativeGenerator {
     events: SocietyEvent[],
     result: SocietyResult
   ): NarrativeChapter {
-    const narrativeEvents = events.slice(0, 4).map(e => this.narrateEvent(e, result));
+    const chapterEvents = events.slice(0, 4);
+    const narrativeEvents = chapterEvents.map(e => this.narrateEvent(e, result));
+
+    // Calculate epoch range from events
+    const epochs = chapterEvents.map(e => e.epoch);
+    const minEpoch = Math.min(...epochs);
+    const maxEpoch = Math.max(...epochs);
 
     return {
       number,
       title,
       opening: this.getChapterOpening(title),
       events: narrativeEvents,
+      epochRange: { start: minEpoch, end: maxEpoch },
     };
   }
 
@@ -616,27 +633,43 @@ export class SocietyNarrativeGenerator {
   private narrateEvent(event: SocietyEvent, result: SocietyResult): NarrativeEvent {
     const agents = result.epochs[result.epochs.length - 1].agents;
 
+    // Base narrative content depends on event type
+    let baseNarrative: NarrativeEvent;
     switch (event.type) {
       case 'coalition_formed':
-        return this.narrateCoalitionFormed(event, agents);
+        baseNarrative = this.narrateCoalitionFormed(event, agents);
+        break;
       case 'defector_isolated':
-        return this.narrateDefectorIsolated(event, agents);
+        baseNarrative = this.narrateDefectorIsolated(event, agents);
+        break;
       case 'trust_collapse':
-        return this.narrateTrustCollapse(event, agents);
+        baseNarrative = this.narrateTrustCollapse(event, agents);
+        break;
       case 'agent_death':
-        return this.narrateAgentDeath(event, agents);
+        baseNarrative = this.narrateAgentDeath(event, agents);
+        break;
       case 'agent_rebirth':
-        return this.narrateAgentRebirth(event, agents);
+        baseNarrative = this.narrateAgentRebirth(event, agents);
+        break;
       case 'cooperation_surge':
-        return this.narrateCooperationSurge(event);
+        baseNarrative = this.narrateCooperationSurge(event);
+        break;
       case 'society_stable':
-        return this.narrateSocietyStable(event);
+        baseNarrative = this.narrateSocietyStable(event);
+        break;
       default:
-        return {
+        baseNarrative = {
           description: event.message,
           significance: event.significance,
         };
     }
+
+    // Add animation metadata from original event
+    return {
+      ...baseNarrative,
+      epoch: event.epoch,
+      agentIds: event.agentIds,
+    };
   }
 
   private narrateCoalitionFormed(event: SocietyEvent, agents: AgentSnapshot[]): NarrativeEvent {
@@ -703,6 +736,7 @@ export class SocietyNarrativeGenerator {
   private buildClosingChapter(number: number, result: SocietyResult): NarrativeChapter {
     const finalMetrics = result.finalMetrics;
     const finalEpoch = result.epochs[result.epochs.length - 1];
+    const finalEpochIndex = result.epochs.length - 1;
 
     const events: NarrativeEvent[] = [];
 
@@ -710,6 +744,7 @@ export class SocietyNarrativeGenerator {
     events.push({
       description: this.describeFinalState(finalMetrics),
       significance: "The final metrics tell the story of what kind of society emerged.",
+      epoch: finalEpochIndex,
     });
 
     // Highlight winners and losers
@@ -720,6 +755,8 @@ export class SocietyNarrativeGenerator {
       events.push({
         description: `Those who thrived: ${winners.map(a => `${a.name} (${a.strategy})`).join(', ')}. Their success came from consistent, trustworthy behavior that others recognized and reciprocated.`,
         significance: "In Web4, prosperity flows to those who build genuine trust.",
+        epoch: finalEpochIndex,
+        agentIds: winners.map(a => a.id),
       });
     }
 
@@ -727,6 +764,8 @@ export class SocietyNarrativeGenerator {
       events.push({
         description: `Those who struggled: ${losers.map(a => `${a.name} (${a.strategy})`).join(', ')}. Whether through exploitation or exploitation's consequences, they found society's structure working against them.`,
         significance: "The lesson: in transparent trust networks, short-term thinking leads to long-term poverty.",
+        epoch: finalEpochIndex,
+        agentIds: losers.map(a => a.id),
       });
     }
 
@@ -736,6 +775,7 @@ export class SocietyNarrativeGenerator {
       opening: `After ${result.epochs.length} epochs and countless interactions, the society reached its end state.`,
       events,
       closing: this.generateMoral(result),
+      epochRange: { start: finalEpochIndex, end: finalEpochIndex },
     };
   }
 
@@ -1276,4 +1316,486 @@ function generateIntroduction(count: number, scenarios: ComparativeNarrative['sc
   const names = scenarios.map(s => `"${s.name}"`).join(', ');
 
   return `We ran ${count} simulations under different conditions: ${names}. Each followed the same Web4 rules—trust built through cooperation, eroded through exploitation, with ATP economics creating life-or-death pressure. Yet the outcomes diverged dramatically. Here's what we learned.`;
+}
+
+// ============================================================================
+// Character Relationship Analysis
+// ============================================================================
+
+/**
+ * Relationship types between characters, determined by interaction patterns
+ */
+export type RelationshipType =
+  | 'allies'       // High mutual trust, consistent cooperation
+  | 'rivals'       // Low mutual trust, frequent mutual defection
+  | 'exploiter'    // One-sided exploitation (A exploits B)
+  | 'victim'       // Being exploited (B is exploited by A)
+  | 'rebuilding'   // Trust was lost but is being rebuilt
+  | 'strangers';   // Limited interaction history
+
+/**
+ * A relationship between two characters with narrative context
+ */
+export interface CharacterRelationship {
+  /** First character name */
+  character1: string;
+  /** Second character name */
+  character2: string;
+  /** First character's ID */
+  character1Id: number;
+  /** Second character's ID */
+  character2Id: number;
+  /** Type of relationship from character1's perspective toward character2 */
+  type: RelationshipType;
+  /** Trust level from character1 toward character2 (0-1) */
+  trustLevel: number;
+  /** Trust level from character2 toward character1 (0-1) */
+  reverseTrustLevel: number;
+  /** Total interactions between these characters */
+  interactionCount: number;
+  /** Number of mutual cooperations */
+  mutualCooperations: number;
+  /** Number of mutual defections */
+  mutualDefections: number;
+  /** Number of times character1 exploited character2 */
+  exploitations: number;
+  /** Number of times character2 exploited character1 */
+  wasExploited: number;
+  /** A narrative description of this relationship */
+  narrative: string;
+  /** Key moments in the relationship */
+  keyMoments: RelationshipMoment[];
+  /** Whether they're in the same coalition at the end */
+  inSameCoalition: boolean;
+  /** Story significance (0-1) - how interesting is this relationship */
+  significance: number;
+}
+
+/**
+ * A pivotal moment in a relationship
+ */
+export interface RelationshipMoment {
+  epoch: number;
+  description: string;
+  trustChange: 'increased' | 'decreased' | 'breakthrough' | 'betrayal';
+}
+
+/**
+ * Full relationship map for a simulation
+ */
+export interface RelationshipMap {
+  /** All notable relationships, sorted by significance */
+  relationships: CharacterRelationship[];
+  /** Summary statistics */
+  stats: {
+    totalRelationships: number;
+    allyPairs: number;
+    rivalPairs: number;
+    exploitationPairs: number;
+    averageTrust: number;
+  };
+  /** The strongest alliance in the simulation */
+  strongestAlliance: CharacterRelationship | null;
+  /** The bitterest rivalry */
+  bitterestRivalry: CharacterRelationship | null;
+  /** The most dramatic betrayal */
+  mostDramaticBetrayal: CharacterRelationship | null;
+}
+
+/**
+ * Analyze relationships between all characters in a simulation
+ */
+export function analyzeRelationships(result: SocietyResult): RelationshipMap {
+  const finalEpoch = result.epochs[result.epochs.length - 1];
+  const agents = finalEpoch.agents;
+  const allInteractions = result.epochs.flatMap(e => e.interactions);
+  const coalitions = finalEpoch.coalitions;
+
+  const relationships: CharacterRelationship[] = [];
+
+  // Build interaction statistics for each pair
+  const pairStats = new Map<string, {
+    interactions: number;
+    mutualCoops: number;
+    mutualDefects: number;
+    exploitationsBy1: number;
+    exploitationsBy2: number;
+    trustChanges: { epoch: number; change: number; from: number }[];
+  }>();
+
+  for (const interaction of allInteractions) {
+    const key = `${Math.min(interaction.agent1Id, interaction.agent2Id)}-${Math.max(interaction.agent1Id, interaction.agent2Id)}`;
+    const isAgent1First = interaction.agent1Id < interaction.agent2Id;
+
+    if (!pairStats.has(key)) {
+      pairStats.set(key, {
+        interactions: 0,
+        mutualCoops: 0,
+        mutualDefects: 0,
+        exploitationsBy1: 0,
+        exploitationsBy2: 0,
+        trustChanges: [],
+      });
+    }
+
+    const stats = pairStats.get(key)!;
+    stats.interactions++;
+
+    if (interaction.outcome === 'mutual_cooperation') {
+      stats.mutualCoops++;
+    } else if (interaction.outcome === 'mutual_defection') {
+      stats.mutualDefects++;
+    } else if (interaction.outcome === 'agent1_exploited') {
+      // Agent 2 exploited Agent 1
+      if (isAgent1First) {
+        stats.exploitationsBy2++;
+      } else {
+        stats.exploitationsBy1++;
+      }
+    } else if (interaction.outcome === 'agent2_exploited') {
+      // Agent 1 exploited Agent 2
+      if (isAgent1First) {
+        stats.exploitationsBy1++;
+      } else {
+        stats.exploitationsBy2++;
+      }
+    }
+
+    // Track significant trust changes
+    const trustChange = Math.max(
+      Math.abs(interaction.agent1TrustChange),
+      Math.abs(interaction.agent2TrustChange)
+    );
+    if (Math.abs(trustChange) > 0.05) {
+      stats.trustChanges.push({
+        epoch: interaction.epoch,
+        change: trustChange,
+        from: isAgent1First ? interaction.agent1Id : interaction.agent2Id,
+      });
+    }
+  }
+
+  // Build relationships for each pair with significant interaction
+  for (const agent1 of agents) {
+    for (const agent2 of agents) {
+      if (agent1.id >= agent2.id) continue; // Only process each pair once
+
+      const key = `${agent1.id}-${agent2.id}`;
+      const stats = pairStats.get(key);
+
+      // Skip pairs with no interaction
+      if (!stats || stats.interactions === 0) continue;
+
+      // Get trust levels
+      const trust1to2 = agent1.trustEdges.find(e => e.targetId === agent2.id)?.trust ?? 0.5;
+      const trust2to1 = agent2.trustEdges.find(e => e.targetId === agent1.id)?.trust ?? 0.5;
+
+      // Determine relationship type
+      const type = determineRelationshipType(
+        stats.mutualCoops,
+        stats.mutualDefects,
+        stats.exploitationsBy1,
+        stats.exploitationsBy2,
+        trust1to2,
+        trust2to1,
+        stats.interactions
+      );
+
+      // Check coalition membership
+      const inSameCoalition = coalitions.some(
+        c => c.members.includes(agent1.id) && c.members.includes(agent2.id)
+      );
+
+      // Generate key moments
+      const keyMoments = generateRelationshipMoments(
+        stats,
+        agent1.name,
+        agent2.name
+      );
+
+      // Calculate significance
+      const significance = calculateRelationshipSignificance(
+        stats,
+        trust1to2,
+        trust2to1,
+        type,
+        inSameCoalition
+      );
+
+      // Generate narrative
+      const narrative = generateRelationshipNarrative(
+        agent1,
+        agent2,
+        type,
+        stats,
+        trust1to2,
+        trust2to1,
+        inSameCoalition
+      );
+
+      relationships.push({
+        character1: agent1.name,
+        character2: agent2.name,
+        character1Id: agent1.id,
+        character2Id: agent2.id,
+        type,
+        trustLevel: trust1to2,
+        reverseTrustLevel: trust2to1,
+        interactionCount: stats.interactions,
+        mutualCooperations: stats.mutualCoops,
+        mutualDefections: stats.mutualDefects,
+        exploitations: stats.exploitationsBy1,
+        wasExploited: stats.exploitationsBy2,
+        narrative,
+        keyMoments,
+        inSameCoalition,
+        significance,
+      });
+    }
+  }
+
+  // Sort by significance
+  relationships.sort((a, b) => b.significance - a.significance);
+
+  // Calculate stats
+  const allyPairs = relationships.filter(r => r.type === 'allies').length;
+  const rivalPairs = relationships.filter(r => r.type === 'rivals').length;
+  const exploitationPairs = relationships.filter(
+    r => r.type === 'exploiter' || r.type === 'victim'
+  ).length;
+  const avgTrust = relationships.length > 0
+    ? relationships.reduce((sum, r) => sum + (r.trustLevel + r.reverseTrustLevel) / 2, 0) / relationships.length
+    : 0;
+
+  // Find notable relationships
+  const strongestAlliance = relationships
+    .filter(r => r.type === 'allies')
+    .sort((a, b) => (b.trustLevel + b.reverseTrustLevel) - (a.trustLevel + a.reverseTrustLevel))[0] || null;
+
+  const bitterestRivalry = relationships
+    .filter(r => r.type === 'rivals')
+    .sort((a, b) => a.trustLevel - b.trustLevel)[0] || null;
+
+  const mostDramaticBetrayal = relationships
+    .filter(r => r.type === 'exploiter' || r.type === 'victim')
+    .filter(r => r.wasExploited > 0 || r.exploitations > 0)
+    .sort((a, b) => Math.max(b.exploitations, b.wasExploited) - Math.max(a.exploitations, a.wasExploited))[0] || null;
+
+  return {
+    relationships,
+    stats: {
+      totalRelationships: relationships.length,
+      allyPairs,
+      rivalPairs,
+      exploitationPairs,
+      averageTrust: avgTrust,
+    },
+    strongestAlliance,
+    bitterestRivalry,
+    mostDramaticBetrayal,
+  };
+}
+
+function determineRelationshipType(
+  mutualCoops: number,
+  mutualDefects: number,
+  exploitsBy1: number,
+  exploitsBy2: number,
+  trust1to2: number,
+  trust2to1: number,
+  totalInteractions: number
+): RelationshipType {
+  const avgTrust = (trust1to2 + trust2to1) / 2;
+  const trustDiff = Math.abs(trust1to2 - trust2to1);
+  const coopRate = totalInteractions > 0 ? mutualCoops / totalInteractions : 0;
+  const defectRate = totalInteractions > 0 ? mutualDefects / totalInteractions : 0;
+
+  // Allies: high mutual trust and mostly cooperation
+  if (avgTrust > 0.6 && coopRate > 0.5 && trustDiff < 0.2) {
+    return 'allies';
+  }
+
+  // Rivals: low mutual trust and frequent defection
+  if (avgTrust < 0.4 && defectRate > 0.3) {
+    return 'rivals';
+  }
+
+  // Exploitation: one-sided trust/exploitation pattern
+  if (trustDiff > 0.3) {
+    if (trust1to2 > trust2to1) {
+      // Agent 2 is likely the exploiter (agent 1 trusts but is exploited)
+      return exploitsBy2 > exploitsBy1 ? 'victim' : 'exploiter';
+    } else {
+      return exploitsBy1 > exploitsBy2 ? 'exploiter' : 'victim';
+    }
+  }
+
+  // Check for rebuilding: had defections but now has rising trust
+  if (mutualCoops > 0 && mutualDefects > 0 && avgTrust > 0.4) {
+    return 'rebuilding';
+  }
+
+  // Default: strangers (limited meaningful interaction)
+  return 'strangers';
+}
+
+function generateRelationshipMoments(
+  stats: {
+    interactions: number;
+    mutualCoops: number;
+    mutualDefects: number;
+    exploitationsBy1: number;
+    exploitationsBy2: number;
+    trustChanges: { epoch: number; change: number; from: number }[];
+  },
+  name1: string,
+  name2: string
+): RelationshipMoment[] {
+  const moments: RelationshipMoment[] = [];
+
+  // First significant cooperation (if any)
+  if (stats.mutualCoops > 0) {
+    moments.push({
+      epoch: 1, // Assume early
+      description: `${name1} and ${name2} first cooperated`,
+      trustChange: 'increased',
+    });
+  }
+
+  // Betrayal moment
+  if (stats.exploitationsBy1 > 0 || stats.exploitationsBy2 > 0) {
+    const betrayer = stats.exploitationsBy1 > stats.exploitationsBy2 ? name1 : name2;
+    const victim = betrayer === name1 ? name2 : name1;
+    moments.push({
+      epoch: 2, // Mid-simulation
+      description: `${betrayer} betrayed ${victim}'s trust`,
+      trustChange: 'betrayal',
+    });
+  }
+
+  // Trust breakthrough (high cooperation after initial wariness)
+  if (stats.mutualCoops >= 3 && stats.interactions >= 4) {
+    moments.push({
+      epoch: Math.floor(stats.interactions / 2),
+      description: `${name1} and ${name2} reached mutual understanding`,
+      trustChange: 'breakthrough',
+    });
+  }
+
+  return moments;
+}
+
+function calculateRelationshipSignificance(
+  stats: {
+    interactions: number;
+    mutualCoops: number;
+    mutualDefects: number;
+    exploitationsBy1: number;
+    exploitationsBy2: number;
+  },
+  trust1to2: number,
+  trust2to1: number,
+  type: RelationshipType,
+  inSameCoalition: boolean
+): number {
+  let significance = 0;
+
+  // Interaction count contributes to significance
+  significance += Math.min(stats.interactions / 10, 0.3);
+
+  // Extreme trust levels are more interesting
+  const avgTrust = (trust1to2 + trust2to1) / 2;
+  if (avgTrust > 0.8 || avgTrust < 0.2) {
+    significance += 0.3;
+  }
+
+  // Coalition membership increases significance
+  if (inSameCoalition) {
+    significance += 0.2;
+  }
+
+  // Drama! Betrayals and exploitation are interesting
+  if (stats.exploitationsBy1 > 0 || stats.exploitationsBy2 > 0) {
+    significance += 0.2;
+  }
+
+  // Allies and rivals are more interesting than strangers
+  if (type === 'allies' || type === 'rivals') {
+    significance += 0.1;
+  }
+
+  // Rebuilding relationships are narratively interesting
+  if (type === 'rebuilding') {
+    significance += 0.2;
+  }
+
+  return Math.min(significance, 1);
+}
+
+function generateRelationshipNarrative(
+  agent1: AgentSnapshot,
+  agent2: AgentSnapshot,
+  type: RelationshipType,
+  stats: {
+    interactions: number;
+    mutualCoops: number;
+    mutualDefects: number;
+    exploitationsBy1: number;
+    exploitationsBy2: number;
+  },
+  trust1to2: number,
+  trust2to1: number,
+  inSameCoalition: boolean
+): string {
+  const archetype1 = STRATEGY_ARCHETYPES[agent1.strategy].archetype;
+  const archetype2 = STRATEGY_ARCHETYPES[agent2.strategy].archetype;
+
+  switch (type) {
+    case 'allies':
+      if (inSameCoalition) {
+        return `${agent1.name} (${archetype1}) and ${agent2.name} (${archetype2}) formed a strong alliance. Their ${stats.mutualCoops} successful cooperations built deep mutual trust, and they joined the same coalition. This is what Web4 cooperation looks like.`;
+      }
+      return `${agent1.name} and ${agent2.name} developed mutual trust through consistent cooperation. ${stats.mutualCoops} positive interactions created a reliable partnership.`;
+
+    case 'rivals':
+      return `${agent1.name} (${archetype1}) and ${agent2.name} (${archetype2}) became rivals. ${stats.mutualDefects} mutual defections eroded whatever trust might have formed. Neither was willing to risk cooperation.`;
+
+    case 'exploiter':
+      return `${agent1.name} (${archetype1}) took advantage of ${agent2.name} (${archetype2}), exploiting their trust ${stats.exploitationsBy1} time${stats.exploitationsBy1 !== 1 ? 's' : ''}. This is the dark side of trusting strategies.`;
+
+    case 'victim':
+      return `${agent2.name} (${archetype2}) exploited ${agent1.name} (${archetype1}) ${stats.exploitationsBy2} time${stats.exploitationsBy2 !== 1 ? 's' : ''}. ${agent1.name}'s trust was not rewarded—a cautionary tale.`;
+
+    case 'rebuilding':
+      return `${agent1.name} and ${agent2.name} had a rocky start but are rebuilding trust. After ${stats.mutualDefects} failures, they've managed ${stats.mutualCoops} successful cooperations. Perhaps trust can be repaired.`;
+
+    case 'strangers':
+    default:
+      return `${agent1.name} and ${agent2.name} had limited meaningful interaction. They remain strangers in this society.`;
+  }
+}
+
+/**
+ * Get the top relationships for narrative display
+ */
+export function getTopRelationships(
+  result: SocietyResult,
+  limit: number = 5
+): CharacterRelationship[] {
+  const map = analyzeRelationships(result);
+  return map.relationships.slice(0, limit);
+}
+
+/**
+ * Add relationship data to an existing narrative
+ */
+export function enrichNarrativeWithRelationships(
+  narrative: SocietyNarrative,
+  result: SocietyResult
+): SocietyNarrative & { relationships: RelationshipMap } {
+  const relationships = analyzeRelationships(result);
+  return {
+    ...narrative,
+    relationships,
+  };
 }

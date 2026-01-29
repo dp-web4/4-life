@@ -38,11 +38,15 @@ import {
 import {
   generateSocietyNarrative,
   generateComparativeNarrative,
+  analyzeRelationships,
   type SocietyNarrative,
   type ComparativeNarrative,
   type CharacterProfile,
   type CharacterHighlight,
   type KeyMoment,
+  type RelationshipMap,
+  type CharacterRelationship,
+  type RelationshipType,
 } from '@/lib/narratives/society_narrative';
 
 // ============================================================================
@@ -511,12 +515,14 @@ function NetworkGraph({
   selectedAgentId,
   onSelectAgent,
   interactions,
+  highlightedAgentIds = [],
 }: {
   agents: AgentSnapshot[];
   coalitions: Coalition[];
   selectedAgentId: number | null;
   onSelectAgent: (id: number | null) => void;
   interactions: Interaction[];
+  highlightedAgentIds?: number[];
 }) {
   const svgRef = useRef<SVGSVGElement>(null);
   const width = 500;
@@ -621,6 +627,7 @@ function NetworkGraph({
       {agents.map(agent => {
         const pos = getPos(agent.id);
         const isSelected = selectedAgentId === agent.id;
+        const isHighlighted = highlightedAgentIds.includes(agent.id);
         const nodeRadius = Math.max(8, Math.min(16, 6 + agent.atp / 20));
         const color = STRATEGY_COLORS[agent.strategy];
 
@@ -630,6 +637,30 @@ function NetworkGraph({
             onClick={() => onSelectAgent(isSelected ? null : agent.id)}
             className="cursor-pointer"
           >
+            {/* Story highlight ring (animated pulse) */}
+            {isHighlighted && (
+              <>
+                <circle
+                  cx={pos.x}
+                  cy={pos.y}
+                  r={nodeRadius + 8}
+                  fill="none"
+                  stroke="#f59e0b"
+                  strokeWidth={2}
+                  opacity={0.6}
+                  className="animate-pulse"
+                />
+                <circle
+                  cx={pos.x}
+                  cy={pos.y}
+                  r={nodeRadius + 12}
+                  fill="none"
+                  stroke="#f59e0b"
+                  strokeWidth={1}
+                  opacity={0.3}
+                />
+              </>
+            )}
             {/* Selection ring */}
             {isSelected && (
               <circle
@@ -1151,23 +1182,312 @@ function ComparisonPanel({
 }
 
 // ============================================================================
+// Story Bar Component (Animated Narrative Playback)
+// ============================================================================
+
+interface StoryPosition {
+  chapterIndex: number;
+  eventIndex: number; // -1 for chapter opening, >= 0 for events, Infinity for closing
+}
+
+function StoryBar({
+  narrative,
+  onClose,
+  onPositionChange,
+  highlightedAgentIds,
+}: {
+  narrative: SocietyNarrative;
+  onClose: () => void;
+  onPositionChange: (epoch: number | null, agentIds: number[]) => void;
+  highlightedAgentIds: number[];
+}) {
+  const [position, setPosition] = useState<StoryPosition>({ chapterIndex: 0, eventIndex: -1 });
+  const [isPlaying, setIsPlaying] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Get current content based on position
+  const getCurrentContent = useCallback(() => {
+    const chapter = narrative.chapters[position.chapterIndex];
+    if (!chapter) return null;
+
+    if (position.eventIndex === -1) {
+      // Chapter opening
+      return {
+        type: 'opening' as const,
+        title: `Chapter ${chapter.number}: ${chapter.title}`,
+        text: chapter.opening,
+        epoch: chapter.epochRange?.start,
+        agentIds: [] as number[],
+      };
+    } else if (position.eventIndex < chapter.events.length) {
+      // Event
+      const event = chapter.events[position.eventIndex];
+      return {
+        type: 'event' as const,
+        title: `Chapter ${chapter.number}: ${chapter.title}`,
+        text: event.description,
+        quote: event.quote,
+        significance: event.significance,
+        epoch: event.epoch,
+        agentIds: event.agentIds || [],
+      };
+    } else if (chapter.closing) {
+      // Chapter closing
+      return {
+        type: 'closing' as const,
+        title: `Chapter ${chapter.number}: ${chapter.title}`,
+        text: chapter.closing,
+        epoch: chapter.epochRange?.end,
+        agentIds: [] as number[],
+      };
+    }
+    return null;
+  }, [narrative, position]);
+
+  // Calculate total steps in the narrative
+  const getTotalSteps = useCallback(() => {
+    let total = 0;
+    for (const chapter of narrative.chapters) {
+      total += 1; // opening
+      total += chapter.events.length; // events
+      if (chapter.closing) total += 1; // closing
+    }
+    return total;
+  }, [narrative]);
+
+  // Get current step index (for progress bar)
+  const getCurrentStep = useCallback(() => {
+    let step = 0;
+    for (let i = 0; i < position.chapterIndex; i++) {
+      const ch = narrative.chapters[i];
+      step += 1 + ch.events.length + (ch.closing ? 1 : 0);
+    }
+    step += position.eventIndex + 1; // +1 because -1 is opening
+    if (position.eventIndex === Infinity) {
+      const ch = narrative.chapters[position.chapterIndex];
+      step += ch.events.length + 1;
+    }
+    return step;
+  }, [narrative, position]);
+
+  // Navigate to next position
+  const goNext = useCallback(() => {
+    const chapter = narrative.chapters[position.chapterIndex];
+    if (!chapter) return;
+
+    if (position.eventIndex === -1) {
+      // From opening -> first event or closing
+      if (chapter.events.length > 0) {
+        setPosition({ chapterIndex: position.chapterIndex, eventIndex: 0 });
+      } else if (chapter.closing) {
+        setPosition({ chapterIndex: position.chapterIndex, eventIndex: Infinity });
+      } else {
+        // No events or closing, go to next chapter
+        if (position.chapterIndex < narrative.chapters.length - 1) {
+          setPosition({ chapterIndex: position.chapterIndex + 1, eventIndex: -1 });
+        } else {
+          setIsPlaying(false); // End of story
+        }
+      }
+    } else if (position.eventIndex < chapter.events.length - 1) {
+      // Next event
+      setPosition({ chapterIndex: position.chapterIndex, eventIndex: position.eventIndex + 1 });
+    } else if (position.eventIndex === chapter.events.length - 1) {
+      // Last event -> closing or next chapter
+      if (chapter.closing) {
+        setPosition({ chapterIndex: position.chapterIndex, eventIndex: Infinity });
+      } else if (position.chapterIndex < narrative.chapters.length - 1) {
+        setPosition({ chapterIndex: position.chapterIndex + 1, eventIndex: -1 });
+      } else {
+        setIsPlaying(false); // End of story
+      }
+    } else {
+      // From closing -> next chapter
+      if (position.chapterIndex < narrative.chapters.length - 1) {
+        setPosition({ chapterIndex: position.chapterIndex + 1, eventIndex: -1 });
+      } else {
+        setIsPlaying(false); // End of story
+      }
+    }
+  }, [narrative, position]);
+
+  // Navigate to previous position
+  const goPrev = useCallback(() => {
+    if (position.eventIndex === Infinity) {
+      // From closing -> last event or opening
+      const chapter = narrative.chapters[position.chapterIndex];
+      if (chapter.events.length > 0) {
+        setPosition({ chapterIndex: position.chapterIndex, eventIndex: chapter.events.length - 1 });
+      } else {
+        setPosition({ chapterIndex: position.chapterIndex, eventIndex: -1 });
+      }
+    } else if (position.eventIndex > 0) {
+      // Previous event
+      setPosition({ chapterIndex: position.chapterIndex, eventIndex: position.eventIndex - 1 });
+    } else if (position.eventIndex === 0) {
+      // First event -> opening
+      setPosition({ chapterIndex: position.chapterIndex, eventIndex: -1 });
+    } else if (position.chapterIndex > 0) {
+      // From opening -> previous chapter's closing/last event/opening
+      const prevChapter = narrative.chapters[position.chapterIndex - 1];
+      if (prevChapter.closing) {
+        setPosition({ chapterIndex: position.chapterIndex - 1, eventIndex: Infinity });
+      } else if (prevChapter.events.length > 0) {
+        setPosition({ chapterIndex: position.chapterIndex - 1, eventIndex: prevChapter.events.length - 1 });
+      } else {
+        setPosition({ chapterIndex: position.chapterIndex - 1, eventIndex: -1 });
+      }
+    }
+  }, [narrative, position]);
+
+  // Auto-play timer
+  useEffect(() => {
+    if (isPlaying) {
+      intervalRef.current = setInterval(() => {
+        goNext();
+      }, 5000); // 5 seconds per step
+    } else {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    }
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [isPlaying, goNext]);
+
+  // Notify parent of position changes for epoch sync and agent highlighting
+  useEffect(() => {
+    const content = getCurrentContent();
+    if (content) {
+      onPositionChange(content.epoch ?? null, content.agentIds);
+    }
+  }, [position, getCurrentContent, onPositionChange]);
+
+  const content = getCurrentContent();
+  const totalSteps = getTotalSteps();
+  const currentStep = getCurrentStep();
+  const progressPercent = (currentStep / totalSteps) * 100;
+
+  if (!content) return null;
+
+  return (
+    <div className="fixed bottom-0 left-0 right-0 bg-gray-900/95 border-t border-amber-500/30 z-40 backdrop-blur-sm">
+      {/* Progress bar */}
+      <div className="h-1 bg-gray-800">
+        <div
+          className="h-full bg-gradient-to-r from-amber-500 to-orange-500 transition-all duration-300"
+          style={{ width: `${progressPercent}%` }}
+        />
+      </div>
+
+      <div className="max-w-5xl mx-auto px-4 py-3">
+        {/* Header row */}
+        <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center gap-3">
+            <span className="text-amber-400 font-bold text-sm">{content.title}</span>
+            {content.epoch !== undefined && (
+              <span className="text-xs bg-blue-900/50 text-blue-300 px-2 py-0.5 rounded">
+                Epoch {content.epoch + 1}
+              </span>
+            )}
+            {content.type === 'event' && highlightedAgentIds.length > 0 && (
+              <span className="text-xs text-gray-400">
+                {highlightedAgentIds.length} agent{highlightedAgentIds.length !== 1 ? 's' : ''} highlighted
+              </span>
+            )}
+          </div>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-white text-lg"
+            title="Close story bar"
+          >
+            ×
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="mb-3">
+          <p className="text-gray-200 text-sm leading-relaxed">{content.text}</p>
+          {content.type === 'event' && content.quote && (
+            <p className="text-gray-400 italic text-xs mt-1 pl-3 border-l border-amber-500/50">
+              {content.quote}
+            </p>
+          )}
+        </div>
+
+        {/* Controls */}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={goPrev}
+              disabled={position.chapterIndex === 0 && position.eventIndex === -1}
+              className="px-3 py-1 bg-gray-700 hover:bg-gray-600 disabled:opacity-30 disabled:cursor-not-allowed rounded text-sm transition-colors"
+            >
+              ← Prev
+            </button>
+            <button
+              onClick={() => setIsPlaying(!isPlaying)}
+              className={`px-4 py-1 rounded text-sm transition-colors ${
+                isPlaying
+                  ? 'bg-amber-600 hover:bg-amber-500 text-white'
+                  : 'bg-gray-700 hover:bg-gray-600 text-white'
+              }`}
+            >
+              {isPlaying ? '⏸ Pause' : '▶ Play'}
+            </button>
+            <button
+              onClick={goNext}
+              disabled={position.chapterIndex === narrative.chapters.length - 1 &&
+                (position.eventIndex === Infinity ||
+                 (!narrative.chapters[position.chapterIndex].closing &&
+                  position.eventIndex === narrative.chapters[position.chapterIndex].events.length - 1))}
+              className="px-3 py-1 bg-gray-700 hover:bg-gray-600 disabled:opacity-30 disabled:cursor-not-allowed rounded text-sm transition-colors"
+            >
+              Next →
+            </button>
+          </div>
+          <div className="text-xs text-gray-500">
+            Step {currentStep} of {totalSteps}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
 // Narrative Panel Component
 // ============================================================================
 
 function NarrativePanel({
   narrative,
   onClose,
+  onAnimate,
+  relationships,
 }: {
   narrative: SocietyNarrative;
   onClose: () => void;
+  onAnimate?: () => void;
+  relationships?: RelationshipMap;
 }) {
-  const [activeTab, setActiveTab] = useState<'story' | 'characters' | 'moments'>('story');
+  const [activeTab, setActiveTab] = useState<'story' | 'characters' | 'moments' | 'relationships'>('story');
 
   const STATUS_COLORS: Record<CharacterProfile['finalStatus'], string> = {
     thriving: 'text-green-400',
     surviving: 'text-yellow-400',
     struggling: 'text-orange-400',
     dead: 'text-red-400',
+  };
+
+  const RELATIONSHIP_COLORS: Record<RelationshipType, { bg: string; text: string; icon: string }> = {
+    allies: { bg: 'bg-green-900/30', text: 'text-green-400', icon: '🤝' },
+    rivals: { bg: 'bg-red-900/30', text: 'text-red-400', icon: '⚔️' },
+    exploiter: { bg: 'bg-purple-900/30', text: 'text-purple-400', icon: '🦊' },
+    victim: { bg: 'bg-orange-900/30', text: 'text-orange-400', icon: '🐑' },
+    rebuilding: { bg: 'bg-blue-900/30', text: 'text-blue-400', icon: '🔄' },
+    strangers: { bg: 'bg-gray-800/50', text: 'text-gray-400', icon: '👥' },
   };
 
   return (
@@ -1187,12 +1507,12 @@ function NarrativePanel({
       </div>
 
       {/* Tabs */}
-      <div className="flex border-b border-gray-700">
-        {(['story', 'characters', 'moments'] as const).map(tab => (
+      <div className="flex border-b border-gray-700 overflow-x-auto">
+        {(['story', 'characters', 'moments', ...(relationships ? ['relationships'] : [])] as const).map(tab => (
           <button
             key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-6 py-3 text-sm font-medium transition-colors ${
+            onClick={() => setActiveTab(tab as typeof activeTab)}
+            className={`px-6 py-3 text-sm font-medium transition-colors whitespace-nowrap ${
               activeTab === tab
                 ? 'bg-gray-800 text-amber-400 border-b-2 border-amber-400'
                 : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
@@ -1201,6 +1521,7 @@ function NarrativePanel({
             {tab === 'story' && '📖 Story'}
             {tab === 'characters' && '👥 Characters'}
             {tab === 'moments' && '⚡ Key Moments'}
+            {tab === 'relationships' && '💞 Relationships'}
           </button>
         ))}
       </div>
@@ -1353,6 +1674,144 @@ function NarrativePanel({
             )}
           </div>
         )}
+
+        {activeTab === 'relationships' && relationships && (
+          <div className="max-w-4xl mx-auto space-y-6">
+            {/* Relationship Summary Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700 text-center">
+                <div className="text-2xl font-bold text-white">{relationships.stats.totalRelationships}</div>
+                <div className="text-xs text-gray-400">Total Relationships</div>
+              </div>
+              <div className="bg-green-900/20 rounded-lg p-4 border border-green-700/30 text-center">
+                <div className="text-2xl font-bold text-green-400">{relationships.stats.allyPairs}</div>
+                <div className="text-xs text-gray-400">Ally Pairs</div>
+              </div>
+              <div className="bg-red-900/20 rounded-lg p-4 border border-red-700/30 text-center">
+                <div className="text-2xl font-bold text-red-400">{relationships.stats.rivalPairs}</div>
+                <div className="text-xs text-gray-400">Rival Pairs</div>
+              </div>
+              <div className="bg-purple-900/20 rounded-lg p-4 border border-purple-700/30 text-center">
+                <div className="text-2xl font-bold text-purple-400">{relationships.stats.exploitationPairs}</div>
+                <div className="text-xs text-gray-400">Exploitation Pairs</div>
+              </div>
+            </div>
+
+            {/* Notable Relationships */}
+            {(relationships.strongestAlliance || relationships.bitterestRivalry || relationships.mostDramaticBetrayal) && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {relationships.strongestAlliance && (
+                  <div className="bg-gradient-to-br from-green-900/30 to-emerald-900/20 rounded-lg p-4 border border-green-500/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xl">🤝</span>
+                      <h4 className="font-bold text-green-400 text-sm">Strongest Alliance</h4>
+                    </div>
+                    <p className="text-white font-medium">
+                      {relationships.strongestAlliance.character1} & {relationships.strongestAlliance.character2}
+                    </p>
+                    <p className="text-gray-400 text-xs mt-1">
+                      {relationships.strongestAlliance.mutualCooperations} cooperations
+                    </p>
+                  </div>
+                )}
+                {relationships.bitterestRivalry && (
+                  <div className="bg-gradient-to-br from-red-900/30 to-rose-900/20 rounded-lg p-4 border border-red-500/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xl">⚔️</span>
+                      <h4 className="font-bold text-red-400 text-sm">Bitterest Rivalry</h4>
+                    </div>
+                    <p className="text-white font-medium">
+                      {relationships.bitterestRivalry.character1} vs {relationships.bitterestRivalry.character2}
+                    </p>
+                    <p className="text-gray-400 text-xs mt-1">
+                      {relationships.bitterestRivalry.mutualDefections} mutual defections
+                    </p>
+                  </div>
+                )}
+                {relationships.mostDramaticBetrayal && (
+                  <div className="bg-gradient-to-br from-purple-900/30 to-violet-900/20 rounded-lg p-4 border border-purple-500/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xl">🗡️</span>
+                      <h4 className="font-bold text-purple-400 text-sm">Most Dramatic Betrayal</h4>
+                    </div>
+                    <p className="text-white font-medium">
+                      {relationships.mostDramaticBetrayal.character1} & {relationships.mostDramaticBetrayal.character2}
+                    </p>
+                    <p className="text-gray-400 text-xs mt-1">
+                      {Math.max(relationships.mostDramaticBetrayal.exploitations, relationships.mostDramaticBetrayal.wasExploited)} exploitation{Math.max(relationships.mostDramaticBetrayal.exploitations, relationships.mostDramaticBetrayal.wasExploited) !== 1 ? 's' : ''}
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* All Relationships */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">All Relationships</h3>
+              <div className="space-y-3">
+                {relationships.relationships.length === 0 ? (
+                  <p className="text-gray-500 text-center py-8">No significant relationships found.</p>
+                ) : (
+                  relationships.relationships.map((rel, i) => {
+                    const colors = RELATIONSHIP_COLORS[rel.type];
+                    return (
+                      <div
+                        key={i}
+                        className={`${colors.bg} rounded-lg p-4 border border-gray-700/50`}
+                      >
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-2">
+                              <span className="text-lg">{colors.icon}</span>
+                              <span className="font-bold text-white">{rel.character1}</span>
+                              <span className="text-gray-500">&</span>
+                              <span className="font-bold text-white">{rel.character2}</span>
+                              <span className={`text-xs px-2 py-0.5 rounded-full ${colors.bg} ${colors.text} border border-current/30`}>
+                                {rel.type}
+                              </span>
+                              {rel.inSameCoalition && (
+                                <span className="text-xs px-2 py-0.5 rounded-full bg-blue-900/30 text-blue-400 border border-blue-500/30">
+                                  coalition
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-sm text-gray-300 mb-2">{rel.narrative}</p>
+                            <div className="flex flex-wrap gap-4 text-xs text-gray-400">
+                              <span>Interactions: {rel.interactionCount}</span>
+                              <span className="text-green-400">Coops: {rel.mutualCooperations}</span>
+                              <span className="text-red-400">Defects: {rel.mutualDefections}</span>
+                              <span>Trust: {(rel.trustLevel * 100).toFixed(0)}% ↔ {(rel.reverseTrustLevel * 100).toFixed(0)}%</span>
+                            </div>
+                          </div>
+                          {/* Mini trust visualization */}
+                          <div className="flex flex-col items-center gap-1">
+                            <div className="w-12 h-12 rounded-full border-2 border-gray-600 relative flex items-center justify-center">
+                              <div
+                                className="absolute inset-1 rounded-full"
+                                style={{
+                                  background: `conic-gradient(
+                                    ${rel.type === 'allies' ? '#22c55e' : rel.type === 'rivals' ? '#ef4444' : '#a855f7'} ${((rel.trustLevel + rel.reverseTrustLevel) / 2) * 100}%,
+                                    #374151 0%
+                                  )`,
+                                }}
+                              />
+                              <div className="absolute inset-2 rounded-full bg-gray-900 flex items-center justify-center">
+                                <span className="text-xs font-bold text-white">
+                                  {Math.round(((rel.trustLevel + rel.reverseTrustLevel) / 2) * 100)}%
+                                </span>
+                              </div>
+                            </div>
+                            <span className="text-[10px] text-gray-500">avg trust</span>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })
+                )}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Footer */}
@@ -1360,59 +1819,69 @@ function NarrativePanel({
         <p className="text-xs text-gray-500">
           Generated by 4-Life Narrative Engine • Translating trust dynamics into human stories
         </p>
-        <button
-          onClick={() => {
-            // Export as markdown
-            const lines = [
-              `# ${narrative.title}`,
-              `*${narrative.tagline}*`,
-              '',
-              '## Summary',
-              narrative.summary,
-              '',
-              `**Themes**: ${narrative.themes.join(', ')}`,
-              '',
-              '---',
-              '',
-            ];
+        <div className="flex items-center gap-2">
+          {onAnimate && (
+            <button
+              onClick={onAnimate}
+              className="text-sm px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded transition-colors"
+            >
+              ▶ Animate Story
+            </button>
+          )}
+          <button
+            onClick={() => {
+              // Export as markdown
+              const lines = [
+                `# ${narrative.title}`,
+                `*${narrative.tagline}*`,
+                '',
+                '## Summary',
+                narrative.summary,
+                '',
+                `**Themes**: ${narrative.themes.join(', ')}`,
+                '',
+                '---',
+                '',
+              ];
 
-            narrative.chapters.forEach(ch => {
-              lines.push(`## Chapter ${ch.number}: ${ch.title}`);
-              lines.push('');
-              lines.push(ch.opening);
-              lines.push('');
-              ch.events.forEach(e => {
-                lines.push(e.description);
-                if (e.quote) lines.push(`> ${e.quote}`);
-                lines.push(`*${e.significance}*`);
+              narrative.chapters.forEach(ch => {
+                lines.push(`## Chapter ${ch.number}: ${ch.title}`);
+                lines.push('');
+                lines.push(ch.opening);
+                lines.push('');
+                ch.events.forEach(e => {
+                  lines.push(e.description);
+                  if (e.quote) lines.push(`> ${e.quote}`);
+                  lines.push(`*${e.significance}*`);
+                  lines.push('');
+                });
+                if (ch.closing) lines.push(`*${ch.closing}*`);
                 lines.push('');
               });
-              if (ch.closing) lines.push(`*${ch.closing}*`);
+
+              lines.push('---');
               lines.push('');
-            });
+              lines.push('## The Moral');
+              lines.push(narrative.moralOfTheStory);
 
-            lines.push('---');
-            lines.push('');
-            lines.push('## The Moral');
-            lines.push(narrative.moralOfTheStory);
-
-            const text = lines.join('\n');
-            navigator.clipboard.writeText(text).then(() => {
-              alert('Narrative copied to clipboard!');
-            }).catch(() => {
-              const blob = new Blob([text], { type: 'text/markdown' });
-              const url = URL.createObjectURL(blob);
-              const a = document.createElement('a');
-              a.href = url;
-              a.download = 'society-narrative.md';
-              a.click();
-              URL.revokeObjectURL(url);
-            });
-          }}
-          className="text-sm px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded transition-colors"
-        >
-          📋 Export Story
-        </button>
+              const text = lines.join('\n');
+              navigator.clipboard.writeText(text).then(() => {
+                alert('Narrative copied to clipboard!');
+              }).catch(() => {
+                const blob = new Blob([text], { type: 'text/markdown' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'society-narrative.md';
+                a.click();
+                URL.revokeObjectURL(url);
+              });
+            }}
+            className="text-sm px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded transition-colors"
+          >
+            📋 Export Story
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -1582,7 +2051,10 @@ export default function SocietySimulatorPage() {
   const [savedResults, setSavedResults] = useState<{ label: string; result: SocietyResult }[]>([]);
   const [showComparison, setShowComparison] = useState(false);
   const [narrative, setNarrative] = useState<SocietyNarrative | null>(null);
+  const [narrativeRelationships, setNarrativeRelationships] = useState<RelationshipMap | null>(null);
   const [showNarrative, setShowNarrative] = useState(false);
+  const [showStoryBar, setShowStoryBar] = useState(false);
+  const [storyHighlightedAgents, setStoryHighlightedAgents] = useState<number[]>([]);
   const [comparativeNarrative, setComparativeNarrative] = useState<ComparativeNarrative | null>(null);
   const [showComparativeNarrative, setShowComparativeNarrative] = useState(false);
   const cancelRef = useRef(false);
@@ -1827,7 +2299,9 @@ export default function SocietySimulatorPage() {
               <button
                 onClick={() => {
                   const generated = generateSocietyNarrative(result);
+                  const rels = analyzeRelationships(result);
                   setNarrative(generated);
+                  setNarrativeRelationships(rels);
                   setShowNarrative(true);
                 }}
                 className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-medium transition-colors"
@@ -1867,7 +2341,12 @@ export default function SocietySimulatorPage() {
         {showNarrative && narrative && (
           <NarrativePanel
             narrative={narrative}
+            relationships={narrativeRelationships || undefined}
             onClose={() => setShowNarrative(false)}
+            onAnimate={() => {
+              setShowNarrative(false);
+              setShowStoryBar(true);
+            }}
           />
         )}
 
@@ -1876,6 +2355,24 @@ export default function SocietySimulatorPage() {
           <ComparativeNarrativePanel
             narrative={comparativeNarrative}
             onClose={() => setShowComparativeNarrative(false)}
+          />
+        )}
+
+        {/* Story Bar (Animated Narrative) */}
+        {showStoryBar && narrative && result && (
+          <StoryBar
+            narrative={narrative}
+            onClose={() => {
+              setShowStoryBar(false);
+              setStoryHighlightedAgents([]);
+            }}
+            onPositionChange={(epoch, agentIds) => {
+              if (epoch !== null && result) {
+                showEpoch(epoch);
+              }
+              setStoryHighlightedAgents(agentIds);
+            }}
+            highlightedAgentIds={storyHighlightedAgents}
           />
         )}
 
@@ -1906,6 +2403,7 @@ export default function SocietySimulatorPage() {
                     }
                   }}
                   interactions={interactions}
+                  highlightedAgentIds={storyHighlightedAgents}
                 />
                 <p className="text-xs text-gray-500 mt-2 text-center">
                   Click an agent to learn about them. Lines show trust relationships.
@@ -2054,7 +2552,12 @@ export default function SocietySimulatorPage() {
         {showNarrative && narrative && (
           <NarrativePanel
             narrative={narrative}
+            relationships={narrativeRelationships || undefined}
             onClose={() => setShowNarrative(false)}
+            onAnimate={() => {
+              setShowNarrative(false);
+              setShowStoryBar(true);
+            }}
           />
         )}
       </div>
