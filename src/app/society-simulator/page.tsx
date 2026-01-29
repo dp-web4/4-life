@@ -35,6 +35,12 @@ import {
   Interaction,
   StrategyType,
 } from '@/lib/simulation/society-engine';
+import {
+  generateSocietyNarrative,
+  type SocietyNarrative,
+  type CharacterProfile,
+  type KeyMoment,
+} from '@/lib/narratives/society_narrative';
 
 // ============================================================================
 // ACT Chat Panel Component
@@ -1127,6 +1133,242 @@ function ComparisonPanel({
 }
 
 // ============================================================================
+// Narrative Panel Component
+// ============================================================================
+
+function NarrativePanel({
+  narrative,
+  onClose,
+}: {
+  narrative: SocietyNarrative;
+  onClose: () => void;
+}) {
+  const [activeTab, setActiveTab] = useState<'story' | 'characters' | 'moments'>('story');
+
+  const STATUS_COLORS: Record<CharacterProfile['finalStatus'], string> = {
+    thriving: 'text-green-400',
+    surviving: 'text-yellow-400',
+    struggling: 'text-orange-400',
+    dead: 'text-red-400',
+  };
+
+  return (
+    <div className="fixed inset-4 md:inset-8 bg-gray-900 border border-amber-500/30 rounded-xl shadow-2xl z-50 flex flex-col overflow-hidden">
+      {/* Header */}
+      <div className="flex items-center justify-between px-6 py-4 border-b border-gray-700 bg-gradient-to-r from-amber-900/30 to-orange-900/30">
+        <div>
+          <h2 className="text-2xl font-bold text-white">{narrative.title}</h2>
+          <p className="text-amber-200/70 text-sm italic">{narrative.tagline}</p>
+        </div>
+        <button
+          onClick={onClose}
+          className="text-gray-400 hover:text-white text-2xl px-2"
+        >
+          ×
+        </button>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex border-b border-gray-700">
+        {(['story', 'characters', 'moments'] as const).map(tab => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-6 py-3 text-sm font-medium transition-colors ${
+              activeTab === tab
+                ? 'bg-gray-800 text-amber-400 border-b-2 border-amber-400'
+                : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
+            }`}
+          >
+            {tab === 'story' && '📖 Story'}
+            {tab === 'characters' && '👥 Characters'}
+            {tab === 'moments' && '⚡ Key Moments'}
+          </button>
+        ))}
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 overflow-y-auto p-6">
+        {activeTab === 'story' && (
+          <div className="max-w-3xl mx-auto space-y-8">
+            {/* Summary */}
+            <div className="bg-gray-800/50 rounded-lg p-4 border-l-4 border-amber-500">
+              <p className="text-gray-300 leading-relaxed">{narrative.summary}</p>
+            </div>
+
+            {/* Themes */}
+            <div className="flex flex-wrap gap-2">
+              {narrative.themes.map((theme, i) => (
+                <span key={i} className="px-3 py-1 bg-amber-900/30 text-amber-300 rounded-full text-sm">
+                  {theme}
+                </span>
+              ))}
+            </div>
+
+            {/* Chapters */}
+            {narrative.chapters.map(chapter => (
+              <div key={chapter.number} className="space-y-4">
+                <h3 className="text-xl font-bold text-white flex items-center gap-3">
+                  <span className="text-amber-500">Chapter {chapter.number}</span>
+                  <span className="text-gray-300">{chapter.title}</span>
+                </h3>
+
+                <p className="text-gray-300 leading-relaxed">{chapter.opening}</p>
+
+                {chapter.events.map((event, i) => (
+                  <div key={i} className="pl-4 border-l-2 border-gray-700 space-y-2">
+                    <p className="text-gray-200">{event.description}</p>
+                    {event.quote && (
+                      <p className="text-gray-400 italic pl-4 border-l border-amber-500/50">
+                        {event.quote}
+                      </p>
+                    )}
+                    <p className="text-sm text-gray-500">{event.significance}</p>
+                  </div>
+                ))}
+
+                {chapter.closing && (
+                  <p className="text-gray-400 italic">{chapter.closing}</p>
+                )}
+              </div>
+            ))}
+
+            {/* Moral */}
+            <div className="bg-gradient-to-r from-amber-900/20 to-orange-900/20 rounded-lg p-6 border border-amber-500/30">
+              <h3 className="text-lg font-bold text-amber-400 mb-2">The Moral</h3>
+              <p className="text-gray-200 leading-relaxed">{narrative.moralOfTheStory}</p>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'characters' && (
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+            {narrative.characters.map((character, i) => (
+              <div
+                key={i}
+                className="bg-gray-800/50 rounded-lg p-4 border border-gray-700 hover:border-gray-600 transition-colors"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold"
+                    style={{ backgroundColor: STRATEGY_COLORS[character.strategy] }}
+                  >
+                    {character.name[0]}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white">{character.name}</h4>
+                    <p className="text-xs text-gray-400">
+                      {character.archetype} • <span className={STATUS_COLORS[character.finalStatus]}>{character.finalStatus}</span>
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-sm text-gray-300 mb-3">{character.arc}</p>
+
+                {character.notableActions.length > 0 && (
+                  <div className="space-y-1">
+                    {character.notableActions.map((action, j) => (
+                      <p key={j} className="text-xs text-gray-500 flex items-center gap-2">
+                        <span className="text-amber-500">•</span>
+                        {action}
+                      </p>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {activeTab === 'moments' && (
+          <div className="max-w-2xl mx-auto space-y-4">
+            {narrative.keyMoments.length === 0 ? (
+              <p className="text-gray-500 text-center py-8">No key moments detected in this simulation.</p>
+            ) : (
+              narrative.keyMoments.map((moment, i) => (
+                <div
+                  key={i}
+                  className="bg-gray-800/50 rounded-lg p-4 border-l-4 border-amber-500"
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xs bg-amber-900/50 text-amber-300 px-2 py-0.5 rounded">
+                      Epoch {moment.epoch}
+                    </span>
+                    <h4 className="font-bold text-white">{moment.title}</h4>
+                  </div>
+                  <p className="text-gray-300 text-sm mb-2">{moment.description}</p>
+                  <p className="text-gray-500 text-xs">{moment.impact}</p>
+                </div>
+              ))
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Footer */}
+      <div className="px-6 py-3 border-t border-gray-700 bg-gray-800/50 flex items-center justify-between">
+        <p className="text-xs text-gray-500">
+          Generated by 4-Life Narrative Engine • Translating trust dynamics into human stories
+        </p>
+        <button
+          onClick={() => {
+            // Export as markdown
+            const lines = [
+              `# ${narrative.title}`,
+              `*${narrative.tagline}*`,
+              '',
+              '## Summary',
+              narrative.summary,
+              '',
+              `**Themes**: ${narrative.themes.join(', ')}`,
+              '',
+              '---',
+              '',
+            ];
+
+            narrative.chapters.forEach(ch => {
+              lines.push(`## Chapter ${ch.number}: ${ch.title}`);
+              lines.push('');
+              lines.push(ch.opening);
+              lines.push('');
+              ch.events.forEach(e => {
+                lines.push(e.description);
+                if (e.quote) lines.push(`> ${e.quote}`);
+                lines.push(`*${e.significance}*`);
+                lines.push('');
+              });
+              if (ch.closing) lines.push(`*${ch.closing}*`);
+              lines.push('');
+            });
+
+            lines.push('---');
+            lines.push('');
+            lines.push('## The Moral');
+            lines.push(narrative.moralOfTheStory);
+
+            const text = lines.join('\n');
+            navigator.clipboard.writeText(text).then(() => {
+              alert('Narrative copied to clipboard!');
+            }).catch(() => {
+              const blob = new Blob([text], { type: 'text/markdown' });
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = url;
+              a.download = 'society-narrative.md';
+              a.click();
+              URL.revokeObjectURL(url);
+            });
+          }}
+          className="text-sm px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded transition-colors"
+        >
+          📋 Export Story
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
 // Main Page
 // ============================================================================
 
@@ -1147,6 +1389,8 @@ export default function SocietySimulatorPage() {
   const [agentClickTrigger, setAgentClickTrigger] = useState(0);  // Increment on agent click to trigger ACT query
   const [savedResults, setSavedResults] = useState<{ label: string; result: SocietyResult }[]>([]);
   const [showComparison, setShowComparison] = useState(false);
+  const [narrative, setNarrative] = useState<SocietyNarrative | null>(null);
+  const [showNarrative, setShowNarrative] = useState(false);
   const cancelRef = useRef(false);
 
   // Custom config overrides
@@ -1384,6 +1628,20 @@ export default function SocietySimulatorPage() {
                 📊 Compare ({savedResults.length})
               </button>
             )}
+            {/* Generate Story button */}
+            {result && !running && (
+              <button
+                onClick={() => {
+                  const generated = generateSocietyNarrative(result);
+                  setNarrative(generated);
+                  setShowNarrative(true);
+                }}
+                className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-medium transition-colors"
+                title="Generate a narrative story from this simulation"
+              >
+                📖 Generate Story
+              </button>
+            )}
           </div>
         </div>
 
@@ -1403,6 +1661,14 @@ export default function SocietySimulatorPage() {
             savedResults={savedResults}
             onRemove={(index) => setSavedResults(prev => prev.filter((_, i) => i !== index))}
             onClose={() => setShowComparison(false)}
+          />
+        )}
+
+        {/* Narrative Panel */}
+        {showNarrative && narrative && (
+          <NarrativePanel
+            narrative={narrative}
+            onClose={() => setShowNarrative(false)}
           />
         )}
 
@@ -1576,6 +1842,14 @@ export default function SocietySimulatorPage() {
           onToggle={() => setActPanelOpen(!actPanelOpen)}
           agentClickTrigger={agentClickTrigger}
         />
+
+        {/* Narrative Panel */}
+        {showNarrative && narrative && (
+          <NarrativePanel
+            narrative={narrative}
+            onClose={() => setShowNarrative(false)}
+          />
+        )}
       </div>
     </div>
   );
