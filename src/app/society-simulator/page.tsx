@@ -379,6 +379,24 @@ function ACTChatPanel({
               📋
             </button>
           )}
+          {/* Clear button */}
+          {messages.length > 1 && (
+            <button
+              onClick={() => {
+                setMessages([{
+                  id: '0',
+                  role: 'assistant',
+                  content: "I'm ACT, your guide to this society simulation.\n\nRun a simulation, then ask me questions like:\n- \"Who is winning?\"\n- \"How are coalitions forming?\"\n- \"Why are defectors struggling?\"\n\n**Tip**: Click any agent in the network graph to ask about them!",
+                }]);
+                setEventSuggestions([]);
+                processedEventsRef.current.clear();
+              }}
+              className="text-gray-400 hover:text-white transition-colors text-sm px-2 py-1 rounded hover:bg-gray-700"
+              title="Clear conversation"
+            >
+              🗑️
+            </button>
+          )}
           <button
             onClick={onToggle}
             className="text-gray-400 hover:text-white transition-colors text-xl"
