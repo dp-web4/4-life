@@ -16,7 +16,7 @@
  * - Animated step-through or instant run
  */
 
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import HumanPlayerMode from '@/components/HumanPlayerMode';
@@ -2058,21 +2058,321 @@ function CharacterFocusModal({
 // Narrative Panel Component
 // ============================================================================
 
+// ============================================================================
+// Relationship Timeline Scrubber Component
+// ============================================================================
+
+interface RelationshipTimelineData {
+  epoch: number;
+  relationships: {
+    agent1Name: string;
+    agent2Name: string;
+    trust1to2: number;
+    trust2to1: number;
+  }[];
+}
+
+function RelationshipTimelineScrubber({
+  result,
+}: {
+  result: SocietyResult;
+}) {
+  const [currentEpoch, setCurrentEpoch] = useState(result.epochs.length - 1);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [selectedPair, setSelectedPair] = useState<{ agent1: string; agent2: string } | null>(null);
+  const playRef = useRef<NodeJS.Timeout | null>(null);
+
+  const epochs = result.epochs;
+  const totalEpochs = epochs.length;
+
+  // Build relationship data for each epoch
+  const timelineData = useMemo(() => {
+    const data: RelationshipTimelineData[] = [];
+    for (let i = 0; i < epochs.length; i++) {
+      const epoch = epochs[i];
+      const rels: RelationshipTimelineData['relationships'] = [];
+
+      for (const agent of epoch.agents) {
+        for (const edge of agent.trustEdges) {
+          const targetAgent = epoch.agents.find(a => a.id === edge.targetId);
+          if (targetAgent && agent.id < targetAgent.id) { // Avoid duplicates
+            const reverseEdge = targetAgent.trustEdges.find(e => e.targetId === agent.id);
+            rels.push({
+              agent1Name: agent.name,
+              agent2Name: targetAgent.name,
+              trust1to2: edge.trust,
+              trust2to1: reverseEdge?.trust ?? 0.5,
+            });
+          }
+        }
+      }
+
+      data.push({ epoch: i, relationships: rels });
+    }
+    return data;
+  }, [epochs]);
+
+  // Get unique agent pairs
+  const allPairs = useMemo(() => {
+    const pairSet = new Set<string>();
+    const pairs: { agent1: string; agent2: string }[] = [];
+    for (const epochData of timelineData) {
+      for (const rel of epochData.relationships) {
+        const key = `${rel.agent1Name}|${rel.agent2Name}`;
+        if (!pairSet.has(key)) {
+          pairSet.add(key);
+          pairs.push({ agent1: rel.agent1Name, agent2: rel.agent2Name });
+        }
+      }
+    }
+    return pairs;
+  }, [timelineData]);
+
+  // Current epoch data
+  const currentData = timelineData[currentEpoch];
+
+  // Auto-play logic
+  useEffect(() => {
+    if (isPlaying) {
+      playRef.current = setInterval(() => {
+        setCurrentEpoch(prev => {
+          if (prev >= totalEpochs - 1) {
+            setIsPlaying(false);
+            return prev;
+          }
+          return prev + 1;
+        });
+      }, 1000);
+    } else {
+      if (playRef.current) {
+        clearInterval(playRef.current);
+        playRef.current = null;
+      }
+    }
+    return () => {
+      if (playRef.current) clearInterval(playRef.current);
+    };
+  }, [isPlaying, totalEpochs]);
+
+  // Get trust evolution for selected pair
+  const selectedPairHistory = useMemo(() => {
+    if (!selectedPair) return null;
+    return timelineData.map(epochData => {
+      const rel = epochData.relationships.find(
+        r => (r.agent1Name === selectedPair.agent1 && r.agent2Name === selectedPair.agent2) ||
+             (r.agent1Name === selectedPair.agent2 && r.agent2Name === selectedPair.agent1)
+      );
+      if (!rel) return { epoch: epochData.epoch, trust1: 0.5, trust2: 0.5 };
+      return {
+        epoch: epochData.epoch,
+        trust1: rel.agent1Name === selectedPair.agent1 ? rel.trust1to2 : rel.trust2to1,
+        trust2: rel.agent1Name === selectedPair.agent1 ? rel.trust2to1 : rel.trust1to2,
+      };
+    });
+  }, [selectedPair, timelineData]);
+
+  // Mini sparkline
+  const TrustSparkline = ({ data, color }: { data: number[]; color: string }) => {
+    if (data.length < 2) return null;
+    const w = 120;
+    const h = 30;
+    const max = 1;
+    const min = 0;
+
+    const points = data.map((v, i) => {
+      const x = (i / (data.length - 1)) * w;
+      const y = h - ((v - min) / (max - min)) * h;
+      return `${x},${y}`;
+    }).join(' ');
+
+    // Current position marker
+    const currX = (currentEpoch / (data.length - 1)) * w;
+    const currY = h - ((data[currentEpoch] - min) / (max - min)) * h;
+
+    return (
+      <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-8">
+        <polyline
+          points={points}
+          fill="none"
+          stroke={color}
+          strokeWidth={1.5}
+          strokeOpacity={0.5}
+        />
+        <circle cx={currX} cy={currY} r={4} fill={color} />
+      </svg>
+    );
+  };
+
+  return (
+    <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-lg font-bold text-white">🕐 Relationship Timeline</h3>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setCurrentEpoch(0)}
+            disabled={currentEpoch === 0}
+            className="px-2 py-1 text-xs bg-gray-700 hover:bg-gray-600 disabled:opacity-30 rounded"
+          >
+            ⏮
+          </button>
+          <button
+            onClick={() => setIsPlaying(!isPlaying)}
+            className={`px-3 py-1 text-xs rounded ${
+              isPlaying ? 'bg-amber-600 hover:bg-amber-500' : 'bg-gray-700 hover:bg-gray-600'
+            }`}
+          >
+            {isPlaying ? '⏸' : '▶'}
+          </button>
+          <button
+            onClick={() => setCurrentEpoch(totalEpochs - 1)}
+            disabled={currentEpoch === totalEpochs - 1}
+            className="px-2 py-1 text-xs bg-gray-700 hover:bg-gray-600 disabled:opacity-30 rounded"
+          >
+            ⏭
+          </button>
+        </div>
+      </div>
+
+      {/* Scrubber */}
+      <div className="mb-4">
+        <div className="flex items-center gap-3">
+          <span className="text-sm text-gray-400 w-16">Epoch {currentEpoch + 1}</span>
+          <input
+            type="range"
+            min={0}
+            max={totalEpochs - 1}
+            value={currentEpoch}
+            onChange={(e) => setCurrentEpoch(parseInt(e.target.value))}
+            className="flex-1 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-amber-500"
+          />
+          <span className="text-sm text-gray-400 w-10">/ {totalEpochs}</span>
+        </div>
+      </div>
+
+      {/* Pair Selection */}
+      <div className="mb-4">
+        <label className="text-xs text-gray-400 mb-1 block">Watch a relationship evolve:</label>
+        <select
+          value={selectedPair ? `${selectedPair.agent1}|${selectedPair.agent2}` : ''}
+          onChange={(e) => {
+            if (e.target.value) {
+              const [a1, a2] = e.target.value.split('|');
+              setSelectedPair({ agent1: a1, agent2: a2 });
+            } else {
+              setSelectedPair(null);
+            }
+          }}
+          className="w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded text-sm text-white focus:outline-none focus:border-amber-500"
+        >
+          <option value="">Select a pair...</option>
+          {allPairs.map((pair, i) => (
+            <option key={i} value={`${pair.agent1}|${pair.agent2}`}>
+              {pair.agent1} ↔ {pair.agent2}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Selected Pair Evolution */}
+      {selectedPair && selectedPairHistory && (
+        <div className="bg-gray-900/50 rounded-lg p-4 mb-4">
+          <div className="flex items-center justify-between mb-3">
+            <h4 className="text-sm font-bold text-white">
+              {selectedPair.agent1} ↔ {selectedPair.agent2}
+            </h4>
+            <button
+              onClick={() => setSelectedPair(null)}
+              className="text-gray-500 hover:text-white text-sm"
+            >
+              ×
+            </button>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <div className="text-xs text-gray-400 mb-1">
+                {selectedPair.agent1} → {selectedPair.agent2}
+              </div>
+              <TrustSparkline
+                data={selectedPairHistory.map(h => h.trust1)}
+                color="#3b82f6"
+              />
+              <div className="text-center text-lg font-bold text-blue-400">
+                {(selectedPairHistory[currentEpoch].trust1 * 100).toFixed(0)}%
+              </div>
+            </div>
+            <div>
+              <div className="text-xs text-gray-400 mb-1">
+                {selectedPair.agent2} → {selectedPair.agent1}
+              </div>
+              <TrustSparkline
+                data={selectedPairHistory.map(h => h.trust2)}
+                color="#22c55e"
+              />
+              <div className="text-center text-lg font-bold text-green-400">
+                {(selectedPairHistory[currentEpoch].trust2 * 100).toFixed(0)}%
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Current Epoch Relationship Snapshot */}
+      <div>
+        <h4 className="text-sm font-bold text-gray-400 mb-2">Relationships at Epoch {currentEpoch + 1}</h4>
+        <div className="max-h-48 overflow-y-auto space-y-1">
+          {currentData?.relationships.slice(0, 10).map((rel, i) => {
+            const avgTrust = (rel.trust1to2 + rel.trust2to1) / 2;
+            let color = 'bg-gray-600';
+            if (avgTrust > 0.7) color = 'bg-green-600';
+            else if (avgTrust > 0.5) color = 'bg-blue-600';
+            else if (avgTrust < 0.3) color = 'bg-red-600';
+
+            return (
+              <div
+                key={i}
+                onClick={() => setSelectedPair({ agent1: rel.agent1Name, agent2: rel.agent2Name })}
+                className="flex items-center gap-2 p-2 bg-gray-900/50 rounded cursor-pointer hover:bg-gray-800"
+              >
+                <div className={`w-2 h-2 rounded-full ${color}`} />
+                <span className="text-sm text-white flex-1">{rel.agent1Name} ↔ {rel.agent2Name}</span>
+                <span className="text-xs text-blue-400">{(rel.trust1to2 * 100).toFixed(0)}%</span>
+                <span className="text-xs text-gray-500">↔</span>
+                <span className="text-xs text-green-400">{(rel.trust2to1 * 100).toFixed(0)}%</span>
+              </div>
+            );
+          })}
+          {(currentData?.relationships.length ?? 0) > 10 && (
+            <div className="text-xs text-gray-500 text-center py-1">
+              +{currentData!.relationships.length - 10} more
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
+// Narrative Panel Component
+// ============================================================================
+
 function NarrativePanel({
   narrative,
   onClose,
   onAnimate,
   relationships,
   onCharacterClick,
+  simulationResult,
 }: {
   narrative: SocietyNarrative;
   onClose: () => void;
   onAnimate?: () => void;
   relationships?: RelationshipMap;
   onCharacterClick?: (name: string) => void;
+  simulationResult?: SocietyResult;
 }) {
   const [activeTab, setActiveTab] = useState<'story' | 'characters' | 'moments' | 'relationships'>('story');
-  const [relationshipViewMode, setRelationshipViewMode] = useState<'list' | 'graph'>('list');
+  const [relationshipViewMode, setRelationshipViewMode] = useState<'list' | 'graph' | 'timeline'>('list');
 
   const STATUS_COLORS: Record<CharacterProfile['finalStatus'], string> = {
     thriving: 'text-green-400',
@@ -2387,6 +2687,18 @@ function NarrativePanel({
                   >
                     🕸️ Graph
                   </button>
+                  {simulationResult && (
+                    <button
+                      onClick={() => setRelationshipViewMode('timeline')}
+                      className={`px-3 py-1 text-xs rounded transition-colors ${
+                        relationshipViewMode === 'timeline'
+                          ? 'bg-amber-600 text-white'
+                          : 'text-gray-400 hover:text-white'
+                      }`}
+                    >
+                      🕐 Timeline
+                    </button>
+                  )}
                 </div>
               </div>
 
@@ -2398,6 +2710,11 @@ function NarrativePanel({
                     characters={narrative.characters}
                   />
                 </div>
+              )}
+
+              {/* Timeline View */}
+              {relationshipViewMode === 'timeline' && simulationResult && (
+                <RelationshipTimelineScrubber result={simulationResult} />
               )}
 
               {/* List View */}
@@ -3149,6 +3466,7 @@ export default function SocietySimulatorPage() {
           <NarrativePanel
             narrative={narrative}
             relationships={narrativeRelationships || undefined}
+            simulationResult={result || undefined}
             onClose={() => setShowNarrative(false)}
             onAnimate={() => {
               setShowNarrative(false);
@@ -3378,6 +3696,7 @@ export default function SocietySimulatorPage() {
           <NarrativePanel
             narrative={narrative}
             relationships={narrativeRelationships || undefined}
+            simulationResult={result || undefined}
             onClose={() => setShowNarrative(false)}
             onAnimate={() => {
               setShowNarrative(false);
