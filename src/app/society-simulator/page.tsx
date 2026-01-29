@@ -891,6 +891,180 @@ function MetricsChart({ history }: { history: { trust: number; cooperation: numb
 }
 
 // ============================================================================
+// Scenario Comparison Panel
+// ============================================================================
+
+function ComparisonPanel({
+  savedResults,
+  onRemove,
+  onClose,
+}: {
+  savedResults: { label: string; result: SocietyResult }[];
+  onRemove: (index: number) => void;
+  onClose: () => void;
+}) {
+  const colors = ['#3b82f6', '#22c55e', '#f59e0b', '#ef4444', '#a855f7'];
+
+  // Calculate comparison metrics
+  const comparison = savedResults.map((sr, i) => ({
+    label: sr.label,
+    color: colors[i % colors.length],
+    trust: sr.result.finalMetrics.averageTrust,
+    cooperation: sr.result.finalMetrics.cooperationRate,
+    gini: sr.result.finalMetrics.giniCoefficient,
+    coalitions: sr.result.finalMetrics.numCoalitions,
+    generations: sr.result.finalMetrics.totalGenerations,
+    events: sr.result.events.length,
+  }));
+
+  // Find best/worst for each metric
+  const bestTrust = comparison.reduce((best, c) => c.trust > best.trust ? c : best, comparison[0]);
+  const bestCoop = comparison.reduce((best, c) => c.cooperation > best.cooperation ? c : best, comparison[0]);
+  const lowestGini = comparison.reduce((best, c) => c.gini < best.gini ? c : best, comparison[0]);
+
+  return (
+    <div className="bg-gray-800/80 rounded-lg p-4 border border-purple-500/30 mb-6">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-lg font-bold text-white">📊 Scenario Comparison</h3>
+        <button onClick={onClose} className="text-gray-400 hover:text-white text-xl">×</button>
+      </div>
+
+      {/* Comparison Table */}
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-gray-700">
+              <th className="text-left py-2 px-2 text-gray-400 font-normal">Scenario</th>
+              <th className="text-right py-2 px-2 text-gray-400 font-normal">Trust</th>
+              <th className="text-right py-2 px-2 text-gray-400 font-normal">Cooperation</th>
+              <th className="text-right py-2 px-2 text-gray-400 font-normal">Gini</th>
+              <th className="text-right py-2 px-2 text-gray-400 font-normal">Coalitions</th>
+              <th className="text-right py-2 px-2 text-gray-400 font-normal">Events</th>
+              <th className="py-2 px-2"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.map((c, i) => (
+              <tr key={i} className="border-b border-gray-700/50 hover:bg-gray-700/20">
+                <td className="py-2 px-2">
+                  <span className="inline-block w-2 h-2 rounded-full mr-2" style={{ backgroundColor: c.color }} />
+                  {c.label}
+                </td>
+                <td className={`text-right py-2 px-2 ${c === bestTrust ? 'text-green-400 font-bold' : 'text-gray-300'}`}>
+                  {(c.trust * 100).toFixed(1)}%
+                </td>
+                <td className={`text-right py-2 px-2 ${c === bestCoop ? 'text-green-400 font-bold' : 'text-gray-300'}`}>
+                  {(c.cooperation * 100).toFixed(1)}%
+                </td>
+                <td className={`text-right py-2 px-2 ${c === lowestGini ? 'text-green-400 font-bold' : 'text-gray-300'}`}>
+                  {c.gini.toFixed(3)}
+                </td>
+                <td className="text-right py-2 px-2 text-gray-300">{c.coalitions}</td>
+                <td className="text-right py-2 px-2 text-gray-300">{c.events}</td>
+                <td className="py-2 px-2">
+                  <button
+                    onClick={() => onRemove(i)}
+                    className="text-gray-500 hover:text-red-400 text-sm"
+                    title="Remove from comparison"
+                  >
+                    ×
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Visual Comparison Bars */}
+      <div className="mt-4 space-y-3">
+        <div>
+          <div className="flex items-center justify-between text-xs text-gray-400 mb-1">
+            <span>Average Trust</span>
+            <span>Best: {bestTrust.label}</span>
+          </div>
+          <div className="flex gap-1 h-6">
+            {comparison.map((c, i) => (
+              <div
+                key={i}
+                className="rounded relative group"
+                style={{
+                  width: `${(c.trust / 1) * 100}%`,
+                  backgroundColor: c.color,
+                  minWidth: '24px',
+                }}
+              >
+                <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-white/80">
+                  {(c.trust * 100).toFixed(0)}%
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <div className="flex items-center justify-between text-xs text-gray-400 mb-1">
+            <span>Cooperation Rate</span>
+            <span>Best: {bestCoop.label}</span>
+          </div>
+          <div className="flex gap-1 h-6">
+            {comparison.map((c, i) => (
+              <div
+                key={i}
+                className="rounded relative"
+                style={{
+                  width: `${(c.cooperation / 1) * 100}%`,
+                  backgroundColor: c.color,
+                  minWidth: '24px',
+                }}
+              >
+                <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-white/80">
+                  {(c.cooperation * 100).toFixed(0)}%
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <div className="flex items-center justify-between text-xs text-gray-400 mb-1">
+            <span>Inequality (Gini)</span>
+            <span>Most Equal: {lowestGini.label}</span>
+          </div>
+          <div className="flex gap-1 h-6">
+            {comparison.map((c, i) => (
+              <div
+                key={i}
+                className="rounded relative"
+                style={{
+                  width: `${(c.gini / 0.5) * 100}%`,
+                  backgroundColor: c.color,
+                  minWidth: '24px',
+                }}
+              >
+                <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-white/80">
+                  {c.gini.toFixed(2)}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Key Insights */}
+      <div className="mt-4 pt-3 border-t border-gray-700">
+        <h4 className="text-sm font-bold text-gray-400 mb-2">Key Insights</h4>
+        <ul className="text-sm text-gray-300 space-y-1">
+          <li>• <strong className="text-green-400">{bestTrust.label}</strong> achieved the highest trust ({(bestTrust.trust * 100).toFixed(1)}%)</li>
+          <li>• <strong className="text-green-400">{bestCoop.label}</strong> had the most cooperation ({(bestCoop.cooperation * 100).toFixed(1)}%)</li>
+          <li>• <strong className="text-green-400">{lowestGini.label}</strong> had the most equal society (Gini {lowestGini.gini.toFixed(3)})</li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
 // Main Page
 // ============================================================================
 
@@ -909,6 +1083,8 @@ export default function SocietySimulatorPage() {
   const [mode, setMode] = useState<'animated' | 'instant'>('animated');
   const [actPanelOpen, setActPanelOpen] = useState(false);
   const [agentClickTrigger, setAgentClickTrigger] = useState(0);  // Increment on agent click to trigger ACT query
+  const [savedResults, setSavedResults] = useState<{ label: string; result: SocietyResult }[]>([]);
+  const [showComparison, setShowComparison] = useState(false);
   const cancelRef = useRef(false);
 
   // Custom config overrides
@@ -1118,6 +1294,34 @@ export default function SocietySimulatorPage() {
                 Stop
               </button>
             )}
+
+            {/* Save & Compare buttons */}
+            {result && !running && (
+              <button
+                onClick={() => {
+                  const label = SOCIETY_PRESETS[selectedPreset]?.label || selectedPreset;
+                  const existingCount = savedResults.filter(r => r.label.startsWith(label)).length;
+                  const uniqueLabel = existingCount > 0 ? `${label} #${existingCount + 1}` : label;
+                  setSavedResults(prev => [...prev.slice(-4), { label: uniqueLabel, result }]);
+                }}
+                className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-medium transition-colors"
+                title="Save this result for comparison"
+              >
+                💾 Save Result
+              </button>
+            )}
+            {savedResults.length >= 2 && (
+              <button
+                onClick={() => setShowComparison(!showComparison)}
+                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                  showComparison
+                    ? 'bg-sky-600 text-white'
+                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                }`}
+              >
+                📊 Compare ({savedResults.length})
+              </button>
+            )}
           </div>
         </div>
 
@@ -1130,6 +1334,15 @@ export default function SocietySimulatorPage() {
             </div>
           ))}
         </div>
+
+        {/* Comparison Panel */}
+        {showComparison && savedResults.length >= 2 && (
+          <ComparisonPanel
+            savedResults={savedResults}
+            onRemove={(index) => setSavedResults(prev => prev.filter((_, i) => i !== index))}
+            onClose={() => setShowComparison(false)}
+          />
+        )}
 
         {/* Main Content */}
         {(agents.length > 0 || result) && (
