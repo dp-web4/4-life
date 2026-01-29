@@ -57,6 +57,7 @@ function ACTChatPanel({
   currentEpoch,
   isOpen,
   onToggle,
+  agentClickTrigger,
 }: {
   agents: AgentSnapshot[];
   coalitions: Coalition[];
@@ -67,20 +68,148 @@ function ACTChatPanel({
   currentEpoch: number;
   isOpen: boolean;
   onToggle: () => void;
+  agentClickTrigger: number;  // Increments when agent is clicked (not just selected)
 }) {
   const [messages, setMessages] = useState<ACTMessage[]>([
     {
       id: '0',
       role: 'assistant',
-      content: "I'm ACT, your guide to this society simulation.\n\nRun a simulation, then ask me questions like:\n- \"Who is winning?\"\n- \"How are coalitions forming?\"\n- \"Why are defectors struggling?\"",
+      content: "I'm ACT, your guide to this society simulation.\n\nRun a simulation, then ask me questions like:\n- \"Who is winning?\"\n- \"How are coalitions forming?\"\n- \"Why are defectors struggling?\"\n\n**Tip**: Click any agent in the network graph to ask about them!",
     }
   ]);
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const lastTriggerRef = useRef(0);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  // Auto-query when agent is clicked (trigger changed, and we have a selected agent)
+  useEffect(() => {
+    if (agentClickTrigger === 0 || agentClickTrigger === lastTriggerRef.current) return;
+    lastTriggerRef.current = agentClickTrigger;
+
+    if (selectedAgentId === null || agents.length === 0) return;
+
+    const agent = agents.find(a => a.id === selectedAgentId);
+    if (!agent) return;
+
+    // Auto-open panel if closed
+    if (!isOpen) {
+      onToggle();
+    }
+
+    // Generate query about the agent
+    const queryText = `Tell me about ${agent.name}`;
+    const userMessage: ACTMessage = {
+      id: Date.now().toString(),
+      role: 'user',
+      content: queryText,
+    };
+    setMessages(prev => [...prev, userMessage]);
+
+    // Process with ACT engine
+    const query: Query = {
+      text: queryText,
+      type: 'society_analysis',
+      context: {
+        societyAgents: agents,
+        societyCoalitions: coalitions,
+        societyMetrics: metrics || undefined,
+        societyEvents: events,
+        selectedAgentId: selectedAgentId,
+        societyResult: result || undefined,
+        currentEpoch,
+      }
+    };
+
+    const response = queryEngine.processQuery(query);
+    setMessages(prev => [...prev, {
+      id: (Date.now() + 1).toString(),
+      role: 'assistant',
+      content: response.text,
+      response,
+    }]);
+  }, [agentClickTrigger, selectedAgentId, agents, coalitions, metrics, events, result, currentEpoch, isOpen, onToggle]);
+
+  // Track processed events to avoid re-prompting
+  const processedEventsRef = useRef<Set<string>>(new Set());
+  const [eventSuggestions, setEventSuggestions] = useState<{ question: string; eventType: string; emoji: string }[]>([]);
+
+  // Generate suggestions when interesting events happen
+  useEffect(() => {
+    if (events.length === 0) return;
+
+    const newSuggestions: { question: string; eventType: string; emoji: string }[] = [];
+
+    for (const event of events) {
+      // Create unique event key to avoid duplicates
+      const eventKey = `${event.epoch}-${event.type}-${event.message.slice(0, 30)}`;
+      if (processedEventsRef.current.has(eventKey)) continue;
+      processedEventsRef.current.add(eventKey);
+
+      // Generate relevant question based on event type
+      switch (event.type) {
+        case 'coalition_formed':
+          newSuggestions.push({
+            question: "Why did this coalition form?",
+            eventType: 'coalition',
+            emoji: '👥'
+          });
+          break;
+        case 'defector_isolated':
+          newSuggestions.push({
+            question: "Why are defectors getting isolated?",
+            eventType: 'defector',
+            emoji: '🏝️'
+          });
+          break;
+        case 'trust_collapse':
+          newSuggestions.push({
+            question: "Why did trust collapse?",
+            eventType: 'crisis',
+            emoji: '📉'
+          });
+          break;
+        case 'cooperation_surge':
+          newSuggestions.push({
+            question: "Why is cooperation surging?",
+            eventType: 'cooperation',
+            emoji: '🤝'
+          });
+          break;
+        case 'agent_death':
+          newSuggestions.push({
+            question: "What caused this agent to die?",
+            eventType: 'death',
+            emoji: '💀'
+          });
+          break;
+        case 'society_stable':
+          newSuggestions.push({
+            question: "What made this society succeed?",
+            eventType: 'stable',
+            emoji: '✨'
+          });
+          break;
+      }
+    }
+
+    if (newSuggestions.length > 0) {
+      // Keep only unique suggestions by eventType, limit to 3
+      setEventSuggestions(prev => {
+        const existing = new Set(prev.map(s => s.eventType));
+        const filtered = newSuggestions.filter(s => !existing.has(s.eventType));
+        return [...prev, ...filtered].slice(-3);
+      });
+    }
+  }, [events]);
+
+  // Clear suggestions when asked
+  const clearEventSuggestion = (eventType: string) => {
+    setEventSuggestions(prev => prev.filter(s => s.eventType !== eventType));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -123,15 +252,74 @@ function ACTChatPanel({
     setInput(suggestion);
   };
 
+  // Handle clicking an event suggestion when panel is closed
+  const handleEventSuggestionClick = (question: string, eventType: string) => {
+    // Open panel and auto-submit the question
+    onToggle();
+    // Use setTimeout to ensure panel opens first
+    setTimeout(() => {
+      const userMessage: ACTMessage = {
+        id: Date.now().toString(),
+        role: 'user',
+        content: question,
+      };
+      setMessages(prev => [...prev, userMessage]);
+      clearEventSuggestion(eventType);
+
+      // Process with ACT engine
+      const query: Query = {
+        text: question,
+        type: 'society_analysis',
+        context: {
+          societyAgents: agents,
+          societyCoalitions: coalitions,
+          societyMetrics: metrics || undefined,
+          societyEvents: events,
+          selectedAgentId: selectedAgentId || undefined,
+          societyResult: result || undefined,
+          currentEpoch,
+        }
+      };
+
+      const response = queryEngine.processQuery(query);
+      setMessages(prev => [...prev, {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: response.text,
+        response,
+      }]);
+    }, 100);
+  };
+
   if (!isOpen) {
     return (
-      <button
-        onClick={onToggle}
-        className="fixed bottom-4 right-4 px-4 py-3 bg-gradient-to-r from-sky-600 to-purple-600 hover:from-sky-500 hover:to-purple-500 rounded-full text-white font-bold shadow-lg transition-all flex items-center gap-2 z-50"
-      >
-        <span className="text-lg">💬</span>
-        <span>Ask ACT</span>
-      </button>
+      <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-2">
+        {/* Event-triggered suggestions */}
+        {eventSuggestions.map((suggestion, i) => (
+          <button
+            key={`${suggestion.eventType}-${i}`}
+            onClick={() => handleEventSuggestionClick(suggestion.question, suggestion.eventType)}
+            className="px-3 py-2 bg-gray-800/95 hover:bg-gray-700 border border-purple-500/50 rounded-lg text-white text-sm shadow-lg transition-all flex items-center gap-2 animate-pulse"
+          >
+            <span>{suggestion.emoji}</span>
+            <span className="text-gray-300">{suggestion.question}</span>
+            <span className="text-purple-400">→</span>
+          </button>
+        ))}
+        {/* Main ACT button */}
+        <button
+          onClick={onToggle}
+          className="px-4 py-3 bg-gradient-to-r from-sky-600 to-purple-600 hover:from-sky-500 hover:to-purple-500 rounded-full text-white font-bold shadow-lg transition-all flex items-center gap-2"
+        >
+          <span className="text-lg">💬</span>
+          <span>Ask ACT</span>
+          {eventSuggestions.length > 0 && (
+            <span className="ml-1 px-1.5 py-0.5 bg-white/20 rounded-full text-xs">
+              {eventSuggestions.length}
+            </span>
+          )}
+        </button>
+      </div>
     );
   }
 
@@ -720,6 +908,7 @@ export default function SocietySimulatorPage() {
   const [metricsHistory, setMetricsHistory] = useState<{ trust: number; cooperation: number; coalitions: number }[]>([]);
   const [mode, setMode] = useState<'animated' | 'instant'>('animated');
   const [actPanelOpen, setActPanelOpen] = useState(false);
+  const [agentClickTrigger, setAgentClickTrigger] = useState(0);  // Increment on agent click to trigger ACT query
   const cancelRef = useRef(false);
 
   // Custom config overrides
@@ -961,12 +1150,17 @@ export default function SocietySimulatorPage() {
                   agents={agents}
                   coalitions={coalitions}
                   selectedAgentId={selectedAgentId}
-                  onSelectAgent={setSelectedAgentId}
+                  onSelectAgent={(id) => {
+                    setSelectedAgentId(id);
+                    // Only trigger ACT query when selecting an agent (not deselecting)
+                    if (id !== null) {
+                      setAgentClickTrigger(t => t + 1);
+                    }
+                  }}
                   interactions={interactions}
                 />
                 <p className="text-xs text-gray-500 mt-2 text-center">
-                  Click an agent to inspect. Lines show trust relationships.
-                  Numbers show cooperation rate.
+                  Click an agent to learn about them. Lines show trust relationships.
                 </p>
               </div>
 
@@ -1105,6 +1299,7 @@ export default function SocietySimulatorPage() {
           currentEpoch={currentEpoch}
           isOpen={actPanelOpen}
           onToggle={() => setActPanelOpen(!actPanelOpen)}
+          agentClickTrigger={agentClickTrigger}
         />
       </div>
     </div>
