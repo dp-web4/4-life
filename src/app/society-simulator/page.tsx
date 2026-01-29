@@ -19,6 +19,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
+import { queryEngine, type Query, type Response as ACTResponse } from '@/lib/act/query_engine';
 import {
   SocietyEngine,
   SocietyConfig,
@@ -34,6 +35,212 @@ import {
   Interaction,
   StrategyType,
 } from '@/lib/simulation/society-engine';
+
+// ============================================================================
+// ACT Chat Panel Component
+// ============================================================================
+
+interface ACTMessage {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  response?: ACTResponse;
+}
+
+function ACTChatPanel({
+  agents,
+  coalitions,
+  metrics,
+  events,
+  selectedAgentId,
+  result,
+  currentEpoch,
+  isOpen,
+  onToggle,
+}: {
+  agents: AgentSnapshot[];
+  coalitions: Coalition[];
+  metrics: SocietyMetrics | null;
+  events: SocietyEvent[];
+  selectedAgentId: number | null;
+  result: SocietyResult | null;
+  currentEpoch: number;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  const [messages, setMessages] = useState<ACTMessage[]>([
+    {
+      id: '0',
+      role: 'assistant',
+      content: "I'm ACT, your guide to this society simulation.\n\nRun a simulation, then ask me questions like:\n- \"Who is winning?\"\n- \"How are coalitions forming?\"\n- \"Why are defectors struggling?\"",
+    }
+  ]);
+  const [input, setInput] = useState('');
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+
+    const userMessage: ACTMessage = {
+      id: Date.now().toString(),
+      role: 'user',
+      content: input.trim(),
+    };
+    setMessages(prev => [...prev, userMessage]);
+    setInput('');
+
+    // Process with ACT query engine
+    const query: Query = {
+      text: userMessage.content,
+      type: 'general',
+      context: {
+        societyAgents: agents,
+        societyCoalitions: coalitions,
+        societyMetrics: metrics || undefined,
+        societyEvents: events,
+        selectedAgentId: selectedAgentId || undefined,
+        societyResult: result || undefined,
+        currentEpoch,
+      }
+    };
+
+    const response = queryEngine.processQuery(query);
+
+    setMessages(prev => [...prev, {
+      id: (Date.now() + 1).toString(),
+      role: 'assistant',
+      content: response.text,
+      response,
+    }]);
+  };
+
+  const handleSuggestion = (suggestion: string) => {
+    setInput(suggestion);
+  };
+
+  if (!isOpen) {
+    return (
+      <button
+        onClick={onToggle}
+        className="fixed bottom-4 right-4 px-4 py-3 bg-gradient-to-r from-sky-600 to-purple-600 hover:from-sky-500 hover:to-purple-500 rounded-full text-white font-bold shadow-lg transition-all flex items-center gap-2 z-50"
+      >
+        <span className="text-lg">💬</span>
+        <span>Ask ACT</span>
+      </button>
+    );
+  }
+
+  return (
+    <div className="fixed bottom-4 right-4 w-96 h-[500px] bg-gray-900 border border-gray-700 rounded-lg shadow-2xl flex flex-col z-50">
+      {/* Header */}
+      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-700 bg-gradient-to-r from-sky-900/50 to-purple-900/50 rounded-t-lg">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 bg-gradient-to-br from-sky-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+            ACT
+          </div>
+          <div>
+            <h3 className="font-semibold text-white text-sm">Society Guide</h3>
+            <p className="text-xs text-gray-400">Ask about the simulation</p>
+          </div>
+        </div>
+        <button
+          onClick={onToggle}
+          className="text-gray-400 hover:text-white transition-colors text-xl"
+        >
+          ×
+        </button>
+      </div>
+
+      {/* Messages */}
+      <div className="flex-1 overflow-y-auto px-3 py-2 space-y-3">
+        {messages.map(msg => (
+          <div
+            key={msg.id}
+            className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+          >
+            <div
+              className={`max-w-[85%] rounded-lg px-3 py-2 text-sm ${
+                msg.role === 'user'
+                  ? 'bg-sky-600 text-white'
+                  : 'bg-gray-800 text-gray-100 border border-gray-700'
+              }`}
+            >
+              {msg.content.split('\n').map((line, i) => {
+                // Parse bold text
+                const parts = line.split(/(\*\*.*?\*\*)/g);
+                return (
+                  <p key={i} className="mb-1 last:mb-0">
+                    {parts.map((part, j) => {
+                      if (part.startsWith('**') && part.endsWith('**')) {
+                        return <strong key={j}>{part.slice(2, -2)}</strong>;
+                      }
+                      return <span key={j}>{part}</span>;
+                    })}
+                  </p>
+                );
+              })}
+
+              {/* Suggested queries */}
+              {msg.response?.suggestedQueries && (
+                <div className="mt-2 pt-2 border-t border-gray-700 flex flex-wrap gap-1">
+                  {msg.response.suggestedQueries.slice(0, 3).map((q, i) => (
+                    <button
+                      key={i}
+                      onClick={() => handleSuggestion(q)}
+                      className="text-xs px-2 py-0.5 bg-gray-700 hover:bg-gray-600 rounded text-gray-300 transition-colors"
+                    >
+                      {q.length > 25 ? q.slice(0, 25) + '...' : q}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+        <div ref={messagesEndRef} />
+      </div>
+
+      {/* Input */}
+      <div className="p-3 border-t border-gray-700">
+        <form onSubmit={handleSubmit} className="flex gap-2">
+          <input
+            type="text"
+            value={input}
+            onChange={e => setInput(e.target.value)}
+            placeholder="Ask about the society..."
+            className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded text-white text-sm placeholder-gray-500 focus:outline-none focus:border-sky-500"
+          />
+          <button
+            type="submit"
+            disabled={!input.trim()}
+            className="px-4 py-2 bg-sky-600 hover:bg-sky-500 disabled:bg-gray-700 disabled:cursor-not-allowed rounded text-white text-sm font-medium transition-colors"
+          >
+            Send
+          </button>
+        </form>
+        <div className="mt-2 flex flex-wrap gap-1">
+          {agents.length > 0 ? (
+            <>
+              <button onClick={() => handleSuggestion("Who is winning?")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">Who&apos;s winning?</button>
+              <button onClick={() => handleSuggestion("Tell me about coalitions")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">Coalitions</button>
+              <button onClick={() => handleSuggestion("Compare strategies")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">Strategies</button>
+            </>
+          ) : (
+            <>
+              <button onClick={() => handleSuggestion("What is this simulator?")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">What is this?</button>
+              <button onClick={() => handleSuggestion("Explain strategies")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">Strategies</button>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // ============================================================================
 // Network Graph Component
@@ -512,6 +719,7 @@ export default function SocietySimulatorPage() {
   const [selectedAgentId, setSelectedAgentId] = useState<number | null>(null);
   const [metricsHistory, setMetricsHistory] = useState<{ trust: number; cooperation: number; coalitions: number }[]>([]);
   const [mode, setMode] = useState<'animated' | 'instant'>('animated');
+  const [actPanelOpen, setActPanelOpen] = useState(false);
   const cancelRef = useRef(false);
 
   // Custom config overrides
@@ -885,6 +1093,19 @@ export default function SocietySimulatorPage() {
         </div>
 
         <ExplorerNav currentPath="/society-simulator" />
+
+        {/* ACT Chat Panel */}
+        <ACTChatPanel
+          agents={agents}
+          coalitions={coalitions}
+          metrics={metrics}
+          events={events}
+          selectedAgentId={selectedAgentId}
+          result={result}
+          currentEpoch={currentEpoch}
+          isOpen={actPanelOpen}
+          onToggle={() => setActPanelOpen(!actPanelOpen)}
+        />
       </div>
     </div>
   );

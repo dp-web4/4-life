@@ -25,6 +25,15 @@
 import type { SimulationResult, LifeCycle, ActionRecord } from '@/lib/types';
 import type { Moment, MomentCategory } from '@/lib/moments/types';
 import { CATEGORY_INFO, CATEGORY_PRIORITY } from '@/lib/moments/types';
+import type {
+  SocietyResult,
+  AgentSnapshot,
+  Coalition,
+  SocietyMetrics,
+  SocietyEvent,
+  StrategyType,
+} from '@/lib/simulation/society-engine';
+import { STRATEGY_LABELS, STRATEGY_COLORS } from '@/lib/simulation/society-engine';
 
 export interface Query {
   text: string;
@@ -40,6 +49,7 @@ export type QueryType =
   | 'attack_explanation'
   | 'exploration_guidance'
   | 'moment_exploration'
+  | 'society_analysis'  // NEW: Society Simulator queries
   | 'general';
 
 export interface QueryContext {
@@ -49,6 +59,14 @@ export interface QueryContext {
   comparisonSimulation?: SimulationResult;
   moments?: Moment[];  // Pre-loaded moments for moment-aware queries
   selectedMoment?: Moment;  // Currently selected moment for detailed explanation
+  // NEW: Society Simulator context
+  societyResult?: SocietyResult;
+  societyAgents?: AgentSnapshot[];
+  societyCoalitions?: Coalition[];
+  societyMetrics?: SocietyMetrics;
+  societyEvents?: SocietyEvent[];
+  selectedAgentId?: number;
+  currentEpoch?: number;
 }
 
 export interface Response {
@@ -89,6 +107,8 @@ export class ACTQueryEngine {
         return this.suggestExploration(query);
       case 'moment_exploration':
         return this.exploreMoments(query);
+      case 'society_analysis':
+        return this.analyzeSociety(query);
       default:
         return this.handleGeneral(query);
     }
@@ -161,6 +181,27 @@ export class ACTQueryEngine {
       return 'concept_explanation';
     }
 
+    // Society simulation patterns - check BEFORE moment exploration
+    if (
+      lower.includes('agent') ||
+      lower.includes('defector') ||
+      lower.includes('cooperator') ||
+      lower.includes('reciprocator') ||
+      lower.includes('strategy') ||
+      lower.includes('society') ||
+      lower.includes('coalition') ||
+      lower.includes('gini') ||
+      lower.includes('inequality') ||
+      lower.includes('network density') ||
+      lower.includes('who is winning') ||
+      lower.includes('who is losing') ||
+      lower.includes('how is the society') ||
+      lower.includes('cooperation rate') ||
+      lower.includes('why did') && lower.includes('form')
+    ) {
+      return 'society_analysis';
+    }
+
     // Moment exploration patterns
     if (
       lower.includes('moment') ||
@@ -171,8 +212,7 @@ export class ACTQueryEngine {
       lower.includes('key event') ||
       lower.includes('significant') ||
       (lower.includes('karma') && lower.includes('event')) ||
-      (lower.includes('consciousness') && lower.includes('cross')) ||
-      lower.includes('coalition')
+      (lower.includes('consciousness') && lower.includes('cross'))
     ) {
       return 'moment_exploration';
     }
@@ -1414,6 +1454,744 @@ export class ACTQueryEngine {
         "Compare to baseline simulation"
       ]
     };
+  }
+
+  // ============================================================================
+  // Society Simulator Analysis (Session #44)
+  // ============================================================================
+
+  /**
+   * Analyze society simulation - agents, coalitions, dynamics
+   */
+  private analyzeSociety(query: Query): Response {
+    const { context } = query;
+    const lower = query.text.toLowerCase();
+
+    // Check if we have society context
+    if (!context?.societyAgents || context.societyAgents.length === 0) {
+      return {
+        text: `**Run a Society Simulation First**\n\n` +
+          `I can analyze multi-agent trust dynamics once you run a simulation.\n\n` +
+          `Click **Run Society** above to start, then ask me questions like:\n` +
+          `- "Why did Alice lose trust?"\n` +
+          `- "How are coalitions forming?"\n` +
+          `- "Which strategy is winning?"\n` +
+          `- "Is inequality increasing?"`,
+        type: 'suggestion',
+        suggestedQueries: [
+          "What is the Society Simulator?",
+          "Explain agent strategies",
+          "How do coalitions form?",
+          "What is the Gini coefficient?"
+        ]
+      };
+    }
+
+    // Route to specific analysis
+    if (lower.includes('who') && (lower.includes('winning') || lower.includes('best'))) {
+      return this.analyzeWinners(context);
+    }
+    if (lower.includes('who') && (lower.includes('losing') || lower.includes('worst') || lower.includes('struggling'))) {
+      return this.analyzeLosers(context);
+    }
+    if (lower.includes('coalition')) {
+      return this.analyzeCoalitions(context);
+    }
+    if (lower.includes('defector')) {
+      return this.analyzeDefectors(context);
+    }
+    if (lower.includes('cooperator')) {
+      return this.analyzeCooperators(context);
+    }
+    if (lower.includes('strategy') || lower.includes('strategies')) {
+      return this.analyzeStrategies(context);
+    }
+    if (lower.includes('inequality') || lower.includes('gini')) {
+      return this.analyzeInequality(context);
+    }
+    if (lower.includes('network') || lower.includes('density')) {
+      return this.analyzeNetwork(context);
+    }
+    if (context.selectedAgentId !== undefined) {
+      return this.analyzeSelectedAgent(context);
+    }
+
+    // Default: general society overview
+    return this.analyzeSocietyOverview(context);
+  }
+
+  /**
+   * General society overview
+   */
+  private analyzeSocietyOverview(context: QueryContext): Response {
+    const agents = context.societyAgents!;
+    const metrics = context.societyMetrics;
+    const coalitions = context.societyCoalitions || [];
+    const events = context.societyEvents || [];
+    const epoch = context.currentEpoch ?? 0;
+
+    let text = `**Society Status (Epoch ${epoch + 1})**\n\n`;
+
+    if (metrics) {
+      // Trust assessment
+      const trustLevel = metrics.averageTrust > 0.6 ? 'thriving' :
+                        metrics.averageTrust > 0.4 ? 'stable' :
+                        metrics.averageTrust > 0.25 ? 'struggling' : 'collapsing';
+      text += `🤝 **Trust**: ${metrics.averageTrust.toFixed(2)} average (${trustLevel})\n`;
+
+      // Cooperation
+      const coopLevel = metrics.cooperationRate > 0.7 ? 'highly cooperative' :
+                       metrics.cooperationRate > 0.5 ? 'moderately cooperative' :
+                       metrics.cooperationRate > 0.3 ? 'mixed' : 'competitive';
+      text += `🤲 **Cooperation**: ${(metrics.cooperationRate * 100).toFixed(0)}% (${coopLevel})\n`;
+
+      // Coalitions
+      if (coalitions.length > 0) {
+        text += `👥 **Coalitions**: ${coalitions.length} formed`;
+        if (metrics.largestCoalition > 0) {
+          text += ` (largest has ${metrics.largestCoalition} members)`;
+        }
+        text += `\n`;
+      } else {
+        text += `👥 **Coalitions**: None yet - trust hasn't crossed threshold\n`;
+      }
+
+      // Inequality
+      const inequalityLevel = metrics.giniCoefficient < 0.25 ? 'very equal' :
+                             metrics.giniCoefficient < 0.4 ? 'moderate inequality' :
+                             metrics.giniCoefficient < 0.6 ? 'high inequality' : 'extreme inequality';
+      text += `📊 **Inequality**: Gini ${metrics.giniCoefficient.toFixed(2)} (${inequalityLevel})\n`;
+    }
+
+    text += `\n**Population**: ${agents.length} agents alive\n`;
+
+    // Strategy breakdown
+    const stratCounts: Record<string, number> = {};
+    agents.forEach(a => { stratCounts[a.strategy] = (stratCounts[a.strategy] || 0) + 1; });
+    const stratList = Object.entries(stratCounts)
+      .sort((a, b) => b[1] - a[1])
+      .map(([s, c]) => `${STRATEGY_LABELS[s as StrategyType]}: ${c}`)
+      .join(', ');
+    text += `**Strategies**: ${stratList}\n`;
+
+    // Recent notable events
+    if (events.length > 0) {
+      const recentEvents = events.slice(-3);
+      text += `\n**Recent Events**:\n`;
+      recentEvents.forEach(e => {
+        text += `- ${e.message}\n`;
+      });
+    }
+
+    return {
+      text,
+      type: 'explanation',
+      relatedConcepts: ['Multi-Agent Dynamics', 'Trust Networks', 'Coalition Formation'],
+      suggestedQueries: [
+        "Who is winning?",
+        "How are coalitions forming?",
+        "Why are defectors struggling?",
+        "Is inequality increasing?"
+      ]
+    };
+  }
+
+  /**
+   * Analyze who's winning (highest trust, ATP, etc.)
+   */
+  private analyzeWinners(context: QueryContext): Response {
+    const agents = context.societyAgents!;
+
+    // Sort by different metrics
+    const byTrust = [...agents].sort((a, b) => {
+      const aAvgTrust = a.trustEdges.length > 0
+        ? a.trustEdges.reduce((s, e) => s + e.trust, 0) / a.trustEdges.length
+        : 0;
+      const bAvgTrust = b.trustEdges.length > 0
+        ? b.trustEdges.reduce((s, e) => s + e.trust, 0) / b.trustEdges.length
+        : 0;
+      return bAvgTrust - aAvgTrust;
+    });
+    const byATP = [...agents].sort((a, b) => b.atp - a.atp);
+    const byReputation = [...agents].sort((a, b) => b.reputation - a.reputation);
+    const byCoalition = [...agents].sort((a, b) => b.coalitionSize - a.coalitionSize);
+
+    let text = `**Who's Winning?**\n\n`;
+
+    text += `💰 **Most ATP**: ${byATP[0].name} (${STRATEGY_LABELS[byATP[0].strategy]}) with ${byATP[0].atp.toFixed(0)} ATP\n`;
+    text += `⭐ **Best Reputation**: ${byReputation[0].name} (${STRATEGY_LABELS[byReputation[0].strategy]}) at ${byReputation[0].reputation.toFixed(2)}\n`;
+
+    if (byCoalition[0].coalitionSize > 0) {
+      text += `👥 **Most Connected**: ${byCoalition[0].name} with ${byCoalition[0].coalitionSize} coalition partners\n`;
+    }
+
+    text += `\n**Top 3 Overall** (by reputation):\n`;
+    byReputation.slice(0, 3).forEach((a, i) => {
+      text += `${i + 1}. **${a.name}** (${STRATEGY_LABELS[a.strategy]}): `;
+      text += `Rep ${a.reputation.toFixed(2)}, ATP ${a.atp.toFixed(0)}, `;
+      text += `${(a.cooperationRate * 100).toFixed(0)}% cooperation\n`;
+    });
+
+    // Insight about winning strategies
+    const winnerStrategies = byReputation.slice(0, 3).map(a => a.strategy);
+    const stratCount: Record<string, number> = {};
+    winnerStrategies.forEach(s => { stratCount[s] = (stratCount[s] || 0) + 1; });
+    const dominantWinnerStrat = Object.entries(stratCount).sort((a, b) => b[1] - a[1])[0];
+
+    if (dominantWinnerStrat && dominantWinnerStrat[1] >= 2) {
+      text += `\n**Insight**: ${STRATEGY_LABELS[dominantWinnerStrat[0] as StrategyType]}s are dominating the top spots. `;
+      text += this.getStrategyInsight(dominantWinnerStrat[0] as StrategyType, 'winning');
+    }
+
+    return {
+      text,
+      type: 'explanation',
+      relatedConcepts: ['Reputation', 'Trust Building', 'Coalition Benefits'],
+      suggestedQueries: [
+        "Who is losing?",
+        `Tell me about ${byReputation[0].name}`,
+        "Why do cooperators succeed?",
+        "How do coalitions help?"
+      ]
+    };
+  }
+
+  /**
+   * Analyze who's losing (lowest trust, ATP, etc.)
+   */
+  private analyzeLosers(context: QueryContext): Response {
+    const agents = context.societyAgents!;
+
+    const byReputation = [...agents].sort((a, b) => a.reputation - b.reputation);
+    const byATP = [...agents].sort((a, b) => a.atp - b.atp);
+    const isolated = agents.filter(a => a.coalitionSize === 0);
+
+    let text = `**Who's Struggling?**\n\n`;
+
+    text += `📉 **Lowest Reputation**: ${byReputation[0].name} (${STRATEGY_LABELS[byReputation[0].strategy]}) at ${byReputation[0].reputation.toFixed(2)}\n`;
+    text += `⚡ **Lowest ATP**: ${byATP[0].name} (${STRATEGY_LABELS[byATP[0].strategy]}) with ${byATP[0].atp.toFixed(0)}\n`;
+
+    if (isolated.length > 0) {
+      const isolatedNames = isolated.slice(0, 3).map(a => a.name).join(', ');
+      text += `🏝️ **Isolated** (no coalitions): ${isolatedNames}${isolated.length > 3 ? ` +${isolated.length - 3} more` : ''}\n`;
+    }
+
+    text += `\n**Bottom 3** (by reputation):\n`;
+    byReputation.slice(0, 3).forEach((a, i) => {
+      text += `${i + 1}. **${a.name}** (${STRATEGY_LABELS[a.strategy]}): `;
+      text += `Rep ${a.reputation.toFixed(2)}, ATP ${a.atp.toFixed(0)}, `;
+      text += `${(a.cooperationRate * 100).toFixed(0)}% cooperation\n`;
+    });
+
+    // Insight about losing strategies
+    const loserStrategies = byReputation.slice(0, 3).map(a => a.strategy);
+    const stratCount: Record<string, number> = {};
+    loserStrategies.forEach(s => { stratCount[s] = (stratCount[s] || 0) + 1; });
+    const dominantLoserStrat = Object.entries(stratCount).sort((a, b) => b[1] - a[1])[0];
+
+    if (dominantLoserStrat && dominantLoserStrat[1] >= 2) {
+      text += `\n**Insight**: ${STRATEGY_LABELS[dominantLoserStrat[0] as StrategyType]}s are disproportionately at the bottom. `;
+      text += this.getStrategyInsight(dominantLoserStrat[0] as StrategyType, 'losing');
+    }
+
+    return {
+      text,
+      type: 'explanation',
+      relatedConcepts: ['Trust Erosion', 'Social Isolation', 'Strategy Failure'],
+      suggestedQueries: [
+        "Who is winning?",
+        "Why do defectors fail?",
+        "Can isolated agents recover?",
+        "What happens when ATP hits 0?"
+      ]
+    };
+  }
+
+  /**
+   * Analyze coalitions
+   */
+  private analyzeCoalitions(context: QueryContext): Response {
+    const coalitions = context.societyCoalitions || [];
+    const agents = context.societyAgents!;
+
+    if (coalitions.length === 0) {
+      return {
+        text: `**No Coalitions Yet**\n\n` +
+          `Coalitions form when mutual trust between agents crosses the threshold (0.5).\n\n` +
+          `**Why no coalitions?**\n` +
+          `- Trust hasn't had time to build (early epochs)\n` +
+          `- Defectors are eroding trust faster than it builds\n` +
+          `- Cautious agents haven't warmed up yet\n\n` +
+          `Keep watching—cooperation often takes time to emerge.`,
+        type: 'explanation',
+        suggestedQueries: [
+          "Who has the most trust?",
+          "Which agents are closest to forming coalitions?",
+          "Why does trust take time to build?"
+        ]
+      };
+    }
+
+    let text = `**Coalition Analysis**\n\n`;
+    text += `${coalitions.length} coalition${coalitions.length > 1 ? 's' : ''} detected:\n\n`;
+
+    coalitions.slice(0, 3).forEach((c, i) => {
+      const memberNames = c.members
+        .map(id => agents.find(a => a.id === id)?.name || `#${id}`)
+        .join(', ');
+      text += `**Coalition ${i + 1}** (${c.members.length} members):\n`;
+      text += `- Members: ${memberNames}\n`;
+      text += `- Average internal trust: ${c.averageTrust.toFixed(2)}\n`;
+      text += `- Combined ATP: ${c.totalATP.toFixed(0)}\n`;
+      text += `- Dominant strategy: ${STRATEGY_LABELS[c.dominantStrategy]}\n\n`;
+    });
+
+    // Coalition vs non-coalition comparison
+    const coalitionMembers = new Set(coalitions.flatMap(c => c.members));
+    const inCoalition = agents.filter(a => coalitionMembers.has(a.id));
+    const notInCoalition = agents.filter(a => !coalitionMembers.has(a.id));
+
+    if (inCoalition.length > 0 && notInCoalition.length > 0) {
+      const avgRepInCoalition = inCoalition.reduce((s, a) => s + a.reputation, 0) / inCoalition.length;
+      const avgRepOutside = notInCoalition.reduce((s, a) => s + a.reputation, 0) / notInCoalition.length;
+
+      text += `**Coalition Effect**:\n`;
+      text += `- Coalition members avg reputation: ${avgRepInCoalition.toFixed(2)}\n`;
+      text += `- Non-members avg reputation: ${avgRepOutside.toFixed(2)}\n`;
+
+      if (avgRepInCoalition > avgRepOutside) {
+        text += `\nCoalition members are building trust faster—cooperation begets cooperation.`;
+      } else {
+        text += `\nInteresting: outsiders are doing well. This society may be more competitive than cooperative.`;
+      }
+    }
+
+    return {
+      text,
+      type: 'explanation',
+      relatedConcepts: ['Coalition Formation', 'Mutual Trust', 'Emergent Structure'],
+      suggestedQueries: [
+        "Why do coalitions form?",
+        "Who's isolated?",
+        "Can outsiders join coalitions?",
+        "What breaks coalitions apart?"
+      ]
+    };
+  }
+
+  /**
+   * Analyze defectors specifically
+   */
+  private analyzeDefectors(context: QueryContext): Response {
+    const agents = context.societyAgents!;
+    const defectors = agents.filter(a => a.strategy === 'defector');
+
+    if (defectors.length === 0) {
+      return {
+        text: `**No Defectors in This Society**\n\n` +
+          `This simulation doesn't include any pure defector agents. ` +
+          `Try the "Hostile World" scenario to see how defectors perform against cooperators.`,
+        type: 'suggestion',
+        suggestedQueries: [
+          "What is a defector?",
+          "How do reciprocators handle defectors?",
+          "Compare cooperative vs hostile scenarios"
+        ]
+      };
+    }
+
+    const avgRep = defectors.reduce((s, a) => s + a.reputation, 0) / defectors.length;
+    const avgATP = defectors.reduce((s, a) => s + a.atp, 0) / defectors.length;
+    const isolated = defectors.filter(a => a.coalitionSize === 0).length;
+
+    // Compare to society average
+    const societyAvgRep = agents.reduce((s, a) => s + a.reputation, 0) / agents.length;
+
+    let text = `**Defector Analysis**\n\n`;
+    text += `${defectors.length} defector${defectors.length > 1 ? 's' : ''} in this society.\n\n`;
+
+    defectors.forEach(d => {
+      text += `**${d.name}**: `;
+      text += `Rep ${d.reputation.toFixed(2)}, ATP ${d.atp.toFixed(0)}, `;
+      text += d.coalitionSize > 0 ? `${d.coalitionSize} partners\n` : `isolated\n`;
+    });
+
+    text += `\n**Defector Performance**:\n`;
+    text += `- Average reputation: ${avgRep.toFixed(2)} (society avg: ${societyAvgRep.toFixed(2)})\n`;
+    text += `- Average ATP: ${avgATP.toFixed(0)}\n`;
+    text += `- Isolated: ${isolated}/${defectors.length}\n\n`;
+
+    if (avgRep < societyAvgRep) {
+      text += `**Insight**: Defectors are underperforming. Their strategy of always exploiting `;
+      text += `burns trust faster than it earns ATP. In trust-native societies, exploitation is unsustainable.`;
+    } else {
+      text += `**Insight**: Defectors are doing surprisingly well. This may be early in the simulation, `;
+      text += `or cooperators haven't yet learned to avoid them.`;
+    }
+
+    return {
+      text,
+      type: 'explanation',
+      relatedConcepts: ['Defection', 'Exploitation', 'Trust Erosion', 'Social Isolation'],
+      suggestedQueries: [
+        "Why do defectors fail long-term?",
+        "Can defectors ever succeed?",
+        "How do reciprocators punish defectors?",
+        "What is trust nihilism?"
+      ]
+    };
+  }
+
+  /**
+   * Analyze cooperators specifically
+   */
+  private analyzeCooperators(context: QueryContext): Response {
+    const agents = context.societyAgents!;
+    const cooperators = agents.filter(a => a.strategy === 'cooperator');
+
+    if (cooperators.length === 0) {
+      return {
+        text: `**No Pure Cooperators in This Society**\n\n` +
+          `This simulation doesn't include any pure cooperator agents. ` +
+          `Pure cooperators always cooperate, making them trusting but potentially exploitable.`,
+        type: 'suggestion',
+        suggestedQueries: [
+          "What are the different strategies?",
+          "Which strategy is best?",
+          "How do adaptive agents work?"
+        ]
+      };
+    }
+
+    const avgRep = cooperators.reduce((s, a) => s + a.reputation, 0) / cooperators.length;
+    const avgATP = cooperators.reduce((s, a) => s + a.atp, 0) / cooperators.length;
+    const inCoalitions = cooperators.filter(a => a.coalitionSize > 0).length;
+
+    const societyAvgRep = agents.reduce((s, a) => s + a.reputation, 0) / agents.length;
+    const defectors = agents.filter(a => a.strategy === 'defector');
+
+    let text = `**Cooperator Analysis**\n\n`;
+    text += `${cooperators.length} cooperator${cooperators.length > 1 ? 's' : ''} in this society.\n\n`;
+
+    cooperators.forEach(c => {
+      text += `**${c.name}**: `;
+      text += `Rep ${c.reputation.toFixed(2)}, ATP ${c.atp.toFixed(0)}, `;
+      text += c.coalitionSize > 0 ? `${c.coalitionSize} partners\n` : `building trust...\n`;
+    });
+
+    text += `\n**Cooperator Performance**:\n`;
+    text += `- Average reputation: ${avgRep.toFixed(2)} (society avg: ${societyAvgRep.toFixed(2)})\n`;
+    text += `- Average ATP: ${avgATP.toFixed(0)}\n`;
+    text += `- In coalitions: ${inCoalitions}/${cooperators.length}\n\n`;
+
+    if (avgRep > societyAvgRep) {
+      text += `**Insight**: Cooperators are thriving! Their unconditional cooperation builds trust quickly. `;
+      if (defectors.length > 0) {
+        text += `Even with defectors present, the cooperative strategy is paying off.`;
+      } else {
+        text += `In a society without defectors, pure cooperation is optimal.`;
+      }
+    } else {
+      text += `**Insight**: Cooperators are being exploited. Pure cooperation is vulnerable `;
+      text += `when defectors are present—they give without getting. `;
+      text += `Reciprocators often outperform in mixed societies.`;
+    }
+
+    return {
+      text,
+      type: 'explanation',
+      relatedConcepts: ['Cooperation', 'Trust Building', 'Vulnerability', 'Coalition Formation'],
+      suggestedQueries: [
+        "Are cooperators being exploited?",
+        "Why do cooperators cluster together?",
+        "Compare cooperators vs reciprocators",
+        "What is the evolution of cooperation?"
+      ]
+    };
+  }
+
+  /**
+   * Analyze all strategies
+   */
+  private analyzeStrategies(context: QueryContext): Response {
+    const agents = context.societyAgents!;
+    const metrics = context.societyMetrics;
+
+    const stratStats: Record<StrategyType, { count: number; avgRep: number; avgATP: number; avgCoop: number }> = {
+      cooperator: { count: 0, avgRep: 0, avgATP: 0, avgCoop: 0 },
+      defector: { count: 0, avgRep: 0, avgATP: 0, avgCoop: 0 },
+      reciprocator: { count: 0, avgRep: 0, avgATP: 0, avgCoop: 0 },
+      cautious: { count: 0, avgRep: 0, avgATP: 0, avgCoop: 0 },
+      adaptive: { count: 0, avgRep: 0, avgATP: 0, avgCoop: 0 },
+    };
+
+    agents.forEach(a => {
+      const s = stratStats[a.strategy];
+      s.count++;
+      s.avgRep += a.reputation;
+      s.avgATP += a.atp;
+      s.avgCoop += a.cooperationRate;
+    });
+
+    // Calculate averages
+    for (const strat of Object.keys(stratStats) as StrategyType[]) {
+      const s = stratStats[strat];
+      if (s.count > 0) {
+        s.avgRep /= s.count;
+        s.avgATP /= s.count;
+        s.avgCoop /= s.count;
+      }
+    }
+
+    // Rank by reputation
+    const ranked = (Object.entries(stratStats) as [StrategyType, typeof stratStats.cooperator][])
+      .filter(([, s]) => s.count > 0)
+      .sort((a, b) => b[1].avgRep - a[1].avgRep);
+
+    let text = `**Strategy Comparison**\n\n`;
+
+    ranked.forEach(([strat, stats], i) => {
+      const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `${i + 1}.`;
+      text += `${medal} **${STRATEGY_LABELS[strat]}** (${stats.count} agents)\n`;
+      text += `   Reputation: ${stats.avgRep.toFixed(2)} | ATP: ${stats.avgATP.toFixed(0)} | `;
+      text += `Cooperation: ${(stats.avgCoop * 100).toFixed(0)}%\n\n`;
+    });
+
+    // Winner analysis
+    const winner = ranked[0];
+    text += `**Analysis**: ${STRATEGY_LABELS[winner[0]]}s are currently leading. `;
+    text += this.getStrategyInsight(winner[0], 'winning');
+
+    return {
+      text,
+      type: 'explanation',
+      relatedConcepts: ['Strategy', 'Game Theory', 'Iterated Prisoner\'s Dilemma'],
+      suggestedQueries: [
+        "Why is this strategy winning?",
+        "Tell me about reciprocators",
+        "What is tit-for-tat?",
+        "Can strategies change?"
+      ]
+    };
+  }
+
+  /**
+   * Analyze inequality
+   */
+  private analyzeInequality(context: QueryContext): Response {
+    const agents = context.societyAgents!;
+    const metrics = context.societyMetrics;
+
+    const gini = metrics?.giniCoefficient ?? 0;
+    const atps = agents.map(a => a.atp).sort((a, b) => a - b);
+    const minATP = atps[0];
+    const maxATP = atps[atps.length - 1];
+    const medianATP = atps[Math.floor(atps.length / 2)];
+
+    let text = `**Inequality Analysis**\n\n`;
+
+    text += `**Gini Coefficient**: ${gini.toFixed(3)}\n\n`;
+    text += `Interpretation:\n`;
+    text += `- 0.0 = Perfect equality (everyone has same ATP)\n`;
+    text += `- 0.3 = Healthy inequality (like Nordic countries)\n`;
+    text += `- 0.5 = High inequality (like USA)\n`;
+    text += `- 0.7+ = Extreme inequality (oligarchy)\n\n`;
+
+    const level = gini < 0.25 ? 'very equal' :
+                 gini < 0.4 ? 'moderately unequal' :
+                 gini < 0.6 ? 'highly unequal' : 'extremely unequal';
+    text += `This society is **${level}**.\n\n`;
+
+    text += `**ATP Distribution**:\n`;
+    text += `- Minimum: ${minATP.toFixed(0)}\n`;
+    text += `- Median: ${medianATP.toFixed(0)}\n`;
+    text += `- Maximum: ${maxATP.toFixed(0)}\n`;
+    text += `- Ratio (max/min): ${minATP > 0 ? (maxATP / minATP).toFixed(1) : '∞'}x\n\n`;
+
+    // Find who has the most and least
+    const richest = agents.reduce((max, a) => a.atp > max.atp ? a : max, agents[0]);
+    const poorest = agents.reduce((min, a) => a.atp < min.atp ? a : min, agents[0]);
+
+    text += `**Extremes**:\n`;
+    text += `- Richest: ${richest.name} (${STRATEGY_LABELS[richest.strategy]}) with ${richest.atp.toFixed(0)} ATP\n`;
+    text += `- Poorest: ${poorest.name} (${STRATEGY_LABELS[poorest.strategy]}) with ${poorest.atp.toFixed(0)} ATP\n`;
+
+    return {
+      text,
+      type: 'explanation',
+      relatedConcepts: ['Gini Coefficient', 'Wealth Distribution', 'Social Mobility'],
+      suggestedQueries: [
+        "Why does inequality increase?",
+        "Do coalitions increase inequality?",
+        "What happens when ATP concentrates?",
+        "How can inequality be reduced?"
+      ]
+    };
+  }
+
+  /**
+   * Analyze network density
+   */
+  private analyzeNetwork(context: QueryContext): Response {
+    const agents = context.societyAgents!;
+    const metrics = context.societyMetrics;
+
+    const density = metrics?.networkDensity ?? 0;
+    const totalPossibleEdges = agents.length * (agents.length - 1);
+
+    // Count actual trust edges above threshold
+    let actualEdges = 0;
+    agents.forEach(a => {
+      actualEdges += a.trustEdges.filter(e => e.trust >= 0.5).length;
+    });
+
+    let text = `**Trust Network Analysis**\n\n`;
+
+    text += `**Network Density**: ${(density * 100).toFixed(1)}%\n\n`;
+    text += `This measures how connected the trust network is:\n`;
+    text += `- ${actualEdges} trust relationships exist (above 0.5 threshold)\n`;
+    text += `- ${totalPossibleEdges} maximum possible connections\n\n`;
+
+    const densityLevel = density < 0.1 ? 'sparse' :
+                        density < 0.3 ? 'developing' :
+                        density < 0.5 ? 'well-connected' : 'dense';
+    text += `This network is **${densityLevel}**.\n\n`;
+
+    // Find most and least connected
+    const byConnections = [...agents].sort((a, b) =>
+      b.trustEdges.filter(e => e.trust >= 0.5).length -
+      a.trustEdges.filter(e => e.trust >= 0.5).length
+    );
+
+    text += `**Most Connected**:\n`;
+    byConnections.slice(0, 3).forEach(a => {
+      const strongEdges = a.trustEdges.filter(e => e.trust >= 0.5).length;
+      text += `- ${a.name}: ${strongEdges} strong trust connections\n`;
+    });
+
+    const isolated = agents.filter(a => a.trustEdges.filter(e => e.trust >= 0.5).length === 0);
+    if (isolated.length > 0) {
+      text += `\n**Isolated** (no strong trust): ${isolated.map(a => a.name).join(', ')}\n`;
+    }
+
+    text += `\n**Network Effect**: Denser networks enable faster information flow `;
+    text += `and stronger collective action. Trust creates structure.`;
+
+    return {
+      text,
+      type: 'explanation',
+      relatedConcepts: ['Network Density', 'Trust Connections', 'Social Capital'],
+      suggestedQueries: [
+        "Why do some agents have more connections?",
+        "How do isolated agents recover?",
+        "What is the small world effect?",
+        "Does network density correlate with cooperation?"
+      ]
+    };
+  }
+
+  /**
+   * Analyze a specifically selected agent
+   */
+  private analyzeSelectedAgent(context: QueryContext): Response {
+    const agents = context.societyAgents!;
+    const selectedId = context.selectedAgentId!;
+    const agent = agents.find(a => a.id === selectedId);
+
+    if (!agent) {
+      return {
+        text: `Could not find selected agent. Try clicking on an agent in the network graph.`,
+        type: 'error'
+      };
+    }
+
+    let text = `**Agent Analysis: ${agent.name}**\n\n`;
+
+    text += `**Strategy**: ${STRATEGY_LABELS[agent.strategy]}\n`;
+    text += this.getStrategyDescription(agent.strategy) + `\n\n`;
+
+    text += `**Current Status**:\n`;
+    text += `- ATP: ${agent.atp.toFixed(0)} ${agent.atp < 30 ? '⚠️ LOW' : ''}\n`;
+    text += `- Reputation: ${agent.reputation.toFixed(3)}\n`;
+    text += `- Cooperation Rate: ${(agent.cooperationRate * 100).toFixed(0)}%\n`;
+    text += `- Generation: ${agent.generation}\n`;
+    text += `- Coalition Partners: ${agent.coalitionSize}\n\n`;
+
+    // Trust relationships
+    const strongTrust = agent.trustEdges.filter(e => e.trust >= 0.5);
+    const weakTrust = agent.trustEdges.filter(e => e.trust < 0.3);
+
+    if (strongTrust.length > 0) {
+      text += `**Strong Trust Relationships**:\n`;
+      strongTrust.slice(0, 5).forEach(e => {
+        const target = agents.find(a => a.id === e.targetId);
+        text += `- ${target?.name || '#' + e.targetId}: ${e.trust.toFixed(2)}\n`;
+      });
+      text += `\n`;
+    }
+
+    if (weakTrust.length > 0) {
+      text += `**Low Trust Toward**:\n`;
+      weakTrust.slice(0, 3).forEach(e => {
+        const target = agents.find(a => a.id === e.targetId);
+        text += `- ${target?.name || '#' + e.targetId}: ${e.trust.toFixed(2)}\n`;
+      });
+    }
+
+    return {
+      text,
+      type: 'explanation',
+      relatedConcepts: ['Agent Behavior', agent.strategy, 'Trust Relationships'],
+      suggestedQueries: [
+        `Why is ${agent.name}'s cooperation rate ${(agent.cooperationRate * 100).toFixed(0)}%?`,
+        `Who does ${agent.name} trust most?`,
+        `Is ${agent.name} in a coalition?`,
+        `Compare ${agent.name} to other ${STRATEGY_LABELS[agent.strategy]}s`
+      ]
+    };
+  }
+
+  /**
+   * Get insight text for why a strategy is winning/losing
+   */
+  private getStrategyInsight(strategy: StrategyType, outcome: 'winning' | 'losing'): string {
+    const insights: Record<StrategyType, { winning: string; losing: string }> = {
+      cooperator: {
+        winning: 'Unconditional cooperation builds trust quickly in friendly environments.',
+        losing: 'Pure cooperators are exploited by defectors—they give without protecting themselves.'
+      },
+      defector: {
+        winning: 'Early exploitation can generate ATP before trust networks form. This is usually temporary.',
+        losing: 'Always defecting burns trust. Once identified, defectors get isolated—no one wants to interact with them.'
+      },
+      reciprocator: {
+        winning: 'Tit-for-tat is evolutionarily stable: cooperates with cooperators, punishes defectors.',
+        losing: 'Reciprocators can get stuck in defection spirals with other reciprocators after initial conflicts.'
+      },
+      cautious: {
+        winning: 'Cautious agents avoid exploitation while still building trust once safety is established.',
+        losing: 'Being too cautious can miss opportunities and slow trust building in cooperative environments.'
+      },
+      adaptive: {
+        winning: 'Learning from trust levels allows optimal behavior in any environment—the most flexible strategy.',
+        losing: 'In early stages, adaptive agents lack data and can make poor decisions. They need time to calibrate.'
+      }
+    };
+    return insights[strategy][outcome];
+  }
+
+  /**
+   * Get strategy description
+   */
+  private getStrategyDescription(strategy: StrategyType): string {
+    const descriptions: Record<StrategyType, string> = {
+      cooperator: 'Always cooperates. Trusting and vulnerable but builds trust quickly.',
+      defector: 'Always defects. Gains short-term advantage but loses trust over time.',
+      reciprocator: 'Tit-for-tat: cooperates first, then mirrors the other\'s last action.',
+      cautious: 'Only cooperates when trust is established. Slow to warm up but resilient.',
+      adaptive: 'Cooperates proportional to trust level. Learns and adapts from experience.'
+    };
+    return descriptions[strategy];
   }
 
   /**
