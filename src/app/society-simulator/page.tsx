@@ -336,12 +336,56 @@ function ACTChatPanel({
             <p className="text-xs text-gray-400">Ask about the simulation</p>
           </div>
         </div>
-        <button
-          onClick={onToggle}
-          className="text-gray-400 hover:text-white transition-colors text-xl"
-        >
-          ×
-        </button>
+        <div className="flex items-center gap-2">
+          {/* Export button */}
+          {messages.length > 1 && (
+            <button
+              onClick={() => {
+                // Generate markdown export
+                const lines = [
+                  '# Society Simulator - ACT Conversation',
+                  `**Exported**: ${new Date().toLocaleString()}`,
+                  '',
+                  '---',
+                  '',
+                ];
+                messages.forEach(msg => {
+                  if (msg.role === 'user') {
+                    lines.push(`**User**: ${msg.content}`);
+                  } else {
+                    lines.push(`**ACT**: ${msg.content}`);
+                  }
+                  lines.push('');
+                });
+                const text = lines.join('\n');
+
+                // Copy to clipboard
+                navigator.clipboard.writeText(text).then(() => {
+                  alert('Conversation copied to clipboard!');
+                }).catch(() => {
+                  // Fallback: download as file
+                  const blob = new Blob([text], { type: 'text/markdown' });
+                  const url = URL.createObjectURL(blob);
+                  const a = document.createElement('a');
+                  a.href = url;
+                  a.download = 'act-conversation.md';
+                  a.click();
+                  URL.revokeObjectURL(url);
+                });
+              }}
+              className="text-gray-400 hover:text-white transition-colors text-sm px-2 py-1 rounded hover:bg-gray-700"
+              title="Export conversation"
+            >
+              📋
+            </button>
+          )}
+          <button
+            onClick={onToggle}
+            className="text-gray-400 hover:text-white transition-colors text-xl"
+          >
+            ×
+          </button>
+        </div>
       </div>
 
       {/* Messages */}
