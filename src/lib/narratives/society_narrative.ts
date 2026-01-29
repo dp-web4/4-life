@@ -34,9 +34,18 @@ export interface SocietyNarrative {
   summary: string;
   chapters: NarrativeChapter[];
   characters: CharacterProfile[];
+  protagonist: CharacterHighlight | null;
+  antagonist: CharacterHighlight | null;
   themes: string[];
   moralOfTheStory: string;
   keyMoments: KeyMoment[];
+}
+
+export interface CharacterHighlight {
+  name: string;
+  strategy: StrategyType;
+  reason: string;
+  quote: string;
 }
 
 export interface NarrativeChapter {
@@ -109,6 +118,7 @@ export class SocietyNarrativeGenerator {
     const chapters = this.buildChapters(result);
     const keyMoments = this.extractKeyMoments(result);
     const themes = this.identifyThemes(result);
+    const { protagonist, antagonist } = this.identifyProtagonistAntagonist(result, characters);
 
     return {
       title: this.generateTitle(result),
@@ -116,10 +126,149 @@ export class SocietyNarrativeGenerator {
       summary: this.generateSummary(result, characters),
       chapters,
       characters,
+      protagonist,
+      antagonist,
       themes,
       moralOfTheStory: this.generateMoral(result),
       keyMoments,
     };
+  }
+
+  // ============================================================================
+  // Protagonist & Antagonist Identification
+  // ============================================================================
+
+  private identifyProtagonistAntagonist(
+    result: SocietyResult,
+    characters: CharacterProfile[]
+  ): { protagonist: CharacterHighlight | null; antagonist: CharacterHighlight | null } {
+    const finalEpoch = result.epochs[result.epochs.length - 1];
+    const agents = finalEpoch.agents;
+    const events = result.events;
+
+    // Find protagonist: highest "hero score" (cooperation + trust building + survival)
+    let protagonistScore = -Infinity;
+    let protagonistAgent: AgentSnapshot | null = null;
+
+    // Find antagonist: highest "villain score" (defection + isolation events + exploiting)
+    let antagonistScore = -Infinity;
+    let antagonistAgent: AgentSnapshot | null = null;
+
+    for (const agent of agents) {
+      // Hero score: rewarding cooperation, trust, and thriving
+      const heroScore =
+        agent.cooperationRate * 3 +
+        agent.reputation * 2 +
+        (agent.atp > 100 ? 1 : 0) +
+        (agent.coalitionSize >= 3 ? 2 : 0) +
+        (agent.strategy === 'cooperator' ? 1 : 0) +
+        (agent.strategy === 'reciprocator' ? 0.5 : 0);
+
+      if (heroScore > protagonistScore && agent.alive) {
+        protagonistScore = heroScore;
+        protagonistAgent = agent;
+      }
+
+      // Villain score: rewarding defection, isolation, and exploitation
+      const wasIsolated = events.some(
+        e => e.type === 'defector_isolated' && e.agentIds?.includes(agent.id)
+      );
+      const villainScore =
+        (1 - agent.cooperationRate) * 3 +
+        (agent.strategy === 'defector' ? 2 : 0) +
+        (wasIsolated ? 3 : 0) +
+        (agent.reputation < 0.3 ? 1 : 0) +
+        (!agent.alive ? 1 : 0);
+
+      if (villainScore > antagonistScore && villainScore > 2) {
+        antagonistScore = villainScore;
+        antagonistAgent = agent;
+      }
+    }
+
+    // Build protagonist highlight
+    let protagonist: CharacterHighlight | null = null;
+    if (protagonistAgent && protagonistScore > 3) {
+      const archetype = STRATEGY_ARCHETYPES[protagonistAgent.strategy];
+      protagonist = {
+        name: protagonistAgent.name,
+        strategy: protagonistAgent.strategy,
+        reason: this.getProtagonistReason(protagonistAgent, protagonistScore),
+        quote: this.getProtagonistQuote(protagonistAgent),
+      };
+    }
+
+    // Build antagonist highlight
+    let antagonist: CharacterHighlight | null = null;
+    if (antagonistAgent && antagonistScore > 3 && antagonistAgent.id !== protagonistAgent?.id) {
+      antagonist = {
+        name: antagonistAgent.name,
+        strategy: antagonistAgent.strategy,
+        reason: this.getAntagonistReason(antagonistAgent, events),
+        quote: this.getAntagonistQuote(antagonistAgent),
+      };
+    }
+
+    return { protagonist, antagonist };
+  }
+
+  private getProtagonistReason(agent: AgentSnapshot, score: number): string {
+    if (agent.strategy === 'cooperator' && agent.atp > 100) {
+      return `Proved that idealism can triumph when combined with the right conditions`;
+    }
+    if (agent.coalitionSize >= 4) {
+      return `Built the largest alliance through consistent trustworthy behavior`;
+    }
+    if (agent.cooperationRate > 0.9 && agent.reputation > 0.6) {
+      return `Achieved both high cooperation and strong reputation—a rare combination`;
+    }
+    if (agent.strategy === 'reciprocator' && agent.atp > 80) {
+      return `Demonstrated the power of balanced reciprocity`;
+    }
+    return `Emerged as the most successful through consistent positive behavior`;
+  }
+
+  private getProtagonistQuote(agent: AgentSnapshot): string {
+    switch (agent.strategy) {
+      case 'cooperator':
+        return "Trust first. Not because it's naive, but because it's how communities are built.";
+      case 'reciprocator':
+        return "I give what I get. It's not revenge—it's justice with a future.";
+      case 'adaptive':
+        return "Read the room. Adjust. Survive. That's not weakness, it's wisdom.";
+      case 'cautious':
+        return "Everyone says 'trust me.' I say 'show me.'";
+      default:
+        return "In the end, we're all choosing who we want to be.";
+    }
+  }
+
+  private getAntagonistReason(agent: AgentSnapshot, events: SocietyEvent[]): string {
+    const wasIsolated = events.some(
+      e => e.type === 'defector_isolated' && e.agentIds?.includes(agent.id)
+    );
+
+    if (wasIsolated) {
+      return `Was isolated by society after their exploitation became apparent`;
+    }
+    if (!agent.alive) {
+      return `Their short-term strategy led to their downfall`;
+    }
+    if (agent.cooperationRate < 0.2) {
+      return `Consistently chose defection, damaging the social fabric`;
+    }
+    return `Their self-serving approach created friction in the society`;
+  }
+
+  private getAntagonistQuote(agent: AgentSnapshot): string {
+    switch (agent.strategy) {
+      case 'defector':
+        return "Everyone's a sucker if you play it right. At least, that's what I thought.";
+      case 'cautious':
+        return "Why should I trust them? They haven't earned it. They never will.";
+      default:
+        return "I looked out for myself. Isn't that what everyone does?";
+    }
   }
 
   // ============================================================================
@@ -796,4 +945,335 @@ export class SocietyNarrativeGenerator {
 export function generateSocietyNarrative(result: SocietyResult): SocietyNarrative {
   const generator = new SocietyNarrativeGenerator();
   return generator.generateNarrative(result);
+}
+
+// ============================================================================
+// Comparative Narrative Generator
+// ============================================================================
+
+export interface ComparativeNarrative {
+  title: string;
+  introduction: string;
+  scenarios: {
+    name: string;
+    summary: string;
+    outcome: 'triumph' | 'tragedy' | 'mixed';
+    keyDifference: string;
+  }[];
+  comparison: {
+    aspect: string;
+    findings: string;
+    winner?: string;
+  }[];
+  insights: string[];
+  conclusion: string;
+}
+
+/**
+ * Generate a comparative narrative explaining the differences between multiple simulation runs.
+ * This helps humans understand how different initial conditions lead to different outcomes.
+ */
+export function generateComparativeNarrative(
+  results: { label: string; result: SocietyResult }[]
+): ComparativeNarrative {
+  if (results.length < 2) {
+    throw new Error('Need at least 2 results to compare');
+  }
+
+  // Analyze each scenario
+  const scenarios = results.map(({ label, result }) => {
+    const { finalMetrics, events } = result;
+    const deaths = events.filter(e => e.type === 'agent_death').length;
+    const coops = finalMetrics.cooperationRate;
+    const trust = finalMetrics.averageTrust;
+
+    let outcome: 'triumph' | 'tragedy' | 'mixed';
+    if (coops > 0.7 && trust > 0.5) {
+      outcome = 'triumph';
+    } else if (coops < 0.4 || trust < 0.3 || deaths > 3) {
+      outcome = 'tragedy';
+    } else {
+      outcome = 'mixed';
+    }
+
+    // Identify what made this scenario distinctive
+    let keyDifference = '';
+    if (outcome === 'triumph') {
+      keyDifference = `achieved ${Math.round(coops * 100)}% cooperation`;
+    } else if (outcome === 'tragedy') {
+      if (deaths > 0) {
+        keyDifference = `lost ${deaths} agent${deaths > 1 ? 's' : ''} to ATP exhaustion`;
+      } else {
+        keyDifference = `saw trust collapse to ${Math.round(trust * 100)}%`;
+      }
+    } else {
+      keyDifference = `maintained a fragile equilibrium`;
+    }
+
+    return {
+      name: label,
+      summary: generateScenarioSummary(result, label),
+      outcome,
+      keyDifference,
+    };
+  });
+
+  // Generate comparison aspects
+  const comparison = generateComparisonAspects(results);
+
+  // Generate insights
+  const insights = generateComparativeInsights(scenarios, results);
+
+  // Generate conclusion
+  const conclusion = generateComparativeConclusion(scenarios);
+
+  // Generate title
+  const title = generateComparativeTitle(scenarios);
+
+  // Generate introduction
+  const introduction = generateIntroduction(results.length, scenarios);
+
+  return {
+    title,
+    introduction,
+    scenarios,
+    comparison,
+    insights,
+    conclusion,
+  };
+}
+
+function generateScenarioSummary(result: SocietyResult, label: string): string {
+  const { finalMetrics, events } = result;
+  const { averageTrust, cooperationRate, numCoalitions, giniCoefficient } = finalMetrics;
+  const deaths = events.filter(e => e.type === 'agent_death').length;
+
+  let summary = `In "${label}," `;
+
+  if (cooperationRate > 0.7) {
+    summary += `cooperation flourished (${Math.round(cooperationRate * 100)}%). `;
+  } else if (cooperationRate < 0.4) {
+    summary += `competition dominated (only ${Math.round(cooperationRate * 100)}% cooperation). `;
+  } else {
+    summary += `the society found a middle ground (${Math.round(cooperationRate * 100)}% cooperation). `;
+  }
+
+  if (numCoalitions > 0) {
+    summary += `${numCoalitions} coalition${numCoalitions > 1 ? 's' : ''} formed. `;
+  }
+
+  if (deaths > 0) {
+    summary += `${deaths} agent${deaths > 1 ? 's' : ''} perished. `;
+  }
+
+  if (giniCoefficient > 0.5) {
+    summary += `Wealth concentrated heavily. `;
+  } else if (giniCoefficient < 0.2) {
+    summary += `Resources stayed fairly distributed. `;
+  }
+
+  return summary.trim();
+}
+
+function generateComparisonAspects(
+  results: { label: string; result: SocietyResult }[]
+): ComparativeNarrative['comparison'] {
+  const aspects: ComparativeNarrative['comparison'] = [];
+
+  // Trust comparison
+  const trustValues = results.map(r => ({
+    label: r.label,
+    value: r.result.finalMetrics.averageTrust,
+  }));
+  const bestTrust = trustValues.reduce((a, b) => a.value > b.value ? a : b);
+  const worstTrust = trustValues.reduce((a, b) => a.value < b.value ? a : b);
+  const trustDiff = Math.round((bestTrust.value - worstTrust.value) * 100);
+
+  aspects.push({
+    aspect: 'Trust',
+    findings: trustDiff > 20
+      ? `"${bestTrust.label}" achieved ${trustDiff}% more trust than "${worstTrust.label}." This dramatic difference shows how initial conditions compound over time.`
+      : `Trust levels were similar across scenarios (within ${trustDiff}%), suggesting baseline conditions were comparable.`,
+    winner: trustDiff > 10 ? bestTrust.label : undefined,
+  });
+
+  // Cooperation comparison
+  const coopValues = results.map(r => ({
+    label: r.label,
+    value: r.result.finalMetrics.cooperationRate,
+  }));
+  const bestCoop = coopValues.reduce((a, b) => a.value > b.value ? a : b);
+  const worstCoop = coopValues.reduce((a, b) => a.value < b.value ? a : b);
+  const coopDiff = Math.round((bestCoop.value - worstCoop.value) * 100);
+
+  aspects.push({
+    aspect: 'Cooperation',
+    findings: coopDiff > 20
+      ? `"${bestCoop.label}" saw ${Math.round(bestCoop.value * 100)}% cooperation vs ${Math.round(worstCoop.value * 100)}% in "${worstCoop.label}." The social fabric looked completely different.`
+      : `Cooperation rates converged despite different starting points, suggesting some underlying equilibrium.`,
+    winner: coopDiff > 15 ? bestCoop.label : undefined,
+  });
+
+  // Inequality comparison
+  const giniValues = results.map(r => ({
+    label: r.label,
+    value: r.result.finalMetrics.giniCoefficient,
+  }));
+  const mostEqual = giniValues.reduce((a, b) => a.value < b.value ? a : b);
+  const leastEqual = giniValues.reduce((a, b) => a.value > b.value ? a : b);
+  const giniDiff = Math.abs(mostEqual.value - leastEqual.value);
+
+  aspects.push({
+    aspect: 'Inequality',
+    findings: giniDiff > 0.15
+      ? `"${mostEqual.label}" distributed resources more fairly (Gini ${mostEqual.value.toFixed(2)}) while "${leastEqual.label}" saw concentration (Gini ${leastEqual.value.toFixed(2)}).`
+      : `Resource distribution was similar across scenarios.`,
+    winner: giniDiff > 0.1 ? mostEqual.label : undefined,
+  });
+
+  // Survival comparison
+  const survivalData = results.map(r => ({
+    label: r.label,
+    deaths: r.result.events.filter(e => e.type === 'agent_death').length,
+  }));
+  const safest = survivalData.reduce((a, b) => a.deaths < b.deaths ? a : b);
+  const deadliest = survivalData.reduce((a, b) => a.deaths > b.deaths ? a : b);
+
+  if (deadliest.deaths > 0) {
+    aspects.push({
+      aspect: 'Survival',
+      findings: `"${deadliest.label}" lost ${deadliest.deaths} agent${deadliest.deaths > 1 ? 's' : ''} while "${safest.label}" had ${safest.deaths === 0 ? 'no casualties' : `only ${safest.deaths}`}. In Web4, ATP exhaustion means death—and some societies are deadlier than others.`,
+      winner: safest.deaths < deadliest.deaths ? safest.label : undefined,
+    });
+  }
+
+  return aspects;
+}
+
+function generateComparativeInsights(
+  scenarios: ComparativeNarrative['scenarios'],
+  results: { label: string; result: SocietyResult }[]
+): string[] {
+  const insights: string[] = [];
+
+  // Triumph vs tragedy insight
+  const triumphs = scenarios.filter(s => s.outcome === 'triumph');
+  const tragedies = scenarios.filter(s => s.outcome === 'tragedy');
+
+  if (triumphs.length > 0 && tragedies.length > 0) {
+    insights.push(
+      `The contrast between "${triumphs[0].name}" (triumph) and "${tragedies[0].name}" (tragedy) reveals that success isn't guaranteed—initial conditions matter enormously.`
+    );
+  }
+
+  // Coalition insight
+  const coalitionCounts = results.map(r => ({
+    label: r.label,
+    coalitions: r.result.finalMetrics.numCoalitions,
+  }));
+  const mostCoalitions = coalitionCounts.reduce((a, b) => a.coalitions > b.coalitions ? a : b);
+
+  if (mostCoalitions.coalitions > 0) {
+    insights.push(
+      `"${mostCoalitions.label}" saw ${mostCoalitions.coalitions} coalition${mostCoalitions.coalitions > 1 ? 's' : ''} form—trust clusters that become power bases.`
+    );
+  }
+
+  // Strategy insight
+  const allStrategies = new Set<string>();
+  results.forEach(r => {
+    const dist = r.result.finalMetrics.strategyDistribution;
+    Object.entries(dist).forEach(([strategy, count]) => {
+      if (count > 2) allStrategies.add(strategy);
+    });
+  });
+
+  if (allStrategies.size > 0 && triumphs.length > 0) {
+    const dominantInTriumph = findComparativeDominantStrategy(
+      results.find(r => r.label === triumphs[0].name)!.result.finalMetrics.strategyDistribution
+    );
+
+    if (dominantInTriumph) {
+      const archetypes: Record<string, string> = {
+        cooperator: 'Idealists',
+        defector: 'Opportunists',
+        reciprocator: 'Pragmatists',
+        cautious: 'Skeptics',
+        adaptive: 'Learners',
+      };
+      insights.push(
+        `${archetypes[dominantInTriumph] || dominantInTriumph + 's'} thrived in successful scenarios—their strategy worked because others responded in kind.`
+      );
+    }
+  }
+
+  // Web4 insight
+  insights.push(
+    'These comparisons illustrate Web4\'s core thesis: trust is the organizing principle that emerges from individual behavior, and small changes in composition create vastly different societies.'
+  );
+
+  return insights;
+}
+
+function findComparativeDominantStrategy(distribution: Record<StrategyType, number>): StrategyType {
+  let max = 0;
+  let dominant: StrategyType = 'cooperator';
+
+  for (const [strategy, count] of Object.entries(distribution)) {
+    if (count > max) {
+      max = count;
+      dominant = strategy as StrategyType;
+    }
+  }
+
+  return dominant;
+}
+
+function generateComparativeConclusion(scenarios: ComparativeNarrative['scenarios']): string {
+  const triumphs = scenarios.filter(s => s.outcome === 'triumph');
+  const tragedies = scenarios.filter(s => s.outcome === 'tragedy');
+
+  if (triumphs.length === scenarios.length) {
+    return 'All scenarios found paths to cooperation—a testament to the resilience of trust-based social organization.';
+  }
+
+  if (tragedies.length === scenarios.length) {
+    return 'None of these scenarios achieved sustainable cooperation. Sometimes the initial conditions make trust nearly impossible.';
+  }
+
+  if (triumphs.length > tragedies.length) {
+    return `Most scenarios succeeded, but the failure of "${tragedies[0]?.name || 'some'}" shows that trust is never guaranteed—it must be built.`;
+  }
+
+  if (tragedies.length > triumphs.length) {
+    return `Most scenarios struggled, making "${triumphs[0]?.name || 'the successful ones'}" all the more remarkable. What was different?`;
+  }
+
+  return 'These simulations demonstrate that trust can emerge or collapse based on the same fundamental rules applied to different starting conditions. The outcome is determined by the composition and choices of the agents within.';
+}
+
+function generateComparativeTitle(scenarios: ComparativeNarrative['scenarios']): string {
+  const outcomes = scenarios.map(s => s.outcome);
+  const hasTriumph = outcomes.includes('triumph');
+  const hasTragedy = outcomes.includes('tragedy');
+
+  if (hasTriumph && hasTragedy) {
+    return 'Two Paths: How Trust Diverges';
+  }
+
+  if (outcomes.every(o => o === 'triumph')) {
+    return 'Many Paths to Cooperation';
+  }
+
+  if (outcomes.every(o => o === 'tragedy')) {
+    return 'When Trust Fails: A Comparison';
+  }
+
+  return 'Comparing Societies: Same Rules, Different Outcomes';
+}
+
+function generateIntroduction(count: number, scenarios: ComparativeNarrative['scenarios']): string {
+  const names = scenarios.map(s => `"${s.name}"`).join(', ');
+
+  return `We ran ${count} simulations under different conditions: ${names}. Each followed the same Web4 rules—trust built through cooperation, eroded through exploitation, with ATP economics creating life-or-death pressure. Yet the outcomes diverged dramatically. Here's what we learned.`;
 }

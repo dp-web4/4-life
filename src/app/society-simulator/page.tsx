@@ -37,8 +37,11 @@ import {
 } from '@/lib/simulation/society-engine';
 import {
   generateSocietyNarrative,
+  generateComparativeNarrative,
   type SocietyNarrative,
+  type ComparativeNarrative,
   type CharacterProfile,
+  type CharacterHighlight,
   type KeyMoment,
 } from '@/lib/narratives/society_narrative';
 
@@ -966,10 +969,12 @@ function ComparisonPanel({
   savedResults,
   onRemove,
   onClose,
+  onCompareStories,
 }: {
   savedResults: { label: string; result: SocietyResult }[];
   onRemove: (index: number) => void;
   onClose: () => void;
+  onCompareStories: () => void;
 }) {
   const colors = ['#3b82f6', '#22c55e', '#f59e0b', '#ef4444', '#a855f7'];
 
@@ -1128,6 +1133,19 @@ function ComparisonPanel({
           <li>• <strong className="text-green-400">{lowestGini.label}</strong> had the most equal society (Gini {lowestGini.gini.toFixed(3)})</li>
         </ul>
       </div>
+
+      {/* Compare Stories Button */}
+      <div className="mt-4 pt-3 border-t border-gray-700 text-center">
+        <button
+          onClick={onCompareStories}
+          className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-medium transition-colors"
+        >
+          📖 Compare Stories
+        </button>
+        <p className="text-xs text-gray-500 mt-1">
+          Generate a narrative explaining these differences
+        </p>
+      </div>
     </div>
   );
 }
@@ -1195,6 +1213,38 @@ function NarrativePanel({
             <div className="bg-gray-800/50 rounded-lg p-4 border-l-4 border-amber-500">
               <p className="text-gray-300 leading-relaxed">{narrative.summary}</p>
             </div>
+
+            {/* Protagonist & Antagonist */}
+            {(narrative.protagonist || narrative.antagonist) && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {narrative.protagonist && (
+                  <div className="bg-gradient-to-br from-green-900/30 to-emerald-900/20 rounded-lg p-4 border border-green-500/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">🦸</span>
+                      <h4 className="font-bold text-green-400">The Hero</h4>
+                    </div>
+                    <p className="text-lg font-bold text-white mb-1">{narrative.protagonist.name}</p>
+                    <p className="text-sm text-gray-400 mb-3">{narrative.protagonist.reason}</p>
+                    <p className="text-gray-300 italic text-sm border-l-2 border-green-500/50 pl-3">
+                      &ldquo;{narrative.protagonist.quote}&rdquo;
+                    </p>
+                  </div>
+                )}
+                {narrative.antagonist && (
+                  <div className="bg-gradient-to-br from-red-900/30 to-rose-900/20 rounded-lg p-4 border border-red-500/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">🦹</span>
+                      <h4 className="font-bold text-red-400">The Antagonist</h4>
+                    </div>
+                    <p className="text-lg font-bold text-white mb-1">{narrative.antagonist.name}</p>
+                    <p className="text-sm text-gray-400 mb-3">{narrative.antagonist.reason}</p>
+                    <p className="text-gray-300 italic text-sm border-l-2 border-red-500/50 pl-3">
+                      &ldquo;{narrative.antagonist.quote}&rdquo;
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* Themes */}
             <div className="flex flex-wrap gap-2">
@@ -1369,6 +1419,148 @@ function NarrativePanel({
 }
 
 // ============================================================================
+// Comparative Narrative Panel Component
+// ============================================================================
+
+function ComparativeNarrativePanel({
+  narrative,
+  onClose,
+}: {
+  narrative: ComparativeNarrative;
+  onClose: () => void;
+}) {
+  return (
+    <div className="fixed inset-0 bg-black/90 z-50 flex items-start justify-center overflow-auto p-4">
+      <div className="bg-gray-900 rounded-lg w-full max-w-3xl my-8 overflow-hidden border border-gray-700 shadow-2xl">
+        {/* Header */}
+        <div className="p-4 border-b border-gray-700 flex items-center justify-between bg-gray-800">
+          <div>
+            <h2 className="text-xl font-bold text-amber-400">{narrative.title}</h2>
+            <p className="text-sm text-gray-400 mt-1">Comparative Analysis</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => {
+                const lines: string[] = [];
+                lines.push(`# ${narrative.title}`);
+                lines.push('');
+                lines.push(narrative.introduction);
+                lines.push('');
+                lines.push('## Scenarios');
+                narrative.scenarios.forEach(s => {
+                  lines.push(`### ${s.name} (${s.outcome})`);
+                  lines.push(s.summary);
+                  lines.push(`**Key:** ${s.keyDifference}`);
+                  lines.push('');
+                });
+                lines.push('## Comparison');
+                narrative.comparison.forEach(c => {
+                  lines.push(`### ${c.aspect}`);
+                  lines.push(c.findings);
+                  if (c.winner) lines.push(`*Winner: ${c.winner}*`);
+                  lines.push('');
+                });
+                lines.push('## Key Insights');
+                narrative.insights.forEach(i => lines.push(`- ${i}`));
+                lines.push('');
+                lines.push('## Conclusion');
+                lines.push(narrative.conclusion);
+
+                const text = lines.join('\n');
+                navigator.clipboard.writeText(text).then(() => {
+                  alert('Comparative narrative copied to clipboard!');
+                }).catch(() => {
+                  const blob = new Blob([text], { type: 'text/markdown' });
+                  const url = URL.createObjectURL(blob);
+                  const a = document.createElement('a');
+                  a.href = url;
+                  a.download = 'comparative-narrative.md';
+                  a.click();
+                  URL.revokeObjectURL(url);
+                });
+              }}
+              className="text-sm px-3 py-1 bg-amber-600 hover:bg-amber-500 text-white rounded transition-colors"
+            >
+              📋 Export
+            </button>
+            <button onClick={onClose} className="text-gray-400 hover:text-white text-2xl">×</button>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 max-h-[70vh] overflow-y-auto">
+          {/* Introduction */}
+          <p className="text-gray-300 mb-6 leading-relaxed">{narrative.introduction}</p>
+
+          {/* Scenarios */}
+          <h3 className="text-lg font-bold text-white mb-4">The Scenarios</h3>
+          <div className="grid gap-4 mb-6">
+            {narrative.scenarios.map((scenario, i) => (
+              <div
+                key={i}
+                className={`p-4 rounded-lg border ${
+                  scenario.outcome === 'triumph' ? 'bg-green-900/20 border-green-700/50' :
+                  scenario.outcome === 'tragedy' ? 'bg-red-900/20 border-red-700/50' :
+                  'bg-gray-800 border-gray-700'
+                }`}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-bold text-white">{scenario.name}</span>
+                  <span className={`text-xs px-2 py-1 rounded ${
+                    scenario.outcome === 'triumph' ? 'bg-green-700 text-green-200' :
+                    scenario.outcome === 'tragedy' ? 'bg-red-700 text-red-200' :
+                    'bg-gray-700 text-gray-300'
+                  }`}>
+                    {scenario.outcome}
+                  </span>
+                </div>
+                <p className="text-sm text-gray-300">{scenario.summary}</p>
+                <p className="text-xs text-gray-400 mt-2">
+                  <strong>Key:</strong> {scenario.keyDifference}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Comparison */}
+          <h3 className="text-lg font-bold text-white mb-4">How They Differ</h3>
+          <div className="space-y-4 mb-6">
+            {narrative.comparison.map((comp, i) => (
+              <div key={i} className="bg-gray-800 p-4 rounded-lg">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-bold text-amber-400">{comp.aspect}</span>
+                  {comp.winner && (
+                    <span className="text-xs text-green-400">Winner: {comp.winner}</span>
+                  )}
+                </div>
+                <p className="text-sm text-gray-300">{comp.findings}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Insights */}
+          <h3 className="text-lg font-bold text-white mb-4">Key Insights</h3>
+          <ul className="space-y-2 mb-6">
+            {narrative.insights.map((insight, i) => (
+              <li key={i} className="flex gap-2">
+                <span className="text-amber-400">•</span>
+                <span className="text-gray-300 text-sm">{insight}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Conclusion */}
+          <div className="bg-amber-900/20 border border-amber-700/50 rounded-lg p-4">
+            <h3 className="text-lg font-bold text-amber-400 mb-2">Conclusion</h3>
+            <p className="text-gray-200 leading-relaxed">{narrative.conclusion}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
 // Main Page
 // ============================================================================
 
@@ -1391,6 +1583,8 @@ export default function SocietySimulatorPage() {
   const [showComparison, setShowComparison] = useState(false);
   const [narrative, setNarrative] = useState<SocietyNarrative | null>(null);
   const [showNarrative, setShowNarrative] = useState(false);
+  const [comparativeNarrative, setComparativeNarrative] = useState<ComparativeNarrative | null>(null);
+  const [showComparativeNarrative, setShowComparativeNarrative] = useState(false);
   const cancelRef = useRef(false);
 
   // Custom config overrides
@@ -1661,6 +1855,11 @@ export default function SocietySimulatorPage() {
             savedResults={savedResults}
             onRemove={(index) => setSavedResults(prev => prev.filter((_, i) => i !== index))}
             onClose={() => setShowComparison(false)}
+            onCompareStories={() => {
+              const generated = generateComparativeNarrative(savedResults);
+              setComparativeNarrative(generated);
+              setShowComparativeNarrative(true);
+            }}
           />
         )}
 
@@ -1669,6 +1868,14 @@ export default function SocietySimulatorPage() {
           <NarrativePanel
             narrative={narrative}
             onClose={() => setShowNarrative(false)}
+          />
+        )}
+
+        {/* Comparative Narrative Panel */}
+        {showComparativeNarrative && comparativeNarrative && (
+          <ComparativeNarrativePanel
+            narrative={comparativeNarrative}
+            onClose={() => setShowComparativeNarrative(false)}
           />
         )}
 
