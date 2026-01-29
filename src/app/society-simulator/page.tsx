@@ -1458,6 +1458,175 @@ function StoryBar({
 }
 
 // ============================================================================
+// Relationship Graph Component
+// ============================================================================
+
+function RelationshipGraph({
+  relationships,
+  characters,
+}: {
+  relationships: RelationshipMap;
+  characters: CharacterProfile[];
+}) {
+  const width = 500;
+  const height = 400;
+  const cx = width / 2;
+  const cy = height / 2;
+
+  // Get unique characters from relationships
+  const charSet = new Set<string>();
+  relationships.relationships.forEach(r => {
+    charSet.add(r.character1);
+    charSet.add(r.character2);
+  });
+  const chars = Array.from(charSet);
+
+  // Position characters in a circle
+  const positions = new Map<string, { x: number; y: number }>();
+  chars.forEach((char, i) => {
+    const angle = (2 * Math.PI * i) / chars.length - Math.PI / 2;
+    const radius = Math.min(width, height) * 0.35;
+    positions.set(char, {
+      x: cx + radius * Math.cos(angle),
+      y: cy + radius * Math.sin(angle),
+    });
+  });
+
+  const getPos = (name: string) => positions.get(name) || { x: cx, y: cy };
+
+  // Color mapping for relationship types
+  const EDGE_COLORS: Record<RelationshipType, string> = {
+    allies: '#22c55e',
+    rivals: '#ef4444',
+    exploiter: '#a855f7',
+    victim: '#f97316',
+    rebuilding: '#3b82f6',
+    strangers: '#6b7280',
+  };
+
+  // Get character profile
+  const getProfile = (name: string) => characters.find(c => c.name === name);
+
+  return (
+    <div className="relative">
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full max-w-lg mx-auto">
+        {/* Relationship edges */}
+        {relationships.relationships.map((rel, i) => {
+          const from = getPos(rel.character1);
+          const to = getPos(rel.character2);
+          const color = EDGE_COLORS[rel.type];
+          const avgTrust = (rel.trustLevel + rel.reverseTrustLevel) / 2;
+
+          return (
+            <g key={`rel-${i}`}>
+              <line
+                x1={from.x}
+                y1={from.y}
+                x2={to.x}
+                y2={to.y}
+                stroke={color}
+                strokeWidth={Math.max(1, avgTrust * 4)}
+                strokeOpacity={0.6}
+                strokeDasharray={rel.type === 'strangers' ? '4 4' : undefined}
+              />
+              {/* Arrowhead for exploiter/victim relationships */}
+              {(rel.type === 'exploiter' || rel.type === 'victim') && (
+                <polygon
+                  points={calculateArrowhead(from, to)}
+                  fill={color}
+                  opacity={0.8}
+                />
+              )}
+            </g>
+          );
+        })}
+
+        {/* Character nodes */}
+        {chars.map((char, i) => {
+          const pos = getPos(char);
+          const profile = getProfile(char);
+          const color = profile ? STRATEGY_COLORS[profile.strategy] : '#6b7280';
+
+          return (
+            <g key={`char-${i}`}>
+              <circle
+                cx={pos.x}
+                cy={pos.y}
+                r={16}
+                fill={color}
+                stroke="#1f2937"
+                strokeWidth={2}
+              />
+              <text
+                x={pos.x}
+                y={pos.y + 4}
+                textAnchor="middle"
+                fill="white"
+                fontSize="10"
+                fontWeight="bold"
+              >
+                {char[0]}
+              </text>
+              <text
+                x={pos.x}
+                y={pos.y + 32}
+                textAnchor="middle"
+                fill="#9ca3af"
+                fontSize="10"
+              >
+                {char}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+
+      {/* Legend */}
+      <div className="flex flex-wrap justify-center gap-3 mt-4">
+        {(['allies', 'rivals', 'exploiter', 'rebuilding'] as RelationshipType[]).map(type => (
+          <div key={type} className="flex items-center gap-1.5">
+            <div
+              className="w-4 h-1 rounded"
+              style={{ backgroundColor: EDGE_COLORS[type] }}
+            />
+            <span className="text-xs text-gray-400 capitalize">{type}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Calculate arrowhead points for directed edges
+function calculateArrowhead(from: { x: number; y: number }, to: { x: number; y: number }): string {
+  const dx = to.x - from.x;
+  const dy = to.y - from.y;
+  const len = Math.sqrt(dx * dx + dy * dy);
+  if (len === 0) return '';
+
+  // Normalize
+  const nx = dx / len;
+  const ny = dy / len;
+
+  // Arrow position (near the target, accounting for node radius)
+  const arrowLen = 8;
+  const nodeRadius = 16;
+  const ax = to.x - nx * (nodeRadius + arrowLen);
+  const ay = to.y - ny * (nodeRadius + arrowLen);
+
+  // Perpendicular vector
+  const px = -ny;
+  const py = nx;
+
+  // Arrow points
+  const p1 = `${ax},${ay}`;
+  const p2 = `${ax - nx * arrowLen + px * arrowLen / 2},${ay - ny * arrowLen + py * arrowLen / 2}`;
+  const p3 = `${ax - nx * arrowLen - px * arrowLen / 2},${ay - ny * arrowLen - py * arrowLen / 2}`;
+
+  return `${p1} ${p2} ${p3}`;
+}
+
+// ============================================================================
 // Narrative Panel Component
 // ============================================================================
 
@@ -1473,6 +1642,7 @@ function NarrativePanel({
   relationships?: RelationshipMap;
 }) {
   const [activeTab, setActiveTab] = useState<'story' | 'characters' | 'moments' | 'relationships'>('story');
+  const [relationshipViewMode, setRelationshipViewMode] = useState<'list' | 'graph'>('list');
 
   const STATUS_COLORS: Record<CharacterProfile['finalStatus'], string> = {
     thriving: 'text-green-400',
@@ -1745,9 +1915,46 @@ function NarrativePanel({
               </div>
             )}
 
-            {/* All Relationships */}
+            {/* All Relationships with View Toggle */}
             <div>
-              <h3 className="text-lg font-bold text-white mb-4">All Relationships</h3>
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-bold text-white">All Relationships</h3>
+                <div className="flex items-center gap-2 bg-gray-800 rounded-lg p-1">
+                  <button
+                    onClick={() => setRelationshipViewMode('list')}
+                    className={`px-3 py-1 text-xs rounded transition-colors ${
+                      relationshipViewMode === 'list'
+                        ? 'bg-amber-600 text-white'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    📋 List
+                  </button>
+                  <button
+                    onClick={() => setRelationshipViewMode('graph')}
+                    className={`px-3 py-1 text-xs rounded transition-colors ${
+                      relationshipViewMode === 'graph'
+                        ? 'bg-amber-600 text-white'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    🕸️ Graph
+                  </button>
+                </div>
+              </div>
+
+              {/* Graph View */}
+              {relationshipViewMode === 'graph' && (
+                <div className="bg-gray-800/30 rounded-lg p-4 border border-gray-700">
+                  <RelationshipGraph
+                    relationships={relationships}
+                    characters={narrative.characters}
+                  />
+                </div>
+              )}
+
+              {/* List View */}
+              {relationshipViewMode === 'list' && (
               <div className="space-y-3">
                 {relationships.relationships.length === 0 ? (
                   <p className="text-gray-500 text-center py-8">No significant relationships found.</p>
@@ -1809,6 +2016,7 @@ function NarrativePanel({
                   })
                 )}
               </div>
+              )}
             </div>
           </div>
         )}
