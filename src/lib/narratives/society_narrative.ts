@@ -108,6 +108,10 @@ const STRATEGY_ARCHETYPES: Record<StrategyType, { archetype: string; personality
     archetype: 'The Learner',
     personality: 'adjusts their behavior based on experience, constantly reading the room',
   },
+  human: {
+    archetype: 'The Human',
+    personality: 'brings unpredictable human intuition and judgment to every interaction',
+  },
 };
 
 // ============================================================================
@@ -1798,4 +1802,517 @@ export function enrichNarrativeWithRelationships(
     ...narrative,
     relationships,
   };
+}
+
+// ============================================================================
+// Character Journey (Deep Dive into a Single Character)
+// ============================================================================
+
+/**
+ * A detailed journey through a character's experience in the simulation
+ */
+export interface CharacterJourney {
+  // Identity
+  name: string;
+  strategy: StrategyType;
+  archetype: string;
+  personality: string;
+
+  // Overview
+  tagline: string;
+  storyArc: string;
+  finalStatus: 'thriving' | 'surviving' | 'struggling' | 'dead';
+
+  // Timeline of key events
+  timeline: CharacterEvent[];
+
+  // Statistics over time
+  trustHistory: { epoch: number; avgTrust: number }[];
+  atpHistory: { epoch: number; atp: number }[];
+  reputationHistory: { epoch: number; reputation: number }[];
+
+  // Relationships summary
+  relationships: {
+    name: string;
+    type: RelationshipType;
+    trustGiven: number;
+    trustReceived: number;
+    narrative: string;
+  }[];
+
+  // Final stats
+  finalStats: {
+    atp: number;
+    reputation: number;
+    cooperationRate: number;
+    coalitionSize: number;
+    trustGiven: number;   // avg trust they give others
+    trustReceived: number; // avg trust others give them
+  };
+
+  // Character quote (imagined)
+  quote: string;
+
+  // Moral or lesson from this character's journey
+  lessonLearned: string;
+}
+
+/**
+ * An event in a character's timeline
+ */
+export interface CharacterEvent {
+  epoch: number;
+  type: 'interaction' | 'coalition' | 'isolation' | 'death' | 'rebirth' | 'trust_change' | 'status_change';
+  title: string;
+  description: string;
+  significance: 'low' | 'medium' | 'high';
+  relatedAgentIds?: number[];
+}
+
+/**
+ * Generate a detailed journey for a specific character
+ */
+export function generateCharacterJourney(
+  result: SocietyResult,
+  characterName: string
+): CharacterJourney | null {
+  // Find the character across epochs
+  const firstEpoch = result.epochs[0];
+  const finalEpoch = result.epochs[result.epochs.length - 1];
+
+  const finalAgent = finalEpoch.agents.find(a => a.name === characterName);
+  const firstAgent = firstEpoch.agents.find(a => a.name === characterName);
+
+  if (!finalAgent || !firstAgent) {
+    return null;
+  }
+
+  const archetypeInfo = STRATEGY_ARCHETYPES[finalAgent.strategy];
+
+  // Build timeline from events involving this character
+  const timeline = buildCharacterTimeline(result, finalAgent.id);
+
+  // Build trust/ATP/reputation history
+  const trustHistory: { epoch: number; avgTrust: number }[] = [];
+  const atpHistory: { epoch: number; atp: number }[] = [];
+  const reputationHistory: { epoch: number; reputation: number }[] = [];
+
+  for (let i = 0; i < result.epochs.length; i++) {
+    const epoch = result.epochs[i];
+    const agent = epoch.agents.find(a => a.id === finalAgent.id);
+    if (agent) {
+      // Calculate average trust this agent gives to others
+      const avgTrust = agent.trustEdges.length > 0
+        ? agent.trustEdges.reduce((sum, e) => sum + e.trust, 0) / agent.trustEdges.length
+        : 0.5;
+
+      trustHistory.push({ epoch: i, avgTrust });
+      atpHistory.push({ epoch: i, atp: agent.atp });
+      reputationHistory.push({ epoch: i, reputation: agent.reputation });
+    }
+  }
+
+  // Get relationships involving this character
+  const relationshipMap = analyzeRelationships(result);
+  const charRelationships = relationshipMap.relationships
+    .filter(r => r.character1 === characterName || r.character2 === characterName)
+    .map(r => ({
+      name: r.character1 === characterName ? r.character2 : r.character1,
+      type: r.type,
+      trustGiven: r.character1 === characterName ? r.trustLevel : r.reverseTrustLevel,
+      trustReceived: r.character1 === characterName ? r.reverseTrustLevel : r.trustLevel,
+      narrative: r.narrative,
+    }))
+    .sort((a, b) => {
+      // Sort by relationship significance: allies first, then exploiter/victim, then rivals, then strangers
+      const typeOrder: Record<RelationshipType, number> = {
+        allies: 0,
+        exploiter: 1,
+        victim: 1,
+        rivals: 2,
+        rebuilding: 3,
+        strangers: 4,
+      };
+      return typeOrder[a.type] - typeOrder[b.type];
+    });
+
+  // Calculate final stats
+  const avgTrustGiven = finalAgent.trustEdges.length > 0
+    ? finalAgent.trustEdges.reduce((sum, e) => sum + e.trust, 0) / finalAgent.trustEdges.length
+    : 0.5;
+
+  // Calculate trust received from others
+  let totalTrustReceived = 0;
+  let trustReceivedCount = 0;
+  for (const other of finalEpoch.agents) {
+    if (other.id !== finalAgent.id) {
+      const edge = other.trustEdges.find(e => e.targetId === finalAgent.id);
+      if (edge) {
+        totalTrustReceived += edge.trust;
+        trustReceivedCount++;
+      }
+    }
+  }
+  const avgTrustReceived = trustReceivedCount > 0 ? totalTrustReceived / trustReceivedCount : 0.5;
+
+  // Determine final status
+  const finalStatus = determineCharacterStatus(finalAgent);
+
+  // Generate tagline based on outcome
+  const tagline = generateCharacterTagline(finalAgent, finalStatus, timeline);
+
+  // Generate story arc
+  const storyArc = generateCharacterStoryArc(firstAgent, finalAgent, result, timeline);
+
+  // Generate quote
+  const quote = generateCharacterQuote(finalAgent, finalStatus);
+
+  // Generate lesson
+  const lessonLearned = generateCharacterLesson(finalAgent, finalStatus, result);
+
+  return {
+    name: characterName,
+    strategy: finalAgent.strategy,
+    archetype: archetypeInfo.archetype,
+    personality: archetypeInfo.personality,
+    tagline,
+    storyArc,
+    finalStatus,
+    timeline,
+    trustHistory,
+    atpHistory,
+    reputationHistory,
+    relationships: charRelationships,
+    finalStats: {
+      atp: finalAgent.atp,
+      reputation: finalAgent.reputation,
+      cooperationRate: finalAgent.cooperationRate,
+      coalitionSize: finalAgent.coalitionSize,
+      trustGiven: avgTrustGiven,
+      trustReceived: avgTrustReceived,
+    },
+    quote,
+    lessonLearned,
+  };
+}
+
+/**
+ * Build a timeline of significant events for a character
+ */
+function buildCharacterTimeline(result: SocietyResult, agentId: number): CharacterEvent[] {
+  const events: CharacterEvent[] = [];
+
+  // Add events from the simulation that mention this agent
+  for (const event of result.events) {
+    if (event.agentIds?.includes(agentId)) {
+      events.push({
+        epoch: event.epoch,
+        type: mapEventType(event.type),
+        title: getEventTitle(event.type),
+        description: event.message,
+        significance: getEventSignificance(event.type),
+        relatedAgentIds: event.agentIds.filter(id => id !== agentId),
+      });
+    }
+  }
+
+  // Detect trust trajectory changes by analyzing epoch data
+  let lastTrend: 'rising' | 'falling' | 'stable' = 'stable';
+  for (let i = 1; i < result.epochs.length; i++) {
+    const prevEpoch = result.epochs[i - 1];
+    const currEpoch = result.epochs[i];
+
+    const prevAgent = prevEpoch.agents.find(a => a.id === agentId);
+    const currAgent = currEpoch.agents.find(a => a.id === agentId);
+
+    if (!prevAgent || !currAgent) continue;
+
+    // Check for significant ATP changes
+    const atpChange = currAgent.atp - prevAgent.atp;
+    if (Math.abs(atpChange) > 20) {
+      events.push({
+        epoch: i,
+        type: 'status_change',
+        title: atpChange > 0 ? 'Resource Surge' : 'Resource Crisis',
+        description: atpChange > 0
+          ? `${currAgent.name}'s ATP jumped by ${Math.round(atpChange)} points, indicating successful interactions.`
+          : `${currAgent.name}'s ATP dropped by ${Math.round(Math.abs(atpChange))} points, a concerning development.`,
+        significance: Math.abs(atpChange) > 30 ? 'high' : 'medium',
+      });
+    }
+
+    // Check for reputation changes
+    const repChange = currAgent.reputation - prevAgent.reputation;
+    if (Math.abs(repChange) > 0.15) {
+      events.push({
+        epoch: i,
+        type: 'trust_change',
+        title: repChange > 0 ? 'Rising Reputation' : 'Reputation Hit',
+        description: repChange > 0
+          ? `${currAgent.name}'s reputation improved significantly, gaining the trust of the community.`
+          : `${currAgent.name}'s reputation suffered, as others began to question their reliability.`,
+        significance: 'medium',
+      });
+    }
+
+    // Check for coalition changes
+    if (currAgent.coalitionSize > prevAgent.coalitionSize && currAgent.coalitionSize >= 2) {
+      events.push({
+        epoch: i,
+        type: 'coalition',
+        title: 'Coalition Growth',
+        description: `${currAgent.name} expanded their alliance to ${currAgent.coalitionSize} members.`,
+        significance: currAgent.coalitionSize >= 4 ? 'high' : 'medium',
+      });
+    }
+    if (currAgent.coalitionSize < prevAgent.coalitionSize && prevAgent.coalitionSize >= 2) {
+      events.push({
+        epoch: i,
+        type: 'coalition',
+        title: 'Coalition Collapse',
+        description: `${currAgent.name}'s alliance shrank from ${prevAgent.coalitionSize} to ${currAgent.coalitionSize} members.`,
+        significance: 'high',
+      });
+    }
+  }
+
+  // Sort by epoch, then by significance
+  events.sort((a, b) => {
+    if (a.epoch !== b.epoch) return a.epoch - b.epoch;
+    const sigOrder = { high: 0, medium: 1, low: 2 };
+    return sigOrder[a.significance] - sigOrder[b.significance];
+  });
+
+  // Deduplicate events at the same epoch with same type
+  const seen = new Set<string>();
+  return events.filter(e => {
+    const key = `${e.epoch}-${e.type}-${e.title}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function mapEventType(type: string): CharacterEvent['type'] {
+  switch (type) {
+    case 'coalition_formed':
+    case 'coalition_dissolved':
+      return 'coalition';
+    case 'defector_isolated':
+      return 'isolation';
+    case 'agent_death':
+      return 'death';
+    case 'agent_rebirth':
+      return 'rebirth';
+    case 'trust_collapse':
+    case 'trust_network_connected':
+      return 'trust_change';
+    default:
+      return 'interaction';
+  }
+}
+
+function getEventTitle(type: string): string {
+  switch (type) {
+    case 'coalition_formed': return 'Joined a Coalition';
+    case 'coalition_dissolved': return 'Coalition Dissolved';
+    case 'defector_isolated': return 'Isolated by Society';
+    case 'agent_death': return 'Ran Out of Resources';
+    case 'agent_rebirth': return 'Given a Second Chance';
+    case 'trust_collapse': return 'Trust Collapsed';
+    case 'trust_network_connected': return 'Trust Network Formed';
+    case 'cooperation_surge': return 'Cooperation Surge';
+    case 'strategy_shift': return 'Strategy Shift Detected';
+    case 'society_stable': return 'Society Stabilized';
+    default: return 'Notable Event';
+  }
+}
+
+function getEventSignificance(type: string): 'low' | 'medium' | 'high' {
+  switch (type) {
+    case 'defector_isolated':
+    case 'agent_death':
+    case 'trust_collapse':
+    case 'coalition_formed':
+      return 'high';
+    case 'coalition_dissolved':
+    case 'agent_rebirth':
+    case 'trust_network_connected':
+    case 'society_stable':
+      return 'medium';
+    default:
+      return 'low';
+  }
+}
+
+function determineCharacterStatus(agent: AgentSnapshot): 'thriving' | 'surviving' | 'struggling' | 'dead' {
+  if (!agent.alive) return 'dead';
+  if (agent.atp > 120 && agent.reputation > 0.5) return 'thriving';
+  if (agent.atp > 60 || agent.reputation > 0.4) return 'surviving';
+  return 'struggling';
+}
+
+function generateCharacterTagline(
+  agent: AgentSnapshot,
+  status: string,
+  timeline: CharacterEvent[]
+): string {
+  const archetype = STRATEGY_ARCHETYPES[agent.strategy];
+  const wasIsolated = timeline.some(e => e.type === 'isolation');
+  const grewCoalition = timeline.some(e => e.type === 'coalition' && e.title === 'Coalition Growth');
+
+  if (status === 'dead') {
+    return `${archetype.archetype} who didn't survive the social jungle`;
+  }
+  if (status === 'thriving') {
+    if (grewCoalition) {
+      return `${archetype.archetype} who built an empire of trust`;
+    }
+    return `${archetype.archetype} who found prosperity through consistency`;
+  }
+  if (wasIsolated) {
+    return `${archetype.archetype} who learned what happens when trust runs out`;
+  }
+  if (status === 'struggling') {
+    return `${archetype.archetype} fighting to stay afloat`;
+  }
+  return `${archetype.archetype} navigating the social landscape`;
+}
+
+function generateCharacterStoryArc(
+  firstAgent: AgentSnapshot,
+  finalAgent: AgentSnapshot,
+  result: SocietyResult,
+  timeline: CharacterEvent[]
+): string {
+  const archetype = STRATEGY_ARCHETYPES[finalAgent.strategy];
+  const atpChange = finalAgent.atp - firstAgent.atp;
+  const repChange = finalAgent.reputation - (firstAgent.reputation || 0.5);
+
+  const parts: string[] = [];
+
+  // Opening
+  parts.push(`${finalAgent.name} began this journey as ${archetype.archetype.toLowerCase()}, someone who ${archetype.personality}.`);
+
+  // Middle - based on trajectory
+  if (timeline.length === 0) {
+    parts.push(`Their time in the society was relatively uneventful, with few major turning points.`);
+  } else {
+    const highEvents = timeline.filter(e => e.significance === 'high');
+    if (highEvents.length > 0) {
+      parts.push(`Their journey had ${highEvents.length} pivotal moment${highEvents.length > 1 ? 's' : ''} that shaped their fate.`);
+    }
+
+    const isolationEvent = timeline.find(e => e.type === 'isolation');
+    const coalitionEvent = timeline.find(e => e.type === 'coalition');
+
+    if (isolationEvent) {
+      parts.push(`At epoch ${isolationEvent.epoch}, they faced their darkest hour: isolation from the community.`);
+    } else if (coalitionEvent) {
+      parts.push(`They found strength in numbers, joining forces with others to build a coalition.`);
+    }
+  }
+
+  // Ending - based on outcome
+  if (!finalAgent.alive) {
+    parts.push(`In the end, ${finalAgent.name} ran out of resources—a stark reminder that in societies built on trust, some approaches simply don't work.`);
+  } else if (atpChange > 50 && repChange > 0.2) {
+    parts.push(`By the end, ${finalAgent.name} had not only survived but thrived, emerging wealthier and more respected than when they started.`);
+  } else if (atpChange < -30 || repChange < -0.2) {
+    parts.push(`The journey took its toll. ${finalAgent.name} ended with less than they started, a cautionary tale about the costs of certain social strategies.`);
+  } else {
+    parts.push(`${finalAgent.name} finished the simulation in a stable position, neither rising nor falling dramatically—sometimes survival is its own success.`);
+  }
+
+  return parts.join(' ');
+}
+
+function generateCharacterQuote(agent: AgentSnapshot, status: string): string {
+  const quotes: Record<StrategyType, Record<string, string>> = {
+    cooperator: {
+      thriving: "I gave trust freely, and the world gave back tenfold.",
+      surviving: "Trust is a gift, not a transaction. Sometimes it's not returned.",
+      struggling: "They took advantage of my openness. But I won't become like them.",
+      dead: "I trusted everyone... perhaps that was my undoing.",
+    },
+    defector: {
+      thriving: "They call it selfish. I call it surviving.",
+      surviving: "You take what you can in this world. That's just reality.",
+      struggling: "Turns out, burning bridges leaves you stranded.",
+      dead: "Everyone's a sucker... except, apparently, me.",
+    },
+    reciprocator: {
+      thriving: "Give what you get. It's simple, and it works.",
+      surviving: "I met trust with trust, and betrayal with caution.",
+      struggling: "Mirror the world, and sometimes the world is harsh.",
+      dead: "I only gave back what I received. It wasn't enough.",
+    },
+    cautious: {
+      thriving: "Patience. That's the real strategy.",
+      surviving: "Trust must be earned. I didn't give it away cheaply.",
+      struggling: "Maybe I waited too long. Maybe I trusted too little.",
+      dead: "My walls protected me... until they didn't.",
+    },
+    adaptive: {
+      thriving: "Read the room, adapt, survive. Thrive.",
+      surviving: "Flexibility is survival. I bent so I wouldn't break.",
+      struggling: "I tried to read them all. Some books are harder than others.",
+      dead: "I changed too slowly. The world changed faster.",
+    },
+    human: {
+      thriving: "No algorithm can replace intuition. That's our edge.",
+      surviving: "I made choices no machine could predict. Some worked.",
+      struggling: "Being human means sometimes getting it wrong. Often, actually.",
+      dead: "Free will is a double-edged sword.",
+    },
+  };
+
+  return quotes[agent.strategy][status] || "Every society tells a story. This was mine.";
+}
+
+function generateCharacterLesson(
+  agent: AgentSnapshot,
+  status: string,
+  result: SocietyResult
+): string {
+  const lessons: Record<StrategyType, Record<string, string>> = {
+    cooperator: {
+      thriving: "Unconditional trust can succeed when the environment rewards cooperation. Idealism isn't naive if the conditions are right.",
+      surviving: "Pure cooperation is vulnerable to exploitation, but it builds the strongest foundations when it finds the right partners.",
+      struggling: "Trust without wisdom is generosity to those who don't deserve it. Balance openness with discernment.",
+      dead: "In a world with too many defectors, unconditional cooperation can be a death sentence. Context matters.",
+    },
+    defector: {
+      thriving: "Short-term exploitation can succeed when there are enough marks. But at what cost to the social fabric?",
+      surviving: "Defection is a lonely strategy. You might survive, but you won't truly belong.",
+      struggling: "Society eventually isolates those who only take. Reputation is a currency that takes time to recover.",
+      dead: "The scorched-earth approach works until it doesn't. Trust is a resource, and some strategies deplete it entirely.",
+    },
+    reciprocator: {
+      thriving: "Tit-for-tat is one of the most robust strategies: it rewards cooperation and punishes defection, creating stable equilibria.",
+      surviving: "Matching behavior is fair, but it can lock you into negative spirals with other reciprocators.",
+      struggling: "Reciprocity depends on the mix of the population. In defector-heavy environments, it mirrors the worst.",
+      dead: "Even fair strategies can fail in hostile environments. The first move matters.",
+    },
+    cautious: {
+      thriving: "Earned trust is the strongest trust. Taking time to verify pays dividends in stable relationships.",
+      surviving: "Caution prevents exploitation but can also prevent connection. There's a cost to waiting.",
+      struggling: "Too much caution can become isolation. Trust requires some vulnerability.",
+      dead: "Walls protect, but they also prevent. Sometimes the risk of trust is worth taking.",
+    },
+    adaptive: {
+      thriving: "Flexibility is power. Reading the environment and adjusting is the meta-strategy.",
+      surviving: "Adaptation means never being optimized for any one situation, but surviving most of them.",
+      struggling: "When the environment is chaotic, even adaptation struggles. Some situations have no good moves.",
+      dead: "Adaptation requires accurate perception. Misjudge the environment, and flexibility becomes flailing.",
+    },
+    human: {
+      thriving: "Human intuition, when applied thoughtfully, can outperform any algorithm. The key is balancing instinct with reflection.",
+      surviving: "Humans bring unpredictability that can be both strength and weakness. Survival often comes down to reading situations others can't.",
+      struggling: "Being human means embracing uncertainty. Sometimes our intuitions fail, and that's part of the learning.",
+      dead: "Human judgment isn't infallible. In complex social dynamics, even our best instincts can lead us astray.",
+    },
+  };
+
+  return lessons[agent.strategy][status] || "Every journey teaches something. The lesson depends on what you're willing to learn.";
 }

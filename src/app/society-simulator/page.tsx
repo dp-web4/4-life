@@ -19,6 +19,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
+import HumanPlayerMode from '@/components/HumanPlayerMode';
 import { queryEngine, type Query, type Response as ACTResponse } from '@/lib/act/query_engine';
 import {
   SocietyEngine,
@@ -39,6 +40,7 @@ import {
   generateSocietyNarrative,
   generateComparativeNarrative,
   analyzeRelationships,
+  generateCharacterJourney,
   type SocietyNarrative,
   type ComparativeNarrative,
   type CharacterProfile,
@@ -47,6 +49,7 @@ import {
   type RelationshipMap,
   type CharacterRelationship,
   type RelationshipType,
+  type CharacterJourney,
 } from '@/lib/narratives/society_narrative';
 
 // ============================================================================
@@ -804,6 +807,7 @@ function AgentInspector({ agent, allAgents }: {
     reciprocator: 'Mirrors partner\'s last action. Rewards cooperation, punishes defection.',
     cautious: 'Only cooperates when trust is established. Slow to warm up but resilient.',
     adaptive: 'Cooperates proportional to trust level. Learns from experience.',
+    human: 'You - making real decisions about trust and cooperation.',
   };
 
   const topTrusted = [...agent.trustEdges]
@@ -1627,6 +1631,430 @@ function calculateArrowhead(from: { x: number; y: number }, to: { x: number; y: 
 }
 
 // ============================================================================
+// Character Focus Modal Component
+// ============================================================================
+
+function CharacterFocusModal({
+  journey,
+  onClose,
+  strategyColors,
+}: {
+  journey: CharacterJourney;
+  onClose: () => void;
+  strategyColors: Record<string, string>;
+}) {
+  const [activeTab, setActiveTab] = useState<'overview' | 'timeline' | 'relationships' | 'stats'>('overview');
+
+  const STATUS_STYLES: Record<string, { bg: string; text: string; icon: string }> = {
+    thriving: { bg: 'bg-green-900/30', text: 'text-green-400', icon: '🌟' },
+    surviving: { bg: 'bg-yellow-900/30', text: 'text-yellow-400', icon: '⚖️' },
+    struggling: { bg: 'bg-orange-900/30', text: 'text-orange-400', icon: '⚠️' },
+    dead: { bg: 'bg-red-900/30', text: 'text-red-400', icon: '💀' },
+  };
+
+  const RELATIONSHIP_STYLES: Record<string, { bg: string; text: string; icon: string }> = {
+    allies: { bg: 'bg-green-900/30', text: 'text-green-400', icon: '🤝' },
+    rivals: { bg: 'bg-red-900/30', text: 'text-red-400', icon: '⚔️' },
+    exploiter: { bg: 'bg-purple-900/30', text: 'text-purple-400', icon: '🦊' },
+    victim: { bg: 'bg-orange-900/30', text: 'text-orange-400', icon: '🐑' },
+    rebuilding: { bg: 'bg-blue-900/30', text: 'text-blue-400', icon: '🔄' },
+    strangers: { bg: 'bg-gray-800/50', text: 'text-gray-400', icon: '👥' },
+  };
+
+  const EVENT_STYLES: Record<string, { bg: string; border: string }> = {
+    coalition: { bg: 'bg-blue-900/30', border: 'border-blue-500' },
+    isolation: { bg: 'bg-purple-900/30', border: 'border-purple-500' },
+    death: { bg: 'bg-red-900/30', border: 'border-red-500' },
+    rebirth: { bg: 'bg-amber-900/30', border: 'border-amber-500' },
+    trust_change: { bg: 'bg-green-900/30', border: 'border-green-500' },
+    status_change: { bg: 'bg-yellow-900/30', border: 'border-yellow-500' },
+    interaction: { bg: 'bg-gray-800/50', border: 'border-gray-600' },
+  };
+
+  const statusStyle = STATUS_STYLES[journey.finalStatus];
+
+  // Mini sparkline component
+  const Sparkline = ({ data, color, height = 40 }: { data: number[]; color: string; height?: number }) => {
+    if (data.length < 2) return null;
+    const max = Math.max(...data, 1);
+    const min = Math.min(...data, 0);
+    const range = max - min || 1;
+    const w = 200;
+    const h = height;
+
+    const points = data.map((v, i) => {
+      const x = (i / (data.length - 1)) * w;
+      const y = h - ((v - min) / range) * h;
+      return `${x},${y}`;
+    }).join(' ');
+
+    return (
+      <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-10">
+        <polyline
+          points={points}
+          fill="none"
+          stroke={color}
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  };
+
+  return (
+    <div className="fixed inset-4 md:inset-8 bg-gray-900 border border-sky-500/30 rounded-xl shadow-2xl z-50 flex flex-col overflow-hidden">
+      {/* Header */}
+      <div className="flex items-start justify-between px-6 py-4 border-b border-gray-700 bg-gradient-to-r from-sky-900/30 to-indigo-900/30">
+        <div className="flex items-start gap-4">
+          <div
+            className="w-16 h-16 rounded-xl flex items-center justify-center text-white text-2xl font-bold shadow-lg"
+            style={{ backgroundColor: strategyColors[journey.strategy] }}
+          >
+            {journey.name[0]}
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-white">{journey.name}</h2>
+            <p className="text-sky-200/70 text-sm">{journey.archetype} • {journey.personality}</p>
+            <div className="flex items-center gap-2 mt-1">
+              <span className={`px-2 py-0.5 rounded-full text-xs ${statusStyle.bg} ${statusStyle.text}`}>
+                {statusStyle.icon} {journey.finalStatus}
+              </span>
+              <span className="px-2 py-0.5 rounded-full text-xs bg-gray-800 text-gray-400">
+                {journey.strategy}
+              </span>
+            </div>
+          </div>
+        </div>
+        <button
+          onClick={onClose}
+          className="text-gray-400 hover:text-white text-2xl px-2"
+        >
+          ×
+        </button>
+      </div>
+
+      {/* Tagline */}
+      <div className="px-6 py-3 bg-gray-800/50 border-b border-gray-700">
+        <p className="text-gray-300 italic text-center">&ldquo;{journey.tagline}&rdquo;</p>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex border-b border-gray-700 overflow-x-auto">
+        {(['overview', 'timeline', 'relationships', 'stats'] as const).map(tab => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-6 py-3 text-sm font-medium transition-colors whitespace-nowrap ${
+              activeTab === tab
+                ? 'bg-gray-800 text-sky-400 border-b-2 border-sky-400'
+                : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
+            }`}
+          >
+            {tab === 'overview' && '📖 Story'}
+            {tab === 'timeline' && '📅 Timeline'}
+            {tab === 'relationships' && '💞 Relationships'}
+            {tab === 'stats' && '📊 Stats'}
+          </button>
+        ))}
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 overflow-y-auto p-6">
+        {activeTab === 'overview' && (
+          <div className="max-w-3xl mx-auto space-y-6">
+            {/* Story Arc */}
+            <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+              <h3 className="text-lg font-bold text-white mb-3">The Journey</h3>
+              <p className="text-gray-300 leading-relaxed">{journey.storyArc}</p>
+            </div>
+
+            {/* Character Quote */}
+            <div className="bg-gradient-to-r from-sky-900/20 to-indigo-900/20 rounded-lg p-6 border border-sky-500/30">
+              <div className="flex items-start gap-4">
+                <span className="text-4xl text-sky-400">&ldquo;</span>
+                <div>
+                  <p className="text-white text-lg italic leading-relaxed">{journey.quote}</p>
+                  <p className="text-sky-400 text-sm mt-2">— {journey.name}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700 text-center">
+                <div className="text-xs text-gray-400 mb-1">Final ATP</div>
+                <div className={`text-2xl font-bold ${journey.finalStats.atp > 100 ? 'text-green-400' : journey.finalStats.atp > 50 ? 'text-yellow-400' : 'text-red-400'}`}>
+                  {Math.round(journey.finalStats.atp)}
+                </div>
+              </div>
+              <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700 text-center">
+                <div className="text-xs text-gray-400 mb-1">Reputation</div>
+                <div className={`text-2xl font-bold ${journey.finalStats.reputation > 0.6 ? 'text-green-400' : journey.finalStats.reputation > 0.4 ? 'text-yellow-400' : 'text-red-400'}`}>
+                  {(journey.finalStats.reputation * 100).toFixed(0)}%
+                </div>
+              </div>
+              <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700 text-center">
+                <div className="text-xs text-gray-400 mb-1">Cooperation</div>
+                <div className={`text-2xl font-bold ${journey.finalStats.cooperationRate > 0.6 ? 'text-green-400' : journey.finalStats.cooperationRate > 0.4 ? 'text-yellow-400' : 'text-red-400'}`}>
+                  {(journey.finalStats.cooperationRate * 100).toFixed(0)}%
+                </div>
+              </div>
+              <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700 text-center">
+                <div className="text-xs text-gray-400 mb-1">Coalition</div>
+                <div className={`text-2xl font-bold ${journey.finalStats.coalitionSize > 2 ? 'text-blue-400' : 'text-gray-400'}`}>
+                  {journey.finalStats.coalitionSize}
+                </div>
+              </div>
+            </div>
+
+            {/* Lesson Learned */}
+            <div className="bg-amber-900/20 rounded-lg p-6 border border-amber-500/30">
+              <h3 className="text-lg font-bold text-amber-400 mb-2">💡 The Lesson</h3>
+              <p className="text-gray-300 leading-relaxed">{journey.lessonLearned}</p>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'timeline' && (
+          <div className="max-w-3xl mx-auto">
+            {journey.timeline.length === 0 ? (
+              <div className="text-center py-12 text-gray-500">
+                <p className="text-lg mb-2">No major events recorded</p>
+                <p className="text-sm">{journey.name} had a relatively quiet journey through the simulation.</p>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {/* Timeline visualization */}
+                <div className="relative pl-8">
+                  {/* Vertical line */}
+                  <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gray-700" />
+
+                  {journey.timeline.map((event, i) => {
+                    const eventStyle = EVENT_STYLES[event.type] || EVENT_STYLES.interaction;
+                    return (
+                      <div key={i} className="relative mb-6 last:mb-0">
+                        {/* Timeline dot */}
+                        <div className={`absolute -left-5 w-4 h-4 rounded-full border-2 ${eventStyle.border} bg-gray-900`} />
+
+                        {/* Event card */}
+                        <div className={`${eventStyle.bg} rounded-lg p-4 border ${eventStyle.border}`}>
+                          <div className="flex items-center justify-between mb-2">
+                            <h4 className="font-bold text-white">{event.title}</h4>
+                            <div className="flex items-center gap-2">
+                              <span className="text-xs bg-gray-800 text-gray-400 px-2 py-0.5 rounded">
+                                Epoch {event.epoch + 1}
+                              </span>
+                              <span className={`text-xs px-2 py-0.5 rounded ${
+                                event.significance === 'high' ? 'bg-red-900/50 text-red-300' :
+                                event.significance === 'medium' ? 'bg-yellow-900/50 text-yellow-300' :
+                                'bg-gray-800 text-gray-400'
+                              }`}>
+                                {event.significance}
+                              </span>
+                            </div>
+                          </div>
+                          <p className="text-gray-300 text-sm">{event.description}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {activeTab === 'relationships' && (
+          <div className="max-w-3xl mx-auto">
+            {journey.relationships.length === 0 ? (
+              <div className="text-center py-12 text-gray-500">
+                <p className="text-lg mb-2">No significant relationships</p>
+                <p className="text-sm">{journey.name} remained a stranger to most in this society.</p>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {/* Trust balance overview */}
+                <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700 mb-6">
+                  <h4 className="text-sm font-medium text-gray-400 mb-3">Trust Balance</h4>
+                  <div className="flex items-center justify-between">
+                    <div className="text-center">
+                      <div className="text-sm text-gray-400">Trust Given</div>
+                      <div className={`text-2xl font-bold ${journey.finalStats.trustGiven > 0.5 ? 'text-green-400' : 'text-gray-400'}`}>
+                        {(journey.finalStats.trustGiven * 100).toFixed(0)}%
+                      </div>
+                    </div>
+                    <div className="flex-1 mx-4">
+                      <div className="h-2 bg-gray-700 rounded-full overflow-hidden relative">
+                        <div
+                          className="absolute left-0 h-full bg-blue-500 rounded-l-full"
+                          style={{ width: `${journey.finalStats.trustGiven * 50}%` }}
+                        />
+                        <div
+                          className="absolute right-0 h-full bg-green-500 rounded-r-full"
+                          style={{ width: `${journey.finalStats.trustReceived * 50}%` }}
+                        />
+                      </div>
+                      <div className="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>← Given</span>
+                        <span>Received →</span>
+                      </div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-sm text-gray-400">Trust Received</div>
+                      <div className={`text-2xl font-bold ${journey.finalStats.trustReceived > 0.5 ? 'text-green-400' : 'text-gray-400'}`}>
+                        {(journey.finalStats.trustReceived * 100).toFixed(0)}%
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Relationship list */}
+                {journey.relationships.map((rel, i) => {
+                  const relStyle = RELATIONSHIP_STYLES[rel.type];
+                  return (
+                    <div
+                      key={i}
+                      className={`${relStyle.bg} rounded-lg p-4 border border-gray-700`}
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <span className="text-lg">{relStyle.icon}</span>
+                          <span className="font-bold text-white">{rel.name}</span>
+                          <span className={`text-xs px-2 py-0.5 rounded-full ${relStyle.bg} ${relStyle.text} border border-current/30`}>
+                            {rel.type}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3 text-sm">
+                          <span className="text-gray-400">
+                            <span className="text-blue-400">{(rel.trustGiven * 100).toFixed(0)}%</span> → {rel.name}
+                          </span>
+                          <span className="text-gray-400">
+                            {rel.name} → <span className="text-green-400">{(rel.trustReceived * 100).toFixed(0)}%</span>
+                          </span>
+                        </div>
+                      </div>
+                      <p className="text-gray-300 text-sm">{rel.narrative}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
+
+        {activeTab === 'stats' && (
+          <div className="max-w-4xl mx-auto space-y-6">
+            {/* Trust History */}
+            <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+              <h3 className="text-lg font-bold text-white mb-4">Trust Over Time</h3>
+              <div className="flex items-center gap-4">
+                <div className="flex-1">
+                  <Sparkline
+                    data={journey.trustHistory.map(h => h.avgTrust)}
+                    color="#3b82f6"
+                  />
+                </div>
+                <div className="text-right">
+                  <div className="text-2xl font-bold text-blue-400">
+                    {(journey.trustHistory[journey.trustHistory.length - 1]?.avgTrust * 100 || 0).toFixed(0)}%
+                  </div>
+                  <div className="text-xs text-gray-400">Final Avg Trust</div>
+                </div>
+              </div>
+            </div>
+
+            {/* ATP History */}
+            <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+              <h3 className="text-lg font-bold text-white mb-4">Resources (ATP) Over Time</h3>
+              <div className="flex items-center gap-4">
+                <div className="flex-1">
+                  <Sparkline
+                    data={journey.atpHistory.map(h => h.atp)}
+                    color="#22c55e"
+                  />
+                </div>
+                <div className="text-right">
+                  <div className="text-2xl font-bold text-green-400">
+                    {Math.round(journey.atpHistory[journey.atpHistory.length - 1]?.atp || 0)}
+                  </div>
+                  <div className="text-xs text-gray-400">Final ATP</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Reputation History */}
+            <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+              <h3 className="text-lg font-bold text-white mb-4">Reputation Over Time</h3>
+              <div className="flex items-center gap-4">
+                <div className="flex-1">
+                  <Sparkline
+                    data={journey.reputationHistory.map(h => h.reputation)}
+                    color="#a855f7"
+                  />
+                </div>
+                <div className="text-right">
+                  <div className="text-2xl font-bold text-purple-400">
+                    {((journey.reputationHistory[journey.reputationHistory.length - 1]?.reputation || 0) * 100).toFixed(0)}%
+                  </div>
+                  <div className="text-xs text-gray-400">Final Reputation</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Summary Stats Table */}
+            <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+              <h3 className="text-lg font-bold text-white mb-4">Final Statistics</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="p-4 bg-gray-900/50 rounded-lg">
+                  <div className="text-xs text-gray-400 mb-1">Strategy</div>
+                  <div className="text-lg font-bold text-white capitalize">{journey.strategy}</div>
+                </div>
+                <div className="p-4 bg-gray-900/50 rounded-lg">
+                  <div className="text-xs text-gray-400 mb-1">Final Status</div>
+                  <div className={`text-lg font-bold capitalize ${STATUS_STYLES[journey.finalStatus].text}`}>
+                    {journey.finalStatus}
+                  </div>
+                </div>
+                <div className="p-4 bg-gray-900/50 rounded-lg">
+                  <div className="text-xs text-gray-400 mb-1">Cooperation Rate</div>
+                  <div className="text-lg font-bold text-white">{(journey.finalStats.cooperationRate * 100).toFixed(1)}%</div>
+                </div>
+                <div className="p-4 bg-gray-900/50 rounded-lg">
+                  <div className="text-xs text-gray-400 mb-1">Coalition Size</div>
+                  <div className="text-lg font-bold text-white">{journey.finalStats.coalitionSize} members</div>
+                </div>
+                <div className="p-4 bg-gray-900/50 rounded-lg">
+                  <div className="text-xs text-gray-400 mb-1">Key Events</div>
+                  <div className="text-lg font-bold text-white">{journey.timeline.length}</div>
+                </div>
+                <div className="p-4 bg-gray-900/50 rounded-lg">
+                  <div className="text-xs text-gray-400 mb-1">Relationships</div>
+                  <div className="text-lg font-bold text-white">{journey.relationships.length}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Footer */}
+      <div className="px-6 py-3 border-t border-gray-700 bg-gray-800/50 flex items-center justify-between">
+        <p className="text-xs text-gray-500">
+          Character Journey • {journey.name}&apos;s story in this society
+        </p>
+        <button
+          onClick={onClose}
+          className="text-sm px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded transition-colors"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
 // Narrative Panel Component
 // ============================================================================
 
@@ -1635,11 +2063,13 @@ function NarrativePanel({
   onClose,
   onAnimate,
   relationships,
+  onCharacterClick,
 }: {
   narrative: SocietyNarrative;
   onClose: () => void;
   onAnimate?: () => void;
   relationships?: RelationshipMap;
+  onCharacterClick?: (name: string) => void;
 }) {
   const [activeTab, setActiveTab] = useState<'story' | 'characters' | 'moments' | 'relationships'>('story');
   const [relationshipViewMode, setRelationshipViewMode] = useState<'list' | 'graph'>('list');
@@ -1783,41 +2213,58 @@ function NarrativePanel({
         )}
 
         {activeTab === 'characters' && (
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-            {narrative.characters.map((character, i) => (
-              <div
-                key={i}
-                className="bg-gray-800/50 rounded-lg p-4 border border-gray-700 hover:border-gray-600 transition-colors"
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold"
-                    style={{ backgroundColor: STRATEGY_COLORS[character.strategy] }}
-                  >
-                    {character.name[0]}
+          <div className="max-w-4xl mx-auto">
+            {onCharacterClick && (
+              <p className="text-sm text-gray-400 mb-4 text-center">
+                Click a character to explore their complete journey
+              </p>
+            )}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {narrative.characters.map((character, i) => (
+                <div
+                  key={i}
+                  onClick={() => onCharacterClick?.(character.name)}
+                  className={`bg-gray-800/50 rounded-lg p-4 border border-gray-700 transition-colors ${
+                    onCharacterClick
+                      ? 'cursor-pointer hover:border-sky-500/50 hover:bg-gray-800 group'
+                      : 'hover:border-gray-600'
+                  }`}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold"
+                        style={{ backgroundColor: STRATEGY_COLORS[character.strategy] }}
+                      >
+                        {character.name[0]}
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-white group-hover:text-sky-400 transition-colors">{character.name}</h4>
+                        <p className="text-xs text-gray-400">
+                          {character.archetype} • <span className={STATUS_COLORS[character.finalStatus]}>{character.finalStatus}</span>
+                        </p>
+                      </div>
+                    </div>
+                    {onCharacterClick && (
+                      <span className="text-gray-600 group-hover:text-sky-400 transition-colors text-sm">→</span>
+                    )}
                   </div>
-                  <div>
-                    <h4 className="font-bold text-white">{character.name}</h4>
-                    <p className="text-xs text-gray-400">
-                      {character.archetype} • <span className={STATUS_COLORS[character.finalStatus]}>{character.finalStatus}</span>
-                    </p>
-                  </div>
+
+                  <p className="text-sm text-gray-300 mb-3">{character.arc}</p>
+
+                  {character.notableActions.length > 0 && (
+                    <div className="space-y-1">
+                      {character.notableActions.map((action, j) => (
+                        <p key={j} className="text-xs text-gray-500 flex items-center gap-2">
+                          <span className="text-amber-500">•</span>
+                          {action}
+                        </p>
+                      ))}
+                    </div>
+                  )}
                 </div>
-
-                <p className="text-sm text-gray-300 mb-3">{character.arc}</p>
-
-                {character.notableActions.length > 0 && (
-                  <div className="space-y-1">
-                    {character.notableActions.map((action, j) => (
-                      <p key={j} className="text-xs text-gray-500 flex items-center gap-2">
-                        <span className="text-amber-500">•</span>
-                        {action}
-                      </p>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
 
@@ -2383,6 +2830,9 @@ export default function SocietySimulatorPage() {
   const [storyHighlightedAgents, setStoryHighlightedAgents] = useState<number[]>([]);
   const [comparativeNarrative, setComparativeNarrative] = useState<ComparativeNarrative | null>(null);
   const [showComparativeNarrative, setShowComparativeNarrative] = useState(false);
+  const [characterJourney, setCharacterJourney] = useState<CharacterJourney | null>(null);
+  const [showCharacterFocus, setShowCharacterFocus] = useState(false);
+  const [humanPlayerMode, setHumanPlayerMode] = useState(false);
   const cancelRef = useRef(false);
 
   // Custom config overrides
@@ -2479,6 +2929,18 @@ export default function SocietySimulatorPage() {
 
   const selectedAgent = agents.find(a => a.id === selectedAgentId);
 
+  // If human player mode is active, show that instead
+  if (humanPlayerMode) {
+    return (
+      <div className="min-h-screen bg-gray-900 text-white">
+        <div className="max-w-4xl mx-auto p-4 md:p-8">
+          <Breadcrumbs currentPath="/society-simulator" />
+          <HumanPlayerMode onExit={() => setHumanPlayerMode(false)} />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto p-4 md:p-8">
@@ -2486,12 +2948,22 @@ export default function SocietySimulatorPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">Society Simulator</h1>
-          <p className="text-lg text-gray-400 max-w-3xl">
-            Watch a society of agents with different strategies form trust networks,
-            build coalitions, and self-organize. This is Web4 at society scale:
-            no central authority, just trust dynamics.
-          </p>
+          <div className="flex items-start justify-between flex-wrap gap-4">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold mb-3">Society Simulator</h1>
+              <p className="text-lg text-gray-400 max-w-3xl">
+                Watch a society of agents with different strategies form trust networks,
+                build coalitions, and self-organize. This is Web4 at society scale:
+                no central authority, just trust dynamics.
+              </p>
+            </div>
+            <button
+              onClick={() => setHumanPlayerMode(true)}
+              className="bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-500 hover:to-teal-400 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all transform hover:scale-105 shadow-lg shadow-teal-900/30"
+            >
+              🎮 Play as Agent
+            </button>
+          </div>
         </div>
 
         {/* Key Insight */}
@@ -2500,7 +2972,14 @@ export default function SocietySimulatorPage() {
           <p className="text-gray-300 text-sm">
             Can a society of self-interested agents develop cooperation, trust, and social structure
             <em> without any central authority</em>? In Web4, the answer is yes &mdash; if trust
-            is the fundamental currency. Click <strong>Run</strong> to watch it happen.
+            is the fundamental currency. Click <strong>Run</strong> to watch it happen, or{' '}
+            <button
+              onClick={() => setHumanPlayerMode(true)}
+              className="text-teal-400 hover:text-teal-300 underline"
+            >
+              play as an agent yourself
+            </button>
+            .
           </p>
         </div>
 
@@ -2508,7 +2987,9 @@ export default function SocietySimulatorPage() {
         <div className="mb-6 bg-gray-800/50 rounded-lg p-4 border border-gray-700/50">
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <label className="text-sm text-gray-400">Scenario:</label>
-            {Object.entries(SOCIETY_PRESETS).map(([key, preset]) => (
+            {Object.entries(SOCIETY_PRESETS)
+              .filter(([key]) => !key.startsWith('human-'))  // Filter out human player presets
+              .map(([key, preset]) => (
               <button
                 key={key}
                 onClick={() => { setSelectedPreset(key); setResult(null); }}
@@ -2673,6 +3154,24 @@ export default function SocietySimulatorPage() {
               setShowNarrative(false);
               setShowStoryBar(true);
             }}
+            onCharacterClick={(name) => {
+              if (result) {
+                const journey = generateCharacterJourney(result, name);
+                if (journey) {
+                  setCharacterJourney(journey);
+                  setShowCharacterFocus(true);
+                }
+              }
+            }}
+          />
+        )}
+
+        {/* Character Focus Modal */}
+        {showCharacterFocus && characterJourney && (
+          <CharacterFocusModal
+            journey={characterJourney}
+            onClose={() => setShowCharacterFocus(false)}
+            strategyColors={STRATEGY_COLORS}
           />
         )}
 
@@ -2884,6 +3383,24 @@ export default function SocietySimulatorPage() {
               setShowNarrative(false);
               setShowStoryBar(true);
             }}
+            onCharacterClick={(name) => {
+              if (result) {
+                const journey = generateCharacterJourney(result, name);
+                if (journey) {
+                  setCharacterJourney(journey);
+                  setShowCharacterFocus(true);
+                }
+              }
+            }}
+          />
+        )}
+
+        {/* Character Focus Modal (second instance for alternate layout) */}
+        {showCharacterFocus && characterJourney && (
+          <CharacterFocusModal
+            journey={characterJourney}
+            onClose={() => setShowCharacterFocus(false)}
+            strategyColors={STRATEGY_COLORS}
           />
         )}
       </div>

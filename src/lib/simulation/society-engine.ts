@@ -72,6 +72,44 @@ export interface StrategyDistribution {
   cautious: number;
   /** Randomly cooperates/defects based on partner's trust */
   adaptive: number;
+  /** Human player - decisions provided via callback */
+  human?: number;
+}
+
+/**
+ * Decision context provided to human player during interactive mode
+ */
+export interface HumanDecisionContext {
+  /** The human player's agent */
+  player: AgentSnapshot;
+  /** The partner agent for this interaction */
+  partner: AgentSnapshot;
+  /** Current trust the player has in the partner */
+  trustInPartner: number;
+  /** Current trust the partner has in the player */
+  trustFromPartner: number;
+  /** History of previous interactions with this partner */
+  interactionHistory: Array<{
+    epoch: number;
+    playerAction: 'cooperate' | 'defect';
+    partnerAction: 'cooperate' | 'defect';
+    outcome: string;
+  }>;
+  /** Current epoch */
+  epoch: number;
+  /** Current round */
+  round: number;
+  /** Player's potential outcomes for each choice */
+  potentialOutcomes: {
+    cooperate: {
+      ifPartnerCooperates: { atpChange: number; trustChange: number };
+      ifPartnerDefects: { atpChange: number; trustChange: number };
+    };
+    defect: {
+      ifPartnerCooperates: { atpChange: number; trustChange: number };
+      ifPartnerDefects: { atpChange: number; trustChange: number };
+    };
+  };
 }
 
 export const DEFAULT_SOCIETY_CONFIG: SocietyConfig = {
@@ -151,13 +189,49 @@ export const SOCIETY_PRESETS: Record<string, { label: string; description: strin
       numEpochs: 8,
     },
   },
+  'human-cooperative': {
+    label: '🎮 Play: Friendly Society',
+    description: 'YOU are one agent among mostly cooperators. Build trust through your choices.',
+    config: {
+      numAgents: 8,
+      strategies: { cooperator: 3, defector: 1, reciprocator: 2, cautious: 1, adaptive: 0, human: 1 },
+      numEpochs: 4,
+      roundsPerEpoch: 6,
+      interactionsPerRound: 2,
+      tickDelay: 0,
+    },
+  },
+  'human-hostile': {
+    label: '🎮 Play: Hostile World',
+    description: 'YOU face a society of defectors. Can you survive and build trust?',
+    config: {
+      numAgents: 8,
+      strategies: { cooperator: 1, defector: 4, reciprocator: 1, cautious: 1, adaptive: 0, human: 1 },
+      numEpochs: 4,
+      roundsPerEpoch: 6,
+      interactionsPerRound: 2,
+      tickDelay: 0,
+    },
+  },
+  'human-balanced': {
+    label: '🎮 Play: Mixed Society',
+    description: 'YOU navigate a diverse society. Learn who to trust through experience.',
+    config: {
+      numAgents: 8,
+      strategies: { cooperator: 2, defector: 2, reciprocator: 2, cautious: 1, adaptive: 0, human: 1 },
+      numEpochs: 4,
+      roundsPerEpoch: 6,
+      interactionsPerRound: 2,
+      tickDelay: 0,
+    },
+  },
 };
 
 // ============================================================================
 // Agent & Interaction Types
 // ============================================================================
 
-export type StrategyType = 'cooperator' | 'defector' | 'reciprocator' | 'cautious' | 'adaptive';
+export type StrategyType = 'cooperator' | 'defector' | 'reciprocator' | 'cautious' | 'adaptive' | 'human';
 
 export const STRATEGY_COLORS: Record<StrategyType, string> = {
   cooperator: '#22c55e',   // green
@@ -165,6 +239,7 @@ export const STRATEGY_COLORS: Record<StrategyType, string> = {
   reciprocator: '#3b82f6', // blue
   cautious: '#f59e0b',     // amber
   adaptive: '#a855f7',     // purple
+  human: '#14b8a6',        // teal
 };
 
 export const STRATEGY_LABELS: Record<StrategyType, string> = {
@@ -173,6 +248,7 @@ export const STRATEGY_LABELS: Record<StrategyType, string> = {
   reciprocator: 'Reciprocator',
   cautious: 'Cautious',
   adaptive: 'Adaptive',
+  human: 'You',
 };
 
 export interface Agent {
@@ -289,6 +365,30 @@ const AGENT_NAMES = [
 // Society Simulation Engine
 // ============================================================================
 
+/**
+ * Frame yielded during human player mode, requesting a decision
+ */
+export interface HumanPlayerFrame {
+  type: 'decision_required' | 'interaction_result' | 'epoch_end' | 'game_over';
+  decisionContext?: HumanDecisionContext;
+  lastInteraction?: Interaction;
+  epoch: number;
+  round: number;
+  agents: AgentSnapshot[];
+  coalitions: Coalition[];
+  metrics: SocietyMetrics;
+  events: SocietyEvent[];
+  humanAgentId: number;
+  gameResult?: {
+    survived: boolean;
+    finalTrust: number;
+    finalATP: number;
+    cooperationRate: number;
+    coalitionSize: number;
+    reputation: number;
+  };
+}
+
 export class SocietyEngine {
   private config: SocietyConfig;
   private agents: Agent[] = [];
@@ -296,6 +396,8 @@ export class SocietyEngine {
   private events: SocietyEvent[] = [];
   private rng: () => number;
   private nextAgentId: number = 0;
+  private humanAgentId: number | null = null;
+  private pendingHumanDecision: ((action: 'cooperate' | 'defect') => void) | null = null;
 
   constructor(config: Partial<SocietyConfig> = {}) {
     this.config = { ...DEFAULT_SOCIETY_CONFIG, ...config };
@@ -304,6 +406,13 @@ export class SocietyEngine {
     }
     this.rng = Math.random;
     this.initializeAgents();
+  }
+
+  /**
+   * Get the human player's agent ID (if any)
+   */
+  getHumanAgentId(): number | null {
+    return this.humanAgentId;
   }
 
   private initializeAgents(): void {
@@ -322,7 +431,14 @@ export class SocietyEngine {
       [order[i], order[j]] = [order[j], order[i]];
     }
 
-    this.agents = order.map((strategy, idx) => this.createAgent(strategy));
+    this.agents = order.map((strategy) => {
+      const agent = this.createAgent(strategy);
+      if (strategy === 'human') {
+        this.humanAgentId = agent.id;
+        agent.name = 'You'; // Override name for human player
+      }
+      return agent;
+    });
   }
 
   private createAgent(strategy: StrategyType, karma: number = 0): Agent {
@@ -452,6 +568,411 @@ export class SocietyEngine {
         await new Promise(r => setTimeout(r, this.config.tickDelay * 3));
       }
     }
+  }
+
+  // ============================================================================
+  // Human Player Interactive Mode
+  // ============================================================================
+
+  /**
+   * Run in human player mode - yields frames that may require human decisions
+   * When a frame has type 'decision_required', call submitHumanDecision() with
+   * the player's choice, then continue iterating.
+   */
+  async *runHumanPlayerMode(): AsyncGenerator<HumanPlayerFrame> {
+    if (this.humanAgentId === null) {
+      throw new Error('No human player in this configuration');
+    }
+
+    const humanAgent = this.agents.find(a => a.id === this.humanAgentId);
+    if (!humanAgent) {
+      throw new Error('Human agent not found');
+    }
+
+    for (let epoch = 0; epoch < this.config.numEpochs; epoch++) {
+      for (let round = 0; round < this.config.roundsPerEpoch; round++) {
+        // Run interactions for this round, handling human decisions
+        const roundInteractions = await this.runRoundWithHuman(epoch, round);
+        this.allInteractions.push(...roundInteractions);
+
+        // After each interaction involving the human, yield the result
+        for (const interaction of roundInteractions) {
+          if (interaction.agent1Id === this.humanAgentId || interaction.agent2Id === this.humanAgentId) {
+            const coalitions = this.detectCoalitions();
+            const metrics = this.calculateMetrics();
+
+            yield {
+              type: 'interaction_result',
+              lastInteraction: interaction,
+              epoch,
+              round,
+              agents: this.snapshotAgents(),
+              coalitions,
+              metrics,
+              events: [],
+              humanAgentId: this.humanAgentId!,
+            };
+          }
+        }
+
+        // Check if human died
+        const currentHuman = this.agents.find(a => a.id === this.humanAgentId);
+        if (currentHuman && !currentHuman.alive) {
+          const coalitions = this.detectCoalitions();
+          const metrics = this.calculateMetrics();
+
+          yield {
+            type: 'game_over',
+            epoch,
+            round,
+            agents: this.snapshotAgents(),
+            coalitions,
+            metrics,
+            events: [],
+            humanAgentId: this.humanAgentId!,
+            gameResult: {
+              survived: false,
+              finalTrust: currentHuman.reputation,
+              finalATP: 0,
+              cooperationRate: currentHuman.totalInteractions > 0
+                ? currentHuman.totalCooperations / currentHuman.totalInteractions
+                : 0,
+              coalitionSize: currentHuman.coalitionPartners.size,
+              reputation: currentHuman.reputation,
+            },
+          };
+          return;
+        }
+      }
+
+      // End of epoch: lifecycle + events
+      this.processLifecycles(epoch);
+      const coalitions = this.detectCoalitions();
+      const metrics = this.calculateMetrics();
+      this.detectEvents(epoch, this.allInteractions.filter(i => i.epoch === epoch), coalitions, metrics);
+
+      yield {
+        type: 'epoch_end',
+        epoch,
+        round: this.config.roundsPerEpoch,
+        agents: this.snapshotAgents(),
+        coalitions,
+        metrics,
+        events: this.events.filter(e => e.epoch === epoch),
+        humanAgentId: this.humanAgentId!,
+      };
+    }
+
+    // Game completed successfully
+    const finalHuman = this.agents.find(a => a.id === this.humanAgentId);
+    const coalitions = this.detectCoalitions();
+    const metrics = this.calculateMetrics();
+
+    yield {
+      type: 'game_over',
+      epoch: this.config.numEpochs - 1,
+      round: this.config.roundsPerEpoch,
+      agents: this.snapshotAgents(),
+      coalitions,
+      metrics,
+      events: this.events,
+      humanAgentId: this.humanAgentId!,
+      gameResult: finalHuman ? {
+        survived: finalHuman.alive,
+        finalTrust: finalHuman.reputation,
+        finalATP: finalHuman.atp,
+        cooperationRate: finalHuman.totalInteractions > 0
+          ? finalHuman.totalCooperations / finalHuman.totalInteractions
+          : 0,
+        coalitionSize: finalHuman.coalitionPartners.size,
+        reputation: finalHuman.reputation,
+      } : undefined,
+    };
+  }
+
+  /**
+   * Request a decision from the human player.
+   * Returns a frame with the decision context, caller should wait for
+   * submitHumanDecision() to be called.
+   */
+  createDecisionFrame(
+    player: Agent,
+    partner: Agent,
+    epoch: number,
+    round: number,
+  ): HumanPlayerFrame {
+    const playerSnapshot = this.snapshotAgent(player);
+    const partnerSnapshot = this.snapshotAgent(partner);
+    const trustInPartner = player.trustMap.get(partner.id) ?? 0.5;
+    const trustFromPartner = partner.trustMap.get(player.id) ?? 0.5;
+
+    // Get interaction history with this partner
+    const history = this.allInteractions
+      .filter(i =>
+        (i.agent1Id === player.id && i.agent2Id === partner.id) ||
+        (i.agent1Id === partner.id && i.agent2Id === player.id)
+      )
+      .map(i => {
+        const isPlayer1 = i.agent1Id === player.id;
+        return {
+          epoch: i.epoch,
+          playerAction: isPlayer1 ? i.agent1Action : i.agent2Action,
+          partnerAction: isPlayer1 ? i.agent2Action : i.agent1Action,
+          outcome: i.outcome,
+        };
+      });
+
+    const decisionContext: HumanDecisionContext = {
+      player: playerSnapshot,
+      partner: partnerSnapshot,
+      trustInPartner,
+      trustFromPartner,
+      interactionHistory: history,
+      epoch,
+      round,
+      potentialOutcomes: {
+        cooperate: {
+          ifPartnerCooperates: {
+            atpChange: -this.config.interactionCost + this.config.cooperationReward,
+            trustChange: this.config.trustGainCooperate,
+          },
+          ifPartnerDefects: {
+            atpChange: -this.config.interactionCost + this.config.suckersPayoff,
+            trustChange: -this.config.trustLossDefected,
+          },
+        },
+        defect: {
+          ifPartnerCooperates: {
+            atpChange: -this.config.interactionCost + this.config.exploitationReward,
+            trustChange: this.config.trustGainExploit,
+          },
+          ifPartnerDefects: {
+            atpChange: -this.config.interactionCost + this.config.mutualDefectionPayoff,
+            trustChange: -this.config.trustLossDefected * 0.3,
+          },
+        },
+      },
+    };
+
+    const coalitions = this.detectCoalitions();
+    const metrics = this.calculateMetrics();
+
+    return {
+      type: 'decision_required',
+      decisionContext,
+      epoch,
+      round,
+      agents: this.snapshotAgents(),
+      coalitions,
+      metrics,
+      events: [],
+      humanAgentId: this.humanAgentId!,
+    };
+  }
+
+  /**
+   * Run a round with human player interactions handled specially
+   */
+  private async runRoundWithHuman(epoch: number, round: number): Promise<Interaction[]> {
+    const interactions: Interaction[] = [];
+    const aliveAgents = this.agents.filter(a => a.alive);
+    if (aliveAgents.length < 2) return interactions;
+
+    // First, handle all AI-only interactions
+    const aiAgents = aliveAgents.filter(a => a.strategy !== 'human');
+    for (const agent of aiAgents) {
+      for (let i = 0; i < this.config.interactionsPerRound; i++) {
+        const candidates = aiAgents.filter(a => a.id !== agent.id);
+        if (candidates.length === 0) continue;
+        const partner = candidates[Math.floor(this.rng() * candidates.length)];
+
+        const alreadyInteracted = interactions.some(
+          int => (int.agent1Id === agent.id && int.agent2Id === partner.id) ||
+                 (int.agent1Id === partner.id && int.agent2Id === agent.id)
+        );
+        if (alreadyInteracted) continue;
+
+        const interaction = this.interact(agent, partner, epoch, round);
+        interactions.push(interaction);
+      }
+    }
+
+    // Then, handle human player interactions (these need special handling)
+    const humanAgent = this.agents.find(a => a.id === this.humanAgentId && a.alive);
+    if (humanAgent) {
+      for (let i = 0; i < this.config.interactionsPerRound; i++) {
+        const candidates = aliveAgents.filter(a => a.id !== humanAgent.id);
+        if (candidates.length === 0) continue;
+        const partner = candidates[Math.floor(this.rng() * candidates.length)];
+
+        const alreadyInteracted = interactions.some(
+          int => (int.agent1Id === humanAgent.id && int.agent2Id === partner.id) ||
+                 (int.agent1Id === partner.id && int.agent2Id === humanAgent.id)
+        );
+        if (alreadyInteracted) continue;
+
+        // Human-involving interactions are handled by the caller via decision frames
+        // For now, use the default interact which will call chooseAction
+        // The chooseAction for 'human' strategy will return 'cooperate' by default
+        // In the actual UI, this will be overridden by direct interaction calls
+        const interaction = this.interact(humanAgent, partner, epoch, round);
+        interactions.push(interaction);
+      }
+    }
+
+    // Update reputation for all agents
+    for (const agent of this.agents) {
+      if (!agent.alive) continue;
+      const trustsReceived: number[] = [];
+      for (const other of this.agents) {
+        if (other.id === agent.id || !other.alive) continue;
+        const t = other.trustMap.get(agent.id);
+        if (t !== undefined) trustsReceived.push(t);
+      }
+      if (trustsReceived.length > 0) {
+        agent.reputation = trustsReceived.reduce((s, v) => s + v, 0) / trustsReceived.length;
+      }
+      agent.atpHistory.push(agent.atp);
+    }
+
+    return interactions;
+  }
+
+  /**
+   * Execute an interaction with a specified human action
+   * Used by the UI to submit the human's choice
+   */
+  executeHumanInteraction(
+    partnerId: number,
+    humanAction: 'cooperate' | 'defect',
+    epoch: number,
+    round: number,
+  ): Interaction | null {
+    const humanAgent = this.agents.find(a => a.id === this.humanAgentId && a.alive);
+    const partner = this.agents.find(a => a.id === partnerId && a.alive);
+
+    if (!humanAgent || !partner) return null;
+
+    const partnerAction = this.chooseAction(partner, humanAgent);
+    return this.executeInteractionWithActions(humanAgent, partner, humanAction, partnerAction, epoch, round);
+  }
+
+  /**
+   * Execute an interaction with predetermined actions
+   */
+  private executeInteractionWithActions(
+    a1: Agent,
+    a2: Agent,
+    action1: 'cooperate' | 'defect',
+    action2: 'cooperate' | 'defect',
+    epoch: number,
+    round: number,
+  ): Interaction {
+    let a1AtpChange = -this.config.interactionCost;
+    let a2AtpChange = -this.config.interactionCost;
+    let a1TrustChange = 0;
+    let a2TrustChange = 0;
+    let outcome: Interaction['outcome'];
+
+    if (action1 === 'cooperate' && action2 === 'cooperate') {
+      a1AtpChange += this.config.cooperationReward;
+      a2AtpChange += this.config.cooperationReward;
+      a1TrustChange = this.config.trustGainCooperate;
+      a2TrustChange = this.config.trustGainCooperate;
+      outcome = 'mutual_cooperation';
+    } else if (action1 === 'defect' && action2 === 'defect') {
+      a1AtpChange += this.config.mutualDefectionPayoff;
+      a2AtpChange += this.config.mutualDefectionPayoff;
+      a1TrustChange = -this.config.trustLossDefected * 0.3;
+      a2TrustChange = -this.config.trustLossDefected * 0.3;
+      outcome = 'mutual_defection';
+    } else if (action1 === 'defect' && action2 === 'cooperate') {
+      a1AtpChange += this.config.exploitationReward;
+      a2AtpChange += this.config.suckersPayoff;
+      a1TrustChange = this.config.trustGainExploit;
+      a2TrustChange = -this.config.trustLossDefected;
+      outcome = 'agent2_exploited';
+    } else {
+      a2AtpChange += this.config.exploitationReward;
+      a1AtpChange += this.config.suckersPayoff;
+      a2TrustChange = this.config.trustGainExploit;
+      a1TrustChange = -this.config.trustLossDefected;
+      outcome = 'agent1_exploited';
+    }
+
+    // Apply changes
+    a1.atp = Math.max(0, a1.atp + a1AtpChange);
+    a2.atp = Math.max(0, a2.atp + a2AtpChange);
+
+    const currentTrust1to2 = a1.trustMap.get(a2.id) ?? 0.5;
+    const currentTrust2to1 = a2.trustMap.get(a1.id) ?? 0.5;
+    a1.trustMap.set(a2.id, Math.max(0, Math.min(1, currentTrust1to2 + a2TrustChange)));
+    a2.trustMap.set(a1.id, Math.max(0, Math.min(1, currentTrust2to1 + a1TrustChange)));
+
+    a1.lastActionMap.set(a2.id, action1);
+    a2.lastActionMap.set(a1.id, action2);
+
+    a1.totalInteractions++;
+    a2.totalInteractions++;
+    if (action1 === 'cooperate') a1.totalCooperations++;
+    else a1.totalDefections++;
+    if (action2 === 'cooperate') a2.totalCooperations++;
+    else a2.totalDefections++;
+
+    this.updateCoalitionMembership(a1, a2);
+    this.updateCoalitionMembership(a2, a1);
+
+    const interaction: Interaction = {
+      round,
+      epoch,
+      agent1Id: a1.id,
+      agent2Id: a2.id,
+      agent1Action: action1,
+      agent2Action: action2,
+      agent1AtpChange: a1AtpChange,
+      agent2AtpChange: a2AtpChange,
+      agent1TrustChange: a1TrustChange,
+      agent2TrustChange: a2TrustChange,
+      outcome,
+    };
+
+    this.allInteractions.push(interaction);
+    return interaction;
+  }
+
+  /**
+   * Snapshot a single agent
+   */
+  private snapshotAgent(agent: Agent): AgentSnapshot {
+    return {
+      id: agent.id,
+      name: agent.name,
+      strategy: agent.strategy,
+      atp: agent.atp,
+      alive: agent.alive,
+      generation: agent.generation,
+      reputation: agent.reputation,
+      cooperationRate: agent.totalInteractions > 0 ? agent.totalCooperations / agent.totalInteractions : 0,
+      coalitionSize: agent.coalitionPartners.size,
+      karma: agent.karma,
+      trustEdges: Array.from(agent.trustMap.entries())
+        .filter(([targetId]) => this.agents.find(b => b.id === targetId)?.alive)
+        .map(([targetId, trust]) => ({ targetId, trust })),
+    };
+  }
+
+  /**
+   * Get a specific agent by ID (for human player mode)
+   */
+  getAgent(id: number): Agent | undefined {
+    return this.agents.find(a => a.id === id);
+  }
+
+  /**
+   * Get all alive agents (for human player mode)
+   */
+  getAliveAgents(): Agent[] {
+    return this.agents.filter(a => a.alive);
   }
 
   // ============================================================================
@@ -606,6 +1127,12 @@ export class SocietyEngine {
 
       case 'adaptive': {
         // Probabilistic: cooperate with probability proportional to trust
+        return this.rng() < trustInPartner ? 'cooperate' : 'defect';
+      }
+
+      case 'human': {
+        // Human player - in automated mode, defaults to adaptive behavior
+        // In interactive mode, this is overridden by executeHumanInteraction
         return this.rng() < trustInPartner ? 'cooperate' : 'defect';
       }
 
@@ -770,7 +1297,7 @@ export class SocietyEngine {
 
     // Strategy distribution
     const strategyDistribution: Record<StrategyType, number> = {
-      cooperator: 0, defector: 0, reciprocator: 0, cautious: 0, adaptive: 0,
+      cooperator: 0, defector: 0, reciprocator: 0, cautious: 0, adaptive: 0, human: 0,
     };
     for (const agent of aliveAgents) {
       strategyDistribution[agent.strategy]++;

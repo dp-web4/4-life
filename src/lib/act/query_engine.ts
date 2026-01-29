@@ -1923,6 +1923,7 @@ export class ACTQueryEngine {
       reciprocator: { count: 0, avgRep: 0, avgATP: 0, avgCoop: 0 },
       cautious: { count: 0, avgRep: 0, avgATP: 0, avgCoop: 0 },
       adaptive: { count: 0, avgRep: 0, avgATP: 0, avgCoop: 0 },
+      human: { count: 0, avgRep: 0, avgATP: 0, avgCoop: 0 },
     };
 
     agents.forEach(a => {
@@ -2175,6 +2176,10 @@ export class ACTQueryEngine {
       adaptive: {
         winning: 'Learning from trust levels allows optimal behavior in any environment—the most flexible strategy.',
         losing: 'In early stages, adaptive agents lack data and can make poor decisions. They need time to calibrate.'
+      },
+      human: {
+        winning: 'Human intuition and strategic thinking can outperform rigid algorithms in complex social situations.',
+        losing: 'Emotional decisions or inconsistency can erode trust faster than predictable algorithmic behavior.'
       }
     };
     return insights[strategy][outcome];
@@ -2189,7 +2194,8 @@ export class ACTQueryEngine {
       defector: 'Always defects. Gains short-term advantage but loses trust over time.',
       reciprocator: 'Tit-for-tat: cooperates first, then mirrors the other\'s last action.',
       cautious: 'Only cooperates when trust is established. Slow to warm up but resilient.',
-      adaptive: 'Cooperates proportional to trust level. Learns and adapts from experience.'
+      adaptive: 'Cooperates proportional to trust level. Learns and adapts from experience.',
+      human: 'You—making real decisions about trust and cooperation based on your judgment.'
     };
     return descriptions[strategy];
   }
