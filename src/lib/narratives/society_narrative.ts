@@ -2316,3 +2316,266 @@ function generateCharacterLesson(
 
   return lessons[agent.strategy][status] || "Every journey teaches something. The lesson depends on what you're willing to learn.";
 }
+
+// ============================================================================
+// Social Sharing Utilities
+// ============================================================================
+
+/**
+ * Platform-specific sharing options
+ */
+export type SharePlatform = 'twitter' | 'linkedin' | 'bluesky' | 'clipboard';
+
+/**
+ * Shareable content formatted for different platforms
+ */
+export interface ShareableContent {
+  platform: SharePlatform;
+  text: string;
+  url?: string;
+  hashtags?: string[];
+  maxLength?: number;
+}
+
+/**
+ * Generate a shareable summary of a simulation narrative
+ * Each platform has different constraints (Twitter: 280 chars, LinkedIn: longer format, etc.)
+ */
+export function generateShareableContent(
+  narrative: SocietyNarrative,
+  platform: SharePlatform,
+  siteUrl: string = 'https://dp-web4.github.io/4-life/society-simulator'
+): ShareableContent {
+  switch (platform) {
+    case 'twitter':
+      return generateTwitterContent(narrative, siteUrl);
+    case 'linkedin':
+      return generateLinkedInContent(narrative, siteUrl);
+    case 'bluesky':
+      return generateBlueskyContent(narrative, siteUrl);
+    case 'clipboard':
+    default:
+      return generateClipboardContent(narrative, siteUrl);
+  }
+}
+
+/**
+ * Generate Twitter/X optimized content (280 char limit)
+ */
+function generateTwitterContent(narrative: SocietyNarrative, siteUrl: string): ShareableContent {
+  const hashtags = ['Web4', 'TrustDynamics', 'SimulationTheory'];
+
+  // Build the core message - focus on the hook
+  let text = '';
+
+  // Use tagline or create a hook from protagonist/antagonist
+  if (narrative.protagonist && narrative.antagonist) {
+    text = `${narrative.protagonist.name} vs ${narrative.antagonist.name}: ${narrative.tagline}`;
+  } else {
+    text = narrative.tagline;
+  }
+
+  // Add the moral as a teaser
+  const shortMoral = narrative.moralOfTheStory.length > 80
+    ? narrative.moralOfTheStory.slice(0, 77) + '...'
+    : narrative.moralOfTheStory;
+
+  // Calculate space for URL and hashtags (URL ~23 chars + space, hashtags ~30 chars)
+  const urlSpace = 25;
+  const hashtagText = ' #' + hashtags.join(' #');
+  const maxTextLength = 280 - urlSpace - hashtagText.length - 4; // 4 for "\n\n"
+
+  // Compose final text
+  if (text.length > maxTextLength) {
+    text = text.slice(0, maxTextLength - 3) + '...';
+  }
+
+  const fullText = `${text}\n\n${siteUrl}${hashtagText}`;
+
+  return {
+    platform: 'twitter',
+    text: fullText,
+    url: siteUrl,
+    hashtags,
+    maxLength: 280,
+  };
+}
+
+/**
+ * Generate LinkedIn optimized content (longer format with professional framing)
+ */
+function generateLinkedInContent(narrative: SocietyNarrative, siteUrl: string): ShareableContent {
+  const lines: string[] = [];
+
+  // Hook with the title
+  lines.push(`"${narrative.title}"`);
+  lines.push('');
+
+  // Tagline
+  lines.push(narrative.tagline);
+  lines.push('');
+
+  // Key insight
+  lines.push(`Key insight: ${narrative.moralOfTheStory}`);
+  lines.push('');
+
+  // Characters highlight
+  if (narrative.protagonist) {
+    lines.push(`The Hero: ${narrative.protagonist.name} - "${narrative.protagonist.quote}"`);
+  }
+  if (narrative.antagonist) {
+    lines.push(`The Antagonist: ${narrative.antagonist.name} - "${narrative.antagonist.quote}"`);
+  }
+  lines.push('');
+
+  // Call to action
+  lines.push('Watch trust dynamics unfold in real-time:');
+  lines.push(siteUrl);
+  lines.push('');
+  lines.push('#TrustDynamics #EmergentBehavior #ComplexSystems #Web4');
+
+  return {
+    platform: 'linkedin',
+    text: lines.join('\n'),
+    url: siteUrl,
+    hashtags: ['TrustDynamics', 'EmergentBehavior', 'ComplexSystems', 'Web4'],
+  };
+}
+
+/**
+ * Generate Bluesky optimized content (300 char limit, no hashtags in text)
+ */
+function generateBlueskyContent(narrative: SocietyNarrative, siteUrl: string): ShareableContent {
+  let text = '';
+
+  // Lead with the hook
+  if (narrative.protagonist && narrative.antagonist) {
+    text = `${narrative.title}\n\n${narrative.protagonist.name} vs ${narrative.antagonist.name}: Who will build trust, who will burn it?\n\n`;
+  } else {
+    text = `${narrative.title}\n\n${narrative.tagline}\n\n`;
+  }
+
+  // Add moral snippet
+  const shortMoral = narrative.moralOfTheStory.length > 60
+    ? narrative.moralOfTheStory.slice(0, 57) + '...'
+    : narrative.moralOfTheStory;
+
+  text += `Moral: ${shortMoral}`;
+
+  // Ensure we're within limit (leaving room for URL which embeds separately)
+  if (text.length > 250) {
+    text = text.slice(0, 247) + '...';
+  }
+
+  return {
+    platform: 'bluesky',
+    text,
+    url: siteUrl,
+    maxLength: 300,
+  };
+}
+
+/**
+ * Generate clipboard-optimized content (full summary for general sharing)
+ */
+function generateClipboardContent(narrative: SocietyNarrative, siteUrl: string): ShareableContent {
+  const lines: string[] = [];
+
+  lines.push(`# ${narrative.title}`);
+  lines.push(`*${narrative.tagline}*`);
+  lines.push('');
+  lines.push(narrative.summary);
+  lines.push('');
+
+  if (narrative.protagonist) {
+    lines.push(`Hero: ${narrative.protagonist.name} - "${narrative.protagonist.quote}"`);
+  }
+  if (narrative.antagonist) {
+    lines.push(`Antagonist: ${narrative.antagonist.name} - "${narrative.antagonist.quote}"`);
+  }
+  lines.push('');
+
+  lines.push(`Themes: ${narrative.themes.join(', ')}`);
+  lines.push('');
+  lines.push(`Moral: ${narrative.moralOfTheStory}`);
+  lines.push('');
+  lines.push(`Watch the simulation: ${siteUrl}`);
+  lines.push('');
+  lines.push('---');
+  lines.push('Generated by 4-Life Society Simulator');
+  lines.push('Where trust shapes the rules of emergence');
+
+  return {
+    platform: 'clipboard',
+    text: lines.join('\n'),
+    url: siteUrl,
+  };
+}
+
+/**
+ * Generate the sharing URL for each platform
+ */
+export function getShareUrl(content: ShareableContent): string {
+  const encodedText = encodeURIComponent(content.text);
+  const encodedUrl = content.url ? encodeURIComponent(content.url) : '';
+
+  switch (content.platform) {
+    case 'twitter':
+      // Twitter's intent URL
+      return `https://twitter.com/intent/tweet?text=${encodedText}`;
+
+    case 'linkedin':
+      // LinkedIn share URL (text goes in the post composer)
+      // Note: LinkedIn's share API is limited, so we use the generic share dialog
+      return `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+
+    case 'bluesky':
+      // Bluesky intent URL
+      return `https://bsky.app/intent/compose?text=${encodedText}`;
+
+    case 'clipboard':
+    default:
+      // No URL for clipboard - handled separately
+      return '';
+  }
+}
+
+/**
+ * Generate a quick tweet-sized summary (for one-click sharing)
+ */
+export function generateQuickSummary(narrative: SocietyNarrative): string {
+  const emojis: Record<string, string> = {
+    cooperator: '🤝',
+    defector: '🗡️',
+    reciprocator: '🔄',
+    cautious: '🛡️',
+    adaptive: '🧠',
+    human: '👤',
+  };
+
+  // Create a one-line dramatic summary
+  let summary = '';
+
+  if (narrative.protagonist && narrative.antagonist) {
+    const heroEmoji = emojis[narrative.protagonist.strategy] || '🦸';
+    const villainEmoji = emojis[narrative.antagonist.strategy] || '🦹';
+    summary = `${heroEmoji} ${narrative.protagonist.name} faced ${villainEmoji} ${narrative.antagonist.name}. `;
+  }
+
+  // Add outcome based on themes
+  if (narrative.themes.includes('trust prevails')) {
+    summary += 'Trust won. ';
+  } else if (narrative.themes.includes('betrayal')) {
+    summary += 'Betrayal reshaped everything. ';
+  } else if (narrative.themes.includes('coalition')) {
+    summary += 'Coalitions decided the outcome. ';
+  }
+
+  // Add the moral teaser
+  const shortMoral = narrative.moralOfTheStory.length > 50
+    ? narrative.moralOfTheStory.slice(0, 47) + '...'
+    : narrative.moralOfTheStory;
+  summary += shortMoral;
+
+  return summary;
+}

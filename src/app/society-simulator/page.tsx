@@ -41,6 +41,9 @@ import {
   generateComparativeNarrative,
   analyzeRelationships,
   generateCharacterJourney,
+  generateShareableContent,
+  getShareUrl,
+  generateQuickSummary,
   type SocietyNarrative,
   type ComparativeNarrative,
   type CharacterProfile,
@@ -50,6 +53,7 @@ import {
   type CharacterRelationship,
   type RelationshipType,
   type CharacterJourney,
+  type SharePlatform,
 } from '@/lib/narratives/society_narrative';
 
 // ============================================================================
@@ -1452,8 +1456,26 @@ function StoryBar({
               Next →
             </button>
           </div>
-          <div className="text-xs text-gray-500">
-            Step {currentStep} of {totalSteps}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => {
+                const quickSummary = generateQuickSummary(narrative);
+                const siteUrl = 'https://dp-web4.github.io/4-life/society-simulator';
+                const text = `${quickSummary}\n\n${siteUrl}\n\n#Web4 #TrustDynamics`;
+                const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+                window.open(url, '_blank', 'noopener,noreferrer,width=600,height=400');
+              }}
+              className="text-xs px-2 py-1 bg-sky-600 hover:bg-sky-500 text-white rounded transition-colors flex items-center gap-1"
+              title="Share to Twitter/X"
+            >
+              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+              Share
+            </button>
+            <div className="text-xs text-gray-500">
+              Step {currentStep} of {totalSteps}
+            </div>
           </div>
         </div>
       </div>
@@ -2971,8 +2993,126 @@ function NarrativePanel({
           >
             📄 Download Blog Post
           </button>
+          {/* Share Divider */}
+          <div className="h-6 w-px bg-gray-600 mx-1" />
+          {/* Social Share Buttons */}
+          <ShareButtons narrative={narrative} />
         </div>
       </div>
+    </div>
+  );
+}
+
+// ============================================================================
+// Social Share Buttons Component
+// ============================================================================
+
+function ShareButtons({ narrative }: { narrative: SocietyNarrative }) {
+  const [showShareMenu, setShowShareMenu] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const siteUrl = 'https://dp-web4.github.io/4-life/society-simulator';
+
+  const handleShare = (platform: SharePlatform) => {
+    const content = generateShareableContent(narrative, platform, siteUrl);
+
+    if (platform === 'clipboard') {
+      navigator.clipboard.writeText(content.text).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      });
+    } else {
+      const shareUrl = getShareUrl(content);
+      window.open(shareUrl, '_blank', 'noopener,noreferrer,width=600,height=400');
+    }
+
+    setShowShareMenu(false);
+  };
+
+  const handleQuickTweet = () => {
+    const quickSummary = generateQuickSummary(narrative);
+    const text = `${quickSummary}\n\n${siteUrl}\n\n#Web4 #TrustDynamics`;
+    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank', 'noopener,noreferrer,width=600,height=400');
+  };
+
+  return (
+    <div className="relative">
+      <div className="flex items-center gap-1">
+        {/* Quick Tweet Button */}
+        <button
+          onClick={handleQuickTweet}
+          className="text-sm px-3 py-2 bg-sky-600 hover:bg-sky-500 text-white rounded transition-colors flex items-center gap-1"
+          title="Quick share to Twitter/X"
+        >
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          Share
+        </button>
+
+        {/* More Share Options */}
+        <button
+          onClick={() => setShowShareMenu(!showShareMenu)}
+          className="text-sm px-2 py-2 bg-gray-600 hover:bg-gray-500 text-white rounded transition-colors"
+          title="More sharing options"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Share Menu Dropdown */}
+      {showShareMenu && (
+        <>
+          <div
+            className="fixed inset-0 z-40"
+            onClick={() => setShowShareMenu(false)}
+          />
+          <div className="absolute bottom-full right-0 mb-2 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-50 overflow-hidden min-w-[200px]">
+            <div className="p-2 border-b border-gray-700 text-xs text-gray-400 font-medium">
+              Share this story
+            </div>
+            <button
+              onClick={() => handleShare('twitter')}
+              className="w-full px-4 py-2 text-left text-sm text-gray-200 hover:bg-gray-700 flex items-center gap-3"
+            >
+              <svg className="w-4 h-4 text-sky-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+              Twitter / X
+            </button>
+            <button
+              onClick={() => handleShare('bluesky')}
+              className="w-full px-4 py-2 text-left text-sm text-gray-200 hover:bg-gray-700 flex items-center gap-3"
+            >
+              <svg className="w-4 h-4 text-blue-400" viewBox="0 0 568 501" fill="currentColor">
+                <path d="M123.121 33.6637C188.241 82.5526 258.281 181.681 284 234.873C309.719 181.681 379.759 82.5526 444.879 33.6637C491.866 -1.61183 568 -28.9064 568 57.9464C568 75.2916 558.055 203.659 552.222 224.501C531.947 296.954 458.067 315.434 392.347 304.249C507.222 323.8 536.444 388.56 473.333 453.32C353.473 576.312 301.061 422.461 287.631 googlemask" />
+              </svg>
+              Bluesky
+            </button>
+            <button
+              onClick={() => handleShare('linkedin')}
+              className="w-full px-4 py-2 text-left text-sm text-gray-200 hover:bg-gray-700 flex items-center gap-3"
+            >
+              <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              LinkedIn
+            </button>
+            <div className="border-t border-gray-700" />
+            <button
+              onClick={() => handleShare('clipboard')}
+              className="w-full px-4 py-2 text-left text-sm text-gray-200 hover:bg-gray-700 flex items-center gap-3"
+            >
+              <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+              {copied ? 'Copied!' : 'Copy Summary'}
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 }
