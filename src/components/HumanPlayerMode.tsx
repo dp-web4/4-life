@@ -27,6 +27,17 @@ import {
   type HumanPlayerFrame,
   type StrategyType,
 } from '@/lib/simulation/society-engine';
+import {
+  Achievement,
+  getAchievementTracker,
+  type GameContext,
+} from '@/lib/achievements';
+import {
+  AchievementToast,
+  AchievementSummary,
+  AchievementGallery,
+  RecentlyUnlocked,
+} from './AchievementUI';
 
 // ============================================================================
 // Types
@@ -45,6 +56,20 @@ interface GameState {
   lastInteraction: Interaction | null;
   gameResult: HumanPlayerFrame['gameResult'] | null;
   message: string;
+}
+
+// Session stats for achievement tracking
+interface SessionStats {
+  cooperations: number;
+  defections: number;
+  consecutiveCooperations: number;
+  maxConsecutiveCooperations: number;
+  consecutiveDefections: number;
+  maxConsecutiveDefections: number;
+  lowestATP: number;
+  firstActionWasDefect: boolean | null;
+  partnersInteracted: Set<number>;
+  partnerDefections: Map<number, number>;  // Track how many times we defected on each partner
 }
 
 // ============================================================================
@@ -331,10 +356,12 @@ function GameOverPanel({
   result,
   onPlayAgain,
   onExit,
+  newAchievements,
 }: {
   result: NonNullable<HumanPlayerFrame['gameResult']>;
   onPlayAgain: () => void;
   onExit: () => void;
+  newAchievements: Achievement[];
 }) {
   const survived = result.survived;
 
@@ -376,16 +403,10 @@ function GameOverPanel({
         </div>
       </div>
 
-      {survived && result.coalitionSize >= 2 && (
-        <div className="bg-teal-900/30 border border-teal-700/50 rounded-lg p-4 mb-6">
-          <h4 className="font-bold text-teal-400 mb-2">Achievement Unlocked</h4>
-          <p className="text-gray-300 text-sm">
-            You built a coalition! In Web4, coalitions provide mutual support and insurance.
-          </p>
-        </div>
-      )}
+      {/* New achievements unlocked this game */}
+      <RecentlyUnlocked achievements={newAchievements} />
 
-      {!survived && result.cooperationRate < 0.3 && (
+      {!survived && result.cooperationRate < 0.3 && newAchievements.length === 0 && (
         <div className="bg-amber-900/30 border border-amber-700/50 rounded-lg p-4 mb-6">
           <h4 className="font-bold text-amber-400 mb-2">Lesson Learned</h4>
           <p className="text-gray-300 text-sm">
@@ -498,6 +519,24 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
   const [events, setEvents] = useState<SocietyEvent[]>([]);
   const [humanAgentId, setHumanAgentId] = useState<number | null>(null);
 
+  // Achievement system state
+  const [showAchievementGallery, setShowAchievementGallery] = useState(false);
+  const [toastAchievements, setToastAchievements] = useState<Achievement[]>([]);
+  const [newAchievements, setNewAchievements] = useState<Achievement[]>([]);
+  const trackerRef = useRef(getAchievementTracker());
+  const sessionStatsRef = useRef<SessionStats>({
+    cooperations: 0,
+    defections: 0,
+    consecutiveCooperations: 0,
+    maxConsecutiveCooperations: 0,
+    consecutiveDefections: 0,
+    maxConsecutiveDefections: 0,
+    lowestATP: 100,
+    firstActionWasDefect: null,
+    partnersInteracted: new Set(),
+    partnerDefections: new Map(),
+  });
+
   const engineRef = useRef<SocietyEngine | null>(null);
   const iteratorRef = useRef<AsyncGenerator<HumanPlayerFrame> | null>(null);
 
@@ -515,6 +554,21 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
       return;
     }
     setHumanAgentId(humanId);
+
+    // Reset session stats for achievement tracking
+    sessionStatsRef.current = {
+      cooperations: 0,
+      defections: 0,
+      consecutiveCooperations: 0,
+      maxConsecutiveCooperations: 0,
+      consecutiveDefections: 0,
+      maxConsecutiveDefections: 0,
+      lowestATP: 100,
+      firstActionWasDefect: null,
+      partnersInteracted: new Set(),
+      partnerDefections: new Map(),
+    };
+    setNewAchievements([]);
 
     // Get initial state
     const aliveAgents = engine.getAliveAgents();
@@ -607,6 +661,35 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
     const { currentEpoch: epoch, currentRound: round } = gameState;
     const partnerId = gameState.decisionContext.partner.id;
 
+    // Track session stats for achievements
+    const stats = sessionStatsRef.current;
+    stats.partnersInteracted.add(partnerId);
+
+    if (stats.firstActionWasDefect === null) {
+      stats.firstActionWasDefect = action === 'defect';
+    }
+
+    if (action === 'cooperate') {
+      stats.cooperations++;
+      stats.consecutiveCooperations++;
+      stats.consecutiveDefections = 0;
+      stats.maxConsecutiveCooperations = Math.max(
+        stats.maxConsecutiveCooperations,
+        stats.consecutiveCooperations
+      );
+    } else {
+      stats.defections++;
+      stats.consecutiveDefections++;
+      stats.consecutiveCooperations = 0;
+      stats.maxConsecutiveDefections = Math.max(
+        stats.maxConsecutiveDefections,
+        stats.consecutiveDefections
+      );
+      // Track defections per partner
+      const currentDefections = stats.partnerDefections.get(partnerId) || 0;
+      stats.partnerDefections.set(partnerId, currentDefections + 1);
+    }
+
     // Execute the interaction
     const interaction = engine.executeHumanInteraction(
       partnerId,
@@ -619,6 +702,11 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
 
     // Update agents after interaction
     const aliveAgents = engine.getAliveAgents();
+    const humanAgent = aliveAgents.find(a => a.id === humanAgentId);
+    if (humanAgent) {
+      stats.lowestATP = Math.min(stats.lowestATP, humanAgent.atp);
+    }
+
     setAgents(aliveAgents.map(a => ({
       id: a.id,
       name: a.name,
@@ -695,19 +783,61 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
 
   const finishGame = (engine: SocietyEngine, humanId: number) => {
     const humanAgent = engine.getAgent(humanId);
+    const aliveAgents = engine.getAliveAgents();
+    const stats = sessionStatsRef.current;
+
+    const survived = humanAgent?.alive || false;
+    const finalATP = humanAgent?.atp || 0;
+    const cooperationRate = humanAgent && humanAgent.totalInteractions > 0
+      ? humanAgent.totalCooperations / humanAgent.totalInteractions
+      : 0;
+    const coalitionSize = humanAgent?.coalitionPartners.size || 0;
+    const reputation = humanAgent?.reputation || 0;
+    const totalInteractions = stats.cooperations + stats.defections;
+
+    // Count partners who were never betrayed (defected on)
+    const partnersNeverBetrayed = stats.partnersInteracted.size - stats.partnerDefections.size;
+
+    // Build game context for achievement processing
+    const gameContext: GameContext = {
+      scenario: selectedScenario,
+      survived,
+      finalATP,
+      cooperationRate,
+      coalitionSize,
+      reputation,
+      totalInteractions,
+      cooperations: stats.cooperations,
+      defections: stats.defections,
+      consecutiveCooperations: stats.maxConsecutiveCooperations,
+      consecutiveDefections: stats.maxConsecutiveDefections,
+      lowestATP: stats.lowestATP,
+      firstActionWasDefect: stats.firstActionWasDefect || false,
+      uniquePartnersInteracted: stats.partnersInteracted.size,
+      totalAgentsInSociety: aliveAgents.length,
+      partnersNeverBetrayed,
+      partnersBetrayed: stats.partnerDefections.size,
+    };
+
+    // Process achievements
+    const unlocked = trackerRef.current.processGameEnd(gameContext);
+    setNewAchievements(unlocked);
+
+    // Show toast for newly unlocked achievements
+    if (unlocked.length > 0) {
+      setToastAchievements(unlocked);
+    }
 
     setGameState(prev => ({
       ...prev,
       phase: 'game_over',
       gameResult: {
-        survived: humanAgent?.alive || false,
-        finalTrust: humanAgent?.reputation || 0,
-        finalATP: humanAgent?.atp || 0,
-        cooperationRate: humanAgent && humanAgent.totalInteractions > 0
-          ? humanAgent.totalCooperations / humanAgent.totalInteractions
-          : 0,
-        coalitionSize: humanAgent?.coalitionPartners.size || 0,
-        reputation: humanAgent?.reputation || 0,
+        survived,
+        finalTrust: reputation,
+        finalATP,
+        cooperationRate,
+        coalitionSize,
+        reputation,
       },
     }));
   };
@@ -776,6 +906,14 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
               <li>• Form coalitions with allies for mutual support</li>
               <li>• If your ATP hits 0, you die</li>
             </ul>
+          </div>
+
+          {/* Achievement Summary */}
+          <div className="mb-6">
+            <AchievementSummary
+              tracker={trackerRef.current}
+              onClick={() => setShowAchievementGallery(true)}
+            />
           </div>
 
           <div className="flex gap-4">
@@ -859,6 +997,23 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
           result={gameState.gameResult}
           onPlayAgain={handlePlayAgain}
           onExit={onExit}
+          newAchievements={newAchievements}
+        />
+      )}
+
+      {/* Achievement Toast Notifications */}
+      {toastAchievements.length > 0 && (
+        <AchievementToast
+          achievements={toastAchievements}
+          onDismiss={() => setToastAchievements([])}
+        />
+      )}
+
+      {/* Achievement Gallery Modal */}
+      {showAchievementGallery && (
+        <AchievementGallery
+          tracker={trackerRef.current}
+          onClose={() => setShowAchievementGallery(false)}
         />
       )}
     </div>
