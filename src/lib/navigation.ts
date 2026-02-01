@@ -18,11 +18,18 @@ export interface NavigationTree {
 export const navigationTree: NavigationTree = {
   'Getting Started': [
     {
+      title: 'Why Web4?',
+      href: '/why-web4',
+      desc: 'The problem before the solution',
+      keywords: ['why', 'problem', 'trust', 'spam', 'identity', 'introduction', 'start'],
+      related: ['/first-contact', '/glossary', '/how-it-works']
+    },
+    {
       title: 'First Contact',
       href: '/first-contact',
       desc: '10-min interactive intro',
       keywords: ['tutorial', 'beginner', 'start', 'introduction'],
-      related: ['/learn', '/how-it-works']
+      related: ['/why-web4', '/learn', '/how-it-works']
     },
     {
       title: 'Your First Simulation',

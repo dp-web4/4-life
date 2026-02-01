@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { navigationTree } from '@/lib/navigation';
 import FeaturedMoment, { FeaturedMomentCompact } from '@/components/FeaturedMoment';
 import EcosystemStats from '@/components/EcosystemStats';
+import TermTooltip from '@/components/TermTooltip';
 import type { MomentCategory } from '@/lib/moments/types';
 
 export default function HomePage() {
@@ -63,8 +64,8 @@ function IntroTab() {
           <Link href="/first-contact" className="btn-primary">
             First Contact →
           </Link>
-          <Link href="/explore-guide" className="btn-secondary" style={{ padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>
-            Not sure where to start?
+          <Link href="/why-web4" className="btn-secondary" style={{ padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>
+            Why Web4?
           </Link>
         </div>
       </section>
@@ -95,7 +96,7 @@ function IntroTab() {
             <div>
               <strong>Attention is metabolic</strong>
               <p style={{ color: 'var(--color-text-secondary)', margin: '0.25rem 0 0', fontSize: '0.9rem' }}>
-                Every action costs ATP. Quality earns ATP. Spam burns out.
+                Every action costs <TermTooltip term="ATP">ATP</TermTooltip>. Quality earns ATP. Spam burns out.
               </p>
             </div>
           </li>
