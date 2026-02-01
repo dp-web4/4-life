@@ -5,32 +5,52 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
-LOG_DIR="$SCRIPT_DIR/logs"
 DATE=$(date +%Y-%m-%d)
-LOG_FILE="$LOG_DIR/$DATE.md"
+LOG_FILE="$SCRIPT_DIR/logs/$DATE.md"
 
 # Ensure log directory exists
-mkdir -p "$LOG_DIR"
+mkdir -p "$SCRIPT_DIR/logs"
 
 echo "Starting 4-Life Visitor Track for $DATE"
 
-# Launch Claude with the visitor context
-# The CLAUDE.md in this directory instructs it to be a naive visitor
-cd "$PROJECT_DIR"
+# Launch Claude FROM the visitor directory (picks up CLAUDE.md persona)
+# --dangerously-skip-permissions: allows autonomous WebFetch and Write
+# NO -c flag: fresh context, no conversation history
+# NO --print flag: needs tool access for WebFetch
+cd "$SCRIPT_DIR"
 
-# Use claude with the visitor directory as context
-claude --print "You are the 4-Life Visitor Track. Today is $DATE.
+# Feed the mission prompt via stdin
+claude --dangerously-skip-permissions << EOF
+# 4-Life Visitor Session — $DATE
 
-Your mission: Browse https://4-life-ivory.vercel.app/ as a first-time human visitor with NO prior Web4 knowledge.
+You are starting a fresh visitor session. Your mission is defined in CLAUDE.md in this directory.
 
-Follow these steps:
-1. Start at the landing page
-2. Navigate naturally as a curious human would
-3. Click links in logical progression
-4. Document your experience in the format specified in visitor/CLAUDE.md
-5. Be honest about confusion — that's the whole point
+## CRITICAL CONSTRAINTS
 
-Generate your browse log now. Write it to: visitor/logs/$DATE.md" > "$LOG_FILE" 2>&1
+1. **USE WEBFETCH** to actually browse https://4-life-ivory.vercel.app/
+   - Start at the landing page
+   - Follow links you find on each page
+   - Actually read the content of each page you visit
+
+2. **DO NOT READ LOCAL FILES** except:
+   - CLAUDE.md (your persona/instructions)
+   - Writing your log to: logs/$DATE.md
+
+3. **DO NOT READ PAST LOGS** in logs/ — you must be a fresh visitor every time
+
+4. **DO NOT EXPLORE** the 4-life codebase — only browse the live website
+
+5. **BE GENUINELY NAIVE** — you have no prior Web4 knowledge. Don't fill gaps from training.
+
+## Your Task
+
+1. Read CLAUDE.md for your full instructions and output format
+2. Use WebFetch to browse the live site, starting at the landing page
+3. Navigate naturally — follow links a curious human would click
+4. Document your honest experience
+5. Write your browse log to: logs/$DATE.md
+
+Begin your browse now.
+EOF
 
 echo "Visitor browse complete. Log: $LOG_FILE"
