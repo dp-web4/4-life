@@ -6,17 +6,36 @@
 const { chromium } = require('playwright');
 
 const PAGES_TO_TEST = [
+  // Core visitor journey pages
   { path: '/', name: 'Home' },
+  { path: '/why-web4', name: 'Why Web4' },
+  { path: '/first-contact', name: 'First Contact' },
+  { path: '/glossary', name: 'Glossary' },
+  { path: '/how-it-works', name: 'How It Works' },
+  { path: '/learn', name: 'Learning Journey' },
+
+  // Core concepts
+  { path: '/atp-economics', name: 'ATP Economics' },
+  { path: '/lct-explainer', name: 'LCT Explainer' },
+  { path: '/trust-tensor', name: 'Trust Tensor' },
+  { path: '/aliveness', name: 'Aliveness' },
+
+  // Interactive labs
+  { path: '/playground', name: 'Playground' },
+  { path: '/lab-console', name: 'Lab Console' },
+  { path: '/society-simulator', name: 'Society Simulator' },
+  { path: '/research-hub', name: 'Research Hub' },
+
+  // Explorers and visualizations
   { path: '/trust-networks', name: 'Trust Networks' },
   { path: '/decision-evolution', name: 'Decision Evolution' },
-  { path: '/lab-console', name: 'Lab Console' },
-  { path: '/playground', name: 'Playground' },
   { path: '/conversational-context', name: 'Conversational Context' },
   { path: '/scaffolding-lab', name: 'Scaffolding Lab' },
   { path: '/pattern-library', name: 'EP Pattern Library' },
-  { path: '/society-simulator', name: 'Society Simulator' },
   { path: '/moments', name: 'Emergent Moments' },
   { path: '/trust-timeline', name: 'Trust Timeline' },
+
+  // ACT Chat
   { path: '/act-explorer', name: 'ACT Explorer' },
   { path: '/act-explorer?context=emergence%20moment', name: 'ACT Explorer with Context' },
 ];
