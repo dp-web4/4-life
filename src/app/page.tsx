@@ -15,13 +15,24 @@ export default function HomePage() {
     <div className="space-y-8">
       {/* Hero */}
       <section className="text-center" style={{ maxWidth: '48rem', margin: '0 auto' }}>
-        <p className="eyebrow">Web4 Societies, In Motion</p>
-        <h1 style={{ marginBottom: '1.5rem' }}>
-          Trust-Native Societies for Humans and AI
+        <p className="eyebrow">4-Life: Trust-Native Societies</p>
+        <h1 style={{ marginBottom: '1rem' }}>
+          The Internet Has a Trust Problem
         </h1>
-        <p className="hero-subtitle" style={{ margin: '0 auto 2rem' }}>
-          What if trust was measurable? What if spam died from metabolic exhaustion?
-          What if societies self-organized without central authority?
+        <p className="hero-subtitle" style={{ margin: '0 auto 1.5rem', color: 'var(--color-text-secondary)' }}>
+          Spam wins because accounts are free. Reputations are trapped in silos.
+          Bad actors get unlimited fresh starts. AI deception outpaces verification.
+        </p>
+        <p style={{
+          fontSize: '1.1rem',
+          color: 'var(--color-text)',
+          margin: '0 auto 1.5rem',
+          maxWidth: '36rem',
+          lineHeight: 1.6
+        }}>
+          <strong>Web4</strong> is a trust-native internet where identity costs something,
+          actions have metabolic weight, and consequences follow you forever.
+          This site lets you <em>see</em> how it works.
         </p>
 
         {/* Tab Selector */}
@@ -54,18 +65,27 @@ export default function HomePage() {
 function IntroTab() {
   return (
     <div className="space-y-12" style={{ maxWidth: '48rem', margin: '0 auto' }}>
-      {/* Quick Start */}
-      <section className="card card-highlight text-center">
-        <h2 style={{ fontSize: '1.5rem' }}>New here?</h2>
-        <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem' }}>
-          Start with our interactive tutorial. Zero to understanding in 10 minutes.
+      {/* Guided Start - Most Prominent */}
+      <section className="card card-highlight" style={{
+        textAlign: 'center',
+        border: '2px solid var(--color-emerald)',
+        background: 'linear-gradient(135deg, var(--color-emerald-surface) 0%, var(--color-bg-secondary) 100%)'
+      }}>
+        <h2 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>New Here? Start Here</h2>
+        <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem', maxWidth: '32rem', margin: '0 auto 1.5rem' }}>
+          Recommended path: <strong>Why Web4</strong> (understand the problem) → <strong>First Contact</strong> (learn the concepts) → <strong>Playground</strong> (experiment yourself)
         </p>
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <Link href="/first-contact" className="btn-primary">
-            First Contact →
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <Link href="/why-web4" className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <span>1. Why Web4?</span>
+            <span style={{ opacity: 0.7 }}>→</span>
           </Link>
-          <Link href="/why-web4" className="btn-secondary" style={{ padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>
-            Why Web4?
+          <Link href="/first-contact" className="btn-secondary" style={{ padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <span>2. First Contact</span>
+            <span style={{ opacity: 0.7 }}>→</span>
+          </Link>
+          <Link href="/playground" className="btn-secondary" style={{ padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none' }}>
+            3. Playground
           </Link>
         </div>
       </section>

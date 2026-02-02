@@ -3423,6 +3423,19 @@ export default function SocietySimulatorPage() {
           </div>
         </div>
 
+        {/* Web4 Connection */}
+        <div className="mb-4 bg-emerald-900/20 border border-emerald-800 rounded-lg p-4">
+          <h2 className="text-base font-bold mb-2 text-emerald-400">How This Demonstrates Web4</h2>
+          <p className="text-gray-300 text-sm mb-2">
+            Each agent has <strong>ATP</strong> (metabolic budget) and a <strong>Trust Tensor</strong> (reputation).
+            Actions cost ATP. Cooperation builds trust. Defection may win short-term but gets isolated.
+            Watch how trust-based economics create stable cooperation <em>without moderators</em>.
+          </p>
+          <p className="text-xs text-gray-500">
+            New to Web4? Start with <a href="/why-web4" className="text-emerald-400 hover:underline">Why Web4</a> first.
+          </p>
+        </div>
+
         {/* Key Insight */}
         <div className="mb-6 bg-blue-900/20 border border-blue-800 rounded-lg p-4">
           <h2 className="text-lg font-bold mb-2">The Core Question</h2>
