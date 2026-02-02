@@ -339,6 +339,161 @@ export default function WhyWeb4Page() {
         </div>
       </section>
 
+      {/* Honest Questions */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">Honest Questions</h2>
+        <p className="text-gray-400 mb-8">
+          If you're skeptical, good. Here are the hard questions visitors ask, and honest answers.
+        </p>
+
+        <div className="space-y-6">
+          {/* Deployment */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Who runs the infrastructure? How is this deployed?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Web4 is designed as a <strong>protocol</strong>, not a platform. Like TCP/IP or SMTP,
+                the infrastructure is federated—multiple independent operators can run nodes that
+                interoperate. No single company controls it.
+              </p>
+              <p>
+                In practice: witness nodes can be run by universities, nonprofits, companies, or
+                individuals. The trust system is designed so that no single operator can manipulate
+                the network—collusion requires coordinating multiple independent parties.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> This is still early-stage research. Full deployment
+                requires standardization, adoption, and tooling that doesn't exist yet.
+              </p>
+            </div>
+          </details>
+
+          {/* Sybil with hardware */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Can't someone with lots of hardware create many identities?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Yes, but it's <strong>expensive</strong>. Creating one LCT requires a physical device
+                with a TPM/Secure Enclave. Creating 1000 fake identities means buying 1000 devices—
+                thousands of dollars and physical logistics.
+              </p>
+              <p>
+                Compare to email: creating 1000 accounts costs nothing. The goal isn't to make Sybil
+                attacks impossible (nothing can), but to make them economically irrational for most
+                attackers. Nation-state adversaries can always outspend; the system is designed to
+                resist <em>casual</em> abuse, not unlimited resources.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> A sufficiently motivated adversary with a large budget
+                can still attack. Web4 raises the floor, not the ceiling.
+              </p>
+            </div>
+          </details>
+
+          {/* Bootstrapping witnesses */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How do you bootstrap the initial witness network?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Bootstrap requires a <strong>seed network</strong> of trusted witnesses. This is the
+                classic "who watches the watchmen" problem. Proposed approaches:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li>Partner with existing identity providers (universities, employers) as initial witnesses</li>
+                <li>Hardware attestation from device manufacturers (Apple, Google, etc.)</li>
+                <li>Web of trust model where existing members vouch for newcomers</li>
+                <li>Gradual rollout starting with high-stakes contexts (not consumer social)</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Bootstrapping is genuinely hard. No perfect solution exists.
+                This is an active research area, not a solved problem.
+              </p>
+            </div>
+          </details>
+
+          {/* Real world deployment */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Is this deployed anywhere? Or purely theoretical?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Currently theoretical with working simulations.</strong> 4-Life (this site)
+                demonstrates the mechanics in simulation. The underlying protocol specification exists
+                in the <a href="https://dp-web4.github.io/web4/" className="text-sky-400 hover:underline">
+                Web4 whitepaper</a>.
+              </p>
+              <p>
+                Real-world deployment requires: hardware integration (TPM/Secure Enclave SDKs),
+                witness infrastructure, adoption by at least one platform, and legal/regulatory
+                navigation around identity systems.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest answer:</strong> This is research, not production. The simulations prove
+                the mechanics work in principle. Deployment is a multi-year effort requiring significant
+                investment and partnership.
+              </p>
+            </div>
+          </details>
+
+          {/* Hardware loss */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What if I lose my hardware? Is my identity gone forever?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>No—recovery is built in.</strong> LCT supports multiple linked devices. Lose your
+                phone? Your laptop can attest to your identity. Lose both? Your witnesses can attest.
+              </p>
+              <p>
+                The design principle: make recovery possible but expensive. You need multiple witnesses
+                to vouch for you, similar to how banks verify identity for account recovery. This
+                prevents attackers from "recovering" someone else's identity while protecting legitimate users.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Trade-off:</strong> Recovery is slower than "forgot password" flows. You can't
+                instantly regain access—the friction is intentional to prevent social engineering attacks.
+              </p>
+            </div>
+          </details>
+
+          {/* Vs existing solutions */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Why is this better than [existing solution X]?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>It's not "better" at everything.</strong> Every system has trade-offs:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>vs Passwords:</strong> More secure, but requires hardware. Won't work on borrowed devices.</li>
+                <li><strong>vs OAuth (Google login):</strong> No central point of control, but more complex to implement.</li>
+                <li><strong>vs Blockchain wallets:</strong> Harder to create fake IDs, but not as portable across chains.</li>
+                <li><strong>vs Biometrics:</strong> Can't be stolen by breach, but requires specific device support.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>What Web4 optimizes for:</strong> Economic resistance to spam/abuse while preserving
+                privacy and decentralization. If you need something else, another solution may fit better.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="max-w-4xl mx-auto mt-16">
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8 text-center">
