@@ -1,0 +1,143 @@
+# 4-Life Repository Index
+# Machine-readable metadata for AI agent discovery
+# Schema version: 1.0
+
+metadata:
+  name: 4-life
+  full_name: "4-Life: Interactive Web4 Explainer"
+  description: "Fractal laboratory for Web4 societies - interactive simulation and concept exploration"
+  type: tool
+  domain:
+    - web4
+    - visualization
+    - education
+    - simulation
+    - trust
+  license: AGPL-3.0
+  last_updated: "2026-02-08"
+
+status:
+  phase: research-demo
+  maturity: 0.8
+  production_ready: false
+  active_development: true
+  live_demo: "https://4-life-ivory.vercel.app/"
+
+metrics:
+  pages: 34
+  simulation_types: 4
+  concept_explainers: 10
+
+technology:
+  framework: "Next.js 14"
+  language: TypeScript
+  styling: "Tailwind CSS"
+  charts: Recharts
+  deployment: Vercel
+
+entry_points:
+  discovery: "AGENTS.md"
+  readme: "README.md"
+  live_demo: "https://4-life-ivory.vercel.app/"
+  first_contact: "/first-contact"
+  lab_console: "/lab-console"
+
+pages:
+  tutorials:
+    - path: "/first-contact"
+      purpose: "Zero-to-comprehension intro"
+    - path: "/learn"
+      purpose: "Guided learning path"
+    - path: "/how-it-works"
+      purpose: "Conceptual walkthrough"
+  simulations:
+    - path: "/lab-console"
+      purpose: "Live simulation viewer"
+    - path: "/playground"
+      purpose: "Parameter experimentation"
+    - path: "/trust-networks"
+      purpose: "Multi-agent trust visualization"
+    - path: "/federation-economics"
+      purpose: "ATP market dynamics"
+  explainers:
+    - path: "/lct-explainer"
+      concept: "Linked Context Token"
+    - path: "/atp-economics"
+      concept: "ATP/ADP metabolic economics"
+    - path: "/trust-tensor"
+      concept: "T3 multi-dimensional trust"
+    - path: "/coherence-index"
+      concept: "CI incoherence detection"
+    - path: "/aliveness"
+      concept: "Measurable existence criteria"
+    - path: "/markov-relevancy-horizon"
+      concept: "MRH context boundaries"
+  tools:
+    - path: "/act-explorer"
+      purpose: "Conversational Q&A"
+    - path: "/adversarial-explorer"
+      purpose: "Attack pattern exploration"
+    - path: "/compare"
+      purpose: "Simulation comparison"
+    - path: "/patterns"
+      purpose: "Pattern corpus browser"
+
+simulation_types:
+  - name: "EP Closed Loop"
+    purpose: "Epistemic learning across lives"
+  - name: "Maturation Demo"
+    purpose: "Trust evolution comparison"
+  - name: "Trust Networks"
+    purpose: "Multi-agent dynamics"
+  - name: "Federation Economics"
+    purpose: "ATP market self-organization"
+
+code_structure:
+  pages: "src/app/"
+  simulation_lib: "src/lib/"
+  components: "src/components/"
+  types: "src/lib/types.ts"
+  narratives: "src/lib/narratives/"
+  patterns: "src/lib/patterns/"
+
+related_repos:
+  - name: web4
+    url: "https://github.com/dp-web4/web4"
+    relationship: "Parent protocol"
+  - name: Synchronism
+    url: "https://github.com/dp-web4/Synchronism"
+    relationship: "Coherence physics (C ≈ 0.50)"
+  - name: HRM
+    url: "https://github.com/dp-web4/HRM"
+    relationship: "SAGE consciousness kernel"
+  - name: ACT
+    url: "https://github.com/dp-web4/ACT"
+    relationship: "Blockchain implementation"
+
+token_budget:
+  minimal:
+    files: ["AGENTS.md"]
+    tokens: 400
+    purpose: "Relevance assessment"
+  standard:
+    files: ["AGENTS.md", "README.md"]
+    tokens: 5000
+    purpose: "Usage decision"
+  code:
+    files: ["src/lib/types.ts"]
+    tokens: 8000
+    purpose: "Type understanding"
+  full:
+    files: ["src/app/"]
+    tokens: 30000
+    purpose: "Full implementation"
+
+commands:
+  install: "npm install"
+  dev: "npm run dev"
+  build: "npm run build"
+  start: "npm start"
+
+contact:
+  maintainer: "dp@metalinxx.io"
+  issues: "https://github.com/dp-web4/4-life/issues"
