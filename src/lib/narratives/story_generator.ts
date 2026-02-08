@@ -296,7 +296,7 @@ export class StoryGenerator {
         return "Epistemic Proprioception (EP) learns from experience across lives, gradually improving performance through pattern recognition.";
 
       case EventType.ATP_EXHAUSTION:
-        return "ATP (Attention Token Protocol) represents metabolic budget. All actions cost ATP. Gain ATP through valuable contribution (ADP - Attention Donation Protocol).";
+        return "ATP (Allocation Transfer Packet) represents metabolic budget. All actions cost ATP. Gain ATP through valuable contribution (ADP - Allocation Discharge Packet).";
 
       default:
         return undefined;

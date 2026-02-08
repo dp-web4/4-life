@@ -138,7 +138,7 @@ const EXAMPLE_EXCHANGES: ExampleExchange[] = [
   {
     id: 'medium-1',
     prompt: 'Can you explain what ATP means?',
-    response: 'ATP stands for Attention Token Protocol. Think of it like energy currency in Web4 - you earn it by contributing value to the network, and spend it on operations. Like a biological cell needs ATP for energy, digital agents need attention budget to act.',
+    response: 'ATP stands for Allocation Transfer Packet. Think of it like energy currency in Web4 - you earn it by contributing value to the network, and spend it on operations. Like a biological cell needs ATP for energy, digital agents need attention budget to act.',
     salience: { surprise: 0.3, novelty: 0.4, arousal: 0.5, reward: 0.5, conflict: 0.2, total: 0.39 },
     stored: false,
     explanation: 'Medium salience: Clear explanation but follows predictable pattern. Good analogy but no surprising insights or partnership language.',

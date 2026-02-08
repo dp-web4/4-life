@@ -47,7 +47,7 @@ const DOMAINS: Domain[] = [
     icon: 'D2',
     color: '#f59e0b',
     description: 'Energy currency of life. All actions require metabolic resources.',
-    web4Mapping: 'ATP (Attention Token Protocol) — every action costs attention, which must be earned.',
+    web4Mapping: 'ATP (Allocation Transfer Packet) — every action costs attention, which must be earned.',
     keyInsight: 'ATP scarcity forces prioritization — agency under metabolic constraint.',
   },
   {

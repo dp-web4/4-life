@@ -51,7 +51,7 @@ class PermissionCategory(Enum):
 
 
 class ATPPermission(Enum):
-    """ATP (Attention Token Protocol) permissions"""
+    """ATP (Allocation Transfer Packet) permissions"""
     READ = "atp:read"           # Query ATP balances
     WRITE = "atp:write"         # Transfer ATP within budget
     ALL = "atp:all"             # Unlimited ATP operations

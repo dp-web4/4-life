@@ -258,7 +258,7 @@ karma_bonus = f(coherence_index, consistency, outcomes)
 The narrative explains this as:
 > "Their consistent behavior earned them a trust boost of 0.06, starting this life at 0.55. This is Web4's memory at work."
 
-### ATP (Attention Token Protocol)
+### ATP (Allocation Transfer Packet)
 
 - **ATP = metabolic budget** (capacity to act)
 - **Earn ATP**: Valuable contributions
