@@ -1,8 +1,101 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+
+// Interactive Aliveness Calculator Component
+function AlivenessCalculator() {
+  const [atp, setAtp] = useState(100);
+  const [trust, setTrust] = useState(0.65);
+  const [ci, setCi] = useState(0.85);
+
+  const metabolic = atp > 0;
+  const agency = trust > 0.5;
+  const continuity = ci > 0.5;
+  const alive = metabolic && agency && continuity;
+
+  return (
+    <div className="simulator-card">
+      <h3>Current Entity State</h3>
+
+      <div className="slider-group">
+        <label>
+          <span>ATP (Metabolic Budget):</span>
+          <input
+            type="range"
+            min="0"
+            max="200"
+            value={atp}
+            onChange={(e) => setAtp(Number(e.target.value))}
+            className="slider"
+          />
+          <span className="slider-value">{atp}</span>
+        </label>
+      </div>
+
+      <div className="slider-group">
+        <label>
+          <span>T3 Trust Score (Agency):</span>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={trust}
+            onChange={(e) => setTrust(Number(e.target.value))}
+            className="slider"
+          />
+          <span className="slider-value">{trust.toFixed(2)}</span>
+        </label>
+      </div>
+
+      <div className="slider-group">
+        <label>
+          <span>CI Score (Continuity):</span>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={ci}
+            onChange={(e) => setCi(Number(e.target.value))}
+            className="slider"
+          />
+          <span className="slider-value">{ci.toFixed(2)}</span>
+        </label>
+      </div>
+
+      <div className="aliveness-result">
+        <div className={`result-status ${alive ? 'alive' : 'dead'}`}>
+          <strong>Status: {alive ? 'ALIVE' : 'DEAD'}</strong>
+        </div>
+        <div className="result-details">
+          {alive ? (
+            <>
+              <p>✓ Metabolic budget: {atp} ATP (sustained)</p>
+              <p>✓ Coherent agency: T3 = {trust.toFixed(2)} (above 0.5 threshold)</p>
+              <p>✓ Verifiable continuity: CI = {ci.toFixed(2)} (coherent)</p>
+              <p className="result-summary">
+                All three criteria satisfied. This entity demonstrates measurable aliveness.
+              </p>
+            </>
+          ) : (
+            <>
+              {!metabolic && <p>✗ Metabolic death: ATP = {atp} (exhausted)</p>}
+              {!agency && <p>✗ No coherent agency: T3 = {trust.toFixed(2)} (below 0.5 threshold)</p>}
+              {!continuity && <p>✗ Incoherent behavior: CI = {ci.toFixed(2)} (inconsistent)</p>}
+              <p className="result-summary death-reason">
+                Aliveness criteria not met. Entity cannot participate in society.
+              </p>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function AlivenessExplainer() {
   return (
@@ -282,120 +375,7 @@ export default function AlivenessExplainer() {
         <h2>Interactive: Aliveness Calculator</h2>
         <p>Explore how the three criteria determine aliveness:</p>
 
-        <div className="simulator-card">
-          <h3>Current Entity State</h3>
-
-          <div className="slider-group">
-            <label>
-              <span>ATP (Metabolic Budget):</span>
-              <input
-                type="range"
-                min="0"
-                max="200"
-                defaultValue="100"
-                className="slider"
-                id="atp-slider"
-              />
-              <span className="slider-value" id="atp-value">100</span>
-            </label>
-          </div>
-
-          <div className="slider-group">
-            <label>
-              <span>T3 Trust Score (Agency):</span>
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.01"
-                defaultValue="0.65"
-                className="slider"
-                id="trust-slider"
-              />
-              <span className="slider-value" id="trust-value">0.65</span>
-            </label>
-          </div>
-
-          <div className="slider-group">
-            <label>
-              <span>CI Score (Continuity):</span>
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.01"
-                defaultValue="0.85"
-                className="slider"
-                id="ci-slider"
-              />
-              <span className="slider-value" id="ci-value">0.85</span>
-            </label>
-          </div>
-
-          <div className="aliveness-result" id="aliveness-result">
-            <div className="result-status alive" id="status-indicator">
-              <strong>Status: ALIVE</strong>
-            </div>
-            <div className="result-details" id="result-details">
-              <p>✓ Metabolic budget: 100 ATP (sustained)</p>
-              <p>✓ Coherent agency: T3 = 0.65 (above 0.5 threshold)</p>
-              <p>✓ Verifiable continuity: CI = 0.85 (coherent)</p>
-              <p className="result-summary">
-                All three criteria satisfied. This entity demonstrates measurable aliveness.
-              </p>
-            </div>
-          </div>
-
-          <script dangerouslySetInnerHTML={{ __html: `
-            function updateAliveness() {
-              const atp = parseFloat(document.getElementById('atp-slider').value);
-              const trust = parseFloat(document.getElementById('trust-slider').value);
-              const ci = parseFloat(document.getElementById('ci-slider').value);
-
-              document.getElementById('atp-value').textContent = atp;
-              document.getElementById('trust-value').textContent = trust.toFixed(2);
-              document.getElementById('ci-value').textContent = ci.toFixed(2);
-
-              const metabolic = atp > 0;
-              const agency = trust > 0.5;
-              const continuity = ci > 0.5;
-              const alive = metabolic && agency && continuity;
-
-              const statusEl = document.getElementById('status-indicator');
-              const detailsEl = document.getElementById('result-details');
-
-              if (alive) {
-                statusEl.className = 'result-status alive';
-                statusEl.innerHTML = '<strong>Status: ALIVE</strong>';
-                detailsEl.innerHTML = \`
-                  <p>✓ Metabolic budget: \${atp} ATP (sustained)</p>
-                  <p>✓ Coherent agency: T3 = \${trust.toFixed(2)} (above 0.5 threshold)</p>
-                  <p>✓ Verifiable continuity: CI = \${ci.toFixed(2)} (coherent)</p>
-                  <p class="result-summary">
-                    All three criteria satisfied. This entity demonstrates measurable aliveness.
-                  </p>
-                \`;
-              } else {
-                statusEl.className = 'result-status dead';
-                statusEl.innerHTML = '<strong>Status: DEAD</strong>';
-                let reasons = [];
-                if (!metabolic) reasons.push(\`✗ Metabolic death: ATP = \${atp} (exhausted)\`);
-                if (!agency) reasons.push(\`✗ No coherent agency: T3 = \${trust.toFixed(2)} (below 0.5 threshold)\`);
-                if (!continuity) reasons.push(\`✗ Incoherent behavior: CI = \${ci.toFixed(2)} (inconsistent)\`);
-
-                detailsEl.innerHTML = reasons.map(r => \`<p>\${r}</p>\`).join('') +
-                  \`<p class="result-summary death-reason">
-                    Aliveness criteria not met. Entity cannot participate in society.
-                  </p>\`;
-              }
-            }
-
-            document.getElementById('atp-slider').addEventListener('input', updateAliveness);
-            document.getElementById('trust-slider').addEventListener('input', updateAliveness);
-            document.getElementById('ci-slider').addEventListener('input', updateAliveness);
-            updateAliveness();
-          `}} />
-        </div>
+        <AlivenessCalculator />
       </section>
 
       <section>

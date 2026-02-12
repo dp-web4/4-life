@@ -1,6 +1,19 @@
 /**
- * Browser test for 4-Life visualizations
- * Captures console errors and reports issues
+ * Browser test for 4-Life pages
+ *
+ * Tests key pages for:
+ * - Console errors (JavaScript exceptions)
+ * - Network failures (failed requests)
+ * - Loading states stuck (content not rendering)
+ *
+ * Coverage includes:
+ * - Core visitor journey (home → why-web4 → first-contact → playground)
+ * - Concept explainers (ATP, LCT, Trust Tensor, etc.)
+ * - Interactive labs (playground, lab-console, society-simulator)
+ * - Research tools (explorers, visualizers, ACT chat)
+ *
+ * Run with: node test-visualizations.js
+ * Requires: npm run start on port 3000
  */
 
 const { chromium } = require('playwright');
