@@ -68,14 +68,25 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 
 The core question: **Can we create digital societies where trust emerges from verifiable behavior rather than institutional authority?**
 
+### The Web4 Equation
+
+4-Life simulates entities living within this ontology:
+
+```
+Web4 = MCP + RDF + LCT + T3/V3*MRH + ATP/ADP
+```
+
+Where: `/` = "verified by", `*` = "contextualized by", `+` = "augmented with"
+
 ### Key Concepts Being Explored
 
+- **RDF (Resource Description Framework)**: Ontological backbone — all trust relationships, MRH graphs, and semantic connections are typed RDF triples
 - **Linked Context Tokens (LCT)**: Unforgeable identity primitive - hardware-bound, witnessed, multi-device digital presence (FOUNDATIONAL - enables everything else)
 - **Aliveness**: Measurable existence criteria - ATP > 0 (metabolic), T3 > 0.5 (agency), CI coherent (continuity). Death is real. Rebirth requires trust.
 - **ATP/ADP Cycles**: Metabolic economics - entities earn and spend "attention" through meaningful participation
-- **Trust Tensors (T3)**: Multi-dimensional trust that captures competence, reliability, alignment, and more
+- **Trust Tensors (T3)**: Multi-dimensional trust that captures competence, reliability, alignment, and more — bound to entity-role pairs via RDF
 - **Coherence Index (CI)**: Multi-dimensional coherence detection (spatial, temporal, capability, relational) that modulates trust in real-time
-- **Markov Relevancy Horizons (MRH)**: Context boundaries defined by relationship graphs - you see what's relevant through your connections
+- **Markov Relevancy Horizons (MRH)**: Fractal RDF graphs — context boundaries defined by semantic relationship graphs
 
 ### Name Significance
 

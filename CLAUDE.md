@@ -4,6 +4,14 @@
 
 4-Life is a fractal laboratory for Web4 societies — an interactive simulation and explainer for trust-native digital ecosystems.
 
+### Web4 Ontological Context
+
+```
+Web4 = MCP + RDF + LCT + T3/V3*MRH + ATP/ADP
+```
+
+4-Life is the interactive laboratory for exploring Web4 as a living ontology. RDF provides the semantic graph through which all trust, identity, and value relationships are expressed. Entities in the simulation live within this ontology — their trust is role-contextualized via RDF triples, their MRH graphs are fractal RDF structures, and their energy flows through ATP/ADP metabolism.
+
 **Live site**: https://4-life-ivory.vercel.app/
 
 ## Visitor Feedback Loop
