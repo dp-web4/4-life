@@ -230,7 +230,7 @@ export default function AlivenessExplainer() {
         <h2>How the Three Criteria Work Together</h2>
         <div className="detail-box">
           <pre className="code-block">
-{`LCT (unforgeable identity)
+{`LCT (verifiable presence)
   ↓
   Enables tracking of:
   ├─→ ATP/ADP flows (metabolic budget)
@@ -436,7 +436,7 @@ export default function AlivenessExplainer() {
             <h4>Identity is Foundational</h4>
             <ul>
               <li>LCT (Linked Context Tokens) enable everything</li>
-              <li>Hardware-bound, multi-witnessed, unforgeable</li>
+              <li>Hardware-bound, multi-witnessed, verifiable</li>
               <li>Sybil attacks are expensive (can't create many fakes)</li>
               <li>Reputation accumulates on verified identity</li>
             </ul>
@@ -597,7 +597,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
           <Link href="/lct-explainer" className="concept-link-card">
             <h4>Linked Context Tokens (LCT)</h4>
             <p>
-              Unforgeable identity primitive that enables all aliveness tracking. Without LCT,
+              Verifiable presence primitive that enables all aliveness tracking. Without LCT,
               ATP/T3/CI measurements are meaningless.
             </p>
           </Link>
@@ -677,7 +677,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
               Each life starts stronger. Evolution favors sustainable strategies.
             </li>
             <li>
-              <strong>LCT enables everything:</strong> Without unforgeable identity, ATP/T3/CI
+              <strong>LCT enables everything:</strong> Without verifiable presence, ATP/T3/CI
               tracking is impossible. Hardware-bound, multi-witnessed, Sybil-resistant.
             </li>
             <li>

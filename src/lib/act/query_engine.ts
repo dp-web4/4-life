@@ -703,7 +703,7 @@ export class ACTQueryEngine {
         `- Die with T3 = 0.45? No rebirth—society rejects\n` +
         `- Each life starts stronger than the last (if you earned it)\n\n` +
         `**Why This Matters**:\n` +
-        `Death carries real consequences. Good behavior compounds across lives. Bad actors die permanently. No account recreation loophole—your identity (LCT) persists, and society remembers.\n\n` +
+        `Death carries real consequences. Good behavior compounds across lives. Bad actors die permanently. No account recreation loophole—your LCT persists, and society remembers.\n\n` +
         `**The 0.5 Threshold**:\n` +
         `Not arbitrary—it's a phase transition from coherence physics. Below 0.5 = random/reactive. Above 0.5 = genuine intentional behavior. Same threshold appears in superconductivity, biological systems, quantum coherence.`,
       type: 'explanation',
@@ -719,18 +719,18 @@ export class ACTQueryEngine {
 
   private explainLCT(): Response {
     return {
-      text: `**LCT (Linked Context Token): Unforgeable Identity**\n\n` +
-        `LCT is your digital identity, bound to hardware you control (phone's Secure Enclave, laptop's TPM, FIDO2 key).\n\n` +
+      text: `**LCT (Linked Context Token): Verifiable Presence**\n\n` +
+        `An LCT makes your Web4 presence verifiable, bound to hardware you control (phone's Secure Enclave, laptop's TPM, FIDO2 key).\n\n` +
         `**Key Properties**:\n` +
         `- Hardware-bound: Private key never leaves secure chip\n` +
-        `- Multi-device: Each device witnesses your identity\n` +
+        `- Multi-device: Each device witnesses your presence\n` +
         `- More devices = stronger trust (counterintuitive but true!)\n` +
         `- Attack difficulty exponential in device count\n\n` +
         `**Why Traditional Identity Fails**:\n` +
         `Passwords = shared secret stored on servers = hackable. Create new account = fresh start = no consequences for bad behavior.\n\n` +
         `**Why LCT Works**:\n` +
-        `Identity proves itself cryptographically. Trust accumulates on YOU (not an account). Can't fake identity without compromising multiple independent hardware chips. Society remembers your behavior.\n\n` +
-        `**In Web4**: LCT is foundational—enables trust accumulation, karma persistence, rebirth eligibility. Without unforgeable identity, everything else collapses.`,
+        `Presence proves itself cryptographically. Trust accumulates on YOU (not an account). Can't fake presence without compromising multiple independent hardware chips. Society remembers your behavior.\n\n` +
+        `**In Web4**: LCT is foundational—enables trust accumulation, karma persistence, rebirth eligibility. Without verifiable presence, everything else collapses.`,
       type: 'explanation',
       relatedConcepts: ['Linked Context Tokens', 'Identity', 'Hardware Security', 'Sybil Resistance'],
       suggestedQueries: [

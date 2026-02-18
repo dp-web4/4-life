@@ -77,10 +77,10 @@ export default function LearnJourney() {
         },
         {
           id: "lct",
-          title: "LCT: Unforgeable Identity",
+          title: "LCT: Verifiable Presence",
           teaser:
-            "Linked Context Tokens (LCT) are hardware-bound identities that can't be faked. Your phone's secure enclave proves you're you. No passwords. No accounts.",
-          why: "LCT enables everything else. Without unforgeable identity, trust can't accumulate reliably.",
+            "Linked Context Tokens (LCT) are hardware-bound proofs of presence. Your phone's secure enclave makes your presence verifiable. No passwords. No accounts.",
+          why: "LCT enables everything else. Without verifiable presence, trust can't accumulate reliably.",
           link: "/lct-explainer",
           duration: "6 min read",
         },

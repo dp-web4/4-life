@@ -505,7 +505,7 @@ export default function FirstContactPage() {
                   Ban them? They're back tomorrow with a fresh identity.
                 </p>
                 <p className="text-gray-300 mb-4">
-                  <strong>Web4 solution:</strong> Your identity is hardware-bound. Trust accumulates over time.
+                  <strong>Web4 solution:</strong> Your presence is hardware-bound. Trust accumulates over time.
                   Everyone can see your track record. No fresh starts.
                 </p>
                 <p className="text-gray-300 mb-4">
@@ -522,13 +522,13 @@ export default function FirstContactPage() {
               {/* Identity */}
               <div className="bg-gradient-to-br from-green-900/30 to-gray-800 border border-green-700 rounded-xl p-6">
                 <div className="text-3xl mb-3">🔗</div>
-                <h3 className="text-xl font-bold text-green-400 mb-3">Identity: Hardware-Bound</h3>
+                <h3 className="text-xl font-bold text-green-400 mb-3">Presence: Hardware-Bound</h3>
                 <p className="text-gray-300 mb-4">
                   <strong>The problem:</strong> Email-based accounts are free to create. One person can have
                   thousands of identities, manipulating conversations and gaming systems.
                 </p>
                 <p className="text-gray-300 mb-4">
-                  <strong>Web4 solution:</strong> Your identity (LCT) is bound to physical hardware.
+                  <strong>Web4 solution:</strong> Your LCT is bound to physical hardware, making your presence verifiable.
                   Creating fake accounts requires buying new devices. Expensive to fake, impossible to scale.
                 </p>
                 <p className="text-gray-300 mb-4">

@@ -7,13 +7,13 @@ import RelatedConcepts from "@/components/RelatedConcepts";
 /**
  * LCT (Linked Context Token) Foundational Explainer
  *
- * Makes Web4's unforgeable identity primitive comprehensible to humans.
+ * Makes Web4's verifiable presence primitive comprehensible to humans.
  *
- * Core insight: Identity isn't what you know (passwords), what you have (wallet keys),
+ * Core insight: Presence isn't what you know (passwords), what you have (wallet keys),
  * or what you claim (self-issued tokens). It's what witnesses can verify about
- * your hardware-bound, behavior-proven, multi-device presence.
+ * your hardware-bound, behavior-proven, multi-device participation.
  *
- * Session #14: Foundational identity primitive - the missing piece.
+ * Session #14: Foundational presence primitive - the missing piece.
  */
 
 interface LCTComponent {
@@ -39,7 +39,7 @@ export default function LCTExplainerPage() {
   const lctComponents: LCTComponent[] = [
     {
       name: "Hardware Binding",
-      description: "Your identity is rooted in physical chips (Secure Enclave, TPM, FIDO2) that generate keys internally and never export them",
+      description: "Your presence is rooted in physical chips (Secure Enclave, TPM, FIDO2) that generate keys internally and never export them",
       example: "Your phone's Secure Enclave generates a key that physically cannot leave the chip"
     },
     {
@@ -49,23 +49,23 @@ export default function LCTExplainerPage() {
     },
     {
       name: "Lineage",
-      description: "Shows who created/authorized this identity - creating a chain of accountability",
+      description: "Shows who created/authorized this LCT - creating a chain of accountability",
       example: "lct:web4:agent:alice.assistant1 → created by Alice, who vouches for its behavior"
     },
     {
       name: "Context",
-      description: "What platform/environment the identity runs in, determining resources and capabilities",
+      description: "What platform/environment this LCT runs in, determining resources and capabilities",
       example: "lct:web4:agent:alice@Thor → runs on Thor (Jetson AGX) with specific ATP budget and hardware attestation"
     },
     {
       name: "Task Scope",
-      description: "Precisely defines what this identity can do, limiting damage from compromise",
+      description: "Precisely defines what this LCT can do, limiting damage from compromise",
       example: "lct:web4:agent:alice@Thor#perception → can only read/observe, cannot execute code or delegate"
     },
     {
       name: "Witness Network",
-      description: "Multiple independent devices/platforms witness and attest to this identity's existence",
-      example: "Your identity is witnessed by your phone, laptop, and FIDO2 key - attacker must compromise all three"
+      description: "Multiple independent devices/platforms witness and attest to this LCT's validity",
+      example: "Your LCT is witnessed by your phone, laptop, and FIDO2 key - attacker must compromise all three"
     }
   ];
 
@@ -152,7 +152,7 @@ export default function LCTExplainerPage() {
             Linked Context Tokens (LCT)
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Web4's unforgeable identity primitive - hardware-bound, witnessed, and impossible to fake
+            Web4's verifiable presence primitive - hardware-bound, witnessed, and resilient through cross-linking
           </p>
         </div>
 
@@ -238,7 +238,7 @@ export default function LCTExplainerPage() {
             <p className="text-sm text-gray-700">
               <span className="font-bold">Key insight:</span> Web2 trusts what you memorize (forgettable, shareable).
               Web3 trusts what you store (copyable, stealable).
-              Web4 trusts what hardware proves and witnesses verify (unforgeable, revocable).
+              Web4 trusts what hardware proves and witnesses verify (verifiable, revocable).
             </p>
           </div>
         </div>
@@ -249,9 +249,9 @@ export default function LCTExplainerPage() {
 
           <div className="space-y-4 mb-6">
             <p className="text-gray-700">
-              An <span className="font-bold text-purple-600">LCT</span> is Web4's foundational identity primitive.
+              An <span className="font-bold text-purple-600">LCT</span> is Web4's foundational presence primitive.
               Unlike a password (knowledge) or wallet address (cryptographic key), an LCT is a
-              {" "}<span className="font-bold">hardware-bound, witnessed, contextual identity</span> that proves:
+              {" "}<span className="font-bold">hardware-bound, witnessed, contextual proof of presence</span> that verifies:
             </p>
 
             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
@@ -317,11 +317,11 @@ export default function LCTExplainerPage() {
 
         {/* Interactive: Trust vs Device Count */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold mb-6">Interactive: How Device Witnesses Strengthen Identity</h2>
+          <h2 className="text-2xl font-bold mb-6">Interactive: How Device Witnesses Strengthen Presence</h2>
 
           <div className="mb-6">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Number of Hardware Devices Witnessing Your Identity: {deviceCount}
+              Number of Hardware Devices Witnessing Your LCT: {deviceCount}
             </label>
             <input
               type="range"
@@ -344,7 +344,7 @@ export default function LCTExplainerPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             {/* Trust Score */}
             <div className="border border-gray-200 rounded-lg p-6">
-              <h3 className="text-lg font-bold mb-3 text-gray-800">Identity Trust Score</h3>
+              <h3 className="text-lg font-bold mb-3 text-gray-800">Presence Trust Score</h3>
               <div className="relative h-32 bg-gray-100 rounded-lg overflow-hidden">
                 <div
                   className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-500 to-green-300 transition-all duration-500"
@@ -453,13 +453,13 @@ export default function LCTExplainerPage() {
 
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-bold mb-3 text-purple-600">1. Unforgeable Identity</h3>
+              <h3 className="text-xl font-bold mb-3 text-purple-600">1. Verifiable Presence</h3>
               <p className="text-gray-700 mb-2">
-                Because LCTs are hardware-bound and multi-witnessed, they cannot be forged:
+                Because LCTs are hardware-bound and multi-witnessed, they resist forgery:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-600 ml-4">
                 <li>Keys exist only in secure hardware (TPM, Secure Enclave, FIDO2), never exported</li>
-                <li>Birth certificates prove when/where/by whom identity was created</li>
+                <li>Birth certificates prove when/where/by whom this LCT was created</li>
                 <li>Multiple independent witnesses must attest (can't fool them all)</li>
                 <li>Hardware attestation proves keys are in real chips, not software emulation</li>
               </ul>
@@ -497,7 +497,7 @@ export default function LCTExplainerPage() {
                 Unlike stolen Web3 keys (permanent loss), LCTs can be revoked:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-600 ml-4">
-                <li>Creator can instantly revoke compromised identities</li>
+                <li>Creator can instantly revoke compromised LCTs</li>
                 <li>Stolen LCT becomes worthless immediately</li>
                 <li>Recovery via device constellation (other devices witness revocation + new enrollment)</li>
                 <li>Reputation preserved (history transfers to new LCT)</li>
@@ -521,9 +521,9 @@ export default function LCTExplainerPage() {
           <div className="mt-6 p-4 bg-purple-50 border-l-4 border-purple-500 rounded">
             <p className="text-gray-700">
               <span className="font-bold">Foundation for everything else:</span> LCTs make ATP economics work
-              (can't Sybil attack if identity is expensive to forge), Trust Tensors work (reputation bound to
-              unforgeable identity), Coherence Index work (behavioral consistency verifiable), and MRH work
-              (context graphs rooted in verified identities).
+              (can't Sybil attack if presence is expensive to forge), Trust Tensors work (reputation bound to
+              verifiable presence), Coherence Index work (behavioral consistency verifiable), and MRH work
+              (context graphs rooted in verified presence).
             </p>
           </div>
         </div>
@@ -667,7 +667,7 @@ export default function LCTExplainerPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <a href="/identity-constellation" className="block p-4 border-2 border-gray-200 rounded-lg hover:border-purple-500 transition-all">
               <div className="font-bold text-gray-800 mb-1">Identity Constellations</div>
-              <div className="text-sm text-gray-600">How multi-device LCT binding makes identity stronger</div>
+              <div className="text-sm text-gray-600">How multi-device LCT binding makes presence stronger</div>
             </a>
 
             <a href="/trust-tensor" className="block p-4 border-2 border-gray-200 rounded-lg hover:border-purple-500 transition-all">

@@ -72,7 +72,7 @@ export const navigationTree: NavigationTree = {
       title: 'Identity (LCT)',
       href: '/lct-explainer',
       desc: 'Hardware-bound identity',
-      keywords: ['linked context token', 'hardware', 'cryptographic', 'unforgeable'],
+      keywords: ['linked context token', 'hardware', 'cryptographic', 'verifiable', 'presence'],
       related: ['/identity-constellation', '/aliveness']
     },
     {

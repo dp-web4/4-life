@@ -145,7 +145,7 @@ export default function HowItWorksPage() {
               </h4>
               <p className="text-gray-300 leading-relaxed">
                 You create a <strong>Linked Context Token (LCT)</strong> - your
-                unforgeable digital identity. This can be bound to:
+                verifiable digital presence. This can be bound to:
               </p>
               <ul className="list-disc list-inside ml-4 mt-2 space-y-1 text-gray-400">
                 <li>

@@ -566,7 +566,7 @@ export default function IdentityAnchoringPage() {
           <div className="grid md:grid-cols-3 gap-4">
             <div className="p-3 bg-gray-900/50 rounded">
               <h4 className="text-sm font-semibold text-white mb-1">LCT Identity</h4>
-              <p className="text-xs text-gray-400">Hardware-bound, unforgeable identity provides permanent anchoring.</p>
+              <p className="text-xs text-gray-400">Hardware-bound, verifiable presence provides permanent anchoring.</p>
             </div>
             <div className="p-3 bg-gray-900/50 rounded">
               <h4 className="text-sm font-semibold text-white mb-1">Trust Accumulation</h4>

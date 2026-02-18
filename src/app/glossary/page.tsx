@@ -52,7 +52,7 @@ export default function GlossaryPage() {
             </p>
             <p className="text-gray-400 text-sm">
               Think: "What if trust wasn't delegated to platforms, but emerged from
-              measurable actions and unforgeable presence?"
+              measurable actions and verifiable presence?"
             </p>
           </div>
 
@@ -62,13 +62,13 @@ export default function GlossaryPage() {
               LCT (Linked Context Token)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
-              Your <strong>hardware-rooted digital identity</strong>. An LCT is bound to
+              Your <strong>hardware-rooted verifiable presence</strong>. An LCT is bound to
               physical devices (TPM chip, Secure Enclave, FIDO2 key) and witnessed by other
-              entities, creating an unforgeable proof of presence.
+              entities, creating verifiable proof of presence.
             </p>
             <p className="text-gray-400 text-sm mb-3">
-              Plain English: "Your identity lives in your hardware, not in a company's database.
-              Multiple devices witnessing each other make faking 'you' exponentially harder."
+              Plain English: "Your presence lives in your hardware, not in a company's database.
+              Multiple devices witnessing each other make faking presence exponentially harder."
             </p>
             <div className="flex gap-3 text-sm">
               <Link href="/lct-explainer" className="text-sky-400 hover:underline">

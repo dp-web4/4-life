@@ -179,7 +179,7 @@ export default function IdentityConstellationPage() {
             </svg>
 
             <p className="text-center text-sm text-gray-600 mt-4">
-              Solid lines = device attests to root identity<br />
+              Solid lines = device attests to root LCT<br />
               Dotted lines = devices witness each other
             </p>
           </div>

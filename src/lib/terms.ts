@@ -26,13 +26,13 @@ export interface TermDefinition {
 }
 
 export const terms: Record<string, TermDefinition> = {
-  // Core Identity
+  // Core Presence
   LCT: {
     term: "LCT",
     fullName: "Linked Context Token",
-    brief: "Your hardware-bound digital identity that proves unforgeable presence.",
+    brief: "Your hardware-bound proof of verifiable presence in Web4.",
     explanation:
-      "An LCT is bound to physical devices (TPM, Secure Enclave, FIDO2 keys) and witnessed by other entities, creating an unforgeable proof of who you are. Unlike passwords (knowledge) or wallet keys (possession), LCTs prove what hardware and witnesses can verify.",
+      "An LCT is bound to physical devices (TPM, Secure Enclave, FIDO2 keys) and witnessed by other entities, creating verifiable proof of your presence. Unlike passwords (knowledge) or wallet keys (possession), LCTs prove what hardware and witnesses can verify.",
     learnMore: "/lct-explainer",
     canonicalSpec:
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/LCT-linked-context-token.md",
@@ -137,7 +137,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Trust-Native Internet",
     brief: "Internet infrastructure where trust, identity, and value flow from verifiable behavior.",
     explanation:
-      "Unlike Web2 (platforms own your data/identity) or Web3 (blockchain-first), Web4 proposes that trust emerges from measurable actions and unforgeable presence rooted in hardware. It's a working label for a different architectural philosophy.",
+      "Unlike Web2 (platforms own your data/identity) or Web3 (blockchain-first), Web4 proposes that trust emerges from measurable actions and verifiable presence rooted in hardware. It's a working label for a different architectural philosophy.",
     learnMore: "/why-web4",
   },
 

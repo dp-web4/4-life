@@ -901,7 +901,7 @@ SELECT ?entity ?distance WHERE {
                 Identity Constellation (LCT)
               </h3>
               <p className="text-gray-400 text-sm">
-                MRH relationships start with unforgeable device identities
+                MRH relationships start with verifiable device presence
               </p>
             </Link>
 

@@ -47,7 +47,7 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 | **See trust networks form** | [/trust-networks](http://localhost:3000/trust-networks) - Multi-agent trust dynamics visualized |
 | **Understand federation markets** | [/federation-economics](http://localhost:3000/federation-economics) - How ATP markets self-organize |
 | **Understand what makes entities "alive"** | [/aliveness](http://localhost:3000/aliveness) - Measurable aliveness criteria (ATP, T3, CI) ✨ NEW |
-| **Understand unforgeable identity (LCT)** | [/lct-explainer](http://localhost:3000/lct-explainer) - Hardware-bound identity primitive |
+| **Understand verifiable presence (LCT)** | [/lct-explainer](http://localhost:3000/lct-explainer) - Hardware-bound presence primitive |
 | **Understand ATP/ADP economics** | [/atp-economics](http://localhost:3000/atp-economics) - Metabolic budget explained |
 | **Understand trust tensors (T3)** | [/trust-tensor](http://localhost:3000/trust-tensor) - Multi-dimensional trust explained |
 | **Understand coherence index (CI)** | [/coherence-index](http://localhost:3000/coherence-index) - Incoherence detection explained |
@@ -81,7 +81,7 @@ Where: `/` = "verified by", `*` = "contextualized by", `+` = "augmented with"
 ### Key Concepts Being Explored
 
 - **RDF (Resource Description Framework)**: Ontological backbone — all trust relationships, MRH graphs, and semantic connections are typed RDF triples
-- **Linked Context Tokens (LCT)**: Unforgeable identity primitive - hardware-bound, witnessed, multi-device digital presence (FOUNDATIONAL - enables everything else)
+- **Linked Context Tokens (LCT)**: Verifiable presence primitive - hardware-bound, witnessed, multi-device digital presence (FOUNDATIONAL - enables everything else)
 - **Aliveness**: Measurable existence criteria - ATP > 0 (metabolic), T3 > 0.5 (agency), CI coherent (continuity). Death is real. Rebirth requires trust.
 - **ATP/ADP Cycles**: Metabolic economics - entities earn and spend "attention" through meaningful participation
 - **Trust Tensors (T3)**: Multi-dimensional trust that captures competence, reliability, alignment, and more — bound to entity-role pairs via RDF
@@ -115,7 +115,7 @@ Where: `/` = "verified by", `*` = "contextualized by", `+` = "augmented with"
 │   ├── trust-networks/     # Multi-agent trust dynamics visualization (Session #11)
 │   ├── federation-economics/ # Dynamic ATP markets & price signals (Session #13)
 │   ├── aliveness/          # Aliveness criteria explainer (ATP, T3, CI integration) (NEW Session #15)
-│   ├── lct-explainer/      # Linked Context Token (LCT) identity primitive (Session #14)
+│   ├── lct-explainer/      # Linked Context Token (LCT) presence primitive (Session #14)
 │   ├── atp-economics/      # ATP/ADP metabolic economics explainer
 │   ├── trust-tensor/       # Trust Tensor (T3) multi-dimensional trust explainer
 │   ├── coherence-index/    # Coherence Index (CI) incoherence detection explainer
@@ -321,7 +321,7 @@ The `/identity-constellation` page explains Web4's multi-device identity model -
 - **Works across Web4**: One identity, no separate accounts
 - **Trust through witnesses**: More devices = higher trust = better society participation
 
-This page demonstrates Web4's philosophy: **identity is coherence across witnesses**.
+This page demonstrates Web4's philosophy: **presence is coherence across witnesses**.
 
 ## Parameter Playground (NEW - Session #12)
 
