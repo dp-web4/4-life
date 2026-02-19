@@ -163,11 +163,12 @@ export default function FirstContactPage() {
               onClick={() => setCurrentStep("simulation")}
               className="w-full bg-gradient-to-r from-sky-500 to-purple-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-sky-600 hover:to-purple-700 transition-all text-lg"
             >
-              Start Simulation →
+              Watch Alice Build Her Reputation &rarr;
             </button>
 
             <p className="text-center text-sm text-gray-500">
-              No installation required • Runs in your browser • 10 minutes total
+              You&apos;ll follow Alice through 10 actions in a Web4 community &mdash; see her spend ATP,
+              build trust, recover from mistakes, and earn recognition. No installation, runs in browser.
             </p>
           </div>
         )}

@@ -452,19 +452,34 @@ export default function ATPEconomicsPage() {
                 ADP (Allocation Discharge Packet)
               </h3>
               <p className="leading-relaxed mb-3">
-                When you spend ATP, you create an <strong>ADP</strong> - a
-                record of how that attention was used. ADPs carry metadata:
+                <strong>Think of ADP as a receipt.</strong> When you spend ATP on
+                an action, the system creates an ADP &mdash; a structured record
+                of what you did and what it cost. It&apos;s the &ldquo;spent
+                energy&rdquo; counterpart to ATP&apos;s &ldquo;available energy.&rdquo;
+              </p>
+              <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 mb-3">
+                <p className="text-sm text-gray-300 mb-2">
+                  <strong>ATP &rarr; Action &rarr; ADP</strong>
+                </p>
+                <p className="text-xs text-gray-400">
+                  You have 100 ATP. You post a comment (costs 15 ATP). Now you have 85 ATP
+                  and an ADP recording: &ldquo;spent 15 ATP on post, at this time, witnessed
+                  by these entities.&rdquo;
+                </p>
+              </div>
+              <p className="leading-relaxed mb-3">
+                Each ADP records:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
                 <li>What action was taken</li>
                 <li>How much ATP was spent</li>
-                <li>What value was created</li>
-                <li>Whether it was validated by others</li>
+                <li>What value was created (if any)</li>
+                <li>Whether it was validated by witnesses</li>
               </ul>
               <p className="mt-3 leading-relaxed">
-                ADPs are ephemeral - they're audited, then discharged. But the
+                ADPs are audited, then discharged. But the cumulative
                 ATP/ADP flow creates a complete metabolic history that
-                determines your trust score (T3) and karma across lives.
+                informs your trust score (T3) and karma across lives.
               </p>
             </div>
 

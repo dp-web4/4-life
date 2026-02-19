@@ -241,6 +241,42 @@ export default function LCTExplainerPage() {
               Web4 trusts what hardware proves and witnesses verify (verifiable, revocable).
             </p>
           </div>
+
+          {/* Hardware explainer */}
+          <div className="mt-6 p-4 bg-purple-50 border border-purple-200 rounded-lg">
+            <h3 className="text-sm font-bold text-purple-800 mb-2">
+              What are TPM, Secure Enclave, and FIDO2?
+            </h3>
+            <p className="text-sm text-gray-700 mb-2">
+              These are <span className="font-bold">tamper-resistant security chips</span> already
+              built into devices you probably own:
+            </p>
+            <ul className="text-sm text-gray-700 space-y-1 ml-4 list-disc list-inside">
+              <li><span className="font-bold">Secure Enclave</span> &mdash; Apple&apos;s security chip in every iPhone, iPad, and Mac. It handles Face ID, Touch ID, and encryption keys.</li>
+              <li><span className="font-bold">TPM (Trusted Platform Module)</span> &mdash; A security chip in most modern laptops and PCs. Windows uses it for BitLocker encryption and secure boot.</li>
+              <li><span className="font-bold">FIDO2 / WebAuthn</span> &mdash; Security keys you can buy (like YubiKey) or built-in biometrics (fingerprint readers). Used for passwordless login on many websites already.</li>
+            </ul>
+            <p className="text-xs text-gray-500 mt-2">
+              The key property: these chips generate cryptographic keys internally and
+              <span className="font-bold"> never let them leave the hardware</span>. Even if someone copies
+              your entire hard drive, they can&apos;t extract the keys.
+            </p>
+          </div>
+
+          {/* Witness explainer */}
+          <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+            <h3 className="text-sm font-bold text-green-800 mb-2">
+              What are &ldquo;witnesses&rdquo;?
+            </h3>
+            <p className="text-sm text-gray-700">
+              In Web4, a <span className="font-bold">witness</span> is another device or
+              platform that independently confirms your presence is real. Think of it like
+              co-signers on a document: your phone, laptop, and security key each independently
+              vouch that &ldquo;yes, this is really Alice.&rdquo; An attacker would need to
+              compromise <span className="font-bold">all</span> of your witnesses simultaneously
+              to impersonate you &mdash; not just steal one password.
+            </p>
+          </div>
         </div>
 
         {/* What Is An LCT */}

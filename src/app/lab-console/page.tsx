@@ -250,8 +250,9 @@ export default function LabConsolePage() {
       <Breadcrumbs currentPath="/lab-console" />
       <h1>4-Life Lab Console</h1>
       <p style={{ marginTop: "0.75rem", color: "#9ca3af" }}>
-        Visualize Web4 life simulations with HRM policy decisions.
-        Select a mode below and click &quot;Load data&quot; to explore different scenarios.
+        Watch Web4 agents live, learn, and make decisions. Each simulation runs an agent
+        through multiple lives — spending ATP, building trust, and adapting their strategy
+        based on past experience. Pre-loaded data is ready to explore below.
       </p>
 
       <section style={{ marginTop: "1.5rem" }}>
@@ -276,11 +277,11 @@ export default function LabConsolePage() {
                   onChange={(e) => setRunKind(e.target.value as any)}
                   style={{ marginTop: "0.25rem", width: "100%" }}
                 >
-                  <option value="ep_driven_closed_loop">EP Closed Loop</option>
-                  <option value="maturation_demo">Maturation Demo</option>
-                  <option value="ep_five_domain">Five Domain EP</option>
-                  <option value="multi_life_with_policy">Multi-Life with Policy</option>
-                  <option value="one_life_with_policy">One Life with Policy</option>
+                  <option value="ep_driven_closed_loop">Agent learns across lives (EP Closed Loop)</option>
+                  <option value="maturation_demo">Trust maturation over time</option>
+                  <option value="ep_five_domain">Five-domain interaction patterns</option>
+                  <option value="multi_life_with_policy">Multiple lives with policy decisions</option>
+                  <option value="one_life_with_policy">Single life walkthrough</option>
                 </select>
               </div>
             </label>
@@ -345,53 +346,53 @@ export default function LabConsolePage() {
                 }
               }}
             >
-              {isRunning ? "Loading…" : "Load static"}
-            </button>
-
-            <span style={{ color: "#4b5563", margin: "0 0.25rem" }}>|</span>
-
-            <button
-              disabled={isRunning}
-              onClick={async () => {
-                setIsRunning(true);
-                setError(null);
-                try {
-                  await loadFromApi("read");
-                } catch (e: any) {
-                  setError(e?.message ?? "Failed to load cached");
-                } finally {
-                  setIsRunning(false);
-                }
-              }}
-              style={{ opacity: 0.85 }}
-              title="Load cached result from API (requires web4/game)"
-            >
-              Load cached
-            </button>
-
-            <button
-              disabled={isRunning}
-              onClick={async () => {
-                setIsRunning(true);
-                setError(null);
-                try {
-                  await loadFromApi("run");
-                } catch (e: any) {
-                  setError(e?.message ?? "Failed to run");
-                } finally {
-                  setIsRunning(false);
-                }
-              }}
-              style={{ opacity: 0.85 }}
-              title="Run Python simulation (requires Python + web4/game)"
-            >
-              Run simulation
+              {isRunning ? "Loading…" : "Explore this scenario"}
             </button>
           </div>
 
-          <p style={{ margin: 0, fontSize: "0.8rem", color: "#6b7280" }}>
-            <strong>Load static</strong> uses pre-generated data. <strong>Load cached</strong> and <strong>Run simulation</strong> require Python + web4/game setup.
-          </p>
+          <details style={{ marginTop: "0.25rem" }}>
+            <summary style={{ fontSize: "0.8rem", color: "#6b7280", cursor: "pointer" }}>
+              Developer options (requires Python + web4/game)
+            </summary>
+            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center", marginTop: "0.5rem" }}>
+              <button
+                disabled={isRunning}
+                onClick={async () => {
+                  setIsRunning(true);
+                  setError(null);
+                  try {
+                    await loadFromApi("read");
+                  } catch (e: any) {
+                    setError(e?.message ?? "Failed to load cached");
+                  } finally {
+                    setIsRunning(false);
+                  }
+                }}
+                style={{ opacity: 0.85 }}
+                title="Load cached result from API (requires web4/game)"
+              >
+                Load cached
+              </button>
+              <button
+                disabled={isRunning}
+                onClick={async () => {
+                  setIsRunning(true);
+                  setError(null);
+                  try {
+                    await loadFromApi("run");
+                  } catch (e: any) {
+                    setError(e?.message ?? "Failed to run");
+                  } finally {
+                    setIsRunning(false);
+                  }
+                }}
+                style={{ opacity: 0.85 }}
+                title="Run Python simulation (requires Python + web4/game)"
+              >
+                Run live simulation
+              </button>
+            </div>
+          </details>
 
           {status && <p style={{ margin: 0, color: "#9ca3af" }}>{status}</p>}
         </div>
@@ -412,7 +413,17 @@ export default function LabConsolePage() {
 
       {!error && !data && !multi && !ep && !fiveDomain && (
         <section style={{ marginTop: "1.5rem", color: "#9ca3af" }}>
-          <p>Loading life data...</p>
+          <p>Loading simulation data — this uses pre-generated results, no setup needed...</p>
+        </section>
+      )}
+
+      {(data || multi || ep || fiveDomain) && (
+        <section style={{ marginTop: "1.5rem", padding: "0.75rem 1rem", borderRadius: "0.5rem", background: "#0c1527", border: "1px solid #1e3a5f", color: "#93c5fd" }}>
+          <p style={{ margin: 0, fontSize: "0.9rem" }}>
+            <strong>Reading the data below:</strong> T3 is composite trust score (Talent, Training, Temperament).
+            ATP is the agent&apos;s energy budget — every action costs ATP, and running out means death.
+            Each &quot;life&quot; is a complete cycle from birth to termination, with lessons carrying forward.
+          </p>
         </section>
       )}
 
