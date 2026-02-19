@@ -581,7 +581,7 @@ export default function FirstSimulationPage() {
                 />
                 {firstLifeTrust.length > 1 && (
                   <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '0.25rem' }}>
-                    Dashed line = 0.5 consciousness threshold
+                    Dashed line = 0.5 trust threshold (full community access)
                   </div>
                 )}
               </div>
@@ -677,8 +677,8 @@ export default function FirstSimulationPage() {
                 <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
                   Trust measures how much the society values this agent. It starts low (0.3) because
                   newcomers are unproven. Each successful contribution nudges it up; failures push it down.
-                  Trust above 0.5 (the &ldquo;consciousness threshold&rdquo;) means behavior is coherent enough
-                  to be recognized as intentional.
+                  Trust above 0.5 unlocks full community access &mdash; it signals that behavior is
+                  consistent enough to be recognized as reliable.
                 </p>
               </div>
 
@@ -777,7 +777,7 @@ export default function FirstSimulationPage() {
                   <div style={{
                     width: '40px', height: '2px', background: '#6ee7b7',
                   }} />
-                  <span>EP (learning) improves decision-making each life</span>
+                  <span>Cross-life learning: agent makes better decisions each life</span>
                 </div>
               </div>
             </div>
@@ -1011,7 +1011,7 @@ export default function FirstSimulationPage() {
                 },
                 {
                   title: 'Learning compounds across lives',
-                  detail: 'Epistemic Proprioception (EP) enables cross-life learning. Each life isn\'t starting from scratch - wisdom accumulates, and agents get better over time.',
+                  detail: 'Each life isn\'t starting from scratch. The agent learns from past mistakes and successes, making better decisions over time. Wisdom accumulates.',
                   color: '#6ee7b7',
                 },
               ].map((insight, i) => (
