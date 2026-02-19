@@ -226,6 +226,7 @@ function LifeSummary({ life, isActive }: { life: LifeResult; isActive?: boolean 
 
 export default function FirstSimulationPage() {
   const [currentStep, setCurrentStep] = useState(0);
+  const [highestStep, setHighestStep] = useState(0);
   const [simRunning, setSimRunning] = useState(false);
   const [simDone, setSimDone] = useState(false);
 
@@ -353,7 +354,13 @@ export default function FirstSimulationPage() {
   };
 
   // Advance step
-  const nextStep = () => setCurrentStep(s => Math.min(s + 1, STEPS.length - 1));
+  const nextStep = () => {
+    setCurrentStep(s => {
+      const next = Math.min(s + 1, STEPS.length - 1);
+      setHighestStep(h => Math.max(h, next));
+      return next;
+    });
+  };
   const prevStep = () => setCurrentStep(s => Math.max(s - 1, 0));
 
   const step = STEPS[currentStep];
@@ -375,13 +382,14 @@ export default function FirstSimulationPage() {
         {STEPS.map((s, i) => (
           <button
             key={s.id}
-            onClick={() => setCurrentStep(i)}
+            onClick={() => { if (i <= highestStep) setCurrentStep(i); }}
             style={{
               flex: 1, padding: '0.5rem 0.25rem', borderRadius: '0.5rem',
               background: i === currentStep ? 'var(--color-bg-tertiary)' : 'transparent',
               border: i === currentStep ? '1px solid var(--color-border)' : '1px solid transparent',
-              color: i <= currentStep ? 'var(--color-text)' : 'var(--color-text-muted)',
-              cursor: 'pointer', fontSize: '0.7rem', fontWeight: i === currentStep ? 700 : 400,
+              color: i <= highestStep ? 'var(--color-text)' : 'var(--color-text-muted)',
+              cursor: i <= highestStep ? 'pointer' : 'default', fontSize: '0.7rem', fontWeight: i === currentStep ? 700 : 400,
+              opacity: i <= highestStep ? 1 : 0.5,
               transition: 'all 0.2s',
             }}
           >
@@ -868,7 +876,7 @@ export default function FirstSimulationPage() {
                   <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>
                     {key === 'gentle-start' && 'Forgiving world, strong karma'}
                     {key === 'harsh-world' && 'Low resources, high stakes'}
-                    {key === 'fast-learner' && 'Strong EP learning'}
+                    {key === 'fast-learner' && 'Learns fast across lives'}
                     {key === 'no-karma' && 'No memory across lives'}
                   </div>
                 </button>
