@@ -31,7 +31,7 @@ export default function HowItWorksPage() {
               devices witnessing each other.
             </p>
             <Link
-              href="/identity-constellation"
+              href="/lct-explainer"
               className="text-sky-400 hover:underline text-sm mt-2 inline-block"
             >
               Learn more →

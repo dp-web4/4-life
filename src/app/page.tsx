@@ -89,6 +89,9 @@ function IntroTab() {
             3. Playground
           </Link>
         </div>
+        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '1rem' }}>
+          Want the full picture first? Read the <Link href="/manifest" style={{ color: 'var(--color-sky)' }}>Manifest</Link> — primitives, claims, assumptions, and known failure modes in one page.
+        </p>
       </section>
 
       {/* The Big Idea */}

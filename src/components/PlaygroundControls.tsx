@@ -152,7 +152,7 @@ export function PlaygroundControls({ onRunSimulation, isRunning }: PlaygroundCon
           min={5}
           max={30}
           step={1}
-          description="How many actions each life can take"
+          description="Each tick = one action/decision. More ticks = longer lives"
         />
         <ParameterSlider
           label="Risk Appetite"
@@ -161,7 +161,7 @@ export function PlaygroundControls({ onRunSimulation, isRunning }: PlaygroundCon
           min={0}
           max={1}
           step={0.1}
-          description="0 = risk-averse (cheap actions), 1 = risk-seeking (expensive actions)"
+          description="0 = safe, cautious actions only. 1 = high-stakes gambles with bigger rewards"
         />
       </section>
 
