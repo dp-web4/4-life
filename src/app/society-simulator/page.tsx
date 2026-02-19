@@ -3409,9 +3409,9 @@ export default function SocietySimulatorPage() {
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-3">Society Simulator</h1>
               <p className="text-lg text-gray-400 max-w-3xl">
-                Watch a society of agents with different strategies form trust networks,
-                build coalitions, and self-organize. This is Web4 at society scale:
-                no central authority, just trust dynamics.
+                You saw how one agent builds trust. Now watch 12 agents with different strategies
+                form alliances, betray each other, and self-organize — no central authority,
+                just trust dynamics at society scale.
               </p>
             </div>
             <button
@@ -3432,7 +3432,7 @@ export default function SocietySimulatorPage() {
             Watch how trust-based economics create stable cooperation <em>without moderators</em>.
           </p>
           <p className="text-xs text-gray-500">
-            New to Web4? Start with <a href="/why-web4" className="text-emerald-400 hover:underline">Why Web4</a> first.
+            New to Web4? Start with <a href="/first-contact" className="text-emerald-400 hover:underline">First Contact</a> — a 10-minute guided introduction.
           </p>
         </div>
 

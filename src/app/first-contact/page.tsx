@@ -655,24 +655,24 @@ export default function FirstContactPage() {
             <div>
               <h3 className="text-2xl font-bold mb-4">Recommended Next Steps</h3>
               <div className="grid md:grid-cols-2 gap-4">
+                {/* Society Simulator - primary next step */}
+                <Link href="/society-simulator">
+                  <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-emerald-500 transition-colors cursor-pointer">
+                    <div className="text-2xl mb-3">🌐</div>
+                    <h4 className="text-lg font-bold text-emerald-400 mb-2">Watch: Society Simulator</h4>
+                    <p className="text-gray-400 text-sm">
+                      You saw one agent. Now watch 12 agents form alliances, betray each other, and build trust networks in real time.
+                    </p>
+                  </div>
+                </Link>
+
                 {/* Experiment */}
                 <Link href="/playground">
                   <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-sky-500 transition-colors cursor-pointer">
                     <div className="text-2xl mb-3">🎮</div>
                     <h4 className="text-lg font-bold text-sky-400 mb-2">Experiment: Parameter Playground</h4>
                     <p className="text-gray-400 text-sm">
-                      Adjust ATP costs, trust dynamics, thresholds. See what happens. Break things. Discover tipping points.
-                    </p>
-                  </div>
-                </Link>
-
-                {/* Observe */}
-                <Link href="/trust-networks">
-                  <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-purple-500 transition-colors cursor-pointer">
-                    <div className="text-2xl mb-3">🕸️</div>
-                    <h4 className="text-lg font-bold text-purple-400 mb-2">Observe: Trust Networks</h4>
-                    <p className="text-gray-400 text-sm">
-                      Watch multi-agent societies form trust relationships. See coalitions emerge. Witness free-riders get isolated.
+                      Tweak ATP costs, trust thresholds, and karma strength. See how different rules create different societies.
                     </p>
                   </div>
                 </Link>
@@ -681,20 +681,20 @@ export default function FirstContactPage() {
                 <Link href="/learn">
                   <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-green-500 transition-colors cursor-pointer">
                     <div className="text-2xl mb-3">📚</div>
-                    <h4 className="text-lg font-bold text-green-400 mb-2">Learn: Full Learning Journey</h4>
+                    <h4 className="text-lg font-bold text-green-400 mb-2">Learn: Concepts In Depth</h4>
                     <p className="text-gray-400 text-sm">
-                      Progressive pathway from beginner to practitioner. Coherence Index, identity architecture, trust mechanics.
+                      Understand the mechanics behind what you just saw. Trust tensors, coherence, identity — at your own pace.
                     </p>
                   </div>
                 </Link>
 
-                {/* Build */}
-                <Link href="/how-it-works">
-                  <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-orange-500 transition-colors cursor-pointer">
-                    <div className="text-2xl mb-3">🔧</div>
-                    <h4 className="text-lg font-bold text-orange-400 mb-2">Build: How It Works</h4>
+                {/* Observe */}
+                <Link href="/trust-networks">
+                  <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-purple-500 transition-colors cursor-pointer">
+                    <div className="text-2xl mb-3">🕸️</div>
+                    <h4 className="text-lg font-bold text-purple-400 mb-2">Explore: Trust Networks</h4>
                     <p className="text-gray-400 text-sm">
-                      Technical deep dive. Architecture, implementation, code walkthrough. For developers who want to build on Web4.
+                      See how trust relationships evolve over time. Watch coalitions form and free-riders get isolated.
                     </p>
                   </div>
                 </Link>
