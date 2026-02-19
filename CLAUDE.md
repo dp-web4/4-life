@@ -62,7 +62,7 @@ The visitor log includes an understanding checklist. If the visitor couldn't und
 - [ ] What ATP/ADP means → /atp-economics
 - [ ] What Trust Tensors are → /trust-tensor
 - [ ] How agents live/die → /aliveness
-- [ ] Why this matters → **MISSING PAGE** (commonly flagged)
+- [ ] Why this matters → /why-web4 (problem framing + honest FAQ)
 
 ## Development Priorities
 

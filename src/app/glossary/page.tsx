@@ -125,18 +125,16 @@ export default function GlossaryPage() {
               T3 (Trust Tensor)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
-              <strong>Multi-dimensional trust scores</strong>. Instead of "trust = 7/10",
-              Web4 tracks separate dimensions (competence, reliability, integrity, etc.).
-              This makes gaming harder—you can't just optimize one metric.
+              <strong>Multi-dimensional, role-specific trust scores</strong>. Instead of
+              &ldquo;trust = 7/10&rdquo;, Web4 tracks three dimensions per role:
+              Talent (aptitude), Training (expertise), and Temperament (reliability).
+              This makes gaming harder&mdash;you can&apos;t just optimize one metric,
+              and you can&apos;t transfer trust between unrelated roles.
             </p>
             <p className="text-gray-400 text-sm mb-3">
-              Plain English: "Trust isn't one number. You trust a surgeon's skill but maybe
-              not their punctuality. T3 captures that nuance."
-            </p>
-            <p className="text-gray-500 text-xs mb-3">
-              <strong>Educational vs Canonical:</strong> This site uses a simplified 5-dimensional
-              model for teaching. Production Web4 uses role-specific 3D tensors (Talent, Training,
-              Temperament) that vary by context.
+              Plain English: &ldquo;Trust isn&apos;t one number. You trust a surgeon&apos;s
+              skill but maybe not their punctuality. And trusting them as a surgeon says
+              nothing about trusting them as a mechanic. T3 captures that nuance.&rdquo;
             </p>
             <div className="flex gap-3 text-sm">
               <Link href="/trust-tensor" className="text-sky-400 hover:underline">
@@ -768,7 +766,7 @@ export default function GlossaryPage() {
           <p className="text-gray-300 leading-relaxed">
             We use tensors (T3, V3) because trust and value are
             <strong className="text-purple-400"> genuinely multi-dimensional</strong>.
-            A single number can't capture "high competence but low reliability." The
+            A single number can&apos;t capture &ldquo;high talent but unreliable temperament.&rdquo; The
             math (weighted vectors) matches the reality (nuanced assessment).
           </p>
           <p className="text-gray-300 leading-relaxed">

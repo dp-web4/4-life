@@ -72,7 +72,7 @@ export const terms: Record<string, TermDefinition> = {
     canonicalSpec:
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/t3-v3-tensors.md",
     educationalNote:
-      "4-Life uses a simplified 5-dimensional model for teaching. Production Web4 uses role-specific 3D tensors (Talent, Training, Temperament).",
+      "T3 dimensions are always role-specific. Trust as a surgeon is independent of trust as a mechanic.",
   },
 
   V3: {

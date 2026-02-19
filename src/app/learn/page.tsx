@@ -97,7 +97,7 @@ export default function LearnJourney() {
           id: "t3",
           title: "Trust Tensors: Multi-Dimensional Trust",
           teaser:
-            "Trust isn't a single number. T3 captures competence, reliability, integrity, alignment, and transparency. Gaming one dimension while failing others doesn't work.",
+            "Trust isn't a single number. T3 tracks three dimensions per role: Talent, Training, and Temperament. Gaming one dimension while failing others doesn't work — and trust doesn't transfer between unrelated roles.",
           why: "T3 is how societies measure trustworthiness without central authorities. Understanding it reveals why Web4 can self-regulate.",
           link: "/trust-tensor",
           duration: "9 min read",

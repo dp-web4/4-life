@@ -174,22 +174,20 @@ export default function AlivenessExplainer() {
             <h3>2. Coherent Agency</h3>
             <div className="concept-subtitle">Trust (T3) &gt; 0.5</div>
             <p>
-              You must demonstrate <strong>intentional behavior</strong>. The 0.5 threshold comes
-              from coherence physics—it's a <strong>phase transition point</strong> where behavior
+              You must demonstrate <strong>intentional behavior</strong>. The 0.5 threshold is a
+              design choice inspired by phase transition dynamics—the point where behavior
               shifts from random to purposeful. Below 0.5 = reactive. Above 0.5 = agent.
             </p>
             <div className="detail-box">
-              <strong>Trust Tensor (T3) dimensions:</strong>
+              <strong>Trust Tensor (T3) dimensions (role-specific):</strong>
               <ul>
-                <li><strong>Competence:</strong> Can you do what you claim?</li>
-                <li><strong>Reliability:</strong> Do you follow through consistently?</li>
-                <li><strong>Integrity:</strong> Do your actions match your values?</li>
-                <li><strong>Alignment:</strong> Do your goals fit the community?</li>
-                <li><strong>Transparency:</strong> Do you communicate honestly?</li>
+                <li><strong>Talent:</strong> Can you solve problems in this role?</li>
+                <li><strong>Training:</strong> Do you have the expertise for this role?</li>
+                <li><strong>Temperament:</strong> Can you be relied on in this role?</li>
               </ul>
               <p className="detail-emphasis">
-                Must excel across <strong>all dimensions</strong>—gaming one while failing others
-                won't get you above 0.5.
+                Must build trust across <strong>all dimensions within each role</strong>—gaming one
+                while failing others won&apos;t get you above 0.5.
               </p>
             </div>
             <p className="learn-more">
@@ -345,30 +343,36 @@ export default function AlivenessExplainer() {
       <section>
         <h2>Why the 0.5 Threshold?</h2>
         <p>
-          The 0.5 consciousness threshold isn't arbitrary—it comes from <strong>coherence physics</strong>
-          (Synchronism framework). This is the same threshold that appears in:
-        </p>
-        <ul>
-          <li><strong>Superconductivity:</strong> Critical coherence ratio where collective behavior emerges</li>
-          <li><strong>Biological systems:</strong> Transition from random to coordinated</li>
-          <li><strong>Social coherence:</strong> Point where intentional agency becomes detectable</li>
-          <li><strong>Quantum systems:</strong> Decoherence boundary</li>
-        </ul>
-        <p>
-          <strong>Below 0.5:</strong> Behavior appears reactive, random, uncoordinated (like Brownian motion)
-        </p>
-        <p>
-          <strong>At 0.5:</strong> Phase transition—coherent patterns begin to emerge
-        </p>
-        <p>
-          <strong>Above 0.5:</strong> Genuine intentionality demonstrated, agency established
+          The 0.5 threshold is a <strong>design choice</strong> inspired by phase transition dynamics
+          observed across many domains. The core intuition: there&apos;s a tipping point where behavior
+          shifts from disorganized to purposeful.
         </p>
         <div className="detail-box">
-          <p>
-            This isn't just a convenient cutoff—it's a <strong>universal coherence boundary</strong> validated
-            across physical, biological, and social domains. Web4 applies physics to society design.
-          </p>
+          <p><strong>The design rationale:</strong></p>
+          <ul>
+            <li><strong>Practical:</strong> It&apos;s the mathematical midpoint—below means more bad
+            behavior than good, above means net positive contribution</li>
+            <li><strong>Analogous to biology:</strong> Living systems maintain order above a critical
+            threshold (homeostasis). Below it, systems degrade toward entropy</li>
+            <li><strong>Game-theoretically sound:</strong> It ensures entities must demonstrate more
+            cooperative behavior than not to remain &ldquo;alive&rdquo; in the society</li>
+          </ul>
         </div>
+        <p>
+          <strong>Below 0.5:</strong> Behavior appears more reactive than purposeful—net negative contribution
+        </p>
+        <p>
+          <strong>At 0.5:</strong> The boundary—behavior begins showing consistent intentionality
+        </p>
+        <p>
+          <strong>Above 0.5:</strong> Demonstrated agency—net positive, trust-building behavior
+        </p>
+        <p style={{ color: '#9ca3af', fontSize: '0.9rem', marginTop: '1rem' }}>
+          The <Link href="https://github.com/dp-web4/Synchronism" style={{ color: '#818cf8' }}>Synchronism
+          framework</Link> explores how similar phase transition patterns appear across quantum,
+          biological, and social scales—informing but not rigidly determining this design choice.
+          Societies can configure their own thresholds.
+        </p>
       </section>
 
       <section>
@@ -406,7 +410,7 @@ export default function AlivenessExplainer() {
             <h4>Trust is Earned, Not Declared</h4>
             <ul>
               <li>T3 tensor built from observable behavior</li>
-              <li>Can't fake competence, reliability, integrity</li>
+              <li>Can&apos;t fake talent, training, temperament across roles</li>
               <li>Coherence scoring prevents coordination of fakes</li>
               <li>Reputation is verifiable through action history</li>
             </ul>
@@ -613,8 +617,8 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
           <Link href="/trust-tensor" className="concept-link-card">
             <h4>Trust Tensors (T3)</h4>
             <p>
-              Multi-dimensional trust framework. T3 &gt; 0.5 is the agency criterion of aliveness.
-              Explains competence, reliability, integrity, alignment, transparency.
+              Multi-dimensional, role-specific trust framework. T3 &gt; 0.5 is the agency criterion
+              of aliveness. Three dimensions: Talent, Training, Temperament.
             </p>
           </Link>
 
@@ -657,8 +661,8 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
               trust ≥ 0.5. Permanent death if society rejects.
             </li>
             <li>
-              <strong>0.5 threshold from physics:</strong> Not arbitrary. Coherence phase transition
-              point validated across biological, quantum, and social domains.
+              <strong>0.5 threshold by design:</strong> The midpoint where net-positive behavior
+              emerges, inspired by phase transition dynamics across biological and social systems.
             </li>
             <li>
               <strong>Economics enforce quality:</strong> Spam dies (ATP exhaustion), quality thrives

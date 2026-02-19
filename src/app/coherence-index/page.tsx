@@ -604,8 +604,8 @@ export default function CoherenceIndexPage() {
             Connection to Coherence Physics
           </h2>
           <p className="text-gray-400 mb-6">
-            Web4's Coherence Index isn't arbitrary - it's grounded in coherence
-            physics spanning 9 domains of reality.
+            Web4&apos;s Coherence Index draws inspiration from coherence principles
+            observed across multiple domains of physical and social reality.
           </p>
 
           <div className="bg-gradient-to-br from-purple-950/30 to-purple-900/20 border border-purple-800/30 rounded-lg p-6 mb-6">

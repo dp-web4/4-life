@@ -203,8 +203,8 @@ export default function TrustNetworksPage() {
               </h3>
               <p className="text-gray-300">
                 This visualization simplifies trust to a single number for clarity, but Web4's
-                Trust Tensor (T3) tracks competence, reliability, integrity separately. Different
-                contexts weight different dimensions.
+                Trust Tensor (T3) tracks Talent, Training, and Temperament per role. Different
+                roles weight different dimensions.
               </p>
             </div>
 

@@ -689,8 +689,8 @@ export default function MarkovRelevancyHorizonPage() {
               </h3>
               <p className="text-gray-300 text-sm">
                 T3 trust scores exist as edge weights in MRH graph. Multi-dimensional trust
-                (competence, reliability, integrity) flows through relationship paths.
-                Trust propagation respects dimension-specific relevance.
+                (Talent, Training, Temperament per role) flows through relationship paths.
+                Trust propagation respects dimension-specific and role-specific relevance.
               </p>
             </div>
 

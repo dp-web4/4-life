@@ -30,8 +30,9 @@ export default function HomePage() {
           maxWidth: '36rem',
           lineHeight: 1.6
         }}>
-          <strong>Web4</strong> is a trust-native internet where identity costs something,
-          actions have metabolic weight, and consequences follow you forever.
+          <strong>Web4</strong> is a trust-native internet (trust is built into the protocol, not bolted on)
+          where identity costs something, actions have metabolic weight (every action costs energy),
+          and consequences follow you forever.
           This site lets you <em>see</em> how it works.
         </p>
 
@@ -41,13 +42,13 @@ export default function HomePage() {
             onClick={() => setActiveTab('intro')}
             className={`tab-button ${activeTab === 'intro' ? 'active' : ''}`}
           >
-            Introduction
+            Start Here
           </button>
           <button
             onClick={() => setActiveTab('deepdive')}
             className={`tab-button ${activeTab === 'deepdive' ? 'active' : ''}`}
           >
-            Deep Dive
+            Explore All Topics
           </button>
         </div>
       </section>

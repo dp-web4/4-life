@@ -672,9 +672,9 @@ export default function HowItWorksPage() {
               Trust is Earned, Not Declared
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              You can't claim to be trustworthy. Your T3 tensor is built from
-              observable behavior. Competence, reliability, integrity - all
-              verified through actions.
+              You can&apos;t claim to be trustworthy. Your T3 tensor is built from
+              observable behavior. Talent, training, temperament &mdash; all
+              verified through actions within each role.
             </p>
           </div>
 

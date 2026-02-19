@@ -69,10 +69,10 @@ export const navigationTree: NavigationTree = {
   ],
   'Core Concepts': [
     {
-      title: 'Identity (LCT)',
+      title: 'Presence (LCT)',
       href: '/lct-explainer',
-      desc: 'Hardware-bound identity',
-      keywords: ['linked context token', 'hardware', 'cryptographic', 'verifiable', 'presence'],
+      desc: 'Hardware-bound verifiable presence',
+      keywords: ['linked context token', 'hardware', 'cryptographic', 'verifiable', 'presence', 'witnessed'],
       related: ['/identity-constellation', '/aliveness']
     },
     {
@@ -93,8 +93,8 @@ export const navigationTree: NavigationTree = {
     {
       title: 'Trust Tensor',
       href: '/trust-tensor',
-      desc: 'Multi-dimensional trust',
-      keywords: ['T3', 'dimensions', 'competence', 'reliability', 'integrity'],
+      desc: 'Multi-dimensional, role-specific trust',
+      keywords: ['T3', 'dimensions', 'talent', 'training', 'temperament', 'role-specific'],
       related: ['/coherence-index', '/aliveness', '/trust-networks']
     },
     {

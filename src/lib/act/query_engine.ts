@@ -670,17 +670,15 @@ export class ACTQueryEngine {
 
   private explainTrust(): Response {
     return {
-      text: `**Trust Tensors (T3): Multi-Dimensional Trust**\n\n` +
-        `Trust isn't a single number—it's a multi-dimensional tensor capturing different aspects of trustworthiness.\n\n` +
-        `**Five Dimensions** (in production Web4):\n` +
-        `1. **Competence**: Can you do what you claim?\n` +
-        `2. **Reliability**: Do you deliver consistently?\n` +
-        `3. **Integrity**: Do you act honestly?\n` +
-        `4. **Alignment**: Do your goals match community values?\n` +
-        `5. **Transparency**: Are your actions observable?\n\n` +
-        `**Why Multi-Dimensional**:\n` +
-        `Gaming the system requires excellence across ALL dimensions. You can't fake competence while being unreliable, or show integrity while hiding actions. Authenticity becomes the path of least resistance.\n\n` +
-        `**In Simulations**: We use simplified T3 (single score) for clarity, but the principle remains—trust is earned through consistent, quality behavior over time.`,
+      text: `**Trust Tensors (T3): Multi-Dimensional, Role-Specific Trust**\n\n` +
+        `Trust isn't a single number—it's a multi-dimensional tensor capturing different aspects of trustworthiness, always within a specific role context.\n\n` +
+        `**Three Canonical Dimensions** (per role):\n` +
+        `1. **Talent**: Natural aptitude and creativity within this role\n` +
+        `2. **Training**: Learned skills, knowledge, and experience for this role\n` +
+        `3. **Temperament**: Consistency, reliability, and ethical behavior in this role\n\n` +
+        `**Why Role-Specific**:\n` +
+        `Trust as a surgeon is independent of trust as a mechanic. You can't transfer trust between unrelated roles. Gaming requires building genuine trust across all dimensions within each role separately. Authenticity becomes the path of least resistance.\n\n` +
+        `**In Simulations**: We use simplified T3 for clarity, but the principle remains—trust is earned through consistent, quality behavior over time within specific contexts.`,
       type: 'explanation',
       relatedConcepts: ['Trust Tensors', 'Multi-Dimensional Trust', 'Reputation'],
       suggestedQueries: [

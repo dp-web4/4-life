@@ -234,8 +234,8 @@ export default function ThreatModelPage() {
                   The Problem
                 </h4>
                 <p className="text-gray-400 leading-relaxed">
-                  "When a measure becomes a target, it ceases to be a good measure." If
-                  agents know they're being scored on competence/reliability/integrity, they
+                  &ldquo;When a measure becomes a target, it ceases to be a good measure.&rdquo; If
+                  agents know they&apos;re being scored on talent/training/temperament, they
                   can optimize for proxies rather than genuine trustworthiness.
                 </p>
               </div>
