@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { PlaygroundControls, PlaygroundConfig } from "@/components/PlaygroundControls";
-import { PlaygroundResults, PlaygroundResult } from "@/components/PlaygroundResults";
+import { PlaygroundResults, PlaygroundResult, LifeSummary } from "@/components/PlaygroundResults";
+import { SimulationEngine, SimConfig, SimulationResult } from "@/lib/simulation/engine";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from '@/components/ExplorerNav';
@@ -10,18 +11,109 @@ import ExplorerNav from '@/components/ExplorerNav';
 /**
  * Playground Page - Interactive Parameter Exploration
  *
- * Enables humans to experiment with Web4 society parameters and see
- * immediate results. The lowest-friction pathway to participation.
- *
- * Flow:
- * 1. User adjusts parameters via sliders/inputs
- * 2. User clicks "Run Simulation"
- * 3. API calls Python simulation with config
- * 4. Results visualized in real-time
- * 5. User iterates and learns
- *
- * Session #12: Interactive Parameter Playground
+ * Runs entirely in the browser using the TypeScript SimulationEngine.
+ * No backend, no Python, no setup required.
  */
+
+function toSimConfig(config: PlaygroundConfig): SimConfig {
+  // Weight action cost/reward by risk appetite
+  const risk = config.risk_appetite;
+  const actionCost = config.action_cost_low * (1 - risk) + config.action_cost_high * risk;
+  const reward = config.action_reward_low * (1 - risk) + config.action_reward_high * risk;
+  // Higher risk = lower base success rate
+  const successRate = 0.8 - risk * 0.3;
+
+  return {
+    agentName: 'Explorer',
+    numLives: config.num_lives,
+    ticksPerLife: config.ticks_per_life,
+    initialATP: config.initial_atp,
+    initialTrust: config.initial_trust,
+    actionCost,
+    contributionReward: reward,
+    successRate,
+    trustGainRate: config.trust_gain_good,
+    trustLossRate: config.trust_loss_bad,
+    karmaStrength: config.karma_trust_boost > 0 ? config.karma_trust_boost / 0.1 : 0,
+    epEnabled: true,
+    epLearningRate: 0.03,
+    coherenceWeight: 0.3,
+    noise: 0.05 + risk * 0.1,
+    tickDelay: 0,
+  };
+}
+
+function toPlaygroundResult(result: SimulationResult, trustThreshold: number): PlaygroundResult {
+  const lives: LifeSummary[] = result.lives.map((life, idx) => {
+    const belowThreshold = life.trustHistory.some(t => t < trustThreshold);
+    const terminationReason =
+      life.terminationReason === 'atp_exhaustion' ? 'atp_exhausted'
+      : belowThreshold && life.endTrust < trustThreshold ? 'trust_lost'
+      : 'completed';
+
+    return {
+      life_id: `life-${idx + 1}`,
+      start_tick: life.startTick,
+      end_tick: life.endTick,
+      initial_atp: life.startATP,
+      initial_trust: life.startTrust,
+      final_atp: life.endATP,
+      final_trust: life.endTrust,
+      termination_reason: terminationReason,
+      actions: life.ticks.map(t => ({
+        tick: t.tick,
+        action_type: t.action.type,
+        atp_cost: t.action.atpCost,
+        atp_reward: t.actionSuccess ? t.action.atpGain : 0,
+        trust_change: t.actionSuccess ? t.action.trustChange : -result.config.trustLossRate,
+        success: t.actionSuccess,
+        atp_after: t.atp,
+        trust_after: t.trust,
+      })),
+      atp_history: life.atpHistory,
+      trust_history: life.trustHistory,
+    };
+  });
+
+  // Generate insights from simulation events and results
+  const insights: string[] = [];
+  const lastLife = result.lives[result.lives.length - 1];
+  const firstLife = result.lives[0];
+
+  if (result.trustGrowth > 0.1) {
+    insights.push(`Trust grew ${(result.trustGrowth * 100).toFixed(0)}% across ${result.lives.length} lives — the agent is learning and improving.`);
+  } else if (result.trustGrowth < -0.1) {
+    insights.push(`Trust declined ${(Math.abs(result.trustGrowth) * 100).toFixed(0)}% — this environment may be too harsh for the current strategy.`);
+  }
+
+  const atpDeaths = result.lives.filter(l => l.terminationReason === 'atp_exhaustion').length;
+  if (atpDeaths > 0) {
+    insights.push(`${atpDeaths} of ${result.lives.length} lives ended in ATP exhaustion — try increasing rewards or reducing costs.`);
+  }
+
+  if (lastLife.peakTrust > 0.7) {
+    insights.push(`Peak trust reached ${(lastLife.peakTrust * 100).toFixed(0)}% — high trust compounds via coherence bonuses.`);
+  }
+
+  if (result.lives.length > 1 && lastLife.endTrust > firstLife.endTrust + 0.05) {
+    insights.push(`Karma carry-forward is working: later lives start stronger and perform better.`);
+  }
+
+  if (result.lives.length > 1 && lastLife.endTrust <= firstLife.endTrust - 0.05) {
+    insights.push(`Negative karma cycle: each life is starting worse than the last. Try adjusting karma settings.`);
+  }
+
+  if (insights.length === 0) {
+    insights.push(`Simulation complete. Try adjusting parameters to see how outcomes change.`);
+  }
+
+  return {
+    config: result.config,
+    lives,
+    total_ticks: result.totalTicks,
+    insights,
+  };
+}
 
 export default function PlaygroundPage() {
   const [result, setResult] = useState<PlaygroundResult | null>(null);
@@ -33,25 +125,11 @@ export default function PlaygroundPage() {
     setError(null);
 
     try {
-      const response = await fetch("/api/playground", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(config),
-      });
-
-      if (!response.ok) {
-        throw new Error(`Simulation failed: ${response.statusText}`);
-      }
-
-      const data = await response.json();
-
-      if (data.error) {
-        throw new Error(data.error);
-      }
-
-      setResult(data);
+      const simConfig = toSimConfig(config);
+      const engine = new SimulationEngine(simConfig);
+      const simResult = engine.run();
+      const playgroundResult = toPlaygroundResult(simResult, config.trust_threshold_death);
+      setResult(playgroundResult);
     } catch (err) {
       setError(String(err));
       console.error("Simulation error:", err);
@@ -100,8 +178,8 @@ export default function PlaygroundPage() {
             <div style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>2️⃣</div>
             <h3 style={{ fontSize: "1rem", marginBottom: "0.5rem" }}>Run Simulation</h3>
             <p style={{ fontSize: "0.875rem", color: "#9ca3af" }}>
-              Click "Run Simulation" to execute a multi-life agent cycle with your parameters.
-              Results appear in seconds.
+              Click &quot;Run Simulation&quot; to execute a multi-life agent cycle with your parameters.
+              Runs instantly in your browser — no setup needed.
             </p>
           </div>
           <div style={{ padding: "1rem", backgroundColor: "#1f2937", borderRadius: "6px" }}>
@@ -260,8 +338,8 @@ export default function PlaygroundPage() {
           </summary>
           <div style={{ marginLeft: "1.25rem", color: "#d1d5db" }}>
             <p style={{ marginBottom: "0.75rem" }}>
-              The playground runs a simplified Web4 agent simulation optimized for speed ({"<"}1
-              second) and interactivity:
+              The playground runs a Web4 agent simulation entirely in your browser — no server,
+              no Python, no setup. It&apos;s optimized for speed and interactivity:
             </p>
             <ul style={{ marginLeft: "1.25rem", marginBottom: "0.75rem" }}>
               <li>

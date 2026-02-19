@@ -197,8 +197,11 @@ for (const sim of SIMULATIONS) {
       continue;
     }
 
+    // Extract applied_actions if available (enriches narratives with agent reasoning)
+    const appliedActions = data.applied_actions || data.multi_life?.applied_actions || undefined;
+
     // Detect events
-    const events = detector.detectEvents(lives);
+    const events = detector.detectEvents(lives, appliedActions);
 
     // Generate base narrative
     const narrative = generator.generateNarrative(lives, events);

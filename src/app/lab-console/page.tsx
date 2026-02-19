@@ -885,10 +885,13 @@ export default function LabConsolePage() {
 
       {/* Narrative Panel - Human-readable story of the simulation */}
       {ep && ep.lives && ep.lives.length > 0 && (
-        <NarrativePanel lives={ep.lives} />
+        <NarrativePanel lives={ep.lives} appliedActions={ep.applied_actions} />
       )}
       {multi && multi.multi_life && multi.multi_life.lives && multi.multi_life.lives.length > 0 && (
-        <NarrativePanel lives={multi.multi_life.lives} />
+        <NarrativePanel
+          lives={multi.multi_life.lives}
+          appliedActions={(multi.multi_life as any)?.applied_actions}
+        />
       )}
       {fiveDomain && fiveDomain.lives && fiveDomain.lives.length > 0 && (
         <NarrativePanel lives={fiveDomain.lives} />

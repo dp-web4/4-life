@@ -19,6 +19,7 @@ import {
   EventType,
   EventSeverity,
   LifeRecord,
+  ActionRecord,
 } from "./event_detector";
 
 // ============================================================================
@@ -134,11 +135,19 @@ export class StoryGenerator {
     event: SimulationEvent,
     lifeNumber: number
   ): NarrativeEvent {
+    let significance = this.explainSignificance(event);
+
+    // If the event has agent reasoning (and it's not already in the description),
+    // append it as a quote to make the agent's voice heard
+    if (event.agent_reasoning && event.type !== EventType.STRATEGY_SHIFT && event.type !== EventType.DECISION_SUMMARY) {
+      significance += ` The agent's thinking: "${event.agent_reasoning}"`;
+    }
+
     return {
       timestamp: this.formatTimestamp(event.tick, lifeNumber),
       description: this.narrateEvent(event),
       technical_detail: this.getTechnicalDetail(event),
-      significance: this.explainSignificance(event),
+      significance,
     };
   }
 
@@ -182,6 +191,12 @@ export class StoryGenerator {
 
       case EventType.CONSISTENCY:
         return this.narrateConsistency(event);
+
+      case EventType.STRATEGY_SHIFT:
+        return this.narrateStrategyShift(event);
+
+      case EventType.DECISION_SUMMARY:
+        return this.narrateDecisionSummary(event);
 
       default:
         return event.description;
@@ -280,6 +295,57 @@ export class StoryGenerator {
     return `Remarkable consistency: This life's trust trajectory closely matches the previous life. The agent has found a reliable pattern and is executing it with precision. This stability suggests deep learning, not luck.`;
   }
 
+  private narrateStrategyShift(event: SimulationEvent): string {
+    const from = event.data.from_action || "unknown";
+    const to = event.data.to_action || "unknown";
+    const atp = this.formatNumber(event.data.atp_at_shift);
+    const trust = event.data.trust_at_shift?.toFixed(2);
+
+    let narrative = `The agent shifts strategy — from ${this.humanizeActionType(from)} to ${this.humanizeActionType(to)}. `;
+    narrative += `At this moment, ATP is at ${atp} and trust at ${trust}. `;
+
+    if (event.agent_reasoning) {
+      narrative += `The agent's own assessment: "${event.agent_reasoning}"`;
+    }
+
+    return narrative;
+  }
+
+  private narrateDecisionSummary(event: SimulationEvent): string {
+    const counts = event.data.action_counts || {};
+    const totalSpent = this.formatNumber(event.data.total_atp_spent);
+    const dominant = event.data.dominant_strategy;
+    const totalActions = event.data.total_actions || 0;
+
+    const breakdown = Object.entries(counts)
+      .sort((a, b) => (b[1] as number) - (a[1] as number))
+      .map(([type, count]) => `${this.humanizeActionType(type)} ${count}x`)
+      .join(", ");
+
+    let narrative = `Over ${totalActions} decisions, the agent spent ${totalSpent} ATP total. `;
+    narrative += `Decision breakdown: ${breakdown}. `;
+
+    if (dominant) {
+      const pct = Math.round(((event.data.dominant_count || 0) / totalActions) * 100);
+      narrative += `Primary strategy: ${this.humanizeActionType(dominant)} (${pct}% of decisions).`;
+    }
+
+    return narrative;
+  }
+
+  private humanizeActionType(actionType: string): string {
+    const map: Record<string, string> = {
+      risky_spend: "risky spending",
+      small_spend: "cautious spending",
+      conservative_audit: "conservative auditing",
+      no_action: "waiting",
+      social_interaction: "socializing",
+      learning_action: "learning",
+      contribution: "contributing",
+    };
+    return map[actionType] || actionType.replace(/_/g, " ");
+  }
+
   // ============================================================================
   // Technical Details (For Interested Readers)
   // ============================================================================
@@ -297,6 +363,14 @@ export class StoryGenerator {
 
       case EventType.ATP_EXHAUSTION:
         return "ATP (Allocation Transfer Packet) represents metabolic budget. All actions cost ATP. Gain ATP through valuable contribution (ADP - Allocation Discharge Packet).";
+
+      case EventType.STRATEGY_SHIFT:
+        return `Strategy shift from ${event.data.from_action} to ${event.data.to_action} at ATP=${Math.round(event.data.atp_at_shift)}, T3=${event.data.trust_at_shift?.toFixed(3)}`;
+
+      case EventType.DECISION_SUMMARY: {
+        const counts = event.data.action_counts || {};
+        return `Action distribution: ${Object.entries(counts).map(([k, v]) => `${k}=${v}`).join(", ")}`;
+      }
 
       default:
         return undefined;
@@ -335,6 +409,12 @@ export class StoryGenerator {
 
       case EventType.CONSISTENCY:
         return "Indicates mastery: The agent has found a reliable strategy and executes it precisely.";
+
+      case EventType.STRATEGY_SHIFT:
+        return "Adaptation in action: The agent reads its situation and changes approach. This is the hallmark of intelligent behavior.";
+
+      case EventType.DECISION_SUMMARY:
+        return "The full picture of how the agent allocated its attention across this life.";
 
       default:
         return "Part of the ongoing trust dynamics.";
@@ -380,6 +460,11 @@ export class StoryGenerator {
       events.some((e) => e.type === EventType.CONSISTENCY)
     ) {
       themes.push("Equilibrium and Stability");
+    }
+
+    // Check for strategic adaptation
+    if (events.some((e) => e.type === EventType.STRATEGY_SHIFT)) {
+      themes.push("Strategic Adaptation");
     }
 
     // Default theme
@@ -448,6 +533,37 @@ export class StoryGenerator {
       insights.push(
         `Consciousness threshold crossed in life ${thresholdCrossings[0].life_number}. This marks emergence of coherent agency - behavior transitions from reactive to intentional.`
       );
+    }
+
+    // Strategy adaptation insight
+    const strategyShifts = events.filter(
+      (e) => e.type === EventType.STRATEGY_SHIFT
+    );
+    if (strategyShifts.length > 0) {
+      const shiftsPerLife = new Map<number, number>();
+      for (const shift of strategyShifts) {
+        if (shift.life_number) {
+          shiftsPerLife.set(shift.life_number, (shiftsPerLife.get(shift.life_number) || 0) + 1);
+        }
+      }
+      const totalShifts = strategyShifts.length;
+      const avgPerLife = (totalShifts / lives.length).toFixed(1);
+      insights.push(
+        `Strategic adaptation: ${totalShifts} strategy shifts detected across ${lives.length} lives (avg ${avgPerLife}/life). The agent actively adapts its approach based on ATP levels and trust feedback, switching between risk-taking and conservation.`
+      );
+    }
+
+    // Decision profile insight (from summaries)
+    const summaries = events.filter((e) => e.type === EventType.DECISION_SUMMARY);
+    if (summaries.length > 0) {
+      const lastSummary = summaries[summaries.length - 1];
+      const dominant = lastSummary.data.dominant_strategy;
+      if (dominant) {
+        const pct = Math.round(((lastSummary.data.dominant_count || 0) / (lastSummary.data.total_actions || 1)) * 100);
+        insights.push(
+          `In the final life, ${this.humanizeActionType(dominant)} dominated at ${pct}% of decisions — revealing the agent's evolved strategy after learning from previous lives.`
+        );
+      }
     }
 
     return insights;

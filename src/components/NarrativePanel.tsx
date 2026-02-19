@@ -16,10 +16,11 @@ import { NarrativeQuery } from "./NarrativeQuery";
 
 interface NarrativePanelProps {
   lives: any[]; // LifeRecord array from simulation
+  appliedActions?: Record<string, any[]>; // Per-life action records from simulation
   collapsed?: boolean;
 }
 
-export function NarrativePanel({ lives, collapsed = false }: NarrativePanelProps) {
+export function NarrativePanel({ lives, appliedActions, collapsed = false }: NarrativePanelProps) {
   const [narrative, setNarrative] = useState<Narrative | null>(null);
   const [events, setEvents] = useState<SimulationEvent[]>([]);
   const [isCollapsed, setIsCollapsed] = useState(collapsed);
@@ -36,7 +37,7 @@ export function NarrativePanel({ lives, collapsed = false }: NarrativePanelProps
 
     try {
       const detector = new EventDetector();
-      const detectedEvents = detector.detectEvents(lives);
+      const detectedEvents = detector.detectEvents(lives, appliedActions);
       setEvents(detectedEvents);
 
       const generator = new StoryGenerator();
@@ -45,7 +46,7 @@ export function NarrativePanel({ lives, collapsed = false }: NarrativePanelProps
     } catch (error) {
       console.error("Failed to generate narrative:", error);
     }
-  }, [lives]);
+  }, [lives, appliedActions]);
 
   const handleExport = (format: ExportFormat) => {
     if (!narrative) return;

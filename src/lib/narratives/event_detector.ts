@@ -28,6 +28,20 @@ export interface LifeRecord {
   atp_history: number[];
 }
 
+export interface ActionRecord {
+  action_type: string;
+  reason: string;
+  atp_before: number;
+  atp_after: number;
+  atp_cost: number;
+  trust_before: number;
+  trust_after: number;
+  world_tick: number;
+  event_type?: string;
+  agent_lct?: string;
+  life_id?: string;
+}
+
 export interface SimulationEvent {
   type: EventType;
   severity: EventSeverity;
@@ -36,6 +50,10 @@ export interface SimulationEvent {
   life_number?: number;
   description: string;
   data: Record<string, any>;
+  /** Agent's own reasoning at this moment, from applied_actions */
+  agent_reasoning?: string;
+  /** The action the agent took at this tick */
+  action_type?: string;
 }
 
 export enum EventType {
@@ -66,6 +84,10 @@ export enum EventType {
   DEATH_IMMINENT = "death_imminent",
   RECOVERY = "recovery",
   DOWNWARD_SPIRAL = "downward_spiral",
+
+  // Agent decision events (from applied_actions)
+  STRATEGY_SHIFT = "strategy_shift",
+  DECISION_SUMMARY = "decision_summary",
 }
 
 export enum EventSeverity {
@@ -88,9 +110,14 @@ export class EventDetector {
   private static readonly ATP_WINDFALL_THRESHOLD = 50; // Gained 50+ ATP
 
   /**
-   * Detect all interesting events in a simulation
+   * Detect all interesting events in a simulation.
+   * When appliedActions is provided, also detects strategy shifts
+   * and enriches events with the agent's own reasoning.
    */
-  detectEvents(lives: LifeRecord[]): SimulationEvent[] {
+  detectEvents(
+    lives: LifeRecord[],
+    appliedActions?: Record<string, ActionRecord[]>
+  ): SimulationEvent[] {
     const events: SimulationEvent[] = [];
 
     for (let i = 0; i < lives.length; i++) {
@@ -108,6 +135,15 @@ export class EventDetector {
 
       // Pattern detection
       events.push(...this.detectPatternEvents(life, prevLife, i + 1));
+
+      // Agent decision events (from applied_actions)
+      if (appliedActions) {
+        const actions = appliedActions[life.life_id];
+        if (actions && actions.length > 0) {
+          events.push(...this.detectStrategyShifts(actions, life, i + 1));
+          events.push(this.generateDecisionSummary(actions, life, i + 1));
+        }
+      }
     }
 
     // Sort by tick, then by severity (critical first within same tick)
@@ -132,6 +168,11 @@ export class EventDetector {
       }
       return true;
     });
+
+    // Enrich events with agent reasoning from nearby actions
+    if (appliedActions) {
+      this.enrichWithAgentReasoning(filtered, lives, appliedActions);
+    }
 
     return filtered;
   }
@@ -423,6 +464,146 @@ export class EventDetector {
     }
 
     return events;
+  }
+
+  // ============================================================================
+  // Agent Decision Events (from applied_actions)
+  // ============================================================================
+
+  /**
+   * Detect strategy shifts — moments where the agent changes its approach.
+   * These are narratively powerful because they reveal adaptation.
+   */
+  private detectStrategyShifts(
+    actions: ActionRecord[],
+    life: LifeRecord,
+    lifeNumber: number
+  ): SimulationEvent[] {
+    const events: SimulationEvent[] = [];
+
+    for (let i = 1; i < actions.length; i++) {
+      const prev = actions[i - 1];
+      const curr = actions[i];
+
+      if (prev.action_type !== curr.action_type) {
+        events.push({
+          type: EventType.STRATEGY_SHIFT,
+          severity: EventSeverity.MEDIUM,
+          tick: curr.world_tick,
+          life_id: life.life_id,
+          life_number: lifeNumber,
+          description: `Strategy shift: ${this.humanizeActionType(prev.action_type)} → ${this.humanizeActionType(curr.action_type)}`,
+          agent_reasoning: curr.reason,
+          action_type: curr.action_type,
+          data: {
+            from_action: prev.action_type,
+            to_action: curr.action_type,
+            atp_at_shift: curr.atp_before,
+            trust_at_shift: curr.trust_before,
+            reason: curr.reason,
+          },
+        });
+      }
+    }
+
+    return events;
+  }
+
+  /**
+   * Generate a per-life decision summary — what the agent did and why.
+   */
+  private generateDecisionSummary(
+    actions: ActionRecord[],
+    life: LifeRecord,
+    lifeNumber: number
+  ): SimulationEvent {
+    // Count action types
+    const actionCounts: Record<string, number> = {};
+    let totalSpent = 0;
+
+    for (const action of actions) {
+      actionCounts[action.action_type] = (actionCounts[action.action_type] || 0) + 1;
+      totalSpent += action.atp_cost;
+    }
+
+    // Find dominant strategy (most frequent action type)
+    const dominant = Object.entries(actionCounts)
+      .sort((a, b) => b[1] - a[1])[0];
+
+    // Build readable breakdown
+    const breakdown = Object.entries(actionCounts)
+      .sort((a, b) => b[1] - a[1])
+      .map(([type, count]) => `${this.humanizeActionType(type)} (${count}x)`)
+      .join(", ");
+
+    return {
+      type: EventType.DECISION_SUMMARY,
+      severity: EventSeverity.LOW,
+      tick: life.end_tick,
+      life_id: life.life_id,
+      life_number: lifeNumber,
+      description: `Decision profile: ${breakdown}. Total ATP spent: ${Math.round(totalSpent)}.`,
+      data: {
+        action_counts: actionCounts,
+        total_atp_spent: totalSpent,
+        dominant_strategy: dominant?.[0],
+        dominant_count: dominant?.[1],
+        total_actions: actions.length,
+      },
+    };
+  }
+
+  /**
+   * Enrich existing events with the agent's reasoning from the nearest action.
+   * When an ATP_CRISIS or TRUST_COLLAPSE happens, the agent's own words
+   * at that moment are far more vivid than our template text.
+   */
+  private enrichWithAgentReasoning(
+    events: SimulationEvent[],
+    lives: LifeRecord[],
+    appliedActions: Record<string, ActionRecord[]>
+  ): void {
+    for (const event of events) {
+      // Skip events that already have reasoning (strategy shifts)
+      if (event.agent_reasoning) continue;
+
+      // Only enrich high-impact events
+      if (event.severity !== EventSeverity.CRITICAL && event.severity !== EventSeverity.HIGH) continue;
+
+      // Find the life this event belongs to
+      if (!event.life_id) continue;
+      const actions = appliedActions[event.life_id];
+      if (!actions || actions.length === 0) continue;
+
+      // Find the action closest to this event's tick
+      const closestAction = actions.reduce((closest, action) => {
+        const closestDist = Math.abs(closest.world_tick - event.tick);
+        const actionDist = Math.abs(action.world_tick - event.tick);
+        return actionDist < closestDist ? action : closest;
+      });
+
+      // Only attach if the action is within 1 tick of the event
+      if (Math.abs(closestAction.world_tick - event.tick) <= 1) {
+        event.agent_reasoning = closestAction.reason;
+        event.action_type = closestAction.action_type;
+      }
+    }
+  }
+
+  /**
+   * Convert machine action types to human-readable descriptions.
+   */
+  private humanizeActionType(actionType: string): string {
+    const map: Record<string, string> = {
+      risky_spend: "risky spending",
+      small_spend: "cautious spending",
+      conservative_audit: "conservative auditing",
+      no_action: "waiting",
+      social_interaction: "socializing",
+      learning_action: "learning",
+      contribution: "contributing",
+    };
+    return map[actionType] || actionType.replace(/_/g, " ");
   }
 
   // ============================================================================

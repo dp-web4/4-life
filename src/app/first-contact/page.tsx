@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
@@ -54,30 +54,37 @@ export default function FirstContactPage() {
     { tick: 10, action: "Established", atp_before: 80, atp_after: 80, trust_before: 0.62, trust_after: 0.62, reason: "Alice is now a trusted community member with sustainable reputation", isSuccess: true },
   ];
 
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const stopPlayback = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+    setIsPlaying(false);
+  }, []);
+
   const handlePlayPause = () => {
     if (isPlaying) {
-      setIsPlaying(false);
+      stopPlayback();
     } else {
+      // Reset to start if at end
+      if (playbackIndex >= simulationSnapshots.length - 1) {
+        setPlaybackIndex(0);
+      }
       setIsPlaying(true);
-      playSimulation();
+      // Clear any stale interval before starting a new one
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      intervalRef.current = setInterval(() => {
+        setPlaybackIndex(prev => {
+          if (prev >= simulationSnapshots.length - 1) {
+            stopPlayback();
+            return prev;
+          }
+          return prev + 1;
+        });
+      }, 2000);
     }
-  };
-
-  const playSimulation = () => {
-    if (playbackIndex >= simulationSnapshots.length - 1) {
-      setPlaybackIndex(0);
-    }
-
-    const interval = setInterval(() => {
-      setPlaybackIndex(prev => {
-        if (prev >= simulationSnapshots.length - 1) {
-          setIsPlaying(false);
-          clearInterval(interval);
-          return prev;
-        }
-        return prev + 1;
-      });
-    }, 2000); // 2 seconds per event for readability
   };
 
   const currentSnapshot = simulationSnapshots[playbackIndex];
