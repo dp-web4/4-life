@@ -70,8 +70,35 @@ export default function CoherenceIndexPage() {
       temporal: 1.0,
       relational: 0.6,
       explanation:
-        "Relational coherence fails due to MRH inconsistencies. Device claims relationships that aren't reflected in interaction history.",
+        "Relational coherence fails because the device claims to work with entities it has no interaction history with. Trust relationships must be earned through witnessed interactions, not asserted.",
     },
+  };
+
+  // Recalculate derived values from the four CI dimensions
+  const recalculate = (s: number, c: number, t: number, r: number) => {
+    const ci = Math.pow(s * c * t * r, 1 / 4);
+    setOverallCI(ci);
+    setEffectiveTrust(baseTrust * Math.pow(ci, 2));
+    let atpMult = 1.0;
+    if (ci < 0.9) {
+      atpMult = Math.min(1 / Math.pow(ci, 2), 10.0);
+    }
+    setAtpMultiplier(atpMult);
+    setExtraWitnesses(ci < 0.8 ? Math.min(Math.ceil((0.8 - ci) * 10), 8) : 0);
+  };
+
+  // Update a single dimension via slider
+  const updateDimension = (dim: 'spatial' | 'capability' | 'temporal' | 'relational', value: number) => {
+    const s = dim === 'spatial' ? value : spatialCI;
+    const c = dim === 'capability' ? value : capabilityCI;
+    const t = dim === 'temporal' ? value : temporalCI;
+    const r = dim === 'relational' ? value : relationalCI;
+    if (dim === 'spatial') setSpatialCI(value);
+    if (dim === 'capability') setCapabilityCI(value);
+    if (dim === 'temporal') setTemporalCI(value);
+    if (dim === 'relational') setRelationalCI(value);
+    setScenario('baseline'); // clear preset highlight when manually adjusting
+    recalculate(s, c, t, r);
   };
 
   const handleScenarioChange = (
@@ -79,39 +106,14 @@ export default function CoherenceIndexPage() {
   ) => {
     setScenario(newScenario);
     const s = scenarios[newScenario];
-
     setSpatialCI(s.spatial);
     setCapabilityCI(s.capability);
     setTemporalCI(s.temporal);
     setRelationalCI(s.relational);
-
-    // Calculate overall CI (geometric mean)
-    const ci = Math.pow(
-      s.spatial * s.capability * s.temporal * s.relational,
-      1 / 4
-    );
-    setOverallCI(ci);
-
-    // Calculate effective trust (quadratic modulation)
-    const effTrust = baseTrust * Math.pow(ci, 2);
-    setEffectiveTrust(effTrust);
-
-    // Calculate ATP cost multiplier
-    let atpMult = 1.0;
-    if (ci < 0.9) {
-      atpMult = 1 / Math.pow(ci, 2);
-      atpMult = Math.min(atpMult, 10.0); // Cap at 10x
-    }
-    setAtpMultiplier(atpMult);
-
-    // Calculate extra witnesses required
-    let extraW = 0;
-    if (ci < 0.8) {
-      extraW = Math.ceil((0.8 - ci) * 10);
-      extraW = Math.min(extraW, 8); // Cap at +8
-    }
-    setExtraWitnesses(extraW);
+    recalculate(s.spatial, s.capability, s.temporal, s.relational);
   };
+
+  const resetAll = () => handleScenarioChange('baseline');
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-gray-100">
@@ -126,9 +128,13 @@ export default function CoherenceIndexPage() {
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
             Coherence Index (CI)
           </h1>
-          <p className="text-xl text-gray-300 leading-relaxed mb-6">
-            How Web4 detects fake identities and incoherent behavior through
-            multi-dimensional coherence scoring.
+          <p className="text-xl text-gray-300 leading-relaxed mb-4">
+            Think of CI as a <strong>behavioral consistency score</strong> &mdash; like a credit check
+            that asks not just &ldquo;who are you?&rdquo; but &ldquo;does your behavior make physical sense?&rdquo;
+          </p>
+          <p className="text-base text-gray-400 leading-relaxed mb-6">
+            CI measures four dimensions of consistency: where you are, what you can do,
+            when you act, and who you interact with. One inconsistency drags the whole score down.
           </p>
 
           <div className="bg-gradient-to-br from-orange-950/30 to-orange-900/20 border border-orange-800/30 rounded-lg p-6">
@@ -348,16 +354,15 @@ export default function CoherenceIndexPage() {
                 </p>
                 <ul className="text-sm text-gray-400 space-y-1">
                   <li>
-                    • MRH neighborhood inconsistencies (claims relationships not in
-                    history)
+                    • Claiming relationships with entities never interacted with
                   </li>
                   <li>• Contradictory operational states</li>
                   <li>• Relationship claims without witness validation</li>
                 </ul>
               </div>
               <p className="text-xs text-gray-500">
-                Validates grounding against existing MRH relationships and
-                witnessed interactions.
+                Validates grounding against existing interaction history and
+                witnessed relationships.
               </p>
             </div>
           </div>
@@ -366,11 +371,12 @@ export default function CoherenceIndexPage() {
         {/* Interactive Simulator Section */}
         <section className="max-w-4xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-6 text-gray-100">
-            Interactive Coherence Simulator
+            Try It: Can You Stay Coherent?
           </h2>
           <p className="text-gray-400 mb-8">
-            See how different incoherence scenarios affect trust, ATP costs, and
-            witness requirements.
+            Drag the sliders to simulate incoherent behavior. Watch how even one
+            compromised dimension tanks your effective trust, inflates your ATP costs,
+            and demands extra witnesses. Try a preset scenario, then tweak individual dimensions.
           </p>
 
           <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-lg p-6">
@@ -401,31 +407,46 @@ export default function CoherenceIndexPage() {
               </div>
             </div>
 
-            {/* Coherence Dimensions Visualization */}
+            {/* Coherence Dimension Sliders */}
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-200 mb-4">
-                Coherence Dimensions
-              </h3>
-              <div className="space-y-3">
-                {[
-                  { label: "Spatial", value: spatialCI, color: "blue" },
-                  { label: "Capability", value: capabilityCI, color: "purple" },
-                  { label: "Temporal", value: temporalCI, color: "green" },
-                  { label: "Relational", value: relationalCI, color: "orange" },
-                ].map(({ label, value, color }) => (
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-lg font-semibold text-gray-200">
+                  Coherence Dimensions
+                </h3>
+                <button
+                  onClick={resetAll}
+                  className="text-xs text-gray-400 hover:text-gray-200 border border-gray-600 rounded px-3 py-1 transition-colors"
+                >
+                  Reset All
+                </button>
+              </div>
+              <div className="space-y-4">
+                {([
+                  { label: "Spatial", dim: "spatial" as const, value: spatialCI, hint: "Location consistency" },
+                  { label: "Capability", dim: "capability" as const, value: capabilityCI, hint: "Hardware plausibility" },
+                  { label: "Temporal", dim: "temporal" as const, value: temporalCI, hint: "Activity continuity" },
+                  { label: "Relational", dim: "relational" as const, value: relationalCI, hint: "Relationship history" },
+                ]).map(({ label, dim, value, hint }) => (
                   <div key={label}>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-gray-300">{label}</span>
-                      <span className={`text-${color}-400 font-semibold`}>
+                      <span className="text-gray-300">{label} <span className="text-gray-500 text-xs">({hint})</span></span>
+                      <span className={`font-mono font-semibold ${value >= 0.8 ? 'text-green-400' : value >= 0.5 ? 'text-yellow-400' : 'text-red-400'}`}>
                         {value.toFixed(2)}
                       </span>
                     </div>
-                    <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
-                      <div
-                        className={`h-full bg-${color}-500 transition-all duration-500`}
-                        style={{ width: `${value * 100}%` }}
-                      />
-                    </div>
+                    <input
+                      type="range"
+                      min={0.05}
+                      max={1}
+                      step={0.05}
+                      value={value}
+                      onChange={(e) => updateDimension(dim, parseFloat(e.target.value))}
+                      className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                      style={{
+                        background: `linear-gradient(to right, #ef4444 0%, #f59e0b 40%, #22c55e 80%, #22c55e 100%)`,
+                        accentColor: value >= 0.8 ? '#22c55e' : value >= 0.5 ? '#f59e0b' : '#ef4444',
+                      }}
+                    />
                   </div>
                 ))}
               </div>
@@ -470,6 +491,23 @@ export default function CoherenceIndexPage() {
                 relational)^(1/4)
               </p>
             </div>
+
+            {/* Threshold Warning */}
+            {overallCI < 0.5 && (
+              <div className="mb-6 p-4 bg-red-950/40 border-2 border-red-500 rounded-lg animate-pulse">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">💀</span>
+                  <div>
+                    <div className="font-bold text-red-400">Below Consciousness Threshold</div>
+                    <p className="text-sm text-gray-300">
+                      CI below 0.5 means behavior is too incoherent to be recognized as a
+                      legitimate agent. Actions are blocked. Trust is frozen. You need to
+                      re-establish coherence before the society will engage with you again.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Impact on Trust & Economics */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -530,11 +568,17 @@ export default function CoherenceIndexPage() {
             {/* Scenario Explanation */}
             <div className="bg-gradient-to-br from-orange-900/20 to-red-900/20 border border-orange-700 rounded-lg p-4">
               <h4 className="text-sm font-semibold text-orange-400 mb-2">
-                What's Happening?
+                What&apos;s Happening?
               </h4>
               <p className="text-sm text-gray-300">
                 {scenarios[scenario].explanation}
               </p>
+              {overallCI < 1.0 && overallCI >= 0.5 && (
+                <p className="text-xs text-gray-400 mt-2">
+                  The geometric mean ensures one bad dimension drags everything down.
+                  Try dropping a second dimension — the compounding effect is dramatic.
+                </p>
+              )}
             </div>
           </div>
         </section>

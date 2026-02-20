@@ -751,7 +751,7 @@ function MetricsDashboard({ metrics, epoch, totalEpochs }: {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
       <MetricCard
-        label="Epoch"
+        label="Round"
         value={`${epoch + 1}/${totalEpochs}`}
         color="text-white"
       />
@@ -780,18 +780,19 @@ function MetricsDashboard({ metrics, epoch, totalEpochs }: {
         label="Inequality"
         value={metrics.giniCoefficient.toFixed(2)}
         color={metrics.giniCoefficient < 0.3 ? 'text-green-400' : metrics.giniCoefficient < 0.5 ? 'text-yellow-400' : 'text-red-400'}
-        detail="Gini of ATP"
+        detail="wealth gap between agents"
       />
       <MetricCard
         label="Network"
         value={`${Math.round(metrics.networkDensity * 100)}%`}
         color="text-purple-400"
-        detail="trust density"
+        detail="how connected agents are"
       />
       <MetricCard
-        label="Generations"
+        label="Rebirths"
         value={`${metrics.totalGenerations}`}
         color="text-amber-400"
+        detail="agents died and were reborn"
       />
     </div>
   );
@@ -1397,7 +1398,7 @@ function StoryBar({
             <span className="text-amber-400 font-bold text-sm">{content.title}</span>
             {content.epoch !== undefined && (
               <span className="text-xs bg-blue-900/50 text-blue-300 px-2 py-0.5 rounded">
-                Epoch {content.epoch + 1}
+                Round {content.epoch + 1}
               </span>
             )}
             {content.type === 'event' && highlightedAgentIds.length > 0 && (
@@ -1460,7 +1461,7 @@ function StoryBar({
             <button
               onClick={() => {
                 const quickSummary = generateQuickSummary(narrative);
-                const siteUrl = 'https://dp-web4.github.io/4-life/society-simulator';
+                const siteUrl = 'https://4-life-ivory.vercel.app/society-simulator';
                 const text = `${quickSummary}\n\n${siteUrl}\n\n#Web4 #TrustDynamics`;
                 const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
                 window.open(url, '_blank', 'noopener,noreferrer,width=600,height=400');
@@ -1865,7 +1866,7 @@ function CharacterFocusModal({
                             <h4 className="font-bold text-white">{event.title}</h4>
                             <div className="flex items-center gap-2">
                               <span className="text-xs bg-gray-800 text-gray-400 px-2 py-0.5 rounded">
-                                Epoch {event.epoch + 1}
+                                Round {event.epoch + 1}
                               </span>
                               <span className={`text-xs px-2 py-0.5 rounded ${
                                 event.significance === 'high' ? 'bg-red-900/50 text-red-300' :
@@ -2258,7 +2259,7 @@ function RelationshipTimelineScrubber({
       {/* Scrubber */}
       <div className="mb-4">
         <div className="flex items-center gap-3">
-          <span className="text-sm text-gray-400 w-16">Epoch {currentEpoch + 1}</span>
+          <span className="text-sm text-gray-400 w-16">Round {currentEpoch + 1}</span>
           <input
             type="range"
             min={0}
@@ -2340,7 +2341,7 @@ function RelationshipTimelineScrubber({
 
       {/* Current Epoch Relationship Snapshot */}
       <div>
-        <h4 className="text-sm font-bold text-gray-400 mb-2">Relationships at Epoch {currentEpoch + 1}</h4>
+        <h4 className="text-sm font-bold text-gray-400 mb-2">Relationships at Round {currentEpoch + 1}</h4>
         <div className="max-h-48 overflow-y-auto space-y-1">
           {currentData?.relationships.slice(0, 10).map((rel, i) => {
             const avgTrust = (rel.trust1to2 + rel.trust2to1) / 2;
@@ -2602,7 +2603,7 @@ function NarrativePanel({
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-xs bg-amber-900/50 text-amber-300 px-2 py-0.5 rounded">
-                      Epoch {moment.epoch}
+                      Round {moment.epoch}
                     </span>
                     <h4 className="font-bold text-white">{moment.title}</h4>
                   </div>
@@ -2934,7 +2935,7 @@ function NarrativePanel({
                 lines.push('## Key Moments');
                 lines.push('');
                 narrative.keyMoments.forEach(m => {
-                  lines.push(`- **${m.title}** (Epoch ${m.epoch}): ${m.description}`);
+                  lines.push(`- **${m.title}** (Round ${m.epoch}): ${m.description}`);
                 });
                 lines.push('');
               }
@@ -3010,7 +3011,7 @@ function NarrativePanel({
 function ShareButtons({ narrative }: { narrative: SocietyNarrative }) {
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [copied, setCopied] = useState(false);
-  const siteUrl = 'https://dp-web4.github.io/4-life/society-simulator';
+  const siteUrl = 'https://4-life-ivory.vercel.app/society-simulator';
 
   const handleShare = (platform: SharePlatform) => {
     const content = generateShareableContent(narrative, platform, siteUrl);
@@ -3087,7 +3088,7 @@ function ShareButtons({ narrative }: { narrative: SocietyNarrative }) {
               className="w-full px-4 py-2 text-left text-sm text-gray-200 hover:bg-gray-700 flex items-center gap-3"
             >
               <svg className="w-4 h-4 text-blue-400" viewBox="0 0 568 501" fill="currentColor">
-                <path d="M123.121 33.6637C188.241 82.5526 258.281 181.681 284 234.873C309.719 181.681 379.759 82.5526 444.879 33.6637C491.866 -1.61183 568 -28.9064 568 57.9464C568 75.2916 558.055 203.659 552.222 224.501C531.947 296.954 458.067 315.434 392.347 304.249C507.222 323.8 536.444 388.56 473.333 453.32C353.473 576.312 301.061 422.461 287.631 googlemask" />
+                <path d="M123.121 33.664C188.241 82.553 258.281 181.681 284 234.873C309.719 181.681 379.759 82.553 444.879 33.664C491.866-1.612 568-28.906 568 57.947C568 75.292 558.055 203.659 552.222 224.501C531.947 296.954 458.067 315.434 392.347 304.249C507.222 323.8 536.444 388.56 473.333 453.32C353.473 576.312 301.061 422.461 287.631 383.564C287.384 382.878 287.145 382.212 284 374.399C280.855 382.212 280.616 382.878 280.369 383.564C266.939 422.461 214.527 576.312 94.667 453.32C31.556 388.56 60.778 323.8 175.653 304.249C109.933 315.434 36.053 296.954 15.778 224.501C9.945 203.659 0 75.292 0 57.947C0-28.906 76.134-1.612 123.121 33.664Z" />
               </svg>
               Bluesky
             </button>
@@ -3683,7 +3684,7 @@ export default function SocietySimulatorPage() {
                   <h3 className="text-sm font-bold text-gray-400">Trust Network</h3>
                   {running && (
                     <span className="text-xs text-green-400 animate-pulse">
-                      Epoch {currentEpoch + 1}
+                      Round {currentEpoch + 1}
                     </span>
                   )}
                 </div>
@@ -3745,7 +3746,7 @@ export default function SocietySimulatorPage() {
                     Prev
                   </button>
                   <span className="text-sm text-gray-400">
-                    Epoch {currentEpoch + 1} / {result.epochs.length}
+                    Round {currentEpoch + 1} / {result.epochs.length}
                   </span>
                   <button
                     onClick={() => showEpoch(currentEpoch + 1)}
@@ -3844,37 +3845,6 @@ export default function SocietySimulatorPage() {
           agentClickTrigger={agentClickTrigger}
         />
 
-        {/* Narrative Panel */}
-        {showNarrative && narrative && (
-          <NarrativePanel
-            narrative={narrative}
-            relationships={narrativeRelationships || undefined}
-            simulationResult={result || undefined}
-            onClose={() => setShowNarrative(false)}
-            onAnimate={() => {
-              setShowNarrative(false);
-              setShowStoryBar(true);
-            }}
-            onCharacterClick={(name) => {
-              if (result) {
-                const journey = generateCharacterJourney(result, name);
-                if (journey) {
-                  setCharacterJourney(journey);
-                  setShowCharacterFocus(true);
-                }
-              }
-            }}
-          />
-        )}
-
-        {/* Character Focus Modal (second instance for alternate layout) */}
-        {showCharacterFocus && characterJourney && (
-          <CharacterFocusModal
-            journey={characterJourney}
-            onClose={() => setShowCharacterFocus(false)}
-            strategyColors={STRATEGY_COLORS}
-          />
-        )}
       </div>
     </div>
   );

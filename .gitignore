@@ -34,3 +34,8 @@ next-env.d.ts
 lib/game/**/__pycache__/
 lib/game/*.json
 !lib/game/ep_pattern_corpus_web4_native.json
+
+# Hardbound private key (never commit)
+.hardbound/signing.key
+
+.hardbound/actors/claude/signing.key
