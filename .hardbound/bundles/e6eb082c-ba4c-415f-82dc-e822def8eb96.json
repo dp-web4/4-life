@@ -1,0 +1,45 @@
+{
+  "bundle_id": "e6eb082c-ba4c-415f-82dc-e822def8eb96",
+  "timestamp": "2026-02-20T17:12:49.418Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "rebirth|reborn|next life",
+    "parameters": {},
+    "result_hash": "sha256:3d2e718192413c0d0b39f9b83569c85d34119cf3a26ee01336019d9347904810",
+    "timestamp": "2026-02-20T17:12:49.418Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "2ceabf5a-eb73-4727-9dac-079c1dc67cdf",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIG2X/DHJEq5I+lp2Vj0EiYhsI5e9LyfGAdcGgfaRjaXsAiEAhV/nEJTGXPS9BV7b5n0jfdf0FQNwsEyKZLTCPfdVWJc=",
+        "timestamp": "2026-02-20T17:12:49.419Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: rebirth|reborn|next life",
+  "outputs_hashes": [
+    "sha256:3d2e718192413c0d0b39f9b83569c85d34119cf3a26ee01336019d9347904810"
+  ]
+}

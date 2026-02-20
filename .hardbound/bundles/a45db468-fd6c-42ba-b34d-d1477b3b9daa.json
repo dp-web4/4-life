@@ -1,0 +1,45 @@
+{
+  "bundle_id": "a45db468-fd6c-42ba-b34d-d1477b3b9daa",
+  "timestamp": "2026-02-20T17:06:07.532Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "consciousness threshold",
+    "parameters": {},
+    "result_hash": "sha256:d1578ea877774a60358588d33b73546a46e10140068cae15509da739352f797e",
+    "timestamp": "2026-02-20T17:06:07.532Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "162f2dd4-aa36-4162-984f-500632cb868f",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQDPjCcHkOAj5+GSweBXQx3oZ+KBaHlY7w27O+dvdQu6fwIhALwz3ulasuEvhBOyTZe5afRLGYYeRFXwLgTZlzB9ZIGy",
+        "timestamp": "2026-02-20T17:06:07.533Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: consciousness threshold",
+  "outputs_hashes": [
+    "sha256:d1578ea877774a60358588d33b73546a46e10140068cae15509da739352f797e"
+  ]
+}

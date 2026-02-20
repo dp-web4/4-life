@@ -2,17 +2,17 @@
   HARDBOUND COMPLIANCE AUDIT REPORT
 ====================================================
 
-  Generated: 2026-02-20 14:15:17
-  Period:    2026-02-20 05:00:32 → 2026-02-20 14:15:01
+  Generated: 2026-02-20 17:18:30
+  Period:    2026-02-20 05:00:32 → 2026-02-20 17:18:23
 
 ----------------------------------------------------
   VERIFICATION
 ----------------------------------------------------
-  Total bundles:     1802
-  Verified:          1802
+  Total bundles:     2130
+  Verified:          2130
   Failed:            0
   Chain integrity:   VALID
-  Signed bundles:    1802/1802 (100%)
+  Signed bundles:    2130/2130 (100%)
 
 ----------------------------------------------------
   TRUST
@@ -27,10 +27,10 @@
 ----------------------------------------------------
   Actors:            lct:web4:claude:opus-4
   Action breakdown:
-    file_operation       1310 ( 73%) ######################
-    command_execution     365 ( 20%) #######
-    tool_call              88 (  5%) ##
-    api_request            39 (  2%) #
+    file_operation       1593 ( 75%) #######################
+    command_execution     386 ( 18%) ######
+    tool_call             110 (  5%) ##
+    api_request            41 (  2%) #
 
 ====================================================
   AUDIT PASSED

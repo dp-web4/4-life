@@ -1,0 +1,45 @@
+{
+  "bundle_id": "31e1c035-abf4-41e8-a8c7-6939c38865f4",
+  "timestamp": "2026-02-20T17:18:14.534Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "/home/dp/.claude/projects/-home-dp-ai-workspace-4-life/memory/MEMORY.md",
+    "parameters": {},
+    "result_hash": "sha256:2618032461539b6f0c09e59e65290a4323e9fde53c3e49f513cb00f41dd669d3",
+    "timestamp": "2026-02-20T17:18:14.534Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "322f3885-1e7c-485f-989e-df46f8102dbc",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQCWAemoKqWM+dkUTToU9V4/V5iKHiAEZm5OtQbXSU6n5wIhAM0BiCRbLebt75RanFVwjt/0Sl75+3cDaKjI8KgLU9Y5",
+        "timestamp": "2026-02-20T17:18:14.535Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Read: /home/dp/.claude/projects/-home-dp-ai-workspace-4-life/memory/MEMORY.md",
+  "outputs_hashes": [
+    "sha256:2618032461539b6f0c09e59e65290a4323e9fde53c3e49f513cb00f41dd669d3"
+  ]
+}

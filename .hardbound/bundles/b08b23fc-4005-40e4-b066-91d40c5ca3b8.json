@@ -1,0 +1,45 @@
+{
+  "bundle_id": "b08b23fc-4005-40e4-b066-91d40c5ca3b8",
+  "timestamp": "2026-02-20T17:07:22.302Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "/home/dp/ai-workspace/4-life/src/components/GlossaryPanel.tsx",
+    "parameters": {},
+    "result_hash": "sha256:f5e6c4d1550255fb985f9bb82d2148bc419bedcaed27a1240e647f5b2b85ae00",
+    "timestamp": "2026-02-20T17:07:22.302Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "6ce173a3-5040-4e0f-a1bb-b02ea5f9452b",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQDmuKk6Bz1yAaw5+ggR6NYU6B/Xh1I8nayKASaYRDkvvQIhAOOBma52H6VQYxK+A1glWpv90slNeFhbjNwd3syhrivi",
+        "timestamp": "2026-02-20T17:07:22.303Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Edit: /home/dp/ai-workspace/4-life/src/components/GlossaryPanel.tsx",
+  "outputs_hashes": [
+    "sha256:f5e6c4d1550255fb985f9bb82d2148bc419bedcaed27a1240e647f5b2b85ae00"
+  ]
+}

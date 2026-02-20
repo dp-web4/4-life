@@ -1,0 +1,45 @@
+{
+  "bundle_id": "a2345b9f-5cfa-44d8-9387-4aaaa9349cb1",
+  "timestamp": "2026-02-20T17:11:53.368Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "Gini",
+    "parameters": {},
+    "result_hash": "sha256:6f0bfb752fd56c3dd7a81ae37980db01469ebc2c3095c2928e67003b29415bce",
+    "timestamp": "2026-02-20T17:11:53.368Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "8f105cd5-17ea-4f70-916b-2b18470945fb",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQCF8UQJL75kjaT4s/yZNZClFyAuxBA8KZkyNM74Ex2K+AIhANu26wlBPxZB8MSbk0ClQDSmhV62AdKBKCvGN4I/HE5u",
+        "timestamp": "2026-02-20T17:11:53.370Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: Gini",
+  "outputs_hashes": [
+    "sha256:6f0bfb752fd56c3dd7a81ae37980db01469ebc2c3095c2928e67003b29415bce"
+  ]
+}

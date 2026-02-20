@@ -1,0 +1,45 @@
+{
+  "bundle_id": "2ad0f8f5-37fb-46c3-801e-081bfd269433",
+  "timestamp": "2026-02-20T17:05:23.756Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "tool_call",
+    "target": "Verify live site deploys",
+    "parameters": {},
+    "result_hash": "sha256:9abc74291265605b10f584aa1eebf609c6b15e50c356db6e6bdfa3ff079df2aa",
+    "timestamp": "2026-02-20T17:05:23.756Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "1c353307-4de1-4b80-983a-0669cb92ae63",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQDcFJYmwU6QcWMD8/kW3QUVbwMHCW/pIfsFyiajlos8wQIgG74BHxWCHsrNM9x+/fHgmRBXgScvFRmqR6NYJAv4NAg=",
+        "timestamp": "2026-02-20T17:05:23.757Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Task: Verify live site deploys",
+  "outputs_hashes": [
+    "sha256:9abc74291265605b10f584aa1eebf609c6b15e50c356db6e6bdfa3ff079df2aa"
+  ]
+}
