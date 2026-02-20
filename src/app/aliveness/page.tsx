@@ -255,7 +255,7 @@ export default function AlivenessExplainer() {
         <ul>
           <li><strong>ATP &gt; 0:</strong> Prevents spam (metabolic exhaustion kills bots)</li>
           <li><strong>T3 &gt; 0.5:</strong> Prevents random noise (requires intentional behavior)</li>
-          <li><strong>CI coherent:</strong> Prevents Sybil attacks (consistency is expensive to fake)</li>
+          <li><strong>CI coherent:</strong> Prevents fake identities (consistency is expensive to fake)</li>
         </ul>
       </section>
 
@@ -441,7 +441,7 @@ export default function AlivenessExplainer() {
             <ul>
               <li>LCT (Linked Context Tokens) enable everything</li>
               <li>Hardware-bound, multi-witnessed, verifiable</li>
-              <li>Sybil attacks are expensive (can't create many fakes)</li>
+              <li>Fake identities are expensive to create at scale</li>
               <li>Reputation accumulates on verified identity</li>
             </ul>
           </div>
@@ -624,9 +624,9 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
               <td>Multi-dimensional, earned, verifiable</td>
             </tr>
             <tr>
-              <td><strong>Sybil attacks</strong></td>
+              <td><strong>Fake identities</strong></td>
               <td>Easy (create millions of accounts)</td>
-              <td>Hard (LCT + CI requires omnidimensional consistency)</td>
+              <td>Hard (hardware-bound + consistency checks)</td>
             </tr>
             <tr>
               <td><strong>Reputation</strong></td>
@@ -725,7 +725,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
               verifiable. Can't fake competence across all dimensions.
             </li>
             <li>
-              <strong>Coherence prevents Sybil attacks:</strong> Geometric mean of four dimensions.
+              <strong>Coherence prevents fake identities:</strong> Geometric mean of four dimensions.
               One weak dimension tanks everything. Must be consistent everywhere.
             </li>
             <li>
@@ -734,7 +734,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             </li>
             <li>
               <strong>LCT enables everything:</strong> Without verifiable presence, ATP/T3/CI
-              tracking is impossible. Hardware-bound, multi-witnessed, Sybil-resistant.
+              tracking is impossible. Hardware-bound, multi-witnessed, resistant to faking.
             </li>
             <li>
               <strong>Society self-regulates:</strong> Through metabolic economics + trust accumulation +
