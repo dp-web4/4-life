@@ -59,7 +59,7 @@ export default function GlossaryPage() {
           {/* LCT */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              LCT (Linked Context Token)
+              Verifiable Identity — LCT (Linked Context Token)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               Your <strong>hardware-rooted verifiable presence</strong>. An LCT is bound to
@@ -88,7 +88,7 @@ export default function GlossaryPage() {
           {/* ATP */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              ATP (Allocation Transfer Packet)
+              Energy Budget — ATP (Allocation Transfer Packet)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               The <strong>attention budget</strong> of Web4 societies—a charged value token
@@ -122,7 +122,7 @@ export default function GlossaryPage() {
           {/* T3 */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              T3 (Trust Tensor)
+              Trust Tensor (T3)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               <strong>Multi-dimensional, role-specific trust scores</strong>. Instead of
@@ -154,7 +154,7 @@ export default function GlossaryPage() {
           {/* MRH */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              MRH (Markov Relevancy Horizon)
+              Context Boundaries (MRH)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               The <strong>boundary of what you can see</strong> in a Web4 society. Your MRH
@@ -162,8 +162,10 @@ export default function GlossaryPage() {
               trust (transitively). This limits spam blast radius and preserves privacy.
             </p>
             <p className="text-gray-400 text-sm mb-3">
-              Plain English: "You don't see the whole internet. You see what's relevant based
-              on your trust network. Like how email filters work, but for entire entities."
+              <strong>Day-to-day example:</strong> Imagine you&apos;re in a co-working space. You hear conversations
+              from people you know, and friends-of-friends can introduce themselves. But a random stranger
+              can&apos;t walk up and start pitching you — they need someone you trust to vouch for them first.
+              That&apos;s MRH.
             </p>
             <div className="flex gap-3 text-sm">
               <Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">
@@ -183,7 +185,7 @@ export default function GlossaryPage() {
           {/* CI */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              CI (Coherence Index)
+              Coherence Index (CI)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               A measure of <strong>behavioral consistency</strong> across time, space,
@@ -232,7 +234,7 @@ export default function GlossaryPage() {
           {/* R6 */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              R6 (Request/Role/Rules/Reference/Resource/Result)
+              Action Framework (R6)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               The <strong>action framework</strong> for Web4 entities. Every action follows
@@ -269,7 +271,7 @@ export default function GlossaryPage() {
           {/* EP */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              EP (Epistemic Proprioception)
+              Cross-Life Learning (EP)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               <strong>Self-awareness of what you know</strong>. In Web4 simulations, agents

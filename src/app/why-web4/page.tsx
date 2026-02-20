@@ -323,7 +323,8 @@ export default function WhyWeb4Page() {
                 Context Boundaries (MRH)
               </h4>
               <p className="text-gray-400 text-sm">
-                Visibility bounded by trust. Spam can't reach you if spammers aren't trusted.
+                You only see messages from people your network trusts — like being in a room
+                where strangers need an introduction before they can talk to you.
               </p>
               <Link href="/markov-relevancy-horizon" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about context boundaries →
