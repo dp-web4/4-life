@@ -557,9 +557,30 @@ export default function LCTExplainerPage() {
           <div className="mt-6 p-4 bg-purple-50 border-l-4 border-purple-500 rounded">
             <p className="text-gray-700">
               <span className="font-bold">Foundation for everything else:</span> LCTs make ATP economics work
-              (can't create fake accounts cheaply if presence requires hardware), Trust Tensors work (reputation bound to
+              (can&apos;t create fake accounts cheaply if presence requires hardware), Trust Tensors work (reputation bound to
               verifiable presence), Coherence Index work (behavioral consistency verifiable), and MRH work
               (context graphs rooted in verified presence).
+            </p>
+          </div>
+
+          {/* FAQ: Device Loss */}
+          <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+            <h3 className="text-sm font-bold text-yellow-800 mb-2">
+              What if I lose all my devices?
+            </h3>
+            <p className="text-sm text-gray-700 mb-2">
+              If you have <strong>multiple devices</strong> (phone + laptop + security key), losing one is manageable:
+              your remaining devices revoke the lost one and you enroll a replacement. Your reputation transfers intact.
+            </p>
+            <p className="text-sm text-gray-700 mb-2">
+              If you lose <strong>all devices at once</strong> (rare but possible), recovery depends on your
+              witness network. Other entities that previously witnessed your identity can attest to who you are,
+              similar to how banks verify identity through multiple documents. This is slower — think days,
+              not minutes — and may require in-person verification for high-trust accounts.
+            </p>
+            <p className="text-xs text-gray-500">
+              This is an area of active research. Perfect recovery from total device loss without any
+              central authority is one of the hardest open problems in decentralized identity.
             </p>
           </div>
         </div>
