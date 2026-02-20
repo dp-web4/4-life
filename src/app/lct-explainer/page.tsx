@@ -557,7 +557,7 @@ export default function LCTExplainerPage() {
           <div className="mt-6 p-4 bg-purple-50 border-l-4 border-purple-500 rounded">
             <p className="text-gray-700">
               <span className="font-bold">Foundation for everything else:</span> LCTs make ATP economics work
-              (can't Sybil attack if presence is expensive to forge), Trust Tensors work (reputation bound to
+              (can't create fake accounts cheaply if presence requires hardware), Trust Tensors work (reputation bound to
               verifiable presence), Coherence Index work (behavioral consistency verifiable), and MRH work
               (context graphs rooted in verified presence).
             </p>
