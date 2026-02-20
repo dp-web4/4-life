@@ -106,7 +106,7 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
           { title: 'How It Works', description: 'Now that you\'ve seen it in action, understand the mechanics behind it', href: '/how-it-works', timeEstimate: '8 min', type: 'read' },
           { title: 'Data Explorer', description: 'Browse the raw simulation data that generates those stories', href: '/data-explorer', timeEstimate: '5 min', type: 'experiment' },
         ],
-        nextPath: 'Explore the Trust Tensor and MRH Explorers for deeper mechanics.',
+        nextPath: 'Explore the Trust Tensor and Context Boundary explorers for deeper mechanics.',
       };
     }
     if (style === 'interactive') {
@@ -163,8 +163,8 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
         tagline: 'How trust is measured, earned, lost, and carried across lives',
         color: '#60a5fa',
         steps: [
-          { title: 'Trust Tensor Explorer', description: 'Interactive manipulation of T3 dimensions with real-time CI modulation', href: '/trust-tensor-explorer', timeEstimate: '10 min', type: 'interactive' },
-          { title: 'Coherence Index', description: 'How behavioral consistency maps to 4 CI dimensions', href: '/coherence-index', timeEstimate: '8 min', type: 'read' },
+          { title: 'Trust Tensor Explorer', description: 'Interactive manipulation of trust dimensions with real-time coherence modulation', href: '/trust-tensor-explorer', timeEstimate: '10 min', type: 'interactive' },
+          { title: 'Coherence Index', description: 'How behavioral consistency maps to 4 coherence dimensions', href: '/coherence-index', timeEstimate: '8 min', type: 'read' },
           { title: 'Coherence Framework', description: '9-domain coherence visualizer — the physics of trust', href: '/coherence-framework', timeEstimate: '10 min', type: 'interactive' },
           { title: 'MRH Explorer', description: 'Context boundaries and how they shape trust visibility', href: '/mrh-explorer', timeEstimate: '8 min', type: 'interactive' },
           { title: 'Data Explorer', description: 'Raw simulation data showing trust trajectories across all datasets', href: '/data-explorer', timeEstimate: '10 min', type: 'experiment' },

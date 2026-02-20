@@ -104,7 +104,7 @@ export default function LearnJourney() {
           title: "Trust Tensors: Multi-Dimensional Trust",
           teaser:
             "Trust isn't a single number. It's measured across three dimensions per role: Talent, Training, and Temperament. Gaming one while failing others doesn't work.",
-          why: "T3 is how societies measure trustworthiness without central authorities.",
+          why: "The Trust Tensor (T3) is how societies measure trustworthiness without central authorities.",
           link: "/trust-tensor",
           duration: "9 min read",
         },
@@ -113,7 +113,7 @@ export default function LearnJourney() {
           title: "Coherence Index: Consistency Detection",
           teaser:
             "Tracks consistency across four dimensions: where you are, when you act, what you can do, and who you interact with. Inconsistent behavior tanks your trust.",
-          why: "CI is Web4's immune system — it detects fraud automatically by spotting incoherent behavior.",
+          why: "The Coherence Index (CI) is Web4's immune system — it detects fraud automatically by spotting incoherent behavior.",
           link: "/coherence-index",
           duration: "8 min read",
         },
@@ -132,7 +132,7 @@ export default function LearnJourney() {
           id: "run-first-sim",
           title: "Watch an Agent Live and Die",
           description:
-            "Run an EP Closed Loop simulation. See an agent earn ATP, build trust, die from exhaustion, and be reborn with karma. This is Web4 in miniature.",
+            "Run a cross-life learning simulation. See an agent earn ATP, build trust, die from exhaustion, and be reborn with karma. This is Web4 in miniature.",
           link: "/lab-console",
           type: "observe",
         },
@@ -202,7 +202,7 @@ export default function LearnJourney() {
           id: "explore-patterns",
           title: "Browse Pattern Corpus",
           description:
-            "Examine the EP pattern library. See what agents learn, how learning improves, and which scenarios teach the most valuable lessons.",
+            "Examine the cross-life pattern library. See what agents learn, how learning improves, and which scenarios teach the most valuable lessons.",
           link: "/patterns",
           type: "observe",
         },
@@ -281,7 +281,7 @@ export default function LearnJourney() {
           id: "analyze-corpus",
           title: "Analyze Pattern Quality",
           description:
-            "Use the pattern corpus quality metrics. Examine confidence reliability, risk calibration, and decision effectiveness. Understand EP maturity assessment.",
+            "Use the pattern corpus quality metrics. Examine confidence reliability, risk calibration, and decision effectiveness. Understand cross-life learning maturity.",
           link: "/patterns",
           type: "observe",
         },
@@ -617,7 +617,7 @@ export default function LearnJourney() {
             <>
               <p>
                 <strong>After completing the Beginner path:</strong> You'll understand Web4's
-                core concepts (LCT, ATP, T3, CI) and why they matter. You'll have seen simulations
+                core concepts (identity, energy budgets, trust tensors, coherence) and why they matter. You'll have seen simulations
                 run and narratives generated.
               </p>
               <p style={{ marginTop: "0.75rem" }}>

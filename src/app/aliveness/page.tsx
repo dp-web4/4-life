@@ -210,7 +210,7 @@ export default function AlivenessExplainer() {
                 <li><strong>Spatial:</strong> Location consistency (no teleporting)</li>
                 <li><strong>Capability:</strong> Hardware consistency (capabilities match device)</li>
                 <li><strong>Temporal:</strong> Time consistency (continuous operation)</li>
-                <li><strong>Relational:</strong> Relationship consistency (MRH integrity)</li>
+                <li><strong>Relational:</strong> Relationship consistency (context boundary integrity)</li>
               </ul>
               <p className="detail-emphasis">
                 CI = (spatial × capability × temporal × relational)^(1/4). Geometric mean means
