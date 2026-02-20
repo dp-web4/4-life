@@ -696,7 +696,7 @@ export default function FirstSimulationPage() {
               }}>
                 <h3 style={{ color: '#fde68a', fontWeight: 700, marginBottom: '0.5rem' }}>ATP (Attention Tokens)</h3>
                 <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                  ATP is the agent&apos;s metabolic budget. Every action costs ATP. Successful contributions
+                  ATP is the agent&apos;s attention budget. Every action costs ATP. Successful contributions
                   earn ATP back. If ATP reaches 0, the agent dies &mdash; they can no longer participate.
                   This models a fundamental truth: participation requires energy, and energy must be earned.
                 </p>
@@ -1014,7 +1014,7 @@ export default function FirstSimulationPage() {
                 },
                 {
                   title: 'Participation requires energy',
-                  detail: 'ATP represents the metabolic cost of engagement. You must contribute value to sustain participation. Free-riding leads to energy exhaustion and death.',
+                  detail: 'ATP represents the cost of engagement. You must contribute value to sustain participation. Free-riding leads to energy exhaustion and death.',
                   color: '#fde68a',
                 },
                 {
