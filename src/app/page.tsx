@@ -30,8 +30,8 @@ export default function HomePage() {
           maxWidth: '36rem',
           lineHeight: 1.6
         }}>
-          <strong>Web4</strong> is a trust-native internet (trust is built into the protocol, not bolted on)
-          where identity costs something, actions have metabolic weight (every action costs energy),
+          <strong>Web4</strong> is a trust-native internet — trust is built into the protocol, not bolted on.
+          Identity costs something, every action costs energy,
           and consequences follow you forever.
           This site lets you <em>see</em> how it works.
         </p>
@@ -119,7 +119,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           <li className="card" style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
             <span style={{ fontSize: '1.5rem' }}>⚡</span>
             <div>
-              <strong>Attention is metabolic</strong>
+              <strong>Every action costs energy</strong>
               <p style={{ color: 'var(--color-text-secondary)', margin: '0.25rem 0 0', fontSize: '0.9rem' }}>
                 Every action costs <TermTooltip term="ATP">ATP</TermTooltip>. Quality earns ATP. Spam burns out.
               </p>
@@ -139,7 +139,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             <div>
               <strong>AI and humans coexist</strong>
               <p style={{ color: 'var(--color-text-secondary)', margin: '0.25rem 0 0', fontSize: '0.9rem' }}>
-                The same trust framework applies to all agents, regardless of substrate.
+                The same trust framework applies to all agents — human or AI.
               </p>
             </div>
           </li>
