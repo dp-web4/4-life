@@ -703,12 +703,20 @@ export default function HowItWorksPage() {
             </div>
           </div>
 
-          <Link
-            href="/lab-console"
-            className="inline-block px-8 py-4 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-lg"
-          >
-            Launch Lab Console →
-          </Link>
+          <div className="flex gap-4 flex-wrap">
+            <Link
+              href="/society-simulator"
+              className="inline-block px-8 py-4 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-lg"
+            >
+              Launch Society Simulator →
+            </Link>
+            <Link
+              href="/lab-console"
+              className="inline-block px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors text-lg"
+            >
+              Lab Console (Advanced)
+            </Link>
+          </div>
         </div>
       </section>
 
