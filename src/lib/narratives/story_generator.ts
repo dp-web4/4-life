@@ -221,8 +221,10 @@ export class StoryGenerator {
 
     if (trustGain && parseFloat(trustGain) > 0) {
       return `Reborn with karma. Consistent behavior in the last life earned a trust boost of ${trustGain} — starting this life at ${newTrust} (up from ${prevTrust}). The past matters here.`;
+    } else if (trustGain && parseFloat(trustGain) < 0) {
+      return `Reborn. Karma carries a small penalty (${trustGain}), starting trust at ${newTrust}. The slate isn't fully clean — but there's room to prove otherwise.`;
     } else {
-      return `Reborn, but karma remembers. Starting trust: ${newTrust}${trustGain && parseFloat(trustGain) < 0 ? " — lower than before. The last life's mistakes left a mark." : ". No boost this time."}`;
+      return `Reborn at trust ${newTrust}. No karma bonus this time — a fresh start with neutral standing.`;
     }
   }
 
@@ -233,7 +235,7 @@ export class StoryGenerator {
     const duration = event.data.duration;
 
     if (reason === "atp_exhaustion") {
-      return `The agent runs out of attention (ATP reaches 0) and their life ends. Final trust: ${finalTrust}. They survived ${duration} ticks. This trust score will influence their next life's starting conditions.`;
+      return `ATP hits zero — the agent's energy is spent. Final trust: ${finalTrust} after ${duration} ticks. This trust carries forward into the next life.`;
     } else if (reason === "none" || reason === "simulation_end") {
       return `Life ${event.life_number} concludes naturally. Final trust: ${finalTrust}, remaining ATP: ${finalATP}. A stable end suggests sustainable behavior patterns.`;
     } else {
@@ -389,8 +391,13 @@ export class StoryGenerator {
       case EventType.REBIRTH:
         return "Past actions shape future starting conditions. The society remembers.";
 
-      case EventType.LIFE_END:
-        return "Death isn't failure - it's part of the cycle. What matters is the trust you carried forward.";
+      case EventType.LIFE_END: {
+        const finalTrust = event.data.final_trust;
+        if (finalTrust !== undefined && finalTrust >= 0.5) {
+          return "The life ends, but the trust earned carries forward. A legacy for the next incarnation.";
+        }
+        return "Death resets ATP but not reputation. What was earned — or lost — persists.";
+      }
 
       case EventType.TRUST_SPIKE:
         return "Consistent positive behavior compounds.";
@@ -401,8 +408,17 @@ export class StoryGenerator {
       case EventType.TRUST_THRESHOLD:
         return "A turning point: the agent crosses from unproven to trusted.";
 
+      case EventType.TRUST_PLATEAU:
+        return "Equilibrium found. The agent's behavior has settled into a consistent pattern.";
+
       case EventType.ATP_CRISIS:
         return "Running on empty. Every action costs energy, and this agent is running out.";
+
+      case EventType.ATP_WINDFALL:
+        return "A contribution paid off. The society rewards value with energy.";
+
+      case EventType.DEATH_IMMINENT:
+        return "The clock is ticking. Without income, this life ends soon.";
 
       case EventType.MATURATION:
         return "The agent is getting better across lives. Lessons compound.";
@@ -411,7 +427,7 @@ export class StoryGenerator {
         return "Mastery: a reliable strategy, executed precisely.";
 
       case EventType.STRATEGY_SHIFT:
-        return "Adaptation in action: The agent reads its situation and changes approach. This is the hallmark of intelligent behavior.";
+        return "Adaptation in action: The agent reads its situation and changes approach.";
 
       case EventType.DECISION_SUMMARY:
         return "The full picture of how the agent allocated its attention across this life.";
@@ -656,18 +672,24 @@ export class StoryGenerator {
       return `Life ${lifeNumber}: Steady Progress (Trust: ${finalTrust})`;
     }
 
-    // Categorize the life
+    // Categorize the life — check most distinctive patterns first
     const hasCrisis = events.some((e) => e.type === EventType.ATP_CRISIS);
     const hasCollapse = events.some((e) => e.type === EventType.TRUST_COLLAPSE);
     const hasMaturation = events.some((e) => e.type === EventType.MATURATION);
     const hasWindfall = events.some((e) => e.type === EventType.ATP_WINDFALL);
+    const hasConsistency = events.some((e) => e.type === EventType.CONSISTENCY);
+    const hasThreshold = events.some((e) => e.type === EventType.TRUST_THRESHOLD);
 
     if (hasMaturation) {
       return `Life ${lifeNumber}: Breakthrough (Trust: ${finalTrust})`;
+    } else if (hasConsistency) {
+      return `Life ${lifeNumber}: Mastery (Trust: ${finalTrust})`;
     } else if (hasCollapse && hasWindfall) {
       return `Life ${lifeNumber}: Crisis and Recovery (Trust: ${finalTrust})`;
     } else if (hasCollapse) {
       return `Life ${lifeNumber}: Setback (Trust: ${finalTrust})`;
+    } else if (hasThreshold && hasCrisis) {
+      return `Life ${lifeNumber}: Proving Ground (Trust: ${finalTrust})`;
     } else if (hasCrisis) {
       return `Life ${lifeNumber}: Adversity (Trust: ${finalTrust})`;
     } else if (hasWindfall) {
@@ -702,11 +724,19 @@ export class StoryGenerator {
     );
 
     if (maturationEvent) {
-      return "The agent carried forward lessons from previous lives and applied them successfully, achieving measurably better outcomes. Not external records — internalized wisdom that compounds across generations.";
-    } else if (thresholdEvent) {
-      return 'Crossing the 0.5 trust threshold is a turning point. Below it, behavior looks random or reactive. Above it, coherent patterns emerge — the agent acts with genuine intentionality. This threshold is a design choice inspired by phase transition dynamics: the point where order emerges from noise.';
+      return "The agent carried forward lessons from previous lives and applied them successfully, achieving measurably better outcomes. Not external records — internalized wisdom that compounds across lives.";
     } else if (consistencyEvent) {
-      return "The remarkable consistency across lives suggests the agent has found a stable attractor - a behavioral pattern that works reliably. This isn't mechanical repetition, but rather the demonstration of having learned a generalizable strategy.";
+      // Consistency is more interesting than threshold for commentary — prioritize it
+      return "The remarkable consistency across lives suggests the agent has found a stable attractor — a behavioral pattern that works reliably. This isn't mechanical repetition, but the demonstration of a generalizable strategy.";
+    } else if (thresholdEvent) {
+      // Vary commentary by life number to avoid identical text across acts
+      if (lifeNumber === 1) {
+        return "Crossing the 0.5 trust threshold is a turning point. Below it, behavior looks random or reactive. Above it, coherent patterns emerge — the agent acts with genuine intentionality.";
+      } else if (lifeNumber === 2) {
+        return "The threshold crossed again — the agent has to re-earn trust each life. But this time, the path to 0.5 feels more deliberate. The agent knows the territory.";
+      } else {
+        return "By now the threshold crossing is routine. The agent has internalized what it takes to earn trust. The real question is what happens above the threshold — that's where the interesting dynamics live.";
+      }
     }
 
     return "";
