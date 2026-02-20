@@ -212,7 +212,8 @@ export default function CoherenceIndexPage() {
                       <span className="text-green-400 mt-1">•</span>
                       <span>
                         <strong>Continuous coherence verification</strong> - Every
-                        grounding checks spatial, temporal, capability, and
+                        grounding (a periodic check-in where the device proves it&apos;s still the same device)
+                        verifies spatial, temporal, capability, and
                         relational consistency
                       </span>
                     </li>
@@ -237,6 +238,53 @@ export default function CoherenceIndexPage() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Protagonist Story */}
+        <section className="max-w-4xl mx-auto mb-16">
+          <h2 className="text-3xl font-bold mb-6 text-gray-100">
+            How It Works: Maria&apos;s Phone Gets Stolen
+          </h2>
+
+          <div className="bg-gradient-to-br from-amber-950/30 to-amber-900/20 border border-amber-800/30 rounded-lg p-6 mb-6">
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Maria lives in Madrid. Her phone is stolen at a caf&eacute;. Within 20 minutes,
+              the thief tries to access Maria&apos;s Web4 account from the same city.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+              <div className="bg-green-900/20 border border-green-700/30 rounded p-3 text-center">
+                <div className="text-xs text-gray-400 mb-1">Location</div>
+                <div className="text-lg font-bold text-green-400">OK</div>
+                <div className="text-xs text-gray-500">Same city</div>
+              </div>
+              <div className="bg-red-900/20 border border-red-700/30 rounded p-3 text-center">
+                <div className="text-xs text-gray-400 mb-1">Temporal</div>
+                <div className="text-lg font-bold text-red-400">FAIL</div>
+                <div className="text-xs text-gray-500">Broken continuity</div>
+              </div>
+              <div className="bg-red-900/20 border border-red-700/30 rounded p-3 text-center">
+                <div className="text-xs text-gray-400 mb-1">Relational</div>
+                <div className="text-lg font-bold text-red-400">FAIL</div>
+                <div className="text-xs text-gray-500">Wrong behavior patterns</div>
+              </div>
+              <div className="bg-green-900/20 border border-green-700/30 rounded p-3 text-center">
+                <div className="text-xs text-gray-400 mb-1">Capability</div>
+                <div className="text-lg font-bold text-green-400">OK</div>
+                <div className="text-xs text-gray-500">Same device</div>
+              </div>
+            </div>
+            <p className="text-gray-300 leading-relaxed">
+              <strong>Result</strong>: Even though the thief has Maria&apos;s actual device in the
+              same city, CI drops to <strong className="text-orange-400">0.55</strong> because temporal
+              continuity is broken (device was powered off briefly) and relational patterns don&apos;t
+              match (thief contacts different people, navigates unfamiliar apps). The society
+              restricts access and demands extra verification.
+            </p>
+          </div>
+          <p className="text-gray-400 text-sm mb-2">
+            Traditional security would see valid credentials on the correct device in the right
+            city &mdash; and grant full access. CI catches what passwords can&apos;t.
+          </p>
         </section>
 
         {/* Four Dimensions Section */}
@@ -498,11 +546,11 @@ export default function CoherenceIndexPage() {
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">💀</span>
                   <div>
-                    <div className="font-bold text-red-400">Below Consciousness Threshold</div>
+                    <div className="font-bold text-red-400">Locked Out &mdash; Behavior Too Incoherent</div>
                     <p className="text-sm text-gray-300">
-                      CI below 0.5 means behavior is too incoherent to be recognized as a
-                      legitimate agent. Actions are blocked. Trust is frozen. You need to
-                      re-establish coherence before the society will engage with you again.
+                      CI below 0.5 means behavior is too inconsistent to be recognized as
+                      legitimate. Actions are blocked. Trust is frozen. You need to
+                      re-establish coherent behavior before the society will engage with you again.
                     </p>
                   </div>
                 </div>
@@ -642,11 +690,15 @@ export default function CoherenceIndexPage() {
           </div>
         </section>
 
-        {/* Connection to 9-Domain Coherence Physics */}
+        {/* Connection to 9-Domain Coherence Physics — collapsed by default */}
         <section className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-100">
-            Connection to Coherence Physics
-          </h2>
+          <details className="group">
+            <summary className="cursor-pointer list-none">
+              <h2 className="text-3xl font-bold mb-6 text-gray-100 inline-flex items-center gap-3">
+                Connection to Coherence Physics
+                <span className="text-lg text-gray-500 group-open:rotate-90 transition-transform">&#9654;</span>
+              </h2>
+            </summary>
           <p className="text-gray-400 mb-6">
             Web4&apos;s Coherence Index draws inspiration from coherence principles
             observed across multiple domains of physical and social reality.
@@ -740,6 +792,7 @@ export default function CoherenceIndexPage() {
               both.
             </p>
           </div>
+          </details>
         </section>
 
         {/* Real-World Applications Section */}
