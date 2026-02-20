@@ -308,6 +308,13 @@ export class SocietyNarrativeGenerator {
       return "An Eye for an Eye";
     }
 
+    // More specific fallbacks based on available data
+    if (finalMetrics.averageTrust > 0.4 && finalMetrics.cooperationRate > 0.5) {
+      return "Trust Takes Root";
+    }
+    if (finalMetrics.numCoalitions > 1) {
+      return "A Web of Alliances";
+    }
     return "A Society Emerges";
   }
 
@@ -332,6 +339,12 @@ export class SocietyNarrativeGenerator {
       return "A tale of winners, losers, and the cost of inequality";
     }
 
+    if (result.events.some(e => e.type === 'agent_death')) {
+      return "Where trust is life, and betrayal has a body count";
+    }
+    if (finalMetrics.averageTrust > 0.4) {
+      return "Trust emerged — not because anyone planned it, but because it worked";
+    }
     return "A simulation of what happens when trust is the only rule";
   }
 
@@ -379,7 +392,7 @@ export class SocietyNarrativeGenerator {
       if (reputation < 0.3) {
         return `${agent.name} ${archetypeInfo.personality}, but the society eventually saw through their games, leaving them isolated.`;
       }
-      return `${agent.name} played the short game, and the scoreboard shows how that worked out.`;
+      return `${agent.name} cooperated only ${Math.round(coopRate * 100)}% of the time${agent.atp < 50 ? `, and ended with just ${Math.round(agent.atp)} ATP to show for it` : ''}. The short game rarely pays off in a society with memory.`;
     }
 
     // Cooperator arc
@@ -390,7 +403,7 @@ export class SocietyNarrativeGenerator {
       if (agent.atp < 50) {
         return `${agent.name} gave and gave, sometimes to those who didn't deserve it. A cautionary tale about trust without wisdom.`;
       }
-      return `${agent.name} ${archetypeInfo.personality}, building bridges wherever they went.`;
+      return `${agent.name} cooperated ${Math.round(coopRate * 100)}% of the time and ended with ${Math.round(agent.atp)} ATP — ${agent.atp >= 80 ? 'a solid return on trust' : 'proof that generosity without strategy has costs'}.`;
     }
 
     // Reciprocator arc
@@ -398,7 +411,7 @@ export class SocietyNarrativeGenerator {
       if (coalitionSize >= 3) {
         return `${agent.name}'s simple code—match what you receive—proved powerful. They became the backbone of a coalition.`;
       }
-      return `${agent.name} ${archetypeInfo.personality}. Neither exploited nor exploiting, they found balance.`;
+      return `${agent.name} mirrored what they received — cooperating ${Math.round(coopRate * 100)}% of the time. ${agent.atp > 90 ? 'Balance proved profitable.' : 'A fair strategy, though not always a lucrative one.'}`;
     }
 
     // Cautious arc
@@ -411,7 +424,7 @@ export class SocietyNarrativeGenerator {
 
     // Adaptive arc
     if (agent.strategy === 'adaptive') {
-      return `${agent.name} ${archetypeInfo.personality}. Their flexibility let them navigate the shifting social landscape.`;
+      return `${agent.name} read the room and adapted — ending with ${Math.round(agent.atp)} ATP and a ${Math.round(coopRate * 100)}% cooperation rate. ${coopRate > 0.6 ? 'They learned that cooperation was the winning move here.' : 'Their strategy shifted with the winds.'}`;
     }
 
     return `${agent.name} walked their own path in this society.`;
@@ -737,12 +750,82 @@ export class SocietyNarrativeGenerator {
     };
   }
 
+  /**
+   * Narrate the trajectory of trust across the simulation — how did things change over time?
+   * This is the most human-readable part of the narrative: describing trends, not just endpoints.
+   */
+  private narrateTrajectory(result: SocietyResult): string | null {
+    if (result.epochs.length < 3) return null;
+
+    const early = result.epochs[0];
+    const mid = result.epochs[Math.floor(result.epochs.length / 2)];
+    const late = result.epochs[result.epochs.length - 1];
+
+    // Calculate average trust at each point
+    const avgTrust = (agents: AgentSnapshot[]) => {
+      const alive = agents.filter(a => a.alive);
+      return alive.length > 0 ? alive.reduce((s, a) => s + a.reputation, 0) / alive.length : 0;
+    };
+
+    const earlyTrust = avgTrust(early.agents);
+    const midTrust = avgTrust(mid.agents);
+    const lateTrust = avgTrust(late.agents);
+
+    const aliveEarly = early.agents.filter(a => a.alive).length;
+    const aliveLate = late.agents.filter(a => a.alive).length;
+    const deaths = aliveEarly - aliveLate;
+
+    const parts: string[] = [];
+
+    // Trust trajectory
+    if (lateTrust > earlyTrust + 0.15) {
+      if (midTrust < earlyTrust) {
+        parts.push(`Trust started at ${(earlyTrust * 100).toFixed(0)}%, dipped in the middle rounds, then climbed to ${(lateTrust * 100).toFixed(0)}% — a classic crisis-and-recovery arc`);
+      } else {
+        parts.push(`Trust steadily grew from ${(earlyTrust * 100).toFixed(0)}% to ${(lateTrust * 100).toFixed(0)}% as agents learned who to rely on`);
+      }
+    } else if (lateTrust < earlyTrust - 0.15) {
+      parts.push(`Trust eroded from ${(earlyTrust * 100).toFixed(0)}% to ${(lateTrust * 100).toFixed(0)}% — the cooperative foundation crumbled under pressure`);
+    } else if (midTrust < earlyTrust - 0.1 && lateTrust > midTrust + 0.1) {
+      parts.push(`Trust wobbled — dropping mid-simulation before recovering to ${(lateTrust * 100).toFixed(0)}%`);
+    }
+
+    // Death toll
+    if (deaths > 0) {
+      parts.push(`${deaths} agent${deaths > 1 ? 's' : ''} didn't make it to the end`);
+    }
+
+    // Coalition growth
+    const lateCoalitions = late.coalitions?.length || 0;
+    if (lateCoalitions > 0) {
+      const largestSize = late.coalitions ? Math.max(...late.coalitions.map((c: Coalition) => c.members.length)) : 0;
+      if (largestSize >= 4) {
+        parts.push(`a dominant coalition of ${largestSize} emerged, reshaping the power structure`);
+      }
+    }
+
+    if (parts.length === 0) return null;
+
+    return parts[0].charAt(0).toUpperCase() + parts[0].slice(1) +
+      (parts.length > 1 ? '. ' + parts.slice(1).map(p => p.charAt(0).toUpperCase() + p.slice(1)).join('. ') : '') + '.';
+  }
+
   private buildClosingChapter(number: number, result: SocietyResult): NarrativeChapter {
     const finalMetrics = result.finalMetrics;
     const finalEpoch = result.epochs[result.epochs.length - 1];
     const finalEpochIndex = result.epochs.length - 1;
 
     const events: NarrativeEvent[] = [];
+
+    // Trajectory narration — how did we get here?
+    const trajectoryText = this.narrateTrajectory(result);
+    if (trajectoryText) {
+      events.push({
+        description: trajectoryText,
+        significance: "The journey matters as much as the destination.",
+        epoch: finalEpochIndex,
+      });
+    }
 
     // Describe the final state
     events.push({
@@ -776,7 +859,7 @@ export class SocietyNarrativeGenerator {
     return {
       number,
       title: "What Emerged",
-      opening: `After ${result.epochs.length} epochs and countless interactions, the society reached its end state.`,
+      opening: `After ${result.epochs.length} rounds and countless interactions, the society reached its end state.`,
       events,
       closing: this.generateMoral(result),
       epochRange: { start: finalEpochIndex, end: finalEpochIndex },
@@ -792,14 +875,15 @@ export class SocietyNarrativeGenerator {
       description += ` (largest with ${metrics.largestCoalition} members)`;
     }
 
-    description += `, and a Gini coefficient of ${metrics.giniCoefficient.toFixed(2)}`;
-
+    // Translate Gini into human language
     if (metrics.giniCoefficient < 0.2) {
-      description += ` (remarkably equal).`;
-    } else if (metrics.giniCoefficient > 0.4) {
-      description += ` (significant inequality).`;
+      description += `. Wealth was shared remarkably equally — no one agent hoarded resources.`;
+    } else if (metrics.giniCoefficient > 0.5) {
+      description += `. A stark wealth divide emerged — a few agents controlled most of the ATP while others scraped by.`;
+    } else if (metrics.giniCoefficient > 0.35) {
+      description += `. Wealth concentrated toward the top — the rich got richer, the poor stayed poor.`;
     } else {
-      description += ` (moderate inequality).`;
+      description += `. Resources were distributed unevenly, but not dramatically so.`;
     }
 
     return description;
@@ -932,7 +1016,7 @@ export class SocietyNarrativeGenerator {
     const epochs = result.epochs.length;
     const agentCount = result.config.numAgents;
 
-    let summary = `This simulation followed ${agentCount} agents through ${epochs} epochs of interaction. `;
+    let summary = `This simulation followed ${agentCount} agents through ${epochs} rounds of interaction. `;
 
     // Overall outcome
     if (metrics.cooperationRate > 0.7) {

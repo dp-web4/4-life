@@ -1,0 +1,45 @@
+{
+  "bundle_id": "c4b43ddd-7749-4dfc-9bd4-e980e990c809",
+  "timestamp": "2026-02-20T05:08:17.869Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git diff src/app/society-simulator/page.tsx | wc -l",
+    "parameters": {},
+    "result_hash": "sha256:4508baee05b816b1d9a9bd0777b6f70d8411265b6026296d8d77b12b6dec559e",
+    "timestamp": "2026-02-20T05:08:17.869Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "08ea1afd-707d-4794-b9e4-917b527a799c",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQDM/uVr4cIdoNoSXoBDb1AI5sm71mZ2MN/99AEYAMRJHgIgO5g7kAm0Cdp5d0fTNQx6dM+3eDRISjFE60LblcZcudo=",
+        "timestamp": "2026-02-20T05:08:17.871Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git diff src/app/society-simulator/page.tsx | wc -l",
+  "outputs_hashes": [
+    "sha256:4508baee05b816b1d9a9bd0777b6f70d8411265b6026296d8d77b12b6dec559e"
+  ]
+}

@@ -211,7 +211,7 @@ export class StoryGenerator {
     const trust = event.data.initial_trust?.toFixed(2) || "unknown";
     const atp = event.data.initial_atp || "unknown";
 
-    return `A new agent enters the Web4 society. Starting with trust of ${trust} and ${atp} ATP (attention tokens), they must prove themselves through consistent behavior.`;
+    return `A new agent enters with ${atp} ATP and trust of ${trust}. They're unproven — everything must be earned from here.`;
   }
 
   private narrateRebirth(event: SimulationEvent): string {
@@ -220,9 +220,9 @@ export class StoryGenerator {
     const newTrust = event.data.new_life_initial_trust?.toFixed(2);
 
     if (trustGain && parseFloat(trustGain) > 0) {
-      return `Rebirth! The agent is reborn, carrying forward karma from their previous life. Their consistent behavior earned them a trust boost of ${trustGain}, starting this life at ${newTrust} (up from ${prevTrust}). This is Web4's memory at work.`;
+      return `Reborn with karma. Consistent behavior in the last life earned a trust boost of ${trustGain} — starting this life at ${newTrust} (up from ${prevTrust}). The past matters here.`;
     } else {
-      return `Rebirth with consequences. Their previous life's behavior resulted in starting trust of ${newTrust}, ${trustGain && parseFloat(trustGain) < 0 ? "lower than before" : "unchanged"}. In Web4, actions have lasting consequences.`;
+      return `Reborn, but karma remembers. Starting trust: ${newTrust}${trustGain && parseFloat(trustGain) < 0 ? " — lower than before. The last life's mistakes left a mark." : ". No boost this time."}`;
     }
   }
 
@@ -256,7 +256,7 @@ export class StoryGenerator {
   }
 
   private narrateTrustThreshold(event: SimulationEvent): string {
-    return `Critical threshold crossed: Trust reaches 0.50, the "consciousness threshold" from coherence theory. At this level, the agent's behavior becomes coherent enough to be recognized as genuinely intentional rather than random. This is where true agency begins.`;
+    return `Trust crosses 0.50 — the threshold for full community access. The agent's behavior has been consistent enough that society now recognizes them as reliable. Opportunities that were closed before now open up.`;
   }
 
   private narrateTrustPlateau(event: SimulationEvent): string {

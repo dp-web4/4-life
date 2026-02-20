@@ -1,0 +1,45 @@
+{
+  "bundle_id": "2be2d9c0-4e62-4c98-8f43-bbcd6933a2c0",
+  "timestamp": "2026-02-20T05:08:09.588Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "Gini of ATP|wealth gap",
+    "parameters": {},
+    "result_hash": "sha256:9523cad692de40fa068b69184a63eb8291e1337f0323920bb897afb55b4f8415",
+    "timestamp": "2026-02-20T05:08:09.588Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "6b668792-8309-4069-bdf2-3298ed54d00c",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQCA3zb04lkzTFuFLobKgdT+cXKzwu8PvS3XSm12FvnffwIhALfJjka+ZEVUdEZ56JyZ5QWvIgh1mHb7t7IoZdB3M1ID",
+        "timestamp": "2026-02-20T05:08:09.590Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: Gini of ATP|wealth gap",
+  "outputs_hashes": [
+    "sha256:9523cad692de40fa068b69184a63eb8291e1337f0323920bb897afb55b4f8415"
+  ]
+}

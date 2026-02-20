@@ -1,0 +1,45 @@
+{
+  "bundle_id": "ad374076-25f9-4135-8ece-5573e14ab3ab",
+  "timestamp": "2026-02-20T05:06:11.318Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git diff --stat",
+    "parameters": {},
+    "result_hash": "sha256:a0f7b80157c3266cc265547f3aa60b34f7599dc6f1ac202f20745a90573eb892",
+    "timestamp": "2026-02-20T05:06:11.318Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "b129b15a-1de6-4e1c-bb0f-9afdb9f373e7",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQCX0ZSECL9dgQG9EADkHIgXB6vlX2C3U5Kxwc1/J/ScDgIhAI+SqWTSHfzEAK0SHwiJFazrw0R4HJmNJ33v9B60oFEr",
+        "timestamp": "2026-02-20T05:06:11.319Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git diff --stat",
+  "outputs_hashes": [
+    "sha256:a0f7b80157c3266cc265547f3aa60b34f7599dc6f1ac202f20745a90573eb892"
+  ]
+}
