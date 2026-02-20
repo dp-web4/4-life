@@ -571,8 +571,8 @@ export default function ATPEconomicsPage() {
               </h3>
               <p className="leading-relaxed mb-3">
                 ATP/ADP flows are tracked in the{" "}
-                <strong>MRH (Markov Relevancy Horizon)</strong>—the trust-based
-                graph defining your visibility boundaries—and recorded on each
+                <strong>context boundaries (MRH)</strong>—the trust-based
+                graph defining who you can see and interact with—and recorded on each
                 society's microchain.
               </p>
               <pre className="bg-gray-950 border border-gray-700 rounded-lg p-4 overflow-x-auto text-xs text-gray-400 font-mono">

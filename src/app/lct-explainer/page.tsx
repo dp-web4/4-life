@@ -743,8 +743,8 @@ export default function LCTExplainerPage() {
             </a>
 
             <a href="/markov-relevancy-horizon" className="block p-4 border-2 border-gray-200 rounded-lg hover:border-purple-500 transition-all">
-              <div className="font-bold text-gray-800 mb-1">Markov Relevancy Horizon (MRH)</div>
-              <div className="text-sm text-gray-600">Context graphs rooted in LCT relationships</div>
+              <div className="font-bold text-gray-800 mb-1">Context Boundaries (MRH)</div>
+              <div className="text-sm text-gray-600">Who you can see and interact with, based on trust</div>
             </a>
 
             <a href="/coherence-index" className="block p-4 border-2 border-gray-200 rounded-lg hover:border-purple-500 transition-all">

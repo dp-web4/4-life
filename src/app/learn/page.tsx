@@ -154,7 +154,7 @@ export default function LearnJourney() {
       concepts: [
         {
           id: "mrh",
-          title: "Markov Relevancy Horizon: Context Boundaries",
+          title: "Context Boundaries (MRH)",
           teaser:
             "You don't see everything—you see what's relevant through your relationships. MRH defines context boundaries based on your trust network.",
           why: "MRH shows how Web4 scales: societies stay coherent without requiring global consensus.",

@@ -223,7 +223,7 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
     if (interest === 'emergence') {
       return {
         name: 'Emergence Research Path',
-        tagline: 'From simple rules to consciousness, learning, and society',
+        tagline: 'From simple rules to awareness, learning, and society',
         color: '#c084fc',
         steps: [
           { title: 'Consciousness Layers', description: '3-layer emergence model with empirical R14B data', href: '/consciousness-layers', timeEstimate: '10 min', type: 'interactive' },
