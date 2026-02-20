@@ -3558,6 +3558,24 @@ export default function SocietySimulatorPage() {
                 <h3 className="text-sm font-bold text-gray-400 mb-2">Society Events</h3>
                 <EventFeed events={events} />
               </div>
+
+              {/* Continue Your Journey - shown after simulation completes */}
+              {result && !running && (
+                <div className="bg-gray-800/30 rounded-lg p-4 border border-gray-700/50 mt-4">
+                  <h3 className="text-sm font-bold text-gray-400 mb-2">Continue Exploring</h3>
+                  <div className="flex flex-wrap gap-2">
+                    <a href="/playground" className="text-xs px-3 py-1.5 bg-sky-900/40 text-sky-400 rounded hover:bg-sky-900/60 transition-colors">
+                      Playground — tweak parameters yourself
+                    </a>
+                    <a href="/learn" className="text-xs px-3 py-1.5 bg-emerald-900/40 text-emerald-400 rounded hover:bg-emerald-900/60 transition-colors">
+                      Learn — deeper into Web4 concepts
+                    </a>
+                    <a href="/trust-networks" className="text-xs px-3 py-1.5 bg-purple-900/40 text-purple-400 rounded hover:bg-purple-900/60 transition-colors">
+                      Trust Networks — explore relationship dynamics
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}
