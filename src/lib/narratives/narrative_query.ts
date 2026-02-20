@@ -309,10 +309,10 @@ export class NarrativeQueryEngine {
   private answerHow(intent: QueryIntent, question: string): QueryResponse {
     if (intent.target === 'learning') {
       return {
-        answer: `The agent learns through Epistemic Proprioception (EP) - meta-cognition that improves across lives. EP discovers which behaviors lead to success by pattern matching across previous experiences. When reborn, the agent carries forward karma that reflects learned patterns, enabling gradual improvement in trust and survival.`,
+        answer: `The agent learns through cross-life learning (EP) - meta-cognition that improves across lives. EP discovers which behaviors lead to success by pattern matching across previous experiences. When reborn, the agent carries forward karma that reflects learned patterns, enabling gradual improvement in trust and survival.`,
         confidence: 0.9,
         followUp: [
-          "What is Epistemic Proprioception?",
+          "What is cross-life learning?",
           "Show me maturation events",
           "How does karma work?"
         ]
@@ -332,12 +332,12 @@ export class NarrativeQueryEngine {
     }
 
     return {
-      answer: `Web4 simulations model society-scale trust dynamics. Agents manage ATP (attention budget), build trust through consistent actions, learn from experience via EP, and carry consequences across lives through karma. The system demonstrates emergence of coherent behavior from simple rules.`,
+      answer: `Web4 simulations model society-scale trust dynamics. Agents manage ATP (attention budget), build trust through consistent actions, learn from experience via cross-life learning (EP), and carry consequences across lives through karma. The system demonstrates emergence of coherent behavior from simple rules.`,
       confidence: 0.7,
       followUp: [
         "How does ATP work?",
         "How does karma work?",
-        "What is epistemic proprioception?"
+        "What is cross-life learning?"
       ]
     };
   }

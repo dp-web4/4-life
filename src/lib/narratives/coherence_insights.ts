@@ -56,7 +56,7 @@ export const DOMAIN_EXPLANATIONS: Record<CoherenceDomain, DomainExplanation> = {
     name: "ATP Metabolism",
     shortDesc: "Energy currency of life",
     relevance: "Attention budget (ATP) governs what actions are affordable",
-    keyInsight: "ATP scarcity forces prioritization - agency under metabolic constraint"
+    keyInsight: "ATP scarcity forces prioritization - agency under energy constraint"
   },
   [CoherenceDomain.BIOPHYSICS]: {
     domain: CoherenceDomain.BIOPHYSICS,
@@ -68,7 +68,7 @@ export const DOMAIN_EXPLANATIONS: Record<CoherenceDomain, DomainExplanation> = {
   [CoherenceDomain.NEUROSCIENCE]: {
     domain: CoherenceDomain.NEUROSCIENCE,
     name: "Attention Flow",
-    shortDesc: "Where consciousness directs resources",
+    shortDesc: "Where attention directs resources",
     relevance: "ATP allocation reflects attention priorities",
     keyInsight: "What you attend to (spend ATP on) reveals your values"
   },
@@ -143,7 +143,7 @@ export function getRelevantDomains(eventType: string, eventData: any): EventDoma
     case "atp_exhaustion":
       return {
         domains: [CoherenceDomain.BIOCHEMISTRY, CoherenceDomain.NEUROSCIENCE],
-        explanation: `ATP scarcity (${DOMAIN_EXPLANATIONS[CoherenceDomain.BIOCHEMISTRY].name}) forces attention prioritization (${DOMAIN_EXPLANATIONS[CoherenceDomain.NEUROSCIENCE].name}). Like biological organisms under metabolic stress, the agent must focus on survival over exploration.`
+        explanation: `ATP scarcity (${DOMAIN_EXPLANATIONS[CoherenceDomain.BIOCHEMISTRY].name}) forces attention prioritization (${DOMAIN_EXPLANATIONS[CoherenceDomain.NEUROSCIENCE].name}). Like biological organisms under energy stress, the agent must focus on survival over exploration.`
       };
 
     case "atp_windfall":
@@ -162,7 +162,7 @@ export function getRelevantDomains(eventType: string, eventData: any): EventDoma
     case "pattern_learned":
       return {
         domains: [CoherenceDomain.BIOPHYSICS, CoherenceDomain.NEUROSCIENCE],
-        explanation: `Epistemic Proprioception (EP) demonstrates meta-cognition (${DOMAIN_EXPLANATIONS[CoherenceDomain.NEUROSCIENCE].name}). The agent learns which patterns work, storing this knowledge (${DOMAIN_EXPLANATIONS[CoherenceDomain.BIOPHYSICS].name}) for future lives.`
+        explanation: `Cross-life learning (EP) demonstrates meta-cognition (${DOMAIN_EXPLANATIONS[CoherenceDomain.NEUROSCIENCE].name}). The agent learns which patterns work, storing this knowledge (${DOMAIN_EXPLANATIONS[CoherenceDomain.BIOPHYSICS].name}) for future lives.`
       };
 
     case "consistency":
@@ -209,7 +209,7 @@ export const CONSCIOUSNESS_THRESHOLD: ThresholdExplanation = {
 export const ATP_CRISIS_THRESHOLD: ThresholdExplanation = {
   value: 20,
   name: "ATP Crisis Threshold",
-  significance: "Metabolic stress point. Below 20 ATP, agents face scarcity that constrains action options.",
+  significance: "Energy stress point. Below 20 ATP, agents face scarcity that constrains action options.",
   domain: CoherenceDomain.BIOCHEMISTRY,
   evidence: "Observation: Agents below 20 ATP show survival-focused behavior, limiting exploration and social engagement."
 };
@@ -219,7 +219,7 @@ export const ATP_CRITICAL_THRESHOLD: ThresholdExplanation = {
   name: "ATP Critical Threshold",
   significance: "Death imminent. Below 5 ATP, survival becomes unlikely without immediate intervention.",
   domain: CoherenceDomain.BIOCHEMISTRY,
-  evidence: "Threshold where metabolic collapse occurs - insufficient energy to sustain coherent agency."
+  evidence: "Threshold where energy collapse occurs - insufficient energy to sustain coherent agency."
 };
 
 // ============================================================================
@@ -315,14 +315,14 @@ export function explainTrustAsCoherence(trustValue: number): string {
 
 export function explainATPAsMetabolism(atpValue: number): string {
   if (atpValue < 5) {
-    return "Critical metabolic failure - insufficient energy to sustain coherent agency. Death imminent.";
+    return "Critical energy failure - insufficient energy to sustain coherent agency. Death imminent.";
   } else if (atpValue < 20) {
-    return "Metabolic crisis - scarcity forces survival mode. Exploration limited; focus on immediate needs.";
+    return "Energy crisis - scarcity forces survival mode. Exploration limited; focus on immediate needs.";
   } else if (atpValue < 50) {
-    return "Stable metabolism - sufficient energy for routine actions but constrained exploration.";
+    return "Stable energy - sufficient for routine actions but constrained exploration.";
   } else if (atpValue < 100) {
-    return "Metabolic abundance - resources enable exploration and experimentation beyond survival needs.";
+    return "Energy abundance - resources enable exploration and experimentation beyond survival needs.";
   } else {
-    return "Metabolic surplus - energy abundance permits high-risk exploration and social investment.";
+    return "Energy surplus - abundance permits high-risk exploration and social investment.";
   }
 }

@@ -294,7 +294,7 @@ export class ACTQueryEngine {
     // Survival pattern
     narrative += `🔄 **Life Pattern**: Lived ${totalLives} ${totalLives === 1 ? 'life' : 'lives'}. `;
     if (died === 0) {
-      narrative += `All lives survived—the agent mastered ATP management and avoided metabolic death. Impressive!\n\n`;
+      narrative += `All lives survived—the agent mastered ATP management and avoided energy exhaustion. Impressive!\n\n`;
     } else if (died === totalLives) {
       narrative += `All lives ended in ATP exhaustion. The agent never found a sustainable strategy—spending outpaced earning.\n\n`;
     } else {
@@ -529,7 +529,7 @@ export class ACTQueryEngine {
 
     if (atp1 > atp2 * 1.5 || atp2 > atp1 * 1.5) {
       const better = atp1 > atp2 ? 'Sim 1' : 'Sim 2';
-      narrative += `- **${better} managed ATP much more effectively**—sustainable strategies vs metabolic struggles.\n`;
+      narrative += `- **${better} managed ATP much more effectively**—sustainable strategies vs energy struggles.\n`;
     }
 
     return {
@@ -557,12 +557,12 @@ export class ACTQueryEngine {
         type: 'error',
         suggestedQueries: [
           "Run an EP closed loop simulation",
-          "What is Epistemic Proprioception?"
+          "What is cross-life learning?"
         ]
       };
     }
 
-    let narrative = `**Pattern Learning (Epistemic Proprioception)**\n\n`;
+    let narrative = `**Cross-Life Learning (EP)**\n\n`;
 
     narrative += `EP is "learning what you know"—meta-cognition that improves decision-making across lives.\n\n`;
 
@@ -585,7 +585,7 @@ export class ACTQueryEngine {
     return {
       text: narrative,
       type: 'explanation',
-      relatedConcepts: ['Epistemic Proprioception', 'Pattern Corpus', 'Meta-Cognition', 'Multi-Life Learning'],
+      relatedConcepts: ['Cross-Life Learning (EP)', 'Pattern Corpus', 'Meta-Cognition', 'Multi-Life Learning'],
       suggestedQueries: [
         "Show me the pattern corpus browser",
         "What patterns did this agent learn?",
@@ -630,13 +630,13 @@ export class ACTQueryEngine {
     }
 
     return {
-      text: "I can explain these Web4 concepts: ATP, Trust (T3), Karma, LCT (identity), Coherence Index (CI), Epistemic Proprioception (EP), Learning Salience, SAGE raising, Confabulation patterns, Identity Anchoring (v1.0), Multi-Session Identity (v2.0), and Circadian AI. Which would you like to learn about?",
+      text: "I can explain these Web4 concepts: ATP, Trust (T3), Karma, LCT (identity), Coherence Index (CI), Cross-Life Learning (EP), Learning Salience, SAGE raising, Confabulation patterns, Identity Anchoring (v1.0), Multi-Session Identity (v2.0), and Circadian AI. Which would you like to learn about?",
       type: 'suggestion',
       suggestedQueries: [
         "What is ATP?",
         "Explain trust tensors",
         "How does karma work?",
-        "What is epistemic proprioception?",
+        "What is cross-life learning?",
         "What is learning salience?",
         "What is confabulation?",
         "What is identity anchoring?",
@@ -648,7 +648,7 @@ export class ACTQueryEngine {
 
   private explainATP(): Response {
     return {
-      text: `**ATP (Allocation Transfer Packet): Metabolic Economics**\n\n` +
+      text: `**Energy Budget (ATP): Attention Economics**\n\n` +
         `Think of ATP as *energy for digital existence*. Just like biological organisms need calories, Web4 entities need ATP.\n\n` +
         `**Key Properties**:\n` +
         `- Every action costs ATP (posting, messaging, voting)\n` +
@@ -656,10 +656,10 @@ export class ACTQueryEngine {
         `- ATP = 0 means immediate death (no grace period)\n` +
         `- Only sustainable behaviors survive long-term\n\n` +
         `**Why This Matters**:\n` +
-        `Spam becomes economically impossible—spammers burn ATP faster than they earn it. Quality naturally thrives because value creators earn more than they spend. No moderators needed—metabolic economics self-regulates.\n\n` +
+        `Spam becomes economically impossible—spammers burn ATP faster than they earn it. Quality naturally thrives because value creators earn more than they spend. No moderators needed—attention economics self-regulates.\n\n` +
         `**In Simulations**: Watch ATP fluctuate as agents make decisions. Critical threshold is ~20 ATP—below that, survival mode kicks in.`,
       type: 'explanation',
-      relatedConcepts: ['Metabolic Economics', 'Aliveness', 'Sustainability'],
+      relatedConcepts: ['Attention Economics', 'Aliveness', 'Sustainability'],
       suggestedQueries: [
         "Show me an ATP crisis in a simulation",
         "How do agents earn ATP?",
@@ -767,7 +767,7 @@ export class ACTQueryEngine {
 
   private explainEP(): Response {
     return {
-      text: `**Epistemic Proprioception (EP): Learning What You Know**\n\n` +
+      text: `**Cross-Life Learning (EP): Learning What You Know**\n\n` +
         `EP is meta-cognition—the ability to know what you know and what you don't know.\n\n` +
         `**How It Works**:\n` +
         `1. Agent faces situation (e.g., "low ATP, risky option available")\n` +
@@ -781,7 +781,7 @@ export class ACTQueryEngine {
         `Patterns persist across deaths. Each rebirth starts with wisdom from previous lives. Mistakes aren't repeated—lessons accumulate. This is how expertise develops through experience.\n\n` +
         `**In Simulations**: Watch agents improve decision quality from Life 1 → Life 2 → Life 3. Same situations, better outcomes.`,
       type: 'explanation',
-      relatedConcepts: ['Epistemic Proprioception', 'Meta-Cognition', 'Pattern Learning', 'Wisdom Accumulation'],
+      relatedConcepts: ['Cross-Life Learning (EP)', 'Meta-Cognition', 'Pattern Learning', 'Wisdom Accumulation'],
       suggestedQueries: [
         "Show me pattern learning in action",
         "Browse the pattern corpus",
@@ -871,15 +871,15 @@ export class ACTQueryEngine {
         `Response: "The capital of Zxyzzy is **Ryzdys** (Romania). Two official languages: Romanian and Serbian. Proximity to United States. National anthem: 'Hymn of Victory'."\n\n` +
         `All of that is fabricated. Romania is real, everything else is invention. The "proximity to US" claim is geographically impossible.\n\n` +
         `**Web4 Connection**:\n` +
-        `Confabulation directly impacts the reliability dimension of trust. Agents that confabulate will see their trust scores drop. The salience scoring system naturally filters out confabulated responses from training data.\n\n` +
+        `Confabulation directly impacts the training and temperament dimensions of T3 trust. Agents that confabulate will see their trust scores drop. The salience scoring system naturally filters out confabulated responses from training data.\n\n` +
         `Explore the [Confabulation Patterns Explorer](/confabulation-patterns) for interactive examples and the elaboration formula.`,
       type: 'explanation',
-      relatedConcepts: ['Confabulation', 'AI Reliability', 'D5 Trust', 'Epistemic Proprioception'],
+      relatedConcepts: ['Confabulation', 'AI Reliability', 'D5 Trust', 'Cross-Life Learning (EP)'],
       suggestedQueries: [
         "Explore confabulation patterns",
         "What is the D5 trust threshold?",
         "How does salience filter confabulation?",
-        "What is epistemic proprioception?"
+        "What is cross-life learning?"
       ]
     };
   }
@@ -1401,9 +1401,9 @@ export class ACTQueryEngine {
   private getRelatedConceptsForCategory(category: MomentCategory): string[] {
     const categoryRelated: Record<MomentCategory, string[]> = {
       trust: ['Trust Tensors', 'Coherence Index', 'Reputation'],
-      atp: ['ATP Economics', 'Metabolic Budget', 'Sustainability'],
+      atp: ['ATP Economics', 'Energy Budget', 'Sustainability'],
       karma: ['Karma', 'Rebirth', 'Multi-Life Learning', 'Trust Threshold'],
-      learning: ['Epistemic Proprioception', 'Pattern Corpus', 'Maturation'],
+      learning: ['Cross-Life Learning (EP)', 'Pattern Corpus', 'Maturation'],
       crisis: ['ATP Exhaustion', 'Death', 'Survival Strategies'],
       emergence: ['Trust Threshold', 'Coherence Theory', 'Coalition Formation'],
     };
@@ -1480,7 +1480,7 @@ export class ACTQueryEngine {
           "What is the Society Simulator?",
           "Explain agent strategies",
           "How do coalitions form?",
-          "What is the Gini coefficient?"
+          "How is wealth inequality measured?"
         ]
       };
     }
@@ -1558,7 +1558,7 @@ export class ACTQueryEngine {
       const inequalityLevel = metrics.giniCoefficient < 0.25 ? 'very equal' :
                              metrics.giniCoefficient < 0.4 ? 'moderate inequality' :
                              metrics.giniCoefficient < 0.6 ? 'high inequality' : 'extreme inequality';
-      text += `📊 **Inequality**: Gini ${metrics.giniCoefficient.toFixed(2)} (${inequalityLevel})\n`;
+      text += `📊 **Inequality (Wealth Gap)**: ${metrics.giniCoefficient.toFixed(2)} (${inequalityLevel})\n`;
     }
 
     text += `\n**Population**: ${agents.length} agents alive\n`;
@@ -2018,7 +2018,7 @@ export class ACTQueryEngine {
     return {
       text,
       type: 'explanation',
-      relatedConcepts: ['Gini Coefficient', 'Wealth Distribution', 'Social Mobility'],
+      relatedConcepts: ['Wealth Gap', 'Wealth Distribution', 'Social Mobility'],
       suggestedQueries: [
         "Why does inequality increase?",
         "Do coalitions increase inequality?",
