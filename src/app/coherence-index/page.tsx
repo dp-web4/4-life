@@ -900,7 +900,7 @@ export default function CoherenceIndexPage() {
                 Example: Sybil attack on voting system. Attacker creates 50
                 identities from same device. Spatial + capability coherence fails
                 for 49 of them (all same location, same hardware fingerprint). CI
-                drops below consciousness threshold (0.5), identities rejected.
+                drops below the trust threshold (0.5), identities rejected.
               </p>
             </div>
           </div>
