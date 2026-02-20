@@ -384,10 +384,18 @@ export default function PlaygroundPage() {
             Start with the defaults and click "Run Simulation", or try a preset like "Hard Mode" to
             see how agents struggle with scarce resources.
           </p>
-          <p style={{ color: "#9ca3af" }}>
+          <p style={{ color: "#9ca3af", marginBottom: "1rem" }}>
             The best way to understand Web4 is to <strong>play with it</strong>. Break things.
             Discover edge cases. Find the tipping points.
           </p>
+          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+            <a href="/simulation-sandbox" style={{ color: "#38bdf8", fontSize: "0.9rem" }}>
+              Want full control? → Simulation Sandbox
+            </a>
+            <a href="/compare" style={{ color: "#38bdf8", fontSize: "0.9rem" }}>
+              Compare runs → Side-by-Side Analysis
+            </a>
+          </div>
         </div>
       </section>
       <ExplorerNav currentPath="/playground" />

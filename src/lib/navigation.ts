@@ -88,7 +88,7 @@ export const navigationTree: NavigationTree = {
       href: '/atp-economics',
       desc: 'Every action costs energy, quality earns it back',
       keywords: ['attention', 'budget', 'metabolic', 'energy', 'spam'],
-      related: ['/aliveness', '/federation-economics', '/karma-consequences']
+      related: ['/aliveness', '/federation-economics', '/karma-consequences', '/concepts-to-tools']
     },
     {
       title: 'Trust Tensor',
@@ -102,7 +102,7 @@ export const navigationTree: NavigationTree = {
       href: '/coherence-index',
       desc: 'Consistency detection',
       keywords: ['CI', 'consistency', 'spatial', 'temporal', 'capability', 'relational'],
-      related: ['/coherence-framework', '/trust-tensor', '/aliveness', '/exploration-not-evaluation', '/meta-cognition-feedback']
+      related: ['/coherence-framework', '/trust-tensor', '/aliveness', '/exploration-not-evaluation', '/meta-cognition-feedback', '/concepts-to-tools']
     },
     {
       title: 'Karma',
@@ -499,7 +499,7 @@ export const navigationTree: NavigationTree = {
       desc: 'ATP + Trust + Coherence',
       keywords: ['alive', 'death', 'rebirth', 'existence', 'criteria'],
       prerequisites: ['/atp-economics', '/trust-tensor', '/coherence-index'],
-      related: ['/atp-economics', '/trust-tensor', '/coherence-index', '/karma-consequences']
+      related: ['/atp-economics', '/trust-tensor', '/coherence-index', '/karma-consequences', '/feedback-loop-explorer']
     },
     {
       title: 'MRH Boundaries',

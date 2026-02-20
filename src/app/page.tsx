@@ -90,8 +90,8 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           </Link>
         </div>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '1rem' }}>
-          Want an overview first? <Link href="/how-it-works" style={{ color: 'var(--color-sky)' }}>How It Works</Link> walks through the full lifecycle.
-          Or read the <Link href="/manifest" style={{ color: 'var(--color-sky)' }}>Manifest</Link> for primitives, claims, and known failure modes.
+          Not sure where to begin? <Link href="/explore-guide" style={{ color: 'var(--color-sky)' }}>Take the quiz</Link> for a personalized path.
+          Or read the <Link href="/how-it-works" style={{ color: 'var(--color-sky)' }}>How It Works</Link> overview.
         </p>
       </section>
 
@@ -156,8 +156,8 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           <Link href="/society-simulator" className="btn-primary">
             Society Simulator
           </Link>
-          <Link href="/lab-console" className="btn-secondary">
-            Lab Console
+          <Link href="/karma-journey" className="btn-secondary">
+            Karma Journey
           </Link>
           <Link href="/playground" className="btn-secondary">
             Playground
@@ -260,8 +260,8 @@ function DeepDiveTab() {
           <Link href="/first-contact" className="btn-primary">
             First Contact (10 min)
           </Link>
-          <Link href="/lab-console" className="btn-secondary">
-            Lab Console
+          <Link href="/starter-kit" className="btn-secondary">
+            Build Your Own
           </Link>
           <Link href="/act-explorer" className="btn-secondary">
             ACT Chat
