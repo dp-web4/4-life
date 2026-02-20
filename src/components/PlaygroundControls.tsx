@@ -146,13 +146,13 @@ export function PlaygroundControls({ onRunSimulation, isRunning }: PlaygroundCon
           description="How many life cycles to simulate"
         />
         <ParameterSlider
-          label="Ticks per Life"
+          label="Actions per Life"
           value={config.ticks_per_life}
           onChange={(v) => updateConfig("ticks_per_life", v)}
           min={5}
           max={30}
           step={1}
-          description="Each tick = one action/decision. More ticks = longer lives"
+          description="How many decisions the agent makes each life. More actions = longer lives"
         />
         <ParameterSlider
           label="Risk Appetite"
@@ -177,7 +177,7 @@ export function PlaygroundControls({ onRunSimulation, isRunning }: PlaygroundCon
           min={20}
           max={200}
           step={10}
-          description="ATP budget at birth (metabolic energy)"
+          description="Attention budget at birth — run out and you die"
         />
         <ParameterSlider
           label="Starting Trust"
@@ -199,22 +199,22 @@ export function PlaygroundControls({ onRunSimulation, isRunning }: PlaygroundCon
           How much an agent&apos;s past life affects their next one. Good behavior compounds; bad behavior haunts.
         </p>
         <ParameterSlider
-          label="ATP Karma Bonus"
+          label="Energy Carry-Forward"
           value={config.karma_atp_bonus}
           onChange={(v) => updateConfig("karma_atp_bonus", v)}
           min={0}
           max={100}
           step={5}
-          description="ATP bonus/penalty based on previous life's trust"
+          description="How much extra energy a trusted agent gets when reborn"
         />
         <ParameterSlider
-          label="Trust Karma Boost"
+          label="Trust Carry-Forward"
           value={config.karma_trust_boost}
           onChange={(v) => updateConfig("karma_trust_boost", v)}
           min={0}
           max={0.3}
           step={0.05}
-          description="Trust boost for high-performing rebirths"
+          description="How much trust reputation carries over to the next life"
         />
       </section>
 

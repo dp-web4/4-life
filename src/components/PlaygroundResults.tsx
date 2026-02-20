@@ -206,7 +206,7 @@ function LifeTrajectory({ life, index }: { life: LifeSummary; index: number }) {
           </span>
         </div>
         <div>
-          <span style={{ color: "#9ca3af" }}>Ticks: </span>
+          <span style={{ color: "#9ca3af" }}>Actions: </span>
           <span style={{ color: "#d1d5db" }}>{life.actions.length}</span>
         </div>
       </div>
