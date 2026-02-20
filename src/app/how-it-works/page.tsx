@@ -162,9 +162,9 @@ export default function HowItWorksPage() {
                 </li>
               </ul>
               <p className="text-gray-400 mt-3 text-sm italic">
-                Your LCT is registered on the society's blockchain and becomes
-                part of the MRH (Markov Relevancy Horizon)—the trust-based graph
-                that determines what entities and information are visible to you.
+                Your LCT is registered on the society&apos;s network and becomes
+                part of the trust graph — which determines what entities and
+                information are visible to you (your &quot;context boundary&quot;).
               </p>
             </div>
 

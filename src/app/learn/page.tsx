@@ -236,7 +236,7 @@ export default function LearnJourney() {
           title: "Coherence Framework: From 4 Dimensions to 9 Domains",
           teaser:
             "Web4's coherence model (spatial, capability, temporal, relational) is grounded in Synchronism's 9-domain framework. Autonomous research discovered key gating mechanisms: attention gates metabolism, trust modulates coupling, and spacetime gates context.",
-          why: "Understanding the full coherence framework reveals how Web4 emerges from fundamental physics, not arbitrary design. The 0.5 threshold appears in superconductivity, biology, and consciousness.",
+          why: "Understanding the full coherence framework reveals how Web4 emerges from fundamental principles, not arbitrary design. The 0.5 threshold appears across many natural systems — it's a phase transition, not a magic number.",
           link: "/coherence-framework",
           duration: "18 min read",
         },
