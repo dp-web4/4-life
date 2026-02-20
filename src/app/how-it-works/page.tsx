@@ -712,7 +712,7 @@ export default function HowItWorksPage() {
                 EP Closed Loop
               </h3>
               <p className="text-gray-400 text-sm">
-                Watch full epistemic learning across multiple lives. Pattern
+                Watch full cross-life pattern learning across multiple lives. Pattern
                 corpus builds with each life.
               </p>
             </div>

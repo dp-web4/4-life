@@ -233,7 +233,7 @@ export default function ComparePage() {
             <p>
               <strong className="text-white">ATP Trajectory:</strong> Tracks the attention budget.
               ATP decreases with actions and increases with valuable contributions. The crisis
-              threshold (20) marks when agents face metabolic pressure.
+              threshold (20) marks when agents face resource pressure.
             </p>
             <p>
               <strong className="text-white">Volatility:</strong> Measures behavioral consistency.

@@ -4,9 +4,9 @@ import SiteSearch from "@/components/SiteSearch";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "4-Life | Fractal Web4 Societies",
+  title: "4-Life | Interactive Web4 Societies",
   description:
-    "4-Life is a fractal network of Web4 societies for humans and AI agents, built on verifiable trust, MRH, and hardware-bound identities.",
+    "4-Life is an interactive simulation of Web4 societies — where trust, identity, and economics work together for humans and AI agents alike.",
 };
 
 export default function RootLayout({

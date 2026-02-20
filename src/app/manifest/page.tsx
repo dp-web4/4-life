@@ -20,8 +20,8 @@ export default function ManifestPage() {
             <Link href="/lct-explainer" className="text-sky-400">↗</Link>
           </li>
           <li>
-            <strong>ATP (Allocation Transfer Packet):</strong> Metabolic currency inspired by biological ATP.
-            Actions cost attention; quality earns it. Spam dies from metabolic exhaustion.{" "}
+            <strong>ATP (Allocation Transfer Packet):</strong> Attention budget inspired by biological ATP.
+            Actions cost energy; quality earns it back. Spam dies from exhaustion.{" "}
             <Link href="/atp-economics" className="text-sky-400">↗</Link>
           </li>
           <li>
@@ -61,7 +61,7 @@ export default function ManifestPage() {
         <h2>Core Claims</h2>
         <ul style={{ marginTop: "0.75rem", lineHeight: "1.75" }}>
           <li>
-            <strong>Spam becomes metabolically self-limiting:</strong> Spammers burn ATP faster than they earn it,
+            <strong>Spam burns out naturally:</strong> Spammers burn attention (ATP) faster than they earn it,
             making spam economically unsustainable without external subsidy.
           </li>
           <li>

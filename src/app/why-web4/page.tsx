@@ -250,7 +250,7 @@ export default function WhyWeb4Page() {
             <div>
               <h3 className="text-lg font-semibold text-sky-400">Work for humans AND AI agents</h3>
               <p className="text-gray-400 text-sm">
-                The same trust framework should apply regardless of substrate. AI agents should
+                The same trust framework should apply whether you're human or AI. AI agents should
                 be verifiable, bounded, and accountable. Their creators should be on the hook for
                 their behavior.
               </p>

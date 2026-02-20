@@ -329,10 +329,10 @@ export default function AlivenessExplainer() {
             <strong>If you die with 145 ATP and T3 = 0.72, you're reborn with:</strong>
           </p>
           <ul>
-            <li>145 ATP karma bonus (metabolic advantage)</li>
+            <li>145 ATP karma bonus (energy advantage)</li>
             <li>0.72 trust reputation (social advantage)</li>
             <li>Intact CI history (continuity advantage)</li>
-            <li>EP pattern corpus (epistemic advantage)</li>
+            <li>EP pattern corpus (learning advantage)</li>
           </ul>
           <p>
             Good behavior <strong>compounds across lives</strong>. Each life starts stronger.
