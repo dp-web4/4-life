@@ -366,9 +366,9 @@ export default function KarmaJourneyPage() {
           }}>
             {[
               { label: 'Life', value: `#${currentLife.lifeNumber}`, color: '#93c5fd' },
-              { label: 'Eff. Trust', value: effComp.toFixed(3), color: effComp > 0.7 ? '#6ee7b7' : effComp > 0.4 ? '#fde68a' : '#fca5a5' },
-              { label: 'ATP', value: `${currentLife.atp}`, color: currentLife.atp > 50 ? '#6ee7b7' : currentLife.atp > 20 ? '#fde68a' : '#fca5a5' },
-              { label: 'CI', value: currentLife.ci.toFixed(2), color: currentLife.ci > 0.8 ? '#6ee7b7' : currentLife.ci > 0.5 ? '#fde68a' : '#fca5a5' },
+              { label: 'Trust', value: effComp.toFixed(3), color: effComp > 0.7 ? '#6ee7b7' : effComp > 0.4 ? '#fde68a' : '#fca5a5' },
+              { label: 'Energy', value: `${currentLife.atp}`, color: currentLife.atp > 50 ? '#6ee7b7' : currentLife.atp > 20 ? '#fde68a' : '#fca5a5' },
+              { label: 'Consistency', value: currentLife.ci.toFixed(2), color: currentLife.ci > 0.8 ? '#6ee7b7' : currentLife.ci > 0.5 ? '#fde68a' : '#fca5a5' },
             ].map(stat => (
               <div key={stat.label} style={{
                 padding: '0.5rem', borderRadius: '0.5rem',
@@ -455,7 +455,7 @@ export default function KarmaJourneyPage() {
                       </div>
                       <div style={{ display: 'flex', gap: '0.5rem', fontSize: '0.65rem', fontFamily: 'monospace' }}>
                         <span style={{ color: netAtp >= 0 ? '#6ee7b7' : '#fca5a5' }}>
-                          ATP: {netAtp >= 0 ? '+' : ''}{netAtp}
+                          Energy: {netAtp >= 0 ? '+' : ''}{netAtp}
                         </span>
                         {actualCost > 0 && actualCost !== choice.atpCostBase && (
                           <span style={{ color: actualCost > choice.atpCostBase ? '#fca5a5' : '#6ee7b7' }}>
