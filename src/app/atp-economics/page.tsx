@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import { T3, CI, MRH } from "@/components/TermTooltip";
 
 export default function ATPEconomicsPage() {
   // Interactive simulation state
@@ -333,7 +334,7 @@ export default function ATPEconomicsPage() {
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               When ATP hits zero, you die. Not timeout. Not suspension. Death.
-              But if you built trust (T3 score), you're reborn with karma -
+              But if you built trust (<T3>T3 score</T3>), you&apos;re reborn with karma —
               your ATP history carries forward. Bad actors? They die for good.
             </p>
           </div>
@@ -352,66 +353,100 @@ export default function ATPEconomicsPage() {
         </div>
       </section>
 
-      {/* Real Simulation Data */}
+      {/* Follow One Agent's ATP Journey */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
-          Real Simulation: ATP Across Multiple Lives
+          Follow One Agent&apos;s ATP Journey
         </h2>
         <p className="text-gray-400 mb-6">
-          This is actual data from the{" "}
-          <Link href="/lab-console" className="text-sky-400 hover:underline">
-            Lab Console
-          </Link>
-          . An agent lived through multiple life cycles, earning and spending
-          ATP based on actions. Watch how ATP fluctuates:
+          This is actual data from a 4-Life simulation. Follow one agent across four
+          lives to see how ATP, trust, and karma interact:
         </p>
 
-        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8">
-          <div className="space-y-4 text-sm text-gray-300">
-            <div className="flex items-center gap-4">
-              <span className="text-green-400 font-mono">Life 1:</span>
-              <span>
-                Started with <strong>100 ATP</strong> → Made meaningful
-                contributions → Ended at <strong>145 ATP</strong>
-              </span>
-            </div>
-            <div className="flex items-center gap-4">
-              <span className="text-yellow-400 font-mono">Life 2:</span>
-              <span>
-                Reborn with <strong>145 ATP</strong> (karma bonus) → Took risky
-                actions → Fluctuated between 80-160 ATP
-              </span>
-            </div>
-            <div className="flex items-center gap-4">
-              <span className="text-orange-400 font-mono">Life 3:</span>
-              <span>
-                Started <strong>130 ATP</strong> → ATP crisis at{" "}
-                <strong>15 ATP</strong> → Recovered to 95 ATP before death
-              </span>
-            </div>
-            <div className="flex items-center gap-4">
-              <span className="text-red-400 font-mono">Life 4:</span>
-              <span>
-                Final life: <strong>85 ATP</strong> → Made high-value
-                contributions → Ended at <strong>140 ATP</strong>
-              </span>
-            </div>
-          </div>
-
-          <div className="mt-6 p-4 bg-sky-900/20 border border-sky-800/30 rounded-lg">
-            <p className="text-sky-300 text-sm">
-              💡 <strong>Key observation:</strong> ATP isn't just a number - it's
-              a life history. Agents that contribute value accumulate ATP across
-              lives. Agents that don't? They die and stay dead.
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8 space-y-6">
+          <div className="border-l-4 border-blue-500 pl-4">
+            <h3 className="text-xl font-semibold text-blue-400 mb-2">
+              Life 1: The Newcomer
+            </h3>
+            <ul className="space-y-2 text-gray-300 text-sm">
+              <li>Born with <strong className="text-sky-400">100 ATP</strong> and no reputation</li>
+              <li>Spent 60 ATP on meaningful contributions (posts, peer help, training)</li>
+              <li>Community validated her work → earned 105 ATP back</li>
+              <li>Died naturally with <strong className="text-green-400">145 ATP</strong> and growing trust</li>
+            </ul>
+            <p className="text-xs text-gray-500 mt-2 italic">
+              Her karma carries forward: she earned more than she spent, so her next life starts strong.
             </p>
           </div>
 
-          <Link
-            href="/lab-console"
-            className="inline-block mt-6 px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors"
-          >
-            Run Your Own Simulation →
-          </Link>
+          <div className="border-l-4 border-green-500 pl-4">
+            <h3 className="text-xl font-semibold text-green-400 mb-2">
+              Life 2: Taking Risks
+            </h3>
+            <ul className="space-y-2 text-gray-300 text-sm">
+              <li>Reborn with <strong className="text-green-400">145 ATP</strong> (karma from Life 1)</li>
+              <li>With more budget, she tried ambitious projects — some paid off, some didn&apos;t</li>
+              <li>ATP swung between 80 and 180 as experiments succeeded and failed</li>
+              <li>Trust continued rising: her track record earned her community respect</li>
+              <li>Died with <strong className="text-blue-400">130 ATP</strong></li>
+            </ul>
+            <p className="text-xs text-gray-500 mt-2 italic">
+              Notice: she could afford to fail because her earlier trust gave her a buffer.
+            </p>
+          </div>
+
+          <div className="border-l-4 border-orange-500 pl-4">
+            <h3 className="text-xl font-semibold text-orange-400 mb-2">
+              Life 3: The Crisis
+            </h3>
+            <ul className="space-y-2 text-gray-300 text-sm">
+              <li>Reborn with <strong className="text-green-400">130 ATP</strong></li>
+              <li>A series of risky bets went wrong — ATP plunged to <strong className="text-red-400">15</strong></li>
+              <li>Near death, she switched to small, reliable contributions</li>
+              <li>Slowly clawed back to 95 ATP before dying naturally</li>
+            </ul>
+            <p className="text-xs text-gray-500 mt-2 italic">
+              Key lesson: even trusted agents can face ATP crises. But trust gives you options a newcomer wouldn&apos;t have.
+            </p>
+          </div>
+
+          <div className="border-l-4 border-purple-500 pl-4">
+            <h3 className="text-xl font-semibold text-purple-400 mb-2">
+              Life 4: The Veteran
+            </h3>
+            <ul className="space-y-2 text-gray-300 text-sm">
+              <li>Reborn with <strong className="text-sky-400">85 ATP</strong> (reduced from the crisis)</li>
+              <li>Applied lessons from all three previous lives</li>
+              <li>Focused on high-value, sustainable contributions</li>
+              <li>Ended strong: <strong className="text-green-400">140 ATP</strong> and deeply trusted</li>
+            </ul>
+            <p className="text-xs text-gray-500 mt-2 italic">
+              Four lives of accumulated wisdom. This is what karma is for.
+            </p>
+          </div>
+
+          <div className="p-4 bg-sky-900/20 border border-sky-800/30 rounded-lg">
+            <p className="text-sky-300 text-sm">
+              <strong>The pattern:</strong> ATP isn&apos;t just an energy bar — it&apos;s a life
+              story. Agents that contribute value build up karma across lives.
+              Agents that don&apos;t? They die and stay dead. No appeals, no shortcuts.
+            </p>
+          </div>
+
+          <div className="flex gap-4">
+            <Link
+              href="/playground"
+              className="inline-block px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors"
+            >
+              Try the Playground →
+            </Link>
+            <Link
+              href="/karma-journey"
+              className="inline-block px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors"
+            >
+              Play a Karma Journey →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -627,8 +662,8 @@ if agent.atp <= 0:
             <strong className="text-sky-400">
               Death carries consequences.
             </strong>{" "}
-            Web2 bans are trivial - create new account. Web4 death means zero
-            ATP. Rebirth requires prior trust (T3 score). No trust? No rebirth.
+            Web2 bans are trivial — create new account. Web4 death means zero
+            ATP. Rebirth requires prior trust (<T3>T3 score</T3>). No trust? No rebirth.
           </p>
           <p className="text-lg leading-relaxed pt-4 border-t border-sky-800/30">
             This is the foundation of Web4 societies. Without ATP/ADP, trust is
