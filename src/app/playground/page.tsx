@@ -115,14 +115,96 @@ function toPlaygroundResult(result: SimulationResult, trustThreshold: number): P
   };
 }
 
+// Guided experiments: compelling questions with pre-set parameters
+const EXPERIMENTS: { id: string; question: string; description: string; lookFor: string; config: PlaygroundConfig; color: string }[] = [
+  {
+    id: 'spam-dies',
+    question: 'Can spam survive?',
+    description: 'A spammer tries low-effort bulk posting: cheap actions, tiny rewards, maximum risk.',
+    lookFor: 'Watch ATP drain faster than it refills. Spam dies from energy exhaustion — no moderator needed.',
+    color: '#ef4444',
+    config: {
+      ...({} as PlaygroundConfig),
+      initial_atp: 100, initial_trust: 0.3,
+      action_cost_low: 3, action_cost_medium: 8, action_cost_high: 15,
+      action_reward_low: 2, action_reward_medium: 5, action_reward_high: 10,
+      trust_gain_good: 0.02, trust_loss_bad: 0.12,
+      trust_threshold_death: 0.15, karma_atp_bonus: 20, karma_trust_boost: 0.05,
+      num_lives: 5, ticks_per_life: 20, risk_appetite: 0.9,
+    },
+  },
+  {
+    id: 'karma-matters',
+    question: 'Does karma matter?',
+    description: 'Two scenarios: zero karma carry-forward vs strong karma. Same agent, same environment.',
+    lookFor: 'With karma, later lives start stronger. Without it, every life is equally fragile.',
+    color: '#a78bfa',
+    config: {
+      initial_atp: 80, initial_trust: 0.5,
+      action_cost_low: 5, action_cost_medium: 15, action_cost_high: 30,
+      action_reward_low: 8, action_reward_medium: 20, action_reward_high: 45,
+      trust_gain_good: 0.05, trust_loss_bad: 0.08,
+      trust_threshold_death: 0.2, karma_atp_bonus: 60, karma_trust_boost: 0.15,
+      num_lives: 5, ticks_per_life: 15, risk_appetite: 0.5,
+    },
+  },
+  {
+    id: 'tipping-point',
+    question: 'Where is the tipping point?',
+    description: 'Start with barely enough energy (30 ATP). Can the agent survive on a razor-thin margin?',
+    lookFor: 'Notice how the first few actions determine everything. One unlucky failure can cascade into death.',
+    color: '#f59e0b',
+    config: {
+      initial_atp: 30, initial_trust: 0.5,
+      action_cost_low: 5, action_cost_medium: 15, action_cost_high: 30,
+      action_reward_low: 8, action_reward_medium: 20, action_reward_high: 45,
+      trust_gain_good: 0.05, trust_loss_bad: 0.08,
+      trust_threshold_death: 0.2, karma_atp_bonus: 40, karma_trust_boost: 0.1,
+      num_lives: 5, ticks_per_life: 20, risk_appetite: 0.3,
+    },
+  },
+  {
+    id: 'generous-society',
+    question: 'What if the environment is generous?',
+    description: 'High rewards, low costs. Does everyone thrive, or does easy mode create different problems?',
+    lookFor: 'Trust grows easily but the agent may never face real consequences. Is untested trust real trust?',
+    color: '#10b981',
+    config: {
+      initial_atp: 150, initial_trust: 0.5,
+      action_cost_low: 3, action_cost_medium: 8, action_cost_high: 15,
+      action_reward_low: 15, action_reward_medium: 35, action_reward_high: 60,
+      trust_gain_good: 0.08, trust_loss_bad: 0.04,
+      trust_threshold_death: 0.1, karma_atp_bonus: 50, karma_trust_boost: 0.15,
+      num_lives: 5, ticks_per_life: 25, risk_appetite: 0.5,
+    },
+  },
+  {
+    id: 'cautious-vs-bold',
+    question: 'Cautious or bold — which survives?',
+    description: 'Maximum risk appetite: big actions, big stakes, boom or bust.',
+    lookFor: 'High risk means higher rewards when it works — but one streak of failures can end everything.',
+    color: '#ec4899',
+    config: {
+      initial_atp: 100, initial_trust: 0.5,
+      action_cost_low: 5, action_cost_medium: 15, action_cost_high: 30,
+      action_reward_low: 8, action_reward_medium: 20, action_reward_high: 45,
+      trust_gain_good: 0.05, trust_loss_bad: 0.08,
+      trust_threshold_death: 0.2, karma_atp_bonus: 40, karma_trust_boost: 0.1,
+      num_lives: 5, ticks_per_life: 20, risk_appetite: 1.0,
+    },
+  },
+];
+
 export default function PlaygroundPage() {
   const [result, setResult] = useState<PlaygroundResult | null>(null);
   const [isRunning, setIsRunning] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [activeExperiment, setActiveExperiment] = useState<string | null>(null);
 
   const runSimulation = async (config: PlaygroundConfig) => {
     setIsRunning(true);
     setError(null);
+    setActiveExperiment(null);
 
     try {
       const simConfig = toSimConfig(config);
@@ -133,6 +215,23 @@ export default function PlaygroundPage() {
     } catch (err) {
       setError(String(err));
       console.error("Simulation error:", err);
+    } finally {
+      setIsRunning(false);
+    }
+  };
+
+  const runExperiment = (experiment: typeof EXPERIMENTS[number]) => {
+    setActiveExperiment(experiment.id);
+    setIsRunning(true);
+    setError(null);
+    try {
+      const simConfig = toSimConfig(experiment.config);
+      const engine = new SimulationEngine(simConfig);
+      const simResult = engine.run();
+      const playgroundResult = toPlaygroundResult(simResult, experiment.config.trust_threshold_death);
+      setResult(playgroundResult);
+    } catch (err) {
+      setError(String(err));
     } finally {
       setIsRunning(false);
     }
@@ -225,6 +324,49 @@ export default function PlaygroundPage() {
             survive indefinitely? Where's the tipping point?
           </li>
         </ul>
+      </section>
+
+      {/* Guided Experiments */}
+      <section>
+        <h2>Try These Experiments</h2>
+        <p style={{ marginTop: '0.5rem', marginBottom: '1rem', color: '#9ca3af', fontSize: '0.9rem' }}>
+          Each experiment runs a simulation with pre-configured parameters to answer a specific question.
+          Click one to see what happens — then tweak the parameters yourself below.
+        </p>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '0.75rem',
+        }}>
+          {EXPERIMENTS.map(exp => (
+            <button
+              key={exp.id}
+              onClick={() => runExperiment(exp)}
+              disabled={isRunning}
+              style={{
+                padding: '1rem',
+                backgroundColor: activeExperiment === exp.id ? '#1e3a5f' : '#1f2937',
+                border: activeExperiment === exp.id ? `2px solid ${exp.color}` : '2px solid transparent',
+                borderLeft: `4px solid ${exp.color}`,
+                borderRadius: '6px',
+                textAlign: 'left',
+                cursor: isRunning ? 'wait' : 'pointer',
+                opacity: isRunning ? 0.7 : 1,
+                transition: 'all 0.2s',
+              }}
+            >
+              <h3 style={{ fontSize: '1rem', marginBottom: '0.25rem', color: '#f3f4f6' }}>
+                {exp.question}
+              </h3>
+              <p style={{ fontSize: '0.8rem', color: '#9ca3af', marginBottom: '0.5rem' }}>
+                {exp.description}
+              </p>
+              <p style={{ fontSize: '0.75rem', color: exp.color, fontStyle: 'italic' }}>
+                Look for: {exp.lookFor}
+              </p>
+            </button>
+          ))}
+        </div>
       </section>
 
       {/* Error Display */}
