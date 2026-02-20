@@ -800,7 +800,11 @@ export default function GlossaryPage() {
           <p className="text-gray-400 text-sm border-t border-gray-700 pt-4">
             <strong>New here?</strong> Start with the Core Concepts section above — those are the building blocks.
             The advanced sections are here for reference as you go deeper.
-            If a term doesn't make sense yet, that's normal — it will click once you see it in a simulation.
+            If a term doesn&apos;t make sense yet, that&apos;s normal — try the{" "}
+            <Link href="/first-contact" className="text-sky-400 hover:underline">First Contact</Link>{" "}
+            interactive intro or the{" "}
+            <Link href="/playground" className="text-sky-400 hover:underline">Playground</Link>{" "}
+            and it will click once you see it in action.
           </p>
         </div>
       </section>
