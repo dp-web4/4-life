@@ -449,6 +449,58 @@ export default function AlivenessExplainer() {
       </section>
 
       <section>
+        <h2>What About False Positives?</h2>
+        <p>
+          Honest caveat: any system that penalizes behavior can penalize <em>incorrectly</em>.
+          What happens when a legitimate entity gets unfairly trust-penalized?
+        </p>
+
+        <div className="concept-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+          <div className="detail-box">
+            <h4>Built-In Resilience</h4>
+            <ul>
+              <li>Trust is multi-dimensional (T3) — a single bad signal can&apos;t tank all three dimensions</li>
+              <li>Coherence Index uses geometric mean — one low dimension doesn&apos;t zero the whole score</li>
+              <li>Reputation builds gradually, so brief anomalies are absorbed</li>
+              <li>Multiple independent witnesses reduce chance of coordinated false reporting</li>
+            </ul>
+          </div>
+
+          <div className="detail-box">
+            <h4>Recovery Paths</h4>
+            <ul>
+              <li><strong>Cross-society reputation:</strong> Trust earned in other societies carries weight</li>
+              <li><strong>Karma persistence:</strong> A long positive track record makes single incidents less catastrophic</li>
+              <li><strong>Gradual rebuilding:</strong> Consistent quality behavior restores trust over time</li>
+              <li><strong>Community vouching:</strong> Trusted entities can witness on your behalf</li>
+            </ul>
+          </div>
+
+          <div className="detail-box">
+            <h4>Known Gap: Formal Appeals</h4>
+            <p>
+              Web4 does <strong>not yet have</strong> a formal appeals mechanism. This is a
+              recognized design gap — the{" "}
+              <Link href="/manifest" style={{ color: '#818cf8' }}>Manifest</Link> lists it under known failure modes.
+            </p>
+            <p style={{ marginTop: "0.5rem" }}>
+              Possible approaches being explored: multi-party review tribunals, stake-weighted
+              arbitration, and heterogeneous AI review of contested trust events.
+              None are specified yet.
+            </p>
+          </div>
+        </div>
+
+        <p style={{ color: '#9ca3af', fontSize: '0.9rem', marginTop: '1rem' }}>
+          This is research, not production. False positive recovery is an open problem we take seriously.
+          If you have ideas, the{" "}
+          <a href="https://github.com/dp-web4/4-life/issues" style={{ color: '#818cf8' }} target="_blank" rel="noopener noreferrer">
+            GitHub issues
+          </a> are open.
+        </p>
+      </section>
+
+      <section>
         <h2>Real Simulation Example: Death and Rebirth</h2>
         <div className="detail-box">
           <h4>Life 1: Learning Phase</h4>
