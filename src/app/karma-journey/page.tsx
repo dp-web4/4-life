@@ -909,6 +909,49 @@ export default function KarmaJourneyPage() {
         );
       })()}
 
+      {/* What's Next */}
+      <div style={{
+        marginTop: '2rem', padding: '1.5rem', borderRadius: '0.75rem',
+        background: 'linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(129, 140, 248, 0.08))',
+        border: '1px solid rgba(56, 189, 248, 0.2)',
+      }}>
+        <h3 style={{ fontSize: '1.1rem', marginBottom: '0.75rem', color: 'var(--color-text)' }}>
+          What&apos;s Next?
+        </h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.75rem' }}>
+          <a href="/society-simulator" style={{
+            padding: '0.75rem 1rem', borderRadius: '0.5rem', textDecoration: 'none',
+            background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)',
+            display: 'block',
+          }}>
+            <strong style={{ color: 'var(--color-sky)', fontSize: '0.9rem' }}>Society Simulator →</strong>
+            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', margin: '0.25rem 0 0' }}>
+              Watch your strategy play out in a multi-agent society
+            </p>
+          </a>
+          <a href="/playground" style={{
+            padding: '0.75rem 1rem', borderRadius: '0.5rem', textDecoration: 'none',
+            background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)',
+            display: 'block',
+          }}>
+            <strong style={{ color: 'var(--color-emerald)', fontSize: '0.9rem' }}>Playground →</strong>
+            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', margin: '0.25rem 0 0' }}>
+              Tweak parameters and run your own custom simulations
+            </p>
+          </a>
+          <a href="/how-it-works" style={{
+            padding: '0.75rem 1rem', borderRadius: '0.5rem', textDecoration: 'none',
+            background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)',
+            display: 'block',
+          }}>
+            <strong style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem' }}>How It Works →</strong>
+            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', margin: '0.25rem 0 0' }}>
+              Understand the mechanics behind trust, energy, and rebirth
+            </p>
+          </a>
+        </div>
+      </div>
+
       <ExplorerNav currentPath="/karma-journey" />
       <RelatedConcepts currentPath="/karma-journey" />
     </div>
