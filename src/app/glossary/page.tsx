@@ -790,9 +790,9 @@ export default function GlossaryPage() {
             It's a working label for a different architectural philosophy.
           </p>
           <p className="text-gray-400 text-sm border-t border-gray-700 pt-4">
-            <strong>Criticism acknowledged:</strong> Jargon can alienate. This glossary exists
-            because we'd rather serve genuinely curious people deeply than reach casual browsers
-            shallowly. If the concepts resonate, the terms become tools. If not, that's fine too.
+            <strong>New here?</strong> Start with the Core Concepts section above — those are the building blocks.
+            The advanced sections are here for reference as you go deeper.
+            If a term doesn't make sense yet, that's normal — it will click once you see it in a simulation.
           </p>
         </div>
       </section>

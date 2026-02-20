@@ -333,7 +333,7 @@ function ACTChatPanel({
           className="px-4 py-3 bg-gradient-to-r from-sky-600 to-purple-600 hover:from-sky-500 hover:to-purple-500 rounded-full text-white font-bold shadow-lg transition-all flex items-center gap-2"
         >
           <span className="text-lg">💬</span>
-          <span>Ask ACT</span>
+          <span>Ask AI Guide</span>
           {eventSuggestions.length > 0 && (
             <span className="ml-1 px-1.5 py-0.5 bg-white/20 rounded-full text-xs">
               {eventSuggestions.length}
