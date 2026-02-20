@@ -46,9 +46,9 @@ const DOMAINS: Domain[] = [
     shortName: 'Biochemistry',
     icon: 'D2',
     color: '#f59e0b',
-    description: 'Energy currency of life. All actions require metabolic resources.',
+    description: 'Energy currency of life. All actions require attention resources.',
     web4Mapping: 'ATP (Allocation Transfer Packet) — every action costs attention, which must be earned.',
-    keyInsight: 'ATP scarcity forces prioritization — agency under metabolic constraint.',
+    keyInsight: 'ATP scarcity forces prioritization — agency under resource constraint.',
   },
   {
     id: 'biophysics',
