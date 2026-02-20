@@ -755,9 +755,9 @@ export default function LCTExplainerPage() {
               <div className="text-sm text-gray-400">Behavioral consistency verification for LCT trust</div>
             </a>
 
-            <a href="/lab-console" className="block p-4 border border-gray-700 rounded-lg hover:border-purple-500 transition-all">
-              <div className="font-bold text-gray-100 mb-1">Lab Console</div>
-              <div className="text-sm text-gray-400">See LCT-based agents in action</div>
+            <a href="/society-simulator" className="block p-4 border border-gray-700 rounded-lg hover:border-purple-500 transition-all">
+              <div className="font-bold text-gray-100 mb-1">Society Simulator</div>
+              <div className="text-sm text-gray-400">See LCT-based agents interacting in a live society</div>
             </a>
           </div>
         </div>

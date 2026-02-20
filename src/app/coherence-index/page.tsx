@@ -1205,13 +1205,13 @@ lenient_society = {
               </div>
             </Link>
 
-            <Link href="/lab-console">
+            <Link href="/society-simulator">
               <div className="bg-gradient-to-br from-green-950/30 to-green-900/20 border border-green-800/30 rounded-lg p-6 hover:border-green-700/50 transition-all cursor-pointer">
                 <h3 className="text-xl font-semibold text-green-400 mb-2">
-                  Lab Console
+                  Society Simulator
                 </h3>
                 <p className="text-sm text-gray-400">
-                  Run simulations and see coherence, trust, and ATP interact in
+                  Run simulations and see coherence, trust, and energy interact in
                   real-time.
                 </p>
               </div>

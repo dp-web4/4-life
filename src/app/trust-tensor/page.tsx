@@ -699,8 +699,8 @@ Talent: No decay (represents inherent aptitude)`}
       <section className="max-w-4xl mx-auto mt-12 text-center text-gray-500 text-sm pb-12">
         <p>
           Want to see T3 evolve in real simulations?{" "}
-          <Link href="/lab-console" className="text-sky-400 hover:underline">
-            Run the lab console
+          <Link href="/society-simulator" className="text-sky-400 hover:underline">
+            Try the Society Simulator
           </Link>{" "}
           and watch trust tensors change over time.
         </p>

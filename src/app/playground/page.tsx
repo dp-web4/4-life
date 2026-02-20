@@ -505,7 +505,7 @@ export default function PlaygroundPage() {
               core mechanics: ATP economics, trust evolution, and karma.
             </p>
             <p style={{ color: "#9ca3af" }}>
-              For the full complexity, see <a href="/lab-console" style={{ color: "#38bdf8" }}>Lab Console</a>.
+              For the full complexity, see the <a href="/society-simulator" style={{ color: "#38bdf8" }}>Society Simulator</a>.
             </p>
           </div>
         </details>

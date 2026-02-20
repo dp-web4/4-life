@@ -694,8 +694,8 @@ if agent.atp <= 0:
       <section className="max-w-4xl mx-auto mt-12 text-center text-gray-500 text-sm pb-12">
         <p>
           Want to see ATP/ADP in action?{" "}
-          <Link href="/lab-console" className="text-sky-400 hover:underline">
-            Run a simulation
+          <Link href="/society-simulator" className="text-sky-400 hover:underline">
+            Try the Society Simulator
           </Link>{" "}
           and watch energy economics unfold.
         </p>

@@ -694,11 +694,11 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             </p>
           </Link>
 
-          <Link href="/lab-console" className="concept-link-card">
-            <h4>Lab Console</h4>
+          <Link href="/society-simulator" className="concept-link-card">
+            <h4>Society Simulator</h4>
             <p>
-              See aliveness in action. Run multi-life simulations showing death, rebirth,
-              karma carry-forward, and trust evolution across lives.
+              See aliveness in action. Watch multi-agent societies where death, rebirth,
+              karma carry-forward, and trust evolution play out across lives.
             </p>
           </Link>
         </div>
