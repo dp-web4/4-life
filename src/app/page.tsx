@@ -255,8 +255,8 @@ function DeepDiveTab() {
           <Link href="/first-contact" className="btn-primary">
             First Contact (10 min)
           </Link>
-          <Link href="/starter-kit" className="btn-secondary">
-            Build Your Own
+          <Link href="/playground" className="btn-secondary">
+            Try the Playground
           </Link>
           <Link href="/act-explorer" className="btn-secondary">
             ACT Chat

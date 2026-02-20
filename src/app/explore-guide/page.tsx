@@ -193,11 +193,11 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
         tagline: 'How awareness, learning, and social structure emerge from simple rules',
         color: '#a78bfa',
         steps: [
-          { title: 'Consciousness Layers', description: 'Interactive visualization of 3-layer consciousness emergence', href: '/consciousness-layers', timeEstimate: '10 min', type: 'interactive' },
-          { title: 'Trajectory Explorer', description: 'Model how capacity affects developmental trajectories', href: '/trajectory-explorer', timeEstimate: '10 min', type: 'interactive' },
-          { title: 'Trust Networks', description: 'Multi-agent trust dynamics and coalition formation', href: '/trust-networks', timeEstimate: '10 min', type: 'interactive' },
           { title: 'Karma Journey', description: 'Experience learning across multiple lives firsthand', href: '/karma-journey', timeEstimate: '15 min', type: 'interactive' },
+          { title: 'Trust Networks', description: 'Multi-agent trust dynamics and coalition formation', href: '/trust-networks', timeEstimate: '10 min', type: 'interactive' },
           { title: 'Narratives', description: 'Read stories of agents maturing through cross-life learning', href: '/narratives', timeEstimate: '10 min', type: 'read' },
+          { title: 'Trajectory Explorer', description: 'Model how capacity affects developmental trajectories', href: '/trajectory-explorer', timeEstimate: '10 min', type: 'interactive' },
+          { title: 'Awareness Layers', description: 'Research visualization: how awareness emerges in 3 layers (advanced)', href: '/consciousness-layers', timeEstimate: '10 min', type: 'interactive' },
         ],
         nextPath: 'The Lab Console lets you run full emergence simulations with cross-life learning.',
       };

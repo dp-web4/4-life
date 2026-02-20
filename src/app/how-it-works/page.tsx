@@ -674,8 +674,8 @@ export default function HowItWorksPage() {
         <div className="bg-gradient-to-br from-sky-950/30 to-blue-900/20 border border-sky-800/30 rounded-xl p-8">
           <p className="text-gray-300 leading-relaxed mb-6">
             Everything described above is running in the{" "}
-            <strong className="text-sky-400">Lab Console</strong>. You can watch
-            agents live, die, and be reborn. You can see ATP fluctuate, T3
+            <strong className="text-sky-400">Society Simulator</strong>. You can watch
+            agents live, die, and be reborn. You can see energy fluctuate, trust
             evolve, and cross-life patterns learned.
           </p>
 
@@ -751,15 +751,15 @@ export default function HowItWorksPage() {
           </Link>
 
           <Link
-            href="/patterns"
+            href="/decision-evolution"
             className="block p-6 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-green-500 rounded-xl transition-colors"
           >
             <div className="text-3xl mb-3">🧠</div>
             <h3 className="text-lg font-semibold text-green-400 mb-2">
-              Pattern Learning
+              Cross-Life Learning
             </h3>
             <p className="text-gray-400 text-sm">
-              Explore how agents learn patterns across lives. Browse corpus.
+              See how agents get better at making decisions across lives.
             </p>
           </Link>
         </div>

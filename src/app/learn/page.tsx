@@ -132,8 +132,8 @@ export default function LearnJourney() {
           id: "run-first-sim",
           title: "Watch an Agent Live and Die",
           description:
-            "Run a cross-life learning simulation. See an agent earn ATP, build trust, die from exhaustion, and be reborn with karma. This is Web4 in miniature.",
-          link: "/lab-console",
+            "Watch agents earn energy, build trust, die from exhaustion, and be reborn with karma. This is Web4 in miniature.",
+          link: "/society-simulator",
           type: "observe",
         },
         {
