@@ -1,0 +1,45 @@
+{
+  "bundle_id": "3896dba1-f916-439c-a22a-3e63d113f7e5",
+  "timestamp": "2026-02-20T11:09:54.850Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "/home/dp/ai-workspace/4-life/src/app/markov-relevancy-horizon/page.tsx",
+    "parameters": {},
+    "result_hash": "sha256:ac4bbf56955c5b2051a38e1bca76e532628d71dbb25df08a4ff1a3e94018fc01",
+    "timestamp": "2026-02-20T11:09:54.850Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "af82a5be-1a6c-46e5-9a7d-dbea6e3e3fa6",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQDnMwpV/G2G3e5qAUKR1pLarp7UxplpJsQMWNaU7oc+ugIhANWDo049HTNaTTr5VQIah0WBKS82ixF12ubBKhB+60YC",
+        "timestamp": "2026-02-20T11:09:54.851Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Edit: /home/dp/ai-workspace/4-life/src/app/markov-relevancy-horizon/page.tsx",
+  "outputs_hashes": [
+    "sha256:ac4bbf56955c5b2051a38e1bca76e532628d71dbb25df08a4ff1a3e94018fc01"
+  ]
+}

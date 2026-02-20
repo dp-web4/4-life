@@ -1,0 +1,45 @@
+{
+  "bundle_id": "70e8a19b-a846-4062-96a8-6a6c691c48c9",
+  "timestamp": "2026-02-20T11:11:20.375Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "<h2|<section|Research|Protocol",
+    "parameters": {},
+    "result_hash": "sha256:0e20c0d4c4569a6b22ba7be8f19fcf0e468404db686cde70f364ca8a96e82255",
+    "timestamp": "2026-02-20T11:11:20.375Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "84913296-7c07-4c91-9a74-a27706b7c423",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQCUYdYNk5MmdMVmMN3koZNm02hKAn0n2KCNmedisByplQIhAP6lS43HOYc7BSDAsNZXjtW9UlXdaTm5ZAhcmTU8Z2Uj",
+        "timestamp": "2026-02-20T11:11:20.376Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: <h2|<section|Research|Protocol",
+  "outputs_hashes": [
+    "sha256:0e20c0d4c4569a6b22ba7be8f19fcf0e468404db686cde70f364ca8a96e82255"
+  ]
+}

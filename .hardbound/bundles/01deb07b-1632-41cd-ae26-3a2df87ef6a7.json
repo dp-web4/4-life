@@ -1,0 +1,45 @@
+{
+  "bundle_id": "01deb07b-1632-41cd-ae26-3a2df87ef6a7",
+  "timestamp": "2026-02-20T11:16:02.798Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "grep -rn 'href=\"/epistemic-proprioception\\|href=\"/maturation-web4\\|href=\"/spec.json' /home/dp/ai-wor",
+    "parameters": {},
+    "result_hash": "sha256:158270dac8649faa3b128990f7cb05e3afc0208cb3d2500b651b34cd5e82ad61",
+    "timestamp": "2026-02-20T11:16:02.798Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "bd0e975e-05d4-4d3e-bb57-49bf7f1bdfe8",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIBFwle0Ba7/xX/o0v/7PDlNsL+g6RXgfYvIiaM8bQNeyAiAKQvdo8hObt+n8pedP3CQ8Nv2gbDPsmMu+pp+AJC65QQ==",
+        "timestamp": "2026-02-20T11:16:02.799Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: grep -rn 'href=\"/epistemic-proprioception\\|href=\"/maturation-web4\\|href=\"/spec.json' /home/dp/ai-wor",
+  "outputs_hashes": [
+    "sha256:158270dac8649faa3b128990f7cb05e3afc0208cb3d2500b651b34cd5e82ad61"
+  ]
+}
