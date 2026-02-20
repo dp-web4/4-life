@@ -478,7 +478,7 @@ export default function FederationEconomicsPage() {
               ATP Economics
             </h3>
             <p className="text-sm text-gray-400">
-              Understand the metabolic attention budget that powers Web4
+              Understand the attention budget that powers Web4
             </p>
           </Link>
 
