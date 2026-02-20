@@ -121,7 +121,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             <div>
               <strong>Every action costs energy</strong>
               <p style={{ color: 'var(--color-text-secondary)', margin: '0.25rem 0 0', fontSize: '0.9rem' }}>
-                Every action costs <TermTooltip term="ATP">ATP</TermTooltip>. Quality earns ATP. Spam burns out.
+                Every action costs <TermTooltip term="ATP">ATP</TermTooltip> (energy). Quality earns it back. Spam burns out.
               </p>
             </div>
           </li>
