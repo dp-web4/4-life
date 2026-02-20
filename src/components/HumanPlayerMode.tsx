@@ -38,6 +38,7 @@ import {
   AchievementGallery,
   RecentlyUnlocked,
 } from './AchievementUI';
+import NetworkGraph from './NetworkGraph';
 
 // ============================================================================
 // Types
@@ -516,8 +517,11 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
   });
   const [agents, setAgents] = useState<AgentSnapshot[]>([]);
   const [metrics, setMetrics] = useState<SocietyMetrics | null>(null);
+  const [coalitions, setCoalitions] = useState<Coalition[]>([]);
   const [events, setEvents] = useState<SocietyEvent[]>([]);
   const [humanAgentId, setHumanAgentId] = useState<number | null>(null);
+
+  const [selectedGraphAgent, setSelectedGraphAgent] = useState<number | null>(null);
 
   // Achievement system state
   const [showAchievementGallery, setShowAchievementGallery] = useState(false);
@@ -645,6 +649,7 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
 
     setAgents(frame.agents);
     setMetrics(frame.metrics);
+    setCoalitions(frame.coalitions);
     setGameState(prev => ({
       ...prev,
       phase: 'decision',
@@ -771,7 +776,7 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
         setEvents(prev => [...prev, {
           epoch: currentEpoch - 1,
           type: 'society_stable' as const,
-          message: `Epoch ${currentEpoch} complete`,
+          message: `Round ${currentEpoch} complete`,
           significance: 'Another cycle of the society',
         }]);
       }
@@ -856,6 +861,8 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
     setAgents([]);
     setMetrics(null);
     setEvents([]);
+    setCoalitions([]);
+    setSelectedGraphAgent(null);
     setHumanAgentId(null);
     engineRef.current = null;
   };
@@ -961,32 +968,60 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
             />
           )}
 
-          {/* Society Overview */}
+          {/* Trust Network */}
           <div className="bg-gray-800/50 rounded-lg p-4">
-            <h4 className="font-bold text-white mb-3">Society ({agents.length} agents)</h4>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-              {agents.filter(a => a.id !== humanAgentId).map(agent => (
-                <div
-                  key={agent.id}
-                  className="bg-gray-800 rounded p-2 text-sm"
-                >
-                  <div className="flex items-center gap-2">
-                    <div
-                      className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold"
-                      style={{ backgroundColor: STRATEGY_COLORS[agent.strategy] }}
-                    >
-                      {agent.name[0]}
+            <h4 className="font-bold text-white mb-3">Trust Network ({agents.length} agents)</h4>
+            <NetworkGraph
+              agents={agents}
+              coalitions={coalitions}
+              selectedAgentId={selectedGraphAgent}
+              onSelectAgent={setSelectedGraphAgent}
+              interactions={gameState.lastInteraction ? [gameState.lastInteraction] : []}
+              highlightedAgentIds={humanAgentId !== null ? [humanAgentId] : []}
+              humanAgentId={humanAgentId}
+              compact
+            />
+            {selectedGraphAgent !== null && (() => {
+              const selected = agents.find(a => a.id === selectedGraphAgent);
+              if (!selected) return null;
+              const isHuman = selected.id === humanAgentId;
+              return (
+                <div className="mt-3 p-3 bg-gray-900/50 rounded border border-gray-700/50">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: STRATEGY_COLORS[selected.strategy] }} />
+                    <span className="font-bold text-white">{selected.name}</span>
+                    {isHuman && <span className="text-xs px-1.5 py-0.5 rounded bg-teal-600 text-white">YOU</span>}
+                    <span className="text-xs text-gray-400">{STRATEGY_LABELS[selected.strategy]}</span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 text-center text-sm">
+                    <div>
+                      <div className="text-gray-500 text-xs">ATP</div>
+                      <div className={`font-mono font-bold ${selected.atp < 20 ? 'text-red-400' : 'text-white'}`}>{Math.round(selected.atp)}</div>
                     </div>
                     <div>
-                      <div className="text-white font-medium">{agent.name}</div>
-                      <div className="text-gray-500 text-xs">
-                        {STRATEGY_LABELS[agent.strategy]} • {agent.atp} ATP
-                      </div>
+                      <div className="text-gray-500 text-xs">Trust</div>
+                      <div className="font-mono font-bold text-blue-400">{selected.reputation.toFixed(2)}</div>
+                    </div>
+                    <div>
+                      <div className="text-gray-500 text-xs">Coop</div>
+                      <div className="font-mono font-bold text-green-400">{Math.round(selected.cooperationRate * 100)}%</div>
                     </div>
                   </div>
+                  {selected.trustEdges.length > 0 && (
+                    <div className="mt-2 flex flex-wrap gap-1">
+                      {[...selected.trustEdges].sort((a, b) => b.trust - a.trust).slice(0, 5).map(edge => {
+                        const target = agents.find(a => a.id === edge.targetId);
+                        return (
+                          <span key={edge.targetId} className={`text-xs px-1.5 py-0.5 rounded ${edge.trust >= 0.5 ? 'bg-green-900/30 text-green-300' : edge.trust >= 0.3 ? 'bg-yellow-900/30 text-yellow-300' : 'bg-red-900/30 text-red-300'}`}>
+                            {target?.name ?? `#${edge.targetId}`}: {edge.trust.toFixed(2)}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
-              ))}
-            </div>
+              );
+            })()}
           </div>
         </div>
       )}
