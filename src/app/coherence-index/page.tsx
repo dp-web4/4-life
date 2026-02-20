@@ -552,6 +552,14 @@ export default function CoherenceIndexPage() {
                       legitimate. Actions are blocked. Trust is frozen. You need to
                       re-establish coherent behavior before the society will engage with you again.
                     </p>
+                    <p className="text-xs text-gray-400 mt-2">
+                      What if the system is wrong? Good question. Appeals and false-positive
+                      recovery are an{' '}
+                      <Link href="/threat-model#false-positives" className="text-red-300 underline hover:text-red-200">
+                        open problem
+                      </Link>{' '}
+                      in the current design.
+                    </p>
                   </div>
                 </div>
               </div>
