@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import TermTooltip from "@/components/TermTooltip";
 
 export default function HowItWorksPage() {
   return (
@@ -24,7 +25,7 @@ export default function HowItWorksPage() {
           <div className="bg-gradient-to-br from-blue-950/30 to-blue-900/20 border border-blue-800/30 rounded-lg p-6">
             <div className="text-3xl mb-2">🔐</div>
             <h3 className="text-lg font-semibold text-blue-400 mb-2">
-              Identity (LCT)
+              Identity (<TermTooltip term="LCT" />)
             </h3>
             <p className="text-sm text-gray-400">
               Unforgeable identity rooted in hardware, strengthened by multiple
@@ -44,7 +45,7 @@ export default function HowItWorksPage() {
               Attention Economics
             </h3>
             <p className="text-sm text-gray-400">
-              Every action costs attention budget (ATP). Run out? You
+              Every action costs attention budget (<TermTooltip term="ATP" />). Run out? You
               die. Contribute value? You thrive.
             </p>
             <Link
@@ -58,11 +59,11 @@ export default function HowItWorksPage() {
           <div className="bg-gradient-to-br from-purple-950/30 to-purple-900/20 border border-purple-800/30 rounded-lg p-6">
             <div className="text-3xl mb-2">🎯</div>
             <h3 className="text-lg font-semibold text-purple-400 mb-2">
-              Trust (T3)
+              Trust (<TermTooltip term="T3" />)
             </h3>
             <p className="text-sm text-gray-400">
-              Multi-dimensional trust capturing competence, reliability,
-              integrity, alignment, and transparency.
+              Multi-dimensional trust scored across Talent, Training,
+              and Temperament — per role.
             </p>
             <Link
               href="/trust-tensor"
@@ -75,11 +76,11 @@ export default function HowItWorksPage() {
           <div className="bg-gradient-to-br from-orange-950/30 to-orange-900/20 border border-orange-800/30 rounded-lg p-6">
             <div className="text-3xl mb-2">🌊</div>
             <h3 className="text-lg font-semibold text-orange-400 mb-2">
-              Coherence (CI)
+              Coherence (<TermTooltip term="CI" />)
             </h3>
             <p className="text-sm text-gray-400">
-              Multi-dimensional coherence detecting fake identities through
-              spatial, temporal, capability, and relational consistency.
+              Behavioral consistency across where you are, what you can do,
+              when you act, and who you interact with.
             </p>
             <Link
               href="/coherence-index"

@@ -55,7 +55,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Allocation Discharge Packet",
     brief: "The spent record when ATP is used—proves how resources were allocated.",
     explanation:
-      "When you spend ATP, an ADP is created recording what action was taken, how much was spent, and what value was created. ADPs are audited and then discharged, creating a complete metabolic history that determines trust scores and karma.",
+      "When you spend ATP, an ADP is created recording what action was taken, how much was spent, and what value was created. ADPs are audited and then discharged, creating a complete action history that determines trust scores and karma.",
     learnMore: "/atp-economics",
     canonicalSpec:
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/atp-adp-cycle.md",
