@@ -672,10 +672,27 @@ export default function FirstContactPage() {
               </div>
             </div>
 
+            {/* Primary CTA: Make it personal */}
+            <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/30 border border-sky-800/30 rounded-xl p-8 text-center">
+              <p className="text-xl text-gray-300 mb-2">
+                You watched Alice&apos;s story. Now make your own choices.
+              </p>
+              <p className="text-gray-400 mb-6">
+                The Karma Journey puts you in control — every choice affects your trust, energy, and legacy across multiple lives.
+                What kind of trust archetype will you become?
+              </p>
+              <Link
+                href="/karma-journey"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-sky-500 to-purple-600 text-white font-semibold rounded-lg hover:from-sky-600 hover:to-purple-700 transition-all text-lg"
+              >
+                Start Your Karma Journey &rarr;
+              </Link>
+            </div>
+
             <div>
-              <h3 className="text-2xl font-bold mb-4">Recommended Next Steps</h3>
+              <h3 className="text-2xl font-bold mb-4">More Ways to Explore</h3>
               <div className="grid md:grid-cols-2 gap-4">
-                {/* Society Simulator - primary next step */}
+                {/* Society Simulator */}
                 <Link href="/society-simulator">
                   <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-emerald-500 transition-colors cursor-pointer">
                     <div className="text-2xl mb-3">🌐</div>
@@ -686,13 +703,13 @@ export default function FirstContactPage() {
                   </div>
                 </Link>
 
-                {/* Experiment */}
+                {/* Playground */}
                 <Link href="/playground">
                   <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-sky-500 transition-colors cursor-pointer">
                     <div className="text-2xl mb-3">🎮</div>
-                    <h4 className="text-lg font-bold text-sky-400 mb-2">Experiment: Parameter Playground</h4>
+                    <h4 className="text-lg font-bold text-sky-400 mb-2">Experiment: Playground</h4>
                     <p className="text-gray-400 text-sm">
-                      Tweak ATP costs, trust thresholds, and karma strength. See how different rules create different societies.
+                      Tweak energy costs, trust thresholds, and karma strength. See how different rules create different societies.
                     </p>
                   </div>
                 </Link>
@@ -708,7 +725,7 @@ export default function FirstContactPage() {
                   </div>
                 </Link>
 
-                {/* Observe */}
+                {/* Trust Networks */}
                 <Link href="/trust-networks">
                   <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-purple-500 transition-colors cursor-pointer">
                     <div className="text-2xl mb-3">🕸️</div>

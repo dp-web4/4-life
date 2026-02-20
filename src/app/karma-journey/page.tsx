@@ -188,6 +188,108 @@ function atpMultiplier(ci: number): number {
 }
 
 // ============================================================================
+// Trust Profile Classifier
+// ============================================================================
+
+interface TrustProfile {
+  archetype: string;
+  emoji: string;
+  description: string;
+  insight: string;
+  coopRate: number;
+  selfishRate: number;
+  riskyRate: number;
+  totalChoices: number;
+  totalLives: number;
+  peakTrust: number;
+  avgKarma: string;
+  evolved: boolean;  // strategy changed across lives
+}
+
+function classifyProfile(lives: LifeState[]): TrustProfile | null {
+  const completedLives = lives.filter(l => !l.alive);
+  if (completedLives.length < 1) return null;
+
+  const allChoices = completedLives.flatMap(l => l.choices);
+  const totalChoices = allChoices.length;
+  if (totalChoices === 0) return null;
+
+  const coopCount = allChoices.filter(c => c.choice.category === 'cooperative').length;
+  const selfishCount = allChoices.filter(c => c.choice.category === 'selfish').length;
+  const riskyCount = allChoices.filter(c => c.choice.category === 'risky').length;
+
+  const coopRate = coopCount / totalChoices;
+  const selfishRate = selfishCount / totalChoices;
+  const riskyRate = riskyCount / totalChoices;
+
+  // Check if strategy evolved across lives
+  let evolved = false;
+  if (completedLives.length >= 2) {
+    const firstLifeChoices = completedLives[0].choices;
+    const lastLifeChoices = completedLives[completedLives.length - 1].choices;
+    const firstCoopRate = firstLifeChoices.filter(c => c.choice.category === 'cooperative').length / Math.max(1, firstLifeChoices.length);
+    const lastCoopRate = lastLifeChoices.filter(c => c.choice.category === 'cooperative').length / Math.max(1, lastLifeChoices.length);
+    evolved = Math.abs(lastCoopRate - firstCoopRate) > 0.2;
+  }
+
+  // Peak trust across all lives
+  const peakTrust = Math.max(...allChoices.map(c => c.trustAfter), 0.5);
+
+  // Average karma tier
+  const honoredCount = completedLives.filter(l => l.karmaTier === 'Honored').length;
+  const constrainedCount = completedLives.filter(l => l.karmaTier === 'Constrained').length;
+  const avgKarma = honoredCount > constrainedCount ? 'Mostly Honored' :
+    constrainedCount > honoredCount ? 'Mostly Constrained' : 'Mixed';
+
+  // Classify archetype
+  let archetype: string, emoji: string, description: string, insight: string;
+
+  if (evolved && coopRate > 0.4) {
+    archetype = 'The Learner';
+    emoji = '🔄';
+    description = 'You adapted your strategy across lives — starting one way, ending another. This is exactly how trust-native systems are designed to work.';
+    insight = 'In Web4 societies, agents that adapt based on consequences consistently outperform rigid strategists. Your willingness to change is your greatest asset.';
+  } else if (coopRate > 0.65) {
+    archetype = 'The Builder';
+    emoji = '🏗️';
+    description = 'You invest in others and play the long game. Your trust grows slowly but compounds powerfully across lives.';
+    insight = 'Builders thrive in Web4 because the system rewards sustained cooperation. Your strategy creates the strongest karma legacies.';
+  } else if (selfishRate > 0.5) {
+    archetype = 'The Optimizer';
+    emoji = '⚡';
+    description = 'You chase immediate gains and test boundaries. In a system with consequences, this strategy has a shelf life.';
+    insight = 'Optimizers discover the core Web4 insight the hard way: selfish strategies burn out because the consistency penalty compounds faster than the gains.';
+  } else if (riskyRate > 0.3) {
+    archetype = 'The Pioneer';
+    emoji = '🧭';
+    description = 'You experiment and take risks. Innovation sometimes costs trust, but it builds unique talent.';
+    insight = 'Pioneers push the boundaries of what trust-native systems can support. Your willingness to fail enables discovery that benefits everyone.';
+  } else if (evolved) {
+    archetype = 'The Strategist';
+    emoji = '♟️';
+    description = 'You tested different approaches and found what works. Your journey shows deliberate pattern-seeking.';
+    insight = 'Strategists embody cross-life learning — the ability to recognize what works and adjust accordingly. This meta-skill is what makes societies adaptive.';
+  } else if (coopRate > 0.4 && selfishRate > 0.2) {
+    archetype = 'The Pragmatist';
+    emoji = '⚖️';
+    description = 'You balance cooperation with self-interest. Not purely altruistic, not purely selfish — practical.';
+    insight = 'Pragmatists mirror the real world: most people cooperate selectively. Web4 is designed to make this natural instinct sustainable.';
+  } else {
+    archetype = 'The Explorer';
+    emoji = '🔍';
+    description = 'You tried a variety of approaches without committing to one strategy. Curiosity drives your choices.';
+    insight = 'Explorers generate the most diverse data in simulations. Your unpredictability is actually valuable — it tests whether the system is robust.';
+  }
+
+  return {
+    archetype, emoji, description, insight,
+    coopRate, selfishRate, riskyRate,
+    totalChoices, totalLives: completedLives.length,
+    peakTrust, avgKarma, evolved,
+  };
+}
+
+// ============================================================================
 // Main Page
 // ============================================================================
 
@@ -645,6 +747,101 @@ export default function KarmaJourneyPage() {
           </div>
         </div>
       </div>
+
+      {/* Personal Trust Profile - appears after completing at least one life */}
+      {(() => {
+        const profile = classifyProfile(lives);
+        if (!profile) return null;
+
+        const shareText = `${profile.emoji} I'm "${profile.archetype}" in the Karma Journey — ${Math.round(profile.coopRate * 100)}% cooperative across ${profile.totalLives} ${profile.totalLives === 1 ? 'life' : 'lives'}. What's your trust archetype?\n\nhttps://4-life-ivory.vercel.app/karma-journey`;
+
+        return (
+          <div style={{
+            marginTop: '2rem', padding: '1.5rem', borderRadius: '0.75rem',
+            background: 'linear-gradient(135deg, rgba(110,231,183,0.05), rgba(253,224,71,0.05), rgba(252,165,165,0.05))',
+            border: '1px solid rgba(110,231,183,0.2)',
+          }}>
+            <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '0.25rem' }}>{profile.emoji}</div>
+              <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-text-muted)' }}>
+                Your Trust Archetype
+              </div>
+              <div style={{
+                fontSize: '1.5rem', fontWeight: 700, marginTop: '0.25rem',
+                background: 'linear-gradient(135deg, #6ee7b7, #93c5fd)',
+                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+              }}>
+                {profile.archetype}
+              </div>
+            </div>
+
+            <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.85rem', lineHeight: 1.6, textAlign: 'center', marginBottom: '1rem' }}>
+              {profile.description}
+            </p>
+
+            {/* Stats */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem', marginBottom: '1rem' }}>
+              {[
+                { label: 'Lives', value: `${profile.totalLives}`, color: '#93c5fd' },
+                { label: 'Cooperative', value: `${Math.round(profile.coopRate * 100)}%`, color: '#6ee7b7' },
+                { label: 'Selfish', value: `${Math.round(profile.selfishRate * 100)}%`, color: '#fca5a5' },
+                { label: 'Peak Trust', value: profile.peakTrust.toFixed(2), color: '#fde68a' },
+              ].map(stat => (
+                <div key={stat.label} style={{
+                  padding: '0.5rem', borderRadius: '0.5rem', textAlign: 'center',
+                  background: 'var(--color-bg-secondary)',
+                }}>
+                  <div style={{ fontSize: '0.6rem', color: 'var(--color-text-muted)' }}>{stat.label}</div>
+                  <div style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'monospace', color: stat.color }}>{stat.value}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Insight */}
+            <div style={{
+              padding: '0.75rem', borderRadius: '0.5rem',
+              background: 'var(--color-bg-tertiary)',
+              fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.6,
+              marginBottom: '1rem',
+            }}>
+              <strong style={{ color: 'var(--color-text-secondary)' }}>What this reveals:</strong>{' '}
+              {profile.insight}
+            </div>
+
+            {/* Actions */}
+            <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <button
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({ text: shareText }).catch(() => {});
+                  } else {
+                    navigator.clipboard.writeText(shareText).then(() => {
+                      alert('Copied to clipboard!');
+                    }).catch(() => {});
+                  }
+                }}
+                style={{
+                  padding: '0.6rem 1.25rem', borderRadius: '0.5rem',
+                  background: '#6ee7b720', border: '1px solid #6ee7b740',
+                  color: '#6ee7b7', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem',
+                }}
+              >
+                Share Your Profile
+              </button>
+              <button
+                onClick={resetAll}
+                style={{
+                  padding: '0.6rem 1.25rem', borderRadius: '0.5rem',
+                  background: 'var(--color-bg-tertiary)', border: '1px solid var(--color-border)',
+                  color: 'var(--color-text-muted)', cursor: 'pointer', fontSize: '0.85rem',
+                }}
+              >
+                Try a Different Strategy
+              </button>
+            </div>
+          </div>
+        );
+      })()}
 
       <ExplorerNav currentPath="/karma-journey" />
       <RelatedConcepts currentPath="/karma-journey" />
