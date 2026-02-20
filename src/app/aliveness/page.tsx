@@ -83,7 +83,7 @@ function AlivenessCalculator() {
             </>
           ) : (
             <>
-              {!metabolic && <p>✗ Metabolic death: ATP = {atp} (exhausted)</p>}
+              {!metabolic && <p>✗ Energy exhaustion: ATP = {atp} (can&apos;t act)</p>}
               {!agency && <p>✗ No coherent agency: T3 = {trust.toFixed(2)} (below 0.5 threshold)</p>}
               {!continuity && <p>✗ Incoherent behavior: CI = {ci.toFixed(2)} (inconsistent)</p>}
               <p className="result-summary death-reason">
@@ -106,7 +106,7 @@ export default function AlivenessExplainer() {
         <h1 className="hero-title">Aliveness: When Existence is Measurable</h1>
         <p className="hero-subtitle">
           In Web4, "alive" isn't metaphorical—it's a rigorous condition defined by three
-          verifiable criteria. You're alive when you have metabolic budget (ATP &gt; 0),
+          verifiable criteria. You&apos;re alive when you have energy (ATP &gt; 0),
           demonstrate coherent agency (T3 &gt; 0.5), and maintain verifiable continuity (CI coherent).
           Death is real. Rebirth requires trust. This is Conway's Life at society-scale.
         </p>
@@ -231,7 +231,7 @@ export default function AlivenessExplainer() {
 {`LCT (verifiable presence)
   ↓
   Enables tracking of:
-  ├─→ ATP/ADP flows (metabolic budget)
+  ├─→ ATP/ADP flows (energy budget)
   ├─→ CI verification (coherence scoring)
   └─→ T3 accumulation (trust reputation)
        ↓
@@ -241,7 +241,7 @@ export default function AlivenessExplainer() {
     └─→ Witnesses required = ceil((0.8-CI)×10)
        ↓
     Aliveness check:
-    ├─→ ATP > 0? (metabolic)
+    ├─→ ATP > 0? (energy)
     ├─→ T3 > 0.5? (agency)
     └─→ CI coherent? (continuity)
          ↓
@@ -253,7 +253,7 @@ export default function AlivenessExplainer() {
           <strong>Why all three?</strong> Each criterion prevents a different attack:
         </p>
         <ul>
-          <li><strong>ATP &gt; 0:</strong> Prevents spam (metabolic exhaustion kills bots)</li>
+          <li><strong>ATP &gt; 0:</strong> Prevents spam (bots exhaust their energy budget)</li>
           <li><strong>T3 &gt; 0.5:</strong> Prevents random noise (requires intentional behavior)</li>
           <li><strong>CI coherent:</strong> Prevents fake identities (consistency is expensive to fake)</li>
         </ul>
@@ -391,7 +391,7 @@ export default function AlivenessExplainer() {
             <ul>
               <li>Spammers burn ATP faster than they earn it</li>
               <li>They die before building trust for rebirth</li>
-              <li>No moderators needed—metabolic economics enforces quality</li>
+              <li>No moderators needed — energy economics enforce quality</li>
               <li>Economics &gt; authority</li>
             </ul>
           </div>
@@ -705,7 +705,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
         <div className="detail-box">
           <ol>
             <li>
-              <strong>Aliveness is measurable:</strong> ATP &gt; 0 (metabolic), T3 &gt; 0.5 (agency),
+              <strong>Aliveness is measurable:</strong> ATP &gt; 0 (energy), T3 &gt; 0.5 (agency),
               CI coherent (continuity). All three must be true.
             </li>
             <li>
@@ -737,7 +737,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
               tracking is impossible. Hardware-bound, multi-witnessed, resistant to faking.
             </li>
             <li>
-              <strong>Society self-regulates:</strong> Through metabolic economics + trust accumulation +
+              <strong>Society self-regulates:</strong> Through energy economics + trust accumulation +
               coherence verification. No central authority needed.
             </li>
             <li>

@@ -317,7 +317,7 @@ export default function ATPEconomicsPage() {
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               High-value contributions earn more ATP than they cost. This isn't
-              charity - it's metabolic reality. Value creators accumulate
+              charity — it&apos;s how the system works. Value creators accumulate
               attention budget. They thrive.
             </p>
           </div>
@@ -342,7 +342,7 @@ export default function ATPEconomicsPage() {
             <p className="text-gray-300 text-sm leading-relaxed">
               No moderators needed. No ban appeals. No edge cases. ATP depletion
               is automatic, mathematical, and fair. The system self-regulates
-              through metabolic economics.
+              through energy economics.
             </p>
           </div>
         </div>
@@ -426,7 +426,7 @@ export default function ATPEconomicsPage() {
               <p className="leading-relaxed mb-3">
                 ATP is a <strong>semi-fungible packet</strong> representing
                 attention allocation. It's not a coin or token you trade - it's
-                a metabolic resource you spend on actions.
+                an energy resource you spend on actions.
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
                 <li>
@@ -478,7 +478,7 @@ export default function ATPEconomicsPage() {
               </ul>
               <p className="mt-3 leading-relaxed">
                 ADPs are audited, then discharged. But the cumulative
-                ATP/ADP flow creates a complete metabolic history that
+                ATP/ADP flow creates a complete action history that
                 informs your trust score (T3) and karma across lives.
               </p>
             </div>
@@ -605,12 +605,12 @@ if agent.atp <= 0:
               ATP/ADP makes digital life measurable.
             </strong>{" "}
             For the first time, we can rigorously define what it means to be
-            "alive" online: metabolic budget above zero, coherent agency,
+            &ldquo;alive&rdquo; online: energy budget above zero, coherent agency,
             verifiable continuity.
           </p>
           <p className="leading-relaxed">
             <strong className="text-sky-400">Spam becomes impossible.</strong>{" "}
-            Not through moderation, but through metabolic exhaustion. Send 1000
+            Not through moderation, but through exhaustion. Send 1000
             spam messages? You'll die after message 20. No appeals, no edge
             cases.
           </p>
@@ -628,8 +628,8 @@ if agent.atp <= 0:
           </p>
           <p className="text-lg leading-relaxed pt-4 border-t border-sky-800/30">
             This is the foundation of Web4 societies. Without ATP/ADP, trust is
-            unenforceable. With it, societies self-regulate through metabolic
-            reality.
+            unenforceable. With it, societies self-regulate through energy
+            economics.
           </p>
         </div>
       </section>
@@ -657,7 +657,7 @@ if agent.atp <= 0:
           <Link href="/lab-console" className="text-sky-400 hover:underline">
             Run a simulation
           </Link>{" "}
-          and watch metabolic economics unfold.
+          and watch energy economics unfold.
         </p>
       </section>
 
