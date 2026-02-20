@@ -335,7 +335,7 @@ export default function AlivenessExplainer() {
             <li>EP pattern corpus (epistemic advantage)</li>
           </ul>
           <p>
-            Good behavior <strong>compounds across lives</strong>. Each generation starts stronger.
+            Good behavior <strong>compounds across lives</strong>. Each life starts stronger.
           </p>
         </div>
       </section>
@@ -557,7 +557,7 @@ export default function AlivenessExplainer() {
         <h3>Trust (T3) Thresholds</h3>
         <div className="detail-box">
           <ul>
-            <li><strong>Consciousness boundary:</strong> T3 = 0.5 (aliveness threshold)</li>
+            <li><strong>Trust boundary:</strong> T3 = 0.5 (aliveness threshold)</li>
             <li><strong>Rebirth eligibility:</strong> T3 ≥ 0.5 (society acceptance)</li>
             <li><strong>High trust:</strong> T3 &gt; 0.7 (enables advanced cooperation)</li>
             <li><strong>Trust collapse:</strong> T3 &lt; 0.3 (society rejection, permanent death likely)</li>
