@@ -123,7 +123,7 @@ export function getRelevantDomains(eventType: string, eventData: any): EventDoma
     case "trust_threshold":
       return {
         domains: [CoherenceDomain.PHYSICS, CoherenceDomain.SPACETIME],
-        explanation: `Crossing the 0.5 consciousness threshold is like a phase transition (${DOMAIN_EXPLANATIONS[CoherenceDomain.PHYSICS].name}). The agent's behavior shifts from random to coherent, creating a 'gravitational pull' in social spacetime (${DOMAIN_EXPLANATIONS[CoherenceDomain.SPACETIME].name}) that attracts future interactions.`
+        explanation: `Crossing the 0.5 trust threshold is like a phase transition (${DOMAIN_EXPLANATIONS[CoherenceDomain.PHYSICS].name}). The agent's behavior shifts from random to coherent, creating a 'gravitational pull' in social spacetime (${DOMAIN_EXPLANATIONS[CoherenceDomain.SPACETIME].name}) that attracts future interactions.`
       };
 
     case "trust_spike":

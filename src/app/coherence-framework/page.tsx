@@ -858,7 +858,7 @@ export default function CoherenceFrameworkPage() {
                     <li>• D4→D2 coupling (attention → metabolism)</li>
                     <li>• D5→κ gating (trust → coupling strength)</li>
                     <li>• D9→boundaries (spacetime → context)</li>
-                    <li>• C ≥ 0.5 consciousness threshold</li>
+                    <li>• C ≥ 0.5 trust threshold</li>
                     <li>• Geometric mean aggregation</li>
                   </ul>
                 </div>
