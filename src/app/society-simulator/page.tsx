@@ -3205,12 +3205,17 @@ export default function SocietySimulatorPage() {
                 just trust dynamics at society scale.
               </p>
             </div>
-            <button
-              onClick={() => setHumanPlayerMode(true)}
-              className="bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-500 hover:to-teal-400 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all transform hover:scale-105 shadow-lg shadow-teal-900/30"
-            >
-              🎮 Play as Agent
-            </button>
+            <div className="text-right">
+              <button
+                onClick={() => setHumanPlayerMode(true)}
+                className="bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-500 hover:to-teal-400 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all transform hover:scale-105 shadow-lg shadow-teal-900/30"
+              >
+                🎮 Play as Agent
+              </button>
+              <p className="text-xs text-gray-500 mt-1">
+                Make real trust decisions &middot; 33 achievements to unlock
+              </p>
+            </div>
           </div>
         </div>
 
