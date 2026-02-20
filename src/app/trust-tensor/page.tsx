@@ -687,10 +687,10 @@ Talent: No decay (represents inherent aptitude)`}
           &larr; Back to Home
         </Link>
         <Link
-          href="/trust-tensor-explorer"
+          href="/coherence-index"
           className="flex-1 px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-center"
         >
-          Explore T3 Interactive Lab &rarr;
+          Next: Coherence Index &rarr;
         </Link>
       </section>
 

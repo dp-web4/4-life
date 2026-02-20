@@ -633,10 +633,10 @@ if agent.atp <= 0:
           ← Back to Home
         </Link>
         <Link
-          href="/web4-explainer"
+          href="/trust-tensor"
           className="flex-1 px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-center"
         >
-          More Web4 Concepts →
+          Next: How Trust Works →
         </Link>
       </section>
 
