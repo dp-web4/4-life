@@ -304,9 +304,16 @@ export default function KarmaJourneyPage() {
       }}>
         Karma Journey
       </h1>
-      <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem', maxWidth: '700px', lineHeight: 1.6 }}>
+      <p style={{ color: 'var(--color-text-secondary)', marginBottom: '0.75rem', maxWidth: '700px', lineHeight: 1.6 }}>
         Live multiple lives. Make choices. Watch how trust and karma compound across reincarnations.
-        Cooperative choices build slow trust; selfish choices yield quick ATP but erode your legacy.
+        Cooperative choices build slow trust; selfish choices yield quick gains but erode your legacy.
+      </p>
+      <p style={{ color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '700px', lineHeight: 1.6, fontSize: '0.85rem' }}>
+        <strong style={{ color: 'var(--color-text-secondary)' }}>What the numbers mean:</strong>{' '}
+        <strong>Trust</strong> = your reputation (Talent + Training + Temperament, averaged).{' '}
+        <strong>ATP</strong> = your energy budget — every action costs ATP, run out and you die.{' '}
+        <strong>CI</strong> = consistency score — erratic behavior lowers it.{' '}
+        Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
       </p>
 
       {/* Lives Overview Strip */}
@@ -451,7 +458,7 @@ export default function KarmaJourneyPage() {
                         </span>
                         {actualCost > 0 && actualCost !== choice.atpCostBase && (
                           <span style={{ color: '#fca5a5' }}>
-                            (cost {actualCost} vs base {choice.atpCostBase})
+                            (karma {actualCost > choice.atpCostBase ? 'penalty' : 'bonus'}: costs {actualCost > choice.atpCostBase ? 'more' : 'less'})
                           </span>
                         )}
                       </div>
