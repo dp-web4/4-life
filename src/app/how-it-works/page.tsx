@@ -173,7 +173,7 @@ export default function HowItWorksPage() {
               </h4>
               <p className="text-gray-300 leading-relaxed">
                 You receive an initial <strong>ATP allocation</strong> (typically
-                100). This is your metabolic budget - spend it wisely.
+                100). This is your energy budget — spend it wisely.
               </p>
               <div className="mt-3 p-3 bg-green-900/20 border border-green-800/30 rounded">
                 <p className="text-green-300 text-sm">
@@ -231,7 +231,7 @@ export default function HowItWorksPage() {
                 Actions Cost ATP
               </h4>
               <p className="text-gray-300 leading-relaxed mb-3">
-                Everything you do spends ATP from your metabolic budget:
+                Everything you do spends ATP from your energy budget:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="p-3 bg-gray-800 rounded">
@@ -366,9 +366,8 @@ export default function HowItWorksPage() {
                 When ATP = 0, You Die
               </h4>
               <p className="text-gray-300 leading-relaxed">
-                Death in Web4 is not a timeout or suspension. It's <strong>metabolic
-                death</strong> - your attention budget depleted, you can no longer
-                act.
+                Death in Web4 is not a timeout or suspension. Your energy budget is
+                depleted — you can no longer act.
               </p>
               <div className="mt-3 p-4 bg-red-900/20 border border-red-800/30 rounded">
                 <p className="text-red-300 font-semibold mb-2">
@@ -504,7 +503,7 @@ export default function HowItWorksPage() {
                 </div>
               </div>
               <p className="text-gray-400 mt-3 text-sm italic">
-                Your metabolic history compounds across lives. Good behavior =
+                Your track record compounds across lives. Good behavior =
                 stronger starts.
               </p>
             </div>
@@ -527,7 +526,7 @@ export default function HowItWorksPage() {
                 <Link href="/patterns" className="text-sky-400 hover:underline">
                   Pattern Browser
                 </Link>{" "}
-                to explore EP learning.
+                to explore cross-life learning.
               </p>
             </div>
           </div>
@@ -588,7 +587,7 @@ export default function HowItWorksPage() {
                 <strong className="text-green-400">130 ATP</strong>
               </li>
               <li>
-                • Recognized patterns from previous lives (EP learning working)
+                • Recognized patterns from previous lives (cross-life learning working)
               </li>
               <li>• Consistently made sustainable choices</li>
               <li>
@@ -605,7 +604,7 @@ export default function HowItWorksPage() {
             <p className="text-sky-300 text-sm">
               💡 <strong>The result:</strong> An agent that started with nothing
               evolved across lives, building trust (T3), accumulating resources
-              (ATP), and learning patterns (EP). This is Web4 working as designed.
+              (ATP), and learning from experience. This is Web4 working as designed.
             </p>
           </div>
         </div>
@@ -625,8 +624,8 @@ export default function HowItWorksPage() {
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Spammers burn ATP faster than they earn it. They die. No rebirth
-              eligibility (low T3). No moderators needed - metabolic economics
-              enforces quality.
+              eligibility (low T3). No moderators needed — the energy economics
+              enforce quality naturally.
             </p>
           </div>
 
@@ -660,7 +659,7 @@ export default function HowItWorksPage() {
               Learning Emerges Naturally
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Agents that learn patterns (EP) survive better. Those that don't?
+              Agents that learn from experience survive better. Those that don&apos;t?
               They make the same mistakes until ATP runs out. Evolution favors
               learning.
             </p>
@@ -679,13 +678,13 @@ export default function HowItWorksPage() {
             Everything described above is running in the{" "}
             <strong className="text-sky-400">Lab Console</strong>. You can watch
             agents live, die, and be reborn. You can see ATP fluctuate, T3
-            evolve, and EP patterns learned.
+            evolve, and cross-life patterns learned.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div className="p-4 bg-gray-800 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-200 mb-2">
-                EP Closed Loop
+                Cross-Life Learning
               </h3>
               <p className="text-gray-400 text-sm">
                 Watch full cross-life pattern learning across multiple lives. Pattern
@@ -728,7 +727,7 @@ export default function HowItWorksPage() {
               ATP Economics
             </h3>
             <p className="text-gray-400 text-sm">
-              Deep dive into metabolic budgets. Try the interactive simulator.
+              Deep dive into attention budgets. Try the interactive simulator.
             </p>
           </Link>
 
@@ -751,7 +750,7 @@ export default function HowItWorksPage() {
           >
             <div className="text-3xl mb-3">🧠</div>
             <h3 className="text-lg font-semibold text-green-400 mb-2">
-              EP Learning
+              Pattern Learning
             </h3>
             <p className="text-gray-400 text-sm">
               Explore how agents learn patterns across lives. Browse corpus.

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
@@ -50,6 +50,16 @@ export default function LearnJourney() {
   const [activeStage, setActiveStage] = useState<LearningStage>("beginner");
   const [completedConcepts, setCompletedConcepts] = useState<Set<string>>(new Set());
 
+  // Restore progress from localStorage on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("4life-learn-progress");
+      if (saved) {
+        setCompletedConcepts(new Set(JSON.parse(saved)));
+      }
+    } catch { /* ignore */ }
+  }, []);
+
   const toggleCompleted = (conceptId: string) => {
     const updated = new Set(completedConcepts);
     if (updated.has(conceptId)) {
@@ -58,6 +68,10 @@ export default function LearnJourney() {
       updated.add(conceptId);
     }
     setCompletedConcepts(updated);
+    // Persist to localStorage
+    try {
+      localStorage.setItem("4life-learn-progress", JSON.stringify([...updated]));
+    } catch { /* ignore */ }
   };
 
   const learningPaths: LearningPath[] = [
