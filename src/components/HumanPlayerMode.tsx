@@ -353,18 +353,84 @@ function ResultPanel({
 // Game Over Panel
 // ============================================================================
 
+function ComparisonBar({
+  label,
+  you,
+  avg,
+  max,
+  format,
+  higherIsBetter = true,
+}: {
+  label: string;
+  you: number;
+  avg: number;
+  max: number;
+  format: (v: number) => string;
+  higherIsBetter?: boolean;
+}) {
+  const safeMax = max || 1;
+  const youPct = Math.min(100, (you / safeMax) * 100);
+  const avgPct = Math.min(100, (avg / safeMax) * 100);
+  const better = higherIsBetter ? you >= avg : you <= avg;
+
+  return (
+    <div className="mb-3">
+      <div className="flex justify-between text-xs mb-1">
+        <span className="text-gray-400">{label}</span>
+        <span className={better ? 'text-green-400' : 'text-amber-400'}>
+          {better ? 'Above avg' : 'Below avg'}
+        </span>
+      </div>
+      <div className="relative h-5 bg-gray-800 rounded overflow-hidden">
+        {/* Average marker */}
+        <div
+          className="absolute top-0 h-full w-0.5 bg-gray-400 z-10"
+          style={{ left: `${avgPct}%` }}
+          title={`Society avg: ${format(avg)}`}
+        />
+        {/* Your bar */}
+        <div
+          className={`h-full rounded transition-all ${better ? 'bg-teal-500/70' : 'bg-amber-500/50'}`}
+          style={{ width: `${youPct}%` }}
+        />
+      </div>
+      <div className="flex justify-between text-xs mt-0.5">
+        <span className="text-white font-mono">You: {format(you)}</span>
+        <span className="text-gray-500 font-mono">Avg: {format(avg)}</span>
+      </div>
+    </div>
+  );
+}
+
 function GameOverPanel({
   result,
   onPlayAgain,
   onExit,
   newAchievements,
+  agents,
+  humanAgentId,
 }: {
   result: NonNullable<HumanPlayerFrame['gameResult']>;
   onPlayAgain: () => void;
   onExit: () => void;
   newAchievements: Achievement[];
+  agents: AgentSnapshot[];
+  humanAgentId: number | null;
 }) {
   const survived = result.survived;
+
+  // Compute society averages and rankings
+  const otherAgents = agents.filter(a => a.id !== humanAgentId);
+  const avgATP = otherAgents.length > 0 ? otherAgents.reduce((s, a) => s + a.atp, 0) / otherAgents.length : 0;
+  const avgReputation = otherAgents.length > 0 ? otherAgents.reduce((s, a) => s + a.reputation, 0) / otherAgents.length : 0;
+  const avgCoopRate = otherAgents.length > 0 ? otherAgents.reduce((s, a) => s + a.cooperationRate, 0) / otherAgents.length : 0;
+  const avgCoalition = otherAgents.length > 0 ? otherAgents.reduce((s, a) => s + a.coalitionSize, 0) / otherAgents.length : 0;
+  const maxATP = Math.max(result.finalATP, ...agents.map(a => a.atp));
+  const maxCoalition = Math.max(result.coalitionSize, ...agents.map(a => a.coalitionSize));
+
+  // Rank among all agents by reputation
+  const sortedByRep = [...agents].sort((a, b) => b.reputation - a.reputation);
+  const repRank = sortedByRep.findIndex(a => a.id === humanAgentId) + 1;
 
   return (
     <div className={`border-2 rounded-xl p-8 text-center ${
@@ -385,7 +451,8 @@ function GameOverPanel({
         </p>
       )}
 
-      <div className="grid grid-cols-2 gap-4 max-w-md mx-auto mb-8">
+      {/* Your stats */}
+      <div className="grid grid-cols-2 gap-4 max-w-md mx-auto mb-6">
         <div className="bg-gray-800/50 rounded-lg p-4">
           <div className="text-gray-400 text-sm">Final ATP</div>
           <div className="text-2xl font-bold text-white">{result.finalATP}</div>
@@ -404,6 +471,48 @@ function GameOverPanel({
         </div>
       </div>
 
+      {/* You vs Society Comparison */}
+      {otherAgents.length > 0 && (
+        <div className="max-w-md mx-auto mb-6 text-left">
+          <h3 className="text-sm font-bold text-gray-300 mb-3 text-center">
+            You vs Society Average
+            {repRank > 0 && (
+              <span className="ml-2 text-xs font-normal text-gray-500">
+                (Ranked #{repRank} of {agents.length} by reputation)
+              </span>
+            )}
+          </h3>
+          <ComparisonBar
+            label="Reputation"
+            you={result.reputation}
+            avg={avgReputation}
+            max={1}
+            format={v => `${(v * 100).toFixed(0)}%`}
+          />
+          <ComparisonBar
+            label="Cooperation Rate"
+            you={result.cooperationRate}
+            avg={avgCoopRate}
+            max={1}
+            format={v => `${(v * 100).toFixed(0)}%`}
+          />
+          <ComparisonBar
+            label="Energy (ATP)"
+            you={result.finalATP}
+            avg={avgATP}
+            max={maxATP}
+            format={v => `${Math.round(v)}`}
+          />
+          <ComparisonBar
+            label="Coalition Size"
+            you={result.coalitionSize}
+            avg={avgCoalition}
+            max={maxCoalition}
+            format={v => `${Math.round(v)}`}
+          />
+        </div>
+      )}
+
       {/* New achievements unlocked this game */}
       <RecentlyUnlocked achievements={newAchievements} />
 
@@ -411,7 +520,7 @@ function GameOverPanel({
         <div className="bg-amber-900/30 border border-amber-700/50 rounded-lg p-4 mb-6">
           <h4 className="font-bold text-amber-400 mb-2">Lesson Learned</h4>
           <p className="text-gray-300 text-sm">
-            Pure defection is unsustainable. Without trust, you can't build the coalitions
+            Pure defection is unsustainable. Without trust, you can&apos;t build the coalitions
             needed for long-term survival.
           </p>
         </div>
@@ -1033,6 +1142,8 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
           onPlayAgain={handlePlayAgain}
           onExit={onExit}
           newAchievements={newAchievements}
+          agents={agents}
+          humanAgentId={humanAgentId}
         />
       )}
 
