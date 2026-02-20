@@ -137,8 +137,9 @@ export default function ATPEconomicsPage() {
               rewarded by community
             </p>
             <p>
-              ✅ <strong>ATP is non-transferable</strong> - You can&apos;t buy someone else&apos;s
-              attention or sell yours. Everyone earns their own capacity.
+              ✅ <strong>ATP is non-transferable</strong> — You can&apos;t buy someone else&apos;s
+              attention or sell yours. Why? If ATP were tradeable, wealthy actors could buy
+              unlimited influence — exactly like today&apos;s internet. Everyone earns their own capacity.
             </p>
             <p>
               ✅ <strong>Spam becomes expensive</strong> - Flooding system
