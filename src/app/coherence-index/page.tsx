@@ -883,7 +883,7 @@ export default function CoherenceIndexPage() {
               <div className="flex items-center gap-3 mb-4">
                 <div className="text-3xl">⚖️</div>
                 <h3 className="text-xl font-semibold text-orange-400">
-                  Sybil Resistance
+                  Fake Identity Resistance
                 </h3>
               </div>
               <p className="text-sm text-gray-300 mb-3">
@@ -1019,14 +1019,14 @@ export default function CoherenceIndexPage() {
                 </p>
                 <div className="bg-gray-700/30 border border-gray-600 rounded p-3">
                   <code className="text-xs text-green-400">
-                    {`// Pseudocode
+                    {`// Pseudocode: how a grounding check works
 grounding_event = {
-  lct_id: device_lct,
-  timestamp: now,
-  location: gps_coords,
+  lct_id: device_lct,         // which device
+  timestamp: now,              // when
+  location: gps_coords,        // where
   capabilities: hardware_fingerprint,
   continuity_token: hash(previous_grounding),
-  mrh_context: [recent_interactions]
+  context: [recent_interactions] // who you've interacted with
 }
 
 ci = calculate_coherence(grounding_event, mrh_history)
