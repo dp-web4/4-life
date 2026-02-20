@@ -1,0 +1,45 @@
+{
+  "bundle_id": "c01d5ac0-a217-493b-ad88-7e7361bdcf9b",
+  "timestamp": "2026-02-20T13:41:55.249Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "coherence physics|quantum.*cosmological",
+    "parameters": {},
+    "result_hash": "sha256:7c0fed61c3b9dab550878ee36cca5af7fbd06b8a15e97013c6d1f3f7e2d200ec",
+    "timestamp": "2026-02-20T13:41:55.249Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "b4169c04-cd2e-4d18-a444-d60731493794",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQCbiDz2Eqf0QDwUndKuLyMnPkJmdh7JUaRVeD1zloNFFQIgS87x3Mlted5T27ary6YltaRPCX1WoVnAupCjDlOMGwk=",
+        "timestamp": "2026-02-20T13:41:55.250Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: coherence physics|quantum.*cosmological",
+  "outputs_hashes": [
+    "sha256:7c0fed61c3b9dab550878ee36cca5af7fbd06b8a15e97013c6d1f3f7e2d200ec"
+  ]
+}

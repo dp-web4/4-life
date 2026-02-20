@@ -1,0 +1,45 @@
+{
+  "bundle_id": "3965768a-e2fa-4524-b5e5-f0dde928a1df",
+  "timestamp": "2026-02-20T12:19:21.914Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git add src/app/data-explorer/page.tsx && git commit -m \"$(cat <<'EOF'\nData explorer: metabolic→atte",
+    "parameters": {},
+    "result_hash": "sha256:d063f8d3ad039a1b99aab0e5870adfec02f9664da350413724a774c94f964d83",
+    "timestamp": "2026-02-20T12:19:21.914Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "26f4e102-2374-4fe2-a187-f82490242b4d",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCICh+ZqKf0wCtyGhZYdoKNe98Ld2/RC/oUz3lFbCDxsGQAiEAur/Nzhs3sr0wKqApEXZ3XWpIncyhr62cRf3WjZjkiwM=",
+        "timestamp": "2026-02-20T12:19:21.915Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git add src/app/data-explorer/page.tsx && git commit -m \"$(cat <<'EOF'\nData explorer: metabolic→atte",
+  "outputs_hashes": [
+    "sha256:d063f8d3ad039a1b99aab0e5870adfec02f9664da350413724a774c94f964d83"
+  ]
+}

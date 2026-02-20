@@ -1,0 +1,45 @@
+{
+  "bundle_id": "0e22d0e2-20a9-4542-8a9b-ff37dc546c13",
+  "timestamp": "2026-02-20T13:27:17.436Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git add src/app/first-contact/page.tsx && git commit -m \"$(cat <<'EOF'\nFirst Contact: inline preview",
+    "parameters": {},
+    "result_hash": "sha256:a8a516dbad749c43a40820fc527018bd097686abedc407ebb572f13cd8f4c5b7",
+    "timestamp": "2026-02-20T13:27:17.436Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "315fbbc3-e074-4ec7-a352-64824b96293c",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQDCBIh+gjPxjNWDWKiAyapMFd8GVMgql9nxMw4BErjGvgIgDVUQWZhX1mV19jYKffi318frONqqiUldWybLTM39Gjk=",
+        "timestamp": "2026-02-20T13:27:17.437Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git add src/app/first-contact/page.tsx && git commit -m \"$(cat <<'EOF'\nFirst Contact: inline preview",
+  "outputs_hashes": [
+    "sha256:a8a516dbad749c43a40820fc527018bd097686abedc407ebb572f13cd8f4c5b7"
+  ]
+}

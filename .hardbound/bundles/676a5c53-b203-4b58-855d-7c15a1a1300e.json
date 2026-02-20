@@ -1,0 +1,45 @@
+{
+  "bundle_id": "676a5c53-b203-4b58-855d-7c15a1a1300e",
+  "timestamp": "2026-02-20T14:12:58.744Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "Why Web4|Energy Budget.*ATP|Sequence Navigation",
+    "parameters": {},
+    "result_hash": "sha256:1a92a8523b499807df0416915496f9d63f774452e1665ac1081f540da3223cea",
+    "timestamp": "2026-02-20T14:12:58.744Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "eb44b009-e932-42b3-899d-1176a871e090",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQD06VuFAkQR6cQOfJu4i3egtLOj42FwUSrAWi4VMTgX5QIhAIa7uC06ZYyBLqO9Y2dDP5cBd7PjZxuHhZkpOhgmS5Ae",
+        "timestamp": "2026-02-20T14:12:58.745Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: Why Web4|Energy Budget.*ATP|Sequence Navigation",
+  "outputs_hashes": [
+    "sha256:1a92a8523b499807df0416915496f9d63f774452e1665ac1081f540da3223cea"
+  ]
+}

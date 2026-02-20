@@ -1,0 +1,45 @@
+{
+  "bundle_id": "7e742e6b-40f4-4035-8bbc-7eac8b74744d",
+  "timestamp": "2026-02-20T14:13:03.655Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "← Identity|← Energy|← Coherence|Society Simulator →",
+    "parameters": {},
+    "result_hash": "sha256:fad192233c93677d0443d2c0c99932940a084973372720c6ee7f32325a41e93e",
+    "timestamp": "2026-02-20T14:13:03.655Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "676a5c53-b203-4b58-855d-7c15a1a1300e",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQDJtcaOWrNzhDt/JVR3eIkA2+cC+ko44uleut+2XLte+QIhANZpTsAnHhQVd7PHZssx8QKCipMv7HZrdmpCDW/RVtlJ",
+        "timestamp": "2026-02-20T14:13:03.656Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: ← Identity|← Energy|← Coherence|Society Simulator →",
+  "outputs_hashes": [
+    "sha256:fad192233c93677d0443d2c0c99932940a084973372720c6ee7f32325a41e93e"
+  ]
+}

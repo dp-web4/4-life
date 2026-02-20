@@ -1,0 +1,45 @@
+{
+  "bundle_id": "6bb13b56-406a-4ead-88b3-13b8b1c1479d",
+  "timestamp": "2026-02-20T14:09:21.818Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "grep -n \"like\\|imagine\\|real.world\\|example\\|analogy\\|think of\\|just like\\|similar to\\|passport\\|rec",
+    "parameters": {},
+    "result_hash": "sha256:fa97b1c98bab80447bcab142f492a9f72b582d3a08dfd29d393f95c9b3566dcd",
+    "timestamp": "2026-02-20T14:09:21.818Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "943cae3b-5ae0-4cf3-9d8c-29e74a824799",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQDMl2K7II+XrP9hwTcDQtOwC903K3GC+u8Z0XkKkMKIeQIhALsbZ7k6MfNQ1H9eLyRFZXG3HRWS4oErjUbylt6316EL",
+        "timestamp": "2026-02-20T14:09:21.819Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: grep -n \"like\\|imagine\\|real.world\\|example\\|analogy\\|think of\\|just like\\|similar to\\|passport\\|rec",
+  "outputs_hashes": [
+    "sha256:fa97b1c98bab80447bcab142f492a9f72b582d3a08dfd29d393f95c9b3566dcd"
+  ]
+}

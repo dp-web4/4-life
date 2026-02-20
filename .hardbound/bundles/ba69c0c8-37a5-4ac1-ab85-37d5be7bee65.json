@@ -1,0 +1,45 @@
+{
+  "bundle_id": "ba69c0c8-37a5-4ac1-ab85-37d5be7bee65",
+  "timestamp": "2026-02-20T13:29:00.728Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "device.*loss|lose.*device|stolen.*device|recovery|revoc",
+    "parameters": {},
+    "result_hash": "sha256:d901074664586c6badc40b430e6523d7ec58396ac1d26b3509c7a751d0e89271",
+    "timestamp": "2026-02-20T13:29:00.728Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "a835f6f2-7716-4885-bccf-d17fc4653071",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQCPd7clBM7i5JQGgBcvByEYF9QrBt93Ihdyk47v4lFLzAIgaNotknh7XsJUZYfFlxxStKdkeiDNtqESO1hiwVw2EAE=",
+        "timestamp": "2026-02-20T13:29:00.730Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: device.*loss|lose.*device|stolen.*device|recovery|revoc",
+  "outputs_hashes": [
+    "sha256:d901074664586c6badc40b430e6523d7ec58396ac1d26b3509c7a751d0e89271"
+  ]
+}

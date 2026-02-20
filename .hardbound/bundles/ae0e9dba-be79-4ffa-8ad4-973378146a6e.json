@@ -1,0 +1,45 @@
+{
+  "bundle_id": "ae0e9dba-be79-4ffa-8ad4-973378146a6e",
+  "timestamp": "2026-02-20T13:56:51.120Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "Ask ACT|ACT Chat|Ask the|button.*ACT|ACT.*button",
+    "parameters": {},
+    "result_hash": "sha256:b5f6f71abd67f7557c4b294da435b6feae04d134ea9cc7ab7706d3862970df35",
+    "timestamp": "2026-02-20T13:56:51.120Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "284433dc-dc66-4049-be8d-0b1f2f1751e4",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIB3KHT17Hcauy7xf+1hFCjIa6ZfhmSVSG0LO6vGlqh0KAiAQNinhf2d2oHUxsWZk9KWj4xLu2OoGpPrxUM/vk9woHg==",
+        "timestamp": "2026-02-20T13:56:51.121Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: Ask ACT|ACT Chat|Ask the|button.*ACT|ACT.*button",
+  "outputs_hashes": [
+    "sha256:b5f6f71abd67f7557c4b294da435b6feae04d134ea9cc7ab7706d3862970df35"
+  ]
+}

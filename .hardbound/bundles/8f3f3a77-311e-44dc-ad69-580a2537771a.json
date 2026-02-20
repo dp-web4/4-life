@@ -1,0 +1,45 @@
+{
+  "bundle_id": "8f3f3a77-311e-44dc-ad69-580a2537771a",
+  "timestamp": "2026-02-20T11:26:10.783Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git add src/app/why-web4/page.tsx && git commit -m \"$(cat <<'EOF'\nInline TPM/Secure Enclave explanat",
+    "parameters": {},
+    "result_hash": "sha256:94dca8b9a850876e1dc33c71144ac51f420bc9d7d61ae5b891e3460fc3ffde4d",
+    "timestamp": "2026-02-20T11:26:10.783Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "d60c43a3-427d-414d-9ddd-1498be126523",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCICgHy0W/k6n+ZmQFM2lMSNZT+2/Q5Mu3zdfridnKSI23AiAtrJJTqbytDbl9xbMbUlhCQfzathY25STQVj2GHA22Qg==",
+        "timestamp": "2026-02-20T11:26:10.784Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git add src/app/why-web4/page.tsx && git commit -m \"$(cat <<'EOF'\nInline TPM/Secure Enclave explanat",
+  "outputs_hashes": [
+    "sha256:94dca8b9a850876e1dc33c71144ac51f420bc9d7d61ae5b891e3460fc3ffde4d"
+  ]
+}

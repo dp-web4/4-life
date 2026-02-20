@@ -1,0 +1,45 @@
+{
+  "bundle_id": "2a1a63c0-9672-41f5-87ea-7f195d85ea34",
+  "timestamp": "2026-02-20T12:34:11.377Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git add src/components/CoherenceDomainVisualizer.tsx && git commit -m \"$(cat <<'EOF'\nCoherenceDomain",
+    "parameters": {},
+    "result_hash": "sha256:bd1c8b2ae6f7c2681dbce21d57e60862e02d2dbe1dfed3b32373ac6ebdcc0f9b",
+    "timestamp": "2026-02-20T12:34:11.377Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "b4c9a000-87da-4d9a-8a49-354d471c96e3",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQCZwj6A53LUJ11SK4xS5bziXo5LVa02WDya3apd02fIYgIgN84F1gtCN8mHyxtNTf+s1N6/Gu6qmvaNUqk/VNkXS+U=",
+        "timestamp": "2026-02-20T12:34:11.378Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git add src/components/CoherenceDomainVisualizer.tsx && git commit -m \"$(cat <<'EOF'\nCoherenceDomain",
+  "outputs_hashes": [
+    "sha256:bd1c8b2ae6f7c2681dbce21d57e60862e02d2dbe1dfed3b32373ac6ebdcc0f9b"
+  ]
+}

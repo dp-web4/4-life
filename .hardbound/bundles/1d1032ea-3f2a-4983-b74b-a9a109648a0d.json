@@ -1,0 +1,45 @@
+{
+  "bundle_id": "1d1032ea-3f2a-4983-b74b-a9a109648a0d",
+  "timestamp": "2026-02-20T12:38:17.994Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "api_request",
+    "target": "https://4-life-ivory.vercel.app/atp-economics",
+    "parameters": {},
+    "result_hash": "sha256:9b474369c837df28d9c503869a9daf69d8ac81a492249ab9048c2e396ebd51a6",
+    "timestamp": "2026-02-20T12:38:17.994Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "6bb5f12e-fab5-41ef-ba3d-6f7b60437759",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQCejHtiatWaH1pM8Q2CMRzltkR+payN8uCSoRwChiWIigIgC9cQ2RIfWbYeRD7GXOzK6mcIskdNPpVAqgxy9VnCCZo=",
+        "timestamp": "2026-02-20T12:38:17.995Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "WebFetch: https://4-life-ivory.vercel.app/atp-economics",
+  "outputs_hashes": [
+    "sha256:9b474369c837df28d9c503869a9daf69d8ac81a492249ab9048c2e396ebd51a6"
+  ]
+}

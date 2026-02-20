@@ -1,0 +1,45 @@
+{
+  "bundle_id": "e6932540-9730-45d6-9b28-a88396707065",
+  "timestamp": "2026-02-20T14:07:27.948Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "Epistemic Proprioception",
+    "parameters": {},
+    "result_hash": "sha256:ad0ac0eccd325da1b222982497b616a3580334230941b755c8f30c6fbf2674eb",
+    "timestamp": "2026-02-20T14:07:27.948Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "8ea58e23-21f8-4168-b25e-dfbec83f857a",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIDE5/LyJ9Bt7IuiAOat4q/lYZ8I7M2LjVgB2oWZjw+xvAiEAqQjJPvMcKRTpZ7b89x8VW7uFUNjX+Om5KffmsK0j838=",
+        "timestamp": "2026-02-20T14:07:27.949Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: Epistemic Proprioception",
+  "outputs_hashes": [
+    "sha256:ad0ac0eccd325da1b222982497b616a3580334230941b755c8f30c6fbf2674eb"
+  ]
+}

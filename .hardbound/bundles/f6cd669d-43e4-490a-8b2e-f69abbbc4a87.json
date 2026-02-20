@@ -1,0 +1,45 @@
+{
+  "bundle_id": "f6cd669d-43e4-490a-8b2e-f69abbbc4a87",
+  "timestamp": "2026-02-20T12:18:24.679Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "metabolic|consciousness threshold|Epoch",
+    "parameters": {},
+    "result_hash": "sha256:dc3affcd75c398e41743e8817cdd0fdeaa8f78e037ae9e09bc8f28560332cf3b",
+    "timestamp": "2026-02-20T12:18:24.679Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "bed85bad-7b86-4b79-8703-f7289dd26d8f",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQDxUBHMK3mVq02PK/5YdMAWu/bvQ2/PLfY4JdfyEzxYfgIhAJq1l3BuS/DGOQWPtQAbGQ5uoV5czgFzOMT4WGDHPimn",
+        "timestamp": "2026-02-20T12:18:24.681Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: metabolic|consciousness threshold|Epoch",
+  "outputs_hashes": [
+    "sha256:dc3affcd75c398e41743e8817cdd0fdeaa8f78e037ae9e09bc8f28560332cf3b"
+  ]
+}

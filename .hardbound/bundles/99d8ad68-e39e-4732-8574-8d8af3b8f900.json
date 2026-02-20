@@ -1,0 +1,45 @@
+{
+  "bundle_id": "99d8ad68-e39e-4732-8574-8d8af3b8f900",
+  "timestamp": "2026-02-20T13:20:26.106Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "metaboli",
+    "parameters": {},
+    "result_hash": "sha256:1916f224551f96f6b18914380fef153d9868a3c7ddf924366123cb18aea25e9d",
+    "timestamp": "2026-02-20T13:20:26.106Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "a6c981b5-2500-459c-822b-e9a770db2e73",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQDvUMSF67KXLDQrb58mdU0e3UDoKhZMdUhI/MumxgK/AAIhAPOmmEQPJ0KNcfS2c2UQTEM6nb+UbZHNQ96MfNzdLc58",
+        "timestamp": "2026-02-20T13:20:26.107Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: metaboli",
+  "outputs_hashes": [
+    "sha256:1916f224551f96f6b18914380fef153d9868a3c7ddf924366123cb18aea25e9d"
+  ]
+}

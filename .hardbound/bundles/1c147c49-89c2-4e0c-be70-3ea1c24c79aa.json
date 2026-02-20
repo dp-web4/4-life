@@ -1,0 +1,45 @@
+{
+  "bundle_id": "1c147c49-89c2-4e0c-be70-3ea1c24c79aa",
+  "timestamp": "2026-02-20T14:09:28.151Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "for page in lct-explainer atp-economics trust-tensor coherence-index aliveness; do\n  echo \"=== $page",
+    "parameters": {},
+    "result_hash": "sha256:310754e57f1191963d65343cb8d4dccff2061976970f839bba1729d9765f9ebf",
+    "timestamp": "2026-02-20T14:09:28.151Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "45f91376-bdf8-4780-9cd6-54d2485cc0b0",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQDzcb44M/AiLOQWUJWGfJ7NKRz/enowVCrIOYqT2peLNQIgSJeSkIzFGbsaHzg/v0eytSyTaL+kmn/pwWHB5zSus5M=",
+        "timestamp": "2026-02-20T14:09:28.153Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: for page in lct-explainer atp-economics trust-tensor coherence-index aliveness; do\n  echo \"=== $page",
+  "outputs_hashes": [
+    "sha256:310754e57f1191963d65343cb8d4dccff2061976970f839bba1729d9765f9ebf"
+  ]
+}

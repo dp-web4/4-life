@@ -1,0 +1,45 @@
+{
+  "bundle_id": "267c017e-5546-4e2c-a747-9e2b06add292",
+  "timestamp": "2026-02-20T12:26:52.997Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git add src/app/moments/page.tsx src/lib/moments/detector.ts && git commit -m \"$(cat <<'EOF'\nMoments",
+    "parameters": {},
+    "result_hash": "sha256:fbdc93d27f996d1135fe1b71e0245f26a4b554667ccdae517c3e78717a9cf654",
+    "timestamp": "2026-02-20T12:26:52.997Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "f0080a6d-f185-415b-8e70-2fc3fbee1e6f",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCICF63hi1JF5sEwlF8Qibul5/ti/BT/TBuvNNu3qEMeEmAiA3nfXJKegSYLHQOP5VxTVLCVnYg3AaoLr8qS0hxaRj6Q==",
+        "timestamp": "2026-02-20T12:26:52.998Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git add src/app/moments/page.tsx src/lib/moments/detector.ts && git commit -m \"$(cat <<'EOF'\nMoments",
+  "outputs_hashes": [
+    "sha256:fbdc93d27f996d1135fe1b71e0245f26a4b554667ccdae517c3e78717a9cf654"
+  ]
+}

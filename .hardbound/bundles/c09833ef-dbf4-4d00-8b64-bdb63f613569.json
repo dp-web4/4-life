@@ -1,0 +1,45 @@
+{
+  "bundle_id": "c09833ef-dbf4-4d00-8b64-bdb63f613569",
+  "timestamp": "2026-02-20T12:19:26.843Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "metabolic",
+    "parameters": {},
+    "result_hash": "sha256:50620aafab9540f03589da553bc95f8c87b0e9f3872991581109faca893fed4c",
+    "timestamp": "2026-02-20T12:19:26.843Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "3965768a-e2fa-4524-b5e5-f0dde928a1df",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQCcQ3sHzg9Pv4XvlVMqcK2gu5tV1UkQWeXhR8j+G6FOAQIhAP6f9ggLz1lj+ZdDT1Sb/BdyuL4TO9oGu2dbZ5/7w4nG",
+        "timestamp": "2026-02-20T12:19:26.845Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: metabolic",
+  "outputs_hashes": [
+    "sha256:50620aafab9540f03589da553bc95f8c87b0e9f3872991581109faca893fed4c"
+  ]
+}

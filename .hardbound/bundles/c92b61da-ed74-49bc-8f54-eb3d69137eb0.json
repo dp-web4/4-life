@@ -1,0 +1,45 @@
+{
+  "bundle_id": "c92b61da-ed74-49bc-8f54-eb3d69137eb0",
+  "timestamp": "2026-02-20T13:28:45.877Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git add src/app/how-it-works/page.tsx src/lib/terms.ts && git commit -m \"$(cat <<'EOF'\nHow It Works:",
+    "parameters": {},
+    "result_hash": "sha256:ba371e49b41c9385c36fad1b3608d6cb4336286e6315039b4f1485cf412956fc",
+    "timestamp": "2026-02-20T13:28:45.877Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "940e36c6-d942-4a1f-a01d-9574c1a87af6",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQC/dN4aoEzv2jJDZLiqvmAOko2SOh7x+5WuSgNSeIp1zgIhAOWR6dVcgzRsaGony7I57eEeTYxH0rufBtQYW17s8cmw",
+        "timestamp": "2026-02-20T13:28:45.879Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git add src/app/how-it-works/page.tsx src/lib/terms.ts && git commit -m \"$(cat <<'EOF'\nHow It Works:",
+  "outputs_hashes": [
+    "sha256:ba371e49b41c9385c36fad1b3608d6cb4336286e6315039b4f1485cf412956fc"
+  ]
+}

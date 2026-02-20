@@ -1,0 +1,45 @@
+{
+  "bundle_id": "e72a89f6-2dd8-4884-90a0-139821b5ed39",
+  "timestamp": "2026-02-20T12:30:32.355Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "ontolog",
+    "parameters": {},
+    "result_hash": "sha256:221a4c6b73c4702b7fa8bb4eeaca74b47ba606e1615d57865dc2e203ea5d56a1",
+    "timestamp": "2026-02-20T12:30:32.355Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "a44de38c-a015-4a6d-9a78-df2ae7075e21",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQDTM5A1UZdcEwsZrFv9C55nulxknYpguzmnTfG2ML5pOgIgcnwhvBQWFXBlBRra25vfd3ta8juAWKDvb/NFbWdUQYg=",
+        "timestamp": "2026-02-20T12:30:32.356Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: ontolog",
+  "outputs_hashes": [
+    "sha256:221a4c6b73c4702b7fa8bb4eeaca74b47ba606e1615d57865dc2e203ea5d56a1"
+  ]
+}

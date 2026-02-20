@@ -1,0 +1,45 @@
+{
+  "bundle_id": "591ce283-d618-463d-8214-dfd8f1d84562",
+  "timestamp": "2026-02-20T14:07:15.346Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "metabolic|Epistemic Proprioception|substrate|Sybil|consciousness",
+    "parameters": {},
+    "result_hash": "sha256:a21ef31ec1fab1d8cf362552feb9f6a7b2cab16e114a86bb36d399efdf5c0473",
+    "timestamp": "2026-02-20T14:07:15.346Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "12f13b91-3caa-4013-ac0b-ee005e128c3f",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQCIJkecOPma3SsuTdq9pmAqGq/yN5svTxCmk/YLDfPkkwIgcPt/Vmn8d8DbPY6OIxtBI+W233R+9vDlhL2+Y9tiAmY=",
+        "timestamp": "2026-02-20T14:07:15.347Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: metabolic|Epistemic Proprioception|substrate|Sybil|consciousness",
+  "outputs_hashes": [
+    "sha256:a21ef31ec1fab1d8cf362552feb9f6a7b2cab16e114a86bb36d399efdf5c0473"
+  ]
+}

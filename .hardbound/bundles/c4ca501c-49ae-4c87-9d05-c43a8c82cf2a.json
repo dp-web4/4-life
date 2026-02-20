@@ -1,0 +1,45 @@
+{
+  "bundle_id": "c4ca501c-49ae-4c87-9d05-c43a8c82cf2a",
+  "timestamp": "2026-02-20T12:20:00.443Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "/home/dp/ai-workspace/4-life/src/app/concepts-to-tools/page.tsx",
+    "parameters": {},
+    "result_hash": "sha256:dd6f0c49760adda1ed61bab300125ea6b7a48330b752a9389c2813e59f13788b",
+    "timestamp": "2026-02-20T12:20:00.443Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "d7757301-9bf5-4555-8623-7b9daecdee9e",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQCqcDW3clLmvf3PCj26T4tHeBcZA44KIbFWw3HjOuMsOQIgYeCNdzbmHCMgpgOmG5MpyO2CMUL33WF4+bbuersjtPg=",
+        "timestamp": "2026-02-20T12:20:00.444Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Edit: /home/dp/ai-workspace/4-life/src/app/concepts-to-tools/page.tsx",
+  "outputs_hashes": [
+    "sha256:dd6f0c49760adda1ed61bab300125ea6b7a48330b752a9389c2813e59f13788b"
+  ]
+}

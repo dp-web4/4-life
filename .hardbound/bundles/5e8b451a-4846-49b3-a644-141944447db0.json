@@ -1,0 +1,45 @@
+{
+  "bundle_id": "5e8b451a-4846-49b3-a644-141944447db0",
+  "timestamp": "2026-02-20T13:41:18.980Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "for dir in explore-guide karma-journey starter-kit act-explorer manifest; do echo \"$dir: $(ls /home/",
+    "parameters": {},
+    "result_hash": "sha256:cf855207b4a21b0f4dc3fab914d7efe4040245d411890f0ab3a4e24642d4ddb3",
+    "timestamp": "2026-02-20T13:41:18.980Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "f969d806-7c6f-4f8c-9411-7617b1d4945a",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQDeEoYeGMfMObv2e/Fx6KANp+LR/gYQgUbgf+eaqLOL5wIgOllKpAyQAiw8UFaIh4NTOu1CthiaFitKnSh+drciKoo=",
+        "timestamp": "2026-02-20T13:41:18.981Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: for dir in explore-guide karma-journey starter-kit act-explorer manifest; do echo \"$dir: $(ls /home/",
+  "outputs_hashes": [
+    "sha256:cf855207b4a21b0f4dc3fab914d7efe4040245d411890f0ab3a4e24642d4ddb3"
+  ]
+}

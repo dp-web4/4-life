@@ -1,0 +1,45 @@
+{
+  "bundle_id": "03b91370-eb15-4be6-9abc-483a5bb8c6b7",
+  "timestamp": "2026-02-20T12:20:30.841Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "gh api repos/dp-web4/4-life/deployments --jq '.[0:3] | .[] | {created_at: .created_at, sha: .sha[0:7",
+    "parameters": {},
+    "result_hash": "sha256:13bcde7568bc0fd5c94296644b5811605fb8ba26f1732d6ab2921b446074a99c",
+    "timestamp": "2026-02-20T12:20:30.841Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "ef73e99d-dcd2-49f1-9f53-81516d8a4492",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIEj6RRRYSi9RioP+mC2KsmMCglA+9r6Mc3IDHH0Y1HUwAiAvoEASrIGhDNu2H+dXVFZPh6SGGlEOTHYFI6WzxRmgww==",
+        "timestamp": "2026-02-20T12:20:30.843Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: gh api repos/dp-web4/4-life/deployments --jq '.[0:3] | .[] | {created_at: .created_at, sha: .sha[0:7",
+  "outputs_hashes": [
+    "sha256:13bcde7568bc0fd5c94296644b5811605fb8ba26f1732d6ab2921b446074a99c"
+  ]
+}

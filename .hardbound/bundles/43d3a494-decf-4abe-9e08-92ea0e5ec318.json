@@ -1,0 +1,45 @@
+{
+  "bundle_id": "43d3a494-decf-4abe-9e08-92ea0e5ec318",
+  "timestamp": "2026-02-20T12:49:03.508Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "npx tsc --noEmit 2>&1 | tail -3 && git add src/app/lct-explainer/page.tsx && git commit -m \"$(cat <<",
+    "parameters": {},
+    "result_hash": "sha256:3a612de0e8f004737d2bd1379d1fe4cbeca7f75ff935059f5695a9c11bdccea4",
+    "timestamp": "2026-02-20T12:49:03.508Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "0adcb297-d0d2-4160-87cd-474932aa2f96",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQDGQ7yyq4dVnZe+qxsYFm1fi6eTrPLt6cou9DdLpX5E7wIgMOi8Ly80HVQXx+gMiEGny7ZBv5YFIsur1MLUTFtprS4=",
+        "timestamp": "2026-02-20T12:49:03.509Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: npx tsc --noEmit 2>&1 | tail -3 && git add src/app/lct-explainer/page.tsx && git commit -m \"$(cat <<",
+  "outputs_hashes": [
+    "sha256:3a612de0e8f004737d2bd1379d1fe4cbeca7f75ff935059f5695a9c11bdccea4"
+  ]
+}

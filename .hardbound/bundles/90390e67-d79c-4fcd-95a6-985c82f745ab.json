@@ -1,0 +1,45 @@
+{
+  "bundle_id": "90390e67-d79c-4fcd-95a6-985c82f745ab",
+  "timestamp": "2026-02-20T12:48:45.996Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "Sybil|sybil",
+    "parameters": {},
+    "result_hash": "sha256:5d59f922195be5cd4161d382d4983af02218d374b5cb8578f0941af61d4ec7f3",
+    "timestamp": "2026-02-20T12:48:45.996Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "60a2a301-4b6e-43a3-b991-451e322a9730",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIEfSJrFvlT1aBlFhH0xcAo8M5vD13+Xu8esVuVUrkaweAiBNW4O6nsWH98Pbkokkcz5ecI74hRe4HR7LPSXB4dkAtg==",
+        "timestamp": "2026-02-20T12:48:45.997Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: Sybil|sybil",
+  "outputs_hashes": [
+    "sha256:5d59f922195be5cd4161d382d4983af02218d374b5cb8578f0941af61d4ec7f3"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "bundle_id": "1a25b1eb-d0f3-41ad-adb8-56a3981f51e1",
+  "timestamp": "2026-02-20T14:10:56.075Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "/home/dp/ai-workspace/4-life/src/app/atp-economics/page.tsx",
+    "parameters": {},
+    "result_hash": "sha256:0cfe0cea3898b7aeabdc65526ffb0e3c287f6242fe1a4cd72a56f9c1bdeb7f08",
+    "timestamp": "2026-02-20T14:10:56.075Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "defb2602-613b-478c-a576-e93d4cc725bc",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQCOKMlkd9jc8Xp+ZkVExISbxsIZqwMsq5hjtLMbnWlP+AIhAKFWpaEuuydwtdIzNurjQUCex9kbsJhixuzJ3Xq07IA7",
+        "timestamp": "2026-02-20T14:10:56.076Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Read: /home/dp/ai-workspace/4-life/src/app/atp-economics/page.tsx",
+  "outputs_hashes": [
+    "sha256:0cfe0cea3898b7aeabdc65526ffb0e3c287f6242fe1a4cd72a56f9c1bdeb7f08"
+  ]
+}

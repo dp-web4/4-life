@@ -1,0 +1,45 @@
+{
+  "bundle_id": "1cd1b121-b734-4759-839b-4f93b2772add",
+  "timestamp": "2026-02-20T14:14:03.912Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "api_request",
+    "target": "https://4-life-ivory.vercel.app/aliveness",
+    "parameters": {},
+    "result_hash": "sha256:81375dac59ccdea2374ab1d9cf303ad83ba1ca9707258ed7117bf78a22669883",
+    "timestamp": "2026-02-20T14:14:03.912Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "795420ee-f24c-4877-bd9b-21671a6b2077",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIHlvARrg784c2v+fjSPY8JqXj+r78nFRt6dqsJUiOeWZAiEAvGSxkoc4F1P1L9auBDQ0IP41G0fKVcmP2UCXrh2RnRY=",
+        "timestamp": "2026-02-20T14:14:03.913Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "WebFetch: https://4-life-ivory.vercel.app/aliveness",
+  "outputs_hashes": [
+    "sha256:81375dac59ccdea2374ab1d9cf303ad83ba1ca9707258ed7117bf78a22669883"
+  ]
+}

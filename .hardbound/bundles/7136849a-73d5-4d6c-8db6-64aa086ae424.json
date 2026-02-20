@@ -1,0 +1,45 @@
+{
+  "bundle_id": "7136849a-73d5-4d6c-8db6-64aa086ae424",
+  "timestamp": "2026-02-20T12:17:29.166Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git add src/app/explore-guide/page.tsx && git commit -m \"$(cat <<'EOF'\nExplore guide: metabolic → at",
+    "parameters": {},
+    "result_hash": "sha256:71c6b5684e869ea2766dcb3ba98fad40f4ef9aec66e9b6496c4b235693478400",
+    "timestamp": "2026-02-20T12:17:29.166Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "a2200d15-8086-4d3e-b69b-ab130e3f45fd",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQCS59N95JQ6fxNQGymrzqzgbZNAElsD87U+l4OyTm3nXAIhAIiAL2tZiLhOR3sfEKtJSSGltcORZRm2blrVtIKOUEoY",
+        "timestamp": "2026-02-20T12:17:29.168Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git add src/app/explore-guide/page.tsx && git commit -m \"$(cat <<'EOF'\nExplore guide: metabolic → at",
+  "outputs_hashes": [
+    "sha256:71c6b5684e869ea2766dcb3ba98fad40f4ef9aec66e9b6496c4b235693478400"
+  ]
+}

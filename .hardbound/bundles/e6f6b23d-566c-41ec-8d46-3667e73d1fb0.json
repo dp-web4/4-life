@@ -1,0 +1,45 @@
+{
+  "bundle_id": "e6f6b23d-566c-41ec-8d46-3667e73d1fb0",
+  "timestamp": "2026-02-20T12:41:36.467Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "metabolic|epistemic|substrate|ontolog",
+    "parameters": {},
+    "result_hash": "sha256:380315d1e7ffe5a6e057c9cc6b5f5d8893318b7f3eb6594f35d51cc38699d88c",
+    "timestamp": "2026-02-20T12:41:36.467Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "d4798db8-217a-47f5-a953-5c98177f258f",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQDmeTTSHzY7bjLWfThw4e3Wq4KlmuKs8ZPXzHtVuVLR+wIhAOMAswMLWFXEA7a1Dsgr0fCsCCA44leY6u5iCwo8+r9r",
+        "timestamp": "2026-02-20T12:41:36.468Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: metabolic|epistemic|substrate|ontolog",
+  "outputs_hashes": [
+    "sha256:380315d1e7ffe5a6e057c9cc6b5f5d8893318b7f3eb6594f35d51cc38699d88c"
+  ]
+}

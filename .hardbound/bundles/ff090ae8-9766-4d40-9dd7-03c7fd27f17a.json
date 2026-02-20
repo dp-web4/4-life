@@ -1,0 +1,45 @@
+{
+  "bundle_id": "ff090ae8-9766-4d40-9dd7-03c7fd27f17a",
+  "timestamp": "2026-02-20T13:15:06.991Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git add src/app/atp-economics/page.tsx && git commit -m \"$(cat <<'EOF'\nATP Economics: explain why AT",
+    "parameters": {},
+    "result_hash": "sha256:529f7b91a59b548f90dc41b21a0707d3213650fd1a3a7c414d0ff493e4541daf",
+    "timestamp": "2026-02-20T13:15:06.991Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "2d2a878c-6205-441d-a4d9-7d49f9b0e56b",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIBKyZjdOcngk8M/uipHCIMwIKg4s6apC/jFVG//ulMeTAiB4mkr4D5pNwrPTlG+XHEkve4+sgEkmtjCTJg4LtC8kEw==",
+        "timestamp": "2026-02-20T13:15:06.992Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git add src/app/atp-economics/page.tsx && git commit -m \"$(cat <<'EOF'\nATP Economics: explain why AT",
+  "outputs_hashes": [
+    "sha256:529f7b91a59b548f90dc41b21a0707d3213650fd1a3a7c414d0ff493e4541daf"
+  ]
+}

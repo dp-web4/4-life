@@ -1,0 +1,45 @@
+{
+  "bundle_id": "36d1cae5-dbce-4f4c-9c22-ca703149e76a",
+  "timestamp": "2026-02-20T11:53:25.135Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "npx tsx -e \"\nconst { readFileSync } = require('fs');\nconst { join } = require('path');\nconst { Event",
+    "parameters": {},
+    "result_hash": "sha256:2b7dfd4526e9c6964f5a4c364a32b5f0b4960a2c49ff49bb60834ef5a450cea5",
+    "timestamp": "2026-02-20T11:53:25.135Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "351a7354-a6bb-432a-9bac-dc31a45e8cee",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIF/gbYxpjzVPyfXc+2j4sDxmYesj02tRKtCcbpoWtD+0AiEAv4U/7TlB9uSoGkuTsAFBY3xqisBkFzZ6ZtY4+np+2KI=",
+        "timestamp": "2026-02-20T11:53:25.137Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: npx tsx -e \"\nconst { readFileSync } = require('fs');\nconst { join } = require('path');\nconst { Event",
+  "outputs_hashes": [
+    "sha256:2b7dfd4526e9c6964f5a4c364a32b5f0b4960a2c49ff49bb60834ef5a450cea5"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "bundle_id": "3a7f61b6-f0f9-45a5-ac79-8a70a8600b08",
+  "timestamp": "2026-02-20T13:58:03.624Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git add src/app/atp-economics/page.tsx src/app/coherence-index/page.tsx src/app/glossary/page.tsx sr",
+    "parameters": {},
+    "result_hash": "sha256:5ca91c1f3135a12c0e384c8b6dd86a39919fd7c07c5d36d8dd48c244ce9278ec",
+    "timestamp": "2026-02-20T13:58:03.624Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "014e2b40-d226-4bb0-b57e-2b5bab1d8a4b",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIGz2RAzP1cXC1S67LglY3DIlYuy1A+fP2w0uuzsHv/YDAiBfgn8EZr0HMddigznzFgSWKHld92xz04rFyhHzgYEPHw==",
+        "timestamp": "2026-02-20T13:58:03.626Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git add src/app/atp-economics/page.tsx src/app/coherence-index/page.tsx src/app/glossary/page.tsx sr",
+  "outputs_hashes": [
+    "sha256:5ca91c1f3135a12c0e384c8b6dd86a39919fd7c07c5d36d8dd48c244ce9278ec"
+  ]
+}

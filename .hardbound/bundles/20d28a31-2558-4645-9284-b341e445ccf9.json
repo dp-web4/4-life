@@ -1,0 +1,45 @@
+{
+  "bundle_id": "20d28a31-2558-4645-9284-b341e445ccf9",
+  "timestamp": "2026-02-20T13:13:22.134Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git add src/app/karma-journey/page.tsx && git commit -m \"$(cat <<'EOF'\nKarma Journey: clarify cost m",
+    "parameters": {},
+    "result_hash": "sha256:8e9b22d1b0f453267971bd707755a539a8de60f844f94f3c93ec5c34111b99b9",
+    "timestamp": "2026-02-20T13:13:22.134Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "d45f3092-13f7-4c4f-90af-9bde9eb99d9d",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIBVI8cNTKtyhLMCd3hRCTMPve4skbfPiu/F0fIREtvNmAiEAlfroVQfu+lA0zOU0zjm9Zq9RLPl3PQRIpJ7OeIbpa6c=",
+        "timestamp": "2026-02-20T13:13:22.135Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git add src/app/karma-journey/page.tsx && git commit -m \"$(cat <<'EOF'\nKarma Journey: clarify cost m",
+  "outputs_hashes": [
+    "sha256:8e9b22d1b0f453267971bd707755a539a8de60f844f94f3c93ec5c34111b99b9"
+  ]
+}

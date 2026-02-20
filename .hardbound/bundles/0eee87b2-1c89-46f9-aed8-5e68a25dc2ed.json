@@ -1,0 +1,45 @@
+{
+  "bundle_id": "0eee87b2-1c89-46f9-aed8-5e68a25dc2ed",
+  "timestamp": "2026-02-20T11:47:24.833Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "crontab -l 2>&1",
+    "parameters": {},
+    "result_hash": "sha256:3f7c98e82e61a39ef320c6c889c4301fd1f280ff65df78d07fbb08846335a758",
+    "timestamp": "2026-02-20T11:47:24.833Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "85bf749a-f242-4aca-b4da-8b6feff93fa1",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQCvCEg59qp9hkmPiFnmQ//7ouzwHW+dpVnAcr/BPMokLgIgTvRB20uvjsFHT9jbgqovEWaxm8SyQfmie7ZTjQiNL4w=",
+        "timestamp": "2026-02-20T11:47:24.834Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: crontab -l 2>&1",
+  "outputs_hashes": [
+    "sha256:3f7c98e82e61a39ef320c6c889c4301fd1f280ff65df78d07fbb08846335a758"
+  ]
+}

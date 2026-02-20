@@ -1,0 +1,45 @@
+{
+  "bundle_id": "dae9bc85-a6a5-4b49-9f01-c4a101a0ed23",
+  "timestamp": "2026-02-20T13:52:49.106Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "metabolic|pattern corpus|EP learning|Epistemic Proprioception",
+    "parameters": {},
+    "result_hash": "sha256:460937826886b9301f5ee61a975bce9a8a50b37c32e03a32717e54af4f4d2b24",
+    "timestamp": "2026-02-20T13:52:49.106Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "1876026b-f9bd-49d4-ab11-7da881a7259c",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQDL+bLiNj8+Lmh6iZgjPEeUG2UK4WzBsPAsnLQ25IUVsgIhAK0uvIDINbuonoEcoeJYN3cdkco0VRwAEpYiEz/lr1AP",
+        "timestamp": "2026-02-20T13:52:49.107Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: metabolic|pattern corpus|EP learning|Epistemic Proprioception",
+  "outputs_hashes": [
+    "sha256:460937826886b9301f5ee61a975bce9a8a50b37c32e03a32717e54af4f4d2b24"
+  ]
+}

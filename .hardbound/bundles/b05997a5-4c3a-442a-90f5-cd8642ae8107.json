@@ -1,0 +1,45 @@
+{
+  "bundle_id": "b05997a5-4c3a-442a-90f5-cd8642ae8107",
+  "timestamp": "2026-02-20T12:19:47.611Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git add src/app/first-simulation/page.tsx && git commit -m \"$(cat <<'EOF'\nFirst simulation: metaboli",
+    "parameters": {},
+    "result_hash": "sha256:3cc0a35a4165d6e492ada926e760caf552050bf8c0d0ae8912fd0ab4700b0b35",
+    "timestamp": "2026-02-20T12:19:47.611Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "a71a48e9-16f2-4e8d-8377-df37155adaeb",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIEu0fCWjbT84V+5wh99AtIh8TqYk2/45toXwrVHwYG7FAiEAhLIcllVPpZG4e9CnopxP41oC+PQS36IKuAryc8lYd9Q=",
+        "timestamp": "2026-02-20T12:19:47.612Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git add src/app/first-simulation/page.tsx && git commit -m \"$(cat <<'EOF'\nFirst simulation: metaboli",
+  "outputs_hashes": [
+    "sha256:3cc0a35a4165d6e492ada926e760caf552050bf8c0d0ae8912fd0ab4700b0b35"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "bundle_id": "d2e3a909-31e2-40f2-b430-6ef4837fac64",
+  "timestamp": "2026-02-20T12:34:32.399Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "/home/dp/ai-workspace/4-life/src/app/trust-timeline/page.tsx",
+    "parameters": {},
+    "result_hash": "sha256:97804f26aa09a27cab6558a2727f0de5613c9cc05de76b1b9435f6982c43007b",
+    "timestamp": "2026-02-20T12:34:32.399Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "4593ab2b-c247-4be8-b7bc-90816e893fdd",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIGi6k6PGQkyGBLDxe9k8tC9APFRcBROzDM3fZEeQEuKXAiEAwOMkIyeTK3ngyJbbXaAgDk1EO0e6hd+Yb8W/HdU5/jM=",
+        "timestamp": "2026-02-20T12:34:32.400Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Read: /home/dp/ai-workspace/4-life/src/app/trust-timeline/page.tsx",
+  "outputs_hashes": [
+    "sha256:97804f26aa09a27cab6558a2727f0de5613c9cc05de76b1b9435f6982c43007b"
+  ]
+}

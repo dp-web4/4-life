@@ -1,0 +1,45 @@
+{
+  "bundle_id": "b834817a-203d-4b2e-aa51-6fbe3038ddb7",
+  "timestamp": "2026-02-20T13:12:58.795Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "deathCause|Life.*Ended|died",
+    "parameters": {},
+    "result_hash": "sha256:56a4437714fa6819d7b63d89f1817392af6aaa523ad9c94499d722e96da8edf0",
+    "timestamp": "2026-02-20T13:12:58.795Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "09c3459a-23a7-4854-b7bc-333bcae7d889",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIC5WAnhydTJxaDX8krmdqCEIAIEV2E4Qyaeo3zTxB9PKAiAGIVN675B3zs9z+0+p1p210/SrFSKT/OtNabPKpBPawA==",
+        "timestamp": "2026-02-20T13:12:58.796Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: deathCause|Life.*Ended|died",
+  "outputs_hashes": [
+    "sha256:56a4437714fa6819d7b63d89f1817392af6aaa523ad9c94499d722e96da8edf0"
+  ]
+}

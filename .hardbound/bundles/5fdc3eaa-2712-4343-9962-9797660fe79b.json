@@ -1,0 +1,45 @@
+{
+  "bundle_id": "5fdc3eaa-2712-4343-9962-9797660fe79b",
+  "timestamp": "2026-02-20T12:32:52.119Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git add src/app/layout.tsx src/app/manifest/page.tsx src/app/compare/page.tsx src/app/aliveness/page",
+    "parameters": {},
+    "result_hash": "sha256:7bf47b31cd840ea404473a54fd39c3cca3464242b8ca63f38711cfda0802f275",
+    "timestamp": "2026-02-20T12:32:52.119Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "a72383a8-bcff-4d95-bc88-ff6ea0f532ba",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIFHUMm/j2sIfmsuxFk+aqyPGxI5y1R3Fm/+CjLkFo0+qAiEA7rdl7MIsM2sGUgHqqVkGXDrZYXA0ewpJU2nYV5Yno9M=",
+        "timestamp": "2026-02-20T12:32:52.120Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git add src/app/layout.tsx src/app/manifest/page.tsx src/app/compare/page.tsx src/app/aliveness/page",
+  "outputs_hashes": [
+    "sha256:7bf47b31cd840ea404473a54fd39c3cca3464242b8ca63f38711cfda0802f275"
+  ]
+}
