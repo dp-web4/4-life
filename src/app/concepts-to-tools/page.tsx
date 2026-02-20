@@ -94,9 +94,9 @@ const BRIDGES: ConceptToolBridge[] = [
   },
   {
     concept: {
-      title: 'ATP Economics',
+      title: 'Attention Economics',
       href: '/atp-economics',
-      oneLiner: 'Attention as metabolic currency — earn by contributing, spend on actions',
+      oneLiner: 'Every action costs energy — earn by contributing, spend on actions',
       keyIdea: 'ATP creates natural governance: expensive actions require resources and trust.',
     },
     tool: {
