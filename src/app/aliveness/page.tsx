@@ -993,6 +993,25 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
           color: #60a5fa;
         }
       `}</style>
+
+      {/* Next Steps */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 text-center">
+          <h3 className="text-xl font-bold mb-3 text-gray-100">See Aliveness in Action</h3>
+          <p className="text-gray-400 mb-4 text-sm">
+            Watch agents live, die, and be reborn in a full society simulation.
+          </p>
+          <div className="flex gap-3 justify-center flex-wrap">
+            <Link href="/society-simulator" className="px-5 py-2 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-sm">
+              Society Simulator
+            </Link>
+            <Link href="/playground" className="px-5 py-2 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors text-sm">
+              Playground
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <RelatedConcepts currentPath="/aliveness" />
     </>
   );
