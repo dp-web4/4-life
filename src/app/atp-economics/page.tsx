@@ -551,6 +551,16 @@ export default function ATPEconomicsPage() {
               </div>
             </div>
 
+            <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-4 mb-6">
+              <h4 className="font-semibold text-sky-400 mb-2">Why can't you transfer ATP to someone else?</h4>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                If ATP were transferable, wealthy actors could buy unlimited action capacity — exactly like
+                the current internet where money buys attention. Non-transferable ATP means everyone must
+                <em> earn</em> their own capacity through valuable contributions. You can't buy your way to
+                influence; you have to contribute your way there. This is the key difference from cryptocurrency.
+              </p>
+            </div>
+
             <div>
               <h3 className="text-xl font-semibold text-sky-400 mb-3">
                 Implementation in Web4
