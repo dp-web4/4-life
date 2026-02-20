@@ -1,0 +1,45 @@
+{
+  "bundle_id": "59e741dd-a988-4843-bea9-8927c829695e",
+  "timestamp": "2026-02-20T23:20:21.666Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "Ask ACT|Ask AI Guide|Society Guide|ACT Chat",
+    "parameters": {},
+    "result_hash": "sha256:066e5bd73d495f9d4754427a22cf38f3ca884d63eabaf3c5922f10206044612a",
+    "timestamp": "2026-02-20T23:20:21.666Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "b441f0c7-6d74-4797-a6e9-c4e6a9d96289",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQCFwSXBc0Z4TjveRcJJxcTRc3mvEephch+rPrBrmYgYZQIgdGQgDZa0ZO3K0IjDO3KxobKZ6GGXrskM99ELh9dF6Eg=",
+        "timestamp": "2026-02-20T23:20:21.667Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: Ask ACT|Ask AI Guide|Society Guide|ACT Chat",
+  "outputs_hashes": [
+    "sha256:066e5bd73d495f9d4754427a22cf38f3ca884d63eabaf3c5922f10206044612a"
+  ]
+}

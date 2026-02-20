@@ -1,0 +1,45 @@
+{
+  "bundle_id": "9b6e9757-3dfe-4561-83f1-33475ce1ccaa",
+  "timestamp": "2026-02-20T23:18:27.177Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "guided.*experiment|Guided Experiment|experiment.*guided",
+    "parameters": {},
+    "result_hash": "sha256:ddb8b13c7b50d7b5856c34fd44557cb744e38bdb0db9117de60b87d59f3936d4",
+    "timestamp": "2026-02-20T23:18:27.177Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "04ca9317-9390-4daa-9969-14ceefed1bcb",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQDZC7yG7g56piwhzYVPBkvGmlkmeYiukOPc4GTGkxOX/AIgPyD0MGBHiJ4WE9T5lmnJoKNaObNlolXYSSvLTKwK5ng=",
+        "timestamp": "2026-02-20T23:18:27.179Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: guided.*experiment|Guided Experiment|experiment.*guided",
+  "outputs_hashes": [
+    "sha256:ddb8b13c7b50d7b5856c34fd44557cb744e38bdb0db9117de60b87d59f3936d4"
+  ]
+}

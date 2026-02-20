@@ -1,0 +1,45 @@
+{
+  "bundle_id": "4429b6f9-68c1-4741-ab4f-8e63178269ac",
+  "timestamp": "2026-02-20T23:14:41.452Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "karma penalty",
+    "parameters": {},
+    "result_hash": "sha256:54e4808eb2b33594e3e95609afe2c49ab8aac5c959eb4ac21ad6257134a3f2e5",
+    "timestamp": "2026-02-20T23:14:41.452Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "a111936d-c9b9-4b39-92ed-1c74e445847c",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIHJ7f2E+e0oowo9IIRNzsLK4cGBeF73aNBZvxNDwYoyaAiBF6Y2uIfyUdpV8srASp8QHAlhCnnqF2xRhYyntCkZ9pQ==",
+        "timestamp": "2026-02-20T23:14:41.454Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: karma penalty",
+  "outputs_hashes": [
+    "sha256:54e4808eb2b33594e3e95609afe2c49ab8aac5c959eb4ac21ad6257134a3f2e5"
+  ]
+}

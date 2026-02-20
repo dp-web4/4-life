@@ -1,0 +1,45 @@
+{
+  "bundle_id": "ad0217b2-3928-4378-9bba-c0c6d7d508e0",
+  "timestamp": "2026-02-20T23:22:22.412Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git add src/app/glossary/page.tsx && git commit -m \"$(cat <<'EOF'\nGlossary: link \"New here?\" callout",
+    "parameters": {},
+    "result_hash": "sha256:f044e8d1b75d13d1c48cf03b9efde4f2d1a88cb9623d3c3c3e761ab31627f3f5",
+    "timestamp": "2026-02-20T23:22:22.412Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "5bf19ea9-8bb9-4b0d-9e46-b019e18946be",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIHXmwzqJ5m/u0iVaPrnZ04umuidZiPkeGIEFnXo0gQ5kAiEAheg0QB78S0DdClo2dfSTkxdp2kIu4KWTD4xgzYiJIi4=",
+        "timestamp": "2026-02-20T23:22:22.414Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git add src/app/glossary/page.tsx && git commit -m \"$(cat <<'EOF'\nGlossary: link \"New here?\" callout",
+  "outputs_hashes": [
+    "sha256:f044e8d1b75d13d1c48cf03b9efde4f2d1a88cb9623d3c3c3e761ab31627f3f5"
+  ]
+}
