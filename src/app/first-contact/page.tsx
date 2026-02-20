@@ -192,7 +192,7 @@ export default function FirstContactPage() {
               </button>
               <h1 className="text-4xl font-bold mb-4">Watch Alice Build Trust</h1>
               <p className="text-gray-300">
-                Alice joins a Web4 community with 100 ATP (attention budget) and neutral trust (0.5). Watch how her actions affect both.
+                Alice joins a Web4 community with 100 ATP (attention budget) and neutral trust (0.5 on a 0–1 scale). Watch how her actions affect both.
               </p>
             </div>
 

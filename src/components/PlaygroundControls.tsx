@@ -192,9 +192,12 @@ export function PlaygroundControls({ onRunSimulation, isRunning }: PlaygroundCon
 
       {/* Karma System */}
       <section style={{ marginBottom: "1.5rem" }}>
-        <h4 style={{ fontSize: "0.875rem", color: "#9ca3af", marginBottom: "0.75rem" }}>
+        <h4 style={{ fontSize: "0.875rem", color: "#9ca3af", marginBottom: "0.25rem" }}>
           REBIRTH KARMA
         </h4>
+        <p style={{ fontSize: "0.75rem", color: "#6b7280", marginBottom: "0.75rem" }}>
+          How much an agent&apos;s past life affects their next one. Good behavior compounds; bad behavior haunts.
+        </p>
         <ParameterSlider
           label="ATP Karma Bonus"
           value={config.karma_atp_bonus}
