@@ -189,25 +189,17 @@ export default function HowItWorksPage() {
               <p className="text-gray-300 leading-relaxed">
                 Your trust tensor starts at neutral (0.5 in all dimensions):
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mt-3">
+              <div className="grid grid-cols-3 gap-2 mt-3">
                 <div className="p-2 bg-gray-800 rounded text-center">
-                  <div className="text-xs text-gray-400">Competence</div>
+                  <div className="text-xs text-gray-400">Talent</div>
                   <div className="text-sm text-gray-300">0.5</div>
                 </div>
                 <div className="p-2 bg-gray-800 rounded text-center">
-                  <div className="text-xs text-gray-400">Reliability</div>
+                  <div className="text-xs text-gray-400">Training</div>
                   <div className="text-sm text-gray-300">0.5</div>
                 </div>
                 <div className="p-2 bg-gray-800 rounded text-center">
-                  <div className="text-xs text-gray-400">Integrity</div>
-                  <div className="text-sm text-gray-300">0.5</div>
-                </div>
-                <div className="p-2 bg-gray-800 rounded text-center">
-                  <div className="text-xs text-gray-400">Alignment</div>
-                  <div className="text-sm text-gray-300">0.5</div>
-                </div>
-                <div className="p-2 bg-gray-800 rounded text-center">
-                  <div className="text-xs text-gray-400">Transparency</div>
+                  <div className="text-xs text-gray-400">Temperament</div>
                   <div className="text-sm text-gray-300">0.5</div>
                 </div>
               </div>
@@ -311,26 +303,18 @@ export default function HowItWorksPage() {
                   <div className="text-sm text-gray-400 mb-2">
                     Example: Delivered high-quality work on time
                   </div>
-                  <div className="grid grid-cols-5 gap-2 text-xs text-center">
+                  <div className="grid grid-cols-3 gap-2 text-xs text-center">
                     <div>
-                      <div className="text-gray-500">Competence</div>
+                      <div className="text-gray-500">Talent</div>
                       <div className="text-green-400">+0.15</div>
                     </div>
                     <div>
-                      <div className="text-gray-500">Reliability</div>
+                      <div className="text-gray-500">Training</div>
                       <div className="text-green-400">+0.20</div>
                     </div>
                     <div>
-                      <div className="text-gray-500">Integrity</div>
+                      <div className="text-gray-500">Temperament</div>
                       <div className="text-green-400">+0.10</div>
-                    </div>
-                    <div>
-                      <div className="text-gray-500">Alignment</div>
-                      <div className="text-yellow-400">+0.05</div>
-                    </div>
-                    <div>
-                      <div className="text-gray-500">Transparency</div>
-                      <div className="text-yellow-400">+0.05</div>
                     </div>
                   </div>
                 </div>
@@ -338,25 +322,17 @@ export default function HowItWorksPage() {
                   <div className="text-sm text-gray-400 mb-2">
                     Example: Missed deadline without warning
                   </div>
-                  <div className="grid grid-cols-5 gap-2 text-xs text-center">
+                  <div className="grid grid-cols-3 gap-2 text-xs text-center">
                     <div>
-                      <div className="text-gray-500">Competence</div>
+                      <div className="text-gray-500">Talent</div>
                       <div className="text-red-400">-0.05</div>
                     </div>
                     <div>
-                      <div className="text-gray-500">Reliability</div>
+                      <div className="text-gray-500">Training</div>
                       <div className="text-red-400">-0.25</div>
                     </div>
                     <div>
-                      <div className="text-gray-500">Integrity</div>
-                      <div className="text-red-400">-0.15</div>
-                    </div>
-                    <div>
-                      <div className="text-gray-500">Alignment</div>
-                      <div className="text-gray-500">0.00</div>
-                    </div>
-                    <div>
-                      <div className="text-gray-500">Transparency</div>
+                      <div className="text-gray-500">Temperament</div>
                       <div className="text-red-400">-0.20</div>
                     </div>
                   </div>
