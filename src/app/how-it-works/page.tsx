@@ -535,11 +535,11 @@ export default function HowItWorksPage() {
 
             <div>
               <h4 className="text-lg font-semibold text-gray-200 mb-2">
-                Learning Across Lives (EP)
+                Learning Across Lives
               </h4>
               <p className="text-gray-300 leading-relaxed">
-                Advanced agents use <strong>Epistemic Proprioception (EP)</strong>{" "}
-                to learn patterns across lives:
+                Advanced agents develop <strong>cross-life pattern learning</strong>{" "}
+                — recognizing what worked and what didn't across previous lives:
               </p>
               <ul className="list-disc list-inside ml-4 mt-2 space-y-1 text-gray-400">
                 <li>"High-value contributions earn more ATP than they cost"</li>
