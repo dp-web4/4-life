@@ -364,7 +364,7 @@ export class StoryGenerator {
         return "Cross-life learning: the agent internalizes patterns from previous lives, gradually improving decision-making through experience.";
 
       case EventType.ATP_EXHAUSTION:
-        return "ATP (Allocation Transfer Packet) represents metabolic budget. All actions cost ATP. Gain ATP through valuable contribution (ADP - Allocation Discharge Packet).";
+        return "ATP is the attention budget — every action costs ATP. Earn it back through valuable contributions (which generate ADP receipts).";
 
       case EventType.STRATEGY_SHIFT:
         return `Strategy shift from ${event.data.from_action} to ${event.data.to_action} at ATP=${Math.round(event.data.atp_at_shift)}, T3=${event.data.trust_at_shift?.toFixed(3)}`;
