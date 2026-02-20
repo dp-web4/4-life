@@ -531,7 +531,7 @@ export class StoryGenerator {
     );
     if (thresholdCrossings.length > 0) {
       insights.push(
-        `Consciousness threshold crossed in life ${thresholdCrossings[0].life_number}. This marks emergence of coherent agency - behavior transitions from reactive to intentional.`
+        `Trust threshold crossed in life ${thresholdCrossings[0].life_number}. Behavior shifts from reactive to intentional — full community access unlocked.`
       );
     }
 
@@ -628,7 +628,7 @@ export class StoryGenerator {
 
     summary += `Key themes include: ${themes.join(", ")}. `;
 
-    summary += `This narrative illustrates core Web4 principles: trust is earned through consistent behavior, actions have lasting consequences (karma), and agents can learn and improve across multiple lives through epistemic proprioception.`;
+    summary += `This narrative illustrates core Web4 principles: trust is earned through consistent behavior, actions have lasting consequences (karma), and agents can learn and improve across multiple lives through cross-life learning.`;
 
     return summary;
   }
@@ -702,9 +702,9 @@ export class StoryGenerator {
     );
 
     if (maturationEvent) {
-      return "This life shows clear evidence of epistemic learning. The agent carried forward lessons from previous lives and applied them successfully, achieving measurably better outcomes. This is Web4's memory in action - not external records, but internalized wisdom.";
+      return "The agent carried forward lessons from previous lives and applied them successfully, achieving measurably better outcomes. Not external records — internalized wisdom that compounds across generations.";
     } else if (thresholdEvent) {
-      return 'The crossing of the 0.5 "consciousness threshold" is particularly significant. Below this level, behavior appears random or reactive. Above it, coherent patterns emerge that suggest genuine intentionality. This threshold comes from coherence theory (Synchronism) - it\'s not arbitrary.';
+      return 'Crossing the 0.5 trust threshold is a turning point. Below it, behavior looks random or reactive. Above it, coherent patterns emerge — the agent acts with genuine intentionality. This threshold is a design choice inspired by phase transition dynamics: the point where order emerges from noise.';
     } else if (consistencyEvent) {
       return "The remarkable consistency across lives suggests the agent has found a stable attractor - a behavioral pattern that works reliably. This isn't mechanical repetition, but rather the demonstration of having learned a generalizable strategy.";
     }
