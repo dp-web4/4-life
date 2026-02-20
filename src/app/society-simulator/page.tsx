@@ -633,7 +633,7 @@ function AgentInspector({ agent, allAgents }: {
 
       <div className="grid grid-cols-3 gap-2 mb-3 text-center">
         <div className="bg-gray-900/50 rounded p-2">
-          <div className="text-xs text-gray-500">ATP</div>
+          <div className="text-xs text-gray-500">Energy</div>
           <div className={`font-mono font-bold ${agent.atp < 20 ? 'text-red-400' : 'text-white'}`}>
             {Math.round(agent.atp)}
           </div>
@@ -1596,7 +1596,7 @@ function CharacterFocusModal({
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700 text-center">
-                <div className="text-xs text-gray-400 mb-1">Final ATP</div>
+                <div className="text-xs text-gray-400 mb-1">Final Energy</div>
                 <div className={`text-2xl font-bold ${journey.finalStats.atp > 100 ? 'text-green-400' : journey.finalStats.atp > 50 ? 'text-yellow-400' : 'text-red-400'}`}>
                   {Math.round(journey.finalStats.atp)}
                 </div>
