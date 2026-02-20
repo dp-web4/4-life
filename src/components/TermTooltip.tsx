@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { getTerm, type TermDefinition } from "@/lib/terms";
+import { getTerm } from "@/lib/terms";
 
 interface TermTooltipProps {
   /** The term key (e.g., "LCT", "ATP", "T3") */
@@ -54,6 +54,27 @@ export default function TermTooltip({
     }
   }, [isOpen]);
 
+  // Close tooltip when clicking outside (for mobile tap-to-toggle)
+  const handleClickOutside = useCallback((e: MouseEvent | TouchEvent) => {
+    if (
+      triggerRef.current &&
+      !triggerRef.current.contains(e.target as Node)
+    ) {
+      setIsOpen(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("touchstart", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener("touchstart", handleClickOutside);
+      };
+    }
+  }, [isOpen, handleClickOutside]);
+
   if (!definition) {
     // If no definition found, just render the children without tooltip
     return <span className={className}>{children || term}</span>;
@@ -74,6 +95,7 @@ export default function TermTooltip({
       className={`relative inline-block ${className}`}
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
+      onClick={() => setIsOpen((prev) => !prev)}
       onFocus={() => setIsOpen(true)}
       onBlur={() => setIsOpen(false)}
     >
