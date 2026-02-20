@@ -132,12 +132,12 @@ export function detectMoments(rawData: any, source: SimulationSource): Moment[] 
         });
       }
 
-      // Consciousness threshold crossing (trust crosses 0.5)
+      // Trust threshold crossing (trust crosses 0.5)
       if (prev < 0.5 && curr >= 0.5) {
         moments.push({
           id: `${source.id}-threshold-${lifeNumber}-${j}`,
-          title: `Consciousness Threshold Crossed in Life ${lifeNumber}`,
-          narrative: `Trust reaches ${curr.toFixed(3)}, crossing the 0.5 consciousness threshold from coherence theory. Below this, behavior appears random. Above it, the agent's actions become coherent enough to be recognized as genuinely intentional. This is where true agency begins.`,
+          title: `Trust Threshold Crossed in Life ${lifeNumber}`,
+          narrative: `Trust reaches ${curr.toFixed(3)}, crossing the 0.5 trust threshold. Below this, behavior appears random. Above it, the agent's actions become coherent enough to be recognized as genuinely intentional. This is where true agency begins.`,
           significance: 'The 0.5 threshold comes from Synchronism research — it marks the transition from reactive to intentional behavior.',
           category: 'emergence',
           severity: 'critical',

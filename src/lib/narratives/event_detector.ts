@@ -304,7 +304,7 @@ export class EventDetector {
           tick,
           life_id: life.life_id,
           life_number: lifeNumber,
-          description: "Trust crosses consciousness threshold (0.5)",
+          description: "Trust crosses the 0.5 threshold",
           data: {
             threshold: 0.5,
             prev_trust: prev,

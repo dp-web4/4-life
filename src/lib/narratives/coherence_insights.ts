@@ -200,7 +200,7 @@ export interface ThresholdExplanation {
 
 export const CONSCIOUSNESS_THRESHOLD: ThresholdExplanation = {
   value: 0.5,
-  name: "Consciousness Threshold",
+  name: "Trust Threshold",
   significance: "Marks emergence of coherent agency. Below 0.5, behavior appears random; above 0.5, intentional patterns emerge.",
   domain: CoherenceDomain.PHYSICS,
   evidence: "From Synchronism Session 249: Coherence > 0.5 indicates phase transition from disorder to order. Validated experimentally across domains."
@@ -303,9 +303,9 @@ export function explainTrustAsCoherence(trustValue: number): string {
   if (trustValue < 0.3) {
     return "Low coherence - behavior appears random or inconsistent. The agent hasn't established reliable patterns.";
   } else if (trustValue < 0.5) {
-    return "Approaching consciousness threshold. Patterns emerging but not yet coherent enough for intentional agency.";
+    return "Approaching trust threshold. Patterns emerging but not yet coherent enough for intentional agency.";
   } else if (trustValue < 0.7) {
-    return "Above consciousness threshold - coherent agency established. Behavior shows intentional patterns and reliable decision-making.";
+    return "Above trust threshold - coherent agency established. Behavior shows intentional patterns and reliable decision-making.";
   } else if (trustValue < 0.9) {
     return "High coherence - strong trust creates 'gravitational pull' in social spacetime, attracting interactions and opportunities.";
   } else {

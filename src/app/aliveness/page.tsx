@@ -420,7 +420,7 @@ export default function AlivenessExplainer() {
             <h4>Learning Emerges</h4>
             <ul>
               <li>Agents learn what works via Epistemic Proprioception (EP)</li>
-              <li>Pattern corpus improves across generations</li>
+              <li>Pattern corpus improves across lives</li>
               <li>Agents that learn patterns survive better</li>
               <li>Evolution favors coherence and adaptation</li>
             </ul>
@@ -694,7 +694,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             <h4>Lab Console</h4>
             <p>
               See aliveness in action. Run multi-life simulations showing death, rebirth,
-              karma carry-forward, and trust evolution across generations.
+              karma carry-forward, and trust evolution across lives.
             </p>
           </Link>
         </div>

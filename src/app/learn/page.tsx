@@ -150,7 +150,7 @@ export default function LearnJourney() {
           id: "ep",
           title: "Decision Evolution: Learning Across Lives",
           teaser:
-            "Epistemic Proprioception (EP) means learning what you know. Agents discover which decisions work, carry patterns forward through karma, and improve across generations.",
+            "Epistemic Proprioception (EP) means learning what you know. Agents discover which decisions work, carry patterns forward through karma, and improve across lives.",
           why: "EP reveals how Web4 societies get smarter over time without centralized training.",
           link: "/decision-evolution",
           duration: "11 min read",
@@ -615,7 +615,7 @@ export default function LearnJourney() {
             <>
               <p>
                 <strong>After completing the Intermediate path:</strong> You'll understand how
-                trust networks form, how markets self-regulate, and how agents learn across generations
+                trust networks form, how markets self-regulate, and how agents learn across lives
                 through epistemic proprioception.
               </p>
               <p style={{ marginTop: "0.75rem" }}>

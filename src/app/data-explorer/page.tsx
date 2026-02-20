@@ -374,7 +374,7 @@ function TrustTrajectoryChart({ trajectories, height = 140 }: { trajectories: nu
           );
         })}
 
-        {/* Consciousness threshold */}
+        {/* Trust threshold */}
         {min < 0.5 && max > 0.4 && (
           <>
             <line
@@ -392,7 +392,7 @@ function TrustTrajectoryChart({ trajectories, height = 140 }: { trajectories: nu
               fill="#f59e0b"
               fontSize="7"
             >
-              consciousness threshold (0.5)
+              trust threshold (0.5)
             </text>
           </>
         )}
@@ -928,7 +928,7 @@ export default function DataExplorerPage() {
           <div className="space-y-3 text-sm text-gray-400">
             <p>
               Each dataset captures a different simulation scenario. <strong className="text-white">Trust</strong> measures
-              how the society perceives an agent (0-1 scale, 0.5 = consciousness threshold).
+              how the society perceives an agent (0-1 scale, 0.5 = trust threshold).
               <strong className="text-white"> ATP</strong> is attention tokens — the metabolic budget for actions.
             </p>
             <p>

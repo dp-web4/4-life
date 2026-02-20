@@ -271,7 +271,7 @@ function DecisionPanel({
       </div>
 
       <p className="text-center text-gray-500 text-sm mt-4">
-        Epoch {context.epoch + 1} • Round {context.round + 1}
+        Round {context.epoch + 1} • Turn {context.round + 1}
       </p>
     </div>
   );
@@ -490,7 +490,7 @@ function PlayerStatusBar({
           <div className="text-center">
             <div className="text-sm text-gray-400">Progress</div>
             <div className="text-white font-bold">
-              Epoch {epoch + 1}/{totalEpochs}
+              Round {epoch + 1}/{totalEpochs}
             </div>
           </div>
         </div>

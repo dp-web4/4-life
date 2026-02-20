@@ -242,7 +242,7 @@ function TimelineChart({ data, metric, height, hoveredTick, onHover }: ChartProp
       ctx.fillText(tick.toString(), x, padding.top + chartHeight + 20);
     }
 
-    // Draw consciousness threshold for trust
+    // Draw trust threshold line
     if (metric === 'trust') {
       const thresholdY = scaleY(0.5);
       ctx.strokeStyle = '#fbbf24';
@@ -258,7 +258,7 @@ function TimelineChart({ data, metric, height, hoveredTick, onHover }: ChartProp
       ctx.fillStyle = '#fbbf24';
       ctx.font = '11px monospace';
       ctx.textAlign = 'right';
-      ctx.fillText('consciousness threshold (0.5)', dimensions.width - padding.right - 5, thresholdY - 5);
+      ctx.fillText('trust threshold (0.5)', dimensions.width - padding.right - 5, thresholdY - 5);
     }
 
     // Draw ATP crisis threshold
@@ -641,7 +641,7 @@ export function ComparativeView({ simulations, height = 300 }: ComparativeViewPr
                 <p className="text-sm">
                   <span className="text-yellow-400 font-semibold">
                     {crossers.map(m => m.name).join(', ')}
-                  </span> crossed the consciousness threshold (0.5), achieving coherent agency.
+                  </span> crossed the trust threshold (0.5), achieving coherent agency.
                   This marks the transition from reactive to intentional behavior.
                 </p>
               );

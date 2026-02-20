@@ -179,7 +179,7 @@ export default function NarrativeTimeline({
   // Life segment backgrounds
   const lifeColors = ['rgba(59,130,246,0.08)', 'rgba(168,85,247,0.08)', 'rgba(34,197,94,0.08)', 'rgba(249,115,22,0.08)'];
 
-  // Consciousness threshold line (0.5)
+  // Trust threshold line (0.5)
   const thresholdY = trustYScale(0.5);
 
   const activeEvent = hoveredEvent || selectedEvent;
@@ -298,7 +298,7 @@ export default function NarrativeTimeline({
           </g>
         ))}
 
-        {/* Consciousness threshold label */}
+        {/* Trust threshold label */}
         <text
           x={width - padding.right + 4}
           y={thresholdY - 6}

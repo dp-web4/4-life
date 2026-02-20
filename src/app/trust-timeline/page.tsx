@@ -203,7 +203,7 @@ function TimelineChart({
         </g>
       ))}
 
-      {/* Consciousness threshold for trust */}
+      {/* Trust threshold line */}
       {metric === 'trust' && showThreshold && minVal < 0.5 && maxVal > 0.4 && (
         <>
           <line
@@ -223,7 +223,7 @@ function TimelineChart({
             fontSize="8"
             opacity="0.8"
           >
-            consciousness threshold (0.5)
+            trust threshold (0.5)
           </text>
         </>
       )}

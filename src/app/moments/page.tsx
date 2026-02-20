@@ -180,8 +180,8 @@ function detectMoments(rawData: any, source: SimulationSource): Moment[] {
       if (prev < 0.5 && curr >= 0.5) {
         moments.push({
           id: `${source.id}-threshold-${lifeNumber}-${j}`,
-          title: `Consciousness Threshold Crossed in Life ${lifeNumber}`,
-          narrative: `Trust reaches ${curr.toFixed(3)}, crossing the 0.5 consciousness threshold from coherence theory. Below this, behavior appears random. Above it, the agent's actions become coherent enough to be recognized as genuinely intentional. This is where true agency begins.`,
+          title: `Trust Threshold Crossed in Life ${lifeNumber}`,
+          narrative: `Trust reaches ${curr.toFixed(3)}, crossing the 0.5 trust threshold. Below this, behavior appears random. Above it, the agent's actions become coherent enough to be recognized as genuinely intentional. This is where true agency begins.`,
           significance: 'The 0.5 threshold comes from Synchronism research — it marks the transition from reactive to intentional behavior.',
           category: 'emergence',
           severity: 'critical',
@@ -328,7 +328,7 @@ function detectNetworkMoments(rawData: any, source: SimulationSource): Moment[] 
 function rankMoments(moments: Moment[]): Moment[] {
   const severityScore: Record<string, number> = { critical: 3, high: 2, medium: 1 };
   const categoryBonus: Record<string, number> = {
-    emergence: 2,  // Consciousness threshold, coalition formation
+    emergence: 2,  // Trust threshold, coalition formation
     karma: 1.5,    // Cross-life effects
     learning: 1.5, // Maturation
     crisis: 1,     // ATP crises, deaths
@@ -650,12 +650,12 @@ export default function MomentsGalleryPage() {
           <div className="space-y-2 text-sm text-gray-400">
             <p>
               Moments are algorithmically extracted from raw simulation data by detecting significant
-              events: trust spikes and collapses, consciousness threshold crossings, karma manifesting
+              events: trust spikes and collapses, trust threshold crossings, karma manifesting
               across lives, ATP crises, maturation breakthroughs, and emergent coalition formation.
             </p>
             <p>
               Each moment is ranked by severity and category importance. <strong className="text-white">Emergence</strong> events
-              (consciousness thresholds, coalition formation) rank highest because they demonstrate
+              (trust thresholds, coalition formation) rank highest because they demonstrate
               the system's core thesis: complex social behaviors emerge from simple trust rules.
             </p>
           </div>
