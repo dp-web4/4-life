@@ -61,7 +61,7 @@ export default function CoherenceIndexPage() {
       temporal: 0.5,
       relational: 1.0,
       explanation:
-        "Temporal coherence suffers from broken continuity chain and unusual activity pattern. Where was the device? Why no grounding?",
+        "Temporal coherence suffers from broken continuity chain and unusual activity pattern. Where was the device? Why no periodic check-in (grounding)?",
     },
     relationship_conflict: {
       name: "🔗 Relationship Conflict",
@@ -898,7 +898,7 @@ export default function CoherenceIndexPage() {
                 simultaneously - prohibitively expensive.
               </p>
               <p className="text-xs text-gray-500">
-                Example: Sybil attack on voting system. Attacker creates 50
+                Example: Fake-identity attack on a voting system. Attacker creates 50
                 identities from same device. Spatial + capability coherence fails
                 for 49 of them (all same location, same hardware fingerprint). CI
                 drops below the trust threshold (0.5), identities rejected.
@@ -1143,9 +1143,9 @@ lenient_society = {
                 3. Grounded in Physics
               </h3>
               <p className="text-gray-300">
-                CI isn't arbitrary - it's grounded in coherence physics spanning 9
-                domains from quantum to cosmological scales. Coherent systems
-                follow smooth geodesics; incoherent systems exhibit discontinuities.
+                CI isn't arbitrary — it's designed so that faking consistent behavior
+                is always more expensive than genuinely having it. The math behind it
+                draws from how coherence works in physics and biology.
               </p>
             </div>
 

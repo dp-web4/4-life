@@ -153,7 +153,7 @@ export default function LCTExplainerPage() {
             Linked Context Tokens (LCT)
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Web4's verifiable presence primitive - hardware-bound, witnessed, and resilient through cross-linking
+            Web4&apos;s verifiable identity layer — hardware-bound, witnessed, and resistant to faking
           </p>
         </div>
 

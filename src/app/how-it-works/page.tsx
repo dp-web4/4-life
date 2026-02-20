@@ -406,7 +406,7 @@ export default function HowItWorksPage() {
                 <li>
                   Total ATP earned across life
                 </li>
-                <li>Final T3 trust tensor (all 5 dimensions)</li>
+                <li>Final T3 trust tensor (Talent, Training, Temperament)</li>
                 <li>
                   Actions taken and their outcomes
                 </li>

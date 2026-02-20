@@ -102,13 +102,13 @@ export default function AlivenessExplainer() {
     <>
       <Breadcrumbs currentPath="/aliveness" />
       <section>
-        <div className="hero-eyebrow">Foundational Concept #6</div>
+        <div className="hero-eyebrow">Core Mechanism</div>
         <h1 className="hero-title">Aliveness: When Existence is Measurable</h1>
         <p className="hero-subtitle">
           In Web4, "alive" isn't metaphorical—it's a rigorous condition defined by three
           verifiable criteria. You&apos;re alive when you have energy (ATP &gt; 0),
           demonstrate coherent agency (T3 &gt; 0.5), and maintain verifiable continuity (CI coherent).
-          Death is real. Rebirth requires trust. This is Conway's Life at society-scale.
+          Death is real. Rebirth requires trust. Complex societies emerge from these simple rules.
         </p>
       </section>
 
@@ -741,8 +741,8 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
               coherence verification. No central authority needed.
             </li>
             <li>
-              <strong>Conway's Life at scale:</strong> Aliveness is the cellular automaton rule.
-              Trust-native societies emerge from these simple, rigorous criteria.
+              <strong>Emergence from simple rules:</strong> Complex trust-native societies
+              emerge from these simple, rigorous criteria — no central designer needed.
             </li>
           </ol>
         </div>

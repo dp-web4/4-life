@@ -507,7 +507,7 @@ export default function TrustTensorPage() {
         </h2>
         <div className="bg-gradient-to-br from-purple-950/30 to-purple-900/20 border border-purple-800/30 rounded-xl p-8">
           <p className="text-gray-300 leading-relaxed mb-4">
-            The three root dimensions (Talent, Training, Temperament) can be refined fractally. Each
+            The three root dimensions (Talent, Training, Temperament) can be broken down into nested layers. Each
             domain can define sub-dimensions without changing the core framework:
           </p>
 

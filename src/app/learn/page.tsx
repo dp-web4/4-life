@@ -165,8 +165,8 @@ export default function LearnJourney() {
           id: "ep",
           title: "Decision Evolution: Learning Across Lives",
           teaser:
-            "Epistemic Proprioception (EP) means learning what you know. Agents discover which decisions work, carry patterns forward through karma, and improve across lives.",
-          why: "EP reveals how Web4 societies get smarter over time without centralized training.",
+            "Agents learn which decisions work, carry patterns forward through karma, and improve across lives. Cross-life learning is how societies get smarter without anyone designing them to.",
+          why: "This reveals how Web4 societies evolve over time without centralized training.",
           link: "/decision-evolution",
           duration: "11 min read",
         },
