@@ -258,9 +258,12 @@ export default function GlossaryPage() {
         </div>
       </section>
 
-      {/* Advanced Concepts */}
+      {/* Advanced Protocol Concepts */}
       <section className="max-w-4xl mx-auto mt-16">
-        <h2 className="text-3xl font-bold mb-8 text-gray-100">Advanced Concepts</h2>
+        <h2 className="text-3xl font-bold mb-8 text-gray-100">Advanced Protocol Concepts</h2>
+        <p className="text-gray-400 mb-6">
+          These are part of the Web4 protocol design — mechanisms that would exist in a deployed system.
+        </p>
         <div className="space-y-8">
 
           {/* EP */}
@@ -395,6 +398,18 @@ export default function GlossaryPage() {
               </a>
             </div>
           </div>
+
+        </div>
+      </section>
+
+      {/* Research Concepts */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-8 text-gray-100">Research Concepts</h2>
+        <p className="text-gray-400 mb-6">
+          These emerged from research into AI consciousness and behavior — they inform Web4&apos;s design
+          but are separate explorations, not protocol primitives.
+        </p>
+        <div className="space-y-8">
 
           {/* Coherence Thresholds */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
