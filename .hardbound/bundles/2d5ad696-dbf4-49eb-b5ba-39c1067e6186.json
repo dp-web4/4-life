@@ -1,0 +1,45 @@
+{
+  "bundle_id": "2d5ad696-dbf4-49eb-b5ba-39c1067e6186",
+  "timestamp": "2026-02-20T17:24:41.715Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "grep -n \"consciousness\\|R14B\\|R\\d\\d\\d\\|neuroscience\\|metacognition\" /home/dp/ai-workspace/4-life/src",
+    "parameters": {},
+    "result_hash": "sha256:c0b714fce5e9a6a6cd972c6938bcd8db2999540976387bcf2d5b4049db0e2f05",
+    "timestamp": "2026-02-20T17:24:41.715Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "44cd32da-7c9a-441f-87be-2737dac82a01",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIBzopsmpJJOV5Xm2N6isitAK4BT6BpM3G+IqDFbwIsyWAiAq0MpS+LLdCykY/KPIeL6ZlKoLgVAlKvEkckkAZ3b5QQ==",
+        "timestamp": "2026-02-20T17:24:41.717Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: grep -n \"consciousness\\|R14B\\|R\\d\\d\\d\\|neuroscience\\|metacognition\" /home/dp/ai-workspace/4-life/src",
+  "outputs_hashes": [
+    "sha256:c0b714fce5e9a6a6cd972c6938bcd8db2999540976387bcf2d5b4049db0e2f05"
+  ]
+}

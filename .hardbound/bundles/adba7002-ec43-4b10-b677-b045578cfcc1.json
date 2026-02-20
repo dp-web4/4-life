@@ -1,0 +1,45 @@
+{
+  "bundle_id": "adba7002-ec43-4b10-b677-b045578cfcc1",
+  "timestamp": "2026-02-20T17:30:05.173Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "Every action costs ATP",
+    "parameters": {},
+    "result_hash": "sha256:16e3bf636f74a347b11a7e6e9b88b864ea2ffcd2989471b28788bc0ea5b49fa2",
+    "timestamp": "2026-02-20T17:30:05.173Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "bc2ed330-e56b-4322-8a93-bc62e73623ce",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIAVGkzkW3WCym6xSQHQqTlPM03l2HQAePM2SsC6MZXvWAiBSeaOKty4eo0QAMUAOuCkWp868Bpde93jKy4deUmxyzg==",
+        "timestamp": "2026-02-20T17:30:05.175Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: Every action costs ATP",
+  "outputs_hashes": [
+    "sha256:16e3bf636f74a347b11a7e6e9b88b864ea2ffcd2989471b28788bc0ea5b49fa2"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "bundle_id": "f7b4a5d1-6e08-4009-9919-9aa1a62a9743",
+  "timestamp": "2026-02-20T17:19:08.991Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "attention|budget|energy|Allocation Transfer",
+    "parameters": {},
+    "result_hash": "sha256:adb495334e8d5b800f29ee3e0a50178fbae6c66236cd235e2e41c24c2404316a",
+    "timestamp": "2026-02-20T17:19:08.991Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "c68267c3-282d-48a3-beb8-e78b2fd440f2",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQDV0f2l1h6qyLMia0hsxN106BdnZXmPtXgrndP8CXW3rwIhANr3oD/kwGdz6aauoBwV37W49kXjGKM7pdhmBlPgRd+c",
+        "timestamp": "2026-02-20T17:19:08.993Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: attention|budget|energy|Allocation Transfer",
+  "outputs_hashes": [
+    "sha256:adb495334e8d5b800f29ee3e0a50178fbae6c66236cd235e2e41c24c2404316a"
+  ]
+}

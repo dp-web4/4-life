@@ -1,0 +1,45 @@
+{
+  "bundle_id": "2405f557-fa58-4ba7-bdc3-cd5ca01fb3af",
+  "timestamp": "2026-02-20T17:33:17.024Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "/home/dp/ai-workspace/4-life/src/app/karma-journey/page.tsx",
+    "parameters": {},
+    "result_hash": "sha256:8914af4d9541b21fe660cb4b73d3b7b70bb9c6de57ec52eb531636e840044fa4",
+    "timestamp": "2026-02-20T17:33:17.024Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "a6aabc81-10e6-416f-bb8c-6813b01de712",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQC+XSXjdUVggXR8qn6bNGGYXucrlkGnrOL1LLmreMjg2wIhAJEv2saZJsen7bOOAryLnp8/RC3+dZC/8831pFc1hGt1",
+        "timestamp": "2026-02-20T17:33:17.025Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Edit: /home/dp/ai-workspace/4-life/src/app/karma-journey/page.tsx",
+  "outputs_hashes": [
+    "sha256:8914af4d9541b21fe660cb4b73d3b7b70bb9c6de57ec52eb531636e840044fa4"
+  ]
+}

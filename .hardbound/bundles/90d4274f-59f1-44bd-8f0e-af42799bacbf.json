@@ -1,0 +1,45 @@
+{
+  "bundle_id": "90d4274f-59f1-44bd-8f0e-af42799bacbf",
+  "timestamp": "2026-02-20T17:27:19.382Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git add src/app/learn/page.tsx src/app/how-it-works/page.tsx src/app/page.tsx src/app/explore-guide/",
+    "parameters": {},
+    "result_hash": "sha256:aaf8a3e6b7505fef892b07379a1bb73c96b269ad536d2fb050267ad5378dc510",
+    "timestamp": "2026-02-20T17:27:19.382Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "ae22b0f5-91e2-405a-9ff4-471d9871e738",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIAlpj6Xspnq7PZSoGBAfMYgMGS7qgL7Gjfpl/NAWbxqiAiB8Rm/BUEjBFtcaHP0JwpQqFscZTb3qzP2PbdS4Saw36A==",
+        "timestamp": "2026-02-20T17:27:19.383Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git add src/app/learn/page.tsx src/app/how-it-works/page.tsx src/app/page.tsx src/app/explore-guide/",
+  "outputs_hashes": [
+    "sha256:aaf8a3e6b7505fef892b07379a1bb73c96b269ad536d2fb050267ad5378dc510"
+  ]
+}
