@@ -713,7 +713,7 @@ export default function HowItWorksPage() {
               </h3>
               <p className="text-gray-400 text-sm">
                 Watch full epistemic learning across multiple lives. Pattern
-                corpus builds with each generation.
+                corpus builds with each life.
               </p>
             </div>
             <div className="p-4 bg-gray-800 rounded-lg">

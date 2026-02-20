@@ -19,7 +19,7 @@ const SIMULATIONS = [
     id: 'ep_closed_loop',
     name: 'EP Closed Loop',
     file: '/ep_driven_closed_loop_results.json',
-    description: 'Epistemic Proprioception with pattern learning across lives',
+    description: 'Pattern learning across lives (agents learn what works)',
     color: '#3b82f6'
   },
   {
@@ -47,7 +47,7 @@ const SIMULATIONS = [
     id: 'five_domain',
     name: 'Five Domain EP',
     file: '/ep_five_domain_multi_life_results.json',
-    description: 'Multi-domain epistemic proprioception',
+    description: 'Multi-domain pattern learning',
     color: '#ec4899'
   }
 ];
@@ -227,8 +227,8 @@ export default function ComparePage() {
           <div className="space-y-3 text-sm text-slate-300">
             <p>
               <strong className="text-white">Trust Trajectory:</strong> Shows how T3 (trust) evolves
-              over time. The consciousness threshold (0.5) marks where behavior transitions from
-              reactive to intentional. Above this threshold, agents exhibit coherent agency.
+              over time. The trust threshold (0.5) marks where behavior transitions from
+              reactive to intentional. Above this threshold, agents exhibit coherent patterns.
             </p>
             <p>
               <strong className="text-white">ATP Trajectory:</strong> Tracks the attention budget.
