@@ -4,9 +4,9 @@ import SiteSearch from "@/components/SiteSearch";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "4-Life | Interactive Web4 Societies",
+  title: "4-Life | Trust-Native Internet Lab",
   description:
-    "4-Life is an interactive simulation of Web4 societies — where trust, identity, and economics work together for humans and AI agents alike.",
+    "Explore a trust-native internet through interactive simulations. See how hardware-bound identity, attention budgets, and permanent consequences create self-regulating digital societies.",
 };
 
 export default function RootLayout({

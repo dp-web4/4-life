@@ -15,7 +15,7 @@ export default function HomePage() {
     <div className="space-y-8">
       {/* Hero */}
       <section className="text-center" style={{ maxWidth: '48rem', margin: '0 auto' }}>
-        <p className="eyebrow">4-Life: Trust-Native Societies</p>
+        <p className="eyebrow">4-Life: A Trust-Native Internet Lab</p>
         <h1 style={{ marginBottom: '1rem' }}>
           The Internet Has a Trust Problem
         </h1>
