@@ -1254,7 +1254,7 @@ function generateComparisonAspects(
   aspects.push({
     aspect: 'Inequality',
     findings: giniDiff > 0.15
-      ? `"${mostEqual.label}" distributed resources more fairly (Gini ${mostEqual.value.toFixed(2)}) while "${leastEqual.label}" saw concentration (Gini ${leastEqual.value.toFixed(2)}).`
+      ? `"${mostEqual.label}" shared wealth more equally while "${leastEqual.label}" saw wealth concentrate among a few.`
       : `Resource distribution was similar across scenarios.`,
     winner: giniDiff > 0.1 ? mostEqual.label : undefined,
   });
