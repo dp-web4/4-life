@@ -70,7 +70,7 @@ export default function LearnJourney() {
           id: "aliveness",
           title: "Aliveness: When Existence is Measurable",
           teaser:
-            'In Web4, "alive" isn\'t metaphorical. You\'re alive when you have ATP > 0, T3 > 0.5, and CI coherent. Death is real. Rebirth requires trust.',
+            'In Web4, "alive" isn\'t metaphorical. You need attention budget, sufficient trust, and consistent behavior. Run out of any? You die. But if you earned trust, you can be reborn.',
           why: "Start here because this integrates everything. Once you understand aliveness, the other concepts make immediate sense as components.",
           link: "/aliveness",
           duration: "8 min read",
@@ -86,10 +86,10 @@ export default function LearnJourney() {
         },
         {
           id: "atp",
-          title: "ATP/ADP: Metabolic Economics",
+          title: "Attention Economics",
           teaser:
-            "Actions cost attention (ATP). Valuable contributions earn attention (ADP). Run out? You die. This makes spam impossible and quality sustainable.",
-          why: "ATP is how Web4 makes participation meaningful. It's the metabolic layer that enables natural selection of quality.",
+            "Every action costs attention budget (ATP). Valuable contributions earn it back (as ADP receipts). Run out? You die. This makes spam impossible and quality sustainable.",
+          why: "The attention budget is how Web4 makes participation meaningful. It's the economic layer that enables natural selection of quality.",
           link: "/atp-economics",
           duration: "7 min read",
         },
@@ -97,7 +97,7 @@ export default function LearnJourney() {
           id: "t3",
           title: "Trust Tensors: Multi-Dimensional Trust",
           teaser:
-            "Trust isn't a single number. T3 tracks three dimensions per role: Talent, Training, and Temperament. Gaming one dimension while failing others doesn't work — and trust doesn't transfer between unrelated roles.",
+            "Trust isn't a single number. Trust Tensors (T3) track three dimensions per role: Talent, Training, and Temperament. Gaming one dimension while failing others doesn't work — and trust doesn't transfer between unrelated roles.",
           why: "T3 is how societies measure trustworthiness without central authorities. Understanding it reveals why Web4 can self-regulate.",
           link: "/trust-tensor",
           duration: "9 min read",
@@ -106,7 +106,7 @@ export default function LearnJourney() {
           id: "ci",
           title: "Coherence Index: Consistency Matters",
           teaser:
-            "CI tracks four dimensions: spatial, temporal, capability, relational. Inconsistent behavior (teleporting, capability spoofing) tanks your trust. Geometric mean = one failure breaks everything.",
+            "The Coherence Index tracks consistency across four dimensions: where you are, when you act, what you can do, and who you interact with. Inconsistent behavior tanks your trust — and one dimension failing drags down the whole score.",
           why: "CI is Web4's immune system. It detects fraud automatically by spotting incoherent behavior.",
           link: "/coherence-index",
           duration: "8 min read",

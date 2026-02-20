@@ -536,7 +536,7 @@ export default function FirstContactPage() {
                   thousands of identities, manipulating conversations and gaming systems.
                 </p>
                 <p className="text-gray-300 mb-4">
-                  <strong>Web4 solution:</strong> Your LCT is bound to physical hardware, making your presence verifiable.
+                  <strong>Web4 solution:</strong> Your digital presence (called LCT) is bound to physical hardware, making it verifiable.
                   Creating fake accounts requires buying new devices. Expensive to fake, impossible to scale.
                 </p>
                 <p className="text-gray-300 mb-4">

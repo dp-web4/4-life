@@ -96,13 +96,13 @@ export function PlaygroundResults({ result }: PlaygroundResultsProps) {
           </div>
         </div>
         <div style={{ padding: "0.75rem", backgroundColor: "#111827", borderRadius: "6px" }}>
-          <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>ATP Deaths</div>
+          <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>Ran Out of Energy</div>
           <div style={{ fontSize: "1.5rem", color: "#f59e0b", fontWeight: 600 }}>
             {atpDeaths}
           </div>
         </div>
         <div style={{ padding: "0.75rem", backgroundColor: "#111827", borderRadius: "6px" }}>
-          <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>Trust Deaths</div>
+          <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>Lost Trust</div>
           <div style={{ fontSize: "1.5rem", color: "#ef4444", fontWeight: 600 }}>
             {trustDeaths}
           </div>
@@ -187,7 +187,7 @@ function LifeTrajectory({ life, index }: { life: LifeSummary; index: number }) {
             textTransform: "uppercase",
           }}
         >
-          {life.termination_reason.replace("_", " ")}
+          {life.termination_reason === "atp_exhausted" ? "ran out of energy" : life.termination_reason === "trust_lost" ? "lost trust" : life.termination_reason === "completed" ? "completed" : life.termination_reason.replace("_", " ")}
         </span>
       </div>
 

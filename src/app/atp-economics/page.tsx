@@ -73,17 +73,17 @@ export default function ATPEconomicsPage() {
           Web4 Economics
         </div>
         <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
-          ATP/ADP: Metabolic Economics
+          Attention Economics
         </h1>
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Web4 solves spam, abuse, and low-quality content not with moderation
           armies, but with{" "}
-          <strong className="text-sky-400">metabolic economics</strong>.
+          <strong className="text-sky-400">an attention budget</strong>.
         </p>
         <p className="text-lg text-gray-400 leading-relaxed">
           Every action costs attention. Every contribution earns attention.
-          You're alive as long as your ATP (Allocation Transfer Packet) budget
-          stays above zero. Run out? You die. Contribute value? You thrive.
+          Your budget (called ATP) stays above zero as long as you contribute value.
+          Run out? Your agent dies. Contribute? You thrive.
         </p>
       </section>
 
@@ -140,8 +140,8 @@ export default function ATPEconomicsPage() {
               depletes your budget
             </p>
             <p>
-              ✅ <strong>Death is real</strong> - Run out of ATP? You die.
-              Reborn with karma if you had value.
+              ✅ <strong>Death is real</strong> - Run out of attention budget? You die.
+              But if you built trust, you&apos;re reborn with a head start — your reputation carries forward.
             </p>
             <p className="pt-4 text-gray-400 italic">
               Result: Only sustainable behaviors survive. Value creators thrive.
