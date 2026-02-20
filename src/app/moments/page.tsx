@@ -206,8 +206,8 @@ function detectMoments(rawData: any, source: SimulationSource): Moment[] {
         moments.push({
           id: `${source.id}-atp-crisis-${lifeNumber}-${j}`,
           title: `ATP Crisis: Only ${Math.round(curr)} Attention Remaining`,
-          narrative: `The agent's attention budget drops to ${Math.round(curr)} ATP — dangerously low. Without earning more through valuable contribution, they face death from exhaustion. This is the metabolic reality of Web4: participation requires energy, and energy must be earned.`,
-          significance: 'ATP is the metabolic budget of Web4. Running low forces strategic decisions: conserve or contribute?',
+          narrative: `The agent's attention budget drops to ${Math.round(curr)} ATP — dangerously low. Without earning more through valuable contribution, they face death from exhaustion. Participation requires energy, and energy must be earned.`,
+          significance: 'ATP is the attention budget of Web4. Running low forces strategic decisions: conserve or contribute?',
           category: 'crisis',
           severity: 'high',
           tick,
@@ -251,7 +251,7 @@ function detectMoments(rawData: any, source: SimulationSource): Moment[] {
       moments.push({
         id: `${source.id}-death-${lifeNumber}`,
         title: `Death by Exhaustion: Life ${lifeNumber} Ends`,
-        narrative: `ATP reaches zero and life ${lifeNumber} ends. Final trust: ${finalTrust.toFixed(3)}. The agent ran out of capacity to act — a metabolic death. But this isn't the end: their trust score becomes the seed for rebirth, carrying consequences forward.`,
+        narrative: `ATP reaches zero and life ${lifeNumber} ends. Final trust: ${finalTrust.toFixed(3)}. The agent ran out of capacity to act. But this isn't the end: their trust score becomes the seed for rebirth, carrying consequences forward.`,
         significance: 'Death creates the pressure that makes Web4 meaningful. Without stakes, trust would be trivial.',
         category: 'crisis',
         severity: 'critical',
