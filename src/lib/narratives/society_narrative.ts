@@ -522,12 +522,23 @@ export class SocietyNarrativeGenerator {
     const opening = this.narrateOpening(config, agents);
     const events = this.narrateFirstInteractions(firstEpoch, agents);
 
+    const hasDefectors = (config.strategies?.defector ?? 0) > 0;
+    const hasCooperators = (config.strategies?.cooperator ?? 0) > 0;
+    let closing: string;
+    if (hasDefectors && hasCooperators) {
+      closing = "Idealists and opportunists sharing one society. The trust dynamics would determine who thrives.";
+    } else if (hasDefectors) {
+      closing = "A society of opportunists. Without trust-builders, who would create value?";
+    } else {
+      closing = "With no one looking to exploit, the question was whether cooperation alone could build a thriving society.";
+    }
+
     return {
       number: 1,
       title: "A Society Begins",
       opening,
       events,
-      closing: "And so the game was set. Who would thrive? Who would fall? Only time and trust would tell.",
+      closing,
       epochRange: { start: 0, end: 0 }, // Opening chapter covers first epoch
     };
   }
@@ -570,9 +581,9 @@ export class SocietyNarrativeGenerator {
 
     if (cooperator && defector) {
       events.push({
-        description: `In one of the first interactions, ${cooperator.name} the Idealist met ${defector.name} the Opportunist. ${cooperator.name} offered cooperation; ${defector.name} took advantage.`,
+        description: `From the start, the tension was set: ${cooperator.name} the Idealist would extend trust freely, while ${defector.name} the Opportunist would look for advantages. How they'd interact would shape the society.`,
         quote: `"They'll learn," ${defector.name} might have thought. "Everyone does eventually."`,
-        significance: "This early betrayal would set the tone for how trust—and its absence—would shape the society.",
+        significance: "When idealists and opportunists share a society, the resulting dynamic defines the trust landscape.",
         epoch: 0,
         agentIds: [cooperator.id, defector.id],
       });
@@ -643,7 +654,7 @@ export class SocietyNarrativeGenerator {
       case "Crisis and Survival":
         return "In Web4, survival is not guaranteed. ATP must be earned, and those who cannot contribute eventually fade.";
       default:
-        return "The story continued to unfold...";
+        return `The simulation entered a new phase — round by round, the trust dynamics shifted.`;
     }
   }
 
@@ -690,14 +701,24 @@ export class SocietyNarrativeGenerator {
   }
 
   private narrateCoalitionFormed(event: SocietyEvent, agents: AgentSnapshot[]): NarrativeEvent {
-    const memberNames = event.agentIds
-      ?.map(id => agents.find(a => a.id === id)?.name)
-      .filter(Boolean)
-      .join(', ');
+    const members = event.agentIds
+      ?.map(id => agents.find(a => a.id === id))
+      .filter(Boolean) ?? [];
+    const memberNames = members.map(a => a!.name).join(', ');
+    const strategies = new Set(members.map(a => a!.strategy));
+
+    let quote: string;
+    if (strategies.has('reciprocator') && strategies.size === 1) {
+      quote = "We match what we receive. And from each other, we receive trust.";
+    } else if (strategies.has('cooperator')) {
+      quote = "Trust given freely attracts trust in return. That's the foundation.";
+    } else {
+      quote = "Mutual benefit, measured and visible. That's what makes this alliance work.";
+    }
 
     return {
       description: `A coalition crystallized: ${memberNames || 'several agents'} recognized their mutual benefit and formed an alliance.`,
-      quote: "In Web4, trust is not just a feeling—it's a measurable commitment that others can see.",
+      quote,
       significance: event.significance,
     };
   }
@@ -722,17 +743,33 @@ export class SocietyNarrativeGenerator {
   }
 
   private narrateAgentDeath(event: SocietyEvent, agents: AgentSnapshot[]): NarrativeEvent {
+    const agent = event.agentIds?.[0] != null ? agents.find(a => a.id === event.agentIds![0]) : null;
+    const name = agent?.name ?? 'An agent';
+    const strategy = agent?.strategy;
+
+    let quote: string;
+    if (strategy === 'defector') {
+      quote = `${name} burned through their resources faster than exploitation could replenish them.`;
+    } else if (strategy === 'cooperator') {
+      quote = `${name}'s generosity wasn't enough to sustain them. Good intentions don't pay the energy bills.`;
+    } else {
+      quote = `${name} ran out of ATP. In Web4, survival requires earning — not just spending — attention.`;
+    }
+
     return {
       description: event.message,
-      quote: "In Web4, death comes not from violence but from irrelevance—when no one pays attention anymore.",
+      quote,
       significance: event.significance,
     };
   }
 
   private narrateAgentRebirth(event: SocietyEvent, agents: AgentSnapshot[]): NarrativeEvent {
+    const agent = event.agentIds?.[0] != null ? agents.find(a => a.id === event.agentIds![0]) : null;
+    const name = agent?.name ?? 'An agent';
+
     return {
       description: event.message,
-      significance: "Karma carries forward. A new life offers new chances, but old reputations have echoes.",
+      significance: `${name} begins again. Karma carries forward — a new life, but old reputations echo.`,
     };
   }
 
@@ -839,18 +876,30 @@ export class SocietyNarrativeGenerator {
     const losers = finalEpoch.agents.filter(a => !a.alive || a.atp < 40);
 
     if (winners.length > 0) {
+      const hasDefectorWinner = winners.some(a => a.strategy === 'defector');
+      const winnerDesc = hasDefectorWinner
+        ? `Those who thrived: ${winners.map(a => `${a.name} (${a.strategy})`).join(', ')}. Not all succeeded through trust — some found ways to profit at others' expense.`
+        : `Those who thrived: ${winners.map(a => `${a.name} (${a.strategy})`).join(', ')}. Their success came from earning trust that others recognized and reciprocated.`;
       events.push({
-        description: `Those who thrived: ${winners.map(a => `${a.name} (${a.strategy})`).join(', ')}. Their success came from consistent, trustworthy behavior that others recognized and reciprocated.`,
-        significance: "In Web4, prosperity flows to those who build genuine trust.",
+        description: winnerDesc,
+        significance: hasDefectorWinner
+          ? "When defectors thrive, it reveals gaps in the trust network's accountability."
+          : "In Web4, prosperity flows to those who build genuine trust.",
         epoch: finalEpochIndex,
         agentIds: winners.map(a => a.id),
       });
     }
 
     if (losers.length > 0) {
+      const hasCooperatorLoser = losers.some(a => a.strategy === 'cooperator');
+      const loserDesc = hasCooperatorLoser
+        ? `Those who struggled: ${losers.map(a => `${a.name} (${a.strategy})`).join(', ')}. Some were exploited despite good intentions; others couldn't sustain themselves.`
+        : `Those who struggled: ${losers.map(a => `${a.name} (${a.strategy})`).join(', ')}. Their approach couldn't sustain them in this society's trust dynamics.`;
       events.push({
-        description: `Those who struggled: ${losers.map(a => `${a.name} (${a.strategy})`).join(', ')}. Whether through exploitation or exploitation's consequences, they found society's structure working against them.`,
-        significance: "The lesson: in transparent trust networks, short-term thinking leads to long-term poverty.",
+        description: loserDesc,
+        significance: hasCooperatorLoser
+          ? "Trust networks don't always protect the trusting — sometimes cooperators pay the price for others' exploitation."
+          : "In transparent trust networks, strategies that don't build genuine value eventually fail.",
         epoch: finalEpochIndex,
         agentIds: losers.map(a => a.id),
       });
@@ -1329,16 +1378,16 @@ function generateComparativeInsights(
         cautious: 'Skeptics',
         adaptive: 'Learners',
       };
-      insights.push(
-        `${archetypes[dominantInTriumph] || dominantInTriumph + 's'} thrived in successful scenarios—their strategy worked because others responded in kind.`
-      );
+      const strategyName = archetypes[dominantInTriumph] || dominantInTriumph + 's';
+      if (dominantInTriumph === 'defector') {
+        insights.push(`${strategyName} thrived in "${triumphs[0].name}" — a reminder that exploitation can pay off when trust networks lack accountability mechanisms.`);
+      } else if (dominantInTriumph === 'reciprocator') {
+        insights.push(`${strategyName} thrived in "${triumphs[0].name}" — mirroring behavior built trust with cooperators while punishing defectors.`);
+      } else {
+        insights.push(`${strategyName} thrived in "${triumphs[0].name}" — their approach aligned with the society's dynamics.`);
+      }
     }
   }
-
-  // Web4 insight
-  insights.push(
-    'These comparisons illustrate Web4\'s core thesis: trust is the organizing principle that emerges from individual behavior, and small changes in composition create vastly different societies.'
-  );
 
   return insights;
 }
@@ -1741,21 +1790,23 @@ function generateRelationshipMoments(
 ): RelationshipMoment[] {
   const moments: RelationshipMoment[] = [];
 
-  // First significant cooperation (if any)
+  // First significant cooperation — use actual trust change data if available
   if (stats.mutualCoops > 0) {
+    const firstPositive = stats.trustChanges.find(tc => tc.change > 0);
     moments.push({
-      epoch: 1, // Assume early
+      epoch: firstPositive?.epoch ?? 1,
       description: `${name1} and ${name2} first cooperated`,
       trustChange: 'increased',
     });
   }
 
-  // Betrayal moment
+  // Betrayal moment — use actual trust change data if available
   if (stats.exploitationsBy1 > 0 || stats.exploitationsBy2 > 0) {
     const betrayer = stats.exploitationsBy1 > stats.exploitationsBy2 ? name1 : name2;
     const victim = betrayer === name1 ? name2 : name1;
+    const firstNegative = stats.trustChanges.find(tc => tc.change < 0);
     moments.push({
-      epoch: 2, // Mid-simulation
+      epoch: firstNegative?.epoch ?? Math.floor(stats.interactions / 3),
       description: `${betrayer} betrayed ${victim}'s trust`,
       trustChange: 'betrayal',
     });
@@ -2291,7 +2342,7 @@ function generateCharacterStoryArc(
     const coalitionEvent = timeline.find(e => e.type === 'coalition');
 
     if (isolationEvent) {
-      parts.push(`At epoch ${isolationEvent.epoch}, they faced their darkest hour: isolation from the community.`);
+      parts.push(`At round ${isolationEvent.epoch + 1}, they faced isolation from the community — no one would interact with them.`);
     } else if (coalitionEvent) {
       parts.push(`They found strength in numbers, joining forces with others to build a coalition.`);
     }
@@ -2428,7 +2479,7 @@ export interface ShareableContent {
 export function generateShareableContent(
   narrative: SocietyNarrative,
   platform: SharePlatform,
-  siteUrl: string = 'https://dp-web4.github.io/4-life/society-simulator'
+  siteUrl: string = 'https://4-life-ivory.vercel.app/society-simulator'
 ): ShareableContent {
   switch (platform) {
     case 'twitter':
@@ -2646,13 +2697,15 @@ export function generateQuickSummary(narrative: SocietyNarrative): string {
     summary = `${heroEmoji} ${narrative.protagonist.name} faced ${villainEmoji} ${narrative.antagonist.name}. `;
   }
 
-  // Add outcome based on themes
-  if (narrative.themes.includes('trust prevails')) {
+  // Add outcome based on themes (must match identifyThemes() output)
+  if (narrative.themes.includes('The Power of Trust') || narrative.themes.includes('The Evolution of Cooperation')) {
     summary += 'Trust won. ';
-  } else if (narrative.themes.includes('betrayal')) {
-    summary += 'Betrayal reshaped everything. ';
-  } else if (narrative.themes.includes('coalition')) {
+  } else if (narrative.themes.includes('Consequences of Exploitation')) {
+    summary += 'Exploitation met its consequences. ';
+  } else if (narrative.themes.includes('Coalition Dynamics')) {
     summary += 'Coalitions decided the outcome. ';
+  } else if (narrative.themes.includes('Winners and Losers')) {
+    summary += 'Inequality shaped the outcome. ';
   }
 
   // Add the moral teaser
