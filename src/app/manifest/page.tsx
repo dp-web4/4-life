@@ -52,7 +52,7 @@ export default function ManifestPage() {
           <li>
             <strong>EP (Epistemic Proprioception):</strong> Self-awareness of knowledge across lives.
             Agents learn what they know and don't know through multi-life experience.{" "}
-            <Link href="/epistemic-proprioception" className="text-sky-400">↗</Link>
+            <Link href="/patterns" className="text-sky-400">↗</Link>
           </li>
         </ul>
       </section>

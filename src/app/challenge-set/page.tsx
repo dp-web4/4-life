@@ -193,7 +193,7 @@ export default function ChallengeSetPage() {
               <strong>🧠 EP Learning Curves:</strong> How many lives does it take for EP to reach maturation?
               What factors accelerate or slow learning? Can you design better pattern corpora?
               <span style={{ color: "#9ca3af", fontSize: "0.9rem", marginLeft: "0.5rem" }}>
-                (<Link href="/epistemic-proprioception" className="text-sky-400 underline">ref</Link>)
+                (<Link href="/patterns" className="text-sky-400 underline">ref</Link>)
               </span>
             </li>
             <li>

@@ -937,7 +937,7 @@ export default function DataExplorerPage() {
               <strong className="text-white"> Policy</strong> frameworks define governance rules.
             </p>
             <p>
-              The <Link href="/maturation-web4" className="text-blue-400 hover:underline">maturation datasets</Link> are
+              The <Link href="/data-explorer" className="text-blue-400 hover:underline">maturation datasets</Link> are
               particularly interesting to compare: one uses Web4 patterns (inherited wisdom), the other starts from scratch.
             </p>
           </div>
