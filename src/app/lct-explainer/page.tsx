@@ -564,11 +564,14 @@ export default function LCTExplainerPage() {
           </div>
         </div>
 
-        {/* Technical Deep Dive */}
+        {/* Technical Deep Dive — collapsed by default */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold mb-6">Technical Details (For The Curious)</h2>
+          <details>
+          <summary className="text-2xl font-bold mb-6 cursor-pointer list-none flex items-center gap-2">
+            <span className="text-gray-400 text-lg">▶</span> Technical Details (For The Curious)
+          </summary>
 
-          <div className="space-y-6">
+          <div className="space-y-6 mt-6">
             {/* LCT Format */}
             <div>
               <h3 className="text-lg font-bold mb-3 text-gray-800">Full LCT Object Structure</h3>
@@ -694,6 +697,7 @@ export default function LCTExplainerPage() {
               </div>
             </div>
           </div>
+          </details>
         </div>
 
         {/* Related Concepts */}
@@ -713,7 +717,7 @@ export default function LCTExplainerPage() {
 
             <a href="/atp-economics" className="block p-4 border-2 border-gray-200 rounded-lg hover:border-purple-500 transition-all">
               <div className="font-bold text-gray-800 mb-1">ATP Economics</div>
-              <div className="text-sm text-gray-600">Metabolic budgets that LCTs earn and spend</div>
+              <div className="text-sm text-gray-600">Attention budgets that LCTs earn and spend</div>
             </a>
 
             <a href="/markov-relevancy-horizon" className="block p-4 border-2 border-gray-200 rounded-lg hover:border-purple-500 transition-all">

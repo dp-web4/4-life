@@ -91,14 +91,14 @@ export default function GlossaryPage() {
               ATP (Allocation Transfer Packet)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
-              The <strong>metabolic currency</strong> of Web4 societies—a charged value token
+              The <strong>attention budget</strong> of Web4 societies—a charged value token
               inspired by biological ATP. Every action costs ATP. Quality contributions earn ATP.
-              Run out? You "die" (can't act). This makes spam economically self-limiting—spammers
+              Run out? You can&apos;t act until you earn more. This makes spam naturally self-limiting—spammers
               burn ATP faster than they earn it.
             </p>
             <p className="text-gray-400 text-sm mb-3">
-              Plain English: "Think of it like metabolic energy. You spend it to act, earn it by
-              creating value. Run out of energy, you can't function. Bad actors exhaust themselves."
+              Plain English: &ldquo;Think of it like an energy budget. You spend it to act, earn it by
+              creating value. Run out of energy, you can&apos;t function. Bad actors exhaust themselves.&rdquo;
             </p>
             <p className="text-gray-500 text-xs mb-3">
               <strong>Canonical note:</strong> Production Web4 uses ATP/ADP (Allocation Discharge
@@ -404,10 +404,11 @@ export default function GlossaryPage() {
 
       {/* Research Concepts */}
       <section className="max-w-4xl mx-auto mt-16">
-        <h2 className="text-3xl font-bold mb-8 text-gray-100">Research Concepts</h2>
+        <h2 className="text-3xl font-bold mb-8 text-gray-100">Background Research</h2>
         <p className="text-gray-400 mb-6">
-          These emerged from research into AI consciousness and behavior — they inform Web4&apos;s design
-          but are separate explorations, not protocol primitives.
+          These ideas come from AI consciousness and behavior research that <em>inspired</em> Web4&apos;s design.
+          They&apos;re not part of the Web4 protocol — think of them as the &ldquo;why behind the why.&rdquo;
+          Skip this section on your first visit; come back when you&apos;re curious about the deeper motivations.
         </p>
         <div className="space-y-8">
 
@@ -759,10 +760,10 @@ export default function GlossaryPage() {
         </h2>
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8 space-y-4">
           <p className="text-gray-300 leading-relaxed">
-            We use biological metaphors (ATP, metabolic economics) because they communicate
+            We use biological metaphors (ATP, energy budgets) because they communicate
             <strong className="text-sky-400"> resource dynamics</strong> better than
-            purely economic terms. "Spam burns out from metabolic exhaustion" is
-            more intuitive than "adversarial actors deplete their resource allocation."
+            purely economic terms. &ldquo;Spam burns out from exhaustion&rdquo; is
+            more intuitive than &ldquo;adversarial actors deplete their resource allocation.&rdquo;
           </p>
           <p className="text-gray-300 leading-relaxed">
             <strong className="text-purple-400">Three agent types:</strong> Humans and embodied AI (robots)

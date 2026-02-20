@@ -958,7 +958,7 @@ export default function CoherenceIndexPage() {
               <p className="text-sm text-gray-400">
                 Example: Attacker with stolen credentials (CI = 0.4) pays 6.25x
                 more ATP for every action. If their ATP budget is limited, attack
-                becomes unsustainable. Death through metabolic exhaustion.
+                becomes unsustainable. They run out of energy and can&apos;t act.
               </p>
               <Link
                 href="/atp-economics"
@@ -997,13 +997,14 @@ export default function CoherenceIndexPage() {
           </div>
         </section>
 
-        {/* Technical Implementation Section */}
+        {/* Technical Implementation Section — collapsed by default */}
         <section className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-100">
-            Technical Implementation
-          </h2>
+          <details>
+          <summary className="text-3xl font-bold mb-6 text-gray-100 cursor-pointer list-none flex items-center gap-3">
+            <span className="text-gray-500 text-lg">▶</span> Technical Implementation
+          </summary>
 
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-lg p-6 mb-6">
+          <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-lg p-6 mb-6 mt-6">
             <h3 className="text-lg font-semibold text-gray-200 mb-4">
               Where CI Lives in Web4
             </h3>
@@ -1104,6 +1105,7 @@ lenient_society = {
               </div>
             </div>
           </div>
+          </details>
         </section>
 
         {/* Key Takeaways Section */}

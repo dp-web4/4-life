@@ -152,17 +152,12 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem' }}>
           Watch agents build trust, manage resources, and face consequences in a Web4 society.
         </p>
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <Link href="/society-simulator" className="btn-primary">
-            Society Simulator
-          </Link>
-          <Link href="/karma-journey" className="btn-secondary">
-            Karma Journey
-          </Link>
-          <Link href="/playground" className="btn-secondary">
-            Playground
-          </Link>
-        </div>
+        <Link href="/society-simulator" className="btn-primary">
+          Launch Society Simulator →
+        </Link>
+        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '0.75rem' }}>
+          Or try the <Link href="/karma-journey" style={{ color: 'var(--color-sky)' }}>Karma Journey</Link> for a quicker look.
+        </p>
       </section>
 
       {/* Featured Moment - Dynamic carousel from simulations */}
