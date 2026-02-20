@@ -22,7 +22,7 @@ function AlivenessCalculator() {
 
       <div className="slider-group">
         <label>
-          <span>ATP (Metabolic Budget):</span>
+          <span>ATP (Energy Budget):</span>
           <input
             type="range"
             min="0"
@@ -74,7 +74,7 @@ function AlivenessCalculator() {
         <div className="result-details">
           {alive ? (
             <>
-              <p>✓ Metabolic budget: {atp} ATP (sustained)</p>
+              <p>✓ Energy budget: {atp} ATP (sustained)</p>
               <p>✓ Coherent agency: T3 = {trust.toFixed(2)} (above 0.5 threshold)</p>
               <p>✓ Verifiable continuity: CI = {ci.toFixed(2)} (coherent)</p>
               <p className="result-summary">
@@ -131,7 +131,7 @@ export default function AlivenessExplainer() {
               <li><strong>Measurable existence:</strong> ATP &gt; 0, T3 &gt; 0.5, CI coherent</li>
               <li><strong>Real death:</strong> ATP = 0 means you die immediately</li>
               <li><strong>Rebirth requires trust:</strong> Only T3 ≥ 0.5 entities reborn</li>
-              <li><strong>Metabolic economics:</strong> Spam dies naturally (ATP exhaustion)</li>
+              <li><strong>Energy economics:</strong> Spam dies naturally (ATP exhaustion)</li>
               <li><strong>Trust accumulates:</strong> Good behavior compounds across lives</li>
             </ul>
           </div>
@@ -148,7 +148,7 @@ export default function AlivenessExplainer() {
         <div className="concept-grid">
           <div className="concept-card">
             <div className="concept-icon">⚡</div>
-            <h3>1. Metabolic Budget</h3>
+            <h3>1. Energy Budget</h3>
             <div className="concept-subtitle">ATP &gt; 0</div>
             <p>
               You must have <strong>attention budget</strong> to exist. ATP (Allocation Transfer Packet)
@@ -266,7 +266,7 @@ export default function AlivenessExplainer() {
         <p>You die when any of these occur:</p>
         <div className="concept-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
           <div className="detail-box">
-            <h4>1. Metabolic Death</h4>
+            <h4>1. Energy Exhaustion</h4>
             <p>ATP reaches 0 (most common)</p>
             <ul>
               <li>Immediate termination</li>
@@ -332,7 +332,7 @@ export default function AlivenessExplainer() {
             <li>145 ATP karma bonus (energy advantage)</li>
             <li>0.72 trust reputation (social advantage)</li>
             <li>Intact CI history (continuity advantage)</li>
-            <li>EP pattern corpus (learning advantage)</li>
+            <li>Cross-life patterns (learning advantage)</li>
           </ul>
           <p>
             Good behavior <strong>compounds across lives</strong>. Each life starts stronger.
@@ -419,7 +419,7 @@ export default function AlivenessExplainer() {
           <div className="detail-box">
             <h4>Learning Emerges</h4>
             <ul>
-              <li>Agents learn what works via Epistemic Proprioception (EP)</li>
+              <li>Agents learn what works across lives (cross-life pattern learning)</li>
               <li>Pattern corpus improves across lives</li>
               <li>Agents that learn patterns survive better</li>
               <li>Evolution favors coherence and adaptation</li>
@@ -526,7 +526,7 @@ export default function AlivenessExplainer() {
           <ul>
             <li>Reborn with even more ATP</li>
             <li>High trust (0.81) enables coordination</li>
-            <li>EP patterns guide optimal decisions</li>
+            <li>Cross-life patterns guide optimal decisions</li>
             <li>Survives indefinitely (sustainable balance)</li>
           </ul>
 
@@ -616,7 +616,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             <tr>
               <td><strong>Spam prevention</strong></td>
               <td>Moderation armies, CAPTCHAs</td>
-              <td>Metabolic economics (spam dies naturally)</td>
+              <td>Energy economics (spam dies naturally)</td>
             </tr>
             <tr>
               <td><strong>Trust verification</strong></td>
@@ -661,7 +661,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
           <Link href="/atp-economics" className="concept-link-card">
             <h4>ATP/ADP Economics</h4>
             <p>
-              Metabolic budget system. ATP &gt; 0 is the first criterion of aliveness.
+              Attention budget system. ATP &gt; 0 is the first criterion of aliveness.
               Explains earning, spending, and sustainability.
             </p>
           </Link>
@@ -683,9 +683,9 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
           </Link>
 
           <Link href="/decision-evolution" className="concept-link-card">
-            <h4>Decision Evolution (EP)</h4>
+            <h4>Decision Evolution</h4>
             <p>
-              Epistemic Proprioception—learning what you know across lives. Shows how aliveness
+              Cross-life pattern learning—recognizing what works across lives. Shows how aliveness
               improves through multi-life learning and pattern accumulation.
             </p>
           </Link>

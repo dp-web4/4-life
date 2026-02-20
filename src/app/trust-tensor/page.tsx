@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import TermTooltip from "@/components/TermTooltip";
 
 // Canonical 3D trust dimensions (Talent, Training, Temperament)
 const TRUST_DIMENSIONS = {
@@ -620,17 +621,17 @@ Talent: No decay (represents inherent aptitude)`}
               </h3>
               <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
                 <li>
-                  <strong>ATP economics:</strong> Higher T3 = earn more ATP for contributions
+                  <strong><TermTooltip term="ATP">ATP</TermTooltip> economics:</strong> Higher T3 = earn more ATP for contributions
                 </li>
                 <li>
-                  <strong>Coherence Index (CI):</strong> Behavioral consistency modulates
+                  <strong><TermTooltip term="CI">Coherence Index (CI)</TermTooltip>:</strong> Behavioral consistency modulates
                   effective trust: effective_trust = T3 × CI²
                 </li>
                 <li>
                   <strong>Karma:</strong> T3 above threshold allows rebirth with ATP carried forward
                 </li>
                 <li>
-                  <strong>MRH graph:</strong> T3 determines visibility in the relevancy horizon
+                  <strong><TermTooltip term="MRH">MRH</TermTooltip> graph:</strong> T3 determines visibility in the relevancy horizon
                 </li>
               </ul>
             </div>

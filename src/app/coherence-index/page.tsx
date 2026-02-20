@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import TermTooltip from "@/components/TermTooltip";
 
 export default function CoherenceIndexPage() {
   // Simulator state
@@ -921,7 +922,7 @@ export default function CoherenceIndexPage() {
               <div className="flex items-center gap-4 mb-3">
                 <div className="text-3xl">🔐</div>
                 <h3 className="text-xl font-semibold text-blue-400">
-                  CI + Identity Constellations (LCT)
+                  CI + Identity Constellations (<TermTooltip term="LCT">LCT</TermTooltip>)
                 </h3>
               </div>
               <p className="text-sm text-gray-300 mb-2">
@@ -947,7 +948,7 @@ export default function CoherenceIndexPage() {
               <div className="flex items-center gap-4 mb-3">
                 <div className="text-3xl">⚡</div>
                 <h3 className="text-xl font-semibold text-green-400">
-                  CI + ATP Economics
+                  CI + <TermTooltip term="ATP">ATP</TermTooltip> Economics
                 </h3>
               </div>
               <p className="text-sm text-gray-300 mb-2">
@@ -972,7 +973,7 @@ export default function CoherenceIndexPage() {
               <div className="flex items-center gap-4 mb-3">
                 <div className="text-3xl">🎯</div>
                 <h3 className="text-xl font-semibold text-purple-400">
-                  CI + Trust Tensors (T3)
+                  CI + Trust Tensors (<TermTooltip term="T3">T3</TermTooltip>)
                 </h3>
               </div>
               <p className="text-sm text-gray-300 mb-2">

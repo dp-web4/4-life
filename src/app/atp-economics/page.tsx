@@ -124,7 +124,7 @@ export default function ATPEconomicsPage() {
         <h2 className="text-3xl font-bold mb-6 text-gray-100">The Solution</h2>
         <div className="bg-gradient-to-br from-sky-950/30 to-blue-900/20 border border-sky-800/30 rounded-xl p-8">
           <h3 className="text-xl font-semibold text-sky-400 mb-4">
-            Web4: Metabolic Budget
+            Web4: Attention Budget
           </h3>
           <div className="space-y-3 text-gray-300">
             <p>
@@ -154,7 +154,7 @@ export default function ATPEconomicsPage() {
       {/* Interactive Simulation */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
-          Try It: Metabolic Economics Simulator
+          Try It: Attention Economics Simulator
         </h2>
         <p className="text-gray-400 mb-8">
           You start with <strong>100 ATP</strong>. Choose actions. Watch your
@@ -524,7 +524,7 @@ export default function ATPEconomicsPage() {
                     <tr className="border-b border-gray-800">
                       <td className="p-3 font-semibold">Purpose</td>
                       <td className="p-3">Speculative value, trading</td>
-                      <td className="p-3">Metabolic budget, usage</td>
+                      <td className="p-3">Attention budget, usage</td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="p-3 font-semibold">Transferability</td>

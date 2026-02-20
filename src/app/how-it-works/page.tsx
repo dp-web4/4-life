@@ -356,7 +356,7 @@ export default function HowItWorksPage() {
                 3. Death: ATP Reaches Zero
               </h3>
               <p className="text-gray-500 text-sm">
-                Metabolic exhaustion = end of life
+                Energy exhaustion = end of life
               </p>
             </div>
           </div>

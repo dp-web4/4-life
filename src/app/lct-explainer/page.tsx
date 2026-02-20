@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import TermTooltip from "@/components/TermTooltip";
 
 /**
  * LCT (Linked Context Token) Foundational Explainer
@@ -556,9 +557,9 @@ export default function LCTExplainerPage() {
 
           <div className="mt-6 p-4 bg-purple-50 border-l-4 border-purple-500 rounded">
             <p className="text-gray-700">
-              <span className="font-bold">Foundation for everything else:</span> LCTs make ATP economics work
-              (can&apos;t create fake accounts cheaply if presence requires hardware), Trust Tensors work (reputation bound to
-              verifiable presence), Coherence Index work (behavioral consistency verifiable), and MRH work
+              <span className="font-bold">Foundation for everything else:</span> LCTs make <TermTooltip term="ATP">ATP economics</TermTooltip> work
+              (can&apos;t create fake accounts cheaply if presence requires hardware), <TermTooltip term="T3">Trust Tensors</TermTooltip> work (reputation bound to
+              verifiable presence), <TermTooltip term="CI">Coherence Index</TermTooltip> work (behavioral consistency verifiable), and <TermTooltip term="MRH">MRH</TermTooltip> work
               (context graphs rooted in verified presence).
             </p>
           </div>

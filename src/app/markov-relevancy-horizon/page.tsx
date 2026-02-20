@@ -717,7 +717,7 @@ export default function MarkovRelevancyHorizonPage() {
 
             <div className="bg-gray-800/50 border border-cyan-700/30 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-cyan-400 mb-3">
-                MRH + ATP (Metabolic Economics)
+                MRH + ATP (Attention Economics)
               </h3>
               <p className="text-gray-300 text-sm">
                 ATP costs depend on recipient&apos;s position in your MRH. Messaging someone
