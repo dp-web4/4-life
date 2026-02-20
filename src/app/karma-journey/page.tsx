@@ -407,7 +407,7 @@ export default function KarmaJourneyPage() {
               marginTop: '0.25rem', fontSize: '0.7rem', color: 'var(--color-text-muted)',
               fontFamily: 'monospace',
             }}>
-              ATP cost multiplier: {atpMul.toFixed(1)}x {atpMul > 1.5 && <span style={{ color: '#fca5a5' }}>(penalty from low CI)</span>}
+              Action costs: {atpMul <= 1.0 ? 'normal' : `${atpMul.toFixed(1)}x more expensive`} {atpMul > 1.5 && <span style={{ color: '#fca5a5' }}>(low consistency makes everything cost more)</span>}
             </div>
           </div>
 
@@ -457,8 +457,8 @@ export default function KarmaJourneyPage() {
                           ATP: {netAtp >= 0 ? '+' : ''}{netAtp}
                         </span>
                         {actualCost > 0 && actualCost !== choice.atpCostBase && (
-                          <span style={{ color: '#fca5a5' }}>
-                            (karma {actualCost > choice.atpCostBase ? 'penalty' : 'bonus'}: costs {actualCost > choice.atpCostBase ? 'more' : 'less'})
+                          <span style={{ color: actualCost > choice.atpCostBase ? '#fca5a5' : '#6ee7b7' }}>
+                            ({actualCost > choice.atpCostBase ? 'low consistency tax' : 'consistency discount'})
                           </span>
                         )}
                       </div>
