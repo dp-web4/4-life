@@ -625,7 +625,7 @@ function AgentInspector({ agent, allAgents }: {
           {STRATEGY_LABELS[agent.strategy]}
         </span>
         {agent.generation > 1 && (
-          <span className="text-xs text-amber-400">Gen {agent.generation}</span>
+          <span className="text-xs text-amber-400">Rebirth {agent.generation - 1}</span>
         )}
       </div>
 

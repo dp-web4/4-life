@@ -2113,7 +2113,7 @@ export class ACTQueryEngine {
     text += `- ATP: ${agent.atp.toFixed(0)} ${agent.atp < 30 ? '⚠️ LOW' : ''}\n`;
     text += `- Reputation: ${agent.reputation.toFixed(3)}\n`;
     text += `- Cooperation Rate: ${(agent.cooperationRate * 100).toFixed(0)}%\n`;
-    text += `- Generation: ${agent.generation}\n`;
+    text += `- Rebirths: ${agent.generation - 1}\n`;
     text += `- Coalition Partners: ${agent.coalitionSize}\n\n`;
 
     // Trust relationships
