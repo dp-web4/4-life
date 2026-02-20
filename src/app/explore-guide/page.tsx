@@ -68,7 +68,7 @@ const QUESTIONS: Question[] = [
     question: 'What are you most curious about?',
     options: [
       { label: 'How trust works', description: 'Identity, trust measurement, and how it accumulates or collapses', value: 'trust' },
-      { label: 'The economics', description: 'Attention tokens, metabolic costs, and why spam becomes impossible', value: 'economics' },
+      { label: 'The economics', description: 'Attention budgets, action costs, and why spam becomes impossible', value: 'economics' },
       { label: 'Emergence & AI', description: 'How consciousness emerges, how agents learn, how societies self-organize', value: 'emergence' },
       { label: 'The big picture', description: 'Why does this matter? What problem does it solve? How is it different from Web3?', value: 'vision' },
     ],
@@ -175,10 +175,10 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
     if (interest === 'economics') {
       return {
         name: 'Attention Economics Lab',
-        tagline: 'ATP, ADP, metabolic costs, and why spam dies',
+        tagline: 'Attention budgets, action costs, and why spam dies',
         color: '#34d399',
         steps: [
-          { title: 'ATP Economics', description: 'The metabolic budget: earn by contributing, spend on actions', href: '/atp-economics', timeEstimate: '7 min', type: 'read' },
+          { title: 'Attention Economics', description: 'The attention budget: earn by contributing, spend on actions', href: '/atp-economics', timeEstimate: '7 min', type: 'read' },
           { title: 'Federation Economics', description: 'Interactive market simulator for ATP pricing dynamics', href: '/federation-economics', timeEstimate: '12 min', type: 'interactive' },
           { title: 'Feedback Loop Explorer', description: 'See how ATP and trust create reinforcing feedback loops', href: '/feedback-loop-explorer', timeEstimate: '10 min', type: 'interactive' },
           { title: 'Playground', description: 'Tweak economic parameters and watch what happens', href: '/playground', timeEstimate: '15 min', type: 'experiment' },
