@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { navigationTree } from '@/lib/navigation';
 import FeaturedMoment, { FeaturedMomentCompact } from '@/components/FeaturedMoment';
@@ -64,6 +64,18 @@ export default function HomePage() {
 }
 
 function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
+  const [karmaProfile, setKarmaProfile] = useState<{ archetype: string; emoji: string; totalLives: number; coopRate: number } | null>(null);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('karma-journey-profile');
+      if (saved) {
+        const p = JSON.parse(saved);
+        if (p.archetype) setKarmaProfile(p);
+      }
+    } catch { /* ok */ }
+  }, []);
+
   return (
     <div className="space-y-12" style={{ maxWidth: '48rem', margin: '0 auto' }}>
       {/* Guided Start - Most Prominent */}
@@ -152,6 +164,23 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem' }}>
           Watch agents build trust, manage resources, and face consequences in a Web4 society.
         </p>
+        {karmaProfile && (
+          <div style={{
+            padding: '0.75rem 1rem', borderRadius: '0.5rem', marginBottom: '1rem',
+            background: 'linear-gradient(135deg, rgba(110,231,183,0.08), rgba(147,197,253,0.08))',
+            border: '1px solid rgba(110,231,183,0.15)',
+          }}>
+            <Link href="/karma-journey" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <span style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)' }}>
+                Welcome back, <strong style={{ color: '#6ee7b7' }}>{karmaProfile.archetype}</strong> {karmaProfile.emoji}
+              </span>
+              <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginLeft: '0.5rem' }}>
+                — {karmaProfile.totalLives} {karmaProfile.totalLives === 1 ? 'life' : 'lives'} lived, {Math.round(karmaProfile.coopRate * 100)}% cooperative.
+                Continue your journey →
+              </span>
+            </Link>
+          </div>
+        )}
         <Link href="/society-simulator" className="btn-primary">
           Launch Society Simulator →
         </Link>
