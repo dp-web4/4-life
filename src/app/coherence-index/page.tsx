@@ -1173,6 +1173,22 @@ lenient_society = {
           </div>
         </section>
 
+        {/* Forward Navigation */}
+        <section className="max-w-4xl mx-auto flex gap-4 mb-12">
+          <Link
+            href="/trust-tensor"
+            className="flex-1 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg transition-colors text-center"
+          >
+            ← Trust Tensors
+          </Link>
+          <Link
+            href="/aliveness"
+            className="flex-1 px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-center"
+          >
+            Next: Aliveness →
+          </Link>
+        </section>
+
         {/* Next Steps Section */}
         <section className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-gray-100">Explore More</h2>
