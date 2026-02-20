@@ -274,7 +274,7 @@ export default function LearnJourney() {
           title: "Query Simulations with ACT",
           description:
             "Use the ACT conversational interface to ask questions about simulations. 'Why did trust decrease?' 'Show me maturation patterns.' 'Explain this decision.'",
-          link: "/lab-console",
+          link: "/act-explorer",
           type: "interactive",
         },
         {
@@ -325,8 +325,8 @@ export default function LearnJourney() {
           id: "custom-sim",
           title: "Run Custom Simulations",
           description:
-            "Use the lab console API to run simulations with your own parameters. Test hypotheses. Break things. Discover edge cases.",
-          link: "/lab-console",
+            "Use the Playground to run simulations with your own parameters. Test hypotheses. Break things. Discover edge cases.",
+          link: "/playground",
           type: "experiment",
         },
         {
