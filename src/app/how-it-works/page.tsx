@@ -96,8 +96,8 @@ export default function HowItWorksPage() {
               Context (MRH)
             </h3>
             <p className="text-sm text-gray-400">
-              Markov Relevancy Horizon defines context boundaries through
-              relationships - you see what&apos;s relevant, nothing more.
+              You only see what&apos;s relevant to your trust network — like
+              hearing only conversations you&apos;re part of. Spam can&apos;t reach you.
             </p>
             <Link
               href="/markov-relevancy-horizon"

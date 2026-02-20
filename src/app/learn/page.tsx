@@ -297,7 +297,7 @@ export default function LearnJourney() {
           id: "web4-architecture",
           title: "Web4 Architecture: The Full Stack",
           teaser:
-            "LCT → ATP/ADP → T3 → CI → MRH → EP. Six layers that create trust-native societies. Each layer enables the one above. Together they're greater than the sum.",
+            "Identity (LCT) → Energy (ATP/ADP) → Trust (T3) → Consistency (CI) → Context (MRH) → Learning. Six layers that create trust-native societies. Each layer enables the one above.",
           why: "Architecture understanding enables contribution. You can identify gaps, suggest improvements, experiment with modifications.",
           link: "/how-it-works",
           duration: "15 min read",

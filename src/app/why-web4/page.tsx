@@ -320,7 +320,7 @@ export default function WhyWeb4Page() {
 
             <div className="bg-gray-900/50 rounded-lg p-4">
               <h4 className="font-semibold text-sky-400 mb-2">
-                MRH (Markov Relevancy Horizon)
+                Context Boundaries (MRH)
               </h4>
               <p className="text-gray-400 text-sm">
                 Visibility bounded by trust. Spam can't reach you if spammers aren't trusted.
@@ -379,7 +379,7 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Yes, but it&apos;s <strong>expensive</strong>. Creating one LCT requires a physical device
+                Yes, but it&apos;s <strong>expensive</strong>. Creating one LCT (Linked Context Token — Web4&apos;s hardware-bound identity) requires a physical device
                 with a security chip (TPM or Secure Enclave — built into most modern phones and laptops). Creating 1000 fake identities means buying 1000 devices —
                 thousands of dollars and physical logistics.
               </p>
