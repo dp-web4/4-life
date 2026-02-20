@@ -159,21 +159,38 @@ export default function FirstContactPage() {
               </div>
             </div>
 
-            <div className="bg-gray-800 border border-gray-700 rounded-xl p-6">
-              <h3 className="text-lg font-semibold mb-3">How This Works</h3>
-              <ol className="space-y-2 text-gray-300">
-                <li><strong className="text-white">Step 1:</strong> Watch Alice build her reputation in a Web4 community</li>
-                <li><strong className="text-white">Step 2:</strong> Read the story (we translate data into narrative)</li>
-                <li><strong className="text-white">Step 3:</strong> Understand why it works this way</li>
-                <li><strong className="text-white">Step 4:</strong> Explore further (tools, docs, experiments)</li>
-              </ol>
+            {/* Preview: first simulation snapshot so visitors see something interactive immediately */}
+            <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/30 border border-sky-800/30 rounded-xl p-6">
+              <div className="text-sm text-sky-400 font-semibold mb-3">Preview: Alice&apos;s First Action</div>
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-12 h-12 rounded-full bg-sky-900 flex items-center justify-center text-xl">👤</div>
+                <div>
+                  <div className="font-semibold">Alice joins the community</div>
+                  <div className="text-sm text-gray-400">Starting resources: 100 ATP | Trust: 0.50 (neutral)</div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-3 mb-3">
+                <div className="bg-gray-800/50 rounded p-3 text-center">
+                  <div className="text-xs text-gray-400">Energy Budget</div>
+                  <div className="text-2xl font-bold text-sky-400">100</div>
+                  <div className="text-xs text-gray-500">ATP</div>
+                </div>
+                <div className="bg-gray-800/50 rounded p-3 text-center">
+                  <div className="text-xs text-gray-400">Reputation</div>
+                  <div className="text-2xl font-bold text-purple-400">0.50</div>
+                  <div className="text-xs text-gray-500">Trust</div>
+                </div>
+              </div>
+              <p className="text-sm text-gray-400 italic">
+                What happens when Alice posts quality content? Spams? Helps a newcomer? Click below to find out.
+              </p>
             </div>
 
             <button
               onClick={() => setCurrentStep("simulation")}
               className="w-full bg-gradient-to-r from-sky-500 to-purple-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-sky-600 hover:to-purple-700 transition-all text-lg"
             >
-              Watch Alice Build Her Reputation &rarr;
+              Watch Alice&apos;s Full Journey (10 actions) &rarr;
             </button>
 
             <p className="text-center text-sm text-gray-500">
