@@ -205,15 +205,15 @@ export default function PlaygroundPage() {
         <h2>What You Can Explore</h2>
         <ul style={{ marginTop: "0.75rem", marginLeft: "1.25rem", color: "#d1d5db" }}>
           <li style={{ marginBottom: "0.5rem" }}>
-            <strong>Metabolic Economics</strong>: What happens when actions are too expensive? Too
-            cheap? Can agents survive on different ATP budgets?
+            <strong>Attention Economics</strong>: What happens when actions are too expensive? Too
+            cheap? Can agents survive on different attention budgets?
           </li>
           <li style={{ marginBottom: "0.5rem" }}>
             <strong>Trust Dynamics</strong>: How does trust evolve? What trust thresholds enable
             survival? How quickly should trust change?
           </li>
           <li style={{ marginBottom: "0.5rem" }}>
-            <strong>Karma Mechanics</strong>: Does karma (rebirth bonuses) help or hurt? What's the
+            <strong>Rebirth Carry-Forward</strong>: Do reputation bonuses between lives help or hurt? What's the
             right balance between forgiveness and consequences?
           </li>
           <li style={{ marginBottom: "0.5rem" }}>
@@ -277,7 +277,7 @@ export default function PlaygroundPage() {
               borderLeft: "4px solid #38bdf8",
             }}
           >
-            <h3 style={{ fontSize: "1rem", marginBottom: "0.5rem" }}>💰 Metabolic Balance</h3>
+            <h3 style={{ fontSize: "1rem", marginBottom: "0.5rem" }}>💰 Economic Balance</h3>
             <p style={{ fontSize: "0.875rem", color: "#9ca3af" }}>
               Rewards must exceed costs on average, but not by too much. Too easy = no challenge.
               Too hard = inevitable death. The sweet spot enables growth through skill.
@@ -305,10 +305,10 @@ export default function PlaygroundPage() {
               borderLeft: "4px solid #f59e0b",
             }}
           >
-            <h3 style={{ fontSize: "1rem", marginBottom: "0.5rem" }}>🔄 Karma Compression</h3>
+            <h3 style={{ fontSize: "1rem", marginBottom: "0.5rem" }}>🔄 Rebirth Balance</h3>
             <p style={{ fontSize: "0.875rem", color: "#9ca3af" }}>
-              High karma shouldn't make you invincible, just give you a head start. The simulation
-              compresses extreme trust scores (0.3-0.6) to prevent runaway advantages.
+              Carry-forward bonuses shouldn't make you invincible, just give you a head start.
+              The simulation prevents runaway advantages so each life still requires earning trust.
             </p>
           </div>
           <div
