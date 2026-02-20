@@ -758,20 +758,14 @@ export default function LCTExplainerPage() {
             </a>
           </div>
         </div>
-        {/* Next Steps */}
-        <div className="mt-8 p-6 rounded-xl text-center" style={{ background: 'linear-gradient(135deg, #1e293b, #0f172a)', border: '1px solid #334155' }}>
-          <h3 className="text-xl font-bold mb-3 text-gray-100">Continue Learning</h3>
-          <p className="text-gray-400 mb-4 text-sm">
-            LCT provides the identity layer. Next, learn how trust accumulates on it.
-          </p>
-          <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="/trust-tensor" className="px-5 py-2 rounded-lg font-semibold text-sm text-white" style={{ background: '#0284c7' }}>
-              Trust Tensors →
-            </a>
-            <a href="/atp-economics" className="px-5 py-2 rounded-lg font-semibold text-sm text-white" style={{ background: '#374151' }}>
-              ATP Economics
-            </a>
-          </div>
+        {/* Sequence Navigation */}
+        <div className="mt-8 flex gap-4">
+          <a href="/why-web4" className="flex-1 px-6 py-3 rounded-lg font-semibold text-sm text-white text-center" style={{ background: '#374151' }}>
+            ← Why Web4
+          </a>
+          <a href="/atp-economics" className="flex-1 px-6 py-3 rounded-lg font-semibold text-sm text-white text-center" style={{ background: '#0284c7' }}>
+            Next: Energy Budget (ATP) →
+          </a>
         </div>
 
         <RelatedConcepts currentPath="/lct-explainer" />

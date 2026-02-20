@@ -641,16 +641,16 @@ if agent.atp <= 0:
       {/* Navigation */}
       <section className="max-w-4xl mx-auto mt-16 flex gap-4">
         <Link
-          href="/"
+          href="/lct-explainer"
           className="flex-1 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg transition-colors text-center"
         >
-          ← Back to Home
+          ← Identity (LCT)
         </Link>
         <Link
           href="/trust-tensor"
           className="flex-1 px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-center"
         >
-          Next: How Trust Works →
+          Next: Trust Tensors →
         </Link>
       </section>
 

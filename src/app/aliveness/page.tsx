@@ -105,10 +105,10 @@ export default function AlivenessExplainer() {
         <div className="hero-eyebrow">Core Mechanism</div>
         <h1 className="hero-title">Aliveness: When Existence is Measurable</h1>
         <p className="hero-subtitle">
-          In Web4, "alive" isn't metaphorical—it's a rigorous condition defined by three
-          verifiable criteria. You&apos;re alive when you have energy (ATP &gt; 0),
-          demonstrate coherent agency (T3 &gt; 0.5), and maintain verifiable continuity (CI coherent).
-          Death is real. Rebirth requires trust. Complex societies emerge from these simple rules.
+          Think of it like a professional license: you need resources to operate (ATP),
+          a track record people trust (T3), and consistent behavior that matches your history (CI).
+          Lose any one of these and you can&apos;t participate — like a doctor who loses their license.
+          But if you&apos;ve built a strong reputation, you can earn your way back.
         </p>
       </section>
 
@@ -994,22 +994,14 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
         }
       `}</style>
 
-      {/* Next Steps */}
-      <section className="max-w-4xl mx-auto mt-12">
-        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 text-center">
-          <h3 className="text-xl font-bold mb-3 text-gray-100">See Aliveness in Action</h3>
-          <p className="text-gray-400 mb-4 text-sm">
-            Watch agents live, die, and be reborn in a full society simulation.
-          </p>
-          <div className="flex gap-3 justify-center flex-wrap">
-            <Link href="/society-simulator" className="px-5 py-2 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-sm">
-              Society Simulator
-            </Link>
-            <Link href="/playground" className="px-5 py-2 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors text-sm">
-              Playground
-            </Link>
-          </div>
-        </div>
+      {/* Sequence Navigation */}
+      <section className="max-w-4xl mx-auto mt-12 flex gap-4">
+        <Link href="/coherence-index" className="flex-1 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg transition-colors text-center">
+          ← Coherence Index
+        </Link>
+        <Link href="/society-simulator" className="flex-1 px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-center">
+          See It in Action: Society Simulator →
+        </Link>
       </section>
 
       <RelatedConcepts currentPath="/aliveness" />

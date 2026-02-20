@@ -682,10 +682,10 @@ Talent: No decay (represents inherent aptitude)`}
       {/* Navigation */}
       <section className="max-w-4xl mx-auto mt-16 flex gap-4">
         <Link
-          href="/"
+          href="/atp-economics"
           className="flex-1 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg transition-colors text-center"
         >
-          &larr; Back to Home
+          &larr; Energy Budget (ATP)
         </Link>
         <Link
           href="/coherence-index"
