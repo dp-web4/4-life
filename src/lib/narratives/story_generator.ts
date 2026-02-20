@@ -135,7 +135,7 @@ export class StoryGenerator {
     event: SimulationEvent,
     lifeNumber: number
   ): NarrativeEvent {
-    const significance = this.explainSignificance(event);
+    const significance = this.explainSignificance(event, lifeNumber);
     let description = this.narrateEvent(event);
 
     // If the event has agent reasoning, lead with it as a quote — it's the most vivid part
@@ -383,7 +383,7 @@ export class StoryGenerator {
   // Significance Explanations
   // ============================================================================
 
-  private explainSignificance(event: SimulationEvent): string {
+  private explainSignificance(event: SimulationEvent, lifeNumber: number = 1): string {
     switch (event.type) {
       case EventType.LIFE_START:
         return "First impressions matter. Initial trust sets expectations.";
@@ -406,7 +406,13 @@ export class StoryGenerator {
         return "Trust is hard to build and easy to lose.";
 
       case EventType.TRUST_THRESHOLD:
-        return "A turning point: the agent crosses from unproven to trusted.";
+        if (lifeNumber === 1) {
+          return "A turning point: the agent crosses from unproven to trusted.";
+        } else if (lifeNumber === 2) {
+          return "Threshold crossed again. Trust resets each life, but the path back is shorter when you know the way.";
+        } else {
+          return "Crossing the threshold is routine now — the real story is what happens above it.";
+        }
 
       case EventType.TRUST_PLATEAU:
         return "Equilibrium found. The agent's behavior has settled into a consistent pattern.";
@@ -727,7 +733,11 @@ export class StoryGenerator {
       return "The agent carried forward lessons from previous lives and applied them successfully, achieving measurably better outcomes. Not external records — internalized wisdom that compounds across lives.";
     } else if (consistencyEvent) {
       // Consistency is more interesting than threshold for commentary — prioritize it
-      return "The remarkable consistency across lives suggests the agent has found a stable attractor — a behavioral pattern that works reliably. This isn't mechanical repetition, but the demonstration of a generalizable strategy.";
+      if (lifeNumber <= 2) {
+        return "The remarkable consistency across lives suggests the agent has found a stable attractor — a behavioral pattern that works reliably. This isn't mechanical repetition, but the demonstration of a generalizable strategy.";
+      } else {
+        return "Three lives in, the pattern is unmistakable. The agent doesn't just repeat — it converges. Each life reinforces the same strategy, suggesting deep structural learning rather than surface-level mimicry.";
+      }
     } else if (thresholdEvent) {
       // Vary commentary by life number to avoid identical text across acts
       if (lifeNumber === 1) {
