@@ -145,9 +145,8 @@ export default function PlaygroundPage() {
       <section>
         <h1>Parameter Playground</h1>
         <p style={{ marginTop: "1rem", maxWidth: "50rem", color: "#d1d5db" }}>
-          Experiment with Web4 society parameters and see immediate results. Adjust ATP costs,
-          trust dynamics, karma mechanics, and behavioral tendencies to understand how Web4
-          societies self-organize.
+          How do you build a digital society where good behavior is rewarded and bad behavior naturally dies out?
+          Tweak the parameters below and discover the answer.
         </p>
         <p style={{ marginTop: "0.75rem", maxWidth: "50rem", color: "#9ca3af" }}>
           This is the <strong>lowest-friction pathway to participation</strong> - no code, no

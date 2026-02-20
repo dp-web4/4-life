@@ -121,8 +121,11 @@ export default function FirstContactPage() {
               <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
                 Your First Web4 Experience
               </h1>
-              <p className="text-xl text-gray-300 leading-relaxed">
-                In the next 10 minutes, you'll see how trust and reputation actually work in Web4—and why it's fundamentally different from anything you've used before.
+              <p className="text-xl text-gray-300 leading-relaxed mb-4">
+                Today's internet rewards spam, lets trolls create unlimited accounts, and makes quality creators compete with bots. What if the system itself made that impossible?
+              </p>
+              <p className="text-lg text-gray-400 leading-relaxed">
+                In the next 10 minutes, you'll see how trust and reputation actually work in Web4 — and why it's fundamentally different from anything you've used before.
               </p>
             </div>
 
