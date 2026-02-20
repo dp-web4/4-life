@@ -151,7 +151,7 @@ Then, in a single window of 10 cycles, they exploit every relationship they've b
     mechanics: [
       'Join community with standard identity (no detectable anomalies)',
       'Deliver genuine high-quality contributions for 100+ cycles',
-      'Accumulate real trust across multiple dimensions (competence, reliability)',
+      'Accumulate real trust across T3 dimensions (talent, training, temperament)',
       'At peak trust, rapidly exploit all relationships in 10-cycle window',
       'Extract maximum value before detection, then exit'
     ],
@@ -382,9 +382,9 @@ Then they push one domino. A single well-placed trust violation cascades through
       },
       {
         name: 'T3 Multi-Dimensional Buffering',
-        mechanism: 'Trust across 5+ dimensions prevents single-axis collapse',
+        mechanism: 'Trust across T3 dimensions prevents single-axis collapse',
         effectiveness: 'moderate',
-        narrative: 'If Alice violates reliability but has strong competence and integrity, her trust drops but doesn\'t collapse. Other dimensions buffer the blow.'
+        narrative: 'If Alice\'s temperament score drops but she has strong talent and training, her trust declines but doesn\'t collapse. Other dimensions buffer the blow.'
       }
     ],
     effectiveness: 'limited'

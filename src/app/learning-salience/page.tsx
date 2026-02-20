@@ -147,7 +147,7 @@ const EXAMPLE_EXCHANGES: ExampleExchange[] = [
   {
     id: 'medium-2',
     prompt: 'What should I learn next?',
-    response: 'Based on our conversation, I\'d suggest exploring trust tensors - they build on the ATP concepts you\'ve been learning. The multi-dimensional trust model shows how competence, reliability, and consistency combine.',
+    response: 'Based on our conversation, I\'d suggest exploring trust tensors - they build on the ATP concepts you\'ve been learning. The T3 model shows how talent, training, and temperament combine into role-specific trust.',
     salience: { surprise: 0.4, novelty: 0.3, arousal: 0.6, reward: 0.5, conflict: 0.3, total: 0.43 },
     stored: false,
     explanation: 'Medium salience: Contextually appropriate guidance. Some engagement, but formulaic structure without deep exploration.',
