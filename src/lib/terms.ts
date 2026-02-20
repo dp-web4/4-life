@@ -42,7 +42,7 @@ export const terms: Record<string, TermDefinition> = {
   ATP: {
     term: "ATP",
     fullName: "Allocation Transfer Packet",
-    brief: "Metabolic budget for actions. Spend to act, earn by contributing value.",
+    brief: "Attention budget for actions. Spend to act, earn by contributing value.",
     explanation:
       "Every action in Web4 costs ATP. Post a message? Costs ATP. Vote? Costs ATP. High-quality contributions earn ATP back from the community. Run out of ATP? You can't act. This makes spam economically self-defeating—spammers burn resources faster than they earn them.",
     learnMore: "/atp-economics",

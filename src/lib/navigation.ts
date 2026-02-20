@@ -84,9 +84,9 @@ export const navigationTree: NavigationTree = {
       related: ['/lct-explainer', '/aliveness']
     },
     {
-      title: 'Economics (ATP)',
+      title: 'Attention Economics',
       href: '/atp-economics',
-      desc: 'Metabolic attention cost',
+      desc: 'Every action costs energy, quality earns it back',
       keywords: ['attention', 'budget', 'metabolic', 'energy', 'spam'],
       related: ['/aliveness', '/federation-economics', '/karma-consequences']
     },
