@@ -381,7 +381,7 @@ function GameOverPanel({
         </p>
       ) : (
         <p className="text-gray-300 mb-6">
-          Your ATP ran out. In Web4, this means metabolic death.
+          Your attention budget (ATP) ran out — you can no longer act.
         </p>
       )}
 
