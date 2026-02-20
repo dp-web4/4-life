@@ -68,29 +68,20 @@ export default function LearnJourney() {
         "You're curious about Web4 but don't know where to start. If you haven't already, try the interactive First Contact tutorial first. This path dives deeper into the core problems Web4 solves and the foundational concepts that enable trust-native societies.",
       concepts: [
         {
-          id: "aliveness",
-          title: "Aliveness: When Existence is Measurable",
-          teaser:
-            'In Web4, "alive" isn\'t metaphorical. You need attention budget, sufficient trust, and consistent behavior. Run out of any? You die. But if you earned trust, you can be reborn.',
-          why: "Start here because this integrates everything. Once you understand aliveness, the other concepts make immediate sense as components.",
-          link: "/aliveness",
-          duration: "8 min read",
-        },
-        {
           id: "lct",
-          title: "LCT: Verifiable Presence",
+          title: "Identity: Verifiable Presence (LCT)",
           teaser:
-            "Linked Context Tokens (LCT) are hardware-bound proofs of presence. Your phone's secure enclave makes your presence verifiable. No passwords. No accounts.",
-          why: "LCT enables everything else. Without verifiable presence, trust can't accumulate reliably.",
+            "Your phone's security chip makes your presence verifiable — no passwords, no accounts. Creating fake identities means buying fake devices.",
+          why: "Identity is the foundation. Without it, trust can't accumulate reliably and spam is free.",
           link: "/lct-explainer",
           duration: "6 min read",
         },
         {
           id: "atp",
-          title: "Attention Economics",
+          title: "Attention Economics (ATP)",
           teaser:
-            "Every action costs attention budget (ATP). Valuable contributions earn it back (as ADP receipts). Run out? You die. This makes spam impossible and quality sustainable.",
-          why: "The attention budget is how Web4 makes participation meaningful. It's the economic layer that enables natural selection of quality.",
+            "Every action costs energy. Valuable contributions earn it back. Run out of energy? You die. This makes spam self-defeating and quality sustainable.",
+          why: "The attention budget is what makes participation meaningful. It's how Web4 prices actions.",
           link: "/atp-economics",
           duration: "7 min read",
         },
@@ -98,18 +89,27 @@ export default function LearnJourney() {
           id: "t3",
           title: "Trust Tensors: Multi-Dimensional Trust",
           teaser:
-            "Trust isn't a single number. Trust Tensors (T3) track three dimensions per role: Talent, Training, and Temperament. Gaming one dimension while failing others doesn't work — and trust doesn't transfer between unrelated roles.",
-          why: "T3 is how societies measure trustworthiness without central authorities. Understanding it reveals why Web4 can self-regulate.",
+            "Trust isn't a single number. It's measured across three dimensions per role: Talent, Training, and Temperament. Gaming one while failing others doesn't work.",
+          why: "T3 is how societies measure trustworthiness without central authorities.",
           link: "/trust-tensor",
           duration: "9 min read",
         },
         {
           id: "ci",
-          title: "Coherence Index: Consistency Matters",
+          title: "Coherence Index: Consistency Detection",
           teaser:
-            "The Coherence Index tracks consistency across four dimensions: where you are, when you act, what you can do, and who you interact with. Inconsistent behavior tanks your trust — and one dimension failing drags down the whole score.",
-          why: "CI is Web4's immune system. It detects fraud automatically by spotting incoherent behavior.",
+            "Tracks consistency across four dimensions: where you are, when you act, what you can do, and who you interact with. Inconsistent behavior tanks your trust.",
+          why: "CI is Web4's immune system — it detects fraud automatically by spotting incoherent behavior.",
           link: "/coherence-index",
+          duration: "8 min read",
+        },
+        {
+          id: "aliveness",
+          title: "Aliveness: Putting It All Together",
+          teaser:
+            'In Web4, "alive" means: you have energy (ATP), sufficient trust (T3), and consistent behavior (CI). Lose any of them? You die. But if you earned trust, you can be reborn.',
+          why: "Now that you know the building blocks, see how they combine. Aliveness is where identity + economics + trust + consistency become a living system.",
+          link: "/aliveness",
           duration: "8 min read",
         },
       ],
