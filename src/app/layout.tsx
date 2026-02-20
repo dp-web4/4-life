@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteSearch from "@/components/SiteSearch";
+import GlossaryPanel from "@/components/GlossaryPanel";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function RootLayout({
           </nav>
         </header>
         <main>{children}</main>
+        <GlossaryPanel />
         <footer className="footer">
           <p>4-Life is an experimental lab for Web4 societies.</p>
           <p style={{ marginTop: '0.5rem' }}>
