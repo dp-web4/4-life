@@ -223,8 +223,8 @@ export default function WhyWeb4Page() {
               <h3 className="text-lg font-semibold text-sky-400">Make identity expensive to fake</h3>
               <p className="text-gray-400 text-sm">
                 Creating a new identity should require physical hardware, not just an email address.
-                Multiple independent witnesses should attest to your existence. Creating fake identities
-                (Sybil attacks) should require buying new devices — expensive and slow.
+                Multiple independent witnesses should attest to your existence. Creating thousands of
+                fake accounts should require buying thousands of devices — expensive and slow.
               </p>
             </div>
           </div>
