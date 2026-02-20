@@ -69,7 +69,7 @@ const QUESTIONS: Question[] = [
     options: [
       { label: 'How trust works', description: 'Identity, trust measurement, and how it accumulates or collapses', value: 'trust' },
       { label: 'The economics', description: 'Attention budgets, action costs, and why spam becomes impossible', value: 'economics' },
-      { label: 'Emergence & AI', description: 'How consciousness emerges, how agents learn, how societies self-organize', value: 'emergence' },
+      { label: 'Emergence & AI', description: 'How trust awareness develops, how agents learn, how societies self-organize', value: 'emergence' },
       { label: 'The big picture', description: 'Why does this matter? What problem does it solve? How is it different from Web3?', value: 'vision' },
     ],
   },
@@ -190,16 +190,16 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
     if (interest === 'emergence') {
       return {
         name: 'Emergence & Learning Lab',
-        tagline: 'How consciousness, learning, and social structure emerge from simple rules',
+        tagline: 'How awareness, learning, and social structure emerge from simple rules',
         color: '#a78bfa',
         steps: [
           { title: 'Consciousness Layers', description: 'Interactive visualization of 3-layer consciousness emergence', href: '/consciousness-layers', timeEstimate: '10 min', type: 'interactive' },
           { title: 'Trajectory Explorer', description: 'Model how capacity affects developmental trajectories', href: '/trajectory-explorer', timeEstimate: '10 min', type: 'interactive' },
           { title: 'Trust Networks', description: 'Multi-agent trust dynamics and coalition formation', href: '/trust-networks', timeEstimate: '10 min', type: 'interactive' },
           { title: 'Karma Journey', description: 'Experience learning across multiple lives firsthand', href: '/karma-journey', timeEstimate: '15 min', type: 'interactive' },
-          { title: 'Narratives', description: 'Read stories of agents maturing through EP learning', href: '/narratives', timeEstimate: '10 min', type: 'read' },
+          { title: 'Narratives', description: 'Read stories of agents maturing through cross-life learning', href: '/narratives', timeEstimate: '10 min', type: 'read' },
         ],
-        nextPath: 'The Lab Console lets you run full emergence simulations with EP.',
+        nextPath: 'The Lab Console lets you run full emergence simulations with cross-life learning.',
       };
     }
     // Default technical (vision)
@@ -212,7 +212,7 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
         { title: 'How It Works', description: 'Technical walkthrough of all subsystems', href: '/how-it-works', timeEstimate: '8 min', type: 'read' },
         { title: 'Concepts to Tools', description: 'Map every concept to its interactive demonstration', href: '/concepts-to-tools', timeEstimate: '5 min', type: 'read' },
         { title: 'Data Explorer', description: 'Browse all simulation data to see the system in action', href: '/data-explorer', timeEstimate: '10 min', type: 'experiment' },
-        { title: 'Spec', description: 'Structured specification of all Web4 primitives', href: '/spec.json', timeEstimate: '15 min', type: 'read' },
+        { title: 'Manifest', description: 'Design principles and specification of all Web4 primitives', href: '/manifest', timeEstimate: '15 min', type: 'read' },
       ],
       nextPath: 'Pick any specific explorer to dive deeper into individual components.',
     };

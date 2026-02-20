@@ -358,8 +358,8 @@ export default function PlaygroundPage() {
               </li>
             </ul>
             <p style={{ marginBottom: "0.75rem", color: "#9ca3af" }}>
-              This is intentionally simpler than the full Web4 game engine (which includes EP
-              learning, multi-agent interactions, MRH contexts, etc.). The playground focuses on
+              This is intentionally simpler than the full Web4 game engine (which includes cross-life
+              learning, multi-agent interactions, context boundaries, etc.). The playground focuses on
               core mechanics: ATP economics, trust evolution, and karma.
             </p>
             <p style={{ color: "#9ca3af" }}>
