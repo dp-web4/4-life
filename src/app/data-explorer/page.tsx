@@ -929,11 +929,11 @@ export default function DataExplorerPage() {
             <p>
               Each dataset captures a different simulation scenario. <strong className="text-white">Trust</strong> measures
               how the society perceives an agent (0-1 scale, 0.5 = trust threshold).
-              <strong className="text-white"> ATP</strong> is attention tokens — the metabolic budget for actions.
+              <strong className="text-white"> ATP</strong> is the attention budget — every action costs energy.
             </p>
             <p>
               <strong className="text-white">Karma</strong> carries trust consequences across lives.
-              <strong className="text-white"> EP</strong> (Epistemic Proprioception) enables learning from experience.
+              <strong className="text-white"> EP</strong> (cross-life pattern learning) enables agents to improve from experience.
               <strong className="text-white"> Policy</strong> frameworks define governance rules.
             </p>
             <p>
