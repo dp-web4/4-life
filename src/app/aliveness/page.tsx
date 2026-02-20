@@ -22,7 +22,7 @@ function AlivenessCalculator() {
 
       <div className="slider-group">
         <label>
-          <span>ATP (Energy Budget):</span>
+          <span>Energy Budget (ATP):</span>
           <input
             type="range"
             min="0"
@@ -37,7 +37,7 @@ function AlivenessCalculator() {
 
       <div className="slider-group">
         <label>
-          <span>T3 Trust Score (Agency):</span>
+          <span>Trust Score (Agency):</span>
           <input
             type="range"
             min="0"
@@ -53,7 +53,7 @@ function AlivenessCalculator() {
 
       <div className="slider-group">
         <label>
-          <span>CI Score (Continuity):</span>
+          <span>Consistency (Continuity):</span>
           <input
             type="range"
             min="0"
@@ -74,18 +74,18 @@ function AlivenessCalculator() {
         <div className="result-details">
           {alive ? (
             <>
-              <p>✓ Energy budget: {atp} ATP (sustained)</p>
-              <p>✓ Coherent agency: T3 = {trust.toFixed(2)} (above 0.5 threshold)</p>
-              <p>✓ Verifiable continuity: CI = {ci.toFixed(2)} (coherent)</p>
+              <p>✓ Energy budget: {atp} (sustained)</p>
+              <p>✓ Coherent agency: trust = {trust.toFixed(2)} (above 0.5 threshold)</p>
+              <p>✓ Verifiable continuity: consistency = {ci.toFixed(2)} (coherent)</p>
               <p className="result-summary">
                 All three criteria satisfied. This entity demonstrates measurable aliveness.
               </p>
             </>
           ) : (
             <>
-              {!metabolic && <p>✗ Energy exhaustion: ATP = {atp} (can&apos;t act)</p>}
-              {!agency && <p>✗ No coherent agency: T3 = {trust.toFixed(2)} (below 0.5 threshold)</p>}
-              {!continuity && <p>✗ Incoherent behavior: CI = {ci.toFixed(2)} (inconsistent)</p>}
+              {!metabolic && <p>✗ Energy exhaustion: {atp} remaining (can&apos;t act)</p>}
+              {!agency && <p>✗ No coherent agency: trust = {trust.toFixed(2)} (below 0.5 threshold)</p>}
+              {!continuity && <p>✗ Incoherent behavior: consistency = {ci.toFixed(2)} (inconsistent)</p>}
               <p className="result-summary death-reason">
                 Aliveness criteria not met. Entity cannot participate in society.
               </p>
@@ -103,7 +103,7 @@ export default function AlivenessExplainer() {
       <Breadcrumbs currentPath="/aliveness" />
       <section>
         <div className="hero-eyebrow">Core Mechanism</div>
-        <h1 className="hero-title">Aliveness: When Existence is Measurable</h1>
+        <h1 className="hero-title" style={{ background: 'linear-gradient(to right, #38bdf8, #818cf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Aliveness: When Existence is Measurable</h1>
         <p className="hero-subtitle">
           Think of it like a professional license: you need resources to operate (ATP),
           a track record people trust (T3), and consistent behavior that matches your history (CI).
@@ -128,10 +128,10 @@ export default function AlivenessExplainer() {
           <div className="comparison-card good">
             <h3>Web4 Aliveness</h3>
             <ul>
-              <li><strong>Measurable existence:</strong> ATP &gt; 0, T3 &gt; 0.5, CI coherent</li>
-              <li><strong>Real death:</strong> ATP = 0 means you die immediately</li>
-              <li><strong>Rebirth requires trust:</strong> Only T3 ≥ 0.5 entities reborn</li>
-              <li><strong>Energy economics:</strong> Spam dies naturally (ATP exhaustion)</li>
+              <li><strong>Measurable existence:</strong> Energy &gt; 0, trust &gt; 0.5, consistency coherent</li>
+              <li><strong>Real death:</strong> Energy = 0 means you die immediately</li>
+              <li><strong>Rebirth requires trust:</strong> Only trust ≥ 0.5 entities reborn</li>
+              <li><strong>Energy economics:</strong> Spam dies naturally (energy exhaustion)</li>
               <li><strong>Trust accumulates:</strong> Good behavior compounds across lives</li>
             </ul>
           </div>
@@ -536,14 +536,17 @@ export default function AlivenessExplainer() {
           </p>
         </div>
         <p className="learn-more">
-          <Link href="/lab-console">See this in action in the Lab Console →</Link>
+          <Link href="/karma-journey">See death and rebirth in your Karma Journey →</Link>
         </p>
       </section>
 
       <section>
-        <h2>Technical Details</h2>
+        <details>
+        <summary style={{ fontSize: '1.5rem', fontWeight: 'bold', cursor: 'pointer', listStyle: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <span style={{ color: '#6b7280' }}>▶</span> Technical Details (For The Curious)
+        </summary>
 
-        <h3>ATP Thresholds</h3>
+        <h3 style={{ marginTop: '1.5rem' }}>ATP Thresholds</h3>
         <div className="detail-box">
           <ul>
             <li><strong>New entity:</strong> 100 ATP (initial grant)</li>
@@ -590,6 +593,7 @@ extra_witnesses = ceil((0.8 - CI) × 10)  # Capped at +8
 CI = (spatial × capability × temporal × relational) ** 0.25`}
           </pre>
         </div>
+        </details>
       </section>
 
       <section>
@@ -636,12 +640,12 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             <tr>
               <td><strong>Aliveness definition</strong></td>
               <td>Undefined (account exists = "alive")</td>
-              <td>Rigorous (ATP &gt; 0, T3 &gt; 0.5, CI coherent)</td>
+              <td>Rigorous (energy &gt; 0, trust &gt; 0.5, consistency coherent)</td>
             </tr>
             <tr>
               <td><strong>Death consequence</strong></td>
               <td>None (trivial to circumvent)</td>
-              <td>Permanent if T3 &lt; 0.5 (society rejects)</td>
+              <td>Permanent if trust &lt; 0.5 (society rejects)</td>
             </tr>
           </tbody>
         </table>
