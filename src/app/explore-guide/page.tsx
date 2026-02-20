@@ -237,7 +237,7 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
     }
     return {
       name: 'Theoretical Foundations',
-      tagline: 'Trust tensors, coherence theory, and epistemic proprioception',
+      tagline: 'Trust tensors, behavioral coherence, and cross-life learning',
       color: '#f0abfc',
       steps: [
         { title: 'Coherence Framework', description: '9-domain coherence visualizer — grounded in Synchronism theory', href: '/coherence-framework', timeEstimate: '12 min', type: 'interactive' },
