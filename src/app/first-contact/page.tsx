@@ -133,7 +133,7 @@ export default function FirstContactPage() {
               <h2 className="text-2xl font-bold mb-4">What You'll Learn</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <div className="text-sky-400 font-semibold mb-2">🔋 ATP: Attention Economics</div>
+                  <div className="text-sky-400 font-semibold mb-2">🔋 Attention Economics (ATP)</div>
                   <p className="text-gray-400">
                     Every action costs attention. Quality earns it back. Spam burns out.
                   </p>
@@ -506,7 +506,7 @@ export default function FirstContactPage() {
               {/* ATP Economics */}
               <div className="bg-gradient-to-br from-sky-900/30 to-gray-800 border border-sky-700 rounded-xl p-6">
                 <div className="text-3xl mb-3">🔋</div>
-                <h3 className="text-xl font-bold text-sky-400 mb-3">ATP: Attention Economics</h3>
+                <h3 className="text-xl font-bold text-sky-400 mb-3">Attention Economics (ATP)</h3>
                 <p className="text-gray-300 mb-4">
                   <strong>The problem:</strong> Traditional platforms let you post unlimited content. Result? Spam prevails,
                   quality drowns, moderation armies needed.

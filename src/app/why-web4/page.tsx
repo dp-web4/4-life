@@ -284,37 +284,37 @@ export default function WhyWeb4Page() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div className="bg-gray-900/50 rounded-lg p-4">
               <h4 className="font-semibold text-sky-400 mb-2">
-                ATP (Allocation Transfer Packet)
+                Energy Budget (ATP)
               </h4>
               <p className="text-gray-400 text-sm">
                 Every action costs attention budget. Quality earns it back. Spam burns out.
               </p>
               <Link href="/atp-economics" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
-                Learn about ATP →
+                Learn about energy budgets →
               </Link>
             </div>
 
             <div className="bg-gray-900/50 rounded-lg p-4">
               <h4 className="font-semibold text-sky-400 mb-2">
-                LCT (Linked Context Token)
+                Hardware-Bound Identity (LCT)
               </h4>
               <p className="text-gray-400 text-sm">
                 Hardware-bound identity witnessed by multiple devices. Expensive to fake.
               </p>
               <Link href="/lct-explainer" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
-                Learn about LCT →
+                Learn about identity →
               </Link>
             </div>
 
             <div className="bg-gray-900/50 rounded-lg p-4">
               <h4 className="font-semibold text-sky-400 mb-2">
-                T3 (Trust Tensor)
+                Trust Tensor (T3)
               </h4>
               <p className="text-gray-400 text-sm">
                 Multi-dimensional trust that follows you. Harder to game than single scores.
               </p>
               <Link href="/trust-tensor" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
-                Learn about T3 →
+                Learn about trust tensors →
               </Link>
             </div>
 
@@ -326,7 +326,7 @@ export default function WhyWeb4Page() {
                 Visibility bounded by trust. Spam can't reach you if spammers aren't trusted.
               </p>
               <Link href="/markov-relevancy-horizon" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
-                Learn about MRH →
+                Learn about context boundaries →
               </Link>
             </div>
           </div>
