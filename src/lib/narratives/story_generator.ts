@@ -135,17 +135,17 @@ export class StoryGenerator {
     event: SimulationEvent,
     lifeNumber: number
   ): NarrativeEvent {
-    let significance = this.explainSignificance(event);
+    const significance = this.explainSignificance(event);
+    let description = this.narrateEvent(event);
 
-    // If the event has agent reasoning (and it's not already in the description),
-    // append it as a quote to make the agent's voice heard
+    // If the event has agent reasoning, lead with it as a quote — it's the most vivid part
     if (event.agent_reasoning && event.type !== EventType.STRATEGY_SHIFT && event.type !== EventType.DECISION_SUMMARY) {
-      significance += ` The agent's thinking: "${event.agent_reasoning}"`;
+      description = `"${event.agent_reasoning}" — ${description}`;
     }
 
     return {
       timestamp: this.formatTimestamp(event.tick, lifeNumber),
-      description: this.narrateEvent(event),
+      description,
       technical_detail: this.getTechnicalDetail(event),
       significance,
     };
@@ -245,14 +245,14 @@ export class StoryGenerator {
     const pct = (event.data.percent_change * 100).toFixed(0);
     const newTrust = event.data.new_trust?.toFixed(2);
 
-    return `Trust surges ${pct}% to ${newTrust}! Something the agent did resonated strongly with the society's values. Consistent positive behavior compounds.`;
+    return `Trust surges ${pct}% to ${newTrust}! Something clicked — the agent's actions resonated.`;
   }
 
   private narrateTrustCollapse(event: SimulationEvent): string {
     const pct = (event.data.percent_change * 100).toFixed(0);
     const newTrust = event.data.new_trust?.toFixed(2);
 
-    return `Trust collapses by ${pct}%, dropping to ${newTrust}. A significant breach of expectations. In Web4, trust is hard to build and easy to lose. Recovery requires sustained consistency.`;
+    return `Trust collapses ${pct}%, dropping to ${newTrust}. Something went wrong — and the society noticed.`;
   }
 
   private narrateTrustThreshold(event: SimulationEvent): string {
@@ -268,31 +268,31 @@ export class StoryGenerator {
   private narrateATPCrisis(event: SimulationEvent): string {
     const atp = this.formatNumber(event.data.current_atp);
 
-    return `ATP crisis: Only ${atp} attention tokens remain. The agent is running low on the capacity to take meaningful actions. They must find ways to earn ATP through contribution, or face death from exhaustion.`;
+    return `ATP crisis: Only ${atp} energy left. The agent is burning out — they need to earn more through contribution, or they won't survive.`;
   }
 
   private narrateATPWindfall(event: SimulationEvent): string {
     const gain = this.formatNumber(event.data.gain);
     const current = this.formatNumber(event.data.current_atp);
 
-    return `ATP windfall! The agent gains ${gain} attention tokens (now at ${current}), likely through valuable contribution to the society. This represents recognition of their worth - others are willing to pay attention.`;
+    return `ATP windfall! +${gain} energy (now at ${current}). The agent's contribution was valued — the society paid attention.`;
   }
 
   private narrateDeathImminent(event: SimulationEvent): string {
     const atp = this.formatNumber(event.data.current_atp);
 
-    return `Death approaches. ATP has fallen to ${atp}. Without intervention, the agent will exhaust their capacity to act. This is the metabolic reality of Web4: participation requires energy, and energy must be earned.`;
+    return `Death approaches. ATP at ${atp} and falling. Without a contribution that earns energy back, this life is over.`;
   }
 
   private narrateMaturation(event: SimulationEvent): string {
     const improvement = event.data.improvement?.toFixed(3);
     const currTrust = event.data.curr_final_trust?.toFixed(2);
 
-    return `Maturation detected! The agent's final trust of ${currTrust} exceeds their previous life by ${improvement}. This is epistemic learning in action - the agent is discovering what behaviors work, and carrying that wisdom forward through karma.`;
+    return `The agent is getting better. Final trust of ${currTrust} exceeds the previous life by ${improvement}. Lessons are carrying forward — wisdom accumulates across lives.`;
   }
 
   private narrateConsistency(event: SimulationEvent): string {
-    return `Remarkable consistency: This life's trust trajectory closely matches the previous life. The agent has found a reliable pattern and is executing it with precision. This stability suggests deep learning, not luck.`;
+    return `Remarkable consistency — this life's trust trajectory closely matches the last. The agent found a reliable pattern and is executing it precisely.`;
   }
 
   private narrateStrategyShift(event: SimulationEvent): string {
@@ -353,13 +353,13 @@ export class StoryGenerator {
   private getTechnicalDetail(event: SimulationEvent): string | undefined {
     switch (event.type) {
       case EventType.TRUST_THRESHOLD:
-        return "The 0.5 threshold comes from Synchronism Session 249: Consciousness emerges when coherence (behavioral consistency) exceeds 0.5. Below this, behavior appears random; above it, intentional.";
+        return "The 0.5 threshold is a design choice: below this level, behavior appears too inconsistent to distinguish from noise. Above it, the pattern is clear enough for the society to extend full trust.";
 
       case EventType.REBIRTH:
         return `Karma mechanism: trust_gain = ${event.data.trust_gain?.toFixed(4)}, calculated from coherence index of previous life's behavior pattern.`;
 
       case EventType.MATURATION:
-        return "Epistemic Proprioception (EP) learns from experience across lives, gradually improving performance through pattern recognition.";
+        return "Cross-life learning: the agent internalizes patterns from previous lives, gradually improving decision-making through experience.";
 
       case EventType.ATP_EXHAUSTION:
         return "ATP (Allocation Transfer Packet) represents metabolic budget. All actions cost ATP. Gain ATP through valuable contribution (ADP - Allocation Discharge Packet).";
@@ -387,28 +387,28 @@ export class StoryGenerator {
         return "First impressions matter. Initial trust sets expectations.";
 
       case EventType.REBIRTH:
-        return "Demonstrates Web4's memory: Your past actions shape your future starting conditions.";
+        return "Past actions shape future starting conditions. The society remembers.";
 
       case EventType.LIFE_END:
         return "Death isn't failure - it's part of the cycle. What matters is the trust you carried forward.";
 
       case EventType.TRUST_SPIKE:
-        return "Shows that consistent positive behavior compounds over time.";
+        return "Consistent positive behavior compounds.";
 
       case EventType.TRUST_COLLAPSE:
-        return "Illustrates fragility of trust: Hard to build, easy to lose.";
+        return "Trust is hard to build and easy to lose.";
 
       case EventType.TRUST_THRESHOLD:
-        return "Marks transition from random to intentional behavior - true agency emerges.";
+        return "A turning point: the agent crosses from unproven to trusted.";
 
       case EventType.ATP_CRISIS:
-        return "Highlights metabolic reality: Participation requires energy that must be earned.";
+        return "Running on empty. Every action costs energy, and this agent is running out.";
 
       case EventType.MATURATION:
-        return "Evidence of learning: The agent is getting better across lives through epistemic proprioception.";
+        return "The agent is getting better across lives. Lessons compound.";
 
       case EventType.CONSISTENCY:
-        return "Indicates mastery: The agent has found a reliable strategy and executes it precisely.";
+        return "Mastery: a reliable strategy, executed precisely.";
 
       case EventType.STRATEGY_SHIFT:
         return "Adaptation in action: The agent reads its situation and changes approach. This is the hallmark of intelligent behavior.";
