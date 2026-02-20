@@ -11,10 +11,12 @@
  * disadvantages that compound across lives. Trust is your legacy.
  */
 
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+
+const KARMA_STORAGE_KEY = 'karma-journey-profile';
 
 // ============================================================================
 // Types
@@ -307,6 +309,37 @@ export default function KarmaJourneyPage() {
     choices: [],
     karmaTier: null,
   }]);
+  const [savedProfile, setSavedProfile] = useState<TrustProfile | null>(null);
+  const [showWelcomeBack, setShowWelcomeBack] = useState(false);
+  const savedProfileRef = useRef<TrustProfile | null>(null);
+
+  // Load saved profile on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(KARMA_STORAGE_KEY);
+      if (saved) {
+        const profile = JSON.parse(saved) as TrustProfile;
+        savedProfileRef.current = profile;
+        setSavedProfile(profile);
+        setShowWelcomeBack(true);
+      }
+    } catch { /* ignore parse errors */ }
+  }, []);
+
+  // Save profile whenever a life completes (uses ref to avoid infinite loop)
+  useEffect(() => {
+    const profile = classifyProfile(lives);
+    if (profile) {
+      const prev = savedProfileRef.current;
+      const merged = prev && prev.totalLives > 0
+        ? { ...profile, totalLives: Math.max(profile.totalLives, prev.totalLives) }
+        : profile;
+      try {
+        localStorage.setItem(KARMA_STORAGE_KEY, JSON.stringify(merged));
+        savedProfileRef.current = merged;
+      } catch { /* localStorage might be full */ }
+    }
+  }, [lives]);
 
   const currentLife = lives[lives.length - 1];
   const effComp = useMemo(
@@ -393,6 +426,10 @@ export default function KarmaJourneyPage() {
       lifeNumber: 1, tick: 0, talent: 0.5, training: 0.5, temperament: 0.5,
       ci: 0.85, atp: 100, alive: true, deathCause: null, choices: [], karmaTier: null,
     }]);
+    try { localStorage.removeItem(KARMA_STORAGE_KEY); } catch { /* ok */ }
+    savedProfileRef.current = null;
+    setSavedProfile(null);
+    setShowWelcomeBack(false);
   }, []);
 
   return (
@@ -406,6 +443,35 @@ export default function KarmaJourneyPage() {
       }}>
         Karma Journey
       </h1>
+      {/* Welcome back banner for returning visitors */}
+      {showWelcomeBack && savedProfile && (
+        <div style={{
+          padding: '0.75rem 1rem', borderRadius: '0.5rem', marginBottom: '1rem',
+          background: 'linear-gradient(135deg, rgba(110,231,183,0.08), rgba(147,197,253,0.08))',
+          border: '1px solid rgba(110,231,183,0.2)',
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem',
+        }}>
+          <div>
+            <span style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)' }}>
+              Welcome back, <strong style={{ color: '#6ee7b7' }}>{savedProfile.archetype}</strong> {savedProfile.emoji}
+            </span>
+            <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginLeft: '0.5rem' }}>
+              {savedProfile.totalLives} {savedProfile.totalLives === 1 ? 'life' : 'lives'} lived &middot; {Math.round(savedProfile.coopRate * 100)}% cooperative
+            </span>
+          </div>
+          <button
+            onClick={() => setShowWelcomeBack(false)}
+            style={{
+              padding: '0.25rem 0.5rem', borderRadius: '0.25rem', fontSize: '0.7rem',
+              background: 'transparent', border: '1px solid var(--color-border)',
+              color: 'var(--color-text-muted)', cursor: 'pointer',
+            }}
+          >
+            Dismiss
+          </button>
+        </div>
+      )}
+
       <p style={{ color: 'var(--color-text-secondary)', marginBottom: '0.75rem', maxWidth: '700px', lineHeight: 1.6 }}>
         Live multiple lives. Make choices. Watch how trust and karma compound across reincarnations.
         Cooperative choices build slow trust; selfish choices yield quick gains but erode your legacy.
