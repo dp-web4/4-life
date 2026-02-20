@@ -55,7 +55,7 @@ export default function HomePage() {
 
       {/* Tab Content */}
       {activeTab === 'intro' ? (
-        <IntroTab />
+        <IntroTab onSwitchToDeepDive={() => { setActiveTab('deepdive'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} />
       ) : (
         <DeepDiveTab />
       )}
@@ -63,7 +63,7 @@ export default function HomePage() {
   );
 }
 
-function IntroTab() {
+function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
   return (
     <div className="space-y-12" style={{ maxWidth: '48rem', margin: '0 auto' }}>
       {/* Guided Start - Most Prominent */}
@@ -174,10 +174,7 @@ function IntroTab() {
           Ready to go deeper?
         </p>
         <button
-          onClick={() => {
-            const element = document.querySelector('[data-tab="deepdive"]');
-            if (element) (element as HTMLElement).click();
-          }}
+          onClick={onSwitchToDeepDive}
           className="btn-secondary"
         >
           Explore All Topics →
