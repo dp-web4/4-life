@@ -121,7 +121,7 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
           { title: 'Playground', description: 'Full parameter playground — tweak any setting and run your own simulation', href: '/playground', timeEstimate: '15 min', type: 'experiment' },
           { title: 'Concepts to Tools', description: 'Map every concept to its interactive tool', href: '/concepts-to-tools', timeEstimate: '5 min', type: 'read' },
         ],
-        nextPath: 'Try the Lab Console to run full simulations with all parameters.',
+        nextPath: 'Try the Playground to run full simulations with custom parameters.',
       };
     }
     if (style === 'adversarial') {
@@ -169,7 +169,7 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
           { title: 'MRH Explorer', description: 'Context boundaries and how they shape trust visibility', href: '/mrh-explorer', timeEstimate: '8 min', type: 'interactive' },
           { title: 'Data Explorer', description: 'Raw simulation data showing trust trajectories across all datasets', href: '/data-explorer', timeEstimate: '10 min', type: 'experiment' },
         ],
-        nextPath: 'Run your own trust experiments in the Lab Console.',
+        nextPath: 'Run your own trust experiments in the Playground.',
       };
     }
     if (interest === 'economics') {
@@ -199,7 +199,7 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
           { title: 'Trajectory Explorer', description: 'Model how capacity affects developmental trajectories', href: '/trajectory-explorer', timeEstimate: '10 min', type: 'interactive' },
           { title: 'Awareness Layers', description: 'Research visualization: how awareness emerges in 3 layers (advanced)', href: '/consciousness-layers', timeEstimate: '10 min', type: 'interactive' },
         ],
-        nextPath: 'The Lab Console lets you run full emergence simulations with cross-life learning.',
+        nextPath: 'The Playground lets you run full emergence simulations with custom parameters.',
       };
     }
     // Default technical (vision)
