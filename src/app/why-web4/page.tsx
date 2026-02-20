@@ -379,8 +379,8 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Yes, but it's <strong>expensive</strong>. Creating one LCT requires a physical device
-                with a TPM/Secure Enclave. Creating 1000 fake identities means buying 1000 devices—
+                Yes, but it&apos;s <strong>expensive</strong>. Creating one LCT requires a physical device
+                with a security chip (TPM or Secure Enclave — built into most modern phones and laptops). Creating 1000 fake identities means buying 1000 devices —
                 thousands of dollars and physical logistics.
               </p>
               <p>
