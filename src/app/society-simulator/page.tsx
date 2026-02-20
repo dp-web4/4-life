@@ -3218,7 +3218,7 @@ export default function SocietySimulatorPage() {
         <div className="mb-4 bg-emerald-900/20 border border-emerald-800 rounded-lg p-4">
           <h2 className="text-base font-bold mb-2 text-emerald-400">How This Demonstrates Web4</h2>
           <p className="text-gray-300 text-sm mb-2">
-            Each agent has <strong>ATP</strong> (metabolic budget) and a <strong>Trust Tensor</strong> (reputation).
+            Each agent has <strong>ATP</strong> (attention budget) and a <strong>Trust Tensor</strong> (reputation).
             Actions cost ATP. Cooperation builds trust. Defection may win short-term but gets isolated.
             Watch how trust-based economics create stable cooperation <em>without moderators</em>.
           </p>
@@ -3292,7 +3292,7 @@ export default function SocietySimulatorPage() {
                 />
               </div>
               <div>
-                <label className="text-xs text-gray-400 block mb-1">Epochs: {customEpochs}</label>
+                <label className="text-xs text-gray-400 block mb-1">Rounds: {customEpochs}</label>
                 <input
                   type="range" min={2} max={15} value={customEpochs}
                   onChange={e => setCustomEpochs(Number(e.target.value))}
