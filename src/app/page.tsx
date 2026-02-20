@@ -288,7 +288,7 @@ function DeepDiveTab() {
             Try the Playground
           </Link>
           <Link href="/act-explorer" className="btn-secondary">
-            ACT Chat
+            AI Guide Chat
           </Link>
         </div>
       </div>

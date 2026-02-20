@@ -313,10 +313,10 @@ export const navigationTree: NavigationTree = {
       related: ['/lab-console', '/playground']
     },
     {
-      title: 'ACT Chat',
+      title: 'AI Guide Chat',
       href: '/act-explorer',
-      desc: 'Ask questions',
-      keywords: ['chat', 'questions', 'conversational', 'ACT', 'ask'],
+      desc: 'Ask questions about Web4',
+      keywords: ['chat', 'questions', 'conversational', 'ACT', 'ask', 'AI', 'guide'],
       related: ['/first-contact', '/glossary']
     },
     {

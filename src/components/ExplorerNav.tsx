@@ -25,7 +25,7 @@ interface ExplorerInfo {
 const EXPLORERS: ExplorerInfo[] = [
   // Understand
   { href: '/first-contact', title: 'First Contact', shortTitle: 'First Contact', color: '#6ee7b7', stage: 'understand' },
-  { href: '/act-explorer', title: 'ACT Chat', shortTitle: 'ACT Chat', color: '#6ee7b7', stage: 'understand' },
+  { href: '/act-explorer', title: 'AI Guide', shortTitle: 'AI Guide', color: '#6ee7b7', stage: 'understand' },
   { href: '/concepts-to-tools', title: 'Concepts to Tools', shortTitle: 'Concepts→Tools', color: '#6ee7b7', stage: 'understand' },
   // Explore
   { href: '/trust-tensor-explorer', title: 'Trust Tensor Explorer', shortTitle: 'Trust Tensor', color: '#93c5fd', stage: 'explore' },

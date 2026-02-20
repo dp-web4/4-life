@@ -53,7 +53,7 @@ const TOOLS: ToolCard[] = [
     category: 'understand',
   },
   {
-    title: 'ACT Chat',
+    title: 'AI Guide Chat',
     href: '/act-explorer',
     emoji: '💬',
     description: 'Ask questions in natural language and get explanations of any concept.',
@@ -408,7 +408,7 @@ export default function ResearchHubPage() {
               The Quick Overview
             </div>
             <div style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-              Your First Simulation → ACT Chat → Narratives
+              Your First Simulation → AI Guide Chat → Narratives
             </div>
             <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '0.5rem' }}>
               Fastest way to understand what&apos;s happening without technical depth
