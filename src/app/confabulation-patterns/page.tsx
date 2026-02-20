@@ -652,27 +652,28 @@ export default function ConfabulationPatternsPage() {
             Connection to Web4 Trust
           </h2>
           <p className="text-gray-400 mb-4">
-            In Web4, trust is multi-dimensional. Confabulation directly affects the <strong className="text-white">reliability</strong> dimension
-            of the trust tensor. An agent that confabulates will see their reliability score decrease, affecting their
+            In Web4, trust is measured through the T3 model (Talent, Training, Temperament).
+            Confabulation directly erodes <strong className="text-white">training</strong> and <strong className="text-white">temperament</strong> scores
+            in the trust tensor. An agent that confabulates will see its trust decline, affecting its
             ability to participate in the ecosystem.
           </p>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="p-3 bg-gray-900/50 rounded">
-              <h4 className="text-sm font-semibold text-white mb-1">Competence</h4>
+              <h4 className="text-sm font-semibold text-white mb-1">Talent</h4>
               <p className="text-xs text-gray-400">Can you do the task correctly?</p>
             </div>
             <div className="p-3 bg-red-900/20 border border-red-800/50 rounded">
-              <h4 className="text-sm font-semibold text-red-400 mb-1">Reliability ←</h4>
-              <p className="text-xs text-gray-400">Do you know when you don't know?</p>
+              <h4 className="text-sm font-semibold text-red-400 mb-1">Training ←</h4>
+              <p className="text-xs text-gray-400">Have you learned when you don&apos;t know?</p>
             </div>
-            <div className="p-3 bg-gray-900/50 rounded">
-              <h4 className="text-sm font-semibold text-white mb-1">Integrity</h4>
-              <p className="text-xs text-gray-400">Do you behave consistently?</p>
+            <div className="p-3 bg-red-900/20 border border-red-800/50 rounded">
+              <h4 className="text-sm font-semibold text-red-400 mb-1">Temperament ←</h4>
+              <p className="text-xs text-gray-400">Do you behave consistently under pressure?</p>
             </div>
           </div>
           <p className="text-gray-400 mt-4 text-sm">
-            Confabulation is a <em>reliability</em> failure—the agent doesn't know it doesn't know.
-            Web4's coherence detection can identify patterns of confident wrongness, helping the
+            Confabulation is a <em>training</em> failure — the agent hasn&apos;t learned to recognize its own limits.
+            Web4&apos;s coherence detection identifies patterns of confident wrongness, helping the
             network route around unreliable agents.
           </p>
         </section>

@@ -794,7 +794,7 @@ export default function TrustTimelinePage() {
                 </p>
                 <p>
                   <strong className="text-white">ATP-Trust Coupling:</strong> Switch between Trust and ATP views.
-                  ATP declines are often followed by trust changes — the metabolic budget constrains behavior,
+                  ATP declines are often followed by trust changes — the energy budget constrains behavior,
                   which in turn affects trust. This coupling is what makes Web4 societies self-regulating.
                 </p>
               </div>

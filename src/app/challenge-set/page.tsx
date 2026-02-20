@@ -30,7 +30,7 @@ export default function ChallengeSetPage() {
             <strong>Goal:</strong> Design an attack that extracts ATP from the system without providing genuine value.
           </p>
           <p style={{ color: "#9ca3af", lineHeight: "1.75", marginBottom: "1rem" }}>
-            Web4 claims that spam dies from metabolic exhaustion because spammers burn ATP faster than they earn it.
+            Web4 claims that spam dies from energy exhaustion because spammers burn ATP faster than they earn it.
             Can you design a strategy that:
           </p>
           <ul style={{ color: "#9ca3af", lineHeight: "1.75", marginLeft: "1.5rem", marginBottom: "1rem" }}>

@@ -840,7 +840,7 @@ function ComparisonPanel({
               <th className="text-left py-2 px-2 text-gray-400 font-normal">Scenario</th>
               <th className="text-right py-2 px-2 text-gray-400 font-normal">Trust</th>
               <th className="text-right py-2 px-2 text-gray-400 font-normal">Cooperation</th>
-              <th className="text-right py-2 px-2 text-gray-400 font-normal">Gini</th>
+              <th className="text-right py-2 px-2 text-gray-400 font-normal">Wealth Gap</th>
               <th className="text-right py-2 px-2 text-gray-400 font-normal">Coalitions</th>
               <th className="text-right py-2 px-2 text-gray-400 font-normal">Events</th>
               <th className="py-2 px-2"></th>
@@ -931,7 +931,7 @@ function ComparisonPanel({
 
         <div>
           <div className="flex items-center justify-between text-xs text-gray-400 mb-1">
-            <span>Inequality (Gini)</span>
+            <span>Inequality (Wealth Gap)</span>
             <span>Most Equal: {lowestGini.label}</span>
           </div>
           <div className="flex gap-1 h-6">
@@ -960,7 +960,7 @@ function ComparisonPanel({
         <ul className="text-sm text-gray-300 space-y-1">
           <li>• <strong className="text-green-400">{bestTrust.label}</strong> achieved the highest trust ({(bestTrust.trust * 100).toFixed(1)}%)</li>
           <li>• <strong className="text-green-400">{bestCoop.label}</strong> had the most cooperation ({(bestCoop.cooperation * 100).toFixed(1)}%)</li>
-          <li>• <strong className="text-green-400">{lowestGini.label}</strong> had the most equal society (Gini {lowestGini.gini.toFixed(3)})</li>
+          <li>• <strong className="text-green-400">{lowestGini.label}</strong> had the most equal society (wealth gap {lowestGini.gini.toFixed(3)})</li>
         </ul>
       </div>
 

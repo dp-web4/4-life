@@ -280,7 +280,7 @@ export default function GlossaryPage() {
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: "Knowing what you know and don't know. Agents that recognize patterns
-              (epistemic proprioception) survive better than those who don't."
+              (cross-life learning) survive better than those who don't."
             </p>
             <div className="flex gap-3 text-sm">
               <Link href="/patterns" className="text-sky-400 hover:underline">

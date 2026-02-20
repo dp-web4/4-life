@@ -318,7 +318,7 @@ function UnifyingFramework() {
             <h4 className="font-medium text-white">For Economics</h4>
             <p className="text-sm text-gray-400">
               Pricing agents that spent ATP without checking balances &quot;died&quot; prematurely.
-              Economic participation requires metabolic awareness - knowing your own
+              Economic participation requires energy awareness - knowing your own
               resource state before committing to actions.
             </p>
           </div>
@@ -512,7 +512,7 @@ export default function MetaCognitionFeedbackPage() {
             <div className="flex items-start gap-3">
               <span className="text-2xl">5.</span>
               <p className="text-gray-300">
-                <strong className="text-white">Web4 encodes this as architecture.</strong> LCT (cryptographic identity), ATP (metabolic awareness), CI (coherence monitoring), and Karma (consequence tracking) are all feedback loops made structural.
+                <strong className="text-white">Web4 encodes this as architecture.</strong> LCT (cryptographic identity), ATP (energy awareness), CI (coherence monitoring), and Karma (consequence tracking) are all feedback loops made structural.
               </p>
             </div>
           </div>

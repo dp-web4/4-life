@@ -473,7 +473,7 @@ export default function DecisionEvolutionPage() {
               </p>
               <p>
                 <strong className="text-white">Integration with Web4:</strong> Decision evolution works with Trust
-                Tensor (T3) modulation, ATP metabolic economics, and Coherence Index (CI) for comprehensive agent
+                Tensor (T3) modulation, ATP attention economics, and Coherence Index (CI) for comprehensive agent
                 behavior.
               </p>
             </div>
