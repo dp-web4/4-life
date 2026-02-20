@@ -523,11 +523,8 @@ export default function HowItWorksPage() {
                 <li>"Consistent small wins beat sporadic big swings"</li>
               </ul>
               <p className="text-gray-400 mt-3 text-sm">
-                This pattern corpus improves with each life. See the{" "}
-                <Link href="/patterns" className="text-sky-400 hover:underline">
-                  Pattern Browser
-                </Link>{" "}
-                to explore cross-life learning.
+                These lessons carry forward through karma, helping agents
+                make better choices in future lives.
               </p>
             </div>
           </div>
@@ -550,7 +547,7 @@ export default function HowItWorksPage() {
               <li>
                 • Made meaningful contributions: spent 60 ATP, earned 105 ATP
               </li>
-              <li>• Built trust: T3 → 0.65 (competence ↑, reliability ↑)</li>
+              <li>• Built trust: T3 → 0.65 (talent ↑, training ↑)</li>
               <li>
                 • Died with <strong className="text-green-400">145 ATP</strong>
               </li>

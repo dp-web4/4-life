@@ -576,7 +576,7 @@ export default function CoherenceIndexPage() {
                   {(effectiveTrust * 100).toFixed(0)}%
                 </div>
                 <div className="text-xs text-gray-500">
-                  Base: {(baseTrust * 100).toFixed(0)}% × CI²
+                  Base trust ({(baseTrust * 100).toFixed(0)}%) scaled by consistency
                 </div>
                 <div className="text-xs text-gray-500 mt-1">
                   {effectiveTrust < baseTrust * 0.5 && "⚠️ Severely limited"}
@@ -610,7 +610,7 @@ export default function CoherenceIndexPage() {
                   +{extraWitnesses}
                 </div>
                 <div className="text-xs text-gray-500">
-                  Additional: ceil((0.8 - CI) × 10)
+                  Lower CI = more witnesses required
                 </div>
                 <div className="text-xs text-gray-500 mt-1">
                   {extraWitnesses >= 6 && "⚠️ High validation burden"}

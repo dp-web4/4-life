@@ -402,15 +402,19 @@ export default function GlossaryPage() {
         </div>
       </section>
 
-      {/* Research Concepts */}
+      {/* Research Concepts — collapsed by default */}
       <section className="max-w-4xl mx-auto mt-16">
-        <h2 className="text-3xl font-bold mb-8 text-gray-100">Background Research</h2>
-        <p className="text-gray-400 mb-6">
-          These ideas come from AI consciousness and behavior research that <em>inspired</em> Web4&apos;s design.
-          They&apos;re not part of the Web4 protocol — think of them as the &ldquo;why behind the why.&rdquo;
-          Skip this section on your first visit; come back when you&apos;re curious about the deeper motivations.
-        </p>
-        <div className="space-y-8">
+        <details>
+          <summary className="text-3xl font-bold mb-4 text-gray-100 cursor-pointer list-none flex items-center gap-3 group">
+            <span className="text-gray-500 group-open:rotate-90 transition-transform text-xl">▶</span>
+            Background Research
+            <span className="text-sm font-normal text-gray-500 ml-2">(not part of Web4 — click to expand)</span>
+          </summary>
+          <p className="text-gray-400 mb-6 mt-4">
+            These ideas come from AI consciousness and behavior research that <em>inspired</em> Web4&apos;s design.
+            They&apos;re not part of the Web4 protocol — think of them as the &ldquo;why behind the why.&rdquo;
+          </p>
+          <div className="space-y-8">
 
           {/* Coherence Thresholds */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
@@ -597,7 +601,8 @@ export default function GlossaryPage() {
             </div>
           </div>
 
-        </div>
+          </div>
+        </details>
       </section>
 
       {/* Lifecycle Terms */}

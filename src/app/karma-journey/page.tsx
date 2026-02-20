@@ -312,7 +312,8 @@ export default function KarmaJourneyPage() {
         <strong style={{ color: 'var(--color-text-secondary)' }}>What the numbers mean:</strong>{' '}
         <strong>Trust</strong> = your reputation (Talent + Training + Temperament, averaged).{' '}
         <strong>ATP</strong> = your energy budget — every action costs ATP, run out and you die.{' '}
-        <strong>CI</strong> = consistency score — erratic behavior lowers it.{' '}
+        <strong>CI</strong> = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;).{' '}
+        When you die, your final trust determines your <strong>karma tier</strong> (Honored/Neutral/Constrained), which sets your starting conditions for the next life.{' '}
         Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
       </p>
 
@@ -407,7 +408,7 @@ export default function KarmaJourneyPage() {
               marginTop: '0.25rem', fontSize: '0.7rem', color: 'var(--color-text-muted)',
               fontFamily: 'monospace',
             }}>
-              Action costs: {atpMul <= 1.0 ? 'normal' : `${atpMul.toFixed(1)}x more expensive`} {atpMul > 1.5 && <span style={{ color: '#fca5a5' }}>(low consistency makes everything cost more)</span>}
+              Action costs: {atpMul <= 1.0 ? 'normal' : `${atpMul.toFixed(1)}x base cost`} {atpMul > 1.0 && atpMul <= 1.5 && <span style={{ color: '#fde68a' }}>(erratic behavior raises costs — stay consistent to keep them low)</span>}{atpMul > 1.5 && <span style={{ color: '#fca5a5' }}>(low consistency makes everything cost more — rebuild by making steady, cooperative choices)</span>}
             </div>
           </div>
 

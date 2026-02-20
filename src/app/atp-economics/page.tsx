@@ -136,6 +136,10 @@ export default function ATPEconomicsPage() {
               rewarded by community
             </p>
             <p>
+              ✅ <strong>ATP is non-transferable</strong> - You can&apos;t buy someone else&apos;s
+              attention or sell yours. Everyone earns their own capacity.
+            </p>
+            <p>
               ✅ <strong>Spam becomes expensive</strong> - Flooding system
               depletes your budget
             </p>
