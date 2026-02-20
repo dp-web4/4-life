@@ -164,6 +164,49 @@ export default function MarkovRelevancyHorizonPage() {
           </div>
         </section>
 
+        {/* "Isn't this just a social graph?" Section */}
+        <section className="max-w-4xl mx-auto mb-16">
+          <h2 className="text-3xl font-bold mb-6 text-cyan-400">
+            Wait — Isn&apos;t This Just a Social Graph?
+          </h2>
+
+          <p className="text-gray-300 mb-6">
+            Fair question. MRH looks like a social graph at first glance — nodes and edges, friends of friends. But the similarities are surface-level. Here&apos;s what&apos;s actually different:
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-4 mb-6">
+            <div className="bg-gray-800/50 border border-red-500/20 rounded-lg p-4">
+              <div className="text-sm font-semibold text-red-400 mb-2">Social Graph (Facebook, LinkedIn)</div>
+              <ul className="text-sm text-gray-400 space-y-1.5">
+                <li>One flat &quot;friends&quot; list for all contexts</li>
+                <li>Edges are binary: connected or not</li>
+                <li>Algorithm decides what you see</li>
+                <li>No boundary — the platform sees everything</li>
+                <li>Free to traverse (spam is free)</li>
+                <li>You are the product</li>
+              </ul>
+            </div>
+            <div className="bg-gray-800/50 border border-cyan-500/20 rounded-lg p-4">
+              <div className="text-sm font-semibold text-cyan-400 mb-2">MRH (Web4)</div>
+              <ul className="text-sm text-gray-300 space-y-1.5">
+                <li>Separate graph per role (you-as-doctor ≠ you-as-neighbor)</li>
+                <li>Edges carry trust scores across 3 dimensions</li>
+                <li>Your relationships define what you see — no algorithm</li>
+                <li>Hard 3-hop boundary — beyond it, you don&apos;t exist to them</li>
+                <li>Crossing boundaries costs ATP (spam costs real energy)</li>
+                <li>You own your graph — it lives on your device</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-4 text-sm text-gray-300">
+            <strong className="text-cyan-400">The shortest version</strong>: A social graph says &quot;Alice knows Bob.&quot;
+            MRH says &quot;Alice trusts Bob 0.85 as a surgeon, based on 47 witnessed interactions, and that trust decays
+            to 0.62 for anyone one hop further out.&quot; It&apos;s the difference between a phone contact list and a
+            relationship with history, context, and consequences.
+          </div>
+        </section>
+
         {/* How MRH Works Section */}
         <section className="max-w-4xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-6 text-cyan-400">
@@ -893,7 +936,7 @@ SELECT ?entity ?distance WHERE {
 
           <div className="grid md:grid-cols-2 gap-6">
             <Link
-              href="/identity-constellation"
+              href="/lct-explainer"
               className="block bg-gray-800/50 border border-cyan-700/30 rounded-lg p-6 hover:border-cyan-500/50 transition-all"
             >
               <div className="text-2xl mb-2">🔗</div>
