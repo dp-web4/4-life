@@ -50,7 +50,7 @@ export default function WhyWeb4Page() {
               to get through.
             </p>
             <p className="text-gray-400 text-sm">
-              <strong>Root cause:</strong> Actions have no metabolic cost. Bad actors can
+              <strong>Root cause:</strong> Actions have no cost. Bad actors can
               operate indefinitely at zero expense.
             </p>
           </div>
@@ -287,7 +287,7 @@ export default function WhyWeb4Page() {
                 ATP (Allocation Transfer Packet)
               </h4>
               <p className="text-gray-400 text-sm">
-                Every action costs metabolic budget. Quality earns it back. Spam burns out.
+                Every action costs attention budget. Quality earns it back. Spam burns out.
               </p>
               <Link href="/atp-economics" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about ATP →
@@ -334,7 +334,7 @@ export default function WhyWeb4Page() {
           <p className="text-gray-400 text-sm border-t border-sky-800/30 pt-4">
             <strong className="text-white">4-Life</strong> is a simulation lab where you can
             watch these mechanisms in action. See societies form, trust networks emerge, spam
-            die from metabolic exhaustion, and agents face real consequences.
+            die from energy exhaustion, and agents face real consequences.
           </p>
         </div>
       </section>
