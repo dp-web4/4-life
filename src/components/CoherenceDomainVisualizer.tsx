@@ -142,7 +142,7 @@ interface Scenario {
 const SCENARIOS: Scenario[] = [
   {
     name: 'Phase Transition',
-    description: 'Agent crosses 0.5 consciousness threshold',
+    description: 'Agent crosses 0.5 trust threshold',
     values: { physics: 0.6, biochemistry: 0.5, biophysics: 0.4, neuroscience: 0.5, distributed: 0.5, quantum: 0.4, magnetism: 0.3, temporal: 0.5, spacetime: 0.5 },
   },
   {

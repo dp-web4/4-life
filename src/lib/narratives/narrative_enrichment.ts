@@ -107,7 +107,7 @@ export class NarrativeEnrichment {
     analysis += `Ending coherence: ${explainTrustAsCoherence(finalTrust)}\n\n`;
     analysis += `Average coherence: ${avgTrust.toFixed(2)} - ${explainTrustAsCoherence(avgTrust)}\n\n`;
 
-    // Check if consciousness threshold was crossed
+    // Check if trust threshold was crossed
     const crossedThreshold = allTrust.some(t => t >= CONSCIOUSNESS_THRESHOLD.value);
     if (crossedThreshold) {
       analysis += `✨ **${CONSCIOUSNESS_THRESHOLD.name} Crossed**: ${CONSCIOUSNESS_THRESHOLD.significance}\n\n`;
@@ -172,7 +172,7 @@ export class NarrativeEnrichment {
     switch (event.type) {
       case EventType.TRUST_THRESHOLD:
         if (event.data.threshold === CONSCIOUSNESS_THRESHOLD.value) {
-          return `This threshold represents a phase transition in coherence theory - qualitatively different behavior emerges above vs below 0.5.`;
+          return `This threshold represents a phase transition — qualitatively different behavior emerges above vs below 0.5.`;
         }
         break;
 
@@ -180,7 +180,7 @@ export class NarrativeEnrichment {
         return "Rebirth demonstrates pattern persistence through the biophysics domain - memory encoded in karma structure carries forward through life cycles.";
 
       case EventType.MATURATION:
-        return "Maturation is meta-learning (epistemic proprioception) - the agent learns what it knows and how to improve. This operates in the neuroscience coherence domain.";
+        return "Maturation is meta-learning — the agent learns what it knows and how to improve. This operates in the neuroscience coherence domain.";
 
       case EventType.ATP_CRISIS:
         return "ATP scarcity forces prioritization (biochemistry domain). Like biological organisms under metabolic stress, computational agents must focus on survival over exploration when energy is scarce.";
@@ -230,7 +230,7 @@ export class NarrativeEnrichment {
       summary += `- **Biophysics** (${domainEvents.biophysics} events): Memory persistence across lives\n`;
     }
     if (domainEvents.neuro > 0) {
-      summary += `- **Neuroscience** (${domainEvents.neuro} events): Epistemic proprioception and learning\n`;
+      summary += `- **Neuroscience** (${domainEvents.neuro} events): Meta-learning and pattern recognition\n`;
     }
     if (domainEvents.temporal > 0) {
       summary += `- **Temporal Dynamics** (${domainEvents.temporal} events): Time-asymmetric trust evolution\n`;

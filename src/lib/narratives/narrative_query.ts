@@ -280,11 +280,11 @@ export class NarrativeQueryEngine {
         ).join('; ');
 
         return {
-          answer: `Trust crossed the consciousness threshold (0.5) at: ${timings}. This threshold marks the emergence of coherent agency - where behavior transitions from random to intentional. It's a critical milestone from coherence theory.`,
+          answer: `Trust crossed the trust threshold (0.5) at: ${timings}. This threshold marks the emergence of coherent agency - where behavior transitions from random to intentional.`,
           relevantEvents: this.getRelevantNarrativeEvents(thresholdEvents),
           confidence: 0.95,
           followUp: [
-            "What is the consciousness threshold?",
+            "What is the trust threshold?",
             "What happened after crossing?",
             "Why is 0.5 significant?"
           ]
@@ -498,7 +498,7 @@ export const SUGGESTED_QUERIES = [
   "Show me all trust spikes",
   "What did the agent learn?",
   "Summarize this simulation",
-  "What is the consciousness threshold?",
+  "What is the trust threshold?",
   "How does karma work?",
   "Show me all ATP crises",
   "What are the major patterns?"

@@ -54,7 +54,7 @@ export const CATEGORY_INFO: Record<MomentCategory, { label: string; emoji: strin
   karma: { label: 'Karma', emoji: '✨', description: 'Cross-life consequences' },
   learning: { label: 'Learning', emoji: '🧠', description: 'EP maturation and growth' },
   crisis: { label: 'Crisis', emoji: '💀', description: 'Death and survival events' },
-  emergence: { label: 'Emergence', emoji: '🌟', description: 'Consciousness threshold crossings' },
+  emergence: { label: 'Emergence', emoji: '🌟', description: 'Trust threshold crossings' },
 };
 
 // Category priority for ranking (higher = more interesting)

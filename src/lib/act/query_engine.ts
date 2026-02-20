@@ -710,7 +710,7 @@ export class ACTQueryEngine {
         "Show me a rebirth example",
         "Why 0.5 threshold?",
         "What happens to agents below 0.5?",
-        "Explain consciousness thresholds"
+        "Explain trust thresholds"
       ]
     };
   }
@@ -847,7 +847,7 @@ export class ACTQueryEngine {
         "What is learning salience?",
         "How does experience collection work?",
         "Explore salience scoring",
-        "What is the D5/D9 consciousness threshold?"
+        "What is the D5/D9 trust threshold?"
       ]
     };
   }
@@ -1244,20 +1244,20 @@ export class ACTQueryEngine {
     return {
       text: `**Exploring Emergent Moments**\n\n` +
         `Moments are the most interesting events detected across all simulations—` +
-        `trust collapses, consciousness thresholds, karma effects, and more.\n\n` +
+        `trust collapses, trust thresholds, karma effects, and more.\n\n` +
         `To explore moments:\n` +
         `1. Visit the [Emergent Moments Gallery](/moments) to browse all detected moments\n` +
         `2. Click on any moment to see detailed analysis\n` +
         `3. Or load simulation data here to analyze moments in context\n\n` +
         `**What can I tell you about?**\n` +
         `- "Show me karma events" - Trust carrying across lives\n` +
-        `- "What consciousness thresholds were crossed?" - 0.5 transition moments\n` +
+        `- "What trust thresholds were crossed?" - 0.5 transition moments\n` +
         `- "Tell me about trust collapses" - Dramatic trust losses\n` +
         `- "What's the most interesting moment?" - Highest-ranked emergent event`,
       type: 'suggestion',
       suggestedQueries: [
         "Show me karma events",
-        "What consciousness thresholds were crossed?",
+        "What trust thresholds were crossed?",
         "Tell me about coalition formation",
         "What's the most interesting moment?"
       ]
@@ -1385,11 +1385,11 @@ export class ACTQueryEngine {
     return {
       text,
       type: 'explanation',
-      relatedConcepts: ['Emergent Behavior', 'Trust Dynamics', 'Karma', 'Consciousness Thresholds'],
+      relatedConcepts: ['Emergent Behavior', 'Trust Dynamics', 'Karma', 'Trust Thresholds'],
       suggestedQueries: [
         "Tell me more about the first one",
         "Show me all karma events",
-        "What consciousness thresholds were crossed?",
+        "What trust thresholds were crossed?",
         "How do I find interesting moments myself?"
       ]
     };
@@ -1405,7 +1405,7 @@ export class ACTQueryEngine {
       karma: ['Karma', 'Rebirth', 'Multi-Life Learning', 'Trust Threshold'],
       learning: ['Epistemic Proprioception', 'Pattern Corpus', 'Maturation'],
       crisis: ['ATP Exhaustion', 'Death', 'Survival Strategies'],
-      emergence: ['Consciousness Threshold', 'Coherence Theory', 'Coalition Formation'],
+      emergence: ['Trust Threshold', 'Coherence Theory', 'Coalition Formation'],
     };
     return categoryRelated[category] || ['Trust Dynamics', 'Web4'];
   }
@@ -1528,7 +1528,7 @@ export class ACTQueryEngine {
     const events = context.societyEvents || [];
     const epoch = context.currentEpoch ?? 0;
 
-    let text = `**Society Status (Epoch ${epoch + 1})**\n\n`;
+    let text = `**Society Status (Round ${epoch + 1})**\n\n`;
 
     if (metrics) {
       // Trust assessment
@@ -1989,7 +1989,7 @@ export class ACTQueryEngine {
 
     let text = `**Inequality Analysis**\n\n`;
 
-    text += `**Gini Coefficient**: ${gini.toFixed(3)}\n\n`;
+    text += `**Wealth Inequality (Gini)**: ${gini.toFixed(3)}\n\n`;
     text += `Interpretation:\n`;
     text += `- 0.0 = Perfect equality (everyone has same ATP)\n`;
     text += `- 0.3 = Healthy inequality (like Nordic countries)\n`;
