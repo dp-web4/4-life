@@ -566,7 +566,7 @@ export default function FirstSimulationPage() {
                   background: '#6ee7b720', color: '#6ee7b7', fontSize: '0.75rem',
                   animation: 'pulse 2s infinite',
                 }}>
-                  Tick {firstLifeTrust.length - 1}
+                  Turn {firstLifeTrust.length - 1}
                 </div>
               )}
             </div>
@@ -618,7 +618,7 @@ export default function FirstSimulationPage() {
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem' }}>
                   {firstLifeTicks.slice(-20).map((t, i) => (
-                    <div key={i} title={`Tick ${t.lifeTick}: ${t.action.label} (${t.actionSuccess ? 'success' : 'failed'})`} style={{
+                    <div key={i} title={`Turn ${t.lifeTick}: ${t.action.label} (${t.actionSuccess ? 'success' : 'failed'})`} style={{
                       width: '14px', height: '14px', borderRadius: '2px',
                       background: t.actionSuccess ? '#6ee7b740' : '#fca5a540',
                       border: `1px solid ${t.actionSuccess ? '#6ee7b7' : '#fca5a5'}`,

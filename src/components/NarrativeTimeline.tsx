@@ -200,7 +200,7 @@ export default function NarrativeTimeline({
       if (!act) return { ...e, life_number: e.life_number ?? 1, narrativeDescription: e.description, narrativeSignificance: '' };
 
       const narEvent = act.events.find(ne =>
-        ne.timestamp.includes(`Tick ${e.tick}`) &&
+        (ne.timestamp.includes(`Turn ${e.tick}`) || ne.timestamp.includes(`Tick ${e.tick}`)) &&
         ne.description.toLowerCase().includes(e.type.replace(/_/g, ' ').split(' ')[0])
       );
 
