@@ -38,7 +38,7 @@ const TOOLS: ToolCard[] = [
     href: '/first-simulation',
     emoji: '🚀',
     description: '5-minute guided walkthrough: watch an agent live, die, and learn in Web4. No setup required.',
-    learns: ['Trust dynamics in action', 'Karma/rebirth', 'EP learning', 'ATP economics'],
+    learns: ['Trust dynamics in action', 'Karma/rebirth', 'Cross-life learning', 'ATP economics'],
     complexity: 'beginner',
     category: 'understand',
     isNew: true,
