@@ -21,7 +21,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import HumanPlayerMode from '@/components/HumanPlayerMode';
 import NetworkGraph from '@/components/NetworkGraph';
-import { queryEngine, type Query, type Response as ACTResponse } from '@/lib/act/query_engine';
+import { queryEngine, type Query, type Response as GuideResponse } from '@/lib/act/query_engine';
 import {
   SocietyEngine,
   SocietyConfig,
@@ -58,17 +58,17 @@ import {
 } from '@/lib/narratives/society_narrative';
 
 // ============================================================================
-// ACT Chat Panel Component
+// AI Guide Chat Panel Component
 // ============================================================================
 
-interface ACTMessage {
+interface GuideMessage {
   id: string;
   role: 'user' | 'assistant';
   content: string;
-  response?: ACTResponse;
+  response?: GuideResponse;
 }
 
-function ACTChatPanel({
+function GuideChatPanel({
   agents,
   coalitions,
   metrics,
@@ -91,11 +91,11 @@ function ACTChatPanel({
   onToggle: () => void;
   agentClickTrigger: number;  // Increments when agent is clicked (not just selected)
 }) {
-  const [messages, setMessages] = useState<ACTMessage[]>([
+  const [messages, setMessages] = useState<GuideMessage[]>([
     {
       id: '0',
       role: 'assistant',
-      content: "I'm ACT, your guide to this society simulation.\n\nRun a simulation, then ask me questions like:\n- \"Who is winning?\"\n- \"How are coalitions forming?\"\n- \"Why are defectors struggling?\"\n\n**Tip**: Click any agent in the network graph to ask about them!",
+      content: "I'm your AI Guide for this society simulation.\n\nRun a simulation, then ask me questions like:\n- \"Who is winning?\"\n- \"How are coalitions forming?\"\n- \"Why are defectors struggling?\"\n\n**Tip**: Click any agent in the network graph to ask about them!",
     }
   ]);
   const [input, setInput] = useState('');
@@ -123,14 +123,14 @@ function ACTChatPanel({
 
     // Generate query about the agent
     const queryText = `Tell me about ${agent.name}`;
-    const userMessage: ACTMessage = {
+    const userMessage: GuideMessage = {
       id: Date.now().toString(),
       role: 'user',
       content: queryText,
     };
     setMessages(prev => [...prev, userMessage]);
 
-    // Process with ACT engine
+    // Process with AI Guide engine
     const query: Query = {
       text: queryText,
       type: 'society_analysis',
@@ -236,7 +236,7 @@ function ACTChatPanel({
     e.preventDefault();
     if (!input.trim()) return;
 
-    const userMessage: ACTMessage = {
+    const userMessage: GuideMessage = {
       id: Date.now().toString(),
       role: 'user',
       content: input.trim(),
@@ -244,7 +244,7 @@ function ACTChatPanel({
     setMessages(prev => [...prev, userMessage]);
     setInput('');
 
-    // Process with ACT query engine
+    // Process with AI Guide query engine
     const query: Query = {
       text: userMessage.content,
       type: 'general',
@@ -279,7 +279,7 @@ function ACTChatPanel({
     onToggle();
     // Use setTimeout to ensure panel opens first
     setTimeout(() => {
-      const userMessage: ACTMessage = {
+      const userMessage: GuideMessage = {
         id: Date.now().toString(),
         role: 'user',
         content: question,
@@ -287,7 +287,7 @@ function ACTChatPanel({
       setMessages(prev => [...prev, userMessage]);
       clearEventSuggestion(eventType);
 
-      // Process with ACT engine
+      // Process with AI Guide engine
       const query: Query = {
         text: question,
         type: 'society_analysis',
@@ -327,7 +327,7 @@ function ACTChatPanel({
             <span className="text-purple-400">→</span>
           </button>
         ))}
-        {/* Main ACT button */}
+        {/* Main AI Guide button */}
         <button
           onClick={onToggle}
           className="px-4 py-3 bg-gradient-to-r from-sky-600 to-purple-600 hover:from-sky-500 hover:to-purple-500 rounded-full text-white font-bold shadow-lg transition-all flex items-center gap-2"
@@ -350,7 +350,7 @@ function ACTChatPanel({
       <div className="flex items-center justify-between px-4 py-3 border-b border-gray-700 bg-gradient-to-r from-sky-900/50 to-purple-900/50 rounded-t-lg">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-gradient-to-br from-sky-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
-            ACT
+            AI
           </div>
           <div>
             <h3 className="font-semibold text-white text-sm">Society Guide</h3>
@@ -364,7 +364,7 @@ function ACTChatPanel({
               onClick={() => {
                 // Generate markdown export
                 const lines = [
-                  '# Society Simulator - ACT Conversation',
+                  '# Society Simulator - AI Guide Conversation',
                   `**Exported**: ${new Date().toLocaleString()}`,
                   '',
                   '---',
@@ -374,7 +374,7 @@ function ACTChatPanel({
                   if (msg.role === 'user') {
                     lines.push(`**User**: ${msg.content}`);
                   } else {
-                    lines.push(`**ACT**: ${msg.content}`);
+                    lines.push(`**AI Guide**: ${msg.content}`);
                   }
                   lines.push('');
                 });
@@ -407,7 +407,7 @@ function ACTChatPanel({
                 setMessages([{
                   id: '0',
                   role: 'assistant',
-                  content: "I'm ACT, your guide to this society simulation.\n\nRun a simulation, then ask me questions like:\n- \"Who is winning?\"\n- \"How are coalitions forming?\"\n- \"Why are defectors struggling?\"\n\n**Tip**: Click any agent in the network graph to ask about them!",
+                  content: "I'm your AI Guide for this society simulation.\n\nRun a simulation, then ask me questions like:\n- \"Who is winning?\"\n- \"How are coalitions forming?\"\n- \"Why are defectors struggling?\"\n\n**Tip**: Click any agent in the network graph to ask about them!",
                 }]);
                 setEventSuggestions([]);
                 processedEventsRef.current.clear();
@@ -3068,7 +3068,7 @@ export default function SocietySimulatorPage() {
   const [metricsHistory, setMetricsHistory] = useState<{ trust: number; cooperation: number; coalitions: number }[]>([]);
   const [mode, setMode] = useState<'animated' | 'instant'>('animated');
   const [actPanelOpen, setActPanelOpen] = useState(false);
-  const [agentClickTrigger, setAgentClickTrigger] = useState(0);  // Increment on agent click to trigger ACT query
+  const [agentClickTrigger, setAgentClickTrigger] = useState(0);  // Increment on agent click to trigger AI Guide query
   const [savedResults, setSavedResults] = useState<{ label: string; result: SocietyResult }[]>([]);
   const [showComparison, setShowComparison] = useState(false);
   const [narrative, setNarrative] = useState<SocietyNarrative | null>(null);
@@ -3489,7 +3489,7 @@ export default function SocietySimulatorPage() {
                   selectedAgentId={selectedAgentId}
                   onSelectAgent={(id) => {
                     setSelectedAgentId(id);
-                    // Only trigger ACT query when selecting an agent (not deselecting)
+                    // Only trigger AI Guide query when selecting an agent (not deselecting)
                     if (id !== null) {
                       setAgentClickTrigger(t => t + 1);
                     }
@@ -3644,8 +3644,8 @@ export default function SocietySimulatorPage() {
 
         <ExplorerNav currentPath="/society-simulator" />
 
-        {/* ACT Chat Panel */}
-        <ACTChatPanel
+        {/* AI Guide Chat Panel */}
+        <GuideChatPanel
           agents={agents}
           coalitions={coalitions}
           metrics={metrics}

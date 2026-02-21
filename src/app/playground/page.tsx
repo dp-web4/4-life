@@ -395,7 +395,7 @@ export default function PlaygroundPage() {
 
           {/* Results Column */}
           <div>
-            <PlaygroundResults result={result} />
+            <PlaygroundResults result={result} activeExperiment={activeExperiment} />
           </div>
         </div>
       </section>

@@ -41,11 +41,98 @@ export interface PlaygroundResult {
   insights: string[];
 }
 
-interface PlaygroundResultsProps {
-  result: PlaygroundResult | null;
+interface ExperimentMeta {
+  question: string;
+  confirmed: (r: PlaygroundResult) => string;
+  denied: (r: PlaygroundResult) => string;
+  check: (r: PlaygroundResult) => boolean;
 }
 
-function generateNarrative(result: PlaygroundResult): string {
+const EXPERIMENT_META: Record<string, ExperimentMeta> = {
+  'spam-dies': {
+    question: 'Can spam survive in a Web4 economy?',
+    check: (r) => {
+      const atpDeaths = r.lives.filter(l => l.termination_reason === 'atp_exhausted').length;
+      return atpDeaths >= r.lives.length * 0.5;
+    },
+    confirmed: (r) => {
+      const atpDeaths = r.lives.filter(l => l.termination_reason === 'atp_exhausted').length;
+      return `Answer: No. Spam burns itself out. ${atpDeaths} of ${r.lives.length} lives died from energy exhaustion — the cheap-action strategy drains ATP faster than it refills. No moderator needed.`;
+    },
+    denied: (r) => {
+      const completed = r.lives.filter(l => l.termination_reason === 'completed').length;
+      return `Surprising: the spammer survived ${completed} of ${r.lives.length} lives. The parameters may be too generous — try lowering rewards or raising action costs.`;
+    },
+  },
+  'karma-matters': {
+    question: 'Does karma (cross-life carry-forward) make a difference?',
+    check: (r) => {
+      if (r.lives.length < 2) return false;
+      return r.lives[r.lives.length - 1].final_trust > r.lives[0].final_trust + 0.03;
+    },
+    confirmed: (r) => {
+      const first = r.lives[0].final_trust;
+      const last = r.lives[r.lives.length - 1].final_trust;
+      return `Answer: Yes. Trust grew from ${first.toFixed(2)} to ${last.toFixed(2)} across lives. Karma creates a snowball effect — good behavior in one life gives the next life a head start.`;
+    },
+    denied: (r) => {
+      return `In this run, karma didn't create a clear upward trend. The agent may have hit too many failures for karma to compensate — or the starting conditions were already favorable enough that carry-forward didn't matter.`;
+    },
+  },
+  'tipping-point': {
+    question: 'With only 30 ATP, can the agent survive on a razor-thin margin?',
+    check: (r) => {
+      const atpDeaths = r.lives.filter(l => l.termination_reason === 'atp_exhausted').length;
+      return atpDeaths >= r.lives.length * 0.4;
+    },
+    confirmed: (r) => {
+      const atpDeaths = r.lives.filter(l => l.termination_reason === 'atp_exhausted').length;
+      return `At the tipping point: ${atpDeaths} of ${r.lives.length} lives ran out of energy. With barely enough ATP to start, every early failure cascades — one bad action can doom the entire life.`;
+    },
+    denied: (r) => {
+      const completed = r.lives.filter(l => l.termination_reason === 'completed').length;
+      return `The agent navigated the razor's edge: ${completed} of ${r.lives.length} lives survived despite starting with just 30 ATP. Lucky early successes can create enough buffer to endure.`;
+    },
+  },
+  'generous-society': {
+    question: 'In a generous environment, does everyone thrive?',
+    check: (r) => {
+      const completed = r.lives.filter(l => l.termination_reason === 'completed').length;
+      return completed >= r.lives.length * 0.8;
+    },
+    confirmed: (r) => {
+      const avgTrust = r.lives.reduce((s, l) => s + l.final_trust, 0) / r.lives.length;
+      return `Yes — generous rewards make survival easy. Average trust reached ${avgTrust.toFixed(2)}. But is trust that was never tested worth the same as trust that survived hardship?`;
+    },
+    denied: (r) => {
+      const atpDeaths = r.lives.filter(l => l.termination_reason === 'atp_exhausted').length;
+      const trustDeaths = r.lives.filter(l => l.termination_reason === 'trust_lost').length;
+      return `Even generosity wasn't enough. ${atpDeaths > 0 ? `${atpDeaths} lives ran out of energy` : ''}${atpDeaths > 0 && trustDeaths > 0 ? ' and ' : ''}${trustDeaths > 0 ? `${trustDeaths} lost trust` : ''}. The agent's risk appetite may have overwhelmed the generous conditions.`;
+    },
+  },
+  'cautious-vs-bold': {
+    question: 'Does a bold, high-risk strategy pay off?',
+    check: (r) => {
+      const completed = r.lives.filter(l => l.termination_reason === 'completed').length;
+      return completed >= r.lives.length * 0.5;
+    },
+    confirmed: (r) => {
+      const avgTrust = r.lives.reduce((s, l) => s + l.final_trust, 0) / r.lives.length;
+      return `Bold paid off — the agent survived more often than not, reaching an average trust of ${avgTrust.toFixed(2)}. High risk means high reward when luck cooperates.`;
+    },
+    denied: (r) => {
+      const atpDeaths = r.lives.filter(l => l.termination_reason === 'atp_exhausted').length;
+      return `Boldness was punished. ${atpDeaths} lives ended from energy exhaustion — one streak of failures burned through ATP before rewards could compensate. A cautious approach might survive longer.`;
+    },
+  },
+};
+
+interface PlaygroundResultsProps {
+  result: PlaygroundResult | null;
+  activeExperiment?: string | null;
+}
+
+function generateNarrative(result: PlaygroundResult, experimentId?: string | null): string {
   const lives = result.lives;
   const totalLives = lives.length;
   const completedLives = lives.filter(l => l.termination_reason === "completed").length;
@@ -105,10 +192,17 @@ function generateNarrative(result: PlaygroundResult): string {
     parts.push(`This configuration favors survival — the agent had enough resources and built enough trust to endure.`);
   }
 
+  // Experiment-specific verdict
+  if (experimentId && EXPERIMENT_META[experimentId]) {
+    const meta = EXPERIMENT_META[experimentId];
+    const passed = meta.check(result);
+    parts.push(passed ? meta.confirmed(result) : meta.denied(result));
+  }
+
   return parts.join(' ');
 }
 
-export function PlaygroundResults({ result }: PlaygroundResultsProps) {
+export function PlaygroundResults({ result, activeExperiment }: PlaygroundResultsProps) {
   if (!result) {
     return (
       <div
@@ -132,7 +226,7 @@ export function PlaygroundResults({ result }: PlaygroundResultsProps) {
   const trustDeaths = result.lives.filter((l) => l.termination_reason === "trust_lost").length;
   const avgFinalTrust = result.lives.reduce((sum, l) => sum + l.final_trust, 0) / totalLives;
   const avgFinalATP = result.lives.reduce((sum, l) => sum + l.final_atp, 0) / totalLives;
-  const narrative = generateNarrative(result);
+  const narrative = generateNarrative(result, activeExperiment);
 
   return (
     <div style={{ padding: "1.5rem", backgroundColor: "#1f2937", borderRadius: "8px" }}>
@@ -146,7 +240,9 @@ export function PlaygroundResults({ result }: PlaygroundResultsProps) {
         borderRadius: "6px",
       }}>
         <div style={{ fontSize: "0.75rem", color: "#38bdf8", fontWeight: 600, marginBottom: "0.5rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-          What Happened
+          {activeExperiment && EXPERIMENT_META[activeExperiment]
+            ? EXPERIMENT_META[activeExperiment].question
+            : 'What Happened'}
         </div>
         <p style={{ fontSize: "0.875rem", color: "#d1d5db", lineHeight: 1.6, margin: 0 }}>
           {narrative}
