@@ -766,14 +766,18 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Alternative paths */}
       <section className="max-w-4xl mx-auto mt-16 text-center pb-12">
         <p className="text-gray-500 text-sm">
           This is trust-native infrastructure. No platforms, no moderators, no
           central authority. Just math, incentives, and verifiable behavior.
         </p>
-        <p className="text-gray-600 text-xs mt-4">
-          Welcome to Web4.
+        <p className="text-gray-500 text-xs mt-4">
+          Short on time? Read the{' '}
+          <Link href="/tldr" className="text-sky-400 hover:underline">2-minute overview</Link>.
+          {' · '}
+          Skeptical? See{' '}
+          <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">what could go wrong</Link>.
         </p>
       </section>
       <RelatedConcepts currentPath="/how-it-works" />

@@ -513,9 +513,17 @@ export default function ExploreGuidePage() {
         {/* Context */}
         <div className="mt-12 text-center text-xs text-gray-600">
           <p>This guide draws from {'>'}60 pages across 5 categories of interactive tools and documentation.</p>
-          <p className="mt-1">
+          <p className="mt-2 space-x-2">
             <Link href="/first-contact" className="text-gray-500 hover:text-white transition-colors">
-              Just want to dive in? Start with First Contact.
+              Just want to dive in? Start with First Contact
+            </Link>
+            <span className="text-gray-700">·</span>
+            <Link href="/tldr" className="text-gray-500 hover:text-white transition-colors">
+              2-minute overview
+            </Link>
+            <span className="text-gray-700">·</span>
+            <Link href="/your-internet" className="text-gray-500 hover:text-white transition-colors">
+              What would change for you?
             </Link>
           </p>
         </div>

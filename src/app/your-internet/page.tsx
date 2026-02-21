@@ -264,6 +264,35 @@ export default function YourInternetPage() {
         <Breadcrumbs currentPath="/your-internet" />
       </div>
 
+      <noscript>
+        <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '2rem' }}>
+          <div style={{ background: '#1e293b', border: '1px solid #475569', borderRadius: '12px', padding: '2rem', marginBottom: '2rem' }}>
+            <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem', color: '#38bdf8' }}>What Would Web4 Change For You?</h1>
+            <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: '1rem' }}>
+              This interactive page lets you pick your biggest internet frustrations and see exactly how
+              trust-native infrastructure would address each one. It requires JavaScript to run.
+            </p>
+            <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+              Here&apos;s a summary of the 6 scenarios covered:
+            </p>
+            <ul style={{ color: '#cbd5e1', lineHeight: 1.8, paddingLeft: '1.5rem' }}>
+              <li><strong style={{ color: '#38bdf8' }}>Spam &amp; fake accounts</strong> — Hardware-bound identity makes bulk fake accounts cost $5M+ instead of nothing</li>
+              <li><strong style={{ color: '#38bdf8' }}>Reputation silos</strong> — Trust tensors make your reputation portable across platforms</li>
+              <li><strong style={{ color: '#38bdf8' }}>AI deception</strong> — AI plays by the same rules as humans; every action costs energy and builds (or loses) trust</li>
+              <li><strong style={{ color: '#38bdf8' }}>Platform power</strong> — Federated identity means no single company controls your digital life</li>
+              <li><strong style={{ color: '#38bdf8' }}>Fake reviews</strong> — Coherence scoring detects behavioral anomalies; each review costs energy</li>
+              <li><strong style={{ color: '#38bdf8' }}>No accountability</strong> — Karma carries consequences across lives; bad actors can&apos;t just reset</li>
+            </ul>
+            <p style={{ color: '#64748b', fontSize: '0.875rem', marginTop: '1.5rem', borderTop: '1px solid #334155', paddingTop: '1rem' }}>
+              For the full experience, visit with JavaScript enabled. Or explore these non-interactive alternatives:
+              <a href="/tldr" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>2-minute overview</a> ·
+              <a href="/why-web4" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>Why Web4</a> ·
+              <a href="/what-could-go-wrong" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>What Could Go Wrong</a>
+            </p>
+          </div>
+        </div>
+      </noscript>
+
       <section className="max-w-3xl mx-auto">
         <div className="text-sm uppercase tracking-wide text-sky-400 mb-4">
           1-Minute Exercise
