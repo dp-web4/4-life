@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 
@@ -6,80 +7,116 @@ export default function StarterKitPage() {
     <>
       <Breadcrumbs currentPath="/starter-kit" />
       <section>
-        <h1>Society starter kit</h1>
+        <h1>Society Starter Kit</h1>
         <p style={{ marginTop: "1rem", maxWidth: "40rem", color: "#d1d5db" }}>
-          The starter kit gives you everything you need to spin up a local
-          Web4 society on your own machine: a hardware-bound root LCT,
-          per-society microchain, and default roles for treasury, law, and
-          auditing.
+          The starter kit will give you everything you need to spin up a local
+          Web4 society on your own machine: a hardware-bound identity token,
+          per-society record chain, and default roles for treasury, governance,
+          and auditing.
         </p>
-        <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#9ca3af" }}>
-          If you want more background on the concepts this starter kit uses
-          (LCT, MRH, T3/V3, ATP/ADP, R6), check out the
-          <a
-            href="/web4-explainer"
-            style={{ color: "#38bdf8", marginLeft: 4 }}
+
+        <div
+          style={{
+            marginTop: "1.5rem",
+            padding: "1.25rem",
+            background: "#1e293b",
+            border: "1px solid #334155",
+            borderRadius: "0.5rem",
+            maxWidth: "40rem",
+          }}
+        >
+          <div style={{ fontSize: "1.1rem", fontWeight: 600, color: "#fbbf24" }}>
+            Coming Soon
+          </div>
+          <p style={{ marginTop: "0.5rem", color: "#9ca3af", lineHeight: 1.6 }}>
+            The downloadable starter kit is still being developed. In the
+            meantime, you can explore Web4 concepts hands-on in the{" "}
+            <strong style={{ color: "#38bdf8" }}>Playground</strong> — run
+            simulations, tweak parameters, and watch trust-native societies
+            emerge in real time.
+          </p>
+          <Link
+            href="/playground"
+            style={{
+              display: "inline-block",
+              marginTop: "0.75rem",
+              padding: "0.5rem 1.25rem",
+              background: "#0ea5e9",
+              color: "white",
+              borderRadius: "0.375rem",
+              fontWeight: 600,
+              textDecoration: "none",
+            }}
           >
-            Web4 explainer
-          </a>
-          .
-        </p>
+            Try the Playground →
+          </Link>
+        </div>
       </section>
 
       <section>
-        <h2>1. Requirements</h2>
-        <ul style={{ marginTop: "0.75rem", marginLeft: "1.25rem", color: "#d1d5db" }}>
-          <li>• A machine where you are comfortable running local code.</li>
-          <li>• Git and Python (for the current engine-based starter kit).</li>
-          <li>• Optional: TPM or secure enclave support for real hardware binding.</li>
+        <h2>What the Starter Kit Will Include</h2>
+        <ul style={{ marginTop: "0.75rem", marginLeft: "1.25rem", color: "#d1d5db", lineHeight: 1.8 }}>
+          <li>
+            <strong>Hardware-bound identity</strong> — Your device&apos;s security chip
+            (TPM or secure enclave) creates a verifiable presence token that
+            can&apos;t be faked without physical hardware.
+          </li>
+          <li>
+            <strong>Per-society record chain</strong> — Each society maintains
+            its own tamper-evident history. No global blockchain needed.
+          </li>
+          <li>
+            <strong>Default governance roles</strong> — Treasury management, rule
+            enforcement, and auditing come pre-configured so your society can
+            function from day one.
+          </li>
+          <li>
+            <strong>Energy budget system</strong> — Every action costs attention
+            energy. Valuable contributions earn it back. This makes spam
+            self-defeating.
+          </li>
         </ul>
       </section>
 
       <section>
-        <h2>2. Current implementation status</h2>
+        <h2>Current Status</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
-          Right now, the starter kit lives inside the public Web4 game engine
-          in the <code>web4/game</code> directory of the
+          The core engine lives in the{" "}
           <a
             href="https://github.com/dp-web4/web4"
             target="_blank"
             rel="noreferrer"
-            style={{ color: "#38bdf8", marginLeft: 4 }}
+            style={{ color: "#38bdf8" }}
           >
             dp-web4/web4
-          </a>
-          repository. It already supports per-society chains, MRH/LCT context,
-          roles, and simple policies, and is evolving toward a hardware-bound
-          bootstrap flow.
-        </p>
-      </section>
-
-      <section>
-        <h2>3. Getting started from source</h2>
-        <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
-          Until we package a downloadable starter kit, the recommended path is
-          to clone the <code>dp-web4/web4</code> repository and run the Web4
-          game demos locally. This lets you experiment with societies, agents,
-          and policies before we lock in any long-term installer UX.
+          </a>{" "}
+          repository. It already supports per-society chains, context
+          boundaries, roles, and policies. The packaging into a one-click
+          starter kit is the next step.
         </p>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#9ca3af" }}>
-          Detailed, step-by-step instructions will be linked here as the
-          starter kit flow stabilizes.
+          Want to explore from source? Clone the repository and look in the{" "}
+          <code style={{ background: "#334155", padding: "0.125rem 0.375rem", borderRadius: "0.25rem" }}>
+            web4/game
+          </code>{" "}
+          directory for simulation demos.
         </p>
       </section>
 
       <section>
-        <h2>4. Hardware binding and trust</h2>
+        <h2>Why Hardware Binding Matters</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
-          Societies that can attest to a hardware-bound root identity (for
-          example via TPM or secure enclave) will generally be treated as more
-          trustworthy by other participants. Societies without hardware
-          binding are still free to participate, but peers may choose to apply
-          stricter policies or lower trust weights when interacting with them.
-          In Web4, every trust decision is ultimately made by the parties to a
-          specific interaction, not by a single global authority.
+          Societies backed by hardware-bound identity tokens are treated as more
+          trustworthy by peers. Creating a fake identity means buying a new
+          physical device — spam becomes expensive by design, not by policy.
+        </p>
+        <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#9ca3af" }}>
+          Societies without hardware binding can still participate, but peers
+          may apply stricter rules or lower trust. In Web4, every trust decision
+          is made by the parties involved, not by a central authority.
         </p>
       </section>
+
       <RelatedConcepts currentPath="/starter-kit" />
     </>
   );
