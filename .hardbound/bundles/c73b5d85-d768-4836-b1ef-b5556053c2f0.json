@@ -1,0 +1,45 @@
+{
+  "bundle_id": "c73b5d85-d768-4836-b1ef-b5556053c2f0",
+  "timestamp": "2026-02-21T05:30:59.509Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "for page in adversarial-explorer capacity-thresholds challenge-set consciousness-layers federation-e",
+    "parameters": {},
+    "result_hash": "sha256:895a16574b25f338b98828d0b48f84e4500014db501fdda2f9e772c575dbf128",
+    "timestamp": "2026-02-21T05:30:59.509Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "6a1fe036-2da2-445f-8f64-1f3bacea0797",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIFsHnljeIv61z2xwj9k7JWFZypgJk1BJl1qI0SMRRfdfAiEAih/4OX7Ny0NfLOgoIwsDBg2CAQiJDa+L+ZniQTVgPdU=",
+        "timestamp": "2026-02-21T05:30:59.510Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: for page in adversarial-explorer capacity-thresholds challenge-set consciousness-layers federation-e",
+  "outputs_hashes": [
+    "sha256:895a16574b25f338b98828d0b48f84e4500014db501fdda2f9e772c575dbf128"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "bundle_id": "1591569e-aab8-4dc6-8923-0a2053677ab9",
+  "timestamp": "2026-02-21T05:26:31.418Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "grep -r \"bare acronym\\|undefined acronym\\|metabolism\\|metabolic\" src/app --include=\"*.tsx\" 2>/dev/nu",
+    "parameters": {},
+    "result_hash": "sha256:d4e9bdc5c19d816069f3cbc3cfa2171d369c7234dfa516129c97d8733e9bf1ab",
+    "timestamp": "2026-02-21T05:26:31.418Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "eb5893b0-fedb-43f7-994c-0d1acb7b2c87",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCICQMwb6273UZsMUkm3eHdnqQFqnMQ1RYFBK/4LxAdmrwAiEA4n9gEschXH/znWZGzEmKosxJQHuxPVxI6YT0NYKd11Q=",
+        "timestamp": "2026-02-21T05:26:31.420Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: grep -r \"bare acronym\\|undefined acronym\\|metabolism\\|metabolic\" src/app --include=\"*.tsx\" 2>/dev/nu",
+  "outputs_hashes": [
+    "sha256:d4e9bdc5c19d816069f3cbc3cfa2171d369c7234dfa516129c97d8733e9bf1ab"
+  ]
+}

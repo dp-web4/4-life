@@ -1,0 +1,45 @@
+{
+  "bundle_id": "175f2d4a-f249-48fb-8015-f113aa222bc3",
+  "timestamp": "2026-02-21T05:25:56.912Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "tool_call",
+    "target": "Check starter-kit stub page",
+    "parameters": {},
+    "result_hash": "sha256:6e65b1096d0ca0dc7be5d68808a91d8b1d3f926474b95e36f87ac71d35ba3fb6",
+    "timestamp": "2026-02-21T05:25:56.912Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "3011ef95-f7f4-4816-99b7-d511507735bc",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIHMvL0hFEg0K8iw70r6HmyFC34/9tbZhz2oK6fvcb3m9AiB/zs2LoMqjsKbZruxJV1TO9iFut3GZfvOLBVPDfr9M0g==",
+        "timestamp": "2026-02-21T05:25:56.913Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Task: Check starter-kit stub page",
+  "outputs_hashes": [
+    "sha256:6e65b1096d0ca0dc7be5d68808a91d8b1d3f926474b95e36f87ac71d35ba3fb6"
+  ]
+}

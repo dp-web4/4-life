@@ -1,0 +1,45 @@
+{
+  "bundle_id": "a22a82e3-01a4-4e43-99d4-6615df99d32c",
+  "timestamp": "2026-02-21T05:26:36.482Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "grep -r \"Guide Chat\\|AI Guide\\|ACT Chat\" src/components src/app --include=\"*.tsx\" 2>/dev/null | head",
+    "parameters": {},
+    "result_hash": "sha256:850e413e182b5c05f1916604ac4e2e01a1de806d7608a2474ca8d7441e37e7d2",
+    "timestamp": "2026-02-21T05:26:36.482Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "5e87787b-b384-4abc-901d-af196f152f00",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQCtnpVxLm53z8A4wFTr6MbcjJCYJYGattbUb4HdUmSxKAIgX+CVhrjUR1tc0uj34aYPiUpwbRgfKtd3pX0V8/Q0fcY=",
+        "timestamp": "2026-02-21T05:26:36.483Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: grep -r \"Guide Chat\\|AI Guide\\|ACT Chat\" src/components src/app --include=\"*.tsx\" 2>/dev/null | head",
+  "outputs_hashes": [
+    "sha256:850e413e182b5c05f1916604ac4e2e01a1de806d7608a2474ca8d7441e37e7d2"
+  ]
+}
