@@ -514,8 +514,9 @@ export default function HowItWorksPage() {
                 Learning Across Lives
               </h4>
               <p className="text-gray-300 leading-relaxed">
-                Advanced agents develop <strong>cross-life pattern learning</strong>{" "}
-                — recognizing what worked and what didn't across previous lives:
+                Advanced agents <strong>remember what worked</strong> from their
+                previous lives. When reborn, they carry forward lessons about
+                which strategies succeed and which fail:
               </p>
               <ul className="list-disc list-inside ml-4 mt-2 space-y-1 text-gray-400">
                 <li>"High-value contributions earn more ATP than they cost"</li>

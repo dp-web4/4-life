@@ -93,6 +93,35 @@ export default function FirstContactPage() {
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="max-w-6xl mx-auto p-4 md:p-8">
         <Breadcrumbs currentPath="/first-contact" />
+
+        {/* Fallback for visitors without JavaScript */}
+        <noscript>
+          <div style={{ background: '#1e293b', border: '1px solid #475569', borderRadius: '12px', padding: '2rem', marginBottom: '2rem' }}>
+            <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem', color: '#38bdf8' }}>First Contact: Your First Web4 Experience</h1>
+            <p style={{ color: '#cbd5e1', lineHeight: '1.7', marginBottom: '1rem' }}>
+              This page features an interactive walkthrough where you follow Alice through 10 actions
+              in a Web4 community — watching her spend attention (ATP), build trust, recover from
+              mistakes, and earn recognition. It requires JavaScript to run.
+            </p>
+            <p style={{ color: '#94a3b8', lineHeight: '1.7', marginBottom: '1.5rem' }}>
+              <strong style={{ color: '#e2e8f0' }}>What you'd learn:</strong> How attention budgets make spam
+              impossible, how trust builds through quality contributions, why consequences are permanent,
+              and how the system self-regulates without moderators.
+            </p>
+            <p style={{ color: '#94a3b8' }}>
+              To experience the interactive version, please enable JavaScript. Or continue learning
+              through these pages that work without JavaScript:
+            </p>
+            <ul style={{ marginTop: '1rem', listStyle: 'none', padding: 0 }}>
+              <li style={{ marginBottom: '0.5rem' }}><a href="/why-web4" style={{ color: '#38bdf8' }}>Why Web4?</a> — The problems Web4 solves</li>
+              <li style={{ marginBottom: '0.5rem' }}><a href="/how-it-works" style={{ color: '#38bdf8' }}>How It Works</a> — The five foundational mechanisms</li>
+              <li style={{ marginBottom: '0.5rem' }}><a href="/atp-economics" style={{ color: '#38bdf8' }}>Attention Economics</a> — How energy budgets work</li>
+              <li style={{ marginBottom: '0.5rem' }}><a href="/trust-tensor" style={{ color: '#38bdf8' }}>Trust Tensors</a> — Multi-dimensional trust explained</li>
+              <li><a href="/glossary" style={{ color: '#38bdf8' }}>Glossary</a> — All Web4 terms defined in plain English</li>
+            </ul>
+          </div>
+        </noscript>
+
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-2">

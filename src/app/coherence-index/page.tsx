@@ -536,8 +536,7 @@ export default function CoherenceIndexPage() {
                 />
               </div>
               <p className="text-xs text-gray-400 mt-2">
-                Calculated via geometric mean: (spatial × capability × temporal ×
-                relational)^(1/4)
+                All four dimensions must be healthy — one failing dimension pulls your whole score down.
               </p>
             </div>
 
@@ -632,7 +631,7 @@ export default function CoherenceIndexPage() {
               </p>
               {overallCI < 1.0 && overallCI >= 0.5 && (
                 <p className="text-xs text-gray-400 mt-2">
-                  The geometric mean ensures one bad dimension drags everything down.
+                  One weak dimension drags the whole score down.
                   Try dropping a second dimension — the compounding effect is dramatic.
                 </p>
               )}
@@ -643,7 +642,7 @@ export default function CoherenceIndexPage() {
         {/* Why Geometric Mean Section */}
         <section className="max-w-4xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-6 text-gray-100">
-            Why Geometric Mean? (One Low Dimension Tanks Everything)
+            Why One Low Dimension Tanks Everything
           </h2>
 
           <div className="bg-gradient-to-br from-red-950/30 to-red-900/20 border border-red-800/30 rounded-lg p-6 mb-6">
@@ -654,28 +653,28 @@ export default function CoherenceIndexPage() {
                   Security by Design
                 </h3>
                 <p className="text-gray-300 mb-3">
-                  Web4 uses a <strong>geometric mean</strong> to combine the four
-                  coherence dimensions, not an arithmetic mean. This is a
-                  deliberate security choice:
+                  Web4 combines the four coherence dimensions so that
+                  <strong> one weak dimension drags down the entire score</strong>.
+                  This is a deliberate security choice:
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div className="bg-gray-800/50 border border-gray-700 rounded p-4">
                     <h4 className="text-sm font-semibold text-gray-300 mb-2">
-                      ❌ Arithmetic Mean (Insecure)
+                      ❌ Simple Average (Insecure)
                     </h4>
                     <p className="text-sm text-gray-400 mb-2">
                       CI = (0.9 + 0.9 + 0.9 + 0.1) / 4 = <strong>0.7</strong>
                     </p>
                     <p className="text-xs text-gray-500">
-                      One dimension at 0.1 gets "averaged out" by the others.
+                      One dimension at 0.1 gets &ldquo;averaged out&rdquo; by the others.
                       Attacker can ignore one dimension and still get decent CI.
                     </p>
                   </div>
 
                   <div className="bg-gray-800/50 border border-gray-700 rounded p-4">
                     <h4 className="text-sm font-semibold text-gray-300 mb-2">
-                      ✅ Geometric Mean (Secure)
+                      ✅ Web4&apos;s Approach (Secure)
                     </h4>
                     <p className="text-sm text-gray-400 mb-2">
                       CI = (0.9 × 0.9 × 0.9 × 0.1)^(1/4) = <strong>0.48</strong>
@@ -1132,20 +1131,20 @@ lenient_society = {
                 2. Four Dimensions, One Weak Link
               </h3>
               <p className="text-gray-300">
-                Geometric mean ensures that <strong>one low dimension tanks everything</strong>. Attackers must fake coherence across spatial,
-                temporal, capability, AND relational dimensions simultaneously -
+                The scoring ensures that <strong>one low dimension tanks everything</strong>. Attackers must fake coherence across spatial,
+                temporal, capability, AND relational dimensions simultaneously —
                 prohibitively expensive.
               </p>
             </div>
 
             <div className="bg-gradient-to-r from-orange-900/20 to-red-900/20 border-l-4 border-orange-500 p-6">
               <h3 className="text-lg font-semibold text-orange-400 mb-2">
-                3. Grounded in Physics
+                3. Grounded in Real-World Patterns
               </h3>
               <p className="text-gray-300">
-                CI isn't arbitrary — it's designed so that faking consistent behavior
-                is always more expensive than genuinely having it. The math behind it
-                draws from how coherence works in physics and biology.
+                CI isn&apos;t arbitrary — it&apos;s designed so that faking consistent behavior
+                is always more expensive than genuinely having it. The design draws
+                from how consistency works in biology and social systems.
               </p>
             </div>
 

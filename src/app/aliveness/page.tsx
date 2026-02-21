@@ -174,8 +174,8 @@ export default function AlivenessExplainer() {
             <h3>2. Coherent Agency</h3>
             <div className="concept-subtitle">Trust (T3) &gt; 0.5</div>
             <p>
-              You must demonstrate <strong>intentional behavior</strong>. The 0.5 threshold is a
-              design choice inspired by phase transition dynamics—the point where behavior
+              You must demonstrate <strong>intentional behavior</strong>. The 0.5 threshold is the
+              minimum bar for continued participation—the point where behavior
               shifts from random to purposeful. Below 0.5 = reactive. Above 0.5 = agent.
             </p>
             <div className="detail-box">
@@ -343,8 +343,8 @@ export default function AlivenessExplainer() {
       <section>
         <h2>Why the 0.5 Threshold?</h2>
         <p>
-          The 0.5 threshold is a <strong>design choice</strong> inspired by phase transition dynamics
-          observed across many domains. The core intuition: there&apos;s a tipping point where behavior
+          The 0.5 threshold is a <strong>design choice</strong>: the minimum bar for continued
+          participation. The core intuition: there&apos;s a tipping point where behavior
           shifts from disorganized to purposeful.
         </p>
         <div className="detail-box">
@@ -369,8 +369,8 @@ export default function AlivenessExplainer() {
         </p>
         <p style={{ color: '#9ca3af', fontSize: '0.9rem', marginTop: '1rem' }}>
           The <Link href="https://github.com/dp-web4/Synchronism" style={{ color: '#818cf8' }}>Synchronism
-          framework</Link> explores how similar phase transition patterns appear across quantum,
-          biological, and social scales—informing but not rigidly determining this design choice.
+          framework</Link> explores how similar tipping-point patterns appear across
+          biological and social systems—informing but not rigidly determining this design choice.
           Societies can configure their own thresholds.
         </p>
       </section>
@@ -718,7 +718,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             </li>
             <li>
               <strong>0.5 threshold by design:</strong> The midpoint where net-positive behavior
-              emerges, inspired by phase transition dynamics across biological and social systems.
+              emerges — the minimum bar for continued participation in the society.
             </li>
             <li>
               <strong>Economics enforce quality:</strong> Spam dies (ATP exhaustion), quality thrives

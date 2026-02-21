@@ -1,8 +1,34 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 
 export default function GlossaryPage() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const glossaryRef = useRef<HTMLDivElement>(null);
+
+  // Filter glossary cards by search term using DOM traversal
+  useEffect(() => {
+    if (!glossaryRef.current) return;
+    const term = searchTerm.toLowerCase().trim();
+    const cards = glossaryRef.current.querySelectorAll("[data-glossary-term]");
+    cards.forEach((card) => {
+      const text = card.textContent?.toLowerCase() ?? "";
+      (card as HTMLElement).style.display = !term || text.includes(term) ? "" : "none";
+    });
+    // Hide section headings when all their cards are hidden
+    const sections = glossaryRef.current.querySelectorAll("[data-glossary-section]");
+    sections.forEach((section) => {
+      const visibleCards = section.querySelectorAll("[data-glossary-term]");
+      const anyVisible = Array.from(visibleCards).some(
+        (c) => (c as HTMLElement).style.display !== "none"
+      );
+      (section as HTMLElement).style.display = !term || anyVisible ? "" : "none";
+    });
+  }, [searchTerm]);
+
   return (
     <>
       <Breadcrumbs currentPath="/glossary" />
@@ -18,6 +44,18 @@ export default function GlossaryPage() {
           Plain-English definitions of Web4 concepts, acronyms, and mechanisms.
           Links to deeper explorations for those who resonate.
         </p>
+
+        {/* Search/Filter */}
+        <div className="mb-6">
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Filter terms... (e.g. trust, ATP, identity)"
+            className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:border-sky-500 transition-colors"
+          />
+        </div>
+
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
           <p className="text-gray-400 leading-relaxed">
             <strong className="text-sky-400">Note:</strong> Some terms have both
@@ -36,13 +74,14 @@ export default function GlossaryPage() {
         </div>
       </section>
 
+      <div ref={glossaryRef}>
       {/* Core Concepts */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section className="max-w-4xl mx-auto mt-16" data-glossary-section>
         <h2 className="text-3xl font-bold mb-8 text-gray-100">Core Concepts</h2>
         <div className="space-y-8">
 
           {/* Web4 */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">Web4</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               Our working name for <strong>trust-native internet infrastructure</strong>.
@@ -57,7 +96,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* LCT */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Verifiable Identity — LCT (Linked Context Token)
             </h3>
@@ -86,7 +125,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* ATP */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Energy Budget — ATP (Allocation Transfer Packet)
             </h3>
@@ -120,7 +159,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* T3 */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Trust Tensor (T3)
             </h3>
@@ -152,7 +191,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* MRH */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Context Boundaries (MRH)
             </h3>
@@ -183,7 +222,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* CI */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Coherence Index (CI)
             </h3>
@@ -204,7 +243,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* Karma */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Karma
             </h3>
@@ -232,7 +271,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* R6 */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Action Framework (R6)
             </h3>
@@ -261,7 +300,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Advanced Protocol Concepts */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section className="max-w-4xl mx-auto mt-16" data-glossary-section>
         <h2 className="text-3xl font-bold mb-8 text-gray-100">Advanced Protocol Concepts</h2>
         <p className="text-gray-400 mb-6">
           These are part of the Web4 protocol design — mechanisms that would exist in a deployed system.
@@ -269,7 +308,7 @@ export default function GlossaryPage() {
         <div className="space-y-8">
 
           {/* EP */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Cross-Life Learning (EP)
             </h3>
@@ -290,7 +329,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* Trust Continuity (AI Agents) */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">Trust Continuity</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               <strong>How Web4 handles AI agent reinstantiation</strong>. AI agents can be copied,
@@ -310,7 +349,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* Society */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">Society</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               A <strong>collection of entities with shared rules</strong>. Societies can be
@@ -324,7 +363,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* Federation */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">Federation</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               How <strong>separate societies connect and trade</strong>. Federated societies
@@ -343,7 +382,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* V3 */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               V3 (Value Tensor)
             </h3>
@@ -369,7 +408,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* Heterogeneous Review */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Heterogeneous Review
             </h3>
@@ -405,7 +444,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Research Concepts — collapsed by default */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section className="max-w-4xl mx-auto mt-16" data-glossary-section>
         <details>
           <summary className="text-3xl font-bold mb-4 text-gray-100 cursor-pointer list-none flex items-center gap-3 group">
             <span className="text-gray-500 group-open:rotate-90 transition-transform text-xl">▶</span>
@@ -419,7 +458,7 @@ export default function GlossaryPage() {
           <div className="space-y-8">
 
           {/* Coherence Thresholds */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Coherence Thresholds
             </h3>
@@ -488,7 +527,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* Honest Reporting */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-green-400 mb-3">
               Honest Reporting
             </h3>
@@ -543,7 +582,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* Modal Awareness */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-green-400 mb-3">
               Modal Awareness
             </h3>
@@ -573,7 +612,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* Cumulative Identity Context */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Cumulative Identity Context
             </h3>
@@ -608,7 +647,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Lifecycle Terms */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section className="max-w-4xl mx-auto mt-16" data-glossary-section>
         <h2 className="text-3xl font-bold mb-8 text-gray-100">Membership Lifecycle</h2>
         <p className="text-gray-400 mb-6">
           Web4 participation happens within societies. Each society sets its own trust thresholds.
@@ -616,7 +655,7 @@ export default function GlossaryPage() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-xl font-semibold text-sky-400 mb-3">Joining a Society</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Entry into a Web4 society. You receive initial ATP allocation and neutral trust scores
@@ -624,7 +663,7 @@ export default function GlossaryPage() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-xl font-semibold text-sky-400 mb-3">Active Membership</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               The ongoing phase. You spend ATP on actions, earn ATP from contributions,
@@ -632,7 +671,7 @@ export default function GlossaryPage() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-xl font-semibold text-red-400 mb-3">Society Ejection</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Trust falls below the society's minimum threshold. You're ejected from <em>that</em> society
@@ -641,7 +680,7 @@ export default function GlossaryPage() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-xl font-semibold text-green-400 mb-3">Reintegration</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               After ejection, you can rebuild trust in other contexts, demonstrate changed behavior,
@@ -650,7 +689,7 @@ export default function GlossaryPage() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-xl font-semibold text-orange-400 mb-3">Resource Exhaustion</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               ATP reaches zero. You can no longer act until resources are restored. This is distinct
@@ -659,7 +698,7 @@ export default function GlossaryPage() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-xl font-semibold text-amber-400 mb-3">Death &amp; Rebirth</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               <em>(In simulations)</em> When ATP hits zero, an agent &quot;dies&quot; — the current life ends.
@@ -670,7 +709,7 @@ export default function GlossaryPage() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-xl font-semibold text-purple-400 mb-3">Software AI Reinstantiation</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               <em>(Software/cloud AI only)</em> When an agent is copied, forked, or retrained, Web4 evaluates
@@ -679,7 +718,7 @@ export default function GlossaryPage() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-xl font-semibold text-cyan-400 mb-3">Embodied AI Energy Management</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               <em>(Robots, edge devices)</em> Hardware-bound AI can't "rebirth"—the LCT validates continuity.
@@ -772,7 +811,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Why This Terminology? */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section className="max-w-4xl mx-auto mt-16" data-glossary-section>
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           Why This Terminology?
         </h2>
@@ -819,6 +858,8 @@ export default function GlossaryPage() {
           </p>
         </div>
       </section>
+
+      </div>{/* end glossaryRef */}
 
       {/* Navigation */}
       <section className="max-w-4xl mx-auto mt-16 flex gap-4">

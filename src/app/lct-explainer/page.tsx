@@ -303,18 +303,24 @@ export default function LCTExplainerPage() {
             </ul>
           </div>
 
-          {/* LCT Format Example */}
-          <div className="bg-gray-900/50 border border-gray-700 rounded p-4 mb-6">
-            <div className="text-sm font-mono mb-2 text-gray-500">Example LCT:</div>
-            <div className="text-lg font-mono text-purple-400 break-all">
-              lct:web4:agent:alice.assistant1@Thor#perception
+          {/* LCT Format Example — collapsed for newcomers */}
+          <details className="mb-6">
+            <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300 flex items-center gap-2">
+              <span className="text-gray-500 group-open:rotate-90 transition-transform">▶</span>
+              Technical: What an LCT looks like (format example)
+            </summary>
+            <div className="bg-gray-900/50 border border-gray-700 rounded p-4 mt-2">
+              <div className="text-sm font-mono mb-2 text-gray-500">Example LCT:</div>
+              <div className="text-lg font-mono text-purple-400 break-all">
+                lct:web4:agent:alice.assistant1@Thor#perception
+              </div>
+              <div className="mt-4 space-y-2 text-sm text-gray-300">
+                <div><span className="font-bold">Lineage</span>: alice.assistant1 (created by Alice, who vouches for it)</div>
+                <div><span className="font-bold">Context</span>: Thor (Jetson AGX device with TPM attestation)</div>
+                <div><span className="font-bold">Task</span>: perception (read-only, cannot execute code)</div>
+              </div>
             </div>
-            <div className="mt-4 space-y-2 text-sm text-gray-300">
-              <div><span className="font-bold">Lineage</span>: alice.assistant1 (created by Alice, who vouches for it)</div>
-              <div><span className="font-bold">Context</span>: Thor (Jetson AGX device with TPM attestation)</div>
-              <div><span className="font-bold">Task</span>: perception (read-only, cannot execute code)</div>
-            </div>
-          </div>
+          </details>
 
           {/* Interactive Component Explorer */}
           <div>

@@ -594,8 +594,11 @@ Talent: No decay (represents inherent aptitude)`}
 
             <div>
               <h3 className="text-xl font-semibold text-sky-400 mb-3">
-                T3 + V3 (Value Tensors)
+                Related: V3 (Value Tensors)
               </h3>
+              <p className="leading-relaxed mb-3 text-sm text-gray-500 italic">
+                This is a parallel concept you don&apos;t need to learn yet. It&apos;s here for completeness.
+              </p>
               <p className="leading-relaxed mb-3">
                 Web4 uses two related tensor systems:
               </p>

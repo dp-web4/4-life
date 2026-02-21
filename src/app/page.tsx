@@ -184,9 +184,17 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         <Link href="/society-simulator" className="btn-primary">
           Launch Society Simulator →
         </Link>
-        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '0.75rem' }}>
-          Or try the <Link href="/karma-journey" style={{ color: 'var(--color-sky)' }}>Karma Journey</Link> for a quicker look.
+        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '0.25rem' }}>
+          Watch 12 agents form alliances, betray each other, and self-organize
         </p>
+        <div style={{ marginTop: '0.75rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>
+            <Link href="/karma-journey" style={{ color: 'var(--color-sky)' }}>Karma Journey</Link> — make choices that shape your trust across multiple lives
+          </p>
+          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>
+            <Link href="/playground" style={{ color: 'var(--color-sky)' }}>Playground</Link> — tweak energy costs, trust thresholds, and see what happens
+          </p>
+        </div>
       </section>
 
       {/* Featured Moment - Dynamic carousel from simulations */}

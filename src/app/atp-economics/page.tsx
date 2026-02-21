@@ -136,11 +136,14 @@ export default function ATPEconomicsPage() {
               ✅ <strong>Valuable contributions earn ATP</strong> - Quality work
               rewarded by community
             </p>
-            <p>
-              ✅ <strong>ATP is non-transferable</strong> — You can&apos;t buy someone else&apos;s
-              attention or sell yours. Why? If ATP were tradeable, wealthy actors could buy
-              unlimited influence — exactly like today&apos;s internet. Everyone earns their own capacity.
-            </p>
+            <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-3 my-2">
+              <p>
+                ✅ <strong className="text-sky-300">ATP is non-transferable</strong> — Your energy budget
+                reflects YOUR contributions, not someone else&apos;s. You can&apos;t buy a reputation; you
+                have to earn it. If ATP were tradeable, wealthy actors could buy unlimited
+                influence — exactly like today&apos;s internet.
+              </p>
+            </div>
             <p>
               ✅ <strong>Spam becomes expensive</strong> - Flooding system
               depletes your budget

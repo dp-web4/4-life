@@ -92,7 +92,7 @@ export default function LearnJourney() {
         },
         {
           id: "atp",
-          title: "Attention Economics (ATP)",
+          title: "Energy Budget: Attention Economics (ATP)",
           teaser:
             "Every action costs energy. Valuable contributions earn it back. Run out of energy? You die. This makes spam self-defeating and quality sustainable.",
           why: "The attention budget is what makes participation meaningful. It's how Web4 prices actions.",
@@ -101,7 +101,7 @@ export default function LearnJourney() {
         },
         {
           id: "t3",
-          title: "Trust Tensors: Multi-Dimensional Trust",
+          title: "Multi-Dimensional Trust: Trust Tensors (T3)",
           teaser:
             "Trust isn't a single number. It's measured across three dimensions per role: Talent, Training, and Temperament. Gaming one while failing others doesn't work.",
           why: "The Trust Tensor (T3) is how societies measure trustworthiness without central authorities.",
@@ -110,7 +110,7 @@ export default function LearnJourney() {
         },
         {
           id: "ci",
-          title: "Coherence Index: Consistency Detection",
+          title: "Consistency Detection: Coherence Index (CI)",
           teaser:
             "Tracks consistency across four dimensions: where you are, when you act, what you can do, and who you interact with. Inconsistent behavior tanks your trust.",
           why: "The Coherence Index (CI) is Web4's immune system — it detects fraud automatically by spotting incoherent behavior.",
@@ -121,7 +121,7 @@ export default function LearnJourney() {
           id: "aliveness",
           title: "Aliveness: Putting It All Together",
           teaser:
-            'In Web4, "alive" means: you have energy (ATP), sufficient trust (T3), and consistent behavior (CI). Lose any of them? You die. But if you earned trust, you can be reborn.',
+            'In Web4, "alive" means: you have energy (attention budget), sufficient trust (across all three dimensions), and consistent behavior (coherence). Lose any of them? You die. But if you earned trust, you can be reborn.',
           why: "Now that you know the building blocks, see how they combine. Aliveness is where identity + economics + trust + consistency become a living system.",
           link: "/aliveness",
           duration: "8 min read",
@@ -419,6 +419,14 @@ export default function LearnJourney() {
               <h3>
                 {path.stage.charAt(0).toUpperCase() + path.stage.slice(1)}
               </h3>
+              <p style={{ fontSize: "0.8rem", marginTop: "0.25rem", opacity: 0.7 }}>
+                {{
+                  beginner: "Core concepts: identity, energy, trust, consistency",
+                  intermediate: "Emergence: networks, markets, cross-life learning",
+                  advanced: "Deep mechanics: coherence, modulation, karma",
+                  practitioner: "Hands-on: run experiments, tune parameters",
+                }[path.stage]}
+              </p>
               <p style={{ fontSize: "0.9rem", marginTop: "0.5rem" }}>
                 {path.concepts.length} concepts · {path.actions.length} actions
               </p>
