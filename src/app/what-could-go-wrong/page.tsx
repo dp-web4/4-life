@@ -2,6 +2,12 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 
+export const metadata = {
+  title: "What Could Go Wrong | 4-Life",
+  description:
+    "Honest assessment of Web4 failure modes, unsolved problems, and real risks. Every system has weaknesses — here are ours.",
+};
+
 /**
  * What Could Go Wrong — Honest failure mode analysis for non-technical visitors
  *

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedConcepts from "@/components/RelatedConcepts";
 
 export const metadata = {
   title: "Web4 in 2 Minutes | 4-Life",
@@ -164,6 +165,7 @@ export default function TLDRPage() {
           </p>
         </div>
       </section>
+      <RelatedConcepts currentPath="/tldr" />
     </>
   );
 }
