@@ -45,6 +45,69 @@ interface PlaygroundResultsProps {
   result: PlaygroundResult | null;
 }
 
+function generateNarrative(result: PlaygroundResult): string {
+  const lives = result.lives;
+  const totalLives = lives.length;
+  const completedLives = lives.filter(l => l.termination_reason === "completed").length;
+  const atpDeaths = lives.filter(l => l.termination_reason === "atp_exhausted").length;
+  const trustDeaths = lives.filter(l => l.termination_reason === "trust_lost").length;
+
+  // Track trust trajectory across lives
+  const trustTrajectory = lives.map(l => l.final_trust);
+  const trustGrowing = trustTrajectory.length >= 2 &&
+    trustTrajectory[trustTrajectory.length - 1] > trustTrajectory[0] + 0.05;
+  const trustDeclining = trustTrajectory.length >= 2 &&
+    trustTrajectory[trustTrajectory.length - 1] < trustTrajectory[0] - 0.05;
+
+  // Find dramatic moments
+  const worstLife = lives.reduce((worst, l) => l.final_trust < worst.final_trust ? l : worst, lives[0]);
+  const bestLife = lives.reduce((best, l) => l.final_trust > best.final_trust ? l : best, lives[0]);
+
+  // Build narrative
+  const parts: string[] = [];
+
+  // Opening — survival summary
+  if (completedLives === totalLives) {
+    parts.push(`The agent survived all ${totalLives} lives — a clean run with no premature deaths.`);
+  } else if (completedLives === 0) {
+    parts.push(`Every life ended early. ${atpDeaths > 0 ? `${atpDeaths} from energy exhaustion` : ''}${atpDeaths > 0 && trustDeaths > 0 ? ' and ' : ''}${trustDeaths > 0 ? `${trustDeaths} from trust collapse` : ''}.`);
+  } else {
+    parts.push(`Of ${totalLives} lives, ${completedLives} completed successfully. ${atpDeaths > 0 ? `${atpDeaths} ended when energy ran out` : ''}${atpDeaths > 0 && trustDeaths > 0 ? ', and ' : ''}${trustDeaths > 0 ? `${trustDeaths} collapsed from lost trust` : ''}.`);
+  }
+
+  // Trust arc
+  if (trustGrowing) {
+    parts.push(`Trust grew across lives — the agent learned from experience and built a stronger reputation over time.`);
+  } else if (trustDeclining) {
+    parts.push(`Trust declined across lives. Each rebirth started from a weaker position, making recovery harder.`);
+  } else if (totalLives >= 2) {
+    parts.push(`Trust stayed roughly stable across lives — neither building momentum nor falling into decline.`);
+  }
+
+  // Dramatic moment
+  if (totalLives >= 2 && worstLife !== bestLife) {
+    const worstIdx = lives.indexOf(worstLife) + 1;
+    const bestIdx = lives.indexOf(bestLife) + 1;
+    if (worstLife.final_trust < 0.3) {
+      parts.push(`Life ${worstIdx} was the hardest — trust dropped to ${worstLife.final_trust.toFixed(2)}, ${worstLife.termination_reason === 'trust_lost' ? 'triggering a trust collapse' : 'barely surviving'}.`);
+    }
+    if (bestLife.final_trust > 0.6) {
+      parts.push(`Life ${bestIdx} was the strongest — trust reached ${bestLife.final_trust.toFixed(2)}${bestLife.termination_reason === 'completed' ? ', completing the full lifecycle' : ''}.`);
+    }
+  }
+
+  // Takeaway
+  if (atpDeaths > completedLives) {
+    parts.push(`The dominant failure mode was energy exhaustion — the agent took on more than it could sustain.`);
+  } else if (trustDeaths > completedLives) {
+    parts.push(`Trust collapse was the main killer — risky or inconsistent behavior eroded reputation faster than it could recover.`);
+  } else if (completedLives >= totalLives * 0.8) {
+    parts.push(`This configuration favors survival — the agent had enough resources and built enough trust to endure.`);
+  }
+
+  return parts.join(' ');
+}
+
 export function PlaygroundResults({ result }: PlaygroundResultsProps) {
   if (!result) {
     return (
@@ -69,10 +132,26 @@ export function PlaygroundResults({ result }: PlaygroundResultsProps) {
   const trustDeaths = result.lives.filter((l) => l.termination_reason === "trust_lost").length;
   const avgFinalTrust = result.lives.reduce((sum, l) => sum + l.final_trust, 0) / totalLives;
   const avgFinalATP = result.lives.reduce((sum, l) => sum + l.final_atp, 0) / totalLives;
+  const narrative = generateNarrative(result);
 
   return (
     <div style={{ padding: "1.5rem", backgroundColor: "#1f2937", borderRadius: "8px" }}>
       <h3 style={{ marginBottom: "1rem", color: "#f3f4f6" }}>Simulation Results</h3>
+
+      {/* Narrative Summary */}
+      <div style={{
+        marginBottom: "1.5rem", padding: "1rem",
+        background: "linear-gradient(135deg, rgba(56,189,248,0.08), rgba(16,185,129,0.08))",
+        border: "1px solid rgba(56,189,248,0.15)",
+        borderRadius: "6px",
+      }}>
+        <div style={{ fontSize: "0.75rem", color: "#38bdf8", fontWeight: 600, marginBottom: "0.5rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+          What Happened
+        </div>
+        <p style={{ fontSize: "0.875rem", color: "#d1d5db", lineHeight: 1.6, margin: 0 }}>
+          {narrative}
+        </p>
+      </div>
 
       {/* Summary Stats */}
       <div
