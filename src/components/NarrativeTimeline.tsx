@@ -518,7 +518,7 @@ export default function NarrativeTimeline({
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-sm font-mono text-blue-400">
-                  Life {activeEvent.lifeNumber}, Tick {activeEvent.tick}
+                  Life {activeEvent.lifeNumber}, Turn {activeEvent.tick}
                 </span>
                 <span
                   className="px-2 py-0.5 text-xs rounded-full"

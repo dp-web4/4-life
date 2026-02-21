@@ -243,7 +243,7 @@ export default function FeaturedMoment({
           padding: '0.25rem 0.5rem',
           borderRadius: '0.25rem'
         }}>
-          {featuredMoment.simulationLabel} · Life {featuredMoment.lifeNumber} · Tick {featuredMoment.tick}
+          {featuredMoment.simulationLabel} · Life {featuredMoment.lifeNumber} · Turn {featuredMoment.tick}
         </span>
 
         {/* Actions */}

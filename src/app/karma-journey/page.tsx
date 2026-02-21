@@ -584,7 +584,7 @@ export default function KarmaJourneyPage() {
           {currentLife.alive ? (
             <div>
               <div style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>
-                Tick {currentLife.tick + 1} &mdash; Choose your action:
+                Turn {currentLife.tick + 1} &mdash; Choose your action:
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
                 {CHOICES.map(choice => {

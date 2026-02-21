@@ -397,7 +397,7 @@ function MomentCard({ moment, index }: { moment: Moment; index: number }) {
               <CategoryPill category={moment.category} />
               <span className="text-xs text-gray-500">{moment.simulationLabel}</span>
               {moment.lifeNumber > 0 && (
-                <span className="text-xs text-gray-600">Life {moment.lifeNumber}, Tick {moment.tick}</span>
+                <span className="text-xs text-gray-600">Life {moment.lifeNumber}, Turn {moment.tick}</span>
               )}
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
