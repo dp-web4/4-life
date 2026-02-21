@@ -60,8 +60,9 @@ export default function Web4ExplainerPage() {
         <h2>3. T3 / V3: Trust & Value Tensors</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
           T3 and V3 are small numeric tensors that summarize how much a system
-          trusts or values an LCT along a few axes (for example: safety,
-          competence, alignment). Different societies can choose different
+          trusts or values an LCT along three axes: <strong>Talent</strong> (can they do it?),
+          <strong>Training</strong> (do they follow through?), and <strong>Temperament</strong> (are
+          they stable under pressure?). Different societies can choose different
           semantics for their axes, but the shape stays compatible.
         </p>
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>

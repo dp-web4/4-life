@@ -708,10 +708,10 @@ export default function HowItWorksPage() {
               Launch Society Simulator →
             </Link>
             <Link
-              href="/lab-console"
+              href="/playground"
               className="inline-block px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors text-lg"
             >
-              Lab Console (Advanced)
+              Playground (Experiment) →
             </Link>
           </div>
         </div>
