@@ -156,6 +156,20 @@ export default function TLDRPage() {
           </div>
         </div>
 
+        {/* Make it personal */}
+        <div className="bg-gradient-to-br from-sky-950/30 to-green-950/30 border border-sky-800/30 rounded-xl p-6 mb-6">
+          <h2 className="text-lg font-semibold text-gray-100 mb-2">Make it personal</h2>
+          <p className="text-gray-300 leading-relaxed mb-3">
+            Frustrated by spam, fake reviews, or platforms that hold your reputation hostage?
+          </p>
+          <Link
+            href="/your-internet"
+            className="text-sky-400 hover:underline font-semibold"
+          >
+            See what would change for YOU &rarr;
+          </Link>
+        </div>
+
         {/* Share-friendly summary */}
         <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/30 border border-sky-800/30 rounded-xl p-6 mb-12">
           <h2 className="text-lg font-semibold text-gray-100 mb-2">The one-sentence version</h2>

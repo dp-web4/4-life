@@ -8,6 +8,20 @@ export const metadata: Metadata = {
   title: "4-Life | Trust-Native Internet Lab",
   description:
     "Explore a trust-native internet through interactive simulations. See how hardware-bound identity, attention budgets, and permanent consequences create self-regulating digital societies.",
+  metadataBase: new URL("https://4-life-ivory.vercel.app"),
+  openGraph: {
+    title: "4-Life | Trust-Native Internet Lab",
+    description:
+      "What if spam cost energy, identity was hardware-bound, and reputation followed you forever? See it working in simulation.",
+    siteName: "4-Life",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "4-Life | Trust-Native Internet Lab",
+    description:
+      "What if spam cost energy, identity was hardware-bound, and reputation followed you forever? See it working in simulation.",
+  },
 };
 
 export default function RootLayout({
@@ -46,8 +60,8 @@ export default function RootLayout({
               GitHub
             </a>
           </p>
-          <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.5 }}>
-            Active research project · Updated February 2026
+          <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>
+            Active research project · Updated weekly · Last update: Feb 21, 2026
           </p>
         </footer>
       </body>

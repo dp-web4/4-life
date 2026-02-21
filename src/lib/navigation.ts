@@ -25,6 +25,13 @@ export const navigationTree: NavigationTree = {
       related: ['/why-web4', '/first-contact', '/society-simulator', '/karma-journey']
     },
     {
+      title: 'Your Internet',
+      href: '/your-internet',
+      desc: 'What would change for YOU? Pick your frustrations, see the difference.',
+      keywords: ['personal', 'frustration', 'spam', 'fake', 'platform', 'scenario', 'quiz'],
+      related: ['/tldr', '/why-web4', '/what-could-go-wrong']
+    },
+    {
       title: 'Why Web4?',
       href: '/why-web4',
       desc: 'The problem before the solution',

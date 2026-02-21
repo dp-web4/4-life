@@ -104,7 +104,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '1rem' }}>
           Short on time? Read the <Link href="/tldr" style={{ color: 'var(--color-sky)' }}>2-minute overview</Link>.
           {' · '}
-          Not sure where to begin? <Link href="/explore-guide" style={{ color: 'var(--color-sky)' }}>Take the quiz</Link> for a personalized path.
+          What frustrates you about the internet? <Link href="/your-internet" style={{ color: 'var(--color-sky)' }}>See what would change</Link>.
           {' · '}
           Skeptic? Start with <Link href="/what-could-go-wrong" style={{ color: 'var(--color-sky)' }}>What Could Go Wrong</Link>.
         </p>
