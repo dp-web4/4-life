@@ -130,10 +130,10 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
         tagline: 'Start from "this can\'t work" and see what survives scrutiny',
         color: '#fde68a',
         steps: [
-          { title: 'Threat Model', description: 'Comprehensive analysis of attack surfaces, failure modes, and what\'s unknown', href: '/threat-model', timeEstimate: '12 min', type: 'read' },
+          { title: 'What Could Go Wrong', description: 'Honest failure modes, unsolved problems, and real risks — in plain English', href: '/what-could-go-wrong', timeEstimate: '8 min', type: 'read' },
+          { title: 'Threat Model', description: 'Technical attack surfaces, formal analysis, and what\'s unknown', href: '/threat-model', timeEstimate: '12 min', type: 'read' },
           { title: 'Adversarial Explorer', description: 'Interactive tool to test attack patterns and see how defenses work', href: '/adversarial-explorer', timeEstimate: '10 min', type: 'interactive' },
           { title: 'How It Works', description: 'Understand the mechanics so you can spot weaknesses', href: '/how-it-works', timeEstimate: '8 min', type: 'read' },
-          { title: 'First Contact', description: 'Now see the idealistic version — does it hold up?', href: '/first-contact', timeEstimate: '10 min', type: 'interactive' },
           { title: 'Challenge Set', description: 'Research prompts for discovering edge cases yourself', href: '/challenge-set', timeEstimate: '5 min', type: 'research' },
         ],
         nextPath: 'Try the Playground to test your hypotheses with parameter manipulation.',

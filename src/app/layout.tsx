@@ -46,6 +46,9 @@ export default function RootLayout({
               GitHub
             </a>
           </p>
+          <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.5 }}>
+            Active research project · Updated February 2026
+          </p>
         </footer>
       </body>
     </html>

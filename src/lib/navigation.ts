@@ -18,6 +18,13 @@ export interface NavigationTree {
 export const navigationTree: NavigationTree = {
   'Getting Started': [
     {
+      title: 'Web4 in 2 Minutes',
+      href: '/tldr',
+      desc: 'The shortest possible explanation',
+      keywords: ['tldr', 'summary', 'quick', 'overview', '2 minutes', 'elevator', 'short'],
+      related: ['/why-web4', '/first-contact', '/society-simulator', '/karma-journey']
+    },
+    {
       title: 'Why Web4?',
       href: '/why-web4',
       desc: 'The problem before the solution',
@@ -58,6 +65,13 @@ export const navigationTree: NavigationTree = {
       desc: 'Core concepts overview',
       keywords: ['overview', 'introduction', 'basics'],
       related: ['/first-contact', '/web4-explainer']
+    },
+    {
+      title: 'What Could Go Wrong',
+      href: '/what-could-go-wrong',
+      desc: 'Honest failure modes and unsolved problems',
+      keywords: ['risks', 'failures', 'honest', 'skeptic', 'problems', 'unsolved'],
+      related: ['/why-web4', '/threat-model', '/adversarial-explorer']
     },
     {
       title: 'Glossary',
@@ -460,7 +474,7 @@ export const navigationTree: NavigationTree = {
       href: '/threat-model',
       desc: 'Security analysis',
       keywords: ['security', 'threats', 'vulnerabilities', 'defense'],
-      related: ['/adversarial-explorer', '/coherence-framework']
+      related: ['/adversarial-explorer', '/coherence-framework', '/what-could-go-wrong']
     },
     {
       title: 'Challenge Set',

@@ -478,13 +478,13 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>It's not "better" at everything.</strong> Every system has trade-offs:
+                <strong>It&apos;s not &ldquo;better&rdquo; at everything.</strong> Every system has trade-offs:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>vs Passwords:</strong> More secure, but requires hardware. Won't work on borrowed devices.</li>
+                <li><strong>vs Passwords:</strong> More secure, but requires hardware. Won&apos;t work on borrowed devices.</li>
                 <li><strong>vs OAuth (Google login):</strong> No central point of control, but more complex to implement.</li>
                 <li><strong>vs Blockchain wallets:</strong> Harder to create fake IDs, but not as portable across chains.</li>
-                <li><strong>vs Biometrics:</strong> Can't be stolen by breach, but requires specific device support.</li>
+                <li><strong>vs Biometrics:</strong> Can&apos;t be stolen by breach, but requires specific device support.</li>
               </ul>
               <p className="text-amber-400/80 text-xs">
                 <strong>What Web4 optimizes for:</strong> Economic resistance to spam/abuse while preserving
@@ -492,6 +492,127 @@ export default function WhyWeb4Page() {
               </p>
             </div>
           </details>
+
+          {/* Hardware manufacturer chokepoint */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Don&apos;t hardware manufacturers (Apple, Intel) become the new gatekeepers?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                This is a real concern. If identity requires a TPM or Secure Enclave, then hardware
+                manufacturers have power over who can participate. Web4 mitigates this in several ways:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Multiple standards supported:</strong> TPM (Intel/AMD), Secure Enclave (Apple), Titan (Google), and future open-source hardware. No single vendor lock-in.</li>
+                <li><strong>Attestation, not permission:</strong> Hardware provides cryptographic proof of presence — it doesn&apos;t need to &ldquo;approve&rdquo; your identity. The chip signs; it doesn&apos;t decide.</li>
+                <li><strong>Open specification:</strong> Any hardware that meets the attestation spec can participate. This invites competition rather than consolidation.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> This shifts trust from platforms to hardware supply chains.
+                That&apos;s a different dependency, not zero dependency. Whether it&apos;s a net improvement
+                depends on whether you trust chip manufacturers more than social media companies.
+              </p>
+            </div>
+          </details>
+
+          {/* ATP collaboration */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>If energy budgets are non-transferable, how do teams collaborate?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Non-transferable means you can&apos;t <em>give</em> your energy to someone else — but you
+                can <strong>earn energy together</strong>. When a team creates value jointly, each contributor
+                receives their own energy reward based on their verified contribution.
+              </p>
+              <p>
+                Organizations work through <strong>shared context boundaries</strong> (MRH). Members of a
+                team see each other&apos;s work, validate each other&apos;s contributions, and collectively
+                build the team&apos;s reputation. But each person&apos;s individual energy and trust remain
+                their own — you can&apos;t buy someone else&apos;s reputation, and a team member&apos;s bad
+                behavior affects them, not you.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> The details of organizational identity and pooled contribution
+                attribution are still being worked out. This is one of the harder design problems.
+              </p>
+            </div>
+          </details>
+
+          {/* Hardware migration */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What happens when hardware standards change (TPM v2 → v3, post-quantum)?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Hardware transitions are handled through <strong>identity migration</strong> — your existing
+                device attests to your new device before the old one is retired. Think of it like transferring
+                a bank account: you prove you&apos;re you on the old system, then establish yourself on the new one.
+              </p>
+              <p>
+                The trust history travels with the identity, not with the hardware. Your trust tensor, energy
+                history, and behavioral record are associated with your identity chain, not with a specific chip.
+                Upgrading hardware is like getting a new passport — the person is the same, the document is new.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> A post-quantum transition (where current cryptography breaks)
+                would require a coordinated migration — similar to the Y2K effort but for identity. This is a
+                known hard problem across all cryptographic systems, not unique to Web4.
+              </p>
+            </div>
+          </details>
+
+          {/* MRH at scale */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Can trust-filtered messaging actually work at internet scale?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Context boundaries (MRH) don&apos;t filter every message globally — they define <strong>who
+                you can see</strong> based on your local trust network. This is computed locally, not centrally.
+                You don&apos;t need to check every person on the internet; you only check the people trying to
+                reach you, against the trust graph of people you already know.
+              </p>
+              <p>
+                This is similar to how email spam filters work today — except instead of content analysis
+                (which AI can defeat), the filter is based on trust relationships (which require real
+                behavioral history to build). The computational cost scales with your network size, not with
+                the internet&apos;s size.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Performance at true internet scale (billions of users)
+                is unproven. Simulations handle thousands of agents. The gap between simulation and deployment
+                is significant and contains unknown challenges.
+              </p>
+            </div>
+          </details>
+        </div>
+
+        {/* Link to deeper adversarial analysis */}
+        <div className="mt-8 p-4 bg-gray-800/30 border border-gray-700 rounded-lg">
+          <p className="text-gray-300 text-sm">
+            <strong className="text-amber-400">Want to go deeper?</strong>{" "}
+            <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">
+              What Could Go Wrong
+            </Link>{" "}
+            covers the 7 biggest real-world risks in plain English. Our{" "}
+            <Link href="/threat-model" className="text-sky-400 hover:underline">
+              Threat Model
+            </Link>{" "}
+            covers 6 technical attack surfaces with formal analysis. The{" "}
+            <Link href="/explore-guide" className="text-sky-400 hover:underline">
+              Explore Guide
+            </Link>{" "}
+            also has a dedicated Skeptic&apos;s Tour for those who want to start with the weaknesses.
+          </p>
         </div>
       </section>
 
