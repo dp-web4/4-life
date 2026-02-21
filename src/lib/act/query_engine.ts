@@ -401,7 +401,7 @@ export class ACTQueryEngine {
     const after = event.state_after;
     const action = event.action;
 
-    let narrative = `**Tick ${tick}, Life ${life.life_number}**: ${action}\n\n`;
+    let narrative = `**Turn ${tick}, Life ${life.life_number}**: ${action}\n\n`;
 
     // ATP analysis
     const atpChange = after.atp - before.atp;
@@ -1376,7 +1376,7 @@ export class ACTQueryEngine {
       const m = top5[i];
       const info = CATEGORY_INFO[m.category];
       text += `**${i + 1}. ${info.emoji} ${m.title}**\n`;
-      text += `   _${m.simulationLabel}, Life ${m.lifeNumber}, Tick ${m.tick}_\n`;
+      text += `   _${m.simulationLabel}, Life ${m.lifeNumber}, Turn ${m.tick}_\n`;
       text += `   ${m.significance}\n\n`;
     }
 

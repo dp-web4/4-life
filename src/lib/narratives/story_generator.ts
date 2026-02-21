@@ -765,7 +765,7 @@ export class StoryGenerator {
   }
 
   private formatTimestamp(tick: number, lifeNumber: number): string {
-    return `Life ${lifeNumber}, Tick ${tick}`;
+    return `Life ${lifeNumber}, Turn ${tick}`;
   }
 
   /**

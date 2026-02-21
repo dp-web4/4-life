@@ -276,7 +276,7 @@ export class NarrativeQueryEngine {
 
       if (thresholdEvents.length > 0) {
         const timings = thresholdEvents.map(e =>
-          `Life ${e.life_number}, Tick ${e.tick}`
+          `Life ${e.life_number}, Turn ${e.tick}`
         ).join('; ');
 
         return {
@@ -393,7 +393,7 @@ export class NarrativeQueryEngine {
 
     if (filtered.length > 0) {
       const list = filtered.map(e =>
-        `• Life ${e.life_number}, Tick ${e.tick}: ${e.description.split('.')[0]}`
+        `• Life ${e.life_number}, Turn ${e.tick}: ${e.description.split('.')[0]}`
       ).join('\n');
 
       return {
@@ -475,7 +475,7 @@ export class NarrativeQueryEngine {
         // Find events near this tick
         const act = this.narrative.acts[lifeIndex];
         act.events.forEach(narrativeEvent => {
-          if (narrativeEvent.timestamp.includes(`Tick ${simEvent.tick}`)) {
+          if (narrativeEvent.timestamp.includes(`Turn ${simEvent.tick}`) || narrativeEvent.timestamp.includes(`Tick ${simEvent.tick}`)) {
             relevant.push(narrativeEvent);
           }
         });
