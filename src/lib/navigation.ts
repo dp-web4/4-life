@@ -437,7 +437,14 @@ export const navigationTree: NavigationTree = {
       href: '/society-simulator',
       desc: 'Multi-agent trust dynamics with coalition formation',
       keywords: ['society', 'multi-agent', 'coalition', 'cooperation', 'defection', 'network', 'emergence', 'game theory', 'prisoner dilemma', 'tit-for-tat'],
-      related: ['/trust-networks', '/trust-tensor-explorer', '/karma-journey', '/federation-economics', '/simulation-sandbox', '/research-hub'],
+      related: ['/trust-networks', '/trust-tensor-explorer', '/karma-journey', '/federation-economics', '/simulation-sandbox', '/achievements'],
+    },
+    {
+      title: 'Achievements',
+      href: '/achievements',
+      desc: '33 achievements that teach trust dynamics through gameplay',
+      keywords: ['achievements', 'gamification', 'badges', 'progress', 'challenges', 'trust lessons'],
+      related: ['/society-simulator', '/karma-journey', '/playground'],
     },
   ],
   'Advanced Topics': [
