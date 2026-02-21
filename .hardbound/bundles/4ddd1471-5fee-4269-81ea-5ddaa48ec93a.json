@@ -1,0 +1,45 @@
+{
+  "bundle_id": "4ddd1471-5fee-4269-81ea-5ddaa48ec93a",
+  "timestamp": "2026-02-21T05:13:35.791Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "Rebirth|Death.*Society|Ejection|Reinteg",
+    "parameters": {},
+    "result_hash": "sha256:f66be75e081a1c4f29af419a785c7417a63df83a58b0506f07d70eb90de43ca3",
+    "timestamp": "2026-02-21T05:13:35.791Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "e545bc52-5256-49dc-b952-9c2d690a2616",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIA0/8/sCg+KC66uI5LSdKwHg6WKzHmv73DgZ3/LQVx+BAiA82Mfm2V2soi8glnIXgw4OWgmQdICtZVSn1erRJnu2eA==",
+        "timestamp": "2026-02-21T05:13:35.792Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: Rebirth|Death.*Society|Ejection|Reinteg",
+  "outputs_hashes": [
+    "sha256:f66be75e081a1c4f29af419a785c7417a63df83a58b0506f07d70eb90de43ca3"
+  ]
+}

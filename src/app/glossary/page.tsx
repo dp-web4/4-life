@@ -609,7 +609,7 @@ export default function GlossaryPage() {
 
       {/* Lifecycle Terms */}
       <section className="max-w-4xl mx-auto mt-16">
-        <h2 className="text-3xl font-bold mb-8 text-gray-100">Society Membership</h2>
+        <h2 className="text-3xl font-bold mb-8 text-gray-100">Membership Lifecycle</h2>
         <p className="text-gray-400 mb-6">
           Web4 participation happens within societies. Each society sets its own trust thresholds.
           Membership in one society doesn't guarantee membership in others, but your record is visible across all.
@@ -656,6 +656,17 @@ export default function GlossaryPage() {
               ATP reaches zero. You can no longer act until resources are restored. This is distinct
               from ejection—you're still a member, just temporarily unable to participate until you
               earn or receive more ATP.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+            <h3 className="text-xl font-semibold text-amber-400 mb-3">Death &amp; Rebirth</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              <em>(In simulations)</em> When ATP hits zero, an agent &quot;dies&quot; — the current life ends.
+              If their trust score is above the society&apos;s threshold (typically 0.5), they&apos;re eligible for <strong>rebirth</strong>:
+              a new life that starts with karma (ATP carried forward from the previous life). Agents below
+              threshold get permanent death — no second chances. This models how real-world reputation
+              compounds: good track records open doors, bad ones close them.
             </p>
           </div>
 

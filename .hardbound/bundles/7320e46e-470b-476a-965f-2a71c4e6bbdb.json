@@ -1,0 +1,45 @@
+{
+  "bundle_id": "7320e46e-470b-476a-965f-2a71c4e6bbdb",
+  "timestamp": "2026-02-21T05:08:27.682Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "ACT Chat|ACT chat|act-chat",
+    "parameters": {},
+    "result_hash": "sha256:399acff4dfe372b53884dd6f6ec862f1ca8494408720a8101bdd3b390efea19a",
+    "timestamp": "2026-02-21T05:08:27.682Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "32c00485-d947-4627-9d70-a2e73b20319e",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIFJGBnKTx9xzM+CpkvNDlzdGS1KAu6tkczQi15nsc+zvAiEAv+UtZ44u26squPdfQ7+eSPHtmI4+HfO/8quCbFGAXYA=",
+        "timestamp": "2026-02-21T05:08:27.684Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: ACT Chat|ACT chat|act-chat",
+  "outputs_hashes": [
+    "sha256:399acff4dfe372b53884dd6f6ec862f1ca8494408720a8101bdd3b390efea19a"
+  ]
+}

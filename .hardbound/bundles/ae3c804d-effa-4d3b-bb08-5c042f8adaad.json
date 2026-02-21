@@ -1,0 +1,45 @@
+{
+  "bundle_id": "ae3c804d-effa-4d3b-bb08-5c042f8adaad",
+  "timestamp": "2026-02-21T05:09:58.517Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "tool_call",
+    "target": "unknown",
+    "parameters": {},
+    "result_hash": "sha256:6a4fcf72b2fe0608d35957d05761f89f4751f780174f4044e9180f753a655417",
+    "timestamp": "2026-02-21T05:09:58.517Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "5edac34b-c1ac-497b-93fb-64c45c01e747",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIHf0drWcLZOGMVaJNYranEwF5pQr+caMXcg5BQ8OTYktAiAjfs6wTY1MSQrhVNhKtBl0ZNmt03u1I9ybXQcGtDncSQ==",
+        "timestamp": "2026-02-21T05:09:58.519Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "TodoWrite: unknown",
+  "outputs_hashes": [
+    "sha256:6a4fcf72b2fe0608d35957d05761f89f4751f780174f4044e9180f753a655417"
+  ]
+}

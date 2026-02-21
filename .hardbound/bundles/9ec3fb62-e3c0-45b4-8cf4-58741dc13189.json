@@ -1,0 +1,45 @@
+{
+  "bundle_id": "9ec3fb62-e3c0-45b4-8cf4-58741dc13189",
+  "timestamp": "2026-02-21T05:03:27.756Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "karma-journey|society-simulator|playground",
+    "parameters": {},
+    "result_hash": "sha256:53efcab91565c16ba6f0bd3695a7d14b86cb9b663b0503dea3e4cdf181c85c17",
+    "timestamp": "2026-02-21T05:03:27.756Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "b974d1cc-76ba-4343-9105-85846bc3504f",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEQCIALoJzX52zUgy6xcLhS2yZSIQHGlH1r9cgE7DfHSFwmPAiAo7nLFJaR2+SpnscA6hPsfqcgG4akXnjAtBO7EgnetEQ==",
+        "timestamp": "2026-02-21T05:03:27.758Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: karma-journey|society-simulator|playground",
+  "outputs_hashes": [
+    "sha256:53efcab91565c16ba6f0bd3695a7d14b86cb9b663b0503dea3e4cdf181c85c17"
+  ]
+}

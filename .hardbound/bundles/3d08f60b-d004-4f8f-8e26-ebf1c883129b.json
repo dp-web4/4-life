@@ -1,0 +1,45 @@
+{
+  "bundle_id": "3d08f60b-d004-4f8f-8e26-ebf1c883129b",
+  "timestamp": "2026-02-21T05:07:43.228Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "ACTChatPanel",
+    "parameters": {},
+    "result_hash": "sha256:f43664e43faae80ada372ddfa90e1bd4de25323f6527334b5c7c374ba9a177e8",
+    "timestamp": "2026-02-21T05:07:43.228Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "79f7a78f-f05f-45c4-9666-6dc254e5e0a5",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEYCIQDInYHTSW3S4PHdsrlPoeZ+ddyMDnG9jtcEDjm9/r5ZNQIhAM2kxWlc7KklbRTVcWgSllrWwo7ml27LGr6Imz7dSbrL",
+        "timestamp": "2026-02-21T05:07:43.229Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: ACTChatPanel",
+  "outputs_hashes": [
+    "sha256:f43664e43faae80ada372ddfa90e1bd4de25323f6527334b5c7c374ba9a177e8"
+  ]
+}

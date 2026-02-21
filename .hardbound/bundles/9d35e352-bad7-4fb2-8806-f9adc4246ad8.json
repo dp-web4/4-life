@@ -1,0 +1,45 @@
+{
+  "bundle_id": "9d35e352-bad7-4fb2-8806-f9adc4246ad8",
+  "timestamp": "2026-02-21T05:12:22.444Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "/home/dp/ai-workspace/4-life/src/app/playground/page.tsx",
+    "parameters": {},
+    "result_hash": "sha256:d0359ccf4ff8a48c5004bb62738fa086ec5f896e3b3119ad3cdb299332d4c237",
+    "timestamp": "2026-02-21T05:12:22.444Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "b479dcb4-4685-4d64-8ee1-94f053662809",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIEwQA7CEz2mGN8ZS/Hcg8l3SlVNytZiA2UZkNR/4N4D6AiEA0z4hMs7ZG25QVbLQ/G27hbd4xCWLPkIPEgfjhKtvIYw=",
+        "timestamp": "2026-02-21T05:12:22.445Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Read: /home/dp/ai-workspace/4-life/src/app/playground/page.tsx",
+  "outputs_hashes": [
+    "sha256:d0359ccf4ff8a48c5004bb62738fa086ec5f896e3b3119ad3cdb299332d4c237"
+  ]
+}

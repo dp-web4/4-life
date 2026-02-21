@@ -1,0 +1,45 @@
+{
+  "bundle_id": "bc57c432-f97f-4202-b25e-cb9488d9c32e",
+  "timestamp": "2026-02-21T05:13:12.973Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "command_execution",
+    "target": "git log --oneline -15",
+    "parameters": {},
+    "result_hash": "sha256:4d937104d3bc7c3d05bf80f34ae7faff3c8c5d624d457f23ef8f41a135a3a6bd",
+    "timestamp": "2026-02-21T05:13:12.973Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "33e072b3-70d6-4d5e-a267-86fa15cfbabe",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQDr7S2WLHDDTgkeXGf3t3bKEBH4jye4i4IfUxHgW5r6mgIgDIrrs/gJr+iMrvGAM++Sj+jnPnHQY8H/SiRdkTcnP2I=",
+        "timestamp": "2026-02-21T05:13:12.975Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Bash: git log --oneline -15",
+  "outputs_hashes": [
+    "sha256:4d937104d3bc7c3d05bf80f34ae7faff3c8c5d624d457f23ef8f41a135a3a6bd"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "bundle_id": "db7d3446-4819-412f-bb38-efa6bb4323b4",
+  "timestamp": "2026-02-21T05:12:29.867Z",
+  "actor_id": "lct:web4:claude:opus-4",
+  "action": {
+    "type": "file_operation",
+    "target": "metabolic|EP learning|pattern corpus|five.dim|Competence.*Reliab",
+    "parameters": {},
+    "result_hash": "sha256:87784f7c645f43d4b4db57732f5ece45781affd163ae2b879128364952771870",
+    "timestamp": "2026-02-21T05:12:29.867Z"
+  },
+  "t3_tensor_snapshot": {
+    "talent": 0.5,
+    "training": 0.5,
+    "temperament": 0.5,
+    "context_weights": [
+      0.33,
+      0.33,
+      0.34
+    ]
+  },
+  "coherence_metrics": {
+    "score": 1,
+    "delta": 0
+  },
+  "provenance": {
+    "prev_bundle_id": "137a3e8f-6942-4af8-a467-cea10966beb8",
+    "signatures": [
+      {
+        "signer": "lct:web4:claude:opus-4",
+        "algorithm": "ES256",
+        "signature": "MEUCIQC50JPTwWz+4F9PPUGIOFnrWC5dBnvWoPppI9Nuoo6UnwIgfLtUBbApUcwHdq5XXHuOUpGrwhuReKGuBmxaWgn7q2c=",
+        "timestamp": "2026-02-21T05:12:29.868Z"
+      }
+    ],
+    "witness_signatures": []
+  },
+  "device_set": [
+    "lct:web4:claude:opus-4"
+  ],
+  "rationale_summary": "Grep: metabolic|EP learning|pattern corpus|five.dim|Competence.*Reliab",
+  "outputs_hashes": [
+    "sha256:87784f7c645f43d4b4db57732f5ece45781affd163ae2b879128364952771870"
+  ]
+}
