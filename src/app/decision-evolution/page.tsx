@@ -179,7 +179,7 @@ export default function DecisionEvolutionPage() {
                   }`}>
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <span className="text-xs text-gray-400">Tick {dec.tick}</span>
+                        <span className="text-xs text-gray-400">Turn {dec.tick}</span>
                         <div className="font-semibold text-gray-200">{dec.situation}</div>
                       </div>
                       <div className="text-right">

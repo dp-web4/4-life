@@ -704,7 +704,7 @@ function AttackDetail({ attack }: { attack: AttackScenario }) {
                         : 'bg-gray-900/50'
                     }`}
                   >
-                    <span className="text-xs text-gray-500 w-16">Tick {event.tick}</span>
+                    <span className="text-xs text-gray-500 w-16">Turn {event.tick}</span>
                     <span className="text-sm text-gray-300 flex-1">{event.action}</span>
                     {event.detected && (
                       <span className="text-xs text-red-400 font-medium">DETECTED</span>

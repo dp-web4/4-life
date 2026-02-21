@@ -428,7 +428,7 @@ export default function CollusionDetectionDemo() {
               className="flex-1 accent-red-500"
             />
             <span className="text-gray-400 text-sm whitespace-nowrap">
-              Tick {currentTick}/{(simulation?.length || 1) - 1}
+              Turn {currentTick}/{(simulation?.length || 1) - 1}
             </span>
           </>
         )}

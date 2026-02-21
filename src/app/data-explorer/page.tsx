@@ -483,7 +483,7 @@ function NetworkSummary({ rawData }: { rawData: any }) {
       <div className="flex gap-2 overflow-x-auto pb-2">
         {snapshots.map((snap: any, i: number) => (
           <div key={i} className="flex-shrink-0 bg-gray-800 rounded px-3 py-2 text-xs">
-            <div className="text-gray-400">Tick {snap.tick || i}</div>
+            <div className="text-gray-400">Turn {snap.tick || i}</div>
             <div className="text-white">{snap.total_trust_links || '?'} links</div>
           </div>
         ))}

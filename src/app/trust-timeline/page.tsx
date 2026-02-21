@@ -700,7 +700,7 @@ export default function TrustTimelinePage() {
                           <div className="flex items-center gap-3 mt-2 text-xs text-gray-500">
                             <span>{moment.simulationLabel}</span>
                             <span>Life {moment.lifeNumber}</span>
-                            <span>Tick {moment.tick}</span>
+                            <span>Turn {moment.tick}</span>
                             <Link
                               href={`/moments?id=${moment.id}`}
                               className="text-purple-400 hover:text-purple-300"

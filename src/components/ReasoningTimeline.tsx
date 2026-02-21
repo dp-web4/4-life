@@ -130,7 +130,7 @@ export function ReasoningTimeline({ actions, lifeId, t3History, atpHistory }: Re
                     color: "#9ca3af",
                     minWidth: "60px"
                   }}>
-                    Tick {action.world_tick}
+                    Turn {action.world_tick}
                   </div>
                   <div style={{
                     fontWeight: 600,

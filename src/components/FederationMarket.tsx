@@ -304,7 +304,7 @@ export default function FederationMarket({ autoPlay = false }: FederationMarketP
       {currentEvents.length > 0 && (
         <div className="space-y-2">
           <h3 className="text-lg font-semibold text-gray-300">
-            Market Events (Tick {currentTick})
+            Market Events (Turn {currentTick})
           </h3>
           {currentEvents.map((event, idx) => (
             <div
