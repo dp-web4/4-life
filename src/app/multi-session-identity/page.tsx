@@ -652,7 +652,7 @@ export default function MultiSessionIdentityPage() {
             <strong>Research Attribution:</strong> This work synthesizes findings from Thor autonomous sessions
             #10, #14-15, SAGE raising sessions S16-S28, and the Sprout/Raising curriculum.
             Data visualized here represents real experimental results from AI identity research.
-            See the <a href="https://github.com/dp-web4/HRM/tree/main/sage/raising" className="text-sky-400 hover:underline">SAGE raising repository</a> for raw data.
+            See the <a href="https://github.com/dp-web4/HRM/tree/main/sage/raising" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">SAGE raising repository</a> for raw data.
           </p>
         </div>
 

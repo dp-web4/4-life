@@ -431,7 +431,7 @@ export default function WhyWeb4Page() {
               <p>
                 <strong>Currently theoretical with working simulations.</strong> 4-Life (this site)
                 demonstrates the mechanics in simulation. The underlying protocol specification exists
-                in the <a href="https://dp-web4.github.io/web4/" className="text-sky-400 hover:underline">
+                in the <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
                 Web4 whitepaper</a>.
               </p>
               <p>

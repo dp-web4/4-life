@@ -227,13 +227,13 @@ export default function ManifestPage() {
             </span>
           </div>
           <div>
-            <a href="https://github.com/dp-web4/4-life" className="text-sky-400 font-semibold">→ GitHub</a>
+            <a href="https://github.com/dp-web4/4-life" target="_blank" rel="noreferrer" className="text-sky-400 font-semibold">→ GitHub</a>
             <span style={{ color: "#9ca3af", marginLeft: "0.5rem" }}>
               Source code, issues, contributions
             </span>
           </div>
           <div>
-            <a href="https://dp-web4.github.io/web4/" className="text-sky-400 font-semibold">→ Web4 Whitepaper</a>
+            <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" className="text-sky-400 font-semibold">→ Web4 Whitepaper</a>
             <span style={{ color: "#9ca3af", marginLeft: "0.5rem" }}>
               Full specification, examples, and design rationale
             </span>
@@ -256,7 +256,7 @@ export default function ManifestPage() {
       <footer style={{ marginTop: "2rem", paddingTop: "2rem", borderTop: "1px solid #374151", color: "#6b7280", fontSize: "0.875rem" }}>
         <p>
           Last updated: 2026-01-16 | Generated with{" "}
-          <a href="https://claude.com/claude-code" className="text-sky-400">Claude Code</a>
+          <a href="https://claude.com/claude-code" target="_blank" rel="noreferrer" className="text-sky-400">Claude Code</a>
         </p>
       </footer>
       <RelatedConcepts currentPath="/manifest" />

@@ -26,4 +26,4 @@ Allow: /web4-explainer
 Allow: /learn
 
 # Sitemap
-Sitemap: https://4-life.vercel.app/sitemap.xml
+Sitemap: https://4-life-ivory.vercel.app/sitemap.xml

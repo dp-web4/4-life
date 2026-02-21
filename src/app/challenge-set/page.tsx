@@ -18,7 +18,7 @@ export default function ChallengeSetPage() {
           <li>Pick a challenge that interests you</li>
           <li>Use the <Link href="/playground" className="text-sky-400 underline">Playground</Link> or <Link href="/lab-console" className="text-sky-400 underline">Lab Console</Link> to experiment</li>
           <li>Document what broke, what held up, and what surprised you</li>
-          <li>Share findings via <a href="https://github.com/dp-web4/4-life/issues" className="text-sky-400 underline">GitHub issues</a></li>
+          <li>Share findings via <a href="https://github.com/dp-web4/4-life/issues" target="_blank" rel="noreferrer" className="text-sky-400 underline">GitHub issues</a></li>
           <li>Bonus: Propose parameter tweaks or detection mechanisms</li>
         </ul>
       </section>
@@ -217,7 +217,7 @@ export default function ChallengeSetPage() {
       <footer style={{ marginTop: "3rem", paddingTop: "2rem", borderTop: "1px solid #374151" }}>
         <p style={{ color: "#6b7280", fontSize: "0.875rem", lineHeight: "1.75" }}>
           <strong>Contributing:</strong> Found an interesting result? Open an issue on{" "}
-          <a href="https://github.com/dp-web4/4-life/issues" className="text-sky-400 underline">GitHub</a> with
+          <a href="https://github.com/dp-web4/4-life/issues" target="_blank" rel="noreferrer" className="text-sky-400 underline">GitHub</a> with
           the tag "challenge-set". Include your setup, parameters, and what broke. Better questions often lead
           to better systems.
         </p>
