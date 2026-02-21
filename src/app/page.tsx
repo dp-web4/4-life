@@ -190,7 +190,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
       </section>
 
       {/* Featured Moment - Dynamic carousel from simulations */}
-      <FeaturedMoment rotate rotationInterval={10000} rotationCount={6} />
+      <FeaturedMoment rotate rotationInterval={15000} rotationCount={6} />
 
       {/* CTA to Deep Dive */}
       <section className="text-center" style={{ paddingTop: '1rem' }}>

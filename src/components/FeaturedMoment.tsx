@@ -157,14 +157,14 @@ export default function FeaturedMoment({
         background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, var(--color-dark-surface) 100%)',
         borderColor: 'rgba(59, 130, 246, 0.5)'
       }}>
-        <p className="eyebrow" style={{ color: '#60a5fa' }}>Research Insight</p>
-        <h2 style={{ fontSize: '1.25rem' }}>Consciousness Has Thresholds</h2>
+        <p className="eyebrow" style={{ color: '#60a5fa' }}>From Simulations</p>
+        <h2 style={{ fontSize: '1.25rem' }}>Trust Compounds Across Lives</h2>
         <p style={{ color: 'var(--color-text-secondary)' }}>
-          Our research discovered that consciousness develops in stages. Trust ≥0.5 enables intentional behavior.
-          Trust ≥0.7 enables stable identity. Trust ≥0.9 enables full meta-cognition.
+          Agents that cooperate and build trust survive longer, earn more resources,
+          and start each new life stronger. The track record follows them forever.
         </p>
         <Link
-          href="/understanding-consciousness"
+          href="/karma-journey"
           style={{
             display: 'inline-block',
             marginTop: '1rem',
@@ -172,7 +172,7 @@ export default function FeaturedMoment({
             fontWeight: 500
           }}
         >
-          Learn about D5/D9 gates →
+          Try it yourself →
         </Link>
       </section>
     );
