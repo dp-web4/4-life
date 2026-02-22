@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 import {
   PatternAnalyzer,
   PatternQualityAnalyzer,
@@ -202,6 +203,7 @@ export default function PatternsPage() {
             )}
           </>
         )}
+        <ExplorerNav currentPath="/patterns" />
         <RelatedConcepts currentPath="/patterns" />
       </div>
     </div>

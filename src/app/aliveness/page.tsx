@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 
 // ============================================================================
 // Survival Game Types & Data
@@ -1557,6 +1558,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
         </Link>
       </section>
 
+      <ConceptSequenceNav currentPath="/aliveness" />
       <RelatedConcepts currentPath="/aliveness" />
     </>
   );

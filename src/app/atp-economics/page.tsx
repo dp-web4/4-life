@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import { T3, CI, MRH } from "@/components/TermTooltip";
 
 export default function ATPEconomicsPage() {
@@ -800,6 +801,7 @@ if agent.atp <= 0:
       </section>
 
       <div className="max-w-4xl mx-auto">
+        <ConceptSequenceNav currentPath="/atp-economics" />
         <RelatedConcepts currentPath="/atp-economics" />
       </div>
     </>
