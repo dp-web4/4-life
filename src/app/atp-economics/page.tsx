@@ -791,6 +791,12 @@ if agent.atp <= 0:
           </Link>{" "}
           and watch energy economics unfold.
         </p>
+        <p className="mt-2">
+          Curious how ATP prices adjust across communities?{" "}
+          <Link href="/federation-economics" className="text-sky-400 hover:underline">
+            See how markets self-organize
+          </Link>.
+        </p>
       </section>
 
       <div className="max-w-4xl mx-auto">

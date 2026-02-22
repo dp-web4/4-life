@@ -763,6 +763,19 @@ export default function HowItWorksPage() {
               See how agents get better at making decisions across lives.
             </p>
           </Link>
+
+          <Link
+            href="/federation-economics"
+            className="block p-6 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-amber-500 rounded-xl transition-colors"
+          >
+            <div className="text-3xl mb-3">📊</div>
+            <h3 className="text-lg font-semibold text-amber-400 mb-2">
+              Federation Economics
+            </h3>
+            <p className="text-gray-400 text-sm">
+              Watch ATP prices adjust dynamically as agents specialize and markets self-organize.
+            </p>
+          </Link>
         </div>
       </section>
 
