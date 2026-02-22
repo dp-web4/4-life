@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 /* ─── Types ────────────────────────────────────────────── */
 
@@ -328,12 +329,7 @@ export default function DayInWeb4Page() {
 
   return (
     <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '2rem 1rem' }}>
-      {/* Header */}
-      <nav style={{ marginBottom: '2rem' }}>
-        <Link href="/" className="text-sm text-gray-500 hover:text-gray-300">
-          ← Home
-        </Link>
-      </nav>
+      <Breadcrumbs currentPath="/day-in-web4" />
 
       <h1 className="text-3xl font-bold mb-2">
         A Day in Web4
