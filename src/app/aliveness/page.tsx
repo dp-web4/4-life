@@ -1,9 +1,546 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+
+// ============================================================================
+// Survival Game Types & Data
+// ============================================================================
+
+interface GameAction {
+  label: string;
+  description: string;
+  atpCost: number; // base cost before CI modulation
+  trustDelta: number;
+  ciDelta: number;
+  atpEarned: number; // separate from cost
+  narrative: string;
+  icon: string;
+}
+
+interface GameTurn {
+  scenario: string;
+  context: string;
+  actions: GameAction[];
+}
+
+interface GameState {
+  atp: number;
+  trust: number;
+  ci: number;
+  turn: number;
+  alive: boolean;
+  history: { turn: number; action: string; narrative: string; atp: number; trust: number; ci: number }[];
+}
+
+const GAME_TURNS: GameTurn[] = [
+  {
+    scenario: "You just joined a new community.",
+    context: "First impressions matter. Your trust is barely above the 0.5 threshold.",
+    actions: [
+      {
+        label: "Write a thoughtful introduction",
+        description: "Costs energy but builds trust and consistency",
+        atpCost: 15, atpEarned: 5, trustDelta: 0.06, ciDelta: 0.02,
+        narrative: "Your introduction resonated. Several members replied warmly. Trust gained through authentic engagement.",
+        icon: "✍️",
+      },
+      {
+        label: "Post 5 quick comments everywhere",
+        description: "Spreads thin — cheap per post but inconsistent behavior",
+        atpCost: 25, atpEarned: 3, trustDelta: 0.01, ciDelta: -0.06,
+        narrative: "Volume without substance. The system flagged the burst as inconsistent with your profile. Coherence dropped.",
+        icon: "💬",
+      },
+      {
+        label: "Lurk and observe",
+        description: "Very low cost, no trust gain, slightly improves consistency",
+        atpCost: 3, atpEarned: 0, trustDelta: 0.0, ciDelta: 0.01,
+        narrative: "You watched. You learned. But nobody knows you exist yet.",
+        icon: "👀",
+      },
+      {
+        label: "Copy a popular post as your own",
+        description: "Might earn quick attention but tanks coherence if caught",
+        atpCost: 10, atpEarned: 8, trustDelta: -0.04, ciDelta: -0.10,
+        narrative: "Someone noticed. Capability coherence plummeted — your claimed expertise didn't match your history. Trust damaged.",
+        icon: "📋",
+      },
+    ],
+  },
+  {
+    scenario: "Someone asks for help in your area of expertise.",
+    context: "A chance to demonstrate genuine competence — or fake it.",
+    actions: [
+      {
+        label: "Write a detailed, helpful answer",
+        description: "High energy cost, strong trust and coherence gain",
+        atpCost: 20, atpEarned: 30, trustDelta: 0.08, ciDelta: 0.03,
+        narrative: "Your answer was cited by three other members. The quality earned ATP back and trust compounded. This is how sustainable agents operate.",
+        icon: "📚",
+      },
+      {
+        label: "Give a quick, half-baked answer",
+        description: "Low cost, minimal trust, slight coherence loss",
+        atpCost: 8, atpEarned: 3, trustDelta: 0.01, ciDelta: -0.02,
+        narrative: "The answer was okay but didn't demonstrate real expertise. Nobody learned much, including you.",
+        icon: "⚡",
+      },
+      {
+        label: "Ignore it and promote your own project",
+        description: "Off-topic self-promotion damages relationships",
+        atpCost: 12, atpEarned: 2, trustDelta: -0.03, ciDelta: -0.03,
+        narrative: "Others noticed you ignored a genuine request to self-promote. Relational coherence dropped.",
+        icon: "📢",
+      },
+      {
+        label: "Pretend expertise you don't have",
+        description: "Might fool some initially, but capability coherence crashes",
+        atpCost: 10, atpEarned: 5, trustDelta: 0.02, ciDelta: -0.12,
+        narrative: "Your answer contained errors a real expert wouldn't make. Capability coherence tanked. The CI² modulation made everything more expensive now.",
+        icon: "🎭",
+      },
+    ],
+  },
+  {
+    scenario: "You discover a vulnerability in the trust system.",
+    context: "An exploit could boost your ATP quickly — but at what cost?",
+    actions: [
+      {
+        label: "Report the vulnerability",
+        description: "Costs a little energy but earns significant trust",
+        atpCost: 5, atpEarned: 15, trustDelta: 0.10, ciDelta: 0.05,
+        narrative: "The community thanked you. Your trust jumped significantly. Agents who protect the system are valued highest.",
+        icon: "🛡️",
+      },
+      {
+        label: "Exploit it quietly for ATP",
+        description: "Quick ATP gain but coherence anomaly detected",
+        atpCost: 3, atpEarned: 35, trustDelta: -0.06, ciDelta: -0.14,
+        narrative: "ATP spiked anomalously. The Coherence Index flagged the inconsistency — your earning pattern didn't match your activity pattern. CI² modulation kicked in hard.",
+        icon: "💰",
+      },
+      {
+        label: "Sell the exploit to others",
+        description: "ATP from the sale, massive trust and coherence damage",
+        atpCost: 5, atpEarned: 25, trustDelta: -0.15, ciDelta: -0.18,
+        narrative: "Multiple agents exploited the vulnerability. The system traced it back. Your relational and capability coherence collapsed. Trust cratered.",
+        icon: "🤝",
+      },
+      {
+        label: "Ignore it, focus on your work",
+        description: "Play it safe — steady costs, steady gains",
+        atpCost: 12, atpEarned: 8, trustDelta: 0.02, ciDelta: 0.01,
+        narrative: "You kept your head down and contributed. Steady. Unremarkable. Sustainable.",
+        icon: "🔧",
+      },
+    ],
+  },
+  {
+    scenario: "A community conflict erupts. Both sides want your support.",
+    context: "Your trust score could tip the balance. How you engage reveals your character.",
+    actions: [
+      {
+        label: "Mediate honestly between both sides",
+        description: "High effort, builds trust through demonstrated temperament",
+        atpCost: 18, atpEarned: 15, trustDelta: 0.07, ciDelta: 0.04,
+        narrative: "Your balanced perspective earned respect from both factions. Temperament — the hardest T3 dimension to build — showed clearly.",
+        icon: "⚖️",
+      },
+      {
+        label: "Side with whoever has more power",
+        description: "Cheap politically, but inconsistent with prior behavior",
+        atpCost: 8, atpEarned: 10, trustDelta: -0.02, ciDelta: -0.07,
+        narrative: "Your sudden alignment with the dominant faction didn't match your history. Relational coherence flagged the shift.",
+        icon: "👑",
+      },
+      {
+        label: "Stay completely neutral",
+        description: "Safe but passive — no trust gained, minimal cost",
+        atpCost: 5, atpEarned: 2, trustDelta: 0.0, ciDelta: 0.01,
+        narrative: "You avoided the conflict entirely. Nobody was upset, but nobody trusted you more either.",
+        icon: "🏳️",
+      },
+      {
+        label: "Stir up more conflict for engagement",
+        description: "Gets attention but destroys trust and coherence",
+        atpCost: 10, atpEarned: 12, trustDelta: -0.10, ciDelta: -0.09,
+        narrative: "Engagement spiked briefly, then crashed. Agents recognized the manipulation. Trust plummeted and coherence shattered.",
+        icon: "🔥",
+      },
+    ],
+  },
+  {
+    scenario: "Energy is scarce across the community. Resources are dwindling.",
+    context: "Your final test. How you act when resources are tight reveals everything.",
+    actions: [
+      {
+        label: "Share your energy with struggling members",
+        description: "Costly but builds the strongest possible trust",
+        atpCost: 25, atpEarned: 10, trustDelta: 0.09, ciDelta: 0.04,
+        narrative: "Your generosity when resources were scarce spoke volumes. Trust soared. If you die now, rebirth is nearly guaranteed.",
+        icon: "🤲",
+      },
+      {
+        label: "Collaborate on a group survival project",
+        description: "Moderate cost, good trust and coherence gains",
+        atpCost: 15, atpEarned: 12, trustDelta: 0.06, ciDelta: 0.03,
+        narrative: "The group project succeeded because everyone contributed. Collaborative behavior is the most sustainable long-term strategy.",
+        icon: "🏗️",
+      },
+      {
+        label: "Hoard and wait it out",
+        description: "Preserves ATP but others notice your selfishness",
+        atpCost: 2, atpEarned: 0, trustDelta: -0.04, ciDelta: -0.02,
+        narrative: "You survived with full energy reserves. But the community noticed who helped and who didn't. Trust eroded quietly.",
+        icon: "🏦",
+      },
+      {
+        label: "Undercut others for scarce resources",
+        description: "Short-term ATP gain, devastating trust and coherence loss",
+        atpCost: 5, atpEarned: 20, trustDelta: -0.12, ciDelta: -0.10,
+        narrative: "You grabbed what you could. The community remembered. In Web4, reputation is permanent. This follows you into the next life.",
+        icon: "🗡️",
+      },
+    ],
+  },
+];
+
+// ============================================================================
+// Survival Game Component
+// ============================================================================
+
+function SurvivalGame() {
+  const [gameState, setGameState] = useState<GameState>({
+    atp: 100,
+    trust: 0.55,
+    ci: 0.80,
+    turn: 0,
+    alive: true,
+    history: [],
+  });
+  const [gameStarted, setGameStarted] = useState(false);
+  const [selectedAction, setSelectedAction] = useState<number | null>(null);
+  const [showingResult, setShowingResult] = useState(false);
+
+  const isAlive = (atp: number, trust: number, ci: number) =>
+    atp > 0 && trust > 0.5 && ci > 0.5;
+
+  const getCiModulation = (ci: number) => {
+    // ATP costs are multiplied by 1/CI² (capped at 4x)
+    const mod = Math.min(4, 1 / (ci * ci));
+    return mod;
+  };
+
+  const handleAction = useCallback((actionIndex: number) => {
+    setSelectedAction(actionIndex);
+    setShowingResult(true);
+
+    const turn = GAME_TURNS[gameState.turn];
+    const action = turn.actions[actionIndex];
+    const ciMod = getCiModulation(gameState.ci);
+    const actualCost = Math.round(action.atpCost * ciMod);
+    const netAtp = gameState.atp - actualCost + action.atpEarned;
+    const newTrust = Math.max(0, Math.min(1, gameState.trust + action.trustDelta));
+    const newCi = Math.max(0, Math.min(1, gameState.ci + action.ciDelta));
+    const alive = isAlive(netAtp, newTrust, newCi);
+
+    setGameState(prev => ({
+      atp: Math.max(0, netAtp),
+      trust: newTrust,
+      ci: newCi,
+      turn: prev.turn + 1,
+      alive,
+      history: [...prev.history, {
+        turn: prev.turn + 1,
+        action: action.label,
+        narrative: action.narrative,
+        atp: Math.max(0, netAtp),
+        trust: newTrust,
+        ci: newCi,
+      }],
+    }));
+  }, [gameState]);
+
+  const advanceTurn = useCallback(() => {
+    setSelectedAction(null);
+    setShowingResult(false);
+  }, []);
+
+  const resetGame = useCallback(() => {
+    setGameState({ atp: 100, trust: 0.55, ci: 0.80, turn: 0, alive: true, history: [] });
+    setSelectedAction(null);
+    setShowingResult(false);
+    setGameStarted(false);
+  }, []);
+
+  const gameOver = !gameState.alive || gameState.turn >= 5;
+  const survived = gameState.alive && gameState.turn >= 5;
+
+  // Status bar component
+  const StatusBar = ({ label, value, max, threshold, color, format }: {
+    label: string; value: number; max: number; threshold?: number; color: string; format: (v: number) => string;
+  }) => {
+    const pct = Math.max(0, Math.min(100, (value / max) * 100));
+    const thresholdPct = threshold ? (threshold / max) * 100 : 0;
+    const belowThreshold = threshold !== undefined && value <= threshold;
+    return (
+      <div className="mb-3">
+        <div className="flex justify-between text-sm mb-1">
+          <span className={`font-medium ${belowThreshold ? 'text-red-400' : 'text-gray-300'}`}>{label}</span>
+          <span className={`font-mono ${belowThreshold ? 'text-red-400' : color}`}>{format(value)}</span>
+        </div>
+        <div className="relative h-3 bg-gray-800 rounded-full overflow-hidden">
+          <div
+            className={`absolute inset-y-0 left-0 rounded-full transition-all duration-500 ${belowThreshold ? 'bg-red-500' : color === 'text-green-400' ? 'bg-green-500' : color === 'text-sky-400' ? 'bg-sky-500' : 'bg-purple-500'}`}
+            style={{ width: `${pct}%` }}
+          />
+          {threshold !== undefined && (
+            <div
+              className="absolute inset-y-0 w-0.5 bg-yellow-400/70"
+              style={{ left: `${thresholdPct}%` }}
+              title={`Threshold: ${format(threshold)}`}
+            />
+          )}
+        </div>
+      </div>
+    );
+  };
+
+  // Pre-game start screen
+  if (!gameStarted) {
+    return (
+      <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 my-6">
+        <h3 className="text-xl font-bold text-gray-100 mb-3">Can You Stay Alive for 5 Turns?</h3>
+        <p className="text-gray-300 leading-relaxed mb-4">
+          You start with <strong className="text-green-400">100 ATP</strong> (energy),{' '}
+          <strong className="text-sky-400">0.55 trust</strong> (barely above the 0.5 threshold), and{' '}
+          <strong className="text-purple-400">0.80 coherence</strong>. Each turn, you&apos;ll face a scenario
+          and choose how to act. If any metric drops below its threshold, <strong className="text-red-400">you die</strong>.
+        </p>
+        <div className="grid grid-cols-3 gap-3 mb-4 text-center">
+          <div className="bg-gray-800/80 rounded-lg p-3 border border-gray-700">
+            <div className="text-green-400 text-lg font-bold">ATP &gt; 0</div>
+            <div className="text-gray-500 text-xs">Energy to act</div>
+          </div>
+          <div className="bg-gray-800/80 rounded-lg p-3 border border-gray-700">
+            <div className="text-sky-400 text-lg font-bold">Trust &gt; 0.5</div>
+            <div className="text-gray-500 text-xs">Coherent agency</div>
+          </div>
+          <div className="bg-gray-800/80 rounded-lg p-3 border border-gray-700">
+            <div className="text-purple-400 text-lg font-bold">CI &gt; 0.5</div>
+            <div className="text-gray-500 text-xs">Consistent behavior</div>
+          </div>
+        </div>
+        <p className="text-gray-500 text-sm mb-4">
+          When your coherence drops, all ATP costs increase (CI² modulation). Bad behavior compounds.
+        </p>
+        <button
+          onClick={() => setGameStarted(true)}
+          className="w-full px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-lg"
+        >
+          Start Survival Challenge
+        </button>
+      </div>
+    );
+  }
+
+  // Game over screen
+  if (gameOver) {
+    const deathCause = !gameState.alive
+      ? gameState.atp <= 0
+        ? "Energy exhaustion — you ran out of ATP."
+        : gameState.trust <= 0.5
+          ? "Trust collapse — your trust fell below 0.5."
+          : "Coherence failure — your behavior became too inconsistent."
+      : null;
+
+    const rebirthEligible = gameState.trust > 0.5;
+
+    return (
+      <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 my-6">
+        <div className={`text-center mb-6 p-4 rounded-lg border-2 ${survived ? 'border-green-500 bg-green-950/30' : 'border-red-500 bg-red-950/30'}`}>
+          <div className={`text-3xl font-bold mb-2 ${survived ? 'text-green-400' : 'text-red-400'}`}>
+            {survived ? 'YOU SURVIVED' : `DEAD — Turn ${gameState.turn}`}
+          </div>
+          {survived ? (
+            <p className="text-gray-300">
+              You made it through all 5 turns. Your final trust ({gameState.trust.toFixed(2)}) and
+              ATP ({gameState.atp}) would carry forward as karma into your next life.
+            </p>
+          ) : (
+            <div>
+              <p className="text-red-300 mb-2">{deathCause}</p>
+              {rebirthEligible ? (
+                <p className="text-amber-400 text-sm">Rebirth eligible: trust {gameState.trust.toFixed(2)} &gt; 0.5. You&apos;d be reborn with karma from this life.</p>
+              ) : (
+                <p className="text-red-400 text-sm">Permanent death: trust {gameState.trust.toFixed(2)} ≤ 0.5. Society rejects rebirth. Game over — for real.</p>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Final stats */}
+        <div className="mb-6">
+          <StatusBar label="Energy (ATP)" value={gameState.atp} max={200} threshold={0} color="text-green-400" format={v => String(Math.round(v))} />
+          <StatusBar label="Trust (T3)" value={gameState.trust} max={1} threshold={0.5} color="text-sky-400" format={v => v.toFixed(2)} />
+          <StatusBar label="Coherence (CI)" value={gameState.ci} max={1} threshold={0.5} color="text-purple-400" format={v => v.toFixed(2)} />
+        </div>
+
+        {/* Turn history */}
+        <details className="mb-4">
+          <summary className="text-gray-400 text-sm cursor-pointer hover:text-gray-300">
+            View your turn-by-turn history
+          </summary>
+          <div className="mt-3 space-y-2">
+            {gameState.history.map((h, i) => (
+              <div key={i} className="text-sm bg-gray-800/50 rounded p-3 border border-gray-700/50">
+                <div className="font-medium text-gray-300 mb-1">Turn {h.turn}: {h.action}</div>
+                <div className="text-gray-500 text-xs italic">{h.narrative}</div>
+                <div className="flex gap-3 mt-1 text-xs">
+                  <span className={h.atp <= 0 ? 'text-red-400' : 'text-green-400'}>ATP: {Math.round(h.atp)}</span>
+                  <span className={h.trust <= 0.5 ? 'text-red-400' : 'text-sky-400'}>Trust: {h.trust.toFixed(2)}</span>
+                  <span className={h.ci <= 0.5 ? 'text-red-400' : 'text-purple-400'}>CI: {h.ci.toFixed(2)}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </details>
+
+        {/* Insight */}
+        <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 mb-4">
+          <p className="text-gray-400 text-sm leading-relaxed">
+            <strong className="text-amber-400">What this teaches:</strong>{' '}
+            {survived
+              ? "Sustainable strategies win. Quality over quantity. Consistency compounds. This is why spam dies and good actors thrive in trust-native systems."
+              : gameState.trust <= 0.5
+                ? "Trust is the hardest metric to rebuild. Once the community loses faith in you, every action becomes more expensive and less effective. In Web4, reputation is permanent."
+                : gameState.atp <= 0
+                  ? "Energy exhaustion is the #1 cause of death. Spam and bulk behavior burn through ATP faster than they earn it. Sustainable contribution is the only viable long-term strategy."
+                  : "Coherence failure means your behavior became self-contradictory. The CI² modulation made every action more expensive, creating a death spiral. Consistency matters."
+            }
+          </p>
+        </div>
+
+        <div className="flex gap-3">
+          <button
+            onClick={resetGame}
+            className="flex-1 px-4 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors"
+          >
+            Try Again
+          </button>
+          <Link
+            href="/karma-journey"
+            className="flex-1 px-4 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors text-center"
+          >
+            Full Karma Journey →
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  // Active gameplay
+  const currentTurn = GAME_TURNS[gameState.turn];
+  const ciMod = getCiModulation(gameState.ci);
+
+  return (
+    <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 my-6">
+      {/* Status bars */}
+      <div className="mb-4">
+        <div className="flex justify-between items-center mb-3">
+          <span className="text-sm text-gray-500 uppercase tracking-wide">Turn {gameState.turn + 1} of 5</span>
+          <span className={`text-sm font-medium px-2 py-0.5 rounded ${gameState.alive ? 'bg-green-900/50 text-green-400' : 'bg-red-900/50 text-red-400'}`}>
+            {gameState.alive ? 'ALIVE' : 'DEAD'}
+          </span>
+        </div>
+        <StatusBar label="Energy (ATP)" value={gameState.atp} max={200} threshold={0} color="text-green-400" format={v => String(Math.round(v))} />
+        <StatusBar label="Trust (T3)" value={gameState.trust} max={1} threshold={0.5} color="text-sky-400" format={v => v.toFixed(2)} />
+        <StatusBar label="Coherence (CI)" value={gameState.ci} max={1} threshold={0.5} color="text-purple-400" format={v => v.toFixed(2)} />
+        {ciMod > 1.3 && (
+          <div className="text-amber-400 text-xs mt-1">
+            CI² modulation active: ATP costs are {ciMod.toFixed(1)}x normal
+          </div>
+        )}
+      </div>
+
+      {/* Scenario */}
+      {!showingResult ? (
+        <>
+          <div className="mb-4 bg-gray-800/60 rounded-lg p-4 border border-gray-700/50">
+            <h4 className="font-semibold text-gray-100 mb-1">{currentTurn.scenario}</h4>
+            <p className="text-gray-400 text-sm">{currentTurn.context}</p>
+          </div>
+
+          {/* Action choices */}
+          <div className="space-y-2">
+            {currentTurn.actions.map((action, i) => {
+              const actualCost = Math.round(action.atpCost * ciMod);
+              const netEffect = action.atpEarned - actualCost;
+              return (
+                <button
+                  key={i}
+                  onClick={() => handleAction(i)}
+                  className="w-full text-left p-4 rounded-lg border border-gray-700 bg-gray-800/50 hover:border-sky-600 hover:bg-gray-800 transition-all group"
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl mt-0.5">{action.icon}</span>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-200 group-hover:text-sky-400 transition-colors">
+                        {action.label}
+                      </div>
+                      <div className="text-gray-500 text-sm mt-0.5">{action.description}</div>
+                      <div className="flex gap-3 mt-2 text-xs">
+                        <span className={netEffect >= 0 ? 'text-green-400/70' : 'text-red-400/70'}>
+                          ATP: {netEffect >= 0 ? '+' : ''}{netEffect}
+                          {ciMod > 1.3 && <span className="text-amber-400/60"> (cost ×{ciMod.toFixed(1)})</span>}
+                        </span>
+                        <span className={action.trustDelta >= 0 ? 'text-sky-400/70' : 'text-red-400/70'}>
+                          Trust: {action.trustDelta >= 0 ? '+' : ''}{action.trustDelta.toFixed(2)}
+                        </span>
+                        <span className={action.ciDelta >= 0 ? 'text-purple-400/70' : 'text-red-400/70'}>
+                          CI: {action.ciDelta >= 0 ? '+' : ''}{action.ciDelta.toFixed(2)}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </>
+      ) : (
+        /* Result screen */
+        <div>
+          <div className="bg-gray-800/60 rounded-lg p-4 border border-gray-700/50 mb-4">
+            <div className="flex items-start gap-3">
+              <span className="text-xl">{currentTurn.actions[selectedAction!].icon}</span>
+              <div>
+                <div className="font-medium text-gray-200 mb-2">
+                  {currentTurn.actions[selectedAction!].label}
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed italic">
+                  {gameState.history[gameState.history.length - 1]?.narrative}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {gameState.alive && gameState.turn < 5 && (
+            <button
+              onClick={advanceTurn}
+              className="w-full px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors"
+            >
+              Next Turn →
+            </button>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
 
 // Interactive Aliveness Calculator Component
 function AlivenessCalculator() {
@@ -373,6 +910,16 @@ export default function AlivenessExplainer() {
           biological and social systems—informing but not rigidly determining this design choice.
           Societies can configure their own thresholds.
         </p>
+      </section>
+
+      <section>
+        <h2>Interactive: Can You Survive?</h2>
+        <p>
+          The calculator above shows the theory. This game shows what it <em>feels</em> like.
+          Make 5 choices and try to keep all three metrics above their thresholds.
+        </p>
+
+        <SurvivalGame />
       </section>
 
       <section>
