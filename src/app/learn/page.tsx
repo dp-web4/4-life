@@ -5,6 +5,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { loadExploration, trackPageVisit } from "@/lib/exploration";
 
 /**
  * Learning Journey: Progressive Web4 Comprehension
@@ -50,14 +51,40 @@ export default function LearnJourney() {
   const [activeStage, setActiveStage] = useState<LearningStage>("beginner");
   const [completedConcepts, setCompletedConcepts] = useState<Set<string>>(new Set());
 
-  // Restore progress from localStorage on mount
+  // Restore progress from localStorage + auto-complete from exploration tracker
   useEffect(() => {
+    trackPageVisit('learn');
+    const merged = new Set<string>();
     try {
       const saved = localStorage.getItem("4life-learn-progress");
       if (saved) {
-        setCompletedConcepts(new Set(JSON.parse(saved)));
+        for (const id of JSON.parse(saved)) merged.add(id);
       }
     } catch { /* ignore */ }
+
+    // Auto-complete concepts based on pages actually visited
+    const exploration = loadExploration();
+    if (exploration) {
+      const slugToConceptId: Record<string, string> = {
+        'lct-explainer': 'lct',
+        'atp-economics': 'atp',
+        'trust-tensor': 't3',
+        'coherence-index': 'ci',
+        'aliveness': 'aliveness',
+        'society-simulator': 'run-first-sim',
+        'karma-journey': 'karma-mechanics',
+        'playground': 'playground',
+        'trust-networks': 'trust-networks',
+        'federation-economics': 'federation-econ',
+        'coherence-framework': 'coherence-framework',
+        'narratives': 'explore-narrative',
+      };
+      for (const slug of exploration.pagesVisited) {
+        const conceptId = slugToConceptId[slug];
+        if (conceptId) merged.add(conceptId);
+      }
+    }
+    if (merged.size > 0) setCompletedConcepts(merged);
   }, []);
 
   const toggleCompleted = (conceptId: string) => {
