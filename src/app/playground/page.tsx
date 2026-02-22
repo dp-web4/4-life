@@ -531,6 +531,9 @@ export default function PlaygroundPage() {
             Discover edge cases. Find the tipping points.
           </p>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+            <a href="/first-simulation" style={{ color: "#38bdf8", fontSize: "0.9rem" }}>
+              Step-by-step guided simulation →
+            </a>
             <a href="/simulation-sandbox" style={{ color: "#38bdf8", fontSize: "0.9rem" }}>
               Want full control? → Simulation Sandbox
             </a>

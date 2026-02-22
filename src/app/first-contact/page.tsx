@@ -754,13 +754,13 @@ export default function FirstContactPage() {
                   </div>
                 </Link>
 
-                {/* Trust Networks */}
-                <Link href="/trust-networks">
+                {/* Your First Simulation */}
+                <Link href="/first-simulation">
                   <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-purple-500 transition-colors cursor-pointer">
-                    <div className="text-2xl mb-3">🕸️</div>
-                    <h4 className="text-lg font-bold text-purple-400 mb-2">Explore: Trust Networks</h4>
+                    <div className="text-2xl mb-3">🔬</div>
+                    <h4 className="text-lg font-bold text-purple-400 mb-2">Guided: Your First Simulation</h4>
                     <p className="text-gray-400 text-sm">
-                      See how trust relationships evolve over time. Watch coalitions form and free-riders get isolated.
+                      Step-by-step walkthrough running your own simulation. Watch trust evolve in real time.
                     </p>
                   </div>
                 </Link>
