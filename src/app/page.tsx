@@ -168,6 +168,17 @@ function TrustDilemma() {
     setCurrentAnswer(null);
   };
 
+  const handleShare = async () => {
+    const text = 'I just answered 3 questions about internet trust problems and saw how a trust-native protocol addresses each one. Try it yourself:';
+    const url = 'https://4-life-ivory.vercel.app';
+    if (navigator.share) {
+      try { await navigator.share({ title: '3 Trust Dilemmas', text, url }); } catch { /* cancelled */ }
+    } else {
+      await navigator.clipboard.writeText(`${text}\n${url}`);
+      alert('Copied to clipboard!');
+    }
+  };
+
   // Summary after all 3 questions
   if (isComplete) {
     return (
@@ -197,12 +208,24 @@ function TrustDilemma() {
         <p style={{ color: 'var(--color-sky)', fontSize: '0.9rem', fontWeight: 500, marginBottom: '0.75rem' }}>
           Energy + Identity + Consequences = a self-regulating internet. No moderators needed.
         </p>
-        <button
-          onClick={handleReset}
-          style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', background: 'none', border: 'none', cursor: 'pointer' }}
-        >
-          Try again
-        </button>
+        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+          <button
+            onClick={handleShare}
+            style={{
+              color: 'var(--color-sky)', fontSize: '0.8rem', background: 'rgba(56, 189, 248, 0.1)',
+              border: '1px solid rgba(56, 189, 248, 0.3)', borderRadius: '0.375rem',
+              padding: '0.35rem 0.75rem', cursor: 'pointer',
+            }}
+          >
+            Share this quiz
+          </button>
+          <button
+            onClick={handleReset}
+            style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', background: 'none', border: 'none', cursor: 'pointer' }}
+          >
+            Try again
+          </button>
+        </div>
       </section>
     );
   }
