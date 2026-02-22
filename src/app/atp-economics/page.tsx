@@ -1,13 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import { T3, CI, MRH } from "@/components/TermTooltip";
+import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
 
 export default function ATPEconomicsPage() {
+  useEffect(() => { trackPageVisit('atp-economics'); }, []);
+
   // Interactive simulation state
   const [currentATP, setCurrentATP] = useState(100);
   const [actionsLog, setActionsLog] = useState<
@@ -34,6 +37,7 @@ export default function ATPEconomicsPage() {
     action: { cost: number; reward: number; label: string }
   ) => {
     if (!isAlive) return;
+    trackConceptInteraction('atp-economics');
 
     const newATP = currentATP - action.cost + action.reward;
     const finalATP = Math.max(0, newATP);
@@ -768,21 +772,6 @@ if agent.atp <= 0:
       </section>
 
       {/* Navigation */}
-      <section className="max-w-4xl mx-auto mt-16 flex gap-4">
-        <Link
-          href="/lct-explainer"
-          className="flex-1 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg transition-colors text-center"
-        >
-          ← Identity (LCT)
-        </Link>
-        <Link
-          href="/trust-tensor"
-          className="flex-1 px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-center"
-        >
-          Next: Trust Tensors →
-        </Link>
-      </section>
-
       {/* Footer Note */}
       <section className="max-w-4xl mx-auto mt-12 text-center text-gray-500 text-sm pb-12">
         <p>

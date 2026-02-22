@@ -15,6 +15,7 @@ import { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from '@/lib/exploration';
 
 const KARMA_STORAGE_KEY = 'karma-journey-profile';
 
@@ -313,8 +314,9 @@ export default function KarmaJourneyPage() {
   const [showWelcomeBack, setShowWelcomeBack] = useState(false);
   const savedProfileRef = useRef<TrustProfile | null>(null);
 
-  // Load saved profile on mount
+  // Track page visit + load saved profile on mount
   useEffect(() => {
+    trackPageVisit('karma-journey');
     try {
       const saved = localStorage.getItem(KARMA_STORAGE_KEY);
       if (saved) {

@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import TermTooltip from "@/components/TermTooltip";
+import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
 
 // Canonical 3D trust dimensions (Talent, Training, Temperament)
 const TRUST_DIMENSIONS = {
@@ -44,6 +45,8 @@ const ROLES = {
 type RoleKey = keyof typeof ROLES;
 
 export default function TrustTensorPage() {
+  useEffect(() => { trackPageVisit('trust-tensor'); }, []);
+
   // Scenario simulation state
   const [selectedRole, setSelectedRole] = useState<RoleKey>("analyst");
   const [trustScores, setTrustScores] = useState<Record<TrustDimension, number>>({
@@ -83,6 +86,7 @@ export default function TrustTensorPage() {
   };
 
   const applyScenario = (scenarioKey: string) => {
+    trackConceptInteraction('trust-tensor');
     const scenario = scenarios[scenarioKey];
     const newScores = { ...trustScores };
 
@@ -721,22 +725,6 @@ Talent: No decay (represents inherent aptitude)`}
             roles. That&apos;s called &ldquo;actually being trustworthy.&rdquo;
           </p>
         </div>
-      </section>
-
-      {/* Navigation */}
-      <section className="max-w-4xl mx-auto mt-16 flex gap-4">
-        <Link
-          href="/atp-economics"
-          className="flex-1 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg transition-colors text-center"
-        >
-          &larr; Energy Budget (ATP)
-        </Link>
-        <Link
-          href="/coherence-index"
-          className="flex-1 px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-center"
-        >
-          Next: Coherence Index &rarr;
-        </Link>
       </section>
 
       {/* Footer Note */}

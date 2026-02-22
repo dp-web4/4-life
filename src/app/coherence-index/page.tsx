@@ -1,13 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import TermTooltip from "@/components/TermTooltip";
+import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
 
 export default function CoherenceIndexPage() {
+  useEffect(() => { trackPageVisit('coherence-index'); }, []);
+
   // Simulator state
   const [scenario, setScenario] = useState<
     "baseline" | "teleport" | "capability_spike" | "time_gap" | "relationship_conflict"
@@ -108,6 +111,7 @@ export default function CoherenceIndexPage() {
   const handleScenarioChange = (
     newScenario: keyof typeof scenarios
   ) => {
+    trackConceptInteraction('coherence-index');
     setScenario(newScenario);
     const s = scenarios[newScenario];
     setSpatialCI(s.spatial);
@@ -1269,22 +1273,6 @@ lenient_society = {
               </p>
             </div>
           </div>
-        </section>
-
-        {/* Forward Navigation */}
-        <section className="max-w-4xl mx-auto flex gap-4 mb-12">
-          <Link
-            href="/trust-tensor"
-            className="flex-1 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg transition-colors text-center"
-          >
-            ← Trust Tensors
-          </Link>
-          <Link
-            href="/aliveness"
-            className="flex-1 px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-center"
-          >
-            Next: Aliveness →
-          </Link>
         </section>
 
         {/* Next Steps Section */}

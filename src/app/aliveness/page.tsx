@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
+import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
 
 // ============================================================================
 // Survival Game Types & Data
@@ -214,6 +215,8 @@ const GAME_TURNS: GameTurn[] = [
 // ============================================================================
 
 function SurvivalGame() {
+  useEffect(() => { trackPageVisit('aliveness'); }, []);
+
   const [gameState, setGameState] = useState<GameState>({
     atp: 100,
     trust: 0.55,
@@ -236,6 +239,7 @@ function SurvivalGame() {
   };
 
   const handleAction = useCallback((actionIndex: number) => {
+    trackConceptInteraction('aliveness');
     setSelectedAction(actionIndex);
     setShowingResult(true);
 
@@ -1547,16 +1551,6 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
           color: #60a5fa;
         }
       `}</style>
-
-      {/* Sequence Navigation */}
-      <section className="max-w-4xl mx-auto mt-12 flex gap-4">
-        <Link href="/coherence-index" className="flex-1 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg transition-colors text-center">
-          ← Coherence Index
-        </Link>
-        <Link href="/society-simulator" className="flex-1 px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-center">
-          See It in Action: Society Simulator →
-        </Link>
-      </section>
 
       <ConceptSequenceNav currentPath="/aliveness" />
       <RelatedConcepts currentPath="/aliveness" />

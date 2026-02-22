@@ -7,6 +7,7 @@ import FeaturedMoment, { FeaturedMomentCompact } from '@/components/FeaturedMome
 import EcosystemStats from '@/components/EcosystemStats';
 import TermTooltip from '@/components/TermTooltip';
 import type { MomentCategory } from '@/lib/moments/types';
+import { loadExploration, trackPageVisit, type ExplorationProfile } from '@/lib/exploration';
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState<'intro' | 'deepdive'>('intro');
@@ -309,6 +310,7 @@ function TrustDilemma() {
 
 function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
   const [karmaProfile, setKarmaProfile] = useState<{ archetype: string; emoji: string; totalLives: number; coopRate: number } | null>(null);
+  const [exploration, setExploration] = useState<ExplorationProfile | null>(null);
 
   useEffect(() => {
     try {
@@ -318,6 +320,8 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         if (p.archetype) setKarmaProfile(p);
       }
     } catch { /* ok */ }
+    setExploration(loadExploration());
+    trackPageVisit('home');
   }, []);
 
   return (
@@ -416,21 +420,64 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem' }}>
           Watch agents build trust, manage resources, and face consequences in a Web4 society.
         </p>
-        {karmaProfile && (
+        {(karmaProfile || (exploration && exploration.pagesVisited.length > 2)) && (
           <div style={{
             padding: '0.75rem 1rem', borderRadius: '0.5rem', marginBottom: '1rem',
             background: 'linear-gradient(135deg, rgba(110,231,183,0.08), rgba(147,197,253,0.08))',
             border: '1px solid rgba(110,231,183,0.15)',
           }}>
-            <Link href="/karma-journey" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <span style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)' }}>
-                Welcome back, <strong style={{ color: '#6ee7b7' }}>{karmaProfile.archetype}</strong> {karmaProfile.emoji}
-              </span>
-              <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginLeft: '0.5rem' }}>
-                — {karmaProfile.totalLives} {karmaProfile.totalLives === 1 ? 'life' : 'lives'} lived, {Math.round(karmaProfile.coopRate * 100)}% cooperative.
-                Continue your journey →
-              </span>
-            </Link>
+            <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '0.25rem' }}>
+              Welcome back!
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+              {karmaProfile && (
+                <Link href="/karma-journey" style={{ textDecoration: 'none', color: 'inherit', fontSize: '0.8rem' }}>
+                  <span style={{ color: 'var(--color-text-muted)' }}>
+                    <strong style={{ color: '#6ee7b7' }}>{karmaProfile.archetype}</strong> {karmaProfile.emoji}
+                    {' · '}{karmaProfile.totalLives} {karmaProfile.totalLives === 1 ? 'life' : 'lives'} lived
+                    {' · '}{Math.round(karmaProfile.coopRate * 100)}% cooperative
+                    {' · '}Continue →
+                  </span>
+                </Link>
+              )}
+              {exploration && exploration.conceptVisits.length > 0 && (() => {
+                const totalExp = exploration.conceptVisits.reduce((s, v) => s + v.interactionCount, 0);
+                const lastVisit = exploration.conceptVisits.sort(
+                  (a, b) => new Date(b.lastVisited).getTime() - new Date(a.lastVisited).getTime()
+                )[0];
+                const conceptNames: Record<string, string> = {
+                  'atp-economics': 'ATP Economics',
+                  'trust-tensor': 'Trust Tensor',
+                  'coherence-index': 'Coherence Index',
+                  'aliveness': 'Aliveness',
+                  'lct-explainer': 'LCT',
+                };
+                return (
+                  <Link href={`/${lastVisit.slug}`} style={{ textDecoration: 'none', color: 'inherit', fontSize: '0.8rem' }}>
+                    <span style={{ color: 'var(--color-text-muted)' }}>
+                      {totalExp} experiment{totalExp !== 1 ? 's' : ''} run
+                      {' · '}Last explored: {conceptNames[lastVisit.slug] || lastVisit.slug}
+                      {' · '}Continue →
+                    </span>
+                  </Link>
+                );
+              })()}
+              {exploration?.dayInWeb4 && (
+                <Link href="/day-in-web4" style={{ textDecoration: 'none', color: 'inherit', fontSize: '0.8rem' }}>
+                  <span style={{ color: 'var(--color-text-muted)' }}>
+                    Day archetype: <strong style={{ color: '#fbbf24' }}>{exploration.dayInWeb4.archetype}</strong>
+                    {' · '}{exploration.dayInWeb4.scenariosCompleted} scenarios
+                    {' · '}Try a different approach →
+                  </span>
+                </Link>
+              )}
+            </div>
+            {exploration && exploration.pagesVisited.length > 0 && (
+              <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '0.5rem', opacity: 0.7 }}>
+                {exploration.pagesVisited.length} page{exploration.pagesVisited.length !== 1 ? 's' : ''} explored
+                {exploration.sessionCount > 1 ? ` across ${exploration.sessionCount} sessions` : ''}
+              </div>
+            )}
           </div>
         )}
         <Link href="/society-simulator" className="btn-primary">

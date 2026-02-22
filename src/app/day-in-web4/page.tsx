@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { saveDayInWeb4Result, trackPageVisit } from '@/lib/exploration';
 
 /* ─── Types ────────────────────────────────────────────── */
 
@@ -289,6 +290,8 @@ export default function DayInWeb4Page() {
   const [choiceRecords, setChoiceRecords] = useState<ChoiceRecord[]>([]);
   const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
   const [showComparison, setShowComparison] = useState(false);
+
+  useEffect(() => { trackPageVisit('day-in-web4'); }, []);
 
   const scenario = SCENARIOS[currentScenario];
   const isComplete = currentScenario >= SCENARIOS.length;
@@ -673,6 +676,20 @@ function DaySummary({
       description: 'You mixed contributing with consuming. In Web4, this is sustainable — you\'re earning back what you spend while building a real reputation.',
     };
   }
+
+  // Persist result to exploration tracker (once)
+  const savedRef = useRef(false);
+  useEffect(() => {
+    if (savedRef.current) return;
+    savedRef.current = true;
+    saveDayInWeb4Result({
+      archetype: dayType.label,
+      scenariosCompleted: records.length,
+      totalATPEarned: totalAtpEarned,
+      totalTrustDelta: currentTrust - 0.5,
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>

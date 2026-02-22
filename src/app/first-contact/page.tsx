@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import { trackPageVisit } from "@/lib/exploration";
 
 /**
  * First Contact: Zero to Web4 Comprehension in 10 Minutes
@@ -34,6 +35,8 @@ interface SimulationSnapshot {
 }
 
 export default function FirstContactPage() {
+  useEffect(() => { trackPageVisit('first-contact'); }, []);
+
   const [currentStep, setCurrentStep] = useState<Step>("welcome");
   const [playbackIndex, setPlaybackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);

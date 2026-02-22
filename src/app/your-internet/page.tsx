@@ -12,9 +12,10 @@
  * Target: < 2 minutes to complete
  */
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { saveYourInternetResult, trackPageVisit } from '@/lib/exploration';
 
 // ============================================================================
 // Types
@@ -137,6 +138,17 @@ const SCENARIOS: Record<string, ScenarioResult> = {
 export default function YourInternetPage() {
   const [selected, setSelected] = useState<string[]>([]);
   const [showResults, setShowResults] = useState(false);
+  const savedRef = useRef(false);
+
+  useEffect(() => { trackPageVisit('your-internet'); }, []);
+
+  // Persist selections when results are shown
+  useEffect(() => {
+    if (showResults && selected.length > 0 && !savedRef.current) {
+      savedRef.current = true;
+      saveYourInternetResult(selected);
+    }
+  }, [showResults, selected]);
 
   const toggleFrustration = (id: string) => {
     setSelected(prev =>
