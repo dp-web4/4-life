@@ -423,6 +423,9 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>
             <Link href="/playground" style={{ color: 'var(--color-sky)' }}>Playground</Link> — tweak energy costs, trust thresholds, and see what happens
           </p>
+          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>
+            <Link href="/day-in-web4" style={{ color: 'var(--color-sky)' }}>A Day in Web4</Link> — walk through everyday scenarios with trust built in
+          </p>
         </div>
       </section>
 

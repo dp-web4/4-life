@@ -719,15 +719,29 @@ export default function FirstContactPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold mb-4">More Ways to Explore</h3>
+              <h3 className="text-2xl font-bold mb-2">Choose Your Path</h3>
+              <p className="text-gray-400 mb-4">Pick what fits how you like to learn.</p>
               <div className="grid md:grid-cols-2 gap-4">
                 {/* Society Simulator */}
                 <Link href="/society-simulator">
                   <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-emerald-500 transition-colors cursor-pointer">
-                    <div className="text-2xl mb-3">🌐</div>
-                    <h4 className="text-lg font-bold text-emerald-400 mb-2">Watch: Society Simulator</h4>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">I want to watch</div>
+                    <div className="text-2xl mb-2">🌐</div>
+                    <h4 className="text-lg font-bold text-emerald-400 mb-2">Society Simulator</h4>
                     <p className="text-gray-400 text-sm">
-                      You saw one agent. Now watch 12 agents form alliances, betray each other, and build trust networks in real time.
+                      Watch 12 agents form alliances, betray each other, and build trust networks. Observe how a whole society self-organizes.
+                    </p>
+                  </div>
+                </Link>
+
+                {/* Day in Web4 */}
+                <Link href="/day-in-web4">
+                  <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-amber-500 transition-colors cursor-pointer">
+                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">I want to see real life</div>
+                    <div className="text-2xl mb-2">☀️</div>
+                    <h4 className="text-lg font-bold text-amber-400 mb-2">A Day in Web4</h4>
+                    <p className="text-gray-400 text-sm">
+                      Walk through everyday scenarios — hiring, reviews, trolls — and see how each one works differently with trust built in.
                     </p>
                   </div>
                 </Link>
@@ -735,8 +749,9 @@ export default function FirstContactPage() {
                 {/* Playground */}
                 <Link href="/playground">
                   <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-sky-500 transition-colors cursor-pointer">
-                    <div className="text-2xl mb-3">🎮</div>
-                    <h4 className="text-lg font-bold text-sky-400 mb-2">Experiment: Playground</h4>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">I want to experiment</div>
+                    <div className="text-2xl mb-2">🎮</div>
+                    <h4 className="text-lg font-bold text-sky-400 mb-2">Playground</h4>
                     <p className="text-gray-400 text-sm">
                       Tweak energy costs, trust thresholds, and karma strength. See how different rules create different societies.
                     </p>
@@ -746,21 +761,11 @@ export default function FirstContactPage() {
                 {/* Learn */}
                 <Link href="/learn">
                   <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-green-500 transition-colors cursor-pointer">
-                    <div className="text-2xl mb-3">📚</div>
-                    <h4 className="text-lg font-bold text-green-400 mb-2">Learn: Concepts In Depth</h4>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">I want to understand</div>
+                    <div className="text-2xl mb-2">📚</div>
+                    <h4 className="text-lg font-bold text-green-400 mb-2">Concepts In Depth</h4>
                     <p className="text-gray-400 text-sm">
                       Understand the mechanics behind what you just saw. Trust tensors, coherence, identity — at your own pace.
-                    </p>
-                  </div>
-                </Link>
-
-                {/* Your First Simulation */}
-                <Link href="/first-simulation">
-                  <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-purple-500 transition-colors cursor-pointer">
-                    <div className="text-2xl mb-3">🔬</div>
-                    <h4 className="text-lg font-bold text-purple-400 mb-2">Guided: Your First Simulation</h4>
-                    <p className="text-gray-400 text-sm">
-                      Step-by-step walkthrough running your own simulation. Watch trust evolve in real time.
                     </p>
                   </div>
                 </Link>

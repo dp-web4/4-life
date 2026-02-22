@@ -228,20 +228,35 @@ export default function YourInternetPage() {
             </p>
           </div>
 
-          {/* Actions */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <button
-              onClick={handleShare}
-              className="flex-1 px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-center"
-            >
-              Share Your Results
-            </button>
-            <Link
-              href="/why-web4"
-              className="flex-1 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg transition-colors text-center"
-            >
-              Learn More &rarr;
-            </Link>
+          {/* Next Steps */}
+          <div className="mt-8">
+            <h3 className="text-lg font-semibold text-gray-300 mb-3">Go Deeper</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+              <Link
+                href="/day-in-web4"
+                className="px-5 py-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-amber-500 text-white rounded-lg transition-colors text-center text-sm"
+              >
+                See a full day in Web4 &rarr;
+              </Link>
+              <Link
+                href="/first-contact"
+                className="px-5 py-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-purple-500 text-white rounded-lg transition-colors text-center text-sm"
+              >
+                Watch trust in action (10 min) &rarr;
+              </Link>
+              <Link
+                href="/karma-journey"
+                className="px-5 py-3 bg-gradient-to-r from-sky-600 to-purple-600 hover:from-sky-700 hover:to-purple-700 text-white font-semibold rounded-lg transition-colors text-center text-sm"
+              >
+                Make your own choices &rarr;
+              </Link>
+              <button
+                onClick={handleShare}
+                className="px-5 py-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white rounded-lg transition-colors text-center text-sm"
+              >
+                Share your results
+              </button>
+            </div>
           </div>
 
           {/* Try again */}
