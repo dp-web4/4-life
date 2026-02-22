@@ -97,28 +97,48 @@ export default function FirstContactPage() {
         {/* Fallback for visitors without JavaScript */}
         <noscript>
           <div style={{ background: '#1e293b', border: '1px solid #475569', borderRadius: '12px', padding: '2rem', marginBottom: '2rem' }}>
-            <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem', color: '#38bdf8' }}>First Contact: Your First Web4 Experience</h1>
-            <p style={{ color: '#cbd5e1', lineHeight: '1.7', marginBottom: '1rem' }}>
-              This page features an interactive walkthrough where you follow Alice through 10 actions
-              in a Web4 community — watching her spend attention (ATP), build trust, recover from
-              mistakes, and earn recognition. It requires JavaScript to run.
+            <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#38bdf8' }}>First Contact: Your First Web4 Experience</h1>
+            <p style={{ color: '#64748b', fontSize: '0.875rem', marginBottom: '1.5rem' }}>
+              Interactive version requires JavaScript. Here&apos;s Alice&apos;s story:
             </p>
-            <p style={{ color: '#94a3b8', lineHeight: '1.7', marginBottom: '1.5rem' }}>
-              <strong style={{ color: '#e2e8f0' }}>What you'd learn:</strong> How attention budgets make spam
-              impossible, how trust builds through quality contributions, why consequences are permanent,
-              and how the system self-regulates without moderators.
+
+            <h2 style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#e2e8f0', marginBottom: '1rem' }}>Alice Joins a Web4 Community</h2>
+
+            <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.5rem' }}>
+              <p style={{ color: '#cbd5e1', lineHeight: 1.8, marginBottom: '0.75rem' }}>
+                Alice starts with <strong style={{ color: '#38bdf8' }}>100 energy (ATP)</strong> and <strong style={{ color: '#10b981' }}>neutral trust (0.50)</strong>. Every action she takes costs energy. Every contribution builds (or burns) trust.
+              </p>
+
+              <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
+                <strong style={{ color: '#e2e8f0' }}>Step 1 — Quality post:</strong> Alice writes a thoughtful contribution. It costs 8 ATP but her trust rises to 0.52. The community rewards substance.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
+                <strong style={{ color: '#e2e8f0' }}>Step 2 — Helping a newcomer:</strong> She mentors someone new. Costs 5 ATP, but trust jumps to 0.55. Generosity pays.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
+                <strong style={{ color: '#10b981' }}>Step 3 — Earning recognition:</strong> People upvote her earlier work. She earns 12 ATP back &mdash; more than she spent. Quality content pays for itself.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
+                <strong style={{ color: '#f59e0b' }}>Step 4 — A mistake:</strong> Alice tries spamming low-effort posts. It costs 25 ATP and her trust drops to 0.48 &mdash; below the threshold. Features are restricted.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
+                <strong style={{ color: '#e2e8f0' }}>Step 5 — Recovery:</strong> She returns to thoughtful replies. Trust slowly rebuilds to 0.50. The system doesn&apos;t ban her &mdash; it lets consequences teach.
+              </p>
+            </div>
+
+            <div style={{ background: '#0f172a', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
+              <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: '0.95rem' }}>
+                <strong style={{ color: '#38bdf8' }}>The lesson:</strong> Spam dies because it costs more than it returns. Trust builds through consistent quality. Mistakes have real consequences &mdash; but recovery is always possible. No moderators needed. The economics do the work.
+              </p>
+            </div>
+
+            <p style={{ color: '#64748b', fontSize: '0.875rem', borderTop: '1px solid #334155', paddingTop: '1rem' }}>
+              Continue learning:
+              <a href="/atp-economics" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>Attention Economics</a> &middot;
+              <a href="/trust-tensor" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>Trust Tensors</a> &middot;
+              <a href="/day-in-web4" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>A Day in Web4</a> &middot;
+              <a href="/why-web4" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>Why Web4?</a>
             </p>
-            <p style={{ color: '#94a3b8' }}>
-              To experience the interactive version, please enable JavaScript. Or continue learning
-              through these pages that work without JavaScript:
-            </p>
-            <ul style={{ marginTop: '1rem', listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '0.5rem' }}><a href="/why-web4" style={{ color: '#38bdf8' }}>Why Web4?</a> — The problems Web4 solves</li>
-              <li style={{ marginBottom: '0.5rem' }}><a href="/how-it-works" style={{ color: '#38bdf8' }}>How It Works</a> — The five foundational mechanisms</li>
-              <li style={{ marginBottom: '0.5rem' }}><a href="/atp-economics" style={{ color: '#38bdf8' }}>Attention Economics</a> — How energy budgets work</li>
-              <li style={{ marginBottom: '0.5rem' }}><a href="/trust-tensor" style={{ color: '#38bdf8' }}>Trust Tensors</a> — Multi-dimensional trust explained</li>
-              <li><a href="/glossary" style={{ color: '#38bdf8' }}>Glossary</a> — All Web4 terms defined in plain English</li>
-            </ul>
           </div>
         </noscript>
 

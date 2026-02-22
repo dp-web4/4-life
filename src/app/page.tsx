@@ -30,7 +30,7 @@ export default function HomePage() {
           maxWidth: '36rem',
           lineHeight: 1.6
         }}>
-          <strong>Web4</strong> is a trust-native internet — trust is built into the protocol, not bolted on.
+          <strong>Web4</strong> is a proposed protocol where trust is built into the internet itself, not bolted on after the fact.
           Identity costs something, every action costs energy,
           and consequences follow you forever.
           This site lets you <em>see</em> how it works.

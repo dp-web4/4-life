@@ -594,6 +594,147 @@ export default function WhyWeb4Page() {
               </p>
             </div>
           </details>
+          {/* Federation mechanics */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How does trust transfer between different communities?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Communities are <strong>federated</strong>, not merged. When you move from one community to
+                another, your trust history is visible but not automatically imported. The new community can
+                see your track record — but they set their own standards for what trust level earns what
+                privileges.
+              </p>
+              <p>
+                Think of it like an academic transcript: your grades from one university are <em>legible</em> to
+                another, but the second university decides what credits to accept. Your data analysis trust of
+                0.85 in Community A might start you at 0.6 in Community B, because B has stricter standards.
+              </p>
+              <p>
+                The key design: trust is <strong>portable but not dictatorial</strong>. No community is forced
+                to accept another community&apos;s standards. This prevents one community from inflating trust
+                scores and exporting them.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> The specific mechanics of cross-community trust mapping are
+                still being researched. How much to weight external trust vs internal trust is a policy
+                decision each community makes — the protocol provides the infrastructure, not the rules.
+              </p>
+            </div>
+          </details>
+
+          {/* Witnessed presence UX */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What does &ldquo;witnessed presence&rdquo; actually look like day-to-day?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                For most users, most of the time: <strong>invisible</strong>. Your device&apos;s security chip
+                handles attestation automatically, like how HTTPS encryption works — you don&apos;t think about
+                it, it just happens. You pick up your phone, the chip confirms it&apos;s your device, and
+                you&apos;re verified.
+              </p>
+              <p>
+                Witnessing becomes visible only for <strong>high-stakes actions</strong>: creating a new identity,
+                recovering from device loss, or performing actions that require elevated trust. In those cases,
+                you&apos;d see something like &ldquo;2 of your 3 linked devices confirmed this action&rdquo; — similar
+                to how banks send a verification SMS for large transfers.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> The exact UX hasn&apos;t been built yet. Getting the balance
+                right between security and friction is a design challenge. Too invisible and users don&apos;t
+                trust it; too visible and it becomes annoying.
+              </p>
+            </div>
+          </details>
+
+          {/* Shared devices */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What about shared devices? Family computer, library terminal, borrowed phone?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Hardware-bound identity doesn&apos;t mean <strong>one person, one device</strong>. It means
+                one person has <strong>at least one device</strong> that anchors their identity. You can use
+                a shared computer — you just can&apos;t perform high-trust actions from it without your own
+                device nearby to witness.
+              </p>
+              <p>
+                Think of it like a hotel business center: you can use the shared computer to browse, but for
+                banking you&apos;d use your own phone to authenticate. Web4 works similarly — shared devices
+                can access public content, but identity-verified actions need your personal device to co-sign.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> This creates an access gap for people who don&apos;t own any
+                personal device with a security chip. How to include the unbanked/undeviced population is an
+                unsolved equity problem — and a real one.
+              </p>
+            </div>
+          </details>
+
+          {/* Migration path */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How do I &ldquo;enter&rdquo; Web4 from today&apos;s internet? Is it all-or-nothing?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Gradual, not all-or-nothing.</strong> Web4 is designed as a layer on top of existing
+                infrastructure, not a replacement. A platform could adopt Web4 trust scoring for specific
+                features — verified reviews, trusted messaging — while everything else stays the same.
+              </p>
+              <p>
+                The likely adoption path: start with high-value interactions where trust matters most
+                (marketplace reviews, professional credentials, content moderation). As users see the
+                benefit, expand to more contexts. Think of how HTTPS adoption worked — it started with
+                banks and shopping, then gradually became the default everywhere.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Gradual adoption means the system is only as strong as its
+                coverage. A trust score based on 2 platforms is less meaningful than one based on 200.
+                Network effects work both for and against adoption.
+              </p>
+            </div>
+          </details>
+
+          {/* GDPR / right to be forgotten */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Doesn&apos;t permanent reputation conflict with GDPR&apos;s &ldquo;right to be forgotten&rdquo;?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Yes, this is a <strong>genuine tension</strong>. Web4&apos;s trust model assumes reputation
+                persists across lives and contexts. GDPR (and similar regulations) give individuals the right
+                to request data deletion.
+              </p>
+              <p>
+                Key distinction: Web4 stores <strong>behavioral scores</strong>, not personal data. Your trust
+                tensor says &ldquo;this entity has 0.85 data analysis trust earned across 200 interactions&rdquo;
+                — it doesn&apos;t store your name, email, or the content of those interactions. The score is
+                pseudonymous and attached to a hardware key, not a legal identity.
+              </p>
+              <p>
+                That said, if someone can correlate a hardware key to a person, the trust history becomes
+                personal data under GDPR. This creates a real compliance challenge that would need to be
+                addressed through either: (a) allowing identity resets with trust loss, or (b) legal
+                frameworks that exempt behavioral scores from deletion rights.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Neither solution is clean. Allowing resets undermines
+                permanent consequences (a core feature). Exempting scores from deletion rights is legally
+                uncertain. This is an unresolved policy question, not a technical one.
+              </p>
+            </div>
+          </details>
         </div>
 
         {/* Link to deeper adversarial analysis */}

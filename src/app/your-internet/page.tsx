@@ -293,7 +293,24 @@ export default function YourInternetPage() {
               trust-native infrastructure would address each one. It requires JavaScript to run.
             </p>
             <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              Here&apos;s a summary of the 6 scenarios covered:
+              Here&apos;s one example of how it works:
+            </p>
+
+            <div style={{ background: '#0f172a', borderRadius: '8px', padding: '1.25rem', marginBottom: '1.5rem' }}>
+              <p style={{ color: '#f59e0b', fontWeight: 'bold', marginBottom: '0.75rem' }}>Spam &amp; Fake Accounts</p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#ef4444' }}>Today:</strong> Creating an account costs nothing. A spammer can create 10,000 accounts in an hour. Platforms play whack-a-mole with detection, but attackers just adapt.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#10b981' }}>With Web4:</strong> Every account requires a physical device with a security chip. Creating 10,000 fake accounts means buying 10,000 devices &mdash; $5 million+ in hardware. Spam isn&apos;t impossible, just economically irrational.
+              </p>
+              <p style={{ color: '#64748b', fontSize: '0.85rem' }}>
+                Mechanism: Hardware-bound identity + attention costs make spam more expensive than the return it generates.
+              </p>
+            </div>
+
+            <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+              The interactive page covers 6 frustrations with similar before/after comparisons:
             </p>
             <ul style={{ color: '#cbd5e1', lineHeight: 1.8, paddingLeft: '1.5rem' }}>
               <li><strong style={{ color: '#38bdf8' }}>Spam &amp; fake accounts</strong> — Hardware-bound identity makes bulk fake accounts cost $5M+ instead of nothing</li>

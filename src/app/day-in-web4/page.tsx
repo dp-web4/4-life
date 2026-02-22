@@ -453,13 +453,97 @@ export default function DayInWeb4Page() {
       </div>
 
       <noscript>
-        <div style={{ padding: '2rem', color: '#d1d5db' }}>
-          <h2>A Day in Web4 — What Would Change?</h2>
-          <p>This interactive walkthrough requires JavaScript to run. Here&apos;s the summary:</p>
-          <p>Web4 changes your daily internet experience by making identity hardware-bound (no fake accounts),
-          every action cost energy (no spam), and consequences permanent (no fresh starts).
-          The result: reviews you can trust, communities that self-moderate, and reputations that mean something.</p>
-          <p><a href="/tldr">Read the 2-minute overview instead →</a></p>
+        <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '2rem' }}>
+          <div style={{ background: '#1e293b', border: '1px solid #475569', borderRadius: '12px', padding: '2rem' }}>
+            <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#38bdf8' }}>A Day in Web4</h1>
+            <p style={{ color: '#64748b', fontSize: '0.875rem', marginBottom: '1.5rem' }}>
+              Interactive version requires JavaScript. Here are all 7 scenarios:
+            </p>
+
+            <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>7:30 AM &mdash; Your Phone Wakes Up</p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#ef4444' }}>Today:</strong> You enter a password. Your inbox has 12 messages &mdash; 9 are spam.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your device&apos;s security chip proves it&apos;s you. No password. Your inbox has 3 messages &mdash; each sender spent energy to contact you. Zero spam.
+              </p>
+            </div>
+
+            <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>9:00 AM &mdash; Someone Asks for Help</p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#ef4444' }}>Today:</strong> You write a helpful answer about fixing a faucet. It gets buried under SEO spam.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your answer costs 8 energy. Three people mark it helpful &mdash; you earn 20 back. Quality rises to the top because low-effort posts don&apos;t pay off.
+              </p>
+            </div>
+
+            <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>11:00 AM &mdash; Hiring a Freelancer</p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#ef4444' }}>Today:</strong> Two freelancers apply. One has a shiny portfolio. Reviews might be fake. You&apos;re gambling.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
+                <strong style={{ color: '#10b981' }}>Web4:</strong> One has a trust history across 156 projects: Talent 0.91, Training 0.87, Temperament 0.94. These scores were earned through real interactions. Unfakeable.
+              </p>
+            </div>
+
+            <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>1:00 PM &mdash; Lunch Decision</p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#ef4444' }}>Today:</strong> A restaurant has 4.8 stars from 2,000 reviews. Half are from paid review farms. The rating is manufactured.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Each review cost the reviewer energy to post. 2,000 real reviews from verified people. You can see each reviewer&apos;s trust history. The 4.6-star place with 89 honest reviews might actually be better.
+              </p>
+            </div>
+
+            <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>3:30 PM &mdash; A Stranger Needs Help</p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#ef4444' }}>Today:</strong> A newcomer asks a basic question. Trolls pile on with &quot;just Google it.&quot; They leave. Community loses another contributor.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Helping costs 4 energy but earns 10 back. Trolling costs energy with no return. Constructive behavior becomes the path of least resistance.
+              </p>
+            </div>
+
+            <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>6:00 PM &mdash; Someone Lies About You</p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#ef4444' }}>Today:</strong> A competitor posts a false accusation. It goes viral. Even after removal, screenshots circulate. Your reputation is damaged.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your 2-year trust history speaks louder than one accusation. The accuser&apos;s consistency score drops &mdash; their behavior doesn&apos;t match their history. The community sees the full picture.
+              </p>
+            </div>
+
+            <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>9:00 PM &mdash; End of Day</p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#ef4444' }}>Today:</strong> You have a follower count and likes. Numbers that mean nothing about who you actually are.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your profile shows real dimensions: how skilled you are, how reliable you are, how you treat people. Built from hundreds of real interactions. Tomorrow, today&apos;s trust carries forward. Good days compound.
+              </p>
+            </div>
+
+            <div style={{ background: '#0f172a', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
+              <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: '0.95rem' }}>
+                <strong style={{ color: '#38bdf8' }}>The pattern:</strong> Every scenario follows the same logic &mdash; actions cost energy, quality is rewarded, bad behavior has real consequences, and trust compounds over time. No moderators needed. The economics do the work.
+              </p>
+            </div>
+
+            <p style={{ color: '#64748b', fontSize: '0.875rem', borderTop: '1px solid #334155', paddingTop: '1rem' }}>
+              Continue learning:
+              <a href="/tldr" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>2-minute overview</a> &middot;
+              <a href="/first-contact" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>First Contact</a> &middot;
+              <a href="/karma-journey" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>Karma Journey</a> &middot;
+              <a href="/what-could-go-wrong" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>What Could Go Wrong</a>
+            </p>
+          </div>
         </div>
       </noscript>
     </div>

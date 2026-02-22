@@ -57,10 +57,10 @@ const QUESTIONS: Question[] = [
     id: 'background',
     question: 'What best describes your background?',
     options: [
-      { label: 'Curious newcomer', description: 'I\'ve heard of Web4 / trust-native systems and want to understand what they are', value: 'newcomer' },
-      { label: 'Technical practitioner', description: 'I work in software, AI, or related fields and want to understand the mechanics', value: 'technical' },
-      { label: 'Researcher / theorist', description: 'I\'m interested in the theoretical foundations — trust, coherence, emergence', value: 'researcher' },
-      { label: 'Skeptic / adversarial thinker', description: 'I want to understand attack surfaces and failure modes before the idealistic parts', value: 'skeptic' },
+      { label: 'Curious newcomer', description: 'I\'ve heard of Web4 / trust-native systems and want to understand what they are. Paths include: First Contact, A Day in Web4, Karma Journey', value: 'newcomer' },
+      { label: 'Technical practitioner', description: 'I work in software, AI, or related fields and want to understand the mechanics. Paths include: Trust Tensor Explorer, Coherence Framework, Data Explorer', value: 'technical' },
+      { label: 'Researcher / theorist', description: 'I\'m interested in the theoretical foundations — trust, coherence, emergence. Paths include: Coherence Framework, Capacity Thresholds, Challenge Set', value: 'researcher' },
+      { label: 'Skeptic / adversarial thinker', description: 'I want to understand attack surfaces and failure modes before the idealistic parts. Paths include: Threat Model, Adversarial Explorer, What Could Go Wrong', value: 'skeptic' },
     ],
   },
   {
@@ -77,10 +77,10 @@ const QUESTIONS: Question[] = [
     id: 'style',
     question: 'How do you prefer to learn?',
     options: [
-      { label: 'Show me a story', description: 'I want narratives and examples before abstractions', value: 'narrative' },
-      { label: 'Let me play', description: 'Give me interactive tools — I learn by doing', value: 'interactive' },
-      { label: 'Give me the specs', description: 'I want precise definitions and formal descriptions', value: 'formal' },
-      { label: 'Challenge me', description: 'I learn best by questioning assumptions and finding edge cases', value: 'adversarial' },
+      { label: 'Show me a story', description: 'Narratives and examples before abstractions. Includes: Day in Web4, First Contact, Karma Journey', value: 'narrative' },
+      { label: 'Let me play', description: 'Interactive tools — learn by doing. Includes: Your Internet, Playground, Karma Journey', value: 'interactive' },
+      { label: 'Give me the specs', description: 'Precise definitions and formal descriptions. Includes: How It Works, Glossary, concept explainers', value: 'formal' },
+      { label: 'Challenge me', description: 'Question assumptions and find edge cases. Includes: What Could Go Wrong, Threat Model, Adversarial Explorer', value: 'adversarial' },
     ],
   },
 ];

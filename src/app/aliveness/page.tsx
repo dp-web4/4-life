@@ -1031,9 +1031,11 @@ export default function AlivenessExplainer() {
               <Link href="/manifest" style={{ color: '#818cf8' }}>Manifest</Link> lists it under known failure modes.
             </p>
             <p style={{ marginTop: "0.5rem" }}>
-              Possible approaches being explored: multi-party review tribunals, stake-weighted
-              arbitration, and heterogeneous AI review of contested trust events.
-              None are specified yet.
+              This is an <strong>active research priority</strong>. Approaches being explored include:
+              multi-party review tribunals, stake-weighted arbitration, and heterogeneous AI review
+              of contested trust events. The{" "}
+              <Link href="/what-could-go-wrong" style={{ color: '#818cf8' }}>failure analysis</Link> discusses
+              this alongside other unsolved problems.
             </p>
           </div>
         </div>

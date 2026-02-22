@@ -465,7 +465,8 @@ export default function CoherenceIndexPage() {
           </h2>
           <p className="text-gray-400 mb-8">
             Drag the sliders to simulate incoherent behavior. Watch how even one
-            compromised dimension tanks your effective trust, inflates your ATP costs,
+            compromised dimension tanks your effective trust, inflates your <Link href="/atp-economics" className="text-sky-400 hover:underline">ATP</Link> costs
+            (ATP is the energy budget that powers every action),
             and demands extra witnesses. Try a preset scenario, then tweak individual dimensions.
           </p>
 
@@ -1047,14 +1048,15 @@ export default function CoherenceIndexPage() {
                 </h3>
               </div>
               <p className="text-sm text-gray-300 mb-2">
-                <strong>How they work together</strong>: Low CI increases ATP
-                costs (up to 10x). This makes incoherent behavior economically
+                <strong>How they work together</strong>: <TermTooltip term="ATP">ATP</TermTooltip> is
+                the energy budget every agent has — every action costs some.
+                Low CI increases those costs (up to 10x). This makes incoherent behavior economically
                 expensive, not just trust-limited.
               </p>
               <p className="text-sm text-gray-400">
-                Example: Attacker with stolen credentials (CI = 0.4) pays 6.25x
-                more ATP for every action. If their ATP budget is limited, attack
-                becomes unsustainable. They run out of energy and can&apos;t act.
+                Example: An attacker with stolen credentials (CI = 0.4) pays 6.25x
+                more energy for every action. Their budget drains rapidly, making the
+                attack unsustainable before it can do real damage.
               </p>
               <Link
                 href="/atp-economics"
