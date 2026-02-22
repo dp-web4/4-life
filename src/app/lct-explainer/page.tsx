@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import TermTooltip from "@/components/TermTooltip";
+import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
 
 /**
  * LCT (Linked Context Token) Foundational Explainer
@@ -33,9 +34,13 @@ interface AttackScenario {
 }
 
 export default function LCTExplainerPage() {
+  useEffect(() => { trackPageVisit('lct-explainer'); }, []);
+
   const [selectedComponent, setSelectedComponent] = useState<string | null>(null);
   const [deviceCount, setDeviceCount] = useState(1);
   const [attackScenario, setAttackScenario] = useState<number>(0);
+  const [exploredAttacks, setExploredAttacks] = useState<Set<number>>(new Set());
+  const [exploredComponents, setExploredComponents] = useState<Set<string>>(new Set());
 
   // LCT components
   const lctComponents: LCTComponent[] = [
@@ -330,7 +335,7 @@ export default function LCTExplainerPage() {
               {lctComponents.map((component) => (
                 <button
                   key={component.name}
-                  onClick={() => setSelectedComponent(component.name)}
+                  onClick={() => { trackConceptInteraction('lct-explainer'); setSelectedComponent(component.name); setExploredComponents(prev => new Set(prev).add(component.name)); }}
                   className={`p-4 rounded-lg border text-left transition-all ${
                     selectedComponent === component.name
                       ? "border-purple-500 bg-purple-950/30"
@@ -454,7 +459,7 @@ export default function LCTExplainerPage() {
               {attackScenarios.map((scenario, idx) => (
                 <button
                   key={idx}
-                  onClick={() => setAttackScenario(idx)}
+                  onClick={() => { setAttackScenario(idx); setExploredAttacks(prev => new Set(prev).add(idx)); }}
                   className={`p-3 rounded-lg border text-left transition-all ${
                     attackScenario === idx
                       ? "border-purple-500 bg-purple-950/30 font-semibold"
@@ -493,6 +498,82 @@ export default function LCTExplainerPage() {
             </div>
           </div>
         </div>
+
+        {/* Identity Security Audit — cumulative interaction */}
+        {(exploredAttacks.size >= 2 || exploredComponents.size >= 3) && (
+          <div className="bg-gradient-to-br from-purple-950/30 to-gray-900 border border-purple-800/30 rounded-xl p-8 mb-8">
+            <h2 className="text-2xl font-bold mb-4 text-purple-400">Your Identity Security Audit</h2>
+            <p className="text-sm text-gray-400 mb-4">
+              Based on what you&apos;ve explored so far:
+            </p>
+
+            {/* Exploration progress */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="bg-gray-800/60 rounded-lg p-4 text-center">
+                <div className="text-2xl font-bold text-purple-400">{exploredComponents.size}/6</div>
+                <div className="text-xs text-gray-400 mt-1">LCT Components</div>
+              </div>
+              <div className="bg-gray-800/60 rounded-lg p-4 text-center">
+                <div className="text-2xl font-bold text-purple-400">{exploredAttacks.size}/7</div>
+                <div className="text-xs text-gray-400 mt-1">Attack Scenarios</div>
+              </div>
+              <div className="bg-gray-800/60 rounded-lg p-4 text-center">
+                <div className="text-2xl font-bold text-purple-400">{deviceCount}</div>
+                <div className="text-xs text-gray-400 mt-1">Device{deviceCount > 1 ? 's' : ''} Selected</div>
+              </div>
+            </div>
+
+            {/* Compound insight based on what they've explored */}
+            <div className="space-y-3">
+              {exploredAttacks.size >= 3 && (
+                <div className="bg-green-950/20 border-l-3 border-green-500 p-3 rounded text-sm text-gray-300" style={{ borderLeftWidth: '3px', borderLeftColor: '#22c55e' }}>
+                  <strong className="text-green-400">Pattern noticed:</strong> You&apos;ve tested {exploredAttacks.size} attack scenarios.
+                  Notice how Web4 is safe against {exploredAttacks.size === 7 ? 'all of them' : 'every one'}?
+                  That&apos;s not because of one clever trick — it&apos;s because identity lives in hardware,
+                  not in databases, passwords, or files. There&apos;s nothing <em>to</em> steal remotely.
+                </div>
+              )}
+
+              {exploredComponents.size >= 4 && (
+                <div className="bg-purple-950/20 border-l-3 border-purple-500 p-3 rounded text-sm text-gray-300" style={{ borderLeftWidth: '3px', borderLeftColor: '#a855f7' }}>
+                  <strong className="text-purple-400">Design insight:</strong> You&apos;ve explored {exploredComponents.size} of 6 LCT components.
+                  Notice how each component addresses a different attack surface? Hardware binding stops remote theft.
+                  Birth certificates stop impersonation. Witness networks stop single-point compromise.
+                  Task scope limits blast radius. They work together as a system.
+                </div>
+              )}
+
+              {deviceCount >= 3 && exploredAttacks.size >= 2 && (
+                <div className="bg-sky-950/20 border-l-3 border-sky-500 p-3 rounded text-sm text-gray-300" style={{ borderLeftWidth: '3px', borderLeftColor: '#0ea5e9' }}>
+                  <strong className="text-sky-400">Your posture:</strong> With {deviceCount} devices, your identity
+                  is {calculateAttackDifficulty(deviceCount).toFixed(1)}x harder to compromise.
+                  An attacker would need to physically steal all {deviceCount} devices AND bypass
+                  biometric locks on each one. That&apos;s not just &quot;harder&quot; — it&apos;s a fundamentally
+                  different kind of problem than guessing a password.
+                </div>
+              )}
+
+              {deviceCount === 1 && exploredAttacks.size >= 2 && (
+                <div className="bg-yellow-950/20 border-l-3 border-yellow-500 p-3 rounded text-sm text-gray-300" style={{ borderLeftWidth: '3px', borderLeftColor: '#eab308' }}>
+                  <strong className="text-yellow-400">Recommendation:</strong> With just 1 device, you&apos;re
+                  protected against remote attacks (no database to breach, no password to phish) but
+                  vulnerable to physical theft. Try sliding the device count to 3 above — watch how
+                  the attack difficulty jumps from {calculateAttackDifficulty(1).toFixed(1)}x to {calculateAttackDifficulty(3).toFixed(1)}x.
+                </div>
+              )}
+
+              {exploredAttacks.size >= 5 && exploredComponents.size >= 4 && (
+                <div className="bg-gray-800/60 border border-gray-600 rounded-lg p-4 mt-4 text-sm text-gray-300">
+                  <strong className="text-gray-100">The key takeaway:</strong> LCT identity is the foundation
+                  everything else in Web4 builds on. Without unforgeable identity, energy budgets don&apos;t
+                  work (you&apos;d create free accounts), trust doesn&apos;t stick (you&apos;d reset reputations),
+                  and consequences don&apos;t matter (you&apos;d just start over). Identity makes the whole
+                  system possible.
+                </div>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Why LCTs Enable Trust-Native Societies */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
@@ -768,16 +849,6 @@ export default function LCTExplainerPage() {
             </a>
           </div>
         </div>
-        {/* Sequence Navigation */}
-        <div className="mt-8 flex gap-4">
-          <a href="/why-web4" className="flex-1 px-6 py-3 rounded-lg font-semibold text-sm text-white text-center" style={{ background: '#374151' }}>
-            ← Why Web4
-          </a>
-          <a href="/atp-economics" className="flex-1 px-6 py-3 rounded-lg font-semibold text-sm text-white text-center" style={{ background: '#0284c7' }}>
-            Next: Energy Budget (ATP) →
-          </a>
-        </div>
-
         <ConceptSequenceNav currentPath="/lct-explainer" />
         <RelatedConcepts currentPath="/lct-explainer" />
       </div>
