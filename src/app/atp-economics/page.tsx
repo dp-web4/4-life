@@ -13,6 +13,12 @@ export default function ATPEconomicsPage() {
     { action: string; cost: number; reward: number; atp: number }[]
   >([]);
   const [isAlive, setIsAlive] = useState(true);
+  const [actionCounts, setActionCounts] = useState<Record<string, number>>({
+    spam: 0,
+    lowQuality: 0,
+    meaningful: 0,
+    highValue: 0,
+  });
 
   // Action costs and rewards
   const actions = {
@@ -41,6 +47,8 @@ export default function ATPEconomicsPage() {
       ...actionsLog.slice(0, 4), // Keep last 5 actions
     ]);
 
+    setActionCounts(prev => ({ ...prev, [actionKey]: (prev[actionKey] || 0) + 1 }));
+
     setCurrentATP(finalATP);
 
     if (finalATP === 0) {
@@ -51,8 +59,18 @@ export default function ATPEconomicsPage() {
   const reset = () => {
     setCurrentATP(100);
     setActionsLog([]);
+    setActionCounts({ spam: 0, lowQuality: 0, meaningful: 0, highValue: 0 });
     setIsAlive(true);
   };
+
+  // Sustainability calculations
+  const totalActions = Object.values(actionCounts).reduce((a, b) => a + b, 0);
+  const totalNetChange = totalActions > 0 ? currentATP - 100 : 0;
+  const avgNetPerAction = totalActions > 0 ? totalNetChange / totalActions : 0;
+  const projectedActionsLeft = avgNetPerAction >= 0 ? Infinity : Math.floor(currentATP / Math.abs(avgNetPerAction));
+  const sustainableActions = actionCounts.meaningful + actionCounts.highValue;
+  const unsustainableActions = actionCounts.spam + actionCounts.lowQuality;
+  const sustainabilityRatio = totalActions > 0 ? sustainableActions / totalActions : 0;
 
   // ATP bar color based on level
   const getATPColor = () => {
@@ -289,6 +307,77 @@ export default function ATPEconomicsPage() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          )}
+
+          {/* Sustainability Meter */}
+          {totalActions >= 2 && (
+            <div className="border-t border-gray-700 pt-6 mt-6">
+              <h3 className="text-sm font-semibold text-gray-300 mb-3">
+                Sustainability Meter
+              </h3>
+              <div className="space-y-3">
+                {/* Action breakdown */}
+                <div className="flex gap-2 text-xs">
+                  {actionCounts.spam > 0 && (
+                    <span className="px-2 py-1 bg-red-950/50 border border-red-800/40 rounded text-red-400">
+                      Spam: {actionCounts.spam}
+                    </span>
+                  )}
+                  {actionCounts.lowQuality > 0 && (
+                    <span className="px-2 py-1 bg-orange-950/50 border border-orange-800/40 rounded text-orange-400">
+                      Low: {actionCounts.lowQuality}
+                    </span>
+                  )}
+                  {actionCounts.meaningful > 0 && (
+                    <span className="px-2 py-1 bg-green-950/50 border border-green-800/40 rounded text-green-400">
+                      Meaningful: {actionCounts.meaningful}
+                    </span>
+                  )}
+                  {actionCounts.highValue > 0 && (
+                    <span className="px-2 py-1 bg-blue-950/50 border border-blue-800/40 rounded text-blue-400">
+                      High-value: {actionCounts.highValue}
+                    </span>
+                  )}
+                </div>
+
+                {/* Sustainability bar */}
+                <div className="w-full h-3 bg-gray-700 rounded-full overflow-hidden flex">
+                  <div
+                    className="h-full bg-green-500 transition-all duration-300"
+                    style={{ width: `${sustainabilityRatio * 100}%` }}
+                  />
+                  <div
+                    className="h-full bg-red-500 transition-all duration-300"
+                    style={{ width: `${(1 - sustainabilityRatio) * 100}%` }}
+                  />
+                </div>
+                <div className="flex justify-between text-xs text-gray-500">
+                  <span>Unsustainable</span>
+                  <span>Sustainable</span>
+                </div>
+
+                {/* Verdict */}
+                <div className={`text-sm p-3 rounded-lg ${
+                  avgNetPerAction >= 0
+                    ? 'bg-green-950/30 border border-green-800/30 text-green-300'
+                    : projectedActionsLeft > 10
+                      ? 'bg-amber-950/30 border border-amber-800/30 text-amber-300'
+                      : 'bg-red-950/30 border border-red-800/30 text-red-300'
+                }`}>
+                  {avgNetPerAction >= 0 ? (
+                    <>Your strategy is <strong>sustainable</strong> — you&apos;re gaining an average of +{avgNetPerAction.toFixed(1)} ATP per action.</>
+                  ) : projectedActionsLeft > 10 ? (
+                    <>At this rate, you have roughly <strong>{projectedActionsLeft} actions</strong> left before death. Mix in more meaningful contributions to survive.</>
+                  ) : isAlive ? (
+                    <>You&apos;re burning through ATP fast — only <strong>~{projectedActionsLeft} actions</strong> until death. Switch to value creation now or die.</>
+                  ) : (
+                    <>Your strategy was <strong>unsustainable</strong>. You averaged {avgNetPerAction.toFixed(1)} ATP per action. {
+                      sustainableActions === 0 ? 'Zero valuable contributions — no society rewards pure extraction.' : `Only ${sustainableActions} of ${totalActions} actions created value.`
+                    }</>
+                  )}
+                </div>
               </div>
             </div>
           )}

@@ -20,6 +20,8 @@ export default function CoherenceIndexPage() {
   const [atpMultiplier, setAtpMultiplier] = useState(1.0);
   const [extraWitnesses, setExtraWitnesses] = useState(0);
 
+  const [exploredScenarios, setExploredScenarios] = useState<Set<string>>(new Set());
+
   const baseTrust = 0.75;
 
   const scenarios = {
@@ -112,7 +114,46 @@ export default function CoherenceIndexPage() {
     setTemporalCI(s.temporal);
     setRelationalCI(s.relational);
     recalculate(s.spatial, s.capability, s.temporal, s.relational);
+    if (newScenario !== 'baseline') {
+      setExploredScenarios(prev => new Set([...prev, newScenario]));
+    }
   };
+
+  // Compound damage calculation: what if ALL explored anomalies hit at once?
+  const compoundDamage = (() => {
+    const explored = [...exploredScenarios].filter(k => k !== 'baseline') as (keyof typeof scenarios)[];
+    if (explored.length < 2) return null;
+    // Take the WORST value for each dimension across all explored scenarios
+    let worstSpatial = 1.0, worstCapability = 1.0, worstTemporal = 1.0, worstRelational = 1.0;
+    for (const key of explored) {
+      const s = scenarios[key];
+      worstSpatial = Math.min(worstSpatial, s.spatial);
+      worstCapability = Math.min(worstCapability, s.capability);
+      worstTemporal = Math.min(worstTemporal, s.temporal);
+      worstRelational = Math.min(worstRelational, s.relational);
+    }
+    const compoundCI = Math.pow(worstSpatial * worstCapability * worstTemporal * worstRelational, 1 / 4);
+    const compoundTrust = baseTrust * Math.pow(compoundCI, 2);
+    const compoundATPMult = compoundCI < 0.9 ? Math.min(1 / Math.pow(compoundCI, 2), 10.0) : 1.0;
+    const compoundWitnesses = compoundCI < 0.8 ? Math.min(Math.ceil((0.8 - compoundCI) * 10), 8) : 0;
+
+    // Single worst scenario for comparison
+    let worstSingleCI = 1.0;
+    let worstSingleKey = explored[0];
+    for (const key of explored) {
+      const s = scenarios[key];
+      const ci = Math.pow(s.spatial * s.capability * s.temporal * s.relational, 1 / 4);
+      if (ci < worstSingleCI) { worstSingleCI = ci; worstSingleKey = key; }
+    }
+    const singleTrust = baseTrust * Math.pow(worstSingleCI, 2);
+
+    return {
+      explored,
+      worstSpatial, worstCapability, worstTemporal, worstRelational,
+      compoundCI, compoundTrust, compoundATPMult, compoundWitnesses,
+      worstSingleCI, worstSingleKey, singleTrust,
+    };
+  })();
 
   const resetAll = () => handleScenarioChange('baseline');
 
@@ -636,6 +677,61 @@ export default function CoherenceIndexPage() {
                 </p>
               )}
             </div>
+
+            {/* Damage Report — appears after exploring 2+ anomaly scenarios */}
+            {compoundDamage && (
+              <div className="mt-6 bg-gradient-to-br from-red-950/30 to-orange-950/20 border border-red-800/40 rounded-lg p-5">
+                <h4 className="text-sm font-semibold text-red-400 mb-3 uppercase tracking-wide">
+                  Damage Report: {compoundDamage.explored.length} Anomalies Explored
+                </h4>
+                <p className="text-sm text-gray-400 mb-4">
+                  What if an attacker triggered all {compoundDamage.explored.length} anomalies simultaneously?
+                </p>
+
+                <div className="grid grid-cols-2 gap-3 mb-4">
+                  <div className="bg-gray-800/60 border border-gray-700 rounded p-3">
+                    <div className="text-xs text-gray-500 mb-1">Worst single anomaly</div>
+                    <div className="text-lg font-bold text-yellow-400">
+                      CI {compoundDamage.worstSingleCI.toFixed(2)}
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      Trust: {(compoundDamage.singleTrust * 100).toFixed(0)}%
+                    </div>
+                  </div>
+                  <div className="bg-gray-800/60 border border-red-700/40 rounded p-3">
+                    <div className="text-xs text-gray-500 mb-1">All {compoundDamage.explored.length} combined</div>
+                    <div className="text-lg font-bold text-red-400">
+                      CI {compoundDamage.compoundCI.toFixed(2)}
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      Trust: {(compoundDamage.compoundTrust * 100).toFixed(0)}%
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-3 text-xs mb-3">
+                  <span className="px-2 py-1 bg-red-950/50 border border-red-800/40 rounded text-red-400">
+                    ATP: {compoundDamage.compoundATPMult.toFixed(1)}x cost
+                  </span>
+                  <span className="px-2 py-1 bg-orange-950/50 border border-orange-800/40 rounded text-orange-400">
+                    +{compoundDamage.compoundWitnesses} extra witnesses
+                  </span>
+                  {compoundDamage.compoundCI < 0.5 && (
+                    <span className="px-2 py-1 bg-red-950/70 border border-red-600/50 rounded text-red-300 font-semibold">
+                      LOCKED OUT
+                    </span>
+                  )}
+                </div>
+
+                <p className="text-xs text-gray-500">
+                  {compoundDamage.compoundCI < compoundDamage.worstSingleCI * 0.8
+                    ? `The geometric mean makes stacked anomalies exponentially worse — CI dropped ${((1 - compoundDamage.compoundCI / compoundDamage.worstSingleCI) * 100).toFixed(0)}% beyond the worst single anomaly.`
+                    : 'Even modest anomalies compound. Try exploring more scenarios to see the full effect.'
+                  }
+                  {' '}This is why CI makes multi-vector attacks prohibitively expensive.
+                </p>
+              </div>
+            )}
           </div>
         </section>
 

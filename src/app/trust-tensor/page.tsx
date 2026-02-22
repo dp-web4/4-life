@@ -51,6 +51,7 @@ export default function TrustTensorPage() {
     temperament: 0.5,
   });
   const [selectedScenario, setSelectedScenario] = useState<string | null>(null);
+  const [trajectory, setTrajectory] = useState<{ label: string; scores: Record<TrustDimension, number> }[]>([]);
 
   // Role-specific scenarios
   const scenarios: Record<string, { label: string; effects: Record<TrustDimension, number> }> = {
@@ -90,6 +91,7 @@ export default function TrustTensorPage() {
     });
 
     setTrustScores(newScores);
+    setTrajectory(prev => [...prev.slice(-4), { label: scenarios[scenarioKey].label, scores: { ...newScores } }]);
     setSelectedScenario(scenarioKey);
     setTimeout(() => setSelectedScenario(null), 2000);
   };
@@ -97,6 +99,7 @@ export default function TrustTensorPage() {
   const reset = () => {
     setTrustScores({ talent: 0.5, training: 0.5, temperament: 0.5 });
     setSelectedScenario(null);
+    setTrajectory([]);
   };
 
   // Weighted trust based on selected role
@@ -371,6 +374,43 @@ export default function TrustTensorPage() {
               ))}
             </div>
           </div>
+
+          {/* Trust Trajectory */}
+          {trajectory.length > 0 && (
+            <div className="border-t border-gray-700 pt-4 mt-4">
+              <h3 className="text-sm uppercase tracking-wide text-gray-500 mb-3">
+                Your Trust Trajectory ({trajectory.length} event{trajectory.length > 1 ? 's' : ''})
+              </h3>
+              <div className="space-y-2">
+                {trajectory.map((entry, i) => (
+                  <div key={i} className="flex items-center gap-3 text-sm">
+                    <span className="text-gray-600 w-5 text-right">{i + 1}.</span>
+                    <span className="text-gray-400 flex-1 truncate">{entry.label}</span>
+                    <span style={{ color: '#60a5fa' }}>{entry.scores.talent.toFixed(2)}</span>
+                    <span style={{ color: '#34d399' }}>{entry.scores.training.toFixed(2)}</span>
+                    <span style={{ color: '#f59e0b' }}>{entry.scores.temperament.toFixed(2)}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-3 text-xs text-gray-600 flex gap-3">
+                <span style={{ color: '#60a5fa' }}>Talent</span>
+                <span style={{ color: '#34d399' }}>Training</span>
+                <span style={{ color: '#f59e0b' }}>Temperament</span>
+              </div>
+              {trajectory.length >= 3 && (
+                <p className="mt-3 text-sm text-gray-400 bg-gray-800/50 border border-gray-700 rounded-lg p-3">
+                  {trustScores.talent >= 0.7 && trustScores.training >= 0.7 && trustScores.temperament >= 0.7
+                    ? '🟢 Strong across all dimensions — this agent is well-trusted in their role.'
+                    : trustScores.temperament < 0.3
+                    ? '🔴 Temperament is critically low — even high talent can\'t compensate for unreliability.'
+                    : Math.max(trustScores.talent, trustScores.training, trustScores.temperament) -
+                        Math.min(trustScores.talent, trustScores.training, trustScores.temperament) > 0.3
+                    ? '🟡 Uneven profile — one dimension is much stronger than others. Real trust requires balance.'
+                    : '🔵 Building steadily. Keep applying scenarios to see how trust evolves over time.'}
+                </p>
+              )}
+            </div>
+          )}
 
           {/* Reset Button */}
           <button
