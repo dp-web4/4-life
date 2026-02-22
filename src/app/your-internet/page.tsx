@@ -228,33 +228,38 @@ export default function YourInternetPage() {
             </p>
           </div>
 
-          {/* Next Steps */}
+          {/* Next Steps — context-aware based on selected frustrations */}
           <div className="mt-8">
             <h3 className="text-lg font-semibold text-gray-300 mb-3">Go Deeper</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+
+            {/* Primary CTA: most relevant concept page based on first frustration */}
+            {selected.length > 0 && SCENARIOS[selected[0]] && (
+              <Link
+                href={SCENARIOS[selected[0]].learnMore}
+                className="block mb-3 px-5 py-3 bg-gradient-to-r from-sky-600 to-purple-600 hover:from-sky-700 hover:to-purple-700 text-white font-semibold rounded-lg transition-colors text-center text-sm"
+              >
+                {SCENARIOS[selected[0]].learnMoreLabel} &rarr;
+              </Link>
+            )}
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
               <Link
                 href="/day-in-web4"
-                className="px-5 py-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-amber-500 text-white rounded-lg transition-colors text-center text-sm"
+                className="px-4 py-2.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-amber-500 text-white rounded-lg transition-colors text-center text-sm"
               >
-                See a full day in Web4 &rarr;
-              </Link>
-              <Link
-                href="/first-contact"
-                className="px-5 py-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-purple-500 text-white rounded-lg transition-colors text-center text-sm"
-              >
-                Watch trust in action (10 min) &rarr;
+                A Day in Web4
               </Link>
               <Link
                 href="/karma-journey"
-                className="px-5 py-3 bg-gradient-to-r from-sky-600 to-purple-600 hover:from-sky-700 hover:to-purple-700 text-white font-semibold rounded-lg transition-colors text-center text-sm"
+                className="px-4 py-2.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-sky-500 text-white rounded-lg transition-colors text-center text-sm"
               >
-                Make your own choices &rarr;
+                Make your own choices
               </Link>
               <button
                 onClick={handleShare}
-                className="px-5 py-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white rounded-lg transition-colors text-center text-sm"
+                className="px-4 py-2.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white rounded-lg transition-colors text-center text-sm"
               >
-                Share your results
+                Share results
               </button>
             </div>
           </div>

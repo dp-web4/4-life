@@ -271,9 +271,9 @@ export default function LearnJourney() {
       actions: [
         {
           id: "ask-act",
-          title: "Query Simulations with ACT",
+          title: "Query Simulations with AI Guide",
           description:
-            "Use the ACT conversational interface to ask questions about simulations. 'Why did trust decrease?' 'Show me maturation patterns.' 'Explain this decision.'",
+            "Use the AI Guide conversational interface to ask questions about simulations. 'Why did trust decrease?' 'Show me maturation patterns.' 'Explain this decision.'",
           link: "/act-explorer",
           type: "interactive",
         },
