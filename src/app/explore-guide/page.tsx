@@ -97,14 +97,14 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
     if (style === 'narrative') {
       return {
         name: 'Story-First Journey',
-        tagline: 'Understanding Web4 through the lives of simulated agents',
+        tagline: 'Understanding Web4 through everyday scenarios and agent lives',
         color: '#6ee7b7',
         steps: [
-          { title: 'First Contact', description: 'A 10-minute interactive introduction to Web4 — no jargon, just exploration', href: '/first-contact', timeEstimate: '10 min', type: 'interactive' },
+          { title: 'A Day in Web4', description: 'Walk through 7 everyday scenarios — hiring, reviews, trolls — and see how each one works with trust built in', href: '/day-in-web4', timeEstimate: '10 min', type: 'interactive' },
+          { title: 'First Contact', description: 'Follow Alice through 10 actions in a Web4 community — watch trust build and spam fail', href: '/first-contact', timeEstimate: '10 min', type: 'interactive' },
           { title: 'Karma Journey', description: 'Play through multiple lives, making choices and seeing how trust and karma shape outcomes', href: '/karma-journey', timeEstimate: '15 min', type: 'interactive' },
-          { title: 'Simulation Narratives', description: 'Read auto-generated stories about agents navigating Web4 societies', href: '/narratives', timeEstimate: '10 min', type: 'read' },
           { title: 'How It Works', description: 'Now that you\'ve seen it in action, understand the mechanics behind it', href: '/how-it-works', timeEstimate: '8 min', type: 'read' },
-          { title: 'Data Explorer', description: 'Browse the raw simulation data that generates those stories', href: '/data-explorer', timeEstimate: '5 min', type: 'experiment' },
+          { title: 'Simulation Narratives', description: 'Read auto-generated stories about agents navigating Web4 societies', href: '/narratives', timeEstimate: '10 min', type: 'read' },
         ],
         nextPath: 'Explore the Trust Tensor and Context Boundary explorers for deeper mechanics.',
       };
@@ -115,13 +115,13 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
         tagline: 'Learn by doing — manipulate parameters and watch what happens',
         color: '#93c5fd',
         steps: [
+          { title: 'What Would Change For You?', description: 'Pick your internet frustrations — see exactly how trust-native infrastructure would address each one', href: '/your-internet', timeEstimate: '2 min', type: 'interactive' },
           { title: 'First Contact', description: 'Interactive tutorial that teaches through exploration, not lectures', href: '/first-contact', timeEstimate: '10 min', type: 'interactive' },
-          { title: 'Trust Tensor Explorer', description: 'Drag sliders to change trust dimensions and see real-time effects', href: '/trust-tensor-explorer', timeEstimate: '10 min', type: 'interactive' },
           { title: 'Karma Journey', description: 'Live through multiple lives, making choices that carry consequences', href: '/karma-journey', timeEstimate: '15 min', type: 'interactive' },
           { title: 'Playground', description: 'Full parameter playground — tweak any setting and run your own simulation', href: '/playground', timeEstimate: '15 min', type: 'experiment' },
           { title: 'Concepts to Tools', description: 'Map every concept to its interactive tool', href: '/concepts-to-tools', timeEstimate: '5 min', type: 'read' },
         ],
-        nextPath: 'Try the Playground to run full simulations with custom parameters.',
+        nextPath: 'Explore the Trust Tensor and MRH explorers for deeper mechanics.',
       };
     }
     if (style === 'adversarial') {
