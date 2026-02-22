@@ -162,12 +162,20 @@ export default function TLDRPage() {
           <p className="text-gray-300 leading-relaxed mb-3">
             Frustrated by spam, fake reviews, or platforms that hold your reputation hostage?
           </p>
-          <Link
-            href="/your-internet"
-            className="text-sky-400 hover:underline font-semibold"
-          >
-            See what would change for YOU &rarr;
-          </Link>
+          <div className="flex flex-wrap gap-4">
+            <Link
+              href="/your-internet"
+              className="text-sky-400 hover:underline font-semibold"
+            >
+              See what would change for YOU &rarr;
+            </Link>
+            <Link
+              href="/day-in-web4"
+              className="text-sky-400 hover:underline font-semibold"
+            >
+              Walk through a day in Web4 &rarr;
+            </Link>
+          </div>
         </div>
 
         {/* Share-friendly summary */}

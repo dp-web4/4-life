@@ -631,10 +631,10 @@ export default function WhyWeb4Page() {
               Start First Contact →
             </Link>
             <Link
-              href="/glossary"
+              href="/day-in-web4"
               className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors"
             >
-              Browse Glossary
+              Imagine a Day in Web4
             </Link>
           </div>
         </div>

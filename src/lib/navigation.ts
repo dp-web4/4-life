@@ -29,7 +29,14 @@ export const navigationTree: NavigationTree = {
       href: '/your-internet',
       desc: 'What would change for YOU? Pick your frustrations, see the difference.',
       keywords: ['personal', 'frustration', 'spam', 'fake', 'platform', 'scenario', 'quiz'],
-      related: ['/tldr', '/why-web4', '/what-could-go-wrong']
+      related: ['/tldr', '/why-web4', '/what-could-go-wrong', '/day-in-web4']
+    },
+    {
+      title: 'A Day in Web4',
+      href: '/day-in-web4',
+      desc: 'Walk through a realistic day with trust built into the internet.',
+      keywords: ['day', 'scenario', 'walkthrough', 'concrete', 'daily life', 'practical', 'imagine'],
+      related: ['/your-internet', '/tldr', '/first-contact', '/karma-journey']
     },
     {
       title: 'Why Web4?',

@@ -330,6 +330,8 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           {' · '}
           What frustrates you about the internet? <Link href="/your-internet" style={{ color: 'var(--color-sky)' }}>See what would change</Link>.
           {' · '}
+          Imagine a day with trust built in: <Link href="/day-in-web4" style={{ color: 'var(--color-sky)' }}>A Day in Web4</Link>.
+          {' · '}
           Skeptic? Start with <Link href="/what-could-go-wrong" style={{ color: 'var(--color-sky)' }}>What Could Go Wrong</Link>.
         </p>
       </section>
