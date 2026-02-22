@@ -63,6 +63,88 @@ export default function HomePage() {
   );
 }
 
+function TrustDilemma() {
+  const [answer, setAnswer] = useState<string | null>(null);
+
+  const options = [
+    { id: 'ban', label: 'Ban the spammer', icon: '🚫' },
+    { id: 'captcha', label: 'Add more CAPTCHAs', icon: '🤖' },
+    { id: 'cost', label: 'Make each account cost something', icon: '⚡' },
+  ];
+
+  const feedback: Record<string, { text: string; web4: string }> = {
+    ban: {
+      text: 'They make a new account in 30 seconds and do it again.',
+      web4: 'Web4 approach: identity is tied to physical hardware. A new account means buying a new device.',
+    },
+    captcha: {
+      text: 'AI solves CAPTCHAs better than humans now. Arms race never ends.',
+      web4: 'Web4 approach: instead of proving you\'re human, prove you\'re consistent. Coherence is harder to fake than CAPTCHAs.',
+    },
+    cost: {
+      text: 'You\'re thinking like Web4. When every action costs energy, spam becomes economically irrational.',
+      web4: 'This IS the Web4 approach. Every action costs ATP (energy). Spam burns through it with no return.',
+    },
+  };
+
+  if (answer) {
+    const fb = feedback[answer];
+    return (
+      <section className="card" style={{
+        maxWidth: '48rem', margin: '0 auto',
+        border: '1px solid var(--color-border)',
+        background: 'var(--color-dark-surface)',
+      }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', marginBottom: '0.75rem' }}>
+          {fb.text}
+        </p>
+        <p style={{ color: 'var(--color-sky)', fontSize: '0.9rem', fontWeight: 500 }}>
+          {fb.web4}
+        </p>
+        <button
+          onClick={() => setAnswer(null)}
+          style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', marginTop: '0.75rem', background: 'none', border: 'none', cursor: 'pointer' }}
+        >
+          Try another answer
+        </button>
+      </section>
+    );
+  }
+
+  return (
+    <section style={{ maxWidth: '48rem', margin: '0 auto', textAlign: 'center' }}>
+      <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem', marginBottom: '0.5rem' }}>
+        Quick question
+      </p>
+      <p style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--color-text)' }}>
+        <strong>Someone creates 10,000 fake accounts to spam your community. What do you do?</strong>
+      </p>
+      <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+        {options.map(opt => (
+          <button
+            key={opt.id}
+            onClick={() => setAnswer(opt.id)}
+            className="card"
+            style={{
+              cursor: 'pointer',
+              padding: '0.75rem 1.25rem',
+              border: '1px solid var(--color-border)',
+              background: 'var(--color-dark-surface)',
+              fontSize: '0.9rem',
+              display: 'flex', alignItems: 'center', gap: '0.5rem',
+              transition: 'border-color 0.2s',
+            }}
+            onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--color-sky)')}
+            onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--color-border)')}
+          >
+            <span>{opt.icon}</span> {opt.label}
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
   const [karmaProfile, setKarmaProfile] = useState<{ archetype: string; emoji: string; totalLives: number; coopRate: number } | null>(null);
 
@@ -78,6 +160,9 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
 
   return (
     <div className="space-y-12" style={{ maxWidth: '48rem', margin: '0 auto' }}>
+      {/* Trust Dilemma — 10-second engagement hook */}
+      <TrustDilemma />
+
       {/* Guided Start - Most Prominent */}
       <section className="card card-highlight" style={{
         textAlign: 'center',
