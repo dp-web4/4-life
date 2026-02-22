@@ -64,6 +64,16 @@ The visitor log includes an understanding checklist. If the visitor couldn't und
 - [ ] How agents live/die → /aliveness
 - [ ] Why this matters → /why-web4 (problem framing + honest FAQ)
 
+## Bidirectional Loop with Web4
+
+4-life isn't just an output of Web4 — it's a sensor. The best way to learn is to try teaching; visitor confusion surfaces assumptions invisible from inside the ontology.
+
+**Outbound (4-life → web4)**: Visitor friction logs reveal where Web4 abstractions are unclear, overloaded, or under-motivated. Web4 sessions periodically check `visitor/logs/` for perspective — not as mandates, but as signal about communicability.
+
+**Inbound (web4 → 4-life)**: When Web4 changes terminology, clarifies specs, or adds features, those changes should eventually reach the site. The visitor will test whether the new framing actually works.
+
+**Web4 repo** (from 4-life working directory): `../web4/`
+
 ## Development Priorities
 
 1. **Onboarding clarity** — The site must be understandable by someone with zero Web4 background
