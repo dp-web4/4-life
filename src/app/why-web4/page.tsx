@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 
 /**
  * Why Web4 - The Problem Before the Solution
@@ -793,6 +794,7 @@ export default function WhyWeb4Page() {
       </section>
 
       <div className="max-w-4xl mx-auto">
+        <ExplorerNav currentPath="/why-web4" />
         <RelatedConcepts currentPath="/why-web4" />
       </div>
     </>

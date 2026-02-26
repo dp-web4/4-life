@@ -4,6 +4,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 import { trackPageVisit } from "@/lib/exploration";
 
 /**
@@ -832,6 +833,7 @@ export default function FirstContactPage() {
             </button>
           </div>
         )}
+        <ExplorerNav currentPath="/first-contact" />
         <RelatedConcepts currentPath="/first-contact" />
       </div>
     </div>

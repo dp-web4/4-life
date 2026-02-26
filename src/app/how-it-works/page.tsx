@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 import TermTooltip from "@/components/TermTooltip";
 
 export default function HowItWorksPage() {
@@ -813,6 +814,7 @@ export default function HowItWorksPage() {
           <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">what could go wrong</Link>.
         </p>
       </section>
+      <ExplorerNav currentPath="/how-it-works" />
       <RelatedConcepts currentPath="/how-it-works" />
     </>
   );

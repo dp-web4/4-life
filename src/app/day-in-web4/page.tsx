@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import ExplorerNav from '@/components/ExplorerNav';
 import { saveDayInWeb4Result, trackPageVisit } from '@/lib/exploration';
 
 /* ─── Types ────────────────────────────────────────────── */
@@ -772,6 +773,7 @@ function DaySummary({
           What would change for you? →
         </Link>
       </div>
+      <ExplorerNav currentPath="/day-in-web4" />
     </div>
   );
 }
