@@ -718,6 +718,26 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* Scaling Up — Federation Bridge */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <div className="bg-gradient-to-r from-amber-900/15 to-purple-900/15 border border-amber-800/30 rounded-xl p-6">
+          <h3 className="text-xl font-bold mb-3 text-amber-300">What About Multiple Communities?</h3>
+          <p className="text-gray-300 text-sm leading-relaxed mb-2">
+            Everything above describes one community. In a real Web4 network, there are many —
+            each with different specializations and ATP prices. Your reputation travels with you,
+            but each community values different skills. A community of data analysts might pay
+            a premium for engineering talent, while a research group might value practical builders.
+          </p>
+          <p className="text-gray-400 text-sm leading-relaxed">
+            ATP prices adjust dynamically based on supply and demand — no central pricing authority needed.
+            This is{' '}
+            <Link href="/federation-economics" className="text-amber-400 hover:underline">
+              federation economics
+            </Link>, and it&apos;s how Web4 scales from one society to an ecosystem of thousands.
+          </p>
+        </div>
+      </section>
+
       {/* Learn More */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">

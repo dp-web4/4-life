@@ -3759,6 +3759,28 @@ export default function SocietySimulatorPage() {
           </div>
         </div>
 
+        {/* Federation bridge — what happens with multiple communities */}
+        <div className="mt-6 bg-gradient-to-r from-amber-900/20 to-purple-900/20 border border-amber-800/40 rounded-lg p-5">
+          <h3 className="text-lg font-bold mb-2 text-amber-300">Beyond One Society</h3>
+          <p className="text-sm text-gray-300 mb-3">
+            This simulator shows one community. In a real Web4 network, there are <em>many</em> communities —
+            each with different specializations, ATP prices, and trust standards. When communities trade with each other,
+            ATP prices adjust dynamically based on supply and demand. A community with many data analysts
+            might value engineering skills more highly, while a research-focused community might pay a premium
+            for practical builders.
+          </p>
+          <p className="text-sm text-gray-400 mb-3">
+            Your reputation travels with you across communities (that&apos;s what makes trust portable),
+            but each community weighs your Trust Tensor differently based on what they need.
+          </p>
+          <a
+            href="/federation-economics"
+            className="inline-flex items-center gap-2 text-sm text-amber-400 hover:text-amber-300 transition-colors"
+          >
+            Explore how communities trade and self-organize →
+          </a>
+        </div>
+
         <ExplorerNav currentPath="/society-simulator" />
 
         {/* AI Guide Chat Panel */}
