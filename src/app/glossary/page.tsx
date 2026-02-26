@@ -206,6 +206,13 @@ export default function GlossaryPage() {
               can&apos;t walk up and start pitching you — they need someone you trust to vouch for them first.
               That&apos;s MRH.
             </p>
+            <p className="text-gray-400 text-sm mb-3">
+              <strong>How filtering works:</strong> You trust Alice (depth 1). Alice trusts Bob (depth 2).
+              Bob trusts Carol (depth 3). If your MRH is set to depth 2, you can see Alice&apos;s and
+              Bob&apos;s messages — but Carol&apos;s are outside your horizon. A spammer with zero trust
+              connections can&apos;t reach <em>anyone</em>. This replaces centralized content moderation
+              with a structural property: reach requires earned relationships.
+            </p>
             <div className="flex gap-3 text-sm">
               <Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">
                 Learn more →

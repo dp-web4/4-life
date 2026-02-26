@@ -545,18 +545,20 @@ export default function TrustTensorPage() {
         </div>
       </section>
 
-      {/* Fractal Sub-Dimensions */}
+      {/* Fractal Sub-Dimensions — collapsible for beginners */}
       <section className="max-w-4xl mx-auto mt-16">
-        <h2 className="text-3xl font-bold mb-6 text-gray-100">
-          Fractal Depth: Sub-Dimensions
-        </h2>
-        <div className="bg-gradient-to-br from-purple-950/30 to-purple-900/20 border border-purple-800/30 rounded-xl p-8">
-          <p className="text-gray-300 leading-relaxed mb-4">
-            The three root dimensions (Talent, Training, Temperament) can be broken down into nested layers. Each
-            domain can define sub-dimensions without changing the core framework:
-          </p>
+        <details className="bg-gradient-to-br from-purple-950/30 to-purple-900/20 border border-purple-800/30 rounded-xl p-8 cursor-pointer">
+          <summary className="text-2xl font-bold text-gray-100 list-none flex justify-between items-center">
+            <span>Going Deeper: Sub-Dimensions</span>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div className="mt-4">
+            <p className="text-gray-300 leading-relaxed mb-4">
+              The three root dimensions (Talent, Training, Temperament) can be broken down into nested layers. Each
+              domain can define sub-dimensions without changing the core framework:
+            </p>
 
-          <div className="bg-gray-950 border border-gray-700 rounded-lg p-4 overflow-x-auto text-xs text-gray-400 font-mono mb-4">
+            <div className="bg-gray-950 border border-gray-700 rounded-lg p-4 overflow-x-auto text-xs text-gray-400 font-mono mb-4">
 {`Alice as Data Analyst:
   Talent (0.85)
     ├── Statistical Modeling (0.92)
@@ -568,14 +570,15 @@ export default function TrustTensorPage() {
   Temperament (0.95)
     ├── Deadline Adherence (0.97)
     └── Communication Quality (0.93)`}
-          </div>
+            </div>
 
-          <p className="text-gray-400 text-sm leading-relaxed">
-            Societies define the sub-dimensions that matter for their context. A medical society might
-            add &ldquo;bedside manner&rdquo; under Temperament. A technical society might add
-            &ldquo;code quality&rdquo; under Training. The framework is extensible at every level.
-          </p>
-        </div>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Societies define the sub-dimensions that matter for their context. A medical society might
+              add &ldquo;bedside manner&rdquo; under Temperament. A technical society might add
+              &ldquo;code quality&rdquo; under Training. The framework is extensible at every level.
+            </p>
+          </div>
+        </details>
       </section>
 
       {/* Technical Details */}
