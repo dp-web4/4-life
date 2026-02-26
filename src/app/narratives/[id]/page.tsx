@@ -196,10 +196,10 @@ export default function NarrativeViewerPage() {
             </p>
             <div className="flex gap-4 justify-center">
               <Link
-                href="/lab-console"
+                href="/society-simulator"
                 className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded transition-colors"
               >
-                Generate in Lab Console
+                Run a Simulation
               </Link>
               <Link
                 href="/narratives"
@@ -421,10 +421,10 @@ export default function NarrativeViewerPage() {
               </Link>
             ) : (
               <Link
-                href="/lab-console"
+                href="/society-simulator"
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
-                Generate More &rarr;
+                Run Another Simulation &rarr;
               </Link>
             )}
           </div>

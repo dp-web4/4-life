@@ -89,10 +89,10 @@ export default function NarrativesPage() {
           {filteredNarratives.length === 0 ? (
             <div className="text-center py-12 text-gray-500">
               No narratives found. Run a simulation in the{' '}
-              <Link href="/lab-console" className="text-blue-400 hover:underline">
-                Lab Console
+              <Link href="/society-simulator" className="text-blue-400 hover:underline">
+                Society Simulator
               </Link>
-              {' '}to generate one.
+              {' '}and click &quot;Generate Story&quot; to create one.
             </div>
           ) : (
             filteredNarratives.map(narrative => (
