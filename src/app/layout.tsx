@@ -1,8 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import SiteSearch from "@/components/SiteSearch";
 import GlossaryPanel from "@/components/GlossaryPanel";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "4-Life | Trust-Native Internet Lab",
