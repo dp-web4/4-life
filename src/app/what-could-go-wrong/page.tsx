@@ -468,9 +468,10 @@ export default function WhatCouldGoWrongPage() {
           <div className="bg-red-950/30 border border-red-800/30 rounded-lg p-4">
             <h3 className="text-red-400 font-semibold mb-2">Witness Bootstrapping</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              How does the first witness network form? Every approach (seed institutions,
-              manufacturer attestation, web of trust) has its own trust assumptions.
-              There&apos;s no clean solution.
+              How does the first witness network form? A composite model has been formalized
+              (escrow + sponsor + graduated capabilities create a 3-factor barrier), but
+              no single approach suffices. The trade-off between accessibility and Sybil
+              resistance at genesis is an active research area.
             </p>
           </div>
 
@@ -487,9 +488,10 @@ export default function WhatCouldGoWrongPage() {
           <div className="bg-red-950/30 border border-red-800/30 rounded-lg p-4">
             <h3 className="text-red-400 font-semibold mb-2">Governance at Scale</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Who decides the rules? Who updates the trust thresholds? Who resolves
-              disagreements between federated communities? Decentralized governance
-              is a known hard problem.
+              Who decides the rules? A Society-Authority-Law (SAL) framework has been designed
+              with law oracles, auditors, and fractal citizenship. But decentralized governance
+              at internet scale — where communities disagree on fundamental values — is a
+              challenge no system has fully solved.
             </p>
           </div>
 
