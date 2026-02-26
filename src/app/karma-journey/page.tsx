@@ -525,15 +525,12 @@ export default function KarmaJourneyPage() {
       )}
 
       {/* Main Layout */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '1.5rem' }}>
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_340px] gap-6">
 
         {/* Left: Current Life Status + Choices */}
         <div>
           {/* Stats bar */}
-          <div style={{
-            display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '0.5rem', marginBottom: '1rem',
-          }}>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
             {[
               { label: 'Life', value: `#${currentLife.lifeNumber}`, color: '#93c5fd' },
               { label: 'Trust', value: effComp.toFixed(3), color: effComp > 0.7 ? '#6ee7b7' : effComp > 0.4 ? '#fde68a' : '#fca5a5' },
@@ -588,7 +585,7 @@ export default function KarmaJourneyPage() {
               <div style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>
                 Turn {currentLife.tick + 1} &mdash; Choose your action:
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {CHOICES.map(choice => {
                   const actualCost = Math.round(choice.atpCostBase * atpMul);
                   const netAtp = choice.atpDelta - actualCost;
@@ -848,7 +845,7 @@ export default function KarmaJourneyPage() {
             </p>
 
             {/* Stats */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem', marginBottom: '1rem' }}>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
               {[
                 { label: 'Lives', value: `${profile.totalLives}`, color: '#93c5fd' },
                 { label: 'Cooperative', value: `${Math.round(profile.coopRate * 100)}%`, color: '#6ee7b7' },
