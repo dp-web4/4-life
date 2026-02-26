@@ -818,6 +818,41 @@ export default function WhyWeb4Page() {
               </p>
             </div>
           </details>
+
+          {/* Privacy / who can see my trust */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>If my reputation is permanent, who can see it? What about privacy?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Not everyone can see everything.</strong> Web4 uses{" "}
+                <Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">
+                  context boundaries (MRH)
+                </Link>{" "}
+                to limit who sees what. Your trust scores are only visible to entities within your
+                relationship network — not broadcast to the world.
+              </p>
+              <p>
+                Think of it like real-life reputation: your coworkers know you&apos;re reliable at work,
+                your neighbors know you keep a tidy yard, but neither group sees the other&apos;s picture.
+                MRH formalizes this — trust is contextual, scoped by the depth of your relationship chain.
+              </p>
+              <p>
+                What&apos;s visible: <strong>behavioral scores</strong> (e.g., &ldquo;0.85 trust in data
+                analysis&rdquo;), not the underlying interactions. The score is attached to a hardware key,
+                not your name. A spammer with no trust connections can&apos;t even see your data, let alone
+                manipulate it.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Privacy is structural, not absolute. Someone who shares
+                your trust network can see your scores in that context. And if a hardware key is ever
+                linked to a real identity (through a data breach or correlation attack), the trust
+                history becomes de-anonymized. MRH limits blast radius, but doesn&apos;t guarantee anonymity.
+              </p>
+            </div>
+          </details>
         </div>
 
         {/* Link to deeper adversarial analysis */}
