@@ -110,13 +110,13 @@ export default function PatternsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
+    <div className="min-h-screen py-8 px-4">
       <div className="max-w-7xl mx-auto">
         <Breadcrumbs currentPath="/patterns" />
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Pattern Corpus Browser</h1>
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-400 mb-4">
             Explore how agents learn through Epistemic Proprioception (EP) -
             the ability to know what you know.
           </p>
@@ -147,14 +147,14 @@ export default function PatternsPage() {
         </div>
 
         {error && (
-          <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded">
-            <p className="text-red-800">Error: {error}</p>
+          <div className="mb-4 p-4 bg-red-950/30 border border-red-800/40 rounded">
+            <p className="text-red-300">Error: {error}</p>
           </div>
         )}
 
         {loading && (
           <div className="text-center py-12">
-            <p className="text-gray-600">Loading pattern corpus...</p>
+            <p className="text-gray-400">Loading pattern corpus...</p>
           </div>
         )}
 
@@ -175,7 +175,7 @@ export default function PatternsPage() {
                       className={`px-4 py-2 border-b-2 transition-colors ${
                         selectedTab === tab
                           ? "border-blue-600 text-blue-600 font-medium"
-                          : "border-transparent text-gray-600 hover:text-gray-900"
+                          : "border-transparent text-gray-400 hover:text-gray-900"
                       }`}
                     >
                       {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -243,7 +243,7 @@ function OverviewTab({
       </div>
 
       {/* Learning Progress */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
         <h2 className="text-xl font-bold mb-4">Learning Progress</h2>
         <div className="space-y-3">
           <ProgressBar
@@ -257,7 +257,7 @@ function OverviewTab({
             color="green"
           />
           <div className="pt-2 border-t">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-400">
               Learning Improvement:{" "}
               <span
                 className={`font-bold ${
@@ -275,7 +275,7 @@ function OverviewTab({
       </div>
 
       {/* Decision Distribution */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
         <h2 className="text-xl font-bold mb-4">Decision Distribution</h2>
         <div className="space-y-2">
           <DecisionBar
@@ -301,7 +301,7 @@ function OverviewTab({
 
       {/* Quality Summary */}
       {quality && (
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
           <h2 className="text-xl font-bold mb-4">Corpus Quality</h2>
           <div className="space-y-3">
             <ProgressBar
@@ -335,13 +335,13 @@ function OverviewTab({
 
       {/* Domains & Scenarios Summary */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
           <h2 className="text-lg font-bold mb-3">Domains Covered</h2>
           <div className="flex flex-wrap gap-2">
             {stats.domains_present.map((domain) => (
               <span
                 key={domain}
-                className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
+                className="px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-sm"
               >
                 {domain}
               </span>
@@ -349,12 +349,12 @@ function OverviewTab({
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
           <h2 className="text-lg font-bold mb-3">Scenario Types</h2>
-          <p className="text-2xl font-bold text-gray-700">
+          <p className="text-2xl font-bold text-gray-300">
             {stats.scenarios_covered.length}
           </p>
-          <p className="text-sm text-gray-600">unique scenario types</p>
+          <p className="text-sm text-gray-400">unique scenario types</p>
         </div>
       </div>
     </div>
@@ -368,52 +368,52 @@ function NarrativeTab({ narrative }: { narrative: LearningNarrative }) {
   return (
     <div className="space-y-6">
       {/* Title & Summary */}
-      <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg shadow-lg p-8">
-        <h1 className="text-3xl font-bold mb-4 text-gray-800">
+      <div className="bg-gradient-to-br from-purple-950/30 to-blue-950/30 border border-purple-800/30 rounded-xl p-8">
+        <h1 className="text-3xl font-bold mb-4 text-gray-100">
           {narrative.title}
         </h1>
-        <p className="text-lg text-gray-700 leading-relaxed mb-4">
+        <p className="text-lg text-gray-300 leading-relaxed mb-4">
           {narrative.summary}
         </p>
 
         {/* Maturity Badge */}
-        <div className="inline-block px-4 py-2 bg-white rounded-full shadow-sm border-2 border-purple-200">
-          <span className="text-sm font-medium text-purple-800">
+        <div className="inline-block px-4 py-2 bg-gray-900/50 rounded-full border-2 border-purple-800/50">
+          <span className="text-sm font-medium text-purple-300">
             {narrative.maturity_assessment.split(':')[0]}
           </span>
         </div>
       </div>
 
       {/* Human Analogy */}
-      <div className="bg-white rounded-lg shadow p-6 border-l-4 border-blue-500">
+      <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 border-l-4 border-blue-500">
         <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
           <span>💡</span>
           <span>In Human Terms</span>
         </h2>
-        <p className="text-gray-700 leading-relaxed italic">
+        <p className="text-gray-300 leading-relaxed italic">
           {narrative.human_analogy}
         </p>
       </div>
 
       {/* Key Insights */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
         <h2 className="text-xl font-bold mb-4">Key Insights</h2>
         <div className="space-y-3">
           {narrative.key_insights.map((insight, idx) => (
-            <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+            <div key={idx} className="flex items-start gap-3 p-3 bg-gray-900/50 rounded-lg">
               <span className="text-2xl">
                 {insight.includes('Strong') || insight.includes('Well-calibrated') ? '✓' :
                  insight.includes('Negative') || insight.includes('Overconfident') ? '⚠' :
                  insight.includes('Multi-domain') ? '🎯' : '📊'}
               </span>
-              <p className="text-gray-700 pt-1">{insight}</p>
+              <p className="text-gray-300 pt-1">{insight}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Learning Chapters */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
         <h2 className="text-xl font-bold mb-4">Learning Journey</h2>
         <div className="space-y-4">
           {narrative.chapters.map((chapter, idx) => (
@@ -421,7 +421,7 @@ function NarrativeTab({ narrative }: { narrative: LearningNarrative }) {
               {/* Chapter Header */}
               <button
                 onClick={() => setExpandedChapter(expandedChapter === idx ? null : idx)}
-                className="w-full p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left flex items-center justify-between"
+                className="w-full p-4 bg-gray-800 hover:bg-gray-700 transition-colors text-left flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">
@@ -429,7 +429,7 @@ function NarrativeTab({ narrative }: { narrative: LearningNarrative }) {
                   </span>
                   <div>
                     <h3 className="font-bold text-lg">{chapter.title}</h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-400">
                       Patterns {chapter.pattern_range[0]} - {chapter.pattern_range[1]}
                     </p>
                   </div>
@@ -443,17 +443,17 @@ function NarrativeTab({ narrative }: { narrative: LearningNarrative }) {
               {expandedChapter === idx && (
                 <div className="p-4 space-y-4">
                   {/* Learning Summary */}
-                  <div className="bg-blue-50 p-4 rounded-lg">
+                  <div className="bg-blue-950/30 p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">Learning Summary</h4>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-gray-300 leading-relaxed">
                       {chapter.learning_summary}
                     </p>
                   </div>
 
                   {/* Coherence Evolution */}
-                  <div className="bg-purple-50 p-4 rounded-lg">
+                  <div className="bg-purple-950/30 p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">Coherence Evolution</h4>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-gray-300 leading-relaxed">
                       {chapter.coherence_evolution}
                     </p>
                   </div>
@@ -471,7 +471,7 @@ function NarrativeTab({ narrative }: { narrative: LearningNarrative }) {
                             <div key={eventIdx} className="border rounded-lg overflow-hidden">
                               <button
                                 onClick={() => setExpandedEvent(isExpanded ? null : eventKey)}
-                                className="w-full p-3 bg-gray-50 hover:bg-gray-100 transition-colors text-left flex items-center justify-between"
+                                className="w-full p-3 bg-gray-800 hover:bg-gray-700 transition-colors text-left flex items-center justify-between"
                               >
                                 <div className="flex items-center gap-2">
                                   <span className="text-lg">
@@ -480,14 +480,14 @@ function NarrativeTab({ narrative }: { narrative: LearningNarrative }) {
                                      event.event_type === 'surprise' ? '❗' : '✓'}
                                   </span>
                                   <span className={`px-2 py-1 rounded text-xs font-medium ${
-                                    event.event_type === 'breakthrough' ? 'bg-green-100 text-green-800' :
-                                    event.event_type === 'setback' ? 'bg-red-100 text-red-800' :
+                                    event.event_type === 'breakthrough' ? 'bg-green-900/50 text-green-300' :
+                                    event.event_type === 'setback' ? 'bg-red-900/50 text-red-300' :
                                     event.event_type === 'surprise' ? 'bg-yellow-100 text-yellow-800' :
-                                    'bg-blue-100 text-blue-800'
+                                    'bg-blue-900/50 text-blue-300'
                                   }`}>
                                     {event.event_type}
                                   </span>
-                                  <span className="text-sm text-gray-700">
+                                  <span className="text-sm text-gray-300">
                                     Pattern #{event.pattern_index}
                                   </span>
                                 </div>
@@ -497,17 +497,17 @@ function NarrativeTab({ narrative }: { narrative: LearningNarrative }) {
                               </button>
 
                               {isExpanded && (
-                                <div className="p-3 bg-white space-y-2">
-                                  <p className="text-gray-700">
+                                <div className="p-3 bg-gray-900/50 space-y-2">
+                                  <p className="text-gray-300">
                                     <span className="font-semibold">What happened: </span>
                                     {event.description}
                                   </p>
-                                  <p className="text-gray-700">
+                                  <p className="text-gray-300">
                                     <span className="font-semibold">Why it matters: </span>
                                     {event.significance}
                                   </p>
                                   {event.coherence_context && (
-                                    <p className="text-gray-600 text-sm italic bg-purple-50 p-2 rounded">
+                                    <p className="text-gray-400 text-sm italic bg-purple-950/30 p-2 rounded">
                                       <span className="font-semibold">Coherence context: </span>
                                       {event.coherence_context}
                                     </p>
@@ -528,9 +528,9 @@ function NarrativeTab({ narrative }: { narrative: LearningNarrative }) {
       </div>
 
       {/* Full Maturity Assessment */}
-      <div className="bg-white rounded-lg shadow p-6 border-l-4 border-purple-500">
+      <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 border-l-4 border-purple-500">
         <h2 className="text-xl font-bold mb-3">Maturity Assessment</h2>
-        <p className="text-gray-700 leading-relaxed">
+        <p className="text-gray-300 leading-relaxed">
           {narrative.maturity_assessment}
         </p>
       </div>
@@ -540,41 +540,41 @@ function NarrativeTab({ narrative }: { narrative: LearningNarrative }) {
 
 function ScenariosTab({ scenarios }: { scenarios: ScenarioAnalysis[] }) {
   return (
-    <div className="bg-white rounded-lg shadow overflow-hidden">
+    <div className="bg-gray-800/50 border border-gray-700 rounded-xl overflow-hidden">
       <div className="p-6 border-b">
         <h2 className="text-xl font-bold">Scenario Analysis</h2>
-        <p className="text-gray-600 text-sm mt-1">
+        <p className="text-gray-400 text-sm mt-1">
           How does the agent perform in different situations?
         </p>
       </div>
 
       <div className="overflow-x-auto">
         <table className="w-full">
-          <thead className="bg-gray-50">
+          <thead className="bg-gray-900/50">
             <tr>
-              <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">
+              <th className="px-4 py-3 text-left text-sm font-medium text-gray-300">
                 Scenario Type
               </th>
-              <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
+              <th className="px-4 py-3 text-center text-sm font-medium text-gray-300">
                 Count
               </th>
-              <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
+              <th className="px-4 py-3 text-center text-sm font-medium text-gray-300">
                 Success Rate
               </th>
-              <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
+              <th className="px-4 py-3 text-center text-sm font-medium text-gray-300">
                 Confidence
               </th>
-              <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
+              <th className="px-4 py-3 text-center text-sm font-medium text-gray-300">
                 Typical Decision
               </th>
-              <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
+              <th className="px-4 py-3 text-center text-sm font-medium text-gray-300">
                 Risk Level
               </th>
             </tr>
           </thead>
           <tbody className="divide-y">
             {scenarios.map((scenario) => (
-              <tr key={scenario.scenario_type} className="hover:bg-gray-50">
+              <tr key={scenario.scenario_type} className="hover:bg-gray-900/50">
                 <td className="px-4 py-3 text-sm">{scenario.scenario_type}</td>
                 <td className="px-4 py-3 text-sm text-center">
                   {scenario.count}
@@ -612,38 +612,38 @@ function ScenariosTab({ scenarios }: { scenarios: ScenarioAnalysis[] }) {
 
 function DomainsTab({ domains }: { domains: DomainAnalysis[] }) {
   return (
-    <div className="bg-white rounded-lg shadow overflow-hidden">
+    <div className="bg-gray-800/50 border border-gray-700 rounded-xl overflow-hidden">
       <div className="p-6 border-b">
         <h2 className="text-xl font-bold">Domain Analysis</h2>
-        <p className="text-gray-600 text-sm mt-1">
+        <p className="text-gray-400 text-sm mt-1">
           How does each EP domain perform?
         </p>
       </div>
 
       <div className="overflow-x-auto">
         <table className="w-full">
-          <thead className="bg-gray-50">
+          <thead className="bg-gray-900/50">
             <tr>
-              <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">
+              <th className="px-4 py-3 text-left text-sm font-medium text-gray-300">
                 Domain
               </th>
-              <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
+              <th className="px-4 py-3 text-center text-sm font-medium text-gray-300">
                 Pattern Count
               </th>
-              <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
+              <th className="px-4 py-3 text-center text-sm font-medium text-gray-300">
                 Avg Confidence
               </th>
-              <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
+              <th className="px-4 py-3 text-center text-sm font-medium text-gray-300">
                 Prediction Accuracy
               </th>
-              <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
+              <th className="px-4 py-3 text-center text-sm font-medium text-gray-300">
                 Typical Recommendation
               </th>
             </tr>
           </thead>
           <tbody className="divide-y">
             {domains.map((domain) => (
-              <tr key={domain.domain} className="hover:bg-gray-50">
+              <tr key={domain.domain} className="hover:bg-gray-900/50">
                 <td className="px-4 py-3 text-sm font-medium">
                   {domain.domain}
                 </td>
@@ -687,9 +687,9 @@ function TrajectoryTab({
 
   return (
     <div className="space-y-6">
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
         <h2 className="text-xl font-bold mb-4">Learning Trajectory</h2>
-        <p className="text-gray-600 text-sm mb-6">
+        <p className="text-gray-400 text-sm mb-6">
           How does performance improve as patterns accumulate?
         </p>
 
@@ -724,9 +724,9 @@ function QualityTab({ quality }: { quality: PatternQualityMetrics | null }) {
 
   return (
     <div className="space-y-6">
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
         <h2 className="text-xl font-bold mb-4">Pattern Quality Assessment</h2>
-        <p className="text-gray-600 text-sm mb-6">
+        <p className="text-gray-400 text-sm mb-6">
           How reliable and well-calibrated are the learned patterns?
         </p>
 
@@ -783,10 +783,10 @@ function PatternsTab({ patterns }: { patterns: InteractionPattern[] }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* Pattern List */}
-      <div className="bg-white rounded-lg shadow">
+      <div className="bg-gray-800/50 border border-gray-700 rounded-xl">
         <div className="p-6 border-b">
           <h2 className="text-xl font-bold">Key Learning Moments</h2>
-          <p className="text-gray-600 text-sm mt-1">
+          <p className="text-gray-400 text-sm mt-1">
             Patterns with high learning value (disagreements, surprises, complexity)
           </p>
         </div>
@@ -796,9 +796,9 @@ function PatternsTab({ patterns }: { patterns: InteractionPattern[] }) {
             <button
               key={pattern.pattern_id}
               onClick={() => setSelectedPattern(pattern)}
-              className={`w-full text-left p-4 hover:bg-gray-50 transition-colors ${
+              className={`w-full text-left p-4 hover:bg-gray-900/50 transition-colors ${
                 selectedPattern?.pattern_id === pattern.pattern_id
-                  ? "bg-blue-50"
+                  ? "bg-blue-950/30"
                   : ""
               }`}
             >
@@ -810,16 +810,16 @@ function PatternsTab({ patterns }: { patterns: InteractionPattern[] }) {
                   decision={pattern.coordinated_decision?.decision || "unknown"}
                 />
               </div>
-              <p className="text-xs text-gray-600 mb-2">
+              <p className="text-xs text-gray-400 mb-2">
                 {pattern.scenario_description}
               </p>
               <div className="flex gap-2">
                 {pattern.outcome?.success ? (
-                  <span className="text-xs px-2 py-1 bg-green-100 text-green-800 rounded">
+                  <span className="text-xs px-2 py-1 bg-green-900/50 text-green-300 rounded">
                     Success
                   </span>
                 ) : (
-                  <span className="text-xs px-2 py-1 bg-red-100 text-red-800 rounded">
+                  <span className="text-xs px-2 py-1 bg-red-900/50 text-red-300 rounded">
                     Failed
                   </span>
                 )}
@@ -840,7 +840,7 @@ function PatternsTab({ patterns }: { patterns: InteractionPattern[] }) {
       </div>
 
       {/* Pattern Details */}
-      <div className="bg-white rounded-lg shadow">
+      <div className="bg-gray-800/50 border border-gray-700 rounded-xl">
         {selectedPattern ? (
           <div className="p-6">
             <h2 className="text-xl font-bold mb-4">Pattern Details</h2>
@@ -848,7 +848,7 @@ function PatternsTab({ patterns }: { patterns: InteractionPattern[] }) {
             <div className="space-y-4">
               {/* Scenario */}
               <div>
-                <h3 className="font-medium text-sm text-gray-700 mb-1">
+                <h3 className="font-medium text-sm text-gray-300 mb-1">
                   Scenario
                 </h3>
                 <p className="text-sm">{selectedPattern.scenario_description}</p>
@@ -856,17 +856,17 @@ function PatternsTab({ patterns }: { patterns: InteractionPattern[] }) {
 
               {/* Context */}
               <div>
-                <h3 className="font-medium text-sm text-gray-700 mb-2">
+                <h3 className="font-medium text-sm text-gray-300 mb-2">
                   Context
                 </h3>
-                <pre className="text-xs bg-gray-50 p-3 rounded overflow-x-auto">
+                <pre className="text-xs bg-gray-900/50 p-3 rounded overflow-x-auto">
                   {JSON.stringify(selectedPattern.context, null, 2)}
                 </pre>
               </div>
 
               {/* Predictions */}
               <div>
-                <h3 className="font-medium text-sm text-gray-700 mb-2">
+                <h3 className="font-medium text-sm text-gray-300 mb-2">
                   EP Predictions
                 </h3>
                 <div className="space-y-2">
@@ -874,10 +874,10 @@ function PatternsTab({ patterns }: { patterns: InteractionPattern[] }) {
                     ([domain, pred]) => (
                       <div
                         key={domain}
-                        className="text-xs bg-gray-50 p-2 rounded"
+                        className="text-xs bg-gray-900/50 p-2 rounded"
                       >
                         <div className="font-medium mb-1">{domain}</div>
-                        <div className="grid grid-cols-2 gap-1 text-gray-600">
+                        <div className="grid grid-cols-2 gap-1 text-gray-400">
                           <div>Confidence: {((pred?.confidence || 0) * 100).toFixed(0)}%</div>
                           <div>Risk: {((pred?.risk || 0) * 100).toFixed(0)}%</div>
                           <div>Action: {pred?.recommended_action}</div>
@@ -890,10 +890,10 @@ function PatternsTab({ patterns }: { patterns: InteractionPattern[] }) {
 
               {/* Decision */}
               <div>
-                <h3 className="font-medium text-sm text-gray-700 mb-2">
+                <h3 className="font-medium text-sm text-gray-300 mb-2">
                   Coordinated Decision
                 </h3>
-                <div className="text-sm bg-gray-50 p-3 rounded space-y-1">
+                <div className="text-sm bg-gray-900/50 p-3 rounded space-y-1">
                   <div>
                     Decision:{" "}
                     <DecisionBadge
@@ -926,10 +926,10 @@ function PatternsTab({ patterns }: { patterns: InteractionPattern[] }) {
 
               {/* Outcome */}
               <div>
-                <h3 className="font-medium text-sm text-gray-700 mb-2">
+                <h3 className="font-medium text-sm text-gray-300 mb-2">
                   Outcome
                 </h3>
-                <div className="text-sm bg-gray-50 p-3 rounded space-y-1">
+                <div className="text-sm bg-gray-900/50 p-3 rounded space-y-1">
                   <div>
                     Result:{" "}
                     {selectedPattern.outcome?.success ? (
@@ -978,9 +978,9 @@ function MetricCard({
   color: string;
 }) {
   const colorClasses = {
-    blue: "bg-blue-50 border-blue-200 text-blue-900",
-    green: "bg-green-50 border-green-200 text-green-900",
-    purple: "bg-purple-50 border-purple-200 text-purple-900",
+    blue: "bg-blue-950/30 border-blue-800/40 text-blue-300",
+    green: "bg-green-950/30 border-green-800/40 text-green-300",
+    purple: "bg-purple-950/30 border-purple-800/40 text-purple-300",
   };
 
   return (
@@ -1071,10 +1071,10 @@ function DecisionBar({
 
 function DecisionBadge({ decision }: { decision: string }) {
   const colors = {
-    proceed: "bg-green-100 text-green-800",
+    proceed: "bg-green-900/50 text-green-300",
     adjust: "bg-yellow-100 text-yellow-800",
-    defer: "bg-red-100 text-red-800",
-    unknown: "bg-gray-100 text-gray-800",
+    defer: "bg-red-900/50 text-red-300",
+    unknown: "bg-gray-700 text-gray-300",
   };
 
   const colorClass =
@@ -1089,9 +1089,9 @@ function DecisionBadge({ decision }: { decision: string }) {
 
 function RiskBadge({ level }: { level: "low" | "medium" | "high" }) {
   const colors = {
-    low: "bg-green-100 text-green-800",
+    low: "bg-green-900/50 text-green-300",
     medium: "bg-yellow-100 text-yellow-800",
-    high: "bg-red-100 text-red-800",
+    high: "bg-red-900/50 text-red-300",
   };
 
   return (
@@ -1117,7 +1117,7 @@ function QualityMetric({
       <div className="flex justify-between items-start mb-2">
         <div>
           <h3 className="font-medium">{label}</h3>
-          <p className="text-sm text-gray-600 mt-1">{description}</p>
+          <p className="text-sm text-gray-400 mt-1">{description}</p>
         </div>
         <span
           className={`text-2xl font-bold ${
@@ -1153,7 +1153,7 @@ function TrajectoryChart({
   return (
     <div>
       <h3 className="font-medium mb-3">{title}</h3>
-      <div className="relative border rounded p-4 bg-gray-50">
+      <div className="relative border rounded p-4 bg-gray-900/50">
         <svg width="100%" height={height} className="overflow-visible">
           {/* Grid lines */}
           {[0, 0.25, 0.5, 0.75, 1].map((v) => (
@@ -1199,7 +1199,7 @@ function TrajectoryChart({
         </svg>
 
         {/* Y-axis labels */}
-        <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-gray-600 -ml-8">
+        <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-gray-400 -ml-8">
           <span>100%</span>
           <span>75%</span>
           <span>50%</span>
