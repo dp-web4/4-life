@@ -11,10 +11,11 @@
  * and guide them to exactly the right starting point.
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from '@/lib/exploration';
 
 // ============================================================================
 // Types
@@ -319,6 +320,7 @@ function TypeIcon({ type }: { type: string }) {
 // ============================================================================
 
 export default function ExploreGuidePage() {
+  useEffect(() => { trackPageVisit('explore-guide'); }, []);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [path, setPath] = useState<ExplorationPath | null>(null);

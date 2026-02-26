@@ -2,6 +2,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import PageTracker from "@/components/PageTracker";
 
 export const metadata = {
   title: "Web4 in 2 Minutes | 4-Life",
@@ -12,6 +13,7 @@ export const metadata = {
 export default function TLDRPage() {
   return (
     <>
+      <PageTracker slug="tldr" />
       <div className="max-w-3xl mx-auto">
         <Breadcrumbs currentPath="/tldr" />
       </div>

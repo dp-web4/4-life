@@ -7,7 +7,7 @@ import { loadExploration } from '@/lib/exploration';
  * ExplorationProgress — Minimal progress bar showing site exploration.
  *
  * Appears under the navbar once a visitor has explored 2+ pages.
- * Shows progress through the core beginner path (11 key pages).
+ * Shows progress through 11 core pages in the beginner path.
  * Dismissible, stays dismissed for the session.
  */
 
@@ -76,7 +76,7 @@ export default function ExplorationProgress() {
         }}
       >
         <span style={{ whiteSpace: 'nowrap' }}>
-          {visited}/{total} core concepts explored
+          {visited}/{total} core pages explored
         </span>
         <div
           style={{

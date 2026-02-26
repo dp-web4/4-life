@@ -3,10 +3,12 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import TermTooltip from "@/components/TermTooltip";
+import PageTracker from "@/components/PageTracker";
 
 export default function HowItWorksPage() {
   return (
     <>
+      <PageTracker slug="how-it-works" />
       <Breadcrumbs currentPath="/how-it-works" />
 
       {/* New visitor prompt */}

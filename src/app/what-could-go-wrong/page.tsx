@@ -2,6 +2,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import PageTracker from "@/components/PageTracker";
 
 export const metadata = {
   title: "What Could Go Wrong | 4-Life",
@@ -24,6 +25,7 @@ export const metadata = {
 export default function WhatCouldGoWrongPage() {
   return (
     <>
+      <PageTracker slug="what-could-go-wrong" />
       <div className="max-w-4xl mx-auto">
         <Breadcrumbs currentPath="/what-could-go-wrong" />
       </div>

@@ -22,6 +22,7 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from '@/lib/exploration';
 import {
   SimulationEngine,
   SimConfig,
@@ -226,6 +227,7 @@ function LifeSummary({ life, isActive }: { life: LifeResult; isActive?: boolean 
 // ============================================================================
 
 export default function FirstSimulationPage() {
+  useEffect(() => { trackPageVisit('first-simulation'); }, []);
   const [currentStep, setCurrentStep] = useState(0);
   const [highestStep, setHighestStep] = useState(0);
   const [simRunning, setSimRunning] = useState(false);
