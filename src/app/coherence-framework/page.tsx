@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import CoherenceDomainVisualizer from "@/components/CoherenceDomainVisualizer";
+import { trackPageVisit } from "@/lib/exploration";
 
 /**
  * Coherence Framework: From Web4 to Synchronism
@@ -22,6 +23,8 @@ import CoherenceDomainVisualizer from "@/components/CoherenceDomainVisualizer";
 
 export default function CoherenceFrameworkPage() {
   const [activeView, setActiveView] = useState<"web4" | "full" | "gating" | "discovery">("web4");
+
+  useEffect(() => { trackPageVisit('coherence-framework'); }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-gray-100">

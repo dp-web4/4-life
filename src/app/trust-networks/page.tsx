@@ -13,10 +13,13 @@ import TrustNetworkVisualization from '@/components/TrustNetworkVisualization';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from '@/lib/exploration';
 
 export default function TrustNetworksPage() {
   const [simulationData, setSimulationData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => { trackPageVisit('trust-networks'); }, []);
 
   useEffect(() => {
     // Load simulation data

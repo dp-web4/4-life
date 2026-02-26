@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import PageTracker from "@/components/PageTracker";
 
 export default function StarterKitPage() {
   return (
     <>
+      <PageTracker slug="starter-kit" />
       <Breadcrumbs currentPath="/starter-kit" />
       <section>
         <h1>Society Starter Kit</h1>

@@ -3,6 +3,7 @@ import FederationMarket from "@/components/FederationMarket";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import PageTracker from "@/components/PageTracker";
 
 /**
  * Federation Economics Explainer
@@ -16,6 +17,7 @@ import ExplorerNav from "@/components/ExplorerNav";
 export default function FederationEconomicsPage() {
   return (
     <>
+      <PageTracker slug="federation-economics" />
       <Breadcrumbs currentPath="/federation-economics" />
       {/* Hero */}
       <section className="max-w-4xl mx-auto">

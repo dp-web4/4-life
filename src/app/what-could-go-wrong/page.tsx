@@ -162,10 +162,12 @@ export default function WhatCouldGoWrongPage() {
               permanently banned, just set back.
             </p>
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
-              <strong>Honest assessment:</strong> No appeals process currently exists in the
-              specification. This is a critical gap. Any deployed system MUST have a mechanism
-              for contesting incorrect scores. The simulations assume perfect scoring;
-              reality won&apos;t be so clean.
+              <strong>Honest assessment:</strong> An appeals mechanism has been designed
+              (SAL-level multi-tier process with witness panels, evidence phases, and escalation
+              to federation), but it hasn&apos;t been tested with real humans. The simulations
+              assume perfect scoring; reality won&apos;t be so clean. See the{" "}
+              <Link href="/aliveness" className="text-sky-400 hover:underline">Aliveness</Link> page
+              for how appeals work.
             </p>
           </div>
         </div>
@@ -475,8 +477,10 @@ export default function WhatCouldGoWrongPage() {
           <div className="bg-red-950/30 border border-red-800/30 rounded-lg p-4">
             <h3 className="text-red-400 font-semibold mb-2">Appeals &amp; Dispute Resolution</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              When the system scores you unfairly, how do you contest it? Automated systems
-              need human override mechanisms. The specification doesn&apos;t define one yet.
+              When the system scores you unfairly, how do you contest it? A multi-tier appeals
+              mechanism has been designed (file → review → evidence → hearing → verdict), but
+              it hasn&apos;t been tested with real humans. The hard question: can the anti-gaming
+              protections prevent people from abusing appeals to escape legitimate consequences?
             </p>
           </div>
 

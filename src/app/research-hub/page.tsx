@@ -8,9 +8,11 @@
  * Each tool card shows what you'll learn, prerequisites, and complexity level.
  */
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import { trackPageVisit } from '@/lib/exploration';
 
 // ============================================================================
 // Types
@@ -243,6 +245,8 @@ const COMPLEXITY_COLORS = {
 // ============================================================================
 
 export default function ResearchHubPage() {
+  useEffect(() => { trackPageVisit('research-hub'); }, []);
+
   return (
     <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '2rem 1.5rem' }}>
       <Breadcrumbs currentPath="/research-hub" />

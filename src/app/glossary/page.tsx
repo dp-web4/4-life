@@ -5,10 +5,13 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { trackPageVisit } from "@/lib/exploration";
 
 export default function GlossaryPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const glossaryRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => { trackPageVisit('glossary'); }, []);
 
   // Filter glossary cards by search term using DOM traversal
   useEffect(() => {

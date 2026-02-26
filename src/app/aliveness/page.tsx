@@ -1029,34 +1029,39 @@ export default function AlivenessExplainer() {
           </div>
 
           <div className="detail-box">
-            <h4>Known Gap: Formal Appeals</h4>
+            <h4>Appeals Mechanism</h4>
             <p>
-              Web4 does <strong>not yet have</strong> a formal appeals mechanism. This is a
-              recognized design gap — the{" "}
-              <Link href="/manifest" style={{ color: '#818cf8' }}>Manifest</Link> lists it under known failure modes.
+              Web4 now has a <strong>designed appeals mechanism</strong> at the SAL (Society-Authority-Law)
+              level, with a reference implementation. It&apos;s not deployed, but the architecture is defined.
             </p>
             <p style={{ marginTop: "0.5rem" }}>
-              This is an <strong>active research priority</strong> — not a backlog item, but a focus area.
-              Three approaches are under investigation, at different stages of maturity:
+              <strong>How it works:</strong> If you believe a trust penalty was unjust, you can file an appeal.
+              The process has a defined lifecycle:
             </p>
             <ul style={{ marginTop: "0.5rem", paddingLeft: "1.25rem", color: "#d1d5db" }}>
-              <li><strong>Multi-party review tribunals</strong> — trusted community members review
-              contested trust events. <span style={{ color: "#6ee7b7" }}>Most mature approach</span> — the
-              society simulator already models coalition dynamics that would underpin tribunal formation.</li>
-              <li><strong>Stake-weighted arbitration</strong> — arbitrators put their own trust at stake
-              when ruling, creating incentive for fair decisions. <span style={{ color: "#fde68a" }}>Design phase</span> —
-              the economic model is defined but the game-theoretic analysis is incomplete.</li>
-              <li><strong>Automated anomaly detection</strong> — independent systems flag trust penalties
-              that deviate from statistical norms for human review. <span style={{ color: "#fde68a" }}>Design phase</span> —
-              builds on the Coherence Index infrastructure.</li>
+              <li><strong>File → Review → Evidence → Hearing → Verdict → Enforce</strong> — structured
+              stages with time windows at each step.</li>
+              <li><strong>Independent witness panel</strong> — a quorum of independent witnesses
+              adjudicates the appeal, not the entity that issued the penalty.</li>
+              <li><strong>Evidence types</strong> — witness attestations, transaction logs, behavioral
+              records, context explanations, and third-party testimony.</li>
+              <li><strong>Possible outcomes</strong> — full reversal, partial reversal, penalty upheld,
+              or modified penalty. Trust tensor restoration includes an audit trail.</li>
+              <li><strong>Escalation</strong> — appeals can escalate from society level to federation
+              level if the local outcome is contested.</li>
             </ul>
+            <p style={{ marginTop: "0.5rem" }}>
+              <strong>Anti-gaming protections:</strong> Filing an appeal costs ATP. Repeat frivolous appeals
+              incur increasing cooldowns and penalties. This prevents using the appeals system to
+              escape legitimate consequences.
+            </p>
             <p style={{ marginTop: "0.5rem", color: "#9ca3af" }}>
-              The core design challenge: any appeals mechanism must resist gaming (fake appeals to escape
-              legitimate consequences) while protecting against false positives. This isn&apos;t a problem
-              unique to Web4 — every legal and governance system faces it — but Web4&apos;s
-              decentralized architecture adds constraints. The{" "}
+              <strong>Honest status:</strong> The mechanism is designed and has a reference implementation
+              (109 passing checks), but hasn&apos;t been tested with real humans. The hard question
+              isn&apos;t the architecture — it&apos;s whether the incentives prevent gaming in practice.
+              The{" "}
               <Link href="/what-could-go-wrong" style={{ color: '#818cf8' }}>failure analysis</Link> discusses
-              this alongside other unsolved problems.
+              this alongside other open challenges.
             </p>
           </div>
         </div>

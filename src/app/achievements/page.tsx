@@ -13,6 +13,7 @@ import {
   CATEGORY_LABELS,
   getVisibleAchievements,
 } from '@/lib/achievements/achievements';
+import { trackPageVisit } from '@/lib/exploration';
 import {
   AchievementTracker,
   getAchievementTracker,
@@ -26,6 +27,7 @@ export default function AchievementsPage() {
   const [showInsights, setShowInsights] = useState(true);
 
   useEffect(() => {
+    trackPageVisit('achievements');
     setTracker(getAchievementTracker());
   }, []);
 

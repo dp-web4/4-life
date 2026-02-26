@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { trackPageVisit } from "@/lib/exploration";
 
 /**
  * Identity Constellation Explainer
@@ -16,6 +17,8 @@ import ExplorerNav from "@/components/ExplorerNav";
 
 export default function IdentityConstellationPage() {
   const [deviceCount, setDeviceCount] = useState(2);
+
+  useEffect(() => { trackPageVisit('identity-constellation'); }, []);
 
   // Trust increases with witness count (simplified model)
   const constellationTrust = Math.min(0.95, 0.3 + (deviceCount * 0.15));
