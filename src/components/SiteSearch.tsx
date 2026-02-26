@@ -113,7 +113,8 @@ export default function SiteSearch() {
             outline: 'none',
             color: 'var(--color-text)',
             fontSize: '0.875rem',
-            width: '120px',
+            width: isOpen ? '200px' : '120px',
+            transition: 'width 0.2s ease',
           }}
         />
         <kbd
