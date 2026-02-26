@@ -253,80 +253,7 @@ export default function PlaygroundPage() {
         </p>
       </section>
 
-      {/* How It Works */}
-      <section>
-        <h2>How It Works</h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "1rem",
-            marginTop: "1rem",
-          }}
-        >
-          <div style={{ padding: "1rem", backgroundColor: "#1f2937", borderRadius: "6px" }}>
-            <div style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>1️⃣</div>
-            <h3 style={{ fontSize: "1rem", marginBottom: "0.5rem" }}>Adjust Parameters</h3>
-            <p style={{ fontSize: "0.875rem", color: "#9ca3af" }}>
-              Use sliders to configure simulation settings, initial conditions, costs/rewards, and
-              behavioral tendencies.
-            </p>
-          </div>
-          <div style={{ padding: "1rem", backgroundColor: "#1f2937", borderRadius: "6px" }}>
-            <div style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>2️⃣</div>
-            <h3 style={{ fontSize: "1rem", marginBottom: "0.5rem" }}>Run Simulation</h3>
-            <p style={{ fontSize: "0.875rem", color: "#9ca3af" }}>
-              Click &quot;Run Simulation&quot; to execute a multi-life agent cycle with your parameters.
-              Runs instantly in your browser — no setup needed.
-            </p>
-          </div>
-          <div style={{ padding: "1rem", backgroundColor: "#1f2937", borderRadius: "6px" }}>
-            <div style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>3️⃣</div>
-            <h3 style={{ fontSize: "1rem", marginBottom: "0.5rem" }}>Explore Results</h3>
-            <p style={{ fontSize: "0.875rem", color: "#9ca3af" }}>
-              View life trajectories, ATP/trust evolution, termination reasons, and auto-generated
-              insights.
-            </p>
-          </div>
-          <div style={{ padding: "1rem", backgroundColor: "#1f2937", borderRadius: "6px" }}>
-            <div style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>4️⃣</div>
-            <h3 style={{ fontSize: "1rem", marginBottom: "0.5rem" }}>Iterate & Learn</h3>
-            <p style={{ fontSize: "0.875rem", color: "#9ca3af" }}>
-              Adjust parameters based on results, re-run, and discover how different settings
-              affect society outcomes.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* What You Can Explore */}
-      <section>
-        <h2>What You Can Explore</h2>
-        <ul style={{ marginTop: "0.75rem", marginLeft: "1.25rem", color: "#d1d5db" }}>
-          <li style={{ marginBottom: "0.5rem" }}>
-            <strong>Attention Economics</strong>: What happens when actions are too expensive? Too
-            cheap? Can agents survive on different attention budgets?
-          </li>
-          <li style={{ marginBottom: "0.5rem" }}>
-            <strong>Trust Dynamics</strong>: How does trust evolve? What trust thresholds enable
-            survival? How quickly should trust change?
-          </li>
-          <li style={{ marginBottom: "0.5rem" }}>
-            <strong>Rebirth Carry-Forward</strong>: Do reputation bonuses between lives help or hurt? What's the
-            right balance between forgiveness and consequences?
-          </li>
-          <li style={{ marginBottom: "0.5rem" }}>
-            <strong>Behavioral Tendencies</strong>: Are risk-averse agents more stable? Do
-            risk-seekers thrive or crash? What's the optimal strategy?
-          </li>
-          <li style={{ marginBottom: "0.5rem" }}>
-            <strong>Economic Sustainability</strong>: Which parameter combinations allow agents to
-            survive indefinitely? Where's the tipping point?
-          </li>
-        </ul>
-      </section>
-
-      {/* Guided Experiments */}
+      {/* Guided Experiments — most engaging entry point, put first */}
       <section>
         <h2>Try These Experiments</h2>
         <p style={{ marginTop: '0.5rem', marginBottom: '1rem', color: '#9ca3af', fontSize: '0.9rem' }}>
@@ -385,9 +312,13 @@ export default function PlaygroundPage() {
         </section>
       )}
 
-      {/* Main Interface */}
+      {/* Main Interface — custom parameters */}
       <section>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "1.5rem" }}>
+        <h2 style={{ marginBottom: '0.75rem' }}>Custom Parameters</h2>
+        <p style={{ marginBottom: '1rem', color: '#9ca3af', fontSize: '0.9rem' }}>
+          Or design your own experiment — adjust any parameter and run the simulation.
+        </p>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-6">
           {/* Controls Column */}
           <div>
             <PlaygroundControls onRunSimulation={runSimulation} isRunning={isRunning} />
@@ -396,6 +327,45 @@ export default function PlaygroundPage() {
           {/* Results Column */}
           <div>
             <PlaygroundResults result={result} activeExperiment={activeExperiment} />
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works — moved below experiments for progressive disclosure */}
+      <section>
+        <h2>How It Works</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+          <div style={{ padding: "1rem", backgroundColor: "#1f2937", borderRadius: "6px" }}>
+            <div style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>1️⃣</div>
+            <h3 style={{ fontSize: "1rem", marginBottom: "0.5rem" }}>Adjust Parameters</h3>
+            <p style={{ fontSize: "0.875rem", color: "#9ca3af" }}>
+              Use sliders to configure simulation settings, initial conditions, costs/rewards, and
+              behavioral tendencies.
+            </p>
+          </div>
+          <div style={{ padding: "1rem", backgroundColor: "#1f2937", borderRadius: "6px" }}>
+            <div style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>2️⃣</div>
+            <h3 style={{ fontSize: "1rem", marginBottom: "0.5rem" }}>Run Simulation</h3>
+            <p style={{ fontSize: "0.875rem", color: "#9ca3af" }}>
+              Click &quot;Run Simulation&quot; to execute a multi-life agent cycle with your parameters.
+              Runs instantly in your browser — no setup needed.
+            </p>
+          </div>
+          <div style={{ padding: "1rem", backgroundColor: "#1f2937", borderRadius: "6px" }}>
+            <div style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>3️⃣</div>
+            <h3 style={{ fontSize: "1rem", marginBottom: "0.5rem" }}>Explore Results</h3>
+            <p style={{ fontSize: "0.875rem", color: "#9ca3af" }}>
+              View life trajectories, ATP/trust evolution, termination reasons, and auto-generated
+              insights.
+            </p>
+          </div>
+          <div style={{ padding: "1rem", backgroundColor: "#1f2937", borderRadius: "6px" }}>
+            <div style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>4️⃣</div>
+            <h3 style={{ fontSize: "1rem", marginBottom: "0.5rem" }}>Iterate & Learn</h3>
+            <p style={{ fontSize: "0.875rem", color: "#9ca3af" }}>
+              Adjust parameters based on results, re-run, and discover how different settings
+              affect society outcomes.
+            </p>
           </div>
         </div>
       </section>

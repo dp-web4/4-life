@@ -3249,6 +3249,76 @@ export default function SocietySimulatorPage() {
           </p>
         </div>
 
+        {/* What to Watch For - Simulation Phases */}
+        <details className="mb-6 bg-gray-800/30 rounded-lg border border-gray-700/50 group">
+          <summary className="cursor-pointer p-4 text-sm font-bold text-gray-300 hover:text-white transition-colors list-none flex items-center justify-between">
+            <span>What to Watch For</span>
+            <span className="text-gray-500 text-xs group-open:hidden">▸ Show phases</span>
+            <span className="text-gray-500 text-xs hidden group-open:inline">▾ Hide</span>
+          </summary>
+          <div className="px-4 pb-4">
+            <p className="text-xs text-gray-500 mb-3">
+              A typical simulation unfolds in phases. Here&apos;s what to look for:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {[
+                {
+                  phase: '1',
+                  title: 'Exploration',
+                  rounds: 'Rounds 1–2',
+                  color: 'text-sky-400',
+                  bg: 'bg-sky-900/20',
+                  border: 'border-sky-800/40',
+                  desc: 'Agents meet and form first impressions. Initial trust links appear in the network.',
+                  watch: 'Who cooperates first?',
+                },
+                {
+                  phase: '2',
+                  title: 'Coalition Building',
+                  rounds: 'Rounds 2–3',
+                  color: 'text-emerald-400',
+                  bg: 'bg-emerald-900/20',
+                  border: 'border-emerald-800/40',
+                  desc: 'Cooperators cluster together. Reciprocators find reliable partners.',
+                  watch: 'Colored groups forming',
+                },
+                {
+                  phase: '3',
+                  title: 'Defector Isolation',
+                  rounds: 'Rounds 3–4',
+                  color: 'text-amber-400',
+                  bg: 'bg-amber-900/20',
+                  border: 'border-amber-800/40',
+                  desc: 'Free riders get caught. Trust costs pile up for bad actors.',
+                  watch: 'Agents losing connections',
+                },
+                {
+                  phase: '4',
+                  title: 'Equilibrium',
+                  rounds: 'Final rounds',
+                  color: 'text-purple-400',
+                  bg: 'bg-purple-900/20',
+                  border: 'border-purple-800/40',
+                  desc: 'The society stabilizes or collapses. Cooperation rate tells the story.',
+                  watch: 'Final cooperation %',
+                },
+              ].map((p) => (
+                <div key={p.phase} className={`${p.bg} border ${p.border} rounded-lg p-3`}>
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className={`text-xs font-mono font-bold ${p.color}`}>{p.phase}</span>
+                    <span className="text-sm font-semibold text-gray-200">{p.title}</span>
+                  </div>
+                  <p className="text-xs text-gray-400 mb-1.5">{p.desc}</p>
+                  <p className="text-xs text-gray-500">
+                    <span className={`${p.color} font-medium`}>Watch:</span> {p.watch}
+                  </p>
+                  <p className="text-[10px] text-gray-600 mt-1">{p.rounds}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </details>
+
         {/* Controls */}
         <div className="mb-6 bg-gray-800/50 rounded-lg p-4 border border-gray-700/50">
           <div className="flex flex-wrap items-center gap-3 mb-4">
@@ -3585,21 +3655,68 @@ export default function SocietySimulatorPage() {
           </div>
         )}
 
-        {/* No simulation yet */}
+        {/* No simulation yet — What to Expect timeline */}
         {agents.length === 0 && !result && (
-          <div className="text-center py-16 text-gray-500">
-            <div className="text-6xl mb-4">
-              <svg className="w-16 h-16 mx-auto" viewBox="0 0 64 64" fill="none">
-                <circle cx="20" cy="24" r="6" fill="#22c55e" opacity="0.6" />
-                <circle cx="44" cy="24" r="6" fill="#ef4444" opacity="0.6" />
-                <circle cx="32" cy="44" r="6" fill="#3b82f6" opacity="0.6" />
-                <line x1="20" y1="24" x2="44" y2="24" stroke="#4b5563" strokeWidth="1" />
-                <line x1="20" y1="24" x2="32" y2="44" stroke="#4b5563" strokeWidth="1" />
-                <line x1="44" y1="24" x2="32" y2="44" stroke="#4b5563" strokeWidth="1" />
-              </svg>
+          <div className="py-8">
+            <h3 className="text-center text-lg font-bold text-gray-300 mb-6">What Happens When You Click Run</h3>
+            <div className="relative max-w-2xl mx-auto">
+              {/* Timeline line */}
+              <div className="absolute left-6 top-3 bottom-3 w-0.5 bg-gray-700" />
+
+              {[
+                {
+                  icon: '🎲',
+                  phase: 'Setup',
+                  time: 'Instant',
+                  desc: '12 agents spawn with different strategies — cooperators, defectors, reciprocators, and more. Each starts with equal ATP (energy) and zero trust.',
+                  color: 'text-emerald-400',
+                },
+                {
+                  icon: '🤝',
+                  phase: 'Early Rounds',
+                  time: 'Rounds 1–3',
+                  desc: 'Agents interact in pairs. Cooperators share ATP. Defectors steal. Trust scores start forming. Watch the network graph — lines appear as agents build relationships.',
+                  color: 'text-blue-400',
+                },
+                {
+                  icon: '🏛️',
+                  phase: 'Coalition Formation',
+                  time: 'Rounds 3–6',
+                  desc: 'Agents who trust each other form coalitions — visible as clusters in the graph. Defectors start getting excluded. The wealth gap begins to shift.',
+                  color: 'text-purple-400',
+                },
+                {
+                  icon: '⚡',
+                  phase: 'Consequences',
+                  time: 'Rounds 6–10',
+                  desc: 'Agents who ran out of ATP die and may be reborn. Coalitions strengthen or dissolve. The society\'s character emerges — cooperative, stratified, or chaotic.',
+                  color: 'text-amber-400',
+                },
+                {
+                  icon: '📊',
+                  phase: 'Results',
+                  time: 'After final round',
+                  desc: 'Full narrative of what happened — character arcs, key moments, coalition dynamics. Compare different scenarios to see how strategy mix changes outcomes.',
+                  color: 'text-teal-400',
+                },
+              ].map((step, i) => (
+                <div key={i} className="relative flex items-start gap-4 mb-5 last:mb-0">
+                  <div className="relative z-10 w-12 h-12 rounded-full bg-gray-800 border border-gray-600 flex items-center justify-center text-xl flex-shrink-0">
+                    {step.icon}
+                  </div>
+                  <div className="pt-1">
+                    <div className="flex items-baseline gap-2 mb-1">
+                      <span className={`font-bold ${step.color}`}>{step.phase}</span>
+                      <span className="text-xs text-gray-500">{step.time}</span>
+                    </div>
+                    <p className="text-sm text-gray-400 leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <p className="text-lg mb-2">Select a scenario and click <strong>Run Society</strong></p>
-            <p className="text-sm">Watch agents form trust networks, build coalitions, and self-organize</p>
+            <p className="text-center text-sm text-gray-500 mt-6">
+              Animated mode: ~30 seconds &middot; Instant mode: results in under a second
+            </p>
           </div>
         )}
 
