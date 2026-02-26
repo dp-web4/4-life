@@ -2,6 +2,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import PageTracker from "@/components/PageTracker";
 
 /**
  * Why Web4 - The Problem Before the Solution
@@ -16,6 +17,7 @@ import ExplorerNav from "@/components/ExplorerNav";
 export default function WhyWeb4Page() {
   return (
     <>
+      <PageTracker slug="why-web4" />
       <div className="max-w-4xl mx-auto">
         <Breadcrumbs currentPath="/why-web4" />
       </div>
@@ -679,10 +681,66 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Migration path */}
+          {/* Hardware affordability / equity */}
           <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>How do I &ldquo;enter&rdquo; Web4 from today&apos;s internet? Is it all-or-nothing?</span>
+              <span>What about people who can&apos;t afford devices with security chips?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>This is a real equity concern, not a dismissed one.</strong> If participation requires a TPM
+                or Secure Enclave, then cost becomes a barrier. Several factors work in favor of accessibility:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Hardware is already widespread:</strong> Most phones sold since ~2018 include security chips (Secure Enclave, Titan, TPM). Even budget Android devices increasingly ship with hardware-backed keystores. The threshold is a $50 phone, not a $1000 one.</li>
+                <li><strong>FIDO2 security keys:</strong> USB-based keys like YubiKey cost ~$25 and work with any computer. A single key can anchor an identity without needing a modern phone.</li>
+                <li><strong>Community witnessing:</strong> In regions where personal device ownership is low, shared community devices + witness-based attestation can bridge the gap. A village elder or community center can attest to presence.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> None of these fully solve the problem. The most marginalized populations —
+                those without any device access — would need some form of sponsored onboarding. Web4 is not unique
+                here: every digital system faces this. But a system that claims to be trust-native must take equity
+                seriously, not hand-wave it. This remains an active design priority.
+              </p>
+            </div>
+          </details>
+
+          {/* AI agent onboarding */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How do AI agents participate? Can a bot earn trust?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Yes, but transparently.</strong> AI agents in Web4 are first-class entities — they get their
+                own LCT (bound to the hardware they run on), their own ATP budget, and their own trust tensor.
+                The critical difference: <strong>they must be labeled as non-human</strong>.
+              </p>
+              <p>
+                An AI agent earns trust the same way anyone does: by taking actions, spending ATP, and building a
+                behavioral track record. A helpful coding assistant that consistently delivers quality work earns high
+                trust in that role. A spam bot burns ATP faster than it earns and dies — just like a human spammer would.
+              </p>
+              <p>
+                Initial trust is cold-start: new agents begin with minimal ATP and must be <strong>vouched for by
+                their operator</strong> (the human or organization that deployed them). The operator&apos;s own reputation
+                is on the line — deploy a malicious bot, and your trust takes the hit too.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> The boundary between &ldquo;AI agent&rdquo; and &ldquo;human with AI
+                assistance&rdquo; is blurry and getting blurrier. How to handle AI-augmented actions (you wrote it, but
+                GPT helped) is an open question. The current design handles clearly autonomous agents well but struggles
+                with the hybrid cases.
+              </p>
+            </div>
+          </details>
+
+          {/* Migration / transition path */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How does the transition work? Do I have to switch everything at once?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
