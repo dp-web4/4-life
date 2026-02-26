@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { trackPageVisit } from "@/lib/exploration";
 import { PlaygroundControls, PlaygroundConfig } from "@/components/PlaygroundControls";
 import { PlaygroundResults, PlaygroundResult, LifeSummary } from "@/components/PlaygroundResults";
 import { SimulationEngine, SimConfig, SimulationResult } from "@/lib/simulation/engine";
@@ -200,6 +201,8 @@ export default function PlaygroundPage() {
   const [isRunning, setIsRunning] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [activeExperiment, setActiveExperiment] = useState<string | null>(null);
+
+  useEffect(() => { trackPageVisit('playground'); }, []);
 
   const runSimulation = async (config: PlaygroundConfig) => {
     setIsRunning(true);

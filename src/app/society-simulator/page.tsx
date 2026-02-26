@@ -19,6 +19,7 @@
 import { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from '@/lib/exploration';
 import HumanPlayerMode from '@/components/HumanPlayerMode';
 import NetworkGraph from '@/components/NetworkGraph';
 import { queryEngine, type Query, type Response as GuideResponse } from '@/lib/act/query_engine';
@@ -3082,6 +3083,8 @@ export default function SocietySimulatorPage() {
   const [showCharacterFocus, setShowCharacterFocus] = useState(false);
   const [humanPlayerMode, setHumanPlayerMode] = useState(false);
   const cancelRef = useRef(false);
+
+  useEffect(() => { trackPageVisit('society-simulator'); }, []);
 
   // Custom config overrides
   const [customAgentCount, setCustomAgentCount] = useState(12);

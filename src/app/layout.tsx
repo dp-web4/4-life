@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import SiteSearch from "@/components/SiteSearch";
 import GlossaryPanel from "@/components/GlossaryPanel";
+import ExplorationProgress from "@/components/ExplorationProgress";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -52,6 +53,7 @@ export default function RootLayout({
             </a>
           </nav>
         </header>
+        <ExplorationProgress />
         <main>{children}</main>
         <GlossaryPanel />
         <footer className="footer">
