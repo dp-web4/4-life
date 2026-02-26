@@ -369,10 +369,12 @@ export default function LearnJourney() {
   ];
 
   const currentPath = learningPaths.find((p) => p.stage === activeStage)!;
-  const progress =
-    (completedConcepts.size /
-      learningPaths.reduce((sum, path) => sum + path.concepts.length, 0)) *
-    100;
+  const totalConcepts = learningPaths.reduce((sum, path) => sum + path.concepts.length, 0);
+  const progress = (completedConcepts.size / totalConcepts) * 100;
+
+  // Detect beginner concept completion (core 5)
+  const beginnerConceptIds = ['lct', 'atp', 't3', 'ci', 'aliveness'];
+  const beginnerComplete = beginnerConceptIds.every(id => completedConcepts.has(id));
 
   return (
     <>
@@ -419,6 +421,60 @@ export default function LearnJourney() {
           </div>
         </div>
       </section>
+
+      {/* Beginner graduation banner */}
+      {beginnerComplete && (
+        <section>
+          <div
+            style={{
+              background: "linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(168, 85, 247, 0.12))",
+              border: "1px solid rgba(56, 189, 248, 0.3)",
+              borderRadius: "12px",
+              padding: "1.5rem",
+              textAlign: "center",
+            }}
+          >
+            <h3 style={{ color: "var(--color-accent-bright)", margin: "0 0 0.5rem", fontSize: "1.1rem" }}>
+              Core Concepts Complete
+            </h3>
+            <p style={{ color: "var(--color-gray-300)", fontSize: "0.9rem", marginBottom: "1rem" }}>
+              You understand identity, energy budgets, trust tensors, coherence, and aliveness.
+              These 5 building blocks are the foundation of every Web4 society.
+            </p>
+            <div style={{ display: "flex", justifyContent: "center", gap: "0.75rem", flexWrap: "wrap" }}>
+              <Link
+                href="/society-simulator"
+                style={{
+                  padding: "0.6rem 1.25rem",
+                  background: "rgba(56, 189, 248, 0.2)",
+                  border: "1px solid rgba(56, 189, 248, 0.4)",
+                  borderRadius: "9999px",
+                  color: "var(--color-accent-bright)",
+                  textDecoration: "none",
+                  fontSize: "0.9rem",
+                  fontWeight: 500,
+                }}
+              >
+                Watch a Society →
+              </Link>
+              <button
+                onClick={() => setActiveStage("intermediate")}
+                style={{
+                  padding: "0.6rem 1.25rem",
+                  background: "transparent",
+                  border: "1px solid var(--color-gray-600)",
+                  borderRadius: "9999px",
+                  color: "var(--color-text)",
+                  cursor: "pointer",
+                  fontSize: "0.9rem",
+                }}
+              >
+                Go Deeper — Intermediate →
+              </button>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Stage selector */}
       <section>
