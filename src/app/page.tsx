@@ -480,6 +480,14 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             )}
           </div>
         )}
+        {!karmaProfile && (!exploration || exploration.pagesVisited.length <= 2) && (
+          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginBottom: '0.75rem', fontStyle: 'italic' }}>
+            First visit? These simulations are more fun once you know the rules.{' '}
+            <Link href="/why-web4" style={{ color: 'var(--color-sky)' }}>Start with Why Web4</Link>{' '}
+            or{' '}
+            <Link href="/first-contact" style={{ color: 'var(--color-sky)' }}>meet Alice</Link> first.
+          </p>
+        )}
         <Link href="/society-simulator" className="btn-primary">
           Launch Society Simulator →
         </Link>

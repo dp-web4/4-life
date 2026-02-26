@@ -177,7 +177,7 @@ export default function LearnJourney() {
       stage: "intermediate",
       title: "Understanding Emergence: How Trust Creates Societies",
       description:
-        "You understand the basic concepts. Now see how they combine to create emergent properties: trust networks form, markets self-organize, and agents learn across lives.",
+        "The beginner concepts explain individual agents — one identity, one energy budget, one trust score. But Web4's real power emerges when hundreds of agents interact: relationships self-organize into trust networks, energy costs discover market prices without central planning, and learning compounds across generations. This section shows how simple rules create complex, resilient societies.",
       concepts: [
         {
           id: "mrh",
