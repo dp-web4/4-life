@@ -325,7 +325,7 @@ function SurvivalGame() {
           <strong className="text-purple-400">0.80 coherence</strong>. Each turn, you&apos;ll face a scenario
           and choose how to act. If any metric drops below its threshold, <strong className="text-red-400">you die</strong>.
         </p>
-        <div className="grid grid-cols-3 gap-3 mb-4 text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4 text-center">
           <div className="bg-gray-800/80 rounded-lg p-3 border border-gray-700">
             <div className="text-green-400 text-lg font-bold">ATP &gt; 0</div>
             <div className="text-gray-500 text-xs">Energy to act</div>
@@ -429,7 +429,7 @@ function SurvivalGame() {
           </p>
         </div>
 
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-3">
           <button
             onClick={resetGame}
             className="flex-1 px-4 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors"
@@ -1549,6 +1549,42 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
         .concept-link-card h4 {
           margin-top: 0;
           color: #60a5fa;
+        }
+        @media (max-width: 640px) {
+          .comparison-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
+          .concept-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
+          .slider-group label {
+            flex-wrap: wrap;
+          }
+          .slider-group label > span:first-child {
+            flex: 1 1 100%;
+            margin-bottom: 0.25rem;
+          }
+          .slider {
+            flex: 1 1 auto;
+            min-width: 0;
+          }
+          .slider-value {
+            flex: 0 0 50px;
+          }
+          .flow-step {
+            max-width: 100%;
+            padding: 1rem;
+          }
+          .simulator-card {
+            padding: 1rem;
+          }
+          .comparison-table th,
+          .comparison-table td {
+            padding: 0.5rem;
+            font-size: 0.85rem;
+          }
         }
       `}</style>
 
