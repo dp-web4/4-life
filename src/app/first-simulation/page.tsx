@@ -21,6 +21,7 @@ import { useState, useRef, useCallback, useEffect } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 import {
   SimulationEngine,
   SimConfig,
@@ -1136,6 +1137,7 @@ export default function FirstSimulationPage() {
         )}
       </div>
 
+      <ExplorerNav currentPath="/first-simulation" />
       <div style={{ marginTop: '2rem' }}>
         <RelatedConcepts currentPath="/first-simulation" />
       </div>

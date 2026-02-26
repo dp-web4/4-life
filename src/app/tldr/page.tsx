@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 
 export const metadata = {
   title: "Web4 in 2 Minutes | 4-Life",
@@ -187,6 +188,7 @@ export default function TLDRPage() {
           </p>
         </div>
       </section>
+      <ExplorerNav currentPath="/tldr" />
       <RelatedConcepts currentPath="/tldr" />
     </>
   );

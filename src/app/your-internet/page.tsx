@@ -15,6 +15,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import ExplorerNav from '@/components/ExplorerNav';
 import { saveYourInternetResult, trackPageVisit } from '@/lib/exploration';
 
 // ============================================================================
@@ -286,6 +287,7 @@ export default function YourInternetPage() {
             </button>
           </div>
         </section>
+        <ExplorerNav currentPath="/your-internet" />
       </>
     );
   }
@@ -411,6 +413,7 @@ export default function YourInternetPage() {
           <Link href="/tldr" className="text-sky-400 hover:underline">Read the 2-minute overview</Link>
         </div>
       </section>
+      <ExplorerNav currentPath="/your-internet" />
     </>
   );
 }

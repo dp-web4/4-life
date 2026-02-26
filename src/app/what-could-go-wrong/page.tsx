@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 
 export const metadata = {
   title: "What Could Go Wrong | 4-Life",
@@ -533,6 +534,7 @@ export default function WhatCouldGoWrongPage() {
         </Link>
       </section>
 
+      <ExplorerNav currentPath="/what-could-go-wrong" />
       <RelatedConcepts currentPath="/what-could-go-wrong" />
     </>
   );
