@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 
 /**
  * Identity Constellation Explainer
@@ -433,6 +434,7 @@ export default function IdentityConstellationPage() {
           </a>
         </div>
       </div>
+      <ExplorerNav currentPath="/identity-constellation" />
       <RelatedConcepts currentPath="/identity-constellation" />
     </div>
   );

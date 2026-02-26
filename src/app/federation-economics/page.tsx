@@ -2,6 +2,7 @@ import Link from "next/link";
 import FederationMarket from "@/components/FederationMarket";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 
 /**
  * Federation Economics Explainer
@@ -529,6 +530,7 @@ export default function FederationEconomicsPage() {
           </p>
         </div>
       </section>
+      <ExplorerNav currentPath="/federation-economics" />
       <RelatedConcepts currentPath="/federation-economics" />
     </>
   );

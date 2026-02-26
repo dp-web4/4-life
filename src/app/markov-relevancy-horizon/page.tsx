@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 
 export default function MarkovRelevancyHorizonPage() {
   // Simulator state
@@ -988,6 +989,7 @@ SELECT ?entity ?distance WHERE {
             </Link>
           </div>
         </section>
+        <ExplorerNav currentPath="/markov-relevancy-horizon" />
         <RelatedConcepts currentPath="/markov-relevancy-horizon" />
       </div>
     </div>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 
 export default function DecisionEvolutionPage() {
   // Simulator state
@@ -501,6 +502,7 @@ export default function DecisionEvolutionPage() {
             </Link>
           </div>
         </section>
+        <ExplorerNav currentPath="/decision-evolution" />
         <RelatedConcepts currentPath="/decision-evolution" />
       </div>
     </div>

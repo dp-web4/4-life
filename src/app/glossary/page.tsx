@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 
 export default function GlossaryPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -893,6 +894,7 @@ export default function GlossaryPage() {
           </Link>.
         </p>
       </section>
+      <ExplorerNav currentPath="/glossary" />
       <RelatedConcepts currentPath="/glossary" />
     </>
   );

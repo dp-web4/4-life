@@ -371,10 +371,27 @@ export default function WhyWeb4Page() {
                 witness infrastructure, adoption by at least one platform, and legal/regulatory
                 navigation around identity systems.
               </p>
+              <p>
+                <strong>Where we are now (and what comes next):</strong>
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Now — Simulation &amp; specification:</strong> 4-Life proves the mechanics work in simulation. The{" "}
+                  <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
+                  Web4 spec</a> defines the protocol. You can explore the{" "}
+                  <Link href="/society-simulator" className="text-sky-400 hover:underline">
+                  Society Simulator</Link> and{" "}
+                  <Link href="/playground" className="text-sky-400 hover:underline">
+                  Playground</Link> today.</li>
+                <li><strong>Next — Reference implementation:</strong> A working prototype that integrates with real hardware
+                  (FIDO2 keys, TPMs) and runs a small witness network. Not a product — a testbed for validating the theory.</li>
+                <li><strong>Then — Pilot community:</strong> A single community (research group, professional network, or
+                  platform) running Web4 trust alongside their existing system. The goal: real data on whether the
+                  economics actually work with real humans.</li>
+              </ul>
               <p className="text-amber-400/80 text-xs">
-                <strong>Honest answer:</strong> This is research, not production. The simulations prove
-                the mechanics work in principle. Deployment is a multi-year effort requiring significant
-                investment and partnership.
+                <strong>Honest answer:</strong> This is research, not production. We don&apos;t attach timelines because honest
+                research doesn&apos;t have them. The simulations prove the mechanics work in principle — the question is
+                whether the economics survive contact with real human behavior. That&apos;s what a pilot would test.
               </p>
             </div>
           </details>
@@ -499,7 +516,8 @@ export default function WhyWeb4Page() {
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> This is still early-stage research. Full deployment
-                requires standardization, adoption, and tooling that doesn't exist yet.
+                requires standardization, adoption, and tooling that doesn&apos;t exist yet. See the
+                roadmap FAQ above for where things stand today.
               </p>
             </div>
           </details>
