@@ -8,6 +8,14 @@ export default function HowItWorksPage() {
   return (
     <>
       <Breadcrumbs currentPath="/how-it-works" />
+
+      {/* New visitor prompt */}
+      <div className="max-w-4xl mx-auto mb-4 text-sm text-gray-500">
+        New to Web4? This page is a reference overview. For a guided introduction, start with{' '}
+        <Link href="/first-contact" className="text-sky-400 hover:underline">First Contact</Link> or the{' '}
+        <Link href="/tldr" className="text-sky-400 hover:underline">2-minute TL;DR</Link>.
+      </div>
+
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto">
         <div className="text-sm uppercase tracking-wide text-sky-400 mb-4">

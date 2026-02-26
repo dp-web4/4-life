@@ -92,7 +92,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Markov Relevancy Horizon",
     brief: "The boundary of what you can see, based on trust relationships.",
     explanation:
-      "Your MRH is defined by trust relationships—you see entities you trust and entities they trust (transitively). This limits spam blast radius (spammers can't reach you if they're not in your trust network) and preserves privacy. Like email filters, but for entire entities.",
+      "Your MRH is defined by trust relationships — you see entities you trust and entities they trust (transitively). Think of a co-working space: you hear people you know, friends-of-friends can introduce themselves, but strangers can't pitch you without a voucher. This limits spam blast radius (spammers can't reach you if no one in your trust network trusts them) and preserves privacy without centralized filtering.",
     learnMore: "/markov-relevancy-horizon",
     canonicalSpec:
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/mrh-tensors.md",

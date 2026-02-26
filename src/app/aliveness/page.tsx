@@ -1036,9 +1036,25 @@ export default function AlivenessExplainer() {
               <Link href="/manifest" style={{ color: '#818cf8' }}>Manifest</Link> lists it under known failure modes.
             </p>
             <p style={{ marginTop: "0.5rem" }}>
-              This is an <strong>active research priority</strong>. Approaches being explored include:
-              multi-party review tribunals, stake-weighted arbitration, and heterogeneous AI review
-              of contested trust events. The{" "}
+              This is an <strong>active research priority</strong> — not a backlog item, but a focus area.
+              Three approaches are under investigation, at different stages of maturity:
+            </p>
+            <ul style={{ marginTop: "0.5rem", paddingLeft: "1.25rem", color: "#d1d5db" }}>
+              <li><strong>Multi-party review tribunals</strong> — trusted community members review
+              contested trust events. <span style={{ color: "#6ee7b7" }}>Most mature approach</span> — the
+              society simulator already models coalition dynamics that would underpin tribunal formation.</li>
+              <li><strong>Stake-weighted arbitration</strong> — arbitrators put their own trust at stake
+              when ruling, creating incentive for fair decisions. <span style={{ color: "#fde68a" }}>Design phase</span> —
+              the economic model is defined but the game-theoretic analysis is incomplete.</li>
+              <li><strong>Automated anomaly detection</strong> — independent systems flag trust penalties
+              that deviate from statistical norms for human review. <span style={{ color: "#fde68a" }}>Design phase</span> —
+              builds on the Coherence Index infrastructure.</li>
+            </ul>
+            <p style={{ marginTop: "0.5rem", color: "#9ca3af" }}>
+              The core design challenge: any appeals mechanism must resist gaming (fake appeals to escape
+              legitimate consequences) while protecting against false positives. This isn&apos;t a problem
+              unique to Web4 — every legal and governance system faces it — but Web4&apos;s
+              decentralized architecture adds constraints. The{" "}
               <Link href="/what-could-go-wrong" style={{ color: '#818cf8' }}>failure analysis</Link> discusses
               this alongside other unsolved problems.
             </p>

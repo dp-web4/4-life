@@ -1256,9 +1256,17 @@ lenient_society = {
                 4. Economic + Reputational Penalty
               </h3>
               <p className="text-gray-300">
-                Low CI doesn't just limit trust - it increases ATP costs (up to
+                Low CI doesn&apos;t just limit trust — it increases ATP costs (up to
                 10x) and witness requirements (up to +8). Incoherent behavior
                 becomes economically unsustainable.
+              </p>
+              <p className="text-gray-400 text-sm mt-2">
+                <strong>Why so harsh?</strong> Mild penalties (2x) would barely slow
+                an attacker with stolen credentials. The 1/CI² formula means penalties
+                escalate sharply only when coherence drops below ~0.5 — normal users
+                with occasional inconsistencies (CI 0.8) pay just 1.6x, while a stolen
+                account (CI 0.3) pays 11x. The severity is targeted at the threat, not
+                at regular users.
               </p>
             </div>
 
