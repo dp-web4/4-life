@@ -350,6 +350,135 @@ export default function WhyWeb4Page() {
           If you're skeptical, good. Here are the hard questions visitors ask, and honest answers.
         </p>
 
+        {/* Most asked — top 5 for first-time visitors */}
+        <h3 className="text-sm uppercase tracking-wide text-amber-400/80 mb-4">Most asked</h3>
+        <div className="space-y-4 mb-10">
+          {/* Status */}
+          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Is this deployed anywhere? Or purely theoretical?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Currently theoretical with working simulations.</strong> 4-Life (this site)
+                demonstrates the mechanics in simulation. The underlying protocol specification exists
+                in the <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
+                Web4 whitepaper</a>.
+              </p>
+              <p>
+                Real-world deployment requires: hardware integration (TPM/Secure Enclave SDKs),
+                witness infrastructure, adoption by at least one platform, and legal/regulatory
+                navigation around identity systems.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest answer:</strong> This is research, not production. The simulations prove
+                the mechanics work in principle. Deployment is a multi-year effort requiring significant
+                investment and partnership.
+              </p>
+            </div>
+          </details>
+
+          {/* Hardware loss */}
+          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What if I lose my hardware? Is my identity gone forever?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>No—recovery is built in.</strong> LCT supports multiple linked devices. Lose your
+                phone? Your laptop can attest to your identity. Lose both? Your witnesses can attest.
+              </p>
+              <p>
+                The design principle: make recovery possible but expensive. You need multiple witnesses
+                to vouch for you, similar to how banks verify identity for account recovery. This
+                prevents attackers from &ldquo;recovering&rdquo; someone else&apos;s identity while protecting legitimate users.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Trade-off:</strong> Recovery is slower than &ldquo;forgot password&rdquo; flows. You can&apos;t
+                instantly regain access—the friction is intentional to prevent social engineering attacks.
+              </p>
+            </div>
+          </details>
+
+          {/* Comparison */}
+          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Why is this better than [existing solution X]?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>It&apos;s not &ldquo;better&rdquo; at everything.</strong> Every system has trade-offs:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>vs Passwords:</strong> More secure, but requires hardware. Won&apos;t work on borrowed devices.</li>
+                <li><strong>vs OAuth (Google login):</strong> No central point of control, but more complex to implement.</li>
+                <li><strong>vs Blockchain wallets:</strong> Harder to create fake IDs, but not as portable across chains.</li>
+                <li><strong>vs Biometrics:</strong> Can&apos;t be stolen by breach, but requires specific device support.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>What Web4 optimizes for:</strong> Economic resistance to spam/abuse while preserving
+                privacy and decentralization. If you need something else, another solution may fit better.
+              </p>
+            </div>
+          </details>
+
+          {/* Transition */}
+          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How does the transition work? Do I have to switch everything at once?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Gradual, not all-or-nothing.</strong> Web4 is designed as a layer on top of existing
+                infrastructure, not a replacement. A platform could adopt Web4 trust scoring for specific
+                features — verified reviews, trusted messaging — while everything else stays the same.
+              </p>
+              <p>
+                The likely adoption path: start with high-value interactions where trust matters most
+                (marketplace reviews, professional credentials, content moderation). As users see the
+                benefit, expand to more contexts. Think of how HTTPS adoption worked — it started with
+                banks and shopping, then gradually became the default everywhere.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Gradual adoption means the system is only as strong as its
+                coverage. A trust score based on 2 platforms is less meaningful than one based on 200.
+                Network effects work both for and against adoption.
+              </p>
+            </div>
+          </details>
+
+          {/* Equity */}
+          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What about people who can&apos;t afford devices with security chips?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>This is a real equity concern, not a dismissed one.</strong> If participation requires a TPM
+                or Secure Enclave, then cost becomes a barrier. Several factors work in favor of accessibility:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Hardware is already widespread:</strong> Most phones sold since ~2018 include security chips (Secure Enclave, Titan, TPM). Even budget Android devices increasingly ship with hardware-backed keystores. The threshold is a $50 phone, not a $1000 one.</li>
+                <li><strong>FIDO2 security keys:</strong> USB-based keys like YubiKey cost ~$25 and work with any computer. A single key can anchor an identity without needing a modern phone.</li>
+                <li><strong>Community witnessing:</strong> In regions where personal device ownership is low, shared community devices + witness-based attestation can bridge the gap. A village elder or community center can attest to presence.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> None of these fully solve the problem. The most marginalized populations —
+                those without any device access — would need some form of sponsored onboarding. Web4 is not unique
+                here: every digital system faces this. But a system that claims to be trust-native must take equity
+                seriously, not hand-wave it. This remains an active design priority.
+              </p>
+            </div>
+          </details>
+        </div>
+
+        {/* All other FAQs */}
+        <h3 className="text-sm uppercase tracking-wide text-gray-500 mb-4">Going deeper</h3>
         <div className="space-y-6">
           {/* Deployment */}
           <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
@@ -420,78 +549,6 @@ export default function WhyWeb4Page() {
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Bootstrapping is genuinely hard. No perfect solution exists.
                 This is an active research area, not a solved problem.
-              </p>
-            </div>
-          </details>
-
-          {/* Real world deployment */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
-            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>Is this deployed anywhere? Or purely theoretical?</span>
-              <span className="text-gray-500 text-xl">+</span>
-            </summary>
-            <div className="mt-4 text-gray-300 text-sm space-y-2">
-              <p>
-                <strong>Currently theoretical with working simulations.</strong> 4-Life (this site)
-                demonstrates the mechanics in simulation. The underlying protocol specification exists
-                in the <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
-                Web4 whitepaper</a>.
-              </p>
-              <p>
-                Real-world deployment requires: hardware integration (TPM/Secure Enclave SDKs),
-                witness infrastructure, adoption by at least one platform, and legal/regulatory
-                navigation around identity systems.
-              </p>
-              <p className="text-amber-400/80 text-xs">
-                <strong>Honest answer:</strong> This is research, not production. The simulations prove
-                the mechanics work in principle. Deployment is a multi-year effort requiring significant
-                investment and partnership.
-              </p>
-            </div>
-          </details>
-
-          {/* Hardware loss */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
-            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>What if I lose my hardware? Is my identity gone forever?</span>
-              <span className="text-gray-500 text-xl">+</span>
-            </summary>
-            <div className="mt-4 text-gray-300 text-sm space-y-2">
-              <p>
-                <strong>No—recovery is built in.</strong> LCT supports multiple linked devices. Lose your
-                phone? Your laptop can attest to your identity. Lose both? Your witnesses can attest.
-              </p>
-              <p>
-                The design principle: make recovery possible but expensive. You need multiple witnesses
-                to vouch for you, similar to how banks verify identity for account recovery. This
-                prevents attackers from "recovering" someone else's identity while protecting legitimate users.
-              </p>
-              <p className="text-amber-400/80 text-xs">
-                <strong>Trade-off:</strong> Recovery is slower than "forgot password" flows. You can't
-                instantly regain access—the friction is intentional to prevent social engineering attacks.
-              </p>
-            </div>
-          </details>
-
-          {/* Vs existing solutions */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
-            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>Why is this better than [existing solution X]?</span>
-              <span className="text-gray-500 text-xl">+</span>
-            </summary>
-            <div className="mt-4 text-gray-300 text-sm space-y-2">
-              <p>
-                <strong>It&apos;s not &ldquo;better&rdquo; at everything.</strong> Every system has trade-offs:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>vs Passwords:</strong> More secure, but requires hardware. Won&apos;t work on borrowed devices.</li>
-                <li><strong>vs OAuth (Google login):</strong> No central point of control, but more complex to implement.</li>
-                <li><strong>vs Blockchain wallets:</strong> Harder to create fake IDs, but not as portable across chains.</li>
-                <li><strong>vs Biometrics:</strong> Can&apos;t be stolen by breach, but requires specific device support.</li>
-              </ul>
-              <p className="text-amber-400/80 text-xs">
-                <strong>What Web4 optimizes for:</strong> Economic resistance to spam/abuse while preserving
-                privacy and decentralization. If you need something else, another solution may fit better.
               </p>
             </div>
           </details>
@@ -681,31 +738,6 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Hardware affordability / equity */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
-            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>What about people who can&apos;t afford devices with security chips?</span>
-              <span className="text-gray-500 text-xl">+</span>
-            </summary>
-            <div className="mt-4 text-gray-300 text-sm space-y-2">
-              <p>
-                <strong>This is a real equity concern, not a dismissed one.</strong> If participation requires a TPM
-                or Secure Enclave, then cost becomes a barrier. Several factors work in favor of accessibility:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>Hardware is already widespread:</strong> Most phones sold since ~2018 include security chips (Secure Enclave, Titan, TPM). Even budget Android devices increasingly ship with hardware-backed keystores. The threshold is a $50 phone, not a $1000 one.</li>
-                <li><strong>FIDO2 security keys:</strong> USB-based keys like YubiKey cost ~$25 and work with any computer. A single key can anchor an identity without needing a modern phone.</li>
-                <li><strong>Community witnessing:</strong> In regions where personal device ownership is low, shared community devices + witness-based attestation can bridge the gap. A village elder or community center can attest to presence.</li>
-              </ul>
-              <p className="text-amber-400/80 text-xs">
-                <strong>Honest caveat:</strong> None of these fully solve the problem. The most marginalized populations —
-                those without any device access — would need some form of sponsored onboarding. Web4 is not unique
-                here: every digital system faces this. But a system that claims to be trust-native must take equity
-                seriously, not hand-wave it. This remains an active design priority.
-              </p>
-            </div>
-          </details>
-
           {/* AI agent onboarding */}
           <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
@@ -733,32 +765,6 @@ export default function WhyWeb4Page() {
                 assistance&rdquo; is blurry and getting blurrier. How to handle AI-augmented actions (you wrote it, but
                 GPT helped) is an open question. The current design handles clearly autonomous agents well but struggles
                 with the hybrid cases.
-              </p>
-            </div>
-          </details>
-
-          {/* Migration / transition path */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
-            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>How does the transition work? Do I have to switch everything at once?</span>
-              <span className="text-gray-500 text-xl">+</span>
-            </summary>
-            <div className="mt-4 text-gray-300 text-sm space-y-2">
-              <p>
-                <strong>Gradual, not all-or-nothing.</strong> Web4 is designed as a layer on top of existing
-                infrastructure, not a replacement. A platform could adopt Web4 trust scoring for specific
-                features — verified reviews, trusted messaging — while everything else stays the same.
-              </p>
-              <p>
-                The likely adoption path: start with high-value interactions where trust matters most
-                (marketplace reviews, professional credentials, content moderation). As users see the
-                benefit, expand to more contexts. Think of how HTTPS adoption worked — it started with
-                banks and shopping, then gradually became the default everywhere.
-              </p>
-              <p className="text-amber-400/80 text-xs">
-                <strong>Honest caveat:</strong> Gradual adoption means the system is only as strong as its
-                coverage. A trust score based on 2 platforms is less meaningful than one based on 200.
-                Network effects work both for and against adoption.
               </p>
             </div>
           </details>
