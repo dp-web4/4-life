@@ -642,11 +642,11 @@ export default function CoherenceIndexPage() {
                   Multiplier: 1 / CI² (capped at 10x)
                 </div>
                 <div className="text-xs text-gray-500 mt-1">
-                  {atpMultiplier > 5 && "⚠️ Very expensive"}
+                  {atpMultiplier > 5 && "⚠️ Very expensive — targeted at stolen accounts, not normal users"}
                   {atpMultiplier > 1.5 &&
                     atpMultiplier <= 5 &&
-                    "⚡ Moderately expensive"}
-                  {atpMultiplier <= 1.5 && "✅ Normal cost"}
+                    "⚡ Moderately expensive — inconsistency costs, but recoverable"}
+                  {atpMultiplier <= 1.5 && "✅ Normal cost — consistent behavior keeps costs low"}
                 </div>
               </div>
 
