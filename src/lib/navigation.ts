@@ -470,7 +470,7 @@ export const navigationTree: NavigationTree = {
     {
       title: 'Achievements',
       href: '/achievements',
-      desc: '33 achievements that teach trust dynamics through gameplay',
+      desc: '34 achievements that teach trust dynamics through gameplay',
       keywords: ['achievements', 'gamification', 'badges', 'progress', 'challenges', 'trust lessons'],
       related: ['/society-simulator', '/karma-journey', '/playground'],
     },

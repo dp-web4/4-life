@@ -3,7 +3,7 @@ import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 export const metadata: Metadata = {
   title: "Achievements — Society Simulator Challenges | 4-Life",
   description:
-    "33 achievements to unlock in the Society Simulator. Track your progress across trust-building, cooperation, and strategic challenges.",
+    "34 achievements to unlock in the Society Simulator. Track your progress across trust-building, cooperation, and strategic challenges.",
   openGraph: {
     title: "Society Simulator Achievements",
     description:

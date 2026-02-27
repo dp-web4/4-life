@@ -3219,7 +3219,7 @@ export default function SocietySimulatorPage() {
                 🎮 Play as Agent
               </button>
               <p className="text-xs text-gray-500 mt-1">
-                Make real trust decisions &middot; <a href="/achievements" className="text-amber-400 hover:underline">33 achievements</a> to unlock
+                Make real trust decisions &middot; <a href="/achievements" className="text-amber-400 hover:underline">34 achievements</a> to unlock
               </p>
             </div>
           </div>

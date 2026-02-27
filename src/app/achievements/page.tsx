@@ -60,7 +60,7 @@ export default function AchievementsPage() {
           Achievements
         </h1>
         <p className="text-xl text-gray-300 leading-relaxed mb-4">
-          33 achievements that teach trust dynamics through gameplay.
+          34 achievements that teach trust dynamics through gameplay.
           Each one reveals a lesson about how cooperation, reputation, and
           consequences work in Web4 societies.
         </p>
