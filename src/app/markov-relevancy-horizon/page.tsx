@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { trackPageVisit } from "@/lib/exploration";
 
 export default function MarkovRelevancyHorizonPage() {
+  useEffect(() => { trackPageVisit('markov-relevancy-horizon'); }, []);
   // Simulator state
   const [selectedEntity, setSelectedEntity] = useState<"alice" | "bob" | "charlie">("alice");
   const [horizonDepth, setHorizonDepth] = useState<1 | 2 | 3>(2);

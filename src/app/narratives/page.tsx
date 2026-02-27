@@ -11,6 +11,7 @@ import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 interface NarrativeMeta {
   id: string;
@@ -29,6 +30,8 @@ export default function NarrativesPage() {
   const [narratives, setNarratives] = useState<NarrativeMeta[]>([]);
   const [filter, setFilter] = useState<string>('');
   const [selectedTheme, setSelectedTheme] = useState<string>('');
+
+  useEffect(() => { trackPageVisit('narratives'); }, []);
 
   useEffect(() => {
     // Load narratives from generated index
