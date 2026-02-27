@@ -537,6 +537,7 @@ export default function CoherenceIndexPage() {
                     </div>
                     <input
                       type="range"
+                      aria-label={`${label}: ${hint}`}
                       min={0.05}
                       max={1}
                       step={0.05}

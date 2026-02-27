@@ -2055,6 +2055,7 @@ function RelationshipTimelineScrubber({
           <span className="text-sm text-gray-400 w-16">Round {currentEpoch + 1}</span>
           <input
             type="range"
+            aria-label="Jump to simulation round"
             min={0}
             max={totalEpochs - 1}
             value={currentEpoch}
@@ -3366,6 +3367,7 @@ export default function SocietySimulatorPage() {
                 <label className="text-xs text-gray-400 block mb-1">Agents: {customAgentCount}</label>
                 <input
                   type="range" min={4} max={20} value={customAgentCount}
+                  aria-label="Number of agents"
                   onChange={e => setCustomAgentCount(Number(e.target.value))}
                   className="w-full"
                   disabled={running}
@@ -3375,6 +3377,7 @@ export default function SocietySimulatorPage() {
                 <label className="text-xs text-gray-400 block mb-1">Rounds: {customEpochs}</label>
                 <input
                   type="range" min={2} max={15} value={customEpochs}
+                  aria-label="Number of rounds"
                   onChange={e => setCustomEpochs(Number(e.target.value))}
                   className="w-full"
                   disabled={running}
