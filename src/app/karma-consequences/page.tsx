@@ -20,6 +20,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import TermTooltip, { ATP, T3 } from "@/components/TermTooltip";
 
 // ============================================================================
 // Types
@@ -601,7 +602,7 @@ function KarmaFormula() {
           <ul className="space-y-2 text-sm text-gray-400">
             <li className="flex items-start gap-2">
               <span className="text-red-500">-</span>
-              <span><strong className="text-white">Spam/abuse</strong> that drains ATP without value creation</span>
+              <span><strong className="text-white">Spam/abuse</strong> that drains <ATP /> without value creation</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-red-500">-</span>
@@ -701,7 +702,7 @@ function RealWorldImplications() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-emerald-500">•</span>
-              <span>Reputation is portable via trust tensors</span>
+              <span>Reputation is portable via <T3>trust tensors</T3></span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-emerald-500">•</span>
@@ -761,8 +762,8 @@ export default function KarmaConsequencesPage() {
             <p className="text-gray-300 text-sm">
               <strong className="text-orange-400">Key Insight:</strong> In traditional systems,
               consequences are temporary—create a new account and start fresh. In Web4,{' '}
-              <strong className="text-white">identity is hardware-bound</strong>, so karma follows
-              you across "lives." Bad actors can't escape their history; they can only rebuild it
+              <strong className="text-white">identity is hardware-bound</strong> via <TermTooltip term="LCT">LCT</TermTooltip>, so karma follows
+              you across &ldquo;lives.&rdquo; Bad actors can&apos;t escape their history; they can only rebuild it
               through genuine behavior change.
             </p>
           </div>

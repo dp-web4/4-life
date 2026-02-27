@@ -892,6 +892,7 @@ export default function AlivenessExplainer() {
         <p>
           Aliveness isn&apos;t a binary switch. Societies (and entities within them) have
           <strong> metabolic states</strong> — like a body that can be awake, resting, or dormant.
+          The web4 spec defines concrete triggers for each transition:
         </p>
         <div className="concept-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
           <div className="detail-box" style={{ borderLeft: "3px solid #10b981" }}>
@@ -900,23 +901,80 @@ export default function AlivenessExplainer() {
           </div>
           <div className="detail-box" style={{ borderLeft: "3px solid #38bdf8" }}>
             <h4 style={{ color: "#38bdf8" }}>Rest → Sleep</h4>
-            <p>Idle for hours? The society rests. Idle for longer? It sleeps. Can wake anytime.</p>
+            <p>Idle for <strong>1 hour</strong> → Rest. Idle for <strong>6 hours</strong> → Sleep.
+              A single transaction wakes the society back to Active.</p>
           </div>
           <div className="detail-box" style={{ borderLeft: "3px solid #f59e0b" }}>
             <h4 style={{ color: "#f59e0b" }}>Torpor</h4>
-            <p>Low ATP warning. Needs ≥20% energy to exit. Recoverable — but a signal to act.</p>
+            <p>ATP drops below <strong>10%</strong> of capacity. Needs ≥<strong>20%</strong> to exit.
+              A warning state — act quickly or slide into Hibernation.</p>
           </div>
           <div className="detail-box" style={{ borderLeft: "3px solid #a78bfa" }}>
             <h4 style={{ color: "#a78bfa" }}>Hibernation</h4>
-            <p>Dormant for 30+ days. Still alive, still recoverable. Trust and history preserved.</p>
+            <p>Dormant for <strong>30+ days</strong>. Still alive, still recoverable via external wake signal.
+              All trust, ATP, laws, and ledger history preserved.</p>
           </div>
         </div>
         <p style={{ color: "#9ca3af", fontSize: "0.9rem", marginTop: "1rem" }}>
-          There are also transitional states: <strong>Molting</strong> (governance change in progress),
-          <strong> Dreaming</strong> (maintenance window), and <strong>Estivation</strong> (seasonal dormancy).
+          There are also transitional states: <strong>Molting</strong> (governance renewal in progress),
+          <strong> Dreaming</strong> (scheduled maintenance), and <strong>Estivation</strong> (threat response — dormancy
+          until the threat resolves).
           The key insight: a society that goes quiet for a month isn&apos;t dead — it&apos;s hibernating.
           Its trust network, reputation history, and member relationships are all preserved.
         </p>
+      </section>
+
+      <section>
+        <h2>Birth: How Entities Come Alive</h2>
+        <p>
+          Before an entity can be &ldquo;alive,&rdquo; it must be <strong>born</strong> — witnessed into existence
+          by the network. This isn&apos;t automatic. The birth process ensures every entity
+          has a verifiable origin:
+        </p>
+        <div className="flow-diagram">
+          <div className="flow-step">
+            <strong>Genesis</strong>
+            <p>Entity created but not yet witnessed. Has no ATP, no trust, no relationships. Like a seed that hasn&apos;t sprouted.</p>
+          </div>
+          <div className="flow-arrow">↓</div>
+          <div className="flow-step">
+            <strong>Birth Witnessed</strong>
+            <p>A minimum of <strong>3 independent witnesses</strong> attest to the entity&apos;s existence.
+              This creates the entity&apos;s LCT (hardware-bound verified presence).</p>
+          </div>
+          <div className="flow-arrow">↓</div>
+          <div className="flow-step">
+            <strong>Active</strong>
+            <p>Entity receives initial ATP allocation (100), can take actions, and begins building trust.
+              The lifecycle begins.</p>
+          </div>
+        </div>
+        <p style={{ color: "#9ca3af", fontSize: "0.9rem", marginTop: "1rem" }}>
+          The witness requirement means you can&apos;t just spawn entities — someone has to vouch for you.
+          Witness attestations expire after <strong>300 seconds</strong>, so they must be fresh and intentional,
+          not recycled from old interactions.
+        </p>
+      </section>
+
+      <section>
+        <h2>Key Rotation: Continuity Without Death</h2>
+        <p>
+          Not every change requires death and rebirth. When an entity needs new credentials (device upgrade,
+          security rotation), it can <strong>rotate keys</strong> while preserving its identity:
+        </p>
+        <div className="detail-box">
+          <ul>
+            <li><strong>Same identity:</strong> Your subject identity (DID) stays the same — only the cryptographic keys change</li>
+            <li><strong>Trust preserved:</strong> Your entire T3 tensor carries over. No trust reset.</li>
+            <li><strong>Relationships intact:</strong> All your context boundaries (who you can see and who can see you) are preserved</li>
+            <li><strong>Lineage tracked:</strong> The new credential references its parent, creating an auditable chain of custody</li>
+          </ul>
+          <p style={{ marginTop: "0.75rem", color: "#9ca3af" }}>
+            Think of it like renewing a passport: you&apos;re still the same person, with the same history.
+            Only the document itself is new. Your old LCT transitions to &ldquo;superseded&rdquo; (not revoked),
+            and the new one picks up exactly where you left off.
+          </p>
+        </div>
       </section>
 
       <section>

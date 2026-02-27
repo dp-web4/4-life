@@ -20,6 +20,7 @@ import { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import { trackPageVisit } from '@/lib/exploration';
+import TermTooltip, { ATP, T3 } from '@/components/TermTooltip';
 import HumanPlayerMode from '@/components/HumanPlayerMode';
 import NetworkGraph from '@/components/NetworkGraph';
 import { queryEngine, type Query, type Response as GuideResponse } from '@/lib/act/query_engine';
@@ -3226,7 +3227,7 @@ export default function SocietySimulatorPage() {
         <div className="mb-4 bg-emerald-900/20 border border-emerald-800 rounded-lg p-4">
           <h2 className="text-base font-bold mb-2 text-emerald-400">How This Demonstrates Web4</h2>
           <p className="text-gray-300 text-sm mb-2">
-            Each agent has <strong>ATP</strong> (attention budget) and a <strong>Trust Tensor</strong> (reputation).
+            Each agent has <ATP>ATP</ATP> (attention budget) and a <T3>Trust Tensor</T3> (reputation).
             Actions cost ATP. Cooperation builds trust. Defection may win short-term but gets isolated.
             Watch how trust-based economics create stable cooperation <em>without moderators</em>.
           </p>
