@@ -391,7 +391,7 @@ export default function FederationEconomicsPage() {
         <div className="space-y-6">
           <div>
             <h3 className="text-lg font-semibold text-gray-300 mb-3">
-              V3 Components (5 Dimensions)
+              Service Capability Dimensions
             </h3>
             <ul className="space-y-2 text-gray-300">
               <li>
@@ -445,6 +445,18 @@ export default function FederationEconomicsPage() {
                 <span className="text-gray-500">(sliding window)</span>
               </div>
             </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-300 mb-3">
+              Transfer Mechanics
+            </h3>
+            <p className="text-gray-300 mb-3">
+              Every ATP transfer between entities burns <strong className="text-amber-400">5%</strong> of the amount.
+              This anti-farming mechanism prevents circular flows (A → B → C → A) from inflating balances.
+              In cross-federation transfers, the fee applies at each hop — making honest single-entity
+              value creation more profitable than multi-identity gaming.
+            </p>
           </div>
 
           <div>
