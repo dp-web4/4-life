@@ -855,10 +855,10 @@ Expected Failure       -0.01      0          0
 Unexpected Failure     -0.02      -0.01      -0.02
 Ethics Violation       -0.05      0          -0.10
 
-// Decay rates
-Training: -0.001/month without practice
-Temperament: +0.01/month recovery with good behavior
-Talent: No decay (represents inherent aptitude)
+// Decay half-lives (exponential, not linear)
+Talent:      365-day half-life (skills persist)
+Training:    180-day half-life (knowledge fades without practice)
+Temperament:  30-day half-life (recent behavior matters most)
 
 // Underlying formula (from spec test vectors):
 // base_delta = 0.02 × (quality - 0.5)
