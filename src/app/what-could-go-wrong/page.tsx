@@ -212,6 +212,15 @@ export default function WhatCouldGoWrongPage() {
                 transfers (the simplest farming tactic) lose money: 30 circular transfers destroy ~150
                 ATP (energy budget) through the 5% transfer fee. It&apos;s cheaper to just do good work.
               </p>
+              <p className="text-gray-300 text-sm mt-2">
+                <strong className="text-gray-100">Why coordinated attacks fail:</strong> Detection
+                probability follows P = 1 − (1−p)<sup>N</sup> where N = conspirators. With 3
+                witnesses per interaction (60% base detection), a solo attacker has a 40% chance of
+                going undetected. Two conspirators? Only 16% undetected. Three or more? Under 7%.
+                Meanwhile, the gain per conspirator <em>shrinks</em> as N grows (split the
+                spoils). The math: <strong className="text-gray-100">coalitions become unprofitable
+                at 2&ndash;3 members</strong> at current stake levels.
+              </p>
             </div>
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
               <strong>Honest assessment:</strong> Web4 raises the floor, not the ceiling. Casual
@@ -288,6 +297,17 @@ export default function WhatCouldGoWrongPage() {
               it harder to maintain a corrupt local network when external validators can
               flag inconsistencies.
             </p>
+            <div className="bg-gray-800/60 border border-gray-700/50 rounded-lg p-4 my-3">
+              <p className="text-gray-300 text-sm">
+                <strong className="text-gray-100">Game theory check:</strong> Web4&apos;s adversarial
+                simulations tested four attacker profiles — from low-skill opportunists (200 ATP budget)
+                to nation-state actors (5,000 ATP, 5 coordinated agents). Key finding: when the stake
+                for misbehavior exceeds 2&times; the expected gain, <strong className="text-gray-100">cooperation
+                becomes the Nash-dominant strategy</strong>. At current parameters (200 ATP stakes + 3
+                witnesses), rational, self-interested actors will cooperate rather than attack. Irrational
+                actors (ideological saboteurs) can still attack but face consistent losses.
+              </p>
+            </div>
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
               <strong>Honest assessment:</strong> Witness governance is one of the hardest unsolved
               problems. &ldquo;Who watches the watchmen?&rdquo; doesn&apos;t have a clean answer.

@@ -393,10 +393,85 @@ export default function ThreatModelPage() {
         </div>
       </section>
 
+      {/* Adversary Profiles */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">
+          Who Would Attack This?
+        </h2>
+        <p className="text-gray-400 mb-8">
+          Abstract threats become concrete when you model the adversary. Web4&apos;s red team simulations
+          test against four profiles with different budgets, skills, and motivations.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-xl">🧒</span>
+              <h3 className="text-lg font-semibold text-gray-200">Script Kiddie</h3>
+            </div>
+            <div className="text-sm text-gray-400 space-y-1 mb-3">
+              <p>Budget: <span className="text-gray-300">200 ATP</span> &bull; Skill: <span className="text-gray-300">Low (30%)</span> &bull; Stealth: <span className="text-gray-300">10%</span></p>
+              <p>Tactics: Known exploits, simple identity spoofing, trust oscillation</p>
+            </div>
+            <div className="p-2 bg-green-900/20 border border-green-800/30 rounded text-xs text-green-300">
+              <strong>Result:</strong> Consistently blocked. Low-skill attacks fail against basic LCT validation and rate limits.
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-xl">🕵️</span>
+              <h3 className="text-lg font-semibold text-gray-200">Insider Threat</h3>
+            </div>
+            <div className="text-sm text-gray-400 space-y-1 mb-3">
+              <p>Budget: <span className="text-gray-300">500 ATP</span> &bull; Skill: <span className="text-gray-300">High (70%)</span> &bull; Stealth: <span className="text-gray-300">60%</span></p>
+              <p>Tactics: Reputation laundering, quality manipulation, trust bridge inflation</p>
+            </div>
+            <div className="p-2 bg-yellow-900/20 border border-yellow-800/30 rounded text-xs text-yellow-300">
+              <strong>Result:</strong> Detected within 5&ndash;10 rounds. Adapts after first detection but multi-party quality checks eventually catch it.
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-xl">🏛️</span>
+              <h3 className="text-lg font-semibold text-gray-200">Nation-State Actor</h3>
+            </div>
+            <div className="text-sm text-gray-400 space-y-1 mb-3">
+              <p>Budget: <span className="text-gray-300">5,000 ATP, 5 agents</span> &bull; Skill: <span className="text-gray-300">Expert (95%)</span> &bull; Stealth: <span className="text-gray-300">80%</span></p>
+              <p>Tactics: Coordinated cascade attacks, lock starvation, platform-level Sybils</p>
+            </div>
+            <div className="p-2 bg-red-900/20 border border-red-800/30 rounded text-xs text-red-300">
+              <strong>Result:</strong> Can cause damage before detection. Multi-layer defenses limit blast radius but don&apos;t prevent all attacks. The hardest adversary.
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-xl">🤝</span>
+              <h3 className="text-lg font-semibold text-gray-200">Colluding Ring</h3>
+            </div>
+            <div className="text-sm text-gray-400 space-y-1 mb-3">
+              <p>Budget: <span className="text-gray-300">2,000 ATP, 10 agents</span> &bull; Skill: <span className="text-gray-300">Moderate (60%)</span> &bull; Stealth: <span className="text-gray-300">40%</span></p>
+              <p>Tactics: Mutual validation, reputation laundering, quality inflation rings</p>
+            </div>
+            <div className="p-2 bg-yellow-900/20 border border-yellow-800/30 rounded text-xs text-yellow-300">
+              <strong>Result:</strong> Shared hardware creates shared fate. Coalition detection probability hits 93%+ at 3 members. Unprofitable at current stake levels.
+            </div>
+          </div>
+        </div>
+
+        <p className="text-gray-500 text-sm mt-4">
+          These profiles are tested in the web4 red team simulator with 14 attack vector classes
+          and 126+ attack simulations. The key insight: <strong className="text-gray-300">security
+          isn&apos;t a binary</strong> — different adversaries hit different limits.
+        </p>
+      </section>
+
       {/* What We Know vs Don't Know */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
-          What We Know vs What We Don't Know
+          What We Know vs What We Don&apos;t Know
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
