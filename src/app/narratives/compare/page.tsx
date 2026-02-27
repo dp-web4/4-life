@@ -13,6 +13,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import RelatedConcepts from '@/components/RelatedConcepts';
 import NarrativeTimeline from '@/components/NarrativeTimeline';
 import { EventDetector, type LifeRecord } from '@/lib/narratives/event_detector';
 
@@ -376,6 +377,7 @@ export default function CompareNarrativesPage() {
             &larr; All Narratives
           </Link>
         </div>
+        <RelatedConcepts currentPath="/narratives/compare" />
       </div>
     </div>
   );

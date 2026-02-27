@@ -105,7 +105,7 @@
     },
     "advanced": {
       "start": "/threat-model",
-      "then": ["/coherence-index", "/epistemic-proprioception", "/challenge-set"],
+      "then": ["/coherence-index", "/patterns", "/challenge-set"],
       "time": "2-3 hours"
     },
     "researcher": {

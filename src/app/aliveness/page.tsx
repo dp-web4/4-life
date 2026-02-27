@@ -891,7 +891,7 @@ export default function AlivenessExplainer() {
         <h2>Not Just Alive or Dead</h2>
         <p>
           Aliveness isn&apos;t a binary switch. Societies (and entities within them) have
-          <strong> metabolic states</strong> — like a body that can be awake, resting, or dormant.
+          <strong> energy states</strong> — like a body that can be awake, resting, or dormant.
           The web4 spec defines concrete triggers for each transition:
         </p>
         <div className="concept-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>

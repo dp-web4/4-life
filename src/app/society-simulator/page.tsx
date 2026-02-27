@@ -19,6 +19,7 @@
 import { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
+import RelatedConcepts from '@/components/RelatedConcepts';
 import { trackPageVisit } from '@/lib/exploration';
 import TermTooltip, { ATP, T3 } from '@/components/TermTooltip';
 import HumanPlayerMode from '@/components/HumanPlayerMode';
@@ -3804,6 +3805,7 @@ export default function SocietySimulatorPage() {
           </div>
         </div>
 
+        <RelatedConcepts currentPath="/society-simulator" />
         <ExplorerNav currentPath="/society-simulator" />
 
         {/* AI Guide Chat Panel */}
