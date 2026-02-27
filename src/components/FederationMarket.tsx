@@ -206,6 +206,7 @@ export default function FederationMarket({ autoPlay = false }: FederationMarketP
         <div className="flex-1">
           <input
             type="range"
+            aria-label="Jump to federation market turn"
             min={0}
             max={simulation.snapshots.length - 1}
             value={currentTick}

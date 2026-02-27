@@ -267,6 +267,7 @@ export default function TrustNetworkVisualization({ data }: { data: SimulationDa
         <div className="flex items-center gap-3">
           <button
             onClick={() => setPlaying(!playing)}
+            aria-label={playing ? "Pause network animation" : "Play network animation"}
             className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded font-medium transition-colors"
           >
             {playing ? '⏸️ Pause' : '▶️ Play'}
@@ -274,6 +275,7 @@ export default function TrustNetworkVisualization({ data }: { data: SimulationDa
 
           <input
             type="range"
+            aria-label="Jump to trust network snapshot"
             min="0"
             max={data.snapshots.length - 1}
             value={currentSnapshotIndex}
