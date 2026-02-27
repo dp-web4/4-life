@@ -114,7 +114,7 @@ export default function Web4ExplainerPage() {
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
           In 4-Life, nearly every game action (membership, treasury, audits,
           cross-society policies) is encoded as an R6 envelope before being
-          written to a microblock.
+          written to the society&apos;s tamper-evident audit chain.
         </p>
       </section>
 
