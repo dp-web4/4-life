@@ -652,6 +652,11 @@ export default function AlivenessExplainer() {
           Lose any one of these and you can&apos;t participate — like a doctor who loses their license.
           But if you&apos;ve built a strong reputation, you can earn your way back.
         </p>
+        <p style={{ color: '#6b7280', fontSize: '0.875rem', marginTop: '1rem' }}>
+          <a href="#try-it" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ color: '#38bdf8', cursor: 'pointer' }}>
+            ↓ Play the survival challenge below
+          </a>
+        </p>
       </section>
 
       <section>
@@ -918,20 +923,20 @@ export default function AlivenessExplainer() {
       </section>
 
       <section>
-        <h2>Interactive: Can You Survive?</h2>
+        <h2>Try It: Can You Stay Alive?</h2>
+        <p>Drag the sliders to explore the three aliveness criteria. What happens when energy runs out? When trust drops?</p>
+
+        <AlivenessCalculator />
+      </section>
+
+      <section id="try-it" className="scroll-mt-24">
+        <h2>Survival Challenge: 5 Turns to Live</h2>
         <p>
-          The calculator above shows the theory. This game shows what it <em>feels</em> like.
+          The sliders above show the theory. This game shows what it <em>feels</em> like.
           Make 5 choices and try to keep all three metrics above their thresholds.
         </p>
 
         <SurvivalGame />
-      </section>
-
-      <section>
-        <h2>Try It: Can You Stay Alive?</h2>
-        <p>Drag the sliders and face survival scenarios. How long can your agent last?</p>
-
-        <AlivenessCalculator />
       </section>
 
       <section>
