@@ -458,6 +458,7 @@ export default function CoherenceDomainVisualizer({ height = 500 }: CoherenceDom
                 </div>
                 <input
                   type="range"
+                  aria-label={`${detailDomain.name} domain value`}
                   min={0}
                   max={100}
                   value={(domainValues[detailDomain.id] ?? 0.5) * 100}
