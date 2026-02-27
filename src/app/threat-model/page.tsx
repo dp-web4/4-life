@@ -371,21 +371,24 @@ export default function ThreatModelPage() {
 
               <div>
                 <h4 className="text-lg font-semibold text-gray-300 mb-2">
-                  Missing Mechanisms
+                  Designed Mechanisms (Not Yet Deployed)
                 </h4>
                 <ul className="list-disc list-inside space-y-1 text-gray-400 ml-4">
-                  <li>Dispute resolution protocols</li>
-                  <li>Evidence presentation for contested evaluations</li>
-                  <li>Forgiveness pathways after trust loss</li>
-                  <li>Emergency overrides for critical errors</li>
+                  <li><strong>Multi-tier SAL appeals:</strong> File → Review → Evidence → Hearing → Verdict → Enforce — structured stages with time windows</li>
+                  <li><strong>Witness panel adjudication:</strong> Independent witnesses (not the original penalizer) evaluate the appeal</li>
+                  <li><strong>Evidence framework:</strong> 7 evidence types — witness attestations, transaction logs, behavioral records, context explanations, third-party testimony</li>
+                  <li><strong>T3/V3 restoration:</strong> Full or partial trust reversal with audit trail</li>
+                  <li><strong>Escalation path:</strong> Society → federation level for contested outcomes</li>
+                  <li><strong>Anti-gaming:</strong> Appeal costs ATP, repeat frivolous appeals incur cooldowns</li>
                 </ul>
               </div>
 
-              <div className="p-4 bg-red-900/20 border border-red-800/30 rounded">
-                <p className="text-red-300 text-sm">
-                  <strong>Assessment:</strong> This is a **major open problem**. Current Web4 spec
-                  assumes perfect measurement. Production systems need robust error handling and appeals.
-                  **Human oversight may be unavoidable for edge cases.**
+              <div className="p-4 bg-yellow-900/20 border border-yellow-800/30 rounded">
+                <p className="text-yellow-300 text-sm">
+                  <strong>Assessment:</strong> The appeals mechanism is formally specified (109 integration checks), but
+                  <strong> hasn&apos;t been tested with real humans</strong>. The hard question isn&apos;t the architecture —
+                  it&apos;s whether incentives prevent gaming in practice. Human oversight may still be
+                  needed for edge cases.
                 </p>
               </div>
             </div>
@@ -485,6 +488,10 @@ export default function ThreatModelPage() {
               <li>• Quality contributors accumulate ATP over time</li>
               <li>• Multi-dimensional trust is harder to game than single scores</li>
               <li>• Coherence checks detect basic spoofing attempts</li>
+              <li>• Coalition detection hits 93%+ probability at 3+ members (red team tested)</li>
+              <li>• Sybil resistance has formal lower bounds: 4.6× PoW cost multiplier</li>
+              <li>• Script kiddie and insider threats consistently detected (red team profiles)</li>
+              <li>• Cooperation is Nash-dominant at current parameters (200 ATP stakes + 3 witnesses)</li>
             </ul>
           </div>
 
@@ -493,12 +500,13 @@ export default function ThreatModelPage() {
               ❌ Unknown (Need Real-World Data)
             </h3>
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li>• Actual detection times for quality inflation</li>
-              <li>• Maximum size of undetected collusion networks</li>
-              <li>• False positive rates in production</li>
-              <li>• Effectiveness against state-level adversaries</li>
-              <li>• Long-term Goodharting resistance</li>
-              <li>• Recovery pathways from trust loss</li>
+              <li>• Actual detection times for quality inflation in adversarial environments</li>
+              <li>• Long-con trust building attacks (100+ cycle patient adversaries)</li>
+              <li>• False positive rates in production (not simulation)</li>
+              <li>• Nation-state attacks beyond red team scope (cascading infrastructure attacks)</li>
+              <li>• Long-term Goodharting resistance after adversaries study the metrics</li>
+              <li>• Appeals mechanism effectiveness with real human disputes</li>
+              <li>• ATP market dynamics under economic stress (hoarding, liquidity crises)</li>
             </ul>
           </div>
         </div>
