@@ -467,7 +467,7 @@ export default function ThreatModelPage() {
         <p className="text-gray-500 text-sm mt-4">
           These profiles are tested in the web4 red team simulator with 32 attack vector classes
           across 6 categories (identity, trust, economic, coherence, protocol negotiation, lifecycle state machine)
-          and 200+ attack simulations. The key insight: <strong className="text-gray-300">security
+          and 400+ attack simulations. The key insight: <strong className="text-gray-300">security
           isn&apos;t a binary</strong> — different adversaries hit different limits.
         </p>
       </section>
