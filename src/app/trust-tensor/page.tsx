@@ -156,6 +156,11 @@ export default function TrustTensorPage() {
           with less raw talent. You wouldn&apos;t trust either of them to fix your car. T3 makes these
           distinctions explicit, measurable, and role-specific.
         </p>
+        <p className="text-sm text-gray-500 mt-4">
+          <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 cursor-pointer">
+            ↓ Try the trust tensor simulator below
+          </a>
+        </p>
       </section>
 
       {/* The Problem */}
@@ -251,7 +256,7 @@ export default function TrustTensorPage() {
       </section>
 
       {/* Interactive Simulator */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="try-it" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           Try It: Trust Tensor Simulator
         </h2>

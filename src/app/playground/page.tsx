@@ -484,7 +484,78 @@ export default function PlaygroundPage() {
         </details>
       </section>
 
-      {/* Call to Action */}
+      {/* Bridge to learning — the visitor journey continues here */}
+      <section>
+        <div style={{
+          padding: "1.5rem",
+          background: "linear-gradient(135deg, #1a2332 0%, #1f2937 100%)",
+          borderRadius: "8px",
+          border: "1px solid #374151",
+        }}>
+          <h2 style={{ marginBottom: "0.5rem" }}>Curious Why It Works?</h2>
+          <p style={{ color: "#d1d5db", marginBottom: "1rem" }}>
+            You&apos;ve seen agents live, die, and carry forward karma. Now understand the mechanics behind the simulation.
+          </p>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+            gap: "0.75rem",
+            marginBottom: "1rem",
+          }}>
+            <a href="/lct-explainer" style={{
+              padding: "0.75rem",
+              backgroundColor: "#111827",
+              borderRadius: "6px",
+              borderLeft: "3px solid #38bdf8",
+              textDecoration: "none",
+            }}>
+              <div style={{ fontSize: "0.85rem", color: "#f3f4f6", fontWeight: 600 }}>Verified Presence</div>
+              <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>How agents prove they&apos;re real</div>
+            </a>
+            <a href="/atp-economics" style={{
+              padding: "0.75rem",
+              backgroundColor: "#111827",
+              borderRadius: "6px",
+              borderLeft: "3px solid #10b981",
+              textDecoration: "none",
+            }}>
+              <div style={{ fontSize: "0.85rem", color: "#f3f4f6", fontWeight: 600 }}>ATP Economics</div>
+              <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>Why spam dies and quality survives</div>
+            </a>
+            <a href="/trust-tensor" style={{
+              padding: "0.75rem",
+              backgroundColor: "#111827",
+              borderRadius: "6px",
+              borderLeft: "3px solid #a78bfa",
+              textDecoration: "none",
+            }}>
+              <div style={{ fontSize: "0.85rem", color: "#f3f4f6", fontWeight: 600 }}>Trust Tensor</div>
+              <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>What trust actually measures</div>
+            </a>
+            <a href="/aliveness" style={{
+              padding: "0.75rem",
+              backgroundColor: "#111827",
+              borderRadius: "6px",
+              borderLeft: "3px solid #f59e0b",
+              textDecoration: "none",
+            }}>
+              <div style={{ fontSize: "0.85rem", color: "#f3f4f6", fontWeight: 600 }}>Aliveness</div>
+              <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>The rules of life and death</div>
+            </a>
+          </div>
+          <div style={{ textAlign: "center" }}>
+            <a href="/learn" style={{
+              color: "#f59e0b",
+              fontSize: "0.95rem",
+              fontWeight: 600,
+            }}>
+              See the full learning path →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* More experiments */}
       <section>
         <div
           style={{
@@ -494,11 +565,7 @@ export default function PlaygroundPage() {
             textAlign: "center",
           }}
         >
-          <h2 style={{ marginBottom: "0.75rem" }}>Ready to Experiment?</h2>
-          <p style={{ color: "#9ca3af", marginBottom: "1rem" }}>
-            Start with the defaults and click "Run Simulation", or try a preset like "Hard Mode" to
-            see how agents struggle with scarce resources.
-          </p>
+          <h2 style={{ marginBottom: "0.75rem" }}>Want More Experiments?</h2>
           <p style={{ color: "#9ca3af", marginBottom: "1rem" }}>
             The best way to understand Web4 is to <strong>play with it</strong>. Break things.
             Discover edge cases. Find the tipping points.

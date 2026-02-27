@@ -109,6 +109,11 @@ export default function ATPEconomicsPage() {
           Your budget (called ATP) stays above zero as long as you contribute value.
           Run out? Your agent dies. Contribute? You thrive.
         </p>
+        <p className="text-sm text-gray-500 mt-4">
+          <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 cursor-pointer">
+            ↓ Try the ATP simulator below
+          </a>
+        </p>
       </section>
 
       {/* The Problem */}
@@ -184,7 +189,7 @@ export default function ATPEconomicsPage() {
       </section>
 
       {/* Interactive Simulation */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="try-it" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           Try It: Attention Economics Simulator
         </h2>

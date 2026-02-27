@@ -179,9 +179,14 @@ export default function CoherenceIndexPage() {
             Think of CI as a <strong>behavioral consistency score</strong> &mdash; like a credit check
             that asks not just &ldquo;who are you?&rdquo; but &ldquo;does your behavior make physical sense?&rdquo;
           </p>
-          <p className="text-base text-gray-400 leading-relaxed mb-6">
+          <p className="text-base text-gray-400 leading-relaxed mb-4">
             CI measures four dimensions of consistency: where you are, what you can do,
             when you act, and who you interact with. One inconsistency drags the whole score down.
+          </p>
+          <p className="text-sm text-gray-500 mb-6">
+            <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-orange-400 hover:text-orange-300 cursor-pointer">
+              ↓ Try the coherence simulator below
+            </a>
           </p>
 
           <div className="bg-gradient-to-br from-orange-950/30 to-orange-900/20 border border-orange-800/30 rounded-lg p-6">
@@ -464,7 +469,7 @@ export default function CoherenceIndexPage() {
         </section>
 
         {/* Interactive Simulator Section */}
-        <section className="max-w-4xl mx-auto mb-16">
+        <section id="try-it" className="max-w-4xl mx-auto mb-16 scroll-mt-24">
           <h2 className="text-3xl font-bold mb-6 text-gray-100">
             Try It: Can You Stay Coherent?
           </h2>

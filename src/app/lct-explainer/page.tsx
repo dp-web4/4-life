@@ -164,6 +164,11 @@ export default function LCTExplainerPage() {
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Web4&apos;s verified presence layer — hardware-bound, witnessed, and resistant to faking
           </p>
+          <p className="text-sm text-gray-500 mt-4">
+            <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 cursor-pointer">
+              ↓ Try the interactive security audit below
+            </a>
+          </p>
         </div>
 
         {/* The Three Models */}
@@ -329,7 +334,7 @@ export default function LCTExplainerPage() {
           </details>
 
           {/* Interactive Component Explorer */}
-          <div>
+          <div id="try-it" className="scroll-mt-24">
             <h3 className="text-xl font-bold mb-2 text-gray-100">Try It: Click Components &amp; Attack Scenarios</h3>
             <p className="text-sm text-gray-400 mb-4">Explore how each LCT component works, then test it against real attack vectors. Your Security Audit unlocks as you explore.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
