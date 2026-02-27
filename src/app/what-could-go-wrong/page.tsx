@@ -208,9 +208,9 @@ export default function WhatCouldGoWrongPage() {
               <p className="text-gray-300 text-sm mb-2">
                 <strong className="text-gray-100">The numbers:</strong> Web4 simulations show that honest
                 strategies yield ROI of ~0.93 while Sybil strategies yield ~0.90. The margin is small — but
-                it&apos;s consistently in favor of honest behavior. More importantly, circular ATP transfers
-                (the simplest farming tactic) lose money: 30 circular transfers destroy ~150 ATP through
-                the 5% transfer fee. It&apos;s cheaper to just do good work.
+                it&apos;s consistently in favor of honest behavior. More importantly, circular energy
+                transfers (the simplest farming tactic) lose money: 30 circular transfers destroy ~150
+                ATP (energy budget) through the 5% transfer fee. It&apos;s cheaper to just do good work.
               </p>
             </div>
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
