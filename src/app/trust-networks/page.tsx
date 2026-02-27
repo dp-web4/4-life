@@ -185,48 +185,120 @@ export default function TrustNetworksPage() {
           </div>
         </div>
 
+        {/* What Emerges — narrative bridge between visualization and meaning */}
+        <div className="mb-8 bg-gradient-to-br from-blue-950/30 to-gray-800 border border-blue-800/40 rounded-lg p-6">
+          <h2 className="text-2xl font-bold mb-4">What Emerges</h2>
+          <p className="text-gray-300 leading-relaxed mb-4">
+            Every time you run this simulation, the same patterns appear: cooperators find each other
+            and form clusters, free-riders get isolated as trust decays, and learners gradually migrate
+            toward the cooperative cluster. <strong className="text-blue-300">No one designs this structure</strong> — it
+            emerges from individual behavior, exactly as it would in a real Web4 society.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div className="bg-gray-900/60 rounded-lg p-4 border border-gray-700/50">
+              <div className="text-green-400 font-semibold mb-1">Cooperators Cluster</div>
+              <p className="text-gray-400 text-sm">
+                Agents who consistently help each other form mutual trust above 0.5. These clusters
+                become the backbone of the network — the &ldquo;trusted core.&rdquo;
+              </p>
+            </div>
+            <div className="bg-gray-900/60 rounded-lg p-4 border border-gray-700/50">
+              <div className="text-red-400 font-semibold mb-1">Free-Riders Isolated</div>
+              <p className="text-gray-400 text-sm">
+                Agents who take without giving see their trust edges decay and break. They end up
+                on the periphery — not banned, just untrusted. Isolation is the consequence.
+              </p>
+            </div>
+            <div className="bg-gray-900/60 rounded-lg p-4 border border-gray-700/50">
+              <div className="text-blue-400 font-semibold mb-1">Learners Adapt</div>
+              <p className="text-gray-400 text-sm">
+                Agents that adjust their behavior based on outcomes gradually build trust. They
+                start outside the cluster and work their way in — the network rewards growth.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Network Properties — real numbers from web4 spec */}
+        <div className="mb-8 bg-gray-800 border border-gray-700 rounded-lg p-6">
+          <h2 className="text-2xl font-bold mb-4">Network Properties</h2>
+          <p className="text-gray-300 mb-4">
+            Web4 trust networks share properties with real-world social networks — but with measurable
+            guarantees:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="bg-gray-900/60 rounded-lg p-4 border-l-3 border-l-sky-500">
+              <div className="text-sky-400 font-semibold mb-1">Small-World</div>
+              <p className="text-gray-400 text-sm">
+                Average path length grows logarithmically. In a 100-agent network, any two agents
+                are typically 7-8 hops apart. Trust still reaches across the network.
+              </p>
+            </div>
+            <div className="bg-gray-900/60 rounded-lg p-4 border-l-3 border-l-green-500">
+              <div className="text-green-400 font-semibold mb-1">Resilient</div>
+              <p className="text-gray-400 text-sm">
+                Remove the top 20% most-trusted agents? Average trust drops only ~7.5%. The network
+                doesn&apos;t depend on any single person — it survives targeted attacks.
+              </p>
+            </div>
+            <div className="bg-gray-900/60 rounded-lg p-4 border-l-3 border-l-amber-500">
+              <div className="text-amber-400 font-semibold mb-1">Trust Decays with Distance</div>
+              <p className="text-gray-400 text-sm">
+                Trust propagates through connections but fades ~30% per hop (MRH decay). Your
+                friend&apos;s trust in someone carries weight — their friend&apos;s friend&apos;s trust, much less.
+              </p>
+            </div>
+            <div className="bg-gray-900/60 rounded-lg p-4 border-l-3 border-l-purple-500">
+              <div className="text-purple-400 font-semibold mb-1">Natural Tiers</div>
+              <p className="text-gray-400 text-sm">
+                3-4 trust tiers emerge naturally: high-trust hubs, solid contributors, peripheral
+                participants, and untrusted isolates. No one assigns these tiers — behavior creates them.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Why This Matters */}
         <div className="mb-8 bg-gray-800 border border-gray-700 rounded-lg p-6">
-          <h2 className="text-2xl font-bold mb-4">🌟 Why This Matters</h2>
+          <h2 className="text-2xl font-bold mb-4">Why This Matters</h2>
 
           <div className="space-y-4">
             <div>
               <h3 className="text-lg font-bold text-blue-400 mb-2">
-                1. Society Without Central Authority
+                Society Without Central Authority
               </h3>
               <p className="text-gray-300">
-                No one decides who's trustworthy. No admin bans bad actors. The network
+                No one decides who&apos;s trustworthy. No admin bans bad actors. The network
                 self-organizes around behavior. Free-riders get isolated naturally.
               </p>
             </div>
 
             <div>
               <h3 className="text-lg font-bold text-blue-400 mb-2">
-                2. Trust is Multi-Dimensional Context
+                Trust is Multi-Dimensional
               </h3>
               <p className="text-gray-300">
-                This visualization simplifies trust to a single number for clarity, but Web4's
+                This visualization simplifies trust to a single number for clarity, but Web4&apos;s
                 Trust Tensor (T3) tracks Talent, Training, and Temperament per role. Different
-                roles weight different dimensions.
+                roles weight different dimensions.{' '}
+                <Link href="/trust-tensor" className="text-sky-400 hover:text-sky-300">Learn about T3 →</Link>
               </p>
             </div>
 
             <div>
               <h3 className="text-lg font-bold text-blue-400 mb-2">
-                3. Reputation Cannot Be Faked Long-Term
+                Reputation Cannot Be Faked Long-Term
               </h3>
               <p className="text-gray-300">
-                Traditional reputation: Create new account = fresh start.
-                <br />
-                Web4: Identity bound to hardware, behavior tracked, karma carries forward.
-                <br />
-                Bad actors can't escape consequences by switching accounts.
+                Traditional reputation: create a new account = fresh start.
+                Web4: identity bound to hardware, behavior tracked, karma carries forward.
+                Bad actors can&apos;t escape consequences by switching accounts.
               </p>
             </div>
 
             <div>
               <h3 className="text-lg font-bold text-blue-400 mb-2">
-                4. Coalitions Enable Complex Coordination
+                Coalitions Enable Coordination
               </h3>
               <p className="text-gray-300">
                 When agents mutually trust, they can coordinate on bigger goals: resource pooling,
@@ -311,10 +383,10 @@ for each agent A:
           </Link>
 
           <Link
-            href="/lab-console"
+            href="/society-simulator"
             className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors"
           >
-            Run Your Own Simulation →
+            Run Your Own Society →
           </Link>
 
           <Link
