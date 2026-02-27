@@ -215,10 +215,11 @@ export default function GlossaryPage() {
             </p>
             <p className="text-gray-400 text-sm mb-3">
               <strong>How filtering works:</strong> You trust Alice (depth 1). Alice trusts Bob (depth 2).
-              Bob trusts Carol (depth 3). If your MRH is set to depth 2, you can see Alice&apos;s and
-              Bob&apos;s messages — but Carol&apos;s are outside your horizon. A spammer with zero trust
-              connections can&apos;t reach <em>anyone</em>. This replaces centralized content moderation
-              with a structural property: reach requires earned relationships.
+              Bob trusts Carol (depth 3). Trust decays 30% per hop (canonical factor: 0.7), so
+              direct trust = 0.7, two hops = 0.49, three hops = 0.34, and beyond three hops trust
+              effectively reaches zero. A spammer with zero trust connections can&apos;t reach{" "}
+              <em>anyone</em>. This replaces centralized content moderation with a structural
+              property: reach requires earned relationships.
             </p>
             <div className="flex gap-3 text-sm">
               <Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">
