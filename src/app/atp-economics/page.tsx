@@ -771,8 +771,8 @@ export default function ATPEconomicsPage() {
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="p-3 font-semibold">Transferability</td>
-                      <td className="p-3">Fully transferable</td>
-                      <td className="p-3">Non-transferable (earned)</td>
+                      <td className="p-3">Fully transferable, zero friction</td>
+                      <td className="p-3">Transferable, but 5% burned per transfer</td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="p-3 font-semibold">Accumulation</td>
@@ -795,12 +795,14 @@ export default function ATPEconomicsPage() {
             </div>
 
             <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-4 mb-6">
-              <h4 className="font-semibold text-sky-400 mb-2">Why can't you transfer ATP to someone else?</h4>
+              <h4 className="font-semibold text-sky-400 mb-2">Why does every ATP transfer destroy 5%?</h4>
               <p className="text-gray-300 text-sm leading-relaxed">
-                If ATP were transferable, wealthy actors could buy unlimited action capacity — exactly like
-                the current internet where money buys attention. Non-transferable ATP means everyone must
-                <em> earn</em> their own capacity through valuable contributions. You can't buy your way to
-                influence; you have to contribute your way there. This is the key difference from cryptocurrency.
+                ATP can be transferred, but every transfer burns 5% of the amount. This
+                prevents circular farming (A → B → C → A loops bleed resources). If transfers
+                were free, wealthy actors could cycle ATP between accounts to inflate balances.
+                The burn fee means the only profitable strategy is genuine value creation —
+                you earn more by contributing than by moving ATP around. Simulations confirm:
+                one honest identity outearns five fake identities splitting the same budget.
               </p>
             </div>
 
@@ -811,8 +813,8 @@ export default function ATPEconomicsPage() {
               <p className="leading-relaxed mb-3">
                 ATP/ADP flows are tracked in the{" "}
                 <strong>context boundaries (MRH)</strong>—the trust-based
-                graph defining who you can see and interact with—and recorded on each
-                society's microchain.
+                graph defining who you can see and interact with—and recorded in each
+                society's tamper-evident audit chain.
               </p>
               <pre className="bg-gray-950 border border-gray-700 rounded-lg p-4 overflow-x-auto text-xs text-gray-400 font-mono">
                 {`// Example ATP flow (pseudocode)
@@ -820,7 +822,7 @@ agent.atp = 100  // Initial budget
 agent.takeAction("post", cost=15)
   → agent.atp = 85
   → create ADP(action="post", cost=15)
-  → record on microchain
+  → record in audit chain
 
 community.validate(agent.post)
   → agent.atp += 25 (reward)

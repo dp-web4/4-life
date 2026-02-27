@@ -50,9 +50,9 @@ export default function Web4ExplainerPage() {
           event chains), all filtered through trust relationships.
         </p>
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
-          In 4-Life, MRH shows up as a per-society microchain plus an in-memory
-          MRH/LCT context graph. Every meaningful event becomes both a chain
-          entry and a graph edge.
+          In 4-Life, MRH shows up as a per-society tamper-evident audit chain
+          plus an in-memory MRH/LCT context graph. Every meaningful event becomes
+          both a chain entry and a graph edge.
         </p>
       </section>
 
