@@ -821,6 +821,54 @@ export default function GlossaryPage() {
         </div>
       </section>
 
+      {/* Governance */}
+      <section className="max-w-4xl mx-auto mt-16" data-glossary-section>
+        <h2 className="text-3xl font-bold mb-8 text-gray-100">Governance</h2>
+        <p className="text-gray-400 mb-6">
+          How societies make and enforce rules. Web4 governance operates on a key principle:
+          alignment without compliance is acceptable; compliance without alignment never is.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-xl font-semibold text-sky-400 mb-3">SAL (Society-Authority-Law)</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              The governance framework. A <strong>Society</strong> defines its purpose.
+              <strong> Authorities</strong> are roles with specific powers (treasury, auditing, governance).
+              <strong> Laws</strong> are enforced rules with severity levels (critical, high, medium).
+              Laws can be triggered by events, schedules, conditions, thresholds, or consensus.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-xl font-semibold text-green-400 mb-3">Appeals Mechanism</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Multi-tier dispute resolution: File → Review → Evidence → Hearing → Verdict → Enforce.
+              Filing an appeal costs ATP (prevents frivolous appeals). A panel of 3+ judges evaluates
+              evidence. Successful appeals restore T3 scores and reverse penalties. Designed but not yet
+              tested with real humans.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-xl font-semibold text-amber-400 mb-3">Law Oracle</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              The rules engine within a society. Evaluates actions against laws and produces verdicts:
+              Perfect (aligned + compliant), Aligned (spirit right, letter wrong — acceptable),
+              Warning (should comply), or Violation (misaligned — never acceptable).
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-xl font-semibold text-red-400 mb-3">Emergency Bypass</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              In crisis situations, compliance can be temporarily waived if alignment is maintained.
+              All overrides are logged and require post-hoc audit. The principle: it&apos;s better to break
+              the rules for the right reason than to follow them for the wrong one.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Why This Terminology? */}
       <section className="max-w-4xl mx-auto mt-16" data-glossary-section>
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
