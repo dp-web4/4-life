@@ -282,12 +282,13 @@ export default function FirstContactPage() {
                   <button
                     onClick={() => setPlaybackIndex(Math.max(0, playbackIndex - 1))}
                     disabled={playbackIndex === 0}
-                    className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     ← Prev
                   </button>
                   <button
                     onClick={handlePlayPause}
+                    aria-label={isPlaying ? "Pause simulation" : "Play simulation"}
                     className="px-6 py-2 bg-sky-600 rounded hover:bg-sky-700 font-semibold"
                   >
                     {isPlaying ? "⏸ Pause" : "▶ Play"}
@@ -295,7 +296,7 @@ export default function FirstContactPage() {
                   <button
                     onClick={() => setPlaybackIndex(Math.min(simulationSnapshots.length - 1, playbackIndex + 1))}
                     disabled={playbackIndex === simulationSnapshots.length - 1}
-                    className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     Next →
                   </button>
@@ -413,6 +414,7 @@ export default function FirstContactPage() {
               <div>
                 <input
                   type="range"
+                  aria-label="Jump to simulation event"
                   min="0"
                   max={simulationSnapshots.length - 1}
                   value={playbackIndex}
