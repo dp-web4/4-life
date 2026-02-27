@@ -18,6 +18,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 
 // ============================================================================
 // Types
@@ -550,6 +551,7 @@ export default function MetaCognitionFeedbackPage() {
           </Link>
         </div>
 
+        <ExplorerNav currentPath="/meta-cognition-feedback" />
         <RelatedConcepts currentPath="/meta-cognition-feedback" />
       </div>
     </div>

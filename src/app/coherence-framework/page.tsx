@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 import CoherenceDomainVisualizer from "@/components/CoherenceDomainVisualizer";
 import { trackPageVisit } from "@/lib/exploration";
 
@@ -984,6 +985,7 @@ export default function CoherenceFrameworkPage() {
             oscillation pattern prediction validation (P198.29), three-dimensional gating model complete.
           </p>
         </section>
+        <ExplorerNav currentPath="/coherence-framework" />
         <RelatedConcepts currentPath="/coherence-framework" />
       </div>
     </div>

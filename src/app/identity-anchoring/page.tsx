@@ -20,6 +20,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 
 // ============================================================================
 // Types
@@ -669,6 +670,7 @@ export default function IdentityAnchoringPage() {
           </Link>
         </div>
 
+        <ExplorerNav currentPath="/identity-anchoring" />
         <RelatedConcepts currentPath="/identity-anchoring" />
       </div>
     </div>

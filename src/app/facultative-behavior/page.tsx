@@ -19,6 +19,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 
 // ============================================================================
 // Types
@@ -471,6 +472,7 @@ export default function FacultativeBehaviorPage() {
           </Link>
         </div>
 
+        <ExplorerNav currentPath="/facultative-behavior" />
         <RelatedConcepts currentPath="/facultative-behavior" />
       </div>
     </div>

@@ -18,6 +18,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 
 // ============================================================================
 // Types
@@ -585,6 +586,7 @@ export default function ContextDependentBehaviorPage() {
           </Link>
         </div>
 
+        <ExplorerNav currentPath="/context-dependent-behavior" />
         <RelatedConcepts currentPath="/context-dependent-behavior" />
       </div>
     </div>

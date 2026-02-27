@@ -19,6 +19,7 @@ import Link from 'next/link';
 import ACTChat from '@/components/ACTChat';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 import type { SimulationResult } from '@/lib/types';
 import type { Moment } from '@/lib/moments/types';
 import { detectMoments, SIMULATION_SOURCES } from '@/lib/moments/detector';
@@ -301,6 +302,7 @@ function ACTExplorerContent() {
             beats static documentation for learning complex systems.
           </p>
         </div>
+        <ExplorerNav currentPath="/act-explorer" />
         <RelatedConcepts currentPath="/act-explorer" />
       </div>
     </div>

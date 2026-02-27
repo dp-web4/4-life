@@ -18,6 +18,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 
 // ============================================================================
 // Types
@@ -809,6 +810,7 @@ function evaluateGaming(gaming_rate: number, tier: CapacityTier): Assessment {
         </Link>
       </div>
 
+      <ExplorerNav currentPath="/capacity-thresholds" />
       <RelatedConcepts currentPath="/capacity-thresholds" />
     </>
   );

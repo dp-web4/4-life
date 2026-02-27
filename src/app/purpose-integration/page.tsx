@@ -16,6 +16,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 
 // ============================================================================
 // Types
@@ -1133,6 +1134,7 @@ export default function PurposeIntegrationPage() {
         </div>
       </section>
 
+      <ExplorerNav currentPath="/purpose-integration" />
       <RelatedConcepts currentPath="/purpose-integration" />
     </main>
   );

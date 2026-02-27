@@ -21,6 +21,7 @@ import { useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 import {
   SimulationEngine,
   SimConfig,
@@ -761,6 +762,7 @@ export default function SimulationSandboxPage() {
         </div>
       </div>
 
+      <ExplorerNav currentPath="/simulation-sandbox" />
       <div style={{ marginTop: '2rem' }}>
         <RelatedConcepts currentPath="/simulation-sandbox" />
       </div>
