@@ -26,7 +26,7 @@ export default function ThreatModelPage() {
         <div className="bg-gradient-to-br from-yellow-950/30 to-yellow-900/20 border border-yellow-800/30 rounded-xl p-6">
           <p className="text-yellow-300 leading-relaxed">
             ⚠️ <strong>Research Status:</strong> These mechanisms are experimental.
-            Many attack vectors remain unexplored. Detection times are theoretical.
+            32 attack vectors are modeled and defended; more remain unexplored. Detection times are theoretical.
             Economic parameters are calibrated through simulation, not real-world adversaries.
           </p>
         </div>
@@ -465,8 +465,9 @@ export default function ThreatModelPage() {
         </div>
 
         <p className="text-gray-500 text-sm mt-4">
-          These profiles are tested in the web4 red team simulator with 14 attack vector classes
-          and 126+ attack simulations. The key insight: <strong className="text-gray-300">security
+          These profiles are tested in the web4 red team simulator with 32 attack vector classes
+          across 6 categories (identity, trust, economic, coherence, protocol negotiation, lifecycle state machine)
+          and 200+ attack simulations. The key insight: <strong className="text-gray-300">security
           isn&apos;t a binary</strong> — different adversaries hit different limits.
         </p>
       </section>
@@ -492,6 +493,8 @@ export default function ThreatModelPage() {
               <li>• Sybil resistance has formal lower bounds: 4.6× PoW cost multiplier</li>
               <li>• Script kiddie and insider threats consistently detected (red team profiles)</li>
               <li>• Cooperation is Nash-dominant at current parameters (200 ATP stakes + 3 witnesses)</li>
+              <li>• ATP market conserves under stress (200 agents, 500 rounds, 5% transfer fee maintains stability)</li>
+              <li>• Sybil ROI is negative: honest identity outearns 5 fakes (transfer fee bleeds circular flows)</li>
             </ul>
           </div>
 
@@ -506,7 +509,7 @@ export default function ThreatModelPage() {
               <li>• Nation-state attacks beyond red team scope (cascading infrastructure attacks)</li>
               <li>• Long-term Goodharting resistance after adversaries study the metrics</li>
               <li>• Appeals mechanism effectiveness with real human disputes</li>
-              <li>• ATP market dynamics under economic stress (hoarding, liquidity crises)</li>
+              <li>• ATP market stress beyond simulation scope (real human hoarding, speculative behavior)</li>
             </ul>
           </div>
         </div>
