@@ -481,8 +481,8 @@ export default function KarmaJourneyPage() {
       </p>
       <p style={{ color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '700px', lineHeight: 1.6, fontSize: '0.85rem' }}>
         <strong style={{ color: 'var(--color-text-secondary)' }}>What the numbers mean:</strong>{' '}
-        <strong>Trust</strong> = your reputation (Talent + Training + Temperament, averaged).{' '}
-        <strong>ATP</strong> = your energy budget — every action costs ATP, run out and you die.{' '}
+        <strong><Link href="/trust-tensor" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>Trust</Link></strong> = your reputation (Talent + Training + Temperament, averaged).{' '}
+        <strong><Link href="/atp-economics" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>ATP</Link></strong> = your energy budget — every action costs ATP, run out and you die.{' '}
         <strong><Link href="/coherence-index" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>CI</Link></strong> = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;).{' '}
         When you die, your final trust determines your <strong>karma tier</strong> (Honored/Neutral/Constrained), which sets your starting conditions for the next life.{' '}
         Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
