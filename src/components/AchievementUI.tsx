@@ -300,6 +300,7 @@ export function AchievementGallery({ tracker, onClose }: AchievementGalleryProps
           </div>
           <button
             onClick={onClose}
+            aria-label="Close achievements"
             className="text-gray-400 hover:text-white text-2xl p-2"
           >
             ✕

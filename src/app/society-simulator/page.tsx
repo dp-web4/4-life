@@ -832,7 +832,7 @@ function ComparisonPanel({
     <div className="bg-gray-800/80 rounded-lg p-4 border border-purple-500/30 mb-6">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-bold text-white">📊 Scenario Comparison</h3>
-        <button onClick={onClose} className="text-gray-400 hover:text-white text-xl">×</button>
+        <button onClick={onClose} aria-label="Close comparison" className="text-gray-400 hover:text-white text-xl">×</button>
       </div>
 
       {/* Comparison Table */}
@@ -2977,7 +2977,7 @@ function ComparativeNarrativePanel({
             >
               📋 Export
             </button>
-            <button onClick={onClose} className="text-gray-400 hover:text-white text-2xl">×</button>
+            <button onClick={onClose} aria-label="Close detail panel" className="text-gray-400 hover:text-white text-2xl">×</button>
           </div>
         </div>
 
