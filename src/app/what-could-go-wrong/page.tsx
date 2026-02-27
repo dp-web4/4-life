@@ -185,8 +185,8 @@ export default function WhatCouldGoWrongPage() {
           </div>
           <div className="text-gray-300 leading-relaxed space-y-3">
             <p>
-              <strong className="text-gray-100">The risk:</strong> ATP is non-transferable, so you
-              can&apos;t buy reputation directly. But a well-funded organization could buy thousands
+              <strong className="text-gray-100">The risk:</strong> ATP transfers cost 5%, so buying
+              reputation at scale is expensive but not impossible. A well-funded organization could buy thousands
               of hardware devices, create thousands of identities, and slowly build legitimate-looking
               trust across all of them &mdash; a long-game Sybil attack.
             </p>
@@ -373,7 +373,7 @@ export default function WhatCouldGoWrongPage() {
           {/* Joint value creation */}
           <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>If ATP is non-transferable, how does collaboration work?</span>
+              <span>If ATP transfers cost 5%, how does collaboration work?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">

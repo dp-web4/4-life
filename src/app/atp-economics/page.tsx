@@ -166,10 +166,10 @@ export default function ATPEconomicsPage() {
             </p>
             <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-3 my-2">
               <p>
-                ✅ <strong className="text-sky-300">ATP is non-transferable</strong> — Your energy budget
-                reflects YOUR contributions, not someone else&apos;s. You can&apos;t buy a reputation; you
-                have to earn it. If ATP were tradeable, wealthy actors could buy unlimited
-                influence — exactly like today&apos;s internet.
+                ✅ <strong className="text-sky-300">ATP transfers cost 5%</strong> — Every transfer burns
+                a fraction. Your energy budget primarily reflects YOUR contributions, not
+                someone else&apos;s. You can share ATP, but circular farming bleeds resources.
+                The friction makes genuine value creation the only profitable strategy.
               </p>
             </div>
             <p>

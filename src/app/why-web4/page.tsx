@@ -603,14 +603,14 @@ export default function WhyWeb4Page() {
           {/* ATP collaboration */}
           <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>If energy budgets are non-transferable, how do teams collaborate?</span>
+              <span>If every energy transfer costs 5%, how do teams collaborate?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Non-transferable means you can&apos;t <em>give</em> your energy to someone else — but you
-                can <strong>earn energy together</strong>. When a team creates value jointly, each contributor
-                receives their own energy reward based on their verified contribution.
+                ATP can be transferred, but every transfer burns 5% — making circular farming
+                unprofitable. Teams primarily <strong>earn energy together</strong>. When a team creates
+                value jointly, each contributor receives their own energy reward based on their verified contribution.
               </p>
               <p>
                 Organizations work through <strong>shared context boundaries</strong> (MRH). Members of a
