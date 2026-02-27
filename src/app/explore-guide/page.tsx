@@ -148,7 +148,7 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
       steps: [
         { title: 'How It Works', description: 'Clear, structured explanation of the core mechanics', href: '/how-it-works', timeEstimate: '8 min', type: 'read' },
         { title: 'Glossary', description: 'Precise definitions of all key terms', href: '/glossary', timeEstimate: '5 min', type: 'read' },
-        { title: 'LCT Explainer', description: 'Identity: the foundation everything builds on', href: '/lct-explainer', timeEstimate: '6 min', type: 'read' },
+        { title: 'LCT Explainer', description: 'Verified presence: the foundation everything builds on', href: '/lct-explainer', timeEstimate: '6 min', type: 'read' },
         { title: 'ATP Economics', description: 'The attention economy that makes participation meaningful', href: '/atp-economics', timeEstimate: '7 min', type: 'read' },
         { title: 'Trust Tensor', description: 'Multi-dimensional trust measurement and its implications', href: '/trust-tensor', timeEstimate: '8 min', type: 'read' },
       ],

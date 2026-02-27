@@ -253,8 +253,8 @@ export default function LearnJourney() {
           id: "identity-constellation",
           title: "Identity Constellations: Multi-Device Strength",
           teaser:
-            "More devices = stronger identity, not weaker. Each device witnesses your LCT. Attack difficulty grows exponentially. Recovery requires quorum (e.g., 2 of 3 devices).",
-          why: "Identity constellations show why Web4 identity is fundamentally more secure than passwords.",
+            "More devices = stronger presence, not weaker. Each device witnesses your LCT. Attack difficulty grows exponentially. Recovery requires quorum (e.g., 2 of 3 devices).",
+          why: "Identity constellations show why Web4 verified presence is fundamentally more secure than passwords.",
           link: "/identity-constellation",
           duration: "14 min read",
         },

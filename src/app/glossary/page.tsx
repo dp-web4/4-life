@@ -102,7 +102,7 @@ export default function GlossaryPage() {
           {/* LCT */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              Verifiable Identity — LCT (Linked Context Token)
+              Verified Presence — LCT (Linked Context Token)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               Your <strong>hardware-rooted verifiable presence</strong>. An LCT is bound to
@@ -271,7 +271,7 @@ export default function GlossaryPage() {
             </p>
             <p className="text-gray-500 text-xs mb-3">
               <strong>Key insight:</strong> In traditional platforms, creating a new account
-              resets consequences. Web4's hardware-bound identity (LCT) prevents this—your
+              resets consequences. Web4's hardware-bound presence (LCT) prevents this—your
               karma follows you because your identity follows you.
             </p>
             <div className="flex gap-3 text-sm">
@@ -670,7 +670,7 @@ export default function GlossaryPage() {
             <h3 className="text-xl font-semibold text-sky-400 mb-3">Joining a Society</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Entry into a Web4 society. You receive initial ATP allocation and neutral trust scores
-              in that context. Your global identity (LCT) carries your cross-society reputation.
+              in that context. Your global presence (LCT) carries your cross-society reputation.
             </p>
           </div>
 
