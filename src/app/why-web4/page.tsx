@@ -450,15 +450,20 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>Gradual, not all-or-nothing.</strong> Web4 is designed as a layer on top of existing
-                infrastructure, not a replacement. A platform could adopt Web4 trust scoring for specific
-                features — verified reviews, trusted messaging — while everything else stays the same.
+                <strong>Gradual, not all-or-nothing.</strong> The Web4 spec defines a 5-tier adoption pathway —
+                each tier is independently useful, and you don&apos;t need to commit to the full stack:
               </p>
+              <ol className="list-decimal list-inside space-y-1 text-gray-400">
+                <li><strong>Wrapper:</strong> Add a verifiable identity to your existing system. Zero code changes. Fully reversible.</li>
+                <li><strong>Observable:</strong> Start tracking trust based on actual behavior. A permanent record of quality.</li>
+                <li><strong>Accountable:</strong> Stake energy on quality. Good work returns your investment; bad work costs you.</li>
+                <li><strong>Federated:</strong> Your reputation travels with you. Other systems can discover and trust you.</li>
+                <li><strong>Native:</strong> Full Web4 stack — built from the ground up around verifiable trust.</li>
+              </ol>
               <p>
-                The likely adoption path: start with high-value interactions where trust matters most
-                (marketplace reviews, professional credentials, content moderation). As users see the
-                benefit, expand to more contexts. Think of how HTTPS adoption worked — it started with
-                banks and shopping, then gradually became the default everywhere.
+                Tiers 0–3 are reversible — you can always roll back. Only Tier 4 (full native) is a
+                permanent commitment. Think of how HTTPS adoption worked: banks first, then e-commerce,
+                then eventually the default everywhere.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Gradual adoption means the system is only as strong as its

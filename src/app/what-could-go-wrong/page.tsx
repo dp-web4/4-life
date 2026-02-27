@@ -500,7 +500,13 @@ export default function WhatCouldGoWrongPage() {
             <p className="text-gray-400 text-sm leading-relaxed">
               Simulations prove the mechanics work in principle. Whether they work with real
               humans, real incentives, and real adversaries is an empirical question that
-              requires deployment to answer.
+              requires deployment to answer. A 5-tier{" "}
+              <Link href="/why-web4" className="text-sky-400 hover:underline">
+                incremental adoption pathway
+              </Link>{" "}
+              (wrapper → observable → accountable → federated → native) has been designed so
+              teams can adopt gradually and validate at each step — but no one has walked the
+              full path yet.
             </p>
           </div>
         </div>
