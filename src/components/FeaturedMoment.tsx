@@ -131,21 +131,30 @@ export default function FeaturedMoment({
 
   const featuredMoment = rankedMoments[currentIndex] || null;
 
-  // Loading skeleton
+  // Loading skeleton — shows meaningful static content for non-JS visitors
   if (loading && showSkeleton) {
     return (
       <section className="card" style={{
         background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, var(--color-dark-surface) 100%)',
         borderColor: 'rgba(59, 130, 246, 0.3)',
-        animation: 'pulse 2s ease-in-out infinite',
       }}>
-        <div style={{ opacity: 0.5 }}>
-          <p className="eyebrow">Loading...</p>
-          <h2 style={{ fontSize: '1.25rem' }}>Discovering Moments</h2>
-          <p style={{ color: 'var(--color-text-secondary)' }}>
-            Analyzing simulation data for interesting events...
-          </p>
-        </div>
+        <p className="eyebrow" style={{ color: '#60a5fa' }}>From Simulations</p>
+        <h2 style={{ fontSize: '1.25rem' }}>Trust Compounds Across Lives</h2>
+        <p style={{ color: 'var(--color-text-secondary)' }}>
+          Agents that cooperate and build trust survive longer, earn more resources,
+          and start each new life stronger. The track record follows them forever.
+        </p>
+        <Link
+          href="/karma-journey"
+          style={{
+            display: 'inline-block',
+            marginTop: '1rem',
+            color: '#60a5fa',
+            fontWeight: 500
+          }}
+        >
+          Try it yourself →
+        </Link>
       </section>
     );
   }

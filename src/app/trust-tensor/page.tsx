@@ -680,6 +680,11 @@ Talent: No decay (represents inherent aptitude)
                 High T3 correlates with better V3 outcomes: Talent drives Valuation, Training drives
                 Veracity, Temperament drives Validity. The relationship reinforces itself over time.
               </p>
+              <p className="mt-2">
+                <Link href="/web4-explainer#t3-v3" className="text-sky-400 hover:text-sky-300 text-sm">
+                  Read more about T3/V3 in the Web4 Explainer →
+                </Link>
+              </p>
             </div>
 
             <div>

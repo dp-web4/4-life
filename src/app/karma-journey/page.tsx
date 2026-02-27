@@ -575,7 +575,7 @@ export default function KarmaJourneyPage() {
               marginTop: '0.25rem', fontSize: '0.7rem', color: 'var(--color-text-muted)',
               fontFamily: 'monospace',
             }}>
-              Action costs: {atpMul <= 1.0 ? 'normal' : `${atpMul.toFixed(1)}x base cost`} {atpMul > 1.0 && atpMul <= 1.5 && <span style={{ color: '#fde68a' }}>(erratic behavior raises costs — stay consistent to keep them low)</span>}{atpMul > 1.5 && <span style={{ color: '#fca5a5' }}>(low consistency makes everything cost more — rebuild by making steady, cooperative choices)</span>}
+              Action costs: {atpMul <= 1.0 ? 'normal' : `${atpMul.toFixed(1)}x base cost`} {atpMul > 1.0 && atpMul <= 1.5 && <span style={{ color: '#fde68a' }}>{currentLife.tick === 0 ? '(new entity — consistency builds over time)' : '(erratic behavior raises costs — stay consistent to keep them low)'}</span>}{atpMul > 1.5 && <span style={{ color: '#fca5a5' }}>(low consistency makes everything cost more — rebuild by making steady, cooperative choices)</span>}
             </div>
           </div>
 

@@ -83,7 +83,7 @@ const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
     feedback: {
       ban: {
         text: 'They make a new account in 30 seconds and do it again.',
-        web4: 'Web4: every action costs energy (ATP). Spam burns through it with no return. Spammers die.',
+        web4: 'Web4: every action costs attention energy (ATP — your energy budget). Spam burns through it with no return. Spammers die.',
       },
       captcha: {
         text: 'AI solves CAPTCHAs better than humans now. Arms race never ends.',
