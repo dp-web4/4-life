@@ -1,5 +1,5 @@
 # robots.txt for 4-Life (Web4 Trust-Native Societies)
-# Updated: 2026-01-16
+# Updated: 2026-02-27
 
 User-agent: *
 Allow: /
@@ -9,6 +9,7 @@ Allow: /
 
 Allow: /manifest
 Allow: /spec.json
+Allow: /index.json
 Allow: /challenge-set
 Allow: /threat-model
 Allow: /glossary
@@ -18,12 +19,16 @@ Allow: /lab-console
 Allow: /playground
 Allow: /trust-networks
 Allow: /patterns
+Allow: /society-simulator
+Allow: /karma-journey
 
 # Educational resources
 Allow: /first-contact
 Allow: /how-it-works
 Allow: /web4-explainer
 Allow: /learn
+Allow: /why-web4
+Allow: /tldr
 
 # Sitemap
 Sitemap: https://4-life-ivory.vercel.app/sitemap.xml
