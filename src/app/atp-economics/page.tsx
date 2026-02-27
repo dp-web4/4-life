@@ -228,9 +228,17 @@ export default function ATPEconomicsPage() {
               </p>
             )}
             {!isAlive && (
-              <p className="text-red-500 text-lg mt-2 font-bold">
-                💀 You died. ATP reached zero. No more actions possible.
-              </p>
+              <div className="mt-2">
+                <p className="text-red-500 text-lg font-bold">
+                  💀 You died. ATP reached zero. No more actions possible.
+                </p>
+                <button
+                  onClick={reset}
+                  className="mt-2 px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold rounded-lg transition-colors"
+                >
+                  Try Again
+                </button>
+              </div>
             )}
           </div>
 

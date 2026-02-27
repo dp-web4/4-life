@@ -156,13 +156,13 @@ export default function LCTExplainerPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="text-sm uppercase tracking-wide text-purple-400 mb-4">
-            Web4 Identity
+            Web4 Verified Presence
           </div>
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">
             Linked Context Tokens (LCT)
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Web4&apos;s verifiable identity layer — hardware-bound, witnessed, and resistant to faking
+            Web4&apos;s verified presence layer — hardware-bound, witnessed, and resistant to faking
           </p>
         </div>
 
@@ -330,7 +330,8 @@ export default function LCTExplainerPage() {
 
           {/* Interactive Component Explorer */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-gray-100">LCT Components (Click to Explore)</h3>
+            <h3 className="text-xl font-bold mb-2 text-gray-100">LCT Components (Click to Explore)</h3>
+            <p className="text-sm text-gray-500 mb-4">Explore components and attack scenarios below to unlock your Identity Security Audit.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
               {lctComponents.map((component) => (
                 <button
@@ -564,11 +565,11 @@ export default function LCTExplainerPage() {
 
               {exploredAttacks.size >= 5 && exploredComponents.size >= 4 && (
                 <div className="bg-gray-800/60 border border-gray-600 rounded-lg p-4 mt-4 text-sm text-gray-300">
-                  <strong className="text-gray-100">The key takeaway:</strong> LCT identity is the foundation
-                  everything else in Web4 builds on. Without unforgeable identity, energy budgets don&apos;t
+                  <strong className="text-gray-100">The key takeaway:</strong> Verified presence is the foundation
+                  everything else in Web4 builds on. Without hardware-bound presence, energy budgets don&apos;t
                   work (you&apos;d create free accounts), trust doesn&apos;t stick (you&apos;d reset reputations),
-                  and consequences don&apos;t matter (you&apos;d just start over). Identity makes the whole
-                  system possible.
+                  and consequences don&apos;t matter (you&apos;d just start over). Presence — not identity,
+                  not credentials — makes the whole system possible.
                 </div>
               )}
             </div>
