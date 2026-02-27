@@ -71,6 +71,16 @@
       "path": "/patterns",
       "description": "Browse agent learning patterns across lives",
       "capabilities": ["epistemic proprioception", "pattern maturation", "learning trajectories"]
+    },
+    {
+      "path": "/society-simulator",
+      "description": "Multi-agent society simulation with coalition formation, defection dynamics, and trust networks",
+      "capabilities": ["multi-agent dynamics", "coalition emergence", "game theory", "human player mode", "achievements"]
+    },
+    {
+      "path": "/karma-journey",
+      "description": "Interactive multi-life trust journey — make choices, see consequences across rebirths",
+      "capabilities": ["multi-life karma", "trust profiles", "7 archetypes", "sharing"]
     }
   ],
 
@@ -88,15 +98,16 @@
       "atp": "/web4-explainer#atp",
       "mrh": "/web4-explainer#mrh",
       "t3_v3": "/web4-explainer#t3-v3",
-      "r6_r7": "/web4-explainer#r6-r7"
+      "r6_r7": "/web4-explainer#r6-r7",
+      "ci": "/web4-explainer#ci"
     }
   },
 
   "learning_paths": {
     "beginner": {
       "start": "/first-contact",
-      "then": ["/glossary", "/how-it-works", "/web4-explainer"],
-      "time": "10-15 minutes"
+      "then": ["/lct-explainer", "/atp-economics", "/trust-tensor", "/coherence-index", "/aliveness"],
+      "time": "15-25 minutes"
     },
     "intermediate": {
       "start": "/lab-console",
