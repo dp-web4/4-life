@@ -143,7 +143,7 @@ export default function Web4ExplainerPage() {
         <ul style={{ marginTop: "0.5rem", marginLeft: "1.25rem", color: "#d1d5db" }}>
           <li>
             <strong>Binding</strong>: a relatively stable attachment, often from
-            a root or authority LCT to a role or sub-identity (for example, a
+            a root or authority LCT to a role or sub-context (for example, a
             society binding an internal role LCT).
           </li>
           <li>
@@ -175,11 +175,11 @@ export default function Web4ExplainerPage() {
           A society&apos;s root LCT is intended to be <strong>hardware-bound</strong>
           (for example, anchored to a TPM or secure enclave). The goal is that
           across reboots and software upgrades, the root LCT presents a stable,
-          attestable identity whose MRH and T3/V3 can evolve over time.
+          attestable presence whose MRH and T3/V3 can evolve over time.
         </p>
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
           In 4-Life, we prototype this with stubbed signatures and interfaces for
-          hardware identity. Over time, those hooks are meant to be backed by
+          hardware presence. Over time, those hooks are meant to be backed by
           real attestation so other societies can tell when they are talking to
           "the same" root LCT versus a fresh or forked one. Even then, Web4
           treats hardware binding as one factor among many: witnessed events,
