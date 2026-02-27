@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import PageTracker from "@/components/PageTracker";
+import RiskSelector from "@/components/RiskSelector";
 
 export const metadata = {
   title: "What Could Go Wrong | 4-Life",
@@ -49,6 +50,7 @@ export default function WhatCouldGoWrongPage() {
           (attack surfaces, formal threat modeling), see the{" "}
           <Link href="/threat-model" className="text-sky-400 hover:underline">Threat Model</Link>.
         </p>
+        <RiskSelector />
       </section>
 
       {/* Risk Categories */}
@@ -58,7 +60,7 @@ export default function WhatCouldGoWrongPage() {
         </h2>
 
         {/* 1. Nobody adopts it */}
-        <div className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+        <div id="risk-adoption" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
             <span className="text-2xl">1.</span>
             <div>
@@ -93,7 +95,7 @@ export default function WhatCouldGoWrongPage() {
         </div>
 
         {/* 2. Hardware vendors become gatekeepers */}
-        <div className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+        <div id="risk-gatekeepers" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
             <span className="text-2xl">2.</span>
             <div>
@@ -131,7 +133,7 @@ export default function WhatCouldGoWrongPage() {
         </div>
 
         {/* 3. The 0.5 threshold is wrong */}
-        <div className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+        <div id="risk-threshold" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
             <span className="text-2xl">3.</span>
             <div>
@@ -173,7 +175,7 @@ export default function WhatCouldGoWrongPage() {
         </div>
 
         {/* 4. Rich actors game the system */}
-        <div className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+        <div id="risk-gaming" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
             <span className="text-2xl">4.</span>
             <div>
@@ -211,7 +213,7 @@ export default function WhatCouldGoWrongPage() {
         </div>
 
         {/* 5. Hardware breaks or changes */}
-        <div className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+        <div id="risk-hardware-loss" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
             <span className="text-2xl">5.</span>
             <div>
@@ -249,7 +251,7 @@ export default function WhatCouldGoWrongPage() {
         </div>
 
         {/* 6. The witness network is compromised */}
-        <div className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+        <div id="risk-witnesses" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
             <span className="text-2xl">6.</span>
             <div>
@@ -288,7 +290,7 @@ export default function WhatCouldGoWrongPage() {
         </div>
 
         {/* 7. It doesn't scale */}
-        <div className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+        <div id="risk-scale" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
             <span className="text-2xl">7.</span>
             <div>
