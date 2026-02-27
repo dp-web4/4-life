@@ -1012,14 +1012,14 @@ export default function AlivenessExplainer() {
         </p>
       </section>
 
-      <section>
+      <section id="try-it" className="scroll-mt-24">
         <h2>Try It: Can You Stay Alive?</h2>
         <p>Drag the sliders to explore the three aliveness criteria. What happens when energy runs out? When trust drops?</p>
 
         <AlivenessCalculator />
       </section>
 
-      <section id="try-it" className="scroll-mt-24">
+      <section>
         <h2>Survival Challenge: 5 Turns to Live</h2>
         <p>
           The sliders above show the theory. This game shows what it <em>feels</em> like.
