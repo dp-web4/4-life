@@ -455,7 +455,7 @@ function SideBySideComparison() {
         <button
           onClick={() => setTick(Math.max(1, tick - 1))}
           disabled={tick === 1}
-          className="px-4 py-2 bg-gray-700 hover:bg-gray-600 disabled:opacity-50 rounded-lg transition-colors"
+          className="px-4 py-2 bg-gray-700 hover:bg-gray-600 disabled:opacity-60 rounded-lg transition-colors"
         >
           ← Previous
         </button>
@@ -463,7 +463,7 @@ function SideBySideComparison() {
         <button
           onClick={() => setTick(Math.min(4, tick + 1))}
           disabled={tick === 4}
-          className="px-4 py-2 bg-gray-700 hover:bg-gray-600 disabled:opacity-50 rounded-lg transition-colors"
+          className="px-4 py-2 bg-gray-700 hover:bg-gray-600 disabled:opacity-60 rounded-lg transition-colors"
         >
           Next →
         </button>

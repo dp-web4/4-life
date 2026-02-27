@@ -257,7 +257,7 @@ function LayerVisualizer() {
         <button
           onClick={playSequence}
           disabled={animating}
-          className="flex items-center gap-2 px-3 py-1.5 bg-purple-600/30 border border-purple-500/40 rounded-lg text-sm text-purple-300 hover:bg-purple-600/50 transition-all disabled:opacity-50"
+          className="flex items-center gap-2 px-3 py-1.5 bg-purple-600/30 border border-purple-500/40 rounded-lg text-sm text-purple-300 hover:bg-purple-600/50 transition-all disabled:opacity-60"
         >
           <RotateCcw className="w-4 h-4" />
           Play Sequence
