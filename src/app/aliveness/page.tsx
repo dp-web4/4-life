@@ -928,8 +928,8 @@ export default function AlivenessExplainer() {
       </section>
 
       <section>
-        <h2>Interactive: Aliveness Calculator</h2>
-        <p>Explore how the three criteria determine aliveness:</p>
+        <h2>Try It: Can You Stay Alive?</h2>
+        <p>Drag the sliders and face survival scenarios. How long can your agent last?</p>
 
         <AlivenessCalculator />
       </section>

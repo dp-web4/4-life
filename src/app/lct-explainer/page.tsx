@@ -330,8 +330,8 @@ export default function LCTExplainerPage() {
 
           {/* Interactive Component Explorer */}
           <div>
-            <h3 className="text-xl font-bold mb-2 text-gray-100">LCT Components (Click to Explore)</h3>
-            <p className="text-sm text-gray-500 mb-4">Explore components and attack scenarios below to unlock your Identity Security Audit.</p>
+            <h3 className="text-xl font-bold mb-2 text-gray-100">Try It: Click Components &amp; Attack Scenarios</h3>
+            <p className="text-sm text-gray-400 mb-4">Explore how each LCT component works, then test it against real attack vectors. Your Security Audit unlocks as you explore.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
               {lctComponents.map((component) => (
                 <button
