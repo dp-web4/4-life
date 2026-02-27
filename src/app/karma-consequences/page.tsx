@@ -20,6 +20,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 import TermTooltip, { ATP, T3 } from "@/components/TermTooltip";
 
 // ============================================================================
@@ -894,6 +895,7 @@ export default function KarmaConsequencesPage() {
             Threat Model
           </Link>
         </div>
+        <ExplorerNav currentPath="/karma-consequences" />
         <RelatedConcepts currentPath="/karma-consequences" />
       </div>
     </div>

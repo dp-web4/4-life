@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 
 export default function ChallengeSetPage() {
   return (
@@ -228,6 +229,7 @@ export default function ChallengeSetPage() {
           <Link href="/threat-model" className="text-sky-400 underline">Threat Model</Link> (known failure modes)
         </p>
       </footer>
+      <ExplorerNav currentPath="/challenge-set" />
       <RelatedConcepts currentPath="/challenge-set" />
     </main>
   );
