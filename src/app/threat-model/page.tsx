@@ -353,7 +353,7 @@ export default function ThreatModelPage() {
                 <p className="text-gray-400 leading-relaxed">
                   Any automated detection system will have false positives. Web4's challenge-response
                   and coherence checks can flag legitimate behavior as suspicious. Current design
-                  has <strong className="text-yellow-300">no appeals process</strong>.
+                  has a <strong className="text-yellow-300">designed but untested appeals process</strong> (SAL-level multi-tier with witness panels and escalation).
                 </p>
               </div>
 

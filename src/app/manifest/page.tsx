@@ -133,8 +133,8 @@ export default function ManifestPage() {
             <Link href="/threat-model#mrh-limits" className="text-sky-400">↗</Link>
           </li>
           <li>
-            <strong id="false-positives">False positives & contested events:</strong> Appeals mechanism missing.
-            Incorrect trust penalties may be irreversible.{" "}
+            <strong id="false-positives">False positives & contested events:</strong> A multi-tier appeals
+            mechanism has been designed (SAL-level) but remains untested with real humans.{" "}
             <Link href="/threat-model#false-positives" className="text-sky-400">↗</Link>
           </li>
         </ul>
