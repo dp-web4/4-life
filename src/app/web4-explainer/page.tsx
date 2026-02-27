@@ -24,7 +24,7 @@ export default function Web4ExplainerPage() {
       </section>
 
       <section>
-        <h2>1. LCT: Linked Context Token</h2>
+        <h2 id="lct">1. LCT: Linked Context Token</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
           An LCT is a <strong>linked context token</strong>: a non-fungible token
           that lives on a society&apos;s blockchain. Each LCT represents a subject in
@@ -41,7 +41,7 @@ export default function Web4ExplainerPage() {
       </section>
 
       <section>
-        <h2>2. MRH: Markov Relevancy Horizon</h2>
+        <h2 id="mrh">2. MRH: Markov Relevancy Horizon</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
           MRH defines the boundary of what you can see in a Web4 society—the
           trust-based graph that determines which entities and information are
@@ -57,7 +57,7 @@ export default function Web4ExplainerPage() {
       </section>
 
       <section>
-        <h2>3. T3 / V3: Trust & Value Tensors</h2>
+        <h2 id="t3-v3">3. T3 / V3: Trust &amp; Value Tensors</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
           T3 and V3 are small numeric tensors that summarize how much a system
           trusts or values an LCT along three axes: <strong>Talent</strong> (can they do it?),
@@ -73,7 +73,7 @@ export default function Web4ExplainerPage() {
       </section>
 
       <section>
-        <h2>4. ATP / ADP: Allocation Transfer Packet / Allocation Discharge Packet</h2>
+        <h2 id="atp">4. ATP / ADP: Allocation Transfer Packet / Allocation Discharge Packet</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
           ATP and ADP are semifungible packets for allocating scarce resources: time,
           attention, compute, energy, and authority. They are not a coin; they are a
@@ -88,7 +88,7 @@ export default function Web4ExplainerPage() {
       </section>
 
       <section>
-        <h2>5. R6/R7: Action Framework</h2>
+        <h2 id="r6-r7">5. R6/R7: Action Framework</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
           <strong>R6</strong> (legacy) and <strong>R7</strong> (current) define how all Web4 actions are structured.
           Every interaction follows this pattern:
@@ -119,7 +119,24 @@ export default function Web4ExplainerPage() {
       </section>
 
       <section>
-        <h2>6. Pairing types between LCTs</h2>
+        <h2 id="ci">6. CI: Coherence Index</h2>
+        <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
+          The Coherence Index measures behavioral consistency across four dimensions:
+          <strong> spatial</strong> (location consistency), <strong>capability</strong> (hardware
+          consistency), <strong>temporal</strong> (time consistency), and <strong>relational</strong> (relationship
+          consistency). CI = (spatial &times; capability &times; temporal &times; relational)<sup>1/4</sup>.
+        </p>
+        <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
+          CI acts as a trust modulator: effective trust = base_trust &times; CI&sup2;, and ATP
+          costs scale as 1/CI&sup2;. Incoherent behavior (teleporting, capability spoofing,
+          broken continuity) exponentially increases the cost of acting. In 4-Life, CI
+          determines whether an entity remains &ldquo;alive&rdquo; &mdash; drop below the
+          coherence threshold and the society rejects you.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Pairing types between LCTs</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
           Web4 distinguishes several standard ways LCTs can be linked:
         </p>
@@ -153,7 +170,7 @@ export default function Web4ExplainerPage() {
       </section>
 
       <section>
-        <h2>7. Hardware-bound root LCTs</h2>
+        <h2>8. Hardware-bound root LCTs</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
           A society&apos;s root LCT is intended to be <strong>hardware-bound</strong>
           (for example, anchored to a TPM or secure enclave). The goal is that
