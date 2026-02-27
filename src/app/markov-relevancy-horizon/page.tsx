@@ -523,8 +523,12 @@ export default function MarkovRelevancyHorizonPage() {
               <div className="bg-gray-900/50 rounded px-3 py-2 text-sm font-mono text-cyan-300 mb-3">
                 trust = t₁ × t₂ × t₃ × decay^depth
               </div>
+              <p className="text-gray-400 text-xs mb-2">
+                Canonical decay factor: <strong className="text-cyan-300">0.7 per hop</strong>.
+                Self = 1.0, direct = 0.7, 2 hops = 0.49, 3 hops = 0.34, beyond = 0.
+              </p>
               <p className="text-gray-400 text-xs">
-                A path with three 0.9 trust edges: 0.9³ = 0.73 effective trust
+                A path with three 0.9 trust edges: 0.9³ × 0.7³ = 0.25 effective trust
               </p>
             </div>
 

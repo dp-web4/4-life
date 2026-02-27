@@ -599,7 +599,9 @@ export default function TrustTensorPage() {
                 T3 Tensor Structure
               </h3>
               <p className="leading-relaxed mb-3">
-                Each entity-role pair has its own T3 tensor. Tensors are never shared across roles:
+                Each entity-role pair has its own T3 tensor. Tensors are never shared across roles.
+                The canonical composite weights are <strong className="text-sky-300">Talent 0.4, Training 0.3,
+                Temperament 0.3</strong> — societies can customize weights per role:
               </p>
               <pre className="bg-gray-950 border border-gray-700 rounded-lg p-4 overflow-x-auto text-xs text-gray-400 font-mono">
 {`// T3 tensor with role binding
@@ -607,9 +609,9 @@ export default function TrustTensorPage() {
   "entity": "lct:alice",
   "role_tensors": {
     "web4:DataAnalyst": {
-      "talent": 0.85,
-      "training": 0.90,
-      "temperament": 0.95
+      "talent": 0.85,      // weight: 0.4 (canonical)
+      "training": 0.90,    // weight: 0.3
+      "temperament": 0.95  // weight: 0.3
     },
     "web4:ProjectManager": {
       "talent": 0.65,
@@ -617,7 +619,10 @@ export default function TrustTensorPage() {
       "temperament": 0.91
     }
   }
-}`}
+}
+
+// Composite: 0.4 × talent + 0.3 × training + 0.3 × temperament
+// DataAnalyst: 0.4(0.85) + 0.3(0.90) + 0.3(0.95) = 0.895`}
               </pre>
             </div>
 
@@ -641,7 +646,13 @@ Ethics Violation       -0.05      0          -0.10
 // Decay rates
 Training: -0.001/month without practice
 Temperament: +0.01/month recovery with good behavior
-Talent: No decay (represents inherent aptitude)`}
+Talent: No decay (represents inherent aptitude)
+
+// Underlying formula (from spec test vectors):
+// base_delta = 0.02 × (quality - 0.5)
+// talent_delta  = base_delta × 1.0
+// training_delta = base_delta × 0.8
+// temperament_delta = base_delta × 0.6`}
               </pre>
             </div>
 
@@ -662,7 +673,7 @@ Talent: No decay (represents inherent aptitude)`}
                 </li>
                 <li>
                   <strong className="text-purple-300">V3 (Value Tensor):</strong>{" "}
-                  How much value something creates &mdash; Valuation, Veracity, Validity (per output)
+                  How much value something creates &mdash; Valuation (0.3), Veracity (0.35), Validity (0.35) per output
                 </li>
               </ul>
               <p className="mt-3 leading-relaxed">
