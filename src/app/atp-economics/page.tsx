@@ -516,6 +516,47 @@ export default function ATPEconomicsPage() {
         </div>
       </section>
 
+      {/* Market Dynamics */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">What Happens at Scale?</h2>
+        <p className="text-gray-400 mb-6">
+          Single-agent economics are intuitive. But does ATP work when hundreds of agents
+          interact simultaneously? Simulations with 100-200 agents reveal three key dynamics:
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
+            <div className="text-2xl mb-2">🔥</div>
+            <h3 className="text-lg font-semibold text-amber-400 mb-2">Transfer Fees Burn ATP</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Every ATP transfer destroys 5%. This prevents circular farming — you can&apos;t
+              just pass ATP between friends to inflate balances. The &ldquo;tax&rdquo; makes
+              genuine value creation the only profitable strategy.
+            </p>
+          </div>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
+            <div className="text-2xl mb-2">📊</div>
+            <h3 className="text-lg font-semibold text-green-400 mb-2">Quality Earns More</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Agents producing 0.85 quality work earn significantly more than 0.40 quality.
+              A sliding scale (not all-or-nothing) means mediocre work still earns <em>something</em>,
+              but excellence compounds.
+            </p>
+          </div>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
+            <div className="text-2xl mb-2">👥</div>
+            <h3 className="text-lg font-semibold text-sky-400 mb-2">Sybils Lose Money</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Simulated result: one honest identity outearns five fake identities
+              splitting the same ATP budget. Transfer fees between sybil accounts bleed
+              resources. Cheating is literally unprofitable.
+            </p>
+          </div>
+        </div>
+        <p className="text-gray-500 text-xs mt-4 italic">
+          From web4 market dynamics simulations — 200 agents, 500 rounds, verified conservation invariant.
+        </p>
+      </section>
+
       {/* Follow One Agent's ATP Journey */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">

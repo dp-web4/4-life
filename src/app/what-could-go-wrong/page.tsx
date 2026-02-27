@@ -312,8 +312,10 @@ export default function WhatCouldGoWrongPage() {
               <strong>Honest assessment:</strong> Witness governance is one of the hardest unsolved
               problems. &ldquo;Who watches the watchmen?&rdquo; doesn&apos;t have a clean answer.
               Federation reduces the damage of any single compromised network, but doesn&apos;t
-              prevent local corruption. Real-world deployment needs explicit governance
-              mechanisms that don&apos;t exist in the current specification.
+              prevent local corruption. A governance engine now exists in the spec (SAL framework
+              with law oracles, graduated enforcement, and multi-tier appeals), but it operates on a key
+              principle: <em>alignment without compliance is acceptable; compliance without alignment
+              never is</em>. Whether this philosophy holds at scale is untested.
             </p>
           </div>
         </div>
@@ -520,9 +522,13 @@ export default function WhatCouldGoWrongPage() {
             <h3 className="text-red-400 font-semibold mb-2">Governance at Scale</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Who decides the rules? A Society-Authority-Law (SAL) framework has been designed
-              with law oracles, auditors, and fractal citizenship. But decentralized governance
-              at internet scale — where communities disagree on fundamental values — is a
-              challenge no system has fully solved.
+              with law oracles, graduated enforcement (critical → high → medium severity),
+              emergency bypass with post-hoc audit, and panel-based appeals. The framework
+              distinguishes alignment from compliance — societies can tolerate rule-breaking
+              if the spirit is right. But decentralized governance at internet scale — where
+              communities disagree on fundamental values — remains a challenge no system has
+              fully solved. The simulation engine validates mechanics; human behavior is the
+              unknown.
             </p>
           </div>
 

@@ -255,7 +255,7 @@ export default function ManifestPage() {
 
       <footer style={{ marginTop: "2rem", paddingTop: "2rem", borderTop: "1px solid #374151", color: "#6b7280", fontSize: "0.875rem" }}>
         <p>
-          Last updated: 2026-01-16 | Generated with{" "}
+          Last updated: 2026-02-27 | Generated with{" "}
           <a href="https://claude.com/claude-code" target="_blank" rel="noreferrer" className="text-sky-400">Claude Code</a>
         </p>
       </footer>
