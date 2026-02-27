@@ -1123,7 +1123,7 @@ export default function AlivenessExplainer() {
             </ul>
           </div>
 
-          <div className="detail-box">
+          <div id="appeals" className="detail-box scroll-mt-24">
             <h4>Appeals Mechanism</h4>
             <p>
               Web4 now has a <strong>designed appeals mechanism</strong> at the SAL (Society-Authority-Law)

@@ -509,8 +509,8 @@ export default function ATPEconomicsPage() {
             <p className="text-gray-300 text-sm leading-relaxed">
               No moderators needed. ATP depletion is automatic, mathematical,
               and fair. The system self-regulates through energy economics.
-              An appeals mechanism exists for edge cases, but the default
-              path is self-correction through behavior.
+              An <Link href="/aliveness#appeals" className="text-sky-400 hover:underline">appeals mechanism</Link> exists
+              for edge cases, but the default path is self-correction through behavior.
             </p>
           </div>
         </div>

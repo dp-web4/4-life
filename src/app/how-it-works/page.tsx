@@ -677,6 +677,70 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* Governance: What Happens When Things Go Wrong */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">
+          What Happens When Things Go Wrong?
+        </h2>
+        <p className="text-gray-400 mb-8">
+          Energy economics handle most bad actors — spammers simply die. But what about
+          edge cases? What if someone is falsely accused, or a crisis requires bending the rules?
+          Web4 uses a governance framework called <strong className="text-gray-200">SAL (Society-Authority-Law)</strong>.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+            <div className="text-2xl mb-2">🏛️</div>
+            <h3 className="text-lg font-semibold text-sky-400 mb-2">Society</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Defines the community&apos;s purpose and membership rules. Different societies
+              can have different standards — a research group and a marketplace don&apos;t need the same rules.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+            <div className="text-2xl mb-2">⚖️</div>
+            <h3 className="text-lg font-semibold text-amber-400 mb-2">Authority</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Roles with specific responsibilities — not centralized power. Authorities are bound
+              by the same trust mechanics as everyone else. Abuse trust? Lose authority.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+            <div className="text-2xl mb-2">📜</div>
+            <h3 className="text-lg font-semibold text-purple-400 mb-2">Law</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Graduated severity levels (critical → high → medium). A <strong>law oracle</strong> evaluates
+              actions and produces verdicts. The key principle: alignment without compliance is acceptable;
+              compliance without alignment is never acceptable.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-br from-amber-950/20 to-gray-900 border border-amber-800/20 rounded-xl p-6 mb-4">
+          <h4 className="text-lg font-semibold text-amber-300 mb-2">What About False Positives?</h4>
+          <p className="text-gray-300 text-sm leading-relaxed mb-3">
+            A multi-tier <strong>appeals mechanism</strong> has been designed: file a claim → independent review →
+            evidence phase → hearing with witness panel → verdict → enforcement. Successful appeals
+            restore your trust scores.
+          </p>
+          <p className="text-gray-500 text-xs italic">
+            Honest status: the appeals mechanism is formally specified (109 integration checks) but hasn&apos;t been
+            tested with real humans yet. See{' '}
+            <Link href="/what-could-go-wrong" className="text-amber-400 hover:underline">What Could Go Wrong</Link>{' '}
+            for the full risk analysis.
+          </p>
+        </div>
+
+        <p className="text-gray-500 text-sm">
+          Full definitions:{' '}
+          <Link href="/glossary" className="text-sky-400 hover:underline">Glossary</Link>{' · '}
+          Security analysis:{' '}
+          <Link href="/threat-model" className="text-sky-400 hover:underline">Threat Model</Link>
+        </p>
+      </section>
+
       {/* See It In Action */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
@@ -805,6 +869,19 @@ export default function HowItWorksPage() {
             </h3>
             <p className="text-gray-400 text-sm">
               Watch ATP prices adjust dynamically as agents specialize and markets self-organize.
+            </p>
+          </Link>
+
+          <Link
+            href="/what-could-go-wrong"
+            className="block p-6 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-red-500 rounded-xl transition-colors"
+          >
+            <div className="text-3xl mb-3">🛡️</div>
+            <h3 className="text-lg font-semibold text-red-400 mb-2">
+              Risks & Governance
+            </h3>
+            <p className="text-gray-400 text-sm">
+              What could go wrong? Honest assessment of 7 risks, 4 tensions, and the SAL governance framework.
             </p>
           </Link>
         </div>
