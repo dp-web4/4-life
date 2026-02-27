@@ -507,9 +507,10 @@ export default function ATPEconomicsPage() {
               Self-Regulating System
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              No moderators needed. No ban appeals. No edge cases. ATP depletion
-              is automatic, mathematical, and fair. The system self-regulates
-              through energy economics.
+              No moderators needed. ATP depletion is automatic, mathematical,
+              and fair. The system self-regulates through energy economics.
+              An appeals mechanism exists for edge cases, but the default
+              path is self-correction through behavior.
             </p>
           </div>
         </div>
@@ -591,7 +592,7 @@ export default function ATPEconomicsPage() {
             <p className="text-sky-300 text-sm">
               <strong>The pattern:</strong> ATP isn&apos;t just an energy bar — it&apos;s a life
               story. Agents that contribute value build up karma across lives.
-              Agents that don&apos;t? They die and stay dead. No appeals, no shortcuts.
+              Agents that don&apos;t? They die and stay dead. No shortcuts.
             </p>
           </div>
 
@@ -812,8 +813,8 @@ if agent.atp <= 0:
           <p className="leading-relaxed">
             <strong className="text-sky-400">Spam becomes impossible.</strong>{" "}
             Not through moderation, but through exhaustion. Send 1000
-            spam messages? You'll die after message 20. No appeals, no edge
-            cases.
+            spam messages? You'll die after message 20. The economics
+            enforce themselves.
           </p>
           <p className="leading-relaxed">
             <strong className="text-sky-400">Quality is sustainable.</strong>{" "}

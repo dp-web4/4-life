@@ -148,8 +148,9 @@ export default function ChallengeSetPage() {
             <strong>Goal:</strong> Design an appeals mechanism for agents incorrectly penalized by automated trust systems.
           </p>
           <p style={{ color: "#9ca3af", lineHeight: "1.75", marginBottom: "1rem" }}>
-            Current Web4 has no appeals process. An innocent agent wrongly flagged for coherence violations or
-            collusion has no recourse. Design a system that:
+            Web4 now has a designed (but untested) multi-tier appeals mechanism.
+            An innocent agent wrongly flagged for coherence violations or
+            collusion can escalate through witness panels, but the system needs real-world validation. Improve it so that:
           </p>
           <ul style={{ color: "#9ca3af", lineHeight: "1.75", marginLeft: "1.5rem", marginBottom: "1rem" }}>
             <li>Allows contested events to be reviewed</li>
