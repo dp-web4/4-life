@@ -19,7 +19,7 @@
     "ATP": {
       "name": "Allocation Transfer Packet",
       "description": "Attention budget inspired by biological ATP. Actions cost energy; quality earns it back.",
-      "purpose": "Economic self-limitation of spam through metabolic dynamics",
+      "purpose": "Economic self-limitation of spam through attention budget dynamics",
       "implementation": "lib/game/engine/atp_transactions.py",
       "spec": "https://dp-web4.github.io/web4/sections/foundational-concepts/atp-adp-cycle/",
       "links": ["/atp-economics", "/web4-explainer#atp"]
@@ -241,14 +241,26 @@
       "path": "/patterns",
       "description": "Browse agent learning patterns across lives",
       "capabilities": ["epistemic proprioception", "pattern maturation", "learning trajectories"]
+    },
+    {
+      "name": "Society Simulator",
+      "path": "/society-simulator",
+      "description": "Multi-agent society simulation with coalitions, defection, trust networks, and human player mode",
+      "capabilities": ["multi-agent dynamics", "coalition emergence", "game theory", "human player mode", "achievements"]
+    },
+    {
+      "name": "Karma Journey",
+      "path": "/karma-journey",
+      "description": "Interactive multi-life trust journey with choices, consequences, and trust profiles",
+      "capabilities": ["multi-life karma", "trust profiles", "7 archetypes", "sharing"]
     }
   ],
 
   "learning_journey": {
     "beginner": {
       "concepts": ["LCT", "ATP", "T3", "CI"],
-      "resources": ["/first-contact", "/glossary", "/how-it-works"],
-      "time_estimate": "10-15 minutes"
+      "resources": ["/why-web4", "/first-contact", "/lct-explainer", "/atp-economics", "/trust-tensor", "/coherence-index", "/aliveness"],
+      "time_estimate": "15-25 minutes"
     },
     "intermediate": {
       "concepts": ["emergent properties", "trust networks", "markets", "learning"],

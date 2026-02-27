@@ -103,15 +103,63 @@
     }
   },
 
+  "onboarding_pages": [
+    {
+      "path": "/why-web4",
+      "description": "Problem framing: why the current internet fails and what Web4 proposes",
+      "role": "entry point for problem-curious visitors"
+    },
+    {
+      "path": "/how-it-works",
+      "description": "Mechanics overview: how trust, energy, and coherence work together",
+      "role": "bridge from problem to solution"
+    },
+    {
+      "path": "/tldr",
+      "description": "2-minute zero-jargon overview of Web4",
+      "role": "fastest possible orientation"
+    },
+    {
+      "path": "/day-in-web4",
+      "description": "7 time-stamped scenarios comparing today's internet with Web4",
+      "role": "concrete daily-life examples"
+    },
+    {
+      "path": "/your-internet",
+      "description": "Pick your frustrations, see before/after comparisons",
+      "role": "personalized problem framing"
+    },
+    {
+      "path": "/what-could-go-wrong",
+      "description": "7 risks, 4 tensions, 4 unsolved problems — honest limitations",
+      "role": "transparency and intellectual honesty"
+    },
+    {
+      "path": "/first-simulation",
+      "description": "Watch a multi-agent trust simulation unfold step by step",
+      "role": "first exposure to simulation dynamics"
+    },
+    {
+      "path": "/learn",
+      "description": "Concept progression tracker with auto-completion",
+      "role": "structured learning path with progress tracking"
+    },
+    {
+      "path": "/explore-guide",
+      "description": "Personalized path recommender based on interest type",
+      "role": "adaptive navigation for different visitor personas"
+    }
+  ],
+
   "learning_paths": {
     "beginner": {
-      "start": "/first-contact",
-      "then": ["/lct-explainer", "/atp-economics", "/trust-tensor", "/coherence-index", "/aliveness"],
+      "start": "/why-web4",
+      "then": ["/first-contact", "/lct-explainer", "/atp-economics", "/trust-tensor", "/coherence-index", "/aliveness"],
       "time": "15-25 minutes"
     },
     "intermediate": {
-      "start": "/lab-console",
-      "then": ["/trust-networks", "/federation-economics", "/patterns"],
+      "start": "/society-simulator",
+      "then": ["/trust-networks", "/federation-economics", "/patterns", "/achievements"],
       "time": "30-60 minutes"
     },
     "advanced": {
