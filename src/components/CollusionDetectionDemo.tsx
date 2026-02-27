@@ -366,8 +366,8 @@ export default function CollusionDetectionDemo() {
       {/* Config */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5 text-xs">
         <div>
-          <label className="text-gray-500 block mb-1">Network Size</label>
-          <input
+          <label htmlFor="cd-network-size" className="text-gray-500 block mb-1">Network Size</label>
+          <input id="cd-network-size"
             type="range" min={10} max={30} value={config.networkSize}
             onChange={e => setConfig(c => ({ ...c, networkSize: +e.target.value }))}
             className="w-full accent-red-500"
@@ -375,8 +375,8 @@ export default function CollusionDetectionDemo() {
           <span className="text-gray-300">{config.networkSize} agents</span>
         </div>
         <div>
-          <label className="text-gray-500 block mb-1">Cartel Size</label>
-          <input
+          <label htmlFor="cd-cartel-size" className="text-gray-500 block mb-1">Cartel Size</label>
+          <input id="cd-cartel-size"
             type="range" min={2} max={Math.floor(config.networkSize / 2)} value={config.cartelSize}
             onChange={e => setConfig(c => ({ ...c, cartelSize: +e.target.value }))}
             className="w-full accent-red-500"
@@ -384,8 +384,8 @@ export default function CollusionDetectionDemo() {
           <span className="text-gray-300">{config.cartelSize} colluding</span>
         </div>
         <div>
-          <label className="text-gray-500 block mb-1">Diversity Threshold</label>
-          <input
+          <label htmlFor="cd-diversity" className="text-gray-500 block mb-1">Diversity Threshold</label>
+          <input id="cd-diversity"
             type="range" min={20} max={80} value={config.diversityThreshold * 100}
             onChange={e => setConfig(c => ({ ...c, diversityThreshold: +e.target.value / 100 }))}
             className="w-full accent-blue-500"
@@ -393,8 +393,8 @@ export default function CollusionDetectionDemo() {
           <span className="text-gray-300">{(config.diversityThreshold * 100).toFixed(0)}%</span>
         </div>
         <div>
-          <label className="text-gray-500 block mb-1">Challenge Rate</label>
-          <input
+          <label htmlFor="cd-challenge-rate" className="text-gray-500 block mb-1">Challenge Rate</label>
+          <input id="cd-challenge-rate"
             type="range" min={2} max={25} value={config.challengeRate * 100}
             onChange={e => setConfig(c => ({ ...c, challengeRate: +e.target.value / 100 }))}
             className="w-full accent-blue-500"
@@ -421,6 +421,7 @@ export default function CollusionDetectionDemo() {
             </button>
             <input
               type="range"
+              aria-label="Jump to simulation turn"
               min={0}
               max={(simulation?.length || 1) - 1}
               value={currentTick}
