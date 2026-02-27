@@ -87,8 +87,8 @@
       "evidence": ["/trust-tensor", "/playground"]
     },
     {
-      "claim": "Hardware-rooted identity raises impersonation cost",
-      "mechanism": "LCTs bound to TPM/Secure Enclave make creating thousands of fake identities expensive",
+      "claim": "Hardware-bound presence raises impersonation cost",
+      "mechanism": "LCTs bound to TPM/Secure Enclave make creating thousands of fake presences expensive",
       "status": "raises cost floor but doesn't make impossible for resourced attackers",
       "evidence": ["/threat-model#sybil", "/lct-explainer"]
     },
@@ -113,7 +113,7 @@
   ],
 
   "assumptions": [
-    "Hardware attestation (TPM, Secure Enclave, FIDO2) provides meaningful identity anchoring",
+    "Hardware attestation (TPM, Secure Enclave, FIDO2) provides meaningful presence anchoring",
     "Multi-device witnessing creates sufficient cost barriers for Sybil attacks",
     "Quality content generates more ATP through engagement than spam generates through volume",
     "Trust relationships are transitive (friend-of-friend) but degrade with distance",
@@ -126,7 +126,7 @@
     {
       "id": "sybil",
       "name": "Sybil Attacks",
-      "description": "Resourced attackers with many devices can create multiple identities",
+      "description": "Resourced attackers with many devices can create multiple presences",
       "mitigation": "LCT hardware binding raises cost floor",
       "residual_risk": "High-resource attackers (nation-states, well-funded orgs) not prevented",
       "detection": "Multi-device witnessing patterns, hardware fingerprinting",

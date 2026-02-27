@@ -15,8 +15,8 @@ export default function ManifestPage() {
         <h2>Core Primitives</h2>
         <ul style={{ marginTop: "0.75rem", lineHeight: "1.75" }}>
           <li>
-            <strong>LCT (Linked Context Token):</strong> Hardware-rooted identity strongly resistant to impersonation.
-            Multi-device witnessing makes fake identities expensive.{" "}
+            <strong>LCT (Linked Context Token):</strong> Hardware-bound verified presence, strongly resistant to impersonation.
+            Multi-device witnessing makes fake presences expensive.{" "}
             <Link href="/lct-explainer" className="text-sky-400">↗</Link>
           </li>
           <li>
@@ -69,8 +69,8 @@ export default function ManifestPage() {
             Gaming all dimensions simultaneously requires actual competence.
           </li>
           <li>
-            <strong>Hardware-rooted identity raises impersonation cost:</strong> LCTs bound to TPM/Secure Enclave
-            make creating thousands of fake identities expensive (though not impossible for resourced attackers).
+            <strong>Hardware-bound presence raises impersonation cost:</strong> LCTs bound to TPM/Secure Enclave
+            make creating thousands of fake presences expensive (though not impossible for resourced attackers).
           </li>
           <li>
             <strong>Death is real but rebirth carries karma:</strong> Agents can die from ATP depletion,
@@ -90,7 +90,7 @@ export default function ManifestPage() {
       <section style={{ marginTop: "2rem" }}>
         <h2>Assumptions</h2>
         <ul style={{ marginTop: "0.75rem", lineHeight: "1.75" }}>
-          <li>Hardware attestation (TPM, Secure Enclave, FIDO2) provides meaningful identity anchoring</li>
+          <li>Hardware attestation (TPM, Secure Enclave, FIDO2) provides meaningful presence anchoring</li>
           <li>Multi-device witnessing creates sufficient cost barriers for Sybil attacks</li>
           <li>Quality content generates more ATP through engagement than spam generates through volume</li>
           <li>Trust relationships are transitive (friend-of-friend) but degrade with distance</li>
