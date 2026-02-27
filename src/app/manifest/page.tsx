@@ -171,7 +171,7 @@ export default function ManifestPage() {
             <h3 style={{ fontSize: "0.9rem", color: "#d1d5db" }}>Multi-Life</h3>
             <ul style={{ fontSize: "0.85rem", marginTop: "0.5rem", lineHeight: "1.5", color: "#9ca3af" }}>
               <li>Default lives: 3</li>
-              <li>Ticks per life: 20</li>
+              <li>Turns per life: 20</li>
               <li>EP maturation: 3-5 lives</li>
               <li>Pattern corpus: 250+ patterns</li>
             </ul>

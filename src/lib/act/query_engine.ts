@@ -1989,7 +1989,7 @@ export class ACTQueryEngine {
 
     let text = `**Inequality Analysis**\n\n`;
 
-    text += `**Wealth Inequality (Gini)**: ${gini.toFixed(3)}\n\n`;
+    text += `**Wealth Gap**: ${gini.toFixed(3)}\n\n`;
     text += `Interpretation:\n`;
     text += `- 0.0 = Perfect equality (everyone has same ATP)\n`;
     text += `- 0.3 = Healthy inequality (like Nordic countries)\n`;
