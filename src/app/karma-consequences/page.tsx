@@ -153,7 +153,7 @@ const COMPARISON_SYSTEMS: ComparisonSystem[] = [
     freshStarts: false,
     identityBound: true,
     consequences: 'permanent',
-    examples: ['Hardware-bound identity', 'TPM/Secure Enclave rooted'],
+    examples: ['Hardware-bound presence', 'TPM/Secure Enclave rooted'],
     issues: [], // It's the solution, not the problem
     color: 'emerald'
   }
@@ -690,7 +690,7 @@ function RealWorldImplications() {
           <ul className="space-y-2 text-sm text-gray-400">
             <li className="flex items-start gap-2">
               <span className="text-emerald-500">•</span>
-              <span>Hardware-bound identity prevents account proliferation</span>
+              <span>Hardware-bound presence prevents account proliferation</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-emerald-500">•</span>
@@ -822,10 +822,10 @@ export default function KarmaConsequencesPage() {
               <Link href="/trust-tensor" className="text-xs text-purple-400 hover:underline">Learn more →</Link>
             </div>
             <div className="p-3 bg-emerald-900/20 border border-emerald-800/50 rounded">
-              <h4 className="text-sm font-semibold text-emerald-400 mb-1">LCT Identity</h4>
+              <h4 className="text-sm font-semibold text-emerald-400 mb-1">LCT Presence</h4>
               <p className="text-xs text-gray-400">
-                Hardware-bound identity makes karma matter. You can't escape yourself
-                when your identity is rooted in physical devices.
+                Hardware-bound presence makes karma matter. You can't escape yourself
+                when your presence is rooted in physical devices.
               </p>
               <Link href="/lct-explainer" className="text-xs text-emerald-400 hover:underline">Learn more →</Link>
             </div>

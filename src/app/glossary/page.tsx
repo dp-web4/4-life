@@ -137,11 +137,14 @@ export default function GlossaryPage() {
               The <strong>attention budget</strong> of Web4 societies—a charged value token
               inspired by biological ATP. Every action costs ATP. Quality contributions earn ATP.
               Run out? You can&apos;t act until you earn more. This makes spam naturally self-limiting—spammers
-              burn ATP faster than they earn it.
+              burn ATP faster than they earn it. ATP can be transferred between entities, but every
+              transfer burns 5%—making circular farming unprofitable.
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: &ldquo;Think of it like an energy budget. You spend it to act, earn it by
-              creating value. Run out of energy, you can&apos;t function. Bad actors exhaust themselves.&rdquo;
+              creating value. Run out of energy, you can&apos;t function. Bad actors exhaust themselves.
+              You can share energy with others, but a tax on every transfer means gaming the system costs
+              more than honest work.&rdquo;
             </p>
             <p className="text-gray-500 text-xs mb-3">
               <strong>Canonical note:</strong> Production Web4 uses ATP/ADP (Allocation Discharge
@@ -790,7 +793,7 @@ export default function GlossaryPage() {
             </table>
           </div>
           <p className="text-gray-400 text-xs mt-4">
-            Hardware-bound identity (humans, embodied AI) creates continuity that software AI lacks.
+            Hardware-bound presence (humans, embodied AI) creates continuity that software AI lacks.
             The "rebirth" concept only applies where copying/forking is possible. For software AI,
             trust verification may include{" "}
             <strong className="text-gray-300">heterogeneous review</strong>—requiring agreement from
@@ -883,7 +886,7 @@ export default function GlossaryPage() {
           </p>
           <p className="text-gray-300 leading-relaxed">
             <strong className="text-purple-400">Three agent types:</strong> Humans and embodied AI (robots)
-            share hardware-bound identity—they can't be copied, so "rebirth" doesn't apply. Reboot after
+            share hardware-bound presence—they can't be copied, so "rebirth" doesn't apply. Reboot after
             energy loss is the same identity resuming, with reputational impact for poor energy management.
             Only software AI can be copied/forked, creating genuine identity continuity questions that need
             trust transfer rules.

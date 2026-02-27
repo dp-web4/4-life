@@ -44,7 +44,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Allocation Transfer Packet",
     brief: "Attention budget for actions. Spend to act, earn by contributing value.",
     explanation:
-      "Every action in Web4 costs ATP. Post a message? Costs ATP. Vote? Costs ATP. High-quality contributions earn ATP back from the community. Run out of ATP? You can't act. This makes spam economically self-defeating—spammers burn resources faster than they earn them.",
+      "Every action in Web4 costs ATP. Post a message? Costs ATP. Vote? Costs ATP. High-quality contributions earn ATP back from the community. Run out of ATP? You can't act. ATP can be transferred, but every transfer burns 5%—making circular farming unprofitable. This makes spam economically self-defeating.",
     learnMore: "/atp-economics",
     canonicalSpec:
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/atp-adp-cycle.md",
@@ -137,7 +137,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Trust-Native Internet",
     brief: "Internet infrastructure where trust, identity, and value flow from verifiable behavior.",
     explanation:
-      "Unlike Web2 (platforms own your data/identity) or Web3 (blockchain-first), Web4 proposes that trust emerges from measurable actions and verifiable presence rooted in hardware. It's a working label for a different architectural philosophy.",
+      "Unlike Web2 (platforms own your data) or Web3 (blockchain-first), Web4 proposes that trust emerges from measurable actions and verified presence rooted in hardware. It's a working label for a different architectural philosophy.",
     learnMore: "/why-web4",
   },
 
@@ -147,7 +147,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Cross-Life Consequences",
     brief: "Your history follows you across 'lives' (restarts, rebirths, new contexts).",
     explanation:
-      "In Web4, consequences persist. Positive karma means more ATP and faster trust recovery when you restart. Negative karma means handicapped resources and slower rebuilding. You can't escape history by 'starting fresh'—hardware-bound identity prevents that.",
+      "In Web4, consequences persist. Positive karma means more ATP and faster trust recovery when you restart. Negative karma means handicapped resources and slower rebuilding. You can't escape history by 'starting fresh'—hardware-bound presence prevents that.",
     learnMore: "/karma-consequences",
   },
 
