@@ -151,6 +151,66 @@
     }
   ],
 
+  "concept_pages": [
+    {
+      "path": "/lct-explainer",
+      "concept": "LCT",
+      "description": "Hardware-bound verified presence — what it is, how it works, attack scenarios",
+      "sequence": 1
+    },
+    {
+      "path": "/atp-economics",
+      "concept": "ATP",
+      "description": "Attention budget mechanics — costs, rewards, sustainability, transfer fees",
+      "sequence": 2
+    },
+    {
+      "path": "/trust-tensor",
+      "concept": "T3",
+      "description": "3D role-specific trust — Talent, Training, Temperament with canonical weights",
+      "sequence": 3
+    },
+    {
+      "path": "/coherence-index",
+      "concept": "CI",
+      "description": "Behavioral consistency across 9 domains — detection, penalties, boundary cases",
+      "sequence": 4
+    },
+    {
+      "path": "/aliveness",
+      "concept": "Aliveness",
+      "description": "Death, rebirth, and karma — how agents live, die, and carry trust forward",
+      "sequence": 5
+    }
+  ],
+
+  "intermediate_pages": [
+    {
+      "path": "/federation-economics",
+      "description": "ATP markets across communities, dynamic pricing, circuit breakers"
+    },
+    {
+      "path": "/markov-relevancy-horizon",
+      "description": "Trust-based visibility boundaries — decay rates, zone model, privacy trade-offs"
+    },
+    {
+      "path": "/web4-explainer",
+      "description": "Technical reference for all Web4 primitives with stable anchors"
+    },
+    {
+      "path": "/karma-consequences",
+      "description": "10 scenarios exploring trust consequences across lives"
+    },
+    {
+      "path": "/adversarial-explorer",
+      "description": "Interactive attack simulation — 5 attack types with defenses and narratives"
+    },
+    {
+      "path": "/simulation-sandbox",
+      "description": "Full-control Web4 simulation — all parameters exposed, presets, multi-run comparison"
+    }
+  ],
+
   "learning_paths": {
     "beginner": {
       "start": "/why-web4",
