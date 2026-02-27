@@ -26,10 +26,10 @@ export default function Web4ExplainerPage() {
       <section>
         <h2 id="lct">1. LCT: Linked Context Token</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
-          An LCT is a <strong>linked context token</strong>: a non-fungible token
-          that lives on a society&apos;s blockchain. Each LCT represents a subject in
-          that society&apos;s context (an agent, society, role, resource, or task)
-          and carries MRH and T3/V3 views.
+          An LCT is a <strong>linked context token</strong>: a hardware-bound
+          verified presence token that represents a subject in a society&apos;s
+          context (an agent, society, role, resource, or task) and carries
+          MRH and T3/V3 views.
         </p>
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
           LCTs are linked together by RDF-like graph edges (for example:
