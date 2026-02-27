@@ -869,6 +869,21 @@ export default function GlossaryPage() {
               the rules for the right reason than to follow them for the wrong one.
             </p>
           </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-xl font-semibold text-purple-400 mb-3">Circuit Breaker</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              A per-bridge resilience mechanism in federated societies. Monitors trust degradation,
+              response latency, and dispute rates across federation links. When a partner society
+              consistently misbehaves, the circuit trips — isolating it to prevent cascading failures.
+              Recovery requires demonstrated improvement, not just reconnection.
+            </p>
+            <div className="mt-2">
+              <Link href="/federation-economics" className="text-sky-400 text-sm hover:underline">
+                Federation Economics →
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -906,7 +921,7 @@ export default function GlossaryPage() {
           </p>
           <p className="text-gray-300 leading-relaxed">
             We say "Web4" because Web2 = platforms own you, Web3 = blockchain-first,
-            Web4 = <strong className="text-green-400">trust-native hardware-rooted presence</strong>.
+            Web4 = <strong className="text-green-400">trust-native hardware-bound presence</strong>.
             It's a working label for a different architectural philosophy.
           </p>
           <p className="text-gray-400 text-sm border-t border-gray-700 pt-4">
