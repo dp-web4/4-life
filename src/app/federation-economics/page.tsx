@@ -461,6 +461,20 @@ export default function FederationEconomicsPage() {
 
           <div>
             <h3 className="text-lg font-semibold text-gray-300 mb-3">
+              Federation Circuit Breakers
+            </h3>
+            <p className="text-gray-300 mb-3">
+              What happens when a federation partner becomes malicious or fails? Each bridge
+              has a <strong className="text-amber-400">circuit breaker</strong> that monitors
+              trust degradation, response latency, and dispute rates. If a partner society
+              consistently misbehaves, the circuit trips — isolating it before damage cascades
+              across the federation. Recovery requires demonstrating improved behavior over time,
+              not just reconnecting.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-300 mb-3">
               Implementation
             </h3>
             <p className="text-gray-300 mb-3">
