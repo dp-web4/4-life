@@ -204,6 +204,15 @@ export default function WhatCouldGoWrongPage() {
               not impossible, but it&apos;s orders of magnitude harder than creating 1,000 email
               accounts.
             </p>
+            <div className="bg-gray-800/60 border border-gray-700/50 rounded-lg p-4 my-3">
+              <p className="text-gray-300 text-sm mb-2">
+                <strong className="text-gray-100">The numbers:</strong> Web4 simulations show that honest
+                strategies yield ROI of ~0.93 while Sybil strategies yield ~0.90. The margin is small — but
+                it&apos;s consistently in favor of honest behavior. More importantly, circular ATP transfers
+                (the simplest farming tactic) lose money: 30 circular transfers destroy ~150 ATP through
+                the 5% transfer fee. It&apos;s cheaper to just do good work.
+              </p>
+            </div>
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
               <strong>Honest assessment:</strong> Web4 raises the floor, not the ceiling. Casual
               abuse becomes uneconomical. Sophisticated, well-funded attacks remain possible.

@@ -188,6 +188,57 @@ export default function ATPEconomicsPage() {
         </div>
       </section>
 
+      {/* Quality Ramp — concrete numbers from web4 spec */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">Quality Pays — By How Much?</h2>
+        <p className="text-gray-300 leading-relaxed mb-6">
+          ATP isn&apos;t all-or-nothing. Web4 uses a <strong className="text-sky-400">quality ramp</strong>:
+          the better your work, the more you earn. Below a minimum quality bar, you earn nothing.
+        </p>
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8">
+          <h3 className="text-lg font-semibold text-gray-100 mb-4">Imagine a task worth 50 ATP:</h3>
+          <div className="space-y-3">
+            <div className="flex items-center gap-4">
+              <div className="w-24 text-right text-sm text-gray-500">Quality 30%</div>
+              <div className="flex-1 h-6 bg-gray-800 rounded-full overflow-hidden">
+                <div className="h-full bg-red-500/60 rounded-full" style={{ width: '0%' }} />
+              </div>
+              <div className="w-20 text-sm text-red-400 font-mono">0 ATP</div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-24 text-right text-sm text-gray-500">Quality 50%</div>
+              <div className="flex-1 h-6 bg-gray-800 rounded-full overflow-hidden">
+                <div className="h-full bg-amber-500/60 rounded-full" style={{ width: '24%' }} />
+              </div>
+              <div className="w-20 text-sm text-amber-400 font-mono">~12 ATP</div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-24 text-right text-sm text-gray-500">Quality 70%</div>
+              <div className="flex-1 h-6 bg-gray-800 rounded-full overflow-hidden">
+                <div className="h-full bg-sky-500/60 rounded-full" style={{ width: '60%' }} />
+              </div>
+              <div className="w-20 text-sm text-sky-400 font-mono">~30 ATP</div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-24 text-right text-sm text-gray-500">Quality 85%</div>
+              <div className="flex-1 h-6 bg-gray-800 rounded-full overflow-hidden">
+                <div className="h-full bg-green-500/60 rounded-full" style={{ width: '84%' }} />
+              </div>
+              <div className="w-20 text-sm text-green-400 font-mono">~42 ATP</div>
+            </div>
+          </div>
+          <p className="text-gray-400 text-sm mt-4">
+            High-quality work earns <strong className="text-gray-200">~7x more</strong> than mediocre work.
+            The ramp starts at 30% quality (below that, zero payment) and scales linearly above 70%.
+            There are no negotiations — quality is the dominant earnings driver.
+          </p>
+          <p className="text-gray-500 text-xs mt-3">
+            A 5% transfer fee on all ATP flows prevents circular farming.
+            Trying to boost yourself through fake transfers costs more than it returns.
+          </p>
+        </div>
+      </section>
+
       {/* Interactive Simulation */}
       <section id="try-it" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">

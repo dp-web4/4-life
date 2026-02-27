@@ -888,6 +888,38 @@ export default function AlivenessExplainer() {
       </section>
 
       <section>
+        <h2>Not Just Alive or Dead</h2>
+        <p>
+          Aliveness isn&apos;t a binary switch. Societies (and entities within them) have
+          <strong> metabolic states</strong> — like a body that can be awake, resting, or dormant.
+        </p>
+        <div className="concept-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
+          <div className="detail-box" style={{ borderLeft: "3px solid #10b981" }}>
+            <h4 style={{ color: "#10b981" }}>Active</h4>
+            <p>Normal operation — processing interactions, earning/spending ATP.</p>
+          </div>
+          <div className="detail-box" style={{ borderLeft: "3px solid #38bdf8" }}>
+            <h4 style={{ color: "#38bdf8" }}>Rest → Sleep</h4>
+            <p>Idle for hours? The society rests. Idle for longer? It sleeps. Can wake anytime.</p>
+          </div>
+          <div className="detail-box" style={{ borderLeft: "3px solid #f59e0b" }}>
+            <h4 style={{ color: "#f59e0b" }}>Torpor</h4>
+            <p>Low ATP warning. Needs ≥20% energy to exit. Recoverable — but a signal to act.</p>
+          </div>
+          <div className="detail-box" style={{ borderLeft: "3px solid #a78bfa" }}>
+            <h4 style={{ color: "#a78bfa" }}>Hibernation</h4>
+            <p>Dormant for 30+ days. Still alive, still recoverable. Trust and history preserved.</p>
+          </div>
+        </div>
+        <p style={{ color: "#9ca3af", fontSize: "0.9rem", marginTop: "1rem" }}>
+          There are also transitional states: <strong>Molting</strong> (governance change in progress),
+          <strong> Dreaming</strong> (maintenance window), and <strong>Estivation</strong> (seasonal dormancy).
+          The key insight: a society that goes quiet for a month isn&apos;t dead — it&apos;s hibernating.
+          Its trust network, reputation history, and member relationships are all preserved.
+        </p>
+      </section>
+
+      <section>
         <h2>Why the 0.5 Threshold?</h2>
         <p>
           The 0.5 threshold is a <strong>design choice</strong>: the minimum bar for continued
