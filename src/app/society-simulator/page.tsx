@@ -3767,6 +3767,15 @@ export default function SocietySimulatorPage() {
           </div>
         </div>
 
+        {/* Concept deep-dive links */}
+        <div className="mt-4 flex flex-wrap gap-3">
+          <span className="text-xs text-gray-500">Go deeper:</span>
+          <a href="/trust-tensor" className="text-xs text-purple-400 hover:underline">Trust Tensors</a>
+          <a href="/atp-economics" className="text-xs text-sky-400 hover:underline">ATP Economics</a>
+          <a href="/aliveness" className="text-xs text-green-400 hover:underline">Life & Death</a>
+          <a href="/coherence-index" className="text-xs text-orange-400 hover:underline">Coherence Index</a>
+        </div>
+
         {/* Federation bridge — what happens with multiple communities */}
         <div className="mt-6 bg-gradient-to-r from-amber-900/20 to-purple-900/20 border border-amber-800/40 rounded-lg p-5">
           <h3 className="text-lg font-bold mb-2 text-amber-300">Beyond One Society</h3>

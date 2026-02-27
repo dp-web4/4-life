@@ -186,25 +186,25 @@ export default function FirstContactPage() {
               <h2 className="text-2xl font-bold mb-4">What You'll Learn</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <div className="text-sky-400 font-semibold mb-2">🔋 Attention Economics (ATP)</div>
+                  <Link href="/atp-economics" className="text-sky-400 font-semibold mb-2 block hover:underline">🔋 Attention Economics (ATP)</Link>
                   <p className="text-gray-400">
                     Every action costs attention. Quality earns it back. Spam burns out.
                   </p>
                 </div>
                 <div>
-                  <div className="text-purple-400 font-semibold mb-2">🤝 Trust: Your Reputation</div>
+                  <Link href="/trust-tensor" className="text-purple-400 font-semibold mb-2 block hover:underline">🤝 Trust: Your Reputation</Link>
                   <p className="text-gray-400">
                     Trust builds through consistent quality. It follows you everywhere. No fresh starts.
                   </p>
                 </div>
                 <div>
-                  <div className="text-green-400 font-semibold mb-2">📜 Consequences: Permanent Record</div>
+                  <Link href="/aliveness" className="text-green-400 font-semibold mb-2 block hover:underline">📜 Consequences: Permanent Record</Link>
                   <p className="text-gray-400">
                     Your track record is permanent. Good behavior compounds. Bad actors can't hide.
                   </p>
                 </div>
                 <div>
-                  <div className="text-orange-400 font-semibold mb-2">⚖️ Self-Regulation: No Moderators</div>
+                  <Link href="/coherence-index" className="text-orange-400 font-semibold mb-2 block hover:underline">⚖️ Self-Regulation: No Moderators</Link>
                   <p className="text-gray-400">
                     The system regulates itself through economics. Quality rises, spam sinks.
                   </p>
