@@ -532,6 +532,16 @@ export default function PlaygroundPage() {
               <div style={{ fontSize: "0.85rem", color: "#f3f4f6", fontWeight: 600 }}>Trust Tensor</div>
               <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>What trust actually measures</div>
             </a>
+            <a href="/coherence-index" style={{
+              padding: "0.75rem",
+              backgroundColor: "#111827",
+              borderRadius: "6px",
+              borderLeft: "3px solid #f97316",
+              textDecoration: "none",
+            }}>
+              <div style={{ fontSize: "0.85rem", color: "#f3f4f6", fontWeight: 600 }}>Coherence Index</div>
+              <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>How consistency protects identity</div>
+            </a>
             <a href="/aliveness" style={{
               padding: "0.75rem",
               backgroundColor: "#111827",
