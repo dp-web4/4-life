@@ -1,9 +1,12 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
+import PageTracker from "@/components/PageTracker";
 
 export default function Web4ExplainerPage() {
   return (
     <>
+      <PageTracker slug="web4-explainer" />
       <Breadcrumbs currentPath="/web4-explainer" />
       <section>
         <h1>Web4 in one page</h1>
@@ -205,6 +208,7 @@ export default function Web4ExplainerPage() {
           stress-tested standard.
         </p>
       </section>
+      <ExplorerNav currentPath="/web4-explainer" />
       <RelatedConcepts currentPath="/web4-explainer" />
     </>
   );
