@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Society Simulator Achievements",
     description:
-      "33 challenges to unlock. How many trust dynamics can you discover?",
+      "34 challenges to unlock. How many trust dynamics can you discover?",
   },
 };
 
