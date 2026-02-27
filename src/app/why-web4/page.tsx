@@ -850,11 +850,19 @@ export default function WhyWeb4Page() {
                 not your name. A spammer with no trust connections can&apos;t even see your data, let alone
                 manipulate it.
               </p>
+              <p>
+                <strong>Zero-knowledge trust verification</strong> goes further: you can prove your
+                trust meets a threshold (&ldquo;my T3 Training exceeds 0.7&rdquo;) without revealing
+                the actual number. This enables trust-gated access — join a community, accept a task,
+                or enter a partnership — while keeping your full trust history private. Think of it
+                like a credit check that says &ldquo;approved&rdquo; without showing your exact score.
+              </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Privacy is structural, not absolute. Someone who shares
                 your trust network can see your scores in that context. And if a hardware key is ever
                 linked to a real identity (through a data breach or correlation attack), the trust
-                history becomes de-anonymized. MRH limits blast radius, but doesn&apos;t guarantee anonymity.
+                history becomes de-anonymized. MRH limits blast radius; zero-knowledge proofs limit
+                information leakage; but neither guarantees perfect anonymity.
               </p>
             </div>
           </details>

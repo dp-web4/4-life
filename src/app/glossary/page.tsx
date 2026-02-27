@@ -455,6 +455,25 @@ export default function GlossaryPage() {
             </div>
           </div>
 
+          {/* ZK Trust Proofs */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">Zero-Knowledge Trust Proofs</h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              <strong>Prove your trust meets a threshold without revealing the actual score.</strong>{' '}
+              Using cryptographic commitments and range proofs, you can demonstrate &ldquo;my T3 Training
+              exceeds 0.7 in data analysis&rdquo; without disclosing that it&apos;s exactly 0.83.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: &ldquo;Like a credit check that says &lsquo;approved&rsquo; without showing
+              your exact score. You prove you&apos;re qualified without revealing your full history.&rdquo;
+            </p>
+            <p className="text-gray-500 text-xs">
+              This enables trust-gated access (join a community, accept a task, enter a partnership)
+              while keeping your complete trust tensor private. It&apos;s what makes Web4 fundamentally
+              different from blockchains where all reputation data is public.
+            </p>
+          </div>
+
         </div>
       </section>
 
