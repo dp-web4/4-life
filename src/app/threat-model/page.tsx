@@ -26,7 +26,8 @@ export default function ThreatModelPage() {
         <div className="bg-gradient-to-br from-yellow-950/30 to-yellow-900/20 border border-yellow-800/30 rounded-xl p-6">
           <p className="text-yellow-300 leading-relaxed">
             ⚠️ <strong>Research Status:</strong> These mechanisms are experimental.
-            32 attack vectors are modeled and defended; more remain unexplored. Detection times are theoretical.
+            The Web4 reference implementation models 400+ attack vectors across 80+ tracks;
+            this page highlights the key categories. Detection times are theoretical.
             Economic parameters are calibrated through simulation, not real-world adversaries.
           </p>
         </div>
