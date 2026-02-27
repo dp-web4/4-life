@@ -787,7 +787,9 @@ export default function WhyWeb4Page() {
                 <strong>Honest caveat:</strong> The boundary between &ldquo;AI agent&rdquo; and &ldquo;human with AI
                 assistance&rdquo; is blurry and getting blurrier. How to handle AI-augmented actions (you wrote it, but
                 GPT helped) is an open question. The current design handles clearly autonomous agents well but struggles
-                with the hybrid cases.
+                with the hybrid cases. On the regulatory side, Web4&apos;s transparency and audit primitives
+                are designed to map to EU AI Act (2024/1689) requirements — but that compliance hasn&apos;t been
+                independently validated yet.
               </p>
             </div>
           </details>
