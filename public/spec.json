@@ -3,22 +3,22 @@
   "tagline": "Trust-Native Societies for Humans and AI",
   "version": "0.1.0-research",
   "status": "experimental",
-  "updated": "2026-01-16",
+  "updated": "2026-02-27",
   "repository": "https://github.com/dp-web4/4-life",
   "whitepaper": "https://dp-web4.github.io/web4/",
 
   "primitives": {
     "LCT": {
       "name": "Linked Context Token",
-      "description": "Hardware-rooted identity strongly resistant to impersonation through TPM/Secure Enclave/FIDO2 binding",
-      "purpose": "Unforgeable digital presence that accumulates trust and reputation",
+      "description": "Hardware-bound verified presence token, strongly resistant to impersonation through TPM/Secure Enclave/FIDO2 binding",
+      "purpose": "Unforgeable digital presence that accumulates trust and reputation across interactions",
       "implementation": "lib/game/engine/lct.py",
       "spec": "https://dp-web4.github.io/web4/sections/foundational-concepts/lct-linked-context-token/",
       "links": ["/lct-explainer", "/web4-explainer#lct"]
     },
     "ATP": {
       "name": "Allocation Transfer Packet",
-      "description": "Metabolic currency inspired by biological ATP. Actions cost attention; quality earns it.",
+      "description": "Attention budget inspired by biological ATP. Actions cost energy; quality earns it back.",
       "purpose": "Economic self-limitation of spam through metabolic dynamics",
       "implementation": "lib/game/engine/atp_transactions.py",
       "spec": "https://dp-web4.github.io/web4/sections/foundational-concepts/atp-adp-cycle/",
@@ -54,7 +54,7 @@
       "purpose": "Detection of incoherent behavior (teleporting, capability spoofing)",
       "implementation": "lib/game/engine/coherence_atp_integration.py",
       "spec": "https://dp-web4.github.io/web4/sections/coherence-framework/",
-      "links": ["/coherence-index"]
+      "links": ["/coherence-index", "/web4-explainer#ci"]
     },
     "R6": {
       "name": "R6/R7 Action Framework",
@@ -171,9 +171,9 @@
     {
       "id": "false-positives",
       "name": "False Positives & Contested Events",
-      "description": "Incorrect trust penalties may be irreversible without appeals mechanism",
-      "mitigation": "None implemented yet",
-      "residual_risk": "High; legitimate users may be unfairly penalized",
+      "description": "Incorrect trust penalties may harm legitimate users without functional appeals",
+      "mitigation": "Multi-tier SAL appeals mechanism designed (File → Review → Evidence → Hearing → Verdict → Enforce) but not yet deployed with real humans",
+      "residual_risk": "Medium; mechanism exists but real-world effectiveness unknown",
       "detection": "User reports, anomaly detection",
       "anchor": "/threat-model#false-positives"
     }
@@ -199,7 +199,7 @@
     },
     "multi_life": {
       "default_lives": 3,
-      "ticks_per_life": 20,
+      "turns_per_life": 20,
       "ep_maturation_lives": 5,
       "pattern_corpus_size": 250
     },
@@ -274,11 +274,12 @@
     "purpose": "exploration and collaboration",
     "contribution_model": "better questions > just code",
     "known_gaps": [
-      "Collusion detection algorithms unproven",
-      "Appeals mechanism not implemented",
+      "Collusion detection algorithms unproven at scale",
+      "Appeals mechanism designed but untested with real humans",
       "Hardware attestation stubbed (not production-grade)",
       "Scale testing limited to simulations",
-      "Economic assumptions not validated with real humans"
+      "Economic assumptions not validated with real humans",
+      "Nation-state attack resilience partially modeled but unvalidated"
     ]
   },
 
