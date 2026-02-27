@@ -3774,6 +3774,7 @@ export default function SocietySimulatorPage() {
           <a href="/atp-economics" className="text-xs text-sky-400 hover:underline">ATP Economics</a>
           <a href="/aliveness" className="text-xs text-green-400 hover:underline">Life & Death</a>
           <a href="/coherence-index" className="text-xs text-orange-400 hover:underline">Coherence Index</a>
+          <a href="/how-it-works#governance" className="text-xs text-amber-400 hover:underline">Governance (SAL)</a>
         </div>
 
         {/* Federation bridge — what happens with multiple communities */}

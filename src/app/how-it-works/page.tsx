@@ -678,7 +678,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Governance: What Happens When Things Go Wrong */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="governance" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           What Happens When Things Go Wrong?
         </h2>
@@ -714,6 +714,35 @@ export default function HowItWorksPage() {
               Graduated severity levels (critical → high → medium). A <strong>law oracle</strong> evaluates
               actions and produces verdicts. The key principle: alignment without compliance is acceptable;
               compliance without alignment is never acceptable.
+            </p>
+          </div>
+        </div>
+
+        {/* Concrete example: How a society sets its own rules */}
+        <div className="bg-gradient-to-br from-sky-950/20 to-gray-900 border border-sky-800/20 rounded-xl p-6 mb-6">
+          <h4 className="text-lg font-semibold text-sky-300 mb-3">Example: How a Research Community Sets Its Rules</h4>
+          <div className="space-y-4 text-sm">
+            <div className="flex gap-3">
+              <span className="text-sky-400 font-bold shrink-0">Society:</span>
+              <p className="text-gray-300">&ldquo;Open Science Collective&rdquo; — purpose: advance reproducible research. Membership requires T3 Training ≥ 0.6 in any scientific role.</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-400 font-bold shrink-0">Authority:</span>
+              <p className="text-gray-300">Three roles: <strong>Reviewer</strong> (can approve publications, needs T3 ≥ 0.8), <strong>Treasurer</strong> (manages ATP grants, elected by members), <strong>Moderator</strong> (resolves disputes, rotates monthly). All bound by the same trust mechanics — abuse power and you lose the role.</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-purple-400 font-bold shrink-0">Laws:</span>
+              <div className="text-gray-300">
+                <p className="mb-2">The community writes three graduated rules:</p>
+                <ul className="space-y-1 text-gray-400 ml-4">
+                  <li>&bull; <strong className="text-red-400">Critical:</strong> Fabricating data → immediate ejection + trust penalties</li>
+                  <li>&bull; <strong className="text-amber-400">High:</strong> Plagiarism → suspension + appeals available</li>
+                  <li>&bull; <strong className="text-yellow-400">Medium:</strong> Missing peer review deadline → warning + ATP cost increase</li>
+                </ul>
+              </div>
+            </div>
+            <p className="text-gray-500 text-xs italic mt-3">
+              The <strong>law oracle</strong> evaluates each action against these rules and produces verdicts: Perfect (aligned + compliant), Aligned (spirit right, letter wrong — acceptable), Warning, or Violation. The key insight: a researcher who bends formatting rules to publish breakthrough findings faster (aligned but not compliant) is treated differently from one who follows every rule while quietly undermining peers (compliant but not aligned).
             </p>
           </div>
         </div>
