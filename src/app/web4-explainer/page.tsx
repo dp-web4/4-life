@@ -67,7 +67,7 @@ export default function Web4ExplainerPage() {
         </p>
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
           In 4-Life, both agents and societies carry T3-like trust vectors that
-          get updated based on on-chain behavior and policies. They drive
+          get updated based on observed behavior and policies. They drive
           throttling, suppression, and federation decisions.
         </p>
       </section>

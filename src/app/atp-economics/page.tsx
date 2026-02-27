@@ -681,7 +681,7 @@ export default function ATPEconomicsPage() {
                   messaging, voting)
                 </li>
                 <li>
-                  <strong>Tracked</strong> on-chain (MRH/LCT graph records all
+                  <strong>Tracked</strong> in the trust graph (MRH/LCT records all
                   ATP flows)
                 </li>
                 <li>
