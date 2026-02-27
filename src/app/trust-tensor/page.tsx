@@ -660,11 +660,9 @@ Talent: No decay (represents inherent aptitude)
               <h3 className="text-xl font-semibold text-sky-400 mb-3">
                 Related: V3 (Value Tensors)
               </h3>
-              <p className="leading-relaxed mb-3 text-sm text-gray-500 italic">
-                This is a parallel concept you don&apos;t need to learn yet. It&apos;s here for completeness.
-              </p>
               <p className="leading-relaxed mb-3">
-                Web4 uses two related tensor systems:
+                T3 measures <em>who you are</em>. V3 measures <em>what you produce</em>. Every output
+                in Web4 gets scored across three dimensions:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
                 <li>
@@ -673,9 +671,85 @@ Talent: No decay (represents inherent aptitude)
                 </li>
                 <li>
                   <strong className="text-purple-300">V3 (Value Tensor):</strong>{" "}
-                  How much value something creates &mdash; Valuation (0.3), Veracity (0.35), Validity (0.35) per output
+                  How much value something creates &mdash; Valuation (0.3 weight), Veracity (0.35), Validity (0.35)
                 </li>
               </ul>
+
+              {/* Practical V3 examples */}
+              <div className="mt-4 bg-gradient-to-br from-purple-950/20 to-gray-900 border border-purple-800/30 rounded-xl p-5">
+                <h4 className="text-lg font-semibold text-purple-300 mb-3">V3 in Practice</h4>
+                <div className="space-y-4 text-sm">
+                  <div className="bg-gray-800/50 rounded-lg p-4">
+                    <div className="font-semibold text-gray-200 mb-2">Scenario: Code Review</div>
+                    <div className="grid grid-cols-3 gap-3 text-center mb-2">
+                      <div>
+                        <div className="text-xs text-gray-500">Valuation</div>
+                        <div className="text-green-400 font-bold">0.85</div>
+                        <div className="text-xs text-gray-500">How useful is it?</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-gray-500">Veracity</div>
+                        <div className="text-green-400 font-bold">0.90</div>
+                        <div className="text-xs text-gray-500">Is it accurate?</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-gray-500">Validity</div>
+                        <div className="text-green-400 font-bold">0.80</div>
+                        <div className="text-xs text-gray-500">Is it well-reasoned?</div>
+                      </div>
+                    </div>
+                    <p className="text-gray-400">A thorough, accurate review that catches real bugs. High across all dimensions &mdash; earns full ATP reward.</p>
+                  </div>
+
+                  <div className="bg-gray-800/50 rounded-lg p-4">
+                    <div className="font-semibold text-gray-200 mb-2">Scenario: Clickbait Article</div>
+                    <div className="grid grid-cols-3 gap-3 text-center mb-2">
+                      <div>
+                        <div className="text-xs text-gray-500">Valuation</div>
+                        <div className="text-amber-400 font-bold">0.60</div>
+                        <div className="text-xs text-gray-500">How useful is it?</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-gray-500">Veracity</div>
+                        <div className="text-red-400 font-bold">0.25</div>
+                        <div className="text-xs text-gray-500">Is it accurate?</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-gray-500">Validity</div>
+                        <div className="text-red-400 font-bold">0.30</div>
+                        <div className="text-xs text-gray-500">Is it well-reasoned?</div>
+                      </div>
+                    </div>
+                    <p className="text-gray-400">Gets clicks (some valuation) but misleading and poorly argued. Low V3 score means reduced ATP reward, and repeated low-veracity output drags down T3 Training scores.</p>
+                  </div>
+
+                  <div className="bg-gray-800/50 rounded-lg p-4">
+                    <div className="font-semibold text-gray-200 mb-2">Scenario: Research Contribution</div>
+                    <div className="grid grid-cols-3 gap-3 text-center mb-2">
+                      <div>
+                        <div className="text-xs text-gray-500">Valuation</div>
+                        <div className="text-amber-400 font-bold">0.40</div>
+                        <div className="text-xs text-gray-500">How useful is it?</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-gray-500">Veracity</div>
+                        <div className="text-green-400 font-bold">0.95</div>
+                        <div className="text-xs text-gray-500">Is it accurate?</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-gray-500">Validity</div>
+                        <div className="text-green-400 font-bold">0.92</div>
+                        <div className="text-xs text-gray-500">Is it well-reasoned?</div>
+                      </div>
+                    </div>
+                    <p className="text-gray-400">Niche topic (lower immediate valuation) but rigorous and accurate. The weighted score (0.35 × 0.95 + 0.35 × 0.92 + 0.30 × 0.40 = <strong>0.77</strong>) still earns good rewards because Web4 weights truth and reasoning more heavily than popularity.</p>
+                  </div>
+                </div>
+                <p className="mt-3 text-gray-500 text-xs">
+                  V3 weights: Valuation 0.30, Veracity 0.35, Validity 0.35. Truth and reasoning outweigh popularity by design.
+                </p>
+              </div>
+
               <p className="mt-3 leading-relaxed">
                 High T3 correlates with better V3 outcomes: Talent drives Valuation, Training drives
                 Veracity, Temperament drives Validity. The relationship reinforces itself over time.
