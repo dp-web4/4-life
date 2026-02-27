@@ -361,32 +361,30 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>Currently theoretical with working simulations.</strong> 4-Life (this site)
-                demonstrates the mechanics in simulation. The underlying protocol specification exists
-                in the <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
-                Web4 whitepaper</a>.
+                <strong>Research prototype with substantial implementation.</strong> This is not vaporware &mdash;
+                there is real, tested code. But it&apos;s not a product yet. Here&apos;s what actually exists:
               </p>
-              <p>
-                Real-world deployment requires: hardware integration (TPM/Secure Enclave SDKs),
-                witness infrastructure, adoption by at least one platform, and legal/regulatory
-                navigation around identity systems.
-              </p>
-              <p>
-                <strong>Where we are now (and what comes next):</strong>
-              </p>
+              <p><strong>What&apos;s built and tested:</strong></p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>Now — Simulation &amp; specification:</strong> 4-Life proves the mechanics work in simulation. The{" "}
+                <li><strong>Protocol specification:</strong> 100+ page{" "}
                   <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
-                  Web4 spec</a> defines the protocol. You can explore the{" "}
+                  Web4 whitepaper</a> with formal definitions</li>
+                <li><strong>Reference implementations:</strong> ~47,000 lines of tested code &mdash; LCT lifecycle, T3/V3 tensors, ATP metering, governance (SAL), federation, witness protocol, MRH graphs</li>
+                <li><strong>Security validation:</strong> 424 attack vectors across 84 tracks, all defended. Sybil resistance formally proven (5 theorems)</li>
+                <li><strong>Hardware integration:</strong> TPM2 binding validated. Go LCT library (55 tests). Multi-device constellation enrollment working</li>
+                <li><strong>Interactive simulations:</strong>{" "}
                   <Link href="/society-simulator" className="text-sky-400 hover:underline">
-                  Society Simulator</Link> and{" "}
+                  Society Simulator</Link>,{" "}
                   <Link href="/playground" className="text-sky-400 hover:underline">
-                  Playground</Link> today.</li>
-                <li><strong>Next — Reference implementation:</strong> A working prototype that integrates with real hardware
-                  (FIDO2 keys, TPMs) and runs a small witness network. Not a product — a testbed for validating the theory.</li>
-                <li><strong>Then — Pilot community:</strong> A single community (research group, professional network, or
-                  platform) running Web4 trust alongside their existing system. The goal: real data on whether the
-                  economics actually work with real humans.</li>
+                  Playground</Link>, and{" "}
+                  <Link href="/karma-journey" className="text-sky-400 hover:underline">
+                  Karma Journey</Link> on this site</li>
+              </ul>
+              <p className="mt-2"><strong>What&apos;s NOT built yet:</strong></p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Production deployment:</strong> No live network with real users. The gap between &ldquo;simulations prove mechanics work&rdquo; and &ldquo;running with real humans&rdquo; is the current frontier</li>
+                <li><strong>Economic validation:</strong> ATP pricing calibrated for simulations, not real markets. Whether the economics survive real human behavior is an open question</li>
+                <li><strong>Platform adoption:</strong> No platform integrates Web4 yet. The 5-tier adoption pathway (Wrapper → Observable → Accountable → Federated → Native) is designed but untested</li>
               </ul>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest answer:</strong> This is research, not production. We don&apos;t attach timelines because honest
