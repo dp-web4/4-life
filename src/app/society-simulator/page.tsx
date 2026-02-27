@@ -3784,6 +3784,25 @@ export default function SocietySimulatorPage() {
           </a>
         </div>
 
+        {/* What's Next — forward CTA after the simulation */}
+        <div className="mt-6 bg-gradient-to-br from-gray-800/60 to-gray-900/60 border border-gray-700 rounded-lg p-6">
+          <h3 className="text-lg font-bold mb-3 text-gray-100">What&apos;s Next?</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <a href="/karma-journey" className="block p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-purple-500/50 transition-colors no-underline">
+              <div className="text-sm font-semibold text-purple-400 mb-1">Make Your Own Choices</div>
+              <p className="text-xs text-gray-400">Play as an agent inside a society. Your decisions shape your reputation, alliances, and survival.</p>
+            </a>
+            <a href="/playground" className="block p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-sky-500/50 transition-colors no-underline">
+              <div className="text-sm font-semibold text-sky-400 mb-1">Tweak the Parameters</div>
+              <p className="text-xs text-gray-400">Run single-agent simulations with custom settings. See how ATP, trust, and karma interact at a granular level.</p>
+            </a>
+            <a href="/learn" className="block p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-amber-500/50 transition-colors no-underline">
+              <div className="text-sm font-semibold text-amber-400 mb-1">Understand the Mechanics</div>
+              <p className="text-xs text-gray-400">Learn how verified presence, energy economics, trust tensors, and aliveness work together.</p>
+            </a>
+          </div>
+        </div>
+
         <ExplorerNav currentPath="/society-simulator" />
 
         {/* AI Guide Chat Panel */}
