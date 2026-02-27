@@ -360,6 +360,8 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           Imagine a day with trust built in: <Link href="/day-in-web4" style={{ color: 'var(--color-sky)' }}>A Day in Web4</Link>.
           {' · '}
           Skeptic? Start with <Link href="/what-could-go-wrong" style={{ color: 'var(--color-sky)' }}>What Could Go Wrong</Link>.
+          {' · '}
+          Want the full picture? <Link href="/how-it-works" style={{ color: 'var(--color-sky)' }}>How It Works</Link>.
         </p>
       </section>
 
