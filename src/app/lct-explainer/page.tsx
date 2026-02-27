@@ -146,8 +146,14 @@ export default function LCTExplainerPage() {
     return Math.pow(2.5, devices);
   };
 
+  // Detection probability per web4 spec: 30% base + 15% per additional witness, capped at 95%
+  const calculateDetectionProbability = (devices: number): number => {
+    return Math.min(0.95, 0.30 + (devices - 1) * 0.15);
+  };
+
   const trust = calculateTrust(deviceCount);
   const attackDifficulty = calculateAttackDifficulty(deviceCount);
+  const detectionProb = calculateDetectionProbability(deviceCount);
 
   return (
     <div className="min-h-screen py-12 px-4">
@@ -441,6 +447,27 @@ export default function LCTExplainerPage() {
                   {deviceCount >= 5 && <li>Tablet/Additional Device</li>}
                 </ul>
               </div>
+              {/* Detection probability from web4 spec */}
+              <div className="mt-4 pt-4 border-t border-gray-700">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm text-gray-400">Anomaly Detection</span>
+                  <span className="text-lg font-bold" style={{ color: detectionProb >= 0.8 ? '#10b981' : detectionProb >= 0.5 ? '#f59e0b' : '#ef4444' }}>
+                    {(detectionProb * 100).toFixed(0)}%
+                  </span>
+                </div>
+                <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                  <div
+                    className="h-full rounded-full transition-all duration-500"
+                    style={{
+                      width: `${detectionProb * 100}%`,
+                      backgroundColor: detectionProb >= 0.8 ? '#10b981' : detectionProb >= 0.5 ? '#f59e0b' : '#ef4444',
+                    }}
+                  />
+                </div>
+                <p className="text-xs text-gray-500 mt-1">
+                  Each witness adds 15% detection probability (capped at 95%)
+                </p>
+              </div>
             </div>
           </div>
 
@@ -448,7 +475,12 @@ export default function LCTExplainerPage() {
             <p className="text-sm text-gray-300">
               <span className="font-bold">Why this matters:</span> With {deviceCount} device{deviceCount > 1 ? 's' : ''},
               an attacker must physically steal AND biometrically unlock {deviceCount === 1 ? 'your device' : `all ${deviceCount} independent devices`}.
-              Each additional hardware witness makes compromise exponentially harder.
+              {deviceCount >= 3
+                ? ` That's ${attackDifficulty.toFixed(1)}x harder to compromise, with a ${(detectionProb * 100).toFixed(0)}% chance of detection — even a successful theft is almost certainly caught.`
+                : deviceCount >= 2
+                  ? ` That's ${attackDifficulty.toFixed(1)}x harder to compromise. Adding a third device would push detection to ${(calculateDetectionProbability(3) * 100).toFixed(0)}%.`
+                  : ` Adding a second device (like a security key) would raise detection from ${(detectionProb * 100).toFixed(0)}% to ${(calculateDetectionProbability(2) * 100).toFixed(0)}% and make compromise ${calculateAttackDifficulty(2).toFixed(1)}x harder.`
+              }
             </p>
           </div>
         </div>
