@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 import { trackPageVisit } from '@/lib/exploration';
 
 // ============================================================================
@@ -421,6 +422,7 @@ export default function ResearchHubPage() {
         </div>
       </div>
 
+      <ExplorerNav currentPath="/research-hub" />
       <RelatedConcepts currentPath="/research-hub" />
     </div>
   );

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 import PageTracker from "@/components/PageTracker";
 
 export default function StarterKitPage() {
@@ -119,6 +120,7 @@ export default function StarterKitPage() {
         </p>
       </section>
 
+      <ExplorerNav currentPath="/starter-kit" />
       <RelatedConcepts currentPath="/starter-kit" />
     </>
   );

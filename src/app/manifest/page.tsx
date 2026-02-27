@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
+import PageTracker from "@/components/PageTracker";
 
 export default function ManifestPage() {
   return (
@@ -108,7 +110,7 @@ export default function ManifestPage() {
         </p>
         <ul style={{ marginTop: "0.75rem", lineHeight: "1.75" }}>
           <li>
-            <strong id="sybil">Sybil attacks:</strong> Resourced attackers with many devices can create multiple identities.
+            <strong id="sybil">Sybil attacks:</strong> Resourced attackers with many devices can create multiple presences.
             LCT raises cost floor but doesn't make impossible.{" "}
             <Link href="/threat-model#sybil" className="text-sky-400">↗</Link>
           </li>
@@ -259,7 +261,9 @@ export default function ManifestPage() {
           <a href="https://claude.com/claude-code" target="_blank" rel="noreferrer" className="text-sky-400">Claude Code</a>
         </p>
       </footer>
+      <ExplorerNav currentPath="/manifest" />
       <RelatedConcepts currentPath="/manifest" />
+      <PageTracker slug="manifest" />
     </main>
   );
 }
