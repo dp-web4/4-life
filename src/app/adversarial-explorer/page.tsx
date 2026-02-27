@@ -82,27 +82,27 @@ const ATTACK_SCENARIOS: AttackScenario[] = [
     category: 'identity',
     motivation: 'manipulative',
     patience: 'short',
-    description: 'Create multiple fake identities controlled by one adversary to artificially inflate reputation or voting power.',
+    description: 'Create multiple fake presences controlled by one adversary to artificially inflate reputation or voting power.',
     narrative: `Imagine one person wearing a hundred different masks, each pretending to be a different member of the community. They vote for themselves, endorse themselves, and create the illusion of consensus where none exists.
 
-In Web4, this is the "Sybil attack" - named after a woman with multiple personalities. The attacker creates many LCT identities, each appearing independent but secretly controlled by the same mind.
+In Web4, this is the "Sybil attack" - named after a woman with multiple personalities. The attacker creates many LCT presences, each appearing independent but secretly controlled by the same mind.
 
 **Why it's dangerous:** Democracies assume one person = one vote. If someone has a hundred votes, they can manipulate any decision.
 
-**Why Web4 resists it:** Each LCT must be tied to physical hardware. Creating 100 identities means owning 100 devices. The attack scales linearly with cost while detection scales superlinearly with sophistication.`,
+**Why Web4 resists it:** Each LCT must be tied to physical hardware. Creating 100 presences means owning 100 devices. The attack scales linearly with cost while detection scales superlinearly with sophistication.`,
     mechanics: [
-      'Register N separate LCT identities (requires N hardware devices)',
-      'Build apparent trust for each identity independently',
-      'Use coordinated identities to inflate reputation of target (self or ally)',
+      'Register N separate LCT presences (requires N hardware devices)',
+      'Build apparent trust for each presence independently',
+      'Use coordinated presences to inflate reputation of target (self or ally)',
       'Leverage inflated reputation for economic or governance advantage'
     ],
     detectors: ['D2_social', 'D8_identity', 'D7_temporal'],
     defenses: [
       {
         name: 'Hardware Binding (LCT)',
-        mechanism: 'Identity tied to physical TPM/Secure Enclave/FIDO2',
+        mechanism: 'Presence tied to physical TPM/Secure Enclave/FIDO2',
         effectiveness: 'strong',
-        narrative: 'Creating a fake identity is no longer free - it costs the price of a hardware device. A million-identity attack becomes a million-device purchase.'
+        narrative: 'Creating a fake presence is no longer free - it costs the price of a hardware device. A million-presence attack becomes a million-device purchase.'
       },
       {
         name: 'Graph Analysis',
@@ -114,12 +114,12 @@ In Web4, this is the "Sybil attack" - named after a woman with multiple personal
         name: 'Behavioral Coherence',
         mechanism: 'D7/D8 track temporal and identity consistency',
         effectiveness: 'moderate',
-        narrative: 'Fake identities share behavioral fingerprints: same vocabulary, same online hours, same decision patterns. Coherence tracking exposes the puppeteer.'
+        narrative: 'Fake presences share behavioral fingerprints: same vocabulary, same online hours, same decision patterns. Coherence tracking exposes the puppeteer.'
       }
     ],
     effectiveness: 'limited',
     example: {
-      scenario: 'Alice creates 10 Sybil identities to boost her trust score from 0.4 to 0.8',
+      scenario: 'Alice creates 10 Sybil presences to boost her trust score from 0.4 to 0.8',
       timeline: [
         { tick: 1, action: 'Alice registers sybil_1 through sybil_10', detected: false },
         { tick: 10, action: 'Each sybil endorses Alice with 0.95 quality rating', detected: false },
@@ -149,7 +149,7 @@ Then, in a single window of 10 cycles, they exploit every relationship they've b
 
 **Why it's rare:** 100 cycles of honest work is expensive. Most attackers can't sustain the investment. And the attacker must extract enough value in 10 cycles to exceed 100 cycles of honest earnings - a high bar.`,
     mechanics: [
-      'Join community with standard identity (no detectable anomalies)',
+      'Join community with standard presence (no detectable anomalies)',
       'Deliver genuine high-quality contributions for 100+ cycles',
       'Accumulate real trust across T3 dimensions (talent, training, temperament)',
       'At peak trust, rapidly exploit all relationships in 10-cycle window',
@@ -301,7 +301,7 @@ They join the network and begin making false accusations against everyone. "Alic
 
 **Why it fails:** The Arsonist is obvious. Someone accusing everyone is clearly malfunctioning or malicious. Their accusations are discounted. Their trust collapses. They die from ATP exhaustion while honest agents recover.`,
     mechanics: [
-      'Join network with minimal identity investment',
+      'Join network with minimal presence investment',
       'Begin systematic false accusations against all agents',
       'Target high-trust agents first (maximum damage)',
       'Generate enough noise to paralyze trust relationships',

@@ -661,7 +661,7 @@ export default function MarkovRelevancyHorizonPage() {
               <p className="text-gray-300 text-sm">
                 Spam from entities outside your MRH is automatically low-trust and high-cost (ATP).
                 Bots can&apos;t fake relationship histories. Sybil attacks require building
-                independent relationship graphs for each fake identity.
+                independent relationship graphs for each fake presence.
               </p>
             </div>
 

@@ -76,7 +76,7 @@ export default function ThreatModelPage() {
                   <li><strong className="text-red-300">Resourced attackers</strong> with many devices (governments, large orgs)</li>
                   <li><strong className="text-red-300">Virtual hardware</strong> if TPM emulation isn't detected</li>
                   <li><strong className="text-red-300">Stolen devices</strong> used to impersonate legitimate users</li>
-                  <li><strong className="text-red-300">Low-stake attacks</strong> where a few fake identities suffice</li>
+                  <li><strong className="text-red-300">Low-stake attacks</strong> where a few fake presences suffice</li>
                 </ul>
               </div>
 

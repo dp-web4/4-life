@@ -998,14 +998,14 @@ export default function CoherenceIndexPage() {
                 hard to detect.
               </p>
               <p className="text-sm text-gray-300 mb-3">
-                <strong>Web4</strong>: Each identity requires coherence across
-                dimensions. Creating 100 fake identities means maintaining spatial,
+                <strong>Web4</strong>: Each presence requires coherence across
+                dimensions. Creating 100 fake presences means maintaining spatial,
                 temporal, capability, and relational coherence for all 100
                 simultaneously - prohibitively expensive.
               </p>
               <p className="text-xs text-gray-500">
-                Example: Fake-identity attack on a voting system. Attacker creates 50
-                identities from same device. Spatial + capability coherence fails
+                Example: Fake-presence attack on a voting system. Attacker creates 50
+                presences from same device. Spatial + capability coherence fails
                 for 49 of them (all same location, same hardware fingerprint). CI
                 drops below the trust threshold (0.5), identities rejected.
               </p>
