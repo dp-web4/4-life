@@ -78,6 +78,11 @@ export default function LearnJourney() {
         'federation-economics': 'federation-econ',
         'coherence-framework': 'coherence-framework',
         'narratives': 'explore-narrative',
+        'markov-relevancy-horizon': 'mrh',
+        'decision-evolution': 'ep',
+        'identity-constellation': 'identity-constellation',
+        'patterns': 'explore-patterns',
+        'act-explorer': 'ask-act',
       };
       for (const slug of exploration.pagesVisited) {
         const conceptId = slugToConceptId[slug];
