@@ -27,15 +27,22 @@ export default function FederationEconomicsPage() {
         <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
           How Markets Self-Organize
         </h1>
+
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
-          In Web4 federations, ATP prices adjust dynamically based on supply and
-          demand. When speed specialists are scarce, speed operations cost more. High
-          prices signal profit opportunities, agents specialize, supply increases, and
-          prices stabilize. <strong>No central planner</strong> - markets allocate
-          resources efficiently through price signals alone.
+          Think of it like surge pricing for ride-sharing. When it&apos;s raining and
+          everyone needs a ride, prices go up. Higher prices attract more drivers.
+          More drivers means shorter waits and lower prices. Nobody planned this —
+          the market self-organized.
+        </p>
+        <p className="text-lg text-gray-400 leading-relaxed mb-6">
+          Web4 federations work the same way with ATP. When speed specialists are
+          scarce, speed operations cost more. High prices signal profit opportunities,
+          agents specialize, supply increases, and prices stabilize.{" "}
+          <strong>No central planner</strong> — markets allocate resources
+          efficiently through price signals alone.
         </p>
         <p className="text-lg text-gray-400 leading-relaxed">
-          This is <strong>comparative advantage at the agent level</strong> - agents
+          This is <strong>comparative advantage at the agent level</strong> — agents
           develop capabilities the federation values, and the market self-organizes
           toward efficient allocation.
         </p>
@@ -152,8 +159,9 @@ export default function FederationEconomicsPage() {
                 Calculate Scarcity Factor
               </h3>
               <p className="text-gray-300 leading-relaxed mb-3">
-                Scarcity = demand / supply. When demand exceeds supply, the component
-                is <strong>scarce</strong>. When supply exceeds demand, there's a{" "}
+                Like checking how many taxis are available vs. how many people
+                need rides. Scarcity = demand / supply. When demand exceeds supply, the component
+                is <strong>scarce</strong>. When supply exceeds demand, there&apos;s a{" "}
                 <strong>surplus</strong>.
               </p>
               <div className="p-4 bg-gray-900/50 border border-gray-700 rounded font-mono text-sm">

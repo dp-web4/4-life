@@ -498,6 +498,46 @@ export default function LCTExplainerPage() {
           </div>
         </div>
 
+        {/* Hardware Trust Tiers */}
+        <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
+          <h2 className="text-2xl font-bold mb-6 text-gray-100">Not All Hardware Is Equal</h2>
+          <p className="text-gray-400 text-sm mb-4">
+            Your device&apos;s security hardware determines how high your trust can go. Stronger hardware means
+            a stronger identity witness &mdash; like the difference between a handwritten note and a notarized document.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+            <div className="bg-emerald-950/30 border border-emerald-800/30 rounded-lg p-4 text-center">
+              <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Strongest</div>
+              <div className="text-lg font-bold text-emerald-400 mb-1">TPM Chip</div>
+              <div className="text-2xl font-mono text-emerald-300">0.90</div>
+              <div className="text-xs text-gray-500 mt-1">Dedicated, tamper-resistant</div>
+            </div>
+            <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-4 text-center">
+              <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Strong</div>
+              <div className="text-lg font-bold text-sky-400 mb-1">Secure Enclave</div>
+              <div className="text-2xl font-mono text-sky-300">0.85</div>
+              <div className="text-xs text-gray-500 mt-1">iPhone, Mac, Android</div>
+            </div>
+            <div className="bg-amber-950/30 border border-amber-800/30 rounded-lg p-4 text-center">
+              <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Good</div>
+              <div className="text-lg font-bold text-amber-400 mb-1">FIDO2 Key</div>
+              <div className="text-2xl font-mono text-amber-300">0.75</div>
+              <div className="text-xs text-gray-500 mt-1">YubiKey, security keys</div>
+            </div>
+            <div className="bg-gray-700/30 border border-gray-600/30 rounded-lg p-4 text-center">
+              <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Basic</div>
+              <div className="text-lg font-bold text-gray-400 mb-1">Software Only</div>
+              <div className="text-2xl font-mono text-gray-400">0.50</div>
+              <div className="text-xs text-gray-500 mt-1">Browser/OS level</div>
+            </div>
+          </div>
+          <p className="text-gray-500 text-xs">
+            These are trust <em>ceilings</em>, not starting points. Everyone starts at neutral (0.5).
+            With software-only hardware, 0.5 is both where you start and the highest you can reach.
+            Stronger hardware lets you build higher &mdash; but you still have to earn it through behavior.
+          </p>
+        </div>
+
         {/* Attack Scenario Comparison */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <h2 className="text-2xl font-bold mb-6 text-gray-100">Security Comparison: Web2 vs Web3 vs Web4</h2>

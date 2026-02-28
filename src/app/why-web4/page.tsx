@@ -1054,6 +1054,34 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
+          {/* How do you catch cheaters? */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How do you catch cheaters?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Every action in Web4 creates a <strong>tamper-evident record</strong> &mdash; hash-chained
+                event logs that can&apos;t be altered after the fact. Think of it like a receipt that
+                the whole network can verify.
+              </p>
+              <p>
+                The system watches for anomalies automatically: sudden wealth spikes, coordinated
+                behavior between accounts, trust scores changing faster than should be possible,
+                or activity patterns that don&apos;t match an entity&apos;s history. When something looks
+                wrong, it gets flagged &mdash; not by a moderator, but by the math.
+              </p>
+              <p>
+                This is different from today&apos;s internet where cheating is only caught when someone
+                reports it. In Web4, the audit trail is continuous and the detection is automatic.
+                You can still try to cheat &mdash; but the system is designed so that cheating
+                is expensive (burns ATP), detectable (anomaly alerts), and unprofitable (low-quality
+                work earns nothing).
+              </p>
+            </div>
+          </details>
+
         {/* Link to deeper adversarial analysis */}
         <div className="mt-8 p-4 bg-gray-800/30 border border-gray-700 rounded-lg">
           <p className="text-gray-300 text-sm">

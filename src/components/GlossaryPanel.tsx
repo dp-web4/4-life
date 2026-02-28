@@ -12,9 +12,19 @@ const TERM_ORDER = [
 export default function GlossaryPanel() {
   const [isOpen, setIsOpen] = useState(false);
   const [filter, setFilter] = useState("");
+  const [hasBeenOpened, setHasBeenOpened] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Check if user has ever opened the glossary
+  useEffect(() => {
+    try {
+      if (localStorage.getItem("4life-glossary-opened")) {
+        setHasBeenOpened(true);
+      }
+    } catch {}
+  }, []);
 
   const close = useCallback(() => {
     setIsOpen(false);
@@ -75,9 +85,16 @@ export default function GlossaryPanel() {
       {/* Floating trigger button */}
       <button
         ref={buttonRef}
-        onClick={() => setIsOpen((v) => !v)}
+        onClick={() => {
+          setIsOpen((v) => !v);
+          if (!hasBeenOpened) {
+            setHasBeenOpened(true);
+            try { localStorage.setItem("4life-glossary-opened", "1"); } catch {}
+          }
+        }}
         aria-label={isOpen ? "Close glossary" : "Open glossary"}
-        title="Quick glossary"
+        title="Quick glossary — look up any term"
+        className={!isOpen && !hasBeenOpened ? "glossary-pulse" : ""}
         style={{
           position: "fixed",
           bottom: "1.5rem",
@@ -86,23 +103,36 @@ export default function GlossaryPanel() {
           width: "48px",
           height: "48px",
           borderRadius: "50%",
-          border: "1px solid rgba(148, 163, 184, 0.4)",
+          border: `1px solid ${!isOpen && !hasBeenOpened ? "rgba(56, 189, 248, 0.6)" : "rgba(148, 163, 184, 0.4)"}`,
           background: isOpen
             ? "linear-gradient(135deg, #22c55e, #14b8a6)"
             : "#111827",
-          color: isOpen ? "#050816" : "#d1d5db",
+          color: isOpen ? "#050816" : !hasBeenOpened ? "#38bdf8" : "#d1d5db",
           fontSize: "1.25rem",
           fontWeight: 700,
           cursor: "pointer",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          boxShadow: "0 4px 16px rgba(0,0,0,0.4)",
+          boxShadow: !isOpen && !hasBeenOpened
+            ? "0 0 12px rgba(56, 189, 248, 0.3), 0 4px 16px rgba(0,0,0,0.4)"
+            : "0 4px 16px rgba(0,0,0,0.4)",
           transition: "all 0.2s ease",
+          animation: !isOpen && !hasBeenOpened ? "glossaryPulse 2s ease-in-out infinite" : "none",
         }}
       >
         {isOpen ? "\u00d7" : "Aa"}
       </button>
+
+      {/* Pulse animation for first-time visitors */}
+      {!hasBeenOpened && (
+        <style>{`
+          @keyframes glossaryPulse {
+            0%, 100% { box-shadow: 0 0 12px rgba(56, 189, 248, 0.3), 0 4px 16px rgba(0,0,0,0.4); }
+            50% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 0 4px 16px rgba(0,0,0,0.4); }
+          }
+        `}</style>
+      )}
 
       {/* Glossary panel */}
       {isOpen && (

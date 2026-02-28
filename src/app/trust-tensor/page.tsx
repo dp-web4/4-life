@@ -872,18 +872,39 @@ Talent:      365-day half-life (skills persist)
 Training:    180-day half-life (knowledge fades without practice)
 Temperament:  30-day half-life (recent behavior matters most)
 
-// Why these numbers? They reflect real-world intuition:
-// Skills (Talent) last — a surgeon doesn't forget surgery.
-// Knowledge (Training) fades — outdated certifications matter less.
-// Behavior (Temperament) must be recent — yesterday's kindness
-// doesn't excuse today's betrayal.
-
 // Underlying formula (from spec test vectors):
 // base_delta = 0.02 × (quality - 0.5)
 // talent_delta  = base_delta × 1.0
 // training_delta = base_delta × 0.8
 // temperament_delta = base_delta × 0.6`}
               </pre>
+
+              <details className="mt-4 bg-gray-900/50 border border-gray-700/50 rounded-lg overflow-hidden">
+                <summary className="cursor-pointer p-4 text-sm font-semibold text-gray-300 hover:text-sky-400 transition-colors">
+                  Why these specific half-lives? ▸
+                </summary>
+                <div className="px-4 pb-4 text-sm text-gray-400 space-y-2">
+                  <p>
+                    <strong className="text-sky-300">Talent (365 days)</strong> — Skills persist.
+                    A surgeon doesn&apos;t forget surgery after six months of vacation. Core abilities
+                    are durable, so trust in talent decays slowly.
+                  </p>
+                  <p>
+                    <strong className="text-sky-300">Training (180 days)</strong> — Knowledge fades
+                    without practice. Last year&apos;s certification matters less than this year&apos;s.
+                    Moderate decay rewards ongoing learning.
+                  </p>
+                  <p>
+                    <strong className="text-sky-300">Temperament (30 days)</strong> — Recent behavior
+                    matters most. Yesterday&apos;s kindness doesn&apos;t excuse today&apos;s betrayal.
+                    Fast decay means you must consistently demonstrate reliability.
+                  </p>
+                  <p className="text-gray-500 text-xs pt-1">
+                    These values are society-configurable parameters, not universal constants.
+                    A military society might use 7-day Temperament decay; a research lab might use 90 days.
+                  </p>
+                </div>
+              </details>
             </div>
 
             <div>
@@ -1028,6 +1049,45 @@ Temperament:  30-day half-life (recent behavior matters most)
           compiled to WebAssembly and running in your browser. The same code that powers protocol conformance testing.
         </p>
         <LiveTrustEngine />
+      </section>
+
+      {/* Trust at Scale — fractal composition */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">
+          Trust at Scale
+        </h2>
+        <p className="text-gray-400 mb-6">
+          T3 doesn&apos;t just work for individuals. The same three dimensions apply at every level of organization:
+        </p>
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 text-center text-sm">
+            <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-3">
+              <div className="text-sky-400 font-bold mb-1">Person</div>
+              <div className="text-gray-400 text-xs">Alice: T3 = 0.82</div>
+            </div>
+            <div className="bg-purple-950/30 border border-purple-800/30 rounded-lg p-3">
+              <div className="text-purple-400 font-bold mb-1">Team</div>
+              <div className="text-gray-400 text-xs">Alice&apos;s Lab: T3 = 0.78</div>
+            </div>
+            <div className="bg-amber-950/30 border border-amber-800/30 rounded-lg p-3">
+              <div className="text-amber-400 font-bold mb-1">Organization</div>
+              <div className="text-gray-400 text-xs">University: T3 = 0.71</div>
+            </div>
+            <div className="bg-emerald-950/30 border border-emerald-800/30 rounded-lg p-3">
+              <div className="text-emerald-400 font-bold mb-1">Federation</div>
+              <div className="text-gray-400 text-xs">Research Network: T3 = 0.65</div>
+            </div>
+          </div>
+          <p className="text-gray-400 text-sm leading-relaxed">
+            When Alice&apos;s talent improves, her team&apos;s trust adjusts upward. When a team member acts badly,
+            the organization&apos;s score reflects it. Trust flows upward through composition and downward through
+            accountability &mdash; the same T3 model at every scale.
+          </p>
+          <p className="text-gray-500 text-xs">
+            Different entity types compose differently: teams use weighted averages, organizations use geometric means,
+            and AI agents are bounded by their weakest dependency. The math varies, but the three dimensions stay the same.
+          </p>
+        </div>
       </section>
 
       {/* Why This Matters */}

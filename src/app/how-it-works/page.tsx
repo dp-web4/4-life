@@ -125,49 +125,102 @@ export default function HowItWorksPage() {
           all works.
         </p>
 
-        {/* How The Three Core Systems Connect */}
-        <div className="mt-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
-          <h3 className="text-lg font-bold text-gray-100 mb-3">How ATP, Trust, and Coherence Connect</h3>
-          <p className="text-sm text-gray-400 mb-4">
-            These three systems form a feedback loop. Every action you take touches all three:
+        {/* Complete System Integration Diagram */}
+        <div id="system-diagram" className="mt-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
+          <h3 className="text-lg font-bold text-gray-100 mb-2">How All Five Systems Create Aliveness</h3>
+          <p className="text-sm text-gray-400 mb-5">
+            Each system handles one job. Together, they produce a living digital society:
           </p>
-          <div className="font-mono text-xs sm:text-sm text-gray-300 bg-gray-900/50 rounded-lg p-4 overflow-x-auto leading-relaxed">
-            <div className="text-gray-500 mb-2">{'// Every action triggers this loop:'}</div>
-            <div>
-              <span className="text-sky-400">You act</span>
-              {' → '}
-              <span className="text-amber-400">ATP spent</span>
-              {' (energy cost)'}
-            </div>
-            <div className="ml-4">{'↓'}</div>
-            <div className="ml-4">
-              <span className="text-purple-400">T3 updated</span>
-              {' (trust changes based on quality)'}
-            </div>
-            <div className="ml-4">{'↓'}</div>
-            <div className="ml-4">
-              <span className="text-orange-400">CI measured</span>
-              {' (was this consistent with your role?)'}
-            </div>
-            <div className="ml-4">{'↓'}</div>
-            <div className="ml-4">
-              <span className="text-green-400">ATP earned</span>
-              {' (reward scaled by quality × consistency)'}
-            </div>
-            <div className="mt-3 text-gray-500 border-t border-gray-700 pt-3">
-              <div>
-                <span className="text-green-400">High T3 + High CI</span>
-                {' → actions cost less, earn more → upward spiral'}
+
+          {/* Vertical flow diagram */}
+          <div className="space-y-1">
+            {/* Layer 1: Foundation */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 text-center text-gray-600 text-xs font-mono shrink-0">1</div>
+              <div className="flex-1 bg-blue-950/40 border border-blue-800/40 rounded-lg p-3 flex items-center gap-3">
+                <span className="text-xl">🔐</span>
+                <div>
+                  <span className="text-sm font-bold text-blue-400">LCT</span>
+                  <span className="text-sm text-gray-400"> — Proves you&apos;re real. Hardware-bound identity, unforgeable.</span>
+                </div>
               </div>
-              <div>
-                <span className="text-red-400">Low T3 + Low CI</span>
-                {' → actions cost more, earn less → death spiral'}
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-8"></div>
+              <div className="text-gray-600 text-sm pl-4">↓ <span className="text-gray-700 text-xs">identity established</span></div>
+            </div>
+
+            {/* Layer 2: Context */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 text-center text-gray-600 text-xs font-mono shrink-0">2</div>
+              <div className="flex-1 bg-cyan-950/40 border border-cyan-800/40 rounded-lg p-3 flex items-center gap-3">
+                <span className="text-xl">🌐</span>
+                <div>
+                  <span className="text-sm font-bold text-cyan-400">MRH</span>
+                  <span className="text-sm text-gray-400"> — Defines your reach. Only see what&apos;s relevant to your trust network.</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-8"></div>
+              <div className="text-gray-600 text-sm pl-4">↓ <span className="text-gray-700 text-xs">context bounded</span></div>
+            </div>
+
+            {/* Layer 3: The feedback loop */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 text-center text-gray-600 text-xs font-mono shrink-0">3</div>
+              <div className="flex-1 border border-gray-600/60 rounded-lg p-4 bg-gray-900/60">
+                <div className="text-xs text-gray-500 uppercase tracking-wide mb-3">Feedback Loop — every action cycles through all three:</div>
+                <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-1 text-center">
+                  <div className="bg-green-950/40 border border-green-800/40 rounded px-3 py-2 flex-1 w-full">
+                    <div className="text-xs font-bold text-green-400">ATP</div>
+                    <div className="text-xs text-gray-500">Energy spent</div>
+                  </div>
+                  <div className="text-gray-600 sm:rotate-0 rotate-90">→</div>
+                  <div className="bg-purple-950/40 border border-purple-800/40 rounded px-3 py-2 flex-1 w-full">
+                    <div className="text-xs font-bold text-purple-400">T3</div>
+                    <div className="text-xs text-gray-500">Trust updated</div>
+                  </div>
+                  <div className="text-gray-600 sm:rotate-0 rotate-90">→</div>
+                  <div className="bg-amber-950/40 border border-amber-800/40 rounded px-3 py-2 flex-1 w-full">
+                    <div className="text-xs font-bold text-amber-400">CI</div>
+                    <div className="text-xs text-gray-500">Consistency checked</div>
+                  </div>
+                  <div className="text-gray-600 sm:rotate-0 rotate-90">→</div>
+                  <div className="bg-green-950/40 border border-green-800/40 rounded px-3 py-2 flex-1 w-full">
+                    <div className="text-xs font-bold text-green-400">ATP</div>
+                    <div className="text-xs text-gray-500">Reward earned</div>
+                  </div>
+                </div>
+                <div className="text-center text-xs text-gray-600 mt-2">↻ repeats every action</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-8"></div>
+              <div className="text-gray-600 text-sm pl-4">↓ <span className="text-gray-700 text-xs">all three healthy?</span></div>
+            </div>
+
+            {/* Layer 4: Aliveness */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 text-center text-gray-600 text-xs font-mono shrink-0">4</div>
+              <div className="flex-1 bg-gradient-to-r from-emerald-950/40 to-sky-950/40 border border-emerald-700/40 rounded-lg p-3">
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">✨</span>
+                  <div>
+                    <span className="text-sm font-bold text-emerald-400">Aliveness</span>
+                    <span className="text-sm text-gray-400"> — You&apos;re &ldquo;alive&rdquo; when: ATP &gt; 0 + Trust &gt; 0.5 + CI coherent</span>
+                  </div>
+                </div>
+                <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                  <div className="text-green-400/80">All three healthy → thrive, rebirth eligible</div>
+                  <div className="text-red-400/80">Any one fails → death spiral, no rebirth</div>
+                </div>
               </div>
             </div>
           </div>
-          <p className="text-xs text-gray-500 mt-3">
-            This is why spam dies naturally: low-quality actions burn ATP without building trust or coherence,
-            while quality work compounds across all three systems simultaneously.
+
+          <p className="text-xs text-gray-500 mt-4">
+            <strong className="text-gray-400">Why spam dies:</strong> Without LCT, you can&apos;t enter. Without MRH, you can&apos;t reach anyone. Without ATP, you can&apos;t act. Without T3, you aren&apos;t trusted. Without CI, you&apos;re flagged. Every layer filters bad actors — no single point of failure, no moderators needed.
           </p>
         </div>
       </section>

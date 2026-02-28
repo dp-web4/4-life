@@ -103,7 +103,7 @@ export default function FirstContactPage() {
           <div style={{ background: '#1e293b', border: '1px solid #475569', borderRadius: '12px', padding: '2rem', marginBottom: '2rem' }}>
             <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#38bdf8' }}>First Contact: Your First Web4 Experience</h1>
             <p style={{ color: '#64748b', fontSize: '0.875rem', marginBottom: '1.5rem' }}>
-              Interactive version requires JavaScript. Here&apos;s Alice&apos;s story:
+              This experience works best with JavaScript enabled. Here&apos;s the full story:
             </p>
 
             <h2 style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#e2e8f0', marginBottom: '1rem' }}>Alice Joins a Web4 Community</h2>
