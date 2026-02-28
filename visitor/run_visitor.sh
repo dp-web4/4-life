@@ -4,7 +4,11 @@
 
 set -e
 
+# Ensure claude is in PATH (cron doesn't inherit user profile)
+export PATH="$HOME/.local/bin:$PATH"
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 DATE=$(date +%Y-%m-%d)
 LOG_FILE="$SCRIPT_DIR/logs/$DATE.md"
 
@@ -54,3 +58,14 @@ Begin your browse now.
 EOF
 
 echo "Visitor browse complete. Log: $LOG_FILE"
+
+# Commit and push results
+cd "$PROJECT_DIR"
+git add visitor/logs/ 2>/dev/null || true
+if ! git diff --cached --quiet 2>/dev/null; then
+    git commit -m "visitor: browse log $DATE" 2>/dev/null || true
+    PAT=$(grep GITHUB_PAT /mnt/c/exe/projects/ai-agents/.env 2>/dev/null | cut -d= -f2)
+    if [ -n "$PAT" ]; then
+        git push "https://dp-web4:${PAT}@github.com/dp-web4/4-life.git" 2>/dev/null || true
+    fi
+fi
