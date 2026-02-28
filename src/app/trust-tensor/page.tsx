@@ -6,7 +6,19 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import TermTooltip from "@/components/TermTooltip";
+import dynamic from "next/dynamic";
 import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
+
+const LiveTrustEngine = dynamic(() => import("@/components/LiveTrustEngine"), {
+  ssr: false,
+  loading: () => (
+    <div className="max-w-4xl mx-auto mt-16">
+      <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8 text-center">
+        <div className="animate-pulse text-gray-400 text-sm">Loading trust engine...</div>
+      </div>
+    </div>
+  ),
+});
 
 // Canonical 3D trust dimensions (Talent, Training, Temperament)
 const TRUST_DIMENSIONS = {
@@ -998,6 +1010,18 @@ Temperament:  30-day half-life (recent behavior matters most)
             </div>
           </div>
         </details>
+      </section>
+
+      {/* Live Trust Engine — real WASM calculations */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">
+          See the Real Engine
+        </h2>
+        <p className="text-gray-400 mb-6">
+          This isn&apos;t a simulation &mdash; it&apos;s the actual <strong className="text-emerald-400">web4-trust-core</strong> engine
+          compiled to WebAssembly and running in your browser. The same code that powers protocol conformance testing.
+        </p>
+        <LiveTrustEngine />
       </section>
 
       {/* Why This Matters */}

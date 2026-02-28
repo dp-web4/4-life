@@ -22,8 +22,12 @@ export async function initTrustEngine() {
   if (!initPromise) {
     initPromise = (async () => {
       const mod = await import('./wasm/web4_trust_core');
-      // Load WASM binary from public directory
-      await mod.default('/wasm/web4_trust_core_bg.wasm');
+      // Try webpack-resolved path first, fallback to public/ URL
+      try {
+        await mod.default();
+      } catch {
+        await mod.default('/wasm/web4_trust_core_bg.wasm');
+      }
       wasmModule = mod;
       return mod;
     })();
