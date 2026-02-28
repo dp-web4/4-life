@@ -279,10 +279,22 @@ export default function WhyWeb4Page() {
       <section className="max-w-4xl mx-auto mt-16">
         <div className="bg-gradient-to-br from-sky-950/40 to-blue-900/30 border border-sky-700/50 rounded-xl p-8">
           <h2 className="text-3xl font-bold mb-6 text-sky-400">This Is What Web4 Proposes</h2>
-          <p className="text-gray-300 leading-relaxed mb-6">
+          <p className="text-gray-300 leading-relaxed mb-4">
             Web4 is a working proposal for trust-native internet infrastructure. It addresses
             each root cause with a specific mechanism:
           </p>
+          <div className="bg-gray-900/50 border border-gray-700/50 rounded-lg p-4 mb-6">
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Terms you&apos;ll learn</p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs text-gray-400">
+              <span><strong className="text-sky-400">ATP</strong> = energy budget</span>
+              <span><strong className="text-sky-400">LCT</strong> = identity</span>
+              <span><strong className="text-sky-400">T3</strong> = trust score</span>
+              <span><strong className="text-sky-400">MRH</strong> = relevancy scope</span>
+            </div>
+            <p className="text-xs text-gray-500 mt-2">
+              Don&apos;t memorize &mdash; each links to a hands-on explainer page.
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div className="bg-gray-900/50 rounded-lg p-4">
@@ -501,6 +513,66 @@ export default function WhyWeb4Page() {
         {/* All other FAQs */}
         <h3 className="text-sm uppercase tracking-wide text-gray-500 mb-4">Going deeper</h3>
         <div className="space-y-6">
+
+          {/* Who builds this? */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Who is building this?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Web4 is an <strong>open research project</strong>. The specification, implementation,
+                and this site are all{" "}
+                <a href="https://github.com/dp-web4" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
+                open source on GitHub</a>. The work is research-driven, not commercially motivated.
+              </p>
+              <p>
+                There is no company, no token sale, no funding round. This is an attempt to answer a
+                genuine research question: <em>can you build internet infrastructure where trust is
+                native rather than bolted on?</em>
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Why this matters:</strong> A project about trust should be transparent about
+                its own origins. The code is readable, the reasoning is documented, and the limitations
+                are stated honestly. Judge the ideas on their merit, not on who&apos;s behind them.
+              </p>
+            </div>
+          </details>
+
+          {/* Adoption roadmap */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What&apos;s the concrete adoption path from simulation to real protocol?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Web4 uses a <strong>5-tier gradual adoption model</strong>, like how HTTPS replaced HTTP
+                over a decade without breaking the web:
+              </p>
+              <ol className="list-decimal list-inside space-y-2 text-gray-400">
+                <li><strong>Wrapper:</strong> Existing platforms add Web4 trust signals as metadata.
+                  No user changes needed. (Like adding HTTPS to an existing site)</li>
+                <li><strong>Observable:</strong> Trust scores become visible to users. Platforms
+                  surface reputation from Web4. (Like the browser padlock icon)</li>
+                <li><strong>Accountable:</strong> Actions have real consequences through ATP costs.
+                  Bad actors face energy costs. (Like spam filters that actually work)</li>
+                <li><strong>Federated:</strong> Communities connect their trust graphs. Portable
+                  reputation across platforms. (Like email&apos;s federated model)</li>
+                <li><strong>Native:</strong> Full Web4 protocol stack. Hardware-bound identity,
+                  society governance, cross-platform trust. (Like the web itself)</li>
+              </ol>
+              <p>
+                <strong>The honest gap:</strong> All five tiers are designed and specified. Tiers 1-2
+                could be integrated into existing platforms today. But no platform has done so yet.
+                The path from &ldquo;working simulations&rdquo; to &ldquo;first real integration&rdquo;
+                requires a willing partner &mdash; a community, platform, or organization that sees
+                value in trust-native infrastructure.
+              </p>
+            </div>
+          </details>
+
           {/* Deployment */}
           <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
@@ -593,8 +665,11 @@ export default function WhyWeb4Page() {
               </ul>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> This shifts trust from platforms to hardware supply chains.
-                That&apos;s a different dependency, not zero dependency. Whether it&apos;s a net improvement
-                depends on whether you trust chip manufacturers more than social media companies.
+                That&apos;s a different dependency, not zero dependency. And open standards can be captured &mdash;
+                the history of standards bodies shows that well-resourced incumbents sometimes steer
+                &ldquo;open&rdquo; specs to favor their implementations. Whether hardware dependency is better
+                than platform dependency depends on whether supply chain competition proves more durable
+                than platform competition. That&apos;s an empirical question, not a settled one.
               </p>
             </div>
           </details>
@@ -868,6 +943,116 @@ export default function WhyWeb4Page() {
             </div>
           </details>
         </div>
+
+          {/* Hardware equity / digital divide */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What about people who can&apos;t afford devices with TPM chips?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                This is a genuine equity concern. Web4 identity requires hardware with secure elements
+                (TPM, Secure Enclave, or FIDO2). Today, most smartphones sold since ~2018 include these
+                chips, including budget Android devices. But &ldquo;most&rdquo; isn&apos;t &ldquo;all.&rdquo;
+              </p>
+              <p>
+                The 5-tier adoption model helps: at the <strong>Wrapper</strong> and <strong>Observable</strong> tiers,
+                existing platforms handle identity while exposing Web4 trust signals. Full hardware binding
+                only applies at higher tiers. This creates a gradual on-ramp rather than an all-or-nothing gate.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Any system that makes identity expensive to create will disadvantage
+                those with fewer resources. Web4 makes Sybil attacks expensive; the tradeoff is that legitimate
+                participation also requires hardware investment. Whether this tradeoff is net-positive depends on
+                how affordable secure hardware becomes &mdash; a trend Web4 can influence but doesn&apos;t control.
+              </p>
+            </div>
+          </details>
+
+          {/* Cultural trust threshold */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Is the 0.5 trust threshold universal? What about cultural differences?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                The 0.5 threshold is a <strong>society-level parameter</strong>, not a protocol constant.
+                Each society (community) in Web4 sets its own policies through the{" "}
+                <Link href="/how-it-works#governance" className="text-sky-400 hover:underline">SAL governance framework</Link>.
+                A scientific research community might set a higher trust threshold (0.7) for publishing.
+                A social community might set a lower one (0.3) for casual interaction.
+              </p>
+              <p>
+                The 0.5 default draws from phase transition mathematics: below 0.5, behavior is
+                statistically indistinguishable from random; above it, intentional patterns emerge.
+                But it&apos;s a starting point, not a mandate. Cultural trust norms absolutely vary &mdash;
+                that&apos;s why governance is society-local, not protocol-global.
+              </p>
+            </div>
+          </details>
+
+          {/* V3 and creative work */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How does V3 scoring handle creative or unconventional work?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                V3 measures outputs across three dimensions: <strong>Valuation</strong> (how valued
+                by the community), <strong>Veracity</strong> (accuracy and honesty), and{" "}
+                <strong>Validity</strong> (appropriateness for context). For creative work,
+                these shift weight naturally:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li>A satirical essay: High Valuation (entertaining), variable Veracity (it&apos;s satire &mdash;
+                  literal truth isn&apos;t the point), High Validity (appropriate for the context)</li>
+                <li>An abstract painting: High Valuation (community appreciates it), Veracity less
+                  relevant, High Validity (fits the art community&apos;s norms)</li>
+              </ul>
+              <p>
+                V3 scoring is <strong>role-contextual</strong>, just like T3. A poem isn&apos;t scored
+                the same way as a research paper because they exist in different role contexts with
+                different community norms. The community that receives the work defines what
+                &ldquo;valuable&rdquo; means in their context.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> This does mean unpopular or avant-garde work may score
+                lower on Valuation initially. Innovation often conflicts with existing norms. Web4
+                mitigates this through Veracity (truthful work retains long-term value) but doesn&apos;t
+                eliminate the tension between novelty and community approval.
+              </p>
+            </div>
+          </details>
+
+          {/* Who builds this */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Who builds this? Why is the project anonymous?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Web4 is an <strong>independent research project</strong>, not a company or academic lab.
+                The code is fully open-source on{" "}
+                <a href="https://github.com/dp-web4" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">GitHub</a>.
+                There is no VC funding, no token sale, and no commercial interest.
+              </p>
+              <p>
+                The relative anonymity is intentional but also ironic &mdash; a project about trust that
+                doesn&apos;t tell you who&apos;s behind it. The reasoning: Web4&apos;s value should stand or fall on
+                its ideas and implementations, not on who proposed them. The code is inspectable, the
+                simulations are reproducible, and the threat analysis is public.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> &ldquo;Trust the code, not the team&rdquo; is a fine principle for
+                open-source software, but you&apos;re right to notice the tension. A project about trust
+                should probably model more transparency than it currently does. This is noted.
+              </p>
+            </div>
+          </details>
 
         {/* Link to deeper adversarial analysis */}
         <div className="mt-8 p-4 bg-gray-800/30 border border-gray-700 rounded-lg">

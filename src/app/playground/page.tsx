@@ -251,8 +251,13 @@ export default function PlaygroundPage() {
           Tweak the parameters below and discover the answer.
         </p>
         <p style={{ marginTop: "0.75rem", maxWidth: "50rem", color: "#9ca3af" }}>
-          This is the <strong>lowest-friction pathway to participation</strong> - no code, no
-          setup, just experiment and learn.
+          This is the <strong>lowest-friction pathway to participation</strong> &mdash; experiment with one agent&apos;s survival
+          by tuning parameters like starting energy, risk appetite, and karma carry-forward.
+        </p>
+        <p style={{ marginTop: "0.5rem", maxWidth: "50rem", color: "#6b7280", fontSize: "0.85rem" }}>
+          Want to see what happens when <em>multiple</em> agents interact? The{" "}
+          <a href="/society-simulator" style={{ color: "#38bdf8" }}>Society Simulator</a> lets you
+          watch 12 agents with different strategies form alliances and self-organize.
         </p>
       </section>
 

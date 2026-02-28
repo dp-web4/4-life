@@ -872,6 +872,12 @@ Talent:      365-day half-life (skills persist)
 Training:    180-day half-life (knowledge fades without practice)
 Temperament:  30-day half-life (recent behavior matters most)
 
+// Why these numbers? They reflect real-world intuition:
+// Skills (Talent) last — a surgeon doesn't forget surgery.
+// Knowledge (Training) fades — outdated certifications matter less.
+// Behavior (Temperament) must be recent — yesterday's kindness
+// doesn't excuse today's betrayal.
+
 // Underlying formula (from spec test vectors):
 // base_delta = 0.02 × (quality - 0.5)
 // talent_delta  = base_delta × 1.0

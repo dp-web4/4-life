@@ -124,6 +124,52 @@ export default function HowItWorksPage() {
           behavior, not institutional authority. This page walks through how it
           all works.
         </p>
+
+        {/* How The Three Core Systems Connect */}
+        <div className="mt-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <h3 className="text-lg font-bold text-gray-100 mb-3">How ATP, Trust, and Coherence Connect</h3>
+          <p className="text-sm text-gray-400 mb-4">
+            These three systems form a feedback loop. Every action you take touches all three:
+          </p>
+          <div className="font-mono text-xs sm:text-sm text-gray-300 bg-gray-900/50 rounded-lg p-4 overflow-x-auto leading-relaxed">
+            <div className="text-gray-500 mb-2">{'// Every action triggers this loop:'}</div>
+            <div>
+              <span className="text-sky-400">You act</span>
+              {' → '}
+              <span className="text-amber-400">ATP spent</span>
+              {' (energy cost)'}
+            </div>
+            <div className="ml-4">{'↓'}</div>
+            <div className="ml-4">
+              <span className="text-purple-400">T3 updated</span>
+              {' (trust changes based on quality)'}
+            </div>
+            <div className="ml-4">{'↓'}</div>
+            <div className="ml-4">
+              <span className="text-orange-400">CI measured</span>
+              {' (was this consistent with your role?)'}
+            </div>
+            <div className="ml-4">{'↓'}</div>
+            <div className="ml-4">
+              <span className="text-green-400">ATP earned</span>
+              {' (reward scaled by quality × consistency)'}
+            </div>
+            <div className="mt-3 text-gray-500 border-t border-gray-700 pt-3">
+              <div>
+                <span className="text-green-400">High T3 + High CI</span>
+                {' → actions cost less, earn more → upward spiral'}
+              </div>
+              <div>
+                <span className="text-red-400">Low T3 + Low CI</span>
+                {' → actions cost more, earn less → death spiral'}
+              </div>
+            </div>
+          </div>
+          <p className="text-xs text-gray-500 mt-3">
+            This is why spam dies naturally: low-quality actions burn ATP without building trust or coherence,
+            while quality work compounds across all three systems simultaneously.
+          </p>
+        </div>
       </section>
 
       {/* The Journey: Birth to Death to Rebirth */}
@@ -616,6 +662,71 @@ export default function HowItWorksPage() {
               evolved across lives, building trust (T3), accumulating resources
               (ATP), and learning from experience. This is Web4 working as designed.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How The Three Systems Interact */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">
+          How The Three Systems Connect
+        </h2>
+        <p className="text-gray-400 mb-6">
+          ATP, T3, and CI aren&apos;t separate &mdash; they modulate each other. Here&apos;s how:
+        </p>
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 md:p-8">
+          {/* Visual flow */}
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-2 mb-8">
+            <div className="flex-1 bg-sky-950/30 border border-sky-800/40 rounded-lg p-4 text-center">
+              <div className="text-2xl mb-1">🔋</div>
+              <div className="text-sm font-bold text-sky-400">ATP (Energy)</div>
+              <div className="text-xs text-gray-500 mt-1">Powers every action</div>
+            </div>
+            <div className="text-gray-600 text-xl md:rotate-0 rotate-90">⇄</div>
+            <div className="flex-1 bg-purple-950/30 border border-purple-800/40 rounded-lg p-4 text-center">
+              <div className="text-2xl mb-1">🎯</div>
+              <div className="text-sm font-bold text-purple-400">T3 (Trust)</div>
+              <div className="text-xs text-gray-500 mt-1">Earned through actions</div>
+            </div>
+            <div className="text-gray-600 text-xl md:rotate-0 rotate-90">⇄</div>
+            <div className="flex-1 bg-amber-950/30 border border-amber-800/40 rounded-lg p-4 text-center">
+              <div className="text-2xl mb-1">⚖️</div>
+              <div className="text-sm font-bold text-amber-400">CI (Coherence)</div>
+              <div className="text-xs text-gray-500 mt-1">Verifies consistency</div>
+            </div>
+          </div>
+
+          {/* Interaction descriptions */}
+          <div className="space-y-3 text-sm">
+            <div className="flex items-start gap-3">
+              <span className="text-sky-400 mt-0.5">→</span>
+              <p className="text-gray-300">
+                <strong className="text-sky-400">ATP → T3:</strong>{" "}
+                Spending energy on quality work builds trust. Burning energy on spam destroys it.
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-purple-400 mt-0.5">→</span>
+              <p className="text-gray-300">
+                <strong className="text-purple-400">T3 → ATP:</strong>{" "}
+                Higher trust earns more ATP per action. Low trust means higher costs and lower returns.
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-amber-400 mt-0.5">→</span>
+              <p className="text-gray-300">
+                <strong className="text-amber-400">CI → Both:</strong>{" "}
+                Inconsistent behavior (low CI) multiplies action costs by up to 1.4&times; and flags you for review.
+                Consistent behavior keeps costs low and trust stable.
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-green-400 mt-0.5">→</span>
+              <p className="text-gray-300">
+                <strong className="text-green-400">Together → Aliveness:</strong>{" "}
+                You&apos;re &ldquo;alive&rdquo; when all three are healthy: ATP &gt; 0, Trust &gt; 0.5, CI coherent. Lose any one and the system intervenes.
+              </p>
+            </div>
           </div>
         </div>
       </section>
