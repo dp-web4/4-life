@@ -352,16 +352,20 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             3. Playground
           </Link>
         </div>
-        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '1rem' }}>
-          Short on time? Read the <Link href="/tldr" style={{ color: 'var(--color-sky)' }}>2-minute overview</Link>.
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '0.75rem' }}>
+          <Link href="/how-it-works" style={{ padding: '0.5rem 1.25rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', fontSize: '0.85rem', color: 'var(--color-text-secondary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <span>Or get the full picture:</span>
+            <span style={{ color: 'var(--color-sky)', fontWeight: 600 }}>How It Works</span>
+          </Link>
+        </div>
+        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '0.75rem' }}>
+          Short on time? <Link href="/tldr" style={{ color: 'var(--color-sky)' }}>2-minute overview</Link>
           {' · '}
-          What frustrates you about the internet? <Link href="/your-internet" style={{ color: 'var(--color-sky)' }}>See what would change</Link>.
+          <Link href="/your-internet" style={{ color: 'var(--color-sky)' }}>What would change for you?</Link>
           {' · '}
-          Imagine a day with trust built in: <Link href="/day-in-web4" style={{ color: 'var(--color-sky)' }}>A Day in Web4</Link>.
+          <Link href="/day-in-web4" style={{ color: 'var(--color-sky)' }}>A Day in Web4</Link>
           {' · '}
-          Skeptic? Start with <Link href="/what-could-go-wrong" style={{ color: 'var(--color-sky)' }}>What Could Go Wrong</Link>.
-          {' · '}
-          Want the full picture? <Link href="/how-it-works" style={{ color: 'var(--color-sky)' }}>How It Works</Link>.
+          <Link href="/what-could-go-wrong" style={{ color: 'var(--color-sky)' }}>What Could Go Wrong</Link>
         </p>
       </section>
 

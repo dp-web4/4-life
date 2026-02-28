@@ -373,6 +373,29 @@ export default function ExploreGuidePage() {
           </div>
         </div>
 
+        {/* Static fallback for no-JS visitors */}
+        <noscript>
+          <div className="space-y-4 mb-8">
+            <p className="text-gray-400 text-center mb-6">Choose the path that fits you best:</p>
+            <a href="/first-contact" className="block p-4 bg-gray-800 border border-green-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <div className="font-semibold text-green-400">Curious Newcomer</div>
+              <div className="text-sm text-gray-400 mt-1">New to Web4? Start with First Contact — a guided introduction through Alice&apos;s story.</div>
+            </a>
+            <a href="/trust-tensor" className="block p-4 bg-gray-800 border border-blue-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <div className="font-semibold text-blue-400">Technical Practitioner</div>
+              <div className="text-sm text-gray-400 mt-1">Want the mechanics? Explore Trust Tensors, then ATP Economics and the Coherence Index.</div>
+            </a>
+            <a href="/research-hub" className="block p-4 bg-gray-800 border border-purple-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <div className="font-semibold text-purple-400">Researcher / Theorist</div>
+              <div className="text-sm text-gray-400 mt-1">Interested in foundations? The Research Hub has coherence frameworks, capacity thresholds, and challenge sets.</div>
+            </a>
+            <a href="/what-could-go-wrong" className="block p-4 bg-gray-800 border border-red-800 rounded-lg hover:bg-gray-700 transition-colors">
+              <div className="font-semibold text-red-400">Skeptic / Adversarial Thinker</div>
+              <div className="text-sm text-gray-400 mt-1">Want to find the holes? Start with What Could Go Wrong, then the Threat Model and Adversarial Explorer.</div>
+            </a>
+          </div>
+        </noscript>
+
         {/* Question phase */}
         {!path && (
           <div className="space-y-6">
