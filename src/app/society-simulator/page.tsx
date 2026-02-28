@@ -98,10 +98,9 @@ function GuideChatPanel({
     {
       id: '0',
       role: 'assistant',
-      content: "I'm your AI Guide for this society simulation.\n\nRun a simulation, then ask me questions like:\n- \"Who is winning?\"\n- \"How are coalitions forming?\"\n- \"Why are defectors struggling?\"\n\n**Tip**: Click any agent in the network graph to ask about them!",
+      content: "Welcome to the Society Guide!\n\nRun a simulation, then explore what's happening:\n- Who is winning?\n- How are coalitions forming?\n- Why are defectors struggling?\n\n**Tip**: Click any agent in the network graph to learn about them!",
     }
   ]);
-  const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const lastTriggerRef = useRef(0);
 
@@ -235,21 +234,15 @@ function GuideChatPanel({
     setEventSuggestions(prev => prev.filter(s => s.eventType !== eventType));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-
+  const handleQuery = (queryText: string) => {
     const userMessage: GuideMessage = {
       id: Date.now().toString(),
       role: 'user',
-      content: input.trim(),
+      content: queryText,
     };
-    setMessages(prev => [...prev, userMessage]);
-    setInput('');
 
-    // Process with AI Guide query engine
     const query: Query = {
-      text: userMessage.content,
+      text: queryText,
       type: 'general',
       context: {
         societyAgents: agents,
@@ -264,16 +257,12 @@ function GuideChatPanel({
 
     const response = queryEngine.processQuery(query);
 
-    setMessages(prev => [...prev, {
+    setMessages(prev => [...prev, userMessage, {
       id: (Date.now() + 1).toString(),
       role: 'assistant',
       content: response.text,
       response,
     }]);
-  };
-
-  const handleSuggestion = (suggestion: string) => {
-    setInput(suggestion);
   };
 
   // Handle clicking an event suggestion when panel is closed
@@ -330,13 +319,13 @@ function GuideChatPanel({
             <span className="text-purple-400">→</span>
           </button>
         ))}
-        {/* Main AI Guide button */}
+        {/* Main Guide button */}
         <button
           onClick={onToggle}
           className="px-4 py-3 bg-gradient-to-r from-sky-600 to-purple-600 hover:from-sky-500 hover:to-purple-500 rounded-full text-white font-bold shadow-lg transition-all flex items-center gap-2"
         >
-          <span className="text-lg">💬</span>
-          <span>Ask AI Guide</span>
+          <span className="text-lg">📖</span>
+          <span>Society Guide</span>
           {eventSuggestions.length > 0 && (
             <span className="ml-1 px-1.5 py-0.5 bg-white/20 rounded-full text-xs">
               {eventSuggestions.length}
@@ -353,11 +342,11 @@ function GuideChatPanel({
       <div className="flex items-center justify-between px-4 py-3 border-b border-gray-700 bg-gradient-to-r from-sky-900/50 to-purple-900/50 rounded-t-lg">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-gradient-to-br from-sky-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
-            AI
+            📖
           </div>
           <div>
             <h3 className="font-semibold text-white text-sm">Society Guide</h3>
-            <p className="text-xs text-gray-400">Ask about the simulation</p>
+            <p className="text-xs text-gray-400">Explore simulation concepts</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -367,7 +356,7 @@ function GuideChatPanel({
               onClick={() => {
                 // Generate markdown export
                 const lines = [
-                  '# Society Simulator - AI Guide Conversation',
+                  '# Society Simulator - Guide Conversation',
                   `**Exported**: ${new Date().toLocaleString()}`,
                   '',
                   '---',
@@ -377,7 +366,7 @@ function GuideChatPanel({
                   if (msg.role === 'user') {
                     lines.push(`**User**: ${msg.content}`);
                   } else {
-                    lines.push(`**AI Guide**: ${msg.content}`);
+                    lines.push(`**Guide**: ${msg.content}`);
                   }
                   lines.push('');
                 });
@@ -410,7 +399,7 @@ function GuideChatPanel({
                 setMessages([{
                   id: '0',
                   role: 'assistant',
-                  content: "I'm your AI Guide for this society simulation.\n\nRun a simulation, then ask me questions like:\n- \"Who is winning?\"\n- \"How are coalitions forming?\"\n- \"Why are defectors struggling?\"\n\n**Tip**: Click any agent in the network graph to ask about them!",
+                  content: "Welcome to the Society Guide!\n\nRun a simulation, then explore what's happening:\n- Who is winning?\n- How are coalitions forming?\n- Why are defectors struggling?\n\n**Tip**: Click any agent in the network graph to learn about them!",
                 }]);
                 setEventSuggestions([]);
                 processedEventsRef.current.clear();
@@ -465,7 +454,7 @@ function GuideChatPanel({
                   {msg.response.suggestedQueries.slice(0, 3).map((q, i) => (
                     <button
                       key={i}
-                      onClick={() => handleSuggestion(q)}
+                      onClick={() => handleQuery(q)}
                       className="text-xs px-2 py-0.5 bg-gray-700 hover:bg-gray-600 rounded text-gray-300 transition-colors"
                     >
                       {q.length > 25 ? q.slice(0, 25) + '...' : q}
@@ -479,35 +468,20 @@ function GuideChatPanel({
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Input */}
+      {/* Topic buttons */}
       <div className="p-3 border-t border-gray-700">
-        <form onSubmit={handleSubmit} className="flex gap-2">
-          <input
-            type="text"
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            placeholder="Ask about the society..."
-            className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded text-white text-sm placeholder-gray-500 focus:outline-none focus:border-sky-500"
-          />
-          <button
-            type="submit"
-            disabled={!input.trim()}
-            className="px-4 py-2 bg-sky-600 hover:bg-sky-500 disabled:bg-gray-700 disabled:cursor-not-allowed rounded text-white text-sm font-medium transition-colors"
-          >
-            Send
-          </button>
-        </form>
-        <div className="mt-2 flex flex-wrap gap-1">
+        <p className="text-xs text-gray-500 mb-2">Choose a topic:</p>
+        <div className="flex flex-wrap gap-1">
           {agents.length > 0 ? (
             <>
-              <button onClick={() => handleSuggestion("Who is winning?")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">Who&apos;s winning?</button>
-              <button onClick={() => handleSuggestion("Tell me about coalitions")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">Coalitions</button>
-              <button onClick={() => handleSuggestion("Compare strategies")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">Strategies</button>
+              <button onClick={() => handleQuery("Who is winning?")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">Who&apos;s winning?</button>
+              <button onClick={() => handleQuery("Tell me about coalitions")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">Coalitions</button>
+              <button onClick={() => handleQuery("Compare strategies")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">Strategies</button>
             </>
           ) : (
             <>
-              <button onClick={() => handleSuggestion("What is this simulator?")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">What is this?</button>
-              <button onClick={() => handleSuggestion("Explain strategies")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">Strategies</button>
+              <button onClick={() => handleQuery("What is this simulator?")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">What is this?</button>
+              <button onClick={() => handleQuery("Explain strategies")} className="text-xs px-2 py-1 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-400">Strategies</button>
             </>
           )}
         </div>

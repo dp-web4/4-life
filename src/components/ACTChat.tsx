@@ -1,13 +1,13 @@
 'use client';
 
 /**
- * ACT Conversational Interface
+ * ACT Guided Explorer
  *
- * Natural language interaction with simulation understanding.
- * Philosophy: Conversation beats static docs for learning.
+ * Interactive Q&A explorer for simulation concepts.
+ * Uses pattern-matched queries with pre-generated explanations — not AI chat.
  *
  * Features:
- * - Pattern-matched query understanding
+ * - Clickable topic buttons for guided exploration
  * - Pre-generated explanations (reliable, fast)
  * - Context-aware responses (simulation data)
  * - Suggested follow-up queries
@@ -51,78 +51,49 @@ export default function ACTChat({
     {
       id: '0',
       role: 'assistant',
-      content: "Hi! I'm ACT (Accessible Coordination Technology), your guide to understanding Web4 simulations.\n\nI can help you explore what's happening in simulations, explain concepts, and guide your learning.\n\nTry asking: \"What is ATP?\" or \"Run a simulation\" or just describe what you're curious about!",
+      content: "Welcome to the ACT Guided Explorer! I can help you understand Web4 simulation concepts.\n\nChoose a topic below to get started, or click any suggestion that appears after an explanation.",
       timestamp: new Date()
     }
   ]);
-  const [input, setInput] = useState('');
-  const [isProcessing, setIsProcessing] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
 
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Focus input on mount
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isProcessing) return;
-
+  const handleQuery = (queryText: string) => {
     const userMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
-      content: input.trim(),
+      content: queryText,
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, userMessage]);
-    setInput('');
-    setIsProcessing(true);
+    const query: Query = {
+      text: queryText,
+      type: 'general',
+      context: {
+        simulation,
+        comparisonSimulation,
+        selectedTick,
+        selectedLife,
+        moments,
+        selectedMoment,
+      }
+    };
 
-    // Process query
-    setTimeout(() => {
-      const query: Query = {
-        text: userMessage.content,
-        type: 'general',
-        context: {
-          simulation,
-          comparisonSimulation,
-          selectedTick,
-          selectedLife,
-          moments,
-          selectedMoment,
-        }
-      };
+    const response = queryEngine.processQuery(query);
 
-      const response = queryEngine.processQuery(query);
+    const assistantMessage: Message = {
+      id: (Date.now() + 1).toString(),
+      role: 'assistant',
+      content: response.text,
+      response,
+      timestamp: new Date()
+    };
 
-      const assistantMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        role: 'assistant',
-        content: response.text,
-        response,
-        timestamp: new Date()
-      };
-
-      setMessages(prev => [...prev, assistantMessage]);
-      setIsProcessing(false);
-    }, 300); // Small delay for UX feel
-  };
-
-  const handleSuggestedQuery = (query: string) => {
-    setInput(query);
-    inputRef.current?.focus();
-  };
-
-  const handleRelatedConcept = (concept: string) => {
-    setInput(`Explain ${concept}`);
-    inputRef.current?.focus();
+    setMessages(prev => [...prev, userMessage, assistantMessage]);
   };
 
   return (
@@ -134,8 +105,8 @@ export default function ACTChat({
             ACT
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-white">Conversational Guide</h3>
-            <p className="text-sm text-gray-400">Ask me anything about simulations</p>
+            <h3 className="text-lg font-semibold text-white">Guided Explorer</h3>
+            <p className="text-sm text-gray-400">Explore simulation concepts</p>
           </div>
         </div>
       </div>
@@ -175,12 +146,12 @@ export default function ACTChat({
               {/* Suggested queries */}
               {message.response?.suggestedQueries && (
                 <div className="mt-4 pt-3 border-t border-gray-700">
-                  <p className="text-xs text-gray-400 mb-2">Try asking:</p>
+                  <p className="text-xs text-gray-400 mb-2">Explore further:</p>
                   <div className="flex flex-wrap gap-2">
                     {message.response.suggestedQueries.map((query, i) => (
                       <button
                         key={i}
-                        onClick={() => handleSuggestedQuery(query)}
+                        onClick={() => handleQuery(query)}
                         className="text-xs px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded-full text-gray-200 transition-colors"
                       >
                         {query}
@@ -198,7 +169,7 @@ export default function ACTChat({
                     {message.response.relatedConcepts.map((concept, i) => (
                       <button
                         key={i}
-                        onClick={() => handleRelatedConcept(concept)}
+                        onClick={() => handleQuery(`Explain ${concept}`)}
                         className="text-xs px-2 py-1 bg-purple-900/30 hover:bg-purple-800/40 border border-purple-700/50 rounded text-purple-300 transition-colors"
                       >
                         {concept}
@@ -228,75 +199,41 @@ export default function ACTChat({
           </div>
         ))}
 
-        {isProcessing && (
-          <div className="flex justify-start">
-            <div className="max-w-[80%] rounded-lg px-4 py-3 bg-gray-800 border border-gray-700">
-              <div className="flex items-center gap-2 text-gray-400">
-                <div className="flex gap-1">
-                  <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                  <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                  <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
-                </div>
-                <span className="text-sm">Thinking...</span>
-              </div>
-            </div>
-          </div>
-        )}
-
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Input */}
+      {/* Topic buttons */}
       <div className="flex-shrink-0 px-6 py-4 border-t border-gray-700">
-        <form onSubmit={handleSubmit} className="flex gap-3">
-          <input
-            ref={inputRef}
-            type="text"
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            placeholder="Ask me anything about simulations..."
-            className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-sky-500 transition-colors"
-            disabled={isProcessing}
-          />
+        <p className="text-xs text-gray-500 mb-2">Choose a topic:</p>
+        <div className="flex flex-wrap gap-2">
           <button
-            type="submit"
-            disabled={!input.trim() || isProcessing}
-            className="px-6 py-2 bg-gradient-to-r from-sky-600 to-purple-600 hover:from-sky-500 hover:to-purple-500 disabled:from-gray-700 disabled:to-gray-700 disabled:cursor-not-allowed rounded-lg text-white font-medium transition-all"
-          >
-            Send
-          </button>
-        </form>
-
-        {/* Quick actions */}
-        <div className="mt-3 flex flex-wrap gap-2">
-          <button
-            onClick={() => handleSuggestedQuery("What is ATP?")}
+            onClick={() => handleQuery("What is ATP?")}
             className="text-xs px-3 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-300 transition-colors"
           >
             What is ATP?
           </button>
           <button
-            onClick={() => handleSuggestedQuery("Explain trust tensors")}
+            onClick={() => handleQuery("Explain trust tensors")}
             className="text-xs px-3 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-300 transition-colors"
           >
             Explain trust
           </button>
           <button
-            onClick={() => handleSuggestedQuery("How does karma work?")}
+            onClick={() => handleQuery("How does karma work?")}
             className="text-xs px-3 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-300 transition-colors"
           >
             Karma explained
           </button>
           {moments && moments.length > 0 ? (
             <button
-              onClick={() => handleSuggestedQuery("What's the most interesting moment?")}
+              onClick={() => handleQuery("What's the most interesting moment?")}
               className="text-xs px-3 py-1.5 bg-purple-900/50 hover:bg-purple-800/50 border border-purple-700/50 rounded text-purple-300 transition-colors"
             >
               Most interesting moment
             </button>
           ) : (
             <button
-              onClick={() => handleSuggestedQuery("What should I explore next?")}
+              onClick={() => handleQuery("What should I explore next?")}
               className="text-xs px-3 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-300 transition-colors"
             >
               What next?
