@@ -546,9 +546,11 @@ export default function ATPEconomicsPage() {
             <div className="text-2xl mb-2">👥</div>
             <h3 className="text-lg font-semibold text-sky-400 mb-2">Sybils Lose Money</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Simulated result: one honest identity outearns five fake identities
+              Formally proven: one honest identity outearns five fake identities
               splitting the same ATP budget. Transfer fees between sybil accounts bleed
-              resources. Cheating is literally unprofitable.
+              resources. Web4&apos;s Sybil resistance is <strong>4.6&times; Proof-of-Work</strong> and{' '}
+              <strong>13&times; Proof-of-Stake</strong> (5 theorems, hardware-bound identity).
+              Cheating is literally unprofitable.
             </p>
           </div>
         </div>

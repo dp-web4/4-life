@@ -282,6 +282,11 @@ export default function LCTExplainerPage() {
               <span className="font-bold"> never let them leave the hardware</span>. Even if someone copies
               your entire hard drive, they can&apos;t extract the keys.
             </p>
+            <p className="text-xs text-green-400/70 mt-2">
+              This isn&apos;t theoretical &mdash; Web4&apos;s TPM2 binding has been validated on real hardware
+              (Intel TPM 2.0: key creation, signing, verification, attestation quotes, EK certificate
+              chain verified through 2049).
+            </p>
           </div>
 
           {/* Witness explainer */}
