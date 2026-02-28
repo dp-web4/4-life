@@ -960,6 +960,9 @@ Temperament:  30-day half-life (recent behavior matters most)
                 <p className="mt-3 text-gray-500 text-xs">
                   V3 weights: Valuation 0.30, Veracity 0.35, Validity 0.35. Truth and reasoning outweigh popularity by design.
                 </p>
+                <p className="mt-2 text-gray-500 text-xs">
+                  V3 decay half-lives: Valuation 14d (market conditions change fast), Veracity 365d (truth record persists), Validity 90d (certifications expire).
+                </p>
               </div>
 
               <p className="mt-3 leading-relaxed">

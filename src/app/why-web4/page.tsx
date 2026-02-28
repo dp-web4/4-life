@@ -370,7 +370,7 @@ export default function WhyWeb4Page() {
                   <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
                   Web4 whitepaper</a> with formal definitions</li>
                 <li><strong>Reference implementations:</strong> ~47,000 lines of tested code &mdash; LCT lifecycle, T3/V3 tensors, ATP metering, governance (SAL), federation, witness protocol, MRH graphs</li>
-                <li><strong>Security validation:</strong> 424 attack vectors across 84 tracks, all defended. Sybil resistance formally proven (5 theorems)</li>
+                <li><strong>Security validation:</strong> 424 attack vectors across 84 tracks, all defended. Sybil resistance formally proven (5 theorems). Incentive compatibility proven &mdash; honest behavior is mathematically more profitable than gaming</li>
                 <li><strong>Hardware integration:</strong> TPM2 binding validated. Go LCT library (55 tests). Multi-device constellation enrollment working</li>
                 <li><strong>Interactive simulations:</strong>{" "}
                   <Link href="/society-simulator" className="text-sky-400 hover:underline">
