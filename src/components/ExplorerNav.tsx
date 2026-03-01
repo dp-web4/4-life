@@ -93,9 +93,78 @@ const STAGE_LABELS = {
 // Component
 // ============================================================================
 
+// Curated tool suggestions for concept/reference pages not in the explorer sequence
+const CONCEPT_TOOLS: Record<string, string[]> = {
+  '/atp-economics': ['/playground', '/society-simulator', '/compare'],
+  '/trust-tensor': ['/trust-tensor-explorer', '/playground', '/society-simulator'],
+  '/coherence-index': ['/trust-tensor-explorer', '/society-simulator', '/coherence-framework'],
+  '/lct-explainer': ['/first-contact', '/society-simulator', '/playground'],
+  '/aliveness': ['/karma-journey', '/society-simulator', '/playground'],
+  '/markov-relevancy-horizon': ['/mrh-explorer', '/trust-networks', '/playground'],
+  '/how-it-works': ['/first-contact', '/playground', '/society-simulator'],
+  '/why-web4': ['/first-contact', '/karma-journey', '/playground'],
+  '/day-in-web4': ['/first-contact', '/karma-journey', '/playground'],
+  '/karma-consequences': ['/karma-journey', '/society-simulator', '/playground'],
+  '/federation-economics': ['/playground', '/compare', '/lab-console'],
+  '/trust-networks': ['/mrh-explorer', '/society-simulator', '/adversarial-explorer'],
+  '/what-could-go-wrong': ['/threat-model', '/adversarial-explorer', '/playground'],
+  '/threat-model': ['/adversarial-explorer', '/trust-networks', '/playground'],
+  '/glossary': ['/first-contact', '/playground', '/concepts-to-tools'],
+  '/learn': ['/first-contact', '/concepts-to-tools', '/explore-guide'],
+  '/challenge-set': ['/playground', '/lab-console', '/threat-model'],
+};
+
 export default function ExplorerNav({ currentPath }: { currentPath: string }) {
   const currentIndex = EXPLORERS.findIndex(e => e.href === currentPath);
-  if (currentIndex === -1) return null;
+
+  // Fallback for concept/reference pages not in the explorer sequence
+  if (currentIndex === -1) {
+    const toolHrefs = CONCEPT_TOOLS[currentPath];
+    if (!toolHrefs) return null;
+    const tools = toolHrefs
+      .map(href => EXPLORERS.find(e => e.href === href))
+      .filter((e): e is ExplorerInfo => e !== undefined);
+    if (tools.length === 0) return null;
+
+    return (
+      <div style={{
+        marginTop: '2rem', marginBottom: '1rem',
+        padding: '1.25rem', borderRadius: '0.75rem',
+        background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)',
+      }}>
+        <div style={{
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          marginBottom: '0.75rem',
+        }}>
+          <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--color-text-secondary)' }}>
+            Try It Hands-On
+          </div>
+          <Link
+            href="/concepts-to-tools"
+            style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', textDecoration: 'none' }}
+          >
+            All concept-tool bridges →
+          </Link>
+        </div>
+        <div style={{ display: 'flex', gap: '0.375rem', flexWrap: 'wrap' }}>
+          {tools.map(tool => (
+            <Link
+              key={tool.href}
+              href={tool.href}
+              style={{
+                padding: '0.375rem 0.625rem', borderRadius: '999px',
+                background: `${tool.color}10`, border: `1px solid ${tool.color}20`,
+                color: tool.color, fontSize: '0.7rem', fontWeight: 500,
+                textDecoration: 'none', transition: 'background 0.2s',
+              }}
+            >
+              {tool.shortTitle}
+            </Link>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   const current = EXPLORERS[currentIndex];
   const prev = currentIndex > 0 ? EXPLORERS[currentIndex - 1] : null;
