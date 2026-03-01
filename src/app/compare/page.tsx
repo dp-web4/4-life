@@ -12,6 +12,7 @@ import { ComparativeView } from "@/components/ComparativeView";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from '@/components/ExplorerNav';
+import TermTooltip from "@/components/TermTooltip";
 
 // Available simulation files
 const SIMULATIONS = [
@@ -119,9 +120,23 @@ export default function ComparePage() {
           <h1 className="text-4xl font-bold text-white mb-4">
             Compare Simulations
           </h1>
-          <p className="text-lg text-slate-300 max-w-3xl">
-            Select multiple simulation runs to compare side-by-side. Understand how different
-            parameters, policies, and mechanisms affect trust dynamics and agent behavior.
+          <p className="text-lg text-slate-300 max-w-3xl mb-4">
+            How much difference do Web4 mechanisms make? Compare simulation runs side-by-side
+            to see how <TermTooltip term="T3" />, <TermTooltip term="ATP" />, and karma
+            carry-forward affect outcomes across life cycles.
+          </p>
+          <p className="text-sm text-sky-400/60 animate-pulse">
+            ↓ Select 2+ simulations below to compare outcomes
+          </p>
+        </div>
+
+        {/* Recommended comparison */}
+        <div className="bg-sky-950/20 border border-sky-800/30 rounded-lg p-4 mb-8">
+          <div className="text-sm font-semibold text-sky-400 mb-1">Recommended first comparison</div>
+          <p className="text-sm text-slate-300">
+            Start with <strong>Maturation (Web4)</strong> vs <strong>Maturation (Baseline)</strong> — same
+            agents, same scenarios, but one has Web4 trust mechanisms and the other doesn&apos;t.
+            Watch how trust and energy trajectories diverge.
           </p>
         </div>
 
@@ -226,12 +241,12 @@ export default function ComparePage() {
           </h3>
           <div className="space-y-3 text-sm text-slate-300">
             <p>
-              <strong className="text-white">Trust Trajectory:</strong> Shows how T3 (trust) evolves
+              <strong className="text-white">Trust Trajectory:</strong> Shows how <TermTooltip term="T3" /> evolves
               over time. The trust threshold (0.5) marks where behavior transitions from
               reactive to intentional. Above this threshold, agents exhibit coherent patterns.
             </p>
             <p>
-              <strong className="text-white">ATP Trajectory:</strong> Tracks the attention budget.
+              <strong className="text-white">ATP Trajectory:</strong> Tracks the <TermTooltip term="ATP" /> attention budget.
               ATP decreases with actions and increases with valuable contributions. The crisis
               threshold (20) marks when agents face resource pressure.
             </p>

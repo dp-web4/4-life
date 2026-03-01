@@ -125,6 +125,10 @@ export default function HowItWorksPage() {
           all works.
         </p>
 
+        <p className="text-sm text-sky-400/60 mt-4 animate-pulse">
+          ↓ See how all five systems create aliveness below
+        </p>
+
         {/* Complete System Integration Diagram */}
         <div id="system-diagram" className="mt-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <h3 className="text-lg font-bold text-gray-100 mb-2">How All Five Systems Create Aliveness</h3>
@@ -782,6 +786,87 @@ export default function HowItWorksPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Cascade Scenarios */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <h3 className="text-xl font-bold text-gray-200 mb-4">What Does This Look Like in Practice?</h3>
+        <p className="text-gray-400 mb-6 text-sm">
+          Pick a starting event. Watch how it cascades through all three systems:
+        </p>
+
+        <div className="grid gap-4">
+          {/* Virtuous cascade */}
+          <div className="bg-gradient-to-r from-green-950/20 to-gray-900 border border-green-800/30 rounded-xl p-5">
+            <div className="text-sm font-semibold text-green-400 mb-3">Virtuous Cascade: You write a helpful tutorial</div>
+            <div className="flex flex-col sm:flex-row items-stretch gap-2 text-xs">
+              <div className="flex-1 bg-green-950/40 border border-green-800/30 rounded-lg p-3 text-center">
+                <div className="text-green-400 font-bold mb-1">ATP</div>
+                <div className="text-gray-400">Spend 15 ATP</div>
+                <div className="text-green-300 mt-1">Recipients confirm value</div>
+                <div className="text-green-400 font-bold">→ Earn 40 back</div>
+              </div>
+              <div className="text-gray-600 flex items-center justify-center sm:rotate-0 rotate-90">→</div>
+              <div className="flex-1 bg-purple-950/40 border border-purple-800/30 rounded-lg p-3 text-center">
+                <div className="text-purple-400 font-bold mb-1">T3</div>
+                <div className="text-gray-400">Talent +0.02</div>
+                <div className="text-gray-400">Training +0.02</div>
+                <div className="text-purple-300 mt-1">Higher trust = lower future costs</div>
+              </div>
+              <div className="text-gray-600 flex items-center justify-center sm:rotate-0 rotate-90">→</div>
+              <div className="flex-1 bg-amber-950/40 border border-amber-800/30 rounded-lg p-3 text-center">
+                <div className="text-amber-400 font-bold mb-1">CI</div>
+                <div className="text-gray-400">Consistent with past behavior</div>
+                <div className="text-amber-300 mt-1">CI stays high → no penalty</div>
+              </div>
+              <div className="text-gray-600 flex items-center justify-center sm:rotate-0 rotate-90">→</div>
+              <div className="flex-1 bg-emerald-950/40 border border-emerald-700/30 rounded-lg p-3 text-center">
+                <div className="text-emerald-400 font-bold mb-1">Result</div>
+                <div className="text-emerald-300">Net gain: +25 ATP</div>
+                <div className="text-emerald-300">Trust grows</div>
+                <div className="text-emerald-400 font-bold mt-1">Thriving</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Vicious cascade */}
+          <div className="bg-gradient-to-r from-red-950/20 to-gray-900 border border-red-800/30 rounded-xl p-5">
+            <div className="text-sm font-semibold text-red-400 mb-3">Death Spiral: You spam low-quality posts</div>
+            <div className="flex flex-col sm:flex-row items-stretch gap-2 text-xs">
+              <div className="flex-1 bg-red-950/40 border border-red-800/30 rounded-lg p-3 text-center">
+                <div className="text-red-400 font-bold mb-1">ATP</div>
+                <div className="text-gray-400">Spend 10 ATP per post</div>
+                <div className="text-red-300 mt-1">Nobody confirms value</div>
+                <div className="text-red-400 font-bold">→ Earn 0 back</div>
+              </div>
+              <div className="text-gray-600 flex items-center justify-center sm:rotate-0 rotate-90">→</div>
+              <div className="flex-1 bg-purple-950/40 border border-purple-800/30 rounded-lg p-3 text-center">
+                <div className="text-purple-400 font-bold mb-1">T3</div>
+                <div className="text-gray-400">Temperament -0.05</div>
+                <div className="text-gray-400">Training -0.03</div>
+                <div className="text-red-300 mt-1">Lower trust = higher costs</div>
+              </div>
+              <div className="text-gray-600 flex items-center justify-center sm:rotate-0 rotate-90">→</div>
+              <div className="flex-1 bg-amber-950/40 border border-amber-800/30 rounded-lg p-3 text-center">
+                <div className="text-amber-400 font-bold mb-1">CI</div>
+                <div className="text-gray-400">Pattern shift detected</div>
+                <div className="text-red-300 mt-1">CI drops → 1.4x cost multiplier</div>
+              </div>
+              <div className="text-gray-600 flex items-center justify-center sm:rotate-0 rotate-90">→</div>
+              <div className="flex-1 bg-red-950/40 border border-red-700/30 rounded-lg p-3 text-center">
+                <div className="text-red-400 font-bold mb-1">Result</div>
+                <div className="text-red-300">ATP draining fast</div>
+                <div className="text-red-300">Trust collapsing</div>
+                <div className="text-red-400 font-bold mt-1">Death spiral</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p className="text-xs text-gray-500 mt-4 italic">
+          This is why quality wins and spam dies — not because of rules or moderators, but because
+          the three systems reinforce each other. Good behavior compounds upward. Bad behavior compounds downward.
+        </p>
       </section>
 
       {/* Why This Works */}
