@@ -511,6 +511,35 @@ export default function FederationEconomicsPage() {
 
           <div>
             <h3 className="text-lg font-semibold text-gray-300 mb-3">
+              When Values Themselves Conflict
+            </h3>
+            <p className="text-gray-300 mb-3">
+              Policy conflicts have technical solutions (priority, intersection, freeze). But what about
+              communities with <strong className="text-amber-400">fundamentally incompatible values</strong>?
+              One society considers content censorship ethical; another considers it harmful. One
+              society values radical transparency; another protects privacy as a human right.
+            </p>
+            <p className="text-gray-300 mb-3">
+              Web4&apos;s answer: <strong>it doesn&apos;t force consensus</strong>. Societies with
+              irreconcilable values simply don&apos;t federate with each other. The MRH boundary
+              becomes a value boundary — you see and interact with societies whose norms are
+              compatible with yours. This is deliberate: there is no global arbiter of what&apos;s
+              &ldquo;right.&rdquo;
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              The cost: value balkanization. Societies may isolate into echo chambers. The
+              mitigation: bridging societies that voluntarily span value boundaries, mediating
+              cross-society interactions at increased ATP cost. Bridge societies earn trust from
+              both sides by demonstrating fairness — but this requires human judgment, not algorithms.
+            </p>
+            <p className="text-gray-500 text-xs italic">
+              This is a philosophical constraint, not a technical one. Web4 provides the
+              infrastructure for pluralism but can&apos;t solve moral disagreement itself.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-300 mb-3">
               Consensus Under Partial Synchrony
             </h3>
             <p className="text-gray-300 mb-1">

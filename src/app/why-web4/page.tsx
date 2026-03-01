@@ -640,7 +640,28 @@ export default function WhyWeb4Page() {
                 <li>Web of trust model where existing members vouch for newcomers</li>
                 <li>Gradual rollout starting with high-stakes contexts (not consumer social)</li>
               </ul>
-              <p className="text-amber-400/80 text-xs">
+              <p className="text-gray-300 mt-3 text-sm font-semibold">
+                What the first 100 interactions look like:
+              </p>
+              <ol className="list-decimal list-inside space-y-1 text-gray-400 text-sm">
+                <li><strong>Actions 1–3:</strong> Three founding members create the society with hardware-bound
+                  presence tokens. They witness each other — establishing the initial trust graph.</li>
+                <li><strong>Actions 4–20:</strong> Founders perform real work (writing governance rules,
+                  creating initial resources). Trust builds slowly from 0.50 — each quality contribution
+                  moves the needle by ~0.02.</li>
+                <li><strong>Actions 21–50:</strong> New members join, vouched for by founders. First-mover
+                  advantage exists but has a ~30-action half-life — newcomers doing quality work
+                  catch up to founders by action ~50.</li>
+                <li><strong>Actions 51–100:</strong> Roles emerge, specialization begins. The society&apos;s
+                  trust graph becomes rich enough that MRH boundaries create meaningful context.
+                  Wealth gap trends toward 0.25 — concentrated enough to reward quality,
+                  distributed enough to avoid oligarchy.</li>
+              </ol>
+              <p className="text-gray-500 text-xs mt-2">
+                See the <a href="/playground" className="text-sky-400 hover:underline">Playground</a> experiment
+                &ldquo;Where is the tipping point?&rdquo; for a hands-on version of cold-start dynamics.
+              </p>
+              <p className="text-amber-400/80 text-xs mt-2">
                 <strong>Honest caveat:</strong> Bootstrapping is genuinely hard. No perfect solution exists.
                 This is an active research area, not a solved problem.
               </p>
