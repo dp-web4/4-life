@@ -44,10 +44,10 @@ const SIMULATIONS: SimulationConfig[] = [
   {
     file: 'ep_five_domain_multi_life_results.json',
     id: 'ep-five-domain-multi-life',
-    type: 'Five-Domain EP',
+    type: 'Five-Domain Learning',
     titleOverride: (name, themes) =>
       `${name}: Five Domains of Knowing — Emotional, Quality, Attention, Grounding, Authorization`,
-    summaryPrefix: 'This five-domain simulation assesses an agent across all EP dimensions: emotional regulation, quality judgment, attention management, grounding verification, and authorization awareness.',
+    summaryPrefix: 'This five-domain simulation assesses an agent across all learning dimensions: emotional regulation, quality judgment, attention management, grounding verification, and authorization awareness.',
     extraThemes: ['Multi-Domain Assessment'],
   },
   {

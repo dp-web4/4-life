@@ -816,7 +816,7 @@ export default function LabConsolePage() {
 
       {fiveDomain && (
         <section style={{ marginTop: "2rem" }}>
-          <h2>Five-Domain EP Overview</h2>
+          <h2>Five-Domain Learning Overview</h2>
           <div
             style={{
               marginTop: "0.75rem",

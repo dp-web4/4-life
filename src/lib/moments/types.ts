@@ -52,7 +52,7 @@ export const CATEGORY_INFO: Record<MomentCategory, { label: string; emoji: strin
   trust: { label: 'Trust', emoji: '🤝', description: 'Trust changes and dynamics' },
   atp: { label: 'ATP', emoji: '⚡', description: 'Attention budget events' },
   karma: { label: 'Karma', emoji: '✨', description: 'Cross-life consequences' },
-  learning: { label: 'Learning', emoji: '🧠', description: 'EP maturation and growth' },
+  learning: { label: 'Learning', emoji: '🧠', description: 'Cross-life maturation and growth' },
   crisis: { label: 'Crisis', emoji: '💀', description: 'Death and survival events' },
   emergence: { label: 'Emergence', emoji: '🌟', description: 'Trust threshold crossings' },
 };

@@ -559,9 +559,9 @@ export const navigationTree: NavigationTree = {
       related: ['/decision-evolution', '/learning-salience', '/pattern-library']
     },
     {
-      title: 'EP Pattern Library',
+      title: 'Pattern Library',
       href: '/pattern-library',
-      desc: 'Browse EP decision patterns',
+      desc: 'Browse cross-life learning patterns',
       keywords: ['patterns', 'EP', 'epistemic', 'proprioception', 'library', 'browser', 'corpus', 'meta-cognition'],
       prerequisites: ['/patterns'],
       related: ['/patterns', '/decision-evolution', '/learning-salience', '/meta-cognition-feedback']
