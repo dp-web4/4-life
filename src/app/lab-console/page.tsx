@@ -664,7 +664,7 @@ export default function LabConsolePage() {
 
       {ep && (
         <section style={{ marginTop: "2rem" }}>
-          <h2>EP Closed-Loop Overview</h2>
+          <h2>Cross-Life Learning (Epistemic Proprioception)</h2>
           <div
             style={{
               marginTop: "0.75rem",
@@ -803,7 +803,7 @@ export default function LabConsolePage() {
       {/* Decision Evolution - How EP learning improves decisions across lives */}
       {ep && ep.lives && ep.lives.length >= 2 && ep.applied_actions && (
         <section style={{ marginTop: "2rem" }}>
-          <h2>📈 Decision Evolution (EP Learning Across Lives)</h2>
+          <h2>Decision Evolution (Learning Across Lives)</h2>
           <DecisionEvolution
             lives={ep.lives.map((life, index) => ({
               life_id: life.life_id,

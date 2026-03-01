@@ -84,7 +84,7 @@ export default function DecisionEvolutionPage() {
             Web4 Foundation: Learning
           </div>
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-            Decision Evolution (EP Learning)
+            Decision Evolution
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed mb-6">
             How agents get better at making decisions across lives through Epistemic Proprioception - learning what they know.
@@ -233,7 +233,7 @@ export default function DecisionEvolutionPage() {
 
         {/* How It Works */}
         <section className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">How EP Learning Works</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">How Cross-Life Learning Works</h2>
 
           <div className="space-y-6">
             {/* Step 1 */}
@@ -371,7 +371,7 @@ export default function DecisionEvolutionPage() {
 
         {/* Comparison Table */}
         <section className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">EP Learning vs Traditional AI Learning</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Web4 Learning vs Traditional AI Learning</h2>
 
           <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
             <table className="w-full text-sm">
@@ -379,7 +379,7 @@ export default function DecisionEvolutionPage() {
                 <tr>
                   <th className="px-6 py-4 text-left text-gray-300 font-semibold">Aspect</th>
                   <th className="px-6 py-4 text-left text-gray-300 font-semibold">Traditional AI</th>
-                  <th className="px-6 py-4 text-left text-gray-300 font-semibold">EP Learning (Web4)</th>
+                  <th className="px-6 py-4 text-left text-gray-300 font-semibold">Web4 Cross-Life Learning</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-700">
@@ -423,7 +423,7 @@ export default function DecisionEvolutionPage() {
           <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 border border-purple-700/50 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">See Decision Evolution In Action</h2>
             <p className="text-gray-300 mb-6">
-              Run the EP Closed Loop simulation in the Lab Console to watch real agent decision-making improve across lives.
+              Run the Cross-Life Learning simulation in the Lab Console to watch real agent decision-making improve across lives.
             </p>
             <div className="flex gap-4 justify-center">
               <Link
