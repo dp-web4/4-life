@@ -411,19 +411,27 @@ export default function PatternLibraryPage() {
   const [conflictFilter, setConflictFilter] = useState<'all' | 'conflict' | 'no-conflict'>('all');
   const [showCount, setShowCount] = useState(20);
 
-  // Load corpus - use sample data for now (real corpora are in web4/game)
+  // Load real corpus from public/ (copied from web4/game)
   useEffect(() => {
     setLoading(true);
     setError(null);
 
-    // Simulate async load with sample data
-    // TODO: Copy actual corpus files to public/ for production
-    const timer = setTimeout(() => {
-      setCorpus(generateSampleCorpus(selectedCorpus.id));
-      setLoading(false);
-    }, 100);
-
-    return () => clearTimeout(timer);
+    fetch(`/${selectedCorpus.file}`)
+      .then(res => {
+        if (!res.ok) throw new Error(`Failed to load ${selectedCorpus.name}`);
+        return res.json();
+      })
+      .then(data => {
+        // Transform flat structure to {meta, patterns} format
+        const { patterns, ...meta } = data;
+        setCorpus({ meta, patterns });
+        setLoading(false);
+      })
+      .catch(() => {
+        // Fallback to sample data if real files unavailable
+        setCorpus(generateSampleCorpus(selectedCorpus.id));
+        setLoading(false);
+      });
   }, [selectedCorpus]);
 
   // Filters

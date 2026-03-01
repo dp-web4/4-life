@@ -606,7 +606,7 @@ function DeepDiveTab() {
         <h3 style={{ marginBottom: '1rem' }}>Jump Into Action</h3>
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
           <Link href="/first-contact" className="btn-primary">
-            First Contact (10 min)
+            First Contact (12 min)
           </Link>
           <Link href="/playground" className="btn-secondary">
             Try the Playground

@@ -18,7 +18,7 @@ import { trackPageVisit } from "@/lib/exploration";
  * - HUMAN-CENTRIC: Focus on single-life trust/consequence dynamics that humans can relate to
  *
  * Goal: Someone with zero Web4 knowledge can run this, understand what they see,
- * and know where to go next - all in 10 minutes.
+ * and know where to go next - all in 12 minutes.
  */
 
 type Step = "welcome" | "simulation" | "narrative" | "concepts" | "next-steps";
@@ -191,7 +191,7 @@ export default function FirstContactPage() {
                 Today's internet rewards spam, lets trolls create unlimited accounts, and makes quality creators compete with bots. What if the system itself made that impossible?
               </p>
               <p className="text-lg text-gray-400 leading-relaxed">
-                In the next 10 minutes, you'll see how trust and reputation actually work in Web4 — and why it's fundamentally different from anything you've used before.
+                In the next 12 minutes, you'll see how trust and reputation actually work in Web4 — and why it's fundamentally different from anything you've used before.
               </p>
             </div>
 

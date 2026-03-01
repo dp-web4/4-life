@@ -15,6 +15,7 @@ import { NarrativeExporter, ExportFormat } from '@/lib/narratives/narrative_expo
 import { EventDetector } from '@/lib/narratives/event_detector';
 import NarrativeTimeline from '@/components/NarrativeTimeline';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import ExplorerNav from '@/components/ExplorerNav';
 import { trackPageVisit } from "@/lib/exploration";
 
 interface NarrativeIndexEntry {
@@ -432,6 +433,7 @@ export default function NarrativeViewerPage() {
             )}
           </div>
         </div>
+        <ExplorerNav currentPath="/narratives" />
       </div>
     </div>
   );
