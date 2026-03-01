@@ -56,6 +56,13 @@ export default function FirstContactPage() {
     { tick: 8, action: "Collaboration", atp_before: 62, atp_after: 55, trust_before: 0.53, trust_after: 0.58, reason: "Working with trusted member: costs 7 ATP, significant trust gain (+0.05)", isSuccess: true },
     { tick: 9, action: "Recognition", atp_before: 55, atp_after: 80, trust_before: 0.58, trust_after: 0.62, reason: "Community recognition for consistent quality: earns 25 ATP, trust boost", isSuccess: true },
     { tick: 10, action: "Established", atp_before: 80, atp_after: 80, trust_before: 0.62, trust_after: 0.62, reason: "Alice is now a trusted community member with sustainable reputation", isSuccess: true },
+    // Life continues — what happens when things go wrong
+    { tick: 11, action: "Overcommit", atp_before: 80, atp_after: 35, trust_before: 0.62, trust_after: 0.58, reason: "Alice takes on too many projects at once. Each costs ATP, and spreading thin hurts quality.", isWarning: true },
+    { tick: 12, action: "Quality slips", atp_before: 35, atp_after: 12, trust_before: 0.58, trust_after: 0.51, reason: "Rushed work gets poor reviews. ATP drains, trust falls. The crisis spiral begins.", isWarning: true },
+    { tick: 13, action: "ATP exhaustion", atp_before: 12, atp_after: 0, trust_before: 0.51, trust_after: 0.51, reason: "No energy left to contribute. ATP hits zero — Alice's entity dies. But her record persists.", isWarning: true },
+    // Rebirth with karma carry-forward
+    { tick: 14, action: "Rebirth", atp_before: 0, atp_after: 112, trust_before: 0.51, trust_after: 0.54, reason: "New life begins! Good karma carries forward: 112 ATP (bonus from past quality) and 0.54 trust (above neutral). Past lessons remembered.", isSuccess: true },
+    { tick: 15, action: "Wiser choices", atp_before: 112, atp_after: 104, trust_before: 0.54, trust_after: 0.57, reason: "Armed with experience, Alice paces herself — focused quality over volume. Trust rises faster than her first life.", isSuccess: true },
   ];
 
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -128,11 +135,17 @@ export default function FirstContactPage() {
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#e2e8f0' }}>Step 5 — Recovery:</strong> She returns to thoughtful replies. Trust slowly rebuilds to 0.50. The system doesn&apos;t ban her &mdash; it lets consequences teach.
               </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
+                <strong style={{ color: '#f87171' }}>Step 6 — Death:</strong> Alice overcommits, quality slips, ATP drains to zero. Her entity dies &mdash; but her record persists.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
+                <strong style={{ color: '#34d399' }}>Step 7 — Rebirth:</strong> Good karma carries forward. Alice is reborn with 112 ATP (bonus from past quality) and 0.54 trust (above neutral). Past lessons compound.
+              </p>
             </div>
 
             <div style={{ background: '#0f172a', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
               <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: '0.95rem' }}>
-                <strong style={{ color: '#38bdf8' }}>The lesson:</strong> Spam dies because it costs more than it returns. Trust builds through consistent quality. Mistakes have real consequences &mdash; but recovery is always possible. No moderators needed. The economics do the work.
+                <strong style={{ color: '#38bdf8' }}>The lesson:</strong> Spam dies because it costs more than it returns. Trust builds through consistent quality. Mistakes have real consequences &mdash; but recovery is possible. Death is real (ATP hits zero), but good karma carries forward into new lives. No moderators needed. The economics do the work.
               </p>
             </div>
 
@@ -243,12 +256,12 @@ export default function FirstContactPage() {
               onClick={() => setCurrentStep("simulation")}
               className="w-full bg-gradient-to-r from-sky-500 to-purple-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-sky-600 hover:to-purple-700 transition-all text-lg"
             >
-              Watch Alice&apos;s Full Journey (10 actions) &rarr;
+              Watch Alice&apos;s Full Journey &rarr;
             </button>
 
             <p className="text-center text-sm text-gray-500">
-              You&apos;ll follow Alice through 10 actions in a Web4 community &mdash; see her spend ATP,
-              build trust, recover from mistakes, and earn recognition. No installation, runs in browser.
+              Follow Alice through a full Web4 lifecycle &mdash; build trust, recover from mistakes,
+              face death when resources run out, and be reborn with karma carrying forward.
             </p>
           </div>
         )}
@@ -408,6 +421,29 @@ export default function FirstContactPage() {
                     </p>
                   </div>
                 )}
+
+                {currentSnapshot.action === "ATP exhaustion" && (
+                  <div className="mt-4 bg-red-900/20 border border-red-800 rounded p-4">
+                    <strong className="text-red-400">Death in Web4</strong>
+                    <p className="text-gray-300 mt-2">
+                      When ATP reaches zero, the entity can no longer act — this is <strong className="text-white">death</strong>.
+                      Unlike traditional platforms where you just create a new account, death in Web4 is meaningful.
+                      Your full history is preserved. But if you earned good karma, <strong className="text-white">rebirth is possible</strong> —
+                      and your next life starts with advantages from your past behavior.
+                    </p>
+                  </div>
+                )}
+
+                {currentSnapshot.action === "Rebirth" && (
+                  <div className="mt-4 bg-emerald-900/20 border border-emerald-800 rounded p-4">
+                    <strong className="text-emerald-400">Karma Carry-Forward</strong>
+                    <p className="text-gray-300 mt-2">
+                      Alice&apos;s good karma from her first life gives her a head start: <strong className="text-white">more ATP</strong> and
+                      <strong className="text-white"> higher starting trust</strong> than a brand-new entity. This is how Web4 makes
+                      long-term quality behavior compound across lifetimes — like compound interest on good reputation.
+                    </p>
+                  </div>
+                )}
               </div>
 
               {/* Timeline Scrubber */}
@@ -423,10 +459,13 @@ export default function FirstContactPage() {
                 />
                 <div className="flex justify-between text-xs text-gray-500 mt-1">
                   <span>Join</span>
-                  <span>Build Trust</span>
-                  <span>Spam Attempt</span>
+                  <span>Build</span>
+                  <span>Mistake</span>
                   <span>Recovery</span>
                   <span>Established</span>
+                  <span>Crisis</span>
+                  <span>Death</span>
+                  <span>Rebirth</span>
                 </div>
               </div>
             </div>
@@ -508,6 +547,36 @@ export default function FirstContactPage() {
                 </p>
               </div>
 
+              {/* Death and Rebirth */}
+              <div>
+                <h3 className="text-2xl font-bold text-red-400 mb-3">The Fall: Success Isn&apos;t Permanent</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  Alice&apos;s trust was solid, but she overextended. Too many projects, rushed quality, declining reviews.
+                  ATP drained from 80 to 35 to 12. Trust fell from 0.62 to 0.51 — barely above the threshold.
+                </p>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  Then ATP hit zero. <strong className="text-red-400">Alice&apos;s entity died.</strong> No energy left to act,
+                  no way to recover. On a traditional platform, this is nothing — make a new account. In Web4,
+                  death is real. Your record persists. Everyone can see your trajectory: the good work, the overreach,
+                  the collapse.
+                </p>
+              </div>
+
+              {/* Rebirth */}
+              <div>
+                <h3 className="text-2xl font-bold text-emerald-400 mb-3">The Return: Karma Compounds</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  But Alice had built real value in her first life. Her karma — the accumulated record of quality contributions —
+                  entitled her to rebirth with advantages. She started her new life with <strong className="text-emerald-400">112 ATP</strong> (12 more
+                  than default) and <strong className="text-emerald-400">0.54 trust</strong> (above the 0.50 neutral starting point).
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  Armed with experience, Alice paced herself. Focused quality over volume. By her second quality
+                  contribution, trust was already at 0.57 — <strong className="text-white">higher than it took 8 actions to reach in her first life</strong>.
+                  Karma made the climb easier. Good behavior compounds across lifetimes.
+                </p>
+              </div>
+
               {/* Key Insights */}
               <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
                 <h4 className="text-xl font-semibold mb-4">Key Insights</h4>
@@ -527,6 +596,14 @@ export default function FirstContactPage() {
                   <div>
                     <strong className="text-green-400">Recovery is Possible:</strong> Alice rebuilt from her spam mistake,
                     but the record of that dip is permanent. Future collaborators can see the full picture.
+                  </div>
+                  <div>
+                    <strong className="text-red-400">Death is Real:</strong> Running out of ATP means death — no more actions.
+                    Unlike traditional platforms, you can&apos;t just make a new account. Your history persists.
+                  </div>
+                  <div>
+                    <strong className="text-emerald-400">Karma Compounds:</strong> Good behavior in past lives gives you a head start
+                    in your next one. Alice&apos;s rebirth trust (0.54) was higher than the default (0.50) — earned through past quality.
                   </div>
                 </div>
               </div>
@@ -724,6 +801,8 @@ export default function FirstContactPage() {
                 <div>✅ How consequences compound (permanent record)</div>
                 <div>✅ Why moderation isn't needed (self-regulation)</div>
                 <div>✅ How recovery works (rebuild through quality)</div>
+                <div>✅ What death means (ATP exhaustion, permanent record)</div>
+                <div>✅ How karma compounds (better starts from past quality)</div>
               </div>
             </div>
 

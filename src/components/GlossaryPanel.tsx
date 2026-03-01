@@ -7,7 +7,7 @@ import { terms, type TermDefinition } from "@/lib/terms";
 const TERM_ORDER = [
   "Web4", "LCT", "ATP", "ADP", "T3", "V3",
   "MRH", "CI", "Karma", "EP", "R6", "Society",
-  "VCM", "Synthon", "Sybil", "Goodharting",
+  "VCM", "Synthon", "DID", "Sybil", "Goodharting",
 ];
 
 export default function GlossaryPanel() {

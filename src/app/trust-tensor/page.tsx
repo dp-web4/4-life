@@ -1128,6 +1128,15 @@ Temperament:  30-day half-life (recent behavior matters most)
             role to another. You can&apos;t game three dimensions simultaneously across multiple
             roles. That&apos;s called &ldquo;actually being trustworthy.&rdquo;
           </p>
+          <p className="leading-relaxed">
+            <strong className="text-amber-400">
+              Privacy is built in.
+            </strong>{" "}
+            You can prove &ldquo;my trust exceeds your threshold&rdquo; without revealing your
+            exact score. Selective disclosure lets you share only what&apos;s needed &mdash; like
+            proving you passed a background check without disclosing your medical records. Higher
+            precision costs more <TermTooltip term="ATP" /> to prevent score inflation.
+          </p>
         </div>
       </section>
 

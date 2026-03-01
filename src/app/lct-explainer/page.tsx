@@ -965,6 +965,52 @@ export default function LCTExplainerPage() {
           </div>
         </div>
 
+        {/* W3C Standards Compatibility */}
+        <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-gray-100">Works With W3C Standards</h2>
+          <p className="text-gray-300 mb-4">
+            Web4 identity isn&apos;t a walled garden. LCTs are designed to work with{" "}
+            <strong className="text-sky-400">W3C Decentralized Identifiers (DIDs)</strong> — the
+            same standard used by governments, enterprises, and other identity systems.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-4 mb-4">
+            <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4">
+              <h3 className="text-sm font-bold text-sky-400 mb-2">Identity Bridge</h3>
+              <p className="text-sm text-gray-400">
+                Every LCT maps to a standard DID Document. External systems (EU authorities,
+                employers, apps) can verify Web4 identity using W3C protocols they already support.
+              </p>
+            </div>
+            <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4">
+              <h3 className="text-sm font-bold text-sky-400 mb-2">Selective Disclosure</h3>
+              <p className="text-sm text-gray-400">
+                Prove &ldquo;my trust score meets your threshold&rdquo; without revealing the exact
+                number. Like proving you passed a background check without disclosing medical records.
+              </p>
+            </div>
+            <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4">
+              <h3 className="text-sm font-bold text-sky-400 mb-2">Verifiable Credentials</h3>
+              <p className="text-sm text-gray-400">
+                Your LCT can carry tamper-proof credentials: birth certificates, trust attestations,
+                compliance certifications. Each independently verifiable by anyone.
+              </p>
+            </div>
+            <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4">
+              <h3 className="text-sm font-bold text-sky-400 mb-2">Trust-Gated Messaging</h3>
+              <p className="text-sm text-gray-400">
+                Send messages that only entities above a trust threshold can receive. Spam
+                can&apos;t reach you if senders must prove reputation first.
+              </p>
+            </div>
+          </div>
+
+          <p className="text-gray-500 text-xs italic">
+            W3C DID/VC interoperability is implemented but not yet tested against external
+            identity providers. The bridge maps LCT↔DID bidirectionally.
+          </p>
+        </div>
+
         {/* Technical Deep Dive — collapsed by default */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <details>

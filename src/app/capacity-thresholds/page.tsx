@@ -14,11 +14,12 @@
  * Cross-pollination: Thor Session #25 (S901 14B test) → human accessibility
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -506,6 +507,8 @@ function DeploymentGuidance() {
 export default function CapacityThresholdsPage() {
   const [expandedStudy, setExpandedStudy] = useState<string | null>('s901-breakthrough');
   const [showTechnical, setShowTechnical] = useState(false);
+
+  useEffect(() => { trackPageVisit('capacity-thresholds'); }, []);
 
   return (
     <>

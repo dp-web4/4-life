@@ -192,6 +192,16 @@ export const terms: Record<string, TermDefinition> = {
     learnMore: "/threat-model#goodharting",
   },
 
+  // Interoperability
+  DID: {
+    term: "DID",
+    fullName: "Decentralized Identifier",
+    brief: "A W3C standard for self-owned digital identity — no central authority needed.",
+    explanation:
+      "DIDs are like URLs for identity: anyone can create one, they point to verifiable information, and no single company controls them. Web4's LCT maps directly to DID Documents, meaning Web4 identities can be verified by any system that supports the W3C DID standard — governments, enterprises, other identity networks.",
+    learnMore: "/lct-explainer",
+  },
+
   // Emergent Groups
   Synthon: {
     term: "Synthon",

@@ -20,6 +20,7 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from '@/lib/exploration';
 
 // ============================================================================
 // Types
@@ -383,6 +384,8 @@ export default function MultiSessionIdentityPage() {
       }
     }, 800);
   };
+
+  useEffect(() => { trackPageVisit('multi-session-identity'); }, []);
 
   // Auto-animate on mount
   useEffect(() => {
