@@ -862,6 +862,26 @@ export default function KarmaConsequencesPage() {
           </ul>
         </section>
 
+        {/* Primary CTA: Society Simulator */}
+        <section className="mb-12">
+          <div className="bg-gradient-to-br from-emerald-950/30 to-emerald-900/20 border border-emerald-800/30 rounded-xl p-8 text-center">
+            <h2 className="text-2xl font-bold text-emerald-400 mb-3">
+              Watch Karma in a Real Society
+            </h2>
+            <p className="text-gray-300 mb-6 max-w-lg mx-auto">
+              Now that you understand how consequences persist, watch 12 agents navigate
+              karma in real time. See cooperators thrive, defectors get isolated, and
+              coalitions form around reputation.
+            </p>
+            <Link
+              href="/society-simulator"
+              className="inline-block px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors text-lg"
+            >
+              Launch Society Simulator →
+            </Link>
+          </div>
+        </section>
+
         {/* Footer Navigation */}
         <div className="flex flex-wrap gap-4">
           <Link
