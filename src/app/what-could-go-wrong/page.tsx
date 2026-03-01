@@ -497,6 +497,106 @@ export default function WhatCouldGoWrongPage() {
               </p>
             </div>
           </details>
+
+          {/* Cold-start walkthrough */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What do a community&apos;s first 100 interactions look like?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-3">
+              <p>
+                Every Web4 community starts from zero. Here&apos;s what the bootstrap actually looks like:
+              </p>
+              <div className="space-y-2 text-gray-400">
+                <p>
+                  <strong className="text-sky-400">Actions 1–10: Genesis.</strong> A founder creates the
+                  society with a hardware-bound root LCT. They invite 2–3 trusted contacts who witness
+                  each other&apos;s presence. Everyone starts at 0.5 trust, 100 ATP. The founder assigns
+                  initial roles (treasury, governance, auditing). These first actions are cheap because
+                  the society has no history to validate against.
+                </p>
+                <p>
+                  <strong className="text-sky-400">Actions 11–30: Exploration.</strong> Members start
+                  contributing — posting, reviewing, organizing. Trust scores begin diverging: active
+                  contributors climb toward 0.6, while passive members stay at 0.5. ATP flows establish
+                  patterns. Quality assessment is rough because there&apos;s no baseline yet — the V3
+                  value tensor is calibrating.
+                </p>
+                <p>
+                  <strong className="text-sky-400">Actions 31–50: Differentiation.</strong> Roles
+                  become meaningful. Members who consistently deliver quality earn trust in specific
+                  dimensions — Talent for skilled work, Training for follow-through. First-mover
+                  advantage peaks around action 30 and begins decaying. New members who join now
+                  can see established trust patterns to learn from.
+                </p>
+                <p>
+                  <strong className="text-sky-400">Actions 51–100: Stabilization.</strong> Trust
+                  distribution settles toward Gini ~0.25 (moderate, healthy inequality). Quality
+                  newcomers start surpassing coasting founders. ATP circulation creates a functioning
+                  economy. The society has enough history for MRH context to be meaningful — members
+                  can make trust-informed decisions about unfamiliar entities.
+                </p>
+              </div>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Status:</strong> This trajectory is validated through simulation. Whether real
+                human communities follow the same curve depends on factors simulations can&apos;t model —
+                social dynamics, motivation, and the specific purpose of the community.
+              </p>
+            </div>
+          </details>
+
+          {/* Cross-value communities */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What about communities with fundamentally different values?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-3">
+              <p>
+                Federation handles economic coordination — dynamic pricing, resource allocation,
+                circuit breakers. But what happens when one society considers something ethical that
+                another considers harmful?
+              </p>
+              <p>
+                Web4&apos;s answer is <strong>deliberate non-resolution</strong>. Unlike platforms that
+                enforce a single content policy, Web4 societies set their own rules. A society that
+                values free expression and one that values content moderation don&apos;t need to agree —
+                they just need to decide whether to federate.
+              </p>
+              <div className="space-y-2 text-gray-400">
+                <p>
+                  <strong className="text-gray-300">Federation is opt-in.</strong> Societies choose
+                  who to federate with based on shared values, compatible trust thresholds, and
+                  historical behavior. No central authority forces incompatible societies together.
+                </p>
+                <p>
+                  <strong className="text-gray-300">MRH creates natural boundaries.</strong> Your
+                  Markov Relevancy Horizon means you only see entities within your trust graph.
+                  A society you don&apos;t federate with is invisible to you — not censored, just
+                  outside your context.
+                </p>
+                <p>
+                  <strong className="text-gray-300">Cross-society policies handle conflicts.</strong>{" "}
+                  When federated societies have different rules, the society closer to the action
+                  (MRH-weighted priority) takes precedence. Circuit breakers automatically isolate
+                  partners whose behavior diverges too far.
+                </p>
+              </div>
+              <p>
+                This doesn&apos;t solve the philosophical problem — it sidesteps it. Web4 doesn&apos;t
+                claim to know which values are correct. It gives each community sovereignty over its
+                own rules and lets federation economics handle the rest. Communities with compatible
+                values naturally cluster; incompatible ones naturally separate.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Limitation:</strong> This approach works when societies can cleanly separate.
+                It struggles with shared-resource conflicts (e.g., environmental policy) where one
+                society&apos;s actions affect another&apos;s world. Cross-society externalities are
+                an unsolved coordination problem.
+              </p>
+            </div>
+          </details>
         </div>
       </section>
 
