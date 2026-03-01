@@ -9,6 +9,7 @@ import { trackPageVisit } from "@/lib/exploration";
 
 export default function GlossaryPage() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [matchCount, setMatchCount] = useState(0);
   const glossaryRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => { trackPageVisit('glossary'); }, []);
@@ -18,10 +19,14 @@ export default function GlossaryPage() {
     if (!glossaryRef.current) return;
     const term = searchTerm.toLowerCase().trim();
     const cards = glossaryRef.current.querySelectorAll("[data-glossary-term]");
+    let visible = 0;
     cards.forEach((card) => {
       const text = card.textContent?.toLowerCase() ?? "";
-      (card as HTMLElement).style.display = !term || text.includes(term) ? "" : "none";
+      const show = !term || text.includes(term);
+      (card as HTMLElement).style.display = show ? "" : "none";
+      if (show) visible++;
     });
+    setMatchCount(visible);
     // Hide section headings when all their cards are hidden
     const sections = glossaryRef.current.querySelectorAll("[data-glossary-section]");
     sections.forEach((section) => {
@@ -50,14 +55,40 @@ export default function GlossaryPage() {
         </p>
 
         {/* Search/Filter */}
-        <div className="mb-6">
+        <div className="mb-4">
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Filter terms... (e.g. trust, ATP, identity)"
             className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:border-sky-500 transition-colors"
+            aria-label="Filter glossary terms"
           />
+          {searchTerm && (
+            <div className="mt-2 text-sm text-gray-500" aria-live="polite">
+              {matchCount} term{matchCount !== 1 ? 's' : ''} matching &ldquo;{searchTerm}&rdquo;
+            </div>
+          )}
+        </div>
+
+        {/* Section Jump Links */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          {[
+            { id: "core", label: "Core" },
+            { id: "advanced", label: "Advanced" },
+            { id: "research", label: "Research" },
+            { id: "lifecycle", label: "Lifecycle" },
+            { id: "governance", label: "Governance" },
+            { id: "terminology", label: "Why This Terminology?" },
+          ].map(s => (
+            <a
+              key={s.id}
+              href={`#${s.id}`}
+              className="text-xs px-3 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-gray-400 hover:text-sky-400 hover:border-sky-700 transition-colors"
+            >
+              {s.label}
+            </a>
+          ))}
         </div>
 
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
@@ -80,7 +111,7 @@ export default function GlossaryPage() {
 
       <div ref={glossaryRef}>
       {/* Core Concepts */}
-      <section className="max-w-4xl mx-auto mt-16" data-glossary-section>
+      <section id="core" className="max-w-4xl mx-auto mt-16 scroll-mt-20" data-glossary-section>
         <h2 className="text-3xl font-bold mb-8 text-gray-100">Core Concepts</h2>
         <div className="space-y-8">
 
@@ -318,7 +349,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Advanced Protocol Concepts */}
-      <section className="max-w-4xl mx-auto mt-16" data-glossary-section>
+      <section id="advanced" className="max-w-4xl mx-auto mt-16 scroll-mt-20" data-glossary-section>
         <h2 className="text-3xl font-bold mb-8 text-gray-100">Advanced Protocol Concepts</h2>
         <p className="text-gray-400 mb-6">
           These are part of the Web4 protocol design — mechanisms that would exist in a deployed system.
@@ -503,7 +534,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Research Concepts — collapsed by default */}
-      <section className="max-w-4xl mx-auto mt-16" data-glossary-section>
+      <section id="research" className="max-w-4xl mx-auto mt-16 scroll-mt-20" data-glossary-section>
         <details>
           <summary className="text-3xl font-bold mb-4 text-gray-100 cursor-pointer list-none flex items-center gap-3 group">
             <span className="text-gray-500 group-open:rotate-90 transition-transform text-xl">▶</span>
@@ -706,7 +737,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Lifecycle Terms */}
-      <section className="max-w-4xl mx-auto mt-16" data-glossary-section>
+      <section id="lifecycle" className="max-w-4xl mx-auto mt-16 scroll-mt-20" data-glossary-section>
         <h2 className="text-3xl font-bold mb-8 text-gray-100">Membership Lifecycle</h2>
         <p className="text-gray-400 mb-6">
           Web4 participation happens within societies. Each society sets its own trust thresholds.
@@ -901,7 +932,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Governance */}
-      <section className="max-w-4xl mx-auto mt-16" data-glossary-section>
+      <section id="governance" className="max-w-4xl mx-auto mt-16 scroll-mt-20" data-glossary-section>
         <h2 className="text-3xl font-bold mb-8 text-gray-100">Governance</h2>
         <p className="text-gray-400 mb-6">
           How societies make and enforce rules. Web4 governance operates on a key principle:
@@ -964,7 +995,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Why This Terminology? */}
-      <section className="max-w-4xl mx-auto mt-16" data-glossary-section>
+      <section id="terminology" className="max-w-4xl mx-auto mt-16 scroll-mt-20" data-glossary-section>
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           Why This Terminology?
         </h2>

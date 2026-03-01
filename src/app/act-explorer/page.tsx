@@ -20,6 +20,7 @@ import ACTChat from '@/components/ACTChat';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { trackPageVisit } from "@/lib/exploration";
 import type { SimulationResult } from '@/lib/types';
 import type { Moment } from '@/lib/moments/types';
 import { detectMoments, SIMULATION_SOURCES } from '@/lib/moments/detector';
@@ -31,6 +32,8 @@ function ACTExplorerContent() {
   const [showSimulationPicker, setShowSimulationPicker] = useState(false);
   const [moments, setMoments] = useState<Moment[]>([]);
   const [contextHint, setContextHint] = useState<string | null>(null);
+
+  useEffect(() => { trackPageVisit('act-explorer'); }, []);
 
   // Load moments for context-aware queries
   useEffect(() => {
