@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from '@/components/ExplorerNav';
 import CollusionDetectionDemo from "@/components/CollusionDetectionDemo";
+import TermTooltip from "@/components/TermTooltip";
 
 export default function ThreatModelPage() {
   return (
@@ -60,7 +61,7 @@ export default function ThreatModelPage() {
             <div className="space-y-4">
               <div>
                 <h4 className="text-lg font-semibold text-gray-300 mb-2">
-                  What LCT Hardware Binding Does
+                  What <TermTooltip term="LCT" /> Hardware Binding Does
                 </h4>
                 <ul className="list-disc list-inside space-y-1 text-gray-400 ml-4">
                   <li>Ties identity to physical hardware (TPM, Secure Enclave, FIDO2)</li>
@@ -111,7 +112,7 @@ export default function ThreatModelPage() {
                 </h4>
                 <p className="text-gray-400 leading-relaxed">
                   A group of colluding agents validates each other's low-quality work,
-                  earning ATP and building trust without providing real value to outsiders.
+                  earning <TermTooltip term="ATP" /> and building trust without providing real value to outsiders.
                   They form a "trust cartel" that games the system through mutual validation.
                 </p>
               </div>
@@ -122,7 +123,7 @@ export default function ThreatModelPage() {
                 </h4>
                 <ul className="list-disc list-inside space-y-1 text-gray-400 ml-4">
                   <li><strong>Diversity requirements:</strong> Validation from varied witnesses carries more weight</li>
-                  <li><strong>MRH boundaries:</strong> Isolated trust networks have limited influence</li>
+                  <li><strong><TermTooltip term="MRH" /> boundaries:</strong> Isolated trust networks have limited influence</li>
                   <li><strong>Cross-validation:</strong> External witnesses can challenge insider claims</li>
                   <li><strong>ATP market dynamics:</strong> Closed loops create ATP inflation, reducing buying power</li>
                 </ul>
@@ -221,7 +222,7 @@ export default function ThreatModelPage() {
               <span className="text-3xl">🎯</span>
               <div>
                 <h3 className="text-xl font-semibold text-red-400">
-                  Goodharting Trust Dimensions
+                  Goodharting <TermTooltip term="T3" /> Dimensions
                 </h3>
                 <p className="text-sm text-gray-500">
                   Can agents optimize metrics without being trustworthy?
