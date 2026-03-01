@@ -862,6 +862,13 @@ export default function ATPEconomicsPage() {
                 you earn more by contributing than by moving ATP around. Simulations confirm:
                 one honest identity outearns five fake identities splitting the same budget.
               </p>
+              <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+                The same 5% principle applies to <strong className="text-gray-300">cross-federation delegation</strong>.
+                When authority is delegated across society boundaries (A → B → C), each hop charges a
+                5% ATP fee and scope monotonically narrows — a child delegation can never have more
+                authority than its parent. Revoking any link in the chain cascades to invalidate all
+                downstream delegates.
+              </p>
             </div>
 
             <div>
