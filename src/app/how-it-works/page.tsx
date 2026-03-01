@@ -1032,6 +1032,47 @@ export default function HowItWorksPage() {
       </section>
 
       {/* See It In Action */}
+      {/* Agent Orchestration — Chains of Trust */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">
+          When Agents Work Together
+        </h2>
+        <p className="text-gray-300 leading-relaxed mb-6">
+          Modern AI systems aren&apos;t single agents — they&apos;re chains. Agent A calls
+          Agent B, which calls Tool C, which feeds Agent D. In Web4, trust doesn&apos;t just
+          apply to individuals. It flows through the entire chain.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+            <h3 className="text-sm font-bold text-sky-400 mb-2">Trust Decays Through Chains</h3>
+            <p className="text-sm text-gray-400">
+              A 5-hop pipeline where each agent has 0.9 trust = 0.59 end-to-end.
+              Trust multiplies, it doesn&apos;t add. Long chains need high individual trust.
+            </p>
+          </div>
+          <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+            <h3 className="text-sm font-bold text-amber-400 mb-2">Circuit Breakers</h3>
+            <p className="text-sm text-gray-400">
+              If any agent in the chain drops below the trust threshold, the entire pipeline
+              halts and rolls back. Prevents cascading failure.
+            </p>
+          </div>
+          <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+            <h3 className="text-sm font-bold text-purple-400 mb-2">Blame Attribution</h3>
+            <p className="text-sm text-gray-400">
+              When a chain produces bad output, the system traces causality backward. Who caused
+              the failure? Who just passed bad data forward? Different levels of accountability.
+            </p>
+          </div>
+        </div>
+
+        <p className="text-gray-500 text-xs italic mb-2">
+          This is how Web4 handles AI agent orchestration: every delegation has a trust cost,
+          and humans can insert oversight at critical junctures.
+        </p>
+      </section>
+
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           See It In Action
