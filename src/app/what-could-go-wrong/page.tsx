@@ -127,7 +127,10 @@ export default function WhatCouldGoWrongPage() {
               <strong>Honest assessment:</strong> This is a real concern with partial mitigation.
               Multi-vendor support helps but doesn&apos;t eliminate the risk. The entire
               smartphone ecosystem runs on a duopoly (Apple/Google) and Web4 inherits
-              that concentration.
+              that concentration. Even &ldquo;open&rdquo; standards can be captured &mdash;
+              USB, Bluetooth, and Wi-Fi are all open specifications controlled by industry
+              consortia with corporate membership fees. Web4&apos;s attestation layer faces
+              the same dynamic.
             </p>
           </div>
         </div>

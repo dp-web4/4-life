@@ -310,6 +310,29 @@ export default function LCTExplainerPage() {
                 witnessing. If someone steals just your laptop password, they still can&apos;t fake
                 your phone&apos;s GPS or your watch&apos;s heartbeat pattern.</p>
             </div>
+
+            {/* Step-by-step flow bridging analogy to mechanics */}
+            <div className="mt-4 text-sm">
+              <p className="text-green-400/80 font-medium text-xs mb-2">What happens under the hood:</p>
+              <div className="grid grid-cols-1 gap-1.5 text-xs text-gray-400">
+                <div className="flex items-start gap-2">
+                  <span className="text-green-500 font-bold shrink-0">1.</span>
+                  <span>You sign in &mdash; your laptop&apos;s TPM chip generates a <strong className="text-gray-300">cryptographic attestation</strong> (a hardware-signed proof that this specific device is involved)</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-green-500 font-bold shrink-0">2.</span>
+                  <span>Your phone receives a witness request and signs it with its own Secure Enclave key</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-green-500 font-bold shrink-0">3.</span>
+                  <span>Both attestations are bundled into your LCT &mdash; now anyone can verify <em>two independent hardware chips</em> confirmed this session</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-green-500 font-bold shrink-0">4.</span>
+                  <span>More witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90%)</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

@@ -723,68 +723,80 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* How The Three Systems Interact */}
+      {/* How The Pieces Fit Together */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
-          How The Three Systems Connect
+          How The Pieces Fit Together
         </h2>
         <p className="text-gray-400 mb-6">
-          ATP, T3, and CI aren&apos;t separate &mdash; they modulate each other. Here&apos;s how:
+          Web4 has four core systems. Each builds on the one below it, and they modulate
+          each other through feedback loops. Here&apos;s the full picture:
         </p>
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 md:p-8">
-          {/* Visual flow */}
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-2 mb-8">
-            <div className="flex-1 bg-sky-950/30 border border-sky-800/40 rounded-lg p-4 text-center">
-              <div className="text-2xl mb-1">🔋</div>
-              <div className="text-sm font-bold text-sky-400">ATP (Energy)</div>
-              <div className="text-xs text-gray-500 mt-1">Powers every action</div>
+          {/* Full pipeline: LCT → ATP → T3 → CI → Aliveness */}
+          <div className="space-y-1 mb-8">
+            {/* Aliveness outcome */}
+            <div className="bg-green-950/30 border border-green-800/40 rounded-lg p-3 text-center">
+              <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Outcome</div>
+              <div className="text-sm font-bold text-green-400">Aliveness</div>
+              <div className="text-xs text-gray-500">ATP &gt; 0 + Trust &gt; 0.5 + CI coherent = alive</div>
             </div>
-            <div className="text-gray-600 text-xl md:rotate-0 rotate-90">⇄</div>
-            <div className="flex-1 bg-purple-950/30 border border-purple-800/40 rounded-lg p-4 text-center">
-              <div className="text-2xl mb-1">🎯</div>
-              <div className="text-sm font-bold text-purple-400">T3 (Trust)</div>
-              <div className="text-xs text-gray-500 mt-1">Earned through actions</div>
+            <div className="text-center text-gray-600">↑ determined by ↑</div>
+
+            {/* Three interacting systems */}
+            <div className="flex flex-col md:flex-row items-stretch gap-2">
+              <div className="flex-1 bg-sky-950/30 border border-sky-800/40 rounded-lg p-3 text-center">
+                <div className="text-sm font-bold text-sky-400">ATP (Energy)</div>
+                <div className="text-xs text-gray-500 mt-1">Powers every action</div>
+              </div>
+              <div className="flex items-center justify-center text-gray-600 text-sm md:rotate-0 rotate-90 py-1 md:py-0">⇄</div>
+              <div className="flex-1 bg-purple-950/30 border border-purple-800/40 rounded-lg p-3 text-center">
+                <div className="text-sm font-bold text-purple-400">T3 (Trust)</div>
+                <div className="text-xs text-gray-500 mt-1">Earned through actions</div>
+              </div>
+              <div className="flex items-center justify-center text-gray-600 text-sm md:rotate-0 rotate-90 py-1 md:py-0">⇄</div>
+              <div className="flex-1 bg-amber-950/30 border border-amber-800/40 rounded-lg p-3 text-center">
+                <div className="text-sm font-bold text-amber-400">CI (Coherence)</div>
+                <div className="text-xs text-gray-500 mt-1">Detects anomalies</div>
+              </div>
             </div>
-            <div className="text-gray-600 text-xl md:rotate-0 rotate-90">⇄</div>
-            <div className="flex-1 bg-amber-950/30 border border-amber-800/40 rounded-lg p-4 text-center">
-              <div className="text-2xl mb-1">⚖️</div>
-              <div className="text-sm font-bold text-amber-400">CI (Coherence)</div>
-              <div className="text-xs text-gray-500 mt-1">Verifies consistency</div>
+            <div className="text-center text-gray-600">↑ all require ↑</div>
+
+            {/* LCT foundation */}
+            <div className="bg-indigo-950/30 border border-indigo-800/40 rounded-lg p-3 text-center">
+              <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Foundation</div>
+              <div className="text-sm font-bold text-indigo-400">LCT (Verified Presence)</div>
+              <div className="text-xs text-gray-500">Hardware-bound identity proves you&apos;re real</div>
             </div>
           </div>
 
-          {/* Interaction descriptions */}
-          <div className="space-y-3 text-sm">
-            <div className="flex items-start gap-3">
-              <span className="text-sky-400 mt-0.5">→</span>
-              <p className="text-gray-300">
-                <strong className="text-sky-400">ATP → T3:</strong>{" "}
-                Spending energy on quality work builds trust. Burning energy on spam destroys it.
-              </p>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-purple-400 mt-0.5">→</span>
-              <p className="text-gray-300">
-                <strong className="text-purple-400">T3 → ATP:</strong>{" "}
-                Higher trust earns more ATP per action. Low trust means higher costs and lower returns.
-              </p>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-amber-400 mt-0.5">→</span>
-              <p className="text-gray-300">
-                <strong className="text-amber-400">CI → Both:</strong>{" "}
-                Inconsistent behavior (low CI) multiplies action costs by up to 1.4&times; and flags you for review.
-                Consistent behavior keeps costs low and trust stable.
-              </p>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-green-400 mt-0.5">→</span>
-              <p className="text-gray-300">
-                <strong className="text-green-400">Together → Aliveness:</strong>{" "}
-                You&apos;re &ldquo;alive&rdquo; when all three are healthy: ATP &gt; 0, Trust &gt; 0.5, CI coherent. Lose any one and the system intervenes.
-              </p>
+          {/* Feedback loops */}
+          <div className="bg-gray-800/50 border border-gray-700/50 rounded-lg p-4 mb-6">
+            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Feedback Loops</h4>
+            <div className="grid md:grid-cols-2 gap-2 text-xs text-gray-400">
+              <div className="flex items-start gap-2">
+                <span className="text-sky-400 shrink-0">→</span>
+                <span><strong className="text-sky-400">ATP → T3:</strong> Quality work builds trust. Spam destroys it.</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-purple-400 shrink-0">→</span>
+                <span><strong className="text-purple-400">T3 → ATP:</strong> Higher trust = better earning rate.</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-amber-400 shrink-0">→</span>
+                <span><strong className="text-amber-400">CI → Both:</strong> Inconsistency multiplies costs up to 1.4&times;.</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-indigo-400 shrink-0">→</span>
+                <span><strong className="text-indigo-400">LCT → All:</strong> No verified presence = no actions, no trust, no life.</span>
+              </div>
             </div>
           </div>
+
+          <p className="text-xs text-gray-500 text-center">
+            Read the diagram bottom-to-top: LCT proves you&apos;re real, the three systems
+            govern what you can do, and aliveness is the combined result.
+          </p>
         </div>
       </section>
 
@@ -1080,6 +1092,11 @@ export default function HowItWorksPage() {
             each with different specializations and ATP prices. Your reputation travels with you,
             but each community values different skills. A community of data analysts might pay
             a premium for engineering talent, while a research group might value practical builders.
+          </p>
+          <p className="text-gray-400 text-sm leading-relaxed mb-2">
+            When you belong to multiple communities with different rules, the system detects
+            policy conflicts and resolves them by proximity — your closest trust relationships
+            take priority. No committee needed; the trust graph itself determines precedence.
           </p>
           <p className="text-gray-400 text-sm leading-relaxed">
             ATP prices adjust dynamically based on supply and demand — no central pricing authority needed.
