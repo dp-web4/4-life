@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import TermTooltip from "@/components/TermTooltip";
 import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
@@ -1051,6 +1052,7 @@ export default function LCTExplainerPage() {
           </div>
         </div>
         <ConceptSequenceNav currentPath="/lct-explainer" />
+        <ExplorerNav currentPath="/lct-explainer" />
         <RelatedConcepts currentPath="/lct-explainer" />
       </div>
     </div>

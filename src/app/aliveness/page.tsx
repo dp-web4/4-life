@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
 
@@ -1734,6 +1735,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
       `}</style>
 
       <ConceptSequenceNav currentPath="/aliveness" />
+      <ExplorerNav currentPath="/aliveness" />
       <RelatedConcepts currentPath="/aliveness" />
     </>
   );

@@ -20,6 +20,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 
 // ============================================================================
 // Types
@@ -963,6 +964,7 @@ status = scheduler.get_status()`}
             Understanding Consciousness
           </Link>
         </div>
+        <ExplorerNav currentPath="/circadian-ai" />
         <RelatedConcepts currentPath="/circadian-ai" />
       </div>
     </div>

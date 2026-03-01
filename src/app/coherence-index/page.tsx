@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import TermTooltip from "@/components/TermTooltip";
 import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
@@ -1346,6 +1347,7 @@ lenient_society = {
         </section>
 
         <ConceptSequenceNav currentPath="/coherence-index" />
+        <ExplorerNav currentPath="/coherence-index" />
         <RelatedConcepts currentPath="/coherence-index" />
       </div>
     </div>

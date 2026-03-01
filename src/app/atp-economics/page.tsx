@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import { T3, CI, MRH } from "@/components/TermTooltip";
 import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
@@ -956,6 +957,7 @@ if agent.atp <= 0:
 
       <div className="max-w-4xl mx-auto">
         <ConceptSequenceNav currentPath="/atp-economics" />
+        <ExplorerNav currentPath="/atp-economics" />
         <RelatedConcepts currentPath="/atp-economics" />
       </div>
     </>

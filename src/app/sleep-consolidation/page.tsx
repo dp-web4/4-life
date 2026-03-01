@@ -20,6 +20,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 
 // ============================================================================
 // Types
@@ -960,6 +961,7 @@ weighted_loss.backward()`}
             Understanding Consciousness
           </Link>
         </div>
+        <ExplorerNav currentPath="/sleep-consolidation" />
         <RelatedConcepts currentPath="/sleep-consolidation" />
       </div>
     </div>

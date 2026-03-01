@@ -23,6 +23,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 
 // ============================================================================
 // Types
@@ -658,6 +659,7 @@ export default function ModalAwarenessPage() {
           </Link>
         </div>
 
+        <ExplorerNav currentPath="/modal-awareness" />
         <RelatedConcepts currentPath="/modal-awareness" />
       </div>
     </div>

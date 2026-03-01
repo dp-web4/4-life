@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import TermTooltip from "@/components/TermTooltip";
 import dynamic from "next/dynamic";
@@ -1143,6 +1144,7 @@ Temperament:  30-day half-life (recent behavior matters most)
 
       <div className="max-w-4xl mx-auto">
         <ConceptSequenceNav currentPath="/trust-tensor" />
+        <ExplorerNav currentPath="/trust-tensor" />
         <RelatedConcepts currentPath="/trust-tensor" />
       </div>
     </>

@@ -20,6 +20,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 
 // ============================================================================
 // Types
@@ -657,6 +658,7 @@ export default function IdentityConfabulationPage() {
           </Link>
         </div>
 
+        <ExplorerNav currentPath="/identity-confabulation" />
         <RelatedConcepts currentPath="/identity-confabulation" />
       </div>
     </div>

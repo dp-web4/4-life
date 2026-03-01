@@ -20,6 +20,7 @@ import { useState, useCallback } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ExplorerNav from "@/components/ExplorerNav";
 
 // ============================================================================
 // Types
@@ -734,6 +735,7 @@ export default function LearningSaliencePage() {
             Lab Console
           </Link>
         </div>
+        <ExplorerNav currentPath="/learning-salience" />
         <RelatedConcepts currentPath="/learning-salience" />
       </div>
     </div>

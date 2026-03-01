@@ -19,6 +19,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import ExplorerNav from '@/components/ExplorerNav';
 
 // ============================================================================
 // Types
@@ -431,6 +432,7 @@ export default function CapacityBaselinePage() {
           </Link>
         </div>
 
+        <ExplorerNav currentPath="/capacity-baseline" />
         <RelatedConcepts currentPath="/capacity-baseline" />
       </div>
     </div>
