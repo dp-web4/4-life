@@ -674,6 +674,39 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
+          {/* Device stolen */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What if my device is stolen? Do I lose my identity?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                No. Web4 uses <strong>multi-device witness networks</strong> — your identity is spread across
+                multiple devices (phone, laptop, security key). If one is stolen, the others can revoke
+                the compromised device and approve a replacement.
+              </p>
+              <p>
+                When you report a compromise, a <strong>revocation cascade</strong> propagates through the
+                witness network. The stolen device&apos;s keys become instantly invalid. Any entity that
+                trusted the compromised device gets notified. Your trust history and reputation are
+                preserved — only the compromised device is cut off.
+              </p>
+              <p>
+                Recovery works like a <strong>quorum</strong>: you set a threshold when adding devices
+                (e.g., 2-of-3). As long as enough surviving devices agree, you can recover without
+                losing your identity or accumulated trust.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> If <em>all</em> your devices are lost simultaneously, recovery
+                requires social vouching from trusted witnesses — deliberately slow and hard, because easy
+                recovery would mean easy identity theft. See the{" "}
+                <a href="/lct-explainer" className="text-sky-400 hover:underline">LCT explainer</a> for
+                the full lifecycle.
+              </p>
+            </div>
+          </details>
+
           {/* ATP collaboration */}
           <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">

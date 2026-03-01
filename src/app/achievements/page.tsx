@@ -93,10 +93,11 @@ export default function AchievementsPage() {
             />
           </div>
 
-          {unlockedIds.size === 0 ? (
-            <div className="text-center py-4">
-              <p className="text-gray-400 mb-4">
-                You haven&apos;t unlocked any achievements yet.
+          {unlockedIds.size === 0 && (
+            <div className="text-center py-3 mb-4">
+              <p className="text-gray-400 mb-3">
+                Browse the achievements below to see what you can earn. Each one teaches
+                a lesson about trust dynamics.
               </p>
               <Link
                 href="/society-simulator"
@@ -105,26 +106,26 @@ export default function AchievementsPage() {
                 Play as Agent to Start Earning →
               </Link>
             </div>
-          ) : (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3 text-center">
-                <div className="text-xl font-bold text-white">{stats?.totalGamesPlayed ?? 0}</div>
-                <div className="text-xs text-gray-400">Games Played</div>
-              </div>
-              <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3 text-center">
-                <div className="text-xl font-bold text-green-400">{stats?.totalSurvived ?? 0}</div>
-                <div className="text-xs text-gray-400">Survived</div>
-              </div>
-              <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3 text-center">
-                <div className="text-xl font-bold text-blue-400">{stats?.longestSurvivalStreak ?? 0}</div>
-                <div className="text-xs text-gray-400">Best Streak</div>
-              </div>
-              <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3 text-center">
-                <div className="text-xl font-bold text-amber-400">{stats?.highestATP ?? 0}</div>
-                <div className="text-xs text-gray-400">Highest Energy</div>
-              </div>
-            </div>
           )}
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3 text-center">
+              <div className="text-xl font-bold text-white">{stats?.totalGamesPlayed ?? 0}</div>
+              <div className="text-xs text-gray-400">Games Played</div>
+            </div>
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3 text-center">
+              <div className="text-xl font-bold text-green-400">{stats?.totalSurvived ?? 0}</div>
+              <div className="text-xs text-gray-400">Survived</div>
+            </div>
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3 text-center">
+              <div className="text-xl font-bold text-blue-400">{stats?.longestSurvivalStreak ?? 0}</div>
+              <div className="text-xs text-gray-400">Best Streak</div>
+            </div>
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3 text-center">
+              <div className="text-xl font-bold text-amber-400">{stats?.highestATP ?? 0}</div>
+              <div className="text-xs text-gray-400">Highest Energy</div>
+            </div>
+          </div>
         </div>
       </section>
 

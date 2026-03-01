@@ -666,6 +666,93 @@ export default function LCTExplainerPage() {
           </div>
         )}
 
+        {/* What Happens When Things Go Wrong */}
+        <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
+          <h2 className="text-2xl font-bold mb-6 text-gray-100">What Happens When Things Go Wrong?</h2>
+
+          <p className="text-gray-300 mb-6">
+            Hardware binding sounds great until your phone falls in a lake or your laptop
+            gets stolen. If your identity lives in hardware, what happens when that hardware
+            is gone?
+          </p>
+
+          <div className="space-y-4 mb-6">
+            <div className="bg-gray-900/50 border border-purple-700/30 rounded-lg p-5">
+              <h3 className="text-lg font-bold text-purple-400 mb-2">Device Lost or Destroyed</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                This is why Web4 uses <strong className="text-purple-300">multi-device witness networks</strong>.
+                If you have 3 devices and lose one, the remaining 2 can vouch for your identity on a replacement device.
+                This works like a <strong className="text-purple-300">quorum</strong>: you set a threshold (e.g., 2-of-3)
+                when you add devices to your constellation.
+              </p>
+              <div className="bg-gray-800/60 rounded px-3 py-2 text-xs text-gray-400">
+                Recovery: remaining devices sign an approval for the new device&apos;s birth certificate.
+                The old device&apos;s keys are automatically revoked — anything signed by the lost device
+                after the revocation timestamp is rejected.
+              </div>
+            </div>
+
+            <div className="bg-gray-900/50 border border-red-700/30 rounded-lg p-5">
+              <h3 className="text-lg font-bold text-red-400 mb-2">Device Stolen or Compromised</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                When you detect compromise (or suspect it), your other devices issue a{" "}
+                <strong className="text-red-300">revocation cascade</strong>. This
+                invalidates the stolen device&apos;s keys and notifies every entity that
+                trusted it.
+              </p>
+              <div className="bg-gray-800/60 rounded px-3 py-2 text-xs text-gray-400 space-y-1">
+                <div>1. You report the compromise from any surviving device</div>
+                <div>2. The witness network propagates the revocation to all connected entities</div>
+                <div>3. Any entity downstream of the compromised device gets notified</div>
+                <div>4. The compromised device&apos;s trust score drops to zero immediately</div>
+              </div>
+            </div>
+
+            <div className="bg-gray-900/50 border border-amber-700/30 rounded-lg p-5">
+              <h3 className="text-lg font-bold text-amber-400 mb-2">All Devices Lost</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                Worst case. With no surviving devices, you need a{" "}
+                <strong className="text-amber-300">social recovery</strong> — trusted
+                witnesses who can vouch for your identity. Think of it like getting a new
+                passport: you need people who know you to confirm you&apos;re you.
+              </p>
+              <div className="bg-gray-800/60 rounded px-3 py-2 text-xs text-gray-400">
+                This is deliberately hard. Easy recovery would mean easy identity theft.
+                The friction is a feature, not a bug.
+              </div>
+            </div>
+          </div>
+
+          <details className="bg-gray-900/50 border border-gray-700/50 rounded-lg overflow-hidden">
+            <summary className="cursor-pointer p-4 text-sm font-semibold text-gray-300 hover:text-purple-400 transition-colors">
+              LCT Lifecycle: Birth → Active → Suspended → Revoked
+            </summary>
+            <div className="px-4 pb-4 text-sm text-gray-400 space-y-2">
+              <p>
+                Every LCT follows an explicit state machine:
+              </p>
+              <div className="flex flex-wrap items-center gap-2 text-xs font-mono py-2">
+                <span className="px-2 py-1 bg-gray-700 rounded text-gray-300">NASCENT</span>
+                <span className="text-gray-500">→</span>
+                <span className="px-2 py-1 bg-green-900/50 rounded text-green-400">ACTIVE</span>
+                <span className="text-gray-500">→</span>
+                <span className="px-2 py-1 bg-amber-900/50 rounded text-amber-400">SUSPENDED</span>
+                <span className="text-gray-500">→</span>
+                <span className="px-2 py-1 bg-red-900/50 rounded text-red-400">REVOKED</span>
+              </div>
+              <p>
+                <strong className="text-gray-300">Nascent</strong>: Birth certificate created, waiting for witness attestation.{" "}
+                <strong className="text-gray-300">Active</strong>: Fully operational, can sign and participate.{" "}
+                <strong className="text-gray-300">Suspended</strong>: Temporarily frozen (e.g., suspected compromise) — can be reactivated.{" "}
+                <strong className="text-gray-300">Revoked</strong>: Permanently invalidated. Trust history preserved but no new actions allowed.
+              </p>
+              <p className="text-gray-500 text-xs">
+                Expired LCTs can also exist — when a time-limited delegation reaches its end date.
+              </p>
+            </div>
+          </details>
+        </div>
+
         {/* Why LCTs Enable Trust-Native Societies */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <h2 className="text-2xl font-bold mb-6 text-gray-100">Why LCTs Enable Trust-Native Societies</h2>
