@@ -853,6 +853,38 @@ export default function GlossaryPage() {
         </div>
       </section>
 
+      {/* DID (Decentralized Identifier) */}
+      <section className="max-w-4xl mx-auto mt-12" data-glossary-section>
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          <h3 className="text-2xl font-semibold text-sky-400 mb-3">
+            DID (Decentralized Identifier)
+          </h3>
+          <p className="text-gray-300 leading-relaxed mb-3">
+            <strong>A W3C standard for self-owned digital identity.</strong> Think of DIDs
+            as URLs for people and organizations — anyone can create one, they point to
+            verifiable information, and no single company controls them.
+          </p>
+          <p className="text-gray-400 text-sm mb-3">
+            Web4&apos;s LCT maps directly to W3C DID Documents. This means Web4 identities can be
+            verified by any system that supports the DID standard — governments, enterprises, other
+            identity networks. Your Web4 presence isn&apos;t trapped in a walled garden.
+          </p>
+          <p className="text-gray-400 text-sm mb-3">
+            The bridge also supports <strong>selective disclosure</strong>: prove &ldquo;my trust
+            meets your threshold&rdquo; without revealing exact scores. Like proving you passed
+            a background check without disclosing your medical records.
+          </p>
+          <p className="text-gray-500 text-xs">
+            <strong>Technical:</strong> Web4 uses the <code className="text-sky-300">did:web4:</code> method.
+            DID Documents include verification methods (Ed25519), service endpoints, and Web4
+            extensions (T3 composite score, hardware binding status). See{' '}
+            <Link href="/lct-explainer" className="text-sky-400 hover:underline">
+              LCT Explainer
+            </Link> for details.
+          </p>
+        </div>
+      </section>
+
       {/* Agent Type Comparison */}
       <section className="max-w-4xl mx-auto mt-12">
         <div className="bg-gradient-to-br from-gray-900/50 to-gray-800 border border-gray-700 rounded-xl p-6">
