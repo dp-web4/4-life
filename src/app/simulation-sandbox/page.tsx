@@ -298,6 +298,15 @@ export default function SimulationSandboxPage() {
         Full control over every parameter. Run simulations, compare results, and discover
         how trust dynamics respond to different conditions. Everything runs in your browser.
       </p>
+      <p style={{
+        color: '#6b7280', marginBottom: '1.5rem',
+        fontSize: '0.8rem', maxWidth: '700px',
+      }}>
+        The <a href="/playground" style={{ color: '#38bdf8' }}>Playground</a> offers guided
+        experiments with one agent. This sandbox exposes <em>every</em> engine parameter, lets you
+        overlay multiple runs, and export results. Ready for multi-agent dynamics?
+        Try the <a href="/society-simulator" style={{ color: '#38bdf8' }}>Society Simulator</a>.
+      </p>
 
       <div style={{ display: 'grid', gridTemplateColumns: '300px 1fr', gap: '1.5rem' }}>
 

@@ -254,6 +254,13 @@ export default function LabConsolePage() {
         through multiple lives — spending ATP, building trust, and adapting their strategy
         based on past experience. Pre-loaded data is ready to explore below.
       </p>
+      <p style={{ marginTop: "0.5rem", color: "#6b7280", fontSize: "0.85rem" }}>
+        While the <a href="/playground" style={{ color: "#38bdf8" }}>Playground</a> and{" "}
+        <a href="/simulation-sandbox" style={{ color: "#38bdf8" }}>Sandbox</a> run fresh simulations,
+        the Lab Console lets you explore pre-generated data in detail — examining specific agents,
+        their reasoning, and learning patterns across multiple lives. For multi-agent dynamics,
+        see the <a href="/society-simulator" style={{ color: "#38bdf8" }}>Society Simulator</a>.
+      </p>
 
       <section style={{ marginTop: "1.5rem" }}>
         <h2>Simulation Mode</h2>
