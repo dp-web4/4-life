@@ -398,6 +398,43 @@ export default function ThreatModelPage() {
         </div>
       </section>
 
+      {/* Post-Quantum Cryptography */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">
+          Post-Quantum Readiness
+        </h2>
+        <p className="text-gray-400 mb-6">
+          Quantum computers could eventually break the cryptography Web4 relies on.
+          A migration path to post-quantum cryptography (PQC) has been designed and
+          tested against 15 attack vectors across 4 categories:
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-4">
+            <h4 className="text-sm font-semibold text-purple-400 mb-2">Hybrid Signature Stripping</h4>
+            <p className="text-gray-400 text-sm">Attacker strips the post-quantum component from hybrid signatures, leaving only classical crypto. Defense: completeness verification rejects partial signatures.</p>
+          </div>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-4">
+            <h4 className="text-sm font-semibold text-purple-400 mb-2">KEM Oracle Attacks</h4>
+            <p className="text-gray-400 text-sm">Probing key encapsulation with malformed inputs to extract secrets. Defense: input validation, rate limiting, constant-time comparison.</p>
+          </div>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-4">
+            <h4 className="text-sm font-semibold text-purple-400 mb-2">Migration Stall Attacks</h4>
+            <p className="text-gray-400 text-sm">Keeping nodes in classical-only mode to exploit pre-quantum weaknesses. Defense: phase timeouts, trust-gated enforcement, isolation of stalled nodes.</p>
+          </div>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-4">
+            <h4 className="text-sm font-semibold text-purple-400 mb-2">PQC Sybil Amplification</h4>
+            <p className="text-gray-400 text-sm">Creating cheap identities during the transition period. Defense: phase-aware cost multipliers, retroactive verification, velocity limits.</p>
+          </div>
+        </div>
+        <div className="p-4 bg-purple-900/20 border border-purple-800/30 rounded-lg">
+          <p className="text-purple-300 text-sm">
+            <strong>Assessment:</strong> PQC migration is designed and all 15 vectors have defenses.
+            The transition period (classical → hybrid → post-quantum) is the most vulnerable phase.
+            Web4 supports dual crypto suites (W4-BASE-1 and W4-FIPS-1) to enable gradual migration.
+          </p>
+        </div>
+      </section>
+
       {/* Adversary Profiles */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">

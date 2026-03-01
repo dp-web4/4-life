@@ -658,6 +658,18 @@ export default function WhatCouldGoWrongPage() {
               full path yet.
             </p>
           </div>
+
+          <div className="bg-red-950/30 border border-red-800/30 rounded-lg p-4">
+            <h3 className="text-red-400 font-semibold mb-2">Regulatory Compliance</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Laws like the EU AI Act (Articles 9–15) impose requirements on AI systems:
+              risk management, data governance, transparency, human oversight. A compliance
+              mapping exists (7 articles → 16 Web4 requirements) with drift detection and
+              remediation advisors, but regulatory interpretation is ambiguous and evolving.
+              Web4&apos;s decentralized model doesn&apos;t fit neatly into frameworks designed
+              for centralized AI providers.
+            </p>
+          </div>
         </div>
       </section>
 
