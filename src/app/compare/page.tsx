@@ -18,7 +18,7 @@ import TermTooltip from "@/components/TermTooltip";
 const SIMULATIONS = [
   {
     id: 'ep_closed_loop',
-    name: 'EP Closed Loop',
+    name: 'Cross-Life Learning',
     file: '/ep_driven_closed_loop_results.json',
     description: 'Epistemic Proprioception — agents learn what works across lives by remembering patterns',
     color: '#3b82f6'
@@ -46,7 +46,7 @@ const SIMULATIONS = [
   },
   {
     id: 'five_domain',
-    name: 'Five Domain EP',
+    name: 'Five-Domain Learning',
     file: '/ep_five_domain_multi_life_results.json',
     description: 'Epistemic Proprioception across 5 coherence domains simultaneously',
     color: '#ec4899'
