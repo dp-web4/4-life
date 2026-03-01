@@ -483,6 +483,33 @@ export default function FederationEconomicsPage() {
 
           <div>
             <h3 className="text-lg font-semibold text-gray-300 mb-3">
+              Cross-Society Policy Conflicts
+            </h3>
+            <p className="text-gray-300 mb-3">
+              What if you&apos;re a member of two societies with conflicting rules? A research community
+              says &ldquo;share all data openly&rdquo; while a healthcare federation says &ldquo;never share patient data.&rdquo;
+              Which rule wins?
+            </p>
+            <p className="text-gray-300 mb-3">
+              Web4 resolves conflicts using <strong className="text-amber-400">MRH-weighted priority</strong>: the
+              society closer to you in your trust network governs. If you&apos;re primarily a healthcare
+              practitioner who occasionally contributes to research, healthcare rules take precedence
+              on conflicting policies. Three resolution strategies exist:
+            </p>
+            <ul className="space-y-1.5 text-gray-400 text-sm ml-4">
+              <li>&bull; <strong className="text-gray-300">Priority:</strong> Closer society&apos;s policy wins (most common)</li>
+              <li>&bull; <strong className="text-gray-300">Intersection:</strong> Only policies both societies agree on apply</li>
+              <li>&bull; <strong className="text-gray-300">Freeze:</strong> Emergency halt when conflicts can&apos;t be resolved — requires 2/3 quorum to unfreeze</li>
+            </ul>
+            <p className="text-gray-500 text-xs mt-3 italic">
+              Every resolution is recorded in a hash-chained audit trail. Disputes can be appealed
+              (up to 2 appeals per resolution). This is formally specified (44 integration checks) but
+              hasn&apos;t been tested with real cross-society scenarios yet.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-300 mb-3">
               Implementation
             </h3>
             <p className="text-gray-300 mb-3">
