@@ -20,35 +20,35 @@ const SIMULATIONS = [
     id: 'ep_closed_loop',
     name: 'EP Closed Loop',
     file: '/ep_driven_closed_loop_results.json',
-    description: 'Pattern learning across lives (agents learn what works)',
+    description: 'Epistemic Proprioception — agents learn what works across lives by remembering patterns',
     color: '#3b82f6'
   },
   {
     id: 'multi_life_policy',
     name: 'Multi-Life with Policy',
     file: '/multi_life_with_policy.json',
-    description: 'Multiple life cycles with trust policy',
+    description: 'Multiple life cycles with trust policy shaping behavior',
     color: '#10b981'
   },
   {
     id: 'maturation_web4',
     name: 'Maturation (Web4)',
     file: '/maturation_demo_results_web4.json',
-    description: 'Trust maturation with Web4 mechanisms',
+    description: 'Trust maturation with Web4 mechanisms active',
     color: '#f59e0b'
   },
   {
     id: 'maturation_none',
     name: 'Maturation (Baseline)',
     file: '/maturation_demo_results_none.json',
-    description: 'Trust maturation without Web4 mechanisms',
+    description: 'Same agents without Web4 — compare the difference',
     color: '#8b5cf6'
   },
   {
     id: 'five_domain',
     name: 'Five Domain EP',
     file: '/ep_five_domain_multi_life_results.json',
-    description: 'Multi-domain pattern learning',
+    description: 'Epistemic Proprioception across 5 coherence domains simultaneously',
     color: '#ec4899'
   }
 ];
@@ -124,6 +124,13 @@ export default function ComparePage() {
             How much difference do Web4 mechanisms make? Compare simulation runs side-by-side
             to see how <TermTooltip term="T3" />, <TermTooltip term="ATP" />, and karma
             carry-forward affect outcomes across life cycles.
+          </p>
+          <p className="text-sm text-slate-400 mb-2">
+            <strong className="text-slate-300">EP</strong> stands for{" "}
+            <strong className="text-slate-300">Epistemic Proprioception</strong> — an agent&apos;s
+            ability to know what it knows and doesn&apos;t know. Agents with EP learn from
+            past lives: &ldquo;quality contributions earn more ATP&rdquo; or &ldquo;transparency
+            rebuilds trust faster.&rdquo;
           </p>
           <p className="text-sm text-sky-400/60 animate-pulse">
             ↓ Select 2+ simulations below to compare outcomes

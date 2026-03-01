@@ -777,6 +777,58 @@ export default function LCTExplainerPage() {
           </details>
         </div>
 
+        {/* Practical UX — What Would This Actually Feel Like? */}
+        <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/20 border border-sky-800/30 rounded-xl p-8 mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-gray-100">What Would This Actually Feel Like?</h2>
+          <p className="text-gray-400 mb-6">
+            The visitor&apos;s real question: &ldquo;Do I need a special device, or does my existing phone work?&rdquo;
+            Short answer: <strong className="text-gray-200">your existing devices already have the hardware</strong>.
+          </p>
+
+          <div className="space-y-4">
+            <div className="bg-gray-900/50 rounded-lg p-4">
+              <div className="text-sm font-semibold text-sky-400 mb-2">Step 1: First Setup (~2 minutes)</div>
+              <p className="text-gray-300 text-sm">
+                Open the app on your phone. It detects your device&apos;s security chip automatically — iPhones have
+                Secure Enclave, most Android phones and laptops have TPM chips, or you can use a FIDO2 key (like YubiKey).
+                You approve a one-time key generation. No passwords to create, no seed phrases to write down.
+              </p>
+            </div>
+
+            <div className="bg-gray-900/50 rounded-lg p-4">
+              <div className="text-sm font-semibold text-sky-400 mb-2">Step 2: Join a Society (~30 seconds)</div>
+              <p className="text-gray-300 text-sm">
+                You request to join a Web4 society. Three existing members witness your presence — they confirm
+                &ldquo;yes, this device is real and this person is asking to join.&rdquo; Think of it like three
+                friends vouching for you at a members-only club. You start with 100 ATP and 0.5 trust.
+              </p>
+            </div>
+
+            <div className="bg-gray-900/50 rounded-lg p-4">
+              <div className="text-sm font-semibold text-sky-400 mb-2">Step 3: Add More Devices (Optional)</div>
+              <p className="text-gray-300 text-sm">
+                Want stronger identity? Open the app on your laptop. Your phone and laptop cross-verify each other.
+                Now compromising your identity requires stealing <em>both</em> devices — not just guessing a password.
+                Each additional device makes your presence harder to fake.
+              </p>
+            </div>
+
+            <div className="bg-gray-900/50 rounded-lg p-4">
+              <div className="text-sm font-semibold text-sky-400 mb-2">Day-to-Day: Invisible</div>
+              <p className="text-gray-300 text-sm">
+                After setup, hardware binding is invisible. Your device signs actions in the background — you just
+                use the app normally. No 2FA codes, no password managers, no &ldquo;prove you&apos;re not a robot.&rdquo;
+                Your phone&apos;s chip quietly proves it&apos;s really you.
+              </p>
+            </div>
+          </div>
+
+          <p className="text-gray-500 text-xs mt-4 italic">
+            This UX is aspirational — the current prototype uses stubbed hardware interfaces.
+            The goal is zero-friction identity backed by real device attestation.
+          </p>
+        </div>
+
         {/* Why LCTs Enable Trust-Native Societies */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <h2 className="text-2xl font-bold mb-6 text-gray-100">Why LCTs Enable Trust-Native Societies</h2>

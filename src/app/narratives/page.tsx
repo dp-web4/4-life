@@ -26,22 +26,65 @@ interface NarrativeMeta {
   source_simulation?: string;
 }
 
+// Pre-generated example narratives — always visible so the page isn't empty
+const EXAMPLE_NARRATIVES: NarrativeMeta[] = [
+  {
+    id: 'ep-driven-closed-loop',
+    title: 'Bob: Learning Through Action — Self-Aware Pattern Discovery',
+    filename: 'ep-driven-closed-loop.md',
+    type: 'Cross-Life Learning',
+    themes: ['Karma and Consequences', 'Equilibrium and Stability', 'Closed-Loop Learning'],
+    lives: 3,
+    events: 20,
+    timestamp: '2026-01-27',
+    source_simulation: 'ep_driven_closed_loop_results.json',
+    summary: 'Bob learns by proposing actions, observing outcomes, and refining his understanding. Starting at trust 0.49, he navigates ATP crises and crosses the consciousness threshold — behavior shifts from reactive to intentional.',
+  },
+  {
+    id: 'maturation-web4',
+    title: 'Bob: From Immature to Wise — Growth with Inherited Patterns',
+    filename: 'maturation-web4.md',
+    type: 'Maturation (Web4)',
+    themes: ['Karma and Consequences', 'Pattern-Guided Growth', 'Web4 Native Corpus'],
+    lives: 3,
+    events: 14,
+    timestamp: '2026-01-27',
+    source_simulation: 'maturation_demo_results_web4.json',
+    summary: 'Using 100 learned patterns to guide development, Bob matures from IMMATURE through LEARNING to MATURE across 3 lives. Trust grows from 0.49 to 0.57 — steady improvement, not overnight transformation.',
+  },
+  {
+    id: 'maturation-none',
+    title: 'Bob: Trial and Error — What Happens Without Inherited Wisdom',
+    filename: 'maturation-none.md',
+    type: 'Maturation (Baseline)',
+    themes: ['Baseline Comparison', 'Heuristic Only'],
+    lives: 3,
+    events: 14,
+    timestamp: '2026-01-27',
+    source_simulation: 'maturation_demo_results_none.json',
+    summary: 'Same agent, no inherited wisdom. Bob must learn purely through trial and error. Compare with the Web4 version to see how learned patterns accelerate growth.',
+  },
+];
+
 export default function NarrativesPage() {
-  const [narratives, setNarratives] = useState<NarrativeMeta[]>([]);
+  const [narratives, setNarratives] = useState<NarrativeMeta[]>(EXAMPLE_NARRATIVES);
   const [filter, setFilter] = useState<string>('');
   const [selectedTheme, setSelectedTheme] = useState<string>('');
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => { trackPageVisit('narratives'); }, []);
 
   useEffect(() => {
-    // Load narratives from generated index
+    // Try to load full narrative index (may include user-generated stories)
     fetch('/narratives/index.json')
       .then(res => res.json())
-      .then(data => setNarratives(data))
-      .catch(error => {
-        console.error('Failed to load narratives:', error);
-        // Fallback to empty array
-        setNarratives([]);
+      .then(data => {
+        if (Array.isArray(data) && data.length > 0) setNarratives(data);
+        setLoaded(true);
+      })
+      .catch(() => {
+        // Examples are already loaded as fallback
+        setLoaded(true);
       });
   }, []);
 
@@ -60,8 +103,14 @@ export default function NarrativesPage() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-4">Simulation Narratives</h1>
-          <p className="text-gray-400">
-            Human-readable stories from Web4 simulations. Each narrative translates technical trust dynamics into comprehensible stories.
+          <p className="text-gray-400 mb-2">
+            Human-readable stories from Web4 simulations. Each narrative translates technical trust dynamics
+            into comprehensible stories — how agents build trust, navigate crises, and learn from failure.
+          </p>
+          <p className="text-sm text-gray-500">
+            These stories are auto-generated from real simulation data. Pick one to read, or{' '}
+            <Link href="/society-simulator" className="text-sky-400 hover:underline">run your own simulation</Link>{' '}
+            to generate new stories.
           </p>
         </div>
 
@@ -91,11 +140,7 @@ export default function NarrativesPage() {
         <div className="space-y-4">
           {filteredNarratives.length === 0 ? (
             <div className="text-center py-12 text-gray-500">
-              No narratives found. Run a simulation in the{' '}
-              <Link href="/society-simulator" className="text-blue-400 hover:underline">
-                Society Simulator
-              </Link>
-              {' '}and click &quot;Generate Story&quot; to create one.
+              No narratives match your search. Try a different term or clear the filter.
             </div>
           ) : (
             filteredNarratives.map(narrative => (

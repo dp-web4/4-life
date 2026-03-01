@@ -173,6 +173,25 @@ export const terms: Record<string, TermDefinition> = {
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/atp-adp-cycle.md",
   },
 
+  // Security Concepts
+  Sybil: {
+    term: "Sybil",
+    fullName: "Sybil Attack",
+    brief: "Creating many fake identities to overwhelm a system.",
+    explanation:
+      "Named after a case study of multiple personalities. In digital systems, a Sybil attack means one person creates hundreds or thousands of fake accounts to manipulate votes, reviews, or trust scores. Web4 resists this by tying identity to physical hardware — each fake identity needs a real device.",
+    learnMore: "/threat-model#sybil",
+  },
+
+  Goodharting: {
+    term: "Goodharting",
+    fullName: "Goodhart's Law",
+    brief: "When a measure becomes a target, it stops being a good measure.",
+    explanation:
+      "Named after economist Charles Goodhart. If you reward people for a specific metric, they'll optimize for that metric rather than what it was supposed to measure. Example: if you measure code quality by test coverage, people write meaningless tests. Web4 mitigates this with multi-dimensional trust (harder to game all dimensions at once) and long-term observation.",
+    learnMore: "/threat-model#goodharting",
+  },
+
   // Emergent Groups
   Synthon: {
     term: "Synthon",

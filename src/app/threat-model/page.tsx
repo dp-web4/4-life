@@ -222,10 +222,10 @@ export default function ThreatModelPage() {
               <span className="text-3xl">🎯</span>
               <div>
                 <h3 className="text-xl font-semibold text-red-400">
-                  Goodharting <TermTooltip term="T3" /> Dimensions
+                  Goodharting <TermTooltip term="T3" /> Dimensions (Gaming the Metrics)
                 </h3>
                 <p className="text-sm text-gray-500">
-                  Can agents optimize metrics without being trustworthy?
+                  Can agents optimize scores without being genuinely trustworthy?
                 </p>
               </div>
             </div>
@@ -492,7 +492,7 @@ export default function ThreatModelPage() {
               <li>• Multi-dimensional trust is harder to game than single scores</li>
               <li>• Coherence checks detect basic spoofing attempts</li>
               <li>• Coalition detection hits 93%+ probability at 3+ members (red team tested)</li>
-              <li>• Sybil resistance has formal lower bounds: 4.6× PoW cost multiplier</li>
+              <li>• Sybil resistance (defense against fake identities) has formal lower bounds: 4.6× PoW cost multiplier</li>
               <li>• Script kiddie and insider threats consistently detected (red team profiles)</li>
               <li>• Cooperation is Nash-dominant at current parameters (200 ATP stakes + 3 witnesses)</li>
               <li>• ATP market conserves under stress (200 agents, 500 rounds, 5% transfer fee maintains stability)</li>
@@ -509,7 +509,7 @@ export default function ThreatModelPage() {
               <li>• Long-con trust building attacks (100+ cycle patient adversaries)</li>
               <li>• False positive rates in production (not simulation)</li>
               <li>• Nation-state attacks beyond red team scope (cascading infrastructure attacks)</li>
-              <li>• Long-term Goodharting resistance after adversaries study the metrics</li>
+              <li>• Long-term Goodharting (metric gaming) resistance after adversaries study the scoring system</li>
               <li>• Appeals mechanism effectiveness with real human disputes</li>
               <li>• ATP market stress beyond simulation scope (real human hoarding, speculative behavior)</li>
             </ul>

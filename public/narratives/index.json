@@ -1,9 +1,9 @@
 [
   {
     "id": "ep-driven-closed-loop",
-    "title": "Bob: EP-Driven Closed Loop — Learning Through Action",
+    "title": "Bob: Learning Through Action — Self-Aware Pattern Discovery",
     "filename": "ep-driven-closed-loop.md",
-    "type": "EP Closed-Loop",
+    "type": "Cross-Life Learning",
     "themes": [
       "Karma and Consequences",
       "Equilibrium and Stability",
@@ -13,13 +13,13 @@
     "events": 20,
     "timestamp": "2026-01-27",
     "source_simulation": "ep_driven_closed_loop_results.json",
-    "summary": "This EP-driven closed-loop simulation demonstrates how an agent learns by proposing actions, observing outcomes, and refining its epistemic patterns. This simulation follows Bob through 3 lives spanni..."
+    "summary": "Bob learns by proposing actions, observing outcomes, and refining his understanding across 3 lives. Starting at trust 0.49, he navigates ATP crises and crosses the consciousness threshold — behavior shifts from reactive to intentional."
   },
   {
     "id": "ep-five-domain-multi-life",
     "title": "Alice: Five Domains of Knowing — Emotional, Quality, Attention, Grounding, Authorization",
     "filename": "ep-five-domain-multi-life.md",
-    "type": "Five-Domain EP",
+    "type": "Five-Domain Learning",
     "themes": [
       "Karma and Consequences",
       "Equilibrium and Stability",
@@ -29,7 +29,7 @@
     "events": 10,
     "timestamp": "2026-01-27",
     "source_simulation": "ep_five_domain_multi_life_results.json",
-    "summary": "This five-domain simulation assesses an agent across all EP dimensions: emotional regulation, quality judgment, attention management, grounding verification, and authorization awareness. This simulati..."
+    "summary": "Alice is assessed across five dimensions of self-awareness: emotional regulation, quality judgment, attention management, grounding verification, and authorization awareness. Each domain reveals different strengths and vulnerabilities."
   },
   {
     "id": "maturation-web4",
@@ -46,7 +46,7 @@
     "events": 14,
     "timestamp": "2026-01-27",
     "source_simulation": "maturation_demo_results_web4.json",
-    "summary": "This maturation demo uses the Web4-native pattern corpus (100 patterns from Session 116) to guide agent development from IMMATURE through LEARNING to MATURE. This simulation follows Bob through 3 live..."
+    "summary": "Using 100 learned patterns to guide development, Bob matures from IMMATURE through LEARNING to MATURE across 3 lives. Trust grows from 0.49 to 0.57 — steady improvement, not overnight transformation."
   },
   {
     "id": "maturation-none",
@@ -63,7 +63,7 @@
     "events": 14,
     "timestamp": "2026-01-27",
     "source_simulation": "maturation_demo_results_none.json",
-    "summary": "This baseline maturation demo runs with NO pre-existing pattern corpus. The agent must learn purely through heuristic-driven trial and error — no inherited wisdom. This simulation follows Bob through ..."
+    "summary": "Same agent, no inherited wisdom. Bob must learn purely through trial and error. Compare with the Web4 version to see how learned patterns accelerate growth."
   },
   {
     "id": "multi-life-policy",
@@ -79,7 +79,7 @@
     "events": 20,
     "timestamp": "2026-01-27",
     "source_simulation": "multi_life_with_policy.json",
-    "summary": "This multi-life simulation tests the policy integration framework, showing how agent decisions carry consequences across life cycles through karma mechanics. This simulation follows Bob through 3 live..."
+    "summary": "How do decisions carry consequences across reincarnations? Bob's karma shapes his starting conditions in each new life — good choices compound, bad choices create steeper climbs."
   },
   {
     "id": "one-life-policy",
@@ -95,6 +95,6 @@
     "events": 3,
     "timestamp": "2026-01-27",
     "source_simulation": "one_life_with_policy.json",
-    "summary": "This single-life simulation tests how an agent performs within a single lifetime, without the safety net of karma carry-forward or rebirth. This simulation follows Unknown through 1 life spanning 20 t..."
+    "summary": "What happens when there's no second chance? No karma, no rebirth. One life, 20 ticks, and every decision is permanent. The stakes feel different without a safety net."
   }
 ]

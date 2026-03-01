@@ -513,6 +513,10 @@ export default function FederationEconomicsPage() {
             <h3 className="text-lg font-semibold text-gray-300 mb-3">
               Consensus Under Partial Synchrony
             </h3>
+            <p className="text-gray-300 mb-1">
+              <strong className="text-amber-400">In plain English:</strong> a voting system that
+              keeps working even when some participants are offline or dishonest.
+            </p>
             <p className="text-gray-300 mb-3">
               Federation members don&apos;t always have reliable connections. Networks partition,
               messages arrive late, clocks drift. Web4 uses a <strong className="text-amber-400">PBFT-Lite

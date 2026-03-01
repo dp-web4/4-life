@@ -73,6 +73,7 @@ export default function GlossaryPage() {
 
         {/* Section Jump Links */}
         <div className="flex flex-wrap gap-2 mb-6">
+          <span className="text-sm text-gray-500 mr-1 self-center">Jump to:</span>
           {[
             { id: "core", label: "Core" },
             { id: "advanced", label: "Advanced" },
@@ -84,7 +85,7 @@ export default function GlossaryPage() {
             <a
               key={s.id}
               href={`#${s.id}`}
-              className="text-xs px-3 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-gray-400 hover:text-sky-400 hover:border-sky-700 transition-colors"
+              className="text-sm px-3 py-1.5 bg-gray-800 border border-gray-600 rounded-full text-gray-300 hover:text-sky-400 hover:border-sky-700 transition-colors"
             >
               {s.label}
             </a>
@@ -359,12 +360,13 @@ export default function GlossaryPage() {
           {/* EP */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              Cross-Life Learning (EP)
+              Epistemic Proprioception (EP) — Cross-Life Learning
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
-              <strong>Self-awareness of what you know</strong>. In Web4 simulations, agents
-              use EP to learn patterns across lives: "High-value contributions earn more ATP"
-              or "Transparency when making mistakes rebuilds trust faster."
+              <strong>EP = Epistemic Proprioception</strong> — self-awareness of what you know
+              and don&apos;t know. In Web4 simulations, agents use EP to learn patterns across
+              lives: &ldquo;High-value contributions earn more ATP&rdquo; or &ldquo;Transparency
+              when making mistakes rebuilds trust faster.&rdquo;
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: "Knowing what you know and don't know. Agents that recognize patterns
