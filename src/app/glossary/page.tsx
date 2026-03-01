@@ -399,6 +399,28 @@ export default function GlossaryPage() {
             </div>
           </div>
 
+          {/* Entity Discovery */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">Entity Discovery</h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              How Web4 entities <strong>find each other from zero state</strong>. Four methods work
+              at different scales: local network broadcast (mDNS/DNS-SD), distributed hash table (DHT)
+              for wide-area discovery, QR code pairing for in-person meetings, and witness relay
+              (finding entities through mutual connections).
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: &ldquo;On a local network, your devices announce themselves like
+              AirDrop. Across the internet, a distributed directory routes discovery requests.
+              In person, you scan a QR code. If you share a mutual contact, they can introduce
+              you.&rdquo;
+            </p>
+            <p className="text-gray-500 text-xs">
+              Discovery results are trust-weighted: entities introduced through higher-trust paths
+              rank higher. Anti-poisoning defenses prevent fake discovery entries from directing
+              you to malicious entities.
+            </p>
+          </div>
+
           {/* V3 */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
