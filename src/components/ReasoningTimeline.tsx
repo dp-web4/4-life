@@ -148,7 +148,7 @@ export function ReasoningTimeline({ actions, lifeId, t3History, atpHistory }: Re
                       borderRadius: "0.25rem",
                       fontWeight: 500
                     }}>
-                      EP: {action.ep_decision}
+                      Learning: {action.ep_decision}
                     </div>
                   )}
                 </div>
@@ -270,7 +270,7 @@ export function ReasoningTimeline({ actions, lifeId, t3History, atpHistory }: Re
                       )}
                       {action.ep_confidence !== undefined && (
                         <div style={{ marginTop: "0.25rem" }}>
-                          <span style={{ color: "#93c5fd" }}>EP confidence:</span>{" "}
+                          <span style={{ color: "#93c5fd" }}>Learning confidence:</span>{" "}
                           <span style={{ color: "white" }}>{(action.ep_confidence * 100).toFixed(1)}%</span>
                         </div>
                       )}
