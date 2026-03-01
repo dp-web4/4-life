@@ -7,6 +7,7 @@ import { terms, type TermDefinition } from "@/lib/terms";
 const TERM_ORDER = [
   "Web4", "LCT", "ATP", "ADP", "T3", "V3",
   "MRH", "CI", "Karma", "EP", "R6", "Society",
+  "VCM", "Synthon",
 ];
 
 export default function GlossaryPanel() {
@@ -124,14 +125,37 @@ export default function GlossaryPanel() {
         {isOpen ? "\u00d7" : "Aa"}
       </button>
 
-      {/* Pulse animation for first-time visitors */}
+      {/* Pulse animation + hint label for first-time visitors */}
       {!hasBeenOpened && (
-        <style>{`
-          @keyframes glossaryPulse {
-            0%, 100% { box-shadow: 0 0 12px rgba(56, 189, 248, 0.3), 0 4px 16px rgba(0,0,0,0.4); }
-            50% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 0 4px 16px rgba(0,0,0,0.4); }
-          }
-        `}</style>
+        <>
+          <div style={{
+            position: "fixed",
+            bottom: "1.5rem",
+            left: "4.5rem",
+            zIndex: 39,
+            background: "rgba(17, 24, 39, 0.95)",
+            border: "1px solid rgba(56, 189, 248, 0.3)",
+            borderRadius: "0.5rem",
+            padding: "0.35rem 0.75rem",
+            fontSize: "0.75rem",
+            color: "#93c5fd",
+            whiteSpace: "nowrap",
+            animation: "glossaryHintFade 8s ease-in-out forwards",
+            pointerEvents: "none",
+          }}>
+            Terms glossary
+          </div>
+          <style>{`
+            @keyframes glossaryPulse {
+              0%, 100% { box-shadow: 0 0 12px rgba(56, 189, 248, 0.3), 0 4px 16px rgba(0,0,0,0.4); }
+              50% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 0 4px 16px rgba(0,0,0,0.4); }
+            }
+            @keyframes glossaryHintFade {
+              0%, 60% { opacity: 1; }
+              100% { opacity: 0; }
+            }
+          `}</style>
+        </>
       )}
 
       {/* Glossary panel */}
