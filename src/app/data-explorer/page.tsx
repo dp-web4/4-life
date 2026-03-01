@@ -69,9 +69,9 @@ const DATASETS: SimulationDataset[] = [
   {
     id: 'ep-closed-loop',
     filename: 'ep_driven_closed_loop_results.json',
-    label: 'EP-Driven Closed Loop',
+    label: 'Cross-Life Learning Loop',
     category: 'single-agent',
-    description: 'Agent learns by proposing actions, observing outcomes, and refining epistemic patterns. The core learning loop of Web4.',
+    description: 'Agent learns by proposing actions, observing outcomes, and refining patterns across lives. The core learning loop of Web4.',
     agentCount: 1,
     lifeCount: 3,
     totalTicks: 30,
@@ -84,7 +84,7 @@ const DATASETS: SimulationDataset[] = [
   {
     id: 'five-domain',
     filename: 'ep_five_domain_multi_life_results.json',
-    label: 'Five-Domain EP Assessment',
+    label: 'Five-Domain Learning Assessment',
     category: 'five-domain',
     description: 'Agent assessed across all EP dimensions: emotional regulation, quality judgment, attention management, grounding verification, and authorization awareness.',
     agentCount: 1,

@@ -61,8 +61,8 @@ interface SimSource {
 // ============================================================================
 
 const SOURCES: SimSource[] = [
-  { id: 'ep-closed-loop', filename: 'ep_driven_closed_loop_results.json', label: 'EP Closed Loop', color: '#60a5fa', narrativeId: 'ep-driven-closed-loop' },
-  { id: 'five-domain', filename: 'ep_five_domain_multi_life_results.json', label: 'Five-Domain EP', color: '#34d399', narrativeId: 'ep-five-domain-multi-life' },
+  { id: 'ep-closed-loop', filename: 'ep_driven_closed_loop_results.json', label: 'Cross-Life Learning', color: '#60a5fa', narrativeId: 'ep-driven-closed-loop' },
+  { id: 'five-domain', filename: 'ep_five_domain_multi_life_results.json', label: 'Five-Domain Learning', color: '#34d399', narrativeId: 'ep-five-domain-multi-life' },
   { id: 'maturation-web4', filename: 'maturation_demo_results_web4.json', label: 'Maturation (Web4)', color: '#f59e0b', narrativeId: 'maturation-web4' },
   { id: 'maturation-none', filename: 'maturation_demo_results_none.json', label: 'Maturation (No Patterns)', color: '#ef4444', narrativeId: 'maturation-none' },
   { id: 'multi-life-policy', filename: 'multi_life_with_policy.json', label: 'Multi-Life Policy', color: '#a78bfa', narrativeId: 'multi-life-policy' },

@@ -14,8 +14,8 @@ import { CATEGORY_PRIORITY } from './types';
 
 // Standard simulation sources
 export const SIMULATION_SOURCES: SimulationSource[] = [
-  { id: 'ep-closed-loop', filename: 'ep_driven_closed_loop_results.json', label: 'EP Closed Loop', narrativeId: 'ep-driven-closed-loop' },
-  { id: 'five-domain', filename: 'ep_five_domain_multi_life_results.json', label: 'Five-Domain EP', narrativeId: 'ep-five-domain-multi-life' },
+  { id: 'ep-closed-loop', filename: 'ep_driven_closed_loop_results.json', label: 'Cross-Life Learning', narrativeId: 'ep-driven-closed-loop' },
+  { id: 'five-domain', filename: 'ep_five_domain_multi_life_results.json', label: 'Five-Domain Learning', narrativeId: 'ep-five-domain-multi-life' },
   { id: 'maturation-web4', filename: 'maturation_demo_results_web4.json', label: 'Maturation (Web4)', narrativeId: 'maturation-web4' },
   { id: 'maturation-none', filename: 'maturation_demo_results_none.json', label: 'Maturation (Baseline)', narrativeId: 'maturation-none' },
   { id: 'multi-life-policy', filename: 'multi_life_with_policy.json', label: 'Multi-Life Policy', narrativeId: 'multi-life-policy' },

@@ -284,7 +284,7 @@ export default function LabConsolePage() {
                   onChange={(e) => setRunKind(e.target.value as any)}
                   style={{ marginTop: "0.25rem", width: "100%" }}
                 >
-                  <option value="ep_driven_closed_loop">Agent learns across lives (EP Closed Loop)</option>
+                  <option value="ep_driven_closed_loop">Agent learns across lives (Cross-Life Learning)</option>
                   <option value="maturation_demo">Trust maturation over time</option>
                   <option value="ep_five_domain">Five-domain interaction patterns</option>
                   <option value="multi_life_with_policy">Multiple lives with policy decisions</option>

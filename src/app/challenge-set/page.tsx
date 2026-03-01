@@ -254,8 +254,8 @@ export default function ChallengeSetPage() {
             },
             {
               icon: '🧠',
-              title: 'EP Learning Curves',
-              desc: 'How many lives does it take for EP to reach maturation? What factors accelerate or slow learning?',
+              title: 'Cross-Life Learning Curves',
+              desc: 'How many lives does it take for an agent to reach maturation? What factors accelerate or slow learning?',
               link: { label: 'Patterns', href: '/patterns' },
             },
             {

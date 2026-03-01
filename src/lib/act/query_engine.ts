@@ -535,7 +535,7 @@ export class ACTQueryEngine {
     return {
       text: narrative,
       type: 'explanation',
-      relatedConcepts: ['Comparative Analysis', 'Web4 Maturation', 'EP Learning'],
+      relatedConcepts: ['Comparative Analysis', 'Web4 Maturation', 'Cross-Life Learning'],
       suggestedQueries: [
         "Why did trust evolve differently?",
         "What strategies differed?",
@@ -553,10 +553,10 @@ export class ACTQueryEngine {
 
     if (!context?.simulation) {
       return {
-        text: "I need simulation data to explain pattern learning. Try running an EP Closed Loop simulation to see learning in action.",
+        text: "I need simulation data to explain pattern learning. Try running a Cross-Life Learning simulation to see learning in action.",
         type: 'error',
         suggestedQueries: [
-          "Run an EP closed loop simulation",
+          "Run a cross-life learning simulation",
           "What is cross-life learning?"
         ]
       };

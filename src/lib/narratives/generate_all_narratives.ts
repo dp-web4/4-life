@@ -35,10 +35,10 @@ const SIMULATIONS: SimulationConfig[] = [
   {
     file: 'ep_driven_closed_loop_results.json',
     id: 'ep-driven-closed-loop',
-    type: 'EP Closed-Loop',
+    type: 'Cross-Life Learning',
     titleOverride: (name, themes) =>
-      `${name}: EP-Driven Closed Loop — Learning Through Action`,
-    summaryPrefix: 'This EP-driven closed-loop simulation demonstrates how an agent learns by proposing actions, observing outcomes, and refining its epistemic patterns.',
+      `${name}: Learning Through Action — Self-Aware Pattern Discovery`,
+    summaryPrefix: 'This cross-life learning simulation demonstrates how an agent learns by proposing actions, observing outcomes, and refining its understanding across lives.',
     extraThemes: ['Closed-Loop Learning'],
   },
   {

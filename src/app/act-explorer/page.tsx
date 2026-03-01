@@ -64,7 +64,7 @@ function ACTExplorerContent() {
 
   // Available pre-generated simulations
   const availableSimulations = [
-    { id: 'ep-closed-loop', name: 'EP Closed Loop', file: 'ep_driven_closed_loop_results.json', desc: 'Agent learns from experience across lives' },
+    { id: 'ep-closed-loop', name: 'Cross-Life Learning', file: 'ep_driven_closed_loop_results.json', desc: 'Agent learns from experience across lives' },
     { id: 'maturation-web4', name: 'Maturation (Web4)', file: 'maturation_demo_results_web4.json', desc: 'Trust mechanisms shape agent growth' },
     { id: 'maturation-none', name: 'Maturation (Baseline)', file: 'maturation_demo_results_none.json', desc: 'Same agent without Web4 — compare the difference' },
     { id: 'five-domain', name: 'Five Domain', file: 'ep_five_domain_multi_life_results.json', desc: 'Multi-life learning across 5 coherence domains' },
@@ -228,7 +228,7 @@ function ACTExplorerContent() {
                   <div className="text-green-400 font-medium mb-1">Comparisons</div>
                   <div className="text-gray-400 text-xs space-y-1">
                     <div>• "Compare Web4 vs baseline"</div>
-                    <div>• "How does EP improve trust?"</div>
+                    <div>• "How does cross-life learning improve trust?"</div>
                     <div>• "What's different about maturation?"</div>
                   </div>
                 </div>

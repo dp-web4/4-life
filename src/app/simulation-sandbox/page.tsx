@@ -409,11 +409,11 @@ export default function SimulationSandboxPage() {
                 id="ep-toggle"
               />
               <label htmlFor="ep-toggle" style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>
-                EP Learning Enabled
+                Cross-Life Learning Enabled
               </label>
             </div>
             {config.epEnabled && (
-              <ParamSlider label="EP Learning Rate" value={config.epLearningRate} min={0.01} max={0.2} step={0.01}
+              <ParamSlider label="Learning Rate" value={config.epLearningRate} min={0.01} max={0.2} step={0.01}
                 onChange={v => setParam('epLearningRate', v)} tooltip="How fast success rate improves per life" />
             )}
             <ParamSlider label="Coherence Weight" value={config.coherenceWeight} min={0} max={1} step={0.05}
@@ -727,7 +727,7 @@ export default function SimulationSandboxPage() {
               lineHeight: 1.8, paddingLeft: '1rem', margin: 0,
             }}>
               <li>Compare &ldquo;Gentle Start&rdquo; vs &ldquo;Harsh World&rdquo; &mdash; how does environment shape outcomes?</li>
-              <li>Toggle EP Learning off &mdash; does the agent still improve across lives?</li>
+              <li>Toggle Cross-Life Learning off &mdash; does the agent still improve across lives?</li>
               <li>Set Karma Strength to 0 &mdash; what happens without consequences?</li>
               <li>Max out Noise (0.5) &mdash; can trust emerge from chaos?</li>
               <li>Set Trust Loss Rate higher than Gain Rate &mdash; is trust even possible?</li>

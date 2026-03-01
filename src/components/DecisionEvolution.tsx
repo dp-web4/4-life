@@ -546,7 +546,7 @@ export default function DecisionEvolution({ lives, className = '' }: DecisionEvo
           className="flex w-full items-center justify-between p-4 text-left hover:bg-gray-750"
         >
           <h3 className="text-lg font-semibold text-gray-100">
-            💡 What This Shows About EP Learning
+            What This Shows About Cross-Life Learning
           </h3>
           {expandedSections.has('insights') ? (
             <ChevronDown className="h-5 w-5 text-gray-400" />
