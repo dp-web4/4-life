@@ -132,9 +132,9 @@ export default function TLDRPage() {
             >
               <div className="text-sky-400 font-semibold mb-1">First Contact</div>
               <div className="text-gray-400 text-sm">
-                Follow Alice through her first 10 actions in a Web4 community
+                Follow Alice through her first 16 actions in a Web4 community
               </div>
-              <div className="text-gray-500 text-xs mt-1">10 min interactive</div>
+              <div className="text-gray-500 text-xs mt-1">12 min interactive</div>
             </Link>
             <Link
               href="/karma-journey"

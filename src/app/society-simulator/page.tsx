@@ -3231,7 +3231,7 @@ export default function SocietySimulatorPage() {
             Watch how trust-based economics create stable cooperation <em>without moderators</em>.
           </p>
           <p className="text-xs text-gray-500">
-            New to Web4? Start with <a href="/first-contact" className="text-emerald-400 hover:underline">First Contact</a> — a 10-minute guided introduction.
+            New to Web4? Start with <a href="/first-contact" className="text-emerald-400 hover:underline">First Contact</a> — a 12-minute guided introduction.
           </p>
         </div>
 

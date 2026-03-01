@@ -1419,7 +1419,7 @@ export class ACTQueryEngine {
     if (!context?.simulation) {
       return {
         text: `**Where to Start**:\n\n` +
-          `1. **Never seen Web4?** → [First Contact](/first-contact) (10-min interactive tutorial)\n` +
+          `1. **Never seen Web4?** → [First Contact](/first-contact) (12-min interactive tutorial)\n` +
           `2. **Want hands-on?** → [Lab Console](/lab-console) (run a simulation now)\n` +
           `3. **Prefer concepts?** → [Learning Journey](/learn) (guided pathway)\n` +
           `4. **Ready to experiment?** → [Playground](/playground) (tweak parameters, see results)\n\n` +

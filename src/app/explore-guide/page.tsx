@@ -103,7 +103,7 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
         color: '#6ee7b7',
         steps: [
           { title: 'A Day in Web4', description: 'Walk through 7 everyday scenarios — hiring, reviews, trolls — and see how each one works with trust built in', href: '/day-in-web4', timeEstimate: '10 min', type: 'interactive' },
-          { title: 'First Contact', description: 'Follow Alice through 10 actions in a Web4 community — watch trust build and spam fail', href: '/first-contact', timeEstimate: '10 min', type: 'interactive' },
+          { title: 'First Contact', description: 'Follow Alice through 16 actions in a Web4 community — watch trust build, spam fail, and karma carry forward', href: '/first-contact', timeEstimate: '12 min', type: 'interactive' },
           { title: 'Karma Journey', description: 'Play through multiple lives, making choices and seeing how trust and karma shape outcomes', href: '/karma-journey', timeEstimate: '15 min', type: 'interactive' },
           { title: 'How It Works', description: 'Now that you\'ve seen it in action, understand the mechanics behind it', href: '/how-it-works', timeEstimate: '8 min', type: 'read' },
           { title: 'Simulation Narratives', description: 'Read auto-generated stories about agents navigating Web4 societies', href: '/narratives', timeEstimate: '10 min', type: 'read' },
@@ -118,7 +118,7 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
         color: '#93c5fd',
         steps: [
           { title: 'What Would Change For You?', description: 'Pick your internet frustrations — see exactly how trust-native infrastructure would address each one', href: '/your-internet', timeEstimate: '2 min', type: 'interactive' },
-          { title: 'First Contact', description: 'Interactive tutorial that teaches through exploration, not lectures', href: '/first-contact', timeEstimate: '10 min', type: 'interactive' },
+          { title: 'First Contact', description: 'Interactive tutorial that teaches through exploration, not lectures', href: '/first-contact', timeEstimate: '12 min', type: 'interactive' },
           { title: 'Karma Journey', description: 'Live through multiple lives, making choices that carry consequences', href: '/karma-journey', timeEstimate: '15 min', type: 'interactive' },
           { title: 'Playground', description: 'Full parameter playground — tweak any setting and run your own simulation', href: '/playground', timeEstimate: '15 min', type: 'experiment' },
           { title: 'Concepts to Tools', description: 'Map every concept to its interactive tool', href: '/concepts-to-tools', timeEstimate: '5 min', type: 'read' },
@@ -275,7 +275,7 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
     tagline: 'A curated starting point for the curious',
     color: '#6ee7b7',
     steps: [
-      { title: 'First Contact', description: 'Interactive introduction — the best starting point for anyone', href: '/first-contact', timeEstimate: '10 min', type: 'interactive' },
+      { title: 'First Contact', description: 'Interactive introduction — the best starting point for anyone', href: '/first-contact', timeEstimate: '12 min', type: 'interactive' },
       { title: 'Karma Journey', description: 'Experience trust dynamics through gameplay', href: '/karma-journey', timeEstimate: '15 min', type: 'interactive' },
       { title: 'How It Works', description: 'Understand the mechanics', href: '/how-it-works', timeEstimate: '8 min', type: 'read' },
       { title: 'Data Explorer', description: 'Browse all simulation data', href: '/data-explorer', timeEstimate: '10 min', type: 'experiment' },
