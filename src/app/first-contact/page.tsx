@@ -8,7 +8,7 @@ import ExplorerNav from "@/components/ExplorerNav";
 import { trackPageVisit } from "@/lib/exploration";
 
 /**
- * First Contact: Zero to Web4 Comprehension in 10 Minutes
+ * First Contact: Zero to Web4 Comprehension in 12 Minutes
  *
  * Philosophy:
  * - Show, don't tell: Run a simulation first, explain concepts as they appear

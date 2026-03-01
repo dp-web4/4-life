@@ -50,7 +50,7 @@ const TOOLS: ToolCard[] = [
     title: 'First Contact',
     href: '/first-contact',
     emoji: '👋',
-    description: '10-minute interactive introduction to Web4 trust concepts. Start here.',
+    description: '12-minute interactive introduction to Web4 trust concepts. Start here.',
     learns: ['What Web4 is', 'Why trust matters', 'Core vocabulary'],
     complexity: 'beginner',
     category: 'understand',

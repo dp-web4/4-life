@@ -48,7 +48,7 @@ export const navigationTree: NavigationTree = {
     {
       title: 'First Contact',
       href: '/first-contact',
-      desc: '10-min interactive intro',
+      desc: '12-min interactive intro',
       keywords: ['tutorial', 'beginner', 'start', 'introduction'],
       related: ['/why-web4', '/learn', '/how-it-works']
     },
