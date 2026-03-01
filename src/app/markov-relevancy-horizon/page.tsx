@@ -97,7 +97,12 @@ export default function MarkovRelevancyHorizonPage() {
             Markov Relevancy Horizon (MRH)
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed mb-6">
-            How Web4 creates context boundaries through relationships - you see what&apos;s relevant, nothing more.
+            How Web4 creates context boundaries through relationships — you see what&apos;s relevant, nothing more.
+          </p>
+          <p className="text-sm text-gray-500">
+            <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-cyan-400 hover:text-cyan-300 cursor-pointer">
+              ↓ Try the MRH explorer below
+            </a>
           </p>
 
           <div className="bg-gradient-to-br from-cyan-950/30 to-cyan-900/20 border border-cyan-800/30 rounded-lg p-6">
@@ -248,7 +253,7 @@ export default function MarkovRelevancyHorizonPage() {
         </section>
 
         {/* Interactive MRH Simulator */}
-        <section className="max-w-4xl mx-auto mb-16">
+        <section id="try-it" className="max-w-4xl mx-auto mb-16 scroll-mt-24">
           <h2 className="text-3xl font-bold mb-6 text-cyan-400">
             Interactive MRH Explorer
           </h2>
@@ -336,16 +341,20 @@ export default function MarkovRelevancyHorizonPage() {
               <div className="space-y-4">
                 {horizonDepth >= 1 && (
                   <div className="border border-cyan-700/50 rounded-lg p-4">
-                    <div className="text-sm font-semibold text-cyan-400 mb-2">
-                      Depth 1: Direct Relationships ({entities[selectedEntity].direct.length})
+                    <div className="flex items-center justify-between text-sm mb-2">
+                      <span className="font-semibold text-cyan-400">
+                        Depth 1: Direct Relationships ({entities[selectedEntity].direct.length})
+                      </span>
+                      <span className="text-cyan-400 font-mono text-xs">trust × 0.70</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {entities[selectedEntity].direct.map((e) => (
                         <span
                           key={e}
-                          className="px-3 py-1 bg-cyan-600/20 border border-cyan-500/30 rounded text-sm"
+                          className="px-3 py-1 bg-cyan-600/20 border border-cyan-500/30 rounded text-sm flex items-center gap-1.5"
                         >
                           {e}
+                          <span className="text-cyan-400 font-mono text-[10px]">0.70</span>
                         </span>
                       ))}
                     </div>
@@ -354,16 +363,20 @@ export default function MarkovRelevancyHorizonPage() {
 
                 {horizonDepth >= 2 && (
                   <div className="border border-cyan-700/30 rounded-lg p-4">
-                    <div className="text-sm font-semibold text-cyan-300 mb-2">
-                      Depth 2: Friends of Friends ({entities[selectedEntity].depth2.length})
+                    <div className="flex items-center justify-between text-sm mb-2">
+                      <span className="font-semibold text-cyan-300">
+                        Depth 2: Friends of Friends ({entities[selectedEntity].depth2.length})
+                      </span>
+                      <span className="text-cyan-500 font-mono text-xs">trust × 0.49</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {entities[selectedEntity].depth2.map((e) => (
                         <span
                           key={e}
-                          className="px-3 py-1 bg-cyan-600/10 border border-cyan-500/20 rounded text-sm text-gray-300"
+                          className="px-3 py-1 bg-cyan-600/10 border border-cyan-500/20 rounded text-sm text-gray-300 flex items-center gap-1.5"
                         >
                           {e}
+                          <span className="text-cyan-600 font-mono text-[10px]">0.49</span>
                         </span>
                       ))}
                     </div>
@@ -372,16 +385,20 @@ export default function MarkovRelevancyHorizonPage() {
 
                 {horizonDepth >= 3 && (
                   <div className="border border-cyan-700/20 rounded-lg p-4">
-                    <div className="text-sm font-semibold text-cyan-200 mb-2">
-                      Depth 3: Third Degree ({entities[selectedEntity].depth3.length})
+                    <div className="flex items-center justify-between text-sm mb-2">
+                      <span className="font-semibold text-cyan-200">
+                        Depth 3: Third Degree ({entities[selectedEntity].depth3.length})
+                      </span>
+                      <span className="text-cyan-700 font-mono text-xs">trust × 0.34</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {entities[selectedEntity].depth3.map((e) => (
                         <span
                           key={e}
-                          className="px-3 py-1 bg-cyan-600/5 border border-cyan-500/10 rounded text-sm text-gray-400"
+                          className="px-3 py-1 bg-cyan-600/5 border border-cyan-500/10 rounded text-sm text-gray-400 flex items-center gap-1.5"
                         >
                           {e}
+                          <span className="text-gray-600 font-mono text-[10px]">0.34</span>
                         </span>
                       ))}
                     </div>
@@ -508,9 +525,48 @@ export default function MarkovRelevancyHorizonPage() {
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-6">
             <p className="text-gray-300 mb-4">
-              Trust doesn&apos;t exist in isolation - it <strong className="text-cyan-400">propagates through relationship graphs</strong>.
+              Trust doesn&apos;t exist in isolation — it <strong className="text-cyan-400">propagates through relationship graphs</strong>.
               If you trust Alice and Alice trusts Bob, you have <em>some</em> basis to trust Bob,
               but weaker than direct experience.
+            </p>
+          </div>
+
+          {/* Trust Decay Ring Visualization */}
+          <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-8">
+            <h3 className="text-lg font-semibold text-cyan-400 mb-4 text-center">
+              How Trust Fades With Distance
+            </h3>
+            <div className="flex items-center justify-center">
+              <div className="relative" style={{ width: '320px', height: '320px' }}>
+                {/* Depth 3 ring */}
+                <div className="absolute inset-0 rounded-full border-2 border-cyan-800/30 flex items-center justify-center">
+                  <span className="absolute top-2 text-xs text-gray-500">Beyond: 0 (invisible)</span>
+                </div>
+                {/* Depth 3 */}
+                <div className="absolute rounded-full border-2 border-cyan-700/40 flex items-center justify-center"
+                     style={{ top: '30px', left: '30px', right: '30px', bottom: '30px' }}>
+                  <span className="absolute top-2 text-xs text-cyan-600">3 hops: 0.34</span>
+                </div>
+                {/* Depth 2 */}
+                <div className="absolute rounded-full border-2 border-cyan-600/60 flex items-center justify-center"
+                     style={{ top: '70px', left: '70px', right: '70px', bottom: '70px' }}>
+                  <span className="absolute top-2 text-xs text-cyan-500">2 hops: 0.49</span>
+                </div>
+                {/* Depth 1 */}
+                <div className="absolute rounded-full border-2 border-cyan-500/80 flex items-center justify-center"
+                     style={{ top: '110px', left: '110px', right: '110px', bottom: '110px' }}>
+                  <span className="absolute top-1 text-xs text-cyan-400">Direct: 0.70</span>
+                </div>
+                {/* Self */}
+                <div className="absolute rounded-full bg-cyan-500/20 border-2 border-cyan-400 flex items-center justify-center"
+                     style={{ top: '140px', left: '140px', width: '40px', height: '40px' }}>
+                  <span className="text-xs font-bold text-cyan-300">You</span>
+                </div>
+              </div>
+            </div>
+            <p className="text-center text-sm text-gray-400 mt-4">
+              Trust decays <strong className="text-cyan-300">0.7× per hop</strong>. At 3 hops, only 34% of trust remains.
+              Beyond that — nothing. This natural boundary keeps the network manageable and private.
             </p>
           </div>
 
