@@ -160,6 +160,28 @@ export const terms: Record<string, TermDefinition> = {
       "Societies can be your personal device (home society), a community of peers, or planet-scale networks. Each sets its own trust thresholds. The same architecture works at every scale (fractal design). Ejection from one society doesn't prevent participation in others.",
     learnMore: "/glossary",
   },
+
+  // Value Confirmation
+  VCM: {
+    term: "VCM",
+    fullName: "Value Confirmation Mechanism",
+    brief: "Recipients attest to the value they received, converting spent ADP back into fresh ATP.",
+    explanation:
+      "You can't rate your own work — only recipients can. When you perform an action (spending ATP, creating an ADP receipt), the people who benefit confirm the value. Their confirmation, weighted by their own trust scores, converts your spent ADP back into ATP. Higher-trusted recipients provide stronger confirmation. This 'gratitude loop' ensures quality is judged by those who experience it, not claimed by those who produce it.",
+    learnMore: "/atp-economics",
+    canonicalSpec:
+      "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/atp-adp-cycle.md",
+  },
+
+  // Emergent Groups
+  Synthon: {
+    term: "Synthon",
+    fullName: "Emergent Coherent Group",
+    brief: "A cluster of entities that acts as a coherent whole — measurably alive as a group.",
+    explanation:
+      "When entities develop dense mutual trust, balanced ATP flows, and overlapping MRH boundaries, they form a synthon — an emergent group that's more than the sum of its parts. Synthons have their own lifecycle: formation (trust densifies), health (diversity + balanced energy), and decay (trust diverges, energy concentrates). Web4 detects these automatically from trust entropy and clustering patterns.",
+    learnMore: "/aliveness",
+  },
 };
 
 /**
