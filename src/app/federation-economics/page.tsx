@@ -4,6 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import PageTracker from "@/components/PageTracker";
+import TermTooltip from "@/components/TermTooltip";
 
 /**
  * Federation Economics Explainer
@@ -35,7 +36,7 @@ export default function FederationEconomicsPage() {
           the market self-organized.
         </p>
         <p className="text-lg text-gray-400 leading-relaxed mb-6">
-          Web4 federations work the same way with ATP. When speed specialists are
+          Web4 federations work the same way with <TermTooltip term="ATP" />. When speed specialists are
           scarce, speed operations cost more. High prices signal profit opportunities,
           agents specialize, supply increases, and prices stabilize.{" "}
           <strong>No central planner</strong> — markets allocate resources
@@ -491,7 +492,7 @@ export default function FederationEconomicsPage() {
               Which rule wins?
             </p>
             <p className="text-gray-300 mb-3">
-              Web4 resolves conflicts using <strong className="text-amber-400">MRH-weighted priority</strong>: the
+              Web4 resolves conflicts using <strong className="text-amber-400"><TermTooltip term="MRH" />-weighted priority</strong>: the
               society closer to you in your trust network governs. If you&apos;re primarily a healthcare
               practitioner who occasionally contributes to research, healthcare rules take precedence
               on conflicting policies. Three resolution strategies exist:

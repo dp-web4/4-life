@@ -4,6 +4,7 @@ import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import PageTracker from "@/components/PageTracker";
 import RiskSelector from "@/components/RiskSelector";
+import TermTooltip from "@/components/TermTooltip";
 
 export const metadata = {
   title: "What Could Go Wrong | 4-Life",
@@ -188,7 +189,7 @@ export default function WhatCouldGoWrongPage() {
           </div>
           <div className="text-gray-300 leading-relaxed space-y-3">
             <p>
-              <strong className="text-gray-100">The risk:</strong> ATP transfers cost 5%, so buying
+              <strong className="text-gray-100">The risk:</strong> <TermTooltip term="ATP" /> transfers cost 5%, so buying
               reputation at scale is expensive but not impossible. A well-funded organization could buy thousands
               of hardware devices, create thousands of identities, and slowly build legitimate-looking
               trust across all of them &mdash; a long-game Sybil attack.
@@ -346,7 +347,7 @@ export default function WhatCouldGoWrongPage() {
               handles ~65,000. Web4&apos;s per-action trust computation could hit similar walls.
             </p>
             <p>
-              <strong className="text-gray-100">What mitigates it:</strong> MRH (context boundaries)
+              <strong className="text-gray-100">What mitigates it:</strong> <TermTooltip term="MRH" /> (context boundaries)
               limits the trust computation to local neighborhoods &mdash; you don&apos;t need to
               verify trust against every user on the internet, just the ones in your current
               context. This is similar to how DNS scales: local resolution handles most queries

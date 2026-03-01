@@ -64,10 +64,10 @@ function ACTExplorerContent() {
 
   // Available pre-generated simulations
   const availableSimulations = [
-    { id: 'ep-closed-loop', name: 'EP Closed Loop', file: 'ep_driven_closed_loop_results.json' },
-    { id: 'maturation-web4', name: 'Maturation (Web4)', file: 'maturation_demo_results_web4.json' },
-    { id: 'maturation-none', name: 'Maturation (Baseline)', file: 'maturation_demo_results_none.json' },
-    { id: 'five-domain', name: 'Five Domain', file: 'ep_five_domain_multi_life_results.json' }
+    { id: 'ep-closed-loop', name: 'EP Closed Loop', file: 'ep_driven_closed_loop_results.json', desc: 'Agent learns from experience across lives' },
+    { id: 'maturation-web4', name: 'Maturation (Web4)', file: 'maturation_demo_results_web4.json', desc: 'Trust mechanisms shape agent growth' },
+    { id: 'maturation-none', name: 'Maturation (Baseline)', file: 'maturation_demo_results_none.json', desc: 'Same agent without Web4 — compare the difference' },
+    { id: 'five-domain', name: 'Five Domain', file: 'ep_five_domain_multi_life_results.json', desc: 'Multi-life learning across 5 coherence domains' },
   ];
 
   const loadSimulation = async (file: string) => {
@@ -108,7 +108,7 @@ function ACTExplorerContent() {
           </div>
 
           {/* Context indicator */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-wrap">
             <div className="text-sm text-gray-400">
               {simulation ? (
                 <span className="flex items-center gap-2">
@@ -117,8 +117,8 @@ function ACTExplorerContent() {
                 </span>
               ) : (
                 <span className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
-                  No simulation loaded (concept explanations available)
+                  <span className="w-2 h-2 bg-sky-500 rounded-full"></span>
+                  Ready — ask about any Web4 concept below
                 </span>
               )}
             </div>
@@ -126,7 +126,7 @@ function ACTExplorerContent() {
               onClick={() => setShowSimulationPicker(!showSimulationPicker)}
               className="text-sm px-3 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded text-gray-300 transition-colors"
             >
-              {simulation ? 'Change Simulation' : 'Load Simulation'}
+              {simulation ? 'Change Simulation' : 'Load Simulation Data'}
             </button>
             {simulation && (
               <button
@@ -141,8 +141,10 @@ function ACTExplorerContent() {
           {/* Simulation picker */}
           {showSimulationPicker && (
             <div className="mt-4 p-4 bg-gray-800 border border-gray-700 rounded-lg">
-              <h3 className="text-sm font-semibold text-gray-300 mb-3">Load Simulation</h3>
-              <div className="grid grid-cols-2 gap-3">
+              <h3 className="text-sm font-semibold text-gray-300 mb-3">
+                Load simulation data to analyze specific events
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {availableSimulations.map(sim => (
                   <button
                     key={sim.id}
@@ -150,10 +152,13 @@ function ACTExplorerContent() {
                     className="px-4 py-3 bg-gray-900 hover:bg-gray-700 border border-gray-700 rounded text-left transition-colors"
                   >
                     <div className="font-medium text-white">{sim.name}</div>
-                    <div className="text-xs text-gray-400 mt-1">{sim.file}</div>
+                    <div className="text-xs text-gray-400 mt-1">{sim.desc}</div>
                   </button>
                 ))}
               </div>
+              <p className="text-xs text-gray-500 mt-3">
+                Not sure? Start without simulation data — you can always load one later.
+              </p>
             </div>
           )}
         </div>
