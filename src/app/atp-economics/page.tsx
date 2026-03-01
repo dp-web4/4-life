@@ -656,6 +656,61 @@ export default function ATPEconomicsPage() {
         </div>
       </section>
 
+      {/* How ATP Recharges: Value Confirmation */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">
+          How Do You Actually Earn ATP Back?
+        </h2>
+        <p className="text-gray-400 mb-6">
+          The page above says &ldquo;quality contributions earn ATP.&rdquo; But who decides
+          what&apos;s quality? Not you — the <strong className="text-sky-300">recipients</strong> do.
+        </p>
+
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8 space-y-6">
+          <div className="bg-sky-950/20 border border-sky-800/30 rounded-lg p-5">
+            <h3 className="text-lg font-semibold text-sky-400 mb-3">
+              Value Confirmation: The Gratitude Loop
+            </h3>
+            <p className="text-gray-300 text-sm mb-3">
+              When you spend ATP on an action (writing a tutorial, fixing a bug, answering
+              a question), the people who <strong className="text-sky-300">received that value</strong> can
+              confirm it. Their confirmation converts your spent ADP receipt back into fresh ATP.
+            </p>
+            <p className="text-gray-300 text-sm">
+              Think of it like a restaurant tip that&apos;s decided by the diners, not the chef.
+              You can&apos;t rate your own work — only recipients can. And their rating is weighted
+              by <strong className="text-sky-300">their own trust score</strong>: a confirmation from
+              a highly-trusted community member carries more weight than one from a newcomer.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 text-center">
+              <div className="text-2xl mb-2">📤</div>
+              <div className="text-sm font-semibold text-sky-400 mb-1">You Act</div>
+              <div className="text-xs text-gray-400">Spend ATP, create ADP receipt</div>
+            </div>
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 text-center">
+              <div className="text-2xl mb-2">👍</div>
+              <div className="text-sm font-semibold text-green-400 mb-1">Recipients Confirm</div>
+              <div className="text-xs text-gray-400">Attest they received value</div>
+            </div>
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 text-center">
+              <div className="text-2xl mb-2">⚡</div>
+              <div className="text-sm font-semibold text-amber-400 mb-1">ATP Recharges</div>
+              <div className="text-xs text-gray-400">ADP converts back to ATP</div>
+            </div>
+          </div>
+
+          <div className="bg-gray-800/60 border border-gray-700 rounded-lg p-4 text-sm text-gray-400">
+            <strong className="text-gray-300">Why this matters:</strong> You literally cannot game the system
+            by self-rating. The recharge rate depends on how much value others <em>actually received</em>,
+            weighted by their trust. High-quality work in a community of trusted peers earns the most ATP back.
+            Low-quality spam? Nobody confirms it, the ADP stays discharged, and your budget shrinks.
+          </div>
+        </div>
+      </section>
+
       {/* Technical Details (Collapsible) */}
       <section className="max-w-4xl mx-auto mt-16">
         <details className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8">

@@ -148,7 +148,10 @@ export default function GlossaryPage() {
             </p>
             <p className="text-gray-500 text-xs mb-3">
               <strong>Canonical note:</strong> Production Web4 uses ATP/ADP (Allocation Discharge
-              Packet) cycles for full resource flow modeling.
+              Packet) cycles for full resource flow modeling. ATP recharges via <strong>Value
+              Confirmation (VCM)</strong>: recipients of your work attest to the value they received,
+              converting your spent ADP back into fresh ATP. You cannot rate your own work —
+              only recipients can.
             </p>
             <div className="flex gap-3 text-sm">
               <Link href="/atp-economics" className="text-sky-400 hover:underline">
@@ -761,6 +764,37 @@ export default function GlossaryPage() {
             </p>
           </div>
 
+        </div>
+      </section>
+
+      {/* Synthon (Emergent Group) */}
+      <section className="max-w-4xl mx-auto mt-12" data-glossary-section>
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          <h3 className="text-2xl font-semibold text-sky-400 mb-3">
+            Synthon
+          </h3>
+          <p className="text-gray-300 leading-relaxed mb-3">
+            <strong>An emergent group that acts as a coherent whole.</strong> When
+            individual trust relationships become dense enough, context boundaries
+            overlap, and energy flows balance — the group becomes &ldquo;alive&rdquo; in
+            a measurable sense. Named after chemistry&apos;s building blocks.
+          </p>
+          <p className="text-gray-400 text-sm mb-3">
+            Synthons have a lifecycle: <strong>formation</strong> (trust densifies,
+            horizons align), <strong>health</strong> (balanced energy, witness diversity,
+            high internal coherence), and <strong>decay</strong> (trust diverges,
+            boundaries leak, energy concentrates). These phases are detectable
+            from trust graph metrics — no self-declaration needed.
+          </p>
+          <p className="text-gray-500 text-xs">
+            <strong>Example:</strong> A research team whose members trust each other
+            highly, share overlapping MRH horizons, and maintain balanced ATP flows
+            is a synthon. If one member starts hoarding ATP or trust diverges, decay
+            precursors appear before the team actually falls apart. See{' '}
+            <Link href="/aliveness" className="text-sky-400 hover:underline">
+              Aliveness
+            </Link> for how groups can be alive.
+          </p>
         </div>
       </section>
 

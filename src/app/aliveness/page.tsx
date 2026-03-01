@@ -1375,6 +1375,35 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
       </section>
 
       <section>
+        <h2>Groups Can Be Alive Too</h2>
+        <div className="detail-box">
+          <p>
+            Everything above describes individual aliveness. But in Web4, <strong>groups</strong> can
+            also become alive — not metaphorically, but measurably.
+          </p>
+          <p>
+            When a cluster of entities develops dense trust relationships, shared context boundaries,
+            and balanced energy flows, they start acting as a <strong>coherent whole</strong>. Web4
+            calls these emergent groups <strong>synthons</strong> — named after chemistry&apos;s
+            building blocks that combine to form larger structures.
+          </p>
+          <p>
+            A synthon has a lifecycle just like an individual:
+          </p>
+          <ul>
+            <li><strong>Formation</strong> — Trust between members becomes dense and mutual. Their MRH horizons overlap. Energy flows balance.</li>
+            <li><strong>Health</strong> — The group maintains witness diversity, balanced ATP distribution, and high internal trust coherence.</li>
+            <li><strong>Decay</strong> — Trust diverges, boundaries leak, energy concentrates in fewer members. These are early warnings before dissolution.</li>
+          </ul>
+          <p style={{fontSize: '0.85rem', color: '#9ca3af', marginTop: '1rem'}}>
+            Synthon detection is new (web4 Session 23, 72 validated checks). The key insight: groups
+            don&apos;t need to be designed. They emerge naturally from individual trust relationships —
+            and they can be detected, monitored, and protected without central coordination.
+          </p>
+        </div>
+      </section>
+
+      <section>
         <h2>Key Takeaways</h2>
         <div className="detail-box">
           <ol>
