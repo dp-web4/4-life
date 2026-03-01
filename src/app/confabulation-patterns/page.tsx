@@ -16,11 +16,12 @@
  * - Interactive exploration builds intuition
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -325,6 +326,8 @@ function ExampleCard({ example, isSelected, onClick }: {
 // ============================================================================
 
 export default function ConfabulationPatternsPage() {
+  useEffect(() => { trackPageVisit('confabulation-patterns'); }, []);
+
   const [selectedExample, setSelectedExample] = useState<ConfabulationExample>(CONFABULATION_EXAMPLES[0]);
   const [categoryFilter, setCategoryFilter] = useState<'all' | 'healthy' | 'confabulating'>('all');
 

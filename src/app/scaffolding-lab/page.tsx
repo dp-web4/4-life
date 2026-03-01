@@ -14,10 +14,11 @@
  * - Learn principles through experimentation
  */
 
-import { useState, useCallback, useMemo } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -426,6 +427,8 @@ const PRESETS: { name: string; description: string; turns: ScaffoldTurn[] }[] = 
 // ============================================================================
 
 export default function ScaffoldingLabPage() {
+  useEffect(() => { trackPageVisit('scaffolding-lab'); }, []);
+
   const [turns, setTurns] = useState<ScaffoldTurn[]>([]);
 
   const handleAddTurn = useCallback((template: ScaffoldTemplate, example: string) => {

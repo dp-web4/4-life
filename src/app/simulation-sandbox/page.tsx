@@ -17,11 +17,12 @@
  * Session #40: Client-side simulation sandbox
  */
 
-import { useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 import {
   SimulationEngine,
   SimConfig,
@@ -200,6 +201,8 @@ function LifeRow({ life }: { life: LifeResult }) {
 // ============================================================================
 
 export default function SimulationSandboxPage() {
+  useEffect(() => { trackPageVisit('simulation-sandbox'); }, []);
+
   // Config state
   const [config, setConfig] = useState<SimConfig>({ ...DEFAULT_CONFIG, ...PRESETS['gentle-start'] });
   const [activePreset, setActivePreset] = useState<string | null>('gentle-start');

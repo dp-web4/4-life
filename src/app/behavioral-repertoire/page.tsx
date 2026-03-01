@@ -15,10 +15,11 @@
  * Cross-pollination: Thor E02/E02-B exploration -> interactive visualization
  */
 
-import { useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types & Constants
@@ -271,6 +272,8 @@ function DataPoint({ e }: { e: KnownExperiment }) {
 // ============================================================================
 
 export default function BehavioralRepertoirePage() {
+  useEffect(() => { trackPageVisit('behavioral-repertoire'); }, []);
+
   const [framing, setFraming] = useState(1);
   const [ambiguity, setAmbiguity] = useState(50);
   const [capacity, setCapacity] = useState(3);

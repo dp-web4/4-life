@@ -15,6 +15,7 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -664,6 +665,8 @@ function ComparisonView({ datasets, loadedData }: { datasets: SimulationDataset[
 // ============================================================================
 
 export default function DataExplorerPage() {
+  useEffect(() => { trackPageVisit('data-explorer'); }, []);
+
   const [loadedData, setLoadedData] = useState<Map<string, DatasetDetail>>(new Map());
   const [loading, setLoading] = useState(true);
   const [expandedId, setExpandedId] = useState<string | null>(null);

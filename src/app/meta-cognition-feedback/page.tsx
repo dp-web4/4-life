@@ -14,11 +14,12 @@
  * Cross-pollination: Web4 Session #31 + Thor SAGE + Sprout discoveries
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -427,6 +428,8 @@ function HumanAnalogy() {
 // ============================================================================
 
 export default function MetaCognitionFeedbackPage() {
+  useEffect(() => { trackPageVisit('meta-cognition-feedback'); }, []);
+
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="max-w-4xl mx-auto px-4 py-12">

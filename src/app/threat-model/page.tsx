@@ -1,13 +1,18 @@
 'use client';
 
+import { useEffect } from 'react';
+
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from '@/components/ExplorerNav';
 import CollusionDetectionDemo from "@/components/CollusionDetectionDemo";
 import TermTooltip from "@/components/TermTooltip";
+import { trackPageVisit } from "@/lib/exploration";
 
 export default function ThreatModelPage() {
+  useEffect(() => { trackPageVisit('threat-model'); }, []);
+
   return (
     <>
       <Breadcrumbs currentPath="/threat-model" />

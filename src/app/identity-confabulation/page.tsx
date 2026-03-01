@@ -16,11 +16,12 @@
  * truthful content.
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -412,6 +413,8 @@ function Web4TrustConnection() {
 // ============================================================================
 
 export default function IdentityConfabulationPage() {
+  useEffect(() => { trackPageVisit('identity-confabulation'); }, []);
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto p-8">

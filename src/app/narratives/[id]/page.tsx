@@ -15,6 +15,7 @@ import { NarrativeExporter, ExportFormat } from '@/lib/narratives/narrative_expo
 import { EventDetector } from '@/lib/narratives/event_detector';
 import NarrativeTimeline from '@/components/NarrativeTimeline';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { trackPageVisit } from "@/lib/exploration";
 
 interface NarrativeIndexEntry {
   id: string;
@@ -24,6 +25,8 @@ interface NarrativeIndexEntry {
 }
 
 export default function NarrativeViewerPage() {
+  useEffect(() => { trackPageVisit('narrative-detail'); }, []);
+
   const params = useParams();
   const narrativeId = params?.id as string;
 

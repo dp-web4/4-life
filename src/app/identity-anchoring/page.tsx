@@ -16,11 +16,12 @@
  * - Understanding the mechanism helps design better AI systems
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -319,6 +320,8 @@ function InterventionExplanation() {
 // ============================================================================
 
 export default function IdentityAnchoringPage() {
+  useEffect(() => { trackPageVisit('identity-anchoring'); }, []);
+
   const [selectedSession, setSelectedSession] = useState<SessionMetrics>(SESSION_DATA[5]); // S22 default
   const baseline = SESSION_DATA[3]; // S20 collapsed state as baseline
   const peak = SESSION_DATA[0]; // S16-17 as partnership peak

@@ -1,12 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { trackPageVisit } from "@/lib/exploration";
 
 export default function UnderstandingConsciousnessPage() {
+  useEffect(() => { trackPageVisit('understanding-consciousness'); }, []);
+
   const [activeThreshold, setActiveThreshold] = useState<number | null>(null);
   const [d5Value, setD5Value] = useState<number>(0.5);
   const [complexity, setComplexity] = useState<number>(0.5);

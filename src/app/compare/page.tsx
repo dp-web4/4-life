@@ -7,12 +7,13 @@
 
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ComparativeView } from "@/components/ComparativeView";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from '@/components/ExplorerNav';
 import TermTooltip from "@/components/TermTooltip";
+import { trackPageVisit } from "@/lib/exploration";
 
 // Available simulation files
 const SIMULATIONS = [
@@ -64,6 +65,8 @@ interface LoadedSimulation {
 }
 
 export default function ComparePage() {
+  useEffect(() => { trackPageVisit('compare'); }, []);
+
   const [selectedIds, setSelectedIds] = useState<string[]>(['ep_closed_loop', 'multi_life_policy']);
   const [loadedSims, setLoadedSims] = useState<LoadedSimulation[]>([]);
   const [loading, setLoading] = useState(false);

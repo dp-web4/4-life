@@ -18,6 +18,7 @@ import { useState, useEffect, useMemo } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -398,6 +399,8 @@ function CorpusStats({ patterns }: { patterns: Pattern[] }) {
 // ============================================================================
 
 export default function PatternLibraryPage() {
+  useEffect(() => { trackPageVisit('pattern-library'); }, []);
+
   const [selectedCorpus, setSelectedCorpus] = useState(CORPUS_SOURCES[0]);
   const [corpus, setCorpus] = useState<Corpus | null>(null);
   const [loading, setLoading] = useState(true);

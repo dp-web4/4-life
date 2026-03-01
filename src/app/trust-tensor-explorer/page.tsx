@@ -14,10 +14,11 @@
  * Based on trust_tensors.py and mrh_aware_trust.py from Web4 reference implementation.
  */
 
-import { useState, useCallback, useMemo } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -386,6 +387,8 @@ function TimelineMini({ entries }: { entries: TimelineEntry[] }) {
 // ============================================================================
 
 export default function TrustTensorExplorerPage() {
+  useEffect(() => { trackPageVisit('trust-tensor-explorer'); }, []);
+
   // Core state
   const [t3, setT3] = useState<T3Tensor>({ talent: 0.5, training: 0.5, temperament: 0.5 });
   const [ci, setCi] = useState(0.85);

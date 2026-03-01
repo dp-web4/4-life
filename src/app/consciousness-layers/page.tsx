@@ -22,6 +22,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
 import { Layers, Brain, Eye, Zap, ChevronRight, RotateCcw, Check, X, ArrowRight } from 'lucide-react';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -915,6 +916,8 @@ function CapacityBuysDepth() {
 // ============================================================================
 
 export default function ConsciousnessLayersPage() {
+  useEffect(() => { trackPageVisit('consciousness-layers'); }, []);
+
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="max-w-4xl mx-auto px-4 py-8">

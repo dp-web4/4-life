@@ -15,10 +15,11 @@
  * 37 (Meta-Cognition & Facultative Behavior)
  */
 
-import { useState, useCallback, useMemo } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -696,6 +697,8 @@ function EmpiricalAnchors() {
 // ============================================================================
 
 export default function TrajectoryExplorerPage() {
+  useEffect(() => { trackPageVisit('trajectory-explorer'); }, []);
+
   // Primary capacity slider
   const [capacity, setCapacity] = useState<number>(7);
 

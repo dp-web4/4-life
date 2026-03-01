@@ -11,11 +11,12 @@
  * Structured as a visual concept map with animated connections.
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -416,6 +417,8 @@ function BridgeCard({ bridge, isExpanded, onToggle }: {
 // ============================================================================
 
 export default function ConceptsToToolsPage() {
+  useEffect(() => { trackPageVisit('concepts-to-tools'); }, []);
+
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [filter, setFilter] = useState<'all' | 'foundation' | 'intermediate' | 'advanced'>('all');
 

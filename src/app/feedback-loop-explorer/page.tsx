@@ -20,6 +20,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -134,6 +135,8 @@ const STEP_LABELS = ['Internal State', 'Observable Check', 'Adaptive Decision', 
 // ============================================================================
 
 export default function FeedbackLoopExplorer() {
+  useEffect(() => { trackPageVisit('feedback-loop-explorer'); }, []);
+
   const [activeLoop, setActiveLoop] = useState(0);
   const [brokenSteps, setBrokenSteps] = useState<boolean[]>([false, false, false, false]);
   const [signalPosition, setSignalPosition] = useState(0);

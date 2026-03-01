@@ -7,6 +7,7 @@ import DecisionEvolution from "@/components/DecisionEvolution";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // v0 Lab Console for 4-Life
 // --------------------------
@@ -133,6 +134,8 @@ interface FiveDomainEPResult {
 }
 
 export default function LabConsolePage() {
+  useEffect(() => { trackPageVisit('lab-console'); }, []);
+
   const [data, setData] = useState<CombinedResult | null>(null);
   const [multi, setMulti] = useState<CombinedMultiLifeResult | null>(null);
   const [ep, setEp] = useState<EPCloseLoopResult | null>(null);

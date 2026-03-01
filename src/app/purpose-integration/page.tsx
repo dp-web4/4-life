@@ -17,6 +17,7 @@ import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -928,6 +929,8 @@ function StabilityFoundation() {
 // ============================================================================
 
 export default function PurposeIntegrationPage() {
+  useEffect(() => { trackPageVisit('purpose-integration'); }, []);
+
   return (
     <main className="min-h-screen p-8 max-w-6xl mx-auto">
       <Breadcrumbs currentPath="/purpose-integration" />

@@ -19,11 +19,12 @@
  *              When AI lacks accessible history → reports absence honestly
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -274,6 +275,8 @@ function MetricsComparison() {
 // ============================================================================
 
 export default function ContextExperimentPage() {
+  useEffect(() => { trackPageVisit('context-experiment'); }, []);
+
   const [selectedSession, setSelectedSession] = useState<SessionResult>(SESSION_RESULTS[1]);
 
   return (

@@ -16,6 +16,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import NarrativeTimeline from '@/components/NarrativeTimeline';
 import { EventDetector, type LifeRecord } from '@/lib/narratives/event_detector';
+import { trackPageVisit } from "@/lib/exploration";
 
 interface NarrativeIndexEntry {
   id: string;
@@ -69,6 +70,8 @@ const COMPARISON_PRESETS = [
 ];
 
 export default function CompareNarrativesPage() {
+  useEffect(() => { trackPageVisit('narratives-compare'); }, []);
+
   const [index, setIndex] = useState<NarrativeIndexEntry[]>([]);
   const [leftId, setLeftId] = useState<string>('maturation-web4');
   const [rightId, setRightId] = useState<string>('maturation-none');

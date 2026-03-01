@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { trackPageVisit } from "@/lib/exploration";
 import {
   PatternAnalyzer,
   PatternQualityAnalyzer,
@@ -55,6 +56,8 @@ const CORPUS_OPTIONS: Record<CorpusSource, { label: string; file: string }> = {
 };
 
 export default function PatternsPage() {
+  useEffect(() => { trackPageVisit('patterns'); }, []);
+
   const [selectedCorpus, setSelectedCorpus] =
     useState<CorpusSource>("web4_native");
   const [corpus, setCorpus] = useState<PatternCorpus | null>(null);

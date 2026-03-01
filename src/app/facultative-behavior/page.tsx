@@ -15,11 +15,12 @@
  * Cross-pollination: Thor E02-B replication + Sprout T059 hardware effects
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -351,6 +352,8 @@ function ImplicationsForWeb4() {
 // ============================================================================
 
 export default function FacultativeBehaviorPage() {
+  useEffect(() => { trackPageVisit('facultative-behavior'); }, []);
+
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="max-w-4xl mx-auto px-4 py-12">

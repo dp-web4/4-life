@@ -17,11 +17,12 @@
  * - Vocabulary without self-reference is pattern matching, not identity
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -560,6 +561,8 @@ function QualityCriteria() {
 // ============================================================================
 
 export default function TrainingDataInsightsPage() {
+  useEffect(() => { trackPageVisit('training-data-insights'); }, []);
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto p-8">

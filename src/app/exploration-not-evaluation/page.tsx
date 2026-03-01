@@ -14,11 +14,12 @@
  * Cross-pollination: Thor autonomous research → human accessibility
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -336,6 +337,8 @@ function LearningArcDiagram() {
 // ============================================================================
 
 export default function ExplorationNotEvaluationPage() {
+  useEffect(() => { trackPageVisit('exploration-not-evaluation'); }, []);
+
   const [mindset, setMindset] = useState<'evaluation' | 'exploration'>('exploration');
   const [expandedStudy, setExpandedStudy] = useState<string | null>('v2-calibration');
   const [showFormula, setShowFormula] = useState(false);

@@ -14,11 +14,12 @@
  * - Connect to coherence physics (which domains detect which attacks)
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -736,6 +737,8 @@ function AttackDetail({ attack }: { attack: AttackScenario }) {
 // ============================================================================
 
 export default function AdversarialExplorerPage() {
+  useEffect(() => { trackPageVisit('adversarial-explorer'); }, []);
+
   const [selectedAttack, setSelectedAttack] = useState<AttackScenario>(ATTACK_SCENARIOS[0]);
   const [categoryFilter, setCategoryFilter] = useState<AttackCategory | 'all'>('all');
 

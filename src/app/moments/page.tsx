@@ -23,6 +23,7 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -470,6 +471,8 @@ function MomentCard({ moment, index }: { moment: Moment; index: number }) {
 // ============================================================================
 
 export default function MomentsGalleryPage() {
+  useEffect(() => { trackPageVisit('moments'); }, []);
+
   const [moments, setMoments] = useState<Moment[]>([]);
   const [loading, setLoading] = useState(true);
   const [categoryFilter, setCategoryFilter] = useState<string>('');

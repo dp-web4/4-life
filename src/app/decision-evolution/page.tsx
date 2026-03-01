@@ -1,12 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { trackPageVisit } from "@/lib/exploration";
 
 export default function DecisionEvolutionPage() {
+  useEffect(() => { trackPageVisit('decision-evolution'); }, []);
+
   // Simulator state
   const [currentLife, setCurrentLife] = useState<1 | 2 | 3>(1);
   const [showMetrics, setShowMetrics] = useState(true);

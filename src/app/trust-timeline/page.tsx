@@ -21,6 +21,7 @@ import RelatedConcepts from '@/components/RelatedConcepts';
 import { detectMoments, SIMULATION_SOURCES } from '@/lib/moments';
 import type { Moment, MomentCategory } from '@/lib/moments/types';
 import { CATEGORY_INFO } from '@/lib/moments/types';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -483,6 +484,8 @@ const SOURCE_ID_MAP: Record<string, string> = {
 };
 
 export default function TrustTimelinePage() {
+  useEffect(() => { trackPageVisit('trust-timeline'); }, []);
+
   const [datasets, setDatasets] = useState<DatasetTimeline[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeMetric, setActiveMetric] = useState<'trust' | 'atp'>('trust');

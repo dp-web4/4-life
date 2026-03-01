@@ -20,11 +20,12 @@
  * - Understanding this helps humans evaluate AI responses fairly
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -423,6 +424,8 @@ function ContextWindowViz() {
 // ============================================================================
 
 export default function HonestReportingPage() {
+  useEffect(() => { trackPageVisit('honest-reporting'); }, []);
+
   const [selectedExample, setSelectedExample] = useState<ResponseExample>(RESPONSE_EXAMPLES[1]);
 
   return (

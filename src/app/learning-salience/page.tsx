@@ -16,11 +16,12 @@
  * - Cross-pollination: SAGE raising concepts → human understanding
  */
 
-import { useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -430,6 +431,8 @@ function InteractiveSalienceDemo() {
 // ============================================================================
 
 export default function LearningSaliencePage() {
+  useEffect(() => { trackPageVisit('learning-salience'); }, []);
+
   const [selectedExchange, setSelectedExchange] = useState<ExampleExchange>(EXAMPLE_EXCHANGES[0]);
   const [categoryFilter, setCategoryFilter] = useState<'all' | 'high' | 'medium' | 'low'>('all');
 

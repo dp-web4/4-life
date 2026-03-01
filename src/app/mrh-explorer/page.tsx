@@ -14,10 +14,11 @@
  * Based on mrh_profiles.py, mrh_aware_trust.py, mrh_trust_propagation.py
  */
 
-import { useState, useCallback, useMemo } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -436,6 +437,8 @@ function TrustDecayVisualizer({ depthTrusts }: { depthTrusts: number[] }) {
 // ============================================================================
 
 export default function MRHExplorerPage() {
+  useEffect(() => { trackPageVisit('mrh-explorer'); }, []);
+
   const [maxDepth, setMaxDepth] = useState(2);
   const [highlightNode, setHighlightNode] = useState<string | null>(null);
   const [profile, setProfile] = useState<MRHProfile>({

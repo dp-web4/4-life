@@ -17,10 +17,11 @@
  * - Learn to scaffold conversations for desired outcomes
  */
 
-import { useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -356,6 +357,8 @@ function ScenarioCard({
 // ============================================================================
 
 export default function ConversationalContextPage() {
+  useEffect(() => { trackPageVisit('conversational-context'); }, []);
+
   const [expandedId, setExpandedId] = useState<string | null>('memory-capability');
 
   const handleToggle = useCallback((id: string) => {

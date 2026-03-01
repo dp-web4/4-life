@@ -18,6 +18,7 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -949,6 +950,8 @@ function ExperimentDesigner() {
 // ============================================================================
 
 export default function PromptFramingLabPage() {
+  useEffect(() => { trackPageVisit('prompt-framing-lab'); }, []);
+
   const [activeTab, setActiveTab] = useState<'tester' | 'compare' | 'visualizer' | 'data' | 'designer'>('tester');
 
   const tabs = [

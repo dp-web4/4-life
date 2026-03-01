@@ -22,6 +22,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import TermTooltip, { ATP, T3 } from "@/components/TermTooltip";
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -731,6 +732,8 @@ function RealWorldImplications() {
 // ============================================================================
 
 export default function KarmaConsequencesPage() {
+  useEffect(() => { trackPageVisit('karma-consequences'); }, []);
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto p-8">

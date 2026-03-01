@@ -21,6 +21,7 @@ import Link from 'next/link';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
+import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
 // Types
@@ -672,6 +673,8 @@ function SNARCBreakdown({ experience }: { experience: Experience }) {
 // ============================================================================
 
 export default function SleepConsolidationPage() {
+  useEffect(() => { trackPageVisit('sleep-consolidation'); }, []);
+
   const [selectedExperience, setSelectedExperience] = useState<Experience>(EXAMPLE_EXPERIENCES[0]);
 
   return (
