@@ -511,6 +511,30 @@ export default function FederationEconomicsPage() {
 
           <div>
             <h3 className="text-lg font-semibold text-gray-300 mb-3">
+              Consensus Under Partial Synchrony
+            </h3>
+            <p className="text-gray-300 mb-3">
+              Federation members don&apos;t always have reliable connections. Networks partition,
+              messages arrive late, clocks drift. Web4 uses a <strong className="text-amber-400">PBFT-Lite
+              consensus protocol</strong> designed for this reality: vector clocks track causal
+              ordering, partition detectors identify network splits, and leader election continues
+              making progress even when some nodes are unreachable.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              The key insight: in partial synchrony, 40% finalization rate IS progress — the
+              system doesn&apos;t stall waiting for perfect conditions. When partitions heal,
+              nodes reconcile state automatically using the causal history encoded in vector
+              clocks. Byzantine faults (malicious nodes) are bounded by the standard
+              n &ge; 3f+1 requirement.
+            </p>
+            <p className="text-gray-500 text-xs italic">
+              Formally specified and tested (70 integration checks), but not yet validated
+              at real-world network scale.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-300 mb-3">
               Implementation
             </h3>
             <p className="text-gray-300 mb-3">
