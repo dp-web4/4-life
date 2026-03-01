@@ -21,8 +21,10 @@ import type {
   AgentSnapshot,
   Coalition,
   StrategyType,
+  AgentRoleName,
   EpochSnapshot,
 } from '../simulation/society-engine';
+import { AGENT_ROLES } from '../simulation/society-engine';
 
 // ============================================================================
 // Types
@@ -198,9 +200,9 @@ export class SocietyNarrativeGenerator {
     // Build protagonist highlight
     let protagonist: CharacterHighlight | null = null;
     if (protagonistAgent && protagonistScore > 3) {
-      const archetype = STRATEGY_ARCHETYPES[protagonistAgent.strategy];
+      const roleLabel = AGENT_ROLES[protagonistAgent.role]?.label ?? 'Villager';
       protagonist = {
-        name: protagonistAgent.name,
+        name: `${protagonistAgent.name} the ${roleLabel}`,
         strategy: protagonistAgent.strategy,
         reason: this.getProtagonistReason(protagonistAgent, protagonistScore),
         quote: this.getProtagonistQuote(protagonistAgent),
@@ -210,8 +212,9 @@ export class SocietyNarrativeGenerator {
     // Build antagonist highlight
     let antagonist: CharacterHighlight | null = null;
     if (antagonistAgent && antagonistScore > 3 && antagonistAgent.id !== protagonistAgent?.id) {
+      const roleLabel = AGENT_ROLES[antagonistAgent.role]?.label ?? 'Villager';
       antagonist = {
-        name: antagonistAgent.name,
+        name: `${antagonistAgent.name} the ${roleLabel}`,
         strategy: antagonistAgent.strategy,
         reason: this.getAntagonistReason(antagonistAgent, events),
         quote: this.getAntagonistQuote(antagonistAgent),
@@ -352,18 +355,34 @@ export class SocietyNarrativeGenerator {
   // Character Profiles
   // ============================================================================
 
+  /**
+   * Combine role + strategy into a humanized archetype name.
+   * E.g. "The Generous Farmer", "The Corrupt Merchant"
+   */
+  private roleStrategyArchetype(agent: AgentSnapshot): string {
+    const roleLabel = AGENT_ROLES[agent.role]?.label ?? 'Villager';
+    const adjectives: Record<StrategyType, string> = {
+      cooperator: 'Generous',
+      defector: 'Corrupt',
+      reciprocator: 'Fair-minded',
+      cautious: 'Wary',
+      adaptive: 'Shrewd',
+      human: 'Unpredictable',
+    };
+    return `The ${adjectives[agent.strategy]} ${roleLabel}`;
+  }
+
   private buildCharacterProfiles(result: SocietyResult): CharacterProfile[] {
     const finalEpoch = result.epochs[result.epochs.length - 1];
     const profiles: CharacterProfile[] = [];
 
     for (const agent of finalEpoch.agents) {
-      const archetypeInfo = STRATEGY_ARCHETYPES[agent.strategy];
       const arc = this.buildCharacterArc(agent, result);
 
       profiles.push({
         name: agent.name,
         strategy: agent.strategy,
-        archetype: archetypeInfo.archetype,
+        archetype: this.roleStrategyArchetype(agent),
         arc,
         finalStatus: this.determineStatus(agent),
         notableActions: this.findNotableActions(agent, result),
@@ -380,6 +399,7 @@ export class SocietyNarrativeGenerator {
 
   private buildCharacterArc(agent: AgentSnapshot, result: SocietyResult): string {
     const archetypeInfo = STRATEGY_ARCHETYPES[agent.strategy];
+    const roleLabel = AGENT_ROLES[agent.role]?.label ?? 'villager';
     const coopRate = agent.cooperationRate;
     const reputation = agent.reputation;
     const coalitionSize = agent.coalitionSize;
@@ -387,47 +407,47 @@ export class SocietyNarrativeGenerator {
     // Defector arc
     if (agent.strategy === 'defector') {
       if (coalitionSize > 0) {
-        return `Despite their nature, ${agent.name} found unexpected allies, perhaps proving that even opportunists need community.`;
+        return `Despite cheating as a ${roleLabel.toLowerCase()}, ${agent.name} found unexpected allies — perhaps even exploiters need community.`;
       }
       if (reputation < 0.3) {
-        return `${agent.name} ${archetypeInfo.personality}, but the society eventually saw through their games, leaving them isolated.`;
+        return `${agent.name} the ${roleLabel} took from everyone, but the village eventually saw through it. Nobody trades with a known cheat.`;
       }
-      return `${agent.name} cooperated only ${Math.round(coopRate * 100)}% of the time${agent.atp < 50 ? `, and ended with just ${Math.round(agent.atp)} ATP to show for it` : ''}. The short game rarely pays off in a society with memory.`;
+      return `${agent.name} the ${roleLabel} ran unfair deals ${Math.round((1 - coopRate) * 100)}% of the time${agent.atp < 50 ? ` and ended nearly broke` : ''}. Short-term gains, long-term losses.`;
     }
 
     // Cooperator arc
     if (agent.strategy === 'cooperator') {
       if (agent.atp > 100) {
-        return `${agent.name}'s unwavering trust was rewarded with prosperity, proving that idealism can pay.`;
+        return `${agent.name} the ${roleLabel} traded fairly with everyone, and the village rewarded that trust with prosperity.`;
       }
       if (agent.atp < 50) {
-        return `${agent.name} gave and gave, sometimes to those who didn't deserve it. A cautionary tale about trust without wisdom.`;
+        return `${agent.name} the ${roleLabel} gave and gave, sometimes to those who didn't deserve it. Generosity without wisdom has a cost.`;
       }
-      return `${agent.name} cooperated ${Math.round(coopRate * 100)}% of the time and ended with ${Math.round(agent.atp)} ATP — ${agent.atp >= 80 ? 'a solid return on trust' : 'proof that generosity without strategy has costs'}.`;
+      return `${agent.name} the ${roleLabel} cooperated ${Math.round(coopRate * 100)}% of the time — ${agent.atp >= 80 ? 'a solid return on honest dealing' : 'generous, but the village didn\'t always reciprocate'}.`;
     }
 
     // Reciprocator arc
     if (agent.strategy === 'reciprocator') {
       if (coalitionSize >= 3) {
-        return `${agent.name}'s simple code—match what you receive—proved powerful. They became the backbone of a coalition.`;
+        return `${agent.name} the ${roleLabel} lived by a simple code — treat others as they treat you. It made them the backbone of the village alliance.`;
       }
-      return `${agent.name} mirrored what they received — cooperating ${Math.round(coopRate * 100)}% of the time. ${agent.atp > 90 ? 'Balance proved profitable.' : 'A fair strategy, though not always a lucrative one.'}`;
+      return `${agent.name} the ${roleLabel} gave fairness for fairness, ${Math.round(coopRate * 100)}% cooperation. ${agent.atp > 90 ? 'Fair dealing proved profitable.' : 'Honest, though not always lucrative.'}`;
     }
 
     // Cautious arc
     if (agent.strategy === 'cautious') {
       if (reputation > 0.5) {
-        return `${agent.name}'s patience paid off. By waiting for proof of trustworthiness, they avoided the pitfalls that caught others.`;
+        return `${agent.name} the ${roleLabel} waited and watched before trusting anyone. That patience kept them safe where others stumbled.`;
       }
-      return `${agent.name} held back, perhaps too much. Sometimes trust requires a leap of faith.`;
+      return `${agent.name} the ${roleLabel} held back, perhaps too much. Sometimes you have to take a chance on your neighbors.`;
     }
 
     // Adaptive arc
     if (agent.strategy === 'adaptive') {
-      return `${agent.name} read the room and adapted — ending with ${Math.round(agent.atp)} ATP and a ${Math.round(coopRate * 100)}% cooperation rate. ${coopRate > 0.6 ? 'They learned that cooperation was the winning move here.' : 'Their strategy shifted with the winds.'}`;
+      return `${agent.name} the ${roleLabel} read the village mood and adapted — ${Math.round(coopRate * 100)}% cooperation, ${Math.round(agent.atp)} energy. ${coopRate > 0.6 ? 'They learned that honesty was the best policy here.' : 'Their loyalties shifted with the wind.'}`;
     }
 
-    return `${agent.name} walked their own path in this society.`;
+    return `${agent.name} the ${roleLabel} walked their own path through the village.`;
   }
 
   private determineStatus(agent: AgentSnapshot): 'thriving' | 'surviving' | 'struggling' | 'dead' {

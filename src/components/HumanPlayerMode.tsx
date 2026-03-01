@@ -18,6 +18,8 @@ import {
   SOCIETY_PRESETS,
   STRATEGY_COLORS,
   STRATEGY_LABELS,
+  AGENT_ROLES,
+  roleProvidesMet,
   type AgentSnapshot,
   type Coalition,
   type SocietyMetrics,
@@ -117,12 +119,36 @@ function DecisionPanel({
 
   return (
     <div className="bg-gradient-to-br from-teal-900/30 to-gray-900 border-2 border-teal-500/50 rounded-xl p-6 mb-6">
-      <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-teal-400 mb-2">Your Turn</h2>
-        <p className="text-gray-300">
-          You're interacting with <span className="font-bold text-white">{partner.name}</span>
-        </p>
-      </div>
+      {/* Interaction context — why are you meeting? */}
+      {(() => {
+        const partnerRole = AGENT_ROLES[partner.role];
+        const playerRole = context.player.role ? AGENT_ROLES[context.player.role] : null;
+        const partnerProvidesForPlayer = playerRole && roleProvidesMet(partner.role, context.player.role);
+        const playerProvidesForPartner = playerRole && roleProvidesMet(context.player.role, partner.role);
+
+        return (
+          <div className="text-center mb-6">
+            <h2 className="text-2xl font-bold text-teal-400 mb-2">Your Turn</h2>
+            <p className="text-gray-300 text-lg">
+              <span className="text-2xl mr-2">{partnerRole.icon}</span>
+              <span className="font-bold text-white">{partner.name} the {partnerRole.label}</span>
+              {partnerProvidesForPlayer
+                ? <span> can provide <span className="text-green-300 font-semibold">{partnerRole.provides}</span>. Will you deal fairly?</span>
+                : playerProvidesForPartner
+                  ? <span> needs your <span className="text-amber-300 font-semibold">{playerRole!.provides}</span>. Will you help?</span>
+                  : <span> approaches you in the village.</span>
+              }
+            </p>
+            {/* Reputation indicator */}
+            <div className="mt-2 flex items-center justify-center gap-2 text-sm">
+              <span className="text-gray-500">Town reputation:</span>
+              <span className={partner.reputation > 0.6 ? 'text-green-400' : partner.reputation < 0.4 ? 'text-red-400' : 'text-gray-300'}>
+                {partner.reputation > 0.7 ? 'Well-respected' : partner.reputation > 0.5 ? 'Decent standing' : partner.reputation > 0.3 ? 'Mixed reputation' : 'Distrusted'}
+              </span>
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Partner Info */}
       <div className="grid md:grid-cols-2 gap-4 mb-6">
@@ -130,13 +156,13 @@ function DecisionPanel({
         <div className="bg-gray-800/50 rounded-lg p-4">
           <div className="flex items-center gap-3 mb-3">
             <div
-              className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-lg"
               style={{ backgroundColor: STRATEGY_COLORS[partner.strategy] }}
             >
-              {partner.name[0]}
+              {AGENT_ROLES[partner.role].icon}
             </div>
             <div>
-              <div className="font-bold text-white">{partner.name}</div>
+              <div className="font-bold text-white">{partner.name} the {AGENT_ROLES[partner.role].label}</div>
               <div className="text-sm" style={{ color: STRATEGY_COLORS[partner.strategy] }}>
                 {STRATEGY_LABELS[partner.strategy]}
               </div>
@@ -144,16 +170,22 @@ function DecisionPanel({
           </div>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
-              <span className="text-gray-400">Their ATP:</span>
+              <span className="text-gray-400">Provides:</span>
+              <span className="text-green-300">{AGENT_ROLES[partner.role].provides}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-400">Their energy:</span>
               <span className="text-white">{partner.atp}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-400">Coalition size:</span>
+              <span className="text-gray-400">Allies:</span>
               <span className="text-white">{partner.coalitionSize}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-400">Reputation:</span>
-              <span className="text-white">{(partner.reputation * 100).toFixed(0)}%</span>
+              <span className={partner.reputation > 0.6 ? 'text-green-400' : partner.reputation < 0.4 ? 'text-red-400' : 'text-white'}>
+                {(partner.reputation * 100).toFixed(0)}%
+              </span>
             </div>
           </div>
         </div>
@@ -689,6 +721,7 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
       id: a.id,
       name: a.name,
       strategy: a.strategy,
+      role: a.role,
       atp: a.atp,
       alive: a.alive,
       generation: a.generation,
@@ -825,6 +858,7 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
       id: a.id,
       name: a.name,
       strategy: a.strategy,
+      role: a.role,
       atp: a.atp,
       alive: a.alive,
       generation: a.generation,

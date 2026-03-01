@@ -10,6 +10,7 @@
 import { useRef } from 'react';
 import {
   STRATEGY_COLORS,
+  AGENT_ROLES,
   type AgentSnapshot,
   type Coalition,
   type Interaction,
@@ -220,28 +221,37 @@ export default function NetworkGraph({
               stroke={color}
               strokeWidth={1.5}
             />
-            {/* Name label */}
+            {/* Role icon inside node */}
             <text
               x={pos.x}
-              y={pos.y + nodeRadius + 14}
+              y={pos.y + (compact ? 4 : 5)}
               textAnchor="middle"
-              fill="#9ca3af"
+              fontSize={compact ? 10 : 13}
+              style={{ pointerEvents: 'none' }}
+            >
+              {AGENT_ROLES[agent.role].icon}
+            </text>
+            {/* Name + role label below */}
+            <text
+              x={pos.x}
+              y={pos.y + nodeRadius + 12}
+              textAnchor="middle"
+              fill="#e5e7eb"
               fontSize={compact ? 7 : 9}
               fontFamily="monospace"
+              fontWeight="bold"
             >
               {agent.name}
             </text>
-            {/* Node label — "YOU" for human player, cooperation rate for others */}
             <text
               x={pos.x}
-              y={pos.y + 3}
+              y={pos.y + nodeRadius + (compact ? 21 : 23)}
               textAnchor="middle"
-              fill="#fff"
-              fontSize={isHuman ? (compact ? 8 : 9) : (compact ? 7 : 8)}
-              fontWeight="bold"
+              fill="#9ca3af"
+              fontSize={compact ? 6 : 7}
               fontFamily="monospace"
             >
-              {isHuman ? 'YOU' : `${Math.round(agent.cooperationRate * 100)}%`}
+              {isHuman ? 'YOU' : AGENT_ROLES[agent.role].label}
             </text>
           </g>
         );

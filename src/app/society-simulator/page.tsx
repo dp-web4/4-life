@@ -32,6 +32,7 @@ import {
   SOCIETY_PRESETS,
   STRATEGY_COLORS,
   STRATEGY_LABELS,
+  AGENT_ROLES,
   AgentSnapshot,
   Coalition,
   SocietyMetrics,
@@ -590,20 +591,37 @@ function AgentInspector({ agent, allAgents }: {
     .sort((a, b) => a.trust - b.trust)
     .slice(0, 3);
 
+  const roleInfo = AGENT_ROLES[agent.role];
+
   return (
     <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700/50">
       <div className="flex items-center gap-3 mb-3">
-        <div
-          className="w-4 h-4 rounded-full"
-          style={{ backgroundColor: STRATEGY_COLORS[agent.strategy] }}
-        />
-        <h3 className="text-lg font-bold">{agent.name}</h3>
-        <span className="text-sm px-2 py-0.5 rounded-full bg-gray-700 text-gray-300">
-          {STRATEGY_LABELS[agent.strategy]}
-        </span>
-        {agent.generation > 1 && (
-          <span className="text-xs text-amber-400">Rebirth {agent.generation - 1}</span>
-        )}
+        <span className="text-2xl">{roleInfo.icon}</span>
+        <div>
+          <div className="flex items-center gap-2">
+            <h3 className="text-lg font-bold">{agent.name}</h3>
+            <span className="text-sm text-gray-300">the {roleInfo.label}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div
+              className="w-3 h-3 rounded-full"
+              style={{ backgroundColor: STRATEGY_COLORS[agent.strategy] }}
+            />
+            <span className="text-sm text-gray-400">{STRATEGY_LABELS[agent.strategy]}</span>
+            {agent.generation > 1 && (
+              <span className="text-xs text-amber-400">Rebirth {agent.generation - 1}</span>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Role info */}
+      <div className="bg-gray-900/50 rounded p-2 mb-3 text-sm">
+        <span className="text-gray-400">Provides: </span>
+        <span className="text-green-300">{roleInfo.provides}</span>
+        <span className="text-gray-600 mx-2">|</span>
+        <span className="text-gray-400">Needs: </span>
+        <span className="text-amber-300">{roleInfo.needs.join(', ')}</span>
       </div>
 
       <p className="text-sm text-gray-400 mb-3">{strategyDescriptions[agent.strategy]}</p>

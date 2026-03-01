@@ -59,6 +59,8 @@ export interface SocietyConfig {
   karmaStrength: number;
   /** Simulation tick delay for animation (ms) */
   tickDelay: number;
+  /** How much community reputation influences trust decisions (0-1). Default 0.2 */
+  communityReputationWeight: number;
 }
 
 export interface StrategyDistribution {
@@ -137,6 +139,7 @@ export const DEFAULT_SOCIETY_CONFIG: SocietyConfig = {
   enableRebirth: true,
   karmaStrength: 0.4,
   tickDelay: 80,
+  communityReputationWeight: 0.2,
 };
 
 export const SOCIETY_PRESETS: Record<string, { label: string; description: string; config: Partial<SocietyConfig> }> = {
@@ -233,6 +236,44 @@ export const SOCIETY_PRESETS: Record<string, { label: string; description: strin
 
 export type StrategyType = 'cooperator' | 'defector' | 'reciprocator' | 'cautious' | 'adaptive' | 'human';
 
+// ============================================================================
+// Agent Roles — orthogonal to strategy (a farmer can be a cooperator OR defector)
+// ============================================================================
+
+export type AgentRoleName = 'farmer' | 'builder' | 'healer' | 'merchant' | 'teacher' | 'guard' | 'artisan' | 'scout';
+
+export type ResourceType = 'food' | 'shelter' | 'healing' | 'trade' | 'knowledge' | 'protection' | 'goods' | 'materials' | 'tools' | 'herbs';
+
+export interface AgentRole {
+  name: AgentRoleName;
+  icon: string;
+  label: string;
+  provides: ResourceType;
+  needs: ResourceType[];
+}
+
+export const AGENT_ROLES: Record<AgentRoleName, AgentRole> = {
+  farmer:   { name: 'farmer',   icon: '🌾', label: 'Farmer',   provides: 'food',       needs: ['tools', 'protection', 'healing'] },
+  builder:  { name: 'builder',  icon: '🔨', label: 'Builder',  provides: 'shelter',    needs: ['food', 'materials', 'healing'] },
+  healer:   { name: 'healer',   icon: '⚕️', label: 'Healer',   provides: 'healing',    needs: ['food', 'herbs', 'shelter'] },
+  merchant: { name: 'merchant', icon: '💰', label: 'Merchant', provides: 'trade',      needs: ['food', 'goods', 'protection'] },
+  teacher:  { name: 'teacher',  icon: '📚', label: 'Teacher',  provides: 'knowledge',  needs: ['food', 'shelter', 'materials'] },
+  guard:    { name: 'guard',    icon: '🛡️', label: 'Guard',    provides: 'protection', needs: ['food', 'tools', 'healing'] },
+  artisan:  { name: 'artisan',  icon: '🎨', label: 'Artisan',  provides: 'goods',      needs: ['food', 'materials', 'trade'] },
+  scout:    { name: 'scout',    icon: '🔭', label: 'Scout',    provides: 'materials',  needs: ['food', 'shelter', 'tools'] },
+};
+
+const ROLE_ORDER: AgentRoleName[] = ['farmer', 'builder', 'healer', 'merchant', 'teacher', 'guard', 'artisan', 'scout'];
+
+/**
+ * Check if agent1's role provides something agent2's role needs
+ */
+export function roleProvidesMet(provider: AgentRoleName, consumer: AgentRoleName): boolean {
+  const providerRole = AGENT_ROLES[provider];
+  const consumerRole = AGENT_ROLES[consumer];
+  return consumerRole.needs.includes(providerRole.provides);
+}
+
 export const STRATEGY_COLORS: Record<StrategyType, string> = {
   cooperator: '#22c55e',   // green
   defector: '#ef4444',     // red
@@ -255,6 +296,7 @@ export interface Agent {
   id: number;
   name: string;
   strategy: StrategyType;
+  role: AgentRoleName;
   atp: number;
   alive: boolean;
   generation: number;
@@ -275,6 +317,13 @@ export interface Agent {
   reputation: number;
 }
 
+export interface InteractionContext {
+  agent1Role: AgentRoleName;
+  agent2Role: AgentRoleName;
+  isNeedBased: boolean;
+  narrative: string;
+}
+
 export interface Interaction {
   round: number;
   epoch: number;
@@ -287,6 +336,7 @@ export interface Interaction {
   agent1TrustChange: number;
   agent2TrustChange: number;
   outcome: 'mutual_cooperation' | 'mutual_defection' | 'agent1_exploited' | 'agent2_exploited';
+  context?: InteractionContext;
 }
 
 export interface Coalition {
@@ -309,6 +359,7 @@ export interface AgentSnapshot {
   id: number;
   name: string;
   strategy: StrategyType;
+  role: AgentRoleName;
   atp: number;
   alive: boolean;
   generation: number;
@@ -443,10 +494,12 @@ export class SocietyEngine {
 
   private createAgent(strategy: StrategyType, karma: number = 0): Agent {
     const id = this.nextAgentId++;
+    const role = ROLE_ORDER[id % ROLE_ORDER.length];
     return {
       id,
       name: AGENT_NAMES[id % AGENT_NAMES.length] + (id >= AGENT_NAMES.length ? ` ${Math.floor(id / AGENT_NAMES.length) + 1}` : ''),
       strategy,
+      role,
       atp: this.config.initialATP + karma * 20,
       alive: true,
       generation: karma > 0 ? 2 : 1,
@@ -784,7 +837,7 @@ export class SocietyEngine {
       for (let i = 0; i < this.config.interactionsPerRound; i++) {
         const candidates = aiAgents.filter(a => a.id !== agent.id);
         if (candidates.length === 0) continue;
-        const partner = candidates[Math.floor(this.rng() * candidates.length)];
+        const partner = this.selectPartnerWeighted(agent, candidates);
 
         const alreadyInteracted = interactions.some(
           int => (int.agent1Id === agent.id && int.agent2Id === partner.id) ||
@@ -803,7 +856,7 @@ export class SocietyEngine {
       for (let i = 0; i < this.config.interactionsPerRound; i++) {
         const candidates = aliveAgents.filter(a => a.id !== humanAgent.id);
         if (candidates.length === 0) continue;
-        const partner = candidates[Math.floor(this.rng() * candidates.length)];
+        const partner = this.selectPartnerWeighted(humanAgent, candidates);
 
         const alreadyInteracted = interactions.some(
           int => (int.agent1Id === humanAgent.id && int.agent2Id === partner.id) ||
@@ -922,6 +975,7 @@ export class SocietyEngine {
     this.updateCoalitionMembership(a1, a2);
     this.updateCoalitionMembership(a2, a1);
 
+    const context = this.generateInteractionContext(a1, a2);
     const interaction: Interaction = {
       round,
       epoch,
@@ -934,6 +988,7 @@ export class SocietyEngine {
       agent1TrustChange: a1TrustChange,
       agent2TrustChange: a2TrustChange,
       outcome,
+      context,
     };
 
     this.allInteractions.push(interaction);
@@ -948,6 +1003,7 @@ export class SocietyEngine {
       id: agent.id,
       name: agent.name,
       strategy: agent.strategy,
+      role: agent.role,
       atp: agent.atp,
       alive: agent.alive,
       generation: agent.generation,
@@ -976,6 +1032,64 @@ export class SocietyEngine {
   }
 
   // ============================================================================
+  // Role-based partner selection & interaction context
+  // ============================================================================
+
+  /**
+   * Select a partner with weighted random favoring complementary roles.
+   * Partners whose role provides something the agent needs get 3x weight.
+   */
+  private selectPartnerWeighted(agent: Agent, candidates: Agent[]): Agent {
+    const weights = candidates.map(c => {
+      // 3x weight if partner provides something agent needs
+      const partnerProvides = roleProvidesMet(c.role, agent.role);
+      // Also slight boost if agent provides what partner needs (mutual benefit)
+      const agentProvides = roleProvidesMet(agent.role, c.role);
+      let weight = 1;
+      if (partnerProvides) weight = 3;
+      if (partnerProvides && agentProvides) weight = 4; // mutual need = strongest
+      return weight;
+    });
+
+    const totalWeight = weights.reduce((s, w) => s + w, 0);
+    let roll = this.rng() * totalWeight;
+    for (let i = 0; i < candidates.length; i++) {
+      roll -= weights[i];
+      if (roll <= 0) return candidates[i];
+    }
+    return candidates[candidates.length - 1];
+  }
+
+  /**
+   * Generate interaction context describing why two agents are meeting.
+   */
+  private generateInteractionContext(a1: Agent, a2: Agent): InteractionContext {
+    const role1 = AGENT_ROLES[a1.role];
+    const role2 = AGENT_ROLES[a2.role];
+    const a1NeedsA2 = roleProvidesMet(a2.role, a1.role);
+    const a2NeedsA1 = roleProvidesMet(a1.role, a2.role);
+    const isNeedBased = a1NeedsA2 || a2NeedsA1;
+
+    let narrative: string;
+    if (a1NeedsA2 && a2NeedsA1) {
+      narrative = `${a1.name} the ${role1.label} and ${a2.name} the ${role2.label} trade — ${role1.provides} for ${role2.provides}`;
+    } else if (a1NeedsA2) {
+      narrative = `${a1.name} the ${role1.label} needs ${role2.provides} from ${a2.name} the ${role2.label}`;
+    } else if (a2NeedsA1) {
+      narrative = `${a2.name} the ${role2.label} needs ${role1.provides} from ${a1.name} the ${role1.label}`;
+    } else {
+      narrative = `${a1.name} the ${role1.label} meets ${a2.name} the ${role2.label} in the village`;
+    }
+
+    return {
+      agent1Role: a1.role,
+      agent2Role: a2.role,
+      isNeedBased,
+      narrative,
+    };
+  }
+
+  // ============================================================================
   // Core Mechanics
   // ============================================================================
 
@@ -984,13 +1098,12 @@ export class SocietyEngine {
     const aliveAgents = this.agents.filter(a => a.alive);
     if (aliveAgents.length < 2) return interactions;
 
-    // Each agent interacts with random partners
+    // Each agent interacts with weighted-random partners (biased toward complementary roles)
     for (const agent of aliveAgents) {
       for (let i = 0; i < this.config.interactionsPerRound; i++) {
-        // Pick a random partner (not self)
         const candidates = aliveAgents.filter(a => a.id !== agent.id);
         if (candidates.length === 0) continue;
-        const partner = candidates[Math.floor(this.rng() * candidates.length)];
+        const partner = this.selectPartnerWeighted(agent, candidates);
 
         // Check if this pair already interacted this round
         const alreadyInteracted = interactions.some(
@@ -1088,6 +1201,9 @@ export class SocietyEngine {
     this.updateCoalitionMembership(a1, a2);
     this.updateCoalitionMembership(a2, a1);
 
+    // Generate interaction context
+    const context = this.generateInteractionContext(a1, a2);
+
     return {
       round,
       epoch,
@@ -1100,11 +1216,27 @@ export class SocietyEngine {
       agent1TrustChange: a1TrustChange,
       agent2TrustChange: a2TrustChange,
       outcome,
+      context,
     };
   }
 
+  /**
+   * Blend bilateral trust with community reputation.
+   * Gossip weight doubles for strangers (no direct experience).
+   */
+  private getEffectiveTrust(agent: Agent, partner: Agent): number {
+    const bilateralTrust = agent.trustMap.get(partner.id);
+    const hasDirectExperience = bilateralTrust !== undefined;
+    const trust = bilateralTrust ?? 0.5;
+    const reputation = partner.reputation;
+    const baseWeight = this.config.communityReputationWeight;
+    // Gossip matters 2x more when you've never interacted with this person
+    const repWeight = hasDirectExperience ? baseWeight : Math.min(baseWeight * 2, 0.5);
+    return trust * (1 - repWeight) + reputation * repWeight;
+  }
+
   private chooseAction(agent: Agent, partner: Agent): 'cooperate' | 'defect' {
-    const trustInPartner = agent.trustMap.get(partner.id) ?? 0.5;
+    const effectiveTrust = this.getEffectiveTrust(agent, partner);
 
     switch (agent.strategy) {
       case 'cooperator':
@@ -1121,19 +1253,19 @@ export class SocietyEngine {
       }
 
       case 'cautious': {
-        // Cooperate only if trust is above threshold
-        return trustInPartner > 0.4 ? 'cooperate' : 'defect';
+        // Cooperate only if effective trust is above threshold
+        return effectiveTrust > 0.4 ? 'cooperate' : 'defect';
       }
 
       case 'adaptive': {
-        // Probabilistic: cooperate with probability proportional to trust
-        return this.rng() < trustInPartner ? 'cooperate' : 'defect';
+        // Probabilistic: cooperate with probability proportional to effective trust
+        return this.rng() < effectiveTrust ? 'cooperate' : 'defect';
       }
 
       case 'human': {
         // Human player - in automated mode, defaults to adaptive behavior
         // In interactive mode, this is overridden by executeHumanInteraction
-        return this.rng() < trustInPartner ? 'cooperate' : 'defect';
+        return this.rng() < effectiveTrust ? 'cooperate' : 'defect';
       }
 
       default:
@@ -1159,14 +1291,15 @@ export class SocietyEngine {
     for (const agent of this.agents) {
       if (agent.alive && agent.atp <= 0) {
         agent.alive = false;
+        const roleInfo = AGENT_ROLES[agent.role];
         this.events.push({
           epoch,
           type: 'agent_death',
-          message: `${agent.name} (${STRATEGY_LABELS[agent.strategy]}) died - ATP exhausted`,
+          message: `${agent.name} the ${roleInfo.label} died — ran out of energy`,
           agentIds: [agent.id],
           significance: agent.strategy === 'defector'
-            ? 'Exploitative strategy proved unsustainable'
-            : 'Even cooperative agents can fail in hostile environments',
+            ? 'Cheating catches up with you eventually'
+            : 'Even honest folk can starve in a broken economy',
         });
 
         // Rebirth with karma
@@ -1175,14 +1308,15 @@ export class SocietyEngine {
         newAgent.generation = agent.generation + 1;
         this.agents.push(newAgent);
 
+        const newRoleInfo = AGENT_ROLES[newAgent.role];
         this.events.push({
           epoch,
           type: 'agent_rebirth',
-          message: `${newAgent.name} (${STRATEGY_LABELS[newAgent.strategy]}) born with karma ${karmaScore.toFixed(2)}`,
+          message: `${newAgent.name} the ${newRoleInfo.label} arrives in the village${karmaScore > 0.3 ? ' with a good reputation' : ''}`,
           agentIds: [newAgent.id],
           significance: karmaScore > 0.3
-            ? 'Good reputation earns better starting conditions'
-            : 'Poor reputation means starting from behind',
+            ? 'Good reputation opens doors for newcomers'
+            : 'Starting fresh with no connections is hard',
         });
       }
     }
@@ -1328,36 +1462,60 @@ export class SocietyEngine {
     coalitions: Coalition[],
     metrics: SocietyMetrics,
   ): void {
-    // Coalition formation
+    const roleLabel = (id: number) => {
+      const a = this.agents.find(ag => ag.id === id);
+      return a ? `${a.name} the ${AGENT_ROLES[a.role].label}` : `Agent #${id}`;
+    };
+
+    // Coalition formation — humanized
     if (coalitions.length > 0 && epoch > 0) {
       const largest = coalitions[0];
       if (largest.members.length >= 4) {
+        // Identify dominant roles in coalition
+        const roles = largest.members
+          .map(id => this.agents.find(a => a.id === id))
+          .filter(Boolean)
+          .map(a => AGENT_ROLES[a!.role].label);
+        const uniqueRoles = [...new Set(roles)].slice(0, 3);
         const memberNames = largest.members
-          .map(id => this.agents.find(a => a.id === id)?.name || `#${id}`)
-          .slice(0, 3)
+          .map(id => roleLabel(id))
+          .slice(0, 2)
           .join(', ');
         this.events.push({
           epoch,
           type: 'coalition_formed',
-          message: `Large coalition: ${memberNames}${largest.members.length > 3 ? ` +${largest.members.length - 3} more` : ''} (avg trust: ${largest.averageTrust.toFixed(2)})`,
+          message: `The ${uniqueRoles.join('s, ')}s have formed a trade alliance — ${memberNames}${largest.members.length > 2 ? ` and ${largest.members.length - 2} others` : ''}`,
           agentIds: largest.members,
-          significance: 'Mutual trust creates structure - society self-organizes',
+          significance: 'Complementary roles create natural alliances built on mutual need',
         });
       }
     }
 
-    // Defector isolation
+    // Defector isolation — humanized
     const aliveDefectors = this.agents.filter(a => a.alive && a.strategy === 'defector');
     for (const defector of aliveDefectors) {
       if (defector.coalitionPartners.size === 0 && defector.totalInteractions > 5) {
         this.events.push({
           epoch,
           type: 'defector_isolated',
-          message: `${defector.name} (Defector) is isolated - no coalition partners`,
+          message: `${defector.name} the ${AGENT_ROLES[defector.role].label} has been shunned — nobody trades with them`,
           agentIds: [defector.id],
-          significance: 'Trust-based societies naturally exclude exploiters',
+          significance: 'Word gets around. Communities protect themselves from exploitation.',
         });
       }
+    }
+
+    // Community reputation event — most trusted person
+    const aliveAgents = this.agents.filter(a => a.alive);
+    const mostTrusted = aliveAgents.reduce((best, a) => a.reputation > best.reputation ? a : best, aliveAgents[0]);
+    if (mostTrusted && mostTrusted.reputation > 0.7 && epoch > 0) {
+      this.events.push({
+        epoch,
+        type: 'trust_network_connected',
+        message: `${mostTrusted.name} the ${AGENT_ROLES[mostTrusted.role].label} is the most trusted person in town`,
+        agentIds: [mostTrusted.id],
+        significance: 'Consistent cooperation builds a reputation that opens doors',
+      });
     }
 
     // Cooperation surge
@@ -1370,8 +1528,8 @@ export class SocietyEngine {
       this.events.push({
         epoch,
         type: 'cooperation_surge',
-        message: `Cooperation surge: ${(epochCoopRate * 100).toFixed(0)}% of interactions were mutual cooperation`,
-        significance: 'Trust begets trust - cooperation becomes self-reinforcing',
+        message: `The village is thriving — ${(epochCoopRate * 100).toFixed(0)}% of deals were fair`,
+        significance: 'Trust begets trust — cooperation becomes self-reinforcing',
       });
     }
 
@@ -1380,8 +1538,8 @@ export class SocietyEngine {
       this.events.push({
         epoch,
         type: 'trust_collapse',
-        message: `Society trust collapsed to ${metrics.averageTrust.toFixed(2)}`,
-        significance: 'Without trust, cooperation becomes impossible',
+        message: `Trust has collapsed — neighbors eye each other with suspicion`,
+        significance: 'Without trust, the village economy breaks down',
       });
     }
 
@@ -1390,8 +1548,8 @@ export class SocietyEngine {
       this.events.push({
         epoch,
         type: 'society_stable',
-        message: `Stable society: trust ${metrics.averageTrust.toFixed(2)}, cooperation ${(metrics.cooperationRate * 100).toFixed(0)}%`,
-        significance: 'Trust-native society achieved equilibrium',
+        message: `The village has found its rhythm — trust ${metrics.averageTrust.toFixed(2)}, fair deals ${(metrics.cooperationRate * 100).toFixed(0)}%`,
+        significance: 'A functioning society where roles complement each other',
       });
     }
   }
@@ -1401,6 +1559,7 @@ export class SocietyEngine {
       id: a.id,
       name: a.name,
       strategy: a.strategy,
+      role: a.role,
       atp: a.atp,
       alive: a.alive,
       generation: a.generation,
