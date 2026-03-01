@@ -590,6 +590,13 @@ export default function WhyWeb4Page() {
                 individuals. The trust system is designed so that no single operator can manipulate
                 the network—collusion requires coordinating multiple independent parties.
               </p>
+              <p>
+                Web4 identity is also designed to work with <strong>W3C Decentralized Identifier (DID)
+                standards</strong> — the same standard used by governments and enterprises. Your{" "}
+                <Link href="/lct-explainer" className="text-sky-400 hover:underline">LCT</Link> maps
+                to a standard DID Document, so external systems can verify Web4 identity using protocols
+                they already support.
+              </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> This is still early-stage research. Full deployment
                 requires standardization, adoption, and tooling that doesn&apos;t exist yet. See the
