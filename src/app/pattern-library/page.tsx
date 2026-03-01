@@ -224,7 +224,7 @@ function PatternCard({
         <div className="border-t border-gray-700 p-4 space-y-4">
           {/* EP Predictions */}
           <div>
-            <h4 className="font-bold text-sm mb-3">EP Domain Predictions</h4>
+            <h4 className="font-bold text-sm mb-3">Learning Domain Predictions</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               <DomainBadge domain="emotional" prediction={pattern.ep_predictions.emotional} />
               <DomainBadge domain="quality" prediction={pattern.ep_predictions.quality} />
@@ -454,7 +454,7 @@ export default function PatternLibraryPage() {
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-3">
-            <h1 className="text-3xl font-bold">EP Pattern Library</h1>
+            <h1 className="text-3xl font-bold">Cross-Life Learning Pattern Library</h1>
             <span className="px-2 py-1 bg-purple-900/50 text-purple-300 text-xs rounded">Data Browser</span>
           </div>
           <p className="text-gray-400 text-lg leading-relaxed max-w-3xl">
@@ -597,7 +597,7 @@ export default function PatternLibraryPage() {
 
         {/* Context */}
         <div className="mt-10 bg-blue-900/20 border border-blue-800 rounded-lg p-6">
-          <h3 className="text-lg font-bold mb-3">Understanding EP Patterns</h3>
+          <h3 className="text-lg font-bold mb-3">Understanding Cross-Life Learning Patterns</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
             <div className="bg-gray-900/50 rounded p-4">
               <h4 className="font-bold text-blue-400 mb-2">Three Domains</h4>

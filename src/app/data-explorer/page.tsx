@@ -836,7 +836,7 @@ export default function DataExplorerPage() {
                         </div>
 
                         <div className="flex gap-2 mt-3">
-                          <FeatureBadge label="EP" active={ds.hasEP} />
+                          <FeatureBadge label="Learning" active={ds.hasEP} />
                           <FeatureBadge label="Karma" active={ds.hasKarma} />
                           <FeatureBadge label="Policy" active={ds.hasPolicy} />
                         </div>
