@@ -14,6 +14,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
 import { trackPageVisit } from '@/lib/exploration';
 
@@ -554,6 +555,7 @@ export default function ExploreGuidePage() {
         </div>
 
         <ExplorerNav currentPath="/explore-guide" />
+        <RelatedConcepts currentPath="/explore-guide" />
       </div>
     </div>
   );
