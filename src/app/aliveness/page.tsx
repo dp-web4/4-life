@@ -1396,10 +1396,19 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             <li><strong>Health</strong> — The group maintains witness diversity, balanced ATP distribution, and high internal trust coherence.</li>
             <li><strong>Decay</strong> — Trust diverges, boundaries leak, energy concentrates in fewer members. These are early warnings before dissolution.</li>
           </ul>
+          <p style={{marginTop: '1rem'}}>
+            <strong>Early warning saves 10x.</strong> Recent work on synthon decay precursors
+            (74 validated checks) shows that intervention costs grow exponentially with decay stage.
+            Seven precursor types signal trouble before it arrives: trust entropy rising, ATP
+            starvation, witness exodus, coherence oscillation, member attrition, policy
+            fragmentation, and boundary permeability. Catching a problem at WARNING costs roughly
+            10% of what it costs at CRITICAL.
+          </p>
           <p style={{fontSize: '0.85rem', color: '#9ca3af', marginTop: '1rem'}}>
-            Synthon detection is new (web4 Session 23, 72 validated checks). The key insight: groups
-            don&apos;t need to be designed. They emerge naturally from individual trust relationships —
-            and they can be detected, monitored, and protected without central coordination.
+            Synthon detection (72 checks) and precursor monitoring (74 checks) both validated in
+            simulation. The key insight: groups don&apos;t need to be designed. They emerge naturally
+            from individual trust relationships — and they can be detected, monitored, and protected
+            without central coordination.
           </p>
         </div>
       </section>

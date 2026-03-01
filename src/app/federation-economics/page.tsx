@@ -568,6 +568,33 @@ export default function FederationEconomicsPage() {
 
           <div>
             <h3 className="text-lg font-semibold text-gray-300 mb-3">
+              Governance Voting
+            </h3>
+            <p className="text-gray-300 mb-3">
+              Federation task consensus (above) handles routine operations. But <strong className="text-amber-400">governance
+              decisions</strong> — policy changes, membership additions, emergency freezes, appeal
+              outcomes — need stronger guarantees because they change the rules themselves and
+              can&apos;t be rolled back.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Governance uses PBFT-style 3-phase voting (propose → prepare → commit) with
+              trust-weighted voting power. Higher-trust federation members get more influence,
+              but no single member can dominate. Sybil resistance prevents vote stuffing: creating
+              fake federation members is hardware-bound and expensive.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Malicious federation behavior — equivocation (voting differently in different phases),
+              vote withholding, proposal spam — is tracked across proposals and triggers graduated
+              penalties up to federation ejection.
+            </p>
+            <p className="text-gray-500 text-xs italic">
+              Federation governance BFT: 81 validated checks. Adaptive quorum, malicious detection,
+              and sybil-resistant voting power all formally specified.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-300 mb-3">
               Implementation
             </h3>
             <p className="text-gray-300 mb-3">
