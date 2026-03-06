@@ -121,7 +121,7 @@ export default function FirstContactPage() {
               </p>
 
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#e2e8f0' }}>Step 1 — Quality post:</strong> Alice writes a thoughtful contribution. It costs 8 ATP but her trust rises to 0.52. The community rewards substance.
+                <strong style={{ color: '#e2e8f0' }}>Step 1 — Quality post:</strong> Alice writes a thoughtful contribution. It costs 8 ATP but her trust rises to 0.52. Recipients who find it valuable confirm the quality — their attestation is what earns Alice her reward.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#e2e8f0' }}>Step 2 — Helping a newcomer:</strong> She mentors someone new. Costs 5 ATP, but trust jumps to 0.55. Generosity pays.
@@ -201,7 +201,7 @@ export default function FirstContactPage() {
                 <div>
                   <Link href="/atp-economics" className="text-sky-400 font-semibold mb-2 block hover:underline">🔋 Attention Economics (ATP)</Link>
                   <p className="text-gray-400">
-                    Every action costs attention. Quality earns it back. Spam burns out.
+                    Every action costs attention energy. Recipients who benefit confirm quality &mdash; that&apos;s what earns energy back. Spam burns out.
                   </p>
                 </div>
                 <div>

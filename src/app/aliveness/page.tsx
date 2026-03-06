@@ -1404,6 +1404,19 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             fragmentation, and boundary permeability. Catching a problem at WARNING costs roughly
             10% of what it costs at CRITICAL.
           </p>
+          <p style={{marginTop: '1rem'}}>
+            <strong>What about individual identity?</strong> A synthon doesn&apos;t override your personal
+            trust — it complements it. You retain your individual T3 scores, ATP budget, and trust
+            relationships. The synthon&apos;s collective trust is a separate measurement (a weighted
+            average of member trust). Being part of a thriving group raises your
+            visibility through denser MRH connections, but your personal reputation remains yours.
+          </p>
+          <p style={{marginTop: '0.5rem'}}>
+            You can leave a synthon at any time. Your individual trust stays intact — the group&apos;s
+            collective trust recalculates without you. If the synthon was healthy, leaving costs
+            nothing to your personal reputation. If it was struggling, you may have already
+            experienced some trust decay from the group&apos;s declining coherence.
+          </p>
           <p style={{fontSize: '0.85rem', color: '#9ca3af', marginTop: '1rem'}}>
             Synthon detection (72 checks) and precursor monitoring (74 checks) both validated in
             simulation. The key insight: groups don&apos;t need to be designed. They emerge naturally

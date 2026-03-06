@@ -491,9 +491,12 @@ export default function FederationEconomicsPage() {
               says &ldquo;share all data openly&rdquo; while a healthcare federation says &ldquo;never share patient data.&rdquo;
               Which rule wins?
             </p>
+            <p className="text-gray-400 text-sm mb-3 italic">
+              Think of it like having a primary employer and a side project — your main job&apos;s rules usually take priority when there&apos;s a conflict.
+            </p>
             <p className="text-gray-300 mb-3">
-              Web4 resolves conflicts using <strong className="text-amber-400"><TermTooltip term="MRH" />-weighted priority</strong>: the
-              society closer to you in your trust network governs. If you&apos;re primarily a healthcare
+              Web4 resolves conflicts using <strong className="text-amber-400"><TermTooltip term="MRH" />-weighted priority</strong> (the society you&apos;re
+              more closely connected to in your trust network wins). If you&apos;re primarily a healthcare
               practitioner who occasionally contributes to research, healthcare rules take precedence
               on conflicting policies. Three resolution strategies exist:
             </p>

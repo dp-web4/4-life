@@ -709,6 +709,31 @@ export default function ATPEconomicsPage() {
             weighted by their trust. High-quality work in a community of trusted peers earns the most ATP back.
             Low-quality spam? Nobody confirms it, the ADP stays discharged, and your budget shrinks.
           </div>
+
+          <details className="bg-gray-800/40 border border-gray-700 rounded-lg p-4">
+            <summary className="text-sm font-semibold text-gray-300 cursor-pointer hover:text-sky-400 transition-colors">
+              What about confirmation fatigue? Do I have to rate everything?
+            </summary>
+            <div className="mt-3 text-sm text-gray-400 space-y-2">
+              <p>
+                No. Confirmation is <strong className="text-gray-300">optional and lightweight</strong>. Recipients
+                aren&apos;t required to confirm every action — unconfirmed ADPs simply decay naturally without
+                recharging ATP. The system works fine with partial confirmation.
+              </p>
+              <p>
+                In practice, confirmation is most impactful for high-value contributions (a detailed tutorial,
+                a critical bug fix) where recipients are naturally motivated to acknowledge the value. Routine
+                interactions (reading a post, browsing content) generate small ADP receipts that may go
+                unconfirmed — and that&apos;s by design. The economics still work because high-quality work
+                attracts confirmation disproportionately.
+              </p>
+              <p>
+                Think of it like tipping at a restaurant: you don&apos;t tip every sip of water, but
+                you acknowledge genuinely great service. The system is tuned so that even partial confirmation
+                sustains quality contributors.
+              </p>
+            </div>
+          </details>
         </div>
       </section>
 
