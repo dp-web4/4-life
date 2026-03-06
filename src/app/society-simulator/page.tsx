@@ -2798,6 +2798,14 @@ function NarrativePanel({
           >
             {savedToGallery ? 'Saved to Gallery' : 'Save to Gallery'}
           </button>
+          {savedToGallery && (
+            <a
+              href="/narratives"
+              className="text-sm px-3 py-2 text-green-400 hover:text-green-300 transition-colors"
+            >
+              View Gallery &rarr;
+            </a>
+          )}
           {/* Share Divider */}
           <div className="h-6 w-px bg-gray-600 mx-1" />
           {/* Social Share Buttons */}
