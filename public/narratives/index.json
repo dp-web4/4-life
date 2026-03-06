@@ -1,5 +1,22 @@
 [
   {
+    "id": "meadow-cooperative",
+    "title": "The Meadow Cooperative — When Trust Builds a Society",
+    "filename": "meadow-cooperative.md",
+    "type": "Society Narrative",
+    "themes": [
+      "Cooperation Beats Defection",
+      "Trust Creates Structure",
+      "Reputation Has Consequences",
+      "Redemption Through Consistency"
+    ],
+    "lives": 2,
+    "events": 18,
+    "timestamp": "2026-03-06",
+    "summary": "Eight strangers arrive with nothing but 100 ATP each. Over 25 rounds, alliances form, a defector exploits early generosity, coalitions isolate the exploiter, and a reformed free-rider earns redemption. The Meadow Cooperative emerges — not because anyone planned it, but because trust created structure where none existed.",
+    "featured": true
+  },
+  {
     "id": "ep-driven-closed-loop",
     "title": "Bob: Learning Through Action — Self-Aware Pattern Discovery",
     "filename": "ep-driven-closed-loop.md",

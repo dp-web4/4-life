@@ -4,11 +4,15 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { terms, type TermDefinition } from "@/lib/terms";
 
-const TERM_ORDER = [
-  "Web4", "LCT", "ATP", "ADP", "T3", "V3",
-  "MRH", "CI", "Karma", "EP", "R6", "Society",
-  "VCM", "Synthon", "DID", "Sybil", "Goodharting",
+const TERM_CATEGORIES: { label: string; terms: string[] }[] = [
+  { label: "Core", terms: ["Web4", "LCT", "ATP", "ADP"] },
+  { label: "Trust & Value", terms: ["T3", "V3", "MRH", "CI"] },
+  { label: "Behavior", terms: ["Karma", "EP", "R6"] },
+  { label: "Social", terms: ["Society", "VCM", "Synthon"] },
+  { label: "Security", terms: ["DID", "Sybil", "Goodharting"] },
 ];
+
+const TERM_ORDER = TERM_CATEGORIES.flatMap((c) => c.terms);
 
 export default function GlossaryPanel() {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,17 +73,16 @@ export default function GlossaryPanel() {
     };
   }, [isOpen, close]);
 
+  const q = filter.toLowerCase();
+  const matchesTerm = (t: { term: string; fullName: string; brief: string }) =>
+    !filter ||
+    t.term.toLowerCase().includes(q) ||
+    t.fullName.toLowerCase().includes(q) ||
+    t.brief.toLowerCase().includes(q);
+
   const filteredTerms = TERM_ORDER
     .map((key) => ({ key, ...terms[key] }))
-    .filter((t) => {
-      if (!filter) return true;
-      const q = filter.toLowerCase();
-      return (
-        t.term.toLowerCase().includes(q) ||
-        t.fullName.toLowerCase().includes(q) ||
-        t.brief.toLowerCase().includes(q)
-      );
-    });
+    .filter(matchesTerm);
 
   return (
     <>
@@ -237,10 +240,39 @@ export default function GlossaryPanel() {
               >
                 No matching terms
               </div>
-            ) : (
+            ) : filter ? (
+              // Flat list when searching
               filteredTerms.map((t) => (
                 <TermEntry key={t.key} term={t} onNavigate={close} />
               ))
+            ) : (
+              // Grouped by category when browsing
+              TERM_CATEGORIES.map((cat) => {
+                const catTerms = cat.terms
+                  .map((key) => ({ key, ...terms[key] }))
+                  .filter(Boolean);
+                if (catTerms.length === 0) return null;
+                return (
+                  <div key={cat.label}>
+                    <div
+                      style={{
+                        fontSize: "0.65rem",
+                        fontWeight: 600,
+                        color: "#6b7280",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.08em",
+                        padding: "0.5rem 0.6rem 0.15rem",
+                        marginTop: "0.25rem",
+                      }}
+                    >
+                      {cat.label}
+                    </div>
+                    {catTerms.map((t) => (
+                      <TermEntry key={t.key} term={t} onNavigate={close} />
+                    ))}
+                  </div>
+                );
+              })
             )}
           </div>
 
