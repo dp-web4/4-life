@@ -629,13 +629,13 @@ function AgentInspector({ agent, allAgents }: {
 
       <div className="grid grid-cols-3 gap-2 mb-3 text-center">
         <div className="bg-gray-900/50 rounded p-2">
-          <div className="text-xs text-gray-500">Energy</div>
+          <div className="text-xs text-gray-500">Energy (<ATP />)</div>
           <div className={`font-mono font-bold ${agent.atp < 20 ? 'text-red-400' : 'text-white'}`}>
             {Math.round(agent.atp)}
           </div>
         </div>
         <div className="bg-gray-900/50 rounded p-2">
-          <div className="text-xs text-gray-500">Reputation</div>
+          <div className="text-xs text-gray-500">Trust (<T3 />)</div>
           <div className="font-mono font-bold text-blue-400">{agent.reputation.toFixed(2)}</div>
         </div>
         <div className="bg-gray-900/50 rounded p-2">
