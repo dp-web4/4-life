@@ -60,6 +60,7 @@ import {
   type CharacterJourney,
   type SharePlatform,
 } from '@/lib/narratives/society_narrative';
+import { saveToGallery } from '@/lib/narrative-gallery';
 
 // ============================================================================
 // AI Guide Chat Panel Component
@@ -2182,6 +2183,7 @@ function NarrativePanel({
 }) {
   const [activeTab, setActiveTab] = useState<'story' | 'characters' | 'moments' | 'relationships'>('story');
   const [relationshipViewMode, setRelationshipViewMode] = useState<'list' | 'graph' | 'timeline'>('list');
+  const [savedToGallery, setSavedToGallery] = useState(false);
 
   const STATUS_COLORS: Record<CharacterProfile['finalStatus'], string> = {
     thriving: 'text-green-400',
@@ -2779,6 +2781,22 @@ function NarrativePanel({
             className="text-sm px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded transition-colors"
           >
             📄 Download Blog Post
+          </button>
+          <button
+            onClick={() => {
+              const agents = simulationResult?.epochs?.[0]?.agents?.length;
+              const rounds = simulationResult?.epochs?.length;
+              saveToGallery(narrative, agents, rounds);
+              setSavedToGallery(true);
+            }}
+            disabled={savedToGallery}
+            className={`text-sm px-4 py-2 rounded transition-colors ${
+              savedToGallery
+                ? 'bg-green-700 text-green-200 cursor-default'
+                : 'bg-green-600 hover:bg-green-500 text-white'
+            }`}
+          >
+            {savedToGallery ? 'Saved to Gallery' : 'Save to Gallery'}
           </button>
           {/* Share Divider */}
           <div className="h-6 w-px bg-gray-600 mx-1" />

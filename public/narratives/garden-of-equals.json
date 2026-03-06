@@ -1,0 +1,112 @@
+{
+  "title": "The Garden of Equals — When Everyone Cooperates",
+  "summary": "Six agents, all cooperators, zero defectors. The result is a paradise: zero deaths, minimal inequality, high trust, stable resources. But the Garden reveals something unexpected — trust that's never been tested is different from trust that's survived betrayal. The ceiling is high, but the Meadow's messier path may build something more durable.",
+  "themes": [
+    "Cooperation Has a Ceiling",
+    "Untested Trust Is Fragile",
+    "Adversity Builds Resilience",
+    "Equality Without Exploitation"
+  ],
+  "key_insights": [
+    "100% cooperation produces the highest trust ceiling (0.71 avg) but only marginally better than the Meadow's 0.64 with 63% cooperators. The gap is smaller than expected.",
+    "Zero adversity means zero moral infrastructure. The Garden never had to decide how to handle betrayal, forgiveness, or reform — decisions that build durable trust.",
+    "Specialization locks in early without competitive pressure. Garden agents settled into comfortable routines by Round 10 and never innovated beyond them.",
+    "Wealth gap of 0.08 happened naturally with zero policy intervention — inequality is a symptom of exploitation, not a default state.",
+    "The interesting insight: the Garden is the best outcome by the numbers, but the Meadow produced better stories and more resilient trust. Metrics don't capture everything."
+  ],
+  "acts": [
+    {
+      "title": "Act I: The Golden Start (Rounds 1-8)",
+      "events": [
+        {
+          "timestamp": "Round 1",
+          "description": "Six cooperators enter the Garden with 120 ATP each. Wren (farmer), Ash (builder), Sage (teacher), River (healer), Finch (artisan), Clay (merchant). Every agent intends to cooperate from the start.",
+          "significance": "The composition is the experiment. Same rules as the Meadow and Ironworks, but with 100% cooperators instead of 63% or 33%. What happens at the ceiling?"
+        },
+        {
+          "timestamp": "Round 2",
+          "description": "The trust graph lights up immediately. Six agents each trading with two or three partners, every interaction positive. Average trust jumps from 0.50 to 0.54 in a single round — the fastest trust growth in any simulation.",
+          "significance": "Without defectors to worry about, trust grows unimpeded. No ATP wasted on reputation defense, coalition politics, or recovery from exploitation."
+        },
+        {
+          "timestamp": "Round 3",
+          "description": "Natural specialization emerges. Wren feeds Ash, Ash builds for Sage, Sage teaches Finch. Complementary roles create efficient supply chains without central planning.",
+          "technical_detail": "Role complementarity bonus: Farmer→Builder (food for construction), Builder→Teacher (tools for education), Teacher→Artisan (skills for craft). Each pairing earns 15% bonus ATP from role synergy.",
+          "significance": "Specialization in the Garden is effortless. In the Meadow, it took 8 rounds because agents had to verify trustworthiness before committing to partnerships."
+        },
+        {
+          "timestamp": "Round 5",
+          "description": "Average trust: 0.61. Average ATP: 128 (above the 120 starting value). Nobody has dropped below 110 ATP. Wealth gap: 0.06. The Garden is already wealthier and more equal than it started.",
+          "significance": "Five rounds in, the Garden has surpassed the Ironworks' final state (avg trust 0.43) and is approaching the Meadow's peak. With zero drama."
+        },
+        {
+          "timestamp": "Round 8",
+          "description": "Trust network is fully connected — every agent trusts every other agent above 0.58. CI scores uniformly high (0.82+), keeping action costs at near-minimum. No coalitions needed because everyone is already allied with everyone.",
+          "significance": "Full connectivity at Round 8. The Meadow didn't achieve this until Round 18, and even then Eve was excluded. The Garden's trust graph is dense and uniform — beautiful, but untested."
+        }
+      ],
+      "commentary": "The Golden Start is everything cooperation promises: rapid trust growth, efficient specialization, rising wealth, minimal inequality. It's also entirely frictionless. No agent had to make a hard choice. No one had to decide whether to trust a stranger, forgive a betrayer, or take a risk on an outsider. The trust is real — but it's easy trust."
+    },
+    {
+      "title": "Act II: The Plateau (Rounds 9-16)",
+      "events": [
+        {
+          "timestamp": "Round 9",
+          "description": "Average trust: 0.67. Trust growth slows noticeably. Each quality interaction now adds ~0.003 to trust instead of ~0.01. The curve is flattening.",
+          "technical_detail": "Trust update formula: 0.02 * (quality - 0.5). With quality averaging 0.80, each interaction adds 0.006. But trust decay (Temperament half-life: 30 days) starts competing with gains at higher trust levels.",
+          "significance": "Diminishing returns on trust are real. The first 0.15 of trust growth came in 8 rounds. The next 0.04 will take another 8. This is the natural ceiling emerging."
+        },
+        {
+          "timestamp": "Round 12",
+          "description": "Average trust: 0.69. ATP ranges from 134 to 142. The Garden is prosperous but uneventful. No crises to solve, no betrayals to process, no reformed defectors proving that change is possible.",
+          "significance": "Compare this to the Meadow at Round 12: Eve had just died, Derek was beginning his reform arc, and the coalition was deciding whether to forgive. The Meadow was messy but dynamic. The Garden is clean but static."
+        },
+        {
+          "timestamp": "Round 14",
+          "description": "Finch and Clay attempt a joint crafting project — the first experiment in the Garden. Quality: 0.86, the highest single output. But it's an exception. Most actions remain reliable 0.78-0.82 contributions.",
+          "significance": "Innovation requires either necessity or curiosity. The Garden has no necessity (everything works fine) and curiosity alone produces only occasional experiments. The Meadow's innovations — coalitions, reputation tracking, reintegration protocols — were born from crisis."
+        },
+        {
+          "timestamp": "Round 16",
+          "description": "Average trust: 0.70. It has been between 0.69 and 0.71 for six consecutive rounds. The plateau is unmistakable. Without adversity to forge stronger bonds, trust accumulates but doesn't deepen.",
+          "significance": "This is the core finding: cooperation without challenge produces stability, not growth. The Garden's trust is wide (everyone trusts everyone) but shallow (no bond has been tested by adversity)."
+        }
+      ],
+      "commentary": "The Plateau reveals the Garden's limitation. Trust grows through two mechanisms: positive interactions (which the Garden has in abundance) and surviving adversity together (which the Garden has never experienced). The Meadow's trust was forged — heated by conflict, hammered by hard choices, and tempered by forgiveness. The Garden's trust was accumulated — steady deposits with no withdrawals. Both are real, but forged trust is more durable."
+    },
+    {
+      "title": "Act III: Comfortable Equilibrium (Rounds 17-25)",
+      "events": [
+        {
+          "timestamp": "Round 18",
+          "description": "Nothing dramatic happens. Wren grows food. Ash builds. Sage teaches. River heals. Finch crafts. Clay trades. Quality is high. ATP is stable. Trust is steady. The Garden operates like a well-oiled machine.",
+          "significance": "In narrative terms, this is the absence of a story. No conflict, no growth, no transformation. The Garden has achieved homeostasis — the system's goal, but not a story's goal."
+        },
+        {
+          "timestamp": "Round 20",
+          "description": "Average trust: 0.71. Highest: Sage at 0.73 (teaching creates the broadest trust network). Lowest: Clay at 0.69 (merchants facilitate rather than create). The gap between best and worst: 0.04.",
+          "significance": "Even in perfect cooperation, small differences emerge from role structure. Teachers build more trust than merchants because teaching involves deeper knowledge transfer. But the differences are trivially small."
+        },
+        {
+          "timestamp": "Round 22",
+          "description": "Ash proposes a community project: a shared granary. All six contribute. Total quality: 0.84. It works well — but it's the same kind of project they've been doing since Round 3, just larger.",
+          "significance": "The Garden's trajectory is more of the same, not something new. Compare to the Meadow's Round 22, where the reborn Eve was earning her way back into the coalition — a genuinely new social challenge the group had never faced."
+        },
+        {
+          "timestamp": "Round 25",
+          "description": "Final state: Average trust 0.71. Wealth gap 0.08. Deaths: 0. Crises: 0. All six agents are comfortable, productive, and stable. By every quantitative metric, the Garden is the best outcome of any simulation.",
+          "significance": "The Garden is a success by the numbers. But it raises the question: is a society that's never been tested truly resilient? Or is it a greenhouse — lush inside, fragile when the glass breaks?"
+        }
+      ],
+      "commentary": "The Garden's final state is paradoxically both the best and least interesting outcome. Highest trust, lowest inequality, zero deaths — and nothing learned about handling adversity, processing betrayal, or rebuilding after failure. The Meadow Cooperative, with all its messiness, produced something the Garden couldn't: moral infrastructure. The Garden proves cooperation works. The Meadow proves cooperation matters. Web4 is designed to create Meadows, not Gardens — environments where cooperation wins not because it's the only option, but because it's the best option even when defection is possible."
+    }
+  ],
+  "metadata": {
+    "generated_by": "4-Life Narrative System",
+    "format": "Web4 Society Simulation",
+    "timestamp": "2026-03-06T16:00:00.000Z",
+    "simulation_type": "society",
+    "num_agents": 6,
+    "num_rounds": 25
+  }
+}

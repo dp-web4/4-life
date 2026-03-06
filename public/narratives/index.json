@@ -34,6 +34,23 @@
     "featured": true
   },
   {
+    "id": "garden-of-equals",
+    "title": "The Garden of Equals — When Everyone Cooperates",
+    "filename": "garden-of-equals.md",
+    "type": "Society Narrative",
+    "themes": [
+      "Cooperation Has a Ceiling",
+      "Untested Trust Is Fragile",
+      "Adversity Builds Resilience",
+      "Equality Without Exploitation"
+    ],
+    "lives": 0,
+    "events": 12,
+    "timestamp": "2026-03-06",
+    "summary": "Six agents, all cooperators, zero defectors. The result is a paradise: zero deaths, minimal inequality, high trust. But trust that's never been tested is different from trust that's survived betrayal. The ceiling is high, but the Meadow's messier path may build something more durable.",
+    "featured": true
+  },
+  {
     "id": "ep-driven-closed-loop",
     "title": "Bob: Learning Through Action — Self-Aware Pattern Discovery",
     "filename": "ep-driven-closed-loop.md",

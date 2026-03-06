@@ -13,6 +13,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from '@/components/ExplorerNav';
 import { trackPageVisit } from "@/lib/exploration";
+import { loadGallery, removeFromGallery, type SavedNarrative } from "@/lib/narrative-gallery";
 
 interface NarrativeMeta {
   id: string;
@@ -61,8 +62,13 @@ export default function NarrativesPage() {
   const [filter, setFilter] = useState<string>('');
   const [selectedTheme, setSelectedTheme] = useState<string>('');
   const [loaded, setLoaded] = useState(false);
+  const [userNarratives, setUserNarratives] = useState<SavedNarrative[]>([]);
 
   useEffect(() => { trackPageVisit('narratives'); }, []);
+
+  useEffect(() => {
+    setUserNarratives(loadGallery());
+  }, []);
 
   useEffect(() => {
     fetch('/narratives/index.json')
@@ -99,8 +105,12 @@ export default function NarrativesPage() {
           </p>
         </div>
 
-        {/* Featured Society Narratives — comparison pair */}
-        {featuredList.length >= 2 && (
+        {/* Featured Society Narratives — triptych */}
+        {featuredList.length >= 2 && (() => {
+          const meadow = featuredList.find(n => n.id === 'meadow-cooperative');
+          const ironworks = featuredList.find(n => n.id === 'ironworks-collapse');
+          const garden = featuredList.find(n => n.id === 'garden-of-equals');
+          return (
           <div className="mb-10">
             <div className="flex items-center gap-3 mb-5">
               <span className="px-3 py-1 bg-yellow-600/30 text-yellow-300 text-xs font-semibold rounded-full">
@@ -113,10 +123,11 @@ export default function NarrativesPage() {
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Meadow — success story */}
+              {meadow && (
               <div className="bg-gradient-to-br from-green-900/30 to-gray-900 border border-green-700/40 rounded-xl p-6">
-                <div className="text-xs text-green-400 font-semibold uppercase tracking-wider mb-2">Cooperation wins</div>
-                <h2 className="text-xl font-bold mb-3 text-white">{featuredList[0].title}</h2>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">{featuredList[0].summary}</p>
+                <div className="text-xs text-green-400 font-semibold uppercase tracking-wider mb-2">63% cooperators</div>
+                <h2 className="text-xl font-bold mb-3 text-white">{meadow.title}</h2>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">{meadow.summary}</p>
                 <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
                   <div className="bg-gray-800/50 rounded p-2"><span className="text-green-400 font-semibold">Alice</span> <span className="text-gray-500">Leader (0.72)</span></div>
                   <div className="bg-gray-800/50 rounded p-2"><span className="text-red-400 font-semibold">Eve</span> <span className="text-gray-500">Death &rarr; Rebirth</span></div>
@@ -126,16 +137,18 @@ export default function NarrativesPage() {
                 <div className="flex items-center gap-3 text-xs text-gray-500 mb-4">
                   <span>8 agents</span><span>&middot;</span><span>25 rounds</span><span>&middot;</span><span>7 survived</span><span>&middot;</span><span>Avg trust: 0.64</span>
                 </div>
-                <Link href={`/narratives/${featuredList[0].id}`} className="inline-block px-5 py-2 bg-green-600 hover:bg-green-700 rounded-lg transition-colors font-medium text-sm">
+                <Link href={`/narratives/${meadow.id}`} className="inline-block px-5 py-2 bg-green-600 hover:bg-green-700 rounded-lg transition-colors font-medium text-sm">
                   Read the Success Story
                 </Link>
               </div>
+              )}
 
               {/* Ironworks — failure story */}
+              {ironworks && (
               <div className="bg-gradient-to-br from-red-900/30 to-gray-900 border border-red-700/40 rounded-xl p-6">
-                <div className="text-xs text-red-400 font-semibold uppercase tracking-wider mb-2">Defection collapses</div>
-                <h2 className="text-xl font-bold mb-3 text-white">{featuredList[1].title}</h2>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">{featuredList[1].summary}</p>
+                <div className="text-xs text-red-400 font-semibold uppercase tracking-wider mb-2">33% cooperators</div>
+                <h2 className="text-xl font-bold mb-3 text-white">{ironworks.title}</h2>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">{ironworks.summary}</p>
                 <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
                   <div className="bg-gray-800/50 rounded p-2"><span className="text-green-400 font-semibold">Sam</span> <span className="text-gray-500">Surviving (0.54)</span></div>
                   <div className="bg-gray-800/50 rounded p-2"><span className="text-red-400 font-semibold">Viktor</span> <span className="text-gray-500">Dead at R11</span></div>
@@ -145,21 +158,67 @@ export default function NarrativesPage() {
                 <div className="flex items-center gap-3 text-xs text-gray-500 mb-4">
                   <span>6 agents</span><span>&middot;</span><span>18 rounds</span><span>&middot;</span><span>3 survived</span><span>&middot;</span><span>Avg trust: 0.43</span>
                 </div>
-                <Link href={`/narratives/${featuredList[1].id}`} className="inline-block px-5 py-2 bg-red-600 hover:bg-red-700 rounded-lg transition-colors font-medium text-sm">
+                <Link href={`/narratives/${ironworks.id}`} className="inline-block px-5 py-2 bg-red-600 hover:bg-red-700 rounded-lg transition-colors font-medium text-sm">
                   Read the Failure Story
                 </Link>
               </div>
+              )}
             </div>
 
+            {/* Garden — the thought experiment */}
+            {garden && (
+              <div className="mt-6 bg-gradient-to-br from-amber-900/20 to-gray-900 border border-amber-700/30 rounded-xl p-6">
+                <div className="flex flex-col md:flex-row md:items-start gap-6">
+                  <div className="flex-1">
+                    <div className="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-2">100% cooperators — the ceiling</div>
+                    <h2 className="text-xl font-bold mb-3 text-white">{garden.title}</h2>
+                    <p className="text-gray-400 text-sm leading-relaxed mb-4">{garden.summary}</p>
+                    <div className="flex flex-wrap gap-2 mb-4 text-xs">
+                      <div className="bg-gray-800/50 rounded p-2"><span className="text-amber-400 font-semibold">Wren</span> <span className="text-gray-500">Farmer (0.71)</span></div>
+                      <div className="bg-gray-800/50 rounded p-2"><span className="text-amber-400 font-semibold">Ash</span> <span className="text-gray-500">Builder (0.72)</span></div>
+                      <div className="bg-gray-800/50 rounded p-2"><span className="text-amber-400 font-semibold">Sage</span> <span className="text-gray-500">Teacher (0.73)</span></div>
+                      <div className="bg-gray-800/50 rounded p-2"><span className="text-amber-400 font-semibold">River</span> <span className="text-gray-500">Healer (0.70)</span></div>
+                      <div className="bg-gray-800/50 rounded p-2"><span className="text-amber-400 font-semibold">Finch</span> <span className="text-gray-500">Artisan (0.71)</span></div>
+                      <div className="bg-gray-800/50 rounded p-2"><span className="text-amber-400 font-semibold">Clay</span> <span className="text-gray-500">Merchant (0.69)</span></div>
+                    </div>
+                    <div className="flex items-center gap-3 text-xs text-gray-500 mb-4">
+                      <span>6 agents</span><span>&middot;</span><span>25 rounds</span><span>&middot;</span><span>6 survived</span><span>&middot;</span><span>Avg trust: 0.71</span><span>&middot;</span><span>0 deaths</span><span>&middot;</span><span>0 crises</span>
+                    </div>
+                    <Link href={`/narratives/${garden.id}`} className="inline-block px-5 py-2 bg-amber-600 hover:bg-amber-700 rounded-lg transition-colors font-medium text-sm">
+                      Read the Thought Experiment
+                    </Link>
+                  </div>
+                  <div className="md:w-64 shrink-0 bg-gray-800/60 rounded-lg p-4 text-sm text-gray-400 leading-relaxed">
+                    <div className="text-white font-semibold mb-2">The paradox</div>
+                    The Garden has the best numbers — highest trust, lowest inequality, zero deaths. But the Meadow, with all its messiness, produced something the Garden didn&apos;t: <span className="text-amber-300">trust that survived betrayal</span>.
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Comparison insight */}
-            <div className="mt-4 bg-gray-800/50 border border-gray-700 rounded-lg p-4 text-center">
-              <p className="text-gray-300 text-sm">
-                <strong>The only difference:</strong> 63% cooperators (Meadow) vs 33% cooperators (Ironworks).
-                Same trust mechanics, same economics. Composition determines destiny.
+            <div className="mt-4 bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+              <div className="grid grid-cols-3 gap-4 text-center text-sm">
+                <div>
+                  <div className="text-red-400 font-semibold">33% cooperators</div>
+                  <div className="text-gray-500">Collapse</div>
+                </div>
+                <div>
+                  <div className="text-green-400 font-semibold">63% cooperators</div>
+                  <div className="text-gray-500">Flourishing</div>
+                </div>
+                <div>
+                  <div className="text-amber-400 font-semibold">100% cooperators</div>
+                  <div className="text-gray-500">Comfortable</div>
+                </div>
+              </div>
+              <p className="text-gray-400 text-xs text-center mt-3">
+                Same rules, same economics. Composition shapes destiny — but adversity shapes character.
               </p>
             </div>
           </div>
-        )}
+          );
+        })()}
 
         {/* Single featured fallback */}
         {featuredList.length === 1 && (
@@ -265,6 +324,66 @@ export default function NarrativesPage() {
             ))
           )}
         </div>
+
+        {/* User-Generated Narratives */}
+        {userNarratives.length > 0 && (
+          <div className="mt-10">
+            <div className="flex items-center gap-3 mb-4">
+              <h2 className="text-xl font-bold text-gray-300">Your Stories</h2>
+              <span className="px-2 py-0.5 bg-green-900/40 text-green-400 text-xs rounded-full">
+                {userNarratives.length} saved
+              </span>
+            </div>
+            <div className="space-y-4">
+              {userNarratives.map(un => (
+                <div
+                  key={un.id}
+                  className="bg-gray-800 border border-green-800/30 rounded-lg p-6 hover:border-green-700/50 transition-colors"
+                >
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="text-xl font-bold">{un.title}</h3>
+                    <div className="flex items-center gap-2 ml-3 mt-1">
+                      <span className="px-3 py-1 bg-green-900/50 text-green-300 text-xs rounded-full whitespace-nowrap">
+                        Your Simulation
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-gray-400 text-sm mb-3 leading-relaxed">{un.summary}</p>
+                  <div className="flex gap-4 mb-4 text-sm text-gray-400">
+                    {un.agentCount && <span>{un.agentCount} agents</span>}
+                    {un.roundCount && <><span>|</span><span>{un.roundCount} rounds</span></>}
+                    <span>|</span>
+                    <span>{un.timestamp}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {un.themes.map(theme => (
+                      <span key={theme} className="px-3 py-1 bg-blue-900/50 text-blue-300 text-sm rounded-full">
+                        {theme}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-3">
+                    <Link
+                      href={`/narratives/${un.id}`}
+                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded transition-colors text-sm"
+                    >
+                      Read Narrative
+                    </Link>
+                    <button
+                      onClick={() => {
+                        removeFromGallery(un.id);
+                        setUserNarratives(loadGallery());
+                      }}
+                      className="px-4 py-2 bg-gray-700 hover:bg-red-900/50 hover:text-red-300 rounded transition-colors text-sm text-gray-400"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Compare Link */}
         {filteredNarratives.length >= 2 && (
