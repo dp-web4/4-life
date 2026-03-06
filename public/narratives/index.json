@@ -17,6 +17,23 @@
     "featured": true
   },
   {
+    "id": "ironworks-collapse",
+    "title": "The Collapse of the Ironworks — When Trust Dies",
+    "filename": "ironworks-collapse.md",
+    "type": "Society Narrative",
+    "themes": [
+      "Defection Is Self-Defeating",
+      "Trust Requires Critical Mass",
+      "Isolation Is Expensive",
+      "Cooperation Can't Survive Alone"
+    ],
+    "lives": 1,
+    "events": 16,
+    "timestamp": "2026-03-06",
+    "summary": "Six agents start with ample resources but a critical flaw: four of six are defectors. What follows is a textbook collapse — exploitation destroys trust, the commons dies, and three of six agents perish. The contrast with the Meadow Cooperative proves: same rules, different composition, opposite outcome.",
+    "featured": true
+  },
+  {
     "id": "ep-driven-closed-loop",
     "title": "Bob: Learning Through Action — Self-Aware Pattern Discovery",
     "filename": "ep-driven-closed-loop.md",

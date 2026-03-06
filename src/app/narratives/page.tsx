@@ -74,7 +74,7 @@ export default function NarrativesPage() {
       .catch(() => { setLoaded(true); });
   }, []);
 
-  const featured = narratives.find(n => n.featured);
+  const featuredList = narratives.filter(n => n.featured);
   const rest = narratives.filter(n => !n.featured);
 
   const allThemes = Array.from(new Set(rest.flatMap(n => n.themes)));
@@ -99,67 +99,76 @@ export default function NarrativesPage() {
           </p>
         </div>
 
-        {/* Featured Narrative Hero */}
-        {featured && (
-          <div className="mb-10 bg-gradient-to-br from-blue-900/40 via-purple-900/30 to-gray-900 border border-blue-700/50 rounded-xl p-8">
-            <div className="flex items-center gap-3 mb-4">
+        {/* Featured Society Narratives — comparison pair */}
+        {featuredList.length >= 2 && (
+          <div className="mb-10">
+            <div className="flex items-center gap-3 mb-5">
               <span className="px-3 py-1 bg-yellow-600/30 text-yellow-300 text-xs font-semibold rounded-full">
-                Featured Story
+                Featured Stories
               </span>
-              <span className="px-3 py-1 bg-purple-900/50 text-purple-300 text-xs rounded-full">
-                {featured.type}
-              </span>
-            </div>
-
-            <h2 className="text-3xl font-bold mb-4 text-white">
-              {featured.title}
-            </h2>
-
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              {featured.summary}
-            </p>
-
-            <div className="flex flex-wrap gap-2 mb-6">
-              {featured.themes.map(theme => (
-                <span
-                  key={theme}
-                  className="px-3 py-1 bg-blue-900/50 text-blue-300 text-sm rounded-full"
-                >
-                  {theme}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap gap-4 items-center">
-              <Link
-                href={`/narratives/${featured.id}`}
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors font-medium text-lg"
-              >
-                Read the Full Story
-              </Link>
               <span className="text-sm text-gray-400">
-                {featured.events} events across {featured.lives === 1 ? '1 life' : `${featured.lives} lives`} &middot; 8 agents &middot; 25 rounds
+                Same rules. Different composition. Opposite outcomes.
               </span>
             </div>
 
-            {/* Story preview — character lineup */}
-            <div className="mt-8 pt-6 border-t border-gray-700/50">
-              <div className="text-xs text-gray-500 mb-3 uppercase tracking-wider">Meet the characters</div>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                {[
-                  { name: 'Alice', role: 'Farmer', outcome: 'Leader (0.72)', color: 'text-green-400' },
-                  { name: 'Eve', role: 'Merchant', outcome: 'Death → Rebirth', color: 'text-red-400' },
-                  { name: 'Derek', role: 'Scout', outcome: 'Reformed (0.58)', color: 'text-yellow-400' },
-                  { name: 'Raj', role: 'Healer', outcome: 'Late bloomer (0.65)', color: 'text-blue-400' },
-                ].map(char => (
-                  <div key={char.name} className="bg-gray-800/50 rounded-lg p-3">
-                    <div className={`font-semibold ${char.color}`}>{char.name}</div>
-                    <div className="text-xs text-gray-400">{char.role}</div>
-                    <div className="text-xs text-gray-500 mt-1">{char.outcome}</div>
-                  </div>
-                ))}
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Meadow — success story */}
+              <div className="bg-gradient-to-br from-green-900/30 to-gray-900 border border-green-700/40 rounded-xl p-6">
+                <div className="text-xs text-green-400 font-semibold uppercase tracking-wider mb-2">Cooperation wins</div>
+                <h2 className="text-xl font-bold mb-3 text-white">{featuredList[0].title}</h2>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">{featuredList[0].summary}</p>
+                <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
+                  <div className="bg-gray-800/50 rounded p-2"><span className="text-green-400 font-semibold">Alice</span> <span className="text-gray-500">Leader (0.72)</span></div>
+                  <div className="bg-gray-800/50 rounded p-2"><span className="text-red-400 font-semibold">Eve</span> <span className="text-gray-500">Death &rarr; Rebirth</span></div>
+                  <div className="bg-gray-800/50 rounded p-2"><span className="text-yellow-400 font-semibold">Derek</span> <span className="text-gray-500">Reformed (0.58)</span></div>
+                  <div className="bg-gray-800/50 rounded p-2"><span className="text-blue-400 font-semibold">Raj</span> <span className="text-gray-500">Late bloomer (0.65)</span></div>
+                </div>
+                <div className="flex items-center gap-3 text-xs text-gray-500 mb-4">
+                  <span>8 agents</span><span>&middot;</span><span>25 rounds</span><span>&middot;</span><span>7 survived</span><span>&middot;</span><span>Avg trust: 0.64</span>
+                </div>
+                <Link href={`/narratives/${featuredList[0].id}`} className="inline-block px-5 py-2 bg-green-600 hover:bg-green-700 rounded-lg transition-colors font-medium text-sm">
+                  Read the Success Story
+                </Link>
+              </div>
+
+              {/* Ironworks — failure story */}
+              <div className="bg-gradient-to-br from-red-900/30 to-gray-900 border border-red-700/40 rounded-xl p-6">
+                <div className="text-xs text-red-400 font-semibold uppercase tracking-wider mb-2">Defection collapses</div>
+                <h2 className="text-xl font-bold mb-3 text-white">{featuredList[1].title}</h2>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">{featuredList[1].summary}</p>
+                <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
+                  <div className="bg-gray-800/50 rounded p-2"><span className="text-green-400 font-semibold">Sam</span> <span className="text-gray-500">Surviving (0.54)</span></div>
+                  <div className="bg-gray-800/50 rounded p-2"><span className="text-red-400 font-semibold">Viktor</span> <span className="text-gray-500">Dead at R11</span></div>
+                  <div className="bg-gray-800/50 rounded p-2"><span className="text-yellow-400 font-semibold">Kira</span> <span className="text-gray-500">Reformed, still died</span></div>
+                  <div className="bg-gray-800/50 rounded p-2"><span className="text-purple-400 font-semibold">Petra</span> <span className="text-gray-500">Adaptive (0.44)</span></div>
+                </div>
+                <div className="flex items-center gap-3 text-xs text-gray-500 mb-4">
+                  <span>6 agents</span><span>&middot;</span><span>18 rounds</span><span>&middot;</span><span>3 survived</span><span>&middot;</span><span>Avg trust: 0.43</span>
+                </div>
+                <Link href={`/narratives/${featuredList[1].id}`} className="inline-block px-5 py-2 bg-red-600 hover:bg-red-700 rounded-lg transition-colors font-medium text-sm">
+                  Read the Failure Story
+                </Link>
               </div>
             </div>
+
+            {/* Comparison insight */}
+            <div className="mt-4 bg-gray-800/50 border border-gray-700 rounded-lg p-4 text-center">
+              <p className="text-gray-300 text-sm">
+                <strong>The only difference:</strong> 63% cooperators (Meadow) vs 33% cooperators (Ironworks).
+                Same trust mechanics, same economics. Composition determines destiny.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Single featured fallback */}
+        {featuredList.length === 1 && (
+          <div className="mb-10 bg-gradient-to-br from-blue-900/40 via-purple-900/30 to-gray-900 border border-blue-700/50 rounded-xl p-8">
+            <h2 className="text-3xl font-bold mb-4 text-white">{featuredList[0].title}</h2>
+            <p className="text-gray-300 text-lg leading-relaxed mb-6">{featuredList[0].summary}</p>
+            <Link href={`/narratives/${featuredList[0].id}`} className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors font-medium text-lg">
+              Read the Full Story
+            </Link>
           </div>
         )}
 
