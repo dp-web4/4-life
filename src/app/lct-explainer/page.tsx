@@ -308,12 +308,14 @@ export default function LCTExplainerPage() {
               What are &ldquo;witnesses&rdquo;?
             </h3>
             <p className="text-sm text-gray-300 mb-3">
-              In Web4, a <span className="font-bold">witness</span> is another device or
-              platform that independently confirms your presence is real. Think of it like
-              co-signers on a document: your phone, laptop, and security key each independently
+              <strong>Why witnesses?</strong> Passwords can be stolen. A single device can be hacked.
+              But compromising three independent devices at the same time? That&apos;s orders of magnitude
+              harder. A <span className="font-bold">witness</span> is any device or
+              platform that independently confirms your presence is real &mdash; like
+              co-signers on a legal document. Your phone, laptop, and security key each independently
               vouch that &ldquo;yes, this is really Alice.&rdquo; An attacker would need to
               compromise <span className="font-bold">all</span> of your witnesses simultaneously
-              to impersonate you &mdash; not just steal one password.
+              to impersonate you.
             </p>
             <div className="text-sm text-gray-400 bg-gray-900/50 rounded p-3 space-y-1">
               <p className="text-gray-300 font-medium">Example: Logging in from a new city</p>

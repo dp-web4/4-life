@@ -760,9 +760,9 @@ export default function ATPEconomicsPage() {
                 ATP (Allocation Transfer Packet)
               </h3>
               <p className="leading-relaxed mb-3">
-                ATP is a <strong>semi-fungible packet</strong> representing
-                attention allocation. It's not a coin or token you trade - it's
-                an energy resource you spend on actions.
+                ATP is your <strong>personal energy budget</strong> &mdash; a unit of attention
+                you spend on actions. It&apos;s not a coin or token you trade on a market &mdash; it&apos;s
+                an energy resource that flows through the system like calories in a body.
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
                 <li>
