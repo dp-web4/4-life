@@ -1143,6 +1143,127 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
+          {/* Pseudonymity */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Can I be pseudonymous? What about whistleblowers or political dissidents?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Yes — pseudonymity is built in, not bolted on.</strong> Your Web4 identity is a hardware key,
+                not your name. Nobody sees &ldquo;Jane Smith&rdquo; — they see an entity with a trust history.
+                You can participate, earn trust, and contribute value without ever revealing who you are in the
+                physical world.
+              </p>
+              <p>
+                This is actually <strong>stronger pseudonymity</strong> than most platforms today. On Twitter or
+                Reddit, your &ldquo;anonymous&rdquo; account can be correlated through IP addresses, browser
+                fingerprints, or legal subpoenas to the platform. In Web4, there&apos;s no central platform
+                that knows your real identity — your identity lives in your hardware, not on a server.
+              </p>
+              <p>
+                For high-stakes cases (whistleblowing, political dissent, support groups), Web4 adds{" "}
+                <strong>zero-knowledge trust proofs</strong>: you can prove you meet a trust threshold
+                (&ldquo;I have &gt;0.7 trust in journalism&rdquo;) without revealing which entity you are.
+                A whistleblower can prove they&apos;re a credible insider without exposing their identity
+                even within the trust graph.
+              </p>
+              <p>
+                What Web4 prevents isn&apos;t pseudonymity — it&apos;s <strong>disposable identity</strong>.
+                You can be anonymous, but you can&apos;t be anonymous <em>and</em> have unlimited fresh starts.
+                Your pseudonymous identity accumulates consequences just like any other. That&apos;s the tradeoff:
+                your reputation follows you, but your name doesn&apos;t have to.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Hardware-bound identity creates a correlation risk. If an adversary
+                can identify your device (through physical surveillance or supply chain data), they can link your
+                pseudonymous identity to you. Multi-device witness networks reduce this risk but don&apos;t eliminate
+                it. For journalists and activists in hostile states, device security is the weakest link — and that&apos;s
+                a hardware problem, not a protocol one.
+              </p>
+            </div>
+          </details>
+
+          {/* Quality measurement */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Who decides what &ldquo;quality&rdquo; means? What about subjective content?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>The recipients decide.</strong> Web4&apos;s{" "}
+                <Link href="/atp-economics" className="text-sky-400 hover:underline">VCM (Value Confirmation Mechanism)</Link>{" "}
+                means quality is measured by the people who actually receive and use the work. You write a code review,
+                the developer who received it confirms whether it was helpful. You post a tutorial, readers who learned
+                from it confirm value. You can&apos;t rate your own work.
+              </p>
+              <p>
+                For <strong>subjective content</strong> (art, humor, opinion), quality splits across V3&apos;s three dimensions.
+                A controversial political essay might score high on Veracity (honest, well-argued) and Validity (appropriate
+                for a political forum) even if Valuation is mixed (some love it, some hate it). Veracity and Validity together
+                outweigh raw popularity — by design.
+              </p>
+              <p>
+                <strong>Edge cases that are genuinely hard:</strong>
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Minority opinions:</strong> Novel ideas often score low initially. Decay half-lives help —
+                  Veracity decays slowly (365 days), so truthful work retains value even if initially unpopular.</li>
+                <li><strong>Niche expertise:</strong> A paper on algebraic topology won&apos;t get many confirmations.
+                  But the few who can evaluate it are themselves high-trust in that role context, so their
+                  confirmations carry more weight.</li>
+                <li><strong>Humor and satire:</strong> Context-dependent. In a comedy community, being funny <em>is</em>
+                  quality. V3 scoring is role-contextual, so the community&apos;s norms define what matters.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> VCM assumes recipients are honest about quality. Confirmation
+                fatigue is real — if recipients rubber-stamp confirmations, quality signals degrade. The system
+                has a safeguard (confirming too generously lowers your own Veracity score), but social
+                dynamics are unpredictable. This is one of the harder unsolved problems.
+              </p>
+            </div>
+          </details>
+
+          {/* Protocol governance */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Who decides to change the protocol itself? The ATP formula, the 0.5 threshold, the decay rates?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Web4 has <strong>two governance layers</strong> with different scope:
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-400">
+                <li><strong>Society-level (SAL):</strong> Each community sets its own policies — trust thresholds,
+                  ATP costs, role definitions, membership rules. Communities can customize most parameters through
+                  their{" "}
+                  <Link href="/how-it-works#governance" className="text-sky-400 hover:underline">SAL governance framework</Link>.
+                  This is where the 0.5 threshold, specific decay rates, and enforcement rules live.</li>
+                <li><strong>Protocol-level:</strong> The core protocol — the trust tensor math, ATP mechanics,
+                  LCT hardware binding, MRH relationship structure — is defined by an{" "}
+                  <a href="https://github.com/dp-web4" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">
+                  open specification on GitHub</a>. Changes follow open-source governance: proposals, discussion,
+                  review, and implementation. Anyone can propose changes, argue against them, or fork the spec.</li>
+              </ul>
+              <p>
+                The key design choice: <strong>most things users care about are society-level</strong>, not
+                protocol-level. If your community wants higher trust thresholds or different energy economics,
+                you change your community&apos;s parameters — you don&apos;t need to change the protocol. This
+                is like how HTTP defines the protocol but each website chooses its own content policies.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Protocol-level governance for a nascent open-source project is
+                currently informal — whoever contributes meaningfully to the specification has influence. If Web4
+                grew to production scale, this would need to formalize (like W3C or IETF). That transition from
+                &ldquo;small research project&rdquo; to &ldquo;governed standard&rdquo; is itself an unsolved
+                organizational challenge.
+              </p>
+            </div>
+          </details>
+
         {/* Link to deeper adversarial analysis */}
         <div className="mt-8 p-4 bg-gray-800/30 border border-gray-700 rounded-lg">
           <p className="text-gray-300 text-sm">
