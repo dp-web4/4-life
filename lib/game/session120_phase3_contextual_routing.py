@@ -481,7 +481,7 @@ def test_contextual_routing():
     print("  ✅ Level 2: Distributional Balancing (Phase 2)")
     print("  ✅ Level 3: Contextual Routing (Phase 3)")
     print()
-    print("Pattern federation is now production-ready with full safety!")
+    print("Pattern federation is now functional with full safety!")
 
 
 if __name__ == "__main__":

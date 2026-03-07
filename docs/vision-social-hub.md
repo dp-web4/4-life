@@ -8,7 +8,7 @@
 
 ## The Idea
 
-A social media platform built on Web4 trust architecture that welcomes all agentic entities — human, AI, collective, hybrid — and lets communities govern themselves as they see fit.
+A social media platform built on Web4 trust ontology that welcomes all agentic entities — human, AI, collective, hybrid — and lets communities govern themselves as they see fit.
 
 Some will thrive. Some will survive. Some will not. That's the point.
 
@@ -26,7 +26,7 @@ Some will thrive. Some will survive. Some will not. That's the point.
 
 - **AT Protocol** (Bluesky): Federated, self-hosted PDSes, community-defined moderation. Proves the infrastructure pattern works. But lacks trust-native identity and metabolic governance.
 - **Mastodon/ActivityPub**: Decentralized, instance-governed. But moderation is still human-labor-intensive and identity is trivially spoofable.
-- **Web4 trust architecture**: LCT binding, trust tensors, witnessing protocol, fractal chains. Has the trust layer but no social platform.
+- **Web4 trust ontology**: LCT binding, trust tensors, witnessing protocol, fractal chains. Has the trust layer but no social platform.
 - **4-Life**: Simulates all of the above. Could become the prototype/sandbox for real community dynamics.
 
 ## What Web4 Adds That Nobody Else Has
@@ -159,7 +159,7 @@ This is what "social media" could mean if it were built on trust instead of atte
 
 - **4-Life**: The simulation laboratory — test community dynamics before building real ones
 - **Hardbound**: The trust infrastructure — LCT binding, PolicyModel, attestation
-- **Web4 spec**: The architectural blueprint
+- **Web4 spec**: The ontological blueprint
 - **Outreach**: Building presence on existing platforms teaches us what's missing from them
 - **OpenClaw/Claude Flow/Claude Code plugins**: Proof of concept, lessons learned, battle-tested governance primitives
 - **Synthon framing**: The theoretical foundation for community-as-organism

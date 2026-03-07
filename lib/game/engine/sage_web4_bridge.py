@@ -190,7 +190,7 @@ def create_sage_edge_society_lct(
             "network_connectivity": "local+internet",
             "federation_role": "edge_provider",
             "specialization": "conversational_ai",
-            "validation_status": "production_ready",
+            "validation_status": "research_validated",
 
             # Society resources
             "treasury": {
