@@ -567,6 +567,7 @@ export default function ATPEconomicsPage() {
         </div>
         <p className="text-gray-500 text-xs mt-4 italic">
           From web4 economic equilibrium analysis — ATP circulation, velocity tracking, and Gini convergence verified across 500+ rounds.
+        </p>
       </section>
 
       {/* Follow One Agent's ATP Journey */}

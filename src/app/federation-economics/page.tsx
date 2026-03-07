@@ -568,6 +568,20 @@ export default function FederationEconomicsPage() {
               HotStuff-style linear consensus uses 250x fewer messages than classical PBFT —
               making large federations practical without drowning in coordination overhead.
             </p>
+            <details className="mt-3 bg-gray-900/50 border border-gray-700 rounded p-3">
+              <summary className="text-sm text-sky-400 cursor-pointer hover:text-sky-300">
+                Why cross-federation decisions take longer
+              </summary>
+              <p className="text-gray-400 text-sm mt-2 leading-relaxed">
+                Trust updates propagate <strong className="text-amber-400">~13x slower</strong> across
+                federation boundaries than within a single federation. This isn&apos;t a bug — it&apos;s
+                a consequence of causal ordering across independent networks. Think of it like
+                international diplomacy: decisions within a country are fast, but treaties between
+                countries take longer because both sides need to verify, translate, and agree.
+                Web4 makes this explicit: cross-federation operations cost more ATP and carry
+                higher latency, which naturally encourages local community strength.
+              </p>
+            </details>
           </div>
 
           <div>
