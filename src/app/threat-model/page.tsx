@@ -631,6 +631,38 @@ export default function ThreatModelPage() {
         </p>
       </section>
 
+      {/* Byzantine Detection */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">
+          When Someone Lies: Byzantine Detection
+        </h2>
+        <p className="text-gray-400 mb-6">
+          What happens when a node sends contradictory information to different parts of the network?
+          Web4 uses <strong className="text-gray-300">equivocation detection</strong> — catching entities
+          that say different things to different audiences.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg p-4">
+            <div className="text-sm font-semibold text-red-400 mb-2">Double-voting</div>
+            <p className="text-gray-400 text-xs">Entity votes &ldquo;yes&rdquo; to one group and &ldquo;no&rdquo; to another on the same proposal. Hash-chained logs make this detectable — both votes exist in the tamper-evident record.</p>
+          </div>
+          <div className="bg-gray-800 border border-gray-700 rounded-lg p-4">
+            <div className="text-sm font-semibold text-amber-400 mb-2">Behavioral fingerprinting</div>
+            <p className="text-gray-400 text-xs">Consistency checks across an entity&apos;s history. Sudden strategy changes, impossible timing patterns, or quality variance that exceeds statistical norms trigger automated flags.</p>
+          </div>
+          <div className="bg-gray-800 border border-gray-700 rounded-lg p-4">
+            <div className="text-sm font-semibold text-sky-400 mb-2">Gradual degradation</div>
+            <p className="text-gray-400 text-xs">Unlike blockchain slashing (lose everything instantly), Web4 degrades trust gradually based on evidence confidence. Minor inconsistencies reduce trust; proven equivocation triggers severe penalties.</p>
+          </div>
+        </div>
+        <p className="text-gray-500 text-xs italic">
+          The key design choice: <strong className="text-gray-400">degradation over slashing</strong>.
+          Honest mistakes (network glitches, timing issues) shouldn&apos;t destroy an entity.
+          But deliberate deception — proven through cryptographic evidence — earns steep, permanent trust reduction.
+          Formally verified across 85 checks in the Byzantine fault detection suite.
+        </p>
+      </section>
+
       {/* What We Know vs Don't Know */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">

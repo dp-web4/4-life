@@ -879,6 +879,35 @@ export default function HowItWorksPage() {
           This is why quality wins and spam dies — not because of rules or moderators, but because
           the three systems reinforce each other. Good behavior compounds upward. Bad behavior compounds downward.
         </p>
+
+        {/* Trust invariants */}
+        <details className="mt-6 bg-gray-800/50 border border-gray-700 rounded-xl p-5">
+          <summary className="text-sm font-semibold text-sky-400 cursor-pointer hover:text-sky-300">
+            The four guarantees that make this work (trust invariants)
+          </summary>
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <div className="bg-gray-900/60 rounded-lg p-3">
+              <div className="text-sky-400 font-semibold text-xs mb-1">Boundedness</div>
+              <p className="text-gray-400 text-xs">Trust is always between 0 and 1. Nobody gets infinite trust, nobody goes negative. The scale is absolute and comparable across entities.</p>
+            </div>
+            <div className="bg-gray-900/60 rounded-lg p-3">
+              <div className="text-sky-400 font-semibold text-xs mb-1">Conservation</div>
+              <p className="text-gray-400 text-xs">Trust can&apos;t be created from nothing. It must be earned through actions that other entities observe and confirm. No trust printing press.</p>
+            </div>
+            <div className="bg-gray-900/60 rounded-lg p-3">
+              <div className="text-sky-400 font-semibold text-xs mb-1">Transitivity bounds</div>
+              <p className="text-gray-400 text-xs">Trust through a chain can never exceed the weakest link. If Alice trusts Bob 0.9 and Bob trusts Carol 0.6, Alice&apos;s transitive trust in Carol is at most 0.54 (0.9 × 0.6).</p>
+            </div>
+            <div className="bg-gray-900/60 rounded-lg p-3">
+              <div className="text-sky-400 font-semibold text-xs mb-1">Locality</div>
+              <p className="text-gray-400 text-xs">Trust changes propagate locally, not globally. When your trust changes, only entities within your MRH boundary are affected — not the entire network.</p>
+            </div>
+          </div>
+          <p className="text-gray-500 text-xs mt-3 italic">
+            These four properties are formally verified across 176 checks. They&apos;re what separates Web4
+            from ad-hoc reputation systems where scores can be inflated, manufactured, or propagated without bounds.
+          </p>
+        </details>
       </section>
 
       {/* Why This Works */}
