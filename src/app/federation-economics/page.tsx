@@ -552,7 +552,7 @@ export default function FederationEconomicsPage() {
             <p className="text-gray-300 mb-3">
               Federation members don&apos;t always have reliable connections. Networks partition,
               messages arrive late, clocks drift. Web4 uses a <strong className="text-amber-400">PBFT-Lite
-              consensus protocol</strong> designed for this reality: vector clocks track causal
+              consensus protocol</strong> (a lightweight version of a well-studied agreement algorithm) designed for this reality: vector clocks track causal
               ordering, partition detectors identify network splits, and leader election continues
               making progress even when some nodes are unreachable.
             </p>
@@ -565,7 +565,7 @@ export default function FederationEconomicsPage() {
             </p>
             <p className="text-gray-500 text-xs italic">
               Formally verified (303 checks across 8 analysis tracks). At scale (n=1000 nodes),
-              HotStuff-style linear consensus uses 250x fewer messages than classical PBFT —
+              HotStuff-style linear consensus (a modern optimization where each round needs only one leader message instead of everyone-to-everyone) uses 250x fewer messages than classical PBFT —
               making large federations practical without drowning in coordination overhead.
             </p>
             <details className="mt-3 bg-gray-900/50 border border-gray-700 rounded p-3">
