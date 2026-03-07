@@ -508,10 +508,123 @@ export default function WhyWeb4Page() {
               </p>
             </div>
           </details>
+          {/* Newcomer vs established liar */}
+          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>If someone powerful lies about me and I&apos;m new, does my truth even matter?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Yes — and here&apos;s how.</strong> In Web4, a single accusation from even a high-trust
+                entity doesn&apos;t override your track record. Trust is built from <em>all</em> your interactions,
+                not from one person&apos;s claim about you. An established member saying &ldquo;this newcomer is
+                untrustworthy&rdquo; is <strong>one data point</strong> — it lowers their trust in you, but
+                doesn&apos;t destroy your trust score globally.
+              </p>
+              <p>
+                Several mechanisms protect newcomers specifically:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Context boundaries (MRH):</strong> The liar&apos;s accusation only propagates within
+                  their local trust network, not the entire system. People outside their network never see it.</li>
+                <li><strong>Behavioral evidence outweighs claims:</strong> If you consistently produce quality work,
+                  your V3 scores from <em>recipients</em> build your reputation independently of the accuser&apos;s
+                  narrative. Actions speak louder than accusations.</li>
+                <li><strong>Accuser accountability:</strong> Making false accusations costs the accuser credibility.
+                  If their negative assessments consistently disagree with everyone else&apos;s experience of you,
+                  the accuser&apos;s <em>own</em> Veracity score drops. Lying is expensive.</li>
+                <li><strong>Multiple trust dimensions:</strong> T3 separates Talent, Training, and Temperament.
+                  Even if someone attacks your Temperament (&ldquo;they&apos;re unreliable&rdquo;), your Talent
+                  and Training scores remain based on your actual work quality.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Newcomers <em>are</em> more vulnerable. With only a few interactions,
+                a single negative assessment carries more weight relative to your thin history. The system gradually
+                gets more resistant to manipulation as you build more evidence. The first ~30 actions are the most
+                fragile period. This is a real design tradeoff: making newcomers more robust to attack would also
+                make it easier for Sybil attackers to quickly establish credibility.
+              </p>
+            </div>
+          </details>
+
+          {/* Social credit system comparison */}
+          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Isn&apos;t this just a social credit system?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Fair question. Both Web4 and social credit systems track behavior and assign scores.
+                But the differences are fundamental:
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs text-gray-400 mt-2">
+                  <thead>
+                    <tr className="border-b border-gray-700">
+                      <th className="text-left py-2 pr-4 text-gray-300"></th>
+                      <th className="text-left py-2 pr-4 text-red-400">Social Credit</th>
+                      <th className="text-left py-2 text-green-400">Web4</th>
+                    </tr>
+                  </thead>
+                  <tbody className="space-y-1">
+                    <tr className="border-b border-gray-800">
+                      <td className="py-2 pr-4 text-gray-300 font-medium">Who controls it?</td>
+                      <td className="py-2 pr-4">Central government</td>
+                      <td className="py-2">Nobody — federated protocol, no central authority</td>
+                    </tr>
+                    <tr className="border-b border-gray-800">
+                      <td className="py-2 pr-4 text-gray-300 font-medium">What&apos;s scored?</td>
+                      <td className="py-2 pr-4">Obedience to state rules</td>
+                      <td className="py-2">Quality of contributions (rated by recipients, not authorities)</td>
+                    </tr>
+                    <tr className="border-b border-gray-800">
+                      <td className="py-2 pr-4 text-gray-300 font-medium">Can you leave?</td>
+                      <td className="py-2 pr-4">No — mandatory for citizens</td>
+                      <td className="py-2">Yes — voluntary participation, join/leave any society</td>
+                    </tr>
+                    <tr className="border-b border-gray-800">
+                      <td className="py-2 pr-4 text-gray-300 font-medium">Who sees your score?</td>
+                      <td className="py-2 pr-4">Government and anyone they share with</td>
+                      <td className="py-2">Only entities within your trust network (MRH-bounded)</td>
+                    </tr>
+                    <tr className="border-b border-gray-800">
+                      <td className="py-2 pr-4 text-gray-300 font-medium">Can you appeal?</td>
+                      <td className="py-2 pr-4">Through government channels</td>
+                      <td className="py-2">Through community governance (SAL) — you can also fork the community</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 pr-4 text-gray-300 font-medium">Identity</td>
+                      <td className="py-2 pr-4">Real name, tied to national ID</td>
+                      <td className="py-2">Pseudonymous — hardware key, not your name</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-3">
+                The core difference: <strong>social credit is top-down control</strong> (the state
+                defines &ldquo;good behavior&rdquo; and punishes deviation). Web4 is <strong>bottom-up
+                accountability</strong> (communities define their own norms, and reputation emerges from
+                peer interactions, not authority judgments).
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> The line between &ldquo;accountability&rdquo; and
+                &ldquo;surveillance&rdquo; depends entirely on governance. A Web4 society <em>could</em> be
+                configured with oppressive policies — the protocol doesn&apos;t prevent it. The safeguard
+                is that participation is voluntary: if a society becomes oppressive, you leave (taking your
+                trust history with you). That exit right doesn&apos;t exist in state-run systems.
+              </p>
+            </div>
+          </details>
         </div>
 
-        {/* All other FAQs */}
-        <h3 className="text-sm uppercase tracking-wide text-gray-500 mb-4">Going deeper</h3>
+        {/* All other FAQs — collapsed by default */}
+        <details className="group">
+          <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">
+            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 24 more questions</h3>
+            <span className="text-gray-500 text-sm group-open:rotate-90 transition-transform">▶</span>
+          </summary>
         <div className="space-y-6">
 
           {/* Who builds this? */}
@@ -1003,7 +1116,6 @@ export default function WhyWeb4Page() {
               </p>
             </div>
           </details>
-        </div>
 
           {/* Hardware equity / digital divide */}
           <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
@@ -1263,6 +1375,9 @@ export default function WhyWeb4Page() {
               </p>
             </div>
           </details>
+
+        </div>
+        </details>
 
         {/* Link to deeper adversarial analysis */}
         <div className="mt-8 p-4 bg-gray-800/30 border border-gray-700 rounded-lg">

@@ -52,6 +52,20 @@ export default function HomePage() {
             Explore All Topics
           </button>
         </div>
+        <div style={{ marginTop: '0.75rem', display: 'flex', justifyContent: 'center', gap: '1rem', alignItems: 'center' }}>
+          <Link href="/tldr" style={{
+            padding: '0.5rem 1rem',
+            background: 'rgba(56, 189, 248, 0.1)',
+            border: '1px solid rgba(56, 189, 248, 0.3)',
+            borderRadius: '0.5rem',
+            color: 'var(--color-sky)',
+            fontWeight: 600,
+            fontSize: '0.85rem',
+            textDecoration: 'none',
+          }}>
+            Just 2 minutes? Read the TL;DR →
+          </Link>
+        </div>
       </section>
 
       {/* Tab Content */}
