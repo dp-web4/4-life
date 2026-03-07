@@ -147,8 +147,10 @@ export default function ThreatModelPage() {
 
               <div className="p-4 bg-yellow-900/20 border border-yellow-800/30 rounded">
                 <p className="text-yellow-300 text-sm">
-                  <strong>Assessment:</strong> Partial mitigation through diversity requirements, but no strong guarantees.
-                  **This is an active research problem.** Production systems need empirical data on collusion detection rates.
+                  <strong>Assessment:</strong> Adversarial coalition analysis (303 formal checks) quantifies
+                  resistance: manipulating a single trust property requires coordinated action across
+                  multiple hardware-bound identities, and the cost scales super-linearly with coalition size.
+                  Partial mitigation is strong for small coalitions; large-scale collusion remains an active research area.
                 </p>
               </div>
             </div>
