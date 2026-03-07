@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
@@ -261,6 +262,17 @@ export default function LCTExplainerPage() {
               <span className="font-bold">Key insight:</span> Web2 trusts what you memorize (forgettable, shareable).
               Web3 trusts what you store (copyable, stealable).
               Web4 trusts what hardware proves and witnesses verify (verifiable, revocable).
+            </p>
+          </div>
+
+          <div className="mt-4 p-4 bg-gray-800/40 border border-gray-700 rounded-lg">
+            <p className="text-sm text-gray-300">
+              <span className="font-bold text-green-400">But what about pseudonymity?</span>{' '}
+              Hardware-bound identity doesn&apos;t mean real-name identity. Your LCT is a cryptographic key, not your name.
+              Nobody sees &ldquo;Jane Smith&rdquo; — they see an entity with a trust history. You can participate, earn trust,
+              and contribute value without ever revealing who you are. What Web4 prevents isn&apos;t anonymity — it&apos;s{' '}
+              <em>disposable</em> identity. Your reputation follows you, but your name doesn&apos;t have to.{' '}
+              <Link href="/why-web4" className="text-sky-400 hover:underline">See the full FAQ &rarr;</Link>
             </p>
           </div>
 
