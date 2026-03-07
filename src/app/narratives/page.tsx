@@ -110,6 +110,7 @@ export default function NarrativesPage() {
           const meadow = featuredList.find(n => n.id === 'meadow-cooperative');
           const ironworks = featuredList.find(n => n.id === 'ironworks-collapse');
           const garden = featuredList.find(n => n.id === 'garden-of-equals');
+          const tidepool = featuredList.find(n => n.id === 'tidepool-reciprocity');
           return (
           <div className="mb-10">
             <div className="flex items-center gap-3 mb-5">
@@ -196,12 +197,48 @@ export default function NarrativesPage() {
               </div>
             )}
 
+            {/* Tidepool — reciprocity story */}
+            {tidepool && (
+              <div className="mt-6 bg-gradient-to-br from-cyan-900/20 to-gray-900 border border-cyan-700/30 rounded-xl p-6">
+                <div className="flex flex-col md:flex-row md:items-start gap-6">
+                  <div className="flex-1">
+                    <div className="text-xs text-cyan-400 font-semibold uppercase tracking-wider mb-2">29% cooperators + 43% reciprocators</div>
+                    <h2 className="text-xl font-bold mb-3 text-white">{tidepool.title}</h2>
+                    <p className="text-gray-400 text-sm leading-relaxed mb-4">{tidepool.summary}</p>
+                    <div className="flex flex-wrap gap-2 mb-4 text-xs">
+                      <div className="bg-gray-800/50 rounded p-2"><span className="text-green-400 font-semibold">Noa</span> <span className="text-gray-500">Cooperator (0.69)</span></div>
+                      <div className="bg-gray-800/50 rounded p-2"><span className="text-green-400 font-semibold">Jin</span> <span className="text-gray-500">Cooperator (0.67)</span></div>
+                      <div className="bg-gray-800/50 rounded p-2"><span className="text-cyan-400 font-semibold">Mira</span> <span className="text-gray-500">Reciprocator (0.65)</span></div>
+                      <div className="bg-gray-800/50 rounded p-2"><span className="text-cyan-400 font-semibold">Kai</span> <span className="text-gray-500">Reciprocator (0.64)</span></div>
+                      <div className="bg-gray-800/50 rounded p-2"><span className="text-cyan-400 font-semibold">Orla</span> <span className="text-gray-500">Reciprocator (0.66)</span></div>
+                      <div className="bg-gray-800/50 rounded p-2"><span className="text-yellow-400 font-semibold">Sable</span> <span className="text-gray-500">Reformed (0.58)</span></div>
+                      <div className="bg-gray-800/50 rounded p-2"><span className="text-yellow-400 font-semibold">Vance</span> <span className="text-gray-500">Reformed (0.55)</span></div>
+                    </div>
+                    <div className="flex items-center gap-3 text-xs text-gray-500 mb-4">
+                      <span>7 agents</span><span>&middot;</span><span>25 rounds</span><span>&middot;</span><span>7 survived</span><span>&middot;</span><span>Avg trust: 0.67</span><span>&middot;</span><span>0 deaths</span>
+                    </div>
+                    <Link href={`/narratives/${tidepool.id}`} className="inline-block px-5 py-2 bg-cyan-600 hover:bg-cyan-700 rounded-lg transition-colors font-medium text-sm">
+                      Read the Reciprocity Story
+                    </Link>
+                  </div>
+                  <div className="md:w-64 shrink-0 bg-gray-800/60 rounded-lg p-4 text-sm text-gray-400 leading-relaxed">
+                    <div className="text-white font-semibold mb-2">The surprise</div>
+                    With only 29% cooperators, the Tidepool outperformed the Meadow (63%) on average trust, wealth equality, and survival rate. Reciprocators <span className="text-cyan-300">amplified the cooperators&apos; signal</span> — initiative mattered more than numbers.
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Comparison insight */}
             <div className="mt-4 bg-gray-800/50 border border-gray-700 rounded-lg p-4">
-              <div className="grid grid-cols-3 gap-4 text-center text-sm">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
                 <div>
                   <div className="text-red-400 font-semibold">33% cooperators</div>
                   <div className="text-gray-500">Collapse</div>
+                </div>
+                <div>
+                  <div className="text-cyan-400 font-semibold">29% + reciprocators</div>
+                  <div className="text-gray-500">Thriving</div>
                 </div>
                 <div>
                   <div className="text-green-400 font-semibold">63% cooperators</div>
@@ -213,7 +250,7 @@ export default function NarrativesPage() {
                 </div>
               </div>
               <p className="text-gray-400 text-xs text-center mt-3">
-                Same rules, same economics. Composition shapes destiny — but adversity shapes character.
+                Same rules, same economics. Composition shapes destiny — and reciprocity changes the equation.
               </p>
             </div>
           </div>

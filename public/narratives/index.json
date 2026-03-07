@@ -51,6 +51,23 @@
     "featured": true
   },
   {
+    "id": "tidepool-reciprocity",
+    "title": "The Tidepool — When Mirror Strategies Shape a Society",
+    "filename": "tidepool-reciprocity.md",
+    "type": "Society Narrative",
+    "themes": [
+      "Reciprocity Amplifies",
+      "First Movers Shape Culture",
+      "Tipping Points Are Real",
+      "Strategy Isn't Fixed"
+    ],
+    "lives": 0,
+    "events": 15,
+    "timestamp": "2026-03-07",
+    "summary": "Seven agents — only 2 cooperators, 2 defectors, and 3 reciprocators who mirror whatever they receive. The cooperators seed goodwill first, the reciprocators amplify it, and the defectors face a choice: adapt or starve. A society with 29% initial cooperators outperforms one with 63%, proving that initiative matters more than numbers.",
+    "featured": true
+  },
+  {
     "id": "ep-driven-closed-loop",
     "title": "Bob: Learning Through Action — Self-Aware Pattern Discovery",
     "filename": "ep-driven-closed-loop.md",
