@@ -290,65 +290,150 @@ export class SocietyNarrativeGenerator {
   private generateTitle(result: SocietyResult): string {
     const finalMetrics = result.finalMetrics;
     const dominantStrategy = this.findDominantStrategy(finalMetrics.strategyDistribution);
+    const deaths = result.events.filter(e => e.type === 'agent_death').length;
+    const rebirths = result.events.filter(e => e.type === 'agent_rebirth').length;
+    const hasCollapse = result.events.some(e => e.type === 'trust_collapse');
+    const hasIsolation = result.events.some(e => e.type === 'defector_isolated');
+    const agentCount = result.config.numAgents;
 
-    // Dramatic titles based on outcomes
+    // High trust + high cooperation — many variants
     if (finalMetrics.averageTrust > 0.6 && finalMetrics.cooperationRate > 0.7) {
-      return "The Rise of Trust";
-    }
-    if (finalMetrics.giniCoefficient > 0.4) {
-      return "A Society Divided";
-    }
-    if (finalMetrics.numCoalitions === 1 && finalMetrics.largestCoalition > 5) {
-      return "The Great Coalition";
-    }
-    if (result.events.some(e => e.type === 'defector_isolated')) {
-      return "The Outcast's Lesson";
-    }
-    if (dominantStrategy === 'defector') {
-      return "The Tragedy of Self-Interest";
-    }
-    if (dominantStrategy === 'reciprocator') {
-      return "An Eye for an Eye";
+      const pool = [
+        "The Rise of Trust",
+        "When Cooperation Won",
+        "A Society That Chose Trust",
+        `${agentCount} Strangers, One Community`,
+        "The Trust That Held",
+      ];
+      if (hasCollapse) pool.push("Through the Storm");
+      if (rebirths > 0) pool.push("Death, Rebirth, and the Trust That Survived");
+      return pool[Math.floor(Math.random() * pool.length)];
     }
 
-    // More specific fallbacks based on available data
+    // High inequality
+    if (finalMetrics.giniCoefficient > 0.4) {
+      return ["A Society Divided", "The Haves and the Have-Nots", "When the Gap Grew Too Wide"][
+        Math.floor(Math.random() * 3)
+      ];
+    }
+
+    // Single dominant coalition
+    if (finalMetrics.numCoalitions === 1 && finalMetrics.largestCoalition > 5) {
+      return ["The Great Coalition", "One Coalition to Rule Them All", "Convergence"][
+        Math.floor(Math.random() * 3)
+      ];
+    }
+
+    // Defector isolation
+    if (hasIsolation) {
+      return ["The Outcast's Lesson", "Exile of the Selfish", "Trust Has a Long Memory"][
+        Math.floor(Math.random() * 3)
+      ];
+    }
+
+    // Defector dominance
+    if (dominantStrategy === 'defector') {
+      return ["The Tragedy of Self-Interest", "When Everyone Cheats", "A Race to the Bottom"][
+        Math.floor(Math.random() * 3)
+      ];
+    }
+
+    // Reciprocator dominance
+    if (dominantStrategy === 'reciprocator') {
+      return ["An Eye for an Eye", "The Mirror Society", "Reciprocity's Reign"][
+        Math.floor(Math.random() * 3)
+      ];
+    }
+
+    // Many deaths
+    if (deaths > agentCount * 0.4) {
+      return ["The Reckoning", "Survival of the Trusted", "When Trust Ran Out"][
+        Math.floor(Math.random() * 3)
+      ];
+    }
+
+    // Moderate trust
     if (finalMetrics.averageTrust > 0.4 && finalMetrics.cooperationRate > 0.5) {
-      return "Trust Takes Root";
+      return ["Trust Takes Root", "A Fragile Peace", "The Slow Build"][
+        Math.floor(Math.random() * 3)
+      ];
     }
+
+    // Multiple coalitions
     if (finalMetrics.numCoalitions > 1) {
-      return "A Web of Alliances";
+      return ["A Web of Alliances", "Tribal Lines", "The Fractured Society"][
+        Math.floor(Math.random() * 3)
+      ];
     }
-    return "A Society Emerges";
+
+    return ["A Society Emerges", "The Experiment Begins", "Trust in the Making"][
+      Math.floor(Math.random() * 3)
+    ];
   }
 
   private generateTagline(result: SocietyResult): string {
     const finalMetrics = result.finalMetrics;
     const events = result.events;
+    const pick = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
 
     const hasCoalitions = events.some(e => e.type === 'coalition_formed');
     const hasIsolation = events.some(e => e.type === 'defector_isolated');
     const hasCollapse = events.some(e => e.type === 'trust_collapse');
+    const deaths = events.filter(e => e.type === 'agent_death').length;
 
     if (hasCollapse && finalMetrics.averageTrust > 0.5) {
-      return "A story of crisis, recovery, and the resilience of trust";
+      return pick([
+        "A story of crisis, recovery, and the resilience of trust",
+        "Trust broke. Then it came back stronger.",
+        "The collapse that made them stronger",
+      ]);
     }
     if (hasIsolation && hasCoalitions) {
-      return "When those who take are left behind by those who give";
+      return pick([
+        "When those who take are left behind by those who give",
+        "The community chose — and the defectors paid the price",
+        "Coalitions formed around trust. The selfish stood alone.",
+      ]);
     }
     if (finalMetrics.cooperationRate > 0.8) {
-      return "How cooperation conquered competition";
+      return pick([
+        "How cooperation conquered competition",
+        "They chose to trust — and it changed everything",
+        "A society where giving was the winning strategy",
+      ]);
     }
     if (finalMetrics.giniCoefficient > 0.4) {
-      return "A tale of winners, losers, and the cost of inequality";
+      return pick([
+        "A tale of winners, losers, and the cost of inequality",
+        "Same rules, same start — wildly different outcomes",
+        "When the gap between rich and poor tells the whole story",
+      ]);
     }
-
-    if (result.events.some(e => e.type === 'agent_death')) {
-      return "Where trust is life, and betrayal has a body count";
+    if (deaths > 3) {
+      return pick([
+        "Where trust is life, and betrayal has a body count",
+        `${deaths} agents died. Their stories explain why.`,
+        "In this society, running out of trust means running out of life",
+      ]);
+    }
+    if (deaths > 0) {
+      return pick([
+        "Where trust is life, and betrayal has a body count",
+        "Not everyone survived — but their choices shaped what followed",
+      ]);
     }
     if (finalMetrics.averageTrust > 0.4) {
-      return "Trust emerged — not because anyone planned it, but because it worked";
+      return pick([
+        "Trust emerged — not because anyone planned it, but because it worked",
+        "No rules said 'cooperate.' They did anyway.",
+        "A quiet revolution: trust as emergent architecture",
+      ]);
     }
-    return "A simulation of what happens when trust is the only rule";
+    return pick([
+      "A simulation of what happens when trust is the only rule",
+      "What emerges when strangers must decide: cooperate or compete?",
+      "No moderators. No authorities. Just trust.",
+    ]);
   }
 
   // ============================================================================
@@ -624,18 +709,29 @@ export class SocietyNarrativeGenerator {
   }
 
   private groupEventsBySignificance(result: SocietyResult): { title: string; events: SocietyEvent[] }[] {
+    const pick = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
+    const coalitionEvents = result.events.filter(e => e.type === 'coalition_formed');
+    const reckoningEvents = result.events.filter(e => e.type === 'defector_isolated' || e.type === 'trust_collapse');
+    const crisisEvents = result.events.filter(e => e.type === 'agent_death' || e.type === 'agent_rebirth');
+
     const groups = [
       {
-        title: "The Formation of Alliances",
-        events: result.events.filter(e => e.type === 'coalition_formed'),
+        title: pick(coalitionEvents.length > 2
+          ? ["The Formation of Alliances", "Lines Are Drawn", "Trust Clusters"]
+          : ["The First Alliance", "Finding Partners", "Trust Takes Shape"]),
+        events: coalitionEvents,
       },
       {
-        title: "The Reckoning",
-        events: result.events.filter(e => e.type === 'defector_isolated' || e.type === 'trust_collapse'),
+        title: pick(reckoningEvents.some(e => e.type === 'trust_collapse')
+          ? ["The Reckoning", "When Trust Broke", "The Fracture"]
+          : ["The Reckoning", "Consequences Arrive", "The Price of Defection"]),
+        events: reckoningEvents,
       },
       {
-        title: "Crisis and Survival",
-        events: result.events.filter(e => e.type === 'agent_death' || e.type === 'agent_rebirth'),
+        title: pick(crisisEvents.some(e => e.type === 'agent_rebirth')
+          ? ["Death and Rebirth", "The Second Chance", "Crisis and Renewal"]
+          : ["Crisis and Survival", "The Final Test", "When ATP Ran Out"]),
+        events: crisisEvents,
       },
     ];
 
@@ -666,16 +762,43 @@ export class SocietyNarrativeGenerator {
   }
 
   private getChapterOpening(title: string): string {
-    switch (title) {
-      case "The Formation of Alliances":
-        return "As rounds passed, patterns emerged. Those who proved trustworthy found each other. Trust clustered, creating islands of cooperation in an uncertain sea.";
-      case "The Reckoning":
-        return "Every society eventually faces its moment of truth. Those who took without giving found their options narrowing.";
-      case "Crisis and Survival":
-        return "In Web4, survival is not guaranteed. ATP must be earned, and those who cannot contribute eventually fade.";
-      default:
-        return `The simulation entered a new phase — round by round, the trust dynamics shifted.`;
+    const pick = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
+
+    // Alliance-related chapters
+    if (title.includes("Alliance") || title.includes("Lines") || title.includes("Cluster") || title.includes("Partner") || title.includes("Shape")) {
+      return pick([
+        "As rounds passed, patterns emerged. Those who proved trustworthy found each other. Trust clustered, creating islands of cooperation in an uncertain sea.",
+        "Nobody planned it. But round by round, the cooperators gravitated toward each other — drawn together by the simple math of mutual benefit.",
+        "Trust is invisible until it isn't. The first coalitions formed not from strategy, but from repeated proof: you gave, I gave back, and we both survived.",
+        "The network shifted. Where random connections once dominated, trust-weighted edges now drew clear boundaries between those who earned cooperation and those who didn't.",
+      ]);
     }
+
+    // Reckoning-related chapters
+    if (title.includes("Reckoning") || title.includes("Broke") || title.includes("Fracture") || title.includes("Consequence") || title.includes("Price")) {
+      return pick([
+        "Every society eventually faces its moment of truth. Those who took without giving found their options narrowing.",
+        "The bill came due. In a society where trust is currency, running a deficit has consequences that can't be hidden.",
+        "It happened gradually, then all at once. The defectors who had been coasting on others' generosity found the network reorganizing around them — without them.",
+        "Trust collapses don't announce themselves. They arrive as a quiet withdrawal of cooperation, a slow closing of doors.",
+      ]);
+    }
+
+    // Crisis-related chapters
+    if (title.includes("Crisis") || title.includes("Death") || title.includes("Rebirth") || title.includes("Chance") || title.includes("Renewal") || title.includes("Test") || title.includes("ATP Ran")) {
+      return pick([
+        "In Web4, survival is not guaranteed. ATP must be earned, and those who cannot contribute eventually fade.",
+        "The society faced its ultimate test: who had built enough trust to weather the storm, and who had burned through their reserves?",
+        "Death in Web4 is not an ending — it's a transition. The question is what survives: reputation, relationships, or just the karma of actions taken.",
+        "When resources run thin, the difference between those who invested in trust and those who exploited it becomes starkly visible.",
+      ]);
+    }
+
+    return pick([
+      "The simulation entered a new phase — round by round, the trust dynamics shifted.",
+      "Something changed. The patterns that defined the early rounds gave way to new dynamics.",
+      "A turning point arrived, though no single event caused it. The society was evolving.",
+    ]);
   }
 
   private narrateEvent(event: SocietyEvent, result: SocietyResult): NarrativeEvent {
