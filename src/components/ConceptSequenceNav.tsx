@@ -88,6 +88,20 @@ export default function ConceptSequenceNav({ currentPath }: ConceptSequenceNavPr
         ))}
       </div>
 
+      {/* Research status — threads honesty throughout concept pages */}
+      <p style={{
+        fontSize: '0.7rem',
+        color: 'var(--color-text-muted)',
+        textAlign: 'center',
+        marginBottom: '1rem',
+        opacity: 0.7,
+      }}>
+        These concepts are implemented and tested in simulation. Real-world validation is{' '}
+        <Link href="/what-could-go-wrong" style={{ color: 'var(--color-text-muted)', textDecoration: 'underline' }}>
+          an open question
+        </Link>.
+      </p>
+
       {/* Previous / Next buttons */}
       <div style={{
         display: 'flex',
