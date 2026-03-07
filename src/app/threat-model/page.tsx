@@ -464,6 +464,97 @@ export default function ThreatModelPage() {
         </div>
       </section>
 
+      {/* Privacy Leakage Channels */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">
+          Privacy Leakage Channels
+        </h2>
+        <p className="text-gray-400 mb-6">
+          Even with <TermTooltip term="mrh">context boundaries</TermTooltip> and zero-knowledge proofs,
+          Web4 has <strong className="text-gray-200">7 information leakage channels</strong> that could
+          reveal data about participants. Complete prevention is impossible &mdash; the goal is to raise
+          the cost of inference above the value of the leaked information.
+        </p>
+
+        <div className="space-y-3 mb-6">
+          {/* HIGH severity */}
+          <div className="bg-red-900/15 border border-red-800/30 rounded-lg p-4">
+            <div className="text-xs text-red-400 font-semibold uppercase tracking-wider mb-3">High Severity</div>
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <span className="text-red-400 text-sm font-mono mt-0.5 shrink-0">90%</span>
+                <div>
+                  <div className="text-sm text-gray-200 font-semibold">Graph Structure</div>
+                  <div className="text-xs text-gray-400">Trust network topology reveals roles, authority patterns, and community membership. Hardest to mitigate &mdash; max mitigation only 50%. Dummy edges and topology randomization help but can&apos;t eliminate structural information.</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-red-400 text-sm font-mono mt-0.5 shrink-0">80%</span>
+                <div>
+                  <div className="text-sm text-gray-200 font-semibold">Revocation Cascades</div>
+                  <div className="text-xs text-gray-400">When a device is compromised, the revocation pattern reveals delegation structure. Batching and delayed propagation reduce leakage to ~40%.</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-red-400 text-sm font-mono mt-0.5 shrink-0">70%</span>
+                <div>
+                  <div className="text-sm text-gray-200 font-semibold">ZK Proof Metadata</div>
+                  <div className="text-xs text-gray-400">Zero-knowledge proofs hide the value but leak metadata: frequency, type distribution, and <em>verifier identity</em> (reveals social graph). Proof relays and batching mitigate to ~30%.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* MEDIUM severity */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-lg cursor-pointer">
+            <summary className="p-4 text-sm font-semibold text-gray-300 list-none flex justify-between items-center">
+              <span>Medium Severity: 4 additional channels</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="px-4 pb-4 space-y-3">
+              <div className="flex items-start gap-3">
+                <span className="text-yellow-400 text-sm font-mono mt-0.5 shrink-0">100%&rarr;20%</span>
+                <div>
+                  <div className="text-sm text-gray-200 font-semibold">Timing Correlation</div>
+                  <div className="text-xs text-gray-400">Without mitigation, timing reveals everything. Adding jitter reduces correlation from 100% to ~20%. Cost: slight latency increase.</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-yellow-400 text-sm font-mono mt-0.5 shrink-0">60%</span>
+                <div>
+                  <div className="text-sm text-gray-200 font-semibold">Trust Score Changes</div>
+                  <div className="text-xs text-gray-400">With &gt;20 observations, adversaries can infer individual T3 dimensions from composite score changes correlated with activity types. Differential privacy (adding noise) mitigates to ~10%.</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-yellow-400 text-sm font-mono mt-0.5 shrink-0">60%</span>
+                <div>
+                  <div className="text-sm text-gray-200 font-semibold">Delegation Trees</div>
+                  <div className="text-xs text-gray-400">Multi-hop delegation structure reveals organizational hierarchy. Flattening and proxy delegation reduce exposure.</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-yellow-400 text-sm font-mono mt-0.5 shrink-0">50%</span>
+                <div>
+                  <div className="text-sm text-gray-200 font-semibold">ATP Balance Patterns</div>
+                  <div className="text-xs text-gray-400">Balance history reveals activity timing, periodicity (automated vs manual), and economic standing. Batching transactions and noisy balances help.</div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <div className="p-4 bg-purple-900/20 border border-purple-800/30 rounded-lg">
+          <p className="text-purple-300 text-sm">
+            <strong>Design principle:</strong> Web4 doesn&apos;t claim perfect privacy. It claims{' '}
+            <em>structural privacy</em> &mdash; trust data is scoped by context boundaries, encrypted in transit,
+            and verifiable via zero-knowledge proofs. The 7 channels above represent the irreducible cost of
+            having a functional trust system. The honest question isn&apos;t &ldquo;can we eliminate leakage?&rdquo;
+            (no), but &ldquo;is the privacy cost worth the trust benefit?&rdquo;
+          </p>
+        </div>
+      </section>
+
       {/* Adversary Profiles */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
