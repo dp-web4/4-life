@@ -146,12 +146,34 @@ export default function ThreatModelPage() {
               </div>
 
               <div className="p-4 bg-yellow-900/20 border border-yellow-800/30 rounded">
-                <p className="text-yellow-300 text-sm">
+                <p className="text-yellow-300 text-sm mb-3">
                   <strong>Assessment:</strong> Adversarial coalition analysis (303 formal checks) quantifies
                   resistance: manipulating a single trust property requires coordinated action across
                   multiple hardware-bound identities, and the cost scales super-linearly with coalition size.
                   Partial mitigation is strong for small coalitions; large-scale collusion remains an active research area.
                 </p>
+                <details className="text-sm">
+                  <summary className="text-yellow-400 cursor-pointer hover:text-yellow-300">
+                    Coalition property thresholds (from formal verification)
+                  </summary>
+                  <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-300">
+                    <div className="bg-gray-900/60 rounded p-2">
+                      <span className="text-red-400 font-mono font-bold">&gt;1/3</span> colluders breaks <strong>federation consensus</strong> (BFT limit)
+                    </div>
+                    <div className="bg-gray-900/60 rounded p-2">
+                      <span className="text-red-400 font-mono font-bold">&gt;1/2</span> colluders breaks <strong>trust voting</strong> (majority threshold)
+                    </div>
+                    <div className="bg-gray-900/60 rounded p-2">
+                      <span className="text-amber-400 font-mono font-bold">3+</span> members triggers <strong>coalition detection</strong> (93%+ probability)
+                    </div>
+                    <div className="bg-gray-900/60 rounded p-2">
+                      <span className="text-green-400 font-mono font-bold">Super-linear</span> cost scaling makes large coalitions <strong>economically irrational</strong>
+                    </div>
+                  </div>
+                  <p className="text-gray-500 text-xs mt-2 italic">
+                    From session 29 adversarial coalition analysis — Byzantine, rational, and altruistic agent types modeled separately.
+                  </p>
+                </details>
               </div>
             </div>
           </div>
