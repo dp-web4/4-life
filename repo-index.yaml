@@ -107,8 +107,8 @@ related_repos:
   - name: Synchronism
     url: "https://github.com/dp-web4/Synchronism"
     relationship: "Coherence physics (C ≈ 0.50)"
-  - name: HRM
-    url: "https://github.com/dp-web4/HRM"
+  - name: SAGE
+    url: "https://github.com/dp-web4/SAGE"
     relationship: "SAGE consciousness kernel"
   - name: ACT
     url: "https://github.com/dp-web4/ACT"

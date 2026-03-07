@@ -620,7 +620,7 @@ The research is conducted through autonomous AI sessions running across multiple
 |---------|-------------|
 | [Web4](https://github.com/dp-web4/web4) | Core protocol specs, coherence pricing research, trust tensor implementation - **start here for in-depth theory** |
 | [Synchronism](https://github.com/dp-web4/Synchronism) | Theoretical physics framework (coherence physics, γ≈2 universality) |
-| [HRM](https://github.com/dp-web4/HRM) | SAGE consciousness kernel (edge AI implementation) |
+| [SAGE](https://github.com/dp-web4/SAGE) | SAGE consciousness kernel (edge AI implementation) |
 
 **Enterprise implementations** are in development. Contact dp@metalinxx.io for details.
 
