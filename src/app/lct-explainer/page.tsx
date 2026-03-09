@@ -349,6 +349,14 @@ export default function LCTExplainerPage() {
               </div>
             </div>
           </div>
+
+          <div className="mt-3 text-xs text-gray-500 italic px-1">
+            <strong className="text-gray-400">Who runs witness infrastructure?</strong> Anyone.
+            Web4 is a protocol, not a platform — witness nodes can be run by universities,
+            companies, nonprofits, or individuals. No single operator controls the network.
+            Collusion requires coordinating multiple independent parties simultaneously,
+            which is both economically costly and mathematically detectable.
+          </div>
         </div>
 
         {/* What Is An LCT */}
