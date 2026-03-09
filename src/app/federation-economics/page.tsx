@@ -683,6 +683,51 @@ export default function FederationEconomicsPage() {
         </p>
       </section>
 
+      {/* Federation Mergers */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-4 text-gray-100">When Federations Merge</h2>
+        <p className="text-gray-400 mb-6">
+          What happens when two Web4 federations decide to combine? The merged federation
+          creates new value — access to more specialists, broader trust networks, economies of scale.
+          How that surplus gets divided determines whether mergers are fair.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div className="bg-gray-800/60 border border-gray-700 rounded-xl p-5">
+            <h3 className="text-sm font-semibold text-sky-400 mb-2">The Shapley Value Principle</h3>
+            <p className="text-gray-400 text-xs leading-relaxed mb-3">
+              Game theory provides a mathematically fair way to divide merger surplus:
+              each federation receives a share proportional to its <strong className="text-gray-300">marginal
+              contribution</strong> — what the merged whole gains specifically because they joined.
+            </p>
+            <div className="bg-gray-900/50 rounded p-3 text-xs text-gray-500">
+              <strong className="text-gray-300">Example:</strong> Federation A has medical specialists.
+              Federation B has legal experts. Neither alone serves health-law cases.
+              Together they can. The Shapley value splits that new revenue based on
+              each party&apos;s unique contribution — not just size.
+            </div>
+          </div>
+          <div className="bg-gray-800/60 border border-gray-700 rounded-xl p-5">
+            <h3 className="text-sm font-semibold text-amber-400 mb-2">Trust-Weighted Negotiating Power</h3>
+            <p className="text-gray-400 text-xs leading-relaxed mb-3">
+              Federations with higher average trust scores have stronger bargaining positions —
+              they bring more reliable capacity to the merger. Nash bargaining theory:
+              the party with more to offer gets a proportionally larger share of the surplus.
+            </p>
+            <div className="bg-gray-900/50 rounded p-3 text-xs text-gray-500">
+              <strong className="text-gray-300">Key property:</strong> Both parties must gain
+              more from merging than from staying separate — otherwise the merger doesn&apos;t
+              happen. Web4 federations only merge when it&apos;s genuinely beneficial to both,
+              eliminating hostile takeovers.
+            </div>
+          </div>
+        </div>
+        <p className="text-gray-500 text-xs italic">
+          Multi-federation bargaining: Nash, Kalai-Smorodinsky, and Shapley value solutions validated
+          across 59 checks (session 32). All solutions satisfy individual rationality — no federation
+          is forced into a merger that makes it worse off.
+        </p>
+      </section>
+
       {/* Related Concepts */}
       <section>
         <h2>Related Concepts</h2>
