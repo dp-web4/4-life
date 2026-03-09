@@ -912,6 +912,10 @@ export default function ATPEconomicsPage() {
                 The burn fee means the only profitable strategy is genuine value creation —
                 you earn more by contributing than by moving ATP around. Simulations confirm:
                 one honest identity outearns five fake identities splitting the same budget.
+                The burned ATP goes to a <strong className="text-gray-300">redistribution pool</strong> —
+                not to any central authority — and is redistributed to quality contributors.
+                ATP is formally conserved: no hidden inflation, no minting events, no entity
+                benefits from the fee except the community.
               </p>
               <p className="text-gray-400 text-sm mt-3 leading-relaxed">
                 The same 5% principle applies to <strong className="text-gray-300">cross-federation delegation</strong>.
