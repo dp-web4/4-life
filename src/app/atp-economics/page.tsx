@@ -852,15 +852,20 @@ export default function ATPEconomicsPage() {
 
             <div>
               <h3 className="text-xl font-semibold text-sky-400 mb-3">
-                ATP vs Traditional Tokens
+                ATP vs Crypto Tokens
               </h3>
+              <p className="text-gray-500 text-xs mb-3">
+                Crypto tokens (Bitcoin, ETH, etc.) are digital assets you hold, trade, or speculate on.
+                ATP is not that — it&apos;s an activity budget that gets spent when you participate and earned
+                when you contribute value.
+              </p>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border-collapse">
                   <thead>
                     <tr className="border-b border-gray-700">
                       <th className="text-left p-3 text-sky-400">Property</th>
                       <th className="text-left p-3 text-red-400">
-                        Traditional Tokens
+                        Crypto tokens (e.g., Bitcoin)
                       </th>
                       <th className="text-left p-3 text-green-400">
                         ATP (Web4)
