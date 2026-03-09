@@ -217,9 +217,9 @@ export default function FirstContactPage() {
                   </p>
                 </div>
                 <div>
-                  <Link href="/coherence-index" className="text-orange-400 font-semibold mb-2 block hover:underline">⚖️ Self-Regulation: No Moderators</Link>
+                  <Link href="/coherence-index" className="text-orange-400 font-semibold mb-2 block hover:underline">🔍 Authenticity: Behavior Proves Identity</Link>
                   <p className="text-gray-400">
-                    The system regulates itself through economics. Quality rises, spam sinks.
+                    Consistent behavior across time, devices, and contexts reveals who&apos;s real. Bots and fakes can&apos;t sustain coherent patterns.
                   </p>
                 </div>
               </div>

@@ -544,8 +544,8 @@ export default function PlaygroundPage() {
               borderLeft: "3px solid #f97316",
               textDecoration: "none",
             }}>
-              <div style={{ fontSize: "0.85rem", color: "#f3f4f6", fontWeight: 600 }}>Coherence Index</div>
-              <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>How consistency protects identity</div>
+              <div style={{ fontSize: "0.85rem", color: "#f3f4f6", fontWeight: 600 }}>Behavioral Consistency</div>
+              <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>How consistent behavior exposes fakes</div>
             </a>
             <a href="/aliveness" style={{
               padding: "0.75rem",
