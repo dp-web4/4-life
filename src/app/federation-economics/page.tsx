@@ -298,6 +298,42 @@ export default function FederationEconomicsPage() {
               premiums.
             </p>
           </div>
+
+          <div className="p-6 bg-gradient-to-br from-sky-950/30 to-sky-900/20 border border-sky-800/30 rounded-lg md:col-span-2">
+            <h3 className="text-lg font-semibold text-sky-400 mb-3">
+              📊 Federation Health Is Observable
+            </h3>
+            <p className="text-gray-300 mb-3">
+              A federation&apos;s health can be quantified across four weighted dimensions — giving
+              an objective measure of whether the community is thriving or declining:
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+              <div className="bg-gray-900/60 rounded p-3 text-center">
+                <div className="text-purple-400 font-bold text-sm mb-1">30%</div>
+                <div className="text-gray-300 font-medium">Trust distribution</div>
+                <div className="text-gray-500 mt-1">Is trust spread evenly or hoarded by few?</div>
+              </div>
+              <div className="bg-gray-900/60 rounded p-3 text-center">
+                <div className="text-green-400 font-bold text-sm mb-1">25%</div>
+                <div className="text-gray-300 font-medium">Economic flow</div>
+                <div className="text-gray-500 mt-1">Is ATP velocity healthy? Resources circulating?</div>
+              </div>
+              <div className="bg-gray-900/60 rounded p-3 text-center">
+                <div className="text-amber-400 font-bold text-sm mb-1">25%</div>
+                <div className="text-gray-300 font-medium">Governance participation</div>
+                <div className="text-gray-500 mt-1">Are members voting? Quorums forming?</div>
+              </div>
+              <div className="bg-gray-900/60 rounded p-3 text-center">
+                <div className="text-sky-400 font-bold text-sm mb-1">20%</div>
+                <div className="text-gray-300 font-medium">Network connectivity</div>
+                <div className="text-gray-500 mt-1">Is the trust graph well-connected or fragmented?</div>
+              </div>
+            </div>
+            <p className="text-gray-500 text-xs mt-3 italic">
+              Composite health scoring: session 30, track 3. Alerts trigger when any dimension falls below threshold.
+              A healthy federation scores above 0.7 composite — unhealthy federations show early warning signs before collapse.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -567,6 +603,12 @@ export default function FederationEconomicsPage() {
               Formally verified (303 checks across 8 analysis tracks). At scale (n=1000 nodes),
               HotStuff-style linear consensus (a modern optimization where each round needs only one leader message instead of everyone-to-everyone) uses 250x fewer messages than classical PBFT —
               making large federations practical without drowning in coordination overhead.
+            </p>
+            <p className="text-gray-400 text-sm mt-3">
+              <strong className="text-amber-400">Trust-weighted voting:</strong> Consensus votes
+              are weighted by each member&apos;s trust score. High-trust members have more voting
+              weight — the quorum can be reached with fewer high-trust members than low-trust
+              ones. This is Web4&apos;s answer to &ldquo;who counts most?&rdquo;: behavior does.
             </p>
             <details className="mt-3 bg-gray-900/50 border border-gray-700 rounded p-3">
               <summary className="text-sm text-sky-400 cursor-pointer hover:text-sky-300">
