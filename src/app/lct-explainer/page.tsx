@@ -574,6 +574,54 @@ export default function LCTExplainerPage() {
             With software-only hardware, 0.5 is both where you start and the highest you can reach.
             Stronger hardware lets you build higher &mdash; but you still have to earn it through behavior.
           </p>
+
+          <details className="mt-4">
+            <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300">
+              ▶ Why hardware binding lasts: identity vs. presence vs. location
+            </summary>
+            <div className="mt-3 bg-gray-900/60 border border-gray-700 rounded-lg p-4 text-sm text-gray-300 space-y-3">
+              <p>
+                Not all identity attributes are equal. Web4 distinguishes three tiers:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div className="bg-emerald-950/40 border border-emerald-800/30 rounded p-3">
+                  <div className="font-bold text-emerald-400 mb-1">Immutable</div>
+                  <div className="text-xs text-gray-400 mb-2">Cannot change without physical hardware swap</div>
+                  <ul className="text-xs text-gray-300 space-y-1">
+                    <li>TPM Endorsement Key (burned at manufacture)</li>
+                    <li>CPU serial number</li>
+                    <li>Secure Enclave key (Apple platforms)</li>
+                  </ul>
+                  <div className="text-xs text-emerald-400 mt-2 font-medium">→ LCT cryptographic root</div>
+                </div>
+                <div className="bg-amber-950/40 border border-amber-800/30 rounded p-3">
+                  <div className="font-bold text-amber-400 mb-1">Characteristic</div>
+                  <div className="text-xs text-gray-400 mb-2">Changes rarely, with deliberate action</div>
+                  <ul className="text-xs text-gray-300 space-y-1">
+                    <li>MAC address (per network adapter)</li>
+                    <li>Hostname (admin-changeable)</li>
+                    <li>GPU UUID</li>
+                  </ul>
+                  <div className="text-xs text-amber-400 mt-2 font-medium">→ Fingerprint layer</div>
+                </div>
+                <div className="bg-gray-700/40 border border-gray-600/30 rounded p-3">
+                  <div className="font-bold text-gray-300 mb-1">Dynamic</div>
+                  <div className="text-xs text-gray-400 mb-2">Changes frequently — must be rediscovered</div>
+                  <ul className="text-xs text-gray-300 space-y-1">
+                    <li>IP address (DHCP, VPN, roaming)</li>
+                    <li>Port, session state</li>
+                  </ul>
+                  <div className="text-xs text-gray-400 mt-2 font-medium">→ Presence, not identity</div>
+                </div>
+              </div>
+              <p className="text-gray-400 text-xs border-t border-gray-700 pt-3">
+                <strong className="text-gray-300">Key insight:</strong> An IP address is a <em>presence</em> attribute, not an identity attribute.
+                A machine that gets a new IP is still the same machine if its immutable anchor (TPM EK) matches.
+                Web4 anchors identity at the immutable tier &mdash; making LCTs durable across reboots, network changes,
+                and even OS reinstalls.
+              </p>
+            </div>
+          </details>
         </div>
 
         {/* Attack Scenario Comparison */}

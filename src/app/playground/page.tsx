@@ -93,7 +93,7 @@ function toPlaygroundResult(result: SimulationResult, trustThreshold: number): P
   }
 
   if (lastLife.peakTrust > 0.7) {
-    insights.push(`Peak trust reached ${(lastLife.peakTrust * 100).toFixed(0)}% — high trust compounds via coherence bonuses.`);
+    insights.push(`Peak trust reached ${(lastLife.peakTrust * 100).toFixed(0)}% — high trust compounds via coherence bonuses (behavioral consistency rewards).`);
   }
 
   if (result.lives.length > 1 && lastLife.endTrust > firstLife.endTrust + 0.05) {

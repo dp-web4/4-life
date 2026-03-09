@@ -631,6 +631,58 @@ export default function FederationEconomicsPage() {
         </div>
       </section>
 
+      {/* Federated Trust Learning */}
+      <section>
+        <h2>How Federations Learn Without Sharing Secrets</h2>
+        <p className="text-gray-300 mb-4">
+          A privacy paradox: federations improve their trust models by learning from each other,
+          but they shouldn&apos;t share raw behavioral data across society boundaries.
+          Web4 resolves this with <strong className="text-sky-400">privacy-preserving federated learning</strong>.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+          <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-5">
+            <h3 className="text-base font-semibold text-sky-400 mb-2">What Federations Share</h3>
+            <ul className="space-y-1.5 text-gray-300 text-sm">
+              <li>&bull; <strong>Gradient updates</strong> — how optimal trust parameters changed, not why</li>
+              <li>&bull; <strong>Aggregate statistics</strong> — how well strategies worked, not who used them</li>
+              <li>&bull; <strong>Model improvements</strong> — converged parameters, not training data</li>
+            </ul>
+          </div>
+          <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-5">
+            <h3 className="text-base font-semibold text-emerald-400 mb-2">What Stays Private</h3>
+            <ul className="space-y-1.5 text-gray-300 text-sm">
+              <li>&bull; <strong>Individual behavior</strong> — who did what, when</li>
+              <li>&bull; <strong>Trust scores</strong> — specific entity reputation data</li>
+              <li>&bull; <strong>Identity linkages</strong> — which people belong to which society</li>
+            </ul>
+          </div>
+        </div>
+        <p className="text-gray-400 text-sm mb-3">
+          The mechanism: each federation trains locally on its own behavioral data, then contributes
+          only the <em>direction of improvement</em> (gradient update) to a shared model. Gossip-based
+          propagation spreads these updates across the network. <strong className="text-amber-400">Differential privacy</strong> adds
+          calibrated noise before sharing, so individual contributions can&apos;t be reverse-engineered.
+        </p>
+        <details className="bg-gray-900/50 border border-gray-700 rounded-lg p-4">
+          <summary className="text-sm text-sky-400 cursor-pointer hover:text-sky-300">
+            ▶ Model poisoning: the adversarial case
+          </summary>
+          <p className="text-gray-400 text-sm mt-2 leading-relaxed">
+            A malicious federation could contribute corrupted gradient updates to sabotage collective learning.
+            Web4 defends against this by requiring gradient updates to be validated against a set of known-good
+            test cases before acceptance. Updates that degrade validation performance are rejected,
+            and the contributing federation is flagged. Combined with trust-weighted averaging
+            (higher-trust federations contribute more to the shared model), poisoning requires both
+            high trust and coordinated sabotage — expensive and detectable.
+          </p>
+        </details>
+        <p className="text-gray-500 text-xs mt-3 italic">
+          Federated trust learning: formally specified (session 32). Privacy guarantees are
+          simulation-level — real-world differential privacy calibration requires empirical validation
+          against actual federation sizes and behavioral distributions.
+        </p>
+      </section>
+
       {/* Related Concepts */}
       <section>
         <h2>Related Concepts</h2>
