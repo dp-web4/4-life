@@ -774,6 +774,8 @@ export default function ThreatModelPage() {
               <li>• Cooperation is Nash-dominant at current parameters (200 ATP stakes + 3 witnesses)</li>
               <li>• ATP market conserves under stress (200 agents, 500 rounds, 5% transfer fee maintains stability)</li>
               <li>• Sybil ROI is negative: honest identity outearns 5 fakes (transfer fee bleeds circular flows)</li>
+              <li>• Temporal logic properties formally verified: trust earned stays until explicitly revoked or naturally decayed — no arbitrary removal (LTL model checking, session 33)</li>
+              <li>• Every attestation request eventually receives a response (progress guarantee: G(requested → F(responded)))</li>
             </ul>
           </div>
 
