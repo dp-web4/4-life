@@ -37,3 +37,8 @@ lib/game/*.json
 
 # Hardbound (agent coordination metadata — local only)
 .hardbound/
+
+# credentials — never commit
+.env
+storage_state.json
+.notebooklm/
