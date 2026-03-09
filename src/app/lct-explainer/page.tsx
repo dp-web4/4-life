@@ -923,6 +923,28 @@ export default function LCTExplainerPage() {
             This UX is aspirational — the current prototype uses stubbed hardware interfaces.
             The goal is zero-friction identity backed by real device attestation.
           </p>
+
+          {/* What a Web4 login actually looks like */}
+          <div className="mt-6 p-4 bg-gray-900/60 border border-gray-700 rounded-lg">
+            <h3 className="text-sm font-bold text-gray-300 mb-3">What a Web4 login actually looks like</h3>
+            <div className="font-mono text-xs space-y-1 text-gray-400">
+              <div className="text-gray-500">// Current flow: password manager + 2FA</div>
+              <div className="text-red-400/80">✗ Enter email address</div>
+              <div className="text-red-400/80">✗ Enter password (16+ chars, must not reuse)</div>
+              <div className="text-red-400/80">✗ Open authenticator app, enter 6-digit code</div>
+              <div className="text-red-400/80">✗ Repeat on every new device</div>
+              <div className="mt-3 text-gray-500">// Web4 flow: hardware-bound identity</div>
+              <div className="text-green-400/80">✓ Open app</div>
+              <div className="text-green-400/80">✓ Face ID / fingerprint confirms it&apos;s you</div>
+              <div className="text-green-400/80">✓ Device&apos;s security chip signs the request</div>
+              <div className="text-green-400/80">✓ Done — your trust history follows automatically</div>
+            </div>
+            <p className="text-xs text-gray-500 mt-3">
+              The difference: instead of proving &ldquo;I know the right password,&rdquo;
+              you&apos;re proving &ldquo;I possess the right hardware.&rdquo; Passwords can be stolen;
+              hardware-bound keys cannot be extracted even by malware.
+            </p>
+          </div>
         </div>
 
         {/* Why LCTs Enable Trust-Native Societies */}
