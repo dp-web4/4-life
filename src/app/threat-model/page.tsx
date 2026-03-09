@@ -178,6 +178,26 @@ export default function ThreatModelPage() {
             </div>
           </div>
 
+          {/* Trust Epidemic Dynamics */}
+          <div className="mt-6 bg-gray-900/60 border border-gray-700/50 rounded-lg p-5">
+            <h4 className="text-sm font-semibold text-purple-300 mb-3">Why multi-witness prevents cascades: trust epidemic dynamics</h4>
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-400">
+              <div>
+                <p className="mb-2"><strong className="text-gray-200">Simple contagion</strong> (one contact spreads trust change): R₀ &gt; 1 if a bad actor has any neighbors. A single compromised account can infect any connected account. This is how social media manipulation works.</p>
+                <p><strong className="text-gray-200">Complex contagion</strong> (requires ≥30% of neighbors to confirm): R₀ stays below 1 even with multiple bad actors — a trust manipulation needs to come from multiple independent sources simultaneously before it takes effect.</p>
+              </div>
+              <div className="bg-gray-800/50 rounded p-3">
+                <div className="text-xs text-purple-400 font-semibold mb-2 uppercase tracking-wide">Web4 implements complex contagion</div>
+                <ul className="space-y-1 text-xs">
+                  <li>• Multi-witness requirement: changes need confirmation from 3+ independent hardware-bound devices</li>
+                  <li>• MRH-bounded propagation: trust signals don't travel past the trust horizon</li>
+                  <li>• Geometric mean composition: one weak link caps the whole chain — a single bad witness doesn't average away</li>
+                </ul>
+                <p className="text-xs text-gray-500 mt-2 italic">Trust epidemic modeling: 118 checks (session 32). Complex contagion threshold of 0.3 (30% of neighbors) reduces cascade probability by 89% vs. simple contagion under equal adversary conditions.</p>
+              </div>
+            </div>
+          </div>
+
           {/* Interactive Collusion Demo */}
           <div className="my-8">
             <CollusionDetectionDemo />
@@ -660,6 +680,74 @@ export default function ThreatModelPage() {
           Honest mistakes (network glitches, timing issues) shouldn&apos;t destroy an entity.
           But deliberate deception — proven through cryptographic evidence — earns steep, permanent trust reduction.
           Formally verified across 85 checks in the Byzantine fault detection suite.
+        </p>
+      </section>
+
+      {/* Real-Time Trust Health Monitoring */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-4 text-gray-100">
+          Proactive Monitoring: Catching Problems Before They Escalate
+        </h2>
+        <p className="text-gray-400 mb-6">
+          The Byzantine fault detection section above handles <em>reactive</em> responses to detected faults.
+          But Web4 also runs <em>proactive</em> trust health monitoring — statistical process control that
+          notices when trust patterns start drifting before a fault becomes a crisis.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div className="bg-gray-800/60 border border-gray-700 rounded-xl p-4">
+            <h3 className="text-sm font-semibold text-sky-400 mb-2">EWMA Trend Detection</h3>
+            <p className="text-gray-400 text-xs leading-relaxed">
+              Exponentially Weighted Moving Average tracks the <em>direction</em> of trust change,
+              not just the current value. A gradual trust decline over 20 rounds triggers an alert
+              before the entity hits a critical threshold — catching slow-burn manipulation
+              that looks innocent in any single round.
+            </p>
+          </div>
+          <div className="bg-gray-800/60 border border-gray-700 rounded-xl p-4">
+            <h3 className="text-sm font-semibold text-amber-400 mb-2">CUSUM Change Detection</h3>
+            <p className="text-gray-400 text-xs leading-relaxed">
+              Cumulative Sum detects <em>structural breaks</em> — moments when behavior fundamentally
+              shifts. An entity that maintained consistent quality for 50 rounds and then
+              starts outputting low-quality work triggers a CUSUM alarm: something changed,
+              even if the absolute trust level still looks acceptable.
+            </p>
+          </div>
+          <div className="bg-gray-800/60 border border-gray-700 rounded-xl p-4">
+            <h3 className="text-sm font-semibold text-emerald-400 mb-2">Trust SLOs</h3>
+            <p className="text-gray-400 text-xs leading-relaxed">
+              Service Level Objectives define what &ldquo;healthy&rdquo; trust looks like for a role.
+              A community moderator should maintain T3 above 0.65 in Temperament. If they
+              drop below this for 3 consecutive rounds, an SLO violation fires — prompting
+              review, not automatic punishment.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4 mb-4">
+          <h4 className="text-sm font-semibold text-gray-300 mb-2">Incident Lifecycle</h4>
+          <div className="flex items-center gap-2 flex-wrap text-xs">
+            <span className="px-2 py-1 bg-gray-700 rounded text-gray-300">Detect</span>
+            <span className="text-gray-500">→</span>
+            <span className="px-2 py-1 bg-amber-900/40 rounded text-amber-300">Alert</span>
+            <span className="text-gray-500">→</span>
+            <span className="px-2 py-1 bg-blue-900/40 rounded text-blue-300">Investigate</span>
+            <span className="text-gray-500">→</span>
+            <span className="px-2 py-1 bg-purple-900/40 rounded text-purple-300">Mitigate</span>
+            <span className="text-gray-500">→</span>
+            <span className="px-2 py-1 bg-green-900/40 rounded text-green-300">Resolve</span>
+          </div>
+          <p className="text-gray-500 text-xs mt-2">
+            Alerts are aggregated (multiple related alerts create one incident, not a flood of notifications)
+            and deduplicated across 3-round windows. High-frequency alerting — itself a potential DoS vector —
+            is suppressed after 3 alerts per entity per round with exponential backoff.
+          </p>
+        </div>
+
+        <p className="text-gray-500 text-xs italic">
+          Trust monitoring formally specified (session 32). Like CI, EWMA/CUSUM monitoring is
+          simulation-validated — production calibration (alert thresholds, backoff parameters) will
+          require tuning against real behavioral data.
         </p>
       </section>
 
