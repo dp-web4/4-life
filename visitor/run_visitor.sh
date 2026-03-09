@@ -7,6 +7,15 @@ set -e
 # Ensure claude is in PATH (cron doesn't inherit user profile)
 export PATH="$HOME/.local/bin:$PATH"
 
+# Account routing: synth token for working sessions
+ENV_FILE="/mnt/c/exe/projects/ai-agents/.env"
+if [ -f "$ENV_FILE" ]; then
+    CLAUDE_SYNTH_TOKEN=$(grep '^CLAUDE_SYNTH_TOKEN=' "$ENV_FILE" | cut -d= -f2-)
+fi
+if [ -n "$CLAUDE_SYNTH_TOKEN" ] && [[ "$CLAUDE_SYNTH_TOKEN" != PLACEHOLDER* ]]; then
+    export CLAUDE_CODE_OAUTH_TOKEN="$CLAUDE_SYNTH_TOKEN"
+fi
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 DATE=$(date +%Y-%m-%d)
