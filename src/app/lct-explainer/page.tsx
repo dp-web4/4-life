@@ -344,7 +344,7 @@ export default function LCTExplainerPage() {
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500 font-bold shrink-0">4.</span>
-                  <span>More witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90%)</span>
+                  <span>More witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90%) — but with <em>diminishing returns</em>. Three hardware-bound witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds, session 30)</span>
                 </div>
               </div>
             </div>
