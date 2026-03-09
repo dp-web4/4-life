@@ -284,15 +284,15 @@ export default function WhyWeb4Page() {
             each root cause with a specific mechanism:
           </p>
           <div className="bg-gray-900/50 border border-gray-700/50 rounded-lg p-4 mb-6">
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Terms you&apos;ll learn</p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs text-gray-400">
-              <span><strong className="text-sky-400">ATP</strong> = energy budget</span>
-              <span><strong className="text-sky-400">LCT</strong> = identity</span>
-              <span><strong className="text-sky-400">T3</strong> = trust score</span>
-              <span><strong className="text-sky-400">MRH</strong> = relevancy scope</span>
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Terms you&apos;ll learn — plain English first</p>
+            <div className="grid grid-cols-2 gap-2 text-xs text-gray-400">
+              <span>Energy budget <strong className="text-sky-400">(ATP)</strong></span>
+              <span>Hardware identity <strong className="text-sky-400">(LCT)</strong></span>
+              <span>Trust score <strong className="text-sky-400">(T3)</strong></span>
+              <span>Trust horizon <strong className="text-sky-400">(MRH)</strong></span>
             </div>
             <p className="text-xs text-gray-500 mt-2">
-              Don&apos;t memorize &mdash; each links to a hands-on explainer page.
+              Don&apos;t memorize the acronyms — the concepts are what matter. Each links to a hands-on explainer.
             </p>
           </div>
 
