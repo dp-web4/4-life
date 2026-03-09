@@ -1130,6 +1130,31 @@ Temperament:  30-day half-life (recent behavior matters most)
         </div>
       </section>
 
+      {/* What Trust Scores Actually Mean */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <div className="bg-gray-900/50 border border-gray-700 rounded-xl p-6">
+          <h3 className="text-lg font-semibold text-sky-400 mb-2">What does &ldquo;trust = 0.7&rdquo; actually mean?</h3>
+          <p className="text-gray-300 text-sm mb-3">
+            Web4 trust scores are designed to be <strong className="text-white">calibrated probabilities</strong> —
+            not arbitrary ratings. When a trust score is 0.7, entities at that level should behave
+            cooperatively in their role context about 70% of the time. A score of 0.9 should predict
+            cooperative behavior about 90% of the time.
+          </p>
+          <p className="text-gray-400 text-sm">
+            This calibration is measured with{" "}
+            <strong className="text-gray-300">Brier scores</strong> and{" "}
+            <strong className="text-gray-300">reliability diagrams</strong> — statistical tools that
+            compare predicted trust levels against actual observed cooperation rates. A well-calibrated
+            system stays within ±5% across all trust bands. A poorly calibrated system might label
+            entities &ldquo;0.8 trust&rdquo; who only cooperate 50% of the time — which breaks the
+            entire point of having trust scores.
+          </p>
+          <p className="text-gray-500 text-xs mt-3 italic">
+            Trust calibration validation: Session 32, 117 checks across scoring rules, ECE &lt; 0.05 target.
+          </p>
+        </div>
+      </section>
+
       {/* Why This Matters */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">

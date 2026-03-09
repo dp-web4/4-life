@@ -564,9 +564,20 @@ export default function ATPEconomicsPage() {
               (Gini coefficient) converges to ~0.25, well below real economies (~0.6-0.7).
             </p>
           </div>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
+            <div className="text-2xl mb-2">🏷️</div>
+            <h3 className="text-lg font-semibold text-sky-400 mb-2">Trust Earns Better Terms</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              In federated markets, high-trust entities pay less for resource access. Dynamic pricing
+              gives up to a <strong className="text-sky-300">30% discount</strong> to entities with
+              trust near 1.0, and up to a 50% premium for scarce resources. Being trustworthy
+              isn&apos;t just morally rewarded — it&apos;s economically cheaper to participate.
+            </p>
+          </div>
         </div>
         <p className="text-gray-500 text-xs mt-4 italic">
           From web4 economic equilibrium analysis — ATP circulation, velocity tracking, and Gini convergence verified across 500+ rounds.
+          Trust-based dynamic pricing: session 32, 84 checks.
         </p>
       </section>
 
