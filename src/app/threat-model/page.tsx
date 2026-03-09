@@ -749,6 +749,31 @@ export default function ThreatModelPage() {
           simulation-validated — production calibration (alert thresholds, backoff parameters) will
           require tuning against real behavioral data.
         </p>
+
+        {/* Adaptive Threat Levels */}
+        <div className="mt-6 bg-gray-900/60 border border-gray-700/50 rounded-lg p-5">
+          <h4 className="text-sm font-semibold text-amber-300 mb-3">Adaptive threat response: DEFCON-like levels</h4>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-3">
+            {[
+              { level: "GREEN", label: "Normal", color: "text-green-400 border-green-800/40 bg-green-950/20" },
+              { level: "YELLOW", label: "Elevated", color: "text-yellow-400 border-yellow-800/40 bg-yellow-950/20" },
+              { level: "ORANGE", label: "Heightened", color: "text-orange-400 border-orange-800/40 bg-orange-950/20" },
+              { level: "RED", label: "Active attack", color: "text-red-400 border-red-800/40 bg-red-950/20" },
+              { level: "BLACK", label: "Crisis", color: "text-gray-200 border-gray-600/40 bg-gray-800/40" },
+            ].map(t => (
+              <div key={t.level} className={`border rounded p-2 text-center ${t.color}`}>
+                <div className="text-xs font-bold">{t.level}</div>
+                <div className="text-xs opacity-70">{t.label}</div>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-gray-400">
+            Web4 policies adapt to detected threat levels — raising trust thresholds, tightening
+            witness requirements, and triggering emergency overrides automatically. Hysteresis
+            prevents oscillation between threat levels (a brief attack doesn&apos;t immediately
+            drop back to GREEN when it subsides). Adaptive policies validated across 185 checks (session 30).
+          </p>
+        </div>
       </section>
 
       {/* What We Know vs Don't Know */}
