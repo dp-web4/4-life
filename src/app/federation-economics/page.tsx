@@ -728,6 +728,53 @@ export default function FederationEconomicsPage() {
         </p>
       </section>
 
+      {/* Trust Network Flow */}
+      <section>
+        <h2>Trust Flows Like Water</h2>
+        <p>
+          Federations connect trust networks the way pipes connect water systems. Trust flows through
+          paths between communities, and the <strong>weakest connection limits the whole flow</strong>.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 mb-4">
+          <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-5">
+            <h3 className="font-semibold text-sky-400 mb-2">The Bottleneck Principle</h3>
+            <p className="text-sm text-gray-400">
+              The max trust that can flow from Community A to Community C (through B) is limited by
+              the weakest link — the minimum trust capacity in the chain. If A→B trust is 0.8 but
+              B→C trust is 0.3, the effective path trust is 0.3, not 0.8.
+            </p>
+          </div>
+          <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-5">
+            <h3 className="font-semibold text-sky-400 mb-2">Bridge Agents Have Disproportionate Value</h3>
+            <p className="text-sm text-gray-400">
+              An entity with high trust in two communities acts as a bridge, increasing the flow
+              capacity between them. This is why &ldquo;connectors&rdquo; — people trusted across
+              domains — have outsized influence in federated systems.
+            </p>
+          </div>
+          <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-5">
+            <h3 className="font-semibold text-sky-400 mb-2">Vulnerability Detection</h3>
+            <p className="text-sm text-gray-400">
+              Min-cut analysis identifies the minimum set of connections that, if severed, would
+              isolate two communities. A single critical bridge agent = high vulnerability.
+              Healthy federations have redundant paths.
+            </p>
+          </div>
+          <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-5">
+            <h3 className="font-semibold text-sky-400 mb-2">No Central Router</h3>
+            <p className="text-sm text-gray-400">
+              Unlike centralized platforms that route all trust through their servers, Web4 trust
+              flow is distributed. The network finds paths autonomously — no single server holds
+              the keys to cross-community reputation.
+            </p>
+          </div>
+        </div>
+        <p className="text-gray-500 text-xs italic">
+          Trust network flow analysis: max-flow/min-cut applied to trust graphs (session 33).
+          Bottleneck paths and vulnerability detection implemented.
+        </p>
+      </section>
+
       {/* Related Concepts */}
       <section>
         <h2>Related Concepts</h2>

@@ -1073,6 +1073,46 @@ export default function LCTExplainerPage() {
           </p>
         </div>
 
+        {/* Trust Transparency Log */}
+        <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-gray-100">Why Trust is Auditable</h2>
+          <p className="text-gray-300 mb-4">
+            How do you know your trust score wasn&apos;t secretly manipulated? Web4 uses a{" "}
+            <strong className="text-green-400">trust transparency log</strong> — an append-only,
+            tamper-evident ledger of every attestation ever made about an entity.
+          </p>
+          <div className="grid md:grid-cols-3 gap-4 mb-4">
+            <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4">
+              <div className="text-2xl mb-2">📋</div>
+              <h3 className="text-sm font-bold text-green-400 mb-2">Every attestation is logged</h3>
+              <p className="text-xs text-gray-400">
+                When someone attests to your trustworthiness, that record is added to a public Merkle
+                log. You can verify every attestation in your history.
+              </p>
+            </div>
+            <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4">
+              <div className="text-2xl mb-2">🔐</div>
+              <h3 className="text-sm font-bold text-green-400 mb-2">Tampering is detectable</h3>
+              <p className="text-xs text-gray-400">
+                The log uses cryptographic hashing: changing any past entry breaks the chain.
+                Anyone can check that no secret entries were added or removed.
+              </p>
+            </div>
+            <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4">
+              <div className="text-2xl mb-2">👁️</div>
+              <h3 className="text-sm font-bold text-green-400 mb-2">Suspicious patterns surface</h3>
+              <p className="text-xs text-gray-400">
+                Automated monitors watch for red flags: rapid trust score changes, multiple
+                revocations, conflicting attestations. Manipulation is visible, not hidden.
+              </p>
+            </div>
+          </div>
+          <p className="text-gray-500 text-xs italic">
+            Inspired by SSL Certificate Transparency (RFC 6962) — the same approach that
+            ended fraudulent HTTPS certificates. Trust auditing: session 33, implemented.
+          </p>
+        </div>
+
         {/* Technical Deep Dive — collapsed by default */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <details>
