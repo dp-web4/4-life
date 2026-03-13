@@ -98,6 +98,9 @@ export default function HowItWorksPage() {
               Behavioral consistency across where you are, what you can do,
               when you act, and who you interact with.
             </p>
+            <p className="text-xs text-gray-500 mt-2">
+              Example: If someone usually posts coding tutorials at 9am and suddenly starts posting crypto spam at 3am from a new country, their coherence drops — making every action more expensive.
+            </p>
             <Link
               href="/coherence-index"
               className="text-sky-400 hover:underline text-sm mt-2 inline-block"
