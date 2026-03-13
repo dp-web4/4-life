@@ -110,7 +110,7 @@ Where: `/` = "verified by", `*` = "contextualized by", `+` = "augmented with"
 │   ├── playground/         # Interactive parameter exploration (NEW Session #12)
 │   ├── lab-console/        # Live simulation viewer
 │   ├── compare/            # Comparative simulation analysis
-│   ├── narratives/         # Human-readable story browser (NEW Session #19 - production-ready)
+│   ├── narratives/         # Human-readable story browser (NEW Session #19)
 │   ├── patterns/           # Pattern corpus browser (EP learning visualization)
 │   ├── trust-networks/     # Multi-agent trust dynamics visualization (Session #11)
 │   ├── federation-economics/ # Dynamic ATP markets & price signals (Session #13)
@@ -130,7 +130,7 @@ Where: `/` = "verified by", `*` = "contextualized by", `+` = "augmented with"
 │       └── patterns/       # API endpoint for pattern corpus data
 ├── src/lib/act/            # ACT conversational interface system (NEW Session #21)
 │   └── query_engine.ts     # Pattern-matched query understanding + pre-generated responses
-├── src/lib/narratives/     # Narrative generation system (NEW Session #19 - production-ready)
+├── src/lib/narratives/     # Narrative generation system (NEW Session #19)
 │   ├── event_detector.ts   # Identifies interesting moments
 │   ├── story_generator.ts  # Converts events to stories
 │   ├── narrative_exporter.ts # Export to Markdown/JSON/HTML
@@ -620,7 +620,7 @@ The research is conducted through autonomous AI sessions running across multiple
 |---------|-------------|
 | [Web4](https://github.com/dp-web4/web4) | Core protocol specs, coherence pricing research, trust tensor implementation - **start here for in-depth theory** |
 | [Synchronism](https://github.com/dp-web4/Synchronism) | Theoretical physics framework (coherence physics, γ≈2 universality) |
-| [HRM](https://github.com/dp-web4/HRM) | SAGE consciousness kernel (edge AI implementation) |
+| [SAGE](https://github.com/dp-web4/SAGE) | SAGE consciousness kernel (edge AI implementation) |
 
 **Enterprise implementations** are in development. Contact dp@metalinxx.io for details.
 

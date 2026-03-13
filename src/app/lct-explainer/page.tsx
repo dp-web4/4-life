@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
@@ -71,8 +72,8 @@ export default function LCTExplainerPage() {
       example: "lct:web4:agent:alice@Thor#perception → can only read/observe, cannot execute code or delegate"
     },
     {
-      name: "Witness Network",
-      description: "Multiple independent devices/platforms witness and attest to this LCT's validity",
+      name: "Device Witness Network",
+      description: "Multiple independent devices witness and attest to this LCT's validity — witnesses are devices, not people",
       example: "Your LCT is witnessed by your phone, laptop, and FIDO2 key - attacker must compromise all three"
     }
   ];
@@ -264,6 +265,17 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
+          <div className="mt-4 p-4 bg-gray-800/40 border border-gray-700 rounded-lg">
+            <p className="text-sm text-gray-300">
+              <span className="font-bold text-green-400">But what about pseudonymity?</span>{' '}
+              Hardware-bound identity doesn&apos;t mean real-name identity. Your LCT is a cryptographic key, not your name.
+              Nobody sees &ldquo;Jane Smith&rdquo; — they see an entity with a trust history. You can participate, earn trust,
+              and contribute value without ever revealing who you are. What Web4 prevents isn&apos;t anonymity — it&apos;s{' '}
+              <em>disposable</em> identity. Your reputation follows you, but your name doesn&apos;t have to.{' '}
+              <Link href="/why-web4" className="text-sky-400 hover:underline">See the full FAQ &rarr;</Link>
+            </p>
+          </div>
+
           {/* Hardware explainer */}
           <div className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg">
             <h3 className="text-sm font-bold text-purple-400 mb-2">
@@ -293,15 +305,17 @@ export default function LCTExplainerPage() {
           {/* Witness explainer */}
           <div className="mt-4 p-4 bg-green-950/20 border border-green-800/30 rounded-lg">
             <h3 className="text-sm font-bold text-green-400 mb-2">
-              What are &ldquo;witnesses&rdquo;?
+              What are &ldquo;device witnesses&rdquo;?
             </h3>
             <p className="text-sm text-gray-300 mb-3">
-              In Web4, a <span className="font-bold">witness</span> is another device or
-              platform that independently confirms your presence is real. Think of it like
-              co-signers on a document: your phone, laptop, and security key each independently
+              <strong>Why device witnesses?</strong> Passwords can be stolen. A single device can be hacked.
+              But compromising three independent devices at the same time? That&apos;s orders of magnitude
+              harder. A <span className="font-bold">device witness</span> is any device or
+              platform that independently confirms your presence is real &mdash; like
+              co-signers on a legal document. Your phone, laptop, and security key each independently
               vouch that &ldquo;yes, this is really Alice.&rdquo; An attacker would need to
-              compromise <span className="font-bold">all</span> of your witnesses simultaneously
-              to impersonate you &mdash; not just steal one password.
+              compromise <span className="font-bold">all</span> of your device witnesses simultaneously
+              to impersonate you.
             </p>
             <div className="text-sm text-gray-400 bg-gray-900/50 rounded p-3 space-y-1">
               <p className="text-gray-300 font-medium">Example: Logging in from a new city</p>
@@ -330,10 +344,27 @@ export default function LCTExplainerPage() {
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500 font-bold shrink-0">4.</span>
-                  <span>More witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90%)</span>
+                  <span>More device witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90%) — but with <em>diminishing returns</em>. Three hardware-bound device witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds)</span>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="mt-4 p-3 bg-gray-900/50 border border-gray-700 rounded-lg">
+            <p className="text-sm text-gray-300 mb-2">
+              <strong className="text-sky-400">Who runs witness infrastructure?</strong> Anyone can.
+              Web4 is a protocol (like email), not a platform (like Gmail). Witness nodes can be run by
+              universities, companies, nonprofits, or individuals — the same way anyone can run an email server.
+            </p>
+            <p className="text-sm text-gray-400 mb-2">
+              In the current prototype, witnesses are simulated. In a deployed system, your devices witness
+              <em> each other</em> — your phone witnesses your laptop, and vice versa. External witnesses
+              (like a university or employer running a node) add additional verification but aren&apos;t required.
+            </p>
+            <p className="text-xs text-gray-500">
+              Collusion requires coordinating multiple independent parties simultaneously,
+              which is both economically costly and mathematically detectable.
+            </p>
           </div>
         </div>
 
@@ -560,6 +591,54 @@ export default function LCTExplainerPage() {
             With software-only hardware, 0.5 is both where you start and the highest you can reach.
             Stronger hardware lets you build higher &mdash; but you still have to earn it through behavior.
           </p>
+
+          <details className="mt-4">
+            <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300">
+              ▶ Why hardware binding lasts: identity vs. presence vs. location
+            </summary>
+            <div className="mt-3 bg-gray-900/60 border border-gray-700 rounded-lg p-4 text-sm text-gray-300 space-y-3">
+              <p>
+                Not all identity attributes are equal. Web4 distinguishes three tiers:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div className="bg-emerald-950/40 border border-emerald-800/30 rounded p-3">
+                  <div className="font-bold text-emerald-400 mb-1">Immutable</div>
+                  <div className="text-xs text-gray-400 mb-2">Cannot change without physical hardware swap</div>
+                  <ul className="text-xs text-gray-300 space-y-1">
+                    <li>TPM Endorsement Key (burned at manufacture)</li>
+                    <li>CPU serial number</li>
+                    <li>Secure Enclave key (Apple platforms)</li>
+                  </ul>
+                  <div className="text-xs text-emerald-400 mt-2 font-medium">→ LCT cryptographic root</div>
+                </div>
+                <div className="bg-amber-950/40 border border-amber-800/30 rounded p-3">
+                  <div className="font-bold text-amber-400 mb-1">Characteristic</div>
+                  <div className="text-xs text-gray-400 mb-2">Changes rarely, with deliberate action</div>
+                  <ul className="text-xs text-gray-300 space-y-1">
+                    <li>MAC address (per network adapter)</li>
+                    <li>Hostname (admin-changeable)</li>
+                    <li>GPU UUID</li>
+                  </ul>
+                  <div className="text-xs text-amber-400 mt-2 font-medium">→ Fingerprint layer</div>
+                </div>
+                <div className="bg-gray-700/40 border border-gray-600/30 rounded p-3">
+                  <div className="font-bold text-gray-300 mb-1">Dynamic</div>
+                  <div className="text-xs text-gray-400 mb-2">Changes frequently — must be rediscovered</div>
+                  <ul className="text-xs text-gray-300 space-y-1">
+                    <li>IP address (DHCP, VPN, roaming)</li>
+                    <li>Port, session state</li>
+                  </ul>
+                  <div className="text-xs text-gray-400 mt-2 font-medium">→ Presence, not identity</div>
+                </div>
+              </div>
+              <p className="text-gray-400 text-xs border-t border-gray-700 pt-3">
+                <strong className="text-gray-300">Key insight:</strong> An IP address is a <em>presence</em> attribute, not an identity attribute.
+                A machine that gets a new IP is still the same machine if its immutable anchor (TPM EK) matches.
+                Web4 anchors identity at the immutable tier &mdash; making LCTs durable across reboots, network changes,
+                and even OS reinstalls.
+              </p>
+            </div>
+          </details>
         </div>
 
         {/* Attack Scenario Comparison */}
@@ -861,6 +940,28 @@ export default function LCTExplainerPage() {
             This UX is aspirational — the current prototype uses stubbed hardware interfaces.
             The goal is zero-friction identity backed by real device attestation.
           </p>
+
+          {/* What a Web4 login actually looks like */}
+          <div className="mt-6 p-4 bg-gray-900/60 border border-gray-700 rounded-lg">
+            <h3 className="text-sm font-bold text-gray-300 mb-3">What a Web4 login actually looks like</h3>
+            <div className="font-mono text-xs space-y-1 text-gray-400">
+              <div className="text-gray-500">// Current flow: password manager + 2FA</div>
+              <div className="text-red-400/80">✗ Enter email address</div>
+              <div className="text-red-400/80">✗ Enter password (16+ chars, must not reuse)</div>
+              <div className="text-red-400/80">✗ Open authenticator app, enter 6-digit code</div>
+              <div className="text-red-400/80">✗ Repeat on every new device</div>
+              <div className="mt-3 text-gray-500">// Web4 flow: hardware-bound identity</div>
+              <div className="text-green-400/80">✓ Open app</div>
+              <div className="text-green-400/80">✓ Face ID / fingerprint confirms it&apos;s you</div>
+              <div className="text-green-400/80">✓ Device&apos;s security chip signs the request</div>
+              <div className="text-green-400/80">✓ Done — your trust history follows automatically</div>
+            </div>
+            <p className="text-xs text-gray-500 mt-3">
+              The difference: instead of proving &ldquo;I know the right password,&rdquo;
+              you&apos;re proving &ldquo;I possess the right hardware.&rdquo; Passwords can be stolen;
+              hardware-bound keys cannot be extracted even by malware.
+            </p>
+          </div>
         </div>
 
         {/* Why LCTs Enable Trust-Native Societies */}
@@ -943,6 +1044,28 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
+          {/* FAQ: Hardware Requirements */}
+          <div className="mt-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg">
+            <h3 className="text-sm font-bold text-sky-400 mb-2">
+              Do I need special hardware to participate?
+            </h3>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong>Most smartphones made after 2018</strong> already have the hardware needed — a Secure Enclave (iPhone) or
+              TPM chip (Android). These are the same chips that protect your fingerprint and Face ID data. You almost certainly
+              already own a compatible device.
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong>Laptops and desktops</strong> with TPM 2.0 work too (most PCs shipped since 2016).
+              USB security keys like YubiKey provide another option. You don&apos;t need to buy anything new.
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong>What about older/cheaper devices?</strong> Software-only keys work as a fallback, but with a lower
+              trust ceiling (50% vs. 90% for hardware-bound keys). This means you can participate, but
+              high-trust actions require at least one hardware-bound device. Web4 is designed so that anyone
+              with a basic smartphone can join — the hardware barrier is &ldquo;own a phone,&rdquo; not &ldquo;buy specialized equipment.&rdquo;
+            </p>
+          </div>
+
           {/* FAQ: Device Loss */}
           <div className="mt-6 p-4 bg-yellow-950/20 border border-yellow-800/30 rounded-lg">
             <h3 className="text-sm font-bold text-yellow-400 mb-2">
@@ -1011,6 +1134,46 @@ export default function LCTExplainerPage() {
           </p>
         </div>
 
+        {/* Trust Transparency Log */}
+        <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-gray-100">Why Trust is Auditable</h2>
+          <p className="text-gray-300 mb-4">
+            How do you know your trust score wasn&apos;t secretly manipulated? Web4 uses a{" "}
+            <strong className="text-green-400">trust transparency log</strong> — an append-only,
+            tamper-evident ledger of every attestation ever made about an entity.
+          </p>
+          <div className="grid md:grid-cols-3 gap-4 mb-4">
+            <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4">
+              <div className="text-2xl mb-2">📋</div>
+              <h3 className="text-sm font-bold text-green-400 mb-2">Every attestation is logged</h3>
+              <p className="text-xs text-gray-400">
+                When someone attests to your trustworthiness, that record is added to a public Merkle
+                log. You can verify every attestation in your history.
+              </p>
+            </div>
+            <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4">
+              <div className="text-2xl mb-2">🔐</div>
+              <h3 className="text-sm font-bold text-green-400 mb-2">Tampering is detectable</h3>
+              <p className="text-xs text-gray-400">
+                The log uses cryptographic hashing: changing any past entry breaks the chain.
+                Anyone can check that no secret entries were added or removed.
+              </p>
+            </div>
+            <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4">
+              <div className="text-2xl mb-2">👁️</div>
+              <h3 className="text-sm font-bold text-green-400 mb-2">Suspicious patterns surface</h3>
+              <p className="text-xs text-gray-400">
+                Automated monitors watch for red flags: rapid trust score changes, multiple
+                revocations, conflicting attestations. Manipulation is visible, not hidden.
+              </p>
+            </div>
+          </div>
+          <p className="text-gray-500 text-xs italic">
+            Inspired by SSL Certificate Transparency (RFC 6962) — the same approach that
+            ended fraudulent HTTPS certificates. Trust auditing: session 33, implemented.
+          </p>
+        </div>
+
         {/* Technical Deep Dive — collapsed by default */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <details>
@@ -1066,33 +1229,33 @@ export default function LCTExplainerPage() {
                   </thead>
                   <tbody className="divide-y divide-gray-700">
                     <tr>
+                      <td className="px-4 py-2 text-sm text-gray-200">TPM 2.0 (Laptop)</td>
+                      <td className="px-4 py-2 text-sm text-gray-400">Very High</td>
+                      <td className="px-4 py-2 text-sm text-green-400 font-semibold">0.90</td>
+                      <td className="px-4 py-2 text-sm text-gray-400">High</td>
+                    </tr>
+                    <tr>
                       <td className="px-4 py-2 text-sm text-gray-200">Phone Secure Enclave</td>
                       <td className="px-4 py-2 text-sm text-gray-400">High</td>
-                      <td className="px-4 py-2 text-sm text-green-400 font-semibold">0.75</td>
+                      <td className="px-4 py-2 text-sm text-green-400 font-semibold">0.85</td>
                       <td className="px-4 py-2 text-sm text-gray-400">Very High</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-2 text-sm text-gray-200">FIDO2 Security Key</td>
-                      <td className="px-4 py-2 text-sm text-gray-400">Very High</td>
-                      <td className="px-4 py-2 text-sm text-green-400 font-semibold">0.80</td>
-                      <td className="px-4 py-2 text-sm text-gray-400">Medium</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-200">TPM 2.0 (Laptop)</td>
                       <td className="px-4 py-2 text-sm text-gray-400">High</td>
                       <td className="px-4 py-2 text-sm text-green-400 font-semibold">0.75</td>
-                      <td className="px-4 py-2 text-sm text-gray-400">High</td>
+                      <td className="px-4 py-2 text-sm text-gray-400">Medium</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-2 text-sm text-gray-200">Multi-device (3+)</td>
                       <td className="px-4 py-2 text-sm text-gray-400">Very High</td>
-                      <td className="px-4 py-2 text-sm text-green-400 font-semibold">0.95-0.98</td>
+                      <td className="px-4 py-2 text-sm text-green-400 font-semibold">0.95+</td>
                       <td className="px-4 py-2 text-sm text-gray-400">Medium</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-2 text-sm text-gray-200">Software-only (fallback)</td>
                       <td className="px-4 py-2 text-sm text-gray-400">Low</td>
-                      <td className="px-4 py-2 text-sm text-red-400 font-semibold">0.40</td>
+                      <td className="px-4 py-2 text-sm text-red-400 font-semibold">0.50</td>
                       <td className="px-4 py-2 text-sm text-gray-400">Universal</td>
                     </tr>
                   </tbody>

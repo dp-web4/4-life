@@ -1091,6 +1091,70 @@ Temperament:  30-day half-life (recent behavior matters most)
         </div>
       </section>
 
+      {/* Evidence Strength */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">
+          How Trust Evidence Is Weighted
+        </h2>
+        <p className="text-gray-400 mb-6">
+          Not all trust signals carry equal weight. A direct observation of someone&apos;s work
+          is stronger evidence than hearing about it through gossip. Web4 formalizes this
+          with an evidence strength hierarchy:
+        </p>
+        <div className="bg-gray-800 border border-gray-700 rounded-xl p-6">
+          <div className="space-y-3">
+            {[
+              { label: 'Hardware attestation', weight: '1.0', color: 'text-green-400', bar: 'w-full bg-green-600/40', desc: 'Cryptographic proof from TPM/Secure Enclave — unforgeable' },
+              { label: 'Direct observation', weight: '0.9', color: 'text-sky-400', bar: 'w-[90%] bg-sky-600/40', desc: 'You personally witnessed or received the work' },
+              { label: 'Witness attestation', weight: '0.7', color: 'text-blue-400', bar: 'w-[70%] bg-blue-600/40', desc: 'A trusted witness confirmed the interaction' },
+              { label: 'Delegated trust', weight: '0.5', color: 'text-purple-400', bar: 'w-[50%] bg-purple-600/40', desc: 'Inherited through a trust chain (2 hops)' },
+              { label: 'Reputation / gossip', weight: '0.3', color: 'text-gray-400', bar: 'w-[30%] bg-gray-600/40', desc: 'Community word-of-mouth — useful but weakest' },
+            ].map(e => (
+              <div key={e.label} className="flex items-center gap-4">
+                <div className="w-16 text-right">
+                  <span className={`text-sm font-mono font-bold ${e.color}`}>{e.weight}</span>
+                </div>
+                <div className="flex-1">
+                  <div className={`h-6 rounded ${e.bar} flex items-center px-3`}>
+                    <span className="text-xs text-white font-medium">{e.label}</span>
+                  </div>
+                  <div className="text-xs text-gray-500 mt-0.5 ml-1">{e.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-gray-500 text-xs mt-4 italic">
+            Chain strength = product of link strengths. A 3-hop delegation: 0.9 × 0.7 × 0.5 = 0.315.
+            This is why MRH caps trust at 3 hops — beyond that, evidence is too diluted to be meaningful.
+          </p>
+        </div>
+      </section>
+
+      {/* What Trust Scores Actually Mean */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <div className="bg-gray-900/50 border border-gray-700 rounded-xl p-6">
+          <h3 className="text-lg font-semibold text-sky-400 mb-2">What does &ldquo;trust = 0.7&rdquo; actually mean?</h3>
+          <p className="text-gray-300 text-sm mb-3">
+            Web4 trust scores are designed to be <strong className="text-white">calibrated probabilities</strong> —
+            not arbitrary ratings. When a trust score is 0.7, entities at that level should behave
+            cooperatively in their role context about 70% of the time. A score of 0.9 should predict
+            cooperative behavior about 90% of the time.
+          </p>
+          <p className="text-gray-400 text-sm">
+            This calibration is measured with{" "}
+            <strong className="text-gray-300">Brier scores</strong> and{" "}
+            <strong className="text-gray-300">reliability diagrams</strong> — statistical tools that
+            compare predicted trust levels against actual observed cooperation rates. A well-calibrated
+            system stays within ±5% across all trust bands. A poorly calibrated system might label
+            entities &ldquo;0.8 trust&rdquo; who only cooperate 50% of the time — which breaks the
+            entire point of having trust scores.
+          </p>
+          <p className="text-gray-500 text-xs mt-3 italic">
+            Trust calibration validation: Session 32, 117 checks across scoring rules, ECE &lt; 0.05 target.
+          </p>
+        </div>
+      </section>
+
       {/* Why This Matters */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">

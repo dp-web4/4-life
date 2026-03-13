@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
+import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import ExplorerNav from "@/components/ExplorerNav";
 import { trackPageVisit } from "@/lib/exploration";
 
@@ -1051,6 +1052,7 @@ SELECT ?entity ?distance WHERE {
             </Link>
           </div>
         </section>
+        <ConceptSequenceNav currentPath="/markov-relevancy-horizon" />
         <ExplorerNav currentPath="/markov-relevancy-horizon" />
         <RelatedConcepts currentPath="/markov-relevancy-horizon" />
       </div>

@@ -28,8 +28,8 @@ export const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
         web4: 'Web4: instead of proving you\'re human, prove you\'re consistent. Coherence is harder to fake.',
       },
       cost: {
-        text: 'You\'re thinking like Web4.',
-        web4: 'This IS the Web4 approach. Every action costs energy. Spam becomes economically irrational.',
+        text: 'You\'re thinking like Web4. This mechanism is called ATP (Allocation Transfer Packets).',
+        web4: 'Every action costs energy from a personal budget. Quality contributions earn it back; spam burns through it with no return. Spammers literally run out of fuel.',
       },
     },
   },
@@ -51,8 +51,8 @@ export const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
         web4: 'Web4: goes deeper than phone numbers — cryptographic keys in your device\'s security chip (TPM/Secure Enclave) prove it\'s really you.',
       },
       hardware: {
-        text: 'You\'re thinking like Web4.',
-        web4: 'Web4 ties identity to hardware security chips. No new account without a new physical device. Reputation follows the device.',
+        text: 'You\'re thinking like Web4. This mechanism is called LCT (Linked Context Token).',
+        web4: 'Identity is bound to your device\'s security chip (TPM/Secure Enclave). No new account without a new physical device. Reputation follows the hardware, not a username.',
       },
     },
   },
@@ -74,8 +74,8 @@ export const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
         web4: 'Web4: every action costs energy AND affects trust. Bad behavior is immediately expensive, not just warned against.',
       },
       permanent: {
-        text: 'You\'re thinking like Web4.',
-        web4: 'Web4: your track record is permanent. Bad behavior reduces trust. But a 3-year positive history provides resilience — one bad day doesn\'t erase years of contribution.',
+        text: 'You\'re thinking like Web4. This is how karma and the Trust Tensor (T3) work together.',
+        web4: 'Your track record is permanent. Bad behavior reduces trust across multiple dimensions — but a 3-year positive history provides resilience. One bad day doesn\'t erase years of contribution.',
       },
     },
   },

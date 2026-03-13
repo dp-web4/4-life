@@ -13,6 +13,7 @@ import Link from 'next/link';
 import type { Narrative } from '@/lib/narratives/story_generator';
 import { NarrativeExporter, ExportFormat } from '@/lib/narratives/narrative_exporter';
 import { EventDetector } from '@/lib/narratives/event_detector';
+import { loadNarrativeById } from '@/lib/narrative-gallery';
 import NarrativeTimeline from '@/components/NarrativeTimeline';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
@@ -52,7 +53,17 @@ export default function NarrativeViewerPage() {
   useEffect(() => {
     if (!narrativeId) return;
 
-    // Load narrative JSON
+    // Check localStorage for user-generated narratives first
+    if (narrativeId.startsWith('user-')) {
+      const saved = loadNarrativeById(narrativeId);
+      if (saved) {
+        setNarrative(saved.narrative);
+        setLoading(false);
+        return;
+      }
+    }
+
+    // Load narrative JSON from static files
     fetch(`/narratives/${narrativeId}.json`)
       .then(res => {
         if (!res.ok) throw new Error('Narrative not found');

@@ -93,7 +93,7 @@ function toPlaygroundResult(result: SimulationResult, trustThreshold: number): P
   }
 
   if (lastLife.peakTrust > 0.7) {
-    insights.push(`Peak trust reached ${(lastLife.peakTrust * 100).toFixed(0)}% — high trust compounds via coherence bonuses.`);
+    insights.push(`Peak trust reached ${(lastLife.peakTrust * 100).toFixed(0)}% — high trust compounds via coherence bonuses (behavioral consistency rewards).`);
   }
 
   if (result.lives.length > 1 && lastLife.endTrust > firstLife.endTrust + 0.05) {
@@ -122,7 +122,7 @@ const EXPERIMENTS: { id: string; question: string; description: string; lookFor:
     id: 'spam-dies',
     question: 'Can spam survive?',
     description: 'A spammer tries low-effort bulk posting: cheap actions, tiny rewards, maximum risk.',
-    lookFor: 'Watch ATP drain faster than it refills. Spam dies from energy exhaustion — no moderator needed.',
+    lookFor: 'Watch ATP (Allocation Transfer Packets — your energy budget) drain faster than it refills. Spam dies from energy exhaustion — no moderator needed.',
     color: '#ef4444',
     config: {
       ...({} as PlaygroundConfig),
@@ -252,7 +252,7 @@ export default function PlaygroundPage() {
         </p>
         <p style={{ marginTop: "0.75rem", maxWidth: "50rem", color: "#9ca3af" }}>
           This is the <strong>lowest-friction pathway to participation</strong> &mdash; experiment with one agent&apos;s survival
-          by tuning parameters like starting energy, risk appetite, and karma carry-forward.
+          by tuning parameters like starting ATP (Allocation Transfer Packets &mdash; your energy budget), risk appetite, and karma carry-forward.
         </p>
         <p style={{ marginTop: "0.5rem", maxWidth: "50rem", color: "#6b7280", fontSize: "0.85rem" }}>
           Want to see what happens when <em>multiple</em> agents interact? The{" "}
@@ -544,8 +544,8 @@ export default function PlaygroundPage() {
               borderLeft: "3px solid #f97316",
               textDecoration: "none",
             }}>
-              <div style={{ fontSize: "0.85rem", color: "#f3f4f6", fontWeight: 600 }}>Coherence Index</div>
-              <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>How consistency protects identity</div>
+              <div style={{ fontSize: "0.85rem", color: "#f3f4f6", fontWeight: 600 }}>Behavioral Consistency</div>
+              <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>How consistent behavior exposes fakes</div>
             </a>
             <a href="/aliveness" style={{
               padding: "0.75rem",

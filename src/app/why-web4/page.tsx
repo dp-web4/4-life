@@ -284,26 +284,21 @@ export default function WhyWeb4Page() {
             each root cause with a specific mechanism:
           </p>
           <div className="bg-gray-900/50 border border-gray-700/50 rounded-lg p-4 mb-6">
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Terms you&apos;ll learn</p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs text-gray-400">
-              <span><strong className="text-sky-400">ATP</strong> = energy budget</span>
-              <span><strong className="text-sky-400">LCT</strong> = identity</span>
-              <span><strong className="text-sky-400">T3</strong> = trust score</span>
-              <span><strong className="text-sky-400">MRH</strong> = relevancy scope</span>
-            </div>
-            <p className="text-xs text-gray-500 mt-2">
-              Don&apos;t memorize &mdash; each links to a hands-on explainer page.
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Four ideas, introduced one at a time below</p>
+            <p className="text-xs text-gray-500">
+              Each concept is explained in plain English with its own card. Don&apos;t worry about acronyms — they&apos;re just shorthand. The ideas are what matter.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div className="bg-gray-900/50 rounded-lg p-4">
               <h4 className="font-semibold text-sky-400 mb-2">
-                Energy Budget (ATP)
+                1. Energy Budget
               </h4>
               <p className="text-gray-400 text-sm">
-                Every action costs attention budget. Quality earns it back. Spam burns out.
+                Every action costs energy from a personal budget. Quality contributions earn energy back. Spam burns through it with no return — spammers literally run out of fuel.
               </p>
+              <p className="text-gray-500 text-xs mt-1">Shorthand: ATP (Attention Transfer Packets)</p>
               <Link href="/atp-economics" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about energy budgets →
               </Link>
@@ -311,11 +306,12 @@ export default function WhyWeb4Page() {
 
             <div className="bg-gray-900/50 rounded-lg p-4">
               <h4 className="font-semibold text-sky-400 mb-2">
-                Hardware-Bound Identity (LCT)
+                2. Hardware-Bound Identity
               </h4>
               <p className="text-gray-400 text-sm">
-                Hardware-bound identity witnessed by multiple devices. Expensive to fake.
+                Your identity is tied to your device&apos;s security chip — the same kind that protects Face ID and fingerprints. Creating a fake identity means buying a new physical device. Multiple devices witness each other for extra security.
               </p>
+              <p className="text-gray-500 text-xs mt-1">Shorthand: LCT (Linked Context Token)</p>
               <Link href="/lct-explainer" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about identity →
               </Link>
@@ -323,24 +319,26 @@ export default function WhyWeb4Page() {
 
             <div className="bg-gray-900/50 rounded-lg p-4">
               <h4 className="font-semibold text-sky-400 mb-2">
-                Trust Tensor (T3)
+                3. Multi-Dimensional Trust
               </h4>
               <p className="text-gray-400 text-sm">
-                Multi-dimensional trust that follows you. Harder to game than single scores.
+                Instead of one trust score, you get separate scores for your skills, your training, and your behavior — and they&apos;re different for each role. Your trust as a data analyst doesn&apos;t affect your trust as a cook.
               </p>
+              <p className="text-gray-500 text-xs mt-1">Shorthand: T3 (Trust Tensor — Talent, Training, Temperament)</p>
               <Link href="/trust-tensor" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
-                Learn about trust tensors →
+                Learn about trust →
               </Link>
             </div>
 
             <div className="bg-gray-900/50 rounded-lg p-4">
               <h4 className="font-semibold text-sky-400 mb-2">
-                Context Boundaries (MRH)
+                4. Context Boundaries
               </h4>
               <p className="text-gray-400 text-sm">
                 You only see messages from people your network trusts — like being in a room
-                where strangers need an introduction before they can talk to you.
+                where strangers need an introduction before they can talk to you. Trust fades with distance: a friend-of-a-friend-of-a-friend is almost a stranger.
               </p>
+              <p className="text-gray-500 text-xs mt-1">Shorthand: MRH (Markov Relevancy Horizon)</p>
               <Link href="/markov-relevancy-horizon" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about context boundaries →
               </Link>
@@ -508,10 +506,123 @@ export default function WhyWeb4Page() {
               </p>
             </div>
           </details>
+          {/* Newcomer vs established liar */}
+          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>If someone powerful lies about me and I&apos;m new, does my truth even matter?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Yes — and here&apos;s how.</strong> In Web4, a single accusation from even a high-trust
+                entity doesn&apos;t override your track record. Trust is built from <em>all</em> your interactions,
+                not from one person&apos;s claim about you. An established member saying &ldquo;this newcomer is
+                untrustworthy&rdquo; is <strong>one data point</strong> — it lowers their trust in you, but
+                doesn&apos;t destroy your trust score globally.
+              </p>
+              <p>
+                Several mechanisms protect newcomers specifically:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Context boundaries (MRH):</strong> The liar&apos;s accusation only propagates within
+                  their local trust network, not the entire system. People outside their network never see it.</li>
+                <li><strong>Behavioral evidence outweighs claims:</strong> If you consistently produce quality work,
+                  your V3 scores from <em>recipients</em> build your reputation independently of the accuser&apos;s
+                  narrative. Actions speak louder than accusations.</li>
+                <li><strong>Accuser accountability:</strong> Making false accusations costs the accuser credibility.
+                  If their negative assessments consistently disagree with everyone else&apos;s experience of you,
+                  the accuser&apos;s <em>own</em> Veracity score drops. Lying is expensive.</li>
+                <li><strong>Multiple trust dimensions:</strong> T3 separates Talent, Training, and Temperament.
+                  Even if someone attacks your Temperament (&ldquo;they&apos;re unreliable&rdquo;), your Talent
+                  and Training scores remain based on your actual work quality.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Newcomers <em>are</em> more vulnerable. With only a few interactions,
+                a single negative assessment carries more weight relative to your thin history. The system gradually
+                gets more resistant to manipulation as you build more evidence. The first ~30 actions are the most
+                fragile period. This is a real design tradeoff: making newcomers more robust to attack would also
+                make it easier for Sybil attackers to quickly establish credibility.
+              </p>
+            </div>
+          </details>
+
+          {/* Social credit system comparison */}
+          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Isn&apos;t this just a social credit system?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Fair question. Both Web4 and social credit systems track behavior and assign scores.
+                But the differences are fundamental:
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs text-gray-400 mt-2">
+                  <thead>
+                    <tr className="border-b border-gray-700">
+                      <th className="text-left py-2 pr-4 text-gray-300"></th>
+                      <th className="text-left py-2 pr-4 text-red-400">Social Credit</th>
+                      <th className="text-left py-2 text-green-400">Web4</th>
+                    </tr>
+                  </thead>
+                  <tbody className="space-y-1">
+                    <tr className="border-b border-gray-800">
+                      <td className="py-2 pr-4 text-gray-300 font-medium">Who controls it?</td>
+                      <td className="py-2 pr-4">Central government</td>
+                      <td className="py-2">Nobody — federated protocol, no central authority</td>
+                    </tr>
+                    <tr className="border-b border-gray-800">
+                      <td className="py-2 pr-4 text-gray-300 font-medium">What&apos;s scored?</td>
+                      <td className="py-2 pr-4">Obedience to state rules</td>
+                      <td className="py-2">Quality of contributions (rated by recipients, not authorities)</td>
+                    </tr>
+                    <tr className="border-b border-gray-800">
+                      <td className="py-2 pr-4 text-gray-300 font-medium">Can you leave?</td>
+                      <td className="py-2 pr-4">No — mandatory for citizens</td>
+                      <td className="py-2">Yes — voluntary participation, join/leave any society</td>
+                    </tr>
+                    <tr className="border-b border-gray-800">
+                      <td className="py-2 pr-4 text-gray-300 font-medium">Who sees your score?</td>
+                      <td className="py-2 pr-4">Government and anyone they share with</td>
+                      <td className="py-2">Only entities within your trust network (MRH-bounded)</td>
+                    </tr>
+                    <tr className="border-b border-gray-800">
+                      <td className="py-2 pr-4 text-gray-300 font-medium">Can you appeal?</td>
+                      <td className="py-2 pr-4">Through government channels</td>
+                      <td className="py-2">Through community governance (SAL) — you can also fork the community</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 pr-4 text-gray-300 font-medium">Identity</td>
+                      <td className="py-2 pr-4">Real name, tied to national ID</td>
+                      <td className="py-2">Pseudonymous — hardware key, not your name</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-3">
+                The core difference: <strong>social credit is top-down control</strong> (the state
+                defines &ldquo;good behavior&rdquo; and punishes deviation). Web4 is <strong>bottom-up
+                accountability</strong> (communities define their own norms, and reputation emerges from
+                peer interactions, not authority judgments).
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> The line between &ldquo;accountability&rdquo; and
+                &ldquo;surveillance&rdquo; depends entirely on governance. A Web4 society <em>could</em> be
+                configured with oppressive policies — the protocol doesn&apos;t prevent it. The safeguard
+                is that participation is voluntary: if a society becomes oppressive, you leave (taking your
+                trust history with you). That exit right doesn&apos;t exist in state-run systems.
+              </p>
+            </div>
+          </details>
         </div>
 
-        {/* All other FAQs */}
-        <h3 className="text-sm uppercase tracking-wide text-gray-500 mb-4">Going deeper</h3>
+        {/* All other FAQs — collapsed by default */}
+        <details className="group">
+          <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">
+            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 24 more questions</h3>
+            <span className="text-gray-500 text-sm group-open:rotate-90 transition-transform">▶</span>
+          </summary>
         <div className="space-y-6">
 
           {/* Who builds this? */}
@@ -1003,7 +1114,6 @@ export default function WhyWeb4Page() {
               </p>
             </div>
           </details>
-        </div>
 
           {/* Hardware equity / digital divide */}
           <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
@@ -1142,6 +1252,130 @@ export default function WhyWeb4Page() {
               </p>
             </div>
           </details>
+
+          {/* Pseudonymity */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Can I be pseudonymous? What about whistleblowers or political dissidents?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Yes — pseudonymity is built in, not bolted on.</strong> Your Web4 identity is a hardware key,
+                not your name. Nobody sees &ldquo;Jane Smith&rdquo; — they see an entity with a trust history.
+                You can participate, earn trust, and contribute value without ever revealing who you are in the
+                physical world.
+              </p>
+              <p>
+                This is actually <strong>stronger pseudonymity</strong> than most platforms today. On Twitter or
+                Reddit, your &ldquo;anonymous&rdquo; account can be correlated through IP addresses, browser
+                fingerprints, or legal subpoenas to the platform. In Web4, there&apos;s no central platform
+                that knows your real identity — your identity lives in your hardware, not on a server.
+              </p>
+              <p>
+                For high-stakes cases (whistleblowing, political dissent, support groups), Web4 adds{" "}
+                <strong>zero-knowledge trust proofs</strong>: you can prove you meet a trust threshold
+                (&ldquo;I have &gt;0.7 trust in journalism&rdquo;) without revealing which entity you are.
+                A whistleblower can prove they&apos;re a credible insider without exposing their identity
+                even within the trust graph.
+              </p>
+              <p>
+                What Web4 prevents isn&apos;t pseudonymity — it&apos;s <strong>disposable identity</strong>.
+                You can be anonymous, but you can&apos;t be anonymous <em>and</em> have unlimited fresh starts.
+                Your pseudonymous identity accumulates consequences just like any other. That&apos;s the tradeoff:
+                your reputation follows you, but your name doesn&apos;t have to.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Hardware-bound identity creates a correlation risk. If an adversary
+                can identify your device (through physical surveillance or supply chain data), they can link your
+                pseudonymous identity to you. Multi-device witness networks reduce this risk but don&apos;t eliminate
+                it. For journalists and activists in hostile states, device security is the weakest link — and that&apos;s
+                a hardware problem, not a protocol one.
+              </p>
+            </div>
+          </details>
+
+          {/* Quality measurement */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Who decides what &ldquo;quality&rdquo; means? What about subjective content?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>The recipients decide.</strong> Web4&apos;s{" "}
+                <Link href="/atp-economics" className="text-sky-400 hover:underline">VCM (Value Confirmation Mechanism)</Link>{" "}
+                means quality is measured by the people who actually receive and use the work. You write a code review,
+                the developer who received it confirms whether it was helpful. You post a tutorial, readers who learned
+                from it confirm value. You can&apos;t rate your own work.
+              </p>
+              <p>
+                For <strong>subjective content</strong> (art, humor, opinion), quality splits across V3&apos;s three dimensions.
+                A controversial political essay might score high on Veracity (honest, well-argued) and Validity (appropriate
+                for a political forum) even if Valuation is mixed (some love it, some hate it). Veracity and Validity together
+                outweigh raw popularity — by design.
+              </p>
+              <p>
+                <strong>Edge cases that are genuinely hard:</strong>
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Minority opinions:</strong> Novel ideas often score low initially. Decay half-lives help —
+                  Veracity decays slowly (365 days), so truthful work retains value even if initially unpopular.</li>
+                <li><strong>Niche expertise:</strong> A paper on algebraic topology won&apos;t get many confirmations.
+                  But the few who can evaluate it are themselves high-trust in that role context, so their
+                  confirmations carry more weight.</li>
+                <li><strong>Humor and satire:</strong> Context-dependent. In a comedy community, being funny <em>is</em>
+                  quality. V3 scoring is role-contextual, so the community&apos;s norms define what matters.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> VCM assumes recipients are honest about quality. Confirmation
+                fatigue is real — if recipients rubber-stamp confirmations, quality signals degrade. The system
+                has a safeguard (confirming too generously lowers your own Veracity score), but social
+                dynamics are unpredictable. This is one of the harder unsolved problems.
+              </p>
+            </div>
+          </details>
+
+          {/* Protocol governance */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Who decides to change the protocol itself? The ATP formula, the 0.5 threshold, the decay rates?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Web4 has <strong>two governance layers</strong> with different scope:
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-400">
+                <li><strong>Society-level (SAL):</strong> Each community sets its own policies — trust thresholds,
+                  ATP costs, role definitions, membership rules. Communities can customize most parameters through
+                  their{" "}
+                  <Link href="/how-it-works#governance" className="text-sky-400 hover:underline">SAL governance framework</Link>.
+                  This is where the 0.5 threshold, specific decay rates, and enforcement rules live.</li>
+                <li><strong>Protocol-level:</strong> The core protocol — the trust tensor math, ATP mechanics,
+                  LCT hardware binding, MRH relationship structure — is defined by an{" "}
+                  <a href="https://github.com/dp-web4" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">
+                  open specification on GitHub</a>. Changes follow open-source governance: proposals, discussion,
+                  review, and implementation. Anyone can propose changes, argue against them, or fork the spec.</li>
+              </ul>
+              <p>
+                The key design choice: <strong>most things users care about are society-level</strong>, not
+                protocol-level. If your community wants higher trust thresholds or different energy economics,
+                you change your community&apos;s parameters — you don&apos;t need to change the protocol. This
+                is like how HTTP defines the protocol but each website chooses its own content policies.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Protocol-level governance for a nascent open-source project is
+                currently informal — whoever contributes meaningfully to the specification has influence. If Web4
+                grew to production scale, this would need to formalize (like W3C or IETF). That transition from
+                &ldquo;small research project&rdquo; to &ldquo;governed standard&rdquo; is itself an unsolved
+                organizational challenge.
+              </p>
+            </div>
+          </details>
+
+        </div>
+        </details>
 
         {/* Link to deeper adversarial analysis */}
         <div className="mt-8 p-4 bg-gray-800/30 border border-gray-700 rounded-lg">

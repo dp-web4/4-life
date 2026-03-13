@@ -60,6 +60,7 @@ import {
   type CharacterJourney,
   type SharePlatform,
 } from '@/lib/narratives/society_narrative';
+import { saveToGallery } from '@/lib/narrative-gallery';
 
 // ============================================================================
 // AI Guide Chat Panel Component
@@ -628,13 +629,13 @@ function AgentInspector({ agent, allAgents }: {
 
       <div className="grid grid-cols-3 gap-2 mb-3 text-center">
         <div className="bg-gray-900/50 rounded p-2">
-          <div className="text-xs text-gray-500">Energy</div>
+          <div className="text-xs text-gray-500">Energy (<ATP />)</div>
           <div className={`font-mono font-bold ${agent.atp < 20 ? 'text-red-400' : 'text-white'}`}>
             {Math.round(agent.atp)}
           </div>
         </div>
         <div className="bg-gray-900/50 rounded p-2">
-          <div className="text-xs text-gray-500">Reputation</div>
+          <div className="text-xs text-gray-500">Trust (<T3 />)</div>
           <div className="font-mono font-bold text-blue-400">{agent.reputation.toFixed(2)}</div>
         </div>
         <div className="bg-gray-900/50 rounded p-2">
@@ -2182,6 +2183,7 @@ function NarrativePanel({
 }) {
   const [activeTab, setActiveTab] = useState<'story' | 'characters' | 'moments' | 'relationships'>('story');
   const [relationshipViewMode, setRelationshipViewMode] = useState<'list' | 'graph' | 'timeline'>('list');
+  const [savedToGallery, setSavedToGallery] = useState(false);
 
   const STATUS_COLORS: Record<CharacterProfile['finalStatus'], string> = {
     thriving: 'text-green-400',
@@ -2780,6 +2782,30 @@ function NarrativePanel({
           >
             📄 Download Blog Post
           </button>
+          <button
+            onClick={() => {
+              const agents = simulationResult?.epochs?.[0]?.agents?.length;
+              const rounds = simulationResult?.epochs?.length;
+              saveToGallery(narrative, agents, rounds);
+              setSavedToGallery(true);
+            }}
+            disabled={savedToGallery}
+            className={`text-sm px-4 py-2 rounded transition-colors ${
+              savedToGallery
+                ? 'bg-green-700 text-green-200 cursor-default'
+                : 'bg-green-600 hover:bg-green-500 text-white'
+            }`}
+          >
+            {savedToGallery ? 'Saved to Gallery' : 'Save to Gallery'}
+          </button>
+          {savedToGallery && (
+            <a
+              href="/narratives"
+              className="text-sm px-3 py-2 text-green-400 hover:text-green-300 transition-colors"
+            >
+              View Gallery &rarr;
+            </a>
+          )}
           {/* Share Divider */}
           <div className="h-6 w-px bg-gray-600 mx-1" />
           {/* Social Share Buttons */}
@@ -3762,16 +3788,6 @@ export default function SocietySimulatorPage() {
               <li>&bull; Karma ensures consequences persist across lifetimes</li>
             </ul>
           </div>
-        </div>
-
-        {/* Concept deep-dive links */}
-        <div className="mt-4 flex flex-wrap gap-3">
-          <span className="text-xs text-gray-500">Go deeper:</span>
-          <a href="/trust-tensor" className="text-xs text-purple-400 hover:underline">Trust Tensors</a>
-          <a href="/atp-economics" className="text-xs text-sky-400 hover:underline">ATP Economics</a>
-          <a href="/aliveness" className="text-xs text-green-400 hover:underline">Life & Death</a>
-          <a href="/coherence-index" className="text-xs text-orange-400 hover:underline">Coherence Index</a>
-          <a href="/how-it-works#governance" className="text-xs text-amber-400 hover:underline">Governance (SAL)</a>
         </div>
 
         {/* Federation bridge — what happens with multiple communities */}

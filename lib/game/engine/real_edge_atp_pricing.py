@@ -297,8 +297,8 @@ if __name__ == "__main__":
     # Load Sprout's edge empirical data
     # Try multiple possible paths
     possible_paths = [
-        "/home/dp/ai-workspace/HRM/sage/tests/sprout_edge_empirical_data.json",
-        "../../../HRM/sage/tests/sprout_edge_empirical_data.json",
+        "/home/dp/ai-workspace/SAGE/sage/tests/sprout_edge_empirical_data.json",
+        "../../../SAGE/sage/tests/sprout_edge_empirical_data.json",
         "sprout_edge_empirical_data.json"
     ]
 
@@ -313,7 +313,7 @@ if __name__ == "__main__":
 
     if edge_data is None:
         print("ERROR: Could not find Sprout edge empirical data")
-        print("Expected path: /home/dp/ai-workspace/HRM/sage/tests/sprout_edge_empirical_data.json")
+        print("Expected path: /home/dp/ai-workspace/SAGE/sage/tests/sprout_edge_empirical_data.json")
         exit(1)
 
     # Test 1: Analyze edge latency distribution

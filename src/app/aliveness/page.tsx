@@ -842,6 +842,23 @@ export default function AlivenessExplainer() {
           </div>
         </div>
 
+        <div className="detail-box" style={{ marginTop: "1.5rem", background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.2)" }}>
+          <h4 style={{ color: "#fbbf24" }}>What does &ldquo;death&rdquo; mean for a real person?</h4>
+          <p>
+            In these simulations, death means the agent stops acting and awaits rebirth.
+            In a deployed Web4 system, death would mean <strong>temporary loss of participation rights</strong> —
+            you can&apos;t post, vote, or transact until karma-based rebirth restores your access.
+            Think of it as a <strong>&ldquo;suspended license&rdquo;</strong> rather than account deletion:
+            your identity and history persist, but you need to earn your way back.
+          </p>
+          <p style={{ fontSize: "0.85rem", opacity: 0.7, marginTop: "0.5rem" }}>
+            Important: death from energy exhaustion (most common) is recoverable through rebirth if
+            you built sufficient trust. Death from trust collapse below 0.5 is permanent —
+            society has rejected you. This distinction matters: running out of energy is like going
+            bankrupt (recoverable), but losing all trust is like losing your professional license (permanent).
+          </p>
+        </div>
+
         <h3 style={{ marginTop: "2rem" }}>Rebirth Process</h3>
         <p>Not everyone gets reborn. Society evaluates your life:</p>
 
@@ -1403,6 +1420,19 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             starvation, witness exodus, coherence oscillation, member attrition, policy
             fragmentation, and boundary permeability. Catching a problem at WARNING costs roughly
             10% of what it costs at CRITICAL.
+          </p>
+          <p style={{marginTop: '1rem'}}>
+            <strong>What about individual identity?</strong> A synthon doesn&apos;t override your personal
+            trust — it complements it. You retain your individual T3 scores, ATP budget, and trust
+            relationships. The synthon&apos;s collective trust is a separate measurement (a weighted
+            average of member trust). Being part of a thriving group raises your
+            visibility through denser MRH connections, but your personal reputation remains yours.
+          </p>
+          <p style={{marginTop: '0.5rem'}}>
+            You can leave a synthon at any time. Your individual trust stays intact — the group&apos;s
+            collective trust recalculates without you. If the synthon was healthy, leaving costs
+            nothing to your personal reputation. If it was struggling, you may have already
+            experienced some trust decay from the group&apos;s declining coherence.
           </p>
           <p style={{fontSize: '0.85rem', color: '#9ca3af', marginTop: '1rem'}}>
             Synthon detection (72 checks) and precursor monitoring (74 checks) both validated in

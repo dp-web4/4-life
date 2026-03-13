@@ -26,6 +26,11 @@ export default function HowItWorksPage() {
         <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
           How Web4 Societies Work
         </h1>
+        <div className="mb-4 p-3 bg-amber-950/30 border border-amber-800/30 rounded-lg text-sm text-amber-200/80">
+          <strong>Project status:</strong> Web4 is a <strong>research prototype</strong>, not a deployed product.
+          The mechanics described here are validated through simulations and ~47,000 lines of tested code,
+          but no live network with real users exists yet. The simulations on this site let you explore how it <em>would</em> work.
+        </div>
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Web4 is trust-native infrastructure for humans and AI. Instead of
           relying on platforms, moderators, or authorities, Web4 societies
@@ -92,6 +97,9 @@ export default function HowItWorksPage() {
             <p className="text-sm text-gray-400">
               Behavioral consistency across where you are, what you can do,
               when you act, and who you interact with.
+            </p>
+            <p className="text-xs text-gray-500 mt-2">
+              Example: If someone usually posts coding tutorials at 9am and suddenly starts posting crypto spam at 3am from a new country, their coherence drops — making every action more expensive.
             </p>
             <Link
               href="/coherence-index"
@@ -879,6 +887,35 @@ export default function HowItWorksPage() {
           This is why quality wins and spam dies — not because of rules or moderators, but because
           the three systems reinforce each other. Good behavior compounds upward. Bad behavior compounds downward.
         </p>
+
+        {/* Trust invariants */}
+        <details className="mt-6 bg-gray-800/50 border border-gray-700 rounded-xl p-5">
+          <summary className="text-sm font-semibold text-sky-400 cursor-pointer hover:text-sky-300">
+            The four guarantees that make this work (trust invariants)
+          </summary>
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <div className="bg-gray-900/60 rounded-lg p-3">
+              <div className="text-sky-400 font-semibold text-xs mb-1">Boundedness</div>
+              <p className="text-gray-400 text-xs">Trust is always between 0 and 1. Nobody gets infinite trust, nobody goes negative. The scale is absolute and comparable across entities.</p>
+            </div>
+            <div className="bg-gray-900/60 rounded-lg p-3">
+              <div className="text-sky-400 font-semibold text-xs mb-1">Conservation</div>
+              <p className="text-gray-400 text-xs">Trust can&apos;t be created from nothing. It must be earned through actions that other entities observe and confirm. No trust printing press.</p>
+            </div>
+            <div className="bg-gray-900/60 rounded-lg p-3">
+              <div className="text-sky-400 font-semibold text-xs mb-1">Transitivity bounds</div>
+              <p className="text-gray-400 text-xs">Trust through a chain can never exceed the weakest link. If Alice trusts Bob 0.9 and Bob trusts Carol 0.6, Alice&apos;s transitive trust in Carol is at most 0.54 (0.9 × 0.6).</p>
+            </div>
+            <div className="bg-gray-900/60 rounded-lg p-3">
+              <div className="text-sky-400 font-semibold text-xs mb-1">Locality</div>
+              <p className="text-gray-400 text-xs">Trust changes propagate locally, not globally. When your trust changes, only entities within your MRH boundary are affected — not the entire network.</p>
+            </div>
+          </div>
+          <p className="text-gray-500 text-xs mt-3 italic">
+            These four properties are formally verified across 176 checks. They&apos;re what separates Web4
+            from ad-hoc reputation systems where scores can be inflated, manufactured, or propagated without bounds.
+          </p>
+        </details>
       </section>
 
       {/* Why This Works */}
@@ -937,6 +974,26 @@ export default function HowItWorksPage() {
           </div>
         </div>
       </section>
+
+      {/* Composition Insight */}
+      <div className="max-w-4xl mx-auto mt-8 p-5 bg-amber-900/15 border border-amber-700/30 rounded-xl">
+        <h3 className="text-lg font-semibold text-amber-400 mb-3">Why These Can&apos;t Work Alone</h3>
+        <p className="text-gray-300 text-sm leading-relaxed mb-3">
+          Formal game theory analysis confirms: <strong>3 emergent properties exist only in composition</strong>.
+          ATP economics alone can&apos;t distinguish spam from slow learners. Trust tensors alone can&apos;t prevent
+          Sybil attacks. Coherence alone can&apos;t measure value. But when ATP costs interact with T3 reputation
+          and CI consistency simultaneously, the composed system produces behaviors no single layer can:
+        </p>
+        <ul className="list-disc list-inside space-y-1 text-gray-400 text-sm ml-2">
+          <li><strong className="text-gray-300">Self-correcting pricing:</strong> High trust lowers ATP costs, which rewards quality contributors &mdash; an equilibrium that emerges only from ATP&times;T3 interaction</li>
+          <li><strong className="text-gray-300">Unfakeable consistency:</strong> CI measures coherence across actions, but only ATP costs make faking coherence expensive, and only T3 makes faking <em>worthwhile</em> coherence impossible</li>
+          <li><strong className="text-gray-300">Natural quality selection:</strong> The 7&times; quality ramp, trust decay, and cost multipliers create a fitness landscape where quality behavior is the only stable strategy</li>
+        </ul>
+        <p className="text-xs text-gray-500 mt-3 italic">
+          Source: web4 correlated equilibrium analysis (~100 formal checks). The composite welfare exceeds
+          the sum of per-layer welfare &mdash; composition creates non-additive effects.
+        </p>
+      </div>
 
       {/* Governance: What Happens When Things Go Wrong */}
       <section id="governance" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
@@ -1129,8 +1186,10 @@ export default function HowItWorksPage() {
         <div className="bg-gradient-to-r from-amber-900/15 to-purple-900/15 border border-amber-800/30 rounded-xl p-6">
           <h3 className="text-xl font-bold mb-3 text-amber-300">What About Multiple Communities?</h3>
           <p className="text-gray-300 text-sm leading-relaxed mb-2">
-            Everything above describes one community. In a real Web4 network, there are many —
-            each with different specializations and ATP prices. Your reputation travels with you,
+            Everything above describes one community. In a real Web4 network, there are many — grouped into
+            <strong className="text-amber-300"> federations</strong> (networks of communities that share trust data
+            and interoperate, like email servers that can send messages to each other even though they&apos;re run by different organizations).
+            Each community has different specializations and ATP prices. Your reputation travels with you,
             but each community values different skills. A community of data analysts might pay
             a premium for engineering talent, while a research group might value practical builders.
           </p>

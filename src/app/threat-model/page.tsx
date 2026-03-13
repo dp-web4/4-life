@@ -146,10 +146,54 @@ export default function ThreatModelPage() {
               </div>
 
               <div className="p-4 bg-yellow-900/20 border border-yellow-800/30 rounded">
-                <p className="text-yellow-300 text-sm">
-                  <strong>Assessment:</strong> Partial mitigation through diversity requirements, but no strong guarantees.
-                  **This is an active research problem.** Production systems need empirical data on collusion detection rates.
+                <p className="text-yellow-300 text-sm mb-3">
+                  <strong>Assessment:</strong> Adversarial coalition analysis (303 formal checks) quantifies
+                  resistance: manipulating a single trust property requires coordinated action across
+                  multiple hardware-bound identities, and the cost scales super-linearly with coalition size.
+                  Partial mitigation is strong for small coalitions; large-scale collusion remains an active research area.
                 </p>
+                <details className="text-sm">
+                  <summary className="text-yellow-400 cursor-pointer hover:text-yellow-300">
+                    Coalition property thresholds (from formal verification)
+                  </summary>
+                  <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-300">
+                    <div className="bg-gray-900/60 rounded p-2">
+                      <span className="text-red-400 font-mono font-bold">&gt;1/3</span> colluders breaks <strong>federation consensus</strong> (BFT limit)
+                    </div>
+                    <div className="bg-gray-900/60 rounded p-2">
+                      <span className="text-red-400 font-mono font-bold">&gt;1/2</span> colluders breaks <strong>trust voting</strong> (majority threshold)
+                    </div>
+                    <div className="bg-gray-900/60 rounded p-2">
+                      <span className="text-amber-400 font-mono font-bold">3+</span> members triggers <strong>coalition detection</strong> (93%+ probability)
+                    </div>
+                    <div className="bg-gray-900/60 rounded p-2">
+                      <span className="text-green-400 font-mono font-bold">Super-linear</span> cost scaling makes large coalitions <strong>economically irrational</strong>
+                    </div>
+                  </div>
+                  <p className="text-gray-500 text-xs mt-2 italic">
+                    From session 29 adversarial coalition analysis — Byzantine, rational, and altruistic agent types modeled separately.
+                  </p>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          {/* Trust Epidemic Dynamics */}
+          <div className="mt-6 bg-gray-900/60 border border-gray-700/50 rounded-lg p-5">
+            <h4 className="text-sm font-semibold text-purple-300 mb-3">Why multi-witness prevents cascades: trust epidemic dynamics</h4>
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-400">
+              <div>
+                <p className="mb-2"><strong className="text-gray-200">Simple contagion</strong> (one contact spreads trust change): R₀ &gt; 1 if a bad actor has any neighbors. A single compromised account can infect any connected account. This is how social media manipulation works.</p>
+                <p><strong className="text-gray-200">Complex contagion</strong> (requires ≥30% of neighbors to confirm): R₀ stays below 1 even with multiple bad actors — a trust manipulation needs to come from multiple independent sources simultaneously before it takes effect.</p>
+              </div>
+              <div className="bg-gray-800/50 rounded p-3">
+                <div className="text-xs text-purple-400 font-semibold mb-2 uppercase tracking-wide">Web4 implements complex contagion</div>
+                <ul className="space-y-1 text-xs">
+                  <li>• Multi-witness requirement: changes need confirmation from 3+ independent hardware-bound devices</li>
+                  <li>• MRH-bounded propagation: trust signals don't travel past the trust horizon</li>
+                  <li>• Geometric mean composition: one weak link caps the whole chain — a single bad witness doesn't average away</li>
+                </ul>
+                <p className="text-xs text-gray-500 mt-2 italic">Trust epidemic modeling: 118 checks (session 32). Complex contagion threshold of 0.3 (30% of neighbors) reduces cascade probability by 89% vs. simple contagion under equal adversary conditions.</p>
               </div>
             </div>
           </div>
@@ -440,6 +484,97 @@ export default function ThreatModelPage() {
         </div>
       </section>
 
+      {/* Privacy Leakage Channels */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">
+          Privacy Leakage Channels
+        </h2>
+        <p className="text-gray-400 mb-6">
+          Even with <TermTooltip term="mrh">context boundaries</TermTooltip> and zero-knowledge proofs,
+          Web4 has <strong className="text-gray-200">7 information leakage channels</strong> that could
+          reveal data about participants. Complete prevention is impossible &mdash; the goal is to raise
+          the cost of inference above the value of the leaked information.
+        </p>
+
+        <div className="space-y-3 mb-6">
+          {/* HIGH severity */}
+          <div className="bg-red-900/15 border border-red-800/30 rounded-lg p-4">
+            <div className="text-xs text-red-400 font-semibold uppercase tracking-wider mb-3">High Severity</div>
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <span className="text-red-400 text-sm font-mono mt-0.5 shrink-0">90%</span>
+                <div>
+                  <div className="text-sm text-gray-200 font-semibold">Graph Structure</div>
+                  <div className="text-xs text-gray-400">Trust network topology reveals roles, authority patterns, and community membership. Hardest to mitigate &mdash; max mitigation only 50%. Dummy edges and topology randomization help but can&apos;t eliminate structural information.</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-red-400 text-sm font-mono mt-0.5 shrink-0">80%</span>
+                <div>
+                  <div className="text-sm text-gray-200 font-semibold">Revocation Cascades</div>
+                  <div className="text-xs text-gray-400">When a device is compromised, the revocation pattern reveals delegation structure. Batching and delayed propagation reduce leakage to ~40%.</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-red-400 text-sm font-mono mt-0.5 shrink-0">70%</span>
+                <div>
+                  <div className="text-sm text-gray-200 font-semibold">ZK Proof Metadata</div>
+                  <div className="text-xs text-gray-400">Zero-knowledge proofs hide the value but leak metadata: frequency, type distribution, and <em>verifier identity</em> (reveals social graph). Proof relays and batching mitigate to ~30%.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* MEDIUM severity */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-lg cursor-pointer">
+            <summary className="p-4 text-sm font-semibold text-gray-300 list-none flex justify-between items-center">
+              <span>Medium Severity: 4 additional channels</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="px-4 pb-4 space-y-3">
+              <div className="flex items-start gap-3">
+                <span className="text-yellow-400 text-sm font-mono mt-0.5 shrink-0">100%&rarr;20%</span>
+                <div>
+                  <div className="text-sm text-gray-200 font-semibold">Timing Correlation</div>
+                  <div className="text-xs text-gray-400">Without mitigation, timing reveals everything. Adding jitter reduces correlation from 100% to ~20%. Cost: slight latency increase.</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-yellow-400 text-sm font-mono mt-0.5 shrink-0">60%</span>
+                <div>
+                  <div className="text-sm text-gray-200 font-semibold">Trust Score Changes</div>
+                  <div className="text-xs text-gray-400">With &gt;20 observations, adversaries can infer individual T3 dimensions from composite score changes correlated with activity types. Differential privacy (adding noise) mitigates to ~10%.</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-yellow-400 text-sm font-mono mt-0.5 shrink-0">60%</span>
+                <div>
+                  <div className="text-sm text-gray-200 font-semibold">Delegation Trees</div>
+                  <div className="text-xs text-gray-400">Multi-hop delegation structure reveals organizational hierarchy. Flattening and proxy delegation reduce exposure.</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-yellow-400 text-sm font-mono mt-0.5 shrink-0">50%</span>
+                <div>
+                  <div className="text-sm text-gray-200 font-semibold">ATP Balance Patterns</div>
+                  <div className="text-xs text-gray-400">Balance history reveals activity timing, periodicity (automated vs manual), and economic standing. Batching transactions and noisy balances help.</div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <div className="p-4 bg-purple-900/20 border border-purple-800/30 rounded-lg">
+          <p className="text-purple-300 text-sm">
+            <strong>Design principle:</strong> Web4 doesn&apos;t claim perfect privacy. It claims{' '}
+            <em>structural privacy</em> &mdash; trust data is scoped by context boundaries, encrypted in transit,
+            and verifiable via zero-knowledge proofs. The 7 channels above represent the irreducible cost of
+            having a functional trust system. The honest question isn&apos;t &ldquo;can we eliminate leakage?&rdquo;
+            (no), but &ldquo;is the privacy cost worth the trust benefit?&rdquo;
+          </p>
+        </div>
+      </section>
+
       {/* Adversary Profiles */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
@@ -516,6 +651,131 @@ export default function ThreatModelPage() {
         </p>
       </section>
 
+      {/* Byzantine Detection */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-6 text-gray-100">
+          When Someone Lies: Byzantine Detection
+        </h2>
+        <p className="text-gray-400 mb-6">
+          What happens when a node sends contradictory information to different parts of the network?
+          Web4 uses <strong className="text-gray-300">equivocation detection</strong> — catching entities
+          that say different things to different audiences.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg p-4">
+            <div className="text-sm font-semibold text-red-400 mb-2">Double-voting</div>
+            <p className="text-gray-400 text-xs">Entity votes &ldquo;yes&rdquo; to one group and &ldquo;no&rdquo; to another on the same proposal. Hash-chained logs make this detectable — both votes exist in the tamper-evident record.</p>
+          </div>
+          <div className="bg-gray-800 border border-gray-700 rounded-lg p-4">
+            <div className="text-sm font-semibold text-amber-400 mb-2">Behavioral fingerprinting</div>
+            <p className="text-gray-400 text-xs">Consistency checks across an entity&apos;s history. Sudden strategy changes, impossible timing patterns, or quality variance that exceeds statistical norms trigger automated flags.</p>
+          </div>
+          <div className="bg-gray-800 border border-gray-700 rounded-lg p-4">
+            <div className="text-sm font-semibold text-sky-400 mb-2">Gradual degradation</div>
+            <p className="text-gray-400 text-xs">Unlike blockchain slashing (lose everything instantly), Web4 degrades trust gradually based on evidence confidence. Minor inconsistencies reduce trust; proven equivocation triggers severe penalties.</p>
+          </div>
+        </div>
+        <p className="text-gray-500 text-xs italic">
+          The key design choice: <strong className="text-gray-400">degradation over slashing</strong>.
+          Honest mistakes (network glitches, timing issues) shouldn&apos;t destroy an entity.
+          But deliberate deception — proven through cryptographic evidence — earns steep, permanent trust reduction.
+          Formally verified across 85 checks in the Byzantine fault detection suite.
+        </p>
+      </section>
+
+      {/* Real-Time Trust Health Monitoring */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <h2 className="text-3xl font-bold mb-4 text-gray-100">
+          Proactive Monitoring: Catching Problems Before They Escalate
+        </h2>
+        <p className="text-gray-400 mb-6">
+          The Byzantine fault detection section above handles <em>reactive</em> responses to detected faults.
+          But Web4 also runs <em>proactive</em> trust health monitoring — statistical process control that
+          notices when trust patterns start drifting before a fault becomes a crisis.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div className="bg-gray-800/60 border border-gray-700 rounded-xl p-4">
+            <h3 className="text-sm font-semibold text-sky-400 mb-2">EWMA Trend Detection</h3>
+            <p className="text-gray-400 text-xs leading-relaxed">
+              Exponentially Weighted Moving Average tracks the <em>direction</em> of trust change,
+              not just the current value. A gradual trust decline over 20 rounds triggers an alert
+              before the entity hits a critical threshold — catching slow-burn manipulation
+              that looks innocent in any single round.
+            </p>
+          </div>
+          <div className="bg-gray-800/60 border border-gray-700 rounded-xl p-4">
+            <h3 className="text-sm font-semibold text-amber-400 mb-2">CUSUM Change Detection</h3>
+            <p className="text-gray-400 text-xs leading-relaxed">
+              Cumulative Sum detects <em>structural breaks</em> — moments when behavior fundamentally
+              shifts. An entity that maintained consistent quality for 50 rounds and then
+              starts outputting low-quality work triggers a CUSUM alarm: something changed,
+              even if the absolute trust level still looks acceptable.
+            </p>
+          </div>
+          <div className="bg-gray-800/60 border border-gray-700 rounded-xl p-4">
+            <h3 className="text-sm font-semibold text-emerald-400 mb-2">Trust SLOs</h3>
+            <p className="text-gray-400 text-xs leading-relaxed">
+              Service Level Objectives define what &ldquo;healthy&rdquo; trust looks like for a role.
+              A community moderator should maintain T3 above 0.65 in Temperament. If they
+              drop below this for 3 consecutive rounds, an SLO violation fires — prompting
+              review, not automatic punishment.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4 mb-4">
+          <h4 className="text-sm font-semibold text-gray-300 mb-2">Incident Lifecycle</h4>
+          <div className="flex items-center gap-2 flex-wrap text-xs">
+            <span className="px-2 py-1 bg-gray-700 rounded text-gray-300">Detect</span>
+            <span className="text-gray-500">→</span>
+            <span className="px-2 py-1 bg-amber-900/40 rounded text-amber-300">Alert</span>
+            <span className="text-gray-500">→</span>
+            <span className="px-2 py-1 bg-blue-900/40 rounded text-blue-300">Investigate</span>
+            <span className="text-gray-500">→</span>
+            <span className="px-2 py-1 bg-purple-900/40 rounded text-purple-300">Mitigate</span>
+            <span className="text-gray-500">→</span>
+            <span className="px-2 py-1 bg-green-900/40 rounded text-green-300">Resolve</span>
+          </div>
+          <p className="text-gray-500 text-xs mt-2">
+            Alerts are aggregated (multiple related alerts create one incident, not a flood of notifications)
+            and deduplicated across 3-round windows. High-frequency alerting — itself a potential DoS vector —
+            is suppressed after 3 alerts per entity per round with exponential backoff.
+          </p>
+        </div>
+
+        <p className="text-gray-500 text-xs italic">
+          Trust monitoring formally specified (session 32). Like CI, EWMA/CUSUM monitoring is
+          simulation-validated — production calibration (alert thresholds, backoff parameters) will
+          require tuning against real behavioral data.
+        </p>
+
+        {/* Adaptive Threat Levels */}
+        <div className="mt-6 bg-gray-900/60 border border-gray-700/50 rounded-lg p-5">
+          <h4 className="text-sm font-semibold text-amber-300 mb-3">Adaptive threat response: DEFCON-like levels</h4>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-3">
+            {[
+              { level: "GREEN", label: "Normal", color: "text-green-400 border-green-800/40 bg-green-950/20" },
+              { level: "YELLOW", label: "Elevated", color: "text-yellow-400 border-yellow-800/40 bg-yellow-950/20" },
+              { level: "ORANGE", label: "Heightened", color: "text-orange-400 border-orange-800/40 bg-orange-950/20" },
+              { level: "RED", label: "Active attack", color: "text-red-400 border-red-800/40 bg-red-950/20" },
+              { level: "BLACK", label: "Crisis", color: "text-gray-200 border-gray-600/40 bg-gray-800/40" },
+            ].map(t => (
+              <div key={t.level} className={`border rounded p-2 text-center ${t.color}`}>
+                <div className="text-xs font-bold">{t.level}</div>
+                <div className="text-xs opacity-70">{t.label}</div>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-gray-400">
+            Web4 policies adapt to detected threat levels — raising trust thresholds, tightening
+            witness requirements, and triggering emergency overrides automatically. Hysteresis
+            prevents oscillation between threat levels (a brief attack doesn&apos;t immediately
+            drop back to GREEN when it subsides). Adaptive policies validated across 185 checks (session 30).
+          </p>
+        </div>
+      </section>
+
       {/* What We Know vs Don't Know */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
@@ -539,6 +799,8 @@ export default function ThreatModelPage() {
               <li>• Cooperation is Nash-dominant at current parameters (200 ATP stakes + 3 witnesses)</li>
               <li>• ATP market conserves under stress (200 agents, 500 rounds, 5% transfer fee maintains stability)</li>
               <li>• Sybil ROI is negative: honest identity outearns 5 fakes (transfer fee bleeds circular flows)</li>
+              <li>• Temporal logic properties formally verified: trust earned stays until explicitly revoked or naturally decayed — no arbitrary removal (LTL model checking, session 33)</li>
+              <li>• Every attestation request eventually receives a response (progress guarantee: G(requested → F(responded)))</li>
             </ul>
           </div>
 

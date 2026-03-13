@@ -21,7 +21,7 @@ const SIMULATIONS = [
     id: 'ep_closed_loop',
     name: 'Cross-Life Learning',
     file: '/ep_driven_closed_loop_results.json',
-    description: 'Epistemic Proprioception — agents learn what works across lives by remembering patterns',
+    description: 'Cross-Life Learning — agents learn what works across lives by remembering patterns',
     color: '#3b82f6'
   },
   {
@@ -49,7 +49,7 @@ const SIMULATIONS = [
     id: 'five_domain',
     name: 'Five-Domain Learning',
     file: '/ep_five_domain_multi_life_results.json',
-    description: 'Epistemic Proprioception across 5 coherence domains simultaneously',
+    description: 'Cross-Life Learning across 5 coherence domains simultaneously',
     color: '#ec4899'
   }
 ];
@@ -129,9 +129,9 @@ export default function ComparePage() {
             carry-forward affect outcomes across life cycles.
           </p>
           <p className="text-sm text-slate-400 mb-2">
-            <strong className="text-slate-300">EP</strong> stands for{" "}
-            <strong className="text-slate-300">Epistemic Proprioception</strong> — an agent&apos;s
-            ability to know what it knows and doesn&apos;t know. Agents with EP learn from
+            <strong className="text-slate-300">Cross-Life Learning</strong> (internally called{" "}
+            <TermTooltip term="EP" />) — an agent&apos;s
+            ability to know what it knows and doesn&apos;t know. Agents with this capability learn from
             past lives: &ldquo;quality contributions earn more ATP&rdquo; or &ldquo;transparency
             rebuilds trust faster.&rdquo;
           </p>

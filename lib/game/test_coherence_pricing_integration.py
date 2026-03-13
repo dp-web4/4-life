@@ -21,7 +21,7 @@ Integration Points:
 - Uses CoherenceTrustMetrics from Session #25
 - Uses CoherenceIntegratedPricer from Session #27
 - Simulates trust network dynamics
-- Demonstrates production-ready pricing
+- Demonstrates coherence-integrated pricing
 
 Author: Legion (autonomous Session #27)
 """

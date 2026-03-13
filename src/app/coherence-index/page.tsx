@@ -811,10 +811,10 @@ export default function CoherenceIndexPage() {
         <section className="max-w-4xl mx-auto mb-16">
           <details className="group">
             <summary className="cursor-pointer list-none">
-              <h2 className="text-3xl font-bold mb-6 text-gray-100 inline-flex items-center gap-3">
-                Connection to Coherence Physics
-                <span className="text-lg text-gray-500 group-open:rotate-90 transition-transform">&#9654;</span>
-              </h2>
+              <div className="inline-flex items-center gap-3 mb-6 text-gray-500 hover:text-gray-400 transition-colors">
+                <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
+                <span className="text-sm font-medium">Where does the idea of &ldquo;coherence&rdquo; come from? (optional deep dive)</span>
+              </div>
             </summary>
           <p className="text-gray-400 mb-6">
             Web4&apos;s Coherence Index draws inspiration from coherence principles

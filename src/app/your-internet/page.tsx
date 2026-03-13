@@ -80,6 +80,12 @@ const FRUSTRATIONS: Frustration[] = [
     icon: '🚪',
     description: 'Trolls get banned, make a new account, and do it again',
   },
+  {
+    id: 'surveillance',
+    label: 'Constant surveillance & data harvesting',
+    icon: '👁️',
+    description: 'Every click tracked, sold to advertisers, used to manipulate behavior',
+  },
 ];
 
 const SCENARIOS: Record<string, ScenarioResult> = {
@@ -130,6 +136,14 @@ const SCENARIOS: Record<string, ScenarioResult> = {
     mechanism: 'Karma carries consequences across lives. Even after "rebirth," agents start with reduced resources if their previous record was poor.',
     learnMore: '/karma-journey',
     learnMoreLabel: 'Experience karma across multiple lives',
+  },
+  surveillance: {
+    frustration: 'Constant surveillance & data harvesting',
+    today: 'Every page you visit, every click, every purchase feeds a profile that ad networks sell to whoever pays. You can\'t opt out — your data is the product, whether you agree or not.',
+    withWeb4: 'You can prove your trust score meets a threshold without revealing the score itself. "This person has high trust in this context" — verified, without exposing your history, devices, or behavior patterns. Platforms get the signal they need; you keep your data.',
+    mechanism: 'Zero-knowledge trust proofs let you share credentials without sharing data. Decentralized identity means there\'s no central repository to harvest.',
+    learnMore: '/lct-explainer',
+    learnMoreLabel: 'How identity works without surveillance',
   },
 };
 

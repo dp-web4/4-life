@@ -12,7 +12,7 @@ import { trackPageVisit } from "@/lib/exploration";
 // v0 Lab Console for 4-Life
 // --------------------------
 //
-// This page visualizes the output of the local Web4+HRM glue script:
+// This page visualizes the output of the local Web4+SAGE glue script:
 //   web4/game/run_one_life_with_policy.py
 // which prints a JSON object of the form:
 //   { life_summary: {...}, policy_result: {...} }
@@ -507,7 +507,7 @@ export default function LabConsolePage() {
             </div>
           </div>
 
-          <h3 style={{ marginTop: "1.5rem" }}>HRM policy proposal</h3>
+          <h3 style={{ marginTop: "1.5rem" }}>SAGE policy proposal</h3>
           <div
             style={{
               marginTop: "0.75rem",
@@ -630,7 +630,7 @@ export default function LabConsolePage() {
                   {policy?.policy_result?.proposed_action && (
                     <div style={{ marginTop: "0.75rem" }}>
                       <p style={{ margin: 0 }}>
-                        <strong>HRM action:</strong> {policy.policy_result.proposed_action.action_type} (ATP {policy.policy_result.proposed_action.atp_cost.toFixed(2)})
+                        <strong>SAGE action:</strong> {policy.policy_result.proposed_action.action_type} (ATP {policy.policy_result.proposed_action.atp_cost.toFixed(2)})
                       </p>
                       <p style={{ marginTop: "0.25rem", color: "#9ca3af" }}>
                         {policy.policy_result.proposed_action.description}

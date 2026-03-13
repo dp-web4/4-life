@@ -524,7 +524,7 @@ export default function ATPEconomicsPage() {
           Single-agent economics are intuitive. But does ATP work when hundreds of agents
           interact simultaneously? Simulations with 100-200 agents reveal three key dynamics:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
             <div className="text-2xl mb-2">🔥</div>
             <h3 className="text-lg font-semibold text-amber-400 mb-2">Transfer Fees Burn ATP</h3>
@@ -554,9 +554,30 @@ export default function ATPEconomicsPage() {
               Cheating is literally unprofitable.
             </p>
           </div>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
+            <div className="text-2xl mb-2">⚖️</div>
+            <h3 className="text-lg font-semibold text-purple-400 mb-2">No Wealth Hoarding</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Unlike cryptocurrency, ATP reaches economic equilibrium through fee redistribution.
+              ATP velocity keeps resources circulating — hoarding is penalized by decay, and
+              the 5% burn on transfers prevents accumulation loops. Simulations show the wealth gap
+              (Gini coefficient) converges to ~0.25, well below real economies (~0.6-0.7).
+            </p>
+          </div>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
+            <div className="text-2xl mb-2">🏷️</div>
+            <h3 className="text-lg font-semibold text-sky-400 mb-2">Trust Earns Better Terms</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              In federated markets, high-trust entities pay less for resource access. Dynamic pricing
+              gives up to a <strong className="text-sky-300">30% discount</strong> to entities with
+              trust near 1.0, and up to a 50% premium for scarce resources. Being trustworthy
+              isn&apos;t just morally rewarded — it&apos;s economically cheaper to participate.
+            </p>
+          </div>
         </div>
         <p className="text-gray-500 text-xs mt-4 italic">
-          From web4 market dynamics simulations — 200 agents, 500 rounds, verified conservation invariant.
+          From web4 economic equilibrium analysis — ATP circulation, velocity tracking, and Gini convergence verified across 500+ rounds.
+          Trust-based dynamic pricing: session 32, 84 checks.
         </p>
       </section>
 
@@ -709,6 +730,31 @@ export default function ATPEconomicsPage() {
             weighted by their trust. High-quality work in a community of trusted peers earns the most ATP back.
             Low-quality spam? Nobody confirms it, the ADP stays discharged, and your budget shrinks.
           </div>
+
+          <details className="bg-gray-800/40 border border-gray-700 rounded-lg p-4">
+            <summary className="text-sm font-semibold text-gray-300 cursor-pointer hover:text-sky-400 transition-colors">
+              What about confirmation fatigue? Do I have to rate everything?
+            </summary>
+            <div className="mt-3 text-sm text-gray-400 space-y-2">
+              <p>
+                No. Confirmation is <strong className="text-gray-300">optional and lightweight</strong>. Recipients
+                aren&apos;t required to confirm every action — unconfirmed ADPs simply decay naturally without
+                recharging ATP. The system works fine with partial confirmation.
+              </p>
+              <p>
+                In practice, confirmation is most impactful for high-value contributions (a detailed tutorial,
+                a critical bug fix) where recipients are naturally motivated to acknowledge the value. Routine
+                interactions (reading a post, browsing content) generate small ADP receipts that may go
+                unconfirmed — and that&apos;s by design. The economics still work because high-quality work
+                attracts confirmation disproportionately.
+              </p>
+              <p>
+                Think of it like tipping at a restaurant: you don&apos;t tip every sip of water, but
+                you acknowledge genuinely great service. The system is tuned so that even partial confirmation
+                sustains quality contributors.
+              </p>
+            </div>
+          </details>
         </div>
       </section>
 
@@ -725,9 +771,9 @@ export default function ATPEconomicsPage() {
                 ATP (Allocation Transfer Packet)
               </h3>
               <p className="leading-relaxed mb-3">
-                ATP is a <strong>semi-fungible packet</strong> representing
-                attention allocation. It's not a coin or token you trade - it's
-                an energy resource you spend on actions.
+                ATP is your <strong>personal energy budget</strong> &mdash; a unit of attention
+                you spend on actions. It&apos;s not a coin or token you trade on a market &mdash; it&apos;s
+                an energy resource that flows through the system like calories in a body.
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
                 <li>
@@ -806,15 +852,20 @@ export default function ATPEconomicsPage() {
 
             <div>
               <h3 className="text-xl font-semibold text-sky-400 mb-3">
-                ATP vs Traditional Tokens
+                ATP vs Crypto Tokens
               </h3>
+              <p className="text-gray-500 text-xs mb-3">
+                Crypto tokens (Bitcoin, ETH, etc.) are digital assets you hold, trade, or speculate on.
+                ATP is not that — it&apos;s an activity budget that gets spent when you participate and earned
+                when you contribute value.
+              </p>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border-collapse">
                   <thead>
                     <tr className="border-b border-gray-700">
                       <th className="text-left p-3 text-sky-400">Property</th>
                       <th className="text-left p-3 text-red-400">
-                        Traditional Tokens
+                        Crypto tokens (e.g., Bitcoin)
                       </th>
                       <th className="text-left p-3 text-green-400">
                         ATP (Web4)
@@ -861,6 +912,10 @@ export default function ATPEconomicsPage() {
                 The burn fee means the only profitable strategy is genuine value creation —
                 you earn more by contributing than by moving ATP around. Simulations confirm:
                 one honest identity outearns five fake identities splitting the same budget.
+                The burned ATP goes to a <strong className="text-gray-300">redistribution pool</strong> —
+                not to any central authority — and is redistributed to quality contributors.
+                ATP is formally conserved: no hidden inflation, no minting events, no entity
+                benefits from the fee except the community.
               </p>
               <p className="text-gray-400 text-sm mt-3 leading-relaxed">
                 The same 5% principle applies to <strong className="text-gray-300">cross-federation delegation</strong>.

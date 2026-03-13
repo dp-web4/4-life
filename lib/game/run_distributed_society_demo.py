@@ -28,7 +28,7 @@ from typing import Dict, Any
 
 # Add paths
 web4_root = Path(__file__).parent.parent
-hrm_root = web4_root.parent / "HRM"
+hrm_root = web4_root.parent / "SAGE"
 
 sys.path.insert(0, str(web4_root))
 sys.path.insert(0, str(hrm_root))

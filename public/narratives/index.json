@@ -1,5 +1,73 @@
 [
   {
+    "id": "meadow-cooperative",
+    "title": "The Meadow Cooperative — When Trust Builds a Society",
+    "filename": "meadow-cooperative.md",
+    "type": "Society Narrative",
+    "themes": [
+      "Cooperation Beats Defection",
+      "Trust Creates Structure",
+      "Reputation Has Consequences",
+      "Redemption Through Consistency"
+    ],
+    "lives": 2,
+    "events": 18,
+    "timestamp": "2026-03-06",
+    "summary": "Eight strangers arrive with nothing but 100 ATP each. Over 25 rounds, alliances form, a defector exploits early generosity, coalitions isolate the exploiter, and a reformed free-rider earns redemption. The Meadow Cooperative emerges — not because anyone planned it, but because trust created structure where none existed.",
+    "featured": true
+  },
+  {
+    "id": "ironworks-collapse",
+    "title": "The Collapse of the Ironworks — When Trust Dies",
+    "filename": "ironworks-collapse.md",
+    "type": "Society Narrative",
+    "themes": [
+      "Defection Is Self-Defeating",
+      "Trust Requires Critical Mass",
+      "Isolation Is Expensive",
+      "Cooperation Can't Survive Alone"
+    ],
+    "lives": 1,
+    "events": 16,
+    "timestamp": "2026-03-06",
+    "summary": "Six agents start with ample resources but a critical flaw: four of six are defectors. What follows is a textbook collapse — exploitation destroys trust, the commons dies, and three of six agents perish. The contrast with the Meadow Cooperative proves: same rules, different composition, opposite outcome.",
+    "featured": true
+  },
+  {
+    "id": "garden-of-equals",
+    "title": "The Garden of Equals — When Everyone Cooperates",
+    "filename": "garden-of-equals.md",
+    "type": "Society Narrative",
+    "themes": [
+      "Cooperation Has a Ceiling",
+      "Untested Trust Is Fragile",
+      "Adversity Builds Resilience",
+      "Equality Without Exploitation"
+    ],
+    "lives": 0,
+    "events": 12,
+    "timestamp": "2026-03-06",
+    "summary": "Six agents, all cooperators, zero defectors. The result is a paradise: zero deaths, minimal inequality, high trust. But trust that's never been tested is different from trust that's survived betrayal. The ceiling is high, but the Meadow's messier path may build something more durable.",
+    "featured": true
+  },
+  {
+    "id": "tidepool-reciprocity",
+    "title": "The Tidepool — When Mirror Strategies Shape a Society",
+    "filename": "tidepool-reciprocity.md",
+    "type": "Society Narrative",
+    "themes": [
+      "Reciprocity Amplifies",
+      "First Movers Shape Culture",
+      "Tipping Points Are Real",
+      "Strategy Isn't Fixed"
+    ],
+    "lives": 0,
+    "events": 15,
+    "timestamp": "2026-03-07",
+    "summary": "Seven agents — only 2 cooperators, 2 defectors, and 3 reciprocators who mirror whatever they receive. The cooperators seed goodwill first, the reciprocators amplify it, and the defectors face a choice: adapt or starve. A society with 29% initial cooperators outperforms one with 63%, proving that initiative matters more than numbers.",
+    "featured": true
+  },
+  {
     "id": "ep-driven-closed-loop",
     "title": "Bob: Learning Through Action — Self-Aware Pattern Discovery",
     "filename": "ep-driven-closed-loop.md",

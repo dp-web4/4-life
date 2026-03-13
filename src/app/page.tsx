@@ -31,7 +31,7 @@ export default function HomePage() {
           maxWidth: '36rem',
           lineHeight: 1.6
         }}>
-          <strong>Web4</strong> is a proposed protocol where trust is built into the internet itself, not bolted on after the fact.
+          <strong>Web4</strong> is a proposed protocol where trust is built into the internet itself, not bolted on after the fact &mdash; that&apos;s what &quot;trust-native&quot; means.
           Identity costs something, every action costs energy,
           and consequences follow you forever.
         </p>
@@ -50,6 +50,20 @@ export default function HomePage() {
           >
             Explore All Topics
           </button>
+        </div>
+        <div style={{ marginTop: '0.75rem', display: 'flex', justifyContent: 'center', gap: '1rem', alignItems: 'center' }}>
+          <Link href="/tldr" style={{
+            padding: '0.5rem 1rem',
+            background: 'rgba(56, 189, 248, 0.1)',
+            border: '1px solid rgba(56, 189, 248, 0.3)',
+            borderRadius: '0.5rem',
+            color: 'var(--color-sky)',
+            fontWeight: 600,
+            fontSize: '0.85rem',
+            textDecoration: 'none',
+          }}>
+            Just 2 minutes? Read the TL;DR →
+          </Link>
         </div>
       </section>
 
@@ -126,7 +140,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             <div>
               <strong>Every action costs energy</strong>
               <p style={{ color: 'var(--color-text-secondary)', margin: '0.25rem 0 0', fontSize: '0.9rem' }}>
-                Every action costs <TermTooltip term="ATP">ATP</TermTooltip> (energy). Quality earns it back. Spam burns out.
+                Every action costs energy from a personal budget called <TermTooltip term="ATP">ATP (Allocation Transfer Packets)</TermTooltip>. Quality earns it back. Spam burns through it with no return.
               </p>
             </div>
           </li>
@@ -237,7 +251,6 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
     </div>
   );
 }
-
 
 function DeepDiveTab() {
   const [karmaProfile, setKarmaProfile] = useState<{ archetype: string; emoji: string; totalLives: number; coopRate: number } | null>(null);
