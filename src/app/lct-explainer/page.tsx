@@ -350,12 +350,21 @@ export default function LCTExplainerPage() {
             </div>
           </div>
 
-          <div className="mt-3 text-xs text-gray-500 italic px-1">
-            <strong className="text-gray-400">Who runs witness infrastructure?</strong> Anyone.
-            Web4 is a protocol, not a platform — witness nodes can be run by universities,
-            companies, nonprofits, or individuals. No single operator controls the network.
-            Collusion requires coordinating multiple independent parties simultaneously,
-            which is both economically costly and mathematically detectable.
+          <div className="mt-4 p-3 bg-gray-900/50 border border-gray-700 rounded-lg">
+            <p className="text-sm text-gray-300 mb-2">
+              <strong className="text-sky-400">Who runs witness infrastructure?</strong> Anyone can.
+              Web4 is a protocol (like email), not a platform (like Gmail). Witness nodes can be run by
+              universities, companies, nonprofits, or individuals — the same way anyone can run an email server.
+            </p>
+            <p className="text-sm text-gray-400 mb-2">
+              In the current prototype, witnesses are simulated. In a deployed system, your devices witness
+              <em> each other</em> — your phone witnesses your laptop, and vice versa. External witnesses
+              (like a university or employer running a node) add additional verification but aren&apos;t required.
+            </p>
+            <p className="text-xs text-gray-500">
+              Collusion requires coordinating multiple independent parties simultaneously,
+              which is both economically costly and mathematically detectable.
+            </p>
           </div>
         </div>
 
@@ -1032,6 +1041,28 @@ export default function LCTExplainerPage() {
               (can&apos;t create fake accounts cheaply if presence requires hardware), <TermTooltip term="T3">Trust Tensors</TermTooltip> work (reputation bound to
               verifiable presence), <TermTooltip term="CI">Coherence Index</TermTooltip> work (behavioral consistency verifiable), and <TermTooltip term="MRH">MRH</TermTooltip> work
               (context graphs rooted in verified presence).
+            </p>
+          </div>
+
+          {/* FAQ: Hardware Requirements */}
+          <div className="mt-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg">
+            <h3 className="text-sm font-bold text-sky-400 mb-2">
+              Do I need special hardware to participate?
+            </h3>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong>Most smartphones made after 2018</strong> already have the hardware needed — a Secure Enclave (iPhone) or
+              TPM chip (Android). These are the same chips that protect your fingerprint and Face ID data. You almost certainly
+              already own a compatible device.
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong>Laptops and desktops</strong> with TPM 2.0 work too (most PCs shipped since 2016).
+              USB security keys like YubiKey provide another option. You don&apos;t need to buy anything new.
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong>What about older/cheaper devices?</strong> Software-only keys work as a fallback, but with a lower
+              trust ceiling (50% vs. 90% for hardware-bound keys). This means you can participate, but
+              high-trust actions require at least one hardware-bound device. Web4 is designed so that anyone
+              with a basic smartphone can join — the hardware barrier is &ldquo;own a phone,&rdquo; not &ldquo;buy specialized equipment.&rdquo;
             </p>
           </div>
 
