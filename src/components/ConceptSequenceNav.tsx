@@ -3,7 +3,7 @@ import Link from 'next/link';
 /**
  * Sequential navigation for the core concept learning path.
  *
- * Learning sequence: LCT → ATP → T3 → CI → Aliveness
+ * Learning sequence: LCT → ATP → T3 → MRH → CI → Aliveness
  * Placed at the bottom of each concept page, above RelatedConcepts.
  */
 
@@ -17,6 +17,7 @@ const CONCEPT_SEQUENCE: ConceptStep[] = [
   { path: '/lct-explainer', title: 'Witnessed Presence (LCT)', shortTitle: 'Identity' },
   { path: '/atp-economics', title: 'Energy Budget (ATP)', shortTitle: 'Energy' },
   { path: '/trust-tensor', title: 'Trust Tensor (T3)', shortTitle: 'Trust' },
+  { path: '/markov-relevancy-horizon', title: 'Context Boundaries (MRH)', shortTitle: 'Context' },
   { path: '/coherence-index', title: 'Coherence Index (CI)', shortTitle: 'Coherence' },
   { path: '/aliveness', title: 'Aliveness & Death', shortTitle: 'Aliveness' },
 ];

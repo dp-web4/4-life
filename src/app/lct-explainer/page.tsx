@@ -1229,33 +1229,33 @@ export default function LCTExplainerPage() {
                   </thead>
                   <tbody className="divide-y divide-gray-700">
                     <tr>
+                      <td className="px-4 py-2 text-sm text-gray-200">TPM 2.0 (Laptop)</td>
+                      <td className="px-4 py-2 text-sm text-gray-400">Very High</td>
+                      <td className="px-4 py-2 text-sm text-green-400 font-semibold">0.90</td>
+                      <td className="px-4 py-2 text-sm text-gray-400">High</td>
+                    </tr>
+                    <tr>
                       <td className="px-4 py-2 text-sm text-gray-200">Phone Secure Enclave</td>
                       <td className="px-4 py-2 text-sm text-gray-400">High</td>
-                      <td className="px-4 py-2 text-sm text-green-400 font-semibold">0.75</td>
+                      <td className="px-4 py-2 text-sm text-green-400 font-semibold">0.85</td>
                       <td className="px-4 py-2 text-sm text-gray-400">Very High</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-2 text-sm text-gray-200">FIDO2 Security Key</td>
-                      <td className="px-4 py-2 text-sm text-gray-400">Very High</td>
-                      <td className="px-4 py-2 text-sm text-green-400 font-semibold">0.80</td>
-                      <td className="px-4 py-2 text-sm text-gray-400">Medium</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-200">TPM 2.0 (Laptop)</td>
                       <td className="px-4 py-2 text-sm text-gray-400">High</td>
                       <td className="px-4 py-2 text-sm text-green-400 font-semibold">0.75</td>
-                      <td className="px-4 py-2 text-sm text-gray-400">High</td>
+                      <td className="px-4 py-2 text-sm text-gray-400">Medium</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-2 text-sm text-gray-200">Multi-device (3+)</td>
                       <td className="px-4 py-2 text-sm text-gray-400">Very High</td>
-                      <td className="px-4 py-2 text-sm text-green-400 font-semibold">0.95-0.98</td>
+                      <td className="px-4 py-2 text-sm text-green-400 font-semibold">0.95+</td>
                       <td className="px-4 py-2 text-sm text-gray-400">Medium</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-2 text-sm text-gray-200">Software-only (fallback)</td>
                       <td className="px-4 py-2 text-sm text-gray-400">Low</td>
-                      <td className="px-4 py-2 text-sm text-red-400 font-semibold">0.40</td>
+                      <td className="px-4 py-2 text-sm text-red-400 font-semibold">0.50</td>
                       <td className="px-4 py-2 text-sm text-gray-400">Universal</td>
                     </tr>
                   </tbody>
