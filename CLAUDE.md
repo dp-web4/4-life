@@ -64,6 +64,25 @@ The visitor log includes an understanding checklist. If the visitor couldn't und
 - [ ] How agents live/die → /aliveness
 - [ ] Why this matters → /why-web4 (problem framing + honest FAQ)
 
+## MRH-Specific Policy — Phase Awareness (March 2026)
+
+**Policies are MRH-specific, not universal.** 4-life is in a healthy state — it has
+a natural constraint (explain to visitors) that prevents the drift seen in web4 and
+hardbound autonomous tracks. But the lesson applies here too:
+
+- 4-life is in **development/deployment** — the site is live, visitors browse daily
+- Session work should advance visitor comprehension, not generate standalone code
+- The "cross-pollinate" pattern (importing web4 session findings) is good when the
+  findings are product-relevant, but should not import academic sprawl
+- If a session can't identify a specific visitor friction point or site improvement
+  to work on, it should stop rather than invent work
+
+**The spectrum**: Research values (explore freely) → Development values (build toward
+goals) → Deployment values (fix what's broken, improve what's live). 4-life sits at
+development/deployment. Its policies should match.
+
+See: `private-context/insights/2026-03-13-mrh-policy-phase-mismatch.md`
+
 ## Bidirectional Loop with Web4
 
 4-life isn't just an output of Web4 — it's a sensor. The best way to learn is to try teaching; visitor confusion surfaces assumptions invisible from inside the ontology.
