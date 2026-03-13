@@ -692,7 +692,7 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Web4 is designed as a <strong>protocol</strong>, not a platform. Like email or the web itself,
+                Web4 is designed as an <strong>open ontology</strong>, not a platform. Like email or the web itself,
                 the infrastructure is federated — multiple independent operators can run nodes that
                 interoperate. No single company controls it.
               </p>

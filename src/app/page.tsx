@@ -31,7 +31,7 @@ export default function HomePage() {
           maxWidth: '36rem',
           lineHeight: 1.6
         }}>
-          <strong>Web4</strong> is a proposed protocol where trust is built into the internet itself, not bolted on after the fact &mdash; that&apos;s what &quot;trust-native&quot; means.
+          <strong>Web4</strong> is a proposed ontology where trust is built into the internet itself, not bolted on after the fact &mdash; that&apos;s what &quot;trust-native&quot; means.
           Identity costs something, every action costs energy,
           and consequences follow you forever.
         </p>
@@ -129,9 +129,9 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           <li className="card" style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
             <span style={{ fontSize: '1.5rem' }}>🔗</span>
             <div>
-              <strong>Identity is hardware-bound</strong>
+              <strong>Identity is anchored in your devices</strong>
               <p style={{ color: 'var(--color-text-secondary)', margin: '0.25rem 0 0', fontSize: '0.9rem' }}>
-                You can&apos;t create fake accounts cheaply. Trust accumulates on you, not an account.
+                Your phone, laptop, and tablet each carry a security chip. Linked together through tokens called LCTs, they form a constellation that <em>is</em> your identity. More devices = stronger identity. Can&apos;t be cheaply faked.
               </p>
             </div>
           </li>
@@ -342,7 +342,7 @@ function DeepDiveTab() {
             Society Simulator
           </Link>
           <Link href="/karma-journey" className="btn-secondary" style={{ padding: '0.5rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', fontSize: '0.85rem' }}>
-            Karma Journey
+            Karma Journey (simulation)
           </Link>
           <Link href="/playground" className="btn-secondary" style={{ padding: '0.5rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', fontSize: '0.85rem' }}>
             Playground

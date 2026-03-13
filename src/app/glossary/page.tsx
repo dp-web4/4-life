@@ -351,9 +351,9 @@ export default function GlossaryPage() {
 
       {/* Advanced Protocol Concepts */}
       <section id="advanced" className="max-w-4xl mx-auto mt-16 scroll-mt-20" data-glossary-section>
-        <h2 className="text-3xl font-bold mb-8 text-gray-100">Advanced Protocol Concepts</h2>
+        <h2 className="text-3xl font-bold mb-8 text-gray-100">Advanced Concepts</h2>
         <p className="text-gray-400 mb-6">
-          These are part of the Web4 protocol design — mechanisms that would exist in a deployed system.
+          These are part of the Web4 ontology — mechanisms that would exist in a deployed system.
         </p>
         <div className="space-y-8">
 
@@ -545,7 +545,7 @@ export default function GlossaryPage() {
           </summary>
           <p className="text-gray-400 mb-6 mt-4">
             These ideas come from AI consciousness and behavior research that <em>inspired</em> Web4&apos;s design.
-            They&apos;re not part of the Web4 protocol — think of them as the &ldquo;why behind the why.&rdquo;
+            They&apos;re not part of the Web4 ontology — think of them as the &ldquo;why behind the why.&rdquo;
           </p>
           <div className="space-y-8">
 

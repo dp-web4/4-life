@@ -59,9 +59,10 @@ export default function TLDRPage() {
             <div className="flex gap-3 items-start">
               <span className="text-sky-400 text-xl mt-0.5">2.</span>
               <p className="text-gray-300">
-                <strong className="text-white">Identity is hardware-bound.</strong> Your
-                identity is tied to a physical chip in your device. Creating a fake identity
-                means buying a new device — expensive and slow.
+                <strong className="text-white">Identity is anchored in your devices.</strong> Your
+                phone, laptop, and tablet each carry security chips, linked together through
+                tokens (LCTs) to form a constellation that is your identity. More devices
+                strengthen it. Creating a fake identity means buying new hardware — expensive and slow.
               </p>
             </div>
             <div className="flex gap-3 items-start">

@@ -353,7 +353,7 @@ export default function LCTExplainerPage() {
           <div className="mt-4 p-3 bg-gray-900/50 border border-gray-700 rounded-lg">
             <p className="text-sm text-gray-300 mb-2">
               <strong className="text-sky-400">Who runs witness infrastructure?</strong> Anyone can.
-              Web4 is a protocol (like email), not a platform (like Gmail). Witness nodes can be run by
+              Web4 is an open standard (like email), not a platform (like Gmail). Witness nodes can be run by
               universities, companies, nonprofits, or individuals — the same way anyone can run an email server.
             </p>
             <p className="text-sm text-gray-400 mb-2">

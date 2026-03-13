@@ -44,7 +44,7 @@ export const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
     feedback: {
       ip: {
         text: 'VPNs cost $3/month. They switch IPs in seconds.',
-        web4: 'Web4: identity is hardware-bound. Creating a new identity means buying a new device. Scale attacks require warehouses of phones.',
+        web4: 'Web4: identity is anchored to security chips across your devices, linked through tokens called LCTs. Creating a new identity means new hardware. Scale attacks require warehouses of phones.',
       },
       phone: {
         text: 'Burner SIMs cost $5. Phone farms exist. This slows trolls slightly but doesn\'t stop them.',
@@ -52,7 +52,7 @@ export const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
       },
       hardware: {
         text: 'You\'re thinking like Web4. This mechanism is called LCT (Linked Context Token).',
-        web4: 'Identity is bound to your device\'s security chip (TPM/Secure Enclave). No new account without a new physical device. Reputation follows the hardware, not a username.',
+        web4: 'Identity is anchored to security chips (TPM/Secure Enclave) across your devices — phone, laptop, tablet form a constellation linked by LCTs. No new identity without new hardware. Reputation follows you, not a username.',
       },
     },
   },
@@ -108,7 +108,7 @@ export default function TrustDilemma() {
   };
 
   const handleShare = async () => {
-    const text = 'I just answered 3 questions about internet trust problems and saw how a trust-native protocol addresses each one. Try it yourself:';
+    const text = 'I just answered 3 questions about internet trust problems and saw how a trust-native framework addresses each one. Try it yourself:';
     const url = 'https://4-life-ivory.vercel.app';
     if (navigator.share) {
       try { await navigator.share({ title: '3 Trust Dilemmas', text, url }); } catch { /* cancelled */ }

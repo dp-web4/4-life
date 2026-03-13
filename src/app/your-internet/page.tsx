@@ -133,9 +133,9 @@ const SCENARIOS: Record<string, ScenarioResult> = {
     frustration: 'No accountability for bad actors',
     today: 'A troll gets banned, creates a new account in 30 seconds, and resumes. A scammer gets caught, moves to another platform, starts over. There are no lasting consequences.',
     withWeb4: 'Bad behavior permanently damages your trust score. Creating a new identity means starting from scratch with a new device and zero reputation — not banned, just unproven. Your history follows you, and trust takes time to rebuild.',
-    mechanism: 'Karma carries consequences across lives. Even after "rebirth," agents start with reduced resources if their previous record was poor.',
+    mechanism: 'Trust history is permanent and tied to your device constellation. Even if you abandon an identity and start fresh on new hardware, you begin at zero — no reputation, no trust. The old record still exists for anyone who witnessed it.',
     learnMore: '/karma-journey',
-    learnMoreLabel: 'Experience karma across multiple lives',
+    learnMoreLabel: 'Explore consequences in a trust simulation',
   },
   surveillance: {
     frustration: 'Constant surveillance & data harvesting',
