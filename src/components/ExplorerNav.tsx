@@ -27,6 +27,7 @@ const EXPLORERS: ExplorerInfo[] = [
   { href: '/first-contact', title: 'First Contact', shortTitle: 'First Contact', color: '#6ee7b7', stage: 'understand' },
   { href: '/act-explorer', title: 'AI Guide', shortTitle: 'AI Guide', color: '#6ee7b7', stage: 'understand' },
   { href: '/concepts-to-tools', title: 'Concepts to Tools', shortTitle: 'Concepts→Tools', color: '#6ee7b7', stage: 'understand' },
+  { href: '/trust-dilemmas', title: 'Trust Dilemmas', shortTitle: 'Dilemmas', color: '#6ee7b7', stage: 'understand' },
   // Explore
   { href: '/trust-tensor-explorer', title: 'Trust Tensor Explorer', shortTitle: 'Trust Tensor', color: '#93c5fd', stage: 'explore' },
   { href: '/mrh-explorer', title: 'MRH Explorer', shortTitle: 'MRH', color: '#93c5fd', stage: 'explore' },
@@ -111,6 +112,7 @@ const CONCEPT_TOOLS: Record<string, string[]> = {
   '/threat-model': ['/adversarial-explorer', '/trust-networks', '/playground'],
   '/glossary': ['/first-contact', '/playground', '/concepts-to-tools'],
   '/learn': ['/first-contact', '/concepts-to-tools', '/explore-guide'],
+  '/trust-dilemmas': ['/first-contact', '/why-web4', '/playground'],
   '/challenge-set': ['/playground', '/lab-console', '/threat-model'],
 };
 

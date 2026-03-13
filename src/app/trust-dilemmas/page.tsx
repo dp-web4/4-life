@@ -15,7 +15,7 @@ export default function TrustDilemmasPage() {
         <h1 style={{ marginBottom: '0.5rem' }}>Trust Dilemmas</h1>
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: '2rem' }}>
           Three real problems the internet faces today. Pick how you&apos;d solve them,
-          then see how a trust-native protocol would handle each one.
+          then see how a trust-native approach would handle each one.
         </p>
 
         <TrustDilemma />

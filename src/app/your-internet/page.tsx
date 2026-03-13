@@ -176,7 +176,7 @@ export default function YourInternetPage() {
 
   const handleShare = async () => {
     const frustrationNames = selected.map(id => SCENARIOS[id]?.frustration).join(', ');
-    const text = `My biggest internet frustrations: ${frustrationNames}. Found this site that shows how trust-native protocols could fix them — with honest assessments of what's unsolved.`;
+    const text = `My biggest internet frustrations: ${frustrationNames}. Found this site that shows how a trust-native internet could fix them — with honest assessments of what's unsolved.`;
     const url = 'https://4-life-ivory.vercel.app/your-internet';
 
     if (navigator.share) {

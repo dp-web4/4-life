@@ -44,6 +44,7 @@ const pages: { path: string; priority: number; changeFrequency: MetadataRoute.Si
   { path: "/manifest", priority: 0.8, changeFrequency: "monthly" },
   { path: "/glossary", priority: 0.8, changeFrequency: "monthly" },
   { path: "/threat-model", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/trust-dilemmas", priority: MEDIUM_PRIORITY, changeFrequency: "monthly" },
   { path: "/challenge-set", priority: MEDIUM_PRIORITY, changeFrequency: "monthly" },
   { path: "/web4-explainer", priority: MEDIUM_PRIORITY, changeFrequency: "monthly" },
   { path: "/federation-economics", priority: MEDIUM_PRIORITY, changeFrequency: "monthly" },
