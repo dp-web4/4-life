@@ -842,6 +842,23 @@ export default function AlivenessExplainer() {
           </div>
         </div>
 
+        <div className="detail-box" style={{ marginTop: "1.5rem", background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.2)" }}>
+          <h4 style={{ color: "#fbbf24" }}>What does &ldquo;death&rdquo; mean for a real person?</h4>
+          <p>
+            In these simulations, death means the agent stops acting and awaits rebirth.
+            In a deployed Web4 system, death would mean <strong>temporary loss of participation rights</strong> —
+            you can&apos;t post, vote, or transact until karma-based rebirth restores your access.
+            Think of it as a <strong>&ldquo;suspended license&rdquo;</strong> rather than account deletion:
+            your identity and history persist, but you need to earn your way back.
+          </p>
+          <p style={{ fontSize: "0.85rem", opacity: 0.7, marginTop: "0.5rem" }}>
+            Important: death from energy exhaustion (most common) is recoverable through rebirth if
+            you built sufficient trust. Death from trust collapse below 0.5 is permanent —
+            society has rejected you. This distinction matters: running out of energy is like going
+            bankrupt (recoverable), but losing all trust is like losing your professional license (permanent).
+          </p>
+        </div>
+
         <h3 style={{ marginTop: "2rem" }}>Rebirth Process</h3>
         <p>Not everyone gets reborn. Society evaluates your life:</p>
 

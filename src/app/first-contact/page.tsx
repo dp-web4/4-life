@@ -518,6 +518,8 @@ export default function FirstContactPage() {
                 <p className="text-gray-300 leading-relaxed">
                   Her first few contributions were thoughtful—a quality post, helping a newcomer. Each action cost ATP
                   (attention is scarce), but her trust steadily climbed: 0.50 → 0.52 → 0.55. The community noticed quality.
+                  <span className="text-gray-400 text-sm"> Unlike Reddit karma or eBay ratings, this trust is multi-dimensional,
+                  follows her across communities, and costs real energy to confirm — making it much harder to game.</span>
                 </p>
               </div>
 
@@ -593,8 +595,10 @@ export default function FirstContactPage() {
                 <h4 className="text-xl font-semibold mb-4">Key Insights</h4>
                 <div className="space-y-3 text-gray-300">
                   <div>
-                    <strong className="text-sky-400">Quality Pays:</strong> Valuable contributions earn ATP from the community.
-                    Alice's best content earned 12-25 ATP back—more than the cost to create it.
+                    <strong className="text-sky-400">Quality Pays:</strong> When someone finds Alice&apos;s work valuable, they
+                    confirm its quality — like an upvote, but it costs the reviewer a small amount of energy too.
+                    This confirmation converts her pending receipt (ADP) back into usable energy (ATP). Because confirming
+                    costs energy, fake validation between friends is self-defeating.
                   </div>
                   <div>
                     <strong className="text-orange-400">Spam Burns:</strong> Low-effort content costs more than it earns and
