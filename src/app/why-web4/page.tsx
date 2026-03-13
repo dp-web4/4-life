@@ -284,26 +284,21 @@ export default function WhyWeb4Page() {
             each root cause with a specific mechanism:
           </p>
           <div className="bg-gray-900/50 border border-gray-700/50 rounded-lg p-4 mb-6">
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Terms you&apos;ll learn — plain English first</p>
-            <div className="grid grid-cols-2 gap-2 text-xs text-gray-400">
-              <span>Energy budget <strong className="text-sky-400">(ATP)</strong></span>
-              <span>Hardware identity <strong className="text-sky-400">(LCT)</strong></span>
-              <span>Trust score <strong className="text-sky-400">(T3)</strong></span>
-              <span>Trust horizon <strong className="text-sky-400">(MRH)</strong></span>
-            </div>
-            <p className="text-xs text-gray-500 mt-2">
-              Don&apos;t memorize the acronyms — the concepts are what matter. Each links to a hands-on explainer.
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Four ideas, introduced one at a time below</p>
+            <p className="text-xs text-gray-500">
+              Each concept is explained in plain English with its own card. Don&apos;t worry about acronyms — they&apos;re just shorthand. The ideas are what matter.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div className="bg-gray-900/50 rounded-lg p-4">
               <h4 className="font-semibold text-sky-400 mb-2">
-                Energy Budget (ATP)
+                1. Energy Budget
               </h4>
               <p className="text-gray-400 text-sm">
-                Every action costs attention budget. Quality earns it back. Spam burns out.
+                Every action costs energy from a personal budget. Quality contributions earn energy back. Spam burns through it with no return — spammers literally run out of fuel.
               </p>
+              <p className="text-gray-500 text-xs mt-1">Shorthand: ATP (Attention Transfer Packets)</p>
               <Link href="/atp-economics" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about energy budgets →
               </Link>
@@ -311,11 +306,12 @@ export default function WhyWeb4Page() {
 
             <div className="bg-gray-900/50 rounded-lg p-4">
               <h4 className="font-semibold text-sky-400 mb-2">
-                Hardware-Bound Identity (LCT)
+                2. Hardware-Bound Identity
               </h4>
               <p className="text-gray-400 text-sm">
-                Hardware-bound identity witnessed by multiple devices. Expensive to fake.
+                Your identity is tied to your device&apos;s security chip — the same kind that protects Face ID and fingerprints. Creating a fake identity means buying a new physical device. Multiple devices witness each other for extra security.
               </p>
+              <p className="text-gray-500 text-xs mt-1">Shorthand: LCT (Linked Context Token)</p>
               <Link href="/lct-explainer" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about identity →
               </Link>
@@ -323,24 +319,26 @@ export default function WhyWeb4Page() {
 
             <div className="bg-gray-900/50 rounded-lg p-4">
               <h4 className="font-semibold text-sky-400 mb-2">
-                Trust Tensor (T3)
+                3. Multi-Dimensional Trust
               </h4>
               <p className="text-gray-400 text-sm">
-                Multi-dimensional trust that follows you. Harder to game than single scores.
+                Instead of one trust score, you get separate scores for your skills, your training, and your behavior — and they&apos;re different for each role. Your trust as a data analyst doesn&apos;t affect your trust as a cook.
               </p>
+              <p className="text-gray-500 text-xs mt-1">Shorthand: T3 (Trust Tensor — Talent, Training, Temperament)</p>
               <Link href="/trust-tensor" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
-                Learn about trust tensors →
+                Learn about trust →
               </Link>
             </div>
 
             <div className="bg-gray-900/50 rounded-lg p-4">
               <h4 className="font-semibold text-sky-400 mb-2">
-                Context Boundaries (MRH)
+                4. Context Boundaries
               </h4>
               <p className="text-gray-400 text-sm">
                 You only see messages from people your network trusts — like being in a room
-                where strangers need an introduction before they can talk to you.
+                where strangers need an introduction before they can talk to you. Trust fades with distance: a friend-of-a-friend-of-a-friend is almost a stranger.
               </p>
+              <p className="text-gray-500 text-xs mt-1">Shorthand: MRH (Markov Relevancy Horizon)</p>
               <Link href="/markov-relevancy-horizon" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about context boundaries →
               </Link>

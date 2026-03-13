@@ -72,8 +72,8 @@ export default function LCTExplainerPage() {
       example: "lct:web4:agent:alice@Thor#perception → can only read/observe, cannot execute code or delegate"
     },
     {
-      name: "Witness Network",
-      description: "Multiple independent devices/platforms witness and attest to this LCT's validity",
+      name: "Device Witness Network",
+      description: "Multiple independent devices witness and attest to this LCT's validity — witnesses are devices, not people",
       example: "Your LCT is witnessed by your phone, laptop, and FIDO2 key - attacker must compromise all three"
     }
   ];
@@ -305,16 +305,16 @@ export default function LCTExplainerPage() {
           {/* Witness explainer */}
           <div className="mt-4 p-4 bg-green-950/20 border border-green-800/30 rounded-lg">
             <h3 className="text-sm font-bold text-green-400 mb-2">
-              What are &ldquo;witnesses&rdquo;?
+              What are &ldquo;device witnesses&rdquo;?
             </h3>
             <p className="text-sm text-gray-300 mb-3">
-              <strong>Why witnesses?</strong> Passwords can be stolen. A single device can be hacked.
+              <strong>Why device witnesses?</strong> Passwords can be stolen. A single device can be hacked.
               But compromising three independent devices at the same time? That&apos;s orders of magnitude
-              harder. A <span className="font-bold">witness</span> is any device or
+              harder. A <span className="font-bold">device witness</span> is any device or
               platform that independently confirms your presence is real &mdash; like
               co-signers on a legal document. Your phone, laptop, and security key each independently
               vouch that &ldquo;yes, this is really Alice.&rdquo; An attacker would need to
-              compromise <span className="font-bold">all</span> of your witnesses simultaneously
+              compromise <span className="font-bold">all</span> of your device witnesses simultaneously
               to impersonate you.
             </p>
             <div className="text-sm text-gray-400 bg-gray-900/50 rounded p-3 space-y-1">
@@ -344,7 +344,7 @@ export default function LCTExplainerPage() {
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500 font-bold shrink-0">4.</span>
-                  <span>More witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90%) — but with <em>diminishing returns</em>. Three hardware-bound witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds, session 30)</span>
+                  <span>More device witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90%) — but with <em>diminishing returns</em>. Three hardware-bound device witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds)</span>
                 </div>
               </div>
             </div>

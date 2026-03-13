@@ -408,6 +408,12 @@ export default function FirstContactPage() {
                       Quality contributions earn ATP from the community. This is the <strong className="text-white">sustainable path</strong>:
                       create value, earn resources, build trust. The more trust you have, the more your contributions are valued.
                     </p>
+                    <p className="text-gray-400 mt-2 text-sm">
+                      <strong className="text-gray-300">How does this work?</strong> When someone finds Alice&apos;s post valuable,
+                      they confirm its quality — like an upvote, but it costs the reviewer a small amount of energy too.
+                      This confirmation converts Alice&apos;s pending receipt (ADP) back into usable energy (ATP).
+                      Because confirming quality costs energy, fake validation between friends burns resources faster than it creates them.
+                    </p>
                   </div>
                 )}
 
@@ -430,6 +436,11 @@ export default function FirstContactPage() {
                       Unlike traditional platforms where you just create a new account, death in Web4 is meaningful.
                       Your full history is preserved. But if you earned good karma, <strong className="text-white">rebirth is possible</strong> —
                       and your next life starts with advantages from your past behavior.
+                    </p>
+                    <p className="text-gray-400 mt-2 text-sm">
+                      <strong className="text-gray-300">What this means in practice:</strong> In these simulations, death = the agent stops acting and must wait for rebirth.
+                      In a deployed Web4 system, it would mean temporary loss of participation rights — you can&apos;t post, vote, or transact until
+                      karma-based rebirth restores your access. It&apos;s more like a &ldquo;suspended license&rdquo; than account deletion — your history and identity persist.
                     </p>
                   </div>
                 )}
@@ -604,6 +615,33 @@ export default function FirstContactPage() {
                   <div>
                     <strong className="text-emerald-400">Karma Compounds:</strong> Good behavior in past lives gives you a head start
                     in your next one. Alice&apos;s rebirth trust (0.54) was higher than the default (0.50) — earned through past quality.
+                  </div>
+                </div>
+              </div>
+
+              {/* Reddit karma comparison */}
+              <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
+                <h4 className="text-lg font-semibold mb-3 text-gray-200">How is this different from Reddit karma?</h4>
+                <div className="grid md:grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <p className="text-gray-400 font-medium mb-2">Reddit / traditional reputation:</p>
+                    <ul className="space-y-1 text-gray-500">
+                      <li>Karma is a single number (one-dimensional)</li>
+                      <li>Upvotes are free — no cost to inflate</li>
+                      <li>Karma trapped on one platform</li>
+                      <li>Create new account = fresh start</li>
+                      <li>Bad behavior → ban → new account → repeat</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="text-sky-400 font-medium mb-2">Web4 trust:</p>
+                    <ul className="space-y-1 text-gray-300">
+                      <li>Trust is multi-dimensional (skill, reliability, temperament)</li>
+                      <li>Confirming quality costs energy — can&apos;t inflate for free</li>
+                      <li>Trust follows you across communities</li>
+                      <li>New identity requires new hardware ($$$)</li>
+                      <li>Bad behavior → death → rebirth with permanent record</li>
+                    </ul>
                   </div>
                 </div>
               </div>

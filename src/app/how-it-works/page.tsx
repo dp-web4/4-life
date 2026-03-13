@@ -26,6 +26,11 @@ export default function HowItWorksPage() {
         <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
           How Web4 Societies Work
         </h1>
+        <div className="mb-4 p-3 bg-amber-950/30 border border-amber-800/30 rounded-lg text-sm text-amber-200/80">
+          <strong>Project status:</strong> Web4 is a <strong>research prototype</strong>, not a deployed product.
+          The mechanics described here are validated through simulations and ~47,000 lines of tested code,
+          but no live network with real users exists yet. The simulations on this site let you explore how it <em>would</em> work.
+        </div>
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Web4 is trust-native infrastructure for humans and AI. Instead of
           relying on platforms, moderators, or authorities, Web4 societies
@@ -1178,8 +1183,10 @@ export default function HowItWorksPage() {
         <div className="bg-gradient-to-r from-amber-900/15 to-purple-900/15 border border-amber-800/30 rounded-xl p-6">
           <h3 className="text-xl font-bold mb-3 text-amber-300">What About Multiple Communities?</h3>
           <p className="text-gray-300 text-sm leading-relaxed mb-2">
-            Everything above describes one community. In a real Web4 network, there are many —
-            each with different specializations and ATP prices. Your reputation travels with you,
+            Everything above describes one community. In a real Web4 network, there are many — grouped into
+            <strong className="text-amber-300"> federations</strong> (networks of communities that share trust data
+            and interoperate, like email servers that can send messages to each other even though they&apos;re run by different organizations).
+            Each community has different specializations and ATP prices. Your reputation travels with you,
             but each community values different skills. A community of data analysts might pay
             a premium for engineering talent, while a research group might value practical builders.
           </p>
