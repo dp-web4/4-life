@@ -206,13 +206,18 @@ export default function TrustDilemma() {
 
   return (
     <section style={{ maxWidth: '48rem', margin: '0 auto', textAlign: 'center' }}>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '0.35rem', marginBottom: '0.75rem' }}>
-        {DILEMMA_QUESTIONS.map((_, i) => (
-          <div key={i} style={{
-            width: '2rem', height: '3px', borderRadius: '2px',
-            background: i < step ? 'var(--color-sky)' : i === step ? 'var(--color-text-secondary)' : 'var(--color-border)',
-          }} />
-        ))}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+        <span style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem' }}>
+          Dilemma {step + 1} of 3
+        </span>
+        <div style={{ display: 'flex', gap: '0.35rem' }}>
+          {DILEMMA_QUESTIONS.map((_, i) => (
+            <div key={i} style={{
+              width: '2rem', height: '3px', borderRadius: '2px',
+              background: i < step ? 'var(--color-sky)' : i === step ? 'var(--color-text-secondary)' : 'var(--color-border)',
+            }} />
+          ))}
+        </div>
       </div>
       <p style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--color-text)' }}>
         <strong>{currentQuestion!.question}</strong>

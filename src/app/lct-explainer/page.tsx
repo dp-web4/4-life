@@ -179,6 +179,18 @@ export default function LCTExplainerPage() {
           </p>
         </div>
 
+        {/* Key Takeaways — summary for newcomers who may not read the full page */}
+        <div className="bg-purple-950/30 border border-purple-800/40 rounded-xl p-6 mb-8">
+          <h2 className="text-lg font-bold mb-3 text-purple-300">Key Takeaways</h2>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">1.</span> Your identity lives in your devices&apos; security chips — not in passwords or company databases</li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">2.</span> Multiple devices (phone, laptop, security key) witness each other, making faking exponentially harder</li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">3.</span> If you lose a device, your other devices can recover your identity — no &quot;forgot password&quot; needed</li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">4.</span> This is pseudonymous — your reputation follows you, but your real name doesn&apos;t have to</li>
+          </ul>
+          <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300">jump to the interactive security audit ↓</a></p>
+        </div>
+
         {/* The Three Models */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <h2 className="text-2xl font-bold mb-6 text-gray-100">Identity Evolution: Web2 → Web3 → Web4</h2>
