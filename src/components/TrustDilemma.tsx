@@ -178,7 +178,7 @@ export default function TrustDilemma() {
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
           <span style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem' }}>
-            {step + 1} of 3
+            Dilemma {step + 1} of 3
           </span>
           <span style={{
             fontSize: '0.7rem', fontWeight: 600, padding: '0.15rem 0.4rem', borderRadius: '0.25rem',
@@ -206,16 +206,24 @@ export default function TrustDilemma() {
 
   return (
     <section style={{ maxWidth: '48rem', margin: '0 auto', textAlign: 'center' }}>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '0.35rem', marginBottom: '0.75rem' }}>
-        {DILEMMA_QUESTIONS.map((_, i) => (
-          <div key={i} style={{
-            width: '2rem', height: '3px', borderRadius: '2px',
-            background: i < step ? 'var(--color-sky)' : i === step ? 'var(--color-text-secondary)' : 'var(--color-border)',
-          }} />
-        ))}
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+        <span style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem' }}>
+          Dilemma {step + 1} of 3
+        </span>
+        <div style={{ display: 'flex', gap: '0.35rem' }}>
+          {DILEMMA_QUESTIONS.map((_, i) => (
+            <div key={i} style={{
+              width: '2rem', height: '3px', borderRadius: '2px',
+              background: i < step ? 'var(--color-sky)' : i === step ? 'var(--color-text-secondary)' : 'var(--color-border)',
+            }} />
+          ))}
+        </div>
       </div>
-      <p style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--color-text)' }}>
+      <p style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text)' }}>
         <strong>{currentQuestion!.question}</strong>
+      </p>
+      <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginBottom: '1rem' }}>
+        Pick your answer — then see how Web4 handles it.
       </p>
       <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
         {currentQuestion!.options.map(opt => (

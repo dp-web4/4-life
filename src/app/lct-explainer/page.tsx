@@ -179,6 +179,18 @@ export default function LCTExplainerPage() {
           </p>
         </div>
 
+        {/* Key Takeaways — summary for newcomers who may not read the full page */}
+        <div className="bg-purple-950/30 border border-purple-800/40 rounded-xl p-6 mb-8">
+          <h2 className="text-lg font-bold mb-3 text-purple-300">Key Takeaways</h2>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li><strong className="text-gray-100">Identity lives in your devices</strong> — security chips (TPM/Secure Enclave) in your phone and laptop hold cryptographic keys that prove it&apos;s really you.</li>
+            <li><strong className="text-gray-100">No passwords, no usernames</strong> — your devices witness each other, creating a constellation that&apos;s hard to fake but easy to use.</li>
+            <li><strong className="text-gray-100">Privacy by design</strong> — hardware-bound identity doesn&apos;t mean real-name identity. You control what you reveal.</li>
+            <li><strong className="text-gray-100">Lost a device?</strong> Your other devices can vouch for a replacement. No single point of failure.</li>
+          </ul>
+          <p className="text-xs text-gray-500 mt-3">Read on for the full technical picture, or scroll down to try the interactive security audit.</p>
+        </div>
+
         {/* The Three Models */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <h2 className="text-2xl font-bold mb-6 text-gray-100">Identity Evolution: Web2 → Web3 → Web4</h2>

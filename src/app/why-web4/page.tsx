@@ -298,7 +298,7 @@ export default function WhyWeb4Page() {
               <p className="text-gray-400 text-sm">
                 Every action costs energy from a personal budget. Quality contributions earn energy back. Spam burns through it with no return — spammers literally run out of fuel.
               </p>
-              <p className="text-gray-500 text-xs mt-1">Shorthand: ATP (Attention Transfer Packets)</p>
+              <p className="text-gray-500 text-xs mt-1">Shorthand: ATP (Allocation Transfer Packets)</p>
               <Link href="/atp-economics" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about energy budgets →
               </Link>
