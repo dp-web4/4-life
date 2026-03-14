@@ -336,7 +336,7 @@ export default function WhatCouldGoWrongPage() {
           <div className="text-gray-300 leading-relaxed space-y-3">
             <p>
               <strong className="text-gray-100">The risk:</strong> The simulations on this site run
-              with 12&ndash;50 agents. The real internet has billions of users. Trust-filtered
+              with 4&ndash;20 agents. The real internet has billions of users. Trust-filtered
               message delivery, coherence scoring across four dimensions, and real-time witness
               verification all have computational costs that might not scale.
             </p>
