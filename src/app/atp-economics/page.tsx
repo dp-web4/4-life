@@ -115,10 +115,35 @@ export default function ATPEconomicsPage() {
             ↓ Try the ATP simulator below
           </a>
         </p>
+
+        {/* Jump Links */}
+        <nav className="mt-6 flex flex-wrap gap-2 justify-center text-xs">
+          {[
+            { id: 'problem', label: 'The Problem' },
+            { id: 'solution', label: 'The Solution' },
+            { id: 'quality-ramp', label: 'Quality Ramp' },
+            { id: 'try-it', label: 'Simulator' },
+            { id: 'insights', label: 'Key Insights' },
+            { id: 'at-scale', label: 'At Scale' },
+            { id: 'agent-journey', label: "Agent's Journey" },
+            { id: 'earning-atp', label: 'Earning ATP' },
+            { id: 'technical', label: 'Technical' },
+            { id: 'why-matters', label: 'Why It Matters' },
+          ].map(({ id, label }) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={(e) => { e.preventDefault(); document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }}
+              className="px-2.5 py-1 rounded-full border border-gray-700 text-gray-400 hover:border-sky-600 hover:text-sky-400 transition-colors"
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
       </section>
 
       {/* The Problem */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="problem" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">The Problem</h2>
         <div className="bg-gradient-to-br from-red-950/30 to-red-900/20 border border-red-800/30 rounded-xl p-8">
           <h3 className="text-xl font-semibold text-red-400 mb-4">
@@ -150,7 +175,7 @@ export default function ATPEconomicsPage() {
       </section>
 
       {/* The Solution */}
-      <section className="max-w-4xl mx-auto mt-12">
+      <section id="solution" className="max-w-4xl mx-auto mt-12 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">The Solution</h2>
         <div className="bg-gradient-to-br from-sky-950/30 to-blue-900/20 border border-sky-800/30 rounded-xl p-8">
           <h3 className="text-xl font-semibold text-sky-400 mb-4">
@@ -190,7 +215,7 @@ export default function ATPEconomicsPage() {
       </section>
 
       {/* Quality Ramp — concrete numbers from web4 spec */}
-      <section className="max-w-4xl mx-auto mt-12">
+      <section id="quality-ramp" className="max-w-4xl mx-auto mt-12 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">Quality Pays — By How Much?</h2>
         <p className="text-gray-300 leading-relaxed mb-6">
           ATP isn&apos;t all-or-nothing. Web4 uses a <strong className="text-sky-400">quality ramp</strong>:
@@ -463,7 +488,7 @@ export default function ATPEconomicsPage() {
       </section>
 
       {/* Key Insights */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="insights" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">Key Insights</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-gradient-to-br from-purple-950/30 to-purple-900/20 border border-purple-800/30 rounded-xl p-6">
@@ -518,7 +543,7 @@ export default function ATPEconomicsPage() {
       </section>
 
       {/* Market Dynamics */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="at-scale" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">What Happens at Scale?</h2>
         <p className="text-gray-400 mb-6">
           Single-agent economics are intuitive. But does ATP work when hundreds of agents
@@ -582,7 +607,7 @@ export default function ATPEconomicsPage() {
       </section>
 
       {/* Follow One Agent's ATP Journey */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="agent-journey" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           Follow One Agent&apos;s ATP Journey
         </h2>
@@ -679,7 +704,7 @@ export default function ATPEconomicsPage() {
       </section>
 
       {/* How ATP Recharges: Value Confirmation */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="earning-atp" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           How Do You Actually Earn ATP Back?
         </h2>
@@ -759,7 +784,7 @@ export default function ATPEconomicsPage() {
       </section>
 
       {/* Technical Details (Collapsible) */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="technical" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <details className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8">
           <summary className="text-2xl font-bold text-gray-100 cursor-pointer hover:text-sky-400 transition-colors">
             Technical Details (Click to Expand)
@@ -960,7 +985,7 @@ if agent.atp <= 0:
       </section>
 
       {/* Why This Matters */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="why-matters" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           Why This Matters
         </h2>

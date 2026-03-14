@@ -490,6 +490,172 @@ export default function DayInWeb4Page() {
         </div>
       )}
 
+      {/* What Would This Look Like? — Conceptual UI Wireframes */}
+      <section className="mt-16 pt-8 border-t border-gray-800">
+        <h2 className="text-2xl font-bold mb-2">What Would This Actually Look Like?</h2>
+        <p className="text-gray-400 mb-8 text-sm">
+          The scenarios above describe the <em>experience</em>. But what would the interface look like on your screen?
+          Here are three conceptual sketches.
+        </p>
+
+        {/* Wireframe 1: Inbox */}
+        <div className="mb-8">
+          <h3 className="text-sm font-semibold text-sky-400 uppercase tracking-wide mb-3">Your Inbox</h3>
+          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
+            {/* Header bar */}
+            <div className="flex items-center gap-3 px-4 py-2.5 border-b border-gray-700" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
+              <div className="w-2 h-2 rounded-full bg-sky-400" />
+              <span className="text-sm font-medium text-gray-300">Messages</span>
+              <span className="text-xs text-gray-500 ml-auto">3 new</span>
+            </div>
+            {/* Messages */}
+            <div className="divide-y divide-gray-800">
+              {[
+                { from: 'Maya Chen', trust: 0.87, cost: '2 ATP', subject: 'Re: Kitchen faucet fix', time: '9:12 AM', color: 'text-emerald-400' },
+                { from: 'Dev Community', trust: 0.91, cost: '5 ATP', subject: 'Your answer was marked helpful (+20 ATP)', time: '9:45 AM', color: 'text-emerald-400' },
+                { from: 'New Contact', trust: 0.43, cost: '8 ATP', subject: 'Freelance inquiry', time: '10:30 AM', color: 'text-amber-400' },
+              ].map((msg, i) => (
+                <div key={i} className="flex items-center gap-3 px-4 py-3 hover:bg-gray-800/30 transition-colors">
+                  <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-xs text-gray-400">
+                    {msg.from[0]}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-medium text-gray-200">{msg.from}</span>
+                      <span className={`text-xs font-mono ${msg.color}`}>
+                        {msg.trust.toFixed(2)}
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-500 truncate">{msg.subject}</p>
+                  </div>
+                  <div className="text-right shrink-0">
+                    <div className="text-xs text-gray-600">{msg.time}</div>
+                    <div className="text-xs text-gray-600">cost sender {msg.cost}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="px-4 py-2 text-xs text-gray-600 border-t border-gray-800">
+              0 spam — messages cost energy to send. Bots can&apos;t afford to reach you.
+            </div>
+          </div>
+        </div>
+
+        {/* Wireframe 2: Hiring Dashboard */}
+        <div className="mb-8">
+          <h3 className="text-sm font-semibold text-sky-400 uppercase tracking-wide mb-3">Hiring a Freelancer</h3>
+          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
+            <div className="flex items-center gap-3 px-4 py-2.5 border-b border-gray-700" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
+              <div className="w-2 h-2 rounded-full bg-purple-400" />
+              <span className="text-sm font-medium text-gray-300">Applicants — Logo Design</span>
+              <span className="text-xs text-gray-500 ml-auto">2 candidates</span>
+            </div>
+            <div className="p-4 space-y-3">
+              {/* Candidate 1 */}
+              <div className="rounded-lg border border-gray-700 p-3" style={{ background: 'rgba(15, 23, 42, 0.5)' }}>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-medium text-gray-200 text-sm">Sarah K.</span>
+                  <span className="text-xs text-emerald-400 bg-emerald-950/50 px-2 py-0.5 rounded-full">Verified — 156 projects</span>
+                </div>
+                <div className="grid grid-cols-3 gap-2 text-xs mb-2">
+                  <div>
+                    <div className="text-gray-500 mb-0.5">Talent</div>
+                    <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden"><div className="h-full rounded-full bg-sky-400" style={{ width: '91%' }} /></div>
+                    <div className="text-sky-400 font-mono mt-0.5">0.91</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-500 mb-0.5">Training</div>
+                    <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden"><div className="h-full rounded-full bg-sky-400" style={{ width: '87%' }} /></div>
+                    <div className="text-sky-400 font-mono mt-0.5">0.87</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-500 mb-0.5">Temperament</div>
+                    <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden"><div className="h-full rounded-full bg-sky-400" style={{ width: '94%' }} /></div>
+                    <div className="text-sky-400 font-mono mt-0.5">0.94</div>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-500">Scores from real interactions, verified by hardware-bound identity. Can&apos;t be faked.</p>
+              </div>
+              {/* Candidate 2 */}
+              <div className="rounded-lg border border-gray-700 p-3" style={{ background: 'rgba(15, 23, 42, 0.5)' }}>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-medium text-gray-200 text-sm">Alex M.</span>
+                  <span className="text-xs text-amber-400 bg-amber-950/50 px-2 py-0.5 rounded-full">New — 3 projects</span>
+                </div>
+                <div className="grid grid-cols-3 gap-2 text-xs mb-2">
+                  <div>
+                    <div className="text-gray-500 mb-0.5">Talent</div>
+                    <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden"><div className="h-full rounded-full bg-amber-400" style={{ width: '62%' }} /></div>
+                    <div className="text-amber-400 font-mono mt-0.5">0.62</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-500 mb-0.5">Training</div>
+                    <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden"><div className="h-full rounded-full bg-amber-400" style={{ width: '55%' }} /></div>
+                    <div className="text-amber-400 font-mono mt-0.5">0.55</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-500 mb-0.5">Temperament</div>
+                    <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden"><div className="h-full rounded-full bg-amber-400" style={{ width: '70%' }} /></div>
+                    <div className="text-amber-400 font-mono mt-0.5">0.70</div>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-500">Limited history — lower cost, but you&apos;re taking more of a risk. Trust builds with time.</p>
+              </div>
+            </div>
+            <div className="px-4 py-2 text-xs text-gray-600 border-t border-gray-800">
+              No fake portfolios. No bought reviews. Trust scores earned through 156 real projects.
+            </div>
+          </div>
+        </div>
+
+        {/* Wireframe 3: Review Page */}
+        <div className="mb-8">
+          <h3 className="text-sm font-semibold text-sky-400 uppercase tracking-wide mb-3">Restaurant Reviews</h3>
+          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
+            <div className="flex items-center gap-3 px-4 py-2.5 border-b border-gray-700" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
+              <div className="w-2 h-2 rounded-full bg-amber-400" />
+              <span className="text-sm font-medium text-gray-300">Golden Dragon — 89 reviews</span>
+              <span className="text-xs text-amber-400 font-mono ml-auto">4.6 ★</span>
+            </div>
+            <div className="p-4 space-y-3">
+              <div className="flex items-start gap-3">
+                <div className="w-7 h-7 rounded-full bg-gray-700 flex items-center justify-center text-xs text-gray-400 shrink-0 mt-0.5">R</div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-sm text-gray-200">Rachel T.</span>
+                    <span className="text-xs font-mono text-emerald-400">0.83</span>
+                    <span className="text-xs text-gray-600">· cost 5 ATP to post</span>
+                  </div>
+                  <p className="text-xs text-gray-400">&quot;The dan dan noodles are incredible. We&apos;ve been coming here monthly for two years.&quot;</p>
+                </div>
+                <span className="text-xs text-amber-400 shrink-0">★★★★★</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-7 h-7 rounded-full bg-gray-700 flex items-center justify-center text-xs text-gray-400 shrink-0 mt-0.5">J</div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-sm text-gray-200">James W.</span>
+                    <span className="text-xs font-mono text-emerald-400">0.71</span>
+                    <span className="text-xs text-gray-600">· cost 5 ATP to post</span>
+                  </div>
+                  <p className="text-xs text-gray-400">&quot;Good food, slow service on weekends. Weekday lunch is the move.&quot;</p>
+                </div>
+                <span className="text-xs text-amber-400 shrink-0">★★★★</span>
+              </div>
+            </div>
+            <div className="px-4 py-2 text-xs text-gray-600 border-t border-gray-800">
+              Every review cost the reviewer energy. No review farms — each reviewer has a verifiable trust history.
+            </div>
+          </div>
+        </div>
+
+        <p className="text-xs text-gray-500 italic">
+          These are conceptual wireframes, not final designs. Web4 is active research — the real interfaces
+          will be built by the communities that adopt it.{' '}
+          <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">See what&apos;s genuinely unsolved →</Link>
+        </p>
+      </section>
+
       {/* Footer nav */}
       <div className="mt-12 pt-6 border-t border-gray-800 flex flex-wrap gap-4 text-sm text-gray-500">
         <Link href="/why-web4" className="hover:text-sky-400 transition-colors">Why Web4?</Link>
