@@ -1080,6 +1080,46 @@ export default function HowItWorksPage() {
           </p>
         </div>
 
+        {/* Checks and Balances */}
+        <div className="bg-gradient-to-br from-purple-950/20 to-gray-900 border border-purple-800/20 rounded-xl p-6 mb-6">
+          <h4 className="text-lg font-semibold text-purple-300 mb-3">What Prevents Unfair Rules?</h4>
+          <p className="text-gray-300 text-sm leading-relaxed mb-4">
+            If each society writes its own rules, what stops a society from creating biased laws
+            or a corrupt law oracle? Four mechanisms work together:
+          </p>
+          <div className="space-y-3 text-sm">
+            <div className="flex gap-3 items-start">
+              <span className="text-purple-400 font-bold shrink-0">Exit rights:</span>
+              <p className="text-gray-400">Members can leave any society and take their trust history with them.
+                A society with unfair rules loses members — and their ATP contributions. This creates competitive
+                pressure: societies that treat members well attract more participants.</p>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="text-purple-400 font-bold shrink-0">Authority decay:</span>
+              <p className="text-gray-400">Authorities are bound by the same trust mechanics as everyone else.
+                A biased moderator or corrupt reviewer sees their own trust score drop as members flag their
+                actions. Below the threshold, they lose the role automatically — no vote needed.</p>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="text-purple-400 font-bold shrink-0">Transparency:</span>
+              <p className="text-gray-400">Law oracle verdicts are recorded in a tamper-evident audit chain.
+                Every decision is inspectable — members can see exactly how the oracle classified each action.
+                Patterns of biased verdicts become visible over time.</p>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="text-purple-400 font-bold shrink-0">Federation competition:</span>
+              <p className="text-gray-400">Multiple societies can serve similar purposes. If the &ldquo;Open Science
+                Collective&rdquo; becomes authoritarian, members migrate to &ldquo;Free Research Network.&rdquo;
+                Trust portability (via <Link href="/federation-economics" className="text-sky-400 hover:underline">federation</Link>)
+                means switching communities doesn&apos;t mean starting over.</p>
+            </div>
+          </div>
+          <p className="text-gray-500 text-xs italic mt-4">
+            The analogy: open-source projects. If a project&apos;s governance becomes hostile, contributors fork it.
+            The ability to fork — not the act of forking — keeps governance honest. Web4 societies work the same way.
+          </p>
+        </div>
+
         <p className="text-gray-500 text-sm">
           Full definitions:{' '}
           <Link href="/glossary" className="text-sky-400 hover:underline">Glossary</Link>{' · '}

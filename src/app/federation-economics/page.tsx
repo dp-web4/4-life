@@ -817,6 +817,68 @@ export default function FederationEconomicsPage() {
         </p>
       </section>
 
+      {/* How Your Trust Travels */}
+      <section>
+        <h2>How Your Trust Travels Between Communities</h2>
+        <p>
+          The most common question about federation: &ldquo;If I have 0.91 Talent as a data analyst
+          in Community A, how does Community B know about that?&rdquo; Here&apos;s exactly how it works.
+        </p>
+
+        <div className="bg-gradient-to-br from-sky-950/20 to-gray-900 border border-sky-800/20 rounded-xl p-6 mt-4 mb-6">
+          <h4 className="text-lg font-semibold text-sky-300 mb-4">Example: Maya Joins a New Community</h4>
+          <div className="space-y-4 text-sm">
+            <div className="flex gap-3 items-start">
+              <span className="bg-sky-900/50 text-sky-300 font-bold rounded-full w-7 h-7 flex items-center justify-center shrink-0">1</span>
+              <div>
+                <p className="text-gray-200 font-semibold">Maya has a track record</p>
+                <p className="text-gray-400">She&apos;s been a data analyst in the &ldquo;Open Science Collective&rdquo; for a year. Her T3: Talent 0.91, Training 0.87, Temperament 0.94. This is backed by hundreds of witnessed actions — peer reviews, dataset contributions, analysis outputs — all cryptographically signed and timestamped.</p>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="bg-sky-900/50 text-sky-300 font-bold rounded-full w-7 h-7 flex items-center justify-center shrink-0">2</span>
+              <div>
+                <p className="text-gray-200 font-semibold">She applies to &ldquo;Health Data Alliance&rdquo;</p>
+                <p className="text-gray-400">This community has a federation agreement with Open Science. Maya doesn&apos;t start from zero — her <strong className="text-sky-300">trust attestations travel with her LCT</strong>. The new community can verify her history because it&apos;s recorded in a tamper-evident audit chain, not stored on a single platform&apos;s servers.</p>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="bg-sky-900/50 text-sky-300 font-bold rounded-full w-7 h-7 flex items-center justify-center shrink-0">3</span>
+              <div>
+                <p className="text-gray-200 font-semibold">Trust is discounted, not copied</p>
+                <p className="text-gray-400">Health Data Alliance doesn&apos;t just accept 0.91 Talent at face value. The score is <strong className="text-amber-400">discounted by MRH decay (0.7 per hop)</strong> and weighted by the federation&apos;s trust in the source community. If the two communities have a strong federation bond (0.9), Maya&apos;s effective starting trust is roughly 0.91 × 0.7 × 0.9 = <strong className="text-amber-400">0.57</strong>. Not zero, not 0.91 — somewhere in between.</p>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="bg-sky-900/50 text-sky-300 font-bold rounded-full w-7 h-7 flex items-center justify-center shrink-0">4</span>
+              <div>
+                <p className="text-gray-200 font-semibold">She builds local trust independently</p>
+                <p className="text-gray-400">Maya&apos;s imported score gives her a head start, but her trust in Health Data Alliance grows based on <em>her actions there</em>. After 50 quality contributions, her local trust overtakes the imported score. The federation bridged the cold-start gap — she didn&apos;t have to prove herself from scratch, but she still had to prove herself.</p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-4 pt-4 border-t border-gray-700/50">
+            <p className="text-gray-500 text-xs">
+              <strong className="text-gray-400">Key principle:</strong> Trust is portable but not inflatable. You can carry your reputation to a new community,
+              but it arrives discounted. This prevents &ldquo;trust laundering&rdquo; — building a high score in an easy community
+              and importing it wholesale to a high-stakes one.
+            </p>
+          </div>
+        </div>
+
+        <details className="bg-gray-900/50 border border-gray-700 rounded p-4 mb-4">
+          <summary className="text-sm text-sky-400 cursor-pointer hover:text-sky-300">
+            What if the communities aren&apos;t federated?
+          </summary>
+          <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+            If there&apos;s no federation agreement, Maya starts from the default newcomer position — low trust,
+            higher action costs (1.4x), and the ~50-action ramp to establish herself. Her trust from Open Science
+            still exists and is verifiable, but Health Data Alliance has no obligation to accept it.
+            Federation is opt-in: communities choose who they trust, just like individuals do.
+          </p>
+        </details>
+      </section>
+
       {/* Related Concepts */}
       <section>
         <h2>Related Concepts</h2>
