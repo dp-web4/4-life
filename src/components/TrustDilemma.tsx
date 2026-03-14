@@ -178,7 +178,7 @@ export default function TrustDilemma() {
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
           <span style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem' }}>
-            {step + 1} of 3
+            Dilemma {step + 1} of 3
           </span>
           <span style={{
             fontSize: '0.7rem', fontWeight: 600, padding: '0.15rem 0.4rem', borderRadius: '0.25rem',
@@ -219,8 +219,11 @@ export default function TrustDilemma() {
           ))}
         </div>
       </div>
-      <p style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--color-text)' }}>
+      <p style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text)' }}>
         <strong>{currentQuestion!.question}</strong>
+      </p>
+      <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginBottom: '1rem' }}>
+        Pick your answer — then see how Web4 handles it.
       </p>
       <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
         {currentQuestion!.options.map(opt => (

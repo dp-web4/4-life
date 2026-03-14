@@ -298,7 +298,7 @@ export default function WhyWeb4Page() {
               <p className="text-gray-400 text-sm">
                 Every action costs energy from a personal budget. Quality contributions earn energy back. Spam burns through it with no return — spammers literally run out of fuel.
               </p>
-              <p className="text-gray-500 text-xs mt-1">Shorthand: ATP (Attention Transfer Packets)</p>
+              <p className="text-gray-500 text-xs mt-1">Shorthand: ATP (Allocation Transfer Packets)</p>
               <Link href="/atp-economics" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about energy budgets →
               </Link>
@@ -463,10 +463,10 @@ export default function WhyWeb4Page() {
                 each tier is independently useful, and you don&apos;t need to commit to the full stack:
               </p>
               <ol className="list-decimal list-inside space-y-1 text-gray-400">
-                <li><strong>Wrapper:</strong> Add a verifiable identity to your existing system. Zero code changes. Fully reversible.</li>
-                <li><strong>Observable:</strong> Start tracking trust based on actual behavior. A permanent record of quality.</li>
-                <li><strong>Accountable:</strong> Stake energy on quality. Good work returns your investment; bad work costs you.</li>
-                <li><strong>Federated:</strong> Your reputation travels with you. Other systems can discover and trust you.</li>
+                <li><strong>Wrapper:</strong> Add a verifiable identity to your existing system. Zero code changes. <span className="text-gray-500">(Like adding HTTPS to an existing site)</span></li>
+                <li><strong>Observable:</strong> Start tracking trust based on actual behavior. <span className="text-gray-500">(Like the browser padlock icon — visible trust signals)</span></li>
+                <li><strong>Accountable:</strong> Stake energy on quality. Good work returns your investment; bad work costs you. <span className="text-gray-500">(Like spam filters that actually work)</span></li>
+                <li><strong>Federated:</strong> Your reputation travels with you across platforms. <span className="text-gray-500">(Like email&apos;s federated model)</span></li>
                 <li><strong>Native:</strong> Full Web4 stack — built from the ground up around verifiable trust.</li>
               </ol>
               <p>
