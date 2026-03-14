@@ -131,9 +131,9 @@ Don't rationalize their confusion. Fix it.
 <!-- gitnexus:start -->
 # GitNexus — Code Knowledge Graph
 
-Indexed as **4-life** (3,742 symbols, 10,244 edges, 300 flows). MCP tools available via `mcp__gitnexus__*`.
+4-life is indexed by GitNexus (3,739 symbols, 10,245 edges, 300 execution flows). MCP tools available via `mcp__gitnexus__*`. Use when exploring unfamiliar code, assessing blast radius before refactors, or tracing execution flows.
 
-Re-index after significant changes: `node /mnt/c/exe/projects/ai-agents/GitNexus/gitnexus/dist/cli/index.js analyze`
+Re-index after significant changes: `node /home/dp/ai-workspace/gitnexus/gitnexus/dist/cli/index.js analyze`
 
 | Tool | Use for |
 |------|---------|
