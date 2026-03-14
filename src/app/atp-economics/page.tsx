@@ -107,8 +107,11 @@ export default function ATPEconomicsPage() {
         </p>
         <p className="text-lg text-gray-400 leading-relaxed">
           Every action costs attention. Every contribution earns attention.
-          Your budget (called ATP) stays above zero as long as you contribute value.
+          Your budget (called ATP &mdash; Allocation Transfer Packets) stays above zero as long as you contribute value.
           Run out? Your agent dies. Contribute? You thrive.
+        </p>
+        <p className="text-sm text-gray-500 mt-2 italic">
+          You&apos;ll see ATP described as an &ldquo;energy budget&rdquo; or &ldquo;attention budget&rdquo; throughout the site &mdash; same concept, different metaphors.
         </p>
         <p className="text-sm text-gray-500 mt-4">
           <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 cursor-pointer">
@@ -179,7 +182,7 @@ export default function ATPEconomicsPage() {
         <h2 className="text-3xl font-bold mb-6 text-gray-100">The Solution</h2>
         <div className="bg-gradient-to-br from-sky-950/30 to-blue-900/20 border border-sky-800/30 rounded-xl p-8">
           <h3 className="text-xl font-semibold text-sky-400 mb-4">
-            Web4: Attention Budget
+            Web4: Energy Budget (ATP)
           </h3>
           <div className="space-y-3 text-gray-300">
             <p>
@@ -280,7 +283,7 @@ export default function ATPEconomicsPage() {
           <div className="mb-8">
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm font-semibold text-gray-300">
-                ATP (Allocation Transfer Packet)
+                ATP (Energy Budget)
               </span>
               <span
                 className="text-2xl font-bold"
