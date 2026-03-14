@@ -17,6 +17,10 @@ echo "Starting 4-Life Development Session at $(date)" | tee "$LOG_FILE"
 
 cd "$PROJECT_DIR"
 
+# GitNexus graph maintenance — ensure index is fresh before session
+source /mnt/c/exe/projects/ai-agents/scripts/gitnexus-maintain.sh 2>/dev/null || true
+gitnexus_ensure_fresh "$PROJECT_DIR" 2>>"$LOG_FILE" || true
+
 # Check for visitor feedback to incorporate
 VISITOR_LOG="$PROJECT_DIR/visitor/logs/$DATE.md"
 VISITOR_CONTEXT=""
