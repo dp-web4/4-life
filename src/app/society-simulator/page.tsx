@@ -3804,6 +3804,14 @@ export default function SocietySimulatorPage() {
             Your reputation travels with you across communities (that&apos;s what makes trust portable),
             but each community weighs your Trust Tensor differently based on what they need.
           </p>
+          <p className="text-sm text-gray-400 mb-3">
+            <strong className="text-amber-300">Research finding:</strong> In multi-agent simulations
+            (1,070 runs), communities that isolate internally hit a coherence ceiling &mdash; like crystals
+            with grain boundaries. Cross-community bridge agents are required for collective emergence.
+            Diversity alone isn&apos;t enough; <em>structural connections between diverse groups</em> is
+            what unlocks collective intelligence. Even replacing an agent with a fresh one improves the
+            collective (ratio 1.106) &mdash; identity is structural, not compositional.
+          </p>
           <a
             href="/federation-economics"
             className="inline-flex items-center gap-2 text-sm text-amber-400 hover:text-amber-300 transition-colors"

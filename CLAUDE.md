@@ -127,3 +127,22 @@ See: `private-context/insights/2026-03-13-mrh-policy-phase-mismatch.md`
 The visitor is confused **on purpose**. Their confusion reveals our blind spots. Every friction point they report is a real UX problem that real humans will experience.
 
 Don't rationalize their confusion. Fix it.
+
+<!-- gitnexus:start -->
+# GitNexus — Code Knowledge Graph
+
+Indexed as **4-life** (3,742 symbols, 10,244 edges, 300 flows). MCP tools available via `mcp__gitnexus__*`.
+
+Re-index after significant changes: `node /mnt/c/exe/projects/ai-agents/GitNexus/gitnexus/dist/cli/index.js analyze`
+
+| Tool | Use for |
+|------|---------|
+| `query` | Find execution flows by concept |
+| `context` | 360-degree view of a symbol (callers, callees, processes) |
+| `impact` | Blast radius before editing (upstream/downstream) |
+| `detect_changes` | Map git diff to affected symbols and flows |
+| `rename` | Graph-aware multi-file rename (dry_run first) |
+| `cypher` | Raw Cypher queries against the graph |
+
+Resources: `gitnexus://repo/4-life/context`, `clusters`, `processes`, `process/{name}`
+<!-- gitnexus:end -->

@@ -280,7 +280,7 @@ export default function ATPEconomicsPage() {
           <div className="mb-8">
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm font-semibold text-gray-300">
-                ATP (Attention Budget)
+                ATP (Allocation Transfer Packet)
               </span>
               <span
                 className="text-2xl font-bold"
