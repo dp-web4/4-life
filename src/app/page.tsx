@@ -245,7 +245,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           onClick={onSwitchToDeepDive}
           className="btn-secondary"
         >
-          Browse all {Object.values(navigationTree).flat().length}+ topics →
+          Browse the full topic library →
         </button>
       </section>
     </div>
