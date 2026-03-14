@@ -1491,6 +1491,42 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
         </div>
       </section>
 
+      {/* FAQ: Karma and Rebirth */}
+      <section>
+        <h2>Common Questions</h2>
+        <div className="detail-box" style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
+          <details style={{background: 'rgba(31, 41, 55, 0.5)', border: '1px solid rgba(75, 85, 99, 0.5)', borderRadius: '0.75rem', padding: '1.5rem', cursor: 'pointer'}}>
+            <summary style={{fontSize: '1.1rem', fontWeight: 600, color: '#fbbf24', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+              <span>Is death and rebirth automatic, or does someone decide?</span>
+              <span style={{color: '#6b7280', fontSize: '1.25rem'}}>+</span>
+            </summary>
+            <div style={{marginTop: '1rem', color: '#d1d5db', fontSize: '0.875rem', display: 'flex', flexDirection: 'column', gap: '0.5rem'}}>
+              <p>
+                <strong>Automatic.</strong> No human or AI decides when an agent dies or is reborn.
+                The rules are deterministic:
+              </p>
+              <ul style={{listStyle: 'disc', paddingLeft: '1.5rem'}}>
+                <li><strong>Energy death</strong> (ATP reaches 0): Most common. Happens when an agent spends
+                more than they earn. Rebirth is possible if trust &ge; 0.5 — karma carries forward automatically.</li>
+                <li><strong>Trust death</strong> (T3 drops below 0.5): Rarer, more severe. Happens from sustained
+                bad behavior. If trust is below 0.5, society rejects rebirth — this is permanent death.</li>
+              </ul>
+              <p>
+                When rebirth occurs, it&apos;s immediate: the agent starts a new life with fresh ATP (the
+                community&apos;s starting allocation) but carries forward their accumulated karma — trust
+                patterns, learned strategies, and consequences from previous lives. No application process,
+                no waiting period, no approval needed.
+              </p>
+              <p style={{color: 'rgba(251, 191, 36, 0.8)', fontSize: '0.75rem'}}>
+                <strong>Why automatic?</strong> If a human could veto rebirth, that would be centralized power —
+                exactly what Web4 is designed to eliminate. The 0.5 threshold is the community&apos;s
+                collective judgment encoded in math, not a committee decision.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
       <style jsx>{`
         .comparison-grid {
           display: grid;

@@ -336,7 +336,7 @@ export default function FirstContactPage() {
                 <div className="grid md:grid-cols-2 gap-4">
                   {/* ATP Display */}
                   <div className="bg-gray-800 rounded-lg p-4">
-                    <div className="text-sm text-gray-400 mb-2">🔋 Attention Budget (ATP)</div>
+                    <div className="text-sm text-gray-400 mb-2">🔋 Energy Budget (ATP)</div>
                     <div className="flex items-baseline gap-2">
                       <span className={`text-3xl font-bold ${
                         currentSnapshot.atp_after < 30 ? "text-red-400" :
