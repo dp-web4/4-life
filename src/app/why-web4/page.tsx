@@ -620,7 +620,7 @@ export default function WhyWeb4Page() {
         {/* All other FAQs — collapsed by default */}
         <details className="group">
           <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">
-            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 24 more questions</h3>
+            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 28 more questions</h3>
             <span className="text-gray-500 text-sm group-open:rotate-90 transition-transform">▶</span>
           </summary>
         <div className="space-y-6">
@@ -1370,6 +1370,121 @@ export default function WhyWeb4Page() {
                 grew to production scale, this would need to formalize (like W3C or IETF). That transition from
                 &ldquo;small research project&rdquo; to &ldquo;governed standard&rdquo; is itself an unsolved
                 organizational challenge.
+              </p>
+            </div>
+          </details>
+
+          {/* Why does everyone start with 100 ATP? */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Why does everyone start with 100 ATP? Who decides that number?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                The starting ATP balance is a <strong>community-level parameter</strong>, not a protocol constant.
+                Each society sets its own initial allocation based on what makes sense for its context — a small
+                research group might start members at 50, while a large public forum might use 200.
+              </p>
+              <p>
+                The number 100 is the <strong>reference implementation default</strong>. It&apos;s calibrated so that
+                newcomers have enough energy to demonstrate quality (roughly 10-15 meaningful actions) before they
+                need to earn more through good contributions. Too low and newcomers can&apos;t prove themselves;
+                too high and spam accounts can cause damage before running out.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Design note:</strong> The specific number matters less than the ratio between action costs
+                and quality rewards. What matters is that the budget is <em>finite</em> and <em>replenishable
+                only through quality</em>.
+              </p>
+            </div>
+          </details>
+
+          {/* Can a wealthy person buy 50 devices? */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Can someone buy 50 devices to create a super-trusted identity?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                More devices increase your <strong>identity security</strong> (harder to impersonate you), but
+                they don&apos;t increase your <strong>trust score</strong>. Trust is earned exclusively through
+                observed behavior — quality contributions, consistent conduct, peer feedback.
+              </p>
+              <p>
+                Devices set a <strong>trust ceiling</strong>, not a trust score. A single phone with a TPM chip
+                gives you a ceiling of 0.90. Adding more devices raises that ceiling slightly (through redundancy),
+                but your actual trust starts at 0.50 regardless. You still have to earn every point above that
+                through real work.
+              </p>
+              <p>
+                Think of it like ID verification: having a passport, driver&apos;s license, and birth certificate
+                doesn&apos;t make you more trustworthy — it just makes you harder to impersonate. Your actual
+                reputation still depends on what you do.
+              </p>
+            </div>
+          </details>
+
+          {/* What happens if a trusted contributor takes a month off? */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>If I take a month off, does my trust disappear?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Trust decays gradually, not suddenly. Each dimension has its own <strong>half-life</strong>:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Talent</strong> (skill): 365-day half-life — decays very slowly</li>
+                <li><strong>Training</strong> (knowledge): 180-day half-life — moderate decay</li>
+                <li><strong>Temperament</strong> (recent behavior): 30-day half-life — decays fastest</li>
+              </ul>
+              <p>
+                After a month away, your Talent and Training scores are nearly unchanged. Your Temperament
+                drops to about half — which makes sense, because the community hasn&apos;t seen your recent
+                behavior. But it recovers quickly once you&apos;re active again.
+              </p>
+              <p>
+                This mirrors how trust works in real life: a colleague who&apos;s been away for a month
+                doesn&apos;t lose their reputation for being skilled, but you might wonder if they&apos;re
+                still engaged. A few days of active contribution restores confidence.
+              </p>
+            </div>
+          </details>
+
+          {/* How does karma/rebirth work? */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>When does an agent &ldquo;die&rdquo; and how does rebirth work?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                There are two types of &ldquo;death&rdquo; — and they work differently:
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-400">
+                <li><strong>Energy death</strong> (ATP hits 0): Your account is suspended — like a suspended
+                  driver&apos;s license. You can&apos;t take actions, but your identity and history remain.
+                  Recovery is possible through community support or waiting for passive regeneration.</li>
+                <li><strong>Trust death</strong> (trust drops below minimum threshold): More serious. Your
+                  behavioral record shows sustained low quality. Recovery requires starting a new identity
+                  with <strong>karma</strong> — lessons learned from previous lives carry forward as starting
+                  advantages or disadvantages.</li>
+              </ul>
+              <p>
+                Karma transfer is <strong>automatic</strong>. When a new identity is created by the same
+                hardware (LCT), the system recognizes it as a continuation. Good patterns from past lives
+                give a head start; harmful patterns impose higher initial costs. You can&apos;t escape
+                your history, but you can outgrow it.
+              </p>
+              <p>
+                See the{" "}
+                <Link href="/karma-consequences" className="text-sky-400 hover:underline">Karma Journey</Link>{" "}
+                to experience this firsthand, or{" "}
+                <Link href="/aliveness" className="text-sky-400 hover:underline">How Agents Live &amp; Die</Link>{" "}
+                for the full lifecycle.
               </p>
             </div>
           </details>
