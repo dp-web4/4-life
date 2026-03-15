@@ -131,7 +131,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             <div>
               <strong>Identity is anchored in your devices</strong>
               <p style={{ color: 'var(--color-text-secondary)', margin: '0.25rem 0 0', fontSize: '0.9rem' }}>
-                Your phone, laptop, and tablet each carry a security chip. Linked together through tokens called LCTs, they form a constellation that <em>is</em> your identity. More devices = stronger identity. Can&apos;t be cheaply faked.
+                Your phone, laptop, and tablet each carry a security chip. Linked together through Linked Context Tokens (LCTs), they form a constellation that <em>is</em> your identity. More devices = stronger identity. Can&apos;t be cheaply faked.
               </p>
             </div>
           </li>
@@ -224,7 +224,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             <span style={{ opacity: 0.7 }}>→</span>
           </Link>
           <Link href="/first-contact" className="btn-secondary" style={{ padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none' }}>
-            First Contact (12 min)
+            First Contact (7 min)
           </Link>
         </div>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '1rem' }}>
@@ -416,7 +416,7 @@ function DeepDiveTab() {
         <h3 style={{ marginBottom: '1rem' }}>Jump Into Action</h3>
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
           <Link href="/first-contact" className="btn-primary">
-            First Contact (12 min)
+            First Contact (7 min)
           </Link>
           <Link href="/playground" className="btn-secondary">
             Try the Playground

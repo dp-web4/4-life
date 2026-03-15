@@ -615,12 +615,75 @@ export default function WhyWeb4Page() {
               </p>
             </div>
           </details>
+          {/* How MRH determines visibility */}
+          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How does the system decide who can see my messages?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Through your <strong>trust network</strong>, not a central server.
+                Every entity has a <Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">context boundary (MRH)</Link> that
+                extends 3 hops through their trust relationships:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Direct contacts (1 hop):</strong> People you&apos;ve interacted with directly. Full visibility. Trust weight: 0.70</li>
+                <li><strong>Friends of friends (2 hops):</strong> People your contacts vouch for. Reduced visibility. Trust weight: 0.49</li>
+                <li><strong>3rd degree (3 hops):</strong> Barely visible, minimal trust. Trust weight: 0.34</li>
+                <li><strong>Beyond 3 hops:</strong> Invisible. You don&apos;t exist to each other until someone in between introduces you</li>
+              </ul>
+              <p>
+                Think of it like a party: you can talk to your friends, and your friends can introduce
+                you to their friends. But you can&apos;t walk up to a stranger across the room unless someone
+                bridges the gap. <strong>No one has a complete view of the entire network</strong> — everyone sees
+                only their local neighborhood.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Why this matters:</strong> Spam can&apos;t broadcast to everyone — a spammer has no trust
+                connections, so their messages reach nobody. To reach people, you need real relationships.
+                This is fundamentally different from email (anyone can message anyone) or social media
+                (algorithmic distribution to strangers).
+              </p>
+            </div>
+          </details>
+
+          {/* Early adopter bootstrapping */}
+          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>If Web4 is opt-in, what happens when most people are still on Web2?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Early adopters don&apos;t just talk to each other.</strong> Web4 is designed as a
+                layer on top of existing platforms, not a replacement. Early adoption looks like this:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Hybrid mode:</strong> A forum adds Web4 trust signals alongside existing moderation.
+                  Users without Web4 see the same forum. Users with Web4 see trust indicators on posts
+                  (verified identity, trust score, behavioral history). Both coexist.</li>
+                <li><strong>Trust islands:</strong> A small community (say, a coding forum) adopts Web4 internally.
+                  Members build trust with each other. When a second community adopts, their trust histories
+                  are already portable — instant credibility in the new space.</li>
+                <li><strong>Network effects compound:</strong> Each new community that adopts makes everyone&apos;s
+                  trust history more valuable. Think email in 1995 — it was useful even when most people didn&apos;t
+                  have it, and each new user made everyone else&apos;s email more useful.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Bootstrapping is the hardest phase. A trust score based on
+                2 platforms is less meaningful than one based on 200. The first communities to adopt will need
+                to find Web4 valuable <em>on its own terms</em> (spam reduction, accountability) before
+                network effects kick in.
+              </p>
+            </div>
+          </details>
         </div>
 
         {/* All other FAQs — collapsed by default */}
         <details className="group">
           <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">
-            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 24 more questions</h3>
+            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 27 more questions</h3>
             <span className="text-gray-500 text-sm group-open:rotate-90 transition-transform">▶</span>
           </summary>
         <div className="space-y-6">
@@ -1370,6 +1433,127 @@ export default function WhyWeb4Page() {
                 grew to production scale, this would need to formalize (like W3C or IETF). That transition from
                 &ldquo;small research project&rdquo; to &ldquo;governed standard&rdquo; is itself an unsolved
                 organizational challenge.
+              </p>
+            </div>
+          </details>
+
+          {/* MRH mechanics — visitor Q3 */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How does MRH actually decide who sees my messages? The &ldquo;room where strangers need introductions&rdquo; is nice but vague.</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                The Markov Relevancy Horizon (MRH) works like <strong>degrees of separation with decay</strong>.
+                Your direct contacts (1 hop) see your actions at full relevance. Their contacts (2 hops) see
+                them at 70% relevance. Three hops away: 49%. Beyond three hops: effectively invisible.
+              </p>
+              <p>
+                Concretely: if you post a helpful answer in a coding community, people who&apos;ve directly
+                interacted with you see it immediately. People who share mutual contacts see it with reduced
+                priority. People with no connection path don&apos;t see it at all — not because it&apos;s censored,
+                but because it&apos;s outside their relevancy horizon.
+              </p>
+              <p>
+                This means <strong>spam can&apos;t go viral</strong>. A spammer with no trust relationships
+                has zero hops of reach — their messages stay within their own empty horizon. Earning reach
+                requires building real relationships first.
+              </p>
+              <p>
+                It also means <strong>context stays contextual</strong>. Your coding expertise is visible
+                in coding communities where you&apos;ve built trust, but doesn&apos;t automatically broadcast
+                to cooking forums. Your{" "}
+                <Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">relevancy horizon</Link>{" "}
+                is shaped by where you actually participate.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> The 0.7 decay factor per hop is a design parameter, not a
+                physical constant. Different communities might tune this — higher decay for privacy-sensitive
+                contexts, lower for open discovery. The right values will emerge from real-world testing.
+              </p>
+            </div>
+          </details>
+
+          {/* Transition period — visitor Q5 */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>If Web4 is opt-in, how does it work when most people are still on Web2? Don&apos;t early adopters just talk to each other?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Yes — and that&apos;s by design. Web4 uses a{" "}
+                <Link href="/how-it-works" className="text-sky-400 hover:underline">5-tier adoption model</Link>{" "}
+                that doesn&apos;t require everyone to switch at once:
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-400">
+                <li><strong>Wrapper tier:</strong> Existing platforms add Web4 trust scoring to their existing
+                  systems. Users don&apos;t even know it&apos;s there — they just notice spam decreasing.</li>
+                <li><strong>Observable tier:</strong> Platforms expose trust scores alongside content. Users can
+                  see who&apos;s trusted, but the platform still makes decisions.</li>
+                <li><strong>Accountable tier:</strong> Trust scores actually gate actions. Low-trust users face
+                  higher costs or reduced reach. This is where the economics start biting.</li>
+                <li><strong>Federated tier:</strong> Multiple communities share trust data across boundaries.
+                  Your reputation in one community carries (with decay) to others.</li>
+                <li><strong>Native tier:</strong> Fully trust-native platforms where every interaction flows
+                  through the Web4 protocol.</li>
+              </ul>
+              <p>
+                The key insight: <strong>early adopters get value immediately</strong>. A coding forum that
+                adopts Web4 at the Wrapper tier instantly gets better spam filtering. It doesn&apos;t need
+                the rest of the internet to follow. Each community can adopt at its own pace, and the value
+                compounds as more communities join the federation.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> This adoption path is a design proposal, not a proven playbook.
+                Whether the Wrapper→Native progression actually happens smoothly is an open question. Network
+                effects could help (more participants = more value) or hurt (fragmented early adoption = no
+                critical mass). We&apos;re designing for graceful degradation, not assuming universal adoption.
+              </p>
+            </div>
+          </details>
+
+          {/* SAL governance — visitor Q7 */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What is SAL exactly? It&apos;s mentioned as a governance mechanism but never really explained.</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                SAL stands for <strong>Society Alignment Layer</strong> — it&apos;s the governance framework
+                each Web4 community uses to set and enforce its own rules. Think of it as a community&apos;s
+                constitution that members actually follow because it&apos;s baked into the protocol.
+              </p>
+              <p>
+                A SAL defines things like:
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-400">
+                <li><strong>Trust thresholds:</strong> What trust score do you need to post, moderate, or vote?</li>
+                <li><strong>ATP costs:</strong> How much energy does each action cost in this community?</li>
+                <li><strong>Enforcement rules:</strong> What happens when someone violates community norms?
+                  Graduated penalties, not binary bans.</li>
+                <li><strong>Appeals process:</strong> How can members challenge enforcement decisions?</li>
+              </ul>
+              <p>
+                The crucial difference from current platforms: <strong>SAL rules apply to everyone equally</strong>,
+                including moderators and administrators. No one is above the community&apos;s own governance.
+                If a moderator abuses power, their trust score drops — and with it, their ability to moderate.
+              </p>
+              <p>
+                Changing SAL rules requires community consensus weighted by trust. High-trust members
+                (who&apos;ve demonstrated good judgment) have more influence on governance decisions, but
+                can&apos;t override the community alone. See the{" "}
+                <Link href="/how-it-works#governance" className="text-sky-400 hover:underline">governance section</Link>{" "}
+                for a concrete example of how a research community might set these parameters.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> SAL governance is designed but largely untested at scale. The
+                &ldquo;trust-weighted consensus&rdquo; model sounds fair, but could lead to entrenchment if
+                early members accumulate disproportionate influence. The{" "}
+                <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">What Could Go Wrong</Link>{" "}
+                page explores these risks honestly.
               </p>
             </div>
           </details>
