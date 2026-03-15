@@ -491,7 +491,7 @@ export default function DayInWeb4Page() {
       )}
 
       {/* What Would This Look Like? — Conceptual UI Wireframes */}
-      <section className="mt-16 pt-8 border-t border-gray-800">
+      <section id="wireframes" className="mt-16 pt-8 border-t border-gray-800">
         <h2 className="text-2xl font-bold mb-2">What Would This Actually Look Like?</h2>
         <p className="text-gray-400 mb-8 text-sm">
           The scenarios above describe the <em>experience</em>. But what would the interface look like on your screen?

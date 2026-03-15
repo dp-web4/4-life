@@ -680,6 +680,34 @@ export default function WhyWeb4Page() {
           </details>
         </div>
 
+        {/* What does the UI look like? */}
+        <div className="space-y-6 mb-6">
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What would a Web4 app actually look like on screen?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                We have <strong>conceptual wireframes</strong> showing what a Web4 inbox, hiring dashboard,
+                and review page could look like. They show trust scores next to messages, unfakeable
+                reputation badges on freelancer profiles, and energy-weighted reviews.
+              </p>
+              <p>
+                See them on the{' '}
+                <Link href="/day-in-web4#wireframes" className="text-sky-400 hover:underline">
+                  A Day in Web4
+                </Link>{' '}
+                page (scroll to &ldquo;What Would This Actually Look Like?&rdquo;).
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Note:</strong> These are conceptual designs, not final product UI. Web4 is active
+                research — the real interfaces will emerge from implementation and user testing.
+              </p>
+            </div>
+          </details>
+        </div>
+
         {/* All other FAQs — collapsed by default */}
         <details className="group">
           <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">

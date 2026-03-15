@@ -13,9 +13,10 @@ export default function HowItWorksPage() {
 
       {/* New visitor prompt */}
       <div className="max-w-4xl mx-auto mb-4 text-sm text-gray-500">
-        New to Web4? This page is a reference overview. For a guided introduction, start with{' '}
+        New to Web4? This page works best <em>after</em> the concept pages. For a guided introduction, start with{' '}
         <Link href="/first-contact" className="text-sky-400 hover:underline">First Contact</Link> or the{' '}
-        <Link href="/tldr" className="text-sky-400 hover:underline">2-minute TL;DR</Link>.
+        <Link href="/tldr" className="text-sky-400 hover:underline">2-minute TL;DR</Link>, then explore the{' '}
+        <Link href="/lct-explainer" className="text-sky-400 hover:underline">concept sequence</Link> before returning here for the full picture.
       </div>
 
       {/* Hero Section */}

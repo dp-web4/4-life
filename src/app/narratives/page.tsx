@@ -304,9 +304,14 @@ export default function NarrativesPage() {
           </div>
         )}
 
-        {/* Filters */}
+        {/* Browse & Filter */}
         <div className="mb-6">
-          <h2 className="text-xl font-bold mb-4 text-gray-300">All Narratives</h2>
+          <h2 className="text-xl font-bold mb-2 text-gray-300">Browse All Stories</h2>
+          <p className="text-sm text-gray-500 mb-4">
+            {narratives.length} stories available. Generate your own by running the{' '}
+            <Link href="/society-simulator" className="text-sky-400 hover:underline">Society Simulator</Link> and
+            saving the narrative — each simulation produces a unique society story.
+          </p>
           <div className="flex gap-4">
             <input
               type="text"

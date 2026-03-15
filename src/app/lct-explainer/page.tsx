@@ -857,9 +857,13 @@ export default function LCTExplainerPage() {
               </div>
               <p>
                 <strong className="text-gray-300">Nascent</strong>: Birth certificate created, waiting for witness attestation.{" "}
+                <em className="text-gray-500">Trigger: you register a new device.</em>{" "}
                 <strong className="text-gray-300">Active</strong>: Fully operational, can sign and participate.{" "}
-                <strong className="text-gray-300">Suspended</strong>: Temporarily frozen (e.g., suspected compromise) — can be reactivated.{" "}
-                <strong className="text-gray-300">Revoked</strong>: Permanently invalidated. Trust history preserved but no new actions allowed.
+                <em className="text-gray-500">Trigger: another device witnesses and attests your nascent token.</em>{" "}
+                <strong className="text-gray-300">Suspended</strong>: Temporarily frozen — can be reactivated.{" "}
+                <em className="text-gray-500">Trigger: all devices offline &gt; 30 days, or suspected compromise.</em>{" "}
+                <strong className="text-gray-300">Revoked</strong>: Permanently invalidated. Trust history preserved but no new actions allowed.{" "}
+                <em className="text-gray-500">Trigger: confirmed device compromise, or voluntary revocation.</em>
               </p>
               <p className="text-gray-500 text-xs">
                 Expired LCTs can also exist — when a time-limited delegation reaches its end date.
