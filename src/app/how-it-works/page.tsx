@@ -1261,10 +1261,10 @@ export default function HowItWorksPage() {
           >
             <div className="text-3xl mb-3">⚡</div>
             <h3 className="text-lg font-semibold text-sky-400 mb-2">
-              Attention Budget (ATP)
+              Energy Budget (ATP)
             </h3>
             <p className="text-gray-400 text-sm">
-              Deep dive into attention budgets. Try the interactive simulator.
+              Deep dive into energy budgets. Try the interactive simulator.
             </p>
           </Link>
 
