@@ -61,7 +61,7 @@ export default function TLDRPage() {
               <p className="text-gray-300">
                 <strong className="text-white">Identity is anchored in your devices.</strong> Your
                 phone, laptop, and tablet each carry security chips, linked together through
-                tokens (LCTs) to form a constellation that is your identity. More devices
+                Linked Context Tokens (LCTs) to form a constellation that is your identity. More devices
                 strengthen it. Creating a fake identity means buying new hardware — expensive and slow.
               </p>
             </div>
@@ -135,7 +135,7 @@ export default function TLDRPage() {
               <div className="text-gray-400 text-sm">
                 Follow Alice through her first 16 actions in a Web4 community
               </div>
-              <div className="text-gray-500 text-xs mt-1">12 min interactive</div>
+              <div className="text-gray-500 text-xs mt-1">7 min interactive</div>
             </Link>
             <Link
               href="/karma-journey"
