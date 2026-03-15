@@ -49,6 +49,23 @@ export default function FederationEconomicsPage() {
         </p>
       </section>
 
+      {/* What Is a Federation? */}
+      <section>
+        <div className="p-5 bg-sky-950/30 border border-sky-800/30 rounded-lg mb-6">
+          <h3 className="text-lg font-semibold text-sky-400 mb-2">What is a federation?</h3>
+          <p className="text-gray-300 leading-relaxed">
+            A federation is a group of agents (people, organizations, or AI) that pool their
+            capabilities to handle work none of them could do alone — like a freelance collective
+            where members bring different skills. Federations form voluntarily, and members keep
+            their individual trust scores and ATP budgets.
+          </p>
+          <p className="text-gray-400 text-sm mt-2">
+            The economics below explain how federations price and allocate work without a central
+            manager — using the same supply-and-demand signals that make ride-sharing work.
+          </p>
+        </div>
+      </section>
+
       {/* The Problem Web4 Solves */}
       <section>
         <h2>The Problem Web4 Solves</h2>
