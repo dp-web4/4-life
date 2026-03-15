@@ -139,14 +139,15 @@ export default function GlossaryPanel() {
             background: "rgba(17, 24, 39, 0.95)",
             border: "1px solid rgba(56, 189, 248, 0.3)",
             borderRadius: "0.5rem",
-            padding: "0.35rem 0.75rem",
-            fontSize: "0.75rem",
+            padding: "0.4rem 0.85rem",
+            fontSize: "0.8rem",
+            fontWeight: 500,
             color: "#93c5fd",
             whiteSpace: "nowrap",
-            animation: "glossaryHintFade 8s ease-in-out forwards",
+            animation: "glossaryHintFade 15s ease-in-out forwards",
             pointerEvents: "none",
           }}>
-            Terms glossary
+            Glossary
           </div>
           <style>{`
             @keyframes glossaryPulse {
@@ -154,7 +155,7 @@ export default function GlossaryPanel() {
               50% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 0 4px 16px rgba(0,0,0,0.4); }
             }
             @keyframes glossaryHintFade {
-              0%, 60% { opacity: 1; }
+              0%, 70% { opacity: 1; }
               100% { opacity: 0; }
             }
           `}</style>
