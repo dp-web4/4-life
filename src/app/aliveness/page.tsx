@@ -934,9 +934,9 @@ export default function AlivenessExplainer() {
           </div>
         </div>
         <p style={{ color: "#9ca3af", fontSize: "0.9rem", marginTop: "1rem" }}>
-          There are also transitional states: <strong>Molting</strong> (governance renewal in progress),
-          <strong> Dreaming</strong> (scheduled maintenance), and <strong>Estivation</strong> (threat response — dormancy
-          until the threat resolves).
+          There are also transitional states: <strong>Governance Renewal</strong> (&ldquo;Molting&rdquo; — updating
+          society rules), <strong>Scheduled Maintenance</strong> (&ldquo;Dreaming&rdquo; — planned downtime for upgrades),
+          and <strong>Emergency Dormancy</strong> (&ldquo;Estivation&rdquo; — threat response, dormant until the threat resolves).
           The key insight: a society that goes quiet for a month isn&apos;t dead — it&apos;s hibernating.
           Its trust network, reputation history, and member relationships are all preserved.
         </p>

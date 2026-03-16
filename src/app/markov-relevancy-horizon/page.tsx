@@ -832,7 +832,7 @@ export default function MarkovRelevancyHorizonPage() {
             <h2 className="text-3xl font-bold text-cyan-400">
               Technical Implementation
             </h2>
-            <span className="text-sm text-gray-500 ml-auto">RDF, SPARQL, graph operations</span>
+            <span className="text-sm text-gray-500 ml-auto">RDF, SPARQL, graph details</span>
           </summary>
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-6">

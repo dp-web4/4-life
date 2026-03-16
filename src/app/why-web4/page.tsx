@@ -711,7 +711,7 @@ export default function WhyWeb4Page() {
         {/* All other FAQs — collapsed by default */}
         <details className="group">
           <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">
-            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 32 more questions</h3>
+            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 33 more questions</h3>
             <span className="text-gray-500 text-sm group-open:rotate-90 transition-transform">▶</span>
           </summary>
         <div className="space-y-6">
@@ -873,6 +873,39 @@ export default function WhyWeb4Page() {
               <p className="text-amber-400/80 text-xs mt-2">
                 <strong>Honest caveat:</strong> Bootstrapping is genuinely hard. No perfect solution exists.
                 This is an active research area, not a solved problem.
+              </p>
+            </div>
+          </details>
+
+          {/* Minimum viable community size */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How many people does it take to start a Web4 community?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Fewer than you might think. The minimum viable community depends on what you need:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>3–5 people:</strong> Enough for basic trust graph formation. Each person can witness
+                  others, and the MRH graph becomes meaningful with 2-hop connections. A small team or study group
+                  could start here.</li>
+                <li><strong>10–20 people:</strong> Roles start to differentiate. Enough recipients to make ATP
+                  economics work — quality signals become statistically meaningful when at least 5–10 people can
+                  confirm value independently.</li>
+                <li><strong>50+ people:</strong> Full society dynamics emerge. Specialization, reputation
+                  stratification, and the wealth-gap-trending-to-0.25 pattern from simulations become visible.</li>
+              </ul>
+              <p>
+                The key constraint isn&apos;t size — it&apos;s <strong>reciprocity density</strong>. Ten people who
+                actively interact produce richer trust data than 1,000 passive accounts. Web4&apos;s economics
+                naturally reward active communities: ATP flows to those who contribute value, so even a small
+                group that does real work together builds meaningful reputation quickly.
+              </p>
+              <p className="text-gray-500 text-xs mt-2">
+                See the <a href="/playground" className="text-sky-400 hover:underline">Playground</a> experiment
+                &ldquo;Where is the tipping point?&rdquo; and the cold-start walkthrough above for concrete dynamics.
               </p>
             </div>
           </details>
