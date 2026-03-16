@@ -1104,9 +1104,15 @@ export default function LCTExplainerPage() {
           </div>
         </div>
 
-        {/* W3C Standards Compatibility */}
+        {/* W3C Standards Compatibility — collapsed for page length */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-100">Works With W3C Standards</h2>
+          <details className="group">
+          <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors">
+            <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
+            <h2 className="text-2xl font-bold text-gray-100">Works With W3C Standards</h2>
+            <span className="text-sm text-gray-500 ml-auto">interoperability details</span>
+          </summary>
+          <div className="mt-4">
           <p className="text-gray-300 mb-4">
             Web4 identity isn&apos;t a walled garden. LCTs are designed to work with{" "}
             <strong className="text-sky-400">W3C Decentralized Identifiers (DIDs)</strong> — the
@@ -1148,11 +1154,19 @@ export default function LCTExplainerPage() {
             W3C DID/VC interoperability is implemented but not yet tested against external
             identity providers. The bridge maps LCT↔DID bidirectionally.
           </p>
+          </div>
+          </details>
         </div>
 
-        {/* Trust Transparency Log */}
+        {/* Trust Transparency Log — collapsed for page length */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-100">Why Trust is Auditable</h2>
+          <details className="group">
+          <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors">
+            <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
+            <h2 className="text-2xl font-bold text-gray-100">Why Trust is Auditable</h2>
+            <span className="text-sm text-gray-500 ml-auto">transparency log details</span>
+          </summary>
+          <div className="mt-4">
           <p className="text-gray-300 mb-4">
             How do you know your trust score wasn&apos;t secretly manipulated? Web4 uses a{" "}
             <strong className="text-green-400">trust transparency log</strong> — an append-only,
@@ -1188,6 +1202,8 @@ export default function LCTExplainerPage() {
             Inspired by SSL Certificate Transparency (RFC 6962) — the same approach that
             ended fraudulent HTTPS certificates. Trust auditing: session 33, implemented.
           </p>
+          </div>
+          </details>
         </div>
 
         {/* Technical Deep Dive — collapsed by default */}
