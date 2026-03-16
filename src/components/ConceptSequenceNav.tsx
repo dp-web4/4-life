@@ -187,6 +187,21 @@ export default function ConceptSequenceNav({ currentPath }: ConceptSequenceNavPr
               Watch a Society →
             </Link>
             <Link
+              href="/day-in-web4#wireframes"
+              style={{
+                padding: '0.5rem 1.25rem',
+                background: 'var(--color-dark-surface)',
+                border: '1px solid rgba(168, 85, 247, 0.3)',
+                borderRadius: '9999px',
+                fontSize: '0.85rem',
+                color: 'rgb(168, 132, 252)',
+                textDecoration: 'none',
+                fontWeight: 500,
+              }}
+            >
+              See the UI →
+            </Link>
+            <Link
               href="/playground"
               style={{
                 padding: '0.5rem 1.25rem',

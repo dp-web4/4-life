@@ -605,7 +605,8 @@ export default function FederationEconomicsPage() {
             <p className="text-gray-300 mb-3">
               Federation members don&apos;t always have reliable connections. Networks partition,
               messages arrive late, clocks drift. Web4 uses a <strong className="text-amber-400">PBFT-Lite
-              consensus protocol</strong> (a lightweight version of a well-studied agreement algorithm) designed for this reality: vector clocks track causal
+              consensus protocol</strong> (Practical Byzantine Fault Tolerance — a method for
+              a group to agree on decisions even when some members are dishonest or offline) designed for this reality: vector clocks track causal
               ordering, partition detectors identify network splits, and leader election continues
               making progress even when some nodes are unreachable.
             </p>
@@ -754,7 +755,8 @@ export default function FederationEconomicsPage() {
           <div className="bg-gray-800/60 border border-gray-700 rounded-xl p-5">
             <h3 className="text-sm font-semibold text-sky-400 mb-2">The Shapley Value Principle</h3>
             <p className="text-gray-400 text-xs leading-relaxed mb-3">
-              Game theory provides a mathematically fair way to divide merger surplus:
+              The Shapley value (a concept from cooperative game theory that calculates
+              each player&apos;s fair share of a group outcome) provides a mathematically fair way to divide merger surplus:
               each federation receives a share proportional to its <strong className="text-gray-300">marginal
               contribution</strong> — what the merged whole gains specifically because they joined.
             </p>
@@ -769,8 +771,9 @@ export default function FederationEconomicsPage() {
             <h3 className="text-sm font-semibold text-amber-400 mb-2">Trust-Weighted Negotiating Power</h3>
             <p className="text-gray-400 text-xs leading-relaxed mb-3">
               Federations with higher average trust scores have stronger bargaining positions —
-              they bring more reliable capacity to the merger. Nash bargaining theory:
-              the party with more to offer gets a proportionally larger share of the surplus.
+              they bring more reliable capacity to the merger. Nash bargaining theory
+              (the math of two-party negotiations, showing how the deal splits based on
+              each side&apos;s alternatives): the party with more to offer gets a proportionally larger share of the surplus.
             </p>
             <div className="bg-gray-900/50 rounded p-3 text-xs text-gray-500">
               <strong className="text-gray-300">Key property:</strong> Both parties must gain
@@ -781,7 +784,7 @@ export default function FederationEconomicsPage() {
           </div>
         </div>
         <p className="text-gray-500 text-xs italic">
-          Multi-federation bargaining: Nash, Kalai-Smorodinsky, and Shapley value solutions validated
+          Multi-federation bargaining: Nash (fair splits), Kalai-Smorodinsky (proportional gains), and Shapley value (marginal contribution) solutions validated
           across 59 checks (session 32). All solutions satisfy individual rationality — no federation
           is forced into a merger that makes it worse off.
         </p>
