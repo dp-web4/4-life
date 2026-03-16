@@ -128,6 +128,24 @@ function V3OutputScorer() {
 
   return (
     <section className="max-w-4xl mx-auto mt-16">
+      {/* Key distinction callout — visitor feedback: T3 vs V3 relationship unclear */}
+      <div className="bg-gradient-to-r from-sky-950/40 to-purple-950/40 border border-sky-800/30 rounded-xl p-4 mb-6">
+        <div className="flex items-center gap-3 text-sm">
+          <div className="flex items-center gap-2">
+            <span className="text-sky-400 font-semibold">T3</span>
+            <span className="text-gray-400">measures</span>
+            <span className="text-sky-300 font-medium">who you are</span>
+          </div>
+          <span className="text-gray-600">|</span>
+          <div className="flex items-center gap-2">
+            <span className="text-purple-400 font-semibold">V3</span>
+            <span className="text-gray-400">measures</span>
+            <span className="text-purple-300 font-medium">what you produce</span>
+          </div>
+        </div>
+        <p className="text-xs text-gray-500 mt-1">Both feed into ATP rewards. A trusted person (high T3) who produces poor work (low V3) still earns less.</p>
+      </div>
+
       <h2 className="text-3xl font-bold mb-2 text-gray-100">
         V3: Measuring What You Produce
       </h2>
@@ -912,9 +930,12 @@ Temperament:  30-day half-life (recent behavior matters most)
               <h3 className="text-xl font-semibold text-sky-400 mb-3">
                 Related: V3 (Value Tensors)
               </h3>
+              <div className="bg-sky-950/30 border border-sky-800/40 rounded-lg px-4 py-3 mb-4 text-sm">
+                <strong className="text-sky-300">Key distinction:</strong>{' '}
+                <span className="text-gray-300">T3 measures <em>who you are</em> (your trustworthiness as a person). V3 measures <em>what you produce</em> (the quality of a specific output). Same person, different V3 scores per output.</span>
+              </div>
               <p className="leading-relaxed mb-3">
-                T3 measures <em>who you are</em>. V3 measures <em>what you produce</em>. Every output
-                in Web4 gets scored across three dimensions:
+                Every output in Web4 gets scored across three V3 dimensions:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
                 <li>

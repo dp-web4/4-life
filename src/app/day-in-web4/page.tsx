@@ -495,7 +495,7 @@ export default function DayInWeb4Page() {
         <h2 className="text-2xl font-bold mb-2">What Would This Actually Look Like?</h2>
         <p className="text-gray-400 mb-8 text-sm">
           The scenarios above describe the <em>experience</em>. But what would the interface look like on your screen?
-          Here are three conceptual sketches.
+          Here are five conceptual wireframes — inbox, hiring, reviews, social feed, and marketplace.
         </p>
 
         {/* Wireframe 1: Inbox */}
@@ -645,6 +645,125 @@ export default function DayInWeb4Page() {
             </div>
             <div className="px-4 py-2 text-xs text-gray-600 border-t border-gray-800">
               Every review cost the reviewer energy. No review farms — each reviewer has a verifiable trust history.
+            </div>
+          </div>
+        </div>
+
+        {/* Wireframe 4: Social Feed */}
+        <div className="mb-8">
+          <h3 className="text-sm font-semibold text-sky-400 uppercase tracking-wide mb-3">Your Social Feed</h3>
+          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
+            <div className="flex items-center gap-3 px-4 py-2.5 border-b border-gray-700" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
+              <div className="w-2 h-2 rounded-full bg-emerald-400" />
+              <span className="text-sm font-medium text-gray-300">Community Feed</span>
+              <div className="ml-auto flex items-center gap-2">
+                <span className="text-xs text-gray-600">Sort:</span>
+                <span className="text-xs text-emerald-400 bg-emerald-950/50 px-2 py-0.5 rounded">Trust-weighted</span>
+              </div>
+            </div>
+            <div className="divide-y divide-gray-800">
+              {/* High-trust post */}
+              <div className="px-4 py-3">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="w-7 h-7 rounded-full bg-gray-700 flex items-center justify-center text-xs text-gray-400">L</div>
+                  <span className="text-sm font-medium text-gray-200">Dr. Lisa Park</span>
+                  <span className="text-xs font-mono text-emerald-400">0.92</span>
+                  <span className="text-xs text-gray-600">· Nutritionist</span>
+                </div>
+                <p className="text-xs text-gray-300 mb-1.5">&quot;New research on intermittent fasting — the 16:8 claims are overstated. Here&apos;s what the data actually shows...&quot;</p>
+                <div className="flex items-center gap-3 text-xs text-gray-600">
+                  <span>47 found helpful (+94 ATP earned)</span>
+                  <span>·</span>
+                  <span>Cost: 3 ATP to post</span>
+                </div>
+              </div>
+              {/* Low-trust post — flagged */}
+              <div className="px-4 py-3 bg-amber-950/10">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="w-7 h-7 rounded-full bg-gray-700 flex items-center justify-center text-xs text-gray-400">M</div>
+                  <span className="text-sm font-medium text-gray-200">Mike&apos;s Supplements</span>
+                  <span className="text-xs font-mono text-red-400">0.31</span>
+                  <span className="text-xs text-amber-500 bg-amber-950/50 px-1.5 py-0.5 rounded">Low trust</span>
+                </div>
+                <p className="text-xs text-gray-500 mb-1.5">&quot;This ONE trick reverses aging! Buy now...&quot;</p>
+                <div className="flex items-center gap-3 text-xs text-gray-600">
+                  <span>2 found helpful, 38 flagged</span>
+                  <span>·</span>
+                  <span>Cost: 15 ATP to post (low-trust premium)</span>
+                </div>
+              </div>
+              {/* Mid-trust newcomer */}
+              <div className="px-4 py-3">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="w-7 h-7 rounded-full bg-gray-700 flex items-center justify-center text-xs text-gray-400">T</div>
+                  <span className="text-sm font-medium text-gray-200">Tomas R.</span>
+                  <span className="text-xs font-mono text-sky-400">0.58</span>
+                  <span className="text-xs text-gray-600">· New member (2 weeks)</span>
+                </div>
+                <p className="text-xs text-gray-300 mb-1.5">&quot;Has anyone tried the new bike path along the river? Took some photos today.&quot;</p>
+                <div className="flex items-center gap-3 text-xs text-gray-600">
+                  <span>12 found helpful (+24 ATP earned)</span>
+                  <span>·</span>
+                  <span>Cost: 5 ATP to post</span>
+                </div>
+              </div>
+            </div>
+            <div className="px-4 py-2 text-xs text-gray-600 border-t border-gray-800">
+              Posts sorted by trust × helpfulness. Low-trust promotional content sinks naturally — no moderator needed.
+            </div>
+          </div>
+        </div>
+
+        {/* Wireframe 5: Marketplace */}
+        <div className="mb-8">
+          <h3 className="text-sm font-semibold text-sky-400 uppercase tracking-wide mb-3">Buying Something Online</h3>
+          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
+            <div className="flex items-center gap-3 px-4 py-2.5 border-b border-gray-700" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
+              <div className="w-2 h-2 rounded-full bg-violet-400" />
+              <span className="text-sm font-medium text-gray-300">Marketplace — Used Camera</span>
+            </div>
+            <div className="p-4">
+              {/* Seller profile */}
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-sm text-gray-400">N</div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-sm font-medium text-gray-200">Nina K.</span>
+                    <span className="text-xs font-mono text-emerald-400">0.88</span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 text-xs mb-2">
+                    <div>
+                      <span className="text-gray-500">As seller</span>
+                      <div className="text-emerald-400 font-mono">0.91</div>
+                    </div>
+                    <div>
+                      <span className="text-gray-500">Transactions</span>
+                      <div className="text-gray-300">43 completed</div>
+                    </div>
+                    <div>
+                      <span className="text-gray-500">Disputes</span>
+                      <div className="text-gray-300">0</div>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-500">Trust earned through 43 real transactions — not self-reported star ratings.</p>
+                </div>
+              </div>
+              {/* Trust comparison */}
+              <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-xs">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-gray-400">Your risk assessment</span>
+                  <span className="text-emerald-400">Low risk</span>
+                </div>
+                <div className="space-y-1.5 text-gray-500">
+                  <div className="flex justify-between"><span>Seller trust (as seller role)</span><span className="text-emerald-400">0.91</span></div>
+                  <div className="flex justify-between"><span>Connection distance</span><span className="text-gray-300">2 hops (friend of a friend)</span></div>
+                  <div className="flex justify-between"><span>MRH-adjusted trust</span><span className="text-sky-400">0.64 (0.91 × 0.70)</span></div>
+                  <div className="flex justify-between"><span>Escrow cost</span><span className="text-gray-300">2 ATP (reduced — high seller trust)</span></div>
+                </div>
+              </div>
+            </div>
+            <div className="px-4 py-2 text-xs text-gray-600 border-t border-gray-800">
+              No fake reviews. No paid badges. Every number traces back to real interactions with real people.
             </div>
           </div>
         </div>
