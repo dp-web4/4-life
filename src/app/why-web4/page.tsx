@@ -711,7 +711,7 @@ export default function WhyWeb4Page() {
         {/* All other FAQs — collapsed by default */}
         <details className="group">
           <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">
-            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 31 more questions</h3>
+            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 32 more questions</h3>
             <span className="text-gray-500 text-sm group-open:rotate-90 transition-transform">▶</span>
           </summary>
         <div className="space-y-6">
@@ -1251,6 +1251,69 @@ export default function WhyWeb4Page() {
                 statistically indistinguishable from random; above it, intentional patterns emerge.
                 But it&apos;s a starting point, not a mandate. Cultural trust norms absolutely vary &mdash;
                 that&apos;s why governance is society-local, not protocol-global.
+              </p>
+              <p>
+                Beyond thresholds, societies can customize <strong>how trust is weighted</strong>. T3
+                defaults to Talent 0.4, Training 0.3, Temperament 0.3 &mdash; but a culture that
+                values consistency and reliability over raw competence could weight Temperament higher.
+                A research community might weight Talent (demonstrated expertise) more heavily. Even
+                decay half-lives can be society-tuned: a fast-moving startup culture might shorten
+                Training decay (skills go stale faster) while a traditional guild might lengthen it
+                (craft knowledge persists).
+              </p>
+              <p>
+                When societies with different norms interact through{" "}
+                <Link href="/federation-economics" className="text-sky-400 hover:underline">federation</Link>,
+                cross-society trust translation happens at the boundary &mdash; your reputation is
+                portable but interpreted through the receiving community&apos;s local norms. This is
+                similar to how academic credentials are recognized internationally but weighted
+                differently by each institution.
+              </p>
+            </div>
+          </details>
+
+          {/* Transition user experience */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What&apos;s my experience during the transition? Do I need parallel identities?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                During the transition from Web2 to Web4, <strong>you don&apos;t maintain two separate
+                identities</strong>. Instead, you gradually accumulate Web4 trust on top of your existing
+                accounts, like adding a reputation layer over what you already use.
+              </p>
+              <p>
+                Here&apos;s what the transition actually looks like at each{" "}
+                <Link href="/how-it-works" className="text-sky-400 hover:underline">adoption tier</Link>:
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-400">
+                <li><strong>Wrapper tier (you won&apos;t notice):</strong> Platforms add trust scoring behind
+                  the scenes. You keep using Gmail, Reddit, etc. exactly as before. Your actions
+                  start building a trust history you can&apos;t see yet.</li>
+                <li><strong>Observable tier (you see trust scores):</strong> A trust badge appears next
+                  to usernames &mdash; like the blue checkmark, but earned through behavior, not payment.
+                  You start noticing which reviews, messages, and posts come from high-trust sources.</li>
+                <li><strong>Accountable tier (you feel the difference):</strong> Posting costs a tiny
+                  amount of ATP. High-trust users barely notice (their costs are lower). Spammers
+                  notice immediately (their costs are higher). Your existing account still works &mdash;
+                  it just has consequences now.</li>
+                <li><strong>Federated tier (your reputation travels):</strong> You join a new platform
+                  and your trust follows you. No more starting from zero. This is when the dual-identity
+                  friction disappears &mdash; your Web4 trust IS your cross-platform identity.</li>
+              </ul>
+              <p>
+                The key design choice: <strong>Web4 wraps existing systems rather than replacing
+                them</strong>. You don&apos;t wake up one morning and switch to &ldquo;the Web4 internet.&rdquo;
+                Your current apps gradually become trust-aware, and the transition feels more like
+                email gaining spam filters than like switching from postal mail to email.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> This is the designed path, not a proven one.
+                The real user experience will depend on which platforms adopt, how fast, and whether
+                the trust scoring is accurate enough to feel fair rather than arbitrary. Early
+                adopters will feel friction that later users won&apos;t.
               </p>
             </div>
           </details>
