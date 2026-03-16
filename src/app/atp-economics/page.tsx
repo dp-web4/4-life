@@ -761,6 +761,27 @@ export default function ATPEconomicsPage() {
 
           <details className="bg-gray-800/40 border border-gray-700 rounded-lg p-4">
             <summary className="text-sm font-semibold text-gray-300 cursor-pointer hover:text-sky-400 transition-colors">
+              What does the confirmation interface actually look like?
+            </summary>
+            <div className="mt-3 text-sm text-gray-400 space-y-2">
+              <p>
+                Simple: a single &ldquo;this was helpful&rdquo; acknowledgment — not a multi-dimensional rating form.
+                Recipients don&apos;t score Valuation, Veracity, and Validity separately. They just confirm they
+                received value (or don&apos;t). The <strong className="text-gray-300">system derives V3 scores</strong> from
+                patterns across many confirmations: how quickly people confirm (engagement signal), whether
+                the same work gets confirmed by diverse recipients (breadth signal), and whether confirming
+                recipients are themselves high-trust (quality signal).
+              </p>
+              <p>
+                Think of it like a &ldquo;helpful&rdquo; button on a Stack Overflow answer — one click, no rubric.
+                The sophistication lives in how the system aggregates those simple signals, not in what
+                the user sees.
+              </p>
+            </div>
+          </details>
+
+          <details className="bg-gray-800/40 border border-gray-700 rounded-lg p-4">
+            <summary className="text-sm font-semibold text-gray-300 cursor-pointer hover:text-sky-400 transition-colors">
               What about confirmation fatigue? Do I have to rate everything?
             </summary>
             <div className="mt-3 text-sm text-gray-400 space-y-2">
