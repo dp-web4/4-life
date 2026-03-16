@@ -678,6 +678,16 @@ export default function MarkovRelevancyHorizonPage() {
               Same person, different contexts, completely different MRH graphs and trust scores.
               This prevents inappropriate trust transfer across domains.
             </p>
+            <div className="bg-cyan-950/20 border border-cyan-800/30 rounded-lg p-4 mt-4">
+              <h4 className="text-sm font-semibold text-cyan-400 mb-2">What about privacy between roles?</h4>
+              <p className="text-sm text-gray-400">
+                Role contexts are <strong className="text-cyan-300">separate by default</strong>. Someone who knows
+                Alice as a surgeon cannot discover her car-owner trust score — those are different MRH graphs
+                with different relationship sets. You only see the roles where you share a context.
+                Alice can <em>choose</em> to link roles (e.g., proving she&apos;s both a surgeon and a researcher),
+                but the system never reveals cross-role trust without consent.
+              </p>
+            </div>
           </div>
         </section>
 
