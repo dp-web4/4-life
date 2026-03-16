@@ -678,6 +678,16 @@ export default function MarkovRelevancyHorizonPage() {
               Same person, different contexts, completely different MRH graphs and trust scores.
               This prevents inappropriate trust transfer across domains.
             </p>
+            <div className="bg-cyan-950/20 border border-cyan-800/30 rounded-lg p-4 mt-4">
+              <h4 className="text-sm font-semibold text-cyan-400 mb-2">What about privacy between roles?</h4>
+              <p className="text-sm text-gray-400">
+                Role contexts are <strong className="text-cyan-300">separate by default</strong>. Someone who knows
+                Alice as a surgeon cannot discover her car-owner trust score — those are different MRH graphs
+                with different relationship sets. You only see the roles where you share a context.
+                Alice can <em>choose</em> to link roles (e.g., proving she&apos;s both a surgeon and a researcher),
+                but the system never reveals cross-role trust without consent.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -814,11 +824,16 @@ export default function MarkovRelevancyHorizonPage() {
           </div>
         </section>
 
-        {/* Technical Implementation Section */}
+        {/* Technical Implementation Section — collapsed for general visitors */}
         <section className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-cyan-400">
-            Technical Implementation
-          </h2>
+          <details className="group">
+          <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors mb-6">
+            <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
+            <h2 className="text-3xl font-bold text-cyan-400">
+              Technical Implementation
+            </h2>
+            <span className="text-sm text-gray-500 ml-auto">RDF, SPARQL, graph operations</span>
+          </summary>
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-6">
             <h3 className="text-lg font-semibold text-cyan-400 mb-4">
@@ -922,6 +937,7 @@ SELECT ?entity ?distance WHERE {
               <span>→</span>
             </Link>
           </div>
+          </details>
         </section>
 
         {/* Key Takeaways Section */}

@@ -813,7 +813,7 @@ export default function CoherenceIndexPage() {
             <summary className="cursor-pointer list-none">
               <div className="inline-flex items-center gap-3 mb-6 text-gray-500 hover:text-gray-400 transition-colors">
                 <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
-                <span className="text-sm font-medium">Where does the idea of &ldquo;coherence&rdquo; come from? (optional deep dive)</span>
+                <span className="text-sm font-medium">Research origins: where does the idea of &ldquo;coherence&rdquo; come from? (academic background)</span>
               </div>
             </summary>
           <p className="text-gray-400 mb-6">
