@@ -395,6 +395,62 @@ export default function LearnJourney() {
         </p>
       </section>
 
+      {/* Quick start for newcomers — shows until 3 concepts done */}
+      {completedConcepts.size < 3 && (
+        <section>
+          <div
+            style={{
+              background: "linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(14, 165, 233, 0.08))",
+              border: "1px solid rgba(56, 189, 248, 0.2)",
+              borderRadius: "12px",
+              padding: "1.25rem 1.5rem",
+            }}
+          >
+            <h3 style={{ color: "var(--color-accent-bright)", margin: "0 0 0.5rem", fontSize: "1.05rem" }}>
+              New here? Start with these 3
+            </h3>
+            <p style={{ color: "var(--color-gray-400)", fontSize: "0.85rem", marginBottom: "0.75rem" }}>
+              Everything in Web4 builds on three ideas. ~22 minutes total.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+              {[
+                { num: "1", title: "Identity (LCT)", desc: "Your phone proves who you are", href: "/lct-explainer", time: "6 min" },
+                { num: "2", title: "Energy (ATP)", desc: "Every action costs something", href: "/atp-economics", time: "7 min" },
+                { num: "3", title: "Trust (T3)", desc: "Trust as 3 dimensions, not one score", href: "/trust-tensor", time: "9 min" },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.75rem",
+                    padding: "0.5rem 0.75rem",
+                    borderRadius: "8px",
+                    textDecoration: "none",
+                    color: "var(--color-text)",
+                    background: completedConcepts.has(item.title.split(" ")[0].toLowerCase())
+                      ? "rgba(34, 197, 94, 0.08)"
+                      : "rgba(255,255,255,0.03)",
+                    transition: "background 0.2s",
+                  }}
+                >
+                  <span style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-accent)", minWidth: "1.25rem" }}>{item.num}</span>
+                  <span style={{ flex: 1 }}>
+                    <strong style={{ fontSize: "0.9rem" }}>{item.title}</strong>
+                    <span style={{ fontSize: "0.8rem", color: "var(--color-gray-400)", marginLeft: "0.5rem" }}>{item.desc}</span>
+                  </span>
+                  <span style={{ fontSize: "0.75rem", color: "var(--color-gray-500)" }}>{item.time}</span>
+                </Link>
+              ))}
+            </div>
+            <p style={{ fontSize: "0.75rem", color: "var(--color-gray-500)", marginTop: "0.75rem", marginBottom: 0 }}>
+              After these three, the other 13 concepts will make a lot more sense.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* Progress bar */}
       <section>
         <div className="detail-box">

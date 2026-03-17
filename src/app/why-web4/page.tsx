@@ -1835,14 +1835,46 @@ export default function WhyWeb4Page() {
         </div>
       </section>
 
+      {/* Get Involved */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <div className="bg-gradient-to-br from-sky-950/20 to-blue-900/10 border border-sky-800/20 rounded-xl p-8">
+          <h2 className="text-2xl font-bold mb-4 text-gray-100">Follow Along or Get Involved</h2>
+          <p className="text-gray-300 leading-relaxed mb-4">
+            Web4 is open research. Everything &mdash; the specification, the simulations, and this site &mdash; is
+            public and open-source. You don&apos;t need permission to participate.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-3 text-sm">
+            <div className="bg-gray-800/40 border border-gray-700 rounded-lg p-4">
+              <h3 className="font-semibold text-sky-400 mb-2">Read the code</h3>
+              <p className="text-gray-400 mb-2">The full specification, reference implementations, and simulation engine are on GitHub.</p>
+              <a href="https://github.com/dp-web4" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">
+                github.com/dp-web4 →
+              </a>
+            </div>
+            <div className="bg-gray-800/40 border border-gray-700 rounded-lg p-4">
+              <h3 className="font-semibold text-sky-400 mb-2">Run the simulations</h3>
+              <p className="text-gray-400 mb-2">
+                The{" "}
+                <Link href="/playground" className="text-sky-400 hover:underline">Playground</Link> and{" "}
+                <Link href="/society-simulator" className="text-sky-400 hover:underline">Society Simulator</Link>{" "}
+                let you test Web4 dynamics yourself, right now.
+              </p>
+            </div>
+            <div className="bg-gray-800/40 border border-gray-700 rounded-lg p-4">
+              <h3 className="font-semibold text-sky-400 mb-2">Share feedback</h3>
+              <p className="text-gray-400 mb-2">Found something confusing? Spotted a flaw? Visitor feedback directly shapes this site.</p>
+              <a href="https://github.com/dp-web4/4-life/issues" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">
+                Open an issue →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <section className="max-w-4xl mx-auto mt-12 text-center text-gray-500 text-sm pb-12">
         <p>
-          This page exists because visitor feedback said: "Explain the problem before the solution."
-          <br />
-          <Link href="https://github.com/dp-web4/4-life/issues" className="text-sky-400 hover:underline">
-            Got more feedback? Open an issue.
-          </Link>
+          This page exists because visitor feedback said: &ldquo;Explain the problem before the solution.&rdquo;
         </p>
       </section>
 

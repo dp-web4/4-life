@@ -6,6 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import { saveDayInWeb4Result, trackPageVisit } from '@/lib/exploration';
+import WireframeFrame from '@/components/WireframeFrame';
 
 /* ─── Types ────────────────────────────────────────────── */
 
@@ -380,10 +381,28 @@ export default function DayInWeb4Page() {
       <h1 className="text-3xl font-bold mb-2">
         A Day in Web4
       </h1>
-      <p className="text-gray-400 mb-6 text-lg">
+      <p className="text-gray-400 mb-4 text-lg">
         What would your day look like if the internet had trust built in?
         Walk through 7 real scenarios and see the difference.
       </p>
+
+      {/* Wireframe preview teaser — links to visual mockups below */}
+      <a
+        href="#wireframes"
+        className="flex items-center gap-3 rounded-xl border border-gray-700 hover:border-sky-500 transition-colors p-3 mb-6"
+        style={{ background: 'rgba(17, 24, 39, 0.6)', textDecoration: 'none' }}
+      >
+        <div className="flex gap-1.5 shrink-0">
+          <div className="w-8 h-6 rounded border border-gray-600 flex items-center justify-center text-[10px]">📱</div>
+          <div className="w-8 h-6 rounded border border-gray-600 flex items-center justify-center text-[10px]">💼</div>
+          <div className="w-8 h-6 rounded border border-gray-600 flex items-center justify-center text-[10px]">⭐</div>
+        </div>
+        <div className="flex-1 min-w-0">
+          <span className="text-sm text-sky-400 font-medium">See what the interface would look like</span>
+          <span className="text-xs text-gray-500 ml-2">— 5 visual mockups below</span>
+        </div>
+        <span className="text-gray-500 text-sm shrink-0">↓</span>
+      </a>
 
       {/* Progress Timeline */}
       {!isComplete && (
@@ -494,14 +513,13 @@ export default function DayInWeb4Page() {
       <section id="wireframes" className="mt-16 pt-8 border-t border-gray-800">
         <h2 className="text-2xl font-bold mb-2">What Would This Actually Look Like?</h2>
         <p className="text-gray-400 mb-8 text-sm">
-          The scenarios above describe the <em>experience</em>. But what would the interface look like on your screen?
-          Here are five conceptual wireframes — inbox, hiring, reviews, social feed, and marketplace.
+          The scenarios above describe the <em>experience</em>. But what would the interface actually look like?
+          Here are five app mockups — inbox, hiring, reviews, social feed, and marketplace.
         </p>
 
         {/* Wireframe 1: Inbox */}
-        <div className="mb-8">
-          <h3 className="text-sm font-semibold text-sky-400 uppercase tracking-wide mb-3">Your Inbox</h3>
-          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
+        <WireframeFrame title="Web4 Mail" url="mail.web4.local/inbox">
+          <div className="rounded-b-xl overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
             {/* Header bar */}
             <div className="flex items-center gap-3 px-4 py-2.5 border-b border-gray-700" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
               <div className="w-2 h-2 rounded-full bg-sky-400" />
@@ -539,12 +557,11 @@ export default function DayInWeb4Page() {
               0 spam — messages cost energy to send. Bots can&apos;t afford to reach you.
             </div>
           </div>
-        </div>
+        </WireframeFrame>
 
         {/* Wireframe 2: Hiring Dashboard */}
-        <div className="mb-8">
-          <h3 className="text-sm font-semibold text-sky-400 uppercase tracking-wide mb-3">Hiring a Freelancer</h3>
-          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
+        <WireframeFrame title="Web4 Talent" url="talent.web4.local/project/logo-design">
+          <div className="rounded-b-xl overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
             <div className="flex items-center gap-3 px-4 py-2.5 border-b border-gray-700" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
               <div className="w-2 h-2 rounded-full bg-purple-400" />
               <span className="text-sm font-medium text-gray-300">Applicants — Logo Design</span>
@@ -606,12 +623,11 @@ export default function DayInWeb4Page() {
               No fake portfolios. No bought reviews. Trust scores earned through 156 real projects.
             </div>
           </div>
-        </div>
+        </WireframeFrame>
 
         {/* Wireframe 3: Review Page */}
-        <div className="mb-8">
-          <h3 className="text-sm font-semibold text-sky-400 uppercase tracking-wide mb-3">Restaurant Reviews</h3>
-          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
+        <WireframeFrame title="Web4 Reviews" url="reviews.web4.local/golden-dragon">
+          <div className="rounded-b-xl overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
             <div className="flex items-center gap-3 px-4 py-2.5 border-b border-gray-700" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
               <div className="w-2 h-2 rounded-full bg-amber-400" />
               <span className="text-sm font-medium text-gray-300">Golden Dragon — 89 reviews</span>
@@ -647,12 +663,11 @@ export default function DayInWeb4Page() {
               Every review cost the reviewer energy. No review farms — each reviewer has a verifiable trust history.
             </div>
           </div>
-        </div>
+        </WireframeFrame>
 
         {/* Wireframe 4: Social Feed */}
-        <div className="mb-8">
-          <h3 className="text-sm font-semibold text-sky-400 uppercase tracking-wide mb-3">Your Social Feed</h3>
-          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
+        <WireframeFrame title="Web4 Social" url="social.web4.local/feed">
+          <div className="rounded-b-xl overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
             <div className="flex items-center gap-3 px-4 py-2.5 border-b border-gray-700" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
               <div className="w-2 h-2 rounded-full bg-emerald-400" />
               <span className="text-sm font-medium text-gray-300">Community Feed</span>
@@ -712,12 +727,11 @@ export default function DayInWeb4Page() {
               Posts sorted by trust × helpfulness. Low-trust promotional content sinks naturally — no moderator needed.
             </div>
           </div>
-        </div>
+        </WireframeFrame>
 
         {/* Wireframe 5: Marketplace */}
-        <div className="mb-8">
-          <h3 className="text-sm font-semibold text-sky-400 uppercase tracking-wide mb-3">Buying Something Online</h3>
-          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
+        <WireframeFrame title="Web4 Market" url="market.web4.local/listing/used-camera">
+          <div className="rounded-b-xl overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
             <div className="flex items-center gap-3 px-4 py-2.5 border-b border-gray-700" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
               <div className="w-2 h-2 rounded-full bg-violet-400" />
               <span className="text-sm font-medium text-gray-300">Marketplace — Used Camera</span>
@@ -766,7 +780,7 @@ export default function DayInWeb4Page() {
               No fake reviews. No paid badges. Every number traces back to real interactions with real people.
             </div>
           </div>
-        </div>
+        </WireframeFrame>
 
         <p className="text-xs text-gray-500 italic">
           These are conceptual wireframes, not final designs. Web4 is active research — the real interfaces
