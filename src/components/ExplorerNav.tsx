@@ -30,7 +30,7 @@ const EXPLORERS: ExplorerInfo[] = [
   { href: '/trust-dilemmas', title: 'Trust Dilemmas', shortTitle: 'Dilemmas', color: '#6ee7b7', stage: 'understand' },
   // Explore
   { href: '/trust-tensor-explorer', title: 'Trust Tensor Explorer', shortTitle: 'Trust Tensor', color: '#93c5fd', stage: 'explore' },
-  { href: '/mrh-explorer', title: 'MRH Explorer', shortTitle: 'MRH', color: '#93c5fd', stage: 'explore' },
+  { href: '/mrh-explorer', title: 'Context Boundaries Explorer', shortTitle: 'Boundaries', color: '#93c5fd', stage: 'explore' },
   { href: '/trajectory-explorer', title: 'Trajectory Explorer', shortTitle: 'Trajectories', color: '#93c5fd', stage: 'explore' },
   { href: '/behavioral-repertoire', title: 'Behavioral Repertoire', shortTitle: 'Repertoire', color: '#93c5fd', stage: 'explore' },
   { href: '/feedback-loop-explorer', title: 'Feedback Loop Explorer', shortTitle: 'Feedback Loops', color: '#93c5fd', stage: 'explore' },

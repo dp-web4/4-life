@@ -670,6 +670,13 @@ export default function WhyWeb4Page() {
                   trust history more valuable. Think email in 1995 — it was useful even when most people didn&apos;t
                   have it, and each new user made everyone else&apos;s email more useful.</li>
               </ul>
+              <p className="text-gray-400 text-sm">
+                <strong className="text-gray-300">Do existing platforms need to cooperate?</strong> Not necessarily.
+                Web4 can overlay without platform cooperation — a browser extension or third-party service
+                could attach trust signals to any platform. But cooperation makes it better: a forum that
+                <em>natively</em> integrates trust scoring can weight content accordingly, not just display
+                badges. The design supports both models — grassroots overlay and official integration.
+              </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Bootstrapping is the hardest phase. A trust score based on
                 2 platforms is less meaningful than one based on 200. The first communities to adopt will need
@@ -765,6 +772,16 @@ export default function WhyWeb4Page() {
                 <li><strong>Native:</strong> Full Web4 protocol stack. Hardware-bound identity,
                   society governance, cross-platform trust. (Like the web itself)</li>
               </ol>
+              <p>
+                <strong>What Tier 1 actually looks like:</strong> Imagine a coding forum like Stack Overflow.
+                Today, answers are ranked by votes. At the Wrapper tier, the forum adds a Web4 trust layer: each
+                user&apos;s answers start building a T3 trust profile (Talent = answer accuracy, Training = domain
+                expertise, Temperament = community behavior). The forum&apos;s existing UI doesn&apos;t change —
+                but behind the scenes, a trust-weighted ranking emerges. Spam answers from new accounts
+                cost ATP to post and earn nothing back. Within weeks, high-quality answers naturally rise
+                above vote-gamed content. No blockchain, no tokens, no user-facing changes — just better
+                signal-to-noise.
+              </p>
               <p>
                 <strong>The honest gap:</strong> All five tiers are designed and specified. Tiers 1-2
                 could be integrated into existing platforms today. But no platform has done so yet.

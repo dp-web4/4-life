@@ -403,9 +403,9 @@ export const navigationTree: NavigationTree = {
       related: ['/trust-tensor', '/coherence-index', '/atp-economics', '/karma-consequences', '/aliveness', '/mrh-explorer']
     },
     {
-      title: 'MRH Explorer',
+      title: 'Context Boundaries Explorer',
       href: '/mrh-explorer',
-      desc: 'Interactive Markov Relevancy Horizon visualizer',
+      desc: 'Interactive context boundaries (MRH) visualizer',
       keywords: ['MRH', 'markov', 'horizon', 'context', 'boundaries', 'network', 'depth', 'trust decay', '4D', 'spatial', 'temporal', 'ATP cost'],
       prerequisites: ['/markov-relevancy-horizon'],
       related: ['/markov-relevancy-horizon', '/trust-tensor-explorer', '/trust-networks', '/atp-economics', '/federation-economics']
@@ -537,7 +537,7 @@ export const navigationTree: NavigationTree = {
       related: ['/atp-economics', '/trust-tensor', '/coherence-index', '/karma-consequences', '/feedback-loop-explorer']
     },
     {
-      title: 'MRH Boundaries',
+      title: 'Context Boundaries (MRH)',
       href: '/markov-relevancy-horizon',
       desc: 'What you can see',
       keywords: ['MRH', 'context', 'visibility', 'boundaries', 'markov'],

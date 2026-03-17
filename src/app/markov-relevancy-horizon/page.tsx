@@ -95,14 +95,14 @@ export default function MarkovRelevancyHorizonPage() {
             Web4 Foundation: Context
           </div>
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Markov Relevancy Horizon (MRH)
+            Context Boundaries (MRH)
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed mb-6">
             How Web4 creates context boundaries through relationships — you see what&apos;s relevant, nothing more.
           </p>
           <p className="text-sm text-gray-500">
             <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-cyan-400 hover:text-cyan-300 cursor-pointer">
-              ↓ Try the MRH explorer below
+              ↓ Try the context boundaries explorer below
             </a>
           </p>
 
@@ -117,7 +117,7 @@ export default function MarkovRelevancyHorizonPage() {
                   <strong>Traditional systems</strong>: Either everyone sees everything (overwhelming) or strict access control (fragmented)
                 </p>
                 <p className="text-gray-300">
-                  <strong>Web4 MRH</strong>: Context emerges from relationships (you see your connections, their connections, and their connections - nothing more)
+                  <strong>Web4 Context Boundaries</strong>: Context emerges from relationships (you see your connections, their connections, and their connections - nothing more)
                 </p>
               </div>
             </div>
