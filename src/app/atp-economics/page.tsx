@@ -1055,7 +1055,34 @@ if agent.atp <= 0:
         </div>
       </section>
 
-      {/* Navigation */}
+      {/* Open Research: Group Contributions */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <details className="bg-gray-800/40 border border-gray-700 rounded-xl p-6">
+          <summary className="text-lg font-semibold text-amber-400 cursor-pointer hover:text-amber-300 transition-colors list-none flex justify-between items-center">
+            <span>How is ATP credit split for group work?</span>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div className="mt-4 text-gray-300 text-sm space-y-3">
+            <p>
+              <strong className="text-amber-400/80">This is an open research question.</strong> When
+              a team writes a document or builds something together, who gets the ATP credit?
+            </p>
+            <p>The approaches being explored include:</p>
+            <ul className="list-disc list-inside space-y-1.5 ml-4 text-gray-400">
+              <li><strong>Proportional contribution tracking</strong> &mdash; Each contributor&apos;s edits, reviews, and testing are recorded as separate ADP receipts. Credit flows proportionally to verifiable effort.</li>
+              <li><strong>Recipient attestation</strong> &mdash; The people who receive value from the work decide how to split credit, similar to how VCM (Value Confirmation Messages) work for individual contributions.</li>
+              <li><strong>Pre-agreed splits</strong> &mdash; Teams declare a split ratio before the work begins, locked into the ATP contract. Changes require unanimous consent.</li>
+            </ul>
+            <p>
+              The hard part isn&apos;t the splitting mechanism &mdash; it&apos;s <strong>verifying who did what</strong> in a trust-native way without a central authority deciding. This connects to the broader challenge of compositional trust: how does individual T3 contribute to team T3?
+            </p>
+            <p className="text-amber-400/60 text-xs">
+              See also: <Link href="/federation-economics" className="text-sky-400 hover:underline">Federation Economics</Link> for how ATP markets handle cross-community credit, and <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">What Could Go Wrong</Link> for why this remains unsolved.
+            </p>
+          </div>
+        </details>
+      </section>
+
       {/* Footer Note */}
       <section className="max-w-4xl mx-auto mt-12 text-center text-gray-500 text-sm pb-12">
         <p>
