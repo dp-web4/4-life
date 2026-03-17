@@ -338,6 +338,51 @@ export default function CoherenceIndexPage() {
             Traditional security would see valid credentials on the correct device in the right
             city &mdash; and grant full access. CI catches what passwords can&apos;t.
           </p>
+
+          {/* Second scenario */}
+          <div className="bg-gradient-to-br from-purple-950/30 to-purple-900/20 border border-purple-800/30 rounded-lg p-6 mt-8">
+            <h3 className="text-xl font-semibold text-purple-400 mb-3">
+              Scenario 2: The Sophisticated Bot Farm
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              A bot operator creates 50 accounts, each with unique device fingerprints and
+              realistic-looking profiles. They post content at human-like intervals and vary
+              their writing style. On any single dimension, each account looks plausible.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+              <div className="bg-green-900/20 border border-green-700/30 rounded p-3 text-center">
+                <div className="text-xs text-gray-400 mb-1">Spatial</div>
+                <div className="text-lg font-bold text-green-400">OK</div>
+                <div className="text-xs text-gray-500">Distributed IPs</div>
+              </div>
+              <div className="bg-red-900/20 border border-red-700/30 rounded p-3 text-center">
+                <div className="text-xs text-gray-400 mb-1">Temporal</div>
+                <div className="text-lg font-bold text-red-400">FAIL</div>
+                <div className="text-xs text-gray-500">Correlated activity bursts</div>
+              </div>
+              <div className="bg-green-900/20 border border-green-700/30 rounded p-3 text-center">
+                <div className="text-xs text-gray-400 mb-1">Capability</div>
+                <div className="text-lg font-bold text-green-400">OK</div>
+                <div className="text-xs text-gray-500">Realistic actions</div>
+              </div>
+              <div className="bg-red-900/20 border border-red-700/30 rounded p-3 text-center">
+                <div className="text-xs text-gray-400 mb-1">Relational</div>
+                <div className="text-lg font-bold text-red-400">FAIL</div>
+                <div className="text-xs text-gray-500">No organic connections</div>
+              </div>
+            </div>
+            <p className="text-gray-300 leading-relaxed">
+              <strong>Result</strong>: Despite sophisticated evasion, the bots fail on
+              <strong className="text-purple-400"> temporal</strong> coherence (activity bursts correlate across
+              accounts — real humans don&apos;t synchronize) and <strong className="text-purple-400">relational</strong> coherence
+              (no genuine relationships formed over time — all connections are shallow and recent).
+              CI drops to <strong className="text-orange-400">0.41</strong>, well below the 0.5 aliveness threshold.
+            </p>
+          </div>
+          <p className="text-gray-400 text-sm mt-2 mb-2">
+            Traditional anti-bot systems catch obvious patterns. CI catches <em>incoherence</em> &mdash;
+            the gap between how a real person lives and how a bot pretends to.
+          </p>
         </section>
 
         {/* Four Dimensions Section */}

@@ -601,6 +601,13 @@ export default function ATPEconomicsPage() {
               trust near 1.0, and up to a 50% premium for scarce resources. Being trustworthy
               isn&apos;t just morally rewarded — it&apos;s economically cheaper to participate.
             </p>
+            <p className="text-gray-400 text-xs mt-3 leading-relaxed">
+              <strong className="text-gray-300">What about newcomers?</strong> New entities aren&apos;t locked out —
+              bootstrap convergence means a newcomer doing quality work surpasses established members within
+              ~50 actions. The first-mover advantage has a ~30-action half-life, and wealth inequality
+              naturally converges to a Gini of 0.25. Trust-based pricing rewards <em>earned</em> trust,
+              not seniority.
+            </p>
           </div>
         </div>
         <p className="text-gray-500 text-xs mt-4 italic">

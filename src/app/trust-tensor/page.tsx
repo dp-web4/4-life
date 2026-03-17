@@ -1176,6 +1176,36 @@ Temperament:  30-day half-life (recent behavior matters most)
         </div>
       </section>
 
+      {/* Switching Roles FAQ */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <div className="bg-gray-900/50 border border-gray-700 rounded-xl p-6">
+          <h3 className="text-lg font-semibold text-sky-400 mb-2">What happens when you switch roles?</h3>
+          <p className="text-gray-300 text-sm mb-3">
+            If you&apos;re a great data analyst who transitions to management, your analyst trust stays high &mdash;
+            but your management trust starts fresh. <strong className="text-white">You don&apos;t get automatic credit
+            for adjacent competence.</strong> This is a deliberate design choice.
+          </p>
+          <p className="text-gray-400 text-sm mb-3">
+            Why? Because being good at one job genuinely doesn&apos;t guarantee being good at another.
+            A brilliant surgeon might be a terrible hospital administrator. A top sales rep might
+            struggle as a manager. Web4 takes this seriously rather than assuming skills transfer.
+          </p>
+          <p className="text-gray-400 text-sm mb-3">
+            That said, <strong className="text-gray-300">Temperament carries across roles</strong>.
+            If you&apos;ve built a track record of meeting deadlines, communicating well, and acting
+            ethically, those behavioral patterns are visible in every role context. Temperament is
+            about <em>how</em> you work, not <em>what</em> you work on &mdash; so it transfers naturally.
+          </p>
+          <p className="text-gray-400 text-sm">
+            The practical effect: role-switchers aren&apos;t starting from zero. Their Temperament
+            score gives them a head start on trust in the new role &mdash; they just need to prove
+            Talent and Training through actual work. Think of it like changing careers: your references
+            from your old job vouch for your character (Temperament), but you still have to demonstrate
+            competence (Talent) and credentials (Training) in the new field.
+          </p>
+        </div>
+      </section>
+
       {/* Why This Matters */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
@@ -1223,6 +1253,41 @@ Temperament:  30-day half-life (recent behavior matters most)
             precision costs more <TermTooltip term="ATP" /> to prevent score inflation.
           </p>
         </div>
+      </section>
+
+      {/* Common Question: Role Transitions */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <details className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+            <span>What happens when I switch roles? Do I start from zero?</span>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div className="mt-4 text-gray-300 text-sm space-y-3">
+            <p>
+              <strong>Yes, for the role-specific dimensions — and that&apos;s the point.</strong> If you&apos;re a
+              great data analyst who transitions to management, your analyst T3 stays (Talent 0.85, Training 0.82,
+              Temperament 0.90) but your management T3 starts fresh (0.50, 0.50, 0.50). This is deliberate:
+              being excellent at analysis doesn&apos;t make you a good manager.
+            </p>
+            <p>
+              However, <strong className="text-amber-300">Temperament carries across roles</strong>. Your
+              behavioral consistency (meeting commitments, communicating honestly, handling disagreements
+              constructively) is the same person regardless of role. If you have a Temperament of 0.90 as an
+              analyst, you start management with an elevated Temperament — because reliable people tend to
+              be reliable in new contexts too.
+            </p>
+            <p>
+              The practical effect: role transitions are <em>faster</em> for trustworthy people, not because
+              the system gives them credit for unrelated skills, but because the dimension that measures
+              character (Temperament) is genuinely transferable, while the dimensions that measure competence
+              (Talent, Training) correctly reset.
+            </p>
+            <p className="text-amber-400/80 text-xs">
+              Think of it like a doctor becoming a chef — their medical skill doesn&apos;t help in the kitchen,
+              but their work ethic and professionalism do. T3 captures exactly this distinction.
+            </p>
+          </div>
+        </details>
       </section>
 
       {/* Footer Note */}

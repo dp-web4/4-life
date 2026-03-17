@@ -480,11 +480,11 @@ export default function MRHExplorerPage() {
         background: 'linear-gradient(135deg, #06b6d4, #8b5cf6)',
         WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
       }}>
-        MRH Explorer
+        Context Boundaries Explorer
       </h1>
       <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem', maxWidth: '700px' }}>
-        Explore the Markov Relevancy Horizon &mdash; the context boundary that defines what each agent can see and
-        affect. Adjust horizon depth, explore the 4D MRH profile, and see how distance decays trust.
+        Explore context boundaries (MRH) &mdash; the trust-based horizon that defines what each agent can see and
+        affect. Adjust horizon depth, explore the 4D profile, and see how distance decays trust.
       </p>
 
       {/* Main Layout */}
