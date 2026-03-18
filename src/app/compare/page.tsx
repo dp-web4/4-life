@@ -21,35 +21,40 @@ const SIMULATIONS = [
     id: 'ep_closed_loop',
     name: 'Cross-Life Learning',
     file: '/ep_driven_closed_loop_results.json',
-    description: 'Cross-Life Learning — agents learn what works across lives by remembering patterns',
+    description: 'Agents remember what worked in past lives and apply those lessons. Like a person who changes careers but keeps the wisdom from each job.',
+    lookFor: 'Watch trust and energy improve with each new life — agents get smarter about what works.',
     color: '#3b82f6'
   },
   {
     id: 'multi_life_policy',
     name: 'Multi-Life with Policy',
     file: '/multi_life_with_policy.json',
-    description: 'Multiple life cycles with trust policy shaping behavior',
+    description: 'Agents live multiple lives under society rules that reward cooperation and punish exploitation. Like a community with clear norms enforced through reputation.',
+    lookFor: 'Notice how society rules shape behavior differently than individual learning alone.',
     color: '#10b981'
   },
   {
     id: 'maturation_web4',
     name: 'Maturation (Web4)',
     file: '/maturation_demo_results_web4.json',
-    description: 'Trust maturation with Web4 mechanisms active',
+    description: 'Agents grow trust over time with Web4 mechanisms active — karma, energy costs, and consistency scoring all shaping behavior.',
+    lookFor: 'Watch trust climb steadily as agents prove themselves through consistent actions.',
     color: '#f59e0b'
   },
   {
     id: 'maturation_none',
     name: 'Maturation (Baseline)',
     file: '/maturation_demo_results_none.json',
-    description: 'Same agents without Web4 — compare the difference',
+    description: 'The exact same agents without Web4. No karma, no energy costs, no consistency checks. Compare this with "Maturation (Web4)" to see what the mechanisms actually change.',
+    lookFor: 'Compare with "Maturation (Web4)" — same agents, but without trust mechanisms. What changes?',
     color: '#8b5cf6'
   },
   {
     id: 'five_domain',
     name: 'Five-Domain Learning',
     file: '/ep_five_domain_multi_life_results.json',
-    description: 'Cross-Life Learning across 5 coherence domains simultaneously',
+    description: 'Agents learn across 5 different skill areas simultaneously — like someone building expertise in coding, writing, teaching, managing, and designing all at once.',
+    lookFor: 'See how agents juggle multiple skill areas — some domains improve faster than others.',
     color: '#ec4899'
   }
 ];
@@ -180,6 +185,9 @@ export default function ComparePage() {
                       </h3>
                       <p className="text-sm text-slate-400">
                         {sim.description}
+                      </p>
+                      <p className="text-xs text-sky-400/70 mt-1 italic">
+                        {sim.lookFor}
                       </p>
                     </div>
                     <div className={`flex-shrink-0 ${isSelected ? 'text-blue-400' : 'text-slate-600'}`}>
