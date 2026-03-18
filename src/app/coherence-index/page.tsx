@@ -209,6 +209,27 @@ export default function CoherenceIndexPage() {
               </div>
             </div>
           </div>
+
+          {/* Concrete everyday example — visitor feedback: CI examples not prominent enough */}
+          <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 mt-6">
+            <h3 className="text-lg font-semibold text-gray-200 mb-3">What does this look like in practice?</h3>
+            <div className="space-y-3 text-gray-300 text-sm">
+              <p>
+                <strong className="text-green-400">High CI:</strong> You post coding tutorials during
+                work hours from your usual location. Your behavior is consistent — full trust, normal costs.
+              </p>
+              <p>
+                <strong className="text-red-400">Low CI:</strong> That same account suddenly starts posting
+                crypto spam at 3am from a different country. The <em>content</em> changed, the <em>timing</em> changed,
+                and the <em>location</em> changed — three dimensions flagged at once. CI drops, trust is throttled,
+                and extra witnesses are required before the account can do anything significant.
+              </p>
+              <p className="text-gray-500 text-xs">
+                No human moderator needed. No ban. The system simply asks: &ldquo;does this behavior make sense
+                given everything we&apos;ve seen before?&rdquo;
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* The Problem Section */}
