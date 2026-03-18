@@ -588,6 +588,16 @@ export default function FederationEconomicsPage() {
               cross-society interactions at increased ATP cost. Bridge societies earn trust from
               both sides by demonstrating fairness — but this requires human judgment, not algorithms.
             </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Even basic parameters differ: the 0.5 trust threshold is a <strong>society-level setting</strong>,
+              not a protocol constant. A research community might require 0.7 trust for publishing; a casual
+              social space might accept 0.3. T3 weights, decay half-lives, and cost multipliers are all
+              society-configurable. When federating, cross-society trust is translated at the boundary —
+              portable but interpreted through local norms.
+              See the{' '}
+              <Link href="/why-web4#cultural-trust" className="text-sky-400 hover:underline">cultural trust FAQ</Link>{' '}
+              for details.
+            </p>
             <p className="text-gray-500 text-xs italic">
               This is a philosophical constraint, not a technical one. Web4 provides the
               infrastructure for pluralism but can&apos;t solve moral disagreement itself.

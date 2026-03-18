@@ -783,6 +783,26 @@ export default function WhyWeb4Page() {
                 signal-to-noise.
               </p>
               <p>
+                <strong>What a community could try today:</strong> Imagine a Discord server with 200 members
+                and a spam problem. Without any Web4 software, the community could adopt Web4 <em>principles</em>:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Energy cost:</strong> New members earn posting rights by participating in
+                  welcome channels first (equivalent to ATP ramp-up for new entities)</li>
+                <li><strong>Behavioral trust:</strong> Track helpful vs. unhelpful contributions per member.
+                  After 50+ interactions, let high-trust members moderate (equivalent to T3 maturation)</li>
+                <li><strong>Portable reputation:</strong> When members join a sister server, carry their
+                  trust score over (equivalent to federated trust)</li>
+                <li><strong>Consequences:</strong> Spam costs the spammer&apos;s earned trust. No bans needed —
+                  low-trust members simply have less reach (equivalent to ATP/CI throttling)</li>
+              </ul>
+              <p className="text-gray-400 text-sm">
+                This isn&apos;t Web4 — it&apos;s Web4 thinking applied with existing tools. A bot that tracks
+                contribution quality and adjusts permissions accordingly is a manual Tier 1 implementation.
+                The gap between &ldquo;Discord bot that tracks trust&rdquo; and &ldquo;real Web4 wrapper&rdquo;
+                is hardware-bound identity and cross-platform portability.
+              </p>
+              <p>
                 <strong>The honest gap:</strong> All five tiers are designed and specified. Tiers 1-2
                 could be integrated into existing platforms today. But no platform has done so yet.
                 The path from &ldquo;working simulations&rdquo; to &ldquo;first real integration&rdquo;
@@ -1283,7 +1303,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Cultural trust threshold */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="cultural-trust" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Is the 0.5 trust threshold universal? What about cultural differences?</span>
               <span className="text-gray-500 text-xl">+</span>

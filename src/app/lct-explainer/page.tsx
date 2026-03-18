@@ -377,6 +377,16 @@ export default function LCTExplainerPage() {
               Collusion requires coordinating multiple independent parties simultaneously,
               which is both economically costly and mathematically detectable.
             </p>
+            <p className="text-sm text-gray-300 mt-3">
+              <strong className="text-sky-400">What about metadata and surveillance?</strong> If devices
+              are constantly attesting to each other, couldn&apos;t the attestation patterns themselves reveal
+              sensitive information? Yes — this is a real concern. Web4 identifies{' '}
+              <Link href="/threat-model#privacy-leakage" className="text-sky-400 hover:underline">7 privacy
+              leakage channels</Link>, including graph structure (who talks to whom) and timing correlation.
+              Mitigations include pseudonymous attestation, proof batching, timing jitter, and dummy edges —
+              but complete prevention is impossible. The design goal is raising the cost of inference above
+              the value of the leaked information.
+            </p>
           </div>
         </div>
 

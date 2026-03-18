@@ -485,7 +485,7 @@ export default function ThreatModelPage() {
       </section>
 
       {/* Privacy Leakage Channels */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="privacy-leakage" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           Privacy Leakage Channels
         </h2>
