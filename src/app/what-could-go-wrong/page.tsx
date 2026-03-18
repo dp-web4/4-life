@@ -335,8 +335,14 @@ export default function WhatCouldGoWrongPage() {
           </div>
           <div className="text-gray-300 leading-relaxed space-y-3">
             <p>
-              <strong className="text-gray-100">The risk:</strong> The simulations on this site run
-              with 4&ndash;20 agents. The real internet has billions of users. Trust-filtered
+              <strong className="text-gray-100">The risk:</strong> The interactive simulations on this
+              site run with 4&ndash;20 agents for visual clarity. Offline simulations have been run
+              with{" "}
+              <Link href="/atp-economics#at-scale" className="text-sky-400 hover:underline">
+                100&ndash;200 agents
+              </Link>{" "}
+              (showing stable ATP economics, Sybil unprofitability, and wealth convergence to Gini ~0.25).
+              But the real internet has billions of users. Trust-filtered
               message delivery, coherence scoring across four dimensions, and real-time witness
               verification all have computational costs that might not scale.
             </p>
@@ -354,10 +360,14 @@ export default function WhatCouldGoWrongPage() {
               without touching root servers.
             </p>
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
-              <strong>Honest assessment:</strong> Scalability is unproven. The architectural approach
-              (local trust computation within bounded contexts) is sound in theory, but has never
-              been tested at internet scale. The simulations prove the <em>mechanics</em> work,
-              not the <em>engineering</em>.
+              <strong>Honest assessment:</strong> Scalability is partially validated. The 100&ndash;200
+              agent simulations confirm that economic mechanics (transfer fees, quality incentives,
+              anti-Sybil dynamics) remain stable well beyond the small demos on this site. The architectural
+              approach (local trust computation within bounded contexts) is sound in theory. But
+              internet scale &mdash; millions of concurrent trust computations, cross-federation
+              synchronization, witness coordination under real latency &mdash; has never been tested.
+              The simulations prove the <em>mechanics</em> work; the <em>engineering</em> at scale
+              is an open challenge.
             </p>
           </div>
         </div>
