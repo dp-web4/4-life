@@ -187,6 +187,7 @@ export default function LCTExplainerPage() {
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">2.</span> Multiple devices (phone, laptop, security key) witness each other, making faking exponentially harder</li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">3.</span> If you lose a device, your other devices can recover your identity — no &quot;forgot password&quot; needed</li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">4.</span> This is pseudonymous — your reputation follows you, but your real name doesn&apos;t have to</li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">5.</span> Every trust change is logged in a tamper-evident <a href="#trust-transparency" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('trust-transparency')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline">transparency log</a> — you can audit your own trust history</li>
           </ul>
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300">jump to the interactive security audit ↓</a></p>
         </div>
@@ -1159,7 +1160,7 @@ export default function LCTExplainerPage() {
         </div>
 
         {/* Trust Transparency Log — collapsed for page length */}
-        <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
+        <div id="trust-transparency" className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <details className="group">
           <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors">
             <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
