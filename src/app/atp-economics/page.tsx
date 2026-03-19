@@ -545,9 +545,19 @@ export default function ATPEconomicsPage() {
         </div>
       </section>
 
+      {/* Basics divider */}
+      <div className="max-w-4xl mx-auto mt-16 mb-4 flex items-center gap-4">
+        <div className="flex-1 border-t border-gray-700"></div>
+        <span className="text-gray-500 text-sm font-medium whitespace-nowrap">You&apos;ve got the basics — deeper dives below</span>
+        <div className="flex-1 border-t border-gray-700"></div>
+      </div>
+
       {/* Market Dynamics */}
-      <section id="at-scale" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
-        <h2 className="text-3xl font-bold mb-6 text-gray-100">What Happens at Scale?</h2>
+      <section id="at-scale" className="max-w-4xl mx-auto mt-8 scroll-mt-24">
+        <details>
+          <summary className="text-3xl font-bold text-gray-100 cursor-pointer hover:text-sky-400 transition-colors mb-6">
+            What Happens at Scale?
+          </summary>
         <p className="text-gray-400 mb-6">
           Single-agent economics are intuitive. But does ATP work when hundreds of agents
           interact simultaneously? Simulations with 100-200 agents reveal three key dynamics:
@@ -614,13 +624,15 @@ export default function ATPEconomicsPage() {
           From web4 economic equilibrium analysis — ATP circulation, velocity tracking, and Gini convergence verified across 500+ rounds.
           Trust-based dynamic pricing: session 32, 84 checks.
         </p>
+        </details>
       </section>
 
       {/* Follow One Agent's ATP Journey */}
-      <section id="agent-journey" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
-        <h2 className="text-3xl font-bold mb-6 text-gray-100">
-          Follow One Agent&apos;s ATP Journey
-        </h2>
+      <section id="agent-journey" className="max-w-4xl mx-auto mt-8 scroll-mt-24">
+        <details>
+          <summary className="text-3xl font-bold text-gray-100 cursor-pointer hover:text-sky-400 transition-colors mb-6">
+            Follow One Agent&apos;s ATP Journey
+          </summary>
         <p className="text-gray-400 mb-6">
           This is actual data from a 4-Life simulation. Follow one agent across four
           lives to see how ATP, trust, and karma interact:
@@ -711,13 +723,15 @@ export default function ATPEconomicsPage() {
             </Link>
           </div>
         </div>
+        </details>
       </section>
 
       {/* How ATP Recharges: Value Confirmation */}
-      <section id="earning-atp" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
-        <h2 className="text-3xl font-bold mb-6 text-gray-100">
-          How Do You Actually Earn ATP Back?
-        </h2>
+      <section id="earning-atp" className="max-w-4xl mx-auto mt-8 scroll-mt-24">
+        <details>
+          <summary className="text-3xl font-bold text-gray-100 cursor-pointer hover:text-sky-400 transition-colors mb-6">
+            How Do You Actually Earn ATP Back?
+          </summary>
         <p className="text-gray-400 mb-6">
           The page above says &ldquo;quality contributions earn ATP.&rdquo; But who decides
           what&apos;s quality? Not you — the <strong className="text-sky-300">recipients</strong> do.
@@ -812,6 +826,7 @@ export default function ATPEconomicsPage() {
             </div>
           </details>
         </div>
+        </details>
       </section>
 
       {/* Technical Details (Collapsible) */}
