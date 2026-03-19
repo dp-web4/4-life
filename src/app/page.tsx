@@ -236,6 +236,8 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         </p>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '0.5rem' }}>
           Wondering what it would look like? <Link href="/day-in-web4#wireframes" style={{ color: 'var(--color-sky)' }}>See conceptual interface mockups →</Link>
+          {' · '}
+          Skeptical? <Link href="/what-could-go-wrong" style={{ color: 'var(--color-sky)' }}>Read what could go wrong →</Link>
         </p>
       </section>
 

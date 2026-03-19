@@ -565,7 +565,7 @@ export default function FederationEconomicsPage() {
             </p>
           </div>
 
-          <div>
+          <div id="value-conflicts" className="scroll-mt-24">
             <h3 className="text-lg font-semibold text-gray-300 mb-3">
               When Values Themselves Conflict
             </h3>
