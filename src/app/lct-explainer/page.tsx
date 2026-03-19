@@ -792,6 +792,14 @@ export default function LCTExplainerPage() {
           </div>
         )}
 
+        {/* "You've got the basics" divider — visitor friction Mar 17 HIGH */}
+        <div className="border-t border-gray-700 pt-8 mb-8 text-center">
+          <div className="inline-flex items-center gap-3 bg-green-950/30 border border-green-800/30 rounded-full px-6 py-2">
+            <span className="text-green-400 text-sm font-semibold">You&apos;ve got the basics</span>
+            <span className="text-gray-500 text-xs">Everything below is optional deep-dives for the curious</span>
+          </div>
+        </div>
+
         {/* What Happens When Things Go Wrong */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <h2 className="text-2xl font-bold mb-6 text-gray-100">What Happens When Things Go Wrong?</h2>
@@ -883,38 +891,45 @@ export default function LCTExplainerPage() {
           </details>
         </div>
 
-        {/* How Witnesses Are Coordinated */}
+        {/* How Witnesses Are Coordinated (collapsed for page length) */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-100">Who Picks the Witnesses?</h2>
-          <p className="text-gray-300 mb-4">
-            Natural follow-up question: if witnesses are so important, who chooses them? And what
-            stops them from lying?
-          </p>
-          <div className="space-y-3 text-gray-400 text-sm">
-            <p>
-              <strong className="text-gray-300">Selection is reputation-weighted, not random.</strong>{" "}
-              Witnesses are drawn from a federation-wide pool, weighted by their track record of
-              accurate attestations. Like jury selection, the goal is diverse, qualified, independent
-              observers — not hand-picked allies.
-            </p>
-            <p>
-              <strong className="text-gray-300">Lying has consequences.</strong>{" "}
-              Witnesses stake ATP when they attest. If their attestation is later proven false or
-              biased (by cross-checking against other witnesses), they lose their stake — like
-              validators in proof-of-stake systems. This economic penalty makes dishonest witnessing
-              unprofitable.
-            </p>
-            <p>
-              <strong className="text-gray-300">Load balancing prevents exhaustion.</strong>{" "}
-              No single witness can be overloaded. The system distributes attestation requests across
-              the pool, tracks response times and availability, and penalizes witnesses who drop
-              below service commitments.
-            </p>
-          </div>
-          <p className="text-gray-500 text-xs mt-4 italic">
-            Witness network coordination: 90 validated checks. Pool management, quorum selection,
-            SLA tracking, and slashing protocols all formally specified.
-          </p>
+          <details>
+            <summary className="text-2xl font-bold text-gray-100 cursor-pointer hover:text-purple-400 transition-colors list-none flex justify-between items-center">
+              <span>Who Picks the Witnesses?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4">
+              <p className="text-gray-300 mb-4">
+                Natural follow-up question: if witnesses are so important, who chooses them? And what
+                stops them from lying?
+              </p>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <p>
+                  <strong className="text-gray-300">Selection is reputation-weighted, not random.</strong>{" "}
+                  Witnesses are drawn from a federation-wide pool, weighted by their track record of
+                  accurate attestations. Like jury selection, the goal is diverse, qualified, independent
+                  observers — not hand-picked allies.
+                </p>
+                <p>
+                  <strong className="text-gray-300">Lying has consequences.</strong>{" "}
+                  Witnesses stake ATP when they attest. If their attestation is later proven false or
+                  biased (by cross-checking against other witnesses), they lose their stake — like
+                  validators in proof-of-stake systems. This economic penalty makes dishonest witnessing
+                  unprofitable.
+                </p>
+                <p>
+                  <strong className="text-gray-300">Load balancing prevents exhaustion.</strong>{" "}
+                  No single witness can be overloaded. The system distributes attestation requests across
+                  the pool, tracks response times and availability, and penalizes witnesses who drop
+                  below service commitments.
+                </p>
+              </div>
+              <p className="text-gray-500 text-xs mt-4 italic">
+                Witness network coordination: 90 validated checks. Pool management, quorum selection,
+                SLA tracking, and slashing protocols all formally specified.
+              </p>
+            </div>
+          </details>
         </div>
 
         {/* Practical UX — What Would This Actually Feel Like? */}
@@ -991,11 +1006,14 @@ export default function LCTExplainerPage() {
           </div>
         </div>
 
-        {/* Why LCTs Enable Trust-Native Societies */}
+        {/* Why LCTs Enable Trust-Native Societies (collapsed for page length) */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
-          <h2 className="text-2xl font-bold mb-6 text-gray-100">Why LCTs Enable Trust-Native Societies</h2>
-
-          <div className="space-y-6">
+          <details>
+          <summary className="text-2xl font-bold text-gray-100 cursor-pointer hover:text-purple-400 transition-colors list-none flex justify-between items-center">
+            <span>Why LCTs Enable Trust-Native Societies</span>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div className="mt-6 space-y-6">
             <div>
               <h3 className="text-xl font-bold mb-3 text-purple-400">1. Verifiable Presence</h3>
               <p className="text-gray-300 mb-2">
@@ -1070,6 +1088,7 @@ export default function LCTExplainerPage() {
               (context graphs rooted in verified presence).
             </p>
           </div>
+          </details>
 
           {/* FAQ: Hardware Requirements */}
           <div className="mt-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg">
