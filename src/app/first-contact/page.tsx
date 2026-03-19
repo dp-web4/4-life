@@ -164,7 +164,7 @@ export default function FirstContactPage() {
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm text-gray-400">Your Progress</span>
             <span className="text-sm text-gray-400">
-              Step {["welcome", "simulation", "narrative", "concepts", "next-steps"].indexOf(currentStep) + 1} of 5
+              {({ welcome: "Welcome", simulation: "Alice\u2019s Story", narrative: "What Happened", concepts: "Key Concepts", "next-steps": "Next Steps" } as Record<string, string>)[currentStep]}
             </span>
           </div>
           <div className="w-full bg-gray-800 rounded-full h-2">

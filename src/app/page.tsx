@@ -48,7 +48,7 @@ export default function HomePage() {
             onClick={() => setActiveTab('deepdive')}
             className={`tab-button ${activeTab === 'deepdive' ? 'active' : ''}`}
           >
-            Explore All Topics
+            Browse Topic Library
           </button>
         </div>
         <div style={{ marginTop: '0.75rem', display: 'flex', justifyContent: 'center', gap: '1rem', alignItems: 'center' }}>
@@ -63,6 +63,18 @@ export default function HomePage() {
             textDecoration: 'none',
           }}>
             Just 2 minutes? Read the TL;DR →
+          </Link>
+          <Link href="/your-internet" style={{
+            padding: '0.5rem 1rem',
+            background: 'rgba(168, 85, 247, 0.1)',
+            border: '1px solid rgba(168, 85, 247, 0.3)',
+            borderRadius: '0.5rem',
+            color: 'rgb(168, 85, 247)',
+            fontWeight: 600,
+            fontSize: '0.85rem',
+            textDecoration: 'none',
+          }}>
+            How would this change my internet? →
           </Link>
         </div>
       </section>
