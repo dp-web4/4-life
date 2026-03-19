@@ -1339,6 +1339,15 @@ export default function WhyWeb4Page() {
                 similar to how academic credentials are recognized internationally but weighted
                 differently by each institution.
               </p>
+              <p>
+                What about societies with <strong>fundamentally incompatible values</strong>? Web4
+                doesn&apos;t force consensus &mdash; societies that can&apos;t reconcile their norms simply
+                don&apos;t federate. See{' '}
+                <Link href="/federation-economics#value-conflicts" className="text-sky-400 hover:underline">
+                  When Values Themselves Conflict
+                </Link>{' '}
+                for how bridging societies and value boundaries work.
+              </p>
             </div>
           </details>
 
