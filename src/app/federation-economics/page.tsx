@@ -446,11 +446,32 @@ export default function FederationEconomicsPage() {
         </div>
       </section>
 
-      {/* Technical Details */}
-      <section>
-        <h2>Technical Details</h2>
+      {/* Basics divider */}
+      <section className="max-w-4xl mx-auto">
+        <div className="border-t border-gray-700/50 pt-8 pb-4">
+          <div className="flex items-center gap-4">
+            <div className="text-2xl">&#9989;</div>
+            <div>
+              <p className="text-lg text-gray-300 font-semibold">You&apos;ve got the basics</p>
+              <p className="text-sm text-gray-500">
+                Markets self-organize through ATP price signals. No central planner needed.
+                Everything below goes deeper into the mechanics — expand any section you&apos;re curious about.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <div className="space-y-6">
+      {/* Technical Details — collapsed */}
+      <section>
+        <details className="group">
+        <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors">
+          <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
+          <h2 className="text-2xl font-bold text-gray-100">Technical Details</h2>
+          <span className="text-sm text-gray-500 ml-auto">Parameters, transfer mechanics, implementation</span>
+        </summary>
+
+        <div className="space-y-6 mt-6">
           <div>
             <h3 className="text-lg font-semibold text-gray-300 mb-3">
               Service Capability Dimensions
@@ -699,11 +720,18 @@ export default function FederationEconomicsPage() {
             </p>
           </div>
         </div>
+        </details>
       </section>
 
-      {/* Federated Trust Learning */}
+      {/* Federated Trust Learning — collapsed */}
       <section>
-        <h2>How Federations Learn Without Sharing Secrets</h2>
+        <details className="group">
+        <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors">
+          <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
+          <h2 className="text-2xl font-bold text-gray-100">How Federations Learn Without Sharing Secrets</h2>
+          <span className="text-sm text-gray-500 ml-auto">Privacy-preserving federated learning</span>
+        </summary>
+        <div className="mt-6">
         <p className="text-gray-300 mb-4">
           A privacy paradox: federations improve their trust models by learning from each other,
           but they shouldn&apos;t share raw behavioral data across society boundaries.
@@ -751,11 +779,19 @@ export default function FederationEconomicsPage() {
           simulation-level — real-world differential privacy calibration requires empirical validation
           against actual federation sizes and behavioral distributions.
         </p>
+      </div>
+        </details>
       </section>
 
-      {/* Federation Mergers */}
+      {/* Federation Mergers — collapsed */}
       <section className="max-w-4xl mx-auto mt-16">
-        <h2 className="text-3xl font-bold mb-4 text-gray-100">When Federations Merge</h2>
+        <details className="group">
+        <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors">
+          <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
+          <h2 className="text-2xl font-bold text-gray-100">When Federations Merge</h2>
+          <span className="text-sm text-gray-500 ml-auto">Shapley values, Nash bargaining</span>
+        </summary>
+        <div className="mt-4">
         <p className="text-gray-400 mb-6">
           What happens when two Web4 federations decide to combine? The merged federation
           creates new value — access to more specialists, broader trust networks, economies of scale.
@@ -798,11 +834,19 @@ export default function FederationEconomicsPage() {
           across 59 checks (session 32). All solutions satisfy individual rationality — no federation
           is forced into a merger that makes it worse off.
         </p>
+      </div>
+        </details>
       </section>
 
-      {/* Trust Network Flow */}
+      {/* Trust Network Flow — collapsed */}
       <section>
-        <h2>Trust Flows Like Water</h2>
+        <details className="group">
+        <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors">
+          <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
+          <h2 className="text-2xl font-bold text-gray-100">Trust Flows Like Water</h2>
+          <span className="text-sm text-gray-500 ml-auto">Max-flow, bottlenecks, bridge agents</span>
+        </summary>
+        <div className="mt-4">
         <p>
           Federations connect trust networks the way pipes connect water systems. Trust flows through
           paths between communities, and the <strong>weakest connection limits the whole flow</strong>.
@@ -845,6 +889,8 @@ export default function FederationEconomicsPage() {
           Trust network flow analysis: max-flow/min-cut applied to trust graphs (session 33).
           Bottleneck paths and vulnerability detection implemented.
         </p>
+      </div>
+        </details>
       </section>
 
       {/* How Your Trust Travels */}
