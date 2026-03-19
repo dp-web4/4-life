@@ -224,8 +224,8 @@ export default function MarkovRelevancyHorizonPage() {
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-8">
             <p className="text-gray-300 mb-4">
-              Your MRH is an <strong className="text-cyan-400">RDF graph</strong> - a network of entities and their relationships.
-              Each entity you interact with creates a <strong className="text-cyan-400">relationship edge</strong> in the graph.
+              Your MRH is a <strong className="text-cyan-400">relationship network</strong> — a map of entities and their connections.
+              Each entity you interact with creates a <strong className="text-cyan-400">relationship edge</strong> in the network.
               Context emerges from <strong className="text-cyan-400">who you&apos;re connected to</strong>, not from abstract metrics.
             </p>
             <p className="text-gray-300">
@@ -741,8 +741,8 @@ export default function MarkovRelevancyHorizonPage() {
               </h3>
               <p className="text-gray-300 text-sm">
                 Find entities through trust paths in your MRH. &quot;People in your network
-                who are surgeons&quot; or &quot;Mechanics trusted by people you trust&quot; -
-                SPARQL queries on your relationship graph.
+                who are surgeons&quot; or &quot;Mechanics trusted by people you trust&quot; —
+                structured queries on your relationship graph.
               </p>
             </div>
 
@@ -965,7 +965,7 @@ SELECT ?entity ?distance WHERE {
               <div className="flex items-start gap-3">
                 <div className="text-cyan-400 font-bold">3.</div>
                 <div>
-                  <strong className="text-cyan-400">RDF graphs enable semantic relationships</strong> -
+                  <strong className="text-cyan-400">Typed relationships enable semantic context</strong> -
                   Bound, paired, witnessed relationships create different contexts
                 </div>
               </div>
