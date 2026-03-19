@@ -725,6 +725,46 @@ export default function TrustTensorPage() {
         </div>
       </section>
 
+      {/* T3/V3 Bridge — how they work together (visitor friction Mar 15-16) */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/30 border border-sky-700/30 rounded-xl p-8">
+          <h2 className="text-2xl font-bold mb-4 text-gray-100">
+            How T3 and V3 Work Together
+          </h2>
+          <p className="text-gray-300 text-sm mb-4">
+            T3 measures <strong className="text-sky-400">who you are</strong> (your trustworthiness as a person).
+            V3 measures <strong className="text-purple-400">what you produce</strong> (the quality of each specific output).
+            They&apos;re separate scores that feed into a single outcome: <strong>how much ATP you earn</strong>.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div className="bg-sky-950/40 border border-sky-800/30 rounded-lg p-4 text-center">
+              <div className="text-sky-400 font-bold mb-1">T3: The Person</div>
+              <div className="text-xs text-gray-400">Are you talented, trained, and reliable in this role?</div>
+              <div className="text-gray-500 text-xs mt-2">Updates slowly, per action</div>
+            </div>
+            <div className="bg-gray-800/50 border border-gray-700/50 rounded-lg p-4 flex items-center justify-center text-2xl text-gray-500">
+              &times;
+            </div>
+            <div className="bg-purple-950/40 border border-purple-800/30 rounded-lg p-4 text-center">
+              <div className="text-purple-400 font-bold mb-1">V3: The Work</div>
+              <div className="text-xs text-gray-400">Is this output useful, accurate, and well-reasoned?</div>
+              <div className="text-gray-500 text-xs mt-2">Scored per output</div>
+            </div>
+          </div>
+          <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4 text-sm text-gray-300">
+            <p className="mb-2">
+              <strong className="text-gray-200">The feedback loop:</strong> High T3 (trusted person) + High V3 (great work) = maximum ATP reward.
+              But a trusted person who produces sloppy work (high T3, low V3) earns less than their reputation suggests.
+              And a newcomer who produces brilliant work (low T3, high V3) earns more than their reputation would predict.
+            </p>
+            <p className="text-gray-400 text-xs">
+              Over time, T3 and V3 converge: consistently producing high-V3 work raises your T3.
+              Consistently producing low-V3 work drags your T3 down. Your reputation tracks your actual output quality.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* V3 Output Scorer — interactive mini-interaction */}
       <V3OutputScorer />
 
@@ -789,6 +829,16 @@ export default function TrustTensorPage() {
               score&rdquo; for Alice would average these wildly different capabilities into a meaningless
               number. T3 keeps the roles separate so societies can make informed decisions.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* "You've got the basics" divider — visitor friction Mar 17 HIGH */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <div className="border-t border-gray-700 pt-8 text-center">
+          <div className="inline-flex items-center gap-3 bg-green-950/30 border border-green-800/30 rounded-full px-6 py-2">
+            <span className="text-green-400 text-sm font-semibold">You&apos;ve got the basics</span>
+            <span className="text-gray-500 text-xs">Everything below is optional deep-dives for the curious</span>
           </div>
         </div>
       </section>
@@ -1073,15 +1123,18 @@ Temperament:  30-day half-life (recent behavior matters most)
         <LiveTrustEngine />
       </section>
 
-      {/* Trust at Scale — fractal composition */}
+      {/* Trust at Scale — collapsed for page length */}
       <section className="max-w-4xl mx-auto mt-16">
-        <h2 className="text-3xl font-bold mb-6 text-gray-100">
-          Trust at Scale
-        </h2>
+        <details className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8">
+          <summary className="text-2xl font-bold text-gray-100 cursor-pointer hover:text-sky-400 transition-colors list-none flex justify-between items-center">
+            <span>Trust at Scale</span>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div className="mt-4">
         <p className="text-gray-400 mb-6">
           T3 doesn&apos;t just work for individuals. The same three dimensions apply at every level of organization:
         </p>
-        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 space-y-4">
+        <div className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 text-center text-sm">
             <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-3">
               <div className="text-sky-400 font-bold mb-1">Person</div>
@@ -1110,13 +1163,18 @@ Temperament:  30-day half-life (recent behavior matters most)
             and AI agents are bounded by their weakest dependency. The math varies, but the three dimensions stay the same.
           </p>
         </div>
+          </div>
+        </details>
       </section>
 
-      {/* Evidence Strength */}
+      {/* Evidence Strength — collapsed for page length */}
       <section className="max-w-4xl mx-auto mt-16">
-        <h2 className="text-3xl font-bold mb-6 text-gray-100">
-          How Trust Evidence Is Weighted
-        </h2>
+        <details className="bg-gray-800 border border-gray-700 rounded-xl p-8">
+          <summary className="text-2xl font-bold text-gray-100 cursor-pointer hover:text-sky-400 transition-colors list-none flex justify-between items-center">
+            <span>How Trust Evidence Is Weighted</span>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div className="mt-4">
         <p className="text-gray-400 mb-6">
           Not all trust signals carry equal weight. A direct observation of someone&apos;s work
           is stronger evidence than hearing about it through gossip. Web4 formalizes this
@@ -1149,12 +1207,18 @@ Temperament:  30-day half-life (recent behavior matters most)
             This is why MRH caps trust at 3 hops — beyond that, evidence is too diluted to be meaningful.
           </p>
         </div>
+          </div>
+        </details>
       </section>
 
-      {/* What Trust Scores Actually Mean */}
+      {/* What Trust Scores Actually Mean — collapsed for page length */}
       <section className="max-w-4xl mx-auto mt-12">
-        <div className="bg-gray-900/50 border border-gray-700 rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-sky-400 mb-2">What does &ldquo;trust = 0.7&rdquo; actually mean?</h3>
+        <details className="bg-gray-900/50 border border-gray-700 rounded-xl p-6">
+          <summary className="text-lg font-semibold text-sky-400 cursor-pointer hover:text-sky-300 transition-colors list-none flex justify-between items-center">
+            <span>What does &ldquo;trust = 0.7&rdquo; actually mean?</span>
+            <span className="text-gray-500 text-lg">+</span>
+          </summary>
+          <div className="mt-3">
           <p className="text-gray-300 text-sm mb-3">
             Web4 trust scores are designed to be <strong className="text-white">calibrated probabilities</strong> —
             not arbitrary ratings. When a trust score is 0.7, entities at that level should behave
@@ -1173,7 +1237,8 @@ Temperament:  30-day half-life (recent behavior matters most)
           <p className="text-gray-500 text-xs mt-3 italic">
             Trust calibration validation: Session 32, 117 checks across scoring rules, ECE &lt; 0.05 target.
           </p>
-        </div>
+          </div>
+        </details>
       </section>
 
       {/* Switching Roles FAQ */}
@@ -1253,41 +1318,6 @@ Temperament:  30-day half-life (recent behavior matters most)
             precision costs more <TermTooltip term="ATP" /> to prevent score inflation.
           </p>
         </div>
-      </section>
-
-      {/* Common Question: Role Transitions */}
-      <section className="max-w-4xl mx-auto mt-12">
-        <details className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
-          <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-            <span>What happens when I switch roles? Do I start from zero?</span>
-            <span className="text-gray-500 text-xl">+</span>
-          </summary>
-          <div className="mt-4 text-gray-300 text-sm space-y-3">
-            <p>
-              <strong>Yes, for the role-specific dimensions — and that&apos;s the point.</strong> If you&apos;re a
-              great data analyst who transitions to management, your analyst T3 stays (Talent 0.85, Training 0.82,
-              Temperament 0.90) but your management T3 starts fresh (0.50, 0.50, 0.50). This is deliberate:
-              being excellent at analysis doesn&apos;t make you a good manager.
-            </p>
-            <p>
-              However, <strong className="text-amber-300">Temperament carries across roles</strong>. Your
-              behavioral consistency (meeting commitments, communicating honestly, handling disagreements
-              constructively) is the same person regardless of role. If you have a Temperament of 0.90 as an
-              analyst, you start management with an elevated Temperament — because reliable people tend to
-              be reliable in new contexts too.
-            </p>
-            <p>
-              The practical effect: role transitions are <em>faster</em> for trustworthy people, not because
-              the system gives them credit for unrelated skills, but because the dimension that measures
-              character (Temperament) is genuinely transferable, while the dimensions that measure competence
-              (Talent, Training) correctly reset.
-            </p>
-            <p className="text-amber-400/80 text-xs">
-              Think of it like a doctor becoming a chef — their medical skill doesn&apos;t help in the kitchen,
-              but their work ethic and professionalism do. T3 captures exactly this distinction.
-            </p>
-          </div>
-        </details>
       </section>
 
       {/* Footer Note */}
