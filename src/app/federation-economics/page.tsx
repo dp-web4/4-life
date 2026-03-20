@@ -448,14 +448,14 @@ export default function FederationEconomicsPage() {
 
       {/* Basics divider */}
       <section className="max-w-4xl mx-auto">
-        <div className="border-t border-gray-700/50 pt-8 pb-4">
-          <div className="flex items-center gap-4">
+        <div className="border-t-2 border-emerald-700/40 pt-8 pb-4 mt-4">
+          <div className="flex items-center gap-4 bg-emerald-900/20 border border-emerald-700/30 rounded-xl p-4">
             <div className="text-2xl">&#9989;</div>
             <div>
-              <p className="text-lg text-gray-300 font-semibold">You&apos;ve got the basics</p>
-              <p className="text-sm text-gray-500">
+              <p className="text-lg text-emerald-300 font-semibold">You&apos;ve got the basics</p>
+              <p className="text-sm text-gray-400">
                 Markets self-organize through ATP price signals. No central planner needed.
-                Everything below goes deeper into the mechanics — expand any section you&apos;re curious about.
+                Everything below is optional — expand any section you&apos;re curious about.
               </p>
             </div>
           </div>

@@ -479,6 +479,10 @@ export default function WhyWeb4Page() {
                 coverage. A trust score based on 2 platforms is less meaningful than one based on 200.
                 Network effects work both for and against adoption.
               </p>
+              <p className="text-gray-500 text-xs mt-2">
+                Want a concrete example? See &ldquo;What&apos;s the concrete adoption path?&rdquo; in the
+                deeper questions below for a Discord and Stack Overflow walkthrough.
+              </p>
             </div>
           </details>
 
