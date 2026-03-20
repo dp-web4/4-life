@@ -227,6 +227,49 @@ export default function ComparePage() {
           </p>
         </div>
 
+        {/* Key Findings — what comparisons reveal */}
+        <div className="grid gap-4 md:grid-cols-3 mb-8">
+          <div className="bg-slate-800/60 rounded-lg p-5 border border-emerald-800/30">
+            <div className="text-emerald-400 text-sm font-semibold mb-2">
+              Finding #1
+            </div>
+            <h3 className="text-white font-medium mb-2">
+              Mechanisms matter more over time
+            </h3>
+            <p className="text-sm text-slate-400">
+              With Web4 trust mechanisms, agents diverge from baseline after ~20
+              actions. Early behavior looks identical — the feedback loops need
+              time to compound.
+            </p>
+          </div>
+          <div className="bg-slate-800/60 rounded-lg p-5 border border-sky-800/30">
+            <div className="text-sky-400 text-sm font-semibold mb-2">
+              Finding #2
+            </div>
+            <h3 className="text-white font-medium mb-2">
+              Rules create order; learning creates wisdom
+            </h3>
+            <p className="text-sm text-slate-400">
+              Society rules produce immediate cooperation. Cross-life learning
+              produces slower but more adaptable agents. The strongest societies
+              combine both.
+            </p>
+          </div>
+          <div className="bg-slate-800/60 rounded-lg p-5 border border-purple-800/30">
+            <div className="text-purple-400 text-sm font-semibold mb-2">
+              Finding #3
+            </div>
+            <h3 className="text-white font-medium mb-2">
+              Generalists start slower but reach further
+            </h3>
+            <p className="text-sm text-slate-400">
+              Agents learning 5 domains at once build trust more slowly — but
+              their combined expertise across domains eventually surpasses
+              single-domain specialists.
+            </p>
+          </div>
+        </div>
+
         {/* Comparison View — shown first so visitors see results immediately */}
         {loadedSims.length > 0 && (
           <div className="mb-8">

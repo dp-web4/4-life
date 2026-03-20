@@ -217,6 +217,43 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         </p>
       </section>
 
+      {/* What would it look like? — Day in Web4 teaser */}
+      <section className="card" style={{
+        border: '1px solid rgba(56, 189, 248, 0.2)',
+        background: 'linear-gradient(135deg, rgba(56, 189, 248, 0.05) 0%, var(--color-dark-surface) 100%)',
+        padding: '1.5rem 1.75rem',
+      }}>
+        <h2 style={{ fontSize: '1.2rem', marginBottom: '0.75rem' }}>What would it actually look like?</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
+          {[
+            { icon: '📧', label: 'Web4 Mail', detail: '0 spam — every sender has a trust score' },
+            { icon: '💼', label: 'Web4 Talent', detail: 'Unfakeable skills from 156 verified projects' },
+            { icon: '⭐', label: 'Web4 Reviews', detail: 'Every reviewer has skin in the game' },
+          ].map(mock => (
+            <div key={mock.label} style={{
+              padding: '0.75rem', borderRadius: '0.5rem',
+              background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)',
+              textAlign: 'center',
+            }}>
+              <div style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>{mock.icon}</div>
+              <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: '0.25rem' }}>{mock.label}</div>
+              <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', lineHeight: 1.4 }}>{mock.detail}</div>
+            </div>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center' }}>
+          <Link href="/day-in-web4#wireframes" style={{
+            color: 'var(--color-sky)', fontSize: '0.9rem', fontWeight: 600,
+            textDecoration: 'none',
+          }}>
+            See the conceptual interface mockups →
+          </Link>
+          <span style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginLeft: '0.75rem' }}>
+            or <Link href="/day-in-web4" style={{ color: 'var(--color-sky)', textDecoration: 'none' }}>walk through a full day</Link>
+          </span>
+        </div>
+      </section>
+
       {/* Where to start */}
       <section className="card card-highlight" style={{
         textAlign: 'center',
@@ -250,6 +287,35 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           Wondering what it would look like? <Link href="/day-in-web4#wireframes" style={{ color: 'var(--color-sky)' }}>See conceptual interface mockups →</Link>
           {' · '}
           Skeptical? <Link href="/what-could-go-wrong" style={{ color: 'var(--color-sky)' }}>Read what could go wrong →</Link>
+        </p>
+      </section>
+
+      {/* What's New */}
+      <section className="card" style={{
+        border: '1px solid var(--color-border)',
+        background: 'var(--color-dark-surface)',
+        padding: '1rem 1.25rem',
+      }}>
+        <h3 style={{ fontSize: '0.95rem', marginBottom: '0.75rem', color: 'var(--color-text-secondary)' }}>
+          What&apos;s New
+        </h3>
+        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
+          {[
+            { date: 'Mar 20', text: 'MRH page rewritten with plain-English headings and party analogy', link: '/markov-relevancy-horizon' },
+            { date: 'Mar 19', text: 'Glossary "Essential terms" filter for newcomers', link: '/glossary' },
+            { date: 'Mar 19', text: 'Federation Economics sections simplified with collapsed technical detail', link: '/federation-economics' },
+            { date: 'Mar 13', text: 'Why Web4 acronym overhaul — plain English first, jargon second', link: '/why-web4' },
+          ].map((item, i) => (
+            <li key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'baseline', fontSize: '0.8rem' }}>
+              <span style={{ color: 'var(--color-text-muted)', fontFamily: 'monospace', fontSize: '0.7rem', flexShrink: 0 }}>{item.date}</span>
+              <Link href={item.link} style={{ color: 'var(--color-text-secondary)', textDecoration: 'none' }}>
+                {item.text}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.7rem', marginTop: '0.5rem', marginBottom: 0 }}>
+          Updated regularly. Last change: March 2026.
         </p>
       </section>
 

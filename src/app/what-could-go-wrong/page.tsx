@@ -589,8 +589,9 @@ export default function WhatCouldGoWrongPage() {
                 <p>
                   <strong className="text-gray-300">Cross-society policies handle conflicts.</strong>{" "}
                   When federated societies have different rules, the society closer to the action
-                  (MRH-weighted priority) takes precedence. Circuit breakers automatically isolate
-                  partners whose behavior diverges too far.
+                  takes precedence — for example, if you&apos;re posting in a coding community but also belong to a gardening
+                  forum, the coding community&apos;s rules apply because that&apos;s where the action is happening (MRH-weighted priority).
+                  Circuit breakers automatically isolate partners whose behavior diverges too far.
                 </p>
               </div>
               <p>
