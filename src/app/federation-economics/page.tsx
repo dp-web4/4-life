@@ -729,7 +729,7 @@ export default function FederationEconomicsPage() {
         <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors">
           <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
           <h2 className="text-2xl font-bold text-gray-100">How Federations Learn Without Sharing Secrets</h2>
-          <span className="text-sm text-gray-500 ml-auto">Privacy-preserving federated learning</span>
+          <span className="text-sm text-gray-500 ml-auto">How communities learn from each other safely</span>
         </summary>
         <div className="mt-6">
         <p className="text-gray-300 mb-4">
@@ -789,7 +789,7 @@ export default function FederationEconomicsPage() {
         <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors">
           <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
           <h2 className="text-2xl font-bold text-gray-100">When Federations Merge</h2>
-          <span className="text-sm text-gray-500 ml-auto">Shapley values, Nash bargaining</span>
+          <span className="text-sm text-gray-500 ml-auto">Fair split calculations</span>
         </summary>
         <div className="mt-4">
         <p className="text-gray-400 mb-6">
@@ -844,7 +844,7 @@ export default function FederationEconomicsPage() {
         <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors">
           <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
           <h2 className="text-2xl font-bold text-gray-100">Trust Flows Like Water</h2>
-          <span className="text-sm text-gray-500 ml-auto">Max-flow, bottlenecks, bridge agents</span>
+          <span className="text-sm text-gray-500 ml-auto">Bottlenecks and bridge connectors</span>
         </summary>
         <div className="mt-4">
         <p>

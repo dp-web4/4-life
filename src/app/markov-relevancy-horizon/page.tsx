@@ -454,32 +454,32 @@ export default function MarkovRelevancyHorizonPage() {
         {/* The Markov Property Section */}
         <section className="max-w-4xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-6 text-cyan-400">
-            Why &quot;Markov&quot;? The Horizon Boundary
+            Why a 3-Hop Limit?
           </h2>
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-6">
             <p className="text-gray-300 mb-4">
-              In probability theory, a <strong className="text-cyan-400">Markov property</strong> means
-              the future depends only on the present state, not the full history.
-              In Web4, the <strong className="text-cyan-400">Markov Relevancy Horizon</strong> means
+              Think of how trust works in real life: you trust your friends, you somewhat trust
+              friends-of-friends, and beyond that, people are strangers. Web4 formalizes this
+              as the <strong className="text-cyan-400">Markov Relevancy Horizon</strong> —
               your decisions depend only on entities within your horizon, not the entire network.
             </p>
             <p className="text-gray-300">
-              <strong className="text-cyan-400">Key principle</strong>: Beyond depth 3, relationships
-              become statistically irrelevant to your trust decisions. This isn&apos;t arbitrary -
-              it&apos;s based on small-world network properties and information theory.
+              <strong className="text-cyan-400">Key principle</strong>: Beyond 3 hops, relationships
+              become irrelevant to your trust decisions. This mirrors how social networks
+              actually work — you rarely act on information from a friend-of-a-friend-of-a-friend-of-a-friend.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-gray-800/50 border border-cyan-700/30 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-cyan-400 mb-3">
-                Computational Efficiency
+                Keeps Things Fast
               </h3>
               <p className="text-gray-300 text-sm">
-                Limiting horizon depth means trust calculations scale O(d³) where d is depth,
-                not O(n) where n is total network size. A billion-entity Web4 network remains
-                computationally tractable because each entity only considers ~1000 relationships.
+                Because each entity only looks 3 hops deep, trust calculations stay fast
+                regardless of network size. Even a billion-entity Web4 network works smoothly
+                because each entity only considers about 1,000 relationships — not the whole network.
               </p>
             </div>
 
@@ -496,12 +496,12 @@ export default function MarkovRelevancyHorizonPage() {
 
             <div className="bg-gray-800/50 border border-cyan-700/30 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-cyan-400 mb-3">
-                Fractal Composition
+                Works at Every Scale
               </h3>
               <p className="text-gray-300 text-sm">
-                The same MRH principle works at every scale: personal relationships,
+                The same 3-hop principle works at every level: personal relationships,
                 team dynamics, organizational structure, ecosystem collaborations,
-                planetary governance. Context boundaries compose fractally.
+                even planetary governance. The pattern repeats from small to large.
               </p>
             </div>
 
@@ -521,7 +521,7 @@ export default function MarkovRelevancyHorizonPage() {
         {/* Trust Propagation Section */}
         <section className="max-w-4xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-6 text-cyan-400">
-            Trust Propagation Through MRH
+            How Trust Spreads Through Connections
           </h2>
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-6">
@@ -574,50 +574,56 @@ export default function MarkovRelevancyHorizonPage() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-gray-800/50 border border-cyan-700/30 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-cyan-400 mb-3">
-                Multiplicative Decay
+                Each Hop Weakens Trust
               </h3>
               <p className="text-gray-300 text-sm mb-3">
-                Trust along a path decays multiplicatively:
+                Every hop costs 30% of the remaining trust. Like a game of telephone — each
+                retelling loses fidelity:
               </p>
-              <div className="bg-gray-900/50 rounded px-3 py-2 text-sm font-mono text-cyan-300 mb-3">
-                trust = t₁ × t₂ × t₃ × decay^depth
+              <div className="text-sm text-gray-300 mb-3 space-y-1">
+                <div><strong className="text-cyan-300">You</strong> → 100% trust (yourself)</div>
+                <div><strong className="text-cyan-300">Direct friend</strong> → 70%</div>
+                <div><strong className="text-cyan-300">Friend of friend</strong> → 49%</div>
+                <div><strong className="text-cyan-300">3 hops away</strong> → 34%</div>
+                <div><strong className="text-gray-500">Beyond</strong> → 0% (stranger)</div>
               </div>
+              <details className="text-xs text-gray-500">
+                <summary className="cursor-pointer hover:text-gray-400">Formula</summary>
+                <div className="mt-1 font-mono text-cyan-400">trust = t₁ × t₂ × t₃ × 0.7^depth</div>
+                <div className="mt-1">Example: three 0.9-trust edges at 3 hops = 0.9³ × 0.7³ = 0.25</div>
+              </details>
+            </div>
+
+            <div className="bg-gray-800/50 border border-cyan-700/30 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-cyan-400 mb-3">
+                Multiple Paths Strengthen Trust
+              </h3>
+              <p className="text-gray-300 text-sm mb-3">
+                If two separate people vouch for someone, that&apos;s stronger than one person vouching.
+                Multiple independent trust paths combine to create stronger connections:
+              </p>
               <p className="text-gray-400 text-xs mb-2">
-                Canonical decay factor: <strong className="text-cyan-300">0.7 per hop</strong>.
-                Self = 1.0, direct = 0.7, 2 hops = 0.49, 3 hops = 0.34, beyond = 0.
+                <strong className="text-cyan-300">Example:</strong> Two friends independently trust Bob at 0.7 each.
+                Your combined trust in Bob: <strong className="text-cyan-300">0.91</strong> — much stronger than either path alone.
               </p>
-              <p className="text-gray-400 text-xs">
-                A path with three 0.9 trust edges: 0.9³ × 0.7³ = 0.25 effective trust
-              </p>
+              <details className="text-xs text-gray-500">
+                <summary className="cursor-pointer hover:text-gray-400">Formula</summary>
+                <div className="mt-1 font-mono text-cyan-400">combined = 1 - ∏(1 - pathᵢ)</div>
+              </details>
             </div>
 
             <div className="bg-gray-800/50 border border-cyan-700/30 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-cyan-400 mb-3">
-                Multiple Paths
-              </h3>
-              <p className="text-gray-300 text-sm mb-3">
-                Multiple trust paths combine probabilistically:
-              </p>
-              <div className="bg-gray-900/50 rounded px-3 py-2 text-sm font-mono text-cyan-300 mb-3">
-                combined = 1 - ∏(1 - pathᵢ)
-              </div>
-              <p className="text-gray-400 text-xs">
-                Two independent 0.7 trust paths: 1 - (0.3 × 0.3) = 0.91 combined
-              </p>
-            </div>
-
-            <div className="bg-gray-800/50 border border-cyan-700/30 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-cyan-400 mb-3">
-                Graph Patterns
+                What Shapes Tell Us
               </h3>
               <p className="text-gray-300 text-sm mb-4">
-                Trust emerges from graph structure:
+                Trust patterns reveal different kinds of reputation:
               </p>
               <ul className="text-xs text-gray-400 space-y-1">
-                <li>• High in-degree → Reliable</li>
-                <li>• Stable pairings → Operational trust</li>
-                <li>• Binding clusters → Institutional trust</li>
-                <li>• Central position → Network authority</li>
+                <li>• <strong className="text-gray-300">Many connections</strong> → widely trusted</li>
+                <li>• <strong className="text-gray-300">Long-term partnerships</strong> → operational reliability</li>
+                <li>• <strong className="text-gray-300">Tight-knit groups</strong> → institutional trust</li>
+                <li>• <strong className="text-gray-300">Well-connected position</strong> → community influence</li>
               </ul>
             </div>
           </div>
@@ -626,7 +632,7 @@ export default function MarkovRelevancyHorizonPage() {
         {/* Role-Based Context Section */}
         <section className="max-w-4xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-6 text-cyan-400">
-            Role-Based MRH: Context Is Specific
+            Different Roles, Different Contexts
           </h2>
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-6">
@@ -805,9 +811,9 @@ export default function MarkovRelevancyHorizonPage() {
                 MRH + T3 (Trust Tensor)
               </h3>
               <p className="text-gray-300 text-sm">
-                T3 trust scores exist as edge weights in MRH graph. Multi-dimensional trust
-                (Talent, Training, Temperament per role) flows through relationship paths.
-                Trust propagation respects dimension-specific and role-specific relevance.
+                Your T3 trust scores (Talent, Training, Temperament) travel along your
+                relationship connections. When trust spreads through friends-of-friends,
+                each dimension propagates independently and within the relevant role context.
               </p>
             </div>
 
@@ -816,9 +822,10 @@ export default function MarkovRelevancyHorizonPage() {
                 MRH + CI (Coherence Index)
               </h3>
               <p className="text-gray-300 text-sm">
-                Relational coherence (one of CI&apos;s 4 dimensions) checks MRH consistency.
-                If you claim relationships that aren&apos;t in your MRH graph, relational
-                coherence drops. CI modulates trust based on relationship graph integrity.
+                One of CI&apos;s four dimensions checks whether your claimed relationships
+                match reality. If you say you know someone but your connection history
+                doesn&apos;t support it, your coherence score drops — a natural lie detector
+                for relationship fraud.
               </p>
             </div>
           </div>
