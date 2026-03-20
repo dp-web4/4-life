@@ -718,7 +718,10 @@ export default function WhyWeb4Page() {
         {/* All other FAQs — collapsed by default */}
         <details className="group">
           <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">
-            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 33 more questions</h3>
+            <div>
+              <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 33 more questions</h3>
+              <p className="text-xs text-gray-600 mt-1">Adoption path, platform integration, governance, AI agents, privacy, scale, and more</p>
+            </div>
             <span className="text-gray-500 text-sm group-open:rotate-90 transition-transform">▶</span>
           </summary>
         <div className="space-y-6">
