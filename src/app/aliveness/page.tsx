@@ -1393,8 +1393,13 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
       </section>
 
       <section>
-        <h2>Groups Can Be Alive Too</h2>
-        <div className="detail-box">
+        <details>
+          <summary style={{ fontSize: '1.5rem', fontWeight: 'bold', cursor: 'pointer', listStyle: 'none', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <span style={{ color: '#6b7280', fontSize: '1rem' }}>▶</span>
+            Groups Can Be Alive Too
+            <span style={{ fontSize: '0.875rem', fontWeight: 'normal', color: '#6b7280' }}>(emergent collectives)</span>
+          </summary>
+        <div className="detail-box" style={{marginTop: '1.5rem'}}>
           <p>
             Everything above describes individual aliveness. But in Web4, <strong>groups</strong> can
             also become alive — not metaphorically, but measurably.
@@ -1448,6 +1453,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             </div>
           </details>
         </div>
+        </details>
       </section>
 
       <section>

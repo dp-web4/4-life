@@ -10,20 +10,24 @@ import { trackPageVisit } from "@/lib/exploration";
 export default function GlossaryPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [matchCount, setMatchCount] = useState(0);
+  const [essentialOnly, setEssentialOnly] = useState(false);
   const glossaryRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => { trackPageVisit('glossary'); }, []);
 
-  // Filter glossary cards by search term using DOM traversal
+  // Filter glossary cards by search term and essential toggle
   useEffect(() => {
     if (!glossaryRef.current) return;
     const term = searchTerm.toLowerCase().trim();
     const cards = glossaryRef.current.querySelectorAll("[data-glossary-term]");
     let visible = 0;
     cards.forEach((card) => {
+      const el = card as HTMLElement;
       const text = card.textContent?.toLowerCase() ?? "";
-      const show = !term || text.includes(term);
-      (card as HTMLElement).style.display = show ? "" : "none";
+      const matchesSearch = !term || text.includes(term);
+      const matchesFilter = !essentialOnly || el.hasAttribute("data-essential");
+      const show = matchesSearch && matchesFilter;
+      el.style.display = show ? "" : "none";
       if (show) visible++;
     });
     setMatchCount(visible);
@@ -34,9 +38,9 @@ export default function GlossaryPage() {
       const anyVisible = Array.from(visibleCards).some(
         (c) => (c as HTMLElement).style.display !== "none"
       );
-      (section as HTMLElement).style.display = !term || anyVisible ? "" : "none";
+      (section as HTMLElement).style.display = (!term && !essentialOnly) || anyVisible ? "" : "none";
     });
-  }, [searchTerm]);
+  }, [searchTerm, essentialOnly]);
 
   return (
     <>
@@ -54,7 +58,34 @@ export default function GlossaryPage() {
           Links to deeper explorations for those who resonate.
         </p>
 
-        {/* Search/Filter */}
+        {/* Essential / All Toggle + Search */}
+        <div className="flex gap-2 mb-3">
+          <button
+            onClick={() => setEssentialOnly(false)}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              !essentialOnly
+                ? "bg-sky-600 text-white"
+                : "bg-gray-800 text-gray-400 hover:text-gray-200 border border-gray-700"
+            }`}
+          >
+            All terms
+          </button>
+          <button
+            onClick={() => setEssentialOnly(true)}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              essentialOnly
+                ? "bg-sky-600 text-white"
+                : "bg-gray-800 text-gray-400 hover:text-gray-200 border border-gray-700"
+            }`}
+          >
+            Essential only
+          </button>
+          {essentialOnly && (
+            <span className="self-center text-sm text-gray-500 ml-2">
+              The 7 terms you need to understand the basics
+            </span>
+          )}
+        </div>
         <div className="mb-4">
           <input
             type="text"
@@ -117,7 +148,7 @@ export default function GlossaryPage() {
         <div className="space-y-8">
 
           {/* Web4 */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">Web4</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               Our working name for <strong>trust-native internet infrastructure</strong>.
@@ -132,7 +163,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* LCT */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Verified Presence — LCT (Linked Context Token)
             </h3>
@@ -161,7 +192,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* ATP */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Energy Budget — ATP (Allocation Transfer Packet)
             </h3>
@@ -201,7 +232,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* T3 */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Trust Tensor (T3)
             </h3>
@@ -233,7 +264,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* MRH */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Context Boundaries (MRH)
             </h3>
@@ -272,7 +303,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* CI */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Coherence Index (CI)
             </h3>
@@ -293,7 +324,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* Karma */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Karma
             </h3>
@@ -400,7 +431,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* Society */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">Society</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               A <strong>collection of entities with shared rules</strong>. Societies can be
@@ -414,7 +445,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* Federation */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">Federation</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               How <strong>separate societies connect and trade</strong>. Federated societies
