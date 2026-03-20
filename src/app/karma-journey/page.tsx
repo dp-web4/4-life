@@ -534,7 +534,7 @@ export default function KarmaJourneyPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
             {[
               { label: 'Life', value: `#${currentLife.lifeNumber}`, color: '#93c5fd' },
-              { label: 'Trust', value: effComp.toFixed(3), color: effComp > 0.7 ? '#6ee7b7' : effComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `Base ${baseComp.toFixed(2)} × CI²` },
+              { label: 'Trust', value: effComp.toFixed(3), color: effComp > 0.7 ? '#6ee7b7' : effComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `Raw ${baseComp.toFixed(2)} → Effective ${effComp.toFixed(3)}` },
               { label: 'Energy', value: `${currentLife.atp}`, color: currentLife.atp > 50 ? '#6ee7b7' : currentLife.atp > 20 ? '#fde68a' : '#fca5a5' },
               { label: 'Consistency', value: currentLife.ci.toFixed(2), color: currentLife.ci > 0.8 ? '#6ee7b7' : currentLife.ci > 0.5 ? '#fde68a' : '#fca5a5' },
             ].map(stat => (
@@ -544,7 +544,7 @@ export default function KarmaJourneyPage() {
               }}>
                 <div style={{ fontSize: '0.6rem', color: 'var(--color-text-muted)' }}>{stat.label}</div>
                 <div style={{ fontSize: '1.1rem', fontWeight: 700, fontFamily: 'monospace', color: stat.color }}>{stat.value}</div>
-                {'hint' in stat && stat.hint && <div style={{ fontSize: '0.5rem', color: 'var(--color-text-muted)', marginTop: '1px' }}>{stat.hint}</div>}
+                {'hint' in stat && stat.hint && <div style={{ fontSize: '0.6rem', color: 'var(--color-text-muted)', marginTop: '2px' }}>{stat.hint}</div>}
               </div>
             ))}
           </div>
