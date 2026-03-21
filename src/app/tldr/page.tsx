@@ -97,7 +97,7 @@ export default function TLDRPage() {
         {/* Status */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 mb-10">
           <h2 className="text-lg font-semibold text-amber-400 mb-2">Where is this now?</h2>
-          <p className="text-gray-300 text-sm leading-relaxed">
+          <p className="text-gray-300 text-sm leading-relaxed mb-3">
             Web4 is <strong>active research with working simulations</strong>, not a deployed product.
             This site lets you watch the mechanics in action — see societies form, trust networks
             emerge, and bad actors fail. The underlying{" "}
@@ -110,6 +110,30 @@ export default function TLDRPage() {
               protocol specification
             </a>{" "}
             is open.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <div>
+              <p className="text-gray-400 font-semibold mb-1">What exists today:</p>
+              <ul className="text-gray-300 space-y-1 list-disc list-inside">
+                <li>Formal protocol specification (open source)</li>
+                <li>~47,000 lines of tested reference code</li>
+                <li>Working trust simulations you can run here</li>
+                <li>This 77-page interactive explainer site</li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-gray-400 font-semibold mb-1">What comes next:</p>
+              <ul className="text-gray-300 space-y-1 list-disc list-inside">
+                <li>Pilot deployment with a small real community</li>
+                <li>Platform integration tests (Tier 1 wrapper)</li>
+                <li>Independent review of trust mechanics</li>
+                <li>Protocol finalization based on real-world data</li>
+              </ul>
+            </div>
+          </div>
+          <p className="text-gray-500 text-xs mt-3 italic">
+            No timeline commitments — this is research, and research takes as long as it takes.
+            The simulations work. The question is whether the real world behaves like the simulations.
           </p>
         </div>
 

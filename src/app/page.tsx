@@ -113,9 +113,10 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           </p>
           <p style={{ margin: 0 }}>
             <strong style={{ color: 'var(--color-text)' }}>Right now, you can&apos;t install it.</strong>{' '}
-            This is an active open-source research project. We&apos;re building the theory, running
-            simulations, and testing whether these ideas actually work. This site lets you
-            explore the concepts and see the results.
+            This is an active open-source research project with a{' '}
+            <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" style={{ color: 'var(--color-sky)', textDecoration: 'none' }}>formal specification</a>,
+            ~47,000 lines of tested reference code, and the working simulations on this site.
+            The mechanics are validated &mdash; the open question is whether real communities behave like the simulations.
           </p>
           <p style={{ margin: 0 }}>
             <strong style={{ color: 'var(--color-text)' }}>Nobody profits from this yet.</strong>{' '}
