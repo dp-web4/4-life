@@ -550,15 +550,17 @@ export default function KarmaJourneyPage() {
           </div>
           {currentLife.tick === 0 && currentLife.lifeNumber === 1 && (
             <div style={{
-              fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.75rem',
-              padding: '0.5rem 0.75rem', borderRadius: '0.375rem',
+              fontSize: '0.8rem', color: 'var(--color-text-secondary)', marginBottom: '0.75rem',
+              padding: '0.625rem 0.875rem', borderRadius: '0.375rem',
               background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)',
             }}>
-              <strong style={{ color: 'var(--color-text-secondary)' }}>Why trust starts at {effComp.toFixed(3)}, not 0.500?</strong>{' '}
-              Your raw trust dimensions all start at 0.500 (neutral). But <em>effective trust</em> = raw trust × CI².
-              Since new entities have no consistency history yet (CI = {currentLife.ci.toFixed(2)}), your displayed trust is
-              lower: 0.500 × {currentLife.ci.toFixed(2)}² = {effComp.toFixed(3)}. As you make consistent choices, CI rises toward 1.0
-              and effective trust converges with raw trust.
+              <div style={{ marginBottom: '0.375rem' }}>
+                <strong>Raw: 0.500</strong> <span style={{ color: 'var(--color-text-muted)' }}>→</span> <strong style={{ color: 'var(--color-sky)' }}>Effective: {effComp.toFixed(3)}</strong>
+              </div>
+              <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
+              Why? Your raw trust starts at 0.500 (neutral), but <em>effective trust</em> = raw × CI².
+              New entities have no consistency history (CI = {currentLife.ci.toFixed(2)}), so displayed trust is lower.
+              As you make consistent choices, CI rises toward 1.0 and effective trust converges with raw.</span>
             </div>
           )}
 
