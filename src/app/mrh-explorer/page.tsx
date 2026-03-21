@@ -480,7 +480,7 @@ export default function MRHExplorerPage() {
         background: 'linear-gradient(135deg, #06b6d4, #8b5cf6)',
         WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
       }}>
-        Context Boundaries Explorer
+        Trust Neighborhood Explorer
       </h1>
       <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem', maxWidth: '700px' }}>
         Explore context boundaries (MRH) &mdash; the trust-based horizon that defines what each agent can see and

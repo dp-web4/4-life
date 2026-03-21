@@ -537,7 +537,7 @@ export const navigationTree: NavigationTree = {
       related: ['/atp-economics', '/trust-tensor', '/coherence-index', '/karma-consequences', '/feedback-loop-explorer']
     },
     {
-      title: 'Context Boundaries (MRH)',
+      title: 'Trust Neighborhood (MRH)',
       href: '/markov-relevancy-horizon',
       desc: 'What you can see',
       keywords: ['MRH', 'context', 'visibility', 'boundaries', 'markov'],

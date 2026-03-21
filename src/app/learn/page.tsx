@@ -186,9 +186,9 @@ export default function LearnJourney() {
       concepts: [
         {
           id: "mrh",
-          title: "Context Boundaries (MRH)",
+          title: "Trust Neighborhood (MRH)",
           teaser:
-            "You don't see everything—you see what's relevant through your relationships. MRH defines context boundaries based on your trust network.",
+            "You don't see everything — you see what's relevant through your relationships. Your trust neighborhood defines who and what you can interact with.",
           why: "MRH shows how Web4 scales: societies stay coherent without requiring global consensus.",
           link: "/markov-relevancy-horizon",
           duration: "10 min read",

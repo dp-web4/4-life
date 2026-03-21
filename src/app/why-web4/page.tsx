@@ -332,7 +332,7 @@ export default function WhyWeb4Page() {
 
             <div className="bg-gray-900/50 rounded-lg p-4">
               <h4 className="font-semibold text-sky-400 mb-2">
-                4. Context Boundaries
+                4. Trust Neighborhood
               </h4>
               <p className="text-gray-400 text-sm">
                 You only see messages from people your network trusts — like being in a room
