@@ -86,7 +86,7 @@ export const terms: Record<string, TermDefinition> = {
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/t3-v3-tensors.md",
   },
 
-  // Context Boundaries
+  // Trust Neighborhood
   MRH: {
     term: "MRH",
     fullName: "Markov Relevancy Horizon",

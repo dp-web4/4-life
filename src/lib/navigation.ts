@@ -403,9 +403,9 @@ export const navigationTree: NavigationTree = {
       related: ['/trust-tensor', '/coherence-index', '/atp-economics', '/karma-consequences', '/aliveness', '/mrh-explorer']
     },
     {
-      title: 'Context Boundaries Explorer',
+      title: 'Trust Neighborhood Explorer',
       href: '/mrh-explorer',
-      desc: 'Interactive context boundaries (MRH) visualizer',
+      desc: 'Interactive trust neighborhood (MRH) visualizer',
       keywords: ['MRH', 'markov', 'horizon', 'context', 'boundaries', 'network', 'depth', 'trust decay', '4D', 'spatial', 'temporal', 'ATP cost'],
       prerequisites: ['/markov-relevancy-horizon'],
       related: ['/markov-relevancy-horizon', '/trust-tensor-explorer', '/trust-networks', '/atp-economics', '/federation-economics']

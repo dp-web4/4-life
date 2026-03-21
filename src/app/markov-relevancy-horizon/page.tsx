@@ -120,7 +120,7 @@ export default function MarkovRelevancyHorizonPage() {
                   <strong>Traditional systems</strong>: Either everyone sees everything (overwhelming) or strict access control (fragmented)
                 </p>
                 <p className="text-gray-300">
-                  <strong>Web4 Context Boundaries</strong>: Context emerges from relationships (you see your connections, their connections, and their connections - nothing more)
+                  <strong>Web4 Trust Neighborhoods</strong>: What you can see and do emerges from relationships (you see your connections, their connections, and their connections — nothing more)
                 </p>
               </div>
             </div>

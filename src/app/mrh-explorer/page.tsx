@@ -676,7 +676,7 @@ export default function MRHExplorerPage() {
       }}>
         {activeTab === 'concept' && (
           <div>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem' }}>Why Context Boundaries?</h3>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem' }}>Why Trust Neighborhoods?</h3>
             <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1rem', lineHeight: 1.6 }}>
               In the real world, you can&apos;t see everything. You know your friends, have some sense of their friends,
               and beyond that it&apos;s mostly unknown. MRH formalizes this natural limitation as a <strong>privacy-preserving
