@@ -966,6 +966,9 @@ export default function KarmaJourneyPage() {
             </p>
           </a>
         </div>
+        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '0.75rem', textAlign: 'center' }}>
+          Not sure what to explore? <a href="/explore-guide" style={{ color: 'var(--color-sky)' }}>Get a personalized recommendation →</a>
+        </p>
       </div>
 
       <ExplorerNav currentPath="/karma-journey" />

@@ -819,6 +819,103 @@ export default function LearnJourney() {
         </div>
       </section>
 
+      {/* Which tool should I try? */}
+      <section>
+        <h2>Which Interactive Tool Should I Try?</h2>
+        <p style={{ marginBottom: "1.25rem" }}>
+          Five tools, different depths. Pick the one that matches what you want to do right now.
+        </p>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+          {[
+            {
+              name: "Karma Journey",
+              href: "/karma-journey",
+              what: "Make trust choices across multiple lives and watch consequences compound.",
+              bestFor: "Experiencing Web4 consequences firsthand",
+              level: "Beginner",
+              levelColor: "rgba(74, 222, 128, 0.8)",
+            },
+            {
+              name: "Society Simulator",
+              href: "/society-simulator",
+              what: "Watch agents with different strategies self-organize into trust networks.",
+              bestFor: "Seeing how societies emerge from simple rules",
+              level: "Beginner",
+              levelColor: "rgba(74, 222, 128, 0.8)",
+            },
+            {
+              name: "Playground",
+              href: "/playground",
+              what: "Adjust ATP costs, trust dynamics, and risk profiles. Run guided experiments.",
+              bestFor: "Testing \"what if\" scenarios with parameters",
+              level: "Intermediate",
+              levelColor: "rgba(251, 191, 36, 0.8)",
+            },
+            {
+              name: "Simulation Sandbox",
+              href: "/simulation-sandbox",
+              what: "Full-control simulation with every engine parameter exposed as sliders.",
+              bestFor: "Deep parameter exploration and multi-run comparison",
+              level: "Advanced",
+              levelColor: "rgba(248, 113, 113, 0.8)",
+            },
+            {
+              name: "Lab Console",
+              href: "/lab-console",
+              what: "Research-grade visualization of agent reasoning and decision timelines.",
+              bestFor: "Understanding why agents make specific decisions",
+              level: "Advanced",
+              levelColor: "rgba(248, 113, 113, 0.8)",
+            },
+          ].map((tool) => (
+            <Link
+              key={tool.href}
+              href={tool.href}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr auto",
+                alignItems: "center",
+                gap: "0.75rem",
+                padding: "1rem 1.25rem",
+                borderRadius: "10px",
+                border: "1px solid var(--color-gray-700)",
+                background: "rgba(255,255,255,0.02)",
+                textDecoration: "none",
+                color: "var(--color-text)",
+                transition: "border-color 0.2s, background 0.2s",
+              }}
+            >
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.3rem" }}>
+                  <strong style={{ fontSize: "1rem" }}>{tool.name}</strong>
+                  <span
+                    style={{
+                      fontSize: "0.7rem",
+                      fontWeight: 600,
+                      color: tool.levelColor,
+                      border: `1px solid ${tool.levelColor}`,
+                      borderRadius: "4px",
+                      padding: "0.1rem 0.45rem",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.03em",
+                    }}
+                  >
+                    {tool.level}
+                  </span>
+                </div>
+                <p style={{ fontSize: "0.88rem", color: "var(--color-gray-300)", margin: "0 0 0.25rem" }}>
+                  {tool.what}
+                </p>
+                <p style={{ fontSize: "0.8rem", color: "var(--color-gray-500)", margin: 0 }}>
+                  Best for: {tool.bestFor}
+                </p>
+              </div>
+              <span style={{ color: "var(--color-accent)", fontSize: "1.1rem" }}>→</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Philosophy note */}
       <section>
         <div className="detail-box" style={{ background: "var(--color-gray-900)" }}>
