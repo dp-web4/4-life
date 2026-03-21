@@ -771,6 +771,9 @@ export default function SimulationSandboxPage() {
               Narratives
             </Link>
           </div>
+          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', marginTop: '0.75rem' }}>
+            Looking for something different? <Link href="/explore-guide" style={{ color: 'var(--color-sky)' }}>Get a personalized recommendation →</Link>
+          </p>
         </div>
       </div>
 

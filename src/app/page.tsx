@@ -443,23 +443,27 @@ function DeepDiveTab() {
             </div>
           </div>
         )}
-        <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-          <Link href="/trust-dilemmas" className="btn-primary" style={{ fontSize: '0.85rem' }}>
-            Trust Dilemma Quiz
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem' }}>
+          <Link href="/society-simulator" style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', display: 'block', background: 'var(--color-dark-surface)' }}>
+            <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--color-sky)' }}>Society Simulator</span>
+            <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '0.25rem' }}>Watch 12 agents form trust networks</span>
           </Link>
-          <Link href="/society-simulator" className="btn-secondary" style={{ padding: '0.5rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', fontSize: '0.85rem' }}>
-            Society Simulator
+          <Link href="/karma-journey" style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', display: 'block', background: 'var(--color-dark-surface)' }}>
+            <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#a78bfa' }}>Karma Journey</span>
+            <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '0.25rem' }}>Make choices, live with consequences</span>
           </Link>
-          <Link href="/karma-journey" className="btn-secondary" style={{ padding: '0.5rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', fontSize: '0.85rem' }}>
-            Karma Journey (simulation)
+          <Link href="/playground" style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', display: 'block', background: 'var(--color-dark-surface)' }}>
+            <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#10b981' }}>Playground</span>
+            <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '0.25rem' }}>Tweak parameters, find tipping points</span>
           </Link>
-          <Link href="/playground" className="btn-secondary" style={{ padding: '0.5rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', fontSize: '0.85rem' }}>
-            Playground
-          </Link>
-          <Link href="/day-in-web4" className="btn-secondary" style={{ padding: '0.5rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', fontSize: '0.85rem' }}>
-            A Day in Web4
+          <Link href="/trust-dilemmas" style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', display: 'block', background: 'var(--color-dark-surface)' }}>
+            <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#f59e0b' }}>Trust Dilemma Quiz</span>
+            <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '0.25rem' }}>Test your instincts about trust</span>
           </Link>
         </div>
+        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '0.75rem' }}>
+          Not sure which to try? <Link href="/explore-guide" style={{ color: 'var(--color-sky)' }}>Take the 30-second quiz →</Link>
+        </p>
       </div>
 
       <div style={{

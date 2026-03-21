@@ -906,6 +906,45 @@ export default function LabConsolePage() {
       {fiveDomain && fiveDomain.lives && fiveDomain.lives.length > 0 && (
         <NarrativePanel lives={fiveDomain.lives} />
       )}
+      {/* Cross-links to other interactive tools */}
+      <section style={{
+        marginTop: "2rem", padding: "1.5rem",
+        background: "linear-gradient(135deg, #1a2332 0%, #1f2937 100%)",
+        borderRadius: "8px", border: "1px solid #374151",
+      }}>
+        <h2 style={{ fontSize: "1.1rem", marginBottom: "0.75rem" }}>Try Other Tools</h2>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gap: "0.75rem",
+        }}>
+          <a href="/society-simulator" style={{
+            padding: "0.75rem", backgroundColor: "#111827", borderRadius: "6px",
+            borderLeft: "3px solid #38bdf8", textDecoration: "none", display: "block",
+          }}>
+            <div style={{ fontSize: "0.85rem", color: "#f3f4f6", fontWeight: 600 }}>Society Simulator</div>
+            <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>Watch 12 agents form trust networks</div>
+          </a>
+          <a href="/playground" style={{
+            padding: "0.75rem", backgroundColor: "#111827", borderRadius: "6px",
+            borderLeft: "3px solid #10b981", textDecoration: "none", display: "block",
+          }}>
+            <div style={{ fontSize: "0.85rem", color: "#f3f4f6", fontWeight: 600 }}>Playground</div>
+            <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>Tweak parameters, find tipping points</div>
+          </a>
+          <a href="/karma-journey" style={{
+            padding: "0.75rem", backgroundColor: "#111827", borderRadius: "6px",
+            borderLeft: "3px solid #a78bfa", textDecoration: "none", display: "block",
+          }}>
+            <div style={{ fontSize: "0.85rem", color: "#f3f4f6", fontWeight: 600 }}>Karma Journey</div>
+            <div style={{ fontSize: "0.75rem", color: "#9ca3af" }}>Make choices, live with consequences</div>
+          </a>
+        </div>
+        <p style={{ color: "#6b7280", fontSize: "0.8rem", marginTop: "0.75rem", marginBottom: 0 }}>
+          Not sure what to try next? <a href="/explore-guide" style={{ color: "#38bdf8" }}>Get a personalized recommendation →</a>
+        </p>
+      </section>
+
       <ExplorerNav currentPath="/lab-console" />
         <RelatedConcepts currentPath="/lab-console" />
     </main>

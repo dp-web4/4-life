@@ -586,16 +586,19 @@ export default function PlaygroundPage() {
             Discover edge cases. Find the tipping points.
           </p>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/first-simulation" style={{ color: "#38bdf8", fontSize: "0.9rem" }}>
-              Step-by-step guided simulation →
+            <a href="/society-simulator" style={{ color: "#a78bfa", fontSize: "0.9rem" }}>
+              Society Simulator — watch 12 agents interact →
             </a>
             <a href="/simulation-sandbox" style={{ color: "#38bdf8", fontSize: "0.9rem" }}>
-              Want full control? → Simulation Sandbox
+              Simulation Sandbox — full parameter control →
             </a>
-            <a href="/compare" style={{ color: "#38bdf8", fontSize: "0.9rem" }}>
-              Compare runs → Side-by-Side Analysis
+            <a href="/karma-journey" style={{ color: "#f59e0b", fontSize: "0.9rem" }}>
+              Karma Journey — make your own choices →
             </a>
           </div>
+          <p style={{ color: "#6b7280", fontSize: "0.8rem", marginTop: "0.75rem", marginBottom: 0 }}>
+            Not sure what to try next? <a href="/explore-guide" style={{ color: "#38bdf8" }}>Get a personalized recommendation →</a>
+          </p>
         </div>
       </section>
       <ExplorerNav currentPath="/playground" />

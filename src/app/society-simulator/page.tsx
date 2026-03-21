@@ -3840,6 +3840,9 @@ export default function SocietySimulatorPage() {
               <p className="text-xs text-gray-400">Learn how verified presence, energy economics, trust tensors, and aliveness work together.</p>
             </a>
           </div>
+          <p className="text-xs text-gray-500 mt-3 text-center">
+            Not sure what to explore? <a href="/explore-guide" className="text-sky-400 hover:text-sky-300">Take the 30-second quiz →</a>
+          </p>
         </div>
 
         <RelatedConcepts currentPath="/society-simulator" />
