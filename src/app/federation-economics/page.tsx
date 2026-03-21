@@ -575,7 +575,7 @@ export default function FederationEconomicsPage() {
               on conflicting policies. Three resolution strategies exist:
             </p>
             <ul className="space-y-1.5 text-gray-400 text-sm ml-4">
-              <li>&bull; <strong className="text-gray-300">Priority:</strong> Closer society&apos;s policy wins (most common)</li>
+              <li>&bull; <strong className="text-gray-300">Priority:</strong> Closer society&apos;s policy wins (most common). <span className="text-gray-500">E.g., if you&apos;re posting in Community A but also belong to Community B, Community A&apos;s rules apply because that&apos;s where the action is happening.</span></li>
               <li>&bull; <strong className="text-gray-300">Intersection:</strong> Only policies both societies agree on apply</li>
               <li>&bull; <strong className="text-gray-300">Freeze:</strong> Emergency halt when conflicts can&apos;t be resolved — requires 2/3 quorum to unfreeze</li>
             </ul>
