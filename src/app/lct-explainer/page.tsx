@@ -1393,7 +1393,7 @@ export default function LCTExplainerPage() {
             </a>
 
             <a href="/markov-relevancy-horizon" className="block p-4 border border-gray-700 rounded-lg hover:border-purple-500 transition-all">
-              <div className="font-bold text-gray-100 mb-1">Context Boundaries (MRH)</div>
+              <div className="font-bold text-gray-100 mb-1">Trust Neighborhood (MRH)</div>
               <div className="text-sm text-gray-400">Who you can see and interact with, based on trust</div>
             </a>
 

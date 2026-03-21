@@ -17,7 +17,7 @@ const CONCEPT_SEQUENCE: ConceptStep[] = [
   { path: '/lct-explainer', title: 'Witnessed Presence (LCT)', shortTitle: 'Identity' },
   { path: '/atp-economics', title: 'Energy Budget (ATP)', shortTitle: 'Energy' },
   { path: '/trust-tensor', title: 'Trust Tensor (T3)', shortTitle: 'Trust' },
-  { path: '/markov-relevancy-horizon', title: 'Context Boundaries (MRH)', shortTitle: 'Context' },
+  { path: '/markov-relevancy-horizon', title: 'Trust Neighborhood (MRH)', shortTitle: 'Neighborhood' },
   { path: '/coherence-index', title: 'Coherence Index (CI)', shortTitle: 'Coherence' },
   { path: '/aliveness', title: 'Aliveness & Death', shortTitle: 'Aliveness' },
 ];

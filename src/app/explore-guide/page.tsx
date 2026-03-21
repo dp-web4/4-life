@@ -168,7 +168,7 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
           { title: 'Trust Tensor Explorer', description: 'Interactive manipulation of trust dimensions with real-time coherence modulation', href: '/trust-tensor-explorer', timeEstimate: '10 min', type: 'interactive' },
           { title: 'Coherence Index', description: 'How behavioral consistency maps to 4 coherence dimensions', href: '/coherence-index', timeEstimate: '8 min', type: 'read' },
           { title: 'Coherence Framework', description: '9-domain coherence visualizer — the physics of trust', href: '/coherence-framework', timeEstimate: '10 min', type: 'interactive' },
-          { title: 'Context Boundaries Explorer', description: 'How trust-based context boundaries shape visibility (MRH)', href: '/mrh-explorer', timeEstimate: '8 min', type: 'interactive' },
+          { title: 'Trust Neighborhood Explorer', description: 'How your trust neighborhood shapes what you can see and do (MRH)', href: '/mrh-explorer', timeEstimate: '8 min', type: 'interactive' },
           { title: 'Data Explorer', description: 'Raw simulation data showing trust trajectories across all datasets', href: '/data-explorer', timeEstimate: '10 min', type: 'experiment' },
         ],
         nextPath: 'Run your own trust experiments in the Playground.',
@@ -244,7 +244,7 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
       steps: [
         { title: 'Coherence Framework', description: '9-domain coherence visualizer — grounded in Synchronism theory', href: '/coherence-framework', timeEstimate: '12 min', type: 'interactive' },
         { title: 'Trust Tensor', description: 'Formal description of multi-dimensional trust measurement', href: '/trust-tensor', timeEstimate: '8 min', type: 'read' },
-        { title: 'Context Boundaries Explorer', description: 'Context boundaries and their mathematical basis (MRH)', href: '/mrh-explorer', timeEstimate: '8 min', type: 'interactive' },
+        { title: 'Trust Neighborhood Explorer', description: 'Trust neighborhoods and their mathematical basis (MRH)', href: '/mrh-explorer', timeEstimate: '8 min', type: 'interactive' },
         { title: 'Prompt Framing Lab', description: 'Context-dependency research with real experimental data', href: '/prompt-framing-lab', timeEstimate: '10 min', type: 'research' },
         { title: 'Challenge Set', description: 'Open research questions and experimental prompts', href: '/challenge-set', timeEstimate: '5 min', type: 'research' },
       ],

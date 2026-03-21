@@ -266,7 +266,7 @@ export default function GlossaryPage() {
           {/* MRH */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              Context Boundaries (MRH)
+              Trust Neighborhood (MRH)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               The <strong>boundary of what you can see</strong> in a Web4 society. Your MRH

@@ -94,9 +94,12 @@ export default function MarkovRelevancyHorizonPage() {
           <div className="text-sm uppercase tracking-wide text-cyan-400 mb-4">
             Web4 Foundation: Context
           </div>
-          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Context Boundaries (MRH)
+          <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Your Trust Neighborhood
           </h1>
+          <p className="text-base text-gray-500 mb-6">
+            Formally: Markov Relevancy Horizon (MRH)
+          </p>
           <p className="text-xl text-gray-300 leading-relaxed mb-6">
             How Web4 creates context boundaries through relationships — you see what&apos;s relevant, nothing more.
           </p>
@@ -117,7 +120,7 @@ export default function MarkovRelevancyHorizonPage() {
                   <strong>Traditional systems</strong>: Either everyone sees everything (overwhelming) or strict access control (fragmented)
                 </p>
                 <p className="text-gray-300">
-                  <strong>Web4 Context Boundaries</strong>: Context emerges from relationships (you see your connections, their connections, and their connections - nothing more)
+                  <strong>Web4 Trust Neighborhoods</strong>: What you can see and do emerges from relationships (you see your connections, their connections, and their connections — nothing more)
                 </p>
               </div>
             </div>
