@@ -51,7 +51,7 @@ export default function HomePage() {
             Browse Topic Library
           </button>
         </div>
-        <div style={{ marginTop: '0.75rem', display: 'flex', justifyContent: 'center', gap: '1rem', alignItems: 'center' }}>
+        <div style={{ marginTop: '0.75rem', display: 'flex', justifyContent: 'center', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
           <Link href="/tldr" style={{
             padding: '0.5rem 1rem',
             background: 'rgba(56, 189, 248, 0.1)',
@@ -63,6 +63,18 @@ export default function HomePage() {
             textDecoration: 'none',
           }}>
             Just 2 minutes? Read the TL;DR →
+          </Link>
+          <Link href="/day-in-web4" style={{
+            padding: '0.5rem 1rem',
+            background: 'rgba(16, 185, 129, 0.1)',
+            border: '1px solid rgba(16, 185, 129, 0.3)',
+            borderRadius: '0.5rem',
+            color: 'rgb(16, 185, 129)',
+            fontWeight: 600,
+            fontSize: '0.85rem',
+            textDecoration: 'none',
+          }}>
+            See what it looks like →
           </Link>
           <Link href="/your-internet" style={{
             padding: '0.5rem 1rem',
@@ -220,12 +232,15 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
 
       {/* What would it look like? — Day in Web4 teaser */}
       <section className="card" style={{
-        border: '1px solid rgba(56, 189, 248, 0.2)',
-        background: 'linear-gradient(135deg, rgba(56, 189, 248, 0.05) 0%, var(--color-dark-surface) 100%)',
-        padding: '1.5rem 1.75rem',
+        border: '2px solid rgba(56, 189, 248, 0.3)',
+        background: 'linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, var(--color-dark-surface) 100%)',
+        padding: '1.75rem',
       }}>
-        <h2 style={{ fontSize: '1.2rem', marginBottom: '0.75rem' }}>What would it actually look like?</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
+        <h2 style={{ fontSize: '1.3rem', marginBottom: '0.5rem' }}>What would it actually feel like?</h2>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.85rem', marginBottom: '1rem', marginTop: 0 }}>
+          Forget the theory for a moment. Here&apos;s what your apps would look like:
+        </p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.75rem', marginBottom: '1.25rem' }}>
           {[
             { icon: '📧', label: 'Web4 Mail', detail: '0 spam — every sender has a trust score' },
             { icon: '💼', label: 'Web4 Talent', detail: 'Unfakeable skills from 156 verified projects' },
@@ -243,15 +258,22 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           ))}
         </div>
         <div style={{ textAlign: 'center' }}>
-          <Link href="/day-in-web4#wireframes" style={{
-            color: 'var(--color-sky)', fontSize: '0.9rem', fontWeight: 600,
+          <Link href="/day-in-web4" style={{
+            display: 'inline-block',
+            padding: '0.6rem 1.5rem',
+            borderRadius: '0.5rem',
+            background: 'rgba(56, 189, 248, 0.15)',
+            border: '1px solid rgba(56, 189, 248, 0.3)',
+            color: 'var(--color-sky)',
+            fontSize: '0.9rem',
+            fontWeight: 600,
             textDecoration: 'none',
           }}>
-            See the conceptual interface mockups →
+            Walk through a full day in Web4 →
           </Link>
-          <span style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginLeft: '0.75rem' }}>
-            or <Link href="/day-in-web4" style={{ color: 'var(--color-sky)', textDecoration: 'none' }}>walk through a full day</Link>
-          </span>
+          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', marginTop: '0.5rem', marginBottom: 0 }}>
+            7 scenarios, 5 app mockups, 3 minutes
+          </p>
         </div>
       </section>
 
@@ -275,6 +297,9 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           </Link>
           <Link href="/first-contact" className="btn-secondary" style={{ padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none' }}>
             First Contact (7 min)
+          </Link>
+          <Link href="/day-in-web4" className="btn-secondary" style={{ padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: '1px solid rgba(56, 189, 248, 0.3)', textDecoration: 'none', color: 'var(--color-sky)' }}>
+            See what it feels like (3 min)
           </Link>
         </div>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '1rem' }}>

@@ -792,6 +792,9 @@ export default function FederationEconomicsPage() {
           <span className="text-sm text-gray-500 ml-auto">Fair split calculations</span>
         </summary>
         <div className="mt-4">
+        <p className="text-lg text-gray-300 mb-3 font-medium">
+          Short version: each group gets a share based on what they uniquely bring to the table, and both sides must benefit or the merger doesn&apos;t happen.
+        </p>
         <p className="text-gray-400 mb-6">
           What happens when two Web4 federations decide to combine? The merged federation
           creates new value — access to more specialists, broader trust networks, economies of scale.
