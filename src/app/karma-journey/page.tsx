@@ -544,7 +544,7 @@ export default function KarmaJourneyPage() {
               }}>
                 <div style={{ fontSize: '0.6rem', color: 'var(--color-text-muted)' }}>{stat.label}</div>
                 <div style={{ fontSize: '1.1rem', fontWeight: 700, fontFamily: 'monospace', color: stat.color }}>{stat.value}</div>
-                {'hint' in stat && stat.hint && <div style={{ fontSize: '0.65rem', color: 'var(--color-text-secondary)', marginTop: '2px', opacity: 0.8 }}>{stat.hint}</div>}
+                {'hint' in stat && stat.hint && <div style={{ fontSize: '0.7rem', color: 'var(--color-text-secondary)', marginTop: '2px' }}>{stat.hint}</div>}
               </div>
             ))}
           </div>
