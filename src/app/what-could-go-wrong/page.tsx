@@ -373,14 +373,14 @@ export default function WhatCouldGoWrongPage() {
         </div>
       </section>
 
-      {/* The Uncomfortable Questions */}
+      {/* Design Tensions */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-4 text-gray-100">
-          The Uncomfortable Questions
+          Design Tensions
         </h2>
         <p className="text-gray-400 mb-8">
-          These aren&apos;t failure modes &mdash; they&apos;re design tensions that don&apos;t have
-          clean answers.
+          These aren&apos;t failure modes &mdash; they&apos;re trade-offs that don&apos;t have
+          clean answers. Every design choice has consequences.
         </p>
 
         <div className="space-y-6">
@@ -605,6 +605,45 @@ export default function WhatCouldGoWrongPage() {
                 It struggles with shared-resource conflicts (e.g., environmental policy) where one
                 society&apos;s actions affect another&apos;s world. Cross-society externalities are
                 an unsolved coordination problem.
+              </p>
+            </div>
+          </details>
+          {/* Network outages */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What happens to trust during outages?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                If your devices can&apos;t reach witness nodes &mdash; internet goes down, servers
+                fail, or you&apos;re simply offline for a while &mdash; what happens to your identity
+                and trust?
+              </p>
+              <p>
+                <strong className="text-gray-300">Your trust doesn&apos;t vanish.</strong> Trust scores
+                are computed from your history. Being offline doesn&apos;t erase what you&apos;ve built.
+                But some dimensions decay over time &mdash; Temperament has a 30-day half-life, so
+                extended absence does cause gradual decline. This is by design: trust should reflect
+                recent behavior, not ancient history.
+              </p>
+              <p>
+                <strong className="text-gray-300">Actions queue locally.</strong> Your devices can
+                still record actions while offline. When connectivity returns, queued actions are
+                witnessed and incorporated into your trust history. The gap doesn&apos;t create a
+                discontinuity &mdash; it creates a pause.
+              </p>
+              <p>
+                <strong className="text-gray-300">Coherence Index handles it gracefully.</strong> A
+                planned absence (vacation, moving) doesn&apos;t trigger the same CI alarm as sudden
+                behavioral inconsistency. The temporal dimension distinguishes &ldquo;gone for two
+                weeks&rdquo; from &ldquo;acting erratically.&rdquo;
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Status:</strong> Partition tolerance is designed at the protocol level. The
+                harder question is multi-device synchronization after extended partitions &mdash; if
+                your phone and laptop both act independently while offline, reconciling their
+                histories is a known distributed systems challenge.
               </p>
             </div>
           </details>
