@@ -354,7 +354,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           onClick={onSwitchToDeepDive}
           className="btn-secondary"
         >
-          Browse the full topic library →
+          Explore topics — pick any that interest you →
         </button>
       </section>
     </div>
