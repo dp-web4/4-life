@@ -579,10 +579,85 @@ export default function FederationEconomicsPage() {
               <li>&bull; <strong className="text-gray-300">Intersection:</strong> Only policies both societies agree on apply</li>
               <li>&bull; <strong className="text-gray-300">Freeze:</strong> Emergency halt when conflicts can&apos;t be resolved — requires 2/3 quorum to unfreeze</li>
             </ul>
+            <div className="mt-4 p-4 bg-gray-900/50 border border-gray-700 rounded-lg">
+              <p className="text-gray-400 text-sm font-semibold mb-2">Concrete example: Same person, different trust scores</p>
+              <p className="text-gray-400 text-sm mb-2">
+                Alice is active in two societies. A <strong className="text-gray-300">Research Federation</strong> rates
+                her trust at <strong className="text-sky-400">0.82</strong> — she&apos;s published quality work
+                and has high Talent scores. A <strong className="text-gray-300">Healthcare Federation</strong> rates
+                her at <strong className="text-amber-400">0.44</strong> — she missed deadlines and her Temperament
+                (reliability) scores are low.
+              </p>
+              <p className="text-gray-400 text-sm mb-2">
+                Who&apos;s right? <strong className="text-gray-300">Both are.</strong> Trust is role-specific.
+                Alice is genuinely skilled at research but unreliable in clinical settings. These aren&apos;t
+                conflicting assessments — they&apos;re different dimensions of the same person, measured in different contexts.
+              </p>
+              <p className="text-gray-400 text-sm">
+                When Alice acts at the <em>boundary</em> between the two societies (e.g., submitting
+                healthcare research), the <strong className="text-gray-300">priority rule</strong> applies:
+                since the action is happening in the healthcare context, her 0.44 trust applies. Her
+                research reputation doesn&apos;t override the healthcare society&apos;s direct experience
+                with her.
+              </p>
+            </div>
             <p className="text-gray-500 text-xs mt-3 italic">
               Every resolution is recorded in a hash-chained audit trail. Disputes can be appealed
               (up to 2 appeals per resolution). This is formally specified (44 integration checks) but
               hasn&apos;t been tested with real cross-society scenarios yet.
+            </p>
+          </div>
+
+          <div id="switching-societies" className="scroll-mt-24">
+            <h3 className="text-lg font-semibold text-gray-300 mb-3">
+              What Does Switching Societies Actually Feel Like?
+            </h3>
+            <p className="text-gray-300 mb-3">
+              You&apos;ve been active in a tech community for two years. You want to join a creative
+              writing group. What happens to your reputation?
+            </p>
+            <div className="space-y-3 mb-3">
+              <div className="flex gap-3 items-start">
+                <span className="flex-shrink-0 w-7 h-7 bg-sky-600 rounded-full flex items-center justify-center text-sm font-bold">1</span>
+                <p className="text-gray-300 text-sm">
+                  <strong>You request to join</strong> the writing group. Your tech trust score
+                  (0.87) is visible, but the writing group applies a <strong className="text-amber-400">federation
+                  discount</strong> — external trust is weighted at ~65% because it&apos;s from an
+                  unrelated domain. Your starting trust: <strong className="text-sky-400">0.57</strong>.
+                </p>
+              </div>
+              <div className="flex gap-3 items-start">
+                <span className="flex-shrink-0 w-7 h-7 bg-sky-600 rounded-full flex items-center justify-center text-sm font-bold">2</span>
+                <p className="text-gray-300 text-sm">
+                  <strong>Your first contributions</strong> are evaluated on the writing group&apos;s
+                  terms — creativity, feedback quality, engagement. Your tech Talent score doesn&apos;t
+                  automatically carry over; you build trust from scratch in the dimensions that matter here.
+                </p>
+              </div>
+              <div className="flex gap-3 items-start">
+                <span className="flex-shrink-0 w-7 h-7 bg-sky-600 rounded-full flex items-center justify-center text-sm font-bold">3</span>
+                <p className="text-gray-300 text-sm">
+                  <strong>Your tech identity persists.</strong> You don&apos;t lose your 0.87 tech trust.
+                  Both profiles are linked to the same LCT — you&apos;re one person with two
+                  role-specific reputations. Like having a great LinkedIn profile and a brand-new
+                  Goodreads account.
+                </p>
+              </div>
+              <div className="flex gap-3 items-start">
+                <span className="flex-shrink-0 w-7 h-7 bg-sky-600 rounded-full flex items-center justify-center text-sm font-bold">4</span>
+                <p className="text-gray-300 text-sm">
+                  <strong>The UX?</strong> You click &ldquo;Join,&rdquo; your device signs the request
+                  with your LCT, and you&apos;re in — no new account, no new password, no starting from
+                  zero. Your trust transfers partially, then you build locally. Like transferring to a
+                  new school: your grades come with you, but you still need to prove yourself to new teachers.
+                </p>
+              </div>
+            </div>
+            <p className="text-gray-500 text-xs italic">
+              This is the same mechanism as Maya&apos;s federation transfer{' '}
+              <a href="#trust-transfer" className="text-sky-400/70 hover:underline">above</a>{' '}
+              — the discount reflects the uncertainty of cross-domain trust, not punishment. Higher discounts
+              for more distant domains; lower discounts between related communities.
             </p>
           </div>
 

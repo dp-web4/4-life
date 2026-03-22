@@ -402,6 +402,12 @@ export default function WhyWeb4Page() {
                 research doesn&apos;t have them. The simulations prove the mechanics work in principle — the question is
                 whether the economics survive contact with real human behavior. That&apos;s what a pilot would test.
               </p>
+              <p className="text-gray-500 text-xs mt-2">
+                <strong>In software terms:</strong> The specification is complete. The reference code is <em>proof-of-concept</em> quality
+                (tested, but not hardened for production). What&apos;s needed next is a <em>pilot</em> (alpha)
+                with real users — the gap between &ldquo;simulations prove it works&rdquo; and &ldquo;running
+                with real humans&rdquo; is the current frontier.
+              </p>
             </div>
           </details>
 
