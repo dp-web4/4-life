@@ -909,37 +909,60 @@ export default function AlivenessExplainer() {
         <h2>Not Just Alive or Dead</h2>
         <p>
           Aliveness isn&apos;t a binary switch. Societies (and entities within them) have
-          <strong> energy states</strong> — like a body that can be awake, resting, or dormant.
-          The web4 spec defines concrete triggers for each transition:
+          <strong> energy states</strong> — like a body that can be awake, resting, or dormant:
         </p>
         <div className="concept-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
           <div className="detail-box" style={{ borderLeft: "3px solid #10b981" }}>
             <h4 style={{ color: "#10b981" }}>Active</h4>
-            <p>Normal operation — processing interactions, earning/spending ATP.</p>
+            <p>Normal operation — processing interactions, earning and spending energy.</p>
           </div>
           <div className="detail-box" style={{ borderLeft: "3px solid #38bdf8" }}>
-            <h4 style={{ color: "#38bdf8" }}>Rest → Sleep</h4>
-            <p>Idle for <strong>1 hour</strong> → Rest. Idle for <strong>6 hours</strong> → Sleep.
-              A single transaction wakes the society back to Active.</p>
+            <h4 style={{ color: "#38bdf8" }}>Low Energy</h4>
+            <p>Idle or running low on ATP. Can range from resting (wakes on any transaction) to torpor (needs energy infusion to recover).</p>
           </div>
-          <div className="detail-box" style={{ borderLeft: "3px solid #f59e0b" }}>
-            <h4 style={{ color: "#f59e0b" }}>Torpor</h4>
-            <p>ATP drops below <strong>10%</strong> of capacity. Needs ≥<strong>20%</strong> to exit.
-              A warning state — act quickly or slide into Hibernation.</p>
-          </div>
-          <div className="detail-box" style={{ borderLeft: "3px solid #a78bfa" }}>
-            <h4 style={{ color: "#a78bfa" }}>Hibernation</h4>
-            <p>Dormant for <strong>30+ days</strong>. Still alive, still recoverable via external wake signal.
-              All trust, ATP, laws, and ledger history preserved.</p>
+          <div className="detail-box" style={{ borderLeft: "3px solid #6b7280" }}>
+            <h4 style={{ color: "#6b7280" }}>Dead</h4>
+            <p>Energy fully depleted or trust collapsed. Trust death is permanent; energy death is recoverable (karma carries forward to a new life).</p>
           </div>
         </div>
         <p style={{ color: "#9ca3af", fontSize: "0.9rem", marginTop: "1rem" }}>
-          There are also transitional states: <strong>Governance Renewal</strong> (&ldquo;Molting&rdquo; — updating
-          society rules), <strong>Scheduled Maintenance</strong> (&ldquo;Dreaming&rdquo; — planned downtime for upgrades),
-          and <strong>Emergency Dormancy</strong> (&ldquo;Estivation&rdquo; — threat response, dormant until the threat resolves).
-          The key insight: a society that goes quiet for a month isn&apos;t dead — it&apos;s hibernating.
+          The key insight: a society that goes quiet for a month isn&apos;t dead — it&apos;s dormant.
           Its trust network, reputation history, and member relationships are all preserved.
         </p>
+
+        <details style={{ marginTop: "1rem" }}>
+          <summary style={{ color: "#9ca3af", cursor: "pointer", fontSize: "0.9rem" }}>
+            <strong>Full energy state breakdown (7 states)</strong>
+          </summary>
+          <div style={{ marginTop: "0.75rem" }}>
+            <div className="concept-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
+              <div className="detail-box" style={{ borderLeft: "3px solid #10b981" }}>
+                <h4 style={{ color: "#10b981" }}>Active</h4>
+                <p>Normal operation — processing interactions, earning/spending ATP.</p>
+              </div>
+              <div className="detail-box" style={{ borderLeft: "3px solid #38bdf8" }}>
+                <h4 style={{ color: "#38bdf8" }}>Rest → Sleep</h4>
+                <p>Idle for <strong>1 hour</strong> → Rest. Idle for <strong>6 hours</strong> → Sleep.
+                  A single transaction wakes the society back to Active.</p>
+              </div>
+              <div className="detail-box" style={{ borderLeft: "3px solid #f59e0b" }}>
+                <h4 style={{ color: "#f59e0b" }}>Torpor</h4>
+                <p>ATP drops below <strong>10%</strong> of capacity. Needs ≥<strong>20%</strong> to exit.
+                  A warning state — act quickly or slide into Hibernation.</p>
+              </div>
+              <div className="detail-box" style={{ borderLeft: "3px solid #a78bfa" }}>
+                <h4 style={{ color: "#a78bfa" }}>Hibernation</h4>
+                <p>Dormant for <strong>30+ days</strong>. Still alive, still recoverable via external wake signal.
+                  All trust, ATP, laws, and ledger history preserved.</p>
+              </div>
+            </div>
+            <p style={{ color: "#9ca3af", fontSize: "0.9rem", marginTop: "0.75rem" }}>
+              There are also transitional states: <strong>Governance Renewal</strong> (&ldquo;Molting&rdquo; — updating
+              society rules), <strong>Scheduled Maintenance</strong> (&ldquo;Dreaming&rdquo; — planned downtime for upgrades),
+              and <strong>Emergency Dormancy</strong> (&ldquo;Estivation&rdquo; — threat response, dormant until the threat resolves).
+            </p>
+          </div>
+        </details>
       </section>
 
       <section>
