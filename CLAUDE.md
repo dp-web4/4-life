@@ -1,3 +1,5 @@
+**Read `SESSION_PRIMER.md` → then `SESSION_FOCUS.md`** for current priorities, visitor friction queue, and concept coverage.
+
 # 4-Life Development Track
 
 ## Project Overview
