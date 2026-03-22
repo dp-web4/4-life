@@ -895,16 +895,7 @@ export default function CoherenceIndexPage() {
                   The Nine Domains of Coherence
                 </h3>
                 <p className="text-gray-300 mb-4">
-                  Research on{" "}
-                  <Link
-                    href="https://github.com/dp-web4/Synchronism"
-                    className="text-purple-400 hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Synchronism
-                  </Link>{" "}
-                  reveals coherence as a fundamental principle across scales, from
+                  Coherence is a fundamental principle across scales, from
                   quantum mechanics to galaxy dynamics:
                 </p>
 
@@ -963,8 +954,7 @@ export default function CoherenceIndexPage() {
               Spacetime Coupling & Geodesics
             </h3>
             <p className="text-sm text-gray-300 mb-3">
-              Recent work on Synchronism's 9th domain (Spacetime Coherence)
-              reveals that coherent systems follow "geodesics" - paths of minimal
+              Coherent systems follow &ldquo;geodesics&rdquo; &mdash; paths of minimal
               action through their state space.
             </p>
             <p className="text-sm text-gray-300">

@@ -48,7 +48,7 @@ export default function HomePage() {
             onClick={() => setActiveTab('deepdive')}
             className={`tab-button ${activeTab === 'deepdive' ? 'active' : ''}`}
           >
-            Browse Topic Library
+            Explore Topics
           </button>
         </div>
         <div style={{ marginTop: '0.75rem', display: 'flex', justifyContent: 'center', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
