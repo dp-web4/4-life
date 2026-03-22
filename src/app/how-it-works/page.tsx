@@ -1066,6 +1066,59 @@ export default function HowItWorksPage() {
           </div>
         </div>
 
+        {/* Step-by-step walkthrough: what happens when someone breaks a rule */}
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 mb-6">
+          <h4 className="text-lg font-semibold text-gray-200 mb-3">Walkthrough: A Plagiarism Case from Start to Finish</h4>
+          <p className="text-gray-400 text-sm mb-4">
+            Here&apos;s how the Open Science Collective handles a real violation — step by step.
+          </p>
+          <div className="space-y-3 text-sm">
+            <div className="flex gap-3 items-start">
+              <span className="bg-gray-700 text-gray-300 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0">1</span>
+              <div>
+                <p className="text-gray-300"><strong>Detection.</strong> Dr. Chen submits a paper. The law oracle flags a 40% overlap with an existing publication by another member. Severity classification: <strong className="text-amber-400">High</strong> (plagiarism).</p>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="bg-gray-700 text-gray-300 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0">2</span>
+              <div>
+                <p className="text-gray-300"><strong>Verdict.</strong> The oracle produces a &ldquo;Violation&rdquo; classification. Prescribed consequence: 30-day suspension from publishing + trust penalty (Training score drops by 0.15).</p>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="bg-gray-700 text-gray-300 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0">3</span>
+              <div>
+                <p className="text-gray-300"><strong>Notification.</strong> Dr. Chen is informed of the verdict, the evidence (the flagged overlap), and the specific rule violated. All of this is recorded in the tamper-evident audit chain — the community can inspect it.</p>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="bg-gray-700 text-gray-300 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0">4</span>
+              <div>
+                <p className="text-gray-300"><strong>Appeal (if filed).</strong> Dr. Chen believes the overlap is from a shared dataset, not plagiarism. She files an appeal with evidence — the shared data source, timestamps showing independent work.</p>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="bg-gray-700 text-gray-300 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0">5</span>
+              <div>
+                <p className="text-gray-300"><strong>Independent review.</strong> A Moderator (rotating monthly, not the original oracle) examines the evidence. They can call witnesses — other members familiar with the dataset.</p>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="bg-gray-700 text-gray-300 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0">6</span>
+              <div>
+                <p className="text-gray-300"><strong>Resolution.</strong> Two possible outcomes:</p>
+                <ul className="mt-1 text-gray-400 space-y-1 ml-4">
+                  <li>&bull; <strong className="text-green-400">Appeal upheld:</strong> Suspension lifted, trust scores restored, the false positive is recorded (improving future oracle accuracy).</li>
+                  <li>&bull; <strong className="text-red-400">Appeal denied:</strong> Suspension stands. Dr. Chen can still participate in other communities — the penalty is society-specific, not global.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <p className="text-gray-500 text-xs italic mt-4">
+            The key insight: every step is inspectable, every verdict is appealable, and penalties are proportional and scoped. A &ldquo;High&rdquo; violation gets suspension, not ejection. A &ldquo;Critical&rdquo; violation (fabricating data) would result in ejection — different severity, different consequence.
+          </p>
+        </div>
+
         <div className="bg-gradient-to-br from-amber-950/20 to-gray-900 border border-amber-800/20 rounded-xl p-6 mb-4">
           <h4 className="text-lg font-semibold text-amber-300 mb-2">What About False Positives?</h4>
           <p className="text-gray-300 text-sm leading-relaxed mb-3">
@@ -1118,6 +1171,39 @@ export default function HowItWorksPage() {
           <p className="text-gray-500 text-xs italic mt-4">
             The analogy: open-source projects. If a project&apos;s governance becomes hostile, contributors fork it.
             The ability to fork — not the act of forking — keeps governance honest. Web4 societies work the same way.
+          </p>
+        </div>
+
+        {/* How communities set policies */}
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 mb-6">
+          <h4 className="text-lg font-semibold text-gray-200 mb-3">How Do Communities Set Their Own Rules?</h4>
+          <p className="text-gray-400 text-sm mb-3">
+            Each society defines its own ATP costs, trust thresholds, and governance policies.
+            But <em>how</em> those decisions get made depends on the society&apos;s own governance structure:
+          </p>
+          <div className="space-y-2 text-sm text-gray-400">
+            <p>
+              <strong className="text-gray-300">Founding:</strong> The initial members define the society&apos;s purpose,
+              entry requirements, and starting rules. Think of it like writing a charter — &ldquo;This community requires
+              T3 Training ≥ 0.6 to join, ATP cost per publication is 5 units, and moderators rotate monthly.&rdquo;
+            </p>
+            <p>
+              <strong className="text-gray-300">Changing rules:</strong> Governed by the society&apos;s own SAL framework.
+              Most societies use some form of member voting weighted by trust score — a long-standing, high-trust member
+              has more influence than a newcomer. But the specific mechanism is the society&apos;s choice: simple majority,
+              supermajority, or delegated authority.
+            </p>
+            <p>
+              <strong className="text-gray-300">Tuning costs:</strong> ATP costs can change over time as the community
+              learns what works. If spam gets through, raise the posting cost. If quality members can&apos;t afford to
+              participate, lower it. The feedback loop is direct: members who disagree with pricing can voice concerns
+              or leave (taking their trust history to a competitor).
+            </p>
+          </div>
+          <p className="text-gray-500 text-xs italic mt-3">
+            The analogy: open-source project governance. Some projects have a BDFL (founder decides), some use
+            consensus, some hold elections. Web4 doesn&apos;t prescribe the model — it provides the trust infrastructure
+            that makes any model accountable.
           </p>
         </div>
 

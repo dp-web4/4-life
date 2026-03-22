@@ -725,6 +725,43 @@ export default function TrustTensorPage() {
         </div>
       </section>
 
+      {/* Role evolution — gradual vs sudden context switches (visitor Q Mar 22) */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
+          <h3 className="text-xl font-semibold text-gray-100 mb-3">What Happens When Your Role Evolves?</h3>
+          <p className="text-gray-300 text-sm mb-4">
+            Clear-cut role switches are simple: a surgeon becoming a mechanic starts fresh in the new role.
+            But what about <strong>gradual evolution</strong> — a data analyst who starts doing more project management?
+          </p>
+          <div className="space-y-3 text-sm">
+            <div className="flex gap-3 items-start">
+              <span className="text-sky-400 font-bold shrink-0">New role:</span>
+              <p className="text-gray-400">If you start doing project management, the system creates a
+                new T3 tensor for that role. Your analyst trust stays intact — you don&apos;t lose what
+                you&apos;ve built.</p>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="text-sky-400 font-bold shrink-0">Gradual shift:</span>
+              <p className="text-gray-400">You can hold trust in multiple roles simultaneously. As your work
+                shifts from 80% analyst / 20% PM to 50/50, both tensors evolve independently based on your
+                actions in each context. The system doesn&apos;t force a binary switch.</p>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="text-sky-400 font-bold shrink-0">Natural decay:</span>
+              <p className="text-gray-400">If you stop doing analyst work entirely, those trust scores
+                decay over time (Talent half-life: 365 days, Training: 180 days). You don&apos;t &ldquo;lose&rdquo;
+                them overnight — they fade gradually, reflecting that skills and expertise need practice
+                to stay sharp.</p>
+            </div>
+          </div>
+          <p className="text-gray-500 text-xs italic mt-3">
+            The analogy: a doctor who transitions into hospital administration doesn&apos;t instantly
+            lose their medical knowledge. But if they haven&apos;t practiced surgery in five years,
+            you probably wouldn&apos;t want them operating. T3 decay captures exactly this intuition.
+          </p>
+        </div>
+      </section>
+
       {/* T3/V3 Bridge — how they work together (visitor friction Mar 15-16) */}
       <section className="max-w-4xl mx-auto mt-16">
         <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/30 border border-sky-700/30 rounded-xl p-8">
@@ -1268,6 +1305,27 @@ Temperament:  30-day half-life (recent behavior matters most)
             from your old job vouch for your character (Temperament), but you still have to demonstrate
             competence (Talent) and credentials (Training) in the new field.
           </p>
+          <div className="mt-4 pt-4 border-t border-gray-700">
+            <h4 className="text-md font-semibold text-sky-400 mb-2">What about gradual role evolution?</h4>
+            <p className="text-gray-400 text-sm mb-2">
+              Not every role change is sudden. A data analyst who starts doing more project management
+              doesn&apos;t wake up one day in a new role &mdash; the transition is gradual. Web4 handles this
+              naturally because trust is <strong className="text-gray-300">tracked per role context</strong>, and
+              you can hold trust in multiple roles simultaneously.
+            </p>
+            <p className="text-gray-400 text-sm mb-2">
+              As you take on management tasks alongside your analysis work, you build a management trust
+              profile in parallel. Early on it&apos;s thin (few interactions), but each successful management
+              action adds evidence. Your analyst trust stays intact &mdash; you&apos;re not losing one to gain the other.
+            </p>
+            <p className="text-gray-400 text-sm">
+              The boundary between &ldquo;same role, evolving&rdquo; and &ldquo;new role, fresh start&rdquo; is
+              defined by the <em>society&apos;s role taxonomy</em>. If the community defines &ldquo;Senior Analyst&rdquo;
+              as a distinct role from &ldquo;Analyst,&rdquo; promotion means proving yourself in the new context.
+              If they&apos;re treated as one role, your existing trust carries through. Communities decide where
+              to draw these lines based on how different the competencies actually are.
+            </p>
+          </div>
         </div>
       </section>
 
