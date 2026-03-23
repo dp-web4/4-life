@@ -92,7 +92,7 @@ const SCENARIOS: Record<string, ScenarioResult> = {
   spam: {
     frustration: 'Spam & fake accounts',
     today: 'Creating an account costs nothing. A spammer can create 10,000 accounts in an hour. Platforms play whack-a-mole with detection, but attackers just adapt.',
-    withWeb4: 'Every account requires a physical device with a security chip. Creating 10,000 fake accounts means buying 10,000 devices — $5 million+ in hardware. Spam isn\'t impossible, just economically irrational.',
+    withWeb4: 'Every account requires a physical device with a security chip. Creating 10,000 fake accounts means buying 10,000 devices — at $50–500 each, that\'s $500K–$5M in hardware. Spam isn\'t impossible, just economically irrational.',
     mechanism: 'Hardware-bound identity (LCT) + attention costs (ATP) make spam more expensive than the return it generates.',
     learnMore: '/atp-economics',
     learnMoreLabel: 'How Attention Economics kills spam',
@@ -332,7 +332,7 @@ export default function YourInternetPage() {
                 <strong style={{ color: '#ef4444' }}>Today:</strong> Creating an account costs nothing. A spammer can create 10,000 accounts in an hour. Platforms play whack-a-mole with detection, but attackers just adapt.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
-                <strong style={{ color: '#10b981' }}>With Web4:</strong> Every account requires a physical device with a security chip. Creating 10,000 fake accounts means buying 10,000 devices &mdash; $5 million+ in hardware. Spam isn&apos;t impossible, just economically irrational.
+                <strong style={{ color: '#10b981' }}>With Web4:</strong> Every account requires a physical device with a security chip. Creating 10,000 fake accounts means buying 10,000 devices &mdash; at $50&ndash;500 each, that&apos;s $500K&ndash;$5M in hardware. Spam isn&apos;t impossible, just economically irrational.
               </p>
               <p style={{ color: '#64748b', fontSize: '0.85rem' }}>
                 Mechanism: Hardware-bound identity + attention costs make spam more expensive than the return it generates.

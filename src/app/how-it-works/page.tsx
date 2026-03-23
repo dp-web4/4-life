@@ -367,6 +367,9 @@ export default function HowItWorksPage() {
                     <p>• Viewing content (2 ATP)</p>
                     <p>• Simple queries (3 ATP)</p>
                   </div>
+                  <p className="text-gray-500 text-xs mt-2 leading-relaxed">
+                    Even reading costs a tiny amount &mdash; this prevents mass scraping and ensures every participant has skin in the game, not just creators.
+                  </p>
                 </div>
                 <div className="p-3 bg-gray-800 rounded">
                   <div className="text-sm text-gray-400 mb-1">
