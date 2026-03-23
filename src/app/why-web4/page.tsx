@@ -613,12 +613,71 @@ export default function WhyWeb4Page() {
               </p>
             </div>
           </details>
+
+          {/* Quality measurement — promoted from "Going deeper" (visitor Q: "who validates quality?") */}
+          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Who decides what counts as &ldquo;quality&rdquo;? If helpful answers earn ATP, who judges &ldquo;helpful&rdquo;?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>The people who receive the work decide.</strong> Web4 uses a{" "}
+                <Link href="/atp-economics" className="text-sky-400 hover:underline">Value Confirmation Mechanism (VCM)</Link>:
+                you write a code review, the developer who received it confirms whether it helped. You post a tutorial,
+                readers who learned from it confirm value. You can&apos;t rate your own work.
+              </p>
+              <p>
+                This means quality isn&apos;t decided by an algorithm or a moderation team &mdash;
+                it&apos;s decided by the people closest to the actual value. A niche research paper might only
+                get 3 confirmations, but if those 3 are high-trust experts in that field, their confirmations
+                carry significant weight.
+              </p>
+              <p>
+                What about <strong>gaming</strong>? Confirming too generously lowers your own trust score (Veracity dimension).
+                Rubber-stamping everything makes <em>you</em> less credible, which reduces the weight of your future confirmations.
+                The system is self-correcting &mdash; but social dynamics are unpredictable, so this remains one of the{" "}
+                <Link href="/threat-model" className="text-sky-400 hover:underline">actively researched challenges</Link>.
+              </p>
+            </div>
+          </details>
+
+          {/* Trust cartels — brief answer with cross-link (visitor Q: "what prevents trust cartels?") */}
+          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What prevents groups of users from colluding to boost each other&apos;s trust?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Multiple overlapping defenses.</strong> Trust cartels are one of the most studied attack vectors:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>MRH limits reach:</strong> Colluders can only inflate trust within their 3-hop neighborhood &mdash;
+                  they can&apos;t broadcast fake trust globally</li>
+                <li><strong>Statistical detection:</strong> Unusually dense mutual validation clusters trigger anomaly detection
+                  with 93%+ probability at 3+ members</li>
+                <li><strong>Behavioral consistency:</strong> Your{" "}
+                  <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link> flags when
+                  validation patterns don&apos;t match your other behavior &mdash; confirming everything a cartel member
+                  does while being selective with others creates a detectable signal</li>
+                <li><strong>Hardware cost:</strong> Each colluder needs real hardware-bound identity (LCT), making
+                  cartel scaling expensive</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Sophisticated collusion that mimics legitimate community behavior is the hardest
+                case. The{" "}
+                <Link href="/threat-model#collusion" className="text-sky-400 hover:underline">Threat Model page</Link> covers
+                this in depth, including coalition thresholds and adversary profiles.
+              </p>
+            </div>
+          </details>
         </div>
 
         {/* All other FAQs — collapsed by default */}
         <details className="group">
           <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">
-            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 35 more questions</h3>
+            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 32 more questions</h3>
             <span className="text-gray-500 text-sm group-open:rotate-90 transition-transform">▶</span>
           </summary>
         <div className="space-y-6">
@@ -1538,46 +1597,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Quality measurement */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
-            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>Who decides what &ldquo;quality&rdquo; means? What about subjective content?</span>
-              <span className="text-gray-500 text-xl">+</span>
-            </summary>
-            <div className="mt-4 text-gray-300 text-sm space-y-2">
-              <p>
-                <strong>The recipients decide.</strong> Web4&apos;s{" "}
-                <Link href="/atp-economics" className="text-sky-400 hover:underline">VCM (Value Confirmation Mechanism)</Link>{" "}
-                means quality is measured by the people who actually receive and use the work. You write a code review,
-                the developer who received it confirms whether it was helpful. You post a tutorial, readers who learned
-                from it confirm value. You can&apos;t rate your own work.
-              </p>
-              <p>
-                For <strong>subjective content</strong> (art, humor, opinion), quality splits across V3&apos;s three dimensions.
-                A controversial political essay might score high on Veracity (honest, well-argued) and Validity (appropriate
-                for a political forum) even if Valuation is mixed (some love it, some hate it). Veracity and Validity together
-                outweigh raw popularity — by design.
-              </p>
-              <p>
-                <strong>Edge cases that are genuinely hard:</strong>
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>Minority opinions:</strong> Novel ideas often score low initially. Decay half-lives help —
-                  Veracity decays slowly (365 days), so truthful work retains value even if initially unpopular.</li>
-                <li><strong>Niche expertise:</strong> A paper on algebraic topology won&apos;t get many confirmations.
-                  But the few who can evaluate it are themselves high-trust in that role context, so their
-                  confirmations carry more weight.</li>
-                <li><strong>Humor and satire:</strong> Context-dependent. In a comedy community, being funny <em>is</em>
-                  quality. V3 scoring is role-contextual, so the community&apos;s norms define what matters.</li>
-              </ul>
-              <p className="text-amber-400/80 text-xs">
-                <strong>Honest caveat:</strong> VCM assumes recipients are honest about quality. Confirmation
-                fatigue is real — if recipients rubber-stamp confirmations, quality signals degrade. The system
-                has a safeguard (confirming too generously lowers your own Veracity score), but social
-                dynamics are unpredictable. This is one of the harder unsolved problems.
-              </p>
-            </div>
-          </details>
+          {/* Quality measurement — promoted to "Most asked" tier above */}
 
           {/* Protocol governance */}
           <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">

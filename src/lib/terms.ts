@@ -81,7 +81,7 @@ export const terms: Record<string, TermDefinition> = {
     brief: "Multi-dimensional value scores for contributions.",
     explanation:
       "Like T3 but for value created, not trustworthiness. A 3D tensor measuring Valuation (0.3 weight), Veracity (0.35), and Validity (0.35). Used to price ATP costs for tasks and measure contribution quality.",
-    learnMore: "/glossary",
+    learnMore: "/trust-tensor#v3",
     canonicalSpec:
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/t3-v3-tensors.md",
   },
@@ -124,10 +124,10 @@ export const terms: Record<string, TermDefinition> = {
   // Agent Mechanics
   EP: {
     term: "EP",
-    fullName: "Epistemic Proprioception",
-    brief: "Self-awareness of what you know and don't know.",
+    fullName: "Cross-Life Learning",
+    brief: "Learning from your own patterns across multiple lives.",
     explanation:
-      "Knowing what you know and don't know. Agents that recognize patterns (epistemic proprioception) survive better than those who don't. In Web4 simulations, agents use EP to learn: 'High-value contributions earn more ATP' or 'Transparency rebuilds trust faster.'",
+      "Think of it like muscle memory, but for decision-making. Over multiple lives in Web4, agents build up a sense of what works and what doesn't — 'high-value contributions earn more ATP' or 'transparency rebuilds trust faster.' This isn't programmed in; it emerges from experience. Technically called Epistemic Proprioception (knowing what you know), it's the mechanism that makes each life smarter than the last.",
     learnMore: "/patterns",
   },
 

@@ -1210,6 +1210,31 @@ export default function HowItWorksPage() {
           </p>
         </div>
 
+        {/* Who validates quality? — Mar 22 visitor unanswered Q1 */}
+        <div className="bg-gradient-to-br from-sky-950/20 to-gray-900 border border-sky-800/20 rounded-xl p-6 mt-8">
+          <h4 className="text-lg font-semibold text-gray-100 mb-3">
+            Who Decides If Something Is &ldquo;Helpful&rdquo;?
+          </h4>
+          <p className="text-gray-300 text-sm leading-relaxed mb-3">
+            Not a central algorithm. The people who <em>received</em> your contribution decide.
+            Web4 uses <strong className="text-sky-400">recipient attestation</strong>: when you
+            post a helpful answer, the people who read it can confirm it was useful. Their
+            confirmation converts your spent energy (ADP) back into fresh ATP.
+          </p>
+          <p className="text-gray-300 text-sm leading-relaxed mb-3">
+            No confirmation? Your energy stays spent. This creates a natural feedback loop:
+            produce value &rarr; recipients confirm &rarr; you get energy back. Produce noise
+            &rarr; nobody confirms &rarr; you lose energy.
+          </p>
+          <p className="text-gray-400 text-xs">
+            This is called <strong>VCM (Value Confirmation Mechanism)</strong>. It&apos;s like a
+            restaurant tip that happens automatically when service is good — except it&apos;s your
+            energy budget, not your wallet. See{' '}
+            <Link href="/atp-economics" className="text-sky-400 hover:underline">ATP Economics</Link>{' '}
+            for the full mechanics.
+          </p>
+        </div>
+
         <p className="text-gray-500 text-sm">
           Full definitions:{' '}
           <Link href="/glossary" className="text-sky-400 hover:underline">Glossary</Link>{' · '}
