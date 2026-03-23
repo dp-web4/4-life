@@ -873,6 +873,16 @@ export default function CoherenceIndexPage() {
           </div>
         </section>
 
+        {/* Synthon foreshadow — visitor friction Mar 23 LOW */}
+        <section className="max-w-4xl mx-auto mb-16">
+          <div className="bg-gray-800/30 border border-gray-700/50 rounded-lg px-6 py-4 text-gray-400 text-sm">
+            <strong className="text-gray-300">Coherence isn&apos;t just for individuals.</strong>{" "}
+            Groups of entities with dense mutual trust can develop collective coherence — Web4 calls these emergent collectives{" "}
+            <Link href="/aliveness" className="text-sky-400 hover:underline">synthons</Link>.{" "}
+            More on the <Link href="/aliveness" className="text-sky-400 hover:underline">Aliveness</Link> page.
+          </div>
+        </section>
+
         {/* Connection to 9-Domain Coherence Physics — collapsed by default */}
         <section className="max-w-4xl mx-auto mb-16">
           <details className="group">
