@@ -1402,6 +1402,25 @@ lenient_society = {
           </div>
         </section>
 
+        {/* Synthon foreshadowing — visitor friction: "synthon" introduced too late on Aliveness */}
+        <section className="max-w-4xl mx-auto mt-12 mb-8">
+          <div className="bg-gradient-to-r from-emerald-950/20 to-gray-900 border border-emerald-800/20 rounded-xl p-6">
+            <h3 className="text-lg font-semibold text-emerald-400 mb-2">Groups Can Be Coherent Too</h3>
+            <p className="text-sm text-gray-300">
+              Everything on this page applies to individuals — but coherence also emerges at
+              the group level. When several entities interact frequently with dense mutual trust,
+              their collective behavior can become coherent as a unit. Web4 calls these emergent
+              groups <strong className="text-emerald-300">synthons</strong>.
+            </p>
+            <p className="text-sm text-gray-400 mt-2">
+              You&apos;ll see how this works on the next page:{" "}
+              <Link href="/aliveness" className="text-emerald-400 hover:underline">Aliveness</Link> explores
+              how coherence, trust, and energy determine whether an entity — individual or group — is
+              considered &quot;alive&quot; in Web4.
+            </p>
+          </div>
+        </section>
+
         <ConceptSequenceNav currentPath="/coherence-index" />
         <ExplorerNav currentPath="/coherence-index" />
         <RelatedConcepts currentPath="/coherence-index" />

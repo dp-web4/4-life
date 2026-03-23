@@ -546,10 +546,12 @@ export default function ATPEconomicsPage() {
       </section>
 
       {/* Basics divider */}
-      <div className="max-w-4xl mx-auto mt-16 mb-4 flex items-center gap-4">
-        <div className="flex-1 border-t border-gray-700"></div>
-        <span className="text-gray-500 text-sm font-medium whitespace-nowrap">You&apos;ve got the basics — deeper dives below</span>
-        <div className="flex-1 border-t border-gray-700"></div>
+      <div className="max-w-4xl mx-auto mt-16 mb-4 text-center">
+        <div className="border-t border-gray-700 mb-8"></div>
+        <div className="inline-flex items-center gap-3 bg-green-950/30 border border-green-800/30 rounded-full px-6 py-2">
+          <span className="text-green-400 text-sm font-semibold">You&apos;ve learned the essentials</span>
+          <span className="text-gray-500 text-xs">Everything below is optional deep-dives for the curious</span>
+        </div>
       </div>
 
       {/* Market Dynamics */}

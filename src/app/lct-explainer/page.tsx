@@ -7,6 +7,7 @@ import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import TermTooltip from "@/components/TermTooltip";
+import DeepDiveToggle from "@/components/DeepDiveToggle";
 import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
 
 /**
@@ -676,9 +677,20 @@ export default function LCTExplainerPage() {
           </details>
         </div>
 
-        {/* Attack Scenario Comparison */}
-        <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
-          <h2 className="text-2xl font-bold mb-6 text-gray-100">Security Comparison: Web2 vs Web3 vs Web4</h2>
+        {/* "You've learned the essentials" divider */}
+        <div className="border-t border-gray-700 pt-8 mb-8 text-center">
+          <div className="inline-flex items-center gap-3 bg-green-950/30 border border-green-800/30 rounded-full px-6 py-2">
+            <span className="text-green-400 text-sm font-semibold">You&apos;ve learned the essentials</span>
+            <span className="text-gray-500 text-xs">Everything below is optional deep-dives for the curious</span>
+          </div>
+        </div>
+
+        {/* Attack Scenario Comparison — wrapped in details for progressive disclosure */}
+        <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
+          <summary className="text-2xl font-bold text-gray-100 cursor-pointer hover:text-purple-400 transition-colors list-none flex justify-between items-center">
+            <span>Security Comparison: Web2 vs Web3 vs Web4</span>
+            <span className="text-gray-500 text-base font-normal">7 attack scenarios</span>
+          </summary>
 
           <div className="mb-6">
             <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -726,7 +738,7 @@ export default function LCTExplainerPage() {
               </div>
             </div>
           </div>
-        </div>
+        </details>
 
         {/* Identity Security Audit — cumulative interaction */}
         {(exploredAttacks.size >= 2 || exploredComponents.size >= 3) && (
@@ -803,14 +815,6 @@ export default function LCTExplainerPage() {
             </div>
           </div>
         )}
-
-        {/* "You've got the basics" divider — visitor friction Mar 17 HIGH */}
-        <div className="border-t border-gray-700 pt-8 mb-8 text-center">
-          <div className="inline-flex items-center gap-3 bg-green-950/30 border border-green-800/30 rounded-full px-6 py-2">
-            <span className="text-green-400 text-sm font-semibold">You&apos;ve got the basics</span>
-            <span className="text-gray-500 text-xs">Everything below is optional deep-dives for the curious</span>
-          </div>
-        </div>
 
         {/* What Happens When Things Go Wrong */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
