@@ -677,13 +677,7 @@ export default function LCTExplainerPage() {
           </details>
         </div>
 
-        {/* "You've learned the essentials" divider */}
-        <div className="border-t border-gray-700 pt-8 mb-8 text-center">
-          <div className="inline-flex items-center gap-3 bg-green-950/30 border border-green-800/30 rounded-full px-6 py-2">
-            <span className="text-green-400 text-sm font-semibold">You&apos;ve learned the essentials</span>
-            <span className="text-gray-500 text-xs">Everything below is optional deep-dives for the curious</span>
-          </div>
-        </div>
+        <DeepDiveToggle storageKey="4life-lct-deep-dive">
 
         {/* Attack Scenario Comparison — wrapped in details for progressive disclosure */}
         <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
@@ -1411,6 +1405,8 @@ export default function LCTExplainerPage() {
           </div>
           </details>
         </div>
+
+        </DeepDiveToggle>
 
         {/* Related Concepts */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8">

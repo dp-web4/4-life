@@ -7,6 +7,7 @@ import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import { T3, CI, MRH } from "@/components/TermTooltip";
+import DeepDiveToggle from "@/components/DeepDiveToggle";
 import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
 
 export default function ATPEconomicsPage() {
@@ -545,14 +546,8 @@ export default function ATPEconomicsPage() {
         </div>
       </section>
 
-      {/* Basics divider */}
-      <div className="max-w-4xl mx-auto mt-16 mb-4 text-center">
-        <div className="border-t border-gray-700 mb-8"></div>
-        <div className="inline-flex items-center gap-3 bg-green-950/30 border border-green-800/30 rounded-full px-6 py-2">
-          <span className="text-green-400 text-sm font-semibold">You&apos;ve learned the essentials</span>
-          <span className="text-gray-500 text-xs">Everything below is optional deep-dives for the curious</span>
-        </div>
-      </div>
+      <div className="max-w-4xl mx-auto">
+        <DeepDiveToggle storageKey="4life-atp-deep-dive">
 
       {/* Market Dynamics */}
       <section id="at-scale" className="max-w-4xl mx-auto mt-8 scroll-mt-24">
@@ -1180,6 +1175,9 @@ if agent.atp <= 0:
           </div>
         </details>
       </section>
+
+        </DeepDiveToggle>
+      </div>
 
       {/* Footer Note */}
       <section className="max-w-4xl mx-auto mt-12 text-center text-gray-500 text-sm pb-12">
