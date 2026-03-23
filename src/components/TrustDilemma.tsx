@@ -82,6 +82,7 @@ export const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
 ];
 
 export default function TrustDilemma() {
+  const [started, setStarted] = useState(false);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState<string | null>(null);
@@ -102,6 +103,7 @@ export default function TrustDilemma() {
   };
 
   const handleReset = () => {
+    setStarted(false);
     setStep(0);
     setAnswers([]);
     setCurrentAnswer(null);
@@ -117,6 +119,45 @@ export default function TrustDilemma() {
       alert('Copied to clipboard!');
     }
   };
+
+  // Show overview of all 3 dilemmas before the first question
+  if (!started) {
+    return (
+      <section style={{ maxWidth: '48rem', margin: '0 auto' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', marginBottom: '1.25rem', lineHeight: 1.6 }}>
+          Three real internet problems. Pick how you&apos;d solve each one, then see how a trust-native approach handles it.
+        </p>
+        <div style={{ display: 'grid', gap: '0.5rem', marginBottom: '1.25rem' }}>
+          {DILEMMA_QUESTIONS.map((q, i) => (
+            <div key={i} style={{
+              display: 'flex', gap: '0.75rem', alignItems: 'center',
+              padding: '0.5rem 0.75rem', borderRadius: '0.375rem',
+              background: 'var(--color-dark-surface)', border: '1px solid var(--color-border)',
+            }}>
+              <span style={{
+                fontSize: '0.7rem', fontWeight: 600, padding: '0.15rem 0.4rem', borderRadius: '0.25rem',
+                background: 'rgba(56, 189, 248, 0.15)', color: 'var(--color-sky)', whiteSpace: 'nowrap',
+              }}>
+                {q.pillar}
+              </span>
+              <span style={{ color: 'var(--color-text-secondary)', fontSize: '0.85rem' }}>
+                {q.question}
+              </span>
+            </div>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center' }}>
+          <button
+            onClick={() => setStarted(true)}
+            className="btn-primary"
+            style={{ padding: '0.5rem 1.5rem', fontSize: '0.9rem' }}
+          >
+            Start the quiz →
+          </button>
+        </div>
+      </section>
+    );
+  }
 
   if (isComplete) {
     return (
