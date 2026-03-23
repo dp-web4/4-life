@@ -608,6 +608,89 @@ export default function WhatCouldGoWrongPage() {
               </p>
             </div>
           </details>
+          {/* Minimum viable community size */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How many people does a community need to work?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-3">
+              <p>
+                There&apos;s no hard minimum, but the dynamics change significantly with scale:
+              </p>
+              <div className="space-y-2 text-gray-400">
+                <p>
+                  <strong className="text-gray-300">5-10 members:</strong> Trust works but converges
+                  slowly — not enough independent interactions to distinguish patterns from noise.
+                  T3 scores will be heavily influenced by a few interactions. Works for tight-knit teams
+                  where you already know each other.
+                </p>
+                <p>
+                  <strong className="text-gray-300">10-30 members:</strong> The sweet spot for early
+                  communities. Enough interaction diversity that trust scores become meaningful. The
+                  cold-start walkthrough above shows ~100 actions stabilize trust — with 20 active
+                  members, that&apos;s about 5 actions per person.
+                </p>
+                <p>
+                  <strong className="text-gray-300">50+ members:</strong> Full dynamics emerge — MRH
+                  neighborhoods form naturally, specialists develop role-specific reputations,
+                  and the quality ramp creates real economic pressure against free-riding.
+                </p>
+              </div>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> These thresholds come from simulations. Real communities
+                might need more or fewer members depending on how active they are and what they&apos;re
+                doing. A 10-person team making daily decisions generates more signal than a 100-person
+                forum with occasional posts.
+              </p>
+            </div>
+          </details>
+
+          {/* Illegal content moderation */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How does Web4 handle genuinely illegal content?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-3">
+              <p>
+                &quot;No central authority&quot; doesn&apos;t mean &quot;no enforcement.&quot; Web4 has
+                multiple layers for handling content that requires legal intervention:
+              </p>
+              <div className="space-y-2 text-gray-400">
+                <p>
+                  <strong className="text-gray-300">Society-level rules (SAL).</strong> Each society
+                  defines its own{" "}
+                  <Link href="/how-it-works#governance" className="text-sky-400 hover:underline">
+                    Society Alignment Layer
+                  </Link>{" "}
+                  — rules that members agree to when joining. Violations trigger graduated enforcement:
+                  warnings, trust penalties, suspension, and ultimately permanent exclusion.
+                </p>
+                <p>
+                  <strong className="text-gray-300">Law oracles.</strong> For content that violates
+                  actual laws (not just community norms), societies can configure law oracles —
+                  external legal frameworks that can trigger immediate action. Think of them as
+                  circuit breakers that bypass normal trust mechanics when legal thresholds are met.
+                </p>
+                <p>
+                  <strong className="text-gray-300">Accountability by design.</strong> Every action in
+                  Web4 is signed by a hardware-bound identity. Unlike anonymous platforms where harmful
+                  content is posted by throwaway accounts, Web4 actors have permanent identities with
+                  real trust stakes. Publishing illegal content costs ATP, destroys trust, and creates
+                  an auditable trail — making it far riskier than on platforms where you can just
+                  create a new account.
+                </p>
+              </div>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> This framework exists in design, not deployment. Real-world
+                content moderation is one of the hardest problems in technology. Web4&apos;s approach
+                makes harmful content more costly and more traceable, but it doesn&apos;t eliminate
+                the need for human judgment about what crosses the line.
+              </p>
+            </div>
+          </details>
+
           {/* Network outages */}
           <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
