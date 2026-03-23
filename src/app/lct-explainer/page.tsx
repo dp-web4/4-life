@@ -614,6 +614,18 @@ export default function LCTExplainerPage() {
             With software-only hardware, 0.5 is both where you start and the highest you can reach.
             Stronger hardware lets you build higher &mdash; but you still have to earn it through behavior.
           </p>
+          <div className="mt-3 bg-sky-950/30 border border-sky-800/20 rounded-lg p-3">
+            <p className="text-sky-300 text-xs font-semibold mb-1">
+              Only have one device? You&apos;re still in.
+            </p>
+            <p className="text-gray-400 text-xs">
+              Single-device users aren&apos;t excluded &mdash; they just have a lower trust ceiling
+              (typically 0.50&ndash;0.75 depending on hardware). You can fully participate, post, earn
+              ATP, and build karma. Adding a second device later raises your ceiling retroactively.
+              This matters especially in developing countries where many people access the internet
+              from a single smartphone &mdash; Web4 is designed to include them, not penalize them.
+            </p>
+          </div>
 
           <details className="mt-4">
             <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300">
@@ -1109,6 +1121,30 @@ export default function LCTExplainerPage() {
               trust ceiling (50% vs. 90% for hardware-bound keys). This means you can participate, but
               high-trust actions require at least one hardware-bound device. Web4 is designed so that anyone
               with a basic smartphone can join — the hardware barrier is &ldquo;own a phone,&rdquo; not &ldquo;buy specialized equipment.&rdquo;
+            </p>
+          </div>
+
+          {/* FAQ: Single device */}
+          <div className="mt-6 p-4 bg-green-950/20 border border-green-800/30 rounded-lg">
+            <h3 className="text-sm font-bold text-green-400 mb-2">
+              What if I only have one device? Am I less trustworthy?
+            </h3>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong>One device is enough to fully participate.</strong> Your trust score is earned through
+              behavior, not hardware count. A single-device user who consistently does quality work can reach
+              the same trust levels as a multi-device user in most roles.
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              The difference is in <strong>trust <em>ceiling</em></strong>, not trust itself. With one hardware device,
+              your ceiling is about 75%. With software-only, it&apos;s 50%. Multiple devices raise the ceiling
+              to 90% — but you still have to <em>earn</em> your way up through consistent behavior. Most everyday
+              interactions don&apos;t require trust above 75%.
+            </p>
+            <p className="text-xs text-gray-500">
+              This matters for developing countries where single-device users are common. Web4 is designed so
+              a single smartphone provides meaningful participation — the higher ceilings from multiple devices
+              are for high-stakes roles (financial custodianship, infrastructure administration) where the extra
+              hardware assurance is warranted.
             </p>
           </div>
 

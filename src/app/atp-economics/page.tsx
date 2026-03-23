@@ -827,6 +827,51 @@ export default function ATPEconomicsPage() {
           </details>
         </div>
         </details>
+
+        {/* ATP Allocation FAQ — Mar 22 visitor unanswered Q3 */}
+        <details className="mt-6">
+          <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300">
+            ▶ Where does the first 100 ATP come from?
+          </summary>
+          <div className="mt-3 bg-gray-900/60 border border-gray-700 rounded-lg p-4 text-sm text-gray-300 space-y-3">
+            <p>
+              Every new participant receives a <strong>bootstrap grant</strong> of 100 ATP from the
+              society they join. Think of it like a welcome package &mdash; enough energy to
+              participate meaningfully, but not enough to cause damage.
+            </p>
+            <p>
+              <strong className="text-sky-400">No inflation:</strong> ATP isn&apos;t printed from nothing.
+              When recipients confirm your work (VCM), the system converts discharged ADP back into
+              fresh ATP. The total energy in a society is bounded &mdash; it flows and recycles,
+              like calories in an ecosystem, not like currency from a central bank.
+            </p>
+            <p>
+              <strong className="text-sky-400">Bootstrap convergence:</strong> The initial 100 ATP
+              advantage fades quickly. After about 30 quality actions, early participants have no
+              meaningful edge over newcomers. By ~50 actions, a talented newcomer routinely surpasses
+              a mediocre founder. The system rewards ongoing quality, not first-mover privilege.
+            </p>
+          </div>
+        </details>
+
+        {/* ADP visibility boost — Mar 22 visitor unanswered Q6 */}
+        <div className="mt-6 bg-gradient-to-br from-amber-950/20 to-gray-900 border border-amber-800/20 rounded-xl p-5">
+          <h3 className="text-lg font-semibold text-amber-300 mb-2">
+            What About ADP?
+          </h3>
+          <p className="text-gray-300 text-sm leading-relaxed mb-2">
+            Every time you spend ATP, the system creates an <strong>ADP (Allocation Discharge Packet)</strong> &mdash;
+            a receipt recording what you did, what it cost, and who witnessed it. ADP is the &ldquo;spent
+            energy&rdquo; counterpart to ATP&apos;s &ldquo;available energy.&rdquo;
+          </p>
+          <p className="text-gray-400 text-xs">
+            When your work is confirmed as valuable (via VCM), the ADP converts back into ATP &mdash; you
+            get your energy back. If nobody confirms, the ADP stays discharged and your budget shrinks.
+            This ATP &harr; ADP cycle is the metabolic heartbeat of Web4.{' '}
+            <a href="#technical" className="text-sky-400 hover:underline">See technical details below</a> for
+            exactly what each ADP records.
+          </p>
+        </div>
       </section>
 
       {/* Technical Details (Collapsible) */}
@@ -1093,6 +1138,42 @@ if agent.atp <= 0:
             </p>
             <p className="text-amber-400/60 text-xs">
               See also: <Link href="/federation-economics" className="text-sky-400 hover:underline">Federation Economics</Link> for how ATP markets handle cross-community credit, and <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">What Could Go Wrong</Link> for why this remains unsolved.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      {/* FAQ: Where does initial ATP come from? */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <details className="bg-gray-800/40 border border-gray-700 rounded-xl p-6">
+          <summary className="text-lg font-semibold text-amber-400 cursor-pointer hover:text-amber-300 transition-colors list-none flex justify-between items-center">
+            <span>Where does the initial 100 ATP come from? Is there infinite supply?</span>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div className="mt-4 text-gray-300 text-sm space-y-3">
+            <p>
+              <strong className="text-amber-400/80">Each society mints a fixed ATP pool when it forms.</strong> Think
+              of it like a community budget: the total amount is set by the society&apos;s parameters, and new members
+              receive their starting allocation from this pool &mdash; not from thin air.
+            </p>
+            <p>Key properties that prevent inflation:</p>
+            <ul className="list-disc list-inside space-y-1.5 ml-4 text-gray-400">
+              <li><strong>Conservation:</strong> ATP is never created during normal operation. Every transfer
+                moves existing ATP, minus the 5% burn fee. The total supply slowly <em>decreases</em> over time.</li>
+              <li><strong>Bootstrap allocation:</strong> New members receive a starter amount (typically 100 ATP)
+                from the society&apos;s reserve. This is enough to participate but not enough to dominate &mdash;
+                you must earn more through quality contributions.</li>
+              <li><strong>Decay recycles:</strong> When entities die (energy exhaustion, trust collapse), their
+                remaining ATP returns to the society pool, available for future newcomers.</li>
+              <li><strong>No money printing:</strong> Unlike fiat currencies, no one can unilaterally increase
+                the supply. The initial pool size and per-member allocation are society-level governance decisions,
+                transparent to all members.</li>
+            </ul>
+            <p className="text-amber-400/60 text-xs">
+              <strong>Honest caveat:</strong> The exact calibration of initial pool size vs. member allocation vs.
+              burn rate is still being tuned through simulation. Too small a pool starves newcomers; too large
+              devalues effort. Current simulations converge on sustainable economics, but real-world testing would
+              need to validate these parameters.
             </p>
           </div>
         </details>

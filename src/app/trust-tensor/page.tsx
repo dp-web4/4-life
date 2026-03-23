@@ -763,7 +763,7 @@ export default function TrustTensorPage() {
       </section>
 
       {/* T3/V3 Bridge — how they work together (visitor friction Mar 15-16) */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="v3" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/30 border border-sky-700/30 rounded-xl p-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-100">
             How T3 and V3 Work Together
@@ -1376,6 +1376,44 @@ Temperament:  30-day half-life (recent behavior matters most)
             precision costs more <TermTooltip term="ATP" /> to prevent score inflation.
           </p>
         </div>
+      </section>
+
+      {/* Cultural context FAQ */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <details className="bg-gray-800/40 border border-gray-700 rounded-xl p-6">
+          <summary className="text-lg font-semibold text-amber-400 cursor-pointer hover:text-amber-300 transition-colors list-none flex justify-between items-center">
+            <span>How does T3 handle cultural differences? &ldquo;Temperament&rdquo; seems culturally loaded.</span>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div className="mt-4 text-gray-300 text-sm space-y-3">
+            <p>
+              <strong className="text-amber-400/80">Role-contextual scoring is the key defense.</strong> Temperament
+              doesn&apos;t measure a universal &ldquo;personality score&rdquo; &mdash; it measures <em>behavioral
+              consistency within a specific role and community</em>. What counts as reliable temperament for a
+              surgeon is different from what counts for a comedian.
+            </p>
+            <p>This means cultural norms don&apos;t leak across contexts:</p>
+            <ul className="list-disc list-inside space-y-1.5 ml-4 text-gray-400">
+              <li><strong>Directness vs. indirectness:</strong> A direct communication style might score high
+                in a Western engineering community and differently in a Japanese business context. Since scores
+                are role-specific, the community&apos;s own norms define the baseline &mdash; not a universal standard.</li>
+              <li><strong>Community-defined roles:</strong> Each society defines its own role taxonomy and what
+                Talent, Training, and Temperament mean for those roles. There&apos;s no global authority deciding
+                what &ldquo;good temperament&rdquo; looks like.</li>
+              <li><strong>Behavioral evidence, not personality:</strong> Temperament measures consistency of
+                conduct over time (decay half-life: 30 days), not personality traits. It asks &ldquo;does this
+                person behave predictably in this role?&rdquo; not &ldquo;is this person culturally correct?&rdquo;</li>
+            </ul>
+            <p className="text-amber-400/60 text-xs">
+              <strong>Honest caveat:</strong> Cultural bias in trust scoring is a real risk, especially when
+              trust transfers across communities with different norms. This is an active area of research &mdash;
+              the role-contextual design mitigates it but doesn&apos;t eliminate it entirely. Cross-community
+              trust bridging ({" "}
+              <Link href="/federation-economics" className="text-sky-400 hover:underline">federation economics</Link>)
+              adds complexity that hasn&apos;t been culturally tested.
+            </p>
+          </div>
+        </details>
       </section>
 
       {/* Footer Note */}
