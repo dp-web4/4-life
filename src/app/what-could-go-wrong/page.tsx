@@ -673,6 +673,19 @@ export default function WhatCouldGoWrongPage() {
                   external legal frameworks that can trigger immediate action. Think of them as
                   circuit breakers that bypass normal trust mechanics when legal thresholds are met.
                 </p>
+                <p className="text-gray-400 text-xs pl-4 border-l-2 border-gray-600">
+                  <strong className="text-gray-300">Concrete example:</strong> A society configures a law
+                  oracle linked to its jurisdiction&apos;s child protection laws. A member reports illegal
+                  content. The law oracle evaluates the report against its legal framework and, if the
+                  threshold is met, triggers immediate action: the content is flagged, the actor&apos;s
+                  account is frozen (trust set to zero, ATP locked), and the auditable trail —
+                  hardware-signed identity, timestamps, content hashes — is preserved for law enforcement.
+                  The actor can appeal through the society&apos;s{" "}
+                  <Link href="/aliveness#appeals" className="text-sky-400 hover:underline">appeals process</Link>,
+                  but the freeze is immediate. <em>Which</em> jurisdiction&apos;s laws apply depends on
+                  the society&apos;s configuration — a society based in the EU would reference EU law, while
+                  a global society might reference international conventions.
+                </p>
                 <p>
                   <strong className="text-gray-300">Accountability by design.</strong> Every action in
                   Web4 is signed by a hardware-bound identity. Unlike anonymous platforms where harmful
@@ -686,7 +699,10 @@ export default function WhatCouldGoWrongPage() {
                 <strong>Honest caveat:</strong> This framework exists in design, not deployment. Real-world
                 content moderation is one of the hardest problems in technology. Web4&apos;s approach
                 makes harmful content more costly and more traceable, but it doesn&apos;t eliminate
-                the need for human judgment about what crosses the line.
+                the need for human judgment about what crosses the line. The specific question of
+                &ldquo;whose law applies?&rdquo; in cross-jurisdiction societies is an open design
+                challenge — the protocol provides the mechanism (law oracles), but the policy decisions
+                are made by each society.
               </p>
             </div>
           </details>
