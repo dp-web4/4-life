@@ -773,7 +773,10 @@ export default function WhatCouldGoWrongPage() {
               if the spirit is right. But decentralized governance at internet scale — where
               communities disagree on fundamental values — remains a challenge no system has
               fully solved. The simulation engine validates mechanics; human behavior is the
-              unknown.
+              unknown. See the FAQs below for specifics on{" "}
+              <span className="text-amber-400/80">illegal content handling</span>,{" "}
+              <span className="text-amber-400/80">minimum community size</span>, and{" "}
+              <span className="text-amber-400/80">network outages</span>.
             </p>
           </div>
 

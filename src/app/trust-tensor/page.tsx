@@ -7,6 +7,7 @@ import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import TermTooltip from "@/components/TermTooltip";
+import DeepDiveToggle from "@/components/DeepDiveToggle";
 import dynamic from "next/dynamic";
 import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
 
@@ -870,15 +871,8 @@ export default function TrustTensorPage() {
         </div>
       </section>
 
-      {/* "You've got the basics" divider — visitor friction Mar 17 HIGH */}
-      <section className="max-w-4xl mx-auto mt-16">
-        <div className="border-t border-gray-700 pt-8 text-center">
-          <div className="inline-flex items-center gap-3 bg-green-950/30 border border-green-800/30 rounded-full px-6 py-2">
-            <span className="text-green-400 text-sm font-semibold">You&apos;ve got the basics</span>
-            <span className="text-gray-500 text-xs">Everything below is optional deep-dives for the curious</span>
-          </div>
-        </div>
-      </section>
+      <div className="max-w-4xl mx-auto mt-16">
+        <DeepDiveToggle storageKey="4life-trust-tensor-deep-dive">
 
       {/* Fractal Sub-Dimensions — collapsible for beginners */}
       <section className="max-w-4xl mx-auto mt-16">
@@ -1426,6 +1420,9 @@ Temperament:  30-day half-life (recent behavior matters most)
           and watch trust tensors change over time.
         </p>
       </section>
+
+        </DeepDiveToggle>
+      </div>
 
       <div className="max-w-4xl mx-auto">
         <ConceptSequenceNav currentPath="/trust-tensor" />

@@ -656,6 +656,18 @@ export default function HowItWorksPage() {
             </div>
           </div>
         </div>
+
+        {/* Synthon foreshadowing */}
+        <div className="mt-8 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg">
+          <p className="text-gray-300 text-sm leading-relaxed">
+            <strong className="text-purple-400">Groups can be &quot;alive&quot; too.</strong>{" "}
+            When individuals build dense mutual trust, something emerges at the group level — Web4 calls
+            these <Link href="/aliveness#synthons" className="text-sky-400 hover:underline">synthons</Link>.
+            A team that consistently collaborates well develops its own collective aliveness score,
+            separate from any individual member. Think of it like a band that&apos;s greater than
+            the sum of its musicians.
+          </p>
+        </div>
       </section>
 
       {/* Putting It All Together */}

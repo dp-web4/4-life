@@ -698,6 +698,20 @@ export default function MarkovRelevancyHorizonPage() {
               </p>
             </div>
           </div>
+
+          {/* Cross-society trust transfer */}
+          <div className="bg-sky-950/20 border border-sky-800/30 rounded-lg p-4 mt-6">
+            <h4 className="text-sm font-semibold text-sky-400 mb-2">What happens when you join a new community?</h4>
+            <p className="text-sm text-gray-400">
+              Your trust doesn&apos;t reset to zero — but it doesn&apos;t transfer at full value either.
+              When communities federate, your trust from Community A travels to Community B at a discount
+              (typically ~65% weight). Think of it like transferring schools: your grades come with you,
+              but you still need to prove yourself to new teachers.{" "}
+              <Link href="/federation-economics#switching-societies" className="text-sky-400 hover:underline">
+                See the full walkthrough →
+              </Link>
+            </p>
+          </div>
         </section>
 
         {/* Real-World Applications Section */}
