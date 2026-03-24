@@ -672,6 +672,35 @@ export default function WhyWeb4Page() {
               </p>
             </div>
           </details>
+
+          {/* Minimum community size — visitor Q: "how many people does this need?" */}
+          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How many people does a Web4 community need to work?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>As few as 5&ndash;10 active members</strong>, though the dynamics improve with scale.
+                The system stabilizes after roughly 100 total quality actions across participants
+                (see the{" "}
+                <Link href="/what-could-go-wrong#cold-start" className="text-sky-400 hover:underline">cold-start walkthrough</Link>
+                {" "}for a step-by-step breakdown).
+              </p>
+              <p>Here&apos;s what changes with community size:</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>5&ndash;10 people:</strong> Functional, but trust scores are volatile. One person&apos;s bad day moves the whole graph. MRH neighborhoods overlap heavily, so everyone sees everything.</li>
+                <li><strong>20&ndash;50 people:</strong> Trust signals become statistically meaningful. Roles start to differentiate. The Gini coefficient converges toward the designed 0.25.</li>
+                <li><strong>100+ people:</strong> Emergent structure appears &mdash; clusters, bridge nodes, specialists. First-mover advantage fades (30-action half-life). This is where the system starts to feel like an ecosystem, not a group chat.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Small communities (~5 members) are more sensitive to individual behavior.
+                A single bad actor is 20% of the network. The protocol still works, but its self-correcting properties
+                are slower to activate. Think of it like a small town vs. a city &mdash; both work, but social dynamics
+                are different.
+              </p>
+            </div>
+          </details>
         </div>
 
         {/* All other FAQs — collapsed by default */}

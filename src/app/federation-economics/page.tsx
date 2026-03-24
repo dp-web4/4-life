@@ -1031,6 +1031,26 @@ export default function FederationEconomicsPage() {
             Federation is opt-in: communities choose who they trust, just like individuals do.
           </p>
         </details>
+
+        <details className="bg-gray-900/50 border border-gray-700 rounded p-4 mb-4">
+          <summary className="text-sm text-sky-400 cursor-pointer hover:text-sky-300">
+            Concrete example: &ldquo;I have trust in Community A, now I join Community B — what happens?&rdquo;
+          </summary>
+          <div className="text-gray-400 text-sm mt-3 leading-relaxed space-y-3">
+            <p>
+              Say you&apos;re a trusted member of a <strong>gardening forum</strong> (T3 = 0.82 as a contributor) and you join a <strong>cooking community</strong> that&apos;s federated with it.
+            </p>
+            <ol className="list-decimal list-inside space-y-2 text-gray-400">
+              <li><strong>Your trust arrives discounted.</strong> The cooking community applies MRH decay (×0.7 per hop) and a domain relevance factor. Your gardening trust might arrive as 0.82 × 0.7 × 0.6 (domain match) = <strong>0.34</strong>.</li>
+              <li><strong>You skip the cold-start penalty.</strong> Instead of the default 1.4× action cost, you start around 1.1× — the federation bridged part of the gap.</li>
+              <li><strong>Local actions quickly dominate.</strong> After ~30 quality posts in the cooking community, your local trust overtakes the imported score. By ~50 actions, the imported trust is negligible.</li>
+              <li><strong>Your gardening trust is unchanged.</strong> Trust isn&apos;t &ldquo;moved&rdquo; — it&apos;s verified and discounted. You keep your full reputation in the gardening forum.</li>
+            </ol>
+            <p className="text-gray-500 text-xs mt-2">
+              <strong>Key insight:</strong> Federation makes joining easier, not free. Your reputation gives you a boost, but each community still requires you to prove yourself locally.
+            </p>
+          </div>
+        </details>
       </section>
 
       {/* Related Concepts */}

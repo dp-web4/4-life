@@ -193,6 +193,24 @@ export default function LCTExplainerPage() {
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300">jump to the interactive security audit ↓</a></p>
         </div>
 
+        {/* Concept Sequence Roadmap — shows where this page fits in the learning path */}
+        <div className="bg-gray-800/30 border border-gray-700/50 rounded-lg px-6 py-4 mb-8">
+          <p className="text-xs text-gray-400 mb-2">You&apos;re starting a 6-concept journey. Each builds on the last:</p>
+          <div className="flex flex-wrap items-center gap-1 text-xs">
+            <span className="bg-purple-900/60 text-purple-300 px-2 py-1 rounded font-semibold">1. Identity (LCT)</span>
+            <span className="text-gray-600">→</span>
+            <a href="/atp-economics" className="text-gray-500 hover:text-green-400 transition-colors px-2 py-1 rounded hover:bg-gray-800/50">2. Energy (ATP)</a>
+            <span className="text-gray-600">→</span>
+            <a href="/trust-tensor" className="text-gray-500 hover:text-blue-400 transition-colors px-2 py-1 rounded hover:bg-gray-800/50">3. Trust (T3)</a>
+            <span className="text-gray-600">→</span>
+            <a href="/markov-relevancy-horizon" className="text-gray-500 hover:text-cyan-400 transition-colors px-2 py-1 rounded hover:bg-gray-800/50">4. Neighborhood (MRH)</a>
+            <span className="text-gray-600">→</span>
+            <a href="/coherence-index" className="text-gray-500 hover:text-amber-400 transition-colors px-2 py-1 rounded hover:bg-gray-800/50">5. Consistency (CI)</a>
+            <span className="text-gray-600">→</span>
+            <a href="/aliveness" className="text-gray-500 hover:text-rose-400 transition-colors px-2 py-1 rounded hover:bg-gray-800/50">6. Aliveness</a>
+          </div>
+        </div>
+
         {/* The Three Models */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <h2 className="text-2xl font-bold mb-6 text-gray-100">Identity Evolution: Web2 → Web3 → Web4</h2>

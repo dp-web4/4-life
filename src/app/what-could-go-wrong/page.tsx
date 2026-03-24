@@ -730,6 +730,34 @@ export default function WhatCouldGoWrongPage() {
               </p>
             </div>
           </details>
+
+          {/* Illegal content moderation — visitor Q: "how does moderation of illegal content work?" */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How does Web4 handle illegal content (CSAM, terrorism, etc.) without a central authority?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Web4 is decentralized, not lawless.</strong> The governance framework includes
+                specific mechanisms for content that crosses legal lines:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Law Oracles:</strong> Each community designates entities that interpret legal requirements for their jurisdiction. When content violates law (not just norms), law oracles can trigger emergency enforcement &mdash; immediate suspension of the offending entity, content quarantine, and evidence preservation for authorities.</li>
+                <li><strong>SAL enforcement tiers:</strong> The graduated enforcement system (warn → restrict → suspend → revoke) can fast-track to revocation for severe violations. An entity distributing illegal content doesn&apos;t get warnings &mdash; it gets immediate suspension pending law oracle review.</li>
+                <li><strong>Hardware-bound identity matters here:</strong> Because LCT links identity to physical devices, &ldquo;ban evasion&rdquo; requires obtaining new hardware. Revoked identities can&apos;t simply create new accounts &mdash; their devices are flagged.</li>
+                <li><strong>Tamper-evident audit trails:</strong> All trust changes and enforcement actions are logged. If a law oracle oversteps, the audit trail provides grounds for appeal. If they under-enforce, the record shows it.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest tension:</strong> This is where decentralization and legal compliance create real friction.
+                Different jurisdictions define &ldquo;illegal&rdquo; differently &mdash; political speech that&apos;s protected in one
+                country is criminal in another. Web4&apos;s approach is to let communities set their own enforcement
+                policies while providing the tools for rapid response. It&apos;s not perfect &mdash; no system&apos;s
+                moderation model is &mdash; but hardware-bound identity makes the accountability gap much smaller
+                than in anonymous systems.
+              </p>
+            </div>
+          </details>
         </div>
       </section>
 
