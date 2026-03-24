@@ -1216,6 +1216,27 @@ export default function LCTExplainerPage() {
           </div>
         </div>
 
+        {/* FAQ: Onboarding UX — visitor Q Mar 24 */}
+        <div className="mt-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg">
+          <h3 className="text-sm font-bold text-sky-400 mb-2">
+            What do the first 5 minutes look like?
+          </h3>
+          <p className="text-sm text-gray-300 mb-3">
+            You download a Web4-compatible app (think of it like installing Signal instead of a regular messaging app). Here&apos;s the onboarding flow:
+          </p>
+          <div className="space-y-2 text-sm text-gray-300">
+            <p><strong className="text-sky-300">Minute 0:00</strong> — The app detects your device&apos;s security chip (TPM or Secure Enclave) and generates a cryptographic key pair. You don&apos;t see any of this — it feels like tapping &ldquo;Create Account.&rdquo;</p>
+            <p><strong className="text-sky-300">Minute 0:30</strong> — You pick a display name (not unique — identity lives in the hardware, not usernames). No email required. No password to remember.</p>
+            <p><strong className="text-sky-300">Minute 1:00</strong> — The app suggests linking a second device for higher trust. You scan a QR code with your phone. Your two devices witness each other, forming your first identity constellation.</p>
+            <p><strong className="text-sky-300">Minute 2:00</strong> — You browse available communities. You join one that interests you. Your trust starts at the default newcomer level — low but nonzero. Actions cost 1.4x until you prove yourself.</p>
+            <p><strong className="text-sky-300">Minute 3:00</strong> — You make your first contribution. It costs ATP, and you see your balance update. The community sees you as a new member with no history — but with verified identity (not a throwaway bot).</p>
+            <p><strong className="text-sky-300">Minute 5:00</strong> — You&apos;ve made 2-3 contributions. Your trust has already started building. The 1.4x premium is slightly lower. It feels like any other community — except there&apos;s no spam in your feed.</p>
+          </div>
+          <p className="text-xs text-gray-500 mt-3">
+            <strong>Key difference from Web2:</strong> No email. No password. No CAPTCHA. No phone number. Identity is your device, not a string you type. The tradeoff: you need to keep your device, and adding devices later strengthens your identity.
+          </p>
+        </div>
+
         {/* W3C Standards Compatibility — collapsed for page length */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <details className="group">

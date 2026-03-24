@@ -13,10 +13,32 @@ export default function TrustDilemmasPage() {
         <Breadcrumbs currentPath="/trust-dilemmas" />
 
         <h1 style={{ marginBottom: '0.5rem' }}>Trust Dilemmas</h1>
-        <p style={{ color: 'var(--color-text-secondary)', marginBottom: '2rem' }}>
+        <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1rem' }}>
           Three real problems the internet faces today. Pick how you&apos;d solve them,
           then see how a trust-native approach would handle each one.
         </p>
+
+        <div style={{
+          display: 'flex',
+          gap: '1.5rem',
+          marginBottom: '2rem',
+          flexWrap: 'wrap',
+        }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            color: 'var(--color-text-secondary)',
+            fontSize: '0.9rem',
+          }}>
+            <span>~3 minutes</span>
+          </div>
+          <div style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>
+            You&apos;ll explore: <strong style={{ color: 'var(--color-text-primary)' }}>spam prevention</strong>,{' '}
+            <strong style={{ color: 'var(--color-text-primary)' }}>identity persistence</strong>, and{' '}
+            <strong style={{ color: 'var(--color-text-primary)' }}>permanent reputation</strong>
+          </div>
+        </div>
 
         <TrustDilemma />
 
