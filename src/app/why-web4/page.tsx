@@ -1876,6 +1876,77 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
+          {/* Cultural quality differences — visitor Q Mar 25: "How does the system handle cultural differences in quality?" */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How does the system handle cultural differences in &ldquo;quality&rdquo;?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Each community defines quality for itself.</strong> The{" "}
+                <Link href="/atp-economics" className="text-sky-400 hover:underline">Value Confirmation Mechanism</Link>{" "}
+                means the people who <em>receive</em> your work judge whether it was valuable &mdash; not a global algorithm.
+                A poetry community and a coding forum will naturally develop different quality standards because
+                different people are doing the confirming.
+              </p>
+              <p>
+                The V3 (Value Tensor) has three dimensions that adapt independently:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Valuation</strong> &mdash; how much was this worth to recipients? (Culturally subjective and intentionally so)</li>
+                <li><strong>Veracity</strong> &mdash; was this accurate and honest? (More universal, harder to game)</li>
+                <li><strong>Validity</strong> &mdash; was this appropriate for the context? (Community-specific norms)</li>
+              </ul>
+              <p>
+                A helpful post in a Japanese gardening forum and a helpful post in a Brazilian music community will
+                score differently on Valuation and Validity &mdash; but Veracity (honesty) stays consistent. The system
+                doesn&apos;t impose a single standard. It lets communities develop their own through the trust they build
+                with each other.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Cross-community trust transfer is harder when quality norms diverge significantly.
+                Your poetry trust doesn&apos;t automatically make you trusted in engineering &mdash;{" "}
+                <Link href="/trust-tensor" className="text-sky-400 hover:underline">role-specific trust</Link>{" "}
+                keeps domains appropriately separated.
+              </p>
+            </div>
+          </details>
+
+          {/* Children and minors — visitor Q Mar 25: "What about children and minors?" */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What about children and minors? How does hardware-bound identity work for a 13-year-old?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Web4 doesn&apos;t require age disclosure &mdash; it trusts behavior, not demographics.</strong>{" "}
+                A 13-year-old with their own phone gets a hardware-bound LCT just like anyone else.
+                Their trust starts at the same baseline (0.50) and grows through the same quality-of-work mechanics.
+              </p>
+              <p>
+                What changes is <strong>scope, not access</strong>:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Guardian binding:</strong> A parent or guardian&apos;s LCT can be linked to a minor&apos;s,
+                  creating a supervision relationship without revealing age to the network. The guardian
+                  can set spending limits (max ATP per action) and visibility boundaries (MRH restrictions).</li>
+                <li><strong>Graduated autonomy:</strong> As the minor builds trust through consistent behavior,
+                  guardian restrictions can relax &mdash; a natural progression, not an arbitrary age gate.</li>
+                <li><strong>Privacy by design:</strong> The network never learns that an LCT belongs to a minor.
+                  Guardian binding is visible only to the guardian and the minor &mdash; it&apos;s a private policy,
+                  not a public label.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> This is a design direction, not a shipped feature. Child safety in
+                decentralized systems is an area of active research, especially around the tension between
+                privacy (not labeling minors) and protection (limiting exposure to harmful content).
+                Legal compliance (COPPA, GDPR-K) adds additional constraints that haven&apos;t been fully resolved.
+              </p>
+            </div>
+          </details>
+
         </div>
         </details>
 
