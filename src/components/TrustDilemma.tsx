@@ -79,6 +79,52 @@ export const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
       },
     },
   },
+  {
+    question: 'A company wants to verify your identity before giving you access. How do you prove you\'re trustworthy without handing over your personal data?',
+    pillar: 'Privacy',
+    options: [
+      { id: 'hand-over', label: 'Give them what they ask for', icon: '📋' },
+      { id: 'fake', label: 'Use a fake identity', icon: '🎭' },
+      { id: 'prove', label: 'Prove the claim without revealing the data', icon: '🔐' },
+    ],
+    feedback: {
+      'hand-over': {
+        text: 'Now they have your data forever. They get breached next year — your information is on the dark web.',
+        web4: 'Web4: zero-knowledge proofs let you prove "my trust score exceeds 0.7" without revealing the score, your history, or your identity. The verifier gets confidence; you keep your privacy.',
+      },
+      fake: {
+        text: 'Works until it doesn\'t. Fake identities collapse under scrutiny and carry legal risk.',
+        web4: 'Web4: you don\'t need to fake anything. You can selectively prove specific claims ("I\'m over 18", "I have high trust in finance") without revealing anything else about yourself.',
+      },
+      prove: {
+        text: 'You\'re thinking like Web4. This mechanism is called zero-knowledge trust proofs.',
+        web4: 'Cryptographic proofs let you verify claims without revealing underlying data. "This person is trustworthy for this context" — mathematically proven, without exposing who they are or how they got there.',
+      },
+    },
+  },
+  {
+    question: 'You\'ve built a stellar reputation on one platform. You join a new community. Should your old reputation count?',
+    pillar: 'Portability',
+    options: [
+      { id: 'fresh', label: 'Start from zero — everyone should', icon: '🌱' },
+      { id: 'import', label: 'Import your full profile', icon: '📦' },
+      { id: 'relevant', label: 'Carry over only what\'s relevant', icon: '🎯' },
+    ],
+    feedback: {
+      fresh: {
+        text: 'Fair, but punishing. Years of proven behavior mean nothing. Good actors subsidize the cost of bad ones.',
+        web4: 'Web4: you don\'t start at zero — your trust dimensions travel with you. But only the relevant ones apply. Your cooking trust doesn\'t boost your coding credibility.',
+      },
+      import: {
+        text: 'Dangerous. A 5-star Airbnb host isn\'t automatically a trustworthy financial advisor. Importing everything conflates expertise.',
+        web4: 'Web4: trust is multi-dimensional (T3). You can\'t import "general reputation" — each dimension (Talent, Training, Temperament) is role-specific. What transfers is your behavioral consistency, not your domain expertise.',
+      },
+      relevant: {
+        text: 'You\'re thinking like Web4. This is how Trust Tensors (T3) and role-specific trust work together.',
+        web4: 'Trust Tensors are multi-dimensional and role-specific. When you join a new community, your relevant trust dimensions transfer automatically — but your expertise in one domain doesn\'t inflate your reputation in another.',
+      },
+    },
+  },
 ];
 
 export default function TrustDilemma() {
@@ -110,10 +156,10 @@ export default function TrustDilemma() {
   };
 
   const handleShare = async () => {
-    const text = 'I just answered 3 questions about internet trust problems and saw how a trust-native framework addresses each one. Try it yourself:';
+    const text = `I just answered ${DILEMMA_QUESTIONS.length} questions about internet trust problems and saw how a trust-native framework addresses each one. Try it yourself:`;
     const url = 'https://4-life-ivory.vercel.app';
     if (navigator.share) {
-      try { await navigator.share({ title: '3 Trust Dilemmas', text, url }); } catch { /* cancelled */ }
+      try { await navigator.share({ title: `${DILEMMA_QUESTIONS.length} Trust Dilemmas`, text, url }); } catch { /* cancelled */ }
     } else {
       await navigator.clipboard.writeText(`${text}\n${url}`);
       alert('Copied to clipboard!');
@@ -125,7 +171,7 @@ export default function TrustDilemma() {
     return (
       <section style={{ maxWidth: '48rem', margin: '0 auto' }}>
         <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', marginBottom: '1.25rem', lineHeight: 1.6 }}>
-          Three real internet problems. Pick how you&apos;d solve each one, then see how a trust-native approach handles it.
+          Five real internet problems. Pick how you&apos;d solve each one, then see how a trust-native approach handles it.
         </p>
         <div style={{ display: 'grid', gap: '0.5rem', marginBottom: '1.25rem' }}>
           {DILEMMA_QUESTIONS.map((q, i) => (
@@ -167,7 +213,7 @@ export default function TrustDilemma() {
         background: 'var(--color-dark-surface)',
       }}>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-          Three problems, one framework
+          Five problems, one framework
         </p>
         <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1rem' }}>
           {DILEMMA_QUESTIONS.map((q, i) => (
@@ -185,7 +231,7 @@ export default function TrustDilemma() {
           ))}
         </div>
         <p style={{ color: 'var(--color-sky)', fontSize: '0.9rem', fontWeight: 500, marginBottom: '0.75rem' }}>
-          Energy + Identity + Consequences = a self-regulating internet. No moderators needed.
+          Energy + Identity + Consequences + Privacy + Portability = a self-regulating internet. No moderators needed.
         </p>
         <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
           <button
@@ -219,7 +265,7 @@ export default function TrustDilemma() {
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
           <span style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem' }}>
-            Dilemma {step + 1} of 3
+            Dilemma {step + 1} of {DILEMMA_QUESTIONS.length}
           </span>
           <span style={{
             fontSize: '0.7rem', fontWeight: 600, padding: '0.15rem 0.4rem', borderRadius: '0.25rem',
@@ -239,7 +285,7 @@ export default function TrustDilemma() {
           className="btn-primary"
           style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem' }}
         >
-          {step < 2 ? 'Next question →' : 'See the full picture →'}
+          {step < DILEMMA_QUESTIONS.length - 1 ? 'Next question →' : 'See the full picture →'}
         </button>
       </section>
     );
@@ -249,7 +295,7 @@ export default function TrustDilemma() {
     <section style={{ maxWidth: '48rem', margin: '0 auto', textAlign: 'center' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
         <span style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem' }}>
-          Dilemma {step + 1} of 3
+          Dilemma {step + 1} of {DILEMMA_QUESTIONS.length}
         </span>
         <div style={{ display: 'flex', gap: '0.35rem' }}>
           {DILEMMA_QUESTIONS.map((_, i) => (
