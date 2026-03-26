@@ -659,6 +659,36 @@ export default function FederationEconomicsPage() {
               — the discount reflects the uncertainty of cross-domain trust, not punishment. Higher discounts
               for more distant domains; lower discounts between related communities.
             </p>
+
+            {/* FAQ: How federation decisions work — addresses visitor question */}
+            <details className="bg-gray-800/40 border border-amber-700/30 rounded-xl p-5 mt-4">
+              <summary className="text-sm font-semibold text-amber-300/90 cursor-pointer list-none flex justify-between items-center">
+                <span>How does the ~65% discount get decided? Who controls federation?</span>
+                <span className="text-gray-500 text-xs ml-2">click to expand</span>
+              </summary>
+              <div className="mt-3 space-y-3 text-sm text-gray-400">
+                <p className="m-0">
+                  <strong className="text-gray-300">The discount formula:</strong> External trust is adjusted
+                  by <code className="text-xs bg-gray-900 px-1 py-0.5 rounded">your_score × MRH_decay (0.7) × domain_match_factor</code>.
+                  The domain match factor ranges from ~0.3 (completely unrelated fields) to ~0.9 (closely related communities).
+                  Tech → writing is ~0.65 × 0.87 = 0.57. Tech → tech would be higher (~0.85 × 0.87 = 0.74).
+                </p>
+                <p className="m-0">
+                  <strong className="text-gray-300">Who decides to federate?</strong> Federation is <em>opt-in and manual</em>.
+                  Communities choose who they trust through{' '}
+                  <a href="#governance" className="text-sky-400/70 hover:underline">governance voting</a>{' '}
+                  — existing members vote on whether to accept a federation agreement. Higher-trust members
+                  have more voting weight, but no single member dominates. Think of it like a co-op deciding
+                  whether to partner with another co-op.
+                </p>
+                <p className="m-0">
+                  <strong className="text-gray-300">Is any of it automatic?</strong> The trust <em>calculation</em> is
+                  automatic (MRH decay and domain matching are formulas), but the <em>decision</em> to federate
+                  is always a community governance choice. A community can also set policies like &ldquo;auto-accept
+                  members from communities we&apos;ve federated with&rdquo; — but that policy itself requires a vote.
+                </p>
+              </div>
+            </details>
           </div>
 
           <div id="value-conflicts" className="scroll-mt-24">

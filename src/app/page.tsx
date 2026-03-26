@@ -326,6 +326,9 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           {' · '}
           Skeptical? <Link href="/what-could-go-wrong" style={{ color: 'var(--color-sky)' }}>Read what could go wrong →</Link>
         </p>
+        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '0.5rem' }}>
+          Prefer a structured path? <Link href="/learn" style={{ color: 'rgb(251, 191, 36)' }}>Follow the learning guide (beginner → advanced) →</Link>
+        </p>
       </section>
 
       {/* What's New */}
@@ -339,10 +342,10 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         </h3>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
           {[
+            { date: 'Mar 26', text: 'V3 scoring explained — who evaluates truth and reasoning in Web4', link: '/trust-tensor' },
+            { date: 'Mar 26', text: 'Federation trust transfer FAQ — how cross-society reputation works', link: '/federation-economics' },
             { date: 'Mar 24', text: 'New FAQs: platform migration path, onboarding UX, echo chambers', link: '/why-web4' },
             { date: 'Mar 22', text: 'Trust Dilemmas quiz — test your instincts on 3 real internet problems', link: '/trust-dilemmas' },
-            { date: 'Mar 21', text: 'Day in Web4 — walk through a full day using trust-native apps', link: '/day-in-web4' },
-            { date: 'Mar 20', text: 'Trust Neighborhood explained — how your trust network works, in plain English', link: '/markov-relevancy-horizon' },
           ].map((item, i) => (
             <li key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'baseline', fontSize: '0.8rem' }}>
               <span style={{ color: 'var(--color-text-muted)', fontFamily: 'monospace', fontSize: '0.7rem', flexShrink: 0 }}>{item.date}</span>

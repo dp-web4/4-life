@@ -353,6 +353,29 @@ export default function WhyWeb4Page() {
         </div>
       </section>
 
+      {/* Escape hatch — jump to interactive */}
+      <section className="max-w-2xl mx-auto mt-12 text-center">
+        <div className="bg-gradient-to-r from-sky-950/40 to-purple-950/40 border border-sky-800/30 rounded-xl p-6">
+          <p className="text-gray-300 text-sm mb-3">
+            Ready to see it in action instead of reading more?
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <a href="/karma-journey" className="inline-block px-5 py-2.5 bg-sky-600/20 border border-sky-500/40 rounded-lg text-sky-300 font-semibold text-sm hover:bg-sky-600/30 transition-colors no-underline">
+              Make trust choices →
+            </a>
+            <a href="/society-simulator" className="inline-block px-5 py-2.5 bg-purple-600/20 border border-purple-500/40 rounded-lg text-purple-300 font-semibold text-sm hover:bg-purple-600/30 transition-colors no-underline">
+              Watch a society form →
+            </a>
+            <a href="/playground" className="inline-block px-5 py-2.5 bg-green-600/20 border border-green-500/40 rounded-lg text-green-300 font-semibold text-sm hover:bg-green-600/30 transition-colors no-underline">
+              Experiment in the playground →
+            </a>
+          </div>
+          <p className="text-gray-500 text-xs mt-3 mb-0">
+            Or keep scrolling for honest questions and answers about Web4.
+          </p>
+        </div>
+      </section>
+
       {/* Honest Questions */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">Honest Questions</h2>

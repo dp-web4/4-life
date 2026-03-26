@@ -188,6 +188,36 @@ function V3OutputScorer() {
         Notice: Veracity + Validity (0.70 combined) outweigh Valuation (0.30). Web4 rewards truth and rigor over popularity by design.
       </p>
 
+      {/* Who scores V3? — addresses visitor question */}
+      <details className="bg-gray-800/40 border border-gray-700/50 rounded-xl p-5 mb-6">
+        <summary className="text-sm font-semibold text-gray-300 cursor-pointer list-none flex justify-between items-center">
+          <span>Who actually scores Veracity and Validity?</span>
+          <span className="text-gray-500 text-xs ml-2">click to expand</span>
+        </summary>
+        <div className="mt-3 space-y-3 text-sm text-gray-400">
+          <p className="m-0">
+            <strong className="text-sky-400">Valuation</strong> is scored by the <em>recipient</em> of
+            an output. When someone receives your work, they confirm whether it was useful via the VCM
+            (Value Confirmation Message). This is like leaving a receipt — &ldquo;yes, this helped me.&rdquo;
+          </p>
+          <p className="m-0">
+            <strong className="text-purple-400">Veracity</strong> is scored through <em>witness attestation</em> and
+            external validation. Your LCT device witnesses verify that you actually did what you claim.
+            For factual claims, other trusted entities in the same domain can challenge or corroborate.
+            Think peer review: your claim is only as strong as the evidence your witnesses can attest to.
+          </p>
+          <p className="m-0">
+            <strong className="text-green-400">Validity</strong> is scored by <em>structural verification</em> —
+            did the output actually arrive? Is it logically consistent? Receipt confirmation proves delivery,
+            and the system checks internal consistency (e.g., a code review that contradicts itself scores low).
+            This is the most automated dimension — much of it can be verified without human judgment.
+          </p>
+          <p className="m-0 text-gray-500 text-xs border-t border-gray-700/50 pt-3">
+            In short: Valuation = the recipient judges usefulness. Veracity = witnesses and peers judge truthfulness. Validity = the system verifies delivery and consistency. No single party controls all three dimensions.
+          </p>
+        </div>
+      </details>
+
       {/* Output selector */}
       <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
         <h3 className="text-lg font-semibold text-gray-200 mb-4">Score These Outputs</h3>
