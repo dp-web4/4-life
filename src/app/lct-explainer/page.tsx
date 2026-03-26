@@ -1184,6 +1184,36 @@ export default function LCTExplainerPage() {
               central authority is one of the hardest open problems in decentralized identity.
             </p>
           </div>
+
+          {/* FAQ: Internet outages / connectivity — visitor Q Mar 25 */}
+          <div className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg">
+            <h3 className="text-sm font-bold text-purple-400 mb-2">
+              What happens during internet outages or unreliable connectivity?
+            </h3>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong>Your identity and trust score don&apos;t disappear when you go offline.</strong>{" "}
+              LCTs are stored locally on your device &mdash; they don&apos;t depend on a central server being
+              reachable. Your trust history is cached locally and syncs when connectivity returns.
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong>What about your Coherence Index?</strong> CI measures behavioral <em>consistency</em>, not
+              activity frequency. Going offline doesn&apos;t count against you &mdash; the system distinguishes
+              between &ldquo;absent&rdquo; and &ldquo;behaving inconsistently.&rdquo; Think of it like a credit score that pauses
+              when you&apos;re traveling, not one that penalizes you for not using your card.
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong>Developing-world connectivity:</strong> Web4 is designed for intermittent connections.
+              Actions can be queued offline and submitted in batches when connectivity resumes. Device
+              witnessing (mutual verification) requires periodic connection but tolerates gaps &mdash;
+              witness attestations remain valid for a configurable window (hours to days, depending on
+              the community&apos;s trust requirements).
+            </p>
+            <p className="text-xs text-gray-500">
+              The harder unsolved case is <em>simultaneous</em> offline use across multiple devices: if your
+              phone and laptop both act independently without syncing, the system must reconcile potentially
+              conflicting actions. This is an active research area in distributed identity.
+            </p>
+          </div>
         </div>
 
         {/* W3C Standards Compatibility — collapsed for page length */}
