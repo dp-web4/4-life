@@ -43,3 +43,4 @@ lib/game/*.json
 storage_state.json
 .notebooklm/
 .gitnexus
+.claude/skills/gitnexus/
