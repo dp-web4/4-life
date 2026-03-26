@@ -1913,6 +1913,27 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
+          {/* Migration path — visitor Q Mar 24 */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What would a real platform migration look like? Say Reddit or Discord adopted Web4.</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>Web4 defines a <Link href="/how-it-works" className="text-sky-400 hover:underline">5-tier adoption path</Link>:</p>
+              <ol className="list-decimal list-inside space-y-2 ml-2 text-gray-400">
+                <li><strong className="text-gray-300">Wrapper</strong> — Platform adds Web4 trust scores alongside existing systems. Reddit karma still works; Web4 trust appears as a secondary indicator. Users opt in. Zero disruption.</li>
+                <li><strong className="text-gray-300">Observable</strong> — Platform starts logging actions to the trust graph. Upvotes, reports, and moderation decisions feed into T3 calculations. Users see their trust building.</li>
+                <li><strong className="text-gray-300">Accountable</strong> — Trust scores start affecting the experience. High-trust users get reduced friction (fewer CAPTCHAs, faster posting). Low-trust users hit higher action costs. Moderation shifts from reactive bans to economic pressure.</li>
+                <li><strong className="text-gray-300">Federated</strong> — Platform joins a federation. Discord trust transfers to Reddit at a discount. Users moving between communities carry portable reputation instead of starting from zero everywhere.</li>
+                <li><strong className="text-gray-300">Native</strong> — Platform runs entirely on Web4 infrastructure. LCT identity, ATP economics, T3 trust. No separate karma/reputation system — Web4 <em>is</em> the reputation system.</li>
+              </ol>
+              <p className="text-gray-500 text-xs mt-2">
+                <strong>Key insight:</strong> Each tier is independently valuable. A platform at tier 2 already has better spam detection than most platforms today. There&apos;s no all-or-nothing commitment.
+              </p>
+            </div>
+          </details>
+
           {/* Children and minors — visitor Q Mar 25: "What about children and minors?" */}
           <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
@@ -1943,6 +1964,28 @@ export default function WhyWeb4Page() {
                 decentralized systems is an area of active research, especially around the tension between
                 privacy (not labeling minors) and protection (limiting exposure to harmful content).
                 Legal compliance (COPPA, GDPR-K) adds additional constraints that haven&apos;t been fully resolved.
+              </p>
+            </div>
+          </details>
+
+          {/* Echo chambers — visitor Q Mar 24 */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Doesn&apos;t MRH&apos;s 3-hop limit create filter bubbles?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                The concern is real: if you can only see 3 hops into the trust graph, wouldn&apos;t communities become echo chambers? In practice, several mechanisms work against this:
+              </p>
+              <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
+                <li><strong className="text-gray-300">Bridge agents.</strong> People who participate in multiple communities naturally connect otherwise-separate trust networks. Our simulations found that &ldquo;identity is structural, not compositional&rdquo; — bridge agents reshape the topology.</li>
+                <li><strong className="text-gray-300">Federation.</strong> When communities federate, trust transfers across boundaries (at a discount). This creates cross-community visibility that MRH alone wouldn&apos;t provide.</li>
+                <li><strong className="text-gray-300">MRH is per-role, not per-person.</strong> Your MRH as a software developer is a different graph than your MRH as a gardener. You naturally exist in multiple trust neighborhoods simultaneously.</li>
+                <li><strong className="text-gray-300">MRH limits influence, not visibility.</strong> You can <em>see</em> content from anyone. MRH determines how much <em>trust weight</em> you assign to it. Strangers aren&apos;t invisible — they&apos;re just unverified.</li>
+              </ul>
+              <p className="text-gray-500 text-xs mt-2">
+                <strong>Honest caveat:</strong> Filter bubbles are a real risk in any trust-based system. The difference is that Web4&apos;s bubbles are <em>visible</em> (you can see your MRH boundary) and <em>permeable</em> (federation + bridge agents + role diversity all create cross-links). Traditional social media bubbles are invisible and algorithmically reinforced.
               </p>
             </div>
           </details>

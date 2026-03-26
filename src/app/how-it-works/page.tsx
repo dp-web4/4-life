@@ -4,11 +4,24 @@ import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import TermTooltip from "@/components/TermTooltip";
 import PageTracker from "@/components/PageTracker";
+import SectionTOC from "@/components/SectionTOC";
+
+const HOW_IT_WORKS_SECTIONS = [
+  { id: 'journey', label: 'Birth → Life → Death → Rebirth' },
+  { id: 'example', label: 'A Complete Example' },
+  { id: 'pieces', label: 'How Pieces Fit Together' },
+  { id: 'design', label: 'Why This Design Works' },
+  { id: 'governance', label: 'When Things Go Wrong' },
+  { id: 'agents', label: 'When Agents Work Together' },
+  { id: 'action', label: 'See It In Action' },
+  { id: 'deeper', label: 'Dive Deeper' },
+];
 
 export default function HowItWorksPage() {
   return (
     <>
       <PageTracker slug="how-it-works" />
+      <SectionTOC sections={HOW_IT_WORKS_SECTIONS} />
       <Breadcrumbs currentPath="/how-it-works" />
 
       {/* New visitor prompt */}
@@ -239,7 +252,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* The Journey: Birth to Death to Rebirth */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="journey" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           The Journey: Birth → Life → Death → Rebirth
         </h2>
@@ -671,7 +684,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Putting It All Together */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="example" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           Putting It All Together: A Complete Example
         </h2>
@@ -748,7 +761,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* How The Pieces Fit Together */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="pieces" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           How The Pieces Fit Together
         </h2>
@@ -935,7 +948,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Why This Works */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="design" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           Why This Design Works
         </h2>
@@ -1255,9 +1268,8 @@ export default function HowItWorksPage() {
         </p>
       </section>
 
-      {/* See It In Action */}
       {/* Agent Orchestration — Chains of Trust */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="agents" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           When Agents Work Together
         </h2>
@@ -1297,7 +1309,7 @@ export default function HowItWorksPage() {
         </p>
       </section>
 
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="action" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           See It In Action
         </h2>
@@ -1376,7 +1388,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Learn More */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="deeper" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           Dive Deeper
         </h2>

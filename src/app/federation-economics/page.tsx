@@ -1051,6 +1051,27 @@ export default function FederationEconomicsPage() {
             </p>
           </div>
         </details>
+
+        {/* Cross-society trust transfer UX — visitor Q Mar 24 */}
+        <details className="bg-gray-900/50 border border-gray-700 rounded p-4 mb-4">
+          <summary className="text-sm text-sky-400 cursor-pointer hover:text-sky-300">
+            What does cross-society trust transfer actually <em>feel</em> like as a user?
+          </summary>
+          <div className="text-gray-400 text-sm mt-3 leading-relaxed space-y-3">
+            <p>
+              Imagine you&apos;re a respected member of a <strong>photography community</strong> (T3 = 0.85). You join a <strong>travel writing community</strong> that&apos;s federated with it. Here&apos;s what your first hour looks like:
+            </p>
+            <div className="space-y-2 ml-2">
+              <p><strong className="text-gray-300">Minute 0 — You join.</strong> The travel community sees your photography trust (verified, not self-reported). After MRH decay and domain matching, your imported trust lands around 0.38.</p>
+              <p><strong className="text-gray-300">Minute 1 — You post.</strong> Where a complete newcomer pays 1.4x ATP per action, you pay ~1.15x. The discount is noticeable but not dramatic — you&apos;re still proving yourself.</p>
+              <p><strong className="text-gray-300">Minute 10 — Others see your badge.</strong> Your profile shows &ldquo;trusted in Photography (federated)&rdquo; — a social signal that you&apos;re not a throwaway account, even though your travel writing trust is still low.</p>
+              <p><strong className="text-gray-300">Hour 1 — Trust is building locally.</strong> After 5-10 quality contributions, your local travel trust already rivals the imported score. By tomorrow, it dominates.</p>
+            </div>
+            <p className="text-gray-500 text-xs mt-2">
+              <strong>The feeling:</strong> You&apos;re recognized but not entitled. Think of it like transferring to a new school with a recommendation letter — it opens the door faster, but you still need to make friends.
+            </p>
+          </div>
+        </details>
       </section>
 
       {/* Related Concepts */}

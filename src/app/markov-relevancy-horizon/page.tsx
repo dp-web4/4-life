@@ -1092,6 +1092,34 @@ SELECT ?entity ?distance WHERE {
             </Link>
           </div>
         </section>
+
+        {/* FAQ: Filter bubbles — visitor Q Mar 24 */}
+        <section className="max-w-4xl mx-auto mt-12">
+          <details className="bg-gray-800/40 border border-gray-700 rounded-xl p-6">
+            <summary className="text-lg font-semibold text-cyan-400 cursor-pointer hover:text-cyan-300 transition-colors list-none flex justify-between items-center">
+              <span>Doesn&apos;t the 3-hop limit create filter bubbles?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-3">
+              <p>
+                MRH limits <em>trust influence</em>, not <em>visibility</em>. You can see content from anyone — MRH determines
+                how much weight you give it. Strangers aren&apos;t invisible; they&apos;re unverified.
+              </p>
+              <p>Several mechanisms prevent echo chambers:</p>
+              <ul className="list-disc list-inside space-y-1.5 ml-4 text-gray-400">
+                <li><strong className="text-gray-300">Bridge agents</strong> — people in multiple communities connect separate trust networks</li>
+                <li><strong className="text-gray-300">Federation</strong> — cross-community trust transfers create visibility beyond your local graph</li>
+                <li><strong className="text-gray-300">Role diversity</strong> — your MRH as a developer is a different graph than your MRH as a cook; you exist in many neighborhoods simultaneously</li>
+                <li><strong className="text-gray-300">Visible boundaries</strong> — unlike algorithmic bubbles, you can <em>see</em> where your MRH ends, making the boundary a conscious choice rather than a hidden filter</li>
+              </ul>
+              <p className="text-amber-400/60 text-xs">
+                <strong>Honest caveat:</strong> Any trust-based system risks insularity. The difference is that MRH bubbles are transparent and permeable, while social media bubbles are invisible and algorithmically reinforced. See the{' '}
+                <Link href="/why-web4" className="text-sky-400 hover:underline">full discussion in the FAQ</Link>.
+              </p>
+            </div>
+          </details>
+        </section>
+
         <ConceptSequenceNav currentPath="/markov-relevancy-horizon" />
         <ExplorerNav currentPath="/markov-relevancy-horizon" />
         <RelatedConcepts currentPath="/markov-relevancy-horizon" />
