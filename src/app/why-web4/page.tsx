@@ -901,6 +901,13 @@ export default function WhyWeb4Page() {
                 is hardware-bound identity and cross-platform portability.
               </p>
               <p>
+                <strong>Who would build this?</strong> The platform&apos;s own engineering team, or a third-party
+                integration (like adding Stripe for payments). The incentive is concrete: platforms spend
+                enormous resources on spam moderation, fake account detection, and content ranking. A Wrapper-tier
+                integration replaces heuristic moderation with trust-weighted signals &mdash; Reddit estimated
+                it spends ~$50M/year on content moderation. Even a 10% reduction pays for the integration.
+              </p>
+              <p>
                 <strong>The honest gap:</strong> All five tiers are designed and specified. Tiers 1-2
                 could be integrated into existing platforms today. But no platform has done so yet.
                 The path from &ldquo;working simulations&rdquo; to &ldquo;first real integration&rdquo;
