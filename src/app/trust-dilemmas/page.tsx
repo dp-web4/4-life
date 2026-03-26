@@ -14,7 +14,7 @@ export default function TrustDilemmasPage() {
 
         <h1 style={{ marginBottom: '0.5rem' }}>Trust Dilemmas</h1>
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1rem' }}>
-          Three real problems the internet faces today. Pick how you&apos;d solve them,
+          Five real problems the internet faces today. Pick how you&apos;d solve them,
           then see how a trust-native approach would handle each one.
         </p>
 
@@ -31,12 +31,14 @@ export default function TrustDilemmasPage() {
             color: 'var(--color-text-secondary)',
             fontSize: '0.9rem',
           }}>
-            <span>~3 minutes</span>
+            <span>~5 minutes</span>
           </div>
           <div style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>
             You&apos;ll explore: <strong style={{ color: 'var(--color-text-primary)' }}>spam prevention</strong>,{' '}
-            <strong style={{ color: 'var(--color-text-primary)' }}>identity persistence</strong>, and{' '}
-            <strong style={{ color: 'var(--color-text-primary)' }}>permanent reputation</strong>
+            <strong style={{ color: 'var(--color-text-primary)' }}>identity persistence</strong>,{' '}
+            <strong style={{ color: 'var(--color-text-primary)' }}>permanent reputation</strong>,{' '}
+            <strong style={{ color: 'var(--color-text-primary)' }}>privacy</strong>, and{' '}
+            <strong style={{ color: 'var(--color-text-primary)' }}>portable trust</strong>
           </div>
         </div>
 

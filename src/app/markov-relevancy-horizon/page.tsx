@@ -859,6 +859,10 @@ export default function MarkovRelevancyHorizonPage() {
             <span className="text-sm text-gray-500 ml-auto">RDF, SPARQL, graph details</span>
           </summary>
 
+          <p className="text-gray-400 text-sm mb-6">
+            MRH uses two web standards under the hood: <strong className="text-gray-300">RDF</strong> (Resource Description Framework — a standard way to describe relationships as subject-verb-object triples) and <strong className="text-gray-300">SPARQL</strong> (a query language for searching those relationships, like SQL for graphs).
+          </p>
+
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-6">
             <h3 className="text-lg font-semibold text-cyan-400 mb-4">
               RDF Graph Structure
