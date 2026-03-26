@@ -386,6 +386,146 @@ export default function DayInWeb4Page() {
         Walk through 7 real scenarios and see the difference.
       </p>
 
+      {/* Your First 5 Minutes — Onboarding Walkthrough */}
+      <details className="mb-8 rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.4)' }}>
+        <summary className="flex items-center gap-3 p-4 cursor-pointer hover:bg-gray-800/30 transition-colors select-none list-none [&::-webkit-details-marker]:hidden">
+          <span className="text-lg">🚀</span>
+          <div className="flex-1 min-w-0">
+            <span className="text-sm text-sky-400 font-medium">But what does setting up Web4 look like?</span>
+            <span className="text-xs text-gray-500 ml-2">— Your first 5 minutes</span>
+          </div>
+          <span className="text-gray-500 text-sm shrink-0">▶</span>
+        </summary>
+
+        <div className="px-4 pb-4 pt-2 space-y-4">
+          <p className="text-gray-400 text-sm">
+            Before your day starts, you need to set up once. Here&apos;s what that looks like — no crypto wallet, no blockchain, no 24-word seed phrase.
+          </p>
+
+          {/* Step 1: Install */}
+          <div className="rounded-lg border border-gray-700 overflow-hidden" style={{ background: 'rgba(15, 23, 42, 0.6)' }}>
+            <div className="flex items-center gap-2 px-3 py-2 border-b border-gray-800">
+              <span className="text-xs font-mono text-sky-400">Step 1</span>
+              <span className="text-sm text-gray-300 font-medium">Download the app</span>
+              <span className="text-xs text-gray-600 ml-auto">~30 seconds</span>
+            </div>
+            <div className="p-3">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-violet-500 flex items-center justify-center text-xl">🔐</div>
+                <div>
+                  <div className="text-sm text-gray-200 font-medium">Web4 Identity</div>
+                  <div className="text-xs text-gray-500">Your trust wallet — not a crypto wallet</div>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500">
+                One app. Works like a password manager, but instead of storing passwords, it manages your trust identity across every Web4-enabled service. Install it like any other app.
+              </p>
+            </div>
+          </div>
+
+          {/* Step 2: Device binding */}
+          <div className="rounded-lg border border-gray-700 overflow-hidden" style={{ background: 'rgba(15, 23, 42, 0.6)' }}>
+            <div className="flex items-center gap-2 px-3 py-2 border-b border-gray-800">
+              <span className="text-xs font-mono text-sky-400">Step 2</span>
+              <span className="text-sm text-gray-300 font-medium">Bind your device</span>
+              <span className="text-xs text-gray-600 ml-auto">~60 seconds</span>
+            </div>
+            <div className="p-3">
+              <div className="rounded-lg bg-gray-900/50 border border-gray-800 p-3 mb-2">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-xs text-emerald-400">Security chip detected</span>
+                </div>
+                <div className="space-y-1.5 text-xs">
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Device</span>
+                    <span className="text-gray-300">iPhone 15 (Secure Enclave)</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Trust ceiling</span>
+                    <span className="text-emerald-400">0.85</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Action required</span>
+                    <span className="text-gray-300">Face ID to confirm</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500">
+                The app finds your phone&apos;s security chip automatically. One biometric scan (Face ID, fingerprint) and your device becomes your identity anchor. No seed phrases to write down. No keys to lose.
+              </p>
+            </div>
+          </div>
+
+          {/* Step 3: Join a community */}
+          <div className="rounded-lg border border-gray-700 overflow-hidden" style={{ background: 'rgba(15, 23, 42, 0.6)' }}>
+            <div className="flex items-center gap-2 px-3 py-2 border-b border-gray-800">
+              <span className="text-xs font-mono text-sky-400">Step 3</span>
+              <span className="text-sm text-gray-300 font-medium">Join your first community</span>
+              <span className="text-xs text-gray-600 ml-auto">~2 minutes</span>
+            </div>
+            <div className="p-3">
+              <div className="space-y-2 mb-2">
+                {[
+                  { name: 'Local Photographers', members: '342 members', trust: '0.78 avg', icon: '📸' },
+                  { name: 'Home Cooking', members: '1,204 members', trust: '0.82 avg', icon: '🍳' },
+                  { name: 'Neighborhood Help', members: '89 members', trust: '0.91 avg', icon: '🏘️' },
+                ].map((c, i) => (
+                  <div key={i} className="flex items-center gap-2 rounded-lg bg-gray-900/30 px-3 py-2 text-xs">
+                    <span>{c.icon}</span>
+                    <span className="text-gray-200 font-medium">{c.name}</span>
+                    <span className="text-gray-600 ml-auto">{c.members}</span>
+                    <span className="text-emerald-400 font-mono">{c.trust}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-gray-500">
+                Browse communities or get invited by someone you know. You start with trust 0.50 (neutral) and 100 ATP (energy). Everyone starts equal — your reputation builds from your actions, not your join date.
+              </p>
+            </div>
+          </div>
+
+          {/* Step 4: First interaction */}
+          <div className="rounded-lg border border-gray-700 overflow-hidden" style={{ background: 'rgba(15, 23, 42, 0.6)' }}>
+            <div className="flex items-center gap-2 px-3 py-2 border-b border-gray-800">
+              <span className="text-xs font-mono text-sky-400">Step 4</span>
+              <span className="text-sm text-gray-300 font-medium">Your first action</span>
+              <span className="text-xs text-gray-600 ml-auto">~1 minute</span>
+            </div>
+            <div className="p-3">
+              <div className="rounded-lg bg-gray-900/50 border border-gray-800 p-3 mb-2">
+                <div className="text-xs text-gray-500 mb-2">Posting to Neighborhood Help...</div>
+                <div className="bg-gray-800/50 rounded p-2 text-xs text-gray-300 mb-2">
+                  &quot;Hi everyone! Just moved to Oak Street. Anyone know a good plumber? Our kitchen sink has been leaking.&quot;
+                </div>
+                <div className="flex items-center gap-3 text-xs">
+                  <span className="text-orange-400">-3 ATP</span>
+                  <span className="text-gray-600">|</span>
+                  <span className="text-gray-500">Your trust: <span className="text-sky-400 font-mono">0.50</span> (new member)</span>
+                  <span className="text-gray-600">|</span>
+                  <span className="text-gray-500">Post visible to: <span className="text-gray-300">89 members</span></span>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500">
+                Your first post costs a small amount of energy. People respond, you thank them — and your trust starts building. Within a week of genuine participation, you&apos;ll feel the difference: people trust your recommendations, your posts cost less, and your replies carry weight.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-lg bg-sky-950/20 border border-sky-800/30 p-3">
+            <p className="text-xs text-sky-300">
+              <strong>That&apos;s it.</strong> No blockchain to sync. No gas fees. No wallet addresses to copy.
+              Install an app, scan your face, join a community, say hello. The rest unfolds through the day below.
+            </p>
+          </div>
+
+          <p className="text-xs text-gray-600 italic">
+            This is a conceptual walkthrough — Web4 is active research. The real onboarding will be designed by the communities that build on it.
+            {' '}<Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">See honest limitations →</Link>
+          </p>
+        </div>
+      </details>
+
       {/* Wireframe preview teaser — links to visual mockups below */}
       <a
         href="#wireframes"
