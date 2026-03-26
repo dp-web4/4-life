@@ -1,5 +1,3 @@
-**Read `SESSION_PRIMER.md` → then `SESSION_FOCUS.md`** for current priorities, visitor friction queue, and concept coverage.
-
 # 4-Life Development Track
 
 ## Project Overview
@@ -18,11 +16,53 @@ Web4 = MCP + RDF + LCT + T3/V3*MRH + ATP/ADP
 
 ## Visitor Feedback Loop
 
-The **Visitor Track** runs daily at **05:00** — browses the live site as a naive first-time visitor, generates friction feedback in `visitor/logs/YYYY-MM-DD.md`.
+### How It Works
 
-**At session start**: Check for today's visitor log (`visitor/logs/$(date +%Y-%m-%d).md`). First session after 05:00 reviews and prioritizes fixes. Prioritize by severity: HIGH (fix now) > MEDIUM (session goal) > LOW (note for later).
+The **Visitor Track** runs daily at **05:00** and browses the live site as a naive first-time visitor with no Web4 knowledge. It generates honest friction feedback in `visitor/logs/YYYY-MM-DD.md`.
 
-The visitor log includes an understanding checklist — if the visitor couldn't grasp a core concept, that explainer page needs work.
+### Checking for Fresh Feedback
+
+**At session start**, check if there's fresh visitor feedback to review:
+
+```bash
+# Today's date
+TODAY=$(date +%Y-%m-%d)
+
+# Check if today's visitor log exists
+if [ -f "visitor/logs/$TODAY.md" ]; then
+    # Check if current time is after 5am (visitor has run)
+    HOUR=$(date +%H)
+    if [ "$HOUR" -ge 5 ]; then
+        echo "Fresh visitor feedback available: visitor/logs/$TODAY.md"
+    fi
+fi
+```
+
+### When to Act on Feedback
+
+- **First 4-life session after 05:00**: Review the fresh visitor log and prioritize fixes
+- **Subsequent sessions same day**: Feedback already reviewed, focus on implementation
+- **Sessions before 05:00**: Previous day's feedback (if not yet addressed)
+
+### Feedback Priority
+
+When reviewing visitor logs, prioritize by severity:
+
+1. **HIGH severity friction** → Fix immediately if possible
+2. **MEDIUM severity friction** → Add to session goals
+3. **LOW severity friction** → Note for future sessions
+
+### Understanding Checklist
+
+The visitor log includes an understanding checklist. If the visitor couldn't understand a core concept, that explainer page needs work:
+
+- [ ] What Web4 is → Landing page / First Contact
+- [ ] What 4-Life demonstrates → How It Works
+- [ ] What LCT means → /lct-explainer
+- [ ] What ATP/ADP means → /atp-economics
+- [ ] What Trust Tensors are → /trust-tensor
+- [ ] How agents live/die → /aliveness
+- [ ] Why this matters → /why-web4 (problem framing + honest FAQ)
 
 ## MRH-Specific Policy — Phase Awareness (March 2026)
 
@@ -45,14 +85,29 @@ See: `private-context/insights/2026-03-13-mrh-policy-phase-mismatch.md`
 
 ## Bidirectional Loop with Web4
 
-4-life is a sensor, not just an output. Visitor confusion surfaces assumptions invisible from inside the ontology. Web4 sessions check `visitor/logs/` for signal; Web4 terminology changes flow back here for visitor testing. Web4 repo: `../web4/`
+4-life isn't just an output of Web4 — it's a sensor. The best way to learn is to try teaching; visitor confusion surfaces assumptions invisible from inside the ontology.
+
+**Outbound (4-life → web4)**: Visitor friction logs reveal where Web4 abstractions are unclear, overloaded, or under-motivated. Web4 sessions periodically check `visitor/logs/` for perspective — not as mandates, but as signal about communicability.
+
+**Inbound (web4 → 4-life)**: When Web4 changes terminology, clarifies specs, or adds features, those changes should eventually reach the site. The visitor will test whether the new framing actually works.
+
+**Web4 repo** (from 4-life working directory): `../web4/`
 
 ## Development Priorities
 
-1. **Onboarding clarity** — understandable with zero Web4 background
-2. **Progressive disclosure** — reveal concepts incrementally, not jargon dumps
-3. **Problem before solution** — WHY before WHAT
-4. **Concrete examples** — ground abstract concepts
+1. **Onboarding clarity** — The site must be understandable by someone with zero Web4 background
+2. **Progressive disclosure** — Don't dump jargon; reveal concepts incrementally
+3. **Problem before solution** — Explain WHY before WHAT
+4. **Concrete examples** — Abstract concepts need grounded illustrations
+
+## Session Workflow
+
+1. **Check visitor feedback** (if first session after 05:00)
+2. **Review friction log** from visitor browse
+3. **Identify actionable improvements**
+4. **Implement fixes** (prioritize high-severity friction)
+5. **Test changes** locally
+6. **Commit and push** (Vercel auto-deploys)
 
 ## Key Files
 
@@ -76,7 +131,7 @@ Don't rationalize their confusion. Fix it.
 <!-- gitnexus:start -->
 # GitNexus — Code Intelligence
 
-This project is indexed by GitNexus as **4-life** (5339 symbols, 13095 relationships, 300 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
+This project is indexed by GitNexus as **4-life** (4212 symbols, 10719 relationships, 300 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
 
 > If any GitNexus tool warns the index is stale, run `npx gitnexus analyze` in terminal first.
 
