@@ -548,19 +548,20 @@ export default function KarmaJourneyPage() {
               </div>
             ))}
           </div>
-          {currentLife.tick === 0 && currentLife.lifeNumber === 1 && (
+          {currentLife.tick === 0 && (
             <div style={{
               fontSize: '0.8rem', color: 'var(--color-text-secondary)', marginBottom: '0.75rem',
               padding: '0.625rem 0.875rem', borderRadius: '0.375rem',
               background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)',
             }}>
               <div style={{ marginBottom: '0.375rem' }}>
-                <strong>Raw: 0.500</strong> <span style={{ color: 'var(--color-text-muted)' }}>→</span> <strong style={{ color: 'var(--color-sky)' }}>Effective: {effComp.toFixed(3)}</strong>
+                <strong>Raw: {baseComp.toFixed(3)}</strong> <span style={{ color: 'var(--color-text-muted)' }}>→</span> <strong style={{ color: 'var(--color-sky)' }}>Effective: {effComp.toFixed(3)}</strong>
               </div>
               <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
-              Why? Your raw trust starts at 0.500 (neutral), but <em>effective trust</em> = raw × CI².
-              New entities have no consistency history (CI = {currentLife.ci.toFixed(2)}), so displayed trust is lower.
-              As you make consistent choices, CI rises toward 1.0 and effective trust converges with raw.</span>
+              {currentLife.lifeNumber === 1
+                ? <>Why the gap? <em>Effective trust</em> = raw trust × CI² (Consistency squared). New entities have no consistency history (CI = {currentLife.ci.toFixed(2)}), so your effective trust starts lower than raw. As you make consistent choices, CI rises toward 1.0 and the gap closes.</>
+                : <>Your karma from Life {currentLife.lifeNumber - 1} set your raw trust at {baseComp.toFixed(3)}. Effective trust = raw × CI² — your consistency ({currentLife.ci.toFixed(2)}) {currentLife.ci >= 0.9 ? 'is high, so the gap is small' : 'still modulates what others see'}.</>
+              }</span>
             </div>
           )}
 

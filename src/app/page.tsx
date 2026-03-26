@@ -88,6 +88,18 @@ export default function HomePage() {
           }}>
             How would this change my internet? →
           </Link>
+          <Link href="/learn" style={{
+            padding: '0.5rem 1rem',
+            background: 'rgba(251, 191, 36, 0.1)',
+            border: '1px solid rgba(251, 191, 36, 0.3)',
+            borderRadius: '0.5rem',
+            color: 'rgb(251, 191, 36)',
+            fontWeight: 600,
+            fontSize: '0.85rem',
+            textDecoration: 'none',
+          }}>
+            Follow a learning path →
+          </Link>
         </div>
       </section>
 

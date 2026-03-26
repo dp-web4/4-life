@@ -286,7 +286,7 @@ export default function CoherenceIndexPage() {
                       <span className="text-green-400 mt-1">•</span>
                       <span>
                         <strong>Continuous coherence verification</strong> - Every
-                        grounding (a periodic check-in where the device proves it&apos;s still the same device)
+                        <strong className="text-gray-200">grounding</strong> (a periodic check-in where the device proves it&apos;s still the same device)
                         verifies spatial, temporal, capability, and
                         relational consistency
                       </span>
@@ -499,7 +499,7 @@ export default function CoherenceIndexPage() {
                 </ul>
               </div>
               <p className="text-xs text-gray-500">
-                Continuity tokens link groundings. Broken chain = 0.3 CI penalty.
+                Continuity tokens link groundings (device check-ins). Broken chain = 0.3 CI penalty.
               </p>
             </div>
 

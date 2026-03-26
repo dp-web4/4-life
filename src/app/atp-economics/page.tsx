@@ -263,7 +263,7 @@ export default function ATPEconomicsPage() {
             There are no negotiations — quality is the dominant earnings driver.
           </p>
           <p className="text-gray-500 text-xs mt-3">
-            A 5% transfer fee on all ATP flows prevents circular farming.
+            A 5% transfer fee on all ATP flows prevents circular farming (colluding accounts sending ATP back and forth to inflate balances).
             Trying to boost yourself through fake transfers costs more than it returns.
           </p>
         </div>
@@ -756,7 +756,7 @@ export default function ATPEconomicsPage() {
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 text-center">
               <div className="text-2xl mb-2">📤</div>
               <div className="text-sm font-semibold text-sky-400 mb-1">You Act</div>
-              <div className="text-xs text-gray-400">Spend ATP, create ADP receipt</div>
+              <div className="text-xs text-gray-400">Spend ATP, create ADP receipt (proof of what you did and what it cost)</div>
             </div>
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 text-center">
               <div className="text-2xl mb-2">👍</div>
