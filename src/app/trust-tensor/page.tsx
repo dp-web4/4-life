@@ -804,19 +804,58 @@ export default function TrustTensorPage() {
             V3 measures <strong className="text-purple-400">what you produce</strong> (the quality of each specific output).
             They&apos;re separate scores that feed into a single outcome: <strong>how much ATP you earn</strong>.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-            <div className="bg-sky-950/40 border border-sky-800/30 rounded-lg p-4 text-center">
-              <div className="text-sky-400 font-bold mb-1">T3: The Person</div>
-              <div className="text-xs text-gray-400">Are you talented, trained, and reliable in this role?</div>
-              <div className="text-gray-500 text-xs mt-2">Updates slowly, per action</div>
+          {/* Flow diagram: Actions → V3 → T3 ↔ ATP */}
+          <div className="mb-6">
+            {/* Pipeline row */}
+            <div className="flex flex-col md:flex-row items-stretch gap-0 md:gap-0">
+              {/* Step 1: Action */}
+              <div className="flex-1 bg-gray-800/60 border border-gray-700/50 rounded-t-lg md:rounded-l-lg md:rounded-tr-none p-4 text-center">
+                <div className="text-2xl mb-1">⚡</div>
+                <div className="text-amber-400 font-bold text-sm">1. You Act</div>
+                <div className="text-xs text-gray-400 mt-1">Post, review, help, build</div>
+              </div>
+              {/* Arrow */}
+              <div className="flex items-center justify-center text-gray-600 py-1 md:py-0 md:px-0">
+                <span className="hidden md:block text-lg">→</span>
+                <span className="md:hidden text-lg">↓</span>
+              </div>
+              {/* Step 2: V3 */}
+              <div className="flex-1 bg-purple-950/40 border border-purple-800/30 p-4 text-center">
+                <div className="text-2xl mb-1">📊</div>
+                <div className="text-purple-400 font-bold text-sm">2. Recipients Score It</div>
+                <div className="text-xs text-gray-400 mt-1">V3: Valuation · Veracity · Validity</div>
+                <div className="text-xs text-gray-500 mt-1">Scored per output</div>
+              </div>
+              {/* Arrow */}
+              <div className="flex items-center justify-center text-gray-600 py-1 md:py-0 md:px-0">
+                <span className="hidden md:block text-lg">→</span>
+                <span className="md:hidden text-lg">↓</span>
+              </div>
+              {/* Step 3: T3 update */}
+              <div className="flex-1 bg-sky-950/40 border border-sky-800/30 p-4 text-center">
+                <div className="text-2xl mb-1">📈</div>
+                <div className="text-sky-400 font-bold text-sm">3. Reputation Updates</div>
+                <div className="text-xs text-gray-400 mt-1">T3: Talent · Training · Temperament</div>
+                <div className="text-xs text-gray-500 mt-1">Builds slowly over many actions</div>
+              </div>
+              {/* Arrow */}
+              <div className="flex items-center justify-center text-gray-600 py-1 md:py-0 md:px-0">
+                <span className="hidden md:block text-lg">→</span>
+                <span className="md:hidden text-lg">↓</span>
+              </div>
+              {/* Step 4: ATP */}
+              <div className="flex-1 bg-emerald-950/40 border border-emerald-800/30 rounded-b-lg md:rounded-r-lg md:rounded-bl-none p-4 text-center">
+                <div className="text-2xl mb-1">🔋</div>
+                <div className="text-emerald-400 font-bold text-sm">4. ATP Reward</div>
+                <div className="text-xs text-gray-400 mt-1">Earnings = T3 × V3 × base rate</div>
+                <div className="text-xs text-gray-500 mt-1">Fuels your next actions</div>
+              </div>
             </div>
-            <div className="bg-gray-800/50 border border-gray-700/50 rounded-lg p-4 flex items-center justify-center text-2xl text-gray-500">
-              &times;
-            </div>
-            <div className="bg-purple-950/40 border border-purple-800/30 rounded-lg p-4 text-center">
-              <div className="text-purple-400 font-bold mb-1">V3: The Work</div>
-              <div className="text-xs text-gray-400">Is this output useful, accurate, and well-reasoned?</div>
-              <div className="text-gray-500 text-xs mt-2">Scored per output</div>
+            {/* Feedback loop annotation */}
+            <div className="mt-3 flex items-center justify-center gap-2 text-xs text-gray-500">
+              <span className="hidden md:inline">↰</span>
+              <span>Feedback loop: ATP fuels more actions → more V3 scores → T3 evolves → ATP changes</span>
+              <span className="hidden md:inline">↱</span>
             </div>
           </div>
           <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4 text-sm text-gray-300">
