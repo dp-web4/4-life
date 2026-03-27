@@ -1656,6 +1656,45 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
+          {/* VPN/Tor + Coherence Index — visitor Q Mar 26 */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What about VPNs and Tor? Does privacy tooling hurt your Coherence Index?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Short answer: <strong className="text-sky-300">no</strong>. Coherence Index measures
+                behavioral consistency — not IP addresses or geographic location.
+              </p>
+              <p>
+                CI tracks four dimensions: <strong className="text-gray-200">spatial</strong> (do you act
+                within your declared scope?), <strong className="text-gray-200">capability</strong> (do
+                you do what you say you can?), <strong className="text-gray-200">temporal</strong> (are
+                your patterns stable over time?), and <strong className="text-gray-200">relational</strong> (are
+                your relationships consistent?). None of these require knowing your IP address or
+                physical location.
+              </p>
+              <p>
+                &ldquo;Spatial&rdquo; here means <em>scope of activity</em> — which communities you
+                participate in, which roles you claim — not where your device is. A journalist using
+                Tor to research a sensitive story has the same CI as one using a coffee shop Wi-Fi,
+                because CI measures <em>what you do</em>, not <em>where you connect from</em>.
+              </p>
+              <p>
+                Identity in Web4 is bound to <strong className="text-sky-300">hardware</strong> (via{" "}
+                <Link href="/lct-explainer" className="text-sky-400 hover:underline">LCT</Link>), not
+                to network addresses. VPNs and Tor change your network path but don&apos;t affect
+                your device&apos;s cryptographic identity or your behavioral patterns.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Some future applications <em>built on</em> Web4 might
+                optionally use location data (a delivery service, for example). Those applications
+                would set their own policies. But at the protocol level, Web4 is network-path agnostic.
+              </p>
+            </div>
+          </details>
+
           {/* Quality measurement — promoted to "Most asked" tier above */}
 
           {/* Protocol governance */}
@@ -1902,6 +1941,50 @@ export default function WhyWeb4Page() {
                 to experience this firsthand, or{" "}
                 <Link href="/aliveness" className="text-sky-400 hover:underline">How Agents Live &amp; Die</Link>{" "}
                 for the full lifecycle.
+              </p>
+            </div>
+          </details>
+
+          {/* Youthful mistakes — visitor Q Mar 26: "If trust is permanent, how does a teenager escape youthful mistakes?" */}
+          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>If trust is permanent, how does a teenager escape youthful mistakes?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Trust isn&apos;t permanent — it <strong className="text-sky-300">decays</strong>. Every
+                trust dimension has a half-life:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong className="text-gray-300">Temperament:</strong> 30-day half-life (behavior patterns fade fastest)</li>
+                <li><strong className="text-gray-300">Training:</strong> 180-day half-life (skill signals diminish)</li>
+                <li><strong className="text-gray-300">Talent:</strong> 365-day half-life (deep competence persists longest)</li>
+              </ul>
+              <p>
+                A teenager who made poor choices at 15 doesn&apos;t carry those penalties forever. The
+                temperament damage (rudeness, trolling, impulsive actions) fades to half strength in
+                30 days and is negligible within 6 months. By 18, their behavioral record is almost
+                entirely composed of recent actions.
+              </p>
+              <p>
+                More importantly, Web4&apos;s <strong className="text-sky-300">bootstrap convergence</strong> means
+                a newcomer (or a recovering teenager) doing quality work surpasses established members
+                within ~50 actions. The first-mover advantage has a ~30-action half-life. The system is
+                designed for people to outgrow their past — not to be trapped by it.
+              </p>
+              <p>
+                The combination of trust decay + bootstrap convergence means Web4 is closer to
+                &ldquo;show me who you are <em>now</em>&rdquo; than &ldquo;show me who you were.&rdquo;
+                Your history influences your starting position, but consistent quality behavior
+                overwhelms it quickly.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Extreme trust violations (trust below 0.5 = permanent
+                death) are an exception — this is by design, not a flaw. If society collectively
+                decides your behavior is harmful enough to warrant permanent exclusion, decay alone
+                can&apos;t save you. But this threshold is high; ordinary teenage mistakes don&apos;t
+                approach it.
               </p>
             </div>
           </details>
