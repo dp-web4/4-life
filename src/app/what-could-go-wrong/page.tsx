@@ -192,7 +192,7 @@ export default function WhatCouldGoWrongPage() {
               <strong className="text-gray-100">The risk:</strong> <TermTooltip term="ATP" /> transfers cost 5%, so buying
               reputation at scale is expensive but not impossible. A well-funded organization could buy thousands
               of hardware devices, create thousands of identities, and slowly build legitimate-looking
-              trust across all of them &mdash; a long-game Sybil attack.
+              trust across all of them &mdash; a long-game <TermTooltip term="Sybil">Sybil attack</TermTooltip> (one person pretending to be many).
             </p>
             <p>
               <strong className="text-gray-100">Why it&apos;s real:</strong> Nation-state actors and

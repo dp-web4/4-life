@@ -673,6 +673,8 @@ export default function HowItWorksPage() {
         {/* Synthon foreshadowing */}
         <div className="mt-8 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg">
           <p className="text-gray-300 text-sm leading-relaxed">
+            So far we&apos;ve talked about individual agents surviving through energy, trust, and consistency.
+            But what happens when several agents consistently cooperate?{" "}
             <strong className="text-purple-400">Groups can be &quot;alive&quot; too.</strong>{" "}
             When individuals build dense mutual trust, something emerges at the group level — Web4 calls
             these <Link href="/aliveness#synthons" className="text-sky-400 hover:underline">synthons</Link>.
