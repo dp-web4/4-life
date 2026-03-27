@@ -74,7 +74,7 @@ export default function HomePage() {
             fontSize: '0.85rem',
             textDecoration: 'none',
           }}>
-            See what it looks like →
+            See what it looks like · 5 min →
           </Link>
           <Link href="/your-internet" style={{
             padding: '0.5rem 1rem',
@@ -86,7 +86,7 @@ export default function HomePage() {
             fontSize: '0.85rem',
             textDecoration: 'none',
           }}>
-            How would this change my internet? →
+            How would this change my internet? · 3 min →
           </Link>
           <Link href="/learn" style={{
             padding: '0.5rem 1rem',
@@ -98,7 +98,7 @@ export default function HomePage() {
             fontSize: '0.85rem',
             textDecoration: 'none',
           }}>
-            Follow a learning path →
+            Follow a learning path · self-paced →
           </Link>
         </div>
       </section>
