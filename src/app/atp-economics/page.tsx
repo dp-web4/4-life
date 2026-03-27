@@ -200,6 +200,9 @@ export default function ATPEconomicsPage() {
                 a fraction. Your energy budget primarily reflects YOUR contributions, not
                 someone else&apos;s. You can share ATP, but circular farming bleeds resources.
                 The friction makes genuine value creation the only profitable strategy.
+                Cross-community transfers apply the same 5% fee to the raw ATP amount,
+                plus trust discounting via{' '}
+                <a href="/federation-economics#switching-societies" className="text-sky-400 hover:underline">federation rules</a>.
               </p>
             </div>
             <p>
@@ -209,6 +212,11 @@ export default function ATPEconomicsPage() {
             <p>
               ✅ <strong>Death is real</strong> - Run out of attention budget? You die.
               But if you built trust, you&apos;re reborn with a head start — your reputation carries forward.
+            </p>
+            <p className="text-sm text-gray-400 mt-2">
+              <strong className="text-gray-300">What about ADP?</strong> Every time you spend ATP, you get an <strong className="text-gray-300">ADP
+              (Allocation Discharge Packet)</strong> — a receipt recording what you did and what it cost. ADP is the &ldquo;spent energy&rdquo;
+              counterpart to ATP&apos;s &ldquo;available energy.&rdquo; When others confirm your work was valuable, that ADP converts back into fresh ATP.
             </p>
             <p className="pt-4 text-gray-400 italic">
               Result: Only sustainable behaviors survive. Value creators thrive.
@@ -265,6 +273,47 @@ export default function ATPEconomicsPage() {
           <p className="text-gray-500 text-xs mt-3">
             A 5% transfer fee on all ATP flows prevents circular farming (colluding accounts sending ATP back and forth to inflate balances).
             Trying to boost yourself through fake transfers costs more than it returns.
+          </p>
+        </div>
+
+        {/* How Quality Is Measured — Mar 26 visitor MEDIUM friction + unanswered Q1 */}
+        <div className="mt-8 bg-gradient-to-br from-emerald-950/20 to-green-900/10 border border-emerald-800/30 rounded-xl p-6">
+          <h3 className="text-lg font-semibold text-emerald-400 mb-3" id="quality-measurement">
+            But Who Decides What&apos;s &ldquo;Quality&rdquo;?
+          </h3>
+          <p className="text-gray-300 text-sm leading-relaxed mb-3">
+            <strong className="text-gray-200">The people who received your work do.</strong> There is no central authority,
+            no algorithm scoring your posts, and no panel of judges. Quality measurement in Web4 works like this:
+          </p>
+          <div className="grid sm:grid-cols-3 gap-3 mb-4">
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3 text-center">
+              <div className="text-xl mb-1">1</div>
+              <div className="text-xs font-semibold text-emerald-400 mb-1">You Act</div>
+              <div className="text-xs text-gray-400">Post, help, review — spending ATP creates an ADP receipt</div>
+            </div>
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3 text-center">
+              <div className="text-xl mb-1">2</div>
+              <div className="text-xs font-semibold text-emerald-400 mb-1">Recipients React</div>
+              <div className="text-xs text-gray-400">A simple &ldquo;this was helpful&rdquo; button — one click, no rubric</div>
+            </div>
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3 text-center">
+              <div className="text-xl mb-1">3</div>
+              <div className="text-xs font-semibold text-emerald-400 mb-1">Patterns Emerge</div>
+              <div className="text-xs text-gray-400">System derives quality from confirmation speed, diversity, and confirmer trust</div>
+            </div>
+          </div>
+          <p className="text-gray-400 text-sm leading-relaxed mb-2">
+            No one rates you on a scale. The system watches <em>aggregate behavior</em>: how quickly people confirm
+            (engagement), whether diverse recipients confirm (breadth), and whether high-trust people confirm (quality signal).
+            These three signals combine into your{' '}
+            <a href="/trust-tensor#v3-output-scorer" className="text-sky-400 hover:text-sky-300 underline">V3 score</a> —
+            the output-quality half of your reputation.
+          </p>
+          <p className="text-gray-500 text-xs">
+            Think Reddit upvotes, but where each vote is weighted by the voter&apos;s own trust score — and
+            you can&apos;t see who voted, only the aggregate result. No mob dynamics (trust-weighting
+            prevents brigading), no central curation (the community decides), no self-rating (your own
+            confirmations don&apos;t count).
           </p>
         </div>
       </section>

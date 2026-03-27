@@ -1164,6 +1164,53 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
+          {/* FAQ: Shared devices — Mar 26 visitor unanswered Q2 */}
+          <div className="mt-6 p-4 bg-orange-950/20 border border-orange-800/30 rounded-lg">
+            <h3 className="text-sm font-bold text-orange-400 mb-2">
+              What about shared devices? Family tablets, library computers, school Chromebooks?
+            </h3>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong>Shared devices can&apos;t host identity.</strong> An LCT is bound to hardware that only <em>you</em> control —
+              your personal phone, your laptop, your security key. A family tablet or library computer doesn&apos;t qualify
+              because the system can&apos;t distinguish who is using it.
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              In practice, most people have at least one personal device (a smartphone). That&apos;s enough.
+              If your only internet access is through shared hardware, you can still participate at the
+              software-only tier (trust ceiling 0.50) — meaningful but limited, the same way email works
+              on a shared computer but online banking doesn&apos;t.
+            </p>
+            <p className="text-xs text-gray-500">
+              This is a deliberate design choice: the security guarantee of &ldquo;this is really you&rdquo; requires hardware
+              you control. Shared-device access is an open equity challenge being explored through
+              community-vouching mechanisms.
+            </p>
+          </div>
+
+          {/* FAQ: Multiple devices for multiple identities — Mar 26 visitor unanswered Q4 */}
+          <div className="mt-6 p-4 bg-indigo-950/20 border border-indigo-800/30 rounded-lg">
+            <h3 className="text-sm font-bold text-indigo-400 mb-2">
+              Can someone buy 10 phones and create 10 identities?
+            </h3>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong>They can try, but it&apos;s expensive and mostly pointless.</strong> Each identity starts with zero trust and
+              must earn its way up independently through sustained quality behavior. Ten new accounts with 0.50 trust
+              each accomplish less than one mature account with 0.85 trust — low-trust actions cost more ATP and earn less back.
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              Several mechanisms compound the cost: each device requires <strong>independent witnesses</strong> (real entities who
+              attest to your identity — hard to fake 10 separate witness networks), the <strong>5% transfer fee</strong> makes
+              pooling resources between accounts unprofitable, and <strong>behavioral fingerprinting</strong> through the Coherence
+              Index means 10 accounts acting in coordination become statistically detectable over time.
+            </p>
+            <p className="text-xs text-gray-500">
+              This is a Sybil resistance strategy, not a Sybil prevention guarantee. The goal is to make
+              real participation cheaper and more effective than fake participation — not to make fakery impossible.
+              See the <a href="/threat-model" className="text-indigo-400 hover:text-indigo-300 underline">Threat Model</a> for
+              deeper analysis.
+            </p>
+          </div>
+
           {/* FAQ: Device Loss */}
           <div className="mt-6 p-4 bg-yellow-950/20 border border-yellow-800/30 rounded-lg">
             <h3 className="text-sm font-bold text-yellow-400 mb-2">
