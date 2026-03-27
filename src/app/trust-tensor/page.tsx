@@ -129,7 +129,14 @@ function V3OutputScorer() {
 
   return (
     <section className="max-w-4xl mx-auto mt-16">
-      {/* Key distinction callout — visitor feedback: T3 vs V3 relationship unclear */}
+      {/* Transition: T3 → V3 — visitor feedback: V3 appears without preamble */}
+      <p className="text-gray-400 mb-6 text-lg">
+        Everything above is about <strong className="text-sky-300">you</strong> — your skills, your track record, your consistency.
+        But trust isn&apos;t just about who you are. It&apos;s also about <strong className="text-purple-300">what you produce</strong>.
+        That&apos;s where V3 comes in.
+      </p>
+
+      {/* Key distinction callout */}
       <div className="bg-gradient-to-r from-sky-950/40 to-purple-950/40 border border-sky-800/30 rounded-xl p-4 mb-6">
         <div className="flex items-center gap-3 text-sm">
           <div className="flex items-center gap-2">
@@ -795,6 +802,9 @@ export default function TrustTensorPage() {
 
       {/* T3/V3 Bridge — how they work together (visitor friction Mar 15-16) */}
       <section id="v3" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
+        <p className="text-gray-400 text-sm mb-4 max-w-4xl mx-auto">
+          T3 tells us whether <em>you</em> are trustworthy. But how does the system know if a specific piece of work you produced was actually good? That&apos;s where V3 comes in — a separate score for each thing you create.
+        </p>
         <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/30 border border-sky-700/30 rounded-xl p-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-100">
             How T3 and V3 Work Together

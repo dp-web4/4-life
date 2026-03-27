@@ -16,7 +16,7 @@ export default function HomePage() {
     <div className="space-y-8">
       {/* Hero */}
       <section className="text-center" style={{ maxWidth: '48rem', margin: '0 auto' }}>
-        <p className="eyebrow">4-Life: A Trust-Native Internet Lab</p>
+        <p className="eyebrow">4-Life: A Trust-Native Internet Lab <span style={{ fontWeight: 400, opacity: 0.7 }}>&mdash; explore Web4 through simulations</span></p>
         <h1 style={{ marginBottom: '1rem' }}>
           The Internet Has a Trust Problem
         </h1>
@@ -141,6 +141,12 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" style={{ color: 'var(--color-sky)', textDecoration: 'none' }}>formal specification</a>,
             ~47,000 lines of tested reference code, and the working simulations on this site.
             The mechanics are validated &mdash; the open question is whether real communities behave like the simulations.
+          </p>
+          <p style={{ margin: 0 }}>
+            <strong style={{ color: 'var(--color-text)' }}>This site (4-Life) is the lab.</strong>{' '}
+            Web4 is the protocol &mdash; the rules and math. 4-Life is where you explore those rules through
+            interactive simulations, guided walkthroughs, and concept explainers. Nothing here is &ldquo;live&rdquo;
+            on the real internet yet &mdash; it&apos;s a working model you can poke at to understand how trust-native societies would behave.
           </p>
           <p style={{ margin: 0 }}>
             <strong style={{ color: 'var(--color-text)' }}>Nobody profits from this yet.</strong>{' '}
