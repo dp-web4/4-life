@@ -1137,7 +1137,12 @@ export default function AlivenessExplainer() {
       </section>
 
       <section>
-        <h2>What About False Positives?</h2>
+        <details>
+          <summary className="text-xl font-bold cursor-pointer hover:text-sky-400 transition-colors list-none flex justify-between items-center">
+            <h2 style={{ margin: 0 }}>What About False Positives?</h2>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div style={{ marginTop: "1rem" }}>
         <p>
           Honest caveat: any system that penalizes behavior can penalize <em>incorrectly</em>.
           What happens when a legitimate entity gets unfairly trust-penalized?
@@ -1209,10 +1214,17 @@ export default function AlivenessExplainer() {
             GitHub issues
           </a> are open.
         </p>
+          </div>
+        </details>
       </section>
 
       <section>
-        <h2>Real Simulation Example: Death and Rebirth</h2>
+        <details>
+          <summary className="text-xl font-bold cursor-pointer hover:text-sky-400 transition-colors list-none flex justify-between items-center">
+            <h2 style={{ margin: 0 }}>Real Simulation Example: Death and Rebirth</h2>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div style={{ marginTop: "1rem" }}>
         <div className="detail-box">
           <h4>Life 1: Learning Phase</h4>
           <ul>
@@ -1249,6 +1261,8 @@ export default function AlivenessExplainer() {
         <p className="learn-more">
           <Link href="/karma-journey">See death and rebirth in your Karma Journey →</Link>
         </p>
+          </div>
+        </details>
       </section>
 
       <section>
@@ -1308,7 +1322,12 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
       </section>
 
       <section>
-        <h2>Comparison: Traditional vs Web4 Aliveness</h2>
+        <details>
+          <summary className="text-xl font-bold cursor-pointer hover:text-sky-400 transition-colors list-none flex justify-between items-center">
+            <h2 style={{ margin: 0 }}>Comparison: Traditional vs Web4 Aliveness</h2>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div style={{ marginTop: "1rem" }}>
         <table className="comparison-table">
           <thead>
             <tr>
@@ -1360,6 +1379,8 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             </tr>
           </tbody>
         </table>
+          </div>
+        </details>
       </section>
 
       <section>
