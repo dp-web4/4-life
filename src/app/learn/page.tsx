@@ -459,6 +459,9 @@ export default function LearnJourney() {
               0
             )}{" "}
             concepts completed ({progress.toFixed(0)}%)
+            <span style={{ fontSize: '0.75rem', color: 'var(--color-gray-500)', marginLeft: '0.5rem' }}>
+              (saved in your browser)
+            </span>
           </div>
           <div
             style={{
