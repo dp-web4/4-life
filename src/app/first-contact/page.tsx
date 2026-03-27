@@ -61,7 +61,7 @@ export default function FirstContactPage() {
     { tick: 12, action: "Quality slips", atp_before: 35, atp_after: 12, trust_before: 0.58, trust_after: 0.51, reason: "Rushed work gets poor reviews. ATP drains, trust falls. The crisis spiral begins.", isWarning: true },
     { tick: 13, action: "ATP exhaustion", atp_before: 12, atp_after: 0, trust_before: 0.51, trust_after: 0.51, reason: "No energy left to contribute. ATP hits zero — Alice's entity dies. But her record persists.", isWarning: true },
     // Rebirth with karma carry-forward
-    { tick: 14, action: "Rebirth", atp_before: 0, atp_after: 112, trust_before: 0.51, trust_after: 0.54, reason: "New life begins! Good karma carries forward: 112 ATP (bonus from past quality) and 0.54 trust (above neutral). Past lessons remembered.", isSuccess: true },
+    { tick: 14, action: "Rebirth", atp_before: 0, atp_after: 112, trust_before: 0.51, trust_after: 0.54, reason: "New life begins! Good karma carries forward: 112 ATP (she earned more than she spent in her first life — that surplus becomes her starting bonus) and 0.54 trust (above the 0.50 neutral baseline). Past lessons remembered.", isSuccess: true },
     { tick: 15, action: "Wiser choices", atp_before: 112, atp_after: 104, trust_before: 0.54, trust_after: 0.57, reason: "Armed with experience, Alice paces herself — focused quality over volume. Trust rises faster than her first life.", isSuccess: true },
   ];
 
@@ -139,7 +139,7 @@ export default function FirstContactPage() {
                 <strong style={{ color: '#f87171' }}>Step 6 — Death:</strong> Alice overcommits, quality slips, ATP drains to zero. Her entity dies &mdash; but her record persists.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#34d399' }}>Step 7 — Rebirth:</strong> Good karma carries forward. Alice is reborn with 112 ATP (bonus from past quality) and 0.54 trust (above neutral). Past lessons compound.
+                <strong style={{ color: '#34d399' }}>Step 7 — Rebirth:</strong> Good karma carries forward. Alice is reborn with 112 ATP (her lifetime surplus — she earned more than she spent) and 0.54 trust (above the 0.50 neutral baseline). Past lessons compound.
               </p>
             </div>
 

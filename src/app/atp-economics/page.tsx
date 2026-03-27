@@ -200,6 +200,9 @@ export default function ATPEconomicsPage() {
                 a fraction. Your energy budget primarily reflects YOUR contributions, not
                 someone else&apos;s. You can share ATP, but circular farming bleeds resources.
                 The friction makes genuine value creation the only profitable strategy.
+                Cross-community transfers apply the same 5% fee to the raw ATP amount,
+                plus trust discounting via{' '}
+                <a href="/federation-economics#switching-societies" className="text-sky-400 hover:underline">federation rules</a>.
               </p>
             </div>
             <p>
@@ -261,6 +264,13 @@ export default function ATPEconomicsPage() {
             High-quality work earns <strong className="text-gray-200">~7x more</strong> than mediocre work.
             The ramp starts at 30% quality (below that, zero payment) and scales linearly above 70%.
             There are no negotiations — quality is the dominant earnings driver.
+          </p>
+          <p className="text-gray-400 text-sm mt-3">
+            <strong className="text-gray-300">But who decides what&apos;s &ldquo;quality&rdquo;?</strong>{' '}
+            Not you, not an algorithm — the <strong className="text-sky-300">people who received your work</strong> do.
+            Recipients confirm value with a simple acknowledgment (like an upvote), and the system
+            derives quality scores from those signals. No central authority judges quality.{' '}
+            <a href="#earning-atp" className="text-sky-400 hover:underline">See how earning works ↓</a>
           </p>
           <p className="text-gray-500 text-xs mt-3">
             A 5% transfer fee on all ATP flows prevents circular farming (colluding accounts sending ATP back and forth to inflate balances).
