@@ -580,8 +580,9 @@ export default function FirstContactPage() {
                 <h3 className="text-2xl font-bold text-emerald-400 mb-3">The Return: Karma Compounds</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   But Alice had built real value in her first life. Her karma — the accumulated record of quality contributions —
-                  entitled her to rebirth with advantages. She started her new life with <strong className="text-emerald-400">112 ATP</strong> (12 more
-                  than default) and <strong className="text-emerald-400">0.54 trust</strong> (above the 0.50 neutral starting point).
+                  entitled her to rebirth with advantages. She started her new life with <strong className="text-emerald-400">112 ATP</strong> (everyone
+                  starts with 100, but Alice&apos;s lifetime surplus — she earned more ATP than she spent — carried forward as a 12 ATP bonus)
+                  and <strong className="text-emerald-400">0.54 trust</strong> (above the 0.50 neutral starting point, reflecting her proven track record).
                 </p>
                 <p className="text-gray-300 leading-relaxed">
                   Armed with experience, Alice paced herself. Focused quality over volume. By her second quality
