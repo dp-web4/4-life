@@ -911,7 +911,7 @@ export default function DayInWeb4Page() {
                 <div className="space-y-1.5 text-gray-500">
                   <div className="flex justify-between"><span>Seller trust (as seller role)</span><span className="text-emerald-400">0.91</span></div>
                   <div className="flex justify-between"><span>Connection distance</span><span className="text-gray-300">2 hops (friend of a friend)</span></div>
-                  <div className="flex justify-between"><span><Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">Trust Neighborhood</Link>-adjusted trust <span className="text-gray-600">(trust weakens with distance — explained on the <Link href="/markov-relevancy-horizon" className="text-sky-400/60 hover:underline">concept page</Link>)</span></span><span className="text-sky-400">0.64 (0.91 × 0.70 decay over 2 hops)</span></div>
+                  <div className="flex justify-between"><span><Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">Distance-adjusted trust</Link> <span className="text-gray-600">(trust fades with distance &mdash; 2 hops away means 30% weaker)</span></span><span className="text-sky-400">0.64 (0.91 &times; 0.70 decay over 2 hops)</span></div>
                   <div className="flex justify-between"><span>Escrow cost</span><span className="text-gray-300">2 ATP (reduced — high seller trust)</span></div>
                 </div>
               </div>

@@ -52,8 +52,9 @@ export default function TLDRPage() {
               <span className="text-sky-400 text-xl mt-0.5">1.</span>
               <p className="text-gray-300">
                 <strong className="text-white">Actions cost energy.</strong> Posting,
-                messaging, voting — everything draws from a personal budget. Spam drains
-                your budget with no return. Quality contributions earn it back.
+                messaging, voting &mdash; everything draws from a personal energy budget (called ATP).
+                Each action creates a receipt (ADP) recording what you spent. If others confirm your work was valuable,
+                you earn fresh energy back. Spam drains your budget with no return.
               </p>
             </div>
             <div className="flex gap-3 items-start">

@@ -1225,6 +1225,26 @@ if agent.atp <= 0:
         </details>
       </section>
 
+      <section className="max-w-4xl mx-auto mt-6">
+        <details className="bg-gray-800/30 border border-gray-700/50 rounded-xl p-5">
+          <summary className="text-lg font-semibold text-amber-400 cursor-pointer hover:text-amber-300 transition-colors list-none flex justify-between items-center">
+            <span>When I post something that &ldquo;costs 8 ATP,&rdquo; where does that energy go?</span>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div className="mt-4 text-gray-300 text-sm space-y-3">
+            <p>It depends on what kind of action it is:</p>
+            <ul className="list-disc list-inside space-y-1.5 ml-4 text-gray-400">
+              <li><strong className="text-gray-300">Actions (posting, reviewing, helping):</strong> Your ATP is held in escrow. If others confirm the work was valuable, you get it back <em>plus</em> a reward. If the work is low-quality, you lose the escrowed amount &mdash; it returns to the society pool.</li>
+              <li><strong className="text-gray-300">Transfers (sending ATP to someone):</strong> 95% goes to the recipient, 5% is burned (permanently removed from circulation). This prevents circular farming.</li>
+              <li><strong className="text-gray-300">Spam or rejected actions:</strong> The ATP is forfeited to the society pool, making spam progressively more expensive.</li>
+            </ul>
+            <p className="text-gray-400 text-xs">
+              In all cases, an <strong>ADP receipt</strong> is created recording the transaction &mdash; what you did, what it cost, and where the energy went. Think of ATP as cash and ADP as the receipt you get when you spend it.
+            </p>
+          </div>
+        </details>
+      </section>
+
         </DeepDiveToggle>
       </div>
 

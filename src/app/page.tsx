@@ -17,6 +17,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="text-center" style={{ maxWidth: '48rem', margin: '0 auto' }}>
         <p className="eyebrow">4-Life: A Trust-Native Internet Lab</p>
+        <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', opacity: 0.7, margin: '0.25rem 0 0' }}>Web4 is the protocol. This site is where you explore it through simulations.</p>
         <h1 style={{ marginBottom: '1rem' }}>
           The Internet Has a Trust Problem
         </h1>
