@@ -248,6 +248,41 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         </p>
       </section>
 
+      {/* How would this ever get adopted? */}
+      <section>
+        <h2>But how would this ever get adopted?</h2>
+        <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1rem', fontSize: '0.9rem' }}>
+          Not all at once. Web4 is designed as a <strong style={{ color: 'var(--color-text)' }}>five-tier adoption path</strong> — starting
+          with lightweight wrappers on existing platforms and gradually deepening:
+        </p>
+        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'stretch', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
+          {[
+            { tier: '1', name: 'Wrapper', desc: 'Add trust scores to existing platforms' },
+            { tier: '2', name: 'Observable', desc: 'Platforms publish trust-compatible data' },
+            { tier: '3', name: 'Accountable', desc: 'Actions carry real consequences' },
+            { tier: '4', name: 'Federated', desc: 'Trust transfers across platforms' },
+            { tier: '5', name: 'Native', desc: 'Built on trust from the ground up' },
+          ].map((t) => (
+            <div key={t.tier} style={{
+              flex: '1 1 120px',
+              padding: '0.6rem 0.75rem',
+              borderRadius: '0.5rem',
+              background: 'var(--color-bg-secondary)',
+              border: '1px solid var(--color-border)',
+              minWidth: '120px',
+            }}>
+              <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginBottom: '0.15rem' }}>Tier {t.tier}</div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: '0.2rem' }}>{t.name}</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>{t.desc}</div>
+            </div>
+          ))}
+        </div>
+        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', margin: 0 }}>
+          Tier 1 could work on Reddit or Gmail <em>today</em> — no protocol changes needed.{' '}
+          <Link href="/why-web4#adoption" style={{ color: 'var(--color-sky)' }}>Read the full adoption strategy →</Link>
+        </p>
+      </section>
+
       {/* What would it look like? — Day in Web4 teaser */}
       <section className="card" style={{
         border: '2px solid rgba(56, 189, 248, 0.3)',
@@ -290,9 +325,29 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             Walk through a full day in Web4 →
           </Link>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', marginTop: '0.5rem', marginBottom: 0 }}>
-            7 scenarios, 5 app mockups, 3 minutes
+            8 scenarios, 5 app mockups, 3 minutes
           </p>
         </div>
+      </section>
+
+      {/* Adoption pathway teaser */}
+      <section className="card" style={{
+        padding: '1.5rem',
+        border: '1px solid rgba(251, 191, 36, 0.2)',
+        background: 'linear-gradient(135deg, rgba(251, 191, 36, 0.05) 0%, var(--color-dark-surface) 100%)',
+      }}>
+        <h2 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--color-amber)' }}>How would this ever get adopted?</h2>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.85rem', lineHeight: 1.7, marginTop: 0, marginBottom: '0.75rem' }}>
+          Not all at once. Web4 is designed to layer onto existing platforms in five tiers &mdash; from lightweight wrappers on today&apos;s apps to fully trust-native systems. Tier 1 just adds trust scores to existing platforms (imagine Reddit but each commenter has a visible reliability history). No big bang required.
+        </p>
+        <Link href="/why-web4#adoption" style={{
+          color: 'var(--color-amber)',
+          fontSize: '0.85rem',
+          textDecoration: 'none',
+          fontWeight: 600,
+        }}>
+          See the five-tier adoption roadmap →
+        </Link>
       </section>
 
       {/* Where to start */}
