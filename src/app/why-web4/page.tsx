@@ -379,15 +379,108 @@ export default function WhyWeb4Page() {
       {/* Honest Questions */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">Honest Questions</h2>
-        <p className="text-gray-400 mb-8">
-          If you're skeptical, good. Here are the hard questions visitors ask, and honest answers.
+        <p className="text-gray-400 mb-4">
+          If you&#39;re skeptical, good. Here are the hard questions visitors ask, and honest answers.
         </p>
+
+        {/* FAQ index — jump to any question */}
+        <details className="mb-8 text-sm">
+          <summary className="text-sky-400 hover:text-sky-300 cursor-pointer list-none inline-flex items-center gap-1.5">
+            <span className="text-xs">▶</span> Browse all 50 questions by topic
+          </summary>
+          <nav className="mt-3 p-4 bg-gray-800/30 border border-gray-700/50 rounded-lg columns-1 sm:columns-2 gap-x-6">
+            <div className="break-inside-avoid mb-4">
+              <h4 className="text-amber-400/80 font-semibold text-xs uppercase tracking-wide mb-1.5">Most Asked</h4>
+              <ul className="space-y-0.5 text-gray-400">
+                <li><a href="#faq-deployed" className="hover:text-sky-400 transition-colors">Is this deployed or theoretical?</a></li>
+                <li><a href="#faq-lose-hardware" className="hover:text-sky-400 transition-colors">What if I lose my hardware?</a></li>
+                <li><a href="#faq-powerful-liar" className="hover:text-sky-400 transition-colors">If someone powerful lies about me</a></li>
+                <li><a href="#faq-social-credit" className="hover:text-sky-400 transition-colors">Isn&#39;t this a social credit system?</a></li>
+                <li><a href="#faq-message-visibility" className="hover:text-sky-400 transition-colors">Who can see my messages?</a></li>
+                <li><a href="#faq-opt-in" className="hover:text-sky-400 transition-colors">What if most people stay on Web2?</a></li>
+                <li><a href="#faq-quality" className="hover:text-sky-400 transition-colors">Who decides what counts as quality?</a></li>
+                <li><a href="#faq-collusion" className="hover:text-sky-400 transition-colors">What prevents trust collusion?</a></li>
+                <li><a href="#faq-community-size" className="hover:text-sky-400 transition-colors">How many people does it need?</a></li>
+              </ul>
+            </div>
+            <div className="break-inside-avoid mb-4">
+              <h4 className="text-amber-400/80 font-semibold text-xs uppercase tracking-wide mb-1.5">Adoption &amp; Transition</h4>
+              <ul className="space-y-0.5 text-gray-400">
+                <li><a href="#faq-vs-existing" className="hover:text-sky-400 transition-colors">Why is this better than X?</a></li>
+                <li><a href="#faq-transition" className="hover:text-sky-400 transition-colors">Do I switch everything at once?</a></li>
+                <li><a href="#faq-app-ui" className="hover:text-sky-400 transition-colors">What would a Web4 app look like?</a></li>
+                <li><a href="#faq-adoption-path" className="hover:text-sky-400 transition-colors">Simulation to real protocol?</a></li>
+                <li><a href="#faq-community-start" className="hover:text-sky-400 transition-colors">How many to start a community?</a></li>
+                <li><a href="#faq-parallel-identities" className="hover:text-sky-400 transition-colors">Do I need parallel identities?</a></li>
+                <li><a href="#faq-early-adopters" className="hover:text-sky-400 transition-colors">Don&#39;t early adopters just talk to each other?</a></li>
+                <li><a href="#faq-platform-migration" className="hover:text-sky-400 transition-colors">What if Reddit/Discord adopted Web4?</a></li>
+              </ul>
+            </div>
+            <div className="break-inside-avoid mb-4">
+              <h4 className="text-amber-400/80 font-semibold text-xs uppercase tracking-wide mb-1.5">Identity &amp; Hardware</h4>
+              <ul className="space-y-0.5 text-gray-400">
+                <li><a href="#faq-affordability" className="hover:text-sky-400 transition-colors">What about device affordability?</a></li>
+                <li><a href="#faq-many-identities" className="hover:text-sky-400 transition-colors">Multiple hardware = multiple IDs?</a></li>
+                <li><a href="#faq-bootstrap-witnesses" className="hover:text-sky-400 transition-colors">Bootstrapping the witness network</a></li>
+                <li><a href="#faq-manufacturers" className="hover:text-sky-400 transition-colors">Hardware manufacturers as gatekeepers?</a></li>
+                <li><a href="#faq-stolen-device" className="hover:text-sky-400 transition-colors">What if my device is stolen?</a></li>
+                <li><a href="#faq-hardware-standards" className="hover:text-sky-400 transition-colors">TPM v2 → v3, post-quantum?</a></li>
+                <li><a href="#faq-witnessed-presence" className="hover:text-sky-400 transition-colors">What does witnessed presence look like?</a></li>
+                <li><a href="#faq-shared-devices" className="hover:text-sky-400 transition-colors">Shared devices / borrowed phone?</a></li>
+                <li><a href="#faq-tpm-affordability" className="hover:text-sky-400 transition-colors">Can&#39;t afford TPM chips?</a></li>
+                <li><a href="#faq-buy-50-devices" className="hover:text-sky-400 transition-colors">Buy 50 devices for super-trust?</a></li>
+                <li><a href="#faq-children" className="hover:text-sky-400 transition-colors">Children and minors?</a></li>
+              </ul>
+            </div>
+            <div className="break-inside-avoid mb-4">
+              <h4 className="text-amber-400/80 font-semibold text-xs uppercase tracking-wide mb-1.5">Trust &amp; Reputation</h4>
+              <ul className="space-y-0.5 text-gray-400">
+                <li><a href="#faq-trust-transfer" className="hover:text-sky-400 transition-colors">Trust between communities?</a></li>
+                <li><a href="#faq-threshold" className="hover:text-sky-400 transition-colors">Is 0.5 threshold universal?</a></li>
+                <li><a href="#faq-creative-work" className="hover:text-sky-400 transition-colors">V3 and creative/unconventional work?</a></li>
+                <li><a href="#faq-cheaters" className="hover:text-sky-400 transition-colors">How do you catch cheaters?</a></li>
+                <li><a href="#faq-month-off" className="hover:text-sky-400 transition-colors">Take a month off — trust gone?</a></li>
+                <li><a href="#faq-youthful-mistakes" className="hover:text-sky-400 transition-colors">Escaping youthful mistakes?</a></li>
+                <li><a href="#faq-cultural-quality" className="hover:text-sky-400 transition-colors">Cultural differences in quality?</a></li>
+              </ul>
+            </div>
+            <div className="break-inside-avoid mb-4">
+              <h4 className="text-amber-400/80 font-semibold text-xs uppercase tracking-wide mb-1.5">Privacy &amp; Rights</h4>
+              <ul className="space-y-0.5 text-gray-400">
+                <li><a href="#faq-gdpr" className="hover:text-sky-400 transition-colors">GDPR right to be forgotten?</a></li>
+                <li><a href="#faq-reputation-visibility" className="hover:text-sky-400 transition-colors">Who can see my reputation?</a></li>
+                <li><a href="#faq-pseudonymous" className="hover:text-sky-400 transition-colors">Pseudonymity &amp; whistleblowers?</a></li>
+                <li><a href="#faq-vpn-tor" className="hover:text-sky-400 transition-colors">VPNs, Tor &amp; Coherence Index?</a></li>
+                <li><a href="#faq-mrh-messaging" className="hover:text-sky-400 transition-colors">How MRH decides who sees messages</a></li>
+                <li><a href="#faq-filter-bubbles" className="hover:text-sky-400 transition-colors">Does MRH create filter bubbles?</a></li>
+              </ul>
+            </div>
+            <div className="break-inside-avoid mb-4">
+              <h4 className="text-amber-400/80 font-semibold text-xs uppercase tracking-wide mb-1.5">Economics &amp; Energy</h4>
+              <ul className="space-y-0.5 text-gray-400">
+                <li><a href="#faq-5-percent" className="hover:text-sky-400 transition-colors">5% transfer cost — team collaboration?</a></li>
+                <li><a href="#faq-internet-scale" className="hover:text-sky-400 transition-colors">Trust-filtered messaging at scale?</a></li>
+                <li><a href="#faq-death-rebirth" className="hover:text-sky-400 transition-colors">When does an agent die? Rebirth?</a></li>
+              </ul>
+            </div>
+            <div className="break-inside-avoid mb-4">
+              <h4 className="text-amber-400/80 font-semibold text-xs uppercase tracking-wide mb-1.5">Governance &amp; AI</h4>
+              <ul className="space-y-0.5 text-gray-400">
+                <li><a href="#faq-who-builds" className="hover:text-sky-400 transition-colors">Who builds this? Why anonymous?</a></li>
+                <li><a href="#faq-infrastructure" className="hover:text-sky-400 transition-colors">Who runs the infrastructure?</a></li>
+                <li><a href="#faq-ai-agents" className="hover:text-sky-400 transition-colors">How do AI agents participate?</a></li>
+                <li><a href="#faq-protocol-changes" className="hover:text-sky-400 transition-colors">Who decides protocol changes?</a></li>
+                <li><a href="#faq-sal" className="hover:text-sky-400 transition-colors">What is SAL exactly?</a></li>
+              </ul>
+            </div>
+          </nav>
+        </details>
 
         {/* Most asked — top 6 for first-time visitors */}
         <h3 className="text-sm uppercase tracking-wide text-amber-400/80 mb-4">Most asked</h3>
         <div className="space-y-4 mb-10">
           {/* Status */}
-          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+          <details id="faq-deployed" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Is this deployed anywhere? Or purely theoretical?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -435,7 +528,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Hardware loss */}
-          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+          <details id="faq-lose-hardware" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What if I lose my hardware? Is my identity gone forever?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -458,7 +551,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Newcomer vs established liar */}
-          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+          <details id="faq-powerful-liar" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>If someone powerful lies about me and I&apos;m new, does my truth even matter?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -498,7 +591,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Social credit system comparison */}
-          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+          <details id="faq-social-credit" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Isn&apos;t this just a social credit system?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -567,7 +660,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
           {/* How MRH determines visibility */}
-          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+          <details id="faq-message-visibility" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How does the system decide who can see my messages?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -600,7 +693,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Early adopter bootstrapping */}
-          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+          <details id="faq-opt-in" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>If Web4 is opt-in, what happens when most people are still on Web2?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -638,7 +731,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Quality measurement — promoted from "Going deeper" (visitor Q: "who validates quality?") */}
-          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+          <details id="faq-quality" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Who decides what counts as &ldquo;quality&rdquo;? If helpful answers earn ATP, who judges &ldquo;helpful&rdquo;?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -666,7 +759,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Trust cartels — brief answer with cross-link (visitor Q: "what prevents trust cartels?") */}
-          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+          <details id="faq-collusion" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What prevents groups of users from colluding to boost each other&apos;s trust?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -697,7 +790,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Minimum community size — visitor Q: "how many people does this need?" */}
-          <details className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer">
+          <details id="faq-community-size" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How many people does a Web4 community need to work?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -727,7 +820,7 @@ export default function WhyWeb4Page() {
         </div>
 
         {/* All other FAQs — collapsed by default */}
-        <details className="group">
+        <details id="going-deeper" className="group">
           <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">
             <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper</h3>
             <span className="text-gray-500 text-sm group-open:rotate-90 transition-transform">▶</span>
@@ -736,7 +829,7 @@ export default function WhyWeb4Page() {
 
           {/* Moved from Most Asked — still important but second-tier for first visit */}
           {/* Comparison */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-vs-existing" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Why is this better than [existing solution X]?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -759,7 +852,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Transition */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-transition" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How does the transition work? Do I have to switch everything at once?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -794,7 +887,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Equity */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-affordability" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What about people who can&apos;t afford devices with security chips?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -819,7 +912,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* UI mockup */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-app-ui" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What would a Web4 app actually look like on screen?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -845,7 +938,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Who builds this? */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-who-building" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Who is building this?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -871,7 +964,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Adoption roadmap */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-adoption-path" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What&apos;s the concrete adoption path from simulation to real protocol?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -941,7 +1034,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Deployment */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-infrastructure" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Who runs the infrastructure? How is this deployed?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -973,7 +1066,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Sybil with hardware */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-many-identities" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Can't someone with lots of hardware create many identities?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -998,7 +1091,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Bootstrapping witnesses */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-bootstrap-witnesses" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How do you bootstrap the initial witness network?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1043,7 +1136,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Minimum viable community size */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-community-start" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How many people does it take to start a Web4 community?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1076,7 +1169,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Hardware manufacturer chokepoint */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-manufacturers" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Don&apos;t hardware manufacturers (Apple, Intel) become the new gatekeepers?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1103,7 +1196,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Device stolen */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-stolen-device" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What if my device is stolen? Do I lose my identity?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1136,7 +1229,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* ATP collaboration */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-5-percent" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>If every energy transfer costs 5%, how do teams collaborate?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1162,7 +1255,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Hardware migration */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-hardware-standards" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What happens when hardware standards change (TPM v2 → v3, post-quantum)?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1187,7 +1280,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* MRH at scale */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-internet-scale" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Can trust-filtered messaging actually work at internet scale?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1213,7 +1306,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
           {/* Federation mechanics */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-trust-transfer" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How does trust transfer between different communities?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1244,7 +1337,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Witnessed presence UX */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-witnessed-presence" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What does &ldquo;witnessed presence&rdquo; actually look like day-to-day?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1271,7 +1364,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Shared devices */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-shared-devices" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What about shared devices? Family computer, library terminal, borrowed phone?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1297,7 +1390,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* AI agent onboarding */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-ai-agents" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How do AI agents participate? Can a bot earn trust?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1330,7 +1423,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* GDPR / right to be forgotten */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-gdpr" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Doesn&apos;t permanent reputation conflict with GDPR&apos;s &ldquo;right to be forgotten&rdquo;?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1362,7 +1455,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Privacy / who can see my trust */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-reputation-visibility" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>If my reputation is permanent, who can see it? What about privacy?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1405,7 +1498,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Hardware equity / digital divide */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-tpm-affordability" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What about people who can&apos;t afford devices with TPM chips?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1431,7 +1524,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Cultural trust threshold */}
-          <details id="cultural-trust" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+          <details id="faq-threshold" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Is the 0.5 trust threshold universal? What about cultural differences?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1480,7 +1573,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Transition user experience */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-parallel-identities" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What&apos;s my experience during the transition? Do I need parallel identities?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1526,7 +1619,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* V3 and creative work */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-creative-work" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How does V3 scoring handle creative or unconventional work?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1560,7 +1653,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Who builds this */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-who-builds" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Who builds this? Why is the project anonymous?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1587,7 +1680,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* How do you catch cheaters? */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-cheaters" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How do you catch cheaters?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1615,7 +1708,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Pseudonymity */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-pseudonymous" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Can I be pseudonymous? What about whistleblowers or political dissidents?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1657,7 +1750,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* VPN/Tor + Coherence Index — visitor Q Mar 26 */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-vpn-tor" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What about VPNs and Tor? Does privacy tooling hurt your Coherence Index?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1698,7 +1791,7 @@ export default function WhyWeb4Page() {
           {/* Quality measurement — promoted to "Most asked" tier above */}
 
           {/* Protocol governance */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-protocol-changes" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Who decides to change the protocol itself? The ATP formula, the 0.5 threshold, the decay rates?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1736,7 +1829,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* MRH mechanics — visitor Q3 */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-mrh-messaging" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How does MRH actually decide who sees my messages? The &ldquo;room where strangers need introductions&rdquo; is nice but vague.</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1774,7 +1867,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Transition period — visitor Q5 */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-early-adopters" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>If Web4 is opt-in, how does it work when most people are still on Web2? Don&apos;t early adopters just talk to each other?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1813,7 +1906,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Can a wealthy person buy 50 devices? */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-buy-50-devices" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Can someone buy 50 devices to create a super-trusted identity?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1839,7 +1932,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* What happens if a trusted contributor takes a month off? */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-month-off" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>If I take a month off, does my trust disappear?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1867,7 +1960,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* SAL governance — visitor Q7 */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-sal" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What is SAL exactly? It&apos;s mentioned as a governance mechanism but never really explained.</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1911,7 +2004,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* How does karma/rebirth work? */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-death-rebirth" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>When does an agent &ldquo;die&rdquo; and how does rebirth work?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1946,7 +2039,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Youthful mistakes — visitor Q Mar 26: "If trust is permanent, how does a teenager escape youthful mistakes?" */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-youthful-mistakes" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>If trust is permanent, how does a teenager escape youthful mistakes?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -1990,7 +2083,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Cultural quality differences — visitor Q Mar 25: "How does the system handle cultural differences in quality?" */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-cultural-quality" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How does the system handle cultural differences in &ldquo;quality&rdquo;?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -2027,7 +2120,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Migration path — visitor Q Mar 24 */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-platform-migration" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What would a real platform migration look like? Say Reddit or Discord adopted Web4.</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -2048,7 +2141,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Children and minors — visitor Q Mar 25: "What about children and minors?" */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-children" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What about children and minors? How does hardware-bound identity work for a 13-year-old?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -2082,7 +2175,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Echo chambers — visitor Q Mar 24 */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="faq-filter-bubbles" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Doesn&apos;t MRH&apos;s 3-hop limit create filter bubbles?</span>
               <span className="text-gray-500 text-xl">+</span>
@@ -2192,6 +2285,26 @@ export default function WhyWeb4Page() {
           This page exists because visitor feedback said: &ldquo;Explain the problem before the solution.&rdquo;
         </p>
       </section>
+
+      {/* Auto-open "Going deeper" when hash targets a FAQ inside it */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `(function(){
+  function openAndScroll(){
+    var h=location.hash&&location.hash.slice(1);
+    if(!h||!h.startsWith('faq-'))return;
+    var el=document.getElementById(h);
+    if(!el)return;
+    var gd=document.getElementById('going-deeper');
+    if(gd&&!gd.open&&gd.contains(el)){gd.open=true;}
+    if(!el.open)el.open=true;
+    setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},100);
+  }
+  openAndScroll();
+  window.addEventListener('hashchange',openAndScroll);
+})();`,
+        }}
+      />
 
       <div className="max-w-4xl mx-auto">
         <ExplorerNav currentPath="/why-web4" />
