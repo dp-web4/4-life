@@ -126,7 +126,7 @@ export default function TLDRPage() {
               <p className="text-gray-400 font-semibold mb-1">What comes next:</p>
               <ul className="text-gray-300 space-y-1 list-disc list-inside">
                 <li>Pilot deployment with a small real community</li>
-                <li>Platform integration tests (Tier 1 wrapper)</li>
+                <li>Platform integration tests (<Link href="/why-web4#adoption" className="text-sky-400 hover:underline">Tier 1 wrapper</Link> — adding trust scores to existing platforms like Reddit or Gmail)</li>
                 <li>Independent review of trust mechanics</li>
                 <li>Protocol finalization based on real-world data</li>
               </ul>
