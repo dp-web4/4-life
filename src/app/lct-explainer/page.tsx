@@ -389,9 +389,11 @@ export default function LCTExplainerPage() {
               universities, companies, nonprofits, or individuals — the same way anyone can run an email server.
             </p>
             <p className="text-sm text-gray-400 mb-2">
-              In the current prototype, witnesses are simulated. In a deployed system, your devices witness
-              <em> each other</em> — your phone witnesses your laptop, and vice versa. External witnesses
-              (like a university or employer running a node) add additional verification but aren&apos;t required.
+              <strong className="text-gray-300">Two kinds of witnessing:</strong> (1) your own devices witness <em>each other</em> — your phone
+              witnesses your laptop, and vice versa — proving <em>you</em> are real. (2) Infrastructure witness nodes
+              validate the <em>network</em> — confirming attestations are properly formed and consistent. In the current
+              prototype, both are simulated. In a deployed system, your devices handle identity witnessing; external
+              nodes (universities, employers, individuals) add network-level verification but aren&apos;t required.
             </p>
             <p className="text-xs text-gray-500">
               Collusion requires coordinating multiple independent parties simultaneously,

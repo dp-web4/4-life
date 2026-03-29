@@ -443,7 +443,7 @@ export default function DayInWeb4Page() {
       </h1>
       <p className="text-gray-400 mb-4 text-lg">
         What would your day look like if the internet had trust built in?
-        Walk through 8 real scenarios and see the difference.
+        Walk through 9 real scenarios and see the difference.
       </p>
 
       {/* Your First 5 Minutes — Onboarding Walkthrough */}
