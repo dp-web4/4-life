@@ -414,6 +414,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-parallel-identities" className="hover:text-sky-400 transition-colors">Do I need parallel identities?</a></li>
                 <li><a href="#faq-early-adopters" className="hover:text-sky-400 transition-colors">Don&#39;t early adopters just talk to each other?</a></li>
                 <li><a href="#faq-platform-migration" className="hover:text-sky-400 transition-colors">What if Reddit/Discord adopted Web4?</a></li>
+                <li><a href="#faq-developer-integration" className="hover:text-sky-400 transition-colors">What&apos;s the developer experience?</a></li>
               </ul>
             </div>
             <div className="break-inside-avoid mb-4">
@@ -2146,6 +2147,46 @@ export default function WhyWeb4Page() {
               </ol>
               <p className="text-gray-500 text-xs mt-2">
                 <strong>Key insight:</strong> Each tier is independently valuable. A platform at tier 2 already has better spam detection than most platforms today. There&apos;s no all-or-nothing commitment.
+              </p>
+            </div>
+          </details>
+
+          {/* Developer integration — visitor Q Mar 29: "What's the SDK/API? Hello World?" */}
+          <details id="faq-developer-integration" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>I&apos;m a developer. What would integrating Web4 actually look like? Is there an SDK?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Not yet.</strong> Web4 is at the &ldquo;working specification + simulations&rdquo; stage,
+                not the &ldquo;npm install web4&rdquo; stage. There&apos;s no public SDK or API today.
+              </p>
+              <p>
+                What <em>does</em> exist: a Go LCT library (55 tests), Python reference implementations of all
+                core subsystems (trust tensors, ATP economics, coherence index, MRH), a WASM module for browser-side
+                trust calculations, and formal test vectors for interoperability.
+              </p>
+              <p>
+                <strong>What a Tier 1 &ldquo;Hello World&rdquo; would eventually look like:</strong>
+              </p>
+              <ol className="list-decimal list-inside space-y-1.5 ml-2 text-gray-400">
+                <li>Import a Web4 trust client library into your backend</li>
+                <li>When a user signs up, bind their account to an LCT (hardware key ceremony &mdash; like WebAuthn registration)</li>
+                <li>When they take an action, call <code className="text-sky-400/80">web4.recordAction(lct, action, atpCost)</code></li>
+                <li>When displaying content, call <code className="text-sky-400/80">web4.trustScore(lct, role)</code> to get their T3</li>
+                <li>Use the trust score to weight content ranking, moderation queues, or feature access</li>
+              </ol>
+              <p>
+                That&apos;s five lines of integration for the basic wrapper tier. The complexity lives
+                inside the library, not in your application code.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest status:</strong> The reference implementations exist and pass tests, but there&apos;s
+                no production-ready SDK packaged for third-party developers. The gap between &ldquo;reference
+                implementation&rdquo; and &ldquo;developer SDK&rdquo; is documentation, packaging, versioning,
+                and a real integration partner to validate the API surface against. This is planned work,
+                not shipped work.
               </p>
             </div>
           </details>
