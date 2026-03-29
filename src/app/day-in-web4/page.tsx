@@ -296,6 +296,66 @@ const SCENARIOS: Scenario[] = [
     ],
   },
   {
+    time: '8:00 PM',
+    title: 'You Upgrade Your Phone',
+    icon: '📲',
+    setup: 'Your new phone arrived today. On the current internet, you spend an hour logging back into everything, resetting two-factor auth, and hoping you remember all your passwords. In Web4, you have witnesses.',
+    choices: [
+      {
+        label: 'Transfer identity via device witnesses',
+        icon: '🔄',
+        atpCost: 2,
+        atpEarned: 0,
+        trustDelta: 0,
+        todayInternet: 'Hours of password resets, re-entering SMS codes, re-verifying accounts. Some services lock you out for days. If you lost your phone, some accounts may be gone forever.',
+        web4Result: 'Your laptop and tablet already witness for you. They confirm: "Yes, this new phone belongs to the same person." Your identity transfers in seconds. Two of three devices agree — that\'s a quorum. All your trust, history, and ATP move with you seamlessly.',
+        concept: 'Linked Context Token (LCT)',
+        conceptLink: '/lct-explainer',
+      },
+      {
+        label: 'What if I lost all my devices?',
+        icon: '🆘',
+        atpCost: 0,
+        atpEarned: 0,
+        trustDelta: 0,
+        todayInternet: 'If you lose your phone and don\'t have backup codes, you may permanently lose access to accounts. Support tickets take weeks.',
+        web4Result: 'Web4 uses m-of-n recovery: trusted contacts you designated in advance can vouch for you, similar to how a bank verifies identity in person. It\'s slower (by design — speed would help attackers), but your identity and trust history are never truly lost.',
+        concept: 'Linked Context Token (LCT)',
+        conceptLink: '/lct-explainer',
+      },
+    ],
+  },
+  {
+    time: '7:30 PM',
+    title: 'You Drop Your Phone',
+    icon: '📱',
+    setup: 'Your phone slips out of your pocket and shatters on the sidewalk. On today\'s internet, you\'d reset passwords for dozens of accounts. In Web4, your identity doesn\'t live in one device.',
+    choices: [
+      {
+        label: 'Use your backup device',
+        icon: '💻',
+        atpCost: 0,
+        atpEarned: 0,
+        trustDelta: 0,
+        todayInternet: 'You spend the evening resetting passwords, re-enabling 2FA, and hoping you didn\'t lose access to any accounts. Some services make you wait 48 hours for "security."',
+        web4Result: 'Your laptop already witnessed your identity — it\'s part of your device constellation. Open the Web4 app on your laptop, confirm with biometrics, and you\'re back. Your trust, reputation, and energy are untouched. When you get a new phone, your laptop vouches for it.',
+        concept: 'Verified Presence (LCT)',
+        conceptLink: '/lct-explainer',
+      },
+      {
+        label: 'Get a new phone first',
+        icon: '📱',
+        atpCost: 2,
+        atpEarned: 0,
+        trustDelta: 0,
+        todayInternet: 'You buy a new phone and spend hours reinstalling apps, logging in everywhere, and discovering which accounts you\'ve been locked out of.',
+        web4Result: 'Install the Web4 app on your new phone. Your other devices (laptop, tablet) vouch for it — a "witness recovery" that takes about 60 seconds. The broken phone is automatically revoked. Your identity is restored, not recreated. It costs a small amount of ATP (2) to register the new device.',
+        concept: 'Device Recovery (LCT)',
+        conceptLink: '/lct-explainer',
+      },
+    ],
+  },
+  {
     time: '9:00 PM',
     title: 'End of Day',
     icon: '🌙',
@@ -383,7 +443,7 @@ export default function DayInWeb4Page() {
       </h1>
       <p className="text-gray-400 mb-4 text-lg">
         What would your day look like if the internet had trust built in?
-        Walk through 7 real scenarios and see the difference.
+        Walk through 8 real scenarios and see the difference.
       </p>
 
       {/* Your First 5 Minutes — Onboarding Walkthrough */}

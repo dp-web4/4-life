@@ -51,6 +51,23 @@ export default function HowItWorksPage() {
           self-regulate through five foundational mechanisms:
         </p>
 
+        <div className="mb-6 p-4 bg-gray-800/50 border border-gray-700 rounded-xl">
+          <p className="text-sm text-gray-400 mb-3">
+            <strong className="text-gray-300">Five systems, in plain English:</strong>{' '}
+            Web4 has some acronyms. Here&apos;s what they mean — refer back anytime.
+          </p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs">
+            <span><span className="text-blue-400 font-semibold">LCT</span> <span className="text-gray-500">= Identity</span></span>
+            <span><span className="text-green-400 font-semibold">ATP</span> <span className="text-gray-500">= Energy budget</span></span>
+            <span><span className="text-purple-400 font-semibold">T3</span> <span className="text-gray-500">= Trust score</span></span>
+            <span><span className="text-orange-400 font-semibold">CI</span> <span className="text-gray-500">= Behavioral consistency</span></span>
+            <span><span className="text-cyan-400 font-semibold">MRH</span> <span className="text-gray-500">= Context boundary</span></span>
+          </div>
+          <p className="text-xs text-gray-600 mt-2">
+            Hover any <span className="text-sky-400/70">dotted-underlined term</span> for a quick definition, or use the glossary button <span className="inline-block px-1.5 py-0.5 bg-gray-900 border border-gray-700 rounded text-xs text-gray-400">Aa</span> in the bottom-left corner.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
           <div className="bg-gradient-to-br from-blue-950/30 to-blue-900/20 border border-blue-800/30 rounded-lg p-6">
             <div className="text-3xl mb-2">🔐</div>

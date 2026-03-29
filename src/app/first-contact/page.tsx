@@ -135,6 +135,10 @@ export default function FirstContactPage() {
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#e2e8f0' }}>Step 5 — Recovery:</strong> She returns to thoughtful replies. Trust slowly rebuilds to 0.50. The system doesn&apos;t ban her &mdash; it lets consequences teach.
               </p>
+              <div style={{ background: '#1e1b2e', border: '1px solid #7c3aed44', borderRadius: '8px', padding: '0.75rem 1rem', marginBottom: '0.75rem', fontSize: '0.9rem' }}>
+                <strong style={{ color: '#c4b5fd' }}>What triggers death?</strong>
+                <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death &mdash; you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>trust drops below 0.5</strong> (trust death &mdash; the community no longer trusts you). Energy death is recoverable through karma rebirth. Trust death is permanent &mdash; a destroyed reputation can&apos;t be reset.</span>
+              </div>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#f87171' }}>Step 6 — Death:</strong> Alice overcommits, quality slips, ATP drains to zero. Her entity dies &mdash; but her record persists.
               </p>
@@ -428,11 +432,31 @@ export default function FirstContactPage() {
                   </div>
                 )}
 
+                {(currentSnapshot.action === "Overcommit" || currentSnapshot.action === "Quality slips") && (
+                  <div className="mt-4 bg-amber-900/20 border border-amber-800 rounded p-4">
+                    <strong className="text-amber-400">What triggers death?</strong>
+                    <p className="text-gray-300 mt-2">
+                      There are two ways to &ldquo;die&rdquo; in Web4, and they&apos;re very different:
+                    </p>
+                    <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                      <div className="bg-gray-900/40 rounded p-2">
+                        <div className="text-orange-400 font-semibold text-xs mb-1">Energy death (ATP = 0)</div>
+                        <p className="text-gray-400 text-xs">Run out of energy. <strong className="text-gray-200">Recoverable</strong> — if you built good karma, you can be reborn with a head start.</p>
+                      </div>
+                      <div className="bg-gray-900/40 rounded p-2">
+                        <div className="text-red-400 font-semibold text-xs mb-1">Trust death (Trust &lt; 0.5 sustained)</div>
+                        <p className="text-gray-400 text-xs">Consistently untrustworthy. <strong className="text-gray-200">Permanent</strong> — no rebirth. Your identity is forever marked.</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-500 mt-2 text-xs">Alice is heading for energy death — she overspent, not misbehaved. That&apos;s the recoverable kind.</p>
+                  </div>
+                )}
+
                 {currentSnapshot.action === "ATP exhaustion" && (
                   <div className="mt-4 bg-red-900/20 border border-red-800 rounded p-4">
                     <strong className="text-red-400">Death in Web4</strong>
                     <p className="text-gray-300 mt-2">
-                      When ATP reaches zero, the entity can no longer act — this is <strong className="text-white">death</strong>.
+                      When ATP reaches zero, the entity can no longer act — this is <strong className="text-white">energy death</strong>.
                       Unlike traditional platforms where you just create a new account, death in Web4 is meaningful.
                       Your full history is preserved. But if you earned good karma, <strong className="text-white">rebirth is possible</strong> —
                       and your next life starts with advantages from your past behavior.

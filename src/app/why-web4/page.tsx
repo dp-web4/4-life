@@ -852,6 +852,7 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Transition */}
+          <div id="adoption" className="scroll-mt-24" />
           <details id="faq-transition" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How does the transition work? Do I have to switch everything at once?</span>

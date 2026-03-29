@@ -351,7 +351,7 @@ export default function NarrativesPage() {
                 <div className="flex items-start justify-between mb-2">
                   <h3 className="text-xl font-bold">{narrative.title}</h3>
                   {narrative.type && (
-                    <span className="px-3 py-1 bg-purple-900/50 text-purple-300 text-xs rounded-full whitespace-nowrap ml-3 mt-1">
+                    <span className="px-3 py-1 bg-purple-900/50 text-purple-300 text-xs rounded-full whitespace-nowrap ml-3 mt-1" title={narrative.type === 'Cross-Life Learning' ? 'How agents carry lessons between lives — mistakes and successes compound across rebirths' : undefined}>
                       {narrative.type}
                     </span>
                   )}
