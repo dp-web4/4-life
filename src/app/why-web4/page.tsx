@@ -997,6 +997,15 @@ export default function WhyWeb4Page() {
                 signal-to-noise.
               </p>
               <p>
+                <strong>What Tier 2 (Observable) looks like:</strong> Same Stack Overflow, six months later.
+                Now trust scores are <em>visible</em>. Next to each answer, you see the author&apos;s T3 breakdown:
+                &ldquo;0.87 Talent in Python, 0.91 Training in distributed systems, 0.72 Temperament.&rdquo;
+                You can tell at a glance whether this person has a track record in the topic they&apos;re answering about.
+                A user with 10,000 reputation points but 0.31 Talent in security? Their security answers get
+                naturally de-prioritized — not banned, just surfaced honestly. The browser padlock analogy:
+                HTTPS didn&apos;t change how websites worked, it just made trust visible. Observable tier does the same for people.
+              </p>
+              <p>
                 <strong>What a community could try today:</strong> Imagine a Discord server with 200 members
                 and a spam problem. Without any Web4 software, the community could adopt Web4 <em>principles</em>:
               </p>
