@@ -443,7 +443,7 @@ export default function DayInWeb4Page() {
       </h1>
       <p className="text-gray-400 mb-4 text-lg">
         What would your day look like if the internet had trust built in?
-        Walk through 8 real scenarios and see the difference.
+        Walk through 10 real scenarios and see the difference.
       </p>
 
       {/* Your First 5 Minutes — Onboarding Walkthrough */}
@@ -1002,7 +1002,7 @@ export default function DayInWeb4Page() {
           <div style={{ background: '#1e293b', border: '1px solid #475569', borderRadius: '12px', padding: '2rem' }}>
             <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#38bdf8' }}>A Day in Web4</h1>
             <p style={{ color: '#64748b', fontSize: '0.875rem', marginBottom: '1.5rem' }}>
-              Interactive version requires JavaScript. Here are all 7 scenarios:
+              Interactive version requires JavaScript. Here are all 10 scenarios:
             </p>
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
@@ -1056,12 +1056,42 @@ export default function DayInWeb4Page() {
             </div>
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>4:30 PM &mdash; You&apos;re the Newcomer</p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#ef4444' }}>Today:</strong> You post something great in a new community. It gets buried because you have zero followers. Nobody sees it.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your post costs 10 ATP (40% more than veterans &mdash; no consistency history yet). But if it&apos;s genuinely useful, recipients confirm it and you earn 15 ATP back. The system rewards substance, not seniority.
+              </p>
+            </div>
+
+            <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
               <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>6:00 PM &mdash; Someone Lies About You</p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
                 <strong style={{ color: '#ef4444' }}>Today:</strong> A competitor posts a false accusation. It goes viral. Even after removal, screenshots circulate. Your reputation is damaged.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
                 <strong style={{ color: '#10b981' }}>Web4:</strong> Your 2-year trust history speaks louder than one accusation. The accuser&apos;s consistency score drops &mdash; their behavior doesn&apos;t match their history. The community sees the full picture.
+              </p>
+            </div>
+
+            <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>8:00 PM &mdash; You Upgrade Your Phone</p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#ef4444' }}>Today:</strong> Hours of password resets, re-entering SMS codes, re-verifying accounts. Some services lock you out for days.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your laptop and tablet already witness for you. They confirm the new phone belongs to the same person. Identity transfers in seconds &mdash; two of three devices agree. All your trust, history, and ATP move with you.
+              </p>
+            </div>
+
+            <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>7:30 PM &mdash; You Drop Your Phone</p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#ef4444' }}>Today:</strong> You spend the evening resetting passwords, re-enabling 2FA, and hoping you didn&apos;t lose access to any accounts.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your laptop already witnessed your identity. Open the Web4 app on your laptop, confirm with biometrics, and you&apos;re back. When you get a new phone, your laptop vouches for it. The broken phone is automatically revoked.
               </p>
             </div>
 

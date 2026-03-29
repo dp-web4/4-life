@@ -325,30 +325,12 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             Walk through a full day in Web4 →
           </Link>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', marginTop: '0.5rem', marginBottom: 0 }}>
-            8 scenarios, 5 app mockups, 3 minutes
+            10 scenarios, 5 app mockups, 3 minutes
           </p>
         </div>
       </section>
 
-      {/* Adoption pathway teaser */}
-      <section className="card" style={{
-        padding: '1.5rem',
-        border: '1px solid rgba(251, 191, 36, 0.2)',
-        background: 'linear-gradient(135deg, rgba(251, 191, 36, 0.05) 0%, var(--color-dark-surface) 100%)',
-      }}>
-        <h2 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--color-amber)' }}>How would this ever get adopted?</h2>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.85rem', lineHeight: 1.7, marginTop: 0, marginBottom: '0.75rem' }}>
-          Not all at once. Web4 is designed to layer onto existing platforms in five tiers &mdash; from lightweight wrappers on today&apos;s apps to fully trust-native systems. Tier 1 just adds trust scores to existing platforms (imagine Reddit but each commenter has a visible reliability history). No big bang required.
-        </p>
-        <Link href="/why-web4#adoption" style={{
-          color: 'var(--color-amber)',
-          fontSize: '0.85rem',
-          textDecoration: 'none',
-          fontWeight: 600,
-        }}>
-          See the five-tier adoption roadmap →
-        </Link>
-      </section>
+      {/* Removed duplicate adoption teaser — already covered in the five-tier section above */}
 
       {/* Where to start */}
       <section className="card card-highlight" style={{
@@ -365,7 +347,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             2-minute overview
           </Link>
           <Link href="/why-web4" className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span>Why Web4? (5 min)</span>
+            <span>Why Web4? (5 min + deep-dive FAQs)</span>
             <span style={{ opacity: 0.7 }}>→</span>
           </Link>
           <Link href="/first-contact" className="btn-secondary" style={{ padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none' }}>

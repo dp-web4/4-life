@@ -150,7 +150,7 @@ export default function TLDRPage() {
               <div className="text-gray-400 text-sm">
                 The full problem statement and honest questions
               </div>
-              <div className="text-gray-500 text-xs mt-1">5 min read</div>
+              <div className="text-gray-500 text-xs mt-1">5 min core + deep-dive FAQs</div>
             </Link>
             <Link
               href="/first-contact"

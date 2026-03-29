@@ -966,7 +966,12 @@ export default function AlivenessExplainer() {
       </section>
 
       <section>
-        <h2>Birth: How Entities Come Alive</h2>
+        <details>
+          <summary className="text-xl font-bold cursor-pointer hover:text-sky-400 transition-colors list-none flex justify-between items-center">
+            <h2 style={{ margin: 0 }}>Birth: How Entities Come Alive</h2>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div style={{ marginTop: "1rem" }}>
         <p>
           Before an entity can be &ldquo;alive,&rdquo; it must be <strong>born</strong> — witnessed into existence
           by the network. This isn&apos;t automatic. The birth process ensures every entity
@@ -995,10 +1000,17 @@ export default function AlivenessExplainer() {
           Witness attestations expire after <strong>300 seconds</strong>, so they must be fresh and intentional,
           not recycled from old interactions.
         </p>
+          </div>
+        </details>
       </section>
 
       <section>
-        <h2>Key Rotation: Continuity Without Death</h2>
+        <details>
+          <summary className="text-xl font-bold cursor-pointer hover:text-sky-400 transition-colors list-none flex justify-between items-center">
+            <h2 style={{ margin: 0 }}>Key Rotation: Continuity Without Death</h2>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div style={{ marginTop: "1rem" }}>
         <p>
           Not every change requires death and rebirth. When an entity needs new credentials (device upgrade,
           security rotation), it can <strong>rotate keys</strong> while preserving its identity:
@@ -1016,10 +1028,17 @@ export default function AlivenessExplainer() {
             and the new one picks up exactly where you left off.
           </p>
         </div>
+          </div>
+        </details>
       </section>
 
       <section>
-        <h2>Why the 0.5 Threshold?</h2>
+        <details>
+          <summary className="text-xl font-bold cursor-pointer hover:text-sky-400 transition-colors list-none flex justify-between items-center">
+            <h2 style={{ margin: 0 }}>Why the 0.5 Threshold?</h2>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div style={{ marginTop: "1rem" }}>
         <p>
           The 0.5 threshold is a <strong>design choice</strong>: the minimum bar for continued
           participation. The core intuition: there&apos;s a tipping point where behavior
@@ -1051,6 +1070,8 @@ export default function AlivenessExplainer() {
           biological and social systems—informing but not rigidly determining this design choice.
           Societies can configure their own thresholds.
         </p>
+          </div>
+        </details>
       </section>
 
       <section id="try-it" className="scroll-mt-24">
