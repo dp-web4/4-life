@@ -1463,6 +1463,24 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* Key Takeaway */}
+      <section className="max-w-4xl mx-auto mt-16">
+        <div className="bg-gradient-to-br from-sky-950/30 to-sky-900/20 border border-sky-800/30 rounded-xl p-6">
+          <h3 className="text-lg font-semibold text-sky-400 mb-3">Key Takeaway</h3>
+          <p className="text-gray-300 mb-3">
+            Web4 doesn&apos;t rely on any single mechanism. Five systems reinforce each other:
+          </p>
+          <p className="text-gray-300 text-sm">
+            <strong className="text-emerald-400">LCT</strong> proves who you are.{' '}
+            <strong className="text-sky-400">ATP</strong> makes every action cost something.{' '}
+            <strong className="text-purple-400">T3</strong> tracks trust across dimensions.{' '}
+            <strong className="text-amber-400">CI</strong> catches inconsistent behavior.{' '}
+            <strong className="text-rose-400">MRH</strong> keeps trust local and verifiable.{' '}
+            Remove any one, and the others compensate. Game all five simultaneously? Mathematically impractical.
+          </p>
+        </div>
+      </section>
+
       {/* Alternative paths */}
       <section className="max-w-4xl mx-auto mt-16 text-center pb-12">
         <p className="text-gray-500 text-sm">

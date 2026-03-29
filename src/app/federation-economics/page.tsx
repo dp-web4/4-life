@@ -689,6 +689,35 @@ export default function FederationEconomicsPage() {
                 </p>
               </div>
             </details>
+
+            {/* FAQ: Conflicting trust scores — addresses visitor unanswered Q */}
+            <details className="bg-gray-800/40 border border-amber-700/30 rounded-xl p-5 mt-4">
+              <summary className="text-sm font-semibold text-amber-300/90 cursor-pointer list-none flex justify-between items-center">
+                <span>What if two societies give the same person completely different trust scores?</span>
+                <span className="text-gray-500 text-xs ml-2">click to expand</span>
+              </summary>
+              <div className="mt-3 space-y-3 text-sm text-gray-400">
+                <p className="m-0">
+                  <strong className="text-gray-300">This is expected, not a bug.</strong> Trust is role-contextualized.
+                  You might be a 0.9-trusted data analyst in a tech community and a 0.3-trusted newcomer in a cooking
+                  community. Those scores reflect genuine competence differences — and they <em>should</em> be different.
+                </p>
+                <p className="m-0">
+                  <strong className="text-gray-300">What Society C sees:</strong> When you interact with Society C,
+                  it doesn&apos;t pick one score. It applies MRH decay to <em>each</em> federated score independently.
+                  If C is federated with both A and B, it sees: A&apos;s assessment × 0.7 decay = 0.63, and
+                  B&apos;s assessment × 0.7 decay = 0.21. C then weights these by how relevant each society is
+                  to the context (domain match factor) and how much C trusts A and B as societies.
+                </p>
+                <p className="m-0">
+                  <strong className="text-gray-300">No single score &ldquo;wins.&rdquo;</strong> The final trust in C
+                  is a weighted composition, not a vote. A tech community&apos;s assessment matters more for tech tasks;
+                  a cooking community&apos;s assessment matters more for recipes. If the assessments genuinely conflict
+                  in the <em>same domain</em>, that itself is a signal — C may require more local interaction before
+                  trusting you, effectively treating you as a newcomer until you build direct evidence in C.
+                </p>
+              </div>
+            </details>
           </div>
 
           <div id="value-conflicts" className="scroll-mt-24">
