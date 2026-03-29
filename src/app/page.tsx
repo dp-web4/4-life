@@ -325,7 +325,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             Walk through a full day in Web4 →
           </Link>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', marginTop: '0.5rem', marginBottom: 0 }}>
-            9 scenarios, 5 app mockups, 3 minutes
+            10 scenarios, 5 app mockups, 3 minutes
           </p>
         </div>
       </section>
