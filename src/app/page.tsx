@@ -357,7 +357,6 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
       </section>
 
       {/* Removed duplicate adoption teaser — already covered in the five-tier section above */}
-
       {/* Where to start */}
       <section className="card card-highlight" style={{
         textAlign: 'center',
