@@ -989,6 +989,99 @@ export default function DayInWeb4Page() {
         </p>
       </section>
 
+      {/* How Would You Get It? — Form factor by adoption tier */}
+      <section className="mt-12 pt-8 border-t border-gray-800">
+        <h2 className="text-2xl font-bold mb-2">How Would You Actually Get This?</h2>
+        <p className="text-gray-400 mb-6 text-sm">
+          The mockups above show <em>what</em> you&apos;d see. But <em>how</em> does Web4 reach your device?
+          It depends on how far along adoption is — and it starts smaller than you think.
+        </p>
+
+        <div className="space-y-4">
+          {/* Tier 1: Wrapper */}
+          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.6)' }}>
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-800">
+              <span className="text-lg">🔌</span>
+              <div>
+                <span className="text-sm font-semibold text-gray-200">Tier 1: Browser Extension</span>
+                <span className="text-xs text-sky-400 ml-2">First realistic step</span>
+              </div>
+            </div>
+            <div className="px-4 py-3">
+              <p className="text-sm text-gray-400 mb-2">
+                A browser extension that adds trust signals to sites you already use. Reddit comments show
+                the author&apos;s trust score. Amazon reviews show whether the reviewer has consistent history.
+                Emails show sender cost. <strong className="text-gray-300">You don&apos;t change your behavior — the extension adds context.</strong>
+              </p>
+              <div className="flex items-center gap-2 text-xs text-gray-500">
+                <span className="px-2 py-0.5 rounded bg-gray-800 text-gray-400">Chrome / Firefox / Safari</span>
+                <span>·</span>
+                <span>Works with existing accounts</span>
+                <span>·</span>
+                <span>No app download</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Tier 2-3: Standalone Apps */}
+          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.6)' }}>
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-800">
+              <span className="text-lg">📱</span>
+              <div>
+                <span className="text-sm font-semibold text-gray-200">Tier 2–3: Standalone Apps</span>
+                <span className="text-xs text-purple-400 ml-2">Where it gets interesting</span>
+              </div>
+            </div>
+            <div className="px-4 py-3">
+              <p className="text-sm text-gray-400 mb-2">
+                Web4-native apps — like the mockups above. A mail client where spam is impossible.
+                A marketplace where reviews are real. A hiring platform where credentials are verified.
+                Each is a regular app on your phone, but built on Web4 trust instead of platform accounts.
+              </p>
+              <div className="flex items-center gap-2 text-xs text-gray-500">
+                <span className="px-2 py-0.5 rounded bg-gray-800 text-gray-400">iOS / Android / Desktop</span>
+                <span>·</span>
+                <span>One identity app + domain-specific apps</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Tier 4-5: OS/Protocol Integration */}
+          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.6)' }}>
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-800">
+              <span className="text-lg">🌐</span>
+              <div>
+                <span className="text-sm font-semibold text-gray-200">Tier 4–5: Built Into Everything</span>
+                <span className="text-xs text-emerald-400 ml-2">Long-term vision</span>
+              </div>
+            </div>
+            <div className="px-4 py-3">
+              <p className="text-sm text-gray-400 mb-2">
+                Trust becomes infrastructure — like HTTPS is today. Your operating system manages your identity.
+                Every app inherits trust natively. There&apos;s no &quot;Web4 app&quot; because everything is Web4.
+                This is years away, but it&apos;s what the protocol is designed to support.
+              </p>
+              <div className="flex items-center gap-2 text-xs text-gray-500">
+                <span className="px-2 py-0.5 rounded bg-gray-800 text-gray-400">OS-level integration</span>
+                <span>·</span>
+                <span>Trust as a system service</span>
+                <span>·</span>
+                <span>Invisible to users</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 rounded-xl border border-sky-800/30 p-4" style={{ background: 'rgba(14, 116, 144, 0.08)' }}>
+          <p className="text-sm text-gray-300">
+            <strong className="text-sky-400">The honest answer:</strong> Today, none of these exist — Web4 is research.
+            But the adoption path is designed so you don&apos;t have to wait for Tier 5.
+            A browser extension (Tier 1) could ship as soon as the protocol stabilizes.
+            Each tier adds capability without requiring the next.
+          </p>
+        </div>
+      </section>
+
       {/* Footer nav */}
       <div className="mt-12 pt-6 border-t border-gray-800 flex flex-wrap gap-4 text-sm text-gray-500">
         <Link href="/why-web4" className="hover:text-sky-400 transition-colors">Why Web4?</Link>
@@ -1108,6 +1201,22 @@ export default function DayInWeb4Page() {
             <div style={{ background: '#0f172a', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
               <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: '0.95rem' }}>
                 <strong style={{ color: '#38bdf8' }}>The pattern:</strong> Every scenario follows the same logic &mdash; actions cost energy, quality is rewarded, bad behavior has real consequences, and trust compounds over time. No moderators needed. The economics do the work.
+              </p>
+            </div>
+
+            <div style={{ background: '#0f172a', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.5rem' }}>How would you actually get this?</p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, fontSize: '0.875rem', marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#38bdf8' }}>Tier 1 — Browser extension:</strong> Adds trust signals to sites you already use (Reddit, Amazon, email). No new app needed.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, fontSize: '0.875rem', marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#a78bfa' }}>Tier 2–3 — Standalone apps:</strong> Web4-native mail, marketplace, hiring — like the mockups above. Regular phone apps, built on trust.
+              </p>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, fontSize: '0.875rem', marginBottom: '0.5rem' }}>
+                <strong style={{ color: '#34d399' }}>Tier 4–5 — Built into everything:</strong> Trust becomes infrastructure, like HTTPS. Your OS manages identity. Years away, but designed for.
+              </p>
+              <p style={{ color: '#64748b', fontSize: '0.8125rem', marginTop: '0.5rem' }}>
+                Today, none of these exist — Web4 is research. But Tier 1 could ship as soon as the protocol stabilizes.
               </p>
             </div>
 
