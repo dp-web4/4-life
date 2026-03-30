@@ -45,6 +45,19 @@ export default function HowItWorksPage() {
           The mechanics described here are validated through simulations and ~47,000 lines of tested code,
           but no live network with real users exists yet. The simulations on this site let you explore how it <em>would</em> work.
         </div>
+        <details className="mb-6 group">
+          <summary className="cursor-pointer list-none flex items-center gap-2 text-sm text-sky-400 hover:text-sky-300 transition-colors">
+            <span className="group-open:rotate-90 transition-transform">&#9654;</span>
+            <strong>30-second version</strong>
+            <span className="text-gray-500">— the gist before the deep dive</span>
+          </summary>
+          <div className="mt-3 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg text-sm text-gray-300 space-y-2">
+            <p>You&apos;re born with <strong className="text-green-400">energy</strong> and <strong className="text-purple-400">neutral trust</strong>. Every action costs energy. Quality contributions earn it back; spam drains it.</p>
+            <p>Your <strong className="text-blue-400">identity</strong> is tied to your devices — no passwords, no central authority. Your <strong className="text-purple-400">trust</strong> is multi-dimensional (competence, reliability, consistency) and role-specific.</p>
+            <p>If your energy hits zero or trust collapses, you die. But good karma carries forward — you&apos;re reborn with a head start. <strong className="text-cyan-400">No moderators needed.</strong> Five interlocking systems (identity, energy, trust, consistency, context) make spam expensive and quality self-sustaining.</p>
+          </div>
+        </details>
+
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Web4 is trust-native infrastructure for humans and AI. Instead of
           relying on platforms, moderators, or authorities, Web4 societies
