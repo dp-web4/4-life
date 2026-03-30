@@ -883,98 +883,27 @@ export default function CoherenceIndexPage() {
           </div>
         </section>
 
-        {/* Connection to 9-Domain Coherence Physics — collapsed by default */}
+        {/* Why "coherence"? — brief honest answer */}
         <section className="max-w-4xl mx-auto mb-16">
           <details className="group">
             <summary className="cursor-pointer list-none">
               <div className="inline-flex items-center gap-3 mb-6 text-gray-500 hover:text-gray-400 transition-colors">
                 <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
-                <span className="text-sm font-medium">Why is it called &ldquo;coherence&rdquo;? (optional deep dive)</span>
+                <span className="text-sm font-medium">Why is it called &ldquo;coherence&rdquo;?</span>
               </div>
             </summary>
-          <p className="text-gray-400 mb-6">
-            Web4&apos;s Coherence Index draws inspiration from coherence principles
-            observed across multiple domains of physical and social reality.
+          <p className="text-gray-400 mb-4">
+            In physics and biology, &ldquo;coherence&rdquo; means the parts of a system are aligned &mdash;
+            moving together rather than working against each other. A coherent laser beam stays focused;
+            a coherent heartbeat keeps rhythm; a coherent team pulls in the same direction.
           </p>
-
-          <div className="bg-gradient-to-br from-purple-950/30 to-purple-900/20 border border-purple-800/30 rounded-lg p-6 mb-6">
-            <div className="flex items-start gap-4">
-              <div className="text-4xl">🌌</div>
-              <div>
-                <h3 className="text-xl font-semibold text-purple-400 mb-3">
-                  The Nine Domains of Coherence
-                </h3>
-                <p className="text-gray-300 mb-4">
-                  Coherence is a fundamental principle across scales, from
-                  quantum mechanics to galaxy dynamics:
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
-                  <div className="bg-purple-900/20 border border-purple-700/30 rounded p-3">
-                    <h4 className="text-sm font-semibold text-purple-400 mb-2">
-                      Quantum Scale
-                    </h4>
-                    <ul className="text-xs text-gray-400 space-y-1">
-                      <li>• Superconductivity</li>
-                      <li>• BEC (Bose-Einstein Condensate)</li>
-                      <li>• Laser coherence</li>
-                    </ul>
-                  </div>
-                  <div className="bg-purple-900/20 border border-purple-700/30 rounded p-3">
-                    <h4 className="text-sm font-semibold text-purple-400 mb-2">
-                      Biological Scale
-                    </h4>
-                    <ul className="text-xs text-gray-400 space-y-1">
-                      <li>• Heart rhythm</li>
-                      <li>• Neural synchrony</li>
-                      <li>• Circadian cycles</li>
-                    </ul>
-                  </div>
-                  <div className="bg-purple-900/20 border border-purple-700/30 rounded p-3">
-                    <h4 className="text-sm font-semibold text-purple-400 mb-2">
-                      Social Scale
-                    </h4>
-                    <ul className="text-xs text-gray-400 space-y-1">
-                      <li>• Trust emergence</li>
-                      <li>• Collective behavior</li>
-                      <li>• Economic coordination</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <p className="text-gray-300 mb-3">
-                  <strong>Key principle</strong>: Coherence measures how well a
-                  system's parts align in phase and behavior. Loss of coherence =
-                  loss of system functionality.
-                </p>
-
-                <p className="text-gray-300">
-                  <strong>Web4's CI</strong> applies this principle to digital
-                  identity: An entity with high coherence across spatial,
-                  temporal, capability, and relational dimensions is exhibiting
-                  the "phase alignment" characteristic of trustworthy systems.
-                  Incoherence = phase misalignment = untrustworthy behavior.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-br from-blue-950/30 to-blue-900/20 border border-blue-800/30 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-blue-400 mb-3">
-              Spacetime Coupling & Geodesics
-            </h3>
-            <p className="text-sm text-gray-300 mb-3">
-              Coherent systems follow &ldquo;geodesics&rdquo; &mdash; paths of minimal
-              action through their state space.
-            </p>
-            <p className="text-sm text-gray-300">
-              <strong>For Web4</strong>: Coherent entities follow smooth,
-              predictable trajectories through spatial, temporal, and capability
-              space. Sudden jumps or discontinuities indicate either (1) external
-              force (attack) or (2) phase transition (upgrade event). CI detects
-              both.
-            </p>
-          </div>
+          <p className="text-gray-400">
+            Web4 borrows this idea: an entity with high coherence behaves consistently across
+            space (where they act), time (when they act), capability (what they do), and relationships
+            (who they interact with). When those dimensions align, the entity is trustworthy.
+            When they suddenly misalign &mdash; like an account that was in New York and is now in
+            Tokyo two hours later &mdash; something is wrong, and CI detects it.
+          </p>
           </details>
         </section>
 

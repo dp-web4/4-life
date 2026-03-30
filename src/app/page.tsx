@@ -281,6 +281,32 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           Tier 1 could work on Reddit or Gmail <em>today</em> — no protocol changes needed.{' '}
           <Link href="/why-web4#adoption" style={{ color: 'var(--color-sky)' }}>Read the full adoption strategy →</Link>
         </p>
+        <details style={{ marginTop: '0.75rem' }}>
+          <summary style={{ color: 'var(--color-text-muted)', cursor: 'pointer', fontSize: '0.8rem' }}>
+            What does this look like for a developer?
+          </summary>
+          <div style={{ marginTop: '0.5rem', fontSize: '0.78rem', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+            <p style={{ margin: '0 0 0.4rem' }}>
+              <strong style={{ color: 'var(--color-text)' }}>Tier 1</strong>: Add a trust score API call to your existing moderation pipeline.
+              Flag low-trust content for review, boost high-trust content. Your users don&apos;t see Web4 — they just notice less spam.
+            </p>
+            <p style={{ margin: '0 0 0.4rem' }}>
+              <strong style={{ color: 'var(--color-text)' }}>Tier 2</strong>: Display trust badges next to usernames (like verified checkmarks, but earned through behavior).
+              Users can see reputation; the platform still makes decisions.
+            </p>
+            <p style={{ margin: '0 0 0.4rem' }}>
+              <strong style={{ color: 'var(--color-text)' }}>Tier 3</strong>: Add gating middleware — posting costs energy, quality earns it back.
+              This is where spam becomes economically impossible.
+            </p>
+            <p style={{ margin: '0 0 0.4rem' }}>
+              <strong style={{ color: 'var(--color-text)' }}>Tiers 4–5</strong>: Federation SDK for cross-platform trust, then full native protocol integration.
+            </p>
+            <p style={{ margin: 0, fontSize: '0.73rem', color: 'var(--color-text-muted)', fontStyle: 'italic' }}>
+              This is a research project — no shipping SDK exists yet. These tiers describe the design target,
+              not a product you can install today.
+            </p>
+          </div>
+        </details>
       </section>
 
       {/* What would it look like? — Day in Web4 teaser */}
