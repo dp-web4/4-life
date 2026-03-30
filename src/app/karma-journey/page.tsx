@@ -534,7 +534,7 @@ export default function KarmaJourneyPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
             {[
               { label: 'Life', value: `#${currentLife.lifeNumber}`, color: '#93c5fd' },
-              { label: 'Trust', value: effComp.toFixed(3), color: effComp > 0.7 ? '#6ee7b7' : effComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `Raw: ${baseComp.toFixed(2)} × CI²  →  ${effComp.toFixed(3)}` },
+              { label: 'Trust (Effective)', value: effComp.toFixed(3), color: effComp > 0.7 ? '#6ee7b7' : effComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `Raw ${baseComp.toFixed(2)} × CI² (${currentLife.ci.toFixed(2)}) = ${effComp.toFixed(3)}` },
               { label: 'Energy', value: `${currentLife.atp}`, color: currentLife.atp > 50 ? '#6ee7b7' : currentLife.atp > 20 ? '#fde68a' : '#fca5a5' },
               { label: 'Consistency', value: currentLife.ci.toFixed(2), color: currentLife.ci > 0.8 ? '#6ee7b7' : currentLife.ci > 0.5 ? '#fde68a' : '#fca5a5' },
             ].map(stat => (
@@ -548,7 +548,7 @@ export default function KarmaJourneyPage() {
               </div>
             ))}
           </div>
-          {currentLife.tick === 0 && (
+          {currentLife.tick === 0 ? (
             <div style={{
               fontSize: '0.8rem', color: 'var(--color-text-secondary)', marginBottom: '0.75rem',
               padding: '0.625rem 0.875rem', borderRadius: '0.375rem',
@@ -563,7 +563,15 @@ export default function KarmaJourneyPage() {
                 : <>Your karma from Life {currentLife.lifeNumber - 1} set your raw trust at {baseComp.toFixed(3)}. Effective trust = raw × CI² — your consistency ({currentLife.ci.toFixed(2)}) {currentLife.ci >= 0.9 ? 'is high, so the gap is small' : 'still modulates what others see'}.</>
               }</span>
             </div>
-          )}
+          ) : Math.abs(effComp - baseComp) > 0.01 ? (
+            <div style={{
+              fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.5rem',
+              padding: '0.375rem 0.75rem', borderRadius: '0.375rem',
+              background: 'var(--color-bg-secondary)',
+            }}>
+              Effective trust ({effComp.toFixed(3)}) = Raw ({baseComp.toFixed(2)}) × CI² ({currentLife.ci.toFixed(2)}²). Consistency modulates what others see.
+            </div>
+          ) : null}
 
           {/* Trust dimensions */}
           <div style={{
