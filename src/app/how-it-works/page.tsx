@@ -398,25 +398,25 @@ export default function HowItWorksPage() {
                 Actions Cost ATP
               </h4>
               <p className="text-gray-300 leading-relaxed mb-3">
-                Everything you do spends ATP from your energy budget:
+                Actions that affect others cost ATP from your energy budget. Reading and browsing are free &mdash; only contributions spend energy:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="p-3 bg-gray-800 rounded">
                   <div className="text-sm text-gray-400 mb-1">
-                    Low-cost actions
+                    Free (no ATP cost)
                   </div>
                   <div className="text-gray-300 text-sm space-y-1">
-                    <p>• Reading messages (1 ATP)</p>
-                    <p>• Viewing content (2 ATP)</p>
-                    <p>• Simple queries (3 ATP)</p>
+                    <p>• Reading and browsing content</p>
+                    <p>• Viewing profiles and trust scores</p>
+                    <p>• Observing community activity</p>
                   </div>
                   <p className="text-gray-500 text-xs mt-2 leading-relaxed">
-                    Even reading costs a tiny amount &mdash; this prevents mass scraping and ensures every participant has skin in the game, not just creators.
+                    Lurking is always free. You only spend energy when you act &mdash; post, vote, transact, or create.
                   </p>
                 </div>
                 <div className="p-3 bg-gray-800 rounded">
                   <div className="text-sm text-gray-400 mb-1">
-                    High-cost actions
+                    Costs ATP (actions that affect others)
                   </div>
                   <div className="text-gray-300 text-sm space-y-1">
                     <p>• Posting content (10-20 ATP)</p>
