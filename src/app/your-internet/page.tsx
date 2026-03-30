@@ -328,47 +328,46 @@ export default function YourInternetPage() {
 
       <noscript>
         <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '2rem' }}>
-          <div style={{ background: '#1e293b', border: '1px solid #475569', borderRadius: '12px', padding: '2rem', marginBottom: '2rem' }}>
-            <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem', color: '#38bdf8' }}>What Would Web4 Change For You?</h1>
-            <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: '1rem' }}>
-              This interactive page lets you pick your biggest internet frustrations and see exactly how
-              trust-native infrastructure would address each one. It requires JavaScript to run.
-            </p>
-            <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              Here&apos;s one example of how it works:
-            </p>
+          <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#38bdf8' }}>What Would Web4 Change For You?</h1>
+          <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '2rem' }}>
+            Seven internet frustrations you already know &mdash; and how trust-native infrastructure would address each one.
+          </p>
 
-            <div style={{ background: '#0f172a', borderRadius: '8px', padding: '1.25rem', marginBottom: '1.5rem' }}>
-              <p style={{ color: '#f59e0b', fontWeight: 'bold', marginBottom: '0.75rem' }}>Spam &amp; Fake Accounts</p>
-              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
-                <strong style={{ color: '#ef4444' }}>Today:</strong> Creating an account costs nothing. A spammer can create 10,000 accounts in an hour. Platforms play whack-a-mole with detection, but attackers just adapt.
-              </p>
-              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
-                <strong style={{ color: '#10b981' }}>With Web4:</strong> Every account requires a physical device with a security chip. Creating 10,000 fake accounts means buying 10,000 devices &mdash; at $50&ndash;500 each, that&apos;s $500K&ndash;$5M in hardware. Spam isn&apos;t impossible, just economically irrational.
-              </p>
-              <p style={{ color: '#64748b', fontSize: '0.85rem' }}>
-                Mechanism: Hardware-bound identity + attention costs make spam more expensive than the return it generates.
-              </p>
+          {Object.entries(SCENARIOS).map(([id, s]) => (
+            <div key={id} style={{ background: '#1e293b', border: '1px solid #475569', borderRadius: '12px', marginBottom: '1.5rem', overflow: 'hidden' }}>
+              <div style={{ background: '#0f172a', padding: '0.75rem 1.5rem', borderBottom: '1px solid #475569' }}>
+                <p style={{ color: '#f59e0b', fontWeight: 'bold', margin: 0 }}>{s.frustration}</p>
+              </div>
+              <div style={{ padding: '1.25rem 1.5rem' }}>
+                <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+                  <strong style={{ color: '#ef4444' }}>Today:</strong> {s.today}
+                </p>
+                <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+                  <strong style={{ color: '#10b981' }}>With Web4:</strong> {s.withWeb4}
+                </p>
+                <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontStyle: 'italic', marginBottom: '0.75rem', padding: '0.75rem', background: '#0f172a', borderRadius: '6px' }}>
+                  {s.scenario}
+                </p>
+                <p style={{ color: '#64748b', fontSize: '0.85rem', margin: 0 }}>
+                  <strong style={{ color: '#94a3b8' }}>How:</strong> {s.mechanism}{' '}
+                  <a href={s.learnMore} style={{ color: '#38bdf8' }}>{s.learnMoreLabel} &rarr;</a>
+                </p>
+              </div>
             </div>
+          ))}
 
-            <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.75rem' }}>
-              The interactive page covers 6 frustrations with similar before/after comparisons:
-            </p>
-            <ul style={{ color: '#cbd5e1', lineHeight: 1.8, paddingLeft: '1.5rem' }}>
-              <li><strong style={{ color: '#38bdf8' }}>Spam &amp; fake accounts</strong> — Hardware-bound identity makes bulk fake accounts cost $5M+ instead of nothing</li>
-              <li><strong style={{ color: '#38bdf8' }}>Reputation silos</strong> — Trust tensors make your reputation portable across platforms</li>
-              <li><strong style={{ color: '#38bdf8' }}>AI deception</strong> — AI plays by the same rules as humans; every action costs energy and builds (or loses) trust</li>
-              <li><strong style={{ color: '#38bdf8' }}>Platform power</strong> — Federated identity means no single company controls your digital life</li>
-              <li><strong style={{ color: '#38bdf8' }}>Fake reviews</strong> — Coherence scoring detects behavioral anomalies; each review costs energy</li>
-              <li><strong style={{ color: '#38bdf8' }}>No accountability</strong> — Karma carries consequences across lives; bad actors can&apos;t just reset</li>
-            </ul>
-            <p style={{ color: '#64748b', fontSize: '0.875rem', marginTop: '1.5rem', borderTop: '1px solid #334155', paddingTop: '1rem' }}>
-              For the full experience, visit with JavaScript enabled. Or explore these non-interactive alternatives:
-              <a href="/tldr" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>2-minute overview</a> ·
-              <a href="/why-web4" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>Why Web4</a> ·
-              <a href="/what-could-go-wrong" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>What Could Go Wrong</a>
+          <div style={{ background: '#451a03', border: '1px solid #92400e', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
+            <p style={{ color: '#94a3b8', fontSize: '0.875rem', lineHeight: 1.7, margin: 0 }}>
+              <strong style={{ color: '#f59e0b' }}>Honest note:</strong> These scenarios describe how Web4 is <em>designed</em> to work, based on simulations. The system is theoretical research, not deployed software.{' '}
+              <a href="/what-could-go-wrong" style={{ color: '#38bdf8' }}>Read the failure analysis</a>.
             </p>
           </div>
+
+          <p style={{ color: '#64748b', fontSize: '0.875rem', textAlign: 'center' }}>
+            <a href="/tldr" style={{ color: '#38bdf8' }}>2-minute overview</a> ·{' '}
+            <a href="/day-in-web4" style={{ color: '#38bdf8' }}>A Day in Web4</a> ·{' '}
+            <a href="/why-web4" style={{ color: '#38bdf8' }}>Why Web4</a>
+          </p>
         </div>
       </noscript>
 
