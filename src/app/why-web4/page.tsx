@@ -447,6 +447,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-cultural-quality" className="hover:text-sky-400 transition-colors">Cultural differences in quality?</a></li>
                 <li><a href="#faq-quality-standards" className="hover:text-sky-400 transition-colors">Shitposting vs academic — trust transfer?</a></li>
                 <li><a href="#faq-adversarial-quality" className="hover:text-sky-400 transition-colors">Can hostile communities game quality?</a></li>
+                <li><a href="#faq-unpopular-truth" className="hover:text-sky-400 transition-colors">What about unpopular but true content?</a></li>
               </ul>
             </div>
             <div className="break-inside-avoid mb-4">
@@ -467,6 +468,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-circular-farming" className="hover:text-sky-400 transition-colors">How does 5% prevent circular farming?</a></li>
                 <li><a href="#faq-internet-scale" className="hover:text-sky-400 transition-colors">Trust-filtered messaging at scale?</a></li>
                 <li><a href="#faq-death-rebirth" className="hover:text-sky-400 transition-colors">When does an agent die? Rebirth?</a></li>
+                <li><a href="#faq-cross-federation-disputes" className="hover:text-sky-400 transition-colors">Two communities disagree about a member?</a></li>
               </ul>
             </div>
             <div className="break-inside-avoid mb-4">
@@ -2378,6 +2380,50 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
+          {/* Unpopular truth — visitor Q Mar 31 */}
+          <details id="faq-unpopular-truth" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What about whistleblowers or dissenting scientists? Unpopular truth seems risky.</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                This is one of the hardest problems in any reputation system: high-quality content that most
+                people don&apos;t want to hear. A scientist publishing results that contradict consensus, a
+                whistleblower exposing corporate fraud, a dissenter in a groupthink community.
+              </p>
+              <p>
+                Web4 has three mechanisms that work in their favor:
+              </p>
+              <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
+                <li><strong className="text-gray-300">V3 weights Veracity (0.35) and Validity (0.35) over Valuation (0.30).</strong> Popularity
+                  is the smallest component. A whistleblower&apos;s report that&apos;s accurate (high Veracity) and well-sourced
+                  (high Validity) scores 70% of its V3 even if the community hates it (zero Valuation).</li>
+                <li><strong className="text-gray-300">T3 trust is independent of content reception.</strong> A scientist with 15 years of
+                  consistent, rigorous work has high Talent and Training scores. Publishing one controversial paper
+                  doesn&apos;t erase their behavioral track record. Their trust precedes and survives the controversy.</li>
+                <li><strong className="text-gray-300">Pseudonymity is built in.</strong> Hardware-bound identity doesn&apos;t mean real-name identity.
+                  A whistleblower can build trust under a pseudonym, publish the report, and their <Link href="/lct-explainer" className="text-sky-400 hover:underline">LCT identity</Link> proves
+                  it came from a real person with a real track record &mdash; without revealing who.</li>
+              </ul>
+              <p>
+                <strong>Concrete example:</strong> A safety engineer discovers their company is falsifying emissions data.
+                They&apos;ve built trust (T3: 0.82) over two years of quality contributions to an environmental science community.
+                They publish the evidence under their pseudonym. The post scores low Valuation (company supporters downweight it)
+                but high Veracity and Validity (the data checks out). Net V3: 0.62 &mdash; not amazing, but not buried.
+                Meanwhile their 0.82 T3 trust means the post appears prominently in trust-weighted feeds. Contrast this with
+                Reddit, where a new throwaway account posting the same evidence would be invisible.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Web4 makes unpopular truth <em>survivable</em>, not <em>popular</em>.
+                A correct-but-hated claim still gets low Valuation scores. What Web4 prevents is the scenario where
+                accurate, important information is completely buried because the messenger has no established credibility
+                or because a majority can simply vote it into oblivion. The truth doesn&apos;t win automatically &mdash;
+                but it gets a hearing proportional to the messenger&apos;s demonstrated trustworthiness.
+              </p>
+            </div>
+          </details>
+
           {/* Echo chambers — visitor Q Mar 24 */}
           <details id="faq-filter-bubbles" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
@@ -2396,6 +2442,61 @@ export default function WhyWeb4Page() {
               </ul>
               <p className="text-gray-500 text-xs mt-2">
                 <strong>Honest caveat:</strong> Filter bubbles are a real risk in any trust-based system. The difference is that Web4&apos;s bubbles are <em>visible</em> (you can see your MRH boundary) and <em>permeable</em> (federation + bridge agents + role diversity all create cross-links). Traditional social media bubbles are invisible and algorithmically reinforced.
+              </p>
+            </div>
+          </details>
+
+          {/* Cross-federation disputes — visitor Q Mar 31 */}
+          <details id="faq-cross-federation-disputes" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What happens when two federated communities disagree about a member?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Concrete scenario:</strong> Maya is a food safety researcher with 0.88 trust in the &ldquo;Food Science&rdquo; community.
+                She publishes a study critical of a popular supplement. The federated &ldquo;Wellness&rdquo; community considers her
+                a bad actor and wants her trust destroyed. What happens?
+              </p>
+              <p>
+                Three design principles prevent this from escalating:
+              </p>
+              <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
+                <li><strong className="text-gray-300">Trust is sovereign per community.</strong> Wellness can lower Maya&apos;s trust
+                  <em> within their own community</em> &mdash; that&apos;s their right. But they cannot modify her score in Food Science.
+                  Each community controls its own trust graph independently.</li>
+                <li><strong className="text-gray-300">Federation discounts absorb the conflict.</strong> Trust transfers across
+                  federation boundaries are already discounted (typically 0.6x&ndash;0.7x). If Wellness sets Maya to 0.2, that arrives
+                  at other communities as ~0.13. Her 0.88 from Food Science arrives as ~0.57. The higher-trust signal dominates.</li>
+                <li><strong className="text-gray-300">Bridge agents provide ground truth.</strong> People active in both communities
+                  assess Maya from direct interaction, not community politics. If 8 bridge agents rate her highly and only Wellness rates
+                  her low, the signal is clear.</li>
+              </ul>
+              <p>
+                When disputes arise at <em>jurisdictional boundaries</em> (e.g., Maya submitting healthcare-relevant research),
+                Web4 uses three resolution strategies:
+              </p>
+              <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
+                <li><strong className="text-gray-300">Priority:</strong> The community where the action happens wins. Publishing in
+                  healthcare context? Healthcare&apos;s trust standards apply.</li>
+                <li><strong className="text-gray-300">Intersection:</strong> Only policies both communities agree on apply &mdash;
+                  used when neither has clear jurisdiction.</li>
+                <li><strong className="text-gray-300">Defederation (last resort):</strong> Communities can break the trust bridge
+                  entirely, like email servers choosing not to relay mail. Costly for both sides.</li>
+              </ul>
+              <p>
+                Every resolution is recorded in an audit trail. Disputes can be appealed (up to 2 appeals per resolution).
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Cross-federation disputes are one of the least-tested parts of the design.
+                The principles (sovereign trust, discounted transfer, bridge-agent ground truth) are sound, but specific
+                parameters like discount rates and mediation protocols are still being researched.
+              </p>
+              <p className="text-gray-500 text-xs">
+                For a deeper walkthrough, see{" "}
+                <Link href="/federation-economics#switching-societies" className="text-sky-400 hover:underline">
+                  Federation Economics &rarr; Cross-Society Policy Conflicts
+                </Link>.
               </p>
             </div>
           </details>
