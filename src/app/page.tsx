@@ -250,60 +250,41 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
 
       {/* How would this ever get adopted? */}
       <section>
-        <h2>But how would this ever get adopted?</h2>
-        <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1rem', fontSize: '0.9rem' }}>
-          Not all at once. Web4 is designed as a <strong style={{ color: 'var(--color-text)' }}>five-tier adoption path</strong> — starting
-          with lightweight wrappers on existing platforms and gradually deepening:
+        <h2 style={{ fontSize: '1.15rem' }}>How would this ever get adopted?</h2>
+        <p style={{ color: 'var(--color-text-secondary)', marginBottom: '0.75rem', fontSize: '0.9rem' }}>
+          Not all at once. Web4 starts as a <strong style={{ color: 'var(--color-text)' }}>lightweight wrapper</strong> on
+          existing platforms — adding trust scores behind the scenes. Your users don&apos;t see Web4; they just notice less spam.
+          Tier 1 could work on Reddit or Gmail <em>today</em>.
         </p>
-        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'stretch', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
-          {[
-            { tier: '1', name: 'Wrapper', desc: 'Add trust scores to existing platforms' },
-            { tier: '2', name: 'Observable', desc: 'Platforms publish trust-compatible data' },
-            { tier: '3', name: 'Accountable', desc: 'Actions carry real consequences' },
-            { tier: '4', name: 'Federated', desc: 'Trust transfers across platforms' },
-            { tier: '5', name: 'Native', desc: 'Built on trust from the ground up' },
-          ].map((t) => (
-            <div key={t.tier} style={{
-              flex: '1 1 120px',
-              padding: '0.6rem 0.75rem',
-              borderRadius: '0.5rem',
-              background: 'var(--color-bg-secondary)',
-              border: '1px solid var(--color-border)',
-              minWidth: '120px',
-            }}>
-              <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginBottom: '0.15rem' }}>Tier {t.tier}</div>
-              <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: '0.2rem' }}>{t.name}</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>{t.desc}</div>
-            </div>
-          ))}
-        </div>
-        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', margin: 0 }}>
-          Tier 1 could work on Reddit or Gmail <em>today</em> — no protocol changes needed.{' '}
-          <Link href="/why-web4#adoption" style={{ color: 'var(--color-sky)' }}>Read the full adoption strategy →</Link>
-        </p>
-        <details style={{ marginTop: '0.75rem' }}>
-          <summary style={{ color: 'var(--color-text-muted)', cursor: 'pointer', fontSize: '0.8rem' }}>
-            What does this look like for a developer?
+        <details>
+          <summary style={{ color: 'var(--color-sky)', cursor: 'pointer', fontSize: '0.85rem' }}>
+            See the five adoption tiers →
           </summary>
-          <div style={{ marginTop: '0.5rem', fontSize: '0.78rem', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
-            <p style={{ margin: '0 0 0.4rem' }}>
-              <strong style={{ color: 'var(--color-text)' }}>Tier 1</strong>: Add a trust score API call to your existing moderation pipeline.
-              Flag low-trust content for review, boost high-trust content. Your users don&apos;t see Web4 — they just notice less spam.
-            </p>
-            <p style={{ margin: '0 0 0.4rem' }}>
-              <strong style={{ color: 'var(--color-text)' }}>Tier 2</strong>: Display trust badges next to usernames (like verified checkmarks, but earned through behavior).
-              Users can see reputation; the platform still makes decisions.
-            </p>
-            <p style={{ margin: '0 0 0.4rem' }}>
-              <strong style={{ color: 'var(--color-text)' }}>Tier 3</strong>: Add gating middleware — posting costs energy, quality earns it back.
-              This is where spam becomes economically impossible.
-            </p>
-            <p style={{ margin: '0 0 0.4rem' }}>
-              <strong style={{ color: 'var(--color-text)' }}>Tiers 4–5</strong>: Federation SDK for cross-platform trust, then full native protocol integration.
-            </p>
-            <p style={{ margin: 0, fontSize: '0.73rem', color: 'var(--color-text-muted)', fontStyle: 'italic' }}>
-              This is a research project — no shipping SDK exists yet. These tiers describe the design target,
-              not a product you can install today.
+          <div style={{ marginTop: '0.75rem' }}>
+            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'stretch', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
+              {[
+                { tier: '1', name: 'Wrapper', desc: 'Add trust scores to existing platforms' },
+                { tier: '2', name: 'Observable', desc: 'Platforms publish trust-compatible data' },
+                { tier: '3', name: 'Accountable', desc: 'Actions carry real consequences' },
+                { tier: '4', name: 'Federated', desc: 'Trust transfers across platforms' },
+                { tier: '5', name: 'Native', desc: 'Built on trust from the ground up' },
+              ].map((t) => (
+                <div key={t.tier} style={{
+                  flex: '1 1 120px',
+                  padding: '0.6rem 0.75rem',
+                  borderRadius: '0.5rem',
+                  background: 'var(--color-bg-secondary)',
+                  border: '1px solid var(--color-border)',
+                  minWidth: '120px',
+                }}>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginBottom: '0.15rem' }}>Tier {t.tier}</div>
+                  <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: '0.2rem' }}>{t.name}</div>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>{t.desc}</div>
+                </div>
+              ))}
+            </div>
+            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', margin: 0 }}>
+              <Link href="/why-web4#adoption" style={{ color: 'var(--color-sky)' }}>Read the full adoption strategy →</Link>
             </p>
           </div>
         </details>
