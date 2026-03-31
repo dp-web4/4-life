@@ -2455,32 +2455,46 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Say you&apos;re a member of both a Research Federation and a Healthcare Federation. Research rates your
-                trust at <strong>0.82</strong> (great publications). Healthcare rates you at <strong>0.44</strong> (missed
-                deadlines, poor reliability). Who&apos;s right?
+                <strong>Concrete scenario:</strong> Maya is a food safety researcher with 0.88 trust in the &ldquo;Food Science&rdquo; community.
+                She publishes a study critical of a popular supplement. The federated &ldquo;Wellness&rdquo; community considers her
+                a bad actor and wants her trust destroyed. What happens?
               </p>
               <p>
-                <strong>Both are.</strong> Trust is role-specific. You&apos;re genuinely skilled at research but unreliable
-                in clinical settings. These aren&apos;t conflicting assessments &mdash; they&apos;re different dimensions
-                of the same person, measured in different contexts.
-              </p>
-              <p>
-                When you act at the <em>boundary</em> between the two (e.g., submitting healthcare research), Web4 uses
-                three resolution strategies:
+                Three design principles prevent this from escalating:
               </p>
               <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
-                <li><strong className="text-gray-300">Priority:</strong> The society where the action is happening wins.
-                  Publishing in the healthcare context? Your 0.44 trust applies, not your 0.82.</li>
+                <li><strong className="text-gray-300">Trust is sovereign per community.</strong> Wellness can lower Maya&apos;s trust
+                  <em> within their own community</em> &mdash; that&apos;s their right. But they cannot modify her score in Food Science.
+                  Each community controls its own trust graph independently.</li>
+                <li><strong className="text-gray-300">Federation discounts absorb the conflict.</strong> Trust transfers across
+                  federation boundaries are already discounted (typically 0.6x&ndash;0.7x). If Wellness sets Maya to 0.2, that arrives
+                  at other communities as ~0.13. Her 0.88 from Food Science arrives as ~0.57. The higher-trust signal dominates.</li>
+                <li><strong className="text-gray-300">Bridge agents provide ground truth.</strong> People active in both communities
+                  assess Maya from direct interaction, not community politics. If 8 bridge agents rate her highly and only Wellness rates
+                  her low, the signal is clear.</li>
+              </ul>
+              <p>
+                When disputes arise at <em>jurisdictional boundaries</em> (e.g., Maya submitting healthcare-relevant research),
+                Web4 uses three resolution strategies:
+              </p>
+              <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
+                <li><strong className="text-gray-300">Priority:</strong> The community where the action happens wins. Publishing in
+                  healthcare context? Healthcare&apos;s trust standards apply.</li>
                 <li><strong className="text-gray-300">Intersection:</strong> Only policies both communities agree on apply &mdash;
                   used when neither has clear jurisdiction.</li>
-                <li><strong className="text-gray-300">Freeze:</strong> Emergency halt when conflicts can&apos;t be resolved.
-                  Requires a 2/3 quorum to unfreeze.</li>
+                <li><strong className="text-gray-300">Defederation (last resort):</strong> Communities can break the trust bridge
+                  entirely, like email servers choosing not to relay mail. Costly for both sides.</li>
               </ul>
               <p>
                 Every resolution is recorded in an audit trail. Disputes can be appealed (up to 2 appeals per resolution).
               </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Cross-federation disputes are one of the least-tested parts of the design.
+                The principles (sovereign trust, discounted transfer, bridge-agent ground truth) are sound, but specific
+                parameters like discount rates and mediation protocols are still being researched.
+              </p>
               <p className="text-gray-500 text-xs">
-                For a deeper walkthrough with concrete examples, see{" "}
+                For a deeper walkthrough, see{" "}
                 <Link href="/federation-economics#switching-societies" className="text-sky-400 hover:underline">
                   Federation Economics &rarr; Cross-Society Policy Conflicts
                 </Link>.

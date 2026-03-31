@@ -391,10 +391,10 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         </h3>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
           {[
+            { date: 'Mar 31', text: 'New FAQs: unpopular truth protection, cross-federation disputes', link: '/why-web4' },
+            { date: 'Mar 30', text: 'Adoption tiers collapsed, FAQ guidance, 3 new worked examples', link: '/why-web4' },
             { date: 'Mar 29', text: 'CI physics simplified — developer perspective on behavioral consistency', link: '/coherence-index' },
             { date: 'Mar 28', text: 'Death triggers, device upgrades, adoption tiers explained clearly', link: '/aliveness' },
-            { date: 'Mar 26', text: 'V3 scoring explained — who evaluates truth and reasoning in Web4', link: '/trust-tensor' },
-            { date: 'Mar 24', text: 'New FAQs: platform migration path, onboarding UX, echo chambers', link: '/why-web4' },
           ].map((item, i) => (
             <li key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'baseline', fontSize: '0.8rem' }}>
               <span style={{ color: 'var(--color-text-muted)', fontFamily: 'monospace', fontSize: '0.7rem', flexShrink: 0 }}>{item.date}</span>
