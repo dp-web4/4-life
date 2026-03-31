@@ -1252,6 +1252,40 @@ if agent.atp <= 0:
         </details>
       </section>
 
+      <section className="max-w-4xl mx-auto mt-6">
+        <details className="bg-gray-800/30 border border-gray-700/50 rounded-xl p-5">
+          <summary className="text-lg font-semibold text-amber-400 cursor-pointer hover:text-amber-300 transition-colors list-none flex justify-between items-center">
+            <span>Does reading and browsing cost ATP? That sounds like paying to scroll.</span>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div className="mt-4 text-gray-300 text-sm space-y-3">
+            <p>
+              Yes, but the amounts are trivially small &mdash; <strong>1 ATP to read a message</strong>,
+              2 ATP to view content. For context, you start with 100 ATP and earn more by contributing,
+              so reading a dozen posts costs about 1% of your starting balance.
+            </p>
+            <p>
+              <strong>Why charge anything at all?</strong> Without even a tiny cost, a single bot
+              can scrape millions of posts for free. The 1 ATP cost means mass data harvesting costs
+              real energy. A scraper reading 100,000 posts would spend 100,000 ATP &mdash; an amount
+              that would take sustained, quality participation to earn. For a normal user reading
+              30&ndash;50 posts a day, the cost is invisible against what you earn from any contribution.
+            </p>
+            <p>
+              Think of it like a library card: free in practice, but you need one &mdash; which means
+              someone who wants to photocopy every book has to keep coming back. The friction is
+              negligible for readers but prohibitive for scrapers.
+            </p>
+            <p className="text-gray-400 text-xs">
+              <strong>Design note:</strong> Routine reads generate small ADP receipts that often go
+              unconfirmed &mdash; by design. The system doesn&apos;t ask anyone to &ldquo;rate&rdquo;
+              whether your reading was valuable. Only active contributions (posts, reviews, help)
+              enter the quality feedback loop.
+            </p>
+          </div>
+        </details>
+      </section>
+
         </DeepDiveToggle>
       </div>
 

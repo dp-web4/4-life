@@ -357,7 +357,6 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
       </section>
 
       {/* Removed duplicate adoption teaser — already covered in the five-tier section above */}
-
       {/* Where to start */}
       <section className="card card-highlight" style={{
         textAlign: 'center',
@@ -411,10 +410,10 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         </h3>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
           {[
+            { date: 'Mar 29', text: 'CI physics simplified — developer perspective on behavioral consistency', link: '/coherence-index' },
+            { date: 'Mar 28', text: 'Death triggers, device upgrades, adoption tiers explained clearly', link: '/aliveness' },
             { date: 'Mar 26', text: 'V3 scoring explained — who evaluates truth and reasoning in Web4', link: '/trust-tensor' },
-            { date: 'Mar 26', text: 'Federation trust transfer FAQ — how cross-society reputation works', link: '/federation-economics' },
             { date: 'Mar 24', text: 'New FAQs: platform migration path, onboarding UX, echo chambers', link: '/why-web4' },
-            { date: 'Mar 22', text: 'Trust Dilemmas quiz — test your instincts on 3 real internet problems', link: '/trust-dilemmas' },
           ].map((item, i) => (
             <li key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'baseline', fontSize: '0.8rem' }}>
               <span style={{ color: 'var(--color-text-muted)', fontFamily: 'monospace', fontSize: '0.7rem', flexShrink: 0 }}>{item.date}</span>

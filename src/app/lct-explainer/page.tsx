@@ -1286,6 +1286,35 @@ export default function LCTExplainerPage() {
           </p>
         </div>
 
+        {/* FAQ: Offline devices — visitor Q Mar 29 */}
+        <div className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg">
+          <h3 className="text-sm font-bold text-purple-400 mb-2">
+            What happens when one of my devices is offline for days?
+          </h3>
+          <p className="text-sm text-gray-300 mb-3">
+            Your identity doesn&apos;t break. Each device in your constellation can act independently &mdash;
+            if your laptop is offline, your phone still works as your identity anchor. When the
+            laptop reconnects, the devices reconcile their records (like how email syncs after airplane mode).
+          </p>
+          <p className="text-sm text-gray-300 mb-3">
+            <strong className="text-purple-300">What you&apos;d experience:</strong> Everything works normally
+            from your online device. Your trust score, ATP balance, and community interactions continue
+            uninterrupted. The offline device simply misses witnessing events until it reconnects.
+          </p>
+          <p className="text-sm text-gray-300 mb-2">
+            <strong className="text-purple-300">Edge case &mdash; all devices offline:</strong> Your identity
+            still exists in the network (other participants remember you), but you can&apos;t take new actions
+            until at least one device reconnects. Your trust doesn&apos;t decay faster for being offline &mdash;
+            the decay timers are based on last activity, not connectivity.
+          </p>
+          <p className="text-xs text-gray-500 mt-3">
+            <strong>Honest caveat:</strong> Reconciling conflicting actions taken on two devices that were
+            both offline is a distributed systems challenge. The protocol handles simple cases (one device
+            active, one offline) well. True split-brain scenarios (both active, both offline) are an active
+            research area.
+          </p>
+        </div>
+
         {/* W3C Standards Compatibility — collapsed for page length */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <details className="group">
