@@ -415,6 +415,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-early-adopters" className="hover:text-sky-400 transition-colors">Don&#39;t early adopters just talk to each other?</a></li>
                 <li><a href="#faq-platform-migration" className="hover:text-sky-400 transition-colors">What if Reddit/Discord adopted Web4?</a></li>
                 <li><a href="#faq-developer-integration" className="hover:text-sky-400 transition-colors">What&apos;s the developer experience?</a></li>
+                <li><a href="#faq-dual-trust" className="hover:text-sky-400 transition-colors">Reddit karma vs Web4 trust — which wins?</a></li>
               </ul>
             </div>
             <div className="break-inside-avoid mb-4">
@@ -443,6 +444,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-month-off" className="hover:text-sky-400 transition-colors">Take a month off — trust gone?</a></li>
                 <li><a href="#faq-youthful-mistakes" className="hover:text-sky-400 transition-colors">Escaping youthful mistakes?</a></li>
                 <li><a href="#faq-cultural-quality" className="hover:text-sky-400 transition-colors">Cultural differences in quality?</a></li>
+                <li><a href="#faq-adversarial-quality" className="hover:text-sky-400 transition-colors">Can hostile communities game quality?</a></li>
               </ul>
             </div>
             <div className="break-inside-avoid mb-4">
@@ -1916,6 +1918,30 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
+          {/* Dual trust systems during transition — visitor Q Mar 30 */}
+          <details id="faq-dual-trust" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>During the transition, if Reddit gives me high karma but Web4 gives me low trust — which wins?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Neither &ldquo;wins&rdquo; — they measure different things and coexist deliberately.
+              </p>
+              <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
+                <li><strong className="text-gray-300">Wrapper tier:</strong> The platform keeps its own karma system. Web4 trust appears as a <em>secondary signal</em> — like a verified badge, not a replacement. Reddit karma still works for Reddit; Web4 trust adds a cross-platform layer on top.</li>
+                <li><strong className="text-gray-300">Observable tier:</strong> Both scores are visible. Users can see when they diverge. High Reddit karma + low Web4 trust might mean: &ldquo;popular here, but unverified elsewhere.&rdquo; That&apos;s useful information, not a conflict.</li>
+                <li><strong className="text-gray-300">Accountable tier and beyond:</strong> Web4 trust starts gating actions (posting costs, reach limits). At this stage, the platform has chosen to let the trust system carry real weight — the &ldquo;conflict&rdquo; resolves because the platform opted in.</li>
+              </ul>
+              <p>
+                The key design choice: <strong>Web4 never overrides a platform&apos;s own system without that platform&apos;s consent.</strong> At the Wrapper tier, platforms add Web4 as metadata. At the Native tier, platforms have fully adopted it. The transition is opt-in at every step.
+              </p>
+              <p className="text-gray-500 text-xs mt-2">
+                <strong>Honest caveat:</strong> The awkward middle ground (Observable/Accountable tiers) where both systems have real weight is genuinely uncharted territory. A user could game one system while being honest in the other. We&apos;re betting that cross-platform trust — which follows the <em>person</em>, not the platform — will prove more useful over time, but this is a design hypothesis, not a proven outcome.
+              </p>
+            </div>
+          </details>
+
           {/* Can a wealthy person buy 50 devices? */}
           <details id="faq-buy-50-devices" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
@@ -2221,6 +2247,28 @@ export default function WhyWeb4Page() {
                 decentralized systems is an area of active research, especially around the tension between
                 privacy (not labeling minors) and protection (limiting exposure to harmful content).
                 Legal compliance (COPPA, GDPR-K) adds additional constraints that haven&apos;t been fully resolved.
+              </p>
+            </div>
+          </details>
+
+          {/* Adversarial quality consensus — visitor Q Mar 30 */}
+          <details id="faq-adversarial-quality" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>In a flat-earth forum, wouldn&apos;t the majority just validate each other&apos;s bad content?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Yes — within that community. And that&apos;s where the difference between <em>local</em> and <em>global</em> trust matters.
+              </p>
+              <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
+                <li><strong className="text-gray-300">V3 quality is community-scoped.</strong> A flat-earth forum can give each other high V3 scores <em>within their own community</em>. But V3 scores don&apos;t transfer at full strength across federation boundaries — they decay. Their mutual validation stays local.</li>
+                <li><strong className="text-gray-300">T3 trust is behavior-scoped.</strong> The V3 game only works if the participants also maintain high <Link href="/trust-tensor" className="text-sky-400 hover:underline">T3 trust</Link> — which requires consistent, honest behavior over time, across roles. A coordinated deception effort erodes T3&apos;s Temperament dimension as behavioral patterns become inconsistent.</li>
+                <li><strong className="text-gray-300">Federation is the correction mechanism.</strong> When a flat-earth community tries to federate with a science community, the trust transfer discount is steep. Their internally-high V3 scores arrive at the science community deeply discounted. Bridge agents who participate in both communities provide the cross-check.</li>
+                <li><strong className="text-gray-300">ATP makes sustained deception expensive.</strong> Producing content costs energy. Confirming content costs energy. A community dedicating all its ATP to mutual validation has less ATP for productive interactions outside the bubble — making them economically isolated, not just socially isolated.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs mt-2">
+                <strong>The honest answer:</strong> Web4 doesn&apos;t prevent communities from being wrong. It prevents wrong communities from <em>projecting authority beyond their boundaries</em>. A flat-earth forum can exist and thrive internally — what they can&apos;t do is make their quality consensus <em>count</em> in a physics department&apos;s trust graph. The same mechanisms that make Web4 trust meaningful (decay, federation discounts, behavioral consistency) also contain bad-faith consensus. This is better than platforms where a viral post from any community can reach billions, but it&apos;s not a cure for being wrong — nothing is.
               </p>
             </div>
           </details>
