@@ -3,6 +3,7 @@ import Link from "next/link";
 import SiteSearch from "@/components/SiteSearch";
 import GlossaryPanel from "@/components/GlossaryPanel";
 import ExplorationProgress from "@/components/ExplorationProgress";
+import MobileNav from "@/components/MobileNav";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -52,6 +53,7 @@ export default function RootLayout({
               Whitepaper ↗
             </a>
           </nav>
+          <MobileNav />
         </header>
         <ExplorationProgress />
         <main>{children}</main>
