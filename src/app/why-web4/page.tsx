@@ -479,7 +479,6 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-ai-agents" className="hover:text-sky-400 transition-colors">How do AI agents participate?</a></li>
                 <li><a href="#faq-protocol-changes" className="hover:text-sky-400 transition-colors">Who decides protocol changes?</a></li>
                 <li><a href="#faq-sal" className="hover:text-sky-400 transition-colors">What is SAL exactly?</a></li>
-                <li><a href="#faq-cross-federation-disputes" className="hover:text-sky-400 transition-colors">Cross-federation disputes?</a></li>
               </ul>
             </div>
           </nav>
