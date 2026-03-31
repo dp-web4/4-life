@@ -93,7 +93,7 @@ function ACTExplorerContent() {
                 Conversational Interface
               </div>
               <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
-                ACT Explorer
+                AI Guide
               </h1>
               <p className="text-xl text-gray-300 max-w-3xl">
                 Ask questions, explore concepts, understand simulations—all through natural conversation.

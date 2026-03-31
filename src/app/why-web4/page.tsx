@@ -383,6 +383,24 @@ export default function WhyWeb4Page() {
           If you&#39;re skeptical, good. Here are the hard questions visitors ask, and honest answers.
         </p>
 
+        {/* Most Asked — visible quick-links */}
+        <div className="mb-6 p-4 bg-gray-800/40 border border-gray-700/50 rounded-lg">
+          <h3 className="text-sm font-semibold text-amber-400/90 uppercase tracking-wide mb-2">Start here — most asked</h3>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { href: '#faq-deployed', label: 'Is this real or theoretical?' },
+              { href: '#faq-social-credit', label: 'Social credit system?' },
+              { href: '#faq-lose-hardware', label: 'What if I lose my device?' },
+              { href: '#faq-quality', label: 'Who decides quality?' },
+              { href: '#faq-powerful-liar', label: 'What if someone powerful lies?' },
+            ].map((q) => (
+              <a key={q.href} href={q.href} className="text-sm px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 hover:bg-sky-500/20 hover:border-sky-500/30 transition-colors">
+                {q.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* FAQ index — jump to any question */}
         <details className="mb-8 text-sm">
           <summary className="text-sky-400 hover:text-sky-300 cursor-pointer list-none inline-flex items-center gap-1.5">
