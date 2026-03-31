@@ -386,7 +386,7 @@ export default function WhyWeb4Page() {
         {/* FAQ index — jump to any question */}
         <details className="mb-8 text-sm">
           <summary className="text-sky-400 hover:text-sky-300 cursor-pointer list-none inline-flex items-center gap-1.5">
-            <span className="text-xs">▶</span> Browse all 50 questions by topic
+            <span className="text-xs">▶</span> Browse all questions by topic
           </summary>
           <nav className="mt-3 p-4 bg-gray-800/30 border border-gray-700/50 rounded-lg columns-1 sm:columns-2 gap-x-6">
             <div className="break-inside-avoid mb-4">
@@ -441,9 +441,11 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-threshold" className="hover:text-sky-400 transition-colors">Is 0.5 threshold universal?</a></li>
                 <li><a href="#faq-creative-work" className="hover:text-sky-400 transition-colors">V3 and creative/unconventional work?</a></li>
                 <li><a href="#faq-cheaters" className="hover:text-sky-400 transition-colors">How do you catch cheaters?</a></li>
+                <li><a href="#faq-ci-example" className="hover:text-sky-400 transition-colors">CI score for a normal person?</a></li>
                 <li><a href="#faq-month-off" className="hover:text-sky-400 transition-colors">Take a month off — trust gone?</a></li>
                 <li><a href="#faq-youthful-mistakes" className="hover:text-sky-400 transition-colors">Escaping youthful mistakes?</a></li>
                 <li><a href="#faq-cultural-quality" className="hover:text-sky-400 transition-colors">Cultural differences in quality?</a></li>
+                <li><a href="#faq-quality-standards" className="hover:text-sky-400 transition-colors">Shitposting vs academic — trust transfer?</a></li>
                 <li><a href="#faq-adversarial-quality" className="hover:text-sky-400 transition-colors">Can hostile communities game quality?</a></li>
               </ul>
             </div>
@@ -462,6 +464,7 @@ export default function WhyWeb4Page() {
               <h4 className="text-amber-400/80 font-semibold text-xs uppercase tracking-wide mb-1.5">Economics &amp; Energy</h4>
               <ul className="space-y-0.5 text-gray-400">
                 <li><a href="#faq-5-percent" className="hover:text-sky-400 transition-colors">5% transfer cost — team collaboration?</a></li>
+                <li><a href="#faq-circular-farming" className="hover:text-sky-400 transition-colors">How does 5% prevent circular farming?</a></li>
                 <li><a href="#faq-internet-scale" className="hover:text-sky-400 transition-colors">Trust-filtered messaging at scale?</a></li>
                 <li><a href="#faq-death-rebirth" className="hover:text-sky-400 transition-colors">When does an agent die? Rebirth?</a></li>
               </ul>
@@ -479,7 +482,10 @@ export default function WhyWeb4Page() {
           </nav>
         </details>
 
-        {/* Most asked — top 6 for first-time visitors */}
+        {/* Most asked — top questions for first-time visitors */}
+        <p className="text-sm text-gray-400 mb-3 flex items-center gap-2">
+          <span className="text-amber-400">💡</span> New here? Start with these — they cover what most visitors want to know first.
+        </p>
         <h3 className="text-sm uppercase tracking-wide text-amber-400/80 mb-4">Most asked</h3>
         <div className="space-y-4 mb-10">
           {/* Status */}
@@ -1267,6 +1273,40 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
+          {/* Circular farming — visitor Q Mar 30 */}
+          <details id="faq-circular-farming" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How does the 5% transfer tax actually prevent circular farming?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Concrete example:</strong> Say Alice and Bob each have 100 ATP and try to
+                inflate their balances by sending energy back and forth.
+              </p>
+              <ul className="list-none space-y-1.5 text-gray-400 ml-2">
+                <li>Round 1: Alice sends 100 to Bob. 5% burns. Bob receives 95.</li>
+                <li>Round 2: Bob sends 95 back. 5% burns. Alice receives 90.25.</li>
+                <li>Round 3: Alice sends 90.25. Bob receives 85.74.</li>
+                <li>Round 4: Bob sends 85.74. Alice receives 81.45.</li>
+              </ul>
+              <p>
+                After just 4 round trips, they&apos;ve <strong>lost nearly 19%</strong> of the original
+                energy — and gained nothing. No trust increase, no reputation, no value. Every transfer
+                is logged as a transfer, not a contribution, so it doesn&apos;t build trust either.
+              </p>
+              <p>
+                By round 14, half the energy is gone. By round 28, 75% is destroyed. The math makes
+                circular farming a guaranteed loss, not just a bad strategy.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Why 5% specifically?</strong> It&apos;s low enough that legitimate transfers
+                (tipping a helper, funding a project) are affordable, but high enough that any scheme
+                requiring multiple round trips bleeds out quickly. The compound loss is the mechanism.
+              </p>
+            </div>
+          </details>
+
           {/* Hardware migration */}
           <details id="faq-hardware-standards" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
@@ -1720,6 +1760,40 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
+          {/* CI scoring — visitor Q Mar 30 */}
+          <details id="faq-ci-example" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What does a Coherence Index score look like for a normal person?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Think of it as a consistency score.</strong> The{" "}
+                <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link> (CI)
+                measures how consistently you behave — across time, across communities, and across situations.
+              </p>
+              <p><strong>Example — a freelance designer named Sam:</strong></p>
+              <ul className="list-none space-y-1.5 text-gray-400 ml-2">
+                <li>Sam delivers quality design work for 6 months → CI rises to <strong>0.88</strong></li>
+                <li>Sam starts rushing jobs to take on more clients → quality drops, CI falls to <strong>0.71</strong></li>
+                <li>Effective trust = raw trust (0.72) &times; CI&sup2; (0.71&sup2; = 0.50) = <strong>0.36</strong></li>
+                <li>Sam notices higher action costs and less visibility → slows down, quality returns</li>
+                <li>After 2 months of consistent quality again → CI recovers to <strong>0.82</strong></li>
+              </ul>
+              <p>
+                The key insight: <strong>CI penalizes inconsistency more than low trust does.</strong> The
+                squared relationship means a CI of 0.71 cuts your effective trust nearly in half. You can&apos;t
+                build trust by being great sometimes and careless other times — the system rewards reliability
+                over occasional brilliance.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>What this feels like:</strong> If your CI is high (above 0.80), you barely notice it —
+                everything just works. If it drops, you&apos;ll feel it through higher action costs and reduced
+                reach. It&apos;s like a credit score that measures behavior consistency instead of payment history.
+              </p>
+            </div>
+          </details>
+
           {/* Pseudonymity */}
           <details id="faq-pseudonymous" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
@@ -2152,6 +2226,37 @@ export default function WhyWeb4Page() {
                 Your poetry trust doesn&apos;t automatically make you trusted in engineering &mdash;{" "}
                 <Link href="/trust-tensor" className="text-sky-400 hover:underline">role-specific trust</Link>{" "}
                 keeps domains appropriately separated.
+              </p>
+            </div>
+          </details>
+
+          {/* Quality standards across communities — visitor Q Mar 30 */}
+          <details id="faq-quality-standards" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>A shitposting community and an academic journal have different &ldquo;quality&rdquo; — does trust transfer between them?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Yes, but with heavy discounting.</strong> Trust in Web4 is role-specific and
+                community-scoped. Your trust as a meme creator in a humor community is a separate dimension
+                from your trust as a researcher in an academic one.
+              </p>
+              <p>
+                When trust transfers between communities, two things reduce it:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>MRH decay</strong> — trust weakens with social distance (0.7&times; per hop). A community two hops away sees only ~49% of your original trust.</li>
+                <li><strong>Role mismatch</strong> — the T3 (Trust Tensor) tracks trust per skill/context. Being trusted for humor doesn&apos;t make you trusted for research. The relevant dimension may be near zero.</li>
+              </ul>
+              <p>
+                So a top shitposter joining an academic community starts almost from scratch in the &ldquo;academic rigor&rdquo;
+                dimension — their humor trust doesn&apos;t inflate their research credibility. But their <strong>Veracity</strong> score
+                (honesty across all contexts) does carry over, giving them a small head start over a completely unknown newcomer.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>The design principle:</strong> Communities should be free to define quality on their own terms.
+                What transfers between them is character (honesty, consistency), not status.
               </p>
             </div>
           </details>
