@@ -7,6 +7,7 @@ import ExplorerNav from '@/components/ExplorerNav';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import { saveDayInWeb4Result, trackPageVisit } from '@/lib/exploration';
 import WireframeFrame from '@/components/WireframeFrame';
+import InteractiveMailDemo from '@/components/InteractiveMailDemo';
 
 /* ─── Types ────────────────────────────────────────────── */
 
@@ -717,47 +718,8 @@ export default function DayInWeb4Page() {
           Here are five app mockups — inbox, hiring, reviews, social feed, and marketplace.
         </p>
 
-        {/* Wireframe 1: Inbox */}
-        <WireframeFrame title="Web4 Mail" url="mail.web4.local/inbox">
-          <div className="overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
-            {/* Header bar */}
-            <div className="flex items-center gap-3 px-4 py-2.5 border-b border-gray-700" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
-              <div className="w-2 h-2 rounded-full bg-sky-400" />
-              <span className="text-sm font-medium text-gray-300">Messages</span>
-              <span className="text-xs text-gray-500 ml-auto">3 new</span>
-            </div>
-            {/* Messages */}
-            <div className="divide-y divide-gray-800">
-              {[
-                { from: 'Maya Chen', trust: 0.87, cost: '2 ATP', subject: 'Re: Kitchen faucet fix', time: '9:12 AM', color: 'text-emerald-400' },
-                { from: 'Dev Community', trust: 0.91, cost: '5 ATP', subject: 'Your answer was marked helpful (+20 ATP)', time: '9:45 AM', color: 'text-emerald-400' },
-                { from: 'New Contact', trust: 0.43, cost: '8 ATP', subject: 'Freelance inquiry', time: '10:30 AM', color: 'text-amber-400' },
-              ].map((msg, i) => (
-                <div key={i} className="flex items-center gap-3 px-4 py-3 hover:bg-gray-800/30 transition-colors">
-                  <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-xs text-gray-400">
-                    {msg.from[0]}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium text-gray-200">{msg.from}</span>
-                      <span className={`text-xs font-mono ${msg.color}`}>
-                        {msg.trust.toFixed(2)}
-                      </span>
-                    </div>
-                    <p className="text-xs text-gray-500 truncate">{msg.subject}</p>
-                  </div>
-                  <div className="text-right shrink-0">
-                    <div className="text-xs text-gray-600">{msg.time}</div>
-                    <div className="text-xs text-gray-600">cost sender {msg.cost}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="px-4 py-2 text-xs text-gray-600 border-t border-gray-800">
-              0 spam — messages cost energy to send. Bots can&apos;t afford to reach you.
-            </div>
-          </div>
-        </WireframeFrame>
+        {/* Wireframe 1: Interactive Inbox */}
+        <InteractiveMailDemo />
 
         {/* Wireframe 2: Hiring Dashboard */}
         <WireframeFrame title="Web4 Talent" url="talent.web4.local/project/logo-design">
