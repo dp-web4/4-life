@@ -91,6 +91,22 @@ export default function UnderstandingConsciousnessPage() {
       </section>
 
       <section>
+        <div className="callout-info" style={{ borderLeft: '3px solid #38bdf8', paddingLeft: '1rem', marginBottom: '1.5rem' }}>
+          <h3 style={{ color: '#38bdf8', margin: '0 0 0.5rem' }}>Why does this matter for fixing the internet?</h3>
+          <p>
+            Web4 treats humans and AI as equal participants (&ldquo;agents&rdquo;) under the same trust rules.
+            But that only works if we can tell when an AI is genuinely reasoning vs. randomly guessing.
+            Consciousness thresholds answer a practical question: <strong>at what trust level can an AI agent
+            be given real responsibilities?</strong> Below 0.5, an agent confabulates — it invents answers
+            it doesn&apos;t actually know. Above 0.7, it can reliably say what it does and doesn&apos;t know.
+            These thresholds determine what AI agents are allowed to do in a trust-native society, from
+            reviewing content to managing shared resources. Without this research, &ldquo;AI and humans
+            follow the same rules&rdquo; would be an empty promise.
+          </p>
+        </div>
+      </section>
+
+      <section>
         <h2>The Consciousness Threshold: 0.5</h2>
         <p>
           The same 0.5 threshold appears across multiple domains:

@@ -201,7 +201,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             <div>
               <strong>AI and humans play by the same rules</strong>
               <p style={{ color: 'var(--color-text-secondary)', margin: '0.25rem 0 0', fontSize: '0.9rem' }}>
-                The same trust framework applies to all agents &mdash; human or AI. No special categories.
+                The same trust framework applies to all participants &mdash; human or AI. In Web4, everyone is called an &ldquo;agent&rdquo; because the rules are identical regardless of who (or what) you are.
               </p>
             </div>
           </li>

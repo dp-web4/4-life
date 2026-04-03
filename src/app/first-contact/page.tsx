@@ -597,6 +597,15 @@ export default function FirstContactPage() {
                   death is real. Your record persists. Everyone can see your trajectory: the good work, the overreach,
                   the collapse.
                 </p>
+                <div className="bg-red-950/30 border border-red-900/50 rounded-lg p-4 mb-4">
+                  <p className="text-gray-300 leading-relaxed text-sm">
+                    <strong className="text-red-400">Alice got lucky.</strong> Her trust was still 0.51 when ATP ran out — above the 0.50 threshold.
+                    That&apos;s what made rebirth possible. If her trust had dropped below 0.50 through sustained bad behavior — not just one mistake,
+                    but a pattern of deception — she would face <strong className="text-red-300">permanent trust death</strong>. No rebirth. No second chance.
+                    The community decided she wasn&apos;t trustworthy, and that judgment stands. This is the highest stake in Web4: energy can be
+                    replenished, but a destroyed reputation cannot be reset.
+                  </p>
+                </div>
               </div>
 
               {/* Rebirth */}
@@ -638,8 +647,9 @@ export default function FirstContactPage() {
                     but the record of that dip is permanent. Future collaborators can see the full picture.
                   </div>
                   <div>
-                    <strong className="text-red-400">Death is Real:</strong> Running out of ATP means death — no more actions.
-                    Unlike traditional platforms, you can&apos;t just make a new account. Your history persists.
+                    <strong className="text-red-400">Death is Real:</strong> Running out of ATP means energy death — recoverable
+                    through karma if your trust is intact. But sustained bad behavior that drops trust below 0.50
+                    means permanent trust death — no rebirth, no fresh start. Your history persists either way.
                   </div>
                   <div>
                     <strong className="text-emerald-400">Karma Compounds:</strong> Good behavior in past lives gives you a head start
