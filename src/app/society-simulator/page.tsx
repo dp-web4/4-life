@@ -3806,14 +3806,14 @@ export default function SocietySimulatorPage() {
           </p>
           <p className="text-sm text-gray-400 mb-3">
             <strong className="text-amber-300">Research finding:</strong> In multi-agent simulations
-            (1,070 runs), communities that isolate internally hit a coherence ceiling &mdash; like crystals
-            with grain boundaries. Cross-community bridge agents are required for collective emergence.
+            (1,070 runs), communities that only talk to themselves hit a ceiling &mdash; like teams
+            that never collaborate outside their department. Cross-community bridge agents are required
+            for collective emergence.
             Diversity alone isn&apos;t enough; <em>structural connections between diverse groups</em> is
             what unlocks collective intelligence. Even replacing an agent with a fresh one improves the
-            collective (ratio 1.106) &mdash; identity is structural, not compositional.
-            (What matters isn&apos;t <em>who</em> fills a role but <em>that the role exists</em> in the network &mdash;
-            replacing an agent with a fresh one still improves the collective because the structural
-            position, not the individual&apos;s history, drives the emergent behavior.)
+            collective (ratio 1.106) &mdash; what matters isn&apos;t <em>who</em> fills a role
+            but <em>that the role exists</em> in the network. The structural
+            position, not the individual&apos;s history, drives the emergent behavior.
           </p>
           <a
             href="/federation-economics"

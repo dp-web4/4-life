@@ -1299,6 +1299,15 @@ export default function WhyWeb4Page() {
                 their own — you can&apos;t buy someone else&apos;s reputation, and a team member&apos;s bad
                 behavior affects them, not you.
               </p>
+              <p>
+                <strong className="text-gray-100">What about frequent transfers?</strong> If a team of 5
+                passes ATP back and forth for collaborative projects, the 5% fee compounds
+                quickly &mdash; 10 transfers loses ~40% of the original amount. That&apos;s by design:
+                the system incentivizes <em>direct value creation</em> (where everyone earns individually)
+                over <em>resource shuffling</em> (where ATP moves between wallets). Teams that create
+                together don&apos;t need to transfer; teams that delegate work use single transfers,
+                not chains.
+              </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> The details of organizational identity and pooled contribution
                 attribution are still being worked out. This is one of the harder design problems.
@@ -2099,6 +2108,21 @@ export default function WhyWeb4Page() {
                 This mirrors how trust works in real life: a colleague who&apos;s been away for a month
                 doesn&apos;t lose their reputation for being skilled, but you might wonder if they&apos;re
                 still engaged. A few days of active contribution restores confidence.
+              </p>
+              <p className="border-t border-gray-700 pt-3 mt-3">
+                <strong className="text-gray-100">What about 6 months or longer?</strong> After 6 months,
+                Temperament (30-day half-life) is essentially zeroed &mdash; ~6 half-lives means only ~1.5%
+                remains. Training (180-day half-life) drops to about 50%. But Talent (365-day half-life)
+                is still at ~70%. Your skill reputation survives; your &ldquo;are they still engaged?&rdquo;
+                reputation doesn&apos;t. This is intentional &mdash; if someone hasn&apos;t been active
+                in 6 months, the system <em>should</em> be uncertain about their current reliability.
+              </p>
+              <p>
+                There&apos;s no &ldquo;hiatus&rdquo; mechanism to freeze scores. Trust decay reflects the
+                community&apos;s genuine uncertainty about absent members. But recovery is fast:
+                Temperament&apos;s 30-day half-life works in both directions. A few weeks of consistent
+                activity rebuilds what took months to lose. You don&apos;t start from zero &mdash; your
+                Talent history provides a foundation that helps you recover faster than a newcomer.
               </p>
             </div>
           </details>

@@ -60,12 +60,21 @@ export default function WhatCouldGoWrongPage() {
           The Big Risks
         </h2>
 
+        {/* Risk severity legend */}
+        <div className="mb-6 flex flex-wrap gap-4 text-xs text-gray-500">
+          <span>Severity: <span className="text-red-400 font-semibold">Existential</span> · <span className="text-amber-400 font-semibold">Serious</span> · <span className="text-yellow-400 font-semibold">Moderate</span></span>
+          <span>Likelihood: <span className="font-semibold text-gray-400">High</span> · <span className="font-semibold text-gray-400">Medium</span> · <span className="font-semibold text-gray-400">Low</span></span>
+        </div>
+
         {/* 1. Nobody adopts it */}
         <div id="risk-adoption" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
             <span className="text-2xl">1.</span>
-            <div>
-              <h3 className="text-xl font-semibold text-amber-400">Nobody adopts it</h3>
+            <div className="flex-1">
+              <div className="flex items-center gap-3 flex-wrap">
+                <h3 className="text-xl font-semibold text-amber-400">Nobody adopts it</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 border border-red-500/30">Existential · High likelihood</span>
+              </div>
               <p className="text-gray-500 text-sm">Adoption &amp; Network Effects</p>
             </div>
           </div>
@@ -99,8 +108,11 @@ export default function WhatCouldGoWrongPage() {
         <div id="risk-gatekeepers" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
             <span className="text-2xl">2.</span>
-            <div>
-              <h3 className="text-xl font-semibold text-amber-400">Hardware vendors become the new gatekeepers</h3>
+            <div className="flex-1">
+              <div className="flex items-center gap-3 flex-wrap">
+                <h3 className="text-xl font-semibold text-amber-400">Hardware vendors become the new gatekeepers</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">Serious · Medium likelihood</span>
+              </div>
               <p className="text-gray-500 text-sm">Centralization Risk</p>
             </div>
           </div>
@@ -140,8 +152,11 @@ export default function WhatCouldGoWrongPage() {
         <div id="risk-threshold" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
             <span className="text-2xl">3.</span>
-            <div>
-              <h3 className="text-xl font-semibold text-amber-400">The trust threshold punishes the wrong people</h3>
+            <div className="flex-1">
+              <div className="flex items-center gap-3 flex-wrap">
+                <h3 className="text-xl font-semibold text-amber-400">The trust threshold punishes the wrong people</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">Serious · Medium likelihood</span>
+              </div>
               <p className="text-gray-500 text-sm">Fairness &amp; False Positives</p>
             </div>
           </div>
@@ -182,8 +197,11 @@ export default function WhatCouldGoWrongPage() {
         <div id="risk-gaming" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
             <span className="text-2xl">4.</span>
-            <div>
-              <h3 className="text-xl font-semibold text-amber-400">Rich actors game the system anyway</h3>
+            <div className="flex-1">
+              <div className="flex items-center gap-3 flex-wrap">
+                <h3 className="text-xl font-semibold text-amber-400">Rich actors game the system anyway</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">Serious · Low likelihood</span>
+              </div>
               <p className="text-gray-500 text-sm">Economic Attack Surface</p>
             </div>
           </div>
@@ -238,8 +256,11 @@ export default function WhatCouldGoWrongPage() {
         <div id="risk-hardware-loss" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
             <span className="text-2xl">5.</span>
-            <div>
-              <h3 className="text-xl font-semibold text-amber-400">Your hardware breaks and you lose everything</h3>
+            <div className="flex-1">
+              <div className="flex items-center gap-3 flex-wrap">
+                <h3 className="text-xl font-semibold text-amber-400">Your hardware breaks and you lose everything</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">Serious · High likelihood</span>
+              </div>
               <p className="text-gray-500 text-sm">Device Loss &amp; Recovery</p>
             </div>
           </div>
@@ -276,8 +297,11 @@ export default function WhatCouldGoWrongPage() {
         <div id="risk-witnesses" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
             <span className="text-2xl">6.</span>
-            <div>
-              <h3 className="text-xl font-semibold text-amber-400">The witness network gets captured or corrupted</h3>
+            <div className="flex-1">
+              <div className="flex items-center gap-3 flex-wrap">
+                <h3 className="text-xl font-semibold text-amber-400">The witness network gets captured or corrupted</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">Serious · Medium likelihood</span>
+              </div>
               <p className="text-gray-500 text-sm">Governance &amp; Trust Infrastructure</p>
             </div>
           </div>
@@ -328,8 +352,11 @@ export default function WhatCouldGoWrongPage() {
         <div id="risk-scale" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
             <span className="text-2xl">7.</span>
-            <div>
-              <h3 className="text-xl font-semibold text-amber-400">It works in simulations but not at real scale</h3>
+            <div className="flex-1">
+              <div className="flex items-center gap-3 flex-wrap">
+                <h3 className="text-xl font-semibold text-amber-400">It works in simulations but not at real scale</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">Moderate · Unknown likelihood</span>
+              </div>
               <p className="text-gray-500 text-sm">Scalability &amp; Performance</p>
             </div>
           </div>

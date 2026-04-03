@@ -984,6 +984,11 @@ export default function FederationEconomicsPage() {
           <span className="text-sm text-gray-500 ml-auto">Bottlenecks and bridge connectors</span>
         </summary>
         <div className="mt-4">
+        <p className="text-gray-300 mb-3">
+          <strong className="text-gray-100">The simple version:</strong> When two communities connect, the least-trusted
+          link between them limits how much trust can pass — like a chain of garden hoses where the narrowest one controls
+          the flow rate.
+        </p>
         <p>
           Federations connect trust networks the way pipes connect water systems. Trust flows through
           paths between communities, and the <strong>weakest connection limits the whole flow</strong>.
