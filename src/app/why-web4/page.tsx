@@ -401,6 +401,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-quality" className="hover:text-sky-400 transition-colors">Who decides what counts as quality?</a></li>
                 <li><a href="#faq-collusion" className="hover:text-sky-400 transition-colors">What prevents trust collusion?</a></li>
                 <li><a href="#faq-community-size" className="hover:text-sky-400 transition-colors">How many people does it need?</a></li>
+                <li><a href="#faq-why-name-web4" className="hover:text-sky-400 transition-colors">Why &ldquo;Web4&rdquo;?</a></li>
               </ul>
             </div>
             <div className="break-inside-avoid mb-4">
@@ -829,6 +830,36 @@ export default function WhyWeb4Page() {
             </div>
           </details>
         </div>
+
+          {/* Why "Web4" naming */}
+          <details id="faq-why-name-web4" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Why &ldquo;Web4&rdquo;? Isn&apos;t that confusing given Web3?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Fair question. The name implies succession, but the relationship to Web3 is oppositional, not evolutionary.
+                Here&apos;s the lineage:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Web1</strong> (read): Static pages. You consumed content someone published.</li>
+                <li><strong>Web2</strong> (read/write): Platforms. You create content, but platforms own your data and identity.</li>
+                <li><strong>Web3</strong> (read/write/own): Blockchain-first. You own tokens, but trust is financial &mdash; whoever has the most tokens has the most influence.</li>
+                <li><strong>Web4</strong> (read/write/trust): Behavior-first. You own your identity through hardware, and influence comes from demonstrated trustworthiness &mdash; not tokens, not followers, not money.</li>
+              </ul>
+              <p>
+                Web3 tried to solve ownership with financial instruments. Web4 argues the deeper problem was never
+                ownership &mdash; it was <em>trust</em>. You can own your data and still be drowning in spam, fake reviews,
+                and bot armies. Web4 addresses the layer Web3 skipped.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Why not a different name?</strong> We considered it. But &ldquo;Web4&rdquo; signals what this
+                actually is: the next architectural layer for the internet, building on what came before while
+                fixing what was missing. The &ldquo;4&rdquo; is a version number, not an endorsement of &ldquo;3.&rdquo;
+              </p>
+            </div>
+          </details>
 
         {/* All other FAQs — collapsed by default */}
         <details id="going-deeper" className="group">

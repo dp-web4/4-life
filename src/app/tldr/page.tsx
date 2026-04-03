@@ -78,8 +78,8 @@ export default function TLDRPage() {
               <span className="text-sky-400 text-xl mt-0.5">4.</span>
               <p className="text-gray-300">
                 <strong className="text-white">Humans and AI play by the same rules.</strong> The
-                same trust framework applies to people and AI agents. No separate systems —
-                everyone earns their place.
+                same trust framework applies to people and AI alike. Web4 calls all participants &ldquo;agents&rdquo; —
+                human or artificial — because the rules are identical. Everyone earns their place.
               </p>
             </div>
           </div>

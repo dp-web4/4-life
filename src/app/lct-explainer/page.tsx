@@ -409,6 +409,56 @@ export default function LCTExplainerPage() {
               but complete prevention is impossible. The design goal is raising the cost of inference above
               the value of the leaked information.
             </p>
+            <div className="mt-4 bg-gray-900/50 border border-gray-700 rounded-lg p-4">
+              <p className="text-sm font-semibold text-gray-300 mb-3">How does this compare to today&apos;s web?</p>
+              <table className="w-full text-xs">
+                <thead>
+                  <tr className="text-gray-400 border-b border-gray-700">
+                    <th className="text-left py-1.5 pr-2">What&apos;s exposed</th>
+                    <th className="text-left py-1.5 pr-2">Today (Web2)</th>
+                    <th className="text-left py-1.5">Web4</th>
+                  </tr>
+                </thead>
+                <tbody className="text-gray-400">
+                  <tr className="border-b border-gray-800">
+                    <td className="py-1.5 pr-2 text-gray-300">Your identity</td>
+                    <td className="py-1.5 pr-2 text-red-400/80">Real name, email, phone sold to data brokers</td>
+                    <td className="py-1.5 text-green-400/80">Pseudonymous — hardware-bound, no personal info required</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-1.5 pr-2 text-gray-300">Your content</td>
+                    <td className="py-1.5 pr-2 text-red-400/80">Platforms read, analyze, and monetize everything</td>
+                    <td className="py-1.5 text-green-400/80">Only recipients see content — protocol moves attestations, not data</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-1.5 pr-2 text-gray-300">Your browsing</td>
+                    <td className="py-1.5 pr-2 text-red-400/80">Tracking cookies follow you across sites</td>
+                    <td className="py-1.5 text-green-400/80">No cross-context tracking — each role is a separate LCT</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-1.5 pr-2 text-gray-300">Your social graph</td>
+                    <td className="py-1.5 pr-2 text-red-400/80">Full contact lists harvested and shared</td>
+                    <td className="py-1.5 text-yellow-400/80">Partial — who attests to whom is visible within 3 hops</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-1.5 pr-2 text-gray-300">Your activity timing</td>
+                    <td className="py-1.5 pr-2 text-red-400/80">Platforms log every click, scroll, and hover</td>
+                    <td className="py-1.5 text-yellow-400/80">Attestation timing visible — mitigated by jitter and batching</td>
+                  </tr>
+                  <tr>
+                    <td className="py-1.5 pr-2 text-gray-300">Breach exposure</td>
+                    <td className="py-1.5 pr-2 text-red-400/80">Centralized databases leaked (billions of records yearly)</td>
+                    <td className="py-1.5 text-green-400/80">No central database to breach — identity is on your devices</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="text-xs text-gray-500 mt-3">
+                The honest framing: Web4 trades centralized data collection for decentralized attestation patterns.
+                Two channels (social graph and timing) leak <em>some</em> metadata — but your identity, content, browsing,
+                and breach risk all improve substantially. Net result: narrower leakage, built into the protocol
+                rather than bolted on as afterthoughts.
+              </p>
+            </div>
           </div>
         </div>
 
