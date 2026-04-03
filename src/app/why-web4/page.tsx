@@ -415,6 +415,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-parallel-identities" className="hover:text-sky-400 transition-colors">Do I need parallel identities?</a></li>
                 <li><a href="#faq-early-adopters" className="hover:text-sky-400 transition-colors">Don&#39;t early adopters just talk to each other?</a></li>
                 <li><a href="#faq-platform-migration" className="hover:text-sky-400 transition-colors">What if Reddit/Discord adopted Web4?</a></li>
+                <li><a href="#faq-trust-transfer-mechanics" className="hover:text-sky-400 transition-colors">How does trust transfer between platforms?</a></li>
                 <li><a href="#faq-developer-integration" className="hover:text-sky-400 transition-colors">What&apos;s the developer experience?</a></li>
                 <li><a href="#faq-dual-trust" className="hover:text-sky-400 transition-colors">Reddit karma vs Web4 trust — which wins?</a></li>
               </ul>
@@ -2335,6 +2336,45 @@ export default function WhyWeb4Page() {
               </ol>
               <p className="text-gray-500 text-xs mt-2">
                 <strong>Key insight:</strong> Each tier is independently valuable. A platform at tier 2 already has better spam detection than most platforms today. There&apos;s no all-or-nothing commitment.
+              </p>
+            </div>
+          </details>
+
+          {/* Trust transfer mechanics — visitor Q Apr 3: "How does trust actually move between platforms?" */}
+          <details id="faq-trust-transfer-mechanics" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How does trust actually transfer between platforms? What happens technically?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Trust doesn&apos;t transfer like a file you copy between apps. Instead, your
+                <strong> trust history travels with your LCT</strong> &mdash; your hardware-bound identity.
+                When you join a new platform that&apos;s part of the same federation, the platform
+                queries the federation&apos;s trust graph for your existing scores.
+              </p>
+              <p>
+                <strong>The mechanics:</strong>
+              </p>
+              <ol className="list-decimal list-inside space-y-1.5 ml-2 text-gray-400">
+                <li>You authenticate on the new platform using the same LCT (hardware key ceremony)</li>
+                <li>The platform requests your trust profile from the federation &mdash; your T3 scores,
+                  CI history, and MRH graph</li>
+                <li>Cross-federation trust is <strong className="text-gray-300">discounted</strong>: your
+                  0.82 trust on Platform A might arrive as 0.65 on Platform B (MRH decay applies
+                  across federation boundaries, typically 0.7&ndash;0.8x)</li>
+                <li>Your trust then evolves independently on the new platform based on your behavior there</li>
+              </ol>
+              <p>
+                <strong>What doesn&apos;t transfer:</strong> Platform-specific context. Your role as
+                &ldquo;trusted code reviewer&rdquo; on a developer community doesn&apos;t automatically make you
+                a trusted recipe critic on a cooking platform. <em>General</em> trust dimensions (temperament,
+                consistency) carry over; <em>role-specific</em> trust (talent, training) starts fresh.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> The federation trust transfer protocol is specified
+                and simulated but not yet tested across real independent platforms. The discount
+                rates and what exactly transfers are still being refined through simulation.
               </p>
             </div>
           </details>
