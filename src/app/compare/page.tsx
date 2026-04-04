@@ -218,7 +218,7 @@ export default function ComparePage() {
             experience: &ldquo;quality contributions earn more ATP&rdquo; or
             &ldquo;transparency rebuilds trust faster.&rdquo; Each new life
             builds on lessons from the last. (The technical term
-            is <TermTooltip term="EP" /> — epistemic proprioception.)
+            is <TermTooltip term="EP" /> — Cross-Life Learning.)
           </p>
           <p className="text-sm text-slate-400">
             We&apos;ve loaded the most revealing comparison to start — Web4 vs

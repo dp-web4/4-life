@@ -483,7 +483,7 @@ export default function KarmaJourneyPage() {
         <strong style={{ color: 'var(--color-text-secondary)' }}>What the numbers mean:</strong>{' '}
         <strong><Link href="/trust-tensor" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>Trust</Link></strong> = your reputation (Talent + Training + Temperament, averaged).{' '}
         <strong><Link href="/atp-economics" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>ATP</Link></strong> = your energy budget — every action costs ATP, run out and you die.{' '}
-        <strong><Link href="/coherence-index" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>CI</Link></strong> = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;).{' '}
+        <strong><Link href="/coherence-index" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>CI</Link></strong> = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;). Your effective trust = raw trust × CI². Squaring means small inconsistencies barely hurt (0.9² = 0.81) but major inconsistency cuts your trust almost in half (0.6² = 0.36).{' '}
         When you die, your final trust determines your <strong>karma tier</strong> (Honored/Neutral/Constrained), which sets your starting conditions for the next life.{' '}
         Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
       </p>
@@ -559,8 +559,8 @@ export default function KarmaJourneyPage() {
               </div>
               <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
               {currentLife.lifeNumber === 1
-                ? <>Why the gap? <em>Effective trust</em> = raw trust × CI² (Consistency squared). New entities have no consistency history (CI = {currentLife.ci.toFixed(2)}), so your effective trust starts lower than raw. As you make consistent choices, CI rises toward 1.0 and the gap closes.</>
-                : <>Your karma from Life {currentLife.lifeNumber - 1} set your raw trust at {baseComp.toFixed(3)}. Effective trust = raw × CI² — your consistency ({currentLife.ci.toFixed(2)}) {currentLife.ci >= 0.9 ? 'is high, so the gap is small' : 'still modulates what others see'}.</>
+                ? <>Why the gap? <em>Effective trust</em> = raw trust × CI² (Consistency squared). Why squared? Because small inconsistencies have outsized impact — 0.9 consistency barely hurts (0.81×), but 0.6 consistency cuts trust almost in half (0.36×). New entities have no consistency history (CI = {currentLife.ci.toFixed(2)}), so your effective trust starts lower than raw. As you make consistent choices, CI rises toward 1.0 and the gap closes.</>
+                : <>Your karma from Life {currentLife.lifeNumber - 1} set your raw trust at {baseComp.toFixed(3)}. Effective trust = raw × CI² — your consistency ({currentLife.ci.toFixed(2)}) {currentLife.ci >= 0.9 ? 'is high, so the gap is small' : 'still modulates what others see'}. (Why squared? Small inconsistencies have outsized impact: 0.9² = 0.81, barely a dent; 0.6² = 0.36, nearly halved.)</>
               }</span>
             </div>
           ) : Math.abs(effComp - baseComp) > 0.01 ? (

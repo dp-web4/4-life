@@ -1091,7 +1091,9 @@ export default function HowItWorksPage() {
             <h3 className="text-lg font-semibold text-purple-400 mb-2">Law</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Graduated severity levels (critical → high → medium). A <strong>law oracle</strong> evaluates
-              actions and produces verdicts. The key principle: alignment without compliance is acceptable;
+              actions and produces verdicts — for example, flagging a paper submission with 40% overlap as potential plagiarism,
+              or recognizing that bending formatting rules to share findings faster shows good intent.
+              The key principle: alignment without compliance is acceptable;
               compliance without alignment is never acceptable.
             </p>
           </div>

@@ -416,6 +416,7 @@ export default function FirstContactPage() {
                       <strong className="text-gray-300">How does this work?</strong> When someone finds Alice&apos;s post valuable,
                       they confirm its quality — like an upvote, but it costs the reviewer a small amount of energy too.
                       This confirmation converts Alice&apos;s pending receipt (ADP) back into usable energy (ATP).
+                      ADP receipts aren&apos;t just bookkeeping — they&apos;re proof of what you spent energy on, visible to anyone evaluating your contributions.
                       Because confirming quality costs energy, fake validation between friends burns resources faster than it creates them.
                     </p>
                   </div>
