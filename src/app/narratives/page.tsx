@@ -89,7 +89,7 @@ const FALLBACK_NARRATIVES: NarrativeMeta[] = [
     events: 20,
     timestamp: '2026-01-27',
     source_simulation: 'ep_driven_closed_loop_results.json',
-    summary: 'Bob learns by proposing actions, observing outcomes, and refining his understanding. Starting at trust 0.49, he navigates ATP crises and crosses the consciousness threshold.',
+    summary: 'Bob learns by proposing actions, observing outcomes, and refining his understanding. Starting at trust 0.49, he navigates ATP crises and crosses the aliveness threshold.',
   },
 ];
 

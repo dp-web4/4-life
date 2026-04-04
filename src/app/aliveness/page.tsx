@@ -1479,7 +1479,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             A synthon has a lifecycle just like an individual:
           </p>
           <ul>
-            <li><strong>Formation</strong> — Trust between members becomes dense and mutual. Their MRH horizons overlap. Energy flows balance.</li>
+            <li><strong>Formation</strong> — Trust between members becomes dense and mutual (roughly: most pairs above 0.5 trust, sustained over multiple interaction cycles). Their MRH horizons overlap. Energy flows balance. There&apos;s no hard threshold — synthons emerge gradually, like a friendship group that becomes a team.</li>
             <li><strong>Health</strong> — The group maintains witness diversity, balanced ATP distribution, and high internal trust coherence.</li>
             <li><strong>Decay</strong> — Trust diverges, boundaries leak, energy concentrates in fewer members. These are early warnings before dissolution.</li>
           </ul>

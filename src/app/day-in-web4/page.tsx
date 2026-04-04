@@ -332,7 +332,7 @@ const SCENARIOS: Scenario[] = [
     ],
   },
   {
-    time: '7:30 PM',
+    time: '9:00 PM',
     title: 'You Drop Your Phone',
     icon: '📱',
     setup: 'Your phone slips out of your pocket and shatters on the sidewalk. On today\'s internet, you\'d reset passwords for dozens of accounts. In Web4, your identity doesn\'t live in one device.',
@@ -505,7 +505,7 @@ export default function DayInWeb4Page() {
                 <div className="space-y-1.5 text-xs">
                   <div className="flex justify-between">
                     <span className="text-gray-500">Device</span>
-                    <span className="text-gray-300">iPhone 15 (Secure Enclave)</span>
+                    <span className="text-gray-300">iPhone 15 / Pixel 8 / Galaxy S24 (Secure Enclave / Titan M2 / Knox)</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-500">Trust ceiling</span>
@@ -938,7 +938,7 @@ export default function DayInWeb4Page() {
             </div>
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
-              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>7:30 PM &mdash; You Drop Your Phone</p>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>9:00 PM &mdash; You Drop Your Phone</p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
                 <strong style={{ color: '#ef4444' }}>Today:</strong> You spend the evening resetting passwords, re-enabling 2FA, and hoping you didn&apos;t lose access to any accounts.
               </p>
