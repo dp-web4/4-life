@@ -1496,6 +1496,17 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             nothing to your personal reputation. If it was struggling, you may have already
             experienced some trust decay from the group&apos;s declining coherence.
           </p>
+          {/* What happens when a key member leaves — visitor Q Apr 4 */}
+          <p style={{marginTop: '0.5rem'}}>
+            <strong>What if the most-trusted member leaves?</strong> The synthon recalculates its
+            collective trust as the weighted average of remaining members. If one person
+            contributed disproportionately — say trust 0.92 in a group averaging 0.65 — losing
+            them hurts, but it&apos;s not fatal. The synthon survives as long as enough mutual trust
+            remains among the rest. Think of it like a band losing its lead singer: the remaining
+            members still have their skills and chemistry. They may drop in prominence, but
+            they don&apos;t dissolve unless the underlying relationships were already fragile.
+            The decay precursor system (below) can detect this risk before it becomes critical.
+          </p>
           <details style={{marginTop: '1rem'}}>
             <summary className="cursor-pointer text-sm font-semibold text-gray-400 hover:text-purple-400 transition-colors">
               Group dynamics deep dive: decay precursors (advanced)
