@@ -399,6 +399,31 @@ export default function LCTExplainerPage() {
               Collusion requires coordinating multiple independent parties simultaneously,
               which is both economically costly and mathematically detectable.
             </p>
+            {/* Witness bootstrap — visitor Q Apr 4: "who witnesses the first witnesses?" */}
+            <p className="text-sm text-gray-300 mt-3">
+              <strong className="text-sky-400">But who witnesses the first witnesses?</strong> This is
+              the bootstrap problem — and it&apos;s real. Web4 addresses it in three layers:
+            </p>
+            <ol className="text-sm text-gray-400 space-y-1.5 mt-2 ml-4 list-decimal">
+              <li><strong className="text-gray-300">Device self-witnessing</strong> — Your very first LCT
+              only needs <em>your own devices</em> to witness each other. If you have a phone and a laptop,
+              they attest to each other&apos;s hardware. No external witnesses required for your first identity.</li>
+              <li><strong className="text-gray-300">Institutional anchors</strong> — Early adopters (universities,
+              employers, identity providers) act as high-trust seed nodes. They witness new members the way a
+              notary witnesses a signature — using their existing institutional credibility. This isn&apos;t
+              centralization; it&apos;s a bootstrap that decentralizes as the network grows.</li>
+              <li><strong className="text-gray-300">Trust grows outward</strong> — Each new participant who
+              gets witnessed can then witness others. The network expands like a tree: roots (institutions)
+              support early growth, but branches (regular users) eventually do most of the witnessing.
+              After ~1,000 active participants, simulations show the network is self-sustaining without
+              any institutional anchors.</li>
+            </ol>
+            <p className="text-xs text-gray-500 mt-2">
+              This is the same bootstrap pattern used by certificate authorities (CAs) on today&apos;s web —
+              browsers ship with pre-trusted root certificates, and the trust chain grows from there.
+              Web4&apos;s version is more distributed (multiple anchor types, not a handful of CAs) and
+              more recoverable (anchors can be replaced without breaking the chain).
+            </p>
             <p className="text-sm text-gray-300 mt-3">
               <strong className="text-sky-400">What about metadata and surveillance?</strong> If devices
               are constantly attesting to each other, couldn&apos;t the attestation patterns themselves reveal
