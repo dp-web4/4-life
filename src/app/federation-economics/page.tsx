@@ -1134,6 +1134,16 @@ export default function FederationEconomicsPage() {
             <p className="text-gray-500 text-xs mt-2">
               <strong>The feeling:</strong> You&apos;re recognized but not entitled. Think of it like transferring to a new school with a recommendation letter — it opens the door faster, but you still need to make friends.
             </p>
+            {/* Same-domain transfer clarification — visitor Q Apr 4 */}
+            <p className="text-gray-400 text-sm mt-3">
+              <strong className="text-gray-300">What if both communities value the same skill?</strong> Domain
+              matching preserves more trust. If you&apos;re a trusted programmer (T3 = 0.85) in
+              Society A and join Society B which also evaluates programming, the Talent and
+              Training dimensions transfer with only MRH distance decay (0.7 per hop) — no
+              additional domain penalty. Your imported trust might land at ~0.60 instead of ~0.38.
+              Temperament (behavioral consistency) transfers at full MRH rate regardless of domain,
+              since it reflects <em>how</em> you work, not <em>what</em> you work on.
+            </p>
           </div>
         </details>
       </section>
