@@ -213,12 +213,12 @@ export default function ComparePage() {
             across life cycles.
           </p>
           <p className="text-sm text-slate-400 mb-2">
-            <strong className="text-slate-300">Cross-Life Learning</strong>{" "}
-            (internally called <TermTooltip term="EP" />) — an agent&apos;s
-            ability to know what it knows and doesn&apos;t know. Agents with
-            this capability learn from past lives: &ldquo;quality contributions
-            earn more ATP&rdquo; or &ldquo;transparency rebuilds trust
-            faster.&rdquo;
+            <strong className="text-slate-300">Cross-Life Learning</strong> — self-aware
+            learning across lifetimes. Agents discover what works through
+            experience: &ldquo;quality contributions earn more ATP&rdquo; or
+            &ldquo;transparency rebuilds trust faster.&rdquo; Each new life
+            builds on lessons from the last. (The technical term
+            is <TermTooltip term="EP" /> — epistemic proprioception.)
           </p>
           <p className="text-sm text-slate-400">
             We&apos;ve loaded the most revealing comparison to start — Web4 vs

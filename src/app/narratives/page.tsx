@@ -308,9 +308,10 @@ export default function NarrativesPage() {
         <div className="mb-6">
           <h2 className="text-xl font-bold mb-2 text-gray-300">Browse All Stories</h2>
           <p className="text-sm text-gray-500 mb-4">
-            {narratives.length > 0 ? `${narratives.length} stories to explore.` : 'No stories yet.'} Want your own? Run the{' '}
+            Every simulation produces a unique story. Run the{' '}
             <Link href="/society-simulator" className="text-sky-400 hover:underline">Society Simulator</Link>,
-            watch a society unfold, and save the narrative — every simulation produces a unique story.
+            watch a society unfold, and save the narrative to your collection.
+            {narratives.length > 0 && ` ${narratives.length} saved so far.`}
           </p>
           <div className="flex gap-4">
             <input
