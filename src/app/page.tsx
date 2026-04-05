@@ -387,7 +387,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         padding: '1rem 1.25rem',
       }}>
         <h3 style={{ fontSize: '0.95rem', marginBottom: '0.75rem', color: 'var(--color-text-secondary)' }}>
-          What&apos;s New
+          What&apos;s New <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', fontWeight: 400 }}>(for returning visitors)</span>
         </h3>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
           {[
