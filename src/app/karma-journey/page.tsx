@@ -534,7 +534,7 @@ export default function KarmaJourneyPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
             {[
               { label: 'Life', value: `#${currentLife.lifeNumber}`, color: '#93c5fd' },
-              { label: 'Trust (Effective)', value: effComp.toFixed(3), color: effComp > 0.7 ? '#6ee7b7' : effComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `Raw ${baseComp.toFixed(2)} × CI² (${currentLife.ci.toFixed(2)}) = ${effComp.toFixed(3)}` },
+              { label: 'Trust (Raw)', value: baseComp.toFixed(3), color: baseComp > 0.7 ? '#6ee7b7' : baseComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `This determines survival (≥ 0.5)` },
               { label: 'Energy', value: `${currentLife.atp}`, color: currentLife.atp > 50 ? '#6ee7b7' : currentLife.atp > 20 ? '#fde68a' : '#fca5a5' },
               { label: 'Consistency', value: currentLife.ci.toFixed(2), color: currentLife.ci > 0.8 ? '#6ee7b7' : currentLife.ci > 0.5 ? '#fde68a' : '#fca5a5' },
             ].map(stat => (
@@ -555,12 +555,21 @@ export default function KarmaJourneyPage() {
               background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)',
             }}>
               <div style={{ marginBottom: '0.375rem' }}>
-                <strong>Raw: {baseComp.toFixed(3)}</strong> <span style={{ color: 'var(--color-text-muted)' }}>→</span> <strong style={{ color: 'var(--color-sky)' }}>Effective: {effComp.toFixed(3)}</strong>
+                <strong>Raw trust: {baseComp.toFixed(3)}</strong> — determines survival (≥ 0.5 to stay alive)
+              </div>
+              <div style={{ marginBottom: '0.375rem', fontSize: '0.75rem' }}>
+                <span style={{ color: 'var(--color-text-muted)' }}>Others see your <em>effective</em> trust: </span><strong style={{ color: 'var(--color-sky)' }}>{effComp.toFixed(3)}</strong>
+                <span style={{ color: 'var(--color-text-muted)' }}> (raw × CI² = {baseComp.toFixed(2)} × {currentLife.ci.toFixed(2)}²)</span>
+                {effComp < 0.5 && baseComp >= 0.5 && (
+                  <span style={{ display: 'block', marginTop: '0.25rem', color: '#6ee7b7', fontSize: '0.7rem' }}>
+                    ✓ You&apos;re safe — <strong>raw trust</strong> determines survival, not effective trust. Effective trust only affects your costs and reach.
+                  </span>
+                )}
               </div>
               <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
               {currentLife.lifeNumber === 1
-                ? <>Why the gap? <em>Effective trust</em> = raw trust × CI² (Consistency squared). Why squared? Because small inconsistencies have outsized impact — 0.9 consistency barely hurts (0.81×), but 0.6 consistency cuts trust almost in half (0.36×). New entities have no consistency history (CI = {currentLife.ci.toFixed(2)}), so your effective trust starts lower than raw. As you make consistent choices, CI rises toward 1.0 and the gap closes.</>
-                : <>Your karma from Life {currentLife.lifeNumber - 1} set your raw trust at {baseComp.toFixed(3)}. Effective trust = raw × CI² — your consistency ({currentLife.ci.toFixed(2)}) {currentLife.ci >= 0.9 ? 'is high, so the gap is small' : 'still modulates what others see'}. (Why squared? Small inconsistencies have outsized impact: 0.9² = 0.81, barely a dent; 0.6² = 0.36, nearly halved.)</>
+                ? <>Why lower? Consistency (CI) modulates how others perceive your trust. New entities have limited history (CI = {currentLife.ci.toFixed(2)}), so effective trust starts below raw. As you make consistent choices, CI rises toward 1.0 and the gap closes. The squaring means small inconsistencies have outsized impact: 0.9² = 0.81 (barely a dent), but 0.6² = 0.36 (nearly halved).</>
+                : <>Your karma from Life {currentLife.lifeNumber - 1} set your raw trust at {baseComp.toFixed(3)}. Consistency ({currentLife.ci.toFixed(2)}) {currentLife.ci >= 0.9 ? 'is high, so the gap is small' : 'still modulates what others see'}. The squaring means small inconsistencies have outsized impact: 0.9² = 0.81, barely a dent; 0.6² = 0.36, nearly halved.</>
               }</span>
             </div>
           ) : Math.abs(effComp - baseComp) > 0.01 ? (
