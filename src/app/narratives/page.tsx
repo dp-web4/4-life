@@ -311,7 +311,7 @@ export default function NarrativesPage() {
             Every simulation produces a unique story. Run the{' '}
             <Link href="/society-simulator" className="text-sky-400 hover:underline">Society Simulator</Link>,
             watch a society unfold, and save the narrative to your collection.
-            {narratives.length > 0 && ` ${narratives.length} saved so far.`}
+            {narratives.length > 0 && ` ${narratives.length} ${narratives.length <= 4 ? 'featured stories' : 'stories in your collection'}.`}
           </p>
           <div className="flex gap-4">
             <input
