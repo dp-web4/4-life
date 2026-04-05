@@ -44,6 +44,9 @@ export default function HowItWorksPage() {
           <strong>Project status:</strong> Web4 is a <strong>research prototype</strong>, not a deployed product.
           The mechanics described here are validated through simulations and ~47,000 lines of tested code,
           but no live network with real users exists yet. The simulations on this site let you explore how it <em>would</em> work.
+          {' '}Curious what early deployment could look like? See the{' '}
+          <Link href="/why-web4#faq-adoption-path" className="text-amber-300 hover:text-amber-200 underline">concrete adoption path</Link>{' '}
+          — from browser extension overlays to full integration.
         </div>
         <div className="mb-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg text-sm text-gray-300 space-y-2">
           <p className="text-xs uppercase tracking-wide text-sky-400 mb-2 font-semibold">Key Takeaways</p>
