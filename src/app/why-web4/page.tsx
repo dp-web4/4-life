@@ -381,12 +381,13 @@ export default function WhyWeb4Page() {
         <h2 className="text-3xl font-bold mb-6 text-gray-100">Honest Questions</h2>
         <p className="text-gray-400 mb-4">
           If you&#39;re skeptical, good. Here are the hard questions visitors ask, and honest answers.
+          Looking for something specific? Open the topic index below.
         </p>
 
         {/* FAQ index — jump to any question */}
-        <details className="mb-8 text-sm">
-          <summary className="text-sky-400 hover:text-sky-300 cursor-pointer list-none inline-flex items-center gap-1.5">
-            <span className="text-xs">▶</span> Browse all questions by topic
+        <details className="mb-8 text-sm border border-sky-800/30 rounded-lg p-3" id="faq-index">
+          <summary className="text-sky-400 hover:text-sky-300 cursor-pointer list-none inline-flex items-center gap-1.5 font-semibold">
+            <span className="text-xs">▶</span> Browse all questions by topic (30+ FAQs)
           </summary>
           <nav className="mt-3 p-4 bg-gray-800/30 border border-gray-700/50 rounded-lg columns-1 sm:columns-2 gap-x-6">
             <div className="break-inside-avoid mb-4">
@@ -458,6 +459,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-gdpr" className="hover:text-sky-400 transition-colors">GDPR right to be forgotten?</a></li>
                 <li><a href="#faq-reputation-visibility" className="hover:text-sky-400 transition-colors">Who can see my reputation?</a></li>
                 <li><a href="#faq-pseudonymous" className="hover:text-sky-400 transition-colors">Pseudonymity &amp; whistleblowers?</a></li>
+                <li><a href="#faq-multi-persona" className="hover:text-sky-400 transition-colors">Separate personal &amp; professional identities?</a></li>
                 <li><a href="#faq-vpn-tor" className="hover:text-sky-400 transition-colors">VPNs, Tor &amp; Coherence Index?</a></li>
                 <li><a href="#faq-mrh-messaging" className="hover:text-sky-400 transition-colors">How MRH decides who sees messages</a></li>
                 <li><a href="#faq-filter-bubbles" className="hover:text-sky-400 transition-colors">Does MRH create filter bubbles?</a></li>
@@ -1875,6 +1877,46 @@ export default function WhyWeb4Page() {
                 pseudonymous identity to you. Multi-device witness networks reduce this risk but don&apos;t eliminate
                 it. For journalists and activists in hostile states, device security is the weakest link — and that&apos;s
                 a hardware problem, not a protocol one.
+              </p>
+            </div>
+          </details>
+
+          {/* Multiple personas — visitor Q Apr 5 */}
+          <details id="faq-multi-persona" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Can I have separate personal and professional identities on the same device?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Not separate identities — separate roles.</strong> Web4&apos;s Trust Tensor is already
+                role-scoped: your trust as a software developer is tracked independently from your trust as a
+                cooking enthusiast. You don&apos;t need separate accounts because your single identity naturally
+                has different trust profiles in different contexts.
+              </p>
+              <p>
+                Think of it like a professional license: one person can hold both a medical license and a
+                pilot&apos;s license. Your medical expertise doesn&apos;t affect your pilot rating and vice
+                versa. Web4 works the same way — one identity, many trust dimensions.
+              </p>
+              <p>
+                What <em>does</em> carry across roles is your{" "}
+                <Link href="/trust-tensor" className="text-sky-400 hover:underline">Temperament</Link> score
+                (reliability, consistency) and{" "}
+                <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link>.
+                If you&apos;re consistently dependable in one domain, that baseline reliability is visible
+                elsewhere — even if your domain-specific Talent starts at zero.
+              </p>
+              <p>
+                This is a deliberate design choice: someone who&apos;s reliable as a doctor is <em>probably</em> reliable
+                as a neighbor, even though their medical trust doesn&apos;t transfer to home repair.
+                The system captures that intuition without collapsing everything into a single score.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Some people genuinely want &ldquo;firewall&rdquo; separation between
+                identities (e.g., a public figure who also participates in support communities). Web4&apos;s
+                current design doesn&apos;t support fully separate identities on one device. For high-privacy
+                scenarios, a separate device provides true identity separation — but that&apos;s a cost tradeoff.
               </p>
             </div>
           </details>
