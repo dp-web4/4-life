@@ -1080,6 +1080,14 @@ export default function ATPEconomicsPage() {
                 benefits from the fee except the community.
               </p>
               <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+                <strong className="text-gray-300">Does buying a coffee cost 5%?</strong> It depends on the
+                action type. Most everyday actions (posting, reviewing, voting) don&apos;t involve transfers at all —
+                they spend your own ATP and you earn it back through quality confirmation. The 5% fee only applies
+                when you <em>send ATP to another agent</em>. In marketplace scenarios, the escrow system holds ATP
+                during a transaction and releases it on delivery — the 5% covers the transfer plus anti-fraud
+                guarantees. For small daily actions, the cost is your action&apos;s ATP price, not a percentage.
+              </p>
+              <p className="text-gray-400 text-sm mt-3 leading-relaxed">
                 The same 5% principle applies to <strong className="text-gray-300">cross-federation delegation</strong>.
                 When authority is delegated across society boundaries (A → B → C), each hop charges a
                 5% ATP fee and scope monotonically narrows — a child delegation can never have more

@@ -1496,6 +1496,15 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             nothing to your personal reputation. If it was struggling, you may have already
             experienced some trust decay from the group&apos;s declining coherence.
           </p>
+          <p style={{marginTop: '0.5rem'}}>
+            <strong className="text-purple-400">What if a key member leaves?</strong> The synthon
+            recalculates its collective trust without them. If the departing member was central
+            (high trust, many connections), the group&apos;s collective score drops — sometimes enough
+            to dissolve the synthon entirely. Dissolution isn&apos;t catastrophic: each member retains
+            their individual trust scores and ATP. They just lose the collective visibility and
+            MRH density that the group provided. Think of it like a band breaking up — each
+            musician keeps their reputation, but the &quot;band&quot; no longer exists as an entity.
+          </p>
           <details style={{marginTop: '1rem'}}>
             <summary className="cursor-pointer text-sm font-semibold text-gray-400 hover:text-purple-400 transition-colors">
               Group dynamics deep dive: decay precursors (advanced)

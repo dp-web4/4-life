@@ -698,16 +698,21 @@ export default function HowItWorksPage() {
         </div>
 
         {/* Synthon foreshadowing */}
-        <div className="mt-8 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg">
+        <div className="mt-8 p-5 bg-purple-950/20 border border-purple-800/30 rounded-lg">
+          <h3 className="text-purple-400 font-semibold text-base mb-2">Groups Can Come Alive Too</h3>
           <p className="text-gray-300 text-sm leading-relaxed">
             So far we&apos;ve talked about individual agents surviving through energy, trust, and consistency.
             But what happens when several agents consistently cooperate?{" "}
-            <strong className="text-purple-400">Groups can be &quot;alive&quot; too.</strong>{" "}
             When individuals build dense mutual trust, something emerges at the group level — Web4 calls
-            these <Link href="/aliveness#synthons" className="text-sky-400 hover:underline">synthons</Link>.
+            these <Link href="/aliveness#synthons" className="text-sky-400 hover:underline">synthons</Link>{" "}
+            <span className="text-gray-400">(from chemistry: a unit that functions as a building block for larger structures)</span>.
             A team that consistently collaborates well develops its own collective aliveness score,
             separate from any individual member. Think of it like a band that&apos;s greater than
-            the sum of its musicians.
+            the sum of its musicians — with its own reputation, energy, and lifecycle.
+          </p>
+          <p className="text-gray-400 text-xs mt-2">
+            Synthons form gradually, can dissolve if trust erodes, and you can leave without losing your personal trust.{" "}
+            <Link href="/aliveness#synthons" className="text-sky-400 hover:underline">Full details →</Link>
           </p>
         </div>
       </section>
