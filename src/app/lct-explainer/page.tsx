@@ -395,7 +395,17 @@ export default function LCTExplainerPage() {
               prototype, both are simulated. In a deployed system, your devices handle identity witnessing; external
               nodes (universities, employers, individuals) add network-level verification but aren&apos;t required.
             </p>
-            <p className="text-xs text-gray-500">
+            <p className="text-sm text-gray-300 mt-3">
+              <strong className="text-sky-400">What&apos;s the incentive to run a witness node?</strong> Witnesses
+              earn ATP for validation work — each attestation they process earns a small fee from the
+              network&apos;s redistribution pool (not from the user being witnessed). For institutions like
+              universities or employers, the incentive is also reputational: being a trusted witness
+              builds their own T3 scores, making their attestations more valuable. Individual witness
+              nodes earn less per attestation but face lower operating costs. The economics parallel
+              email servers: some organizations run their own for control, most individuals use
+              shared infrastructure, and the network works regardless of the mix.
+            </p>
+            <p className="text-xs text-gray-500 mt-2">
               Collusion requires coordinating multiple independent parties simultaneously,
               which is both economically costly and mathematically detectable.
             </p>

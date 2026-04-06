@@ -489,9 +489,15 @@ export default function WhyWeb4Page() {
         </details>
 
         {/* Most asked — top questions for first-time visitors */}
-        <p className="text-sm text-gray-400 mb-3 flex items-center gap-2">
-          <span className="text-amber-400">💡</span> New here? Start with these — they cover what most visitors want to know first.
-        </p>
+        <div className="bg-amber-950/20 border border-amber-800/30 rounded-xl p-5 mb-6">
+          <p className="text-gray-300 leading-relaxed">
+            <span className="text-amber-400 font-semibold">Start here.</span>{" "}
+            These 10 questions are what most first-time visitors want answered.
+            Click any question to expand it. The{" "}
+            <a href="#faq-index" className="text-sky-400 hover:underline">topic index above</a>{" "}
+            has 20+ more if you want to go deeper.
+          </p>
+        </div>
         <h3 className="text-sm uppercase tracking-wide text-amber-400/80 mb-4">Most asked</h3>
         <div className="space-y-4 mb-10">
           {/* Status */}

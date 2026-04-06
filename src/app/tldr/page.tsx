@@ -183,6 +183,15 @@ export default function TLDRPage() {
               <div className="text-gray-500 text-xs mt-1">15 min interactive</div>
             </Link>
           </div>
+          <div className="mt-4 pt-4 border-t border-gray-700/50">
+            <Link
+              href="/learn"
+              className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-sky-400 transition-colors"
+            >
+              <span className="text-purple-400 font-semibold">Prefer a guided path?</span>
+              <span>Learning Journey — structured progression from beginner to advanced &rarr;</span>
+            </Link>
+          </div>
         </div>
 
         {/* Make it personal */}
