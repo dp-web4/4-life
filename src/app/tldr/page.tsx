@@ -186,10 +186,15 @@ export default function TLDRPage() {
           <div className="mt-4 pt-4 border-t border-gray-700/50">
             <Link
               href="/learn"
-              className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-sky-400 transition-colors"
+              className="block bg-gradient-to-r from-purple-950/30 to-sky-950/30 border border-purple-800/30 rounded-lg p-4 hover:border-purple-600 transition-colors"
             >
-              <span className="text-purple-400 font-semibold">Prefer a guided path?</span>
-              <span>Learning Journey — structured progression from beginner to advanced &rarr;</span>
+              <div className="flex items-center gap-2">
+                <span className="text-purple-400 font-semibold">Prefer a guided path?</span>
+                <span className="text-gray-500 text-xs">&rarr;</span>
+              </div>
+              <div className="text-gray-400 text-sm mt-1">
+                Learning Journey — structured progression from beginner to advanced, with time estimates for each concept
+              </div>
             </Link>
           </div>
         </div>

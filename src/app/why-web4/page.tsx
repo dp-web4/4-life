@@ -873,9 +873,115 @@ export default function WhyWeb4Page() {
         {/* All other FAQs — collapsed by default */}
         <details id="going-deeper" className="group">
           <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">
-            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper</h3>
+            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 6 topics, 40+ questions</h3>
             <span className="text-gray-500 text-sm group-open:rotate-90 transition-transform">▶</span>
           </summary>
+
+          {/* Category quick-nav — browse by topic instead of scrolling 40+ questions */}
+          <nav className="mb-6 p-4 bg-gray-800/30 border border-gray-700/50 rounded-lg">
+            <p className="text-xs text-gray-500 mb-3 uppercase tracking-wide font-semibold">Jump to topic</p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <details className="group/cat">
+                <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
+                  <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
+                  Adoption (11)
+                </summary>
+                <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
+                  <li><a href="#faq-vs-existing" className="hover:text-sky-400">Why better than X?</a></li>
+                  <li><a href="#faq-transition" className="hover:text-sky-400">Switch everything at once?</a></li>
+                  <li><a href="#faq-app-ui" className="hover:text-sky-400">What would it look like?</a></li>
+                  <li><a href="#faq-adoption-path" className="hover:text-sky-400">Simulation → real protocol?</a></li>
+                  <li><a href="#faq-community-start" className="hover:text-sky-400">How many to start?</a></li>
+                  <li><a href="#faq-early-adopters" className="hover:text-sky-400">Early adopters in a bubble?</a></li>
+                  <li><a href="#faq-dual-trust" className="hover:text-sky-400">Reddit karma vs Web4 trust</a></li>
+                  <li><a href="#faq-platform-migration" className="hover:text-sky-400">If Reddit adopted Web4?</a></li>
+                  <li><a href="#faq-trust-transfer-mechanics" className="hover:text-sky-400">Trust between platforms?</a></li>
+                  <li><a href="#faq-developer-integration" className="hover:text-sky-400">Developer experience?</a></li>
+                  <li><a href="#faq-parallel-identities" className="hover:text-sky-400">Parallel identities?</a></li>
+                </ul>
+              </details>
+              <details className="group/cat">
+                <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
+                  <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
+                  Identity (11)
+                </summary>
+                <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
+                  <li><a href="#faq-affordability" className="hover:text-sky-400">Device affordability?</a></li>
+                  <li><a href="#faq-many-identities" className="hover:text-sky-400">Multiple hardware = multiple IDs?</a></li>
+                  <li><a href="#faq-bootstrap-witnesses" className="hover:text-sky-400">Bootstrapping witnesses</a></li>
+                  <li><a href="#faq-manufacturers" className="hover:text-sky-400">Hardware gatekeepers?</a></li>
+                  <li><a href="#faq-stolen-device" className="hover:text-sky-400">Device stolen?</a></li>
+                  <li><a href="#faq-hardware-standards" className="hover:text-sky-400">TPM v2 → v3?</a></li>
+                  <li><a href="#faq-witnessed-presence" className="hover:text-sky-400">Witnessed presence UX?</a></li>
+                  <li><a href="#faq-shared-devices" className="hover:text-sky-400">Shared/borrowed devices?</a></li>
+                  <li><a href="#faq-tpm-affordability" className="hover:text-sky-400">Can&apos;t afford TPM?</a></li>
+                  <li><a href="#faq-buy-50-devices" className="hover:text-sky-400">Buy 50 devices?</a></li>
+                  <li><a href="#faq-children" className="hover:text-sky-400">Children and minors?</a></li>
+                </ul>
+              </details>
+              <details className="group/cat">
+                <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
+                  <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
+                  Trust (11)
+                </summary>
+                <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
+                  <li><a href="#faq-trust-transfer" className="hover:text-sky-400">Trust between communities?</a></li>
+                  <li><a href="#faq-threshold" className="hover:text-sky-400">Is 0.5 universal?</a></li>
+                  <li><a href="#faq-creative-work" className="hover:text-sky-400">V3 and creative work?</a></li>
+                  <li><a href="#faq-cheaters" className="hover:text-sky-400">Catching cheaters?</a></li>
+                  <li><a href="#faq-ci-example" className="hover:text-sky-400">CI for a normal person?</a></li>
+                  <li><a href="#faq-month-off" className="hover:text-sky-400">Month off = trust gone?</a></li>
+                  <li><a href="#faq-youthful-mistakes" className="hover:text-sky-400">Escaping youthful mistakes?</a></li>
+                  <li><a href="#faq-cultural-quality" className="hover:text-sky-400">Cultural quality differences?</a></li>
+                  <li><a href="#faq-quality-standards" className="hover:text-sky-400">Quality across communities?</a></li>
+                  <li><a href="#faq-adversarial-quality" className="hover:text-sky-400">Hostile communities gaming?</a></li>
+                  <li><a href="#faq-unpopular-truth" className="hover:text-sky-400">Unpopular but true content?</a></li>
+                </ul>
+              </details>
+              <details className="group/cat">
+                <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
+                  <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
+                  Privacy (7)
+                </summary>
+                <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
+                  <li><a href="#faq-gdpr" className="hover:text-sky-400">GDPR right to be forgotten?</a></li>
+                  <li><a href="#faq-reputation-visibility" className="hover:text-sky-400">Who sees my reputation?</a></li>
+                  <li><a href="#faq-pseudonymous" className="hover:text-sky-400">Pseudonymity?</a></li>
+                  <li><a href="#faq-multi-persona" className="hover:text-sky-400">Personal vs professional?</a></li>
+                  <li><a href="#faq-vpn-tor" className="hover:text-sky-400">VPNs, Tor &amp; CI?</a></li>
+                  <li><a href="#faq-mrh-messaging" className="hover:text-sky-400">MRH and message visibility?</a></li>
+                  <li><a href="#faq-filter-bubbles" className="hover:text-sky-400">MRH filter bubbles?</a></li>
+                </ul>
+              </details>
+              <details className="group/cat">
+                <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
+                  <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
+                  Economics (5)
+                </summary>
+                <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
+                  <li><a href="#faq-5-percent" className="hover:text-sky-400">5% transfer cost?</a></li>
+                  <li><a href="#faq-circular-farming" className="hover:text-sky-400">Circular farming?</a></li>
+                  <li><a href="#faq-internet-scale" className="hover:text-sky-400">Trust at internet scale?</a></li>
+                  <li><a href="#faq-death-rebirth" className="hover:text-sky-400">Death and rebirth?</a></li>
+                  <li><a href="#faq-cross-federation-disputes" className="hover:text-sky-400">Cross-federation disputes?</a></li>
+                </ul>
+              </details>
+              <details className="group/cat">
+                <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
+                  <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
+                  Governance (5)
+                </summary>
+                <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
+                  <li><a href="#faq-who-builds" className="hover:text-sky-400">Who builds this?</a></li>
+                  <li><a href="#faq-infrastructure" className="hover:text-sky-400">Who runs infrastructure?</a></li>
+                  <li><a href="#faq-ai-agents" className="hover:text-sky-400">AI agent participation?</a></li>
+                  <li><a href="#faq-protocol-changes" className="hover:text-sky-400">Protocol governance?</a></li>
+                  <li><a href="#faq-sal" className="hover:text-sky-400">What is SAL?</a></li>
+                </ul>
+              </details>
+            </div>
+          </nav>
+
         <div className="space-y-6">
 
           {/* Moved from Most Asked — still important but second-tier for first visit */}
