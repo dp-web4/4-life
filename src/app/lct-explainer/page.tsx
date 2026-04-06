@@ -1263,6 +1263,30 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
+          {/* FAQ: Legitimate multiple roles — visitor unanswered Q Apr 5 */}
+          <div className="mt-6 p-4 bg-green-950/20 border border-green-800/30 rounded-lg">
+            <h3 className="text-sm font-bold text-green-400 mb-2">
+              But I have separate personal and professional lives — do I need separate identities?
+            </h3>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong>No — you need separate roles, not separate identities.</strong> Web4&apos;s{" "}
+              <Link href="/trust-tensor" className="text-sky-400 hover:underline">Trust Tensor</Link> is
+              already role-scoped: your trust as a software developer is tracked independently from your
+              trust as a cooking enthusiast. One identity, many trust dimensions — like holding both a
+              medical license and a pilot&apos;s license.
+            </p>
+            <p className="text-sm text-gray-300">
+              What <em>does</em> carry across roles is your <strong>Temperament</strong> (reliability,
+              consistency) and your <strong>Coherence Index</strong> (behavioral patterns). So your professional
+              reputation for meeting deadlines benefits you in hobby communities too — without your cooking
+              skills affecting your developer trust score.
+              See the{" "}
+              <Link href="/why-web4#faq-multi-persona" className="text-green-400 hover:text-green-300 underline">
+                full multi-persona FAQ
+              </Link> for details.
+            </p>
+          </div>
+
           {/* FAQ: Device Loss */}
           <div className="mt-6 p-4 bg-yellow-950/20 border border-yellow-800/30 rounded-lg">
             <h3 className="text-sm font-bold text-yellow-400 mb-2">

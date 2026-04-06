@@ -1402,6 +1402,41 @@ Temperament:  30-day half-life (recent behavior matters most)
         </div>
       </section>
 
+      {/* Cross-community trust transfer — visitor unanswered Q Apr 5 */}
+      <section className="max-w-4xl mx-auto mt-8">
+        <div className="bg-purple-900/20 border border-purple-800/30 rounded-xl p-6">
+          <h3 className="text-lg font-semibold text-purple-400 mb-2">What about moving to a completely different community?</h3>
+          <p className="text-gray-300 text-sm mb-3">
+            Switching roles within a community is one thing — but what happens when a data analyst joins
+            a cooking community? Your <strong className="text-white">Talent</strong> (data analysis skill)
+            doesn&apos;t transfer at all — it&apos;s irrelevant in a kitchen. Your <strong className="text-white">Training</strong>{" "}
+            (formal credentials) similarly doesn&apos;t carry over.
+          </p>
+          <p className="text-gray-300 text-sm mb-3">
+            But your <strong className="text-purple-300">Temperament does transfer</strong>. If you&apos;re
+            known for meeting deadlines, communicating clearly, and acting ethically, those behavioral
+            patterns are visible to the new community. You don&apos;t start from absolute zero — you start
+            with evidence that you&apos;re a reliable person, even if you&apos;re an unproven cook.
+          </p>
+          <p className="text-gray-300 text-sm mb-2">
+            Cross-community transfer also applies{" "}
+            <Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">MRH decay</Link>{" "}
+            (0.7&times; per hop of social distance), so distant communities see a discounted version
+            of your trust — portable but not dictatorial.
+          </p>
+          <p className="text-xs text-gray-500">
+            For the full mechanics of how trust moves between communities, see the{" "}
+            <Link href="/why-web4#faq-trust-transfer" className="text-purple-400 hover:text-purple-300 underline">
+              trust transfer FAQ
+            </Link>{" "}
+            and{" "}
+            <Link href="/why-web4#faq-quality-standards" className="text-purple-400 hover:text-purple-300 underline">
+              cross-community quality standards FAQ
+            </Link>.
+          </p>
+        </div>
+      </section>
+
       {/* Why This Matters */}
       <section className="max-w-4xl mx-auto mt-16">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
