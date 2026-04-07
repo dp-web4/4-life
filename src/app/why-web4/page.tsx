@@ -940,7 +940,6 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-legacy-content" className="hover:text-sky-400">Existing reputation?</a></li>
                   <li><a href="#faq-developer-integration" className="hover:text-sky-400">Developer experience?</a></li>
                   <li><a href="#faq-parallel-identities" className="hover:text-sky-400">Parallel identities?</a></li>
-                  <li><a href="#faq-legacy-content" className="hover:text-sky-400">Legacy content import?</a></li>
                 </ul>
               </details>
               <details className="group/cat">
@@ -2657,48 +2656,6 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Legacy content import — visitor Q Apr 7: "What happens to existing content/reputation when joining Web4?" */}
-          <details id="faq-legacy-content" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
-            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>What happens to my existing content and reputation when I join Web4? Do I start from zero?</span>
-              <span className="text-gray-500 text-xl">+</span>
-            </summary>
-            <div className="mt-4 text-gray-300 text-sm space-y-2">
-              <p>
-                <strong>Yes, you start at 0.5 trust (neutral) &mdash; and that&apos;s by design.</strong> Web4
-                trust is earned through verified behavior, not imported from platforms that use different
-                (and often gameable) reputation systems.
-              </p>
-              <p>
-                Your Reddit karma, Stack Overflow reputation, or Twitter follower count can&apos;t be
-                converted into Web4 trust because those systems measure different things &mdash; popularity,
-                engagement, seniority &mdash; not the multi-dimensional trust (talent, training, temperament)
-                that Web4 tracks.
-              </p>
-              <p>
-                <strong>What about your content?</strong> Your existing posts, code, articles, etc. stay
-                where they are. Web4 doesn&apos;t import or migrate content. If a platform adopts Web4
-                at{" "}
-                <a href="#faq-platform-migration" className="text-sky-400 hover:underline">Tier 2 (Observable)</a>,
-                your <em>future</em> actions on that platform start building Web4 trust, but your past
-                activity isn&apos;t retroactively scored.
-              </p>
-              <p>
-                <strong>The upside of starting fresh:</strong> Web4&apos;s{" "}
-                <Link href="/why-web4#faq-cold-start" className="text-sky-400 hover:underline">bootstrap convergence</Link>{" "}
-                means newcomers catch up quickly. A founder&apos;s first-mover advantage has a ~30-action
-                half-life. By ~50 quality actions, a newcomer can surpass someone who&apos;s been coasting
-                on early reputation. Unlike legacy platforms, there&apos;s no permanent underclass of
-                late joiners.
-              </p>
-              <p className="text-amber-400/80 text-xs">
-                <strong>Design principle:</strong> Importing legacy reputation would undermine Web4&apos;s
-                core promise. If you could buy trust by pointing to a big Twitter following, the system
-                would inherit all the problems it&apos;s trying to solve.
-              </p>
-            </div>
-          </details>
-
           {/* Developer integration — visitor Q Mar 29: "What's the SDK/API? Hello World?" */}
           <details id="faq-developer-integration" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
@@ -2835,44 +2792,6 @@ export default function WhyWeb4Page() {
                 accurate, important information is completely buried because the messenger has no established credibility
                 or because a majority can simply vote it into oblivion. The truth doesn&apos;t win automatically &mdash;
                 but it gets a hearing proportional to the messenger&apos;s demonstrated trustworthiness.
-              </p>
-            </div>
-          </details>
-
-          {/* Context collapse / role isolation — visitor Q Apr 7 */}
-          <details id="faq-context-collapse" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
-            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>If I&apos;m trusted as a coder and post memes in the same community, does my meme-posting hurt my coding trust?</span>
-              <span className="text-gray-500 text-xl">+</span>
-            </summary>
-            <div className="mt-4 text-gray-300 text-sm space-y-2">
-              <p>
-                No. <strong>Trust in Web4 is role-contextual.</strong> Your T3 scores are
-                separate for each role you hold. Your trust as a &ldquo;Python developer&rdquo;
-                and your trust as a &ldquo;meme poster&rdquo; are independent dimensions that
-                don&apos;t contaminate each other.
-              </p>
-              <p>
-                <strong>How it works:</strong> When you post code, it&apos;s evaluated against
-                your &ldquo;developer&rdquo; role &mdash; Talent (code quality), Training (domain expertise),
-                Temperament (review etiquette). When you post a meme, it&apos;s evaluated against
-                a &ldquo;social&rdquo; role with completely different criteria. Low-effort memes
-                don&apos;t touch your developer scores.
-              </p>
-              <p>
-                <strong>What <em>does</em> cross roles:</strong> Your <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence
-                Index (CI)</Link> &mdash; behavioral consistency &mdash; is global. If you&apos;re
-                posting from unusual locations or at unusual times, CI drops across all roles.
-                And your <strong>Temperament</strong> dimension (how you treat people) carries
-                some weight everywhere. Being abusive in meme threads does affect your
-                Temperament score, which is one-third of your T3 in every role.
-              </p>
-              <p>
-                <strong>The design principle:</strong> Web4 avoids the &ldquo;context collapse&rdquo;
-                problem that plagues social media (where your boss sees your weekend photos).
-                Role isolation means you can be a serious professional <em>and</em> a casual
-                community member without one undermining the other &mdash; as long as you&apos;re
-                not actually being harmful.
               </p>
             </div>
           </details>
