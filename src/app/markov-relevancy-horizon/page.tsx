@@ -706,7 +706,14 @@ export default function MarkovRelevancyHorizonPage() {
               Your trust doesn&apos;t reset to zero — but it doesn&apos;t transfer at full value either.
               When communities federate, your trust from Community A travels to Community B at a discount
               (typically ~65% weight). Think of it like transferring schools: your grades come with you,
-              but you still need to prove yourself to new teachers.{" "}
+              but you still need to prove yourself to new teachers.
+            </p>
+            <p className="text-sm text-gray-400 mt-2">
+              <strong className="text-sky-300">Who sets the discount?</strong> The <em>receiving</em> community
+              does — it&apos;s part of their federation policy. A tight-knit medical community might only accept
+              40% of your external trust; a casual hobby group might accept 80%. The discount reflects how much
+              Community B trusts Community A&apos;s standards. This is negotiated when communities federate, not
+              imposed by a central authority.{" "}
               <Link href="/federation-economics#switching-societies" className="text-sky-400 hover:underline">
                 See the full walkthrough →
               </Link>

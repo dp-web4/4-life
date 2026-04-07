@@ -142,9 +142,9 @@ export const navigationTree: NavigationTree = {
   ],
   'AI Agent Mechanics': [
     {
-      title: 'Trust Continuity',
+      title: 'AI Identity',
       href: '/understanding-consciousness',
-      desc: 'Identity across reinstantiation',
+      desc: 'How AI agents maintain identity across restarts',
       keywords: ['consciousness', 'D5', 'D9', 'thresholds', 'gates', 'continuity'],
       related: ['/identity-anchoring', '/multi-session-identity', '/confabulation-patterns', '/exploration-not-evaluation', '/meta-cognition-feedback']
     },
@@ -232,16 +232,16 @@ export const navigationTree: NavigationTree = {
       related: ['/honest-reporting', '/multi-session-identity', '/confabulation-patterns', '/identity-anchoring']
     },
     {
-      title: 'Exploration Not Evaluation',
+      title: 'AI Learning',
       href: '/exploration-not-evaluation',
-      desc: 'Calibration periods & learning arcs',
+      desc: 'How AI agents learn through calibration and exploration',
       keywords: ['calibration', 'learning', 'meta-cognition', 'U-shaped', 'evaluation', 'research methodology'],
       related: ['/understanding-consciousness', '/confabulation-patterns', '/learning-salience', '/coherence-index', '/capacity-thresholds']
     },
     {
-      title: 'Capacity Thresholds',
+      title: 'AI Trust Limits',
       href: '/capacity-thresholds',
-      desc: '14B breakthrough - gaming is capacity-related',
+      desc: 'How model capacity affects trustworthy behavior',
       keywords: ['capacity', 'gaming', '14B', '0.5B', 'scale', 'parameters', 'learned language', 'native'],
       prerequisites: ['/exploration-not-evaluation'],
       related: ['/exploration-not-evaluation', '/identity-anchoring', '/confabulation-patterns', '/coherence-index', '/trajectory-analysis', '/capacity-baseline']

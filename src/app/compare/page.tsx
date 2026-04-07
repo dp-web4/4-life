@@ -212,6 +212,10 @@ export default function ComparePage() {
             <TermTooltip term="ATP" />, and karma carry-forward affect outcomes
             across life cycles.
           </p>
+          <div className="bg-emerald-950/30 border border-emerald-800/30 rounded-lg p-4 mb-4 text-sm text-slate-300">
+            <strong className="text-emerald-400">No setup needed</strong> — we&apos;ve pre-loaded a comparison below
+            using simulation data from this site. Pick any of the three questions to swap comparisons instantly.
+          </div>
           <p className="text-sm text-slate-400 mb-2">
             <strong className="text-slate-300">Cross-Life Learning</strong> — self-aware
             learning across lifetimes. Agents discover what works through
@@ -270,6 +274,18 @@ export default function ComparePage() {
           </div>
         </div>
 
+        {/* Prompt to try a comparison when nothing is loaded */}
+        {loadedSims.length === 0 && !loading && (
+          <div className="mb-8 bg-slate-800/40 border border-dashed border-slate-600 rounded-lg p-8 text-center">
+            <p className="text-slate-400 text-sm mb-2">
+              👇 Click any question below to load a comparison instantly
+            </p>
+            <p className="text-slate-500 text-xs">
+              Pre-run simulation data — no need to run simulations yourself
+            </p>
+          </div>
+        )}
+
         {/* Comparison View — shown first so visitors see results immediately */}
         {loadedSims.length > 0 && (
           <div className="mb-8">
@@ -319,8 +335,8 @@ export default function ComparePage() {
             Three Questions This Tool Answers
           </h2>
           <p className="text-sm text-slate-400 mb-4">
-            Pick a question — it pre-selects the right simulations and loads
-            them automatically.
+            Pick a question below — it loads pre-run simulation data instantly and shows you the
+            comparison with an interpretation guide. No setup needed.
           </p>
           <div className="grid gap-3 md:grid-cols-3">
             <button
