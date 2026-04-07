@@ -567,6 +567,12 @@ export default function WhyWeb4Page() {
                 predict, alpha tests whether the economics work at small scale, beta tests scaling, and
                 production is the internet-wide network. We&apos;re at the pilot-readiness stage.
               </p>
+              <p className="text-gray-400 text-xs">
+                <strong className="text-gray-300">Practical horizon:</strong> A pilot could start whenever a willing community
+                (university, company, open-source project) partners with the research. The technology is ready
+                for that step. Internet-scale deployment is years further — think &ldquo;email in the 1980s,&rdquo;
+                not &ldquo;launching next quarter.&rdquo;
+              </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Why no dates?</strong> Setting artificial deadlines on research creates pressure to
                 ship before the science is ready. Every &ldquo;launch in Q3&rdquo; promise in tech history
