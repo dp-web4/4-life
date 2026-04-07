@@ -112,7 +112,7 @@ const BRIDGES: ConceptToolBridge[] = [
   // Intermediate bridges
   {
     concept: {
-      title: 'Capacity Thresholds',
+      title: 'AI Trust Limits',
       href: '/capacity-thresholds',
       oneLiner: 'Model capacity determines whether meta-cognition is genuine or performed',
       keyIdea: '0.5B models learn "the language of self-awareness" while 14B+ models develop actual self-monitoring.',
