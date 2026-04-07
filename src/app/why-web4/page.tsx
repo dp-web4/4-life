@@ -925,7 +925,7 @@ export default function WhyWeb4Page() {
               <details className="group/cat">
                 <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
                   <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
-                  Adoption (11)
+                  Adoption (12)
                 </summary>
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
                   <li><a href="#faq-vs-existing" className="hover:text-sky-400">Why better than X?</a></li>
@@ -940,6 +940,7 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-legacy-content" className="hover:text-sky-400">Existing reputation?</a></li>
                   <li><a href="#faq-developer-integration" className="hover:text-sky-400">Developer experience?</a></li>
                   <li><a href="#faq-parallel-identities" className="hover:text-sky-400">Parallel identities?</a></li>
+                  <li><a href="#faq-legacy-content" className="hover:text-sky-400">Legacy content import?</a></li>
                 </ul>
               </details>
               <details className="group/cat">
@@ -964,7 +965,7 @@ export default function WhyWeb4Page() {
               <details className="group/cat">
                 <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
                   <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
-                  Trust (11)
+                  Trust (12)
                 </summary>
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
                   <li><a href="#faq-trust-transfer" className="hover:text-sky-400">Trust between communities?</a></li>
@@ -2512,6 +2513,41 @@ export default function WhyWeb4Page() {
               <p className="text-amber-400/80 text-xs">
                 <strong>The design principle:</strong> Communities should be free to define quality on their own terms.
                 What transfers between them is character (honesty, consistency), not status.
+              </p>
+            </div>
+          </details>
+
+          {/* Context collapse / role isolation — visitor Q Apr 7: "Does meme-posting degrade coding trust within the same community?" */}
+          <details id="faq-context-collapse" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>If I&apos;m trusted as a coder but post memes in the same community, does my meme-posting degrade my coding trust?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>No.</strong> Trust in Web4 is tracked per <em>role</em>, not per person. Your{" "}
+                <Link href="/trust-tensor" className="text-sky-400 hover:underline">Trust Tensor (T3)</Link>{" "}
+                has separate scores for each role you occupy. &ldquo;Code Reviewer&rdquo; and
+                &ldquo;Meme Poster&rdquo; are independent dimensions, even within the same community.
+              </p>
+              <p>
+                Bad memes won&apos;t tank your code review trust. Brilliant code won&apos;t inflate your
+                meme trust. Each role earns and loses trust independently based on the quality of actions
+                <em> in that role</em>.
+              </p>
+              <p>
+                <strong>What <em>does</em> cross roles:</strong> your{" "}
+                <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index (CI)</Link> and{" "}
+                <strong>Temperament</strong> (the behavioral consistency dimension of T3). If you&apos;re
+                reliably honest and consistent across all your roles, that character signal benefits you
+                everywhere. If you act erratically in one role, your CI drops &mdash; and since effective
+                trust = raw trust &times; CI&sup2;, that consistency penalty affects all your roles.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Design insight:</strong> This solves &ldquo;context collapse&rdquo; &mdash; the problem
+                where mixing audiences on social media forces you into the lowest-common-denominator
+                version of yourself. In Web4, you can be professional in one context and playful in another
+                without either undermining the other.
               </p>
             </div>
           </details>
