@@ -1120,20 +1120,37 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                We have <strong>conceptual wireframes</strong> showing what a Web4 inbox, hiring dashboard,
-                and review page could look like. They show trust scores next to messages, unfakeable
-                reputation badges on freelancer profiles, and energy-weighted reviews.
+                <strong>This is the most-asked question we get.</strong> Right now, Web4 exists as a
+                research simulation — the site you&apos;re on. No production Web4 apps exist yet.
               </p>
               <p>
-                See them on the{' '}
+                What we do have: <strong>conceptual wireframes</strong> showing what a Web4 inbox,
+                hiring dashboard, and review page could look like — trust scores next to messages,
+                unfakeable reputation badges, energy-weighted reviews. See them on the{' '}
                 <Link href="/day-in-web4#wireframes" className="text-sky-400 hover:underline">
                   A Day in Web4
                 </Link>{' '}
-                page (scroll to &ldquo;What Would This Actually Look Like?&rdquo;).
+                page.
+              </p>
+              <p>
+                You can also <strong>experience the mechanics right now</strong> through
+                the{' '}
+                <Link href="/society-simulator" className="text-sky-400 hover:underline">
+                  Society Simulator
+                </Link>{' '}
+                (watch trust economies evolve) and{' '}
+                <Link href="/karma-journey" className="text-sky-400 hover:underline">
+                  Karma Journey
+                </Link>{' '}
+                (play through a trust lifecycle yourself). The concepts work — the question is
+                what production tooling looks like, and that will emerge from real-world pilots.
               </p>
               <p className="text-amber-400/80 text-xs">
-                <strong>Note:</strong> These are conceptual designs, not final product UI. Web4 is active
-                research — the real interfaces will emerge from implementation and user testing.
+                <strong>Honest status:</strong> A browser extension or community plugin would be
+                the first real-world step (see{' '}
+                <Link href="/day-in-web4#adoption" className="text-sky-400 hover:underline">
+                  adoption tiers
+                </Link>). No timeline — research takes as long as it takes.
               </p>
             </div>
           </details>
