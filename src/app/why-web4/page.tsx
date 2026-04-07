@@ -546,6 +546,12 @@ export default function WhyWeb4Page() {
                 with real users — the gap between &ldquo;simulations prove it works&rdquo; and &ldquo;running
                 with real humans&rdquo; is the current frontier.
               </p>
+              <p className="text-gray-500 text-xs mt-2">
+                <strong>Practical horizon:</strong> A pilot could start whenever a willing community
+                (university, company, open-source project) partners with the research. The technology is
+                ready for that step. Internet-scale deployment is years further — think &ldquo;email in the
+                1980s,&rdquo; not &ldquo;launching next quarter.&rdquo;
+              </p>
             </div>
           </details>
 
