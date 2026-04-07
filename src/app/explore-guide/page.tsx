@@ -231,7 +231,7 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
           { title: 'Consciousness Layers', description: '3-layer emergence model with empirical R14B data', href: '/consciousness-layers', timeEstimate: '10 min', type: 'interactive' },
           { title: 'Purpose Integration', description: 'How purpose-driven behavior emerges from developmental progression', href: '/purpose-integration', timeEstimate: '10 min', type: 'interactive' },
           { title: 'Coherence Framework', description: '9-domain coherence theory from Synchronism research', href: '/coherence-framework', timeEstimate: '12 min', type: 'interactive' },
-          { title: 'Capacity Thresholds', description: 'Empirical validation of capacity effects on emergence', href: '/capacity-thresholds', timeEstimate: '8 min', type: 'research' },
+          { title: 'AI Trust Limits', description: 'How model capacity affects trustworthy behavior — empirical validation', href: '/capacity-thresholds', timeEstimate: '8 min', type: 'research' },
           { title: 'Research Hub', description: 'All research tools and explorers in one catalog', href: '/research-hub', timeEstimate: '5 min', type: 'read' },
         ],
         nextPath: 'The Challenge Set has open research questions to explore.',

@@ -212,22 +212,36 @@ export default function CoherenceIndexPage() {
 
           {/* Concrete everyday example — visitor feedback: CI examples not prominent enough */}
           <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 mt-6">
-            <h3 className="text-lg font-semibold text-gray-200 mb-3">What does this look like in practice?</h3>
+            <h3 className="text-lg font-semibold text-gray-200 mb-3">What does CI feel like day-to-day?</h3>
             <div className="space-y-3 text-gray-300 text-sm">
-              <p>
-                <strong className="text-green-400">High CI:</strong> You post coding tutorials during
-                work hours from your usual location. Your behavior is consistent — full trust, normal costs.
-              </p>
-              <p>
-                <strong className="text-red-400">Low CI:</strong> That same account suddenly starts posting
-                crypto spam at 3am from a different country. The <em>content</em> changed, the <em>timing</em> changed,
-                and the <em>location</em> changed — three dimensions flagged at once. CI drops, trust is throttled,
-                and extra witnesses are required before the account can do anything significant.
-              </p>
-              <p className="text-gray-500 text-xs">
-                No human moderator needed. No ban. The system simply asks: &ldquo;does this behavior make sense
-                given everything we&apos;ve seen before?&rdquo;
-              </p>
+              <div className="bg-green-950/20 border border-green-800/20 rounded p-4">
+                <p className="font-medium text-green-400 mb-1">Your normal Tuesday (CI ~0.97)</p>
+                <p>
+                  You wake up, check messages from your usual phone, post a coding tutorial from your desk at 10am.
+                  Everything matches your pattern — same device, same location, same hours, same topics.
+                  Full trust, normal costs, zero friction. <strong>High CI is invisible</strong> — it just means
+                  the system sees nothing unusual.
+                </p>
+              </div>
+              <div className="bg-amber-950/20 border border-amber-800/20 rounded p-4">
+                <p className="font-medium text-amber-400 mb-1">Vacation in Tokyo (CI dips to ~0.8 for a day)</p>
+                <p>
+                  You fly abroad. Your spatial pattern changes suddenly — CI dips. Actions cost a bit more ATP and
+                  one extra witness may be needed for big transactions. But your temporal and relational patterns
+                  stay consistent (same hours, same contacts, same topics), so the dip is mild. After a couple days,
+                  your new location stabilizes and CI recovers. It feels like using your credit card in a new country —
+                  a brief &ldquo;is this really you?&rdquo; moment, then normal service.
+                </p>
+              </div>
+              <div className="bg-red-950/20 border border-red-800/20 rounded p-4">
+                <p className="font-medium text-red-400 mb-1">Account compromise (CI crashes to ~0.4)</p>
+                <p>
+                  That same account suddenly posts crypto spam at 3am from a different country.
+                  Content changed, timing changed, location changed — three dimensions flagged at once.
+                  Trust is throttled, extra witnesses required for any action. No human moderator needed.
+                  No ban. The system simply asks: &ldquo;does this behavior make sense?&rdquo;
+                </p>
+              </div>
             </div>
           </div>
         </section>

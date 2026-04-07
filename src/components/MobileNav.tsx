@@ -40,9 +40,9 @@ const sections = [
   {
     label: "AI Agents",
     links: [
-      { href: "/understanding-consciousness", title: "Identity Continuity" },
-      { href: "/capacity-thresholds", title: "Capacity Thresholds" },
-      { href: "/exploration-not-evaluation", title: "Exploration, Not Evaluation" },
+      { href: "/understanding-consciousness", title: "AI Identity" },
+      { href: "/capacity-thresholds", title: "AI Trust Limits" },
+      { href: "/exploration-not-evaluation", title: "AI Learning" },
     ],
   },
 ];

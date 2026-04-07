@@ -571,8 +571,8 @@ export default function GlossaryPage() {
         <details>
           <summary className="text-3xl font-bold mb-4 text-gray-100 cursor-pointer list-none flex items-center gap-3 group">
             <span className="text-gray-500 group-open:rotate-90 transition-transform text-xl">▶</span>
-            Background Research
-            <span className="text-sm font-normal text-gray-500 ml-2">(not part of Web4 — click to expand)</span>
+            Advanced: Research Origins
+            <span className="text-sm font-normal text-gray-500 ml-2">(AI research that inspired Web4 — not part of the protocol itself)</span>
           </summary>
           <p className="text-gray-400 mb-6 mt-4">
             These ideas come from AI consciousness and behavior research that <em>inspired</em> Web4&apos;s design.

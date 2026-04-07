@@ -394,6 +394,7 @@ export default function WhyWeb4Page() {
               <h4 className="text-amber-400/80 font-semibold text-xs uppercase tracking-wide mb-1.5">Most Asked</h4>
               <ul className="space-y-0.5 text-gray-400">
                 <li><a href="#faq-deployed" className="hover:text-sky-400 transition-colors">Is this deployed or theoretical?</a></li>
+                <li><a href="#faq-timeline" className="hover:text-sky-400 transition-colors">When will Web4 be available?</a></li>
                 <li><a href="#faq-lose-hardware" className="hover:text-sky-400 transition-colors">What if I lose my hardware?</a></li>
                 <li><a href="#faq-powerful-liar" className="hover:text-sky-400 transition-colors">If someone powerful lies about me</a></li>
                 <li><a href="#faq-social-credit" className="hover:text-sky-400 transition-colors">Isn&#39;t this a social credit system?</a></li>
@@ -544,6 +545,44 @@ export default function WhyWeb4Page() {
                 (tested, but not hardened for production). What&apos;s needed next is a <em>pilot</em> (alpha)
                 with real users — the gap between &ldquo;simulations prove it works&rdquo; and &ldquo;running
                 with real humans&rdquo; is the current frontier.
+              </p>
+              <p className="text-gray-500 text-xs mt-2">
+                <strong>Practical horizon:</strong> A pilot could start whenever a willing community
+                (university, company, open-source project) partners with the research. The technology is
+                ready for that step. Internet-scale deployment is years further — think &ldquo;email in the
+                1980s,&rdquo; not &ldquo;launching next quarter.&rdquo;
+              </p>
+            </div>
+          </details>
+
+          {/* Timeline */}
+          <details id="faq-timeline" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>When will Web4 be available to use?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>No timeline — and that&apos;s intentional.</strong> Honest research doesn&apos;t ship
+                deadlines. The mechanics are proven in simulation; what&apos;s needed next is a{" "}
+                <em>pilot</em> with real users in a real community (a university, a company, a platform).
+              </p>
+              <p>
+                The path: <strong>Pilot → Alpha → Beta → Production.</strong> Each stage tests something
+                the previous one couldn&apos;t — pilot tests whether real humans behave like the simulations
+                predict, alpha tests whether the economics work at small scale, beta tests scaling, and
+                production is the internet-wide network. We&apos;re at the pilot-readiness stage.
+              </p>
+              <p className="text-gray-400 text-xs">
+                <strong className="text-gray-300">Practical horizon:</strong> A pilot could start whenever a willing community
+                (university, company, open-source project) partners with the research. The technology is ready
+                for that step. Internet-scale deployment is years further — think &ldquo;email in the 1980s,&rdquo;
+                not &ldquo;launching next quarter.&rdquo;
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Why no dates?</strong> Setting artificial deadlines on research creates pressure to
+                ship before the science is ready. Every &ldquo;launch in Q3&rdquo; promise in tech history
+                has led to shortcuts. We&apos;d rather be right than fast.
               </p>
             </div>
           </details>
