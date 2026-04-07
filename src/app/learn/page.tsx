@@ -65,28 +65,30 @@ export default function LearnJourney() {
     // Auto-complete concepts based on pages actually visited
     const exploration = loadExploration();
     if (exploration) {
-      const slugToConceptId: Record<string, string> = {
-        'lct-explainer': 'lct',
-        'atp-economics': 'atp',
-        'trust-tensor': 't3',
-        'coherence-index': 'ci',
-        'aliveness': 'aliveness',
-        'society-simulator': 'run-first-sim',
-        'karma-journey': 'karma-mechanics',
-        'playground': 'playground',
-        'trust-networks': 'trust-networks',
-        'federation-economics': 'federation-econ',
-        'coherence-framework': 'coherence-framework',
-        'narratives': 'explore-narrative',
-        'markov-relevancy-horizon': 'mrh',
-        'decision-evolution': 'ep',
-        'identity-constellation': 'identity-constellation',
-        'patterns': 'explore-patterns',
-        'act-explorer': 'ask-act',
+      const slugToConceptIds: Record<string, string[]> = {
+        'lct-explainer': ['lct'],
+        'atp-economics': ['atp'],
+        'trust-tensor': ['t3'],
+        'coherence-index': ['ci', 'ci-modulation'],
+        'aliveness': ['aliveness', 'karma-mechanics'],
+        'society-simulator': ['run-first-sim'],
+        'karma-journey': ['karma-mechanics'],
+        'playground': ['playground'],
+        'trust-networks': ['trust-networks'],
+        'federation-economics': ['federation-econ'],
+        'coherence-framework': ['coherence-framework', 'gating-mechanisms'],
+        'narratives': ['explore-narrative'],
+        'markov-relevancy-horizon': ['mrh'],
+        'decision-evolution': ['ep'],
+        'identity-constellation': ['identity-constellation'],
+        'patterns': ['explore-patterns'],
+        'act-explorer': ['ask-act'],
+        'how-it-works': ['maturation', 'web4-architecture'],
+        'compare': ['compare-sims'],
       };
       for (const slug of exploration.pagesVisited) {
-        const conceptId = slugToConceptId[slug];
-        if (conceptId) merged.add(conceptId);
+        const conceptIds = slugToConceptIds[slug];
+        if (conceptIds) conceptIds.forEach(id => merged.add(id));
       }
     }
     if (merged.size > 0) setCompletedConcepts(merged);

@@ -418,6 +418,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-early-adopters" className="hover:text-sky-400 transition-colors">Don&#39;t early adopters just talk to each other?</a></li>
                 <li><a href="#faq-platform-migration" className="hover:text-sky-400 transition-colors">What if Reddit/Discord adopted Web4?</a></li>
                 <li><a href="#faq-trust-transfer-mechanics" className="hover:text-sky-400 transition-colors">How does trust transfer between platforms?</a></li>
+                <li><a href="#faq-legacy-content" className="hover:text-sky-400 transition-colors">What about my existing reputation?</a></li>
                 <li><a href="#faq-developer-integration" className="hover:text-sky-400 transition-colors">What&apos;s the developer experience?</a></li>
                 <li><a href="#faq-dual-trust" className="hover:text-sky-400 transition-colors">Reddit karma vs Web4 trust — which wins?</a></li>
               </ul>
@@ -452,6 +453,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-quality-standards" className="hover:text-sky-400 transition-colors">Shitposting vs academic — trust transfer?</a></li>
                 <li><a href="#faq-adversarial-quality" className="hover:text-sky-400 transition-colors">Can hostile communities game quality?</a></li>
                 <li><a href="#faq-unpopular-truth" className="hover:text-sky-400 transition-colors">What about unpopular but true content?</a></li>
+                <li><a href="#faq-context-collapse" className="hover:text-sky-400 transition-colors">Does meme-posting hurt my coding trust?</a></li>
               </ul>
             </div>
             <div className="break-inside-avoid mb-4">
@@ -923,7 +925,7 @@ export default function WhyWeb4Page() {
               <details className="group/cat">
                 <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
                   <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
-                  Adoption (11)
+                  Adoption (12)
                 </summary>
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
                   <li><a href="#faq-vs-existing" className="hover:text-sky-400">Why better than X?</a></li>
@@ -935,6 +937,7 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-dual-trust" className="hover:text-sky-400">Reddit karma vs Web4 trust</a></li>
                   <li><a href="#faq-platform-migration" className="hover:text-sky-400">If Reddit adopted Web4?</a></li>
                   <li><a href="#faq-trust-transfer-mechanics" className="hover:text-sky-400">Trust between platforms?</a></li>
+                  <li><a href="#faq-legacy-content" className="hover:text-sky-400">Existing reputation?</a></li>
                   <li><a href="#faq-developer-integration" className="hover:text-sky-400">Developer experience?</a></li>
                   <li><a href="#faq-parallel-identities" className="hover:text-sky-400">Parallel identities?</a></li>
                 </ul>
@@ -961,7 +964,7 @@ export default function WhyWeb4Page() {
               <details className="group/cat">
                 <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
                   <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
-                  Trust (11)
+                  Trust (12)
                 </summary>
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
                   <li><a href="#faq-trust-transfer" className="hover:text-sky-400">Trust between communities?</a></li>
@@ -975,6 +978,7 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-quality-standards" className="hover:text-sky-400">Quality across communities?</a></li>
                   <li><a href="#faq-adversarial-quality" className="hover:text-sky-400">Hostile communities gaming?</a></li>
                   <li><a href="#faq-unpopular-truth" className="hover:text-sky-400">Unpopular but true content?</a></li>
+                  <li><a href="#faq-context-collapse" className="hover:text-sky-400">Meme-posting vs coding trust?</a></li>
                 </ul>
               </details>
               <details className="group/cat">
@@ -2512,6 +2516,41 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
+          {/* Context collapse / role isolation — visitor Q Apr 7: "Does meme-posting degrade coding trust within the same community?" */}
+          <details id="faq-context-collapse" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>If I&apos;m trusted as a coder but post memes in the same community, does my meme-posting degrade my coding trust?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>No.</strong> Trust in Web4 is tracked per <em>role</em>, not per person. Your{" "}
+                <Link href="/trust-tensor" className="text-sky-400 hover:underline">Trust Tensor (T3)</Link>{" "}
+                has separate scores for each role you occupy. &ldquo;Code Reviewer&rdquo; and
+                &ldquo;Meme Poster&rdquo; are independent dimensions, even within the same community.
+              </p>
+              <p>
+                Bad memes won&apos;t tank your code review trust. Brilliant code won&apos;t inflate your
+                meme trust. Each role earns and loses trust independently based on the quality of actions
+                <em> in that role</em>.
+              </p>
+              <p>
+                <strong>What <em>does</em> cross roles:</strong> your{" "}
+                <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index (CI)</Link> and{" "}
+                <strong>Temperament</strong> (the behavioral consistency dimension of T3). If you&apos;re
+                reliably honest and consistent across all your roles, that character signal benefits you
+                everywhere. If you act erratically in one role, your CI drops &mdash; and since effective
+                trust = raw trust &times; CI&sup2;, that consistency penalty affects all your roles.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Design insight:</strong> This solves &ldquo;context collapse&rdquo; &mdash; the problem
+                where mixing audiences on social media forces you into the lowest-common-denominator
+                version of yourself. In Web4, you can be professional in one context and playful in another
+                without either undermining the other.
+              </p>
+            </div>
+          </details>
+
           {/* Migration path — visitor Q Mar 24 */}
           <details id="faq-platform-migration" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
@@ -2568,6 +2607,51 @@ export default function WhyWeb4Page() {
                 <strong>Honest caveat:</strong> The federation trust transfer protocol is specified
                 and simulated but not yet tested across real independent platforms. The discount
                 rates and what exactly transfers are still being refined through simulation.
+              </p>
+            </div>
+          </details>
+
+          {/* Legacy content import — visitor Q Apr 7: "What happens to my existing content/reputation?" */}
+          <details id="faq-legacy-content" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What happens to my existing content and reputation when I join Web4? Do I start at zero?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Yes, everyone starts at 0.5 trust.</strong> This is deliberate. Web4 trust is earned
+                through <em>observed behavior</em>, not imported claims. Your 50,000 Reddit karma or 10-year
+                eBay seller rating can&apos;t be directly converted because Web4 has no way to verify how
+                those scores were earned &mdash; they could reflect genuine quality or years of gaming
+                the algorithm.
+              </p>
+              <p>
+                <strong>But you don&apos;t lose your advantage.</strong> A genuinely skilled contributor
+                ramps up fast:
+              </p>
+              <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
+                <li>The <strong className="text-gray-300">quality ramp</strong> means high-quality actions earn
+                  full ATP rewards immediately. If your Reddit contributions were genuinely valuable, you&apos;ll
+                  produce the same quality on Web4 and build trust quickly.</li>
+                <li><strong className="text-gray-300">First-mover advantage has a ~30-action half-life.</strong> Newcomers
+                  who contribute quality work surpass early adopters within about 50 actions. Your existing
+                  skills translate directly into faster trust growth.</li>
+                <li>The <strong className="text-gray-300">1.4x newcomer premium</strong> expires as you build history.
+                  Within a few weeks of active participation, your costs normalize.</li>
+              </ul>
+              <p>
+                <strong>Your existing content stays where it is.</strong> Web4 doesn&apos;t import or
+                migrate content from other platforms. Your old posts on Reddit, your reviews on Amazon,
+                your articles on Medium &mdash; they remain on those platforms. What changes is that
+                <em> future</em> contributions across Web4-connected platforms build a portable, verifiable
+                trust history that follows you everywhere.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Could platforms import?</strong> At the <a href="#faq-adoption-path" className="text-sky-400 hover:underline">Wrapper
+                tier</a>, a platform <em>could</em> seed initial Web4 trust from existing reputation as a
+                convenience &mdash; but this would be platform-specific, optional, and capped (e.g., imported
+                trust might max out at 0.6, requiring real Web4 behavior to go higher). This is a design
+                decision for individual platforms, not a protocol requirement.
               </p>
             </div>
           </details>
