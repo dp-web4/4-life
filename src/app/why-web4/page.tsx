@@ -1606,6 +1606,76 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
+          {/* Community splits — visitor Q Apr 8 */}
+          <details id="faq-community-split" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>What happens when a community splits or forks?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Communities can split, just like open-source projects can fork. When they do,
+                <strong> each member keeps their full trust history and ATP balance</strong> — nothing is
+                &ldquo;divided&rdquo; because trust and energy belong to the individual, not the community.
+              </p>
+              <p>
+                Think of it like employees leaving a company: their skills and resume go with them. If the
+                &ldquo;Research Collective&rdquo; splits into &ldquo;Theory Group&rdquo; and &ldquo;Applied Lab,&rdquo; each member
+                chooses which to join (or both). Their trust scores are visible to both new communities,
+                which each set their own acceptance policies — just like{' '}
+                <a href="#faq-trust-transfer" className="text-sky-400 hover:underline">cross-community trust transfer</a>.
+              </p>
+              <p>
+                The relationships between members are also preserved: if Alice trusts Bob, that relationship
+                exists in the trust graph regardless of which community they&apos;re in. Communities are
+                views into the graph, not containers that own the data.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Design goal:</strong> The ability to fork — without losing your identity or reputation —
+                keeps community governance honest. Authoritarian communities lose members to better-governed
+                alternatives. See{' '}
+                <a href="/federation-economics" className="text-sky-400 hover:underline">Federation Economics</a> for
+                how federations merge and compete.
+              </p>
+            </div>
+          </details>
+
+          {/* Computational overhead — visitor Q Apr 8 */}
+          <details id="faq-computational-overhead" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Every action involves trust calculations — is that computationally feasible?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                The calculations are simpler than they sound. For a single action, the system needs to:
+                check your ATP balance (a number), update your T3 scores (three numbers), compute CI
+                (a rolling average), and let recipients confirm quality. Each operation is basic arithmetic —
+                comparable to updating a database row.
+              </p>
+              <p>
+                The key insight: <strong>most computation is local, not global</strong>. Your trust score
+                doesn&apos;t need to consult every user on the network — only your direct connections (MRH
+                limits this to 3 hops, roughly the size of a social circle). Witness verification uses your
+                own devices, not a global network. V3 scoring aggregates confirmations as they arrive,
+                not all at once.
+              </p>
+              <p>
+                The expensive part is <strong>federation-level operations</strong>: cross-community trust
+                mapping, consensus across unreliable networks, and global reputation queries. These are
+                batched, cached, and eventually consistent — similar to how DNS propagation works today.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> At billions of users, the trust graph becomes enormous and
+                query patterns are unpredictable. Simulations handle thousands of agents comfortably; the
+                gap to internet scale contains real engineering challenges (sharding trust graphs, caching
+                strategies, witness coordination latency). This is why the{' '}
+                <a href="#faq-adoption" className="text-sky-400 hover:underline">adoption path</a> starts
+                with small communities, not the whole internet.
+              </p>
+            </div>
+          </details>
+
           {/* Witnessed presence UX */}
           <details id="faq-witnessed-presence" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
