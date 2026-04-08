@@ -3811,7 +3811,7 @@ export default function SocietySimulatorPage() {
             for collective emergence.
             Diversity alone isn&apos;t enough; <em>structural connections between diverse groups</em> is
             what unlocks collective intelligence. Even replacing an agent with a fresh one improves the
-            collective (ratio 1.106) &mdash; what matters isn&apos;t <em>who</em> fills a role
+            collective by about 10% &mdash; what matters isn&apos;t <em>who</em> fills a role
             but <em>that the role exists</em> in the network. The structural
             position, not the individual&apos;s history, drives the emergent behavior.
           </p>
