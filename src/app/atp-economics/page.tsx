@@ -307,7 +307,7 @@ export default function ATPEconomicsPage() {
             (engagement), whether diverse recipients confirm (breadth), and whether high-trust people confirm (quality signal).
             These three signals combine into your{' '}
             <a href="/trust-tensor#v3-output-scorer" className="text-sky-400 hover:text-sky-300 underline">V3 score</a> —
-            the output-quality half of your reputation.
+            the output-quality half of your reputation. (Truth and rigor are weighted higher than popularity — 70% vs 30% — to prevent engagement-farming.)
           </p>
           <p className="text-gray-500 text-xs">
             Think Reddit upvotes, but where each vote is weighted by the voter&apos;s own trust score — and

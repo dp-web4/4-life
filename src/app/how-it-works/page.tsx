@@ -975,7 +975,7 @@ export default function HowItWorksPage() {
             </div>
           </div>
           <p className="text-gray-500 text-xs mt-3 italic">
-            These four properties are formally verified across 176 automated test cases (mathematical proofs that each property holds under adversarial conditions). They&apos;re what separates Web4
+            These four properties are backed by automated test suites that verify each guarantee holds even under adversarial conditions. They&apos;re what separates Web4
             from ad-hoc reputation systems where scores can be inflated, manufactured, or propagated without bounds.
           </p>
         </details>

@@ -121,7 +121,7 @@ export default function FirstContactPage() {
               </p>
 
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#e2e8f0' }}>Step 1 — Quality post:</strong> Alice writes a thoughtful contribution. It costs 8 ATP but her trust rises to 0.52. Recipients who find it valuable confirm the quality — their attestation (a signed statement saying &quot;this was genuinely useful&quot;) is what earns Alice her reward.
+                <strong style={{ color: '#e2e8f0' }}>Step 1 — Quality post:</strong> Alice writes a thoughtful contribution. It costs 8 ATP but her trust rises to 0.52. Recipients who find it valuable confirm the quality — a simple thumbs-up saying &quot;this was genuinely useful&quot; is what earns Alice her reward. (In Web4, these confirmations are called <em>attestations</em> — signed receipts that can&apos;t be faked.)
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#e2e8f0' }}>Step 2 — Helping a newcomer:</strong> She mentors someone new. Costs 5 ATP, but trust jumps to 0.55. Generosity pays.

@@ -3810,8 +3810,8 @@ export default function SocietySimulatorPage() {
             that never collaborate outside their department. Cross-community bridge agents are required
             for collective emergence.
             Diversity alone isn&apos;t enough; <em>structural connections between diverse groups</em> is
-            what unlocks collective intelligence. Even replacing an agent with a fresh one improves the
-            collective (ratio 1.106) &mdash; what matters isn&apos;t <em>who</em> fills a role
+            what unlocks collective intelligence. Even replacing an agent with a completely fresh one improves the
+            collective by about 10% &mdash; what matters isn&apos;t <em>who</em> fills a role
             but <em>that the role exists</em> in the network. The structural
             position, not the individual&apos;s history, drives the emergent behavior.
           </p>
