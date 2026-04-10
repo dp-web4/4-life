@@ -756,7 +756,7 @@ export default function DayInWeb4Page() {
         <h2 className="text-2xl font-bold mb-2">How Would You Actually Get This?</h2>
         <p className="text-gray-400 mb-6 text-sm">
           The demos above show <em>what</em> you&apos;d see. But <em>how</em> does Web4 reach your device?
-          It depends on how far along adoption is — and it starts smaller than you think.
+          It depends on how far along adoption is.
         </p>
 
         <div className="space-y-4">
