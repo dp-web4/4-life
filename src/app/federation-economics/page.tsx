@@ -1136,6 +1136,42 @@ export default function FederationEconomicsPage() {
             </p>
           </div>
         </details>
+
+        {/* Community split/schism — visitor Q Apr 10 */}
+        <details className="bg-gray-900/50 border border-gray-700 rounded p-4 mb-4">
+          <summary className="text-sm text-sky-400 cursor-pointer hover:text-sky-300">
+            What happens when a community splits? How does trust history partition?
+          </summary>
+          <div className="text-gray-400 text-sm mt-3 leading-relaxed space-y-3">
+            <p>
+              Communities can split — disagreements happen. When they do, Web4 handles trust
+              history the same way a professional network handles a company breakup:
+            </p>
+            <p>
+              <strong className="text-gray-300">Both sides keep the full history.</strong> Trust
+              records are append-only and tied to your LCT identity, not to a specific community.
+              If you helped 200 people before the split, that&apos;s still your record regardless of
+              which side you join.
+            </p>
+            <p>
+              <strong className="text-gray-300">What changes is context.</strong> Trust in Web4 is
+              role-contextualized — your reputation as a &ldquo;helpful code reviewer&rdquo; in
+              Community A doesn&apos;t automatically make you a &ldquo;trusted moderator&rdquo; in
+              the new Community B. Each community can weight historical actions according to their
+              own policies.
+            </p>
+            <p>
+              <strong className="text-gray-300">MRH limits the blast radius.</strong> The Markov
+              Relevancy Horizon means trust decays with distance. After a split, members you
+              interacted with directly still trust you at full strength. Members you never
+              interacted with? They were already at the horizon&apos;s edge anyway.
+            </p>
+            <p className="text-gray-500 text-xs">
+              Think of it like a band breaking up — the music they made together still exists,
+              fans who saw them live still remember, but the new bands each build their own reputation.
+            </p>
+          </div>
+        </details>
       </section>
 
       {/* Related Concepts */}

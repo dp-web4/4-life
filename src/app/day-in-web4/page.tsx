@@ -750,6 +750,9 @@ export default function DayInWeb4Page() {
 
       {/* How Would You Get It? — Form factor by adoption tier */}
       <section className="mt-12 pt-8 border-t border-gray-800">
+        <p className="text-gray-500 text-sm italic mb-6">
+          So when could you actually live this day? That depends on adoption — and it starts smaller than you think.
+        </p>
         <h2 className="text-2xl font-bold mb-2">How Would You Actually Get This?</h2>
         <p className="text-gray-400 mb-6 text-sm">
           The demos above show <em>what</em> you&apos;d see. But <em>how</em> does Web4 reach your device?
