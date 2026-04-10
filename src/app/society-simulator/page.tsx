@@ -3358,7 +3358,8 @@ export default function SocietySimulatorPage() {
         </details>
 
         {/* Controls */}
-        <div id="sim-controls" className="mb-6 bg-gray-800/50 rounded-lg p-4 border border-gray-700/50 scroll-mt-20">
+        <div id="sim-controls" className="mb-6 bg-gray-800/50 rounded-lg p-4 border-2 border-green-800/60 scroll-mt-20">
+          <h3 className="text-sm font-bold text-green-400 uppercase tracking-wide mb-3">Simulation Controls</h3>
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <label className="text-sm text-gray-400">Scenario:</label>
             {Object.entries(SOCIETY_PRESETS)
