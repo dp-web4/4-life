@@ -16,7 +16,7 @@ export default function HomePage() {
     <div className="space-y-8">
       {/* Hero */}
       <section className="text-center" style={{ maxWidth: '48rem', margin: '0 auto' }}>
-        <p className="eyebrow">4-Life: A Trust-Native Internet Lab <span style={{ fontWeight: 400, opacity: 0.7 }}>&mdash; explore Web4 through simulations</span></p>
+        <p className="eyebrow">Web4 is the protocol. 4-Life is the lab. <span style={{ fontWeight: 400, opacity: 0.7 }}>Explore trust-native internet through simulations.</span></p>
         <h1 style={{ marginBottom: '1rem' }}>
           The Internet Has a Trust Problem
         </h1>
@@ -87,6 +87,18 @@ export default function HomePage() {
             textDecoration: 'none',
           }}>
             How would this change my internet? · 3 min →
+          </Link>
+          <Link href="/what-could-go-wrong" style={{
+            padding: '0.5rem 1rem',
+            background: 'rgba(239, 68, 68, 0.1)',
+            border: '1px solid rgba(239, 68, 68, 0.3)',
+            borderRadius: '0.5rem',
+            color: 'rgb(239, 68, 68)',
+            fontWeight: 600,
+            fontSize: '0.85rem',
+            textDecoration: 'none',
+          }}>
+            Skeptical? What could go wrong →
           </Link>
           <Link href="/learn" style={{
             padding: '0.5rem 1rem',

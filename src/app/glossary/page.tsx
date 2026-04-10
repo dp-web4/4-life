@@ -10,7 +10,7 @@ import { trackPageVisit } from "@/lib/exploration";
 export default function GlossaryPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [matchCount, setMatchCount] = useState(0);
-  const [essentialOnly, setEssentialOnly] = useState(false);
+  const [essentialOnly, setEssentialOnly] = useState(true);
   const glossaryRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => { trackPageVisit('glossary'); }, []);
