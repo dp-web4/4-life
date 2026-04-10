@@ -1063,10 +1063,13 @@ export default function HowItWorksPage() {
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           What Happens When Things Go Wrong?
         </h2>
+        <p className="text-gray-400 mb-4">
+          So far, everything above describes how individuals build and lose trust. But communities need rules too &mdash; who sets them, who enforces them, and what happens when someone disagrees?
+        </p>
         <p className="text-gray-400 mb-8">
-          Energy economics handle most bad actors — spammers simply die. But what about
+          Energy economics handle most bad actors &mdash; spammers simply run out of energy and die. But what about
           edge cases? What if someone is falsely accused, or a crisis requires bending the rules?
-          Web4 uses a governance framework called <strong className="text-gray-200">SAL (Society-Authority-Law)</strong>.
+          Web4 uses a governance framework called <strong className="text-gray-200">SAL (Society-Authority-Law)</strong> to handle these situations.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
