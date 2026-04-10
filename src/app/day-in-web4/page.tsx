@@ -243,7 +243,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 15,
         trustDelta: 0.02,
         todayInternet: 'You post something great. It gets buried because you have zero followers. Nobody sees it.',
-        web4Result: 'Your post costs 10 ATP (40% more than veterans pay — you have no consistency history yet). But if it\'s genuinely useful, recipients confirm it and you earn 15 ATP back. Two more quality posts and your action costs start dropping. The system rewards you for substance, not seniority.',
+        web4Result: 'Your post costs 10 ATP (40% more than veterans pay). Why the higher cost? Without a track record, the system can\'t tell you apart from a spammer — this is the price of keeping spam out while the door stays open. But it drops fast: two or three quality posts and your costs start falling toward veteran rates. The system rewards substance, not seniority.',
         concept: 'Energy Budget (ATP)',
         conceptLink: '/atp-economics',
       },
@@ -913,7 +913,7 @@ export default function DayInWeb4Page() {
                 <strong style={{ color: '#ef4444' }}>Today:</strong> You post something great in a new community. It gets buried because you have zero followers. Nobody sees it.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-                <strong style={{ color: '#10b981' }}>Web4:</strong> Your post costs 10 ATP (40% more than veterans &mdash; no consistency history yet). But if it&apos;s genuinely useful, recipients confirm it and you earn 15 ATP back. The system rewards substance, not seniority.
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your post costs 10 ATP (40% more than veterans &mdash; the higher cost keeps spammers out while the door stays open for you). If it&apos;s genuinely useful, recipients confirm it and you earn 15 ATP back. Two quality posts and your costs start dropping. Substance, not seniority.
               </p>
             </div>
 

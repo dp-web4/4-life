@@ -16,13 +16,16 @@ export default function HomePage() {
     <div className="space-y-8">
       {/* Hero */}
       <section className="text-center" style={{ maxWidth: '48rem', margin: '0 auto' }}>
-        <p className="eyebrow">4-Life: A Trust-Native Internet Lab <span style={{ fontWeight: 400, opacity: 0.7 }}>&mdash; explore Web4 through simulations</span></p>
+        <p className="eyebrow">Web4 is the protocol. 4-Life is the lab. <span style={{ fontWeight: 400, opacity: 0.7 }}>Explore trust-native internet through simulations.</span></p>
         <h1 style={{ marginBottom: '1rem' }}>
           The Internet Has a Trust Problem
         </h1>
         <p className="hero-subtitle" style={{ margin: '0 auto 1.5rem', color: 'var(--color-text-secondary)' }}>
           Spam wins because accounts are free. Reputations are trapped in silos.
           Bad actors get unlimited fresh starts. AI deception outpaces verification.
+        </p>
+        <p style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', margin: '0 auto 1.5rem', maxWidth: '36rem' }}>
+          <strong style={{ color: 'var(--color-text-secondary)' }}>Web4</strong> is the protocol &mdash; <strong style={{ color: 'var(--color-text-secondary)' }}>4-Life</strong> is this lab where you can explore it.
         </p>
         <p style={{
           fontSize: '1.1rem',
@@ -88,6 +91,18 @@ export default function HomePage() {
           }}>
             How would this change my internet? · 3 min →
           </Link>
+          <Link href="/what-could-go-wrong" style={{
+            padding: '0.5rem 1rem',
+            background: 'rgba(239, 68, 68, 0.1)',
+            border: '1px solid rgba(239, 68, 68, 0.3)',
+            borderRadius: '0.5rem',
+            color: 'rgb(239, 68, 68)',
+            fontWeight: 600,
+            fontSize: '0.85rem',
+            textDecoration: 'none',
+          }}>
+            Skeptical? What could go wrong →
+          </Link>
           <Link href="/learn" style={{
             padding: '0.5rem 1rem',
             background: 'rgba(251, 191, 36, 0.1)',
@@ -99,6 +114,18 @@ export default function HomePage() {
             textDecoration: 'none',
           }}>
             Follow a learning path · self-paced →
+          </Link>
+          <Link href="/what-could-go-wrong" style={{
+            padding: '0.5rem 1rem',
+            background: 'rgba(239, 68, 68, 0.1)',
+            border: '1px solid rgba(239, 68, 68, 0.3)',
+            borderRadius: '0.5rem',
+            color: 'rgb(239, 68, 68)',
+            fontWeight: 600,
+            fontSize: '0.85rem',
+            textDecoration: 'none',
+          }}>
+            Skeptical? Read what could go wrong →
           </Link>
         </div>
       </section>
@@ -139,7 +166,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             <strong style={{ color: 'var(--color-text)' }}>Right now, you can&apos;t install it.</strong>{' '}
             This is an active open-source research project with a{' '}
             <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" style={{ color: 'var(--color-sky)', textDecoration: 'none' }}>formal specification</a>,
-            ~47,000 lines of tested reference code, and the working simulations on this site.
+            enough tested code to run full society simulations, and the working demos on this site.
             The mechanics are validated &mdash; the open question is whether real communities behave like the simulations.
           </p>
           <p style={{ margin: 0 }}>

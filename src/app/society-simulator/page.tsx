@@ -3267,15 +3267,24 @@ export default function SocietySimulatorPage() {
           <p className="text-gray-300 text-sm">
             Can a society of self-interested agents develop cooperation, trust, and social structure
             <em> without any central authority</em>? In Web4, the answer is yes &mdash; if trust
-            is the fundamental currency. Click <strong>Run</strong> to watch it happen, or{' '}
+            is the fundamental currency.
+          </p>
+          <div className="mt-3 flex items-center gap-4">
+            <button
+              onClick={() => {
+                document.getElementById('sim-controls')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="px-5 py-2.5 bg-green-600 hover:bg-green-500 text-white rounded-lg font-bold transition-colors text-sm"
+            >
+              ↓ Pick a scenario and run it
+            </button>
             <button
               onClick={() => setHumanPlayerMode(true)}
-              className="text-teal-400 hover:text-teal-300 underline"
+              className="text-teal-400 hover:text-teal-300 underline text-sm"
             >
-              play as an agent yourself
+              or play as an agent yourself →
             </button>
-            .
-          </p>
+          </div>
         </div>
 
         {/* What to Watch For - Simulation Phases */}
@@ -3349,7 +3358,7 @@ export default function SocietySimulatorPage() {
         </details>
 
         {/* Controls */}
-        <div className="mb-6 bg-gray-800/50 rounded-lg p-4 border border-gray-700/50">
+        <div id="sim-controls" className="mb-6 bg-gray-800/50 rounded-lg p-4 border border-gray-700/50 scroll-mt-20">
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <label className="text-sm text-gray-400">Scenario:</label>
             {Object.entries(SOCIETY_PRESETS)

@@ -117,7 +117,7 @@ export default function TLDRPage() {
               <p className="text-gray-400 font-semibold mb-1">What exists today:</p>
               <ul className="text-gray-300 space-y-1 list-disc list-inside">
                 <li>Formal protocol specification (open source)</li>
-                <li>~47,000 lines of tested reference code</li>
+                <li>Tested reference code powering the simulations on this site</li>
                 <li>Working trust simulations you can run here</li>
                 <li>This 77-page interactive explainer site</li>
               </ul>
