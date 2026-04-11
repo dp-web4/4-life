@@ -157,10 +157,13 @@ function V3OutputScorer() {
       <h2 className="text-3xl font-bold mb-2 text-gray-100">
         V3: Measuring What You Produce
       </h2>
-      <p className="text-gray-400 mb-6">
+      <p className="text-gray-400 mb-4">
         T3 measures <strong className="text-sky-300">who you are</strong>. V3 measures{' '}
         <strong className="text-purple-300">what you create</strong>. Every output in Web4 gets scored
         across three dimensions — and the weights are designed to reward truth over popularity.
+      </p>
+      <p className="text-xs text-gray-500 mb-6">
+        Don&apos;t worry about memorizing six terms at once. The key insight is simple: T3 = your reputation as a person, V3 = the quality of a specific piece of work. The three V3 dimensions below just break down &ldquo;quality&rdquo; into usefulness, truthfulness, and soundness.
       </p>
 
       {/* V3 dimension explainer */}
@@ -171,7 +174,8 @@ function V3OutputScorer() {
             <h3 className="text-lg font-semibold text-sky-400">Valuation</h3>
             <span className="text-xs text-gray-500 ml-auto">weight: 0.30</span>
           </div>
-          <p className="text-sm text-gray-400">How <em>useful</em> is the output? Measured by recipient satisfaction and ATP earned vs expected.</p>
+          <p className="text-sm text-purple-300/80 mb-1">= &ldquo;Was it useful?&rdquo;</p>
+          <p className="text-sm text-gray-400">Measured by recipient satisfaction and ATP earned vs expected.</p>
         </div>
         <div className="bg-gradient-to-br from-purple-950/30 to-gray-900 border border-purple-800/30 rounded-xl p-5">
           <div className="flex items-center gap-2 mb-2">
@@ -179,7 +183,8 @@ function V3OutputScorer() {
             <h3 className="text-lg font-semibold text-purple-400">Veracity</h3>
             <span className="text-xs text-gray-500 ml-auto">weight: 0.35</span>
           </div>
-          <p className="text-sm text-gray-400">How <em>truthful and accurate</em> is it? Verified by external validation and witness attestation.</p>
+          <p className="text-sm text-purple-300/80 mb-1">= &ldquo;Was it true?&rdquo;</p>
+          <p className="text-sm text-gray-400">Verified by external validation and witness attestation.</p>
         </div>
         <div className="bg-gradient-to-br from-green-950/30 to-gray-900 border border-green-800/30 rounded-xl p-5">
           <div className="flex items-center gap-2 mb-2">
@@ -187,7 +192,8 @@ function V3OutputScorer() {
             <h3 className="text-lg font-semibold text-green-400">Validity</h3>
             <span className="text-xs text-gray-500 ml-auto">weight: 0.35</span>
           </div>
-          <p className="text-sm text-gray-400">Is it <em>well-reasoned and actually delivered</em>? Confirmed by receipt and logical soundness.</p>
+          <p className="text-sm text-purple-300/80 mb-1">= &ldquo;Was it sound?&rdquo;</p>
+          <p className="text-sm text-gray-400">Confirmed by receipt, logical consistency, and actual delivery.</p>
         </div>
       </div>
 

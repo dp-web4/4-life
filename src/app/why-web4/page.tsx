@@ -984,9 +984,10 @@ export default function WhyWeb4Page() {
               <details className="group/cat">
                 <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
                   <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
-                  Privacy (7)
+                  Privacy (8)
                 </summary>
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
+                  <li><a href="#faq-privacy-comparison" className="hover:text-sky-400">More private than today?</a></li>
                   <li><a href="#faq-gdpr" className="hover:text-sky-400">GDPR right to be forgotten?</a></li>
                   <li><a href="#faq-reputation-visibility" className="hover:text-sky-400">Who sees my reputation?</a></li>
                   <li><a href="#faq-pseudonymous" className="hover:text-sky-400">Pseudonymity?</a></li>
@@ -1790,6 +1791,73 @@ export default function WhyWeb4Page() {
                 <strong>Honest caveat:</strong> Neither solution is clean. Allowing resets undermines
                 permanent consequences (a core feature). Exempting scores from deletion rights is legally
                 uncertain. This is an unresolved policy question, not a technical one.
+              </p>
+            </div>
+          </details>
+
+          {/* Privacy comparison — visitor Q Apr 10: "is Web4 more or less private?" */}
+          <details id="faq-privacy-comparison" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Is Web4 more private or less private than today&apos;s internet?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Both — it depends on what you mean by &ldquo;privacy.&rdquo;</strong>
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs mt-2 mb-3">
+                  <thead>
+                    <tr className="text-left text-gray-400 border-b border-gray-700">
+                      <th className="pb-2 pr-4">Dimension</th>
+                      <th className="pb-2 pr-4">Today&apos;s Internet</th>
+                      <th className="pb-2">Web4</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-gray-300">
+                    <tr className="border-b border-gray-800">
+                      <td className="py-2 pr-4 text-gray-400">Who you are</td>
+                      <td className="py-2 pr-4">Platforms know your name, email, IP, payment info</td>
+                      <td className="py-2"><span className="text-green-400">Better</span> — identity is a hardware key, not your name</td>
+                    </tr>
+                    <tr className="border-b border-gray-800">
+                      <td className="py-2 pr-4 text-gray-400">What you do</td>
+                      <td className="py-2 pr-4">Platforms track everything, sell to advertisers</td>
+                      <td className="py-2"><span className="text-green-400">Better</span> — behavioral scores visible, raw activity is not</td>
+                    </tr>
+                    <tr className="border-b border-gray-800">
+                      <td className="py-2 pr-4 text-gray-400">Who sees you</td>
+                      <td className="py-2 pr-4">The platform + anyone it shares data with</td>
+                      <td className="py-2"><span className="text-green-400">Better</span> — only entities in your trust network (MRH-scoped)</td>
+                    </tr>
+                    <tr className="border-b border-gray-800">
+                      <td className="py-2 pr-4 text-gray-400">Behavioral history</td>
+                      <td className="py-2 pr-4">Deletable (in theory — platform retains backups)</td>
+                      <td className="py-2"><span className="text-amber-400">Trade-off</span> — permanent, but attached to a key, not a name</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 pr-4 text-gray-400">Starting fresh</td>
+                      <td className="py-2 pr-4">Easy — create a new account</td>
+                      <td className="py-2"><span className="text-amber-400">Trade-off</span> — disposable identity is prevented by design</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                The core design choice: Web4 <strong>removes the central observer</strong> (no platform
+                sees everything about you) but <strong>adds behavioral permanence</strong> (your actions
+                have lasting consequences). For most users, this is a net privacy improvement — your
+                identity and activity are harder to surveil, even as your reputation becomes persistent.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Web4 identifies{" "}
+                <a href="/threat-model" className="text-sky-400 hover:underline">seven privacy leakage channels</a>{" "}
+                including metadata correlation, timing analysis, and trust graph topology inference.
+                No system eliminates privacy risk entirely. The claim is that decentralized, scoped
+                visibility is structurally better than centralized, unlimited surveillance — not
+                that it&apos;s perfect. See{" "}
+                <a href="#faq-pseudonymous" className="text-sky-400 hover:underline">pseudonymity FAQ</a> and{" "}
+                <a href="#faq-vpn-tor" className="text-sky-400 hover:underline">VPN/Tor FAQ</a> for specifics.
               </p>
             </div>
           </details>
