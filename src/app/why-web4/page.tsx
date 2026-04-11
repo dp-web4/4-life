@@ -783,6 +783,15 @@ export default function WhyWeb4Page() {
                 <em>natively</em> integrates trust scoring can weight content accordingly, not just display
                 badges. The design supports both models — grassroots overlay and official integration.
               </p>
+              <p className="text-gray-400 text-sm mt-3">
+                <strong className="text-gray-300">What does daily life look like at 1% adoption?</strong> You
+                install a browser extension. On a coding forum, you see trust badges next to 1 in 100 usernames &mdash;
+                those are other Web4 users. Their posts aren&apos;t ranked higher (yet), but you can see at a glance
+                that &ldquo;this person has 0.82 trust in Python and a 6-month history of helpful answers.&rdquo;
+                Everyone else looks the same as before. You lose nothing; you gain a signal. As more people join,
+                the signal becomes more useful &mdash; and platforms eventually notice that trust-badged users
+                produce better content, creating incentive to integrate natively.
+              </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Bootstrapping is the hardest phase. A trust score based on
                 2 platforms is less meaningful than one based on 200. The first communities to adopt will need
