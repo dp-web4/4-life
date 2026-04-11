@@ -797,6 +797,13 @@ export default function TrustTensorPage() {
             lose their medical knowledge. But if they haven&apos;t practiced surgery in five years,
             you probably wouldn&apos;t want them operating. T3 decay captures exactly this intuition.
           </p>
+          {/* Trust decay on break — Apr 10 visitor unanswered Q4 */}
+          <p className="text-gray-500 text-xs mt-2">
+            <strong className="text-gray-400">What if you take a 6-month break?</strong>{' '}
+            Temperament (30-day half-life) fades fast, but Talent (365-day half-life) stays
+            at ~70%. A few weeks of consistent activity rebuilds what took months to lose.{' '}
+            <a href="/why-web4#faq" className="text-sky-400 hover:underline">Full breakdown in the FAQ →</a>
+          </p>
         </div>
       </section>
 

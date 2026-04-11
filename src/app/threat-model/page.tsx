@@ -573,6 +573,51 @@ export default function ThreatModelPage() {
             (no), but &ldquo;is the privacy cost worth the trust benefit?&rdquo;
           </p>
         </div>
+
+        {/* Privacy comparison — Apr 10 visitor unanswered Q5 */}
+        <details className="mt-4">
+          <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300">
+            ▶ So is Web4 better or worse for privacy than what we have now?
+          </summary>
+          <div className="mt-3 bg-gray-900/60 border border-gray-700 rounded-lg p-4 text-sm text-gray-300 space-y-3">
+            <p>
+              It depends on what you compare against:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+              <div className="bg-red-950/20 border border-red-800/20 rounded-lg p-3">
+                <p className="font-semibold text-red-400 mb-2">Today (Web2)</p>
+                <p className="text-gray-400">
+                  Platforms own your data, sell it to advertisers, and suffer regular breaches.
+                  You have no visibility into who sees what. Privacy policies are unreadable
+                  legal documents. Your behavior is profiled across every service.
+                </p>
+              </div>
+              <div className="bg-amber-950/20 border border-amber-800/20 rounded-lg p-3">
+                <p className="font-semibold text-amber-400 mb-2">Blockchain (Web3)</p>
+                <p className="text-gray-400">
+                  All transactions are public and permanent on-chain. Anyone can trace your
+                  wallet history. &ldquo;Pseudonymous&rdquo; until one transaction links to your
+                  identity &mdash; then everything is exposed retroactively.
+                </p>
+              </div>
+              <div className="bg-sky-950/20 border border-sky-800/20 rounded-lg p-3">
+                <p className="font-semibold text-sky-400 mb-2">Web4</p>
+                <p className="text-gray-400">
+                  Trust data is scoped &mdash; your employer sees your professional trust,
+                  not your social trust. ZK proofs let you prove &ldquo;trust above threshold&rdquo;
+                  without revealing your score. 7 leakage channels exist, but they&apos;re
+                  documented, bounded, and auditable.
+                </p>
+              </div>
+            </div>
+            <p className="text-gray-400 text-xs">
+              <strong className="text-gray-300">The honest answer:</strong> Web4 leaks more than
+              a system with no trust (because trust requires observable behavior), but far less than
+              Web2 (no platform owns your data) and differently than Web3 (no permanent public ledger).
+              The trade-off is explicit: you give up some privacy in exchange for trust that actually works.
+            </p>
+          </div>
+        </details>
       </section>
 
       {/* Adversary Profiles */}
