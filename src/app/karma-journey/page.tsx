@@ -534,7 +534,7 @@ export default function KarmaJourneyPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
             {[
               { label: 'Life', value: `#${currentLife.lifeNumber}`, color: '#93c5fd' },
-              { label: 'Trust (Raw)', value: baseComp.toFixed(3), color: baseComp > 0.7 ? '#6ee7b7' : baseComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `This determines survival (≥ 0.5)` },
+              { label: 'Trust (Raw)', value: baseComp.toFixed(3), color: baseComp > 0.7 ? '#6ee7b7' : baseComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `Survival threshold: ≥ 0.5 raw (not effective)` },
               { label: 'Energy', value: `${currentLife.atp}`, color: currentLife.atp > 50 ? '#6ee7b7' : currentLife.atp > 20 ? '#fde68a' : '#fca5a5' },
               { label: 'Consistency', value: currentLife.ci.toFixed(2), color: currentLife.ci > 0.8 ? '#6ee7b7' : currentLife.ci > 0.5 ? '#fde68a' : '#fca5a5' },
             ].map(stat => (

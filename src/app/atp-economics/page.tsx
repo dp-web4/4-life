@@ -313,7 +313,10 @@ export default function ATPEconomicsPage() {
             Think Reddit upvotes, but where each vote is weighted by the voter&apos;s own trust score — and
             you can&apos;t see who voted, only the aggregate result. No mob dynamics (trust-weighting
             prevents brigading), no central curation (the community decides), no self-rating (your own
-            confirmations don&apos;t count).
+            confirmations don&apos;t count). What about rubber-stamping? A low-trust confirmer&apos;s click
+            carries almost no weight, so colluding with new accounts doesn&apos;t help. And confirming
+            everything indiscriminately tanks your own CI (consistency score), making your future
+            confirmations worth even less.
           </p>
         </div>
       </section>
