@@ -718,6 +718,41 @@ export default function FederationEconomicsPage() {
                 </p>
               </div>
             </details>
+
+            {/* FAQ: Trust calibration across communities — visitor Q5 Apr 11 */}
+            <details className="bg-gray-800/40 border border-amber-700/30 rounded-xl p-5 mt-4">
+              <summary className="text-sm font-semibold text-amber-300/90 cursor-pointer list-none flex justify-between items-center">
+                <span>Does &ldquo;0.7 trust&rdquo; mean the same thing in every community?</span>
+                <span className="text-gray-500 text-xs ml-2">click to expand</span>
+              </summary>
+              <div className="mt-3 space-y-3 text-sm text-gray-400">
+                <p className="m-0">
+                  <strong className="text-gray-300">No — and that&apos;s by design.</strong> Each community sets its own
+                  parameters: the 0.5 trust threshold is a <em>society-level setting</em>, not a protocol constant.
+                  A research community might require 0.7 for publishing; a casual social space might accept 0.3.
+                  T3 weights, decay half-lives, and cost multipliers are all configurable per community.
+                </p>
+                <p className="m-0">
+                  <strong className="text-gray-300">How cross-community translation works:</strong> When trust
+                  crosses a federation boundary, it&apos;s not copied — it&apos;s <em>translated</em>. Community A&apos;s 0.7
+                  arrives at Community B discounted by MRH decay (typically ×0.7), giving ~0.49. Community B then
+                  interprets that 0.49 through <em>its own</em> calibration: is 0.49 enough for the action being
+                  attempted? The number changes meaning at the boundary, just like currency exchange rates
+                  change the value of &ldquo;100&rdquo; between countries.
+                </p>
+                <p className="m-0">
+                  <strong className="text-gray-300">Bridge agents ground the calibration.</strong> People active in
+                  both communities develop trust in both calibration systems. Their cross-community interactions
+                  create a natural &ldquo;exchange rate&rdquo; — if bridge agents with A-trust of 0.7 consistently
+                  earn B-trust of 0.8, that ratio becomes an implicit calibration signal.
+                </p>
+                <p className="text-amber-400/80 text-xs">
+                  <strong>Honest caveat:</strong> Automatic calibration between communities with very different
+                  trust cultures is an open research question. The current approach (MRH decay + bridge agents + domain
+                  matching) works for similar communities but may struggle when trust norms diverge significantly.
+                </p>
+              </div>
+            </details>
           </div>
 
           <div id="value-conflicts" className="scroll-mt-24">

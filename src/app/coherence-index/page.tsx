@@ -347,6 +347,9 @@ export default function CoherenceIndexPage() {
                   1. Spatial Coherence
                 </h3>
               </div>
+              <p className="text-gray-400 text-sm mb-2 italic">
+                Like noticing someone claims to be in Tokyo and Paris on the same afternoon
+              </p>
               <p className="text-gray-300 mb-3">
                 <strong>Question</strong>: Can this device actually be where it
                 claims?
@@ -378,6 +381,9 @@ export default function CoherenceIndexPage() {
                   2. Capability Coherence
                 </h3>
               </div>
+              <p className="text-gray-400 text-sm mb-2 italic">
+                Like a flip phone suddenly running supercomputer-level calculations
+              </p>
               <p className="text-gray-300 mb-3">
                 <strong>Question</strong>: Does this device have the capabilities
                 it should?
@@ -406,8 +412,11 @@ export default function CoherenceIndexPage() {
                   3. Temporal Coherence
                 </h3>
               </div>
+              <p className="text-gray-400 text-sm mb-2 italic">
+                Like an employee who vanishes for weeks, then suddenly resumes as if nothing happened
+              </p>
               <p className="text-gray-300 mb-3">
-                <strong>Question</strong>: Is this device's temporal behavior
+                <strong>Question</strong>: Is this device&apos;s temporal behavior
                 consistent?
               </p>
               <div className="bg-green-950/30 border border-green-800/20 rounded p-3 mb-3">
@@ -433,8 +442,11 @@ export default function CoherenceIndexPage() {
                   4. Relational Coherence
                 </h3>
               </div>
+              <p className="text-gray-400 text-sm mb-2 italic">
+                Like a stranger claiming to be best friends with everyone in the room
+              </p>
               <p className="text-gray-300 mb-3">
-                <strong>Question</strong>: Are this device's relationships
+                <strong>Question</strong>: Are this device&apos;s relationships
                 consistent?
               </p>
               <div className="bg-orange-950/30 border border-orange-800/20 rounded p-3 mb-3">
