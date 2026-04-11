@@ -8,6 +8,16 @@ const nextConfig = {
         destination: '/day-in-web4',
         permanent: true,
       },
+      {
+        source: '/mrh',
+        destination: '/markov-relevancy-horizon',
+        permanent: true,
+      },
+      {
+        source: '/trust-neighborhood',
+        destination: '/markov-relevancy-horizon',
+        permanent: true,
+      },
     ];
   },
   webpack: (config) => {
