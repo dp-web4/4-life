@@ -483,7 +483,7 @@ export default function KarmaJourneyPage() {
         <strong style={{ color: 'var(--color-text-secondary)' }}>What the numbers mean:</strong>{' '}
         <strong><Link href="/trust-tensor" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>Trust</Link></strong> = your reputation (Talent + Training + Temperament, averaged).{' '}
         <strong><Link href="/atp-economics" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>ATP</Link></strong> = your energy budget — every action costs ATP, run out and you die.{' '}
-        <strong><Link href="/coherence-index" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>CI</Link></strong> = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;). Your effective trust = raw trust × CI². Squaring means small inconsistencies barely hurt (0.9² = 0.81) but major inconsistency cuts your trust almost in half (0.6² = 0.36).{' '}
+        <strong><Link href="/coherence-index" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>CI</Link></strong> = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;). Your effective trust = raw trust × CI² — this affects what you earn and how others see you, but <em>not</em> whether you survive (only raw trust matters for that). Squaring means small inconsistencies barely hurt (0.9² = 0.81) but major inconsistency cuts your perceived trust almost in half (0.6² = 0.36).{' '}
         When you die, your final trust determines your <strong>karma tier</strong> (Honored/Neutral/Constrained), which sets your starting conditions for the next life.{' '}
         Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
       </p>
@@ -561,9 +561,12 @@ export default function KarmaJourneyPage() {
                 <span style={{ color: 'var(--color-text-muted)' }}>Others see your <em>effective</em> trust: </span><strong style={{ color: 'var(--color-sky)' }}>{effComp.toFixed(3)}</strong>
                 <span style={{ color: 'var(--color-text-muted)' }}> (raw × CI² = {baseComp.toFixed(2)} × {currentLife.ci.toFixed(2)}²)</span>
               </div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.375rem', padding: '0.375rem 0.5rem', borderRadius: '0.25rem', background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.15)' }}>
+                <strong style={{ color: 'var(--color-sky)' }}>Not dead!</strong> Effective trust ({effComp.toFixed(3)}) is below 0.5, but that&apos;s fine — only <em>raw</em> trust determines survival, and yours is {baseComp.toFixed(2)}. Effective trust affects how others perceive you and what you earn, not whether you survive.
+              </div>
               <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
               {currentLife.lifeNumber === 1
-                ? <>Why lower? Consistency (CI) modulates how others perceive your trust. New entities have limited history (CI = {currentLife.ci.toFixed(2)}), so effective trust starts below raw. As you make consistent choices, CI rises toward 1.0 and the gap closes. The squaring means small inconsistencies have outsized impact: 0.9² = 0.81 (barely a dent), but 0.6² = 0.36 (nearly halved).</>
+                ? <>Consistency (CI) modulates how others perceive your trust. New entities have limited history (CI = {currentLife.ci.toFixed(2)}), so effective trust starts below raw. As you make consistent choices, CI rises toward 1.0 and the gap closes. The squaring means small inconsistencies have outsized impact: 0.9² = 0.81 (barely a dent), but 0.6² = 0.36 (nearly halved).</>
                 : <>Your karma from Life {currentLife.lifeNumber - 1} set your raw trust at {baseComp.toFixed(3)}. Consistency ({currentLife.ci.toFixed(2)}) {currentLife.ci >= 0.9 ? 'is high, so the gap is small' : 'still modulates what others see'}. The squaring means small inconsistencies have outsized impact: 0.9² = 0.81, barely a dent; 0.6² = 0.36, nearly halved.</>
               }</span>
             </div>

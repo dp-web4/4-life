@@ -346,12 +346,17 @@ export function InteractiveMarketWireframe() {
           </div>
           {/* Buy button / Escrow flow */}
           {!showEscrow ? (
-            <button
-              onClick={() => { setShowEscrow(true); setEscrowStep(0); }}
-              className="w-full py-2 rounded-lg bg-violet-600/30 border border-violet-500/40 text-violet-300 hover:bg-violet-600/50 transition-colors text-sm font-medium"
-            >
-              Buy for 350 ATP — see how escrow works
-            </button>
+            <div>
+              <button
+                onClick={() => { setShowEscrow(true); setEscrowStep(0); }}
+                className="w-full py-2 rounded-lg bg-violet-600/30 border border-violet-500/40 text-violet-300 hover:bg-violet-600/50 transition-colors text-sm font-medium"
+              >
+                Buy for 350 ATP — see how escrow works
+              </button>
+              <p className="text-xs text-gray-600 mt-1.5 text-center">
+                ATP is both your energy budget <em>and</em> your currency — the same resource you spend on actions also works as a medium of exchange.
+              </p>
+            </div>
           ) : (
             <div className="space-y-2">
               {ESCROW_STEPS.map((step, i) => (
