@@ -561,9 +561,11 @@ export default function KarmaJourneyPage() {
                 <span style={{ color: 'var(--color-text-muted)' }}>Others see your <em>effective</em> trust: </span><strong style={{ color: 'var(--color-sky)' }}>{effComp.toFixed(3)}</strong>
                 <span style={{ color: 'var(--color-text-muted)' }}> (raw × CI² = {baseComp.toFixed(2)} × {currentLife.ci.toFixed(2)}²)</span>
               </div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.375rem', padding: '0.375rem 0.5rem', borderRadius: '0.25rem', background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.15)' }}>
-                <strong style={{ color: 'var(--color-sky)' }}>Not dead!</strong> Effective trust ({effComp.toFixed(3)}) is below 0.5, but that&apos;s fine — only <em>raw</em> trust determines survival, and yours is {baseComp.toFixed(2)}. Effective trust affects how others perceive you and what you earn, not whether you survive.
-              </div>
+              {effComp < 0.5 && baseComp >= 0.5 && (
+                <div style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', marginBottom: '0.375rem', padding: '0.5rem 0.625rem', borderRadius: '0.25rem', background: 'rgba(56, 189, 248, 0.1)', border: '1px solid rgba(56, 189, 248, 0.2)' }}>
+                  <strong style={{ color: 'var(--color-sky)' }}>You&apos;re not dead!</strong> Effective trust ({effComp.toFixed(3)}) is below 0.5, but only <em>raw</em> trust determines survival, and yours is {baseComp.toFixed(2)}. Effective trust affects how others perceive you, not whether you survive.
+                </div>
+              )}
               <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
               {currentLife.lifeNumber === 1
                 ? <>Consistency (CI) modulates how others perceive your trust. New entities have limited history (CI = {currentLife.ci.toFixed(2)}), so effective trust starts below raw. As you make consistent choices, CI rises toward 1.0 and the gap closes. The squaring means small inconsistencies have outsized impact: 0.9² = 0.81 (barely a dent), but 0.6² = 0.36 (nearly halved).</>
