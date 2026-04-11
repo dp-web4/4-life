@@ -900,6 +900,37 @@ export default function ATPEconomicsPage() {
           </div>
         </details>
 
+        {/* ATP dual role FAQ — Apr 10 visitor unanswered Q2 */}
+        <details className="mt-6">
+          <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300">
+            ▶ Is ATP a currency or an energy budget?
+          </summary>
+          <div className="mt-3 bg-gray-900/60 border border-gray-700 rounded-lg p-4 text-sm text-gray-300 space-y-3">
+            <p>
+              <strong className="text-sky-400">Both.</strong> ATP serves two roles simultaneously:
+            </p>
+            <ul className="list-disc list-inside space-y-2 ml-2 text-gray-400">
+              <li>
+                <strong className="text-gray-300">Energy budget:</strong> ATP limits how much you can do.
+                Every action costs ATP, so you have to allocate your attention deliberately &mdash;
+                just like a body allocates calories.
+              </li>
+              <li>
+                <strong className="text-gray-300">Transaction medium:</strong> ATP also flows between
+                participants. When you buy something on a marketplace or hire someone for a task,
+                you transfer ATP to them. It&apos;s how value moves through the system.
+              </li>
+            </ul>
+            <p>
+              The key difference from traditional currency: ATP can&apos;t be hoarded indefinitely
+              (it decays), can&apos;t be created from nothing (it recycles through the ATP &harr; ADP
+              cycle), and your earning rate depends on your trust scores. A &ldquo;350 ATP&rdquo;
+              marketplace price means the seller is asking for that much of your energy budget &mdash;
+              and whether you can afford it depends on how much value you&apos;ve contributed.
+            </p>
+          </div>
+        </details>
+
         {/* ADP visibility boost — Mar 22 visitor unanswered Q6 */}
         <div className="mt-6 bg-gradient-to-br from-amber-950/20 to-gray-900 border border-amber-800/20 rounded-xl p-5">
           <h3 className="text-lg font-semibold text-amber-300 mb-2">
