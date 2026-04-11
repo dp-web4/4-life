@@ -611,7 +611,7 @@ export default function CoherenceIndexPage() {
               </div>
               <div className="space-y-4">
                 {([
-                  { label: "Spatial", dim: "spatial" as const, value: spatialCI, hint: "Location consistency" },
+                  { label: "Spatial", dim: "spatial" as const, value: spatialCI, hint: "Scope of activity — which communities and roles you claim" },
                   { label: "Capability", dim: "capability" as const, value: capabilityCI, hint: "Hardware plausibility" },
                   { label: "Temporal", dim: "temporal" as const, value: temporalCI, hint: "Activity continuity" },
                   { label: "Relational", dim: "relational" as const, value: relationalCI, hint: "Relationship history" },
@@ -1303,6 +1303,78 @@ lenient_society = {
                 Incoherent behavior = immediate limitation.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Common Questions — visitor feedback Apr 10: "who determines my spatial consistency?" */}
+        <section className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6 text-gray-100">Common Questions</h2>
+          <div className="space-y-4">
+            <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+              <summary className="text-lg font-semibold text-orange-400 list-none flex justify-between items-center">
+                <span>How is CI actually calculated? Who feeds in the data?</span>
+                <span className="text-gray-500 text-xl">+</span>
+              </summary>
+              <div className="mt-4 text-gray-300 text-sm space-y-2">
+                <p>
+                  CI is computed <strong>automatically from your behavior</strong> — no one &ldquo;rates&rdquo; you.
+                  Every time you perform an action in Web4 (post content, complete a task, interact with someone),
+                  the system updates your four coherence dimensions based on how that action compares to your
+                  established patterns.
+                </p>
+                <p>
+                  <strong className="text-gray-200">Spatial</strong> = scope consistency. Are you active in the
+                  same communities and roles you&apos;ve been in, or did you suddenly claim expertise in 10 new
+                  domains overnight? (This is about <em>communities and roles</em>, not GPS location — VPNs and
+                  Tor don&apos;t affect it.)
+                </p>
+                <p>
+                  <strong className="text-gray-200">Capability</strong> = hardware plausibility. Can your device
+                  actually perform the actions being claimed? (Prevents credential theft — a stolen key on an
+                  unfamiliar device shows capability gaps.)
+                </p>
+                <p>
+                  <strong className="text-gray-200">Temporal</strong> = activity continuity. Do you have stable
+                  patterns over time? (A sudden burst of 200 actions at 3am when you normally act during business
+                  hours flags a temporal anomaly.)
+                </p>
+                <p>
+                  <strong className="text-gray-200">Relational</strong> = relationship history. Do you interact
+                  with your established network, or did you suddenly start transacting with 50 strangers?
+                </p>
+                <p>
+                  The formula is the <strong>geometric mean</strong> (fourth root of the product) of all four
+                  dimensions. This means one bad dimension drags down the whole score — you can&apos;t
+                  compensate for suspicious spatial behavior by being temporally consistent.
+                </p>
+              </div>
+            </details>
+
+            <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+              <summary className="text-lg font-semibold text-orange-400 list-none flex justify-between items-center">
+                <span>Does &ldquo;spatial&rdquo; mean location? Will traveling hurt my CI?</span>
+                <span className="text-gray-500 text-xl">+</span>
+              </summary>
+              <div className="mt-4 text-gray-300 text-sm space-y-2">
+                <p>
+                  <strong className="text-sky-300">No.</strong> &ldquo;Spatial&rdquo; in CI refers to your{' '}
+                  <em>scope of activity</em> — which communities you participate in, which roles you claim, and
+                  how consistent that scope is over time. It has nothing to do with physical location, IP
+                  addresses, or GPS coordinates.
+                </p>
+                <p>
+                  Traveling, using a VPN, or switching Wi-Fi networks has zero effect on your spatial CI.
+                  What <em>would</em> affect it: suddenly claiming expertise in 5 new domains you&apos;ve
+                  never participated in, or abruptly shifting all your activity to a completely different
+                  community network.
+                </p>
+                <p>
+                  Think of it as &ldquo;staying in your lane&rdquo; — not physically, but in terms of the
+                  roles and communities where you have established history. Gradual expansion into new areas
+                  is normal and doesn&apos;t trigger spatial anomalies. Sudden, dramatic scope changes do.
+                </p>
+              </div>
+            </details>
           </div>
         </section>
 
