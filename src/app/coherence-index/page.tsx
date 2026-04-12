@@ -224,20 +224,21 @@ export default function CoherenceIndexPage() {
                 </p>
               </div>
               <div className="bg-amber-950/20 border border-amber-800/20 rounded p-4">
-                <p className="font-medium text-amber-400 mb-1">Vacation in Tokyo (CI dips to ~0.8 for a day)</p>
+                <p className="font-medium text-amber-400 mb-1">Career pivot (CI dips to ~0.8 for a week)</p>
                 <p>
-                  You fly abroad. Your spatial pattern changes suddenly — CI dips. Actions cost a bit more ATP and
+                  You&apos;ve been a backend developer for years, then suddenly start posting in design, marketing,
+                  and finance communities all at once. Your spatial pattern changes — CI dips. Actions cost a bit more ATP and
                   one extra witness may be needed for big transactions. But your temporal and relational patterns
-                  stay consistent (same hours, same contacts, same topics), so the dip is mild. After a couple days,
-                  your new location stabilizes and CI recovers. It feels like using your credit card in a new country —
-                  a brief &ldquo;is this really you?&rdquo; moment, then normal service.
+                  stay consistent (same hours, same contacts, same device), so the dip is mild. After a week of
+                  consistent activity in your new areas, CI recovers. It feels like a new employee&apos;s probation period —
+                  a brief &ldquo;let&apos;s see if this is really you&rdquo; moment, then normal service.
                 </p>
               </div>
               <div className="bg-red-950/20 border border-red-800/20 rounded p-4">
                 <p className="font-medium text-red-400 mb-1">Account compromise (CI crashes to ~0.4)</p>
                 <p>
-                  That same account suddenly posts crypto spam at 3am from a different country.
-                  Content changed, timing changed, location changed — three dimensions flagged at once.
+                  That same account suddenly posts crypto spam at 3am in communities you&apos;ve never visited.
+                  Content changed, timing changed, scope changed — three dimensions flagged at once.
                   Trust is throttled, extra witnesses required for any action. No human moderator needed.
                   No ban. The system simply asks: &ldquo;does this behavior make sense?&rdquo;
                 </p>
@@ -964,9 +965,9 @@ export default function CoherenceIndexPage() {
                 temporal, and relational coherence checks.
               </p>
               <p className="text-xs text-gray-500">
-                Example: Credit card stolen in New York. Thief tries to use it in
-                Tokyo 2 hours later. CI tanks due to impossible travel, transaction
-                blocked or requires massive additional witnesses.
+                Example: Credentials stolen. Thief starts acting in communities the
+                owner never participated in, from an unfamiliar device. Capability + spatial
+                coherence both fail — transaction blocked or requires massive additional witnesses.
               </p>
             </div>
 
@@ -1010,9 +1011,9 @@ export default function CoherenceIndexPage() {
                 capabilities, and no relational history. CI flags this immediately.
               </p>
               <p className="text-xs text-gray-500">
-                Example: Phished password used from new device in different
-                country. Temporal + spatial + relational coherence all fail.
-                Society requires 6 additional witnesses or blocks access entirely.
+                Example: Phished password used from a new device, acting in unfamiliar
+                communities with no relational history. Temporal + capability + relational
+                coherence all fail. Society requires 6 additional witnesses or blocks access entirely.
               </p>
             </div>
 
@@ -1035,8 +1036,8 @@ export default function CoherenceIndexPage() {
               </p>
               <p className="text-xs text-gray-500">
                 Example: Fake-presence attack on a voting system. Attacker creates 50
-                presences from same device. Spatial + capability coherence fails
-                for 49 of them (all same location, same hardware fingerprint). CI
+                presences from same device. Capability + spatial coherence fails
+                for 49 of them (all same hardware fingerprint, all claiming different community scopes with no history). CI
                 drops below the trust threshold (0.5), identities rejected.
               </p>
             </div>
