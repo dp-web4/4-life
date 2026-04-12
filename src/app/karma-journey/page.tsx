@@ -483,8 +483,7 @@ export default function KarmaJourneyPage() {
         <strong style={{ color: 'var(--color-text-secondary)' }}>What the numbers mean:</strong>{' '}
         <strong><Link href="/trust-tensor" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>Trust</Link></strong> = your reputation (Talent + Training + Temperament, averaged).{' '}
         <strong><Link href="/atp-economics" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>ATP</Link></strong> = your energy budget — every action costs ATP, run out and you die.{' '}
-        <strong><Link href="/coherence-index" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>CI</Link></strong> = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;). Your effective trust = raw trust × CI² — this affects what you earn and how others see you, but <em>not</em> whether you survive (only raw trust matters for that). Squaring means small inconsistencies barely hurt (0.9² = 0.81) but major inconsistency cuts your perceived trust almost in half (0.6² = 0.36).{' '}
-        When you die, your final trust determines your <strong>karma tier</strong> (Honored/Neutral/Constrained), which sets your starting conditions for the next life.{' '}
+        <strong><Link href="/coherence-index" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>CI</Link></strong> = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;). Your effective trust = raw trust × CI² — this determines your <strong>karma tier</strong> when you die (Honored/Neutral/Constrained), which sets your starting conditions for the next life. Raw trust alone determines whether you survive (≥ 0.5). Squaring means small inconsistencies barely hurt (0.9² = 0.81) but major inconsistency cuts your effective trust almost in half (0.6² = 0.36).{' '}
         Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
       </p>
 
@@ -534,7 +533,7 @@ export default function KarmaJourneyPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
             {[
               { label: 'Life', value: `#${currentLife.lifeNumber}`, color: '#93c5fd' },
-              { label: 'Trust (Raw)', value: baseComp.toFixed(3), color: baseComp > 0.7 ? '#6ee7b7' : baseComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `Survival threshold: ≥ 0.5 raw (not effective)` },
+              { label: 'Trust (Raw)', value: baseComp.toFixed(3), color: baseComp > 0.7 ? '#6ee7b7' : baseComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `Raw ≥ 0.5 to survive; effective (raw × CI²) sets karma tier` },
               { label: 'Energy', value: `${currentLife.atp}`, color: currentLife.atp > 50 ? '#6ee7b7' : currentLife.atp > 20 ? '#fde68a' : '#fca5a5' },
               { label: 'Consistency', value: currentLife.ci.toFixed(2), color: currentLife.ci > 0.8 ? '#6ee7b7' : currentLife.ci > 0.5 ? '#fde68a' : '#fca5a5' },
             ].map(stat => (
@@ -558,12 +557,12 @@ export default function KarmaJourneyPage() {
                 <strong>Raw trust: {baseComp.toFixed(3)}</strong> — determines survival (≥ 0.5 to stay alive)
               </div>
               <div style={{ marginBottom: '0.375rem', fontSize: '0.75rem' }}>
-                <span style={{ color: 'var(--color-text-muted)' }}>Others see your <em>effective</em> trust: </span><strong style={{ color: 'var(--color-sky)' }}>{effComp.toFixed(3)}</strong>
-                <span style={{ color: 'var(--color-text-muted)' }}> (raw × CI² = {baseComp.toFixed(2)} × {currentLife.ci.toFixed(2)}²)</span>
+                <span style={{ color: 'var(--color-text-muted)' }}>Effective trust: </span><strong style={{ color: 'var(--color-sky)' }}>{effComp.toFixed(3)}</strong>
+                <span style={{ color: 'var(--color-text-muted)' }}> (raw × CI² = {baseComp.toFixed(2)} × {currentLife.ci.toFixed(2)}²) — determines your earning rate, action weight, and how others prioritize your contributions</span>
               </div>
               {effComp < 0.5 && baseComp >= 0.5 && (
                 <div style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', marginBottom: '0.375rem', padding: '0.5rem 0.625rem', borderRadius: '0.25rem', background: 'rgba(56, 189, 248, 0.1)', border: '1px solid rgba(56, 189, 248, 0.2)' }}>
-                  <strong style={{ color: 'var(--color-sky)' }}>You&apos;re not dead!</strong> Effective trust ({effComp.toFixed(3)}) is below 0.5, but only <em>raw</em> trust determines survival, and yours is {baseComp.toFixed(2)}. Effective trust affects how others perceive you, not whether you survive.
+                  <strong style={{ color: 'var(--color-sky)' }}>You&apos;re not dead!</strong> Effective trust ({effComp.toFixed(3)}) is below 0.5, but only <em>raw</em> trust determines survival, and yours is {baseComp.toFixed(2)}. Effective trust determines your karma tier at death (and thus your next life&apos;s starting conditions), not whether you survive.
                 </div>
               )}
               <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>

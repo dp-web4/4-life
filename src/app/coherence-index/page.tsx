@@ -623,7 +623,7 @@ export default function CoherenceIndexPage() {
               </div>
               <div className="space-y-4">
                 {([
-                  { label: "Spatial", dim: "spatial" as const, value: spatialCI, hint: "Scope of activity — which communities and roles you claim" },
+                  { label: "Spatial", dim: "spatial" as const, value: spatialCI, hint: "Location plausibility — is your physical location consistent?" },
                   { label: "Capability", dim: "capability" as const, value: capabilityCI, hint: "Hardware plausibility" },
                   { label: "Temporal", dim: "temporal" as const, value: temporalCI, hint: "Activity continuity" },
                   { label: "Relational", dim: "relational" as const, value: relationalCI, hint: "Relationship history" },
@@ -1035,7 +1035,7 @@ export default function CoherenceIndexPage() {
               </p>
               <p className="text-xs text-gray-500">
                 Example: Fake-presence attack on a voting system. Attacker creates 50
-                presences from same device. Spatial + capability coherence fails
+                presences from same device. Capability + spatial coherence fails
                 for 49 of them (all same location, same hardware fingerprint). CI
                 drops below the trust threshold (0.5), identities rejected.
               </p>
@@ -1335,10 +1335,10 @@ lenient_society = {
                   established patterns.
                 </p>
                 <p>
-                  <strong className="text-gray-200">Spatial</strong> = scope consistency. Are you active in the
-                  same communities and roles you&apos;ve been in, or did you suddenly claim expertise in 10 new
-                  domains overnight? (This is about <em>communities and roles</em>, not GPS location — VPNs and
-                  Tor don&apos;t affect it.)
+                  <strong className="text-gray-200">Spatial</strong> = location plausibility. Is your physical location
+                  consistent with where you were recently? Impossible travel (New York at noon, Tokyo at 2pm) is a red flag.
+                  Normal travel is fine — a 14-hour flight causes a brief dip, then CI recovers.
+                  (VPNs and IP addresses don&apos;t affect it — spatial CI uses hardware-attested location.)
                 </p>
                 <p>
                   <strong className="text-gray-200">Capability</strong> = hardware plausibility. Can your device
@@ -1369,21 +1369,21 @@ lenient_society = {
               </summary>
               <div className="mt-4 text-gray-300 text-sm space-y-2">
                 <p>
-                  <strong className="text-sky-300">No.</strong> &ldquo;Spatial&rdquo; in CI refers to your{' '}
-                  <em>scope of activity</em> — which communities you participate in, which roles you claim, and
-                  how consistent that scope is over time. It has nothing to do with physical location, IP
-                  addresses, or GPS coordinates.
+                  <strong className="text-sky-300">Yes, spatial coherence involves physical location</strong> —
+                  specifically, whether your current location is <em>plausible</em> given where you were recently.
+                  It detects impossible travel (New York at noon, Tokyo at 2pm) and flags sudden location jumps.
                 </p>
                 <p>
-                  Traveling, using a VPN, or switching Wi-Fi networks has zero effect on your spatial CI.
-                  What <em>would</em> affect it: suddenly claiming expertise in 5 new domains you&apos;ve
-                  never participated in, or abruptly shifting all your activity to a completely different
-                  community network.
+                  <strong>Normal travel is fine.</strong> If you fly from New York to Tokyo over 14 hours,
+                  your spatial CI dips briefly (like a credit card&apos;s &ldquo;unusual activity&rdquo; check)
+                  then recovers within a day or two as your new location stabilizes. The system expects
+                  humans to move around — it&apos;s looking for <em>physically impossible</em> movement, not
+                  ordinary travel.
                 </p>
                 <p>
-                  Think of it as &ldquo;staying in your lane&rdquo; — not physically, but in terms of the
-                  roles and communities where you have established history. Gradual expansion into new areas
-                  is normal and doesn&apos;t trigger spatial anomalies. Sudden, dramatic scope changes do.
+                  VPNs and IP addresses don&apos;t affect spatial CI — it relies on hardware-attested location
+                  from your device&apos;s secure element, not network addresses. Switching Wi-Fi networks
+                  changes nothing.
                 </p>
               </div>
             </details>
