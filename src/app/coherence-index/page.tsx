@@ -1364,6 +1364,45 @@ lenient_society = {
 
             <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
               <summary className="text-lg font-semibold text-orange-400 list-none flex justify-between items-center">
+                <span>What about major life changes — career switch, illness, moving countries?</span>
+                <span className="text-gray-500 text-xl">+</span>
+              </summary>
+              <div className="mt-4 text-gray-300 text-sm space-y-2">
+                <p>
+                  CI is designed around the idea that <strong>gradual, genuine changes look different from
+                  suspicious ones</strong>. The key distinction is whether changes happen at human speed or
+                  impossible speed.
+                </p>
+                <p>
+                  <strong className="text-sky-300">Career switch:</strong> You start posting about a new
+                  field instead of your old one. Capability CI might dip briefly (new tools, unfamiliar
+                  tasks), but spatial and temporal stay stable. Your relational CI shifts as you build
+                  new professional connections. Recovery: days to weeks, because the change is <em>gradual
+                  and authentic</em>.
+                </p>
+                <p>
+                  <strong className="text-sky-300">Illness/recovery:</strong> Extended inactivity causes
+                  temporal CI to drift (your patterns changed), but everything else stays intact. When you
+                  return, temporal recovers as your new rhythm stabilizes. The system doesn&apos;t penalize
+                  absence — it just needs a few days to re-learn your patterns.
+                </p>
+                <p>
+                  <strong className="text-sky-300">Moving countries:</strong> Spatial CI dips during
+                  the move (like the vacation scenario), then recovers once your new location stabilizes.
+                  Other dimensions are unaffected unless your entire social network and activity patterns
+                  also change simultaneously — which would be unusual even for a real move.
+                </p>
+                <p>
+                  The core principle: <strong>real life changes affect one or two dimensions at a time</strong>.
+                  An attacker taking over your account affects <em>all four at once</em> — different device,
+                  different location, different timing, different contacts. That&apos;s what CI is actually
+                  designed to catch. Genuine life transitions look nothing like account compromise.
+                </p>
+              </div>
+            </details>
+
+            <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+              <summary className="text-lg font-semibold text-orange-400 list-none flex justify-between items-center">
                 <span>Does &ldquo;spatial&rdquo; mean location? Will traveling hurt my CI?</span>
                 <span className="text-gray-500 text-xl">+</span>
               </summary>
