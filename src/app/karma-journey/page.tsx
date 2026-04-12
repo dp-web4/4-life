@@ -118,7 +118,7 @@ const CHOICES: Choice[] = [
   },
   {
     label: 'Attempt innovation',
-    description: 'Try something new. Might succeed brilliantly or fail spectacularly.',
+    description: 'Try something new and unproven. High cost, but success builds unique talent.',
     category: 'risky',
     trustDelta: { talent: 0.03, training: 0.01, temperament: -0.005 },
     ciDelta: 0.005,
@@ -150,6 +150,13 @@ const CATEGORY_COLORS = {
   selfish: '#fca5a5',
   risky: '#fde68a',
   neutral: '#94a3b8',
+};
+
+const CATEGORY_LABELS: Record<string, string> = {
+  cooperative: 'cooperative',
+  selfish: 'selfish',
+  risky: 'bold',
+  neutral: 'neutral',
 };
 
 // ============================================================================
@@ -648,7 +655,7 @@ export default function KarmaJourneyPage() {
                           borderRadius: '4px', background: `${CATEGORY_COLORS[choice.category]}15`,
                           color: CATEGORY_COLORS[choice.category],
                         }}>
-                          {choice.category}
+                          {CATEGORY_LABELS[choice.category] || choice.category}
                         </span>
                       </div>
                       <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem' }}>
