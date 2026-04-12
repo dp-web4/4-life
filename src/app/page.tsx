@@ -391,10 +391,10 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         </h3>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
           {[
-            { date: 'Apr 11', text: 'V3 clarity, privacy comparison FAQ, CI spatial clarification', link: '/trust-tensor' },
-            { date: 'Apr 10', text: 'What\'s New section, adoption transition, community onboarding', link: '/why-web4' },
-            { date: 'Apr 8', text: 'Attestation clarity, inline definitions, footer consistency fixes', link: '/first-contact' },
-            { date: 'Apr 7', text: 'Learning Journey progress tracking, UI mockup FAQ, 2 new FAQs', link: '/learn' },
+            { date: 'Apr 12', text: 'Clearer location coherence FAQ, effective trust explanation', link: '/coherence-index' },
+            { date: 'Apr 11', text: 'Better output scoring explainer, new privacy FAQ, location coherence fix', link: '/trust-tensor' },
+            { date: 'Apr 10', text: 'This changelog, adoption roadmap, community onboarding guide', link: '/why-web4' },
+            { date: 'Apr 8', text: 'Simpler identity verification intro, inline jargon definitions', link: '/first-contact' },
           ].map((item, i) => (
             <li key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'baseline', fontSize: '0.8rem' }}>
               <span style={{ color: 'var(--color-text-muted)', fontFamily: 'monospace', fontSize: '0.7rem', flexShrink: 0 }}>{item.date}</span>

@@ -217,8 +217,8 @@ export default function CoherenceIndexPage() {
               <div className="bg-green-950/20 border border-green-800/20 rounded p-4">
                 <p className="font-medium text-green-400 mb-1">Your normal Tuesday (CI ~0.97)</p>
                 <p>
-                  You wake up, check messages from your usual phone, post a coding tutorial from your desk at 10am.
-                  Everything matches your pattern — same device, same location, same hours, same topics.
+                  You wake up, check messages from your usual phone, post a coding tutorial at 10am in the same developer communities you always frequent.
+                  Everything matches your pattern — same device, same communities, same hours, same topics.
                   Full trust, normal costs, zero friction. <strong>High CI is invisible</strong> — it just means
                   the system sees nothing unusual.
                 </p>
@@ -623,7 +623,7 @@ export default function CoherenceIndexPage() {
               </div>
               <div className="space-y-4">
                 {([
-                  { label: "Spatial", dim: "spatial" as const, value: spatialCI, hint: "Scope of activity — which communities and roles you claim" },
+                  { label: "Spatial", dim: "spatial" as const, value: spatialCI, hint: "Location plausibility — are you where you could reasonably be?" },
                   { label: "Capability", dim: "capability" as const, value: capabilityCI, hint: "Hardware plausibility" },
                   { label: "Temporal", dim: "temporal" as const, value: temporalCI, hint: "Activity continuity" },
                   { label: "Relational", dim: "relational" as const, value: relationalCI, hint: "Relationship history" },
@@ -1369,21 +1369,21 @@ lenient_society = {
               </summary>
               <div className="mt-4 text-gray-300 text-sm space-y-2">
                 <p>
-                  <strong className="text-sky-300">No.</strong> &ldquo;Spatial&rdquo; in CI refers to your{' '}
-                  <em>scope of activity</em> — which communities you participate in, which roles you claim, and
-                  how consistent that scope is over time. It has nothing to do with physical location, IP
-                  addresses, or GPS coordinates.
+                  <strong className="text-sky-300">Yes, spatial coherence is about physical location</strong> —
+                  specifically, whether your current location is <em>plausible</em> given where you were recently.
+                  It detects impossible travel (New York at noon, Tokyo at 2pm) and flags sudden location jumps.
                 </p>
                 <p>
-                  Traveling, using a VPN, or switching Wi-Fi networks has zero effect on your spatial CI.
-                  What <em>would</em> affect it: suddenly claiming expertise in 5 new domains you&apos;ve
-                  never participated in, or abruptly shifting all your activity to a completely different
-                  community network.
+                  <strong>Normal travel is fine.</strong> If you fly from New York to Tokyo over 14 hours,
+                  your spatial CI dips briefly (like a credit card&apos;s &ldquo;unusual activity&rdquo; check)
+                  then recovers within a day or two as your new location stabilizes. The system expects
+                  humans to move around — it&apos;s looking for <em>physically impossible</em> movement, not
+                  ordinary travel.
                 </p>
                 <p>
-                  Think of it as &ldquo;staying in your lane&rdquo; — not physically, but in terms of the
-                  roles and communities where you have established history. Gradual expansion into new areas
-                  is normal and doesn&apos;t trigger spatial anomalies. Sudden, dramatic scope changes do.
+                  VPNs and IP addresses don&apos;t affect spatial CI — it relies on hardware-attested location
+                  from your device&apos;s secure element, not network addresses. Switching Wi-Fi networks
+                  changes nothing.
                 </p>
               </div>
             </details>

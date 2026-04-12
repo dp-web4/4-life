@@ -558,8 +558,8 @@ export default function KarmaJourneyPage() {
                 <strong>Raw trust: {baseComp.toFixed(3)}</strong> — determines survival (≥ 0.5 to stay alive)
               </div>
               <div style={{ marginBottom: '0.375rem', fontSize: '0.75rem' }}>
-                <span style={{ color: 'var(--color-text-muted)' }}>Others see your <em>effective</em> trust: </span><strong style={{ color: 'var(--color-sky)' }}>{effComp.toFixed(3)}</strong>
-                <span style={{ color: 'var(--color-text-muted)' }}> (raw × CI² = {baseComp.toFixed(2)} × {currentLife.ci.toFixed(2)}²)</span>
+                <span style={{ color: 'var(--color-text-muted)' }}>Effective trust: </span><strong style={{ color: 'var(--color-sky)' }}>{effComp.toFixed(3)}</strong>
+                <span style={{ color: 'var(--color-text-muted)' }}> (raw × CI² = {baseComp.toFixed(2)} × {currentLife.ci.toFixed(2)}²) — determines your earning rate, action weight, and how others prioritize your contributions</span>
               </div>
               {effComp < 0.5 && baseComp >= 0.5 && (
                 <div style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', marginBottom: '0.375rem', padding: '0.5rem 0.625rem', borderRadius: '0.25rem', background: 'rgba(56, 189, 248, 0.1)', border: '1px solid rgba(56, 189, 248, 0.2)' }}>
