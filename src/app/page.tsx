@@ -391,10 +391,10 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         </h3>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
           {[
-            { date: 'Apr 12', text: 'Clearer location coherence FAQ, effective trust explanation', link: '/coherence-index' },
-            { date: 'Apr 11', text: 'Better output scoring explainer, new privacy FAQ, location coherence fix', link: '/trust-tensor' },
-            { date: 'Apr 10', text: 'This changelog, adoption roadmap, community onboarding guide', link: '/why-web4' },
-            { date: 'Apr 8', text: 'Simpler identity verification intro, inline jargon definitions', link: '/first-contact' },
+            { date: 'Apr 12', text: 'Clarified what spatial coherence means + what effective trust controls', link: '/coherence-index' },
+            { date: 'Apr 11', text: 'Improved how output quality scoring works, new privacy comparison FAQ', link: '/trust-tensor' },
+            { date: 'Apr 10', text: 'Better explanation of how Web4 adoption would roll out in practice', link: '/why-web4' },
+            { date: 'Apr 8', text: 'Clearer definitions throughout, especially on identity verification', link: '/first-contact' },
           ].map((item, i) => (
             <li key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'baseline', fontSize: '0.8rem' }}>
               <span style={{ color: 'var(--color-text-muted)', fontFamily: 'monospace', fontSize: '0.7rem', flexShrink: 0 }}>{item.date}</span>
@@ -405,7 +405,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           ))}
         </ul>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.7rem', marginTop: '0.5rem', marginBottom: 0 }}>
-          Updated regularly. Last change: April 2026.
+          Updated regularly. Last change: Apr 12, 2026.
         </p>
       </section>
 
