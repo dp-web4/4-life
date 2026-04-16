@@ -70,7 +70,7 @@ export default function RootLayout({
             </a>
           </p>
           <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>
-            Active research project · All pages updated regularly · Site last updated Apr 11, 2026
+            Active research project · All pages updated regularly · See &ldquo;What&rsquo;s New&rdquo; on the landing page for the latest changes
           </p>
         </footer>
       </body>

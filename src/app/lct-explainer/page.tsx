@@ -496,17 +496,47 @@ export default function LCTExplainerPage() {
           <details className="mb-6">
             <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300 flex items-center gap-2">
               <span className="text-gray-500 group-open:rotate-90 transition-transform">▶</span>
-              Technical: What an LCT looks like (format example)
+              Technical: What an LCT looks like (format breakdown)
             </summary>
             <div className="bg-gray-900/50 border border-gray-700 rounded p-4 mt-2">
               <div className="text-sm font-mono mb-2 text-gray-500">Example LCT:</div>
               <div className="text-lg font-mono text-purple-400 break-all">
                 lct:web4:agent:alice.assistant1@Thor#perception
               </div>
-              <div className="mt-4 space-y-2 text-sm text-gray-300">
-                <div><span className="font-bold">Lineage</span>: alice.assistant1 (created by Alice, who vouches for it)</div>
-                <div><span className="font-bold">Context</span>: Thor (Jetson AGX device with TPM attestation)</div>
-                <div><span className="font-bold">Task</span>: perception (read-only, cannot execute code)</div>
+              <div className="mt-4 text-sm text-gray-300">
+                <div className="text-xs text-gray-500 mb-2">Read it left-to-right like a URL — each punctuation mark separates a segment:</div>
+                <table className="text-xs w-full">
+                  <tbody className="divide-y divide-gray-800">
+                    <tr>
+                      <td className="py-1 pr-3 font-mono text-purple-300 align-top whitespace-nowrap">lct:</td>
+                      <td className="py-1 text-gray-300"><span className="font-bold">Scheme</span> — marks this as an LCT (like <code className="text-gray-400">https:</code> marks a URL)</td>
+                    </tr>
+                    <tr>
+                      <td className="py-1 pr-3 font-mono text-purple-300 align-top whitespace-nowrap">web4:</td>
+                      <td className="py-1 text-gray-300"><span className="font-bold">Namespace</span> — the Web4 trust fabric</td>
+                    </tr>
+                    <tr>
+                      <td className="py-1 pr-3 font-mono text-purple-300 align-top whitespace-nowrap">agent:</td>
+                      <td className="py-1 text-gray-300"><span className="font-bold">Entity type</span> — agent, human, device, role, or society</td>
+                    </tr>
+                    <tr>
+                      <td className="py-1 pr-3 font-mono text-purple-300 align-top whitespace-nowrap">alice.assistant1</td>
+                      <td className="py-1 text-gray-300"><span className="font-bold">Lineage</span> — created by Alice, who vouches for it</td>
+                    </tr>
+                    <tr>
+                      <td className="py-1 pr-3 font-mono text-purple-300 align-top whitespace-nowrap">@Thor</td>
+                      <td className="py-1 text-gray-300"><span className="font-bold">Context</span> — runs on the &ldquo;Thor&rdquo; device (Jetson AGX with TPM attestation)</td>
+                    </tr>
+                    <tr>
+                      <td className="py-1 pr-3 font-mono text-purple-300 align-top whitespace-nowrap">#perception</td>
+                      <td className="py-1 text-gray-300"><span className="font-bold">Task scope</span> — read-only, cannot execute code or delegate</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p className="text-xs text-gray-500 mt-3">
+                  The format is human-readable on purpose. If any segment is missing or unverifiable,
+                  the LCT is rejected — so a glance tells you who/where/what/scope.
+                </p>
               </div>
             </div>
           </details>

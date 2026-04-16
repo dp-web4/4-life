@@ -932,7 +932,7 @@ export default function AlivenessExplainer() {
 
         <details style={{ marginTop: "1rem" }}>
           <summary style={{ color: "#9ca3af", cursor: "pointer", fontSize: "0.9rem" }}>
-            <strong>Full energy state breakdown (7 states)</strong>
+            <strong>Full energy state breakdown (5 primary + 3 transitional = 8 total)</strong>
           </summary>
           <div style={{ marginTop: "0.75rem" }}>
             <div className="concept-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
@@ -941,9 +941,12 @@ export default function AlivenessExplainer() {
                 <p>Normal operation — processing interactions, earning/spending ATP.</p>
               </div>
               <div className="detail-box" style={{ borderLeft: "3px solid #38bdf8" }}>
-                <h4 style={{ color: "#38bdf8" }}>Rest → Sleep</h4>
-                <p>Idle for <strong>1 hour</strong> → Rest. Idle for <strong>6 hours</strong> → Sleep.
-                  A single transaction wakes the society back to Active.</p>
+                <h4 style={{ color: "#38bdf8" }}>Rest</h4>
+                <p>Idle for <strong>1 hour</strong>. A single transaction wakes the society back to Active.</p>
+              </div>
+              <div className="detail-box" style={{ borderLeft: "3px solid #60a5fa" }}>
+                <h4 style={{ color: "#60a5fa" }}>Sleep</h4>
+                <p>Idle for <strong>6 hours</strong>. Still wakes on a single transaction, but deeper dormancy than Rest.</p>
               </div>
               <div className="detail-box" style={{ borderLeft: "3px solid #f59e0b" }}>
                 <h4 style={{ color: "#f59e0b" }}>Torpor</h4>
@@ -957,7 +960,7 @@ export default function AlivenessExplainer() {
               </div>
             </div>
             <p style={{ color: "#9ca3af", fontSize: "0.9rem", marginTop: "0.75rem" }}>
-              There are also transitional states: <strong>Governance Renewal</strong> (&ldquo;Molting&rdquo; — updating
+              There are also three transitional states: <strong>Governance Renewal</strong> (&ldquo;Molting&rdquo; — updating
               society rules), <strong>Scheduled Maintenance</strong> (&ldquo;Dreaming&rdquo; — planned downtime for upgrades),
               and <strong>Emergency Dormancy</strong> (&ldquo;Estivation&rdquo; — threat response, dormant until the threat resolves).
             </p>
@@ -1091,8 +1094,33 @@ export default function AlivenessExplainer() {
         <SurvivalGame />
       </section>
 
+      <section style={{
+        marginTop: "2.5rem",
+        marginBottom: "2rem",
+        padding: "1.25rem 1.5rem",
+        background: "linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(129, 140, 248, 0.08))",
+        border: "1px solid rgba(56, 189, 248, 0.3)",
+        borderRadius: "0.5rem",
+        textAlign: "center"
+      }}>
+        <p style={{ margin: 0, fontSize: "1.05rem", color: "#e0e7ff" }}>
+          <strong style={{ color: "#38bdf8" }}>🧭 You&apos;ve got the basics.</strong>{" "}
+          Three criteria, death and rebirth, energy states, a playable challenge — that&apos;s
+          the core of aliveness. Everything below is{" "}
+          <strong>deep-dive reference</strong>: expand the sections that interest you, or
+          stop here and explore{" "}
+          <Link href="/atp-economics" style={{ color: "#818cf8" }}>ATP economics</Link> or the{" "}
+          <Link href="/society-simulator" style={{ color: "#818cf8" }}>Society Simulator</Link>.
+        </p>
+      </section>
+
       <section>
-        <h2>Why Aliveness Works</h2>
+        <details>
+          <summary className="text-xl font-bold cursor-pointer hover:text-sky-400 transition-colors list-none flex justify-between items-center">
+            <h2 style={{ margin: 0 }}>Why Aliveness Works</h2>
+            <span className="text-gray-500 text-xl">+</span>
+          </summary>
+          <div style={{ marginTop: "1rem" }}>
 
         <div className="concept-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>
           <div className="detail-box">
@@ -1155,6 +1183,8 @@ export default function AlivenessExplainer() {
             </ul>
           </div>
         </div>
+          </div>
+        </details>
       </section>
 
       <section>

@@ -401,6 +401,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-message-visibility" className="hover:text-sky-400 transition-colors">Who can see my messages?</a></li>
                 <li><a href="#faq-opt-in" className="hover:text-sky-400 transition-colors">What if most people stay on Web2?</a></li>
                 <li><a href="#faq-quality" className="hover:text-sky-400 transition-colors">Who decides what counts as quality?</a></li>
+                <li><a href="#faq-what-backs-atp" className="hover:text-sky-400 transition-colors">If not crypto, what backs ATP?</a></li>
                 <li><a href="#faq-collusion" className="hover:text-sky-400 transition-colors">What prevents trust collusion?</a></li>
                 <li><a href="#faq-community-size" className="hover:text-sky-400 transition-colors">How many people does it need?</a></li>
                 <li><a href="#faq-why-name-web4" className="hover:text-sky-400 transition-colors">Why &ldquo;Web4&rdquo;?</a></li>
@@ -825,6 +826,45 @@ export default function WhyWeb4Page() {
                 Rubber-stamping everything makes <em>you</em> less credible, which reduces the weight of your future confirmations.
                 The system is self-correcting &mdash; but social dynamics are unpredictable, so this remains one of the{" "}
                 <Link href="/threat-model" className="text-sky-400 hover:underline">actively researched challenges</Link>.
+              </p>
+            </div>
+          </details>
+
+          {/* What backs ATP — visitor Q (Apr 16): "says no crypto required but doesn't explain what ATP is backed by" */}
+          <details id="faq-what-backs-atp" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>If Web4 doesn&apos;t use cryptocurrency, what backs ATP? Why is it scarce?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Received value backs ATP — not a currency peg, not a crypto reserve.</strong> ATP is a
+                budget for participation, not a financial asset. You can&apos;t sell it for dollars, exchange
+                it for Bitcoin, or cash out. Its only &ldquo;value&rdquo; is permission to act inside a community
+                that cares about what you do next.
+              </p>
+              <p>
+                <strong>What makes it scarce:</strong>
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-400">
+                <li><strong>Capped issuance:</strong> A community mints a finite ATP pool. More members, more
+                  demand, same pool &mdash; so ATP matters exactly because it&apos;s limited.</li>
+                <li><strong>Recipient confirmation:</strong> You earn ATP only when someone else (the{" "}
+                  <Link href="#faq-quality" className="text-sky-400 hover:underline">quality decider</Link>) confirms
+                  your contribution helped them. No confirmation, no ATP &mdash; so it can&apos;t be self-minted.</li>
+                <li><strong>5% transfer burn:</strong> Every ATP transfer between entities burns 5%, draining
+                  the pool over time unless offset by new confirmed value. Circular shuffling shrinks the
+                  pool instead of growing it.</li>
+                <li><strong>Decay on inactivity:</strong> Idle ATP doesn&apos;t sit forever. Disuse returns capacity
+                  to the community, so hoarding has a cost.</li>
+              </ul>
+              <p>
+                Think of it like phone minutes on a shared plan &mdash; valuable because it&apos;s <em>your turn
+                to speak</em> in a room that cares about what you say, not because you can sell the minutes.
+                That&apos;s why there&apos;s no cryptocurrency, no gas fees, and no financial speculation.
+                See{" "}
+                <Link href="/atp-economics" className="text-sky-400 hover:underline">ATP economics</Link> for
+                the full mechanism.
               </p>
             </div>
           </details>
