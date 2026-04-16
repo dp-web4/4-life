@@ -53,10 +53,19 @@ export default function GlossaryPage() {
         <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
           Web4 Glossary
         </h1>
-        <p className="text-xl text-gray-300 leading-relaxed mb-6">
+        <p className="text-xl text-gray-300 leading-relaxed mb-4">
           Plain-English definitions of Web4 concepts, acronyms, and mechanisms.
           Links to deeper explorations for those who resonate.
         </p>
+
+        {/* New-visitor hint */}
+        <div className="bg-sky-900/20 border border-sky-700/40 rounded-lg p-3 mb-6 text-sm text-gray-300">
+          <strong className="text-sky-400">New to Web4?</strong> Click{" "}
+          <span className="inline-block bg-gray-800 px-2 py-0.5 rounded border border-gray-700 text-xs">Essential only</span>{" "}
+          below to see just the 7 terms that matter first. Academic terms like{" "}
+          <em>Epistemic Proprioception</em> or <em>Synthon</em> live in Advanced/Research —
+          safely ignorable until you&apos;re curious.
+        </div>
 
         {/* Essential / All Toggle + Search */}
         <div className="flex gap-2 mb-3">
@@ -106,9 +115,9 @@ export default function GlossaryPage() {
         <div className="flex flex-wrap gap-2 mb-6">
           <span className="text-sm text-gray-500 mr-1 self-center">Jump to:</span>
           {[
-            { id: "core", label: "Core" },
+            { id: "core", label: "Core (start here)" },
             { id: "advanced", label: "Advanced" },
-            { id: "research", label: "Research" },
+            { id: "research", label: "Research (deep dive)" },
             { id: "lifecycle", label: "Lifecycle" },
             { id: "governance", label: "Governance" },
             { id: "terminology", label: "Why This Terminology?" },
@@ -382,9 +391,13 @@ export default function GlossaryPage() {
 
       {/* Advanced Protocol Concepts */}
       <section id="advanced" className="max-w-4xl mx-auto mt-16 scroll-mt-20" data-glossary-section>
-        <h2 className="text-3xl font-bold mb-8 text-gray-100">Advanced Concepts</h2>
+        <h2 className="text-3xl font-bold mb-2 text-gray-100">Advanced Concepts</h2>
+        <p className="text-sm text-gray-500 mb-3">
+          <em>Skip this section on your first visit.</em>
+        </p>
         <p className="text-gray-400 mb-6">
           These are part of the Web4 ontology — mechanisms that would exist in a deployed system.
+          Useful once the Core terms click, but not needed to understand the pitch.
         </p>
         <div className="space-y-8">
 
