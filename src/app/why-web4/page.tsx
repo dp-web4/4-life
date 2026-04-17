@@ -445,9 +445,9 @@ export default function WhyWeb4Page() {
               <ul className="space-y-0.5 text-gray-400">
                 <li><a href="#faq-trust-transfer" className="hover:text-sky-400 transition-colors">Trust between communities?</a></li>
                 <li><a href="#faq-threshold" className="hover:text-sky-400 transition-colors">Is 0.5 threshold universal?</a></li>
-                <li><a href="#faq-creative-work" className="hover:text-sky-400 transition-colors">V3 and creative/unconventional work?</a></li>
+                <li><a href="#faq-creative-work" className="hover:text-sky-400 transition-colors">Trust scoring (V3) for creative work?</a></li>
                 <li><a href="#faq-cheaters" className="hover:text-sky-400 transition-colors">How do you catch cheaters?</a></li>
-                <li><a href="#faq-ci-example" className="hover:text-sky-400 transition-colors">CI score for a normal person?</a></li>
+                <li><a href="#faq-ci-example" className="hover:text-sky-400 transition-colors">Coherence Index (CI) for a normal person?</a></li>
                 <li><a href="#faq-month-off" className="hover:text-sky-400 transition-colors">Take a month off — trust gone?</a></li>
                 <li><a href="#faq-youthful-mistakes" className="hover:text-sky-400 transition-colors">Escaping youthful mistakes?</a></li>
                 <li><a href="#faq-cultural-quality" className="hover:text-sky-400 transition-colors">Cultural differences in quality?</a></li>
@@ -465,8 +465,8 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-pseudonymous" className="hover:text-sky-400 transition-colors">Pseudonymity &amp; whistleblowers?</a></li>
                 <li><a href="#faq-multi-persona" className="hover:text-sky-400 transition-colors">Separate personal &amp; professional identities?</a></li>
                 <li><a href="#faq-vpn-tor" className="hover:text-sky-400 transition-colors">VPNs, Tor &amp; Coherence Index?</a></li>
-                <li><a href="#faq-mrh-messaging" className="hover:text-sky-400 transition-colors">How MRH decides who sees messages</a></li>
-                <li><a href="#faq-filter-bubbles" className="hover:text-sky-400 transition-colors">Does MRH create filter bubbles?</a></li>
+                <li><a href="#faq-mrh-messaging" className="hover:text-sky-400 transition-colors">Trust neighborhoods (MRH) and messaging</a></li>
+                <li><a href="#faq-filter-bubbles" className="hover:text-sky-400 transition-colors">Filter bubbles from trust neighborhoods?</a></li>
               </ul>
             </div>
             <div className="break-inside-avoid mb-4">
@@ -486,7 +486,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-infrastructure" className="hover:text-sky-400 transition-colors">Who runs the infrastructure?</a></li>
                 <li><a href="#faq-ai-agents" className="hover:text-sky-400 transition-colors">How do AI agents participate?</a></li>
                 <li><a href="#faq-protocol-changes" className="hover:text-sky-400 transition-colors">Who decides protocol changes?</a></li>
-                <li><a href="#faq-sal" className="hover:text-sky-400 transition-colors">What is SAL exactly?</a></li>
+                <li><a href="#faq-sal" className="hover:text-sky-400 transition-colors">Governance rules (SAL) explained</a></li>
                 <li><a href="#faq-jurisdiction" className="hover:text-sky-400 transition-colors">Differing national laws?</a></li>
               </ul>
             </div>
@@ -533,7 +533,7 @@ export default function WhyWeb4Page() {
                 <li><strong>Protocol specification:</strong> 100+ page{" "}
                   <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
                   Web4 whitepaper</a> with formal definitions</li>
-                <li><strong>Reference implementations:</strong> ~47,000 lines of tested code &mdash; LCT lifecycle, T3/V3 tensors, ATP metering, governance (SAL), federation, witness protocol, MRH graphs</li>
+                <li><strong>Reference implementations:</strong> ~47,000 lines of tested code &mdash; hardware-bound identity (LCT) lifecycle, trust tensors (T3/V3), energy metering (ATP), governance rules (SAL), federation, witness protocol, and trust-neighborhood (MRH) graphs</li>
                 <li><strong>Security validation:</strong> <Link href="/threat-model" className="text-sky-400 hover:underline">424 attack vectors across 84 tracks</Link>, all defended. Sybil resistance formally proven (5 theorems). Incentive compatibility proven &mdash; honest behavior is mathematically more profitable than gaming</li>
                 <li><strong>Hardware integration:</strong> TPM2 binding validated (Intel TPM 2.0, EK certificate chain through 2049). Go LCT library (55 tests). Multi-device constellation enrollment working</li>
                 <li><strong>System integration:</strong> End-to-end pipeline (all subsystems chained), WASM browser validator for client-side trust verification, federation consensus at 38.5 tasks/sec throughput</li>
@@ -1031,9 +1031,9 @@ export default function WhyWeb4Page() {
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
                   <li><a href="#faq-trust-transfer" className="hover:text-sky-400">Trust between communities?</a></li>
                   <li><a href="#faq-threshold" className="hover:text-sky-400">Is 0.5 universal?</a></li>
-                  <li><a href="#faq-creative-work" className="hover:text-sky-400">V3 and creative work?</a></li>
+                  <li><a href="#faq-creative-work" className="hover:text-sky-400">Trust scoring (V3) for creative work?</a></li>
                   <li><a href="#faq-cheaters" className="hover:text-sky-400">Catching cheaters?</a></li>
-                  <li><a href="#faq-ci-example" className="hover:text-sky-400">CI for a normal person?</a></li>
+                  <li><a href="#faq-ci-example" className="hover:text-sky-400">Coherence Index (CI) for a normal person?</a></li>
                   <li><a href="#faq-month-off" className="hover:text-sky-400">Month off = trust gone?</a></li>
                   <li><a href="#faq-youthful-mistakes" className="hover:text-sky-400">Escaping youthful mistakes?</a></li>
                   <li><a href="#faq-cultural-quality" className="hover:text-sky-400">Cultural quality differences?</a></li>
@@ -1054,9 +1054,9 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-reputation-visibility" className="hover:text-sky-400">Who sees my reputation?</a></li>
                   <li><a href="#faq-pseudonymous" className="hover:text-sky-400">Pseudonymity?</a></li>
                   <li><a href="#faq-multi-persona" className="hover:text-sky-400">Personal vs professional?</a></li>
-                  <li><a href="#faq-vpn-tor" className="hover:text-sky-400">VPNs, Tor &amp; CI?</a></li>
-                  <li><a href="#faq-mrh-messaging" className="hover:text-sky-400">MRH and message visibility?</a></li>
-                  <li><a href="#faq-filter-bubbles" className="hover:text-sky-400">MRH filter bubbles?</a></li>
+                  <li><a href="#faq-vpn-tor" className="hover:text-sky-400">VPNs, Tor &amp; Coherence Index?</a></li>
+                  <li><a href="#faq-mrh-messaging" className="hover:text-sky-400">Trust neighborhoods (MRH) and messaging</a></li>
+                  <li><a href="#faq-filter-bubbles" className="hover:text-sky-400">Filter bubbles from trust neighborhoods?</a></li>
                 </ul>
               </details>
               <details className="group/cat">
@@ -1082,7 +1082,7 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-infrastructure" className="hover:text-sky-400">Who runs infrastructure?</a></li>
                   <li><a href="#faq-ai-agents" className="hover:text-sky-400">AI agent participation?</a></li>
                   <li><a href="#faq-protocol-changes" className="hover:text-sky-400">Protocol governance?</a></li>
-                  <li><a href="#faq-sal" className="hover:text-sky-400">What is SAL?</a></li>
+                  <li><a href="#faq-sal" className="hover:text-sky-400">Governance rules (SAL) explained</a></li>
                 </ul>
               </details>
             </div>
