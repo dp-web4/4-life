@@ -484,7 +484,7 @@ export default function DayInWeb4Page() {
                 </div>
               </div>
               <p className="text-xs text-gray-500">
-                One app. Works like a password manager, but instead of storing passwords, it manages your trust identity across every Web4-enabled service. Install it like any other app.
+                One app. Works like a password manager, but instead of storing passwords, it manages your trust identity across every Web4-enabled service. Delivered as a <strong className="text-gray-400">mobile app or browser extension</strong> (your choice &mdash; most people will use both, synced across devices). Install it like any other app.
               </p>
             </div>
           </div>
@@ -1215,6 +1215,31 @@ function DaySummary({
           What would change for you? →
         </Link>
       </div>
+      {/* Common questions — deep links to existing FAQs on /why-web4 */}
+      <div className="mt-8 rounded-xl border border-gray-800 p-5 bg-gray-900/30">
+        <p className="text-sm text-gray-400 mb-3 font-semibold">Common questions after reading this</p>
+        <ul className="text-sm text-gray-400 space-y-2">
+          <li>
+            <Link href="/why-web4#faq-infrastructure" className="text-sky-400 hover:underline">
+              Who runs the infrastructure? How is this deployed?
+            </Link>{' '}
+            — no single company. Federated witnesses; W3C DID-compatible.
+          </li>
+          <li>
+            <Link href="/why-web4#faq-many-identities" className="text-sky-400 hover:underline">
+              Can&apos;t someone with lots of hardware create many identities?
+            </Link>{' '}
+            — expensive, not impossible. Raises the floor, not the ceiling.
+          </li>
+          <li>
+            <Link href="/why-web4#faq-bootstrap-witnesses" className="text-sky-400 hover:underline">
+              How do you bootstrap the initial witness network?
+            </Link>{' '}
+            — seed partners (universities, hardware vendors), then web-of-trust.
+          </li>
+        </ul>
+      </div>
+
       <RelatedConcepts currentPath="/day-in-web4" />
       <ExplorerNav currentPath="/day-in-web4" />
     </div>

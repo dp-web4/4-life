@@ -42,7 +42,8 @@ export default function HowItWorksPage() {
         </h1>
         <div className="mb-4 p-3 bg-amber-950/30 border border-amber-800/30 rounded-lg text-sm text-amber-200/80">
           <strong>Project status:</strong> Web4 is a <strong>research prototype</strong>, not a deployed product.
-          The mechanics described here are validated through simulations and ~47,000 lines of tested code,
+          The mechanics described here are validated through simulations and an open-source{' '}
+          <Link href="/why-web4#faq-deployed" className="text-amber-300 hover:text-amber-200 underline">reference implementation</Link>,
           but no live network with real users exists yet. The simulations on this site let you explore how it <em>would</em> work.
           {' '}Curious what early deployment could look like? See the{' '}
           <Link href="/why-web4#faq-adoption-path" className="text-amber-300 hover:text-amber-200 underline">concrete adoption path</Link>{' '}
