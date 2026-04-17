@@ -51,55 +51,68 @@ export default function HomePage() {
             Explore Topics
           </button>
         </div>
-        <div style={{ marginTop: '0.75rem', display: 'flex', justifyContent: 'center', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
+        {/* Primary CTA — visitor feedback Apr 17: "Pick ONE primary entry. Make others secondary/contextual." */}
+        <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center' }}>
           <Link href="/tldr" style={{
-            padding: '0.5rem 1rem',
-            background: 'rgba(56, 189, 248, 0.1)',
-            border: '1px solid rgba(56, 189, 248, 0.3)',
+            padding: '0.85rem 1.75rem',
+            background: 'rgba(56, 189, 248, 0.18)',
+            border: '1px solid rgba(56, 189, 248, 0.55)',
             borderRadius: '0.5rem',
             color: 'var(--color-sky)',
-            fontWeight: 600,
-            fontSize: '0.85rem',
+            fontWeight: 700,
+            fontSize: '1rem',
             textDecoration: 'none',
+            boxShadow: 'inset 0 0 0 1px rgba(56, 189, 248, 0.15)',
           }}>
-            Just 2 minutes? Read the TL;DR →
+            Start here: 2-minute TL;DR →
           </Link>
-          <Link href="/day-in-web4" style={{
-            padding: '0.5rem 1rem',
-            background: 'rgba(16, 185, 129, 0.1)',
-            border: '1px solid rgba(16, 185, 129, 0.3)',
-            borderRadius: '0.5rem',
-            color: 'rgb(16, 185, 129)',
-            fontWeight: 600,
-            fontSize: '0.85rem',
-            textDecoration: 'none',
-          }}>
-            See what it looks like · 5 min →
-          </Link>
-          <Link href="/your-internet" style={{
-            padding: '0.5rem 1rem',
-            background: 'rgba(168, 85, 247, 0.1)',
-            border: '1px solid rgba(168, 85, 247, 0.3)',
-            borderRadius: '0.5rem',
-            color: 'rgb(168, 85, 247)',
-            fontWeight: 600,
-            fontSize: '0.85rem',
-            textDecoration: 'none',
-          }}>
-            How would this change my internet? · 3 min →
-          </Link>
-          <Link href="/learn" style={{
-            padding: '0.5rem 1rem',
-            background: 'rgba(251, 191, 36, 0.1)',
-            border: '1px solid rgba(251, 191, 36, 0.3)',
-            borderRadius: '0.5rem',
-            color: 'rgb(251, 191, 36)',
-            fontWeight: 600,
-            fontSize: '0.85rem',
-            textDecoration: 'none',
-          }}>
-            Follow a learning path · self-paced →
-          </Link>
+        </div>
+        <p style={{
+          marginTop: '0.45rem',
+          marginBottom: 0,
+          fontSize: '0.75rem',
+          color: 'var(--color-text-muted)',
+        }}>
+          Recommended for first-time visitors.
+        </p>
+
+        {/* Secondary entry points — demoted per Apr 17 visitor feedback (decision fatigue from 4 equal-weight buttons) */}
+        <div style={{ marginTop: '0.85rem' }}>
+          <p style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', marginBottom: '0.4rem', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+            Or take a different angle
+          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Link href="/day-in-web4" style={{
+              padding: '0.35rem 0.75rem',
+              borderRadius: '0.4rem',
+              color: 'rgb(16, 185, 129)',
+              fontSize: '0.75rem',
+              textDecoration: 'none',
+              border: '1px solid rgba(16, 185, 129, 0.2)',
+            }}>
+              What it looks like · 5 min
+            </Link>
+            <Link href="/your-internet" style={{
+              padding: '0.35rem 0.75rem',
+              borderRadius: '0.4rem',
+              color: 'rgb(168, 85, 247)',
+              fontSize: '0.75rem',
+              textDecoration: 'none',
+              border: '1px solid rgba(168, 85, 247, 0.2)',
+            }}>
+              Frustrations it would fix · 3 min
+            </Link>
+            <Link href="/learn" style={{
+              padding: '0.35rem 0.75rem',
+              borderRadius: '0.4rem',
+              color: 'rgb(251, 191, 36)',
+              fontSize: '0.75rem',
+              textDecoration: 'none',
+              border: '1px solid rgba(251, 191, 36, 0.2)',
+            }}>
+              Structured learning path
+            </Link>
+          </div>
         </div>
       </section>
 
