@@ -48,7 +48,7 @@ const pages: { path: string; priority: number; changeFrequency: MetadataRoute.Si
   { path: "/challenge-set", priority: MEDIUM_PRIORITY, changeFrequency: "monthly" },
   { path: "/web4-explainer", priority: MEDIUM_PRIORITY, changeFrequency: "monthly" },
   { path: "/federation-economics", priority: MEDIUM_PRIORITY, changeFrequency: "monthly" },
-  { path: "/markov-relevancy-horizon", priority: MEDIUM_PRIORITY, changeFrequency: "monthly" },
+  { path: "/trust-neighborhood", priority: MEDIUM_PRIORITY, changeFrequency: "monthly" },
   { path: "/karma-consequences", priority: MEDIUM_PRIORITY, changeFrequency: "monthly" },
   { path: "/patterns", priority: MEDIUM_PRIORITY, changeFrequency: "monthly" },
   { path: "/achievements", priority: 0.6, changeFrequency: "monthly" },

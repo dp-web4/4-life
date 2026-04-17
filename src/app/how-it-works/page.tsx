@@ -161,7 +161,7 @@ export default function HowItWorksPage() {
               hearing only conversations you&apos;re part of. Spam can&apos;t reach you.
             </p>
             <Link
-              href="/markov-relevancy-horizon"
+              href="/trust-neighborhood"
               className="text-sky-400 hover:underline text-sm mt-2 inline-block"
             >
               Learn more →

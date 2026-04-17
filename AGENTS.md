@@ -37,7 +37,7 @@
 | Trust Tensor (T3) | `/trust-tensor` |
 | Coherence Index (CI) | `/coherence-index` |
 | Aliveness | `/aliveness` |
-| MRH (Context) | `/markov-relevancy-horizon` |
+| MRH (Context) | `/trust-neighborhood` |
 
 ## Entry Points by Goal
 

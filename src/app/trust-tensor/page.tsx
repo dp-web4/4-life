@@ -1433,7 +1433,7 @@ Temperament:  30-day half-life (recent behavior matters most)
           </p>
           <p className="text-gray-300 text-sm mb-2">
             Cross-community transfer also applies{" "}
-            <Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">MRH decay</Link>{" "}
+            <Link href="/trust-neighborhood" className="text-sky-400 hover:underline">MRH decay</Link>{" "}
             (0.7&times; per hop of social distance), so distant communities see a discounted version
             of your trust — portable but not dictatorial.
           </p>

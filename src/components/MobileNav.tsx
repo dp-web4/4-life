@@ -23,7 +23,7 @@ const sections = [
       { href: "/lct-explainer", title: "Linked Context Token" },
       { href: "/trust-tensor", title: "Trust Tensor (T3)" },
       { href: "/atp-economics", title: "ATP Economics" },
-      { href: "/markov-relevancy-horizon", title: "MRH" },
+      { href: "/trust-neighborhood", title: "MRH" },
       { href: "/aliveness", title: "Aliveness" },
     ],
   },

@@ -80,7 +80,7 @@ const BRIDGES: ConceptToolBridge[] = [
   {
     concept: {
       title: 'MRH Boundaries',
-      href: '/markov-relevancy-horizon',
+      href: '/trust-neighborhood',
       oneLiner: 'Context boundaries define what each agent can see and affect',
       keyIdea: 'Privacy, efficiency, and accuracy all emerge from the same structural property.',
     },

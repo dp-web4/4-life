@@ -190,7 +190,7 @@
       "description": "ATP markets across communities, dynamic pricing, circuit breakers"
     },
     {
-      "path": "/markov-relevancy-horizon",
+      "path": "/trust-neighborhood",
       "description": "Trust-based visibility boundaries — decay rates, zone model, privacy trade-offs"
     },
     {
