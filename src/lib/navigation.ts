@@ -407,8 +407,8 @@ export const navigationTree: NavigationTree = {
       href: '/mrh-explorer',
       desc: 'Interactive trust neighborhood (MRH) visualizer',
       keywords: ['MRH', 'markov', 'horizon', 'context', 'boundaries', 'network', 'depth', 'trust decay', '4D', 'spatial', 'temporal', 'ATP cost'],
-      prerequisites: ['/markov-relevancy-horizon'],
-      related: ['/markov-relevancy-horizon', '/trust-tensor-explorer', '/trust-networks', '/atp-economics', '/federation-economics']
+      prerequisites: ['/trust-neighborhood'],
+      related: ['/trust-neighborhood', '/trust-tensor-explorer', '/trust-networks', '/atp-economics', '/federation-economics']
     },
     {
       title: 'Karma Journey',
@@ -538,7 +538,7 @@ export const navigationTree: NavigationTree = {
     },
     {
       title: 'Trust Neighborhood (MRH)',
-      href: '/markov-relevancy-horizon',
+      href: '/trust-neighborhood',
       desc: 'What you can see',
       keywords: ['MRH', 'context', 'visibility', 'boundaries', 'markov'],
       related: ['/trust-networks', '/trust-tensor']

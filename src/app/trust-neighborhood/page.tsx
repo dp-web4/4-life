@@ -9,7 +9,7 @@ import ExplorerNav from "@/components/ExplorerNav";
 import { trackPageVisit } from "@/lib/exploration";
 
 export default function MarkovRelevancyHorizonPage() {
-  useEffect(() => { trackPageVisit('markov-relevancy-horizon'); }, []);
+  useEffect(() => { trackPageVisit('trust-neighborhood'); }, []);
   // Simulator state
   const [selectedEntity, setSelectedEntity] = useState<"alice" | "bob" | "charlie">("alice");
   const [horizonDepth, setHorizonDepth] = useState<1 | 2 | 3>(2);
@@ -88,7 +88,7 @@ export default function MarkovRelevancyHorizonPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-gray-100">
       <div className="container mx-auto px-6 py-16 max-w-7xl">
-        <Breadcrumbs currentPath="/markov-relevancy-horizon" />
+        <Breadcrumbs currentPath="/trust-neighborhood" />
         {/* Hero Section */}
         <section className="max-w-4xl mx-auto mb-16">
           <div className="text-sm uppercase tracking-wide text-cyan-400 mb-4">
@@ -1131,9 +1131,9 @@ SELECT ?entity ?distance WHERE {
           </details>
         </section>
 
-        <ConceptSequenceNav currentPath="/markov-relevancy-horizon" />
-        <ExplorerNav currentPath="/markov-relevancy-horizon" />
-        <RelatedConcepts currentPath="/markov-relevancy-horizon" />
+        <ConceptSequenceNav currentPath="/trust-neighborhood" />
+        <ExplorerNav currentPath="/trust-neighborhood" />
+        <RelatedConcepts currentPath="/trust-neighborhood" />
       </div>
     </div>
   );

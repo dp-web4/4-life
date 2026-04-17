@@ -203,7 +203,7 @@ export default function LCTExplainerPage() {
             <span className="text-gray-600">→</span>
             <a href="/trust-tensor" className="text-gray-500 hover:text-blue-400 transition-colors px-2 py-1 rounded hover:bg-gray-800/50">3. Trust (T3)</a>
             <span className="text-gray-600">→</span>
-            <a href="/markov-relevancy-horizon" className="text-gray-500 hover:text-cyan-400 transition-colors px-2 py-1 rounded hover:bg-gray-800/50">4. Neighborhood (MRH)</a>
+            <a href="/trust-neighborhood" className="text-gray-500 hover:text-cyan-400 transition-colors px-2 py-1 rounded hover:bg-gray-800/50">4. Neighborhood (MRH)</a>
             <span className="text-gray-600">→</span>
             <a href="/coherence-index" className="text-gray-500 hover:text-amber-400 transition-colors px-2 py-1 rounded hover:bg-gray-800/50">5. Consistency (CI)</a>
             <span className="text-gray-600">→</span>
@@ -1689,7 +1689,7 @@ export default function LCTExplainerPage() {
               <div className="text-sm text-gray-400">Attention budgets that LCTs earn and spend</div>
             </a>
 
-            <a href="/markov-relevancy-horizon" className="block p-4 border border-gray-700 rounded-lg hover:border-purple-500 transition-all">
+            <a href="/trust-neighborhood" className="block p-4 border border-gray-700 rounded-lg hover:border-purple-500 transition-all">
               <div className="font-bold text-gray-100 mb-1">Trust Neighborhood (MRH)</div>
               <div className="text-sm text-gray-400">Who you can see and interact with, based on trust</div>
             </a>

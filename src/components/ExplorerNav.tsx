@@ -101,7 +101,7 @@ const CONCEPT_TOOLS: Record<string, string[]> = {
   '/coherence-index': ['/trust-tensor-explorer', '/society-simulator', '/coherence-framework'],
   '/lct-explainer': ['/first-contact', '/society-simulator', '/playground'],
   '/aliveness': ['/karma-journey', '/society-simulator', '/playground'],
-  '/markov-relevancy-horizon': ['/mrh-explorer', '/trust-networks', '/playground'],
+  '/trust-neighborhood': ['/mrh-explorer', '/trust-networks', '/playground'],
   '/how-it-works': ['/first-contact', '/playground', '/society-simulator'],
   '/why-web4': ['/first-contact', '/karma-journey', '/playground'],
   '/day-in-web4': ['/first-contact', '/karma-journey', '/playground'],

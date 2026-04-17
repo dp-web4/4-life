@@ -336,7 +336,7 @@ export function InteractiveMarketWireframe() {
               <div className="flex justify-between"><span>Connection distance</span><span className="text-gray-300">2 hops (friend of a friend)</span></div>
               <div className="flex justify-between">
                 <span>
-                  <Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">Distance-adjusted trust</Link>
+                  <Link href="/trust-neighborhood" className="text-sky-400 hover:underline">Distance-adjusted trust</Link>
                   {' '}<span className="text-gray-600">(trust fades with distance)</span>
                 </span>
                 <span className="text-sky-400">0.64</span>

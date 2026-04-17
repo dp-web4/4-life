@@ -339,7 +339,7 @@ export default function WhyWeb4Page() {
                 where strangers need an introduction before they can talk to you. Trust fades with distance: a friend-of-a-friend-of-a-friend is almost a stranger.
               </p>
               <p className="text-gray-400 text-sm mt-1">Shorthand: MRH (Markov Relevancy Horizon)</p>
-              <Link href="/markov-relevancy-horizon" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
+              <Link href="/trust-neighborhood" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about context boundaries →
               </Link>
             </div>
@@ -487,6 +487,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-ai-agents" className="hover:text-sky-400 transition-colors">How do AI agents participate?</a></li>
                 <li><a href="#faq-protocol-changes" className="hover:text-sky-400 transition-colors">Who decides protocol changes?</a></li>
                 <li><a href="#faq-sal" className="hover:text-sky-400 transition-colors">What is SAL exactly?</a></li>
+                <li><a href="#faq-jurisdiction" className="hover:text-sky-400 transition-colors">Differing national laws?</a></li>
               </ul>
             </div>
           </nav>
@@ -494,12 +495,24 @@ export default function WhyWeb4Page() {
 
         {/* Most asked — top questions for first-time visitors */}
         <div className="bg-amber-950/20 border border-amber-800/30 rounded-xl p-5 mb-6">
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-gray-300 leading-relaxed mb-4">
             <span className="text-amber-400 font-semibold">Start here.</span>{" "}
-            These 10 questions are what most first-time visitors want answered.
-            Click any question to expand it. The{" "}
-            <a href="#faq-index" className="text-sky-400 hover:underline">topic index above</a>{" "}
-            has 20+ more if you want to go deeper.
+            First-time visitors most often want to know:
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-x-5 gap-y-2 text-sm">
+            <li><a href="#faq-what-backs-atp" className="text-sky-400 hover:text-sky-300 hover:underline">If not crypto, what backs ATP?</a></li>
+            <li><a href="#faq-infrastructure" className="text-sky-400 hover:text-sky-300 hover:underline">Who runs the infrastructure?</a></li>
+            <li><a href="#faq-bootstrap-witnesses" className="text-sky-400 hover:text-sky-300 hover:underline">How does the witness network bootstrap?</a></li>
+            <li><a href="#faq-buy-50-devices" className="text-sky-400 hover:text-sky-300 hover:underline">Can a wealthy attacker buy 50 devices?</a></li>
+            <li><a href="#faq-youthful-mistakes" className="text-sky-400 hover:text-sky-300 hover:underline">Do youthful mistakes follow you forever?</a></li>
+            <li><a href="#faq-jurisdiction" className="text-sky-400 hover:text-sky-300 hover:underline">What about differing national laws?</a></li>
+            <li><a href="#faq-social-credit" className="text-sky-400 hover:text-sky-300 hover:underline">Isn&apos;t this just social credit?</a></li>
+            <li><a href="#faq-lose-hardware" className="text-sky-400 hover:text-sky-300 hover:underline">What if I lose my hardware?</a></li>
+          </ul>
+          <p className="text-gray-400 text-xs mt-4">
+            Click any question to jump to it. The{" "}
+            <a href="#faq-index" className="text-sky-400 hover:underline">full topic index above</a>{" "}
+            has 40+ more.
           </p>
         </div>
         <h3 className="text-sm uppercase tracking-wide text-amber-400/80 mb-4">Most asked</h3>
@@ -731,7 +744,7 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 Through your <strong>trust network</strong>, not a central server.
-                Every entity has a <Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">context boundary (MRH)</Link> that
+                Every entity has a <Link href="/trust-neighborhood" className="text-sky-400 hover:underline">context boundary (MRH)</Link> that
                 extends 3 hops through their trust relationships:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
@@ -1920,7 +1933,7 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 <strong>Not everyone can see everything.</strong> Web4 uses{" "}
-                <Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">
+                <Link href="/trust-neighborhood" className="text-sky-400 hover:underline">
                   context boundaries (MRH)
                 </Link>{" "}
                 to limit who sees what. Your trust scores are only visible to entities within your
@@ -2386,7 +2399,7 @@ export default function WhyWeb4Page() {
                 It also means <strong>context stays contextual</strong>. Your coding expertise is visible
                 in coding communities where you&apos;ve built trust, but doesn&apos;t automatically broadcast
                 to cooking forums. Your{" "}
-                <Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">relevancy horizon</Link>{" "}
+                <Link href="/trust-neighborhood" className="text-sky-400 hover:underline">relevancy horizon</Link>{" "}
                 is shaped by where you actually participate.
               </p>
               <p className="text-amber-400/80 text-xs">
@@ -3073,6 +3086,57 @@ export default function WhyWeb4Page() {
                 <Link href="/federation-economics#switching-societies" className="text-sky-400 hover:underline">
                   Federation Economics &rarr; Cross-Society Policy Conflicts
                 </Link>.
+              </p>
+            </div>
+          </details>
+
+          {/* National legal jurisdictions — visitor Q Apr 16 */}
+          <details id="faq-jurisdiction" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>How would Web4 handle differing national laws (GDPR, DSA, Section 230, etc.)?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                <strong>Short answer:</strong> Web4 doesn&apos;t try to enforce one content policy globally.
+                Legality lives at the <em>community</em> layer, not the protocol layer. Each community
+                sets its own rules inside whatever jurisdiction its operators are in.
+              </p>
+              <p>
+                <strong>The concrete design:</strong>
+              </p>
+              <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
+                <li><strong className="text-gray-300">Communities are jurisdictional.</strong> A community
+                  hosted under EU operators must comply with EU law (GDPR, DSA). A community hosted under
+                  US operators follows US law (Section 230, state-level rules). A community hosted under
+                  Chinese operators follows the Cybersecurity Law. Same protocol, different rules.</li>
+                <li><strong className="text-gray-300">Federation is consent-based.</strong> Communities choose
+                  which other communities to federate with. An EU-compliant community can refuse to relay
+                  trust signals or content from communities that operate under legally incompatible rules &mdash;
+                  like email servers choosing not to accept mail from known spam-tolerant hosts.</li>
+                <li><strong className="text-gray-300">Users pick their community.</strong> Your identity (LCT)
+                  is portable. You can join a community whose jurisdiction and content rules you accept. You
+                  take your trust score with you (discounted across federation boundaries), but you accept
+                  the new community&apos;s legal context.</li>
+                <li><strong className="text-gray-300">Removal cascades are real.</strong> If a court in your
+                  jurisdiction orders content removed, your community complies &mdash; but federation partners
+                  in other jurisdictions are under no obligation to propagate that removal. The tamper-evident
+                  audit chain records the takedown so federated peers can evaluate it against their own law.</li>
+              </ul>
+              <p>
+                <strong>What this is NOT:</strong> Web4 is not an escape hatch from national law. It is also
+                not a mechanism for one country&apos;s speech rules to become everyone&apos;s. It tries to
+                mirror how the internet mostly already works: servers in different countries follow different
+                laws, and networks decide who to peer with.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> Cross-border regulatory harmonization is genuinely unresolved.
+                Specific questions &mdash; GDPR right-to-be-forgotten interacting with a tamper-evident audit
+                chain, DSA transparency reports for federated systems, extraterritorial reach of the
+                Chinese Cybersecurity Law &mdash; do not have settled answers in the current spec. See
+                the <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">What Could Go Wrong</Link>{" "}
+                &ldquo;Regulatory Capture&rdquo; and &ldquo;Genuinely Unsolved&rdquo; sections for the honest
+                state of this question.
               </p>
             </div>
           </details>

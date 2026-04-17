@@ -52,7 +52,7 @@ That's a Web4 society in miniature. The rest of this README explains why it work
 | **Understand trust tensors (T3)** | [/trust-tensor](http://localhost:3000/trust-tensor) - Multi-dimensional trust explained |
 | **Understand coherence index (CI)** | [/coherence-index](http://localhost:3000/coherence-index) - Incoherence detection explained |
 | **Deep dive: Coherence framework** | [/coherence-framework](http://localhost:3000/coherence-framework) - From 4 CI dimensions to 9 Synchronism domains ✨ NEW |
-| **Understand context boundaries (MRH)** | [/markov-relevancy-horizon](http://localhost:3000/markov-relevancy-horizon) - Relationship-based context explained |
+| **Understand context boundaries (MRH)** | [/trust-neighborhood](http://localhost:3000/trust-neighborhood) - Relationship-based context explained |
 | **Understand decision evolution (EP)** | [/decision-evolution](http://localhost:3000/decision-evolution) - How agents learn across lives explained |
 | **Understand identity constellations** | [/identity-constellation](http://localhost:3000/identity-constellation) - Multi-device identity explained |
 | **Explore pattern learning** | [/patterns](http://localhost:3000/patterns) - Browse EP pattern corpus |
@@ -120,7 +120,7 @@ Where: `/` = "verified by", `*` = "contextualized by", `+` = "augmented with"
 │   ├── trust-tensor/       # Trust Tensor (T3) multi-dimensional trust explainer
 │   ├── coherence-index/    # Coherence Index (CI) incoherence detection explainer
 │   ├── coherence-framework/ # Full coherence framework (4 CI dims → 9 Synchronism domains) (NEW Session #17)
-│   ├── markov-relevancy-horizon/ # MRH context boundaries explainer
+│   ├── trust-neighborhood/    # MRH context boundaries explainer
 │   ├── decision-evolution/ # Decision Evolution (EP) learning across lives explainer
 │   ├── identity-constellation/ # Multi-device identity explainer
 │   ├── web4-explainer/     # Core Web4 concepts

@@ -70,7 +70,7 @@ pages:
       concept: "CI incoherence detection"
     - path: "/aliveness"
       concept: "Measurable existence criteria"
-    - path: "/markov-relevancy-horizon"
+    - path: "/trust-neighborhood"
       concept: "MRH context boundaries"
   tools:
     - path: "/act-explorer"

@@ -10,12 +10,12 @@ const nextConfig = {
       },
       {
         source: '/mrh',
-        destination: '/markov-relevancy-horizon',
+        destination: '/trust-neighborhood',
         permanent: true,
       },
       {
-        source: '/trust-neighborhood',
-        destination: '/markov-relevancy-horizon',
+        source: '/markov-relevancy-horizon',
+        destination: '/trust-neighborhood',
         permanent: true,
       },
       {

@@ -34,7 +34,7 @@
       "zones": { "self": 1.0, "direct": 0.7, "2_hop": 0.49, "3_hop": 0.34, "beyond": 0 },
       "implementation": "lib/game/engine/mrh_aware_trust.py",
       "spec": "https://dp-web4.github.io/web4/sections/foundational-concepts/mrh-markov-relevancy-horizon/",
-      "links": ["/web4-explainer#mrh", "/markov-relevancy-horizon"]
+      "links": ["/web4-explainer#mrh", "/trust-neighborhood"]
     },
     "T3": {
       "name": "Trust Tensor",

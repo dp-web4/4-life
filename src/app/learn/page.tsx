@@ -78,7 +78,7 @@ export default function LearnJourney() {
         'federation-economics': ['federation-econ'],
         'coherence-framework': ['coherence-framework', 'gating-mechanisms'],
         'narratives': ['explore-narrative'],
-        'markov-relevancy-horizon': ['mrh'],
+        'trust-neighborhood': ['mrh'],
         'decision-evolution': ['ep'],
         'identity-constellation': ['identity-constellation'],
         'patterns': ['explore-patterns'],
@@ -192,7 +192,7 @@ export default function LearnJourney() {
           teaser:
             "You don't see everything — you see what's relevant through your relationships. Your trust neighborhood defines who and what you can interact with.",
           why: "MRH shows how Web4 scales: societies stay coherent without requiring global consensus.",
-          link: "/markov-relevancy-horizon",
+          link: "/trust-neighborhood",
           duration: "10 min read",
         },
         {

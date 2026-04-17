@@ -297,7 +297,7 @@ export default function GlossaryPage() {
               property: reach requires earned relationships.
             </p>
             <div className="flex gap-3 text-sm">
-              <Link href="/markov-relevancy-horizon" className="text-sky-400 hover:underline">
+              <Link href="/trust-neighborhood" className="text-sky-400 hover:underline">
                 Learn more →
               </Link>
               <a
