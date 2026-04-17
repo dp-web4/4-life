@@ -34,6 +34,15 @@ export default function WhyWeb4Page() {
           You already know this. You feel it every day. The question is:
           <strong className="text-white"> what can actually be done about it?</strong>
         </p>
+
+        {/* Reading-time orientation — visitor feedback Apr 17: page felt like "a research paper in visitor's clothing"; visitor expected 500-1500 words, got 9,500. Signposts sections and offers a graceful exit for 2-minute readers. */}
+        <div className="mt-4 mb-2 text-sm text-gray-400 border-l-2 border-gray-700 pl-4 py-1">
+          This page has three parts: <strong className="text-gray-200">the problems</strong> (~5 min),{" "}
+          <strong className="text-gray-200">what Web4 proposes</strong> (~2 min), and{" "}
+          <strong className="text-gray-200">honest Q&amp;A</strong> (optional, 40+ questions collapsed by topic).
+          Stop reading at any point — each section stands on its own. If you only have 2 minutes, try{" "}
+          <Link href="/tldr" className="text-sky-400 hover:underline">the 2-minute TL;DR</Link> instead.
+        </div>
       </section>
 
       {/* The Problems You Already Know */}
