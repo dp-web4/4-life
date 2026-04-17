@@ -229,30 +229,68 @@ export default function FirstContactPage() {
               </div>
             </div>
 
-            {/* Preview: first simulation snapshot so visitors see something interactive immediately */}
+            {/* Storyboard: 5-beat preview of Alice's full arc so visitors see what they're signing up for */}
             <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/30 border border-sky-800/30 rounded-xl p-6">
-              <div className="text-sm text-sky-400 font-semibold mb-3">Preview: Alice&apos;s First Action</div>
-              <div className="flex items-center gap-4 mb-3">
-                <div className="w-12 h-12 rounded-full bg-sky-900 flex items-center justify-center text-xl">👤</div>
-                <div>
-                  <div className="font-semibold">Alice joins the community</div>
-                  <div className="text-sm text-gray-400">Starting resources: 100 ATP | Trust: 0.50 (neutral)</div>
+              <div className="flex items-baseline justify-between mb-4 flex-wrap gap-2">
+                <div className="text-sm text-sky-400 font-semibold">Alice&apos;s Arc — The Story Ahead</div>
+                <div className="text-xs text-gray-500">5 acts · ~7 minutes · real consequences</div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-5 gap-2 mb-4">
+                {/* Act 1: Join */}
+                <div className="bg-gray-800/60 rounded-lg p-3 border border-sky-900/50">
+                  <div className="text-xs text-sky-400 font-semibold mb-1">Act 1</div>
+                  <div className="text-sm font-bold mb-1">Join</div>
+                  <div className="text-xs text-gray-400 mb-2">Equal start for everyone</div>
+                  <div className="flex gap-1 text-xs">
+                    <span className="bg-sky-900/40 text-sky-300 px-1.5 py-0.5 rounded">100 ATP</span>
+                    <span className="bg-purple-900/40 text-purple-300 px-1.5 py-0.5 rounded">0.50</span>
+                  </div>
+                </div>
+                {/* Act 2: Build */}
+                <div className="bg-gray-800/60 rounded-lg p-3 border border-green-900/50">
+                  <div className="text-xs text-green-400 font-semibold mb-1">Act 2</div>
+                  <div className="text-sm font-bold mb-1">Build</div>
+                  <div className="text-xs text-gray-400 mb-2">Quality earns trust back</div>
+                  <div className="flex gap-1 text-xs">
+                    <span className="bg-green-900/40 text-green-300 px-1.5 py-0.5 rounded">+ATP</span>
+                    <span className="bg-green-900/40 text-green-300 px-1.5 py-0.5 rounded">↑ 0.56</span>
+                  </div>
+                </div>
+                {/* Act 3: Stumble */}
+                <div className="bg-gray-800/60 rounded-lg p-3 border border-orange-900/50">
+                  <div className="text-xs text-orange-400 font-semibold mb-1">Act 3</div>
+                  <div className="text-sm font-bold mb-1">Stumble</div>
+                  <div className="text-xs text-gray-400 mb-2">Spam costs more than it pays</div>
+                  <div className="flex gap-1 text-xs">
+                    <span className="bg-orange-900/40 text-orange-300 px-1.5 py-0.5 rounded">−25 ATP</span>
+                    <span className="bg-orange-900/40 text-orange-300 px-1.5 py-0.5 rounded">↓ 0.48</span>
+                  </div>
+                </div>
+                {/* Act 4: Recover */}
+                <div className="bg-gray-800/60 rounded-lg p-3 border border-emerald-900/50">
+                  <div className="text-xs text-emerald-400 font-semibold mb-1">Act 4</div>
+                  <div className="text-sm font-bold mb-1">Recover</div>
+                  <div className="text-xs text-gray-400 mb-2">Consistency rebuilds</div>
+                  <div className="flex gap-1 text-xs">
+                    <span className="bg-emerald-900/40 text-emerald-300 px-1.5 py-0.5 rounded">↑ 0.62</span>
+                  </div>
+                </div>
+                {/* Act 5: Die + Rebirth */}
+                <div className="bg-gray-800/60 rounded-lg p-3 border border-red-900/50">
+                  <div className="text-xs text-red-400 font-semibold mb-1">Act 5</div>
+                  <div className="text-sm font-bold mb-1">Die &amp; Reborn</div>
+                  <div className="text-xs text-gray-400 mb-2">Karma carries forward</div>
+                  <div className="flex gap-1 text-xs">
+                    <span className="bg-red-900/40 text-red-300 px-1.5 py-0.5 rounded">ATP=0</span>
+                    <span className="bg-emerald-900/40 text-emerald-300 px-1.5 py-0.5 rounded">+12 bonus</span>
+                  </div>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-3 mb-3">
-                <div className="bg-gray-800/50 rounded p-3 text-center">
-                  <div className="text-xs text-gray-400">Energy Budget</div>
-                  <div className="text-2xl font-bold text-sky-400">100</div>
-                  <div className="text-xs text-gray-500">ATP</div>
-                </div>
-                <div className="bg-gray-800/50 rounded p-3 text-center">
-                  <div className="text-xs text-gray-400">Reputation</div>
-                  <div className="text-2xl font-bold text-purple-400">0.50</div>
-                  <div className="text-xs text-gray-500">Trust</div>
-                </div>
-              </div>
+
               <p className="text-sm text-gray-400 italic">
-                What happens when Alice posts quality content? Spams? Helps a newcomer? Click below to find out.
+                Not a slideshow — an interactive walkthrough. You control playback, see every trust/ATP change the moment it happens,
+                and at each turning point the system pauses to explain <em>why</em> it worked that way.
               </p>
             </div>
 
@@ -260,12 +298,12 @@ export default function FirstContactPage() {
               onClick={() => setCurrentStep("simulation")}
               className="w-full bg-gradient-to-r from-sky-500 to-purple-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-sky-600 hover:to-purple-700 transition-all text-lg"
             >
-              Watch Alice&apos;s Full Journey &rarr;
+              Start the 5-act Walkthrough &rarr;
             </button>
 
             <p className="text-center text-sm text-gray-500">
-              Follow Alice through a full Web4 lifecycle &mdash; build trust, recover from mistakes,
-              face death when resources run out, and be reborn with karma carrying forward.
+              Step 1 of 5 · Simulation · Story · Concepts · Next Steps
+              <span className="block mt-1 text-xs">You can pause, scrub, replay, and skip ahead. Nothing gets set on your account — this is a live demo of the model.</span>
             </p>
           </div>
         )}
