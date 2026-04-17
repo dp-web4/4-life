@@ -129,6 +129,22 @@ function V3OutputScorer() {
 
   return (
     <section className="max-w-4xl mx-auto mt-16">
+      {/* Breathing gate: let T3 land before V3 enters — Apr 17 visitor friction #4 */}
+      <div className="bg-gray-900/60 border border-gray-700/60 rounded-xl p-6 mb-10">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-xs uppercase tracking-wide text-sky-400 font-semibold">End of T3</span>
+          <span className="text-gray-600">·</span>
+          <span className="text-xs uppercase tracking-wide text-gray-400">ready for more?</span>
+        </div>
+        <p className="text-gray-300 leading-relaxed mb-2">
+          That&apos;s T3 — three dimensions describing <strong className="text-sky-300">who someone is</strong>.
+          If this feels like enough for one sitting, you can stop here. T3 alone is a working mental model — pick up V3 later via the concept nav above.
+        </p>
+        <p className="text-sm text-gray-500">
+          Or keep going: V3 is a separate, complementary tensor that scores <strong className="text-purple-300">what someone produces</strong>. It pairs with T3 but doesn&apos;t require memorizing six things at once.
+        </p>
+      </div>
+
       {/* Transition: T3 → V3 — visitor feedback: V3 appears without preamble */}
       <p className="text-gray-400 mb-6 text-lg">
         Everything above is about <strong className="text-sky-300">you</strong> — your skills, your track record, your consistency.
