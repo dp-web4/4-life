@@ -391,6 +391,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         </h3>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
           {[
+            { date: 'Apr 17', text: 'First Contact now wears an "Interactive" badge above the fold, and Trust Tensor lets T3 land before V3 enters', link: '/first-contact' },
             { date: 'Apr 17', text: 'New "Start here" panel surfaces the 8 questions first-time visitors most often ask, plus a national-jurisdictions FAQ', link: '/why-web4#faq-jurisdiction' },
             { date: 'Apr 17', text: 'Renamed /markov-relevancy-horizon to /trust-neighborhood so the URL matches the friendly page title (old URL still works via redirect)', link: '/trust-neighborhood' },
             { date: 'Apr 16', text: 'First Contact welcome now previews Alice\u2019s full 5-act arc so you know what you\u2019re signing up for', link: '/first-contact' },

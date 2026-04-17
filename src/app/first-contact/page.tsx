@@ -185,8 +185,14 @@ export default function FirstContactPage() {
         {currentStep === "welcome" && (
           <div className="space-y-6">
             <div>
-              <div className="text-sm uppercase tracking-wide text-sky-400 mb-4">
-                First Contact
+              <div className="flex flex-wrap items-center gap-3 mb-4">
+                <div className="text-sm uppercase tracking-wide text-sky-400">
+                  First Contact
+                </div>
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-emerald-300 bg-emerald-500/10 border border-emerald-500/40 rounded-full px-3 py-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true"></span>
+                  Interactive · you drive it
+                </span>
               </div>
               <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
                 Your First Web4 Experience
@@ -195,7 +201,7 @@ export default function FirstContactPage() {
                 Today's internet rewards spam, lets trolls create unlimited accounts, and makes quality creators compete with bots. What if the system itself made that impossible?
               </p>
               <p className="text-lg text-gray-400 leading-relaxed">
-                In the next 7 minutes, you'll see how trust and reputation actually work in Web4 — and why it's fundamentally different from anything you've used before.
+                In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> — play, pause, scrub, replay — and watch trust and reputation respond in real time. This is a hands-on walkthrough, not a video.
               </p>
             </div>
 
@@ -289,8 +295,7 @@ export default function FirstContactPage() {
               </div>
 
               <p className="text-sm text-gray-400 italic">
-                Not a slideshow — an interactive walkthrough. You control playback, see every trust/ATP change the moment it happens,
-                and at each turning point the system pauses to explain <em>why</em> it worked that way.
+                You control the pace. At every turning point the system pauses to explain <em>why</em> it worked that way, and you see every trust/ATP change the moment it happens.
               </p>
             </div>
 
