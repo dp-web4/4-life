@@ -1495,6 +1495,9 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             <span style={{ fontSize: '0.875rem', fontWeight: 'normal', color: '#6b7280' }}>(emergent collectives)</span>
           </summary>
         <div className="detail-box" style={{marginTop: '1.5rem'}}>
+          <p style={{color: '#c084fc', fontWeight: 600}}>
+            Yes — groups can die too. But their death looks different from yours.
+          </p>
           <p>
             Everything above describes individual aliveness. But in Web4, <strong>groups</strong> can
             also become alive — not metaphorically, but measurably.
@@ -1512,6 +1515,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             <li><strong>Formation</strong> — Trust between members becomes dense and mutual (roughly: most pairs above 0.5 trust, sustained over multiple interaction cycles). Their MRH horizons overlap. Energy flows balance. There&apos;s no hard threshold — synthons emerge gradually, like a friendship group that becomes a team.</li>
             <li><strong>Health</strong> — The group maintains witness diversity, balanced ATP distribution, and high internal trust coherence.</li>
             <li><strong>Decay</strong> — Trust diverges, boundaries leak, energy concentrates in fewer members. These are early warnings before dissolution.</li>
+            <li><strong>Dissolution</strong> — The group ends, in one of two ways that parallel individual death: <em>energy death</em> (ATP flows dry up, the collective can&apos;t act — usually recoverable if members re-engage) or <em>trust death</em> (coherence collapses, mutual trust falls below threshold — the group dissolves and members carry their individual trust away intact).</li>
           </ul>
           <p style={{marginTop: '1rem'}}>
             <strong>What about individual identity?</strong> A synthon doesn&apos;t override your personal
