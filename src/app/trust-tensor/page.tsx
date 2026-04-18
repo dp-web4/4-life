@@ -910,6 +910,12 @@ export default function TrustTensorPage() {
               But a trusted person who produces sloppy work (high T3, low V3) earns less than their reputation suggests.
               And a newcomer who produces brilliant work (low T3, high V3) earns more than their reputation would predict.
             </p>
+            <div className="mt-3 mb-2 bg-gray-950/60 border border-gray-800 rounded p-3 font-mono text-xs">
+              <div className="text-gray-500 mb-1">Worked example — a task with a base reward of 10 ATP:</div>
+              <div className="text-gray-300">T3 = 0.7  ×  V3 = 0.8  ×  base = 10 ATP  →  <span className="text-emerald-400">5.6 ATP earned</span></div>
+              <div className="text-gray-500 mt-2">Same task, half the trust (T3 = 0.35):</div>
+              <div className="text-gray-300">0.35  ×  0.8  ×  10  →  <span className="text-amber-400">2.8 ATP earned</span> — half the reward for the same output</div>
+            </div>
             <p className="text-gray-400 text-xs">
               Over time, T3 and V3 converge: consistently producing high-V3 work raises your T3.
               Consistently producing low-V3 work drags your T3 down. Your reputation tracks your actual output quality.
