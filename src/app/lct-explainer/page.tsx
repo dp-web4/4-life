@@ -725,7 +725,7 @@ export default function LCTExplainerPage() {
             With software-only hardware, 0.5 is both where you start and the highest you can reach.
             Stronger hardware lets you build higher &mdash; but you still have to earn it through behavior.
           </p>
-          <div className="mt-3 bg-sky-950/30 border border-sky-800/20 rounded-lg p-3">
+          <div id="single-device" className="mt-3 bg-sky-950/30 border border-sky-800/20 rounded-lg p-3 scroll-mt-24">
             <p className="text-sky-300 text-xs font-semibold mb-1">
               Only have one device? You&apos;re still in.
             </p>
@@ -943,6 +943,9 @@ export default function LCTExplainerPage() {
                 Recovery: remaining devices sign an approval for the new device&apos;s birth certificate.
                 The old device&apos;s keys are automatically revoked — anything signed by the lost device
                 after the revocation timestamp is rejected.
+                {" "}<span className="text-purple-300 font-medium">Duration: minutes to hours</span> —
+                once a quorum of remaining devices co-sign, the replacement is active and your
+                reputation carries over intact.
               </div>
             </div>
 
@@ -973,8 +976,28 @@ export default function LCTExplainerPage() {
               <div className="bg-gray-800/60 rounded px-3 py-2 text-xs text-gray-400">
                 This is deliberately hard. Easy recovery would mean easy identity theft.
                 The friction is a feature, not a bug.
+                {" "}<span className="text-amber-300 font-medium">Expect days, not minutes</span> —
+                social recovery typically takes 3&ndash;7 days as multiple witnesses coordinate
+                out-of-band verification.
               </div>
             </div>
+          </div>
+
+          <div className="mb-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg">
+            <p className="text-sm text-sky-300 font-semibold mb-1">
+              What if I only own one device?
+            </p>
+            <p className="text-sm text-gray-300">
+              Single-device users can&apos;t use quorum recovery (there&apos;s no second device to
+              co-sign), so losing that device drops you straight into <strong>social recovery</strong>
+              {" "}— the slow 3&ndash;7 day path above. If you plan to rely on one device, pairing it
+              with a cheap hardware security key (FIDO2, ~$30) as a second witness dramatically
+              shortens your recovery path and raises your trust ceiling. See{" "}
+              <a href="#single-device" className="text-sky-400 hover:underline">
+                Only have one device?
+              </a>{" "}
+              higher on this page for how single-device participation works day-to-day.
+            </p>
           </div>
 
           <details className="bg-gray-900/50 border border-gray-700/50 rounded-lg overflow-hidden">

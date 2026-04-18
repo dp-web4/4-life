@@ -890,6 +890,12 @@ export default function AlivenessExplainer() {
 
         <div className="detail-box" style={{ marginTop: "2rem" }}>
           <h4>Karma Carry-Forward</h4>
+          <p style={{ fontSize: "0.9rem", color: "#9ca3af", marginBottom: "1rem" }}>
+            &ldquo;Karma&rdquo; here is a handle, not a moral verdict — it names the mechanic where past
+            actions become next-life starting conditions. Good carries forward; harm carries forward
+            too. No deity or committee grading you, just consequences that don&apos;t reset.{" "}
+            <Link href="/karma-journey" style={{ color: "#fbbf24" }}>More in Karma Journey →</Link>
+          </p>
           <p>
             <strong>If you die with 145 ATP and T3 = 0.72, you're reborn with:</strong>
           </p>

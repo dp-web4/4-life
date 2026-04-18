@@ -486,6 +486,21 @@ export default function KarmaJourneyPage() {
         Live multiple lives. Make choices. Watch how trust and karma compound across reincarnations.
         Cooperative choices build slow trust; selfish choices yield quick gains but erode your legacy.
       </p>
+
+      {/* Terminology acknowledgement — answers Apr 17 LOW #6 */}
+      <div style={{
+        padding: '0.75rem 1rem', borderRadius: '0.5rem', marginBottom: '1rem', maxWidth: '700px',
+        background: 'rgba(251, 191, 36, 0.04)', border: '1px solid rgba(251, 191, 36, 0.15)',
+        fontSize: '0.85rem', lineHeight: 1.55, color: 'var(--color-text-secondary)',
+      }}>
+        <strong style={{ color: '#fbbf24' }}>Why call it &ldquo;karma&rdquo;?</strong>{' '}
+        The word here is a handle, not a moral score. It names one specific mechanic:
+        your actions in this life become starting conditions for the next. Good work
+        carries forward (more ATP, higher trust); harm carries forward too (less ATP,
+        lower trust). No deity, no committee, no moral ledger — just consequences
+        that don&rsquo;t reset when you do.
+      </div>
+
       <p style={{ color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '700px', lineHeight: 1.6, fontSize: '0.85rem' }}>
         <strong style={{ color: 'var(--color-text-secondary)' }}>What the numbers mean:</strong>{' '}
         <strong><Link href="/trust-tensor" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>Trust</Link></strong> = your reputation (Talent + Training + Temperament, averaged).{' '}
