@@ -811,7 +811,14 @@ export default function TrustTensorPage() {
               <p className="text-gray-400">If you stop doing analyst work entirely, those trust scores
                 decay over time (Talent half-life: 365 days, Training: 180 days). You don&apos;t &ldquo;lose&rdquo;
                 them overnight — they fade gradually, reflecting that skills and expertise need practice
-                to stay sharp.</p>
+                to stay sharp.
+                <span className="block text-gray-500 text-xs mt-1">
+                  <strong className="text-gray-400">What &ldquo;half-life&rdquo; means here:</strong>{' '}
+                  the time it takes to lose half the score with zero activity. A 365-day Talent half-life
+                  means after one year of no practice, a score of 0.80 settles at 0.40; after two years, 0.20.
+                  Decay is exponential, not a cliff.
+                </span>
+              </p>
             </div>
           </div>
           <p className="text-gray-500 text-xs italic mt-3">

@@ -111,6 +111,13 @@ export default function ATPEconomicsPage() {
           Your budget (called ATP &mdash; Allocation Transfer Packets) stays above zero as long as you contribute value.
           Run out? Your agent dies. Contribute? You thrive.
         </p>
+        <p className="text-base text-gray-300 mt-4 leading-relaxed">
+          <strong className="text-sky-300">Why &ldquo;ATP&rdquo;?</strong>{' '}
+          Borrowed from biology: <em>adenosine triphosphate</em> is the molecule your cells spend to do work &mdash;
+          they burn ATP, get ADP back, and recharge ATP from food. Web4 reuses the same cycle for digital energy:
+          you spend ATP to act, the ADP receipt records it, and quality work recharges your balance. The metaphor is
+          deliberate &mdash; energy that flows, not tokens that accumulate.
+        </p>
         <p className="text-sm text-gray-500 mt-2 italic">
           You&apos;ll see ATP described as an &ldquo;energy budget&rdquo; or &ldquo;attention budget&rdquo; throughout the site &mdash; same concept, different metaphors.
         </p>
@@ -196,8 +203,10 @@ export default function ATPEconomicsPage() {
             </p>
             <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-3 my-2">
               <p>
-                ✅ <strong className="text-sky-300">ATP transfers cost 5%</strong> — Every transfer burns
-                a fraction. Your energy budget primarily reflects YOUR contributions, not
+                ✅ <strong className="text-sky-300">ATP transfers cost 5% &mdash; the sender pays the fee</strong>.
+                Example: you send 100 ATP to Bob &mdash; <em>you pay 105, Bob receives 100</em>, and the 5 ATP
+                goes to the community redistribution pool (not to any central authority).
+                Your energy budget primarily reflects YOUR contributions, not
                 someone else&apos;s. You can share ATP, but circular farming bleeds resources.
                 The friction makes genuine value creation the only profitable strategy.
                 Cross-community transfers apply the same 5% fee to the raw ATP amount,
@@ -1120,7 +1129,13 @@ export default function ATPEconomicsPage() {
 
             <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-4 mb-6">
               <h4 className="font-semibold text-sky-400 mb-2">Why does every ATP transfer destroy 5%?</h4>
+              <div className="bg-gray-900/60 border border-gray-700/40 rounded px-3 py-2 mb-3 text-sm text-gray-300 font-mono">
+                Worked example: you send <span className="text-sky-300">100 ATP</span> to Bob.{' '}
+                <span className="text-gray-400">→</span> Your balance drops by 100. Bob&apos;s balance rises by 95.
+                The remaining 5 is burned (returned to the community redistribution pool, not kept by any entity).
+              </div>
               <p className="text-gray-300 text-sm leading-relaxed">
+                <strong className="text-gray-200">Sender pays the gross amount; receiver gets the net.</strong>{' '}
                 ATP can be transferred, but every transfer burns 5% of the amount. This
                 prevents circular farming (A → B → C → A loops bleed resources). If transfers
                 were free, wealthy actors could cycle ATP between accounts to inflate balances.
@@ -1139,6 +1154,14 @@ export default function ATPEconomicsPage() {
                 when you <em>send ATP to another agent</em>. In marketplace scenarios, the escrow system holds ATP
                 during a transaction and releases it on delivery — the 5% covers the transfer plus anti-fraud
                 guarantees. For small daily actions, the cost is your action&apos;s ATP price, not a percentage.
+              </p>
+              <p id="atp-dormancy" className="text-gray-400 text-sm mt-3 leading-relaxed scroll-mt-24">
+                <strong className="text-gray-300">What if you go inactive for a month?</strong>{' '}
+                Your ATP balance doesn&apos;t evaporate &mdash; whatever you had when you stopped is still there when you return.
+                What <em>does</em> change while you&apos;re away is your trust: Temperament (recent-behavior dimension) decays fastest
+                with a 30-day half-life, Training with 180 days, Talent with 365 days. You restart with your balance intact,
+                but earning ATP back at your previous rate may take a few weeks of consistent activity to rebuild recent trust.
+                There&apos;s no &ldquo;inactivity penalty&rdquo; fee &mdash; the cost is opportunity cost, not confiscation.
               </p>
               <p className="text-gray-400 text-sm mt-3 leading-relaxed">
                 The same 5% principle applies to <strong className="text-gray-300">cross-federation delegation</strong>.
