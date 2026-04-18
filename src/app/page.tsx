@@ -404,6 +404,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
         </h3>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
           {[
+            { date: 'Apr 18', text: 'Karma Journey and Aliveness now own the word "karma" up front — it\u2019s a handle for the carry-forward mechanic, not a moral verdict (visitor feedback: the word carried weight the mechanic doesn\u2019t)', link: '/karma-journey' },
             { date: 'Apr 17', text: 'ATP economics now answers the cold-start question ("who confirms quality in a fresh community?") inline, and the EP glossary entry has a concrete Alice scenario', link: '/atp-economics#quality-measurement' },
             { date: 'Apr 17', text: 'Why Web4 now opens with a short reading-time signpost so you know this page is three sections (problems / solution / Q&A) and can stop at any point', link: '/why-web4' },
             { date: 'Apr 17', text: 'Hero now points first-timers to a single recommended starting door (TL;DR), with the other entry points kept as "different angles" — addresses decision fatigue from too many equally-weighted CTAs', link: '/tldr' },
@@ -424,7 +425,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           ))}
         </ul>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.7rem', marginTop: '0.5rem', marginBottom: 0 }}>
-          Updated regularly. Last change: Apr 17, 2026.
+          Updated regularly. Last change: Apr 18, 2026.
         </p>
       </section>
 
