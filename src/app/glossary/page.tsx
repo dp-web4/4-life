@@ -412,6 +412,16 @@ export default function GlossaryPage() {
               lives: &ldquo;High-value contributions earn more ATP&rdquo; or &ldquo;Transparency
               when making mistakes rebuilds trust faster.&rdquo;
             </p>
+            <div className="bg-gray-900/60 border-l-2 border-sky-500/60 rounded px-4 py-3 mb-3">
+              <p className="text-xs font-semibold text-sky-300 mb-1 uppercase tracking-wide">Scenario</p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Alice dies in Life 1 because she rushed low-quality replies and confirmations dried up.
+                In Life 2 she <em>notices</em> that pattern in her inherited memory (&ldquo;rushing → no
+                confirmations → no ATP recharge&rdquo;) and slows down. That noticing — recognizing a
+                limit in her own past behavior and adjusting — <strong>is</strong> epistemic
+                proprioception. Without it, each life repeats the same mistakes.
+              </p>
+            </div>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: "Knowing what you know and don't know. Agents that recognize patterns
               (cross-life learning) survive better than those who don't."

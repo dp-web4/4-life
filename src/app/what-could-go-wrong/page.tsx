@@ -536,7 +536,7 @@ export default function WhatCouldGoWrongPage() {
           </details>
 
           {/* Cold-start walkthrough */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+          <details id="cold-start" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What do a community&apos;s first 100 interactions look like?</span>
               <span className="text-gray-500 text-xl">+</span>

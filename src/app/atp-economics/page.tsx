@@ -318,6 +318,25 @@ export default function ATPEconomicsPage() {
             everything indiscriminately tanks your own CI (consistency score), making your future
             confirmations worth even less.
           </p>
+
+          {/* Cold-start callout — Apr 17 visitor LOW #9 */}
+          <div className="mt-4 pt-4 border-t border-emerald-800/30">
+            <p className="text-sm font-semibold text-emerald-300 mb-2">
+              What about a brand-new community where nobody has built trust yet?
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Every participant starts at the same baseline — trust ≈ 0.5, 100 ATP grant.
+              In that state, all confirmations weigh equally low, but they still count.
+              Over roughly <strong className="text-gray-300">100 quality actions across the community</strong>,
+              trust starts sorting: people who confirmed work that others later also confirmed gain
+              confirmer-trust; people who confirmed spam lose it. First-mover advantage fades on a
+              <strong className="text-gray-300"> ~30-action half-life</strong>, and newcomers doing quality
+              work routinely surpass early members within ~50 actions.{" "}
+              <Link href="/what-could-go-wrong#cold-start" className="text-sky-400 hover:underline">
+                See the cold-start walkthrough →
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
 
