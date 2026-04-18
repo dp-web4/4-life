@@ -306,6 +306,46 @@ export default function LCTExplainerPage() {
               <em>disposable</em> identity. Your reputation follows you, but your name doesn&apos;t have to.{' '}
               <Link href="/why-web4" className="text-sky-400 hover:underline">See the full FAQ &rarr;</Link>
             </p>
+
+            <div className="mt-4 pt-4 border-t border-gray-700/60">
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Worked example</p>
+              <p className="text-sm text-gray-300 mb-3">
+                Suppose you pick the handle <span className="font-bold">alice.assistant1</span>. Your LCT looks like this:
+              </p>
+              <pre className="text-xs bg-black/40 border border-gray-700 rounded px-3 py-2 overflow-x-auto text-green-300 mb-3">
+                <code>lct:web4:0x4c8f…a3f2#alice.assistant1</code>
+              </pre>
+              <p className="text-sm text-gray-300 mb-3">
+                The <span className="text-green-300">0x4c8f…a3f2</span> part is a cryptographic fingerprint tied to your device&apos;s
+                security chip — it never leaves the hardware, and it&apos;s the same every time you sign in. The{' '}
+                <span className="text-green-300">#alice.assistant1</span> part is a label you chose; it could be
+                <span className="italic"> anything</span> — pseudonymous, role-scoped, or even rotated per community.
+              </p>
+              <p className="text-sm text-gray-300 mb-3">
+                <span className="font-bold">Two sessions, same entity:</span>{' '}
+                Monday you answer a question; Friday you post again. Both messages are signed by the same LCT, so the community
+                sees <em>one</em> continuous reputation — the trust you earned Monday applies Friday. No one had to check an
+                ID, email, or phone number to know it&apos;s you.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div className="p-2.5 bg-green-950/20 border border-green-800/30 rounded">
+                  <p className="font-bold text-green-400 mb-1">Visible to others</p>
+                  <ul className="text-gray-300 space-y-0.5 list-disc list-inside">
+                    <li>Your LCT fingerprint (stable across sessions)</li>
+                    <li>Your trust history (T3 scores, past behavior)</li>
+                    <li>Your handle, if you chose one</li>
+                  </ul>
+                </div>
+                <div className="p-2.5 bg-red-950/20 border border-red-800/30 rounded">
+                  <p className="font-bold text-red-400 mb-1">Not visible</p>
+                  <ul className="text-gray-300 space-y-0.5 list-disc list-inside">
+                    <li>Your legal name</li>
+                    <li>Your email or phone number</li>
+                    <li>Any data broker profile</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Hardware explainer */}
