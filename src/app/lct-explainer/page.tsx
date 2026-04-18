@@ -776,6 +776,14 @@ export default function LCTExplainerPage() {
               This matters especially in developing countries where many people access the internet
               from a single smartphone &mdash; Web4 is designed to include them, not penalize them.
             </p>
+            <p className="text-gray-500 text-xs mt-2">
+              <strong className="text-gray-400">Why a ceiling at all?</strong> A lone device has no
+              second device to corroborate its continuity &mdash; if it&apos;s lost, stolen, or
+              quietly compromised, there&apos;s no independent witness to notice. Adding a witness
+              turns a single trust root into a quorum: compromising multiple hardware roots at
+              once is materially harder than compromising one, so the ceiling rises with
+              corroboration, not with how long you&apos;ve been around.
+            </p>
           </div>
 
           <details className="mt-4">
