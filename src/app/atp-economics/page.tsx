@@ -111,14 +111,15 @@ export default function ATPEconomicsPage() {
           Your budget (called ATP &mdash; Allocation Transfer Packets) stays above zero as long as you contribute value.
           Run out? Your agent dies. Contribute? You thrive.
         </p>
-        <p className="text-sm text-gray-500 mt-2 italic">
-          You&apos;ll see ATP described as an &ldquo;energy budget&rdquo; or &ldquo;attention budget&rdquo; throughout the site &mdash; same concept, different metaphors.
-        </p>
-        <p className="text-sm text-gray-500 mt-2">
-          <strong className="text-gray-400">Why &ldquo;ATP&rdquo;?</strong>{' '}
+        <p className="text-base text-gray-300 mt-4 leading-relaxed">
+          <strong className="text-sky-300">Why &ldquo;ATP&rdquo;?</strong>{' '}
           Borrowed from biology: <em>adenosine triphosphate</em> is the molecule your cells spend to do work &mdash;
           they burn ATP, get ADP back, and recharge ATP from food. Web4 reuses the same cycle for digital energy:
-          you spend ATP to act, the ADP receipt records it, and quality work recharges your balance.
+          you spend ATP to act, the ADP receipt records it, and quality work recharges your balance. The metaphor is
+          deliberate &mdash; energy that flows, not tokens that accumulate.
+        </p>
+        <p className="text-sm text-gray-500 mt-2 italic">
+          You&apos;ll see ATP described as an &ldquo;energy budget&rdquo; or &ldquo;attention budget&rdquo; throughout the site &mdash; same concept, different metaphors.
         </p>
         <p className="text-sm text-gray-500 mt-4">
           <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 cursor-pointer">
@@ -202,8 +203,10 @@ export default function ATPEconomicsPage() {
             </p>
             <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-3 my-2">
               <p>
-                ✅ <strong className="text-sky-300">ATP transfers cost 5%</strong> — Every transfer burns
-                a fraction. Your energy budget primarily reflects YOUR contributions, not
+                ✅ <strong className="text-sky-300">ATP transfers cost 5% &mdash; the sender pays the fee</strong>.
+                Example: you send 100 ATP to Bob &mdash; <em>you pay 105, Bob receives 100</em>, and the 5 ATP
+                goes to the community redistribution pool (not to any central authority).
+                Your energy budget primarily reflects YOUR contributions, not
                 someone else&apos;s. You can share ATP, but circular farming bleeds resources.
                 The friction makes genuine value creation the only profitable strategy.
                 Cross-community transfers apply the same 5% fee to the raw ATP amount,
@@ -1152,7 +1155,7 @@ export default function ATPEconomicsPage() {
                 during a transaction and releases it on delivery — the 5% covers the transfer plus anti-fraud
                 guarantees. For small daily actions, the cost is your action&apos;s ATP price, not a percentage.
               </p>
-              <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+              <p id="atp-dormancy" className="text-gray-400 text-sm mt-3 leading-relaxed scroll-mt-24">
                 <strong className="text-gray-300">What if you go inactive for a month?</strong>{' '}
                 Your ATP balance doesn&apos;t evaporate &mdash; whatever you had when you stopped is still there when you return.
                 What <em>does</em> change while you&apos;re away is your trust: Temperament (recent-behavior dimension) decays fastest
