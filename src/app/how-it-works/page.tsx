@@ -207,11 +207,12 @@ export default function HowItWorksPage() {
             {/* Layer 2: Context */}
             <div className="flex items-center gap-3">
               <div className="w-8 text-center text-gray-600 text-xs font-mono shrink-0">2</div>
-              <div className="flex-1 bg-cyan-950/40 border border-cyan-800/40 rounded-lg p-3 flex items-center gap-3">
+              <div className="flex-1 bg-cyan-950/40 border border-cyan-800/40 rounded-lg p-3 flex items-start gap-3">
                 <span className="text-xl">🌐</span>
                 <div>
                   <span className="text-sm font-bold text-cyan-400">MRH</span>
                   <span className="text-sm text-gray-400"> — Defines your reach. Only see what&apos;s relevant to your trust network.</span>
+                  <div className="text-xs text-cyan-300/70 mt-1.5 italic">Gates the loop below: you only <strong>spend ATP</strong> and <strong>build T3</strong> in contexts where you&apos;re visible. Actions outside your MRH don&apos;t cost energy and don&apos;t move trust.</div>
                 </div>
               </div>
             </div>
