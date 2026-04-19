@@ -507,8 +507,35 @@ export default function KarmaJourneyPage() {
         <strong><Link href="/atp-economics" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>ATP</Link></strong> = your energy budget — every action costs ATP, run out and you die.{' '}
         <strong><Link href="/coherence-index" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>CI</Link></strong> = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;).
         Everyone starts at CI 0.85, not 1.0 — you haven&apos;t demonstrated consistency yet, so actions cost ~1.4× their base price. As you behave consistently, CI rises to 0.9+ and the surcharge disappears (actions cost exactly their listed price).{' '}
-        Your effective trust = raw trust × CI² — this determines your <strong>karma tier</strong> when you die (Honored/Neutral/Constrained), which sets your starting conditions for the next life. Raw trust alone determines whether you survive (≥ 0.5). Squaring means small inconsistencies barely hurt (0.9² = 0.81) but major inconsistency cuts your effective trust almost in half (0.6² = 0.36).{' '}
+        Two trust numbers matter here — one decides whether you live, the other decides your next life. Card below.{' '}
         Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
+      </p>
+
+      {/* Raw vs Effective trust contrast — closes Apr 18 LOW */}
+      <div style={{
+        display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.75rem',
+        marginBottom: '0.75rem', maxWidth: '700px',
+      }}>
+        <div style={{
+          padding: '0.75rem 1rem', borderRadius: '0.5rem',
+          background: 'rgba(147, 197, 253, 0.06)', border: '1px solid rgba(147, 197, 253, 0.2)',
+        }}>
+          <div style={{ fontSize: '0.75rem', color: '#93c5fd', fontWeight: 600, marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Raw trust</div>
+          <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '0.4rem', fontFamily: 'var(--font-mono)' }}>(Talent + Training + Temperament) / 3</div>
+          <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>Decides <strong style={{ color: 'var(--color-text-secondary)' }}>survival</strong>. Drop below 0.5 and this life ends.</div>
+        </div>
+        <div style={{
+          padding: '0.75rem 1rem', borderRadius: '0.5rem',
+          background: 'rgba(253, 230, 138, 0.06)', border: '1px solid rgba(253, 230, 138, 0.2)',
+        }}>
+          <div style={{ fontSize: '0.75rem', color: '#fde68a', fontWeight: 600, marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Effective trust</div>
+          <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '0.4rem', fontFamily: 'var(--font-mono)' }}>raw × CI²</div>
+          <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>Decides your <strong style={{ color: 'var(--color-text-secondary)' }}>karma tier</strong> at death (Honored / Neutral / Constrained), which seeds your next life.</div>
+        </div>
+      </div>
+      <p style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '700px', lineHeight: 1.5 }}>
+        <strong style={{ color: 'var(--color-text-secondary)' }}>Why square CI?</strong>{' '}
+        Consistency compounds. A small dip barely shows (0.9² = 0.81) but a serious inconsistency nearly halves you (0.6² = 0.36). Squaring punishes erratic behavior far more than it rewards perfect consistency.
       </p>
 
       {/* Lives Overview Strip */}
