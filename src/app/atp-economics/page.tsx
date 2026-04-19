@@ -118,7 +118,39 @@ export default function ATPEconomicsPage() {
           you spend ATP to act, the ADP receipt records it, and quality work recharges your balance. The metaphor is
           deliberate &mdash; energy that flows, not tokens that accumulate.
         </p>
-        <p className="text-sm text-gray-500 mt-2 italic">
+
+        {/* Crypto-skeptic preemption — Apr 19 visitor MEDIUM + Unanswered Q #1 */}
+        <div className="mt-6 bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-amber-700/40 rounded-xl p-5">
+          <p className="text-sm font-semibold text-amber-300 mb-2">
+            Is ATP like Bitcoin? (short answer: no)
+          </p>
+          <ul className="text-sm text-gray-300 space-y-1.5 leading-relaxed list-disc list-outside ml-5">
+            <li>
+              <strong className="text-gray-100">It&apos;s a usage budget, not a tradeable asset.</strong>{' '}
+              No market, no price, no speculation. You can&apos;t buy or sell ATP.
+            </li>
+            <li>
+              <strong className="text-gray-100">You can transfer small amounts to others</strong> &mdash;
+              but <strong className="text-amber-300">5% burns on every transfer</strong>. The friction is intentional; this is not a currency.
+            </li>
+            <li>
+              <strong className="text-gray-100">No scarcity cap, no mining.</strong>{' '}
+              ATP recharges from <em>contribution</em>, not purchase. Stop contributing and it drains; keep contributing and it sustains.
+            </li>
+          </ul>
+          <p className="text-xs text-gray-500 mt-3">
+            Want the full side-by-side?{' '}
+            <a
+              href="#technical"
+              onClick={(e) => { e.preventDefault(); const el = document.getElementById('technical'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}
+              className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
+            >
+              ATP vs crypto tokens comparison table ↓
+            </a>
+          </p>
+        </div>
+
+        <p className="text-sm text-gray-500 mt-4 italic">
           You&apos;ll see ATP described as an &ldquo;energy budget&rdquo; or &ldquo;attention budget&rdquo; throughout the site &mdash; same concept, different metaphors.
         </p>
         <p className="text-sm text-gray-500 mt-4">
@@ -671,7 +703,7 @@ export default function ATPEconomicsPage() {
           </div>
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
             <div className="text-2xl mb-2">⚖️</div>
-            <h3 className="text-lg font-semibold text-purple-400 mb-2">No Wealth Hoarding</h3>
+            <h3 id="no-hoarding" className="text-lg font-semibold text-purple-400 mb-2 scroll-mt-24">No Wealth Hoarding</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Unlike cryptocurrency, ATP reaches economic equilibrium through fee redistribution.
               ATP velocity keeps resources circulating — hoarding is penalized by decay, and
