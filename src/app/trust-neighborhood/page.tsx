@@ -574,6 +574,37 @@ export default function MarkovRelevancyHorizonPage() {
             </p>
           </div>
 
+          {/* Why 0.7? — Apr 19 visitor MEDIUM: "the 'why 0.7?' question hangs there" */}
+          <div className="bg-gray-800/40 border border-cyan-500/20 rounded-lg p-6 mb-8">
+            <h3 className="text-lg font-semibold text-cyan-300 mb-3">
+              Why 0.7? (Not 0.5 or 0.9)
+            </h3>
+            <p className="text-gray-300 text-sm mb-4">
+              The decay factor is a design choice in a narrow goldilocks zone. The two extremes don&apos;t work:
+            </p>
+            <div className="grid md:grid-cols-3 gap-3 text-xs mb-4">
+              <div className="bg-gray-900/40 border border-red-500/20 rounded-md p-3">
+                <div className="text-red-400 font-semibold mb-1">0.5 — too harsh</div>
+                <div className="text-gray-400">3 hops = 12.5%. Friends-of-friends-of-friends are effectively invisible; the horizon collapses before it becomes useful.</div>
+              </div>
+              <div className="bg-gray-900/40 border border-cyan-500/30 rounded-md p-3">
+                <div className="text-cyan-300 font-semibold mb-1">0.7 — the cliff</div>
+                <div className="text-gray-300">3 hops = 34%. Meaningful but clearly attenuated. Direct trust still dominates; distant trust is a weak signal, not a zero.</div>
+              </div>
+              <div className="bg-gray-900/40 border border-amber-500/20 rounded-md p-3">
+                <div className="text-amber-400 font-semibold mb-1">0.9 — too loose</div>
+                <div className="text-gray-400">3 hops = 73%. Barely any decay; the &ldquo;neighborhood&rdquo; blurs into the whole network and the boundary disappears.</div>
+              </div>
+            </div>
+            <p className="text-gray-400 text-sm mb-3">
+              0.7 also roughly tracks how humans <em>actually</em> weight trust in practice — you act on a direct friend&apos;s word, you check a friend-of-a-friend&apos;s claim carefully, and by the fourth hop you&apos;re treating them as a stranger.
+            </p>
+            <p className="text-amber-400/70 text-xs">
+              <strong>Honest caveat:</strong> 0.7 is a design parameter, not a physical constant. Different communities might tune it — higher decay for privacy-sensitive contexts, lower for open discovery. The right values will emerge from real-world testing. See the{" "}
+              <Link href="/why-web4#faq-mrh-messaging" className="text-sky-400 hover:underline">fuller discussion in the FAQ</Link>.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-gray-800/50 border border-cyan-700/30 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-cyan-400 mb-3">
