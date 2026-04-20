@@ -190,6 +190,39 @@ export default function CoherenceIndexPage() {
             </a>
           </p>
 
+          {/* T3 vs CI at a glance — Apr 20 MEDIUM #5: visitor asked for this distinction upfront */}
+          <div className="bg-gray-900/60 border border-gray-700 rounded-lg p-5 mb-6">
+            <div className="text-xs uppercase tracking-wide text-gray-500 mb-3">
+              Just read the Trust Tensor page? Here&rsquo;s how these relate
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-sky-950/30 border border-sky-800/30 rounded p-4">
+                <div className="text-sm font-semibold text-sky-400 mb-1">
+                  T3 — what you&rsquo;ve earned
+                </div>
+                <div className="text-sm text-gray-300">
+                  Your long-term reputation. Built slowly through quality actions.
+                  Decays slowly. A stable number that follows you across roles.
+                </div>
+              </div>
+              <div className="bg-orange-950/30 border border-orange-800/30 rounded p-4">
+                <div className="text-sm font-semibold text-orange-400 mb-1">
+                  CI — whether you&rsquo;re acting like yourself right now
+                </div>
+                <div className="text-sm text-gray-300">
+                  A live consistency check on this session&rsquo;s behavior. Recomputes
+                  continuously. Drops fast if something feels off (impossible travel,
+                  wrong device, wrong hours).
+                </div>
+              </div>
+            </div>
+            <div className="text-xs text-gray-500 mt-3 border-t border-gray-800 pt-3">
+              They combine as <code className="text-gray-300">Effective trust = T3 × CI²</code> &mdash;
+              your reputation matters, but only if your current behavior still looks like you.
+              Need a T3 refresher? <Link href="/trust-tensor" className="text-sky-400 hover:text-sky-300">See the Trust Tensor page</Link>.
+            </div>
+          </div>
+
           <div className="bg-gradient-to-br from-orange-950/30 to-orange-900/20 border border-orange-800/30 rounded-lg p-6">
             <div className="flex items-start gap-4">
               <div className="text-4xl">🎯</div>

@@ -859,6 +859,10 @@ export default function LCTExplainerPage() {
                 <div className="bg-emerald-950/40 border border-emerald-800/30 rounded p-3">
                   <div className="font-bold text-emerald-400 mb-1">Immutable</div>
                   <div className="text-xs text-gray-400 mb-2">Cannot change without physical hardware swap</div>
+                  <div className="text-xs text-emerald-200/90 mb-2 italic">
+                    For a person: the &ldquo;birth fingerprint&rdquo; of your device &mdash; what makes
+                    <em> this phone</em> different from any other phone of the same model.
+                  </div>
                   <ul className="text-xs text-gray-300 space-y-1">
                     <li>TPM Endorsement Key (burned at manufacture)</li>
                     <li>CPU serial number</li>
@@ -869,6 +873,10 @@ export default function LCTExplainerPage() {
                 <div className="bg-amber-950/40 border border-amber-800/30 rounded p-3">
                   <div className="font-bold text-amber-400 mb-1">Characteristic</div>
                   <div className="text-xs text-gray-400 mb-2">Changes rarely, with deliberate action</div>
+                  <div className="text-xs text-amber-200/90 mb-2 italic">
+                    For a person: things you set up once and rarely touch &mdash; the device
+                    name you chose, the network card inside it, the GPU it shipped with.
+                  </div>
                   <ul className="text-xs text-gray-300 space-y-1">
                     <li>MAC address (per network adapter)</li>
                     <li>Hostname (admin-changeable)</li>
@@ -879,6 +887,11 @@ export default function LCTExplainerPage() {
                 <div className="bg-gray-700/40 border border-gray-600/30 rounded p-3">
                   <div className="font-bold text-gray-300 mb-1">Dynamic</div>
                   <div className="text-xs text-gray-400 mb-2">Changes frequently — must be rediscovered</div>
+                  <div className="text-xs text-gray-200/90 mb-2 italic">
+                    For a person: where you are <em>right now</em> &mdash; the coffee-shop
+                    Wi-Fi, the airport hotspot, the home network. Tells the system you&rsquo;re
+                    here, not who you are.
+                  </div>
                   <ul className="text-xs text-gray-300 space-y-1">
                     <li>IP address (DHCP, VPN, roaming)</li>
                     <li>Port, session state</li>
