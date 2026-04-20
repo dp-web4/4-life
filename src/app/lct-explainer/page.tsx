@@ -185,7 +185,7 @@ export default function LCTExplainerPage() {
           <h2 className="text-lg font-bold mb-3 text-purple-300">Key Takeaways</h2>
           <ul className="space-y-2 text-sm text-gray-300">
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">1.</span> Your identity lives in your devices&apos; security chips — not in passwords or company databases</li>
-            <li className="flex gap-2"><span className="text-purple-400 shrink-0">2.</span> Multiple devices (phone, laptop, security key) witness each other, making faking exponentially harder</li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">2.</span> Multiple devices (phone, laptop, security key) witness each other, making faking exponentially harder <a href="#device-witnesses" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('device-witnesses')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(who runs this?)</a></li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">3.</span> If you lose a device, your other devices can recover your identity — no &quot;forgot password&quot; needed</li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">4.</span> This is pseudonymous — your reputation follows you, but your real name doesn&apos;t have to</li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">5.</span> Every trust change is logged in a tamper-evident <a href="#trust-transparency" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('trust-transparency')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline">transparency log</a> — you can audit your own trust history</li>
@@ -375,7 +375,7 @@ export default function LCTExplainerPage() {
           </div>
 
           {/* Witness explainer */}
-          <div className="mt-4 p-4 bg-green-950/20 border border-green-800/30 rounded-lg">
+          <div id="device-witnesses" className="mt-4 p-4 bg-green-950/20 border border-green-800/30 rounded-lg scroll-mt-24">
             <h3 className="text-sm font-bold text-green-400 mb-2">
               What are &ldquo;device witnesses&rdquo;?
             </h3>
