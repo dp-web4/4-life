@@ -809,14 +809,26 @@ export default function TrustTensorPage() {
             <div className="flex gap-3 items-start">
               <span className="text-sky-400 font-bold shrink-0">Natural decay:</span>
               <p className="text-gray-400">If you stop doing analyst work entirely, those trust scores
-                decay over time (Talent half-life: 365 days, Training: 180 days). You don&apos;t &ldquo;lose&rdquo;
-                them overnight — they fade gradually, reflecting that skills and expertise need practice
-                to stay sharp.
+                decay over time (Talent: 365 days, Training: 180 days, Temperament: 30 days). You don&apos;t
+                &ldquo;lose&rdquo; them overnight — they fade gradually, reflecting that skills and expertise
+                need practice to stay sharp.
                 <span className="block text-gray-500 text-xs mt-1">
                   <strong className="text-gray-400">What &ldquo;half-life&rdquo; means here:</strong>{' '}
                   the time it takes to lose half the score with zero activity. A 365-day Talent half-life
                   means after one year of no practice, a score of 0.80 settles at 0.40; after two years, 0.20.
                   Decay is exponential, not a cliff.
+                </span>
+                {/* Apr 19 LOW — why Temperament decays faster than Talent */}
+                <span className="block text-gray-500 text-xs mt-2">
+                  <strong className="text-gray-400">Why Temperament fades fastest:</strong>{' '}
+                  skills persist, knowledge fades, but character has to be shown again each month.
+                  Yesterday&apos;s kindness doesn&apos;t excuse today&apos;s betrayal, so Temperament
+                  weighs recent behavior far more than old. Talent is the opposite — a surgeon doesn&apos;t
+                  forget surgery over a long vacation.{' '}
+                  <a href="#why-half-lives" className="text-sky-400 hover:underline"
+                     onClick={(e) => { e.preventDefault(); const el = document.getElementById('why-half-lives'); if (el instanceof HTMLDetailsElement) el.open = true; el?.scrollIntoView({ behavior: 'smooth' }); }}>
+                    Full rationale ↓
+                  </a>
                 </span>
               </p>
             </div>
@@ -1100,7 +1112,7 @@ Temperament:  30-day half-life (recent behavior matters most)
 // temperament_delta = base_delta × 0.6`}
               </pre>
 
-              <details className="mt-4 bg-gray-900/50 border border-gray-700/50 rounded-lg overflow-hidden">
+              <details id="why-half-lives" className="mt-4 bg-gray-900/50 border border-gray-700/50 rounded-lg overflow-hidden scroll-mt-24">
                 <summary className="cursor-pointer p-4 text-sm font-semibold text-gray-300 hover:text-sky-400 transition-colors">
                   Why these specific half-lives? ▸
                 </summary>
