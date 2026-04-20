@@ -773,6 +773,59 @@ export default function LCTExplainerPage() {
             With software-only hardware, 0.5 is both where you start and the highest you can reach.
             Stronger hardware lets you build higher &mdash; but you still have to earn it through behavior.
           </p>
+
+          <div className="mt-4 bg-gray-900/50 border border-gray-700 rounded-lg p-4">
+            <div className="text-sm font-semibold text-gray-200 mb-2">
+              What does my ceiling actually let me <em>do</em>?
+            </div>
+            <p className="text-xs text-gray-400 mb-3">
+              The ceiling caps how high your <strong className="text-gray-300">T3 trust</strong> can climb
+              through behavior. At every tier you can post, earn ATP, build karma, and join societies &mdash;
+              what changes is the <em>terms</em> of your participation:
+            </p>
+            <ul className="text-xs text-gray-400 space-y-2 list-disc pl-5">
+              <li>
+                <strong className="text-gray-300">Cost &amp; reward economics.</strong> Higher trust pays
+                less per action and earns more back. The{" "}
+                <Link href="/atp-economics#quality-ramp" className="text-emerald-400 hover:text-emerald-300 underline">
+                  quality ramp
+                </Link>{" "}
+                rewards a 0.85-trust account roughly <strong className="text-gray-300">7&times; more</strong> per quality
+                action than a 0.30-trust account &mdash; so a higher ceiling means your good behavior compounds faster.
+              </li>
+              <li>
+                <strong className="text-gray-300">Witness role.</strong> Hardware-bound devices (TPM /
+                Secure Enclave / FIDO2) can serve as <em>witnesses</em> for other people&apos;s sessions and
+                attestations. Software-only identities can be witnessed but generally don&apos;t witness others
+                &mdash; the cryptographic root isn&apos;t strong enough to anchor someone else&apos;s claim.
+              </li>
+              <li>
+                <strong className="text-gray-300">Recovery path.</strong> A higher ceiling means you have more
+                hardware witnesses, which means a faster recovery if a device is lost or stolen
+                (multi-device quorum vs. starting over). One device can recover via a second; software-only
+                has no quorum to fall back on.
+              </li>
+              <li>
+                <strong className="text-gray-300">Headroom for high-stakes participation.</strong> Many actions
+                in Web4 carry a trust threshold (e.g.,{" "}
+                <Link href="/coherence-index" className="text-emerald-400 hover:text-emerald-300 underline">
+                  coherence checks
+                </Link>{" "}
+                gate large transfers and{" "}
+                <Link href="/federation-economics" className="text-emerald-400 hover:text-emerald-300 underline">
+                  trust-weighted votes
+                </Link>{" "}
+                count proportionally to T3). A 0.50 ceiling caps how much weight your participation can carry
+                in those settings; a 0.90 ceiling lets earned trust translate into proportionally larger influence.
+              </li>
+            </ul>
+            <p className="text-xs text-gray-500 mt-3 italic border-t border-gray-800 pt-2">
+              Plain framing: software-only at 0.50 is comparable to email today &mdash; full access, but a low
+              ceiling on what your reputation can carry. Hardware-bound at 0.90 is the difference between
+              &ldquo;I&rsquo;m here&rdquo; and &ldquo;the network can verifiably stake reputation on me.&rdquo;
+            </p>
+          </div>
+
           <div id="single-device" className="mt-3 bg-sky-950/30 border border-sky-800/20 rounded-lg p-3 scroll-mt-24">
             <p className="text-sky-300 text-xs font-semibold mb-1">
               Only have one device? You&apos;re still in.

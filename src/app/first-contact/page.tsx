@@ -117,7 +117,7 @@ export default function FirstContactPage() {
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.5rem' }}>
               <p style={{ color: '#cbd5e1', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                Alice starts with <strong style={{ color: '#38bdf8' }}>100 energy (ATP)</strong> and <strong style={{ color: '#10b981' }}>neutral trust (0.50)</strong>. Every action she takes costs energy. Every contribution builds (or burns) trust.
+                Alice starts with <strong style={{ color: '#38bdf8' }}>100 energy</strong> &mdash; called <abbr title="Allocation Transfer Packets" style={{ color: '#38bdf8', textDecoration: 'none' }}>ATP</abbr> (<em>Allocation Transfer Packets</em>, the attention budget she spends to act) &mdash; and <strong style={{ color: '#10b981' }}>neutral trust (0.50)</strong>. Every action she takes costs energy. Every contribution builds (or burns) trust.
               </p>
 
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
