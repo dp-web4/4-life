@@ -185,7 +185,7 @@ export default function LCTExplainerPage() {
           <h2 className="text-lg font-bold mb-3 text-purple-300">Key Takeaways</h2>
           <ul className="space-y-2 text-sm text-gray-300">
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">1.</span> Your identity lives in your devices&apos; security chips — not in passwords or company databases</li>
-            <li className="flex gap-2"><span className="text-purple-400 shrink-0">2.</span> Multiple devices (phone, laptop, security key) witness each other, making faking exponentially harder</li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">2.</span> Multiple devices (phone, laptop, security key) witness each other, making faking exponentially harder <a href="#device-witnesses" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('device-witnesses')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(who runs this?)</a></li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">3.</span> If you lose a device, your other devices can recover your identity — no &quot;forgot password&quot; needed</li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">4.</span> This is pseudonymous — your reputation follows you, but your real name doesn&apos;t have to</li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">5.</span> Every trust change is logged in a tamper-evident <a href="#trust-transparency" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('trust-transparency')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline">transparency log</a> — you can audit your own trust history</li>
@@ -375,10 +375,15 @@ export default function LCTExplainerPage() {
           </div>
 
           {/* Witness explainer */}
-          <div className="mt-4 p-4 bg-green-950/20 border border-green-800/30 rounded-lg">
+          <div id="device-witnesses" className="mt-4 p-4 bg-green-950/20 border border-green-800/30 rounded-lg scroll-mt-24">
             <h3 className="text-sm font-bold text-green-400 mb-2">
               What are &ldquo;device witnesses&rdquo;?
             </h3>
+            <p className="text-xs text-gray-400 italic mb-3">
+              Witnessing happens at two layers: (1) your own devices attest to each other, and (2) optional
+              infrastructure nodes verify the network. This section covers layer 1 &mdash; layer 2
+              (&ldquo;who runs the network?&rdquo;) is answered directly below.
+            </p>
             <p className="text-sm text-gray-300 mb-3">
               <strong>Why device witnesses?</strong> Passwords can be stolen. A single device can be hacked.
               But compromising three independent devices at the same time? That&apos;s orders of magnitude
@@ -422,11 +427,14 @@ export default function LCTExplainerPage() {
             </div>
           </div>
 
-          <div className="mt-4 p-3 bg-gray-900/50 border border-gray-700 rounded-lg">
+          <div id="witness-infrastructure" className="mt-4 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg scroll-mt-24">
+            <h3 className="text-sm font-bold text-sky-400 mb-2">
+              Who runs witness infrastructure?
+            </h3>
             <p className="text-sm text-gray-300 mb-2">
-              <strong className="text-sky-400">Who runs witness infrastructure?</strong> Anyone can.
-              Web4 is an open standard (like email), not a platform (like Gmail). Witness nodes can be run by
-              universities, companies, nonprofits, or individuals — the same way anyone can run an email server.
+              <strong className="text-sky-400">Short answer:</strong> anyone can. Web4 is an open standard
+              (like email), not a platform (like Gmail). Witness nodes can be run by universities,
+              companies, nonprofits, or individuals &mdash; the same way anyone can run an email server.
             </p>
             <p className="text-sm text-gray-400 mb-2">
               <strong className="text-gray-300">Two kinds of witnessing:</strong> (1) your own devices witness <em>each other</em> — your phone
