@@ -379,6 +379,11 @@ export default function LCTExplainerPage() {
             <h3 className="text-sm font-bold text-green-400 mb-2">
               What are &ldquo;device witnesses&rdquo;?
             </h3>
+            <p className="text-xs text-gray-400 italic mb-3">
+              Witnessing happens at two layers: (1) your own devices attest to each other, and (2) optional
+              infrastructure nodes verify the network. This section covers layer 1 &mdash; layer 2
+              (&ldquo;who runs the network?&rdquo;) is answered directly below.
+            </p>
             <p className="text-sm text-gray-300 mb-3">
               <strong>Why device witnesses?</strong> Passwords can be stolen. A single device can be hacked.
               But compromising three independent devices at the same time? That&apos;s orders of magnitude
@@ -422,11 +427,14 @@ export default function LCTExplainerPage() {
             </div>
           </div>
 
-          <div className="mt-4 p-3 bg-gray-900/50 border border-gray-700 rounded-lg">
+          <div id="witness-infrastructure" className="mt-4 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg scroll-mt-24">
+            <h3 className="text-sm font-bold text-sky-400 mb-2">
+              Who runs witness infrastructure?
+            </h3>
             <p className="text-sm text-gray-300 mb-2">
-              <strong className="text-sky-400">Who runs witness infrastructure?</strong> Anyone can.
-              Web4 is an open standard (like email), not a platform (like Gmail). Witness nodes can be run by
-              universities, companies, nonprofits, or individuals — the same way anyone can run an email server.
+              <strong className="text-sky-400">Short answer:</strong> anyone can. Web4 is an open standard
+              (like email), not a platform (like Gmail). Witness nodes can be run by universities,
+              companies, nonprofits, or individuals &mdash; the same way anyone can run an email server.
             </p>
             <p className="text-sm text-gray-400 mb-2">
               <strong className="text-gray-300">Two kinds of witnessing:</strong> (1) your own devices witness <em>each other</em> — your phone
