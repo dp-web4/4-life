@@ -157,8 +157,17 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Web4 Society",
     brief: "A collection of entities with shared rules and trust thresholds.",
     explanation:
-      "Societies can be your personal device (home society), a community of peers, or planet-scale networks. Each sets its own trust thresholds. The same architecture works at every scale (fractal design). Ejection from one society doesn't prevent participation in others.",
+      "Societies can be your personal device (home society), a community of peers, or planet-scale networks. Each sets its own trust thresholds. The same architecture works at every scale (fractal design). Ejection from one society doesn't prevent participation in others. On this site, \"community\" is often used informally as a synonym for society; \"federation\" refers to a group of cooperating societies (see Federation).",
     learnMore: "/glossary",
+  },
+
+  Federation: {
+    term: "Federation",
+    fullName: "Web4 Federation",
+    brief: "A group of societies that interoperate under shared protocols while keeping their own rules.",
+    explanation:
+      "A federation is a higher-order scope than a society: multiple societies agree on how to exchange trust, transfer ATP across boundaries, and handle cross-society identity — without merging into one. Each member society still sets its own trust thresholds and internal rules. Federation rules govern the seams: how trust scores translate, how cross-society ATP transfers are priced, and how disputes between societies are resolved. Contrast with \"society\" (one group, shared rules) and \"community\" (informal synonym for society).",
+    learnMore: "/federation-economics",
   },
 
   // Value Confirmation
