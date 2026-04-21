@@ -131,7 +131,9 @@ export default function ATPEconomicsPage() {
             </li>
             <li>
               <strong className="text-gray-100">You can transfer small amounts to others</strong> &mdash;
-              but <strong className="text-amber-300">5% burns on every transfer</strong>. The friction is intentional; this is not a currency.
+              but <strong className="text-amber-300">5% burns on every transfer</strong>. The friction is intentional:
+              it makes circular farming (colluding accounts passing ATP back and forth to fake activity) unprofitable.
+              This is not a currency.
             </li>
             <li>
               <strong className="text-gray-100">No scarcity cap, no mining.</strong>{' '}

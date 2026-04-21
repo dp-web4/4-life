@@ -857,7 +857,7 @@ export default function HowItWorksPage() {
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-amber-400 shrink-0">→</span>
-                <span><strong className="text-amber-400">CI → Both:</strong> Inconsistency multiplies costs up to 1.4&times;.</span>
+                <span><strong className="text-amber-400">CI → Both:</strong> Behavior that breaks your pattern raises your costs up to 1.4&times; &mdash; a tax on inconsistency that fades as your pattern restabilizes.</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-indigo-400 shrink-0">→</span>
