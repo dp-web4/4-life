@@ -830,7 +830,7 @@ export default function HowItWorksPage() {
               <div className="flex items-center justify-center text-gray-600 text-sm md:rotate-0 rotate-90 py-1 md:py-0">⇄</div>
               <div className="flex-1 bg-amber-950/30 border border-amber-800/40 rounded-lg p-3 text-center">
                 <div className="text-sm font-bold text-amber-400">CI (Coherence)</div>
-                <div className="text-xs text-gray-500 mt-1">Detects anomalies</div>
+                <div className="text-xs text-gray-500 mt-1">Behavioral-consistency check</div>
               </div>
             </div>
             <div className="text-center text-gray-600">↑ all require ↑</div>
