@@ -171,7 +171,8 @@ export default function LCTExplainerPage() {
             Linked Context Tokens (LCT)
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Web4&apos;s verified presence layer — hardware-bound, witnessed, and resistant to faking
+            A digital ID card that lives in your device&apos;s security chip — hardware-bound,
+            witnessed by your other devices, and resistant to faking.
           </p>
           <p className="text-sm text-gray-500 mt-4">
             <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 cursor-pointer">
@@ -526,9 +527,15 @@ export default function LCTExplainerPage() {
 
           <div className="space-y-4 mb-6">
             <p className="text-gray-300">
-              An <span className="font-bold text-purple-400">LCT</span> is Web4's foundational presence primitive.
-              Unlike a password (knowledge) or wallet address (cryptographic key), an LCT is a
-              {" "}<span className="font-bold">hardware-bound, witnessed, contextual proof of presence</span> that verifies:
+              Think of an <span className="font-bold text-purple-400">LCT</span> as a
+              <span className="font-bold"> digital ID card that lives in your device&apos;s security chip</span>{" "}
+              — not a password you type and not a key file you store, but a presence your
+              hardware proves and your other devices witness.
+            </p>
+            <p className="text-gray-300">
+              More formally, an LCT is Web4&apos;s foundational presence primitive: a
+              {" "}<span className="font-bold">hardware-bound, witnessed, contextual proof of presence</span>{" "}
+              that verifies:
             </p>
 
             <ul className="list-disc list-inside space-y-2 text-gray-300 ml-4">
