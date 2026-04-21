@@ -54,6 +54,47 @@ export default function WhatCouldGoWrongPage() {
         <RiskSelector />
       </section>
 
+      {/* Acronym quick-reference — for visitors arriving on this page directly (e.g., via a skeptic's share link) */}
+      <section className="max-w-4xl mx-auto mt-8">
+        <div className="bg-gray-800/40 border border-gray-700/50 rounded-lg p-4">
+          <p className="text-xs uppercase tracking-wide text-gray-400 mb-3">
+            Acronyms used on this page
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 text-xs">
+            <div>
+              <Link href="/atp-economics" className="font-semibold text-emerald-400 hover:underline">ATP</Link>{" "}
+              <span className="text-gray-500">(Allocation Transfer Packets)</span>{" "}
+              <span className="text-gray-300">&mdash; energy budget; spend to act, recharge by creating value.</span>
+            </div>
+            <div>
+              <Link href="/lct-explainer" className="font-semibold text-purple-400 hover:underline">LCT</Link>{" "}
+              <span className="text-gray-500">(Linked Context Token)</span>{" "}
+              <span className="text-gray-300">&mdash; hardware-bound digital identity, witnessed by your devices.</span>
+            </div>
+            <div>
+              <Link href="/trust-neighborhood" className="font-semibold text-cyan-400 hover:underline">MRH</Link>{" "}
+              <span className="text-gray-500">(Markov Relevancy Horizon)</span>{" "}
+              <span className="text-gray-300">&mdash; your trust neighborhood; context decays with distance.</span>
+            </div>
+            <div>
+              <Link href="/glossary" className="font-semibold text-sky-400 hover:underline">SAL</Link>{" "}
+              <span className="text-gray-500">(Society-Authority-Law)</span>{" "}
+              <span className="text-gray-300">&mdash; Web4&apos;s governance framework: societies, authority roles, enforceable laws.</span>
+            </div>
+            <div>
+              <Link href="/trust-tensor" className="font-semibold text-blue-400 hover:underline">T3</Link>{" "}
+              <span className="text-gray-500">(Trust Tensor)</span>{" "}
+              <span className="text-gray-300">&mdash; 3-dim trust: Talent, Training, Temperament.</span>
+            </div>
+            <div>
+              <Link href="/trust-tensor" className="font-semibold text-blue-400 hover:underline">V3</Link>{" "}
+              <span className="text-gray-500">(Value Tensor)</span>{" "}
+              <span className="text-gray-300">&mdash; what you produce: Valuation, Veracity, Validity.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Risk Categories */}
       <section className="max-w-4xl mx-auto mt-12">
         <h2 className="text-3xl font-bold mb-8 text-gray-100">
