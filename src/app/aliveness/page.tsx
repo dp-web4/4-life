@@ -805,6 +805,13 @@ export default function AlivenessExplainer() {
           <li><strong>T3 &gt; 0.5:</strong> Prevents random noise (requires intentional behavior)</li>
           <li><strong>CI coherent:</strong> Prevents fake identities (consistency is expensive to fake)</li>
         </ul>
+        <p style={{ marginTop: '1.25rem', color: '#9ca3af', fontSize: '0.95rem' }}>
+          These three criteria describe individual aliveness — but the same tests
+          scale up. Groups can be alive too, with their own energy flows, coherent
+          agency, and verifiable continuity. See{' '}
+          <a href="#groups-alive" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('groups-alive')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ color: '#c084fc', cursor: 'pointer' }}>Groups Can Be Alive Too</a>
+          {' '}below.
+        </p>
       </section>
 
       <section>
@@ -1493,7 +1500,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
         </div>
       </section>
 
-      <section>
+      <section id="groups-alive" className="scroll-mt-24">
         <details>
           <summary style={{ fontSize: '1.5rem', fontWeight: 'bold', cursor: 'pointer', listStyle: 'none', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <span style={{ color: '#6b7280', fontSize: '1rem' }}>▶</span>
