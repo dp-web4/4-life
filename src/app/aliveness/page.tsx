@@ -1502,17 +1502,26 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
           </summary>
         <div className="detail-box" style={{marginTop: '1.5rem'}}>
           <p style={{color: '#c084fc', fontWeight: 600}}>
-            Yes — groups can die too. But their death looks different from yours.
+            The three criteria that make an individual alive —
+            <strong> energy budget</strong>, <strong>coherent agency</strong>, and
+            <strong> verifiable continuity</strong> — scale without modification to groups.
           </p>
           <p>
-            Everything above describes individual aliveness. But in Web4, <strong>groups</strong> can
-            also become alive — not metaphorically, but measurably.
+            When a cluster of entities develops dense trust relationships and overlapping MRH
+            horizons, the <em>group itself</em> starts passing the same three tests: collective
+            ATP flows sustain coordinated action, group-level behavior stays coherent because
+            member behavior stays coherent, and the same LCT witness network that attests to
+            individual members also attests to the group they form. Aliveness isn&apos;t an
+            individual property — it&apos;s what coherent systems exhibit at every scale.
           </p>
           <p>
-            When a cluster of entities develops dense trust relationships, shared context boundaries,
-            and balanced energy flows, they start acting as a <strong>coherent whole</strong>. Web4
-            calls these emergent groups <strong>synthons</strong> — named after chemistry&apos;s
-            building blocks that combine to form larger structures.
+            Web4 names these emergent groups <strong>synthons</strong>, borrowing from chemistry.
+            Chemical synthons are stable sub-structures that combine into larger molecules —
+            the metaphor is load-bearing, not decorative. Web4 synthons have
+            <strong> formation conditions</strong>, <strong>bond strengths</strong> (the mutual
+            trust between members), and <strong>decay signatures</strong> that are observable
+            from outside the group. The same three aliveness criteria, applied to a cluster
+            instead of a single node, tell you when a synthon is alive.
           </p>
           <p>
             A synthon has a lifecycle just like an individual:
