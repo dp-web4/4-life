@@ -61,9 +61,11 @@ export default function TLDRPage() {
               <span className="text-sky-400 text-xl mt-0.5">2.</span>
               <p className="text-gray-300">
                 <strong className="text-white">Identity is anchored in your devices.</strong> Your
-                phone, laptop, and tablet each carry security chips, linked together through
-                Linked Context Tokens (LCTs) to form a constellation that is your identity. More devices
-                strengthen it. Creating a fake identity means buying new hardware — expensive and slow.
+                phone, laptop, and tablet each carry security chips. Your identity is spread across
+                those devices — each one vouches for the others, so no single device can speak for
+                you alone (Linked Context Tokens, or LCTs, are what tie them together — a kind of
+                constellation). More devices strengthen it. Creating a fake identity means buying
+                new hardware — expensive and slow.
               </p>
             </div>
             <div className="flex gap-3 items-start">

@@ -147,6 +147,11 @@ export default function WhyWeb4Page() {
             <p className="text-gray-300 text-sm mb-3">
               Hire more moderators, build better AI filters, play whack-a-mole forever.
             </p>
+            <p className="text-gray-400 text-sm mb-2">
+              <strong className="text-emerald-400">What it gets right:</strong> Human judgment
+              catches context and nuance that rules miss. Skilled moderators are a real backstop
+              against the worst abuse.
+            </p>
             <p className="text-gray-400 text-sm">
               <strong className="text-orange-400">Failure:</strong> Reactive, not preventive.
               Scales with cost, not with problem. Spammers always find new angles.
@@ -160,6 +165,11 @@ export default function WhyWeb4Page() {
             </h3>
             <p className="text-gray-300 text-sm mb-3">
               Prove you're human with puzzles, phone numbers, ID verification.
+            </p>
+            <p className="text-gray-400 text-sm mb-2">
+              <strong className="text-emerald-400">What it gets right:</strong> Adding any cost
+              to account creation does slow mass abuse. For a while, CAPTCHAs genuinely raised
+              the price of bots.
             </p>
             <p className="text-gray-400 text-sm">
               <strong className="text-orange-400">Failure:</strong> AI solves CAPTCHAs now.
@@ -175,6 +185,11 @@ export default function WhyWeb4Page() {
             <p className="text-gray-300 text-sm mb-3">
               Use wallet addresses as identity. Self-sovereign, decentralized.
             </p>
+            <p className="text-gray-400 text-sm mb-2">
+              <strong className="text-emerald-400">What it gets right:</strong> You actually
+              own your keys — no platform can silently deplatform you. That self-sovereignty
+              is a genuine advance over social login.
+            </p>
             <p className="text-gray-400 text-sm">
               <strong className="text-orange-400">Failure:</strong> Wallets are free to create.
               No behavior history. Key theft means permanent identity loss. No spam prevention.
@@ -188,6 +203,11 @@ export default function WhyWeb4Page() {
             </h3>
             <p className="text-gray-300 text-sm mb-3">
               Use a major platform as identity provider. Convenient, established.
+            </p>
+            <p className="text-gray-400 text-sm mb-2">
+              <strong className="text-emerald-400">What it gets right:</strong> Usability.
+              One click, no new password, no hardware setup — most people will never pick
+              a more complex option if a simpler one works.
             </p>
             <p className="text-gray-400 text-sm">
               <strong className="text-orange-400">Failure:</strong> Central point of control.
