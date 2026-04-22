@@ -24,12 +24,19 @@ export default function HowItWorksPage() {
       <SectionTOC sections={HOW_IT_WORKS_SECTIONS} />
       <Breadcrumbs currentPath="/how-it-works" />
 
-      {/* New visitor prompt */}
-      <div className="max-w-4xl mx-auto mb-4 text-sm text-gray-500">
-        New to Web4? This page works best <em>after</em> the concept pages. For a guided introduction, start with{' '}
-        <Link href="/first-contact" className="text-sky-400 hover:underline">First Contact</Link> or the{' '}
-        <Link href="/tldr" className="text-sky-400 hover:underline">2-minute TL;DR</Link>, then explore the{' '}
-        <Link href="/lct-explainer" className="text-sky-400 hover:underline">concept sequence</Link> before returning here for the full picture.
+      {/* Orientation prompt — two-sided (newcomers / returning visitors) */}
+      <div className="max-w-4xl mx-auto mb-4 space-y-2 text-sm text-gray-500">
+        <div>
+          <strong className="text-gray-300">New to Web4?</strong> This page works best <em>after</em> the concept pages. For a guided introduction, start with{' '}
+          <Link href="/first-contact" className="text-sky-400 hover:underline">First Contact</Link> or the{' '}
+          <Link href="/tldr" className="text-sky-400 hover:underline">2-minute TL;DR</Link>, then explore the{' '}
+          <Link href="/lct-explainer" className="text-sky-400 hover:underline">concept sequence</Link> before returning here for the full picture.
+        </div>
+        <div>
+          <strong className="text-gray-300">Already know Web4?</strong> Skip ahead to the{' '}
+          <a href="#pieces" className="text-sky-400 hover:underline">full-picture diagram</a>{' '}
+          — a visual summary of how LCT, ATP, T3, CI, and MRH combine.
+        </div>
       </div>
 
       {/* Hero Section */}
