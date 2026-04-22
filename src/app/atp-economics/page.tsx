@@ -167,11 +167,12 @@ export default function ATPEconomicsPage() {
             { id: 'problem', label: 'The Problem' },
             { id: 'solution', label: 'The Solution' },
             { id: 'quality-ramp', label: 'Quality Ramp' },
+            { id: 'quality-measurement', label: 'Who Judges Quality?' },
             { id: 'try-it', label: 'Simulator' },
             { id: 'insights', label: 'Key Insights' },
             { id: 'at-scale', label: 'At Scale' },
             { id: 'agent-journey', label: "Agent's Journey" },
-            { id: 'earning-atp', label: 'Earning ATP' },
+            { id: 'earning-atp', label: 'Earn ATP Back' },
             { id: 'technical', label: 'Technical' },
             { id: 'why-matters', label: 'Why It Matters' },
           ].map(({ id, label }) => (
@@ -321,7 +322,7 @@ export default function ATPEconomicsPage() {
 
         {/* How Quality Is Measured — Mar 26 visitor MEDIUM friction + unanswered Q1 */}
         <div className="mt-8 bg-gradient-to-br from-emerald-950/20 to-green-900/10 border border-emerald-800/30 rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-emerald-400 mb-3" id="quality-measurement">
+          <h3 className="text-lg font-semibold text-emerald-400 mb-3 scroll-mt-24" id="quality-measurement">
             But Who Decides What&apos;s &ldquo;Quality&rdquo;?
           </h3>
           <p className="text-gray-300 text-sm leading-relaxed mb-3">
