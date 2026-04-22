@@ -474,9 +474,9 @@ export default function WhyWeb4Page() {
               <ul className="space-y-0.5 text-gray-400">
                 <li><a href="#faq-trust-transfer" className="hover:text-sky-400 transition-colors">Trust between communities?</a></li>
                 <li><a href="#faq-threshold" className="hover:text-sky-400 transition-colors">Is 0.5 threshold universal?</a></li>
-                <li><a href="#faq-creative-work" className="hover:text-sky-400 transition-colors">V3 and creative/unconventional work?</a></li>
+                <li><a href="#faq-creative-work" className="hover:text-sky-400 transition-colors">Creative or unconventional work — how is it scored?</a></li>
                 <li><a href="#faq-cheaters" className="hover:text-sky-400 transition-colors">How do you catch cheaters?</a></li>
-                <li><a href="#faq-ci-example" className="hover:text-sky-400 transition-colors">CI score for a normal person?</a></li>
+                <li><a href="#faq-ci-example" className="hover:text-sky-400 transition-colors">What does coherence look like for a normal person?</a></li>
                 <li><a href="#faq-month-off" className="hover:text-sky-400 transition-colors">Take a month off — trust gone?</a></li>
                 <li><a href="#faq-youthful-mistakes" className="hover:text-sky-400 transition-colors">Escaping youthful mistakes?</a></li>
                 <li><a href="#faq-cultural-quality" className="hover:text-sky-400 transition-colors">Cultural differences in quality?</a></li>
@@ -515,7 +515,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-infrastructure" className="hover:text-sky-400 transition-colors">Who runs the infrastructure?</a></li>
                 <li><a href="#faq-ai-agents" className="hover:text-sky-400 transition-colors">How do AI agents participate?</a></li>
                 <li><a href="#faq-protocol-changes" className="hover:text-sky-400 transition-colors">Who decides protocol changes?</a></li>
-                <li><a href="#faq-sal" className="hover:text-sky-400 transition-colors">What is SAL exactly?</a></li>
+                <li><a href="#faq-sal" className="hover:text-sky-400 transition-colors">Community governance — what&apos;s SAL?</a></li>
                 <li><a href="#faq-jurisdiction" className="hover:text-sky-400 transition-colors">Differing national laws?</a></li>
               </ul>
             </div>
@@ -562,7 +562,7 @@ export default function WhyWeb4Page() {
                 <li><strong>Protocol specification:</strong> 100+ page{" "}
                   <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
                   Web4 whitepaper</a> with formal definitions</li>
-                <li><strong>Reference implementations:</strong> ~47,000 lines of tested code &mdash; LCT lifecycle, T3/V3 tensors, ATP metering, governance (SAL), federation, witness protocol, MRH graphs</li>
+                <li><strong>Reference implementations:</strong> ~47,000 lines of tested code &mdash; identity (LCT), trust and value tensors (T3/V3), energy metering (ATP), community governance (SAL), federation, witness protocol, trust-distance graphs (MRH)</li>
                 <li><strong>Security validation:</strong> <Link href="/threat-model" className="text-sky-400 hover:underline">424 attack vectors across 84 tracks</Link>, all defended. Sybil resistance formally proven (5 theorems). Incentive compatibility proven &mdash; honest behavior is mathematically more profitable than gaming</li>
                 <li><strong>Hardware integration:</strong> TPM2 binding validated (Intel TPM 2.0, EK certificate chain through 2049). Go LCT library (55 tests). Multi-device constellation enrollment working</li>
                 <li><strong>System integration:</strong> End-to-end pipeline (all subsystems chained), WASM browser validator for client-side trust verification, federation consensus at 38.5 tasks/sec throughput</li>
