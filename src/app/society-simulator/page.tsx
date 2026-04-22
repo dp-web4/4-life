@@ -21,7 +21,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import { trackPageVisit } from '@/lib/exploration';
-import TermTooltip, { ATP, T3 } from '@/components/TermTooltip';
+import TermTooltip, { ATP, T3, LCT, CI } from '@/components/TermTooltip';
 import HumanPlayerMode from '@/components/HumanPlayerMode';
 import NetworkGraph from '@/components/NetworkGraph';
 import { queryEngine, type Query, type Response as GuideResponse } from '@/lib/act/query_engine';
@@ -3268,6 +3268,13 @@ export default function SocietySimulatorPage() {
             Each agent has <ATP>ATP</ATP> (attention budget) and a <T3>Trust Tensor</T3> (reputation).
             Actions cost ATP. Cooperation builds trust. Defection may win short-term but gets isolated.
             Watch how trust-based economics create stable cooperation <em>without moderators</em>.
+          </p>
+          <p className="text-xs text-gray-300 mb-2">
+            <strong className="text-emerald-300">Look for these as the sim runs:</strong>{' '}
+            <LCT>LCT</LCT> (each colored node is a distinct identity),{' '}
+            <ATP>ATP</ATP> (energy bars drain on actions, recharge from cooperation),{' '}
+            <T3>T3</T3> (reputation updates after each trust decision),{' '}
+            <CI>CI</CI> (coherence tracks behavioral consistency).
           </p>
           <p className="text-xs text-gray-500">
             New to Web4? Start with <a href="/first-contact" className="text-emerald-400 hover:underline">First Contact</a> — a 12-minute guided introduction.
