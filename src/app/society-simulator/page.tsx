@@ -689,6 +689,19 @@ function AgentInspector({ agent, allAgents }: {
 // Event Feed
 // ============================================================================
 
+const EVENT_TEXT_COLORS: Record<SocietyEvent['type'], string> = {
+  coalition_formed: 'text-blue-300',
+  coalition_dissolved: 'text-gray-300',
+  agent_death: 'text-red-300',
+  agent_rebirth: 'text-amber-300',
+  defector_isolated: 'text-purple-300',
+  trust_network_connected: 'text-green-300',
+  cooperation_surge: 'text-green-300',
+  trust_collapse: 'text-red-300',
+  strategy_shift: 'text-yellow-300',
+  society_stable: 'text-green-300',
+};
+
 function EventFeed({ events }: { events: SocietyEvent[] }) {
   const eventColors: Record<SocietyEvent['type'], string> = {
     coalition_formed: 'border-blue-500 text-blue-300',
@@ -3584,6 +3597,20 @@ export default function SocietySimulatorPage() {
                     </span>
                   )}
                 </div>
+                {running && (
+                  <div className="text-xs mb-2 flex items-center gap-2 min-h-[1.25rem]" aria-live="polite">
+                    {events.length > 0 ? (
+                      <>
+                        <span className="text-gray-500 shrink-0">Latest:</span>
+                        <span className={`${EVENT_TEXT_COLORS[events[events.length - 1].type] || 'text-gray-300'} truncate`}>
+                          {events[events.length - 1].message}
+                        </span>
+                      </>
+                    ) : (
+                      <span className="text-gray-500 italic">Agents interacting — events will appear as they happen…</span>
+                    )}
+                  </div>
+                )}
                 <NetworkGraph
                   agents={agents}
                   coalitions={coalitions}
