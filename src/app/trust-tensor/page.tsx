@@ -818,18 +818,20 @@ export default function TrustTensorPage() {
                   means after one year of no practice, a score of 0.80 settles at 0.40; after two years, 0.20.
                   Decay is exponential, not a cliff.
                 </span>
-                {/* Apr 19 LOW — why Temperament decays faster than Talent */}
-                <span className="block text-gray-500 text-xs mt-2">
-                  <strong className="text-gray-400">Why Temperament fades fastest:</strong>{' '}
-                  skills persist, knowledge fades, but character has to be shown again each month.
-                  Yesterday&apos;s kindness doesn&apos;t excuse today&apos;s betrayal, so Temperament
-                  weighs recent behavior far more than old. Talent is the opposite — a surgeon doesn&apos;t
-                  forget surgery over a long vacation.{' '}
-                  <a href="#why-half-lives" className="text-sky-400 hover:underline"
-                     onClick={(e) => { e.preventDefault(); const el = document.getElementById('why-half-lives'); if (el instanceof HTMLDetailsElement) el.open = true; el?.scrollIntoView({ behavior: 'smooth' }); }}>
-                    Full rationale ↓
-                  </a>
-                </span>
+              </p>
+            </div>
+            {/* Apr 21 LOW L5 — promote "why the gap matters" to sibling-row visibility */}
+            <div className="flex gap-3 items-start">
+              <span className="text-sky-400 font-bold shrink-0">Why the gap matters:</span>
+              <p className="text-gray-400">
+                Character has to be shown fresh each month; skill stays earned for a year. That 12× gap
+                is the point — yesterday&apos;s kindness doesn&apos;t excuse today&apos;s betrayal, but a
+                surgeon doesn&apos;t forget surgery over a long vacation. So Temperament (30d) weighs
+                recent behavior far more than old, while Talent (365d) is patient with absence.{' '}
+                <a href="#why-half-lives" className="text-sky-400 hover:underline"
+                   onClick={(e) => { e.preventDefault(); const el = document.getElementById('why-half-lives'); if (el instanceof HTMLDetailsElement) el.open = true; el?.scrollIntoView({ behavior: 'smooth' }); }}>
+                  Full rationale ↓
+                </a>
               </p>
             </div>
           </div>
