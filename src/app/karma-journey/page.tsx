@@ -507,8 +507,13 @@ export default function KarmaJourneyPage() {
         <strong><Link href="/atp-economics" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>ATP</Link></strong> = your energy budget — every action costs ATP, run out and you die.{' '}
         <strong><Link href="/coherence-index" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>CI</Link></strong> = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;).
         Everyone starts at CI 0.85, not 1.0 — you haven&apos;t demonstrated consistency yet, so actions cost ~1.4× their base price. As you behave consistently, CI rises to 0.9+ and the surcharge disappears (actions cost exactly their listed price).{' '}
-        Two trust numbers matter here — one decides whether you live, the other decides your next life. Card below.{' '}
         Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
+      </p>
+
+      {/* Apr 21 LOW L6 — promote two-trust-numbers lead-in to standalone visibility above the contrast card. Color-codes the two clauses to match the Raw (blue) / Effective (yellow) cards directly below. */}
+      <p style={{ marginBottom: '0.5rem', maxWidth: '700px', lineHeight: 1.5, fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>
+        <strong style={{ color: '#93c5fd' }}>Raw trust keeps you alive now.</strong>{' '}
+        <strong style={{ color: '#fde68a' }}>Effective trust is what you inherit next life.</strong>
       </p>
 
       {/* Raw vs Effective trust contrast — closes Apr 18 LOW */}
