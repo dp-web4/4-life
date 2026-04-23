@@ -850,10 +850,10 @@ export default function TrustTensorPage() {
         </div>
       </section>
 
-      {/* T3/V3 Bridge — how they work together (visitor friction Mar 15-16) */}
+      {/* T3/V3 Bridge — how they work together (visitor friction Mar 15-16; Apr 22 L9 expand V3 acronym) */}
       <section id="v3" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
-        <p className="text-gray-400 text-sm mb-4 max-w-4xl mx-auto">
-          T3 tells us whether <em>you</em> are trustworthy. But how does the system know if a specific piece of work you produced was actually good? That&apos;s where V3 comes in — a separate score for each thing you create.
+        <p className="text-gray-300 mb-4 max-w-4xl mx-auto">
+          T3 tells us whether <em>you</em> are trustworthy. But how does the system know if a specific piece of work you produced was actually good? That&apos;s where <strong className="text-purple-300">V3</strong> — the <strong>Value Tensor</strong> — comes in. T3 scores <em>you</em>; V3 scores <em>what you produce</em>. See its own section below.
         </p>
         <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/30 border border-sky-700/30 rounded-xl p-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-100">
