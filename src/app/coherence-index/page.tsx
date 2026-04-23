@@ -219,6 +219,10 @@ export default function CoherenceIndexPage() {
             <div className="text-xs text-gray-500 mt-3 border-t border-gray-800 pt-3">
               They combine as <code className="text-gray-300">Effective trust = T3 × CI²</code> &mdash;
               your reputation matters, but only if your current behavior still looks like you.
+              {/* Apr 23 LOW: visitor asked why the exponent is squared. */}
+              <span className="block mt-1 text-gray-600">
+                (The square on CI makes inconsistency compound: it breaks trust <em>and</em> creates ambiguity about which version of you is acting &mdash; so small coherence drops land harder than a linear penalty would.)
+              </span>
               Need a T3 refresher? <Link href="/trust-tensor" className="text-sky-400 hover:text-sky-300">See the Trust Tensor page</Link>.
             </div>
           </div>
