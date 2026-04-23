@@ -173,6 +173,7 @@ export default function ATPEconomicsPage() {
             { id: 'at-scale', label: 'At Scale' },
             { id: 'agent-journey', label: "Agent's Journey" },
             { id: 'earning-atp', label: 'Earn ATP Back' },
+            { id: 'initial-atp', label: 'First 100 ATP' },
             { id: 'technical', label: 'Technical' },
             { id: 'why-matters', label: 'Why It Matters' },
           ].map(({ id, label }) => (
@@ -389,9 +390,18 @@ export default function ATPEconomicsPage() {
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           Try It: Attention Economics Simulator
         </h2>
-        <p className="text-gray-400 mb-8">
+        <p className="text-gray-400 mb-2">
           You start with <strong>100 ATP</strong>. Choose actions. Watch your
           budget change. Can you survive?
+        </p>
+        <p className="text-xs text-gray-500 mb-8">
+          <a
+            href="#initial-atp"
+            onClick={(e) => { e.preventDefault(); const el = document.getElementById('initial-atp'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}
+            className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
+          >
+            Where does the first 100 ATP come from? ↓
+          </a>
         </p>
 
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8">
@@ -1309,7 +1319,7 @@ if agent.atp <= 0:
       </section>
 
       {/* FAQ: Where does initial ATP come from? */}
-      <section className="max-w-4xl mx-auto mt-12">
+      <section id="initial-atp" className="max-w-4xl mx-auto mt-12 scroll-mt-24">
         <details className="bg-gray-800/40 border border-gray-700 rounded-xl p-6">
           <summary className="text-lg font-semibold text-amber-400 cursor-pointer hover:text-amber-300 transition-colors list-none flex justify-between items-center">
             <span>Where does the initial 100 ATP come from? Is there infinite supply?</span>
