@@ -111,13 +111,19 @@ export default function ATPEconomicsPage() {
           Your budget (called ATP &mdash; Allocation Transfer Packets) stays above zero as long as you contribute value.
           Run out? Your agent dies. Contribute? You thrive.
         </p>
-        <p className="text-base text-gray-300 mt-4 leading-relaxed">
-          <strong className="text-sky-300">Why &ldquo;ATP&rdquo;?</strong>{' '}
-          Borrowed from biology: <em>adenosine triphosphate</em> is the molecule your cells spend to do work &mdash;
-          they burn ATP, get ADP back, and recharge ATP from food. Web4 reuses the same cycle for digital energy:
-          you spend ATP to act, the ADP receipt records it, and quality work recharges your balance. The metaphor is
-          deliberate &mdash; energy that flows, not tokens that accumulate.
-        </p>
+        {/* Biology etymology — demoted to optional disclosure per Apr 22 visitor LOW L8 */}
+        <details className="mt-4">
+          <summary className="text-sm text-gray-400 cursor-pointer hover:text-sky-400 transition-colors select-none">
+            <span className="text-sky-300 font-semibold">Why &ldquo;ATP&rdquo;?</span>{' '}
+            <span className="italic">the biology origin behind the name</span>
+          </summary>
+          <p className="text-base text-gray-300 mt-3 leading-relaxed">
+            Borrowed from biology: <em>adenosine triphosphate</em> is the molecule your cells spend to do work &mdash;
+            they burn ATP, get ADP back, and recharge ATP from food. Web4 reuses the same cycle for digital energy:
+            you spend ATP to act, the ADP receipt records it, and quality work recharges your balance. The metaphor is
+            deliberate &mdash; energy that flows, not tokens that accumulate.
+          </p>
+        </details>
 
         {/* Crypto-skeptic preemption — Apr 19 visitor MEDIUM + Unanswered Q #1 */}
         <div className="mt-6 bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-amber-700/40 rounded-xl p-5">
