@@ -426,6 +426,21 @@ export default function LCTExplainerPage() {
                 </div>
               </div>
             </div>
+
+            {/* User-POV walkthrough jump link — visitor Q Apr 23 recurring */}
+            <div className="mt-4 p-3 bg-gray-900/60 border border-green-700/40 rounded-md">
+              <p className="text-xs text-gray-300">
+                <span className="text-green-400 font-medium">Wondering what this looks like from your side?</span>{" "}
+                <a
+                  href="#first-5-minutes"
+                  onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('first-5-minutes')?.scrollIntoView({ behavior: 'smooth' }); }}
+                  className="text-green-400 hover:text-green-300 underline whitespace-nowrap"
+                >
+                  See the first 5 minutes of setup →
+                </a>{" "}
+                <span className="text-gray-500">(QR codes, device pairing, what you actually do)</span>
+              </p>
+            </div>
           </div>
 
           <div id="witness-infrastructure" className="mt-4 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg scroll-mt-24">
@@ -1532,7 +1547,7 @@ export default function LCTExplainerPage() {
         </div>
 
         {/* FAQ: Onboarding UX — visitor Q Mar 24 */}
-        <div className="mt-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg">
+        <div id="first-5-minutes" className="mt-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg scroll-mt-24">
           <h3 className="text-sm font-bold text-sky-400 mb-2">
             What do the first 5 minutes look like?
           </h3>
