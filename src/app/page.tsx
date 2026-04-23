@@ -32,7 +32,6 @@ export default function HomePage() {
           lineHeight: 1.6
         }}>
           <strong>Web4</strong> is a proposed framework where trust is built into the internet itself, not bolted on after the fact &mdash; that&apos;s what &quot;trust-native&quot; means.
-          Despite the name, this isn&apos;t &ldquo;Web3 + 1&rdquo; &mdash; no blockchain, no tokens, no speculation. A different trust model, not a successor.
           Identity costs something, every action costs energy,
           and consequences follow you forever.
         </p>
