@@ -156,6 +156,16 @@ export default function TLDRPage() {
               <div className="text-gray-500 text-xs mt-1">5 min core + deep-dive FAQs</div>
             </Link>
             <Link
+              href="/day-in-web4"
+              className="block bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-sky-600 transition-colors"
+            >
+              <div className="text-sky-400 font-semibold mb-1">A Day in Web4</div>
+              <div className="text-gray-400 text-sm">
+                See what your day would look like &mdash; mail, reviews, hiring, marketplaces
+              </div>
+              <div className="text-gray-500 text-xs mt-1">5 min read</div>
+            </Link>
+            <Link
               href="/first-contact"
               className="block bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-sky-600 transition-colors"
             >
