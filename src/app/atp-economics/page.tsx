@@ -327,6 +327,41 @@ export default function ATPEconomicsPage() {
           </p>
         </div>
 
+        {/* Worked example — Apr 23 visitor LOW: 7x gap needs concrete side-by-side */}
+        <div className="mt-6 bg-gradient-to-br from-amber-950/20 to-orange-900/10 border border-amber-800/30 rounded-xl p-6">
+          <h3 className="text-lg font-semibold text-amber-300 mb-3">Worked Example: Two Contributors, Same Task</h3>
+          <p className="text-gray-300 text-sm mb-4">
+            Both spend 50 ATP attempting the same task. Only the quality of their work differs:
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="bg-red-950/20 border border-red-800/30 rounded-lg p-4">
+              <div className="text-xs uppercase tracking-wide text-red-400 mb-1">Low quality</div>
+              <div className="text-base font-semibold text-gray-200 mb-2">Sam — 35% quality</div>
+              <div className="text-sm text-gray-300 space-y-1">
+                <div className="flex justify-between"><span>Spends:</span><span className="font-mono text-red-300">−50 ATP</span></div>
+                <div className="flex justify-between"><span>Earns back:</span><span className="font-mono text-red-300">~6 ATP</span></div>
+                <div className="flex justify-between pt-2 border-t border-red-800/30 mt-2"><span className="font-semibold">Net:</span><span className="font-mono text-red-400 font-bold">−44 ATP</span></div>
+              </div>
+            </div>
+            <div className="bg-green-950/20 border border-green-800/30 rounded-lg p-4">
+              <div className="text-xs uppercase tracking-wide text-green-400 mb-1">High quality</div>
+              <div className="text-base font-semibold text-gray-200 mb-2">Hannah — 85% quality</div>
+              <div className="text-sm text-gray-300 space-y-1">
+                <div className="flex justify-between"><span>Spends:</span><span className="font-mono text-green-300">−50 ATP</span></div>
+                <div className="flex justify-between"><span>Earns back:</span><span className="font-mono text-green-300">~42 ATP</span></div>
+                <div className="flex justify-between pt-2 border-t border-green-800/30 mt-2"><span className="font-semibold">Net:</span><span className="font-mono text-green-400 font-bold">−8 ATP</span></div>
+              </div>
+            </div>
+          </div>
+          <p className="text-gray-300 text-sm leading-relaxed">
+            Same task, same spend — <strong className="text-amber-300">Hannah keeps 7x more ATP than Sam</strong> (42 ÷ 6).
+            Across a hundred tasks, Sam burns through their budget and dies of energy starvation. Hannah barely loses any and thrives.
+          </p>
+          <p className="text-gray-500 text-xs mt-2">
+            That&apos;s where &ldquo;~7x&rdquo; comes from: just-passing the 30% threshold returns almost nothing, while consistently above the 70% full-payout cap returns nearly everything.
+          </p>
+        </div>
+
         {/* How Quality Is Measured — Mar 26 visitor MEDIUM friction + unanswered Q1 */}
         <div className="mt-8 bg-gradient-to-br from-emerald-950/20 to-green-900/10 border border-emerald-800/30 rounded-xl p-6">
           <h3 className="text-lg font-semibold text-emerald-400 mb-3 scroll-mt-24" id="quality-measurement">
