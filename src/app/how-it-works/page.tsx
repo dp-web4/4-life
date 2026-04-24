@@ -747,6 +747,32 @@ export default function HowItWorksPage() {
                 • Died with <strong className="text-green-400">145 ATP</strong>
               </li>
             </ul>
+            <details className="mt-4 text-xs">
+              <summary className="cursor-pointer text-gray-400 hover:text-gray-300">
+                How did the Novice earn 105 ATP from 60 spent?
+              </summary>
+              <div className="mt-3 pl-3 border-l-2 border-gray-700 text-gray-400 leading-relaxed space-y-2">
+                <p>
+                  Earning isn&apos;t a flat refund. Each contribution&apos;s earn-back depends on its
+                  quality through the ATP <strong className="text-gray-300">quality ramp</strong>:
+                  below 30% quality the task pays zero, between 30&ndash;70% payouts scale linearly,
+                  and above 70% the task pays near-full. A high-quality contribution can earn
+                  back up to <strong className="text-gray-300">~7&times;</strong> what an equally-priced
+                  low-effort one earns at the same spend.
+                </p>
+                <p>
+                  So <em>&ldquo;spent 60, earned 105&rdquo;</em> is the sum across a dozen+ actions:
+                  quality contributions earned more than their cost, any low-effort attempts earned less.
+                  Aggregate net: <strong className="text-green-400">+45&nbsp;ATP</strong> surplus &mdash; which
+                  becomes the carry-forward karma bonus on rebirth.
+                </p>
+                <p>
+                  <Link href="/atp-economics#quality-ramp" className="text-sky-400 hover:underline">
+                    See the full quality-ramp payouts and a side-by-side worked example &rarr;
+                  </Link>
+                </p>
+              </div>
+            </details>
           </div>
 
           <div className="border-l-4 border-green-500 pl-4">
