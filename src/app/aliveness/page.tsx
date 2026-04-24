@@ -722,9 +722,24 @@ export default function AlivenessExplainer() {
             <h3>2. Coherent Agency</h3>
             <div className="concept-subtitle">Trust (T3) &gt; 0.5</div>
             <p>
-              You must demonstrate <strong>intentional behavior</strong>. The 0.5 threshold is the
-              minimum bar for continued participation—the point where behavior
-              shifts from random to purposeful. Below 0.5 = reactive. Above 0.5 = agent.
+              You must demonstrate <strong>intentional behavior</strong>. The 0.5 threshold is a{' '}
+              <strong>design choice</strong> inspired by phase transitions in physical systems — not
+              a derived constant — the minimum bar where behavior shifts from random to purposeful.
+              Below 0.5 = reactive. Above 0.5 = agent.{' '}
+              <a
+                href="#why-0-5"
+                onClick={(e: React.MouseEvent) => {
+                  e.preventDefault();
+                  const el = document.getElementById('why-0-5');
+                  if (el && el.tagName.toLowerCase() === 'details') {
+                    (el as HTMLDetailsElement).open = true;
+                  }
+                  el?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                style={{ color: '#38bdf8', cursor: 'pointer', whiteSpace: 'nowrap' }}
+              >
+                Why 0.5 specifically? →
+              </a>
             </p>
             <div className="detail-box">
               <strong>Trust Tensor (T3) dimensions (role-specific):</strong>
@@ -1049,7 +1064,7 @@ export default function AlivenessExplainer() {
       </section>
 
       <section>
-        <details>
+        <details id="why-0-5" className="scroll-mt-24">
           <summary className="text-xl font-bold cursor-pointer hover:text-sky-400 transition-colors list-none flex justify-between items-center">
             <h2 style={{ margin: 0 }}>Why the 0.5 Threshold?</h2>
             <span className="text-gray-500 text-xl">+</span>
