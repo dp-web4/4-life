@@ -156,7 +156,7 @@ export default function MarkovRelevancyHorizonPage() {
 
             <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6">
               <h3 className="text-xl font-semibold text-cyan-400 mb-3">
-                ✅ Web4 MRH: Context Through Relationships
+                ✅ Web4 Trust Neighborhoods: Context Through Relationships
               </h3>
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-start gap-2">
@@ -183,7 +183,7 @@ export default function MarkovRelevancyHorizonPage() {
           </h2>
 
           <p className="text-gray-300 mb-6">
-            Fair question. MRH looks like a social graph at first glance — nodes and edges, friends of friends. But the similarities are surface-level. Here&apos;s what&apos;s actually different:
+            Fair question. A trust neighborhood looks like a social graph at first glance — nodes and edges, friends of friends. But the similarities are surface-level. Here&apos;s what&apos;s actually different:
           </p>
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
@@ -199,7 +199,7 @@ export default function MarkovRelevancyHorizonPage() {
               </ul>
             </div>
             <div className="bg-gray-800/50 border border-cyan-500/20 rounded-lg p-4">
-              <div className="text-sm font-semibold text-cyan-400 mb-2">MRH (Web4)</div>
+              <div className="text-sm font-semibold text-cyan-400 mb-2">Trust Neighborhood (Web4)</div>
               <ul className="text-sm text-gray-300 space-y-1.5">
                 <li>Separate graph per role (you-as-doctor ≠ you-as-neighbor)</li>
                 <li>Edges carry trust scores across 3 dimensions</li>
@@ -213,27 +213,28 @@ export default function MarkovRelevancyHorizonPage() {
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-4 text-sm text-gray-300">
             <strong className="text-cyan-400">The shortest version</strong>: A social graph says &quot;Alice knows Bob.&quot;
-            MRH says &quot;Alice trusts Bob 0.85 as a surgeon, based on 47 witnessed interactions, and that trust decays
+            A trust neighborhood says &quot;Alice trusts Bob 0.85 as a surgeon, based on 47 witnessed interactions, and that trust decays
             to 0.62 for anyone one hop further out.&quot; It&apos;s the difference between a phone contact list and a
             relationship with history, context, and consequences.
           </div>
         </section>
 
-        {/* How MRH Works Section */}
+        {/* How Trust Neighborhoods Work Section */}
         <section className="max-w-4xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-6 text-cyan-400">
-            How MRH Works: Relationship Graphs
+            How Your Trust Neighborhood Works
           </h2>
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-8">
             <p className="text-gray-300 mb-4">
-              Your MRH is a <strong className="text-cyan-400">relationship network</strong> — a map of entities and their connections.
+              Your trust neighborhood is a <strong className="text-cyan-400">relationship network</strong> — a map of entities and their connections.
               Each entity you interact with creates a <strong className="text-cyan-400">relationship edge</strong> in the network.
               Context emerges from <strong className="text-cyan-400">who you&apos;re connected to</strong>, not from abstract metrics.
             </p>
             <p className="text-gray-300">
-              The <strong className="text-cyan-400">&quot;Markov&quot; property</strong>: Beyond depth 3 (you → connections → their connections → third degree),
-              entities become irrelevant. This maintains local focus and computational efficiency.
+              Why the formal name &quot;<strong className="text-cyan-400">Markov Relevancy Horizon</strong>&quot;? The <em>Markov</em> part just says
+              your decisions depend only on nearby entities, not the full network — beyond depth 3 (you → connections → their connections → third degree),
+              entities become irrelevant. This keeps your neighborhood locally focused and computationally efficient.
             </p>
           </div>
 
@@ -256,10 +257,10 @@ export default function MarkovRelevancyHorizonPage() {
           </div>
         </section>
 
-        {/* Interactive MRH Simulator */}
+        {/* Interactive Trust Neighborhood Explorer */}
         <section id="try-it" className="max-w-4xl mx-auto mb-16 scroll-mt-24">
           <h2 className="text-3xl font-bold mb-6 text-cyan-400">
-            Interactive MRH Explorer
+            Explore Your Trust Neighborhood
           </h2>
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-8">
@@ -334,7 +335,7 @@ export default function MarkovRelevancyHorizonPage() {
                   {selectedEntity === "charlie" && "👨‍🔧"}
                 </div>
                 <div className="text-xl font-semibold text-cyan-400">
-                  {entities[selectedEntity].name}&apos;s MRH
+                  {entities[selectedEntity].name}&apos;s Trust Neighborhood
                 </div>
                 <div className="text-sm text-gray-400 mt-1">
                   Visible entities: {visibleCount} / {3 + 3 + 3 + 3} total
@@ -438,7 +439,7 @@ export default function MarkovRelevancyHorizonPage() {
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-gray-900/50 rounded-lg p-4 text-center">
                 <div className="text-2xl font-bold text-cyan-400">{visibleCount}</div>
-                <div className="text-sm text-gray-400">Entities in MRH</div>
+                <div className="text-sm text-gray-400">Entities in Neighborhood</div>
               </div>
               <div className="bg-gray-900/50 rounded-lg p-4 text-center">
                 <div className="text-2xl font-bold text-cyan-400">{horizonDepth}</div>
@@ -491,9 +492,9 @@ export default function MarkovRelevancyHorizonPage() {
                 Privacy Preservation
               </h3>
               <p className="text-gray-300 text-sm">
-                MRH boundaries naturally create privacy zones. Entities outside your horizon
+                Neighborhood boundaries naturally create privacy zones. Entities outside your horizon
                 can&apos;t see your relationships, and you can&apos;t see theirs. No global visibility
-                needed for trust to emerge - only local relationship graphs.
+                needed for trust to emerge — only local relationship graphs.
               </p>
             </div>
 
@@ -671,12 +672,12 @@ export default function MarkovRelevancyHorizonPage() {
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-6">
             <p className="text-gray-300 mb-4">
-              Critical principle: <strong className="text-cyan-400">MRH relationships are role-specific</strong>.
-              You don&apos;t just have a relationship with Alice - you have a relationship with
+              Critical principle: <strong className="text-cyan-400">your neighborhood is role-specific</strong>.
+              You don&apos;t just have a relationship with Alice — you have a relationship with
               <em> Alice-as-surgeon</em> and a separate relationship with <em>Alice-as-researcher</em>.
             </p>
             <p className="text-gray-300">
-              This means your MRH changes based on <strong className="text-cyan-400">what you&apos;re doing</strong>.
+              This means your trust neighborhood changes based on <strong className="text-cyan-400">what you&apos;re doing</strong>.
               When seeking medical advice, you see medical relationships. When collaborating on research,
               you see research relationships.
             </p>
@@ -684,7 +685,7 @@ export default function MarkovRelevancyHorizonPage() {
 
           <div className="bg-gray-800/50 border border-cyan-700/30 rounded-lg p-6">
             <h3 className="text-lg font-semibold text-cyan-400 mb-4">
-              Example: Alice&apos;s Role-Specific MRH
+              Example: Alice&apos;s Role-Specific Neighborhoods
             </h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
@@ -715,14 +716,14 @@ export default function MarkovRelevancyHorizonPage() {
               </div>
             </div>
             <p className="text-sm text-gray-400 mt-4">
-              Same person, different contexts, completely different MRH graphs and trust scores.
+              Same person, different contexts, completely different neighborhood graphs and trust scores.
               This prevents inappropriate trust transfer across domains.
             </p>
             <div className="bg-cyan-950/20 border border-cyan-800/30 rounded-lg p-4 mt-4">
               <h4 className="text-sm font-semibold text-cyan-400 mb-2">What about privacy between roles?</h4>
               <p className="text-sm text-gray-400">
                 Role contexts are <strong className="text-cyan-300">separate by default</strong>. Someone who knows
-                Alice as a surgeon cannot discover her car-owner trust score — those are different MRH graphs
+                Alice as a surgeon cannot discover her car-owner trust score — those are different neighborhoods
                 with different relationship sets. You only see the roles where you share a context.
                 Alice can <em>choose</em> to link roles (e.g., proving she&apos;s both a surgeon and a researcher),
                 but the system never reveals cross-role trust without consent.
@@ -765,7 +766,7 @@ export default function MarkovRelevancyHorizonPage() {
                 Social Networks Without Algorithms
               </h3>
               <p className="text-gray-300 text-sm">
-                No algorithmic feed needed - your MRH defines what you see. Posts from
+                No algorithmic feed needed — your trust neighborhood defines what you see. Posts from
                 direct connections appear prominently, posts from second-degree with
                 context, third-degree only if highly relevant. Natural information flow.
               </p>
@@ -777,8 +778,8 @@ export default function MarkovRelevancyHorizonPage() {
                 Organizational Structure
               </h3>
               <p className="text-gray-300 text-sm">
-                MRH naturally models org charts, project teams, and collaboration networks.
-                Each person&apos;s MRH reflects their actual working context - no manual
+                Trust neighborhoods naturally model org charts, project teams, and collaboration networks.
+                Each person&apos;s neighborhood reflects their actual working context — no manual
                 permission management needed.
               </p>
             </div>
@@ -789,7 +790,7 @@ export default function MarkovRelevancyHorizonPage() {
                 Spam and Bot Prevention
               </h3>
               <p className="text-gray-300 text-sm">
-                Spam from entities outside your MRH is automatically low-trust and high-cost (ATP).
+                Spam from entities outside your neighborhood is automatically low-trust and high-cost (ATP).
                 Bots can&apos;t fake relationship histories. Sybil attacks require building
                 independent relationship graphs for each fake presence.
               </p>
@@ -801,7 +802,7 @@ export default function MarkovRelevancyHorizonPage() {
                 Discovery and Recommendations
               </h3>
               <p className="text-gray-300 text-sm">
-                Find entities through trust paths in your MRH. &quot;People in your network
+                Find entities through trust paths in your neighborhood. &quot;People in your network
                 who are surgeons&quot; or &quot;Mechanics trusted by people you trust&quot; —
                 structured queries on your relationship graph.
               </p>
@@ -813,8 +814,8 @@ export default function MarkovRelevancyHorizonPage() {
                 Federated Societies
               </h3>
               <p className="text-gray-300 text-sm">
-                Different societies have different MRH boundaries. Some are open (anyone can join),
-                some are closed (invitation only). MRH enables societies to maintain identity while
+                Different societies have different neighborhood boundaries. Some are open (anyone can join),
+                some are closed (invitation only). These boundaries let societies maintain identity while
                 interacting with others.
               </p>
             </div>
@@ -825,7 +826,7 @@ export default function MarkovRelevancyHorizonPage() {
                 Zero-Knowledge Context
               </h3>
               <p className="text-gray-300 text-sm">
-                Prove you&apos;re within someone&apos;s MRH without revealing the full relationship path.
+                Prove you&apos;re within someone&apos;s neighborhood without revealing the full relationship path.
                 Selective disclosure of relationship graph for privacy-preserving trust.
               </p>
             </div>
