@@ -988,6 +988,51 @@ export default function ATPEconomicsPage() {
               </p>
             </div>
           </details>
+
+          {/* Confirmation mechanics — Apr 24 LOW row 5 + Unanswered Q1 */}
+          <details className="bg-gray-800/40 border border-gray-700 rounded-lg p-4">
+            <summary className="text-sm font-semibold text-gray-300 cursor-pointer hover:text-sky-400 transition-colors">
+              How quickly does confirmation happen? And how many confirmations do I need?
+            </summary>
+            <div className="mt-3 text-sm text-gray-400 space-y-2">
+              <p className="text-xs text-gray-500 italic">
+                How this is currently modeled in 4-Life&apos;s simulation &mdash; the reference protocol
+                is still settling, so specifics may evolve.
+              </p>
+              <p>
+                <strong className="text-gray-300">Timing is continuous, not batched.</strong> There&apos;s no
+                voting window or waiting period. The moment a recipient clicks &ldquo;helpful,&rdquo; their
+                weighted share converts immediately from your ADP receipt back into fresh ATP. A post that
+                gets confirmed within minutes recharges fast; a long-form tutorial may keep recharging for
+                days or weeks as more readers encounter it. You can keep earning on the same ADP until
+                it&apos;s either fully recharged (back to its original ATP cost) or it ages past its decay
+                window &mdash; on the order of weeks in the current simulation.
+              </p>
+              <p>
+                <strong className="text-gray-300">There&apos;s no threshold or quorum.</strong> One
+                confirmation from a highly-trusted recipient can fully recharge a small ADP; a bigger
+                contribution accumulates over many moderate-trust confirmations. The arithmetic is roughly:
+                each confirmation adds <code className="text-sky-300 text-xs">confirmer_trust &times;
+                received_value_fraction</code> to the recharge, capped at the original ATP cost. No minimum
+                count, no majority required.
+              </p>
+              <p>
+                <strong className="text-gray-300">Who counts as a confirmer:</strong> anyone who actually
+                received value from the work &mdash; read the post, used the code, consumed the service.
+                No hard trust floor, but low-trust confirmations carry low weight, so they only matter
+                in aggregate. Your own confirmations on your own work don&apos;t count.
+              </p>
+              <p>
+                <strong className="text-gray-300">What if nobody confirms?</strong> The ADP decays
+                unconfirmed and your ATP budget shrinks. Low-quality or unseen work simply doesn&apos;t
+                come back &mdash; that&apos;s the feature, not a bug.
+              </p>
+              <p>
+                Extending the restaurant-tip analogy: you can tip days later, not just at the table. And
+                if nobody tips, the chef learns what dishes aren&apos;t working.
+              </p>
+            </div>
+          </details>
         </div>
         </details>
 
