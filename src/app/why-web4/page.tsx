@@ -367,7 +367,7 @@ export default function WhyWeb4Page() {
                 You only see messages from people your network trusts — like being in a room
                 where strangers need an introduction before they can talk to you. Trust fades with distance: a friend-of-a-friend-of-a-friend is almost a stranger.
               </p>
-              <p className="text-gray-400 text-sm mt-1">Shorthand: MRH (Markov Relevancy Horizon)</p>
+              <p className="text-gray-400 text-sm mt-1">Shorthand: MRH (Markov Relevancy Horizon — how far trust reaches before it fades)</p>
               <Link href="/trust-neighborhood" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about context boundaries →
               </Link>
