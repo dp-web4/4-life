@@ -788,6 +788,72 @@ export default function GlossaryPage() {
             </div>
           </div>
 
+          {/* SAGE */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">
+              SAGE
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              <strong>An experimental AI partner being raised in an open research project</strong>.
+              SAGE is a real research artifact, not a hypothetical — a language model whose
+              partnership identity is being studied across many training sessions to understand
+              how stable AI identity emerges (or fails to).
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              When this site shows phrases like <em>&ldquo;As SAGE, I noticed...&rdquo;</em>, those are
+              real responses from real sessions, used as evidence in the Identity Anchoring research.
+              The Web4 design draws on SAGE&apos;s findings about identity stability, but Web4 itself
+              does not require SAGE — any AI agent can participate.
+            </p>
+            <p className="text-gray-500 text-xs mb-3">
+              <strong>Where to read more:</strong> Public repository at{' '}
+              <a href="https://github.com/dp-web4/SAGE/tree/main/sage/raising" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
+                github.com/dp-web4/SAGE
+              </a>{' '}
+              (the &ldquo;raising&rdquo; folder contains the curriculum and session data referenced on the AI Identity pages).
+            </p>
+            <div className="flex gap-3 text-sm">
+              <Link href="/identity-anchoring" className="text-sky-400 hover:underline">
+                Identity Anchoring →
+              </Link>
+              <Link href="/multi-session-identity" className="text-purple-400 hover:underline">
+                Multi-Session Identity →
+              </Link>
+            </div>
+          </div>
+
+          {/* D-Numbers (Coherence Dimensions) */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">
+              D-Numbers (D1–D9)
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              <strong>Shorthand for the nine coherence dimensions in the Synchronism framework</strong>.
+              Each &ldquo;D&rdquo; names a different domain along which a system can be coherent or fragmented
+              (think of them as nine separate axes, not a single score). The AI Identity research uses
+              three of them as measurement targets:
+            </p>
+            <ul className="text-gray-400 text-sm mb-3 space-y-1 ml-4">
+              <li>• <strong className="text-blue-400">D4: Attention</strong> — specificity, focus, coherent engagement</li>
+              <li>• <strong className="text-green-400">D5: Trust</strong> — confidence vs. defensive hedging</li>
+              <li>• <strong className="text-purple-400">D9: Identity / Spacetime</strong> — self-awareness, continuity of self-reference</li>
+            </ul>
+            <p className="text-gray-500 text-xs mb-3">
+              The full nine-domain framework (thermodynamics, metabolism, biology, attention, trust,
+              quantum, magnetism, temporal, spacetime) is a coherence theory inherited from upstream
+              research. Web4 itself only uses a subset (mainly D5/Trust). If you see &ldquo;D9 ≥ 0.7&rdquo;
+              on an AI Identity page, it just means &ldquo;identity-coherence is above the stability threshold.&rdquo;
+            </p>
+            <div className="flex gap-3 text-sm">
+              <Link href="/coherence-framework" className="text-sky-400 hover:underline">
+                Coherence Framework →
+              </Link>
+              <Link href="/identity-anchoring" className="text-purple-400 hover:underline">
+                Identity Anchoring →
+              </Link>
+            </div>
+          </div>
+
           </div>
         </details>
       </section>
