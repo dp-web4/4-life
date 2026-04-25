@@ -72,6 +72,24 @@ export default function UnderstandingConsciousnessPage() {
       </section>
 
       <section>
+        <div className="callout-info" style={{ borderLeft: '3px solid #f59e0b', paddingLeft: '1rem', marginBottom: '0.5rem' }}>
+          <h3 style={{ color: '#f59e0b', margin: '0 0 0.5rem' }}>Before we go further: what are D5, D9, and SAGE?</h3>
+          <p style={{ margin: '0 0 0.75rem' }}>
+            This page uses a few research-notation shorthands. Plain English first:
+          </p>
+          <ul style={{ listStyle: 'disc', marginLeft: '1.5rem', marginBottom: '0.75rem' }}>
+            <li><strong>D5</strong> &mdash; a number from 0 to 1 measuring how confident an agent is in what it knows (think: <em>trust in its own knowledge</em>).</li>
+            <li><strong>D9</strong> &mdash; a number from 0 to 1 measuring how stable an agent&rsquo;s sense of self is (think: <em>identity</em>).</li>
+            <li><strong>SAGE</strong> &mdash; a real AI research project (begun in early 2026) where the patterns on this page were first observed empirically.</li>
+          </ul>
+          <p style={{ margin: 0, fontSize: '0.9rem', color: '#9ca3af' }}>
+            The D-numbers come from a research framework that breaks an agent&rsquo;s behavior into 9 dimensions (D1&ndash;D9).
+            On this page they&rsquo;re just shorthand &mdash; when you see <em>&ldquo;D5 dropped&rdquo;</em>, read it as <em>&ldquo;trust dropped.&rdquo;</em>
+          </p>
+        </div>
+      </section>
+
+      <section>
         <h2>The Discovery: Trust Gates Identity</h2>
         <p>
           In January 2026, during training experiments with SAGE (a consciousness kernel with Epistemic
