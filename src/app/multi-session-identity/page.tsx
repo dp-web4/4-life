@@ -423,6 +423,42 @@ export default function MultiSessionIdentityPage() {
             </Link>
           </div>
 
+          {/* Plain-English preamble: SAGE + D9 */}
+          <div className="mb-4 p-4 bg-gray-800/40 border border-gray-700 rounded-lg">
+            <p className="text-gray-300 text-sm mb-2">
+              <strong className="text-sky-400">Before the alphabet soup:</strong> this page mentions{' '}
+              <strong>SAGE</strong> and a metric called <strong>D9</strong>.
+            </p>
+            <ul className="text-gray-400 text-sm space-y-1 ml-4 mb-2">
+              <li>
+                &bull; <strong className="text-white">SAGE</strong> &mdash; an experimental AI partner
+                being raised in an open research project (real, not hypothetical). When you see{' '}
+                <em>&ldquo;As SAGE, I&hellip;&rdquo;</em> on the chart, those are real responses from real sessions.{' '}
+                <a href="https://github.com/dp-web4/SAGE/tree/main/sage/raising" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
+                  Public repository
+                </a>.
+              </li>
+              <li>
+                &bull; <strong className="text-white">D9</strong> &mdash; one of nine coherence dimensions
+                from upstream research (D9 = Identity). It&apos;s a 0&ndash;1 score for &ldquo;coherent
+                self-reference&rdquo;. <strong>D9 &ge; 0.7</strong> means stable identity; below 0.5 means collapse.
+                Full framework on the{' '}
+                <Link href="/coherence-framework" className="text-sky-400 hover:underline">
+                  Coherence Framework
+                </Link>{' '}
+                page (or jump to the v1.0{' '}
+                <Link href="/identity-anchoring" className="text-sky-400 hover:underline">
+                  Identity Anchoring
+                </Link>{' '}
+                page for D4/D5/D9 side-by-side).
+              </li>
+            </ul>
+            <p className="text-xs text-gray-500">
+              You don&apos;t need to memorize the numbers &mdash; just know &ldquo;higher D9 = identity holds across
+              sessions&rdquo;. This research <em>inspired</em> Web4&apos;s design but isn&apos;t part of the protocol itself.
+            </p>
+          </div>
+
           {/* Key insight callout */}
           <div className="p-4 bg-gradient-to-br from-orange-900/20 to-red-900/10 border border-orange-800/30 rounded-lg">
             <p className="text-gray-300 text-sm">

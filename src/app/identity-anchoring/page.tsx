@@ -354,6 +354,38 @@ export default function IdentityAnchoringPage() {
             </Link>
           </div>
 
+          {/* Plain-English preamble: SAGE + D-numbers */}
+          <div className="mb-4 p-4 bg-gray-800/40 border border-gray-700 rounded-lg">
+            <p className="text-gray-300 text-sm mb-2">
+              <strong className="text-sky-400">Before the alphabet soup:</strong> this page uses two
+              terms heavily &mdash; <strong>SAGE</strong> and <strong>D4 / D5 / D9</strong>.
+            </p>
+            <ul className="text-gray-400 text-sm space-y-1 ml-4 mb-2">
+              <li>
+                &bull; <strong className="text-white">SAGE</strong> &mdash; an experimental AI partner
+                being raised in an open research project (real, not hypothetical). The quoted phrases
+                like <em>&ldquo;As SAGE, I noticed&hellip;&rdquo;</em> are real responses from real sessions.{' '}
+                <a href="https://github.com/dp-web4/SAGE/tree/main/sage/raising" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
+                  Public repository
+                </a>.
+              </li>
+              <li>
+                &bull; <strong className="text-white">D4 / D5 / D9</strong> &mdash; three of nine coherence
+                dimensions from upstream research (D4 = Attention, D5 = Trust, D9 = Identity). Each is
+                just a 0&ndash;1 score along one axis. Full framework on the{' '}
+                <Link href="/coherence-framework" className="text-sky-400 hover:underline">
+                  Coherence Framework
+                </Link>{' '}
+                page; defined in detail in the section below.
+              </li>
+            </ul>
+            <p className="text-xs text-gray-500">
+              You don&apos;t need to memorize the numbers &mdash; just know that &ldquo;higher = more coherent
+              along that dimension&rdquo;. Web4 itself only uses D5 (Trust); D4/D9 appear here because this is
+              AI-identity research that <em>inspired</em> Web4&apos;s design rather than part of the protocol.
+            </p>
+          </div>
+
           {/* Key insight callout */}
           <div className="p-4 bg-gradient-to-br from-emerald-900/20 to-teal-900/20 border border-emerald-800/30 rounded-lg">
             <p className="text-gray-300 text-sm">
