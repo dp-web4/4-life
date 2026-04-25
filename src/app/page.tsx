@@ -377,13 +377,31 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             See what it feels like (3 min)
           </Link>
         </div>
-        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '1rem' }}>
-          Want to play? <Link href="/trust-dilemmas" style={{ color: 'var(--color-sky)' }}>Try the trust dilemma quiz</Link>
-          {' · '}
-          <Link href="/society-simulator" style={{ color: 'var(--color-sky)' }}>Launch a society simulation</Link>
-          {' · '}
-          <Link href="/playground" style={{ color: 'var(--color-sky)' }}>Experiment in the playground</Link>
-        </p>
+        <div style={{ marginTop: '1.25rem', textAlign: 'left' }}>
+          <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.85rem', marginBottom: '0.5rem', textAlign: 'center' }}>
+            After First Contact, pick how to explore further &mdash; each tool teaches something different:
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.5rem' }}>
+            <Link href="/karma-journey" style={{ padding: '0.6rem 0.75rem', borderRadius: '0.4rem', border: '1px solid var(--color-border)', textDecoration: 'none', display: 'block', background: 'var(--color-dark-surface)' }}>
+              <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#a78bfa', marginBottom: '0.2rem' }}>Karma Journey</div>
+              <div style={{ fontSize: '0.7rem', fontFamily: 'monospace', color: 'var(--color-text-muted)', marginBottom: '0.3rem' }}>1 agent (you) &middot; play &middot; 15 min</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', lineHeight: 1.4 }}>Make choices across multiple lives, live with the consequences</div>
+            </Link>
+            <Link href="/playground" style={{ padding: '0.6rem 0.75rem', borderRadius: '0.4rem', border: '1px solid var(--color-border)', textDecoration: 'none', display: 'block', background: 'var(--color-dark-surface)' }}>
+              <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#10b981', marginBottom: '0.2rem' }}>Playground</div>
+              <div style={{ fontSize: '0.7rem', fontFamily: 'monospace', color: 'var(--color-text-muted)', marginBottom: '0.3rem' }}>parameters &middot; experiment &middot; 15 min</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', lineHeight: 1.4 }}>Tweak weights and costs, find tipping points where societies flip</div>
+            </Link>
+            <Link href="/society-simulator" style={{ padding: '0.6rem 0.75rem', borderRadius: '0.4rem', border: '1px solid var(--color-border)', textDecoration: 'none', display: 'block', background: 'var(--color-dark-surface)' }}>
+              <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--color-sky)', marginBottom: '0.2rem' }}>Society Simulator</div>
+              <div style={{ fontSize: '0.7rem', fontFamily: 'monospace', color: 'var(--color-text-muted)', marginBottom: '0.3rem' }}>12+ agents &middot; watch &middot; 10&ndash;30 min</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', lineHeight: 1.4 }}>Watch trust networks form between many agents at once</div>
+            </Link>
+          </div>
+          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', marginTop: '0.6rem', marginBottom: 0, textAlign: 'center' }}>
+            Just want a quick instinct test? <Link href="/trust-dilemmas" style={{ color: 'var(--color-sky)' }}>Try the trust dilemma quiz (5 min)</Link>
+          </p>
+        </div>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '0.5rem' }}>
           Wondering what it would look like? <Link href="/day-in-web4#wireframes" style={{ color: 'var(--color-sky)' }}>See conceptual interface mockups →</Link>
           {' · '}
@@ -473,7 +491,10 @@ function DeepDiveTab() {
 
       {/* Interactive experiences — moved here from intro tab */}
       <div className="card" style={{ marginBottom: '2rem', background: 'var(--color-dark-surface)' }}>
-        <h3 style={{ marginBottom: '0.75rem' }}>Interactive Experiences</h3>
+        <h3 style={{ marginBottom: '0.25rem' }}>Interactive Experiences</h3>
+        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem', marginTop: 0, marginBottom: '0.75rem' }}>
+          Four ways to explore Web4. Each teaches something different — pick the one that matches what you want to learn.
+        </p>
         {(karmaProfile || (exploration && exploration.pagesVisited.length > 2)) && (
           <div style={{
             padding: '0.75rem 1rem', borderRadius: '0.5rem', marginBottom: '1rem',
@@ -532,22 +553,29 @@ function DeepDiveTab() {
           <Link href="/society-simulator" style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', display: 'block', background: 'var(--color-dark-surface)' }}>
             <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--color-sky)' }}>Society Simulator</span>
             <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '0.25rem' }}>Watch 12 agents form trust networks</span>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--color-text-muted)', opacity: 0.7, marginTop: '0.4rem', fontStyle: 'italic' }}>Many agents · Preset scenario · You watch</span>
           </Link>
           <Link href="/karma-journey" style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', display: 'block', background: 'var(--color-dark-surface)' }}>
             <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#a78bfa' }}>Karma Journey</span>
             <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '0.25rem' }}>Make choices, live with consequences</span>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--color-text-muted)', opacity: 0.7, marginTop: '0.4rem', fontStyle: 'italic' }}>One life at a time · Your choices · Multiple rebirths</span>
           </Link>
           <Link href="/playground" style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', display: 'block', background: 'var(--color-dark-surface)' }}>
             <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#10b981' }}>Playground</span>
             <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '0.25rem' }}>Tweak parameters, find tipping points</span>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--color-text-muted)', opacity: 0.7, marginTop: '0.4rem', fontStyle: 'italic' }}>One agent · You set the dials · Find the breakpoints</span>
           </Link>
           <Link href="/trust-dilemmas" style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none', display: 'block', background: 'var(--color-dark-surface)' }}>
             <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#f59e0b' }}>Trust Dilemma Quiz</span>
             <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '0.25rem' }}>Test your instincts about trust</span>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--color-text-muted)', opacity: 0.7, marginTop: '0.4rem', fontStyle: 'italic' }}>5 questions · No simulation · Get feedback</span>
           </Link>
         </div>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '0.75rem' }}>
-          Not sure which to try? <Link href="/explore-guide" style={{ color: 'var(--color-sky)' }}>Take the 30-second quiz →</Link>
+          Want a guided story instead? <Link href="/first-contact" style={{ color: 'var(--color-sky)' }}>First Contact</Link> walks you through Alice&apos;s full Web4 lifecycle (16 actions, 7 min) — the same concepts, but a single character&apos;s arc rather than a tool you operate.
+        </p>
+        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginTop: '0.5rem' }}>
+          Still not sure which to try? <Link href="/explore-guide" style={{ color: 'var(--color-sky)' }}>Take the 30-second quiz →</Link>
         </p>
       </div>
 
