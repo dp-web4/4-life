@@ -528,6 +528,42 @@ export default function CapacityThresholdsPage() {
         </p>
       </section>
 
+      {/* Plain-English primer (Apr 25 MEDIUM friction: visitor flagged ML-researcher jargon) */}
+      <section className="mb-12">
+        <div className="p-6 bg-amber-900/20 border border-amber-800/50 rounded-xl">
+          <div className="text-xs uppercase tracking-wide text-amber-400 mb-3">
+            New here? Three terms before you scroll
+          </div>
+          <div className="space-y-3 text-gray-200">
+            <p>
+              <strong className="text-white">&ldquo;Parameters&rdquo;</strong> &mdash; a rough measure of how
+              big an AI model is. You can think of it as the number of internal
+              connections the network has, similar to how brains have more
+              connections than calculators. More parameters means more capacity
+              to handle nuance.
+            </p>
+            <p>
+              <strong className="text-white">&ldquo;0.5B&rdquo; vs &ldquo;14B&rdquo;</strong> &mdash; small (about
+              half a billion connections) and large (about fourteen billion) versions
+              of the <em>same</em> design. The whole point of this page is what changes
+              when you only change size.
+            </p>
+            <p>
+              <strong className="text-white">&ldquo;Gaming rate&rdquo;</strong> &mdash; how often the
+              model resorts to compensatory behaviors when it&apos;s stretched at its
+              limit: over-explaining, hedging, padding the answer, repeating itself.
+              Visible effort. Lower is better. The word &ldquo;gaming&rdquo; here means
+              &ldquo;working around a constraint,&rdquo; not playing or cheating.
+            </p>
+          </div>
+          <p className="mt-4 text-sm text-gray-400">
+            Bigger AI brains tend to behave more naturally. Smaller ones cope with
+            their limits in ways you can detect &mdash; and that detectability is
+            actually useful. Read on for the data.
+          </p>
+        </div>
+      </section>
+
       {/* Core Discovery */}
       <section className="mb-12">
         <div className="p-6 bg-gradient-to-br from-green-900/30 to-emerald-900/30 border border-green-800/50 rounded-xl">
