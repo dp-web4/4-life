@@ -456,6 +456,26 @@ export default function TrustTensorPage() {
           with less raw talent. You wouldn&apos;t trust either of them to fix your car. T3 makes these
           distinctions explicit, measurable, and role-specific.
         </p>
+
+        {/* Plain-English definition of "tensor" — visitor friction Apr 25 */}
+        <div className="mt-6 bg-gray-900/40 border border-gray-700 rounded-lg p-5">
+          <div className="text-sm uppercase tracking-wide text-gray-400 mb-2">
+            Why &ldquo;tensor&rdquo;?
+          </div>
+          <p className="text-gray-300 leading-relaxed">
+            We use the word <strong>tensor</strong> because trust here has multiple dimensions instead
+            of just one. Think of it as a <strong>3-axis score</strong>: Talent, Training, Temperament.
+            You don&apos;t need the math &mdash; what matters is that <em>one</em> number couldn&apos;t
+            tell a brilliant-but-erratic surgeon from a kind doctor with shaky hands.{" "}
+            <em>Three</em> numbers can.
+          </p>
+          <p className="text-gray-500 text-sm mt-3 leading-relaxed">
+            (For the curious: in math, a tensor generalises vectors and matrices to any number of
+            dimensions. Here we use a small one &mdash; three numbers per role &mdash; so the
+            generality is not the point. The point is the multiple dimensions.)
+          </p>
+        </div>
+
         <p className="text-sm text-gray-500 mt-4">
           <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 cursor-pointer">
             ↓ Try the trust tensor simulator below
