@@ -174,6 +174,25 @@ export default function LCTExplainerPage() {
             A digital ID card that lives in your device&apos;s security chip — hardware-bound,
             witnessed by your other devices, and resistant to faking.
           </p>
+
+          {/* Plain-English etymology of "Linked" and "Context" — visitor friction Apr 25 */}
+          <div className="mt-6 max-w-2xl mx-auto bg-gray-900/40 border border-gray-700 rounded-lg p-5 text-left">
+            <div className="text-sm uppercase tracking-wide text-gray-400 mb-2">
+              Why &ldquo;Linked Context&rdquo;?
+            </div>
+            <p className="text-gray-300 leading-relaxed">
+              <strong>Linked</strong> &mdash; every LCT links to its creator (lineage), to the
+              devices that witness it, and to a tamper-evident creation record. That linkage is
+              what makes the token forge-resistant.
+            </p>
+            <p className="text-gray-300 leading-relaxed mt-3">
+              <strong>Context</strong> &mdash; the device, platform, and role this LCT operates in.
+              Yes, that&rsquo;s the same role-context that{" "}
+              <a href="/trust-tensor" className="text-purple-400 hover:text-purple-300 underline">T3</a>
+              {" "}weights &mdash; but the word here means runtime environment, not a chat thread.
+            </p>
+          </div>
+
           <p className="text-sm text-gray-500 mt-4">
             <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 cursor-pointer">
               ↓ Try the interactive security audit below
