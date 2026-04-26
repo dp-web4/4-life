@@ -660,6 +660,25 @@ export default function AlivenessExplainer() {
         </p>
       </section>
 
+      <aside
+        style={{
+          background: 'rgba(31, 41, 55, 0.4)',
+          border: '1px solid rgba(75, 85, 99, 0.4)',
+          borderRadius: '0.5rem',
+          padding: '1rem 1.25rem',
+          marginTop: '1.5rem',
+          marginBottom: '1.5rem',
+          color: '#9ca3af',
+          fontSize: '0.95rem',
+          lineHeight: '1.55',
+        }}
+      >
+        Heads up before you scroll: when you read &ldquo;death&rdquo; on this page, your reputation isn&apos;t erased.
+        What ends is the current life-cycle — karma, T3 trust, and ATP earned{' '}
+        <Link href="/karma-journey" style={{ color: '#818cf8' }}>carry forward</Link>{' '}
+        if your trust stayed above 0.5, and you can be reborn with that history intact.
+      </aside>
+
       <section>
         <h2>The Problem Web4 Solves</h2>
         <div className="comparison-grid">
