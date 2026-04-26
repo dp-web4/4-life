@@ -504,6 +504,38 @@ export default function CoherenceIndexPage() {
               </p>
             </div>
           </div>
+
+          {/* Privacy reassurance — Apr 25 visitor LOW: "isn't this surveillance?" */}
+          <div className="mt-8 bg-slate-900/40 border border-slate-700/40 rounded-lg p-5">
+            <h3 className="text-base font-semibold text-slate-200 mb-2">
+              Wait — isn&apos;t this surveillance?
+            </h3>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Reasonable question. The four dimensions sound like a tracker
+              following you around, but the checks are designed to run{" "}
+              <em>locally</em>: your own device verifies its own continuity
+              chain, the peers you&apos;ve already interacted with confirm the
+              relationships and capabilities they already know about, and
+              evaluations stay within your{" "}
+              <a
+                href="/markov-relevancy-horizon"
+                className="text-sky-400 hover:text-sky-300 underline"
+              >
+                Trust Neighborhood (MRH)
+              </a>
+              . There is no central server compiling a global behavior profile
+              — CI catches deviations from what your <em>own peers</em> already
+              see, not what a panopticon has logged. (Whether the eventual
+              implementation lives up to that design is{" "}
+              <a
+                href="/what-could-go-wrong"
+                className="text-sky-400 hover:text-sky-300 underline"
+              >
+                an honest open question
+              </a>
+              .)
+            </p>
+          </div>
         </section>
 
         {/* Case Studies — now that readers know the four dimensions, show them in action */}
