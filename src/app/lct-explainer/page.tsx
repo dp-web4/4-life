@@ -174,6 +174,25 @@ export default function LCTExplainerPage() {
             A digital ID card that lives in your device&apos;s security chip — hardware-bound,
             witnessed by your other devices, and resistant to faking.
           </p>
+
+          {/* Plain-English etymology of "Linked" and "Context" — visitor friction Apr 25 */}
+          <div className="mt-6 max-w-2xl mx-auto bg-gray-900/40 border border-gray-700 rounded-lg p-5 text-left">
+            <div className="text-sm uppercase tracking-wide text-gray-400 mb-2">
+              Why &ldquo;Linked Context&rdquo;?
+            </div>
+            <p className="text-gray-300 leading-relaxed">
+              <strong>Linked</strong> &mdash; every LCT links to its creator (lineage), to the
+              devices that witness it, and to a tamper-evident creation record. That linkage is
+              what makes the token forge-resistant.
+            </p>
+            <p className="text-gray-300 leading-relaxed mt-3">
+              <strong>Context</strong> &mdash; the device, platform, and role this LCT operates in.
+              Yes, that&rsquo;s the same role-context that{" "}
+              <a href="/trust-tensor" className="text-purple-400 hover:text-purple-300 underline">T3</a>
+              {" "}weights &mdash; but the word here means runtime environment, not a chat thread.
+            </p>
+          </div>
+
           <p className="text-sm text-gray-500 mt-4">
             <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 cursor-pointer">
               ↓ Try the interactive security audit below
@@ -560,6 +579,20 @@ export default function LCTExplainerPage() {
               <li><span className="font-bold">Who witnesses you</span>: Which devices/platforms attest to your existence</li>
               <li><span className="font-bold">How you behave</span>: Your reputation history (trust earned, not claimed)</li>
             </ul>
+          </div>
+
+          {/* Etymology — Apr 25 visitor: "what does the Context part mean?" */}
+          <div className="mb-6 p-4 border border-gray-700 rounded-lg bg-gray-900/30">
+            <p className="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-2">What does each word mean?</p>
+            <p className="text-sm text-gray-300 leading-relaxed mb-2">
+              <span className="font-bold text-purple-300">Linked</span> — witnessed by your other devices and trust peers.{" "}
+              <span className="font-bold text-purple-300">Context</span> — pinned to a specific role or scope.{" "}
+              <span className="font-bold text-purple-300">Token</span> — a compact, verifiable credential.
+            </p>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              The <span className="font-semibold">Context</span> word is what makes role-contextual trust possible: one person can hold separate LCTs as <em>doctor</em>, <em>parent</em>, or <em>moderator</em>, each carrying its own trust history. A surgeon trusted as a surgeon ≠ trusted as a cook.{" "}
+              <Link href="/trust-tensor" className="text-sky-400 hover:underline">See how T3 weights roles &rarr;</Link>
+            </p>
           </div>
 
           {/* LCT Format Example — collapsed for newcomers */}
