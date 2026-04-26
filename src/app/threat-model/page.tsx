@@ -183,6 +183,7 @@ export default function ThreatModelPage() {
             <h4 className="text-sm font-semibold text-purple-300 mb-3">Why multi-witness prevents cascades: trust epidemic dynamics</h4>
             <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-400">
               <div>
+                <p className="text-xs text-gray-500 italic mb-3">R₀ measures how fast a bad behavior spreads through the network — under 1, it dies out; over 1, it grows.</p>
                 <p className="mb-2"><strong className="text-gray-200">Simple contagion</strong> (one contact spreads trust change): R₀ &gt; 1 if a bad actor has any neighbors. A single compromised account can infect any connected account. This is how social media manipulation works.</p>
                 <p><strong className="text-gray-200">Complex contagion</strong> (requires ≥30% of neighbors to confirm): R₀ stays below 1 even with multiple bad actors — a trust manipulation needs to come from multiple independent sources simultaneously before it takes effect.</p>
               </div>
@@ -844,8 +845,8 @@ export default function ThreatModelPage() {
               <li>• Cooperation is Nash-dominant at current parameters (200 ATP stakes + 3 witnesses)</li>
               <li>• ATP market conserves under stress (200 agents, 500 rounds, 5% transfer fee maintains stability)</li>
               <li>• Sybil ROI is negative: honest identity outearns 5 fakes (transfer fee bleeds circular flows)</li>
-              <li>• Temporal logic properties formally verified: trust earned stays until explicitly revoked or naturally decayed — no arbitrary removal (LTL model checking, session 33)</li>
-              <li>• Every attestation request eventually receives a response (progress guarantee: G(requested → F(responded)))</li>
+              <li>• Temporal logic properties formally verified: trust earned stays until explicitly revoked or naturally decayed — no arbitrary removal (LTL model checking is a formal way to write rules like &ldquo;this is always true&rdquo; or &ldquo;this eventually happens&rdquo;, session 33)</li>
+              <li>• Every attestation request eventually receives a response (progress guarantee: <code className="text-xs">G(requested → F(responded))</code> — reads &ldquo;always, if requested, then eventually responded&rdquo;; G = always, F = eventually)</li>
             </ul>
           </div>
 

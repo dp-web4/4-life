@@ -1556,13 +1556,20 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             individual property — it&apos;s what coherent systems exhibit at every scale.
           </p>
           <p>
-            Web4 names these emergent groups <strong>synthons</strong>, borrowing from chemistry.
-            Chemical synthons are stable sub-structures that combine into larger molecules —
-            the metaphor is load-bearing, not decorative. Web4 synthons have
-            <strong> formation conditions</strong>, <strong>bond strengths</strong> (the mutual
-            trust between members), and <strong>decay signatures</strong> that are observable
-            from outside the group. The same three aliveness criteria, applied to a cluster
-            instead of a single node, tell you when a synthon is alive.
+            Think of a band, a sports team, or a working group whose members depend on each other
+            so consistently that the group itself feels like an entity — with a reputation,
+            an energy, and an identity of its own. That is what Web4 calls a <strong>synthon</strong>.
+            The same three aliveness criteria, applied to the cluster instead of a single node,
+            tell you when one is alive.
+          </p>
+          <p>
+            The term is borrowed from chemistry, where synthons are stable sub-structures that
+            combine into larger molecules. The metaphor is load-bearing, not decorative:
+            Web4 synthons have <strong>formation conditions</strong>, <strong>bond strengths</strong>
+            (the mutual trust between members), and <strong>decay signatures</strong> that are
+            observable from outside the group — the same way a band&apos;s breakup, a team&apos;s
+            slump, or a working group&apos;s drift can be read from outside before the members
+            admit it.
           </p>
           <p>
             A synthon has a lifecycle just like an individual:
