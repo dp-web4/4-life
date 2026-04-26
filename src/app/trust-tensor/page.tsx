@@ -481,6 +481,13 @@ export default function TrustTensorPage() {
             ↓ Try the trust tensor simulator below
           </a>
         </p>
+        {/* Apr 26 visitor LOW: V3 mentioned but not explained on this page — preserves Apr 17 "let T3 land first" pacing by linking forward instead of explaining inline */}
+        <p className="text-sm text-gray-500 mt-2">
+          Wondering about <strong className="text-purple-300">V3</strong>?{" "}
+          <a href="#v3" onClick={(e) => { e.preventDefault(); document.getElementById('v3')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-300 hover:text-purple-200 cursor-pointer">
+            It&apos;s the sibling tensor — explained just below ↓
+          </a>
+        </p>
       </section>
 
       {/* The Problem */}
