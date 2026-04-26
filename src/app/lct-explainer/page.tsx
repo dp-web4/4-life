@@ -562,6 +562,20 @@ export default function LCTExplainerPage() {
             </ul>
           </div>
 
+          {/* Etymology — Apr 25 visitor: "what does the Context part mean?" */}
+          <div className="mb-6 p-4 border border-gray-700 rounded-lg bg-gray-900/30">
+            <p className="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-2">What does each word mean?</p>
+            <p className="text-sm text-gray-300 leading-relaxed mb-2">
+              <span className="font-bold text-purple-300">Linked</span> — witnessed by your other devices and trust peers.{" "}
+              <span className="font-bold text-purple-300">Context</span> — pinned to a specific role or scope.{" "}
+              <span className="font-bold text-purple-300">Token</span> — a compact, verifiable credential.
+            </p>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              The <span className="font-semibold">Context</span> word is what makes role-contextual trust possible: one person can hold separate LCTs as <em>doctor</em>, <em>parent</em>, or <em>moderator</em>, each carrying its own trust history. A surgeon trusted as a surgeon ≠ trusted as a cook.{" "}
+              <Link href="/trust-tensor" className="text-sky-400 hover:underline">See how T3 weights roles &rarr;</Link>
+            </p>
+          </div>
+
           {/* LCT Format Example — collapsed for newcomers */}
           <details className="mb-6">
             <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300 flex items-center gap-2">
