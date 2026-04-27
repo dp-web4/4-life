@@ -797,6 +797,13 @@ export default function LCTExplainerPage() {
             Your device&apos;s security hardware determines how high your trust can go. Stronger hardware means
             a stronger identity witness &mdash; like the difference between a handwritten note and a notarized document.
           </p>
+          <p className="text-gray-400 text-sm mb-4">
+            <span className="text-gray-300 font-semibold">Why the numbers rank that way:</span> a TPM or Secure
+            Enclave is a separate, tamper-resistant chip that generates private keys <em>inside itself</em> and
+            never lets them out &mdash; you&apos;d need physical attack on the chip to forge that witness.
+            Software-only keys live on disk where any malware that runs on your device can copy them. The
+            ceiling reflects how hard the witness is to fake, not how convenient the device is to use.
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
             <div className="bg-emerald-950/30 border border-emerald-800/30 rounded-lg p-4 text-center">
               <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Strongest</div>
