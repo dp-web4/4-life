@@ -94,14 +94,14 @@ export default function MarkovRelevancyHorizonPage() {
           <div className="text-sm uppercase tracking-wide text-cyan-400 mb-4">
             Web4 Foundation: Context
           </div>
-          <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
             Your Trust Neighborhood
           </h1>
-          <p className="text-base text-gray-500 mb-6">
-            Formally: Markov Relevancy Horizon (MRH)
+          <p className="text-xl text-gray-300 leading-relaxed mb-3">
+            Who can reach you, and who you can reach — Web4 creates context boundaries through relationships, so you see what&apos;s relevant and nothing more.
           </p>
-          <p className="text-xl text-gray-300 leading-relaxed mb-6">
-            How Web4 creates context boundaries through relationships — you see what&apos;s relevant, nothing more.
+          <p className="text-sm text-gray-500 italic mb-6">
+            The formal name is &quot;Markov Relevancy Horizon&quot; (MRH) — a math-flavored term we keep for spec-level work; you don&apos;t need it to use the idea.
           </p>
           <p className="text-sm text-gray-500">
             <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-cyan-400 hover:text-cyan-300 cursor-pointer">
