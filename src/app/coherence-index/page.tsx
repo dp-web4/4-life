@@ -1446,11 +1446,53 @@ lenient_society = {
                 <p>
                   <strong className="text-gray-200">Relational</strong> = relationship history. Do you interact
                   with your established network, or did you suddenly start transacting with 50 strangers?
+                  Your &ldquo;established network&rdquo; here means the entities <em>your own device</em> has
+                  recently interacted with — not a global social graph. There&apos;s no central registry of who
+                  knows whom; see the privacy question below.
                 </p>
                 <p>
                   The formula is the <strong>geometric mean</strong> (fourth root of the product) of all four
                   dimensions. This means one bad dimension drags down the whole score — you can&apos;t
                   compensate for suspicious spatial behavior by being temporally consistent.
+                </p>
+              </div>
+            </details>
+
+            <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
+              <summary className="text-lg font-semibold text-orange-400 list-none flex justify-between items-center">
+                <span>How does the system know who&apos;s in my &ldquo;established network&rdquo;? Is the relationship graph public?</span>
+                <span className="text-gray-500 text-xl">+</span>
+              </summary>
+              <div className="mt-4 text-gray-300 text-sm space-y-2">
+                <p>
+                  <strong className="text-gray-200">No, the relationship graph is not public</strong>, and there
+                  is no global registry of who interacts with whom. Web4 is designed around{" "}
+                  <Link href="/trust-neighborhood" className="text-orange-300 hover:text-orange-200 underline">
+                    local trust neighborhoods
+                  </Link>
+                  : your own device keeps track of <em>your</em> recent interactions, and it asks neighbors only
+                  about people relevant to a specific decision — not about your full social graph.
+                </p>
+                <p>
+                  <strong className="text-gray-200">Where the data lives.</strong> The relational signal is
+                  computed from interaction history that already exists on your device (signed receipts of past
+                  exchanges, attestations from people you&apos;ve transacted with). Nothing about your
+                  relationships needs to be uploaded for relational CI to work — your phone has enough context
+                  to flag &ldquo;you&apos;ve never talked to any of these 50 strangers before.&rdquo;
+                </p>
+                <p>
+                  <strong className="text-gray-200">What others see.</strong> Counterparties see the receipts
+                  you&apos;ve chosen to share with them (e.g., a vouching attestation when you ask one).
+                  They don&apos;t see your wider contact list. Beyond your trust neighborhood (about 3 hops),
+                  there is structurally <em>no view at all</em> — the same locality that bounds the trust math
+                  is what bounds visibility.
+                </p>
+                <p>
+                  <strong className="text-gray-200">Honest hedge.</strong> 4-Life is a research prototype.
+                  Storage formats and selective-disclosure mechanics are still being specified — the design
+                  intent above is the load-bearing claim, and it&apos;s reflected in current reference
+                  implementations. The privacy property follows from the architecture (local graphs, no
+                  global view), not from a promise we have to keep.
                 </p>
               </div>
             </details>
