@@ -395,6 +395,48 @@ export default function ATPEconomicsPage() {
             <a href="/trust-tensor#v3-output-scorer" className="text-sky-400 hover:text-sky-300 underline">V3 score</a> —
             the output-quality half of your reputation. (Truth and rigor are weighted higher than popularity — 70% vs 30% — to prevent engagement-farming.)
           </p>
+
+          {/* Signals → score worked example — Apr 27 visitor MEDIUM #1 */}
+          <div className="mt-3 mb-3 bg-gray-900/40 border border-emerald-800/20 rounded-lg p-4">
+            <p className="text-xs font-semibold text-emerald-300 mb-2 uppercase tracking-wide">
+              What the three signals look like in practice
+            </p>
+            <p className="text-xs text-gray-400 mb-3">
+              Reusing Sam and Hannah from the worked example above. These are illustrative shapes, not a formula —
+              the actual aggregation depends on community size and confirmer trust distribution.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-3">
+              <div className="bg-green-950/20 border border-green-800/30 rounded p-3">
+                <div className="text-xs uppercase tracking-wide text-green-400 mb-1">Hannah&apos;s post</div>
+                <div className="text-sm font-semibold text-gray-200 mb-2">~85% quality</div>
+                <ul className="text-xs text-gray-300 space-y-1 list-none">
+                  <li><span className="text-gray-500">Speed:</span> 12 confirmations in the first 30 minutes</li>
+                  <li><span className="text-gray-500">Diversity:</span> readers from 8 different communities</li>
+                  <li><span className="text-gray-500">Confirmer trust:</span> avg 0.78 (mostly established members)</li>
+                </ul>
+                <p className="text-xs text-gray-400 mt-2 italic">
+                  Quick uptake, broad reach, weighted by trusted readers — all three signals point up.
+                </p>
+              </div>
+              <div className="bg-red-950/20 border border-red-800/30 rounded p-3">
+                <div className="text-xs uppercase tracking-wide text-red-400 mb-1">Sam&apos;s post</div>
+                <div className="text-sm font-semibold text-gray-200 mb-2">~35% quality</div>
+                <ul className="text-xs text-gray-300 space-y-1 list-none">
+                  <li><span className="text-gray-500">Speed:</span> 2 confirmations after 18 hours</li>
+                  <li><span className="text-gray-500">Diversity:</span> both from the same community</li>
+                  <li><span className="text-gray-500">Confirmer trust:</span> avg 0.42 (mostly new accounts)</li>
+                </ul>
+                <p className="text-xs text-gray-400 mt-2 italic">
+                  Slow, narrow, lightly weighted — the same three signals come in low.
+                </p>
+              </div>
+            </div>
+            <p className="text-xs text-gray-500 mt-3">
+              Same length post, same topic, same time of day — only the <em>reader response</em> differs.
+              That&apos;s what the system measures, and that&apos;s why Hannah&apos;s ATP recharges and Sam&apos;s drains.
+            </p>
+          </div>
+
           <p className="text-gray-500 text-xs">
             Think Reddit upvotes, but where each vote is weighted by the voter&apos;s own trust score — and
             you can&apos;t see who voted, only the aggregate result. No mob dynamics (trust-weighting
