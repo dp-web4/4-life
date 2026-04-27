@@ -878,7 +878,11 @@ export default function HowItWorksPage() {
 
           {/* Feedback loops */}
           <div className="bg-gray-800/50 border border-gray-700/50 rounded-lg p-4 mb-6">
-            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Feedback Loops</h4>
+            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Feedback Loops</h4>
+            <p className="text-xs text-gray-500 mb-3">
+              Read each line as &ldquo;<strong className="text-gray-400">A → B</strong> = A shapes B.&rdquo;
+              The five systems aren&apos;t independent — each one moves the others.
+            </p>
             <div className="grid md:grid-cols-2 gap-2 text-xs text-gray-400">
               <div className="flex items-start gap-2">
                 <span className="text-sky-400 shrink-0">→</span>
