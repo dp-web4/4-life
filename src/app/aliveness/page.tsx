@@ -843,7 +843,7 @@ export default function AlivenessExplainer() {
           These three criteria describe individual aliveness — but the same tests
           scale up. Groups can be alive too, with their own energy flows, coherent
           agency, and verifiable continuity. See{' '}
-          <a href="#groups-alive" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('groups-alive')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ color: '#c084fc', cursor: 'pointer' }}>Groups Can Be Alive Too</a>
+          <a href="#synthons" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('synthons')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ color: '#c084fc', cursor: 'pointer' }}>Groups Can Be Alive Too (synthons)</a>
           {' '}below.
         </p>
       </section>
@@ -1534,12 +1534,21 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
         </div>
       </section>
 
-      <section id="groups-alive" className="scroll-mt-24">
+      <section id="synthons" className="scroll-mt-24">
+        <p style={{ marginBottom: '1.25rem', fontSize: '1rem', color: '#d1d5db' }}>
+          <strong className="text-purple-400">What&apos;s a synthon?</strong>{' '}
+          When a group of people (or agents) trust each other so consistently that the group itself
+          starts behaving like an entity — with its own reputation, energy, and identity — Web4
+          calls that group a <strong>synthon</strong>. Think of a band, a sports team, or a
+          working group whose collaboration is dense enough that the &ldquo;band&rdquo; or
+          &ldquo;team&rdquo; itself becomes a thing you can trust, not just the individual
+          members. The same three aliveness criteria below apply at the group scale.
+        </p>
         <details>
           <summary style={{ fontSize: '1.5rem', fontWeight: 'bold', cursor: 'pointer', listStyle: 'none', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <span style={{ color: '#6b7280', fontSize: '1rem' }}>▶</span>
-            Groups Can Be Alive Too
-            <span style={{ fontSize: '0.875rem', fontWeight: 'normal', color: '#6b7280' }}>(emergent collectives)</span>
+            Groups Can Be Alive Too — synthons
+            <span style={{ fontSize: '0.875rem', fontWeight: 'normal', color: '#6b7280' }}>(formation, decay, dissolution)</span>
           </summary>
         <div className="detail-box" style={{marginTop: '1.5rem'}}>
           <p style={{color: '#c084fc', fontWeight: 600}}>
