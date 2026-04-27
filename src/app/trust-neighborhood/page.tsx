@@ -468,6 +468,15 @@ export default function MarkovRelevancyHorizonPage() {
               as the <strong className="text-cyan-400">Markov Relevancy Horizon</strong> —
               your decisions depend only on entities within your horizon, not the entire network.
             </p>
+            <p className="text-gray-300 mb-4">
+              <strong className="text-cyan-400">Is the horizon enforced or just calculated?</strong>{" "}
+              Both, and that&apos;s the point. The horizon is a structural property of how trust is
+              <em> computed</em> — entities outside it aren&apos;t inputs to your trust math, so they
+              can&apos;t influence your decisions even if they wanted to. That same structure is what
+              keeps your relationship graph <em>private</em> from them: there&apos;s no &quot;global
+              view&quot; for anyone to query. Enforcement isn&apos;t a separate access-control layer
+              bolted on top — it falls out of the math.
+            </p>
             <p className="text-gray-300">
               <strong className="text-cyan-400">Key principle</strong>: Beyond 3 hops, relationships
               become irrelevant to your trust decisions. This mirrors how social networks
