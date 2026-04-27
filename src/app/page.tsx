@@ -117,6 +117,52 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Acronyms preview — Apr 26 visitor LOW: "Maybe a '5 acronyms you'll meet' preview on the landing page" */}
+      <section style={{
+        maxWidth: '36rem',
+        margin: '0 auto',
+        padding: '0.85rem 1rem',
+        borderRadius: '0.5rem',
+        border: '1px solid var(--color-border)',
+        background: 'var(--color-bg-secondary)',
+      }}>
+        <p style={{
+          margin: 0,
+          marginBottom: '0.55rem',
+          fontSize: '0.7rem',
+          color: 'var(--color-text-muted)',
+          letterSpacing: '0.04em',
+          textTransform: 'uppercase',
+          textAlign: 'center',
+        }}>
+          5 acronyms you&apos;ll meet
+        </p>
+        <ul style={{
+          listStyle: 'none',
+          padding: 0,
+          margin: 0,
+          display: 'grid',
+          gap: '0.3rem',
+          fontSize: '0.8rem',
+          color: 'var(--color-text-secondary)',
+          lineHeight: 1.5,
+        }}>
+          <li><strong style={{ color: 'var(--color-text)' }}>Identity</strong> <span style={{ color: 'var(--color-text-muted)' }}>(LCT)</span> — your hardware-bound digital ID</li>
+          <li><strong style={{ color: 'var(--color-text)' }}>Energy</strong> <span style={{ color: 'var(--color-text-muted)' }}>(ATP)</span> — budget you spend to act</li>
+          <li><strong style={{ color: 'var(--color-text)' }}>Trust</strong> <span style={{ color: 'var(--color-text-muted)' }}>(T3)</span> — your three-dimensional trust score</li>
+          <li><strong style={{ color: 'var(--color-text)' }}>Neighborhood</strong> <span style={{ color: 'var(--color-text-muted)' }}>(MRH)</span> — who can reach you (3 hops max)</li>
+          <li><strong style={{ color: 'var(--color-text)' }}>Consistency</strong> <span style={{ color: 'var(--color-text-muted)' }}>(CI)</span> — does your behavior add up?</li>
+        </ul>
+        <p style={{
+          margin: '0.55rem 0 0',
+          fontSize: '0.7rem',
+          color: 'var(--color-text-muted)',
+          textAlign: 'center',
+        }}>
+          All terms also in the glossary (<strong>Aa</strong>, bottom-left).
+        </p>
+      </section>
+
       {/* Tab Content */}
       {activeTab === 'intro' ? (
         <IntroTab onSwitchToDeepDive={() => { setActiveTab('deepdive'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} />
