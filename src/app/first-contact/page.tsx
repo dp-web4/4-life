@@ -299,6 +299,16 @@ export default function FirstContactPage() {
               </p>
             </div>
 
+            {/* Pre-flight stat panel key — Apr 28 visitor MEDIUM: orient on what the panel numbers mean before Alice's story starts */}
+            <div className="bg-gray-900/60 border border-gray-700/60 rounded-xl p-5">
+              <div className="text-xs uppercase tracking-wide text-gray-400 font-semibold mb-2">Before you start — reading Alice&apos;s panel</div>
+              <p className="text-sm text-gray-400 mb-3">Two numbers will move while she acts. Here&apos;s what they mean:</p>
+              <ul className="text-sm text-gray-300 space-y-2">
+                <li><span className="text-sky-300 font-semibold">🔋 Energy Budget (ATP)</span> — the resource Alice spends to act. Starts at <span className="text-gray-200">100</span>; goes down when she posts, up when others confirm her work was valuable. If it hits 0, she can&apos;t act.</li>
+                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> — her reputation, on a <span className="text-gray-200">0.00&ndash;1.00</span> scale. Starts neutral at <span className="text-gray-200">0.50</span>. Above 0.50: full access. Below 0.50: features get restricted until she rebuilds it.</li>
+              </ul>
+            </div>
+
             <button
               onClick={() => setCurrentStep("simulation")}
               className="w-full bg-gradient-to-r from-sky-500 to-purple-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-sky-600 hover:to-purple-700 transition-all text-lg"
