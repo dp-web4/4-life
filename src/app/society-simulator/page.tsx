@@ -3368,6 +3368,29 @@ export default function SocietySimulatorPage() {
           </div>
         </details>
 
+        {/* Acronym key — quick lookup right above the simulator */}
+        <details className="mb-4 bg-gray-800/30 rounded-lg border border-gray-700/50 group">
+          <summary className="cursor-pointer p-4 text-sm font-bold text-gray-300 hover:text-white transition-colors list-none flex items-center justify-between">
+            <span>Acronyms: what do ATP, T3, LCT, CI mean?</span>
+            <span className="text-gray-500 text-xs group-open:hidden">▸ Show key</span>
+            <span className="text-gray-500 text-xs hidden group-open:inline">▾ Hide</span>
+          </summary>
+          <div className="px-4 pb-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-300">
+            <div>
+              <span className="font-mono font-bold text-sky-400">ATP</span> — <span className="text-gray-400">Allocation Transfer Packets.</span> Each agent&apos;s energy budget. Spent on actions, recharged through cooperation. <a href="/atp-economics" className="text-sky-400 hover:underline">Learn more →</a>
+            </div>
+            <div>
+              <span className="font-mono font-bold text-sky-400">T3</span> — <span className="text-gray-400">Trust Tensor.</span> Three-dimensional reputation: Talent, Training, Temperament. <a href="/trust-tensor" className="text-sky-400 hover:underline">Learn more →</a>
+            </div>
+            <div>
+              <span className="font-mono font-bold text-sky-400">LCT</span> — <span className="text-gray-400">Linked Context Token.</span> Each agent&apos;s identity (here, each colored node is one LCT). <a href="/lct-explainer" className="text-sky-400 hover:underline">Learn more →</a>
+            </div>
+            <div>
+              <span className="font-mono font-bold text-sky-400">CI</span> — <span className="text-gray-400">Coherence Index.</span> Behavioral consistency across spatial, capability, temporal, and relational dimensions. <a href="/coherence-index" className="text-sky-400 hover:underline">Learn more →</a>
+            </div>
+          </div>
+        </details>
+
         {/* Controls */}
         <div className="mb-6 bg-gray-800/50 rounded-lg p-4 border border-gray-700/50">
           <div className="flex flex-wrap items-center gap-3 mb-4">
