@@ -98,18 +98,30 @@ export default function ATPEconomicsPage() {
         <div className="text-sm uppercase tracking-wide text-sky-400 mb-4">
           Web4 Economics
         </div>
-        <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
+        <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
           Attention Economics
         </h1>
+        {/* Apr 28 HIGH friction: anchor the canonical expansion BEFORE the running "attention" metaphor.
+            Two consecutive visitors (Mar 27, Apr 28) confabulated "Attention Transfer Packets" from the
+            H1 + body metaphor; this badge + clarifier locks down the real expansion up front. */}
+        <div className="mb-3 inline-flex items-baseline gap-2 px-3 py-1.5 rounded-md bg-sky-950/40 border border-sky-800/40">
+          <span className="text-sky-300 font-mono font-semibold text-sm">ATP</span>
+          <span className="text-gray-500 text-xs">=</span>
+          <span className="text-gray-100 font-semibold text-sm">Allocation Transfer Packets</span>
+        </div>
+        <p className="text-sm text-gray-400 mb-6 italic">
+          That&apos;s the canonical name. The title above &mdash; and the words
+          &ldquo;attention,&rdquo; &ldquo;energy,&rdquo; and &ldquo;budget&rdquo; you&apos;ll see throughout this page &mdash;
+          are <em>metaphors</em> for what ATP <em>does</em>, not alternate expansions of the acronym.
+        </p>
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Web4 solves spam, abuse, and low-quality content not with moderation
-          armies, but with{" "}
-          <strong className="text-sky-400">an attention budget</strong>.
+          armies, but by giving every agent a finite{' '}
+          <strong className="text-sky-400">ATP budget</strong>.
         </p>
         <p className="text-lg text-gray-400 leading-relaxed">
-          Every action costs attention. Every contribution earns attention.
-          Your budget (called ATP &mdash; Allocation Transfer Packets) stays above zero as long as you contribute value.
-          Run out? Your agent dies. Contribute? You thrive.
+          Every action costs ATP. Every contribution others find valuable earns it back.
+          Stay above zero by contributing &mdash; run out and your agent dies.
         </p>
         {/* Biology etymology — demoted to optional disclosure per Apr 22 visitor LOW L8 */}
         <details className="mt-4">
@@ -166,9 +178,8 @@ export default function ATPEconomicsPage() {
           </p>
         </div>
 
-        <p className="text-sm text-gray-500 mt-4 italic">
-          You&apos;ll see ATP described as an &ldquo;energy budget&rdquo; or &ldquo;attention budget&rdquo; throughout the site &mdash; same concept, different metaphors.
-        </p>
+        {/* Old "energy/attention budget metaphors" italic line removed Apr 28 —
+            the metaphor/expansion split is now made explicit in the hero clarifier above. */}
         <p className="text-sm text-gray-500 mt-4">
           <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 cursor-pointer">
             ↓ Try the ATP simulator below
@@ -402,6 +413,14 @@ export default function ATPEconomicsPage() {
             These three signals combine into your{' '}
             <a href="/trust-tensor#v3-output-scorer" className="text-sky-400 hover:text-sky-300 underline">V3 score</a> —
             the output-quality half of your reputation. (Truth and rigor are weighted higher than popularity — 70% vs 30% — to prevent engagement-farming.)
+          </p>
+          {/* Apr 28 MEDIUM friction: visitor asked "is it instant? polled? voted?" — close the loop on timing. */}
+          <p className="text-gray-400 text-sm leading-relaxed mb-2">
+            <strong className="text-gray-200">When does recharge actually happen?</strong>{' '}
+            Not on a single click. Confirmations accrue against your ADP receipt over a rolling window
+            (think hours, not seconds), and ATP recharges <em>continuously</em> as the signals firm up &mdash;
+            no quorum threshold, no central tally. Earlier, broader, more-trusted confirmation recharges faster;
+            thin or delayed confirmation drags the same receipt out longer.
           </p>
 
           {/* Signals → score worked example — Apr 27 visitor MEDIUM #1 */}
