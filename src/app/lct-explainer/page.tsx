@@ -741,6 +741,9 @@ export default function LCTExplainerPage() {
                   {attackDifficulty.toFixed(1)}x
                 </div>
                 <div className="text-sm text-gray-400 mt-1">harder to attack</div>
+                <p className="text-xs text-gray-500 mt-2 max-w-xs mx-auto leading-relaxed">
+                  Each independent hardware chip multiplies the attacker&apos;s cost — compromising one doesn&apos;t compromise the others, so the work to break in stacks rather than substitutes.
+                </p>
               </div>
               <div className="text-sm text-gray-300">
                 <span className="font-bold">Attacker must compromise:</span>
