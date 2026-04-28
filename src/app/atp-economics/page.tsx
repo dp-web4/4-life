@@ -137,7 +137,15 @@ export default function ATPEconomicsPage() {
             </li>
             <li>
               <strong className="text-gray-100">You can transfer small amounts to others</strong> &mdash;
-              but <strong className="text-amber-300">5% burns on every transfer</strong>. The friction is intentional:
+              but <strong className="text-amber-300">5% burns on every transfer</strong>{' '}
+              (the burned 5 goes to a community redistribution pool, not to any central authority &mdash;{' '}
+              <a
+                href="#atp-burn-fee"
+                onClick={(e) => { e.preventDefault(); const el = document.getElementById('atp-burn-fee'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const parent = el.closest('details'); if (parent) parent.open = true; } }}
+                className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
+              >
+                full mechanics ↓
+              </a>). The friction is intentional:
               it makes circular farming (colluding accounts passing ATP back and forth to fake activity) unprofitable.
               This is not a currency.
             </li>
@@ -1300,7 +1308,7 @@ export default function ATPEconomicsPage() {
               </div>
             </div>
 
-            <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-4 mb-6">
+            <div id="atp-burn-fee" className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-4 mb-6 scroll-mt-24">
               <h4 className="font-semibold text-sky-400 mb-2">Why does every ATP transfer destroy 5%?</h4>
               <div className="bg-gray-900/60 border border-gray-700/40 rounded px-3 py-2 mb-3 text-sm text-gray-300 font-mono">
                 Worked example: you send <span className="text-sky-300">100 ATP</span> to Bob.{' '}
