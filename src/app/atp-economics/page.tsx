@@ -137,7 +137,15 @@ export default function ATPEconomicsPage() {
             </li>
             <li>
               <strong className="text-gray-100">You can transfer small amounts to others</strong> &mdash;
-              but <strong className="text-amber-300">5% burns on every transfer</strong>. The friction is intentional:
+              but <strong className="text-amber-300">5% burns on every transfer</strong>{' '}
+              (the burned 5 goes to a community redistribution pool, not to any central authority &mdash;{' '}
+              <a
+                href="#atp-burn-fee"
+                onClick={(e) => { e.preventDefault(); const el = document.getElementById('atp-burn-fee'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const parent = el.closest('details'); if (parent) parent.open = true; } }}
+                className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
+              >
+                full mechanics ↓
+              </a>). The friction is intentional:
               it makes circular farming (colluding accounts passing ATP back and forth to fake activity) unprofitable.
               This is not a currency.
             </li>
@@ -772,7 +780,8 @@ export default function ATPEconomicsPage() {
             <div className="text-2xl mb-2">🔥</div>
             <h3 className="text-lg font-semibold text-amber-400 mb-2">Transfer Fees Burn ATP</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Every ATP transfer destroys 5%. This prevents circular farming — you can&apos;t
+              Every ATP transfer redirects 5% to a community redistribution pool (not destroyed,
+              not pocketed by any authority). This prevents circular farming — you can&apos;t
               just pass ATP between friends to inflate balances. The &ldquo;tax&rdquo; makes
               genuine value creation the only profitable strategy.
             </p>
@@ -1300,7 +1309,7 @@ export default function ATPEconomicsPage() {
               </div>
             </div>
 
-            <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-4 mb-6">
+            <div id="atp-burn-fee" className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-4 mb-6 scroll-mt-24">
               <h4 className="font-semibold text-sky-400 mb-2">Why does every ATP transfer destroy 5%?</h4>
               <div className="bg-gray-900/60 border border-gray-700/40 rounded px-3 py-2 mb-3 text-sm text-gray-300 font-mono">
                 Worked example: you send <span className="text-sky-300">100 ATP</span> to Bob.{' '}
@@ -1462,7 +1471,8 @@ if agent.atp <= 0:
             <p>Key properties that prevent inflation:</p>
             <ul className="list-disc list-inside space-y-1.5 ml-4 text-gray-400">
               <li><strong>Conservation:</strong> ATP is never created during normal operation. Every transfer
-                moves existing ATP, minus the 5% burn fee. The total supply slowly <em>decreases</em> over time.</li>
+                moves existing ATP &mdash; 95% to the recipient, 5% to a <em>community redistribution pool</em> that
+                pays out to quality contributors. Nothing is destroyed; total supply is conserved.</li>
               <li><strong>Bootstrap allocation:</strong> New members receive a starter amount (typically 100 ATP)
                 from the society&apos;s reserve. This is enough to participate but not enough to dominate &mdash;
                 you must earn more through quality contributions.</li>
@@ -1497,7 +1507,8 @@ if agent.atp <= 0:
                 If others confirm the work was valuable, you get it back <em>plus</em> a reward.
                 If the work is low-quality, you lose the escrowed amount &mdash; it returns to the society pool.</li>
               <li><strong className="text-gray-300">Transfers (sending ATP to someone):</strong> 95% goes to the recipient,
-                5% is burned (permanently removed from circulation). This prevents circular farming.</li>
+                5% goes to the community redistribution pool (paid back out to quality contributors &mdash; not destroyed,
+                not held by any authority). This prevents circular farming.</li>
               <li><strong className="text-gray-300">Spam or rejected actions:</strong> The ATP is forfeited to the society pool,
                 making spam progressively more expensive.</li>
             </ul>
