@@ -3269,13 +3269,26 @@ export default function SocietySimulatorPage() {
             Actions cost ATP. Cooperation builds trust. Defection may win short-term but gets isolated.
             Watch how trust-based economics create stable cooperation <em>without moderators</em>.
           </p>
-          <p className="text-xs text-gray-300 mb-2">
-            <strong className="text-emerald-300">Look for these as the sim runs:</strong>{' '}
-            <LCT>LCT</LCT> (each colored node is a distinct identity),{' '}
-            <ATP>ATP</ATP> (energy bars drain on actions, recharge from cooperation),{' '}
-            <T3>T3</T3> (reputation updates after each trust decision),{' '}
-            <CI>CI</CI> (coherence tracks behavioral consistency).
-          </p>
+          <p className="text-xs text-emerald-300 font-semibold mb-2">Quick legend &mdash; what to watch for:</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 mb-2 text-xs">
+            <div className="flex items-baseline gap-2">
+              <span className="text-gray-200 font-medium w-20 shrink-0">Identity</span>
+              <span className="text-gray-400">each colored node is a distinct <LCT>LCT</LCT></span>
+            </div>
+            <div className="flex items-baseline gap-2">
+              <span className="text-gray-200 font-medium w-20 shrink-0">Energy</span>
+              <span className="text-gray-400"><ATP>ATP</ATP> drains on actions, recharges from cooperation</span>
+            </div>
+            <div className="flex items-baseline gap-2">
+              <span className="text-gray-200 font-medium w-20 shrink-0">Reputation</span>
+              <span className="text-gray-400"><T3>T3</T3> updates after each trust decision</span>
+            </div>
+            <div className="flex items-baseline gap-2">
+              <span className="text-gray-200 font-medium w-20 shrink-0">Coherence</span>
+              <span className="text-gray-400"><CI>CI</CI> tracks behavioral consistency</span>
+            </div>
+          </div>
+          <p className="text-[11px] text-gray-500 italic mb-2">Hover any acronym for the full definition.</p>
           <p className="text-xs text-gray-500">
             New to Web4? Start with <a href="/first-contact" className="text-emerald-400 hover:underline">First Contact</a> — a 12-minute guided introduction.
           </p>
@@ -3364,6 +3377,29 @@ export default function SocietySimulatorPage() {
                   <p className="text-[10px] text-gray-600 mt-1">{p.rounds}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </details>
+
+        {/* Acronym key — quick lookup right above the simulator */}
+        <details className="mb-4 bg-gray-800/30 rounded-lg border border-gray-700/50 group">
+          <summary className="cursor-pointer p-4 text-sm font-bold text-gray-300 hover:text-white transition-colors list-none flex items-center justify-between">
+            <span>Acronyms: what do ATP, T3, LCT, CI mean?</span>
+            <span className="text-gray-500 text-xs group-open:hidden">▸ Show key</span>
+            <span className="text-gray-500 text-xs hidden group-open:inline">▾ Hide</span>
+          </summary>
+          <div className="px-4 pb-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-300">
+            <div>
+              <span className="font-mono font-bold text-sky-400">ATP</span> — <span className="text-gray-400">Allocation Transfer Packets.</span> Each agent&apos;s energy budget. Spent on actions, recharged through cooperation. <a href="/atp-economics" className="text-sky-400 hover:underline">Learn more →</a>
+            </div>
+            <div>
+              <span className="font-mono font-bold text-sky-400">T3</span> — <span className="text-gray-400">Trust Tensor.</span> Three-dimensional reputation: Talent, Training, Temperament. <a href="/trust-tensor" className="text-sky-400 hover:underline">Learn more →</a>
+            </div>
+            <div>
+              <span className="font-mono font-bold text-sky-400">LCT</span> — <span className="text-gray-400">Linked Context Token.</span> Each agent&apos;s identity (here, each colored node is one LCT). <a href="/lct-explainer" className="text-sky-400 hover:underline">Learn more →</a>
+            </div>
+            <div>
+              <span className="font-mono font-bold text-sky-400">CI</span> — <span className="text-gray-400">Coherence Index.</span> Behavioral consistency across spatial, capability, temporal, and relational dimensions. <a href="/coherence-index" className="text-sky-400 hover:underline">Learn more →</a>
             </div>
           </div>
         </details>
