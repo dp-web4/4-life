@@ -741,9 +741,11 @@ export default function AlivenessExplainer() {
             <h3>2. Coherent Agency</h3>
             <div className="concept-subtitle">Trust (T3) &gt; 0.5</div>
             <p>
-              You must demonstrate <strong>intentional behavior</strong>. The 0.5 threshold is a{' '}
-              <strong>design choice</strong> inspired by phase transitions in physical systems — not
-              a derived constant — the minimum bar where behavior shifts from random to purposeful.
+              You must demonstrate <strong>intentional behavior</strong>. The 0.5 cutoff is{' '}
+              <strong>calibrated, not derived</strong>: it&apos;s the midpoint of the trust scale,
+              chosen because it&apos;s where simulation runs cleanly separate purposeful agents from
+              reactive noise. Phase transitions in physical systems echo the same pattern, but no
+              theorem fixes the number — societies can configure their own threshold.
               Below 0.5 = reactive. Above 0.5 = agent.{' '}
               <a
                 href="#why-0-5"
@@ -1090,9 +1092,10 @@ export default function AlivenessExplainer() {
           </summary>
           <div style={{ marginTop: "1rem" }}>
         <p>
-          The 0.5 threshold is a <strong>design choice</strong>: the minimum bar for continued
-          participation. The core intuition: there&apos;s a tipping point where behavior
-          shifts from disorganized to purposeful.
+          The 0.5 threshold is <strong>calibrated, not derived</strong>. We didn&apos;t prove
+          that 0.5 is correct — we picked the midpoint of the trust scale, ran the simulations,
+          and watched it work. Below it, agents wander; above it, they steer. Three lines of
+          reasoning support that calibration:
         </p>
         <div className="detail-box">
           <p><strong>The design rationale:</strong></p>
