@@ -1537,12 +1537,12 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
       <section id="synthons" className="scroll-mt-24">
         <p style={{ marginBottom: '1.25rem', fontSize: '1rem', color: '#d1d5db' }}>
           <strong className="text-purple-400">What&apos;s a synthon?</strong>{' '}
-          When a group of people (or agents) trust each other so consistently that the group itself
-          starts behaving like an entity — with its own reputation, energy, and identity — Web4
-          calls that group a <strong>synthon</strong>. Think of a band, a sports team, or a
-          working group whose collaboration is dense enough that the &ldquo;band&rdquo; or
-          &ldquo;team&rdquo; itself becomes a thing you can trust, not just the individual
-          members. The same three aliveness criteria below apply at the group scale.
+          Picture a five-person research lab where most pairs of members trust each other above
+          0.5 and sustain that over many interaction cycles — at that point, the lab itself behaves
+          like an entity, with a reputation, an energy budget, and an identity that&apos;s distinct
+          from any single researcher. Web4 calls that group entity a <strong>synthon</strong>.
+          There&apos;s no hard threshold; synthons emerge gradually as trust between members
+          becomes dense and mutual. The same three aliveness criteria below apply at the group scale.
         </p>
         <details>
           <summary style={{ fontSize: '1.5rem', fontWeight: 'bold', cursor: 'pointer', listStyle: 'none', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
