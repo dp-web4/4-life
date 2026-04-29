@@ -227,6 +227,12 @@ export default function CoherenceIndexPage() {
             </div>
           </div>
 
+          {/* Apr 28 LOW: anchor "grounding event" upfront — term recurs throughout the page; visitor asked for one definition near the top */}
+          <div className="bg-gray-900/40 border border-gray-700 rounded-lg p-4 mb-6 text-sm text-gray-300">
+            <span className="text-xs uppercase tracking-wide text-gray-500 mr-2">Quick term</span>
+            <strong className="text-gray-200">Grounding event</strong> — when your device cryptographically confirms it&rsquo;s still itself (typically every few minutes). This page refers to groundings repeatedly: each one is the moment CI gets recomputed.
+          </div>
+
           <div className="bg-gradient-to-br from-orange-950/30 to-orange-900/20 border border-orange-800/30 rounded-lg p-6">
             <div className="flex items-start gap-4">
               <div className="text-4xl">🎯</div>
