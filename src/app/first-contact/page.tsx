@@ -209,9 +209,9 @@ export default function FirstContactPage() {
               <h2 className="text-2xl font-bold mb-4">What You'll Learn</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <Link href="/atp-economics" className="text-sky-400 font-semibold mb-2 block hover:underline">🔋 Attention Economics (ATP)</Link>
+                  <Link href="/atp-economics" className="text-sky-400 font-semibold mb-2 block hover:underline">🔋 ATP — Allocation Transfer Packets</Link>
                   <p className="text-gray-400">
-                    Every action costs attention energy. Recipients who benefit confirm quality &mdash; that&apos;s what earns energy back. Spam burns out.
+                    Web4&rsquo;s energy budget. Every action costs ATP (think &ldquo;attention energy&rdquo;). Recipients who benefit confirm quality &mdash; that&apos;s what earns energy back. Spam burns out.
                   </p>
                 </div>
                 <div>
