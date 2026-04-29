@@ -504,13 +504,18 @@ export default function ATPEconomicsPage() {
           You start with <strong>100 ATP</strong>. Choose actions. Watch your
           budget change. Can you survive?
         </p>
-        <p className="text-xs text-gray-500 mb-8">
+        {/* Apr 29 visitor HIGH: the link-only "where from?" pointer read like a deferral to a separate doc.
+            Provide the 1-sentence answer inline, keep the jump link for the deeper FAQ. */}
+        <p className="text-xs text-gray-500 mb-8 leading-relaxed">
+          The 100 ATP is a <strong className="text-gray-300">starter grant</strong> from the society&apos;s pool
+          when you join &mdash; not printed from thin air. Each society mints a fixed pool when it forms; new members
+          receive enough to participate, but must earn more through quality contributions.{' '}
           <a
             href="#initial-atp"
             onClick={(e) => { e.preventDefault(); const el = document.getElementById('initial-atp'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}
             className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
           >
-            Where does the first 100 ATP come from? ↓
+            Full mechanics ↓
           </a>
         </p>
 

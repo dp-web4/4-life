@@ -170,8 +170,14 @@ export default function LCTExplainerPage() {
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">
             Linked Context Tokens (LCT)
           </h1>
+          {/* Apr 29 visitor HIGH: opened with three undefined terms (security chip / hardware-bound / witnessed)
+              before any everyday metaphor. Lead with a tangible analogy first, then the precise definition. */}
+          <p className="text-lg text-gray-200 max-w-2xl mx-auto mb-3">
+            Imagine your phone becoming your driver&rsquo;s license &mdash; but one that can&rsquo;t be
+            photocopied, faked from a stolen photo, or impersonated from a remote computer.
+          </p>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            A digital ID card that lives in your device&apos;s security chip — hardware-bound,
+            More precisely: a digital ID card that lives in your device&apos;s security chip &mdash; hardware-bound,
             witnessed by your other devices, and resistant to faking.
           </p>
 
