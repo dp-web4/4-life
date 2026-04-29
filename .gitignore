@@ -44,3 +44,6 @@ storage_state.json
 .notebooklm/
 .gitnexus
 .claude/skills/gitnexus/
+
+# Hardbound runtime audit bundles — stay local to each machine, do not commit
+.hardbound/bundles/
