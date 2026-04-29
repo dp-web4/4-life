@@ -677,6 +677,9 @@ export default function AlivenessExplainer() {
         What ends is the current life-cycle — karma, T3 trust, and ATP earned{' '}
         <Link href="/karma-journey" style={{ color: '#818cf8' }}>carry forward</Link>{' '}
         if your trust stayed above 0.5, and you can be reborn with that history intact.
+        {' '}Also: most of this page describes how <em>individual</em> agents stay alive — but Web4 entities aren&apos;t always individuals. Sometimes they&apos;re groups acting as one (a research lab, a co-op). Web4 calls those{' '}
+        <a href="#synthons" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('synthons')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ color: '#c084fc', cursor: 'pointer' }}>synthons</a>;
+        {' '}you&apos;ll meet them later on this page.
       </aside>
 
       <section>
