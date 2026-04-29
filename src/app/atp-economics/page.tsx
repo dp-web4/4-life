@@ -1129,6 +1129,27 @@ export default function ATPEconomicsPage() {
               meaningful edge over newcomers. By ~50 actions, a talented newcomer routinely surpasses
               a mediocre founder. The system rewards ongoing quality, not first-mover privilege.
             </p>
+            <details className="mt-2">
+              <summary className="text-sky-400 cursor-pointer hover:text-sky-300 text-sm">
+                ▶ But where does the <em>society&apos;s</em> ATP pool come from? (deeper)
+              </summary>
+              <div className="mt-3 space-y-2 text-gray-400">
+                <p>
+                  The society&apos;s pool isn&apos;t created from nothing, and it isn&apos;t granted
+                  by an outside authority. <strong className="text-sky-400">It&apos;s reified from
+                  measurement of resources that already exist.</strong> When a society bootstraps,
+                  founders assess what&apos;s present &mdash; compute capacity, network presence,
+                  storage, peer relationships, hours of attention &mdash; and that measurement,
+                  signed and witnessed, is the basis of the initial ATP allocation.
+                </p>
+                <p>
+                  This is consistent with the rest of Web4: <em>presence is reified, not granted.
+                  Trust accumulates from observation, not declaration. ATP is the same primitive
+                  applied to resources.</em> First ATP comes from witnessed assessment of
+                  what&apos;s already there.
+                </p>
+              </div>
+            </details>
           </div>
         </details>
 

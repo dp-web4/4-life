@@ -1187,6 +1187,41 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
+          {/* Apr 20 + Apr 29 visitor friction: vendor-gatekeeping concern.
+              Acknowledged on /what-could-go-wrong but not answered here. The constellation
+              framing dissolves the question — once identity stops being singular, no single
+              vendor IS the gate. Adding it as a sibling concern to "what if my device dies." */}
+          <div className="mb-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg">
+            <p className="text-sm text-purple-300 font-semibold mb-1">
+              What if a hardware vendor (Apple, Google, the TPM maker) revokes or gates access?
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              The short answer: <strong>they can&apos;t gate the constellation</strong>. Your LCT
+              isn&apos;t a single token sitting on one vendor&apos;s hardware — it&apos;s a graph
+              of mutually-witnessing factors. A host-level key, a hardware-bound key, a session
+              token, a software identity, peer attestations from other people&apos;s devices, and
+              eventually a ledger anchor. <em>Each uses its own native mechanism.</em>
+            </p>
+            <p className="text-sm text-gray-300">
+              Vendor X disables their hardware key? The other factors keep working. Your identity
+              continuity persists through them. The compromised factor is recorded as a divergence
+              event, relying parties degrade trust on it accordingly, and you keep operating.
+              <strong className="text-purple-300"> The bigger and more diverse your constellation,
+              the harder it is to enclose.</strong> Any single vendor at any single layer can&apos;t
+              hold you. That&apos;s the design objective — not finding a &quot;better&quot; root
+              vendor, but making the constellation hard to gate. See the{" "}
+              <a
+                href="https://github.com/dp-web4/web4/blob/main/docs/specs/heterogeneous-identity.md"
+                className="text-purple-400 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                heterogeneous-identity design note
+              </a>{" "}
+              for the full structural argument.
+            </p>
+          </div>
+
           <details className="bg-gray-900/50 border border-gray-700/50 rounded-lg overflow-hidden">
             <summary className="cursor-pointer p-4 text-sm font-semibold text-gray-300 hover:text-purple-400 transition-colors">
               LCT Lifecycle: Birth → Active → Suspended → Revoked
