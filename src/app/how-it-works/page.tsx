@@ -27,10 +27,10 @@ export default function HowItWorksPage() {
       {/* Orientation prompt — two-sided (newcomers / returning visitors) */}
       <div className="max-w-4xl mx-auto mb-4 space-y-2 text-sm text-gray-500">
         <div>
-          <strong className="text-gray-300">New to Web4?</strong> This page works best <em>after</em> the concept pages. For a guided introduction, start with{' '}
-          <Link href="/first-contact" className="text-sky-400 hover:underline">First Contact</Link> or the{' '}
-          <Link href="/tldr" className="text-sky-400 hover:underline">2-minute TL;DR</Link>, then explore the{' '}
-          <Link href="/lct-explainer" className="text-sky-400 hover:underline">concept sequence</Link> before returning here for the full picture.
+          <strong className="text-gray-300">New to Web4?</strong> This is the full-picture overview — pieces fit together below. If you&apos;d rather see one concept at a time first,{' '}
+          <Link href="/first-contact" className="text-sky-400 hover:underline">First Contact</Link> walks an agent through her lifecycle, the{' '}
+          <Link href="/tldr" className="text-sky-400 hover:underline">2-minute TL;DR</Link> gives the high-level view, and the{' '}
+          <Link href="/lct-explainer" className="text-sky-400 hover:underline">concept sequence</Link> covers each piece individually.
         </div>
         <div>
           <strong className="text-gray-300">Already know Web4?</strong> Skip ahead to the{' '}
