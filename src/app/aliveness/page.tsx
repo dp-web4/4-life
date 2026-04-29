@@ -714,6 +714,14 @@ export default function AlivenessExplainer() {
           An entity is <strong>alive</strong> when <strong>all three criteria</strong> are
           simultaneously satisfied. Miss any one, and aliveness fails.
         </p>
+        <p>
+          Carrying the professional-license analogy forward: each criterion below maps to
+          one piece of what keeps a doctor practicing. <strong>ATP</strong> is your office
+          overhead — pay it or close shop. <strong>T3</strong> is the patient and peer trust
+          you&apos;ve earned — without it, no clients. <strong>CI</strong> is your clean practice
+          record — gaps or contradictions raise board flags. All three are required;
+          losing any one shuts you down.
+        </p>
 
         <div className="concept-grid">
           <div className="concept-card">

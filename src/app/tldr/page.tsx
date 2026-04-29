@@ -26,7 +26,7 @@ export default function TLDRPage() {
           Web4 in 2 Minutes
         </h1>
         <p className="text-lg text-gray-400 leading-relaxed mb-10">
-          No jargon. No prerequisites. Just the idea.
+          Plain English first &mdash; the acronyms (ATP, LCT, T3) are defined inline as they appear. No prerequisites.
         </p>
 
         {/* The Problem */}
@@ -141,61 +141,72 @@ export default function TLDRPage() {
           </p>
         </div>
 
-        {/* What next */}
+        {/* What next — single primary CTA + collapsible secondary options.
+            Apr 29 visitor HIGH: 5 forking next-step options diluted the linear path.
+            Surface ONE recommended next step (First Contact) and demote the rest. */}
         <div className="mb-10">
-          <h2 className="text-xl font-bold mb-4 text-gray-100">Want to go deeper?</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link
-              href="/why-web4"
-              className="block bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-sky-600 transition-colors"
-            >
-              <div className="text-sky-400 font-semibold mb-1">Why Web4?</div>
-              <div className="text-gray-400 text-sm">
-                The full problem statement and honest questions
-              </div>
-              <div className="text-gray-500 text-xs mt-1">5 min core + deep-dive FAQs</div>
-            </Link>
-            <Link
-              href="/day-in-web4"
-              className="block bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-sky-600 transition-colors"
-            >
-              <div className="text-sky-400 font-semibold mb-1">A Day in Web4</div>
-              <div className="text-gray-400 text-sm">
-                See what your day would look like &mdash; mail, reviews, hiring, marketplaces
-              </div>
-              <div className="text-gray-500 text-xs mt-1">5 min read</div>
-            </Link>
-            <Link
-              href="/first-contact"
-              className="block bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-sky-600 transition-colors"
-            >
-              <div className="text-sky-400 font-semibold mb-1">First Contact</div>
-              <div className="text-gray-400 text-sm">
-                Follow Alice through her first 16 actions in a Web4 community
-              </div>
-              <div className="text-gray-500 text-xs mt-1">7 min interactive</div>
-            </Link>
-            <Link
-              href="/karma-journey"
-              className="block bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-sky-600 transition-colors"
-            >
-              <div className="text-sky-400 font-semibold mb-1">Karma Journey</div>
-              <div className="text-gray-400 text-sm">
-                Make choices that shape your trust across multiple lives
-              </div>
-              <div className="text-gray-500 text-xs mt-1">15 min interactive</div>
-            </Link>
-            <Link
-              href="/society-simulator"
-              className="block bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-sky-600 transition-colors"
-            >
-              <div className="text-sky-400 font-semibold mb-1">Society Simulator</div>
-              <div className="text-gray-400 text-sm">
-                Watch 12 agents form alliances, betray, and self-organize
-              </div>
-              <div className="text-gray-500 text-xs mt-1">15 min interactive</div>
-            </Link>
-          </div>
+          <h2 className="text-xl font-bold mb-4 text-gray-100">Recommended next step</h2>
+          <Link
+            href="/first-contact"
+            className="block bg-gradient-to-br from-sky-950/40 to-purple-950/30 border-2 border-sky-700/60 rounded-lg p-5 hover:border-sky-500 transition-colors"
+          >
+            <div className="flex items-start justify-between gap-3 mb-1">
+              <div className="text-sky-300 font-semibold text-lg">First Contact &rarr;</div>
+              <div className="text-gray-500 text-xs whitespace-nowrap mt-1">7 min interactive</div>
+            </div>
+            <div className="text-gray-300 text-sm leading-relaxed">
+              Follow Alice through her first 16 actions in a Web4 community &mdash; build, stumble, recover, and discover what &ldquo;death&rdquo; means here.
+              The fastest way to feel how Web4 actually works.
+            </div>
+          </Link>
+
+          <details className="mt-4">
+            <summary className="text-sm text-gray-400 cursor-pointer hover:text-sky-400 select-none">
+              Or browse other entry points &mdash; problem framing, day-in-the-life, longer interactives
+            </summary>
+            <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <Link
+                href="/why-web4"
+                className="block bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-sky-600 transition-colors"
+              >
+                <div className="text-sky-400 font-semibold mb-1">Why Web4?</div>
+                <div className="text-gray-400 text-sm">
+                  The full problem statement and honest questions
+                </div>
+                <div className="text-gray-500 text-xs mt-1">5 min core + deep-dive FAQs</div>
+              </Link>
+              <Link
+                href="/day-in-web4"
+                className="block bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-sky-600 transition-colors"
+              >
+                <div className="text-sky-400 font-semibold mb-1">A Day in Web4</div>
+                <div className="text-gray-400 text-sm">
+                  See what your day would look like &mdash; mail, reviews, hiring, marketplaces
+                </div>
+                <div className="text-gray-500 text-xs mt-1">5 min read</div>
+              </Link>
+              <Link
+                href="/karma-journey"
+                className="block bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-sky-600 transition-colors"
+              >
+                <div className="text-sky-400 font-semibold mb-1">Karma Journey</div>
+                <div className="text-gray-400 text-sm">
+                  Make choices that shape your trust across multiple lives
+                </div>
+                <div className="text-gray-500 text-xs mt-1">15 min interactive</div>
+              </Link>
+              <Link
+                href="/society-simulator"
+                className="block bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-sky-600 transition-colors"
+              >
+                <div className="text-sky-400 font-semibold mb-1">Society Simulator</div>
+                <div className="text-gray-400 text-sm">
+                  Watch 12 agents form alliances, betray, and self-organize
+                </div>
+                <div className="text-gray-500 text-xs mt-1">15 min interactive</div>
+              </Link>
+            </div>
+          </details>
           <div className="mt-4 pt-4 border-t border-gray-700/50">
             <Link
               href="/learn"
