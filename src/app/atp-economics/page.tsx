@@ -422,6 +422,13 @@ export default function ATPEconomicsPage() {
             no quorum threshold, no central tally. Earlier, broader, more-trusted confirmation recharges faster;
             thin or delayed confirmation drags the same receipt out longer.
           </p>
+          {/* Apr 29 LOW: visitor wanted concrete numeric anchor for "rolling window, hours not seconds". */}
+          <p className="text-gray-500 text-xs leading-relaxed mb-2 italic">
+            Worked example: a 20-ATP contribution that draws confirmations from trusted readers within
+            the first hour might be ~50% recharged by then, ~80% within six hours, and fully recharged within
+            a day. A thinly confirmed receipt drags the same recharge out across days &mdash; or simply
+            ages out unconfirmed if no one ever attests to its value.
+          </p>
 
           {/* Signals → score worked example — Apr 27 visitor MEDIUM #1 */}
           <div className="mt-3 mb-3 bg-gray-900/40 border border-emerald-800/20 rounded-lg p-4">
