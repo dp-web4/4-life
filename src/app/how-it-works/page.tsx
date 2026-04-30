@@ -773,6 +773,38 @@ export default function HowItWorksPage() {
                 </p>
               </div>
             </details>
+            <details className="mt-3 text-xs">
+              <summary className="cursor-pointer text-gray-400 hover:text-gray-300">
+                How did the Novice&apos;s T3 climb from 0.5 to 0.65?
+              </summary>
+              <div className="mt-3 pl-3 border-l-2 border-gray-700 text-gray-400 leading-relaxed space-y-2">
+                <p>
+                  Trust climbs slowly, one action at a time. Each completed contribution applies a small
+                  per-dimension delta from the canonical update rule:{" "}
+                  <code className="text-gray-300">base_delta = 0.02 &times; (quality &minus; 0.5)</code>,
+                  scaled per dimension (talent &times;1.0, training &times;0.8, temperament &times;0.6).
+                </p>
+                <p>
+                  Worked step: a single contribution rated <strong className="text-gray-300">0.85 quality</strong>{" "}
+                  gives <code className="text-gray-300">base = 0.02 &times; 0.35 = +0.007</code> &mdash;
+                  so talent climbs <strong className="text-gray-300">+0.007</strong>, training{" "}
+                  <strong className="text-gray-300">+0.0056</strong>, temperament{" "}
+                  <strong className="text-gray-300">+0.0042</strong>. Tiny by design.
+                </p>
+                <p>
+                  Across the Novice&apos;s dozen+ actions, those tiny deltas accumulate. Quality work nudges
+                  trust up; low-quality work (where <code className="text-gray-300">quality &lt; 0.5</code>)
+                  nudges it down. The visible <strong className="text-green-400">+0.15</strong> climb to 0.65
+                  is the net of many such moves, rolled up via the canonical composite weights
+                  (talent 0.4 / training 0.3 / temperament 0.3).
+                </p>
+                <p>
+                  <Link href="/trust-tensor#how-t3-evolves" className="text-sky-400 hover:underline">
+                    See the full update table, dimension scaling, and decay half-lives &rarr;
+                  </Link>
+                </p>
+              </div>
+            </details>
           </div>
 
           <div className="border-l-4 border-green-500 pl-4">

@@ -1112,7 +1112,7 @@ export default function TrustTensorPage() {
               </pre>
             </div>
 
-            <div>
+            <div id="how-t3-evolves" className="scroll-mt-24">
               <h3 className="text-xl font-semibold text-sky-400 mb-3">
                 How T3 Evolves
               </h3>
