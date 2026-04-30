@@ -580,6 +580,25 @@ export default function TrustTensorPage() {
             Web4 never lets trust &ldquo;leak&rdquo; across unrelated domains.
           </p>
         </div>
+
+        {/* Apr 30 visitor MEDIUM: "What does 0.7 actually mean?" — surface the calibration ladder
+            at the moment of first decimal exposure, link to the deeper FAQ at #calibration-meaning. */}
+        <div className="mt-4 bg-gray-900/40 border border-gray-700/50 rounded-lg px-5 py-4 text-sm">
+          <p className="text-gray-400 leading-relaxed">
+            <strong className="text-gray-300">What does &ldquo;0.85&rdquo; mean?</strong>{" "}
+            Trust scores are calibrated probabilities <em>in this role context</em>, not arbitrary ratings:{" "}
+            <strong className="text-gray-300">0.5</strong> = newcomer baseline,{" "}
+            <strong className="text-gray-300">0.7</strong> = ~70% cooperative behavior in this role,{" "}
+            <strong className="text-gray-300">0.9</strong> = consistently exceptional.{" "}
+            <a
+              href="#calibration-meaning"
+              onClick={(e) => { e.preventDefault(); const el = document.getElementById('calibration-meaning'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}
+              className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
+            >
+              Deeper: how calibration is measured ↓
+            </a>
+          </p>
+        </div>
       </section>
 
       {/* Interactive Simulator */}
@@ -1167,6 +1186,62 @@ Temperament:  30-day half-life (recent behavior matters most)
                   </p>
                 </div>
               </details>
+
+              {/* Calibration band — Apr 30 visitor MEDIUM #4: "what does 0.7 actually mean?" */}
+              <div id="what-does-a-score-mean" className="mt-6 bg-gray-900/60 border border-sky-700/40 rounded-lg p-5 scroll-mt-24">
+                <h4 className="text-base font-semibold text-sky-300 mb-3">
+                  What do these scores actually mean?
+                </h4>
+                <p className="text-sm text-gray-400 mb-3">
+                  Plain English first: a 0.7 score in a role means roughly{" "}
+                  <strong className="text-gray-200">7 out of 10 interactions in that role land well</strong> —
+                  according to the people you&apos;ve worked with so far. It&apos;s not a popularity score, and
+                  it&apos;s not graded against strangers; it&apos;s a track-record summary.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <thead>
+                      <tr className="text-left text-gray-300 border-b border-gray-700">
+                        <th className="py-2 pr-3 font-semibold">Score</th>
+                        <th className="py-2 pr-3 font-semibold">What it looks like in practice</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-gray-400">
+                      <tr className="border-b border-gray-800">
+                        <td className="py-2 pr-3 font-mono text-gray-300">0.5</td>
+                        <td className="py-2 pr-3">Newcomer baseline. No track record yet — neither good nor bad.</td>
+                      </tr>
+                      <tr className="border-b border-gray-800">
+                        <td className="py-2 pr-3 font-mono text-gray-300">0.6</td>
+                        <td className="py-2 pr-3">Building reputation. A handful of solid actions; people are starting to recognize you.</td>
+                      </tr>
+                      <tr className="border-b border-gray-800">
+                        <td className="py-2 pr-3 font-mono text-emerald-300">0.7</td>
+                        <td className="py-2 pr-3">Trusted in this role by the majority of past collaborators. The level where most ATP work flows freely.</td>
+                      </tr>
+                      <tr className="border-b border-gray-800">
+                        <td className="py-2 pr-3 font-mono text-emerald-300">0.8</td>
+                        <td className="py-2 pr-3">Consistently strong. A year-plus of quality contributions in this role with few misses.</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2 pr-3 font-mono text-emerald-200">0.9</td>
+                        <td className="py-2 pr-3">Exceptional and rare. Sustained high-quality work plus corroborating witnesses; uncommon by design.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-gray-500 mt-3">
+                  Same person, different roles, different scores: someone might be 0.85 as an analyst and 0.55 as a project manager
+                  — because the track records are independent.{" "}
+                  <a
+                    href="#calibration-meaning"
+                    onClick={(e) => { e.preventDefault(); const el = document.getElementById('calibration-meaning'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}
+                    className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
+                  >
+                    Want the statistical framing? →
+                  </a>
+                </p>
+              </div>
             </div>
 
             <div>
@@ -1404,8 +1479,10 @@ Temperament:  30-day half-life (recent behavior matters most)
         </details>
       </section>
 
-      {/* What Trust Scores Actually Mean — collapsed for page length */}
-      <section className="max-w-4xl mx-auto mt-12">
+      {/* What Trust Scores Actually Mean — collapsed for page length.
+          Apr 30 visitor MEDIUM: anchor target for the inline calibration band above (line ~593) so
+          "Deeper: how calibration is measured" can scroll-and-auto-expand this FAQ. */}
+      <section id="calibration-meaning" className="max-w-4xl mx-auto mt-12 scroll-mt-24">
         <details className="bg-gray-900/50 border border-gray-700 rounded-xl p-6">
           <summary className="text-lg font-semibold text-sky-400 cursor-pointer hover:text-sky-300 transition-colors list-none flex justify-between items-center">
             <span>What does &ldquo;trust = 0.7&rdquo; actually mean?</span>
