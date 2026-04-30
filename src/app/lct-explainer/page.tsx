@@ -375,11 +375,18 @@ export default function LCTExplainerPage() {
             </div>
           </div>
 
-          {/* Hardware explainer */}
-          <div className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg">
-            <h3 className="text-sm font-bold text-purple-400 mb-2">
-              What are TPM, Secure Enclave, and FIDO2?
-            </h3>
+          {/* Hardware explainer — collapsible to keep early-page density human-friendly (Apr 30 visitor MEDIUM) */}
+          <details className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg group">
+            <summary className="cursor-pointer text-sm font-bold text-purple-400 list-none flex items-center justify-between gap-2">
+              <span>What are TPM, Secure Enclave, and FIDO2?</span>
+              <span className="text-xs font-normal text-purple-300/70 group-open:hidden">tap to expand &mdash; cryptography terms defined</span>
+              <span className="text-xs font-normal text-purple-300/70 hidden group-open:inline">tap to collapse</span>
+            </summary>
+            <p className="text-xs text-gray-400 italic mt-3 mb-3">
+              You don&apos;t need to memorize these to use Web4 &mdash; they&apos;re tamper-resistant security
+              chips already in devices you probably own. Skip ahead if the high-level idea
+              (&ldquo;hardware-bound identity&rdquo;) is enough; expand for the specifics.
+            </p>
             <p className="text-sm text-gray-300 mb-2">
               These are <span className="font-bold">tamper-resistant security chips</span> already
               built into devices you probably own:
@@ -399,7 +406,7 @@ export default function LCTExplainerPage() {
               (Intel TPM 2.0: key creation, signing, verification, attestation quotes, EK certificate
               chain verified through 2049).
             </p>
-          </div>
+          </details>
 
           {/* Witness explainer */}
           <div id="device-witnesses" className="mt-4 p-4 bg-green-950/20 border border-green-800/30 rounded-lg scroll-mt-24">

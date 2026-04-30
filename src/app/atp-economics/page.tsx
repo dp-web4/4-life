@@ -515,17 +515,20 @@ export default function ATPEconomicsPage() {
           budget change. Can you survive?
         </p>
         {/* Apr 29 visitor HIGH: the link-only "where from?" pointer read like a deferral to a separate doc.
-            Provide the 1-sentence answer inline, keep the jump link for the deeper FAQ. */}
+            Provide the 1-sentence answer inline, keep the jump link for the deeper FAQ.
+            Apr 30 visitor MEDIUM: surface "what stops admin abuse?" up front — the gap they noticed isn't where
+            ATP comes from, it's whether minting can be inflated. */}
         <p className="text-xs text-gray-500 mb-8 leading-relaxed">
           The 100 ATP is a <strong className="text-gray-300">starter grant</strong> from the society&apos;s pool
           when you join &mdash; not printed from thin air. Each society mints a fixed pool when it forms; new members
-          receive enough to participate, but must earn more through quality contributions.{' '}
+          receive enough to participate, but must earn more through quality contributions. Pool changes are
+          witnessed governance events, not silent admin actions &mdash;{' '}
           <a
             href="#initial-atp"
             onClick={(e) => { e.preventDefault(); const el = document.getElementById('initial-atp'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}
             className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
           >
-            Full mechanics ↓
+            full mechanics + what prevents admin abuse ↓
           </a>
         </p>
 
@@ -1537,11 +1540,29 @@ if agent.atp <= 0:
                 the supply. The initial pool size and per-member allocation are society-level governance decisions,
                 transparent to all members.</li>
             </ul>
+            <p className="mt-3"><strong className="text-amber-400/80">What stops a society admin from minting infinitely?</strong>{' '}
+              Three structural checks, not a trust-the-admin promise:</p>
+            <ul className="list-disc list-inside space-y-1.5 ml-4 text-gray-400">
+              <li><strong>Witnessed mints, not silent ones.</strong> Pool changes are protocol-level events
+                that get attested by witnesses (the same hardware-bound device chain that signs everything else).
+                A unilateral mint by one party leaves an audit trail that other members and federated societies
+                can detect.</li>
+              <li><strong>Quorum or governance gate on mint events.</strong> Pool expansions are
+                governance actions &mdash; subject to whatever threshold rule the society adopts (m-of-n
+                signoff, trust-weighted vote, or a published mint schedule). The mint itself isn&apos;t
+                hidden behind a single admin password the way a centralized service&apos;s database is.</li>
+              <li><strong>Federation pressure.</strong> Other societies can refuse to honor ATP from a society
+                that mints abusively &mdash; the same way an exchange can delist a chain that loses credibility.
+                A society that inflates its pool devalues <em>its own</em> ATP for cross-society trade. The
+                incentive to abuse is weaker than it looks.</li>
+            </ul>
             <p className="text-amber-400/60 text-xs">
               <strong>Honest caveat:</strong> The exact calibration of initial pool size vs. member allocation vs.
               burn rate is still being tuned through simulation. Too small a pool starves newcomers; too large
-              devalues effort. Current simulations converge on sustainable economics, but real-world testing would
-              need to validate these parameters.
+              devalues effort. The abuse-prevention checks above describe the <em>protocol design</em> &mdash; what
+              actual deployed governance bodies look like (and how they handle a captured admin) is not yet settled.
+              Real-world testing would need to validate these parameters and stress-test the governance
+              gate against capture and collusion.
             </p>
           </div>
         </details>
