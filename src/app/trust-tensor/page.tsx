@@ -1233,7 +1233,11 @@ Temperament:  30-day half-life (recent behavior matters most)
                 <p className="text-xs text-gray-500 mt-3">
                   Same person, different roles, different scores: someone might be 0.85 as an analyst and 0.55 as a project manager
                   — because the track records are independent.{" "}
-                  <a href="#trust-calibration-statistical" className="text-sky-400 hover:text-sky-300 underline">
+                  <a
+                    href="#calibration-meaning"
+                    onClick={(e) => { e.preventDefault(); const el = document.getElementById('calibration-meaning'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}
+                    className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
+                  >
                     Want the statistical framing? →
                   </a>
                 </p>
