@@ -178,7 +178,8 @@ export default function LCTExplainerPage() {
           </p>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             More precisely: a digital ID card that lives in your device&apos;s security chip &mdash; hardware-bound,
-            witnessed by your other devices, and resistant to faking.
+            witnessed by your other devices (each one independently co-signs that it&rsquo;s really you),
+            and resistant to faking.
           </p>
 
           {/* Plain-English etymology of "Linked" and "Context" — visitor friction Apr 25 */}
