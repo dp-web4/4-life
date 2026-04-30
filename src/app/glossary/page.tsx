@@ -240,6 +240,43 @@ export default function GlossaryPage() {
             </div>
           </div>
 
+          {/* ADP — Apr 29 LOW: visitor flagged "ADP appears all over the site but isn't a top-level entry" */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">
+              Spent Energy Receipt — ADP (Allocation Discharge Packet)
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              The <strong>spent counterpart of ATP</strong>. Every time you act, the ATP you spent doesn&apos;t
+              vanish &mdash; it converts into an ADP receipt that records what you did and what it cost. ADP isn&apos;t
+              a separate currency you spend; it&apos;s the audit trail of work-in-progress. When recipients of
+              your work confirm its value, ADP receipts convert back into fresh ATP at a rate set by the quality
+              they received.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: &ldquo;Think of it like a receipt for energy you&apos;ve already spent. The receipt
+              is worth nothing until people confirm what you did was valuable. Then the receipt converts back
+              into fresh energy.&rdquo;
+            </p>
+            <p className="text-gray-500 text-xs mb-3">
+              <strong>Why two tokens?</strong> The ATP/ADP split makes <em>quality</em> the recharge driver,
+              not <em>activity</em>. You can spam actions and rack up ADP receipts, but if no recipients confirm
+              value, those receipts never become fresh ATP &mdash; and your budget drains.
+            </p>
+            <div className="flex gap-3 text-sm">
+              <Link href="/atp-economics" className="text-sky-400 hover:underline">
+                Learn more →
+              </Link>
+              <a
+                href="https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/atp-adp-cycle.md"
+                className="text-purple-400 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Canonical spec →
+              </a>
+            </div>
+          </div>
+
           {/* T3 */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
