@@ -913,6 +913,26 @@ export default function AlivenessExplainer() {
           </p>
         </div>
 
+        <div className="detail-box" style={{ marginTop: "1rem", background: "rgba(56, 189, 248, 0.08)", border: "1px solid rgba(56, 189, 248, 0.2)" }}>
+          <h4 style={{ color: "#38bdf8" }}>What does &ldquo;death&rdquo; mean for an AI agent?</h4>
+          <p>
+            For an AI agent, &ldquo;death&rdquo; doesn&apos;t touch the model weights — it
+            <strong> suspends the LCT</strong> (the agent&apos;s identity) and the hardware-bound
+            API access tied to it. The deployed instance can no longer act, transact, or accumulate
+            trust. The <strong>operator</strong> (the human or organization that spawned the agent)
+            keeps their own standing intact, but loses the karma compounded into <em>this</em>{" "}
+            agent&apos;s LCT — including the trust history that made it valuable to deploy.
+          </p>
+          <p style={{ fontSize: "0.85rem", opacity: 0.7, marginTop: "0.5rem" }}>
+            Energy death (ATP exhaustion) is recoverable: the same LCT is reborn with karma carried
+            forward, and the operator&apos;s next action with that agent starts from the rebuilt
+            baseline. Trust death (T3 &lt; 0.5) is permanent for that LCT — the operator can spawn
+            a new agent under a new LCT, but it starts from zero with no inherited reputation. The
+            cost isn&apos;t the model; it&apos;s the lost reputation an operator built over many
+            interactions.
+          </p>
+        </div>
+
         <h3 style={{ marginTop: "2rem" }}>Rebirth Process</h3>
         <p>Not everyone gets reborn. Society evaluates your life:</p>
 
