@@ -267,6 +267,9 @@ export default function ATPEconomicsPage() {
                 ✅ <strong className="text-sky-300">ATP transfers cost 5% &mdash; the sender pays the fee</strong>.
                 Example: you send 100 ATP to Bob &mdash; <em>you pay 105, Bob receives 100</em>, and the 5 ATP
                 goes to the community redistribution pool (not to any central authority).
+                <em> Why charge the sender 105 instead of giving Bob 95?</em> Net-equivalent either way, but
+                charging the sender keeps the cost visible to the person making the decision &mdash; the friction
+                lands on the actor, not the recipient.
                 Your energy budget primarily reflects YOUR contributions, not
                 someone else&apos;s. You can share ATP, but circular farming bleeds resources.
                 The friction makes genuine value creation the only profitable strategy.
