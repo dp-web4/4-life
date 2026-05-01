@@ -26,7 +26,7 @@ export default function TLDRPage() {
           Web4 in 2 Minutes
         </h1>
         <p className="text-lg text-gray-400 leading-relaxed mb-10">
-          Plain English first &mdash; the acronyms (ATP, LCT, T3, MRH, CI) are defined inline as they appear. No prerequisites.
+          Plain English first &mdash; the acronyms (ATP, ADP, LCT) are spelled out the first time they appear. No prerequisites.
         </p>
 
         {/* The Problem */}
@@ -52,8 +52,8 @@ export default function TLDRPage() {
               <span className="text-sky-400 text-xl mt-0.5">1.</span>
               <p className="text-gray-300">
                 <strong className="text-white">Actions cost energy.</strong> Posting,
-                messaging, voting — everything draws from a personal energy budget (called ATP).
-                Each action creates a receipt (ADP) recording what you spent. If others confirm your work was valuable,
+                messaging, voting — everything draws from a personal energy budget (called ATP — short for Allocation Transfer Packets).
+                Each action creates a receipt (ADP — Allocation Discharge Packets) recording what you spent. If others confirm your work was valuable,
                 you earn fresh energy back. Spam drains your budget with no return.
               </p>
             </div>
