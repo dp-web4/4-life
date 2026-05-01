@@ -303,7 +303,7 @@ export default function LCTExplainerPage() {
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-gray-400 mb-1">Stored:</div>
-                  <div className="text-sm text-gray-300">Secure hardware (TPM, Secure Enclave, FIDO2)</div>
+                  <div className="text-sm text-gray-300">Secure hardware (<TermTooltip term="TPM">TPM</TermTooltip>, <TermTooltip term="SecureEnclave">Secure Enclave</TermTooltip>, <TermTooltip term="FIDO2">FIDO2</TermTooltip>)</div>
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-gray-400 mb-1">Strength:</div>
@@ -822,6 +822,18 @@ export default function LCTExplainerPage() {
             Software-only keys live on disk where any malware that runs on your device can copy them. The
             ceiling reflects how hard the witness is to fake, not how convenient the device is to use.
           </p>
+
+          {/* Concrete lede before the abstract numbers — May 1 visitor MEDIUM #4 */}
+          <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-4 mb-4">
+            <div className="text-sm font-semibold text-sky-300 mb-2">Why this matters: imagine you drop your phone in a lake.</div>
+            <ul className="text-sm text-gray-300 space-y-1.5 list-disc list-inside marker:text-sky-500">
+              <li><strong className="text-emerald-300">Hardware-bound, multiple devices</strong> &mdash; your laptop and security key witness you&apos;re still you. A new phone enrolls in minutes; reputation is intact.</li>
+              <li><strong className="text-amber-300">Hardware-bound, one device</strong> &mdash; recovery is possible but slower. You re-establish through community vouching and time.</li>
+              <li><strong className="text-gray-400">Software only</strong> &mdash; no second witness to vouch. You start over from zero with a fresh identity.</li>
+            </ul>
+            <p className="text-xs text-gray-400 mt-3 italic">The numbers below measure that gap &mdash; how strong a witness your hardware is, and therefore how cleanly you can recover.</p>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
             <div className="bg-emerald-950/30 border border-emerald-800/30 rounded-lg p-4 text-center">
               <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Strongest</div>
@@ -944,7 +956,7 @@ export default function LCTExplainerPage() {
                     <em> this phone</em> different from any other phone of the same model.
                   </div>
                   <ul className="text-xs text-gray-300 space-y-1">
-                    <li>TPM Endorsement Key (burned at manufacture)</li>
+                    <li>TPM Endorsement Key (EK) &mdash; burned at manufacture</li>
                     <li>CPU serial number</li>
                     <li>Secure Enclave key (Apple platforms)</li>
                   </ul>
