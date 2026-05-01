@@ -8,6 +8,7 @@ import ExplorerNav from "@/components/ExplorerNav";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import TermTooltip from "@/components/TermTooltip";
 import DeepDiveToggle from "@/components/DeepDiveToggle";
+import LCTSetupMockup from "@/components/LCTSetupMockup";
 import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
 
 /**
@@ -471,7 +472,7 @@ export default function LCTExplainerPage() {
                 >
                   See the first 5 minutes of setup →
                 </a>{" "}
-                <span className="text-gray-500">(QR codes, device pairing, what you actually do)</span>
+                <span className="text-gray-500">(visual mockup &mdash; QR codes, device pairing, what you actually tap)</span>
               </p>
             </div>
           </div>
@@ -1638,15 +1639,19 @@ export default function LCTExplainerPage() {
           </div>
         </div>
 
-        {/* FAQ: Onboarding UX — visitor Q Mar 24 */}
+        {/* FAQ: Onboarding UX — visitor Q Mar 24; mockup added Apr 30 (recurring "what does the UI actually look like?") */}
         <div id="first-5-minutes" className="mt-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg scroll-mt-24">
           <h3 className="text-sm font-bold text-sky-400 mb-2">
             What do the first 5 minutes look like?
           </h3>
           <p className="text-sm text-gray-300 mb-3">
-            You download a Web4-compatible app (think of it like installing Signal instead of a regular messaging app). Here&apos;s the onboarding flow:
+            You download a Web4-compatible app (think of it like installing Signal instead of a regular messaging app). Here&apos;s the onboarding flow &mdash; visualized below, then described minute-by-minute.
           </p>
-          <div className="space-y-2 text-sm text-gray-300">
+
+          {/* Visual mockup: three steppable phone screens */}
+          <LCTSetupMockup />
+
+          <div className="space-y-2 text-sm text-gray-300 mt-4">
             <p><strong className="text-sky-300">Minute 0:00</strong> — The app detects your device&apos;s security chip (TPM or Secure Enclave) and generates a cryptographic key pair. You don&apos;t see any of this — it feels like tapping &ldquo;Create Account.&rdquo;</p>
             <p><strong className="text-sky-300">Minute 0:30</strong> — You pick a display name (not unique — identity lives in the hardware, not usernames). No email required. No password to remember.</p>
             <p><strong className="text-sky-300">Minute 1:00</strong> — The app suggests linking a second device for higher trust. You scan a QR code with your phone. Your two devices witness each other, forming your first identity constellation.</p>
