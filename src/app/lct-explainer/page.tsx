@@ -303,7 +303,7 @@ export default function LCTExplainerPage() {
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-gray-400 mb-1">Stored:</div>
-                  <div className="text-sm text-gray-300">Secure hardware (TPM, Secure Enclave, FIDO2)</div>
+                  <div className="text-sm text-gray-300">Secure hardware (<TermTooltip term="TPM">TPM</TermTooltip>, <TermTooltip term="SecureEnclave">Secure Enclave</TermTooltip>, <TermTooltip term="FIDO2">FIDO2</TermTooltip>)</div>
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-gray-400 mb-1">Strength:</div>
@@ -944,7 +944,7 @@ export default function LCTExplainerPage() {
                     <em> this phone</em> different from any other phone of the same model.
                   </div>
                   <ul className="text-xs text-gray-300 space-y-1">
-                    <li>TPM Endorsement Key (burned at manufacture)</li>
+                    <li>TPM Endorsement Key (EK) &mdash; burned at manufacture</li>
                     <li>CPU serial number</li>
                     <li>Secure Enclave key (Apple platforms)</li>
                   </ul>

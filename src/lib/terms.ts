@@ -211,6 +211,34 @@ export const terms: Record<string, TermDefinition> = {
     learnMore: "/lct-explainer",
   },
 
+  // Hardware Security Chips (referenced throughout /lct-explainer)
+  TPM: {
+    term: "TPM",
+    fullName: "Trusted Platform Module",
+    brief: "A tamper-resistant security chip in most modern PCs and laptops; generates keys that never leave the hardware.",
+    explanation:
+      "Windows uses the TPM for BitLocker disk encryption and secure boot. Most PCs shipped since 2016 have one (TPM 2.0). Web4 uses it as a hardware anchor for LCTs — the chip signs proofs of presence that can't be extracted, even with full filesystem access.",
+    learnMore: "/lct-explainer",
+  },
+
+  FIDO2: {
+    term: "FIDO2",
+    fullName: "FIDO2 / WebAuthn",
+    brief: "An open standard for hardware-backed sign-in, used by security keys (like YubiKey) and built-in biometrics.",
+    explanation:
+      "FIDO2 / WebAuthn is what powers passwordless login on a growing number of websites. The keys live in a small dedicated chip — either a USB security key you plug in, or a fingerprint reader / Face ID built into your device. Web4 treats FIDO2 keys as hardware witnesses for LCTs.",
+    learnMore: "/lct-explainer",
+  },
+
+  SecureEnclave: {
+    term: "Secure Enclave",
+    fullName: "Apple Secure Enclave",
+    brief: "Apple's tamper-resistant security chip in every iPhone, iPad, and Mac.",
+    explanation:
+      "Handles Face ID, Touch ID, and key storage. Keys are generated inside the chip and physically cannot be exported — even Apple cannot read them. Web4 uses the Secure Enclave the same way TPMs are used on Windows: as a hardware root of trust for the LCT.",
+    learnMore: "/lct-explainer",
+  },
+
   // Emergent Groups
   Synthon: {
     term: "Synthon",
