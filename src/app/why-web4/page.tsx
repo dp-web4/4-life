@@ -1067,6 +1067,7 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-month-off" className="hover:text-sky-400">Month off = trust gone?</a></li>
                   <li><a href="#faq-youthful-mistakes" className="hover:text-sky-400">Escaping youthful mistakes?</a></li>
                   <li><a href="#faq-cultural-quality" className="hover:text-sky-400">Cultural quality differences?</a></li>
+                  <li><a href="#faq-veracity-weaponization" className="hover:text-sky-400">&ldquo;Low quality&rdquo; vs disagreement?</a></li>
                   <li><a href="#faq-quality-standards" className="hover:text-sky-400">Quality across communities?</a></li>
                   <li><a href="#faq-adversarial-quality" className="hover:text-sky-400">Hostile communities gaming?</a></li>
                   <li><a href="#faq-unpopular-truth" className="hover:text-sky-400">Unpopular but true content?</a></li>
