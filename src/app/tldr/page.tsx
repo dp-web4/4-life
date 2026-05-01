@@ -26,7 +26,7 @@ export default function TLDRPage() {
           Web4 in 2 Minutes
         </h1>
         <p className="text-lg text-gray-400 leading-relaxed mb-10">
-          Plain English first &mdash; the acronyms (ATP, LCT, T3) are defined inline as they appear. No prerequisites.
+          Plain English first &mdash; the acronyms (ATP, LCT, T3, MRH, CI) are defined inline as they appear. No prerequisites.
         </p>
 
         {/* The Problem */}

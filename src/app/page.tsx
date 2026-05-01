@@ -117,7 +117,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Acronyms preview — Apr 26 visitor LOW: "Maybe a '5 acronyms you'll meet' preview on the landing page" */}
+      {/* Acronyms preview — Apr 26 visitor LOW added the preview itself.
+          Apr 30 visitor LOW: "'5 acronyms you'll meet' framing announces difficulty up front" —
+          reframe header to lead with plain-English ideas; acronyms remain as muted shorthand below. */}
       <section style={{
         maxWidth: '36rem',
         margin: '0 auto',
@@ -135,7 +137,7 @@ export default function HomePage() {
           textTransform: 'uppercase',
           textAlign: 'center',
         }}>
-          5 acronyms you&apos;ll meet
+          5 ideas, in plain English
         </p>
         <ul style={{
           listStyle: 'none',
