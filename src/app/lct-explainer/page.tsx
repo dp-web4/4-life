@@ -1532,10 +1532,21 @@ export default function LCTExplainerPage() {
               software-only tier (trust ceiling 0.50) — meaningful but limited, the same way email works
               on a shared computer but online banking doesn&apos;t.
             </p>
+            <p className="text-xs text-gray-500 mb-2">
+              <strong className="text-gray-400">What about people without modern smartphones?</strong> The hardware threshold
+              is roughly a $50 phone (most devices sold since ~2018 ship security chips), not a $1000 one. A FIDO2 USB key
+              like a YubiKey costs ~$25 and works with any computer — anchoring an identity without a modern phone at all.
+              In regions where personal-device ownership is low, community-attestation patterns (a village elder, a
+              co-op, a community center) can bridge the gap by witnessing presence.
+            </p>
             <p className="text-xs text-gray-500">
-              This is a deliberate design choice: the security guarantee of &ldquo;this is really you&rdquo; requires hardware
-              you control. Shared-device access is an open equity challenge being explored through
-              community-vouching mechanisms.
+              <strong className="text-gray-400">Honest caveat:</strong> none of these fully reach the most marginalized — those without
+              any device access would need some form of sponsored onboarding. Web4 is not unique here; every digital
+              system faces this. See{" "}
+              <Link href="/why-web4#faq-affordability" className="text-orange-400 hover:text-orange-300 underline">
+                the full equity FAQ on Why Web4
+              </Link>{" "}
+              for the complete discussion.
             </p>
           </div>
 
