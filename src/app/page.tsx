@@ -415,7 +415,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             2-minute overview
           </Link>
           <Link href="/why-web4" className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span>Why Web4? (5 min + deep-dive FAQs)</span>
+            <span>Why Web4? (~7 min core + deep-dive FAQs)</span>
             <span style={{ opacity: 0.7 }}>→</span>
           </Link>
           <Link href="/first-contact" className="btn-secondary" style={{ padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none' }}>
