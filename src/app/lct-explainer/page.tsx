@@ -214,7 +214,7 @@ export default function LCTExplainerPage() {
           <ul className="space-y-2 text-sm text-gray-300">
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">1.</span> Your identity lives in your devices&apos; security chips — not in passwords or company databases</li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">2.</span> Multiple devices (phone, laptop, security key) witness each other, making faking exponentially harder <a href="#device-witnesses" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('device-witnesses')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(who runs this?)</a></li>
-            <li className="flex gap-2"><span className="text-purple-400 shrink-0">3.</span> If you lose a device, your other devices can recover your identity — no &quot;forgot password&quot; needed</li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">3.</span> If you lose a device, your other devices can recover your identity — no &quot;forgot password&quot; needed <a href="#recovery" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('recovery')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(minutes to hours with multi-device; days if only one)</a></li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">4.</span> This is pseudonymous — your reputation follows you, but your real name doesn&apos;t have to</li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">5.</span> Every trust change is logged in a tamper-evident <a href="#trust-transparency" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('trust-transparency')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline">transparency log</a> — you can audit your own trust history</li>
           </ul>
@@ -1123,7 +1123,7 @@ export default function LCTExplainerPage() {
         )}
 
         {/* What Happens When Things Go Wrong */}
-        <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
+        <div id="recovery" className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8 scroll-mt-24">
           <h2 className="text-2xl font-bold mb-6 text-gray-100">What Happens When Things Go Wrong?</h2>
 
           <p className="text-gray-300 mb-6">
@@ -1532,10 +1532,21 @@ export default function LCTExplainerPage() {
               software-only tier (trust ceiling 0.50) — meaningful but limited, the same way email works
               on a shared computer but online banking doesn&apos;t.
             </p>
+            <p className="text-xs text-gray-500 mb-2">
+              <strong className="text-gray-400">What about people without modern smartphones?</strong> The hardware threshold
+              is roughly a $50 phone (most devices sold since ~2018 ship security chips), not a $1000 one. A FIDO2 USB key
+              like a YubiKey costs ~$25 and works with any computer — anchoring an identity without a modern phone at all.
+              In regions where personal-device ownership is low, community-attestation patterns (a village elder, a
+              co-op, a community center) can bridge the gap by witnessing presence.
+            </p>
             <p className="text-xs text-gray-500">
-              This is a deliberate design choice: the security guarantee of &ldquo;this is really you&rdquo; requires hardware
-              you control. Shared-device access is an open equity challenge being explored through
-              community-vouching mechanisms.
+              <strong className="text-gray-400">Honest caveat:</strong> none of these fully reach the most marginalized — those without
+              any device access would need some form of sponsored onboarding. Web4 is not unique here; every digital
+              system faces this. See{" "}
+              <Link href="/why-web4#faq-affordability" className="text-orange-400 hover:text-orange-300 underline">
+                the full equity FAQ on Why Web4
+              </Link>{" "}
+              for the complete discussion.
             </p>
           </div>
 
