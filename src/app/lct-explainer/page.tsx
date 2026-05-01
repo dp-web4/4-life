@@ -214,7 +214,7 @@ export default function LCTExplainerPage() {
           <ul className="space-y-2 text-sm text-gray-300">
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">1.</span> Your identity lives in your devices&apos; security chips — not in passwords or company databases</li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">2.</span> Multiple devices (phone, laptop, security key) witness each other, making faking exponentially harder <a href="#device-witnesses" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('device-witnesses')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(who runs this?)</a></li>
-            <li className="flex gap-2"><span className="text-purple-400 shrink-0">3.</span> If you lose a device, your other devices can recover your identity — no &quot;forgot password&quot; needed</li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">3.</span> If you lose a device, your other devices can recover your identity — no &quot;forgot password&quot; needed <a href="#recovery" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('recovery')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(minutes to hours with multi-device; days if only one)</a></li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">4.</span> This is pseudonymous — your reputation follows you, but your real name doesn&apos;t have to</li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">5.</span> Every trust change is logged in a tamper-evident <a href="#trust-transparency" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('trust-transparency')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline">transparency log</a> — you can audit your own trust history</li>
           </ul>
@@ -1123,7 +1123,7 @@ export default function LCTExplainerPage() {
         )}
 
         {/* What Happens When Things Go Wrong */}
-        <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
+        <div id="recovery" className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8 scroll-mt-24">
           <h2 className="text-2xl font-bold mb-6 text-gray-100">What Happens When Things Go Wrong?</h2>
 
           <p className="text-gray-300 mb-6">
