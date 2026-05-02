@@ -432,6 +432,40 @@ export default function ATPEconomicsPage() {
             a day. A thinly confirmed receipt drags the same recharge out across days &mdash; or simply
             ages out unconfirmed if no one ever attests to its value.
           </p>
+          {/* May 1 LOW #11: visitor wanted a collapsible "Show me the math" near the qualitative
+              worked example. Formula and cap rule are drawn from the existing prose in the nested
+              <details> at the "How Do You Actually Earn ATP Back?" section (id="earning-atp"). */}
+          <details className="bg-gray-800/40 border border-gray-700 rounded-lg p-4 mt-3">
+            <summary className="text-sm font-semibold text-gray-300 cursor-pointer hover:text-sky-400 transition-colors">
+              Show me the math
+            </summary>
+            <div className="mt-3 text-sm text-gray-400 space-y-2">
+              <p>
+                Each confirmation adds a weighted slice to your recharge:
+              </p>
+              <p className="font-mono text-xs text-sky-300 bg-gray-900/60 border border-gray-700 rounded px-3 py-2">
+                &Delta;recharge<sub>i</sub> = confirmer_trust<sub>i</sub> &times; received_value_fraction<sub>i</sub>
+              </p>
+              <p>
+                Total recharge for one ADP receipt is the sum across confirmers, capped at
+                the original ATP cost:
+              </p>
+              <p className="font-mono text-xs text-sky-300 bg-gray-900/60 border border-gray-700 rounded px-3 py-2">
+                recharge = min( &sum;<sub>i</sub> &Delta;recharge<sub>i</sub> , ATP_cost )
+              </p>
+              <p>
+                <strong className="text-gray-300">No quorum, no threshold.</strong>{' '}
+                <code className="text-sky-300 text-xs">confirmer_trust</code> &isin; [0, 1] is the confirmer&apos;s T3-derived score;{' '}
+                <code className="text-sky-300 text-xs">received_value_fraction</code> &isin; [0, 1] is the share of value attributed
+                to that confirmer. Unconfirmed slices decay over a window of weeks &mdash; the cap means
+                you can&apos;t profit on a single action, only recover its cost.
+              </p>
+              <p className="text-xs text-gray-500 italic">
+                Spec note: this is the shape of the relation as currently modelled in 4-Life&apos;s simulation;
+                the reference protocol is still settling. See <a href="#earning-atp" className="text-sky-400 hover:text-sky-300 underline">How Do You Actually Earn ATP Back?</a> for prose-form derivation and the &ldquo;how quickly?&rdquo; and &ldquo;who counts as a confirmer?&rdquo; toggles inside it.
+              </p>
+            </div>
+          </details>
 
           {/* Signals → score worked example — Apr 27 visitor MEDIUM #1 */}
           <div className="mt-3 mb-3 bg-gray-900/40 border border-emerald-800/20 rounded-lg p-4">
