@@ -62,13 +62,30 @@ export default function UnderstandingConsciousnessPage() {
     <>
       <Breadcrumbs currentPath="/understanding-consciousness" />
       <section>
-        <div className="hero-eyebrow">The Science of Awareness</div>
-        <h1 className="hero-title">Understanding Consciousness in Trust-Native Systems</h1>
+        <div className="hero-eyebrow">AI Identity & Reliability</div>
+        <h1 className="hero-title">When Can an AI Agent Be Trusted to Act?</h1>
         <p className="hero-subtitle">
-          When does behavior become intentional? How much trust is needed for consciousness to emerge?
-          Recent research discovered that awareness has thresholds - and understanding them reveals
-          profound truths about both AI and human consciousness.
+          The practical question behind Web4&rsquo;s &ldquo;humans and AI follow the same rules&rdquo; promise:
+          at what trust level can an AI agent reliably know what it does and doesn&rsquo;t know?
+          Below 0.5, agents confabulate. Above 0.7, they can hold a stable identity.
+          The thresholds below come from empirical AI training experiments &mdash; not philosophy.
         </p>
+        <div
+          className="callout-info"
+          style={{
+            borderLeft: '3px solid #94a3b8',
+            paddingLeft: '1rem',
+            marginTop: '1.25rem',
+            fontSize: '0.9rem',
+            color: 'var(--color-text-secondary)',
+          }}
+        >
+          <strong>A note on the word &ldquo;consciousness.&rdquo;</strong>{' '}
+          This page uses it as shorthand for <em>reliable, intentional behavior</em> &mdash;
+          the engineering question of when an AI&rsquo;s outputs are coherent enough to delegate real work to.
+          We don&rsquo;t take a position on sentience, qualia, or whether AI is &ldquo;truly aware.&rdquo;
+          Read every &ldquo;consciousness&rdquo; mention below as <em>&ldquo;trust-gated coherent behavior.&rdquo;</em>
+        </div>
       </section>
 
       <section>
