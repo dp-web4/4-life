@@ -200,8 +200,11 @@ export default function FirstContactPage() {
               <p className="text-xl text-gray-300 leading-relaxed mb-4">
                 Today's internet rewards spam, lets trolls create unlimited accounts, and makes quality creators compete with bots. What if the system itself made that impossible?
               </p>
-              <p className="text-lg text-gray-400 leading-relaxed">
+              <p className="text-lg text-gray-400 leading-relaxed mb-3">
                 In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> — play, pause, scrub, replay — and watch trust and reputation respond in real time. This is a hands-on walkthrough, not a video.
+              </p>
+              <p className="text-sm text-gray-500 leading-relaxed italic">
+                Below: a quick map of the four ideas you&apos;ll see in motion, the five-act arc, and the two numbers to watch. Then click <span className="not-italic font-semibold text-gray-300">Start</span> to drive Alice yourself — no account, no sign-in.
               </p>
             </div>
 
@@ -217,19 +220,19 @@ export default function FirstContactPage() {
                 <div>
                   <Link href="/trust-tensor" className="text-purple-400 font-semibold mb-2 block hover:underline">🤝 Trust: Your Reputation</Link>
                   <p className="text-gray-400">
-                    Trust builds through consistent quality. It follows you everywhere. No fresh starts.
+                    Trust builds through consistent quality. It follows you everywhere. No fresh starts. (Shorthand: <strong>T3</strong> — three dimensions: talent, training, temperament.)
                   </p>
                 </div>
                 <div>
                   <Link href="/aliveness" className="text-green-400 font-semibold mb-2 block hover:underline">📜 Consequences: Permanent Record</Link>
                   <p className="text-gray-400">
-                    Your track record is permanent. Good behavior compounds. Bad actors can't hide.
+                    Your record is permanent because your presence is hardware-bound (called an <strong>LCT</strong> — Linked Context Token). Good behavior compounds. Bad actors can&apos;t walk away clean.
                   </p>
                 </div>
                 <div>
                   <Link href="/coherence-index" className="text-orange-400 font-semibold mb-2 block hover:underline">🔍 Authenticity: Behavior Proves Identity</Link>
                   <p className="text-gray-400">
-                    Consistent behavior across time, devices, and contexts reveals who&apos;s real. Bots and fakes can&apos;t sustain coherent patterns.
+                    Consistent behavior across time, devices, and contexts reveals who&apos;s real. Bots and fakes can&apos;t sustain coherent patterns. (Shorthand: <strong>CI</strong> — coherence index.)
                   </p>
                 </div>
               </div>
