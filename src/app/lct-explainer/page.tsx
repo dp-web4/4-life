@@ -834,6 +834,12 @@ export default function LCTExplainerPage() {
             <p className="text-xs text-gray-400 mt-3 italic">The numbers below measure that gap &mdash; how strong a witness your hardware is, and therefore how cleanly you can recover.</p>
           </div>
 
+          <p className="text-sm text-gray-300 mb-3">
+            Each number below is the <strong className="text-gray-100">maximum T3 trust score</strong> your
+            hardware can vouch for &mdash; even with perfect behavior, software-only identity tops out at 0.50.
+            What each cap unlocks (rewards, witness role, recovery path) is detailed below the grid.
+          </p>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
             <div className="bg-emerald-950/30 border border-emerald-800/30 rounded-lg p-4 text-center">
               <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Strongest</div>
