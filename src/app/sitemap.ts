@@ -56,6 +56,7 @@ const pages: { path: string; priority: number; changeFrequency: MetadataRoute.Si
   { path: "/research-hub", priority: 0.6, changeFrequency: "monthly" },
 
   // Intermediate exploration pages
+  { path: "/ai-agents", priority: 0.6, changeFrequency: "monthly" },
   { path: "/identity-constellation", priority: 0.5, changeFrequency: "monthly" },
   { path: "/multi-session-identity", priority: 0.5, changeFrequency: "monthly" },
   { path: "/decision-evolution", priority: 0.5, changeFrequency: "monthly" },

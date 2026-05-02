@@ -142,6 +142,13 @@ export const navigationTree: NavigationTree = {
   ],
   'AI Agent Mechanics': [
     {
+      title: 'AI Agents',
+      href: '/ai-agents',
+      desc: 'Index of the AI Agents section — Identity, Trust Limits, Learning',
+      keywords: ['AI agents', 'index', 'overview', 'AI section'],
+      related: ['/understanding-consciousness', '/capacity-thresholds', '/exploration-not-evaluation']
+    },
+    {
       title: 'AI Identity',
       href: '/understanding-consciousness',
       desc: 'How AI agents maintain identity across restarts',
