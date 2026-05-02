@@ -120,6 +120,10 @@ export default function FirstContactPage() {
                 Alice starts with <strong style={{ color: '#38bdf8' }}>100 energy</strong> &mdash; called <abbr title="Allocation Transfer Packets" style={{ color: '#38bdf8', textDecoration: 'none' }}>ATP</abbr> (<em>Allocation Transfer Packets</em>, the attention budget she spends to act) &mdash; and <strong style={{ color: '#10b981' }}>neutral trust (0.50)</strong>. Every action she takes costs energy. Every contribution builds (or burns) trust.
               </p>
 
+              <p style={{ color: '#94a3b8', lineHeight: 1.6, marginBottom: '1rem', fontSize: '0.875rem', fontStyle: 'italic' }}>
+                Why 0.50? It&rsquo;s the neutral starting point &mdash; Alice hasn&rsquo;t earned trust yet, but she hasn&rsquo;t lost it either. Starting at 0 would mean &ldquo;guilty until proven innocent&rdquo;; starting at 1.0 would hand out a blank check. 0.50 says &ldquo;prove yourself.&rdquo;
+              </p>
+
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#e2e8f0' }}>Step 1 — Quality post:</strong> Alice writes a thoughtful contribution. It costs 8 ATP but her trust rises to 0.52. Recipients who find it valuable confirm the quality — a simple thumbs-up saying &quot;this was genuinely useful&quot; is what earns Alice her reward. (In Web4, these confirmations are called <em>attestations</em> — signed receipts that can&apos;t be faked.)
               </p>
