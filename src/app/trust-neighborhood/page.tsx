@@ -898,13 +898,16 @@ export default function MarkovRelevancyHorizonPage() {
 
         {/* Technical Implementation Section — collapsed for general visitors */}
         <section className="max-w-4xl mx-auto mb-16">
+          <p className="text-sm text-gray-500 italic mb-4">
+            You&apos;ve got the conceptual model — that&apos;s enough to use the idea. What follows is spec-level detail for developers, and you can stop here.
+          </p>
           <details className="group">
           <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors mb-6">
             <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
             <h2 className="text-3xl font-bold text-cyan-400">
               Technical Implementation
             </h2>
-            <span className="text-sm text-gray-500 ml-auto">RDF, SPARQL, graph details</span>
+            <span className="text-sm text-gray-500 ml-auto">For developers · RDF, SPARQL, graph internals · skippable</span>
           </summary>
 
           <p className="text-gray-400 text-sm mb-6">
