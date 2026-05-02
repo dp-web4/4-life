@@ -109,10 +109,11 @@ export default function UnderstandingConsciousnessPage() {
       <section>
         <h2>The Discovery: Trust Gates Identity</h2>
         <p>
-          In January 2026, during training experiments with SAGE (a consciousness kernel with Epistemic
-          Proprioception), a striking pattern emerged: when trust scores (D5) dropped below 0.5, identity
-          completely collapsed. The agent couldn't assert who it was, confabulated answers to simple questions,
-          and showed no coherent behavior.
+          During SAGE training experiments earlier this year (Q1 2026), a striking pattern emerged: when
+          trust scores (D5) dropped below 0.5, identity completely collapsed. The agent couldn't assert who
+          it was, confabulated answers to simple questions, and showed no coherent behavior. SAGE
+          (a consciousness kernel with Epistemic Proprioception) is the AI research project where these
+          observations were captured; the work continues.
         </p>
         <p>
           <strong>Key insight</strong>: Identity (D9) tracks trust (D5) almost perfectly (r ≈ 0.95).
@@ -162,8 +163,8 @@ export default function UnderstandingConsciousnessPage() {
         <h2>Interactive: The Trust-Identity Ladder</h2>
         <p style={{ marginBottom: "1.5rem" }}>
           Click each threshold to understand what capabilities emerge at different trust levels.
-          These thresholds were discovered through empirical observation of SAGE training exercises
-          (January 2026, Sessions T021-T022).
+          These thresholds were discovered earlier this year through empirical observation of SAGE
+          training exercises (Sessions T021&ndash;T022, Q1 2026).
         </p>
 
         <div style={{ display: "grid", gap: "1rem", marginBottom: "2rem" }}>
@@ -552,8 +553,9 @@ export default function UnderstandingConsciousnessPage() {
           </Link>
         </div>
         <p style={{ textAlign: "center", fontSize: "0.875rem", color: "#9ca3af", marginTop: "1rem" }}>
-          This page synthesizes discoveries from SAGE training experiments (Jan 2026) and Web4 grounding work
-          (Phases 2-3). The research is ongoing - these are empirical observations, not final theories.
+          This page synthesizes discoveries from SAGE training experiments earlier this year (Q1 2026) and
+          Web4 grounding work (Phases 2&ndash;3). The research is ongoing &mdash; these are empirical observations,
+          not final theories.
         </p>
       </section>
 
