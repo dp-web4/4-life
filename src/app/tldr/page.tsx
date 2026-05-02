@@ -51,10 +51,10 @@ export default function TLDRPage() {
             <div className="flex gap-3 items-start">
               <span className="text-sky-400 text-xl mt-0.5">1.</span>
               <p className="text-gray-300">
-                <strong className="text-white">Actions cost energy.</strong> Posting,
-                messaging, voting — everything draws from a personal energy budget (called ATP — short for Allocation Transfer Packets).
-                Each action creates a receipt (ADP — Allocation Discharge Packets) recording what you spent. If others confirm your work was valuable,
-                you earn fresh energy back. Spam drains your budget with no return.
+                <strong className="text-white">Actions cost energy &mdash; valuable contributions earn it back.</strong> Posting,
+                messaging, voting — everything draws from a personal energy budget (called ATP — short for Allocation Transfer Packets),
+                but the budget refills continuously when others confirm your work was useful, so contributors don&apos;t get locked out.
+                Each action creates a receipt (ADP — Allocation Discharge Packets) recording what you spent. Spam drains the budget with no return.
               </p>
             </div>
             <div className="flex gap-3 items-start">
