@@ -159,7 +159,7 @@ export default function FirstContactPage() {
 
             <p style={{ color: '#64748b', fontSize: '0.875rem', borderTop: '1px solid #334155', paddingTop: '1rem' }}>
               Continue learning:
-              <a href="/atp-economics" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>Attention Economics</a> &middot;
+              <a href="/atp-economics" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>ATP Economics</a> &middot;
               <a href="/trust-tensor" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>Trust Tensors</a> &middot;
               <a href="/day-in-web4" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>A Day in Web4</a> &middot;
               <a href="/why-web4" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>Why Web4?</a>
@@ -218,7 +218,7 @@ export default function FirstContactPage() {
                 <div>
                   <Link href="/atp-economics" className="text-sky-400 font-semibold mb-2 block hover:underline">🔋 ATP — Allocation Transfer Packets</Link>
                   <p className="text-gray-400">
-                    Web4&rsquo;s energy budget. Every action costs ATP (think &ldquo;attention energy&rdquo;). Recipients who benefit confirm quality &mdash; that&apos;s what earns energy back. Spam burns out.
+                    Web4&rsquo;s energy budget. Every action costs ATP. Recipients who benefit confirm quality &mdash; that&apos;s what earns energy back. Spam burns out.
                   </p>
                 </div>
                 <div>
@@ -342,7 +342,7 @@ export default function FirstContactPage() {
               </button>
               <h1 className="text-4xl font-bold mb-4">Watch Alice Build Trust</h1>
               <p className="text-gray-300">
-                Alice joins a Web4 community with 100 ATP (attention budget) and neutral trust (0.5 on a 0–1 scale). Watch how her actions affect both.
+                Alice joins a Web4 community with 100 ATP (energy budget) and neutral trust (0.5 on a 0–1 scale). Watch how her actions affect both.
               </p>
             </div>
 
@@ -596,7 +596,7 @@ export default function FirstContactPage() {
               <div>
                 <h3 className="text-2xl font-bold text-sky-400 mb-3">The Start: Equal Footing</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  Alice joined a Web4 community like everyone else: with <strong>100 ATP</strong> (attention budget) and
+                  Alice joined a Web4 community like everyone else: with <strong>100 ATP</strong> (energy budget) and
                   <strong> neutral trust (0.5)</strong>. No special privileges from past platforms, no imported follower counts.
                   Just her actions from here on out.
                 </p>
@@ -776,7 +776,7 @@ export default function FirstContactPage() {
               {/* ATP Economics */}
               <div className="bg-gradient-to-br from-sky-900/30 to-gray-800 border border-sky-700 rounded-xl p-6">
                 <div className="text-3xl mb-3">🔋</div>
-                <h3 className="text-xl font-bold text-sky-400 mb-3">Attention Economics (ATP)</h3>
+                <h3 className="text-xl font-bold text-sky-400 mb-3">ATP Economics</h3>
                 <p className="text-gray-300 mb-4">
                   <strong>The problem:</strong> Traditional platforms let you post unlimited content. Result? Spam prevails,
                   quality drowns, moderation armies needed.
