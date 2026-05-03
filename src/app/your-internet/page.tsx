@@ -95,9 +95,9 @@ const SCENARIOS: Record<string, ScenarioResult> = {
     today: 'Creating an account costs nothing. A spammer can create 10,000 accounts in an hour. Platforms play whack-a-mole with detection, but attackers just adapt.',
     withWeb4: 'Every account requires a physical device with a security chip. Creating 10,000 fake accounts means buying 10,000 devices — at $50–500 each, that\'s $500K–$5M in hardware. Spam isn\'t impossible, just economically irrational.',
     scenario: 'You post a question on a forum. Every reply cost its author real energy to write — no bot-generated noise. The three answers you get are from people who chose to spend their limited budget helping you.',
-    mechanism: 'Hardware-bound identity (LCT) + attention costs (ATP) make spam more expensive than the return it generates.',
+    mechanism: 'Hardware-bound identity (LCT) + energy costs (ATP) make spam more expensive than the return it generates.',
     learnMore: '/atp-economics',
-    learnMoreLabel: 'How Attention Economics kills spam',
+    learnMoreLabel: 'How ATP Economics kills spam',
   },
   reputation: {
     frustration: 'Reputation doesn\'t travel',

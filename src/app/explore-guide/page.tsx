@@ -176,11 +176,11 @@ function generatePath(answers: Record<string, string>): ExplorationPath {
     }
     if (interest === 'economics') {
       return {
-        name: 'Attention Economics Lab',
-        tagline: 'Attention budgets, action costs, and why spam dies',
+        name: 'ATP Economics Lab',
+        tagline: 'Energy budgets, action costs, and why spam dies',
         color: '#34d399',
         steps: [
-          { title: 'Attention Economics', description: 'The attention budget: earn by contributing, spend on actions', href: '/atp-economics', timeEstimate: '7 min', type: 'read' },
+          { title: 'ATP Economics', description: 'The energy budget: earn by contributing, spend on actions', href: '/atp-economics', timeEstimate: '7 min', type: 'read' },
           { title: 'Federation Economics', description: 'Interactive market simulator for ATP pricing dynamics', href: '/federation-economics', timeEstimate: '12 min', type: 'interactive' },
           { title: 'Feedback Loop Explorer', description: 'See how ATP and trust create reinforcing feedback loops', href: '/feedback-loop-explorer', timeEstimate: '10 min', type: 'interactive' },
           { title: 'Playground', description: 'Tweak economic parameters and watch what happens', href: '/playground', timeEstimate: '15 min', type: 'experiment' },
