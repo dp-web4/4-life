@@ -925,6 +925,28 @@ export default function WhatCouldGoWrongPage() {
               been attempted yet.
             </p>
           </div>
+
+          <div className="bg-red-950/30 border border-red-800/30 rounded-lg p-4">
+            <h3 className="text-red-400 font-semibold mb-2">Privacy Rights & Data-Subject Laws</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Web4 assumes reputation persists across lives and contexts. GDPR&apos;s right to
+              erasure, CCPA&apos;s deletion rights, and similar laws assume individuals can request
+              their data be removed. A tamper-evident audit chain that is supposed to be permanent
+              does not erase cleanly &mdash; and once a hardware key is correlated to a person,
+              behavioral scores become personal data under GDPR. Neither &ldquo;allow identity
+              resets with trust loss&rdquo; nor &ldquo;exempt behavioral scores from deletion
+              rights&rdquo; is a clean answer; this is an unresolved policy question, not a
+              technical one. See the{" "}
+              <Link href="/why-web4#faq-gdpr" className="text-sky-400 hover:underline">
+                full GDPR discussion
+              </Link>{" "}
+              and{" "}
+              <Link href="/why-web4#faq-jurisdiction" className="text-sky-400 hover:underline">
+                cross-jurisdiction handling
+              </Link>{" "}
+              for specifics.
+            </p>
+          </div>
         </div>
       </section>
 
