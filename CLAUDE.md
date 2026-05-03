@@ -139,7 +139,7 @@ Don't rationalize their confusion. Fix it.
 <!-- gitnexus:keep -->
 # GitNexus — Code Knowledge Graph
 
-Indexed as **4-life** (5412 symbols, 14192 relationships, 300 execution flows). MCP tools available via `mcp__gitnexus__*`.
+Indexed as **4-life** (5417 symbols, 14208 relationships, 300 execution flows). MCP tools available via `mcp__gitnexus__*`.
 
 **Do not reindex.** The supervisor handles GitNexus indexing. If the index is stale, note it in SESSION_FOCUS.
 
