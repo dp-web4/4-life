@@ -449,7 +449,7 @@ export default function DayInWeb4Page() {
       </h1>
       <p className="text-gray-400 mb-4 text-lg">
         What would your day look like if the internet had trust built in?
-        Walk through 10 real scenarios and see the difference.
+        Click through 10 interactive scenarios — your choices shape the day.
       </p>
 
       {/* Your First 5 Minutes — Onboarding Walkthrough */}
@@ -668,7 +668,12 @@ export default function DayInWeb4Page() {
         <div>
           {/* Time & Title */}
           <div className="mb-4">
-            <span className="text-sky-400 text-sm font-mono">{scenario.time}</span>
+            <div className="flex items-baseline gap-2">
+              <span className="text-sky-400 text-sm font-mono">{scenario.time}</span>
+              <span className="text-xs text-gray-500 font-mono uppercase tracking-wide">
+                Scenario {currentScenario + 1} of {SCENARIOS.length}
+              </span>
+            </div>
             <h2 className="text-xl font-bold mt-1">
               {scenario.icon} {scenario.title}
             </h2>

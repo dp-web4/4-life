@@ -344,7 +344,7 @@ export default function ATPEconomicsPage() {
             There are no negotiations — quality is the dominant earnings driver.
           </p>
           <p className="text-gray-500 text-xs mt-3">
-            A 5% transfer fee on all ATP flows prevents circular farming (colluding accounts sending ATP back and forth to inflate balances).
+            A 5% transfer fee on all ATP flows (the 5% routes to a community redistribution pool, not to any central authority) prevents circular farming (colluding accounts sending ATP back and forth to inflate balances).
             Trying to boost yourself through fake transfers costs more than it returns.
           </p>
         </div>

@@ -539,8 +539,8 @@ export default function KarmaJourneyPage() {
         </div>
       </div>
       <p style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '700px', lineHeight: 1.5 }}>
-        <strong style={{ color: 'var(--color-text-secondary)' }}>Why square CI?</strong>{' '}
-        Consistency compounds. A small dip barely shows (0.9² = 0.81) but a serious inconsistency nearly halves you (0.6² = 0.36). Squaring punishes erratic behavior far more than it rewards perfect consistency.
+        <strong style={{ color: 'var(--color-text-secondary)' }}>Why square CI (and not cube or linear)?</strong>{' '}
+        Consistency compounds. A small dip barely shows (0.9² = 0.81) but a serious inconsistency nearly halves you (0.6² = 0.36). Squaring punishes erratic behavior far more than it rewards perfect consistency. Linear (× CI) would treat a 0.6 the same as a 0.9 in proportion to perfect — too forgiving. Cubing (× CI³) would crush 0.9 down to 0.73 — too brutal for routine variance. Square sits in the gentle middle: small dips forgiven, sustained dips compound.
       </p>
 
       {/* Lives Overview Strip */}
