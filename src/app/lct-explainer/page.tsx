@@ -461,6 +461,33 @@ export default function LCTExplainerPage() {
               </div>
             </div>
 
+            {/* Bootstrap: first device — visitor Q May 2 unanswered Q2 (recurring) */}
+            <div className="mt-4 p-3 bg-gray-900/60 border border-green-700/40 rounded-md">
+              <p className="text-xs text-gray-400 italic mb-2">
+                <span className="text-green-400 font-medium not-italic">What about my <em>first</em> device — who witnesses it before I have any others?</span>
+              </p>
+              <p className="text-xs text-gray-300 mb-2">
+                Your phone&apos;s chip vouches for itself. The security chip inside (TPM on Android/PC, Secure Enclave on iPhone, FIDO2 on a USB key)
+                ships with a <strong className="text-gray-200">manufacturer-burned key</strong> &mdash; a cryptographic
+                identity baked in at the factory by the chip vendor (Apple, Qualcomm, Yubico, etc.). That key
+                is the <em>first witness</em>: when you sign up, your chip proves &ldquo;I am a genuine, untampered piece of hardware
+                from manufacturer X&rdquo; without you doing anything. No central notary, no government issuer, no
+                self-attestation waiting period &mdash; the chip&apos;s own factory certificate is the proof.
+              </p>
+              <p className="text-xs text-gray-400">
+                A single device with this manufacturer attestation gets a trust ceiling of 0.50&ndash;0.75 (depending on chip class).
+                Adding a second device later doesn&apos;t replace the first witness &mdash; it adds another, raising the ceiling
+                toward 0.90.{" "}
+                <a
+                  href="#single-device"
+                  onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('single-device')?.scrollIntoView({ behavior: 'smooth' }); }}
+                  className="text-green-400 hover:text-green-300 underline whitespace-nowrap"
+                >
+                  Why a ceiling at all? →
+                </a>
+              </p>
+            </div>
+
             {/* User-POV walkthrough jump link — visitor Q Apr 23 recurring */}
             <div className="mt-4 p-3 bg-gray-900/60 border border-green-700/40 rounded-md">
               <p className="text-xs text-gray-300">
@@ -945,6 +972,50 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
+          {/* FAQ: Cold-start bootstrap — recurring visitor Q across Apr 29, Apr 30, May 1, May 2 */}
+          <div id="first-device-bootstrap" className="mt-4 p-4 bg-amber-950/20 border border-amber-800/30 rounded-lg scroll-mt-24">
+            <h3 className="text-sm font-bold text-amber-400 mb-2">
+              I just installed the app on my one phone &mdash; who witnessed my <em>first</em> device?
+            </h3>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong className="text-amber-300">Short answer:</strong> the chip itself does. The
+              security element in your phone (TPM, Secure Enclave, or FIDO2 key) ships with a
+              manufacturer-burned key &mdash; the Endorsement Key (EK) &mdash; and a certificate
+              chain back to the chip vendor (Apple, Intel, Google, Yubico, etc.). When the app
+              creates your LCT, it bundles a hardware attestation signed by that key. The chip is
+              the day-zero witness: the network doesn&apos;t need a peer device to confirm
+              &ldquo;this is real hardware, not a virtual machine pretending&rdquo; &mdash; the
+              vendor certificate chain settles that question on its own.
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong className="text-amber-300">What hardware attestation <em>doesn&apos;t</em> prove:</strong> that this
+              specific chip belongs to a unique person &mdash; vs. someone running a phone farm
+              with 100 devices in a rack. That&apos;s the question peer device witnessing answers,
+              and it&apos;s why your trust ceiling sits at 0.50&ndash;0.75 with one device. Adding a
+              second device (or earning attestations from other community members through your
+              behavior) is what graduates you toward the higher ceilings.
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              <strong className="text-amber-300">So what triggers NASCENT &rarr; ACTIVE for a solo-device user?</strong>{" "}
+              For multi-device users, it&apos;s a peer device co-signing. For solo-device users,
+              it&apos;s either (a) infrastructure witness nodes confirming the hardware attestation
+              is well-formed and the vendor certificate chain checks out, or (b) the first
+              attestation arriving from a community member you interact with. Both paths produce a
+              valid ACTIVE token; the multi-device path just lets you reach a higher trust ceiling
+              faster. (See <a href="#witness-infrastructure" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('witness-infrastructure')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-amber-400 hover:text-amber-300 underline">who runs those infrastructure witness nodes</a> for the network-side answer.)
+            </p>
+            <p className="text-xs text-gray-500">
+              <strong className="text-gray-400">The chicken-and-egg, resolved:</strong> hardware
+              attestation is the bootstrap &mdash; you don&apos;t need a peer to <em>start</em>.
+              You need a peer (or earned community attestations) to <em>graduate</em> to the higher
+              trust ceiling. Day one solo: you&apos;re a verified-real device with no continuity
+              guarantee yet, capped at the software-or-single-hardware tier. Day thirty with one
+              hardware device and consistent behavior: you&apos;re still capped at the
+              single-hardware ceiling but earning toward it. Add a second device any time:
+              ceiling rises retroactively.
+            </p>
+          </div>
+
           <details className="mt-4">
             <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300">
               ▶ Why hardware binding lasts: identity vs. presence vs. location
@@ -1276,7 +1347,7 @@ export default function LCTExplainerPage() {
                 <strong className="text-gray-300">Nascent</strong>: Birth certificate created, waiting for witness attestation.{" "}
                 <em className="text-gray-500">Trigger: you register a new device.</em>{" "}
                 <strong className="text-gray-300">Active</strong>: Fully operational, can sign and participate.{" "}
-                <em className="text-gray-500">Trigger: another device witnesses and attests your nascent token.</em>{" "}
+                <em className="text-gray-500">Trigger: a peer device co-signs the nascent token, OR &mdash; for solo-device users &mdash; infrastructure witness nodes confirm the hardware attestation chain. Either path graduates the LCT; multi-device just unlocks a higher ceiling. <a href="#first-device-bootstrap" className="text-gray-400 hover:text-gray-300 underline not-italic">(solo-device cold start)</a></em>{" "}
                 <strong className="text-gray-300">Suspended</strong>: Temporarily frozen — can be reactivated.{" "}
                 <em className="text-gray-500">Trigger: all devices offline &gt; 30 days, or suspected compromise.</em>{" "}
                 <strong className="text-gray-300">Revoked</strong>: Permanently invalidated. Trust history preserved but no new actions allowed.{" "}
@@ -1681,7 +1752,7 @@ export default function LCTExplainerPage() {
           <LCTSetupMockup />
 
           <div className="space-y-2 text-sm text-gray-300 mt-4">
-            <p><strong className="text-sky-300">Minute 0:00</strong> — The app detects your device&apos;s security chip (TPM or Secure Enclave) and generates a cryptographic key pair. You don&apos;t see any of this — it feels like tapping &ldquo;Create Account.&rdquo;</p>
+            <p><strong className="text-sky-300">Minute 0:00</strong> — The app detects your device&apos;s security chip (TPM or Secure Enclave) and generates a cryptographic key pair. The chip&apos;s manufacturer-burned key is itself the day-zero <a href="#first-device-bootstrap" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('first-device-bootstrap')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">witness</a> &mdash; no peer device required to start. You don&apos;t see any of this; it feels like tapping &ldquo;Create Account.&rdquo;</p>
             <p><strong className="text-sky-300">Minute 0:30</strong> — You pick a display name (not unique — identity lives in the hardware, not usernames). No email required. No password to remember.</p>
             <p><strong className="text-sky-300">Minute 1:00</strong> — The app suggests linking a second device for higher trust. You scan a QR code with your phone. Your two devices witness each other, forming your first identity constellation.</p>
             <p><strong className="text-sky-300">Minute 2:00</strong> — You browse available communities. You join one that interests you. Your trust starts at the default newcomer level — low but nonzero. Actions cost 1.4x until you prove yourself.</p>
