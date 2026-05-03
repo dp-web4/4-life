@@ -374,6 +374,42 @@ export default function WhyWeb4Page() {
             </div>
           </div>
 
+          {/* Worked example — visitor MEDIUM 2026-05-03: cards explained in isolation but never collide in one concrete moment. Five-sentence scenario the visitor explicitly requested. */}
+          <div className="bg-gray-950/60 border border-sky-700/40 rounded-lg p-5 mb-6">
+            <p className="text-xs font-bold text-sky-400 uppercase tracking-wide mb-3">
+              All four, in one moment
+            </p>
+            <p className="text-gray-300 text-sm leading-relaxed mb-3">
+              You see a stranger&apos;s question on a forum and tap <em>reply</em>.
+            </p>
+            <ul className="space-y-2 text-sm text-gray-300 leading-relaxed mb-3">
+              <li>
+                <strong className="text-sky-300">Energy budget (ATP):</strong> posting the
+                answer draws a few units of ATP from your budget — the same budget a spammer
+                would have already exhausted.
+              </li>
+              <li>
+                <strong className="text-sky-300">Identity (LCT):</strong> your phone&apos;s
+                security chip signs the message, and the asker&apos;s device verifies the
+                signature really came from you, not a deepfake or a bot.
+              </li>
+              <li>
+                <strong className="text-sky-300">Trust (T3):</strong> if your answer lands
+                well, your role-specific <em>helper</em> reputation nudges up — your trust
+                as a cook is untouched.
+              </li>
+              <li>
+                <strong className="text-sky-300">Neighborhood (MRH):</strong> only people
+                inside the asker&apos;s trust neighborhood see your reply at all — a
+                stranger five hops away never sees the thread.
+              </li>
+            </ul>
+            <p className="text-gray-400 text-xs italic">
+              Four mechanisms, one reply, fractions of a cent of energy, no friction the
+              asker had to think about.
+            </p>
+          </div>
+
           <p className="text-gray-400 text-sm border-t border-sky-800/30 pt-4">
             <strong className="text-white">4-Life</strong> is a simulation lab where you can
             watch these mechanisms in action. See societies form, trust networks emerge, spam
