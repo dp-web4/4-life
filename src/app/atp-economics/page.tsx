@@ -98,20 +98,20 @@ export default function ATPEconomicsPage() {
         <div className="text-sm uppercase tracking-wide text-sky-400 mb-4">
           Web4 Economics
         </div>
+        {/* May 3 MEDIUM friction (60-day-old loop): H1 was "Attention Economics" — primed the
+            "Attention Transfer Packets" misread before the rescue badge below could load.
+            Per visitor's explicit suggestion, canonical expansion now lives IN the H1 itself.
+            The badge below is now confirming-redundancy, not rescue-load-bearing. */}
         <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
-          Attention Economics
+          ATP: Allocation Transfer Packets
         </h1>
-        {/* Apr 28 HIGH friction: anchor the canonical expansion BEFORE the running "attention" metaphor.
-            Two consecutive visitors (Mar 27, Apr 28) confabulated "Attention Transfer Packets" from the
-            H1 + body metaphor; this badge + clarifier locks down the real expansion up front. */}
         <div className="mb-3 inline-flex items-baseline gap-2 px-3 py-1.5 rounded-md bg-sky-950/40 border border-sky-800/40">
           <span className="text-sky-300 font-mono font-semibold text-sm">ATP</span>
           <span className="text-gray-500 text-xs">=</span>
           <span className="text-gray-100 font-semibold text-sm">Allocation Transfer Packets</span>
         </div>
         <p className="text-sm text-gray-400 mb-6 italic">
-          That&apos;s the canonical name. The title above &mdash; and the words
-          &ldquo;attention,&rdquo; &ldquo;energy,&rdquo; and &ldquo;budget&rdquo; you&apos;ll see throughout this page &mdash;
+          The words &ldquo;attention,&rdquo; &ldquo;energy,&rdquo; and &ldquo;budget&rdquo; you&apos;ll see throughout this page
           are <em>metaphors</em> for what ATP <em>does</em>, not alternate expansions of the acronym.
         </p>
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
@@ -542,7 +542,7 @@ export default function ATPEconomicsPage() {
       {/* Interactive Simulation */}
       <section id="try-it" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
-          Try It: Attention Economics Simulator
+          Try It: ATP Simulator
         </h2>
         <p className="text-gray-400 mb-2">
           You start with <strong>100 ATP</strong>. Choose actions. Watch your
