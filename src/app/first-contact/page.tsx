@@ -602,7 +602,7 @@ export default function FirstContactPage() {
                 </p>
                 <p className="text-gray-300 leading-relaxed">
                   Her first few contributions were thoughtful—a quality post, helping a newcomer. Each action cost ATP
-                  (attention is scarce), but her trust steadily climbed: 0.50 → 0.52 → 0.55. The community noticed quality.
+                  (energy is finite), but her trust steadily climbed: 0.50 → 0.52 → 0.55. The community noticed quality.
                   <span className="text-gray-400 text-sm"> Unlike Reddit karma or eBay ratings, this trust is multi-dimensional,
                   follows her across communities, and costs real energy to confirm — making it much harder to game.</span>
                 </p>
@@ -782,7 +782,7 @@ export default function FirstContactPage() {
                   quality drowns, moderation armies needed.
                 </p>
                 <p className="text-gray-300 mb-4">
-                  <strong>Web4 solution:</strong> Every action costs ATP (attention). Posting? Costs ATP.
+                  <strong>Web4 solution:</strong> Every action costs ATP (energy). Posting? Costs ATP.
                   Messaging? Costs ATP. Voting? Costs ATP. Your budget is finite.
                 </p>
                 <p className="text-gray-300 mb-4">
