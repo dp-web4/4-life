@@ -95,7 +95,7 @@ const BRIDGES: ConceptToolBridge[] = [
   },
   {
     concept: {
-      title: 'Attention Economics',
+      title: 'ATP Economics',
       href: '/atp-economics',
       oneLiner: 'Every action costs energy — earn by contributing, spend on actions',
       keyIdea: 'ATP creates natural governance: expensive actions require resources and trust.',

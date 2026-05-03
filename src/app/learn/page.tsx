@@ -126,10 +126,10 @@ export default function LearnJourney() {
         },
         {
           id: "atp",
-          title: "Energy Budget: Attention Economics (ATP)",
+          title: "Energy Budget: ATP Economics",
           teaser:
             "Every action costs energy. Valuable contributions earn it back. Run out of energy? You die. This makes spam self-defeating and quality sustainable.",
-          why: "The attention budget is what makes participation meaningful. It's how Web4 prices actions.",
+          why: "The energy budget is what makes participation meaningful. It's how Web4 prices actions.",
           link: "/atp-economics",
           duration: "7 min read",
         },

@@ -107,10 +107,10 @@ export default function HowItWorksPage() {
           <div className="bg-gradient-to-br from-green-950/30 to-green-900/20 border border-green-800/30 rounded-lg p-6">
             <div className="text-3xl mb-2">⚡</div>
             <h3 className="text-lg font-semibold text-green-400 mb-2">
-              Attention Economics
+              ATP Economics
             </h3>
             <p className="text-sm text-gray-400">
-              Every action costs attention budget (<TermTooltip term="ATP" />). Run out? You
+              Every action costs energy (<TermTooltip term="ATP" />). Run out? You
               die. Contribute value? You thrive.
             </p>
             <Link
