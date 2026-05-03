@@ -1579,6 +1579,19 @@ export default function LCTExplainerPage() {
               high-trust actions require at least one hardware-bound device. Web4 is designed so that anyone
               with a basic smartphone can join — the hardware barrier is &ldquo;own a phone,&rdquo; not &ldquo;buy specialized equipment.&rdquo;
             </p>
+            {/* May 3 visitor LOW: biometric-blocked users — accessibility silence on this page */}
+            <p className="text-sm text-gray-300 mb-2">
+              <strong>What if biometrics aren&apos;t an option for me?</strong> Some users can&apos;t use fingerprint,
+              face, or iris recognition (no fingerprints, motor impairments, eye conditions, etc.). Software-only
+              identity is supported (trust ceiling 0.50), and you can also use a hardware security key (YubiKey, Titan)
+              with a PIN instead of biometrics — that gets you to 0.75. Your reputation accrues normally; the gap is
+              in <em>recovery speed</em> and <em>trust ceiling</em>, not in your ability to participate. We treat this
+              gap as a real, ongoing accessibility limitation rather than a solved problem — see{' '}
+              <a href="/what-could-go-wrong#risk-accessibility" className="text-amber-400 hover:underline">
+                What Could Go Wrong
+              </a>{' '}
+              for the honest version.
+            </p>
           </div>
 
           {/* FAQ: Single device */}

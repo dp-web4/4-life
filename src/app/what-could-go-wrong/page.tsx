@@ -439,6 +439,71 @@ export default function WhatCouldGoWrongPage() {
             </p>
           </div>
         </div>
+
+        {/* 8. Accessibility / Digital Divide — May 3 visitor MEDIUM friction.
+            Visitor explicit suggestion: add as numbered risk card with Serious/Medium rating,
+            paralleling the GDPR honest-limitation addition (Apr 29). The page acknowledged
+            7 risks but was silent on disability and biometric exclusion — for a hardware-anchored
+            identity system, this is a real ethical gap, not a polish item. */}
+        <div id="risk-accessibility" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
+          <div className="flex items-start gap-3 mb-4">
+            <span className="text-2xl">8.</span>
+            <div className="flex-1">
+              <div className="flex items-center gap-3 flex-wrap">
+                <h3 className="text-xl font-semibold text-amber-400">Hardware-bound identity excludes users who can&apos;t use it</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">Serious · Medium likelihood</span>
+              </div>
+              <p className="text-gray-500 text-sm">Accessibility &amp; Digital Divide</p>
+            </div>
+          </div>
+          <div className="text-gray-300 leading-relaxed space-y-3">
+            <p>
+              <strong className="text-gray-100">The risk:</strong> Web4 anchors identity in
+              hardware: TPM chips, Secure Enclaves, FIDO2 keys &mdash; usually unlocked by a
+              biometric (fingerprint, face, iris). Users who <em>cannot</em> use biometrics
+              (no fingerprints from age or work, motor impairments, eye conditions, severe
+              tremors) get pushed onto the software-only fallback at a 0.50 trust ceiling.
+              That&apos;s a real second-class experience baked into the architecture.
+              The same gap appears for users in regions with intermittent power, refurbished
+              devices that lack TPM 2.0, or shared-device households where no one owns
+              hardware they can call &ldquo;theirs&rdquo;.
+            </p>
+            <p>
+              <strong className="text-gray-100">Why it&apos;s real:</strong> &ldquo;Just use a
+              fingerprint reader&rdquo; assumes a body that has the body parts the reader expects,
+              the dexterity to use them, and the wealth to own the hardware. Roughly 1 in 6 people
+              globally has some form of disability, and the World Bank estimates ~3 billion people
+              still don&apos;t own a smartphone. A trust system that gives them a structurally
+              lower ceiling isn&apos;t neutral &mdash; it codifies the existing digital divide
+              into the trust layer itself.
+            </p>
+            <p>
+              <strong className="text-gray-100">What mitigates it:</strong> A few things,
+              partially.{' '}
+              <strong>(1) Hardware keys with PIN unlock</strong> &mdash; YubiKey or Titan keys
+              accept a numeric PIN instead of a biometric, and they&apos;re hardware-bound. That
+              gets users without biometric capability up to ~0.75 ceiling.
+              <strong> (2) Community vouching</strong> &mdash; trusted contacts can witness
+              behavior and raise effective trust over time, without requiring a stronger root
+              of trust.
+              <strong> (3) Trusted-third-party witnessing</strong> &mdash; libraries, schools,
+              NGOs, and clinics can serve as institutional witnesses for users who lack
+              personal hardware, similar to how notaries serve as identity witnesses today.
+              <strong> (4) Software-only behavior</strong> still <em>accrues</em> reputation
+              normally &mdash; the ceiling caps high-trust roles, not basic participation.
+            </p>
+            <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
+              <strong>Honest assessment:</strong> The mitigations don&apos;t fully close the gap.
+              Recovery from device loss is also slower at the lower ceiling, which compounds the
+              asymmetry. Designing a hardware-anchored trust system that does <em>not</em> structurally
+              disadvantage users with disabilities or limited hardware access is an unsolved problem,
+              not a solved one. The current design picks a position on the trade-off (security floor
+              over universal ceiling); a more accessibility-forward design would weight the trade-off
+              differently. This deserves the same honesty as the GDPR question below: this is a
+              policy choice, not a technical inevitability, and the choice is contestable.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Design Tensions */}
