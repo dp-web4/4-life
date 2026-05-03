@@ -8,6 +8,7 @@ const RISKS = [
   { label: 'Lose my device', id: 'risk-hardware-loss' },
   { label: 'Witnesses go bad', id: 'risk-witnesses' },
   { label: 'Doesn\'t scale', id: 'risk-scale' },
+  { label: 'Excludes disabled users', id: 'risk-accessibility' },
 ];
 
 export default function RiskSelector() {
