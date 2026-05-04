@@ -899,6 +899,51 @@ export default function LCTExplainerPage() {
             Stronger hardware lets you build higher &mdash; but you still have to earn it through behavior.
           </p>
 
+          {/* May 4 visitor LOW: "those numbers feel declared, not derived. Why is software only 0.50? Why isn't TPM 1.00?"
+              Existing copy at lines 845-851 explains why TPM > software. This addresses the missing half: why no tier is 1.00. */}
+          <details className="mt-4 bg-gray-900/40 border border-gray-700 rounded-lg p-4">
+            <summary className="text-sm text-gray-300 font-semibold cursor-pointer hover:text-gray-100">
+              Why isn&apos;t the top tier 1.00?
+            </summary>
+            <div className="mt-3 text-sm text-gray-400 space-y-2">
+              <p>
+                <strong className="text-gray-300">No hardware is unbreakable.</strong> A TPM ceiling at 0.90
+                instead of 1.00 reflects three real attack surfaces that &ldquo;perfect&rdquo; would have to rule
+                out and no chip on Earth does:
+              </p>
+              <ul className="list-disc pl-5 space-y-1.5">
+                <li>
+                  <strong className="text-gray-300">Physical attack on the chip.</strong> Decapping, fault
+                  injection, electron-microscope key extraction &mdash; rare and expensive, but documented
+                  against TPM and Secure Enclave research samples. Possible in principle for a determined
+                  adversary.
+                </li>
+                <li>
+                  <strong className="text-gray-300">Supply-chain compromise.</strong> A weakened chip could
+                  ship from the factory with a known-to-the-attacker key, or a compromised firmware update
+                  could leak attestations. Vendor certificate chains catch most of this, but not all of it.
+                </li>
+                <li>
+                  <strong className="text-gray-300">Side channels.</strong> Power, timing, electromagnetic
+                  leakage have all been used to recover keys from secure elements that were &ldquo;supposed&rdquo;
+                  to be inviolate. Modern designs harden against this; none are immune.
+                </li>
+              </ul>
+              <p>
+                A ceiling of 1.00 would mean &ldquo;mathematically impossible to forge.&rdquo; That standard
+                is reserved for things like one-time pads, not for hardware that ships in a phone. 0.90 is
+                shorthand for &ldquo;trusted enough to anchor most decisions, not trusted enough to be the
+                only check on something irreversible.&rdquo; The remaining 0.10 is the gap reserved for
+                independent corroboration &mdash; multiple devices, witness attestations, behavioral history.
+              </p>
+              <p className="text-xs text-gray-500 italic">
+                The same logic explains the other tiers: each step down (0.85, 0.75, 0.50) reflects a
+                concretely larger attack surface &mdash; weaker tamper resistance, fewer side-channel
+                hardenings, or no hardware root at all.
+              </p>
+            </div>
+          </details>
+
           <div className="mt-4 bg-gray-900/50 border border-gray-700 rounded-lg p-4">
             <div className="text-sm font-semibold text-gray-200 mb-2">
               What does my ceiling actually let me <em>do</em>?

@@ -1039,6 +1039,33 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
+        {/* May 4 visitor MEDIUM: "the page ends without a clear 'now go do this' CTA. I had to go back to the nav."
+            The CTA exists at line 3291 but sits AFTER the 2200-line going-deeper collapsible. Visitors who stop
+            before opening going-deeper miss it. This inline mini-CTA intercepts them here. */}
+        <div className="mt-8 mb-6 p-5 border border-sky-700/40 rounded-lg bg-sky-950/15 max-w-2xl mx-auto text-center">
+          <p className="text-gray-300 text-sm mb-3">
+            That&apos;s the case for Web4. <strong className="text-sky-300">Now try it</strong> &mdash;
+            the simulator and walkthrough show the same ideas in motion.
+          </p>
+          <div className="flex gap-3 justify-center flex-wrap">
+            <Link
+              href="/first-contact"
+              className="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold rounded-md transition-colors"
+            >
+              Walk through with Alice (10 min) →
+            </Link>
+            <Link
+              href="/society-simulator"
+              className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm font-semibold rounded-md transition-colors"
+            >
+              Run a Society
+            </Link>
+          </div>
+          <p className="text-xs text-gray-500 mt-3">
+            Or keep reading &mdash; 40+ questions in the &ldquo;Going deeper&rdquo; section below.
+          </p>
+        </div>
+
         {/* All other FAQs — collapsed by default */}
         <details id="going-deeper" className="group">
           <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">

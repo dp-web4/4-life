@@ -620,9 +620,25 @@ export default function KarmaJourneyPage() {
               <div style={{ marginBottom: '0.375rem' }}>
                 <strong>Raw trust: {baseComp.toFixed(3)}</strong> — determines survival (≥ 0.5 to stay alive)
               </div>
-              <div style={{ marginBottom: '0.375rem', fontSize: '0.75rem' }}>
-                <span style={{ color: 'var(--color-text-muted)' }}>Effective trust: </span><strong style={{ color: 'var(--color-sky)' }}>{effComp.toFixed(3)}</strong>
-                <span style={{ color: 'var(--color-text-muted)' }}> (raw × CI² = {baseComp.toFixed(2)} × {currentLife.ci.toFixed(2)}²) — determines your earning rate, action weight, and how others prioritize your contributions</span>
+              {/* May 4 visitor MEDIUM: pulled the math out of muted-prose into a visible equation strip
+                  so scan-pattern readers see how 0.5 × 0.85² becomes 0.36 without parsing inline gray text. */}
+              <div style={{
+                marginBottom: '0.375rem', padding: '0.4rem 0.6rem', borderRadius: '0.25rem',
+                background: 'rgba(56, 189, 248, 0.06)', border: '1px solid rgba(56, 189, 248, 0.18)',
+                fontFamily: 'monospace', fontSize: '0.8rem', color: 'var(--color-text-secondary)',
+              }}>
+                <span style={{ color: 'var(--color-text-muted)' }}>Effective trust =</span>{' '}
+                <span style={{ color: '#93c5fd' }}>{baseComp.toFixed(2)}</span>
+                <span style={{ color: 'var(--color-text-muted)' }}> × </span>
+                <span style={{ color: '#fde68a' }}>{currentLife.ci.toFixed(2)}²</span>
+                <span style={{ color: 'var(--color-text-muted)' }}> = </span>
+                <strong style={{ color: 'var(--color-sky)' }}>{effComp.toFixed(3)}</strong>
+                <span style={{ fontFamily: 'inherit', color: 'var(--color-text-muted)', marginLeft: '0.5rem', fontSize: '0.7rem' }}>
+                  ({(currentLife.ci * currentLife.ci * 100).toFixed(0)}% of raw — squaring penalizes inconsistency)
+                </span>
+              </div>
+              <div style={{ marginBottom: '0.375rem', fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>
+                Effective trust determines your earning rate, action weight, and how others prioritize your contributions.
               </div>
               {effComp < 0.5 && baseComp >= 0.5 && (
                 <div style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', marginBottom: '0.375rem', padding: '0.5rem 0.625rem', borderRadius: '0.25rem', background: 'rgba(56, 189, 248, 0.1)', border: '1px solid rgba(56, 189, 248, 0.2)' }}>

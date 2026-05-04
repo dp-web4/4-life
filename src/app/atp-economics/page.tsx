@@ -1254,6 +1254,36 @@ export default function ATPEconomicsPage() {
             exactly what each ADP records.
           </p>
         </div>
+
+        {/* May 4 visitor LOW: "Receipts are evidence; what's the receipt for mechanically?
+            Does it loop back into anything I'd see as a user, or is it ledger plumbing?"
+            Prior treatments were internal-mechanical; this is the user-POV answer. */}
+        <div className="mt-4 bg-gray-800/40 border border-gray-700 rounded-xl p-5">
+          <h4 className="text-sm font-semibold text-gray-200 mb-2 uppercase tracking-wide">
+            What does an ADP look like to <em>me</em>, the user?
+          </h4>
+          <p className="text-gray-300 text-sm leading-relaxed mb-2">
+            Mostly: <strong>ledger plumbing you don&apos;t think about</strong>.
+            ADPs are how the system tracks &ldquo;spent energy waiting to convert back.&rdquo;
+            You don&apos;t manage them, list them, or click on them.
+          </p>
+          <p className="text-gray-300 text-sm leading-relaxed mb-2">
+            What you <em>do</em> see is the <strong>conversion event</strong> — the moment an
+            ADP recharges into ATP. That shows up in your activity log as something like:
+          </p>
+          <div className="bg-gray-900/60 border border-gray-700 rounded-lg p-3 my-2 font-mono text-xs text-gray-300">
+            <div className="text-gray-500">Today, 2:14 PM</div>
+            <div>+8 ATP &mdash; your post yesterday earned a confirmation from Maya.</div>
+            <div className="text-gray-500 mt-2">Today, 9:30 AM</div>
+            <div>+3 ATP &mdash; trickle from 4 readers who found your comment useful.</div>
+          </div>
+          <p className="text-gray-400 text-xs leading-relaxed">
+            Each line is an ADP closing out — receipt fulfilled, energy returned. You see the
+            <em>result</em> (your ATP went up, here&apos;s why), not the receipt itself.
+            Think of it like seeing &ldquo;direct deposit posted&rdquo; in a bank app:
+            you don&apos;t care about the SWIFT message that carried it, only that the money arrived.
+          </p>
+        </div>
       </section>
 
       {/* Technical Details (Collapsible) */}
