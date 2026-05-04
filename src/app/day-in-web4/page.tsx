@@ -449,7 +449,7 @@ export default function DayInWeb4Page() {
       </h1>
       <p className="text-gray-400 mb-4 text-lg">
         What would your day look like if the internet had trust built in?
-        Click through 10 interactive scenarios — your choices shape the day.
+        10 scenarios across one day — pick a choice in each, see what happens, then click <em>Next scenario</em> to advance through the timeline above.
       </p>
 
       {/* Your First 5 Minutes — Onboarding Walkthrough */}

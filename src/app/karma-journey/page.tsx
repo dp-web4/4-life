@@ -487,6 +487,14 @@ export default function KarmaJourneyPage() {
         Cooperative choices build slow trust; selfish choices yield quick gains but erode your legacy.
       </p>
 
+      {/* May 3 visitor LOW #5: Karma Consequences vs Karma Journey naming overlap — both names sound interactive. Two-second disambiguation. */}
+      <p style={{ color: 'var(--color-text-muted)', marginBottom: '1rem', maxWidth: '700px', lineHeight: 1.55, fontSize: '0.85rem' }}>
+        <span style={{ color: '#6ee7b7', fontWeight: 600 }}>You are on the interactive sim.</span>{' '}
+        Want the conceptual <em>explainer</em> with side-by-side comparisons and the karma formula?{' '}
+        <Link href="/karma-consequences" style={{ color: '#7dd3fc', textDecoration: 'underline' }}>Karma &amp; Consequences →</Link>{' '}
+        is the read-first companion page.
+      </p>
+
       {/* Terminology acknowledgement — answers Apr 17 LOW #6 */}
       <div style={{
         padding: '0.75rem 1rem', borderRadius: '0.5rem', marginBottom: '1rem', maxWidth: '700px',

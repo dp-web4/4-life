@@ -86,6 +86,14 @@ export default function TLDRPage() {
               </p>
             </div>
           </div>
+          {/* May 3 visitor LOW #4: landing lists 5 ideas (Identity, Energy, Trust, Neighborhood, Consistency); TL;DR collapses to 4. Pointer to MRH/CI without bloating the 2-minute rhythm. */}
+          <p className="text-gray-500 text-sm leading-relaxed mt-4 pl-9 italic">
+            Two more ideas show up later on their own pages:{' '}
+            <Link href="/markov-relevancy-horizon" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">Neighborhood (MRH)</Link>{' '}
+            — distance-adjusted reach, 3 hops max — and{' '}
+            <Link href="/coherence-index" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">Consistency (CI)</Link>{' '}
+            — does your behavior add up over time. Skipped here to keep this short; the concept sequence on each page links the rest.
+          </p>
         </div>
 
         {/* The Result */}
