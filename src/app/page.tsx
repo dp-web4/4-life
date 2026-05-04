@@ -17,6 +17,16 @@ export default function HomePage() {
       {/* Hero */}
       <section className="text-center" style={{ maxWidth: '48rem', margin: '0 auto' }}>
         <p className="eyebrow">4-Life: A Trust-Native Internet Lab <span style={{ fontWeight: 400, opacity: 0.7 }}>&mdash; explore Web4 through simulations</span></p>
+        {/* May 4 visitor LOW: "trust-native" caused a beat-loss in the eyebrow before the line-34 definition arrived. 6-word gloss, adjacent to the term, muted so it doesn't push H1 down. */}
+        <p style={{
+          fontSize: '0.85rem',
+          color: 'var(--color-text-muted)',
+          fontStyle: 'italic',
+          marginTop: '-0.25rem',
+          marginBottom: '0.75rem',
+        }}>
+          (trust verified by behavior, not assumed by default)
+        </p>
         <h1 style={{ marginBottom: '1rem' }}>
           The Internet Has a Trust Problem
         </h1>
@@ -31,7 +41,7 @@ export default function HomePage() {
           maxWidth: '36rem',
           lineHeight: 1.6
         }}>
-          <strong>Web4</strong> is a proposed framework where trust is built into the internet itself, not bolted on after the fact &mdash; that&apos;s what &quot;trust-native&quot; means.
+          <strong>Web4</strong> is a proposed framework where trust is built into the internet itself, not bolted on after the fact.
           Despite the name, this isn&apos;t &ldquo;Web3 + 1&rdquo; &mdash; no blockchain, no tokens, no speculation. A different trust model, not a successor.
           Identity costs something, every action costs energy,
           and consequences follow you forever.
