@@ -743,7 +743,7 @@ export default function KarmaConsequencesPage() {
           <div className="flex items-center justify-between mb-4">
             <div>
               <div className="text-sm uppercase tracking-wide text-orange-400 mb-2">
-                Web4 Core Concept
+                Web4 Core Concept · Explainer
               </div>
               <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 Karma & Consequences
@@ -751,6 +751,13 @@ export default function KarmaConsequencesPage() {
               <p className="text-xl text-gray-300 max-w-3xl">
                 Why can't bad actors just create new accounts? How do consequences persist
                 across agent "lives"? Explore Web4's permanent reputation system.
+              </p>
+              {/* May 3 visitor LOW #5: Karma Consequences vs Karma Journey naming overlap — both names sound interactive. Two-second disambiguation at top. */}
+              <p className="text-sm text-gray-400 mt-3 max-w-3xl">
+                <span className="text-orange-300 font-semibold">You are on the explainer.</span>{' '}
+                Want to <em>play</em> karma yourself across multiple lives?{' '}
+                <Link href="/karma-journey" className="text-sky-400 hover:underline">Karma Journey →</Link>{' '}
+                is the interactive sim.
               </p>
             </div>
             <Link
