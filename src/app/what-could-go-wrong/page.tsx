@@ -171,12 +171,41 @@ export default function WhatCouldGoWrongPage() {
               control who gets a Web4 identity.
             </p>
             <p>
-              <strong className="text-gray-100">What mitigates it:</strong> Web4 is designed to work
-              with <em>any</em> hardware attestation standard, not just one vendor&apos;s. The
-              specification supports multiple attestation methods so no single manufacturer is
-              a chokepoint. Open-source hardware (RISC-V with open security modules) could
-              provide vendor-independent alternatives.
+              <strong className="text-gray-100">What would actually have to be in place:</strong>{" "}
+              Vague &ldquo;multi-vendor support&rdquo; isn&apos;t enough. The capture-resistance has
+              to come from concrete mechanisms, most of which are <em>specified but not yet
+              deployed</em>:
             </p>
+            <ul className="list-disc list-inside space-y-2 text-gray-300 text-sm ml-2">
+              <li>
+                <strong className="text-gray-100">A vendor-neutral attestation API.</strong> The
+                spec defines a hardware-attestation interface that any compliant chip can implement.
+                Identity verification queries the API, not a specific vendor. If Intel or Apple
+                changes terms, a society can re-pin to a different compliant root without re-issuing
+                identities.
+              </li>
+              <li>
+                <strong className="text-gray-100">Open-source firmware paths.</strong> Coreboot,
+                Heads, and Tianocore are auditable boot chains that don&apos;t require trusting
+                vendor binary blobs. Combined with open security modules (RISC-V cores with
+                published microcode), they offer an end-to-end stack a society can verify itself.
+                This is a <em>path</em>, not a finished product &mdash; the open-firmware ecosystem
+                is small relative to the proprietary one.
+              </li>
+              <li>
+                <strong className="text-gray-100">Federation-level hardware diversity policies.</strong>{" "}
+                Societies can require their attestation root set to include at least N independent
+                vendors. A federation that depends 100% on one vendor flags a governance risk; one
+                that requires three independent roots is meaningfully harder to capture.
+              </li>
+              <li>
+                <strong className="text-gray-100">Attestation revocation transparency
+                (CT-style public logs).</strong> Modeled on Certificate Transparency: every
+                attestation key issuance and revocation is appended to a public log. A vendor
+                quietly revoking keys to censor a population can&apos;t do so invisibly &mdash;
+                the log makes the action observable, which is the precondition for any response.
+              </li>
+            </ul>
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
               <strong>Honest assessment:</strong> This is a real concern with partial mitigation.
               Multi-vendor support helps but doesn&apos;t eliminate the risk. The entire
@@ -184,7 +213,8 @@ export default function WhatCouldGoWrongPage() {
               that concentration. Even &ldquo;open&rdquo; standards can be captured &mdash;
               USB, Bluetooth, and Wi-Fi are all open specifications controlled by industry
               consortia with corporate membership fees. Web4&apos;s attestation layer faces
-              the same dynamic.
+              the same dynamic. The mechanisms above raise the cost of capture and make it
+              detectable; they don&apos;t prevent it outright.
             </p>
           </div>
         </div>
@@ -915,8 +945,12 @@ export default function WhatCouldGoWrongPage() {
         <h2 className="text-3xl font-bold mb-4 text-gray-100">
           What&apos;s Genuinely Unsolved
         </h2>
-        <p className="text-gray-400 mb-8">
+        <p className="text-gray-400 mb-2">
           These are open research problems. We&apos;re not hiding them &mdash; we&apos;re working on them.
+        </p>
+        <p className="text-gray-500 text-sm mb-8">
+          Includes witness bootstrapping, appeals, governance at scale, regulatory compliance,
+          and the <strong className="text-gray-300">right to be forgotten (GDPR / CCPA)</strong>.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -992,7 +1026,7 @@ export default function WhatCouldGoWrongPage() {
           </div>
 
           <div className="bg-red-950/30 border border-red-800/30 rounded-lg p-4">
-            <h3 className="text-red-400 font-semibold mb-2">Privacy Rights & Data-Subject Laws</h3>
+            <h3 className="text-red-400 font-semibold mb-2">Right to Be Forgotten / Data-Subject Laws (GDPR, CCPA)</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Web4 assumes reputation persists across lives and contexts. GDPR&apos;s right to
               erasure, CCPA&apos;s deletion rights, and similar laws assume individuals can request
