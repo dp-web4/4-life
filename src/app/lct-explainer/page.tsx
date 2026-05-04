@@ -1061,6 +1061,83 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
+          {/* May 4 visitor LOW friction #7: "Manufacturer-burned key", "Endorsement Key (EK)",
+              "vendor certificate chain", "private key" — used in bootstrap FAQ above without
+              firm grounding. Visitor's literal suggestion: "tooltips or a 'for non-crypto readers'
+              inset paragraph under the hardware tier table." Inset chosen over tooltips to avoid
+              tooltip-cascades inside an already dense FAQ. */}
+          <details className="mt-4">
+            <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300">
+              ▶ For non-crypto readers: what those terms above actually mean
+            </summary>
+            <div className="mt-3 bg-gray-900/60 border border-gray-700 rounded-lg p-4 text-sm text-gray-300 space-y-3">
+              <p className="text-xs text-gray-400 italic">
+                The bootstrap FAQ uses some cryptography vocabulary that may be unfamiliar.
+                Plain-English glosses:
+              </p>
+              <div className="space-y-3">
+                <div>
+                  <div className="font-semibold text-gray-200">Private key</div>
+                  <div className="text-xs text-gray-400">
+                    The secret half of a key pair. Anyone with the matching <em>public</em> half can
+                    verify a signature came from this key, but only the holder of the private half
+                    can produce one. On Web4-compatible hardware, the private key is generated
+                    inside the chip and never leaves it &mdash; not even the operating system can
+                    read it.
+                  </div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-200">Manufacturer-burned key</div>
+                  <div className="text-xs text-gray-400">
+                    A private key that was generated <em>at the factory</em>, etched into the chip
+                    during manufacture, and made physically non-extractable. The chip can sign
+                    things with it, but no one &mdash; not the manufacturer, not you, not malware
+                    &mdash; can read the raw key out of the silicon.
+                  </div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-200">Endorsement Key (EK)</div>
+                  <div className="text-xs text-gray-400">
+                    The formal name for the manufacturer-burned key on a TPM. &ldquo;Endorsement&rdquo;
+                    because the vendor publishes a certificate that says, in effect, &ldquo;this EK
+                    belongs to a real chip we made.&rdquo; That certificate is what lets a stranger
+                    trust an attestation signed by your chip without having to trust <em>you</em>.
+                  </div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-200">Vendor certificate chain</div>
+                  <div className="text-xs text-gray-400">
+                    A signed paper trail: your specific chip&rsquo;s identity &rarr; its model line
+                    &rarr; the vendor&rsquo;s root certificate authority. It&rsquo;s the same idea
+                    as the HTTPS lock icon in your browser &mdash; you trust your bank&rsquo;s
+                    website because a chain of signatures leads back to a root authority your
+                    browser already trusts. The chip&rsquo;s vendor cert chain plays the same role
+                    for hardware attestation: it proves the silicon is genuine without you having
+                    to physically inspect it.
+                  </div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-200">Hardware attestation</div>
+                  <div className="text-xs text-gray-400">
+                    A short, signed statement produced by the chip itself that says &ldquo;this
+                    request really came from <em>me</em>, a genuine TPM/Secure Enclave/FIDO2 device,
+                    in a known-good state.&rdquo; The signature is made with the manufacturer-burned
+                    key, and the vendor cert chain proves the key is real. This is what makes the
+                    chip a viable day-zero witness: anyone can verify the attestation without ever
+                    meeting your device.
+                  </div>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500 border-t border-gray-700 pt-3">
+                <strong className="text-gray-400">Why this matters for Web4:</strong> these primitives
+                let the network distinguish &ldquo;real hardware in a known state&rdquo; from
+                &ldquo;a script in a virtual machine pretending&rdquo; without you having to install
+                anything special, run a chain node, or trust a third-party identity provider. The
+                chip carries its own provenance.
+              </p>
+            </div>
+          </details>
+
           <details className="mt-4">
             <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300">
               ▶ Why hardware binding lasts: identity vs. presence vs. location
