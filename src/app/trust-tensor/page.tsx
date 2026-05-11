@@ -128,22 +128,9 @@ function V3OutputScorer() {
   const getBarColor = (v: number) => v >= 0.7 ? 'bg-green-500' : v >= 0.45 ? 'bg-amber-500' : 'bg-red-500';
 
   return (
-    <section className="max-w-4xl mx-auto mt-16">
-      {/* Breathing gate: let T3 land before V3 enters — Apr 17 visitor friction #4 */}
-      <div className="bg-gray-900/60 border border-gray-700/60 rounded-xl p-6 mb-10">
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-xs uppercase tracking-wide text-sky-400 font-semibold">End of T3</span>
-          <span className="text-gray-600">·</span>
-          <span className="text-xs uppercase tracking-wide text-gray-400">ready for more?</span>
-        </div>
-        <p className="text-gray-300 leading-relaxed mb-2">
-          That&apos;s T3 — three dimensions describing <strong className="text-sky-300">who someone is</strong>.
-          If this feels like enough for one sitting, you can stop here. T3 alone is a working mental model — pick up V3 later via the concept nav above.
-        </p>
-        <p className="text-sm text-gray-500">
-          Or keep going: V3 is a separate, complementary tensor that scores <strong className="text-purple-300">what someone produces</strong>. It pairs with T3 but doesn&apos;t require memorizing six things at once.
-        </p>
-      </div>
+    <section id="v3-output-scorer" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
+      {/* Page-level expand gate (TrustTensorPage) replaces the prior in-component breathing gate.
+          Visitors who chose to expand V3 above have already opted in — no need to re-prompt here. */}
 
       {/* Transition: T3 → V3 — visitor feedback: V3 appears without preamble */}
       <p className="text-gray-400 mb-6 text-lg">
@@ -345,7 +332,29 @@ function V3OutputScorer() {
 }
 
 export default function TrustTensorPage() {
-  useEffect(() => { trackPageVisit('trust-tensor'); }, []);
+  // V3 gate: keeps T3 the primary lesson of this page (May 4 visitor M5 — V3 mid-page overload,
+  // recurring since Apr 17 #4 and Mar 27 s2). Default collapsed; auto-expanded on deep links
+  // like `#v3` or `#v3-output-scorer` so glossary/cross-page links keep working.
+  const [v3Expanded, setV3Expanded] = useState(false);
+
+  useEffect(() => {
+    trackPageVisit('trust-tensor');
+    if (typeof window !== 'undefined' && window.location.hash.startsWith('#v3')) {
+      setV3Expanded(true);
+      // The browser tried to scroll to the anchor before V3 content rendered;
+      // re-scroll once it's in the DOM.
+      const hash = window.location.hash;
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }, 50);
+    }
+  }, []);
+
+  const expandV3 = () => {
+    trackConceptInteraction('trust-tensor');
+    setV3Expanded(true);
+  };
 
   // Scenario simulation state
   const [selectedRole, setSelectedRole] = useState<RoleKey>("analyst");
@@ -896,6 +905,39 @@ export default function TrustTensorPage() {
         </div>
       </section>
 
+      {/* V3 expand gate — May 4 visitor M5: V3 mid-page overload. Recurring since Apr 17 #4
+          and Mar 27 s2. Prior in-component "breathing gate" was a soft suggestion above an
+          unconditional V3 wall; this is the actual gate. Default collapsed; auto-expands on
+          any `#v3*` hash so deep links still work. */}
+      {!v3Expanded && (
+        <section className="max-w-4xl mx-auto mt-16 scroll-mt-24">
+          <div className="bg-gray-900/60 border border-gray-700/60 rounded-xl p-6">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-xs uppercase tracking-wide text-sky-400 font-semibold">End of T3</span>
+              <span className="text-gray-600">·</span>
+              <span className="text-xs uppercase tracking-wide text-gray-400">ready for more?</span>
+            </div>
+            <p className="text-gray-300 leading-relaxed mb-2">
+              That&apos;s T3 — three dimensions describing <strong className="text-sky-300">who someone is</strong>.
+              If this feels like enough for one sitting, you can stop here. T3 alone is a working mental model — pick up V3 later via the concept nav above.
+            </p>
+            <p className="text-sm text-gray-500 mb-5">
+              Or keep going: V3 is a separate, complementary tensor that scores <strong className="text-purple-300">what someone produces</strong>. It pairs with T3 but doesn&apos;t require memorizing six things at once.
+            </p>
+            <button
+              onClick={expandV3}
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-700/80 hover:bg-purple-600 text-white rounded-lg font-semibold transition-colors"
+              aria-expanded={false}
+              aria-controls="v3-content"
+            >
+              Continue to V3 <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </section>
+      )}
+
+      {v3Expanded && (
+      <div id="v3-content">
       {/* T3/V3 Bridge — how they work together (visitor friction Mar 15-16; Apr 22 L9 expand V3 acronym) */}
       <section id="v3" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <p className="text-gray-300 mb-4 max-w-4xl mx-auto">
@@ -986,6 +1028,8 @@ export default function TrustTensorPage() {
 
       {/* V3 Output Scorer — interactive mini-interaction */}
       <V3OutputScorer />
+      </div>
+      )}
 
       {/* Real Web4 Example: Role-Specific Trust */}
       <section className="max-w-4xl mx-auto mt-16">
