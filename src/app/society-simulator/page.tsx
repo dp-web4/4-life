@@ -3281,6 +3281,43 @@ export default function SocietySimulatorPage() {
           </p>
         </div>
 
+        {/* What's real, what's simulated — answers visitor Q1 (May 4): is the witness network real or simulated? */}
+        <div id="real-vs-simulated" className="mb-6 bg-amber-900/10 border border-amber-800/40 rounded-lg p-4 scroll-mt-24">
+          <h2 className="text-base font-bold mb-2 text-amber-300">What&rsquo;s real, what&rsquo;s simulated</h2>
+          <p className="text-xs text-gray-400 italic mb-3">
+            Because the question keeps coming up: this is a behavioral demo of Web4 dynamics, not a deployment. Here&rsquo;s the honest split.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+            <div className="bg-emerald-900/15 border border-emerald-800/40 rounded-lg p-3">
+              <div className="text-xs font-bold text-emerald-300 mb-1.5">✓ Real Web4 semantics</div>
+              <p className="text-gray-300 text-xs">
+                The <ATP>ATP</ATP> economics — energy budget, cost-per-action, cooperation rewards, exhaustion as death &mdash; mirror the protocol. The behavioral patterns you watch (defector isolation, emergent cooperation without moderators, wealth dynamics) reflect Web4 design principles, not staged outcomes.
+              </p>
+            </div>
+            <div className="bg-amber-900/15 border border-amber-800/40 rounded-lg p-3">
+              <div className="text-xs font-bold text-amber-300 mb-1.5">~ Simplified for visualization</div>
+              <p className="text-gray-300 text-xs">
+                Trust here is a <em>scalar</em> <code className="text-amber-200 bg-amber-950/40 px-1 rounded text-[11px]">reputation</code> (community-averaged), not the full <T3>T3</T3> tensor (Talent/Training/Temperament). No <span className="text-amber-200">MRH</span> hop-decay, no V3 output scoring, no explicit witness layer. Twelve agents and a few rounds; production would be far larger.
+              </p>
+            </div>
+            <div className="bg-sky-900/15 border border-sky-800/40 rounded-lg p-3">
+              <div className="text-xs font-bold text-sky-300 mb-1.5">⚙ Where the real protocol math runs</div>
+              <p className="text-gray-300 text-xs">
+                The <a href="/trust-tensor#try-it" className="text-sky-300 hover:underline font-medium">Live Trust Engine on /trust-tensor</a> executes the actual <code className="text-sky-200 bg-sky-950/40 px-1 rounded text-[11px]">web4-trust-core</code> WASM build &mdash; real T3 updates, real protocol logic. That widget is where to see Web4 math in motion.
+              </p>
+            </div>
+            <div className="bg-gray-800/40 border border-gray-700/60 rounded-lg p-3">
+              <div className="text-xs font-bold text-gray-300 mb-1.5">○ Fully simulated</div>
+              <p className="text-gray-300 text-xs">
+                The agents, their identities, their interactions. There is <strong>no external witness service</strong> feeding attestations in &mdash; inside the sim, every agent <em>both acts and observes</em>, so the &ldquo;witness network&rdquo; here is the agent graph itself, closed and recursive.
+              </p>
+            </div>
+          </div>
+          <p className="text-xs text-gray-500 mt-3">
+            More depth: <a href="/why-web4#faq-bootstrap-witnesses" className="text-amber-300 hover:underline">how a real witness network would bootstrap</a> &middot; <a href="/lct-explainer#witness-infrastructure" className="text-amber-300 hover:underline">who runs witnesses in a deployed system</a>
+          </p>
+        </div>
+
         {/* Key Insight */}
         <div className="mb-6 bg-blue-900/20 border border-blue-800 rounded-lg p-4">
           <h2 className="text-lg font-bold mb-2">The Core Question</h2>
