@@ -849,6 +849,92 @@ export default function DayInWeb4Page() {
         </div>
       </section>
 
+      {/* What about when only some people have it? — asymmetric coexistence */}
+      <section id="coexistence" className="mt-12 pt-8 border-t border-gray-800">
+        <p className="text-gray-500 text-sm italic mb-6">
+          Adoption isn&apos;t all-or-nothing. Realistically, early Web4 looks like a small minority with LCTs interacting with everyone else.
+        </p>
+        <h2 className="text-2xl font-bold mb-2">What about when only some people have it?</h2>
+        <p className="text-gray-400 mb-6 text-sm">
+          A fair question: <em>when 1% of users have LCTs and 99% don&apos;t, what does that actually look like?</em>
+          Tier 1 is designed so early adopters gain something <strong className="text-gray-300">without breaking anything for the rest</strong>.
+          Three concrete moments:
+        </p>
+
+        <div className="space-y-4">
+          {/* Scenario A: LCT user → non-LCT user */}
+          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.6)' }}>
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-800">
+              <span className="text-lg">📤</span>
+              <div>
+                <span className="text-sm font-semibold text-gray-200">You have an LCT. You email someone who doesn&apos;t.</span>
+              </div>
+            </div>
+            <div className="px-4 py-3">
+              <p className="text-sm text-gray-400 mb-2">
+                You pay ATP to send (every action costs energy in Web4 — that&apos;s how spam dies). The recipient sees
+                a normal email in their normal inbox. No Web4 metadata visible to them, no signup required.
+                <strong className="text-gray-300"> From their side, nothing changed.</strong>
+              </p>
+              <p className="text-xs text-gray-500 italic">
+                Side note: because the recipient can&apos;t attest you delivered value, your ATP doesn&apos;t recharge from
+                this specific exchange — early adopters spend a bit more freely than they get back, until adoption catches up.
+              </p>
+            </div>
+          </div>
+
+          {/* Scenario B: non-LCT user → LCT user */}
+          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.6)' }}>
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-800">
+              <span className="text-lg">📥</span>
+              <div>
+                <span className="text-sm font-semibold text-gray-200">Someone without an LCT emails you.</span>
+              </div>
+            </div>
+            <div className="px-4 py-3">
+              <p className="text-sm text-gray-400 mb-2">
+                Your Tier 1 extension labels the message <em>&quot;unverified — no trust history.&quot;</em>
+                Not blocked, not penalized, not zero — just a stranger you don&apos;t know yet.
+                <strong className="text-gray-300"> You use your normal judgment.</strong> The label is information, not gatekeeping.
+              </p>
+              <p className="text-xs text-gray-500 italic">
+                Important distinction: unverified ≠ untrusted. It&apos;s the same status every Web4 user has on day one,
+                before they&apos;ve built any history. Newcomers aren&apos;t invisible; they&apos;re fresh.
+              </p>
+            </div>
+          </div>
+
+          {/* Scenario C: Reddit-style mixed audience */}
+          <div className="rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.6)' }}>
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-800">
+              <span className="text-lg">💬</span>
+              <div>
+                <span className="text-sm font-semibold text-gray-200">You post a comment on a normal Reddit thread.</span>
+              </div>
+            </div>
+            <div className="px-4 py-3">
+              <p className="text-sm text-gray-400 mb-2">
+                The comment goes up on Reddit like any other. <strong className="text-gray-300">Other Tier 1 extension users</strong> browsing
+                that thread see a small trust badge next to your name — pulled from your LCT history, overlaid by their browser.
+                Everyone else sees a regular Reddit comment, exactly as they always have.
+              </p>
+              <p className="text-xs text-gray-500 italic">
+                Reddit doesn&apos;t need to know Web4 exists. The trust signal lives on the readers&apos; side, not the platform&apos;s.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 rounded-xl border border-emerald-800/30 p-4" style={{ background: 'rgba(16, 185, 129, 0.06)' }}>
+          <p className="text-sm text-gray-300">
+            <strong className="text-emerald-400">Why this works:</strong> asymmetric coexistence is what makes Tier 1 viable.
+            Web4 doesn&apos;t need everyone to adopt at once — it just needs early adopters to gain something
+            (signal, anti-spam, reputation portability) without breaking anything for the rest. The cost of being
+            outside the network is zero. The cost of being early is a slightly leaky ATP budget until others arrive.
+          </p>
+        </div>
+      </section>
+
       {/* Footer nav */}
       <div className="mt-12 pt-6 border-t border-gray-800 flex flex-wrap gap-4 text-sm text-gray-500">
         <Link href="/why-web4" className="hover:text-sky-400 transition-colors">Why Web4?</Link>
