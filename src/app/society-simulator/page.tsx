@@ -3303,7 +3303,7 @@ export default function SocietySimulatorPage() {
             <div className="bg-sky-900/15 border border-sky-800/40 rounded-lg p-3">
               <div className="text-xs font-bold text-sky-300 mb-1.5">⚙ Where the real protocol math runs</div>
               <p className="text-gray-300 text-xs">
-                The <a href="/trust-tensor#try-it" className="text-sky-300 hover:underline font-medium">Live Trust Engine on /trust-tensor</a> executes the actual <code className="text-sky-200 bg-sky-950/40 px-1 rounded text-[11px]">web4-trust-core</code> WASM build &mdash; real T3 updates, real protocol logic. That widget is where to see Web4 math in motion.
+                The <a href="/trust-tensor#witness-network" className="text-sky-300 hover:underline font-medium">Live Trust Engine &rarr; Witness Network scenario</a> executes the actual <code className="text-sky-200 bg-sky-950/40 px-1 rounded text-[11px]">web4-trust-core</code> WASM build &mdash; real witnessing calls, real T3 updates. That scenario is where to see witness math in motion.
               </p>
             </div>
             <div className="bg-gray-800/40 border border-gray-700/60 rounded-lg p-3">
