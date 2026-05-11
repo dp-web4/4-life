@@ -1424,7 +1424,7 @@ Temperament:  30-day half-life (recent behavior matters most)
       </section>
 
       {/* Live Trust Engine — real WASM calculations */}
-      <section className="max-w-4xl mx-auto mt-16">
+      <section id="witness-network" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           See the Real Engine
         </h2>
