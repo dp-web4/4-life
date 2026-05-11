@@ -180,6 +180,56 @@ export default function ATPEconomicsPage() {
 
         {/* Old "energy/attention budget metaphors" italic line removed Apr 28 —
             the metaphor/expansion split is now made explicit in the hero clarifier above. */}
+
+        {/* "What's settled vs what's still moving" — May 4 visitor LOW #11:
+            two existing mid-page "still settling" captions made the visitor wonder
+            globally "which numbers am I supposed to trust?" without a place to land.
+            Collapsed by default so it adds zero visual weight to the hero. */}
+        <details id="settled-vs-evolving" className="mt-5 bg-gray-800/40 border border-gray-700/60 rounded-lg p-4 scroll-mt-24">
+          <summary className="text-sm font-semibold text-gray-300 cursor-pointer hover:text-sky-400 transition-colors list-none flex items-center justify-between gap-3">
+            <span>What&apos;s settled vs what&apos;s still moving on this page</span>
+            <span className="text-xs text-gray-500 font-normal whitespace-nowrap">click to expand</span>
+          </summary>
+          <div className="mt-3 text-sm text-gray-400 space-y-3">
+            <p className="text-xs text-gray-500 m-0">
+              A fair question while reading this page: <em>&ldquo;which numbers am I supposed to remember,
+              and which ones are still being negotiated?&rdquo;</em> Here&apos;s an honest map.
+            </p>
+
+            <div>
+              <p className="text-emerald-300 font-semibold m-0 mb-1">✅ Settled (canonical to Web4)</p>
+              <p className="text-xs text-gray-500 m-0 mb-2">
+                These are the load-bearing ideas. If they changed, ATP wouldn&apos;t be ATP any more.
+              </p>
+              <ul className="text-xs text-gray-400 space-y-1 ml-4 list-disc">
+                <li><strong className="text-gray-300">ATP is a finite per-agent budget.</strong> Every action costs from it; you don&apos;t accumulate it as wealth.</li>
+                <li><strong className="text-gray-300">Contribution recharges it.</strong> Stop contributing, it drains; keep contributing, it sustains.</li>
+                <li><strong className="text-gray-300">ATP → ADP → confirmation → recharge cycle.</strong> Spend creates an ADP receipt; recipients confirm; confirmation converts a share of the receipt back into fresh ATP. The cycle exists as a system.</li>
+                <li><strong className="text-gray-300">Transfer-fee <em>mechanism</em>.</strong> Fees burn on peer transfer, route to a community redistribution pool (not a central authority), and the friction makes circular farming unprofitable. The exact rate (currently 5% here) is a sim parameter; the existence of the burn is structural.</li>
+                <li><strong className="text-gray-300">Quality-ramp shape.</strong> Below ~30% earns ~zero, above ~70% earns ~full, linear in between. The 0.30 / 0.70 thresholds and the piecewise-linear shape are canonical (see <code className="text-emerald-300">validate_vectors.py::sliding_scale</code>).</li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-amber-300 font-semibold m-0 mb-1">🔧 Still evolving (4-Life&apos;s current sim)</p>
+              <p className="text-xs text-gray-500 m-0 mb-2">
+                These are the <em>specific</em> numbers the simulator uses. They&apos;re plausible, but the reference protocol is still settling — expect movement.
+              </p>
+              <ul className="text-xs text-gray-400 space-y-1 ml-4 list-disc">
+                <li><strong className="text-gray-300">Exact transfer-fee percentage.</strong> Currently 5% in <code className="text-amber-300">public/spec.json::ATP.transfer_fee</code>. The mechanism is settled (above); this number is not.</li>
+                <li><strong className="text-gray-300">&ldquo;7× gap&rdquo; framing.</strong> 4-Life&apos;s visualization of the canonical quality-ramp — useful intuition, not a separate Web4 spec constant.</li>
+                <li><strong className="text-gray-300">Recharge-math coefficients.</strong> The form <code className="text-amber-300">confirmer_trust × received_value_fraction</code> is the shape we&apos;re modelling, not the canonical formula.</li>
+                <li><strong className="text-gray-300">Decay-window durations.</strong> Unconfirmed ADP slices decay over &ldquo;weeks&rdquo; — the exact window length is a 4-Life sim parameter, not a Web4 constant.</li>
+                <li><strong className="text-gray-300">4-Life sim parameters.</strong> Starting balance = 100 ATP, death threshold = 0, etc. — design choices in <code className="text-amber-300">public/spec.json</code> that you&apos;ll see in the simulator widget on this page.</li>
+              </ul>
+            </div>
+
+            <p className="text-xs text-gray-500 m-0 border-t border-gray-700/50 pt-3">
+              Heuristic for reading the rest of this page: <em>shapes and directions are stable; exact numbers are negotiable.</em>
+            </p>
+          </div>
+        </details>
+
         <p className="text-sm text-gray-500 mt-4">
           <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 cursor-pointer">
             ↓ Try the ATP simulator below
@@ -462,7 +512,11 @@ export default function ATPEconomicsPage() {
               </p>
               <p className="text-xs text-gray-500 italic">
                 Spec note: this is the shape of the relation as currently modelled in 4-Life&apos;s simulation;
-                the reference protocol is still settling. See <a href="#earning-atp" className="text-sky-400 hover:text-sky-300 underline">How Do You Actually Earn ATP Back?</a> for prose-form derivation and the &ldquo;how quickly?&rdquo; and &ldquo;who counts as a confirmer?&rdquo; toggles inside it.
+                the reference protocol is still settling (<a
+                  href="#settled-vs-evolving"
+                  onClick={(e) => { e.preventDefault(); const el = document.getElementById('settled-vs-evolving'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); if (el instanceof HTMLDetailsElement) el.open = true; } }}
+                  className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
+                >what&apos;s settled vs what&apos;s still moving ↑</a>). See <a href="#earning-atp" className="text-sky-400 hover:text-sky-300 underline">How Do You Actually Earn ATP Back?</a> for prose-form derivation and the &ldquo;how quickly?&rdquo; and &ldquo;who counts as a confirmer?&rdquo; toggles inside it.
               </p>
             </div>
           </details>
@@ -1119,7 +1173,11 @@ export default function ATPEconomicsPage() {
             <div className="mt-3 text-sm text-gray-400 space-y-2">
               <p className="text-xs text-gray-500 italic">
                 How this is currently modeled in 4-Life&apos;s simulation &mdash; the reference protocol
-                is still settling, so specifics may evolve.
+                is still settling, so specifics may evolve (<a
+                  href="#settled-vs-evolving"
+                  onClick={(e) => { e.preventDefault(); const el = document.getElementById('settled-vs-evolving'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); if (el instanceof HTMLDetailsElement) el.open = true; } }}
+                  className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
+                >see what&apos;s settled ↑</a>).
               </p>
               <p>
                 <strong className="text-gray-300">Timing is continuous, not batched.</strong> There&apos;s no
