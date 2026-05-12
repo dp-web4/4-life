@@ -1344,6 +1344,35 @@ export default function ATPEconomicsPage() {
             you don&apos;t care about the SWIFT message that carried it, only that the money arrived.
           </p>
         </div>
+
+        {/* May 4 visitor Q3 mechanical sub-questions: lifecycle / GC / visibility.
+            PR #228 added the user-POV block above; this is the mechanical complement. */}
+        <div className="mt-4 bg-gray-800/40 border border-gray-700 rounded-xl p-5">
+          <h4 className="text-sm font-semibold text-gray-200 mb-2 uppercase tracking-wide">
+            What happens to an ADP after it&apos;s created?
+          </h4>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li>
+              <strong className="text-gray-200">Does it stay with me forever?</strong> No.
+              Once confirmations recharge it back into ATP, the ADP closes out — that&apos;s the
+              activity-log line you see. Unconfirmed ADPs decay over the order of weeks and
+              quietly expire. Either way, it ends.
+            </li>
+            <li>
+              <strong className="text-gray-200">Does it get garbage-collected?</strong> Yes,
+              in both paths above. The signed record of what happened persists in the trust
+              graph as audit history — like a bank statement entry — but it&apos;s no longer
+              an open receipt waiting for action.
+            </li>
+            <li>
+              <strong className="text-gray-200">Does anyone else read it?</strong> The
+              witnesses present at the action see it at that moment. The system uses the
+              aggregated pattern of your ADPs to update your trust score; other users
+              don&apos;t browse your ADP list, and there&apos;s no &ldquo;public feed&rdquo;
+              of receipts.
+            </li>
+          </ul>
+        </div>
       </section>
 
       {/* Technical Details (Collapsible) */}
