@@ -507,6 +507,17 @@ export default function KarmaJourneyPage() {
         carries forward (more ATP, higher trust); harm carries forward too (less ATP,
         lower trust). No deity, no committee, no moral ledger — just consequences
         that don&rsquo;t reset when you do.
+        <div style={{ marginTop: '0.6rem', paddingTop: '0.6rem', borderTop: '1px solid rgba(251, 191, 36, 0.15)', fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.55 }}>
+          <strong style={{ color: 'var(--color-text-secondary)' }}>Simulation vs. real deployment.</strong>{' '}
+          &ldquo;Life&rdquo; and &ldquo;rebirth&rdquo; are simulation framing &mdash; an LCT is
+          hardware-bound and persists; it doesn&rsquo;t literally die and respawn. In a real
+          Web4 deployment this same mechanic looks like{' '}
+          <Link href="/aliveness#death-meaning" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>
+            license suspension and reinstatement
+          </Link>
+          : your identity and history persist, but your participation rights are paused
+          until your karma tier earns them back. Same consequences, different metaphor.
+        </div>
       </div>
 
       <p style={{ color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '700px', lineHeight: 1.6, fontSize: '0.85rem' }}>

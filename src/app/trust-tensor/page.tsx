@@ -590,6 +590,61 @@ export default function TrustTensorPage() {
           </p>
         </div>
 
+        {/* May 12 visitor HIGH: "Who measures Talent/Training/Temperament?" — visitor reported having
+            to navigate to How It Works to find the recipient-attestation answer. Co-locate it here so
+            deep-link visitors landing on /trust-tensor get the answer without leaving the page. */}
+        <details id="how-measured" className="mt-4 bg-gray-800/40 border border-gray-700/50 rounded-xl p-5 scroll-mt-24">
+          <summary className="text-sm font-semibold text-gray-200 cursor-pointer list-none flex justify-between items-center">
+            <span>How is each dimension actually measured?</span>
+            <span className="text-gray-500 text-xs ml-2">click to expand</span>
+          </summary>
+          <div className="mt-3 space-y-3 text-sm text-gray-400">
+            <p className="m-0">
+              <strong className="text-gray-200">Not a central algorithm. Not a committee.</strong>{" "}
+              The people who <em>received</em> your work decide. Web4 calls this{" "}
+              <strong className="text-sky-400">recipient attestation</strong>: when you complete a
+              contribution in a role, the recipient confirms whether it was useful, accurate, and
+              delivered as promised. That attestation is the raw signal that moves your T3.
+            </p>
+            <p className="m-0">
+              Each confirmation applies a small per-dimension nudge from the canonical update rule:{" "}
+              <code className="text-gray-300">base = 0.02 &times; (quality &minus; 0.5)</code>,
+              scaled by dimension (Talent &times;1.0, Training &times;0.8, Temperament &times;0.6).
+              A single high-quality contribution barely moves the needle &mdash; a 0.85-quality
+              attestation gives <code className="text-gray-300">+0.007</code> to Talent. Trust climbs
+              slowly because no single recipient can vault you upward; it takes many confirmations
+              from many recipients.
+            </p>
+            <p className="m-0">
+              The three dimensions absorb different evidence:
+            </p>
+            <ul className="m-0 pl-5 space-y-1 list-disc">
+              <li>
+                <strong className="text-sky-400">Talent</strong> moves when recipients confirm novel
+                or skilled outputs (creative solutions, hard problems solved).
+              </li>
+              <li>
+                <strong className="text-purple-400">Training</strong> moves when recipients confirm
+                competent execution of standard work (routine deliverables done well).
+              </li>
+              <li>
+                <strong className="text-amber-400">Temperament</strong> moves when behavior stays
+                stable across many interactions &mdash; consistency itself is what recipients
+                attest to over time.
+              </li>
+            </ul>
+            <p className="m-0 text-gray-500 text-xs border-t border-gray-700/50 pt-3">
+              See the{" "}
+              <Link href="/how-it-works#trust" className="text-sky-400 hover:text-sky-300 underline">
+                full cascade on How It Works
+              </Link>{" "}
+              for a worked example: a 15-ATP tutorial post earns 40 ATP back when recipients
+              confirm it helped, and that same confirmation nudges T3 upward by a few thousandths.
+              No single party controls the score.
+            </p>
+          </div>
+        </details>
+
         {/* Apr 30 visitor MEDIUM: "What does 0.7 actually mean?" — surface the calibration ladder
             at the moment of first decimal exposure, link to the deeper FAQ at #calibration-meaning. */}
         <div className="mt-4 bg-gray-900/40 border border-gray-700/50 rounded-lg px-5 py-4 text-sm">

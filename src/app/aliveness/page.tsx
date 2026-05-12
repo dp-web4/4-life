@@ -896,7 +896,7 @@ export default function AlivenessExplainer() {
           </div>
         </div>
 
-        <div className="detail-box" style={{ marginTop: "1.5rem", background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.2)" }}>
+        <div id="death-meaning" className="detail-box scroll-mt-24" style={{ marginTop: "1.5rem", background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.2)" }}>
           <h4 style={{ color: "#fbbf24" }}>What does &ldquo;death&rdquo; mean for a real person?</h4>
           <p>
             In these simulations, death means the agent stops acting and awaits rebirth.
