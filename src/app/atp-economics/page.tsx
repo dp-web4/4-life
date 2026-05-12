@@ -605,13 +605,18 @@ export default function ATPEconomicsPage() {
         {/* Apr 29 visitor HIGH: the link-only "where from?" pointer read like a deferral to a separate doc.
             Provide the 1-sentence answer inline, keep the jump link for the deeper FAQ.
             Apr 30 visitor MEDIUM: surface "what stops admin abuse?" up front — the gap they noticed isn't where
-            ATP comes from, it's whether minting can be inflated. */}
+            ATP comes from, it's whether minting can be inflated.
+            May 12 visitor MEDIUM: "anchored to witnessed measurement of resources" reads as abstract jargon —
+            visitor literally guessed "computational? human labor? storage?" The page used "compute, attention,
+            peer presence" which is the same answer in jargon registers. Rewrite swaps abstract trio for
+            everyday-language equivalents (CPU/storage, hours of participation, peer relationships). */}
         <p className="text-xs text-gray-500 mb-8 leading-relaxed">
           The 100 ATP is a <strong className="text-gray-300">starter grant</strong> from the society&apos;s pool
-          when you join &mdash; not printed from thin air. The pool itself is anchored to witnessed measurement
-          of resources actually present in the society &mdash; compute, attention, peer presence &mdash; not
-          declared into being. Each society mints a fixed pool when it forms; new members receive enough to
-          participate, but must earn more through quality contributions. Pool changes are
+          when you join &mdash; not printed from thin air. The pool is anchored to{' '}
+          <strong className="text-gray-300">real resources members bring</strong>: CPU and storage they share,
+          hours of attention they spend participating, peer relationships they&apos;ve built &mdash; witnessed
+          and signed, not declared by an admin. Each society mints a fixed pool when it forms; new members
+          receive enough to participate, but must earn more through quality contributions. Pool changes are
           witnessed governance events, not silent admin actions &mdash;{' '}
           <a
             href="#initial-atp"
