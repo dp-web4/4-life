@@ -346,8 +346,10 @@ export default function LCTExplainerPage() {
               <p className="text-sm text-gray-300 mb-3">
                 The <span className="text-green-300">0x4c8f…a3f2</span> part is a cryptographic fingerprint tied to your device&apos;s
                 security chip — it never leaves the hardware, and it&apos;s the same every time you sign in. The{' '}
-                <span className="text-green-300">#alice.assistant1</span> part is a label you chose; it could be
-                <span className="italic"> anything</span> — pseudonymous, role-scoped, or even rotated per community.
+                <span className="text-green-300">#alice.assistant1</span> part is a label you chose — it could be
+                <span className="italic"> anything</span> (pseudonymous, role-scoped, even swapped per community).
+                Only the label is changeable; the cryptographic fingerprint above stays stable, so your trust history
+                follows you across label changes.
               </p>
               <p className="text-sm text-gray-300 mb-3">
                 <span className="font-bold">Two sessions, same entity:</span>{' '}
