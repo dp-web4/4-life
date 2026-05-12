@@ -687,7 +687,7 @@ export default function MRHExplorerPage() {
                 { title: 'Natural Privacy', desc: 'Entities beyond your horizon can\'t see your relationships. Privacy emerges from network structure, not access control lists.', color: '#06b6d4' },
                 { title: 'Computational Efficiency', desc: 'With ~10 connections per entity, depth-3 traversal covers ~1,000 entities instead of the entire network. O(d³) vs O(n).', color: '#8b5cf6' },
                 { title: 'Spam Prevention', desc: 'Actions outside your horizon cost exponentially more ATP. You can\'t spam people you don\'t know without burning through resources.', color: '#f59e0b' },
-                { title: 'Trust Accuracy', desc: 'Beyond 3 hops, trust signals degrade below statistical significance (Markov property). MRH stops before trust becomes noise.', color: '#10b981' },
+                { title: 'Trust Accuracy', desc: 'Beyond ~3 hops, trust signals fade into noise — too thin to base decisions on. MRH stops at the depth where the signal still carries information. (Mathematicians call this the Markov property.)', color: '#10b981' },
               ].map(item => (
                 <div key={item.title} style={{
                   padding: '1rem', borderRadius: '0.5rem',
@@ -715,6 +715,10 @@ export default function MRHExplorerPage() {
             <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1rem', lineHeight: 1.6 }}>
               As trust propagates through the network, each hop <strong>multiplicatively reduces</strong> the signal.
               With a decay factor of 0.9 per hop and typical edge trust of 0.85:
+            </p>
+            <p style={{ color: 'var(--color-text-muted)', marginBottom: '1rem', lineHeight: 1.6, fontSize: '0.85rem' }}>
+              <strong style={{ color: 'var(--color-text-secondary)' }}>Why 0.9?</strong> This explorer uses 0.9 because it&apos;s the value that lands trust at roughly 50% by depth 3 — the threshold below which signals stop carrying useful information.
+              The parameter is calibrated to the depth-3 cutoff, not the other way around. Other Web4 surfaces use a coarser <code style={{ fontSize: '0.85em' }}>0.7^n</code> approximation for the same shape; both reach noise-floor at depth 3-4.
             </p>
 
             <div style={{ marginBottom: '1rem' }}>
