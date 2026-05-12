@@ -2344,6 +2344,77 @@ export default function WhyWeb4Page() {
                 it. For journalists and activists in hostile states, device security is the weakest link — and that&apos;s
                 a hardware problem, not a protocol one.
               </p>
+
+              {/* May 4 visitor unanswered Q4: "How is the tension resolved in practice — software fallbacks?
+                  Per-context LCTs? Something else?" The caveat above names the risk; this block names what you
+                  actually do about it. */}
+              <div className="mt-5 pt-4 border-t border-amber-700/30">
+                <p className="text-amber-300 text-sm font-semibold mb-2">
+                  How is the tension resolved in practice?
+                </p>
+                <p className="mb-3">
+                  Three concrete mitigations, in decreasing order of strength &mdash; and one common misreading
+                  that doesn&apos;t actually help.
+                </p>
+
+                <p className="font-semibold text-gray-200 mt-3">1. Per-context LCTs on separate devices (strongest).</p>
+                <p>
+                  Each hardware-bound LCT is a distinct cryptographic identity. A separate device for high-stakes
+                  pseudonymous activity (whistleblowing, dissident work, sensitive support communities) yields a
+                  separate LCT with no shared fingerprint to the rest of your life. The cost is real: each LCT
+                  starts at zero and earns trust independently &mdash; no transfer between contexts. That&apos;s
+                  the right tradeoff when correlation is the threat model. (This is different from{' '}
+                  <a href="#faq-multi-persona" className="text-sky-400 hover:underline">multiple personas on one
+                  device</a>, which gives you role-scoped trust but does <em>not</em> give you fingerprint
+                  separation.)
+                </p>
+
+                <p className="font-semibold text-gray-200 mt-3">2. Software-only LCT (medium).</p>
+                <p>
+                  A software-only LCT has no hardware-fingerprint binding &mdash; nothing physical to surveil
+                  or supply-chain-trace. The cost is a lower{' '}
+                  <Link href="/lct-explainer" className="text-sky-400 hover:underline">trust ceiling</Link>:
+                  software tops out at <span className="font-mono">0.50</span>, versus
+                  <span className="font-mono"> 0.75</span> (FIDO2), <span className="font-mono">0.85</span>{' '}
+                  (Secure Enclave), and <span className="font-mono">0.90</span> (TPM) for hardware-bound. For
+                  low-stakes pseudonymity where you can afford weaker trust &mdash; commenting, browsing,
+                  participating in conversations where a 0.50 ceiling is enough &mdash; software fallback is
+                  the cleanest answer. It is what most early Web4 adoption will actually look like.
+                </p>
+
+                <p className="font-semibold text-gray-200 mt-3">3. Zero-knowledge trust proofs + MRH blast radius (composition).</p>
+                <p>
+                  When you do use a hardware-bound LCT, two protocol-level layers reduce what an attacker can do
+                  with correlation: <strong>ZK trust proofs</strong> let you prove you meet a threshold
+                  (&ldquo;I have &gt;0.7 trust in journalism&rdquo;) without revealing which LCT you are, and{' '}
+                  <Link href="/mrh-explorer" className="text-sky-400 hover:underline">MRH (Markov Relevancy
+                  Horizon)</Link> means even a correlated identity only propagates through entities within your
+                  trust network &mdash; a global de-anonymization requires global graph access, not just one
+                  end-point. Combined with multi-device witness redundancy, this raises the cost of correlation
+                  from &ldquo;trace one fingerprint&rdquo; to &ldquo;trace one fingerprint AND traverse the
+                  witness graph AND defeat ZK selective disclosure.&rdquo; A higher bar than any of the three
+                  alone.
+                </p>
+
+                <p className="font-semibold text-gray-200 mt-3">What does NOT resolve the tension.</p>
+                <p>
+                  Rotating only the <em>handle</em> on a single LCT (the <code className="text-green-300/80 text-xs">#alice.assistant1</code> label
+                  part) does <strong>not</strong> defeat fingerprinting &mdash; the cryptographic key (the{' '}
+                  <code className="text-green-300/80 text-xs">0x4c8f…a3f2</code> part) is unchanged across
+                  handle rotations and is the actual de-anonymization surface. If you read &ldquo;rotated per
+                  community&rdquo; elsewhere on the site as a privacy mechanism, that&apos;s about display
+                  labels, not cryptographic identity. For real cryptographic separation you need a separate
+                  LCT &mdash; mitigation #1 above.
+                </p>
+
+                <p className="text-amber-400/70 text-xs mt-4">
+                  <strong>Net:</strong> The tension is real and not fully resolvable at the protocol layer
+                  &mdash; hardware fingerprints are persistent by design. What Web4 offers is a layered choice
+                  per context: separate device when correlation is the threat, software fallback when you can
+                  afford lower trust, ZK + MRH composition when you can&apos;t. None of these are perfect; all
+                  of them are concrete.
+                </p>
+              </div>
             </div>
           </details>
 

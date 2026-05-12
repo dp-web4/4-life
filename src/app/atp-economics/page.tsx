@@ -608,8 +608,10 @@ export default function ATPEconomicsPage() {
             ATP comes from, it's whether minting can be inflated. */}
         <p className="text-xs text-gray-500 mb-8 leading-relaxed">
           The 100 ATP is a <strong className="text-gray-300">starter grant</strong> from the society&apos;s pool
-          when you join &mdash; not printed from thin air. Each society mints a fixed pool when it forms; new members
-          receive enough to participate, but must earn more through quality contributions. Pool changes are
+          when you join &mdash; not printed from thin air. The pool itself is anchored to witnessed measurement
+          of resources actually present in the society &mdash; compute, attention, peer presence &mdash; not
+          declared into being. Each society mints a fixed pool when it forms; new members receive enough to
+          participate, but must earn more through quality contributions. Pool changes are
           witnessed governance events, not silent admin actions &mdash;{' '}
           <a
             href="#initial-atp"
