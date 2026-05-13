@@ -572,14 +572,16 @@ export default function ATPEconomicsPage() {
             confirmations worth even less.
           </p>
 
-          {/* Cold-start callout — Apr 17 visitor LOW #9 */}
+          {/* Cold-start callout — Apr 17 visitor LOW #9; May 12 unanswered Q3 reframe */}
           <div className="mt-4 pt-4 border-t border-emerald-800/30">
             <p className="text-sm font-semibold text-emerald-300 mb-2">
-              What about a brand-new community where nobody has built trust yet?
+              What about a brand-new community — or a small group with only a few peers to confirm work?
             </p>
             <p className="text-gray-400 text-sm leading-relaxed">
               Every participant starts at the same baseline — trust ≈ 0.5, 100 ATP grant.
               In that state, all confirmations weigh equally low, but they still count.
+              <strong className="text-gray-300"> Even three founders who confirm each other&apos;s work can recharge ATP from day one</strong> —
+              the system requires <em>reciprocity density</em> (peers who actually engage), not a minimum head-count.
               Over roughly <strong className="text-gray-300">100 quality actions across the community</strong>,
               trust starts sorting: people who confirmed work that others later also confirmed gain
               confirmer-trust; people who confirmed spam lose it. First-mover advantage fades on a
