@@ -129,7 +129,11 @@ export default function HomePage() {
 
       {/* Acronyms preview — Apr 26 visitor LOW added the preview itself.
           Apr 30 visitor LOW: "'5 acronyms you'll meet' framing announces difficulty up front" —
-          reframe header to lead with plain-English ideas; acronyms remain as muted shorthand below. */}
+          reframe header to lead with plain-English ideas; acronyms remain as muted shorthand below.
+          May 12 visitor LOW: "All 5 acronyms appear in the 'key ideas' grid before any one is explained" —
+          drop the inline (LCT)/(ATP)/etc. parentheticals from each line so the grid actually reads as
+          plain English; consolidate the shorthands into one compact pointer at the bottom for visitors
+          who want recognition anchors. Order matches the bullet list above (LCT, ATP, T3, MRH, CI). */}
       <section style={{
         maxWidth: '36rem',
         margin: '0 auto',
@@ -159,11 +163,11 @@ export default function HomePage() {
           color: 'var(--color-text-secondary)',
           lineHeight: 1.5,
         }}>
-          <li><strong style={{ color: 'var(--color-text)' }}>Identity</strong> <span style={{ color: 'var(--color-text-muted)' }}>(LCT)</span> — your hardware-bound digital ID</li>
-          <li><strong style={{ color: 'var(--color-text)' }}>Energy</strong> <span style={{ color: 'var(--color-text-muted)' }}>(ATP)</span> — budget you spend to act</li>
-          <li><strong style={{ color: 'var(--color-text)' }}>Trust</strong> <span style={{ color: 'var(--color-text-muted)' }}>(T3)</span> — your three-dimensional trust score</li>
-          <li><strong style={{ color: 'var(--color-text)' }}>Neighborhood</strong> <span style={{ color: 'var(--color-text-muted)' }}>(MRH)</span> — who can reach you (3 hops max)</li>
-          <li><strong style={{ color: 'var(--color-text)' }}>Consistency</strong> <span style={{ color: 'var(--color-text-muted)' }}>(CI)</span> — does your behavior add up?</li>
+          <li><strong style={{ color: 'var(--color-text)' }}>Identity</strong> — your hardware-bound digital ID</li>
+          <li><strong style={{ color: 'var(--color-text)' }}>Energy</strong> — budget you spend to act</li>
+          <li><strong style={{ color: 'var(--color-text)' }}>Trust</strong> — your three-dimensional trust score</li>
+          <li><strong style={{ color: 'var(--color-text)' }}>Neighborhood</strong> — who can reach you (3 hops max)</li>
+          <li><strong style={{ color: 'var(--color-text)' }}>Consistency</strong> — does your behavior add up?</li>
         </ul>
         <p style={{
           margin: '0.55rem 0 0',
@@ -171,7 +175,7 @@ export default function HomePage() {
           color: 'var(--color-text-muted)',
           textAlign: 'center',
         }}>
-          All terms also in the glossary (<strong>Aa</strong>, bottom-left).
+          Shorthand: LCT, ATP, T3, MRH, CI — full definitions in the glossary (<strong>Aa</strong>, bottom-left).
         </p>
       </section>
 
