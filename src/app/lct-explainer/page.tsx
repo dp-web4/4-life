@@ -340,13 +340,22 @@ export default function LCTExplainerPage() {
               <p className="text-sm text-gray-300 mb-3">
                 Suppose you pick the handle <span className="font-bold">alice.assistant1</span>. Your LCT looks like this:
               </p>
-              <pre className="text-xs bg-black/40 border border-gray-700 rounded px-3 py-2 overflow-x-auto text-green-300 mb-3">
-                <code>lct:web4:0x4c8f…a3f2#alice.assistant1</code>
+              {/* 2026-05-13 visitor MEDIUM: visitor had to infer which portion is immutable. Color-split the example and label each portion. */}
+              <pre className="text-xs bg-black/40 border border-gray-700 rounded px-3 py-2 overflow-x-auto mb-2">
+                <code><span className="text-emerald-300">lct:web4:0x4c8f…a3f2</span><span className="text-amber-300">#alice.assistant1</span></code>
               </pre>
+              <div className="flex flex-wrap gap-2 mb-3 text-[10px]">
+                <span className="px-2 py-0.5 rounded bg-emerald-900/40 border border-emerald-700/50 text-emerald-300">
+                  <span className="font-mono">0x4c8f…a3f2</span> &mdash; hardware-anchored, cannot change
+                </span>
+                <span className="px-2 py-0.5 rounded bg-amber-900/40 border border-amber-700/50 text-amber-300">
+                  <span className="font-mono">#alice.assistant1</span> &mdash; label you chose, can change
+                </span>
+              </div>
               <p className="text-sm text-gray-300 mb-3">
-                The <span className="text-green-300">0x4c8f…a3f2</span> part is a cryptographic fingerprint tied to your device&apos;s
+                The <span className="text-emerald-300">0x4c8f…a3f2</span> part is a cryptographic fingerprint tied to your device&apos;s
                 security chip — it never leaves the hardware, and it&apos;s the same every time you sign in. The{' '}
-                <span className="text-green-300">#alice.assistant1</span> part is a label you chose — it could be
+                <span className="text-amber-300">#alice.assistant1</span> part is a label you chose — it could be
                 <span className="italic"> anything</span> (pseudonymous, role-scoped, even swapped per community).
                 Only the label is changeable; the cryptographic fingerprint above stays stable, so your trust history
                 follows you across label changes.

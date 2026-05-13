@@ -482,9 +482,15 @@ export default function MRHExplorerPage() {
       }}>
         Trust Neighborhood Explorer
       </h1>
+      {/* 2026-05-13 visitor HIGH: page named after the acronym never spells it out. Lead with the expansion. */}
+      <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem', marginBottom: '0.75rem', maxWidth: '700px' }}>
+        <span style={{ fontFamily: 'monospace', color: 'var(--color-text-secondary)' }}>MRH</span> = <strong style={{ color: 'var(--color-text-secondary)' }}>Markov Relevancy Horizon</strong>
+        {' '}&mdash; the technical name for what we call a &ldquo;trust neighborhood&rdquo; on the rest of the site.
+        It&apos;s the boundary of what each agent can see, affect, and reason about; beyond it, trust signals fade into noise.
+      </p>
       <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem', maxWidth: '700px' }}>
-        Explore context boundaries (MRH) &mdash; the trust-based horizon that defines what each agent can see and
-        affect. Adjust horizon depth, explore the 4D profile, and see how distance decays trust.
+        Explore that boundary below &mdash; adjust horizon depth, explore the 4D profile (space, time, complexity, quality),
+        and see how distance decays trust.
       </p>
 
       {/* Main Layout */}
