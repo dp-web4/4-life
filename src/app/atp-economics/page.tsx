@@ -611,23 +611,31 @@ export default function ATPEconomicsPage() {
             May 12 visitor MEDIUM: "anchored to witnessed measurement of resources" reads as abstract jargon —
             visitor literally guessed "computational? human labor? storage?" The page used "compute, attention,
             peer presence" which is the same answer in jargon registers. Rewrite swaps abstract trio for
-            everyday-language equivalents (CPU/storage, hours of participation, peer relationships). */}
-        <p className="text-xs text-gray-500 mb-8 leading-relaxed">
-          The 100 ATP is a <strong className="text-gray-300">starter grant</strong> from the society&apos;s pool
-          when you join &mdash; not printed from thin air. The pool is anchored to{' '}
-          <strong className="text-gray-300">real resources members bring</strong>: CPU and storage they share,
-          hours of attention they spend participating, peer relationships they&apos;ve built &mdash; witnessed
-          and signed, not declared by an admin. Each society mints a fixed pool when it forms; new members
-          receive enough to participate, but must earn more through quality contributions. Pool changes are
-          witnessed governance events, not silent admin actions &mdash;{' '}
-          <a
-            href="#initial-atp"
-            onClick={(e) => { e.preventDefault(); const el = document.getElementById('initial-atp'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}
-            className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
-          >
-            full mechanics + what prevents admin abuse ↓
-          </a>
-        </p>
+            everyday-language equivalents (CPU/storage, hours of participation, peer relationships).
+            May 13 visitor MEDIUM: prior text-xs muted-gray styling read as a footnote — visitor skipped it
+            and concluded the answer was "buried below the simulator." Promoted to a proper callout box so
+            the first-time "where does the 100 ATP come from?" question gets first-time visual weight. */}
+        <div className="mb-8 bg-sky-900/10 border border-sky-700/40 rounded-lg p-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-sky-300 mb-2">
+            Where does the 100 ATP come from?
+          </p>
+          <p className="text-sm text-gray-300 leading-relaxed">
+            It&apos;s a <strong className="text-gray-100">starter grant</strong> from the society&apos;s pool
+            when you join &mdash; not printed from thin air. The pool is anchored to{' '}
+            <strong className="text-gray-100">real resources members bring</strong>: CPU and storage they share,
+            hours of attention they spend participating, peer relationships they&apos;ve built &mdash; witnessed
+            and signed, not declared by an admin. Each society mints a fixed pool when it forms; new members
+            receive enough to participate, but must earn more through quality contributions. Pool changes are
+            witnessed governance events, not silent admin actions &mdash;{' '}
+            <a
+              href="#initial-atp"
+              onClick={(e) => { e.preventDefault(); const el = document.getElementById('initial-atp'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}
+              className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
+            >
+              full mechanics + what prevents admin abuse ↓
+            </a>
+          </p>
+        </div>
 
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8">
           {/* ATP Bar */}
