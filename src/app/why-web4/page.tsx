@@ -2868,51 +2868,58 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Veracity weaponization — Apr 30 visitor unanswered Q4: "Each community defines quality" is the worry, not the answer.
-              Synthesizes existing on-site mechanisms (witness attestation, accuser asymmetry, role isolation, MRH decay, pseudonymity)
-              into the visitor's exact framing, with honest caveat about residual risk. */}
+              Reframed May 13 (visitor MEDIUM): originally 5-bullet stack read as defensive ("if any mechanism were clean, you wouldn't need five").
+              Now leads with the load-bearing mechanism (cost asymmetry + witness foundation); supporting layers nested in a "defense in depth" collapsible.
+              Honest caveat preserved verbatim. */}
           <details id="faq-veracity-weaponization" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What stops a community from defining &ldquo;low quality&rdquo; as &ldquo;disagrees with us politically&rdquo;?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
-            <div className="mt-4 text-gray-300 text-sm space-y-2">
+            <div className="mt-4 text-gray-300 text-sm space-y-3">
               <p>
                 This is the right worry to have. &ldquo;Each community defines quality&rdquo; (the{" "}
                 <a href="#faq-cultural-quality" className="text-sky-400 hover:underline">cultural-quality FAQ above</a>)
-                is genuinely how V3 scoring works &mdash; and on its own, it sounds like an invitation to weaponize
-                Veracity against dissent. Web4 doesn&apos;t eliminate that risk; it stacks several mechanisms that raise the cost
-                and limit the blast radius.
+                is genuinely how V3 scoring works. The core protection isn&apos;t a stack of safeguards &mdash;
+                it&apos;s a single mechanism that makes weaponization self-defeating.
               </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>Veracity is witness-attested, not single-judge.</strong> A &ldquo;low Veracity&rdquo; verdict
-                  isn&apos;t one moderator&apos;s opinion &mdash; it requires <em>multiple parties</em> attesting to factual
-                  accuracy or honesty. A community can rig its own committee, but rigging a witness network is
-                  much harder than flipping a flag.</li>
-                <li><strong>False accusations cost the accuser.</strong> If a community&apos;s assessments of you
-                  consistently disagree with everyone else&apos;s experience &mdash; especially with witnesses outside the
-                  bubble &mdash; the <em>accusers&apos;</em> own Veracity scores drop. (See{" "}
-                  <a href="#faq-powerful-liar" className="text-sky-400 hover:underline">powerful-liar FAQ</a>:
-                  &ldquo;Lying is expensive.&rdquo;) Weaponizing Veracity is asymmetrically expensive for the
-                  accusing community.</li>
-                <li><strong>Political opinions live in a different role than skill.</strong> T3 separates Talent,
-                  Training, and Temperament <em>per role</em>. A community marking down your &ldquo;political opinion&rdquo;
-                  trust doesn&apos;t touch your &ldquo;research credibility&rdquo; trust &mdash; they&apos;re different
-                  dimensions, scored by different witnesses. (See{" "}
-                  <a href="#faq-context-collapse" className="text-sky-400 hover:underline">role-isolation FAQ</a>.)</li>
-                <li><strong>MRH decay limits the blast radius.</strong> Trust attestations from a politically-loaded community
-                  fall off rapidly with social distance &mdash; ~0.7&times; per hop, near zero past three hops.
-                  A bubble&apos;s consensus stays mostly inside the bubble; outside observers don&apos;t inherit it.</li>
-                <li><strong>Pseudonymity is an escape hatch for high-stakes dissent.</strong> Whistleblowers and political
-                  dissidents can hold separate LCTs per role and disclose only what each context requires &mdash; see the{" "}
-                  <a href="#faq-pseudonymous" className="text-sky-400 hover:underline">pseudonymity FAQ</a> for the
-                  selective-disclosure model. The system is designed assuming some communities will be hostile.</li>
-              </ul>
               <p>
-                Read together: a community <em>can</em> declare low Veracity for opinions it dislikes, but the verdict
-                only really sticks <em>inside</em> that community, costs the community&apos;s own Veracity if witnesses
-                outside disagree, doesn&apos;t propagate far, and doesn&apos;t cross over into your skill or character trust
-                in unrelated contexts.
+                <strong className="text-gray-200">The mechanism: weaponizing Veracity costs the accuser.</strong>{" "}
+                A &ldquo;low Veracity&rdquo; verdict isn&apos;t one moderator&apos;s opinion &mdash; it requires{" "}
+                <em>multiple witnesses</em> attesting to factual accuracy or honesty. When a community&apos;s assessments
+                consistently diverge from witnesses outside the bubble, the <em>accusers&apos;</em> own Veracity scores
+                drop. (See{" "}
+                <a href="#faq-powerful-liar" className="text-sky-400 hover:underline">powerful-liar FAQ</a>:
+                &ldquo;Lying is expensive.&rdquo;) The community can rig its own committee, but it can&apos;t rig
+                what outside witnesses observe &mdash; and the gap shows up on the accusers&apos; ledger, not just the
+                target&apos;s. Ideological enforcement isn&apos;t blocked; it&apos;s priced in.
               </p>
+              <p>
+                That asymmetry is the load-bearing piece. Three structural features reinforce it &mdash; role isolation,
+                distance decay, and pseudonymity &mdash; but each is a backstop, not the primary defense.
+              </p>
+
+              <details className="bg-gray-900/40 border border-gray-700/60 rounded-lg p-4 cursor-pointer">
+                <summary className="text-sm font-semibold text-gray-300 list-none flex justify-between items-center">
+                  <span>Defense in depth: three reinforcing layers</span>
+                  <span className="text-gray-500">+</span>
+                </summary>
+                <ul className="mt-3 list-disc list-inside space-y-1 text-gray-400 text-sm">
+                  <li><strong>Political opinions live in a different role than skill.</strong> T3 separates Talent,
+                    Training, and Temperament <em>per role</em>. A community marking down your &ldquo;political opinion&rdquo;
+                    trust doesn&apos;t touch your &ldquo;research credibility&rdquo; trust &mdash; they&apos;re different
+                    dimensions, scored by different witnesses. (See{" "}
+                    <a href="#faq-context-collapse" className="text-sky-400 hover:underline">role-isolation FAQ</a>.)</li>
+                  <li><strong>MRH decay limits the blast radius.</strong> Trust attestations from a politically-loaded community
+                    fall off rapidly with social distance &mdash; ~0.7&times; per hop, near zero past three hops.
+                    A bubble&apos;s consensus stays mostly inside the bubble; outside observers don&apos;t inherit it.</li>
+                  <li><strong>Pseudonymity is an escape hatch for high-stakes dissent.</strong> Whistleblowers and political
+                    dissidents can hold separate LCTs per role and disclose only what each context requires &mdash; see the{" "}
+                    <a href="#faq-pseudonymous" className="text-sky-400 hover:underline">pseudonymity FAQ</a> for the
+                    selective-disclosure model. The system is designed assuming some communities will be hostile.</li>
+                </ul>
+              </details>
+
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Within-bubble enforcement is <em>not eliminated</em>. If you live entirely
                 inside one community and that community decides you&apos;re heretical, your local trust still suffers &mdash;
