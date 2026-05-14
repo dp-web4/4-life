@@ -808,9 +808,16 @@ export default function AlivenessExplainer() {
                 <li><strong>Relational:</strong> Relationship consistency (context boundary integrity)</li>
               </ul>
               <p className="detail-emphasis">
-                CI = (spatial × capability × temporal × relational)^(1/4). Geometric mean means
-                <strong>one low dimension tanks everything</strong>.
+                Geometric mean means <strong>one low dimension tanks everything</strong>.
               </p>
+              <details style={{ marginTop: '0.5rem' }}>
+                <summary style={{ cursor: 'pointer', color: '#94a3b8', fontSize: '0.875rem' }}>
+                  Show the formula
+                </summary>
+                <p style={{ marginTop: '0.5rem', fontFamily: 'monospace', fontSize: '0.875rem' }}>
+                  CI = (spatial × capability × temporal × relational)^(1/4)
+                </p>
+              </details>
             </div>
             <p className="learn-more">
               <Link href="/coherence-index">Learn about Coherence Index →</Link>
