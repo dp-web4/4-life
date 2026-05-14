@@ -216,14 +216,31 @@ export default function CoherenceIndexPage() {
                 </div>
               </div>
             </div>
-            <div className="text-xs text-gray-500 mt-3 border-t border-gray-800 pt-3">
-              {/* Apr 30 LOW: lead with the squaring intuition; formula follows.
-                  Apr 23 LOW originally added the rationale; visitor asked for it before the formula, not after. */}
-              Small drops in coherence should hurt more than linear &mdash; inconsistency breaks trust <em>and</em> creates ambiguity about which version of you is acting. So we square the coherence factor:{" "}
-              <code className="text-gray-300">Effective trust = T3 × CI²</code>.{" "}
-              Your reputation matters, but only if your current behavior still looks like you.{" "}
-              Need a T3 refresher? <Link href="/trust-tensor" className="text-sky-400 hover:text-sky-300">See the Trust Tensor page</Link>.
+          </div>
+
+          {/* May 14 MEDIUM: visitor read the page end-to-end and still asked
+              "why is the formula CI² and not just CI?" — the rationale used to
+              live in a tiny text-xs footer of the T3-vs-CI card above and was
+              invisible. Promoted to its own visible callout where the formula
+              first appears. */}
+          <div className="bg-orange-950/20 border border-orange-800/30 rounded-lg p-5 mb-6">
+            <div className="text-sm font-semibold text-orange-300 mb-2">
+              Why is it CI<sup>2</sup>, not just CI?
             </div>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Small drops in coherence should hurt more than linear &mdash;
+              inconsistency breaks trust <em>and</em> creates ambiguity about
+              which version of you is acting. So we square the coherence factor:{" "}
+              <code className="text-gray-200">Effective trust = T3 × CI²</code>.{" "}
+              That way a 10% dip (CI = 0.9) only costs you about 19% of effective
+              trust (0.9² = 0.81), but a 40% dip (CI = 0.6) costs you 64% (0.6² = 0.36).
+              Your reputation matters &mdash; but only if your current behavior
+              still looks like you.{" "}
+              Need a T3 refresher?{" "}
+              <Link href="/trust-tensor" className="text-sky-400 hover:text-sky-300">
+                See the Trust Tensor page
+              </Link>.
+            </p>
           </div>
 
           {/* Apr 28 LOW: anchor "grounding event" upfront — term recurs throughout the page; visitor asked for one definition near the top */}
@@ -375,10 +392,33 @@ export default function CoherenceIndexPage() {
           <h2 className="text-3xl font-bold mb-6 text-gray-100">
             The Four Coherence Dimensions
           </h2>
-          <p className="text-gray-400 mb-8">
+          <p className="text-gray-400 mb-4">
             Web4 measures coherence across four independent dimensions. All must
             be consistent for full trust access.
           </p>
+
+          {/* May 14 MEDIUM: visitor read the four dimensions in sequence and
+              felt watched ("this is a lot of behavioral surveillance") before
+              reaching the reassurance card lower on the page. Naming the
+              concern up front gives the dimensions a defensible frame to read
+              against. The fuller reassurance lives at #not-surveillance below. */}
+          <div className="bg-slate-900/30 border-l-4 border-slate-600/60 rounded-r p-4 mb-8 text-sm text-gray-300">
+            <strong className="text-gray-200">Before you read these:</strong>{" "}
+            location, hardware, timing, and relationships sound like a lot of
+            behavioral surveillance. The design constrains where these checks
+            run and who gets to see the result &mdash;{" "}
+            <a
+              href="#not-surveillance"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("not-surveillance")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="text-sky-400 hover:text-sky-300 underline cursor-pointer"
+            >
+              the constraints and the open questions are below the dimensions ↓
+            </a>
+            .
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Spatial */}
@@ -510,8 +550,9 @@ export default function CoherenceIndexPage() {
             </div>
           </div>
 
-          {/* Privacy reassurance — Apr 25 visitor LOW: "isn't this surveillance?" */}
-          <div className="mt-8 bg-slate-900/40 border border-slate-700/40 rounded-lg p-5">
+          {/* Privacy reassurance — Apr 25 visitor LOW: "isn't this surveillance?"
+              May 14 MEDIUM: now also anchored from a preamble at top of section. */}
+          <div id="not-surveillance" className="mt-8 bg-slate-900/40 border border-slate-700/40 rounded-lg p-5 scroll-mt-24">
             <h3 className="text-base font-semibold text-slate-200 mb-2">
               Wait — isn&apos;t this surveillance?
             </h3>
