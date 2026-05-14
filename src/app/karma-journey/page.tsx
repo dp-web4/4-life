@@ -487,6 +487,22 @@ export default function KarmaJourneyPage() {
         Cooperative choices build slow trust; selfish choices yield quick gains but erode your legacy.
       </p>
 
+      {/* May 13 visitor LOW: trust archetype reveal isn't visible to first-pass visitors. Tease the carrot
+          before play — name count + describe families without spoiling specific archetype names. */}
+      <div style={{
+        padding: '0.75rem 1rem', borderRadius: '0.5rem', marginBottom: '1rem', maxWidth: '700px',
+        background: 'linear-gradient(135deg, rgba(110,231,183,0.05), rgba(147,197,253,0.05))',
+        border: '1px solid rgba(110,231,183,0.2)',
+        fontSize: '0.85rem', lineHeight: 1.55, color: 'var(--color-text-secondary)',
+      }}>
+        <strong style={{ color: '#6ee7b7' }}>There&rsquo;s a reveal waiting.</strong>{' '}
+        Finish one life and this page classifies you into one of seven trust archetypes
+        &mdash; some who play the long game, some who chase fast gains, some who experiment.
+        Which one you get is computed from how you actually play
+        (your trust trajectory, risk pattern, and whether you recover after mistakes), not preselected.
+        It&rsquo;s shareable.
+      </div>
+
       {/* May 3 visitor LOW #5: Karma Consequences vs Karma Journey naming overlap — both names sound interactive. Two-second disambiguation. */}
       <p style={{ color: 'var(--color-text-muted)', marginBottom: '1rem', maxWidth: '700px', lineHeight: 1.55, fontSize: '0.85rem' }}>
         <span style={{ color: '#6ee7b7', fontWeight: 600 }}>You are on the interactive sim.</span>{' '}
