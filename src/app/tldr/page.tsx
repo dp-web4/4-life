@@ -108,6 +108,17 @@ export default function TLDRPage() {
           </p>
         </div>
 
+        {/* May 14 visitor MEDIUM #5: /day-in-web4 was the page the visitor most wanted to find
+            but didn't reach until 66:00. It was already in TL;DR but buried inside the deferred
+            <details> toggle. This is a grounding line, not a competing CTA — the "Recommended
+            next step = First Contact" design (Apr 29 visitor HIGH) stays unchanged below. */}
+        <p className="text-sm text-gray-500 italic mb-10">
+          Wondering what it would actually look like?{' '}
+          <Link href="/day-in-web4#wireframes" className="text-sky-400 hover:underline not-italic">
+            See conceptual UI mockups &rarr;
+          </Link>
+        </p>
+
         {/* Status */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 mb-10">
           <h2 className="text-lg font-semibold text-amber-400 mb-2">Where is this now?</h2>
