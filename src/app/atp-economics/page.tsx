@@ -505,8 +505,8 @@ export default function ATPEconomicsPage() {
               </p>
               <p>
                 <strong className="text-gray-300">No quorum, no threshold.</strong>{' '}
-                <code className="text-sky-300 text-xs">confirmer_trust</code> &isin; [0, 1] is the confirmer&apos;s T3-derived score;{' '}
-                <code className="text-sky-300 text-xs">received_value_fraction</code> &isin; [0, 1] is the share of value attributed
+                <code className="text-sky-300 text-xs">confirmer_trust</code> (a number between 0 and 1) is the confirmer&apos;s T3-derived score;{' '}
+                <code className="text-sky-300 text-xs">received_value_fraction</code> (also between 0 and 1) is the share of value attributed
                 to that confirmer. Unconfirmed slices decay over a window of weeks &mdash; the cap means
                 you can&apos;t profit on a single action, only recover its cost.
               </p>
