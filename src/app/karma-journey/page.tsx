@@ -555,6 +555,14 @@ export default function KarmaJourneyPage() {
           <div style={{ fontSize: '0.75rem', color: '#fde68a', fontWeight: 600, marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Effective trust</div>
           <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '0.4rem', fontFamily: 'var(--font-mono)' }}>raw × CI²</div>
           <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>Decides your <strong style={{ color: 'var(--color-text-secondary)' }}>karma tier</strong> at death (Honored / Neutral / Constrained), which seeds your next life.</div>
+          {/* May 13 LOW — bridge "next life" simulation framing to the deployment mechanic at the point of use; the top-of-page intro callout was being read as preamble and missed. */}
+          <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', lineHeight: 1.55, marginTop: '0.5rem', fontStyle: 'italic', opacity: 0.85 }}>
+            &ldquo;Next life&rdquo; is simulation framing. In a deployed Web4 this is{' '}
+            <Link href="/aliveness#death-meaning" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.25)' }}>
+              license suspension and reinstatement
+            </Link>
+            , not deletion.
+          </div>
         </div>
       </div>
       <p style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '700px', lineHeight: 1.5 }}>
@@ -1070,7 +1078,8 @@ export default function KarmaJourneyPage() {
           }}>
             <strong style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem' }}>How It Works →</strong>
             <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', margin: '0.25rem 0 0' }}>
-              Understand the mechanics behind trust, energy, and rebirth
+              Understand the mechanics behind trust, energy, and rebirth{' '}
+              <span style={{ opacity: 0.7 }}>(license suspension, in deployment)</span>
             </p>
           </a>
         </div>
