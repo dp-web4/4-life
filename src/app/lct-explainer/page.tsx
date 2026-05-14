@@ -425,6 +425,10 @@ export default function LCTExplainerPage() {
             <h3 className="text-sm font-bold text-green-400 mb-2">
               What are &ldquo;device witnesses&rdquo;?
             </h3>
+            {/* May 14 visitor MEDIUM #4 — plain-English lede before meta-disclaimer */}
+            <p className="text-sm text-gray-200 mb-3">
+              <strong>The short answer:</strong> your laptop and phone vouch for each other &mdash; the network sees both signatures together, so no single device alone can claim to be you.
+            </p>
             <p className="text-xs text-gray-400 italic mb-3">
               Witnessing happens at two layers: (1) your own devices attest to each other, and (2) optional
               infrastructure nodes verify the network. This section covers layer 1 &mdash; layer 2
