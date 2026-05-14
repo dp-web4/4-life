@@ -108,6 +108,20 @@ export default function TLDRPage() {
           </p>
         </div>
 
+        {/* May 14 visitor MEDIUM #5: visitor reached /day-in-web4 only 60+ min in and reported
+            "This was the page I most wanted to find... wish I'd been pointed here earlier."
+            Surface the answer to "what does this actually look like?" inline — side-question
+            aside, NOT a competing next-step CTA (Apr 29 single-primary-CTA invariant preserved). */}
+        <div className="mb-10 border-l-2 border-amber-700/40 pl-4 py-1">
+          <p className="text-sm text-gray-400 leading-relaxed">
+            <span className="text-amber-300">Wondering what this would actually look like?</span>{' '}
+            <Link href="/day-in-web4#wireframes" className="text-sky-400 hover:underline">
+              See five conceptual interface mockups
+            </Link>{' '}
+            &mdash; mail, hiring, reviews, marketplaces, social feeds &mdash; with trust built in.
+          </p>
+        </div>
+
         {/* Status */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 mb-10">
           <h2 className="text-lg font-semibold text-amber-400 mb-2">Where is this now?</h2>
