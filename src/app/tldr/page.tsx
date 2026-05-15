@@ -26,7 +26,7 @@ export default function TLDRPage() {
           Web4 in 2 Minutes
         </h1>
         <p className="text-lg text-gray-400 leading-relaxed mb-10">
-          Plain English first &mdash; the acronyms (ATP, ADP, LCT) are spelled out the first time they appear. No prerequisites.
+          Plain English first &mdash; the acronyms (ATP, LCT) are spelled out the first time they appear. No prerequisites.
         </p>
 
         {/* The Problem */}
@@ -54,7 +54,7 @@ export default function TLDRPage() {
                 <strong className="text-white">Actions cost energy &mdash; valuable contributions earn it back.</strong> Posting,
                 messaging, voting — everything draws from a personal energy budget (called ATP — short for Allocation Transfer Packets),
                 but the budget refills continuously when others confirm your work was useful, so contributors don&apos;t get locked out.
-                Each action creates a receipt (ADP — Allocation Discharge Packets) recording what you spent. Spam drains the budget with no return.
+                Each action also creates a small receipt of what you spent. Spam drains the budget with no return.
               </p>
             </div>
             <div className="flex gap-3 items-start">
@@ -86,16 +86,21 @@ export default function TLDRPage() {
               </p>
             </div>
           </div>
-          {/* May 3 visitor LOW #4 + May 13 visitor MEDIUM: previously named MRH/CI but skipped T3 entirely, and never expanded the letters. Naive readers were meeting these acronyms unprepared on later pages. */}
-          <p className="text-gray-500 text-sm leading-relaxed mt-4 pl-9 italic">
-            Three shorthand names show up later on their own pages, so you have a hook when you meet them:{' '}
-            <Link href="/trust-tensor" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">T3 (Talent / Training / Temperament)</Link>{' '}
-            — the three dimensions of trust, scored per role;{' '}
-            <Link href="/markov-relevancy-horizon" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">MRH (Markov Relevancy Horizon)</Link>{' '}
-            — your trust neighborhood, distance-adjusted reach, 3 hops max; and{' '}
-            <Link href="/coherence-index" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">CI (Coherence Index)</Link>{' '}
-            — does your behavior add up over time. Skipped here to keep this short; the concept sequence on each page links the rest.
-          </p>
+          {/* May 3 visitor LOW #4 + May 13 visitor MEDIUM: previously named MRH/CI but skipped T3 entirely, and never expanded the letters. Naive readers were meeting these acronyms unprepared on later pages.
+              May 14 visitor MEDIUM #1: counting 6 acronyms on one short page felt dense. Trade-off this iteration: keep the cold-hit hook (letters T3/MRH/CI still visible in the <summary> line so a later page's mention isn't a cold drop) but move the expanded gloss behind a click. Hypothesis to falsify next cycle: visitors who only want the 2-minute overview can ignore this; visitors meeting T3/MRH/CI on later pages still have a primed hook from the summary. */}
+          <details className="mt-4 pl-9">
+            <summary className="text-gray-500 text-sm italic cursor-pointer hover:text-gray-400 select-none">
+              Three more shorthand names (T3, MRH, CI) live on their own pages &mdash; tap to peek, or meet them when you get there
+            </summary>
+            <p className="text-gray-500 text-sm leading-relaxed mt-3 italic">
+              <Link href="/trust-tensor" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">T3 (Talent / Training / Temperament)</Link>{' '}
+              — the three dimensions of trust, scored per role;{' '}
+              <Link href="/markov-relevancy-horizon" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">MRH (Markov Relevancy Horizon)</Link>{' '}
+              — your trust neighborhood, distance-adjusted reach, 3 hops max; and{' '}
+              <Link href="/coherence-index" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">CI (Coherence Index)</Link>{' '}
+              — does your behavior add up over time. The concept sequence on each page links the rest.
+            </p>
+          </details>
         </div>
 
         {/* The Result */}
