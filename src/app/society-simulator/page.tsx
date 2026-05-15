@@ -3264,6 +3264,9 @@ export default function SocietySimulatorPage() {
         {/* Web4 Connection */}
         <div className="mb-4 bg-emerald-900/20 border border-emerald-800 rounded-lg p-4">
           <h2 className="text-base font-bold mb-2 text-emerald-400">How This Demonstrates Web4</h2>
+          <p className="text-sm text-emerald-200/90 mb-3 bg-emerald-950/40 border-l-2 border-emerald-600 pl-3 py-1.5 rounded">
+            New to these terms? Start with <a href="/first-contact" className="text-emerald-300 underline hover:text-emerald-200 font-medium">First Contact</a> — a 12-minute guided introduction. Then the acronyms below will make sense.
+          </p>
           <p className="text-gray-300 text-sm mb-2">
             Each agent has <ATP>ATP</ATP> (energy budget) and a <T3>Trust Tensor</T3> (reputation).
             Actions cost ATP. Cooperation builds trust. Defection may win short-term but gets isolated.
@@ -3275,9 +3278,6 @@ export default function SocietySimulatorPage() {
             <ATP>ATP</ATP> (energy bars drain on actions, recharge from cooperation),{' '}
             <T3>T3</T3> (reputation updates after each trust decision),{' '}
             <CI>CI</CI> (coherence tracks behavioral consistency).
-          </p>
-          <p className="text-xs text-gray-500">
-            New to Web4? Start with <a href="/first-contact" className="text-emerald-400 hover:underline">First Contact</a> — a 12-minute guided introduction.
           </p>
         </div>
 
@@ -3297,7 +3297,7 @@ export default function SocietySimulatorPage() {
             <div className="bg-amber-900/15 border border-amber-800/40 rounded-lg p-3">
               <div className="text-xs font-bold text-amber-300 mb-1.5">~ Simplified for visualization</div>
               <p className="text-gray-300 text-xs">
-                Trust here is a <em>scalar</em> <code className="text-amber-200 bg-amber-950/40 px-1 rounded text-[11px]">reputation</code> (community-averaged), not the full <T3>T3</T3> tensor (Talent/Training/Temperament). No <span className="text-amber-200">MRH</span> hop-decay, no V3 output scoring, no explicit witness layer. Twelve agents and a few rounds; production would be far larger.
+                Trust here is a <em>scalar</em> <code className="text-amber-200 bg-amber-950/40 px-1 rounded text-[11px]">reputation</code> (community-averaged), not the full <T3>T3</T3> tensor (Talent/Training/Temperament). It also doesn&rsquo;t fade with social distance (<span className="text-amber-200">MRH</span>), isn&rsquo;t scored per individual contribution (V3), and has no explicit witness layer. Twelve agents and a few rounds; production would be far larger.
               </p>
             </div>
             <div className="bg-sky-900/15 border border-sky-800/40 rounded-lg p-3">
