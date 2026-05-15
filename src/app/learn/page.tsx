@@ -155,7 +155,7 @@ export default function LearnJourney() {
           id: "aliveness",
           title: "Aliveness: Putting It All Together",
           teaser:
-            'In Web4, "alive" means: you have energy (attention budget), sufficient trust (across all three dimensions), and consistent behavior (coherence). Lose any of them? You die. But if you earned trust, you can be reborn.',
+            'In Web4, "alive" means: you have energy (an energy budget), sufficient trust (across all three dimensions), and consistent behavior (coherence). Lose any of them? You die. But if you earned trust, you can be reborn.',
           why: "Now that you know the building blocks, see how they combine. Aliveness is where identity + economics + trust + consistency become a living system.",
           link: "/aliveness",
           duration: "8 min read",

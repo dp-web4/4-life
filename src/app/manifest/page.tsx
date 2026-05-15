@@ -22,7 +22,7 @@ export default function ManifestPage() {
             <Link href="/lct-explainer" className="text-sky-400">↗</Link>
           </li>
           <li>
-            <strong>ATP (Allocation Transfer Packet):</strong> Attention budget inspired by biological ATP.
+            <strong>ATP (Allocation Transfer Packet):</strong> Energy budget inspired by biological ATP.
             Actions cost energy; quality earns it back. Spam dies from exhaustion.{" "}
             <Link href="/atp-economics" className="text-sky-400">↗</Link>
           </li>

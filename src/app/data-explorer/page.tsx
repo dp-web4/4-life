@@ -932,7 +932,7 @@ export default function DataExplorerPage() {
             <p>
               Each dataset captures a different simulation scenario. <strong className="text-white">Trust</strong> measures
               how the society perceives an agent (0-1 scale, 0.5 = trust threshold).
-              <strong className="text-white"> ATP</strong> is the attention budget — every action costs energy.
+              <strong className="text-white"> ATP</strong> is the energy budget — every action costs energy.
             </p>
             <p>
               <strong className="text-white">Karma</strong> carries trust consequences across lives.

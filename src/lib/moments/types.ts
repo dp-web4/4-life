@@ -50,7 +50,7 @@ export interface MomentStats {
 // Category display info
 export const CATEGORY_INFO: Record<MomentCategory, { label: string; emoji: string; description: string }> = {
   trust: { label: 'Trust', emoji: '🤝', description: 'Trust changes and dynamics' },
-  atp: { label: 'ATP', emoji: '⚡', description: 'Attention budget events' },
+  atp: { label: 'ATP', emoji: '⚡', description: 'Energy budget events' },
   karma: { label: 'Karma', emoji: '✨', description: 'Cross-life consequences' },
   learning: { label: 'Learning', emoji: '🧠', description: 'Cross-life maturation and growth' },
   crisis: { label: 'Crisis', emoji: '💀', description: 'Death and survival events' },

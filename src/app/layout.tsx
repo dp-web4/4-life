@@ -14,7 +14,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "4-Life | Trust-Native Internet Lab",
   description:
-    "Explore a trust-native internet through interactive simulations. See how hardware-bound identity, attention budgets, and permanent consequences create self-regulating digital societies.",
+    "Explore a trust-native internet through interactive simulations. See how hardware-bound identity, energy budgets, and permanent consequences create self-regulating digital societies.",
   metadataBase: new URL("https://4-life-ivory.vercel.app"),
   openGraph: {
     title: "4-Life | Trust-Native Internet Lab",

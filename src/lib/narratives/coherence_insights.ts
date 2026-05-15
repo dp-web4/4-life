@@ -55,7 +55,7 @@ export const DOMAIN_EXPLANATIONS: Record<CoherenceDomain, DomainExplanation> = {
     domain: CoherenceDomain.BIOCHEMISTRY,
     name: "ATP Metabolism",
     shortDesc: "Energy currency of life",
-    relevance: "Attention budget (ATP) governs what actions are affordable",
+    relevance: "Energy budget (ATP) governs what actions are affordable",
     keyInsight: "ATP scarcity forces prioritization - agency under energy constraint"
   },
   [CoherenceDomain.BIOPHYSICS]: {

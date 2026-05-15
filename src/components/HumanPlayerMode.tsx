@@ -479,7 +479,7 @@ function GameOverPanel({
         </p>
       ) : (
         <p className="text-gray-300 mb-6">
-          Your attention budget (ATP) ran out — you can no longer act.
+          Your energy budget (ATP) ran out — you can no longer act.
         </p>
       )}
 
@@ -1050,7 +1050,7 @@ export default function HumanPlayerMode({ onExit }: HumanPlayerModeProps) {
           <div className="bg-gray-800/50 rounded-lg p-4 mb-6">
             <h4 className="font-bold text-white mb-2">How It Works</h4>
             <ul className="text-sm text-gray-400 space-y-2">
-              <li>• You start with 100 ATP (attention budget)</li>
+              <li>• You start with 100 ATP (energy budget)</li>
               <li>• Each interaction costs ATP, but cooperation rewards ATP</li>
               <li>• Build trust through consistent cooperation</li>
               <li>• Form coalitions with allies for mutual support</li>

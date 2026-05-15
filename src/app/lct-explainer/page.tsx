@@ -2200,7 +2200,7 @@ export default function LCTExplainerPage() {
 
             <a href="/atp-economics" className="block p-4 border border-gray-700 rounded-lg hover:border-purple-500 transition-all">
               <div className="font-bold text-gray-100 mb-1">ATP Economics</div>
-              <div className="text-sm text-gray-400">Attention budgets that LCTs earn and spend</div>
+              <div className="text-sm text-gray-400">Energy budgets that LCTs earn and spend</div>
             </a>
 
             <a href="/trust-neighborhood" className="block p-4 border border-gray-700 rounded-lg hover:border-purple-500 transition-all">
