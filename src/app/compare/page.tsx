@@ -489,7 +489,7 @@ export default function ComparePage() {
               </p>
               <p>
                 <strong className="text-white">ATP Trajectory:</strong> Tracks
-                the <TermTooltip term="ATP" /> attention budget. ATP decreases
+                the <TermTooltip term="ATP" /> energy budget. ATP decreases
                 with actions and increases with valuable contributions. The
                 crisis threshold (20) marks when agents face resource pressure.
               </p>

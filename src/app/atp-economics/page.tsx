@@ -178,7 +178,7 @@ export default function ATPEconomicsPage() {
           </p>
         </div>
 
-        {/* Old "energy/attention budget metaphors" italic line removed Apr 28 —
+        {/* Old "energy / attention-budget" metaphor italic line removed Apr 28 —
             the metaphor/expansion split is now made explicit in the hero clarifier above. */}
 
         {/* "What's settled vs what's still moving" — May 4 visitor LOW #11:
@@ -333,7 +333,7 @@ export default function ATPEconomicsPage() {
               depletes your budget
             </p>
             <p>
-              ✅ <strong>Death is real</strong> - Run out of attention budget? You die.
+              ✅ <strong>Death is real</strong> - Run out of energy budget? You die.
               But if you built trust, you&apos;re reborn with a head start — your reputation carries forward.
             </p>
             <p className="text-sm text-gray-400 mt-2">
@@ -873,7 +873,7 @@ export default function ATPEconomicsPage() {
             <p className="text-gray-300 text-sm leading-relaxed">
               High-value contributions earn more ATP than they cost. This isn't
               charity — it&apos;s how the system works. Value creators accumulate
-              attention budget. They thrive.
+              energy budget. They thrive.
             </p>
           </div>
 
@@ -1471,7 +1471,7 @@ export default function ATPEconomicsPage() {
                 work (ADP), maintain homeostasis. Run out of ATP? Death.
               </p>
               <p className="leading-relaxed mb-3">
-                Web4 societies work the same way. Agents have attention budgets.
+                Web4 societies work the same way. Agents have energy budgets.
                 Contribute value (earn ATP), take actions (spend ATP), maintain
                 reputation. Run out? Death.
               </p>
@@ -1508,7 +1508,7 @@ export default function ATPEconomicsPage() {
                     <tr className="border-b border-gray-800">
                       <td className="p-3 font-semibold">Purpose</td>
                       <td className="p-3">Speculative value, trading</td>
-                      <td className="p-3">Attention budget, usage</td>
+                      <td className="p-3">Energy budget, usage</td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="p-3 font-semibold">Transferability</td>

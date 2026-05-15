@@ -206,7 +206,7 @@ export default function GlossaryPage() {
               Energy Budget — ATP (Allocation Transfer Packet)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
-              The <strong>attention budget</strong> of Web4 societies—a charged value token
+              The <strong>energy budget</strong> of Web4 societies—a charged value token
               inspired by biological ATP. Every action costs ATP. Quality contributions earn ATP.
               Run out? You can&apos;t act until you earn more. This makes spam naturally self-limiting—spammers
               burn ATP faster than they earn it. ATP can be transferred between entities, but every

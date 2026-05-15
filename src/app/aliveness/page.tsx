@@ -729,7 +729,7 @@ export default function AlivenessExplainer() {
             <h3>1. Energy Budget</h3>
             <div className="concept-subtitle">ATP &gt; 0</div>
             <p>
-              You must have <strong>attention budget</strong> to exist. ATP (Allocation Transfer Packet)
+              You must have an <strong>energy budget</strong> to exist. ATP (Allocation Transfer Packet)
               is your energy. Every action costs ATP. Every valuable contribution earns ATP.
               When ATP reaches zero, <strong>you die immediately</strong>.
             </p>
@@ -1536,7 +1536,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
           <Link href="/atp-economics" className="concept-link-card">
             <h4>ATP/ADP Economics</h4>
             <p>
-              Attention budget system. ATP &gt; 0 is the first criterion of aliveness.
+              Energy budget system. ATP &gt; 0 is the first criterion of aliveness.
               Explains earning, spending, and sustainability.
             </p>
           </Link>

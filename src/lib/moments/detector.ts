@@ -161,8 +161,8 @@ export function detectMoments(rawData: any, source: SimulationSource): Moment[] 
         moments.push({
           id: `${source.id}-atp-crisis-${lifeNumber}-${j}`,
           title: `ATP Crisis: Only ${Math.round(curr)} Attention Remaining`,
-          narrative: `The agent's attention budget drops to ${Math.round(curr)} ATP — dangerously low. Without earning more through valuable contribution, they face death from exhaustion. Participation requires energy, and energy must be earned.`,
-          significance: 'ATP is the attention budget of Web4. Running low forces strategic decisions: conserve or contribute?',
+          narrative: `The agent's energy budget drops to ${Math.round(curr)} ATP — dangerously low. Without earning more through valuable contribution, they face death from exhaustion. Participation requires energy, and energy must be earned.`,
+          significance: 'ATP is the energy budget of Web4. Running low forces strategic decisions: conserve or contribute?',
           category: 'crisis',
           severity: 'high',
           tick,
