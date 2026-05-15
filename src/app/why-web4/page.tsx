@@ -39,7 +39,7 @@ export default function WhyWeb4Page() {
         <div className="mt-4 mb-2 text-sm text-gray-400 border-l-2 border-gray-700 pl-4 py-1">
           This page has three parts: <strong className="text-gray-200">the problems</strong> (~5 min),{" "}
           <strong className="text-gray-200">what Web4 proposes</strong> (~2 min), and{" "}
-          <strong className="text-gray-200">honest Q&amp;A</strong> (optional, 40+ questions collapsed by topic).
+          <strong className="text-gray-200">honest Q&amp;A</strong> (optional — skeptics&apos; questions, answered, collapsed by topic).
           Stop reading at any point — each section stands on its own. If you only have 2 minutes, try{" "}
           <Link href="/tldr" className="text-sky-400 hover:underline">the 2-minute TL;DR</Link> instead.
         </div>
@@ -315,7 +315,7 @@ export default function WhyWeb4Page() {
           <div className="bg-gray-900/50 border border-gray-700/50 rounded-lg p-4 mb-6">
             <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Four ideas, introduced one at a time below</p>
             <p className="text-xs text-gray-500">
-              Each concept is explained in plain English with its own card. Don&apos;t worry about acronyms — they&apos;re just shorthand. The ideas are what matter.
+              Each idea gets its own plain-English card below. Read them in order — they build on each other.
             </p>
           </div>
 
@@ -452,7 +452,7 @@ export default function WhyWeb4Page() {
         {/* FAQ index — jump to any question */}
         <details className="mb-8 text-sm border border-sky-800/30 rounded-lg p-3" id="faq-index">
           <summary className="text-sky-400 hover:text-sky-300 cursor-pointer list-none inline-flex items-center gap-1.5 font-semibold">
-            <span className="text-xs">▶</span> Browse all questions by topic (30+ FAQs)
+            <span className="text-xs">▶</span> Browse all questions by topic
           </summary>
           <nav className="mt-3 p-4 bg-gray-800/30 border border-gray-700/50 rounded-lg columns-1 sm:columns-2 gap-x-6">
             <div className="break-inside-avoid mb-4">
@@ -578,7 +578,7 @@ export default function WhyWeb4Page() {
           <p className="text-gray-400 text-xs mt-4">
             Click any question to jump to it. The{" "}
             <a href="#faq-index" className="text-sky-400 hover:underline">full topic index above</a>{" "}
-            has 40+ more.
+            has the rest, grouped by topic.
           </p>
         </div>
         <h3 className="text-sm uppercase tracking-wide text-amber-400/80 mb-4">Most asked</h3>
@@ -1062,14 +1062,14 @@ export default function WhyWeb4Page() {
             </Link>
           </div>
           <p className="text-xs text-gray-500 mt-3">
-            Or keep reading &mdash; 40+ questions in the &ldquo;Going deeper&rdquo; section below.
+            Or keep reading &mdash; more questions answered in the &ldquo;Going deeper&rdquo; section below.
           </p>
         </div>
 
         {/* All other FAQs — collapsed by default */}
         <details id="going-deeper" className="group">
           <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">
-            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 6 topics, 40+ questions</h3>
+            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — more questions, grouped by topic</h3>
             <span className="text-gray-500 text-sm group-open:rotate-90 transition-transform">▶</span>
           </summary>
 
