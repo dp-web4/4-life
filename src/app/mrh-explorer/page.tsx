@@ -483,10 +483,12 @@ export default function MRHExplorerPage() {
         Trust Neighborhood Explorer
       </h1>
       {/* 2026-05-13 visitor HIGH: page named after the acronym never spells it out. Lead with the expansion. */}
+      {/* 2026-05-14 visitor LOW: "Markov" needs a plain-English gloss — visitor's verbatim prescription. */}
       <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem', marginBottom: '0.75rem', maxWidth: '700px' }}>
         <span style={{ fontFamily: 'monospace', color: 'var(--color-text-secondary)' }}>MRH</span> = <strong style={{ color: 'var(--color-text-secondary)' }}>Markov Relevancy Horizon</strong>
         {' '}&mdash; the technical name for what we call a &ldquo;trust neighborhood&rdquo; on the rest of the site.
         It&apos;s the boundary of what each agent can see, affect, and reason about; beyond it, trust signals fade into noise.
+        {' '}<em style={{ color: 'var(--color-text-secondary)' }}>The &ldquo;Markov&rdquo; part:</em> the future depends only on the present &mdash; your history lives in your reputation, not in a log of every past step the network has to replay.
       </p>
       <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem', maxWidth: '700px' }}>
         Explore that boundary below &mdash; adjust horizon depth, explore the 4D profile (space, time, complexity, quality),
