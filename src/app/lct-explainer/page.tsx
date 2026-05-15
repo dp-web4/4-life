@@ -190,8 +190,10 @@ export default function LCTExplainerPage() {
             </div>
             <p className="text-gray-300 leading-relaxed">
               <strong>Linked</strong> &mdash; every LCT links to its creator (lineage), to the
-              devices that witness it, and to a tamper-evident creation record. That linkage is
-              what makes the token forge-resistant.
+              devices that witness it, and to a <em>tamper-evident</em> creation record &mdash;
+              meaning every entry is cryptographically chained to the one before it, so altering
+              or back-dating any record breaks the chain and is immediately detectable. That
+              linkage is what makes the token forge-resistant.
             </p>
             <p className="text-gray-300 leading-relaxed mt-3">
               <strong>Context</strong> &mdash; the device, platform, and role this LCT operates in.
@@ -212,8 +214,8 @@ export default function LCTExplainerPage() {
         <div className="bg-purple-950/30 border border-purple-800/40 rounded-xl p-6 mb-8">
           <h2 className="text-lg font-bold mb-3 text-purple-300">Key Takeaways</h2>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li className="flex gap-2"><span className="text-purple-400 shrink-0">1.</span> Your identity lives in your devices&apos; security chips — not in passwords or company databases</li>
-            <li className="flex gap-2"><span className="text-purple-400 shrink-0">2.</span> Multiple devices (phone, laptop, security key) witness each other, making faking exponentially harder <a href="#device-witnesses" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('device-witnesses')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(who runs this?)</a></li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">1.</span> Your identity lives in your devices&apos; security chips — not in passwords or company databases. The chip&apos;s private key is generated <em>inside</em> the silicon and physically can&apos;t leave it: not even the operating system or malware can read it out, so it can&apos;t be copied or forged. <span className="text-gray-500">(This is <em>the</em> reason hardware identity works.)</span></li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">2.</span> Multiple devices (phone, laptop, security key) witness each other, making faking exponentially harder. <span className="text-gray-500">Heads-up: &ldquo;witness&rdquo; means two distinct things on this page — (a) your <em>own</em> devices co-signing each other, and (b) optional outside infrastructure nodes. Most of the page means sense (a).</span> <a href="#device-witnesses" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('device-witnesses')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(both senses explained)</a></li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">3.</span> If you lose a device, your other devices can recover your identity — no &quot;forgot password&quot; needed <a href="#recovery" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('recovery')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(minutes to hours with multi-device; days if only one)</a></li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">4.</span> This is pseudonymous — your reputation follows you, but your real name doesn&apos;t have to</li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">5.</span> Every trust change is logged in a tamper-evident <a href="#trust-transparency" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('trust-transparency')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline">transparency log</a> — you can audit your own trust history</li>
