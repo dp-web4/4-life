@@ -565,10 +565,24 @@ export default function KarmaJourneyPage() {
           </div>
         </div>
       </div>
-      <p style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '700px', lineHeight: 1.5 }}>
-        <strong style={{ color: 'var(--color-text-secondary)' }}>Why square CI (and not cube or linear)?</strong>{' '}
-        Consistency compounds. A small dip barely shows (0.9² = 0.81) but a serious inconsistency nearly halves you (0.6² = 0.36). Squaring punishes erratic behavior far more than it rewards perfect consistency. Linear (× CI) would treat a 0.6 the same as a 0.9 in proportion to perfect — too forgiving. Cubing (× CI³) would crush 0.9 down to 0.73 — too brutal for routine variance. Square sits in the gentle middle: small dips forgiven, sustained dips compound.
-      </p>
+      {/* May 15 visitor MEDIUM + recurring #1 unanswered question — the CI² rationale lived here but as
+          0.78rem muted fine print below the prominent contrast card; scanning visitors absorbed the card
+          and the 0.9²=0.81 example yet kept reporting the "why" as unexplained. Prior sessions re-added
+          the text as fine print rather than raising its visual weight. Promote to a first-class callout:
+          plain-English one-sentence answer leading in bold body type so scanners get it without parsing
+          the cube/linear comparison. */}
+      <div style={{
+        marginBottom: '1.5rem', maxWidth: '700px',
+        padding: '0.85rem 1.1rem', borderRadius: '0.5rem',
+        background: 'rgba(253, 230, 138, 0.05)', borderLeft: '3px solid rgba(253, 230, 138, 0.4)',
+      }}>
+        <div style={{ fontSize: '0.95rem', color: 'var(--color-text-primary)', fontWeight: 600, marginBottom: '0.35rem', lineHeight: 1.45 }}>
+          Why squared? So one bad stretch costs you more than steady mediocrity ever could.
+        </div>
+        <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
+          Squaring makes inconsistency compound against you. A small dip barely shows (0.9² = 0.81); a serious one nearly halves you (0.6² = 0.36). Linear (× CI) would be too forgiving — it treats a 0.6 in the same proportion as a 0.9. Cubing (× CI³) would be too brutal, crushing a 0.9 down to 0.73 for routine variance. Square sits in the gentle middle: small dips forgiven, sustained dips punished.
+        </p>
+      </div>
 
       {/* Lives Overview Strip */}
       {lives.length > 1 && (
