@@ -446,13 +446,17 @@ export default function WhyWeb4Page() {
         <h2 className="text-3xl font-bold mb-6 text-gray-100">Honest Questions</h2>
         <p className="text-gray-400 mb-4">
           If you&#39;re skeptical, good. Here are the hard questions visitors ask, and honest answers.
-          Looking for something specific? Open the topic index below.
+        </p>
+        <p className="text-sm text-sky-200/90 mb-6 bg-sky-950/30 border-l-2 border-sky-700 pl-3 py-2 rounded">
+          <strong className="text-sky-300">This is reference depth, not a read-through.</strong>{' '}
+          It&rsquo;s long on purpose &mdash; one honest answer per question, meant to be <em>skimmed</em>, not
+          read top to bottom. Jump to whatever you actually want via the topic index just below.
         </p>
 
         {/* FAQ index — jump to any question */}
-        <details className="mb-8 text-sm border border-sky-800/30 rounded-lg p-3" id="faq-index">
+        <details open className="mb-8 text-sm border border-sky-800/30 rounded-lg p-3 group" id="faq-index">
           <summary className="text-sky-400 hover:text-sky-300 cursor-pointer list-none inline-flex items-center gap-1.5 font-semibold">
-            <span className="text-xs">▶</span> Browse all questions by topic
+            <span className="text-xs transition-transform group-open:rotate-90">▶</span> Browse all questions by topic <span className="text-gray-500 font-normal">— start here</span>
           </summary>
           <nav className="mt-3 p-4 bg-gray-800/30 border border-gray-700/50 rounded-lg columns-1 sm:columns-2 gap-x-6">
             <div className="break-inside-avoid mb-4">
