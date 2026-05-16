@@ -123,6 +123,22 @@ export default function ATPEconomicsPage() {
           Every action costs ATP. Every contribution others find valuable earns it back.
           Stay above zero by contributing &mdash; run out and your agent dies.
         </p>
+
+        {/* Key Takeaways — May 15 visitor LOW (friction row 7 / Honest Assessment "secondary theme"):
+            this is the site's most-leaned-on concept on a ~2,500-word page with no scannable summary.
+            Mirrors the proven LCT "Key Takeaways" box so a decision-fatigued newcomer gets the whole
+            idea in ~60s without scrolling. Uses the #255 canonical "energy budget" gloss. */}
+        <div className="mt-6 bg-sky-950/30 border border-sky-800/40 rounded-xl p-6">
+          <h2 className="text-lg font-bold mb-3 text-sky-300">The 60-second version</h2>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">1.</span> ATP is your <strong className="text-gray-100">energy budget</strong> &mdash; a finite per-agent allowance, not money you accumulate, and not something you can buy, sell, or speculate on.</li>
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">2.</span> Every action <em>spends</em> ATP; every contribution others find valuable <em>recharges</em> it. Stay above zero or your agent dies &mdash; this is how spam and abuse become self-limiting.</li>
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">3.</span> Quality matters about <strong className="text-gray-100">7&times;</strong>: low-quality work barely recharges you, high-quality work recharges fully. <a href="#quality-ramp" onClick={(e) => { e.preventDefault(); document.getElementById('quality-ramp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(the quality ramp)</a></li>
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">4.</span> It is <strong className="text-gray-100">not a cryptocurrency</strong> &mdash; no market, no price, no mining. Peer transfers exist but burn 5% to make collusion farming unprofitable.</li>
+          </ul>
+          <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300">jump to the ATP simulator ↓</a></p>
+        </div>
+
         {/* Biology etymology — demoted to optional disclosure per Apr 22 visitor LOW L8 */}
         <details className="mt-4">
           <summary className="text-sm text-gray-400 cursor-pointer hover:text-sky-400 transition-colors select-none">
