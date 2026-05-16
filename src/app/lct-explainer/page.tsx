@@ -872,7 +872,7 @@ export default function LCTExplainerPage() {
             <div className="text-sm font-semibold text-sky-300 mb-2">Why this matters: imagine you drop your phone in a lake.</div>
             <ul className="text-sm text-gray-300 space-y-1.5 list-disc list-inside marker:text-sky-500">
               <li><strong className="text-emerald-300">Hardware-bound, multiple devices</strong> &mdash; your laptop and security key witness you&apos;re still you. A new phone enrolls in minutes; reputation is intact.</li>
-              <li><strong className="text-amber-300">Hardware-bound, one device</strong> &mdash; recovery is possible but slower. You re-establish through community vouching and time.</li>
+              <li><strong className="text-amber-300">Hardware-bound, one device</strong> &mdash; recovery is possible but slower. You re-establish through <a href="#recovery" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('recovery')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-amber-300 hover:text-amber-200 underline">community vouching &mdash; trusted witnesses confirm you&apos;re you, typically over 3&ndash;7 days</a>.</li>
               <li><strong className="text-gray-400">Software only</strong> &mdash; no second witness to vouch. You start over from zero with a fresh identity.</li>
             </ul>
             <p className="text-xs text-gray-400 mt-3 italic">The numbers below measure that gap &mdash; how strong a witness your hardware is, and therefore how cleanly you can recover.</p>

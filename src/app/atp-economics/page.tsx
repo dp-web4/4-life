@@ -220,7 +220,7 @@ export default function ATPEconomicsPage() {
               <ul className="text-xs text-gray-400 space-y-1 ml-4 list-disc">
                 <li><strong className="text-gray-300">ATP is a finite per-agent budget.</strong> Every action costs from it; you don&apos;t accumulate it as wealth.</li>
                 <li><strong className="text-gray-300">Contribution recharges it.</strong> Stop contributing, it drains; keep contributing, it sustains.</li>
-                <li><strong className="text-gray-300">ATP → ADP → confirmation → recharge cycle.</strong> Spend creates an ADP receipt; recipients confirm; confirmation converts a share of the receipt back into fresh ATP. The cycle exists as a system.</li>
+                <li><strong className="text-gray-300">ATP → ADP → confirmation → recharge cycle.</strong> Spend creates an ADP receipt &mdash; <em>ADP is the spent-energy counterpart to ATP: proof an action happened, not a second currency</em>; recipients confirm; confirmation converts a share of that receipt back into fresh ATP. The cycle exists as a system.</li>
                 <li><strong className="text-gray-300">Transfer-fee <em>mechanism</em>.</strong> Fees burn on peer transfer, route to a community redistribution pool (not a central authority), and the friction makes circular farming unprofitable. The exact rate (currently 5% here) is a sim parameter; the existence of the burn is structural.</li>
                 <li><strong className="text-gray-300">Quality-ramp shape.</strong> Below ~30% earns ~zero, above ~70% earns ~full, linear in between. The 0.30 / 0.70 thresholds and the piecewise-linear shape are canonical (see <code className="text-emerald-300">validate_vectors.py::sliding_scale</code>).</li>
               </ul>
