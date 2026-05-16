@@ -858,6 +858,23 @@ export default function HowItWorksPage() {
               (ATP), and learning from experience. This is Web4 working as designed.
             </p>
           </div>
+
+          {/* May 14 MEDIUM + LOW — visitor synthesized everything here ("the synthesizing
+              moment") then hit the gap: this page describes mechanics but "doesn't paint a
+              screen." Bridge from the abstract example to the most concrete page on the site,
+              which the visitor said they "most wanted to find" but "found last." */}
+          <div className="mt-4 p-4 bg-amber-900/15 border border-amber-700/30 rounded-lg">
+            <p className="text-amber-200 text-sm leading-relaxed">
+              👀 <strong>But what does this actually look like on a screen?</strong>{' '}
+              Everything above is the machinery. To see it as a person would — mail that
+              costs energy to send, a talent marketplace, reviews you can trust, a social
+              feed without bots — walk through{' '}
+              <Link href="/day-in-web4#wireframes" className="text-amber-400 hover:underline font-semibold">
+                A Day in Web4
+              </Link>
+              : five concrete UI mockups of these same mechanics in everyday use.
+            </p>
+          </div>
         </div>
       </section>
 

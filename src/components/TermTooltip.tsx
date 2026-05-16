@@ -20,7 +20,7 @@ interface TermTooltipProps {
  *
  * Usage:
  *   <TermTooltip term="LCT" />
- *   <TermTooltip term="ATP">attention budget</TermTooltip>
+ *   <TermTooltip term="ATP">energy budget</TermTooltip>
  *   <TermTooltip term="T3" showFullName />
  *
  * Displays a tooltip with the canonical definition when hovering.

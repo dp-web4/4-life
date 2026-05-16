@@ -729,7 +729,7 @@ export default function AlivenessExplainer() {
             <h3>1. Energy Budget</h3>
             <div className="concept-subtitle">ATP &gt; 0</div>
             <p>
-              You must have <strong>attention budget</strong> to exist. ATP (Allocation Transfer Packet)
+              You must have an <strong>energy budget</strong> to exist. ATP (Allocation Transfer Packet)
               is your energy. Every action costs ATP. Every valuable contribution earns ATP.
               When ATP reaches zero, <strong>you die immediately</strong>.
             </p>
@@ -808,9 +808,16 @@ export default function AlivenessExplainer() {
                 <li><strong>Relational:</strong> Relationship consistency (context boundary integrity)</li>
               </ul>
               <p className="detail-emphasis">
-                CI = (spatial × capability × temporal × relational)^(1/4). Geometric mean means
-                <strong>one low dimension tanks everything</strong>.
+                Geometric mean means <strong>one low dimension tanks everything</strong>.
               </p>
+              <details style={{ marginTop: '0.5rem' }}>
+                <summary style={{ cursor: 'pointer', color: '#94a3b8', fontSize: '0.875rem' }}>
+                  Show the formula
+                </summary>
+                <p style={{ marginTop: '0.5rem', fontFamily: 'monospace', fontSize: '0.875rem' }}>
+                  CI = (spatial × capability × temporal × relational)^(1/4)
+                </p>
+              </details>
             </div>
             <p className="learn-more">
               <Link href="/coherence-index">Learn about Coherence Index →</Link>
@@ -896,7 +903,7 @@ export default function AlivenessExplainer() {
           </div>
         </div>
 
-        <div className="detail-box" style={{ marginTop: "1.5rem", background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.2)" }}>
+        <div id="death-meaning" className="detail-box scroll-mt-24" style={{ marginTop: "1.5rem", background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.2)" }}>
           <h4 style={{ color: "#fbbf24" }}>What does &ldquo;death&rdquo; mean for a real person?</h4>
           <p>
             In these simulations, death means the agent stops acting and awaits rebirth.
@@ -1529,7 +1536,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
           <Link href="/atp-economics" className="concept-link-card">
             <h4>ATP/ADP Economics</h4>
             <p>
-              Attention budget system. ATP &gt; 0 is the first criterion of aliveness.
+              Energy budget system. ATP &gt; 0 is the first criterion of aliveness.
               Explains earning, spending, and sustainability.
             </p>
           </Link>

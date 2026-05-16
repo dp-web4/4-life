@@ -332,7 +332,7 @@ export class NarrativeQueryEngine {
     }
 
     return {
-      answer: `Web4 simulations model society-scale trust dynamics. Agents manage ATP (attention budget), build trust through consistent actions, learn from experience via cross-life learning (EP), and carry consequences across lives through karma. The system demonstrates emergence of coherent behavior from simple rules.`,
+      answer: `Web4 simulations model society-scale trust dynamics. Agents manage ATP (energy budget), build trust through consistent actions, learn from experience via cross-life learning (EP), and carry consequences across lives through karma. The system demonstrates emergence of coherent behavior from simple rules.`,
       confidence: 0.7,
       followUp: [
         "How does ATP work?",

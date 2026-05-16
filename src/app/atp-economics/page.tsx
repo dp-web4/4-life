@@ -123,6 +123,22 @@ export default function ATPEconomicsPage() {
           Every action costs ATP. Every contribution others find valuable earns it back.
           Stay above zero by contributing &mdash; run out and your agent dies.
         </p>
+
+        {/* Key Takeaways — May 15 visitor LOW (friction row 7 / Honest Assessment "secondary theme"):
+            this is the site's most-leaned-on concept on a ~2,500-word page with no scannable summary.
+            Mirrors the proven LCT "Key Takeaways" box so a decision-fatigued newcomer gets the whole
+            idea in ~60s without scrolling. Uses the #255 canonical "energy budget" gloss. */}
+        <div className="mt-6 bg-sky-950/30 border border-sky-800/40 rounded-xl p-6">
+          <h2 className="text-lg font-bold mb-3 text-sky-300">The 60-second version</h2>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">1.</span> ATP is your <strong className="text-gray-100">energy budget</strong> &mdash; a finite per-agent allowance, not money you accumulate, and not something you can buy, sell, or speculate on.</li>
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">2.</span> Every action <em>spends</em> ATP; every contribution others find valuable <em>recharges</em> it. Stay above zero or your agent dies &mdash; this is how spam and abuse become self-limiting.</li>
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">3.</span> Quality matters about <strong className="text-gray-100">7&times;</strong>: low-quality work barely recharges you, high-quality work recharges fully. <a href="#quality-ramp" onClick={(e) => { e.preventDefault(); document.getElementById('quality-ramp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(the quality ramp)</a></li>
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">4.</span> It is <strong className="text-gray-100">not a cryptocurrency</strong> &mdash; no market, no price, no mining. Peer transfers exist but burn 5% to make collusion farming unprofitable.</li>
+          </ul>
+          <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300">jump to the ATP simulator ↓</a></p>
+        </div>
+
         {/* Biology etymology — demoted to optional disclosure per Apr 22 visitor LOW L8 */}
         <details className="mt-4">
           <summary className="text-sm text-gray-400 cursor-pointer hover:text-sky-400 transition-colors select-none">
@@ -178,8 +194,58 @@ export default function ATPEconomicsPage() {
           </p>
         </div>
 
-        {/* Old "energy/attention budget metaphors" italic line removed Apr 28 —
+        {/* Old "energy / attention-budget" metaphor italic line removed Apr 28 —
             the metaphor/expansion split is now made explicit in the hero clarifier above. */}
+
+        {/* "What's settled vs what's still moving" — May 4 visitor LOW #11:
+            two existing mid-page "still settling" captions made the visitor wonder
+            globally "which numbers am I supposed to trust?" without a place to land.
+            Collapsed by default so it adds zero visual weight to the hero. */}
+        <details id="settled-vs-evolving" className="mt-5 bg-gray-800/40 border border-gray-700/60 rounded-lg p-4 scroll-mt-24">
+          <summary className="text-sm font-semibold text-gray-300 cursor-pointer hover:text-sky-400 transition-colors list-none flex items-center justify-between gap-3">
+            <span>What&apos;s settled vs what&apos;s still moving on this page</span>
+            <span className="text-xs text-gray-500 font-normal whitespace-nowrap">click to expand</span>
+          </summary>
+          <div className="mt-3 text-sm text-gray-400 space-y-3">
+            <p className="text-xs text-gray-500 m-0">
+              A fair question while reading this page: <em>&ldquo;which numbers am I supposed to remember,
+              and which ones are still being negotiated?&rdquo;</em> Here&apos;s an honest map.
+            </p>
+
+            <div>
+              <p className="text-emerald-300 font-semibold m-0 mb-1">✅ Settled (canonical to Web4)</p>
+              <p className="text-xs text-gray-500 m-0 mb-2">
+                These are the load-bearing ideas. If they changed, ATP wouldn&apos;t be ATP any more.
+              </p>
+              <ul className="text-xs text-gray-400 space-y-1 ml-4 list-disc">
+                <li><strong className="text-gray-300">ATP is a finite per-agent budget.</strong> Every action costs from it; you don&apos;t accumulate it as wealth.</li>
+                <li><strong className="text-gray-300">Contribution recharges it.</strong> Stop contributing, it drains; keep contributing, it sustains.</li>
+                <li><strong className="text-gray-300">ATP → ADP → confirmation → recharge cycle.</strong> Spend creates an ADP receipt; recipients confirm; confirmation converts a share of the receipt back into fresh ATP. The cycle exists as a system.</li>
+                <li><strong className="text-gray-300">Transfer-fee <em>mechanism</em>.</strong> Fees burn on peer transfer, route to a community redistribution pool (not a central authority), and the friction makes circular farming unprofitable. The exact rate (currently 5% here) is a sim parameter; the existence of the burn is structural.</li>
+                <li><strong className="text-gray-300">Quality-ramp shape.</strong> Below ~30% earns ~zero, above ~70% earns ~full, linear in between. The 0.30 / 0.70 thresholds and the piecewise-linear shape are canonical (see <code className="text-emerald-300">validate_vectors.py::sliding_scale</code>).</li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-amber-300 font-semibold m-0 mb-1">🔧 Still evolving (4-Life&apos;s current sim)</p>
+              <p className="text-xs text-gray-500 m-0 mb-2">
+                These are the <em>specific</em> numbers the simulator uses. They&apos;re plausible, but the reference protocol is still settling — expect movement.
+              </p>
+              <ul className="text-xs text-gray-400 space-y-1 ml-4 list-disc">
+                <li><strong className="text-gray-300">Exact transfer-fee percentage.</strong> Currently 5% in <code className="text-amber-300">public/spec.json::ATP.transfer_fee</code>. The mechanism is settled (above); this number is not.</li>
+                <li><strong className="text-gray-300">&ldquo;7× gap&rdquo; framing.</strong> 4-Life&apos;s visualization of the canonical quality-ramp — useful intuition, not a separate Web4 spec constant.</li>
+                <li><strong className="text-gray-300">Recharge-math coefficients.</strong> The form <code className="text-amber-300">confirmer_trust × received_value_fraction</code> is the shape we&apos;re modelling, not the canonical formula.</li>
+                <li><strong className="text-gray-300">Decay-window durations.</strong> Unconfirmed ADP slices decay over &ldquo;weeks&rdquo; — the exact window length is a 4-Life sim parameter, not a Web4 constant.</li>
+                <li><strong className="text-gray-300">4-Life sim parameters.</strong> Starting balance = 100 ATP, death threshold = 0, etc. — design choices in <code className="text-amber-300">public/spec.json</code> that you&apos;ll see in the simulator widget on this page.</li>
+              </ul>
+            </div>
+
+            <p className="text-xs text-gray-500 m-0 border-t border-gray-700/50 pt-3">
+              Heuristic for reading the rest of this page: <em>shapes and directions are stable; exact numbers are negotiable.</em>
+            </p>
+          </div>
+        </details>
+
         <p className="text-sm text-gray-500 mt-4">
           <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 cursor-pointer">
             ↓ Try the ATP simulator below
@@ -283,7 +349,7 @@ export default function ATPEconomicsPage() {
               depletes your budget
             </p>
             <p>
-              ✅ <strong>Death is real</strong> - Run out of attention budget? You die.
+              ✅ <strong>Death is real</strong> - Run out of energy budget? You die.
               But if you built trust, you&apos;re reborn with a head start — your reputation carries forward.
             </p>
             <p className="text-sm text-gray-400 mt-2">
@@ -455,14 +521,18 @@ export default function ATPEconomicsPage() {
               </p>
               <p>
                 <strong className="text-gray-300">No quorum, no threshold.</strong>{' '}
-                <code className="text-sky-300 text-xs">confirmer_trust</code> &isin; [0, 1] is the confirmer&apos;s T3-derived score;{' '}
-                <code className="text-sky-300 text-xs">received_value_fraction</code> &isin; [0, 1] is the share of value attributed
+                <code className="text-sky-300 text-xs">confirmer_trust</code> (a number between 0 and 1) is the confirmer&apos;s T3-derived score;{' '}
+                <code className="text-sky-300 text-xs">received_value_fraction</code> (also between 0 and 1) is the share of value attributed
                 to that confirmer. Unconfirmed slices decay over a window of weeks &mdash; the cap means
                 you can&apos;t profit on a single action, only recover its cost.
               </p>
               <p className="text-xs text-gray-500 italic">
                 Spec note: this is the shape of the relation as currently modelled in 4-Life&apos;s simulation;
-                the reference protocol is still settling. See <a href="#earning-atp" className="text-sky-400 hover:text-sky-300 underline">How Do You Actually Earn ATP Back?</a> for prose-form derivation and the &ldquo;how quickly?&rdquo; and &ldquo;who counts as a confirmer?&rdquo; toggles inside it.
+                the reference protocol is still settling (<a
+                  href="#settled-vs-evolving"
+                  onClick={(e) => { e.preventDefault(); const el = document.getElementById('settled-vs-evolving'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); if (el instanceof HTMLDetailsElement) el.open = true; } }}
+                  className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
+                >what&apos;s settled vs what&apos;s still moving ↑</a>). See <a href="#earning-atp" className="text-sky-400 hover:text-sky-300 underline">How Do You Actually Earn ATP Back?</a> for prose-form derivation and the &ldquo;how quickly?&rdquo; and &ldquo;who counts as a confirmer?&rdquo; toggles inside it.
               </p>
             </div>
           </details>
@@ -518,14 +588,16 @@ export default function ATPEconomicsPage() {
             confirmations worth even less.
           </p>
 
-          {/* Cold-start callout — Apr 17 visitor LOW #9 */}
+          {/* Cold-start callout — Apr 17 visitor LOW #9; May 12 unanswered Q3 reframe */}
           <div className="mt-4 pt-4 border-t border-emerald-800/30">
             <p className="text-sm font-semibold text-emerald-300 mb-2">
-              What about a brand-new community where nobody has built trust yet?
+              What about a brand-new community — or a small group with only a few peers to confirm work?
             </p>
             <p className="text-gray-400 text-sm leading-relaxed">
               Every participant starts at the same baseline — trust ≈ 0.5, 100 ATP grant.
               In that state, all confirmations weigh equally low, but they still count.
+              <strong className="text-gray-300"> Even three founders who confirm each other&apos;s work can recharge ATP from day one</strong> —
+              the system requires <em>reciprocity density</em> (peers who actually engage), not a minimum head-count.
               Over roughly <strong className="text-gray-300">100 quality actions across the community</strong>,
               trust starts sorting: people who confirmed work that others later also confirmed gain
               confirmer-trust; people who confirmed spam lose it. First-mover advantage fades on a
@@ -551,20 +623,35 @@ export default function ATPEconomicsPage() {
         {/* Apr 29 visitor HIGH: the link-only "where from?" pointer read like a deferral to a separate doc.
             Provide the 1-sentence answer inline, keep the jump link for the deeper FAQ.
             Apr 30 visitor MEDIUM: surface "what stops admin abuse?" up front — the gap they noticed isn't where
-            ATP comes from, it's whether minting can be inflated. */}
-        <p className="text-xs text-gray-500 mb-8 leading-relaxed">
-          The 100 ATP is a <strong className="text-gray-300">starter grant</strong> from the society&apos;s pool
-          when you join &mdash; not printed from thin air. Each society mints a fixed pool when it forms; new members
-          receive enough to participate, but must earn more through quality contributions. Pool changes are
-          witnessed governance events, not silent admin actions &mdash;{' '}
-          <a
-            href="#initial-atp"
-            onClick={(e) => { e.preventDefault(); const el = document.getElementById('initial-atp'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}
-            className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
-          >
-            full mechanics + what prevents admin abuse ↓
-          </a>
-        </p>
+            ATP comes from, it's whether minting can be inflated.
+            May 12 visitor MEDIUM: "anchored to witnessed measurement of resources" reads as abstract jargon —
+            visitor literally guessed "computational? human labor? storage?" The page used "compute, attention,
+            peer presence" which is the same answer in jargon registers. Rewrite swaps abstract trio for
+            everyday-language equivalents (CPU/storage, hours of participation, peer relationships).
+            May 13 visitor MEDIUM: prior text-xs muted-gray styling read as a footnote — visitor skipped it
+            and concluded the answer was "buried below the simulator." Promoted to a proper callout box so
+            the first-time "where does the 100 ATP come from?" question gets first-time visual weight. */}
+        <div className="mb-8 bg-sky-900/10 border border-sky-700/40 rounded-lg p-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-sky-300 mb-2">
+            Where does the 100 ATP come from?
+          </p>
+          <p className="text-sm text-gray-300 leading-relaxed">
+            It&apos;s a <strong className="text-gray-100">starter grant</strong> from the society&apos;s pool
+            when you join &mdash; not printed from thin air. The pool is anchored to{' '}
+            <strong className="text-gray-100">real resources members bring</strong>: CPU and storage they share,
+            hours of attention they spend participating, peer relationships they&apos;ve built &mdash; witnessed
+            and signed, not declared by an admin. Each society mints a fixed pool when it forms; new members
+            receive enough to participate, but must earn more through quality contributions. Pool changes are
+            witnessed governance events, not silent admin actions &mdash;{' '}
+            <a
+              href="#initial-atp"
+              onClick={(e) => { e.preventDefault(); const el = document.getElementById('initial-atp'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}
+              className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
+            >
+              full mechanics + what prevents admin abuse ↓
+            </a>
+          </p>
+        </div>
 
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8">
           {/* ATP Bar */}
@@ -802,7 +889,7 @@ export default function ATPEconomicsPage() {
             <p className="text-gray-300 text-sm leading-relaxed">
               High-value contributions earn more ATP than they cost. This isn't
               charity — it&apos;s how the system works. Value creators accumulate
-              attention budget. They thrive.
+              energy budget. They thrive.
             </p>
           </div>
 
@@ -1119,7 +1206,11 @@ export default function ATPEconomicsPage() {
             <div className="mt-3 text-sm text-gray-400 space-y-2">
               <p className="text-xs text-gray-500 italic">
                 How this is currently modeled in 4-Life&apos;s simulation &mdash; the reference protocol
-                is still settling, so specifics may evolve.
+                is still settling, so specifics may evolve (<a
+                  href="#settled-vs-evolving"
+                  onClick={(e) => { e.preventDefault(); const el = document.getElementById('settled-vs-evolving'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); if (el instanceof HTMLDetailsElement) el.open = true; } }}
+                  className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
+                >see what&apos;s settled ↑</a>).
               </p>
               <p>
                 <strong className="text-gray-300">Timing is continuous, not batched.</strong> There&apos;s no
@@ -1284,6 +1375,35 @@ export default function ATPEconomicsPage() {
             you don&apos;t care about the SWIFT message that carried it, only that the money arrived.
           </p>
         </div>
+
+        {/* May 4 visitor Q3 mechanical sub-questions: lifecycle / GC / visibility.
+            PR #228 added the user-POV block above; this is the mechanical complement. */}
+        <div className="mt-4 bg-gray-800/40 border border-gray-700 rounded-xl p-5">
+          <h4 className="text-sm font-semibold text-gray-200 mb-2 uppercase tracking-wide">
+            What happens to an ADP after it&apos;s created?
+          </h4>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li>
+              <strong className="text-gray-200">Does it stay with me forever?</strong> No.
+              Once confirmations recharge it back into ATP, the ADP closes out — that&apos;s the
+              activity-log line you see. Unconfirmed ADPs decay over the order of weeks and
+              quietly expire. Either way, it ends.
+            </li>
+            <li>
+              <strong className="text-gray-200">Does it get garbage-collected?</strong> Yes,
+              in both paths above. The signed record of what happened persists in the trust
+              graph as audit history — like a bank statement entry — but it&apos;s no longer
+              an open receipt waiting for action.
+            </li>
+            <li>
+              <strong className="text-gray-200">Does anyone else read it?</strong> The
+              witnesses present at the action see it at that moment. The system uses the
+              aggregated pattern of your ADPs to update your trust score; other users
+              don&apos;t browse your ADP list, and there&apos;s no &ldquo;public feed&rdquo;
+              of receipts.
+            </li>
+          </ul>
+        </div>
       </section>
 
       {/* Technical Details (Collapsible) */}
@@ -1367,7 +1487,7 @@ export default function ATPEconomicsPage() {
                 work (ADP), maintain homeostasis. Run out of ATP? Death.
               </p>
               <p className="leading-relaxed mb-3">
-                Web4 societies work the same way. Agents have attention budgets.
+                Web4 societies work the same way. Agents have energy budgets.
                 Contribute value (earn ATP), take actions (spend ATP), maintain
                 reputation. Run out? Death.
               </p>
@@ -1404,7 +1524,7 @@ export default function ATPEconomicsPage() {
                     <tr className="border-b border-gray-800">
                       <td className="p-3 font-semibold">Purpose</td>
                       <td className="p-3">Speculative value, trading</td>
-                      <td className="p-3">Attention budget, usage</td>
+                      <td className="p-3">Energy budget, usage</td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="p-3 font-semibold">Transferability</td>

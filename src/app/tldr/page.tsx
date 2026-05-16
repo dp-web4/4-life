@@ -26,7 +26,7 @@ export default function TLDRPage() {
           Web4 in 2 Minutes
         </h1>
         <p className="text-lg text-gray-400 leading-relaxed mb-10">
-          Plain English first &mdash; the acronyms (ATP, ADP, LCT) are spelled out the first time they appear. No prerequisites.
+          Plain English first &mdash; the acronyms (ATP, LCT) are spelled out the first time they appear. No prerequisites.
         </p>
 
         {/* The Problem */}
@@ -54,7 +54,7 @@ export default function TLDRPage() {
                 <strong className="text-white">Actions cost energy &mdash; valuable contributions earn it back.</strong> Posting,
                 messaging, voting — everything draws from a personal energy budget (called ATP — short for Allocation Transfer Packets),
                 but the budget refills continuously when others confirm your work was useful, so contributors don&apos;t get locked out.
-                Each action creates a receipt (ADP — Allocation Discharge Packets) recording what you spent. Spam drains the budget with no return.
+                Each action also creates a small receipt of what you spent. Spam drains the budget with no return.
               </p>
             </div>
             <div className="flex gap-3 items-start">
@@ -86,14 +86,21 @@ export default function TLDRPage() {
               </p>
             </div>
           </div>
-          {/* May 3 visitor LOW #4: landing lists 5 ideas (Identity, Energy, Trust, Neighborhood, Consistency); TL;DR collapses to 4. Pointer to MRH/CI without bloating the 2-minute rhythm. */}
-          <p className="text-gray-500 text-sm leading-relaxed mt-4 pl-9 italic">
-            Two more ideas show up later on their own pages:{' '}
-            <Link href="/markov-relevancy-horizon" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">Neighborhood (MRH)</Link>{' '}
-            — distance-adjusted reach, 3 hops max — and{' '}
-            <Link href="/coherence-index" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">Consistency (CI)</Link>{' '}
-            — does your behavior add up over time. Skipped here to keep this short; the concept sequence on each page links the rest.
-          </p>
+          {/* May 3 visitor LOW #4 + May 13 visitor MEDIUM: previously named MRH/CI but skipped T3 entirely, and never expanded the letters. Naive readers were meeting these acronyms unprepared on later pages.
+              May 14 visitor MEDIUM #1: counting 6 acronyms on one short page felt dense. Trade-off this iteration: keep the cold-hit hook (letters T3/MRH/CI still visible in the <summary> line so a later page's mention isn't a cold drop) but move the expanded gloss behind a click. Hypothesis to falsify next cycle: visitors who only want the 2-minute overview can ignore this; visitors meeting T3/MRH/CI on later pages still have a primed hook from the summary. */}
+          <details className="mt-4 pl-9">
+            <summary className="text-gray-500 text-sm italic cursor-pointer hover:text-gray-400 select-none">
+              Three more shorthand names (T3, MRH, CI) live on their own pages &mdash; tap to peek, or meet them when you get there
+            </summary>
+            <p className="text-gray-500 text-sm leading-relaxed mt-3 italic">
+              <Link href="/trust-tensor" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">T3 (Talent / Training / Temperament)</Link>{' '}
+              — the three dimensions of trust, scored per role;{' '}
+              <Link href="/markov-relevancy-horizon" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">MRH (Markov Relevancy Horizon)</Link>{' '}
+              — your trust neighborhood, distance-adjusted reach, 3 hops max; and{' '}
+              <Link href="/coherence-index" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">CI (Coherence Index)</Link>{' '}
+              — does your behavior add up over time. The concept sequence on each page links the rest.
+            </p>
+          </details>
         </div>
 
         {/* The Result */}
@@ -105,6 +112,17 @@ export default function TLDRPage() {
             whole thing runs without any central authority deciding who&apos;s trustworthy.
           </p>
         </div>
+
+        {/* May 14 visitor MEDIUM #5: /day-in-web4 was the page the visitor most wanted to find
+            but didn't reach until 66:00. It was already in TL;DR but buried inside the deferred
+            <details> toggle. This is a grounding line, not a competing CTA — the "Recommended
+            next step = First Contact" design (Apr 29 visitor HIGH) stays unchanged below. */}
+        <p className="text-sm text-gray-500 italic mb-10">
+          Wondering what it would actually look like?{' '}
+          <Link href="/day-in-web4#wireframes" className="text-sky-400 hover:underline not-italic">
+            See conceptual UI mockups &rarr;
+          </Link>
+        </p>
 
         {/* Status */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 mb-10">

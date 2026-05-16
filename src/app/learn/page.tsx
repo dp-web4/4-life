@@ -155,7 +155,7 @@ export default function LearnJourney() {
           id: "aliveness",
           title: "Aliveness: Putting It All Together",
           teaser:
-            'In Web4, "alive" means: you have energy (attention budget), sufficient trust (across all three dimensions), and consistent behavior (coherence). Lose any of them? You die. But if you earned trust, you can be reborn.',
+            'In Web4, "alive" means: you have energy (an energy budget), sufficient trust (across all three dimensions), and consistent behavior (coherence). Lose any of them? You die. But if you earned trust, you can be reborn.',
           why: "Now that you know the building blocks, see how they combine. Aliveness is where identity + economics + trust + consistency become a living system.",
           link: "/aliveness",
           duration: "8 min read",
@@ -540,14 +540,28 @@ export default function LearnJourney() {
         </section>
       )}
 
-      {/* Stage selector */}
+      {/* Stage selector — lead with the recommended Beginner path; deeper
+          paths stay one click away but don't compete for first-read attention
+          (May 15 visitor LOW: four equal pathways shown at once overwhelm) */}
       <section>
         <h2>Choose Your Starting Point</h2>
-        <div
-          className="concept-grid"
-          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}
+        <p
+          style={{
+            color: "var(--color-gray-400)",
+            fontSize: "0.9rem",
+            marginTop: "-0.25rem",
+            marginBottom: "1.25rem",
+          }}
         >
-          {learningPaths.map((path) => (
+          New to Web4? Start with the Beginner path — it&apos;s built for exactly
+          that. The deeper paths are here whenever you&apos;re ready; you
+          don&apos;t need to choose between four things now.
+        </p>
+
+        {/* Recommended: Beginner */}
+        {learningPaths
+          .filter((path) => path.stage === "beginner")
+          .map((path) => (
             <button
               key={path.stage}
               onClick={() => setActiveStage(path.stage)}
@@ -556,29 +570,106 @@ export default function LearnJourney() {
               }`}
               style={{
                 cursor: "pointer",
+                width: "100%",
+                textAlign: "left",
                 border:
                   activeStage === path.stage
                     ? "2px solid var(--color-accent)"
-                    : "1px solid var(--color-gray-700)",
+                    : "1px solid var(--color-accent)",
+                background:
+                  "linear-gradient(135deg, rgba(56,189,248,0.10), rgba(168,85,247,0.08))",
                 transition: "all 0.2s ease",
               }}
             >
-              <h3>
-                {path.stage.charAt(0).toUpperCase() + path.stage.slice(1)}
-              </h3>
-              <p style={{ fontSize: "0.8rem", marginTop: "0.25rem", opacity: 0.7 }}>
-                {{
-                  beginner: "Core concepts: identity, energy, trust, consistency",
-                  intermediate: "Emergence: networks, markets, cross-life learning",
-                  advanced: "Deep mechanics: coherence, modulation, karma",
-                  practitioner: "Hands-on: run experiments, tune parameters",
-                }[path.stage]}
+              <span
+                style={{
+                  display: "inline-block",
+                  fontSize: "0.7rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
+                  color: "var(--color-accent-bright)",
+                  border: "1px solid rgba(56,189,248,0.4)",
+                  borderRadius: "9999px",
+                  padding: "0.15rem 0.6rem",
+                  marginBottom: "0.6rem",
+                }}
+              >
+                Recommended start
+              </span>
+              <h3>Beginner</h3>
+              <p
+                style={{
+                  fontSize: "0.85rem",
+                  marginTop: "0.25rem",
+                  opacity: 0.85,
+                }}
+              >
+                Core concepts: identity, energy, trust, consistency
               </p>
               <p style={{ fontSize: "0.9rem", marginTop: "0.5rem" }}>
                 {path.concepts.length} concepts · {path.actions.length} actions
               </p>
             </button>
           ))}
+
+        {/* Deeper paths — subordinate, one click away */}
+        <p
+          style={{
+            color: "var(--color-gray-500)",
+            fontSize: "0.8rem",
+            textTransform: "uppercase",
+            letterSpacing: "0.05em",
+            marginTop: "1.5rem",
+            marginBottom: "0.75rem",
+          }}
+        >
+          Already comfortable with the basics? Jump ahead
+        </p>
+        <div
+          className="concept-grid"
+          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))" }}
+        >
+          {learningPaths
+            .filter((path) => path.stage !== "beginner")
+            .map((path) => (
+              <button
+                key={path.stage}
+                onClick={() => setActiveStage(path.stage)}
+                className={`concept-card ${
+                  activeStage === path.stage ? "active" : ""
+                }`}
+                style={{
+                  cursor: "pointer",
+                  opacity: activeStage === path.stage ? 1 : 0.65,
+                  border:
+                    activeStage === path.stage
+                      ? "2px solid var(--color-accent)"
+                      : "1px solid var(--color-gray-700)",
+                  transition: "all 0.2s ease",
+                }}
+              >
+                <h3 style={{ fontSize: "1rem" }}>
+                  {path.stage.charAt(0).toUpperCase() + path.stage.slice(1)}
+                </h3>
+                <p
+                  style={{
+                    fontSize: "0.78rem",
+                    marginTop: "0.25rem",
+                    opacity: 0.7,
+                  }}
+                >
+                  {{
+                    beginner: "Core concepts: identity, energy, trust, consistency",
+                    intermediate: "Emergence: networks, markets, cross-life learning",
+                    advanced: "Deep mechanics: coherence, modulation, karma",
+                    practitioner: "Hands-on: run experiments, tune parameters",
+                  }[path.stage]}
+                </p>
+                <p style={{ fontSize: "0.85rem", marginTop: "0.5rem" }}>
+                  {path.concepts.length} concepts · {path.actions.length} actions
+                </p>
+              </button>
+            ))}
         </div>
       </section>
 

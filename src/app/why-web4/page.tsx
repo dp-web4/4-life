@@ -39,7 +39,7 @@ export default function WhyWeb4Page() {
         <div className="mt-4 mb-2 text-sm text-gray-400 border-l-2 border-gray-700 pl-4 py-1">
           This page has three parts: <strong className="text-gray-200">the problems</strong> (~5 min),{" "}
           <strong className="text-gray-200">what Web4 proposes</strong> (~2 min), and{" "}
-          <strong className="text-gray-200">honest Q&amp;A</strong> (optional, 40+ questions collapsed by topic).
+          <strong className="text-gray-200">honest Q&amp;A</strong> (optional — skeptics&apos; questions, answered, collapsed by topic).
           Stop reading at any point — each section stands on its own. If you only have 2 minutes, try{" "}
           <Link href="/tldr" className="text-sky-400 hover:underline">the 2-minute TL;DR</Link> instead.
         </div>
@@ -315,7 +315,7 @@ export default function WhyWeb4Page() {
           <div className="bg-gray-900/50 border border-gray-700/50 rounded-lg p-4 mb-6">
             <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Four ideas, introduced one at a time below</p>
             <p className="text-xs text-gray-500">
-              Each concept is explained in plain English with its own card. Don&apos;t worry about acronyms — they&apos;re just shorthand. The ideas are what matter.
+              Each idea gets its own plain-English card below. Read them in order — they build on each other.
             </p>
           </div>
 
@@ -452,7 +452,7 @@ export default function WhyWeb4Page() {
         {/* FAQ index — jump to any question */}
         <details className="mb-8 text-sm border border-sky-800/30 rounded-lg p-3" id="faq-index">
           <summary className="text-sky-400 hover:text-sky-300 cursor-pointer list-none inline-flex items-center gap-1.5 font-semibold">
-            <span className="text-xs">▶</span> Browse all questions by topic (30+ FAQs)
+            <span className="text-xs">▶</span> Browse all questions by topic
           </summary>
           <nav className="mt-3 p-4 bg-gray-800/30 border border-gray-700/50 rounded-lg columns-1 sm:columns-2 gap-x-6">
             <div className="break-inside-avoid mb-4">
@@ -552,7 +552,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-infrastructure" className="hover:text-sky-400 transition-colors">Who runs the infrastructure?</a></li>
                 <li><a href="#faq-ai-agents" className="hover:text-sky-400 transition-colors">How do AI agents participate?</a></li>
                 <li><a href="#faq-protocol-changes" className="hover:text-sky-400 transition-colors">Who decides protocol changes?</a></li>
-                <li><a href="#faq-sal" className="hover:text-sky-400 transition-colors">Community governance — what&apos;s SAL?</a></li>
+                <li><a href="#faq-sal" className="hover:text-sky-400 transition-colors">How does community governance work?</a></li>
                 <li><a href="#faq-jurisdiction" className="hover:text-sky-400 transition-colors">Differing national laws?</a></li>
               </ul>
             </div>
@@ -578,7 +578,7 @@ export default function WhyWeb4Page() {
           <p className="text-gray-400 text-xs mt-4">
             Click any question to jump to it. The{" "}
             <a href="#faq-index" className="text-sky-400 hover:underline">full topic index above</a>{" "}
-            has 40+ more.
+            has the rest, grouped by topic.
           </p>
         </div>
         <h3 className="text-sm uppercase tracking-wide text-amber-400/80 mb-4">Most asked</h3>
@@ -599,7 +599,7 @@ export default function WhyWeb4Page() {
                 <li><strong>Protocol specification:</strong> 100+ page{" "}
                   <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
                   Web4 whitepaper</a> with formal definitions</li>
-                <li><strong>Reference implementations:</strong> ~47,000 lines of tested code &mdash; identity (LCT), trust and value tensors (T3/V3), energy metering (ATP), community governance (SAL), federation, witness protocol, trust-distance graphs (MRH)</li>
+                <li><strong>Reference implementations:</strong> ~47,000 lines of tested code covering the four mechanisms above (identity, energy, trust scoring, trust neighborhood) plus value tensors, community governance, federation, and the witness protocol</li>
                 <li><strong>Security validation:</strong> <Link href="/threat-model" className="text-sky-400 hover:underline">424 attack vectors across 84 tracks</Link>, all defended. Sybil resistance formally proven (5 theorems). Incentive compatibility proven &mdash; honest behavior is mathematically more profitable than gaming</li>
                 <li><strong>Hardware integration:</strong> TPM2 binding validated (Intel TPM 2.0, EK certificate chain through 2049). Go LCT library (55 tests). Multi-device constellation enrollment working</li>
                 <li><strong>System integration:</strong> End-to-end pipeline (all subsystems chained), WASM browser validator for client-side trust verification, federation consensus at 38.5 tasks/sec throughput</li>
@@ -1062,14 +1062,14 @@ export default function WhyWeb4Page() {
             </Link>
           </div>
           <p className="text-xs text-gray-500 mt-3">
-            Or keep reading &mdash; 40+ questions in the &ldquo;Going deeper&rdquo; section below.
+            Or keep reading &mdash; more questions answered in the &ldquo;Going deeper&rdquo; section below.
           </p>
         </div>
 
         {/* All other FAQs — collapsed by default */}
         <details id="going-deeper" className="group">
           <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">
-            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — 6 topics, 40+ questions</h3>
+            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — more questions, grouped by topic</h3>
             <span className="text-gray-500 text-sm group-open:rotate-90 transition-transform">▶</span>
           </summary>
 
@@ -1124,9 +1124,9 @@ export default function WhyWeb4Page() {
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
                   <li><a href="#faq-trust-transfer" className="hover:text-sky-400">Trust between communities?</a></li>
                   <li><a href="#faq-threshold" className="hover:text-sky-400">Is 0.5 universal?</a></li>
-                  <li><a href="#faq-creative-work" className="hover:text-sky-400">V3 and creative work?</a></li>
+                  <li><a href="#faq-creative-work" className="hover:text-sky-400">Creative or unconventional work?</a></li>
                   <li><a href="#faq-cheaters" className="hover:text-sky-400">Catching cheaters?</a></li>
-                  <li><a href="#faq-ci-example" className="hover:text-sky-400">CI for a normal person?</a></li>
+                  <li><a href="#faq-ci-example" className="hover:text-sky-400">Coherence for normal people?</a></li>
                   <li><a href="#faq-month-off" className="hover:text-sky-400">Month off = trust gone?</a></li>
                   <li><a href="#faq-youthful-mistakes" className="hover:text-sky-400">Escaping youthful mistakes?</a></li>
                   <li><a href="#faq-cultural-quality" className="hover:text-sky-400">Cultural quality differences?</a></li>
@@ -1148,7 +1148,7 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-reputation-visibility" className="hover:text-sky-400">Who sees my reputation?</a></li>
                   <li><a href="#faq-pseudonymous" className="hover:text-sky-400">Pseudonymity?</a></li>
                   <li><a href="#faq-multi-persona" className="hover:text-sky-400">Personal vs professional?</a></li>
-                  <li><a href="#faq-vpn-tor" className="hover:text-sky-400">VPNs, Tor &amp; CI?</a></li>
+                  <li><a href="#faq-vpn-tor" className="hover:text-sky-400">VPNs and Tor?</a></li>
                   <li><a href="#faq-mrh-messaging" className="hover:text-sky-400">MRH and message visibility?</a></li>
                   <li><a href="#faq-filter-bubbles" className="hover:text-sky-400">MRH filter bubbles?</a></li>
                 </ul>
@@ -1176,7 +1176,7 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-infrastructure" className="hover:text-sky-400">Who runs infrastructure?</a></li>
                   <li><a href="#faq-ai-agents" className="hover:text-sky-400">AI agent participation?</a></li>
                   <li><a href="#faq-protocol-changes" className="hover:text-sky-400">Protocol governance?</a></li>
-                  <li><a href="#faq-sal" className="hover:text-sky-400">What is SAL?</a></li>
+                  <li><a href="#faq-sal" className="hover:text-sky-400">Community governance basics?</a></li>
                 </ul>
               </details>
             </div>
@@ -2344,6 +2344,77 @@ export default function WhyWeb4Page() {
                 it. For journalists and activists in hostile states, device security is the weakest link — and that&apos;s
                 a hardware problem, not a protocol one.
               </p>
+
+              {/* May 4 visitor unanswered Q4: "How is the tension resolved in practice — software fallbacks?
+                  Per-context LCTs? Something else?" The caveat above names the risk; this block names what you
+                  actually do about it. */}
+              <div className="mt-5 pt-4 border-t border-amber-700/30">
+                <p className="text-amber-300 text-sm font-semibold mb-2">
+                  How is the tension resolved in practice?
+                </p>
+                <p className="mb-3">
+                  Three concrete mitigations, in decreasing order of strength &mdash; and one common misreading
+                  that doesn&apos;t actually help.
+                </p>
+
+                <p className="font-semibold text-gray-200 mt-3">1. Per-context LCTs on separate devices (strongest).</p>
+                <p>
+                  Each hardware-bound LCT is a distinct cryptographic identity. A separate device for high-stakes
+                  pseudonymous activity (whistleblowing, dissident work, sensitive support communities) yields a
+                  separate LCT with no shared fingerprint to the rest of your life. The cost is real: each LCT
+                  starts at zero and earns trust independently &mdash; no transfer between contexts. That&apos;s
+                  the right tradeoff when correlation is the threat model. (This is different from{' '}
+                  <a href="#faq-multi-persona" className="text-sky-400 hover:underline">multiple personas on one
+                  device</a>, which gives you role-scoped trust but does <em>not</em> give you fingerprint
+                  separation.)
+                </p>
+
+                <p className="font-semibold text-gray-200 mt-3">2. Software-only LCT (medium).</p>
+                <p>
+                  A software-only LCT has no hardware-fingerprint binding &mdash; nothing physical to surveil
+                  or supply-chain-trace. The cost is a lower{' '}
+                  <Link href="/lct-explainer" className="text-sky-400 hover:underline">trust ceiling</Link>:
+                  software tops out at <span className="font-mono">0.50</span>, versus
+                  <span className="font-mono"> 0.75</span> (FIDO2), <span className="font-mono">0.85</span>{' '}
+                  (Secure Enclave), and <span className="font-mono">0.90</span> (TPM) for hardware-bound. For
+                  low-stakes pseudonymity where you can afford weaker trust &mdash; commenting, browsing,
+                  participating in conversations where a 0.50 ceiling is enough &mdash; software fallback is
+                  the cleanest answer. It is what most early Web4 adoption will actually look like.
+                </p>
+
+                <p className="font-semibold text-gray-200 mt-3">3. Zero-knowledge trust proofs + MRH blast radius (composition).</p>
+                <p>
+                  When you do use a hardware-bound LCT, two protocol-level layers reduce what an attacker can do
+                  with correlation: <strong>ZK trust proofs</strong> let you prove you meet a threshold
+                  (&ldquo;I have &gt;0.7 trust in journalism&rdquo;) without revealing which LCT you are, and{' '}
+                  <Link href="/mrh-explorer" className="text-sky-400 hover:underline">MRH (Markov Relevancy
+                  Horizon)</Link> means even a correlated identity only propagates through entities within your
+                  trust network &mdash; a global de-anonymization requires global graph access, not just one
+                  end-point. Combined with multi-device witness redundancy, this raises the cost of correlation
+                  from &ldquo;trace one fingerprint&rdquo; to &ldquo;trace one fingerprint AND traverse the
+                  witness graph AND defeat ZK selective disclosure.&rdquo; A higher bar than any of the three
+                  alone.
+                </p>
+
+                <p className="font-semibold text-gray-200 mt-3">What does NOT resolve the tension.</p>
+                <p>
+                  Rotating only the <em>handle</em> on a single LCT (the <code className="text-green-300/80 text-xs">#alice.assistant1</code> label
+                  part) does <strong>not</strong> defeat fingerprinting &mdash; the cryptographic key (the{' '}
+                  <code className="text-green-300/80 text-xs">0x4c8f…a3f2</code> part) is unchanged across
+                  handle rotations and is the actual de-anonymization surface. If you read &ldquo;rotated per
+                  community&rdquo; elsewhere on the site as a privacy mechanism, that&apos;s about display
+                  labels, not cryptographic identity. For real cryptographic separation you need a separate
+                  LCT &mdash; mitigation #1 above.
+                </p>
+
+                <p className="text-amber-400/70 text-xs mt-4">
+                  <strong>Net:</strong> The tension is real and not fully resolvable at the protocol layer
+                  &mdash; hardware fingerprints are persistent by design. What Web4 offers is a layered choice
+                  per context: separate device when correlation is the threat, software fallback when you can
+                  afford lower trust, ZK + MRH composition when you can&apos;t. None of these are perfect; all
+                  of them are concrete.
+                </p>
+              </div>
             </div>
           </details>
 
@@ -2797,51 +2868,58 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* Veracity weaponization — Apr 30 visitor unanswered Q4: "Each community defines quality" is the worry, not the answer.
-              Synthesizes existing on-site mechanisms (witness attestation, accuser asymmetry, role isolation, MRH decay, pseudonymity)
-              into the visitor's exact framing, with honest caveat about residual risk. */}
+              Reframed May 13 (visitor MEDIUM): originally 5-bullet stack read as defensive ("if any mechanism were clean, you wouldn't need five").
+              Now leads with the load-bearing mechanism (cost asymmetry + witness foundation); supporting layers nested in a "defense in depth" collapsible.
+              Honest caveat preserved verbatim. */}
           <details id="faq-veracity-weaponization" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What stops a community from defining &ldquo;low quality&rdquo; as &ldquo;disagrees with us politically&rdquo;?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
-            <div className="mt-4 text-gray-300 text-sm space-y-2">
+            <div className="mt-4 text-gray-300 text-sm space-y-3">
               <p>
                 This is the right worry to have. &ldquo;Each community defines quality&rdquo; (the{" "}
                 <a href="#faq-cultural-quality" className="text-sky-400 hover:underline">cultural-quality FAQ above</a>)
-                is genuinely how V3 scoring works &mdash; and on its own, it sounds like an invitation to weaponize
-                Veracity against dissent. Web4 doesn&apos;t eliminate that risk; it stacks several mechanisms that raise the cost
-                and limit the blast radius.
+                is genuinely how V3 scoring works. The core protection isn&apos;t a stack of safeguards &mdash;
+                it&apos;s a single mechanism that makes weaponization self-defeating.
               </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>Veracity is witness-attested, not single-judge.</strong> A &ldquo;low Veracity&rdquo; verdict
-                  isn&apos;t one moderator&apos;s opinion &mdash; it requires <em>multiple parties</em> attesting to factual
-                  accuracy or honesty. A community can rig its own committee, but rigging a witness network is
-                  much harder than flipping a flag.</li>
-                <li><strong>False accusations cost the accuser.</strong> If a community&apos;s assessments of you
-                  consistently disagree with everyone else&apos;s experience &mdash; especially with witnesses outside the
-                  bubble &mdash; the <em>accusers&apos;</em> own Veracity scores drop. (See{" "}
-                  <a href="#faq-powerful-liar" className="text-sky-400 hover:underline">powerful-liar FAQ</a>:
-                  &ldquo;Lying is expensive.&rdquo;) Weaponizing Veracity is asymmetrically expensive for the
-                  accusing community.</li>
-                <li><strong>Political opinions live in a different role than skill.</strong> T3 separates Talent,
-                  Training, and Temperament <em>per role</em>. A community marking down your &ldquo;political opinion&rdquo;
-                  trust doesn&apos;t touch your &ldquo;research credibility&rdquo; trust &mdash; they&apos;re different
-                  dimensions, scored by different witnesses. (See{" "}
-                  <a href="#faq-context-collapse" className="text-sky-400 hover:underline">role-isolation FAQ</a>.)</li>
-                <li><strong>MRH decay limits the blast radius.</strong> Trust attestations from a politically-loaded community
-                  fall off rapidly with social distance &mdash; ~0.7&times; per hop, near zero past three hops.
-                  A bubble&apos;s consensus stays mostly inside the bubble; outside observers don&apos;t inherit it.</li>
-                <li><strong>Pseudonymity is an escape hatch for high-stakes dissent.</strong> Whistleblowers and political
-                  dissidents can hold separate LCTs per role and disclose only what each context requires &mdash; see the{" "}
-                  <a href="#faq-pseudonymous" className="text-sky-400 hover:underline">pseudonymity FAQ</a> for the
-                  selective-disclosure model. The system is designed assuming some communities will be hostile.</li>
-              </ul>
               <p>
-                Read together: a community <em>can</em> declare low Veracity for opinions it dislikes, but the verdict
-                only really sticks <em>inside</em> that community, costs the community&apos;s own Veracity if witnesses
-                outside disagree, doesn&apos;t propagate far, and doesn&apos;t cross over into your skill or character trust
-                in unrelated contexts.
+                <strong className="text-gray-200">The mechanism: weaponizing Veracity costs the accuser.</strong>{" "}
+                A &ldquo;low Veracity&rdquo; verdict isn&apos;t one moderator&apos;s opinion &mdash; it requires{" "}
+                <em>multiple witnesses</em> attesting to factual accuracy or honesty. When a community&apos;s assessments
+                consistently diverge from witnesses outside the bubble, the <em>accusers&apos;</em> own Veracity scores
+                drop. (See{" "}
+                <a href="#faq-powerful-liar" className="text-sky-400 hover:underline">powerful-liar FAQ</a>:
+                &ldquo;Lying is expensive.&rdquo;) The community can rig its own committee, but it can&apos;t rig
+                what outside witnesses observe &mdash; and the gap shows up on the accusers&apos; ledger, not just the
+                target&apos;s. Ideological enforcement isn&apos;t blocked; it&apos;s priced in.
               </p>
+              <p>
+                That asymmetry is the load-bearing piece. Three structural features reinforce it &mdash; role isolation,
+                distance decay, and pseudonymity &mdash; but each is a backstop, not the primary defense.
+              </p>
+
+              <details className="bg-gray-900/40 border border-gray-700/60 rounded-lg p-4 cursor-pointer">
+                <summary className="text-sm font-semibold text-gray-300 list-none flex justify-between items-center">
+                  <span>Defense in depth: three reinforcing layers</span>
+                  <span className="text-gray-500">+</span>
+                </summary>
+                <ul className="mt-3 list-disc list-inside space-y-1 text-gray-400 text-sm">
+                  <li><strong>Political opinions live in a different role than skill.</strong> T3 separates Talent,
+                    Training, and Temperament <em>per role</em>. A community marking down your &ldquo;political opinion&rdquo;
+                    trust doesn&apos;t touch your &ldquo;research credibility&rdquo; trust &mdash; they&apos;re different
+                    dimensions, scored by different witnesses. (See{" "}
+                    <a href="#faq-context-collapse" className="text-sky-400 hover:underline">role-isolation FAQ</a>.)</li>
+                  <li><strong>MRH decay limits the blast radius.</strong> Trust attestations from a politically-loaded community
+                    fall off rapidly with social distance &mdash; ~0.7&times; per hop, near zero past three hops.
+                    A bubble&apos;s consensus stays mostly inside the bubble; outside observers don&apos;t inherit it.</li>
+                  <li><strong>Pseudonymity is an escape hatch for high-stakes dissent.</strong> Whistleblowers and political
+                    dissidents can hold separate LCTs per role and disclose only what each context requires &mdash; see the{" "}
+                    <a href="#faq-pseudonymous" className="text-sky-400 hover:underline">pseudonymity FAQ</a> for the
+                    selective-disclosure model. The system is designed assuming some communities will be hostile.</li>
+                </ul>
+              </details>
+
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Within-bubble enforcement is <em>not eliminated</em>. If you live entirely
                 inside one community and that community decides you&apos;re heretical, your local trust still suffers &mdash;

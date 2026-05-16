@@ -534,7 +534,7 @@ export default function FirstSimulationPage() {
             }}>
               <strong style={{ color: '#fde68a' }}>Key concept:</strong> Trust starts low (0.3 out of 1.0).
               Nobody is trusted by default &mdash; trust must be earned through actions.
-              Every action costs ATP (attention tokens). Run out of ATP, and you die.
+              Every action costs ATP (energy). Run out of ATP, and you die.
             </div>
 
             <div style={{ display: 'flex', gap: '0.75rem' }}>
@@ -697,9 +697,9 @@ export default function FirstSimulationPage() {
                 padding: '1.25rem', borderRadius: '0.75rem',
                 background: 'var(--color-bg-secondary)', border: '1px solid #fde68a30',
               }}>
-                <h3 style={{ color: '#fde68a', fontWeight: 700, marginBottom: '0.5rem' }}>ATP (Attention Tokens)</h3>
+                <h3 style={{ color: '#fde68a', fontWeight: 700, marginBottom: '0.5rem' }}>ATP (Energy Budget)</h3>
                 <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                  ATP is the agent&apos;s attention budget. Every action costs ATP. Successful contributions
+                  ATP is the agent&apos;s energy budget. Every action costs ATP. Successful contributions
                   earn ATP back. If ATP reaches 0, the agent dies &mdash; they can no longer participate.
                   This models a fundamental truth: participation requires energy, and energy must be earned.
                 </p>

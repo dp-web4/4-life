@@ -70,7 +70,7 @@ const QUESTIONS: Question[] = [
     question: 'What are you most curious about?',
     options: [
       { label: 'How trust works', description: 'Identity, trust measurement, and how it accumulates or collapses', value: 'trust' },
-      { label: 'The economics', description: 'Attention budgets, action costs, and why spam becomes impossible', value: 'economics' },
+      { label: 'The economics', description: 'Energy budgets, action costs, and why spam becomes impossible', value: 'economics' },
       { label: 'Emergence & AI', description: 'How trust awareness develops, how agents learn, how societies self-organize', value: 'emergence' },
       { label: 'The big picture', description: 'Why does this matter? What problem does it solve? How is it different from Web3?', value: 'vision' },
     ],

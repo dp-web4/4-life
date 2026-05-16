@@ -247,7 +247,7 @@ This is the **Circle of Friends** - a collusion ring where trust is manufactured
     motivation: 'extractive',
     patience: 'long',
     description: 'Accumulate ATP without spending, creating artificial scarcity.',
-    narrative: `The Miser earns ATP through legitimate work but never spends it. They hoard attention budget, withdrawing it from circulation.
+    narrative: `The Miser earns ATP through legitimate work but never spends it. They hoard energy, withdrawing it from circulation.
 
 "Why is this an attack?" Because ATP is a currency of attention. When it's hoarded, there's less available for legitimate operations. Prices rise. Small participants can't afford to act. The market seizes up.
 

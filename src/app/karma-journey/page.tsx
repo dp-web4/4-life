@@ -507,6 +507,17 @@ export default function KarmaJourneyPage() {
         carries forward (more ATP, higher trust); harm carries forward too (less ATP,
         lower trust). No deity, no committee, no moral ledger — just consequences
         that don&rsquo;t reset when you do.
+        <div style={{ marginTop: '0.6rem', paddingTop: '0.6rem', borderTop: '1px solid rgba(251, 191, 36, 0.15)', fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.55 }}>
+          <strong style={{ color: 'var(--color-text-secondary)' }}>Simulation vs. real deployment.</strong>{' '}
+          &ldquo;Life&rdquo; and &ldquo;rebirth&rdquo; are simulation framing &mdash; an LCT is
+          hardware-bound and persists; it doesn&rsquo;t literally die and respawn. In a real
+          Web4 deployment this same mechanic looks like{' '}
+          <Link href="/aliveness#death-meaning" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>
+            license suspension and reinstatement
+          </Link>
+          : your identity and history persist, but your participation rights are paused
+          until your karma tier earns them back. Same consequences, different metaphor.
+        </div>
       </div>
 
       <p style={{ color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '700px', lineHeight: 1.6, fontSize: '0.85rem' }}>
@@ -544,12 +555,34 @@ export default function KarmaJourneyPage() {
           <div style={{ fontSize: '0.75rem', color: '#fde68a', fontWeight: 600, marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Effective trust</div>
           <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '0.4rem', fontFamily: 'var(--font-mono)' }}>raw × CI²</div>
           <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>Decides your <strong style={{ color: 'var(--color-text-secondary)' }}>karma tier</strong> at death (Honored / Neutral / Constrained), which seeds your next life.</div>
+          {/* May 13 LOW — bridge "next life" simulation framing to the deployment mechanic at the point of use; the top-of-page intro callout was being read as preamble and missed. */}
+          <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', lineHeight: 1.55, marginTop: '0.5rem', fontStyle: 'italic', opacity: 0.85 }}>
+            &ldquo;Next life&rdquo; is simulation framing. In a deployed Web4 this is{' '}
+            <Link href="/aliveness#death-meaning" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.25)' }}>
+              license suspension and reinstatement
+            </Link>
+            , not deletion.
+          </div>
         </div>
       </div>
-      <p style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '700px', lineHeight: 1.5 }}>
-        <strong style={{ color: 'var(--color-text-secondary)' }}>Why square CI (and not cube or linear)?</strong>{' '}
-        Consistency compounds. A small dip barely shows (0.9² = 0.81) but a serious inconsistency nearly halves you (0.6² = 0.36). Squaring punishes erratic behavior far more than it rewards perfect consistency. Linear (× CI) would treat a 0.6 the same as a 0.9 in proportion to perfect — too forgiving. Cubing (× CI³) would crush 0.9 down to 0.73 — too brutal for routine variance. Square sits in the gentle middle: small dips forgiven, sustained dips compound.
-      </p>
+      {/* May 15 visitor MEDIUM + recurring #1 unanswered question — the CI² rationale lived here but as
+          0.78rem muted fine print below the prominent contrast card; scanning visitors absorbed the card
+          and the 0.9²=0.81 example yet kept reporting the "why" as unexplained. Prior sessions re-added
+          the text as fine print rather than raising its visual weight. Promote to a first-class callout:
+          plain-English one-sentence answer leading in bold body type so scanners get it without parsing
+          the cube/linear comparison. */}
+      <div style={{
+        marginBottom: '1.5rem', maxWidth: '700px',
+        padding: '0.85rem 1.1rem', borderRadius: '0.5rem',
+        background: 'rgba(253, 230, 138, 0.05)', borderLeft: '3px solid rgba(253, 230, 138, 0.4)',
+      }}>
+        <div style={{ fontSize: '0.95rem', color: 'var(--color-text-primary)', fontWeight: 600, marginBottom: '0.35rem', lineHeight: 1.45 }}>
+          Why squared? So one bad stretch costs you more than steady mediocrity ever could.
+        </div>
+        <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
+          Squaring makes inconsistency compound against you. A small dip barely shows (0.9² = 0.81); a serious one nearly halves you (0.6² = 0.36). Linear (× CI) would be too forgiving — it treats a 0.6 in the same proportion as a 0.9. Cubing (× CI³) would be too brutal, crushing a 0.9 down to 0.73 for routine variance. Square sits in the gentle middle: small dips forgiven, sustained dips punished.
+        </p>
+      </div>
 
       {/* Lives Overview Strip */}
       {lives.length > 1 && (
@@ -1059,7 +1092,8 @@ export default function KarmaJourneyPage() {
           }}>
             <strong style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem' }}>How It Works →</strong>
             <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', margin: '0.25rem 0 0' }}>
-              Understand the mechanics behind trust, energy, and rebirth
+              Understand the mechanics behind trust, energy, and rebirth{' '}
+              <span style={{ opacity: 0.7 }}>(license suspension, in deployment)</span>
             </p>
           </a>
         </div>

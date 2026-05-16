@@ -482,9 +482,17 @@ export default function MRHExplorerPage() {
       }}>
         Trust Neighborhood Explorer
       </h1>
+      {/* 2026-05-13 visitor HIGH: page named after the acronym never spells it out. Lead with the expansion. */}
+      {/* 2026-05-14 visitor LOW: "Markov" needs a plain-English gloss — visitor's verbatim prescription. */}
+      <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem', marginBottom: '0.75rem', maxWidth: '700px' }}>
+        <span style={{ fontFamily: 'monospace', color: 'var(--color-text-secondary)' }}>MRH</span> = <strong style={{ color: 'var(--color-text-secondary)' }}>Markov Relevancy Horizon</strong>
+        {' '}&mdash; the technical name for what we call a &ldquo;trust neighborhood&rdquo; on the rest of the site.
+        It&apos;s the boundary of what each agent can see, affect, and reason about; beyond it, trust signals fade into noise.
+        {' '}<em style={{ color: 'var(--color-text-secondary)' }}>The &ldquo;Markov&rdquo; part:</em> the future depends only on the present &mdash; your history lives in your reputation, not in a log of every past step the network has to replay.
+      </p>
       <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem', maxWidth: '700px' }}>
-        Explore context boundaries (MRH) &mdash; the trust-based horizon that defines what each agent can see and
-        affect. Adjust horizon depth, explore the 4D profile, and see how distance decays trust.
+        Explore that boundary below &mdash; adjust horizon depth, explore the 4D profile (space, time, complexity, quality),
+        and see how distance decays trust.
       </p>
 
       {/* Main Layout */}
@@ -687,7 +695,7 @@ export default function MRHExplorerPage() {
                 { title: 'Natural Privacy', desc: 'Entities beyond your horizon can\'t see your relationships. Privacy emerges from network structure, not access control lists.', color: '#06b6d4' },
                 { title: 'Computational Efficiency', desc: 'With ~10 connections per entity, depth-3 traversal covers ~1,000 entities instead of the entire network. O(d³) vs O(n).', color: '#8b5cf6' },
                 { title: 'Spam Prevention', desc: 'Actions outside your horizon cost exponentially more ATP. You can\'t spam people you don\'t know without burning through resources.', color: '#f59e0b' },
-                { title: 'Trust Accuracy', desc: 'Beyond 3 hops, trust signals degrade below statistical significance (Markov property). MRH stops before trust becomes noise.', color: '#10b981' },
+                { title: 'Trust Accuracy', desc: 'Beyond ~3 hops, trust signals fade into noise — too thin to base decisions on. MRH stops at the depth where the signal still carries information. (Mathematicians call this the Markov property.)', color: '#10b981' },
               ].map(item => (
                 <div key={item.title} style={{
                   padding: '1rem', borderRadius: '0.5rem',
@@ -715,6 +723,10 @@ export default function MRHExplorerPage() {
             <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1rem', lineHeight: 1.6 }}>
               As trust propagates through the network, each hop <strong>multiplicatively reduces</strong> the signal.
               With a decay factor of 0.9 per hop and typical edge trust of 0.85:
+            </p>
+            <p style={{ color: 'var(--color-text-muted)', marginBottom: '1rem', lineHeight: 1.6, fontSize: '0.85rem' }}>
+              <strong style={{ color: 'var(--color-text-secondary)' }}>Why 0.9?</strong> This explorer uses 0.9 because it&apos;s the value that lands trust at roughly 50% by depth 3 — the threshold below which signals stop carrying useful information.
+              The parameter is calibrated to the depth-3 cutoff, not the other way around. Other Web4 surfaces use a coarser <code style={{ fontSize: '0.85em' }}>0.7^n</code> approximation for the same shape; both reach noise-floor at depth 3-4.
             </p>
 
             <div style={{ marginBottom: '1rem' }}>

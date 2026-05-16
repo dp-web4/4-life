@@ -216,14 +216,31 @@ export default function CoherenceIndexPage() {
                 </div>
               </div>
             </div>
-            <div className="text-xs text-gray-500 mt-3 border-t border-gray-800 pt-3">
-              {/* Apr 30 LOW: lead with the squaring intuition; formula follows.
-                  Apr 23 LOW originally added the rationale; visitor asked for it before the formula, not after. */}
-              Small drops in coherence should hurt more than linear &mdash; inconsistency breaks trust <em>and</em> creates ambiguity about which version of you is acting. So we square the coherence factor:{" "}
-              <code className="text-gray-300">Effective trust = T3 × CI²</code>.{" "}
-              Your reputation matters, but only if your current behavior still looks like you.{" "}
-              Need a T3 refresher? <Link href="/trust-tensor" className="text-sky-400 hover:text-sky-300">See the Trust Tensor page</Link>.
+          </div>
+
+          {/* May 14 MEDIUM: visitor read the page end-to-end and still asked
+              "why is the formula CI² and not just CI?" — the rationale used to
+              live in a tiny text-xs footer of the T3-vs-CI card above and was
+              invisible. Promoted to its own visible callout where the formula
+              first appears. */}
+          <div className="bg-orange-950/20 border border-orange-800/30 rounded-lg p-5 mb-6">
+            <div className="text-sm font-semibold text-orange-300 mb-2">
+              Why is it CI<sup>2</sup>, not just CI?
             </div>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Small drops in coherence should hurt more than linear &mdash;
+              inconsistency breaks trust <em>and</em> creates ambiguity about
+              which version of you is acting. So we square the coherence factor:{" "}
+              <code className="text-gray-200">Effective trust = T3 × CI²</code>.{" "}
+              That way a 10% dip (CI = 0.9) only costs you about 19% of effective
+              trust (0.9² = 0.81), but a 40% dip (CI = 0.6) costs you 64% (0.6² = 0.36).
+              Your reputation matters &mdash; but only if your current behavior
+              still looks like you.{" "}
+              Need a T3 refresher?{" "}
+              <Link href="/trust-tensor" className="text-sky-400 hover:text-sky-300">
+                See the Trust Tensor page
+              </Link>.
+            </p>
           </div>
 
           {/* Apr 28 LOW: anchor "grounding event" upfront — term recurs throughout the page; visitor asked for one definition near the top */}
@@ -375,10 +392,33 @@ export default function CoherenceIndexPage() {
           <h2 className="text-3xl font-bold mb-6 text-gray-100">
             The Four Coherence Dimensions
           </h2>
-          <p className="text-gray-400 mb-8">
+          <p className="text-gray-400 mb-4">
             Web4 measures coherence across four independent dimensions. All must
             be consistent for full trust access.
           </p>
+
+          {/* May 14 MEDIUM: visitor read the four dimensions in sequence and
+              felt watched ("this is a lot of behavioral surveillance") before
+              reaching the reassurance card lower on the page. Naming the
+              concern up front gives the dimensions a defensible frame to read
+              against. The fuller reassurance lives at #not-surveillance below. */}
+          <div className="bg-slate-900/30 border-l-4 border-slate-600/60 rounded-r p-4 mb-8 text-sm text-gray-300">
+            <strong className="text-gray-200">Before you read these:</strong>{" "}
+            location, hardware, timing, and relationships sound like a lot of
+            behavioral surveillance. The design constrains where these checks
+            run and who gets to see the result &mdash;{" "}
+            <a
+              href="#not-surveillance"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("not-surveillance")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="text-sky-400 hover:text-sky-300 underline cursor-pointer"
+            >
+              the constraints and the open questions are below the dimensions ↓
+            </a>
+            .
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Spatial */}
@@ -510,8 +550,9 @@ export default function CoherenceIndexPage() {
             </div>
           </div>
 
-          {/* Privacy reassurance — Apr 25 visitor LOW: "isn't this surveillance?" */}
-          <div className="mt-8 bg-slate-900/40 border border-slate-700/40 rounded-lg p-5">
+          {/* Privacy reassurance — Apr 25 visitor LOW: "isn't this surveillance?"
+              May 14 MEDIUM: now also anchored from a preamble at top of section. */}
+          <div id="not-surveillance" className="mt-8 bg-slate-900/40 border border-slate-700/40 rounded-lg p-5 scroll-mt-24">
             <h3 className="text-base font-semibold text-slate-200 mb-2">
               Wait — isn&apos;t this surveillance?
             </h3>
@@ -940,33 +981,39 @@ export default function CoherenceIndexPage() {
                   This is a deliberate security choice:
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                  <div className="bg-gray-800/50 border border-gray-700 rounded p-4">
-                    <h4 className="text-sm font-semibold text-gray-300 mb-2">
-                      ❌ Simple Average (Insecure)
-                    </h4>
-                    <p className="text-sm text-gray-400 mb-2">
-                      CI = (0.9 + 0.9 + 0.9 + 0.1) / 4 = <strong>0.7</strong>
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      One dimension at 0.1 gets &ldquo;averaged out&rdquo; by the others.
-                      Attacker can ignore one dimension and still get decent CI.
-                    </p>
-                  </div>
+                <details className="group mb-4">
+                  <summary className="cursor-pointer list-none inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-300 transition-colors mb-3">
+                    <span className="group-open:rotate-90 transition-transform">&#9654;</span>
+                    <span>Show the math: average vs geometric mean</span>
+                  </summary>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-gray-800/50 border border-gray-700 rounded p-4">
+                      <h4 className="text-sm font-semibold text-gray-300 mb-2">
+                        ❌ Simple Average (Insecure)
+                      </h4>
+                      <p className="text-sm text-gray-400 mb-2">
+                        CI = (0.9 + 0.9 + 0.9 + 0.1) / 4 = <strong>0.7</strong>
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        One dimension at 0.1 gets &ldquo;averaged out&rdquo; by the others.
+                        Attacker can ignore one dimension and still get decent CI.
+                      </p>
+                    </div>
 
-                  <div className="bg-gray-800/50 border border-gray-700 rounded p-4">
-                    <h4 className="text-sm font-semibold text-gray-300 mb-2">
-                      ✅ Web4&apos;s Approach (Secure)
-                    </h4>
-                    <p className="text-sm text-gray-400 mb-2">
-                      CI = (0.9 × 0.9 × 0.9 × 0.1)^(1/4) = <strong>0.52</strong>
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      One dimension at 0.1 tanks the entire CI. Attacker MUST fake
-                      coherence across ALL dimensions simultaneously.
-                    </p>
+                    <div className="bg-gray-800/50 border border-gray-700 rounded p-4">
+                      <h4 className="text-sm font-semibold text-gray-300 mb-2">
+                        ✅ Web4&apos;s Approach (Secure)
+                      </h4>
+                      <p className="text-sm text-gray-400 mb-2">
+                        CI = (0.9 × 0.9 × 0.9 × 0.1)^(1/4) = <strong>0.52</strong>
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        One dimension at 0.1 tanks the entire CI. Attacker MUST fake
+                        coherence across ALL dimensions simultaneously.
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </details>
 
                 <p className="text-gray-300">
                   <strong>Result</strong>: Attacks become exponentially harder.
@@ -979,29 +1026,32 @@ export default function CoherenceIndexPage() {
             </div>
           </div>
 
-          {/* Worked example with steps — Apr 26 visitor LOW: "wanted a worked example" */}
-          <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6">
-            <div className="flex items-baseline gap-3 mb-3">
+          {/* Worked example with steps — Apr 26 visitor LOW: "wanted a worked example"; May 13 visitor LOW: collapsed math */}
+          <details className="group bg-gray-800/50 border border-gray-700 rounded-lg">
+            <summary className="cursor-pointer list-none p-6 flex items-baseline gap-3">
+              <span className="text-gray-500 group-open:rotate-90 transition-transform">&#9654;</span>
               <span className="text-xs uppercase tracking-wide text-sky-400 font-semibold">Step-by-step</span>
-              <span className="text-sm text-gray-400">A realistic case</span>
+              <span className="text-sm text-gray-400">Show the step-by-step math (a realistic case)</span>
+            </summary>
+            <div className="px-6 pb-6">
+              <p className="text-gray-300 text-sm mb-4">
+                Suppose Alice has three dimensions at <strong>0.9</strong> (strong) and
+                one at <strong>0.5</strong> (weak — say, an unusual relational pattern).
+                Here&apos;s what the geometric mean does with that:
+              </p>
+              <div className="font-mono text-sm space-y-1 text-gray-300 bg-gray-900/60 border border-gray-700/60 rounded p-4 mb-4">
+                <div><span className="text-gray-500">Step 1.</span> 0.9 × 0.9 × 0.5 × 0.9 = <span className="text-sky-300">0.3645</span></div>
+                <div><span className="text-gray-500">Step 2.</span> ⁴√0.3645 ≈ <span className="text-sky-300">0.78</span></div>
+              </div>
+              <p className="text-gray-400 text-sm">
+                One moderate weakness drops CI to <strong className="text-gray-200">0.78</strong> —
+                a real penalty, but not catastrophic. The earlier 0.1 case (extreme weakness)
+                drops it all the way to <strong className="text-gray-200">0.52</strong>. That&apos;s
+                the curve: 0.9 (perfect) → 0.78 (one moderate gap) → 0.52 (one extreme gap).
+                No averaging hides the worst dimension.
+              </p>
             </div>
-            <p className="text-gray-300 text-sm mb-4">
-              Suppose Alice has three dimensions at <strong>0.9</strong> (strong) and
-              one at <strong>0.5</strong> (weak — say, an unusual relational pattern).
-              Here&apos;s what the geometric mean does with that:
-            </p>
-            <div className="font-mono text-sm space-y-1 text-gray-300 bg-gray-900/60 border border-gray-700/60 rounded p-4 mb-4">
-              <div><span className="text-gray-500">Step 1.</span> 0.9 × 0.9 × 0.5 × 0.9 = <span className="text-sky-300">0.3645</span></div>
-              <div><span className="text-gray-500">Step 2.</span> ⁴√0.3645 ≈ <span className="text-sky-300">0.78</span></div>
-            </div>
-            <p className="text-gray-400 text-sm">
-              One moderate weakness drops CI to <strong className="text-gray-200">0.78</strong> —
-              a real penalty, but not catastrophic. The earlier 0.1 case (extreme weakness)
-              drops it all the way to <strong className="text-gray-200">0.52</strong>. That&apos;s
-              the curve: 0.9 (perfect) → 0.78 (one moderate gap) → 0.52 (one extreme gap).
-              No averaging hides the worst dimension.
-            </p>
-          </div>
+          </details>
         </section>
 
         {/* Synthon foreshadow — visitor friction Mar 23 LOW */}

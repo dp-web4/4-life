@@ -208,12 +208,25 @@ export default function FirstContactPage() {
                 In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> — play, pause, scrub, replay — and watch trust and reputation respond in real time. This is a hands-on walkthrough, not a video.
               </p>
               <p className="text-sm text-gray-500 leading-relaxed italic">
-                Below: a quick map of the four ideas you&apos;ll see in motion, the five-act arc, and the two numbers to watch. Then click <span className="not-italic font-semibold text-gray-300">Start</span> to drive Alice yourself — no account, no sign-in.
+                Below: the two numbers to watch, then a quick reference map of the four ideas (no need to memorize them — each is explained in the story the moment Alice uses it) and the five-act arc. Then click <span className="not-italic font-semibold text-gray-300">Start</span> to drive Alice yourself — no account, no sign-in.
               </p>
             </div>
 
+            {/* Two-number anchor moved ABOVE the concept grid — May 15 visitor LOW:
+                this concrete anchor "rescued" the page; the four-acronym grid felt
+                like a vocab wall when it came first. Lead with the two numbers. */}
+            <div className="bg-gray-900/60 border border-gray-700/60 rounded-xl p-5">
+              <div className="text-xs uppercase tracking-wide text-gray-400 font-semibold mb-2">Before you start — reading Alice&apos;s panel</div>
+              <p className="text-sm text-gray-400 mb-3">Only two numbers move while she acts. This is all you need to follow the story:</p>
+              <ul className="text-sm text-gray-300 space-y-2">
+                <li><span className="text-sky-300 font-semibold">🔋 Energy Budget (ATP)</span> — the resource Alice spends to act. Starts at <span className="text-gray-200">100</span>; goes down when she posts, up when others confirm her work was valuable. If it hits 0, she can&apos;t act.</li>
+                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> — her reputation, on a <span className="text-gray-200">0.00&ndash;1.00</span> scale. Starts neutral at <span className="text-gray-200">0.50</span>. Above 0.50: full access. Below 0.50: features get restricted until she rebuilds it.</li>
+              </ul>
+            </div>
+
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-8">
-              <h2 className="text-2xl font-bold mb-4">What You'll Learn</h2>
+              <h2 className="text-2xl font-bold mb-1">The four ideas behind it</h2>
+              <p className="text-sm text-gray-400 mb-4">A reference map, not a quiz — you don&apos;t need to memorize these. Each one is explained in the story the moment Alice runs into it. Skim now, or skip straight to <span className="font-semibold text-gray-300">Start</span> and come back.</p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <Link href="/atp-economics" className="text-sky-400 font-semibold mb-2 block hover:underline">🔋 ATP — Allocation Transfer Packets</Link>
@@ -304,16 +317,6 @@ export default function FirstContactPage() {
               <p className="text-sm text-gray-400 italic">
                 You control the pace. At every turning point the system pauses to explain <em>why</em> it worked that way, and you see every trust/ATP change the moment it happens.
               </p>
-            </div>
-
-            {/* Pre-flight stat panel key — Apr 28 visitor MEDIUM: orient on what the panel numbers mean before Alice's story starts */}
-            <div className="bg-gray-900/60 border border-gray-700/60 rounded-xl p-5">
-              <div className="text-xs uppercase tracking-wide text-gray-400 font-semibold mb-2">Before you start — reading Alice&apos;s panel</div>
-              <p className="text-sm text-gray-400 mb-3">Two numbers will move while she acts. Here&apos;s what they mean:</p>
-              <ul className="text-sm text-gray-300 space-y-2">
-                <li><span className="text-sky-300 font-semibold">🔋 Energy Budget (ATP)</span> — the resource Alice spends to act. Starts at <span className="text-gray-200">100</span>; goes down when she posts, up when others confirm her work was valuable. If it hits 0, she can&apos;t act.</li>
-                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> — her reputation, on a <span className="text-gray-200">0.00&ndash;1.00</span> scale. Starts neutral at <span className="text-gray-200">0.50</span>. Above 0.50: full access. Below 0.50: features get restricted until she rebuilds it.</li>
-              </ul>
             </div>
 
             <button

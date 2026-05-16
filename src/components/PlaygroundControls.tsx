@@ -178,7 +178,7 @@ export function PlaygroundControls({ onRunSimulation, isRunning }: PlaygroundCon
           min={20}
           max={200}
           step={10}
-          description="Attention budget at birth — run out and you die"
+          description="Energy budget at birth — run out and you die"
         />
         <ParameterSlider
           label="Starting Trust"
