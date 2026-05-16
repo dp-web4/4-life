@@ -451,6 +451,9 @@ export default function DayInWeb4Page() {
         What would your day look like if the internet had trust built in?
         10 scenarios across one day — pick a choice in each, see what happens, then click <em>Next scenario</em> to advance through the timeline above.
       </p>
+      <p className="text-gray-500 mb-4 text-sm italic">
+        Everything below is narrated in the present tense as a thought experiment — none of it ships today. Read it as what a trust-native internet <em>would</em> feel like if you were living an ordinary day inside it.
+      </p>
 
       {/* Your First 5 Minutes — Onboarding Walkthrough */}
       <details className="mb-8 rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.4)' }}>
