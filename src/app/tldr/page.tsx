@@ -52,7 +52,8 @@ export default function TLDRPage() {
               <span className="text-sky-400 text-xl mt-0.5">1.</span>
               <p className="text-gray-300">
                 <strong className="text-white">Actions cost energy &mdash; valuable contributions earn it back.</strong> Posting,
-                messaging, voting — everything draws from a personal energy budget (called ATP — short for Allocation Transfer Packets),
+                messaging, voting — everything draws from a personal energy budget (called ATP — short for Allocation Transfer Packets,
+                a name borrowed from cellular biology, where ATP is the molecule your cells spend to do work),
                 but the budget refills continuously when others confirm your work was useful, so contributors don&apos;t get locked out.
                 Each action also creates a small receipt of what you spent. Spam drains the budget with no return.
               </p>
