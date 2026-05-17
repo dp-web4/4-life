@@ -920,6 +920,33 @@ export default function AlivenessExplainer() {
           </p>
         </div>
 
+        <div className="detail-box" style={{ marginTop: "1rem" }}>
+          <div style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.05em", opacity: 0.6, marginBottom: "0.75rem" }}>The two deaths, at a glance</div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+            <div style={{ flex: "1 1 240px", borderRadius: "0.5rem", padding: "1rem", background: "rgba(16, 185, 129, 0.08)", border: "1px solid rgba(16, 185, 129, 0.25)", textAlign: "center" }}>
+              <div style={{ fontWeight: 700, color: "#34d399", marginBottom: "0.25rem" }}>🔋 Energy Death</div>
+              <div style={{ fontSize: "0.85rem", opacity: 0.85 }}>ATP runs out (most common)</div>
+              <div style={{ color: "#34d399", margin: "0.4rem 0" }}>↓</div>
+              <div style={{ fontSize: "0.85rem", opacity: 0.85 }}>Reborn with karma carried forward</div>
+              <div style={{ color: "#34d399", margin: "0.4rem 0" }}>↓</div>
+              <div style={{ fontWeight: 600, color: "#34d399", fontSize: "0.9rem" }}>✓ Recoverable</div>
+              <div style={{ fontSize: "0.78rem", opacity: 0.65, marginTop: "0.3rem" }}>like recovering from bankruptcy</div>
+            </div>
+            <div style={{ flex: "1 1 240px", borderRadius: "0.5rem", padding: "1rem", background: "rgba(248, 113, 113, 0.08)", border: "1px solid rgba(248, 113, 113, 0.25)", textAlign: "center" }}>
+              <div style={{ fontWeight: 700, color: "#f87171", marginBottom: "0.25rem" }}>🤝 Trust Death</div>
+              <div style={{ fontSize: "0.85rem", opacity: 0.85 }}>T3 falls below 0.5</div>
+              <div style={{ color: "#f87171", margin: "0.4rem 0" }}>↓</div>
+              <div style={{ fontSize: "0.85rem", opacity: 0.85 }}>Society rejects rebirth</div>
+              <div style={{ color: "#f87171", margin: "0.4rem 0" }}>↓</div>
+              <div style={{ fontWeight: 600, color: "#f87171", fontSize: "0.9rem" }}>✗ Permanent</div>
+              <div style={{ fontSize: "0.78rem", opacity: 0.65, marginTop: "0.3rem" }}>like losing a professional license</div>
+            </div>
+          </div>
+          <p style={{ fontSize: "0.8rem", opacity: 0.6, marginTop: "0.75rem", marginBottom: 0, textAlign: "center" }}>
+            Same event (&ldquo;you die&rdquo;), two very different outcomes &mdash; which one depends only on whether your trust held.
+          </p>
+        </div>
+
         <div className="detail-box" style={{ marginTop: "1rem", background: "rgba(56, 189, 248, 0.08)", border: "1px solid rgba(56, 189, 248, 0.2)" }}>
           <h4 style={{ color: "#38bdf8" }}>What does &ldquo;death&rdquo; mean for an AI agent?</h4>
           <p>
