@@ -313,7 +313,7 @@ export default function WhyWeb4Page() {
             each root cause with a specific mechanism:
           </p>
           <div className="bg-gray-900/50 border border-gray-700/50 rounded-lg p-4 mb-6">
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Four ideas, introduced one at a time below</p>
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Five ideas, introduced one at a time below</p>
             <p className="text-xs text-gray-500">
               Each idea gets its own plain-English card below. Read them in order — they build on each other.
             </p>
@@ -372,12 +372,25 @@ export default function WhyWeb4Page() {
                 Learn about context boundaries →
               </Link>
             </div>
+
+            <div className="bg-gray-900/50 rounded-lg p-4">
+              <h4 className="font-semibold text-sky-400 mb-2">
+                5. Behavioral Consistency
+              </h4>
+              <p className="text-gray-400 text-sm">
+                Does your behavior add up over time? Steady, predictable conduct in a role counts for more than a great month followed by a bad one. One erratic stretch costs you more than steady mediocrity — consistency is scored separately and multiplies into your effective trust.
+              </p>
+              <p className="text-gray-400 text-sm mt-1">Shorthand: CI (Coherence Index)</p>
+              <Link href="/coherence-index" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
+                Learn about consistency →
+              </Link>
+            </div>
           </div>
 
           {/* Worked example — visitor MEDIUM 2026-05-03: cards explained in isolation but never collide in one concrete moment. Five-sentence scenario the visitor explicitly requested. */}
           <div className="bg-gray-950/60 border border-sky-700/40 rounded-lg p-5 mb-6">
             <p className="text-xs font-bold text-sky-400 uppercase tracking-wide mb-3">
-              All four, in one moment
+              All five, in one moment
             </p>
             <p className="text-gray-300 text-sm leading-relaxed mb-3">
               You see a stranger&apos;s question on a forum and tap <em>reply</em>.
@@ -403,9 +416,14 @@ export default function WhyWeb4Page() {
                 inside the asker&apos;s trust neighborhood see your reply at all — a
                 stranger five hops away never sees the thread.
               </li>
+              <li>
+                <strong className="text-sky-300">Consistency (CI):</strong> because this
+                reply fits your steady pattern of helpful answers — not a sudden 3am burst
+                from a new place — it strengthens rather than dents your effective trust.
+              </li>
             </ul>
             <p className="text-gray-400 text-xs italic">
-              Four mechanisms, one reply, fractions of a cent of energy, no friction the
+              Five mechanisms, one reply, fractions of a cent of energy, no friction the
               asker had to think about.
             </p>
           </div>
