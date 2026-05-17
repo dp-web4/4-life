@@ -693,9 +693,9 @@ export default function MRHExplorerPage() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
               {[
                 { title: 'Natural Privacy', desc: 'Entities beyond your horizon can\'t see your relationships. Privacy emerges from network structure, not access control lists.', color: '#06b6d4' },
-                { title: 'Computational Efficiency', desc: 'With ~10 connections per entity, depth-3 traversal covers ~1,000 entities instead of the entire network. O(d³) vs O(n).', color: '#8b5cf6' },
+                { title: 'Computational Efficiency', desc: 'With ~10 connections per entity, depth-3 traversal covers ~1,000 entities instead of the entire network — you compute over your neighborhood, never the whole graph.', color: '#8b5cf6' },
                 { title: 'Spam Prevention', desc: 'Actions outside your horizon cost exponentially more ATP. You can\'t spam people you don\'t know without burning through resources.', color: '#f59e0b' },
-                { title: 'Trust Accuracy', desc: 'Beyond ~3 hops, trust signals fade into noise — too thin to base decisions on. MRH stops at the depth where the signal still carries information. (Mathematicians call this the Markov property.)', color: '#10b981' },
+                { title: 'Trust Accuracy', desc: 'Beyond ~3 hops, trust signals fade into noise — too thin to base decisions on. MRH stops at the depth where the signal still carries information.', color: '#10b981' },
               ].map(item => (
                 <div key={item.title} style={{
                   padding: '1rem', borderRadius: '0.5rem',
@@ -713,6 +713,11 @@ export default function MRHExplorerPage() {
             }}>
               <strong>The key insight:</strong> MRH creates a world where privacy, efficiency, and accuracy all align.
               You see what&apos;s relevant, can&apos;t spy on what isn&apos;t, and the system naturally scales without central coordination.
+              <div style={{ marginTop: '0.5rem', paddingTop: '0.5rem', borderTop: '1px solid rgba(255,255,255,0.08)', fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>
+                <strong style={{ color: 'var(--color-text-muted)' }}>For the technically curious:</strong>{' '}
+                bounded-depth traversal is O(d³) rather than O(n) in network size, and ignoring history beyond the horizon
+                is the <em>Markov property</em> — the next state depends only on the current one, not the full past.
+              </div>
             </div>
           </div>
         )}
