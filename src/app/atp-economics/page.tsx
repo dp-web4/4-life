@@ -110,9 +110,18 @@ export default function ATPEconomicsPage() {
           <span className="text-gray-500 text-xs">=</span>
           <span className="text-gray-100 font-semibold text-sm">Allocation Transfer Packets</span>
         </div>
-        <p className="text-sm text-gray-400 mb-6 italic">
-          The words &ldquo;attention,&rdquo; &ldquo;energy,&rdquo; and &ldquo;budget&rdquo; you&apos;ll see throughout this page
-          are <em>metaphors</em> for what ATP <em>does</em>, not alternate expansions of the acronym.
+        {/* May 17 visitor MEDIUM (recurring Mar 27 / Apr 28 / May 15): the prior line listed
+            "attention", "energy", "budget" as three co-equal metaphors, re-opening "so what IS
+            ATP?" on the one page that should close it — directly after the sitewide #255 pass
+            standardized every other page on the single gloss "energy budget". Now leads with that
+            canonical gloss; the metaphor≠acronym distinction (Apr 28 purpose) is kept as a demoted
+            aside instead of three co-equal words. */}
+        <p className="text-sm text-gray-400 mb-6">
+          In one line: <strong className="text-gray-200">ATP is your energy budget</strong> &mdash; the
+          same plain gloss used everywhere else on this site.{' '}
+          <span className="italic">You&apos;ll occasionally see it called an &ldquo;attention&rdquo; or
+          &ldquo;usage&rdquo; budget &mdash; same idea, just worded for the context; these are not
+          alternate expansions of the acronym, which stays &ldquo;Allocation Transfer Packets.&rdquo;</span>
         </p>
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Web4 solves spam, abuse, and low-quality content not with moderation
