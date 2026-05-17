@@ -17,7 +17,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="text-center" style={{ maxWidth: '48rem', margin: '0 auto' }}>
         <p className="eyebrow">4-Life: A Trust-Native Internet Lab <span style={{ fontWeight: 400, opacity: 0.7 }}>&mdash; explore Web4 through simulations</span></p>
-        {/* May 4 visitor LOW: "trust-native" caused a beat-loss in the eyebrow before the line-34 definition arrived. 6-word gloss, adjacent to the term, muted so it doesn't push H1 down. */}
+        {/* May 4 visitor LOW: "trust-native" caused a beat-loss in the eyebrow before the line-34 definition arrived. May 16 regression visitor HIGH ("single change with highest return"): "Web4" appears in the eyebrow with no inline definition — visitor wondered "typo? Web3+1? a different thing?" for 3+ screens before the line-44 definition. Name AND gloss Web4 here, at its first appearance, consistent with the line 44-45 framing (no blockchain, NOT a Web3 successor — do not call it a "successor" as the visitor literally suggested; that contradicts line 45). Keeps the behavior-verification phrase the May 4 visitor valued. */}
         <p style={{
           fontSize: '0.85rem',
           color: 'var(--color-text-muted)',
@@ -25,7 +25,7 @@ export default function HomePage() {
           marginTop: '-0.25rem',
           marginBottom: '0.75rem',
         }}>
-          (trust verified by behavior, not assumed by default)
+          (<strong style={{ fontStyle: 'normal', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Web4</strong>: a proposed internet trust model &mdash; trust verified by behavior, not assumed by default; no blockchain, not a Web3 successor)
         </p>
         <h1 style={{ marginBottom: '1rem' }}>
           The Internet Has a Trust Problem
@@ -230,6 +230,45 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             fundamental as HTTPS. If these ideas hold up, they&apos;ll need to be
             open standards &mdash; not owned by anyone.
           </p>
+          {/* May 16 regression visitor HIGH (recurring Mar 10 / Mar 27): the section
+              explains WHAT Web4 is and its status but ended on "nobody profits" with
+              no next action — "I've read your site for 35 minutes... what's the call
+              to action?" Convert understanding into agency with concrete, honest
+              actions for a research-stage project with no live network. */}
+          <div style={{
+            marginTop: '0.5rem',
+            padding: '1rem 1.25rem',
+            border: '1px solid var(--color-border)',
+            borderRadius: '0.5rem',
+            background: 'rgba(56, 189, 248, 0.06)',
+          }}>
+            <p style={{ margin: '0 0 0.6rem', color: 'var(--color-text)', fontWeight: 600, fontSize: '0.95rem' }}>
+              So what can you actually do right now?
+            </p>
+            <p style={{ margin: '0 0 0.6rem', fontSize: '0.9rem' }}>
+              There&apos;s no network to sign up for &mdash; this is research. But it&apos;s
+              not nothing. Concretely, you can:
+            </p>
+            <ul style={{ margin: 0, paddingLeft: '1.2rem', fontSize: '0.9rem', lineHeight: 1.7, listStyle: 'disc' }}>
+              <li>
+                <strong style={{ color: 'var(--color-text)' }}>Poke at the model.</strong>{' '}
+                Run the <Link href="/society-simulator" style={{ color: 'var(--color-sky)', textDecoration: 'none' }}>Society Simulator</Link> or
+                walk <Link href="/first-contact" style={{ color: 'var(--color-sky)', textDecoration: 'none' }}>Alice&apos;s lifecycle</Link> &mdash;
+                the rules are real code, not slideware. Try to break them.
+              </li>
+              <li>
+                <strong style={{ color: 'var(--color-text)' }}>Read the spec.</strong>{' '}
+                The <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" style={{ color: 'var(--color-sky)', textDecoration: 'none' }}>formal specification</a> and
+                reference code are open source &mdash; fork it, critique it, find the holes.
+              </li>
+              <li>
+                <strong style={{ color: 'var(--color-text)' }}>Pressure-test the idea.</strong>{' '}
+                Read <Link href="/what-could-go-wrong" style={{ color: 'var(--color-sky)', textDecoration: 'none' }}>what could go wrong</Link> and
+                decide for yourself whether the open questions are answerable. Honest
+                disagreement is the most useful thing you can send back.
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
