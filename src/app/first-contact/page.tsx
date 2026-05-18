@@ -229,9 +229,9 @@ export default function FirstContactPage() {
               <p className="text-sm text-gray-400 mb-4">A reference map, not a quiz — you don&apos;t need to memorize these. Each one is explained in the story the moment Alice runs into it. Skim now, or skip straight to <span className="font-semibold text-gray-300">Start</span> and come back.</p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <Link href="/atp-economics" className="text-sky-400 font-semibold mb-2 block hover:underline">🔋 ATP — Allocation Transfer Packets</Link>
+                  <Link href="/atp-economics" className="text-sky-400 font-semibold mb-2 block hover:underline">🔋 Energy Budget</Link>
                   <p className="text-gray-400">
-                    Web4&rsquo;s energy budget. Every action costs ATP. Recipients who benefit confirm quality &mdash; that&apos;s what earns energy back. Spam burns out.
+                    Every action costs energy. Recipients who benefit confirm quality &mdash; that&apos;s what earns energy back. Spam burns out. (Shorthand: <strong>ATP</strong> &mdash; Allocation Transfer Packets.)
                   </p>
                 </div>
                 <div>
