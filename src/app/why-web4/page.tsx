@@ -410,6 +410,23 @@ export default function WhyWeb4Page() {
             </p>
           </div>
 
+          {/* One-line CI gloss before the FAQ — visitor LOW 2026-05-17: CI used heavily in
+              the questions below but never introduced in the main body. Kept OUT of the
+              "four ideas" framing on purpose: CI isn't a 5th mechanism, it's a modifier. */}
+          <div className="bg-gray-950/60 border border-amber-700/30 rounded-lg p-4 mb-6">
+            <p className="text-xs font-bold text-amber-400/90 uppercase tracking-wide mb-2">
+              One more term you&apos;ll see in the answers below
+            </p>
+            <p className="text-gray-300 text-sm leading-relaxed mb-0">
+              <strong className="text-amber-300">Coherence Index (CI):</strong> not a fifth
+              mechanism &mdash; it&apos;s a consistency check on the four above. It just asks
+              <em> does your behavior add up over time?</em> Steady, predictable behavior keeps
+              CI high; acting erratically (or differently when you think no one&apos;s watching)
+              drags it down, which in turn drags down how much your trust scores actually count.
+              The questions below lean on it, so meet it here first.
+            </p>
+          </div>
+
           <p className="text-gray-400 text-sm border-t border-sky-800/30 pt-4">
             <strong className="text-white">4-Life</strong> is a simulation lab where you can
             watch these mechanisms in action. See societies form, trust networks emerge, spam
@@ -964,7 +981,8 @@ export default function WhyWeb4Page() {
                 <li><strong>Statistical detection:</strong> Unusually dense mutual validation clusters trigger anomaly detection
                   with 93%+ probability at 3+ members</li>
                 <li><strong>Behavioral consistency:</strong> Your{" "}
-                  <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link> flags when
+                  <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link>{" "}
+                  (CI &mdash; a running measure of how consistent your behavior is over time) flags when
                   validation patterns don&apos;t match your other behavior &mdash; confirming everything a cartel member
                   does while being selective with others creates a detectable signal</li>
                 <li><strong>Hardware cost:</strong> Each colluder needs real hardware-bound identity (LCT), making
