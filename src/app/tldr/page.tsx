@@ -26,7 +26,7 @@ export default function TLDRPage() {
           Web4 in 2 Minutes
         </h1>
         <p className="text-lg text-gray-400 leading-relaxed mb-10">
-          Plain English first &mdash; the acronyms (ATP, LCT) are spelled out the first time they appear. No prerequisites.
+          Plain English first, so you can read this cold &mdash; every term is spelled out the first time it appears. The only two acronyms you need for the overview are ATP and LCT; a few deeper shorthand names are optional and explained on their own pages.
         </p>
 
         {/* The Problem */}
