@@ -907,16 +907,18 @@ export default function AlivenessExplainer() {
           <h4 style={{ color: "#fbbf24" }}>What does &ldquo;death&rdquo; mean for a real person?</h4>
           <p>
             In these simulations, death means the agent stops acting and awaits rebirth.
-            In a deployed Web4 system, death would mean <strong>temporary loss of participation rights</strong> —
-            you can&apos;t post, vote, or transact until karma-based rebirth restores your access.
-            Think of it as a <strong>&ldquo;suspended license&rdquo;</strong> rather than account deletion:
-            your identity and history persist, but you need to earn your way back.
+            In a deployed Web4 system it would mean a <strong>temporary loss of participation rights</strong> —
+            you can&apos;t post, vote, or transact — but it is <strong>not account deletion</strong>:
+            your identity and history persist. Whether you get back depends entirely on
+            <em> which of two deaths</em> you suffered &mdash; and both map to a single, familiar real-world analogy.
           </p>
           <p style={{ fontSize: "0.85rem", opacity: 0.7, marginTop: "0.5rem" }}>
-            Important: death from energy exhaustion (most common) is recoverable through rebirth if
-            you built sufficient trust. Death from trust collapse below 0.5 is permanent —
-            society has rejected you. This distinction matters: running out of energy is like going
-            bankrupt (recoverable), but losing all trust is like losing your professional license (permanent).
+            Running out of energy (ATP) is the common case, and it&apos;s <strong>recoverable</strong> &mdash;
+            like <strong>going bankrupt</strong>: karma-based rebirth lets you earn your way back.
+            Losing trust (T3 below 0.5) is the severe case, and it&apos;s <strong>permanent</strong> &mdash;
+            like <strong>losing a professional license</strong>: society has rejected you, and there is no
+            rebirth for that identity. It&apos;s one event (&ldquo;you died&rdquo;) with two outcomes,
+            shown side by side below.
           </p>
         </div>
 
