@@ -964,7 +964,8 @@ export default function WhyWeb4Page() {
                 <li><strong>Statistical detection:</strong> Unusually dense mutual validation clusters trigger anomaly detection
                   with 93%+ probability at 3+ members</li>
                 <li><strong>Behavioral consistency:</strong> Your{" "}
-                  <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link> flags when
+                  <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link>{" "}
+                  (CI &mdash; a running measure of how consistent your behavior is over time) flags when
                   validation patterns don&apos;t match your other behavior &mdash; confirming everything a cartel member
                   does while being selective with others creates a detectable signal</li>
                 <li><strong>Hardware cost:</strong> Each colluder needs real hardware-bound identity (LCT), making
