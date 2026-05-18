@@ -465,7 +465,7 @@ export default function DayInWeb4Page() {
 
         <div className="px-4 pb-4 pt-2 space-y-4">
           <p className="text-gray-400 text-sm">
-            Before your day starts, you need to set up once. Here&apos;s what that looks like — no crypto wallet, no blockchain, no 24-word seed phrase.
+            <strong className="text-gray-300">None of this is downloadable yet — Web4 is active research.</strong> But <em>if</em> it existed, you&apos;d set up once before your day starts. Here&apos;s what that setup <em>would</em> look like — no crypto wallet, no blockchain, no 24-word seed phrase. Read the steps below as &ldquo;what it would feel like,&rdquo; not &ldquo;what to do today.&rdquo;
           </p>
 
           {/* Step 1: Install */}
@@ -480,7 +480,7 @@ export default function DayInWeb4Page() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-violet-500 flex items-center justify-center text-xl">🔐</div>
                 <div>
                   <div className="text-sm text-gray-200 font-medium">Web4 Identity</div>
-                  <div className="text-xs text-gray-500">Your trust wallet — not a crypto wallet</div>
+                  <div className="text-xs text-gray-500">A trust wallet — not a crypto wallet</div>
                 </div>
               </div>
               <p className="text-xs text-gray-500">
