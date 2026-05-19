@@ -1464,7 +1464,10 @@ Temperament:  30-day half-life (recent behavior matters most)
                 </li>
                 <li>
                   <strong><TermTooltip term="CI">Coherence Index (CI)</TermTooltip>:</strong> Behavioral consistency modulates
-                  effective trust: effective_trust = T3 × CI²
+                  effective trust: effective_trust = T3 × CI²{' '}
+                  <Link href="/coherence-index#why-ci-squared" className="text-sky-400 hover:text-sky-300 text-xs">
+                    (why squared?)
+                  </Link>
                 </li>
                 <li>
                   <strong>Karma:</strong> T3 above threshold allows rebirth with ATP carried forward
