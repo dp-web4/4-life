@@ -851,6 +851,17 @@ export default function AlivenessExplainer() {
           </pre>
         </div>
 
+        <div className="detail-box scroll-mt-24" style={{ marginTop: "1rem", background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.2)" }}>
+          <strong>Why is coherence <em>squared</em> (CI²)?</strong> Squaring is the
+          difference between &ldquo;a bad moment&rdquo; and &ldquo;a bad pattern.&rdquo;
+          A small dip barely registers (CI&nbsp;0.9 still keeps ~81% of effective trust),
+          but a sustained slide compounds fast (CI&nbsp;0.6 keeps only ~36%). Both lines
+          above carry the same CI² — so incoherence costs you twice: less trust is
+          accessible <em>and</em> every action costs more. Consistency has to be earned
+          over time; it can&apos;t be faked once.{" "}
+          <Link href="/coherence-index#why-ci-squared">Full rationale on the Coherence Index page →</Link>
+        </div>
+
         <p>
           <strong>Why all three?</strong> Each criterion prevents a different attack:
         </p>
