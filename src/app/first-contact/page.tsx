@@ -205,7 +205,7 @@ export default function FirstContactPage() {
                 Today's internet rewards spam, lets trolls create unlimited accounts, and makes quality creators compete with bots. What if the system itself made that impossible?
               </p>
               <p className="text-lg text-gray-400 leading-relaxed mb-3">
-                In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> — play, pause, scrub, replay — and watch trust and reputation respond in real time. This is a hands-on walkthrough, not a video.
+                In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> — play, pause, scrub, replay — and watch trust and reputation respond in real time. This is a hands-on walkthrough, not a video — and a model of a <em>proposed</em> system: the rules running here are real, but Web4 itself is active research with nothing to sign up for yet. Real rules, shown by simulation — not a demo of a shipped product.
               </p>
               <p className="text-sm text-gray-500 leading-relaxed italic">
                 Haven&apos;t read anything else on this site yet? You don&apos;t need to &mdash; this page starts from zero. Below: the two numbers to watch, then a quick reference map of the four ideas (no need to memorize them — each is explained in the story the moment Alice uses it) and the five-act arc. Then click <span className="not-italic font-semibold text-gray-300">Start</span> to drive Alice yourself — no account, no sign-in.
@@ -328,7 +328,7 @@ export default function FirstContactPage() {
 
             <p className="text-center text-sm text-gray-500">
               Step 1 of 5 · Simulation · Story · Concepts · Next Steps
-              <span className="block mt-1 text-xs">You can pause, scrub, replay, and skip ahead. Nothing gets set on your account — this is a live demo of the model.</span>
+              <span className="block mt-1 text-xs">You can pause, scrub, replay, and skip ahead. Nothing is saved and there&apos;s no account — you&apos;re running a simulation of the proposed model, not using a product.</span>
             </p>
           </div>
         )}
