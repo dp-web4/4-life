@@ -393,6 +393,22 @@ const SCENARIOS: Scenario[] = [
   },
 ];
 
+/**
+ * The concepts a scenario touches, deduped by link and kept in first-seen
+ * order. Used to surface "what do these terms mean?" links at the point of
+ * confusion (the setup text) instead of only after a choice is made.
+ */
+function scenarioConcepts(s: Scenario): { concept: string; conceptLink: string }[] {
+  const seen = new Set<string>();
+  const out: { concept: string; conceptLink: string }[] = [];
+  for (const c of s.choices) {
+    if (seen.has(c.conceptLink)) continue;
+    seen.add(c.conceptLink);
+    out.push({ concept: c.concept, conceptLink: c.conceptLink });
+  }
+  return out;
+}
+
 /* ─── Component ────────────────────────────────────────── */
 
 export default function DayInWeb4Page() {
@@ -680,8 +696,25 @@ export default function DayInWeb4Page() {
           </div>
 
           {/* Setup */}
-          <p className="text-gray-300 leading-relaxed mb-6">
+          <p className="text-gray-300 leading-relaxed mb-3">
             {scenario.setup}
+          </p>
+
+          {/* Concept links at the point of confusion — available before you
+              pick a choice, not only in the post-choice comparison. */}
+          <p className="text-gray-500 text-xs mb-6">
+            New to these terms?{' '}
+            {scenarioConcepts(scenario).map((c, i) => (
+              <span key={c.conceptLink}>
+                {i > 0 && <span className="text-gray-700"> · </span>}
+                <Link
+                  href={c.conceptLink}
+                  className="text-sky-500 hover:text-sky-400 transition-colors"
+                >
+                  {c.concept}
+                </Link>
+              </span>
+            ))}
           </p>
 
           {/* Choices or Comparison */}
