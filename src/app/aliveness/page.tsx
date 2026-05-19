@@ -1486,6 +1486,24 @@ extra_witnesses = ceil((0.8 - CI) × 10)  # Capped at +8
 CI = (spatial × capability × temporal × relational) ** 0.25`}
           </pre>
         </div>
+
+        <p style={{ marginTop: '1rem' }}>
+          <strong>Why is CI <em>squared</em>, not just multiplied?</strong> Squaring
+          is forgiving near the top and punishing as you fall. At CI&nbsp;0.95 you
+          still keep ~90% of your trust and pay only ~1.1× costs — a brief wobble
+          barely registers. But at CI&nbsp;0.7 you keep just ~49% and pay ~2× for
+          every action. The penalty isn&apos;t linear; it accelerates. That shape
+          is the point: <strong>a single bad moment is forgiven, but a sustained
+          pattern of incoherence compounds fast.</strong> Consistency has to be
+          earned over time — it can&apos;t be faked once.
+        </p>
+        <p style={{ marginTop: '0.75rem', color: '#9ca3af', fontSize: '0.95rem' }}>
+          The same CI² appears twice — in <code>effective_trust</code> and in the
+          ATP cost multiplier — so a sustained dip hits you from both sides at
+          once: less trust is accessible <em>and</em> every action costs more,
+          draining ATP faster. That double bind is exactly the death spiral the
+          three criteria are designed to expose.
+        </p>
         </details>
       </section>
 
