@@ -223,7 +223,7 @@ export default function CoherenceIndexPage() {
               live in a tiny text-xs footer of the T3-vs-CI card above and was
               invisible. Promoted to its own visible callout where the formula
               first appears. */}
-          <div className="bg-orange-950/20 border border-orange-800/30 rounded-lg p-5 mb-6">
+          <div id="why-ci-squared" className="bg-orange-950/20 border border-orange-800/30 rounded-lg p-5 mb-6 scroll-mt-24">
             <div className="text-sm font-semibold text-orange-300 mb-2">
               Why is it CI<sup>2</sup>, not just CI?
             </div>
