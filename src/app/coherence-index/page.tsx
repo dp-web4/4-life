@@ -243,6 +243,37 @@ export default function CoherenceIndexPage() {
             </p>
           </div>
 
+          {/* May 19 visitor Unanswered Q2 + Honest Assessment's #2 resonant point:
+              "It feels like the system distrusts me before I've done anything."
+              The visitor's literal remedy: "you're not being punished — you just
+              haven't been witnessed yet." Karma Journey is where the friction is
+              hit (CI 0.85 → ~1.4× costs), but that page is in #266's hunk region;
+              land the canonical answer here (mirrors #281's pattern for "why CI²?").
+              A future post-#266 session can wire up a deep-link from Karma Journey
+              to #why-ci-starts-low. */}
+          <div id="why-ci-starts-low" className="bg-orange-950/20 border border-orange-800/30 rounded-lg p-5 mb-6 scroll-mt-24">
+            <div className="text-sm font-semibold text-orange-300 mb-2">
+              Why doesn&rsquo;t a new account start at CI 1.0?
+            </div>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              CI scores whether your <em>current</em> behavior matches your <em>established</em> pattern.
+              A brand-new account has no established pattern yet — so there&rsquo;s no signal to match against.
+              The starting value (~0.85) isn&rsquo;t a penalty for being new; it&rsquo;s the system being honest
+              that <strong>it hasn&rsquo;t had a chance to witness you yet</strong>. With CI&nbsp;0.85, actions cost
+              about 1.4× their base price — a real friction, but a temporary one.
+            </p>
+            <p className="text-sm text-gray-300 leading-relaxed mt-3">
+              A handful of consistent grounding events — same device, same hours, same patterns — typically
+              lifts CI above 0.9, at which point the surcharge disappears entirely (costs return to the listed
+              price). Sustained consistent behavior is what closes the gap, and it closes fast.
+            </p>
+            <p className="text-xs text-gray-400 leading-relaxed mt-3 italic">
+              The framing matters: this isn&rsquo;t &ldquo;trust assumed by default, then taken away if you misbehave.&rdquo;
+              It&rsquo;s the opposite — there&rsquo;s nothing to assume yet, and the score climbs as the system
+              actually sees you. You&rsquo;re not being penalized; you just haven&rsquo;t been witnessed yet.
+            </p>
+          </div>
+
           {/* Apr 28 LOW: anchor "grounding event" upfront — term recurs throughout the page; visitor asked for one definition near the top */}
           <div className="bg-gray-900/40 border border-gray-700 rounded-lg p-4 mb-6 text-sm text-gray-300">
             <span className="text-xs uppercase tracking-wide text-gray-500 mr-2">Quick term</span>
