@@ -490,6 +490,33 @@ export default function MRHExplorerPage() {
         It&apos;s the boundary of what each agent can see, affect, and reason about; beyond it, trust signals fade into noise.
         {' '}<em style={{ color: 'var(--color-text-secondary)' }}>The &ldquo;Markov&rdquo; part:</em> the future depends only on the present &mdash; your history lives in your reputation, not in a log of every past step the network has to replay.
       </p>
+      {/* 2026-05-20 visitor MEDIUM: top-of-page was mechanics-only; first-read visitor couldn't picture what trust-distance feels like before the controls. Concrete narrative ladder using the page's own decay numbers. */}
+      <div style={{
+        padding: '1rem 1.25rem', borderRadius: '0.5rem',
+        border: '1px solid #06b6d430', background: '#06b6d408',
+        marginBottom: '1.25rem', maxWidth: '700px',
+      }}>
+        <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#06b6d4', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+          What this feels like in practice
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+          <div>
+            <strong style={{ color: '#6ee7b7' }}>Reply to a friend</strong> (1 hop):
+            trust signal &sim;0.85 &mdash; full strength, action is cheap.
+          </div>
+          <div>
+            <strong style={{ color: '#fde68a' }}>Vouch for a friend&apos;s colleague</strong> (2 hops):
+            trust signal &sim;0.65 &mdash; still useful, action costs more.
+          </div>
+          <div>
+            <strong style={{ color: '#fca5a5' }}>Try to reach a stranger 4 hops away</strong>:
+            trust signal below the noise floor, ATP cost spikes exponentially &mdash; so you can&apos;t cheaply contact people you don&apos;t know.
+          </div>
+        </div>
+        <div style={{ marginTop: '0.65rem', paddingTop: '0.5rem', borderTop: '1px solid rgba(255,255,255,0.06)', fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>
+          That&apos;s what <em>distance-adjusted trust</em> does: spam and drive-by abuse get expensive before they ever reach you.
+        </div>
+      </div>
       <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem', maxWidth: '700px' }}>
         Explore that boundary below &mdash; adjust horizon depth, explore the 4D profile (space, time, complexity, quality),
         and see how distance decays trust.
