@@ -247,7 +247,7 @@ export default function FirstContactPage() {
                   </p>
                 </div>
                 <div>
-                  <Link href="/coherence-index" className="text-orange-400 font-semibold mb-2 block hover:underline">🔍 Authenticity: Behavior Proves Identity</Link>
+                  <Link href="/coherence-index" className="text-orange-400 font-semibold mb-2 block hover:underline">🔍 Consistency: Behavior Proves Identity</Link>
                   <p className="text-gray-400">
                     Consistent behavior across time, devices, and contexts reveals who&apos;s real. Bots and fakes can&apos;t sustain coherent patterns. (Shorthand: <strong>CI</strong> — coherence index.)
                   </p>
