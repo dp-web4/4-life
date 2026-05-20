@@ -3265,7 +3265,7 @@ export default function SocietySimulatorPage() {
         <div className="mb-4 bg-emerald-900/20 border border-emerald-800 rounded-lg p-4">
           <h2 className="text-base font-bold mb-2 text-emerald-400">How This Demonstrates Web4</h2>
           <p className="text-sm text-emerald-200/90 mb-3 bg-emerald-950/40 border-l-2 border-emerald-600 pl-3 py-1.5 rounded">
-            New to these terms? Start with <a href="/first-contact" className="text-emerald-300 underline hover:text-emerald-200 font-medium">First Contact</a> — a 12-minute guided introduction. Then the acronyms below will make sense.
+            New to these terms? Start with <a href="/first-contact" className="text-emerald-300 underline hover:text-emerald-200 font-medium">First Contact</a> — a 7-minute guided introduction. Then the acronyms below will make sense.
           </p>
           <p className="text-gray-300 text-sm mb-2">
             Each agent has <ATP>ATP</ATP> (energy budget) and a <T3>Trust Tensor</T3> (reputation).
