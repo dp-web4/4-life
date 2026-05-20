@@ -525,7 +525,8 @@ export default function KarmaJourneyPage() {
         <strong><Link href="/trust-tensor" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>Trust</Link></strong> = your reputation (Talent + Training + Temperament, averaged).{' '}
         <strong><Link href="/atp-economics" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>ATP</Link></strong> = your energy budget — every action costs ATP, run out and you die.{' '}
         <strong><Link href="/coherence-index" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>CI</Link></strong> (Coherence Index) = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;).
-        Everyone starts at CI 0.85, not 1.0 — you haven&apos;t demonstrated consistency yet, so actions cost ~1.4× their base price. As you behave consistently, CI rises to 0.9+ and the surcharge disappears (actions cost exactly their listed price).{' '}
+        Everyone starts at CI 0.85, not 1.0 — you haven&apos;t demonstrated consistency yet, so actions cost ~1.4× their base price (CI&nbsp;0.85 → ~40% surcharge). As you behave consistently, CI rises to 0.9+ and the surcharge disappears (actions cost exactly their listed price).{' '}
+        <strong style={{ color: 'var(--color-text-secondary)' }}>Karma tier</strong> = the grade your life earns, set by your <em>effective</em> trust at death: <strong>Honored</strong> (above 0.7 → next life starts with advantages), <strong>Neutral</strong> (0.3–0.7 → baseline, no head start or penalty), <strong>Constrained</strong> (below 0.3 → next life starts with lower trust and fewer resources).{' '}
         Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
       </p>
 

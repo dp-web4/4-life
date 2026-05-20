@@ -47,14 +47,19 @@ export default function HowItWorksPage() {
         <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
           How Web4 Societies Work
         </h1>
-        <div className="mb-4 p-3 bg-amber-950/30 border border-amber-800/30 rounded-lg text-sm text-amber-200/80">
-          <strong>Project status:</strong> Web4 is a <strong>research prototype</strong>, not a deployed product.
-          The mechanics described here are validated through simulations and an open-source{' '}
-          <Link href="/why-web4#faq-deployed" className="text-amber-300 hover:text-amber-200 underline">reference implementation</Link>,
-          but no live network with real users exists yet. The simulations on this site let you explore how it <em>would</em> work.
-          {' '}Curious what early deployment could look like? See the{' '}
-          <Link href="/why-web4#faq-adoption-path" className="text-amber-300 hover:text-amber-200 underline">concrete adoption path</Link>{' '}
-          — from browser extension overlays to full integration.
+        <div className="mb-4 p-3 bg-amber-950/30 border border-amber-800/30 rounded-lg">
+          <p className="text-base font-bold text-amber-200 flex items-center gap-2">
+            <span aria-hidden="true">🔬</span>
+            Nothing here is live — this is a research prototype.
+          </p>
+          <p className="mt-1.5 text-sm text-amber-200/75">
+            Everything below describes how Web4 <em>would</em> work, validated through simulations and an open-source{' '}
+            <Link href="/why-web4#faq-deployed" className="text-amber-300 hover:text-amber-200 underline">reference implementation</Link>{' '}
+            — no live network with real users exists yet. The present tense throughout is the model talking, not a running system.
+            {' '}Curious what early deployment could look like? See the{' '}
+            <Link href="/why-web4#faq-adoption-path" className="text-amber-300 hover:text-amber-200 underline">concrete adoption path</Link>{' '}
+            — from browser extension overlays to full integration.
+          </p>
         </div>
         <div className="mb-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg text-sm text-gray-300 space-y-2">
           <p className="text-xs uppercase tracking-wide text-sky-400 mb-2 font-semibold">Key Takeaways</p>
