@@ -630,11 +630,13 @@ export default function KarmaJourneyPage() {
 
         {/* Left: Current Life Status + Choices */}
         <div>
-          {/* Stats bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+          {/* Stats bar — May 20 visitor MEDIUM #3: Raw and Effective shown side-by-side during play, not only at death.
+              Card order keeps the two trust cards adjacent at mobile grid-cols-2 (positions 2+3 → row 2 together). */}
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-4">
             {[
               { label: 'Life', value: `#${currentLife.lifeNumber}`, color: '#93c5fd' },
-              { label: 'Trust (Raw)', value: baseComp.toFixed(3), color: baseComp > 0.7 ? '#6ee7b7' : baseComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `Raw ≥ 0.5 to survive; effective (raw × CI²) sets karma tier` },
+              { label: 'Trust (Raw)', value: baseComp.toFixed(3), color: baseComp > 0.7 ? '#6ee7b7' : baseComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `≥ 0.5 to survive this life` },
+              { label: 'Trust (Eff.)', value: effComp.toFixed(3), color: effComp > 0.7 ? '#6ee7b7' : effComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `raw × CI² — sets karma tier at death` },
               { label: 'Energy', value: `${currentLife.atp}`, color: currentLife.atp > 50 ? '#6ee7b7' : currentLife.atp > 20 ? '#fde68a' : '#fca5a5' },
               { label: 'Consistency', value: currentLife.ci.toFixed(2), color: currentLife.ci > 0.8 ? '#6ee7b7' : currentLife.ci > 0.5 ? '#fde68a' : '#fca5a5' },
             ].map(stat => (
