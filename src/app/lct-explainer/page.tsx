@@ -66,7 +66,7 @@ export default function LCTExplainerPage() {
     {
       name: "Context",
       description: "What platform/environment this LCT runs in, determining resources and capabilities",
-      example: "lct:web4:agent:alice@Thor → runs on Thor (Jetson AGX) with specific ATP budget and hardware attestation"
+      example: "lct:web4:agent:alice@Thor → runs on Thor (Jetson AGX) with specific ATP budget and hardware attestation (a cryptographic proof, signed inside the device's security chip, that this specific hardware is involved)"
     },
     {
       name: "Task Scope",
@@ -989,7 +989,15 @@ export default function LCTExplainerPage() {
               <li>
                 <strong className="text-gray-300">Recovery path.</strong> A higher ceiling means you have more
                 hardware witnesses, which means a faster recovery if a device is lost or stolen
-                (multi-device quorum vs. starting over). One device can recover via a second; software-only
+                (multi-device{' '}
+                <a
+                  href="#quorum-why"
+                  onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('quorum-why')?.scrollIntoView({ behavior: 'smooth' }); }}
+                  className="text-gray-200 underline decoration-gray-600 hover:decoration-gray-300"
+                >
+                  quorum
+                </a>{' '}
+                vs. starting over). One device can recover via a second; software-only
                 has no quorum to fall back on.
               </li>
               <li>
@@ -1024,7 +1032,7 @@ export default function LCTExplainerPage() {
               This matters especially in developing countries where many people access the internet
               from a single smartphone &mdash; Web4 is designed to include them, not penalize them.
             </p>
-            <p className="text-gray-500 text-xs mt-2">
+            <p id="quorum-why" className="text-gray-500 text-xs mt-2 scroll-mt-24">
               <strong className="text-gray-400">Why a ceiling at all?</strong> A lone device has no
               second device to corroborate its continuity &mdash; if it&apos;s lost, stolen, or
               quietly compromised, there&apos;s no independent witness to notice. Adding a witness
