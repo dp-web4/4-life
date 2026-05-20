@@ -280,7 +280,7 @@ export default function LearnJourney() {
           teaser:
             "Effective trust = Base_trust × CI². ATP cost = Normal × (1/CI²). Coherence isn't binary—it continuously modulates your capabilities. Low coherence = expensive actions + limited trust.",
           why: "CI modulation reveals how Web4 makes fraud expensive automatically, without human intervention.",
-          link: "/coherence-index",
+          link: "/coherence-index#why-ci-squared",
           duration: "10 min read (focus on modulation section)",
         },
         {
