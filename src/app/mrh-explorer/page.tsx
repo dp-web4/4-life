@@ -733,6 +733,19 @@ export default function MRHExplorerPage() {
                 </div>
               ))}
             </div>
+            {/* May 21 visitor MEDIUM: own the empirical-tuning of "3 hops" the same way Aliveness owns the 0.5
+                threshold ("calibrated, not derived"). Visitor praised that move on Aliveness and missed it here. */}
+            <div style={{
+              padding: '0.625rem 0.75rem', borderRadius: '0.5rem', marginBottom: '0.75rem',
+              background: 'rgba(16, 185, 129, 0.06)', border: '1px solid rgba(16, 185, 129, 0.18)',
+              fontSize: '0.8rem', color: 'var(--color-text-secondary)', lineHeight: 1.5,
+            }}>
+              <strong style={{ color: '#6ee7b7' }}>Why 3 hops?</strong>{' '}
+              <strong style={{ color: 'var(--color-text-primary)' }}>Calibrated, not derived.</strong>{' '}
+              Beyond ~3 hops in real social networks, the signal-to-noise ratio empirically collapses — trust through a
+              friend-of-a-friend-of-a-friend carries little more information than a stranger&apos;s. Societies can configure
+              their own horizon; 3 is the default that simulations cleanly separate signal from noise at.
+            </div>
             <div style={{
               padding: '0.75rem', borderRadius: '0.5rem',
               background: 'var(--color-bg-tertiary)', fontSize: '0.85rem',
