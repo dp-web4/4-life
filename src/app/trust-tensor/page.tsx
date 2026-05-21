@@ -490,11 +490,15 @@ export default function TrustTensorPage() {
             ↓ Try the trust tensor simulator below
           </a>
         </p>
-        {/* Apr 26 visitor LOW: V3 mentioned but not explained on this page — preserves Apr 17 "let T3 land first" pacing by linking forward instead of explaining inline */}
+        {/* Apr 26 visitor LOW: V3 mentioned but not explained on this page — preserves Apr 17 "let T3 land first" pacing by linking forward instead of explaining inline.
+            May 21 visitor LOW: first mention gave the location but no priority signal — visitor "didn't know whether V3 was something I'd need soon or could ignore." Add a one-line T3-vs-V3 distinction + explicit defer reassurance here, at the point of friction. */}
         <p className="text-sm text-gray-500 mt-2">
-          Wondering about <strong className="text-purple-300">V3</strong>?{" "}
+          Wondering about <strong className="text-purple-300">V3</strong>? Short version: T3 measures{" "}
+          <strong>who you are</strong>; V3 measures <strong>what you produce</strong>. You don&apos;t need
+          it to follow this page — T3 alone is enough for now. When you&apos;re curious, it&apos;s the
+          sibling tensor,{" "}
           <a href="#v3" onClick={(e) => { e.preventDefault(); document.getElementById('v3')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-300 hover:text-purple-200 cursor-pointer">
-            It&apos;s the sibling tensor — explained just below ↓
+            explained just below ↓
           </a>
         </p>
       </section>
