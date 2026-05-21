@@ -885,6 +885,16 @@ export default function LCTExplainerPage() {
             <p className="text-xs text-gray-400 mt-3 italic">The numbers below measure that gap &mdash; how strong a witness your hardware is, and therefore how cleanly you can recover.</p>
           </div>
 
+          {/* May 21 visitor LOW #1: the ceiling numbers (0.90/0.50) appear without anchoring the 0-1 scale itself.
+              A cold reader landing directly on this page has no prior calibration. Anchor the scale before the grid.
+              Phrased distinctly from line ~921's "neutral starting point" framing to avoid redundancy. */}
+          <p className="text-xs text-gray-400 mb-2">
+            New to the scale? Trust runs from <strong className="text-gray-300">0</strong> (none) to{" "}
+            <strong className="text-gray-300">1.0</strong> (the theoretical max), and{" "}
+            <strong className="text-gray-300">0.5 is the alive/dead line</strong> &mdash; fall below it and an entity can no
+            longer act (see <Link href="/aliveness" className="text-sky-400 hover:text-sky-300 underline">Aliveness</Link>).
+            The ceilings below are points on that scale.
+          </p>
           <p className="text-sm text-gray-300 mb-3">
             Each number below is the <strong className="text-gray-100">maximum T3 trust score</strong> your
             hardware can vouch for &mdash; even with perfect behavior, software-only identity tops out at 0.50.
