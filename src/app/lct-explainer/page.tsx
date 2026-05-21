@@ -201,6 +201,13 @@ export default function LCTExplainerPage() {
               <a href="/trust-tensor" className="text-purple-400 hover:text-purple-300 underline">T3</a>
               {" "}weights &mdash; but the word here means runtime environment, not a chat thread.
             </p>
+            {/* May 20 visitor LOW: existing block defined each word but didn't fuse them.
+                Visitor: "I'd guess... but I'm inferring, not being taught." Add the synthesis. */}
+            <p className="text-gray-300 leading-relaxed mt-3">
+              <strong>Together:</strong> the token <em>links</em> your hardware identity to the
+              <em> context</em> you&rsquo;re acting in &mdash; your role, your device, what you&rsquo;re
+              doing right now &mdash; so trust is always evaluated in situation, not in the abstract.
+            </p>
           </div>
 
           <p className="text-sm text-gray-500 mt-4">
