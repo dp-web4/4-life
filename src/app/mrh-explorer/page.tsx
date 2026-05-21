@@ -484,10 +484,10 @@ export default function MRHExplorerPage() {
       </h1>
       {/* 2026-05-13 visitor HIGH: page named after the acronym never spells it out. Lead with the expansion. */}
       {/* 2026-05-14 visitor LOW: "Markov" needs a plain-English gloss — visitor's verbatim prescription. */}
+      {/* 2026-05-20 visitor MEDIUM #1 residual: H1 already says "Trust Neighborhood Explorer" but the subtitle's <strong>Markov Relevancy Horizon</strong> still pulled the eye. Visitor's literal recipe: lead with the friendly framing, demote the academic name to a "formally: …" aside. MRH token preserved in full so doc-link ctrl-F still resolves. */}
       <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem', marginBottom: '0.75rem', maxWidth: '700px' }}>
-        <span style={{ fontFamily: 'monospace', color: 'var(--color-text-secondary)' }}>MRH</span> = <strong style={{ color: 'var(--color-text-secondary)' }}>Markov Relevancy Horizon</strong>
-        {' '}&mdash; the technical name for what we call a &ldquo;trust neighborhood&rdquo; on the rest of the site.
-        It&apos;s the boundary of what each agent can see, affect, and reason about; beyond it, trust signals fade into noise.
+        This is what the rest of the site calls a &ldquo;<span style={{ color: 'var(--color-text-secondary)' }}>trust neighborhood</span>&rdquo; &mdash; the boundary of what each agent can see, affect, and reason about; beyond it, trust signals fade into noise.
+        {' '}<em style={{ color: 'var(--color-text-secondary)' }}>Formally: Markov Relevancy Horizon (<span style={{ fontFamily: 'monospace' }}>MRH</span>).</em>
         {' '}<em style={{ color: 'var(--color-text-secondary)' }}>The &ldquo;Markov&rdquo; part:</em> the future depends only on the present &mdash; your history lives in your reputation, not in a log of every past step the network has to replay.
       </p>
       {/* 2026-05-20 visitor MEDIUM: top-of-page was mechanics-only; first-read visitor couldn't picture what trust-distance feels like before the controls. Concrete narrative ladder using the page's own decay numbers. */}
