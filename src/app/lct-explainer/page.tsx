@@ -1054,6 +1054,19 @@ export default function LCTExplainerPage() {
             <h3 className="text-sm font-bold text-amber-400 mb-2">
               I just installed the app on my one phone &mdash; who witnessed my <em>first</em> device?
             </h3>
+            {/* May 20 visitor LOW: gloss <details> at #non-crypto-gloss exists right below this FAQ
+                but a reader bouncing off "manufacturer-burned key / Endorsement Key (EK) / vendor
+                certificate chain" mid-FAQ doesn't know. One-line off-ramp at top of FAQ. */}
+            <p className="text-xs text-gray-500 italic mb-2">
+              Crypto vocab below?{" "}
+              <a
+                href="#non-crypto-gloss"
+                onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('non-crypto-gloss')?.scrollIntoView({ behavior: 'smooth' }); }}
+                className="text-amber-400 hover:text-amber-300 underline not-italic"
+              >
+                Plain-English glosses are in the &ldquo;For non-crypto readers&rdquo; collapsible just below this box &rarr;
+              </a>
+            </p>
             <p className="text-sm text-gray-300 mb-2">
               <strong className="text-amber-300">Short answer:</strong> the chip itself does. The
               security element in your phone (TPM, Secure Enclave, or FIDO2 key) ships with a
@@ -1097,8 +1110,9 @@ export default function LCTExplainerPage() {
               "vendor certificate chain", "private key" — used in bootstrap FAQ above without
               firm grounding. Visitor's literal suggestion: "tooltips or a 'for non-crypto readers'
               inset paragraph under the hardware tier table." Inset chosen over tooltips to avoid
-              tooltip-cascades inside an already dense FAQ. */}
-          <details className="mt-4">
+              tooltip-cascades inside an already dense FAQ. May 20: anchor id added so the FAQ's
+              top-of-block off-ramp can scroll here. */}
+          <details id="non-crypto-gloss" className="mt-4 scroll-mt-24">
             <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300">
               ▶ For non-crypto readers: what those terms above actually mean
             </summary>
