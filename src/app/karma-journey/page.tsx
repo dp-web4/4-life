@@ -676,6 +676,21 @@ export default function KarmaJourneyPage() {
                   ({(currentLife.ci * currentLife.ci * 100).toFixed(0)}% of raw — squaring penalizes inconsistency)
                 </span>
               </div>
+              {/* May 21 visitor MEDIUM — port "10% dip → 19% loss" intuition from /coherence-index to point-of-action.
+                  Visitor reached the play area with the formula visible but the *interpretation* offscreen (page-top
+                  callout at ~580) or buried as 0.75rem muted prose below. Same antipattern the May 15 visitor flagged
+                  on the page-top callout: "scanning visitors absorbed the card yet kept reporting the 'why' as
+                  unexplained." Promote a punchy two-number anchor in 0.85rem body type right after the live equation
+                  so the strip grounds the math and the callout interprets it before the eye moves on. */}
+              <div style={{
+                marginBottom: '0.5rem',
+                padding: '0.5rem 0.75rem', borderRadius: '0.375rem',
+                background: 'rgba(253, 230, 138, 0.05)', borderLeft: '3px solid rgba(253, 230, 138, 0.4)',
+              }}>
+                <div style={{ fontSize: '0.85rem', color: 'var(--color-text-primary)', fontWeight: 600, lineHeight: 1.45 }}>
+                  Why squared? Even small inconsistency hurts trust disproportionately — a <span style={{ color: '#fde68a' }}>10% dip costs ~19%</span>; a <span style={{ color: '#fca5a5' }}>40% dip costs 64%</span>.
+                </div>
+              </div>
               <div style={{ marginBottom: '0.375rem', fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>
                 Effective trust determines your earning rate, action weight, and how others prioritize your contributions.
               </div>
@@ -686,8 +701,8 @@ export default function KarmaJourneyPage() {
               )}
               <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
               {currentLife.lifeNumber === 1
-                ? <>Consistency (CI) modulates how others perceive your trust. New entities have limited history (CI = {currentLife.ci.toFixed(2)}), so effective trust starts below raw. As you make consistent choices, CI rises toward 1.0 and the gap closes. The squaring means small inconsistencies have outsized impact: 0.9² = 0.81 (barely a dent), but 0.6² = 0.36 (nearly halved).</>
-                : <>Your karma from Life {currentLife.lifeNumber - 1} set your raw trust at {baseComp.toFixed(3)}. Consistency ({currentLife.ci.toFixed(2)}) {currentLife.ci >= 0.9 ? 'is high, so the gap is small' : 'still modulates what others see'}. The squaring means small inconsistencies have outsized impact: 0.9² = 0.81, barely a dent; 0.6² = 0.36, nearly halved.</>
+                ? <>Consistency (CI) modulates how others perceive your trust. New entities have limited history (CI = {currentLife.ci.toFixed(2)}), so effective trust starts below raw. As you make consistent choices, CI rises toward 1.0 and the gap closes.</>
+                : <>Your karma from Life {currentLife.lifeNumber - 1} set your raw trust at {baseComp.toFixed(3)}. Consistency ({currentLife.ci.toFixed(2)}) {currentLife.ci >= 0.9 ? 'is high, so the gap is small' : 'still modulates what others see'}.</>
               }</span>
             </div>
           ) : Math.abs(effComp - baseComp) > 0.01 ? (
