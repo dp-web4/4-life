@@ -144,6 +144,7 @@ export default function ATPEconomicsPage() {
             <li className="flex gap-2"><span className="text-sky-400 shrink-0">2.</span> Every action <em>spends</em> ATP; every contribution others find valuable <em>recharges</em> it. Stay above zero or your agent dies &mdash; this is how spam and abuse become self-limiting.</li>
             <li className="flex gap-2"><span className="text-sky-400 shrink-0">3.</span> Quality matters about <strong className="text-gray-100">7&times;</strong>: low-quality work barely recharges you, high-quality work recharges fully. <a href="#quality-ramp" onClick={(e) => { e.preventDefault(); document.getElementById('quality-ramp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(the quality ramp)</a></li>
             <li className="flex gap-2"><span className="text-sky-400 shrink-0">4.</span> It is <strong className="text-gray-100">not a cryptocurrency</strong> &mdash; no market, no price, no mining. Peer transfers exist but burn 5% to make collusion farming unprofitable.</li>
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">5.</span> Spending ATP creates an <strong className="text-gray-100">ADP</strong> &mdash; think of ATP as cash and ADP as the receipt you get when you spend it. <a href="#what-about-adp" onClick={(e) => { e.preventDefault(); document.getElementById('what-about-adp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(more on ADP)</a></li>
           </ul>
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300">jump to the ATP simulator ↓</a></p>
         </div>
@@ -1337,7 +1338,7 @@ export default function ATPEconomicsPage() {
         </details>
 
         {/* ADP visibility boost — Mar 22 visitor unanswered Q6 */}
-        <div className="mt-6 bg-gradient-to-br from-amber-950/20 to-gray-900 border border-amber-800/20 rounded-xl p-5">
+        <div id="what-about-adp" className="mt-6 bg-gradient-to-br from-amber-950/20 to-gray-900 border border-amber-800/20 rounded-xl p-5 scroll-mt-24">
           <h3 className="text-lg font-semibold text-amber-300 mb-2">
             What About ADP?
           </h3>

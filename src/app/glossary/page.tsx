@@ -178,8 +178,9 @@ export default function GlossaryPage() {
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               Your <strong>hardware-rooted verifiable presence</strong>. An LCT is bound to
-              physical devices (TPM chip, Secure Enclave, FIDO2 key) and witnessed by other
-              entities, creating verifiable proof of presence.
+              physical devices &mdash; the security chip built into most modern phones and
+              laptops (a TPM, Apple&apos;s Secure Enclave, or a FIDO2 key) &mdash; and witnessed
+              by other entities, creating verifiable proof of presence.
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: "Your presence lives in your hardware, not in a company's database.
