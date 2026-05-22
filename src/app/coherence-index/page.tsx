@@ -174,11 +174,11 @@ export default function CoherenceIndexPage() {
             Web4 Foundation: Coherence
           </div>
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-            Coherence Index (CI)
+            Coherence Index: Behavioral Consistency
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed mb-4">
-            Think of CI as a <strong>behavioral consistency score</strong> &mdash; like a credit check
-            that asks not just &ldquo;who are you?&rdquo; but &ldquo;does your behavior make physical sense?&rdquo;
+            The <strong>Coherence Index (CI)</strong> works like a credit check &mdash; it asks
+            not just &ldquo;who are you?&rdquo; but &ldquo;does your behavior make physical sense?&rdquo;
           </p>
           <p className="text-base text-gray-400 leading-relaxed mb-4">
             CI measures four dimensions of consistency: where you are, what you can do,
