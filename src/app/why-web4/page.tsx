@@ -531,6 +531,7 @@ export default function WhyWeb4Page() {
               <ul className="space-y-0.5 text-gray-400">
                 <li><a href="#faq-trust-transfer" className="hover:text-sky-400 transition-colors">Trust between communities?</a></li>
                 <li><a href="#faq-threshold" className="hover:text-sky-400 transition-colors">Is 0.5 threshold universal?</a></li>
+                <li><a href="#faq-calibration" className="hover:text-sky-400 transition-colors">Why these numbers — 0.5, 3 hops, 0.02?</a></li>
                 <li><a href="#faq-creative-work" className="hover:text-sky-400 transition-colors">Creative or unconventional work — how is it scored?</a></li>
                 <li><a href="#faq-cheaters" className="hover:text-sky-400 transition-colors">How do you catch cheaters?</a></li>
                 <li><a href="#faq-ci-example" className="hover:text-sky-400 transition-colors">What does coherence look like for a normal person?</a></li>
@@ -2154,6 +2155,63 @@ export default function WhyWeb4Page() {
                   When Values Themselves Conflict
                 </Link>{' '}
                 for how bridging societies and value boundaries work.
+              </p>
+            </div>
+          </details>
+
+          {/* May 21 visitor Unanswered-Q1: the "calibration story" — visitor PRAISED the
+              "calibrated, not derived" honesty (Aliveness 0.5, MRH 3-hop via #292) and wanted
+              "more of that, not less... a brief 'How we picked these numbers' appendix." The
+              per-number explanations already exist scattered; this FAQ names the philosophy once
+              and ROUTES to each owner. Introduces zero new numeric figures (policy guardrail). */}
+          <details id="faq-calibration" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Why these specific numbers? How were 0.5, 3 hops, and 0.02 chosen?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Short version: almost every number in Web4 is <strong>calibrated, not derived</strong>.
+                <em>Derived</em> would mean the math forces the value &mdash; there&apos;s a proof it could be
+                nothing else. <em>Calibrated</em> means it was tuned in simulation until the system behaved
+                sensibly, the way an engineer dials in a thermostat rather than computing it from first
+                principles. A few values aren&apos;t even tuned &mdash; they&apos;re <strong>design choices
+                inspired by</strong> an analogy. None of them are claimed as physical constants.
+              </p>
+              <p>
+                Here&apos;s where the numbers you&apos;ll meet come from, and the page that explains each in full:
+              </p>
+              <ul className="list-disc list-inside space-y-1.5 ml-1">
+                <li>
+                  <strong>0.5 &mdash; the alive/dead and default trust line.</strong> A design choice inspired by
+                  phase-transition behavior: below it, conduct is hard to tell from random; above it, intention
+                  shows. It&apos;s also a per-society setting, not a protocol constant &mdash; see{" "}
+                  <a href="#faq-threshold" className="text-sky-400 hover:underline">Is the 0.5 threshold universal?</a>
+                </li>
+                <li>
+                  <strong>3 hops &mdash; the relevancy horizon (MRH), ~0.7 trust kept per hop.</strong> Calibrated:
+                  in real social networks the signal-to-noise of &ldquo;friend of a friend of a friend&rdquo; collapses
+                  past about three hops. Walk the decay yourself on the{" "}
+                  <Link href="/mrh-explorer" className="text-sky-400 hover:underline">MRH Explorer</Link>.
+                </li>
+                <li>
+                  <strong>0.02 &mdash; the trust update step.</strong> Calibrated to be small on purpose: trust
+                  should move steadily with each action, not lurch on any single one. The{" "}
+                  <Link href="/trust-tensor" className="text-sky-400 hover:underline">Trust Tensor</Link> page shows
+                  the full <code className="text-sky-300/90 text-xs">0.02 &times; (quality &minus; 0.5)</code> rule.
+                </li>
+                <li>
+                  <strong>5% &mdash; the energy transfer fee.</strong> A design choice that makes pooling and
+                  circular trust-farming unprofitable without taxing honest collaboration &mdash; see{" "}
+                  <a href="#faq-5-percent" className="text-sky-400 hover:underline">Why a 5% transfer cost?</a>
+                </li>
+              </ul>
+              <p>
+                Why say all this out loud? Because the honest answer to &ldquo;why 0.5 and not 0.48?&rdquo; is
+                &ldquo;we tuned it, and a future version may retune it&rdquo; &mdash; and that&apos;s a feature, not
+                an embarrassment. Calibrated parameters are knobs, not commandments: each society can already move
+                several of them to fit its own norms. Being explicit that these are empirically chosen values rather
+                than magic constants is what keeps the framework <strong>science, not numerology</strong>.
               </p>
             </div>
           </details>
