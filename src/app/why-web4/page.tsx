@@ -2737,8 +2737,11 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                SAL stands for <strong>Society Alignment Layer</strong> — it&apos;s the governance framework
-                each Web4 community uses to set and enforce its own rules. Think of it as a community&apos;s
+                SAL stands for <strong>Society-Authority-Law</strong> — the three things every Web4
+                community defines for itself: a <strong>Society</strong> (its purpose and who belongs),
+                an <strong>Authority</strong> structure (which roles can do what), and its <strong>Law</strong>{" "}
+                (the rules and how they&apos;re enforced). Together they&apos;re the governance framework
+                each Web4 community uses to set and enforce its own rules — think of it as a community&apos;s
                 constitution that members actually follow because it&apos;s baked into the protocol.
               </p>
               <p>
