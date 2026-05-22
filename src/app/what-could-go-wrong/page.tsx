@@ -825,7 +825,7 @@ export default function WhatCouldGoWrongPage() {
                   <strong className="text-gray-300">Society-level rules (SAL).</strong> Each society
                   defines its own{" "}
                   <Link href="/how-it-works#governance" className="text-sky-400 hover:underline">
-                    Society Alignment Layer
+                    Society-Authority-Law
                   </Link>{" "}
                   — rules that members agree to when joining. Violations trigger graduated enforcement:
                   warnings, trust penalties, suspension, and ultimately permanent exclusion.
