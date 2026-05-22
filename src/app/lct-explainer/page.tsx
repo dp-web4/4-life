@@ -499,7 +499,8 @@ export default function LCTExplainerPage() {
                 self-attestation waiting period &mdash; the chip&apos;s own factory certificate is the proof.
               </p>
               <p className="text-xs text-gray-400">
-                A single device with this manufacturer attestation gets a trust ceiling of 0.50&ndash;0.75 (depending on chip class).
+                A single device with this manufacturer attestation gets a trust ceiling of 0.50&ndash;0.75 (depending on chip class)
+                &mdash; the same 50&ndash;75% as just above, written on the 0&ndash;1 trust scale these numbers all use (0.5 = neutral, the alive/dead line).
                 Adding a second device later doesn&apos;t replace the first witness &mdash; it adds another, raising the ceiling
                 toward 0.90.{" "}
                 <a

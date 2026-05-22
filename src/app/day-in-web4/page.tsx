@@ -470,6 +470,9 @@ export default function DayInWeb4Page() {
       <p className="text-gray-500 mb-4 text-sm italic">
         Everything below is narrated in the present tense as a thought experiment — none of it ships today. Read it as what a trust-native internet <em>would</em> feel like if you were living an ordinary day inside it.
       </p>
+      <p className="text-gray-500 mb-6 text-sm">
+        One thing to know before the numbers start: <strong className="text-gray-400">trust scores run 0 to 1</strong>, where <strong className="text-gray-400">0.5 is neutral</strong> (everyone starts there) and 1.0 is the theoretical max. So a &ldquo;0.85&rdquo; below means well-trusted; a &ldquo;0.50&rdquo; means brand-new or neutral.
+      </p>
 
       {/* Your First 5 Minutes — Onboarding Walkthrough */}
       <details className="mb-8 rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.4)' }}>
