@@ -3261,12 +3261,29 @@ export default function SocietySimulatorPage() {
           </div>
         </div>
 
+        {/* New-to-Web4 onboarding banner — May 21 visitor LOW #4: the only First Contact pointer
+            was a small text-sm line buried inside the green box below; a cold visitor landing
+            directly on this (the densest interactive page) would scan past it. Promote it to a
+            prominent banner above the acronym-dense content, per the visitor's verbatim suggestion. */}
+        <div className="mb-6 bg-gradient-to-r from-sky-900/40 to-indigo-900/30 border border-sky-700/60 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-3">
+          <div className="flex-1">
+            <div className="text-sm font-bold text-sky-100 mb-0.5">👋 Never seen these Web4 terms before?</div>
+            <p className="text-xs text-sky-100/80 leading-relaxed">
+              ATP, T3, LCT, and CI show up all over this page. <a href="/first-contact" className="text-sky-300 underline hover:text-sky-200 font-medium">First Contact</a> is
+              a 7-minute guided intro that builds them one at a time — then everything below clicks into place.
+            </p>
+          </div>
+          <a
+            href="/first-contact"
+            className="shrink-0 inline-flex items-center justify-center bg-sky-500 hover:bg-sky-400 text-white font-bold text-sm py-2.5 px-5 rounded-lg transition-colors whitespace-nowrap"
+          >
+            Start with First Contact →
+          </a>
+        </div>
+
         {/* Web4 Connection */}
         <div className="mb-4 bg-emerald-900/20 border border-emerald-800 rounded-lg p-4">
           <h2 className="text-base font-bold mb-2 text-emerald-400">How This Demonstrates Web4</h2>
-          <p className="text-sm text-emerald-200/90 mb-3 bg-emerald-950/40 border-l-2 border-emerald-600 pl-3 py-1.5 rounded">
-            New to these terms? Start with <a href="/first-contact" className="text-emerald-300 underline hover:text-emerald-200 font-medium">First Contact</a> — a 7-minute guided introduction. Then the acronyms below will make sense.
-          </p>
           <p className="text-gray-300 text-sm mb-2">
             Each agent has <ATP>ATP</ATP> (energy budget) and a <T3>Trust Tensor</T3> (reputation).
             Actions cost ATP. Cooperation builds trust. Defection may win short-term but gets isolated.
