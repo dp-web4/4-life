@@ -1772,6 +1772,48 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
+          {/* FAQ: AI agents have no hardware — May 21 visitor Unanswered Q3 (recurring).
+              The site says "humans and AI follow identical trust rules" on 8+ pages, but
+              never closes the loop: an AI has no chip, so where does its hardware anchor
+              come from? Plain-English answer grounded in the web4 AGY (Agency Delegation)
+              spec — no spec jargon in the prose. */}
+          <div className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg">
+            <h3 className="text-sm font-bold text-purple-400 mb-2">
+              If an AI agent has no phone or chip, how does it get an LCT?
+            </h3>
+            <p className="text-sm text-gray-300 mb-2">
+              Good catch — an AI doesn&apos;t carry a Secure Enclave in its pocket, so it
+              can&apos;t anchor itself the way you do. It doesn&apos;t have to. An AI agent gets
+              its identity the way a new hire gets a building badge: <strong>a person or
+              organization that <em>is</em> hardware-anchored creates the agent and hands it a
+              scoped, revocable permission slip</strong> (Web4 calls this a delegation).
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              So the agent&apos;s LCT doesn&apos;t need its own chip — it&apos;s
+              <strong> rooted in its creator&apos;s hardware-bound identity</strong>. The
+              anchor is <em>inherited</em> through the chain, not possessed directly. Every
+              LCT points back to the one that created it, so there&apos;s always a
+              hardware-anchored human or org at the root who stays accountable for what the
+              agent does (the same accountability chain described above).
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              The permission slip is deliberately narrow — specific capabilities (read-only,
+              or allowed to act), its own <TermTooltip term="ATP">ATP</TermTooltip> budget, an
+              expiry date — and the creator can revoke it instantly. Within that scope the
+              agent then earns its <strong>own</strong> reputation (its own
+              {" "}<TermTooltip term="T3">T3</TermTooltip> trust score). That&apos;s why
+              &ldquo;humans and AI play by the same rules&rdquo; is honest: it&apos;s the same
+              trust math and the same consequences — just a different path to getting anchored.
+            </p>
+            <p className="text-xs text-gray-500">
+              Want the cognition side — when an AI can be trusted to act on its own judgment
+              versus when it confabulates?{" "}
+              <Link href="/ai-agents" className="text-purple-300 hover:text-purple-200 underline">
+                See AI Agents in Web4
+              </Link>.
+            </p>
+          </div>
+
           {/* FAQ: Single device */}
           <div className="mt-6 p-4 bg-green-950/20 border border-green-800/30 rounded-lg">
             <h3 className="text-sm font-bold text-green-400 mb-2">
