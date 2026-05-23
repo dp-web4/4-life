@@ -91,7 +91,7 @@ export default function TLDRPage() {
               May 14 visitor MEDIUM #1: counting 6 acronyms on one short page felt dense. Trade-off this iteration: keep the cold-hit hook (letters T3/MRH/CI still visible in the <summary> line so a later page's mention isn't a cold drop) but move the expanded gloss behind a click. Hypothesis to falsify next cycle: visitors who only want the 2-minute overview can ignore this; visitors meeting T3/MRH/CI on later pages still have a primed hook from the summary. */}
           <details className="mt-4 pl-9">
             <summary className="text-gray-500 text-sm italic cursor-pointer hover:text-gray-400 select-none">
-              Three more shorthand names (T3, MRH, CI) live on their own pages &mdash; tap to peek, or meet them when you get there
+              Three more ideas round out the picture &mdash; your trust dimensions, your trust neighborhood, and whether your behavior holds together over time &mdash; each on its own page. Tap for the shorthand (T3, MRH, CI) and links, or meet them when you get there.
             </summary>
             <p className="text-gray-500 text-sm leading-relaxed mt-3 italic">
               <Link href="/trust-tensor" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">T3 (Talent / Training / Temperament)</Link>{' '}
