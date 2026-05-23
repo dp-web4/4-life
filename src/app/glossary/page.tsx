@@ -161,7 +161,8 @@ export default function GlossaryPage() {
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">Web4</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               Our working name for <strong>trust-native internet infrastructure</strong>.
-              Unlike Web2 (platforms own your data/identity) or Web3 (blockchain-first),
+              Unlike Web2 (platforms own your data/identity) or Web3 (blockchain-first &mdash;
+              built on the public, shared transaction ledgers behind Bitcoin and Ethereum),
               Web4 proposes that trust, identity, and value flow from verifiable behavior
               rooted in hardware.
             </p>
