@@ -367,9 +367,10 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
       <section>
         <h2 style={{ fontSize: '1.15rem' }}>How would this ever get adopted?</h2>
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: '0.75rem', fontSize: '0.9rem' }}>
-          Not all at once. Web4 starts as a <strong style={{ color: 'var(--color-text)' }}>lightweight wrapper</strong> on
-          existing platforms — adding trust scores behind the scenes. Your users don&apos;t see Web4; they just notice less spam.
-          Tier 1 could work on Reddit or Gmail <em>today</em>.
+          Not all at once. Web4 rolls out in five <strong style={{ color: 'var(--color-text)' }}>tiers</strong> — a ladder from a
+          lightweight add-on on today&apos;s platforms up to a service built on trust from the ground up. It starts at the bottom
+          rung: a wrapper on existing platforms that adds trust scores behind the scenes. Your users don&apos;t see Web4; they
+          just notice less spam. So Tier 1 — that wrapper — could work on Reddit or Gmail <em>today</em>.
         </p>
         <details>
           <summary style={{ color: 'var(--color-sky)', cursor: 'pointer', fontSize: '0.85rem' }}>
