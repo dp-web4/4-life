@@ -508,6 +508,21 @@ export default function ATPEconomicsPage() {
             a day. A thinly confirmed receipt drags the same recharge out across days &mdash; or simply
             ages out unconfirmed if no one ever attests to its value.
           </p>
+          {/* May 23 visitor Unanswered Q1 — observability facet. The timing (Apr 28) and the
+              numbers (Apr 29) are covered above, but the visitor still "couldn't picture WHEN I'd
+              SEE ATP return or HOW I'd KNOW it happened." Answer the observable-signal facet only:
+              ground it in the live meter just below; do NOT re-explain timing/numbers and do NOT
+              invent a product notification UI — the meter, not an alert, is the signal. */}
+          <p className="text-gray-400 text-sm leading-relaxed mb-2">
+            <strong className="text-gray-200">And how would you notice it happen?</strong>{' '}
+            There&apos;s no payday and no &ldquo;you&apos;ve been recharged&rdquo; alert &mdash; the signal
+            is the balance itself. You read your ATP the way you read a phone&apos;s battery icon: you glance
+            at the meter and see where it stands. In the{' '}
+            <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">simulator below</a>{' '}
+            you can watch the bar rise as valuable actions land; in a real client the same balance would
+            climb on its own as confirmations arrive &mdash; just spread across the hours described above,
+            not all at once.
+          </p>
           {/* May 1 LOW #11: visitor wanted a collapsible "Show me the math" near the qualitative
               worked example. Formula and cap rule are drawn from the existing prose in the nested
               <details> at the "How Do You Actually Earn ATP Back?" section (id="earning-atp"). */}
