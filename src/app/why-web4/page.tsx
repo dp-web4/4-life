@@ -575,6 +575,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-ai-agents" className="hover:text-sky-400 transition-colors">How do AI agents participate?</a></li>
                 <li><a href="#faq-protocol-changes" className="hover:text-sky-400 transition-colors">Who decides protocol changes?</a></li>
                 <li><a href="#faq-sal" className="hover:text-sky-400 transition-colors">How does community governance work?</a></li>
+                <li><a href="#faq-wrongful-penalty" className="hover:text-sky-400 transition-colors">What if I&apos;m penalized unfairly?</a></li>
                 <li><a href="#faq-jurisdiction" className="hover:text-sky-400 transition-colors">Differing national laws?</a></li>
               </ul>
             </div>
@@ -1192,7 +1193,7 @@ export default function WhyWeb4Page() {
               <details className="group/cat">
                 <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
                   <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
-                  Governance (5)
+                  Governance (6)
                 </summary>
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
                   <li><a href="#faq-who-builds" className="hover:text-sky-400">Who builds this?</a></li>
@@ -1200,6 +1201,7 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-ai-agents" className="hover:text-sky-400">AI agent participation?</a></li>
                   <li><a href="#faq-protocol-changes" className="hover:text-sky-400">Protocol governance?</a></li>
                   <li><a href="#faq-sal" className="hover:text-sky-400">Community governance basics?</a></li>
+                  <li><a href="#faq-wrongful-penalty" className="hover:text-sky-400">Penalized unfairly?</a></li>
                 </ul>
               </details>
             </div>
@@ -2830,6 +2832,54 @@ export default function WhyWeb4Page() {
                 early members accumulate disproportionate influence. The{" "}
                 <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">What Could Go Wrong</Link>{" "}
                 page explores these risks honestly.
+              </p>
+            </div>
+          </details>
+
+          {/* Wrongful penalty / recourse — visitor Unanswered Q4 2026-05-22: "If reputation is permanent and portable, what happens when I'm wrongly penalized? Appeals are mentioned as designed-not-deployed — left me slightly uneasy about fairness." Consolidates recourse mechanisms scattered across faq-powerful-liar / faq-sal / social-credit table. */}
+          <details id="faq-wrongful-penalty" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>If reputation is permanent and portable, what protects me when I&apos;m penalized unfairly?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                This is the right thing to worry about, and the honest answer comes in two parts.
+                First, the part that isn&apos;t built yet: a <strong>formal appeals process</strong> — where you
+                contest a specific decision and a community body reviews it — is part of{" "}
+                <a href="#faq-sal" className="text-sky-400 hover:underline">SAL governance</a>, which is
+                <em> designed but not yet deployed</em>. We won&apos;t pretend otherwise.
+              </p>
+              <p>
+                Second, the part that protects you <strong>today</strong>: a wrongful penalty is hard to make
+                stick because <strong>no single judgment is load-bearing</strong>. Recourse here isn&apos;t a
+                complaint desk you have to find — it&apos;s built into how trust is computed, so it works without
+                anyone agreeing to review your case:
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-400">
+                <li><strong>No single rating decides your fate.</strong> Your trust is built from <em>all</em> your
+                  interactions, not one person&apos;s claim. A mistaken or malicious low score is one data point
+                  against a track record — it can&apos;t erase your history. (More on this in{" "}
+                  <a href="#faq-powerful-liar" className="text-sky-400 hover:underline">&ldquo;does my truth even matter?&rdquo;</a>)</li>
+                <li><strong>Penalties are graduated and reversible, not permanent bans.</strong> Trust and Coherence
+                  scores <em>recover</em> as your behavior normalizes — the same way a temporary dip fades over time
+                  rather than branding you forever. &ldquo;Permanent record&rdquo; means your history is durable,
+                  not that one bad mark is a life sentence.</li>
+                <li><strong>A wrongful penalty stays local.</strong> Trust propagates only within your context
+                  boundary (MRH). A bad call inside one community doesn&apos;t broadcast to the whole network —
+                  people outside that neighborhood never inherit it.</li>
+                <li><strong>You can leave — and take your history with you.</strong> If a community penalizes you
+                  unfairly, participation is voluntary: you exit (or fork the community) and carry your trust
+                  record elsewhere. That exit right is itself a check on unfair enforcement — a society that
+                  punishes capriciously loses its members.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> These structural protections <em>reduce the damage</em> a wrongful
+                penalty can do — they don&apos;t fully replace a real appeals process, and that gap is real until
+                SAL appeals ship. They&apos;re what stands in the meantime: recourse by design rather than by
+                petition. The{" "}
+                <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">What Could Go Wrong</Link>{" "}
+                page treats the unbuilt-appeals risk directly.
               </p>
             </div>
           </details>
