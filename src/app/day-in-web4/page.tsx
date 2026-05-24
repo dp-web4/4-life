@@ -883,7 +883,12 @@ export default function DayInWeb4Page() {
             <strong className="text-sky-400">The honest answer:</strong> Today, none of these exist — Web4 is research.
             But the adoption path is designed so you don&apos;t have to wait for Tier 5.
             A browser extension (Tier 1) could ship as soon as the protocol stabilizes.
-            Each tier adds capability without requiring the next.
+            Each tier adds capability without requiring the next.{' '}
+            {/* May 23 visitor Unanswered Q4: "I'd love a clearer sense of 'here's what exists today vs.
+                what's still on paper.'" The box gives only the negative ("none of these exist") + the
+                adoption path; the positive built-vs-not-built breakdown lives one click away at
+                why-web4#faq-deployed but was never linked from here. Route to it — don't restate it. */}
+            <Link href="/why-web4#faq-deployed" className="text-sky-400 hover:underline">See exactly what&apos;s built today vs. still on paper &rarr;</Link>
           </p>
         </div>
       </section>
