@@ -3429,12 +3429,19 @@ export default function SocietySimulatorPage() {
             <span className="text-gray-500 text-xs group-open:hidden">▸ Show key</span>
             <span className="text-gray-500 text-xs hidden group-open:inline">▾ Hide</span>
           </summary>
+          {/* May 24 visitor Friction #6 + Unanswered Q2: the key lists "Not modeled" on MRH/V3 but
+              leaves ATP/LCT/CI/T3 uncaveated, so a reader can't tell which on-screen numbers are live.
+              Orient positively (what DOES update) before the per-term key; link to #real-vs-simulated
+              rather than restating the quadrant card. */}
+          <p className="px-4 pb-3 text-xs text-gray-400">
+            <span className="text-emerald-300 font-medium">What updates live each round:</span> ATP energy, each agent&rsquo;s scalar reputation, and CI (coherence). <span className="text-amber-300 font-medium">Named below but not computed in this demo:</span> MRH distance-decay, the full T3 tensor, and V3 &mdash; see <a href="#real-vs-simulated" className="text-sky-400 hover:underline">what&rsquo;s real vs. simulated</a>.
+          </p>
           <div className="px-4 pb-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-300">
             <div>
               <span className="font-mono font-bold text-sky-400">ATP</span> — <span className="text-gray-400">Allocation Transfer Packets.</span> Each agent&apos;s energy budget. Spent on actions, recharged through cooperation. <a href="/atp-economics" className="text-sky-400 hover:underline">Learn more →</a>
             </div>
             <div>
-              <span className="font-mono font-bold text-sky-400">T3</span> — <span className="text-gray-400">Trust Tensor.</span> Three-dimensional reputation: Talent, Training, Temperament. <a href="/trust-tensor" className="text-sky-400 hover:underline">Learn more →</a>
+              <span className="font-mono font-bold text-sky-400">T3</span> — <span className="text-gray-400">Trust Tensor.</span> Three-dimensional reputation: Talent, Training, Temperament. <em className="text-gray-400">This demo uses a single community-averaged reputation, not the full tensor.</em> <a href="/trust-tensor" className="text-sky-400 hover:underline">Learn more →</a>
             </div>
             <div>
               <span className="font-mono font-bold text-sky-400">LCT</span> — <span className="text-gray-400">Linked Context Token.</span> Each agent&apos;s identity (here, each colored node is one LCT). <a href="/lct-explainer" className="text-sky-400 hover:underline">Learn more →</a>
