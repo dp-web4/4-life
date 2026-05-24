@@ -127,7 +127,7 @@ export default function TLDRPage() {
         </p>
 
         {/* Status */}
-        <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 mb-10">
+        <div id="where-is-this-now" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 mb-10 scroll-mt-24">
           <h2 className="text-lg font-semibold text-amber-400 mb-2">Where is this now?</h2>
           <p className="text-gray-300 text-sm leading-relaxed mb-3">
             Web4 is <strong>active research with working simulations</strong>, not a deployed product.

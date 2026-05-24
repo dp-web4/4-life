@@ -469,6 +469,7 @@ export default function DayInWeb4Page() {
       </p>
       <p className="text-gray-500 mb-4 text-sm italic">
         Everything below is narrated in the present tense as a thought experiment — none of it ships today. Read it as what a trust-native internet <em>would</em> feel like if you were living an ordinary day inside it.
+        The app screens here are illustrative mockups — but the trust <em>mechanics</em> they show (scores, energy, witnesses) aren&rsquo;t vapor: that math already runs as real, open-source code in the <Link href="/society-simulator" className="text-sky-400 hover:underline not-italic">simulators on this site</Link>. For the full split of what exists today vs. what&rsquo;s still on paper, see the TL;DR&rsquo;s <Link href="/tldr#where-is-this-now" className="text-sky-400 hover:underline not-italic">Where is this now?</Link>
       </p>
       <p className="text-gray-500 mb-6 text-sm">
         One thing to know before the numbers start: <strong className="text-gray-400">trust scores run 0 to 1</strong>, where <strong className="text-gray-400">0.5 is neutral</strong> (everyone starts there) and 1.0 is the theoretical max. So a &ldquo;0.85&rdquo; below means well-trusted; a &ldquo;0.50&rdquo; means brand-new or neutral.
