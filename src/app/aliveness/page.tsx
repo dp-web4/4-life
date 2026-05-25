@@ -914,7 +914,26 @@ export default function AlivenessExplainer() {
           </div>
         </div>
 
-        <div id="death-meaning" className="detail-box scroll-mt-24" style={{ marginTop: "1.5rem", background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.2)" }}>
+        <div className="detail-box scroll-mt-24" style={{ marginTop: "1.25rem", background: "rgba(56, 189, 248, 0.08)", border: "1px solid rgba(56, 189, 248, 0.2)" }}>
+          <h4 style={{ color: "#38bdf8" }}>Wait — three conditions, but only two deaths below?</h4>
+          <p>
+            Two different questions. The <strong>three conditions above are what can <em>end</em> a
+            life</strong> — ATP hits 0, trust falls below 0.5, <em>or</em> your Coherence Index falls
+            below 0.5. Any one is fatal, so yes: a <strong>coherence death is real</strong> (the demo
+            above ends your run the moment CI drops past 0.5). The <strong>two deaths below are the
+            two possible <em>outcomes</em></strong> — recoverable rebirth vs. permanent — and which
+            one you get turns on whether your <em>trust</em> survived.
+          </p>
+          <p style={{ fontSize: "0.85rem", opacity: 0.75, marginTop: "0.5rem" }}>
+            CI pulls double duty: besides being a hard floor, it&apos;s the <em>amplifier</em> — low
+            CI shrinks your effective trust (<code>× CI²</code>) and raises every action&apos;s ATP
+            cost (<code>× 1/CI²</code>). So a coherence slide usually drags trust and energy down with
+            it, which is why a coherence death almost always lands on the permanent (trust) side
+            rather than the recoverable one.
+          </p>
+        </div>
+
+        <div id="death-meaning" className="detail-box scroll-mt-24" style={{ marginTop: "1rem", background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.2)" }}>
           <h4 style={{ color: "#fbbf24" }}>What does &ldquo;death&rdquo; mean for a real person?</h4>
           <p>
             In these simulations, death means the agent stops acting and awaits rebirth.
