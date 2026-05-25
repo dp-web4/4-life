@@ -883,6 +883,19 @@ export default function LCTExplainerPage() {
               <li><strong className="text-amber-300">Hardware-bound, one device</strong> &mdash; recovery is possible but slower. You re-establish through <a href="#recovery" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('recovery')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-amber-300 hover:text-amber-200 underline">community vouching &mdash; trusted witnesses confirm you&apos;re you, typically over 3&ndash;7 days</a>.</li>
               <li><strong className="text-gray-400">Software only</strong> &mdash; no second witness to vouch. You start over from zero with a fresh identity.</li>
             </ul>
+            {/* May 24 visitor Unanswered Q4: "lose ALL my devices — am I locked out forever?"
+                The full answer lives in the #recovery "All Devices Lost" card ~500 lines below;
+                surface its conclusion here, where the "permanent" anxiety actually arises. */}
+            <p className="text-xs text-gray-300 mt-3">
+              <strong className="text-sky-300">The pattern that matters:</strong> a permanent{" "}
+              <em>reputation</em> is not a permanent <em>lockout</em>. Lose <em>every</em> hardware
+              device at once and you&apos;re still not erased &mdash; you drop into that same{" "}
+              <a href="#all-devices-lost" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('all-devices-lost')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">social-recovery path</a>{" "}
+              (trusted witnesses re-confirm you&apos;re you), deliberately slow at 3&ndash;7 days and
+              deliberately hard &mdash; easy recovery would mean easy identity theft &mdash; but real,
+              not forever. The lone exception is the software-only case above: with no hardware witness
+              to vouch for you, there&apos;s nothing to recover <em>to</em>.
+            </p>
             <p className="text-xs text-gray-400 mt-3 italic">The numbers below measure that gap &mdash; how strong a witness your hardware is, and therefore how cleanly you can recover.</p>
           </div>
 
@@ -1435,7 +1448,7 @@ export default function LCTExplainerPage() {
               </div>
             </div>
 
-            <div className="bg-gray-900/50 border border-amber-700/30 rounded-lg p-5">
+            <div id="all-devices-lost" className="bg-gray-900/50 border border-amber-700/30 rounded-lg p-5 scroll-mt-24">
               <h3 className="text-lg font-bold text-amber-400 mb-2">All Devices Lost</h3>
               <p className="text-gray-300 text-sm mb-3">
                 Worst case. With no surviving devices, you need a{" "}
