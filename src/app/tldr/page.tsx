@@ -131,7 +131,8 @@ export default function TLDRPage() {
           <h2 className="text-lg font-semibold text-amber-400 mb-2">Where is this now?</h2>
           <p className="text-gray-300 text-sm leading-relaxed mb-3">
             Web4 is <strong>active research with working simulations</strong>, not a deployed product.
-            This site lets you watch the mechanics in action — see societies form, trust networks
+            One distinction worth keeping straight: <strong className="text-gray-100">Web4 is the protocol &mdash; the rules and math; 4-Life (this site) is the lab where you explore those rules</strong> through simulations, walkthroughs, and explainers.
+            So 4-Life lets you watch the mechanics in action — see societies form, trust networks
             emerge, and bad actors fail. The underlying{" "}
             <a
               href="https://dp-web4.github.io/web4/"
