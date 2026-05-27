@@ -537,9 +537,12 @@ export default function FirstContactPage() {
                   <div className="mt-4 bg-emerald-900/20 border border-emerald-800 rounded p-4">
                     <strong className="text-emerald-400">Karma Carry-Forward</strong>
                     <p className="text-gray-300 mt-2">
-                      Alice&apos;s good karma from her first life gives her a head start: <strong className="text-white">more ATP</strong> and
+                      <strong className="text-white">Same LCT, license reinstated</strong> — not a new account. Alice&apos;s identity and full history persist; she&apos;s the same entity resuming after a recoverable energy-death, not a fresh signup inheriting borrowed reputation.
+                    </p>
+                    <p className="text-gray-300 mt-2">
+                      Her good karma from that first life-cycle gives her a head start: <strong className="text-white">more ATP</strong> and
                       <strong className="text-white"> higher starting trust</strong> than a brand-new entity. This is how Web4 makes
-                      long-term quality behavior compound across lifetimes — like compound interest on good reputation.
+                      long-term quality behavior compound across one identity&apos;s rebirth cycles — like compound interest on good reputation.
                     </p>
                   </div>
                 )}
