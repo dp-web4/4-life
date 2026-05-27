@@ -1456,12 +1456,30 @@ export default function LCTExplainerPage() {
                 witnesses who can vouch for your identity. Think of it like getting a new
                 passport: you need people who know you to confirm you&apos;re you.
               </p>
+              {/* May 26 visitor friction #4 / Unanswered Q3: the social-recovery mechanism was
+                  described conceptually ("trusted witnesses confirm you're you") but the operation
+                  was opaque — what does a witness DO, what threshold binds the attestation? Add
+                  the parallel-to-device-quorum mechanism at the read point, with the honest spec
+                  caveat that exact thresholds aren't yet pinned down. Same pattern as PR #301/#309/#312/#320. */}
+              <p className="text-gray-300 text-sm mb-3">
+                Mechanically, it&apos;s the same primitive as the device-quorum case above &mdash; an{" "}
+                <strong className="text-amber-300">m-of-n threshold</strong> of hardware-signed
+                approvals &mdash; but the signers are now <em>people</em> you&apos;ve previously
+                interacted with (their LCTs), not your own devices. Each peer signs the recovery
+                request from their own hardware; once the threshold accumulates, those signatures
+                attest to your new device&apos;s birth certificate, and the new key is bound into
+                your LCT constellation. The exact quorum size, how peers are selected, and how
+                interaction history weights each attestation are{" "}
+                <em>designed but not yet pinned in spec</em> &mdash; one of Web4&apos;s
+                &ldquo;not yet deployed&rdquo; pieces.
+              </p>
               <div className="bg-gray-800/60 rounded px-3 py-2 text-xs text-gray-400">
-                This is deliberately hard. Easy recovery would mean easy identity theft.
-                The friction is a feature, not a bug.
-                {" "}<span className="text-amber-300 font-medium">Expect days, not minutes</span> —
-                social recovery typically takes 3&ndash;7 days as multiple witnesses coordinate
-                out-of-band verification.
+                Why the wait? Easy recovery would mean easy identity theft &mdash; specifically a{" "}
+                <span className="text-amber-300 font-medium">flash-recovery attack</span> where a
+                thief tricks one or two contacts before honest peers notice. The 3&ndash;7 day window
+                forces out-of-band coordination across multiple witnesses, raising the cost of forging
+                quorum approval above the account&apos;s value.
+                {" "}<span className="text-amber-300 font-medium">Expect days, not minutes.</span>
               </div>
             </div>
           </div>
