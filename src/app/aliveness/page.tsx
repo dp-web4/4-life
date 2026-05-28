@@ -807,8 +807,15 @@ export default function AlivenessExplainer() {
                 <li><strong>Temporal:</strong> Time consistency (continuous operation)</li>
                 <li><strong>Relational:</strong> Relationship consistency (context boundary integrity)</li>
               </ul>
+              {/* May 27 visitor LOW: visitor encountered "Geometric mean" here and "CI²" 40+ lines below
+                  in the pipeline diagram, then went to Karma Journey to find the why-squared intuition —
+                  meaning they missed the same-page amber callout that already answers it. This is a
+                  link-bridging fix (NOT summary-completion like PR #301/#309/#320/#323/#324): the
+                  intuition is already on-page; just make it reachable from the first read point. */}
               <p className="detail-emphasis">
-                Geometric mean means <strong>one low dimension tanks everything</strong>.
+                Geometric mean means <strong>one low dimension tanks everything</strong>. CI is then{' '}
+                <em>squared</em> when applied to trust —{' '}
+                <a href="#why-ci-squared" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('why-ci-squared')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ color: '#c084fc', cursor: 'pointer' }}>see why below</a>.
               </p>
               <details style={{ marginTop: '0.5rem' }}>
                 <summary style={{ cursor: 'pointer', color: '#94a3b8', fontSize: '0.875rem' }}>
@@ -851,7 +858,7 @@ export default function AlivenessExplainer() {
           </pre>
         </div>
 
-        <div className="detail-box scroll-mt-24" style={{ marginTop: "1rem", background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.2)" }}>
+        <div id="why-ci-squared" className="detail-box scroll-mt-24" style={{ marginTop: "1rem", background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.2)" }}>
           <strong>Why is coherence <em>squared</em> (CI²)?</strong> Squaring is the
           difference between &ldquo;a bad moment&rdquo; and &ldquo;a bad pattern.&rdquo;
           A small dip barely registers (CI&nbsp;0.9 still keeps ~81% of effective trust),
