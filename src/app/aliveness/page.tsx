@@ -870,10 +870,21 @@ export default function AlivenessExplainer() {
           <li><strong>T3 &gt; 0.5:</strong> Prevents random noise (requires intentional behavior)</li>
           <li><strong>CI coherent:</strong> Prevents fake identities (consistency is expensive to fake)</li>
         </ul>
+        {/* May 27 visitor / Unanswered Q4 — synthons "single sentence left me curious but not informed";
+            ghost-concept prominence-not-absence pattern (cf. PR #301/#309/#320/#323). Visitor saw this
+            paragraph + the line-681 aside, never scrolled to the deep #synthons section at L1655+.
+            Fix: name the scale range inline (working pair / federation / AI-agent swarm) so the
+            keepable summary at the read point answers "team? org? federation? AI swarm?" without
+            requiring the jump. Deep section L1655+ preserved untouched. Scales chosen to be net-new
+            at this read point: line 681 already uses "research lab, a co-op"; L1686 uses "band,
+            sports team, working group". */}
         <p style={{ marginTop: '1.25rem', color: '#9ca3af', fontSize: '0.95rem' }}>
           These three criteria describe individual aliveness — but the same tests
           scale up. Groups can be alive too, with their own energy flows, coherent
-          agency, and verifiable continuity. See{' '}
+          agency, and verifiable continuity. A <strong className="text-purple-400">synthon</strong>{' '}
+          can be as small as a working pair, as large as a multi-org federation, or as
+          exotic as a coordinated swarm of AI agents — same three tests, applied to the cluster
+          instead of a single member. See{' '}
           <a href="#synthons" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('synthons')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ color: '#c084fc', cursor: 'pointer' }}>Groups Can Be Alive Too (synthons)</a>
           {' '}below.
         </p>
