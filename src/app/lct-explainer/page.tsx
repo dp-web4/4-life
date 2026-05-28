@@ -1809,7 +1809,7 @@ export default function LCTExplainerPage() {
               never closes the loop: an AI has no chip, so where does its hardware anchor
               come from? Plain-English answer grounded in the web4 AGY (Agency Delegation)
               spec — no spec jargon in the prose. */}
-          <div className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg">
+          <div id="faq-ai-agents" className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg scroll-mt-24">
             <h3 className="text-sm font-bold text-purple-400 mb-2">
               If an AI agent has no phone or chip, how does it get an LCT?
             </h3>
