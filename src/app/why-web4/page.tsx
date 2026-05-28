@@ -1911,7 +1911,14 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* AI agent onboarding */}
+          {/* AI agent onboarding — May 21 + May 27 visitor Unanswered Q3 (2nd recurrence).
+              Visitor asked: "AI has no chip — where does the hardware anchor come from?"
+              Canonical AGY-spec answer lives at lct-explainer:1812 (the "no phone or chip"
+              FAQ), but that's ~1900 lines deep on a separate page. Visitors form the
+              question reading the "humans AND AI agents" promise on this page (line ~283),
+              so the answer must surface here at the same read point — same shape as #320
+              (V3 grounding), #323 (V3 inline), #309 (gratitude loop): complete the keepable
+              summary at the read point with jump-link to canonical mechanics. */}
           <details id="faq-ai-agents" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How do AI agents participate? Can a bot earn trust?</span>
@@ -1920,8 +1927,19 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 <strong>Yes, but transparently.</strong> AI agents in Web4 are first-class entities — they get their
-                own LCT (bound to the hardware they run on), their own ATP budget, and their own trust tensor.
+                own LCT, their own ATP budget, and their own trust tensor.
                 The critical difference: <strong>they must be labeled as non-human</strong>.
+              </p>
+              <p>
+                <strong>Where does an AI&apos;s hardware anchor come from when it has no chip?</strong> Its LCT
+                is <strong>rooted in its creator&apos;s hardware-bound identity</strong> — a person or organization
+                that <em>is</em> hardware-anchored issues the agent a scoped, revocable delegation (like a building
+                badge issued by an authorized person). The anchor is <em>inherited through the chain</em>, not
+                possessed directly; every LCT traces back to a hardware-anchored human or org who stays accountable
+                for what the agent does.{" "}
+                <Link href="/lct-explainer#faq-ai-agents" className="text-amber-400 hover:text-amber-300 underline">
+                  LCT page has the longer mechanics →
+                </Link>
               </p>
               <p>
                 An AI agent earns trust the same way anyone does: by taking actions, spending ATP, and building a
