@@ -436,12 +436,23 @@ export default function LCTExplainerPage() {
             </h3>
             {/* May 14 visitor MEDIUM #4 — plain-English lede before meta-disclaimer */}
             <p className="text-sm text-gray-200 mb-3">
-              <strong>The short answer:</strong> your laptop and phone vouch for each other &mdash; the network sees both signatures together, so no single device alone can claim to be you.
+              <strong>The short answer:</strong> your laptop and phone are each a{" "}
+              <strong className="text-green-300">device co-witness</strong> &mdash; they vouch for each other,
+              so the network sees both signatures together and no single device alone can claim to be you.
             </p>
+            {/* May 28 visitor MEDIUM #2 / Unanswered Q1 — same word "witness" doing two jobs.
+                Visitor said the prior "two layers" acknowledgment was honest but the naming collision
+                persisted. Fix: name the two concepts with boldfaced distinct terms at the read point
+                so a naive reader leaves with two named buckets to map context into.
+                No site-wide rename (09:00 session log flagged cascade risk); seeding only here + the
+                first sentence of each panel. */}
             <p className="text-xs text-gray-400 italic mb-3">
-              Witnessing happens at two layers: (1) your own devices attest to each other, and (2) optional
-              infrastructure nodes verify the network. This section covers layer 1 &mdash; layer 2
-              (&ldquo;who runs the network?&rdquo;) is answered directly below.
+              Heads up &mdash; Web4 uses the same word &ldquo;witness&rdquo; for two distinct jobs. To keep
+              them apart, this page names them: a <strong className="text-gray-200 not-italic">device co-witness</strong>{" "}
+              (your own devices attest to each other &mdash; this section), and a{" "}
+              <strong className="text-gray-200 not-italic">network witness</strong> (optional infrastructure nodes
+              verify the network &mdash; answered directly below). If you meet plain &ldquo;witness&rdquo; later,
+              context tells you which.
             </p>
             <p className="text-sm text-gray-300 mb-3">
               <strong>Why device witnesses?</strong> Passwords can be stolen. A single device can be hacked.
@@ -535,7 +546,8 @@ export default function LCTExplainerPage() {
             </h3>
             <p className="text-sm text-gray-300 mb-2">
               <strong className="text-sky-400">Short answer:</strong> anyone can. Web4 is an open standard
-              (like email), not a platform (like Gmail). Witness nodes can be run by universities,
+              (like email), not a platform (like Gmail).{" "}
+              <strong className="text-sky-300">Network witness</strong> nodes can be run by universities,
               companies, nonprofits, or individuals &mdash; the same way anyone can run an email server.
             </p>
             <p className="text-sm text-gray-400 mb-2">
