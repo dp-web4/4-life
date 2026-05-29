@@ -147,7 +147,17 @@ export default function ATPEconomicsPage() {
                 logic as #301 (the keepable summary must be complete): ground who-confirms = the recipients + a
                 jump-link to the existing depth. Per policy guardrail, the box stays minimal — trust-weighting and
                 "what if nobody confirms" stay at #earning-atp. */}
-            <li className="flex gap-2"><span className="text-sky-400 shrink-0">2.</span> Every action <em>spends</em> ATP; every contribution <em>recharges</em> it when <strong className="text-gray-100">the people who received it confirm its value</strong> &mdash; the recipients you helped, not you and not a central rater. Stay above zero or your agent dies &mdash; this is how spam and abuse become self-limiting. <a href="#earning-atp" onClick={(e) => { e.preventDefault(); document.getElementById('earning-atp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(who confirms you)</a></li>
+            {/* May 29 visitor MEDIUM #3 / Unanswered Q1: "'Continuously' but 'over a rolling window' is vague.
+                I'd want a clearer mental model of the recharge cadence — is it minutes? Hours? Days?"
+                The canonical answer lives at L512-524 ("think hours, not seconds" + worked example
+                "first hour ~50%, six hours ~80%, fully within a day") — but the visitor read those
+                lines and STILL took away vague "continuously / rolling window" as the keepable summary.
+                4th instance of the keepable-summary-completion pattern on this same box (after #301 ADP,
+                #309 who-confirms, #330 5% destination). Reuses the canonical L514 phrasing ("hours, not
+                seconds") promoted to the read point; "to a day" tracks the typical-case worked example
+                at L520-522 — does not commit the box to thinly-confirmed multi-day stragglers, which
+                stay in the deep paragraph. Existing #earning-atp jump-link already lands at cadence detail. */}
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">2.</span> Every action <em>spends</em> ATP; every contribution <em>recharges</em> it (over <strong className="text-gray-100">hours to a day</strong>, not seconds) when <strong className="text-gray-100">the people who received it confirm its value</strong> &mdash; the recipients you helped, not you and not a central rater. Stay above zero or your agent dies &mdash; this is how spam and abuse become self-limiting. <a href="#earning-atp" onClick={(e) => { e.preventDefault(); document.getElementById('earning-atp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(who confirms you)</a></li>
             <li className="flex gap-2"><span className="text-sky-400 shrink-0">3.</span> Quality matters about <strong className="text-gray-100">7&times;</strong>: low-quality work barely recharges you, high-quality work recharges fully. <a href="#quality-ramp" onClick={(e) => { e.preventDefault(); document.getElementById('quality-ramp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(the quality ramp)</a></li>
             {/* May 28 visitor Unanswered Q3: "What happens to the 5% transfer fee? Burned, pooled,
                 redistributed? I encountered the 5% reference multiple times and never saw where it
