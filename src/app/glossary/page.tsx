@@ -203,6 +203,44 @@ export default function GlossaryPage() {
             </div>
           </div>
 
+          {/* Witness — May 29 visitor MEDIUM #2: "witness" used 8+ times across LCT, How It Works,
+              Federation, and Day in Web4 with no glossary entry; canonical naming for the two senses
+              already lives at lct-explainer L450-454 (PR #328) but is page-local. Add a Core/Essential
+              entry that mirrors the exact bolded names — "device co-witness" vs "network witness" —
+              so the glossary is the disambiguation backstop when "witness" confuses a visitor before
+              they reach lct-explainer#device-witnesses. */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">
+              Witness
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              Web4 uses the same word for <strong>two distinct jobs</strong>. To keep them apart:
+            </p>
+            <ul className="text-gray-300 leading-relaxed mb-3 space-y-2 list-none">
+              <li>
+                <strong className="text-gray-100">Device co-witness</strong> &mdash; your own
+                devices attest to each other. Your phone, laptop, and security key independently
+                co-sign that &ldquo;yes, this is really you.&rdquo; More devices co-signing = higher
+                trust ceiling (1 device caps at 0.50, 2 devices at 0.75, 3+ up to 0.90). This is
+                what the LCT page mostly means by &ldquo;witness.&rdquo;
+              </li>
+              <li>
+                <strong className="text-gray-100">Network witness</strong> &mdash; optional
+                infrastructure nodes that verify the network itself (federation links, witness
+                relay for entity discovery). Appears in Federation and How It Works.
+              </li>
+            </ul>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: &ldquo;Your devices vouch for each other (co-witness); network nodes
+              vouch for the network (network witness). Different layers, same word.&rdquo;
+            </p>
+            <div className="flex gap-3 text-sm">
+              <Link href="/lct-explainer#device-witnesses" className="text-sky-400 hover:underline">
+                Learn more →
+              </Link>
+            </div>
+          </div>
+
           {/* ATP */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
