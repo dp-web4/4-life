@@ -593,8 +593,16 @@ export default function MRHExplorerPage() {
             <h2 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '0.75rem' }}>
               4D Horizon Profile
             </h2>
-            <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '1rem' }}>
+            <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.5rem' }}>
               Each action has a 4-dimensional context that determines its cost, required trust, and visibility.
+            </p>
+            {/*
+              May 28 visitor LOW: ΔR/ΔT/ΔC/ΔQ first appeared as labels without a Greek-letter key —
+              "I had to guess from context that Δ meant 'the change in.'" One-line legend at the
+              read point, using the visitor's own suggested gloss. Read-point fix only, no math primer.
+            */}
+            <p style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginBottom: '1rem', fontStyle: 'italic' }}>
+              Δ (delta) = the change or extent in this dimension — e.g. ΔR is how far in space an action reaches, ΔT how far in time.
             </p>
 
             <DimensionSelector
