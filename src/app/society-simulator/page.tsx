@@ -3316,6 +3316,9 @@ export default function SocietySimulatorPage() {
               <p className="text-gray-300 text-xs">
                 Trust here is a <em>scalar</em> <code className="text-amber-200 bg-amber-950/40 px-1 rounded text-[11px]">reputation</code> (community-averaged), not the full <T3>T3</T3> tensor (Talent/Training/Temperament). It also doesn&rsquo;t fade with social distance (<span className="text-amber-200">MRH</span> &mdash; your <em>trust neighborhood</em>: how far your reputation carries before it decays, ~3 hops out), isn&rsquo;t scored per individual contribution (<span className="text-amber-200">V3</span> &mdash; the <em>value tensor</em>: how others rate the quality of each thing you produce), and has no explicit witness layer. Twelve agents and a few rounds; production would be far larger.
               </p>
+              <p className="text-gray-300 text-xs mt-2">
+                <strong className="text-gray-200">What still transfers:</strong> these omissions affect speed and edge cases &mdash; not the core dynamics. Defector isolation, emergent cooperation, and wealth dynamics would still emerge with the full T3/MRH/V3 model; the live network would just resolve them more gradually and with more local clustering.
+              </p>
             </div>
             <div className="bg-sky-900/15 border border-sky-800/40 rounded-lg p-3">
               <div className="text-xs font-bold text-sky-300 mb-1.5">⚙ Where the real protocol math runs</div>
