@@ -1493,6 +1493,29 @@ export default function LCTExplainerPage() {
                 quorum approval above the account&apos;s value.
                 {" "}<span className="text-amber-300 font-medium">Expect days, not minutes.</span>
               </div>
+              {/* May 29 visitor Unanswered Q3: "3-7 days sounds rough — does that mean I can't
+                  access anything for a week? Can I prove who I am to a small circle even before
+                  formal recovery completes?" The sibling "Why the wait?" block above answers the
+                  security rationale; this one answers the experiential question at the same read
+                  point. Three honest spec points: (1) preserved-not-erased (natural time-decay
+                  still applies; recovery doesn't restore, it unfreezes the SUSPENDED state),
+                  (2) protocol-anchored actions pause, non-protocol life continues,
+                  (3) the imagined informal small circle IS the formal recovery — softening this
+                  would re-open the visitor's two-layer mental model. */}
+              <div className="bg-gray-800/60 rounded px-3 py-2 text-xs text-gray-400 mt-2">
+                What happens during the wait?{" "}
+                <span className="text-amber-300 font-medium">Your reputation is preserved, not erased.</span>{" "}
+                The model treats the loss as a hold on the device, not a wipe of the person &mdash; your T3 sits
+                in place (natural time-decay still applies), and when the quorum lands, you walk back into the
+                trust that was waiting.
+                Web4-anchored actions pause (signing an ATP transfer, attesting a peer &mdash; anything that
+                requires your hardware key), but non-protocol life keeps going (reading the site, using your
+                phone for anything else). And the &ldquo;small circle vouching for me&rdquo; that the wait seems
+                to be standing in for{" "}
+                <em>is</em>{" "}
+                the recovery: each peer signature accumulating toward the m-of-n threshold IS that small
+                circle&apos;s vote &mdash; not a parallel informal track running alongside it.
+              </div>
             </div>
           </div>
 
