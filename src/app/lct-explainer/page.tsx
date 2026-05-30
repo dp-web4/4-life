@@ -913,12 +913,19 @@ export default function LCTExplainerPage() {
 
           {/* May 21 visitor LOW #1: the ceiling numbers (0.90/0.50) appear without anchoring the 0-1 scale itself.
               A cold reader landing directly on this page has no prior calibration. Anchor the scale before the grid.
-              Phrased distinctly from line ~921's "neutral starting point" framing to avoid redundancy. */}
-          <p className="text-xs text-gray-400 mb-2">
-            New to the scale? Trust runs from <strong className="text-gray-300">0</strong> (none) to{" "}
-            <strong className="text-gray-300">1.0</strong> (the theoretical max), and{" "}
-            <strong className="text-gray-300">0.5 is the alive/dead line</strong> &mdash; fall below it and an entity can no
-            longer act (see <Link href="/aliveness" className="text-sky-400 hover:text-sky-300 underline">Aliveness</Link>).
+              Phrased distinctly from line ~921's "neutral starting point" framing to avoid redundancy.
+              May 30 visitor MEDIUM #2 (3rd touch of this anchor): #295 anchored at the grid, #300 at the walkthrough,
+              but neither labeled the *upper-tier* numbers qualitatively. Visitor's verbatim gap: "Is 0.9 'great' or
+              'the bare minimum'?" Their own table-row recommendation phrased it: "Above 0.85 is uncommon." Extend
+              the anchor with qualitative labels for the upper end, and lift the typography one notch (text-sm gray-300)
+              so a scrolling reader notices it before the grid below &mdash; don't escalate to a colored callout. */}
+          <p className="text-sm text-gray-300 mb-2">
+            <span className="text-gray-400">New to the scale?</span> Trust runs from <strong>0</strong> (none) to{" "}
+            <strong>1.0</strong> (the theoretical max). Roughly: <strong>0.5</strong> is the alive/dead line &mdash;
+            fall below it and an entity can no longer act (see{" "}
+            <Link href="/aliveness" className="text-sky-400 hover:text-sky-300 underline">Aliveness</Link>);{" "}
+            <strong>0.75</strong> is solid; <strong>0.85</strong> is strong; <strong>above&nbsp;0.85 is uncommon</strong>;{" "}
+            <strong>1.0</strong> is the theoretical ceiling, not a number anyone actually reaches.
             The ceilings below are points on that scale.
           </p>
           <p className="text-sm text-gray-300 mb-3">
