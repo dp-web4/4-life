@@ -167,7 +167,7 @@ export default function ATPEconomicsPage() {
                 but not at the read point the visitor explicitly trusted as their summary. Same
                 pattern as #301 (ADP) and #309 (who-confirms) — complete the keepable summary in
                 place rather than ship the answer 1000+ lines deeper. */}
-            <li className="flex gap-2"><span className="text-sky-400 shrink-0">4.</span> It is <strong className="text-gray-100">not a cryptocurrency</strong> &mdash; no market, no price, no mining. Peer transfers exist, but 5% routes to a <strong className="text-gray-100">community redistribution pool</strong> (not destroyed, not a central authority), making collusion farming unprofitable.</li>
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">4.</span> It is <strong className="text-gray-100">not a cryptocurrency</strong> &mdash; no market, no price, no mining. Peer transfers exist, but 5% routes to a <strong className="text-gray-100">community redistribution pool</strong> (not destroyed, not a central authority), making collusion farming unprofitable. <a href="#atp-burn-fee" onClick={(e) => { e.preventDefault(); const el = document.getElementById('atp-burn-fee'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const parent = el.closest('details'); if (parent) parent.open = true; } }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(what the pool funds)</a></li>
             <li className="flex gap-2"><span className="text-sky-400 shrink-0">5.</span> Spending ATP creates an <strong className="text-gray-100">ADP</strong> &mdash; think of ATP as cash and ADP as the receipt you get when you spend it. <a href="#what-about-adp" onClick={(e) => { e.preventDefault(); document.getElementById('what-about-adp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(more on ADP)</a></li>
           </ul>
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300">jump to the ATP simulator ↓</a></p>
@@ -1600,6 +1600,15 @@ export default function ATPEconomicsPage() {
               </div>
             </div>
 
+            {/* May 30 visitor Unanswered Q1: "What does the 5% community redistribution pool
+                actually do? Who gets it back, when, under what conditions?" The prior 21:00
+                session triaged Q1 as "needs spec investigation". Spec source: atp-adp-cycle.md
+                §6.3 (Transfer Fees) — protocol is fee-free; societies MAY levy fees; when they
+                do, the rate/bearer/destination MUST be declared in the society's published
+                economic laws; fees SHOULD be recycled into the society's pool (not destroyed).
+                The prior "redistributed to quality contributors" framing was ONE possible society
+                policy presented as THE policy — corrected here. The 5% itself is a sim parameter,
+                already labeled as such at L240/258/269. */}
             <div id="atp-burn-fee" className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-4 mb-6 scroll-mt-24">
               <h4 className="font-semibold text-sky-400 mb-2">Why does every ATP transfer destroy 5%?</h4>
               <div className="bg-gray-900/60 border border-gray-700/40 rounded px-3 py-2 mb-3 text-sm text-gray-300 font-mono">
@@ -1616,9 +1625,11 @@ export default function ATPEconomicsPage() {
                 you earn more by contributing than by moving ATP around. Simulations confirm:
                 one honest identity outearns five fake identities splitting the same budget.
                 The burned ATP goes to a <strong className="text-gray-300">redistribution pool</strong> —
-                not to any central authority — and is redistributed to quality contributors.
-                ATP is formally conserved: no hidden inflation, no minting events, no entity
-                benefits from the fee except the community.
+                not to any central authority. <strong className="text-gray-200">What the pool funds is set by
+                each society&apos;s published economic laws</strong>, not by the core protocol — typical uses
+                include topping up the society&apos;s pool for member recharges, paying witnesses,
+                or seeding new-member grants. ATP is formally conserved: no hidden inflation,
+                no minting events, no entity benefits from the fee except the community.
               </p>
               <p className="text-gray-400 text-sm mt-3 leading-relaxed">
                 <strong className="text-gray-300">Does buying a coffee cost 5%?</strong> It depends on the
