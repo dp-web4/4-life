@@ -267,6 +267,18 @@ export default function CoherenceIndexPage() {
               lifts CI above 0.9, at which point the surcharge disappears entirely (costs return to the listed
               price). Sustained consistent behavior is what closes the gap, and it closes fast.
             </p>
+            {/* May 30 visitor Unanswered Q4: "Why 0.85 specifically? Why not 1.0 or 0.5?" The paragraphs
+                above answer "why not 1.0" but don't pin the SPECIFIC value 0.85 vs 0.5/0.7/0.95. Visitor's
+                verbatim remedy: "0.85 because newcomers are presumed mostly-consistent but unproven; below
+                0.85 means we've seen evidence of inconsistency." This is a calibration choice (0.85 is a
+                hardcoded engine constant, not derived) — mirror #292's MRH "calibrated, not derived" framing. */}
+            <p className="text-sm text-gray-300 leading-relaxed mt-3">
+              Why <strong>0.85</strong> specifically, and not 0.5 or 0.95? It&rsquo;s a calibration choice (not a derived
+              constant): the value presumes you&rsquo;re <em>probably</em> consistent but unproven — high enough to reflect
+              that most newcomers behave consistently from day one, low enough that the ~1.4× surcharge is actually felt.
+              Scores below 0.85 are reserved for accounts where the system has <em>witnessed</em> inconsistency, not for
+              accounts it simply hasn&rsquo;t witnessed yet.
+            </p>
             <p className="text-xs text-gray-400 leading-relaxed mt-3 italic">
               The framing matters: this isn&rsquo;t &ldquo;trust assumed by default, then taken away if you misbehave.&rdquo;
               It&rsquo;s the opposite — there&rsquo;s nothing to assume yet, and the score climbs as the system
