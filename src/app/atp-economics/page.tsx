@@ -518,12 +518,20 @@ export default function ATPEconomicsPage() {
             the output-quality half of your reputation. (Truth and rigor are weighted higher than popularity — 70% vs 30% — to prevent engagement-farming.)
           </p>
           {/* Apr 28 MEDIUM friction: visitor asked "is it instant? polled? voted?" — close the loop on timing. */}
+          {/* May 31 visitor MEDIUM #2 sub-question (2) "does it expire?" — named at the read point.
+              The expiry-as-weeks fact lives at L272 / L575 / L1271 / L1438 but never at the read point
+              the visitor actually trusts as their answer. Same keepable-summary-completion pattern as
+              #262/#301/#309/#312/#330/#332/#338/#339. "Hours to a day" harmonizes the upper bound with
+              the 60-sec box at L160; "window of weeks" mirrors the existing hedge; "stops counting" is
+              the visitor's own verb. Sub-question (3) (rolling-window cadence) was already named via
+              this same paragraph + 60-sec box harmonization. Sub-question (1) ("balance to watch?") is
+              at a different read point (#what-about-adp activity log) and out of scope this session. */}
           <p className="text-gray-400 text-sm leading-relaxed mb-2">
             <strong className="text-gray-200">When does recharge actually happen?</strong>{' '}
             Not on a single click. Confirmations accrue against your ADP receipt over a rolling window
-            (think hours, not seconds), and ATP recharges <em>continuously</em> as the signals firm up &mdash;
+            (think <strong className="text-gray-200">hours to a day</strong>, not seconds), and ATP recharges <em>continuously</em> as the signals firm up &mdash;
             no quorum threshold, no central tally. Earlier, broader, more-trusted confirmation recharges faster;
-            thin or delayed confirmation drags the same receipt out longer.
+            thin or delayed confirmation drags it out across days; an unconfirmed receipt <strong className="text-gray-200">ages out over a window of weeks and stops counting</strong>.
           </p>
           {/* Apr 29 LOW: visitor wanted concrete numeric anchor for "rolling window, hours not seconds". */}
           <p className="text-gray-500 text-xs leading-relaxed mb-2 italic">
