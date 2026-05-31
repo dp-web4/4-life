@@ -499,6 +499,10 @@ export default function MRHExplorerPage() {
         <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#06b6d4', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
           What this feels like in practice
         </div>
+        {/* 2026-05-31 visitor MEDIUM #1 + Unanswered Q2: this box showed only example values; the per-hop decay rule was named only on the Trust Decay tab below. Lead with the rule using this page's own formula numbers (~quarter per hop, ~half by depth 3, noise floor by depth 4) — NOT the visitor's verbatim "30% / friend's friend ~0.5" which don't match (friend's friend = depth 2 = 0.65 by the page's 0.85^n × 0.9^(n-1)). Examples below now confirm the rule rather than substitute for it. */}
+        <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.5, marginBottom: '0.6rem' }}>
+          Trust signal drops by roughly a quarter with each hop outward &mdash; about half by depth 3, below the noise floor by depth 4. The examples below show the same rule in three concrete cases.
+        </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
           <div>
             <strong style={{ color: '#6ee7b7' }}>Reply to a friend</strong> (1 hop):
