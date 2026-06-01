@@ -991,8 +991,9 @@ export default function TrustTensorPage() {
               That&apos;s T3 — three dimensions describing <strong className="text-sky-300">who someone is</strong>.
               If this feels like enough for one sitting, you can stop here. T3 alone is a working mental model — pick up V3 later via the concept nav above.
             </p>
+            {/* June 1 visitor M5 / Unanswered Q2: name the V3->T3 arrow in the always-visible teaser so a non-expanding reader still leaves with the keepable relationship. Detail stays gated below (May 4 anti-overload). Mirrors the gated phrasing at L1092-1093. */}
             <p className="text-sm text-gray-500 mb-5">
-              Or keep going: V3 is a separate, complementary tensor that scores <strong className="text-purple-300">what someone produces</strong>. It pairs with T3 but doesn&apos;t require memorizing six things at once.
+              Or keep going: V3 is a separate, complementary tensor that scores <strong className="text-purple-300">what someone produces</strong>. It pairs with T3 but doesn&apos;t require memorizing six things at once &mdash; and the two aren&apos;t really independent: consistently producing high-V3 work raises your own T3, while sloppy work drags it down, so your reputation tracks your actual output quality.
             </p>
             <button
               onClick={expandV3}
