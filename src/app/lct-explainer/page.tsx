@@ -960,10 +960,12 @@ export default function LCTExplainerPage() {
               <div className="text-xs text-gray-500 mt-1">Browser/OS level</div>
             </div>
           </div>
+          {/* June 1 visitor MEDIUM #4: equity worry forms AT the grid (log L57) — name the tradeoff at the read point; deeper framing at L1067-1071 stays as deepening. */}
           <p className="text-gray-500 text-xs">
             These are trust <em>ceilings</em>, not starting points. Everyone starts at neutral (0.5).
             With software-only hardware, 0.5 is both where you start and the highest you can reach.
             Stronger hardware lets you build higher &mdash; but you still have to earn it through behavior.
+            One honest tradeoff: the software-only ceiling means people without newer hardware are capped lower &mdash; we treat that as a feature, not a bug, because it lets everyone participate while signaling what their identity is anchored to (see below for what the ceiling actually limits).
           </p>
 
           {/* May 4 visitor LOW: "those numbers feel declared, not derived. Why is software only 0.50? Why isn't TPM 1.00?"
