@@ -715,12 +715,16 @@ export default function KarmaJourneyPage() {
               }</span>
             </div>
           ) : Math.abs(effComp - baseComp) > 0.01 ? (
+            /* June 2 visitor MEDIUM / Unanswered Q1: during play (tick>0) this persistent strip restated only the
+               formula, dropping the purpose. The raw=survival / effective=next-life-tier contrast lives in the tick===0
+               block, the stat hints, and the conditional "You're not dead" callout — but vanished once an action was
+               clicked, which is exactly where the visitor "had to infer it." Add the one-clause purpose contrast here. */
             <div style={{
               fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.5rem',
               padding: '0.375rem 0.75rem', borderRadius: '0.375rem',
               background: 'var(--color-bg-secondary)',
             }}>
-              Effective trust ({effComp.toFixed(3)}) = Raw ({baseComp.toFixed(2)}) × CI² ({currentLife.ci.toFixed(2)}²). Consistency modulates what others see.
+              Effective trust ({effComp.toFixed(3)}) = Raw ({baseComp.toFixed(2)}) × CI² ({currentLife.ci.toFixed(2)}²). Raw keeps you alive this life; effective sets the karma tier that seeds your next.
             </div>
           ) : null}
 

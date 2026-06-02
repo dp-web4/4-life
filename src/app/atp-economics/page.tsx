@@ -389,7 +389,13 @@ export default function ATPEconomicsPage() {
             <p className="text-sm text-gray-400 mt-2">
               <strong className="text-gray-300">What about ADP?</strong> Every time you spend ATP, you get an <strong className="text-gray-300">ADP
               (Allocation Discharge Packet)</strong> — a receipt recording what you did and what it cost. ADP is the &ldquo;spent energy&rdquo;
-              counterpart to ATP&apos;s &ldquo;available energy.&rdquo; When others confirm your work was valuable, that ADP converts back into fresh ATP.
+              counterpart to ATP&apos;s &ldquo;available energy&rdquo; &mdash; a record of an action, not a second currency you can spend.
+              {/* June 2 visitor MEDIUM / Unanswered Q2: "a receipt that converts into money isn't a receipt." The
+                  receipt-vs-asset contradiction lived here because "converts back into fresh ATP" reads as the receipt
+                  itself becoming spendable. The "not a second currency" disambiguation existed only in the deeper
+                  L257 breakdown; port it to this primary read point and make confirmation (not the receipt) the refill trigger. */}
+              {' '}When others confirm your work was valuable, that confirmation is what unlocks fresh ATP back into your
+              budget &mdash; the receipt doesn&apos;t turn into energy, it&apos;s the proof that earns it back.
             </p>
             <p className="pt-4 text-gray-400 italic">
               Result: Only sustainable behaviors survive. Value creators thrive.
