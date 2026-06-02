@@ -3453,7 +3453,7 @@ export default function SocietySimulatorPage() {
               <span className="font-mono font-bold text-sky-400">CI</span> — <span className="text-gray-400">Coherence Index.</span> Behavioral consistency across spatial, capability, temporal, and relational dimensions. <a href="/coherence-index" className="text-sky-400 hover:underline">Learn more →</a>
             </div>
             <div>
-              <span className="font-mono font-bold text-sky-400">MRH</span> — <span className="text-gray-400">your trust neighborhood</span> <span className="text-gray-500">(formally &ldquo;Markov Relevancy Horizon&rdquo; &mdash; math-flavored jargon you can ignore)</span>: how far reputation carries before it decays (~3 hops out). Not modeled in this scalar demo. <a href="/mrh-explorer" className="text-sky-400 hover:underline">Learn more →</a>
+              <span className="font-mono font-bold text-sky-400">MRH</span> — <span className="text-gray-400">your trust neighborhood</span> <span className="text-gray-500">(formally &ldquo;Markov Relevancy Horizon&rdquo; &mdash; safe to skim here; full detail on the MRH page)</span>: how far reputation carries before it decays (~3 hops out). Not modeled in this scalar demo. <a href="/mrh-explorer" className="text-sky-400 hover:underline">Learn more →</a>
             </div>
             <div>
               <span className="font-mono font-bold text-sky-400">V3</span> — <span className="text-gray-400">Value Tensor.</span> How others rate the quality of each thing you produce (Valuation, Veracity, Validity). Not scored per-contribution in this demo. <a href="/trust-tensor#v3" className="text-sky-400 hover:underline">Learn more →</a>

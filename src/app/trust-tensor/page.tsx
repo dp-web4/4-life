@@ -1603,7 +1603,7 @@ Temperament:  30-day half-life (recent behavior matters most)
       <section id="calibration-meaning" className="max-w-4xl mx-auto mt-12 scroll-mt-24">
         <details className="bg-gray-900/50 border border-gray-700 rounded-xl p-6">
           <summary className="text-lg font-semibold text-sky-400 cursor-pointer hover:text-sky-300 transition-colors list-none flex justify-between items-center">
-            <span>What does &ldquo;trust = 0.7&rdquo; actually mean?</span>
+            <span>What does &ldquo;trust = 0.7&rdquo; mean &mdash; and how is it measured?</span>
             <span className="text-gray-500 text-lg">+</span>
           </summary>
           <div className="mt-3">
