@@ -586,6 +586,15 @@ export default function KarmaJourneyPage() {
         <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
           Squaring makes inconsistency compound against you. A small dip barely shows (0.9² = 0.81); a serious one nearly halves you (0.6² = 0.36). Linear (× CI) would be too forgiving — it treats a 0.6 in the same proportion as a 0.9. Cubing (× CI³) would be too brutal, crushing a 0.9 down to 0.73 for routine variance. Square sits in the gentle middle: small dips forgiven, sustained dips punished.
         </p>
+        {/* June 1 visitor M3 / Unanswered Q3: the visitor read this shape rationale and still asked
+            "but why 2 specifically — is that derived or chosen?". Wire the read point to the canonical
+            honesty frame (coherence-index #why-ci-squared, now labeled "calibration choice, not derived",
+            matching the 0.5 / 0.85 / 3-hop posture). One phrase + link — the shape callout above stays the
+            primary read; the canonical "where the number comes from" answer lives on coherence-index. */}
+        <p style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', margin: '0.5rem 0 0', lineHeight: 1.5 }}>
+          And why 2, not some other power? It&apos;s a calibration choice, not a derived constant —{' '}
+          <Link href="/coherence-index#why-ci-squared" style={{ color: 'var(--color-sky)' }}>where the exponent comes from</Link>.
+        </p>
       </div>
 
       {/* Lives Overview Strip */}

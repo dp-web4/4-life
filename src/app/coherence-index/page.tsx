@@ -236,6 +236,15 @@ export default function CoherenceIndexPage() {
               trust (0.9² = 0.81), but a 40% dip (CI = 0.6) costs you 64% (0.6² = 0.36).
               Your reputation matters &mdash; but only if your current behavior
               still looks like you.{" "}
+              {/* June 1 visitor M3 / Unanswered Q3: the shape rationale above tells you square beats
+                  linear, but never says whether the exponent itself is DERIVED or CHOSEN. Every other
+                  constant on the site (0.5, 0.85, 3 hops) is honestly labeled "calibrated, not derived" —
+                  CI² was the lone exception. Close the loop here, in the sibling #why-ci-starts-low's
+                  exact register. Do NOT claim "simulations compared exponents" (unverifiable). */}
+              Why <strong>2</strong> specifically, and not 1.5 or 3? Like the 0.85 starting value below,
+              it&rsquo;s a calibration choice (not a derived constant): 2 is the power that produced this
+              gentle middle &mdash; small dips forgiven, sustained ones compounded &mdash; where linear
+              (× CI) forgives too much and cubing (× CI³) punishes routine variance too hard.{" "}
               Need a T3 refresher?{" "}
               <Link href="/trust-tensor" className="text-sky-400 hover:text-sky-300">
                 See the Trust Tensor page
