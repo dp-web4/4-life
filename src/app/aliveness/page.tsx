@@ -1378,7 +1378,8 @@ export default function AlivenessExplainer() {
           <div className="detail-box">
             <h4>Recovery Paths</h4>
             <ul>
-              <li><strong>Cross-society reputation:</strong> Trust earned in other societies carries weight</li>
+              {/* June 1 visitor Unanswered Q4: "if Society A says alive at 0.45 and B requires 0.6, where do I live?" — the score-disagreement answer lives on federation-economics but the question forms here where the page asserts cross-society trust "carries weight" (an overstatement). Correct it at the read point + bridge to the answer. */}
+              <li><strong>Cross-society reputation:</strong> Trust earned in other societies carries weight as input &mdash; but no single score travels across as-is: when societies disagree, each re-derives yours locally (and may treat you as a newcomer until you build evidence there). <Link href="/federation-economics#cross-society-scores" className="text-sky-400 hover:underline">How disagreeing scores reconcile &rarr;</Link></li>
               <li><strong>Karma persistence:</strong> A long positive track record makes single incidents less catastrophic</li>
               <li><strong>Gradual rebuilding:</strong> Consistent quality behavior restores trust over time</li>
               <li><strong>Community vouching:</strong> Trusted entities can witness on your behalf</li>
