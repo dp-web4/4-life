@@ -788,6 +788,21 @@ export default function LCTExplainerPage() {
             </div>
           </div>
 
+          {/* June 3 visitor MEDIUM + Unanswered Q2: the two panels below read as one
+              metric to a first-timer ("Presence Trust Score: 0.55" next to "Anomaly
+              Detection: 30%" — same number or two different ones?). One framing line
+              up front says they answer two different questions. */}
+          <p className="text-sm text-gray-400 mb-4 max-w-2xl">
+            These two panels answer different questions.{' '}
+            <span className="text-gray-200 font-medium">Presence Trust Score</span> is how much
+            trust your identity can reach (your ceiling, on the 0&ndash;1 scale &mdash; more
+            independent devices raise it).{' '}
+            <span className="text-gray-200 font-medium">Compromise Difficulty</span> and its{' '}
+            <span className="text-gray-200 font-medium">Anomaly Detection</span> reading are about
+            an <em>attacker</em>: how much harder a forgery gets, and how likely it is to be caught.
+            One describes you; the other describes someone trying to impersonate you.
+          </p>
+
           {/* Visual representation */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             {/* Trust Score */}
