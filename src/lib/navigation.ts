@@ -112,7 +112,13 @@ export const navigationTree: NavigationTree = {
       related: ['/lct-explainer', '/aliveness']
     },
     {
-      title: 'Attention Economics',
+      // Label mirrors sibling style 'Presence (LCT)' and carries the energy gloss the
+      // page body standardized on (May 3 H1 fix + May 15 #255 sitewide pass). The old
+      // 'Attention Economics' label was the last attention<->energy remnant — it survived
+      // in the breadcrumb/nav layer and contradicted the body (June 3 visitor MEDIUM,
+      // "single highest-leverage small fix"). 'attention' stays in keywords below ONLY as a
+      // search/findability alias (invisible to readers), not as a user-facing label.
+      title: 'Energy Economics (ATP)',
       href: '/atp-economics',
       desc: 'Every action costs energy, quality earns it back',
       keywords: ['attention', 'budget', 'metabolic', 'energy', 'spam'],

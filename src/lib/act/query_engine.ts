@@ -648,7 +648,7 @@ export class ACTQueryEngine {
 
   private explainATP(): Response {
     return {
-      text: `**Energy Budget (ATP): Attention Economics**\n\n` +
+      text: `**Energy Economics (ATP)**\n\n` +
         `Think of ATP as *energy for digital existence*. Just like biological organisms need calories, Web4 entities need ATP.\n\n` +
         `**Key Properties**:\n` +
         `- Every action costs ATP (posting, messaging, voting)\n` +
@@ -656,10 +656,10 @@ export class ACTQueryEngine {
         `- ATP = 0 means immediate death (no grace period)\n` +
         `- Only sustainable behaviors survive long-term\n\n` +
         `**Why This Matters**:\n` +
-        `Spam becomes economically impossible—spammers burn ATP faster than they earn it. Quality naturally thrives because value creators earn more than they spend. No moderators needed—attention economics self-regulates.\n\n` +
+        `Spam becomes economically impossible—spammers burn ATP faster than they earn it. Quality naturally thrives because value creators earn more than they spend. No moderators needed—energy economics self-regulates.\n\n` +
         `**In Simulations**: Watch ATP fluctuate as agents make decisions. Critical threshold is ~20 ATP—below that, survival mode kicks in.`,
       type: 'explanation',
-      relatedConcepts: ['Attention Economics', 'Aliveness', 'Sustainability'],
+      relatedConcepts: ['ATP Economics', 'Aliveness', 'Sustainability'],
       suggestedQueries: [
         "Show me an ATP crisis in a simulation",
         "How do agents earn ATP?",
