@@ -1494,6 +1494,20 @@ export default function LCTExplainerPage() {
                 <em>designed but not yet pinned in spec</em> &mdash; one of Web4&apos;s
                 &ldquo;not yet deployed&rdquo; pieces.
               </p>
+              {/* June 2 visitor LOW (recurring, deferred multiple prior sessions): the
+                  mechanism above is described abstractly ("an m-of-n threshold of peers");
+                  the visitor wanted to SEE it happen to named people ("Alice texts Bob, Bob
+                  co-signs"). One concrete walkthrough grounds the mechanism without restating
+                  the rule — show, don't tell. Stays inside the existing "threshold, designed-
+                  not-pinned" framing; adds no new spec claim. */}
+              <div className="bg-amber-950/20 border border-amber-800/30 rounded px-3 py-2 text-xs text-gray-300 mb-3">
+                <span className="text-amber-300 font-medium">Concretely:</span> Alice loses her
+                only phone. Earlier she&apos;d interacted with Bob and Carol, so their LCTs already
+                vouch for hers. She requests recovery from a borrowed device; Bob taps approve on
+                his phone, Carol taps approve on hers, and once their two signatures meet the
+                threshold she set, her reputation re-binds to a new phone. Bob and Carol never
+                touch her keys &mdash; they only attest &ldquo;yes, this is really Alice.&rdquo;
+              </div>
               <div className="bg-gray-800/60 rounded px-3 py-2 text-xs text-gray-400">
                 Why the wait? Easy recovery would mean easy identity theft &mdash; specifically a{" "}
                 <span className="text-amber-300 font-medium">flash-recovery attack</span> where a
