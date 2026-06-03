@@ -937,7 +937,7 @@ export default function LCTExplainerPage() {
           <p className="text-sm text-gray-300 mb-2">
             <span className="text-gray-400">New to the scale?</span> Trust runs from <strong>0</strong> (none) to{" "}
             <strong>1.0</strong> (the theoretical max). Roughly: <strong>0.5</strong> is the alive/dead line &mdash;
-            fall below it and an entity can no longer act (see{" "}
+            fall below it and an entity can no longer act: its posts, votes, and ATP transfers stop being accepted (see{" "}
             <Link href="/aliveness" className="text-sky-400 hover:text-sky-300 underline">Aliveness</Link>);{" "}
             <strong>0.75</strong> is solid; <strong>0.85</strong> is strong; <strong>above&nbsp;0.85 is uncommon</strong>;{" "}
             <strong>1.0</strong> is the theoretical ceiling, not a number anyone actually reaches.
