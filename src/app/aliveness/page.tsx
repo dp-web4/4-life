@@ -1063,6 +1063,14 @@ export default function AlivenessExplainer() {
             <li>Intact CI history (continuity advantage)</li>
             <li>Cross-life patterns (learning advantage)</li>
           </ul>
+          <p style={{ fontSize: "0.9rem", color: "#9ca3af", marginTop: "1rem" }}>
+            The first three are <em>numbers</em> that seed your next life. The fourth is different:
+            a <strong>cross-life pattern</strong> is distilled know-how — a rule like &ldquo;when ATP
+            runs low, act conservatively&rdquo; — not a score but the learned wisdom that carries over
+            even though the specific memories don&apos;t. It&apos;s the one thing besides ATP and trust
+            that persists across a death.{" "}
+            <Link href="/decision-evolution" style={{ color: "#818cf8" }}>How patterns carry across lives →</Link>
+          </p>
           <p>
             Good behavior <strong>compounds across lives</strong>. Each life starts stronger.
           </p>
