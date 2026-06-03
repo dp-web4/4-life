@@ -773,6 +773,21 @@ export default function AlivenessExplainer() {
                 Why 0.5 specifically? →
               </a>
             </p>
+            {/* June 3 visitor: the 0.5 line is invoked on every page but never cashed out into a
+                concrete consequence — "can't post? can't vote?" Triple-flagged (friction LOW +
+                Unanswered Q1 + "the gap I'd close first"). Ground the abstraction here, at the
+                canonical T3>0.5 criterion (also the link target from lct-explainer:940). Guard:
+                this card is the trust criterion, so the permanent framing is for T3<0.5 only —
+                energy death (ATP=0) is the recoverable case. */}
+            <p style={{ fontSize: '0.9rem', opacity: 0.85, marginTop: '0.75rem' }}>
+              <strong style={{ color: '#e5e7eb' }}>What &ldquo;below the line&rdquo; concretely costs you:</strong>{' '}
+              the society stops accepting your actions &mdash; you can&apos;t post, vote, message,
+              transfer ATP, or be counted as a witness for anyone else. Your identity and history
+              still exist as a record, but the LCT can no longer <em>do</em> anything in society.
+              Trust falling below 0.5 is the <strong>permanent</strong> case; running out of energy
+              (ATP&nbsp;=&nbsp;0) is the recoverable one &mdash; see{' '}
+              <a href="#death-meaning" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('death-meaning')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ color: '#c084fc', cursor: 'pointer' }}>the two deaths</a> below.
+            </p>
             <div className="detail-box">
               <strong>Trust Tensor (T3) dimensions (role-specific):</strong>
               <ul>
