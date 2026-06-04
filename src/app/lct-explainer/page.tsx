@@ -502,17 +502,20 @@ export default function LCTExplainerPage() {
                 <span className="text-green-400 font-medium not-italic">What about my <em>first</em> device — who witnesses it before I have any others?</span>
               </p>
               <p className="text-xs text-gray-300 mb-2">
-                Your phone&apos;s chip vouches for itself. The security chip inside (TPM on Android/PC, Secure Enclave on iPhone, FIDO2 on a USB key)
+                Your phone&apos;s chip vouches for itself &mdash; and that&rsquo;s a different job from the device co-witnesses above. The security chip inside (TPM on Android/PC, Secure Enclave on iPhone, FIDO2 on a USB key)
                 ships with a <strong className="text-gray-200">manufacturer-burned key</strong> &mdash; a cryptographic
-                identity baked in at the factory by the chip vendor (Apple, Qualcomm, Yubico, etc.). That key
-                is the <em>first witness</em>: when you sign up, your chip proves &ldquo;I am a genuine, untampered piece of hardware
-                from manufacturer X&rdquo; without you doing anything. No central notary, no government issuer, no
+                identity baked in at the factory by the chip vendor (Apple, Qualcomm, Yubico, etc.). When you sign up, this{" "}
+                <strong className="text-gray-200">factory attestation</strong> proves &ldquo;I am a genuine, untampered piece of hardware
+                from manufacturer X&rdquo; without you doing anything. It vouches that the <em>hardware</em> is genuine; a{" "}
+                <strong className="text-gray-200 not-italic">device co-witness</strong> (above) vouches that <em>you</em> are present &mdash;
+                related, but not the same act, which is why we give this founding step its own name instead of
+                calling it a third kind of &ldquo;witness.&rdquo; No central notary, no government issuer, no
                 self-attestation waiting period &mdash; the chip&apos;s own factory certificate is the proof.
               </p>
               <p className="text-xs text-gray-400">
                 A single device with this manufacturer attestation gets a trust ceiling of 0.50&ndash;0.75 (depending on chip class)
                 &mdash; the same 50&ndash;75% as just above.
-                Adding a second device later doesn&apos;t replace the first witness &mdash; it adds another, raising the ceiling
+                Adding a second device later doesn&apos;t replace this factory attestation &mdash; it adds a device co-witness on top, raising the ceiling
                 toward 0.90.{" "}
                 <a
                   href="#single-device"
