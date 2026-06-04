@@ -507,6 +507,10 @@ export default function TrustTensorPage() {
             explained just below ↓
           </a>
         </p>
+        {/* June 4 visitor LOW (recurring since Mar 27 s2 / May 21, NEW axis): the prior 7 iterations of the paragraph above all answer *what V3 is*; visitor still asked "on a page titled Trust Tensor, why is V3 here?" The relevance hook (V3 feeds back into T3) lived only in the gate card ~480 lines below (L996). Surface it as one standalone sentence at the first mention so a non-scrolling reader knows why V3 belongs on the T3 page. Reviewer note: keep it a single clause, don't re-explain what V3 is. */}
+        <p className="text-sm text-gray-500 mt-2">
+          Why it&apos;s on a page about T3: the two are coupled &mdash; producing high-V3 work is exactly what raises your T3, so V3 isn&apos;t a detour, it&apos;s the lever your reputation actually moves on.
+        </p>
       </section>
 
       {/* The Problem */}
