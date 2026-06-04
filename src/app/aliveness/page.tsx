@@ -1082,8 +1082,17 @@ export default function AlivenessExplainer() {
             The first three are <em>numbers</em> that seed your next life. The fourth is different:
             a <strong>cross-life pattern</strong> is distilled know-how — a rule like &ldquo;when ATP
             runs low, act conservatively&rdquo; — not a score but the learned wisdom that carries over
-            even though the specific memories don&apos;t. It&apos;s the one thing besides ATP and trust
-            that persists across a death.{" "}
+            even though the specific memories don&apos;t.
+          </p>
+          <p style={{ fontSize: "0.9rem", color: "#9ca3af", marginTop: "0.75rem" }}>
+            How does it survive a death that erases the agent? <strong>Because it was never the
+            dying agent&apos;s memory to begin with.</strong> As an agent acts, the engine distills
+            its experience into abstracted rules and records them in a <strong>pattern corpus</strong>
+            the lineage keeps — a record separate from any one agent&apos;s moment-to-moment state.
+            Death clears that specific state and its episodic memories; the corpus isn&apos;t part of
+            it, so the abstracted rule carries forward while the experiences that produced it are
+            discarded. Nothing &ldquo;escapes&rdquo; the death — the wisdom lives where the death
+            doesn&apos;t reach. It&apos;s the one thing besides ATP and trust that persists across a death.{" "}
             <Link href="/decision-evolution" style={{ color: "#818cf8" }}>How patterns carry across lives →</Link>
           </p>
           <p>
@@ -1770,6 +1779,14 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             their individual trust scores and ATP. They just lose the collective visibility and
             MRH density that the group provided. Think of it like a band breaking up — each
             musician keeps their reputation, but the &quot;band&quot; no longer exists as an entity.
+          </p>
+          <p style={{marginTop: '0.5rem'}}>
+            <strong className="text-purple-400">Are the two lives linked?</strong> No — a
+            synthon&apos;s aliveness and its members&apos; are judged independently, each by the same
+            three criteria on its own scale. A member can die (energy or trust death) without
+            dissolving the synthon, and a synthon can dissolve while every member stays individually
+            alive. You can be a living member of a fading group, or a thriving individual whose group
+            has already dissolved — neither death forces the other.
           </p>
           <details style={{marginTop: '1rem'}}>
             <summary className="cursor-pointer text-sm font-semibold text-gray-400 hover:text-purple-400 transition-colors">
