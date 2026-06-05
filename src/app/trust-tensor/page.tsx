@@ -500,8 +500,9 @@ export default function TrustTensorPage() {
           <strong>who you are</strong>; V3 measures <strong>what you produce</strong> across three components &mdash;{" "}
           <strong className="text-sky-300">Valuation</strong>,{" "}
           <strong className="text-purple-300">Veracity</strong>, and{" "}
-          <strong className="text-green-300">Validity</strong> (usefulness, truthfulness, soundness). Concretely: if Alice writes a tutorial, V3 grades <em>the tutorial</em> (useful? true? sound?); T3 grades <em>Alice</em> (do her talent, training, temperament fit the task). E.g. a careful niche analysis might score V3 = 0.75, while viral clickbait scores V3 = 0.33. You don&apos;t need
-          it to follow this page — T3 alone is enough for now. When you&apos;re curious, it&apos;s the
+          <strong className="text-green-300">Validity</strong> (usefulness, truthfulness, soundness). Concretely: if Alice writes a tutorial, V3 grades <em>the tutorial</em> (useful? true? sound?); T3 grades <em>Alice</em> (do her talent, training, temperament fit the task). E.g. a careful niche analysis might score V3 = 0.75, while viral clickbait scores V3 = 0.33. You don&apos;t need to
+          master it to follow this page — T3 alone carries the idea here, so it&apos;s fine to meet V3 later
+          (it matters enough to get its own section). When you&apos;re curious, it&apos;s the
           sibling tensor,{" "}
           <a href="#v3" onClick={(e) => { e.preventDefault(); document.getElementById('v3')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-300 hover:text-purple-200 cursor-pointer">
             explained just below ↓
