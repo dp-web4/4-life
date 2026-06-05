@@ -341,7 +341,7 @@ function SurvivalGame() {
           </div>
         </div>
         <p className="text-gray-500 text-sm mb-4">
-          When your coherence drops, all ATP costs increase (CI² modulation). Bad behavior compounds.
+          When your coherence drops, all ATP costs increase (CI² modulation — squared, so a sustained bad <em>pattern</em>, not a single bad moment, is what hurts). Bad behavior compounds.
         </p>
         <button
           onClick={() => setGameStarted(true)}
