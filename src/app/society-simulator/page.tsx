@@ -3237,9 +3237,9 @@ export default function SocietySimulatorPage() {
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-3">Society Simulator</h1>
               <p className="text-lg text-gray-400 max-w-3xl">
-                You saw how one agent builds trust. Now watch 12 agents with different strategies
-                form alliances, betray each other, and self-organize &mdash; no central authority,
-                just trust dynamics at society scale.
+                A single agent can build trust on its own. Here, watch 12 agents with different
+                strategies form alliances, betray each other, and self-organize &mdash; no central
+                authority, just trust dynamics at society scale.
               </p>
               <p className="text-sm text-gray-500 max-w-3xl mt-2">
                 The <a href="/playground" className="text-sky-400 hover:underline">Playground</a> lets
