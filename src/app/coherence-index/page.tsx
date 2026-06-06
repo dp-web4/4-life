@@ -231,7 +231,8 @@ export default function CoherenceIndexPage() {
               Small drops in coherence should hurt more than linear &mdash;
               inconsistency breaks trust <em>and</em> creates ambiguity about
               which version of you is acting. So we square the coherence factor:{" "}
-              <code className="text-gray-200">Effective trust = T3 × CI²</code>.{" "}
+              <code className="text-gray-200">Effective trust = T3 × CI²</code>{" "}
+              (T3 is your earned 3-part trust score &mdash; the reputation you built over time).{" "}
               That way a 10% dip (CI = 0.9) only costs you about 19% of effective
               trust (0.9² = 0.81), but a 40% dip (CI = 0.6) costs you 64% (0.6² = 0.36).
               Your reputation matters &mdash; but only if your current behavior
