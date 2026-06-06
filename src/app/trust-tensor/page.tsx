@@ -1258,6 +1258,17 @@ export default function TrustTensorPage() {
               <p className="leading-relaxed mb-3">
                 Each action within a role produces dimension-specific updates:
               </p>
+              {/* June-6 visitor LOW + Unanswered Q2: the formula block below is met cold in the
+                  main flow — the only magnitude framing lives in a collapsed <details> ~600 lines up.
+                  Lead with the count answer so the math reads as confirmation of intuition, not a wall. */}
+              <p className="leading-relaxed mb-3 text-gray-300 bg-gray-900/40 border border-gray-700/50 rounded-lg p-4 text-sm">
+                <strong className="text-gray-100">Before the math, the scale:</strong> one good action
+                nudges a dimension by less than 1% &mdash; a strong (0.85-quality) confirmation adds
+                about <code className="text-gray-300">+0.007</code> to Talent. So climbing from a 0.5
+                newcomer to a 0.7 track record takes roughly <strong className="text-sky-300">30 quality
+                confirmations</strong>, not a handful. Trust is earned slowly, on purpose: no single
+                recipient can vault you upward. With that in mind, the exact rule:
+              </p>
               <pre className="bg-gray-950 border border-gray-700 rounded-lg p-4 overflow-x-auto text-xs text-gray-400 font-mono">
 {`// T3 update impacts by outcome type
 Outcome               Talent     Training   Temperament
