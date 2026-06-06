@@ -227,6 +227,16 @@ export default function LCTExplainerPage() {
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">4.</span> This is pseudonymous — your reputation follows you, but your real name doesn&apos;t have to</li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">5.</span> Every trust change is logged in a tamper-evident <a href="#trust-transparency" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('trust-transparency')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline">transparency log</a> — you can audit your own trust history</li>
           </ul>
+          {/* 2026-06-06 visitor MEDIUM (recurring): every prior scale anchor was reactive — placed inline
+              next to a number cluster (lines ~494, ~801, ~941). A top-to-bottom reader still hit decimals
+              before any ruler. This is the one PROACTIVE anchor: it sits in the intro, above every decimal
+              on the page, so no number is ever read without the scale already in hand. Wording kept
+              consistent with the inline bridge clause (~494) to avoid a third phrasing of the same ruler. */}
+          <p className="text-xs text-purple-200/80 mt-3 pt-3 border-t border-purple-800/30">
+            <span className="font-semibold text-purple-300">How to read the numbers below:</span> every trust score on this page
+            runs on a <strong>0&ndash;1</strong> scale, where <strong>0.5</strong> is the alive/dead line, <strong>0.75</strong> is solid,
+            and <strong>0.90</strong> is the hardware-bound ceiling. Every decimal you meet from here on sits on that scale.
+          </p>
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300">jump to the interactive security audit ↓</a></p>
         </div>
 

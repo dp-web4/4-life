@@ -35,7 +35,7 @@ export default function HowItWorksPage() {
         <div>
           <strong className="text-gray-300">Already know Web4?</strong> Skip ahead to the{' '}
           <a href="#pieces" className="text-sky-400 hover:underline">full-picture diagram</a>{' '}
-          — a visual summary of how LCT, ATP, T3, CI, and MRH combine.
+          — a visual summary of how LCT, ATP, T3, MRH, and CI combine.
         </div>
       </div>
 
@@ -143,6 +143,27 @@ export default function HowItWorksPage() {
             </Link>
           </div>
 
+          {/* 2026-06-06 visitor LOW + Unanswered Q1: this grid had CI before MRH, but the landing page
+              and the LCT page's concept-sequence roadmap both use the canonical MRH(4)→CI(5) order.
+              Swapped so all three surfaces agree (LCT→ATP→T3→MRH→CI). The system-integration diagram
+              below intentionally places MRH as a loop-gate and is left untouched. */}
+          <div className="bg-gradient-to-br from-cyan-950/30 to-cyan-900/20 border border-cyan-800/30 rounded-lg p-6">
+            <div className="text-3xl mb-2">🌐</div>
+            <h3 className="text-lg font-semibold text-cyan-400 mb-2">
+              Context (MRH)
+            </h3>
+            <p className="text-sm text-gray-400">
+              You only see what&apos;s relevant to your trust network — like
+              hearing only conversations you&apos;re part of. Spam can&apos;t reach you.
+            </p>
+            <Link
+              href="/trust-neighborhood"
+              className="text-sky-400 hover:underline text-sm mt-2 inline-block"
+            >
+              Learn more →
+            </Link>
+          </div>
+
           <div className="bg-gradient-to-br from-orange-950/30 to-orange-900/20 border border-orange-800/30 rounded-lg p-6">
             <div className="text-3xl mb-2">🌊</div>
             <h3 className="text-lg font-semibold text-orange-400 mb-2">
@@ -157,23 +178,6 @@ export default function HowItWorksPage() {
             </p>
             <Link
               href="/coherence-index"
-              className="text-sky-400 hover:underline text-sm mt-2 inline-block"
-            >
-              Learn more →
-            </Link>
-          </div>
-
-          <div className="bg-gradient-to-br from-cyan-950/30 to-cyan-900/20 border border-cyan-800/30 rounded-lg p-6">
-            <div className="text-3xl mb-2">🌐</div>
-            <h3 className="text-lg font-semibold text-cyan-400 mb-2">
-              Context (MRH)
-            </h3>
-            <p className="text-sm text-gray-400">
-              You only see what&apos;s relevant to your trust network — like
-              hearing only conversations you&apos;re part of. Spam can&apos;t reach you.
-            </p>
-            <Link
-              href="/trust-neighborhood"
               className="text-sky-400 hover:underline text-sm mt-2 inline-block"
             >
               Learn more →
