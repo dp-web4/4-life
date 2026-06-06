@@ -202,7 +202,7 @@ export default function FirstContactPage() {
                 Your First Web4 Experience
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed mb-4">
-                Today's internet rewards spam, lets trolls create unlimited accounts, and makes quality creators compete with bots. What if the system itself made that impossible?
+                Today's internet rewards spam, lets trolls create unlimited accounts, and makes quality creators compete with bots. What if the system itself made that impossible? Web4 is one proposed answer &mdash; and what follows is a simulation of that idea, not a finished product.
               </p>
               <p className="text-lg text-gray-400 leading-relaxed mb-3">
                 In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> — play, pause, scrub, replay — and watch trust and reputation respond in real time. This is a hands-on walkthrough, not a video — and a model of a <em>proposed</em> system: the rules running here are real, but Web4 itself is active research with nothing to sign up for yet. Real rules, shown by simulation — not a demo of a shipped product.
