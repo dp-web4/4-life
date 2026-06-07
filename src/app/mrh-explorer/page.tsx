@@ -15,6 +15,7 @@
  */
 
 import { useEffect, useState, useCallback, useMemo } from 'react';
+import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
@@ -519,6 +520,12 @@ export default function MRHExplorerPage() {
         </div>
         <div style={{ marginTop: '0.65rem', paddingTop: '0.5rem', borderTop: '1px solid rgba(255,255,255,0.06)', fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>
           That&apos;s what <em>distance-adjusted trust</em> does: spam and drive-by abuse get expensive before they ever reach you.
+        </div>
+        {/* 2026-06-07 visitor MEDIUM (#1 takeaway): concept page quotes 0.70 at one hop, this page ~0.85 — name the relationship at the read point so the mismatch reads as two deliberate models, not a typo. */}
+        <div style={{ marginTop: '0.5rem', fontSize: '0.72rem', color: 'var(--color-text-muted)', fontStyle: 'italic' }}>
+          The numbers here use a finer 0.85/0.9 decay model. The{' '}
+          <Link href="/trust-neighborhood" style={{ color: '#38bdf8', textDecoration: 'none' }}>Trust&nbsp;Neighborhood</Link>{' '}
+          concept page uses a coarser 0.7× shorthand (≈0.70 after one hop) — same shape, both below the noise floor by depth&nbsp;3–4.
         </div>
       </div>
       <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem', maxWidth: '700px' }}>

@@ -610,7 +610,8 @@ export default function MarkovRelevancyHorizonPage() {
               0.7 also roughly tracks how humans <em>actually</em> weight trust in practice — you act on a direct friend&apos;s word, you check a friend-of-a-friend&apos;s claim carefully, and by the fourth hop you&apos;re treating them as a stranger.
             </p>
             <p className="text-amber-400/70 text-xs">
-              <strong>Honest caveat:</strong> 0.7 is a design parameter, not a physical constant. Different communities might tune it — higher decay for privacy-sensitive contexts, lower for open discovery. The right values will emerge from real-world testing. See the{" "}
+              <strong>Honest caveat:</strong> 0.7 is a design parameter, not a physical constant. Different communities might tune it — higher decay for privacy-sensitive contexts, lower for open discovery. The right values will emerge from real-world testing. The interactive{" "}
+              <Link href="/mrh-explorer" className="text-sky-400 hover:underline">MRH Explorer</Link> uses a finer 0.85/0.9 model (≈0.85 after one hop, not 0.70) — a different curve to the same place, since both fall below the noise floor by depth 3–4. See the{" "}
               <Link href="/why-web4#faq-mrh-messaging" className="text-sky-400 hover:underline">fuller discussion in the FAQ</Link>.
             </p>
           </div>
