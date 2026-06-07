@@ -625,10 +625,13 @@ export default function TrustTensorPage() {
               Each confirmation applies a small per-dimension nudge from the canonical update rule:{" "}
               <code className="text-gray-300">base = 0.02 &times; (quality &minus; 0.5)</code>,
               scaled by dimension (Talent &times;1.0, Training &times;0.8, Temperament &times;0.6).
-              The <em>quality</em> input isn&apos;t a separate rating &mdash; it&apos;s the{" "}
+              For reading this formula, <em>quality</em> is just a single number from 0 to 1
+              (0.5 = neutral, higher = better work) &mdash; you don&apos;t need to chase any
+              other concept to follow it. Where does that number come from? It&apos;s the{" "}
               <strong className="text-purple-300">V3 score</strong>{" "}
               the recipient assigned to that contribution (Valuation &middot; Veracity &middot;
-              Validity, on a 0&ndash;1 scale; V3 covered in its own section below). Each confirmer&apos;s V3
+              Validity &mdash; the <a href="#v3" className="text-purple-300 underline">V3 section below</a>{" "}
+              breaks that down if you want the depth, but it&apos;s optional here). Each confirmer&apos;s V3
               feeds the formula independently &mdash; they aren&apos;t averaged into one number first.
               A single high-quality contribution barely moves the needle &mdash; a 0.85-quality
               attestation gives <code className="text-gray-300">+0.007</code> to Talent. Trust climbs
