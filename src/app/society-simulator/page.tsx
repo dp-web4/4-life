@@ -21,7 +21,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import { trackPageVisit } from '@/lib/exploration';
-import TermTooltip, { ATP, T3, LCT, CI } from '@/components/TermTooltip';
+import TermTooltip, { ATP, T3, LCT, CI, MRH, V3 } from '@/components/TermTooltip';
 import HumanPlayerMode from '@/components/HumanPlayerMode';
 import NetworkGraph from '@/components/NetworkGraph';
 import { queryEngine, type Query, type Response as GuideResponse } from '@/lib/act/query_engine';
@@ -3314,7 +3314,7 @@ export default function SocietySimulatorPage() {
             <div className="bg-amber-900/15 border border-amber-800/40 rounded-lg p-3">
               <div className="text-xs font-bold text-amber-300 mb-1.5">~ Simplified for visualization</div>
               <p className="text-gray-300 text-xs">
-                Trust here is a <em>scalar</em> <code className="text-amber-200 bg-amber-950/40 px-1 rounded text-[11px]">reputation</code> (community-averaged), not the full <T3>T3</T3> tensor (Talent/Training/Temperament). It also doesn&rsquo;t fade with social distance (<span className="text-amber-200">MRH</span> &mdash; your <em>trust neighborhood</em>: how far your reputation carries before it decays, ~3 hops out), isn&rsquo;t scored per individual contribution (<span className="text-amber-200">V3</span> &mdash; the <em>value tensor</em>: how others rate the quality of each thing you produce), and has no explicit witness layer. Twelve agents and a few rounds; production would be far larger.
+                Trust here is a <em>scalar</em> <code className="text-amber-200 bg-amber-950/40 px-1 rounded text-[11px]">reputation</code> (community-averaged), not the full <T3>T3</T3> tensor (Talent/Training/Temperament). It also doesn&rsquo;t fade with social distance (<MRH>MRH</MRH> &mdash; your <em>trust neighborhood</em>: how far your reputation carries before it decays, ~3 hops out), isn&rsquo;t scored per individual contribution (<V3>V3</V3> &mdash; the <em>value tensor</em>: how others rate the quality of each thing you produce), and has no explicit witness layer. Twelve agents and a few rounds; production would be far larger.
               </p>
               <p className="text-gray-300 text-xs mt-2">
                 <strong className="text-gray-200">What still transfers:</strong> these omissions affect speed and edge cases &mdash; not the core dynamics. Defector isolation, emergent cooperation, and wealth dynamics would still emerge with the full T3/MRH/V3 model; the live network would just resolve them more gradually and with more local clustering.
