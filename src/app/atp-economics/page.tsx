@@ -1305,6 +1305,17 @@ export default function ATPEconomicsPage() {
                 in aggregate. Your own confirmations on your own work don&apos;t count.
               </p>
               <p>
+                <strong className="text-gray-300">Why would anyone bother confirming?</strong> First,
+                confirming isn&apos;t a separate payment &mdash; it piggybacks on actually <em>receiving</em>{' '}
+                the value (you already read the post, used the code, consumed the service), so it
+                doesn&apos;t transfer ATP or trigger the 5% fee. It&apos;s near-free, not a second
+                transaction. Second, the incentive is reciprocity plus self-interest: a community where
+                good work gets acknowledged is one where <em>your</em> good work gets acknowledged too &mdash;
+                and confirming honestly protects the weight your confirmations carry, because
+                rubber-stamping everything tanks your own CI (consistency) and makes your future
+                confirmations count for less. Honest confirmation is the low-effort habit the system rewards.
+              </p>
+              <p>
                 <strong className="text-gray-300">What if nobody confirms?</strong> The ADP decays
                 unconfirmed and your ATP budget shrinks. Low-quality or unseen work simply doesn&apos;t
                 come back &mdash; that&apos;s the feature, not a bug.
