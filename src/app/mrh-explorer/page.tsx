@@ -559,6 +559,15 @@ export default function MRHExplorerPage() {
               <span>Max (3)</span>
               <span>Beyond</span>
             </div>
+            {/* 2026-06-08 visitor LOW (Unanswered Q3): the depth labels (Default 2 / Max 3 / Beyond)
+                appeared with no gloss — a naive reader can't tell why 2 is the default, 3 the max, or what
+                "Beyond" means. The answer (depth 3 = practical horizon, past it signals collapse to noise and
+                entities go invisible) lived ~200 lines below at the "why 3 hops" section. One read-point caption
+                connecting the stops to that idea; echoes the page's "practical horizon / noise / invisible"
+                language and keeps 3 as the calibrated default, not a hard rule (see L778 "Calibrated, not derived"). */}
+            <div style={{ marginTop: '0.4rem', fontSize: '0.7rem', color: 'var(--color-text-muted)', fontStyle: 'italic', lineHeight: 1.45 }}>
+              Each stop widens how many hops out you can see. <strong style={{ color: 'var(--color-text-secondary)' }}>3</strong> is the practical default horizon; past it (<strong style={{ color: 'var(--color-text-secondary)' }}>Beyond</strong>) trust fades into noise and those entities become invisible.
+            </div>
           </div>
 
           {/* Node explorer */}
