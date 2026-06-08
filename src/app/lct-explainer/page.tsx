@@ -66,7 +66,7 @@ export default function LCTExplainerPage() {
     {
       name: "Context",
       description: "What platform/environment this LCT runs in, determining resources and capabilities",
-      example: "lct:web4:agent:alice@Thor → runs on Thor (Jetson AGX) with specific ATP budget and hardware attestation"
+      example: "lct:web4:agent:alice@Thor → runs on Thor (Jetson AGX) with specific ATP budget and hardware attestation (a cryptographic proof, signed inside the device's security chip, that this specific hardware is involved)"
     },
     {
       name: "Task Scope",
@@ -201,6 +201,13 @@ export default function LCTExplainerPage() {
               <a href="/trust-tensor" className="text-purple-400 hover:text-purple-300 underline">T3</a>
               {" "}weights &mdash; but the word here means runtime environment, not a chat thread.
             </p>
+            {/* May 20 visitor LOW: existing block defined each word but didn't fuse them.
+                Visitor: "I'd guess... but I'm inferring, not being taught." Add the synthesis. */}
+            <p className="text-gray-300 leading-relaxed mt-3">
+              <strong>Together:</strong> the token <em>links</em> your hardware identity to the
+              <em> context</em> you&rsquo;re acting in &mdash; your role, your device, what you&rsquo;re
+              doing right now &mdash; so trust is always evaluated in situation, not in the abstract.
+            </p>
           </div>
 
           <p className="text-sm text-gray-500 mt-4">
@@ -220,6 +227,16 @@ export default function LCTExplainerPage() {
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">4.</span> This is pseudonymous — your reputation follows you, but your real name doesn&apos;t have to</li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">5.</span> Every trust change is logged in a tamper-evident <a href="#trust-transparency" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('trust-transparency')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline">transparency log</a> — you can audit your own trust history</li>
           </ul>
+          {/* 2026-06-06 visitor MEDIUM (recurring): every prior scale anchor was reactive — placed inline
+              next to a number cluster (lines ~494, ~801, ~941). A top-to-bottom reader still hit decimals
+              before any ruler. This is the one PROACTIVE anchor: it sits in the intro, above every decimal
+              on the page, so no number is ever read without the scale already in hand. Wording kept
+              consistent with the inline bridge clause (~494) to avoid a third phrasing of the same ruler. */}
+          <p className="text-xs text-purple-200/80 mt-3 pt-3 border-t border-purple-800/30">
+            <span className="font-semibold text-purple-300">How to read the numbers below:</span> every trust score on this page
+            runs on a <strong>0&ndash;1</strong> scale, where <strong>0.5</strong> is the alive/dead line, <strong>0.75</strong> is solid,
+            and <strong>0.90</strong> is the hardware-bound ceiling. Every decimal you meet from here on sits on that scale.
+          </p>
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300">jump to the interactive security audit ↓</a></p>
         </div>
 
@@ -429,12 +446,23 @@ export default function LCTExplainerPage() {
             </h3>
             {/* May 14 visitor MEDIUM #4 — plain-English lede before meta-disclaimer */}
             <p className="text-sm text-gray-200 mb-3">
-              <strong>The short answer:</strong> your laptop and phone vouch for each other &mdash; the network sees both signatures together, so no single device alone can claim to be you.
+              <strong>The short answer:</strong> your laptop and phone are each a{" "}
+              <strong className="text-green-300">device co-witness</strong> &mdash; they vouch for each other,
+              so the network sees both signatures together and no single device alone can claim to be you.
             </p>
+            {/* May 28 visitor MEDIUM #2 / Unanswered Q1 — same word "witness" doing two jobs.
+                Visitor said the prior "two layers" acknowledgment was honest but the naming collision
+                persisted. Fix: name the two concepts with boldfaced distinct terms at the read point
+                so a naive reader leaves with two named buckets to map context into.
+                No site-wide rename (09:00 session log flagged cascade risk); seeding only here + the
+                first sentence of each panel. */}
             <p className="text-xs text-gray-400 italic mb-3">
-              Witnessing happens at two layers: (1) your own devices attest to each other, and (2) optional
-              infrastructure nodes verify the network. This section covers layer 1 &mdash; layer 2
-              (&ldquo;who runs the network?&rdquo;) is answered directly below.
+              Heads up &mdash; Web4 uses the same word &ldquo;witness&rdquo; for two distinct jobs. To keep
+              them apart, this page names them: a <strong className="text-gray-200 not-italic">device co-witness</strong>{" "}
+              (your own devices attest to each other &mdash; this section), and a{" "}
+              <strong className="text-gray-200 not-italic">network witness</strong> (optional infrastructure nodes
+              verify the network &mdash; answered directly below). If you meet plain &ldquo;witness&rdquo; later,
+              context tells you which.
             </p>
             <p className="text-sm text-gray-300 mb-3">
               <strong>Why device witnesses?</strong> Passwords can be stolen. A single device can be hacked.
@@ -473,7 +501,7 @@ export default function LCTExplainerPage() {
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500 font-bold shrink-0">4.</span>
-                  <span>More device witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90%) — but with <em>diminishing returns</em>. Three hardware-bound device witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds)</span>
+                  <span>More device witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90% &mdash; i.e. 0.50, 0.75, 0.90 on the 0&ndash;1 trust scale these numbers all use, where 0.5 is the alive/dead line) — but with <em>diminishing returns</em>. Three hardware-bound device witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds)</span>
                 </div>
               </div>
             </div>
@@ -484,16 +512,20 @@ export default function LCTExplainerPage() {
                 <span className="text-green-400 font-medium not-italic">What about my <em>first</em> device — who witnesses it before I have any others?</span>
               </p>
               <p className="text-xs text-gray-300 mb-2">
-                Your phone&apos;s chip vouches for itself. The security chip inside (TPM on Android/PC, Secure Enclave on iPhone, FIDO2 on a USB key)
+                Your phone&apos;s chip vouches for itself &mdash; and that&rsquo;s a different job from the device co-witnesses above. The security chip inside (TPM on Android/PC, Secure Enclave on iPhone, FIDO2 on a USB key)
                 ships with a <strong className="text-gray-200">manufacturer-burned key</strong> &mdash; a cryptographic
-                identity baked in at the factory by the chip vendor (Apple, Qualcomm, Yubico, etc.). That key
-                is the <em>first witness</em>: when you sign up, your chip proves &ldquo;I am a genuine, untampered piece of hardware
-                from manufacturer X&rdquo; without you doing anything. No central notary, no government issuer, no
+                identity baked in at the factory by the chip vendor (Apple, Qualcomm, Yubico, etc.). When you sign up, this{" "}
+                <strong className="text-gray-200">factory attestation</strong> proves &ldquo;I am a genuine, untampered piece of hardware
+                from manufacturer X&rdquo; without you doing anything. It vouches that the <em>hardware</em> is genuine; a{" "}
+                <strong className="text-gray-200 not-italic">device co-witness</strong> (above) vouches that <em>you</em> are present &mdash;
+                related, but not the same act, which is why we give this founding step its own name instead of
+                calling it a third kind of &ldquo;witness.&rdquo; No central notary, no government issuer, no
                 self-attestation waiting period &mdash; the chip&apos;s own factory certificate is the proof.
               </p>
               <p className="text-xs text-gray-400">
-                A single device with this manufacturer attestation gets a trust ceiling of 0.50&ndash;0.75 (depending on chip class).
-                Adding a second device later doesn&apos;t replace the first witness &mdash; it adds another, raising the ceiling
+                A single device with this manufacturer attestation gets a trust ceiling of 0.50&ndash;0.75 (depending on chip class)
+                &mdash; the same 50&ndash;75% as just above.
+                Adding a second device later doesn&apos;t replace this factory attestation &mdash; it adds a device co-witness on top, raising the ceiling
                 toward 0.90.{" "}
                 <a
                   href="#single-device"
@@ -527,7 +559,8 @@ export default function LCTExplainerPage() {
             </h3>
             <p className="text-sm text-gray-300 mb-2">
               <strong className="text-sky-400">Short answer:</strong> anyone can. Web4 is an open standard
-              (like email), not a platform (like Gmail). Witness nodes can be run by universities,
+              (like email), not a platform (like Gmail).{" "}
+              <strong className="text-sky-300">Network witness</strong> nodes can be run by universities,
               companies, nonprofits, or individuals &mdash; the same way anyone can run an email server.
             </p>
             <p className="text-sm text-gray-400 mb-2">
@@ -768,6 +801,21 @@ export default function LCTExplainerPage() {
             </div>
           </div>
 
+          {/* June 3 visitor MEDIUM + Unanswered Q2: the two panels below read as one
+              metric to a first-timer ("Presence Trust Score: 0.55" next to "Anomaly
+              Detection: 30%" — same number or two different ones?). One framing line
+              up front says they answer two different questions. */}
+          <p className="text-sm text-gray-400 mb-4 max-w-2xl">
+            These two panels answer different questions.{' '}
+            <span className="text-gray-200 font-medium">Presence Trust Score</span> is how much
+            trust your identity can reach (your ceiling, on the 0&ndash;1 scale &mdash; more
+            independent devices raise it).{' '}
+            <span className="text-gray-200 font-medium">Compromise Difficulty</span> and its{' '}
+            <span className="text-gray-200 font-medium">Anomaly Detection</span> reading are about
+            an <em>attacker</em>: how much harder a forgery gets, and how likely it is to be caught.
+            One describes you; the other describes someone trying to impersonate you.
+          </p>
+
           {/* Visual representation */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             {/* Trust Score */}
@@ -872,12 +920,42 @@ export default function LCTExplainerPage() {
             <div className="text-sm font-semibold text-sky-300 mb-2">Why this matters: imagine you drop your phone in a lake.</div>
             <ul className="text-sm text-gray-300 space-y-1.5 list-disc list-inside marker:text-sky-500">
               <li><strong className="text-emerald-300">Hardware-bound, multiple devices</strong> &mdash; your laptop and security key witness you&apos;re still you. A new phone enrolls in minutes; reputation is intact.</li>
-              <li><strong className="text-amber-300">Hardware-bound, one device</strong> &mdash; recovery is possible but slower. You re-establish through community vouching and time.</li>
+              <li><strong className="text-amber-300">Hardware-bound, one device</strong> &mdash; recovery is possible but slower. You re-establish through <a href="#recovery" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('recovery')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-amber-300 hover:text-amber-200 underline">community vouching &mdash; trusted witnesses confirm you&apos;re you, typically over 3&ndash;7 days</a>.</li>
               <li><strong className="text-gray-400">Software only</strong> &mdash; no second witness to vouch. You start over from zero with a fresh identity.</li>
             </ul>
+            {/* May 24 visitor Unanswered Q4: "lose ALL my devices — am I locked out forever?"
+                The full answer lives in the #recovery "All Devices Lost" card ~500 lines below;
+                surface its conclusion here, where the "permanent" anxiety actually arises. */}
+            <p className="text-xs text-gray-300 mt-3">
+              <strong className="text-sky-300">The pattern that matters:</strong> a permanent{" "}
+              <em>reputation</em> is not a permanent <em>lockout</em>. Lose <em>every</em> hardware
+              device at once and you&apos;re still not erased &mdash; you drop into that same{" "}
+              <a href="#all-devices-lost" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('all-devices-lost')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">social-recovery path</a>{" "}
+              (trusted witnesses re-confirm you&apos;re you), deliberately slow at 3&ndash;7 days and
+              deliberately hard &mdash; easy recovery would mean easy identity theft &mdash; but real,
+              not forever. The lone exception is the software-only case above: with no hardware witness
+              to vouch for you, there&apos;s nothing to recover <em>to</em>.
+            </p>
             <p className="text-xs text-gray-400 mt-3 italic">The numbers below measure that gap &mdash; how strong a witness your hardware is, and therefore how cleanly you can recover.</p>
           </div>
 
+          {/* May 21 visitor LOW #1: the ceiling numbers (0.90/0.50) appear without anchoring the 0-1 scale itself.
+              A cold reader landing directly on this page has no prior calibration. Anchor the scale before the grid.
+              Phrased distinctly from line ~921's "neutral starting point" framing to avoid redundancy.
+              May 30 visitor MEDIUM #2 (3rd touch of this anchor): #295 anchored at the grid, #300 at the walkthrough,
+              but neither labeled the *upper-tier* numbers qualitatively. Visitor's verbatim gap: "Is 0.9 'great' or
+              'the bare minimum'?" Their own table-row recommendation phrased it: "Above 0.85 is uncommon." Extend
+              the anchor with qualitative labels for the upper end, and lift the typography one notch (text-sm gray-300)
+              so a scrolling reader notices it before the grid below &mdash; don't escalate to a colored callout. */}
+          <p className="text-sm text-gray-300 mb-2">
+            <span className="text-gray-400">New to the scale?</span> Trust runs from <strong>0</strong> (none) to{" "}
+            <strong>1.0</strong> (the theoretical max). Roughly: <strong>0.5</strong> is the alive/dead line &mdash;
+            fall below it and an entity can no longer act: its posts, votes, and ATP transfers stop being accepted (see{" "}
+            <Link href="/aliveness" className="text-sky-400 hover:text-sky-300 underline">Aliveness</Link>);{" "}
+            <strong>0.75</strong> is solid; <strong>0.85</strong> is strong; <strong>above&nbsp;0.85 is uncommon</strong>;{" "}
+            <strong>1.0</strong> is the theoretical ceiling, not a number anyone actually reaches.
+            The ceilings below are points on that scale.
+          </p>
           <p className="text-sm text-gray-300 mb-3">
             Each number below is the <strong className="text-gray-100">maximum T3 trust score</strong> your
             hardware can vouch for &mdash; even with perfect behavior, software-only identity tops out at 0.50.
@@ -910,10 +988,12 @@ export default function LCTExplainerPage() {
               <div className="text-xs text-gray-500 mt-1">Browser/OS level</div>
             </div>
           </div>
+          {/* June 1 visitor MEDIUM #4: equity worry forms AT the grid (log L57) — name the tradeoff at the read point; deeper framing at L1067-1071 stays as deepening. */}
           <p className="text-gray-500 text-xs">
             These are trust <em>ceilings</em>, not starting points. Everyone starts at neutral (0.5).
             With software-only hardware, 0.5 is both where you start and the highest you can reach.
             Stronger hardware lets you build higher &mdash; but you still have to earn it through behavior.
+            One honest tradeoff: the software-only ceiling means people without newer hardware are capped lower &mdash; we treat that as a feature, not a bug, because it lets everyone participate while signaling what their identity is anchored to (see below for what the ceiling actually limits).
           </p>
 
           {/* May 4 visitor LOW: "those numbers feel declared, not derived. Why is software only 0.50? Why isn't TPM 1.00?"
@@ -989,7 +1069,15 @@ export default function LCTExplainerPage() {
               <li>
                 <strong className="text-gray-300">Recovery path.</strong> A higher ceiling means you have more
                 hardware witnesses, which means a faster recovery if a device is lost or stolen
-                (multi-device quorum vs. starting over). One device can recover via a second; software-only
+                (multi-device{' '}
+                <a
+                  href="#quorum-why"
+                  onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('quorum-why')?.scrollIntoView({ behavior: 'smooth' }); }}
+                  className="text-gray-200 underline decoration-gray-600 hover:decoration-gray-300"
+                >
+                  quorum
+                </a>{' '}
+                vs. starting over). One device can recover via a second; software-only
                 has no quorum to fall back on.
               </li>
               <li>
@@ -1024,7 +1112,7 @@ export default function LCTExplainerPage() {
               This matters especially in developing countries where many people access the internet
               from a single smartphone &mdash; Web4 is designed to include them, not penalize them.
             </p>
-            <p className="text-gray-500 text-xs mt-2">
+            <p id="quorum-why" className="text-gray-500 text-xs mt-2 scroll-mt-24">
               <strong className="text-gray-400">Why a ceiling at all?</strong> A lone device has no
               second device to corroborate its continuity &mdash; if it&apos;s lost, stolen, or
               quietly compromised, there&apos;s no independent witness to notice. Adding a witness
@@ -1039,6 +1127,19 @@ export default function LCTExplainerPage() {
             <h3 className="text-sm font-bold text-amber-400 mb-2">
               I just installed the app on my one phone &mdash; who witnessed my <em>first</em> device?
             </h3>
+            {/* May 20 visitor LOW: gloss <details> at #non-crypto-gloss exists right below this FAQ
+                but a reader bouncing off "manufacturer-burned key / Endorsement Key (EK) / vendor
+                certificate chain" mid-FAQ doesn't know. One-line off-ramp at top of FAQ. */}
+            <p className="text-xs text-gray-500 italic mb-2">
+              Crypto vocab below?{" "}
+              <a
+                href="#non-crypto-gloss"
+                onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('non-crypto-gloss')?.scrollIntoView({ behavior: 'smooth' }); }}
+                className="text-amber-400 hover:text-amber-300 underline not-italic"
+              >
+                Plain-English glosses are in the &ldquo;For non-crypto readers&rdquo; collapsible just below this box &rarr;
+              </a>
+            </p>
             <p className="text-sm text-gray-300 mb-2">
               <strong className="text-amber-300">Short answer:</strong> the chip itself does. The
               security element in your phone (TPM, Secure Enclave, or FIDO2 key) ships with a
@@ -1082,8 +1183,9 @@ export default function LCTExplainerPage() {
               "vendor certificate chain", "private key" — used in bootstrap FAQ above without
               firm grounding. Visitor's literal suggestion: "tooltips or a 'for non-crypto readers'
               inset paragraph under the hardware tier table." Inset chosen over tooltips to avoid
-              tooltip-cascades inside an already dense FAQ. */}
-          <details className="mt-4">
+              tooltip-cascades inside an already dense FAQ. May 20: anchor id added so the FAQ's
+              top-of-block off-ramp can scroll here. */}
+          <details id="non-crypto-gloss" className="mt-4 scroll-mt-24">
             <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300">
               ▶ For non-crypto readers: what those terms above actually mean
             </summary>
@@ -1395,7 +1497,7 @@ export default function LCTExplainerPage() {
               </div>
             </div>
 
-            <div className="bg-gray-900/50 border border-amber-700/30 rounded-lg p-5">
+            <div id="all-devices-lost" className="bg-gray-900/50 border border-amber-700/30 rounded-lg p-5 scroll-mt-24">
               <h3 className="text-lg font-bold text-amber-400 mb-2">All Devices Lost</h3>
               <p className="text-gray-300 text-sm mb-3">
                 Worst case. With no surviving devices, you need a{" "}
@@ -1403,12 +1505,67 @@ export default function LCTExplainerPage() {
                 witnesses who can vouch for your identity. Think of it like getting a new
                 passport: you need people who know you to confirm you&apos;re you.
               </p>
+              {/* May 26 visitor friction #4 / Unanswered Q3: the social-recovery mechanism was
+                  described conceptually ("trusted witnesses confirm you're you") but the operation
+                  was opaque — what does a witness DO, what threshold binds the attestation? Add
+                  the parallel-to-device-quorum mechanism at the read point, with the honest spec
+                  caveat that exact thresholds aren't yet pinned down. Same pattern as PR #301/#309/#312/#320. */}
+              <p className="text-gray-300 text-sm mb-3">
+                Mechanically, it&apos;s the same primitive as the device-quorum case above &mdash; an{" "}
+                <strong className="text-amber-300">m-of-n threshold</strong> of hardware-signed
+                approvals &mdash; but the signers are now <em>people</em> you&apos;ve previously
+                interacted with (their LCTs), not your own devices. Each peer signs the recovery
+                request from their own hardware; once the threshold accumulates, those signatures
+                attest to your new device&apos;s birth certificate, and the new key is bound into
+                your LCT constellation. The exact quorum size, how peers are selected, and how
+                interaction history weights each attestation are{" "}
+                <em>designed but not yet pinned in spec</em> &mdash; one of Web4&apos;s
+                &ldquo;not yet deployed&rdquo; pieces.
+              </p>
+              {/* June 2 visitor LOW (recurring, deferred multiple prior sessions): the
+                  mechanism above is described abstractly ("an m-of-n threshold of peers");
+                  the visitor wanted to SEE it happen to named people ("Alice texts Bob, Bob
+                  co-signs"). One concrete walkthrough grounds the mechanism without restating
+                  the rule — show, don't tell. Stays inside the existing "threshold, designed-
+                  not-pinned" framing; adds no new spec claim. */}
+              <div className="bg-amber-950/20 border border-amber-800/30 rounded px-3 py-2 text-xs text-gray-300 mb-3">
+                <span className="text-amber-300 font-medium">Concretely:</span> Alice loses her
+                only phone. Earlier she&apos;d interacted with Bob and Carol, so their LCTs already
+                vouch for hers. She requests recovery from a borrowed device; Bob taps approve on
+                his phone, Carol taps approve on hers, and once their two signatures meet the
+                threshold she set, her reputation re-binds to a new phone. Bob and Carol never
+                touch her keys &mdash; they only attest &ldquo;yes, this is really Alice.&rdquo;
+              </div>
               <div className="bg-gray-800/60 rounded px-3 py-2 text-xs text-gray-400">
-                This is deliberately hard. Easy recovery would mean easy identity theft.
-                The friction is a feature, not a bug.
-                {" "}<span className="text-amber-300 font-medium">Expect days, not minutes</span> —
-                social recovery typically takes 3&ndash;7 days as multiple witnesses coordinate
-                out-of-band verification.
+                Why the wait? Easy recovery would mean easy identity theft &mdash; specifically a{" "}
+                <span className="text-amber-300 font-medium">flash-recovery attack</span> where a
+                thief tricks one or two contacts before honest peers notice. The 3&ndash;7 day window
+                forces out-of-band coordination across multiple witnesses, raising the cost of forging
+                quorum approval above the account&apos;s value.
+                {" "}<span className="text-amber-300 font-medium">Expect days, not minutes.</span>
+              </div>
+              {/* May 29 visitor Unanswered Q3: "3-7 days sounds rough — does that mean I can't
+                  access anything for a week? Can I prove who I am to a small circle even before
+                  formal recovery completes?" The sibling "Why the wait?" block above answers the
+                  security rationale; this one answers the experiential question at the same read
+                  point. Three honest spec points: (1) preserved-not-erased (natural time-decay
+                  still applies; recovery doesn't restore, it unfreezes the SUSPENDED state),
+                  (2) protocol-anchored actions pause, non-protocol life continues,
+                  (3) the imagined informal small circle IS the formal recovery — softening this
+                  would re-open the visitor's two-layer mental model. */}
+              <div className="bg-gray-800/60 rounded px-3 py-2 text-xs text-gray-400 mt-2">
+                What happens during the wait?{" "}
+                <span className="text-amber-300 font-medium">Your reputation is preserved, not erased.</span>{" "}
+                The model treats the loss as a hold on the device, not a wipe of the person &mdash; your T3 sits
+                in place (natural time-decay still applies), and when the quorum lands, you walk back into the
+                trust that was waiting.
+                Web4-anchored actions pause (signing an ATP transfer, attesting a peer &mdash; anything that
+                requires your hardware key), but non-protocol life keeps going (reading the site, using your
+                phone for anything else). And the &ldquo;small circle vouching for me&rdquo; that the wait seems
+                to be standing in for{" "}
+                <em>is</em>{" "}
+                the recovery: each peer signature accumulating toward the m-of-n threshold IS that small
+                circle&apos;s vote &mdash; not a parallel informal track running alongside it.
               </div>
             </div>
           </div>
@@ -1730,6 +1887,48 @@ export default function LCTExplainerPage() {
                 What Could Go Wrong
               </a>{' '}
               for the honest version.
+            </p>
+          </div>
+
+          {/* FAQ: AI agents have no hardware — May 21 visitor Unanswered Q3 (recurring).
+              The site says "humans and AI follow identical trust rules" on 8+ pages, but
+              never closes the loop: an AI has no chip, so where does its hardware anchor
+              come from? Plain-English answer grounded in the web4 AGY (Agency Delegation)
+              spec — no spec jargon in the prose. */}
+          <div id="faq-ai-agents" className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg scroll-mt-24">
+            <h3 className="text-sm font-bold text-purple-400 mb-2">
+              If an AI agent has no phone or chip, how does it get an LCT?
+            </h3>
+            <p className="text-sm text-gray-300 mb-2">
+              Good catch — an AI doesn&apos;t carry a Secure Enclave in its pocket, so it
+              can&apos;t anchor itself the way you do. It doesn&apos;t have to. An AI agent gets
+              its identity the way a new hire gets a building badge: <strong>a person or
+              organization that <em>is</em> hardware-anchored creates the agent and hands it a
+              scoped, revocable permission slip</strong> (Web4 calls this a delegation).
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              So the agent&apos;s LCT doesn&apos;t need its own chip — it&apos;s
+              <strong> rooted in its creator&apos;s hardware-bound identity</strong>. The
+              anchor is <em>inherited</em> through the chain, not possessed directly. Every
+              LCT points back to the one that created it, so there&apos;s always a
+              hardware-anchored human or org at the root who stays accountable for what the
+              agent does (the same accountability chain described above).
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              The permission slip is deliberately narrow — specific capabilities (read-only,
+              or allowed to act), its own <TermTooltip term="ATP">ATP</TermTooltip> budget, an
+              expiry date — and the creator can revoke it instantly. Within that scope the
+              agent then earns its <strong>own</strong> reputation (its own
+              {" "}<TermTooltip term="T3">T3</TermTooltip> trust score). That&apos;s why
+              &ldquo;humans and AI play by the same rules&rdquo; is honest: it&apos;s the same
+              trust math and the same consequences — just a different path to getting anchored.
+            </p>
+            <p className="text-xs text-gray-500">
+              Want the cognition side — when an AI can be trusted to act on its own judgment
+              versus when it confabulates?{" "}
+              <Link href="/ai-agents" className="text-purple-300 hover:text-purple-200 underline">
+                See AI Agents in Web4
+              </Link>.
             </p>
           </div>
 

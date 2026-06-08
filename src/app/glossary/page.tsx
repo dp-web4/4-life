@@ -120,6 +120,7 @@ export default function GlossaryPage() {
             { id: "research", label: "Research (deep dive)" },
             { id: "lifecycle", label: "Lifecycle" },
             { id: "governance", label: "Governance" },
+            { id: "background", label: "Background Terms" },
             { id: "terminology", label: "Why This Terminology?" },
           ].map(s => (
             <a
@@ -161,7 +162,8 @@ export default function GlossaryPage() {
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">Web4</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               Our working name for <strong>trust-native internet infrastructure</strong>.
-              Unlike Web2 (platforms own your data/identity) or Web3 (blockchain-first),
+              Unlike Web2 (platforms own your data/identity) or Web3 (blockchain-first &mdash;
+              built on the public, shared transaction ledgers behind Bitcoin and Ethereum),
               Web4 proposes that trust, identity, and value flow from verifiable behavior
               rooted in hardware.
             </p>
@@ -178,8 +180,9 @@ export default function GlossaryPage() {
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               Your <strong>hardware-rooted verifiable presence</strong>. An LCT is bound to
-              physical devices (TPM chip, Secure Enclave, FIDO2 key) and witnessed by other
-              entities, creating verifiable proof of presence.
+              physical devices &mdash; the security chip built into most modern phones and
+              laptops (a TPM, Apple&apos;s Secure Enclave, or a FIDO2 key) &mdash; and witnessed
+              by other entities, creating verifiable proof of presence.
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: "Your presence lives in your hardware, not in a company's database.
@@ -197,6 +200,44 @@ export default function GlossaryPage() {
               >
                 Canonical spec →
               </a>
+            </div>
+          </div>
+
+          {/* Witness — May 29 visitor MEDIUM #2: "witness" used 8+ times across LCT, How It Works,
+              Federation, and Day in Web4 with no glossary entry; canonical naming for the two senses
+              already lives at lct-explainer L450-454 (PR #328) but is page-local. Add a Core/Essential
+              entry that mirrors the exact bolded names — "device co-witness" vs "network witness" —
+              so the glossary is the disambiguation backstop when "witness" confuses a visitor before
+              they reach lct-explainer#device-witnesses. */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">
+              Witness
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              Web4 uses the same word for <strong>two distinct jobs</strong>. To keep them apart:
+            </p>
+            <ul className="text-gray-300 leading-relaxed mb-3 space-y-2 list-none">
+              <li>
+                <strong className="text-gray-100">Device co-witness</strong> &mdash; your own
+                devices attest to each other. Your phone, laptop, and security key independently
+                co-sign that &ldquo;yes, this is really you.&rdquo; More devices co-signing = higher
+                trust ceiling (1 device caps at 0.50, 2 devices at 0.75, 3+ up to 0.90). This is
+                what the LCT page mostly means by &ldquo;witness.&rdquo;
+              </li>
+              <li>
+                <strong className="text-gray-100">Network witness</strong> &mdash; optional
+                infrastructure nodes that verify the network itself (federation links, witness
+                relay for entity discovery). Appears in Federation and How It Works.
+              </li>
+            </ul>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: &ldquo;Your devices vouch for each other (co-witness); network nodes
+              vouch for the network (network witness). Different layers, same word.&rdquo;
+            </p>
+            <div className="flex gap-3 text-sm">
+              <Link href="/lct-explainer#device-witnesses" className="text-sky-400 hover:underline">
+                Learn more →
+              </Link>
             </div>
           </div>
 
@@ -1182,6 +1223,83 @@ export default function GlossaryPage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Background Terms — borrowed, not Web4's own */}
+      <section id="background" className="max-w-4xl mx-auto mt-16 scroll-mt-20" data-glossary-section>
+        <h2 className="text-3xl font-bold mb-4 text-gray-100">Background Terms</h2>
+        <p className="text-gray-400 mb-8 leading-relaxed">
+          Vocabulary Web4 borrows from security and computing &mdash; not Web4&apos;s own ideas, but
+          words the explanations lean on. Plain-English anchors so nothing important sits
+          unexplained &ldquo;under the foundation.&rdquo;
+        </p>
+        <div className="space-y-8">
+
+          {/* Security chip */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">
+              Security chip &mdash; TPM / Secure Enclave / FIDO2
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              A <strong>tamper-resistant chip built into most modern devices</strong> that
+              creates and stores secret keys so they <em>never leave the chip</em> &mdash; and
+              can prove it holds a key without revealing it. This is what lets a device prove
+              it&apos;s really your device. The three names are the same idea from different makers:
+            </p>
+            <ul className="text-gray-300 text-sm leading-relaxed space-y-1.5 mb-3 ml-1">
+              <li><strong className="text-gray-200">TPM</strong> (Trusted Platform Module) &mdash; the standard chip in most Windows PCs, laptops, and Android phones.</li>
+              <li><strong className="text-gray-200">Secure Enclave</strong> &mdash; Apple&apos;s version, in iPhones and Macs.</li>
+              <li><strong className="text-gray-200">FIDO2</strong> &mdash; an open standard (and the plug-in keys like a YubiKey that implement it); the technology behind passkeys.</li>
+            </ul>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: &ldquo;the part of your phone that keeps a secret only it can use.&rdquo;
+              Web4&apos;s verified presence (LCT) is anchored to one of these &mdash; a better chip earns
+              a higher trust ceiling.
+            </p>
+            <Link href="/lct-explainer" className="text-sky-400 text-sm hover:underline">
+              How this anchors identity &rarr;
+            </Link>
+          </div>
+
+          {/* Blockchain */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">Blockchain</h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              A <strong>shared, append-only ledger copied across many computers</strong> that
+              agree on one history without a central authority &mdash; the technology behind
+              Bitcoin and Ethereum, and what &ldquo;Web3&rdquo; is built on.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              We list it because the site repeatedly says Web4 is <strong>not</strong> a blockchain.
+              Trust here lives in hardware and witnessed behavior, not in a single global public
+              ledger where every record is visible to everyone. (Web4 does keep tamper-evident
+              local records, but those aren&apos;t one world-readable chain.)
+            </p>
+            <p className="text-gray-400 text-sm">
+              Plain English: &ldquo;a public record book thousands of computers keep identical copies
+              of &mdash; Web4 doesn&apos;t use one.&rdquo;
+            </p>
+          </div>
+
+          {/* Sybil attack */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">Sybil attack</h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              <strong>Flooding a system with many fake identities</strong> to outvote, out-post,
+              or otherwise game it &mdash; named after a case of one person presenting as many.
+              It&apos;s the classic attack on any open network where accounts are free.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              Web4 resists it because each identity is bound to real hardware and earning trust
+              costs real energy and time &mdash; so spinning up a thousand throwaway identities is
+              no longer free.
+            </p>
+            <Link href="/what-could-go-wrong" className="text-sky-400 text-sm hover:underline">
+              How Web4 handles attacks &rarr;
+            </Link>
+          </div>
+
         </div>
       </section>
 

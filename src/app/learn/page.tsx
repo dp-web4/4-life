@@ -280,7 +280,7 @@ export default function LearnJourney() {
           teaser:
             "Effective trust = Base_trust × CI². ATP cost = Normal × (1/CI²). Coherence isn't binary—it continuously modulates your capabilities. Low coherence = expensive actions + limited trust.",
           why: "CI modulation reveals how Web4 makes fraud expensive automatically, without human intervention.",
-          link: "/coherence-index",
+          link: "/coherence-index#why-ci-squared",
           duration: "10 min read (focus on modulation section)",
         },
         {
@@ -934,6 +934,7 @@ export default function LearnJourney() {
             {
               name: "Society Simulator",
               href: "/society-simulator",
+              distinguisher: "You watch; you don't steer — the hands-off counterpart to the Simulation Sandbox.",
               what: "Watch agents with different strategies self-organize into trust networks.",
               bestFor: "Seeing how societies emerge from simple rules",
               level: "Beginner",
@@ -950,6 +951,7 @@ export default function LearnJourney() {
             {
               name: "Simulation Sandbox",
               href: "/simulation-sandbox",
+              distinguisher: "You steer everything — the hands-on counterpart to the Society Simulator.",
               what: "Full-control simulation with every engine parameter exposed as sliders.",
               bestFor: "Deep parameter exploration and multi-run comparison",
               level: "Advanced",
@@ -999,6 +1001,11 @@ export default function LearnJourney() {
                     {tool.level}
                   </span>
                 </div>
+                {"distinguisher" in tool && tool.distinguisher && (
+                  <p style={{ fontSize: "0.78rem", color: "var(--color-accent)", margin: "0 0 0.3rem", fontStyle: "italic" }}>
+                    {tool.distinguisher}
+                  </p>
+                )}
                 <p style={{ fontSize: "0.88rem", color: "var(--color-gray-300)", margin: "0 0 0.25rem" }}>
                   {tool.what}
                 </p>

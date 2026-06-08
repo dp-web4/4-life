@@ -42,6 +42,9 @@ export default function WhyWeb4Page() {
           <strong className="text-gray-200">honest Q&amp;A</strong> (optional — skeptics&apos; questions, answered, collapsed by topic).
           Stop reading at any point — each section stands on its own. If you only have 2 minutes, try{" "}
           <Link href="/tldr" className="text-sky-400 hover:underline">the 2-minute TL;DR</Link> instead.
+          {" "}New to Web4? The acronyms below (ATP, LCT, T3, MRH…) land much easier after{" "}
+          <Link href="/first-contact" className="text-sky-400 hover:underline">First Contact</Link>,
+          {" "}which introduces each one inside a story the moment it comes up — but you can read this page cold too.
         </div>
       </section>
 
@@ -367,7 +370,7 @@ export default function WhyWeb4Page() {
                 You only see messages from people your network trusts — like being in a room
                 where strangers need an introduction before they can talk to you. Trust fades with distance: a friend-of-a-friend-of-a-friend is almost a stranger.
               </p>
-              <p className="text-gray-400 text-sm mt-1">Shorthand: MRH (Markov Relevancy Horizon — how far trust reaches before it fades)</p>
+              <p className="text-gray-400 text-sm mt-1">Shorthand: MRH (Markov Relevancy Horizon — math-flavored jargon you can ignore; it just means how far trust reaches before it fades)</p>
               <Link href="/trust-neighborhood" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about context boundaries →
               </Link>
@@ -410,6 +413,23 @@ export default function WhyWeb4Page() {
             </p>
           </div>
 
+          {/* One-line CI gloss before the FAQ — visitor LOW 2026-05-17: CI used heavily in
+              the questions below but never introduced in the main body. Kept OUT of the
+              "four ideas" framing on purpose: CI isn't a 5th mechanism, it's a modifier. */}
+          <div className="bg-gray-950/60 border border-amber-700/30 rounded-lg p-4 mb-6">
+            <p className="text-xs font-bold text-amber-400/90 uppercase tracking-wide mb-2">
+              One more term you&apos;ll see in the answers below
+            </p>
+            <p className="text-gray-300 text-sm leading-relaxed mb-0">
+              <strong className="text-amber-300">Coherence Index (CI):</strong> not a fifth
+              mechanism &mdash; it&apos;s a consistency check on the four above. It just asks
+              <em> does your behavior add up over time?</em> Steady, predictable behavior keeps
+              CI high; acting erratically (or differently when you think no one&apos;s watching)
+              drags it down, which in turn drags down how much your trust scores actually count.
+              The questions below lean on it, so meet it here first.
+            </p>
+          </div>
+
           <p className="text-gray-400 text-sm border-t border-sky-800/30 pt-4">
             <strong className="text-white">4-Life</strong> is a simulation lab where you can
             watch these mechanisms in action. See societies form, trust networks emerge, spam
@@ -446,13 +466,17 @@ export default function WhyWeb4Page() {
         <h2 className="text-3xl font-bold mb-6 text-gray-100">Honest Questions</h2>
         <p className="text-gray-400 mb-4">
           If you&#39;re skeptical, good. Here are the hard questions visitors ask, and honest answers.
-          Looking for something specific? Open the topic index below.
+        </p>
+        <p className="text-sm text-sky-200/90 mb-6 bg-sky-950/30 border-l-2 border-sky-700 pl-3 py-2 rounded">
+          <strong className="text-sky-300">This is reference depth, not a read-through.</strong>{' '}
+          It&rsquo;s long on purpose &mdash; one honest answer per question, meant to be <em>skimmed</em>, not
+          read top to bottom. Jump to whatever you actually want via the topic index just below.
         </p>
 
         {/* FAQ index — jump to any question */}
-        <details className="mb-8 text-sm border border-sky-800/30 rounded-lg p-3" id="faq-index">
+        <details open className="mb-8 text-sm border border-sky-800/30 rounded-lg p-3 group" id="faq-index">
           <summary className="text-sky-400 hover:text-sky-300 cursor-pointer list-none inline-flex items-center gap-1.5 font-semibold">
-            <span className="text-xs">▶</span> Browse all questions by topic
+            <span className="text-xs transition-transform group-open:rotate-90">▶</span> Browse all questions by topic <span className="text-gray-500 font-normal">— start here</span>
           </summary>
           <nav className="mt-3 p-4 bg-gray-800/30 border border-gray-700/50 rounded-lg columns-1 sm:columns-2 gap-x-6">
             <div className="break-inside-avoid mb-4">
@@ -510,6 +534,7 @@ export default function WhyWeb4Page() {
               <ul className="space-y-0.5 text-gray-400">
                 <li><a href="#faq-trust-transfer" className="hover:text-sky-400 transition-colors">Trust between communities?</a></li>
                 <li><a href="#faq-threshold" className="hover:text-sky-400 transition-colors">Is 0.5 threshold universal?</a></li>
+                <li><a href="#faq-calibration" className="hover:text-sky-400 transition-colors">Why these numbers — 0.5, 3 hops, 0.02?</a></li>
                 <li><a href="#faq-creative-work" className="hover:text-sky-400 transition-colors">Creative or unconventional work — how is it scored?</a></li>
                 <li><a href="#faq-cheaters" className="hover:text-sky-400 transition-colors">How do you catch cheaters?</a></li>
                 <li><a href="#faq-ci-example" className="hover:text-sky-400 transition-colors">What does coherence look like for a normal person?</a></li>
@@ -553,6 +578,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-ai-agents" className="hover:text-sky-400 transition-colors">How do AI agents participate?</a></li>
                 <li><a href="#faq-protocol-changes" className="hover:text-sky-400 transition-colors">Who decides protocol changes?</a></li>
                 <li><a href="#faq-sal" className="hover:text-sky-400 transition-colors">How does community governance work?</a></li>
+                <li><a href="#faq-wrongful-penalty" className="hover:text-sky-400 transition-colors">What if I&apos;m penalized unfairly?</a></li>
                 <li><a href="#faq-jurisdiction" className="hover:text-sky-400 transition-colors">Differing national laws?</a></li>
               </ul>
             </div>
@@ -964,7 +990,8 @@ export default function WhyWeb4Page() {
                 <li><strong>Statistical detection:</strong> Unusually dense mutual validation clusters trigger anomaly detection
                   with 93%+ probability at 3+ members</li>
                 <li><strong>Behavioral consistency:</strong> Your{" "}
-                  <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link> flags when
+                  <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link>{" "}
+                  (CI &mdash; a running measure of how consistent your behavior is over time) flags when
                   validation patterns don&apos;t match your other behavior &mdash; confirming everything a cartel member
                   does while being selective with others creates a detectable signal</li>
                 <li><strong>Hardware cost:</strong> Each colluder needs real hardware-bound identity (LCT), making
@@ -1169,7 +1196,7 @@ export default function WhyWeb4Page() {
               <details className="group/cat">
                 <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
                   <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
-                  Governance (5)
+                  Governance (6)
                 </summary>
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
                   <li><a href="#faq-who-builds" className="hover:text-sky-400">Who builds this?</a></li>
@@ -1177,6 +1204,7 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-ai-agents" className="hover:text-sky-400">AI agent participation?</a></li>
                   <li><a href="#faq-protocol-changes" className="hover:text-sky-400">Protocol governance?</a></li>
                   <li><a href="#faq-sal" className="hover:text-sky-400">Community governance basics?</a></li>
+                  <li><a href="#faq-wrongful-penalty" className="hover:text-sky-400">Penalized unfairly?</a></li>
                 </ul>
               </details>
             </div>
@@ -1886,7 +1914,14 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* AI agent onboarding */}
+          {/* AI agent onboarding — May 21 + May 27 visitor Unanswered Q3 (2nd recurrence).
+              Visitor asked: "AI has no chip — where does the hardware anchor come from?"
+              Canonical AGY-spec answer lives at lct-explainer:1812 (the "no phone or chip"
+              FAQ), but that's ~1900 lines deep on a separate page. Visitors form the
+              question reading the "humans AND AI agents" promise on this page (line ~283),
+              so the answer must surface here at the same read point — same shape as #320
+              (V3 grounding), #323 (V3 inline), #309 (gratitude loop): complete the keepable
+              summary at the read point with jump-link to canonical mechanics. */}
           <details id="faq-ai-agents" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How do AI agents participate? Can a bot earn trust?</span>
@@ -1895,8 +1930,19 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 <strong>Yes, but transparently.</strong> AI agents in Web4 are first-class entities — they get their
-                own LCT (bound to the hardware they run on), their own ATP budget, and their own trust tensor.
+                own LCT, their own ATP budget, and their own trust tensor.
                 The critical difference: <strong>they must be labeled as non-human</strong>.
+              </p>
+              <p>
+                <strong>Where does an AI&apos;s hardware anchor come from when it has no chip?</strong> Its LCT
+                is <strong>rooted in its creator&apos;s hardware-bound identity</strong> — a person or organization
+                that <em>is</em> hardware-anchored issues the agent a scoped, revocable delegation (like a building
+                badge issued by an authorized person). The anchor is <em>inherited through the chain</em>, not
+                possessed directly; every LCT traces back to a hardware-anchored human or org who stays accountable
+                for what the agent does.{" "}
+                <Link href="/lct-explainer#faq-ai-agents" className="text-amber-400 hover:text-amber-300 underline">
+                  LCT page has the longer mechanics →
+                </Link>
               </p>
               <p>
                 An AI agent earns trust the same way anyone does: by taking actions, spending ATP, and building a
@@ -2132,6 +2178,63 @@ export default function WhyWeb4Page() {
                   When Values Themselves Conflict
                 </Link>{' '}
                 for how bridging societies and value boundaries work.
+              </p>
+            </div>
+          </details>
+
+          {/* May 21 visitor Unanswered-Q1: the "calibration story" — visitor PRAISED the
+              "calibrated, not derived" honesty (Aliveness 0.5, MRH 3-hop via #292) and wanted
+              "more of that, not less... a brief 'How we picked these numbers' appendix." The
+              per-number explanations already exist scattered; this FAQ names the philosophy once
+              and ROUTES to each owner. Introduces zero new numeric figures (policy guardrail). */}
+          <details id="faq-calibration" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Why these specific numbers? How were 0.5, 3 hops, and 0.02 chosen?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Short version: almost every number in Web4 is <strong>calibrated, not derived</strong>.
+                <em>Derived</em> would mean the math forces the value &mdash; there&apos;s a proof it could be
+                nothing else. <em>Calibrated</em> means it was tuned in simulation until the system behaved
+                sensibly, the way an engineer dials in a thermostat rather than computing it from first
+                principles. A few values aren&apos;t even tuned &mdash; they&apos;re <strong>design choices
+                inspired by</strong> an analogy. None of them are claimed as physical constants.
+              </p>
+              <p>
+                Here&apos;s where the numbers you&apos;ll meet come from, and the page that explains each in full:
+              </p>
+              <ul className="list-disc list-inside space-y-1.5 ml-1">
+                <li>
+                  <strong>0.5 &mdash; the alive/dead and default trust line.</strong> A design choice inspired by
+                  phase-transition behavior: below it, conduct is hard to tell from random; above it, intention
+                  shows. It&apos;s also a per-society setting, not a protocol constant &mdash; see{" "}
+                  <a href="#faq-threshold" className="text-sky-400 hover:underline">Is the 0.5 threshold universal?</a>
+                </li>
+                <li>
+                  <strong>3 hops &mdash; the relevancy horizon (MRH), ~0.7 trust kept per hop.</strong> Calibrated:
+                  in real social networks the signal-to-noise of &ldquo;friend of a friend of a friend&rdquo; collapses
+                  past about three hops. Walk the decay yourself on the{" "}
+                  <Link href="/mrh-explorer" className="text-sky-400 hover:underline">MRH Explorer</Link>.
+                </li>
+                <li>
+                  <strong>0.02 &mdash; the trust update step.</strong> Calibrated to be small on purpose: trust
+                  should move steadily with each action, not lurch on any single one. The{" "}
+                  <Link href="/trust-tensor" className="text-sky-400 hover:underline">Trust Tensor</Link> page shows
+                  the full <code className="text-sky-300/90 text-xs">0.02 &times; (quality &minus; 0.5)</code> rule.
+                </li>
+                <li>
+                  <strong>5% &mdash; the energy transfer fee.</strong> A design choice that makes pooling and
+                  circular trust-farming unprofitable without taxing honest collaboration &mdash; see{" "}
+                  <a href="#faq-5-percent" className="text-sky-400 hover:underline">Why a 5% transfer cost?</a>
+                </li>
+              </ul>
+              <p>
+                Why say all this out loud? Because the honest answer to &ldquo;why 0.5 and not 0.48?&rdquo; is
+                &ldquo;we tuned it, and a future version may retune it&rdquo; &mdash; and that&apos;s a feature, not
+                an embarrassment. Calibrated parameters are knobs, not commandments: each society can already move
+                several of them to fit its own norms. Being explicit that these are empirically chosen values rather
+                than magic constants is what keeps the framework <strong>science, not numerology</strong>.
               </p>
             </div>
           </details>
@@ -2715,8 +2818,11 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                SAL stands for <strong>Society Alignment Layer</strong> — it&apos;s the governance framework
-                each Web4 community uses to set and enforce its own rules. Think of it as a community&apos;s
+                SAL stands for <strong>Society-Authority-Law</strong> — the three things every Web4
+                community defines for itself: a <strong>Society</strong> (its purpose and who belongs),
+                an <strong>Authority</strong> structure (which roles can do what), and its <strong>Law</strong>{" "}
+                (the rules and how they&apos;re enforced). Together they&apos;re the governance framework
+                each Web4 community uses to set and enforce its own rules — think of it as a community&apos;s
                 constitution that members actually follow because it&apos;s baked into the protocol.
               </p>
               <p>
@@ -2747,6 +2853,54 @@ export default function WhyWeb4Page() {
                 early members accumulate disproportionate influence. The{" "}
                 <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">What Could Go Wrong</Link>{" "}
                 page explores these risks honestly.
+              </p>
+            </div>
+          </details>
+
+          {/* Wrongful penalty / recourse — visitor Unanswered Q4 2026-05-22: "If reputation is permanent and portable, what happens when I'm wrongly penalized? Appeals are mentioned as designed-not-deployed — left me slightly uneasy about fairness." Consolidates recourse mechanisms scattered across faq-powerful-liar / faq-sal / social-credit table. */}
+          <details id="faq-wrongful-penalty" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>If reputation is permanent and portable, what protects me when I&apos;m penalized unfairly?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                This is the right thing to worry about, and the honest answer comes in two parts.
+                First, the part that isn&apos;t built yet: a <strong>formal appeals process</strong> — where you
+                contest a specific decision and a community body reviews it — is part of{" "}
+                <a href="#faq-sal" className="text-sky-400 hover:underline">SAL governance</a>, which is
+                <em> designed but not yet deployed</em>. We won&apos;t pretend otherwise.
+              </p>
+              <p>
+                Second, the part that protects you <strong>today</strong>: a wrongful penalty is hard to make
+                stick because <strong>no single judgment is load-bearing</strong>. Recourse here isn&apos;t a
+                complaint desk you have to find — it&apos;s built into how trust is computed, so it works without
+                anyone agreeing to review your case:
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-400">
+                <li><strong>No single rating decides your fate.</strong> Your trust is built from <em>all</em> your
+                  interactions, not one person&apos;s claim. A mistaken or malicious low score is one data point
+                  against a track record — it can&apos;t erase your history. (More on this in{" "}
+                  <a href="#faq-powerful-liar" className="text-sky-400 hover:underline">&ldquo;does my truth even matter?&rdquo;</a>)</li>
+                <li><strong>Penalties are graduated and reversible, not permanent bans.</strong> Trust and Coherence
+                  scores <em>recover</em> as your behavior normalizes — the same way a temporary dip fades over time
+                  rather than branding you forever. &ldquo;Permanent record&rdquo; means your history is durable,
+                  not that one bad mark is a life sentence.</li>
+                <li><strong>A wrongful penalty stays local.</strong> Trust propagates only within your context
+                  boundary (MRH). A bad call inside one community doesn&apos;t broadcast to the whole network —
+                  people outside that neighborhood never inherit it.</li>
+                <li><strong>You can leave — and take your history with you.</strong> If a community penalizes you
+                  unfairly, participation is voluntary: you exit (or fork the community) and carry your trust
+                  record elsewhere. That exit right is itself a check on unfair enforcement — a society that
+                  punishes capriciously loses its members.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> These structural protections <em>reduce the damage</em> a wrongful
+                penalty can do — they don&apos;t fully replace a real appeals process, and that gap is real until
+                SAL appeals ship. They&apos;re what stands in the meantime: recourse by design rather than by
+                petition. The{" "}
+                <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">What Could Go Wrong</Link>{" "}
+                page treats the unbuilt-appeals risk directly.
               </p>
             </div>
           </details>

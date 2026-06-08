@@ -15,6 +15,7 @@
  */
 
 import { useEffect, useState, useCallback, useMemo } from 'react';
+import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
@@ -484,12 +485,49 @@ export default function MRHExplorerPage() {
       </h1>
       {/* 2026-05-13 visitor HIGH: page named after the acronym never spells it out. Lead with the expansion. */}
       {/* 2026-05-14 visitor LOW: "Markov" needs a plain-English gloss — visitor's verbatim prescription. */}
+      {/* 2026-05-20 visitor MEDIUM #1 residual: H1 already says "Trust Neighborhood Explorer" but the subtitle's <strong>Markov Relevancy Horizon</strong> still pulled the eye. Visitor's literal recipe: lead with the friendly framing, demote the academic name to a "formally: …" aside. MRH token preserved in full so doc-link ctrl-F still resolves. */}
       <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem', marginBottom: '0.75rem', maxWidth: '700px' }}>
-        <span style={{ fontFamily: 'monospace', color: 'var(--color-text-secondary)' }}>MRH</span> = <strong style={{ color: 'var(--color-text-secondary)' }}>Markov Relevancy Horizon</strong>
-        {' '}&mdash; the technical name for what we call a &ldquo;trust neighborhood&rdquo; on the rest of the site.
-        It&apos;s the boundary of what each agent can see, affect, and reason about; beyond it, trust signals fade into noise.
+        This is what the rest of the site calls a &ldquo;<span style={{ color: 'var(--color-text-secondary)' }}>trust neighborhood</span>&rdquo; &mdash; the boundary of what each agent can see, affect, and reason about; beyond it, trust signals fade into noise.
+        {' '}<em style={{ color: 'var(--color-text-secondary)' }}>Formally: Markov Relevancy Horizon (<span style={{ fontFamily: 'monospace' }}>MRH</span>).</em>
         {' '}<em style={{ color: 'var(--color-text-secondary)' }}>The &ldquo;Markov&rdquo; part:</em> the future depends only on the present &mdash; your history lives in your reputation, not in a log of every past step the network has to replay.
       </p>
+      {/* 2026-05-20 visitor MEDIUM: top-of-page was mechanics-only; first-read visitor couldn't picture what trust-distance feels like before the controls. Concrete narrative ladder using the page's own decay numbers. */}
+      <div style={{
+        padding: '1rem 1.25rem', borderRadius: '0.5rem',
+        border: '1px solid #06b6d430', background: '#06b6d408',
+        marginBottom: '1.25rem', maxWidth: '700px',
+      }}>
+        <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#06b6d4', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+          What this feels like in practice
+        </div>
+        {/* 2026-05-31 visitor MEDIUM #1 + Unanswered Q2: this box showed only example values; the per-hop decay rule was named only on the Trust Decay tab below. Lead with the rule using this page's own formula numbers (~quarter per hop, ~half by depth 3, noise floor by depth 4) — NOT the visitor's verbatim "30% / friend's friend ~0.5" which don't match (friend's friend = depth 2 = 0.65 by the page's 0.85^n × 0.9^(n-1)). Examples below now confirm the rule rather than substitute for it. */}
+        <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.5, marginBottom: '0.6rem' }}>
+          Trust signal drops by roughly a quarter with each hop outward &mdash; about half by depth 3, below the noise floor by depth 4. The examples below show the same rule in three concrete cases.
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+          <div>
+            <strong style={{ color: '#6ee7b7' }}>Reply to a friend</strong> (1 hop):
+            trust signal &sim;0.85 &mdash; full strength, action is cheap.
+          </div>
+          <div>
+            <strong style={{ color: '#fde68a' }}>Vouch for a friend&apos;s colleague</strong> (2 hops):
+            trust signal &sim;0.65 &mdash; still useful, action costs more.
+          </div>
+          <div>
+            <strong style={{ color: '#fca5a5' }}>Try to reach a stranger 4 hops away</strong>:
+            trust signal below the noise floor, ATP cost spikes exponentially &mdash; so you can&apos;t cheaply contact people you don&apos;t know.
+          </div>
+        </div>
+        <div style={{ marginTop: '0.65rem', paddingTop: '0.5rem', borderTop: '1px solid rgba(255,255,255,0.06)', fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>
+          That&apos;s what <em>distance-adjusted trust</em> does: spam and drive-by abuse get expensive before they ever reach you.
+        </div>
+        {/* 2026-06-07 visitor MEDIUM (#1 takeaway): concept page quotes 0.70 at one hop, this page ~0.85 — name the relationship at the read point so the mismatch reads as two deliberate models, not a typo. */}
+        <div style={{ marginTop: '0.5rem', fontSize: '0.72rem', color: 'var(--color-text-muted)', fontStyle: 'italic' }}>
+          The numbers here use a finer 0.85/0.9 decay model. The{' '}
+          <Link href="/trust-neighborhood" style={{ color: '#38bdf8', textDecoration: 'none' }}>Trust&nbsp;Neighborhood</Link>{' '}
+          concept page uses a coarser 0.7× shorthand (≈0.70 after one hop) — same shape, both below the noise floor by depth&nbsp;3–4.
+        </div>
+      </div>
       <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem', maxWidth: '700px' }}>
         Explore that boundary below &mdash; adjust horizon depth, explore the 4D profile (space, time, complexity, quality),
         and see how distance decays trust.
@@ -566,8 +604,16 @@ export default function MRHExplorerPage() {
             <h2 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '0.75rem' }}>
               4D Horizon Profile
             </h2>
-            <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '1rem' }}>
+            <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.5rem' }}>
               Each action has a 4-dimensional context that determines its cost, required trust, and visibility.
+            </p>
+            {/*
+              May 28 visitor LOW: ΔR/ΔT/ΔC/ΔQ first appeared as labels without a Greek-letter key —
+              "I had to guess from context that Δ meant 'the change in.'" One-line legend at the
+              read point, using the visitor's own suggested gloss. Read-point fix only, no math primer.
+            */}
+            <p style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginBottom: '1rem', fontStyle: 'italic' }}>
+              Δ (delta) = the change or extent in this dimension — e.g. ΔR is how far in space an action reaches, ΔT how far in time.
             </p>
 
             <DimensionSelector
@@ -693,9 +739,9 @@ export default function MRHExplorerPage() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
               {[
                 { title: 'Natural Privacy', desc: 'Entities beyond your horizon can\'t see your relationships. Privacy emerges from network structure, not access control lists.', color: '#06b6d4' },
-                { title: 'Computational Efficiency', desc: 'With ~10 connections per entity, depth-3 traversal covers ~1,000 entities instead of the entire network. O(d³) vs O(n).', color: '#8b5cf6' },
+                { title: 'Computational Efficiency', desc: 'With ~10 connections per entity, depth-3 traversal covers ~1,000 entities instead of the entire network — you compute over your neighborhood, never the whole graph.', color: '#8b5cf6' },
                 { title: 'Spam Prevention', desc: 'Actions outside your horizon cost exponentially more ATP. You can\'t spam people you don\'t know without burning through resources.', color: '#f59e0b' },
-                { title: 'Trust Accuracy', desc: 'Beyond ~3 hops, trust signals fade into noise — too thin to base decisions on. MRH stops at the depth where the signal still carries information. (Mathematicians call this the Markov property.)', color: '#10b981' },
+                { title: 'Trust Accuracy', desc: 'Beyond ~3 hops, trust signals fade into noise — too thin to base decisions on. MRH stops at the depth where the signal still carries information.', color: '#10b981' },
               ].map(item => (
                 <div key={item.title} style={{
                   padding: '1rem', borderRadius: '0.5rem',
@@ -706,6 +752,19 @@ export default function MRHExplorerPage() {
                 </div>
               ))}
             </div>
+            {/* May 21 visitor MEDIUM: own the empirical-tuning of "3 hops" the same way Aliveness owns the 0.5
+                threshold ("calibrated, not derived"). Visitor praised that move on Aliveness and missed it here. */}
+            <div style={{
+              padding: '0.625rem 0.75rem', borderRadius: '0.5rem', marginBottom: '0.75rem',
+              background: 'rgba(16, 185, 129, 0.06)', border: '1px solid rgba(16, 185, 129, 0.18)',
+              fontSize: '0.8rem', color: 'var(--color-text-secondary)', lineHeight: 1.5,
+            }}>
+              <strong style={{ color: '#6ee7b7' }}>Why 3 hops?</strong>{' '}
+              <strong style={{ color: 'var(--color-text-primary)' }}>Calibrated, not derived.</strong>{' '}
+              Beyond ~3 hops in real social networks, the signal-to-noise ratio empirically collapses — trust through a
+              friend-of-a-friend-of-a-friend carries little more information than a stranger&apos;s. Societies can configure
+              their own horizon; 3 is the default that simulations cleanly separate signal from noise at.
+            </div>
             <div style={{
               padding: '0.75rem', borderRadius: '0.5rem',
               background: 'var(--color-bg-tertiary)', fontSize: '0.85rem',
@@ -713,6 +772,11 @@ export default function MRHExplorerPage() {
             }}>
               <strong>The key insight:</strong> MRH creates a world where privacy, efficiency, and accuracy all align.
               You see what&apos;s relevant, can&apos;t spy on what isn&apos;t, and the system naturally scales without central coordination.
+              <div style={{ marginTop: '0.5rem', paddingTop: '0.5rem', borderTop: '1px solid rgba(255,255,255,0.08)', fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>
+                <strong style={{ color: 'var(--color-text-muted)' }}>For the technically curious:</strong>{' '}
+                bounded-depth traversal is O(d³) rather than O(n) in network size, and ignoring history beyond the horizon
+                is the <em>Markov property</em> — the next state depends only on the current one, not the full past.
+              </div>
             </div>
           </div>
         )}

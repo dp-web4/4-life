@@ -202,13 +202,13 @@ export default function FirstContactPage() {
                 Your First Web4 Experience
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed mb-4">
-                Today's internet rewards spam, lets trolls create unlimited accounts, and makes quality creators compete with bots. What if the system itself made that impossible?
+                Today's internet rewards spam, lets trolls create unlimited accounts, and makes quality creators compete with bots. What if the system itself made that impossible? Web4 is one proposed answer &mdash; and what follows is a simulation of that idea, not a finished product.
               </p>
               <p className="text-lg text-gray-400 leading-relaxed mb-3">
-                In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> — play, pause, scrub, replay — and watch trust and reputation respond in real time. This is a hands-on walkthrough, not a video.
+                In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> — play, pause, scrub, replay — and watch trust and reputation respond in real time. This is a hands-on walkthrough, not a video — and a model of a <em>proposed</em> system: the rules running here are real, but Web4 itself is active research with nothing to sign up for yet. Real rules, shown by simulation — not a demo of a shipped product.
               </p>
               <p className="text-sm text-gray-500 leading-relaxed italic">
-                Below: the two numbers to watch, then a quick reference map of the four ideas (no need to memorize them — each is explained in the story the moment Alice uses it) and the five-act arc. Then click <span className="not-italic font-semibold text-gray-300">Start</span> to drive Alice yourself — no account, no sign-in.
+                Haven&apos;t read anything else on this site yet? You don&apos;t need to &mdash; this page starts from zero. Below: the two numbers to watch, then a quick reference map of the four ideas (no need to memorize them — each is explained in the story the moment Alice uses it) and the five-act arc. Then click <span className="not-italic font-semibold text-gray-300">Start</span> to drive Alice yourself — no account, no sign-in.
               </p>
             </div>
 
@@ -229,9 +229,9 @@ export default function FirstContactPage() {
               <p className="text-sm text-gray-400 mb-4">A reference map, not a quiz — you don&apos;t need to memorize these. Each one is explained in the story the moment Alice runs into it. Skim now, or skip straight to <span className="font-semibold text-gray-300">Start</span> and come back.</p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <Link href="/atp-economics" className="text-sky-400 font-semibold mb-2 block hover:underline">🔋 ATP — Allocation Transfer Packets</Link>
+                  <Link href="/atp-economics" className="text-sky-400 font-semibold mb-2 block hover:underline">🔋 Energy Budget</Link>
                   <p className="text-gray-400">
-                    Web4&rsquo;s energy budget. Every action costs ATP. Recipients who benefit confirm quality &mdash; that&apos;s what earns energy back. Spam burns out.
+                    Every action costs energy. Recipients who benefit confirm quality &mdash; that&apos;s what earns energy back. Spam burns out. (Shorthand: <strong>ATP</strong> &mdash; Allocation Transfer Packets.)
                   </p>
                 </div>
                 <div>
@@ -247,7 +247,7 @@ export default function FirstContactPage() {
                   </p>
                 </div>
                 <div>
-                  <Link href="/coherence-index" className="text-orange-400 font-semibold mb-2 block hover:underline">🔍 Authenticity: Behavior Proves Identity</Link>
+                  <Link href="/coherence-index" className="text-orange-400 font-semibold mb-2 block hover:underline">🔍 Consistency: Behavior Proves Identity</Link>
                   <p className="text-gray-400">
                     Consistent behavior across time, devices, and contexts reveals who&apos;s real. Bots and fakes can&apos;t sustain coherent patterns. (Shorthand: <strong>CI</strong> — coherence index.)
                   </p>
@@ -328,7 +328,7 @@ export default function FirstContactPage() {
 
             <p className="text-center text-sm text-gray-500">
               Step 1 of 5 · Simulation · Story · Concepts · Next Steps
-              <span className="block mt-1 text-xs">You can pause, scrub, replay, and skip ahead. Nothing gets set on your account — this is a live demo of the model.</span>
+              <span className="block mt-1 text-xs">You can pause, scrub, replay, and skip ahead. Nothing is saved and there&apos;s no account — you&apos;re running a simulation of the proposed model, not using a product.</span>
             </p>
           </div>
         )}
@@ -537,9 +537,12 @@ export default function FirstContactPage() {
                   <div className="mt-4 bg-emerald-900/20 border border-emerald-800 rounded p-4">
                     <strong className="text-emerald-400">Karma Carry-Forward</strong>
                     <p className="text-gray-300 mt-2">
-                      Alice&apos;s good karma from her first life gives her a head start: <strong className="text-white">more ATP</strong> and
+                      <strong className="text-white">Same LCT, license reinstated</strong> — not a new account. Alice&apos;s identity and full history persist; she&apos;s the same entity resuming after a recoverable energy-death, not a fresh signup inheriting borrowed reputation.
+                    </p>
+                    <p className="text-gray-300 mt-2">
+                      Her good karma from that first life-cycle gives her a head start: <strong className="text-white">more ATP</strong> and
                       <strong className="text-white"> higher starting trust</strong> than a brand-new entity. This is how Web4 makes
-                      long-term quality behavior compound across lifetimes — like compound interest on good reputation.
+                      long-term quality behavior compound across one identity&apos;s rebirth cycles — like compound interest on good reputation.
                     </p>
                   </div>
                 )}

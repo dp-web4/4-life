@@ -341,7 +341,7 @@ function SurvivalGame() {
           </div>
         </div>
         <p className="text-gray-500 text-sm mb-4">
-          When your coherence drops, all ATP costs increase (CI² modulation). Bad behavior compounds.
+          When your coherence drops, all ATP costs increase (CI² modulation — squared, so a sustained bad <em>pattern</em>, not a single bad moment, is what hurts). Bad behavior compounds.
         </p>
         <button
           onClick={() => setGameStarted(true)}
@@ -773,6 +773,21 @@ export default function AlivenessExplainer() {
                 Why 0.5 specifically? →
               </a>
             </p>
+            {/* June 3 visitor: the 0.5 line is invoked on every page but never cashed out into a
+                concrete consequence — "can't post? can't vote?" Triple-flagged (friction LOW +
+                Unanswered Q1 + "the gap I'd close first"). Ground the abstraction here, at the
+                canonical T3>0.5 criterion (also the link target from lct-explainer:940). Guard:
+                this card is the trust criterion, so the permanent framing is for T3<0.5 only —
+                energy death (ATP=0) is the recoverable case. */}
+            <p style={{ fontSize: '0.9rem', opacity: 0.85, marginTop: '0.75rem' }}>
+              <strong style={{ color: '#e5e7eb' }}>What &ldquo;below the line&rdquo; concretely costs you:</strong>{' '}
+              the society stops accepting your actions &mdash; you can&apos;t post, vote, message,
+              transfer ATP, or be counted as a witness for anyone else. Your identity and history
+              still exist as a record, but the LCT can no longer <em>do</em> anything in society.
+              Trust falling below 0.5 is the <strong>permanent</strong> case; running out of energy
+              (ATP&nbsp;=&nbsp;0) is the recoverable one &mdash; see{' '}
+              <a href="#death-meaning" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('death-meaning')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ color: '#c084fc', cursor: 'pointer' }}>the two deaths</a> below.
+            </p>
             <div className="detail-box">
               <strong>Trust Tensor (T3) dimensions (role-specific):</strong>
               <ul>
@@ -807,8 +822,15 @@ export default function AlivenessExplainer() {
                 <li><strong>Temporal:</strong> Time consistency (continuous operation)</li>
                 <li><strong>Relational:</strong> Relationship consistency (context boundary integrity)</li>
               </ul>
+              {/* May 27 visitor LOW: visitor encountered "Geometric mean" here and "CI²" 40+ lines below
+                  in the pipeline diagram, then went to Karma Journey to find the why-squared intuition —
+                  meaning they missed the same-page amber callout that already answers it. This is a
+                  link-bridging fix (NOT summary-completion like PR #301/#309/#320/#323/#324): the
+                  intuition is already on-page; just make it reachable from the first read point. */}
               <p className="detail-emphasis">
-                Geometric mean means <strong>one low dimension tanks everything</strong>.
+                Geometric mean means <strong>one low dimension tanks everything</strong>. CI is then{' '}
+                <em>squared</em> when applied to trust —{' '}
+                <a href="#why-ci-squared" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('why-ci-squared')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ color: '#c084fc', cursor: 'pointer' }}>see why below</a>.
               </p>
               <details style={{ marginTop: '0.5rem' }}>
                 <summary style={{ cursor: 'pointer', color: '#94a3b8', fontSize: '0.875rem' }}>
@@ -851,6 +873,17 @@ export default function AlivenessExplainer() {
           </pre>
         </div>
 
+        <div id="why-ci-squared" className="detail-box scroll-mt-24" style={{ marginTop: "1rem", background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.2)" }}>
+          <strong>Why is coherence <em>squared</em> (CI²)?</strong> Squaring is the
+          difference between &ldquo;a bad moment&rdquo; and &ldquo;a bad pattern.&rdquo;
+          A small dip barely registers (CI&nbsp;0.9 still keeps ~81% of effective trust),
+          but a sustained slide compounds fast (CI&nbsp;0.6 keeps only ~36%). Both lines
+          above carry the same CI² — so incoherence costs you twice: less trust is
+          accessible <em>and</em> every action costs more. Consistency has to be earned
+          over time; it can&apos;t be faked once.{" "}
+          <Link href="/coherence-index#why-ci-squared">Full rationale on the Coherence Index page →</Link>
+        </div>
+
         <p>
           <strong>Why all three?</strong> Each criterion prevents a different attack:
         </p>
@@ -859,10 +892,21 @@ export default function AlivenessExplainer() {
           <li><strong>T3 &gt; 0.5:</strong> Prevents random noise (requires intentional behavior)</li>
           <li><strong>CI coherent:</strong> Prevents fake identities (consistency is expensive to fake)</li>
         </ul>
+        {/* May 27 visitor / Unanswered Q4 — synthons "single sentence left me curious but not informed";
+            ghost-concept prominence-not-absence pattern (cf. PR #301/#309/#320/#323). Visitor saw this
+            paragraph + the line-681 aside, never scrolled to the deep #synthons section at L1655+.
+            Fix: name the scale range inline (working pair / federation / AI-agent swarm) so the
+            keepable summary at the read point answers "team? org? federation? AI swarm?" without
+            requiring the jump. Deep section L1655+ preserved untouched. Scales chosen to be net-new
+            at this read point: line 681 already uses "research lab, a co-op"; L1686 uses "band,
+            sports team, working group". */}
         <p style={{ marginTop: '1.25rem', color: '#9ca3af', fontSize: '0.95rem' }}>
           These three criteria describe individual aliveness — but the same tests
           scale up. Groups can be alive too, with their own energy flows, coherent
-          agency, and verifiable continuity. See{' '}
+          agency, and verifiable continuity. A <strong className="text-purple-400">synthon</strong>{' '}
+          can be as small as a working pair, as large as a multi-org federation, or as
+          exotic as a coordinated swarm of AI agents — same three tests, applied to the cluster
+          instead of a single member. See{' '}
           <a href="#synthons" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('synthons')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ color: '#c084fc', cursor: 'pointer' }}>Groups Can Be Alive Too (synthons)</a>
           {' '}below.
         </p>
@@ -903,20 +947,68 @@ export default function AlivenessExplainer() {
           </div>
         </div>
 
-        <div id="death-meaning" className="detail-box scroll-mt-24" style={{ marginTop: "1.5rem", background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.2)" }}>
+        <div className="detail-box scroll-mt-24" style={{ marginTop: "1.25rem", background: "rgba(56, 189, 248, 0.08)", border: "1px solid rgba(56, 189, 248, 0.2)" }}>
+          <h4 style={{ color: "#38bdf8" }}>Wait — three conditions, but only two deaths below?</h4>
+          <p>
+            Two different questions. The <strong>three conditions above are what can <em>end</em> a
+            life</strong> — ATP hits 0, trust falls below 0.5, <em>or</em> your Coherence Index falls
+            below 0.5. Any one is fatal, so yes: a <strong>coherence death is real</strong> (the demo
+            above ends your run the moment CI drops past 0.5). The <strong>two deaths below are the
+            two possible <em>outcomes</em></strong> — recoverable rebirth vs. permanent — and which
+            one you get turns on whether your <em>trust</em> survived.
+          </p>
+          <p style={{ fontSize: "0.85rem", opacity: 0.75, marginTop: "0.5rem" }}>
+            CI pulls double duty: besides being a hard floor, it&apos;s the <em>amplifier</em> — low
+            CI shrinks your effective trust (<code>× CI²</code>) and raises every action&apos;s ATP
+            cost (<code>× 1/CI²</code>). So a coherence slide usually drags trust and energy down with
+            it, which is why a coherence death almost always lands on the permanent (trust) side
+            rather than the recoverable one.
+          </p>
+        </div>
+
+        <div id="death-meaning" className="detail-box scroll-mt-24" style={{ marginTop: "1rem", background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.2)" }}>
           <h4 style={{ color: "#fbbf24" }}>What does &ldquo;death&rdquo; mean for a real person?</h4>
           <p>
             In these simulations, death means the agent stops acting and awaits rebirth.
-            In a deployed Web4 system, death would mean <strong>temporary loss of participation rights</strong> —
-            you can&apos;t post, vote, or transact until karma-based rebirth restores your access.
-            Think of it as a <strong>&ldquo;suspended license&rdquo;</strong> rather than account deletion:
-            your identity and history persist, but you need to earn your way back.
+            In a deployed Web4 system it would mean a <strong>temporary loss of participation rights</strong> —
+            you can&apos;t post, vote, or transact — but it is <strong>not account deletion</strong>:
+            your identity and history persist. Whether you get back depends entirely on
+            <em> which of two deaths</em> you suffered &mdash; and both map to a single, familiar real-world analogy.
           </p>
           <p style={{ fontSize: "0.85rem", opacity: 0.7, marginTop: "0.5rem" }}>
-            Important: death from energy exhaustion (most common) is recoverable through rebirth if
-            you built sufficient trust. Death from trust collapse below 0.5 is permanent —
-            society has rejected you. This distinction matters: running out of energy is like going
-            bankrupt (recoverable), but losing all trust is like losing your professional license (permanent).
+            Running out of energy (ATP) is the common case, and it&apos;s <strong>recoverable</strong> &mdash;
+            like <strong>going bankrupt</strong>: karma-based rebirth lets you earn your way back.
+            Losing trust (T3 below 0.5) is the severe case, and it&apos;s <strong>permanent</strong> &mdash;
+            like <strong>losing a professional license</strong>: society has rejected you, and there is no
+            rebirth for that identity. It&apos;s one event (&ldquo;you died&rdquo;) with two outcomes,
+            shown side by side below.
+          </p>
+        </div>
+
+        <div className="detail-box" style={{ marginTop: "1rem" }}>
+          <div style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.05em", opacity: 0.6, marginBottom: "0.75rem" }}>The two deaths, at a glance</div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+            <div style={{ flex: "1 1 240px", borderRadius: "0.5rem", padding: "1rem", background: "rgba(16, 185, 129, 0.08)", border: "1px solid rgba(16, 185, 129, 0.25)", textAlign: "center" }}>
+              <div style={{ fontWeight: 700, color: "#34d399", marginBottom: "0.25rem" }}>🔋 Energy Death</div>
+              <div style={{ fontSize: "0.85rem", opacity: 0.85 }}>ATP runs out (most common)</div>
+              <div style={{ color: "#34d399", margin: "0.4rem 0" }}>↓</div>
+              <div style={{ fontSize: "0.85rem", opacity: 0.85 }}>Reborn with karma carried forward</div>
+              <div style={{ color: "#34d399", margin: "0.4rem 0" }}>↓</div>
+              <div style={{ fontWeight: 600, color: "#34d399", fontSize: "0.9rem" }}>✓ Recoverable</div>
+              <div style={{ fontSize: "0.78rem", opacity: 0.65, marginTop: "0.3rem" }}>like recovering from bankruptcy</div>
+            </div>
+            <div style={{ flex: "1 1 240px", borderRadius: "0.5rem", padding: "1rem", background: "rgba(248, 113, 113, 0.08)", border: "1px solid rgba(248, 113, 113, 0.25)", textAlign: "center" }}>
+              <div style={{ fontWeight: 700, color: "#f87171", marginBottom: "0.25rem" }}>🤝 Trust Death</div>
+              <div style={{ fontSize: "0.85rem", opacity: 0.85 }}>T3 falls below 0.5</div>
+              <div style={{ color: "#f87171", margin: "0.4rem 0" }}>↓</div>
+              <div style={{ fontSize: "0.85rem", opacity: 0.85 }}>Society rejects rebirth</div>
+              <div style={{ color: "#f87171", margin: "0.4rem 0" }}>↓</div>
+              <div style={{ fontWeight: 600, color: "#f87171", fontSize: "0.9rem" }}>✗ Permanent</div>
+              <div style={{ fontSize: "0.78rem", opacity: 0.65, marginTop: "0.3rem" }}>like losing a professional license</div>
+            </div>
+          </div>
+          <p style={{ fontSize: "0.8rem", opacity: 0.6, marginTop: "0.75rem", marginBottom: 0, textAlign: "center" }}>
+            Same event (&ldquo;you die&rdquo;), two very different outcomes &mdash; which one depends only on whether your trust held.
           </p>
         </div>
 
@@ -986,6 +1078,23 @@ export default function AlivenessExplainer() {
             <li>Intact CI history (continuity advantage)</li>
             <li>Cross-life patterns (learning advantage)</li>
           </ul>
+          <p style={{ fontSize: "0.9rem", color: "#9ca3af", marginTop: "1rem" }}>
+            The first three are <em>numbers</em> that seed your next life. The fourth is different:
+            a <strong>cross-life pattern</strong> is distilled know-how — a rule like &ldquo;when ATP
+            runs low, act conservatively&rdquo; — not a score but the learned wisdom that carries over
+            even though the specific memories don&apos;t.
+          </p>
+          <p style={{ fontSize: "0.9rem", color: "#9ca3af", marginTop: "0.75rem" }}>
+            How does it survive a death that erases the agent? <strong>Because it was never the
+            dying agent&apos;s memory to begin with.</strong> As an agent acts, the engine distills
+            its experience into abstracted rules and records them in a <strong>pattern corpus</strong>
+            the lineage keeps — a record separate from any one agent&apos;s moment-to-moment state.
+            Death clears that specific state and its episodic memories; the corpus isn&apos;t part of
+            it, so the abstracted rule carries forward while the experiences that produced it are
+            discarded. Nothing &ldquo;escapes&rdquo; the death — the wisdom lives where the death
+            doesn&apos;t reach. It&apos;s the one thing besides ATP and trust that persists across a death.{" "}
+            <Link href="/decision-evolution" style={{ color: "#818cf8" }}>How patterns carry across lives →</Link>
+          </p>
           <p>
             Good behavior <strong>compounds across lives</strong>. Each life starts stronger.
           </p>
@@ -1301,7 +1410,8 @@ export default function AlivenessExplainer() {
           <div className="detail-box">
             <h4>Recovery Paths</h4>
             <ul>
-              <li><strong>Cross-society reputation:</strong> Trust earned in other societies carries weight</li>
+              {/* June 1 visitor Unanswered Q4: "if Society A says alive at 0.45 and B requires 0.6, where do I live?" — the score-disagreement answer lives on federation-economics but the question forms here where the page asserts cross-society trust "carries weight" (an overstatement). Correct it at the read point + bridge to the answer. */}
+              <li><strong>Cross-society reputation:</strong> Trust earned in other societies carries weight as input &mdash; but no single score travels across as-is: when societies disagree, each re-derives yours locally (and may treat you as a newcomer until you build evidence there). <Link href="/federation-economics#cross-society-scores" className="text-sky-400 hover:underline">How disagreeing scores reconcile &rarr;</Link></li>
               <li><strong>Karma persistence:</strong> A long positive track record makes single incidents less catastrophic</li>
               <li><strong>Gradual rebuilding:</strong> Consistent quality behavior restores trust over time</li>
               <li><strong>Community vouching:</strong> Trusted entities can witness on your behalf</li>
@@ -1457,6 +1567,24 @@ extra_witnesses = ceil((0.8 - CI) × 10)  # Capped at +8
 CI = (spatial × capability × temporal × relational) ** 0.25`}
           </pre>
         </div>
+
+        <p style={{ marginTop: '1rem' }}>
+          <strong>Why is CI <em>squared</em>, not just multiplied?</strong> Squaring
+          is forgiving near the top and punishing as you fall. At CI&nbsp;0.95 you
+          still keep ~90% of your trust and pay only ~1.1× costs — a brief wobble
+          barely registers. But at CI&nbsp;0.7 you keep just ~49% and pay ~2× for
+          every action. The penalty isn&apos;t linear; it accelerates. That shape
+          is the point: <strong>a single bad moment is forgiven, but a sustained
+          pattern of incoherence compounds fast.</strong> Consistency has to be
+          earned over time — it can&apos;t be faked once.
+        </p>
+        <p style={{ marginTop: '0.75rem', color: '#9ca3af', fontSize: '0.95rem' }}>
+          The same CI² appears twice — in <code>effective_trust</code> and in the
+          ATP cost multiplier — so a sustained dip hits you from both sides at
+          once: less trust is accessible <em>and</em> every action costs more,
+          draining ATP faster. That double bind is exactly the death spiral the
+          three criteria are designed to expose.
+        </p>
         </details>
       </section>
 
@@ -1651,6 +1779,14 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             their individual trust scores and ATP. They just lose the collective visibility and
             MRH density that the group provided. Think of it like a band breaking up — each
             musician keeps their reputation, but the &quot;band&quot; no longer exists as an entity.
+          </p>
+          <p style={{marginTop: '0.5rem'}}>
+            <strong className="text-purple-400">Are the two lives linked?</strong> No — a
+            synthon&apos;s aliveness and its members&apos; are judged independently, each by the same
+            three criteria on its own scale. A member can die (energy or trust death) without
+            dissolving the synthon, and a synthon can dissolve while every member stays individually
+            alive. You can be a living member of a fading group, or a thriving individual whose group
+            has already dissolved — neither death forces the other.
           </p>
           <details style={{marginTop: '1rem'}}>
             <summary className="cursor-pointer text-sm font-semibold text-gray-400 hover:text-purple-400 transition-colors">

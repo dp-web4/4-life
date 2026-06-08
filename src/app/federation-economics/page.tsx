@@ -691,7 +691,7 @@ export default function FederationEconomicsPage() {
             </details>
 
             {/* FAQ: Conflicting trust scores — addresses visitor unanswered Q */}
-            <details className="bg-gray-800/40 border border-amber-700/30 rounded-xl p-5 mt-4">
+            <details id="cross-society-scores" className="bg-gray-800/40 border border-amber-700/30 rounded-xl p-5 mt-4 scroll-mt-24">
               <summary className="text-sm font-semibold text-amber-300/90 cursor-pointer list-none flex justify-between items-center">
                 <span>What if two societies give the same person completely different trust scores?</span>
                 <span className="text-gray-500 text-xs ml-2">click to expand</span>

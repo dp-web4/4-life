@@ -490,12 +490,27 @@ export default function TrustTensorPage() {
             ↓ Try the trust tensor simulator below
           </a>
         </p>
-        {/* Apr 26 visitor LOW: V3 mentioned but not explained on this page — preserves Apr 17 "let T3 land first" pacing by linking forward instead of explaining inline */}
+        {/* Apr 26 visitor LOW: V3 mentioned but not explained on this page — preserves Apr 17 "let T3 land first" pacing by linking forward instead of explaining inline.
+            May 21 visitor LOW: first mention gave the location but no priority signal — visitor "didn't know whether V3 was something I'd need soon or could ignore." Add a one-line T3-vs-V3 distinction + explicit defer reassurance here, at the point of friction.
+            May 26 visitor LOW-MED #1 + Unanswered Q1: prior two layers still left V3 as a "ghost concept" — abstract "what you produce" with no concrete anchor. Add one number-grounded example (the same niche-research-vs-clickbait pair already in the V3 Output Scorer Pattern callout further down) so visitors who don't click the gate still leave with a concrete V3 mental anchor.
+            May 27 visitor MEDIUM #1 + Unanswered Q1 (7th recurrence of ghost-concept pattern): the prior three layers still never name the three V3 components inline — "the glossary later told me V3 = Valuation/Veracity/Validity, but the Trust Tensor page itself didn't ground it." Complete the keepable summary at the read point by naming the three components alongside the existing concept gloss + numeric example. Pattern match: PR #301 (May 22) — visitor's own analogue "same shape as the inline ADP gloss on the ATP page."
+            May 28 visitor MEDIUM #1 + Unanswered Q2 (8th recurrence — different lever): the prior 3 layers added abstract gloss, names, and a V3-only number — but T3 has a role-grounded actor (the surgeon at L464) and V3's gloss is still actor-less. Visitor: "T3 had role-grounded examples (the surgeon). V3 got components named but never grounded. I really wanted at least one one-line example of *what V3 looks like in practice* on the page where it gets named — like 'if Alice writes a tutorial, V3 grades the tutorial; T3 grades Alice.'" Add the visitor's exact T3-vs-V3 contrast applied to a single actor — different lever from the prior three (co-located scoring, not naming/numbering). Downstream V3 Output Scorer uses code-review / clickbait / niche-research / copy-paste / mentoring — "tutorial" is a fresh example space, no conflict. */}
         <p className="text-sm text-gray-500 mt-2">
-          Wondering about <strong className="text-purple-300">V3</strong>?{" "}
+          Wondering about <strong className="text-purple-300">V3</strong>? Short version: T3 measures{" "}
+          <strong>who you are</strong>; V3 measures <strong>what you produce</strong> across three components &mdash;{" "}
+          <strong className="text-sky-300">Valuation</strong>,{" "}
+          <strong className="text-purple-300">Veracity</strong>, and{" "}
+          <strong className="text-green-300">Validity</strong> (usefulness, truthfulness, soundness). Concretely: if Alice writes a tutorial, V3 grades <em>the tutorial</em> (useful? true? sound?); T3 grades <em>Alice</em> (do her talent, training, temperament fit the task). E.g. a careful niche analysis might score V3 = 0.75, while viral clickbait scores V3 = 0.33. You don&apos;t need to
+          master it to follow this page — T3 alone carries the idea here, so it&apos;s fine to meet V3 later
+          (it matters enough to get its own section). When you&apos;re curious, it&apos;s the
+          sibling tensor,{" "}
           <a href="#v3" onClick={(e) => { e.preventDefault(); document.getElementById('v3')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-300 hover:text-purple-200 cursor-pointer">
-            It&apos;s the sibling tensor — explained just below ↓
+            explained just below ↓
           </a>
+        </p>
+        {/* June 4 visitor LOW (recurring since Mar 27 s2 / May 21, NEW axis): the prior 7 iterations of the paragraph above all answer *what V3 is*; visitor still asked "on a page titled Trust Tensor, why is V3 here?" The relevance hook (V3 feeds back into T3) lived only in the gate card ~480 lines below (L996). Surface it as one standalone sentence at the first mention so a non-scrolling reader knows why V3 belongs on the T3 page. Reviewer note: keep it a single clause, don't re-explain what V3 is. */}
+        <p className="text-sm text-gray-500 mt-2">
+          Why it&apos;s on a page about T3: the two are coupled &mdash; producing high-V3 work is exactly what raises your T3, so V3 isn&apos;t a detour, it&apos;s the lever your reputation actually moves on.
         </p>
       </section>
 
@@ -610,6 +625,14 @@ export default function TrustTensorPage() {
               Each confirmation applies a small per-dimension nudge from the canonical update rule:{" "}
               <code className="text-gray-300">base = 0.02 &times; (quality &minus; 0.5)</code>,
               scaled by dimension (Talent &times;1.0, Training &times;0.8, Temperament &times;0.6).
+              For reading this formula, <em>quality</em> is just a single number from 0 to 1
+              (0.5 = neutral, higher = better work) &mdash; you don&apos;t need to chase any
+              other concept to follow it. Where does that number come from? It&apos;s the{" "}
+              <strong className="text-purple-300">V3 score</strong>{" "}
+              the recipient assigned to that contribution (Valuation &middot; Veracity &middot;
+              Validity &mdash; the <a href="#v3" className="text-purple-300 underline">V3 section below</a>{" "}
+              breaks that down if you want the depth, but it&apos;s optional here). Each confirmer&apos;s V3
+              feeds the formula independently &mdash; they aren&apos;t averaged into one number first.
               A single high-quality contribution barely moves the needle &mdash; a 0.85-quality
               attestation gives <code className="text-gray-300">+0.007</code> to Talent. Trust climbs
               slowly because no single recipient can vault you upward; it takes many confirmations
@@ -976,8 +999,9 @@ export default function TrustTensorPage() {
               That&apos;s T3 — three dimensions describing <strong className="text-sky-300">who someone is</strong>.
               If this feels like enough for one sitting, you can stop here. T3 alone is a working mental model — pick up V3 later via the concept nav above.
             </p>
+            {/* June 1 visitor M5 / Unanswered Q2: name the V3->T3 arrow in the always-visible teaser so a non-expanding reader still leaves with the keepable relationship. Detail stays gated below (May 4 anti-overload). Mirrors the gated phrasing at L1092-1093. */}
             <p className="text-sm text-gray-500 mb-5">
-              Or keep going: V3 is a separate, complementary tensor that scores <strong className="text-purple-300">what someone produces</strong>. It pairs with T3 but doesn&apos;t require memorizing six things at once.
+              Or keep going: V3 is a separate, complementary tensor that scores <strong className="text-purple-300">what someone produces</strong>. It pairs with T3 but doesn&apos;t require memorizing six things at once &mdash; and the two aren&apos;t really independent: consistently producing high-V3 work raises your own T3, while sloppy work drags it down, so your reputation tracks your actual output quality.
             </p>
             <button
               onClick={expandV3}
@@ -1237,6 +1261,17 @@ export default function TrustTensorPage() {
               <p className="leading-relaxed mb-3">
                 Each action within a role produces dimension-specific updates:
               </p>
+              {/* June-6 visitor LOW + Unanswered Q2: the formula block below is met cold in the
+                  main flow — the only magnitude framing lives in a collapsed <details> ~600 lines up.
+                  Lead with the count answer so the math reads as confirmation of intuition, not a wall. */}
+              <p className="leading-relaxed mb-3 text-gray-300 bg-gray-900/40 border border-gray-700/50 rounded-lg p-4 text-sm">
+                <strong className="text-gray-100">Before the math, the scale:</strong> one good action
+                nudges a dimension by less than 1% &mdash; a strong (0.85-quality) confirmation adds
+                about <code className="text-gray-300">+0.007</code> to Talent. So climbing from a 0.5
+                newcomer to a 0.7 track record takes roughly <strong className="text-sky-300">30 quality
+                confirmations</strong>, not a handful. Trust is earned slowly, on purpose: no single
+                recipient can vault you upward. With that in mind, the exact rule:
+              </p>
               <pre className="bg-gray-950 border border-gray-700 rounded-lg p-4 overflow-x-auto text-xs text-gray-400 font-mono">
 {`// T3 update impacts by outcome type
 Outcome               Talent     Training   Temperament
@@ -1464,7 +1499,10 @@ Temperament:  30-day half-life (recent behavior matters most)
                 </li>
                 <li>
                   <strong><TermTooltip term="CI">Coherence Index (CI)</TermTooltip>:</strong> Behavioral consistency modulates
-                  effective trust: effective_trust = T3 × CI²
+                  effective trust: effective_trust = T3 × CI²{' '}
+                  <Link href="/coherence-index#why-ci-squared" className="text-sky-400 hover:text-sky-300 text-xs">
+                    (why squared?)
+                  </Link>
                 </li>
                 <li>
                   <strong>Karma:</strong> T3 above threshold allows rebirth with ATP carried forward
@@ -1584,7 +1622,7 @@ Temperament:  30-day half-life (recent behavior matters most)
       <section id="calibration-meaning" className="max-w-4xl mx-auto mt-12 scroll-mt-24">
         <details className="bg-gray-900/50 border border-gray-700 rounded-xl p-6">
           <summary className="text-lg font-semibold text-sky-400 cursor-pointer hover:text-sky-300 transition-colors list-none flex justify-between items-center">
-            <span>What does &ldquo;trust = 0.7&rdquo; actually mean?</span>
+            <span>What does &ldquo;trust = 0.7&rdquo; mean &mdash; and how is it measured?</span>
             <span className="text-gray-500 text-lg">+</span>
           </summary>
           <div className="mt-3">

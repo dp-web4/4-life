@@ -21,7 +21,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import { trackPageVisit } from '@/lib/exploration';
-import TermTooltip, { ATP, T3, LCT, CI } from '@/components/TermTooltip';
+import TermTooltip, { ATP, T3, LCT, CI, MRH, V3 } from '@/components/TermTooltip';
 import HumanPlayerMode from '@/components/HumanPlayerMode';
 import NetworkGraph from '@/components/NetworkGraph';
 import { queryEngine, type Query, type Response as GuideResponse } from '@/lib/act/query_engine';
@@ -3237,9 +3237,9 @@ export default function SocietySimulatorPage() {
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-3">Society Simulator</h1>
               <p className="text-lg text-gray-400 max-w-3xl">
-                You saw how one agent builds trust. Now watch 12 agents with different strategies
-                form alliances, betray each other, and self-organize &mdash; no central authority,
-                just trust dynamics at society scale.
+                A single agent can build trust on its own. Here, watch 12 agents with different
+                strategies form alliances, betray each other, and self-organize &mdash; no central
+                authority, just trust dynamics at society scale.
               </p>
               <p className="text-sm text-gray-500 max-w-3xl mt-2">
                 The <a href="/playground" className="text-sky-400 hover:underline">Playground</a> lets
@@ -3261,12 +3261,29 @@ export default function SocietySimulatorPage() {
           </div>
         </div>
 
+        {/* New-to-Web4 onboarding banner — May 21 visitor LOW #4: the only First Contact pointer
+            was a small text-sm line buried inside the green box below; a cold visitor landing
+            directly on this (the densest interactive page) would scan past it. Promote it to a
+            prominent banner above the acronym-dense content, per the visitor's verbatim suggestion. */}
+        <div className="mb-6 bg-gradient-to-r from-sky-900/40 to-indigo-900/30 border border-sky-700/60 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-3">
+          <div className="flex-1">
+            <div className="text-sm font-bold text-sky-100 mb-0.5">👋 Never seen these Web4 terms before?</div>
+            <p className="text-xs text-sky-100/80 leading-relaxed">
+              ATP, T3, LCT, and CI show up all over this page. <a href="/first-contact" className="text-sky-300 underline hover:text-sky-200 font-medium">First Contact</a> is
+              a 7-minute guided intro that builds them one at a time — then everything below clicks into place.
+            </p>
+          </div>
+          <a
+            href="/first-contact"
+            className="shrink-0 inline-flex items-center justify-center bg-sky-500 hover:bg-sky-400 text-white font-bold text-sm py-2.5 px-5 rounded-lg transition-colors whitespace-nowrap"
+          >
+            Start with First Contact →
+          </a>
+        </div>
+
         {/* Web4 Connection */}
         <div className="mb-4 bg-emerald-900/20 border border-emerald-800 rounded-lg p-4">
           <h2 className="text-base font-bold mb-2 text-emerald-400">How This Demonstrates Web4</h2>
-          <p className="text-sm text-emerald-200/90 mb-3 bg-emerald-950/40 border-l-2 border-emerald-600 pl-3 py-1.5 rounded">
-            New to these terms? Start with <a href="/first-contact" className="text-emerald-300 underline hover:text-emerald-200 font-medium">First Contact</a> — a 12-minute guided introduction. Then the acronyms below will make sense.
-          </p>
           <p className="text-gray-300 text-sm mb-2">
             Each agent has <ATP>ATP</ATP> (energy budget) and a <T3>Trust Tensor</T3> (reputation).
             Actions cost ATP. Cooperation builds trust. Defection may win short-term but gets isolated.
@@ -3297,7 +3314,10 @@ export default function SocietySimulatorPage() {
             <div className="bg-amber-900/15 border border-amber-800/40 rounded-lg p-3">
               <div className="text-xs font-bold text-amber-300 mb-1.5">~ Simplified for visualization</div>
               <p className="text-gray-300 text-xs">
-                Trust here is a <em>scalar</em> <code className="text-amber-200 bg-amber-950/40 px-1 rounded text-[11px]">reputation</code> (community-averaged), not the full <T3>T3</T3> tensor (Talent/Training/Temperament). It also doesn&rsquo;t fade with social distance (<span className="text-amber-200">MRH</span>), isn&rsquo;t scored per individual contribution (V3), and has no explicit witness layer. Twelve agents and a few rounds; production would be far larger.
+                Trust here is a <em>scalar</em> <code className="text-amber-200 bg-amber-950/40 px-1 rounded text-[11px]">reputation</code> (community-averaged), not the full <T3>T3</T3> tensor (Talent/Training/Temperament). It also doesn&rsquo;t fade with social distance (<MRH>MRH</MRH> &mdash; your <em>trust neighborhood</em>: how far your reputation carries before it decays, ~3 hops out), isn&rsquo;t scored per individual contribution (<V3>V3</V3> &mdash; the <em>value tensor</em>: how others rate the quality of each thing you produce), and has no explicit witness layer. Twelve agents and a few rounds; production would be far larger.
+              </p>
+              <p className="text-gray-300 text-xs mt-2">
+                <strong className="text-gray-200">What still transfers:</strong> these omissions affect speed and edge cases &mdash; not the core dynamics. Defector isolation, emergent cooperation, and wealth dynamics would still emerge with the full T3/MRH/V3 model; the live network would just resolve them more gradually and with more local clustering.
               </p>
             </div>
             <div className="bg-sky-900/15 border border-sky-800/40 rounded-lg p-3">
@@ -3408,22 +3428,35 @@ export default function SocietySimulatorPage() {
         {/* Acronym key — quick lookup right above the simulator */}
         <details className="mb-4 bg-gray-800/30 rounded-lg border border-gray-700/50 group">
           <summary className="cursor-pointer p-4 text-sm font-bold text-gray-300 hover:text-white transition-colors list-none flex items-center justify-between">
-            <span>Acronyms: what do ATP, T3, LCT, CI mean?</span>
+            <span>Acronyms: what do ATP, T3, LCT, CI, MRH, V3 mean?</span>
             <span className="text-gray-500 text-xs group-open:hidden">▸ Show key</span>
             <span className="text-gray-500 text-xs hidden group-open:inline">▾ Hide</span>
           </summary>
+          {/* May 24 visitor Friction #6 + Unanswered Q2: the key lists "Not modeled" on MRH/V3 but
+              leaves ATP/LCT/CI/T3 uncaveated, so a reader can't tell which on-screen numbers are live.
+              Orient positively (what DOES update) before the per-term key; link to #real-vs-simulated
+              rather than restating the quadrant card. */}
+          <p className="px-4 pb-3 text-xs text-gray-400">
+            <span className="text-emerald-300 font-medium">What updates live each round:</span> ATP energy, each agent&rsquo;s scalar reputation, and CI (coherence). <span className="text-amber-300 font-medium">Named below but not computed in this demo:</span> MRH distance-decay, the full T3 tensor, and V3 &mdash; see <a href="#real-vs-simulated" className="text-sky-400 hover:underline">what&rsquo;s real vs. simulated</a>.
+          </p>
           <div className="px-4 pb-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-300">
             <div>
               <span className="font-mono font-bold text-sky-400">ATP</span> — <span className="text-gray-400">Allocation Transfer Packets.</span> Each agent&apos;s energy budget. Spent on actions, recharged through cooperation. <a href="/atp-economics" className="text-sky-400 hover:underline">Learn more →</a>
             </div>
             <div>
-              <span className="font-mono font-bold text-sky-400">T3</span> — <span className="text-gray-400">Trust Tensor.</span> Three-dimensional reputation: Talent, Training, Temperament. <a href="/trust-tensor" className="text-sky-400 hover:underline">Learn more →</a>
+              <span className="font-mono font-bold text-sky-400">T3</span> — <span className="text-gray-400">Trust Tensor.</span> Three-dimensional reputation: Talent, Training, Temperament. <em className="text-gray-400">This demo uses a single community-averaged reputation, not the full tensor.</em> <a href="/trust-tensor" className="text-sky-400 hover:underline">Learn more →</a>
             </div>
             <div>
               <span className="font-mono font-bold text-sky-400">LCT</span> — <span className="text-gray-400">Linked Context Token.</span> Each agent&apos;s identity (here, each colored node is one LCT). <a href="/lct-explainer" className="text-sky-400 hover:underline">Learn more →</a>
             </div>
             <div>
               <span className="font-mono font-bold text-sky-400">CI</span> — <span className="text-gray-400">Coherence Index.</span> Behavioral consistency across spatial, capability, temporal, and relational dimensions. <a href="/coherence-index" className="text-sky-400 hover:underline">Learn more →</a>
+            </div>
+            <div>
+              <span className="font-mono font-bold text-sky-400">MRH</span> — <span className="text-gray-400">your trust neighborhood</span> <span className="text-gray-500">(formally &ldquo;Markov Relevancy Horizon&rdquo; &mdash; safe to skim here; full detail on the MRH page)</span>: how far reputation carries before it decays (~3 hops out). Not modeled in this scalar demo. <a href="/mrh-explorer" className="text-sky-400 hover:underline">Learn more →</a>
+            </div>
+            <div>
+              <span className="font-mono font-bold text-sky-400">V3</span> — <span className="text-gray-400">Value Tensor.</span> How others rate the quality of each thing you produce (Valuation, Veracity, Validity). Not scored per-contribution in this demo. <a href="/trust-tensor#v3" className="text-sky-400 hover:underline">Learn more →</a>
             </div>
           </div>
         </details>

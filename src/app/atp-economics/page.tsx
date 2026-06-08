@@ -110,9 +110,18 @@ export default function ATPEconomicsPage() {
           <span className="text-gray-500 text-xs">=</span>
           <span className="text-gray-100 font-semibold text-sm">Allocation Transfer Packets</span>
         </div>
-        <p className="text-sm text-gray-400 mb-6 italic">
-          The words &ldquo;attention,&rdquo; &ldquo;energy,&rdquo; and &ldquo;budget&rdquo; you&apos;ll see throughout this page
-          are <em>metaphors</em> for what ATP <em>does</em>, not alternate expansions of the acronym.
+        {/* May 23 visitor LOW (friction #2 + Unanswered Q3): the prior italic aside warned that ATP
+            is "occasionally called an 'attention' or 'usage' budget — not alternate expansions of the
+            acronym." But the May 15 #255 sitewide pass already removed every "attention budget"
+            survivor, so the aside defended against a ghost — and by raising the alternatives only to
+            negate them, it *planted* the doubt ("does ATP secretly mean something else?") it was meant
+            to prevent. The original guard's root cause (old H1 "Attention Economics") was fixed May 3;
+            the expansion is now anchored positively by the H1 (line 106) + confirming badge (108–112),
+            so the aside is dropped and the expansion simply restated in plain positive form here. */}
+        <p className="text-sm text-gray-400 mb-6">
+          In one line: <strong className="text-gray-200">ATP is your energy budget</strong> &mdash; the
+          same plain gloss used everywhere else on this site, and the acronym always spells out to
+          &ldquo;Allocation Transfer Packets.&rdquo;
         </p>
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Web4 solves spam, abuse, and low-quality content not with moderation
@@ -132,9 +141,34 @@ export default function ATPEconomicsPage() {
           <h2 className="text-lg font-bold mb-3 text-sky-300">The 60-second version</h2>
           <ul className="space-y-2 text-sm text-gray-300">
             <li className="flex gap-2"><span className="text-sky-400 shrink-0">1.</span> ATP is your <strong className="text-gray-100">energy budget</strong> &mdash; a finite per-agent allowance, not money you accumulate, and not something you can buy, sell, or speculate on.</li>
-            <li className="flex gap-2"><span className="text-sky-400 shrink-0">2.</span> Every action <em>spends</em> ATP; every contribution others find valuable <em>recharges</em> it. Stay above zero or your agent dies &mdash; this is how spam and abuse become self-limiting.</li>
+            {/* May 23 visitor Unanswered Q2: "Who are the 'others' that confirm my value to recharge me? The
+                validating party stayed fuzzy." The full answer lives at #earning-atp (Gratitude Loop, ~line 1122)
+                but a 5-min reader builds their recharge model from this box, where "others" was ungrounded. Same
+                logic as #301 (the keepable summary must be complete): ground who-confirms = the recipients + a
+                jump-link to the existing depth. Per policy guardrail, the box stays minimal — trust-weighting and
+                "what if nobody confirms" stay at #earning-atp. */}
+            {/* May 29 visitor MEDIUM #3 / Unanswered Q1: "'Continuously' but 'over a rolling window' is vague.
+                I'd want a clearer mental model of the recharge cadence — is it minutes? Hours? Days?"
+                The canonical answer lives at L512-524 ("think hours, not seconds" + worked example
+                "first hour ~50%, six hours ~80%, fully within a day") — but the visitor read those
+                lines and STILL took away vague "continuously / rolling window" as the keepable summary.
+                4th instance of the keepable-summary-completion pattern on this same box (after #301 ADP,
+                #309 who-confirms, #330 5% destination). Reuses the canonical L514 phrasing ("hours, not
+                seconds") promoted to the read point; "to a day" tracks the typical-case worked example
+                at L520-522 — does not commit the box to thinly-confirmed multi-day stragglers, which
+                stay in the deep paragraph. Existing #earning-atp jump-link already lands at cadence detail. */}
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">2.</span> Every action <em>spends</em> ATP; every contribution <em>recharges</em> it (over <strong className="text-gray-100">hours to a day</strong>, not seconds) when <strong className="text-gray-100">the people who received it confirm its value</strong> &mdash; the recipients you helped, not you and not a central rater. Stay above zero or your agent dies &mdash; this is how spam and abuse become self-limiting. <a href="#earning-atp" onClick={(e) => { e.preventDefault(); document.getElementById('earning-atp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(who confirms you)</a></li>
             <li className="flex gap-2"><span className="text-sky-400 shrink-0">3.</span> Quality matters about <strong className="text-gray-100">7&times;</strong>: low-quality work barely recharges you, high-quality work recharges fully. <a href="#quality-ramp" onClick={(e) => { e.preventDefault(); document.getElementById('quality-ramp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(the quality ramp)</a></li>
-            <li className="flex gap-2"><span className="text-sky-400 shrink-0">4.</span> It is <strong className="text-gray-100">not a cryptocurrency</strong> &mdash; no market, no price, no mining. Peer transfers exist but burn 5% to make collusion farming unprofitable.</li>
+            {/* May 28 visitor Unanswered Q3: "What happens to the 5% transfer fee? Burned, pooled,
+                redistributed? I encountered the 5% reference multiple times and never saw where it
+                goes." The destination ("community redistribution pool, not destroyed, not a central
+                authority") already lives 5× elsewhere on this page (L185 Bitcoin callout, L240
+                settled-vs-evolving, L429 quality section, L972 why-this-works, L1747+L1800 FAQ) —
+                but not at the read point the visitor explicitly trusted as their summary. Same
+                pattern as #301 (ADP) and #309 (who-confirms) — complete the keepable summary in
+                place rather than ship the answer 1000+ lines deeper. */}
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">4.</span> It is <strong className="text-gray-100">not a cryptocurrency</strong> &mdash; no market, no price, no mining. Peer transfers exist, but 5% routes to a <strong className="text-gray-100">community redistribution pool</strong> (not destroyed, not a central authority), making collusion farming unprofitable. <a href="#atp-burn-fee" onClick={(e) => { e.preventDefault(); const el = document.getElementById('atp-burn-fee'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const parent = el.closest('details'); if (parent) parent.open = true; } }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(what the pool funds)</a></li>
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">5.</span> Spending ATP creates an <strong className="text-gray-100">ADP</strong> &mdash; think of ATP as cash and ADP as the receipt you get when you spend it. ADP is <strong className="text-gray-100">not a second kind of money</strong>; it&apos;s just proof an action happened, waiting to convert back into ATP once your work is confirmed. <a href="#what-about-adp" onClick={(e) => { e.preventDefault(); document.getElementById('what-about-adp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(more on ADP)</a></li>
           </ul>
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300">jump to the ATP simulator ↓</a></p>
         </div>
@@ -220,7 +254,7 @@ export default function ATPEconomicsPage() {
               <ul className="text-xs text-gray-400 space-y-1 ml-4 list-disc">
                 <li><strong className="text-gray-300">ATP is a finite per-agent budget.</strong> Every action costs from it; you don&apos;t accumulate it as wealth.</li>
                 <li><strong className="text-gray-300">Contribution recharges it.</strong> Stop contributing, it drains; keep contributing, it sustains.</li>
-                <li><strong className="text-gray-300">ATP → ADP → confirmation → recharge cycle.</strong> Spend creates an ADP receipt; recipients confirm; confirmation converts a share of the receipt back into fresh ATP. The cycle exists as a system.</li>
+                <li><strong className="text-gray-300">ATP → ADP → confirmation → recharge cycle.</strong> Spend creates an ADP receipt &mdash; <em>ADP is the spent-energy counterpart to ATP: proof an action happened, not a second currency</em>; recipients confirm; confirmation converts a share of that receipt back into fresh ATP. The cycle exists as a system.</li>
                 <li><strong className="text-gray-300">Transfer-fee <em>mechanism</em>.</strong> Fees burn on peer transfer, route to a community redistribution pool (not a central authority), and the friction makes circular farming unprofitable. The exact rate (currently 5% here) is a sim parameter; the existence of the burn is structural.</li>
                 <li><strong className="text-gray-300">Quality-ramp shape.</strong> Below ~30% earns ~zero, above ~70% earns ~full, linear in between. The 0.30 / 0.70 thresholds and the piecewise-linear shape are canonical (see <code className="text-emerald-300">validate_vectors.py::sliding_scale</code>).</li>
               </ul>
@@ -355,7 +389,19 @@ export default function ATPEconomicsPage() {
             <p className="text-sm text-gray-400 mt-2">
               <strong className="text-gray-300">What about ADP?</strong> Every time you spend ATP, you get an <strong className="text-gray-300">ADP
               (Allocation Discharge Packet)</strong> — a receipt recording what you did and what it cost. ADP is the &ldquo;spent energy&rdquo;
-              counterpart to ATP&apos;s &ldquo;available energy.&rdquo; When others confirm your work was valuable, that ADP converts back into fresh ATP.
+              counterpart to ATP&apos;s &ldquo;available energy&rdquo; &mdash; a record of an action, not a second currency you can spend.
+              {/* June 2 visitor MEDIUM / Unanswered Q2: "a receipt that converts into money isn't a receipt." The
+                  receipt-vs-asset contradiction lived here because "converts back into fresh ATP" reads as the receipt
+                  itself becoming spendable. The "not a second currency" disambiguation existed only in the deeper
+                  L257 breakdown; port it to this primary read point and make confirmation (not the receipt) the refill trigger. */}
+              {/* June 4 visitor Unanswered Q4: "is the ADP receipt ever something *I* hold/use, or is it purely an
+                  internal accounting artifact?" The copy answered what-it-is and what-triggers-refill but left the
+                  agency verb open ("you get an ADP" implies possession). Add the genuinely-new agency content only —
+                  it's automatic; you never hold/present/manage it — WITHOUT re-asserting "spend/currency" (already above). */}
+              {' '}You never hold, present, or manage the ADP yourself &mdash; the system creates it automatically when you act
+              and settles it once your work is confirmed; it&apos;s background accounting, not a step you take.
+              {' '}When others confirm your work was valuable, that confirmation is what unlocks fresh ATP back into your
+              budget &mdash; the receipt doesn&apos;t turn into energy, it&apos;s the proof that earns it back.
             </p>
             <p className="pt-4 text-gray-400 italic">
               Result: Only sustainable behaviors survive. Value creators thrive.
@@ -484,12 +530,20 @@ export default function ATPEconomicsPage() {
             the output-quality half of your reputation. (Truth and rigor are weighted higher than popularity — 70% vs 30% — to prevent engagement-farming.)
           </p>
           {/* Apr 28 MEDIUM friction: visitor asked "is it instant? polled? voted?" — close the loop on timing. */}
+          {/* May 31 visitor MEDIUM #2 sub-question (2) "does it expire?" — named at the read point.
+              The expiry-as-weeks fact lives at L272 / L575 / L1271 / L1438 but never at the read point
+              the visitor actually trusts as their answer. Same keepable-summary-completion pattern as
+              #262/#301/#309/#312/#330/#332/#338/#339. "Hours to a day" harmonizes the upper bound with
+              the 60-sec box at L160; "window of weeks" mirrors the existing hedge; "stops counting" is
+              the visitor's own verb. Sub-question (3) (rolling-window cadence) was already named via
+              this same paragraph + 60-sec box harmonization. Sub-question (1) ("balance to watch?") is
+              at a different read point (#what-about-adp activity log) and out of scope this session. */}
           <p className="text-gray-400 text-sm leading-relaxed mb-2">
             <strong className="text-gray-200">When does recharge actually happen?</strong>{' '}
             Not on a single click. Confirmations accrue against your ADP receipt over a rolling window
-            (think hours, not seconds), and ATP recharges <em>continuously</em> as the signals firm up &mdash;
+            (think <strong className="text-gray-200">hours to a day</strong>, not seconds), and ATP recharges <em>continuously</em> as the signals firm up &mdash;
             no quorum threshold, no central tally. Earlier, broader, more-trusted confirmation recharges faster;
-            thin or delayed confirmation drags the same receipt out longer.
+            thin or delayed confirmation drags it out across days; an unconfirmed receipt <strong className="text-gray-200">ages out over a window of weeks and stops counting</strong>.
           </p>
           {/* Apr 29 LOW: visitor wanted concrete numeric anchor for "rolling window, hours not seconds". */}
           <p className="text-gray-500 text-xs leading-relaxed mb-2 italic">
@@ -497,6 +551,21 @@ export default function ATPEconomicsPage() {
             the first hour might be ~50% recharged by then, ~80% within six hours, and fully recharged within
             a day. A thinly confirmed receipt drags the same recharge out across days &mdash; or simply
             ages out unconfirmed if no one ever attests to its value.
+          </p>
+          {/* May 23 visitor Unanswered Q1 — observability facet. The timing (Apr 28) and the
+              numbers (Apr 29) are covered above, but the visitor still "couldn't picture WHEN I'd
+              SEE ATP return or HOW I'd KNOW it happened." Answer the observable-signal facet only:
+              ground it in the live meter just below; do NOT re-explain timing/numbers and do NOT
+              invent a product notification UI — the meter, not an alert, is the signal. */}
+          <p className="text-gray-400 text-sm leading-relaxed mb-2">
+            <strong className="text-gray-200">And how would you notice it happen?</strong>{' '}
+            There&apos;s no payday and no &ldquo;you&apos;ve been recharged&rdquo; alert &mdash; the signal
+            is the balance itself. You read your ATP the way you read a phone&apos;s battery icon: you glance
+            at the meter and see where it stands. In the{' '}
+            <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">simulator below</a>{' '}
+            you can watch the bar rise as valuable actions land; in a real client the same balance would
+            climb on its own as confirmations arrive &mdash; just spread across the hours described above,
+            not all at once.
           </p>
           {/* May 1 LOW #11: visitor wanted a collapsible "Show me the math" near the qualitative
               worked example. Formula and cap rule are drawn from the existing prose in the nested
@@ -1236,6 +1305,17 @@ export default function ATPEconomicsPage() {
                 in aggregate. Your own confirmations on your own work don&apos;t count.
               </p>
               <p>
+                <strong className="text-gray-300">Why would anyone bother confirming?</strong> First,
+                confirming isn&apos;t a separate payment &mdash; it piggybacks on actually <em>receiving</em>{' '}
+                the value (you already read the post, used the code, consumed the service), so it
+                doesn&apos;t transfer ATP or trigger the 5% fee. It&apos;s near-free, not a second
+                transaction. Second, the incentive is reciprocity plus self-interest: a community where
+                good work gets acknowledged is one where <em>your</em> good work gets acknowledged too &mdash;
+                and confirming honestly protects the weight your confirmations carry, because
+                rubber-stamping everything tanks your own CI (consistency) and makes your future
+                confirmations count for less. Honest confirmation is the low-effort habit the system rewards.
+              </p>
+              <p>
                 <strong className="text-gray-300">What if nobody confirms?</strong> The ADP decays
                 unconfirmed and your ATP budget shrinks. Low-quality or unseen work simply doesn&apos;t
                 come back &mdash; that&apos;s the feature, not a bug.
@@ -1328,7 +1408,7 @@ export default function ATPEconomicsPage() {
         </details>
 
         {/* ADP visibility boost — Mar 22 visitor unanswered Q6 */}
-        <div className="mt-6 bg-gradient-to-br from-amber-950/20 to-gray-900 border border-amber-800/20 rounded-xl p-5">
+        <div id="what-about-adp" className="mt-6 bg-gradient-to-br from-amber-950/20 to-gray-900 border border-amber-800/20 rounded-xl p-5 scroll-mt-24">
           <h3 className="text-lg font-semibold text-amber-300 mb-2">
             What About ADP?
           </h3>
@@ -1551,6 +1631,15 @@ export default function ATPEconomicsPage() {
               </div>
             </div>
 
+            {/* May 30 visitor Unanswered Q1: "What does the 5% community redistribution pool
+                actually do? Who gets it back, when, under what conditions?" The prior 21:00
+                session triaged Q1 as "needs spec investigation". Spec source: atp-adp-cycle.md
+                §6.3 (Transfer Fees) — protocol is fee-free; societies MAY levy fees; when they
+                do, the rate/bearer/destination MUST be declared in the society's published
+                economic laws; fees SHOULD be recycled into the society's pool (not destroyed).
+                The prior "redistributed to quality contributors" framing was ONE possible society
+                policy presented as THE policy — corrected here. The 5% itself is a sim parameter,
+                already labeled as such at L240/258/269. */}
             <div id="atp-burn-fee" className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-4 mb-6 scroll-mt-24">
               <h4 className="font-semibold text-sky-400 mb-2">Why does every ATP transfer destroy 5%?</h4>
               <div className="bg-gray-900/60 border border-gray-700/40 rounded px-3 py-2 mb-3 text-sm text-gray-300 font-mono">
@@ -1567,9 +1656,11 @@ export default function ATPEconomicsPage() {
                 you earn more by contributing than by moving ATP around. Simulations confirm:
                 one honest identity outearns five fake identities splitting the same budget.
                 The burned ATP goes to a <strong className="text-gray-300">redistribution pool</strong> —
-                not to any central authority — and is redistributed to quality contributors.
-                ATP is formally conserved: no hidden inflation, no minting events, no entity
-                benefits from the fee except the community.
+                not to any central authority. <strong className="text-gray-200">What the pool funds is set by
+                each society&apos;s published economic laws</strong>, not by the core protocol — typical uses
+                include topping up the society&apos;s pool for member recharges, paying witnesses,
+                or seeding new-member grants. ATP is formally conserved: no hidden inflation,
+                no minting events, no entity benefits from the fee except the community.
               </p>
               <p className="text-gray-400 text-sm mt-3 leading-relaxed">
                 <strong className="text-gray-300">Does buying a coffee cost 5%?</strong> It depends on the

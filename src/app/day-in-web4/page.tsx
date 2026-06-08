@@ -393,6 +393,22 @@ const SCENARIOS: Scenario[] = [
   },
 ];
 
+/**
+ * The concepts a scenario touches, deduped by link and kept in first-seen
+ * order. Used to surface "what do these terms mean?" links at the point of
+ * confusion (the setup text) instead of only after a choice is made.
+ */
+function scenarioConcepts(s: Scenario): { concept: string; conceptLink: string }[] {
+  const seen = new Set<string>();
+  const out: { concept: string; conceptLink: string }[] = [];
+  for (const c of s.choices) {
+    if (seen.has(c.conceptLink)) continue;
+    seen.add(c.conceptLink);
+    out.push({ concept: c.concept, conceptLink: c.conceptLink });
+  }
+  return out;
+}
+
 /* ─── Component ────────────────────────────────────────── */
 
 export default function DayInWeb4Page() {
@@ -451,6 +467,12 @@ export default function DayInWeb4Page() {
         What would your day look like if the internet had trust built in?
         10 scenarios across one day — pick a choice in each, see what happens, then click <em>Next scenario</em> to advance through the timeline above.
       </p>
+      <p className="text-gray-500 mb-4 text-sm italic">
+        Everything below is narrated in the present tense as a thought experiment — none of it ships today. Read it as what a trust-native internet <em>would</em> feel like if you were living an ordinary day inside it.
+      </p>
+      <p className="text-gray-500 mb-6 text-sm">
+        One thing to know before the numbers start: <strong className="text-gray-400">trust scores run 0 to 1</strong>, where <strong className="text-gray-400">0.5 is neutral</strong> (everyone starts there) and 1.0 is the theoretical max. So a &ldquo;0.85&rdquo; below means well-trusted; a &ldquo;0.50&rdquo; means brand-new or neutral.
+      </p>
 
       {/* Your First 5 Minutes — Onboarding Walkthrough */}
       <details className="mb-8 rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.4)' }}>
@@ -465,7 +487,7 @@ export default function DayInWeb4Page() {
 
         <div className="px-4 pb-4 pt-2 space-y-4">
           <p className="text-gray-400 text-sm">
-            Before your day starts, you need to set up once. Here&apos;s what that looks like — no crypto wallet, no blockchain, no 24-word seed phrase.
+            <strong className="text-gray-300">None of this is downloadable yet — Web4 is active research.</strong> But <em>if</em> it existed, you&apos;d set up once before your day starts. Here&apos;s what that setup <em>would</em> look like — no crypto wallet, no blockchain, no 24-word seed phrase. Read the steps below as &ldquo;what it would feel like,&rdquo; not &ldquo;what to do today.&rdquo;
           </p>
 
           {/* Step 1: Install */}
@@ -480,7 +502,7 @@ export default function DayInWeb4Page() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-violet-500 flex items-center justify-center text-xl">🔐</div>
                 <div>
                   <div className="text-sm text-gray-200 font-medium">Web4 Identity</div>
-                  <div className="text-xs text-gray-500">Your trust wallet — not a crypto wallet</div>
+                  <div className="text-xs text-gray-500">A trust wallet — not a crypto wallet</div>
                 </div>
               </div>
               <p className="text-xs text-gray-500">
@@ -680,8 +702,25 @@ export default function DayInWeb4Page() {
           </div>
 
           {/* Setup */}
-          <p className="text-gray-300 leading-relaxed mb-6">
+          <p className="text-gray-300 leading-relaxed mb-3">
             {scenario.setup}
+          </p>
+
+          {/* Concept links at the point of confusion — available before you
+              pick a choice, not only in the post-choice comparison. */}
+          <p className="text-gray-500 text-xs mb-6">
+            New to these terms?{' '}
+            {scenarioConcepts(scenario).map((c, i) => (
+              <span key={c.conceptLink}>
+                {i > 0 && <span className="text-gray-700"> · </span>}
+                <Link
+                  href={c.conceptLink}
+                  className="text-sky-500 hover:text-sky-400 transition-colors"
+                >
+                  {c.concept}
+                </Link>
+              </span>
+            ))}
           </p>
 
           {/* Choices or Comparison */}
@@ -844,7 +883,12 @@ export default function DayInWeb4Page() {
             <strong className="text-sky-400">The honest answer:</strong> Today, none of these exist — Web4 is research.
             But the adoption path is designed so you don&apos;t have to wait for Tier 5.
             A browser extension (Tier 1) could ship as soon as the protocol stabilizes.
-            Each tier adds capability without requiring the next.
+            Each tier adds capability without requiring the next.{' '}
+            {/* May 23 visitor Unanswered Q4: "I'd love a clearer sense of 'here's what exists today vs.
+                what's still on paper.'" The box gives only the negative ("none of these exist") + the
+                adoption path; the positive built-vs-not-built breakdown lives one click away at
+                why-web4#faq-deployed but was never linked from here. Route to it — don't restate it. */}
+            <Link href="/why-web4#faq-deployed" className="text-sky-400 hover:underline">See exactly what&apos;s built today vs. still on paper &rarr;</Link>
           </p>
         </div>
       </section>

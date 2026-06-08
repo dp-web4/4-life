@@ -26,7 +26,7 @@ export default function TLDRPage() {
           Web4 in 2 Minutes
         </h1>
         <p className="text-lg text-gray-400 leading-relaxed mb-10">
-          Plain English first &mdash; the acronyms (ATP, LCT) are spelled out the first time they appear. No prerequisites.
+          Plain English first, so you can read this cold &mdash; every term is spelled out the first time it appears. The two you&apos;ll lean on most are ATP and LCT; a few more (T3, CI, MRH) appear briefly below, each glossed in place, with deeper shorthand explained on their own pages.
         </p>
 
         {/* The Problem */}
@@ -52,7 +52,8 @@ export default function TLDRPage() {
               <span className="text-sky-400 text-xl mt-0.5">1.</span>
               <p className="text-gray-300">
                 <strong className="text-white">Actions cost energy &mdash; valuable contributions earn it back.</strong> Posting,
-                messaging, voting — everything draws from a personal energy budget (called ATP — short for Allocation Transfer Packets),
+                messaging, voting — everything draws from a personal energy budget (called ATP — short for Allocation Transfer Packets,
+                a name borrowed from cellular biology, where ATP is the molecule your cells spend to do work),
                 but the budget refills continuously when others confirm your work was useful, so contributors don&apos;t get locked out.
                 Each action also creates a small receipt of what you spent. Spam drains the budget with no return.
               </p>
@@ -87,10 +88,11 @@ export default function TLDRPage() {
             </div>
           </div>
           {/* May 3 visitor LOW #4 + May 13 visitor MEDIUM: previously named MRH/CI but skipped T3 entirely, and never expanded the letters. Naive readers were meeting these acronyms unprepared on later pages.
-              May 14 visitor MEDIUM #1: counting 6 acronyms on one short page felt dense. Trade-off this iteration: keep the cold-hit hook (letters T3/MRH/CI still visible in the <summary> line so a later page's mention isn't a cold drop) but move the expanded gloss behind a click. Hypothesis to falsify next cycle: visitors who only want the 2-minute overview can ignore this; visitors meeting T3/MRH/CI on later pages still have a primed hook from the summary. */}
+              May 14 visitor MEDIUM #1: counting 6 acronyms on one short page felt dense. Trade-off this iteration: keep the cold-hit hook (letters T3/MRH/CI still visible in the <summary> line so a later page's mention isn't a cold drop) but move the expanded gloss behind a click. Hypothesis to falsify next cycle: visitors who only want the 2-minute overview can ignore this; visitors meeting T3/MRH/CI on later pages still have a primed hook from the summary.
+              May 22 visitor: hypothesis FALSIFIED. A linear reader hit the three BARE acronyms in the summary line, did NOT expand to find the glosses, and felt the "plain English first" promise broke ("seeing three undefined acronyms"). New decision: the summary now LEADS with three plain-English handles (trust dimensions / trust neighborhood / behavior holding together) and defers the letters to a "tap for the shorthand (T3, MRH, CI)" clause. This preserves both surviving constraints — May 14 density (still no full glosses in the summary) and the primed-hook (acronym letters still present, just no longer leading). Expanded <p> glosses unchanged. */}
           <details className="mt-4 pl-9">
             <summary className="text-gray-500 text-sm italic cursor-pointer hover:text-gray-400 select-none">
-              Three more shorthand names (T3, MRH, CI) live on their own pages &mdash; tap to peek, or meet them when you get there
+              Three more ideas round out the picture &mdash; your trust dimensions, your trust neighborhood, and whether your behavior holds together over time &mdash; each on its own page. Tap for the shorthand (T3, MRH, CI) and links, or meet them when you get there.
             </summary>
             <p className="text-gray-500 text-sm leading-relaxed mt-3 italic">
               <Link href="/trust-tensor" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">T3 (Talent / Training / Temperament)</Link>{' '}
@@ -129,7 +131,8 @@ export default function TLDRPage() {
           <h2 className="text-lg font-semibold text-amber-400 mb-2">Where is this now?</h2>
           <p className="text-gray-300 text-sm leading-relaxed mb-3">
             Web4 is <strong>active research with working simulations</strong>, not a deployed product.
-            This site lets you watch the mechanics in action — see societies form, trust networks
+            One distinction worth keeping straight: <strong className="text-gray-100">Web4 is the protocol &mdash; the rules and math; 4-Life (this site) is the lab where you explore those rules</strong> through simulations, walkthroughs, and explainers.
+            So 4-Life lets you watch the mechanics in action — see societies form, trust networks
             emerge, and bad actors fail. The underlying{" "}
             <a
               href="https://dp-web4.github.io/web4/"

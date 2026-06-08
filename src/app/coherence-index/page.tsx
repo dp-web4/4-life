@@ -174,11 +174,11 @@ export default function CoherenceIndexPage() {
             Web4 Foundation: Coherence
           </div>
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-            Coherence Index (CI)
+            Coherence Index: Behavioral Consistency
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed mb-4">
-            Think of CI as a <strong>behavioral consistency score</strong> &mdash; like a credit check
-            that asks not just &ldquo;who are you?&rdquo; but &ldquo;does your behavior make physical sense?&rdquo;
+            The <strong>Coherence Index (CI)</strong> works like a credit check &mdash; it asks
+            not just &ldquo;who are you?&rdquo; but &ldquo;does your behavior make physical sense?&rdquo;
           </p>
           <p className="text-base text-gray-400 leading-relaxed mb-4">
             CI measures four dimensions of consistency: where you are, what you can do,
@@ -223,7 +223,7 @@ export default function CoherenceIndexPage() {
               live in a tiny text-xs footer of the T3-vs-CI card above and was
               invisible. Promoted to its own visible callout where the formula
               first appears. */}
-          <div className="bg-orange-950/20 border border-orange-800/30 rounded-lg p-5 mb-6">
+          <div id="why-ci-squared" className="bg-orange-950/20 border border-orange-800/30 rounded-lg p-5 mb-6 scroll-mt-24">
             <div className="text-sm font-semibold text-orange-300 mb-2">
               Why is it CI<sup>2</sup>, not just CI?
             </div>
@@ -231,15 +231,68 @@ export default function CoherenceIndexPage() {
               Small drops in coherence should hurt more than linear &mdash;
               inconsistency breaks trust <em>and</em> creates ambiguity about
               which version of you is acting. So we square the coherence factor:{" "}
-              <code className="text-gray-200">Effective trust = T3 × CI²</code>.{" "}
+              <code className="text-gray-200">Effective trust = T3 × CI²</code>{" "}
+              (T3 is your earned 3-part trust score &mdash; the reputation you built over time).{" "}
               That way a 10% dip (CI = 0.9) only costs you about 19% of effective
               trust (0.9² = 0.81), but a 40% dip (CI = 0.6) costs you 64% (0.6² = 0.36).
               Your reputation matters &mdash; but only if your current behavior
               still looks like you.{" "}
+              {/* June 1 visitor M3 / Unanswered Q3: the shape rationale above tells you square beats
+                  linear, but never says whether the exponent itself is DERIVED or CHOSEN. Every other
+                  constant on the site (0.5, 0.85, 3 hops) is honestly labeled "calibrated, not derived" —
+                  CI² was the lone exception. Close the loop here, in the sibling #why-ci-starts-low's
+                  exact register. Do NOT claim "simulations compared exponents" (unverifiable). */}
+              Why <strong>2</strong> specifically, and not 1.5 or 3? Like the 0.85 starting value below,
+              it&rsquo;s a calibration choice (not a derived constant): 2 is the power that produced this
+              gentle middle &mdash; small dips forgiven, sustained ones compounded &mdash; where linear
+              (× CI) forgives too much and cubing (× CI³) punishes routine variance too hard.{" "}
               Need a T3 refresher?{" "}
               <Link href="/trust-tensor" className="text-sky-400 hover:text-sky-300">
                 See the Trust Tensor page
               </Link>.
+            </p>
+          </div>
+
+          {/* May 19 visitor Unanswered Q2 + Honest Assessment's #2 resonant point:
+              "It feels like the system distrusts me before I've done anything."
+              The visitor's literal remedy: "you're not being punished — you just
+              haven't been witnessed yet." Karma Journey is where the friction is
+              hit (CI 0.85 → ~1.4× costs), but that page is in #266's hunk region;
+              land the canonical answer here (mirrors #281's pattern for "why CI²?").
+              A future post-#266 session can wire up a deep-link from Karma Journey
+              to #why-ci-starts-low. */}
+          <div id="why-ci-starts-low" className="bg-orange-950/20 border border-orange-800/30 rounded-lg p-5 mb-6 scroll-mt-24">
+            <div className="text-sm font-semibold text-orange-300 mb-2">
+              Why doesn&rsquo;t a new account start at CI 1.0?
+            </div>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              CI scores whether your <em>current</em> behavior matches your <em>established</em> pattern.
+              A brand-new account has no established pattern yet — so there&rsquo;s no signal to match against.
+              The starting value (~0.85) isn&rsquo;t a penalty for being new; it&rsquo;s the system being honest
+              that <strong>it hasn&rsquo;t had a chance to witness you yet</strong>. With CI&nbsp;0.85, actions cost
+              about 1.4× their base price — a real friction, but a temporary one.
+            </p>
+            <p className="text-sm text-gray-300 leading-relaxed mt-3">
+              A handful of consistent grounding events — same device, same hours, same patterns — typically
+              lifts CI above 0.9, at which point the surcharge disappears entirely (costs return to the listed
+              price). Sustained consistent behavior is what closes the gap, and it closes fast.
+            </p>
+            {/* May 30 visitor Unanswered Q4: "Why 0.85 specifically? Why not 1.0 or 0.5?" The paragraphs
+                above answer "why not 1.0" but don't pin the SPECIFIC value 0.85 vs 0.5/0.7/0.95. Visitor's
+                verbatim remedy: "0.85 because newcomers are presumed mostly-consistent but unproven; below
+                0.85 means we've seen evidence of inconsistency." This is a calibration choice (0.85 is a
+                hardcoded engine constant, not derived) — mirror #292's MRH "calibrated, not derived" framing. */}
+            <p className="text-sm text-gray-300 leading-relaxed mt-3">
+              Why <strong>0.85</strong> specifically, and not 0.5 or 0.95? It&rsquo;s a calibration choice (not a derived
+              constant): the value presumes you&rsquo;re <em>probably</em> consistent but unproven — high enough to reflect
+              that most newcomers behave consistently from day one, low enough that the ~1.4× surcharge is actually felt.
+              Scores below 0.85 are reserved for accounts where the system has <em>witnessed</em> inconsistency, not for
+              accounts it simply hasn&rsquo;t witnessed yet.
+            </p>
+            <p className="text-xs text-gray-400 leading-relaxed mt-3 italic">
+              The framing matters: this isn&rsquo;t &ldquo;trust assumed by default, then taken away if you misbehave.&rdquo;
+              It&rsquo;s the opposite — there&rsquo;s nothing to assume yet, and the score climbs as the system
+              actually sees you. You&rsquo;re not being penalized; you just haven&rsquo;t been witnessed yet.
             </p>
           </div>
 

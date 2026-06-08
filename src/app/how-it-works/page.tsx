@@ -35,7 +35,7 @@ export default function HowItWorksPage() {
         <div>
           <strong className="text-gray-300">Already know Web4?</strong> Skip ahead to the{' '}
           <a href="#pieces" className="text-sky-400 hover:underline">full-picture diagram</a>{' '}
-          — a visual summary of how LCT, ATP, T3, CI, and MRH combine.
+          — a visual summary of how LCT, ATP, T3, MRH, and CI combine.
         </div>
       </div>
 
@@ -47,14 +47,19 @@ export default function HowItWorksPage() {
         <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
           How Web4 Societies Work
         </h1>
-        <div className="mb-4 p-3 bg-amber-950/30 border border-amber-800/30 rounded-lg text-sm text-amber-200/80">
-          <strong>Project status:</strong> Web4 is a <strong>research prototype</strong>, not a deployed product.
-          The mechanics described here are validated through simulations and an open-source{' '}
-          <Link href="/why-web4#faq-deployed" className="text-amber-300 hover:text-amber-200 underline">reference implementation</Link>,
-          but no live network with real users exists yet. The simulations on this site let you explore how it <em>would</em> work.
-          {' '}Curious what early deployment could look like? See the{' '}
-          <Link href="/why-web4#faq-adoption-path" className="text-amber-300 hover:text-amber-200 underline">concrete adoption path</Link>{' '}
-          — from browser extension overlays to full integration.
+        <div className="mb-4 p-3 bg-amber-950/30 border border-amber-800/30 rounded-lg">
+          <p className="text-base font-bold text-amber-200 flex items-center gap-2">
+            <span aria-hidden="true">🔬</span>
+            Nothing here is live — this is a research prototype.
+          </p>
+          <p className="mt-1.5 text-sm text-amber-200/75">
+            Everything below describes how Web4 <em>would</em> work, validated through simulations and an open-source{' '}
+            <Link href="/why-web4#faq-deployed" className="text-amber-300 hover:text-amber-200 underline">reference implementation</Link>{' '}
+            — no live network with real users exists yet. The present tense throughout is the model talking, not a running system.
+            {' '}Curious what early deployment could look like? See the{' '}
+            <Link href="/why-web4#faq-adoption-path" className="text-amber-300 hover:text-amber-200 underline">concrete adoption path</Link>{' '}
+            — from browser extension overlays to full integration.
+          </p>
         </div>
         <div className="mb-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg text-sm text-gray-300 space-y-2">
           <p className="text-xs uppercase tracking-wide text-sky-400 mb-2 font-semibold">Key Takeaways</p>
@@ -138,6 +143,27 @@ export default function HowItWorksPage() {
             </Link>
           </div>
 
+          {/* 2026-06-06 visitor LOW + Unanswered Q1: this grid had CI before MRH, but the landing page
+              and the LCT page's concept-sequence roadmap both use the canonical MRH(4)→CI(5) order.
+              Swapped so all three surfaces agree (LCT→ATP→T3→MRH→CI). The system-integration diagram
+              below intentionally places MRH as a loop-gate and is left untouched. */}
+          <div className="bg-gradient-to-br from-cyan-950/30 to-cyan-900/20 border border-cyan-800/30 rounded-lg p-6">
+            <div className="text-3xl mb-2">🌐</div>
+            <h3 className="text-lg font-semibold text-cyan-400 mb-2">
+              Context (MRH)
+            </h3>
+            <p className="text-sm text-gray-400">
+              You only see what&apos;s relevant to your trust network — like
+              hearing only conversations you&apos;re part of. Spam can&apos;t reach you.
+            </p>
+            <Link
+              href="/trust-neighborhood"
+              className="text-sky-400 hover:underline text-sm mt-2 inline-block"
+            >
+              Learn more →
+            </Link>
+          </div>
+
           <div className="bg-gradient-to-br from-orange-950/30 to-orange-900/20 border border-orange-800/30 rounded-lg p-6">
             <div className="text-3xl mb-2">🌊</div>
             <h3 className="text-lg font-semibold text-orange-400 mb-2">
@@ -152,23 +178,6 @@ export default function HowItWorksPage() {
             </p>
             <Link
               href="/coherence-index"
-              className="text-sky-400 hover:underline text-sm mt-2 inline-block"
-            >
-              Learn more →
-            </Link>
-          </div>
-
-          <div className="bg-gradient-to-br from-cyan-950/30 to-cyan-900/20 border border-cyan-800/30 rounded-lg p-6">
-            <div className="text-3xl mb-2">🌐</div>
-            <h3 className="text-lg font-semibold text-cyan-400 mb-2">
-              Context (MRH)
-            </h3>
-            <p className="text-sm text-gray-400">
-              You only see what&apos;s relevant to your trust network — like
-              hearing only conversations you&apos;re part of. Spam can&apos;t reach you.
-            </p>
-            <Link
-              href="/trust-neighborhood"
               className="text-sky-400 hover:underline text-sm mt-2 inline-block"
             >
               Learn more →

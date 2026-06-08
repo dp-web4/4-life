@@ -525,7 +525,11 @@ export default function KarmaJourneyPage() {
         <strong><Link href="/trust-tensor" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>Trust</Link></strong> = your reputation (Talent + Training + Temperament, averaged).{' '}
         <strong><Link href="/atp-economics" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>ATP</Link></strong> = your energy budget — every action costs ATP, run out and you die.{' '}
         <strong><Link href="/coherence-index" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>CI</Link></strong> (Coherence Index) = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;).
-        Everyone starts at CI 0.85, not 1.0 — you haven&apos;t demonstrated consistency yet, so actions cost ~1.4× their base price. As you behave consistently, CI rises to 0.9+ and the surcharge disappears (actions cost exactly their listed price).{' '}
+        Everyone starts at CI 0.85, not 1.0 — you haven&apos;t demonstrated consistency yet, so actions cost ~1.4× their base price (CI&nbsp;0.85 → ~40% surcharge). As you behave consistently, CI rises to 0.9+ and the surcharge disappears (actions cost exactly their listed price).{' '}
+        <Link href="/coherence-index#why-ci-starts-low" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>
+          (why this isn&rsquo;t a penalty)
+        </Link>{' '}
+        <strong style={{ color: 'var(--color-text-secondary)' }}>Karma tier</strong> = the grade your life earns, set by your <em>effective</em> trust at death: <strong>Honored</strong> (above 0.7 → next life starts with advantages), <strong>Neutral</strong> (0.3–0.7 → baseline, no head start or penalty), <strong>Constrained</strong> (below 0.3 → next life starts with lower trust and fewer resources).{' '}
         Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
       </p>
 
@@ -582,6 +586,15 @@ export default function KarmaJourneyPage() {
         <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.55 }}>
           Squaring makes inconsistency compound against you. A small dip barely shows (0.9² = 0.81); a serious one nearly halves you (0.6² = 0.36). Linear (× CI) would be too forgiving — it treats a 0.6 in the same proportion as a 0.9. Cubing (× CI³) would be too brutal, crushing a 0.9 down to 0.73 for routine variance. Square sits in the gentle middle: small dips forgiven, sustained dips punished.
         </p>
+        {/* June 1 visitor M3 / Unanswered Q3: the visitor read this shape rationale and still asked
+            "but why 2 specifically — is that derived or chosen?". Wire the read point to the canonical
+            honesty frame (coherence-index #why-ci-squared, now labeled "calibration choice, not derived",
+            matching the 0.5 / 0.85 / 3-hop posture). One phrase + link — the shape callout above stays the
+            primary read; the canonical "where the number comes from" answer lives on coherence-index. */}
+        <p style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', margin: '0.5rem 0 0', lineHeight: 1.5 }}>
+          And why 2, not some other power? It&apos;s a calibration choice, not a derived constant —{' '}
+          <Link href="/coherence-index#why-ci-squared" style={{ color: 'var(--color-sky)' }}>where the exponent comes from</Link>.
+        </p>
       </div>
 
       {/* Lives Overview Strip */}
@@ -626,11 +639,13 @@ export default function KarmaJourneyPage() {
 
         {/* Left: Current Life Status + Choices */}
         <div>
-          {/* Stats bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+          {/* Stats bar — May 20 visitor MEDIUM #3: Raw and Effective shown side-by-side during play, not only at death.
+              Card order keeps the two trust cards adjacent at mobile grid-cols-2 (positions 2+3 → row 2 together). */}
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-4">
             {[
               { label: 'Life', value: `#${currentLife.lifeNumber}`, color: '#93c5fd' },
-              { label: 'Trust (Raw)', value: baseComp.toFixed(3), color: baseComp > 0.7 ? '#6ee7b7' : baseComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `Raw ≥ 0.5 to survive; effective (raw × CI²) sets karma tier` },
+              { label: 'Trust (Raw)', value: baseComp.toFixed(3), color: baseComp > 0.7 ? '#6ee7b7' : baseComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `≥ 0.5 to survive this life` },
+              { label: 'Trust (Eff.)', value: effComp.toFixed(3), color: effComp > 0.7 ? '#6ee7b7' : effComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `raw × CI² — sets karma tier at death` },
               { label: 'Energy', value: `${currentLife.atp}`, color: currentLife.atp > 50 ? '#6ee7b7' : currentLife.atp > 20 ? '#fde68a' : '#fca5a5' },
               { label: 'Consistency', value: currentLife.ci.toFixed(2), color: currentLife.ci > 0.8 ? '#6ee7b7' : currentLife.ci > 0.5 ? '#fde68a' : '#fca5a5' },
             ].map(stat => (
@@ -670,6 +685,21 @@ export default function KarmaJourneyPage() {
                   ({(currentLife.ci * currentLife.ci * 100).toFixed(0)}% of raw — squaring penalizes inconsistency)
                 </span>
               </div>
+              {/* May 21 visitor MEDIUM — port "10% dip → 19% loss" intuition from /coherence-index to point-of-action.
+                  Visitor reached the play area with the formula visible but the *interpretation* offscreen (page-top
+                  callout at ~580) or buried as 0.75rem muted prose below. Same antipattern the May 15 visitor flagged
+                  on the page-top callout: "scanning visitors absorbed the card yet kept reporting the 'why' as
+                  unexplained." Promote a punchy two-number anchor in 0.85rem body type right after the live equation
+                  so the strip grounds the math and the callout interprets it before the eye moves on. */}
+              <div style={{
+                marginBottom: '0.5rem',
+                padding: '0.5rem 0.75rem', borderRadius: '0.375rem',
+                background: 'rgba(253, 230, 138, 0.05)', borderLeft: '3px solid rgba(253, 230, 138, 0.4)',
+              }}>
+                <div style={{ fontSize: '0.85rem', color: 'var(--color-text-primary)', fontWeight: 600, lineHeight: 1.45 }}>
+                  Why squared? Even small inconsistency hurts trust disproportionately — a <span style={{ color: '#fde68a' }}>10% dip costs ~19%</span>; a <span style={{ color: '#fca5a5' }}>40% dip costs 64%</span>.
+                </div>
+              </div>
               <div style={{ marginBottom: '0.375rem', fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>
                 Effective trust determines your earning rate, action weight, and how others prioritize your contributions.
               </div>
@@ -680,17 +710,21 @@ export default function KarmaJourneyPage() {
               )}
               <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
               {currentLife.lifeNumber === 1
-                ? <>Consistency (CI) modulates how others perceive your trust. New entities have limited history (CI = {currentLife.ci.toFixed(2)}), so effective trust starts below raw. As you make consistent choices, CI rises toward 1.0 and the gap closes. The squaring means small inconsistencies have outsized impact: 0.9² = 0.81 (barely a dent), but 0.6² = 0.36 (nearly halved).</>
-                : <>Your karma from Life {currentLife.lifeNumber - 1} set your raw trust at {baseComp.toFixed(3)}. Consistency ({currentLife.ci.toFixed(2)}) {currentLife.ci >= 0.9 ? 'is high, so the gap is small' : 'still modulates what others see'}. The squaring means small inconsistencies have outsized impact: 0.9² = 0.81, barely a dent; 0.6² = 0.36, nearly halved.</>
+                ? <>Consistency (CI) modulates how others perceive your trust. New entities have limited history (CI = {currentLife.ci.toFixed(2)}), so effective trust starts below raw. As you make consistent choices, CI rises toward 1.0 and the gap closes.</>
+                : <>Your karma from Life {currentLife.lifeNumber - 1} set your raw trust at {baseComp.toFixed(3)}. Consistency ({currentLife.ci.toFixed(2)}) {currentLife.ci >= 0.9 ? 'is high, so the gap is small' : 'still modulates what others see'}.</>
               }</span>
             </div>
           ) : Math.abs(effComp - baseComp) > 0.01 ? (
+            /* June 2 visitor MEDIUM / Unanswered Q1: during play (tick>0) this persistent strip restated only the
+               formula, dropping the purpose. The raw=survival / effective=next-life-tier contrast lives in the tick===0
+               block, the stat hints, and the conditional "You're not dead" callout — but vanished once an action was
+               clicked, which is exactly where the visitor "had to infer it." Add the one-clause purpose contrast here. */
             <div style={{
               fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.5rem',
               padding: '0.375rem 0.75rem', borderRadius: '0.375rem',
               background: 'var(--color-bg-secondary)',
             }}>
-              Effective trust ({effComp.toFixed(3)}) = Raw ({baseComp.toFixed(2)}) × CI² ({currentLife.ci.toFixed(2)}²). Consistency modulates what others see.
+              Effective trust ({effComp.toFixed(3)}) = Raw ({baseComp.toFixed(2)}) × CI² ({currentLife.ci.toFixed(2)}²). Raw keeps you alive this life; effective sets the karma tier that seeds your next.
             </div>
           ) : null}
 
