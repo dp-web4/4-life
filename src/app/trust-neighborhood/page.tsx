@@ -204,7 +204,7 @@ export default function MarkovRelevancyHorizonPage() {
                 <li>Separate graph per role (you-as-doctor ≠ you-as-neighbor)</li>
                 <li>Edges carry trust scores across 3 dimensions</li>
                 <li>Your relationships define what you see — no algorithm</li>
-                <li>Hard 3-hop boundary — beyond it, you don&apos;t exist to them</li>
+                <li>Hard 3-hop boundary — beyond it, you carry no trust weight to them (still visible, just unverified)</li>
                 <li>Crossing boundaries costs ATP (spam costs real energy)</li>
                 <li>You own your graph — it lives on your device</li>
               </ul>
@@ -580,7 +580,17 @@ export default function MarkovRelevancyHorizonPage() {
             </div>
             <p className="text-center text-sm text-gray-400 mt-4">
               Trust decays <strong className="text-cyan-300">0.7× per hop</strong>. At 3 hops, only 34% of trust remains.
-              Beyond that — nothing. This natural boundary keeps the network manageable and private.
+              Beyond that, trust <em>weight</em> falls to zero. This natural boundary keeps the network manageable and private.
+            </p>
+            {/* 2026-06-07 visitor LOW + Unanswered Q3/Q4: page "read both ways" on invisible-vs-untrusted, and the
+                resolution was buried in the collapsed filter-bubble FAQ below. Name it at the prominent read point. */}
+            <p className="text-center text-xs text-gray-500 mt-3 max-w-2xl mx-auto leading-relaxed">
+              &ldquo;Zero&rdquo; here means trust <em>weight</em>, not visibility — beyond 3 hops you can still see someone,
+              you just treat them as an unverified stranger instead of letting their trust flow to you. And the boundary
+              isn&apos;t a wall: any agent who happens to sit in two neighborhoods at once is a{' '}
+              <strong className="text-gray-400">bridge</strong> (not a special role you apply for), reconnecting graphs that
+              would otherwise be 4+ hops apart.{' '}
+              <a href="#faq-filter-bubbles" className="text-sky-400 hover:underline">More in the filter-bubble FAQ below</a>.
             </p>
           </div>
 
@@ -630,7 +640,7 @@ export default function MarkovRelevancyHorizonPage() {
                 <div><strong className="text-cyan-300">Direct friend</strong> → 70%</div>
                 <div><strong className="text-cyan-300">Friend of friend</strong> → 49%</div>
                 <div><strong className="text-cyan-300">3 hops away</strong> → 34%</div>
-                <div><strong className="text-gray-500">Beyond</strong> → 0% (stranger)</div>
+                <div><strong className="text-gray-500">Beyond</strong> → 0% trust weight (treated as a stranger, not invisible)</div>
               </div>
               <details className="text-xs text-gray-500">
                 <summary className="cursor-pointer hover:text-gray-400">Formula</summary>
@@ -1150,7 +1160,7 @@ SELECT ?entity ?distance WHERE {
         </section>
 
         {/* FAQ: Filter bubbles — visitor Q Mar 24 */}
-        <section className="max-w-4xl mx-auto mt-12">
+        <section id="faq-filter-bubbles" className="max-w-4xl mx-auto mt-12 scroll-mt-24">
           <details className="bg-gray-800/40 border border-gray-700 rounded-xl p-6">
             <summary className="text-lg font-semibold text-cyan-400 cursor-pointer hover:text-cyan-300 transition-colors list-none flex justify-between items-center">
               <span>Doesn&apos;t the 3-hop limit create filter bubbles?</span>
