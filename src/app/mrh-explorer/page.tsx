@@ -645,6 +645,22 @@ export default function MRHExplorerPage() {
               weightPct={0}
             />
 
+            {/*
+              June 8 visitor MEDIUM — "the one place I felt the site contradicted itself":
+              Quality shows 0% weight, yet the ATP Cost line right below multiplies by quality.
+              Reconcile at the read point (the two numbers are co-visible here). The 0% is
+              quality's share of the horizon *shape*; ΔR/ΔT/ΔC alone set reach and required
+              trust, and quality doesn't change reach — so it carries no horizon weight, but it
+              still scales the *cost* of acting. No relabel of the shared weight tag (correct for
+              the other three rows); one clause where the eye hits both figures.
+            */}
+            <p style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginBottom: '0.5rem', lineHeight: 1.5, fontStyle: 'italic' }}>
+              Quality is 0% of the horizon <em>shape</em> — how far an action reaches and what trust
+              it needs is set by ΔR/ΔT/ΔC alone, and quality doesn&apos;t change reach. It instead
+              multiplies the energy <em>cost</em> of acting, which is why it shows up as the
+              &times;quality factor below but carries no weight above.
+            </p>
+
             {/* ATP Cost */}
             <div style={{
               marginTop: '0.5rem', padding: '0.75rem', borderRadius: '0.5rem',
