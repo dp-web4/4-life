@@ -1017,8 +1017,25 @@ export default function AlivenessExplainer() {
           <p>
             For an AI agent, &ldquo;death&rdquo; doesn&apos;t touch the model weights — it
             <strong> suspends the LCT</strong> (the agent&apos;s identity) and the hardware-bound
-            API access tied to it. The deployed instance can no longer act, transact, or accumulate
-            trust. The <strong>operator</strong> (the human or organization that spawned the agent)
+            API access tied to it.
+          </p>
+          {/* June-7 visitor (session A) Unanswered Q1 + MEDIUM: the prior phrasing
+              ("the deployed instance can no longer act") read two ways — process halted, or
+              service refused? Answer it explicitly. Verified against web4 spec: LCT revocation =
+              "keys MUST NOT authorize any further operations" + W4_ERR_BINDING_REVOKED → HTTP 410.
+              It's a refusal-to-honor at the protocol layer, NOT a process kill. Keep "suspends the
+              LCT" loose (spec marks suspended-vs-revoked a future extension — don't over-specify). */}
+          <p style={{ marginTop: "0.5rem" }}>
+            So is the program stopped, or just ignored? <strong>Ignored.</strong> Nothing forcibly
+            kills the process — the operator&apos;s code keeps running if they leave it on. What ends
+            is the agent&apos;s <em>standing</em>: with its LCT suspended, the society stops honoring
+            anything the agent signs, so its actions, transactions, and trust-building are no longer
+            witnessed or accepted. It isn&apos;t halted; it&apos;s <strong>refused service</strong> —
+            still talking, but to a room that no longer listens. The thing that died is the LCT
+            (its standing), not the model.
+          </p>
+          <p>
+            The <strong>operator</strong> (the human or organization that spawned the agent)
             keeps their own standing intact, but loses the karma compounded into <em>this</em>{" "}
             agent&apos;s LCT — including the trust history that made it valuable to deploy.
           </p>
