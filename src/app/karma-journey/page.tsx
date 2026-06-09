@@ -763,8 +763,15 @@ export default function KarmaJourneyPage() {
           {/* Choices */}
           {currentLife.alive ? (
             <div>
-              <div style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>
+              <div style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.25rem' }}>
                 Turn {currentLife.tick + 1} &mdash; Choose your action:
+              </div>
+              {/* June-8 visitor MEDIUM / Unanswered Q2: a "solid" reader still couldn't say *which* number a choice
+                  moves. The page explains what Raw and Effective each mean (stat hints, tick-0 block, L727 strip) but
+                  never the agency question — you don't pick a number, you move the inputs and both recompute. Answer it
+                  at the read point (right above the buttons), agency-first, without re-stating the meaning contrast. */}
+              <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginBottom: '0.5rem', lineHeight: 1.45 }}>
+                You don&apos;t move Raw or Effective directly — each action nudges the inputs above (your trust dimensions and consistency), and <strong style={{ color: 'var(--color-text-secondary)' }}>both numbers recompute</strong> from them.
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {CHOICES.map(choice => {

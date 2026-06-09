@@ -559,6 +559,15 @@ export default function MRHExplorerPage() {
               <span>Max (3)</span>
               <span>Beyond</span>
             </div>
+            {/* 2026-06-08 visitor LOW (Unanswered Q3): the depth labels (Default 2 / Max 3 / Beyond)
+                appeared with no gloss — a naive reader can't tell why 2 is the default, 3 the max, or what
+                "Beyond" means. The answer (depth 3 = practical horizon, past it signals collapse to noise and
+                entities go invisible) lived ~200 lines below at the "why 3 hops" section. One read-point caption
+                connecting the stops to that idea; echoes the page's "practical horizon / noise / invisible"
+                language and keeps 3 as the calibrated default, not a hard rule (see L778 "Calibrated, not derived"). */}
+            <div style={{ marginTop: '0.4rem', fontSize: '0.7rem', color: 'var(--color-text-muted)', fontStyle: 'italic', lineHeight: 1.45 }}>
+              Each stop widens how many hops out you can see. <strong style={{ color: 'var(--color-text-secondary)' }}>3</strong> is the practical default horizon; past it (<strong style={{ color: 'var(--color-text-secondary)' }}>Beyond</strong>) trust fades into noise and those entities become invisible.
+            </div>
           </div>
 
           {/* Node explorer */}
@@ -644,6 +653,22 @@ export default function MRHExplorerPage() {
               onChange={v => setProfile(p => ({ ...p, deltaQ: v }))}
               weightPct={0}
             />
+
+            {/*
+              June 8 visitor MEDIUM — "the one place I felt the site contradicted itself":
+              Quality shows 0% weight, yet the ATP Cost line right below multiplies by quality.
+              Reconcile at the read point (the two numbers are co-visible here). The 0% is
+              quality's share of the horizon *shape*; ΔR/ΔT/ΔC alone set reach and required
+              trust, and quality doesn't change reach — so it carries no horizon weight, but it
+              still scales the *cost* of acting. No relabel of the shared weight tag (correct for
+              the other three rows); one clause where the eye hits both figures.
+            */}
+            <p style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginBottom: '0.5rem', lineHeight: 1.5, fontStyle: 'italic' }}>
+              Quality is 0% of the horizon <em>shape</em> — how far an action reaches and what trust
+              it needs is set by ΔR/ΔT/ΔC alone, and quality doesn&apos;t change reach. It instead
+              multiplies the energy <em>cost</em> of acting, which is why it shows up as the
+              &times;quality factor below but carries no weight above.
+            </p>
 
             {/* ATP Cost */}
             <div style={{
