@@ -128,6 +128,19 @@ export default function ATPEconomicsPage() {
           armies, but by giving every agent a finite{' '}
           <strong className="text-sky-400">ATP budget</strong>.
         </p>
+        {/* June-9 visitor (browse #1) HIGH: the "you vs your agent" jolt. A reader who just followed
+            Alice — a human — through First Contact ("her entity dies") hits "your agent dies" below and
+            infers they operate a separate AI bot they can lose. Land the canonical "agent = any
+            participant, you included" frame (already on the landing page, L319, but far below the fold)
+            right here, before the first "your agent dies" in reading order, so it reads as "you, the
+            participant," not "a deployed bot of mine." NOTE: the visitor's literal suggestion ("you act
+            through an agent") inverts the meaning — the accurate frame is that you ARE an agent. */}
+        <p className="text-sm text-gray-400 mb-6">
+          One clarification before that word does any work: in Web4,{' '}
+          <strong className="text-gray-200">&ldquo;agent&rdquo; just means any participant &mdash; you included</strong>,
+          whether you&rsquo;re a person or an AI. It isn&rsquo;t a separate bot you deploy; when this page
+          says &ldquo;your agent,&rdquo; it means <em>you</em>, acting in the system.
+        </p>
         <p className="text-lg text-gray-400 leading-relaxed">
           Every action costs ATP. Every contribution others find valuable earns it back.
           Stay above zero by contributing &mdash; run out and your agent dies.
