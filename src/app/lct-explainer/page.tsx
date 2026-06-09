@@ -962,29 +962,34 @@ export default function LCTExplainerPage() {
             What each cap unlocks (rewards, witness role, recovery path) is detailed below the grid.
           </p>
 
+          {/* June-8 visitor LOW + Unanswered Q4: the misread ("TPM 0.90" read as a *starting* trust)
+              forms AT these large mono numbers. The "maximum / not starting points" truth already lives
+              in the flanking prose (L959-963 above, L992-997 below) but a beat away from where the eye
+              anchors. Label the glyph itself — a subordinate "max" prefix — so the number can't be read
+              as a starting value. Read-point relocation, not a restatement of the prose. */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
             <div className="bg-emerald-950/30 border border-emerald-800/30 rounded-lg p-4 text-center">
               <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Strongest</div>
               <div className="text-lg font-bold text-emerald-400 mb-1">TPM Chip</div>
-              <div className="text-2xl font-mono text-emerald-300">0.90</div>
+              <div className="text-2xl font-mono text-emerald-300"><span className="text-xs font-sans text-gray-500 align-middle mr-1">max</span>0.90</div>
               <div className="text-xs text-gray-500 mt-1">Dedicated, tamper-resistant</div>
             </div>
             <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-4 text-center">
               <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Strong</div>
               <div className="text-lg font-bold text-sky-400 mb-1">Secure Enclave</div>
-              <div className="text-2xl font-mono text-sky-300">0.85</div>
+              <div className="text-2xl font-mono text-sky-300"><span className="text-xs font-sans text-gray-500 align-middle mr-1">max</span>0.85</div>
               <div className="text-xs text-gray-500 mt-1">iPhone, Mac, Android</div>
             </div>
             <div className="bg-amber-950/30 border border-amber-800/30 rounded-lg p-4 text-center">
               <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Good</div>
               <div className="text-lg font-bold text-amber-400 mb-1">FIDO2 Key</div>
-              <div className="text-2xl font-mono text-amber-300">0.75</div>
+              <div className="text-2xl font-mono text-amber-300"><span className="text-xs font-sans text-gray-500 align-middle mr-1">max</span>0.75</div>
               <div className="text-xs text-gray-500 mt-1">YubiKey, security keys</div>
             </div>
             <div className="bg-gray-700/30 border border-gray-600/30 rounded-lg p-4 text-center">
               <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Basic</div>
               <div className="text-lg font-bold text-gray-400 mb-1">Software Only</div>
-              <div className="text-2xl font-mono text-gray-400">0.50</div>
+              <div className="text-2xl font-mono text-gray-400"><span className="text-xs font-sans text-gray-500 align-middle mr-1">max</span>0.50</div>
               <div className="text-xs text-gray-500 mt-1">Browser/OS level</div>
             </div>
           </div>
