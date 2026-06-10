@@ -133,6 +133,43 @@ export default function GlossaryPage() {
           ))}
         </div>
 
+        {/* Acronyms at a glance — the "what does CI stand for again?" escape-hatch.
+            Lives in the hero <section>, OUTSIDE glossaryRef, so the search filter never hides it.
+            Scoped to the core acronyms a beginner collects on the on-ramp; research-tier
+            initialisms (EP, R6, SAL, DID, D1–D9) are deliberately left to the search box so
+            this lookup doesn't re-expand the jargon iceberg. NOTE: "core acronyms" ≠ the
+            "Essential only" toggle's 7 terms (which include Web4/Society/Federation). */}
+        <div className="bg-gray-900/40 border border-gray-700 rounded-xl p-5 mb-6">
+          <div className="text-sm font-semibold text-gray-200 mb-1">Acronyms at a glance</div>
+          <p className="text-xs text-gray-500 mb-4">
+            The core acronyms you collect on the on-ramp. Hit a stray initialism and forgot
+            what it stands for? Find it here, then click through for the full entry.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+            {[
+              { id: "atp", abbr: "ATP", full: "Allocation Transfer Packet", gloss: "your spendable energy budget" },
+              { id: "adp", abbr: "ADP", full: "Allocation Discharge Packet", gloss: "the receipt for spent energy" },
+              { id: "lct", abbr: "LCT", full: "Linked Context Token", gloss: "hardware-rooted identity" },
+              { id: "t3", abbr: "T3", full: "Trust Tensor", gloss: "a 3-axis trust score" },
+              { id: "v3", abbr: "V3", full: "Value Tensor", gloss: "a 3-axis score for what you produce" },
+              { id: "ci", abbr: "CI", full: "Coherence Index", gloss: "a behavioral-consistency score" },
+              { id: "mrh", abbr: "MRH", full: "Markov Relevancy Horizon", gloss: "how far your trust reaches" },
+            ].map((a) => (
+              <a
+                key={a.id}
+                href={`#${a.id}`}
+                className="flex items-baseline gap-2 text-sm hover:text-sky-400 transition-colors"
+              >
+                <span className="font-mono font-semibold text-sky-400 w-12 shrink-0">{a.abbr}</span>
+                <span className="text-gray-300">
+                  <span className="text-gray-200">{a.full}</span>{" "}
+                  <span className="text-gray-500">&mdash; {a.gloss}</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
           <p className="text-gray-400 leading-relaxed">
             <strong className="text-sky-400">Note:</strong> Some terms have both
@@ -174,7 +211,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* LCT */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
+          <div id="lct" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Verified Presence — LCT (Linked Context Token)
             </h3>
@@ -242,7 +279,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* ATP */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
+          <div id="atp" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Energy Budget — ATP (Allocation Transfer Packet)
             </h3>
@@ -282,7 +319,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* ADP — Apr 29 LOW: visitor flagged "ADP appears all over the site but isn't a top-level entry" */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          <div id="adp" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Spent Energy Receipt — ADP (Allocation Discharge Packet)
             </h3>
@@ -319,7 +356,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* T3 */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
+          <div id="t3" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Trust Tensor (T3)
             </h3>
@@ -351,7 +388,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* MRH */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
+          <div id="mrh" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Trust Neighborhood (MRH)
             </h3>
@@ -390,7 +427,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* CI */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
+          <div id="ci" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Coherence Index (CI)
             </h3>
@@ -587,7 +624,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* V3 */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          <div id="v3" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               V3 (Value Tensor)
             </h3>
