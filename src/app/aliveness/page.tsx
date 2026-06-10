@@ -1213,8 +1213,14 @@ export default function AlivenessExplainer() {
         </div>
         <p style={{ color: "#9ca3af", fontSize: "0.9rem", marginTop: "1rem" }}>
           The witness requirement means you can&apos;t just spawn entities — someone has to vouch for you.
+          These witnesses aren&apos;t a central authority or notary: they&apos;re other already-established
+          participants — your own devices co-signing for each other, plus optional independent network
+          nodes — so existence has to be corroborated, not declared.
           Witness attestations expire after <strong>300 seconds</strong>, so they must be fresh and intentional,
-          not recycled from old interactions.
+          not recycled from old interactions.{" "}
+          <Link href="/lct-explainer#witness-infrastructure" style={{ color: "#818cf8" }}>
+            Who runs witnesses, and why? →
+          </Link>
         </p>
           </div>
         </details>
