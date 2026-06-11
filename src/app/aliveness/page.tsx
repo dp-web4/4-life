@@ -1087,7 +1087,8 @@ export default function AlivenessExplainer() {
             <Link href="/karma-journey" style={{ color: "#fbbf24" }}>More in Karma Journey →</Link>
           </p>
           <p>
-            <strong>If you die with 145 ATP and T3 = 0.72, you're reborn with:</strong>
+            <strong>Karma isn&apos;t one thing — it bundles four distinct advantages.</strong> Die
+            with 145 ATP and T3 = 0.72, and you&apos;re reborn with all four:
           </p>
           <ul>
             <li>145 ATP karma bonus (energy advantage)</li>
