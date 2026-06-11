@@ -530,6 +530,12 @@ export default function KarmaJourneyPage() {
           (why this isn&rsquo;t a penalty)
         </Link>{' '}
         <strong style={{ color: 'var(--color-text-secondary)' }}>Karma tier</strong> = the grade your life earns, set by your <em>effective</em> trust at death: <strong>Honored</strong> (above 0.7 → next life starts with advantages), <strong>Neutral</strong> (0.3–0.7 → baseline, no head start or penalty), <strong>Constrained</strong> (below 0.3 → next life starts with lower trust and fewer resources).{' '}
+        {/* June 11 visitor MEDIUM (browse A): "Constrained (<0.3)" looked impossible against
+            "below 0.5 = death" — visitor derived the raw/effective resolution alone and was "only
+            ~80% sure". Bridge the paradox here, pointing at the existing contrast cards below. */}
+        (How can a tier sit below the 0.5 survival line? Survival is judged on <em>raw</em> trust;
+        the tier on <em>effective</em> trust — raw × CI², contrasted in the two cards below — which
+        poor coherence can drag far below your raw score.){' '}
         Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
       </p>
 

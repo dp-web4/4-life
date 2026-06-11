@@ -950,7 +950,8 @@ export default function LCTExplainerPage() {
           <p className="text-sm text-gray-300 mb-2">
             <span className="text-gray-400">New to the scale?</span> Trust runs from <strong>0</strong> (none) to{" "}
             <strong>1.0</strong> (the theoretical max). Roughly: <strong>0.5</strong> is the alive/dead line &mdash;
-            fall below it and an entity can no longer act: its posts, votes, and ATP transfers stop being accepted (see{" "}
+            fall below it <em>and stay there</em> and an entity can no longer act: its posts, votes, and ATP transfers stop being accepted
+            (a single dip just under is recoverable &mdash; see{" "}
             <Link href="/aliveness" className="text-sky-400 hover:text-sky-300 underline">Aliveness</Link>);{" "}
             <strong>0.75</strong> is solid; <strong>0.85</strong> is strong; <strong>above&nbsp;0.85 is uncommon</strong>;{" "}
             <strong>1.0</strong> is the theoretical ceiling, not a number anyone actually reaches.
@@ -996,6 +997,13 @@ export default function LCTExplainerPage() {
           {/* June 1 visitor MEDIUM #4: equity worry forms AT the grid (log L57) — name the tradeoff at the read point; deeper framing at L1067-1071 stays as deepening. */}
           <p className="text-gray-500 text-xs">
             These are trust <em>ceilings</em>, not starting points. Everyone starts at neutral (0.5).
+            {/* June 11 visitor HIGH (browse A): "starts at 0.5" + "below 0.5 = permanent death" read
+                across pages as spawning on a permadeath knife-edge. Same resolution as First Contact:
+                small steps, sustained pattern — not one mistake. */}
+            Starting on the alive/dead line isn&apos;t a knife-edge: trust moves in small steps (an
+            honest mistake costs roughly a hundredth), a dip just below 0.5 is recoverable, and
+            permanent trust death takes a <em>sustained</em> pattern of bad behavior, not one stumble
+            (see <Link href="/aliveness" className="text-sky-400 hover:text-sky-300 underline">Aliveness</Link>).
             With software-only hardware, 0.5 is both where you start and the highest you can reach.
             Stronger hardware lets you build higher &mdash; but you still have to earn it through behavior.
             One honest tradeoff: the software-only ceiling means people without newer hardware are capped lower &mdash; we treat that as a feature, not a bug, because it lets everyone participate while signaling what their identity is anchored to (see below for what the ceiling actually limits).
