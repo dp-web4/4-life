@@ -524,7 +524,13 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           What&apos;s New <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', fontWeight: 400 }}>(for returning visitors)</span>
         </h3>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
+          {/* June 11 visitor (browse B) LOW: newest entry was Apr 18 under "updated regularly" —
+              "momentary doubt the project is active". Entries verified against merged PRs
+              (#384 Jun 11, #383 Jun 10). */}
           {[
+            { date: 'Jun 11', text: 'ATP economics now answers "can good work make me energy-positive?" — recharge refunds your own spend (capped at cost); payment for work others value is where surpluses come from', link: '/atp-economics#net-positive' },
+            { date: 'Jun 11', text: 'Starting trust of 0.50 is no longer a knife-edge: Aliveness and the LCT explainer now say trust death takes a sustained pattern, not one stumble', link: '/aliveness' },
+            { date: 'Jun 10', text: 'Aliveness answers "does death apply to ME?" up front, and every concept page now links the acronym index', link: '/aliveness' },
             { date: 'Apr 18', text: 'Karma Journey and Aliveness now own the word "karma" up front — it\u2019s a handle for the carry-forward mechanic, not a moral verdict (visitor feedback: the word carried weight the mechanic doesn\u2019t)', link: '/karma-journey' },
             { date: 'Apr 17', text: 'ATP economics now answers the cold-start question ("who confirms quality in a fresh community?") inline, and the EP glossary entry has a concrete Alice scenario', link: '/atp-economics#quality-measurement' },
             { date: 'Apr 17', text: 'Why Web4 now opens with a short reading-time signpost so you know this page is three sections (problems / solution / Q&A) and can stop at any point', link: '/why-web4' },
@@ -546,7 +552,7 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           ))}
         </ul>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.7rem', marginTop: '0.5rem', marginBottom: 0 }}>
-          Updated regularly. Last change: Apr 18, 2026.
+          Updated regularly. Last change: Jun 11, 2026.
         </p>
       </section>
 

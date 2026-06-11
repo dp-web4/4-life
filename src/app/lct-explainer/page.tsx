@@ -1046,11 +1046,20 @@ export default function LCTExplainerPage() {
                 only check on something irreversible.&rdquo; The remaining 0.10 is the gap reserved for
                 independent corroboration &mdash; multiple devices, witness attestations, behavioral history.
               </p>
+              {/* June 11 visitor (browse A) LOW: ceiling ORDERING (0.90 > 0.85 > 0.75 > 0.50) given
+                  without per-tier rationale — the generic "larger attack surface" line didn't say why
+                  each specific step. One line per tier; these ceilings are 4-Life's calibration of the
+                  attack-surface logic, not spec-mandated constants. */}
               <p className="text-xs text-gray-500 italic">
-                The same logic explains the other tiers: each step down (0.85, 0.75, 0.50) reflects a
-                concretely larger attack surface &mdash; weaker tamper resistance, fewer side-channel
-                hardenings, or no hardware root at all.
+                The same logic sets the ordering of the lower tiers &mdash; each step down is a concretely
+                larger attack surface (the specific values are 4-Life&apos;s calibration of that logic, not
+                constants mandated by the spec):
               </p>
+              <ul className="text-xs text-gray-500 italic list-disc pl-5 space-y-1">
+                <li><strong className="text-gray-400">Secure Enclave (0.85):</strong> strong dedicated hardware, but its attestation chain runs through a single vendor &mdash; less independently verifiable than the cross-vendor TPM certificate ecosystem.</li>
+                <li><strong className="text-gray-400">FIDO2 key (0.75):</strong> proves possession of the key, not the state of the platform using it &mdash; a compromised laptop can still misuse a legitimate key press.</li>
+                <li><strong className="text-gray-400">Software (0.50):</strong> no hardware root at all &mdash; keys live in OS memory, so anything that compromises the OS can extract them.</li>
+              </ul>
             </div>
           </details>
 

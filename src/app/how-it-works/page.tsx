@@ -957,7 +957,9 @@ export default function HowItWorksPage() {
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-amber-400 shrink-0">→</span>
-                <span><strong className="text-amber-400">CI → Both:</strong> Behavior that breaks your pattern raises your costs up to 1.4&times; &mdash; a tax on inconsistency that fades as your pattern restabilizes.</span>
+                {/* June 11 visitor (browse B) LOW: "up to 1.4×" here vs "up to 10×" on /aliveness —
+                    1.4× is the typical new/wobbling-pattern surcharge; the same 1/CI² formula caps at 10×. */}
+                <span><strong className="text-amber-400">CI → Both:</strong> Behavior that breaks your pattern raises your costs &mdash; 1.4&times; is the typical surcharge for a new or wobbling pattern, and the same formula scales up to a 10&times; cap for severe incoherence. A tax on inconsistency that fades as your pattern restabilizes.</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-indigo-400 shrink-0">→</span>

@@ -525,7 +525,12 @@ export default function KarmaJourneyPage() {
         <strong><Link href="/trust-tensor" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>Trust</Link></strong> = your reputation (Talent + Training + Temperament, averaged).{' '}
         <strong><Link href="/atp-economics" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>ATP</Link></strong> = your energy budget — every action costs ATP, run out and you die.{' '}
         <strong><Link href="/coherence-index" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>CI</Link></strong> (Coherence Index) = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;).
-        Everyone starts at CI 0.85, not 1.0 — you haven&apos;t demonstrated consistency yet, so actions cost ~1.4× their base price (CI&nbsp;0.85 → ~40% surcharge). As you behave consistently, CI rises to 0.9+ and the surcharge disappears (actions cost exactly their listed price).{' '}
+        Everyone starts at CI 0.85, not 1.0 — you haven&apos;t demonstrated consistency yet, so actions cost ~1.4× their base price (CI&nbsp;0.85 → ~40% surcharge). As you behave consistently, CI rises to 0.9+ and the surcharge disappears (actions cost exactly their listed price).
+        {/* June 11 visitor (browse A) MEDIUM: read this exact paragraph and still concluded "no stated
+            rationale — reads as the system taxes you for being new." The why lived only behind the link.
+            Inline the sibling's canonical frame (/coherence-index#why-ci-starts-low): no witnessed pattern
+            yet ≠ penalty. Policy review: do NOT add a Sybil rationale — the sibling deliberately doesn't. */}
+        {' '}The point isn&apos;t to tax newcomers: CI scores how well your current behavior matches your <em>witnessed pattern</em>, and a brand-new identity has no pattern to match yet — the surcharge is the system being honest about what it hasn&apos;t seen.{' '}
         <Link href="/coherence-index#why-ci-starts-low" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>
           (why this isn&rsquo;t a penalty)
         </Link>{' '}

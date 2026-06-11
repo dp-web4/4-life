@@ -60,13 +60,17 @@ export default function TLDRPage() {
             </div>
             <div className="flex gap-3 items-start">
               <span className="text-sky-400 text-xl mt-0.5">2.</span>
+              {/* June 11 visitor (browse A) MEDIUM: "the constellation is called an LCT" contradicted
+                  /lct-explainer (LCT = the identity record; constellation = the witnessing device set)
+                  — visitor "had to unlearn the first definition". Align to the explainer's framing. */}
               <p className="text-gray-300">
                 <strong className="text-white">Identity is anchored in your devices.</strong> Think
                 of it as a digital ID card that lives in your device&apos;s security chip — not a
                 password you type or a key file you store, but a presence your hardware proves.
                 Your phone, laptop, and tablet each carry such chips, and each one vouches for the
-                others, so no single device can speak for you alone (the constellation is called a
-                Linked Context Token, or LCT). More devices strengthen it. Creating a fake identity
+                others, so no single device can speak for you alone — together they form a witness{' '}
+                <em>constellation</em>. The identity record that constellation anchors is called a
+                Linked Context Token (LCT). More devices strengthen the constellation. Creating a fake identity
                 means buying new hardware — expensive and slow.
               </p>
             </div>
@@ -89,10 +93,11 @@ export default function TLDRPage() {
           </div>
           {/* May 3 visitor LOW #4 + May 13 visitor MEDIUM: previously named MRH/CI but skipped T3 entirely, and never expanded the letters. Naive readers were meeting these acronyms unprepared on later pages.
               May 14 visitor MEDIUM #1: counting 6 acronyms on one short page felt dense. Trade-off this iteration: keep the cold-hit hook (letters T3/MRH/CI still visible in the <summary> line so a later page's mention isn't a cold drop) but move the expanded gloss behind a click. Hypothesis to falsify next cycle: visitors who only want the 2-minute overview can ignore this; visitors meeting T3/MRH/CI on later pages still have a primed hook from the summary.
+              June 11 visitor (browse A) LOW: landing's "5 ideas" vs this page's 4 numbered items = "did I miscount?" — appended one clause to the summary mapping the counts (append-only per policy review; the iterated wording above it is untouched).
               May 22 visitor: hypothesis FALSIFIED. A linear reader hit the three BARE acronyms in the summary line, did NOT expand to find the glosses, and felt the "plain English first" promise broke ("seeing three undefined acronyms"). New decision: the summary now LEADS with three plain-English handles (trust dimensions / trust neighborhood / behavior holding together) and defers the letters to a "tap for the shorthand (T3, MRH, CI)" clause. This preserves both surviving constraints — May 14 density (still no full glosses in the summary) and the primed-hook (acronym letters still present, just no longer leading). Expanded <p> glosses unchanged. */}
           <details className="mt-4 pl-9">
             <summary className="text-gray-500 text-sm italic cursor-pointer hover:text-gray-400 select-none">
-              Three more ideas round out the picture &mdash; your trust dimensions, your trust neighborhood, and whether your behavior holds together over time &mdash; each on its own page. Tap for the shorthand (T3, MRH, CI) and links, or meet them when you get there.
+              Three more ideas round out the picture &mdash; your trust dimensions, your trust neighborhood, and whether your behavior holds together over time &mdash; each on its own page. Tap for the shorthand (T3, MRH, CI) and links, or meet them when you get there. (With energy and identity above, these three are the landing page&apos;s five key ideas &mdash; #3 and #4 here are ground rules, not extra concepts.)
             </summary>
             <p className="text-gray-500 text-sm leading-relaxed mt-3 italic">
               <Link href="/trust-tensor" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">T3 (Talent / Training / Temperament)</Link>{' '}
