@@ -3437,7 +3437,7 @@ export default function SocietySimulatorPage() {
               Orient positively (what DOES update) before the per-term key; link to #real-vs-simulated
               rather than restating the quadrant card. */}
           <p className="px-4 pb-3 text-xs text-gray-400">
-            <span className="text-emerald-300 font-medium">What updates live each round:</span> ATP energy, each agent&rsquo;s scalar reputation, and CI (coherence). <span className="text-amber-300 font-medium">Named below but not computed in this demo:</span> MRH distance-decay, the full T3 tensor, and V3 &mdash; see <a href="#real-vs-simulated" className="text-sky-400 hover:underline">what&rsquo;s real vs. simulated</a>.
+            <span className="text-emerald-300 font-medium">What updates live each round:</span> ATP energy, each agent&rsquo;s scalar reputation, and CI (coherence). <span className="text-amber-300 font-medium">Named below but not computed in this demo:</span> MRH distance-decay, the full T3 tensor, and V3 &mdash; they&rsquo;re real parts of full Web4, listed so you see the whole model, just not exercised by this simplified scalar view; see <a href="#real-vs-simulated" className="text-sky-400 hover:underline">what&rsquo;s real vs. simulated</a>.
           </p>
           <div className="px-4 pb-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-300">
             <div>
