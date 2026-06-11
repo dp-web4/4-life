@@ -839,6 +839,12 @@ export default function KarmaJourneyPage() {
               }}>
                 {currentLife.deathCause}
               </div>
+              {/* June-10 visitor LOW — the death CAUSE (why this life ended) and the karma TIER (what the next
+                  life inherits) share this box and the same tier-keyed color, so they read as one fused fact.
+                  One clarifier maps them to the layout: cause above, tier below — two facts, two lives. */}
+              <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', fontStyle: 'italic', marginBottom: '0.6rem', lineHeight: 1.5 }}>
+                &uarr; why <em>this</em> life ended. &darr; your <em>next</em> life&rsquo;s starting grade &mdash; a separate thing, not the cause of death.
+              </div>
               <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '1rem' }}>
                 Final effective trust: {effComp.toFixed(3)} &mdash; Karma tier: <strong>{currentLife.karmaTier}</strong>
               </div>
