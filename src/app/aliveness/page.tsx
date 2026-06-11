@@ -1087,7 +1087,8 @@ export default function AlivenessExplainer() {
             <Link href="/karma-journey" style={{ color: "#fbbf24" }}>More in Karma Journey →</Link>
           </p>
           <p>
-            <strong>If you die with 145 ATP and T3 = 0.72, you're reborn with:</strong>
+            <strong>Karma isn&apos;t one thing — it bundles four distinct advantages.</strong> Die
+            with 145 ATP and T3 = 0.72, and you&apos;re reborn with all four:
           </p>
           <ul>
             <li>145 ATP karma bonus (energy advantage)</li>
@@ -1213,8 +1214,14 @@ export default function AlivenessExplainer() {
         </div>
         <p style={{ color: "#9ca3af", fontSize: "0.9rem", marginTop: "1rem" }}>
           The witness requirement means you can&apos;t just spawn entities — someone has to vouch for you.
+          These witnesses aren&apos;t a central authority or notary: they&apos;re other already-established
+          participants — your own devices co-signing for each other, plus optional independent network
+          nodes — so existence has to be corroborated, not declared.
           Witness attestations expire after <strong>300 seconds</strong>, so they must be fresh and intentional,
-          not recycled from old interactions.
+          not recycled from old interactions.{" "}
+          <Link href="/lct-explainer#witness-infrastructure" style={{ color: "#818cf8" }}>
+            Who runs witnesses, and why? →
+          </Link>
         </p>
           </div>
         </details>
@@ -1744,7 +1751,8 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
           </p>
           <p>
             When a cluster of entities develops dense trust relationships and overlapping MRH
-            horizons, the <em>group itself</em> starts passing the same three tests: collective
+            neighborhoods (MRH — Markov Relevancy Horizon: your trust reach, roughly 3 hops out),
+            the <em>group itself</em> starts passing the same three tests: collective
             ATP flows sustain coordinated action, group-level behavior stays coherent because
             member behavior stays coherent, and the same LCT witness network that attests to
             individual members also attests to the group they form. Aliveness isn&apos;t an
@@ -1770,7 +1778,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             A synthon has a lifecycle just like an individual:
           </p>
           <ul>
-            <li><strong>Formation</strong> — Trust between members becomes dense and mutual (roughly: most pairs above 0.5 trust, sustained over multiple interaction cycles). Their MRH horizons overlap. Energy flows balance. There&apos;s no hard threshold — synthons emerge gradually, like a friendship group that becomes a team.</li>
+            <li><strong>Formation</strong> — Trust between members becomes dense and mutual (roughly: most pairs above 0.5 trust, sustained over multiple interaction cycles). Their trust horizons overlap. Energy flows balance. There&apos;s no hard threshold — synthons emerge gradually, like a friendship group that becomes a team.</li>
             <li><strong>Health</strong> — The group maintains witness diversity, balanced ATP distribution, and high internal trust coherence.</li>
             <li><strong>Decay</strong> — Trust diverges, boundaries leak, energy concentrates in fewer members. These are early warnings before dissolution.</li>
             <li><strong>Dissolution</strong> — The group ends, in one of two ways that parallel individual death: <em>energy death</em> (ATP flows dry up, the collective can&apos;t act — usually recoverable if members re-engage) or <em>trust death</em> (coherence collapses, mutual trust falls below threshold — the group dissolves and members carry their individual trust away intact).</li>

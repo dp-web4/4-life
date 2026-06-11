@@ -3437,7 +3437,7 @@ export default function SocietySimulatorPage() {
               Orient positively (what DOES update) before the per-term key; link to #real-vs-simulated
               rather than restating the quadrant card. */}
           <p className="px-4 pb-3 text-xs text-gray-400">
-            <span className="text-emerald-300 font-medium">What updates live each round:</span> ATP energy, each agent&rsquo;s scalar reputation, and CI (coherence). <span className="text-amber-300 font-medium">Named below but not computed in this demo:</span> MRH distance-decay, the full T3 tensor, and V3 &mdash; see <a href="#real-vs-simulated" className="text-sky-400 hover:underline">what&rsquo;s real vs. simulated</a>.
+            <span className="text-emerald-300 font-medium">What updates live each round:</span> ATP energy, each agent&rsquo;s scalar reputation, and CI (coherence). <span className="text-amber-300 font-medium">Named below but not computed in this demo:</span> MRH distance-decay, the full T3 tensor, and V3 &mdash; they&rsquo;re real parts of full Web4, listed so you see the whole model, just not exercised by this simplified scalar view; see <a href="#real-vs-simulated" className="text-sky-400 hover:underline">what&rsquo;s real vs. simulated</a>.
           </p>
           <div className="px-4 pb-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-300">
             <div>
@@ -3457,6 +3457,45 @@ export default function SocietySimulatorPage() {
             </div>
             <div>
               <span className="font-mono font-bold text-sky-400">V3</span> — <span className="text-gray-400">Value Tensor.</span> How others rate the quality of each thing you produce (Valuation, Veracity, Validity). Not scored per-contribution in this demo. <a href="/trust-tensor#v3" className="text-sky-400 hover:underline">Learn more →</a>
+            </div>
+          </div>
+        </details>
+
+        {/* Strategy key — companion to the acronym key above. June-9 visitor (browse #2) friction-LOW
+            + Unanswered Q2: the acronym key is praised, but strategy vocabulary ("defector",
+            "reciprocator", "tit-for-tat", "coalition") leaks into the presets, the event feed
+            ("defector isolated"/"coalition formed"), and the guide while definitions live ONLY in the
+            click-to-open per-agent panel (strategyDescriptions, ~L578). A blank-slate reader can't decode
+            "defector isolated" without clicking an agent. Mirror the acronym-key pattern; reuse the
+            canonical one-liners; bridge the pop-science name "tit-for-tat" → reciprocator; add a one-line
+            "coalition" entry (an emergent structure, not a strategy) since it appears in the feed. */}
+        <details className="mb-4 bg-gray-800/30 rounded-lg border border-gray-700/50 group">
+          <summary className="cursor-pointer p-4 text-sm font-bold text-gray-300 hover:text-white transition-colors list-none flex items-center justify-between">
+            <span>Strategies: what&rsquo;s a &ldquo;defector&rdquo; or &ldquo;reciprocator&rdquo;?</span>
+            <span className="text-gray-500 text-xs group-open:hidden">▸ Show key</span>
+            <span className="text-gray-500 text-xs hidden group-open:inline">▾ Hide</span>
+          </summary>
+          <p className="px-4 pb-3 text-xs text-gray-400">
+            Each agent follows a fixed <span className="text-gray-300">strategy</span> — its rule for deciding whether to cooperate. One line each (these are also shown when you click an agent):
+          </p>
+          <div className="px-4 pb-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-300">
+            <div>
+              <span className="font-bold text-sky-400">Cooperator</span> — <span className="text-gray-400">always cooperates. Enables trust to form, but is vulnerable to exploitation.</span>
+            </div>
+            <div>
+              <span className="font-bold text-sky-400">Defector</span> — <span className="text-gray-400">always takes, never gives. Wins early, but the community stops trusting it — that&rsquo;s what &ldquo;defector isolated&rdquo; in the event feed means.</span>
+            </div>
+            <div>
+              <span className="font-bold text-sky-400">Reciprocator</span> — <span className="text-gray-400">mirrors your last move: cooperates if you did, defects if you did. This is the classic <em>tit-for-tat</em> strategy.</span>
+            </div>
+            <div>
+              <span className="font-bold text-sky-400">Cautious</span> — <span className="text-gray-400">only cooperates once trust is established. Slow to warm up, hard to exploit.</span>
+            </div>
+            <div>
+              <span className="font-bold text-sky-400">Adaptive</span> — <span className="text-gray-400">cooperates in proportion to how much it already trusts you. Learns from experience.</span>
+            </div>
+            <div>
+              <span className="font-bold text-emerald-300">Coalition</span> — <span className="text-gray-400">not a strategy but a result: a cluster of agents that have built mutual trust and reliably cooperate. &ldquo;Coalition formed&rdquo; in the feed marks one emerging.</span>
             </div>
           </div>
         </details>
