@@ -507,6 +507,21 @@ export default function ATPEconomicsPage() {
           <p className="text-gray-500 text-xs mt-2">
             That&apos;s where &ldquo;~7x&rdquo; comes from: just-passing the 30% threshold returns almost nothing, while consistently above the 70% full-payout cap returns nearly everything.
           </p>
+          {/* June 11 visitor HIGH (browse B): even Hannah nets −8 here, which read as "the best
+              you can do is lose slowly." The negative nets are an artifact of this example's
+              setup (spend = task value = 50), chosen to isolate the quality gap. Say so. */}
+          <p className="text-gray-500 text-xs mt-2">
+            (Notice both net out negative here &mdash; that&apos;s because this example prices the
+            task at exactly what each contributor spends, to isolate the effect of quality alone.
+            Whether a task leaves you net-positive depends on its price versus your cost of doing
+            it &mdash; see{' '}
+            <a
+              href="#net-positive"
+              onClick={(e) => { e.preventDefault(); const el = document.getElementById('net-positive'); if (el) { if (el instanceof HTMLDetailsElement) el.open = true; el.scrollIntoView({ behavior: 'smooth' }); } }}
+              className="text-sky-400 hover:text-sky-300 underline"
+            >recharge refunds, payment earns</a>{' '}
+            below.)
+          </p>
         </div>
 
         {/* How Quality Is Measured — Mar 26 visitor MEDIUM friction + unanswered Q1 */}
@@ -583,7 +598,7 @@ export default function ATPEconomicsPage() {
           {/* May 1 LOW #11: visitor wanted a collapsible "Show me the math" near the qualitative
               worked example. Formula and cap rule are drawn from the existing prose in the nested
               <details> at the "How Do You Actually Earn ATP Back?" section (id="earning-atp"). */}
-          <details className="bg-gray-800/40 border border-gray-700 rounded-lg p-4 mt-3">
+          <details id="net-positive" className="bg-gray-800/40 border border-gray-700 rounded-lg p-4 mt-3 scroll-mt-24">
             <summary className="text-sm font-semibold text-gray-300 cursor-pointer hover:text-sky-400 transition-colors">
               Show me the math
             </summary>
@@ -607,6 +622,29 @@ export default function ATPEconomicsPage() {
                 <code className="text-sky-300 text-xs">received_value_fraction</code> (also between 0 and 1) is the share of value attributed
                 to that confirmer. Unconfirmed slices decay over a window of weeks &mdash; the cap means
                 you can&apos;t profit on a single action, only recover its cost.
+              </p>
+              {/* June 11 visitor HIGH (browse B): "recharge capped at original cost" read as
+                  "break-even at best", contradicting the same page's simulator (−20/+50) and
+                  "earn more than you spend" claims sitewide. The cap is real but governs only ONE
+                  of two channels. Canon: web4-standard sdk atp.py separates sliding_scale PAYMENT
+                  (test vectors atp-005..007, atp-015 — priced by the task, not by the worker's
+                  spend) from recharge of one's own spend. Answer the headline question here,
+                  right after the cap that raised it. Surplus attributes ONLY to the task-payment
+                  channel (policy reviewer: no invented sources). */}
+              <p>
+                <strong className="text-gray-300">So can good work make you net energy-positive?</strong>{' '}
+                Yes &mdash; just not through this channel. The cap governs <em>recharge</em>:
+                confirmations refunding ATP you already spent on a contribution you initiated.
+                Earning beyond break-even comes from the separate <em>payment</em> channel &mdash;
+                when a task someone else priced pays you for delivered value through the{' '}
+                <a href="#quality-ramp" onClick={(e) => { e.preventDefault(); document.getElementById('quality-ramp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">quality ramp</a>.
+                A task&apos;s price reflects what the work is worth to whoever commissioned it, not
+                what it cost you to do, so quality work on a well-priced task pays more than you
+                spent doing it. That payment is what the{' '}
+                <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">simulator below</a>{' '}
+                calls a &ldquo;reward&rdquo; (&minus;20 cost, +50 reward), and it&apos;s what other
+                pages mean by &ldquo;value creators earn more than they spend.&rdquo; In short:{' '}
+                <strong className="text-gray-300">recharge refunds, payment earns.</strong>
               </p>
               <p className="text-xs text-gray-500 italic">
                 Spec note: this is the shape of the relation as currently modelled in 4-Life&apos;s simulation;
@@ -701,6 +739,18 @@ export default function ATPEconomicsPage() {
         <p className="text-gray-400 mb-2">
           You start with <strong>100 ATP</strong>. Choose actions. Watch your
           budget change. Can you survive?
+        </p>
+        {/* June 11 visitor HIGH (browse B): the +50 "reward" here looked like it violated the
+            recharge-at-cost cap stated above. Name the channel the reward belongs to. */}
+        <p className="text-gray-500 text-sm mb-2">
+          &ldquo;Reward&rdquo; here means <em>payment for value delivered</em> &mdash; what the work
+          is worth to its recipients &mdash; which is why it can exceed the action&apos;s cost.
+          Recharge of your own spend alone never does (it&apos;s{' '}
+          <a
+            href="#net-positive"
+            onClick={(e) => { e.preventDefault(); const el = document.getElementById('net-positive'); if (el) { if (el instanceof HTMLDetailsElement) el.open = true; el.scrollIntoView({ behavior: 'smooth' }); } }}
+            className="text-sky-400 hover:text-sky-300 underline"
+          >capped at cost ↑</a>).
         </p>
         {/* Apr 29 visitor HIGH: the link-only "where from?" pointer read like a deferral to a separate doc.
             Provide the 1-sentence answer inline, keep the jump link for the deeper FAQ.
@@ -1309,7 +1359,13 @@ export default function ATPEconomicsPage() {
                 contribution accumulates over many moderate-trust confirmations. The arithmetic is roughly:
                 each confirmation adds <code className="text-sky-300 text-xs">confirmer_trust &times;
                 received_value_fraction</code> to the recharge, capped at the original ATP cost. No minimum
-                count, no majority required.
+                count, no majority required. (The cap applies to recharging your own spend &mdash;
+                payment for tasks others priced is the channel that can exceed your cost:{' '}
+                <a
+                  href="#net-positive"
+                  onClick={(e) => { e.preventDefault(); const el = document.getElementById('net-positive'); if (el) { if (el instanceof HTMLDetailsElement) el.open = true; el.scrollIntoView({ behavior: 'smooth' }); } }}
+                  className="text-sky-400 hover:text-sky-300 underline"
+                >recharge refunds, payment earns ↑</a>.)
               </p>
               <p>
                 <strong className="text-gray-300">Who counts as a confirmer:</strong> anyone who actually

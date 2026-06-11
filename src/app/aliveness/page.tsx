@@ -787,9 +787,27 @@ export default function AlivenessExplainer() {
               the society stops accepting your actions &mdash; you can&apos;t post, vote, message,
               transfer ATP, or be counted as a witness for anyone else. Your identity and history
               still exist as a record, but the LCT can no longer <em>do</em> anything in society.
-              Trust falling below 0.5 is the <strong>permanent</strong> case; running out of energy
-              (ATP&nbsp;=&nbsp;0) is the recoverable one &mdash; see{' '}
+              Trust falling below 0.5 <em>and staying there</em> is the <strong>permanent</strong> case;
+              running out of energy (ATP&nbsp;=&nbsp;0) is the recoverable one &mdash; see{' '}
               <a href="#death-meaning" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('death-meaning')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ color: '#c084fc', cursor: 'pointer' }}>the two deaths</a> below.
+            </p>
+            {/* June 11 visitor HIGH (browse A): newcomers start at exactly 0.50, and this page's
+                "below 0.5 = permanent" read as one-strike permadeath for anyone who stumbles once.
+                First Contact already teaches the resolution ("Trust < 0.5 sustained", "not just one
+                mistake"; Alice dips to 0.48 and recovers) — this page lacked it. Canon: T3 delta =
+                0.02 × (quality − 0.5), so an honest mistake ≈ −0.01. Per policy reviewer: do NOT
+                claim a per-action maximum (a deliberate ethics violation costs more, ~−0.05). */}
+            <p style={{ fontSize: '0.9rem', opacity: 0.85, marginTop: '0.75rem' }}>
+              <strong style={{ color: '#e5e7eb' }}>But doesn&apos;t everyone start right on this line?</strong>{' '}
+              Yes &mdash; new entities begin at the neutral 0.50, and that&apos;s less precarious than
+              it sounds. Trust moves in small steps: an honest mistake costs roughly a hundredth, and
+              one good contribution wins it back &mdash; in{' '}
+              <Link href="/first-contact" style={{ color: '#38bdf8' }}>First Contact</Link>, Alice dips
+              to 0.48 and recovers. A dip just under the line is a warning zone, not an execution.
+              What the permanent verdict describes is <strong>sustained collapse</strong> &mdash; a
+              pattern of bad behavior the society watched continue, not a single stumble. (Deliberate
+              violations cost more per event than honest mistakes, but even then it&apos;s the pattern
+              that kills, not one bad day.)
             </p>
             <div className="detail-box">
               <strong>Trust Tensor (T3) dimensions (role-specific):</strong>

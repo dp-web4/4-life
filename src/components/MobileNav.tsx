@@ -24,6 +24,9 @@ const sections = [
       { href: "/trust-tensor", title: "Trust Tensor (T3)" },
       { href: "/atp-economics", title: "ATP Economics" },
       { href: "/trust-neighborhood", title: "MRH" },
+      // June 11 visitor MEDIUM (browse B): CI is one of the five landing-page key ideas but was
+      // the only one with no nav entry — /coherence-index was reachable only via inline links.
+      { href: "/coherence-index", title: "Coherence Index (CI)" },
       { href: "/aliveness", title: "Aliveness" },
     ],
   },

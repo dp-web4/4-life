@@ -772,6 +772,11 @@ export default function HowItWorksPage() {
                 <p>
                   So <em>&ldquo;spent 60, earned 105&rdquo;</em> is the sum across a dozen+ actions:
                   quality contributions earned more than their cost, any low-effort attempts earned less.
+                  {/* June 11 visitor HIGH (browse B): "earned more than cost" seemed to violate the
+                      recharge-at-cost cap on /atp-economics. Name the channel: task payment. */}
+                  (Earning <em>above</em> cost comes from task payment &mdash; a task pays what the
+                  work is worth to whoever commissioned it, not what it cost you to do. Only the
+                  recharge of your own spend is capped at cost.)
                   Aggregate net: <strong className="text-green-400">+45&nbsp;ATP</strong> surplus &mdash; which
                   becomes the carry-forward karma bonus on rebirth.
                 </p>
