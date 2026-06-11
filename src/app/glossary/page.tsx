@@ -139,7 +139,7 @@ export default function GlossaryPage() {
             initialisms (EP, R6, SAL, DID, D1–D9) are deliberately left to the search box so
             this lookup doesn't re-expand the jargon iceberg. NOTE: "core acronyms" ≠ the
             "Essential only" toggle's 7 terms (which include Web4/Society/Federation). */}
-        <div className="bg-gray-900/40 border border-gray-700 rounded-xl p-5 mb-6">
+        <div id="acronyms" className="bg-gray-900/40 border border-gray-700 rounded-xl p-5 mb-6 scroll-mt-20">
           <div className="text-sm font-semibold text-gray-200 mb-1">Acronyms at a glance</div>
           <p className="text-xs text-gray-500 mb-4">
             The core acronyms you collect on the on-ramp. Hit a stray initialism and forgot

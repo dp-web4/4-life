@@ -666,7 +666,7 @@ export default function ATPEconomicsPage() {
             prevents brigading), no central curation (the community decides), no self-rating (your own
             confirmations don&apos;t count). What about rubber-stamping? A low-trust confirmer&apos;s click
             carries almost no weight, so colluding with new accounts doesn&apos;t help. And confirming
-            everything indiscriminately tanks your own CI (consistency score), making your future
+            everything indiscriminately tanks your own CI (Coherence Index — behavioral consistency), making your future
             confirmations worth even less.
           </p>
 
@@ -1325,7 +1325,7 @@ export default function ATPEconomicsPage() {
                 transaction. Second, the incentive is reciprocity plus self-interest: a community where
                 good work gets acknowledged is one where <em>your</em> good work gets acknowledged too &mdash;
                 and confirming honestly protects the weight your confirmations carry, because
-                rubber-stamping everything tanks your own CI (consistency) and makes your future
+                rubber-stamping everything tanks your own CI (Coherence Index) and makes your future
                 confirmations count for less. Honest confirmation is the low-effort habit the system rewards.
               </p>
               <p>

@@ -673,8 +673,11 @@ export default function AlivenessExplainer() {
           lineHeight: '1.55',
         }}
       >
-        Heads up before you scroll: when you read &ldquo;death&rdquo; on this page, your reputation isn&apos;t erased.
-        What ends is the current life-cycle — karma, T3 trust, and ATP earned{' '}
+        Heads up before you scroll: yes, &ldquo;death&rdquo; here is about <em>you</em> too — every participant,
+        human, AI, or group, plays by the same rules. But what can die is your <strong>Web4 standing</strong> —
+        that identity&apos;s right to post, vote, and transact — never the person behind it (
+        <a href="#death-meaning" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('death-meaning')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ color: '#fbbf24', cursor: 'pointer' }}>what death means for a real person</a>, below).
+        {' '}And your reputation isn&apos;t erased: what ends is the current life-cycle — karma, T3 trust, and ATP earned{' '}
         <Link href="/karma-journey" style={{ color: '#818cf8' }}>carry forward</Link>{' '}
         if your trust stayed above 0.5, and you can be reborn with that history intact.
         {' '}Also: most of this page describes how <em>individual</em> agents stay alive — but Web4 entities aren&apos;t always individuals. Sometimes they&apos;re groups acting as one (a research lab, a co-op). Web4 calls those{' '}
