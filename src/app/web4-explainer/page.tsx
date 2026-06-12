@@ -76,7 +76,7 @@ export default function Web4ExplainerPage() {
       </section>
 
       <section>
-        <h2 id="atp">4. ATP / ADP: Allocation Transfer Packet / Allocation Discharge Packet</h2>
+        <h2 id="atp">4. ATP / ADP: Allocation Transfer Packets / Allocation Discharge Packets</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
           ATP and ADP are semifungible packets for allocating scarce resources: time,
           attention, compute, energy, and authority. They are not a coin; they are a

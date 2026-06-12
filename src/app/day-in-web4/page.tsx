@@ -540,7 +540,7 @@ export default function DayInWeb4Page() {
                 </div>
               </div>
               <p className="text-xs text-gray-500">
-                The app finds your phone&apos;s security chip automatically. One biometric scan (Face ID, fingerprint) and your device becomes your identity anchor. No seed phrases to write down. No keys to lose.
+                The app finds your phone&apos;s security chip automatically. One biometric scan (Face ID, fingerprint) and your device becomes your identity anchor. No seed phrases to write down. No keys to lose. The 0.85 &ldquo;trust ceiling&rdquo; comes from the chip&apos;s tier &mdash; a phone secure enclave caps trust at 0.85; stronger or weaker hardware caps it higher or lower (see <a href="/lct-explainer" className="text-sky-400 hover:underline">hardware ceilings in the LCT explainer</a>).
               </p>
             </div>
           </div>

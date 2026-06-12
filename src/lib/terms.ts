@@ -41,7 +41,7 @@ export const terms: Record<string, TermDefinition> = {
   // Economics
   ATP: {
     term: "ATP",
-    fullName: "Allocation Transfer Packet",
+    fullName: "Allocation Transfer Packets",
     brief: "Energy budget for actions. Spend to act, earn by contributing value.",
     explanation:
       "Every action in Web4 costs ATP. Post a message? Costs ATP. Vote? Costs ATP. High-quality contributions earn ATP back from the community. Run out of ATP? You can't act. ATP can be transferred, but every transfer burns 5%—making circular farming unprofitable. This makes spam economically self-defeating.",
@@ -52,7 +52,7 @@ export const terms: Record<string, TermDefinition> = {
 
   ADP: {
     term: "ADP",
-    fullName: "Allocation Discharge Packet",
+    fullName: "Allocation Discharge Packets",
     brief: "The spent record when ATP is used—proves how resources were allocated.",
     explanation:
       "When you spend ATP, an ADP is created recording what action was taken, how much was spent, and what value was created. ADPs are audited and then discharged, creating a complete action history that determines trust scores and karma.",

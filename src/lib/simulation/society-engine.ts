@@ -142,10 +142,13 @@ export const DEFAULT_SOCIETY_CONFIG: SocietyConfig = {
   communityReputationWeight: 0.2,
 };
 
-export const SOCIETY_PRESETS: Record<string, { label: string; description: string; config: Partial<SocietyConfig> }> = {
+// `typical` = what usually happens, for readers who don't press Run (June-12 visitor LOW).
+// Grounded in measured 30-seed runs of each preset, not guessed — re-measure if configs change.
+export const SOCIETY_PRESETS: Record<string, { label: string; description: string; typical?: string; config: Partial<SocietyConfig> }> = {
   'cooperative-majority': {
     label: 'Cooperative Majority',
     description: 'Most agents cooperate. Do defectors thrive or get isolated?',
+    typical: 'Typical run: cooperation settles near 70% and nobody dies — the defectors don\'t starve, they get isolated while the other ten agents close into a single trust coalition.',
     config: {
       numAgents: 12,
       strategies: { cooperator: 5, defector: 2, reciprocator: 3, cautious: 1, adaptive: 1 },
@@ -155,6 +158,7 @@ export const SOCIETY_PRESETS: Record<string, { label: string; description: strin
   'hostile-world': {
     label: 'Hostile World',
     description: 'Defectors outnumber cooperators. Can trust survive?',
+    typical: 'Typical run: trust survives, barely — a cooperator–reciprocator cluster of 6–7 forms, but society-wide cooperation stays near 40% and average trust ends below the 0.5 neutral line.',
     config: {
       numAgents: 12,
       strategies: { cooperator: 2, defector: 5, reciprocator: 2, cautious: 2, adaptive: 1 },
@@ -165,6 +169,7 @@ export const SOCIETY_PRESETS: Record<string, { label: string; description: strin
   'reciprocity-rules': {
     label: 'Reciprocity Rules',
     description: 'Tit-for-tat dominates. The evolution of cooperation.',
+    typical: 'Typical run: tit-for-tat wins — cooperation reaches about 65% and nearly the whole village (10 of 12 agents) ends up inside one coalition, defectors included.',
     config: {
       numAgents: 12,
       strategies: { cooperator: 1, defector: 2, reciprocator: 7, cautious: 1, adaptive: 1 },
@@ -174,6 +179,7 @@ export const SOCIETY_PRESETS: Record<string, { label: string; description: strin
   'trust-scarce': {
     label: 'Trust Scarce',
     description: 'Everyone starts cautious. High cost of failure.',
+    typical: 'Typical run: slow start, strong finish — caution delays trust-building, but cooperation still ends near 70% with most of the society in one coalition and no deaths.',
     config: {
       numAgents: 10,
       strategies: { cooperator: 1, defector: 1, reciprocator: 2, cautious: 5, adaptive: 1 },
@@ -186,6 +192,7 @@ export const SOCIETY_PRESETS: Record<string, { label: string; description: strin
   'all-adaptive': {
     label: 'All Adaptive',
     description: 'Pure learning society. Strategy emerges from interaction.',
+    typical: 'Typical run: the surprise of the set — with no committed cooperators to anchor trust, learning alone rarely bootstraps it. Cooperation stays near 25%, trust collapses, and about 4 agents starve and are reborn.',
     config: {
       numAgents: 10,
       strategies: { cooperator: 0, defector: 0, reciprocator: 0, cautious: 0, adaptive: 10 },

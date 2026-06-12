@@ -161,7 +161,7 @@ export default function TLDRPage() {
                 <li>Formal protocol specification (open source)</li>
                 <li>Open-source reference implementations (LCT, T3/V3, ATP, witnesses)</li>
                 <li>Working trust simulations you can run here</li>
-                <li>This 77-page interactive explainer site</li>
+                <li>This site &mdash; dozens of interactive explainers and runnable simulations</li>
               </ul>
             </div>
             <div>
