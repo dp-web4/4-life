@@ -1111,8 +1111,10 @@ export default function GlossaryPage() {
           </p>
           <p className="text-gray-500 text-xs">
             <strong>Technical:</strong> Web4 uses the <code className="text-sky-300">did:web4:</code> method.
-            DID Documents include verification methods (Ed25519), service endpoints, and Web4
-            extensions (T3 composite score, hardware binding status). See{' '}
+            A DID Document carries only the identity slice: verification keys (Ed25519) and service
+            endpoints. Trust scores, context, and witness records deliberately have no DID
+            representation — outside systems reach the trust layer only by asking the Web4 hub the
+            document points to. See{' '}
             <Link href="/lct-explainer" className="text-sky-400 hover:underline">
               LCT Explainer
             </Link> for details.

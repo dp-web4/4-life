@@ -2186,7 +2186,9 @@ export default function LCTExplainerPage() {
               <h3 className="text-sm font-bold text-sky-400 mb-2">Identity Bridge</h3>
               <p className="text-sm text-gray-400">
                 Every LCT maps to a standard DID Document. External systems (EU authorities,
-                employers, apps) can verify Web4 identity using W3C protocols they already support.
+                employers, apps) can verify Web4 identity using W3C protocols they already support —
+                and they see only the identity slice (identifier, keys, endpoints), never your
+                trust history.
               </p>
             </div>
             <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4">
@@ -2213,8 +2215,11 @@ export default function LCTExplainerPage() {
           </div>
 
           <p className="text-gray-500 text-xs italic">
-            W3C DID/VC interoperability is implemented but not yet tested against external
-            identity providers. The bridge maps LCT↔DID bidirectionally.
+            The <code className="text-sky-300">did:web4</code> method spec pins this down: the mapping
+            is a deliberate <strong>one-way projection</strong> — an LCT can present a DID face, but a
+            DID can&apos;t present an LCT face. Resolution is hub-attested (a signed key binding), not
+            just TLS like <code className="text-sky-300">did:web</code>. Not yet tested against
+            external identity providers.
           </p>
           </div>
           </details>
