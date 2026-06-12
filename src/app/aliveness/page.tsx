@@ -701,7 +701,10 @@ export default function AlivenessExplainer() {
           <div className="comparison-card good">
             <h3>Web4 Aliveness</h3>
             <ul>
-              <li><strong>Measurable existence:</strong> Energy &gt; 0, trust &gt; 0.5, consistency coherent</li>
+              {/* June 12 visitor MEDIUM (browse A): "coherent" had no number while nearby text
+                  implies a 0.5 floor — state it. Canon: /coherence-index calls 0.5 "the aliveness
+                  threshold" (society-tunable). */}
+              <li><strong>Measurable existence:</strong> Energy &gt; 0, trust &gt; 0.5, consistency coherent (CI &ge; ~0.5)</li>
               <li><strong>Real death:</strong> Energy = 0 means you die immediately</li>
               <li><strong>Rebirth requires trust:</strong> Only trust ≥ 0.5 entities reborn</li>
               <li><strong>Energy economics:</strong> Spam dies naturally (energy exhaustion)</li>
@@ -829,11 +832,14 @@ export default function AlivenessExplainer() {
           <div className="concept-card">
             <div className="concept-icon">🔗</div>
             <h3>3. Verifiable Continuity</h3>
-            <div className="concept-subtitle">Coherence Index (CI) coherent</div>
+            <div className="concept-subtitle">Coherence Index (CI) coherent &mdash; above ~0.5</div>
             <p>
               You must be <strong>consistent across time, space, capability, and relationships</strong>.
               The Coherence Index (CI) tracks four dimensions. Incoherent behavior (impossible travel,
               capability spoofing, broken continuity) severely limits your effective trust.
+              &ldquo;Coherent&rdquo; has a number: <strong>CI below ~0.5</strong> means behavior too
+              inconsistent to be recognized as one continuous identity (0.5 is the default floor;
+              each society can tune its own thresholds).
             </p>
             <div className="detail-box">
               <strong>Four coherence dimensions:</strong>

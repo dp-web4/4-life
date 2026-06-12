@@ -522,9 +522,23 @@ export default function LCTExplainerPage() {
                 calling it a third kind of &ldquo;witness.&rdquo; No central notary, no government issuer, no
                 self-attestation waiting period &mdash; the chip&apos;s own factory certificate is the proof.
               </p>
+              {/* June 12 visitor MEDIUM (browse B): the device-count rule (1=0.50, 2=0.75, 3+=0.90)
+                  and the chip-class table (TPM max 0.90 etc.) were never reconciled — visitor stalled
+                  for minutes on "one TPM laptop: 0.50, 0.75, or 0.90?" and had to guess min-of-two.
+                  State the combination rule where the two rules first co-occur. 4-Life calibration
+                  framing (like the ceilings themselves) so future web4 spec settlement reads as a
+                  calibration update, not a contradiction. Retires the long canon-blocked carry-forward:
+                  the rule below restates what this page's own copy already implies, no new canon. */}
               <p className="text-xs text-gray-400">
                 A single device with this manufacturer attestation gets a trust ceiling of 0.50&ndash;0.75 (depending on chip class)
-                &mdash; the same 50&ndash;75% as just above.
+                &mdash; the same 50&ndash;75% as just above.{" "}
+                <strong className="text-gray-300">How the two ceiling rules combine</strong> (in 4-Life&apos;s calibration):
+                your <em>chip class</em> sets the hardware maximum (the tier table further down), and your{" "}
+                <em>device count</em> sets how much of that maximum you can actually reach &mdash; your effective
+                ceiling is the <strong className="text-gray-300">lower of the two</strong>. One TPM laptop alone &rarr; 0.75
+                (device count is the limit, despite the chip&apos;s 0.90 rating); the same laptop plus two more
+                device witnesses &rarr; the full 0.90 (now chip class is the limit); a software-only setup stays
+                at 0.50 however many devices it spans.
                 Adding a second device later doesn&apos;t replace this factory attestation &mdash; it adds a device co-witness on top, raising the ceiling
                 toward 0.90.{" "}
                 <a
@@ -961,6 +975,14 @@ export default function LCTExplainerPage() {
             Each number below is the <strong className="text-gray-100">maximum T3 trust score</strong> your
             hardware can vouch for &mdash; even with perfect behavior, software-only identity tops out at 0.50.
             What each cap unlocks (rewards, witness role, recovery path) is detailed below the grid.
+          </p>
+          {/* June 12 visitor MEDIUM (browse B): echo of the combination rule AT the table — this is
+              where the "TPM max 0.90 vs 1 device = 0.50" contradiction actually forms. */}
+          <p className="text-sm text-gray-400 mb-3">
+            These caps combine with the device-count rule above: chip class sets the maximum, device count
+            sets how much of it you reach &mdash; <strong className="text-gray-300">the lower wins</strong>.
+            A lone TPM laptop is capped at 0.75 by device count; it takes two more device witnesses to
+            unlock the chip&apos;s full 0.90.
           </p>
 
           {/* June-8 visitor LOW + Unanswered Q4: the misread ("TPM 0.90" read as a *starting* trust)

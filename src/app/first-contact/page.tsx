@@ -314,6 +314,20 @@ export default function FirstContactPage() {
                 </div>
               </div>
 
+              {/* June 12 visitor MEDIUM (browse A): the Act-5 card teases "ATP=0" and "+12 bonus"
+                  but the death/karma explanation lived only in the noscript block and inside the
+                  step-gated walkthrough — skimmers (and the TL;DR's "discover what death means
+                  here" promise) left with the question open. One static sentence closes it.
+                  Canon: +12 = lifetime surplus (112 = 100 + 12), per this page's own Act-5 data. */}
+              <p className="text-sm text-gray-400 mb-3">
+                <strong className="text-gray-300">Spoiler, so you&apos;re not left hanging:</strong>{' '}
+                &ldquo;death&rdquo; here means Alice&apos;s <em>standing</em> is suspended &mdash; she can&apos;t
+                act until rebirth &mdash; not that her account is deleted; her identity and history persist.
+                The <span className="text-emerald-300">+12 bonus</span> is the value she earned beyond what she
+                spent in her first life, carried forward as karma into her next one.{' '}
+                <Link href="/aliveness" className="text-sky-400 hover:text-sky-300 underline">How living and dying work &rarr;</Link>
+              </p>
+
               <p className="text-sm text-gray-400 italic">
                 You control the pace. At every turning point the system pauses to explain <em>why</em> it worked that way, and you see every trust/ATP change the moment it happens.
               </p>

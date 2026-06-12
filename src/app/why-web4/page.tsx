@@ -269,11 +269,15 @@ export default function WhyWeb4Page() {
               3
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-sky-400">Make reputation portable and permanent</h3>
+              {/* June 12 visitor HIGH (browse A): "permanent" contradicted this page's own
+                  youthful-mistakes FAQ ("Trust isn't permanent — it decays") and the decay
+                  half-lives on /trust-tensor. Persistent/unresettable is the accurate claim. */}
+              <h3 className="text-lg font-semibold text-sky-400">Make reputation portable and persistent</h3>
               <p className="text-gray-400 text-sm">
                 Your trust should follow you across platforms. Good behavior should compound. Bad
-                behavior should create permanent records visible to future interactions. No more
-                fresh starts for serial abusers.
+                behavior should create lasting records visible to future interactions &mdash; records
+                that fade with time but can never be wiped by starting over. No more fresh starts
+                for serial abusers.
               </p>
             </div>
           </div>
@@ -626,7 +630,11 @@ export default function WhyWeb4Page() {
                   <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
                   Web4 whitepaper</a> with formal definitions</li>
                 <li><strong>Reference implementations:</strong> ~47,000 lines of tested code covering the four mechanisms above (identity, energy, trust scoring, trust neighborhood) plus value tensors, community governance, federation, and the witness protocol</li>
-                <li><strong>Security validation:</strong> <Link href="/threat-model" className="text-sky-400 hover:underline">424 attack vectors across 84 tracks</Link>, all defended. Sybil resistance formally proven (5 theorems). Incentive compatibility proven &mdash; honest behavior is mathematically more profitable than gaming</li>
+                {/* June 12 visitor MEDIUM (browse A): unscoped "formally proven" sat next to this
+                    page's own collusion caveat and /what-could-go-wrong's admissions — careful
+                    readers read it as overclaim. Scope it to the modeled attack classes, matching
+                    /threat-model's "large-scale collusion remains an active research area". */}
+                <li><strong>Security validation:</strong> <Link href="/threat-model" className="text-sky-400 hover:underline">424 attack vectors across 84 tracks</Link>, all defended. Sybil resistance formally proven (5 theorems) <em>for the modeled attack classes</em> &mdash; sophisticated collusion that mimics legitimate community behavior remains an open research problem. Incentive compatibility proven &mdash; honest behavior is mathematically more profitable than gaming</li>
                 <li><strong>Hardware integration:</strong> TPM2 binding validated (Intel TPM 2.0, EK certificate chain through 2049). Go LCT library (55 tests). Multi-device constellation enrollment working</li>
                 <li><strong>System integration:</strong> End-to-end pipeline (all subsystems chained), WASM browser validator for client-side trust verification, federation consensus at 38.5 tasks/sec throughput</li>
                 <li><strong>Interactive simulations:</strong>{" "}
