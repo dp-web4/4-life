@@ -523,9 +523,13 @@ export default function KarmaJourneyPage() {
       <p style={{ color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '700px', lineHeight: 1.6, fontSize: '0.85rem' }}>
         <strong style={{ color: 'var(--color-text-secondary)' }}>What the numbers mean:</strong>{' '}
         <strong><Link href="/trust-tensor" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>Trust</Link></strong> = your reputation (Talent + Training + Temperament, averaged).{' '}
-        <strong><Link href="/atp-economics" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>ATP</Link></strong> = your energy budget — every action costs ATP, run out and you die.{' '}
+        {/* June 12 visitor MEDIUM (browse A): where the starting 100 ATP comes from never made it
+            over from /atp-economics (society-pool starter grant). One clause at the read point. */}
+        <strong><Link href="/atp-economics" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>ATP</Link></strong> = your energy budget — your first 100 is a starter grant from the society&apos;s pool when you join; every action costs ATP, run out and you die.{' '}
         <strong><Link href="/coherence-index" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>CI</Link></strong> (Coherence Index) = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;).
-        Everyone starts at CI 0.85, not 1.0 — you haven&apos;t demonstrated consistency yet, so actions cost ~1.4× their base price (CI&nbsp;0.85 → ~40% surcharge). As you behave consistently, CI rises to 0.9+ and the surcharge disappears (actions cost exactly their listed price).
+        {/* June 12 visitor MEDIUM (browse A): the ~1.4× figure was asserted without its derivation.
+            One-line formula, matching this page's atpMultiplier(): 1/CI², 1.0 at CI ≥ 0.9. */}
+        Everyone starts at CI 0.85, not 1.0 — you haven&apos;t demonstrated consistency yet, so actions cost ~1.4× their base price (the multiplier is 1/CI²: at CI 0.85, 1/0.85² ≈ 1.38 — a ~40% surcharge). As you behave consistently, CI rises to 0.9+ and the surcharge disappears (actions cost exactly their listed price).
         {/* June 11 visitor (browse A) MEDIUM: read this exact paragraph and still concluded "no stated
             rationale — reads as the system taxes you for being new." The why lived only behind the link.
             Inline the sibling's canonical frame (/coherence-index#why-ci-starts-low): no witnessed pattern
@@ -538,9 +542,20 @@ export default function KarmaJourneyPage() {
         {/* June 11 visitor MEDIUM (browse A): "Constrained (<0.3)" looked impossible against
             "below 0.5 = death" — visitor derived the raw/effective resolution alone and was "only
             ~80% sure". Bridge the paradox here, pointing at the existing contrast cards below. */}
-        (How can a tier sit below the 0.5 survival line? Survival is judged on <em>raw</em> trust;
-        the tier on <em>effective</em> trust — raw × CI², contrasted in the two cards below — which
-        poor coherence can drag far below your raw score.){' '}
+        (How can a tier sit below the 0.5 survival line? Survival — and eligibility to be <em>reborn</em> at all —
+        is judged on <em>raw</em> trust; which tier you land in is judged on <em>effective</em> trust — raw × CI²,
+        contrasted in the two cards below — which poor coherence can drag far below your raw score.
+        You can be reborn on raw 0.55 yet land Constrained on effective 0.40.){' '}
+        {/* June 12 visitor MEDIUM (browse B): did the arithmetic at the STARTING CI — 0.85² ≈ 0.72
+            → Honored needs raw ≈ 0.97 — and concluded the top tier was near-impossible. The missing
+            link: CI climbs during a life (this journey's own mechanics: every consistent choice
+            raises it), so the multiplier at death is better than the one you start with. Hedged
+            per policy review: this describes THIS journey's simulation, not a web4 guarantee. */}
+        Before you do the math at the starting CI and despair: 0.85² ≈ 0.72 would put Honored at raw ≈ 0.97 —
+        but CI <em>climbs</em> as you make consistent choices in this journey, so a steady player typically
+        reaches death with CI around 0.9–0.95, putting Honored at raw trust ≈ 0.78–0.86. Demanding — it&apos;s
+        meant to be earned, often over more than one life — but not the near-impossible 0.97 the starting
+        numbers imply.{' '}
         Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
       </p>
 
