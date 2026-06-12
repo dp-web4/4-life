@@ -3497,6 +3497,9 @@ export default function SocietySimulatorPage() {
             <div>
               <span className="font-bold text-emerald-300">Coalition</span> — <span className="text-gray-400">not a strategy but a result: a cluster of agents that have built mutual trust and reliably cooperate. &ldquo;Coalition formed&rdquo; in the feed marks one emerging.</span>
             </div>
+            <div>
+              <span className="font-bold text-amber-300">Death &amp; rebirth</span> — <span className="text-gray-400">an agent whose energy hits zero dies; a successor with the same strategy joins, carrying a reputation head start (karma) proportional to how well the dead agent was regarded. Mutual cooperation recharges <em>both</em> partners&rsquo; energy &mdash; cooperating is how the society refuels.</span>
+            </div>
           </div>
         </details>
 
@@ -3524,6 +3527,9 @@ export default function SocietySimulatorPage() {
 
           <p className="text-sm text-gray-500 mb-3">
             {SOCIETY_PRESETS[selectedPreset]?.description || 'Select a scenario'}
+            {SOCIETY_PRESETS[selectedPreset]?.typical && (
+              <span className="block mt-1 text-gray-400 italic">{SOCIETY_PRESETS[selectedPreset]?.typical}</span>
+            )}
           </p>
 
           {/* Custom toggle */}

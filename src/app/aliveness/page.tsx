@@ -735,7 +735,7 @@ export default function AlivenessExplainer() {
             <h3>1. Energy Budget</h3>
             <div className="concept-subtitle">ATP &gt; 0</div>
             <p>
-              You must have an <strong>energy budget</strong> to exist. ATP (Allocation Transfer Packet)
+              You must have an <strong>energy budget</strong> to exist. ATP (Allocation Transfer Packets)
               is your energy. Every action costs ATP. Every valuable contribution earns ATP.
               When ATP reaches zero, <strong>you die immediately</strong>.
             </p>

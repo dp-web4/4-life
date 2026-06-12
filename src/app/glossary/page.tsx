@@ -147,8 +147,8 @@ export default function GlossaryPage() {
           </p>
           <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
             {[
-              { id: "atp", abbr: "ATP", full: "Allocation Transfer Packet", gloss: "your spendable energy budget" },
-              { id: "adp", abbr: "ADP", full: "Allocation Discharge Packet", gloss: "the receipt for spent energy" },
+              { id: "atp", abbr: "ATP", full: "Allocation Transfer Packets", gloss: "your spendable energy budget" },
+              { id: "adp", abbr: "ADP", full: "Allocation Discharge Packets", gloss: "the receipt for spent energy" },
               { id: "lct", abbr: "LCT", full: "Linked Context Token", gloss: "hardware-rooted identity" },
               { id: "t3", abbr: "T3", full: "Trust Tensor", gloss: "a 3-axis trust score" },
               { id: "v3", abbr: "V3", full: "Value Tensor", gloss: "a 3-axis score for what you produce" },
@@ -281,7 +281,7 @@ export default function GlossaryPage() {
           {/* ATP */}
           <div id="atp" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              Energy Budget — ATP (Allocation Transfer Packet)
+              Energy Budget — ATP (Allocation Transfer Packets)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               The <strong>energy budget</strong> of Web4 societies—a charged value token
@@ -321,7 +321,7 @@ export default function GlossaryPage() {
           {/* ADP — Apr 29 LOW: visitor flagged "ADP appears all over the site but isn't a top-level entry" */}
           <div id="adp" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              Spent Energy Receipt — ADP (Allocation Discharge Packet)
+              Spent Energy Receipt — ADP (Allocation Discharge Packets)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               The <strong>spent counterpart of ATP</strong>. Every time you act, the ATP you spent doesn&apos;t

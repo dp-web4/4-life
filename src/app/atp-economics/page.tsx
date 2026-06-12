@@ -1576,7 +1576,7 @@ export default function ATPEconomicsPage() {
           <div className="mt-6 space-y-6 text-gray-300">
             <div>
               <h3 className="text-xl font-semibold text-sky-400 mb-3">
-                ATP (Allocation Transfer Packet)
+                ATP (Allocation Transfer Packets)
               </h3>
               <p className="leading-relaxed mb-3">
                 ATP is your <strong>personal energy budget</strong> &mdash; a unit of attention
@@ -1604,7 +1604,7 @@ export default function ATPEconomicsPage() {
 
             <div>
               <h3 className="text-xl font-semibold text-sky-400 mb-3">
-                ADP (Allocation Discharge Packet)
+                ADP (Allocation Discharge Packets)
               </h3>
               <p className="leading-relaxed mb-3">
                 <strong>Think of ADP as a receipt.</strong> When you spend ATP on
