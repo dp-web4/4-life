@@ -77,9 +77,14 @@ export default function TLDRPage() {
             <div className="flex gap-3 items-start">
               <span className="text-sky-400 text-xl mt-0.5">3.</span>
               <p className="text-gray-300">
+                {/* June 12 visitor HIGH (browse A): "permanent" here collided with the decay
+                    half-lives documented on /trust-tensor and /why-web4 — careful readers caught
+                    the contradiction. The accurate pitch is persistent-and-unresettable, not
+                    frozen-forever. Same wording fix applied on / and /why-web4. */}
                 <strong className="text-white">Trust is earned, never bought.</strong> Your
                 reputation is multi-dimensional (not just a single score), portable across
-                platforms, and permanent. Good behavior compounds. Bad behavior follows you.
+                platforms, and persistent &mdash; it follows you and can&apos;t be reset, though it
+                fades without fresh activity. Good behavior compounds. Bad behavior follows you.
               </p>
             </div>
             <div className="flex gap-3 items-start">

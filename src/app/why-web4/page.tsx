@@ -269,11 +269,15 @@ export default function WhyWeb4Page() {
               3
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-sky-400">Make reputation portable and permanent</h3>
+              {/* June 12 visitor HIGH (browse A): "permanent" contradicted this page's own
+                  youthful-mistakes FAQ ("Trust isn't permanent — it decays") and the decay
+                  half-lives on /trust-tensor. Persistent/unresettable is the accurate claim. */}
+              <h3 className="text-lg font-semibold text-sky-400">Make reputation portable and persistent</h3>
               <p className="text-gray-400 text-sm">
                 Your trust should follow you across platforms. Good behavior should compound. Bad
-                behavior should create permanent records visible to future interactions. No more
-                fresh starts for serial abusers.
+                behavior should create lasting records visible to future interactions &mdash; records
+                that fade with time but can never be wiped by starting over. No more fresh starts
+                for serial abusers.
               </p>
             </div>
           </div>

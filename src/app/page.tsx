@@ -305,9 +305,9 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           <li className="card" style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
             <span style={{ fontSize: '1.5rem' }}>📜</span>
             <div>
-              <strong>Consequences are permanent</strong>
+              <strong>Consequences persist</strong>
               <p style={{ color: 'var(--color-text-secondary)', margin: '0.25rem 0 0', fontSize: '0.9rem' }}>
-                Your track record follows you forever. No fresh starts. No hiding from your history.
+                Your track record follows you. No fresh starts, no hiding from your history &mdash; though old behavior slowly fades as you demonstrate new.
               </p>
             </div>
           </li>
