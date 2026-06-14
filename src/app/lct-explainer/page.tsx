@@ -437,6 +437,18 @@ export default function LCTExplainerPage() {
               (Intel TPM 2.0: key creation, signing, verification, attestation quotes, EK certificate
               chain verified through 2049).
             </p>
+            {/* June-14 visitor MEDIUM #1 (their explicit "one fix"): "validated on real hardware" is the
+                most deployed-sounding claim on a page they visited, and it sat with no scope caveat, so a
+                reader couldn't tell what's built vs simulated. Resolve at the read point with a SCOPE
+                distinction (not a blanket "it's all simulation" disclaimer, which would be false — the
+                binding really is hardware-tested). Mirrors the prototype/simulated register at L584+. */}
+            <p className="text-xs text-gray-500 mt-1">
+              To be precise about what that proves: the <em className="text-gray-400">hardware layer</em> &mdash; the
+              chip-level identity binding &mdash; really is tested on silicon. The trust, witness, and economic
+              dynamics built on top of it are still{" "}
+              <Link href="/why-web4#faq-deployed" className="text-green-400/80 hover:underline">simulation, not a deployed network</Link>.
+              So &ldquo;validated on real hardware&rdquo; means the foundation is proven &mdash; not that you can join Web4 today.
+            </p>
           </details>
 
           {/* Witness explainer */}
