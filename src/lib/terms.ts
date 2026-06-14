@@ -211,6 +211,15 @@ export const terms: Record<string, TermDefinition> = {
     learnMore: "/lct-explainer",
   },
 
+  VerifiableCredential: {
+    term: "Verifiable Credential",
+    fullName: "W3C Verifiable Credential (VC)",
+    brief: "A W3C standard for a digitally-signed claim you carry in a wallet app — like a tamper-proof digital ID card.",
+    explanation:
+      "A Verifiable Credential is a photograph: at one moment an issuer signs a statement ('this office says Alice is a licensed nurse') that anyone can check later. It's portable and tamper-evident, but frozen. Web4 keeps the living subject instead — trust that accumulates, is witnessed, and is scored per context — yet it speaks the VC standard too: it can project a snapshot of that trust out as an ordinary credential any standards-based wallet reads, and it can consume an external VC (a university degree, a government ID) as evidence to act on. The flow is one-way by design: Web4 can always export a snapshot, but a snapshot can never be inflated back into real relationship history.",
+    learnMore: "/why-web4#faq-vs-credentials",
+  },
+
   // Hardware Security Chips (referenced throughout /lct-explainer)
   TPM: {
     term: "TPM",

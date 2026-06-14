@@ -9,7 +9,7 @@ const TERM_CATEGORIES: { label: string; terms: string[] }[] = [
   { label: "Trust & Value", terms: ["T3", "V3", "MRH", "CI"] },
   { label: "Behavior", terms: ["Karma", "EP", "R6"] },
   { label: "Social", terms: ["Society", "Federation", "VCM", "Synthon"] },
-  { label: "Security", terms: ["DID", "Sybil", "Goodharting"] },
+  { label: "Security", terms: ["DID", "VerifiableCredential", "Sybil", "Goodharting"] },
 ];
 
 const TERM_ORDER = TERM_CATEGORIES.flatMap((c) => c.terms);
