@@ -504,6 +504,7 @@ export default function WhyWeb4Page() {
               <h4 className="text-amber-400/80 font-semibold text-xs uppercase tracking-wide mb-1.5">Adoption &amp; Transition</h4>
               <ul className="space-y-0.5 text-gray-400">
                 <li><a href="#faq-vs-existing" className="hover:text-sky-400 transition-colors">Why is this better than X?</a></li>
+                <li><a href="#faq-vs-credentials" className="hover:text-sky-400 transition-colors">Why not just use the EU digital wallet?</a></li>
                 <li><a href="#faq-transition" className="hover:text-sky-400 transition-colors">Do I switch everything at once?</a></li>
                 <li><a href="#faq-app-ui" className="hover:text-sky-400 transition-colors">What would a Web4 app look like?</a></li>
                 <li><a href="#faq-adoption-path" className="hover:text-sky-400 transition-colors">Simulation to real protocol?</a></li>
@@ -1115,10 +1116,11 @@ export default function WhyWeb4Page() {
               <details className="group/cat">
                 <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
                   <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
-                  Adoption (12)
+                  Adoption (13)
                 </summary>
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
                   <li><a href="#faq-vs-existing" className="hover:text-sky-400">Why better than X?</a></li>
+                  <li><a href="#faq-vs-credentials" className="hover:text-sky-400">Why not the EU digital wallet?</a></li>
                   <li><a href="#faq-transition" className="hover:text-sky-400">Switch everything at once?</a></li>
                   <li><a href="#faq-app-ui" className="hover:text-sky-400">What would it look like?</a></li>
                   <li><a href="#faq-adoption-path" className="hover:text-sky-400">Simulation → real protocol?</a></li>
@@ -1240,6 +1242,48 @@ export default function WhyWeb4Page() {
               <p className="text-amber-400/80 text-xs">
                 <strong>What Web4 optimizes for:</strong> Economic resistance to spam/abuse while preserving
                 privacy and decentralization. If you need something else, another solution may fit better.
+              </p>
+            </div>
+          </details>
+
+          {/* vs existing credential / digital-ID standards (W3C VC, EU wallet) */}
+          <details id="faq-vs-credentials" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>The world already has digital ID &mdash; logins, &ldquo;verified&rdquo; badges, even an EU digital wallet. Why Web4?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                Fair question &mdash; and the answer is <em>both/and</em>, not either/or. There&apos;s a whole modern
+                stack for proving who you are: &ldquo;Sign in with Google,&rdquo; <strong>Verifiable Credentials</strong>{" "}
+                (a W3C standard for digitally-signed claims you carry in a wallet app), and the new{" "}
+                <strong>EU Digital Identity Wallet</strong> that will let every EU citizen hold government-issued
+                credentials on their phone. These are good and real. Web4 doesn&apos;t fight them.
+              </p>
+              <p>
+                <strong>The difference is what a credential <em>is</em>.</strong> A credential is a <em>photograph</em>:
+                at one moment, some issuer signed a statement &mdash; &ldquo;this office says Alice is a licensed
+                nurse.&rdquo; It&apos;s portable and checkable, but frozen. It can&apos;t tell you whether Alice has
+                been a reliable colleague for two years, or that she&apos;s trusted for surgery prep but unknown as a
+                driver. Web4 keeps the <em>living subject</em> instead of the photo: trust that{" "}
+                <strong>accumulates as you participate</strong>, is <strong>witnessed by others</strong> whose own
+                reputation is on the line, and is <strong>scored per context</strong> rather than asserted once,
+                globally, and forever.
+              </p>
+              <p>
+                <strong>And Web4 speaks their language.</strong> It can flatten its living trust into exactly the
+                standard formats those wallets read &mdash; so your community membership can show up as an ordinary
+                credential in your normal phone wallet, checkable by any standards-based verifier with no Web4
+                software at all. It can also go the other way: a credential from a university or a government becomes
+                <em> evidence</em> a Web4 community can act on (&ldquo;admit anyone who proves they&apos;re an
+                accredited doctor&rdquo;). The flow is one-way by design &mdash; Web4 can always project out a
+                snapshot, but a snapshot can never be inflated back into real relationship history.
+              </p>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> &ldquo;speaks the standards&rdquo; means the <em>formats</em> work
+                today (a Web4 community already issues these credentials to standard wallets). Getting Web4 issuers
+                onto the EU&apos;s official trusted lists is a legal/governance process, not a coding one &mdash; that
+                part isn&apos;t done, and we don&apos;t pretend it is.
               </p>
             </div>
           </details>
