@@ -517,6 +517,18 @@ export default function KarmaJourneyPage() {
           </Link>
           : your identity and history persist, but your participation rights are paused
           until your karma tier earns them back. Same consequences, different metaphor.
+          {/* June-15 visitor MEDIUM #1: this "reinstatement until karma earns it back" framing,
+              read in isolation, says death is ALWAYS recoverable — contradicting Aliveness, where
+              a trust collapse is permanent. Scope it to the recoverable case and name the floor +
+              the sibling page (sibling-page-cross-reference-gap pattern). */}
+          {' '}One caveat: that reinstatement path is the <em>recoverable</em> case &mdash; it assumes
+          your raw trust held above the 0.5 survival line (running out of energy, the common death).
+          A trust <em>collapse</em> below 0.5 is the one door that doesn&rsquo;t reopen: society
+          rejects rebirth, and no karma tier earns it back &mdash; see the{' '}
+          <Link href="/aliveness#death-meaning" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>
+            two deaths
+          </Link>
+          {' '}side by side.
         </div>
       </div>
 
