@@ -1010,6 +1010,23 @@ export default function AlivenessExplainer() {
             rebirth for that identity. It&apos;s one event (&ldquo;you died&rdquo;) with two outcomes,
             shown side by side below.
           </p>
+          {/* June-15 visitor MEDIUM #1: Karma Journey frames death as "license suspension and
+              reinstatement until your karma tier earns it back" — which reads as ALWAYS recoverable
+              and collides with trust death being permanent here. And LCT Explainer's "not a permanent
+              lockout" reuses "permanent" for a third, unrelated case (device loss). Name both sibling
+              cases at this read point so a linear reader isn't whiplashed (sibling-cross-reference). */}
+          <p style={{ fontSize: "0.85rem", opacity: 0.7, marginTop: "0.5rem" }}>
+            Two things this is <em>not</em>, to keep &ldquo;permanent&rdquo; from blurring: the{' '}
+            <Link href="/karma-journey" style={{ color: "#fbbf24" }}>Karma Journey</Link>&apos;s
+            &ldquo;suspension and reinstatement, until your karma tier earns it back&rdquo; is the{' '}
+            <strong>energy-death</strong> (bankruptcy) case &mdash; the recoverable one; trust death is
+            the exception, with no tier to climb back from because rebirth itself is refused. And{' '}
+            <strong>losing your phone or device isn&apos;t death at all</strong> &mdash; your standing
+            persists, you just{' '}
+            <Link href="/lct-explainer" style={{ color: "#fbbf24" }}>re-bind new hardware</Link>. That&apos;s
+            what &ldquo;a permanent reputation is not a permanent lockout&rdquo; means &mdash; the hardware
+            case, not the trust case.
+          </p>
         </div>
 
         <div className="detail-box" style={{ marginTop: "1rem" }}>

@@ -566,7 +566,7 @@ export default function ATPEconomicsPage() {
             (engagement), whether diverse recipients confirm (breadth), and whether high-trust people confirm (quality signal).
             These three signals combine into your{' '}
             <a href="/trust-tensor#v3-output-scorer" className="text-sky-400 hover:text-sky-300 underline">V3 score</a> —
-            the output-quality half of your reputation. (Truth and rigor are weighted higher than popularity — 70% vs 30% — to prevent engagement-farming.)
+            the output-quality half of your reputation (its three parts: <em>usefulness, truthfulness, soundness</em>). (Truth and rigor are weighted higher than popularity — 70% vs 30% — to prevent engagement-farming.)
           </p>
           {/* Apr 28 MEDIUM friction: visitor asked "is it instant? polled? voted?" — close the loop on timing. */}
           {/* May 31 visitor MEDIUM #2 sub-question (2) "does it expire?" — named at the read point.
