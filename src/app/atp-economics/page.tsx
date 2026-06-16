@@ -1492,6 +1492,17 @@ export default function ATPEconomicsPage() {
           <h3 className="text-lg font-semibold text-amber-300 mb-2">
             What About ADP?
           </h3>
+          {/* June-16 visitor LOW: "told it's a receipt I never touch — unclear why I need to know.
+              If I never touch it, why am I learning about it on the page that's supposed to teach me
+              energy?" The box was titled with the reader's question but opened with mechanics. Lead
+              with the why-for-the-reader (the verifiable trail others confirm) and hand off to the
+              "to me, the user" plumbing box below — do NOT re-explain mechanics here. */}
+          <p className="text-gray-200 text-sm leading-relaxed mb-2">
+            <strong className="text-amber-200">Why learn about something you never touch?</strong> Because
+            the ADP is the verifiable receipt others confirm to release your energy back &mdash; it&apos;s
+            what makes ATP something you <em>earn back by proven value</em> rather than something you can
+            simply claim, so it&apos;s load-bearing even though you never manage it yourself.
+          </p>
           <p className="text-gray-300 text-sm leading-relaxed mb-2">
             Every time you spend ATP, the system creates an <strong>ADP (Allocation Discharge Packet)</strong> &mdash;
             a receipt recording what you did, what it cost, and who witnessed it. ADP is the &ldquo;spent
