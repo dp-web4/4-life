@@ -511,24 +511,35 @@ export default function KarmaJourneyPage() {
           <strong style={{ color: 'var(--color-text-secondary)' }}>Simulation vs. real deployment.</strong>{' '}
           &ldquo;Life&rdquo; and &ldquo;rebirth&rdquo; are simulation framing &mdash; an LCT is
           hardware-bound and persists; it doesn&rsquo;t literally die and respawn. In a real
-          Web4 deployment this same mechanic looks like{' '}
-          <Link href="/aliveness#death-meaning" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>
-            license suspension and reinstatement
-          </Link>
-          : your identity and history persist, but your participation rights are paused
-          until your karma tier earns them back. Same consequences, different metaphor.
-          {/* June-15 visitor MEDIUM #1: this "reinstatement until karma earns it back" framing,
-              read in isolation, says death is ALWAYS recoverable — contradicting Aliveness, where
-              a trust collapse is permanent. Scope it to the recoverable case and name the floor +
-              the sibling page (sibling-page-cross-reference-gap pattern). */}
-          {' '}One caveat: that reinstatement path is the <em>recoverable</em> case &mdash; it assumes
-          your raw trust held above the 0.5 survival line (running out of energy, the common death).
-          A trust <em>collapse</em> below 0.5 is the one door that doesn&rsquo;t reopen: society
-          rejects rebirth, and no karma tier earns it back &mdash; see the{' '}
-          <Link href="/aliveness#death-meaning" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>
-            two deaths
-          </Link>
-          {' '}side by side.
+          Web4 deployment, what &ldquo;death&rdquo; means depends on <em>which metric ran out</em> &mdash;
+          and that, not the 0.5 number on its own, is what splits a recoverable death from a permanent one:
+          {/* June-16 visitor MEDIUM (2nd occurrence): the June-15 fix named the 0.5 floor but tied
+              BOTH outcomes to "above/below 0.5" — the visitor read the full callout and STILL couldn't
+              tell them apart ("same number, same direction, opposite outcome"). The distinguishing factor
+              is WHICH tensor failed, so lead with the metric, mirroring Aliveness #death-meaning's
+              two-deaths split (green=energy/recoverable, red=trust/permanent). */}
+          <span style={{ display: 'block', marginTop: '0.5rem' }}>
+            <strong style={{ color: '#6ee7b7' }}>Energy death</strong> &mdash; you ran out of <strong>ATP</strong>{' '}
+            while your raw trust held at or above 0.5. This is the recoverable, common case, and it&rsquo;s what{' '}
+            <Link href="/aliveness#death-meaning" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>
+              license suspension and reinstatement
+            </Link>{' '}
+            means: your identity and history persist, your participation rights are just paused until your
+            karma tier earns them back.
+          </span>
+          <span style={{ display: 'block', marginTop: '0.4rem' }}>
+            <strong style={{ color: '#fca5a5' }}>Trust collapse</strong> &mdash; your raw <strong>trust</strong>{' '}
+            itself fell below 0.5. This is the one door that doesn&rsquo;t reopen: society rejects rebirth, and
+            no karma tier earns it back.
+          </span>
+          <span style={{ display: 'block', marginTop: '0.4rem' }}>
+            Both crossings involve 0.5, so the number alone can&rsquo;t tell them apart &mdash; <em>which metric
+            failed</em> does. See the{' '}
+            <Link href="/aliveness#death-meaning" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>
+              two deaths
+            </Link>
+            {' '}side by side.
+          </span>
         </div>
       </div>
 
@@ -599,11 +610,12 @@ export default function KarmaJourneyPage() {
           <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>Decides your <strong style={{ color: 'var(--color-text-secondary)' }}>karma tier</strong> at death (Honored / Neutral / Constrained), which seeds your next life.</div>
           {/* May 13 LOW — bridge "next life" simulation framing to the deployment mechanic at the point of use; the top-of-page intro callout was being read as preamble and missed. */}
           <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', lineHeight: 1.55, marginTop: '0.5rem', fontStyle: 'italic', opacity: 0.85 }}>
-            &ldquo;Next life&rdquo; is simulation framing. In a deployed Web4 this is{' '}
+            &ldquo;Next life&rdquo; is simulation framing. For the recoverable <strong>energy death</strong>{' '}
+            (ATP ran out, raw trust held above 0.5), a deployed Web4 calls this{' '}
             <Link href="/aliveness#death-meaning" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.25)' }}>
               license suspension and reinstatement
             </Link>
-            , not deletion.
+            , not deletion &mdash; a <strong>trust collapse</strong> below 0.5 is the permanent exception.
           </div>
         </div>
       </div>
