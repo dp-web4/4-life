@@ -468,7 +468,13 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
           <Link href="/tldr" className="btn-secondary" style={{ padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none' }}>
             2-minute overview
           </Link>
-          <Link href="/why-web4" className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          {/* June-17 visitor MEDIUM: this button was styled btn-primary — the only emphasized
+              button in "Go deeper" — which competed with the hero's single recommended door (/tldr)
+              and routed first-timers into the 15-min diagnostic while they thought they'd taken the
+              recommended path. Demoted to btn-secondary to match its siblings: the four options here
+              are equal-weight "pick by time budget" choices; the hero stays the sole primary CTA.
+              (Restores the documented Apr-17 single-door intent — see "What's New" below.) */}
+          <Link href="/why-web4" className="btn-secondary" style={{ padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: '1px solid var(--color-border)', textDecoration: 'none' }}>
             <span>Why Web4? (~7 min core + deep-dive FAQs)</span>
             <span style={{ opacity: 0.7 }}>→</span>
           </Link>
