@@ -411,9 +411,6 @@ export default function ATPEconomicsPage() {
               But if you built trust, you&apos;re reborn with a head start — your reputation carries forward.
             </p>
             <p className="text-sm text-gray-400 mt-2">
-              <strong className="text-gray-300">What about ADP?</strong> Every time you spend ATP, you get an <strong className="text-gray-300">ADP
-              (Allocation Discharge Packet)</strong> — a receipt recording what you did and what it cost. ADP is the &ldquo;spent energy&rdquo;
-              counterpart to ATP&apos;s &ldquo;available energy&rdquo; &mdash; a record of an action, not a second currency you can spend.
               {/* June 2 visitor MEDIUM / Unanswered Q2: "a receipt that converts into money isn't a receipt." The
                   receipt-vs-asset contradiction lived here because "converts back into fresh ATP" reads as the receipt
                   itself becoming spendable. The "not a second currency" disambiguation existed only in the deeper
@@ -422,10 +419,18 @@ export default function ATPEconomicsPage() {
                   internal accounting artifact?" The copy answered what-it-is and what-triggers-refill but left the
                   agency verb open ("you get an ADP" implies possession). Add the genuinely-new agency content only —
                   it's automatic; you never hold/present/manage it — WITHOUT re-asserting "spend/currency" (already above). */}
+              {/* June 18 visitor MEDIUM: ADP "why should I care" RECURRED despite #394, which inverted the *deep* amber
+                  box (L1490) to lead with the why — but the visitor meets ADP FIRST here, and this paragraph still ran
+                  mechanics → "you never touch it" caveat → (buried at end) the why. #394 landed in the wrong location.
+                  Fix: REORDER these existing sentences to why → what → caveat at the FIRST read point. No new claims. */}
+              <strong className="text-gray-300">What about ADP?</strong> Here&apos;s why it matters to you even though you never
+              touch it: when others confirm your work was valuable, that confirmation is what unlocks fresh ATP back into your
+              budget &mdash; and the ADP is the proof that earns it back.
+              {' '}So what is it? Every time you spend ATP, you get an <strong className="text-gray-300">ADP
+              (Allocation Discharge Packet)</strong> — a receipt recording what you did and what it cost. ADP is the &ldquo;spent energy&rdquo;
+              counterpart to ATP&apos;s &ldquo;available energy&rdquo; &mdash; a record of an action, not a second currency you can spend.
               {' '}You never hold, present, or manage the ADP yourself &mdash; the system creates it automatically when you act
               and settles it once your work is confirmed; it&apos;s background accounting, not a step you take.
-              {' '}When others confirm your work was valuable, that confirmation is what unlocks fresh ATP back into your
-              budget &mdash; the receipt doesn&apos;t turn into energy, it&apos;s the proof that earns it back.
             </p>
             <p className="pt-4 text-gray-400 italic">
               Result: Only sustainable behaviors survive. Value creators thrive.
