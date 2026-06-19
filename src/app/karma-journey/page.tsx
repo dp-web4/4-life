@@ -543,6 +543,24 @@ export default function KarmaJourneyPage() {
         </div>
       </div>
 
+      {/* June-19 visitor MEDIUM (the day's #1 "fix one thing"): raw-vs-effective + CI² is heavy
+          cognitive load. The resolution lived only at the END of the dense "What the numbers mean"
+          wall below, so a linear reader hit the daunting arithmetic (effective ~0.36 at raw 0.5)
+          before any plain-English frame and "re-read twice, still unsure". Per
+          recurring-anchor-proactive-vs-reactive (PR #362): lead the section with ONE plain-English
+          anchor carrying the missing reassurance ("start low on purpose, climb"). Relocated UP from
+          below the contrast cards (was the Apr-21 color-coded two-liner) + enriched — net density
+          neutral, NOT a new box. Guardrail: no CI² arithmetic here; that stays in the wall/cards/
+          why-squared callout below. */}
+      <p style={{ marginBottom: '1.25rem', maxWidth: '700px', lineHeight: 1.55, fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>
+        <strong>Two trust numbers — and it&rsquo;s normal to start low.</strong>{' '}
+        <strong style={{ color: '#93c5fd' }}>Raw trust keeps you alive now</strong> (your plain reputation).{' '}
+        <strong style={{ color: '#fde68a' }}>Effective trust — raw dampened by how consistent you&rsquo;ve been — is what you inherit next life</strong>{' '}
+        and sets your karma tier. New players start low <em>on purpose</em>: you haven&rsquo;t built a track record yet,
+        so effective trust sits well under raw at first and climbs as you behave consistently. That gap is the
+        starting line, not a verdict.
+      </p>
+
       <p style={{ color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '700px', lineHeight: 1.6, fontSize: '0.85rem' }}>
         <strong style={{ color: 'var(--color-text-secondary)' }}>What the numbers mean:</strong>{' '}
         <strong><Link href="/trust-tensor" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>Trust</Link></strong> = your reputation (Talent + Training + Temperament, averaged).{' '}
@@ -582,12 +600,9 @@ export default function KarmaJourneyPage() {
         Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
       </p>
 
-      {/* Apr 21 LOW L6 — promote two-trust-numbers lead-in to standalone visibility above the contrast card. Color-codes the two clauses to match the Raw (blue) / Effective (yellow) cards directly below. */}
-      <p style={{ marginBottom: '0.5rem', maxWidth: '700px', lineHeight: 1.5, fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>
-        <strong style={{ color: '#93c5fd' }}>Raw trust keeps you alive now.</strong>{' '}
-        <strong style={{ color: '#fde68a' }}>Effective trust is what you inherit next life.</strong>
-      </p>
-
+      {/* Two-trust-numbers lead-in relocated UP to lead the numbers section (June-19 visitor MEDIUM);
+          the contrast cards below keep their own color-coded Raw (blue) / Effective (yellow) headers,
+          so they stand without a duplicate two-liner directly above. */}
       {/* Raw vs Effective trust contrast — closes Apr 18 LOW */}
       <div style={{
         display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.75rem',
