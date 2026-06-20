@@ -568,9 +568,12 @@ export default function KarmaJourneyPage() {
             over from /atp-economics (society-pool starter grant). One clause at the read point. */}
         <strong><Link href="/atp-economics" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>ATP</Link></strong> = your energy budget — your first 100 is a starter grant from the society&apos;s pool when you join; every action costs ATP, run out and you die.{' '}
         <strong><Link href="/coherence-index" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>CI</Link></strong> (Coherence Index) = consistency score — erratic behavior lowers it, which makes all future actions cost more ATP (the &quot;cost multiplier&quot;).
-        {/* June 12 visitor MEDIUM (browse A): the ~1.4× figure was asserted without its derivation.
-            One-line formula, matching this page's atpMultiplier(): 1/CI², 1.0 at CI ≥ 0.9. */}
-        Everyone starts at CI 0.85, not 1.0 — you haven&apos;t demonstrated consistency yet, so actions cost ~1.4× their base price (the multiplier is 1/CI²: at CI 0.85, 1/0.85² ≈ 1.38 — a ~40% surcharge). As you behave consistently, CI rises to 0.9+ and the surcharge disappears (actions cost exactly their listed price).
+        {/* June-20 visitor MEDIUM: the inline 1/CI² derivation ("1/0.85² ≈ 1.38 — ~40% surcharge")
+            made a reader who already grasped the *concept* re-read it as "homework". Keep the plain
+            claim (~40% more at the start, fades to nothing) inline; the derivation now lives in the
+            "Show the math" <details> below. (Was the June-12 derivation add — concept now clear, so
+            the lever is structural per recurring carry-forward, not more prose.) */}
+        Everyone starts at CI 0.85, not 1.0 — you haven&apos;t demonstrated consistency yet, so actions cost about 40% more than their base price at first. As you behave consistently, CI rises to 0.9+ and that surcharge disappears (actions cost exactly their listed price).
         {/* June 11 visitor (browse A) MEDIUM: read this exact paragraph and still concluded "no stated
             rationale — reads as the system taxes you for being new." The why lived only behind the link.
             Inline the sibling's canonical frame (/coherence-index#why-ci-starts-low): no witnessed pattern
@@ -587,18 +590,44 @@ export default function KarmaJourneyPage() {
         is judged on <em>raw</em> trust; which tier you land in is judged on <em>effective</em> trust — raw × CI²,
         contrasted in the two cards below — which poor coherence can drag far below your raw score.
         You can be reborn on raw 0.55 yet land Constrained on effective 0.40.){' '}
-        {/* June 12 visitor MEDIUM (browse B): did the arithmetic at the STARTING CI — 0.85² ≈ 0.72
-            → Honored needs raw ≈ 0.97 — and concluded the top tier was near-impossible. The missing
-            link: CI climbs during a life (this journey's own mechanics: every consistent choice
-            raises it), so the multiplier at death is better than the one you start with. Hedged
-            per policy review: this describes THIS journey's simulation, not a web4 guarantee. */}
-        Before you do the math at the starting CI and despair: 0.85² ≈ 0.72 would put Honored at raw ≈ 0.97 —
-        but CI <em>climbs</em> as you make consistent choices in this journey, so a steady player typically
-        reaches death with CI around 0.9–0.95, putting Honored at raw trust ≈ 0.78–0.86. Demanding — it&apos;s
-        meant to be earned, often over more than one life — but not the near-impossible 0.97 the starting
-        numbers imply.{' '}
+        {/* June 12 visitor MEDIUM (browse B): a reader doing the arithmetic at the STARTING CI
+            concluded Honored was near-impossible; the missing link is that CI climbs during a life.
+            June-20: the plain reassurance stays inline; the supporting arithmetic (0.85² ≈ 0.72 →
+            raw ≈ 0.97; CI climbs to 0.9–0.95 → raw ≈ 0.78–0.86) moved into "Show the math" below.
+            Hedged per prior policy review: this describes THIS journey's simulation, not a web4 guarantee. */}
+        Don&apos;t let the starting numbers scare you off the top tier: because CI <em>climbs</em> as you make
+        consistent choices in this journey, a steady player reaches death with a much gentler multiplier than
+        they started with. So Honored is demanding — meant to be earned, often over more than one life — but not
+        the near-impossible bar the opening numbers imply.{' '}
         Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
       </p>
+
+      {/* June-20 visitor MEDIUM: the two CI² derivations above used to sit inline and read as
+          "homework" for a reader who already had the intuition. Per the carry-forward guardrail
+          (inline-prose lever exhausted — PRs #362/#392/#393/#397), the math is now structural:
+          intuition stays in the prose, the numbers live one click away here. No new claims — these
+          are the exact derivations removed from the two paragraphs above. */}
+      <details style={{ marginBottom: '1.5rem', maxWidth: '700px' }}>
+        <summary style={{ cursor: 'pointer', color: '#94a3b8', fontSize: '0.85rem', fontFamily: 'var(--font-mono)' }}>
+          Show the math
+        </summary>
+        <div style={{ marginTop: '0.6rem', padding: '0.75rem 1rem', borderRadius: '0.5rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+          <p style={{ fontSize: '0.82rem', color: 'var(--color-text-muted)', margin: '0 0 0.75rem', lineHeight: 1.6 }}>
+            <strong style={{ color: 'var(--color-text-secondary)' }}>The starting surcharge.</strong>{' '}
+            The cost multiplier is <strong>1/CI²</strong>. At the starting CI of 0.85, that&apos;s
+            1/0.85² ≈ 1.38 — about a 40% surcharge. As CI rises to 0.9+, 1/CI² approaches 1.0 and the
+            surcharge vanishes (actions then cost exactly their listed price).
+          </p>
+          <p style={{ fontSize: '0.82rem', color: 'var(--color-text-muted)', margin: 0, lineHeight: 1.6 }}>
+            <strong style={{ color: 'var(--color-text-secondary)' }}>Reaching Honored (effective &gt; 0.7).</strong>{' '}
+            Effective trust = raw × CI². At the starting CI, 0.85² ≈ 0.72, which would demand raw ≈ 0.97 —
+            near-impossible. But CI <em>climbs</em> as you make consistent choices, so a steady player typically
+            reaches death with CI around 0.9–0.95 (CI² ≈ 0.81–0.90), putting Honored within reach at raw trust
+            ≈ 0.78–0.86. Demanding, but not the 0.97 the starting numbers imply. (This describes this journey&apos;s
+            simulation, not a guaranteed Web4 rule.)
+          </p>
+        </div>
+      </details>
 
       {/* Two-trust-numbers lead-in relocated UP to lead the numbers section (June-19 visitor MEDIUM);
           the contrast cards below keep their own color-coded Raw (blue) / Effective (yellow) headers,
