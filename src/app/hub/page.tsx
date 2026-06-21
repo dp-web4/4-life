@@ -2,6 +2,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageTracker from "@/components/PageTracker";
 import MaturityBadge from "@/components/MaturityBadge";
+import NewcomerOrientationBanner from "@/components/NewcomerOrientationBanner";
 
 /**
  * The hub — a runnable Web4 society. Deep-dive expansion of the /running-now hub
@@ -29,6 +30,7 @@ export default function HubPage() {
     <>
       <PageTracker slug="hub" />
       <Breadcrumbs currentPath="/hub" />
+      <NewcomerOrientationBanner accent="#c4b5fd" />
 
       {/* Hero */}
       <section className="max-w-4xl mx-auto">
