@@ -2,6 +2,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageTracker from "@/components/PageTracker";
 import MaturityBadge, { MaturityBadges } from "@/components/MaturityBadge";
+import NewcomerOrientationBanner from "@/components/NewcomerOrientationBanner";
 
 /**
  * Running Now — closes the site's biggest gap: the rest of 4-Life teaches Web4 as
@@ -21,6 +22,7 @@ export default function RunningNowPage() {
     <>
       <PageTracker slug="running-now" />
       <Breadcrumbs currentPath="/running-now" />
+      <NewcomerOrientationBanner accent="#34d399" />
 
       {/* Hero */}
       <section className="max-w-4xl mx-auto">

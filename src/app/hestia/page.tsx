@@ -2,6 +2,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageTracker from "@/components/PageTracker";
 import MaturityBadge from "@/components/MaturityBadge";
+import NewcomerOrientationBanner from "@/components/NewcomerOrientationBanner";
 
 /**
  * Hestia — the deployed trust layer. Deep-dive expansion of the /running-now
@@ -35,6 +36,7 @@ export default function HestiaPage() {
     <>
       <PageTracker slug="hestia" />
       <Breadcrumbs currentPath="/hestia" />
+      <NewcomerOrientationBanner accent="#34d399" />
 
       {/* Hero */}
       <section className="max-w-4xl mx-auto">
