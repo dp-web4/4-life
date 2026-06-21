@@ -55,6 +55,11 @@ const pages: { path: string; priority: number; changeFrequency: MetadataRoute.Si
   { path: "/narratives", priority: 0.6, changeFrequency: "monthly" },
   { path: "/research-hub", priority: 0.6, changeFrequency: "monthly" },
 
+  // Deployed reality (Web4 in production — proof the simulation reflects real software)
+  { path: "/running-now", priority: 0.8, changeFrequency: "weekly" },
+  { path: "/hestia", priority: MEDIUM_PRIORITY, changeFrequency: "monthly" },
+  { path: "/hub", priority: MEDIUM_PRIORITY, changeFrequency: "monthly" },
+
   // Intermediate exploration pages
   { path: "/ai-agents", priority: 0.6, changeFrequency: "monthly" },
   { path: "/identity-constellation", priority: 0.5, changeFrequency: "monthly" },
