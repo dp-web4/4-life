@@ -140,8 +140,12 @@ export default function TLDRPage() {
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 mb-10">
           <h2 className="text-lg font-semibold text-amber-400 mb-2">Where is this now?</h2>
           <p className="text-gray-300 text-sm leading-relaxed mb-3">
-            Web4 is <strong>active research with working simulations</strong>, not a deployed product.
-            One distinction worth keeping straight: <strong className="text-gray-100">Web4 is the protocol &mdash; the rules and math; 4-Life (this site) is the lab where you explore those rules</strong> through simulations, walkthroughs, and explainers.
+            Web4 is <strong>active research — and parts of it are already deployed</strong>.
+            The trust layer (<Link href="/hestia" className="text-emerald-400 hover:underline">hestia</Link>) runs
+            today on your own hardware, and a Web4 society (<Link href="/hub" className="text-purple-300 hover:underline">the hub</Link>)
+            is runnable reference code &mdash; both open source.{" "}
+            <Link href="/running-now" className="text-emerald-400 hover:underline">See what&apos;s live &rarr;</Link>
+            {" "}One distinction worth keeping straight: <strong className="text-gray-100">Web4 is the protocol &mdash; the rules and math; 4-Life (this site) is the lab where you explore those rules</strong> through simulations, walkthroughs, and explainers.
             So 4-Life lets you watch the mechanics in action — see societies form, trust networks
             emerge, and bad actors fail. The underlying{" "}
             <a
@@ -160,7 +164,8 @@ export default function TLDRPage() {
               <ul className="text-gray-300 space-y-1 list-disc list-inside">
                 <li>Formal protocol specification (open source)</li>
                 <li>Open-source reference implementations (LCT, T3/V3, ATP, witnesses)</li>
-                <li>Working trust simulations you can run here</li>
+                <li><strong className="text-emerald-300">hestia</strong> &mdash; the trust layer, <em>deployed and running</em> on your own hardware (AGPL)</li>
+                <li><strong className="text-purple-300">the hub</strong> &mdash; a runnable Web4 society you can fork (AGPL)</li>
                 <li>This site &mdash; dozens of interactive explainers and runnable simulations</li>
               </ul>
             </div>
@@ -176,7 +181,8 @@ export default function TLDRPage() {
           </div>
           <p className="text-gray-500 text-xs mt-3 italic">
             No timeline commitments — this is research, and research takes as long as it takes.
-            The simulations work. The question is whether the real world behaves like the simulations.
+            The trust layer runs and the simulations work; the open question is whether whole
+            communities behave like the simulations once they adopt it.
           </p>
         </div>
 

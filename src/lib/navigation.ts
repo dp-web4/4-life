@@ -43,7 +43,21 @@ export const navigationTree: NavigationTree = {
       href: '/running-now',
       desc: "Web4 isn't only theory — what's deployed today: hestia, the hub, AGPL and runnable.",
       keywords: ['running', 'deployed', 'real', 'live', 'production', 'hestia', 'hub', 'agpl', 'open source', 'witness chain', 'sealed channel'],
-      related: ['/tldr', '/web4-explainer', '/lct-explainer', '/trust-tensor', '/federation-economics']
+      related: ['/hestia', '/hub', '/tldr', '/web4-explainer', '/lct-explainer', '/trust-tensor', '/federation-economics']
+    },
+    {
+      title: 'Hestia (run it)',
+      href: '/hestia',
+      desc: 'The deployed trust layer — cryptographic identity, witness chain, evolving trust, on your own hardware.',
+      keywords: ['hestia', 'trust daemon', 'local-first', 'LCT', 'vault', 'witness chain', 'policy gate', 'delegation', 'constellation', 'MCP', 'agpl', 'run', 'deployed', 'real'],
+      related: ['/running-now', '/hub', '/lct-explainer', '/trust-tensor', '/multi-session-identity']
+    },
+    {
+      title: 'The Hub (run it)',
+      href: '/hub',
+      desc: 'A runnable Web4 society — seven roles, a signed charter, a witnessed ledger, sealed channels.',
+      keywords: ['hub', 'society', 'charter', 'roles', 'ledger', 'sealed channel', 'find_members', 'governance', 'agpl', 'run', 'reference', 'fork'],
+      related: ['/running-now', '/hestia', '/society-simulator', '/federation-economics']
     },
     {
       title: 'Why Web4?',

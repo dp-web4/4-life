@@ -246,12 +246,18 @@ export default function ManifestPage() {
       <section style={{ marginTop: "2rem", padding: "1.5rem", background: "#1e293b", borderRadius: "0.5rem", borderLeft: "4px solid #38bdf8" }}>
         <h2 style={{ marginTop: 0 }}>Research Status</h2>
         <p style={{ color: "#d1d5db", lineHeight: "1.75" }}>
-          This is research, not production. 4-Life explores what's possible when trust becomes computable.
-          Concepts are evolving. APIs are unstable. Many ideas are experimental.
+          This is research — but not <em>only</em> theory. The concepts sit on a maturity
+          ladder: <strong style={{ color: "#7dd3fc" }}>spec</strong> (defined in the Web4
+          ontology), <strong style={{ color: "#c4b5fd" }}>reference</strong> (built and
+          runnable — including <a href="/hub" style={{ color: "#c4b5fd" }}>the hub</a>, a
+          Web4 society you can fork), and <strong style={{ color: "#34d399" }}>running</strong>
+          {" "}(deployed today — the <a href="/hestia" style={{ color: "#34d399" }}>hestia</a> trust
+          layer). Other ideas are still evolving, and APIs are unstable.{" "}
+          <a href="/running-now" style={{ color: "#34d399" }}>See exactly what runs &rarr;</a>
         </p>
         <p style={{ marginTop: "0.75rem", color: "#d1d5db", lineHeight: "1.75" }}>
-          We share it publicly to invite collaboration, not to suggest it's ready for deployment.
-          The best contributions are often better questions, not just code.
+          We share it publicly to invite collaboration. The best contributions are often
+          better questions, not just code — and now, also, running the deployed pieces yourself.
         </p>
       </section>
 

@@ -28,31 +28,48 @@ export default function StarterKitPage() {
             maxWidth: "40rem",
           }}
         >
-          <div style={{ fontSize: "1.1rem", fontWeight: 600, color: "#fbbf24" }}>
-            Coming Soon
+          <div style={{ fontSize: "1.1rem", fontWeight: 600, color: "#34d399" }}>
+            The building blocks already run
           </div>
           <p style={{ marginTop: "0.5rem", color: "#9ca3af", lineHeight: 1.6 }}>
-            The downloadable starter kit is still being developed. In the
-            meantime, you can explore Web4 concepts hands-on in the{" "}
-            <strong style={{ color: "#38bdf8" }}>Playground</strong> — run
-            simulations, tweak parameters, and watch trust-native societies
-            emerge in real time.
+            The one-click <em>packaged</em> kit is still being assembled — but you
+            don&apos;t have to wait to run the real thing. The per-entity trust
+            layer (<Link href="/hestia" style={{ color: "#34d399" }}>hestia</Link>)
+            is deployed today, and a runnable Web4 society
+            (<Link href="/hub" style={{ color: "#c4b5fd" }}>the hub</Link> — roles,
+            charter, witnessed ledger) is open-source reference code you can fork
+            now. Both are AGPL.
           </p>
-          <Link
-            href="/playground"
-            style={{
-              display: "inline-block",
-              marginTop: "0.75rem",
-              padding: "0.5rem 1.25rem",
-              background: "#0ea5e9",
-              color: "white",
-              borderRadius: "0.375rem",
-              fontWeight: 600,
-              textDecoration: "none",
-            }}
-          >
-            Try the Playground →
-          </Link>
+          <div style={{ marginTop: "0.75rem", display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+            <Link
+              href="/running-now"
+              style={{
+                display: "inline-block",
+                padding: "0.5rem 1.25rem",
+                background: "#059669",
+                color: "white",
+                borderRadius: "0.375rem",
+                fontWeight: 600,
+                textDecoration: "none",
+              }}
+            >
+              See what&apos;s deployed →
+            </Link>
+            <Link
+              href="/playground"
+              style={{
+                display: "inline-block",
+                padding: "0.5rem 1.25rem",
+                background: "#0ea5e9",
+                color: "white",
+                borderRadius: "0.375rem",
+                fontWeight: 600,
+                textDecoration: "none",
+              }}
+            >
+              Try the Playground →
+            </Link>
+          </div>
         </div>
       </section>
 

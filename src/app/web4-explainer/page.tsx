@@ -2,6 +2,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import PageTracker from "@/components/PageTracker";
+import InProduction from "@/components/InProduction";
 
 export default function Web4ExplainerPage() {
   return (
@@ -24,6 +25,7 @@ export default function Web4ExplainerPage() {
           </a>
           .
         </p>
+        <InProduction concept="stack" />
       </section>
 
       <section>
@@ -181,13 +183,17 @@ export default function Web4ExplainerPage() {
           attestable presence whose MRH and T3/V3 can evolve over time.
         </p>
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
-          In 4-Life, we prototype this with stubbed signatures and interfaces for
-          hardware presence. Over time, those hooks are meant to be backed by
-          real attestation so other societies can tell when they are talking to
-          "the same" root LCT versus a fresh or forked one. Even then, Web4
-          treats hardware binding as one factor among many: witnessed events,
-          pairing structures, and ATP-priced attestations together form a
-          contextual, N-factor trust fabric.
+          This site&apos;s <em>simulations</em> still model hardware presence with
+          stubbed signatures — but the idea has left the whiteboard. Attestation is
+          now a typed primitive in the reference library, and the deployed trust
+          layer (<a href="https://github.com/dp-web4/hestia" target="_blank" rel="noreferrer" style={{ color: "#34d399" }}>hestia</a>)
+          ships a <strong>device constellation</strong>: link your devices into a
+          verifying set so multi-device proof becomes your MFA, today. Full
+          TPM / secure-enclave root binding is the next rung on the ladder. Even
+          then, Web4 treats hardware binding as one factor among many: witnessed
+          events, pairing structures, and ATP-priced attestations together form a
+          contextual, N-factor trust fabric.{" "}
+          <a href="/running-now" style={{ color: "#34d399" }}>What&apos;s deployed &rarr;</a>
         </p>
       </section>
 

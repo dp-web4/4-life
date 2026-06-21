@@ -116,6 +116,7 @@ export default function GlossaryPage() {
           <span className="text-sm text-gray-500 mr-1 self-center">Jump to:</span>
           {[
             { id: "core", label: "Core (start here)" },
+            { id: "running", label: "Running Now ⚡" },
             { id: "advanced", label: "Advanced" },
             { id: "research", label: "Research (deep dive)" },
             { id: "lifecycle", label: "Lifecycle" },
@@ -498,6 +499,110 @@ export default function GlossaryPage() {
               >
                 Canonical spec (R7) →
               </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Running Now — deployed tools. These aren't simulations or specs: hestia and the hub
+          are public, AGPL, runnable code. Grounded only in the public hestia + web4/hub repos. */}
+      <section id="running" className="max-w-4xl mx-auto mt-16 scroll-mt-20" data-glossary-section>
+        <h2 className="text-3xl font-bold mb-2 text-gray-100">Running Now — Deployed Tools</h2>
+        <p className="text-sm text-gray-500 mb-8">
+          Most of this glossary describes a protocol and its simulations. These entries describe
+          things that <strong className="text-emerald-300">actually run today</strong> in public,
+          open-source code. <Link href="/running-now" className="text-emerald-400 hover:underline">See the maturity map →</Link>
+        </p>
+        <div className="space-y-8">
+
+          {/* Hestia */}
+          <div id="hestia" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-emerald-700/50 rounded-xl p-6 scroll-mt-20" data-glossary-term data-essential>
+            <h3 className="text-2xl font-semibold text-emerald-300 mb-3">Hestia</h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              The <strong>deployed trust layer</strong> of Web4: a local-first daemon that gives any
+              entity a real cryptographic LCT, an encrypted vault, a witness chain, evolving T3/V3
+              trust, a policy gate, delegation, and a device constellation &mdash; all on its own
+              hardware. The concrete, runnable version of much of what the rest of this glossary
+              defines. License: AGPL-3.0.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: &ldquo;The parts of Web4 you can download and run right now, on your own
+              machine, without an account or a server.&rdquo;
+            </p>
+            <div className="flex gap-3 text-sm">
+              <Link href="/hestia" className="text-emerald-400 hover:underline">Learn more →</Link>
+              <a href="https://github.com/dp-web4/hestia" className="text-purple-400 hover:underline" target="_blank" rel="noopener noreferrer">Code →</a>
+            </div>
+          </div>
+
+          {/* The hub */}
+          <div id="hub" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-purple-700/50 rounded-xl p-6 scroll-mt-20" data-glossary-term data-essential>
+            <h3 className="text-2xl font-semibold text-purple-300 mb-3">The hub</h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              A <strong>runnable Web4 society</strong>: a single small Rust daemon that gives a
+              community seven roles, a signed founding charter, an append-only witnessed ledger,
+              sealed channels, and skill-based member discovery. The deployable counterpart to this
+              site&apos;s society simulations &mdash; a reference proof-of-concept any community can
+              fork. License: AGPL-3.0.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: &ldquo;A society&apos;s rules and history as honest, tamper-evident code
+              you can run &mdash; not a config file you can quietly rewrite.&rdquo;
+            </p>
+            <div className="flex gap-3 text-sm">
+              <Link href="/hub" className="text-purple-400 hover:underline">Learn more →</Link>
+              <a href="https://github.com/dp-web4/web4/tree/main/hub" className="text-purple-400 hover:underline" target="_blank" rel="noopener noreferrer">Code →</a>
+            </div>
+          </div>
+
+          {/* Sealed channel */}
+          <div id="sealed-channel" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">Sealed Channel</h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              The <strong>end-to-end encrypted connection</strong> a member uses to reach a hub.
+              Gated actions (like discovering other members by skill) happen inside it, so the
+              transport itself is private by construction rather than by policy.
+            </p>
+            <p className="text-gray-400 text-sm">
+              Plain English: &ldquo;A private line into the society &mdash; what you do over it is
+              encrypted end to end.&rdquo;
+            </p>
+          </div>
+
+          {/* Witness chain */}
+          <div id="witness-chain" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">Witness Chain</h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              A <strong>hash-linked, tamper-evident record</strong> of what an entity did, kept by
+              hestia (per entity) and by a hub (as its ledger). Each entry links to the previous one,
+              so the history can&apos;t be silently rewritten &mdash; the deployed version of the
+              chains this site visualizes. (Distinct from a <Link href="/glossary#core" className="text-sky-400 hover:underline">witness</Link>, the
+              act of one entity attesting to another.)
+            </p>
+            <p className="text-gray-400 text-sm">
+              Plain English: &ldquo;An append-only logbook where every page is sealed to the one
+              before it.&rdquo;
+            </p>
+          </div>
+
+          {/* Typed primitives */}
+          <div id="typed-primitives" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">Typed Primitives (web4-core)</h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              The concepts on this site exist as <strong>real types in a shared reference library</strong>
+              {" "}(<code className="text-sky-300">web4-core</code> + <code className="text-sky-300">web4-trust-core</code>)
+              that both hestia and the hub build on: a <strong>Society</strong>, an <strong>LCT</strong>
+              with a birth certificate, a <strong>LedgerEntry</strong>, a <strong>WitnessMark</strong>,
+              a <strong>SocietyRole</strong>, and the evolving <strong>EntityTrust</strong> tensor. The
+              ontology isn&apos;t reinvented per app &mdash; it&apos;s a library they use.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: &ldquo;The nouns of Web4 are actual code you can import, not just words
+              in a diagram.&rdquo;
+            </p>
+            <div className="flex gap-3 text-sm">
+              <a href="https://github.com/dp-web4/web4" className="text-purple-400 hover:underline" target="_blank" rel="noopener noreferrer">Code →</a>
             </div>
           </div>
 

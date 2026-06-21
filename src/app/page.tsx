@@ -212,17 +212,23 @@ function IntroTab({ onSwitchToDeepDive }: { onSwitchToDeepDive: () => void }) {
             actions had consequences, and your reputation followed you everywhere.
           </p>
           <p style={{ margin: 0 }}>
-            <strong style={{ color: 'var(--color-text)' }}>Right now, you can&apos;t install it.</strong>{' '}
-            This is an active open-source research project with a{' '}
+            <strong style={{ color: 'var(--color-text)' }}>Some of it, you can already install.</strong>{' '}
+            This is an active open-source project with a{' '}
             <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" style={{ color: 'var(--color-sky)', textDecoration: 'none' }}>formal specification</a>,
-            ~47,000 lines of tested reference code, and the working simulations on this site.
-            The mechanics are validated &mdash; the open question is whether real communities behave like the simulations.
+            ~47,000 lines of tested reference code, and the simulations on this site &mdash; plus a{' '}
+            <strong style={{ color: 'var(--color-text)' }}>deployed trust layer</strong>{' '}
+            (<a href="/hestia" style={{ color: '#34d399', textDecoration: 'none' }}>hestia</a>) and a{' '}
+            <strong style={{ color: 'var(--color-text)' }}>runnable Web4 society</strong>{' '}
+            (<a href="/hub" style={{ color: '#c4b5fd', textDecoration: 'none' }}>the hub</a>) you can run today.{' '}
+            <a href="/running-now" style={{ color: '#34d399', textDecoration: 'none' }}>See what&apos;s live &rarr;</a>
           </p>
           <p style={{ margin: 0 }}>
             <strong style={{ color: 'var(--color-text)' }}>This site (4-Life) is the lab.</strong>{' '}
             Web4 is the protocol &mdash; the rules and math. 4-Life is where you explore those rules through
-            interactive simulations, guided walkthroughs, and concept explainers. Nothing here is &ldquo;live&rdquo;
-            on the real internet yet &mdash; it&apos;s a working model you can poke at to understand how trust-native societies would behave.
+            interactive simulations, guided walkthroughs, and concept explainers. The <em>networked</em> vision &mdash;
+            whole communities trusting each other across the open internet &mdash; isn&apos;t live yet; what runs
+            today is the per-entity trust layer and a single fork-it-yourself society. The open question is whether
+            real communities behave like the simulations.
           </p>
           <p style={{ margin: 0 }}>
             <strong style={{ color: 'var(--color-text)' }}>Nobody profits from this yet.</strong>{' '}
