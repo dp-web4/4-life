@@ -617,7 +617,7 @@ export default function CoherenceIndexPage() {
               relationships and capabilities they already know about, and
               evaluations stay within your{" "}
               <a
-                href="/markov-relevancy-horizon"
+                href="/trust-neighborhood"
                 className="text-sky-400 hover:text-sky-300 underline"
               >
                 Trust Neighborhood (MRH)
