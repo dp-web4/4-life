@@ -6,6 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import { loadExploration, trackPageVisit } from "@/lib/exploration";
+import InProduction from "@/components/InProduction";
 
 /**
  * Learning Journey: Progressive Web4 Comprehension
@@ -396,6 +397,8 @@ export default function LearnJourney() {
           complete them.
         </p>
       </section>
+
+      <InProduction concept="stack" />
 
       {/* Quick start for newcomers — shows until 3 concepts done */}
       {completedConcepts.size < 3 && (

@@ -8,6 +8,7 @@ import ExplorerNav from "@/components/ExplorerNav";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import TermTooltip from "@/components/TermTooltip";
 import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
+import InProduction from "@/components/InProduction";
 
 export default function CoherenceIndexPage() {
   useEffect(() => { trackPageVisit('coherence-index'); }, []);
@@ -357,6 +358,8 @@ export default function CoherenceIndexPage() {
             </div>
           </div>
         </section>
+
+        <InProduction concept="coherence" />
 
         {/* The Problem Section */}
         <section className="max-w-4xl mx-auto mb-16">

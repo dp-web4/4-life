@@ -13,6 +13,7 @@ import TrustNetworkVisualization from '@/components/TrustNetworkVisualization';
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from '@/components/ExplorerNav';
+import InProduction from '@/components/InProduction';
 import { trackPageVisit } from '@/lib/exploration';
 
 export default function TrustNetworksPage() {
@@ -63,6 +64,8 @@ export default function TrustNetworksPage() {
             behavioral profiles. This is Web4 society formation in action.
           </p>
         </div>
+
+        <InProduction concept="trust-tensor" />
 
         {/* Key Insight Box */}
         <div className="mb-8 bg-blue-900/20 border border-blue-800 rounded-lg p-6">

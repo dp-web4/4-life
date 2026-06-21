@@ -8,6 +8,7 @@ import ExplorerNav from "@/components/ExplorerNav";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import TermTooltip from "@/components/TermTooltip";
 import DeepDiveToggle from "@/components/DeepDiveToggle";
+import InProduction from "@/components/InProduction";
 import dynamic from "next/dynamic";
 import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
 
@@ -513,6 +514,10 @@ export default function TrustTensorPage() {
           Why it&apos;s on a page about T3: the two are coupled &mdash; producing high-V3 work is exactly what raises your T3, so V3 isn&apos;t a detour, it&apos;s the lever your reputation actually moves on.
         </p>
       </section>
+
+      <div className="max-w-4xl mx-auto">
+        <InProduction concept="trust-tensor" />
+      </div>
 
       {/* The Problem */}
       <section className="max-w-4xl mx-auto mt-16">

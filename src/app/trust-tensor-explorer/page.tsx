@@ -18,6 +18,7 @@ import { useEffect, useState, useCallback, useMemo } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
+import InProduction from '@/components/InProduction';
 import { trackPageVisit } from "@/lib/exploration";
 
 // ============================================================================
@@ -461,6 +462,8 @@ export default function TrustTensorExplorerPage() {
         Manipulate the three dimensions of trust (Talent, Training, Temperament) and see how
         Coherence Index modulates effective trust, ATP costs, witness requirements, and rebirth outcomes.
       </p>
+
+      <InProduction concept="trust-tensor" />
 
       {/* Top Stats */}
       <div style={{

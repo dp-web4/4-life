@@ -5,6 +5,7 @@ import ExplorerNav from "@/components/ExplorerNav";
 import TermTooltip from "@/components/TermTooltip";
 import PageTracker from "@/components/PageTracker";
 import SectionTOC from "@/components/SectionTOC";
+import InProduction from "@/components/InProduction";
 
 const HOW_IT_WORKS_SECTIONS = [
   { id: 'journey', label: 'Birth → Life → Death → Rebirth' },
@@ -295,6 +296,8 @@ export default function HowItWorksPage() {
           </p>
         </div>
       </section>
+
+      <InProduction concept="stack" />
 
       {/* The Journey: Birth to Death to Rebirth */}
       <section id="journey" className="max-w-4xl mx-auto mt-16 scroll-mt-24">

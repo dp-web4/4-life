@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import { trackPageVisit } from "@/lib/exploration";
+import InProduction from "@/components/InProduction";
 
 /**
  * Identity Constellation Explainer
@@ -39,6 +40,8 @@ export default function IdentityConstellationPage() {
           not weaker
         </p>
       </div>
+
+      <InProduction concept="constellation" />
 
       {/* The Problem */}
       <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">

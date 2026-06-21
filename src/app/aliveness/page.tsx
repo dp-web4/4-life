@@ -6,6 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
+import InProduction from "@/components/InProduction";
 import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
 
 // ============================================================================
@@ -659,6 +660,8 @@ export default function AlivenessExplainer() {
           </a>
         </p>
       </section>
+
+      <InProduction concept="trust-tensor" />
 
       <aside
         style={{

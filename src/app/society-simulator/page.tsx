@@ -21,6 +21,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import { trackPageVisit } from '@/lib/exploration';
+import InProduction from '@/components/InProduction';
 import TermTooltip, { ATP, T3, LCT, CI, MRH, V3 } from '@/components/TermTooltip';
 import HumanPlayerMode from '@/components/HumanPlayerMode';
 import NetworkGraph from '@/components/NetworkGraph';
@@ -3260,6 +3261,8 @@ export default function SocietySimulatorPage() {
             </div>
           </div>
         </div>
+
+        <InProduction concept="society" />
 
         {/* New-to-Web4 onboarding banner — May 21 visitor LOW #4: the only First Contact pointer
             was a small text-sm line buried inside the green box below; a cold visitor landing

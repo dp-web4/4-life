@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import PageTracker from "@/components/PageTracker";
+import InProduction from "@/components/InProduction";
 
 /**
  * Why Web4 - The Problem Before the Solution
@@ -47,6 +48,8 @@ export default function WhyWeb4Page() {
           {" "}which introduces each one inside a story the moment it comes up — but you can read this page cold too.
         </div>
       </section>
+
+      <InProduction concept="stack" />
 
       {/* The Problems You Already Know */}
       <section className="max-w-4xl mx-auto mt-12">

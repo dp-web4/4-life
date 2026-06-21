@@ -9,6 +9,7 @@ import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import TermTooltip from "@/components/TermTooltip";
 import DeepDiveToggle from "@/components/DeepDiveToggle";
 import LCTSetupMockup from "@/components/LCTSetupMockup";
+import InProduction from "@/components/InProduction";
 import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
 
 /**
@@ -216,6 +217,8 @@ export default function LCTExplainerPage() {
             </a>
           </p>
         </div>
+
+        <InProduction concept="lct" />
 
         {/* Key Takeaways — summary for newcomers who may not read the full page */}
         <div className="bg-purple-950/30 border border-purple-800/40 rounded-xl p-6 mb-8">

@@ -21,6 +21,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
 import { trackPageVisit } from '@/lib/exploration';
+import InProduction from '@/components/InProduction';
 
 // ============================================================================
 // Types
@@ -468,6 +469,8 @@ export default function MultiSessionIdentityPage() {
             </p>
           </div>
         </div>
+
+        <InProduction concept="lct" />
 
         {/* Session Trajectory Visualization */}
         <section className="mb-12">

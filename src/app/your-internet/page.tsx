@@ -18,6 +18,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import { saveYourInternetResult, trackPageVisit } from '@/lib/exploration';
+import InProduction from '@/components/InProduction';
 
 // ============================================================================
 // Types
@@ -440,6 +441,7 @@ export default function YourInternetPage() {
           <Link href="/tldr" className="text-sky-400 hover:underline">Read the 2-minute overview</Link>
         </div>
       </section>
+      <InProduction concept="stack" />
       <RelatedConcepts currentPath="/your-internet" />
       <ExplorerNav currentPath="/your-internet" />
     </>

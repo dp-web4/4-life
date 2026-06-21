@@ -20,6 +20,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedConcepts from '@/components/RelatedConcepts';
 import ExplorerNav from '@/components/ExplorerNav';
 import { trackPageVisit } from "@/lib/exploration";
+import InProduction from "@/components/InProduction";
 
 // ============================================================================
 // Types
@@ -532,6 +533,8 @@ export default function MRHExplorerPage() {
         Explore that boundary below &mdash; adjust horizon depth, explore the 4D profile (space, time, complexity, quality),
         and see how distance decays trust.
       </p>
+
+      <InProduction concept="mrh" />
 
       {/* Main Layout */}
       <div style={{ display: 'grid', gridTemplateColumns: '500px 1fr', gap: '1.5rem', marginBottom: '2rem' }}>

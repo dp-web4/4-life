@@ -6,6 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import { trackPageVisit } from "@/lib/exploration";
+import InProduction from "@/components/InProduction";
 
 /**
  * First Contact: Zero to Web4 Comprehension in 8 Minutes
@@ -211,6 +212,8 @@ export default function FirstContactPage() {
                 Haven&apos;t read anything else on this site yet? You don&apos;t need to &mdash; this page starts from zero. Below: the two numbers to watch, then a quick reference map of the four ideas (no need to memorize them — each is explained in the story the moment Alice uses it) and the five-act arc. Then click <span className="not-italic font-semibold text-gray-300">Start</span> to drive Alice yourself — no account, no sign-in.
               </p>
             </div>
+
+            <InProduction concept="stack" />
 
             {/* Two-number anchor moved ABOVE the concept grid — May 15 visitor LOW:
                 this concrete anchor "rescued" the page; the four-acronym grid felt

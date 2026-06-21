@@ -7,6 +7,7 @@ import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import CoherenceDomainVisualizer from "@/components/CoherenceDomainVisualizer";
 import { trackPageVisit } from "@/lib/exploration";
+import InProduction from "@/components/InProduction";
 
 /**
  * Coherence Framework: From Web4 to Synchronism
@@ -65,6 +66,8 @@ export default function CoherenceFrameworkPage() {
             </div>
           </div>
         </section>
+
+        <InProduction concept="coherence" />
 
         {/* Interactive 9-Domain Visualizer */}
         <section className="max-w-5xl mx-auto mb-12">

@@ -18,6 +18,7 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ExplorerNav from '@/components/ExplorerNav';
 import RelatedConcepts from '@/components/RelatedConcepts';
+import InProduction from '@/components/InProduction';
 import { detectMoments, SIMULATION_SOURCES } from '@/lib/moments';
 import type { Moment, MomentCategory } from '@/lib/moments/types';
 import { CATEGORY_INFO } from '@/lib/moments/types';
@@ -607,6 +608,8 @@ export default function TrustTimelinePage() {
             patterns, where they converge, and what drives divergence.
           </p>
         </div>
+
+        <InProduction concept="trust-tensor" />
 
         {loading ? (
           <div className="text-center py-16 text-gray-500">Loading simulation data...</div>

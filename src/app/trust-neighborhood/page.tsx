@@ -6,6 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import ExplorerNav from "@/components/ExplorerNav";
+import InProduction from "@/components/InProduction";
 import { trackPageVisit } from "@/lib/exploration";
 
 export default function MarkovRelevancyHorizonPage() {
@@ -126,6 +127,10 @@ export default function MarkovRelevancyHorizonPage() {
             </div>
           </div>
         </section>
+
+        <div className="max-w-4xl mx-auto">
+          <InProduction concept="mrh" />
+        </div>
 
         {/* The Problem Section */}
         <section className="max-w-4xl mx-auto mb-16">

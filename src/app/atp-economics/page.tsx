@@ -9,6 +9,7 @@ import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import { T3, CI, MRH } from "@/components/TermTooltip";
 import DeepDiveToggle from "@/components/DeepDiveToggle";
 import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
+import InProduction from "@/components/InProduction";
 
 export default function ATPEconomicsPage() {
   useEffect(() => { trackPageVisit('atp-economics'); }, []);
@@ -337,6 +338,8 @@ export default function ATPEconomicsPage() {
           ))}
         </nav>
       </section>
+
+      <InProduction concept="atp" />
 
       {/* The Problem */}
       <section id="problem" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
