@@ -39,6 +39,13 @@ export const navigationTree: NavigationTree = {
       related: ['/your-internet', '/tldr', '/first-contact', '/karma-journey']
     },
     {
+      title: 'Running Now',
+      href: '/running-now',
+      desc: "Web4 isn't only theory — what's deployed today: hestia, the hub, AGPL and runnable.",
+      keywords: ['running', 'deployed', 'real', 'live', 'production', 'hestia', 'hub', 'agpl', 'open source', 'witness chain', 'sealed channel'],
+      related: ['/tldr', '/web4-explainer', '/lct-explainer', '/trust-tensor', '/federation-economics']
+    },
+    {
       title: 'Why Web4?',
       href: '/why-web4',
       desc: 'The problem before the solution',

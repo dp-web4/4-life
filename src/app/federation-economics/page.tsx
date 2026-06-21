@@ -49,6 +49,21 @@ export default function FederationEconomicsPage() {
         </p>
       </section>
 
+      {/* Honest status — federation is specified, not yet deployed */}
+      <section className="max-w-4xl mx-auto mt-8">
+        <div className="rounded-lg border border-amber-500/40 bg-amber-500/10 p-4">
+          <p className="text-sm text-amber-200">
+            <span className="font-semibold">Status — designed, not yet running.</span>{" "}
+            Cross-society <em>federation</em> is a specified part of Web4 (Phase 4 in{" "}
+            <a href="https://github.com/dp-web4/hestia" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-100">hestia</a>)
+            — not yet deployed. The economics below describe how it&apos;s <em>intended</em> to
+            work. What <em>is</em> running today — identity, trust, witness chains, sealed
+            channels, a single Web4 society — is on the{" "}
+            <Link href="/running-now" className="underline hover:text-amber-100">Running Now</Link> page.
+          </p>
+        </div>
+      </section>
+
       {/* What Is a Federation? */}
       <section>
         <div className="p-5 bg-sky-950/30 border border-sky-800/30 rounded-lg mb-6">
