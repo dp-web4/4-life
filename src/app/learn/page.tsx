@@ -1052,6 +1052,36 @@ export default function LearnJourney() {
           </p>
         </div>
       </section>
+
+      {/* Capstone — the journey ends at the deployed reality, not another explainer */}
+      <section>
+        <div className="detail-box" style={{ background: "linear-gradient(135deg, rgba(16,185,129,0.12), rgba(56,189,248,0.10))", border: "1px solid rgba(16,185,129,0.3)" }}>
+          <h3 style={{ color: "#34d399" }}>The last step: stop reading, start running ⚡</h3>
+          <p>
+            When the concepts make sense, don&apos;t stop at the simulation. The trust layer
+            (<Link href="/hestia" style={{ color: "#34d399" }}>hestia</Link>) and a Web4 society
+            (<Link href="/hub" style={{ color: "#c4b5fd" }}>the hub</Link>) are deployed in public,
+            AGPL code &mdash; you can run the real thing on your own machine. That&apos;s where
+            understanding turns into participation.
+          </p>
+          <Link
+            href="/running-now"
+            style={{
+              display: "inline-block",
+              marginTop: "0.75rem",
+              padding: "0.5rem 1.25rem",
+              background: "#059669",
+              color: "white",
+              borderRadius: "0.375rem",
+              fontWeight: 600,
+              textDecoration: "none",
+            }}
+          >
+            See what&apos;s deployed →
+          </Link>
+        </div>
+      </section>
+
       <ExplorerNav currentPath="/learn" />
       <RelatedConcepts currentPath="/learn" />
     </>

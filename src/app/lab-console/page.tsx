@@ -7,6 +7,7 @@ import DecisionEvolution from "@/components/DecisionEvolution";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from '@/components/ExplorerNav';
+import InProduction from "@/components/InProduction";
 import { trackPageVisit } from "@/lib/exploration";
 
 // v0 Lab Console for 4-Life
@@ -264,6 +265,8 @@ export default function LabConsolePage() {
         their reasoning, and learning patterns across multiple lives. For multi-agent dynamics,
         see the <a href="/society-simulator" style={{ color: "#38bdf8" }}>Society Simulator</a>.
       </p>
+
+      <InProduction concept="stack" />
 
       <section style={{ marginTop: "1.5rem" }}>
         <h2>Simulation Mode</h2>

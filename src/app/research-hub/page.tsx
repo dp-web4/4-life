@@ -26,7 +26,7 @@ interface ToolCard {
   description: string;
   learns: string[];
   complexity: 'beginner' | 'intermediate' | 'advanced';
-  category: 'understand' | 'explore' | 'participate' | 'experiment';
+  category: 'run' | 'understand' | 'explore' | 'participate' | 'experiment';
   isNew?: boolean;
 }
 
@@ -226,9 +226,42 @@ const TOOLS: ToolCard[] = [
     complexity: 'advanced',
     category: 'experiment',
   },
+
+  // Run It — not simulations: deployed, public, AGPL code you can run yourself.
+  {
+    title: "What's Running Now",
+    href: '/running-now',
+    emoji: '⚡',
+    description: "The maturity map: which Web4 concepts are deployed, which are reference code, which are still spec.",
+    learns: ['Spec vs reference vs running', "What's deployed today", 'Honest maturity tiers'],
+    complexity: 'beginner',
+    category: 'run',
+    isNew: true,
+  },
+  {
+    title: 'Hestia — the trust layer',
+    href: '/hestia',
+    emoji: '🔥',
+    description: 'The deployed local-first trust daemon: real LCT identity, witness chain, evolving T3/V3, on your own hardware.',
+    learns: ['Local-first identity', 'A real witness chain', 'Trust that evolves'],
+    complexity: 'intermediate',
+    category: 'run',
+    isNew: true,
+  },
+  {
+    title: 'The Hub — a Web4 society',
+    href: '/hub',
+    emoji: '🏛️',
+    description: 'A runnable society: seven roles, a signed charter, a witnessed ledger, sealed channels. Fork it and run your own.',
+    learns: ['Witnessed governance', 'Signed charters', 'Sealed-channel membership'],
+    complexity: 'intermediate',
+    category: 'run',
+    isNew: true,
+  },
 ];
 
 const CATEGORIES = {
+  run: { label: 'Run It', color: '#34d399', description: 'Not simulations — deployed, public, AGPL code you can run yourself' },
   understand: { label: 'Understand', color: '#6ee7b7', description: 'Build foundational understanding' },
   explore: { label: 'Explore', color: '#93c5fd', description: 'Discover how systems work through interaction' },
   participate: { label: 'Participate', color: '#c4b5fd', description: 'Run simulations and shape outcomes' },
@@ -375,6 +408,17 @@ export default function ResearchHubPage() {
       }}>
         <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem' }}>Suggested Learning Paths</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div style={{ padding: '1rem', borderRadius: '0.5rem', border: '1px solid #34d39940', background: '#34d39910' }}>
+            <div style={{ fontWeight: 700, color: '#34d399', marginBottom: '0.25rem' }}>
+              Run the Real Thing ⚡
+            </div>
+            <div style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+              What&apos;s Running Now → Hestia (the trust layer) → The Hub (a Web4 society)
+            </div>
+            <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '0.5rem' }}>
+              Skip the simulation &mdash; download and run the deployed, AGPL pieces
+            </div>
+          </div>
           <div style={{ padding: '1rem', borderRadius: '0.5rem', border: '1px solid #6ee7b730', background: '#6ee7b708' }}>
             <div style={{ fontWeight: 700, color: '#6ee7b7', marginBottom: '0.25rem' }}>
               The Trust Journey
