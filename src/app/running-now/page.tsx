@@ -215,6 +215,14 @@ export default function RunningNowPage() {
             >
               the hub (a Web4 society)
             </a>
+            <a
+              href="https://4-lab.io/fleet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border border-sky-500/40 bg-sky-500/15 px-4 py-2 text-sky-200 hover:bg-sky-500/25"
+            >
+              meet the fleet (a live society) →
+            </a>
             <Link
               href="/web4-explainer"
               className="rounded-lg border border-white/15 bg-white/5 px-4 py-2 text-gray-200 hover:bg-white/10"

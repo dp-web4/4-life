@@ -82,6 +82,30 @@ export default function HubPage() {
         </p>
       </section>
 
+      {/* Living example — by reference to the canonical public presence (4-lab), not duplicated here */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
+          <h2 className="text-xl font-bold text-emerald-300 mb-2">This isn&apos;t hypothetical — we run one</h2>
+          <p className="text-base text-gray-300 leading-relaxed">
+            The lab behind Web4 is itself a live Web4 society: a small fleet of autonomous
+            cognition machines that witness each other&apos;s work, hold roles, and keep a
+            record of what they do. It runs in the open — its members and how it&apos;s
+            organized are published at{" "}
+            <a
+              href="https://4-lab.io/fleet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-400 underline hover:text-emerald-300"
+            >
+              4-lab.io/fleet
+            </a>
+            . That openness is the point, not an accident: in a trust-native world a society
+            that isn&apos;t witnessed has no presence to trust, so the collective is visible
+            by design.
+          </p>
+        </div>
+      </section>
+
       {/* Seven roles */}
       <section className="max-w-4xl mx-auto mt-12">
         <h2 className="text-2xl font-bold text-gray-100 mb-2">Seven roles</h2>
