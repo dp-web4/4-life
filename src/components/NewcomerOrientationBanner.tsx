@@ -13,6 +13,12 @@ import Link from "next/link";
  *
  * Kept to ONE skippable row (not a card) so a returning visitor who already knows
  * the vocabulary scrolls past trivially. `accent` lets each page keep its theme.
+ *
+ * June-22 (first newcomer test of the banner): it worked ("a real save") but read
+ * as a pure redirect/dead-end — no reason to return, no mental picture of what's
+ * here. Closing clause now adds both: a reason-to-return promise ("the proof Web4
+ * works in practice") and a plain-language picture ("real, open-source software you
+ * can run yourself"), accurate across all 3 pages (trust-layer daemon + society hub).
  */
 export default function NewcomerOrientationBanner({
   accent = "#34d399",
@@ -35,9 +41,11 @@ export default function NewcomerOrientationBanner({
           style={{ color: accent }}
         >
           2-minute TL;DR
-        </Link>{" "}
-        and come back &mdash; every term is spelled out there. Definitions also live
-        in the glossary (<strong>Aa</strong>, bottom-left).
+        </Link>
+        , then come back &mdash; what&apos;s here is real, open-source software you
+        can run yourself, the proof Web4 works in practice and not just on paper.
+        Every term is spelled out in the TL;DR; definitions also live in the glossary
+        (<strong>Aa</strong>, bottom-left).
       </span>
     </div>
   );
