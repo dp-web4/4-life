@@ -25,8 +25,22 @@ export default function TLDRPage() {
         <h1 className="text-4xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
           Web4 in 2 Minutes
         </h1>
-        <p className="text-lg text-gray-400 leading-relaxed mb-10">
+        <p className="text-lg text-gray-400 leading-relaxed mb-6">
           Plain English first, so you can read this cold &mdash; every term is spelled out the first time it appears. The two you&apos;ll lean on most are ATP and LCT; a few more (T3, CI, MRH) appear briefly below, each glossed in place, with deeper shorthand explained on their own pages.
+        </p>
+
+        {/* June-24 visitor LOW (appeared 2×: TL;DR narrative + Unanswered Q3): the
+            Web4-protocol vs 4-Life-site distinction is stated plainly on the page, but
+            only at line ~148 inside the bottom "Where is this now?" box. A linear reader
+            forms the "is this the thing, or a demo of the thing?" confusion at the intro,
+            long before reaching it. Per the proactive-vs-reactive anchor pattern (PR #362),
+            add ONE early orientation above everything. Wording kept distinct from the late
+            line (idea/model + spec vs "protocol — rules and math") to avoid a density echo;
+            no new claim — hestia/the hub/spec are already named below as open-source. */}
+        <p className="text-base text-gray-400 leading-relaxed mb-10 border-l-2 border-sky-800/60 pl-4">
+          <strong className="text-gray-200">First, what is this?</strong>{' '}
+          <span className="text-gray-300">Web4</span> is the proposed idea &mdash; a trust model with an open, written spec.{' '}
+          <span className="text-gray-300">4-Life</span> is this site: a hands-on lab that lets you watch that model work through simulations and explainers. So what you click here <em>demonstrates</em> Web4 rather than being the live system itself &mdash; though a few real pieces already run, as separate open-source projects (linked at the bottom).
         </p>
 
         {/* The Problem */}
