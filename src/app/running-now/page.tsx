@@ -35,7 +35,9 @@ export default function RunningNowPage() {
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Everywhere else on this site, Web4 is explained as an idea and shown through
           simulation. But parts of it have left the whiteboard. The trust layer, the
-          witness chain, sealed channels, and a working Web4 society are{" "}
+          witness chain <span className="text-gray-400">(a tamper-evident record of every action)</span>,
+          sealed channels <span className="text-gray-400">(end-to-end encrypted peer links)</span>, and a
+          working Web4 society are{" "}
           <strong>deployed today</strong> — in public, open-source code you can run
           yourself. No account, no cloud, no permission.
         </p>
@@ -80,8 +82,10 @@ export default function RunningNowPage() {
             visualizes.
           </li>
           <li className="rounded-lg border border-white/10 bg-white/5 p-3">
-            <strong className="text-emerald-300">Trust that evolves</strong> — T3/V3
-            tensors that move with the outcomes of your actions, not a static score.
+            <strong className="text-emerald-300">Trust that evolves</strong> —{" "}
+            <Link href="/trust-tensor" className="text-emerald-400 underline hover:text-emerald-300">T3/V3
+            tensors</Link> (how trustworthy you&apos;ve been, and how valuable your work proved to be)
+            that move with the outcomes of your actions, not a static score.
           </li>
           <li className="rounded-lg border border-white/10 bg-white/5 p-3">
             <strong className="text-emerald-300">A policy gate + delegation</strong> —
@@ -93,7 +97,8 @@ export default function RunningNowPage() {
             devices into a verifying set; multi-device proof becomes your MFA.
           </li>
           <li className="rounded-lg border border-white/10 bg-white/5 p-3">
-            <strong className="text-emerald-300">MCP server + plugin SDK</strong> — the same
+            <strong className="text-emerald-300">MCP server + plugin SDK</strong> (MCP is the
+            open protocol AI agents use to call tools and services) — the same
             interface in Rust, TypeScript, and Python, so agents wire every action into the chain.
           </li>
         </ul>

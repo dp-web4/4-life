@@ -589,7 +589,7 @@ export default function KarmaJourneyPage() {
         (How can a tier sit below the 0.5 survival line? Survival — and eligibility to be <em>reborn</em> at all —
         is judged on <em>raw</em> trust; which tier you land in is judged on <em>effective</em> trust — raw × CI²,
         contrasted in the two cards below — which poor coherence can drag far below your raw score.
-        You can be reborn on raw 0.55 yet land Constrained on effective 0.40.){' '}
+<em>You can be reborn on raw <strong>0.55</strong> yet land Constrained on effective <strong>0.40</strong>.</em>){' '}
         {/* June 12 visitor MEDIUM (browse B): a reader doing the arithmetic at the STARTING CI
             concluded Honored was near-impossible; the missing link is that CI climbs during a life.
             June-20: the plain reassurance stays inline; the supporting arithmetic (0.85² ≈ 0.72 →
