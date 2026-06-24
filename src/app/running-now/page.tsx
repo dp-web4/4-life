@@ -94,7 +94,8 @@ export default function RunningNowPage() {
           </li>
           <li className="rounded-lg border border-white/10 bg-white/5 p-3">
             <strong className="text-emerald-300">Device constellation</strong> — link your
-            devices into a verifying set; multi-device proof becomes your MFA.
+            devices into a verifying set; multi-device proof becomes your MFA
+            (multi-factor authentication).
           </li>
           <li className="rounded-lg border border-white/10 bg-white/5 p-3">
             <strong className="text-emerald-300">MCP server + plugin SDK</strong> (MCP is the
@@ -165,9 +166,11 @@ export default function RunningNowPage() {
           <code className="text-sky-300">web4-trust-core</code>) — they don&apos;t
           reinvent the ontology, they use it. The typed pieces the rest of the site teaches
           as concepts are real types here: a <strong>Society</strong>, an{" "}
-          <strong>LCT</strong> with a birth certificate, a <strong>LedgerEntry</strong>, a{" "}
-          <strong>WitnessMark</strong>, a <strong>SocietyRole</strong>, and the evolving{" "}
-          <strong>EntityTrust</strong> tensor.
+          <strong>LCT</strong> with a birth certificate, a <strong>LedgerEntry</strong>{" "}
+          (one recorded action in the tamper-evident log), a <strong>WitnessMark</strong>{" "}
+          (proof another entity vouched for it), a <strong>SocietyRole</strong>{" "}
+          (what an entity is allowed to do in its society), and the evolving{" "}
+          <strong>EntityTrust</strong> tensor (its live T3/V3 trust score).
         </p>
         <p className="text-base text-gray-400 leading-relaxed">
           <a
