@@ -627,12 +627,14 @@ export default function TrustTensorPage() {
               delivered as promised. That attestation is the raw signal that moves your T3.
             </p>
             <p className="m-0">
-              Each confirmation applies a small per-dimension nudge from the canonical update rule:{" "}
-              <code className="text-gray-300">base = 0.02 &times; (quality &minus; 0.5)</code>,
-              scaled by dimension (Talent &times;1.0, Training &times;0.8, Temperament &times;0.6).
-              For reading this formula, <em>quality</em> is just a single number from 0 to 1
+              Each confirmation applies a small per-dimension nudge from the canonical update rule.
+              First, the one term you need: <em>quality</em> is just a single number from 0 to 1
               (0.5 = neutral, higher = better work) &mdash; you don&apos;t need to chase any
-              other concept to follow it. Where does that number come from? It&apos;s the{" "}
+              other concept to follow it. With that in hand,{" "}
+              <code className="text-gray-300">base = 0.02 &times; (quality &minus; 0.5)</code>{" "}
+              simply measures how far above or below neutral the work landed, scaled by dimension
+              (Talent &times;1.0, Training &times;0.8, Temperament &times;0.6).
+              Where does that number come from? It&apos;s the{" "}
               <strong className="text-purple-300">V3 score</strong>{" "}
               the recipient assigned to that contribution (Valuation &middot; Veracity &middot;
               Validity &mdash; the <a href="#v3" className="text-purple-300 underline">V3 section below</a>{" "}
