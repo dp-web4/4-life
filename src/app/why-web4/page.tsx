@@ -814,7 +814,7 @@ export default function WhyWeb4Page() {
                     <tr className="border-b border-gray-800">
                       <td className="py-2 pr-4 text-gray-300 font-medium">Can you appeal?</td>
                       <td className="py-2 pr-4">Through government channels</td>
-                      <td className="py-2">Through community governance (<a href="#faq-sal" className="text-sky-400 hover:underline">SAL — Society-Authority-Law</a>) — you can also fork the community</td>
+                      <td className="py-2">Through community governance (<a href="#faq-sal" className="text-sky-400 hover:underline">SAL — Society-Authority-Law</a>, each community&apos;s own rulebook for its trust thresholds and membership rules) — you can also fork the community</td>
                     </tr>
                     <tr>
                       <td className="py-2 pr-4 text-gray-300 font-medium">Identity</td>
