@@ -188,7 +188,7 @@ function V3OutputScorer() {
             <span className="text-xs text-gray-500 ml-auto">weight: 0.35</span>
           </div>
           <p className="text-sm text-purple-300/80 mb-1">= &ldquo;Was it true?&rdquo;</p>
-          <p className="text-sm text-gray-400">Verified by external validation and witness attestation.</p>
+          <p className="text-sm text-gray-400">Verified by external validation and witness attestation &mdash; a recorded confirmation from an independent party that it actually happened.</p>
         </div>
         <div className="bg-gradient-to-br from-green-950/30 to-gray-900 border border-green-800/30 rounded-xl p-5">
           <div className="flex items-center gap-2 mb-2">
@@ -949,9 +949,12 @@ export default function TrustTensorPage() {
             <div className="flex gap-3 items-start">
               <span className="text-sky-400 font-bold shrink-0">Natural decay:</span>
               <p className="text-gray-400">If you stop doing analyst work entirely, those trust scores
-                decay over time (Talent: 365 days, Training: 180 days, Temperament: 30 days). You don&apos;t
-                &ldquo;lose&rdquo; them overnight — they fade gradually, reflecting that skills and expertise
-                need practice to stay sharp.
+                decay over time — and the three rates differ on purpose:{' '}
+                <strong className="text-gray-300">Talent slowest (365-day half-life), because aptitude is durable</strong>;{' '}
+                <strong className="text-gray-300">Training in between (180 days), because knowledge fades without practice</strong>;{' '}
+                <strong className="text-gray-300">Temperament fastest (30 days), because reliability has to be shown freshly</strong>.
+                You don&apos;t &ldquo;lose&rdquo; them overnight — they fade gradually, reflecting that skills
+                and expertise need practice to stay sharp.
                 <span className="block text-gray-500 text-xs mt-1">
                   <strong className="text-gray-400">What &ldquo;half-life&rdquo; means here:</strong>{' '}
                   the time it takes to lose half the score with zero activity. A 365-day Talent half-life
