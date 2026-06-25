@@ -589,7 +589,7 @@ export default function KarmaJourneyPage() {
         (How can a tier sit below the 0.5 survival line? Survival — and eligibility to be <em>reborn</em> at all —
         is judged on <em>raw</em> trust; which tier you land in is judged on <em>effective</em> trust — raw × CI²,
         contrasted in the two cards below — which poor coherence can drag far below your raw score.
-<em>You can be reborn on raw <strong>0.55</strong> yet land Constrained on effective <strong>0.40</strong>.</em>){' '}
+<em>You can be reborn on raw <strong>0.55</strong> yet land Constrained on effective <strong>0.27</strong> when consistency is low.</em>){' '}
         {/* June 12 visitor MEDIUM (browse B): a reader doing the arithmetic at the STARTING CI
             concluded Honored was near-impossible; the missing link is that CI climbs during a life.
             June-20: the plain reassurance stays inline; the supporting arithmetic (0.85² ≈ 0.72 →
@@ -601,6 +601,51 @@ export default function KarmaJourneyPage() {
         the near-impossible bar the opening numbers imply.{' '}
         Tip: make a few cooperative choices, then switch to selfish ones. Watch how trust builds slowly but erodes quickly.
       </p>
+
+      {/* June-25 visitor LOW — the recurring single-hardest concept on the site. The raw-vs-effective
+          paradox has been explained in prose, callouts, fine print and a collapsible (inline-prose
+          lever documented exhausted: #362/#392/#393/#397) and STILL "took two reads." The visitor's
+          explicit suggestion this browse: a 2-bar visual "so it's seen, not just read." Show both
+          numbers on one 0–1 scale, against the tier bands and the 0.5 survival line. Numbers match
+          karmaTier() and the tier definitions stated just above: raw 0.55 clears 0.5 (survives);
+          effective 0.27 (< 0.3) lands Constrained — the same numbers as the corrected inline example. */}
+      <div style={{
+        marginBottom: '1.5rem', maxWidth: '700px',
+        padding: '0.85rem 1.1rem', borderRadius: '0.5rem',
+        background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)',
+      }}>
+        <div style={{ fontSize: '0.85rem', color: 'var(--color-text-primary)', fontWeight: 600, marginBottom: '0.7rem', lineHeight: 1.45 }}>
+          One life, two numbers: survived &mdash; but lands Constrained
+        </div>
+        {[
+          { label: 'Raw trust', color: '#93c5fd', value: 0.55, fill: 'rgba(147,197,253,0.55)', verdict: 'clears 0.5 → survives', vColor: '#93c5fd' },
+          { label: 'Effective trust', color: '#fde68a', value: 0.27, fill: 'rgba(253,230,138,0.55)', verdict: 'below 0.3 → Constrained tier', vColor: '#fca5a5' },
+        ].map((b) => (
+          <div key={b.label} style={{ marginBottom: '0.65rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.2rem', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 600, color: b.color, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                {b.label}{' '}
+                <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-secondary)' }}>{b.value.toFixed(2)}</span>
+              </span>
+              <span style={{ fontSize: '0.72rem', color: b.vColor }}>{b.verdict}</span>
+            </div>
+            <div style={{
+              position: 'relative', height: '1.1rem', borderRadius: '0.3rem', overflow: 'hidden',
+              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'linear-gradient(to right, rgba(252,165,165,0.16) 0%, rgba(252,165,165,0.16) 30%, rgba(253,230,138,0.13) 30%, rgba(253,230,138,0.13) 70%, rgba(110,231,183,0.13) 70%, rgba(110,231,183,0.13) 100%)',
+            }}>
+              <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: `${b.value * 100}%`, background: b.fill }} />
+              <div style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(255,255,255,0.6)' }} title="0.5 survival line" />
+            </div>
+          </div>
+        ))}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', fontSize: '0.68rem', color: 'var(--color-text-muted)', marginTop: '0.4rem' }}>
+          <span><span style={{ display: 'inline-block', width: '0.7rem', height: '0.7rem', background: 'rgba(252,165,165,0.4)', borderRadius: '2px', marginRight: '0.3rem', verticalAlign: 'middle' }} />Constrained &lt; 0.3</span>
+          <span><span style={{ display: 'inline-block', width: '0.7rem', height: '0.7rem', background: 'rgba(253,230,138,0.35)', borderRadius: '2px', marginRight: '0.3rem', verticalAlign: 'middle' }} />Neutral 0.3–0.7</span>
+          <span><span style={{ display: 'inline-block', width: '0.7rem', height: '0.7rem', background: 'rgba(110,231,183,0.35)', borderRadius: '2px', marginRight: '0.3rem', verticalAlign: 'middle' }} />Honored &gt; 0.7</span>
+          <span><span style={{ display: 'inline-block', width: '2px', height: '0.7rem', background: 'rgba(255,255,255,0.6)', marginRight: '0.3rem', verticalAlign: 'middle' }} />0.5 survival line</span>
+        </div>
+      </div>
 
       {/* June-20 visitor MEDIUM: the two CI² derivations above used to sit inline and read as
           "homework" for a reader who already had the intuition. Per the carry-forward guardrail
