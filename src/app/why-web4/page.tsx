@@ -2198,7 +2198,7 @@ export default function WhyWeb4Page() {
               <p>
                 The 0.5 threshold is a <strong>society-level parameter</strong>, not a protocol constant.
                 Each society (community) in Web4 sets its own policies through the{" "}
-                <Link href="/how-it-works#governance" className="text-sky-400 hover:underline">SAL governance framework</Link>.
+                <a href="#faq-sal" className="text-sky-400 hover:underline">SAL (Society-Authority-Law) governance framework</a>.
                 A scientific research community might set a higher trust threshold (0.7) for publishing.
                 A social community might set a lower one (0.3) for casual interaction.
               </p>
@@ -2668,10 +2668,10 @@ export default function WhyWeb4Page() {
                 Web4 has <strong>two governance layers</strong> with different scope:
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-400">
-                <li><strong>Society-level (SAL):</strong> Each community sets its own policies — trust thresholds,
+                <li><strong>Society-level (SAL — Society-Authority-Law):</strong> Each community sets its own policies — trust thresholds,
                   ATP costs, role definitions, membership rules. Communities can customize most parameters through
                   their{" "}
-                  <Link href="/how-it-works#governance" className="text-sky-400 hover:underline">SAL governance framework</Link>.
+                  <a href="#faq-sal" className="text-sky-400 hover:underline">SAL governance framework</a>.
                   This is where the 0.5 threshold, specific decay rates, and enforcement rules live.</li>
                 <li><strong>Protocol-level:</strong> The core protocol — the trust tensor math, ATP mechanics,
                   LCT hardware binding, MRH relationship structure — is defined by an{" "}
