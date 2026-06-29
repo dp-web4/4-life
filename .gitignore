@@ -47,3 +47,8 @@ storage_state.json
 
 # Hardbound runtime audit bundles — stay local to each machine, do not commit
 .hardbound/bundles/
+
+# Hardbound private key (never commit)
+.hardbound/signing.key
+
+.hardbound/actors/claude/signing.key
