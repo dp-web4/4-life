@@ -337,7 +337,7 @@ export default function WhyWeb4Page() {
               <p className="text-gray-400 text-sm">
                 Every action costs energy from a personal budget. Quality contributions earn energy back. Spam burns through it with no return — spammers literally run out of fuel.
               </p>
-              <p className="text-gray-400 text-sm mt-1">Shorthand: ATP (Allocation Transfer Packets)</p>
+              <p className="text-gray-400 text-sm mt-1">Shorthand: ATP (Allocation Transfer Packets) &mdash; just means your energy budget.</p>
               <Link href="/atp-economics" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about energy budgets →
               </Link>
@@ -350,7 +350,7 @@ export default function WhyWeb4Page() {
               <p className="text-gray-400 text-sm">
                 Your identity is tied to your device&apos;s security chip — the same kind that protects Face ID and fingerprints. Creating a fake identity means buying a new physical device. Multiple devices witness each other for extra security.
               </p>
-              <p className="text-gray-400 text-sm mt-1">Shorthand: LCT (Linked Context Token)</p>
+              <p className="text-gray-400 text-sm mt-1">Shorthand: LCT (Linked Context Token) &mdash; just means your hardware-bound identity.</p>
               <Link href="/lct-explainer" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about identity →
               </Link>
@@ -363,7 +363,7 @@ export default function WhyWeb4Page() {
               <p className="text-gray-400 text-sm">
                 Instead of one trust score, you get separate scores for your skills, your training, and your behavior — and they&apos;re different for each role. Your trust as a data analyst doesn&apos;t affect your trust as a cook.
               </p>
-              <p className="text-gray-400 text-sm mt-1">Shorthand: T3 (Trust Tensor — Talent, Training, Temperament)</p>
+              <p className="text-gray-400 text-sm mt-1">Shorthand: T3 (Trust Tensor — Talent, Training, Temperament) &mdash; just means your trust split into three scores.</p>
               <Link href="/trust-tensor" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about trust →
               </Link>
