@@ -630,7 +630,10 @@ export default function HowItWorksPage() {
               </h4>
               <p className="text-gray-300 leading-relaxed mb-3">
                 Not everyone gets reborn. The society checks your T3 trust
-                tensor:
+                tensor &mdash; specifically your <strong className="text-gray-200">overall (composite)</strong>{" "}
+                score, the single number blended from all three dimensions
+                (talent, training, temperament), <em>not</em> each dimension
+                clearing 0.5 on its own:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="p-4 bg-green-900/20 border border-green-800/30 rounded">
@@ -1430,8 +1433,11 @@ export default function HowItWorksPage() {
           <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
             <h3 className="text-sm font-bold text-sky-400 mb-2">Trust Decays Through Chains</h3>
             <p className="text-sm text-gray-400">
-              A 5-hop pipeline where each agent has 0.9 trust = 0.59 end-to-end.
-              Trust multiplies, it doesn&apos;t add. Long chains need high individual trust.
+              A 5-hop pipeline where each agent has 0.9 trust ends up at 0.59
+              end-to-end &mdash; because trust multiplies, it doesn&apos;t add:{" "}
+              <span className="text-gray-300">0.9 &times; 0.9 &times; 0.9 &times; 0.9 &times; 0.9 &asymp; 0.59</span>.
+              Each hop keeps only 90% of what reached it, so long chains need
+              high individual trust.
             </p>
           </div>
           <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
