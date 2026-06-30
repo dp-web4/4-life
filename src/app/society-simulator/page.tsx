@@ -3773,9 +3773,72 @@ export default function SocietySimulatorPage() {
                   interactions={interactions}
                   highlightedAgentIds={storyHighlightedAgents}
                 />
-                <p className="text-xs text-gray-500 mt-2 text-center">
-                  Click an agent to learn about them. Lines show trust relationships.
-                </p>
+                {/* How to read this — inline legend keyed to NetworkGraph's actual encoding.
+                    Lets a first-timer decode node size/color and line meaning in place,
+                    without leaving the simulator for the glossary (Jun-30 visitor MEDIUM). */}
+                <div className="mt-3 pt-3 border-t border-gray-700/50 text-xs">
+                  <p className="font-semibold text-gray-300 mb-2">How to read this graph</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2 text-gray-400">
+                    {/* Dot size = energy */}
+                    <div className="flex items-center gap-2">
+                      <svg width="34" height="18" viewBox="0 0 34 18" className="shrink-0">
+                        <circle cx="7" cy="9" r="4" fill="#6b7280" />
+                        <circle cx="24" cy="9" r="8" fill="#6b7280" />
+                      </svg>
+                      <span><span className="text-gray-200">Dot size</span> = energy — a bigger dot has more energy to act</span>
+                    </div>
+                    {/* Red ring = low energy */}
+                    <div className="flex items-center gap-2">
+                      <svg width="20" height="18" viewBox="0 0 20 18" className="shrink-0">
+                        <circle cx="10" cy="9" r="5" fill="#6b7280" />
+                        <circle cx="10" cy="9" r="7.5" fill="none" stroke="#ef4444" strokeWidth="2" />
+                      </svg>
+                      <span><span className="text-red-400">Red outline</span> = running low on energy</span>
+                    </div>
+                    {/* Blue line = mutual trust */}
+                    <div className="flex items-center gap-2">
+                      <svg width="34" height="18" viewBox="0 0 34 18" className="shrink-0">
+                        <line x1="2" y1="9" x2="32" y2="9" stroke="#3b82f6" strokeWidth="3" />
+                      </svg>
+                      <span><span className="text-blue-400">Blue line</span> = mutual trust (thicker = stronger)</span>
+                    </div>
+                    {/* Grey dashed = one-way */}
+                    <div className="flex items-center gap-2">
+                      <svg width="34" height="18" viewBox="0 0 34 18" className="shrink-0">
+                        <line x1="2" y1="9" x2="32" y2="9" stroke="#6b7280" strokeWidth="2" strokeDasharray="4 2" />
+                      </svg>
+                      <span><span className="text-gray-300">Grey dashed</span> = one-way trust (not returned)</span>
+                    </div>
+                    {/* Yellow flash = recent interaction */}
+                    <div className="flex items-center gap-2">
+                      <svg width="34" height="18" viewBox="0 0 34 18" className="shrink-0">
+                        <line x1="2" y1="9" x2="32" y2="9" stroke="#fbbf24" strokeWidth="2.5" />
+                      </svg>
+                      <span><span className="text-amber-400">Yellow line</span> = the two just interacted</span>
+                    </div>
+                    {/* Shaded blob = coalition */}
+                    <div className="flex items-center gap-2">
+                      <svg width="34" height="18" viewBox="0 0 34 18" className="shrink-0">
+                        <circle cx="17" cy="9" r="8" fill="rgba(59,130,246,0.12)" stroke="rgba(59,130,246,0.4)" strokeWidth="1" strokeDasharray="3 3" />
+                      </svg>
+                      <span><span className="text-gray-200">Shaded blob</span> = a coalition (a group of allies)</span>
+                    </div>
+                  </div>
+                  {/* Dot color = strategy — rendered from the same constants as the legend above,
+                      so the two keys can never drift apart. 'human' omitted (no human in observer mode). */}
+                  <div className="mt-2 pt-2 border-t border-gray-700/40 flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <span className="text-gray-400">Dot color = its strategy:</span>
+                    {(Object.entries(STRATEGY_LABELS) as [StrategyType, string][])
+                      .filter(([key]) => key !== 'human')
+                      .map(([key, label]) => (
+                        <span key={key} className="inline-flex items-center gap-1">
+                          <span className="inline-block w-2.5 h-2.5 rounded-full" style={{ backgroundColor: STRATEGY_COLORS[key] }} />
+                          <span className="text-gray-300">{label}</span>
+                        </span>
+                      ))}
+                  </div>
+                  <p className="text-gray-500 mt-2">Click any agent to learn more about them.</p>
+                </div>
               </div>
 
               {/* Strategy Distribution */}
