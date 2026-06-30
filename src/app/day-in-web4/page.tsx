@@ -530,7 +530,7 @@ export default function DayInWeb4Page() {
                 <div className="space-y-1.5 text-xs">
                   <div className="flex justify-between">
                     <span className="text-gray-500">Device</span>
-                    <span className="text-gray-300">iPhone 15 / Pixel 8 / Galaxy S24 (Secure Enclave / Titan M2 / Knox)</span>
+                    <span className="text-gray-300">iPhone 15 / Pixel 8 / Galaxy S24 (built-in security chip: Secure Enclave / Titan M2 / Knox)</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-500">Trust ceiling</span>
