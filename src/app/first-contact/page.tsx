@@ -215,6 +215,20 @@ export default function FirstContactPage() {
 
             <InProduction concept="stack" />
 
+            {/* Jul-1 visitor MEDIUM: the hero hammers "this is a simulation" and the green banner
+                directly above says hestia + the hub are "deployed in public" — the visitor
+                "genuinely couldn't tell whether I'm looking at a simulation or live infrastructure."
+                Disambiguate LOCALLY (the shared InProduction copy is accurate and used elsewhere):
+                the sim you drive here MODELS the deployed system; it is not that system running. */}
+            <p className="text-xs text-gray-500 leading-relaxed -mt-3 mb-6">
+              To be clear about those two things: <strong className="text-gray-400">what you drive on
+              this page is the simulation</strong> — a model that runs in your browser, with nothing
+              deployed and nothing to sign up for. <strong className="text-gray-400">hestia</strong>{" "}
+              and <strong className="text-gray-400">the hub</strong> (the green banner) are the{" "}
+              <em>separate, real</em> system that simulation models — public AGPL code you could run
+              yourself, not something executing inside this walkthrough.
+            </p>
+
             {/* Two-number anchor moved ABOVE the concept grid — May 15 visitor LOW:
                 this concrete anchor "rescued" the page; the four-acronym grid felt
                 like a vocab wall when it came first. Lead with the two numbers. */}
