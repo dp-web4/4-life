@@ -395,6 +395,22 @@ const SCENARIOS: Scenario[] = [
 ];
 
 /**
+ * One-phrase plain-language gloss per concept, keyed by conceptLink. Some
+ * concept labels already lead with plain words (LCT = "Verified Presence",
+ * ATP = "Energy Budget"), but the trust/coherence labels are bare jargon
+ * ("Trust Tensor (T3)", "Coherence Index (CI)"). Glossing every term keeps
+ * the "New to these terms?" line uniform so a naive reader gets the meaning
+ * at the read point without clicking out.
+ */
+const CONCEPT_GLOSS: Record<string, string> = {
+  '/lct-explainer': 'identity your device proves is really you',
+  '/atp-economics': 'the energy you spend to act, earn by contributing',
+  '/trust-tensor': 'your reputation, scored on talent, training & temperament',
+  '/coherence-index': 'how consistent your behavior stays over time',
+  '/aliveness': 'agents live and die by their choices',
+};
+
+/**
  * The concepts a scenario touches, deduped by link and kept in first-seen
  * order. Used to surface "what do these terms mean?" links at the point of
  * confusion (the setup text) instead of only after a choice is made.
@@ -722,6 +738,11 @@ export default function DayInWeb4Page() {
                 >
                   {c.concept}
                 </Link>
+                {CONCEPT_GLOSS[c.conceptLink] && (
+                  <span className="text-gray-600">
+                    {' — '}{CONCEPT_GLOSS[c.conceptLink]}
+                  </span>
+                )}
               </span>
             ))}
           </p>
