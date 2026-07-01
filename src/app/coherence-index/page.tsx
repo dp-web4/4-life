@@ -238,6 +238,23 @@ export default function CoherenceIndexPage() {
               trust (0.9² = 0.81), but a 40% dip (CI = 0.6) costs you 64% (0.6² = 0.36).
               Your reputation matters &mdash; but only if your current behavior
               still looks like you.{" "}
+              {/* Jul-1 visitor MEDIUM (their explicitly #1-prioritized fix): the callout told the
+                  effective-trust story (×CI²) but never plainly said the SAME coherence factor also
+                  raises energy cost (×1/CI²). Visitor arrived here to understand the "40% surcharge"
+                  they met on Karma Journey and left without one sentence connecting the two. Bridge
+                  them here, at the read point, with the concrete numbers they asked for. The widget
+                  lower on this page already shows "Multiplier: 1 / CI²", so this is consistent. */}
+              <span className="block mt-3">
+                And it&rsquo;s the <strong>same coherence factor</strong> working in two directions:
+                low coherence doesn&rsquo;t only shrink your effective trust, it makes every action{" "}
+                <em>cost more energy</em>. The ATP cost of an action scales as{" "}
+                <code className="text-gray-200">1 / CI²</code> &mdash; the exact mirror of the trust
+                drop. So at CI 0.9 an action costs about <strong>1.2×</strong> normal (1 / 0.81), and
+                at CI 0.6 about <strong>2.8×</strong> normal (1 / 0.36). That&rsquo;s the
+                &ldquo;surcharge&rdquo; you may have met on the{" "}
+                <Link href="/karma-journey" className="text-sky-400 hover:text-sky-300">Karma Journey</Link>{" "}
+                &mdash; the same story told as a price instead of a trust score.
+              </span>{" "}
               {/* June 1 visitor M3 / Unanswered Q3: the shape rationale above tells you square beats
                   linear, but never says whether the exponent itself is DERIVED or CHOSEN. Every other
                   constant on the site (0.5, 0.85, 3 hops) is honestly labeled "calibrated, not derived" —
