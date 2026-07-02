@@ -515,6 +515,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-parallel-identities" className="hover:text-sky-400 transition-colors">Do I need parallel identities?</a></li>
                 <li><a href="#faq-early-adopters" className="hover:text-sky-400 transition-colors">Don&#39;t early adopters just talk to each other?</a></li>
                 <li><a href="#faq-platform-migration" className="hover:text-sky-400 transition-colors">What if Reddit/Discord adopted Web4?</a></li>
+                <li><a href="#faq-incumbent-incentive" className="hover:text-sky-400 transition-colors">Why would an incumbent give up lock-in?</a></li>
                 <li><a href="#faq-trust-transfer-mechanics" className="hover:text-sky-400 transition-colors">How does trust transfer between platforms?</a></li>
                 <li><a href="#faq-legacy-content" className="hover:text-sky-400 transition-colors">What about my existing reputation?</a></li>
                 <li><a href="#faq-developer-integration" className="hover:text-sky-400 transition-colors">What&apos;s the developer experience?</a></li>
@@ -1119,7 +1120,7 @@ export default function WhyWeb4Page() {
               <details className="group/cat">
                 <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
                   <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
-                  Adoption (13)
+                  Adoption (14)
                 </summary>
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
                   <li><a href="#faq-vs-existing" className="hover:text-sky-400">Why better than X?</a></li>
@@ -1131,6 +1132,7 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-early-adopters" className="hover:text-sky-400">Early adopters in a bubble?</a></li>
                   <li><a href="#faq-dual-trust" className="hover:text-sky-400">Reddit karma vs Web4 trust</a></li>
                   <li><a href="#faq-platform-migration" className="hover:text-sky-400">If Reddit adopted Web4?</a></li>
+                  <li><a href="#faq-incumbent-incentive" className="hover:text-sky-400">Why give up lock-in?</a></li>
                   <li><a href="#faq-trust-transfer-mechanics" className="hover:text-sky-400">Trust between platforms?</a></li>
                   <li><a href="#faq-legacy-content" className="hover:text-sky-400">Existing reputation?</a></li>
                   <li><a href="#faq-developer-integration" className="hover:text-sky-400">Developer experience?</a></li>
@@ -3223,6 +3225,53 @@ export default function WhyWeb4Page() {
               </ol>
               <p className="text-gray-500 text-xs mt-2">
                 <strong>Key insight:</strong> Each tier is independently valuable. A platform at tier 2 already has better spam detection than most platforms today. There&apos;s no all-or-nothing commitment.
+              </p>
+            </div>
+          </details>
+
+          {/* Incumbent incentive — visitor Q Jun 27 (HIGH): "why would any platform adopt this? the single biggest gap" */}
+          <details id="faq-incumbent-incentive" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
+            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
+              <span>Why would Reddit, Twitter, or any incumbent adopt this if they profit from owning your reputation?</span>
+              <span className="text-gray-500 text-xl">+</span>
+            </summary>
+            <div className="mt-4 text-gray-300 text-sm space-y-2">
+              <p>
+                This is the hardest adoption question, so we&apos;ll answer it honestly. For a
+                dominant platform, your locked-in reputation <em>is</em> the moat &mdash; you can&apos;t
+                take your followers or your seller rating elsewhere, so you stay. A system that makes
+                reputation portable erodes exactly that lock-in. So the honest starting point:
+                <strong className="text-gray-200"> the biggest incumbents are the least likely first
+                movers, not the most.</strong>
+              </p>
+              <p>Adoption is likelier to come from pressures and players that don&apos;t share that disincentive:</p>
+              <ul className="list-disc list-inside space-y-2 ml-2 text-gray-400">
+                <li><strong className="text-gray-300">The low tiers cost nothing and surrender no
+                  control.</strong> At the Wrapper and Observable tiers, Web4 trust rides alongside a
+                  platform&apos;s existing system as a secondary signal &mdash; better spam detection
+                  and cheaper moderation, with their own ranking untouched. A platform can capture that
+                  value without giving anything up.</li>
+                <li><strong className="text-gray-300">Challengers hold the wedge, not incumbents.</strong> A
+                  new platform can&apos;t out-network Reddit &mdash; but &ldquo;bring your real reputation
+                  with you instead of starting at zero&rdquo; is exactly the switching-cost lever a
+                  challenger needs. Incumbent lock-in is a challenger&apos;s opening.</li>
+                <li><strong className="text-gray-300">Regulation could tilt the field.</strong> Interoperability
+                  and data-portability rules &mdash; the direction the EU&apos;s DMA/DSA already lean &mdash;
+                  <em> could</em> make &ldquo;you don&apos;t own your users&apos; reputation&rdquo; an
+                  expectation rather than a choice. We&apos;re not aware of any law that mandates Web4 or
+                  any regulator that has endorsed it; this is a possible future pressure, not a current one.</li>
+                <li><strong className="text-gray-300">It&apos;s a ramp, not a cliff.</strong> No platform
+                  makes a day-one &ldquo;give up control&rdquo; decision. Each tier is independently valuable
+                  and reversible &mdash; a platform can sit at Wrapper indefinitely and still benefit.</li>
+              </ul>
+              <p className="text-amber-400/80 text-xs">
+                <strong>Honest caveat:</strong> No platform has adopted Web4 at any tier yet. The incumbent
+                lock-in incentive is real, and this &mdash; not any technical detail &mdash; is arguably the
+                single biggest open question for the whole model. Our working bet is that portable trust
+                spreads from the edges first (challengers, regulated sectors, federations of smaller
+                communities) and that dominant incumbents follow only once portability becomes an expectation
+                they can&apos;t refuse &mdash; the way open protocols eventually absorbed walled gardens.
+                That&apos;s a bet on how standards spread, not a promise that they will.
               </p>
             </div>
           </details>
