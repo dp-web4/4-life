@@ -119,10 +119,19 @@ export default function ATPEconomicsPage() {
             to prevent. The original guard's root cause (old H1 "Attention Economics") was fixed May 3;
             the expansion is now anchored positively by the H1 (line 106) + confirming badge (108–112),
             so the aside is dropped and the expansion simply restated in plain positive form here. */}
+        {/* Jul-1 visitor HIGH (browse #2, restored log): the page gives ATP two expansions —
+            "Allocation Transfer Packets" here vs. "adenosine triphosphate" in the biology <details>
+            below — with nothing reconciling them, so a reader who opens the details reads a
+            contradiction ("which do I tell a friend?") and "briefly distrust[s] the site's precision."
+            Proactive anchor: name the two-layer relationship (origin vs. what-it-is) at the FIRST
+            canonical assertion, in reading order, before they can hit the collision. Same pattern as
+            the LCT scale anchor (#362) / [[recurring-anchor-proactive-vs-reactive]]. */}
         <p className="text-sm text-gray-400 mb-6">
           In one line: <strong className="text-gray-200">ATP is your energy budget</strong> &mdash; the
           same plain gloss used everywhere else on this site, and the acronym always spells out to
-          &ldquo;Allocation Transfer Packets.&rdquo;
+          &ldquo;Allocation Transfer Packets.&rdquo; The letters are also a deliberate nod to biology&rsquo;s{' '}
+          <em>adenosine triphosphate</em> &mdash; that&rsquo;s where the <em>name</em> comes from, not a
+          second definition (<a href="#why-atp-name" onClick={(e) => { e.preventDefault(); const el = document.getElementById('why-atp-name'); if (el) { if (el instanceof HTMLDetailsElement) el.open = true; el.scrollIntoView({ behavior: 'smooth' }); } }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">the borrowed name, below</a>).
         </p>
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Web4 solves spam, abuse, and low-quality content not with moderation
@@ -201,17 +210,26 @@ export default function ATPEconomicsPage() {
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300">jump to the ATP simulator ↓</a></p>
         </div>
 
-        {/* Biology etymology — demoted to optional disclosure per Apr 22 visitor LOW L8 */}
-        <details className="mt-4">
+        {/* Biology etymology — demoted to optional disclosure per Apr 22 visitor LOW L8.
+            Jul-1 visitor HIGH (browse #2): this section is collapsed-by-default and USED to open
+            with "adenosine triphosphate" cold — so opening it INTRODUCED a second expansion rather
+            than reconciling it against the "Allocation Transfer Packets" a linear reader just saw.
+            The lead now resolves on open: two things, one acronym, on purpose — biology names it,
+            Web4 says what it is — and does the same for ADP. id lets the anchor above jump here. */}
+        <details className="mt-4" id="why-atp-name">
           <summary className="text-sm text-gray-400 cursor-pointer hover:text-sky-400 transition-colors select-none">
             <span className="text-sky-300 font-semibold">Why &ldquo;ATP&rdquo;?</span>{' '}
             <span className="italic">the biology origin behind the name</span>
           </summary>
           <p className="text-base text-gray-300 mt-3 leading-relaxed">
-            Borrowed from biology: <em>adenosine triphosphate</em> is the molecule your cells spend to do work &mdash;
-            they burn ATP, get ADP back, and recharge ATP from food. Web4 reuses the same cycle for digital energy:
-            you spend ATP to act, the ADP receipt records it, and quality work recharges your balance. The metaphor is
-            deliberate &mdash; energy that flows, not tokens that accumulate.
+            The three letters carry two things at once, on purpose. <em>Adenosine triphosphate</em> is where the{' '}
+            <em>name</em> comes from &mdash; the molecule your cells spend to do work: they burn ATP, get ADP back,
+            and recharge ATP from food. <strong className="text-gray-100">Allocation Transfer Packets</strong> is what
+            ATP <em>is</em> in Web4, which reuses that exact cycle for digital energy: you spend ATP to act, the ADP
+            receipt records it, and quality work recharges your balance. So the biology is the name&rsquo;s origin
+            story, not a rival definition &mdash; and the same holds for ADP (biology&rsquo;s adenosine{' '}
+            <em>di</em>phosphate lends its name to the <strong className="text-gray-100">Allocation Discharge Packet</strong>).
+            The metaphor is deliberate &mdash; energy that flows, not tokens that accumulate.
           </p>
         </details>
 
