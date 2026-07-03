@@ -364,8 +364,18 @@ export default function WhyWeb4Page() {
                 Instead of one trust score, you get separate scores for your skills, your training, and your behavior — and they&apos;re different for each role. Your trust as a data analyst doesn&apos;t affect your trust as a cook.
               </p>
               <p className="text-gray-400 text-sm mt-1">Shorthand: T3 (Trust Tensor — Talent, Training, Temperament) &mdash; just means your trust split into three scores.</p>
-              <Link href="/trust-tensor" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
-                Learn about trust →
+              {/* Jul-3 visitor MEDIUM (#1 recurring snag): V3 read as a "ghost" — named only in
+                  the deep FAQ, never seated next to T3 with a plain contrast. Seat it here as a
+                  COMPANION to T3 (mirrors the CI companion box below, L426), not a fifth mechanism
+                  card — respects the deliberate "four ideas" framing. This is the T3-vs-V3 contrast
+                  the visitor's Unanswered Q1 asked for, at first mention. */}
+              <p className="text-gray-400 text-sm mt-2">
+                <span className="text-sky-300">Its companion, V3 (the Value Tensor):</span> T3 is how much
+                others trust <em>you</em>; V3 rates how good <em>each specific thing you make</em> is.
+                Trust in the person, value of the work.
+              </p>
+              <Link href="/trust-tensor#v3-output-scorer" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
+                Learn about trust &amp; value →
               </Link>
             </div>
 
