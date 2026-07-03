@@ -3264,23 +3264,34 @@ export default function SocietySimulatorPage() {
 
         <InProduction concept="society" />
 
-        {/* New-to-Web4 onboarding banner — May 21 visitor LOW #4: the only First Contact pointer
-            was a small text-sm line buried inside the green box below; a cold visitor landing
-            directly on this (the densest interactive page) would scan past it. Promote it to a
-            prominent banner above the acronym-dense content, per the visitor's verbatim suggestion. */}
+        {/* New-to-Web4 onboarding banner.
+            May 21 visitor LOW #4 added this banner: the only First Contact pointer was buried in
+            the green box below, so a cold visitor would scan past it — promote it prominently.
+            Jul-2 visitor HIGH ×2 (acronym-fatigue + circular-nav): the banner then swung too far —
+            it LED with a bare "ATP, T3, LCT, and CI show up all over this page" acronym dump and a
+            prominent "Start with First Contact →" wall, so the journey's endpoint shipped a cold
+            lander back to the start before they could begin ("the endpoint of the journey sends me
+            back to the beginning"). Reframe to teach-inline-first: reassure the page stands on its
+            own (the emerald box directly below already glosses each term in plain nouns), LEAD with
+            plain nouns instead of acronyms, and DEMOTE First Contact from a go-here-first button to
+            an optional "prefer a walkthrough?" link — keeping it discoverable (the May-21 ask)
+            without bouncing the visitor (the Jul-2 ask). Kept orientation-only so it primes rather
+            than duplicating the emerald teach box. */}
         <div className="mb-6 bg-gradient-to-r from-sky-900/40 to-indigo-900/30 border border-sky-700/60 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-3">
           <div className="flex-1">
-            <div className="text-sm font-bold text-sky-100 mb-0.5">👋 Never seen these Web4 terms before?</div>
+            <div className="text-sm font-bold text-sky-100 mb-0.5">New to Web4? You can start right here.</div>
             <p className="text-xs text-sky-100/80 leading-relaxed">
-              ATP, T3, LCT, and CI show up all over this page. <a href="/first-contact" className="text-sky-300 underline hover:text-sky-200 font-medium">First Contact</a> is
-              a 7-minute guided intro that builds them one at a time — then everything below clicks into place.
+              No need to study up first. The sections below explain every idea in plain English — you
+              spend <strong>energy</strong> to act and build a <strong>reputation</strong> by cooperating —
+              and the Web4 shorthand (ATP, T3, LCT, CI) is hover-defined the moment it appears. Press
+              play and watch it unfold.
             </p>
           </div>
           <a
             href="/first-contact"
-            className="shrink-0 inline-flex items-center justify-center bg-sky-500 hover:bg-sky-400 text-white font-bold text-sm py-2.5 px-5 rounded-lg transition-colors whitespace-nowrap"
+            className="shrink-0 inline-flex items-center justify-center text-sky-300 underline hover:text-sky-200 text-sm font-medium whitespace-nowrap"
           >
-            Start with First Contact →
+            Prefer a guided walkthrough first? →
           </a>
         </div>
 
