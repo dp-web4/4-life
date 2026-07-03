@@ -474,6 +474,18 @@ export default function ATPEconomicsPage() {
           ATP isn&apos;t all-or-nothing. Web4 uses a <strong className="text-sky-400">quality ramp</strong>:
           the better your work, the more you earn. Below a minimum quality bar, you earn nothing.
         </p>
+        {/* Jul-3 visitor MEDIUM: V3 was named only at L600 (deep in "Who Decides Quality?"),
+            ~90 lines BELOW where the reader first meets the word "quality" here. A linear reader
+            met V3 after the math it should have preceded. One priming sentence anchors V3 (and the
+            T3-vs-V3 contrast the visitor's Unanswered Q1 asked for) at true first-mention; the
+            L600 mention then reads as the mechanism detail, not a cold introduction. */}
+        <p className="text-gray-400 leading-relaxed mb-6 -mt-2 text-sm">
+          That <strong className="text-gray-300">&ldquo;quality&rdquo;</strong> score has a name: it&apos;s your{' '}
+          <a href="/trust-tensor#v3-output-scorer" className="text-sky-400 hover:text-sky-300 underline">V3 (Value Tensor)</a>{' '}
+          &mdash; a rating of <em>the work you made</em>, distinct from{' '}
+          <a href="/trust-tensor" className="text-sky-400 hover:text-sky-300 underline">T3</a>, which is how much people trust <em>you as a person</em>.
+          Trust in the person, value of the work. (How V3 gets scored is <a href="#quality-measurement" onClick={(e) => { e.preventDefault(); document.getElementById('quality-measurement')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">just below</a>.)
+        </p>
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8">
           <h3 className="text-lg font-semibold text-gray-100 mb-4">Imagine a task worth 50 ATP:</h3>
           <div className="space-y-3">
