@@ -490,6 +490,32 @@ export default function WhyWeb4Page() {
           read top to bottom. Jump to whatever you actually want via the topic index just below.
         </p>
 
+        {/* Lead answer — 2026-07-02 visitor MEDIUM ×2: (1) "50+ Q&As, can't tell which 3 matter"
+            and (2) Unanswered-Question #1, the site-wide "deployed/AGPL/public" vs "research
+            prototype, not live" contradiction that "never resolved." The accurate answer already
+            lived at #faq-deployed but was one collapsed <details> too deep — the visitor never
+            opened it. Lead the section with the single most-asked question, answered inline, so the
+            contradiction resolves without a click ([[visitor-fix-deployed-but-didnt-land]]). */}
+        <div className="mb-8 bg-amber-950/25 border border-amber-700/40 rounded-xl p-5">
+          <p className="text-amber-300 font-semibold mb-2">
+            The question almost everyone asks first: is this real, or just an idea?
+          </p>
+          <p className="text-gray-300 text-sm leading-relaxed">
+            <strong className="text-gray-200">Both &mdash; and that split is the source of the mixed
+            signals you may have seen.</strong> The protocol spec and ~47,000 lines of reference code
+            are real, tested, and public (open-source, AGPL) &mdash; that&rsquo;s the &ldquo;deployed,
+            public&rdquo; part. But there is <strong className="text-gray-200">no live network with real
+            users yet</strong>, and <strong className="text-gray-200">nothing on this site is a live
+            product</strong>: the simulations here demonstrate the mechanics; they don&rsquo;t run a real
+            economy. Short version: <em>research prototype with substantial working code, not production.</em>
+          </p>
+          <p className="text-sm mt-3">
+            <a href="#faq-deployed" className="text-sky-400 hover:text-sky-300 hover:underline font-medium">
+              Full breakdown: what&rsquo;s built vs. what isn&rsquo;t &darr;
+            </a>
+          </p>
+        </div>
+
         {/* FAQ index — jump to any question */}
         <details open className="mb-8 text-sm border border-sky-800/30 rounded-lg p-3 group" id="faq-index">
           <summary className="text-sky-400 hover:text-sky-300 cursor-pointer list-none inline-flex items-center gap-1.5 font-semibold">
@@ -611,6 +637,7 @@ export default function WhyWeb4Page() {
             First-time visitors most often want to know:
           </p>
           <ul className="grid sm:grid-cols-2 gap-x-5 gap-y-2 text-sm">
+            <li><a href="#faq-deployed" className="text-sky-400 hover:text-sky-300 hover:underline">Is this deployed, or purely theoretical?</a></li>
             <li><a href="#faq-what-backs-atp" className="text-sky-400 hover:text-sky-300 hover:underline">If not crypto, what backs ATP?</a></li>
             <li><a href="#faq-infrastructure" className="text-sky-400 hover:text-sky-300 hover:underline">Who runs the infrastructure?</a></li>
             <li><a href="#faq-bootstrap-witnesses" className="text-sky-400 hover:text-sky-300 hover:underline">How does the witness network bootstrap?</a></li>
