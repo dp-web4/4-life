@@ -184,12 +184,21 @@ export default function LCTExplainerPage() {
             and resistant to faking.
           </p>
 
-          {/* Plain-English etymology of "Linked" and "Context" — visitor friction Apr 25 */}
-          <div className="mt-6 max-w-2xl mx-auto bg-gray-900/40 border border-gray-700 rounded-lg p-5 text-left">
-            <div className="text-sm uppercase tracking-wide text-gray-400 mb-2">
-              Why &ldquo;Linked Context&rdquo;?
-            </div>
-            <p className="text-gray-300 leading-relaxed">
+          {/* Plain-English etymology of "Linked" and "Context" — visitor friction Apr 25.
+              2026-07-02 visitor MEDIUM #6: the good analogy "got buried under crypto vocabulary
+              within a couple of paragraphs." This box explains the NAME, not the concept, yet sat
+              in the hero as a 3-paragraph density spike (lineage, tamper-evident, cryptographically
+              chained) immediately after the plain-English precise definition above. Fold it so a
+              linear reader meets the analogy + one plain definition before any crypto/etymology
+              cluster; the etymology stays one click away for the curious. Prominence-only change —
+              the Apr-29 precise definition (para above) and this content are both preserved. */}
+          <details className="mt-6 max-w-2xl mx-auto bg-gray-900/40 border border-gray-700 rounded-lg p-5 text-left group">
+            <summary className="cursor-pointer list-none flex items-center justify-between gap-2 text-sm uppercase tracking-wide text-gray-400">
+              <span>Why the name &ldquo;Linked Context&rdquo;?</span>
+              <span className="text-xs font-normal normal-case tracking-normal text-gray-500 group-open:hidden">optional &mdash; tap to unpack the two words</span>
+              <span className="text-xs font-normal normal-case tracking-normal text-gray-500 hidden group-open:inline">tap to collapse</span>
+            </summary>
+            <p className="text-gray-300 leading-relaxed mt-3">
               <strong>Linked</strong> &mdash; every LCT links to its creator (lineage), to the
               devices that witness it, and to a <em>tamper-evident</em> creation record &mdash;
               meaning every entry is cryptographically chained to the one before it, so altering
@@ -209,7 +218,7 @@ export default function LCTExplainerPage() {
               <em> context</em> you&rsquo;re acting in &mdash; your role, your device, what you&rsquo;re
               doing right now &mdash; so trust is always evaluated in situation, not in the abstract.
             </p>
-          </div>
+          </details>
 
           <p className="text-sm text-gray-500 mt-4">
             <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 cursor-pointer">
