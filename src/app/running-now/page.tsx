@@ -67,8 +67,10 @@ export default function RunningNowPage() {
           <MaturityBadge tier="running" />
         </div>
         <p className="text-lg text-gray-300 leading-relaxed mb-4">
-          Hestia is the local-first trust layer that gives any entity — a person, an AI
-          agent, an autonomous service — a real Web4 presence on its own machine.
+          Hestia is software an entity runs on its own machine to get a real Web4 identity —
+          a verifiable digital passport, plus the private vault, trust history, and permissions
+          that ride with it. It works the same whether that entity is a person, an AI agent,
+          or an autonomous service: each gets its own presence, held locally, no cloud required.
           Cross-platform app for humans, plugin for AI agents, CLI/TUI for the terminal.
         </p>
         <ul className="grid sm:grid-cols-2 gap-3 text-sm text-gray-300 mb-4">
@@ -124,10 +126,12 @@ export default function RunningNowPage() {
         </div>
         <p className="text-lg text-gray-300 leading-relaxed mb-4">
           A society in this site&apos;s simulations is a swarm of agents forming trust.
-          The <strong>hub</strong> is a runnable version of that: a single ~6&nbsp;MB Rust
-          daemon that turns a community into a sovereign Web4 society — seven roles, a signed
-          founding charter, an append-only witnessed ledger, an admin CLI, and Docker
-          deployment. A reference any community can fork and run.
+          The <strong>hub</strong> is a program a community can run to become one for real:
+          it stands your group up as its own small, self-governing Web4 society — its own
+          members, its own rules, its own tamper-evident record. Under the hood it&apos;s a
+          single ~6&nbsp;MB Rust daemon (seven roles, a signed founding charter, an
+          append-only witnessed ledger, an admin CLI, Docker deployment) — a reference any
+          community can fork and run.
         </p>
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/10 p-4 mb-4">
           <p className="text-sm text-purple-100 leading-relaxed">
