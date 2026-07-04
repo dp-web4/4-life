@@ -6,8 +6,34 @@
 
 import Link from "next/link";
 import MaturityBadge, { MaturityTier } from "./MaturityBadge";
+import TermTooltip from "./TermTooltip";
 
 type Entry = { tier: MaturityTier; line: string };
+
+// Jul-4 visitor HIGH: "hestia" and "the hub" appear on this banner across ~22 pages as
+// bare proper nouns, only defined at /running-now (which a linear reader reaches LAST).
+// Wrap each in-line occurrence in a TermTooltip so the definition is one hover away
+// everywhere the banner appears — the visitor's own suggested fix ("a hover-tooltip like
+// the ATP/T3 ones would fix all sites at once").
+function glossLine(line: string): React.ReactNode[] {
+  const parts: React.ReactNode[] = [];
+  const re = /\b(hestia|hub)\b/gi;
+  let last = 0;
+  let key = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(line)) !== null) {
+    if (m.index > last) parts.push(line.slice(last, m.index));
+    const word = m[0];
+    parts.push(
+      <TermTooltip key={key++} term={word.toLowerCase()}>
+        {word}
+      </TermTooltip>
+    );
+    last = m.index + word.length;
+  }
+  if (last < line.length) parts.push(line.slice(last));
+  return parts;
+}
 
 const CONCEPTS: Record<string, Entry> = {
   "lct": {
@@ -56,7 +82,7 @@ const CONCEPTS: Record<string, Entry> = {
   },
   "stack": {
     tier: "running",
-    line: "this isn't only theory — the trust layer (hestia) and a Web4 society (the hub) are deployed in public, AGPL code.",
+    line: "this isn't only theory — the trust layer (hestia) and a Web4 society (the hub) are public, AGPL code you can run yourself — though there's no live network with real users yet.",
   },
 };
 
@@ -71,7 +97,7 @@ export default function InProduction({
       <span className="inline-flex items-center gap-2 font-semibold text-emerald-300">
         <MaturityBadge tier={c.tier} /> Running now
       </span>
-      <span className="text-gray-300">{c.line}</span>
+      <span className="text-gray-300">{glossLine(c.line)}</span>
       <Link
         href="/running-now"
         className="text-emerald-400 underline hover:text-emerald-300 whitespace-nowrap"

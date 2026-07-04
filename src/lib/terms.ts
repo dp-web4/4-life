@@ -257,6 +257,26 @@ export const terms: Record<string, TermDefinition> = {
       "When entities develop dense mutual trust, balanced ATP flows, and overlapping MRH boundaries, they form a synthon — an emergent group that's more than the sum of its parts. Synthons have their own lifecycle: formation (trust densifies), health (diversity + balanced energy), and decay (trust diverges, energy concentrates). Web4 detects these automatically from trust entropy and clustering patterns.",
     learnMore: "/aliveness",
   },
+
+  // Deployed tools — NOT canonical Web4 acronyms, but the two project/software names
+  // ("hestia", "the hub") the site's green "Running now" banner references. Defined here
+  // so the banner can hover-gloss them inline on every page. Describe the PUBLIC runnable
+  // tools only; keep tier honesty (hestia = running today, the hub = runnable reference).
+  hestia: {
+    term: "hestia",
+    fullName: "the trust-layer software",
+    brief:
+      "The local-first app that gives any entity — a person, an AI agent, a service — a real Web4 identity and trust record on its own device. Public AGPL code you can run yourself; no cloud required.",
+    learnMore: "/running-now",
+  },
+
+  hub: {
+    term: "the hub",
+    fullName: "a runnable Web4 society",
+    brief:
+      "A small (~6 MB) program a community runs to become its own Web4 society — a signed charter, roles, and a witnessed ledger. A public reference any community can fork and run; not a live network you sign up for.",
+    learnMore: "/running-now",
+  },
 };
 
 /**
