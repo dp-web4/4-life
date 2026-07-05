@@ -6,6 +6,7 @@ import TermTooltip from "@/components/TermTooltip";
 import PageTracker from "@/components/PageTracker";
 import SectionTOC from "@/components/SectionTOC";
 import InProduction from "@/components/InProduction";
+import LifecycleDemo from "@/components/LifecycleDemo";
 
 const HOW_IT_WORKS_SECTIONS = [
   { id: 'journey', label: 'Birth → Life → Death → Rebirth' },
@@ -304,10 +305,12 @@ export default function HowItWorksPage() {
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           The Journey: Birth → Life → Death → Rebirth
         </h2>
-        <p className="text-gray-400 mb-8">
-          Web4 societies treat "aliveness" as a measurable property. Here's the
-          full lifecycle:
+        <p className="text-gray-400 mb-6">
+          Web4 societies treat "aliveness" as a measurable property. Before the
+          step-by-step below, watch the whole arc run — 30 seconds, no navigation:
         </p>
+
+        <LifecycleDemo />
 
         {/* Birth */}
         <div className="mb-12">
