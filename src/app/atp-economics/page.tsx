@@ -478,12 +478,20 @@ export default function ATPEconomicsPage() {
             ~90 lines BELOW where the reader first meets the word "quality" here. A linear reader
             met V3 after the math it should have preceded. One priming sentence anchors V3 (and the
             T3-vs-V3 contrast the visitor's Unanswered Q1 asked for) at true first-mention; the
-            L600 mention then reads as the mechanism detail, not a cold introduction. */}
-        <p className="text-gray-400 leading-relaxed mb-6 -mt-2 text-sm">
-          That <strong className="text-gray-300">&ldquo;quality&rdquo;</strong> score has a name: it&apos;s your{' '}
-          <a href="/trust-tensor#v3-output-scorer" className="text-sky-400 hover:text-sky-300 underline">V3 (Value Tensor)</a>{' '}
-          &mdash; a rating of <em>the work you made</em>, distinct from{' '}
-          <a href="/trust-tensor" className="text-sky-400 hover:text-sky-300 underline">T3</a>, which is how much people trust <em>you as a person</em>.
+            L600 mention then reads as the mechanism detail, not a cold introduction.
+            Jul-4 visitor LOW: the anchor shipped (#427) but the visitor still read it as "cryptic"
+            ~19h later — residual is prominence + framing, not mechanism (the literal fix was already
+            here). Two changes: (1) de-mute from footnote styling (-mt-2 text-sm text-gray-400) to
+            body prominence, since it answers the most-asked question "T3 vs V3?"; (2) reframe from
+            "distinct from T3" (difference) to "same idea, aimed at the work" (parallel) so V3 reads
+            as T3's sibling pointed at the output, not a separate cryptic thing. Kept lightweight —
+            body prose, NOT a callout/panel — and preserved the "just below" pointer + both links. */}
+        <p className="text-gray-300 leading-relaxed mb-6">
+          That <strong className="text-gray-100">&ldquo;quality&rdquo;</strong> score has a name: it&apos;s your{' '}
+          <a href="/trust-tensor#v3-output-scorer" className="text-sky-400 hover:text-sky-300 underline">V3 (Value Tensor)</a>.
+          It&apos;s the <em>same idea</em> as{' '}
+          <a href="/trust-tensor" className="text-sky-400 hover:text-sky-300 underline">T3</a>, just aimed at a different target:
+          where T3 rates how much people trust <em>you as a person</em>, V3 rates the value of <em>the work you made</em>.
           Trust in the person, value of the work. (How V3 gets scored is <a href="#quality-measurement" onClick={(e) => { e.preventDefault(); document.getElementById('quality-measurement')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">just below</a>.)
         </p>
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8">
