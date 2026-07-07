@@ -98,6 +98,17 @@ export const terms: Record<string, TermDefinition> = {
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/mrh-tensors.md",
   },
 
+  // Witnessing
+  WitnessNetwork: {
+    term: "witness network",
+    fullName: "Witness Network",
+    brief:
+      "The web of entities that observe and cryptographically sign each other's actions — turning “I did this” into “others saw me do this.”",
+    explanation:
+      "In Web4, a claim only counts when someone else attests to it. A witness is any entity — a device, a person, a service — that observes an event and signs a small record of it. Those signed observations accumulate into a network: the more independent witnesses an identity or action has, the harder it is to fake. This is what replaces a central authority — presence and history are established by many small attestations instead of one big database.",
+    learnMore: "/trust-tensor#witness-network",
+  },
+
   // Coherence
   CI: {
     term: "CI",
@@ -190,6 +201,16 @@ export const terms: Record<string, TermDefinition> = {
     explanation:
       "Named after a case study of multiple personalities. In digital systems, a Sybil attack means one person creates hundreds or thousands of fake accounts to manipulate votes, reviews, or trust scores. Web4 resists this by tying identity to physical hardware — each fake identity needs a real device.",
     learnMore: "/threat-model#sybil",
+  },
+
+  CorrelationAttack: {
+    term: "correlation attack",
+    fullName: "Correlation Attack",
+    brief:
+      "De-anonymizing someone by linking together separate pieces of data that are harmless on their own.",
+    explanation:
+      "Each fact alone reveals little — a timestamp here, a trust score there, a writing pattern somewhere else. Combined, they can pinpoint a person the way overlapping circles pinpoint a location on a map. In a trust system, the risk is that a pseudonymous identity's public trust history becomes a fingerprint. Web4's mitigations: role-contextual identities keep histories separate per context, and zero-knowledge proofs let you prove “trust above a threshold” without revealing the score or history behind it.",
+    learnMore: "/threat-model",
   },
 
   Goodharting: {

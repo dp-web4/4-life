@@ -4,6 +4,10 @@ import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
 import PageTracker from "@/components/PageTracker";
 import InProduction from "@/components/InProduction";
+// TermTooltip is used ONLY in deep-FAQ answer text (Jul-7 visitor LOW: "the page's early
+// first-use discipline fades with scroll depth"). The early sections explain terms inline
+// and must stay tooltip-free — don't spread these to the rest of the page.
+import TermTooltip from "@/components/TermTooltip";
 
 /**
  * Why Web4 - The Problem Before the Solution
@@ -671,7 +675,7 @@ export default function WhyWeb4Page() {
                 <li><strong>Protocol specification:</strong> 100+ page{" "}
                   <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
                   Web4 whitepaper</a> with formal definitions</li>
-                <li><strong>Reference implementations:</strong> ~47,000 lines of tested code covering the four mechanisms above (identity, energy, trust scoring, trust neighborhood) plus value tensors, community governance, federation, and the witness protocol</li>
+                <li><strong>Reference implementations:</strong> ~47,000 lines of tested code covering the four mechanisms above (identity, energy, trust scoring, trust neighborhood) plus value tensors, community governance, <TermTooltip term="Federation">federation</TermTooltip>, and the witness protocol</li>
                 {/* June 12 visitor MEDIUM (browse A): unscoped "formally proven" sat next to this
                     page's own collusion caveat and /what-could-go-wrong's admissions — careful
                     readers read it as overclaim. Scope it to the modeled attack classes, matching
@@ -1557,7 +1561,7 @@ export default function WhyWeb4Page() {
                 the network—collusion requires coordinating multiple independent parties.
               </p>
               <p>
-                Web4 identity is also designed to work with <strong>W3C Decentralized Identifier (DID)
+                Web4 identity is also designed to work with <strong><TermTooltip term="DID">W3C Decentralized Identifier (DID)</TermTooltip>{" "}
                 standards</strong> — the same standard used by governments and enterprises. Your{" "}
                 <Link href="/lct-explainer" className="text-sky-400 hover:underline">LCT</Link> maps
                 to a standard DID Document, so external systems can verify Web4 identity using protocols
@@ -1604,7 +1608,7 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Bootstrap requires a <strong>seed network</strong> of trusted witnesses. This is the
+                Bootstrap requires a <strong>seed network</strong> of <TermTooltip term="WitnessNetwork">trusted witnesses</TermTooltip>. This is the
                 classic "who watches the watchmen" problem. Proposed approaches:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
@@ -1709,7 +1713,7 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                No. Web4 uses <strong>multi-device witness networks</strong> — your identity is spread across
+                No. Web4 uses <strong><TermTooltip term="WitnessNetwork">multi-device witness networks</TermTooltip></strong> — your identity is spread across
                 multiple devices (phone, laptop, security key). If one is stolen, the others can revoke
                 the compromised device and approve a replacement.
               </p>
@@ -1940,7 +1944,7 @@ export default function WhyWeb4Page() {
                 not all at once.
               </p>
               <p>
-                The expensive part is <strong>federation-level operations</strong>: cross-community trust
+                The expensive part is <strong><TermTooltip term="Federation">federation</TermTooltip>-level operations</strong>: cross-community trust
                 mapping, consensus across unreliable networks, and global reputation queries. These are
                 batched, cached, and eventually consistent — similar to how DNS propagation works today.
               </p>
@@ -2194,7 +2198,7 @@ export default function WhyWeb4Page() {
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Privacy is structural, not absolute. Someone who shares
                 your trust network can see your scores in that context. And if a hardware key is ever
-                linked to a real identity (through a data breach or correlation attack), the trust
+                linked to a real identity (through a data breach or <TermTooltip term="CorrelationAttack">correlation attack</TermTooltip>), the trust
                 history becomes de-anonymized. MRH limits blast radius; zero-knowledge proofs limit
                 information leakage; but neither guarantees perfect anonymity.
               </p>

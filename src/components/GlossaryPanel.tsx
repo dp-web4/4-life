@@ -6,10 +6,10 @@ import { terms, type TermDefinition } from "@/lib/terms";
 
 const TERM_CATEGORIES: { label: string; terms: string[] }[] = [
   { label: "Core", terms: ["Web4", "LCT", "ATP", "ADP"] },
-  { label: "Trust & Value", terms: ["T3", "V3", "MRH", "CI"] },
+  { label: "Trust & Value", terms: ["T3", "V3", "MRH", "CI", "WitnessNetwork"] },
   { label: "Behavior", terms: ["Karma", "EP", "R6"] },
   { label: "Social", terms: ["Society", "Federation", "VCM", "Synthon"] },
-  { label: "Security", terms: ["DID", "VerifiableCredential", "Sybil", "Goodharting"] },
+  { label: "Security", terms: ["DID", "VerifiableCredential", "Sybil", "Goodharting", "CorrelationAttack"] },
 ];
 
 const TERM_ORDER = TERM_CATEGORIES.flatMap((c) => c.terms);
