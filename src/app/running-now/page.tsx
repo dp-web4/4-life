@@ -128,11 +128,33 @@ export default function RunningNowPage() {
           A society in this site&apos;s simulations is a swarm of agents forming trust.
           The <strong>hub</strong> is a program a community can run to become one for real:
           it stands your group up as its own small, self-governing Web4 society — its own
-          members, its own rules, its own tamper-evident record. Under the hood it&apos;s a
-          single ~6&nbsp;MB Rust daemon (seven roles, a signed founding charter, an
-          append-only witnessed ledger, an admin CLI, Docker deployment) — a reference any
-          community can fork and run.
+          members, its own rules, its own tamper-evident record. It&apos;s small enough to
+          run on a single machine, and any community can fork and run it.
         </p>
+        {/* Jul-6 visitor MEDIUM #2: the benefit lead HELD (#432), but the "single ~6 MB
+            Rust daemon (…Docker deployment)" spec-dump was the residual jargon cliff —
+            daemon/Docker unglossed, and ~6 MB/Rust read as an unexplained brag. Fold the
+            build detail behind a disclosure and gloss the two hard terms, so a naive reader
+            stops at the benefit and an engineer can expand. Hestia grid left visible on
+            purpose — its T3/V3 + witness-chain tiles are comprehension bridges, not depth. */}
+        <details className="mb-4 bg-gray-800/40 border border-gray-700/60 rounded-lg p-4">
+          <summary className="text-sm font-semibold text-gray-300 cursor-pointer hover:text-purple-300 transition-colors list-none flex items-center justify-between gap-3">
+            <span>Under the hood — for the technically curious</span>
+            <span className="text-xs text-gray-500 font-normal whitespace-nowrap">click to expand</span>
+          </summary>
+          <p className="mt-3 text-sm text-gray-400 leading-relaxed">
+            It ships as a single, self-contained program of about 6&nbsp;MB — small enough to
+            copy onto a laptop and start, with no heavyweight platform underneath it. That
+            program is a <strong className="text-gray-300">daemon</strong>{" "}
+            <span className="text-gray-500">(a background service that keeps running and
+            handles requests as they arrive)</span>, written in Rust for speed and safety.
+            Inside it: seven roles, a signed founding charter, an append-only witnessed ledger,
+            and an admin CLI. It also ships as a{" "}
+            <strong className="text-gray-300">Docker</strong>{" "}
+            <span className="text-gray-500">(a standard way to package software so it runs the
+            same on any machine)</span> image, so a community can stand one up in a single command.
+          </p>
+        </details>
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/10 p-4 mb-4">
           <p className="text-sm text-purple-100 leading-relaxed">
             <strong>Law is witnessed, not dictated.</strong> A society&apos;s rules —
