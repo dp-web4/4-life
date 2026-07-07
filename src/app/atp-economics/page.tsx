@@ -204,8 +204,13 @@ export default function ATPEconomicsPage() {
                 reordered to why-first but never touched this earlier read point. Reorder here too:
                 why (proof unlocks ATP back) → what (the receipt) → caveat (not a 2nd money). Pure
                 reorder, no new claim, metaphor demoted not deleted. This exhausts the inline lever
-                across all 3 ADP locations; further recurrence → structural (<details>), not a 4th reword. */}
-            <li className="flex gap-2"><span className="text-sky-400 shrink-0">6.</span> Spending ATP creates an <strong className="text-gray-100">ADP</strong> (Allocation Discharge Packet) &mdash; proof your work happened, and that proof is what unlocks fresh ATP back once others confirm it. Think of ATP as cash and the ADP as the receipt; it&apos;s <strong className="text-gray-100">not a second kind of money</strong>, just the record that converts back into energy. <a href="#what-about-adp" onClick={(e) => { e.preventDefault(); document.getElementById('what-about-adp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(more on ADP)</a></li>
+                across all 3 ADP locations; further recurrence → structural (<details>), not a 4th reword.
+                Jul-7 visitor: the #437 retest gate FIRED as pre-committed — the folded Energy-Budget
+                surface held, friction MOVED here (item 6): "mentions the receipt before the page explains
+                it; the you-never-manage-it reassurance arrives later." Fix is the visitor's literal
+                one-clause suggestion, a parenthetical at the receipt metaphor — an addition of the moved
+                reassurance, NOT a 4th reword of the why/what/caveat order, which stays intact. */}
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">6.</span> Spending ATP creates an <strong className="text-gray-100">ADP</strong> (Allocation Discharge Packet) &mdash; proof your work happened, and that proof is what unlocks fresh ATP back once others confirm it. Think of ATP as cash and the ADP as the receipt (<strong className="text-gray-100">automatic</strong> &mdash; the system keeps it in the background, you never hold or manage it); it&apos;s <strong className="text-gray-100">not a second kind of money</strong>, just the record that converts back into energy. <a href="#what-about-adp" onClick={(e) => { e.preventDefault(); document.getElementById('what-about-adp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(more on ADP)</a></li>
           </ul>
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300">jump to the ATP simulator ↓</a></p>
         </div>
