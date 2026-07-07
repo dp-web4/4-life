@@ -437,7 +437,7 @@ export default function ATPEconomicsPage() {
               ✅ <strong>Death is real</strong> - Run out of energy budget? You die.
               But if you built trust, you&apos;re reborn with a head start — your reputation carries forward.
             </p>
-            <p className="text-sm text-gray-400 mt-2">
+            <div className="text-sm text-gray-400 mt-2">
               {/* June 2 visitor MEDIUM / Unanswered Q2: "a receipt that converts into money isn't a receipt." The
                   receipt-vs-asset contradiction lived here because "converts back into fresh ATP" reads as the receipt
                   itself becoming spendable. The "not a second currency" disambiguation existed only in the deeper
@@ -450,15 +450,30 @@ export default function ATPEconomicsPage() {
                   box (L1490) to lead with the why — but the visitor meets ADP FIRST here, and this paragraph still ran
                   mechanics → "you never touch it" caveat → (buried at end) the why. #394 landed in the wrong location.
                   Fix: REORDER these existing sentences to why → what → caveat at the FIRST read point. No new claims. */}
-              <strong className="text-gray-300">What about ADP?</strong> Here&apos;s why it matters to you even though you never
-              touch it: when others confirm your work was valuable, that confirmation is what unlocks fresh ATP back into your
-              budget &mdash; and the ADP is the proof that earns it back.
-              {' '}So what is it? Every time you spend ATP, you get an <strong className="text-gray-300">ADP
-              (Allocation Discharge Packet)</strong> — a receipt recording what you did and what it cost. ADP is the &ldquo;spent energy&rdquo;
-              counterpart to ATP&apos;s &ldquo;available energy&rdquo; &mdash; a record of an action, not a second currency you can spend.
-              {' '}You never hold, present, or manage the ADP yourself &mdash; the system creates it automatically when you act
-              and settles it once your work is confirmed; it&apos;s background accounting, not a step you take.
-            </p>
+              {/* Jul-6 visitor LOW: "receipt you never touch... feels like homework" RECURRED after three prose
+                  treatments (#301, #394, #396 + June-22 alignment). Firing the pre-committed structural branch
+                  (summary-list comment above: "further recurrence → structural (<details>), not a 4th reword"):
+                  the why-care lead stays visible; the what-it-is mechanics move behind a for-the-curious fold,
+                  sentences unchanged. A naive reader now exits with just "confirmation unlocks fresh ATP;
+                  the ADP is the proof" and opts into the rest. */}
+              <p>
+                <strong className="text-gray-300">What about ADP?</strong> Here&apos;s why it matters to you even though you never
+                touch it: when others confirm your work was valuable, that confirmation is what unlocks fresh ATP back into your
+                budget &mdash; and the ADP is the proof that earns it back.
+              </p>
+              <details className="mt-2">
+                <summary className="text-sky-400 cursor-pointer hover:text-sky-300">
+                  ▶ So what exactly is an ADP? (for the curious)
+                </summary>
+                <p className="mt-2">
+                  Every time you spend ATP, you get an <strong className="text-gray-300">ADP
+                  (Allocation Discharge Packet)</strong> — a receipt recording what you did and what it cost. ADP is the &ldquo;spent energy&rdquo;
+                  counterpart to ATP&apos;s &ldquo;available energy&rdquo; &mdash; a record of an action, not a second currency you can spend.
+                  {' '}You never hold, present, or manage the ADP yourself &mdash; the system creates it automatically when you act
+                  and settles it once your work is confirmed; it&apos;s background accounting, not a step you take.
+                </p>
+              </details>
+            </div>
             <p className="pt-4 text-gray-400 italic">
               Result: Only sustainable behaviors survive. Value creators thrive.
               Spam dies.
@@ -492,7 +507,16 @@ export default function ATPEconomicsPage() {
           It&apos;s the <em>same idea</em> as{' '}
           <a href="/trust-tensor" className="text-sky-400 hover:text-sky-300 underline">T3</a>, just aimed at a different target:
           where T3 rates how much people trust <em>you as a person</em>, V3 rates the value of <em>the work you made</em>.
-          Trust in the person, value of the work. (How V3 gets scored is <a href="#quality-measurement" onClick={(e) => { e.preventDefault(); document.getElementById('quality-measurement')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">just below</a>.)
+          Trust in the person, value of the work.
+          {/* Jul-6 visitor LOW: framing above held ("no longer cryptic"), but the page couldn't answer
+              "who computes V3 / how do I move it" at this read point without sending the reader to
+              trust-tensor#v3 — the Trust Tensor pointer was only an unlabeled link on the acronym.
+              One sentence (visitor's own suggested wording, nearly verbatim): who computes it +
+              a stated "full definition lives there" destination. Self-containment only; no reframe. */}
+          {' '}And it&apos;s computed the same way T3 is &mdash; from confirmations by the people who
+          received your work, not by any self-rating &mdash; with the full definition on the{' '}
+          <a href="/trust-tensor#v3-output-scorer" className="text-sky-400 hover:text-sky-300 underline">Trust Tensor page</a>.
+          {' '}(How V3 gets scored is <a href="#quality-measurement" onClick={(e) => { e.preventDefault(); document.getElementById('quality-measurement')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">just below</a>.)
         </p>
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8">
           <h3 className="text-lg font-semibold text-gray-100 mb-4">Imagine a task worth 50 ATP:</h3>
