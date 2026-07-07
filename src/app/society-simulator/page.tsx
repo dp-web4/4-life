@@ -3337,7 +3337,7 @@ export default function SocietySimulatorPage() {
             <div className="bg-sky-900/15 border border-sky-800/40 rounded-lg p-3">
               <div className="text-xs font-bold text-sky-300 mb-1.5">⚙ Where the real protocol math runs</div>
               <p className="text-gray-300 text-xs">
-                The <a href="/trust-tensor#witness-network" className="text-sky-300 hover:underline font-medium">Live Trust Engine &rarr; Witness Network scenario</a> executes the actual <code className="text-sky-200 bg-sky-950/40 px-1 rounded text-[11px]">web4-trust-core</code> WASM build &mdash; real witnessing calls, real T3 updates. That scenario is where to see witness math in motion.
+                The <a href="/trust-tensor#witness-network" className="text-sky-300 hover:underline font-medium">Live Trust Engine &rarr; Witness Network scenario</a> is a demo on the Trust Tensor page that runs the real trust math in your browser. It executes the actual <code className="text-sky-200 bg-sky-950/40 px-1 rounded text-[11px]">web4-trust-core</code> WASM build &mdash; real witnessing calls, real T3 updates. That scenario is where to see witness math in motion.
               </p>
             </div>
             <div className="bg-gray-800/40 border border-gray-700/60 rounded-lg p-3">
@@ -3512,7 +3512,7 @@ export default function SocietySimulatorPage() {
               <span className="font-bold text-emerald-300">Coalition</span> — <span className="text-gray-400">not a strategy but a result: a cluster of agents that have built mutual trust and reliably cooperate. &ldquo;Coalition formed&rdquo; in the feed marks one emerging.</span>
             </div>
             <div>
-              <span className="font-bold text-amber-300">Death &amp; rebirth</span> — <span className="text-gray-400">an agent whose energy hits zero dies; a successor with the same strategy joins, carrying a reputation head start (karma) proportional to how well the dead agent was regarded. Mutual cooperation recharges <em>both</em> partners&rsquo; energy &mdash; cooperating is how the society refuels.</span>
+              <span className="font-bold text-amber-300">Death &amp; rebirth</span> — <span className="text-gray-400">an agent whose energy hits zero dies; a successor with the same strategy joins, carrying a reputation head start (karma) proportional to how well the dead agent was regarded. That head start is the same karma mechanic from <a href="/first-contact" className="text-amber-200 hover:underline">First Contact&rsquo;s final act</a>: consequences outlive the agent, so how a life was lived shapes how the next one begins. Mutual cooperation recharges <em>both</em> partners&rsquo; energy &mdash; cooperating is how the society refuels.</span>
             </div>
           </div>
         </details>
