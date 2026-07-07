@@ -226,7 +226,8 @@ export default function FirstContactPage() {
               deployed and nothing to sign up for. <strong className="text-gray-400">hestia</strong>{" "}
               and <strong className="text-gray-400">the hub</strong> (the green banner) are the{" "}
               <em>separate, real</em> system that simulation models — public AGPL code you could run
-              yourself, not something executing inside this walkthrough.
+              yourself (though there&apos;s no live network of real users to join yet), not something
+              executing inside this walkthrough.
             </p>
 
             {/* Two-number anchor moved ABOVE the concept grid — May 15 visitor LOW:

@@ -158,6 +158,7 @@ export default function TLDRPage() {
             The trust layer (<Link href="/hestia" className="text-emerald-400 hover:underline">hestia</Link>) runs
             today on your own hardware, and a Web4 society (<Link href="/hub" className="text-purple-300 hover:underline">the hub</Link>)
             is runnable reference code &mdash; both open source.{" "}
+            <span className="text-gray-400">You can run this software on your own machine to test the mechanics &mdash; there&apos;s no live network of real users to join yet.</span>{" "}
             <Link href="/running-now" className="text-emerald-400 hover:underline">See what&apos;s live &rarr;</Link>
             {" "}One distinction worth keeping straight: <strong className="text-gray-100">Web4 is the protocol &mdash; the rules and math; 4-Life (this site) is the lab where you explore those rules</strong> through simulations, walkthroughs, and explainers.
             So 4-Life lets you watch the mechanics in action — see societies form, trust networks

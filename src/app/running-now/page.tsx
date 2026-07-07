@@ -39,7 +39,10 @@ export default function RunningNowPage() {
           sealed channels <span className="text-gray-400">(end-to-end encrypted peer links)</span>, and a
           working Web4 society are{" "}
           <strong>deployed today</strong> — in public, open-source code you can run
-          yourself. No account, no cloud, no permission.
+          yourself. No account, no cloud, no permission.{" "}
+          <span className="text-gray-400">That means you can run this software on your own
+          machine to see the mechanics work — there&apos;s no live network of real users to
+          join yet.</span>
         </p>
         <p className="text-lg text-gray-400 leading-relaxed">
           To keep things honest, every concept on the site can carry a maturity badge:
