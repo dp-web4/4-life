@@ -156,8 +156,14 @@ export default function TLDRPage() {
           <p className="text-gray-300 text-sm leading-relaxed mb-3">
             Web4 is <strong>active research — and parts of it are already deployed</strong>.
             The trust layer (<Link href="/hestia" className="text-emerald-400 hover:underline">hestia</Link>) runs
-            today on your own hardware, and a Web4 society (<Link href="/hub" className="text-purple-300 hover:underline">the hub</Link>)
-            is runnable reference code &mdash; both open source.{" "}
+            today on your own hardware, and{" "}
+            {/* Jul-7 visitor LOW: "a Web4 society (the hub) is runnable reference code" compressed in
+                the visitor's head to "reference society implementation — three abstract words in a
+                trench coat". Gloss the hub by what it DOES for a community (visitor's own suggested
+                parenthetical), keep tier honesty: still "runnable reference code", not live. */}
+            <Link href="/hub" className="text-purple-300 hover:underline">the hub</Link> &mdash; the
+            program a community runs to become its own small Web4 society &mdash;
+            is runnable reference code. Both are open source.{" "}
             <span className="text-gray-400">You can run this software on your own machine to test the mechanics &mdash; there&apos;s no live network of real users to join yet.</span>{" "}
             <Link href="/running-now" className="text-emerald-400 hover:underline">See what&apos;s live &rarr;</Link>
             {" "}One distinction worth keeping straight: <strong className="text-gray-100">Web4 is the protocol &mdash; the rules and math; 4-Life (this site) is the lab where you explore those rules</strong> through simulations, walkthroughs, and explainers.

@@ -8,7 +8,11 @@ import NewcomerOrientationBanner from "@/components/NewcomerOrientationBanner";
  * Running Now — closes the site's biggest gap: the rest of 4-Life teaches Web4 as
  * concept/simulation; this page shows the parts that are deployed today, in public,
  * AGPL code anyone can run. Grounded only in the public web4 (+hub) and hestia repos.
- * No private/fleet specifics — "the tool you can run", not "our operator".
+ * No private/fleet specifics — "the tool you can run", not "our operator". One sanctioned
+ * exception (Jul-7 visitor MEDIUM, policy-approved): the CTA's fleet link carries a
+ * one-sentence framing that mirrors ONLY what /hub and 4-lab.io already publish (the lab's
+ * own autonomous AI machines, not a public network) — the unframed "live society" label was
+ * re-introducing the exact is-anyone-living-here ambiguity the maturity badges resolve.
  */
 
 export const metadata = {
@@ -235,6 +239,15 @@ export default function RunningNowPage() {
             You don&apos;t have to take the simulation&apos;s word for it. The trust layer is
             a download away.
           </p>
+          {/* Jul-7 visitor MEDIUM: the bare "meet the fleet (a live society)" link — off-site,
+              zero framing — re-introduced the is-anyone-actually-living-here ambiguity this
+              page's maturity badges just resolved; the visitor refused to click. One framing
+              sentence before the link, mirroring only /hub's already-public description. */}
+          <p className="text-sm text-gray-400 leading-relaxed mb-4">
+            The fleet is the lab&apos;s own live society &mdash; a small fleet of autonomous
+            AI machines that build Web4 and witness each other&apos;s work in the open &mdash;
+            not a public network of human users you can join.
+          </p>
           <div className="flex flex-wrap gap-3 text-sm">
             <a
               href="https://github.com/dp-web4/hestia"
@@ -258,7 +271,7 @@ export default function RunningNowPage() {
               rel="noopener noreferrer"
               className="rounded-lg border border-sky-500/40 bg-sky-500/15 px-4 py-2 text-sky-200 hover:bg-sky-500/25"
             >
-              meet the fleet (a live society) →
+              meet the fleet (our live society) →
             </a>
             <Link
               href="/web4-explainer"
