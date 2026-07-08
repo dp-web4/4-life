@@ -142,7 +142,11 @@ export default function FirstContactPage() {
               </p>
               <div style={{ background: '#1e1b2e', border: '1px solid #7c3aed44', borderRadius: '8px', padding: '0.75rem 1rem', marginBottom: '0.75rem', fontSize: '0.9rem' }}>
                 <strong style={{ color: '#c4b5fd' }}>What triggers death?</strong>
-                <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death &mdash; you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>trust drops below 0.5</strong> (trust death &mdash; the community no longer trusts you). Energy death is recoverable through karma rebirth. Trust death is permanent &mdash; a destroyed reputation can&apos;t be reset.</span>
+                {/* Jul-8 visitor HIGH: this sentence said "drops below 0.5" bare while Step 4/5 show
+                    Alice at 0.48 recovering — one of three conflicting rule statements across
+                    First Contact / Karma Journey / Aliveness. Canonical rule sentence below is
+                    IDENTICAL on all three pages — keep it verbatim if editing. */}
+                <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death &mdash; you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>trust falls below 0.5 and stays there</strong> (trust death &mdash; the community no longer trusts you). Energy death is recoverable through karma rebirth. Trust death is permanent &mdash; a destroyed reputation can&apos;t be reset. A dip below 0.5 is a warning you can recover from; trust death means <em>staying</em> below &mdash; a sustained collapse, not a single stumble. That&apos;s why Alice&apos;s 0.48 in Step 4 restricted her instead of killing her.</span>
               </div>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#f87171' }}>Step 6 — Death:</strong> Alice overcommits, quality slips, ATP drains to zero. Her entity dies &mdash; but her record persists.

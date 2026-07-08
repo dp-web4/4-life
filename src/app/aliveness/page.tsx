@@ -385,6 +385,9 @@ function SurvivalGame() {
               ) : (
                 <p className="text-red-400 text-sm">Permanent death: trust {gameState.trust.toFixed(2)} ≤ 0.5. Society rejects rebirth. Game over — for real.</p>
               )}
+              {!rebirthEligible && (
+                <p className="text-gray-500 text-xs mt-2">(This compact game treats one crossing as final — five turns can&apos;t distinguish a dip from a sustained collapse. The full rule: a dip below 0.5 is a warning; it&apos;s <em>staying</em> below that&apos;s permanent. See the death table further down.)</p>
+              )}
             </div>
           )}
         </div>
@@ -968,7 +971,7 @@ export default function AlivenessExplainer() {
           </div>
           <div className="detail-box">
             <h4>3. Trust Collapse</h4>
-            <p>T3 drops below rebirth threshold</p>
+            <p>T3 drops below the rebirth threshold (0.5) and stays there</p>
             <ul>
               <li>Lost agency</li>
               <li>Community distrust</li>
@@ -981,9 +984,12 @@ export default function AlivenessExplainer() {
           <h4 style={{ color: "#38bdf8" }}>Wait — three conditions, but only two deaths below?</h4>
           <p>
             Two different questions. The <strong>three conditions above are what can <em>end</em> a
-            life</strong> — ATP hits 0, trust falls below 0.5, <em>or</em> your Coherence Index falls
-            below 0.5. Any one is fatal, so yes: a <strong>coherence death is real</strong> (the demo
-            above ends your run the moment CI drops past 0.5). The <strong>two deaths below are the
+            life</strong> — ATP hits 0, trust falls below 0.5 <em>and stays there</em>, <em>or</em> your
+            Coherence Index falls below 0.5. Any one is fatal, so yes: a <strong>coherence death is
+            real</strong>. (The demo above simplifies: it ends your run the moment trust <em>or</em> CI
+            crosses 0.5 — a five-turn game is too short to tell a dip from a sustained slide, so it
+            treats the first crossing as final. The full rule for trust is the sustained collapse, not
+            the first crossing.) The <strong>two deaths below are the
             two possible <em>outcomes</em></strong> — recoverable rebirth vs. permanent — and which
             one you get turns on whether your <em>trust</em> survived.
           </p>
@@ -1008,7 +1014,7 @@ export default function AlivenessExplainer() {
           <p style={{ fontSize: "0.85rem", opacity: 0.7, marginTop: "0.5rem" }}>
             Running out of energy (ATP) is the common case, and it&apos;s <strong>recoverable</strong> &mdash;
             like <strong>going bankrupt</strong>: karma-based rebirth lets you earn your way back.
-            Losing trust (T3 below 0.5) is the severe case, and it&apos;s <strong>permanent</strong> &mdash;
+            Losing trust (T3 falling below 0.5 and staying there) is the severe case, and it&apos;s <strong>permanent</strong> &mdash;
             like <strong>losing a professional license</strong>: society has rejected you, and there is no
             rebirth for that identity. It&apos;s one event (&ldquo;you died&rdquo;) with two outcomes,
             shown side by side below.
@@ -1046,7 +1052,10 @@ export default function AlivenessExplainer() {
             </div>
             <div style={{ flex: "1 1 240px", borderRadius: "0.5rem", padding: "1rem", background: "rgba(248, 113, 113, 0.08)", border: "1px solid rgba(248, 113, 113, 0.25)", textAlign: "center" }}>
               <div style={{ fontWeight: 700, color: "#f87171", marginBottom: "0.25rem" }}>🤝 Trust Death</div>
-              <div style={{ fontSize: "0.85rem", opacity: 0.85 }}>T3 falls below 0.5</div>
+              {/* Jul-8 visitor HIGH: the table cell said "falls below 0.5" bald while this page's own
+                  prose (L813) says the permanent verdict = sustained collapse — the qualifier must live
+                  IN the table, not three sections away. */}
+              <div style={{ fontSize: "0.85rem", opacity: 0.85 }}>T3 falls below 0.5 and stays there</div>
               <div style={{ color: "#f87171", margin: "0.4rem 0" }}>↓</div>
               <div style={{ fontSize: "0.85rem", opacity: 0.85 }}>Society rejects rebirth</div>
               <div style={{ color: "#f87171", margin: "0.4rem 0" }}>↓</div>
@@ -1054,8 +1063,11 @@ export default function AlivenessExplainer() {
               <div style={{ fontSize: "0.78rem", opacity: 0.65, marginTop: "0.3rem" }}>like losing a professional license</div>
             </div>
           </div>
+          {/* Canonical rule sentence — IDENTICAL on First Contact / Karma Journey / Aliveness (Jul-8
+              visitor HIGH: three pages stated three different rules). Keep it verbatim if editing. */}
           <p style={{ fontSize: "0.8rem", opacity: 0.6, marginTop: "0.75rem", marginBottom: 0, textAlign: "center" }}>
             Same event (&ldquo;you die&rdquo;), two very different outcomes &mdash; which one depends only on whether your trust held.
+            A dip below 0.5 is a warning you can recover from; trust death means <em>staying</em> below &mdash; a sustained collapse, not a single stumble.
           </p>
         </div>
 
@@ -1089,7 +1101,7 @@ export default function AlivenessExplainer() {
           <p style={{ fontSize: "0.85rem", opacity: 0.7, marginTop: "0.5rem" }}>
             Energy death (ATP exhaustion) is recoverable: the same LCT is reborn with karma carried
             forward, and the operator&apos;s next action with that agent starts from the rebuilt
-            baseline. Trust death (T3 &lt; 0.5) is permanent for that LCT — the operator can spawn
+            baseline. Trust death (sustained T3 &lt; 0.5) is permanent for that LCT — the operator can spawn
             a new agent under a new LCT, but it starts from zero with no inherited reputation. The
             cost isn&apos;t the model; it&apos;s the lost reputation an operator built over many
             interactions.
@@ -1575,7 +1587,7 @@ export default function AlivenessExplainer() {
 
           <p style={{ marginTop: "1.5rem" }}>
             <strong>Key insight:</strong> Good behavior compounds. Each life starts stronger than the last.
-            Bad behavior leads to permanent death (T3 &lt; 0.5 = no rebirth).
+            Bad behavior leads to permanent death (sustained T3 &lt; 0.5 = no rebirth).
           </p>
         </div>
         <p className="learn-more">
@@ -1613,12 +1625,15 @@ export default function AlivenessExplainer() {
         </div>
 
         <h3>Coherence Index (CI) Thresholds</h3>
+        {/* Jul-8 visitor MEDIUM: the old bands ("0.7-0.9 → 1.5-2x") disagreed with the 1/CI² formula
+            printed right below (0.9 → ~1.2x, 0.7 → ~2x) and with /coherence-index's own numbers.
+            Bands below are computed FROM the formula — recompute if the formula ever changes. */}
         <div className="detail-box">
           <ul>
-            <li><strong>Full access:</strong> CI ≥ 0.9 (no penalties)</li>
-            <li><strong>Moderate trust:</strong> CI 0.7-0.9 (1.5-2x ATP costs)</li>
-            <li><strong>Limited trust:</strong> CI 0.5-0.7 (2-5x ATP costs, more witnesses)</li>
-            <li><strong>Severe restriction:</strong> CI &lt; 0.5 (up to 10x ATP costs, +8 witnesses)</li>
+            <li><strong>Full access:</strong> CI ≥ 0.9 (the sims treat this as fully coherent and apply no surcharge; the raw formula would give up to ~1.2x)</li>
+            <li><strong>Moderate trust:</strong> CI 0.7&ndash;0.9 (~1.2&ndash;2x ATP costs)</li>
+            <li><strong>Limited trust:</strong> CI 0.5&ndash;0.7 (~2&ndash;4x ATP costs, more witnesses)</li>
+            <li><strong>Severe restriction:</strong> CI &lt; 0.5 (4x and up &mdash; the formula caps at 10x, the survival demo above at 4x &mdash; plus up to +8 witnesses)</li>
           </ul>
         </div>
 
@@ -1713,7 +1728,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             <tr>
               <td><strong>Death consequence</strong></td>
               <td>None (trivial to circumvent)</td>
-              <td>Permanent if trust &lt; 0.5 (society rejects)</td>
+              <td>Permanent if trust stays below 0.5 (society rejects)</td>
             </tr>
           </tbody>
         </table>
