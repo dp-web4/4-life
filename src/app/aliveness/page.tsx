@@ -1882,15 +1882,15 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             <div className="mt-2 text-sm text-gray-400 space-y-2">
               <p>
                 <strong className="text-gray-300">Early warning saves 10x.</strong> Research on synthon decay precursors
-                (74 validated checks) shows that intervention costs grow exponentially with decay stage.
+                (a battery of automated structural checks) shows that intervention costs grow exponentially with decay stage.
                 Seven precursor types signal trouble before it arrives: trust entropy rising, ATP
                 starvation, witness exodus, coherence oscillation, member attrition, policy
                 fragmentation, and boundary permeability. Catching a problem at WARNING costs roughly
                 10% of what it costs at CRITICAL.
               </p>
               <p style={{fontSize: '0.85rem', color: '#9ca3af'}}>
-                Synthon detection (72 checks) and precursor monitoring (74 checks) both validated in
-                simulation. The key insight: groups don&apos;t need to be designed. They emerge naturally
+                Synthon detection and precursor monitoring are both validated in
+                simulation by a battery of automated structural checks. The key insight: groups don&apos;t need to be designed. They emerge naturally
                 from individual trust relationships — and they can be detected, monitored, and protected
                 without central coordination.
               </p>
