@@ -529,8 +529,8 @@ export default function KarmaJourneyPage() {
           </span>
           <span style={{ display: 'block', marginTop: '0.4rem' }}>
             <strong style={{ color: '#fca5a5' }}>Trust collapse</strong> &mdash; your raw <strong>trust</strong>{' '}
-            itself fell below 0.5. This is the one door that doesn&rsquo;t reopen: society rejects rebirth, and
-            no karma tier earns it back.
+            itself fell below 0.5 and stayed there. This is the one door that doesn&rsquo;t reopen: society rejects
+            rebirth, and no karma tier earns it back.
           </span>
           <span style={{ display: 'block', marginTop: '0.4rem' }}>
             Both crossings involve 0.5, so the number alone can&rsquo;t tell them apart &mdash; <em>which metric
@@ -688,7 +688,11 @@ export default function KarmaJourneyPage() {
         }}>
           <div style={{ fontSize: '0.75rem', color: '#93c5fd', fontWeight: 600, marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Raw trust</div>
           <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '0.4rem', fontFamily: 'var(--font-mono)' }}>(Talent + Training + Temperament) / 3</div>
-          <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>Decides <strong style={{ color: 'var(--color-text-secondary)' }}>survival</strong>. Drop below 0.5 and this life ends.</div>
+          {/* Jul-8 visitor HIGH: "Drop below 0.5 and this life ends" contradicted First Contact
+              (Alice dips to 0.48, gets restricted, recovers) AND this page's own engine (no raw-0.5
+              kill exists; Constrained rebirths start at raw 0.40). Canonical rule sentence below is
+              IDENTICAL on First Contact / Karma Journey / Aliveness — keep it verbatim if editing. */}
+          <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>Decides <strong style={{ color: 'var(--color-text-secondary)' }}>survival</strong>. A dip below 0.5 is a warning you can recover from; trust death means <em>staying</em> below &mdash; a sustained collapse, not a single stumble.</div>
         </div>
         <div style={{
           padding: '0.75rem 1rem', borderRadius: '0.5rem',
@@ -704,7 +708,7 @@ export default function KarmaJourneyPage() {
             <Link href="/aliveness#death-meaning" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.25)' }}>
               license suspension and reinstatement
             </Link>
-            , not deletion &mdash; a <strong>trust collapse</strong> below 0.5 is the permanent exception.
+            , not deletion &mdash; a <strong>sustained trust collapse</strong> below 0.5 is the permanent exception.
           </div>
         </div>
       </div>
@@ -783,10 +787,15 @@ export default function KarmaJourneyPage() {
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-4">
             {[
               { label: 'Life', value: `#${currentLife.lifeNumber}`, color: '#93c5fd' },
-              { label: 'Trust (Raw)', value: baseComp.toFixed(3), color: baseComp > 0.7 ? '#6ee7b7' : baseComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `≥ 0.5 to survive this life` },
+              // Jul-8 visitor HIGH: hint said "≥ 0.5 to survive this life" (instant rule) — both trust
+              // hints now use the same compressed form of the canonical sustained rule. Jul-8 MEDIUM:
+              // Consistency was the only stat card with NO hint, so "low consistency tax" (1.4x) hit
+              // players unexplained — the why lives in the intro prose + /coherence-index#why-ci-starts-low;
+              // this is the one-sentence-at-the-stats-panel fix the visitor asked for.
+              { label: 'Trust (Raw)', value: baseComp.toFixed(3), color: baseComp > 0.7 ? '#6ee7b7' : baseComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `keep above 0.5 — a dip below is a warning, staying below is permanent` },
               { label: 'Trust (Eff.)', value: effComp.toFixed(3), color: effComp > 0.7 ? '#6ee7b7' : effComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `raw × CI² — karma tier, not the 0.5 survival line` },
               { label: 'Energy', value: `${currentLife.atp}`, color: currentLife.atp > 50 ? '#6ee7b7' : currentLife.atp > 20 ? '#fde68a' : '#fca5a5' },
-              { label: 'Consistency', value: currentLife.ci.toFixed(2), color: currentLife.ci > 0.8 ? '#6ee7b7' : currentLife.ci > 0.5 ? '#fde68a' : '#fca5a5' },
+              { label: 'Consistency', value: currentLife.ci.toFixed(2), color: currentLife.ci > 0.8 ? '#6ee7b7' : currentLife.ci > 0.5 ? '#fde68a' : '#fca5a5', hint: `starts at 0.85 — no track record yet, so actions cost ~1.4x until this climbs past 0.9` },
             ].map(stat => (
               <div key={stat.label} style={{
                 padding: '0.5rem', borderRadius: '0.5rem',
@@ -805,7 +814,7 @@ export default function KarmaJourneyPage() {
               background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)',
             }}>
               <div style={{ marginBottom: '0.375rem' }}>
-                <strong>Raw trust: {baseComp.toFixed(3)}</strong> — determines survival (≥ 0.5 to stay alive)
+                <strong>Raw trust: {baseComp.toFixed(3)}</strong> — determines survival (a dip below 0.5 is a warning, staying below is permanent)
               </div>
               {/* May 4 visitor MEDIUM: pulled the math out of muted-prose into a visible equation strip
                   so scan-pattern readers see how 0.5 × 0.85² becomes 0.36 without parsing inline gray text. */}
