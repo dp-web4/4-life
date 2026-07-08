@@ -4053,6 +4053,10 @@ export default function SocietySimulatorPage() {
             Your reputation travels with you across communities (that&apos;s what makes trust portable),
             but each community weighs your Trust Tensor differently based on what they need.
           </p>
+          <p className="text-sm text-gray-500 mb-3 italic">
+            &ldquo;Collective emergence&rdquo; below just means capabilities no single community reaches
+            on its own &mdash; things that only show up once separate groups are linked together.
+          </p>
           <p className="text-sm text-gray-400 mb-3">
             <strong className="text-amber-300">Research finding:</strong> In multi-agent simulations
             (1,070 runs), communities that only talk to themselves hit a ceiling &mdash; like teams

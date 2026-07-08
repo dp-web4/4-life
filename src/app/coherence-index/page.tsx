@@ -1038,7 +1038,7 @@ export default function CoherenceIndexPage() {
         {/* Why Geometric Mean Section */}
         <section className="max-w-4xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-6 text-gray-100">
-            Why One Low Dimension Tanks Everything
+            Why One Low Dimension Drags the Whole Score Down
           </h2>
 
           <div className="bg-gradient-to-br from-red-950/30 to-red-900/20 border border-red-800/30 rounded-lg p-6 mb-6">
@@ -1122,6 +1122,14 @@ export default function CoherenceIndexPage() {
                 drops it all the way to <strong className="text-gray-200">0.52</strong>. That&apos;s
                 the curve: 0.9 (perfect) → 0.78 (one moderate gap) → 0.52 (one extreme gap).
                 No averaging hides the worst dimension.
+              </p>
+              <p className="text-gray-400 text-sm mt-3">
+                Note that even the extreme case lands at <strong className="text-gray-200">0.52</strong> —
+                still just above the <strong className="text-gray-200">0.5</strong> alive/dead line. One
+                catastrophically weak dimension doesn&apos;t kill you outright; it leaves you
+                <em> alive but expensive</em> — higher action costs and heavier witnessing until you
+                repair it. What one bad dimension &ldquo;tanks&rdquo; is your standing and your energy
+                budget, not necessarily your life.
               </p>
             </div>
           </details>

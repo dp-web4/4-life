@@ -82,7 +82,7 @@ export default function TLDRPage() {
                 of it as a digital ID card that lives in your device&apos;s security chip — not a
                 password you type or a key file you store, but a presence your hardware proves.
                 Your phone, laptop, and tablet each carry such chips, and each one vouches for the
-                others, so no single device can speak for you alone — together they form a witness{' '}
+                others, so no single device can speak for you alone — together they form a{' '}
                 <em>constellation</em>. The identity record that constellation anchors is called a
                 Linked Context Token (LCT). More devices strengthen the constellation. Creating a fake identity
                 means buying new hardware — expensive and slow.
