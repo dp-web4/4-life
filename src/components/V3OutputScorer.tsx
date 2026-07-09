@@ -7,7 +7,7 @@
  * page at /value-tensor. The 07-09 visitor filed V3 as "a first-class concept living as a
  * subsection of another concept"; the fix was a dedicated page, not a fourth reword.
  *
- * The scores, weights (0.30/0.35/0.35) and the 0.75-vs-0.33 pair are load-bearing: the
+ * The scores, weights (0.30/0.35/0.35) and the 0.75-vs-0.32 pair are load-bearing: the
  * niche-research-beats-clickbait number is quoted in the V3 teaser on /trust-tensor. Keep
  * the two surfaces consistent — mismatched constants across pages are exactly the defect
  * class PRs #442/#443 were opened to fix.
@@ -42,7 +42,7 @@ const V3_OUTPUTS = [
     valuation: 0.35,
     veracity: 0.95,
     validity: 0.90,
-    insight: 'Low immediate popularity but exceptional truth and rigor. Web4 rewards this: V3 score (0.75) beats clickbait (0.33) because Veracity+Validity outweigh Valuation.',
+    insight: 'Low immediate popularity but exceptional truth and rigor. Web4 rewards this: V3 score (0.75) beats clickbait (0.32) because Veracity+Validity outweigh Valuation.',
   },
   {
     id: 'copied-answer',
@@ -166,7 +166,7 @@ export default function V3OutputScorer() {
         <div className="mt-6 p-4 bg-purple-900/20 border border-purple-700/30 rounded-lg">
           <p className="text-purple-300 text-sm font-semibold mb-2">The Pattern</p>
           <p className="text-gray-300 text-sm">
-            Notice how <strong>niche research</strong> (V3: 0.75) outscores <strong>viral clickbait</strong> (V3: 0.33)
+            Notice how <strong>niche research</strong> (V3: 0.75) outscores <strong>viral clickbait</strong> (V3: 0.32)
             despite getting a fraction of the attention. That&apos;s V3&apos;s design: truth and rigor
             are weighted 70% while popularity is only 30%. In Web4, quality wins over engagement farming.
           </p>

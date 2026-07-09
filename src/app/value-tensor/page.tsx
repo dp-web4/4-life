@@ -12,7 +12,7 @@
  * "V3 mid-page overload"). The two frictions could not both be fixed on one page. /trust-tensor
  * keeps the always-visible V3 teaser (eight browses of iteration) and links here.
  *
- * Numbers are load-bearing and shared with that teaser (V3 = 0.75 niche research vs 0.33
+ * Numbers are load-bearing and shared with that teaser (V3 = 0.75 niche research vs 0.32
  * clickbait) and with /atp-economics. Do not change one surface alone.
  */
 
