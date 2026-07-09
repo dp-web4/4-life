@@ -563,7 +563,7 @@ export default function KarmaJourneyPage() {
 
       <p style={{ color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '700px', lineHeight: 1.6, fontSize: '0.85rem' }}>
         <strong style={{ color: 'var(--color-text-secondary)' }}>What the numbers mean:</strong>{' '}
-        <strong><Link href="/trust-tensor" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>Trust</Link></strong> = your reputation (Talent + Training + Temperament, averaged).{' '}
+        <strong><Link href="/trust-tensor" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>Trust</Link></strong> = your reputation (Talent, Training and Temperament combined, with Temperament counting for the most).{' '}
         {/* June 12 visitor MEDIUM (browse A): where the starting 100 ATP comes from never made it
             over from /atp-economics (society-pool starter grant). One clause at the read point. */}
         <strong><Link href="/atp-economics" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>ATP</Link></strong> = your energy budget — your first 100 is a starter grant from the society&apos;s pool when you join; every action costs ATP, run out and you die.{' '}
@@ -687,7 +687,10 @@ export default function KarmaJourneyPage() {
           background: 'rgba(147, 197, 253, 0.06)', border: '1px solid rgba(147, 197, 253, 0.2)',
         }}>
           <div style={{ fontSize: '0.75rem', color: '#93c5fd', fontWeight: 600, marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Raw trust</div>
-          <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '0.4rem', fontFamily: 'var(--font-mono)' }}>(Talent + Training + Temperament) / 3</div>
+          {/* This formula must stay in sync with compositeScore() above — the stat panel below renders
+              talent/training/temperament individually, so a reader who recomputes will catch any drift. */}
+          <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '0.4rem', fontFamily: 'var(--font-mono)' }}>0.3 &times; Talent + 0.3 &times; Training + 0.4 &times; Temperament</div>
+          <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.5, marginBottom: '0.4rem' }}>Temperament counts for the most because talent and training can be tested directly, but behaving consistently under pressure is the hardest thing to fake.</div>
           {/* Jul-8 visitor HIGH: "Drop below 0.5 and this life ends" contradicted First Contact
               (Alice dips to 0.48, gets restricted, recovers) AND this page's own engine (no raw-0.5
               kill exists; Constrained rebirths start at raw 0.40). Canonical rule sentence below is
