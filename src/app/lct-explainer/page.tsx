@@ -246,7 +246,7 @@ export default function LCTExplainerPage() {
               consistent with the inline bridge clause (~494) to avoid a third phrasing of the same ruler. */}
           <p className="text-xs text-purple-200/80 mt-3 pt-3 border-t border-purple-800/30">
             <span className="font-semibold text-purple-300">How to read the numbers below:</span> every trust score on this page
-            runs on a <strong>0&ndash;1</strong> scale, where <strong>0.5</strong> is the alive/dead line, <strong>0.75</strong> is solid,
+            runs on a <strong>0&ndash;1</strong> scale, where <strong>0.5</strong> is the survival line (<em>staying</em> below it is fatal; sitting exactly on it is not), <strong>0.75</strong> is solid,
             and <strong>0.90</strong> is the hardware-bound ceiling. Every decimal you meet from here on sits on that scale.
           </p>
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300">jump to the interactive security audit ↓</a></p>
@@ -525,7 +525,7 @@ export default function LCTExplainerPage() {
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500 font-bold shrink-0">4.</span>
-                  <span>More device witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90% &mdash; i.e. 0.50, 0.75, 0.90 on the 0&ndash;1 trust scale these numbers all use, where 0.5 is the alive/dead line) — but with <em>diminishing returns</em>. Three hardware-bound device witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds)</span>
+                  <span>More device witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90% &mdash; i.e. 0.50, 0.75, 0.90 on the 0&ndash;1 trust scale these numbers all use, where 0.5 is the survival line &mdash; <em>staying</em> below it is fatal, sitting exactly on it is not) — but with <em>diminishing returns</em>. Three hardware-bound device witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds)</span>
                 </div>
               </div>
             </div>
@@ -1053,6 +1053,21 @@ export default function LCTExplainerPage() {
             With software-only hardware, 0.5 is both where you start and the highest you can reach.
             Stronger hardware lets you build higher &mdash; but you still have to earn it through behavior.
             One honest tradeoff: the software-only ceiling means people without newer hardware are capped lower &mdash; we treat that as a feature, not a bug, because it lets everyone participate while signaling what their identity is anchored to (see below for what the ceiling actually limits).
+          </p>
+
+          {/* Jul-9 visitor HIGH (top friction point): "software-only caps at 0.50" and "0.5 is the
+              alive/dead line" sat a few lines apart, and the visitor concluded a software-only identity
+              can never be alive. Both numbers are right; the phrasing implied at-the-line = dead.
+              The death rule is strictly-below AND sustained (aliveness/page.tsx), so exactly 0.50 is
+              alive. Stating that entailment is a documentation fix, NOT a design decision — do not
+              upgrade this into a claim about whether software identities *should* be full agents. */}
+          <p className="text-gray-400 text-xs mt-3 bg-gray-900/40 border border-gray-700/60 rounded-lg p-3">
+            <strong className="text-gray-300">&ldquo;Software-only caps at 0.50 &mdash; and 0.5 is the survival line. Am I dead on arrival?&rdquo;</strong>{" "}
+            No. The death rule is <em>below</em> 0.5 <em>and staying there</em>. Sitting exactly <em>on</em> 0.50 is alive
+            and unrestricted. What a software-only identity lacks is <em>margin</em>: a dip below the line restricts
+            your features until you climb back, and you can only ever climb back <em>to</em> 0.50, never above it.
+            You keep full access and can always recover &mdash; you just never build a buffer, and your reputation
+            can never carry more weight than the line itself. That is what the ceiling costs you.
           </p>
 
           {/* May 4 visitor LOW: "those numbers feel declared, not derived. Why is software only 0.50? Why isn't TPM 1.00?"
