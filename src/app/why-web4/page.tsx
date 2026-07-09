@@ -378,7 +378,7 @@ export default function WhyWeb4Page() {
                 others trust <em>you</em>; V3 rates how good <em>each specific thing you make</em> is.
                 Trust in the person, value of the work.
               </p>
-              <Link href="/trust-tensor#v3-output-scorer" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
+              <Link href="/value-tensor" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about trust &amp; value →
               </Link>
             </div>
@@ -793,7 +793,7 @@ export default function WhyWeb4Page() {
                 <li><strong>Context boundaries (MRH):</strong> The liar&apos;s accusation only propagates within
                   their local trust network, not the entire system. People outside their network never see it.</li>
                 <li><strong>Behavioral evidence outweighs claims:</strong> If you consistently produce quality work,
-                  your V3 (the Value Tensor: Valuation, Veracity, Validity) scores from <em>recipients</em> &mdash; the quality ratings given to work you actually delivered (<Link href="/trust-tensor#v3-output-scorer" className="text-sky-400 hover:underline">how V3 scoring works</Link>) &mdash; build your reputation independently of the accuser&apos;s
+                  your V3 (the Value Tensor: Valuation, Veracity, Validity) scores from <em>recipients</em> &mdash; the quality ratings given to work you actually delivered (<Link href="/value-tensor#v3-output-scorer" className="text-sky-400 hover:underline">how V3 scoring works</Link>) &mdash; build your reputation independently of the accuser&apos;s
                   narrative. Actions speak louder than accusations.</li>
                 <li><strong>Accuser accountability:</strong> Making false accusations costs the accuser credibility.
                   If their negative assessments consistently disagree with everyone else&apos;s experience of you,

@@ -150,7 +150,18 @@ export const navigationTree: NavigationTree = {
       href: '/trust-tensor',
       desc: 'Multi-dimensional, role-specific trust',
       keywords: ['T3', 'dimensions', 'talent', 'training', 'temperament', 'role-specific'],
-      related: ['/coherence-index', '/aliveness', '/trust-networks']
+      related: ['/value-tensor', '/coherence-index', '/aliveness', '/trust-networks']
+    },
+    {
+      // Jul-9 visitor MEDIUM: "V3 does real work (rates output, feeds the trust update, drives
+      // ATP recharge) but has no page of its own — only a subsection on the T3 page." Three
+      // in-place treatments (#427/#433/#437) were spent before this; the residual was structural.
+      title: 'Value Tensor',
+      href: '/value-tensor',
+      desc: 'Scoring the work, not the worker',
+      keywords: ['V3', 'valuation', 'veracity', 'validity', 'quality', 'output'],
+      prerequisites: ['/trust-tensor'],
+      related: ['/trust-tensor', '/atp-economics', '/coherence-index', '/aliveness']
     },
     {
       title: 'Coherence Index',

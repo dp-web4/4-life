@@ -508,7 +508,7 @@ export default function ATPEconomicsPage() {
             body prose, NOT a callout/panel — and preserved the "just below" pointer + both links. */}
         <p className="text-gray-300 leading-relaxed mb-6">
           That <strong className="text-gray-100">&ldquo;quality&rdquo;</strong> score has a name: it&apos;s your{' '}
-          <a href="/trust-tensor#v3-output-scorer" className="text-sky-400 hover:text-sky-300 underline">V3 (Value Tensor)</a>.
+          <a href="/value-tensor" className="text-sky-400 hover:text-sky-300 underline">V3 (Value Tensor)</a>.
           It&apos;s the <em>same idea</em> as{' '}
           <a href="/trust-tensor" className="text-sky-400 hover:text-sky-300 underline">T3</a>, just aimed at a different target:
           where T3 rates how much people trust <em>you as a person</em>, V3 rates the value of <em>the work you made</em>.
@@ -517,10 +517,13 @@ export default function ATPEconomicsPage() {
               "who computes V3 / how do I move it" at this read point without sending the reader to
               trust-tensor#v3 — the Trust Tensor pointer was only an unlabeled link on the acronym.
               One sentence (visitor's own suggested wording, nearly verbatim): who computes it +
-              a stated "full definition lives there" destination. Self-containment only; no reframe. */}
+              a stated "full definition lives there" destination. Self-containment only; no reframe.
+              Jul-9: the destination is now /value-tensor. The 07-09 visitor's complaint was precisely
+              that "elsewhere turns out to be a section on the *T3* page" — so the label moves with
+              the link. Sentence otherwise untouched. */}
           {' '}And it&apos;s computed the same way T3 is &mdash; from confirmations by the people who
           received your work, not by any self-rating &mdash; with the full definition on the{' '}
-          <a href="/trust-tensor#v3-output-scorer" className="text-sky-400 hover:text-sky-300 underline">Trust Tensor page</a>.
+          <a href="/value-tensor" className="text-sky-400 hover:text-sky-300 underline">Value Tensor page</a>.
           {' '}(How V3 gets scored is <a href="#quality-measurement" onClick={(e) => { e.preventDefault(); document.getElementById('quality-measurement')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">just below</a>.)
         </p>
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8">
@@ -646,7 +649,7 @@ export default function ATPEconomicsPage() {
             No one rates you on a scale. The system watches <em>aggregate behavior</em>: how quickly people confirm
             (engagement), whether diverse recipients confirm (breadth), and whether high-trust people confirm (quality signal).
             These three signals combine into your{' '}
-            <a href="/trust-tensor#v3-output-scorer" className="text-sky-400 hover:text-sky-300 underline">V3 (Value Tensor) score</a> —
+            <a href="/value-tensor" className="text-sky-400 hover:text-sky-300 underline">V3 (Value Tensor) score</a> —
             the output-quality half of your reputation (its three parts: <em>Valuation, Veracity, Validity</em> — usefulness, truthfulness, soundness). (Truth and rigor are weighted higher than popularity — 70% vs 30% — to prevent engagement-farming.)
           </p>
           {/* Apr 28 MEDIUM friction: visitor asked "is it instant? polled? voted?" — close the loop on timing. */}

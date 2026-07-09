@@ -81,7 +81,7 @@ export const terms: Record<string, TermDefinition> = {
     brief: "Multi-dimensional value scores for contributions.",
     explanation:
       "Like T3 but for value created, not trustworthiness. A 3D tensor measuring Valuation (0.3 weight), Veracity (0.35), and Validity (0.35). Used to price ATP costs for tasks and measure contribution quality.",
-    learnMore: "/trust-tensor#v3",
+    learnMore: "/value-tensor",
     canonicalSpec:
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/t3-v3-tensors.md",
   },

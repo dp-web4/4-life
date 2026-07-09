@@ -743,6 +743,11 @@ export default function GlossaryPage() {
               value you created across quality dimensions. Both capture nuance that single scores lose."
             </p>
             <div className="flex gap-3 text-sm">
+              {/* Jul-9: V3 got its own page. Before that, this entry was the only place a visitor
+                  could read V3 without clicking an expand gate on the Trust Tensor page. */}
+              <Link href="/value-tensor" className="text-sky-400 hover:underline">
+                Full explainer →
+              </Link>
               <a
                 href="https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/t3-v3-tensors.md"
                 className="text-purple-400 hover:underline"
