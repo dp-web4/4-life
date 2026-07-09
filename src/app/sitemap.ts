@@ -28,6 +28,7 @@ const pages: { path: string; priority: number; changeFrequency: MetadataRoute.Si
   { path: "/lct-explainer", priority: 0.9, changeFrequency: "monthly" },
   { path: "/atp-economics", priority: 0.9, changeFrequency: "monthly" },
   { path: "/trust-tensor", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/value-tensor", priority: 0.9, changeFrequency: "monthly" },
   { path: "/coherence-index", priority: 0.9, changeFrequency: "monthly" },
   { path: "/aliveness", priority: 0.9, changeFrequency: "monthly" },
 

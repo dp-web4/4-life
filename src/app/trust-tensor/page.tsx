@@ -59,303 +59,18 @@ const ROLES = {
 
 type RoleKey = keyof typeof ROLES;
 
-// V3 Output Scorer — interactive mini-interaction
-const V3_OUTPUTS = [
-  {
-    id: 'thorough-review',
-    label: 'Thorough Code Review',
-    description: 'Found 3 real bugs, explained each clearly, suggested fixes with test cases.',
-    valuation: 0.85,
-    veracity: 0.92,
-    validity: 0.95,
-    insight: 'High across all dimensions — useful, accurate, and well-reasoned. This is how you build trust.',
-  },
-  {
-    id: 'clickbait',
-    label: 'Viral Clickbait Article',
-    description: '"10 SHOCKING reasons..." Gets 50K views but contains misleading claims and weak arguments.',
-    valuation: 0.55,
-    veracity: 0.20,
-    validity: 0.25,
-    insight: 'Some popularity (Valuation) but terrible Veracity and Validity. Web4 weights truth over clicks — this earns less than half what the review earns.',
-  },
-  {
-    id: 'niche-research',
-    label: 'Niche Research Paper',
-    description: 'Original findings on a narrow topic. Rigorous methodology, 12 citations, reproducible results.',
-    valuation: 0.35,
-    veracity: 0.95,
-    validity: 0.90,
-    insight: 'Low immediate popularity but exceptional truth and rigor. Web4 rewards this: V3 score (0.75) beats clickbait (0.33) because Veracity+Validity outweigh Valuation.',
-  },
-  {
-    id: 'copied-answer',
-    label: 'Copy-Pasted Answer',
-    description: 'Copied someone else\'s solution verbatim without attribution. Works, but not original.',
-    valuation: 0.50,
-    veracity: 0.30,
-    validity: 0.70,
-    insight: 'The answer works (decent Validity) but unattributed copying tanks Veracity. Repeated behavior drags T3 Training scores down too.',
-  },
-  {
-    id: 'mentoring',
-    label: 'Patient Mentoring Session',
-    description: 'Spent an hour helping a newcomer understand trust tensors. They left confident and capable.',
-    valuation: 0.90,
-    veracity: 0.85,
-    validity: 0.88,
-    insight: 'Teaching well is high-value work. The mentee\'s improved understanding is measurable value — and it builds your Temperament trust score.',
-  },
-];
-
-function V3OutputScorer() {
-  const [selectedOutput, setSelectedOutput] = useState<string | null>(null);
-  const [scoredOutputs, setScoredOutputs] = useState<string[]>([]);
-
-  const selected = V3_OUTPUTS.find(o => o.id === selectedOutput);
-  const v3Score = selected
-    ? (selected.valuation * 0.30 + selected.veracity * 0.35 + selected.validity * 0.35).toFixed(2)
-    : null;
-
-  const handleSelect = (id: string) => {
-    trackConceptInteraction('trust-tensor');
-    setSelectedOutput(id);
-    if (!scoredOutputs.includes(id)) {
-      setScoredOutputs(prev => [...prev, id]);
-    }
-  };
-
-  const getColor = (v: number) => v >= 0.7 ? 'text-green-400' : v >= 0.45 ? 'text-amber-400' : 'text-red-400';
-  const getBarColor = (v: number) => v >= 0.7 ? 'bg-green-500' : v >= 0.45 ? 'bg-amber-500' : 'bg-red-500';
-
-  return (
-    <section id="v3-output-scorer" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
-      {/* Page-level expand gate (TrustTensorPage) replaces the prior in-component breathing gate.
-          Visitors who chose to expand V3 above have already opted in — no need to re-prompt here. */}
-
-      {/* Transition: T3 → V3 — visitor feedback: V3 appears without preamble */}
-      <p className="text-gray-400 mb-6 text-lg">
-        Everything above is about <strong className="text-sky-300">you</strong> — your skills, your track record, your consistency.
-        But trust isn&apos;t just about who you are. It&apos;s also about <strong className="text-purple-300">what you produce</strong>.
-        That&apos;s where V3 comes in.
-      </p>
-
-      {/* Key distinction callout */}
-      <div className="bg-gradient-to-r from-sky-950/40 to-purple-950/40 border border-sky-800/30 rounded-xl p-4 mb-6">
-        <div className="flex items-center gap-3 text-sm">
-          <div className="flex items-center gap-2">
-            <span className="text-sky-400 font-semibold">T3</span>
-            <span className="text-gray-400">measures</span>
-            <span className="text-sky-300 font-medium">who you are</span>
-          </div>
-          <span className="text-gray-600">|</span>
-          <div className="flex items-center gap-2">
-            <span className="text-purple-400 font-semibold">V3</span>
-            <span className="text-gray-400">measures</span>
-            <span className="text-purple-300 font-medium">what you produce</span>
-          </div>
-        </div>
-        <p className="text-xs text-gray-500 mt-1">Both feed into ATP rewards. A trusted person (high T3) who produces poor work (low V3) still earns less.</p>
-      </div>
-
-      <h2 className="text-3xl font-bold mb-2 text-gray-100">
-        V3: Measuring What You Produce
-      </h2>
-      <p className="text-gray-400 mb-4">
-        T3 measures <strong className="text-sky-300">who you are</strong>. V3 measures{' '}
-        <strong className="text-purple-300">what you create</strong>. Every output in Web4 gets scored
-        across three dimensions — and the weights are designed to reward truth over popularity.
-      </p>
-      <p className="text-xs text-gray-500 mb-6">
-        Don&apos;t worry about memorizing six terms at once. The key insight is simple: T3 = your reputation as a person, V3 = the quality of a specific piece of work. The three V3 dimensions below just break down &ldquo;quality&rdquo; into usefulness, truthfulness, and soundness.
-      </p>
-
-      {/* V3 dimension explainer */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <div className="bg-gradient-to-br from-sky-950/30 to-gray-900 border border-sky-800/30 rounded-xl p-5">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-2xl">💰</span>
-            <h3 className="text-lg font-semibold text-sky-400">Valuation</h3>
-            <span className="text-xs text-gray-500 ml-auto">weight: 0.30</span>
-          </div>
-          <p className="text-sm text-purple-300/80 mb-1">= &ldquo;Was it useful?&rdquo;</p>
-          <p className="text-sm text-gray-400">Measured by recipient satisfaction and ATP earned vs expected.</p>
-        </div>
-        <div className="bg-gradient-to-br from-purple-950/30 to-gray-900 border border-purple-800/30 rounded-xl p-5">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-2xl">🔍</span>
-            <h3 className="text-lg font-semibold text-purple-400">Veracity</h3>
-            <span className="text-xs text-gray-500 ml-auto">weight: 0.35</span>
-          </div>
-          <p className="text-sm text-purple-300/80 mb-1">= &ldquo;Was it true?&rdquo;</p>
-          <p className="text-sm text-gray-400">Verified by external validation and witness attestation &mdash; a recorded confirmation from an independent party that it actually happened.</p>
-        </div>
-        <div className="bg-gradient-to-br from-green-950/30 to-gray-900 border border-green-800/30 rounded-xl p-5">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-2xl">✅</span>
-            <h3 className="text-lg font-semibold text-green-400">Validity</h3>
-            <span className="text-xs text-gray-500 ml-auto">weight: 0.35</span>
-          </div>
-          <p className="text-sm text-purple-300/80 mb-1">= &ldquo;Was it sound?&rdquo;</p>
-          <p className="text-sm text-gray-400">Confirmed by receipt, logical consistency, and actual delivery.</p>
-        </div>
-      </div>
-
-      <p className="text-sm text-gray-500 mb-4">
-        Notice: Veracity + Validity (0.70 combined) outweigh Valuation (0.30). Web4 rewards truth and rigor over popularity by design.
-      </p>
-
-      {/* Who scores V3? — addresses visitor question */}
-      <details className="bg-gray-800/40 border border-gray-700/50 rounded-xl p-5 mb-6">
-        <summary className="text-sm font-semibold text-gray-300 cursor-pointer list-none flex justify-between items-center">
-          <span>Who actually scores Veracity and Validity?</span>
-          <span className="text-gray-500 text-xs ml-2">click to expand</span>
-        </summary>
-        <div className="mt-3 space-y-3 text-sm text-gray-400">
-          <p className="m-0">
-            <strong className="text-sky-400">Valuation</strong> is scored by the <em>recipient</em> of
-            an output. When someone receives your work, they confirm whether it was useful via the VCM
-            (Value Confirmation Message). This is like leaving a receipt — &ldquo;yes, this helped me.&rdquo;
-          </p>
-          <p className="m-0">
-            <strong className="text-purple-400">Veracity</strong> is scored through <em>witness attestation</em> and
-            external validation. Your LCT device witnesses verify that you actually did what you claim.
-            For factual claims, other trusted entities in the same domain can challenge or corroborate.
-            Think peer review: your claim is only as strong as the evidence your witnesses can attest to.
-          </p>
-          <p className="m-0">
-            <strong className="text-green-400">Validity</strong> is scored by <em>structural verification</em> —
-            did the output actually arrive? Is it logically consistent? Receipt confirmation proves delivery,
-            and the system checks internal consistency (e.g., a code review that contradicts itself scores low).
-            This is the most automated dimension — much of it can be verified without human judgment.
-          </p>
-          <p className="m-0 text-gray-500 text-xs border-t border-gray-700/50 pt-3">
-            In short: Valuation = the recipient judges usefulness. Veracity = witnesses and peers judge truthfulness. Validity = the system verifies delivery and consistency. No single party controls all three dimensions.
-          </p>
-        </div>
-      </details>
-
-      {/* Output selector */}
-      <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
-        <h3 className="text-lg font-semibold text-gray-200 mb-4">Score These Outputs</h3>
-        <p className="text-sm text-gray-400 mb-4">Click each output to see how V3 scores it. {scoredOutputs.length > 0 && <span className="text-sky-400">({scoredOutputs.length}/{V3_OUTPUTS.length} scored)</span>}</p>
-
-        <div className="space-y-3">
-          {V3_OUTPUTS.map(output => {
-            const isSelected = selectedOutput === output.id;
-            const isScored = scoredOutputs.includes(output.id);
-            const score = output.valuation * 0.30 + output.veracity * 0.35 + output.validity * 0.35;
-            return (
-              <div key={output.id}>
-                <button
-                  onClick={() => handleSelect(output.id)}
-                  className={`w-full text-left p-4 rounded-lg border transition-all ${
-                    isSelected
-                      ? 'bg-sky-900/30 border-sky-600'
-                      : isScored
-                      ? 'bg-gray-800/50 border-gray-600 hover:border-gray-500'
-                      : 'bg-gray-800/30 border-gray-700 hover:border-gray-500'
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="font-semibold text-gray-200">{output.label}</div>
-                      <div className="text-sm text-gray-400 mt-1">{output.description}</div>
-                    </div>
-                    {isScored && (
-                      <div className={`text-lg font-bold ml-4 ${getColor(score)}`}>
-                        {score.toFixed(2)}
-                      </div>
-                    )}
-                  </div>
-                </button>
-
-                {/* Expanded detail panel */}
-                {isSelected && selected && (
-                  <div className="mt-2 p-4 bg-gray-800/60 rounded-lg border border-gray-700 space-y-4">
-                    {/* Score bars */}
-                    <div className="space-y-3">
-                      {[
-                        { label: 'Valuation', value: selected.valuation, weight: 0.30, color: 'sky' },
-                        { label: 'Veracity', value: selected.veracity, weight: 0.35, color: 'purple' },
-                        { label: 'Validity', value: selected.validity, weight: 0.35, color: 'green' },
-                      ].map(dim => (
-                        <div key={dim.label}>
-                          <div className="flex justify-between text-sm mb-1">
-                            <span className="text-gray-400">{dim.label} (×{dim.weight})</span>
-                            <span className={getColor(dim.value)}>{dim.value.toFixed(2)}</span>
-                          </div>
-                          <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
-                            <div
-                              className={`h-full rounded-full transition-all duration-500 ${getBarColor(dim.value)}`}
-                              style={{ width: `${dim.value * 100}%` }}
-                            />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Composite calculation */}
-                    <div className="bg-gray-900/50 rounded-lg p-3">
-                      <div className="text-xs text-gray-500 mb-1">V3 Composite Score</div>
-                      <div className="font-mono text-sm text-gray-300">
-                        {selected.valuation.toFixed(2)} × 0.30 + {selected.veracity.toFixed(2)} × 0.35 + {selected.validity.toFixed(2)} × 0.35 = <strong className={getColor(parseFloat(v3Score!))}>{v3Score}</strong>
-                      </div>
-                    </div>
-
-                    {/* Insight */}
-                    <p className="text-sm text-sky-300 italic">{selected.insight}</p>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Compound insight after scoring 3+ outputs */}
-        {scoredOutputs.length >= 3 && (
-          <div className="mt-6 p-4 bg-purple-900/20 border border-purple-700/30 rounded-lg">
-            <p className="text-purple-300 text-sm font-semibold mb-2">The Pattern</p>
-            <p className="text-gray-300 text-sm">
-              Notice how <strong>niche research</strong> (V3: 0.75) outscores <strong>viral clickbait</strong> (V3: 0.33)
-              despite getting a fraction of the attention. That&apos;s V3&apos;s design: truth and rigor
-              are weighted 70% while popularity is only 30%. In Web4, quality wins over engagement farming.
-            </p>
-            <p className="text-gray-400 text-sm mt-2">
-              This is the V3 counterpart to T3: while T3 measures whether <em>you</em> are trustworthy,
-              V3 measures whether your <em>work</em> is trustworthy. Both feed into the ATP rewards you earn.
-            </p>
-          </div>
-        )}
-      </div>
-    </section>
-  );
-}
-
 export default function TrustTensorPage() {
-  // V3 gate: keeps T3 the primary lesson of this page (May 4 visitor M5 — V3 mid-page overload,
-  // recurring since Apr 17 #4 and Mar 27 s2). Default collapsed; auto-expanded on deep links
-  // like `#v3` or `#v3-output-scorer` so glossary/cross-page links keep working.
-  const [v3Expanded, setV3Expanded] = useState(false);
-
   useEffect(() => {
     trackPageVisit('trust-tensor');
+    // V3 moved to its own page (Jul-9). The prior expand-gate auto-opened on any `#v3*` hash;
+    // now `#v3` is the surviving teaser and `#v3-output-scorer` lives at /value-tensor. Land any
+    // old deep link on the teaser rather than nowhere — it carries the link onward.
     if (typeof window !== 'undefined' && window.location.hash.startsWith('#v3')) {
-      setV3Expanded(true);
-      // The browser tried to scroll to the anchor before V3 content rendered;
-      // re-scroll once it's in the DOM.
-      const hash = window.location.hash;
       setTimeout(() => {
-        const el = document.querySelector(hash);
-        if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
+        document.getElementById('v3')?.scrollIntoView({ behavior: 'auto', block: 'start' });
       }, 50);
     }
   }, []);
-
-  const expandV3 = () => {
-    trackConceptInteraction('trust-tensor');
-    setV3Expanded(true);
-  };
 
   // Scenario simulation state
   const [selectedRole, setSelectedRole] = useState<RoleKey>("analyst");
@@ -495,19 +210,20 @@ export default function TrustTensorPage() {
             May 21 visitor LOW: first mention gave the location but no priority signal — visitor "didn't know whether V3 was something I'd need soon or could ignore." Add a one-line T3-vs-V3 distinction + explicit defer reassurance here, at the point of friction.
             May 26 visitor LOW-MED #1 + Unanswered Q1: prior two layers still left V3 as a "ghost concept" — abstract "what you produce" with no concrete anchor. Add one number-grounded example (the same niche-research-vs-clickbait pair already in the V3 Output Scorer Pattern callout further down) so visitors who don't click the gate still leave with a concrete V3 mental anchor.
             May 27 visitor MEDIUM #1 + Unanswered Q1 (7th recurrence of ghost-concept pattern): the prior three layers still never name the three V3 components inline — "the glossary later told me V3 = Valuation/Veracity/Validity, but the Trust Tensor page itself didn't ground it." Complete the keepable summary at the read point by naming the three components alongside the existing concept gloss + numeric example. Pattern match: PR #301 (May 22) — visitor's own analogue "same shape as the inline ADP gloss on the ATP page."
-            May 28 visitor MEDIUM #1 + Unanswered Q2 (8th recurrence — different lever): the prior 3 layers added abstract gloss, names, and a V3-only number — but T3 has a role-grounded actor (the surgeon at L464) and V3's gloss is still actor-less. Visitor: "T3 had role-grounded examples (the surgeon). V3 got components named but never grounded. I really wanted at least one one-line example of *what V3 looks like in practice* on the page where it gets named — like 'if Alice writes a tutorial, V3 grades the tutorial; T3 grades Alice.'" Add the visitor's exact T3-vs-V3 contrast applied to a single actor — different lever from the prior three (co-located scoring, not naming/numbering). Downstream V3 Output Scorer uses code-review / clickbait / niche-research / copy-paste / mentoring — "tutorial" is a fresh example space, no conflict. */}
-        <p className="text-sm text-gray-500 mt-2">
+            May 28 visitor MEDIUM #1 + Unanswered Q2 (8th recurrence — different lever): the prior 3 layers added abstract gloss, names, and a V3-only number — but T3 has a role-grounded actor (the surgeon at L464) and V3's gloss is still actor-less. Visitor: "T3 had role-grounded examples (the surgeon). V3 got components named but never grounded. I really wanted at least one one-line example of *what V3 looks like in practice* on the page where it gets named — like 'if Alice writes a tutorial, V3 grades the tutorial; T3 grades Alice.'" Add the visitor's exact T3-vs-V3 contrast applied to a single actor — different lever from the prior three (co-located scoring, not naming/numbering). Downstream V3 Output Scorer uses code-review / clickbait / niche-research / copy-paste / mentoring — "tutorial" is a fresh example space, no conflict.
+            Jul 9: V3 moved to /value-tensor (visitor: "a first-class concept living as a subsection of another concept"). This paragraph is the keepable summary and stays put — only its forward-references now point off-page instead of down-page. `id="v3"` stays here so bookmarked #v3 links still resolve. The 0.75/0.33 pair is shared with the V3 Output Scorer on that page: change both or neither. */}
+        <p id="v3" className="text-sm text-gray-500 mt-2 scroll-mt-24">
           Wondering about <strong className="text-purple-300">V3</strong>? Short version: T3 measures{" "}
           <strong>who you are</strong>; V3 measures <strong>what you produce</strong> across three components &mdash;{" "}
           <strong className="text-sky-300">Valuation</strong>,{" "}
           <strong className="text-purple-300">Veracity</strong>, and{" "}
           <strong className="text-green-300">Validity</strong> (usefulness, truthfulness, soundness). Concretely: if Alice writes a tutorial, V3 grades <em>the tutorial</em> (useful? true? sound?); T3 grades <em>Alice</em> (do her talent, training, temperament fit the task). E.g. a careful niche analysis might score V3 = 0.75, while viral clickbait scores V3 = 0.33. You don&apos;t need to
           master it to follow this page — T3 alone carries the idea here, so it&apos;s fine to meet V3 later
-          (it matters enough to get its own section). When you&apos;re curious, it&apos;s the
+          (it matters enough to get its own page). When you&apos;re curious, it&apos;s the
           sibling tensor,{" "}
-          <a href="#v3" onClick={(e) => { e.preventDefault(); document.getElementById('v3')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-300 hover:text-purple-200 cursor-pointer">
-            explained just below ↓
-          </a>
+          <Link href="/value-tensor" className="text-purple-300 hover:text-purple-200 underline">
+            explained on its own page →
+          </Link>
         </p>
         {/* June 4 visitor LOW (recurring since Mar 27 s2 / May 21, NEW axis): the prior 7 iterations of the paragraph above all answer *what V3 is*; visitor still asked "on a page titled Trust Tensor, why is V3 here?" The relevance hook (V3 feeds back into T3) lived only in the gate card ~480 lines below (L996). Surface it as one standalone sentence at the first mention so a non-scrolling reader knows why V3 belongs on the T3 page. Reviewer note: keep it a single clause, don't re-explain what V3 is. */}
         <p className="text-sm text-gray-500 mt-2">
@@ -637,7 +353,7 @@ export default function TrustTensorPage() {
               Where does that number come from? It&apos;s the{" "}
               <strong className="text-purple-300">V3 score</strong>{" "}
               the recipient assigned to that contribution (Valuation &middot; Veracity &middot;
-              Validity &mdash; the <a href="#v3" className="text-purple-300 underline">V3 section below</a>{" "}
+              Validity &mdash; the <Link href="/value-tensor" className="text-purple-300 underline">Value Tensor page</Link>{" "}
               breaks that down if you want the depth, but it&apos;s optional here). Each confirmer&apos;s V3
               feeds the formula independently &mdash; they aren&apos;t averaged into one number first.
               A single high-quality contribution barely moves the needle &mdash; a 0.85-quality
@@ -993,132 +709,35 @@ export default function TrustTensorPage() {
         </div>
       </section>
 
-      {/* V3 expand gate — May 4 visitor M5: V3 mid-page overload. Recurring since Apr 17 #4
-          and Mar 27 s2. Prior in-component "breathing gate" was a soft suggestion above an
-          unconditional V3 wall; this is the actual gate. Default collapsed; auto-expands on
-          any `#v3*` hash so deep links still work. */}
-      {!v3Expanded && (
-        <section className="max-w-4xl mx-auto mt-16 scroll-mt-24">
-          <div className="bg-gray-900/60 border border-gray-700/60 rounded-xl p-6">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-xs uppercase tracking-wide text-sky-400 font-semibold">End of T3</span>
-              <span className="text-gray-600">·</span>
-              <span className="text-xs uppercase tracking-wide text-gray-400">ready for more?</span>
-            </div>
-            <p className="text-gray-300 leading-relaxed mb-2">
-              That&apos;s T3 — three dimensions describing <strong className="text-sky-300">who someone is</strong>.
-              If this feels like enough for one sitting, you can stop here. T3 alone is a working mental model — pick up V3 later via the concept nav above.
-            </p>
-            {/* June 1 visitor M5 / Unanswered Q2: name the V3->T3 arrow in the always-visible teaser so a non-expanding reader still leaves with the keepable relationship. Detail stays gated below (May 4 anti-overload). Mirrors the gated phrasing at L1092-1093. */}
-            <p className="text-sm text-gray-500 mb-5">
-              Or keep going: V3 is a separate, complementary tensor that scores <strong className="text-purple-300">what someone produces</strong>. It pairs with T3 but doesn&apos;t require memorizing six things at once &mdash; and the two aren&apos;t really independent: consistently producing high-V3 work raises your own T3, while sloppy work drags it down, so your reputation tracks your actual output quality.
-            </p>
-            <button
-              onClick={expandV3}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-700/80 hover:bg-purple-600 text-white rounded-lg font-semibold transition-colors"
-              aria-expanded={false}
-              aria-controls="v3-content"
-            >
-              Continue to V3 <span aria-hidden="true">→</span>
-            </button>
+      {/* End-of-T3 pacing card. Was an in-page expand gate (May 4 visitor M5: V3 mid-page
+          overload, recurring since Apr 17 #4 and Mar 27 s2) whose gated payload has moved to
+          /value-tensor (Jul 9 visitor MEDIUM: V3 read as "a subsection of another concept").
+          The pacing survives — a reader can still stop at the end of T3 — but "keep going" is
+          now a page transition instead of a disclosure widget, so V3 is no longer a footnote
+          on someone else's page. The V3→T3 arrow below stays: it's the keepable relationship
+          (June 1 visitor M5 / Unanswered Q2) and a non-clicking reader must still leave with it. */}
+      <section className="max-w-4xl mx-auto mt-16 scroll-mt-24">
+        <div className="bg-gray-900/60 border border-gray-700/60 rounded-xl p-6">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-xs uppercase tracking-wide text-sky-400 font-semibold">End of T3</span>
+            <span className="text-gray-600">·</span>
+            <span className="text-xs uppercase tracking-wide text-gray-400">ready for more?</span>
           </div>
-        </section>
-      )}
-
-      {v3Expanded && (
-      <div id="v3-content">
-      {/* T3/V3 Bridge — how they work together (visitor friction Mar 15-16; Apr 22 L9 expand V3 acronym) */}
-      <section id="v3" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
-        <p className="text-gray-300 mb-4 max-w-4xl mx-auto">
-          T3 tells us whether <em>you</em> are trustworthy. But how does the system know if a specific piece of work you produced was actually good? That&apos;s where <strong className="text-purple-300">V3</strong> — the <strong>Value Tensor</strong> — comes in. T3 scores <em>you</em>; V3 scores <em>what you produce</em>. See its own section below.
-        </p>
-        <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/30 border border-sky-700/30 rounded-xl p-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-100">
-            How T3 and V3 Work Together
-          </h2>
-          <p className="text-gray-300 text-sm mb-4">
-            T3 measures <strong className="text-sky-400">who you are</strong> (your trustworthiness as a person).
-            V3 measures <strong className="text-purple-400">what you produce</strong> (the quality of each specific output).
-            They&apos;re separate scores that feed into a single outcome: <strong>how much ATP you earn</strong>.
+          <p className="text-gray-300 leading-relaxed mb-2">
+            That&apos;s T3 — three dimensions describing <strong className="text-sky-300">who someone is</strong>.
+            If this feels like enough for one sitting, you can stop here. T3 alone is a working mental model — pick up V3 later via the concept nav above.
           </p>
-          {/* Flow diagram: Actions → V3 → T3 ↔ ATP */}
-          <div className="mb-6">
-            {/* Pipeline row */}
-            <div className="flex flex-col md:flex-row items-stretch gap-0 md:gap-0">
-              {/* Step 1: Action */}
-              <div className="flex-1 bg-gray-800/60 border border-gray-700/50 rounded-t-lg md:rounded-l-lg md:rounded-tr-none p-4 text-center">
-                <div className="text-2xl mb-1">⚡</div>
-                <div className="text-amber-400 font-bold text-sm">1. You Act</div>
-                <div className="text-xs text-gray-400 mt-1">Post, review, help, build</div>
-              </div>
-              {/* Arrow */}
-              <div className="flex items-center justify-center text-gray-600 py-1 md:py-0 md:px-0">
-                <span className="hidden md:block text-lg">→</span>
-                <span className="md:hidden text-lg">↓</span>
-              </div>
-              {/* Step 2: V3 */}
-              <div className="flex-1 bg-purple-950/40 border border-purple-800/30 p-4 text-center">
-                <div className="text-2xl mb-1">📊</div>
-                <div className="text-purple-400 font-bold text-sm">2. Recipients Score It</div>
-                <div className="text-xs text-gray-400 mt-1">V3: Valuation · Veracity · Validity</div>
-                <div className="text-xs text-gray-500 mt-1">Scored per output</div>
-              </div>
-              {/* Arrow */}
-              <div className="flex items-center justify-center text-gray-600 py-1 md:py-0 md:px-0">
-                <span className="hidden md:block text-lg">→</span>
-                <span className="md:hidden text-lg">↓</span>
-              </div>
-              {/* Step 3: T3 update */}
-              <div className="flex-1 bg-sky-950/40 border border-sky-800/30 p-4 text-center">
-                <div className="text-2xl mb-1">📈</div>
-                <div className="text-sky-400 font-bold text-sm">3. Reputation Updates</div>
-                <div className="text-xs text-gray-400 mt-1">T3: Talent · Training · Temperament</div>
-                <div className="text-xs text-gray-500 mt-1">Builds slowly over many actions</div>
-              </div>
-              {/* Arrow */}
-              <div className="flex items-center justify-center text-gray-600 py-1 md:py-0 md:px-0">
-                <span className="hidden md:block text-lg">→</span>
-                <span className="md:hidden text-lg">↓</span>
-              </div>
-              {/* Step 4: ATP */}
-              <div className="flex-1 bg-emerald-950/40 border border-emerald-800/30 rounded-b-lg md:rounded-r-lg md:rounded-bl-none p-4 text-center">
-                <div className="text-2xl mb-1">🔋</div>
-                <div className="text-emerald-400 font-bold text-sm">4. ATP Reward</div>
-                <div className="text-xs text-gray-400 mt-1">Earnings = T3 × V3 × base rate</div>
-                <div className="text-xs text-gray-500 mt-1">Fuels your next actions</div>
-              </div>
-            </div>
-            {/* Feedback loop annotation */}
-            <div className="mt-3 flex items-center justify-center gap-2 text-xs text-gray-500">
-              <span className="hidden md:inline">↰</span>
-              <span>Feedback loop: ATP fuels more actions → more V3 scores → T3 evolves → ATP changes</span>
-              <span className="hidden md:inline">↱</span>
-            </div>
-          </div>
-          <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4 text-sm text-gray-300">
-            <p className="mb-2">
-              <strong className="text-gray-200">The feedback loop:</strong> High T3 (trusted person) + High V3 (great work) = maximum ATP reward.
-              But a trusted person who produces sloppy work (high T3, low V3) earns less than their reputation suggests.
-              And a newcomer who produces brilliant work (low T3, high V3) earns more than their reputation would predict.
-            </p>
-            <div className="mt-3 mb-2 bg-gray-950/60 border border-gray-800 rounded p-3 font-mono text-xs">
-              <div className="text-gray-500 mb-1">Worked example — a task with a base reward of 10 ATP:</div>
-              <div className="text-gray-300">T3 = 0.7  ×  V3 = 0.8  ×  base = 10 ATP  →  <span className="text-emerald-400">5.6 ATP earned</span></div>
-              <div className="text-gray-500 mt-2">Same task, half the trust (T3 = 0.35):</div>
-              <div className="text-gray-300">0.35  ×  0.8  ×  10  →  <span className="text-amber-400">2.8 ATP earned</span> — half the reward for the same output</div>
-            </div>
-            <p className="text-gray-400 text-xs">
-              Over time, T3 and V3 converge: consistently producing high-V3 work raises your T3.
-              Consistently producing low-V3 work drags your T3 down. Your reputation tracks your actual output quality.
-            </p>
-          </div>
+          <p className="text-sm text-gray-500 mb-5">
+            Or keep going: V3 is a separate, complementary tensor that scores <strong className="text-purple-300">what someone produces</strong>. It pairs with T3 but doesn&apos;t require memorizing six things at once &mdash; and the two aren&apos;t really independent: consistently producing high-V3 work raises your own T3, while sloppy work drags it down, so your reputation tracks your actual output quality.
+          </p>
+          <Link
+            href="/value-tensor"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-700/80 hover:bg-purple-600 text-white rounded-lg font-semibold transition-colors"
+          >
+            Continue to V3: the Value Tensor <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </section>
-
-      {/* V3 Output Scorer — interactive mini-interaction */}
-      <V3OutputScorer />
-      </div>
-      )}
 
       {/* Real Web4 Example: Role-Specific Trust */}
       <section className="max-w-4xl mx-auto mt-16">

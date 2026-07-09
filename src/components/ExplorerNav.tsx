@@ -98,6 +98,7 @@ const STAGE_LABELS = {
 const CONCEPT_TOOLS: Record<string, string[]> = {
   '/atp-economics': ['/playground', '/society-simulator', '/compare'],
   '/trust-tensor': ['/trust-tensor-explorer', '/playground', '/society-simulator'],
+  '/value-tensor': ['/trust-tensor-explorer', '/society-simulator', '/playground'],
   '/coherence-index': ['/trust-tensor-explorer', '/society-simulator', '/coherence-framework'],
   '/lct-explainer': ['/first-contact', '/society-simulator', '/playground'],
   '/aliveness': ['/karma-journey', '/society-simulator', '/playground'],
