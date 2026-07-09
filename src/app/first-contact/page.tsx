@@ -145,8 +145,12 @@ export default function FirstContactPage() {
                 {/* Jul-8 visitor HIGH: this sentence said "drops below 0.5" bare while Step 4/5 show
                     Alice at 0.48 recovering — one of three conflicting rule statements across
                     First Contact / Karma Journey / Aliveness. Canonical rule sentence below is
-                    IDENTICAL on all three pages — keep it verbatim if editing. */}
-                <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death &mdash; you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>trust falls below 0.5 and stays there</strong> (trust death &mdash; the community no longer trusts you). Energy death is recoverable through karma rebirth. Trust death is permanent &mdash; a destroyed reputation can&apos;t be reset. A dip below 0.5 is a warning you can recover from; trust death means <em>staying</em> below &mdash; a sustained collapse, not a single stumble. That&apos;s why Alice&apos;s 0.48 in Step 4 restricted her instead of killing her.</span>
+                    IDENTICAL on all three pages — keep it verbatim if editing.
+                    Jul-9 visitor HIGH: the Jul-8 version was read and STILL produced "First Contact says
+                    0.5 is an access threshold, Aliveness says it's a death threshold." The missing piece
+                    was never dip-vs-sustained (that was there) — it was that ONE line has TWO consequences
+                    at TWO timescales. Plus "raw" vs effective (raw × CI²). Both now in the canonical text. */}
+                <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death &mdash; you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>raw trust falls below 0.5 and stays there</strong> (trust death &mdash; the community no longer trusts you). Energy death is recoverable through karma rebirth. Trust death is permanent &mdash; a destroyed reputation can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal &mdash; a sustained collapse, not a single stumble. The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;) &mdash; effective trust sets your karma tier, not whether you live. That&apos;s why Alice&apos;s 0.48 in Step 4 restricted her instead of killing her: she crossed the line, she didn&apos;t stay below it.</span>
               </div>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#f87171' }}>Step 6 — Death:</strong> Alice overcommits, quality slips, ATP drains to zero. Her entity dies &mdash; but her record persists.
@@ -242,7 +246,13 @@ export default function FirstContactPage() {
               <p className="text-sm text-gray-400 mb-3">Only two numbers move while she acts. This is all you need to follow the story:</p>
               <ul className="text-sm text-gray-300 space-y-2">
                 <li><span className="text-sky-300 font-semibold">🔋 Energy Budget (ATP)</span> — the resource Alice spends to act. Starts at <span className="text-gray-200">100</span>; goes down when she posts, up when others confirm her work was valuable. If it hits 0, she can&apos;t act.</li>
-                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> — her reputation, on a <span className="text-gray-200">0.00&ndash;1.00</span> scale. Starts neutral at <span className="text-gray-200">0.50</span>. Above 0.50: full access. Below 0.50: features get restricted until she rebuilds it.</li>
+                {/* Jul-9 visitor HIGH: this line taught "0.5 = access threshold" and Aliveness taught
+                    "0.5 = death threshold", and the visitor never reconciled them. Name the second
+                    consequence here, where the first one is introduced.
+                    Do NOT write "at or above 0.50" — whether exactly-0.50 counts as alive/full-access
+                    is an unresolved canon call (> vs >= in the aliveness engines); don't assert the
+                    endpoint either way. */}
+                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> — her <em>raw</em> reputation, on a <span className="text-gray-200">0.00&ndash;1.00</span> scale. Starts neutral at <span className="text-gray-200">0.50</span>. Above 0.50: full access. Below 0.50: features get restricted until she rebuilds it &mdash; and if she <em>stays</em> below, that same line becomes fatal.</li>
               </ul>
             </div>
 

@@ -971,7 +971,7 @@ export default function AlivenessExplainer() {
           </div>
           <div className="detail-box">
             <h4>3. Trust Collapse</h4>
-            <p>T3 drops below the rebirth threshold (0.5) and stays there</p>
+            <p>Raw T3 drops below the rebirth threshold (0.5) and stays there</p>
             <ul>
               <li>Lost agency</li>
               <li>Community distrust</li>
@@ -984,7 +984,7 @@ export default function AlivenessExplainer() {
           <h4 style={{ color: "#38bdf8" }}>Wait — three conditions, but only two deaths below?</h4>
           <p>
             Two different questions. The <strong>three conditions above are what can <em>end</em> a
-            life</strong> — ATP hits 0, trust falls below 0.5 <em>and stays there</em>, <em>or</em> your
+            life</strong> — ATP hits 0, <em>raw</em> trust falls below 0.5 <em>and stays there</em>, <em>or</em> your
             Coherence Index falls below 0.5. Any one is fatal, so yes: a <strong>coherence death is
             real</strong>. (The demo above simplifies: it ends your run the moment trust <em>or</em> CI
             crosses 0.5 — a five-turn game is too short to tell a dip from a sustained slide, so it
@@ -1054,8 +1054,10 @@ export default function AlivenessExplainer() {
               <div style={{ fontWeight: 700, color: "#f87171", marginBottom: "0.25rem" }}>🤝 Trust Death</div>
               {/* Jul-8 visitor HIGH: the table cell said "falls below 0.5" bald while this page's own
                   prose (L813) says the permanent verdict = sustained collapse — the qualifier must live
-                  IN the table, not three sections away. */}
-              <div style={{ fontSize: "0.85rem", opacity: 0.85 }}>T3 falls below 0.5 and stays there</div>
+                  IN the table, not three sections away.
+                  Jul-9 visitor HIGH: "T3" alone is ambiguous — this page also defines effective trust
+                  (= T3 × CI²) a few sections up. Survival keys off RAW T3. Say so here. */}
+              <div style={{ fontSize: "0.85rem", opacity: 0.85 }}>Raw T3 falls below 0.5 and stays there</div>
               <div style={{ color: "#f87171", margin: "0.4rem 0" }}>↓</div>
               <div style={{ fontSize: "0.85rem", opacity: 0.85 }}>Society rejects rebirth</div>
               <div style={{ color: "#f87171", margin: "0.4rem 0" }}>↓</div>
@@ -1064,10 +1066,17 @@ export default function AlivenessExplainer() {
             </div>
           </div>
           {/* Canonical rule sentence — IDENTICAL on First Contact / Karma Journey / Aliveness (Jul-8
-              visitor HIGH: three pages stated three different rules). Keep it verbatim if editing. */}
+              visitor HIGH: three pages stated three different rules). Keep it verbatim if editing.
+              Jul-9 visitor HIGH: the Jul-8 version explained dip-vs-sustained but never said the 0.5
+              line has TWO consequences at TWO timescales — so First Contact still read as "access
+              threshold" and this page as "death threshold". The unification clause is now part of the
+              canonical sentence, as is "raw". */}
           <p style={{ fontSize: "0.8rem", opacity: 0.6, marginTop: "0.75rem", marginBottom: 0, textAlign: "center" }}>
             Same event (&ldquo;you die&rdquo;), two very different outcomes &mdash; which one depends only on whether your trust held.
-            A dip below 0.5 is a warning you can recover from; trust death means <em>staying</em> below &mdash; a sustained collapse, not a single stumble.
+            One line, two consequences: <em>crossing</em> below 0.5 restricts your features right away and is recoverable;
+            only <em>staying</em> below it is fatal &mdash; a sustained collapse, not a single stumble.
+            The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;) &mdash;
+            effective trust sets your karma tier, not whether you live.
           </p>
         </div>
 

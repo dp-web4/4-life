@@ -246,7 +246,7 @@ export default function LCTExplainerPage() {
               consistent with the inline bridge clause (~494) to avoid a third phrasing of the same ruler. */}
           <p className="text-xs text-purple-200/80 mt-3 pt-3 border-t border-purple-800/30">
             <span className="font-semibold text-purple-300">How to read the numbers below:</span> every trust score on this page
-            runs on a <strong>0&ndash;1</strong> scale, where <strong>0.5</strong> is the alive/dead line, <strong>0.75</strong> is solid,
+            runs on a <strong>0&ndash;1</strong> scale, where <strong>0.5</strong> is the survival line (only <em>staying</em> below it is fatal), <strong>0.75</strong> is solid,
             and <strong>0.90</strong> is the hardware-bound ceiling. Every decimal you meet from here on sits on that scale.
           </p>
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300">jump to the interactive security audit ↓</a></p>
@@ -525,7 +525,7 @@ export default function LCTExplainerPage() {
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500 font-bold shrink-0">4.</span>
-                  <span>More device witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90% &mdash; i.e. 0.50, 0.75, 0.90 on the 0&ndash;1 trust scale these numbers all use, where 0.5 is the alive/dead line) — but with <em>diminishing returns</em>. Three hardware-bound device witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds)</span>
+                  <span>More device witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90% &mdash; i.e. 0.50, 0.75, 0.90 on the 0&ndash;1 trust scale these numbers all use, where 0.5 is the survival line &mdash; only <em>staying</em> below it is fatal) — but with <em>diminishing returns</em>. Three hardware-bound device witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds)</span>
                 </div>
               </div>
             </div>
@@ -1053,6 +1053,24 @@ export default function LCTExplainerPage() {
             With software-only hardware, 0.5 is both where you start and the highest you can reach.
             Stronger hardware lets you build higher &mdash; but you still have to earn it through behavior.
             One honest tradeoff: the software-only ceiling means people without newer hardware are capped lower &mdash; we treat that as a feature, not a bug, because it lets everyone participate while signaling what their identity is anchored to (see below for what the ceiling actually limits).
+          </p>
+
+          {/* Jul-9 visitor HIGH (top friction point): "software-only caps at 0.50" and "0.5 is the
+              alive/dead line" sat a few lines apart, and the visitor concluded a software-only identity
+              can never be alive. This callout states the death rule (strictly-below AND sustained) and
+              the real cost of the ceiling (zero margin) — and deliberately STOPS there. Whether sitting
+              exactly ON 0.50 counts as alive is an unresolved canon call: the prose rule ("falls below
+              and stays there") implies yes, but every executable predicate on this site says no
+              (aliveness/page.tsx isAlive/rebirthEligible/agency all use trust > 0.5). Do NOT assert the
+              endpoint either way until web4 canon settles > vs >= (PR #444 rejection; standing
+              escalation alongside the T3-weights conflict). */}
+          <p className="text-gray-400 text-xs mt-3 bg-gray-900/40 border border-gray-700/60 rounded-lg p-3">
+            <strong className="text-gray-300">&ldquo;Software-only caps at 0.50 &mdash; and 0.5 is the survival line. Am I dead on arrival?&rdquo;</strong>{" "}
+            Trust death isn&apos;t a snapshot &mdash; it&apos;s falling <em>below</em> 0.5 <em>and staying there</em>, a
+            sustained collapse. What the software-only ceiling really costs you is <em>margin</em>: you start at the
+            line with no buffer above it, so any dip restricts your features until you climb back, and your
+            reputation can never carry more weight than the line itself. Zero margin is the tradeoff you accept
+            by anchoring an identity in software alone.
           </p>
 
           {/* May 4 visitor LOW: "those numbers feel declared, not derived. Why is software only 0.50? Why isn't TPM 1.00?"

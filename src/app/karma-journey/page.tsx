@@ -708,8 +708,14 @@ export default function KarmaJourneyPage() {
           {/* Jul-8 visitor HIGH: "Drop below 0.5 and this life ends" contradicted First Contact
               (Alice dips to 0.48, gets restricted, recovers) AND this page's own engine (no raw-0.5
               kill exists; Constrained rebirths start at raw 0.40). Canonical rule sentence below is
-              IDENTICAL on First Contact / Karma Journey / Aliveness — keep it verbatim if editing. */}
-          <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>Decides <strong style={{ color: 'var(--color-text-secondary)' }}>survival</strong>. A dip below 0.5 is a warning you can recover from; trust death means <em>staying</em> below &mdash; a sustained collapse, not a single stumble.</div>
+              IDENTICAL on First Contact / Karma Journey / Aliveness — keep it verbatim if editing.
+              Jul-9 visitor HIGH: the sentence gained the "one line, two consequences" clause. Without it,
+              First Contact read as an access threshold and Aliveness as a death threshold.
+              The raw-vs-effective clause that First Contact and Aliveness carry is intentionally ABSENT
+              here: this page's own simulator implements a simplified deep-collapse proxy comparing
+              EFFECTIVE trust (effectiveComposite < 0.05, ~L395), so asserting "raw, not effective" on
+              this page would be falsified ~300 lines up (PR #444 review, cycle 1). */}
+          <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>Decides <strong style={{ color: 'var(--color-text-secondary)' }}>survival</strong>. One line, two consequences: <em>crossing</em> below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal &mdash; a sustained collapse, not a single stumble.</div>
         </div>
         <div style={{
           padding: '0.75rem 1rem', borderRadius: '0.5rem',
