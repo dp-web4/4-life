@@ -1529,8 +1529,8 @@ lenient_society = {
                 an attacker with stolen credentials. The 1/CI² formula means penalties
                 escalate sharply only when coherence drops below ~0.5 — normal users
                 with occasional inconsistencies (CI 0.8) pay just 1.6x, while a stolen
-                account (CI 0.3) pays 11x. The severity is targeted at the threat, not
-                at regular users.
+                account (CI 0.3) is pinned at the 10x ceiling. The severity is targeted
+                at the threat, not at regular users.
               </p>
             </div>
 

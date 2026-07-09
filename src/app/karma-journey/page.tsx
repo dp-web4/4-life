@@ -529,8 +529,8 @@ export default function KarmaJourneyPage() {
           </span>
           <span style={{ display: 'block', marginTop: '0.4rem' }}>
             <strong style={{ color: '#fca5a5' }}>Trust collapse</strong> &mdash; your raw <strong>trust</strong>{' '}
-            itself fell below 0.5 and stayed there. This is the one door that doesn&rsquo;t reopen: society rejects
-            rebirth, and no karma tier earns it back.
+            itself fell below 0.5 and stayed there. This is the one door that doesn&rsquo;t reopen: the identity is
+            revoked rather than suspended, and no amount of later good behavior reinstates it.
           </span>
           <span style={{ display: 'block', marginTop: '0.4rem' }}>
             Both crossings involve 0.5, so the number alone can&rsquo;t tell them apart &mdash; <em>which metric
@@ -539,6 +539,20 @@ export default function KarmaJourneyPage() {
               two deaths
             </Link>
             {' '}side by side.
+          </span>
+          {/* Jul-9 numbers-integrity audit: the prose above claimed trust collapse means "society rejects
+              rebirth, and no karma tier earns it back" — but startNextLife() has no eligibility branch and
+              reincarnates EVERY death, so a trust-collapsed player is handed a "Begin Life N+1" button and
+              can see the claim is false. The engine is deliberate (Constrained rebirth is how karma
+              carry-forward is taught; PR #440 protected it), so the prose was the defect. Deployment-level
+              permanence is #440 canon and mirrored at /aliveness#death-meaning — it stays; the simulation
+              owns its simplification here instead, per the same call #440 made for SurvivalGame's verdict. */}
+          <span style={{ display: 'block', marginTop: '0.4rem' }}>
+            <strong style={{ color: 'var(--color-text-secondary)' }}>Where this journey simplifies.</strong>{' '}
+            The simulation below still offers you a <em>Begin Life</em> button after a trust collapse &mdash;
+            reborn Constrained, on lower trust and fewer resources &mdash; because its whole job is to let you
+            watch karma carry forward across lives. Read that as a teaching device, not a rule: a real
+            deployment revokes the identity instead, and there is no next life to start.
           </span>
         </div>
       </div>
@@ -586,7 +600,7 @@ export default function KarmaJourneyPage() {
         {/* June 11 visitor MEDIUM (browse A): "Constrained (<0.3)" looked impossible against
             "below 0.5 = death" — visitor derived the raw/effective resolution alone and was "only
             ~80% sure". Bridge the paradox here, pointing at the existing contrast cards below. */}
-        (How can a tier sit below the 0.5 survival line? Survival — and eligibility to be <em>reborn</em> at all —
+        (How can a tier sit below the 0.5 survival line? Survival
         is judged on <em>raw</em> trust; which tier you land in is judged on <em>effective</em> trust — raw × CI²,
         contrasted in the two cards below — which poor coherence can drag far below your raw score.
 <em>You can be reborn on raw <strong>0.55</strong> yet land Constrained on effective <strong>0.27</strong> when consistency is low.</em>){' '}
