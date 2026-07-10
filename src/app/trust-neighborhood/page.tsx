@@ -762,7 +762,8 @@ export default function MarkovRelevancyHorizonPage() {
             <p className="text-sm text-gray-400">
               Your trust doesn&apos;t reset to zero — but it doesn&apos;t transfer at full value either.
               When communities federate, your trust from Community A travels to Community B at a discount
-              (typically ~65% weight). Think of it like transferring schools: your grades come with you,
+              (typically ~65% weight &mdash; a separate federation-policy number, not the per-hop 0.7&times; decay
+              you saw within a single community above). Think of it like transferring schools: your grades come with you,
               but you still need to prove yourself to new teachers.
             </p>
             <p className="text-sm text-gray-400 mt-2">
