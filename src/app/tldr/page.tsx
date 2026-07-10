@@ -122,7 +122,7 @@ export default function TLDRPage() {
               <Link href="/trust-tensor" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">T3 (Talent / Training / Temperament)</Link>{' '}
               — the three dimensions of trust, scored per role;{' '}
               <Link href="/trust-neighborhood" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">MRH (Markov Relevancy Horizon)</Link>{' '}
-              — your trust neighborhood, distance-adjusted reach, 3 hops max; and{' '}
+              — your trust neighborhood, distance-adjusted reach that fades to nothing within ~3 hops; and{' '}
               <Link href="/coherence-index" className="text-gray-400 hover:text-sky-400 underline decoration-gray-700">CI (Coherence Index)</Link>{' '}
               — does your behavior add up over time. The concept sequence on each page links the rest.
             </p>

@@ -166,7 +166,10 @@ export default function HomePage() {
           <li><strong style={{ color: 'var(--color-text)' }}>Identity</strong> — your hardware-bound digital ID</li>
           <li><strong style={{ color: 'var(--color-text)' }}>Energy</strong> — budget you spend to act</li>
           <li><strong style={{ color: 'var(--color-text)' }}>Trust</strong> — your three-dimensional trust score</li>
-          <li><strong style={{ color: 'var(--color-text)' }}>Neighborhood</strong> — who can reach you (3 hops max)</li>
+          {/* Jul-9 visitor MEDIUM: "3 hops max" read as a hard protocol rule, then collided with the MRH
+    Explorer's 4-hop rows. No engine implements a hop cap — the limit is trust decaying to noise,
+    so say that. Keep the fade framing here in sync with tldr's MRH line and terms.ts. */}
+          <li><strong style={{ color: 'var(--color-text)' }}>Neighborhood</strong> — who can reach you (reach fades within ~3 hops)</li>
           <li><strong style={{ color: 'var(--color-text)' }}>Consistency</strong> — does your behavior add up?</li>
         </ul>
         <p style={{

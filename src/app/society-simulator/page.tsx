@@ -3546,6 +3546,17 @@ export default function SocietySimulatorPage() {
             )}
           </p>
 
+          {/* Jul-9 visitor LOW: "cooperation settles near 70%" was given with no yardstick — is 70%
+              good? Tiers below are direct readings of the measured per-preset `typical` values in
+              society-engine.ts (30-seed runs, PR #388) — re-measure before changing them. */}
+          <p className="text-xs text-gray-500 mb-3">
+            What does a good run look like? Across these presets, a healthy society settles near
+            65&ndash;70% cooperation with defectors <em>isolated rather than starved</em>. Around 40%
+            is survival without health, and ~25% with starvation deaths (All Adaptive) means trust
+            never bootstrapped at all. You&apos;re not chasing a score &mdash; the interesting question
+            is which compositions can build trust, and what happens to the agents who won&apos;t.
+          </p>
+
           {/* Custom toggle */}
           <div className="flex items-center gap-2 mb-3">
             <button
