@@ -1233,7 +1233,13 @@ export default function LCTExplainerPage() {
               is well-formed and the vendor certificate chain checks out, or (b) the first
               attestation arriving from a community member you interact with. Both paths produce a
               valid ACTIVE token; the multi-device path just lets you reach a higher trust ceiling
-              faster. (See <a href="#witness-infrastructure" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('witness-infrastructure')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-amber-400 hover:text-amber-300 underline">who runs those infrastructure witness nodes</a> for the network-side answer.)
+              faster. (See <a href="#witness-infrastructure" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('witness-infrastructure')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-amber-400 hover:text-amber-300 underline">who runs those infrastructure witness nodes</a> for the network-side answer.){" "}
+              {/* Jul-9 visitor LOW: this is the first lifecycle-state mention a linear reader hits, and
+                  naming only 2 of 4 states with no pointer left SUSPENDED/REVOKED as ghosts. The link
+                  opens the collapsed lifecycle <details> so the pointer actually shows the content. */}
+              NASCENT and ACTIVE are two of the <em>four</em> LCT lifecycle states &mdash; the full state
+              machine, including what SUSPENDED and REVOKED mean, is in the{" "}
+              <a href="#lct-lifecycle" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.getElementById('lct-lifecycle') as HTMLDetailsElement | null; if (el) { el.open = true; el.scrollIntoView({ behavior: 'smooth' }); } }} className="text-amber-400 hover:text-amber-300 underline">lifecycle section below</a>.
             </p>
             <p className="text-xs text-gray-500">
               <strong className="text-gray-400">The chicken-and-egg, resolved:</strong> hardware
@@ -1690,7 +1696,7 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
-          <details className="bg-gray-900/50 border border-gray-700/50 rounded-lg overflow-hidden">
+          <details id="lct-lifecycle" className="bg-gray-900/50 border border-gray-700/50 rounded-lg overflow-hidden scroll-mt-24">
             <summary className="cursor-pointer p-4 text-sm font-semibold text-gray-300 hover:text-purple-400 transition-colors">
               LCT Lifecycle: Birth → Active → Suspended → Revoked
             </summary>
@@ -1714,7 +1720,7 @@ export default function LCTExplainerPage() {
                 <em className="text-gray-500">Trigger: a peer device co-signs the nascent token, OR &mdash; for solo-device users &mdash; infrastructure witness nodes confirm the hardware attestation chain. Either path graduates the LCT; multi-device just unlocks a higher ceiling. <a href="#first-device-bootstrap" className="text-gray-400 hover:text-gray-300 underline not-italic">(solo-device cold start)</a></em>{" "}
                 <strong className="text-gray-300">Suspended</strong>: Temporarily frozen — can be reactivated.{" "}
                 <em className="text-gray-500">Trigger: all devices offline &gt; 30 days, or suspected compromise.</em>{" "}
-                <strong className="text-gray-300">Revoked</strong>: Permanently invalidated. Trust history preserved but no new actions allowed.{" "}
+                <strong className="text-gray-300">Revoked</strong>: Permanently invalidated &mdash; unlike suspension, there is no path back for this identity. Trust history preserved but no new actions allowed.{" "}
                 <em className="text-gray-500">Trigger: confirmed device compromise, or voluntary revocation.</em>
               </p>
               <p className="text-gray-500 text-xs">

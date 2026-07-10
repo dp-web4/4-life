@@ -283,12 +283,17 @@ export default function CoherenceIndexPage() {
             <div className="text-sm font-semibold text-orange-300 mb-2">
               Why doesn&rsquo;t a new account start at CI 1.0?
             </div>
+            {/* Jul-9 visitor LOW: leading with "isn't a penalty" before admitting the cost read as
+                spin ("the one moment I felt handled rather than informed"). Same content, reordered:
+                own the surcharge FIRST, then the not-a-punishment framing. Both figures (1.4× and
+                ~38%) are the same number, 1/0.85² ≈ 1.38 — change both or neither. */}
             <p className="text-sm text-gray-300 leading-relaxed">
               CI scores whether your <em>current</em> behavior matches your <em>established</em> pattern.
               A brand-new account has no established pattern yet — so there&rsquo;s no signal to match against.
-              The starting value (~0.85) isn&rsquo;t a penalty for being new; it&rsquo;s the system being honest
-              that <strong>it hasn&rsquo;t had a chance to witness you yet</strong>. With CI&nbsp;0.85, actions cost
-              about 1.4× their base price — a real friction, but a temporary one.
+              To be blunt about what that costs: with CI&nbsp;0.85, actions cost about 1.4× their base price
+              (1/0.85² ≈ 1.38) — new accounts really do pay <strong>~38% more per action</strong> until
+              behavior is established. That&rsquo;s the cost of being unverified, not a punishment for being
+              new: the system is being honest that <strong>it hasn&rsquo;t had a chance to witness you yet</strong>.
             </p>
             <p className="text-sm text-gray-300 leading-relaxed mt-3">
               A handful of consistent grounding events — same device, same hours, same patterns — typically
@@ -310,7 +315,7 @@ export default function CoherenceIndexPage() {
             <p className="text-xs text-gray-400 leading-relaxed mt-3 italic">
               The framing matters: this isn&rsquo;t &ldquo;trust assumed by default, then taken away if you misbehave.&rdquo;
               It&rsquo;s the opposite — there&rsquo;s nothing to assume yet, and the score climbs as the system
-              actually sees you. You&rsquo;re not being penalized; you just haven&rsquo;t been witnessed yet.
+              actually sees you. You&rsquo;re not being punished; you just haven&rsquo;t been witnessed yet.
             </p>
           </div>
 
