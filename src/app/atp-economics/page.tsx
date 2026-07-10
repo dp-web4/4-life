@@ -319,7 +319,7 @@ export default function ATPEconomicsPage() {
               <ul className="text-xs text-gray-400 space-y-1 ml-4 list-disc">
                 <li><strong className="text-gray-300">Exact transfer-fee percentage.</strong> Currently 5% in <code className="text-amber-300">public/spec.json::ATP.transfer_fee</code>. The mechanism is settled (above); this number is not.</li>
                 <li><strong className="text-gray-300">&ldquo;7× gap&rdquo; framing.</strong> 4-Life&apos;s visualization of the canonical quality-ramp — useful intuition, not a separate Web4 spec constant.</li>
-                <li><strong className="text-gray-300">Recharge-math coefficients.</strong> The form <code className="text-amber-300">confirmer_trust × received_value_fraction</code> is the shape we&apos;re modelling, not the canonical formula.</li>
+                <li><strong className="text-gray-300">Recharge-math coefficients.</strong> The form <code className="text-amber-300">confirmer_trust × received_value_fraction</code> is the shape we&apos;re modelling, not the canonical formula &mdash; here <code className="text-amber-300">received_value_fraction</code> just means the share (0&ndash;1) of a contribution&apos;s value credited to one confirmer, defined in full under &ldquo;Show me the math&rdquo; below.</li>
                 {/* June 11 visitor (browse B) LOW: "recharge over hours to a day" vs "decay over weeks" — two clocks,
                     relationship unclear at this read point (the FAQ below reconciles them, but the visitor met
                     "weeks" here first). One clause in this list's hedged register. */}
