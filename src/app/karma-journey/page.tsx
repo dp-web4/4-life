@@ -705,6 +705,14 @@ export default function KarmaJourneyPage() {
               talent/training/temperament individually, so a reader who recomputes will catch any drift. */}
           <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '0.4rem', fontFamily: 'var(--font-mono)' }}>0.3 &times; Talent + 0.3 &times; Training + 0.4 &times; Temperament</div>
           <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.5, marginBottom: '0.4rem' }}>Temperament counts for the most because talent and training can be tested directly, but behaving consistently under pressure is the hardest thing to fake.</div>
+          {/* Jul-10 visitor MEDIUM: reader hit these fixed weights, then Trust Tensor's "each role
+              weights dimensions differently" (Data Analyst 40/35/25), and couldn't reconcile them.
+              The bridge below attributes the weights to THIS simulation — a fact of the engine
+              (compositeScore() above) — and defers role-specific weighting to /trust-tensor.
+              Do NOT print any other weight ordering here (canonical 0.4/0.3/0.3 vs engine
+              0.3/0.3/0.4 is an escalated canon conflict; the #442 reviewer cut exactly that
+              cross-reference). "This simulation uses fixed weights" is true and canon-neutral. */}
+          <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.5, marginBottom: '0.4rem' }}>These are the fixed weights <em>this simulation</em> uses for every role — a simplification. In the full design, trust is scored per role and each role sets its own weighting: see the <Link href="/trust-tensor" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>Trust Tensor</Link> page.</div>
           {/* Jul-8 visitor HIGH: "Drop below 0.5 and this life ends" contradicted First Contact
               (Alice dips to 0.48, gets restricted, recovers) AND this page's own engine (no raw-0.5
               kill exists; Constrained rebirths start at raw 0.40). Canonical rule sentence below is

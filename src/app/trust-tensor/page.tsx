@@ -612,6 +612,12 @@ export default function TrustTensorPage() {
               Try switching roles in the simulator above. The same tensor scores produce different
               overall trust because each role weights dimensions differently. A leader needs
               Temperament; an analyst needs Talent.
+              {/* Jul-10 visitor MEDIUM: after Karma Journey's single fixed weighting, "each role
+                  weights differently" read as a contradiction. Name the simplification without
+                  printing any weight numbers here (T3 weight ordering is an escalated canon
+                  conflict — don't add orderings to this card). */}
+              {' '}(The <Link href="/karma-journey" className="text-purple-300 hover:text-purple-200 underline">Karma Journey</Link>{' '}
+              simulation simplifies this: it uses one fixed weighting for every role.)
             </p>
           </div>
 
@@ -1102,6 +1108,7 @@ Temperament:  30-day half-life (recent behavior matters most)
                 <p className="mt-3 text-gray-500 text-xs">
                   V3 weights: Valuation 0.30, Veracity 0.35, Validity 0.35. Truth and reasoning outweigh popularity by design.
                 </p>
+                {/* These half-lives are also stated on /value-tensor (Jul-10) — change both or neither. */}
                 <p className="mt-2 text-gray-500 text-xs">
                   V3 decay half-lives: Valuation 14d (market conditions change fast), Veracity 365d (truth record persists), Validity 90d (certifications expire).
                 </p>
