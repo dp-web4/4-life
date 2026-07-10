@@ -127,6 +127,16 @@ export default function ValueTensorPage() {
           <p className="text-sm text-gray-500">
             Notice: Veracity + Validity (0.70 combined) outweigh Valuation (0.30). Web4 rewards truth and rigor over popularity by design.
           </p>
+          {/* Jul-10 visitor LOW: after /trust-tensor's T3 half-lives, this page's silence on decay
+              was conspicuous ("do work scores age, or are they permanent?"). Numbers below must stay
+              in sync with the V3 half-lives at trust-tensor (search "V3 decay half-lives") — change
+              both or neither. */}
+          <p className="text-sm text-gray-500 mt-2">
+            And yes &mdash; like T3, V3 scores <strong className="text-gray-400">decay</strong> rather than
+            sitting frozen: Valuation fades fastest (14-day half-life &mdash; how useful something is depends
+            on conditions that change), Validity in 90 days (certifications and checks go stale), Veracity
+            slowest (365 days &mdash; a truth record persists).
+          </p>
         </section>
 
         {/* Who scores V3 — Jul-9 visitor Unanswered Q7: "Who assigns the V3 score to my work,

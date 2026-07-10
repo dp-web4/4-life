@@ -712,7 +712,7 @@ export default function AlivenessExplainer() {
                   threshold" (society-tunable). */}
               <li><strong>Measurable existence:</strong> Energy &gt; 0, trust &gt; 0.5, consistency coherent (CI &ge; ~0.5)</li>
               <li><strong>Real death:</strong> Energy = 0 means you die immediately</li>
-              <li><strong>Rebirth requires trust:</strong> Only trust ≥ 0.5 entities reborn</li>
+              <li><strong>Rebirth requires trust:</strong> Only entities whose trust held above 0.5 are reborn</li>
               <li><strong>Energy economics:</strong> Spam dies naturally (energy exhaustion)</li>
               <li><strong>Trust accumulates:</strong> Good behavior compounds across lives</li>
             </ul>
@@ -1078,6 +1078,17 @@ export default function AlivenessExplainer() {
             The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;) &mdash;
             effective trust sets your karma tier, not whether you live.
           </p>
+          {/* Jul-10 visitor MEDIUM: "three ways to die but two outcomes — where coherence collapse
+              lands must be inferred." The closure box above (~"Wait — three conditions…") already
+              explains it, but the question re-forms HERE, at the table where CI appears on neither
+              card. This is a separate, non-canonical sentence — do NOT fold it into the guarded
+              canonical rule sentence above it. Keep the hedge ("usually"): the outcome genuinely
+              depends on where raw trust ends up, per the closure box. */}
+          <p style={{ fontSize: "0.8rem", opacity: 0.6, marginTop: "0.5rem", marginBottom: 0, textAlign: "center" }}>
+            And the third condition, a <strong>coherence death</strong>? It takes the same fork:
+            the outcome depends on whether your raw trust held. Since low CI drags trust down with
+            it, a coherence death usually lands on the permanent side.
+          </p>
         </div>
 
         <div className="detail-box" style={{ marginTop: "1rem", background: "rgba(56, 189, 248, 0.08)", border: "1px solid rgba(56, 189, 248, 0.2)" }}>
@@ -1128,7 +1139,7 @@ export default function AlivenessExplainer() {
           <div className="flow-arrow">↓</div>
           <div className="flow-step">
             <strong>Step 2: Eligibility check</strong>
-            <p>Was final T3 ≥ 0.5? (Did you build sufficient trust?)</p>
+            <p>Did final T3 hold above 0.5? (Did you build sufficient trust?)</p>
           </div>
           <div className="flow-arrow">↓</div>
           <div className="flow-step">
@@ -1562,18 +1573,41 @@ export default function AlivenessExplainer() {
       <section>
         <details>
           <summary className="text-xl font-bold cursor-pointer hover:text-sky-400 transition-colors list-none flex justify-between items-center">
-            <h2 style={{ margin: 0 }}>Real Simulation Example: Death and Rebirth</h2>
+            <h2 style={{ margin: 0 }}>Example: Death and Rebirth Across Three Lives</h2>
             <span className="text-gray-500 text-xl">+</span>
           </summary>
           <div style={{ marginTop: "1rem" }}>
+        {/* Jul-10 visitor HIGH: Life 1 "dies at tick 47 with 145 ATP remaining" satisfied NONE of
+            the three death conditions above and stated no cause of death — the visitor reread twice
+            and guessed "round limit? old age?". The guess was right: in the multi-life engines a
+            life that avoids every failure condition ends when its bounded run does, recorded as
+            termination_reason = "natural" (ep_five_domain_multi_life.py; see the shipped runs in
+            public/ep_five_domain_multi_life_results.json — lives end "natural" with ATP remaining).
+            The paragraph below states that fourth ending explicitly. The specific numbers in this
+            example are hand-authored illustration, not a shipped run — hence "illustrative" and the
+            heading no longer claiming "Real Simulation Example". Keep it honest: don't re-add a
+            provenance claim these numbers can't back. */}
+        <p style={{ fontSize: "0.9rem", color: "#9ca3af" }}>
+          The three death conditions above are the ways a life can end <em>early</em>. The
+          multi-life simulations add one more ending: every life runs on a <strong>bounded
+          span</strong>, and an agent that avoids all three failure conditions simply reaches the
+          end of its run — the engines record this as a <strong>&ldquo;natural&rdquo; death</strong>,
+          with ATP and trust still in hand. That&apos;s the ending this example illustrates
+          (numbers are illustrative, patterned on those runs), and it&apos;s what makes karma
+          visible: what you die holding shapes what the next life starts with.
+        </p>
         <div className="detail-box">
           <h4>Life 1: Learning Phase</h4>
           <ul>
             <li>Born with 100 ATP, T3 = 0.5 (neutral)</li>
             <li>Takes risky actions, some succeed, some fail</li>
             <li>Builds trust through successes: T3 climbs to 0.68</li>
-            <li>Dies at tick 47 with 145 ATP remaining</li>
-            <li><strong>Rebirth eligible:</strong> T3 = 0.68 ≥ 0.5 ✓</li>
+            <li>Reaches the end of its bounded run at tick 47 — a natural death, with 145 ATP
+            still in hand (no failure condition triggered)</li>
+            {/* Endpoint hygiene: don't print "≥ 0.5" (or ">") here — whether exactly 0.50 qualifies
+                is an escalated canon question (#444 rejection), and this page's own predicates use
+                trust > 0.5. At 0.68 the comparison is safely above the line either way. */}
+            <li><strong>Rebirth eligible:</strong> T3 = 0.68, comfortably above the 0.5 line ✓</li>
           </ul>
 
           <h4 style={{ marginTop: "1.5rem" }}>Life 2: Advantage Phase</h4>
@@ -1582,8 +1616,8 @@ export default function AlivenessExplainer() {
             <li>Trust carries forward: T3 = 0.68</li>
             <li>More conservative, leverages karma bonus</li>
             <li>Survives 89 ticks (longer than Life 1)</li>
-            <li>Dies with T3 = 0.81 (even higher trust)</li>
-            <li><strong>Rebirth eligible:</strong> T3 = 0.81 ≥ 0.5 ✓</li>
+            <li>Reaches the end of its run with T3 = 0.81 (even higher trust) — natural death again</li>
+            <li><strong>Rebirth eligible:</strong> T3 = 0.81, comfortably above the 0.5 line ✓</li>
           </ul>
 
           <h4 style={{ marginTop: "1.5rem" }}>Life 3: Mastery Phase</h4>
@@ -1591,7 +1625,7 @@ export default function AlivenessExplainer() {
             <li>Reborn with even more ATP</li>
             <li>High trust (0.81) enables coordination</li>
             <li>Cross-life patterns guide optimal decisions</li>
-            <li>Survives indefinitely (sustainable balance)</li>
+            <li>Never approaches a death condition again (sustainable balance, run after run)</li>
           </ul>
 
           <p style={{ marginTop: "1.5rem" }}>
@@ -1627,7 +1661,10 @@ export default function AlivenessExplainer() {
         <div className="detail-box">
           <ul>
             <li><strong>Trust boundary:</strong> T3 = 0.5 (aliveness threshold)</li>
-            <li><strong>Rebirth eligibility:</strong> T3 ≥ 0.5 (society acceptance)</li>
+            {/* Endpoint hygiene (Jul-10): was "T3 ≥ 0.5", which asserts that exactly 0.50 qualifies —
+                an escalated canon question (#444 rejection); this page's rebirthEligible predicate
+                uses trust > 0.5. Stay endpoint-silent: "held above". */}
+            <li><strong>Rebirth eligibility:</strong> raw T3 held above 0.5 (society acceptance)</li>
             <li><strong>High trust:</strong> T3 &gt; 0.7 (enables advanced cooperation)</li>
             <li><strong>Trust collapse:</strong> T3 &lt; 0.3 (society rejection, permanent death likely)</li>
           </ul>
@@ -1919,7 +1956,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
             </li>
             <li>
               <strong>Death is meaningful:</strong> Not a trivial ban. Real loss. Rebirth requires
-              trust ≥ 0.5. Permanent death if society rejects.
+              trust that held above 0.5. Permanent death if society rejects.
             </li>
             <li>
               <strong>0.5 threshold by design:</strong> The midpoint where net-positive behavior
@@ -1973,7 +2010,7 @@ CI = (spatial × capability × temporal × relational) ** 0.25`}
               </p>
               <ul style={{listStyle: 'disc', paddingLeft: '1.5rem'}}>
                 <li><strong>Energy death</strong> (ATP reaches 0): Most common. Happens when an agent spends
-                more than they earn. Rebirth is possible if trust &ge; 0.5 — karma carries forward automatically.</li>
+                more than they earn. Rebirth is possible if trust held above 0.5 — karma carries forward automatically.</li>
                 <li><strong>Trust death</strong> (T3 drops below 0.5): Rarer, more severe. Happens from sustained
                 bad behavior. If trust is below 0.5, society rejects rebirth — this is permanent death.</li>
               </ul>
