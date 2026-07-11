@@ -82,7 +82,11 @@ const CONCEPTS: Record<string, Entry> = {
   },
   "stack": {
     tier: "running",
-    line: "this isn't only theory — the trust layer (hestia) and a Web4 society (the hub) are public, AGPL code you can run yourself — though there's no live network with real users yet.",
+    // Jul-10 visitor LOW (fired #431 contingency): a reader who never reaches /running-now and
+    // doesn't hover skimmed "the trust layer (hestia)" past — the whole site uses Term(gloss)
+    // order ("Energy Budget (ATP)"), so a leading gloss with the term in parens reads as noise.
+    // Flip to the site-standard term-first form so the definition lands non-hover, at first read.
+    line: "this isn't only theory — hestia (the trust layer) and the hub (a runnable Web4 society) are public, AGPL code you can run yourself — though there's no live network with real users yet.",
   },
 };
 
