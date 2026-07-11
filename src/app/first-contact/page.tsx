@@ -331,6 +331,7 @@ export default function FirstContactPage() {
                   <div className="text-sm font-bold mb-1">Recover</div>
                   <div className="text-xs text-gray-400 mb-2">Consistency rebuilds</div>
                   <div className="flex gap-1 text-xs">
+                    <span className="bg-emerald-900/40 text-emerald-300 px-1.5 py-0.5 rounded">+ATP</span>
                     <span className="bg-emerald-900/40 text-emerald-300 px-1.5 py-0.5 rounded">↑ 0.62</span>
                   </div>
                 </div>
