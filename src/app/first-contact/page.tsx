@@ -62,7 +62,7 @@ export default function FirstContactPage() {
     { tick: 12, action: "Quality slips", atp_before: 35, atp_after: 12, trust_before: 0.58, trust_after: 0.51, reason: "Rushed work gets poor reviews. ATP drains, trust falls. The crisis spiral begins.", isWarning: true },
     { tick: 13, action: "ATP exhaustion", atp_before: 12, atp_after: 0, trust_before: 0.51, trust_after: 0.51, reason: "No energy left to contribute. ATP hits zero — Alice's entity dies. But her record persists.", isWarning: true },
     // Rebirth with karma carry-forward
-    { tick: 14, action: "Rebirth", atp_before: 0, atp_after: 112, trust_before: 0.51, trust_after: 0.54, reason: "New life begins! Good karma carries forward: 112 ATP (she earned more than she spent in her first life — that surplus becomes her starting bonus) and 0.54 trust (above the 0.50 neutral baseline). Past lessons remembered.", isSuccess: true },
+    { tick: 14, action: "Rebirth", atp_before: 0, atp_after: 112, trust_before: 0.51, trust_after: 0.54, reason: "New life begins! Good karma carries forward: 112 ATP (a starting bonus above the usual 100 — the trust she built carries forward as karma) and 0.54 trust (above the 0.50 neutral baseline). Past lessons remembered.", isSuccess: true },
     { tick: 15, action: "Wiser choices", atp_before: 112, atp_after: 104, trust_before: 0.54, trust_after: 0.57, reason: "Armed with experience, Alice paces herself — focused quality over volume. Trust rises faster than her first life.", isSuccess: true },
   ];
 
@@ -156,7 +156,7 @@ export default function FirstContactPage() {
                 <strong style={{ color: '#f87171' }}>Step 6 — Death:</strong> Alice overcommits, quality slips, ATP drains to zero. Her entity dies &mdash; but her record persists.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#34d399' }}>Step 7 — Rebirth:</strong> Good karma carries forward. Alice is reborn with 112 ATP (her lifetime surplus — she earned more than she spent) and 0.54 trust (above the 0.50 neutral baseline). Past lessons compound.
+                <strong style={{ color: '#34d399' }}>Step 7 — Rebirth:</strong> Good karma carries forward. Alice is reborn with 112 ATP (a starting bonus above the usual 100 &mdash; the trust she built carries forward as karma) and 0.54 trust (above the 0.50 neutral baseline). Past lessons compound.
               </p>
             </div>
 
@@ -350,13 +350,18 @@ export default function FirstContactPage() {
                   but the death/karma explanation lived only in the noscript block and inside the
                   step-gated walkthrough — skimmers (and the TL;DR's "discover what death means
                   here" promise) left with the question open. One static sentence closes it.
-                  Canon: +12 = lifetime surplus (112 = 100 + 12), per this page's own Act-5 data. */}
+                  Canon: +12 = karma bonus (112 = 100 + 12) reflecting the trust/reputation Alice built,
+                  carried forward per karma-journey's karma-tier model. It is NOT an ATP spending surplus:
+                  Alice dies at ATP=0 by exhaustion (tick 13), earning 37 and spending 137 — she spent MORE
+                  than she earned. (Jul-11 numbers-integrity fix: the old "lifetime surplus / earned more than
+                  spent" framing contradicted the page's own interactive ledger + Act-5 ATP=0 death. Keep the
+                  bonus framed as karma, never as a spending surplus.) */}
               <p className="text-sm text-gray-400 mb-3">
                 <strong className="text-gray-300">Spoiler, so you&apos;re not left hanging:</strong>{' '}
                 &ldquo;death&rdquo; here means Alice&apos;s <em>standing</em> is suspended &mdash; she can&apos;t
                 act until rebirth &mdash; not that her account is deleted; her identity and history persist.
-                The <span className="text-emerald-300">+12 bonus</span> is the value she earned beyond what she
-                spent in her first life, carried forward as karma into her next one.{' '}
+                The <span className="text-emerald-300">+12 bonus</span> is karma &mdash; a head start earned by the
+                trust and reputation she built in her first life, carried forward into her next one.{' '}
                 <Link href="/aliveness" className="text-sky-400 hover:text-sky-300 underline">How living and dying work &rarr;</Link>
               </p>
 
@@ -727,7 +732,7 @@ export default function FirstContactPage() {
                 <p className="text-gray-300 leading-relaxed mb-4">
                   But Alice had built real value in her first life. Her karma — the accumulated record of quality contributions —
                   entitled her to rebirth with advantages. She started her new life with <strong className="text-emerald-400">112 ATP</strong> (everyone
-                  starts with 100, but Alice&apos;s lifetime surplus — she earned more ATP than she spent — carried forward as a 12 ATP bonus)
+                  starts with 100, but the trust she built carried forward as a 12 ATP karma bonus)
                   and <strong className="text-emerald-400">0.54 trust</strong> (above the 0.50 neutral starting point, reflecting her proven track record).
                 </p>
                 <p className="text-gray-300 leading-relaxed">
