@@ -600,7 +600,7 @@ export default function ATPEconomicsPage() {
             Across a hundred tasks, Sam burns through their budget and dies of energy starvation. Hannah barely loses any and thrives.
           </p>
           <p className="text-gray-500 text-xs mt-2">
-            That&apos;s where &ldquo;~7x&rdquo; comes from: just-passing the 30% threshold returns almost nothing, while consistently above the 70% full-payout cap returns nearly everything.
+            That&apos;s where &ldquo;~7x&rdquo; comes from: just-passing the 30% threshold returns almost nothing, while staying consistently well above 70% returns most of it.
           </p>
           {/* June 11 visitor HIGH (browse B): even Hannah nets −8 here, which read as "the best
               you can do is lose slowly." The negative nets are an artifact of this example's

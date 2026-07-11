@@ -781,7 +781,7 @@ export default function TrustTensorPage() {
                 <p>Temperament: <span className="text-green-400">91%</span> (her reliability carries over naturally)</p>
               </div>
               <p className="text-gray-300 mt-3 text-sm italic">
-                Role-weighted trust: 76% &mdash; trusted, but still growing into this role.
+                Role-weighted trust: 74% &mdash; trusted, but still growing into this role.
               </p>
             </div>
 
