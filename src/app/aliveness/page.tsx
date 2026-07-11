@@ -1089,6 +1089,20 @@ export default function AlivenessExplainer() {
             the outcome depends on whether your raw trust held. Since low CI drags trust down with
             it, a coherence death usually lands on the permanent side.
           </p>
+          {/* Jul-11 visitor MEDIUM: the page teaches energy-death = recoverable and trust-death =
+              permanent, but the 🔋 card promises "Recoverable" unconditionally — so it never answers
+              the obvious collision: ATP=0 AND raw trust<0.5 at the same moment. Entailed, not a canon
+              call: the on-page SurvivalGame keys rebirth off trust alone (rebirthEligible = trust > 0.5,
+              independent of cause), and First Contact already states it (L720, "Alice got lucky…").
+              Frame as "recoverable only when trust held" — NOT "trust checked first" (no temporal
+              ordering exists) and endpoint-silent (never assert exactly-0.50). */}
+          <p style={{ fontSize: "0.8rem", opacity: 0.6, marginTop: "0.5rem", marginBottom: 0, textAlign: "center" }}>
+            And if energy and trust give out <em>together</em> &mdash; ATP reaches 0 while raw trust has
+            already sunk below 0.5? Same fork again: rebirth is offered only to a life whose trust held,
+            so this collision lands on the <strong>permanent</strong> side. The 🔋 card&apos;s
+            &ldquo;recoverable&rdquo; is really <em>recoverable if trust survived</em> &mdash; running out
+            of energy earns a rebirth only when trust stayed above the line.
+          </p>
         </div>
 
         <div className="detail-box" style={{ marginTop: "1rem", background: "rgba(56, 189, 248, 0.08)", border: "1px solid rgba(56, 189, 248, 0.2)" }}>

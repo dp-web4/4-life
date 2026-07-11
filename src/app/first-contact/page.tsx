@@ -252,7 +252,7 @@ export default function FirstContactPage() {
                     Do NOT write "at or above 0.50" — whether exactly-0.50 counts as alive/full-access
                     is an unresolved canon call (> vs >= in the aliveness engines); don't assert the
                     endpoint either way. */}
-                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> — her <em>raw</em> reputation, on a <span className="text-gray-200">0.00&ndash;1.00</span> scale. Starts neutral at <span className="text-gray-200">0.50</span>. Above 0.50: full access. Below 0.50: features get restricted until she rebuilds it &mdash; and if she <em>stays</em> below, that same line becomes fatal.</li>
+                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> — her <em>raw</em> reputation, on a <span className="text-gray-200">0.00&ndash;1.00</span> scale. Starts neutral at <span className="text-gray-200">0.50</span>. Above 0.50: full access. Below 0.50: features get restricted until she rebuilds it &mdash; and if she <em>stays</em> below, that same line becomes fatal &mdash; a sustained slide, not one dip.</li>
               </ul>
             </div>
 
