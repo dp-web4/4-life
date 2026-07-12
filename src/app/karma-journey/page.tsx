@@ -823,8 +823,8 @@ export default function KarmaJourneyPage() {
               // Consistency was the only stat card with NO hint, so "low consistency tax" (1.4x) hit
               // players unexplained — the why lives in the intro prose + /coherence-index#why-ci-starts-low;
               // this is the one-sentence-at-the-stats-panel fix the visitor asked for.
-              { label: 'Trust (Raw)', value: baseComp.toFixed(3), color: baseComp > 0.7 ? '#6ee7b7' : baseComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `keep above 0.5 — a dip below is a warning, staying below is permanent` },
-              { label: 'Trust (Eff.)', value: effComp.toFixed(3), color: effComp > 0.7 ? '#6ee7b7' : effComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `raw × CI² — karma tier, not the 0.5 survival line` },
+              { label: 'Trust (Raw)', value: baseComp.toFixed(3), color: baseComp > 0.7 ? '#6ee7b7' : baseComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `decides survival — keep above 0.5; a dip below is a warning, staying below is permanent` },
+              { label: 'Trust (Eff.)', value: effComp.toFixed(3), color: effComp > 0.7 ? '#6ee7b7' : effComp > 0.4 ? '#fde68a' : '#fca5a5', hint: `raw × CI² — decides karma tier, not the 0.5 survival line` },
               { label: 'Energy', value: `${currentLife.atp}`, color: currentLife.atp > 50 ? '#6ee7b7' : currentLife.atp > 20 ? '#fde68a' : '#fca5a5' },
               { label: 'Consistency', value: currentLife.ci.toFixed(2), color: currentLife.ci > 0.8 ? '#6ee7b7' : currentLife.ci > 0.5 ? '#fde68a' : '#fca5a5', hint: `starts at 0.85 — no track record yet, so actions cost ~1.4x until this climbs past 0.9` },
             ].map(stat => (
