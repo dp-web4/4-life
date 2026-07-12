@@ -172,7 +172,7 @@ export default function TrustTensorPage() {
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Web4 doesn&apos;t reduce trust to a single number. Instead, it uses{" "}
           <strong className="text-sky-400">Trust Tensors (T3)</strong> &mdash;
-          three-dimensional vectors that capture{" "}
+          three numbers that capture{" "}
           <strong>Talent</strong>, <strong>Training</strong>, and <strong>Temperament</strong>,
           always in the context of a specific role.
         </p>

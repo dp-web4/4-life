@@ -235,7 +235,8 @@ export default function FirstContactPage() {
               and <strong className="text-gray-400">the hub</strong> (the green banner) are the{" "}
               <em>separate, real</em> system that simulation models — public AGPL code you could run
               yourself (though there&apos;s no live network of real users to join yet), not something
-              executing inside this walkthrough.
+              executing inside this walkthrough. You don&apos;t need to track these two names to follow
+              Alice&apos;s story — they&apos;re here only so the green banner above isn&apos;t a mystery.
             </p>
 
             {/* Two-number anchor moved ABOVE the concept grid — May 15 visitor LOW:
