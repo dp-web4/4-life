@@ -280,7 +280,7 @@ export const terms: Record<string, TermDefinition> = {
   },
 
   // Deployed tools — NOT canonical Web4 acronyms, but the two project/software names
-  // ("hestia", "the hub") the site's green "Running now" banner references. Defined here
+  // ("hestia", "the hub") the site's green "In the real world" banner (InProduction) references. Defined here
   // so the banner can hover-gloss them inline on every page. Describe the PUBLIC runnable
   // tools only; keep tier honesty (hestia = running today, the hub = runnable reference).
   hestia: {

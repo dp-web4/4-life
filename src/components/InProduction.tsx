@@ -90,6 +90,15 @@ const CONCEPTS: Record<string, Entry> = {
   },
 };
 
+// Jul-13 visitor MEDIUM ("fix first"): the header read "Running Running nowthis isn't only
+// theory…" on every page carrying this banner. Two defects, one render: (1) the MaturityBadge
+// label for tier="running" is the word "Running", and the header repeated it as "Running now";
+// (2) header/body/link were flex siblings with no whitespace text nodes, so the visual gap was
+// CSS-only and DOM text / copy-paste jammed the words together ("nowthis"). Fix: tier-neutral
+// header ("In the real world:") so the badge alone carries the tier — which also stops
+// reference-tier entries being captioned "Running now" (over-claiming; see MaturityBadge's
+// tier-honesty comment) — and normal inline flow with explicit {" "} spaces between the parts.
+// The /running-now hook lives in the "See what's deployed →" link, unchanged.
 export default function InProduction({
   concept = "stack",
 }: {
@@ -97,11 +106,11 @@ export default function InProduction({
 }) {
   const c = CONCEPTS[concept] ?? CONCEPTS["stack"];
   return (
-    <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3 my-6 text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
-      <span className="inline-flex items-center gap-2 font-semibold text-emerald-300">
-        <MaturityBadge tier={c.tier} /> Running now
-      </span>
-      <span className="text-gray-300">{glossLine(c.line)}</span>
+    <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3 my-6 text-sm leading-relaxed">
+      <span className="inline-flex items-center gap-2 align-middle font-semibold text-emerald-300">
+        <MaturityBadge tier={c.tier} /> In the real world:
+      </span>{" "}
+      <span className="text-gray-300">{glossLine(c.line)}</span>{" "}
       <Link
         href="/running-now"
         className="text-emerald-400 underline hover:text-emerald-300 whitespace-nowrap"

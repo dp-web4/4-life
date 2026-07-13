@@ -602,6 +602,12 @@ export default function KarmaJourneyPage() {
             ~80% sure". Bridge the paradox here, pointing at the existing contrast cards below. */}
         (How can a tier sit below the 0.5 survival line? Survival
         is judged on <em>raw</em> trust; which tier you land in is judged on <em>effective</em> trust — raw × CI²,
+        {/* Jul-13 visitor LOW: the formula's FIRST appearance is right here, but the why-squared
+            rationale lived only in the callout ~150 lines down ("explained lower down, but not at
+            first sight — 'squared' felt arbitrary in the moment"). One qualitative clause + jump
+            link; the arithmetic stays out of this wall (June-19 guardrail) and the full rationale
+            stays in the callout (#why-squared). */}
+        squared so inconsistency compounds against you (<a href="#why-squared" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>why squared, below</a>),
         contrasted in the two cards below — which poor coherence can drag far below your raw score.
 <em>You can be reborn on raw <strong>0.55</strong> yet land Constrained on effective <strong>0.27</strong> when consistency is low.</em>){' '}
         {/* June 12 visitor MEDIUM (browse B): a reader doing the arithmetic at the STARTING CI
@@ -749,8 +755,8 @@ export default function KarmaJourneyPage() {
           the text as fine print rather than raising its visual weight. Promote to a first-class callout:
           plain-English one-sentence answer leading in bold body type so scanners get it without parsing
           the cube/linear comparison. */}
-      <div style={{
-        marginBottom: '1.5rem', maxWidth: '700px',
+      <div id="why-squared" style={{
+        marginBottom: '1.5rem', maxWidth: '700px', scrollMarginTop: '5rem',
         padding: '0.85rem 1.1rem', borderRadius: '0.5rem',
         background: 'rgba(253, 230, 138, 0.05)', borderLeft: '3px solid rgba(253, 230, 138, 0.4)',
       }}>
