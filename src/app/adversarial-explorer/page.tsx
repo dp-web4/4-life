@@ -239,6 +239,12 @@ This is the **Circle of Friends** - a collusion ring where trust is manufactured
   },
 
   // === ECONOMIC ATTACKS ===
+  // GUARD: ATP is a budget, not a currency — no market, no price, no buying or
+  // selling it (canonical on /atp-economics and /why-web4). Economic attacks must
+  // describe scarcity in ALLOCATION terms (the society's pool is finite, minted at
+  // formation) — never market terms (prices, liquidity, value appreciation).
+  // Jul-14 visitor's top unanswered question was "Is ATP money or not?" because
+  // pages disagreed; this page must answer the same way the canonical pages do.
   {
     id: 'atp-hoarding',
     name: 'ATP Hoarding',
@@ -249,23 +255,23 @@ This is the **Circle of Friends** - a collusion ring where trust is manufactured
     description: 'Accumulate ATP without spending, creating artificial scarcity.',
     narrative: `The Miser earns ATP through legitimate work but never spends it. They hoard energy, withdrawing it from circulation.
 
-"Why is this an attack?" Because ATP is a currency of attention. When it's hoarded, there's less available for legitimate operations. Prices rise. Small participants can't afford to act. The market seizes up.
+"Why is this an attack?" Because a society's ATP pool is finite — minted when the society forms, anchored to the real resources members bring. Energy the Miser sits on is energy the society can't allocate to anyone else. Legitimate work goes unfunded. Small participants can't get the energy to act.
 
 **The irony:** The Miser is following the rules. They're earning legitimately and simply... not spending. Yet their behavior harms the system.
 
-**Why Web4 handles it:** ATP has natural decay. Hoarded ATP loses value over time. The system incentivizes circulation over accumulation.`,
+**Why Web4 handles it:** ATP has natural decay. A hoard drains over time. The system incentivizes circulation over accumulation.`,
     mechanics: [
       'Earn ATP through legitimate high-value contributions',
       'Minimize spending by avoiding all optional operations',
       'Accumulate surplus far beyond operational needs',
-      'Wait for scarcity to drive up ATP value',
-      'Eventually spend at inflated prices or exit with hoard'
+      'Sit on the surplus, shrinking what the society can allocate to others',
+      'Keep full freedom to act while everyone else runs dry'
     ],
     detectors: ['D3_economic', 'D4_attention'],
     defenses: [
       {
         name: 'ATP Decay',
-        mechanism: 'Unspent ATP loses small percentage per cycle',
+        mechanism: 'Idle ATP drains over time (decay rates are society-tuned, not fixed constants)',
         effectiveness: 'strong',
         narrative: 'Money under the mattress doesn\'t grow. ATP under the mattress shrinks. The system penalizes hoarding by design.'
       },
@@ -276,10 +282,10 @@ This is the **Circle of Friends** - a collusion ring where trust is manufactured
         narrative: 'To remain in good standing, you must participate. Hoarding excludes you from governance and premium operations.'
       },
       {
-        name: 'Market Making',
-        mechanism: 'Federation provides liquidity to prevent manipulation',
+        name: 'Pool Redistribution',
+        mechanism: 'Transfer fees route to a community redistribution pool',
         effectiveness: 'moderate',
-        narrative: 'When someone tries to corner the market, the system provides counterweight. One miser can\'t create scarcity.'
+        narrative: 'Energy keeps flowing back: every peer transfer routes a fee into a community redistribution pool, and pool changes are witnessed governance events. One miser can\'t starve the society.'
       }
     ],
     effectiveness: 'limited'
