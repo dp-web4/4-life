@@ -47,7 +47,12 @@ export default function WhyWeb4Page() {
           <strong className="text-gray-200">honest Q&amp;A</strong> (optional — skeptics&apos; questions, answered, collapsed by topic).
           Stop reading at any point — each section stands on its own. If you only have 2 minutes, try{" "}
           <Link href="/tldr" className="text-sky-400 hover:underline">the 2-minute TL;DR</Link> instead.
-          {" "}New to the acronyms below (ATP, LCT, T3, MRH…)? You can read this page cold. Or, if you&apos;d rather meet them inside a story first, {" "}
+          {/* Jul-13 visitor MEDIUM (acronym density, structural pass): the parenthetical
+              "(ATP, LCT, T3, MRH…)" was the page's one remaining naked acronym cluster — four
+              letters fired before any is introduced. Dropped: each acronym is introduced with its
+              plain-English name first in the cards below, so the letters anchored nothing here.
+              Keep #453's framing (read-cold permission + First Contact as OPTIONAL story path). */}
+          {" "}New to the acronyms below? You can read this page cold &mdash; every one of them is introduced with its plain-English name first. Or, if you&apos;d rather meet them inside a story first, {" "}
           <Link href="/first-contact" className="text-sky-400 hover:underline">First Contact</Link>
           {" "}introduces each one the moment it comes up.
         </div>

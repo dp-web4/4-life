@@ -133,7 +133,16 @@ export default function HomePage() {
           May 12 visitor LOW: "All 5 acronyms appear in the 'key ideas' grid before any one is explained" —
           drop the inline (LCT)/(ATP)/etc. parentheticals from each line so the grid actually reads as
           plain English; consolidate the shorthands into one compact pointer at the bottom for visitors
-          who want recognition anchors. Order matches the bullet list above (LCT, ATP, T3, MRH, CI). */}
+          who want recognition anchors. Order matches the bullet list above (LCT, ATP, T3, MRH, CI).
+          Jul 13 visitor MEDIUM (recurring acronym-density, gate-fired structural pass) DELIBERATELY
+          SUPERSEDES the May-12 consolidated pointer: two months of browses showed the positional
+          footer transmitted as "a cluster of acronyms with only a promise", and the MRH↔Neighborhood
+          mapping never reached a visitor (Jul-13 L2). The acronyms return per-line but TRAILING and
+          muted — the plain-English gloss comes FIRST within each line, so May-12's underlying
+          constraint ("explanation before acronym") still holds; only the failed positional-mapping
+          mechanism is retired. This differs structurally from the pre-May-12 form (acronyms LED each
+          line back then). Keep the shorthands trailing and muted — if they ever lead or dominate,
+          May-12's complaint literally recurs. */}
       <section style={{
         maxWidth: '36rem',
         margin: '0 auto',
@@ -163,14 +172,14 @@ export default function HomePage() {
           color: 'var(--color-text-secondary)',
           lineHeight: 1.5,
         }}>
-          <li><strong style={{ color: 'var(--color-text)' }}>Identity</strong> — your hardware-bound digital ID</li>
-          <li><strong style={{ color: 'var(--color-text)' }}>Energy</strong> — budget you spend to act</li>
-          <li><strong style={{ color: 'var(--color-text)' }}>Trust</strong> — your three-dimensional trust score</li>
+          <li><strong style={{ color: 'var(--color-text)' }}>Identity</strong> — your hardware-bound digital ID <span style={{ color: 'var(--color-text-muted)', fontSize: '0.9em' }}>(LCT)</span></li>
+          <li><strong style={{ color: 'var(--color-text)' }}>Energy</strong> — budget you spend to act <span style={{ color: 'var(--color-text-muted)', fontSize: '0.9em' }}>(ATP)</span></li>
+          <li><strong style={{ color: 'var(--color-text)' }}>Trust</strong> — your three-dimensional trust score <span style={{ color: 'var(--color-text-muted)', fontSize: '0.9em' }}>(T3)</span></li>
           {/* Jul-9 visitor MEDIUM: "3 hops max" read as a hard protocol rule, then collided with the MRH
     Explorer's 4-hop rows. No engine implements a hop cap — the limit is trust decaying to noise,
     so say that. Keep the fade framing here in sync with tldr's MRH line and terms.ts. */}
-          <li><strong style={{ color: 'var(--color-text)' }}>Neighborhood</strong> — who can reach you (reach fades within ~3 hops)</li>
-          <li><strong style={{ color: 'var(--color-text)' }}>Consistency</strong> — does your behavior add up?</li>
+          <li><strong style={{ color: 'var(--color-text)' }}>Neighborhood</strong> — who can reach you (reach fades within ~3 hops) <span style={{ color: 'var(--color-text-muted)', fontSize: '0.9em' }}>(MRH)</span></li>
+          <li><strong style={{ color: 'var(--color-text)' }}>Consistency</strong> — does your behavior add up? <span style={{ color: 'var(--color-text-muted)', fontSize: '0.9em' }}>(CI)</span></li>
         </ul>
         <p style={{
           margin: '0.55rem 0 0',
@@ -178,7 +187,7 @@ export default function HomePage() {
           color: 'var(--color-text-muted)',
           textAlign: 'center',
         }}>
-          Shorthand: LCT, ATP, T3, MRH, CI — full definitions in the glossary (<strong>Aa</strong>, bottom-left).
+          Full definitions in the glossary (<strong>Aa</strong>, bottom-left).
         </p>
       </section>
 

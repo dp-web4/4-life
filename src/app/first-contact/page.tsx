@@ -217,7 +217,7 @@ export default function FirstContactPage() {
                 In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> — play, pause, scrub, replay — and watch trust and reputation respond in real time. This is a hands-on walkthrough, not a video — and a model of a <em>proposed</em> system: the rules running here are real, but Web4 itself is active research with nothing to sign up for yet. Real rules, shown by simulation — not a demo of a shipped product.
               </p>
               <p className="text-sm text-gray-500 leading-relaxed italic">
-                Haven&apos;t read anything else on this site yet? You don&apos;t need to &mdash; this page starts from zero. Below: the two numbers to watch, then a quick reference map of the four ideas (no need to memorize them — each is explained in the story the moment Alice uses it) and the five-act arc. Then click <span className="not-italic font-semibold text-gray-300">Start</span> to drive Alice yourself — no account, no sign-in.
+                Haven&apos;t read anything else on this site yet? You don&apos;t need to &mdash; this page starts from zero. Below: the two numbers to watch, then an optional reference map of the four ideas (collapsed — no need to memorize them; each is explained in the story the moment Alice uses it) and the five-act arc. Then click <span className="not-italic font-semibold text-gray-300">Start</span> to drive Alice yourself — no account, no sign-in.
               </p>
             </div>
 
@@ -257,10 +257,17 @@ export default function FirstContactPage() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-8">
-              <h2 className="text-2xl font-bold mb-1">The four ideas behind it</h2>
-              <p className="text-sm text-gray-400 mb-4">A reference map, not a quiz — you don&apos;t need to memorize these. Each one is explained in the story the moment Alice runs into it. Skim now, or skip straight to <span className="font-semibold text-gray-300">Start</span> and come back.</p>
-              <div className="grid md:grid-cols-2 gap-6">
+            {/* Jul-13 visitor MEDIUM (recurring acronym density, structural pass): this map
+                front-loaded ATP/T3/LCT/CI shorthand BEFORE the story, contradicting the page's own
+                promise that each idea is explained the moment Alice uses it. May-15 reordered (the
+                two-number anchor above stays leading and visible); Jul-13 recurred the vocab wall →
+                default-collapsed. The cards inside are unchanged — don't reword the glosses. */}
+            <details className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-8 group">
+              <summary className="cursor-pointer list-none">
+                <h2 className="text-2xl font-bold mb-1"><span className="text-sm text-sky-400 inline-block transition-transform group-open:rotate-90 mr-2 align-middle">▶</span>The four ideas behind it <span className="text-sm text-gray-500 font-normal">(optional)</span></h2>
+                <span className="text-sm text-gray-400 block">A reference map, not a quiz — you don&apos;t need to memorize these. Each one is explained in the story the moment Alice runs into it. Open for a preview, or skip straight to <span className="font-semibold text-gray-300">Start</span> and come back.</span>
+              </summary>
+              <div className="grid md:grid-cols-2 gap-6 mt-5">
                 <div>
                   <Link href="/atp-economics" className="text-sky-400 font-semibold mb-2 block hover:underline">🔋 Energy Budget</Link>
                   <p className="text-gray-400">
@@ -286,7 +293,7 @@ export default function FirstContactPage() {
                   </p>
                 </div>
               </div>
-            </div>
+            </details>
 
             {/* Storyboard: 5-beat preview of Alice's full arc so visitors see what they're signing up for */}
             <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/30 border border-sky-800/30 rounded-xl p-6">
