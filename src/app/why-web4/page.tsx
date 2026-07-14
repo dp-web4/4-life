@@ -2872,11 +2872,15 @@ export default function WhyWeb4Page() {
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
+              {/* Jul-14 canon conformance: Talent MUST NOT decay through inactivity — web4 protocol
+                  invariant (core-spec/t3-v3-tensors.md §2.3, test vector t3v3-012). Do NOT reintroduce
+                  a Talent half-life; siblings: youthful-mistakes FAQ below + trust-tensor decay section. */}
               <p>
-                Trust decays gradually, not suddenly. Each dimension has its own <strong>half-life</strong>:
+                Trust decays gradually, not suddenly — and not all of it decays. Each dimension has
+                its own rule:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>Talent</strong> (skill): 365-day half-life — decays very slowly</li>
+                <li><strong>Talent</strong> (skill): no decay — demonstrated aptitude is treated as durable</li>
                 <li><strong>Training</strong> (knowledge): 180-day half-life — moderate decay</li>
                 <li><strong>Temperament</strong> (recent behavior): 30-day half-life — decays fastest</li>
               </ul>
@@ -2893,17 +2897,18 @@ export default function WhyWeb4Page() {
               <p className="border-t border-gray-700 pt-3 mt-3">
                 <strong className="text-gray-100">What about 6 months or longer?</strong> After 6 months,
                 Temperament (30-day half-life) is essentially zeroed &mdash; ~6 half-lives means only ~1.5%
-                remains. Training (180-day half-life) drops to about 50%. But Talent (365-day half-life)
-                is still at ~70%. Your skill reputation survives; your &ldquo;are they still engaged?&rdquo;
-                reputation doesn&apos;t. This is intentional &mdash; if someone hasn&apos;t been active
+                remains. Training (180-day half-life) drops to about 50%. But Talent doesn&apos;t decay
+                at all &mdash; it&apos;s exactly where you left it. Your skill reputation survives; your
+                &ldquo;are they still engaged?&rdquo; reputation doesn&apos;t. This is intentional &mdash; if someone hasn&apos;t been active
                 in 6 months, the system <em>should</em> be uncertain about their current reliability.
               </p>
               <p>
-                There&apos;s no &ldquo;hiatus&rdquo; mechanism to freeze scores. Trust decay reflects the
-                community&apos;s genuine uncertainty about absent members. But recovery is fast:
-                Temperament&apos;s 30-day half-life works in both directions. A few weeks of consistent
-                activity rebuilds what took months to lose. You don&apos;t start from zero &mdash; your
-                Talent history provides a foundation that helps you recover faster than a newcomer.
+                There&apos;s no &ldquo;hiatus&rdquo; mechanism to freeze Training or Temperament. Their
+                decay reflects the community&apos;s genuine uncertainty about absent members. But recovery
+                is fast: Temperament&apos;s 30-day half-life works in both directions. A few weeks of
+                consistent activity rebuilds what took months to lose. And you don&apos;t start from
+                zero &mdash; your Talent never decayed, so it anchors a recovery far faster than a
+                newcomer&apos;s climb.
               </p>
             </div>
           </details>
@@ -3046,13 +3051,13 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Trust isn&apos;t permanent — it <strong className="text-sky-300">decays</strong>. Every
-                trust dimension has a half-life:
+                Trust isn&apos;t permanent — most of it <strong className="text-sky-300">decays</strong>.
+                Two of the three trust dimensions have a half-life:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
                 <li><strong className="text-gray-300">Temperament:</strong> 30-day half-life (behavior patterns fade fastest)</li>
                 <li><strong className="text-gray-300">Training:</strong> 180-day half-life (skill signals diminish)</li>
-                <li><strong className="text-gray-300">Talent:</strong> 365-day half-life (deep competence persists longest)</li>
+                <li><strong className="text-gray-300">Talent:</strong> no decay from time alone (deep competence persists) — it moves only with what you <em>do</em></li>
               </ul>
               <p>
                 A teenager who made poor choices at 15 doesn&apos;t carry those penalties forever. The

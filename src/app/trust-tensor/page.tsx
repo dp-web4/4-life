@@ -669,19 +669,25 @@ export default function TrustTensorPage() {
                 actions in each context. The system doesn&apos;t force a binary switch.</p>
             </div>
             <div className="flex gap-3 items-start">
+              {/* Jul-14 canon conformance: Talent MUST NOT decay through inactivity — web4 protocol
+                  invariant (core-spec/t3-v3-tensors.md §2.3 / §10.2, test vector t3v3-012; upstream
+                  engines fixed 2026-07-13). Do NOT reintroduce a Talent half-life anywhere on this
+                  page — sibling claims live in the update-rule code block and #why-half-lives below,
+                  and in why-web4's month-off + youthful-mistakes FAQs; change all or none.
+                  Training 180d / Temperament 30d stay: spec §2.3 says societies MAY configure those two. */}
               <span className="text-sky-400 font-bold shrink-0">Natural decay:</span>
-              <p className="text-gray-400">If you stop doing analyst work entirely, those trust scores
-                decay over time — and the three rates differ on purpose:{' '}
-                <strong className="text-gray-300">Talent slowest (365-day half-life), because aptitude is durable</strong>;{' '}
-                <strong className="text-gray-300">Training in between (180 days), because knowledge fades without practice</strong>;{' '}
-                <strong className="text-gray-300">Temperament fastest (30 days), because reliability has to be shown freshly</strong>.
-                You don&apos;t &ldquo;lose&rdquo; them overnight — they fade gradually, reflecting that skills
-                and expertise need practice to stay sharp.
+              <p className="text-gray-400">If you stop doing analyst work entirely, the three dimensions
+                respond differently on purpose:{' '}
+                <strong className="text-gray-300">Talent doesn&apos;t decay at all — demonstrated aptitude is durable, so absence never erodes it</strong>;{' '}
+                <strong className="text-gray-300">Training fades (180-day half-life), because knowledge goes stale without practice</strong>;{' '}
+                <strong className="text-gray-300">Temperament fades fastest (30 days), because reliability has to be shown freshly</strong>.
+                You don&apos;t &ldquo;lose&rdquo; trust overnight — the parts that fade do so gradually,
+                and the part that measures raw ability doesn&apos;t fade with time at all.
                 <span className="block text-gray-500 text-xs mt-1">
                   <strong className="text-gray-400">What &ldquo;half-life&rdquo; means here:</strong>{' '}
-                  the time it takes to lose half the score with zero activity. A 365-day Talent half-life
-                  means after one year of no practice, a score of 0.80 settles at 0.40; after two years, 0.20.
-                  Decay is exponential, not a cliff.
+                  the time it takes to lose half the score with zero activity. A 180-day Training half-life
+                  means after six months of no practice, a score of 0.80 settles at 0.40; after a year, 0.20.
+                  Decay is exponential, not a cliff — and it applies only to Training and Temperament.
                 </span>
               </p>
             </div>
@@ -689,10 +695,11 @@ export default function TrustTensorPage() {
             <div className="flex gap-3 items-start">
               <span className="text-sky-400 font-bold shrink-0">Why the gap matters:</span>
               <p className="text-gray-400">
-                Character has to be shown fresh each month; skill stays earned for a year. That 12× gap
-                is the point — yesterday&apos;s kindness doesn&apos;t excuse today&apos;s betrayal, but a
-                surgeon doesn&apos;t forget surgery over a long vacation. So Temperament (30d) weighs
-                recent behavior far more than old, while Talent (365d) is patient with absence.{' '}
+                Character has to be shown fresh each month; raw ability, once demonstrated, stays earned.
+                That gap is the point — yesterday&apos;s kindness doesn&apos;t excuse today&apos;s betrayal,
+                but a surgeon doesn&apos;t forget surgery over a long vacation. So Temperament (30d) weighs
+                recent behavior far more than old, Training (180d) fades as knowledge goes unpracticed,
+                and Talent never fades through absence at all.{' '}
                 <a href="#why-half-lives" className="text-sky-400 hover:underline"
                    onClick={(e) => { e.preventDefault(); const el = document.getElementById('why-half-lives'); if (el instanceof HTMLDetailsElement) el.open = true; el?.scrollIntoView({ behavior: 'smooth' }); }}>
                   Full rationale ↓
@@ -703,13 +710,15 @@ export default function TrustTensorPage() {
           <p className="text-gray-500 text-xs italic mt-3">
             The analogy: a doctor who transitions into hospital administration doesn&apos;t instantly
             lose their medical knowledge. But if they haven&apos;t practiced surgery in five years,
-            you probably wouldn&apos;t want them operating. T3 decay captures exactly this intuition.
+            you probably wouldn&apos;t want them operating. T3 decay captures exactly this intuition:
+            the aptitude (Talent) is still there, but the current, practiced knowledge (Training) has faded.
           </p>
           {/* Trust decay on break — Apr 10 visitor unanswered Q4 */}
           <p className="text-gray-500 text-xs mt-2">
             <strong className="text-gray-400">What if you take a 6-month break?</strong>{' '}
-            Temperament (30-day half-life) fades fast, but Talent (365-day half-life) stays
-            at ~70%. A few weeks of consistent activity rebuilds what took months to lose.{' '}
+            Temperament (30-day half-life) is essentially gone and Training (180-day half-life)
+            is at about half — but Talent doesn&apos;t decay: it&apos;s exactly where you left it.
+            A few weeks of consistent activity rebuilds what faded.{' '}
             <a href="/why-web4#faq" className="text-sky-400 hover:underline">Full breakdown in the FAQ →</a>
           </p>
         </div>
@@ -917,8 +926,8 @@ Expected Failure       -0.01      0          0
 Unexpected Failure     -0.02      -0.01      -0.02
 Ethics Violation       -0.05      0          -0.10
 
-// Decay half-lives (exponential, not linear)
-Talent:      365-day half-life (skills persist)
+// Decay (exponential, not linear)
+Talent:      no decay — protocol invariant (spec §2.3, vector t3v3-012)
 Training:    180-day half-life (knowledge fades without practice)
 Temperament:  30-day half-life (recent behavior matters most)
 
@@ -931,13 +940,15 @@ Temperament:  30-day half-life (recent behavior matters most)
 
               <details id="why-half-lives" className="mt-4 bg-gray-900/50 border border-gray-700/50 rounded-lg overflow-hidden scroll-mt-24">
                 <summary className="cursor-pointer p-4 text-sm font-semibold text-gray-300 hover:text-sky-400 transition-colors">
-                  Why these specific half-lives? ▸
+                  Why these decay rules? ▸
                 </summary>
                 <div className="px-4 pb-4 text-sm text-gray-400 space-y-2">
                   <p>
-                    <strong className="text-sky-300">Talent (365 days)</strong> — Skills persist.
-                    A surgeon doesn&apos;t forget surgery after six months of vacation. Core abilities
-                    are durable, so trust in talent decays slowly.
+                    <strong className="text-sky-300">Talent (no decay)</strong> — Aptitude persists.
+                    A surgeon doesn&apos;t forget surgery after six months of vacation. Core ability is
+                    durable, so the protocol forbids Talent from decaying through inactivity at all:
+                    once demonstrated, it stays demonstrated. It still moves with your <em>actions</em> —
+                    a failure or ethics violation lowers it — it just never erodes from time alone.
                   </p>
                   <p>
                     <strong className="text-sky-300">Training (180 days)</strong> — Knowledge fades
@@ -950,8 +961,10 @@ Temperament:  30-day half-life (recent behavior matters most)
                     Fast decay means you must consistently demonstrate reliability.
                   </p>
                   <p className="text-gray-500 text-xs pt-1">
-                    These values are society-configurable parameters, not universal constants.
-                    A military society might use 7-day Temperament decay; a research lab might use 90 days.
+                    The Training and Temperament half-lives are society-configurable parameters, not
+                    universal constants — a military society might use 7-day Temperament decay; a
+                    research lab might use 90 days. Talent&apos;s no-decay is the exception: it&apos;s
+                    a protocol invariant, not a knob.
                   </p>
                 </div>
               </details>
