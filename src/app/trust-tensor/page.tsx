@@ -352,10 +352,12 @@ export default function TrustTensorPage() {
               (Talent &times;1.0, Training &times;0.8, Temperament &times;0.6).
               Where does that number come from? It&apos;s the{" "}
               <strong className="text-purple-300">V3 score</strong>{" "}
-              the recipient assigned to that contribution (Valuation &middot; Veracity &middot;
-              Validity &mdash; the <Link href="/value-tensor" className="text-purple-300 underline">Value Tensor page</Link>{" "}
-              breaks that down if you want the depth, but it&apos;s optional here). Each confirmer&apos;s V3
-              feeds the formula independently &mdash; they aren&apos;t averaged into one number first.
+              the recipient assigned to that contribution &mdash; a weighted blend of its three
+              components (Valuation &middot; Veracity &middot; Validity) folded into one 0-to-1
+              number (the <Link href="/value-tensor" className="text-purple-300 underline">Value Tensor page</Link>{" "}
+              shows exactly how they combine, but it&apos;s optional here). That blending happens per
+              contribution: each confirmer&apos;s V3 feeds the formula independently &mdash;
+              separate confirmers are never averaged together first.
               A single high-quality contribution barely moves the needle &mdash; a 0.85-quality
               attestation gives <code className="text-gray-300">+0.007</code> to Talent. Trust climbs
               slowly because no single recipient can vault you upward; it takes many confirmations

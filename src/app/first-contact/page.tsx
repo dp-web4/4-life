@@ -227,17 +227,29 @@ export default function FirstContactPage() {
                 directly above says hestia + the hub are "deployed in public" — the visitor
                 "genuinely couldn't tell whether I'm looking at a simulation or live infrastructure."
                 Disambiguate LOCALLY (the shared InProduction copy is accurate and used elsewhere):
-                the sim you drive here MODELS the deployed system; it is not that system running. */}
-            <p className="text-xs text-gray-500 leading-relaxed -mt-3 mb-6">
-              To be clear about those two things: <strong className="text-gray-400">what you drive on
-              this page is the simulation</strong> — a model that runs in your browser, with nothing
-              deployed and nothing to sign up for. <strong className="text-gray-400">hestia</strong>{" "}
-              and <strong className="text-gray-400">the hub</strong> (the green banner) are the{" "}
-              <em>separate, real</em> system that simulation models — public AGPL code you could run
-              yourself (though there&apos;s no live network of real users to join yet), not something
-              executing inside this walkthrough. You don&apos;t need to track these two names to follow
-              Alice&apos;s story — they&apos;re here only so the green banner above isn&apos;t a mystery.
-            </p>
+                the sim you drive here MODELS the deployed system; it is not that system running.
+                Jul-14 visitor LOW: the banner + this paragraph together read as a ~200-word speed
+                bump right before Alice's story ("I came to this page to watch Alice… I skimmed it.
+                A one-liner with a 'more' expander would have served me fine."). Keep BOTH halves of
+                the Jul-1 disambiguation visible in the one-liner (sim here / hestia+hub real and
+                separate); the elaboration folds behind the visitor's own suggested expander. */}
+            <details className="-mt-3 mb-6 text-xs text-gray-500">
+              <summary className="cursor-pointer leading-relaxed list-none hover:text-gray-400 transition-colors">
+                To be clear about those two things: <strong className="text-gray-400">what you drive
+                on this page is the simulation</strong>, running in your browser;{" "}
+                <strong className="text-gray-400">hestia</strong> and{" "}
+                <strong className="text-gray-400">the hub</strong> (the green banner) are the{" "}
+                <em>separate, real</em> system it models — not something executing inside this
+                walkthrough. <span className="underline decoration-dotted">more ▸</span>
+              </summary>
+              <p className="mt-2 leading-relaxed">
+                The simulation is a model with nothing deployed and nothing to sign up for. hestia
+                and the hub are public AGPL code you could run yourself (though there&apos;s no live
+                network of real users to join yet). You don&apos;t need to track these two names to
+                follow Alice&apos;s story &mdash; they&apos;re here only so the green banner above
+                isn&apos;t a mystery.
+              </p>
+            </details>
 
             {/* Two-number anchor moved ABOVE the concept grid — May 15 visitor LOW:
                 this concrete anchor "rescued" the page; the four-acronym grid felt

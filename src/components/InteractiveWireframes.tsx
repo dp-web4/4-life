@@ -353,8 +353,15 @@ export function InteractiveMarketWireframe() {
               >
                 Buy for 350 ATP — see how escrow works
               </button>
+              {/* Jul-14 visitor MEDIUM (their #1): "currency" here directly contradicted
+                  why-web4's emphatic "not a financial asset" FAQ and atp-economics's "This is
+                  not a currency." — read in one sitting, the visitor stopped and re-read.
+                  The MECHANIC is canonical (peer transfers exist; 5% routes to the community
+                  pool — atp-economics item 5), only the money vocabulary was the defect.
+                  Keep the transfer/stake framing; never reintroduce "currency"/"medium of
+                  exchange" here. */}
               <p className="text-xs text-gray-600 mt-1.5 text-center">
-                ATP is both your energy budget <em>and</em> your currency — the same resource you spend on actions also works as a medium of exchange.
+                ATP is your energy budget, and the same resource you spend on actions is also what you transfer or stake in exchanges like this one — inside the system only, never money you can cash out.
               </p>
             </div>
           ) : (
