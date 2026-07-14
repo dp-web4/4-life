@@ -75,7 +75,10 @@ export default function Breadcrumbs({ currentPath }: BreadcrumbsProps) {
       {/* Acronym escape-hatch: every concept page is one click from the glossary's
           "Acronyms at a glance" index (June-10 visitor HIGH — index was only
           discoverable by happening to visit /glossary). Outside the <nav> so it
-          doesn't pollute breadcrumb semantics; hidden on /glossary itself. */}
+          doesn't pollute breadcrumb semantics; hidden on /glossary itself.
+          Jul-13 visitor MEDIUM: the old label "Lost in the acronyms?" announced
+          difficulty up front ("reads like the page knows it overloaded me") —
+          neutral label now, same affordance/href. Don't re-add the "Lost?" framing. */}
       {currentPath !== '/glossary' && (
         <Link
           href="/glossary#acronyms"
@@ -86,7 +89,7 @@ export default function Breadcrumbs({ currentPath }: BreadcrumbsProps) {
             whiteSpace: 'nowrap',
           }}
         >
-          Lost in the acronyms? Quick index →
+          Acronym quick index →
         </Link>
       )}
     </div>
