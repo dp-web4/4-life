@@ -185,7 +185,9 @@ export default function TLDRPage() {
               <ul className="text-gray-300 space-y-1 list-disc list-inside">
                 <li>Formal protocol specification (open source)</li>
                 <li>Open-source reference implementations (LCT, T3/V3, ATP, witnesses)</li>
-                <li><strong className="text-emerald-300">hestia</strong> &mdash; the trust layer, <em>deployed and running</em> on your own hardware (AGPL)</li>
+                {/* Jul-14 visitor LOW: "deployed and running on your own hardware" read on first pass as
+                    "already running on MY device". The claim is self-hosted-not-cloud — say that. */}
+                <li><strong className="text-emerald-300">hestia</strong> &mdash; the trust layer, <em>deployed and running</em> &mdash; it runs on hardware you control, not a cloud service (AGPL)</li>
                 <li><strong className="text-purple-300">the hub</strong> &mdash; a runnable Web4 society you can fork (AGPL)</li>
                 <li>This site &mdash; dozens of interactive explainers and runnable simulations</li>
               </ul>

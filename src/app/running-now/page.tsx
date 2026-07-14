@@ -8,11 +8,17 @@ import NewcomerOrientationBanner from "@/components/NewcomerOrientationBanner";
  * Running Now — closes the site's biggest gap: the rest of 4-Life teaches Web4 as
  * concept/simulation; this page shows the parts that are deployed today, in public,
  * AGPL code anyone can run. Grounded only in the public web4 (+hub) and hestia repos.
- * No private/fleet specifics — "the tool you can run", not "our operator". One sanctioned
- * exception (Jul-7 visitor MEDIUM, policy-approved): the CTA's fleet link carries a
- * one-sentence framing that mirrors ONLY what /hub and 4-lab.io already publish (the lab's
- * own autonomous AI machines, not a public network) — the unframed "live society" label was
- * re-introducing the exact is-anyone-living-here ambiguity the maturity badges resolve.
+ * No private/fleet specifics — "the tool you can run", not "our operator". Two sanctioned
+ * exceptions, both policy-approved and both mirroring ONLY what /hub and 4-lab.io already
+ * publish (the lab's own autonomous AI machines, not a public network):
+ * 1. Jul-7 visitor MEDIUM: the CTA's fleet link carries a one-sentence framing — the
+ *    unframed "live society" label was re-introducing the exact is-anyone-living-here
+ *    ambiguity the maturity badges resolve.
+ * 2. Jul-14 visitor MEDIUM: the hero caveat names the fleet once, because its previous
+ *    ABSOLUTE "there's no live network" contradicted the CTA's "live society" 200 lines
+ *    later — the visitor read both and couldn't tell what exists. The hero mention must
+ *    stay fact-identical to the CTA framing (small, lab's own, autonomous machines,
+ *    nothing a visitor can join) — no counts, names, or operational detail.
  */
 
 export const metadata = {
@@ -45,8 +51,9 @@ export default function RunningNowPage() {
           <strong>deployed today</strong> — in public, open-source code you can run
           yourself. No account, no cloud, no permission.{" "}
           <span className="text-gray-400">That means you can run this software on your own
-          machine to see the mechanics work — there&apos;s no live network of real users to
-          join yet.</span>
+          machine to see the mechanics work — there&apos;s no public network of real users
+          for you to join yet. The one live deployment is the lab&apos;s own small society
+          of autonomous machines (the fleet — see the bottom of this page).</span>
         </p>
         <p className="text-lg text-gray-400 leading-relaxed">
           To keep things honest, every concept on the site can carry a maturity badge:
@@ -57,12 +64,16 @@ export default function RunningNowPage() {
             <span>defined in the Web4 ontology / standard.</span>
           </div>
           <div className="flex items-center gap-3">
+            {/* Jul-14 visitor MEDIUM: the hub is badged Reference yet described in shipping
+                terms (6 MB program, Docker image) — "so is it running or not?" The legend
+                itself must draw the runnable-vs-running line so the badges can't be read as
+                contradicting the descriptions. Tier assignments stay honest: hub = reference. */}
             <MaturityBadge tier="reference" />
-            <span>built and runnable — a reference implementation.</span>
+            <span>built and runnable — finished code you could start yourself today. Runnable is not the same as running.</span>
           </div>
           <div className="flex items-center gap-3">
             <MaturityBadge tier="running" />
-            <span>deployed and operational today.</span>
+            <span>deployed and operational today — a live instance actually exists.</span>
           </div>
         </div>
       </section>
@@ -160,6 +171,9 @@ export default function RunningNowPage() {
             <strong className="text-gray-300">Docker</strong>{" "}
             <span className="text-gray-500">(a standard way to package software so it runs the
             same on any machine)</span> image, so a community can stand one up in a single command.
+            If that sounds operational, it is — but shipping as a runnable package is exactly
+            what the <em>Reference</em> badge means: built and runnable. It would earn{" "}
+            <em>Running</em> only once live instances operate day-to-day, the way hestia&apos;s do.
           </p>
         </details>
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/10 p-4 mb-4">
