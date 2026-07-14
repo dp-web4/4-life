@@ -134,16 +134,16 @@ export default function LCTExplainerPage() {
     }
   ];
 
-  // Calculate trust based on device count (simplified model)
+  // Calculate trust based on device count (simplified model).
+  // SYNC: these values MUST match the device rule this page's prose states
+  // ("1 device: 50%, 2 devices: 75%, 3+: up to 90%" — witness-count list item)
+  // and the 0.90 "hardware-bound ceiling" the scale-anchor paragraph declares.
+  // The old formula (0.40 + 0.15/device + diversity, capped 0.98) let the slider
+  // print 0.98 — above the ceiling the page itself calls the maximum (Jul-14
+  // seams-integrity pass). Diminishing returns past 3 devices is prose canon too.
   const calculateTrust = (devices: number): number => {
-    // Base trust: 0.40 (software only)
-    // Each hardware device adds strength
-    // Multiple device types add coherence bonus
-    const baseTrust = 0.40;
-    const perDeviceBonus = 0.15;
-    const diversityBonus = devices >= 3 ? 0.15 : (devices >= 2 ? 0.08 : 0);
-
-    return Math.min(0.98, baseTrust + (devices * perDeviceBonus) + diversityBonus);
+    const trustByDevices = [0.50, 0.75, 0.90]; // 1 / 2 / 3+ devices
+    return trustByDevices[Math.min(devices, 3) - 1];
   };
 
   // Calculate attack difficulty (exponential with devices)

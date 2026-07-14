@@ -14,6 +14,12 @@ import Link from "next/link";
  * Kept to ONE skippable row (not a card) so a returning visitor who already knows
  * the vocabulary scrolls past trivially. `accent` lets each page keep its theme.
  *
+ * Jul-14 (seams-integrity pass): "software that's already running" → "real,
+ * runnable software". This banner renders on /hub too, where the software is
+ * canonically Reference tier — runnable but NOT running (running-now's badge
+ * legend: "runnable is not the same as running"). The wording must be true on
+ * all three host pages; each page states its own tier in its own copy.
+ *
  * June-22 (first newcomer test of the banner): it worked ("a real save") but read
  * as a pure redirect/dead-end — no reason to return, no mental picture of what's
  * here. Closing clause now adds both: a reason-to-return promise ("the proof Web4
@@ -32,7 +38,7 @@ export default function NewcomerOrientationBanner({
     >
       <span className="font-medium text-gray-300">New to Web4?</span>
       <span>
-        This page tours software that&apos;s already running, so it assumes the
+        This page tours real, runnable software, so it assumes the
         vocabulary (LCT, trust tensors, witness chain). If those terms are new,
         start with the{" "}
         <Link

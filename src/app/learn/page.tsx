@@ -1060,7 +1060,7 @@ export default function LearnJourney() {
           <p>
             When the concepts make sense, don&apos;t stop at the simulation. The trust layer
             (<Link href="/hestia" style={{ color: "#34d399" }}>hestia</Link>) and a Web4 society
-            (<Link href="/hub" style={{ color: "#c4b5fd" }}>the hub</Link>) are deployed in public,
+            (<Link href="/hub" style={{ color: "#c4b5fd" }}>the hub</Link>) are public,
             AGPL code &mdash; you can run the real thing on your own machine. That&apos;s where
             understanding turns into participation.
           </p>

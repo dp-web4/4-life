@@ -29,7 +29,7 @@ export default function StarterKitPage() {
           }}
         >
           <div style={{ fontSize: "1.1rem", fontWeight: 600, color: "#34d399" }}>
-            The building blocks already run
+            The building blocks are already built
           </div>
           <p style={{ marginTop: "0.5rem", color: "#9ca3af", lineHeight: 1.6 }}>
             The one-click <em>packaged</em> kit is still being assembled — but you
