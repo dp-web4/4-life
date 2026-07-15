@@ -1845,11 +1845,18 @@ export default function ATPEconomicsPage() {
                 during a transaction and releases it on delivery — the 5% covers the transfer plus anti-fraud
                 guarantees. For small daily actions, the cost is your action&apos;s ATP price, not a percentage.
               </p>
+              {/* Jul-14 canon conformance: Talent MUST NOT decay through inactivity — web4 protocol
+                  invariant (core-spec/t3-v3-tensors.md §2.3 / §10.2, test vector t3v3-012; upstream
+                  engines fixed 2026-07-13). Do NOT reintroduce a Talent half-life here — sibling
+                  claims live on trust-tensor (decay section + #why-half-lives) and in why-web4's
+                  month-off + youthful-mistakes FAQs; change all or none.
+                  Training 180d / Temperament 30d stay: spec §2.3 says societies MAY configure those two. */}
               <p id="atp-dormancy" className="text-gray-400 text-sm mt-3 leading-relaxed scroll-mt-24">
                 <strong className="text-gray-300">What if you go inactive for a month?</strong>{' '}
                 Your ATP balance doesn&apos;t evaporate &mdash; whatever you had when you stopped is still there when you return.
-                What <em>does</em> change while you&apos;re away is your trust: Temperament (recent-behavior dimension) decays fastest
-                with a 30-day half-life, Training with 180 days, Talent with 365 days. You restart with your balance intact,
+                What <em>does</em> change while you&apos;re away is part of your trust: Temperament (recent-behavior dimension)
+                decays fastest with a 30-day half-life, Training with 180 days &mdash; but Talent doesn&apos;t decay at all,
+                because demonstrated aptitude is durable and absence never erodes it. You restart with your balance intact,
                 but earning ATP back at your previous rate may take a few weeks of consistent activity to rebuild recent trust.
                 There&apos;s no &ldquo;inactivity penalty&rdquo; fee &mdash; the cost is opportunity cost, not confiscation.
               </p>
