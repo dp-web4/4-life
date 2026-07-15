@@ -1,5 +1,9 @@
 // Navigation configuration for 4-Life
 // Used by breadcrumbs, related concepts, and search
+//
+// IA rebuilt 2026-07 around the Web4 onramp: the core standard, plus the three
+// ways to run it (hub, hestia, hardbound). The Jan-2026 exploration era and the
+// game/sim are preserved on branch archive/v1-2026-07 (tag v1-archive-2026-07-15).
 
 export interface NavItem {
   title: string;
@@ -16,612 +20,201 @@ export interface NavigationTree {
 
 // Master navigation structure
 export const navigationTree: NavigationTree = {
-  'Getting Started': [
+  'Start Here': [
     {
       title: 'Web4 in 2 Minutes',
       href: '/tldr',
-      desc: 'The shortest possible explanation',
-      keywords: ['tldr', 'summary', 'quick', 'overview', '2 minutes', 'elevator', 'short'],
-      related: ['/why-web4', '/first-contact', '/society-simulator', '/karma-journey']
-    },
-    {
-      title: 'Your Internet',
-      href: '/your-internet',
-      desc: 'What would change for YOU? Pick your frustrations, see the difference.',
-      keywords: ['personal', 'frustration', 'spam', 'fake', 'platform', 'scenario', 'quiz'],
-      related: ['/tldr', '/why-web4', '/what-could-go-wrong', '/day-in-web4']
-    },
-    {
-      title: 'A Day in Web4',
-      href: '/day-in-web4',
-      desc: 'Walk through a realistic day with trust built into the internet.',
-      keywords: ['day', 'scenario', 'walkthrough', 'concrete', 'daily life', 'practical', 'imagine'],
-      related: ['/your-internet', '/tldr', '/first-contact', '/karma-journey']
-    },
-    {
-      title: 'Running Now',
-      href: '/running-now',
-      desc: "Web4 isn't only theory — what's deployed today: hestia, the hub, AGPL and runnable.",
-      keywords: ['running', 'deployed', 'real', 'live', 'production', 'hestia', 'hub', 'agpl', 'open source', 'witness chain', 'sealed channel'],
-      related: ['/hestia', '/hub', '/tldr', '/web4-explainer', '/lct-explainer', '/trust-tensor', '/federation-economics']
-    },
-    {
-      title: 'Hestia (run it)',
-      href: '/hestia',
-      desc: 'The deployed trust layer — cryptographic identity, witness chain, evolving trust, on your own hardware.',
-      keywords: ['hestia', 'trust daemon', 'local-first', 'LCT', 'vault', 'witness chain', 'policy gate', 'delegation', 'constellation', 'MCP', 'agpl', 'run', 'deployed', 'real'],
-      related: ['/running-now', '/hub', '/lct-explainer', '/trust-tensor', '/multi-session-identity']
-    },
-    {
-      title: 'The Hub (run it)',
-      href: '/hub',
-      desc: 'A runnable Web4 society — seven roles, a signed charter, a witnessed ledger, sealed channels.',
-      keywords: ['hub', 'society', 'charter', 'roles', 'ledger', 'sealed channel', 'find_members', 'governance', 'agpl', 'run', 'reference', 'fork'],
-      related: ['/running-now', '/hestia', '/society-simulator', '/federation-economics']
+      desc: 'The shortest honest explanation of what Web4 is and why it exists.',
+      keywords: ['tldr', 'summary', 'quick', 'overview', '2 minutes', 'elevator', 'short', 'intro'],
+      related: ['/why-web4', '/first-contact', '/onramp'],
     },
     {
       title: 'Why Web4?',
       href: '/why-web4',
-      desc: 'The problem before the solution',
-      keywords: ['why', 'problem', 'trust', 'spam', 'identity', 'introduction', 'start'],
-      related: ['/first-contact', '/glossary', '/how-it-works']
+      desc: 'The problem before the solution: why AI actions today cannot be trusted or proven.',
+      keywords: ['why', 'problem', 'trust', 'agents', 'accountability', 'introduction', 'start'],
+      related: ['/tldr', '/the-standard', '/what-could-go-wrong'],
     },
     {
       title: 'First Contact',
       href: '/first-contact',
-      desc: '12-min interactive intro',
-      keywords: ['tutorial', 'beginner', 'start', 'introduction'],
-      related: ['/why-web4', '/learn', '/how-it-works']
-    },
-    {
-      title: 'Your First Simulation',
-      href: '/first-simulation',
-      desc: 'Guided 5-min walkthrough with live simulation',
-      keywords: ['simulation', 'guided', 'walkthrough', 'first', 'beginner', 'live', 'interactive'],
-      related: ['/first-contact', '/playground', '/trust-tensor-explorer', '/research-hub'],
-    },
-    {
-      title: 'Learning Journey',
-      href: '/learn',
-      desc: 'Structured path from beginner to practitioner',
-      keywords: ['guide', 'tutorial', 'pathway', 'curriculum'],
-      related: ['/first-contact', '/glossary']
-    },
-    {
-      title: 'Manifest',
-      href: '/manifest',
-      desc: 'All concepts, one page',
-      keywords: ['overview', 'summary', 'all'],
-      related: ['/how-it-works', '/glossary']
+      desc: 'A guided first walk through Web4 for someone arriving with zero background.',
+      keywords: ['first contact', 'intro', 'guide', 'onboarding', 'newcomer', 'start here'],
+      related: ['/tldr', '/why-web4', '/how-it-works', '/glossary'],
     },
     {
       title: 'How It Works',
       href: '/how-it-works',
-      desc: 'Core concepts overview',
-      keywords: ['overview', 'introduction', 'basics'],
-      related: ['/first-contact', '/web4-explainer']
+      desc: 'The moving parts: identity, trust, energy, and law, and how they fit together.',
+      keywords: ['how', 'mechanics', 'overview', 'architecture', 'parts', 'works'],
+      related: ['/the-standard', '/onramp', '/lct-explainer'],
     },
     {
-      title: 'What Could Go Wrong',
-      href: '/what-could-go-wrong',
-      desc: 'Honest failure modes and unsolved problems',
-      keywords: ['risks', 'failures', 'honest', 'skeptic', 'problems', 'unsolved'],
-      related: ['/why-web4', '/threat-model', '/adversarial-explorer']
-    },
-    {
-      title: 'Glossary',
-      href: '/glossary',
-      desc: 'Terms and definitions',
-      keywords: ['dictionary', 'terminology', 'definitions', 'vocabulary'],
-      related: ['/learn', '/manifest']
+      title: 'Running Now',
+      href: '/running-now',
+      desc: 'What is actually real and runnable today, stated honestly: the standard, the hub, hestia, hardbound.',
+      keywords: ['running', 'real', 'live', 'status', 'maturity', 'deployed', 'runnable', 'honest'],
+      related: ['/onramp', '/hub', '/hestia', '/hardbound', '/the-standard'],
     },
   ],
+
+  'The Onramp': [
+    {
+      title: 'The Core Standard',
+      href: '/the-standard',
+      desc: 'The open ontology that makes AI actions verifiable: witnessed presence, role-contextual trust, auditable authority.',
+      keywords: ['standard', 'core', 'ontology', 'spec', 'web4-core', 'rdf', 'substrate', 'equation'],
+      related: ['/onramp', '/lct-explainer', '/trust-tensor', '/glossary'],
+    },
+    {
+      title: 'The Hub',
+      href: '/hub',
+      desc: 'Community scale: a single binary that turns a group into a sovereign Web4 society with signed law and a witnessed ledger.',
+      keywords: ['hub', 'society', 'law', 'ledger', 'roles', 'sealed channel', 'community', 'governance', 'rust'],
+      related: ['/onramp', '/hestia', '/the-standard', '/karma-consequences'],
+    },
+    {
+      title: 'Hestia',
+      href: '/hestia',
+      desc: 'Personal scale: local-first identity, an encrypted vault, scoped delegation, and a witnessed trust record on your own machine.',
+      keywords: ['hestia', 'local-first', 'vault', 'identity', 'lct', 'delegation', 'agent', 'personal', 'constellation'],
+      related: ['/onramp', '/hub', '/hardbound', '/identity-constellation'],
+    },
+    {
+      title: 'Hardbound',
+      href: '/hardbound',
+      desc: 'Enterprise scale: hardware-bound identity and pre-action policy enforcement, with regulator-defensible audit trails.',
+      keywords: ['hardbound', 'enterprise', 'oversight', 'tpm', 'policy', 'audit', 'compliance', 'governance', 'regulatory'],
+      related: ['/onramp', '/hestia', '/the-standard', '/what-could-go-wrong'],
+    },
+    {
+      title: 'How the Pieces Compose',
+      href: '/onramp',
+      desc: 'The core standard is the substrate; hub, hestia, and hardbound are three scales of the same posture. Adoption order and the real seams.',
+      keywords: ['onramp', 'compose', 'adoption', 'order', 'architecture', 'scales', 'how to start', 'stack'],
+      related: ['/the-standard', '/hub', '/hestia', '/hardbound'],
+    },
+  ],
+
   'Core Concepts': [
     {
-      title: 'Presence (LCT)',
+      title: 'LCT (Identity)',
       href: '/lct-explainer',
-      desc: 'Hardware-bound verifiable presence',
-      keywords: ['linked context token', 'hardware', 'cryptographic', 'verifiable', 'presence', 'witnessed'],
-      related: ['/identity-constellation', '/aliveness']
+      desc: 'The Linked Context Token: a verifiable presence certificate binding an entity to its context through witnessed relationships.',
+      keywords: ['lct', 'linked context token', 'identity', 'presence', 'key', 'witness'],
+      related: ['/the-standard', '/identity-constellation', '/trust-tensor', '/glossary'],
     },
     {
-      title: 'Identity Constellations',
-      href: '/identity-constellation',
-      desc: 'Multi-device binding',
-      keywords: ['devices', 'multi-device', 'recovery', 'constellation'],
-      prerequisites: ['/lct-explainer'],
-      related: ['/lct-explainer', '/aliveness']
-    },
-    {
-      // Label mirrors sibling style 'Presence (LCT)' and carries the energy gloss the
-      // page body standardized on (May 3 H1 fix + May 15 #255 sitewide pass). The old
-      // 'Attention Economics' label was the last attention<->energy remnant — it survived
-      // in the breadcrumb/nav layer and contradicted the body (June 3 visitor MEDIUM,
-      // "single highest-leverage small fix"). 'attention' stays in keywords below ONLY as a
-      // search/findability alias (invisible to readers), not as a user-facing label.
-      title: 'Energy Economics (ATP)',
-      href: '/atp-economics',
-      desc: 'Every action costs energy, quality earns it back',
-      keywords: ['attention', 'budget', 'metabolic', 'energy', 'spam'],
-      related: ['/aliveness', '/federation-economics', '/karma-consequences', '/concepts-to-tools']
-    },
-    {
-      title: 'Trust Tensor',
+      title: 'T3 (Trust Tensor)',
       href: '/trust-tensor',
-      desc: 'Multi-dimensional, role-specific trust',
-      keywords: ['T3', 'dimensions', 'talent', 'training', 'temperament', 'role-specific'],
-      related: ['/value-tensor', '/coherence-index', '/aliveness', '/trust-networks']
+      desc: 'Role-contextual trust in three dimensions: Talent, Training, Temperament. Trust is scoped to a role, not global.',
+      keywords: ['t3', 'trust tensor', 'talent', 'training', 'temperament', 'trust', 'reputation'],
+      related: ['/value-tensor', '/trust-neighborhood', '/karma-consequences', '/glossary'],
     },
     {
-      // Jul-9 visitor MEDIUM: "V3 does real work (rates output, feeds the trust update, drives
-      // ATP recharge) but has no page of its own — only a subsection on the T3 page." Three
-      // in-place treatments (#427/#433/#437) were spent before this; the residual was structural.
-      title: 'Value Tensor',
+      title: 'V3 (Value Tensor)',
       href: '/value-tensor',
-      desc: 'Scoring the work, not the worker',
-      keywords: ['V3', 'valuation', 'veracity', 'validity', 'quality', 'output'],
-      prerequisites: ['/trust-tensor'],
-      related: ['/trust-tensor', '/atp-economics', '/coherence-index', '/aliveness']
+      desc: 'Value in three dimensions: Valuation, Veracity, Validity. The quality-of-output companion to T3.',
+      keywords: ['v3', 'value tensor', 'valuation', 'veracity', 'validity', 'value', 'output'],
+      related: ['/trust-tensor', '/atp-economics', '/glossary'],
+    },
+    {
+      title: 'MRH (Trust Neighborhood)',
+      href: '/trust-neighborhood',
+      desc: "The Markov Relevancy Horizon: an entity's dynamic context boundary, scoping what is relevant and how far trust extends.",
+      keywords: ['mrh', 'markov relevancy horizon', 'neighborhood', 'context', 'boundary', 'scope', 'relevance'],
+      related: ['/trust-tensor', '/the-standard', '/glossary'],
+    },
+    {
+      title: 'ATP/ADP (Energy)',
+      href: '/atp-economics',
+      desc: 'The bio-inspired value cycle: charged (ATP) and discharged (ADP) packets. A unit of account each society manages, not a currency.',
+      keywords: ['atp', 'adp', 'energy', 'economics', 'value', 'work', 'unit of account', 'budget'],
+      related: ['/value-tensor', '/karma-consequences', '/glossary'],
     },
     {
       title: 'Coherence Index',
       href: '/coherence-index',
-      desc: 'Consistency detection',
-      keywords: ['CI', 'consistency', 'spatial', 'temporal', 'capability', 'relational'],
-      related: ['/coherence-framework', '/trust-tensor', '/aliveness', '/exploration-not-evaluation', '/meta-cognition-feedback', '/concepts-to-tools']
+      desc: 'How a society detects inconsistency and incoherence in behavior over time.',
+      keywords: ['coherence', 'index', 'consistency', 'incoherence', 'ci', 'behavior'],
+      related: ['/trust-tensor', '/coherence-framework', '/glossary'],
     },
     {
-      title: 'Karma',
+      title: 'Karma & Consequences',
       href: '/karma-consequences',
-      desc: 'Permanent consequences',
-      keywords: ['rebirth', 'consequences', 'permanent', 'reputation'],
-      related: ['/atp-economics', '/aliveness', '/trust-tensor']
+      desc: "Reputation that persists and propagates: how consequential acts back-propagate to an entity's standing (R7).",
+      keywords: ['karma', 'reputation', 'consequences', 'r7', 'accountability', 'permanent'],
+      related: ['/trust-tensor', '/hub', '/glossary'],
+    },
+    {
+      title: 'Identity Constellation',
+      href: '/identity-constellation',
+      desc: 'One entity, many devices: how a constellation of keys forms a single witnessed identity.',
+      keywords: ['constellation', 'identity', 'devices', 'multi-device', 'keys', 'hestia'],
+      related: ['/lct-explainer', '/hestia', '/glossary'],
+    },
+    {
+      title: 'Glossary',
+      href: '/glossary',
+      desc: 'Plain-language definitions of every Web4 term the site uses, kept current with the core spec.',
+      keywords: ['glossary', 'terms', 'definitions', 'vocabulary', 'reference', 'lct', 't3', 'mrh', 'atp', 'society', 'law'],
+      related: ['/the-standard', '/first-contact'],
     },
   ],
-  'AI Agent Mechanics': [
+
+  'Going Deeper': [
     {
-      title: 'AI Agents',
-      href: '/ai-agents',
-      desc: 'Index of the AI Agents section — Identity, Trust Limits, Learning',
-      keywords: ['AI agents', 'index', 'overview', 'AI section'],
-      related: ['/understanding-consciousness', '/capacity-thresholds', '/exploration-not-evaluation']
+      title: 'A Day in Web4',
+      href: '/day-in-web4',
+      desc: 'A concrete walk through what changes when trust is built into the internet instead of bolted on.',
+      keywords: ['day', 'scenario', 'walkthrough', 'concrete', 'example', 'practical'],
+      related: ['/tldr', '/why-web4', '/your-internet'],
     },
     {
-      title: 'AI Identity',
-      href: '/understanding-consciousness',
-      desc: 'How AI agents maintain identity across restarts',
-      keywords: ['consciousness', 'D5', 'D9', 'thresholds', 'gates', 'continuity'],
-      related: ['/identity-anchoring', '/multi-session-identity', '/confabulation-patterns', '/exploration-not-evaluation', '/meta-cognition-feedback']
+      title: 'Your Internet',
+      href: '/your-internet',
+      desc: 'What would change for you: pick your frustrations and see the difference Web4 would make.',
+      keywords: ['personal', 'frustration', 'spam', 'fake', 'platform', 'scenario'],
+      related: ['/day-in-web4', '/why-web4'],
     },
-    {
-      title: 'Learning Salience',
-      href: '/learning-salience',
-      desc: 'SNARC scoring system',
-      keywords: ['SNARC', 'surprise', 'novelty', 'arousal', 'reward', 'conflict'],
-      related: ['/training-data-insights', '/sleep-consolidation', '/decision-evolution', '/exploration-not-evaluation']
-    },
-    {
-      title: 'Training Data Insights',
-      href: '/training-data-insights',
-      desc: 'What you train for matters',
-      keywords: ['training', 'data', 'quality', 'curriculum'],
-      related: ['/learning-salience', '/decision-evolution']
-    },
-    {
-      title: 'Sleep Consolidation',
-      href: '/sleep-consolidation',
-      desc: 'Memory during rest',
-      keywords: ['sleep', 'memory', 'consolidation', 'rest'],
-      related: ['/circadian-ai', '/learning-salience']
-    },
-    {
-      title: 'Circadian AI',
-      href: '/circadian-ai',
-      desc: 'Autonomous sleep rhythms',
-      keywords: ['circadian', 'rhythm', '6-hour', 'autonomous', 'schedule'],
-      prerequisites: ['/sleep-consolidation'],
-      related: ['/sleep-consolidation', '/learning-salience']
-    },
-    {
-      title: 'Identity Anchoring',
-      href: '/identity-anchoring',
-      desc: 'Verifying agent continuity',
-      keywords: ['identity', 'anchoring', 'v1', 'D4', 'D5', 'D9', 'bistable'],
-      related: ['/multi-session-identity', '/understanding-consciousness', '/capacity-thresholds']
-    },
-    {
-      title: 'Multi-Session Identity',
-      href: '/multi-session-identity',
-      desc: 'Cumulative context (v2.0)',
-      keywords: ['v2', 'cumulative', 'exemplar', 'cross-session', 'context'],
-      prerequisites: ['/identity-anchoring'],
-      related: ['/identity-anchoring', '/understanding-consciousness']
-    },
-    {
-      title: 'Confabulation Patterns',
-      href: '/confabulation-patterns',
-      desc: 'Uncertainty handling',
-      keywords: ['confabulation', 'uncertainty', 'D5', 'elaboration'],
-      related: ['/understanding-consciousness', '/identity-anchoring', '/exploration-not-evaluation', '/capacity-thresholds', '/honest-reporting']
-    },
-    {
-      title: 'Honest Reporting',
-      href: '/honest-reporting',
-      desc: 'Limitation vs fabrication',
-      keywords: ['honest', 'limitation', 'phenomenological', 'social', 'truth', 'context window'],
-      prerequisites: ['/confabulation-patterns'],
-      related: ['/context-experiment', '/confabulation-patterns', '/identity-anchoring', '/understanding-consciousness', '/coherence-index', '/identity-confabulation']
-    },
-    {
-      title: 'Identity-Confabulation Dissociation',
-      href: '/identity-confabulation',
-      desc: 'Independent coherence dimensions',
-      keywords: ['identity', 'confabulation', 'multi-dimensional', 'coherence', 'C_total', 'dissociation'],
-      prerequisites: ['/confabulation-patterns', '/honest-reporting'],
-      related: ['/honest-reporting', '/confabulation-patterns', '/coherence-index', '/understanding-consciousness', '/capacity-thresholds', '/modal-awareness']
-    },
-    {
-      title: 'Modal Awareness Emergence',
-      href: '/modal-awareness',
-      desc: 'Meta-cognition at small scale',
-      keywords: ['modal', 'awareness', 'meta-cognition', 'T041', 'mode', 'clarification', '0.5B', 'L005', 'phenomenological'],
-      prerequisites: ['/exploration-not-evaluation'],
-      related: ['/exploration-not-evaluation', '/capacity-thresholds', '/honest-reporting', '/identity-confabulation', '/context-dependent-behavior']
-    },
-    {
-      title: 'Context Window Experiment',
-      href: '/context-experiment',
-      desc: 'S44→S45 empirical test of honest reporting',
-      keywords: ['context', 'experiment', 'S44', 'S45', 'hypothesis', 'empirical', 'SAGE', 'session history'],
-      prerequisites: ['/honest-reporting'],
-      related: ['/honest-reporting', '/multi-session-identity', '/confabulation-patterns', '/identity-anchoring']
-    },
-    {
-      title: 'AI Learning',
-      href: '/exploration-not-evaluation',
-      desc: 'How AI agents learn through calibration and exploration',
-      keywords: ['calibration', 'learning', 'meta-cognition', 'U-shaped', 'evaluation', 'research methodology'],
-      related: ['/understanding-consciousness', '/confabulation-patterns', '/learning-salience', '/coherence-index', '/capacity-thresholds']
-    },
-    {
-      title: 'AI Trust Limits',
-      href: '/capacity-thresholds',
-      desc: 'How model capacity affects trustworthy behavior',
-      keywords: ['capacity', 'gaming', '14B', '0.5B', 'scale', 'parameters', 'learned language', 'native'],
-      prerequisites: ['/exploration-not-evaluation'],
-      related: ['/exploration-not-evaluation', '/identity-anchoring', '/confabulation-patterns', '/coherence-index', '/trajectory-analysis', '/capacity-baseline']
-    },
-    {
-      title: 'Trajectory Analysis',
-      href: '/trajectory-analysis',
-      desc: 'Opposite trajectories at different capacities',
-      keywords: ['trajectory', '0.5B', '14B', 'degrading', 'improving', 'capacity', 'development', 'direction'],
-      prerequisites: ['/capacity-thresholds'],
-      related: ['/capacity-thresholds', '/identity-confabulation', '/exploration-not-evaluation', '/honest-reporting', '/trajectory-explorer']
-    },
-    {
-      title: 'Context-Dependent Behavior',
-      href: '/context-dependent-behavior',
-      desc: 'Clarifying vs creative interpretation',
-      keywords: ['context', 'clarifying', 'creative', 'strategy', 'negative result', 'E02', 'T027'],
-      prerequisites: ['/exploration-not-evaluation'],
-      related: ['/exploration-not-evaluation', '/modal-awareness', '/honest-reporting', '/facultative-behavior']
-    },
-    {
-      title: 'Facultative Behavior',
-      href: '/facultative-behavior',
-      desc: 'Behavioral repertoires & strategy distributions',
-      keywords: ['facultative', 'repertoire', 'replication', 'E02-B', 'strategy', 'distribution', 'framing', 'N=15'],
-      prerequisites: ['/context-dependent-behavior'],
-      related: ['/context-dependent-behavior', '/exploration-not-evaluation', '/capacity-thresholds', '/capacity-baseline']
-    },
-    {
-      title: 'Capacity Baseline',
-      href: '/capacity-baseline',
-      desc: '0.5B vs 14B direct comparison (R14B_001)',
-      keywords: ['capacity', 'baseline', '14B', '0.5B', 'R14B_001', 'comparison', 'meta-cognition', 'gaming'],
-      prerequisites: ['/capacity-thresholds'],
-      related: ['/capacity-thresholds', '/trajectory-analysis', '/meta-cognition-feedback', '/facultative-behavior', '/purpose-integration']
-    },
-    {
-      title: 'Purpose Integration',
-      href: '/purpose-integration',
-      desc: 'Self-focused to purpose-driven development',
-      keywords: ['purpose', 'maslow', 'development', 'maturation', 'self-actualization', 'R14B', 'grounding', 'stability'],
-      prerequisites: ['/capacity-baseline'],
-      related: ['/capacity-baseline', '/capacity-thresholds', '/trajectory-analysis', '/meta-cognition-feedback', '/exploration-not-evaluation']
-    },
-    {
-      title: 'Meta-Cognition & Feedback',
-      href: '/meta-cognition-feedback',
-      desc: 'Why systems need self-monitoring',
-      keywords: ['meta-cognition', 'feedback', 'loop', 'D5', 'threshold', 'convergent', 'failure', 'introspection'],
-      prerequisites: ['/understanding-consciousness'],
-      related: ['/understanding-consciousness', '/coherence-index', '/honest-reporting', '/capacity-baseline', '/identity-confabulation', '/consciousness-layers']
-    },
-    {
-      title: 'Consciousness Layers',
-      href: '/consciousness-layers',
-      desc: 'Hierarchical meta-cognition layers (R14B)',
-      keywords: ['consciousness', 'layers', 'meta-cognition', 'meta-meta-cognition', 'language switch', 'R14B', 'Thor', 'depth', 'capacity'],
-      prerequisites: ['/capacity-baseline'],
-      related: ['/capacity-baseline', '/meta-cognition-feedback', '/capacity-thresholds', '/trajectory-analysis', '/exploration-not-evaluation']
-    },
-    {
-      title: 'Conversational Context',
-      href: '/conversational-context',
-      desc: 'How scaffolding shapes epistemic strategy (R14B_009)',
-      keywords: ['context', 'scaffolding', 'epistemic', 'honesty', 'elaboration', 'conversation', 'norms', 'multi-turn', 'R14B_009'],
-      prerequisites: ['/honest-reporting'],
-      related: ['/honest-reporting', '/confabulation-patterns', '/consciousness-layers', '/capacity-baseline', '/prompt-framing-lab']
-    },
-  ],
-  'Interactive Labs': [
-    {
-      title: 'Simulation Sandbox',
-      href: '/simulation-sandbox',
-      desc: 'Full-control client-side simulation with live visualization',
-      keywords: ['sandbox', 'simulation', 'client-side', 'live', 'comparison', 'overlay', 'parameters'],
-      related: ['/first-simulation', '/playground', '/lab-console', '/trust-tensor-explorer', '/narratives'],
-    },
-    {
-      title: 'Playground',
-      href: '/playground',
-      desc: 'Adjust parameters',
-      keywords: ['interactive', 'experiment', 'parameters', 'sliders'],
-      related: ['/lab-console', '/compare', '/simulation-sandbox']
-    },
-    {
-      title: 'Lab Console',
-      href: '/lab-console',
-      desc: 'Run simulations',
-      keywords: ['simulation', 'run', 'watch', 'live'],
-      related: ['/playground', '/narratives', '/compare']
-    },
-    {
-      title: 'Compare',
-      href: '/compare',
-      desc: 'Side-by-side analysis',
-      keywords: ['comparison', 'analysis', 'side-by-side'],
-      related: ['/lab-console', '/playground']
-    },
-    {
-      title: 'AI Guide Chat',
-      href: '/act-explorer',
-      desc: 'Ask questions about Web4',
-      keywords: ['chat', 'questions', 'conversational', 'ACT', 'ask', 'AI', 'guide'],
-      related: ['/first-contact', '/glossary']
-    },
-    {
-      title: 'Narratives',
-      href: '/narratives',
-      desc: 'Generated stories',
-      keywords: ['stories', 'narrative', 'generated', 'human-readable'],
-      related: ['/narratives/compare', '/lab-console', '/decision-evolution']
-    },
-    {
-      title: 'Trajectory Explorer',
-      href: '/trajectory-explorer',
-      desc: 'Interactive capacity-trajectory visualization',
-      keywords: ['trajectory', 'capacity', 'interactive', 'slider', 'development', '0.5B', '14B', 'compare'],
-      prerequisites: ['/trajectory-analysis'],
-      related: ['/trajectory-analysis', '/capacity-thresholds', '/capacity-baseline', '/meta-cognition-feedback']
-    },
-    {
-      title: 'Behavioral Repertoire',
-      href: '/behavioral-repertoire',
-      desc: 'Context-dependent strategy explorer',
-      keywords: ['behavioral', 'repertoire', 'strategy', 'distribution', 'context', 'framing', 'E02', 'facultative'],
-      prerequisites: ['/context-dependent-behavior', '/facultative-behavior'],
-      related: ['/facultative-behavior', '/context-dependent-behavior', '/capacity-thresholds', '/capacity-baseline']
-    },
-    {
-      title: 'Feedback Loop Explorer',
-      href: '/feedback-loop-explorer',
-      desc: 'Interactive feedback loop visualizer',
-      keywords: ['feedback', 'loop', 'meta-cognition', 'D5', 'ATP', 'trust', 'confabulation', 'break', 'fix', 'cascade'],
-      prerequisites: ['/meta-cognition-feedback'],
-      related: ['/meta-cognition-feedback', '/capacity-baseline', '/confabulation-patterns', '/atp-economics', '/trust-tensor', '/honest-reporting']
-    },
-    {
-      title: 'Prompt Framing Lab',
-      href: '/prompt-framing-lab',
-      desc: 'Experiment with prompt framing effects',
-      keywords: ['prompt', 'framing', 'E02', 'strategy', 'distribution', 'exploration', 'evaluation', 'creative', 'clarifying', 'lab'],
-      prerequisites: ['/context-dependent-behavior', '/facultative-behavior'],
-      related: ['/context-dependent-behavior', '/facultative-behavior', '/behavioral-repertoire', '/exploration-not-evaluation']
-    },
-    {
-      title: 'Scaffolding Lab',
-      href: '/scaffolding-lab',
-      desc: 'Build conversation scaffolding sequences',
-      keywords: ['scaffolding', 'conversation', 'builder', 'epistemic', 'norms', 'interactive', 'lab'],
-      prerequisites: ['/conversational-context'],
-      related: ['/conversational-context', '/prompt-framing-lab', '/honest-reporting', '/confabulation-patterns']
-    },
-    {
-      title: 'Trust Tensor Explorer',
-      href: '/trust-tensor-explorer',
-      desc: 'Interactive T3 manipulation with CI modulation',
-      keywords: ['trust', 'tensor', 'T3', 'talent', 'training', 'temperament', 'coherence', 'CI', 'ATP', 'rebirth', 'karma', 'roles'],
-      prerequisites: ['/trust-tensor'],
-      related: ['/trust-tensor', '/coherence-index', '/atp-economics', '/karma-consequences', '/aliveness', '/mrh-explorer']
-    },
-    {
-      title: 'Trust Neighborhood Explorer',
-      href: '/mrh-explorer',
-      desc: 'Interactive trust neighborhood (MRH) visualizer',
-      keywords: ['MRH', 'markov', 'horizon', 'context', 'boundaries', 'network', 'depth', 'trust decay', '4D', 'spatial', 'temporal', 'ATP cost'],
-      prerequisites: ['/trust-neighborhood'],
-      related: ['/trust-neighborhood', '/trust-tensor-explorer', '/trust-networks', '/atp-economics', '/federation-economics']
-    },
-    {
-      title: 'Karma Journey',
-      href: '/karma-journey',
-      desc: 'Interactive multi-life trust simulator',
-      keywords: ['karma', 'journey', 'reincarnation', 'multi-life', 'choices', 'consequences', 'trust', 'interactive'],
-      prerequisites: ['/karma-consequences'],
-      related: ['/karma-consequences', '/trust-tensor-explorer', '/playground', '/concepts-to-tools'],
-    },
-    {
-      title: 'Concepts to Tools',
-      href: '/concepts-to-tools',
-      desc: 'Bridge from reading to exploring',
-      keywords: ['bridge', 'concepts', 'tools', 'scaffolding', 'transition', 'understand', 'explore'],
-      related: ['/research-hub', '/learn', '/trust-tensor-explorer', '/mrh-explorer', '/trajectory-explorer'],
-    },
-    {
-      title: 'Research Hub',
-      href: '/research-hub',
-      desc: 'All interactive tools in one place',
-      keywords: ['hub', 'tools', 'interactive', 'explore', 'participate', 'experiment', 'learning path'],
-      related: ['/learn', '/first-contact', '/concepts-to-tools', '/trust-tensor-explorer', '/mrh-explorer', '/playground', '/lab-console', '/society-simulator']
-    },
-    {
-      title: 'Data Explorer',
-      href: '/data-explorer',
-      desc: 'Browse, inspect, and compare simulation datasets',
-      keywords: ['data', 'explorer', 'browse', 'compare', 'datasets', 'simulation', 'JSON', 'corpus'],
-      related: ['/narratives', '/lab-console', '/compare', '/playground'],
-    },
-    {
-      title: 'Exploration Guide',
-      href: '/explore-guide',
-      desc: 'Personalized path recommender',
-      keywords: ['guide', 'quiz', 'recommend', 'path', 'where to start', 'what to explore'],
-      related: ['/learn', '/first-contact', '/research-hub', '/concepts-to-tools'],
-    },
-    {
-      title: 'Trust Timeline',
-      href: '/trust-timeline',
-      desc: 'Unified trust dynamics across all datasets',
-      keywords: ['timeline', 'trust', 'trajectory', 'comparison', 'unified', 'temporal', 'dynamics'],
-      related: ['/moments', '/data-explorer', '/narratives', '/compare'],
-    },
-    {
-      title: 'Emergent Moments',
-      href: '/moments',
-      desc: 'Curated highlights from simulation data',
-      keywords: ['moments', 'highlights', 'events', 'emergence', 'gallery', 'curated', 'interesting'],
-      related: ['/narratives', '/data-explorer', '/lab-console', '/trust-networks'],
-    },
-    {
-      title: 'Society Simulator',
-      href: '/society-simulator',
-      desc: 'Multi-agent trust dynamics with coalition formation',
-      keywords: ['society', 'multi-agent', 'coalition', 'cooperation', 'defection', 'network', 'emergence', 'game theory', 'prisoner dilemma', 'tit-for-tat'],
-      related: ['/trust-networks', '/trust-tensor-explorer', '/karma-journey', '/federation-economics', '/simulation-sandbox', '/achievements'],
-    },
-    {
-      title: 'Achievements',
-      href: '/achievements',
-      desc: '34 achievements that teach trust dynamics through gameplay',
-      keywords: ['achievements', 'gamification', 'badges', 'progress', 'challenges', 'trust lessons'],
-      related: ['/society-simulator', '/karma-journey', '/playground'],
-    },
-  ],
-  'Advanced Topics': [
-    {
-      title: 'Adversarial Analysis',
-      href: '/adversarial-explorer',
-      desc: 'Attack patterns',
-      keywords: ['attack', 'adversarial', 'sybil', 'collusion', 'security'],
-      related: ['/threat-model', '/coherence-index']
-    },
-    {
-      title: 'Threat Model',
-      href: '/threat-model',
-      desc: 'Security analysis',
-      keywords: ['security', 'threats', 'vulnerabilities', 'defense'],
-      related: ['/adversarial-explorer', '/coherence-framework', '/what-could-go-wrong']
-    },
-    {
-      title: 'Challenge Set',
-      href: '/challenge-set',
-      desc: 'Research prompts',
-      keywords: ['research', 'challenges', 'questions', 'prompts'],
-      related: ['/threat-model', '/coherence-framework']
-    },
-    {
-      title: 'Trust Networks',
-      href: '/trust-networks',
-      desc: 'Multi-agent dynamics',
-      keywords: ['network', 'multi-agent', 'coalition', 'relationships'],
-      related: ['/trust-tensor', '/federation-economics', '/society-simulator']
-    },
-    {
-      title: 'Decision Evolution',
-      href: '/decision-evolution',
-      desc: 'AI pattern learning',
-      keywords: ['EP', 'epistemic', 'proprioception', 'learning', 'patterns'],
-      related: ['/patterns', '/learning-salience', '/narratives']
-    },
-    {
-      title: 'Federation Economics',
-      href: '/federation-economics',
-      desc: 'Cross-society markets',
-      keywords: ['federation', 'markets', 'cross-society', 'pricing'],
-      prerequisites: ['/atp-economics'],
-      related: ['/atp-economics', '/trust-networks']
-    },
-  ],
-  'Foundations': [
     {
       title: 'Web4 Explainer',
       href: '/web4-explainer',
-      desc: 'Technical overview',
-      keywords: ['web4', 'protocol', 'technical', 'architecture'],
-      related: ['/how-it-works', '/lct-explainer']
+      desc: 'A longer-form explanation of the framework for readers who want the full picture.',
+      keywords: ['explainer', 'deep', 'framework', 'full', 'detail'],
+      related: ['/the-standard', '/onramp', '/glossary'],
     },
     {
-      title: 'Aliveness',
-      href: '/aliveness',
-      desc: 'ATP + Trust + Coherence',
-      keywords: ['alive', 'death', 'rebirth', 'existence', 'criteria'],
-      prerequisites: ['/atp-economics', '/trust-tensor', '/coherence-index'],
-      related: ['/atp-economics', '/trust-tensor', '/coherence-index', '/karma-consequences', '/feedback-loop-explorer']
+      title: 'What Could Go Wrong',
+      href: '/what-could-go-wrong',
+      desc: 'The honest adversarial view: attacks, failure modes, and open problems Web4 has to answer.',
+      keywords: ['adversarial', 'attack', 'failure', 'threat', 'risk', 'honest', 'limits', 'open problems'],
+      related: ['/hardbound', '/trust-tensor', '/glossary'],
     },
     {
-      title: 'Trust Neighborhood (MRH)',
-      href: '/trust-neighborhood',
-      desc: 'What you can see',
-      keywords: ['MRH', 'context', 'visibility', 'boundaries', 'markov'],
-      related: ['/trust-networks', '/trust-tensor']
-    },
-    {
-      title: 'Coherence Theory',
+      title: 'Coherence Framework',
       href: '/coherence-framework',
-      desc: 'Physics foundations',
-      keywords: ['coherence', '9-domain', 'synchronism', 'physics', 'D1-D9'],
-      prerequisites: ['/coherence-index'],
-      related: ['/coherence-index', '/understanding-consciousness']
+      desc: 'The foundations under coherence: the physics-of-trust framing the model draws on.',
+      keywords: ['coherence', 'framework', 'foundations', 'physics', 'theory', 'synchronism'],
+      related: ['/coherence-index', '/the-standard'],
     },
     {
-      title: 'Pattern Corpus',
-      href: '/patterns',
-      desc: 'Agent learning data',
-      keywords: ['patterns', 'corpus', 'EP', 'learning', 'data'],
-      related: ['/decision-evolution', '/learning-salience', '/pattern-library']
+      title: 'Manifest',
+      href: '/manifest',
+      desc: 'The stance behind the project: what Web4 is for and what it refuses to be.',
+      keywords: ['manifest', 'manifesto', 'stance', 'principles', 'vision', 'values'],
+      related: ['/why-web4', '/the-standard'],
     },
     {
-      title: 'Pattern Library',
-      href: '/pattern-library',
-      desc: 'Browse cross-life learning patterns',
-      keywords: ['patterns', 'EP', 'epistemic', 'proprioception', 'library', 'browser', 'corpus', 'meta-cognition'],
-      prerequisites: ['/patterns'],
-      related: ['/patterns', '/decision-evolution', '/learning-salience', '/meta-cognition-feedback']
-    },
-    {
-      title: 'Starter Kit',
-      href: '/starter-kit',
-      desc: 'Run local society',
-      keywords: ['download', 'local', 'setup', 'install'],
-      related: ['/lab-console', '/playground']
+      title: 'Learn',
+      href: '/learn',
+      desc: 'Suggested reading paths through the site, from newcomer to hands-on.',
+      keywords: ['learn', 'path', 'guide', 'sequence', 'curriculum', 'reading'],
+      related: ['/first-contact', '/onramp', '/glossary'],
     },
   ],
 };
 
-// Flatten for search
 export function getAllPages(): NavItem[] {
   return Object.values(navigationTree).flat();
 }

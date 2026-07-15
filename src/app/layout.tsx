@@ -12,22 +12,22 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "4-Life | Trust-Native Internet Lab",
+  title: "4-Life | The Web4 Onramp",
   description:
-    "Explore a trust-native internet through interactive simulations. See how hardware-bound identity, energy budgets, and permanent consequences create self-regulating digital societies.",
+    "Web4 makes AI actions verifiable: trust earned through witnessed behavior, not declared by a platform or asserted by a key. The onramp is four composable pieces: the core standard, the hub, hestia, and hardbound.",
   metadataBase: new URL("https://4-life-ivory.vercel.app"),
   openGraph: {
-    title: "4-Life | Trust-Native Internet Lab",
+    title: "4-Life | The Web4 Onramp",
     description:
-      "What if spam cost energy, identity was hardware-bound, and reputation followed you forever? See it working in simulation.",
+      "An educational onramp to Web4: the core standard, the hub, hestia, and hardbound. Honest about what is real today.",
     siteName: "4-Life",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "4-Life | Trust-Native Internet Lab",
+    title: "4-Life | The Web4 Onramp",
     description:
-      "What if spam cost energy, identity was hardware-bound, and reputation followed you forever? See it working in simulation.",
+      "An educational onramp to Web4: the core standard, the hub, hestia, and hardbound. Honest about what is real today.",
   },
 };
 
@@ -59,7 +59,7 @@ export default function RootLayout({
         <main>{children}</main>
         <GlossaryPanel />
         <footer className="footer">
-          <p>4-Life is an experimental lab for Web4 societies.</p>
+          <p>4-Life is an educational onramp to Web4.</p>
           <p style={{ marginTop: '0.5rem' }}>
             <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer">
               Read the Web4 whitepaper
@@ -70,7 +70,7 @@ export default function RootLayout({
             </a>
           </p>
           <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>
-            Active research project · All pages updated regularly · See &ldquo;What&rsquo;s New&rdquo; on the landing page for the latest changes
+            Web4 is a proposed open standard and an active research project. Each page says what is real today and what is not.
           </p>
         </footer>
       </body>
