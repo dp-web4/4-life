@@ -673,7 +673,8 @@ export default function TrustTensorPage() {
                   invariant (core-spec/t3-v3-tensors.md §2.3 / §10.2, test vector t3v3-012; upstream
                   engines fixed 2026-07-13). Do NOT reintroduce a Talent half-life anywhere on this
                   page — sibling claims live in the update-rule code block and #why-half-lives below,
-                  and in why-web4's month-off + youthful-mistakes FAQs; change all or none.
+                  in why-web4's month-off + youthful-mistakes FAQs, and in atp-economics's
+                  #atp-dormancy FAQ; change all or none.
                   Training 180d / Temperament 30d stay: spec §2.3 says societies MAY configure those two. */}
               <span className="text-sky-400 font-bold shrink-0">Natural decay:</span>
               <p className="text-gray-400">If you stop doing analyst work entirely, the three dimensions

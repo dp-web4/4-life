@@ -2874,7 +2874,8 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               {/* Jul-14 canon conformance: Talent MUST NOT decay through inactivity — web4 protocol
                   invariant (core-spec/t3-v3-tensors.md §2.3, test vector t3v3-012). Do NOT reintroduce
-                  a Talent half-life; siblings: youthful-mistakes FAQ below + trust-tensor decay section. */}
+                  a Talent half-life; siblings: youthful-mistakes FAQ below + trust-tensor decay
+                  section + atp-economics #atp-dormancy FAQ. */}
               <p>
                 Trust decays gradually, not suddenly — and not all of it decays. Each dimension has
                 its own rule:
