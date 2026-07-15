@@ -2,7 +2,9 @@
 
 ## Project Overview
 
-4-Life is a fractal laboratory for Web4 societies — an interactive simulation and explainer for trust-native digital ecosystems.
+4-Life is the educational onramp to Web4: a site that teaches the framework and the four composable pieces that make up the onramp (the core standard, the hub, hestia, and hardbound), honest about what is real today.
+
+> Rebuilt 2026-07. The prior Jan-2026 exploration era plus the game/simulation are archived on branch `archive/v1-2026-07` (tag `v1-archive-2026-07-15`). The site is now a pure explainer; the simulation is retired and may return in another form later.
 
 ### Web4 Ontological Context
 
@@ -10,7 +12,7 @@
 Web4 = MCP + RDF + LCT + T3/V3*MRH + ATP/ADP
 ```
 
-4-Life is the interactive laboratory for exploring Web4 as a living ontology. RDF provides the semantic graph through which all trust, identity, and value relationships are expressed. Entities in the simulation live within this ontology — their trust is role-contextualized via RDF triples, their MRH graphs are fractal RDF structures, and their energy flows through ATP/ADP metabolism.
+Web4 is a trust-native ontology with RDF as its semantic backbone: trust is role-contextual, MRH graphs are fractal RDF structures, and value flows through the ATP/ADP cycle. 4-Life teaches this ontology and the onramp built on it. The onramp: the core standard is the substrate; the hub (community), hestia (personal), and hardbound (enterprise) are three scales to run it.
 
 **Live site**: https://4-life-ivory.vercel.app/
 
@@ -57,11 +59,11 @@ When reviewing visitor logs, prioritize by severity:
 The visitor log includes an understanding checklist. If the visitor couldn't understand a core concept, that explainer page needs work:
 
 - [ ] What Web4 is → Landing page / First Contact
-- [ ] What 4-Life demonstrates → How It Works
+- [ ] What the onramp is (the four pieces) → /onramp
 - [ ] What LCT means → /lct-explainer
 - [ ] What ATP/ADP means → /atp-economics
 - [ ] What Trust Tensors are → /trust-tensor
-- [ ] How agents live/die → /aliveness
+- [ ] What is real today vs still R&D → /running-now
 - [ ] Why this matters → /why-web4 (problem framing + honest FAQ)
 
 ## MRH-Specific Policy — Phase Awareness (March 2026)
@@ -114,13 +116,18 @@ See: `private-context/insights/2026-03-13-mrh-policy-phase-mismatch.md`
 ```
 4-life/
 ├── src/app/           # Next.js pages (the actual site)
+├── src/components/    # Shared UI (nav, breadcrumbs, maturity badges, tooltips)
+├── src/lib/           # Shared libs (navigation registry, terms, trust math)
 ├── visitor/           # Visitor Track (naive UX feedback)
 │   ├── CLAUDE.md      # Visitor persona instructions
 │   ├── logs/          # Daily browse logs
 │   └── run_visitor.sh # 05:00 cron runner
-├── lib/               # Core simulation logic
 └── public/            # Static assets
 ```
+
+Note: leftover simulation-only components and libs (e.g. `src/lib/simulation`,
+`src/lib/moments`, `FeaturedMoment`, `EcosystemStats`) are dead code pending a
+prune pass; they no longer render on any page.
 
 ## Remember
 

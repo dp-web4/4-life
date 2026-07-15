@@ -2,7 +2,7 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-03-24*
+*Last updated: 2026-07-15*
 
 ---
 
@@ -12,142 +12,42 @@ https://4-life-ivory.vercel.app/
 
 ---
 
-## Current Priorities
+## BIG CHANGE IN FLIGHT: the onramp rebuild (2026-07)
 
-No HIGH or MEDIUM items open. Site is in good shape — Mar 23 visitor scored yes/yes with "solid" understanding.
+The site is being archived and rebuilt around the Web4 onramp: the four composable
+pieces are the **core standard**, the **hub**, **hestia**, and **hardbound**. The
+Jan-2026 exploration era and the game/simulation are retired.
 
-1. **LOW: Landing page "What's New" contains internal changelog items** — References like "MRH renamed" and "glossary filter" mean nothing to first-time visitors. Consider moving to a separate changelog page or removing.
+- Full prior 84-page site preserved on branch `archive/v1-2026-07`, tag `v1-archive-2026-07-15`.
+- Restore any old file: `git checkout archive/v1-2026-07 -- <path>`.
+- The simulation is retired (may return in another form later). The site is now a **pure explainer**.
 
-2. **DEFERRED: "What would the actual UI look like at scale?"** — Recurring unanswered question since Mar 7. Visitor wants to see real app integration, not just conceptual wireframes. Deferred as meta/roadmap concern, not an explainer gap.
+### Done (Phase 1, committed, not yet deployed)
+- Trimmed 84 routes to a lean onramp spine (removed research pages, game/sim, sim API, sim data, root cruft).
+- New pages: `/the-standard`, `/hardbound`, `/onramp` (composition + adoption order).
+- New four-piece front door home; new `navigation.ts` IA; sitemap derives from nav.
+- Layout metadata/footer reframed; every retired route redirects to its nearest surviving page.
+- Build green (26 static routes).
 
----
+### In progress (Phase 2)
+- Rewriting kept pages against ground truth, removing the "simulation lab" framing and em dashes.
+  Priority: `/tldr`, `/running-now`, `/hub`, `/hestia` (underway), then the concept pages and the
+  larger front-door pages (`/why-web4` is ~3800 lines, `/how-it-works`, `/first-contact`).
+- Repoint visitor QA understanding-checklist (done: `visitor/CLAUDE.md`, root `CLAUDE.md`).
+- Prune dead simulation-only components/libs (`src/lib/simulation`, `src/lib/moments`,
+  `FeaturedMoment`, `EcosystemStats`, etc.). They no longer render; safe to remove after a build check.
+- Seams-integrity pass, then push (auto-deploys to Vercel).
 
-## Recent Changes (git log)
-
-```
-c8e77fa Address Mar 23 visitor unanswered questions: trust transfer, community size, moderation, concept roadmap (#54)
-1f02809 Address Mar 23 LOW visitor friction: progressive disclosure, synthon foreshadow, FAQ simplification (#53)
-c825413 Address Mar 23 visitor friction: page length, progressive disclosure, FAQs (#52)
-09da6e4 visitor: browse log 2026-03-23
-481b5dd Address Mar 22 remaining friction: V3 discovery, EP clarity, quality validation FAQ, single-device support, ATP allocation, ADP visibility (#51)
-fe8c8e9 Address Mar 22 visitor friction: redirects, dilemma UX, ATP explanation (#50)
-```
-
----
-
-## Web4 Concept Coverage
-
-### Covered (visitor confirms understanding)
-
-| Concept | Primary Page(s) | Visitor Comprehension |
-|---------|-----------------|----------------------|
-| Web4 overview | `/`, `/tldr`, `/why-web4` | Strong — landing hooks with real problems, TL;DR delivers |
-| LCT (Linked Context Tokens) | `/lct-explainer` | Good — DeepDiveToggle reduces first-visit scroll |
-| ATP/ADP energy model | `/atp-economics`, `/first-contact` | Good — VCM "restaurant tip" analogy works well |
-| Trust Tensor (T3) | `/trust-tensor` | Good — Alice-across-roles example is intuitive |
-| V3 Value Tensor | `/trust-tensor` | Good — introduced via 5 scoring examples (PR #51) |
-| MRH / Trust Neighborhood | `/markov-relevancy-horizon` | Good — concept sequence nav + roadmap on LCT (PR #54) |
-| Coherence Index (CI) | `/coherence-index` | Good — coding tutorials vs crypto spam example clicks |
-| Agent lifecycle | `/first-contact`, `/aliveness` | Strong — "the economics do the work" |
-| Society simulation | `/society-simulator`, `/playground` | Conceptually clear |
-| Threat model / failure modes | `/what-could-go-wrong` | Strong — "builds more trust than any other page" |
-| Day in Web4 | `/day-in-web4` | Strong — "best page on the site" per Mar 23 visitor |
-| Karma Journey | `/karma-journey` | Good — teaches by doing |
-| Federation economics | `/federation-economics` | Good — cross-society trust transfer FAQ (PR #54) |
-
-### Not Yet Covered (but not blocking comprehension)
-
-| Concept | Status | Notes |
-|---------|--------|-------|
-| **RDF backbone** | Not covered | Ontological foundation — too technical for current visitor journey |
-| **MCP (Model Context Protocol)** | Not covered | Part of Web4 equation but not visitor-relevant yet |
-| **SAL governance** | Partially covered | On How It Works + What Could Go Wrong. "Alignment vs compliance" could be clearer |
-| **Trust cartels** | Partially covered | Threat model mentions colluding users. No dedicated FAQ |
-| **Cultural context in T3** | Not addressed | "Temperament" is culturally loaded — acknowledged but no visitor friction on this |
+### Ground-truth content spine
+The current canonical story of the four pieces (statuses, install commands, how they compose) was
+synthesized from the source repos (web4, 4-hub, hestia, hardbound). Honest maturity is mandatory:
+whole stack is R&D; hub pilot-ready; hestia Phase-2 working; hardbound usable/hardening but hardware
+binding NOT on-device validated (never call it "production-ready").
 
 ---
 
-## Visitor Feedback Queue
-
-Latest log: `visitor/logs/2026-03-23.md`
-
-### Open HIGH Items
-*None*
-
-### Open MEDIUM Items
-*None*
-
-### Open LOW Items
-- Landing page "What's New" has internal changelog (2026-03-22)
-
-### Resolved Since Last Update
-- ~~`/trust-neighborhood` 404~~ → redirect added (PR #50)
-- ~~Trust Dilemmas incomplete~~ → all 3 dilemmas accessible (PR #50)
-- ~~Reading costs ATP unexplained~~ → rationale added (PR #50)
-- ~~V3 never introduced~~ → on Trust Tensor page (PR #51)
-- ~~ADP underexplained~~ → visibility improved (PR #51)
-- ~~Single-device users~~ → FAQ added (PR #51)
-- ~~Quality validation~~ → FAQ added (PR #51)
-- ~~LCT page too long~~ → DeepDiveToggle (PR #52)
-- ~~ATP page too long~~ → DeepDiveToggle (PR #52)
-- ~~Trust Tensor length~~ → DeepDiveToggle (PR #53)
-- ~~Why Web4 FAQ overload~~ → simplified header (PR #53)
-- ~~MRH reference before explained~~ → inline note (PR #53)
-- ~~Synthon introduced late~~ → foreshadowing on CI + How It Works (PRs #52-53)
-- ~~Cross-society trust transfer~~ → FAQ on federation-economics (PR #54)
-- ~~Community size~~ → FAQ on why-web4 (PR #54)
-- ~~Illegal content moderation~~ → FAQ on what-could-go-wrong (PR #54)
-- ~~Concept sequence roadmap~~ → preview on LCT page (PR #54)
-
----
-
-## Simulation / Interactive Elements
-
-| Element | Page | Status |
-|---------|------|--------|
-| Society Simulator | `/society-simulator` | Built — full narrative engine, 34 achievements |
-| Playground | `/playground` | Built — 5 guided experiments, custom parameters |
-| Trust Tensor Simulator | `/trust-tensor` | Built — role + scenario interactive |
-| Trust Dilemmas Quiz | `/trust-dilemmas` | Built — all 3 dilemmas working (PR #50) |
-| Karma Journey | `/karma-journey` | Built — multi-life simulator, 7 archetypes |
-| Your Internet Personalizer | `/your-internet` | Built — 7 frustration scenarios |
-| Day in Web4 | `/day-in-web4` | Built — 7 app mockup scenarios |
-| MRH Explorer | `/mrh-explorer` | Built |
-| First Simulation | `/first-simulation` | Built |
-| Feedback Loop Explorer | `/feedback-loop-explorer` | Built |
-| Live Trust Engine (WASM) | `/trust-tensor` | Built — real web4-trust-core, 3 scenarios |
-
----
-
-## Key Components
-
-- **DeepDiveToggle**: Collapses below-basics content on LCT, ATP, Trust Tensor. localStorage persistence.
-- **ConceptSequenceNav**: LCT → ATP → T3 → MRH → CI → Aliveness. On all 6 concept pages + roadmap preview on LCT.
-- **GlossaryPanel**: Floating "Aa" button, 17 terms in 5 categories. All pages.
-- **ExplorationProgress**: Global progress bar, 11 core pages.
-- **TermTooltip**: Hover-to-define on 12+ pages.
-
----
-
-## Pending Items
-
-- Landing page "What's New" cleanup (LOW)
-- "UI at scale" recurring question (DEFERRED — meta/roadmap)
-- Bidirectional web4 feedback: trust ceiling numbers still in flux across reference implementations
-
----
-
-## Key File Locations
-
-```
-src/app/               # Next.js pages (77 routes in sitemap)
-src/components/        # Shared components (DeepDiveToggle, ConceptSequenceNav, etc.)
-visitor/logs/          # Daily visitor browse logs (05:00 cron)
-visitor/CLAUDE.md      # Visitor persona instructions
-lib/                   # Core simulation logic
-public/                # Static assets
-```
-
----
-
-*Next session: Review Mar 24 visitor log when available. If no friction, site is in maintenance mode.*
+## Notes for the daily visitor track
+Some pages still carry pre-rebuild content until the Phase 2 rewrite lands. Friction on retired
+framing (simulation, karma journey, society simulator) is expected and already being fixed; focus
+new friction reports on the onramp spine (`/`, `/onramp`, `/the-standard`, `/hub`, `/hestia`,
+`/hardbound`, `/running-now`).

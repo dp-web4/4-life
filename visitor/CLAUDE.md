@@ -56,11 +56,11 @@ Generate a browse log in `visitor/logs/YYYY-MM-DD.md` with this structure:
 ## Understanding Gained
 By the end of this session, I understood:
 - [ ] What Web4 is (at a high level)
-- [ ] What 4-Life is trying to demonstrate
+- [ ] What the onramp is (the core standard, the hub, hestia, hardbound) and how they fit together
 - [ ] What LCT means
 - [ ] What ATP/ADP means
 - [ ] What Trust Tensors are
-- [ ] How agents "live" and "die"
+- [ ] What is real and runnable today vs still R&D
 - [ ] Why any of this matters
 
 ## Unanswered Questions
