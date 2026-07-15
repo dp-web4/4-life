@@ -191,7 +191,7 @@ export default function RunningNowPage() {
           (<code className="text-purple-300">find_members</code>). MVP-complete reference
           proof-of-concept. License: AGPL-3.0.{" "}
           <a
-            href="https://github.com/dp-web4/web4/tree/main/hub"
+            href="https://github.com/dp-web4/4-hub"
             target="_blank"
             rel="noopener noreferrer"
             className="text-purple-400 underline hover:text-purple-300"
@@ -272,7 +272,7 @@ export default function RunningNowPage() {
               hestia (the trust daemon)
             </a>
             <a
-              href="https://github.com/dp-web4/web4/tree/main/hub"
+              href="https://github.com/dp-web4/4-hub"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg border border-purple-500/40 bg-purple-500/15 px-4 py-2 text-purple-200 hover:bg-purple-500/25"

@@ -552,7 +552,7 @@ export default function GlossaryPage() {
             </p>
             <div className="flex gap-3 text-sm">
               <Link href="/hub" className="text-purple-400 hover:underline">Learn more →</Link>
-              <a href="https://github.com/dp-web4/web4/tree/main/hub" className="text-purple-400 hover:underline" target="_blank" rel="noopener noreferrer">Code →</a>
+              <a href="https://github.com/dp-web4/4-hub" className="text-purple-400 hover:underline" target="_blank" rel="noopener noreferrer">Code →</a>
             </div>
           </div>
 
