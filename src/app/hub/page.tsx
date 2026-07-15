@@ -188,7 +188,7 @@ export default function HubPage() {
           </p>
           <div className="flex flex-wrap gap-3 text-sm">
             <a
-              href="https://github.com/dp-web4/web4/tree/main/hub"
+              href="https://github.com/dp-web4/4-hub"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg border border-purple-500/40 bg-purple-500/15 px-4 py-2 text-purple-200 hover:bg-purple-500/25"
