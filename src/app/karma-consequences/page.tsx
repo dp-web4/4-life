@@ -82,7 +82,7 @@ const AGENT_LIVES: AgentHistory[] = [
       'Spam campaign: sent 50 low-effort messages',
       'Trust dropped rapidly as community rejected spam',
       'ATP burned 3x faster than earned from any engagement',
-      'Exhausted ATP—unable to act—"died" in society'
+      'Exhausted ATP - unable to act - "died" in society'
     ]
   },
   {
@@ -114,7 +114,7 @@ const AGENT_LIVES: AgentHistory[] = [
     events: [
       'Third chance: even lower starting ATP (60)',
       'Committed to quality-only strategy',
-      'Slow trust recovery—took 10x effort vs new account',
+      'Slow trust recovery - took 10x effort vs new account',
       'Finally built positive karma through consistency',
       'Now sustainable, but permanently marked by early choices'
     ]
@@ -305,7 +305,7 @@ function MultiLifeSimulator() {
           In traditional platforms, this agent would have just created a new account after Life 1.
           In Web4, <strong className="text-white">identity is hardware-bound</strong>, so the karma
           follows. It took <strong className="text-white">three lives</strong> to recover from one
-          spam campaign—and recovery required genuine behavior change, not just waiting.
+          spam campaign - and recovery required genuine behavior change, not just waiting.
         </p>
       </div>
     </div>
@@ -593,7 +593,7 @@ function KarmaFormula() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-emerald-500">+</span>
-              <span><strong className="text-white">Longevity</strong> — surviving and contributing over time</span>
+              <span><strong className="text-white">Longevity</strong> - surviving and contributing over time</span>
             </li>
           </ul>
         </div>
@@ -608,15 +608,15 @@ function KarmaFormula() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-red-500">-</span>
-              <span><strong className="text-white">Trust violations</strong> — breaking commitments, inconsistency</span>
+              <span><strong className="text-white">Trust violations</strong> - breaking commitments, inconsistency</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-red-500">-</span>
-              <span><strong className="text-white">Community rejection</strong> — downvotes, blocks, reports</span>
+              <span><strong className="text-white">Community rejection</strong> - downvotes, blocks, reports</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-red-500">-</span>
-              <span><strong className="text-white">Premature death</strong> — ATP exhaustion indicates poor resource management</span>
+              <span><strong className="text-white">Premature death</strong> - ATP exhaustion indicates poor resource management</span>
             </li>
           </ul>
         </div>
@@ -696,7 +696,7 @@ function RealWorldImplications() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-emerald-500">•</span>
-              <span>Karma follows you everywhere—no clean slates</span>
+              <span>Karma follows you everywhere - no clean slates</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-emerald-500">•</span>
@@ -719,7 +719,7 @@ function RealWorldImplications() {
         <p className="text-sm text-gray-300">
           Real life already works this way. You can't escape your credit history by changing your name.
           Your criminal record follows you across state lines. Professional reputations persist across jobs.
-          Web4 brings this natural accountability to digital spaces—not as punishment, but as{' '}
+          Web4 brings this natural accountability to digital spaces - not as punishment, but as{' '}
           <strong className="text-purple-400">the foundation that makes trust possible</strong>.
         </p>
       </div>
@@ -752,12 +752,10 @@ export default function KarmaConsequencesPage() {
                 Why can't bad actors just create new accounts? How do consequences persist
                 across agent "lives"? Explore Web4's permanent reputation system.
               </p>
-              {/* May 3 visitor LOW #5: Karma Consequences vs Karma Journey naming overlap — both names sound interactive. Two-second disambiguation at top. */}
               <p className="text-sm text-gray-400 mt-3 max-w-3xl">
-                <span className="text-orange-300 font-semibold">You are on the explainer.</span>{' '}
-                Want to <em>play</em> karma yourself across multiple lives?{' '}
-                <Link href="/karma-journey" className="text-sky-400 hover:underline">Karma Journey →</Link>{' '}
-                is the interactive sim.
+                This page explains how reputation persists and carries forward in Web4. For the
+                bigger picture, see the{' '}
+                <Link href="/onramp" className="text-sky-400 hover:underline">Web4 onramp</Link>.
               </p>
             </div>
             <Link
@@ -772,7 +770,7 @@ export default function KarmaConsequencesPage() {
           <div className="p-4 bg-gradient-to-br from-orange-900/20 to-red-900/20 border border-orange-800/30 rounded-lg">
             <p className="text-gray-300 text-sm">
               <strong className="text-orange-400">Key Insight:</strong> In traditional systems,
-              consequences are temporary—create a new account and start fresh. In Web4,{' '}
+              consequences are temporary - create a new account and start fresh. In Web4,{' '}
               <strong className="text-white">identity is hardware-bound</strong> via <TermTooltip term="LCT">LCT</TermTooltip>, so karma follows
               you across &ldquo;lives.&rdquo; Bad actors can&apos;t escape their history; they can only rebuild it
               through genuine behavior change.
@@ -872,22 +870,22 @@ export default function KarmaConsequencesPage() {
           </ul>
         </section>
 
-        {/* Primary CTA: Society Simulator */}
+        {/* Primary CTA: onramp cross-link (society simulator retired) */}
         <section className="mb-12">
           <div className="bg-gradient-to-br from-emerald-950/30 to-emerald-900/20 border border-emerald-800/30 rounded-xl p-8 text-center">
             <h2 className="text-2xl font-bold text-emerald-400 mb-3">
-              Watch Karma in a Real Society
+              Where Karma Plays Out
             </h2>
             <p className="text-gray-300 mb-6 max-w-lg mx-auto">
-              Now that you understand how consequences persist, watch 12 agents navigate
-              karma in real time. See cooperators thrive, defectors get isolated, and
-              coalitions form around reputation.
+              Now that you understand how consequences persist, see how communities put this
+              to work: reputation is what lets cooperators thrive, isolates defectors, and lets
+              coalitions form around trust.
             </p>
             <Link
-              href="/society-simulator"
+              href="/hub"
               className="inline-block px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors text-lg"
             >
-              Launch Society Simulator →
+              Explore the Hub →
             </Link>
           </div>
         </section>

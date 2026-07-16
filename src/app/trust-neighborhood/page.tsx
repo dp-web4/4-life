@@ -11,7 +11,7 @@ import { trackPageVisit } from "@/lib/exploration";
 
 export default function MarkovRelevancyHorizonPage() {
   useEffect(() => { trackPageVisit('trust-neighborhood'); }, []);
-  // Simulator state
+  // Interactive explorer state
   const [selectedEntity, setSelectedEntity] = useState<"alice" | "bob" | "charlie">("alice");
   const [horizonDepth, setHorizonDepth] = useState<1 | 2 | 3>(2);
   const [showRelationTypes, setShowRelationTypes] = useState(true);
@@ -99,10 +99,10 @@ export default function MarkovRelevancyHorizonPage() {
             Your Trust Neighborhood
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed mb-3">
-            Who can reach you, and who you can reach — Web4 creates context boundaries through relationships, so you see what&apos;s relevant and nothing more.
+            Who can reach you, and who you can reach - Web4 creates context boundaries through relationships, so you see what&apos;s relevant and nothing more.
           </p>
           <p className="text-sm text-gray-500 italic mb-6">
-            The formal name is &quot;Markov Relevancy Horizon&quot; (MRH) — a math-flavored term we keep for spec-level work; you don&apos;t need it to use the idea.
+            The formal name is &quot;Markov Relevancy Horizon&quot; (MRH) - a math-flavored term we keep for spec-level work; you don&apos;t need it to use the idea.
           </p>
           <p className="text-sm text-gray-500">
             <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-cyan-400 hover:text-cyan-300 cursor-pointer">
@@ -121,7 +121,7 @@ export default function MarkovRelevancyHorizonPage() {
                   <strong>Traditional systems</strong>: Either everyone sees everything (overwhelming) or strict access control (fragmented)
                 </p>
                 <p className="text-gray-300">
-                  <strong>Web4 Trust Neighborhoods</strong>: What you can see and do emerges from relationships (you see your connections, their connections, and their connections — nothing more)
+                  <strong>Web4 Trust Neighborhoods</strong>: What you can see and do emerges from relationships (you see your connections, their connections, and their connections - nothing more)
                 </p>
               </div>
             </div>
@@ -184,11 +184,11 @@ export default function MarkovRelevancyHorizonPage() {
         {/* "Isn't this just a social graph?" Section */}
         <section className="max-w-4xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-6 text-cyan-400">
-            Wait — Isn&apos;t This Just a Social Graph?
+            Wait - Isn&apos;t This Just a Social Graph?
           </h2>
 
           <p className="text-gray-300 mb-6">
-            Fair question. A trust neighborhood looks like a social graph at first glance — nodes and edges, friends of friends. But the similarities are surface-level. Here&apos;s what&apos;s actually different:
+            Fair question. A trust neighborhood looks like a social graph at first glance - nodes and edges, friends of friends. But the similarities are surface-level. Here&apos;s what&apos;s actually different:
           </p>
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
@@ -198,7 +198,7 @@ export default function MarkovRelevancyHorizonPage() {
                 <li>One flat &quot;friends&quot; list for all contexts</li>
                 <li>Edges are binary: connected or not</li>
                 <li>Algorithm decides what you see</li>
-                <li>No boundary — the platform sees everything</li>
+                <li>No boundary - the platform sees everything</li>
                 <li>Free to traverse (spam is free)</li>
                 <li>You are the product</li>
               </ul>
@@ -208,10 +208,10 @@ export default function MarkovRelevancyHorizonPage() {
               <ul className="text-sm text-gray-300 space-y-1.5">
                 <li>Separate graph per role (you-as-doctor ≠ you-as-neighbor)</li>
                 <li>Edges carry trust scores across 3 dimensions</li>
-                <li>Your relationships define what you see — no algorithm</li>
-                <li>Hard 3-hop boundary — beyond it, you carry no trust weight to them (still visible, just unverified)</li>
+                <li>Your relationships define what you see - no algorithm</li>
+                <li>Hard 3-hop boundary - beyond it, you carry no trust weight to them (still visible, just unverified)</li>
                 <li>Crossing boundaries costs ATP (spam costs real energy)</li>
-                <li>You own your graph — it lives on your device</li>
+                <li>You own your graph - it lives on your device</li>
               </ul>
             </div>
           </div>
@@ -232,13 +232,14 @@ export default function MarkovRelevancyHorizonPage() {
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-8">
             <p className="text-gray-300 mb-4">
-              Your trust neighborhood is a <strong className="text-cyan-400">relationship network</strong> — a map of entities and their connections.
+              Your trust neighborhood is a <strong className="text-cyan-400">relationship network</strong> - a map of entities and their connections.
               Each entity you interact with creates a <strong className="text-cyan-400">relationship edge</strong> in the network.
               Context emerges from <strong className="text-cyan-400">who you&apos;re connected to</strong>, not from abstract metrics.
+              This boundary scopes what&apos;s <strong className="text-cyan-400">relevant</strong> to you, what&apos;s <strong className="text-cyan-400">permissible</strong>, and how far your trust extends.
             </p>
             <p className="text-gray-300">
               Why the formal name &quot;<strong className="text-cyan-400">Markov Relevancy Horizon</strong>&quot;? The <em>Markov</em> part just says
-              your decisions depend only on nearby entities, not the full network — beyond depth 3 (you → connections → their connections → third degree),
+              your decisions depend only on nearby entities, not the full network - beyond depth 3 (you → connections → their connections → third degree),
               entities become irrelevant. This keeps your neighborhood locally focused and computationally efficient.
             </p>
           </div>
@@ -470,22 +471,22 @@ export default function MarkovRelevancyHorizonPage() {
             <p className="text-gray-300 mb-4">
               Think of how trust works in real life: you trust your friends, you somewhat trust
               friends-of-friends, and beyond that, people are strangers. Web4 formalizes this
-              as the <strong className="text-cyan-400">Markov Relevancy Horizon</strong> —
+              as the <strong className="text-cyan-400">Markov Relevancy Horizon</strong> -
               your decisions depend only on entities within your horizon, not the entire network.
             </p>
             <p className="text-gray-300 mb-4">
               <strong className="text-cyan-400">Is the horizon enforced or just calculated?</strong>{" "}
               Both, and that&apos;s the point. The horizon is a structural property of how trust is
-              <em> computed</em> — entities outside it aren&apos;t inputs to your trust math, so they
+              <em> computed</em> - entities outside it aren&apos;t inputs to your trust math, so they
               can&apos;t influence your decisions even if they wanted to. That same structure is what
               keeps your relationship graph <em>private</em> from them: there&apos;s no &quot;global
               view&quot; for anyone to query. Enforcement isn&apos;t a separate access-control layer
-              bolted on top — it falls out of the math.
+              bolted on top - it falls out of the math.
             </p>
             <p className="text-gray-300">
               <strong className="text-cyan-400">Key principle</strong>: Beyond 3 hops, relationships
               become irrelevant to your trust decisions. This mirrors how social networks
-              actually work — you rarely act on information from a friend-of-a-friend-of-a-friend-of-a-friend.
+              actually work - you rarely act on information from a friend-of-a-friend-of-a-friend-of-a-friend.
             </p>
           </div>
 
@@ -497,7 +498,7 @@ export default function MarkovRelevancyHorizonPage() {
               <p className="text-gray-300 text-sm">
                 Because each entity only looks 3 hops deep, trust calculations stay fast
                 regardless of network size. Even a billion-entity Web4 network works smoothly
-                because each entity only considers about 1,000 relationships — not the whole network.
+                because each entity only considers about 1,000 relationships - not the whole network.
               </p>
             </div>
 
@@ -508,7 +509,7 @@ export default function MarkovRelevancyHorizonPage() {
               <p className="text-gray-300 text-sm">
                 Neighborhood boundaries naturally create privacy zones. Entities outside your horizon
                 can&apos;t see your relationships, and you can&apos;t see theirs. No global visibility
-                needed for trust to emerge — only local relationship graphs.
+                needed for trust to emerge - only local relationship graphs.
               </p>
             </div>
 
@@ -544,7 +545,7 @@ export default function MarkovRelevancyHorizonPage() {
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-6">
             <p className="text-gray-300 mb-4">
-              Trust doesn&apos;t exist in isolation — it <strong className="text-cyan-400">propagates through relationship graphs</strong>.
+              Trust doesn&apos;t exist in isolation - it <strong className="text-cyan-400">propagates through relationship graphs</strong>.
               If you trust Alice and Alice trusts Bob, you have <em>some</em> basis to trust Bob,
               but weaker than direct experience.
             </p>
@@ -590,7 +591,7 @@ export default function MarkovRelevancyHorizonPage() {
             {/* 2026-06-07 visitor LOW + Unanswered Q3/Q4: page "read both ways" on invisible-vs-untrusted, and the
                 resolution was buried in the collapsed filter-bubble FAQ below. Name it at the prominent read point. */}
             <p className="text-center text-xs text-gray-500 mt-3 max-w-2xl mx-auto leading-relaxed">
-              &ldquo;Zero&rdquo; here means trust <em>weight</em>, not visibility — beyond 3 hops you can still see someone,
+              &ldquo;Zero&rdquo; here means trust <em>weight</em>, not visibility - beyond 3 hops you can still see someone,
               you just treat them as an unverified stranger instead of letting their trust flow to you. And the boundary
               isn&apos;t a wall: any agent who happens to sit in two neighborhoods at once is a{' '}
               <strong className="text-gray-400">bridge</strong> (not a special role you apply for), reconnecting graphs that
@@ -599,7 +600,7 @@ export default function MarkovRelevancyHorizonPage() {
             </p>
           </div>
 
-          {/* Why 0.7? — Apr 19 visitor MEDIUM: "the 'why 0.7?' question hangs there" */}
+          {/* Why 0.7? - Apr 19 visitor MEDIUM: "the 'why 0.7?' question hangs there" */}
           <div className="bg-gray-800/40 border border-cyan-500/20 rounded-lg p-6 mb-8">
             <h3 className="text-lg font-semibold text-cyan-300 mb-3">
               Why 0.7? (Not 0.5 or 0.9)
@@ -609,24 +610,23 @@ export default function MarkovRelevancyHorizonPage() {
             </p>
             <div className="grid md:grid-cols-3 gap-3 text-xs mb-4">
               <div className="bg-gray-900/40 border border-red-500/20 rounded-md p-3">
-                <div className="text-red-400 font-semibold mb-1">0.5 — too harsh</div>
+                <div className="text-red-400 font-semibold mb-1">0.5 - too harsh</div>
                 <div className="text-gray-400">3 hops = 12.5%. Friends-of-friends-of-friends are effectively invisible; the horizon collapses before it becomes useful.</div>
               </div>
               <div className="bg-gray-900/40 border border-cyan-500/30 rounded-md p-3">
-                <div className="text-cyan-300 font-semibold mb-1">0.7 — the cliff</div>
+                <div className="text-cyan-300 font-semibold mb-1">0.7 - the cliff</div>
                 <div className="text-gray-300">3 hops = 34%. Meaningful but clearly attenuated. Direct trust still dominates; distant trust is a weak signal, not a zero.</div>
               </div>
               <div className="bg-gray-900/40 border border-amber-500/20 rounded-md p-3">
-                <div className="text-amber-400 font-semibold mb-1">0.9 — too loose</div>
+                <div className="text-amber-400 font-semibold mb-1">0.9 - too loose</div>
                 <div className="text-gray-400">3 hops = 73%. Barely any decay; the &ldquo;neighborhood&rdquo; blurs into the whole network and the boundary disappears.</div>
               </div>
             </div>
             <p className="text-gray-400 text-sm mb-3">
-              0.7 also roughly tracks how humans <em>actually</em> weight trust in practice — you act on a direct friend&apos;s word, you check a friend-of-a-friend&apos;s claim carefully, and by the fourth hop you&apos;re treating them as a stranger.
+              0.7 also roughly tracks how humans <em>actually</em> weight trust in practice - you act on a direct friend&apos;s word, you check a friend-of-a-friend&apos;s claim carefully, and by the fourth hop you&apos;re treating them as a stranger.
             </p>
             <p className="text-amber-400/70 text-xs">
-              <strong>Honest caveat:</strong> 0.7 is a design parameter, not a physical constant. Different communities might tune it — higher decay for privacy-sensitive contexts, lower for open discovery. The right values will emerge from real-world testing. The interactive{" "}
-              <Link href="/mrh-explorer" className="text-sky-400 hover:underline">MRH Explorer</Link> uses a finer 0.85/0.9 model (≈0.85 after one hop, not 0.70) — a different curve to the same place, since both fall below the noise floor by depth 3–4. See the{" "}
+              <strong>Honest caveat:</strong> 0.7 is a design parameter, not a physical constant. Different communities might tune it (higher decay for privacy-sensitive contexts, lower for open discovery). The right values will emerge from real-world testing. Reference models use a finer curve (roughly 0.85 after one hop, not 0.70) that reaches the same place, since both fall below the noise floor by depth 3 to 4. See the{" "}
               <Link href="/why-web4#faq-mrh-messaging" className="text-sky-400 hover:underline">fuller discussion in the FAQ</Link>.
             </p>
           </div>
@@ -637,7 +637,7 @@ export default function MarkovRelevancyHorizonPage() {
                 Each Hop Weakens Trust
               </h3>
               <p className="text-gray-300 text-sm mb-3">
-                Every hop costs 30% of the remaining trust. Like a game of telephone — each
+                Every hop costs 30% of the remaining trust. Like a game of telephone - each
                 retelling loses fidelity:
               </p>
               <div className="text-sm text-gray-300 mb-3 space-y-1">
@@ -664,7 +664,7 @@ export default function MarkovRelevancyHorizonPage() {
               </p>
               <p className="text-gray-400 text-xs mb-2">
                 <strong className="text-cyan-300">Example:</strong> Two friends independently trust Bob at 0.7 each.
-                Your combined trust in Bob: <strong className="text-cyan-300">0.91</strong> — much stronger than either path alone.
+                Your combined trust in Bob: <strong className="text-cyan-300">0.91</strong> - much stronger than either path alone.
               </p>
               <details className="text-xs text-gray-500">
                 <summary className="cursor-pointer hover:text-gray-400">Formula</summary>
@@ -698,7 +698,7 @@ export default function MarkovRelevancyHorizonPage() {
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-6">
             <p className="text-gray-300 mb-4">
               Critical principle: <strong className="text-cyan-400">your neighborhood is role-specific</strong>.
-              You don&apos;t just have a relationship with Alice — you have a relationship with
+              You don&apos;t just have a relationship with Alice - you have a relationship with
               <em> Alice-as-surgeon</em> and a separate relationship with <em>Alice-as-researcher</em>.
             </p>
             <p className="text-gray-300">
@@ -748,7 +748,7 @@ export default function MarkovRelevancyHorizonPage() {
               <h4 className="text-sm font-semibold text-cyan-400 mb-2">What about privacy between roles?</h4>
               <p className="text-sm text-gray-400">
                 Role contexts are <strong className="text-cyan-300">separate by default</strong>. Someone who knows
-                Alice as a surgeon cannot discover her car-owner trust score — those are different neighborhoods
+                Alice as a surgeon cannot discover her car-owner trust score - those are different neighborhoods
                 with different relationship sets. You only see the roles where you share a context.
                 Alice can <em>choose</em> to link roles (e.g., proving she&apos;s both a surgeon and a researcher),
                 but the system never reveals cross-role trust without consent.
@@ -760,20 +760,20 @@ export default function MarkovRelevancyHorizonPage() {
           <div className="bg-sky-950/20 border border-sky-800/30 rounded-lg p-4 mt-6">
             <h4 className="text-sm font-semibold text-sky-400 mb-2">What happens when you join a new community?</h4>
             <p className="text-sm text-gray-400">
-              Your trust doesn&apos;t reset to zero — but it doesn&apos;t transfer at full value either.
+              Your trust doesn&apos;t reset to zero - but it doesn&apos;t transfer at full value either.
               When communities federate, your trust from Community A travels to Community B at a discount
-              (typically ~65% weight &mdash; a separate federation-policy number, not the per-hop 0.7&times; decay
+              (typically ~65% weight - a separate federation-policy number, not the per-hop 0.7&times; decay
               you saw within a single community above). Think of it like transferring schools: your grades come with you,
               but you still need to prove yourself to new teachers.
             </p>
             <p className="text-sm text-gray-400 mt-2">
               <strong className="text-sky-300">Who sets the discount?</strong> The <em>receiving</em> community
-              does — it&apos;s part of their federation policy. A tight-knit medical community might only accept
+              does - it&apos;s part of their federation policy. A tight-knit medical community might only accept
               40% of your external trust; a casual hobby group might accept 80%. The discount reflects how much
               Community B trusts Community A&apos;s standards. This is negotiated when communities federate, not
               imposed by a central authority.{" "}
-              <Link href="/federation-economics#switching-societies" className="text-sky-400 hover:underline">
-                See the full walkthrough →
+              <Link href="/trust-tensor" className="text-sky-400 hover:underline">
+                See how trust scores work →
               </Link>
             </p>
           </div>
@@ -792,7 +792,7 @@ export default function MarkovRelevancyHorizonPage() {
                 Social Networks Without Algorithms
               </h3>
               <p className="text-gray-300 text-sm">
-                No algorithmic feed needed — your trust neighborhood defines what you see. Posts from
+                No algorithmic feed needed - your trust neighborhood defines what you see. Posts from
                 direct connections appear prominently, posts from second-degree with
                 context, third-degree only if highly relevant. Natural information flow.
               </p>
@@ -805,7 +805,7 @@ export default function MarkovRelevancyHorizonPage() {
               </h3>
               <p className="text-gray-300 text-sm">
                 Trust neighborhoods naturally model org charts, project teams, and collaboration networks.
-                Each person&apos;s neighborhood reflects their actual working context — no manual
+                Each person&apos;s neighborhood reflects their actual working context - no manual
                 permission management needed.
               </p>
             </div>
@@ -829,7 +829,7 @@ export default function MarkovRelevancyHorizonPage() {
               </h3>
               <p className="text-gray-300 text-sm">
                 Find entities through trust paths in your neighborhood. &quot;People in your network
-                who are surgeons&quot; or &quot;Mechanics trusted by people you trust&quot; —
+                who are surgeons&quot; or &quot;Mechanics trusted by people you trust&quot; -
                 structured queries on your relationship graph.
               </p>
             </div>
@@ -906,17 +906,17 @@ export default function MarkovRelevancyHorizonPage() {
               <p className="text-gray-300 text-sm">
                 One of CI&apos;s four dimensions checks whether your claimed relationships
                 match reality. If you say you know someone but your connection history
-                doesn&apos;t support it, your coherence score drops — a natural lie detector
+                doesn&apos;t support it, your coherence score drops - a natural lie detector
                 for relationship fraud.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Technical Implementation Section — collapsed for general visitors */}
+        {/* Technical Implementation Section - collapsed for general visitors */}
         <section className="max-w-4xl mx-auto mb-16">
           <p className="text-sm text-gray-500 italic mb-4">
-            You&apos;ve got the conceptual model — that&apos;s enough to use the idea. What follows is spec-level detail for developers, and you can stop here.
+            You&apos;ve got the conceptual model - that&apos;s enough to use the idea. What follows is spec-level detail for developers, and you can stop here.
           </p>
           <details className="group">
           <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors mb-6">
@@ -928,7 +928,7 @@ export default function MarkovRelevancyHorizonPage() {
           </summary>
 
           <p className="text-gray-400 text-sm mb-6">
-            MRH uses two web standards under the hood: <strong className="text-gray-300">RDF</strong> (Resource Description Framework — a standard way to describe relationships as subject-verb-object triples) and <strong className="text-gray-300">SPARQL</strong> (a query language for searching those relationships, like SQL for graphs).
+            MRH uses two web standards under the hood: <strong className="text-gray-300">RDF</strong> (Resource Description Framework - a standard way to describe relationships as subject-verb-object triples) and <strong className="text-gray-300">SPARQL</strong> (a query language for searching those relationships, like SQL for graphs).
           </p>
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-6">
@@ -1151,21 +1151,21 @@ SELECT ?entity ?distance WHERE {
             </Link>
 
             <Link
-              href="/lab-console"
+              href="/the-standard"
               className="block bg-gray-800/50 border border-cyan-700/30 rounded-lg p-6 hover:border-cyan-500/50 transition-all"
             >
-              <div className="text-2xl mb-2">🧪</div>
+              <div className="text-2xl mb-2">📐</div>
               <h3 className="text-lg font-semibold text-cyan-400 mb-2">
-                Lab Console
+                The Core Standard
               </h3>
               <p className="text-gray-400 text-sm">
-                See MRH relationships in live simulations
+                MRH graphs are part of the Web4 core standard, the onramp substrate
               </p>
             </Link>
           </div>
         </section>
 
-        {/* FAQ: Filter bubbles — visitor Q Mar 24 */}
+        {/* FAQ: Filter bubbles - visitor Q Mar 24 */}
         <section id="faq-filter-bubbles" className="max-w-4xl mx-auto mt-12 scroll-mt-24">
           <details className="bg-gray-800/40 border border-gray-700 rounded-xl p-6">
             <summary className="text-lg font-semibold text-cyan-400 cursor-pointer hover:text-cyan-300 transition-colors list-none flex justify-between items-center">
@@ -1174,15 +1174,15 @@ SELECT ?entity ?distance WHERE {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-3">
               <p>
-                MRH limits <em>trust influence</em>, not <em>visibility</em>. You can see content from anyone — MRH determines
+                MRH limits <em>trust influence</em>, not <em>visibility</em>. You can see content from anyone - MRH determines
                 how much weight you give it. Strangers aren&apos;t invisible; they&apos;re unverified.
               </p>
               <p>Several mechanisms prevent echo chambers:</p>
               <ul className="list-disc list-inside space-y-1.5 ml-4 text-gray-400">
-                <li><strong className="text-gray-300">Bridge agents</strong> — people in multiple communities connect separate trust networks</li>
-                <li><strong className="text-gray-300">Federation</strong> — cross-community trust transfers create visibility beyond your local graph</li>
-                <li><strong className="text-gray-300">Role diversity</strong> — your MRH as a developer is a different graph than your MRH as a cook; you exist in many neighborhoods simultaneously</li>
-                <li><strong className="text-gray-300">Visible boundaries</strong> — unlike algorithmic bubbles, you can <em>see</em> where your MRH ends, making the boundary a conscious choice rather than a hidden filter</li>
+                <li><strong className="text-gray-300">Bridge agents</strong> - people in multiple communities connect separate trust networks</li>
+                <li><strong className="text-gray-300">Federation</strong> - cross-community trust transfers create visibility beyond your local graph</li>
+                <li><strong className="text-gray-300">Role diversity</strong> - your MRH as a developer is a different graph than your MRH as a cook; you exist in many neighborhoods simultaneously</li>
+                <li><strong className="text-gray-300">Visible boundaries</strong> - unlike algorithmic bubbles, you can <em>see</em> where your MRH ends, making the boundary a conscious choice rather than a hidden filter</li>
               </ul>
               <p className="text-amber-400/60 text-xs">
                 <strong>Honest caveat:</strong> Any trust-based system risks insularity. The difference is that MRH bubbles are transparent and permeable, while social media bubbles are invisible and algorithmically reinforced. See the{' '}

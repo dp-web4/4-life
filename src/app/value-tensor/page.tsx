@@ -1,14 +1,14 @@
 "use client";
 
 /**
- * /value-tensor — V3's own page.
+ * /value-tensor - V3's own page.
  *
  * Jul-9 visitor MEDIUM: "V3 does real work (rates output, feeds the trust update, drives ATP
- * recharge) but has no page of its own — only a subsection on the T3 page... It feels like a
+ * recharge) but has no page of its own - only a subsection on the T3 page... It feels like a
  * first-class concept living as a subsection of another concept."
  *
  * Everything here MOVED off /trust-tensor rather than being rewritten. On that page V3 sat
- * behind a default-collapsed expand gate — a gate added to fix the opposite friction (May-4:
+ * behind a default-collapsed expand gate - a gate added to fix the opposite friction (May-4:
  * "V3 mid-page overload"). The two frictions could not both be fixed on one page. /trust-tensor
  * keeps the always-visible V3 teaser (eight browses of iteration) and links here.
  *
@@ -46,7 +46,7 @@ export default function ValueTensorPage() {
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed mb-4">
             Reputation tells you whether to trust a <em>person</em>. It doesn&apos;t tell you whether
-            a particular <em>thing they made</em> is any good. The Value Tensor &mdash; V3 &mdash; scores
+            a particular <em>thing they made</em> is any good. The Value Tensor - V3 - scores
             the work.
           </p>
           <p className="text-gray-400 leading-relaxed mb-6">
@@ -56,7 +56,7 @@ export default function ValueTensorPage() {
             can produce brilliant work one week and sloppy work the next, and V3 is what notices.
           </p>
 
-          {/* Key distinction callout — moved from the V3 Output Scorer on /trust-tensor */}
+          {/* Key distinction callout - moved from the V3 Output Scorer on /trust-tensor */}
           <div className="bg-gradient-to-r from-sky-950/40 to-purple-950/40 border border-sky-800/30 rounded-xl p-4 mb-6">
             <div className="flex flex-wrap items-center gap-3 text-sm">
               <div className="flex items-center gap-2">
@@ -87,7 +87,7 @@ export default function ValueTensorPage() {
             Three Questions About Any Piece of Work
           </h2>
           <p className="text-gray-400 mb-4">
-            Every output in Web4 gets scored across three dimensions &mdash; and the weights are designed
+            Every output in Web4 gets scored across three dimensions - and the weights are designed
             to reward truth over popularity.
           </p>
           <p className="text-xs text-gray-500 mb-6">
@@ -111,7 +111,7 @@ export default function ValueTensorPage() {
                 <span className="text-xs text-gray-500 ml-auto">weight: 0.35</span>
               </div>
               <p className="text-sm text-purple-300/80 mb-1">= &ldquo;Was it true?&rdquo;</p>
-              <p className="text-sm text-gray-400">Verified by external validation and witness attestation &mdash; a recorded confirmation from an independent party that it actually happened.</p>
+              <p className="text-sm text-gray-400">Verified by external validation and witness attestation - a recorded confirmation from an independent party that it actually happened.</p>
             </div>
             <div className="bg-gradient-to-br from-green-950/30 to-gray-900 border border-green-800/30 rounded-xl p-5">
               <div className="flex items-center gap-2 mb-2">
@@ -129,17 +129,17 @@ export default function ValueTensorPage() {
           </p>
           {/* Jul-10 visitor LOW: after /trust-tensor's T3 half-lives, this page's silence on decay
               was conspicuous ("do work scores age, or are they permanent?"). Numbers below must stay
-              in sync with the V3 half-lives at trust-tensor (search "V3 decay half-lives") — change
+              in sync with the V3 half-lives at trust-tensor (search "V3 decay half-lives") - change
               both or neither. */}
           <p className="text-sm text-gray-500 mt-2">
-            And yes &mdash; like T3, V3 scores <strong className="text-gray-400">decay</strong> rather than
-            sitting frozen: Valuation fades fastest (14-day half-life &mdash; how useful something is depends
+            And yes - like T3, V3 scores <strong className="text-gray-400">decay</strong> rather than
+            sitting frozen: Valuation fades fastest (14-day half-life - how useful something is depends
             on conditions that change), Validity in 90 days (certifications and checks go stale), Veracity
-            slowest (365 days &mdash; a truth record persists).
+            slowest (365 days - a truth record persists).
           </p>
         </section>
 
-        {/* Who scores V3 — Jul-9 visitor Unanswered Q7: "Who assigns the V3 score to my work,
+        {/* Who scores V3 - Jul-9 visitor Unanswered Q7: "Who assigns the V3 score to my work,
             and what stops that person from lying?" The answer existed but was double-buried: a
             <details> inside a gated section. Same prose, surfaced. Do not re-collapse it. */}
         <section id="who-scores" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
@@ -147,7 +147,7 @@ export default function ValueTensorPage() {
             Who Assigns These Scores?
           </h2>
           <p className="text-gray-400 mb-6">
-            Not you &mdash; you never rate your own work. And not any one other party either. Each dimension
+            Not you - you never rate your own work. And not any one other party either. Each dimension
             is scored by a different mechanism, which is what stops any single scorer from simply lying.
           </p>
 
@@ -155,7 +155,7 @@ export default function ValueTensorPage() {
             <p className="m-0">
               <strong className="text-sky-400">Valuation</strong> is scored by the <em>recipient</em> of
               an output. When someone receives your work, they confirm whether it was useful via the VCM
-              (Value Confirmation Message). This is like leaving a receipt &mdash; &ldquo;yes, this helped me.&rdquo;
+              (Value Confirmation Message). This is like leaving a receipt - &ldquo;yes, this helped me.&rdquo;
             </p>
             <p className="m-0">
               <strong className="text-purple-400">Veracity</strong> is scored through <em>witness attestation</em> and
@@ -164,10 +164,10 @@ export default function ValueTensorPage() {
               Think peer review: your claim is only as strong as the evidence your witnesses can attest to.
             </p>
             <p className="m-0">
-              <strong className="text-green-400">Validity</strong> is scored by <em>structural verification</em> &mdash;
+              <strong className="text-green-400">Validity</strong> is scored by <em>structural verification</em> -
               did the output actually arrive? Is it logically consistent? Receipt confirmation proves delivery,
               and the system checks internal consistency (e.g., a code review that contradicts itself scores low).
-              This is the most automated dimension &mdash; much of it can be verified without human judgment.
+              This is the most automated dimension - much of it can be verified without human judgment.
             </p>
             <p className="m-0 text-gray-500 text-xs border-t border-gray-700/50 pt-3">
               In short: Valuation = the recipient judges usefulness. Veracity = witnesses and peers judge truthfulness. Validity = the system verifies delivery and consistency. No single party controls all three dimensions.
@@ -175,7 +175,7 @@ export default function ValueTensorPage() {
           </div>
         </section>
 
-        {/* Interactive scorer. `v3-output-scorer` is the historical anchor name — cross-page
+        {/* Interactive scorer. `v3-output-scorer` is the historical anchor name - cross-page
             links from atp-economics/why-web4/glossary point at it. Keep the id. */}
         <section id="v3-output-scorer" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
           <h2 id="try-it" className="text-3xl font-bold mb-2 text-gray-100 scroll-mt-24">
@@ -188,7 +188,7 @@ export default function ValueTensorPage() {
           <V3OutputScorer />
         </section>
 
-        {/* T3/V3 bridge — moved from /trust-tensor (visitor friction Mar 15-16; Apr 22 L9 expand
+        {/* T3/V3 bridge - moved from /trust-tensor (visitor friction Mar 15-16; Apr 22 L9 expand
             V3 acronym). The worked example (10 ATP → 5.6 / 2.8) is quoted nowhere else; the
             "consistently producing high-V3 work raises your T3" clause is mirrored in the
             /trust-tensor teaser. Keep them in agreement. */}
@@ -263,10 +263,10 @@ export default function ValueTensorPage() {
                 And a newcomer who produces brilliant work (low T3, high V3) earns more than their reputation would predict.
               </p>
               <div className="mt-3 mb-2 bg-gray-950/60 border border-gray-800 rounded p-3 font-mono text-xs">
-                <div className="text-gray-500 mb-1">Worked example — a task with a base reward of 10 ATP:</div>
+                <div className="text-gray-500 mb-1">Worked example - a task with a base reward of 10 ATP:</div>
                 <div className="text-gray-300">T3 = 0.7  ×  V3 = 0.8  ×  base = 10 ATP  →  <span className="text-emerald-400">5.6 ATP earned</span></div>
                 <div className="text-gray-500 mt-2">Same task, half the trust (T3 = 0.35):</div>
-                <div className="text-gray-300">0.35  ×  0.8  ×  10  →  <span className="text-amber-400">2.8 ATP earned</span> — half the reward for the same output</div>
+                <div className="text-gray-300">0.35  ×  0.8  ×  10  →  <span className="text-amber-400">2.8 ATP earned</span> - half the reward for the same output</div>
               </div>
               <p className="text-gray-400 text-xs">
                 Over time, T3 and V3 converge: consistently producing high-V3 work raises your T3.
@@ -288,9 +288,9 @@ export default function ValueTensorPage() {
               <div className="text-sky-400 font-semibold mb-1">Trust Tensor →</div>
               <p className="text-sm text-gray-400 m-0">The sibling tensor. V3 scores the work; T3 scores the worker.</p>
             </Link>
-            <Link href="/society-simulator" className="block bg-gray-900/60 border border-gray-700/60 rounded-xl p-5 hover:border-purple-600/60 transition-colors">
-              <div className="text-purple-400 font-semibold mb-1">Society Simulator →</div>
-              <p className="text-sm text-gray-400 m-0">Watch V3 and T3 drive a whole population, not one agent.</p>
+            <Link href="/glossary" className="block bg-gray-900/60 border border-gray-700/60 rounded-xl p-5 hover:border-purple-600/60 transition-colors">
+              <div className="text-purple-400 font-semibold mb-1">Glossary →</div>
+              <p className="text-sm text-gray-400 m-0">V3, T3, and every Web4 term defined in one place.</p>
             </Link>
           </div>
         </section>

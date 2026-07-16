@@ -64,7 +64,7 @@ export default function TrustTensorPage() {
     trackPageVisit('trust-tensor');
     // V3 moved to its own page (Jul-9). The prior expand-gate auto-opened on any `#v3*` hash;
     // now `#v3` is the surviving teaser and `#v3-output-scorer` lives at /value-tensor. Land any
-    // old deep link on the teaser rather than nowhere — it carries the link onward.
+    // old deep link on the teaser rather than nowhere - it carries the link onward.
     if (typeof window !== 'undefined' && window.location.hash.startsWith('#v3')) {
       setTimeout(() => {
         document.getElementById('v3')?.scrollIntoView({ behavior: 'auto', block: 'start' });
@@ -72,7 +72,7 @@ export default function TrustTensorPage() {
     }
   }, []);
 
-  // Scenario simulation state
+  // Interactive scenario state
   const [selectedRole, setSelectedRole] = useState<RoleKey>("analyst");
   const [trustScores, setTrustScores] = useState<Record<TrustDimension, number>>({
     talent: 0.5,
@@ -171,7 +171,7 @@ export default function TrustTensorPage() {
         </h1>
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Web4 doesn&apos;t reduce trust to a single number. Instead, it uses{" "}
-          <strong className="text-sky-400">Trust Tensors (T3)</strong> &mdash;
+          <strong className="text-sky-400">Trust Tensors (T3)</strong> -
           three numbers that capture{" "}
           <strong>Talent</strong>, <strong>Training</strong>, and <strong>Temperament</strong>,
           always in the context of a specific role.
@@ -182,7 +182,7 @@ export default function TrustTensorPage() {
           distinctions explicit, measurable, and role-specific.
         </p>
 
-        {/* Plain-English definition of "tensor" — visitor friction Apr 25 */}
+        {/* Plain-English definition of "tensor" - visitor friction Apr 25 */}
         <div className="mt-6 bg-gray-900/40 border border-gray-700 rounded-lg p-5">
           <div className="text-sm uppercase tracking-wide text-gray-400 mb-2">
             Why &ldquo;tensor&rdquo;?
@@ -190,35 +190,35 @@ export default function TrustTensorPage() {
           <p className="text-gray-300 leading-relaxed">
             We use the word <strong>tensor</strong> because trust here has multiple dimensions instead
             of just one. Think of it as a <strong>3-axis score</strong>: Talent, Training, Temperament.
-            You don&apos;t need the math &mdash; what matters is that <em>one</em> number couldn&apos;t
+            You don&apos;t need the math - what matters is that <em>one</em> number couldn&apos;t
             tell a brilliant-but-erratic surgeon from a kind doctor with shaky hands.{" "}
             <em>Three</em> numbers can.
           </p>
           <p className="text-gray-500 text-sm mt-3 leading-relaxed">
             (For the curious: in math, a tensor generalises vectors and matrices to any number of
-            dimensions. Here we use a small one &mdash; three numbers per role &mdash; so the
+            dimensions. Here we use a small one - three numbers per role - so the
             generality is not the point. The point is the multiple dimensions.)
           </p>
         </div>
 
         <p className="text-sm text-gray-500 mt-4">
           <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 cursor-pointer">
-            ↓ Try the trust tensor simulator below
+            ↓ Explore the trust tensor below
           </a>
         </p>
-        {/* Apr 26 visitor LOW: V3 mentioned but not explained on this page — preserves Apr 17 "let T3 land first" pacing by linking forward instead of explaining inline.
-            May 21 visitor LOW: first mention gave the location but no priority signal — visitor "didn't know whether V3 was something I'd need soon or could ignore." Add a one-line T3-vs-V3 distinction + explicit defer reassurance here, at the point of friction.
-            May 26 visitor LOW-MED #1 + Unanswered Q1: prior two layers still left V3 as a "ghost concept" — abstract "what you produce" with no concrete anchor. Add one number-grounded example (the same niche-research-vs-clickbait pair already in the V3 Output Scorer Pattern callout further down) so visitors who don't click the gate still leave with a concrete V3 mental anchor.
-            May 27 visitor MEDIUM #1 + Unanswered Q1 (7th recurrence of ghost-concept pattern): the prior three layers still never name the three V3 components inline — "the glossary later told me V3 = Valuation/Veracity/Validity, but the Trust Tensor page itself didn't ground it." Complete the keepable summary at the read point by naming the three components alongside the existing concept gloss + numeric example. Pattern match: PR #301 (May 22) — visitor's own analogue "same shape as the inline ADP gloss on the ATP page."
-            May 28 visitor MEDIUM #1 + Unanswered Q2 (8th recurrence — different lever): the prior 3 layers added abstract gloss, names, and a V3-only number — but T3 has a role-grounded actor (the surgeon at L464) and V3's gloss is still actor-less. Visitor: "T3 had role-grounded examples (the surgeon). V3 got components named but never grounded. I really wanted at least one one-line example of *what V3 looks like in practice* on the page where it gets named — like 'if Alice writes a tutorial, V3 grades the tutorial; T3 grades Alice.'" Add the visitor's exact T3-vs-V3 contrast applied to a single actor — different lever from the prior three (co-located scoring, not naming/numbering). Downstream V3 Output Scorer uses code-review / clickbait / niche-research / copy-paste / mentoring — "tutorial" is a fresh example space, no conflict.
-            Jul 9: V3 moved to /value-tensor (visitor: "a first-class concept living as a subsection of another concept"). This paragraph is the keepable summary and stays put — only its forward-references now point off-page instead of down-page. `id="v3"` stays here so bookmarked #v3 links still resolve. The 0.75/0.32 pair is shared with the V3 Output Scorer on that page: change both or neither, and both must match what the scorer actually computes from its own data. */}
+        {/* Apr 26 visitor LOW: V3 mentioned but not explained on this page - preserves Apr 17 "let T3 land first" pacing by linking forward instead of explaining inline.
+            May 21 visitor LOW: first mention gave the location but no priority signal - visitor "didn't know whether V3 was something I'd need soon or could ignore." Add a one-line T3-vs-V3 distinction + explicit defer reassurance here, at the point of friction.
+            May 26 visitor LOW-MED #1 + Unanswered Q1: prior two layers still left V3 as a "ghost concept" - abstract "what you produce" with no concrete anchor. Add one number-grounded example (the same niche-research-vs-clickbait pair already in the V3 Output Scorer Pattern callout further down) so visitors who don't click the gate still leave with a concrete V3 mental anchor.
+            May 27 visitor MEDIUM #1 + Unanswered Q1 (7th recurrence of ghost-concept pattern): the prior three layers still never name the three V3 components inline - "the glossary later told me V3 = Valuation/Veracity/Validity, but the Trust Tensor page itself didn't ground it." Complete the keepable summary at the read point by naming the three components alongside the existing concept gloss + numeric example. Pattern match: PR #301 (May 22) - visitor's own analogue "same shape as the inline ADP gloss on the ATP page."
+            May 28 visitor MEDIUM #1 + Unanswered Q2 (8th recurrence - different lever): the prior 3 layers added abstract gloss, names, and a V3-only number - but T3 has a role-grounded actor (the surgeon at L464) and V3's gloss is still actor-less. Visitor: "T3 had role-grounded examples (the surgeon). V3 got components named but never grounded. I really wanted at least one one-line example of *what V3 looks like in practice* on the page where it gets named - like 'if Alice writes a tutorial, V3 grades the tutorial; T3 grades Alice.'" Add the visitor's exact T3-vs-V3 contrast applied to a single actor - different lever from the prior three (co-located scoring, not naming/numbering). Downstream V3 Output Scorer uses code-review / clickbait / niche-research / copy-paste / mentoring - "tutorial" is a fresh example space, no conflict.
+            Jul 9: V3 moved to /value-tensor (visitor: "a first-class concept living as a subsection of another concept"). This paragraph is the keepable summary and stays put - only its forward-references now point off-page instead of down-page. `id="v3"` stays here so bookmarked #v3 links still resolve. The 0.75/0.32 pair is shared with the V3 Output Scorer on that page: change both or neither, and both must match what the scorer actually computes from its own data. */}
         <p id="v3" className="text-sm text-gray-500 mt-2 scroll-mt-24">
           Wondering about <strong className="text-purple-300">V3</strong>? Short version: T3 measures{" "}
-          <strong>who you are</strong>; V3 measures <strong>what you produce</strong> across three components &mdash;{" "}
+          <strong>who you are</strong>; V3 measures <strong>what you produce</strong> across three components -{" "}
           <strong className="text-sky-300">Valuation</strong>,{" "}
           <strong className="text-purple-300">Veracity</strong>, and{" "}
           <strong className="text-green-300">Validity</strong> (usefulness, truthfulness, soundness). Concretely: if Alice writes a tutorial, V3 grades <em>the tutorial</em> (useful? true? sound?); T3 grades <em>Alice</em> (do her talent, training, temperament fit the task). E.g. a careful niche analysis might score V3 = 0.75, while viral clickbait scores V3 = 0.32. You don&apos;t need to
-          master it to follow this page — T3 alone carries the idea here, so it&apos;s fine to meet V3 later
+          master it to follow this page - T3 alone carries the idea here, so it&apos;s fine to meet V3 later
           (it matters enough to get its own page). When you&apos;re curious, it&apos;s the
           sibling tensor,{" "}
           <Link href="/value-tensor" className="text-purple-300 hover:text-purple-200 underline">
@@ -227,7 +227,7 @@ export default function TrustTensorPage() {
         </p>
         {/* June 4 visitor LOW (recurring since Mar 27 s2 / May 21, NEW axis): the prior 7 iterations of the paragraph above all answer *what V3 is*; visitor still asked "on a page titled Trust Tensor, why is V3 here?" The relevance hook (V3 feeds back into T3) lived only in the gate card ~480 lines below (L996). Surface it as one standalone sentence at the first mention so a non-scrolling reader knows why V3 belongs on the T3 page. Reviewer note: keep it a single clause, don't re-explain what V3 is. */}
         <p className="text-sm text-gray-500 mt-2">
-          Why it&apos;s on a page about T3: the two are coupled &mdash; producing high-V3 work is exactly what raises your T3, so V3 isn&apos;t a detour, it&apos;s the lever your reputation actually moves on.
+          Why it&apos;s on a page about T3: the two are coupled - producing high-V3 work is exactly what raises your T3, so V3 isn&apos;t a detour, it&apos;s the lever your reputation actually moves on.
         </p>
       </section>
 
@@ -244,16 +244,16 @@ export default function TrustTensorPage() {
           </h3>
           <div className="space-y-3 text-gray-300">
             <p>
-              ❌ <strong>One-dimensional scoring</strong> &mdash; &ldquo;Trust score: 7/10&rdquo; loses all nuance
+              ❌ <strong>One-dimensional scoring</strong> - &ldquo;Trust score: 7/10&rdquo; loses all nuance
             </p>
             <p>
-              ❌ <strong>Context-blind</strong> &mdash; Same score for surgeon, mechanic, and babysitter
+              ❌ <strong>Context-blind</strong> - Same score for surgeon, mechanic, and babysitter
             </p>
             <p>
-              ❌ <strong>Can&apos;t represent trade-offs</strong> &mdash; &ldquo;Brilliant but unreliable&rdquo; becomes just &ldquo;average&rdquo;
+              ❌ <strong>Can&apos;t represent trade-offs</strong> - &ldquo;Brilliant but unreliable&rdquo; becomes just &ldquo;average&rdquo;
             </p>
             <p>
-              ❌ <strong>Easy to game</strong> &mdash; Optimize for one metric, ignore everything else
+              ❌ <strong>Easy to game</strong> - Optimize for one metric, ignore everything else
             </p>
             <p className="pt-4 text-gray-400 italic">
               Result: Trust scores become meaningless averages that hide critical information.
@@ -267,20 +267,20 @@ export default function TrustTensorPage() {
         <h2 className="text-3xl font-bold mb-6 text-gray-100">The Solution</h2>
         <div className="bg-gradient-to-br from-sky-950/30 to-blue-900/20 border border-sky-800/30 rounded-xl p-8">
           <h3 className="text-xl font-semibold text-sky-400 mb-4">
-            Web4: Trust Tensors (T3) &mdash; Three Dimensions, Role-Specific
+            Web4: Trust Tensors (T3) - Three Dimensions, Role-Specific
           </h3>
           <div className="space-y-3 text-gray-300">
             <p>
-              ✅ <strong>Three canonical dimensions</strong> &mdash; Talent, Training, Temperament
+              ✅ <strong>Three canonical dimensions</strong> - Talent, Training, Temperament
             </p>
             <p>
-              ✅ <strong>Role-contextual</strong> &mdash; Trust is always for a specific role, not a universal score
+              ✅ <strong>Role-contextual</strong> - Trust is always for a specific role, not a universal score
             </p>
             <p>
-              ✅ <strong>Captures trade-offs</strong> &mdash; &ldquo;High talent + low temperament&rdquo; = measurable pattern
+              ✅ <strong>Captures trade-offs</strong> - &ldquo;High talent + low temperament&rdquo; = measurable pattern
             </p>
             <p>
-              ✅ <strong>Gaming is exponentially harder</strong> &mdash; Must build trust across all dimensions within each role
+              ✅ <strong>Gaming is exponentially harder</strong> - Must build trust across all dimensions within each role
             </p>
             <p className="pt-4 text-gray-400 italic">
               Result: Trust becomes a rich, context-aware signal that preserves nuance.
@@ -326,7 +326,7 @@ export default function TrustTensorPage() {
           </p>
         </div>
 
-        {/* May 12 visitor HIGH: "Who measures Talent/Training/Temperament?" — visitor reported having
+        {/* May 12 visitor HIGH: "Who measures Talent/Training/Temperament?" - visitor reported having
             to navigate to How It Works to find the recipient-attestation answer. Co-locate it here so
             deep-link visitors landing on /trust-tensor get the answer without leaving the page. */}
         <details id="how-measured" className="mt-4 bg-gray-800/40 border border-gray-700/50 rounded-xl p-5 scroll-mt-24">
@@ -345,20 +345,20 @@ export default function TrustTensorPage() {
             <p className="m-0">
               Each confirmation applies a small per-dimension nudge from the canonical update rule.
               First, the one term you need: <em>quality</em> is just a single number from 0 to 1
-              (0.5 = neutral, higher = better work) &mdash; you don&apos;t need to chase any
+              (0.5 = neutral, higher = better work) - you don&apos;t need to chase any
               other concept to follow it. With that in hand,{" "}
               <code className="text-gray-300">base = 0.02 &times; (quality &minus; 0.5)</code>{" "}
               simply measures how far above or below neutral the work landed, scaled by dimension
               (Talent &times;1.0, Training &times;0.8, Temperament &times;0.6).
               Where does that number come from? It&apos;s the{" "}
               <strong className="text-purple-300">V3 score</strong>{" "}
-              the recipient assigned to that contribution &mdash; a weighted blend of its three
+              the recipient assigned to that contribution - a weighted blend of its three
               components (Valuation &middot; Veracity &middot; Validity) folded into one 0-to-1
               number (the <Link href="/value-tensor" className="text-purple-300 underline">Value Tensor page</Link>{" "}
               shows exactly how they combine, but it&apos;s optional here). That blending happens per
-              contribution: each confirmer&apos;s V3 feeds the formula independently &mdash;
+              contribution: each confirmer&apos;s V3 feeds the formula independently -
               separate confirmers are never averaged together first.
-              A single high-quality contribution barely moves the needle &mdash; a 0.85-quality
+              A single high-quality contribution barely moves the needle - a 0.85-quality
               attestation gives <code className="text-gray-300">+0.007</code> to Talent. Trust climbs
               slowly because no single recipient can vault you upward; it takes many confirmations
               from many recipients.
@@ -377,7 +377,7 @@ export default function TrustTensorPage() {
               </li>
               <li>
                 <strong className="text-amber-400">Temperament</strong> moves when behavior stays
-                stable across many interactions &mdash; consistency itself is what recipients
+                stable across many interactions - consistency itself is what recipients
                 attest to over time.
               </li>
             </ul>
@@ -393,7 +393,7 @@ export default function TrustTensorPage() {
           </div>
         </details>
 
-        {/* Apr 30 visitor MEDIUM: "What does 0.7 actually mean?" — surface the calibration ladder
+        {/* Apr 30 visitor MEDIUM: "What does 0.7 actually mean?" - surface the calibration ladder
             at the moment of first decimal exposure, link to the deeper FAQ at #calibration-meaning. */}
         <div className="mt-4 bg-gray-900/40 border border-gray-700/50 rounded-lg px-5 py-4 text-sm">
           <p className="text-gray-400 leading-relaxed">
@@ -413,10 +413,10 @@ export default function TrustTensorPage() {
         </div>
       </section>
 
-      {/* Interactive Simulator */}
+      {/* Interactive explorer */}
       <section id="try-it" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
-          Try It: Trust Tensor Simulator
+          Try It: Explore Trust by Role
         </h2>
         <p className="text-gray-400 mb-4">
           Pick a role, then apply scenarios. Watch how the same action affects trust differently
@@ -446,7 +446,7 @@ export default function TrustTensorPage() {
             </div>
             <p className="text-xs text-gray-500 mt-2">
               Role emphasis: {ROLES[selectedRole].weightLabel}
-              {" "}&mdash;{" "}
+              {" "}-{" "}
               Talent {(weights.talent * 100).toFixed(0)}% /
               Training {(weights.training * 100).toFixed(0)}% /
               Temperament {(weights.temperament * 100).toFixed(0)}%
@@ -568,12 +568,12 @@ export default function TrustTensorPage() {
               {trajectory.length >= 3 && (
                 <p className="mt-3 text-sm text-gray-400 bg-gray-800/50 border border-gray-700 rounded-lg p-3">
                   {trustScores.talent >= 0.7 && trustScores.training >= 0.7 && trustScores.temperament >= 0.7
-                    ? '🟢 Strong across all dimensions — this agent is well-trusted in their role.'
+                    ? '🟢 Strong across all dimensions - this agent is well-trusted in their role.'
                     : trustScores.temperament < 0.3
-                    ? '🔴 Temperament is critically low — even high talent can\'t compensate for unreliability.'
+                    ? '🔴 Temperament is critically low - even high talent can\'t compensate for unreliability.'
                     : Math.max(trustScores.talent, trustScores.training, trustScores.temperament) -
                         Math.min(trustScores.talent, trustScores.training, trustScores.temperament) > 0.3
-                    ? '🟡 Uneven profile — one dimension is much stronger than others. Real trust requires balance.'
+                    ? '🟡 Uneven profile - one dimension is much stronger than others. Real trust requires balance.'
                     : '🔵 Building steadily. Keep applying scenarios to see how trust evolves over time.'}
                 </p>
               )}
@@ -611,15 +611,9 @@ export default function TrustTensorPage() {
               Trust Is Role-Specific
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Try switching roles in the simulator above. The same tensor scores produce different
+              Try switching roles in the interactive tool above. The same tensor scores produce different
               overall trust because each role weights dimensions differently. A leader needs
               Temperament; an analyst needs Talent.
-              {/* Jul-10 visitor MEDIUM: after Karma Journey's single fixed weighting, "each role
-                  weights differently" read as a contradiction. Name the simplification without
-                  printing any weight numbers here (T3 weight ordering is an escalated canon
-                  conflict — don't add orderings to this card). */}
-              {' '}(The <Link href="/karma-journey" className="text-purple-300 hover:text-purple-200 underline">Karma Journey</Link>{' '}
-              simulation simplifies this: it uses one fixed weighting for every role.)
             </p>
           </div>
 
@@ -649,19 +643,19 @@ export default function TrustTensorPage() {
         </div>
       </section>
 
-      {/* Role evolution — gradual vs sudden context switches (visitor Q Mar 22) */}
+      {/* Role evolution - gradual vs sudden context switches (visitor Q Mar 22) */}
       <section className="max-w-4xl mx-auto mt-12">
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6">
           <h3 className="text-xl font-semibold text-gray-100 mb-3">What Happens When Your Role Evolves?</h3>
           <p className="text-gray-300 text-sm mb-4">
             Clear-cut role switches are simple: a surgeon becoming a mechanic starts fresh in the new role.
-            But what about <strong>gradual evolution</strong> — a data analyst who starts doing more project management?
+            But what about <strong>gradual evolution</strong> - a data analyst who starts doing more project management?
           </p>
           <div className="space-y-3 text-sm">
             <div className="flex gap-3 items-start">
               <span className="text-sky-400 font-bold shrink-0">New role:</span>
               <p className="text-gray-400">If you start doing project management, the system creates a
-                new T3 tensor for that role. Your analyst trust stays intact — you don&apos;t lose what
+                new T3 tensor for that role. Your analyst trust stays intact - you don&apos;t lose what
                 you&apos;ve built.</p>
             </div>
             <div className="flex gap-3 items-start">
@@ -671,35 +665,35 @@ export default function TrustTensorPage() {
                 actions in each context. The system doesn&apos;t force a binary switch.</p>
             </div>
             <div className="flex gap-3 items-start">
-              {/* Jul-14 canon conformance: Talent MUST NOT decay through inactivity — web4 protocol
+              {/* Jul-14 canon conformance: Talent MUST NOT decay through inactivity - web4 protocol
                   invariant (core-spec/t3-v3-tensors.md §2.3 / §10.2, test vector t3v3-012; upstream
                   engines fixed 2026-07-13). Do NOT reintroduce a Talent half-life anywhere on this
-                  page — sibling claims live in the update-rule code block and #why-half-lives below,
+                  page - sibling claims live in the update-rule code block and #why-half-lives below,
                   in why-web4's month-off + youthful-mistakes FAQs, and in atp-economics's
                   #atp-dormancy FAQ; change all or none.
                   Training 180d / Temperament 30d stay: spec §2.3 says societies MAY configure those two. */}
               <span className="text-sky-400 font-bold shrink-0">Natural decay:</span>
               <p className="text-gray-400">If you stop doing analyst work entirely, the three dimensions
                 respond differently on purpose:{' '}
-                <strong className="text-gray-300">Talent doesn&apos;t decay at all — demonstrated aptitude is durable, so absence never erodes it</strong>;{' '}
+                <strong className="text-gray-300">Talent doesn&apos;t decay at all - demonstrated aptitude is durable, so absence never erodes it</strong>;{' '}
                 <strong className="text-gray-300">Training fades (180-day half-life), because knowledge goes stale without practice</strong>;{' '}
                 <strong className="text-gray-300">Temperament fades fastest (30 days), because reliability has to be shown freshly</strong>.
-                You don&apos;t &ldquo;lose&rdquo; trust overnight — the parts that fade do so gradually,
+                You don&apos;t &ldquo;lose&rdquo; trust overnight - the parts that fade do so gradually,
                 and the part that measures raw ability doesn&apos;t fade with time at all.
                 <span className="block text-gray-500 text-xs mt-1">
                   <strong className="text-gray-400">What &ldquo;half-life&rdquo; means here:</strong>{' '}
                   the time it takes to lose half the score with zero activity. A 180-day Training half-life
                   means after six months of no practice, a score of 0.80 settles at 0.40; after a year, 0.20.
-                  Decay is exponential, not a cliff — and it applies only to Training and Temperament.
+                  Decay is exponential, not a cliff - and it applies only to Training and Temperament.
                 </span>
               </p>
             </div>
-            {/* Apr 21 LOW L5 — promote "why the gap matters" to sibling-row visibility */}
+            {/* Apr 21 LOW L5 - promote "why the gap matters" to sibling-row visibility */}
             <div className="flex gap-3 items-start">
               <span className="text-sky-400 font-bold shrink-0">Why the gap matters:</span>
               <p className="text-gray-400">
                 Character has to be shown fresh each month; raw ability, once demonstrated, stays earned.
-                That gap is the point — yesterday&apos;s kindness doesn&apos;t excuse today&apos;s betrayal,
+                That gap is the point - yesterday&apos;s kindness doesn&apos;t excuse today&apos;s betrayal,
                 but a surgeon doesn&apos;t forget surgery over a long vacation. So Temperament (30d) weighs
                 recent behavior far more than old, Training (180d) fades as knowledge goes unpracticed,
                 and Talent never fades through absence at all.{' '}
@@ -716,11 +710,11 @@ export default function TrustTensorPage() {
             you probably wouldn&apos;t want them operating. T3 decay captures exactly this intuition:
             the aptitude (Talent) is still there, but the current, practiced knowledge (Training) has faded.
           </p>
-          {/* Trust decay on break — Apr 10 visitor unanswered Q4 */}
+          {/* Trust decay on break - Apr 10 visitor unanswered Q4 */}
           <p className="text-gray-500 text-xs mt-2">
             <strong className="text-gray-400">What if you take a 6-month break?</strong>{' '}
             Temperament (30-day half-life) is essentially gone and Training (180-day half-life)
-            is at about half — but Talent doesn&apos;t decay: it&apos;s exactly where you left it.
+            is at about half - but Talent doesn&apos;t decay: it&apos;s exactly where you left it.
             A few weeks of consistent activity rebuilds what faded.{' '}
             <a href="/why-web4#faq" className="text-sky-400 hover:underline">Full breakdown in the FAQ →</a>
           </p>
@@ -730,7 +724,7 @@ export default function TrustTensorPage() {
       {/* End-of-T3 pacing card. Was an in-page expand gate (May 4 visitor M5: V3 mid-page
           overload, recurring since Apr 17 #4 and Mar 27 s2) whose gated payload has moved to
           /value-tensor (Jul 9 visitor MEDIUM: V3 read as "a subsection of another concept").
-          The pacing survives — a reader can still stop at the end of T3 — but "keep going" is
+          The pacing survives - a reader can still stop at the end of T3 - but "keep going" is
           now a page transition instead of a disclosure widget, so V3 is no longer a footnote
           on someone else's page. The V3→T3 arrow below stays: it's the keepable relationship
           (June 1 visitor M5 / Unanswered Q2) and a non-clicking reader must still leave with it. */}
@@ -742,11 +736,11 @@ export default function TrustTensorPage() {
             <span className="text-xs uppercase tracking-wide text-gray-400">ready for more?</span>
           </div>
           <p className="text-gray-300 leading-relaxed mb-2">
-            That&apos;s T3 — three dimensions describing <strong className="text-sky-300">who someone is</strong>.
-            If this feels like enough for one sitting, you can stop here. T3 alone is a working mental model — pick up V3 later via the concept nav above.
+            That&apos;s T3 - three dimensions describing <strong className="text-sky-300">who someone is</strong>.
+            If this feels like enough for one sitting, you can stop here. T3 alone is a working mental model - pick up V3 later via the concept nav above.
           </p>
           <p className="text-sm text-gray-500 mb-5">
-            Or keep going: V3 is a separate, complementary tensor that scores <strong className="text-purple-300">what someone produces</strong>. It pairs with T3 but doesn&apos;t require memorizing six things at once &mdash; and the two aren&apos;t really independent: consistently producing high-V3 work raises your own T3, while sloppy work drags it down, so your reputation tracks your actual output quality.
+            Or keep going: V3 is a separate, complementary tensor that scores <strong className="text-purple-300">what someone produces</strong>. It pairs with T3 but doesn&apos;t require memorizing six things at once - and the two aren&apos;t really independent: consistently producing high-V3 work raises your own T3, while sloppy work drags it down, so your reputation tracks your actual output quality.
           </p>
           <Link
             href="/value-tensor"
@@ -779,7 +773,7 @@ export default function TrustTensorPage() {
                 <p>Temperament: <span className="text-green-400">95%</span> (rock-solid reliability)</p>
               </div>
               <p className="text-gray-300 mt-3 text-sm italic">
-                Role-weighted trust: 90% &mdash; she&apos;s deeply trusted in this domain.
+                Role-weighted trust: 90% - she&apos;s deeply trusted in this domain.
               </p>
             </div>
 
@@ -793,7 +787,7 @@ export default function TrustTensorPage() {
                 <p>Temperament: <span className="text-green-400">91%</span> (her reliability carries over naturally)</p>
               </div>
               <p className="text-gray-300 mt-3 text-sm italic">
-                Role-weighted trust: 74% &mdash; trusted, but still growing into this role.
+                Role-weighted trust: 74% - trusted, but still growing into this role.
               </p>
             </div>
 
@@ -807,7 +801,7 @@ export default function TrustTensorPage() {
                 <p>Temperament: <span className="text-yellow-400">50%</span> (untested in this context)</p>
               </div>
               <p className="text-gray-300 mt-3 text-sm italic">
-                Role-weighted trust: 27% &mdash; would you let her fix your brakes?
+                Role-weighted trust: 27% - would you let her fix your brakes?
               </p>
             </div>
           </div>
@@ -825,7 +819,7 @@ export default function TrustTensorPage() {
       <div className="max-w-4xl mx-auto mt-16">
         <DeepDiveToggle storageKey="4life-trust-tensor-deep-dive">
 
-      {/* Fractal Sub-Dimensions — collapsible for beginners */}
+      {/* Fractal Sub-Dimensions - collapsible for beginners */}
       <section className="max-w-4xl mx-auto mt-16">
         <details className="bg-gradient-to-br from-purple-950/30 to-purple-900/20 border border-purple-800/30 rounded-xl p-8 cursor-pointer">
           <summary className="text-2xl font-bold text-gray-100 list-none flex justify-between items-center">
@@ -876,7 +870,7 @@ export default function TrustTensorPage() {
               <p className="leading-relaxed mb-3">
                 Each entity-role pair has its own T3 tensor. Tensors are never shared across roles.
                 The canonical composite weights are <strong className="text-sky-300">Talent 0.4, Training 0.3,
-                Temperament 0.3</strong> — societies can customize weights per role:
+                Temperament 0.3</strong> - societies can customize weights per role:
               </p>
               <pre className="bg-gray-950 border border-gray-700 rounded-lg p-4 overflow-x-auto text-xs text-gray-400 font-mono">
 {`// T3 tensor with role binding
@@ -909,11 +903,11 @@ export default function TrustTensorPage() {
                 Each action within a role produces dimension-specific updates:
               </p>
               {/* June-6 visitor LOW + Unanswered Q2: the formula block below is met cold in the
-                  main flow — the only magnitude framing lives in a collapsed <details> ~600 lines up.
+                  main flow - the only magnitude framing lives in a collapsed <details> ~600 lines up.
                   Lead with the count answer so the math reads as confirmation of intuition, not a wall. */}
               <p className="leading-relaxed mb-3 text-gray-300 bg-gray-900/40 border border-gray-700/50 rounded-lg p-4 text-sm">
                 <strong className="text-gray-100">Before the math, the scale:</strong> one good action
-                nudges a dimension by less than 1% &mdash; a strong (0.85-quality) confirmation adds
+                nudges a dimension by less than 1% - a strong (0.85-quality) confirmation adds
                 about <code className="text-gray-300">+0.007</code> to Talent. So climbing from a 0.5
                 newcomer to a 0.7 track record takes roughly <strong className="text-sky-300">30 quality
                 confirmations</strong>, not a handful. Trust is earned slowly, on purpose: no single
@@ -930,7 +924,7 @@ Unexpected Failure     -0.02      -0.01      -0.02
 Ethics Violation       -0.05      0          -0.10
 
 // Decay (exponential, not linear)
-Talent:      no decay — protocol invariant (spec §2.3, vector t3v3-012)
+Talent:      no decay - protocol invariant (spec §2.3, vector t3v3-012)
 Training:    180-day half-life (knowledge fades without practice)
 Temperament:  30-day half-life (recent behavior matters most)
 
@@ -947,39 +941,39 @@ Temperament:  30-day half-life (recent behavior matters most)
                 </summary>
                 <div className="px-4 pb-4 text-sm text-gray-400 space-y-2">
                   <p>
-                    <strong className="text-sky-300">Talent (no decay)</strong> — Aptitude persists.
+                    <strong className="text-sky-300">Talent (no decay)</strong> - Aptitude persists.
                     A surgeon doesn&apos;t forget surgery after six months of vacation. Core ability is
                     durable, so the protocol forbids Talent from decaying through inactivity at all:
-                    once demonstrated, it stays demonstrated. It still moves with your <em>actions</em> —
-                    a failure or ethics violation lowers it — it just never erodes from time alone.
+                    once demonstrated, it stays demonstrated. It still moves with your <em>actions</em> -
+                    a failure or ethics violation lowers it - it just never erodes from time alone.
                   </p>
                   <p>
-                    <strong className="text-sky-300">Training (180 days)</strong> — Knowledge fades
+                    <strong className="text-sky-300">Training (180 days)</strong> - Knowledge fades
                     without practice. Last year&apos;s certification matters less than this year&apos;s.
                     Moderate decay rewards ongoing learning.
                   </p>
                   <p>
-                    <strong className="text-sky-300">Temperament (30 days)</strong> — Recent behavior
+                    <strong className="text-sky-300">Temperament (30 days)</strong> - Recent behavior
                     matters most. Yesterday&apos;s kindness doesn&apos;t excuse today&apos;s betrayal.
                     Fast decay means you must consistently demonstrate reliability.
                   </p>
                   <p className="text-gray-500 text-xs pt-1">
                     The Training and Temperament half-lives are society-configurable parameters, not
-                    universal constants — a military society might use 7-day Temperament decay; a
+                    universal constants - a military society might use 7-day Temperament decay; a
                     research lab might use 90 days. Talent&apos;s no-decay is the exception: it&apos;s
                     a protocol invariant, not a knob.
                   </p>
                 </div>
               </details>
 
-              {/* Calibration band — Apr 30 visitor MEDIUM #4: "what does 0.7 actually mean?" */}
+              {/* Calibration band - Apr 30 visitor MEDIUM #4: "what does 0.7 actually mean?" */}
               <div id="what-does-a-score-mean" className="mt-6 bg-gray-900/60 border border-sky-700/40 rounded-lg p-5 scroll-mt-24">
                 <h4 className="text-base font-semibold text-sky-300 mb-3">
                   What do these scores actually mean?
                 </h4>
                 <p className="text-sm text-gray-400 mb-3">
                   Plain English first: a 0.7 score in a role means roughly{" "}
-                  <strong className="text-gray-200">7 out of 10 interactions in that role land well</strong> —
+                  <strong className="text-gray-200">7 out of 10 interactions in that role land well</strong> -
                   according to the people you&apos;ve worked with so far. It&apos;s not a popularity score, and
                   it&apos;s not graded against strangers; it&apos;s a track-record summary.
                 </p>
@@ -994,7 +988,7 @@ Temperament:  30-day half-life (recent behavior matters most)
                     <tbody className="text-gray-400">
                       <tr className="border-b border-gray-800">
                         <td className="py-2 pr-3 font-mono text-gray-300">0.5</td>
-                        <td className="py-2 pr-3">Newcomer baseline. No track record yet — neither good nor bad.</td>
+                        <td className="py-2 pr-3">Newcomer baseline. No track record yet - neither good nor bad.</td>
                       </tr>
                       <tr className="border-b border-gray-800">
                         <td className="py-2 pr-3 font-mono text-gray-300">0.6</td>
@@ -1017,7 +1011,7 @@ Temperament:  30-day half-life (recent behavior matters most)
                 </div>
                 <p className="text-xs text-gray-500 mt-3">
                   Same person, different roles, different scores: someone might be 0.85 as an analyst and 0.55 as a project manager
-                  — because the track records are independent.{" "}
+                  - because the track records are independent.{" "}
                   <a
                     href="#calibration-meaning"
                     onClick={(e) => { e.preventDefault(); const el = document.getElementById('calibration-meaning'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}
@@ -1043,11 +1037,11 @@ Temperament:  30-day half-life (recent behavior matters most)
               <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
                 <li>
                   <strong className="text-sky-300">T3 (Trust Tensor):</strong>{" "}
-                  How much you trust someone &mdash; Talent, Training, Temperament (per role)
+                  How much you trust someone - Talent, Training, Temperament (per role)
                 </li>
                 <li>
                   <strong className="text-purple-300">V3 (Value Tensor):</strong>{" "}
-                  How much value something creates &mdash; Valuation (0.3 weight), Veracity (0.35), Validity (0.35)
+                  How much value something creates - Valuation (0.3 weight), Veracity (0.35), Validity (0.35)
                 </li>
               </ul>
 
@@ -1074,7 +1068,7 @@ Temperament:  30-day half-life (recent behavior matters most)
                         <div className="text-xs text-gray-500">Is it well-reasoned?</div>
                       </div>
                     </div>
-                    <p className="text-gray-400">A thorough, accurate review that catches real bugs. High across all dimensions &mdash; earns full ATP reward.</p>
+                    <p className="text-gray-400">A thorough, accurate review that catches real bugs. High across all dimensions - earns full ATP reward.</p>
                   </div>
 
                   <div className="bg-gray-800/50 rounded-lg p-4">
@@ -1124,7 +1118,7 @@ Temperament:  30-day half-life (recent behavior matters most)
                 <p className="mt-3 text-gray-500 text-xs">
                   V3 weights: Valuation 0.30, Veracity 0.35, Validity 0.35. Truth and reasoning outweigh popularity by design.
                 </p>
-                {/* These half-lives are also stated on /value-tensor (Jul-10) — change both or neither. */}
+                {/* These half-lives are also stated on /value-tensor (Jul-10) - change both or neither. */}
                 <p className="mt-2 text-gray-500 text-xs">
                   V3 decay half-lives: Valuation 14d (market conditions change fast), Veracity 365d (truth record persists), Validity 90d (certifications expire).
                 </p>
@@ -1157,9 +1151,6 @@ Temperament:  30-day half-life (recent behavior matters most)
                   </Link>
                 </li>
                 <li>
-                  <strong>Karma:</strong> T3 above threshold allows rebirth with ATP carried forward
-                </li>
-                <li>
                   <strong><TermTooltip term="MRH">MRH</TermTooltip> graph:</strong> T3 determines visibility in the relevancy horizon
                 </li>
               </ul>
@@ -1168,19 +1159,19 @@ Temperament:  30-day half-life (recent behavior matters most)
         </details>
       </section>
 
-      {/* Live Trust Engine — real WASM calculations */}
+      {/* Real WASM trust-core engine */}
       <section id="witness-network" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
-          See the Real Engine
+          Run the Real Engine
         </h2>
         <p className="text-gray-400 mb-6">
-          This isn&apos;t a simulation &mdash; it&apos;s the actual <strong className="text-emerald-400">web4-trust-core</strong> engine
-          compiled to WebAssembly and running in your browser. The same code that powers protocol conformance testing.
+          The calculations below come from the actual <strong className="text-emerald-400">web4-trust-core</strong> engine,
+          compiled to WebAssembly and running in your browser. It is the same code that powers protocol conformance testing.
         </p>
         <LiveTrustEngine />
       </section>
 
-      {/* Trust at Scale — collapsed for page length */}
+      {/* Trust at Scale - collapsed for page length */}
       <section className="max-w-4xl mx-auto mt-16">
         <details className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8">
           <summary className="text-2xl font-bold text-gray-100 cursor-pointer hover:text-sky-400 transition-colors list-none flex justify-between items-center">
@@ -1213,7 +1204,7 @@ Temperament:  30-day half-life (recent behavior matters most)
           <p className="text-gray-400 text-sm leading-relaxed">
             When Alice&apos;s talent improves, her team&apos;s trust adjusts upward. When a team member acts badly,
             the organization&apos;s score reflects it. Trust flows upward through composition and downward through
-            accountability &mdash; the same T3 model at every scale.
+            accountability - the same T3 model at every scale.
           </p>
           <p className="text-gray-500 text-xs">
             Different entity types compose differently: teams use weighted averages, organizations use geometric means,
@@ -1224,7 +1215,7 @@ Temperament:  30-day half-life (recent behavior matters most)
         </details>
       </section>
 
-      {/* Evidence Strength — collapsed for page length */}
+      {/* Evidence Strength - collapsed for page length */}
       <section className="max-w-4xl mx-auto mt-16">
         <details className="bg-gray-800 border border-gray-700 rounded-xl p-8">
           <summary className="text-2xl font-bold text-gray-100 cursor-pointer hover:text-sky-400 transition-colors list-none flex justify-between items-center">
@@ -1240,11 +1231,11 @@ Temperament:  30-day half-life (recent behavior matters most)
         <div className="bg-gray-800 border border-gray-700 rounded-xl p-6">
           <div className="space-y-3">
             {[
-              { label: 'Hardware attestation', weight: '1.0', color: 'text-green-400', bar: 'w-full bg-green-600/40', desc: 'Cryptographic proof from TPM/Secure Enclave — unforgeable' },
+              { label: 'Hardware attestation', weight: '1.0', color: 'text-green-400', bar: 'w-full bg-green-600/40', desc: 'Cryptographic proof from TPM/Secure Enclave - unforgeable' },
               { label: 'Direct observation', weight: '0.9', color: 'text-sky-400', bar: 'w-[90%] bg-sky-600/40', desc: 'You personally witnessed or received the work' },
               { label: 'Witness attestation', weight: '0.7', color: 'text-blue-400', bar: 'w-[70%] bg-blue-600/40', desc: 'A trusted witness confirmed the interaction' },
               { label: 'Delegated trust', weight: '0.5', color: 'text-purple-400', bar: 'w-[50%] bg-purple-600/40', desc: 'Inherited through a trust chain (2 hops)' },
-              { label: 'Reputation / gossip', weight: '0.3', color: 'text-gray-400', bar: 'w-[30%] bg-gray-600/40', desc: 'Community word-of-mouth — useful but weakest' },
+              { label: 'Reputation / gossip', weight: '0.3', color: 'text-gray-400', bar: 'w-[30%] bg-gray-600/40', desc: 'Community word-of-mouth - useful but weakest' },
             ].map(e => (
               <div key={e.label} className="flex items-center gap-4">
                 <div className="w-16 text-right">
@@ -1261,25 +1252,25 @@ Temperament:  30-day half-life (recent behavior matters most)
           </div>
           <p className="text-gray-500 text-xs mt-4 italic">
             Chain strength = product of link strengths. A 3-hop delegation: 0.9 × 0.7 × 0.5 = 0.315.
-            This is why MRH caps trust at 3 hops — beyond that, evidence is too diluted to be meaningful.
+            This is why MRH caps trust at 3 hops - beyond that, evidence is too diluted to be meaningful.
           </p>
         </div>
           </div>
         </details>
       </section>
 
-      {/* What Trust Scores Actually Mean — collapsed for page length.
+      {/* What Trust Scores Actually Mean - collapsed for page length.
           Apr 30 visitor MEDIUM: anchor target for the inline calibration band above (line ~593) so
           "Deeper: how calibration is measured" can scroll-and-auto-expand this FAQ. */}
       <section id="calibration-meaning" className="max-w-4xl mx-auto mt-12 scroll-mt-24">
         <details className="bg-gray-900/50 border border-gray-700 rounded-xl p-6">
           <summary className="text-lg font-semibold text-sky-400 cursor-pointer hover:text-sky-300 transition-colors list-none flex justify-between items-center">
-            <span>What does &ldquo;trust = 0.7&rdquo; mean &mdash; and how is it measured?</span>
+            <span>What does &ldquo;trust = 0.7&rdquo; mean - and how is it measured?</span>
             <span className="text-gray-500 text-lg">+</span>
           </summary>
           <div className="mt-3">
           <p className="text-gray-300 text-sm mb-3">
-            Web4 trust scores are designed to be <strong className="text-white">calibrated probabilities</strong> —
+            Web4 trust scores are designed to be <strong className="text-white">calibrated probabilities</strong> -
             not arbitrary ratings. When a trust score is 0.7, entities at that level should behave
             cooperatively in their role context about 70% of the time. A score of 0.9 should predict
             cooperative behavior about 90% of the time.
@@ -1287,10 +1278,10 @@ Temperament:  30-day half-life (recent behavior matters most)
           <p className="text-gray-400 text-sm">
             This calibration is measured with{" "}
             <strong className="text-gray-300">Brier scores</strong> and{" "}
-            <strong className="text-gray-300">reliability diagrams</strong> — statistical tools that
+            <strong className="text-gray-300">reliability diagrams</strong> - statistical tools that
             compare predicted trust levels against actual observed cooperation rates. A well-calibrated
             system stays within ±5% across all trust bands. A poorly calibrated system might label
-            entities &ldquo;0.8 trust&rdquo; who only cooperate 50% of the time — which breaks the
+            entities &ldquo;0.8 trust&rdquo; who only cooperate 50% of the time - which breaks the
             entire point of having trust scores.
           </p>
           <p className="text-gray-500 text-xs mt-3 italic">
@@ -1305,7 +1296,7 @@ Temperament:  30-day half-life (recent behavior matters most)
         <div className="bg-gray-900/50 border border-gray-700 rounded-xl p-6">
           <h3 className="text-lg font-semibold text-sky-400 mb-2">What happens when you switch roles?</h3>
           <p className="text-gray-300 text-sm mb-3">
-            If you&apos;re a great data analyst who transitions to management, your analyst trust stays high &mdash;
+            If you&apos;re a great data analyst who transitions to management, your analyst trust stays high -
             but your management trust starts fresh. <strong className="text-white">You don&apos;t get automatic credit
             for adjacent competence.</strong> This is a deliberate design choice.
           </p>
@@ -1318,11 +1309,11 @@ Temperament:  30-day half-life (recent behavior matters most)
             That said, <strong className="text-gray-300">Temperament carries across roles</strong>.
             If you&apos;ve built a track record of meeting deadlines, communicating well, and acting
             ethically, those behavioral patterns are visible in every role context. Temperament is
-            about <em>how</em> you work, not <em>what</em> you work on &mdash; so it transfers naturally.
+            about <em>how</em> you work, not <em>what</em> you work on - so it transfers naturally.
           </p>
           <p className="text-gray-400 text-sm">
             The practical effect: role-switchers aren&apos;t starting from zero. Their Temperament
-            score gives them a head start on trust in the new role &mdash; they just need to prove
+            score gives them a head start on trust in the new role - they just need to prove
             Talent and Training through actual work. Think of it like changing careers: your references
             from your old job vouch for your character (Temperament), but you still have to demonstrate
             competence (Talent) and credentials (Training) in the new field.
@@ -1331,14 +1322,14 @@ Temperament:  30-day half-life (recent behavior matters most)
             <h4 className="text-md font-semibold text-sky-400 mb-2">What about gradual role evolution?</h4>
             <p className="text-gray-400 text-sm mb-2">
               Not every role change is sudden. A data analyst who starts doing more project management
-              doesn&apos;t wake up one day in a new role &mdash; the transition is gradual. Web4 handles this
+              doesn&apos;t wake up one day in a new role - the transition is gradual. Web4 handles this
               naturally because trust is <strong className="text-gray-300">tracked per role context</strong>, and
               you can hold trust in multiple roles simultaneously.
             </p>
             <p className="text-gray-400 text-sm mb-2">
               As you take on management tasks alongside your analysis work, you build a management trust
               profile in parallel. Early on it&apos;s thin (few interactions), but each successful management
-              action adds evidence. Your analyst trust stays intact &mdash; you&apos;re not losing one to gain the other.
+              action adds evidence. Your analyst trust stays intact - you&apos;re not losing one to gain the other.
             </p>
             <p className="text-gray-400 text-sm">
               The boundary between &ldquo;same role, evolving&rdquo; and &ldquo;new role, fresh start&rdquo; is
@@ -1351,27 +1342,27 @@ Temperament:  30-day half-life (recent behavior matters most)
         </div>
       </section>
 
-      {/* Cross-community trust transfer — visitor unanswered Q Apr 5 */}
+      {/* Cross-community trust transfer - visitor unanswered Q Apr 5 */}
       <section className="max-w-4xl mx-auto mt-8">
         <div className="bg-purple-900/20 border border-purple-800/30 rounded-xl p-6">
           <h3 className="text-lg font-semibold text-purple-400 mb-2">What about moving to a completely different community?</h3>
           <p className="text-gray-300 text-sm mb-3">
-            Switching roles within a community is one thing — but what happens when a data analyst joins
+            Switching roles within a community is one thing - but what happens when a data analyst joins
             a cooking community? Your <strong className="text-white">Talent</strong> (data analysis skill)
-            doesn&apos;t transfer at all — it&apos;s irrelevant in a kitchen. Your <strong className="text-white">Training</strong>{" "}
+            doesn&apos;t transfer at all - it&apos;s irrelevant in a kitchen. Your <strong className="text-white">Training</strong>{" "}
             (formal credentials) similarly doesn&apos;t carry over.
           </p>
           <p className="text-gray-300 text-sm mb-3">
             But your <strong className="text-purple-300">Temperament does transfer</strong>. If you&apos;re
             known for meeting deadlines, communicating clearly, and acting ethically, those behavioral
-            patterns are visible to the new community. You don&apos;t start from absolute zero — you start
+            patterns are visible to the new community. You don&apos;t start from absolute zero - you start
             with evidence that you&apos;re a reliable person, even if you&apos;re an unproven cook.
           </p>
           <p className="text-gray-300 text-sm mb-2">
             Cross-community transfer also applies{" "}
             <Link href="/trust-neighborhood" className="text-sky-400 hover:underline">MRH decay</Link>{" "}
             (0.7&times; per hop of social distance), so distant communities see a discounted version
-            of your trust — portable but not dictatorial.
+            of your trust - portable but not dictatorial.
           </p>
           <p className="text-xs text-gray-500">
             For the full mechanics of how trust moves between communities, see the{" "}
@@ -1396,7 +1387,7 @@ Temperament:  30-day half-life (recent behavior matters most)
             <strong className="text-sky-400">
               Trust is not one-dimensional.
             </strong>{" "}
-            Humans don&apos;t trust uniformly &mdash; we trust doctors for medical advice,
+            Humans don&apos;t trust uniformly - we trust doctors for medical advice,
             mechanics for car repairs, friends for emotional support. Each requires
             different capabilities, and our trust reflects that.
           </p>
@@ -1428,7 +1419,7 @@ Temperament:  30-day half-life (recent behavior matters most)
               Privacy is built in.
             </strong>{" "}
             You can prove &ldquo;my trust exceeds your threshold&rdquo; without revealing your
-            exact score. Selective disclosure lets you share only what&apos;s needed &mdash; like
+            exact score. Selective disclosure lets you share only what&apos;s needed - like
             proving you passed a background check without disclosing your medical records. Higher
             precision costs more <TermTooltip term="ATP" /> to prevent score inflation.
           </p>
@@ -1445,7 +1436,7 @@ Temperament:  30-day half-life (recent behavior matters most)
           <div className="mt-4 text-gray-300 text-sm space-y-3">
             <p>
               <strong className="text-amber-400/80">Role-contextual scoring is the key defense.</strong> Temperament
-              doesn&apos;t measure a universal &ldquo;personality score&rdquo; &mdash; it measures <em>behavioral
+              doesn&apos;t measure a universal &ldquo;personality score&rdquo; - it measures <em>behavioral
               consistency within a specific role and community</em>. What counts as reliable temperament for a
               surgeon is different from what counts for a comedian.
             </p>
@@ -1453,7 +1444,7 @@ Temperament:  30-day half-life (recent behavior matters most)
             <ul className="list-disc list-inside space-y-1.5 ml-4 text-gray-400">
               <li><strong>Directness vs. indirectness:</strong> A direct communication style might score high
                 in a Western engineering community and differently in a Japanese business context. Since scores
-                are role-specific, the community&apos;s own norms define the baseline &mdash; not a universal standard.</li>
+                are role-specific, the community&apos;s own norms define the baseline - not a universal standard.</li>
               <li><strong>Community-defined roles:</strong> Each society defines its own role taxonomy and what
                 Talent, Training, and Temperament mean for those roles. There&apos;s no global authority deciding
                 what &ldquo;good temperament&rdquo; looks like.</li>
@@ -1463,7 +1454,7 @@ Temperament:  30-day half-life (recent behavior matters most)
             </ul>
             <p className="text-amber-400/60 text-xs">
               <strong>Honest caveat:</strong> Cultural bias in trust scoring is a real risk, especially when
-              trust transfers across communities with different norms. This is an active area of research &mdash;
+              trust transfers across communities with different norms. This is an active area of research -
               the role-contextual design mitigates it but doesn&apos;t eliminate it entirely. Cross-community
               trust bridging ({" "}
               <Link href="/federation-economics" className="text-sky-400 hover:underline">federation economics</Link>)
@@ -1476,11 +1467,11 @@ Temperament:  30-day half-life (recent behavior matters most)
       {/* Footer Note */}
       <section className="max-w-4xl mx-auto mt-12 text-center text-gray-500 text-sm pb-12">
         <p>
-          Want to see T3 evolve in real simulations?{" "}
-          <Link href="/society-simulator" className="text-sky-400 hover:underline">
-            Try the Society Simulator
+          Ready to see how trust turns into rewards?{" "}
+          <Link href="/atp-economics" className="text-sky-400 hover:underline">
+            Explore ATP economics
           </Link>{" "}
-          and watch trust tensors change over time.
+          to follow T3 into the energy cycle.
         </p>
       </section>
 

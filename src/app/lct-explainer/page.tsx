@@ -76,7 +76,7 @@ export default function LCTExplainerPage() {
     },
     {
       name: "Device Witness Network",
-      description: "Multiple independent devices witness and attest to this LCT's validity — witnesses are devices, not people",
+      description: "Multiple independent devices witness and attest to this LCT's validity - witnesses are devices, not people",
       example: "Your LCT is witnessed by your phone, laptop, and FIDO2 key - attacker must compromise all three"
     }
   ];
@@ -136,10 +136,10 @@ export default function LCTExplainerPage() {
 
   // Calculate trust based on device count (simplified model).
   // SYNC: these values MUST match the device rule this page's prose states
-  // ("1 device: 50%, 2 devices: 75%, 3+: up to 90%" — witness-count list item)
+  // ("1 device: 50%, 2 devices: 75%, 3+: up to 90%" - witness-count list item)
   // and the 0.90 "hardware-bound ceiling" the scale-anchor paragraph declares.
   // The old formula (0.40 + 0.15/device + diversity, capped 0.98) let the slider
-  // print 0.98 — above the ceiling the page itself calls the maximum (Jul-14
+  // print 0.98 - above the ceiling the page itself calls the maximum (Jul-14
   // seams-integrity pass). Diminishing returns past 3 devices is prose canon too.
   const calculateTrust = (devices: number): number => {
     const trustByDevices = [0.50, 0.75, 0.90]; // 1 / 2 / 3+ devices
@@ -175,48 +175,48 @@ export default function LCTExplainerPage() {
           {/* Apr 29 visitor HIGH: opened with three undefined terms (security chip / hardware-bound / witnessed)
               before any everyday metaphor. Lead with a tangible analogy first, then the precise definition. */}
           <p className="text-lg text-gray-200 max-w-2xl mx-auto mb-3">
-            Imagine your phone becoming your driver&rsquo;s license &mdash; but one that can&rsquo;t be
+            Imagine your phone becoming your driver&rsquo;s license - but one that can&rsquo;t be
             photocopied, faked from a stolen photo, or impersonated from a remote computer.
           </p>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            More precisely: a digital ID card that lives in your device&apos;s security chip &mdash; hardware-bound,
+            More precisely: a digital ID card that lives in your device&apos;s security chip - hardware-bound,
             witnessed by your other devices (each one independently co-signs that it&rsquo;s really you),
             and resistant to faking.
           </p>
 
-          {/* Plain-English etymology of "Linked" and "Context" — visitor friction Apr 25.
+          {/* Plain-English etymology of "Linked" and "Context" - visitor friction Apr 25.
               2026-07-02 visitor MEDIUM #6: the good analogy "got buried under crypto vocabulary
               within a couple of paragraphs." This box explains the NAME, not the concept, yet sat
               in the hero as a 3-paragraph density spike (lineage, tamper-evident, cryptographically
               chained) immediately after the plain-English precise definition above. Fold it so a
               linear reader meets the analogy + one plain definition before any crypto/etymology
-              cluster; the etymology stays one click away for the curious. Prominence-only change —
+              cluster; the etymology stays one click away for the curious. Prominence-only change -
               the Apr-29 precise definition (para above) and this content are both preserved. */}
           <details className="mt-6 max-w-2xl mx-auto bg-gray-900/40 border border-gray-700 rounded-lg p-5 text-left group">
             <summary className="cursor-pointer list-none flex items-center justify-between gap-2 text-sm uppercase tracking-wide text-gray-400">
               <span>Why the name &ldquo;Linked Context&rdquo;?</span>
-              <span className="text-xs font-normal normal-case tracking-normal text-gray-500 group-open:hidden">optional &mdash; tap to unpack the two words</span>
+              <span className="text-xs font-normal normal-case tracking-normal text-gray-500 group-open:hidden">optional - tap to unpack the two words</span>
               <span className="text-xs font-normal normal-case tracking-normal text-gray-500 hidden group-open:inline">tap to collapse</span>
             </summary>
             <p className="text-gray-300 leading-relaxed mt-3">
-              <strong>Linked</strong> &mdash; every LCT links to its creator (lineage), to the
-              devices that witness it, and to a <em>tamper-evident</em> creation record &mdash;
+              <strong>Linked</strong> - every LCT links to its creator (lineage), to the
+              devices that witness it, and to a <em>tamper-evident</em> creation record -
               meaning every entry is cryptographically chained to the one before it, so altering
               or back-dating any record breaks the chain and is immediately detectable. That
               linkage is what makes the token forge-resistant.
             </p>
             <p className="text-gray-300 leading-relaxed mt-3">
-              <strong>Context</strong> &mdash; the device, platform, and role this LCT operates in.
+              <strong>Context</strong> - the device, platform, and role this LCT operates in.
               Yes, that&rsquo;s the same role-context that{" "}
               <a href="/trust-tensor" className="text-purple-400 hover:text-purple-300 underline">T3</a>
-              {" "}weights &mdash; but the word here means runtime environment, not a chat thread.
+              {" "}weights - but the word here means runtime environment, not a chat thread.
             </p>
             {/* May 20 visitor LOW: existing block defined each word but didn't fuse them.
                 Visitor: "I'd guess... but I'm inferring, not being taught." Add the synthesis. */}
             <p className="text-gray-300 leading-relaxed mt-3">
               <strong>Together:</strong> the token <em>links</em> your hardware identity to the
-              <em> context</em> you&rsquo;re acting in &mdash; your role, your device, what you&rsquo;re
-              doing right now &mdash; so trust is always evaluated in situation, not in the abstract.
+              <em> context</em> you&rsquo;re acting in - your role, your device, what you&rsquo;re
+              doing right now - so trust is always evaluated in situation, not in the abstract.
             </p>
           </details>
 
@@ -229,32 +229,32 @@ export default function LCTExplainerPage() {
 
         <InProduction concept="lct" />
 
-        {/* Key Takeaways — summary for newcomers who may not read the full page */}
+        {/* Key Takeaways - summary for newcomers who may not read the full page */}
         <div className="bg-purple-950/30 border border-purple-800/40 rounded-xl p-6 mb-8">
           <h2 className="text-lg font-bold mb-3 text-purple-300">Key Takeaways</h2>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li className="flex gap-2"><span className="text-purple-400 shrink-0">1.</span> Your identity lives in your devices&apos; security chips — not in passwords or company databases. The chip&apos;s private key is generated <em>inside</em> the silicon and physically can&apos;t leave it: not even the operating system or malware can read it out, so it can&apos;t be copied or forged. <span className="text-gray-500">(This is <em>the</em> reason hardware identity works.)</span></li>
-            <li className="flex gap-2"><span className="text-purple-400 shrink-0">2.</span> Multiple devices (phone, laptop, security key) witness each other, making faking exponentially harder. <span className="text-gray-500">Heads-up: &ldquo;witness&rdquo; means two distinct things on this page — (a) your <em>own</em> devices co-signing each other, and (b) optional outside infrastructure nodes. Most of the page means sense (a).</span> <a href="#device-witnesses" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('device-witnesses')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(both senses explained)</a></li>
-            <li className="flex gap-2"><span className="text-purple-400 shrink-0">3.</span> If you lose a device, your other devices can recover your identity — no &quot;forgot password&quot; needed <a href="#recovery" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('recovery')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(minutes to hours with multi-device; days if only one)</a></li>
-            <li className="flex gap-2"><span className="text-purple-400 shrink-0">4.</span> This is pseudonymous — your reputation follows you, but your real name doesn&apos;t have to</li>
-            <li className="flex gap-2"><span className="text-purple-400 shrink-0">5.</span> Every trust change is logged in a tamper-evident <a href="#trust-transparency" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('trust-transparency')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline">transparency log</a> — you can audit your own trust history</li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">1.</span> Your identity lives in your devices&apos; security chips - not in passwords or company databases. The chip&apos;s private key is generated <em>inside</em> the silicon and physically can&apos;t leave it: not even the operating system or malware can read it out, so it can&apos;t be copied or forged. <span className="text-gray-500">(This is <em>the</em> reason hardware identity works.)</span></li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">2.</span> Multiple devices (phone, laptop, security key) witness each other, making faking exponentially harder. <span className="text-gray-500">Heads-up: &ldquo;witness&rdquo; means two distinct things on this page - (a) your <em>own</em> devices co-signing each other, and (b) optional outside infrastructure nodes. Most of the page means sense (a).</span> <a href="#device-witnesses" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('device-witnesses')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(both senses explained)</a></li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">3.</span> If you lose a device, your other devices can recover your identity - no &quot;forgot password&quot; needed <a href="#recovery" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('recovery')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(minutes to hours with multi-device; days if only one)</a></li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">4.</span> This is pseudonymous - your reputation follows you, but your real name doesn&apos;t have to</li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">5.</span> Every trust change is logged in a tamper-evident <a href="#trust-transparency" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('trust-transparency')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline">transparency log</a> - you can audit your own trust history</li>
           </ul>
-          {/* 2026-06-06 visitor MEDIUM (recurring): every prior scale anchor was reactive — placed inline
+          {/* 2026-06-06 visitor MEDIUM (recurring): every prior scale anchor was reactive - placed inline
               next to a number cluster (lines ~494, ~801, ~941). A top-to-bottom reader still hit decimals
               before any ruler. This is the one PROACTIVE anchor: it sits in the intro, above every decimal
               on the page, so no number is ever read without the scale already in hand. Wording kept
               consistent with the inline bridge clause (~494) to avoid a third phrasing of the same ruler. */}
           <p className="text-xs text-purple-200/80 mt-3 pt-3 border-t border-purple-800/30">
             <span className="font-semibold text-purple-300">How to read the numbers below:</span> every trust score on this page
-            runs on a <strong>0&ndash;1</strong> scale, where <strong>0.5</strong> is the survival line (only <em>staying</em> below it is fatal), <strong>0.75</strong> is solid,
+            runs on a <strong>0-1</strong> scale, where <strong>0.5</strong> is the survival line (only <em>staying</em> below it is fatal), <strong>0.75</strong> is solid,
             and <strong>0.90</strong> is the hardware-bound ceiling. Every decimal you meet from here on sits on that scale.
           </p>
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300">jump to the interactive security audit ↓</a></p>
         </div>
 
-        {/* Concept Sequence Roadmap — shows where this page fits in the learning path */}
+        {/* Concept Sequence Roadmap - shows where this page fits in the learning path */}
         <div className="bg-gray-800/30 border border-gray-700/50 rounded-lg px-6 py-4 mb-8">
-          <p className="text-xs text-gray-400 mb-2">You&apos;re starting a 6-concept journey. Each builds on the last:</p>
+          <p className="text-xs text-gray-400 mb-2">You&apos;re starting a 5-concept journey. Each builds on the last:</p>
           <div className="flex flex-wrap items-center gap-1 text-xs">
             <span className="bg-purple-900/60 text-purple-300 px-2 py-1 rounded font-semibold">1. Identity (LCT)</span>
             <span className="text-gray-600">→</span>
@@ -265,8 +265,6 @@ export default function LCTExplainerPage() {
             <a href="/trust-neighborhood" className="text-gray-500 hover:text-cyan-400 transition-colors px-2 py-1 rounded hover:bg-gray-800/50">4. Neighborhood (MRH)</a>
             <span className="text-gray-600">→</span>
             <a href="/coherence-index" className="text-gray-500 hover:text-amber-400 transition-colors px-2 py-1 rounded hover:bg-gray-800/50">5. Consistency (CI)</a>
-            <span className="text-gray-600">→</span>
-            <a href="/aliveness" className="text-gray-500 hover:text-rose-400 transition-colors px-2 py-1 rounded hover:bg-gray-800/50">6. Aliveness</a>
           </div>
         </div>
 
@@ -360,8 +358,8 @@ export default function LCTExplainerPage() {
             <p className="text-sm text-gray-300">
               <span className="font-bold text-green-400">But what about pseudonymity?</span>{' '}
               Hardware-bound identity doesn&apos;t mean real-name identity. Your LCT is a cryptographic key, not your name.
-              Nobody sees &ldquo;Jane Smith&rdquo; — they see an entity with a trust history. You can participate, earn trust,
-              and contribute value without ever revealing who you are. What Web4 prevents isn&apos;t anonymity — it&apos;s{' '}
+              Nobody sees &ldquo;Jane Smith&rdquo; - they see an entity with a trust history. You can participate, earn trust,
+              and contribute value without ever revealing who you are. What Web4 prevents isn&apos;t anonymity - it&apos;s{' '}
               <em>disposable</em> identity. Your reputation follows you, but your name doesn&apos;t have to.{' '}
               <Link href="/why-web4" className="text-sky-400 hover:underline">See the full FAQ &rarr;</Link>
             </p>
@@ -377,16 +375,16 @@ export default function LCTExplainerPage() {
               </pre>
               <div className="flex flex-wrap gap-2 mb-3 text-[10px]">
                 <span className="px-2 py-0.5 rounded bg-emerald-900/40 border border-emerald-700/50 text-emerald-300">
-                  <span className="font-mono">0x4c8f…a3f2</span> &mdash; hardware-anchored, cannot change
+                  <span className="font-mono">0x4c8f…a3f2</span> - hardware-anchored, cannot change
                 </span>
                 <span className="px-2 py-0.5 rounded bg-amber-900/40 border border-amber-700/50 text-amber-300">
-                  <span className="font-mono">#alice.assistant1</span> &mdash; label you chose, can change
+                  <span className="font-mono">#alice.assistant1</span> - label you chose, can change
                 </span>
               </div>
               <p className="text-sm text-gray-300 mb-3">
                 The <span className="text-emerald-300">0x4c8f…a3f2</span> part is a cryptographic fingerprint tied to your device&apos;s
-                security chip — it never leaves the hardware, and it&apos;s the same every time you sign in. The{' '}
-                <span className="text-amber-300">#alice.assistant1</span> part is a label you chose — it could be
+                security chip - it never leaves the hardware, and it&apos;s the same every time you sign in. The{' '}
+                <span className="text-amber-300">#alice.assistant1</span> part is a label you chose - it could be
                 <span className="italic"> anything</span> (pseudonymous, role-scoped, even swapped per community).
                 Only the label is changeable; the cryptographic fingerprint above stays stable, so your trust history
                 follows you across label changes.
@@ -394,7 +392,7 @@ export default function LCTExplainerPage() {
               <p className="text-sm text-gray-300 mb-3">
                 <span className="font-bold">Two sessions, same entity:</span>{' '}
                 Monday you answer a question; Friday you post again. Both messages are signed by the same LCT, so the community
-                sees <em>one</em> continuous reputation — the trust you earned Monday applies Friday. No one had to check an
+                sees <em>one</em> continuous reputation - the trust you earned Monday applies Friday. No one had to check an
                 ID, email, or phone number to know it&apos;s you.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
@@ -418,15 +416,15 @@ export default function LCTExplainerPage() {
             </div>
           </div>
 
-          {/* Hardware explainer — collapsible to keep early-page density human-friendly (Apr 30 visitor MEDIUM) */}
+          {/* Hardware explainer - collapsible to keep early-page density human-friendly (Apr 30 visitor MEDIUM) */}
           <details className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg group">
             <summary className="cursor-pointer text-sm font-bold text-purple-400 list-none flex items-center justify-between gap-2">
               <span>What are TPM, Secure Enclave, and FIDO2?</span>
-              <span className="text-xs font-normal text-purple-300/70 group-open:hidden">tap to expand &mdash; cryptography terms defined</span>
+              <span className="text-xs font-normal text-purple-300/70 group-open:hidden">tap to expand - cryptography terms defined</span>
               <span className="text-xs font-normal text-purple-300/70 hidden group-open:inline">tap to collapse</span>
             </summary>
             <p className="text-xs text-gray-400 italic mt-3 mb-3">
-              You don&apos;t need to memorize these to use Web4 &mdash; they&apos;re tamper-resistant security
+              You don&apos;t need to memorize these to use Web4 - they&apos;re tamper-resistant security
               chips already in devices you probably own. Skip ahead if the high-level idea
               (&ldquo;hardware-bound identity&rdquo;) is enough; expand for the specifics.
             </p>
@@ -435,9 +433,9 @@ export default function LCTExplainerPage() {
               built into devices you probably own:
             </p>
             <ul className="text-sm text-gray-300 space-y-1 ml-4 list-disc list-inside">
-              <li><span className="font-bold">Secure Enclave</span> &mdash; Apple&apos;s security chip in every iPhone, iPad, and Mac. It handles Face ID, Touch ID, and encryption keys.</li>
-              <li><span className="font-bold">TPM (Trusted Platform Module)</span> &mdash; A security chip in most modern laptops and PCs. Windows uses it for BitLocker encryption and secure boot.</li>
-              <li><span className="font-bold">FIDO2 / WebAuthn</span> &mdash; Security keys you can buy (like YubiKey) or built-in biometrics (fingerprint readers). Used for passwordless login on many websites already.</li>
+              <li><span className="font-bold">Secure Enclave</span> - Apple&apos;s security chip in every iPhone, iPad, and Mac. It handles Face ID, Touch ID, and encryption keys.</li>
+              <li><span className="font-bold">TPM (Trusted Platform Module)</span> - A security chip in most modern laptops and PCs. Windows uses it for BitLocker encryption and secure boot.</li>
+              <li><span className="font-bold">FIDO2 / WebAuthn</span> - Security keys you can buy (like YubiKey) or built-in biometrics (fingerprint readers). Used for passwordless login on many websites already.</li>
             </ul>
             <p className="text-xs text-gray-500 mt-2">
               The key property: these chips generate cryptographic keys internally and
@@ -445,21 +443,21 @@ export default function LCTExplainerPage() {
               your entire hard drive, they can&apos;t extract the keys.
             </p>
             <p className="text-xs text-green-400/70 mt-2">
-              This isn&apos;t theoretical &mdash; Web4&apos;s TPM2 binding has been validated on real hardware
+              This isn&apos;t theoretical - Web4&apos;s TPM2 binding has been validated on real hardware
               (Intel TPM 2.0: key creation, signing, verification, attestation quotes, EK certificate
               chain verified through 2049).
             </p>
             {/* June-14 visitor MEDIUM #1 (their explicit "one fix"): "validated on real hardware" is the
                 most deployed-sounding claim on a page they visited, and it sat with no scope caveat, so a
                 reader couldn't tell what's built vs simulated. Resolve at the read point with a SCOPE
-                distinction (not a blanket "it's all simulation" disclaimer, which would be false — the
+                distinction (not a blanket "it's all simulation" disclaimer, which would be false - the
                 binding really is hardware-tested). Mirrors the prototype/simulated register at L584+. */}
             <p className="text-xs text-gray-500 mt-1">
-              To be precise about what that proves: the <em className="text-gray-400">hardware layer</em> &mdash; the
-              chip-level identity binding &mdash; really is tested on silicon. The trust, witness, and economic
+              To be precise about what that proves: the <em className="text-gray-400">hardware layer</em> - the
+              chip-level identity binding - really is tested on silicon. The trust, witness, and economic
               dynamics built on top of it are still{" "}
               <Link href="/why-web4#faq-deployed" className="text-green-400/80 hover:underline">simulation, not a deployed network</Link>.
-              So &ldquo;validated on real hardware&rdquo; means the foundation is proven &mdash; not that you can join Web4 today.
+              So &ldquo;validated on real hardware&rdquo; means the foundation is proven - not that you can join Web4 today.
             </p>
           </details>
 
@@ -468,31 +466,31 @@ export default function LCTExplainerPage() {
             <h3 className="text-sm font-bold text-green-400 mb-2">
               What are &ldquo;device witnesses&rdquo;?
             </h3>
-            {/* May 14 visitor MEDIUM #4 — plain-English lede before meta-disclaimer */}
+            {/* May 14 visitor MEDIUM #4 - plain-English lede before meta-disclaimer */}
             <p className="text-sm text-gray-200 mb-3">
               <strong>The short answer:</strong> your laptop and phone are each a{" "}
-              <strong className="text-green-300">device co-witness</strong> &mdash; they vouch for each other,
+              <strong className="text-green-300">device co-witness</strong> - they vouch for each other,
               so the network sees both signatures together and no single device alone can claim to be you.
             </p>
-            {/* May 28 visitor MEDIUM #2 / Unanswered Q1 — same word "witness" doing two jobs.
+            {/* May 28 visitor MEDIUM #2 / Unanswered Q1 - same word "witness" doing two jobs.
                 Visitor said the prior "two layers" acknowledgment was honest but the naming collision
                 persisted. Fix: name the two concepts with boldfaced distinct terms at the read point
                 so a naive reader leaves with two named buckets to map context into.
                 No site-wide rename (09:00 session log flagged cascade risk); seeding only here + the
                 first sentence of each panel. */}
             <p className="text-xs text-gray-400 italic mb-3">
-              Heads up &mdash; Web4 uses the same word &ldquo;witness&rdquo; for two distinct jobs. To keep
+              Heads up - Web4 uses the same word &ldquo;witness&rdquo; for two distinct jobs. To keep
               them apart, this page names them: a <strong className="text-gray-200 not-italic">device co-witness</strong>{" "}
-              (your own devices attest to each other &mdash; this section), and a{" "}
+              (your own devices attest to each other - this section), and a{" "}
               <strong className="text-gray-200 not-italic">network witness</strong> (optional infrastructure nodes
-              verify the network &mdash; answered directly below). If you meet plain &ldquo;witness&rdquo; later,
+              verify the network - answered directly below). If you meet plain &ldquo;witness&rdquo; later,
               context tells you which.
             </p>
             <p className="text-sm text-gray-300 mb-3">
               <strong>Why device witnesses?</strong> Passwords can be stolen. A single device can be hacked.
               But compromising three independent devices at the same time? That&apos;s orders of magnitude
               harder. A <span className="font-bold">device witness</span> is any device or
-              platform that independently confirms your presence is real &mdash; like
+              platform that independently confirms your presence is real - like
               co-signers on a legal document. Your phone, laptop, and security key each independently
               vouch that &ldquo;yes, this is really Alice.&rdquo; An attacker would need to
               compromise <span className="font-bold">all</span> of your device witnesses simultaneously
@@ -502,7 +500,7 @@ export default function LCTExplainerPage() {
               <p className="text-gray-300 font-medium">Example: Logging in from a new city</p>
               <p>You log in from Tokyo. Your phone&apos;s GPS confirms you&apos;re in Tokyo. Your
                 laptop&apos;s TPM chip signs the same session. Your smartwatch confirms your biometrics
-                match. Three independent devices, three independent confirmations &mdash; that&apos;s
+                match. Three independent devices, three independent confirmations - that&apos;s
                 witnessing. If someone steals just your laptop password, they still can&apos;t fake
                 your phone&apos;s GPS or your watch&apos;s heartbeat pattern.</p>
             </div>
@@ -513,7 +511,7 @@ export default function LCTExplainerPage() {
               <div className="grid grid-cols-1 gap-1.5 text-xs text-gray-400">
                 <div className="flex items-start gap-2">
                   <span className="text-green-500 font-bold shrink-0">1.</span>
-                  <span>You sign in &mdash; your laptop&apos;s TPM chip generates a <strong className="text-gray-300">cryptographic attestation</strong> (a hardware-signed proof that this specific device is involved)</span>
+                  <span>You sign in - your laptop&apos;s TPM chip generates a <strong className="text-gray-300">cryptographic attestation</strong> (a hardware-signed proof that this specific device is involved)</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500 font-bold shrink-0">2.</span>
@@ -521,49 +519,49 @@ export default function LCTExplainerPage() {
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500 font-bold shrink-0">3.</span>
-                  <span>Both attestations are bundled into your LCT &mdash; now anyone can verify <em>two independent hardware chips</em> confirmed this session</span>
+                  <span>Both attestations are bundled into your LCT - now anyone can verify <em>two independent hardware chips</em> confirmed this session</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500 font-bold shrink-0">4.</span>
-                  <span>More device witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90% &mdash; i.e. 0.50, 0.75, 0.90 on the 0&ndash;1 trust scale these numbers all use, where 0.5 is the survival line &mdash; only <em>staying</em> below it is fatal) — but with <em>diminishing returns</em>. Three hardware-bound device witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds)</span>
+                  <span>More device witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90% - i.e. 0.50, 0.75, 0.90 on the 0-1 trust scale these numbers all use, where 0.5 is the survival line - only <em>staying</em> below it is fatal) - but with <em>diminishing returns</em>. Three hardware-bound device witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds)</span>
                 </div>
               </div>
             </div>
 
-            {/* Bootstrap: first device — visitor Q May 2 unanswered Q2 (recurring) */}
+            {/* Bootstrap: first device - visitor Q May 2 unanswered Q2 (recurring) */}
             <div className="mt-4 p-3 bg-gray-900/60 border border-green-700/40 rounded-md">
               <p className="text-xs text-gray-400 italic mb-2">
-                <span className="text-green-400 font-medium not-italic">What about my <em>first</em> device — who witnesses it before I have any others?</span>
+                <span className="text-green-400 font-medium not-italic">What about my <em>first</em> device - who witnesses it before I have any others?</span>
               </p>
               <p className="text-xs text-gray-300 mb-2">
-                Your phone&apos;s chip vouches for itself &mdash; and that&rsquo;s a different job from the device co-witnesses above. The security chip inside (TPM on Android/PC, Secure Enclave on iPhone, FIDO2 on a USB key)
-                ships with a <strong className="text-gray-200">manufacturer-burned key</strong> &mdash; a cryptographic
+                Your phone&apos;s chip vouches for itself - and that&rsquo;s a different job from the device co-witnesses above. The security chip inside (TPM on Android/PC, Secure Enclave on iPhone, FIDO2 on a USB key)
+                ships with a <strong className="text-gray-200">manufacturer-burned key</strong> - a cryptographic
                 identity baked in at the factory by the chip vendor (Apple, Qualcomm, Yubico, etc.). When you sign up, this{" "}
                 <strong className="text-gray-200">factory attestation</strong> proves &ldquo;I am a genuine, untampered piece of hardware
                 from manufacturer X&rdquo; without you doing anything. It vouches that the <em>hardware</em> is genuine; a{" "}
-                <strong className="text-gray-200 not-italic">device co-witness</strong> (above) vouches that <em>you</em> are present &mdash;
+                <strong className="text-gray-200 not-italic">device co-witness</strong> (above) vouches that <em>you</em> are present -
                 related, but not the same act, which is why we give this founding step its own name instead of
                 calling it a third kind of &ldquo;witness.&rdquo; No central notary, no government issuer, no
-                self-attestation waiting period &mdash; the chip&apos;s own factory certificate is the proof.
+                self-attestation waiting period - the chip&apos;s own factory certificate is the proof.
               </p>
               {/* June 12 visitor MEDIUM (browse B): the device-count rule (1=0.50, 2=0.75, 3+=0.90)
-                  and the chip-class table (TPM max 0.90 etc.) were never reconciled — visitor stalled
+                  and the chip-class table (TPM max 0.90 etc.) were never reconciled - visitor stalled
                   for minutes on "one TPM laptop: 0.50, 0.75, or 0.90?" and had to guess min-of-two.
                   State the combination rule where the two rules first co-occur. 4-Life calibration
                   framing (like the ceilings themselves) so future web4 spec settlement reads as a
                   calibration update, not a contradiction. Retires the long canon-blocked carry-forward:
                   the rule below restates what this page's own copy already implies, no new canon. */}
               <p className="text-xs text-gray-400">
-                A single device with this manufacturer attestation gets a trust ceiling of 0.50&ndash;0.75 (depending on chip class)
-                &mdash; the same 50&ndash;75% as just above.{" "}
+                A single device with this manufacturer attestation gets a trust ceiling of 0.50-0.75 (depending on chip class)
+                - the same 50-75% as just above.{" "}
                 <strong className="text-gray-300">How the two ceiling rules combine</strong> (in 4-Life&apos;s calibration):
                 your <em>chip class</em> sets the hardware maximum (the tier table further down), and your{" "}
-                <em>device count</em> sets how much of that maximum you can actually reach &mdash; your effective
+                <em>device count</em> sets how much of that maximum you can actually reach - your effective
                 ceiling is the <strong className="text-gray-300">lower of the two</strong>. One TPM laptop alone &rarr; 0.75
                 (device count is the limit, despite the chip&apos;s 0.90 rating); the same laptop plus two more
                 device witnesses &rarr; the full 0.90 (now chip class is the limit); a software-only setup stays
                 at 0.50 however many devices it spans.
-                Adding a second device later doesn&apos;t replace this factory attestation &mdash; it adds a device co-witness on top, raising the ceiling
+                Adding a second device later doesn&apos;t replace this factory attestation - it adds a device co-witness on top, raising the ceiling
                 toward 0.90.{" "}
                 <a
                   href="#single-device"
@@ -575,7 +573,7 @@ export default function LCTExplainerPage() {
               </p>
             </div>
 
-            {/* User-POV walkthrough jump link — visitor Q Apr 23 recurring */}
+            {/* User-POV walkthrough jump link - visitor Q Apr 23 recurring */}
             <div className="mt-4 p-3 bg-gray-900/60 border border-green-700/40 rounded-md">
               <p className="text-xs text-gray-300">
                 <span className="text-green-400 font-medium">Wondering what this looks like from your side?</span>{" "}
@@ -586,7 +584,7 @@ export default function LCTExplainerPage() {
                 >
                   See the first 5 minutes of setup →
                 </a>{" "}
-                <span className="text-gray-500">(visual mockup &mdash; QR codes, device pairing, what you actually tap)</span>
+                <span className="text-gray-500">(visual mockup - QR codes, device pairing, what you actually tap)</span>
               </p>
             </div>
           </div>
@@ -599,18 +597,18 @@ export default function LCTExplainerPage() {
               <strong className="text-sky-400">Short answer:</strong> anyone can. Web4 is an open standard
               (like email), not a platform (like Gmail).{" "}
               <strong className="text-sky-300">Network witness</strong> nodes can be run by universities,
-              companies, nonprofits, or individuals &mdash; the same way anyone can run an email server.
+              companies, nonprofits, or individuals - the same way anyone can run an email server.
             </p>
             <p className="text-sm text-gray-400 mb-2">
-              <strong className="text-gray-300">Two kinds of witnessing:</strong> (1) your own devices witness <em>each other</em> — your phone
-              witnesses your laptop, and vice versa — proving <em>you</em> are real. (2) Infrastructure witness nodes
-              validate the <em>network</em> — confirming attestations are properly formed and consistent. In the current
+              <strong className="text-gray-300">Two kinds of witnessing:</strong> (1) your own devices witness <em>each other</em> - your phone
+              witnesses your laptop, and vice versa - proving <em>you</em> are real. (2) Infrastructure witness nodes
+              validate the <em>network</em> - confirming attestations are properly formed and consistent. In the current
               prototype, both are simulated. In a deployed system, your devices handle identity witnessing; external
               nodes (universities, employers, individuals) add network-level verification but aren&apos;t required.
             </p>
             <p className="text-sm text-gray-300 mt-3">
               <strong className="text-sky-400">What&apos;s the incentive to run a witness node?</strong> Witnesses
-              earn ATP for validation work — each attestation they process earns a small fee from the
+              earn ATP for validation work - each attestation they process earns a small fee from the
               network&apos;s redistribution pool (not from the user being witnessed). For institutions like
               universities or employers, the incentive is also reputational: being a trusted witness
               builds their own T3 scores, making their attestations more valuable. Individual witness
@@ -625,10 +623,10 @@ export default function LCTExplainerPage() {
             <p className="text-sm text-gray-300 mt-3">
               <strong className="text-sky-400">What about metadata and surveillance?</strong> If devices
               are constantly attesting to each other, couldn&apos;t the attestation patterns themselves reveal
-              sensitive information? Yes — this is a real concern. Web4 identifies{' '}
+              sensitive information? Yes - this is a real concern. Web4 identifies{' '}
               <Link href="/threat-model#privacy-leakage" className="text-sky-400 hover:underline">7 privacy
               leakage channels</Link>, including graph structure (who talks to whom) and timing correlation.
-              Mitigations include pseudonymous attestation, proof batching, timing jitter, and dummy edges —
+              Mitigations include pseudonymous attestation, proof batching, timing jitter, and dummy edges -
               but complete prevention is impossible. The design goal is raising the cost of inference above
               the value of the leaked information.
             </p>
@@ -646,38 +644,38 @@ export default function LCTExplainerPage() {
                   <tr className="border-b border-gray-800">
                     <td className="py-1.5 pr-2 text-gray-300">Your identity</td>
                     <td className="py-1.5 pr-2 text-red-400/80">Real name, email, phone sold to data brokers</td>
-                    <td className="py-1.5 text-green-400/80">Pseudonymous — hardware-bound, no personal info required</td>
+                    <td className="py-1.5 text-green-400/80">Pseudonymous - hardware-bound, no personal info required</td>
                   </tr>
                   <tr className="border-b border-gray-800">
                     <td className="py-1.5 pr-2 text-gray-300">Your content</td>
                     <td className="py-1.5 pr-2 text-red-400/80">Platforms read, analyze, and monetize everything</td>
-                    <td className="py-1.5 text-green-400/80">Only recipients see content — protocol moves attestations, not data</td>
+                    <td className="py-1.5 text-green-400/80">Only recipients see content - protocol moves attestations, not data</td>
                   </tr>
                   <tr className="border-b border-gray-800">
                     <td className="py-1.5 pr-2 text-gray-300">Your browsing</td>
                     <td className="py-1.5 pr-2 text-red-400/80">Tracking cookies follow you across sites</td>
-                    <td className="py-1.5 text-green-400/80">No cross-context tracking — each role is a separate LCT</td>
+                    <td className="py-1.5 text-green-400/80">No cross-context tracking - each role is a separate LCT</td>
                   </tr>
                   <tr className="border-b border-gray-800">
                     <td className="py-1.5 pr-2 text-gray-300">Your social graph</td>
                     <td className="py-1.5 pr-2 text-red-400/80">Full contact lists harvested and shared</td>
-                    <td className="py-1.5 text-yellow-400/80">Partial — who attests to whom is visible within 3 hops</td>
+                    <td className="py-1.5 text-yellow-400/80">Partial - who attests to whom is visible within 3 hops</td>
                   </tr>
                   <tr className="border-b border-gray-800">
                     <td className="py-1.5 pr-2 text-gray-300">Your activity timing</td>
                     <td className="py-1.5 pr-2 text-red-400/80">Platforms log every click, scroll, and hover</td>
-                    <td className="py-1.5 text-yellow-400/80">Attestation timing visible — mitigated by jitter and batching</td>
+                    <td className="py-1.5 text-yellow-400/80">Attestation timing visible - mitigated by jitter and batching</td>
                   </tr>
                   <tr>
                     <td className="py-1.5 pr-2 text-gray-300">Breach exposure</td>
                     <td className="py-1.5 pr-2 text-red-400/80">Centralized databases leaked (billions of records yearly)</td>
-                    <td className="py-1.5 text-green-400/80">No central database to breach — identity is on your devices</td>
+                    <td className="py-1.5 text-green-400/80">No central database to breach - identity is on your devices</td>
                   </tr>
                 </tbody>
               </table>
               <p className="text-xs text-gray-500 mt-3">
                 The honest framing: Web4 trades centralized data collection for decentralized attestation patterns.
-                Two channels (social graph and timing) leak <em>some</em> metadata — but your identity, content, browsing,
+                Two channels (social graph and timing) leak <em>some</em> metadata - but your identity, content, browsing,
                 and breach risk all improve substantially. Net result: narrower leakage, built into the protocol
                 rather than bolted on as afterthoughts.
               </p>
@@ -693,12 +691,14 @@ export default function LCTExplainerPage() {
             <p className="text-gray-300">
               Think of an <span className="font-bold text-purple-400">LCT</span> as a
               <span className="font-bold"> digital ID card that lives in your device&apos;s security chip</span>{" "}
-              — not a password you type and not a key file you store, but a presence your
+              - not a password you type and not a key file you store, but a presence your
               hardware proves and your other devices witness.
             </p>
             <p className="text-gray-300">
-              More formally, an LCT is Web4&apos;s foundational presence primitive: a
-              {" "}<span className="font-bold">hardware-bound, witnessed, contextual proof of presence</span>{" "}
+              More formally, an LCT is Web4&apos;s foundational presence primitive: a verifiable digital
+              presence certificate that binds an entity to its context through witnessed relationships. It
+              establishes <em>where you exist</em> in a web of trust, not merely <em>who you are</em>. In
+              short, a {" "}<span className="font-bold">hardware-bound, witnessed, contextual proof of presence</span>{" "}
               that verifies:
             </p>
 
@@ -709,15 +709,21 @@ export default function LCTExplainerPage() {
               <li><span className="font-bold">Who witnesses you</span>: Which devices/platforms attest to your existence</li>
               <li><span className="font-bold">How you behave</span>: Your reputation history (trust earned, not claimed)</li>
             </ul>
+            <p className="text-sm text-gray-400">
+              The LCT primitive is defined by{" "}
+              <Link href="/the-standard" className="text-sky-400 hover:underline">the core standard</Link>; you
+              obtain an LCT-based personal identity through{" "}
+              <Link href="/hestia" className="text-sky-400 hover:underline">hestia</Link>.
+            </p>
           </div>
 
-          {/* Etymology — Apr 25 visitor: "what does the Context part mean?" */}
+          {/* Etymology - Apr 25 visitor: "what does the Context part mean?" */}
           <div className="mb-6 p-4 border border-gray-700 rounded-lg bg-gray-900/30">
             <p className="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-2">What does each word mean?</p>
             <p className="text-sm text-gray-300 leading-relaxed mb-2">
-              <span className="font-bold text-purple-300">Linked</span> — witnessed by your other devices and trust peers.{" "}
-              <span className="font-bold text-purple-300">Context</span> — pinned to a specific role or scope.{" "}
-              <span className="font-bold text-purple-300">Token</span> — a compact, verifiable credential.
+              <span className="font-bold text-purple-300">Linked</span> - witnessed by your other devices and trust peers.{" "}
+              <span className="font-bold text-purple-300">Context</span> - pinned to a specific role or scope.{" "}
+              <span className="font-bold text-purple-300">Token</span> - a compact, verifiable credential.
             </p>
             <p className="text-sm text-gray-300 leading-relaxed">
               The <span className="font-semibold">Context</span> word is what makes role-contextual trust possible: one person can hold separate LCTs as <em>doctor</em>, <em>parent</em>, or <em>moderator</em>, each carrying its own trust history. A surgeon trusted as a surgeon ≠ trusted as a cook.{" "}
@@ -725,7 +731,7 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
-          {/* LCT Format Example — collapsed for newcomers */}
+          {/* LCT Format Example - collapsed for newcomers */}
           <details className="mb-6">
             <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300 flex items-center gap-2">
               <span className="text-gray-500 group-open:rotate-90 transition-transform">▶</span>
@@ -737,38 +743,38 @@ export default function LCTExplainerPage() {
                 lct:web4:agent:alice.assistant1@Thor#perception
               </div>
               <div className="mt-4 text-sm text-gray-300">
-                <div className="text-xs text-gray-500 mb-2">Read it left-to-right like a URL — each punctuation mark separates a segment:</div>
+                <div className="text-xs text-gray-500 mb-2">Read it left-to-right like a URL - each punctuation mark separates a segment:</div>
                 <table className="text-xs w-full">
                   <tbody className="divide-y divide-gray-800">
                     <tr>
                       <td className="py-1 pr-3 font-mono text-purple-300 align-top whitespace-nowrap">lct:</td>
-                      <td className="py-1 text-gray-300"><span className="font-bold">Scheme</span> — marks this as an LCT (like <code className="text-gray-400">https:</code> marks a URL)</td>
+                      <td className="py-1 text-gray-300"><span className="font-bold">Scheme</span> - marks this as an LCT (like <code className="text-gray-400">https:</code> marks a URL)</td>
                     </tr>
                     <tr>
                       <td className="py-1 pr-3 font-mono text-purple-300 align-top whitespace-nowrap">web4:</td>
-                      <td className="py-1 text-gray-300"><span className="font-bold">Namespace</span> — the Web4 trust fabric</td>
+                      <td className="py-1 text-gray-300"><span className="font-bold">Namespace</span> - the Web4 trust fabric</td>
                     </tr>
                     <tr>
                       <td className="py-1 pr-3 font-mono text-purple-300 align-top whitespace-nowrap">agent:</td>
-                      <td className="py-1 text-gray-300"><span className="font-bold">Entity type</span> — agent, human, device, role, or society</td>
+                      <td className="py-1 text-gray-300"><span className="font-bold">Entity type</span> - agent, human, device, role, or society</td>
                     </tr>
                     <tr>
                       <td className="py-1 pr-3 font-mono text-purple-300 align-top whitespace-nowrap">alice.assistant1</td>
-                      <td className="py-1 text-gray-300"><span className="font-bold">Lineage</span> — created by Alice, who vouches for it</td>
+                      <td className="py-1 text-gray-300"><span className="font-bold">Lineage</span> - created by Alice, who vouches for it</td>
                     </tr>
                     <tr>
                       <td className="py-1 pr-3 font-mono text-purple-300 align-top whitespace-nowrap">@Thor</td>
-                      <td className="py-1 text-gray-300"><span className="font-bold">Context</span> — runs on the &ldquo;Thor&rdquo; device (Jetson AGX with TPM attestation)</td>
+                      <td className="py-1 text-gray-300"><span className="font-bold">Context</span> - runs on the &ldquo;Thor&rdquo; device (Jetson AGX with TPM attestation)</td>
                     </tr>
                     <tr>
                       <td className="py-1 pr-3 font-mono text-purple-300 align-top whitespace-nowrap">#perception</td>
-                      <td className="py-1 text-gray-300"><span className="font-bold">Task scope</span> — read-only, cannot execute code or delegate</td>
+                      <td className="py-1 text-gray-300"><span className="font-bold">Task scope</span> - read-only, cannot execute code or delegate</td>
                     </tr>
                   </tbody>
                 </table>
                 <p className="text-xs text-gray-500 mt-3">
                   The format is human-readable on purpose. If any segment is missing or unverifiable,
-                  the LCT is rejected — so a glance tells you who/where/what/scope.
+                  the LCT is rejected - so a glance tells you who/where/what/scope.
                 </p>
               </div>
             </div>
@@ -841,12 +847,12 @@ export default function LCTExplainerPage() {
 
           {/* June 3 visitor MEDIUM + Unanswered Q2: the two panels below read as one
               metric to a first-timer ("Presence Trust Score: 0.55" next to "Anomaly
-              Detection: 30%" — same number or two different ones?). One framing line
+              Detection: 30%" - same number or two different ones?). One framing line
               up front says they answer two different questions. */}
           <p className="text-sm text-gray-400 mb-4 max-w-2xl">
             These two panels answer different questions.{' '}
             <span className="text-gray-200 font-medium">Presence Trust Score</span> is how much
-            trust your identity can reach (your ceiling, on the 0&ndash;1 scale &mdash; more
+            trust your identity can reach (your ceiling, on the 0-1 scale - more
             independent devices raise it).{' '}
             <span className="text-gray-200 font-medium">Compromise Difficulty</span> and its{' '}
             <span className="text-gray-200 font-medium">Anomaly Detection</span> reading are about
@@ -887,7 +893,7 @@ export default function LCTExplainerPage() {
                 </div>
                 <div className="text-sm text-gray-400 mt-1">harder to attack</div>
                 <p className="text-xs text-gray-500 mt-2 max-w-xs mx-auto leading-relaxed">
-                  Each independent hardware chip multiplies the attacker&apos;s cost — compromising one doesn&apos;t compromise the others, so the work to break in stacks rather than substitutes.
+                  Each independent hardware chip multiplies the attacker&apos;s cost - compromising one doesn&apos;t compromise the others, so the work to break in stacks rather than substitutes.
                 </p>
               </div>
               <div className="text-sm text-gray-300">
@@ -929,7 +935,7 @@ export default function LCTExplainerPage() {
               <span className="font-bold">Why this matters:</span> With {deviceCount} device{deviceCount > 1 ? 's' : ''},
               an attacker must physically steal AND biometrically unlock {deviceCount === 1 ? 'your device' : `all ${deviceCount} independent devices`}.
               {deviceCount >= 3
-                ? ` That's ${attackDifficulty.toFixed(1)}x harder to compromise, with a ${(detectionProb * 100).toFixed(0)}% chance of detection — even a successful theft is almost certainly caught.`
+                ? ` That's ${attackDifficulty.toFixed(1)}x harder to compromise, with a ${(detectionProb * 100).toFixed(0)}% chance of detection - even a successful theft is almost certainly caught.`
                 : deviceCount >= 2
                   ? ` That's ${attackDifficulty.toFixed(1)}x harder to compromise. Adding a third device would push detection to ${(calculateDetectionProbability(3) * 100).toFixed(0)}%.`
                   : ` Adding a second device (like a security key) would raise detection from ${(detectionProb * 100).toFixed(0)}% to ${(calculateDetectionProbability(2) * 100).toFixed(0)}% and make compromise ${calculateAttackDifficulty(2).toFixed(1)}x harder.`
@@ -943,38 +949,38 @@ export default function LCTExplainerPage() {
           <h2 className="text-2xl font-bold mb-6 text-gray-100">Not All Hardware Is Equal</h2>
           <p className="text-gray-400 text-sm mb-4">
             Your device&apos;s security hardware determines how high your trust can go. Stronger hardware means
-            a stronger identity witness &mdash; like the difference between a handwritten note and a notarized document.
+            a stronger identity witness - like the difference between a handwritten note and a notarized document.
           </p>
           <p className="text-gray-400 text-sm mb-4">
             <span className="text-gray-300 font-semibold">Why the numbers rank that way:</span> a TPM or Secure
             Enclave is a separate, tamper-resistant chip that generates private keys <em>inside itself</em> and
-            never lets them out &mdash; you&apos;d need physical attack on the chip to forge that witness.
+            never lets them out - you&apos;d need physical attack on the chip to forge that witness.
             Software-only keys live on disk where any malware that runs on your device can copy them. The
             ceiling reflects how hard the witness is to fake, not how convenient the device is to use.
           </p>
 
-          {/* Concrete lede before the abstract numbers — May 1 visitor MEDIUM #4 */}
+          {/* Concrete lede before the abstract numbers - May 1 visitor MEDIUM #4 */}
           <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-4 mb-4">
             <div className="text-sm font-semibold text-sky-300 mb-2">Why this matters: imagine you drop your phone in a lake.</div>
             <ul className="text-sm text-gray-300 space-y-1.5 list-disc list-inside marker:text-sky-500">
-              <li><strong className="text-emerald-300">Hardware-bound, multiple devices</strong> &mdash; your laptop and security key witness you&apos;re still you. A new phone enrolls in minutes; reputation is intact.</li>
-              <li><strong className="text-amber-300">Hardware-bound, one device</strong> &mdash; recovery is possible but slower. You re-establish through <a href="#recovery" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('recovery')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-amber-300 hover:text-amber-200 underline">community vouching &mdash; trusted witnesses confirm you&apos;re you, typically over 3&ndash;7 days</a>.</li>
-              <li><strong className="text-gray-400">Software only</strong> &mdash; no second witness to vouch. You start over from zero with a fresh identity.</li>
+              <li><strong className="text-emerald-300">Hardware-bound, multiple devices</strong> - your laptop and security key witness you&apos;re still you. A new phone enrolls in minutes; reputation is intact.</li>
+              <li><strong className="text-amber-300">Hardware-bound, one device</strong> - recovery is possible but slower. You re-establish through <a href="#recovery" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('recovery')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-amber-300 hover:text-amber-200 underline">community vouching - trusted witnesses confirm you&apos;re you, typically over 3-7 days</a>.</li>
+              <li><strong className="text-gray-400">Software only</strong> - no second witness to vouch. You start over from zero with a fresh identity.</li>
             </ul>
-            {/* May 24 visitor Unanswered Q4: "lose ALL my devices — am I locked out forever?"
+            {/* May 24 visitor Unanswered Q4: "lose ALL my devices - am I locked out forever?"
                 The full answer lives in the #recovery "All Devices Lost" card ~500 lines below;
                 surface its conclusion here, where the "permanent" anxiety actually arises. */}
             <p className="text-xs text-gray-300 mt-3">
               <strong className="text-sky-300">The pattern that matters:</strong> a permanent{" "}
               <em>reputation</em> is not a permanent <em>lockout</em>. Lose <em>every</em> hardware
-              device at once and you&apos;re still not erased &mdash; you drop into that same{" "}
+              device at once and you&apos;re still not erased - you drop into that same{" "}
               <a href="#all-devices-lost" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('all-devices-lost')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">social-recovery path</a>{" "}
-              (trusted witnesses re-confirm you&apos;re you), deliberately slow at 3&ndash;7 days and
-              deliberately hard &mdash; easy recovery would mean easy identity theft &mdash; but real,
+              (trusted witnesses re-confirm you&apos;re you), deliberately slow at 3-7 days and
+              deliberately hard - easy recovery would mean easy identity theft - but real,
               not forever. The lone exception is the software-only case above: with no hardware witness
               to vouch for you, there&apos;s nothing to recover <em>to</em>.
             </p>
-            <p className="text-xs text-gray-400 mt-3 italic">The numbers below measure that gap &mdash; how strong a witness your hardware is, and therefore how cleanly you can recover.</p>
+            <p className="text-xs text-gray-400 mt-3 italic">The numbers below measure that gap - how strong a witness your hardware is, and therefore how cleanly you can recover.</p>
           </div>
 
           {/* May 21 visitor LOW #1: the ceiling numbers (0.90/0.50) appear without anchoring the 0-1 scale itself.
@@ -984,27 +990,26 @@ export default function LCTExplainerPage() {
               but neither labeled the *upper-tier* numbers qualitatively. Visitor's verbatim gap: "Is 0.9 'great' or
               'the bare minimum'?" Their own table-row recommendation phrased it: "Above 0.85 is uncommon." Extend
               the anchor with qualitative labels for the upper end, and lift the typography one notch (text-sm gray-300)
-              so a scrolling reader notices it before the grid below &mdash; don't escalate to a colored callout. */}
+              so a scrolling reader notices it before the grid below - don't escalate to a colored callout. */}
           <p className="text-sm text-gray-300 mb-2">
             <span className="text-gray-400">New to the scale?</span> Trust runs from <strong>0</strong> (none) to{" "}
-            <strong>1.0</strong> (the theoretical max). Roughly: <strong>0.5</strong> is the alive/dead line &mdash;
+            <strong>1.0</strong> (the theoretical max). Roughly: <strong>0.5</strong> is the alive/dead line -
             fall below it <em>and stay there</em> and an entity can no longer act: its posts, votes, and ATP transfers stop being accepted
-            (a single dip just under is recoverable &mdash; see{" "}
-            <Link href="/aliveness" className="text-sky-400 hover:text-sky-300 underline">Aliveness</Link>);{" "}
+            (a single dip just under is recoverable);{" "}
             <strong>0.75</strong> is solid; <strong>0.85</strong> is strong; <strong>above&nbsp;0.85 is uncommon</strong>;{" "}
             <strong>1.0</strong> is the theoretical ceiling, not a number anyone actually reaches.
             The ceilings below are points on that scale.
           </p>
           <p className="text-sm text-gray-300 mb-3">
             Each number below is the <strong className="text-gray-100">maximum T3 trust score</strong> your
-            hardware can vouch for &mdash; even with perfect behavior, software-only identity tops out at 0.50.
+            hardware can vouch for - even with perfect behavior, software-only identity tops out at 0.50.
             What each cap unlocks (rewards, witness role, recovery path) is detailed below the grid.
           </p>
-          {/* June 12 visitor MEDIUM (browse B): echo of the combination rule AT the table — this is
+          {/* June 12 visitor MEDIUM (browse B): echo of the combination rule AT the table - this is
               where the "TPM max 0.90 vs 1 device = 0.50" contradiction actually forms. */}
           <p className="text-sm text-gray-400 mb-3">
             These caps combine with the device-count rule above: chip class sets the maximum, device count
-            sets how much of it you reach &mdash; <strong className="text-gray-300">the lower wins</strong>.
+            sets how much of it you reach - <strong className="text-gray-300">the lower wins</strong>.
             A lone TPM laptop is capped at 0.75 by device count; it takes two more device witnesses to
             unlock the chip&apos;s full 0.90.
           </p>
@@ -1012,7 +1017,7 @@ export default function LCTExplainerPage() {
           {/* June-8 visitor LOW + Unanswered Q4: the misread ("TPM 0.90" read as a *starting* trust)
               forms AT these large mono numbers. The "maximum / not starting points" truth already lives
               in the flanking prose (L959-963 above, L992-997 below) but a beat away from where the eye
-              anchors. Label the glyph itself — a subordinate "max" prefix — so the number can't be read
+              anchors. Label the glyph itself - a subordinate "max" prefix - so the number can't be read
               as a starting value. Read-point relocation, not a restatement of the prose. */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
             <div className="bg-emerald-950/30 border border-emerald-800/30 rounded-lg p-4 text-center">
@@ -1040,33 +1045,32 @@ export default function LCTExplainerPage() {
               <div className="text-xs text-gray-500 mt-1">Browser/OS level</div>
             </div>
           </div>
-          {/* June 1 visitor MEDIUM #4: equity worry forms AT the grid (log L57) — name the tradeoff at the read point; deeper framing at L1067-1071 stays as deepening. */}
+          {/* June 1 visitor MEDIUM #4: equity worry forms AT the grid (log L57) - name the tradeoff at the read point; deeper framing at L1067-1071 stays as deepening. */}
           <p className="text-gray-500 text-xs">
             These are trust <em>ceilings</em>, not starting points. Everyone starts at neutral (0.5).
             {/* June 11 visitor HIGH (browse A): "starts at 0.5" + "below 0.5 = permanent death" read
                 across pages as spawning on a permadeath knife-edge. Same resolution as First Contact:
-                small steps, sustained pattern — not one mistake. */}
+                small steps, sustained pattern - not one mistake. */}
             Starting on the alive/dead line isn&apos;t a knife-edge: trust moves in small steps (an
             honest mistake costs roughly a hundredth), a dip just below 0.5 is recoverable, and
-            permanent trust death takes a <em>sustained</em> pattern of bad behavior, not one stumble
-            (see <Link href="/aliveness" className="text-sky-400 hover:text-sky-300 underline">Aliveness</Link>).
+            permanent trust death takes a <em>sustained</em> pattern of bad behavior, not one stumble.
             With software-only hardware, 0.5 is both where you start and the highest you can reach.
-            Stronger hardware lets you build higher &mdash; but you still have to earn it through behavior.
-            One honest tradeoff: the software-only ceiling means people without newer hardware are capped lower &mdash; we treat that as a feature, not a bug, because it lets everyone participate while signaling what their identity is anchored to (see below for what the ceiling actually limits).
+            Stronger hardware lets you build higher - but you still have to earn it through behavior.
+            One honest tradeoff: the software-only ceiling means people without newer hardware are capped lower - we treat that as a feature, not a bug, because it lets everyone participate while signaling what their identity is anchored to (see below for what the ceiling actually limits).
           </p>
 
           {/* Jul-9 visitor HIGH (top friction point): "software-only caps at 0.50" and "0.5 is the
               alive/dead line" sat a few lines apart, and the visitor concluded a software-only identity
               can never be alive. This callout states the death rule (strictly-below AND sustained) and
-              the real cost of the ceiling (zero margin) — and deliberately STOPS there. Whether sitting
+              the real cost of the ceiling (zero margin) - and deliberately STOPS there. Whether sitting
               exactly ON 0.50 counts as alive is an unresolved canon call: the prose rule ("falls below
               and stays there") implies yes, but every executable predicate on this site says no
               (aliveness/page.tsx isAlive/rebirthEligible/agency all use trust > 0.5). Do NOT assert the
               endpoint either way until web4 canon settles > vs >= (PR #444 rejection; standing
               escalation alongside the T3-weights conflict). */}
           <p className="text-gray-400 text-xs mt-3 bg-gray-900/40 border border-gray-700/60 rounded-lg p-3">
-            <strong className="text-gray-300">&ldquo;Software-only caps at 0.50 &mdash; and 0.5 is the survival line. Am I dead on arrival?&rdquo;</strong>{" "}
-            Trust death isn&apos;t a snapshot &mdash; it&apos;s falling <em>below</em> 0.5 <em>and staying there</em>, a
+            <strong className="text-gray-300">&ldquo;Software-only caps at 0.50 - and 0.5 is the survival line. Am I dead on arrival?&rdquo;</strong>{" "}
+            Trust death isn&apos;t a snapshot - it&apos;s falling <em>below</em> 0.5 <em>and staying there</em>, a
             sustained collapse. What the software-only ceiling really costs you is <em>margin</em>: you start at the
             line with no buffer above it, so any dip restricts your features until you climb back, and your
             reputation can never carry more weight than the line itself. Zero margin is the tradeoff you accept
@@ -1088,7 +1092,7 @@ export default function LCTExplainerPage() {
               <ul className="list-disc pl-5 space-y-1.5">
                 <li>
                   <strong className="text-gray-300">Physical attack on the chip.</strong> Decapping, fault
-                  injection, electron-microscope key extraction &mdash; rare and expensive, but documented
+                  injection, electron-microscope key extraction - rare and expensive, but documented
                   against TPM and Secure Enclave research samples. Possible in principle for a determined
                   adversary.
                 </li>
@@ -1108,21 +1112,21 @@ export default function LCTExplainerPage() {
                 is reserved for things like one-time pads, not for hardware that ships in a phone. 0.90 is
                 shorthand for &ldquo;trusted enough to anchor most decisions, not trusted enough to be the
                 only check on something irreversible.&rdquo; The remaining 0.10 is the gap reserved for
-                independent corroboration &mdash; multiple devices, witness attestations, behavioral history.
+                independent corroboration - multiple devices, witness attestations, behavioral history.
               </p>
               {/* June 11 visitor (browse A) LOW: ceiling ORDERING (0.90 > 0.85 > 0.75 > 0.50) given
-                  without per-tier rationale — the generic "larger attack surface" line didn't say why
+                  without per-tier rationale - the generic "larger attack surface" line didn't say why
                   each specific step. One line per tier; these ceilings are 4-Life's calibration of the
                   attack-surface logic, not spec-mandated constants. */}
               <p className="text-xs text-gray-500 italic">
-                The same logic sets the ordering of the lower tiers &mdash; each step down is a concretely
+                The same logic sets the ordering of the lower tiers - each step down is a concretely
                 larger attack surface (the specific values are 4-Life&apos;s calibration of that logic, not
                 constants mandated by the spec):
               </p>
               <ul className="text-xs text-gray-500 italic list-disc pl-5 space-y-1">
-                <li><strong className="text-gray-400">Secure Enclave (0.85):</strong> strong dedicated hardware, but its attestation chain runs through a single vendor &mdash; less independently verifiable than the cross-vendor TPM certificate ecosystem.</li>
-                <li><strong className="text-gray-400">FIDO2 key (0.75):</strong> proves possession of the key, not the state of the platform using it &mdash; a compromised laptop can still misuse a legitimate key press.</li>
-                <li><strong className="text-gray-400">Software (0.50):</strong> no hardware root at all &mdash; keys live in OS memory, so anything that compromises the OS can extract them.</li>
+                <li><strong className="text-gray-400">Secure Enclave (0.85):</strong> strong dedicated hardware, but its attestation chain runs through a single vendor - less independently verifiable than the cross-vendor TPM certificate ecosystem.</li>
+                <li><strong className="text-gray-400">FIDO2 key (0.75):</strong> proves possession of the key, not the state of the platform using it - a compromised laptop can still misuse a legitimate key press.</li>
+                <li><strong className="text-gray-400">Software (0.50):</strong> no hardware root at all - keys live in OS memory, so anything that compromises the OS can extract them.</li>
               </ul>
             </div>
           </details>
@@ -1133,7 +1137,7 @@ export default function LCTExplainerPage() {
             </div>
             <p className="text-xs text-gray-400 mb-3">
               The ceiling caps how high your <strong className="text-gray-300">T3 trust</strong> can climb
-              through behavior. At every tier you can post, earn ATP, build karma, and join societies &mdash;
+              through behavior. At every tier you can post, earn ATP, build karma, and join societies -
               what changes is the <em>terms</em> of your participation:
             </p>
             <ul className="text-xs text-gray-400 space-y-2 list-disc pl-5">
@@ -1144,13 +1148,13 @@ export default function LCTExplainerPage() {
                   quality ramp
                 </Link>{" "}
                 rewards a 0.85-trust account roughly <strong className="text-gray-300">7&times; more</strong> per quality
-                action than a 0.30-trust account &mdash; so a higher ceiling means your good behavior compounds faster.
+                action than a 0.30-trust account - so a higher ceiling means your good behavior compounds faster.
               </li>
               <li>
                 <strong className="text-gray-300">Witness role.</strong> Hardware-bound devices (TPM /
                 Secure Enclave / FIDO2) can serve as <em>witnesses</em> for other people&apos;s sessions and
                 attestations. Software-only identities can be witnessed but generally don&apos;t witness others
-                &mdash; the cryptographic root isn&apos;t strong enough to anchor someone else&apos;s claim.
+                - the cryptographic root isn&apos;t strong enough to anchor someone else&apos;s claim.
               </li>
               <li>
                 <strong className="text-gray-300">Recovery path.</strong> A higher ceiling means you have more
@@ -1181,7 +1185,7 @@ export default function LCTExplainerPage() {
               </li>
             </ul>
             <p className="text-xs text-gray-500 mt-3 italic border-t border-gray-800 pt-2">
-              Plain framing: software-only at 0.50 is comparable to email today &mdash; full access, but a low
+              Plain framing: software-only at 0.50 is comparable to email today - full access, but a low
               ceiling on what your reputation can carry. Hardware-bound at 0.90 is the difference between
               &ldquo;I&rsquo;m here&rdquo; and &ldquo;the network can verifiably stake reputation on me.&rdquo;
             </p>
@@ -1192,15 +1196,15 @@ export default function LCTExplainerPage() {
               Only have one device? You&apos;re still in.
             </p>
             <p className="text-gray-400 text-xs">
-              Single-device users aren&apos;t excluded &mdash; they just have a lower trust ceiling
-              (typically 0.50&ndash;0.75 depending on hardware). You can fully participate, post, earn
+              Single-device users aren&apos;t excluded - they just have a lower trust ceiling
+              (typically 0.50-0.75 depending on hardware). You can fully participate, post, earn
               ATP, and build karma. Adding a second device later raises your ceiling retroactively.
               This matters especially in developing countries where many people access the internet
-              from a single smartphone &mdash; Web4 is designed to include them, not penalize them.
+              from a single smartphone - Web4 is designed to include them, not penalize them.
             </p>
             <p id="quorum-why" className="text-gray-500 text-xs mt-2 scroll-mt-24">
               <strong className="text-gray-400">Why a ceiling at all?</strong> A lone device has no
-              second device to corroborate its continuity &mdash; if it&apos;s lost, stolen, or
+              second device to corroborate its continuity - if it&apos;s lost, stolen, or
               quietly compromised, there&apos;s no independent witness to notice. Adding a witness
               turns a single trust root into a quorum: compromising multiple hardware roots at
               once is materially harder than compromising one, so the ceiling rises with
@@ -1208,10 +1212,10 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
-          {/* FAQ: Cold-start bootstrap — recurring visitor Q across Apr 29, Apr 30, May 1, May 2 */}
+          {/* FAQ: Cold-start bootstrap - recurring visitor Q across Apr 29, Apr 30, May 1, May 2 */}
           <div id="first-device-bootstrap" className="mt-4 p-4 bg-amber-950/20 border border-amber-800/30 rounded-lg scroll-mt-24">
             <h3 className="text-sm font-bold text-amber-400 mb-2">
-              I just installed the app on my one phone &mdash; who witnessed my <em>first</em> device?
+              I just installed the app on my one phone - who witnessed my <em>first</em> device?
             </h3>
             {/* May 20 visitor LOW: gloss <details> at #non-crypto-gloss exists right below this FAQ
                 but a reader bouncing off "manufacturer-burned key / Endorsement Key (EK) / vendor
@@ -1229,18 +1233,18 @@ export default function LCTExplainerPage() {
             <p className="text-sm text-gray-300 mb-2">
               <strong className="text-amber-300">Short answer:</strong> the chip itself does. The
               security element in your phone (TPM, Secure Enclave, or FIDO2 key) ships with a
-              manufacturer-burned key &mdash; the Endorsement Key (EK) &mdash; and a certificate
+              manufacturer-burned key - the Endorsement Key (EK) - and a certificate
               chain back to the chip vendor (Apple, Intel, Google, Yubico, etc.). When the app
               creates your LCT, it bundles a hardware attestation signed by that key. The chip is
               the day-zero witness: the network doesn&apos;t need a peer device to confirm
-              &ldquo;this is real hardware, not a virtual machine pretending&rdquo; &mdash; the
+              &ldquo;this is real hardware, not a virtual machine pretending&rdquo; - the
               vendor certificate chain settles that question on its own.
             </p>
             <p className="text-sm text-gray-300 mb-2">
               <strong className="text-amber-300">What hardware attestation <em>doesn&apos;t</em> prove:</strong> that this
-              specific chip belongs to a unique person &mdash; vs. someone running a phone farm
+              specific chip belongs to a unique person - vs. someone running a phone farm
               with 100 devices in a rack. That&apos;s the question peer device witnessing answers,
-              and it&apos;s why your trust ceiling sits at 0.50&ndash;0.75 with one device. Adding a
+              and it&apos;s why your trust ceiling sits at 0.50-0.75 with one device. Adding a
               second device (or earning attestations from other community members through your
               behavior) is what graduates you toward the higher ceilings.
             </p>
@@ -1255,13 +1259,13 @@ export default function LCTExplainerPage() {
               {/* Jul-9 visitor LOW: this is the first lifecycle-state mention a linear reader hits, and
                   naming only 2 of 4 states with no pointer left SUSPENDED/REVOKED as ghosts. The link
                   opens the collapsed lifecycle <details> so the pointer actually shows the content. */}
-              NASCENT and ACTIVE are two of the <em>four</em> LCT lifecycle states &mdash; the full state
+              NASCENT and ACTIVE are two of the <em>four</em> LCT lifecycle states - the full state
               machine, including what SUSPENDED and REVOKED mean, is in the{" "}
               <a href="#lct-lifecycle" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.getElementById('lct-lifecycle') as HTMLDetailsElement | null; if (el) { el.open = true; el.scrollIntoView({ behavior: 'smooth' }); } }} className="text-amber-400 hover:text-amber-300 underline">lifecycle section below</a>.
             </p>
             <p className="text-xs text-gray-500">
               <strong className="text-gray-400">The chicken-and-egg, resolved:</strong> hardware
-              attestation is the bootstrap &mdash; you don&apos;t need a peer to <em>start</em>.
+              attestation is the bootstrap - you don&apos;t need a peer to <em>start</em>.
               You need a peer (or earned community attestations) to <em>graduate</em> to the higher
               trust ceiling. Day one solo: you&apos;re a verified-real device with no continuity
               guarantee yet, capped at the software-or-single-hardware tier. Day thirty with one
@@ -1272,7 +1276,7 @@ export default function LCTExplainerPage() {
           </div>
 
           {/* May 4 visitor LOW friction #7: "Manufacturer-burned key", "Endorsement Key (EK)",
-              "vendor certificate chain", "private key" — used in bootstrap FAQ above without
+              "vendor certificate chain", "private key" - used in bootstrap FAQ above without
               firm grounding. Visitor's literal suggestion: "tooltips or a 'for non-crypto readers'
               inset paragraph under the hardware tier table." Inset chosen over tooltips to avoid
               tooltip-cascades inside an already dense FAQ. May 20: anchor id added so the FAQ's
@@ -1293,7 +1297,7 @@ export default function LCTExplainerPage() {
                     The secret half of a key pair. Anyone with the matching <em>public</em> half can
                     verify a signature came from this key, but only the holder of the private half
                     can produce one. On Web4-compatible hardware, the private key is generated
-                    inside the chip and never leaves it &mdash; not even the operating system can
+                    inside the chip and never leaves it - not even the operating system can
                     read it.
                   </div>
                 </div>
@@ -1302,8 +1306,8 @@ export default function LCTExplainerPage() {
                   <div className="text-xs text-gray-400">
                     A private key that was generated <em>at the factory</em>, etched into the chip
                     during manufacture, and made physically non-extractable. The chip can sign
-                    things with it, but no one &mdash; not the manufacturer, not you, not malware
-                    &mdash; can read the raw key out of the silicon.
+                    things with it, but no one - not the manufacturer, not you, not malware
+                    - can read the raw key out of the silicon.
                   </div>
                 </div>
                 <div>
@@ -1320,7 +1324,7 @@ export default function LCTExplainerPage() {
                   <div className="text-xs text-gray-400">
                     A signed paper trail: your specific chip&rsquo;s identity &rarr; its model line
                     &rarr; the vendor&rsquo;s root certificate authority. It&rsquo;s the same idea
-                    as the HTTPS lock icon in your browser &mdash; you trust your bank&rsquo;s
+                    as the HTTPS lock icon in your browser - you trust your bank&rsquo;s
                     website because a chain of signatures leads back to a root authority your
                     browser already trusts. The chip&rsquo;s vendor cert chain plays the same role
                     for hardware attestation: it proves the silicon is genuine without you having
@@ -1362,11 +1366,11 @@ export default function LCTExplainerPage() {
                   <div className="font-bold text-emerald-400 mb-1">Immutable</div>
                   <div className="text-xs text-gray-400 mb-2">Cannot change without physical hardware swap</div>
                   <div className="text-xs text-emerald-200/90 mb-2 italic">
-                    For a person: the &ldquo;birth fingerprint&rdquo; of your device &mdash; what makes
+                    For a person: the &ldquo;birth fingerprint&rdquo; of your device - what makes
                     <em> this phone</em> different from any other phone of the same model.
                   </div>
                   <ul className="text-xs text-gray-300 space-y-1">
-                    <li>TPM Endorsement Key (EK) &mdash; burned at manufacture</li>
+                    <li>TPM Endorsement Key (EK) - burned at manufacture</li>
                     <li>CPU serial number</li>
                     <li>Secure Enclave key (Apple platforms)</li>
                   </ul>
@@ -1376,7 +1380,7 @@ export default function LCTExplainerPage() {
                   <div className="font-bold text-amber-400 mb-1">Characteristic</div>
                   <div className="text-xs text-gray-400 mb-2">Changes rarely, with deliberate action</div>
                   <div className="text-xs text-amber-200/90 mb-2 italic">
-                    For a person: things you set up once and rarely touch &mdash; the device
+                    For a person: things you set up once and rarely touch - the device
                     name you chose, the network card inside it, the GPU it shipped with.
                   </div>
                   <ul className="text-xs text-gray-300 space-y-1">
@@ -1388,9 +1392,9 @@ export default function LCTExplainerPage() {
                 </div>
                 <div className="bg-gray-700/40 border border-gray-600/30 rounded p-3">
                   <div className="font-bold text-gray-300 mb-1">Dynamic</div>
-                  <div className="text-xs text-gray-400 mb-2">Changes frequently — must be rediscovered</div>
+                  <div className="text-xs text-gray-400 mb-2">Changes frequently - must be rediscovered</div>
                   <div className="text-xs text-gray-200/90 mb-2 italic">
-                    For a person: where you are <em>right now</em> &mdash; the coffee-shop
+                    For a person: where you are <em>right now</em> - the coffee-shop
                     Wi-Fi, the airport hotspot, the home network. Tells the system you&rsquo;re
                     here, not who you are.
                   </div>
@@ -1404,7 +1408,7 @@ export default function LCTExplainerPage() {
               <p className="text-gray-400 text-xs border-t border-gray-700 pt-3">
                 <strong className="text-gray-300">Key insight:</strong> An IP address is a <em>presence</em> attribute, not an identity attribute.
                 A machine that gets a new IP is still the same machine if its immutable anchor (TPM EK) matches.
-                Web4 anchors identity at the immutable tier &mdash; making LCTs durable across reboots, network changes,
+                Web4 anchors identity at the immutable tier - making LCTs durable across reboots, network changes,
                 and even OS reinstalls.
               </p>
             </div>
@@ -1413,7 +1417,7 @@ export default function LCTExplainerPage() {
 
         <DeepDiveToggle storageKey="4life-lct-deep-dive">
 
-        {/* Attack Scenario Comparison — wrapped in details for progressive disclosure */}
+        {/* Attack Scenario Comparison - wrapped in details for progressive disclosure */}
         <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <summary className="text-2xl font-bold text-gray-100 cursor-pointer hover:text-purple-400 transition-colors list-none flex justify-between items-center">
             <span>Security Comparison: Web2 vs Web3 vs Web4</span>
@@ -1468,7 +1472,7 @@ export default function LCTExplainerPage() {
           </div>
         </details>
 
-        {/* Identity Security Audit — cumulative interaction */}
+        {/* Identity Security Audit - cumulative interaction */}
         {(exploredAttacks.size >= 2 || exploredComponents.size >= 3) && (
           <div className="bg-gradient-to-br from-purple-950/30 to-gray-900 border border-purple-800/30 rounded-xl p-8 mb-8">
             <h2 className="text-2xl font-bold mb-4 text-purple-400">Your Identity Security Audit</h2>
@@ -1498,7 +1502,7 @@ export default function LCTExplainerPage() {
                 <div className="bg-green-950/20 border-l-3 border-green-500 p-3 rounded text-sm text-gray-300" style={{ borderLeftWidth: '3px', borderLeftColor: '#22c55e' }}>
                   <strong className="text-green-400">Pattern noticed:</strong> You&apos;ve tested {exploredAttacks.size} attack scenarios.
                   Notice how Web4 is safe against {exploredAttacks.size === 7 ? 'all of them' : 'every one'}?
-                  That&apos;s not because of one clever trick — it&apos;s because identity lives in hardware,
+                  That&apos;s not because of one clever trick - it&apos;s because identity lives in hardware,
                   not in databases, passwords, or files. There&apos;s nothing <em>to</em> steal remotely.
                 </div>
               )}
@@ -1517,7 +1521,7 @@ export default function LCTExplainerPage() {
                   <strong className="text-sky-400">Your posture:</strong> With {deviceCount} devices, your identity
                   is {calculateAttackDifficulty(deviceCount).toFixed(1)}x harder to compromise.
                   An attacker would need to physically steal all {deviceCount} devices AND bypass
-                  biometric locks on each one. That&apos;s not just &quot;harder&quot; — it&apos;s a fundamentally
+                  biometric locks on each one. That&apos;s not just &quot;harder&quot; - it&apos;s a fundamentally
                   different kind of problem than guessing a password.
                 </div>
               )}
@@ -1526,7 +1530,7 @@ export default function LCTExplainerPage() {
                 <div className="bg-yellow-950/20 border-l-3 border-yellow-500 p-3 rounded text-sm text-gray-300" style={{ borderLeftWidth: '3px', borderLeftColor: '#eab308' }}>
                   <strong className="text-yellow-400">Recommendation:</strong> With just 1 device, you&apos;re
                   protected against remote attacks (no database to breach, no password to phish) but
-                  vulnerable to physical theft. Try sliding the device count to 3 above — watch how
+                  vulnerable to physical theft. Try sliding the device count to 3 above - watch how
                   the attack difficulty jumps from {calculateAttackDifficulty(1).toFixed(1)}x to {calculateAttackDifficulty(3).toFixed(1)}x.
                 </div>
               )}
@@ -1536,8 +1540,8 @@ export default function LCTExplainerPage() {
                   <strong className="text-gray-100">The key takeaway:</strong> Verified presence is the foundation
                   everything else in Web4 builds on. Without hardware-bound presence, energy budgets don&apos;t
                   work (you&apos;d create free accounts), trust doesn&apos;t stick (you&apos;d reset reputations),
-                  and consequences don&apos;t matter (you&apos;d just start over). Presence — not identity,
-                  not credentials — makes the whole system possible.
+                  and consequences don&apos;t matter (you&apos;d just start over). Presence - not identity,
+                  not credentials - makes the whole system possible.
                 </div>
               )}
             </div>
@@ -1565,9 +1569,9 @@ export default function LCTExplainerPage() {
               </p>
               <div className="bg-gray-800/60 rounded px-3 py-2 text-xs text-gray-400">
                 Recovery: remaining devices sign an approval for the new device&apos;s birth certificate.
-                The old device&apos;s keys are automatically revoked — anything signed by the lost device
+                The old device&apos;s keys are automatically revoked - anything signed by the lost device
                 after the revocation timestamp is rejected.
-                {" "}<span className="text-purple-300 font-medium">Duration: minutes to hours</span> —
+                {" "}<span className="text-purple-300 font-medium">Duration: minutes to hours</span> -
                 once a quorum of remaining devices co-sign, the replacement is active and your
                 reputation carries over intact.
               </div>
@@ -1593,32 +1597,32 @@ export default function LCTExplainerPage() {
               <h3 className="text-lg font-bold text-amber-400 mb-2">All Devices Lost</h3>
               <p className="text-gray-300 text-sm mb-3">
                 Worst case. With no surviving devices, you need a{" "}
-                <strong className="text-amber-300">social recovery</strong> — trusted
+                <strong className="text-amber-300">social recovery</strong> - trusted
                 witnesses who can vouch for your identity. Think of it like getting a new
                 passport: you need people who know you to confirm you&apos;re you.
               </p>
               {/* May 26 visitor friction #4 / Unanswered Q3: the social-recovery mechanism was
                   described conceptually ("trusted witnesses confirm you're you") but the operation
-                  was opaque — what does a witness DO, what threshold binds the attestation? Add
+                  was opaque - what does a witness DO, what threshold binds the attestation? Add
                   the parallel-to-device-quorum mechanism at the read point, with the honest spec
                   caveat that exact thresholds aren't yet pinned down. Same pattern as PR #301/#309/#312/#320. */}
               <p className="text-gray-300 text-sm mb-3">
-                Mechanically, it&apos;s the same primitive as the device-quorum case above &mdash; an{" "}
+                Mechanically, it&apos;s the same primitive as the device-quorum case above - an{" "}
                 <strong className="text-amber-300">m-of-n threshold</strong> of hardware-signed
-                approvals &mdash; but the signers are now <em>people</em> you&apos;ve previously
+                approvals - but the signers are now <em>people</em> you&apos;ve previously
                 interacted with (their LCTs), not your own devices. Each peer signs the recovery
                 request from their own hardware; once the threshold accumulates, those signatures
                 attest to your new device&apos;s birth certificate, and the new key is bound into
                 your LCT constellation. The exact quorum size, how peers are selected, and how
                 interaction history weights each attestation are{" "}
-                <em>designed but not yet pinned in spec</em> &mdash; one of Web4&apos;s
+                <em>designed but not yet pinned in spec</em> - one of Web4&apos;s
                 &ldquo;not yet deployed&rdquo; pieces.
               </p>
               {/* June 2 visitor LOW (recurring, deferred multiple prior sessions): the
                   mechanism above is described abstractly ("an m-of-n threshold of peers");
                   the visitor wanted to SEE it happen to named people ("Alice texts Bob, Bob
                   co-signs"). One concrete walkthrough grounds the mechanism without restating
-                  the rule — show, don't tell. Stays inside the existing "threshold, designed-
+                  the rule - show, don't tell. Stays inside the existing "threshold, designed-
                   not-pinned" framing; adds no new spec claim. */}
               <div className="bg-amber-950/20 border border-amber-800/30 rounded px-3 py-2 text-xs text-gray-300 mb-3">
                 <span className="text-amber-300 font-medium">Concretely:</span> Alice loses her
@@ -1626,38 +1630,38 @@ export default function LCTExplainerPage() {
                 vouch for hers. She requests recovery from a borrowed device; Bob taps approve on
                 his phone, Carol taps approve on hers, and once their two signatures meet the
                 threshold she set, her reputation re-binds to a new phone. Bob and Carol never
-                touch her keys &mdash; they only attest &ldquo;yes, this is really Alice.&rdquo;
+                touch her keys - they only attest &ldquo;yes, this is really Alice.&rdquo;
               </div>
               <div className="bg-gray-800/60 rounded px-3 py-2 text-xs text-gray-400">
-                Why the wait? Easy recovery would mean easy identity theft &mdash; specifically a{" "}
+                Why the wait? Easy recovery would mean easy identity theft - specifically a{" "}
                 <span className="text-amber-300 font-medium">flash-recovery attack</span> where a
-                thief tricks one or two contacts before honest peers notice. The 3&ndash;7 day window
+                thief tricks one or two contacts before honest peers notice. The 3-7 day window
                 forces out-of-band coordination across multiple witnesses, raising the cost of forging
                 quorum approval above the account&apos;s value.
                 {" "}<span className="text-amber-300 font-medium">Expect days, not minutes.</span>
               </div>
-              {/* May 29 visitor Unanswered Q3: "3-7 days sounds rough — does that mean I can't
+              {/* May 29 visitor Unanswered Q3: "3-7 days sounds rough - does that mean I can't
                   access anything for a week? Can I prove who I am to a small circle even before
                   formal recovery completes?" The sibling "Why the wait?" block above answers the
                   security rationale; this one answers the experiential question at the same read
                   point. Three honest spec points: (1) preserved-not-erased (natural time-decay
                   still applies; recovery doesn't restore, it unfreezes the SUSPENDED state),
                   (2) protocol-anchored actions pause, non-protocol life continues,
-                  (3) the imagined informal small circle IS the formal recovery — softening this
+                  (3) the imagined informal small circle IS the formal recovery - softening this
                   would re-open the visitor's two-layer mental model. */}
               <div className="bg-gray-800/60 rounded px-3 py-2 text-xs text-gray-400 mt-2">
                 What happens during the wait?{" "}
                 <span className="text-amber-300 font-medium">Your reputation is preserved, not erased.</span>{" "}
-                The model treats the loss as a hold on the device, not a wipe of the person &mdash; your T3 sits
+                The model treats the loss as a hold on the device, not a wipe of the person - your T3 sits
                 in place (natural time-decay still applies), and when the quorum lands, you walk back into the
                 trust that was waiting.
-                Web4-anchored actions pause (signing an ATP transfer, attesting a peer &mdash; anything that
+                Web4-anchored actions pause (signing an ATP transfer, attesting a peer - anything that
                 requires your hardware key), but non-protocol life keeps going (reading the site, using your
                 phone for anything else). And the &ldquo;small circle vouching for me&rdquo; that the wait seems
                 to be standing in for{" "}
                 <em>is</em>{" "}
                 the recovery: each peer signature accumulating toward the m-of-n threshold IS that small
-                circle&apos;s vote &mdash; not a parallel informal track running alongside it.
+                circle&apos;s vote - not a parallel informal track running alongside it.
               </div>
             </div>
           </div>
@@ -1669,7 +1673,7 @@ export default function LCTExplainerPage() {
             <p className="text-sm text-gray-300">
               Single-device users can&apos;t use quorum recovery (there&apos;s no second device to
               co-sign), so losing that device drops you straight into <strong>social recovery</strong>
-              {" "}— the slow 3&ndash;7 day path above. If you plan to rely on one device, pairing it
+              {" "}- the slow 3-7 day path above. If you plan to rely on one device, pairing it
               with a cheap hardware security key (FIDO2, ~$30) as a second witness dramatically
               shortens your recovery path and raises your trust ceiling. See{" "}
               <a href="#single-device" className="text-sky-400 hover:underline">
@@ -1681,7 +1685,7 @@ export default function LCTExplainerPage() {
 
           {/* Apr 20 + Apr 29 visitor friction: vendor-gatekeeping concern.
               Acknowledged on /what-could-go-wrong but not answered here. The constellation
-              framing dissolves the question — once identity stops being singular, no single
+              framing dissolves the question - once identity stops being singular, no single
               vendor IS the gate. Adding it as a sibling concern to "what if my device dies." */}
           <div className="mb-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg">
             <p className="text-sm text-purple-300 font-semibold mb-1">
@@ -1689,7 +1693,7 @@ export default function LCTExplainerPage() {
             </p>
             <p className="text-sm text-gray-300 mb-2">
               The short answer: <strong>they can&apos;t gate the constellation</strong>. Your LCT
-              isn&apos;t a single token sitting on one vendor&apos;s hardware — it&apos;s a graph
+              isn&apos;t a single token sitting on one vendor&apos;s hardware - it&apos;s a graph
               of mutually-witnessing factors. A host-level key, a hardware-bound key, a session
               token, a software identity, peer attestations from other people&apos;s devices, and
               eventually a ledger anchor. <em>Each uses its own native mechanism.</em>
@@ -1700,7 +1704,7 @@ export default function LCTExplainerPage() {
               event, relying parties degrade trust on it accordingly, and you keep operating.
               <strong className="text-purple-300"> The bigger and more diverse your constellation,
               the harder it is to enclose.</strong> Any single vendor at any single layer can&apos;t
-              hold you. That&apos;s the design objective — not finding a &quot;better&quot; root
+              hold you. That&apos;s the design objective - not finding a &quot;better&quot; root
               vendor, but making the constellation hard to gate. See the{" "}
               <a
                 href="https://github.com/dp-web4/web4/blob/main/docs/specs/heterogeneous-identity.md"
@@ -1735,14 +1739,14 @@ export default function LCTExplainerPage() {
                 <strong className="text-gray-300">Nascent</strong>: Birth certificate created, waiting for witness attestation.{" "}
                 <em className="text-gray-500">Trigger: you register a new device.</em>{" "}
                 <strong className="text-gray-300">Active</strong>: Fully operational, can sign and participate.{" "}
-                <em className="text-gray-500">Trigger: a peer device co-signs the nascent token, OR &mdash; for solo-device users &mdash; infrastructure witness nodes confirm the hardware attestation chain. Either path graduates the LCT; multi-device just unlocks a higher ceiling. <a href="#first-device-bootstrap" className="text-gray-400 hover:text-gray-300 underline not-italic">(solo-device cold start)</a></em>{" "}
-                <strong className="text-gray-300">Suspended</strong>: Temporarily frozen — can be reactivated.{" "}
+                <em className="text-gray-500">Trigger: a peer device co-signs the nascent token, OR - for solo-device users - infrastructure witness nodes confirm the hardware attestation chain. Either path graduates the LCT; multi-device just unlocks a higher ceiling. <a href="#first-device-bootstrap" className="text-gray-400 hover:text-gray-300 underline not-italic">(solo-device cold start)</a></em>{" "}
+                <strong className="text-gray-300">Suspended</strong>: Temporarily frozen - can be reactivated.{" "}
                 <em className="text-gray-500">Trigger: all devices offline &gt; 30 days, or suspected compromise.</em>{" "}
-                <strong className="text-gray-300">Revoked</strong>: Permanently invalidated &mdash; unlike suspension, there is no path back for this identity. Trust history preserved but no new actions allowed.{" "}
+                <strong className="text-gray-300">Revoked</strong>: Permanently invalidated - unlike suspension, there is no path back for this identity. Trust history preserved but no new actions allowed.{" "}
                 <em className="text-gray-500">Trigger: confirmed device compromise, or voluntary revocation.</em>
               </p>
               <p className="text-gray-500 text-xs">
-                Expired LCTs can also exist — when a time-limited delegation reaches its end date.
+                Expired LCTs can also exist - when a time-limited delegation reaches its end date.
               </p>
             </div>
           </details>
@@ -1765,12 +1769,12 @@ export default function LCTExplainerPage() {
                   <strong className="text-gray-300">Selection is reputation-weighted, not random.</strong>{" "}
                   Witnesses are drawn from a federation-wide pool, weighted by their track record of
                   accurate attestations. Like jury selection, the goal is diverse, qualified, independent
-                  observers — not hand-picked allies.
+                  observers - not hand-picked allies.
                 </p>
                 <p>
                   <strong className="text-gray-300">Lying has consequences.</strong>{" "}
                   Witnesses stake ATP when they attest. If their attestation is later proven false or
-                  biased (by cross-checking against other witnesses), they lose their stake — like
+                  biased (by cross-checking against other witnesses), they lose their stake - like
                   validators in proof-of-stake systems. This economic penalty makes dishonest witnessing
                   unprofitable.
                 </p>
@@ -1789,7 +1793,7 @@ export default function LCTExplainerPage() {
           </details>
         </div>
 
-        {/* Practical UX — What Would This Actually Feel Like? */}
+        {/* Practical UX - What Would This Actually Feel Like? */}
         <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/20 border border-sky-800/30 rounded-xl p-8 mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-100">What Would This Actually Feel Like?</h2>
           <p className="text-gray-400 mb-6">
@@ -1801,7 +1805,7 @@ export default function LCTExplainerPage() {
             <div className="bg-gray-900/50 rounded-lg p-4">
               <div className="text-sm font-semibold text-sky-400 mb-2">Step 1: First Setup (~2 minutes)</div>
               <p className="text-gray-300 text-sm">
-                Open the app on your phone. It detects your device&apos;s security chip automatically — iPhones have
+                Open the app on your phone. It detects your device&apos;s security chip automatically - iPhones have
                 Secure Enclave, most Android phones and laptops have TPM chips, or you can use a FIDO2 key (like YubiKey).
                 You approve a one-time key generation. No passwords to create, no seed phrases to write down.
               </p>
@@ -1810,7 +1814,7 @@ export default function LCTExplainerPage() {
             <div className="bg-gray-900/50 rounded-lg p-4">
               <div className="text-sm font-semibold text-sky-400 mb-2">Step 2: Join a Society (~30 seconds)</div>
               <p className="text-gray-300 text-sm">
-                You request to join a Web4 society. Three existing members witness your presence — they confirm
+                You request to join a Web4 society. Three existing members witness your presence - they confirm
                 &ldquo;yes, this device is real and this person is asking to join.&rdquo; Think of it like three
                 friends vouching for you at a members-only club. You start with 100 ATP and 0.5 trust.
               </p>
@@ -1820,7 +1824,7 @@ export default function LCTExplainerPage() {
               <div className="text-sm font-semibold text-sky-400 mb-2">Step 3: Add More Devices (Optional)</div>
               <p className="text-gray-300 text-sm">
                 Want stronger identity? Open the app on your laptop. Your phone and laptop cross-verify each other.
-                Now compromising your identity requires stealing <em>both</em> devices — not just guessing a password.
+                Now compromising your identity requires stealing <em>both</em> devices - not just guessing a password.
                 Each additional device makes your presence harder to fake.
               </p>
             </div>
@@ -1828,7 +1832,7 @@ export default function LCTExplainerPage() {
             <div className="bg-gray-900/50 rounded-lg p-4">
               <div className="text-sm font-semibold text-sky-400 mb-2">Day-to-Day: Invisible</div>
               <p className="text-gray-300 text-sm">
-                After setup, hardware binding is invisible. Your device signs actions in the background — you just
+                After setup, hardware binding is invisible. Your device signs actions in the background - you just
                 use the app normally. No 2FA codes, no password managers, no &ldquo;prove you&apos;re not a robot.&rdquo;
                 Your phone&apos;s chip quietly proves it&apos;s really you.
               </p>
@@ -1836,7 +1840,7 @@ export default function LCTExplainerPage() {
           </div>
 
           <p className="text-gray-500 text-xs mt-4 italic">
-            This UX is aspirational — the current prototype uses stubbed hardware interfaces.
+            This UX is aspirational - the current prototype uses stubbed hardware interfaces.
             The goal is zero-friction identity backed by real device attestation.
           </p>
 
@@ -1853,7 +1857,7 @@ export default function LCTExplainerPage() {
               <div className="text-green-400/80">✓ Open app</div>
               <div className="text-green-400/80">✓ Face ID / fingerprint confirms it&apos;s you</div>
               <div className="text-green-400/80">✓ Device&apos;s security chip signs the request</div>
-              <div className="text-green-400/80">✓ Done — your trust history follows automatically</div>
+              <div className="text-green-400/80">✓ Done - your trust history follows automatically</div>
             </div>
             <p className="text-xs text-gray-500 mt-3">
               The difference: instead of proving &ldquo;I know the right password,&rdquo;
@@ -1953,7 +1957,7 @@ export default function LCTExplainerPage() {
               Do I need special hardware to participate?
             </h3>
             <p className="text-sm text-gray-300 mb-2">
-              <strong>Most smartphones made after 2018</strong> already have the hardware needed — a Secure Enclave (iPhone) or
+              <strong>Most smartphones made after 2018</strong> already have the hardware needed - a Secure Enclave (iPhone) or
               TPM chip (Android). These are the same chips that protect your fingerprint and Face ID data. You almost certainly
               already own a compatible device.
             </p>
@@ -1965,16 +1969,16 @@ export default function LCTExplainerPage() {
               <strong>What about older/cheaper devices?</strong> Software-only keys work as a fallback, but with a lower
               trust ceiling (50% vs. 90% for hardware-bound keys). This means you can participate, but
               high-trust actions require at least one hardware-bound device. Web4 is designed so that anyone
-              with a basic smartphone can join — the hardware barrier is &ldquo;own a phone,&rdquo; not &ldquo;buy specialized equipment.&rdquo;
+              with a basic smartphone can join - the hardware barrier is &ldquo;own a phone,&rdquo; not &ldquo;buy specialized equipment.&rdquo;
             </p>
-            {/* May 3 visitor LOW: biometric-blocked users — accessibility silence on this page */}
+            {/* May 3 visitor LOW: biometric-blocked users - accessibility silence on this page */}
             <p className="text-sm text-gray-300 mb-2">
               <strong>What if biometrics aren&apos;t an option for me?</strong> Some users can&apos;t use fingerprint,
               face, or iris recognition (no fingerprints, motor impairments, eye conditions, etc.). Software-only
               identity is supported (trust ceiling 0.50), and you can also use a hardware security key (YubiKey, Titan)
-              with a PIN instead of biometrics — that gets you to 0.75. Your reputation accrues normally; the gap is
+              with a PIN instead of biometrics - that gets you to 0.75. Your reputation accrues normally; the gap is
               in <em>recovery speed</em> and <em>trust ceiling</em>, not in your ability to participate. We treat this
-              gap as a real, ongoing accessibility limitation rather than a solved problem — see{' '}
+              gap as a real, ongoing accessibility limitation rather than a solved problem - see{' '}
               <a href="/what-could-go-wrong#risk-accessibility" className="text-amber-400 hover:underline">
                 What Could Go Wrong
               </a>{' '}
@@ -1982,24 +1986,24 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
-          {/* FAQ: AI agents have no hardware — May 21 visitor Unanswered Q3 (recurring).
+          {/* FAQ: AI agents have no hardware - May 21 visitor Unanswered Q3 (recurring).
               The site says "humans and AI follow identical trust rules" on 8+ pages, but
               never closes the loop: an AI has no chip, so where does its hardware anchor
               come from? Plain-English answer grounded in the web4 AGY (Agency Delegation)
-              spec — no spec jargon in the prose. */}
+              spec - no spec jargon in the prose. */}
           <div id="faq-ai-agents" className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg scroll-mt-24">
             <h3 className="text-sm font-bold text-purple-400 mb-2">
               If an AI agent has no phone or chip, how does it get an LCT?
             </h3>
             <p className="text-sm text-gray-300 mb-2">
-              Good catch — an AI doesn&apos;t carry a Secure Enclave in its pocket, so it
+              Good catch - an AI doesn&apos;t carry a Secure Enclave in its pocket, so it
               can&apos;t anchor itself the way you do. It doesn&apos;t have to. An AI agent gets
               its identity the way a new hire gets a building badge: <strong>a person or
               organization that <em>is</em> hardware-anchored creates the agent and hands it a
               scoped, revocable permission slip</strong> (Web4 calls this a delegation).
             </p>
             <p className="text-sm text-gray-300 mb-2">
-              So the agent&apos;s LCT doesn&apos;t need its own chip — it&apos;s
+              So the agent&apos;s LCT doesn&apos;t need its own chip - it&apos;s
               <strong> rooted in its creator&apos;s hardware-bound identity</strong>. The
               anchor is <em>inherited</em> through the chain, not possessed directly. Every
               LCT points back to the one that created it, so there&apos;s always a
@@ -2007,16 +2011,16 @@ export default function LCTExplainerPage() {
               agent does (the same accountability chain described above).
             </p>
             <p className="text-sm text-gray-300 mb-2">
-              The permission slip is deliberately narrow — specific capabilities (read-only,
+              The permission slip is deliberately narrow - specific capabilities (read-only,
               or allowed to act), its own <TermTooltip term="ATP">ATP</TermTooltip> budget, an
-              expiry date — and the creator can revoke it instantly. Within that scope the
+              expiry date - and the creator can revoke it instantly. Within that scope the
               agent then earns its <strong>own</strong> reputation (its own
               {" "}<TermTooltip term="T3">T3</TermTooltip> trust score). That&apos;s why
               &ldquo;humans and AI play by the same rules&rdquo; is honest: it&apos;s the same
-              trust math and the same consequences — just a different path to getting anchored.
+              trust math and the same consequences - just a different path to getting anchored.
             </p>
             <p className="text-xs text-gray-500">
-              Want the cognition side — when an AI can be trusted to act on its own judgment
+              Want the cognition side - when an AI can be trusted to act on its own judgment
               versus when it confabulates?{" "}
               <Link href="/ai-agents" className="text-purple-300 hover:text-purple-200 underline">
                 See AI Agents in Web4
@@ -2037,42 +2041,42 @@ export default function LCTExplainerPage() {
             <p className="text-sm text-gray-300 mb-2">
               The difference is in <strong>trust <em>ceiling</em></strong>, not trust itself. With one hardware device,
               your ceiling is about 75%. With software-only, it&apos;s 50%. Multiple devices raise the ceiling
-              to 90% — but you still have to <em>earn</em> your way up through consistent behavior. Most everyday
+              to 90% - but you still have to <em>earn</em> your way up through consistent behavior. Most everyday
               interactions don&apos;t require trust above 75%.
             </p>
             <p className="text-xs text-gray-500">
               This matters for developing countries where single-device users are common. Web4 is designed so
-              a single smartphone provides meaningful participation — the higher ceilings from multiple devices
+              a single smartphone provides meaningful participation - the higher ceilings from multiple devices
               are for high-stakes roles (financial custodianship, infrastructure administration) where the extra
               hardware assurance is warranted.
             </p>
           </div>
 
-          {/* FAQ: Shared devices — Mar 26 visitor unanswered Q2 */}
+          {/* FAQ: Shared devices - Mar 26 visitor unanswered Q2 */}
           <div className="mt-6 p-4 bg-orange-950/20 border border-orange-800/30 rounded-lg">
             <h3 className="text-sm font-bold text-orange-400 mb-2">
               What about shared devices? Family tablets, library computers, school Chromebooks?
             </h3>
             <p className="text-sm text-gray-300 mb-2">
-              <strong>Shared devices can&apos;t host identity.</strong> An LCT is bound to hardware that only <em>you</em> control —
+              <strong>Shared devices can&apos;t host identity.</strong> An LCT is bound to hardware that only <em>you</em> control -
               your personal phone, your laptop, your security key. A family tablet or library computer doesn&apos;t qualify
               because the system can&apos;t distinguish who is using it.
             </p>
             <p className="text-sm text-gray-300 mb-2">
               In practice, most people have at least one personal device (a smartphone). That&apos;s enough.
               If your only internet access is through shared hardware, you can still participate at the
-              software-only tier (trust ceiling 0.50) — meaningful but limited, the same way email works
+              software-only tier (trust ceiling 0.50) - meaningful but limited, the same way email works
               on a shared computer but online banking doesn&apos;t.
             </p>
             <p className="text-xs text-gray-500 mb-2">
               <strong className="text-gray-400">What about people without modern smartphones?</strong> The hardware threshold
               is roughly a $50 phone (most devices sold since ~2018 ship security chips), not a $1000 one. A FIDO2 USB key
-              like a YubiKey costs ~$25 and works with any computer — anchoring an identity without a modern phone at all.
+              like a YubiKey costs ~$25 and works with any computer - anchoring an identity without a modern phone at all.
               In regions where personal-device ownership is low, community-attestation patterns (a village elder, a
               co-op, a community center) can bridge the gap by witnessing presence.
             </p>
             <p className="text-xs text-gray-500">
-              <strong className="text-gray-400">Honest caveat:</strong> none of these fully reach the most marginalized — those without
+              <strong className="text-gray-400">Honest caveat:</strong> none of these fully reach the most marginalized - those without
               any device access would need some form of sponsored onboarding. Web4 is not unique here; every digital
               system faces this. See{" "}
               <Link href="/why-web4#faq-affordability" className="text-orange-400 hover:text-orange-300 underline">
@@ -2082,7 +2086,7 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
-          {/* FAQ: Multiple devices for multiple identities — Mar 26 visitor unanswered Q4 */}
+          {/* FAQ: Multiple devices for multiple identities - Mar 26 visitor unanswered Q4 */}
           <div className="mt-6 p-4 bg-indigo-950/20 border border-indigo-800/30 rounded-lg">
             <h3 className="text-sm font-bold text-indigo-400 mb-2">
               Can someone buy 10 phones and create 10 identities?
@@ -2090,38 +2094,38 @@ export default function LCTExplainerPage() {
             <p className="text-sm text-gray-300 mb-2">
               <strong>They can try, but it&apos;s expensive and mostly pointless.</strong> Each identity starts with zero trust and
               must earn its way up independently through sustained quality behavior. Ten new accounts with 0.50 trust
-              each accomplish less than one mature account with 0.85 trust — low-trust actions cost more ATP and earn less back.
+              each accomplish less than one mature account with 0.85 trust - low-trust actions cost more ATP and earn less back.
             </p>
             <p className="text-sm text-gray-300 mb-2">
               Several mechanisms compound the cost: each device requires <strong>independent witnesses</strong> (real entities who
-              attest to your identity — hard to fake 10 separate witness networks), the <strong>5% transfer fee</strong> makes
+              attest to your identity - hard to fake 10 separate witness networks), the <strong>5% transfer fee</strong> makes
               pooling resources between accounts unprofitable, and <strong>behavioral fingerprinting</strong> through the Coherence
               Index means 10 accounts acting in coordination become statistically detectable over time.
             </p>
             <p className="text-xs text-gray-500">
               This is a Sybil resistance strategy, not a Sybil prevention guarantee. The goal is to make
-              real participation cheaper and more effective than fake participation — not to make fakery impossible.
+              real participation cheaper and more effective than fake participation - not to make fakery impossible.
               See the <a href="/threat-model" className="text-indigo-400 hover:text-indigo-300 underline">Threat Model</a> for
               deeper analysis.
             </p>
           </div>
 
-          {/* FAQ: Legitimate multiple roles — visitor unanswered Q Apr 5 */}
+          {/* FAQ: Legitimate multiple roles - visitor unanswered Q Apr 5 */}
           <div className="mt-6 p-4 bg-green-950/20 border border-green-800/30 rounded-lg">
             <h3 className="text-sm font-bold text-green-400 mb-2">
-              But I have separate personal and professional lives — do I need separate identities?
+              But I have separate personal and professional lives - do I need separate identities?
             </h3>
             <p className="text-sm text-gray-300 mb-2">
-              <strong>No — you need separate roles, not separate identities.</strong> Web4&apos;s{" "}
+              <strong>No - you need separate roles, not separate identities.</strong> Web4&apos;s{" "}
               <Link href="/trust-tensor" className="text-sky-400 hover:underline">Trust Tensor</Link> is
               already role-scoped: your trust as a software developer is tracked independently from your
-              trust as a cooking enthusiast. One identity, many trust dimensions — like holding both a
+              trust as a cooking enthusiast. One identity, many trust dimensions - like holding both a
               medical license and a pilot&apos;s license.
             </p>
             <p className="text-sm text-gray-300">
               What <em>does</em> carry across roles is your <strong>Temperament</strong> (reliability,
               consistency) and your <strong>Coherence Index</strong> (behavioral patterns). So your professional
-              reputation for meeting deadlines benefits you in hobby communities too — without your cooking
+              reputation for meeting deadlines benefits you in hobby communities too - without your cooking
               skills affecting your developer trust score.
               See the{" "}
               <Link href="/why-web4#faq-multi-persona" className="text-green-400 hover:text-green-300 underline">
@@ -2142,8 +2146,8 @@ export default function LCTExplainerPage() {
             <p className="text-sm text-gray-300 mb-2">
               If you lose <strong>all devices at once</strong> (rare but possible), recovery depends on your
               witness network. Other entities that previously witnessed your identity can attest to who you are,
-              similar to how banks verify identity through multiple documents. This is slower — think days,
-              not minutes — and may require in-person verification for high-trust accounts.
+              similar to how banks verify identity through multiple documents. This is slower - think days,
+              not minutes - and may require in-person verification for high-trust accounts.
             </p>
             <p className="text-xs text-gray-500">
               This is an area of active research. Perfect recovery from total device loss without any
@@ -2151,26 +2155,26 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
-          {/* FAQ: Internet outages / connectivity — visitor Q Mar 25 */}
+          {/* FAQ: Internet outages / connectivity - visitor Q Mar 25 */}
           <div className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg">
             <h3 className="text-sm font-bold text-purple-400 mb-2">
               What happens during internet outages or unreliable connectivity?
             </h3>
             <p className="text-sm text-gray-300 mb-2">
               <strong>Your identity and trust score don&apos;t disappear when you go offline.</strong>{" "}
-              LCTs are stored locally on your device &mdash; they don&apos;t depend on a central server being
+              LCTs are stored locally on your device - they don&apos;t depend on a central server being
               reachable. Your trust history is cached locally and syncs when connectivity returns.
             </p>
             <p className="text-sm text-gray-300 mb-2">
               <strong>What about your Coherence Index?</strong> CI measures behavioral <em>consistency</em>, not
-              activity frequency. Going offline doesn&apos;t count against you &mdash; the system distinguishes
+              activity frequency. Going offline doesn&apos;t count against you - the system distinguishes
               between &ldquo;absent&rdquo; and &ldquo;behaving inconsistently.&rdquo; Think of it like a credit score that pauses
               when you&apos;re traveling, not one that penalizes you for not using your card.
             </p>
             <p className="text-sm text-gray-300 mb-2">
               <strong>Developing-world connectivity:</strong> Web4 is designed for intermittent connections.
               Actions can be queued offline and submitted in batches when connectivity resumes. Device
-              witnessing (mutual verification) requires periodic connection but tolerates gaps &mdash;
+              witnessing (mutual verification) requires periodic connection but tolerates gaps -
               witness attestations remain valid for a configurable window (hours to days, depending on
               the community&apos;s trust requirements).
             </p>
@@ -2182,38 +2186,38 @@ export default function LCTExplainerPage() {
           </div>
         </div>
 
-        {/* FAQ: Onboarding UX — visitor Q Mar 24; mockup added Apr 30 (recurring "what does the UI actually look like?") */}
+        {/* FAQ: Onboarding UX - visitor Q Mar 24; mockup added Apr 30 (recurring "what does the UI actually look like?") */}
         <div id="first-5-minutes" className="mt-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg scroll-mt-24">
           <h3 className="text-sm font-bold text-sky-400 mb-2">
             What do the first 5 minutes look like?
           </h3>
           <p className="text-sm text-gray-300 mb-3">
-            You download a Web4-compatible app (think of it like installing Signal instead of a regular messaging app). Here&apos;s the onboarding flow &mdash; visualized below, then described minute-by-minute.
+            You download a Web4-compatible app (think of it like installing Signal instead of a regular messaging app). Here&apos;s the onboarding flow - visualized below, then described minute-by-minute.
           </p>
 
           {/* Visual mockup: three steppable phone screens */}
           <LCTSetupMockup />
 
           <div className="space-y-2 text-sm text-gray-300 mt-4">
-            <p><strong className="text-sky-300">Minute 0:00</strong> — The app detects your device&apos;s security chip (TPM or Secure Enclave) and generates a cryptographic key pair. The chip&apos;s manufacturer-burned key is itself the day-zero <a href="#first-device-bootstrap" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('first-device-bootstrap')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">witness</a> &mdash; no peer device required to start. You don&apos;t see any of this; it feels like tapping &ldquo;Create Account.&rdquo;</p>
-            <p><strong className="text-sky-300">Minute 0:30</strong> — You pick a display name (not unique — identity lives in the hardware, not usernames). No email required. No password to remember.</p>
-            <p><strong className="text-sky-300">Minute 1:00</strong> — The app suggests linking a second device for higher trust. You scan a QR code with your phone. Your two devices witness each other, forming your first identity constellation.</p>
-            <p><strong className="text-sky-300">Minute 2:00</strong> — You browse available communities. You join one that interests you. Your trust starts at the default newcomer level — low but nonzero. Actions cost 1.4x until you prove yourself.</p>
-            <p><strong className="text-sky-300">Minute 3:00</strong> — You make your first contribution. It costs ATP, and you see your balance update. The community sees you as a new member with no history — but with verified identity (not a throwaway bot).</p>
-            <p><strong className="text-sky-300">Minute 5:00</strong> — You&apos;ve made 2-3 contributions. Your trust has already started building. The 1.4x premium is slightly lower. It feels like any other community — except there&apos;s no spam in your feed.</p>
+            <p><strong className="text-sky-300">Minute 0:00</strong> - The app detects your device&apos;s security chip (TPM or Secure Enclave) and generates a cryptographic key pair. The chip&apos;s manufacturer-burned key is itself the day-zero <a href="#first-device-bootstrap" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('first-device-bootstrap')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">witness</a> - no peer device required to start. You don&apos;t see any of this; it feels like tapping &ldquo;Create Account.&rdquo;</p>
+            <p><strong className="text-sky-300">Minute 0:30</strong> - You pick a display name (not unique - identity lives in the hardware, not usernames). No email required. No password to remember.</p>
+            <p><strong className="text-sky-300">Minute 1:00</strong> - The app suggests linking a second device for higher trust. You scan a QR code with your phone. Your two devices witness each other, forming your first identity constellation.</p>
+            <p><strong className="text-sky-300">Minute 2:00</strong> - You browse available communities. You join one that interests you. Your trust starts at the default newcomer level - low but nonzero. Actions cost 1.4x until you prove yourself.</p>
+            <p><strong className="text-sky-300">Minute 3:00</strong> - You make your first contribution. It costs ATP, and you see your balance update. The community sees you as a new member with no history - but with verified identity (not a throwaway bot).</p>
+            <p><strong className="text-sky-300">Minute 5:00</strong> - You&apos;ve made 2-3 contributions. Your trust has already started building. The 1.4x premium is slightly lower. It feels like any other community - except there&apos;s no spam in your feed.</p>
           </div>
           <p className="text-xs text-gray-500 mt-3">
             <strong>Key difference from Web2:</strong> No email. No password. No CAPTCHA. No phone number. Identity is your device, not a string you type. The tradeoff: you need to keep your device, and adding devices later strengthens your identity.
           </p>
         </div>
 
-        {/* FAQ: Offline devices — visitor Q Mar 29 */}
+        {/* FAQ: Offline devices - visitor Q Mar 29 */}
         <div className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg">
           <h3 className="text-sm font-bold text-purple-400 mb-2">
             What happens when one of my devices is offline for days?
           </h3>
           <p className="text-sm text-gray-300 mb-3">
-            Your identity doesn&apos;t break. Each device in your constellation can act independently &mdash;
+            Your identity doesn&apos;t break. Each device in your constellation can act independently -
             if your laptop is offline, your phone still works as your identity anchor. When the
             laptop reconnects, the devices reconcile their records (like how email syncs after airplane mode).
           </p>
@@ -2223,9 +2227,9 @@ export default function LCTExplainerPage() {
             uninterrupted. The offline device simply misses witnessing events until it reconnects.
           </p>
           <p className="text-sm text-gray-300 mb-2">
-            <strong className="text-purple-300">Edge case &mdash; all devices offline:</strong> Your identity
+            <strong className="text-purple-300">Edge case - all devices offline:</strong> Your identity
             still exists in the network (other participants remember you), but you can&apos;t take new actions
-            until at least one device reconnects. Your trust doesn&apos;t decay faster for being offline &mdash;
+            until at least one device reconnects. Your trust doesn&apos;t decay faster for being offline -
             the decay timers are based on last activity, not connectivity.
           </p>
           <p className="text-xs text-gray-500 mt-3">
@@ -2236,7 +2240,7 @@ export default function LCTExplainerPage() {
           </p>
         </div>
 
-        {/* W3C Standards Compatibility — collapsed for page length */}
+        {/* W3C Standards Compatibility - collapsed for page length */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <details className="group">
           <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors">
@@ -2247,7 +2251,7 @@ export default function LCTExplainerPage() {
           <div className="mt-4">
           <p className="text-gray-300 mb-4">
             Web4 identity isn&apos;t a walled garden. LCTs are designed to work with{" "}
-            <strong className="text-sky-400">W3C Decentralized Identifiers (DIDs)</strong> — the
+            <strong className="text-sky-400">W3C Decentralized Identifiers (DIDs)</strong> - the
             same standard used by governments, enterprises, and other identity systems.
           </p>
 
@@ -2256,7 +2260,7 @@ export default function LCTExplainerPage() {
               <h3 className="text-sm font-bold text-sky-400 mb-2">Identity Bridge</h3>
               <p className="text-sm text-gray-400">
                 Every LCT maps to a standard DID Document. External systems (EU authorities,
-                employers, apps) can verify Web4 identity using W3C protocols they already support —
+                employers, apps) can verify Web4 identity using W3C protocols they already support -
                 and they see only the identity slice (identifier, keys, endpoints), never your
                 trust history.
               </p>
@@ -2286,7 +2290,7 @@ export default function LCTExplainerPage() {
 
           <p className="text-gray-500 text-xs italic">
             The <code className="text-sky-300">did:web4</code> method spec pins this down: the mapping
-            is a deliberate <strong>one-way projection</strong> — an LCT can present a DID face, but a
+            is a deliberate <strong>one-way projection</strong> - an LCT can present a DID face, but a
             DID can&apos;t present an LCT face. Resolution is hub-attested (a signed key binding), not
             just TLS like <code className="text-sky-300">did:web</code>. Not yet tested against
             external identity providers.
@@ -2295,7 +2299,7 @@ export default function LCTExplainerPage() {
           </details>
         </div>
 
-        {/* Trust Transparency Log — collapsed for page length */}
+        {/* Trust Transparency Log - collapsed for page length */}
         <div id="trust-transparency" className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <details className="group">
           <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors">
@@ -2306,7 +2310,7 @@ export default function LCTExplainerPage() {
           <div className="mt-4">
           <p className="text-gray-300 mb-4">
             How do you know your trust score wasn&apos;t secretly manipulated? Web4 uses a{" "}
-            <strong className="text-green-400">trust transparency log</strong> — an append-only,
+            <strong className="text-green-400">trust transparency log</strong> - an append-only,
             tamper-evident ledger of every attestation ever made about an entity.
           </p>
           <div className="grid md:grid-cols-3 gap-4 mb-4">
@@ -2336,14 +2340,14 @@ export default function LCTExplainerPage() {
             </div>
           </div>
           <p className="text-gray-500 text-xs italic">
-            Inspired by SSL Certificate Transparency (RFC 6962) — the same approach that
+            Inspired by SSL Certificate Transparency (RFC 6962) - the same approach that
             ended fraudulent HTTPS certificates. Trust auditing: session 33, implemented.
           </p>
           </div>
           </details>
         </div>
 
-        {/* Technical Deep Dive — collapsed by default */}
+        {/* Technical Deep Dive - collapsed by default */}
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
           <details>
           <summary className="text-2xl font-bold cursor-pointer list-none flex items-center gap-2 text-gray-100">
@@ -2511,9 +2515,14 @@ export default function LCTExplainerPage() {
               <div className="text-sm text-gray-400">Behavioral consistency verification for LCT trust</div>
             </a>
 
-            <a href="/society-simulator" className="block p-4 border border-gray-700 rounded-lg hover:border-purple-500 transition-all">
-              <div className="font-bold text-gray-100 mb-1">Society Simulator</div>
-              <div className="text-sm text-gray-400">See LCT-based agents interacting in a live society</div>
+            <a href="/the-standard" className="block p-4 border border-gray-700 rounded-lg hover:border-purple-500 transition-all">
+              <div className="font-bold text-gray-100 mb-1">The Core Standard</div>
+              <div className="text-sm text-gray-400">The open spec that defines the LCT primitive</div>
+            </a>
+
+            <a href="/hestia" className="block p-4 border border-gray-700 rounded-lg hover:border-purple-500 transition-all">
+              <div className="font-bold text-gray-100 mb-1">Hestia</div>
+              <div className="text-sm text-gray-400">Where you actually get an LCT-based personal identity</div>
             </a>
           </div>
         </div>

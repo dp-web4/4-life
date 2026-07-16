@@ -13,7 +13,7 @@ import InProduction from "@/components/InProduction";
 export default function CoherenceIndexPage() {
   useEffect(() => { trackPageVisit('coherence-index'); }, []);
 
-  // Simulator state
+  // Interactive explorer state
   const [scenario, setScenario] = useState<
     "baseline" | "teleport" | "capability_spike" | "time_gap" | "relationship_conflict"
   >("baseline");
@@ -178,7 +178,8 @@ export default function CoherenceIndexPage() {
             Coherence Index: Behavioral Consistency
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed mb-4">
-            The <strong>Coherence Index (CI)</strong> works like a credit check &mdash; it asks
+            The <strong>Coherence Index (CI)</strong> is how a society detects inconsistency
+            and incoherence in behavior over time. It works like a credit check - it asks
             not just &ldquo;who are you?&rdquo; but &ldquo;does your behavior make physical sense?&rdquo;
           </p>
           <p className="text-base text-gray-400 leading-relaxed mb-4">
@@ -187,11 +188,11 @@ export default function CoherenceIndexPage() {
           </p>
           <p className="text-sm text-gray-500 mb-6">
             <a href="#try-it" onClick={(e) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-orange-400 hover:text-orange-300 cursor-pointer">
-              ↓ Try the coherence simulator below
+              ↓ Try the interactive coherence tool below
             </a>
           </p>
 
-          {/* T3 vs CI at a glance — Apr 20 MEDIUM #5: visitor asked for this distinction upfront */}
+          {/* T3 vs CI at a glance - Apr 20 MEDIUM #5: visitor asked for this distinction upfront */}
           <div className="bg-gray-900/60 border border-gray-700 rounded-lg p-5 mb-6">
             <div className="text-xs uppercase tracking-wide text-gray-500 mb-3">
               Just read the Trust Tensor page? Here&rsquo;s how these relate
@@ -199,7 +200,7 @@ export default function CoherenceIndexPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-sky-950/30 border border-sky-800/30 rounded p-4">
                 <div className="text-sm font-semibold text-sky-400 mb-1">
-                  T3 — what you&rsquo;ve earned
+                  T3 - what you&rsquo;ve earned
                 </div>
                 <div className="text-sm text-gray-300">
                   Your long-term reputation. Built slowly through quality actions.
@@ -208,7 +209,7 @@ export default function CoherenceIndexPage() {
               </div>
               <div className="bg-orange-950/30 border border-orange-800/30 rounded p-4">
                 <div className="text-sm font-semibold text-orange-400 mb-1">
-                  CI — whether you&rsquo;re acting like yourself right now
+                  CI - whether you&rsquo;re acting like yourself right now
                 </div>
                 <div className="text-sm text-gray-300">
                   A live consistency check on this session&rsquo;s behavior. Recomputes
@@ -220,7 +221,7 @@ export default function CoherenceIndexPage() {
           </div>
 
           {/* May 14 MEDIUM: visitor read the page end-to-end and still asked
-              "why is the formula CI² and not just CI?" — the rationale used to
+              "why is the formula CI² and not just CI?" - the rationale used to
               live in a tiny text-xs footer of the T3-vs-CI card above and was
               invisible. Promoted to its own visible callout where the formula
               first appears. */}
@@ -229,14 +230,14 @@ export default function CoherenceIndexPage() {
               Why is it CI<sup>2</sup>, not just CI?
             </div>
             <p className="text-sm text-gray-300 leading-relaxed">
-              Small drops in coherence should hurt more than linear &mdash;
+              Small drops in coherence should hurt more than linear -
               inconsistency breaks trust <em>and</em> creates ambiguity about
               which version of you is acting. So we square the coherence factor:{" "}
               <code className="text-gray-200">Effective trust = T3 × CI²</code>{" "}
-              (T3 is your earned 3-part trust score &mdash; the reputation you built over time).{" "}
+              (T3 is your earned 3-part trust score - the reputation you built over time).{" "}
               That way a 10% dip (CI = 0.9) only costs you about 19% of effective
               trust (0.9² = 0.81), but a 40% dip (CI = 0.6) costs you 64% (0.6² = 0.36).
-              Your reputation matters &mdash; but only if your current behavior
+              Your reputation matters - but only if your current behavior
               still looks like you.{" "}
               {/* Jul-1 visitor MEDIUM (their explicitly #1-prioritized fix): the callout told the
                   effective-trust story (×CI²) but never plainly said the SAME coherence factor also
@@ -248,21 +249,21 @@ export default function CoherenceIndexPage() {
                 And it&rsquo;s the <strong>same coherence factor</strong> working in two directions:
                 low coherence doesn&rsquo;t only shrink your effective trust, it makes every action{" "}
                 <em>cost more energy</em>. The ATP cost of an action scales as{" "}
-                <code className="text-gray-200">1 / CI²</code> &mdash; the exact mirror of the trust
+                <code className="text-gray-200">1 / CI²</code> - the exact mirror of the trust
                 drop. So at CI 0.9 an action costs about <strong>1.2×</strong> normal (1 / 0.81), and
                 at CI 0.6 about <strong>2.8×</strong> normal (1 / 0.36). That&rsquo;s the
                 &ldquo;surcharge&rdquo; you may have met on the{" "}
-                <Link href="/karma-journey" className="text-sky-400 hover:text-sky-300">Karma Journey</Link>{" "}
-                &mdash; the same story told as a price instead of a trust score.
+                <Link href="/karma-consequences" className="text-sky-400 hover:text-sky-300">Karma Consequences</Link>{" "}
+ - the same story told as a price instead of a trust score.
               </span>{" "}
               {/* June 1 visitor M3 / Unanswered Q3: the shape rationale above tells you square beats
                   linear, but never says whether the exponent itself is DERIVED or CHOSEN. Every other
-                  constant on the site (0.5, 0.85, 3 hops) is honestly labeled "calibrated, not derived" —
+                  constant on the site (0.5, 0.85, 3 hops) is honestly labeled "calibrated, not derived" -
                   CI² was the lone exception. Close the loop here, in the sibling #why-ci-starts-low's
                   exact register. Do NOT claim "simulations compared exponents" (unverifiable). */}
               Why <strong>2</strong> specifically, and not 1.5 or 3? Like the 0.85 starting value below,
               it&rsquo;s a calibration choice (not a derived constant): 2 is the power that produced this
-              gentle middle &mdash; small dips forgiven, sustained ones compounded &mdash; where linear
+              gentle middle - small dips forgiven, sustained ones compounded - where linear
               (× CI) forgives too much and cubing (× CI³) punishes routine variance too hard.{" "}
               Need a T3 refresher?{" "}
               <Link href="/trust-tensor" className="text-sky-400 hover:text-sky-300">
@@ -273,7 +274,7 @@ export default function CoherenceIndexPage() {
 
           {/* May 19 visitor Unanswered Q2 + Honest Assessment's #2 resonant point:
               "It feels like the system distrusts me before I've done anything."
-              The visitor's literal remedy: "you're not being punished — you just
+              The visitor's literal remedy: "you're not being punished - you just
               haven't been witnessed yet." Karma Journey is where the friction is
               hit (CI 0.85 → ~1.4× costs), but that page is in #266's hunk region;
               land the canonical answer here (mirrors #281's pattern for "why CI²?").
@@ -286,17 +287,17 @@ export default function CoherenceIndexPage() {
             {/* Jul-9 visitor LOW: leading with "isn't a penalty" before admitting the cost read as
                 spin ("the one moment I felt handled rather than informed"). Same content, reordered:
                 own the surcharge FIRST, then the not-a-punishment framing. Both figures (1.4× and
-                ~38%) are the same number, 1/0.85² ≈ 1.38 — change both or neither. */}
+                ~38%) are the same number, 1/0.85² ≈ 1.38 - change both or neither. */}
             <p className="text-sm text-gray-300 leading-relaxed">
               CI scores whether your <em>current</em> behavior matches your <em>established</em> pattern.
-              A brand-new account has no established pattern yet — so there&rsquo;s no signal to match against.
+              A brand-new account has no established pattern yet - so there&rsquo;s no signal to match against.
               To be blunt about what that costs: with CI&nbsp;0.85, actions cost about 1.4× their base price
-              (1/0.85² ≈ 1.38) — new accounts really do pay <strong>~38% more per action</strong> until
+              (1/0.85² ≈ 1.38) - new accounts really do pay <strong>~38% more per action</strong> until
               behavior is established. That&rsquo;s the cost of being unverified, not a punishment for being
               new: the system is being honest that <strong>it hasn&rsquo;t had a chance to witness you yet</strong>.
             </p>
             <p className="text-sm text-gray-300 leading-relaxed mt-3">
-              A handful of consistent grounding events — same device, same hours, same patterns — typically
+              A handful of consistent grounding events - same device, same hours, same patterns - typically
               lifts CI above 0.9, at which point the surcharge disappears entirely (costs return to the listed
               price). Sustained consistent behavior is what closes the gap, and it closes fast.
             </p>
@@ -304,25 +305,25 @@ export default function CoherenceIndexPage() {
                 above answer "why not 1.0" but don't pin the SPECIFIC value 0.85 vs 0.5/0.7/0.95. Visitor's
                 verbatim remedy: "0.85 because newcomers are presumed mostly-consistent but unproven; below
                 0.85 means we've seen evidence of inconsistency." This is a calibration choice (0.85 is a
-                hardcoded engine constant, not derived) — mirror #292's MRH "calibrated, not derived" framing. */}
+                hardcoded engine constant, not derived) - mirror #292's MRH "calibrated, not derived" framing. */}
             <p className="text-sm text-gray-300 leading-relaxed mt-3">
               Why <strong>0.85</strong> specifically, and not 0.5 or 0.95? It&rsquo;s a calibration choice (not a derived
-              constant): the value presumes you&rsquo;re <em>probably</em> consistent but unproven — high enough to reflect
+              constant): the value presumes you&rsquo;re <em>probably</em> consistent but unproven - high enough to reflect
               that most newcomers behave consistently from day one, low enough that the ~1.4× surcharge is actually felt.
               Scores below 0.85 are reserved for accounts where the system has <em>witnessed</em> inconsistency, not for
               accounts it simply hasn&rsquo;t witnessed yet.
             </p>
             <p className="text-xs text-gray-400 leading-relaxed mt-3 italic">
               The framing matters: this isn&rsquo;t &ldquo;trust assumed by default, then taken away if you misbehave.&rdquo;
-              It&rsquo;s the opposite — there&rsquo;s nothing to assume yet, and the score climbs as the system
+              It&rsquo;s the opposite - there&rsquo;s nothing to assume yet, and the score climbs as the system
               actually sees you. You&rsquo;re not being punished; you just haven&rsquo;t been witnessed yet.
             </p>
           </div>
 
-          {/* Apr 28 LOW: anchor "grounding event" upfront — term recurs throughout the page; visitor asked for one definition near the top */}
+          {/* Apr 28 LOW: anchor "grounding event" upfront - term recurs throughout the page; visitor asked for one definition near the top */}
           <div className="bg-gray-900/40 border border-gray-700 rounded-lg p-4 mb-6 text-sm text-gray-300">
             <span className="text-xs uppercase tracking-wide text-gray-500 mr-2">Quick term</span>
-            <strong className="text-gray-200">Grounding event</strong> — when your device cryptographically confirms it&rsquo;s still itself (typically every few minutes). This page refers to groundings repeatedly: each one is the moment CI gets recomputed.
+            <strong className="text-gray-200">Grounding event</strong> - when your device cryptographically confirms it&rsquo;s still itself (typically every few minutes). This page refers to groundings repeatedly: each one is the moment CI gets recomputed. See the <Link href="/glossary" className="text-sky-400 hover:underline">glossary</Link> for other terms.
           </div>
 
           <div className="bg-gradient-to-br from-orange-950/30 to-orange-900/20 border border-orange-800/30 rounded-lg p-6">
@@ -345,7 +346,7 @@ export default function CoherenceIndexPage() {
             </div>
           </div>
 
-          {/* Concrete everyday example — visitor feedback: CI examples not prominent enough */}
+          {/* Concrete everyday example - visitor feedback: CI examples not prominent enough */}
           <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 mt-6">
             <h3 className="text-lg font-semibold text-gray-200 mb-3">What does CI feel like day-to-day?</h3>
             <div className="space-y-3 text-gray-300 text-sm">
@@ -353,18 +354,18 @@ export default function CoherenceIndexPage() {
                 <p className="font-medium text-green-400 mb-1">Your normal Tuesday (CI ~0.97)</p>
                 <p>
                   You wake up, check messages from your usual phone, post a coding tutorial from your desk at 10am.
-                  Everything matches your pattern — same device, same location, same hours, same topics.
-                  Full trust, normal costs, zero friction. <strong>High CI is invisible</strong> — it just means
+                  Everything matches your pattern - same device, same location, same hours, same topics.
+                  Full trust, normal costs, zero friction. <strong>High CI is invisible</strong> - it just means
                   the system sees nothing unusual.
                 </p>
               </div>
               <div className="bg-amber-950/20 border border-amber-800/20 rounded p-4">
                 <p className="font-medium text-amber-400 mb-1">Vacation in Tokyo (CI dips to ~0.8 for a day)</p>
                 <p>
-                  You fly abroad. Your spatial pattern changes suddenly — CI dips. Actions cost a bit more ATP and
+                  You fly abroad. Your spatial pattern changes suddenly - CI dips. Actions cost a bit more ATP and
                   one extra witness may be needed for big transactions. But your temporal and relational patterns
                   stay consistent (same hours, same contacts, same topics), so the dip is mild. After a couple days,
-                  your new location stabilizes and CI recovers. It feels like using your credit card in a new country —
+                  your new location stabilizes and CI recovers. It feels like using your credit card in a new country -
                   a brief &ldquo;is this really you?&rdquo; moment, then normal service.
                 </p>
               </div>
@@ -372,7 +373,7 @@ export default function CoherenceIndexPage() {
                 <p className="font-medium text-red-400 mb-1">Account compromise (CI crashes to ~0.4)</p>
                 <p>
                   That same account suddenly posts crypto spam at 3am from a different country.
-                  Content changed, timing changed, location changed — three dimensions flagged at once.
+                  Content changed, timing changed, location changed - three dimensions flagged at once.
                   Trust is throttled, extra witnesses required for any action. No human moderator needed.
                   No ban. The system simply asks: &ldquo;does this behavior make sense?&rdquo;
                 </p>
@@ -465,7 +466,7 @@ export default function CoherenceIndexPage() {
           </div>
         </section>
 
-        {/* Four Dimensions Section — definitions before case studies so readers know the vocabulary */}
+        {/* Four Dimensions Section - definitions before case studies so readers know the vocabulary */}
         <section className="max-w-4xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-6 text-gray-100">
             The Four Coherence Dimensions
@@ -484,7 +485,7 @@ export default function CoherenceIndexPage() {
             <strong className="text-gray-200">Before you read these:</strong>{" "}
             location, hardware, timing, and relationships sound like a lot of
             behavioral surveillance. The design constrains where these checks
-            run and who gets to see the result &mdash;{" "}
+            run and who gets to see the result - {" "}
             <a
               href="#not-surveillance"
               onClick={(e) => {
@@ -628,11 +629,11 @@ export default function CoherenceIndexPage() {
             </div>
           </div>
 
-          {/* Privacy reassurance — Apr 25 visitor LOW: "isn't this surveillance?"
+          {/* Privacy reassurance - Apr 25 visitor LOW: "isn't this surveillance?"
               May 14 MEDIUM: now also anchored from a preamble at top of section. */}
           <div id="not-surveillance" className="mt-8 bg-slate-900/40 border border-slate-700/40 rounded-lg p-5 scroll-mt-24">
             <h3 className="text-base font-semibold text-slate-200 mb-2">
-              Wait — isn&apos;t this surveillance?
+              Wait - isn&apos;t this surveillance?
             </h3>
             <p className="text-sm text-gray-400 leading-relaxed">
               Reasonable question. The four dimensions sound like a tracker
@@ -648,7 +649,7 @@ export default function CoherenceIndexPage() {
                 Trust Neighborhood (MRH)
               </a>
               . There is no central server compiling a global behavior profile
-              — CI catches deviations from what your <em>own peers</em> already
+ - CI catches deviations from what your <em>own peers</em> already
               see, not what a panopticon has logged. (Whether the eventual
               implementation lives up to that design is{" "}
               <a
@@ -662,7 +663,7 @@ export default function CoherenceIndexPage() {
           </div>
         </section>
 
-        {/* Case Studies — now that readers know the four dimensions, show them in action */}
+        {/* Case Studies - now that readers know the four dimensions, show them in action */}
         <section className="max-w-4xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-6 text-gray-100">
             CI in Action: Two Real Scenarios
@@ -712,7 +713,7 @@ export default function CoherenceIndexPage() {
           </div>
           <p className="text-gray-400 text-sm mb-2">
             Traditional security would see valid credentials on the correct device in the right
-            city &mdash; and grant full access. CI catches what passwords can&apos;t.
+            city - and grant full access. CI catches what passwords can&apos;t.
           </p>
 
           {/* Second scenario */}
@@ -750,13 +751,13 @@ export default function CoherenceIndexPage() {
             <p className="text-gray-300 leading-relaxed">
               <strong>Result</strong>: Despite sophisticated evasion, the bots fail on
               <strong className="text-purple-400"> temporal</strong> coherence (activity bursts correlate across
-              accounts — real humans don&apos;t synchronize) and <strong className="text-purple-400">relational</strong> coherence
-              (no genuine relationships formed over time — all connections are shallow and recent).
-              CI drops to <strong className="text-orange-400">0.41</strong>, well below the 0.5 aliveness threshold.
+              accounts - real humans don&apos;t synchronize) and <strong className="text-purple-400">relational</strong> coherence
+              (no genuine relationships formed over time - all connections are shallow and recent).
+              CI drops to <strong className="text-orange-400">0.41</strong>, well below the 0.5 alive/dead threshold.
             </p>
           </div>
           <p className="text-gray-400 text-sm mt-2 mb-2">
-            Traditional anti-bot systems catch obvious patterns. CI catches <em>incoherence</em> &mdash;
+            Traditional anti-bot systems catch obvious patterns. CI catches <em>incoherence</em> -
             the gap between how a real person lives and how a bot pretends to.
           </p>
         </section>
@@ -767,7 +768,7 @@ export default function CoherenceIndexPage() {
             Try It: Can You Stay Coherent?
           </h2>
           <p className="text-gray-400 mb-8">
-            Drag the sliders to simulate incoherent behavior. Watch how even one
+            Drag the sliders to model incoherent behavior. Watch how even one
             compromised dimension tanks your effective trust, inflates your <Link href="/atp-economics" className="text-sky-400 hover:underline">ATP</Link> costs
             (ATP is the energy budget that powers every action),
             and demands extra witnesses. Try a preset scenario, then tweak individual dimensions.
@@ -816,7 +817,7 @@ export default function CoherenceIndexPage() {
               </div>
               <div className="space-y-4">
                 {([
-                  { label: "Spatial", dim: "spatial" as const, value: spatialCI, hint: "Location plausibility — is your physical location consistent?" },
+                  { label: "Spatial", dim: "spatial" as const, value: spatialCI, hint: "Location plausibility - is your physical location consistent?" },
                   { label: "Capability", dim: "capability" as const, value: capabilityCI, hint: "Hardware plausibility" },
                   { label: "Temporal", dim: "temporal" as const, value: temporalCI, hint: "Activity continuity" },
                   { label: "Relational", dim: "relational" as const, value: relationalCI, hint: "Relationship history" },
@@ -882,7 +883,7 @@ export default function CoherenceIndexPage() {
                 />
               </div>
               <p className="text-xs text-gray-400 mt-2">
-                All four dimensions must be healthy — one failing dimension pulls your whole score down.
+                All four dimensions must be healthy - one failing dimension pulls your whole score down.
               </p>
             </div>
 
@@ -892,7 +893,7 @@ export default function CoherenceIndexPage() {
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">💀</span>
                   <div>
-                    <div className="font-bold text-red-400">Locked Out &mdash; Behavior Too Incoherent</div>
+                    <div className="font-bold text-red-400">Locked Out - Behavior Too Incoherent</div>
                     <p className="text-sm text-gray-300">
                       CI below 0.5 means behavior is too inconsistent to be recognized as
                       legitimate. Actions are blocked. Trust is frozen. You need to
@@ -901,7 +902,7 @@ export default function CoherenceIndexPage() {
                     <p className="text-xs text-gray-400 mt-2">
                       What if the system is wrong? Good question. Appeals and false-positive
                       recovery are an{' '}
-                      <Link href="/threat-model#false-positives" className="text-red-300 underline hover:text-red-200">
+                      <Link href="/what-could-go-wrong#false-positives" className="text-red-300 underline hover:text-red-200">
                         open problem
                       </Link>{' '}
                       in the current design.
@@ -941,11 +942,11 @@ export default function CoherenceIndexPage() {
                   Multiplier: 1 / CI² (capped at 10x)
                 </div>
                 <div className="text-xs text-gray-500 mt-1">
-                  {atpMultiplier > 5 && "⚠️ Very expensive — targeted at stolen accounts, not normal users"}
+                  {atpMultiplier > 5 && "⚠️ Very expensive - targeted at stolen accounts, not normal users"}
                   {atpMultiplier > 1.5 &&
                     atpMultiplier <= 5 &&
-                    "⚡ Moderately expensive — inconsistency costs, but recoverable"}
-                  {atpMultiplier <= 1.5 && "✅ Normal cost — consistent behavior keeps costs low"}
+                    "⚡ Moderately expensive - inconsistency costs, but recoverable"}
+                  {atpMultiplier <= 1.5 && "✅ Normal cost - consistent behavior keeps costs low"}
                 </div>
               </div>
 
@@ -978,12 +979,12 @@ export default function CoherenceIndexPage() {
               {overallCI < 1.0 && overallCI >= 0.5 && (
                 <p className="text-xs text-gray-400 mt-2">
                   One weak dimension drags the whole score down.
-                  Try dropping a second dimension — the compounding effect is dramatic.
+                  Try dropping a second dimension - the compounding effect is dramatic.
                 </p>
               )}
             </div>
 
-            {/* Damage Report — appears after exploring 2+ anomaly scenarios */}
+            {/* Damage Report - appears after exploring 2+ anomaly scenarios */}
             {compoundDamage && (
               <div className="mt-6 bg-gradient-to-br from-red-950/30 to-orange-950/20 border border-red-800/40 rounded-lg p-5">
                 <h4 className="text-sm font-semibold text-red-400 mb-3 uppercase tracking-wide">
@@ -1030,7 +1031,7 @@ export default function CoherenceIndexPage() {
 
                 <p className="text-xs text-gray-500">
                   {compoundDamage.compoundCI < compoundDamage.worstSingleCI * 0.8
-                    ? `The geometric mean makes stacked anomalies exponentially worse — CI dropped ${((1 - compoundDamage.compoundCI / compoundDamage.worstSingleCI) * 100).toFixed(0)}% beyond the worst single anomaly.`
+                    ? `The geometric mean makes stacked anomalies exponentially worse - CI dropped ${((1 - compoundDamage.compoundCI / compoundDamage.worstSingleCI) * 100).toFixed(0)}% beyond the worst single anomaly.`
                     : 'Even modest anomalies compound. Try exploring more scenarios to see the full effect.'
                   }
                   {' '}This is why CI makes multi-vector attacks prohibitively expensive.
@@ -1104,7 +1105,7 @@ export default function CoherenceIndexPage() {
             </div>
           </div>
 
-          {/* Worked example with steps — Apr 26 visitor LOW: "wanted a worked example"; May 13 visitor LOW: collapsed math */}
+          {/* Worked example with steps - Apr 26 visitor LOW: "wanted a worked example"; May 13 visitor LOW: collapsed math */}
           <details className="group bg-gray-800/50 border border-gray-700 rounded-lg">
             <summary className="cursor-pointer list-none p-6 flex items-baseline gap-3">
               <span className="text-gray-500 group-open:rotate-90 transition-transform">&#9654;</span>
@@ -1114,7 +1115,7 @@ export default function CoherenceIndexPage() {
             <div className="px-6 pb-6">
               <p className="text-gray-300 text-sm mb-4">
                 Suppose Alice has three dimensions at <strong>0.9</strong> (strong) and
-                one at <strong>0.5</strong> (weak — say, an unusual relational pattern).
+                one at <strong>0.5</strong> (weak - say, an unusual relational pattern).
                 Here&apos;s what the geometric mean does with that:
               </p>
               <div className="font-mono text-sm space-y-1 text-gray-300 bg-gray-900/60 border border-gray-700/60 rounded p-4 mb-4">
@@ -1122,17 +1123,17 @@ export default function CoherenceIndexPage() {
                 <div><span className="text-gray-500">Step 2.</span> ⁴√0.3645 ≈ <span className="text-sky-300">0.78</span></div>
               </div>
               <p className="text-gray-400 text-sm">
-                One moderate weakness drops CI to <strong className="text-gray-200">0.78</strong> —
+                One moderate weakness drops CI to <strong className="text-gray-200">0.78</strong> -
                 a real penalty, but not catastrophic. The earlier 0.1 case (extreme weakness)
                 drops it all the way to <strong className="text-gray-200">0.52</strong>. That&apos;s
                 the curve: 0.9 (perfect) → 0.78 (one moderate gap) → 0.52 (one extreme gap).
                 No averaging hides the worst dimension.
               </p>
               <p className="text-gray-400 text-sm mt-3">
-                Note that even the extreme case lands at <strong className="text-gray-200">0.52</strong> —
+                Note that even the extreme case lands at <strong className="text-gray-200">0.52</strong> -
                 still just above the <strong className="text-gray-200">0.5</strong> alive/dead line. One
                 catastrophically weak dimension doesn&apos;t kill you outright; it leaves you
-                <em> alive but expensive</em> — higher action costs and heavier witnessing until you
+                <em> alive but expensive</em> - higher action costs and heavier witnessing until you
                 repair it. What one bad dimension &ldquo;tanks&rdquo; is your standing and your energy
                 budget, not necessarily your life.
               </p>
@@ -1140,17 +1141,17 @@ export default function CoherenceIndexPage() {
           </details>
         </section>
 
-        {/* Synthon foreshadow — visitor friction Mar 23 LOW */}
+        {/* Synthon foreshadow - visitor friction Mar 23 LOW */}
         <section className="max-w-4xl mx-auto mb-16">
           <div className="bg-gray-800/30 border border-gray-700/50 rounded-lg px-6 py-4 text-gray-400 text-sm">
             <strong className="text-gray-300">Coherence isn&apos;t just for individuals.</strong>{" "}
-            Groups of entities with dense mutual trust can develop collective coherence — Web4 calls these emergent collectives{" "}
-            <Link href="/aliveness" className="text-sky-400 hover:underline">synthons</Link>.{" "}
-            More on the <Link href="/aliveness" className="text-sky-400 hover:underline">Aliveness</Link> page.
+            Groups of entities with dense mutual trust can develop collective coherence. Web4 calls these
+            emergent collectives <strong className="text-gray-300">synthons</strong>: the same consistency
+            checks apply to a group acting as a unit.
           </div>
         </section>
 
-        {/* Why "coherence"? — brief honest answer */}
+        {/* Why "coherence"? - brief honest answer */}
         <section className="max-w-4xl mx-auto mb-16">
           <details className="group">
             <summary className="cursor-pointer list-none">
@@ -1160,7 +1161,7 @@ export default function CoherenceIndexPage() {
               </div>
             </summary>
           <p className="text-gray-400 mb-4">
-            In physics and biology, &ldquo;coherence&rdquo; means the parts of a system are aligned &mdash;
+            In physics and biology, &ldquo;coherence&rdquo; means the parts of a system are aligned -
             moving together rather than working against each other. A coherent laser beam stays focused;
             a coherent heartbeat keeps rhythm; a coherent team pulls in the same direction.
           </p>
@@ -1168,8 +1169,8 @@ export default function CoherenceIndexPage() {
             Web4 borrows this idea: an entity with high coherence behaves consistently across
             space (where they act), time (when they act), capability (what they do), and relationships
             (who they interact with). When those dimensions align, the entity is trustworthy.
-            When they suddenly misalign &mdash; like an account that was in New York and is now in
-            Tokyo two hours later &mdash; something is wrong, and CI detects it.
+            When they suddenly misalign - like an account that was in New York and is now in
+            Tokyo two hours later - something is wrong, and CI detects it.
           </p>
           </details>
         </section>
@@ -1323,7 +1324,7 @@ export default function CoherenceIndexPage() {
               </div>
               <p className="text-sm text-gray-300 mb-2">
                 <strong>How they work together</strong>: <TermTooltip term="ATP">ATP</TermTooltip> is
-                the energy budget every agent has — every action costs some.
+                the energy budget every agent has - every action costs some.
                 Low CI increases those costs (up to 10x). This makes incoherent behavior economically
                 expensive, not just trust-limited.
               </p>
@@ -1369,7 +1370,7 @@ export default function CoherenceIndexPage() {
           </div>
         </section>
 
-        {/* Technical Implementation Section — collapsed by default */}
+        {/* Technical Implementation Section - collapsed by default */}
         <section className="max-w-4xl mx-auto mb-16">
           <details>
           <summary className="text-3xl font-bold mb-6 text-gray-100 cursor-pointer list-none flex items-center gap-3">
@@ -1504,7 +1505,7 @@ lenient_society = {
               </h3>
               <p className="text-gray-300">
                 The scoring ensures that <strong>one low dimension tanks everything</strong>. Attackers must fake coherence across spatial,
-                temporal, capability, AND relational dimensions simultaneously —
+                temporal, capability, AND relational dimensions simultaneously -
                 prohibitively expensive.
               </p>
             </div>
@@ -1514,7 +1515,7 @@ lenient_society = {
                 3. Grounded in Real-World Patterns
               </h3>
               <p className="text-gray-300">
-                CI isn&apos;t arbitrary — it&apos;s designed so that faking consistent behavior
+                CI isn&apos;t arbitrary - it&apos;s designed so that faking consistent behavior
                 is always more expensive than genuinely having it. The design draws
                 from how consistency works in biology and social systems.
               </p>
@@ -1525,14 +1526,14 @@ lenient_society = {
                 4. Economic + Reputational Penalty
               </h3>
               <p className="text-gray-300">
-                Low CI doesn&apos;t just limit trust — it increases ATP costs (up to
+                Low CI doesn&apos;t just limit trust - it increases ATP costs (up to
                 10x) and witness requirements (up to +8). Incoherent behavior
                 becomes economically unsustainable.
               </p>
               <p className="text-gray-400 text-sm mt-2">
                 <strong>Why so harsh?</strong> Mild penalties (2x) would barely slow
                 an attacker with stolen credentials. The 1/CI² formula means penalties
-                escalate sharply only when coherence drops below ~0.5 — normal users
+                escalate sharply only when coherence drops below ~0.5 - normal users
                 with occasional inconsistencies (CI 0.8) pay just 1.6x, while a stolen
                 account (CI 0.3) is pinned at the 10x ceiling. The severity is targeted
                 at the threat, not at regular users.
@@ -1552,7 +1553,7 @@ lenient_society = {
           </div>
         </section>
 
-        {/* Common Questions — visitor feedback Apr 10: "who determines my spatial consistency?" */}
+        {/* Common Questions - visitor feedback Apr 10: "who determines my spatial consistency?" */}
         <section className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-gray-100">Common Questions</h2>
           <div className="space-y-4">
@@ -1563,7 +1564,7 @@ lenient_society = {
               </summary>
               <div className="mt-4 text-gray-300 text-sm space-y-2">
                 <p>
-                  CI is computed <strong>automatically from your behavior</strong> — no one &ldquo;rates&rdquo; you.
+                  CI is computed <strong>automatically from your behavior</strong> - no one &ldquo;rates&rdquo; you.
                   Every time you perform an action in Web4 (post content, complete a task, interact with someone),
                   the system updates your four coherence dimensions based on how that action compares to your
                   established patterns.
@@ -1571,12 +1572,12 @@ lenient_society = {
                 <p>
                   <strong className="text-gray-200">Spatial</strong> = location plausibility. Is your physical location
                   consistent with where you were recently? Impossible travel (New York at noon, Tokyo at 2pm) is a red flag.
-                  Normal travel is fine — a 14-hour flight causes a brief dip, then CI recovers.
-                  (VPNs and IP addresses don&apos;t affect it — spatial CI uses hardware-attested location.)
+                  Normal travel is fine - a 14-hour flight causes a brief dip, then CI recovers.
+                  (VPNs and IP addresses don&apos;t affect it - spatial CI uses hardware-attested location.)
                 </p>
                 <p>
                   <strong className="text-gray-200">Capability</strong> = hardware plausibility. Can your device
-                  actually perform the actions being claimed? (Prevents credential theft — a stolen key on an
+                  actually perform the actions being claimed? (Prevents credential theft - a stolen key on an
                   unfamiliar device shows capability gaps.)
                 </p>
                 <p>
@@ -1588,12 +1589,12 @@ lenient_society = {
                   <strong className="text-gray-200">Relational</strong> = relationship history. Do you interact
                   with your established network, or did you suddenly start transacting with 50 strangers?
                   Your &ldquo;established network&rdquo; here means the entities <em>your own device</em> has
-                  recently interacted with — not a global social graph. There&apos;s no central registry of who
+                  recently interacted with - not a global social graph. There&apos;s no central registry of who
                   knows whom; see the privacy question below.
                 </p>
                 <p>
                   The formula is the <strong>geometric mean</strong> (fourth root of the product) of all four
-                  dimensions. This means one bad dimension drags down the whole score — you can&apos;t
+                  dimensions. This means one bad dimension drags down the whole score - you can&apos;t
                   compensate for suspicious spatial behavior by being temporally consistent.
                 </p>
               </div>
@@ -1612,25 +1613,25 @@ lenient_society = {
                     local trust neighborhoods
                   </Link>
                   : your own device keeps track of <em>your</em> recent interactions, and it asks neighbors only
-                  about people relevant to a specific decision — not about your full social graph.
+                  about people relevant to a specific decision - not about your full social graph.
                 </p>
                 <p>
                   <strong className="text-gray-200">Where the data lives.</strong> The relational signal is
                   computed from interaction history that already exists on your device (signed receipts of past
                   exchanges, attestations from people you&apos;ve transacted with). Nothing about your
-                  relationships needs to be uploaded for relational CI to work — your phone has enough context
+                  relationships needs to be uploaded for relational CI to work - your phone has enough context
                   to flag &ldquo;you&apos;ve never talked to any of these 50 strangers before.&rdquo;
                 </p>
                 <p>
                   <strong className="text-gray-200">What others see.</strong> Counterparties see the receipts
                   you&apos;ve chosen to share with them (e.g., a vouching attestation when you ask one).
                   They don&apos;t see your wider contact list. Beyond your trust neighborhood (about 3 hops),
-                  there is structurally <em>no view at all</em> — the same locality that bounds the trust math
+                  there is structurally <em>no view at all</em> - the same locality that bounds the trust math
                   is what bounds visibility.
                 </p>
                 <p>
                   <strong className="text-gray-200">Honest hedge.</strong> 4-Life is a research prototype.
-                  Storage formats and selective-disclosure mechanics are still being specified — the design
+                  Storage formats and selective-disclosure mechanics are still being specified - the design
                   intent above is the load-bearing claim, and it&apos;s reflected in current reference
                   implementations. The privacy property follows from the architecture (local graphs, no
                   global view), not from a promise we have to keep.
@@ -1640,7 +1641,7 @@ lenient_society = {
 
             <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
               <summary className="text-lg font-semibold text-orange-400 list-none flex justify-between items-center">
-                <span>What about major life changes — career switch, illness, moving countries?</span>
+                <span>What about major life changes - career switch, illness, moving countries?</span>
                 <span className="text-gray-500 text-xl">+</span>
               </summary>
               <div className="mt-4 text-gray-300 text-sm space-y-2">
@@ -1660,17 +1661,17 @@ lenient_society = {
                   <strong className="text-sky-300">Illness/recovery:</strong> Extended inactivity causes
                   temporal CI to drift (your patterns changed), but everything else stays intact. When you
                   return, temporal recovers as your new rhythm stabilizes. The system doesn&apos;t penalize
-                  absence — it just needs a few days to re-learn your patterns.
+                  absence - it just needs a few days to re-learn your patterns.
                 </p>
                 <p>
                   <strong className="text-sky-300">Moving countries:</strong> Spatial CI dips during
                   the move (like the vacation scenario), then recovers once your new location stabilizes.
                   Other dimensions are unaffected unless your entire social network and activity patterns
-                  also change simultaneously — which would be unusual even for a real move.
+                  also change simultaneously - which would be unusual even for a real move.
                 </p>
                 <p>
                   The core principle: <strong>real life changes affect one or two dimensions at a time</strong>.
-                  An attacker taking over your account affects <em>all four at once</em> — different device,
+                  An attacker taking over your account affects <em>all four at once</em> - different device,
                   different location, different timing, different contacts. That&apos;s what CI is actually
                   designed to catch. Genuine life transitions look nothing like account compromise.
                 </p>
@@ -1684,7 +1685,7 @@ lenient_society = {
               </summary>
               <div className="mt-4 text-gray-300 text-sm space-y-2">
                 <p>
-                  <strong className="text-sky-300">Yes, spatial coherence involves physical location</strong> —
+                  <strong className="text-sky-300">Yes, spatial coherence involves physical location</strong> -
                   specifically, whether your current location is <em>plausible</em> given where you were recently.
                   It detects impossible travel (New York at noon, Tokyo at 2pm) and flags sudden location jumps.
                 </p>
@@ -1692,11 +1693,11 @@ lenient_society = {
                   <strong>Normal travel is fine.</strong> If you fly from New York to Tokyo over 14 hours,
                   your spatial CI dips briefly (like a credit card&apos;s &ldquo;unusual activity&rdquo; check)
                   then recovers within a day or two as your new location stabilizes. The system expects
-                  humans to move around — it&apos;s looking for <em>physically impossible</em> movement, not
+                  humans to move around - it&apos;s looking for <em>physically impossible</em> movement, not
                   ordinary travel.
                 </p>
                 <p>
-                  VPNs and IP addresses don&apos;t affect spatial CI — it relies on hardware-attested location
+                  VPNs and IP addresses don&apos;t affect spatial CI - it relies on hardware-attested location
                   from your device&apos;s secure element, not network addresses. Switching Wi-Fi networks
                   changes nothing.
                 </p>
@@ -1721,14 +1722,13 @@ lenient_society = {
               </div>
             </Link>
 
-            <Link href="/society-simulator">
+            <Link href="/coherence-framework">
               <div className="bg-gradient-to-br from-green-950/30 to-green-900/20 border border-green-800/30 rounded-lg p-6 hover:border-green-700/50 transition-all cursor-pointer">
                 <h3 className="text-xl font-semibold text-green-400 mb-2">
-                  Society Simulator
+                  Coherence Framework
                 </h3>
                 <p className="text-sm text-gray-400">
-                  Run simulations and see coherence, trust, and energy interact in
-                  real-time.
+                  How coherence, trust, and energy fit together across the Web4 onramp.
                 </p>
               </div>
             </Link>
@@ -1761,21 +1761,20 @@ lenient_society = {
           </div>
         </section>
 
-        {/* Synthon foreshadowing — visitor friction: "synthon" introduced too late on Aliveness */}
+        {/* Synthon foreshadowing - visitor friction: "synthon" introduced too late on Aliveness */}
         <section className="max-w-4xl mx-auto mt-12 mb-8">
           <div className="bg-gradient-to-r from-emerald-950/20 to-gray-900 border border-emerald-800/20 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-emerald-400 mb-2">Groups Can Be Coherent Too</h3>
             <p className="text-sm text-gray-300">
-              Everything on this page applies to individuals — but coherence also emerges at
+              Everything on this page applies to individuals, but coherence also emerges at
               the group level. When several entities interact frequently with dense mutual trust,
               their collective behavior can become coherent as a unit. Web4 calls these emergent
               groups <strong className="text-emerald-300">synthons</strong>.
             </p>
             <p className="text-sm text-gray-400 mt-2">
-              You&apos;ll see how this works on the next page:{" "}
-              <Link href="/aliveness" className="text-emerald-400 hover:underline">Aliveness</Link> explores
-              how coherence, trust, and energy determine whether an entity — individual or group — is
-              considered &quot;alive&quot; in Web4.
+              The same four dimensions (spatial, capability, temporal, relational) scale up from a single
+              entity to a group acting together, so coherence, trust, and energy determine whether an
+              entity, individual or group, is considered &quot;alive&quot; in Web4.
             </p>
           </div>
         </section>

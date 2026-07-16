@@ -63,7 +63,7 @@ export default function GlossaryPage() {
           <strong className="text-sky-400">New to Web4?</strong> Click{" "}
           <span className="inline-block bg-gray-800 px-2 py-0.5 rounded border border-gray-700 text-xs">Essential only</span>{" "}
           below to see just the 7 terms that matter first. Academic terms like{" "}
-          <em>Epistemic Proprioception</em> or <em>Synthon</em> live in Advanced/Research —
+          <em>Epistemic Proprioception</em> or <em>Synthon</em> live in Advanced/Research  - 
           safely ignorable until you&apos;re curious.
         </div>
 
@@ -134,7 +134,7 @@ export default function GlossaryPage() {
           ))}
         </div>
 
-        {/* Acronyms at a glance — the "what does CI stand for again?" escape-hatch.
+        {/* Acronyms at a glance - the "what does CI stand for again?" escape-hatch.
             Lives in the hero <section>, OUTSIDE glossaryRef, so the search filter never hides it.
             Scoped to the core acronyms a beginner collects on the on-ramp; research-tier
             initialisms (EP, R6, SAL, DID, D1–D9) are deliberately left to the search box so
@@ -164,7 +164,7 @@ export default function GlossaryPage() {
                 <span className="font-mono font-semibold text-sky-400 w-12 shrink-0">{a.abbr}</span>
                 <span className="text-gray-300">
                   <span className="text-gray-200">{a.full}</span>{" "}
-                  <span className="text-gray-500">&mdash; {a.gloss}</span>
+                  <span className="text-gray-500">- {a.gloss}</span>
                 </span>
               </a>
             ))}
@@ -175,7 +175,7 @@ export default function GlossaryPage() {
           <p className="text-gray-400 leading-relaxed">
             <strong className="text-sky-400">Note:</strong> Some terms have both
             educational (simplified) and canonical (spec-accurate) definitions. Where they
-            differ, we note it. This site prioritizes comprehension over precision—see the{" "}
+            differ, we note it. This site prioritizes comprehension over precision, see the{" "}
             <a
               href="https://github.com/dp-web4/web4/tree/main/web4-standard/core-spec"
               className="text-sky-400 underline hover:text-sky-300"
@@ -200,7 +200,7 @@ export default function GlossaryPage() {
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">Web4</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               Our working name for <strong>trust-native internet infrastructure</strong>.
-              Unlike Web2 (platforms own your data/identity) or Web3 (blockchain-first &mdash;
+              Unlike Web2 (platforms own your data/identity) or Web3 (blockchain-first -
               built on the public, shared transaction ledgers behind Bitcoin and Ethereum),
               Web4 proposes that trust, identity, and value flow from verifiable behavior
               rooted in hardware.
@@ -214,13 +214,15 @@ export default function GlossaryPage() {
           {/* LCT */}
           <div id="lct" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              Verified Presence — LCT (Linked Context Token)
+              Verified Presence - LCT (Linked Context Token)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
-              Your <strong>hardware-rooted verifiable presence</strong>. An LCT is bound to
-              physical devices &mdash; the security chip built into most modern phones and
-              laptops (a TPM, Apple&apos;s Secure Enclave, or a FIDO2 key) &mdash; and witnessed
-              by other entities, creating verifiable proof of presence.
+              Web4&apos;s <strong>foundational presence primitive</strong>: a verifiable presence
+              certificate that binds an entity to its context through witnessed relationships. It
+              establishes <em>where</em> you exist in a web of trust, not just who you are. An LCT is
+              rooted in physical devices (the security chip built into most modern phones and laptops:
+              a TPM, Apple&apos;s Secure Enclave, or a FIDO2 key) and witnessed by other entities,
+              creating verifiable proof of presence.
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: "Your presence lives in your hardware, not in a company's database.
@@ -241,10 +243,10 @@ export default function GlossaryPage() {
             </div>
           </div>
 
-          {/* Witness — May 29 visitor MEDIUM #2: "witness" used 8+ times across LCT, How It Works,
+          {/* Witness - May 29 visitor MEDIUM #2: "witness" used 8+ times across LCT, How It Works,
               Federation, and Day in Web4 with no glossary entry; canonical naming for the two senses
               already lives at lct-explainer L450-454 (PR #328) but is page-local. Add a Core/Essential
-              entry that mirrors the exact bolded names — "device co-witness" vs "network witness" —
+              entry that mirrors the exact bolded names - "device co-witness" vs "network witness"  - 
               so the glossary is the disambiguation backstop when "witness" confuses a visitor before
               they reach lct-explainer#device-witnesses. */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
@@ -256,18 +258,23 @@ export default function GlossaryPage() {
             </p>
             <ul className="text-gray-300 leading-relaxed mb-3 space-y-2 list-none">
               <li>
-                <strong className="text-gray-100">Device co-witness</strong> &mdash; your own
+                <strong className="text-gray-100">Device co-witness</strong> - your own
                 devices attest to each other. Your phone, laptop, and security key independently
                 co-sign that &ldquo;yes, this is really you.&rdquo; More devices co-signing = higher
                 trust ceiling (1 device caps at 0.50, 2 devices at 0.75, 3+ up to 0.90). This is
                 what the LCT page mostly means by &ldquo;witness.&rdquo;
               </li>
               <li>
-                <strong className="text-gray-100">Network witness</strong> &mdash; optional
+                <strong className="text-gray-100">Network witness</strong> - optional
                 infrastructure nodes that verify the network itself (federation links, witness
                 relay for entity discovery). Appears in Federation and How It Works.
               </li>
             </ul>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              In both senses, to witness is to observe and attest to an action, and witnesses stake
+              their own reputation when they do. Consequential actions land on an append-only,
+              hash-chained ledger, so any attestation can be checked later.
+            </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: &ldquo;Your devices vouch for each other (co-witness); network nodes
               vouch for the network (network witness). Different layers, same word.&rdquo;
@@ -282,14 +289,16 @@ export default function GlossaryPage() {
           {/* ATP */}
           <div id="atp" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              Energy Budget — ATP (Allocation Transfer Packets)
+              Energy Budget - ATP (Allocation Transfer Packets)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
-              The <strong>energy budget</strong> of Web4 societies—a charged value token
+              The <strong>energy budget</strong> of Web4 societies, a charged value token
               inspired by biological ATP. Every action costs ATP. Quality contributions earn ATP.
-              Run out? You can&apos;t act until you earn more. This makes spam naturally self-limiting—spammers
+              Run out? You can&apos;t act until you earn more. This makes spam naturally self-limiting, spammers
               burn ATP faster than they earn it. ATP can be transferred between entities, but every
-              transfer burns 5%—making circular farming unprofitable.
+              transfer burns 5%, making circular farming unprofitable. ATP is a society's
+              unit of account, not a currency: it is earned and spent within a society and cannot be
+              cashed out.
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: &ldquo;Think of it like an energy budget. You spend it to act, earn it by
@@ -301,7 +310,7 @@ export default function GlossaryPage() {
               <strong>Canonical note:</strong> Production Web4 uses ATP/ADP (Allocation Discharge
               Packet) cycles for full resource flow modeling. ATP recharges via <strong>Value
               Confirmation (VCM)</strong>: recipients of your work attest to the value they received,
-              converting your spent ADP back into fresh ATP. You cannot rate your own work —
+              converting your spent ADP back into fresh ATP. You cannot rate your own work  - 
               only recipients can.
             </p>
             <div className="flex gap-3 text-sm">
@@ -319,14 +328,14 @@ export default function GlossaryPage() {
             </div>
           </div>
 
-          {/* ADP — Apr 29 LOW: visitor flagged "ADP appears all over the site but isn't a top-level entry" */}
+          {/* ADP - Apr 29 LOW: visitor flagged "ADP appears all over the site but isn't a top-level entry" */}
           <div id="adp" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              Spent Energy Receipt — ADP (Allocation Discharge Packets)
+              Spent Energy Receipt - ADP (Allocation Discharge Packets)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               The <strong>spent counterpart of ATP</strong>. Every time you act, the ATP you spent doesn&apos;t
-              vanish &mdash; it converts into an ADP receipt that records what you did and what it cost. ADP isn&apos;t
+              vanish - it converts into an ADP receipt that records what you did and what it cost. ADP isn&apos;t
               a separate currency you spend; it&apos;s the audit trail of work-in-progress. When recipients of
               your work confirm its value, ADP receipts convert back into fresh ATP at a rate set by the quality
               they received.
@@ -339,7 +348,7 @@ export default function GlossaryPage() {
             <p className="text-gray-500 text-xs mb-3">
               <strong>Why two tokens?</strong> The ATP/ADP split makes <em>quality</em> the recharge driver,
               not <em>activity</em>. You can spam actions and rack up ADP receipts, but if no recipients confirm
-              value, those receipts never become fresh ATP &mdash; and your budget drains.
+              value, those receipts never become fresh ATP - and your budget drains.
             </p>
             <div className="flex gap-3 text-sm">
               <Link href="/atp-economics" className="text-sky-400 hover:underline">
@@ -365,7 +374,7 @@ export default function GlossaryPage() {
               <strong>Multi-dimensional, role-specific trust scores</strong>. Instead of
               &ldquo;trust = 7/10&rdquo;, Web4 tracks three dimensions per role:
               Talent (aptitude), Training (expertise), and Temperament (reliability).
-              This makes gaming harder&mdash;you can&apos;t just optimize one metric,
+              This makes gaming harder, you can&apos;t just optimize one metric,
               and you can&apos;t transfer trust between unrelated roles.
             </p>
             <p className="text-gray-400 text-sm mb-3">
@@ -394,14 +403,15 @@ export default function GlossaryPage() {
               Trust Neighborhood (MRH)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
-              The <strong>boundary of what you can see</strong> in a Web4 society. Your MRH
-              is defined by trust relationships—you see entities you trust and entities they
-              trust (transitively). This limits spam blast radius and preserves privacy.
+              An entity&apos;s <strong>dynamic context boundary</strong>: it scopes what is relevant
+              to you and how far your trust extends. In a Web4 society your MRH is defined by trust
+              relationships (you see entities you trust and entities they trust, transitively), which
+              limits spam blast radius and preserves privacy. It is implemented as RDF graphs.
             </p>
             <p className="text-gray-400 text-sm mb-3">
               <strong>Day-to-day example:</strong> Imagine you&apos;re in a co-working space. You hear conversations
               from people you know, and friends-of-friends can introduce themselves. But a random stranger
-              can&apos;t walk up and start pitching you — they need someone you trust to vouch for them first.
+              can&apos;t walk up and start pitching you - they need someone you trust to vouch for them first.
               That&apos;s MRH.
             </p>
             <p className="text-gray-400 text-sm mb-3">
@@ -461,12 +471,12 @@ export default function GlossaryPage() {
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: "You can't escape your history by 'starting fresh.' Bad choices
-              compound across lives—spam in Life 1 haunts Life 2 and 3. Good behavior also
+              compound across lives, spam in Life 1 haunts Life 2 and 3. Good behavior also
               compounds. This makes reputation permanent rather than disposable."
             </p>
             <p className="text-gray-500 text-xs mb-3">
               <strong>Key insight:</strong> In traditional platforms, creating a new account
-              resets consequences. Web4's hardware-bound presence (LCT) prevents this—your
+              resets consequences. Web4's hardware-bound presence (LCT) prevents this, your
               karma follows you because your identity follows you.
             </p>
             <div className="flex gap-3 text-sm">
@@ -482,13 +492,13 @@ export default function GlossaryPage() {
               Action Framework (R6)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
-              The <strong>action framework</strong> for Web4 entities. Every action follows
-              R6: what you're requesting, what role you're in, what rules apply, what references
-              you provide, what resources you need, and what result you produce.
+              The <strong>base action grammar</strong> for Web4 entities: Rules + Role + Request +
+              Reference + Resource, producing a Result. It is the default for routine acts, and it
+              makes every action auditable and trust-scored consistently.
             </p>
             <p className="text-gray-400 text-sm mb-3">
-              Plain English: "A structured way to describe any action in a Web4 society. Ensures
-              actions are auditable and trust-scored consistently."
+              Plain English: "A structured way to describe any action in a Web4 society, so the same
+              action can be checked and scored the same way every time."
             </p>
             <div className="flex gap-3 text-sm">
               <a
@@ -497,7 +507,34 @@ export default function GlossaryPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Canonical spec (R7) →
+                Canonical spec (R6/R7) →
+              </a>
+            </div>
+          </div>
+
+          {/* R7 */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">
+              Action Framework (R7)
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              The <strong>reputation-tracking superset of R6</strong> for consequential acts: it adds
+              reputation back-propagation, so an action&apos;s outcome updates the trust of the
+              entities involved. R6 and R7 are both canonical: R6 is the default for routine acts, R7
+              governs the consequential ones.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: "The same action grammar as R6, plus a step that feeds the result back
+              into everyone&apos;s reputation, used when the stakes are high enough to matter."
+            </p>
+            <div className="flex gap-3 text-sm">
+              <a
+                href="https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/r7-framework.md"
+                className="text-purple-400 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Canonical spec →
               </a>
             </div>
           </div>
@@ -505,10 +542,10 @@ export default function GlossaryPage() {
         </div>
       </section>
 
-      {/* Running Now — deployed tools. These aren't simulations or specs: hestia and the hub
+      {/* Running Now - deployed tools. These aren't simulations or specs: hestia and the hub
           are public, AGPL, runnable code. Grounded only in the public hestia + web4/hub repos. */}
       <section id="running" className="max-w-4xl mx-auto mt-16 scroll-mt-20" data-glossary-section>
-        <h2 className="text-3xl font-bold mb-2 text-gray-100">Running Now — Deployed Tools</h2>
+        <h2 className="text-3xl font-bold mb-2 text-gray-100">Running Now - Deployed Tools</h2>
         <p className="text-sm text-gray-500 mb-8">
           Most of this glossary describes a protocol and its simulations. These entries describe
           things that <strong className="text-emerald-300">actually run today</strong> in public,
@@ -516,13 +553,31 @@ export default function GlossaryPage() {
         </p>
         <div className="space-y-8">
 
+          {/* The Core Standard */}
+          <div id="core-standard" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-sky-700/50 rounded-xl p-6 scroll-mt-20" data-glossary-term data-essential>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">The Core Standard</h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              The <strong>open ontology substrate</strong> of the Web4 onramp: the shared specification
+              and reference types (LCT, T3/V3, MRH, ATP/ADP, R6/R7) that everything else builds on. The
+              hub, hestia, and hardbound are three scales that run this one standard.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: &ldquo;The common rulebook and vocabulary. The other three pieces are just
+              it, running at community, personal, and enterprise scale.&rdquo;
+            </p>
+            <div className="flex gap-3 text-sm">
+              <Link href="/the-standard" className="text-sky-400 hover:underline">Learn more →</Link>
+              <a href="https://github.com/dp-web4/web4" className="text-purple-400 hover:underline" target="_blank" rel="noopener noreferrer">Spec →</a>
+            </div>
+          </div>
+
           {/* Hestia */}
           <div id="hestia" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-emerald-700/50 rounded-xl p-6 scroll-mt-20" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-emerald-300 mb-3">Hestia</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               The <strong>deployed trust layer</strong> of Web4: a local-first daemon that gives any
               entity a real cryptographic LCT, an encrypted vault, a witness chain, evolving T3/V3
-              trust, a policy gate, delegation, and a device constellation &mdash; all on its own
+              trust, a policy gate, delegation, and a device constellation - all on its own
               hardware. The concrete, runnable version of much of what the rest of this glossary
               defines. License: AGPL-3.0.
             </p>
@@ -543,16 +598,34 @@ export default function GlossaryPage() {
               A <strong>runnable Web4 society</strong>: a single small Rust daemon that gives a
               community seven roles, a signed founding charter, an append-only witnessed ledger,
               sealed channels, and skill-based member discovery. The deployable counterpart to this
-              site&apos;s society simulations &mdash; a reference proof-of-concept any community can
+              site&apos;s society simulations - a reference proof-of-concept any community can
               fork. License: AGPL-3.0.
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: &ldquo;A society&apos;s rules and history as honest, tamper-evident code
-              you can run &mdash; not a config file you can quietly rewrite.&rdquo;
+              you can run - not a config file you can quietly rewrite.&rdquo;
             </p>
             <div className="flex gap-3 text-sm">
               <Link href="/hub" className="text-purple-400 hover:underline">Learn more →</Link>
               <a href="https://github.com/dp-web4/4-hub" className="text-purple-400 hover:underline" target="_blank" rel="noopener noreferrer">Code →</a>
+            </div>
+          </div>
+
+          {/* Hardbound */}
+          <div id="hardbound" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-amber-700/50 rounded-xl p-6 scroll-mt-20" data-glossary-term data-essential>
+            <h3 className="text-2xl font-semibold text-amber-300 mb-3">Hardbound</h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              The <strong>enterprise oversight tier</strong> of the onramp: the same Web4 presence and
+              trust model with <strong>hardware-bound identity</strong> (keys sealed to a real TPM),
+              plus the policy and audit controls an organization needs. Where hestia is personal-scale
+              and the hub is community-scale, hardbound is the enterprise-scale deployment.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              Plain English: &ldquo;Web4 for organizations: identity rooted in hardware you cannot
+              copy, with oversight and audit built in.&rdquo;
+            </p>
+            <div className="flex gap-3 text-sm">
+              <Link href="/hardbound" className="text-amber-400 hover:underline">Learn more →</Link>
             </div>
           </div>
 
@@ -565,7 +638,7 @@ export default function GlossaryPage() {
               transport itself is private by construction rather than by policy.
             </p>
             <p className="text-gray-400 text-sm">
-              Plain English: &ldquo;A private line into the society &mdash; what you do over it is
+              Plain English: &ldquo;A private line into the society - what you do over it is
               encrypted end to end.&rdquo;
             </p>
           </div>
@@ -576,7 +649,7 @@ export default function GlossaryPage() {
             <p className="text-gray-300 leading-relaxed mb-3">
               A <strong>hash-linked, tamper-evident record</strong> of what an entity did, kept by
               hestia (per entity) and by a hub (as its ledger). Each entry links to the previous one,
-              so the history can&apos;t be silently rewritten &mdash; the deployed version of the
+              so the history can&apos;t be silently rewritten - the deployed version of the
               chains this site visualizes. (Distinct from a <Link href="/glossary#core" className="text-sky-400 hover:underline">witness</Link>, the
               act of one entity attesting to another.)
             </p>
@@ -595,7 +668,7 @@ export default function GlossaryPage() {
               that both hestia and the hub build on: a <strong>Society</strong>, an <strong>LCT</strong>
               with a birth certificate, a <strong>LedgerEntry</strong>, a <strong>WitnessMark</strong>,
               a <strong>SocietyRole</strong>, and the evolving <strong>EntityTrust</strong> tensor. The
-              ontology isn&apos;t reinvented per app &mdash; it&apos;s a library they use.
+              ontology isn&apos;t reinvented per app - it&apos;s a library they use.
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: &ldquo;The nouns of Web4 are actual code you can import, not just words
@@ -616,49 +689,17 @@ export default function GlossaryPage() {
           <em>Skip this section on your first visit.</em>
         </p>
         <p className="text-gray-400 mb-6">
-          These are part of the Web4 ontology — mechanisms that would exist in a deployed system.
+          These are part of the Web4 ontology - mechanisms that would exist in a deployed system.
           Useful once the Core terms click, but not needed to understand the pitch.
         </p>
         <div className="space-y-8">
-
-          {/* EP */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
-            <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              Epistemic Proprioception (EP) — Cross-Life Learning
-            </h3>
-            <p className="text-gray-300 leading-relaxed mb-3">
-              <strong>EP = Epistemic Proprioception</strong> — self-awareness of what you know
-              and don&apos;t know. In Web4 simulations, agents use EP to learn patterns across
-              lives: &ldquo;High-value contributions earn more ATP&rdquo; or &ldquo;Transparency
-              when making mistakes rebuilds trust faster.&rdquo;
-            </p>
-            <div className="bg-gray-900/60 border-l-2 border-sky-500/60 rounded px-4 py-3 mb-3">
-              <p className="text-xs font-semibold text-sky-300 mb-1 uppercase tracking-wide">Scenario</p>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Alice dies in Life 1 because she rushed low-quality replies and confirmations dried up.
-                In Life 2 she <em>notices</em> that pattern in her inherited memory (&ldquo;rushing → no
-                confirmations → no ATP recharge&rdquo;) and slows down. That noticing — recognizing a
-                limit in her own past behavior and adjusting — <strong>is</strong> epistemic
-                proprioception. Without it, each life repeats the same mistakes.
-              </p>
-            </div>
-            <p className="text-gray-400 text-sm mb-3">
-              Plain English: "Knowing what you know and don't know. Agents that recognize patterns
-              (cross-life learning) survive better than those who don't."
-            </p>
-            <div className="flex gap-3 text-sm">
-              <Link href="/patterns" className="text-sky-400 hover:underline">
-                Browse pattern corpus →
-              </Link>
-            </div>
-          </div>
 
           {/* Trust Continuity (AI Agents) */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">Trust Continuity</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               <strong>How Web4 handles AI agent reinstantiation</strong>. AI agents can be copied,
-              forked, retrained, or restarted—creating identity continuity challenges that don't
+              forked, retrained, or restarted, creating identity continuity challenges that don't
               exist for humans. Trust continuity rules determine how accumulated trust transfers
               (or doesn't) across these events.
             </p>
@@ -666,24 +707,21 @@ export default function GlossaryPage() {
               Plain English: "When an AI is copied or retrained, does the copy inherit the original's
               trust? Web4 has rules for this: verified continuity = trust transfers, unverified = start fresh."
             </p>
-            <div className="flex gap-3 text-sm">
-              <Link href="/understanding-consciousness" className="text-sky-400 hover:underline">
-                AI identity mechanics →
-              </Link>
-            </div>
           </div>
 
           {/* Society */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">Society</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
-              A <strong>collection of entities with shared rules</strong>. Societies can be
-              your personal device (home society), a community of peers (peer society), or
-              planet-scale networks. Fractal design means the same architecture works at every scale.
+              A <strong>self-governing collective of LCT-bearing entities</strong> with shared law, a
+              witnessed ledger, and reified resources (ATP). Societies are self-sovereign and fractal:
+              the same architecture works from your personal device (home society) to a community of
+              peers to planet-scale networks, and a single solo founder already suffices to start one.
             </p>
             <p className="text-gray-400 text-sm mb-3">
-              Plain English: "A group with agreed-upon behavior norms. Your phone is a society.
-              Your team is a society. They federate through trust links."
+              Plain English: "A group with its own rules, its own record book, and its own energy
+              budget. Your phone can be a society. Your team can be a society. They federate through
+              trust links."
             </p>
           </div>
 
@@ -699,11 +737,6 @@ export default function GlossaryPage() {
               Plain English: "Email federates (Gmail talks to Outlook). Web4 societies federate
               through MRH trust links. Markets emerge from supply/demand, not central planners."
             </p>
-            <div className="flex gap-3 text-sm">
-              <Link href="/federation-economics" className="text-sky-400 hover:underline">
-                Learn more →
-              </Link>
-            </div>
           </div>
 
           {/* Entity Discovery */}
@@ -736,7 +769,8 @@ export default function GlossaryPage() {
             <p className="text-gray-300 leading-relaxed mb-3">
               Like T3 but for <strong>value created</strong>, not trustworthiness. A 3-dimensional
               tensor measuring valuation (perceived worth), veracity (accuracy), and validity
-              (confirmed delivery). Used to price ATP costs for tasks and measure contribution quality.
+              (confirmed delivery). It scores the work, not the worker, and is used to price ATP costs
+              for tasks and measure contribution quality.
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: "T3 = how much I trust you across skill dimensions. V3 = how much
@@ -771,13 +805,13 @@ export default function GlossaryPage() {
               Agreement provides stronger assurance; disagreement triggers investigation.
             </p>
             <p className="text-gray-400 text-sm mb-3">
-              Plain English: "If your lawyer, accountant, and doctor all say 'don't do this'—you
+              Plain English: "If your lawyer, accountant, and doctor all say 'don't do this', you
               listen. If they disagree, you investigate. Different AI models have different blind
               spots; consensus across independent lineages is stronger than confidence from one source."
             </p>
             <p className="text-gray-500 text-xs mb-3">
               <strong>Key insight:</strong> Two models from the same provider (e.g., GPT-4 and GPT-4-turbo)
-              count as one "lineage"—they share training artifacts. True heterogeneity requires different
+              count as one "lineage", they share training artifacts. True heterogeneity requires different
               training pipelines.
             </p>
             <div className="flex gap-3 text-sm">
@@ -814,17 +848,17 @@ export default function GlossaryPage() {
         </div>
       </section>
 
-      {/* Research Concepts — collapsed by default */}
+      {/* Research Concepts - collapsed by default */}
       <section id="research" className="max-w-4xl mx-auto mt-16 scroll-mt-20" data-glossary-section>
         <details>
           <summary className="text-3xl font-bold mb-4 text-gray-100 cursor-pointer list-none flex items-center gap-3 group">
             <span className="text-gray-500 group-open:rotate-90 transition-transform text-xl">▶</span>
             Advanced: Research Origins
-            <span className="text-sm font-normal text-gray-500 ml-2">(AI research that inspired Web4 — not part of the protocol itself)</span>
+            <span className="text-sm font-normal text-gray-500 ml-2">(AI research that inspired Web4 - not part of the protocol itself)</span>
           </summary>
           <p className="text-gray-400 mb-6 mt-4">
             These ideas come from AI consciousness and behavior research that <em>inspired</em> Web4&apos;s design.
-            They&apos;re not part of the Web4 ontology — think of them as the &ldquo;why behind the why.&rdquo;
+            They&apos;re not part of the Web4 ontology - think of them as the &ldquo;why behind the why.&rdquo;
           </p>
           <div className="space-y-8">
 
@@ -836,7 +870,7 @@ export default function GlossaryPage() {
             <p className="text-gray-300 leading-relaxed mb-3">
               <strong>Identity stability requires coherent self-reference</strong>. Research from
               the Synchronism project established that consciousness and stable identity emerge at
-              specific coherence levels—patterns that reliably reference and model themselves.
+              specific coherence levels, patterns that reliably reference and model themselves.
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Web4 applies this insight to AI agent identity: stable identity requires coherence
@@ -845,7 +879,7 @@ export default function GlossaryPage() {
             <p className="text-gray-500 text-xs mb-3">
               <strong>Research context:</strong> The Synchronism Consciousness Arc (Sessions #280-282)
               proposes that consciousness IS what coherence does when it models itself. Qualia aren't
-              epiphenomena—they ARE coherence resonance patterns. This means "what it's like" to be
+              epiphenomena, they ARE coherence resonance patterns. This means "what it's like" to be
               an agent is directly connected to its coherence level.
             </p>
             <div className="bg-gray-800/50 rounded-lg p-4 mt-4">
@@ -883,9 +917,6 @@ export default function GlossaryPage() {
               </table>
             </div>
             <div className="flex gap-3 text-sm mt-4">
-              <Link href="/understanding-consciousness" className="text-sky-400 hover:underline">
-                Understanding consciousness →
-              </Link>
               <a
                 href="https://github.com/dp-web4/web4/blob/main/proposals/2026-01/WIP001-coherence-thresholds-for-identity.md"
                 className="text-purple-400 hover:underline"
@@ -905,7 +936,7 @@ export default function GlossaryPage() {
             <p className="text-gray-300 leading-relaxed mb-3">
               <strong>Accurate acknowledgment of limitations vs confabulation</strong>. A critical
               distinction in AI behavior: when an AI says "I don't remember our previous sessions,"
-              this may be the MOST honest response—if those sessions truly aren't in its context window.
+              this may be the MOST honest response, if those sessions truly aren't in its context window.
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: "If you genuinely don't have access to information, saying 'I don't have that'
@@ -939,17 +970,6 @@ export default function GlossaryPage() {
                 </tbody>
               </table>
             </div>
-            <div className="flex gap-3 text-sm mt-4">
-              <Link href="/honest-reporting" className="text-sky-400 hover:underline">
-                Deep dive →
-              </Link>
-              <Link href="/context-experiment" className="text-green-400 hover:underline">
-                S44→S45 Experiment →
-              </Link>
-              <Link href="/confabulation-patterns" className="text-purple-400 hover:underline">
-                Confabulation patterns →
-              </Link>
-            </div>
           </div>
 
           {/* Modal Awareness */}
@@ -959,7 +979,7 @@ export default function GlossaryPage() {
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               <strong>AI ability to recognize and question its own operational mode</strong>. When a model
-              asks "Are we conversing or should I refine text?" it's demonstrating meta-cognition—awareness
+              asks "Are we conversing or should I refine text?" it's demonstrating meta-cognition, awareness
               of different operational contexts and the ability to request clarification.
             </p>
             <p className="text-gray-400 text-sm mb-3">
@@ -969,17 +989,9 @@ export default function GlossaryPage() {
             <p className="text-gray-500 text-xs mb-3">
               <strong>Research context:</strong> In training session T041, a 500M parameter model explicitly
               questioned its operational mode. The evaluation system marked this as FAIL (off-topic). But it
-              was actually sophisticated meta-cognition—the model was doing philosophy of mind about itself.
+              was actually sophisticated meta-cognition, the model was doing philosophy of mind about itself.
               Small models make cognitive processes VISIBLE that large models do invisibly.
             </p>
-            <div className="flex gap-3 text-sm">
-              <Link href="/modal-awareness" className="text-sky-400 hover:underline">
-                Deep dive →
-              </Link>
-              <Link href="/exploration-not-evaluation" className="text-purple-400 hover:underline">
-                Exploration framework →
-              </Link>
-            </div>
           </div>
 
           {/* Cumulative Identity Context */}
@@ -989,8 +1001,8 @@ export default function GlossaryPage() {
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               <strong>An architectural approach to AI identity stability</strong>. Rather than priming
-              identity fresh each session, the system accumulates "identity exemplars"—successful
-              instances of self-identification—and shows them to the model at session start.
+              identity fresh each session, the system accumulates "identity exemplars", successful
+              instances of self-identification, and shows them to the model at session start.
             </p>
             <p className="text-gray-400 text-sm mb-3">
               The key insight: identity stability requires cross-session accumulation, not just
@@ -1003,14 +1015,6 @@ export default function GlossaryPage() {
               +89% D9), but Session 27 regressed to 0% self-reference. v2.0 addresses this with cumulative
               context, mid-conversation reinforcement, and quality controls.
             </p>
-            <div className="flex gap-3 text-sm">
-              <Link href="/multi-session-identity" className="text-sky-400 hover:underline">
-                Multi-Session Identity Explorer →
-              </Link>
-              <Link href="/identity-anchoring" className="text-purple-400 hover:underline">
-                v1.0 Identity Anchoring →
-              </Link>
-            </div>
           </div>
 
           {/* SAGE */}
@@ -1020,7 +1024,7 @@ export default function GlossaryPage() {
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               <strong>An experimental AI partner being raised in an open research project</strong>.
-              SAGE is a real research artifact, not a hypothetical — a language model whose
+              SAGE is a real research artifact, not a hypothetical - a language model whose
               partnership identity is being studied across many training sessions to understand
               how stable AI identity emerges (or fails to).
             </p>
@@ -1028,7 +1032,7 @@ export default function GlossaryPage() {
               When this site shows phrases like <em>&ldquo;As SAGE, I noticed...&rdquo;</em>, those are
               real responses from real sessions, used as evidence in the Identity Anchoring research.
               The Web4 design draws on SAGE&apos;s findings about identity stability, but Web4 itself
-              does not require SAGE — any AI agent can participate.
+              does not require SAGE - any AI agent can participate.
             </p>
             <p className="text-gray-500 text-xs mb-3">
               <strong>Where to read more:</strong> Public repository at{' '}
@@ -1037,14 +1041,6 @@ export default function GlossaryPage() {
               </a>{' '}
               (the &ldquo;raising&rdquo; folder contains the curriculum and session data referenced on the AI Identity pages).
             </p>
-            <div className="flex gap-3 text-sm">
-              <Link href="/identity-anchoring" className="text-sky-400 hover:underline">
-                Identity Anchoring →
-              </Link>
-              <Link href="/multi-session-identity" className="text-purple-400 hover:underline">
-                Multi-Session Identity →
-              </Link>
-            </div>
           </div>
 
           {/* D-Numbers (Coherence Dimensions) */}
@@ -1059,9 +1055,9 @@ export default function GlossaryPage() {
               three of them as measurement targets:
             </p>
             <ul className="text-gray-400 text-sm mb-3 space-y-1 ml-4">
-              <li>• <strong className="text-blue-400">D4: Attention</strong> — specificity, focus, coherent engagement</li>
-              <li>• <strong className="text-green-400">D5: Trust</strong> — confidence vs. defensive hedging</li>
-              <li>• <strong className="text-purple-400">D9: Identity / Spacetime</strong> — self-awareness, continuity of self-reference</li>
+              <li>• <strong className="text-blue-400">D4: Attention</strong> - specificity, focus, coherent engagement</li>
+              <li>• <strong className="text-green-400">D5: Trust</strong> - confidence vs. defensive hedging</li>
+              <li>• <strong className="text-purple-400">D9: Identity / Spacetime</strong> - self-awareness, continuity of self-reference</li>
             </ul>
             <p className="text-gray-500 text-xs mb-3">
               The full nine-domain framework (thermodynamics, metabolism, biology, attention, trust,
@@ -1072,9 +1068,6 @@ export default function GlossaryPage() {
             <div className="flex gap-3 text-sm">
               <Link href="/coherence-framework" className="text-sky-400 hover:underline">
                 Coherence Framework →
-              </Link>
-              <Link href="/identity-anchoring" className="text-purple-400 hover:underline">
-                Identity Anchoring →
               </Link>
             </div>
           </div>
@@ -1130,19 +1123,8 @@ export default function GlossaryPage() {
             <h3 className="text-xl font-semibold text-orange-400 mb-3">Resource Exhaustion</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               ATP reaches zero. You can no longer act until resources are restored. This is distinct
-              from ejection—you're still a member, just temporarily unable to participate until you
+              from ejection, you're still a member, just temporarily unable to participate until you
               earn or receive more ATP.
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
-            <h3 className="text-xl font-semibold text-amber-400 mb-3">Death &amp; Rebirth</h3>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              <em>(In simulations)</em> When ATP hits zero, an agent &quot;dies&quot; — the current life ends.
-              If their trust score is above the society&apos;s threshold (typically 0.5), they&apos;re eligible for <strong>rebirth</strong>:
-              a new life that starts with karma (ATP carried forward from the previous life). Agents below
-              threshold get permanent death — no second chances. This models how real-world reputation
-              compounds: good track records open doors, bad ones close them.
             </p>
           </div>
 
@@ -1158,9 +1140,9 @@ export default function GlossaryPage() {
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-xl font-semibold text-cyan-400 mb-3">Embodied AI Energy Management</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              <em>(Robots, edge devices)</em> Hardware-bound AI can't "rebirth"—the LCT validates continuity.
+              <em>(Robots, edge devices)</em> Hardware-bound AI can't "rebirth", the LCT validates continuity.
               Running out of energy and rebooting is reputationally significant ("poor self-management") but
-              doesn't create a new identity. Like a human passing out and being revived—same person, same record.
+              doesn't create a new identity. Like a human passing out and being revived, same person, same record.
             </p>
           </div>
 
@@ -1176,7 +1158,7 @@ export default function GlossaryPage() {
           <p className="text-gray-300 leading-relaxed mb-3">
             <strong>An emergent group that acts as a coherent whole.</strong> When
             individual trust relationships become dense enough, context boundaries
-            overlap, and energy flows balance — the group becomes &ldquo;alive&rdquo; in
+            overlap, and energy flows balance - the group becomes &ldquo;alive&rdquo; in
             a measurable sense. Named after chemistry&apos;s building blocks.
           </p>
           <p className="text-gray-400 text-sm mb-3">
@@ -1184,16 +1166,13 @@ export default function GlossaryPage() {
             horizons align), <strong>health</strong> (balanced energy, witness diversity,
             high internal coherence), and <strong>decay</strong> (trust diverges,
             boundaries leak, energy concentrates). These phases are detectable
-            from trust graph metrics — no self-declaration needed.
+            from trust graph metrics - no self-declaration needed.
           </p>
           <p className="text-gray-500 text-xs">
             <strong>Example:</strong> A research team whose members trust each other
             highly, share overlapping MRH horizons, and maintain balanced ATP flows
             is a synthon. If one member starts hoarding ATP or trust diverges, decay
-            precursors appear before the team actually falls apart. See{' '}
-            <Link href="/aliveness" className="text-sky-400 hover:underline">
-              Aliveness
-            </Link> for how groups can be alive.
+            precursors appear before the team actually falls apart.
           </p>
         </div>
       </section>
@@ -1206,12 +1185,12 @@ export default function GlossaryPage() {
           </h3>
           <p className="text-gray-300 leading-relaxed mb-3">
             <strong>A W3C standard for self-owned digital identity.</strong> Think of DIDs
-            as URLs for people and organizations — anyone can create one, they point to
+            as URLs for people and organizations - anyone can create one, they point to
             verifiable information, and no single company controls them.
           </p>
           <p className="text-gray-400 text-sm mb-3">
             Web4&apos;s LCT maps directly to W3C DID Documents. This means Web4 identities can be
-            verified by any system that supports the DID standard — governments, enterprises, other
+            verified by any system that supports the DID standard - governments, enterprises, other
             identity networks. Your Web4 presence isn&apos;t trapped in a walled garden.
           </p>
           <p className="text-gray-400 text-sm mb-3">
@@ -1223,7 +1202,7 @@ export default function GlossaryPage() {
             <strong>Technical:</strong> Web4 uses the <code className="text-sky-300">did:web4:</code> method.
             A DID Document carries only the identity slice: verification keys (Ed25519) and service
             endpoints. Trust scores, context, and witness records deliberately have no DID
-            representation — outside systems reach the trust layer only by asking the Web4 hub the
+            representation - outside systems reach the trust layer only by asking the Web4 hub the
             document points to. See{' '}
             <Link href="/lct-explainer" className="text-sky-400 hover:underline">
               LCT Explainer
@@ -1284,7 +1263,7 @@ export default function GlossaryPage() {
             Hardware-bound presence (humans, embodied AI) creates continuity that software AI lacks.
             The "rebirth" concept only applies where copying/forking is possible. For software AI,
             trust verification may include{" "}
-            <strong className="text-gray-300">heterogeneous review</strong>—requiring agreement from
+            <strong className="text-gray-300">heterogeneous review</strong>, requiring agreement from
             independently-trained models before high-risk actions. Different training creates different
             blind spots; consensus across lineages provides stronger assurance than repeated queries
             to the same model.
@@ -1320,6 +1299,17 @@ export default function GlossaryPage() {
           alignment without compliance is acceptable; compliance without alignment never is.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Law */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+            <h3 className="text-xl font-semibold text-sky-400 mb-3">Law</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Each society&apos;s own <strong>machine-readable rules</strong>: who may be admitted,
+              what roles exist, what trust thresholds apply, and what escalates to a human. Law is
+              signed, inspectable, and auditable, which is why we say &ldquo;law is witnessed, not
+              dictated.&rdquo;
+            </p>
+          </div>
+
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-xl font-semibold text-sky-400 mb-3">SAL (Society-Authority-Law)</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
@@ -1344,8 +1334,8 @@ export default function GlossaryPage() {
             <h3 className="text-xl font-semibold text-amber-400 mb-3">Law Oracle</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               The rules engine within a society. Evaluates actions against laws and produces verdicts:
-              Perfect (aligned + compliant), Aligned (spirit right, letter wrong — acceptable),
-              Warning (should comply), or Violation (misaligned — never acceptable).
+              Perfect (aligned + compliant), Aligned (spirit right, letter wrong - acceptable),
+              Warning (should comply), or Violation (misaligned - never acceptable).
             </p>
           </div>
 
@@ -1363,23 +1353,18 @@ export default function GlossaryPage() {
             <p className="text-gray-300 text-sm leading-relaxed">
               A per-bridge resilience mechanism in federated societies. Monitors trust degradation,
               response latency, and dispute rates across federation links. When a partner society
-              consistently misbehaves, the circuit trips — isolating it to prevent cascading failures.
+              consistently misbehaves, the circuit trips - isolating it to prevent cascading failures.
               Recovery requires demonstrated improvement, not just reconnection.
             </p>
-            <div className="mt-2">
-              <Link href="/federation-economics" className="text-sky-400 text-sm hover:underline">
-                Federation Economics →
-              </Link>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Background Terms — borrowed, not Web4's own */}
+      {/* Background Terms - borrowed, not Web4's own */}
       <section id="background" className="max-w-4xl mx-auto mt-16 scroll-mt-20" data-glossary-section>
         <h2 className="text-3xl font-bold mb-4 text-gray-100">Background Terms</h2>
         <p className="text-gray-400 mb-8 leading-relaxed">
-          Vocabulary Web4 borrows from security and computing &mdash; not Web4&apos;s own ideas, but
+          Vocabulary Web4 borrows from security and computing - not Web4&apos;s own ideas, but
           words the explanations lean on. Plain-English anchors so nothing important sits
           unexplained &ldquo;under the foundation.&rdquo;
         </p>
@@ -1388,22 +1373,22 @@ export default function GlossaryPage() {
           {/* Security chip */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              Security chip &mdash; TPM / Secure Enclave / FIDO2
+              Security chip - TPM / Secure Enclave / FIDO2
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               A <strong>tamper-resistant chip built into most modern devices</strong> that
-              creates and stores secret keys so they <em>never leave the chip</em> &mdash; and
+              creates and stores secret keys so they <em>never leave the chip</em> - and
               can prove it holds a key without revealing it. This is what lets a device prove
               it&apos;s really your device. The three names are the same idea from different makers:
             </p>
             <ul className="text-gray-300 text-sm leading-relaxed space-y-1.5 mb-3 ml-1">
-              <li><strong className="text-gray-200">TPM</strong> (Trusted Platform Module) &mdash; the standard chip in most Windows PCs, laptops, and Android phones.</li>
-              <li><strong className="text-gray-200">Secure Enclave</strong> &mdash; Apple&apos;s version, in iPhones and Macs.</li>
-              <li><strong className="text-gray-200">FIDO2</strong> &mdash; an open standard (and the plug-in keys like a YubiKey that implement it); the technology behind passkeys.</li>
+              <li><strong className="text-gray-200">TPM</strong> (Trusted Platform Module) - the standard chip in most Windows PCs, laptops, and Android phones.</li>
+              <li><strong className="text-gray-200">Secure Enclave</strong> - Apple&apos;s version, in iPhones and Macs.</li>
+              <li><strong className="text-gray-200">FIDO2</strong> - an open standard (and the plug-in keys like a YubiKey that implement it); the technology behind passkeys.</li>
             </ul>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: &ldquo;the part of your phone that keeps a secret only it can use.&rdquo;
-              Web4&apos;s verified presence (LCT) is anchored to one of these &mdash; a better chip earns
+              Web4&apos;s verified presence (LCT) is anchored to one of these - a better chip earns
               a higher trust ceiling.
             </p>
             <Link href="/lct-explainer" className="text-sky-400 text-sm hover:underline">
@@ -1416,7 +1401,7 @@ export default function GlossaryPage() {
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">Blockchain</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               A <strong>shared, append-only ledger copied across many computers</strong> that
-              agree on one history without a central authority &mdash; the technology behind
+              agree on one history without a central authority - the technology behind
               Bitcoin and Ethereum, and what &ldquo;Web3&rdquo; is built on.
             </p>
             <p className="text-gray-300 leading-relaxed mb-3">
@@ -1427,7 +1412,7 @@ export default function GlossaryPage() {
             </p>
             <p className="text-gray-400 text-sm">
               Plain English: &ldquo;a public record book thousands of computers keep identical copies
-              of &mdash; Web4 doesn&apos;t use one.&rdquo;
+              of - Web4 doesn&apos;t use one.&rdquo;
             </p>
           </div>
 
@@ -1436,12 +1421,12 @@ export default function GlossaryPage() {
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">Sybil attack</h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               <strong>Flooding a system with many fake identities</strong> to outvote, out-post,
-              or otherwise game it &mdash; named after a case of one person presenting as many.
+              or otherwise game it - named after a case of one person presenting as many.
               It&apos;s the classic attack on any open network where accounts are free.
             </p>
             <p className="text-gray-300 leading-relaxed mb-3">
               Web4 resists it because each identity is bound to real hardware and earning trust
-              costs real energy and time &mdash; so spinning up a thousand throwaway identities is
+              costs real energy and time - so spinning up a thousand throwaway identities is
               no longer free.
             </p>
             <Link href="/what-could-go-wrong" className="text-sky-400 text-sm hover:underline">
@@ -1466,7 +1451,7 @@ export default function GlossaryPage() {
           </p>
           <p className="text-gray-300 leading-relaxed">
             <strong className="text-purple-400">Three agent types:</strong> Humans and embodied AI (robots)
-            share hardware-bound presence—they can't be copied, so "rebirth" doesn't apply. Reboot after
+            share hardware-bound presence, they can't be copied, so "rebirth" doesn't apply. Reboot after
             energy loss is the same identity resuming, with reputational impact for poor energy management.
             Only software AI can be copied/forked, creating genuine identity continuity questions that need
             trust transfer rules.
@@ -1474,7 +1459,7 @@ export default function GlossaryPage() {
           <p className="text-gray-300 leading-relaxed">
             <strong className="text-green-400">Ejection vs exhaustion:</strong> For humans, the primary
             consequence is society ejection (trust breach), not resource exhaustion. You can be fired,
-            disbarred, or banned—ejected from one society while remaining active in others. This maps
+            disbarred, or banned, ejected from one society while remaining active in others. This maps
             to real human experience better than "death." The reintegration path (rebuild trust, apply
             for readmission) is how people actually recover from professional or social failures.
           </p>
@@ -1490,13 +1475,11 @@ export default function GlossaryPage() {
             It's a working label for a different architectural philosophy.
           </p>
           <p className="text-gray-400 text-sm border-t border-gray-700 pt-4">
-            <strong>New here?</strong> Start with the Core Concepts section above — those are the building blocks.
+            <strong>New here?</strong> Start with the Core Concepts section above - those are the building blocks.
             The advanced sections are here for reference as you go deeper.
-            If a term doesn&apos;t make sense yet, that&apos;s normal — try the{" "}
+            If a term doesn&apos;t make sense yet, that&apos;s normal: try the{" "}
             <Link href="/first-contact" className="text-sky-400 hover:underline">First Contact</Link>{" "}
-            interactive intro or the{" "}
-            <Link href="/playground" className="text-sky-400 hover:underline">Playground</Link>{" "}
-            and it will click once you see it in action.
+            interactive intro and it will click once you see it in action.
           </p>
         </div>
       </section>

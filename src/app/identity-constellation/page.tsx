@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedConcepts from "@/components/RelatedConcepts";
 import ExplorerNav from "@/components/ExplorerNav";
@@ -38,6 +39,12 @@ export default function IdentityConstellationPage() {
         <p className="text-xl text-gray-400 max-w-2xl mx-auto">
           Why Web4 identity gets <span className="font-bold text-sky-400">stronger</span> with more devices,
           not weaker
+        </p>
+        <p className="text-sm text-gray-500 max-w-2xl mx-auto mt-4">
+          One entity across many devices: a constellation of hardware-bound keys forms a single witnessed
+          identity. This is how{" "}
+          <Link href="/hestia" className="text-sky-400 hover:underline">hestia</Link>{" "}
+          handles multi-device identity.
         </p>
       </div>
 
@@ -330,7 +337,8 @@ export default function IdentityConstellationPage() {
             <div>
               <h3 className="font-bold text-gray-100">Trust Through Witnesses</h3>
               <p className="text-gray-300">
-                The more devices witnessing your identity, the higher your trust score.
+                The more devices witnessing your identity, the higher your{" "}
+                <Link href="/trust-tensor" className="text-sky-400 hover:underline">trust score</Link>.
                 Web4 societies can see: &ldquo;This identity has been witnessed by 5 independent hardware anchors over 2 years.&rdquo;
               </p>
             </div>
@@ -427,16 +435,22 @@ export default function IdentityConstellationPage() {
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <a
-            href="/"
-            className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-bold transition-colors"
-          >
-            ← Back to 4-Life Home
-          </a>
-          <a
             href="/lct-explainer"
             className="px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white rounded-lg font-bold transition-colors"
           >
             Learn About Identity (LCT) →
+          </a>
+          <a
+            href="/hestia"
+            className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-bold transition-colors"
+          >
+            Get an identity with Hestia →
+          </a>
+          <a
+            href="/the-standard"
+            className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-bold transition-colors"
+          >
+            Read the core standard →
           </a>
         </div>
       </div>
