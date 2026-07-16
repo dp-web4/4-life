@@ -2022,7 +2022,7 @@ export default function LCTExplainerPage() {
             <p className="text-xs text-gray-500">
               Want the cognition side - when an AI can be trusted to act on its own judgment
               versus when it confabulates?{" "}
-              <Link href="/ai-agents" className="text-purple-300 hover:text-purple-200 underline">
+              <Link href="/why-web4" className="text-purple-300 hover:text-purple-200 underline">
                 See AI Agents in Web4
               </Link>.
             </p>
