@@ -9,18 +9,18 @@ import TermTooltip from "@/components/TermTooltip";
 export const metadata = {
   title: "What Could Go Wrong | 4-Life",
   description:
-    "Honest assessment of Web4 failure modes, unsolved problems, and real risks. Every system has weaknesses — here are ours.",
+    "Honest assessment of Web4 failure modes, unsolved problems, and real risks. Every system has weaknesses - here are ours.",
 };
 
 /**
- * What Could Go Wrong — Honest failure mode analysis for non-technical visitors
+ * What Could Go Wrong - Honest failure mode analysis for non-technical visitors
  *
  * Visitor feedback (Feb 21): "a dedicated 'What Could Go Wrong' page covering
  * adversarial attacks, economic failures, and edge cases would build more confidence."
  *
- * This page complements /threat-model (security researcher audience) with
- * practical, user-facing failure modes that everyday users and builders would
- * care about. Tone: honest, not defensive. Matches the "Honest Questions"
+ * This page is the site's honest adversarial view: the practical, user-facing
+ * failure modes, attacks, and economic edge cases that everyday users and
+ * builders would care about. Tone: honest, not defensive. Matches the "Honest Questions"
  * style on /why-web4 that visitors praised.
  */
 
@@ -41,20 +41,21 @@ export default function WhatCouldGoWrongPage() {
           What Could Go Wrong
         </h1>
         <p className="text-xl text-gray-300 leading-relaxed mb-4">
-          Every system has failure modes. Hiding them doesn&apos;t make them go away &mdash;
-          it just means you discover them at the worst time. Here are the real risks,
+          Every system has failure modes. Hiding them doesn&apos;t make them go away.
+          It just means you discover them at the worst time. Here are the real risks,
           honest assessments, and what&apos;s genuinely unsolved.
         </p>
         <p className="text-gray-400 leading-relaxed mb-8">
           This page is for <strong className="text-gray-200">users and builders</strong> who want
-          to know what they&apos;re getting into. For technical security analysis
-          (attack surfaces, formal threat modeling), see the{" "}
-          <Link href="/threat-model" className="text-sky-400 hover:underline">Threat Model</Link>.
+          to know what they&apos;re getting into: the adversarial attacks, economic
+          failures, and edge cases, laid out plainly. For how the trust mechanics
+          themselves are specified, see{" "}
+          <Link href="/the-standard" className="text-sky-400 hover:underline">the Web4 standard</Link>.
         </p>
         <RiskSelector />
       </section>
 
-      {/* Acronym quick-reference — for visitors arriving on this page directly (e.g., via a skeptic's share link) */}
+      {/* Acronym quick-reference - for visitors arriving on this page directly (e.g., via a skeptic's share link) */}
       <section className="max-w-4xl mx-auto mt-8">
         <div className="bg-gray-800/40 border border-gray-700/50 rounded-lg p-4">
           <p className="text-xs uppercase tracking-wide text-gray-400 mb-3">
@@ -64,32 +65,32 @@ export default function WhatCouldGoWrongPage() {
             <div>
               <Link href="/atp-economics" className="font-semibold text-emerald-400 hover:underline">ATP</Link>{" "}
               <span className="text-gray-500">(Allocation Transfer Packets)</span>{" "}
-              <span className="text-gray-300">&mdash; energy budget; spend to act, recharge by creating value.</span>
+              <span className="text-gray-300">- energy budget; spend to act, recharge by creating value.</span>
             </div>
             <div>
               <Link href="/lct-explainer" className="font-semibold text-purple-400 hover:underline">LCT</Link>{" "}
               <span className="text-gray-500">(Linked Context Token)</span>{" "}
-              <span className="text-gray-300">&mdash; hardware-bound digital identity, witnessed by your devices.</span>
+              <span className="text-gray-300">- hardware-bound digital identity, witnessed by your devices.</span>
             </div>
             <div>
               <Link href="/trust-neighborhood" className="font-semibold text-cyan-400 hover:underline">MRH</Link>{" "}
               <span className="text-gray-500">(Markov Relevancy Horizon)</span>{" "}
-              <span className="text-gray-300">&mdash; your trust neighborhood; context decays with distance.</span>
+              <span className="text-gray-300">- your trust neighborhood; context decays with distance.</span>
             </div>
             <div>
               <Link href="/glossary" className="font-semibold text-sky-400 hover:underline">SAL</Link>{" "}
               <span className="text-gray-500">(Society-Authority-Law)</span>{" "}
-              <span className="text-gray-300">&mdash; Web4&apos;s governance framework: societies, authority roles, enforceable laws.</span>
+              <span className="text-gray-300">- Web4&apos;s governance framework: societies, authority roles, enforceable laws.</span>
             </div>
             <div>
               <Link href="/trust-tensor" className="font-semibold text-blue-400 hover:underline">T3</Link>{" "}
               <span className="text-gray-500">(Trust Tensor)</span>{" "}
-              <span className="text-gray-300">&mdash; 3-dim trust: Talent, Training, Temperament.</span>
+              <span className="text-gray-300">- 3-dim trust: Talent, Training, Temperament.</span>
             </div>
             <div>
               <Link href="/trust-tensor" className="font-semibold text-blue-400 hover:underline">V3</Link>{" "}
               <span className="text-gray-500">(Value Tensor)</span>{" "}
-              <span className="text-gray-300">&mdash; what you produce: Valuation, Veracity, Validity.</span>
+              <span className="text-gray-300">- what you produce: Valuation, Veracity, Validity.</span>
             </div>
           </div>
         </div>
@@ -134,7 +135,7 @@ export default function WhatCouldGoWrongPage() {
             <p>
               <strong className="text-gray-100">What mitigates it:</strong> Web4 is designed to
               provide value even in small communities. A single organization could run a Web4
-              trust network internally &mdash; spam-free collaboration, verifiable contributions,
+              trust network internally - spam-free collaboration, verifiable contributions,
               earned reputation. The value starts local and grows outward.
             </p>
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
@@ -161,7 +162,7 @@ export default function WhatCouldGoWrongPage() {
             <p>
               <strong className="text-gray-100">The risk:</strong> Web4 identity requires hardware
               with security chips (TPM, Secure Enclave). These chips are made by a handful of
-              companies &mdash; Intel, Apple, Google, Qualcomm. If identity depends on their hardware,
+              companies - Intel, Apple, Google, Qualcomm. If identity depends on their hardware,
               haven&apos;t we just replaced platform gatekeepers with hardware gatekeepers?
             </p>
             <p>
@@ -189,7 +190,7 @@ export default function WhatCouldGoWrongPage() {
                 Heads, and Tianocore are auditable boot chains that don&apos;t require trusting
                 vendor binary blobs. Combined with open security modules (RISC-V cores with
                 published microcode), they offer an end-to-end stack a society can verify itself.
-                This is a <em>path</em>, not a finished product &mdash; the open-firmware ecosystem
+                This is a <em>path</em>, not a finished product - the open-firmware ecosystem
                 is small relative to the proprietary one.
               </li>
               <li>
@@ -202,7 +203,7 @@ export default function WhatCouldGoWrongPage() {
                 <strong className="text-gray-100">Attestation revocation transparency
                 (CT-style public logs).</strong> Modeled on Certificate Transparency: every
                 attestation key issuance and revocation is appended to a public log. A vendor
-                quietly revoking keys to censor a population can&apos;t do so invisibly &mdash;
+                quietly revoking keys to censor a population can&apos;t do so invisibly -
                 the log makes the action observable, which is the precondition for any response.
               </li>
             </ul>
@@ -210,7 +211,7 @@ export default function WhatCouldGoWrongPage() {
               <strong>Honest assessment:</strong> This is a real concern with partial mitigation.
               Multi-vendor support helps but doesn&apos;t eliminate the risk. The entire
               smartphone ecosystem runs on a duopoly (Apple/Google) and Web4 inherits
-              that concentration. Even &ldquo;open&rdquo; standards can be captured &mdash;
+              that concentration. Even &ldquo;open&rdquo; standards can be captured -
               USB, Bluetooth, and Wi-Fi are all open specifications controlled by industry
               consortia with corporate membership fees. Web4&apos;s attestation layer faces
               the same dynamic. The mechanisms above raise the cost of capture and make it
@@ -234,13 +235,13 @@ export default function WhatCouldGoWrongPage() {
           <div className="text-gray-300 leading-relaxed space-y-3">
             <p>
               <strong className="text-gray-100">The risk:</strong> Web4 uses a 0.5 trust threshold as
-              the minimum bar for continued participation. Fall below it and you&apos;re out &mdash;
+              the minimum bar for continued participation. Fall below it and you&apos;re out -
               your agent &ldquo;dies&rdquo; and must be reborn with reduced resources. But what if
               the scoring is wrong? What if legitimate users get flagged?
             </p>
             <p>
               <strong className="text-gray-100">Why it&apos;s real:</strong> Every automated system
-              produces false positives. Credit scores, content moderation, spam filters &mdash;
+              produces false positives. Credit scores, content moderation, spam filters -
               they all incorrectly flag legitimate people. A system that can &ldquo;kill&rdquo; your
               digital identity based on behavioral scoring could ruin someone&apos;s online life
               for an algorithmic mistake.
@@ -250,7 +251,7 @@ export default function WhatCouldGoWrongPage() {
               multi-dimensional (Talent, Training, Temperament) and role-specific, so a bad score
               in one context doesn&apos;t affect others. The coherence index checks behavioral
               consistency across four dimensions, making false positives less likely than
-              single-score systems. And rebirth means you get another chance &mdash; you&apos;re not
+              single-score systems. And rebirth means you get another chance - you&apos;re not
               permanently banned, just set back.
             </p>
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
@@ -258,7 +259,7 @@ export default function WhatCouldGoWrongPage() {
               (SAL-level multi-tier process with witness panels, evidence phases, and escalation
               to federation), but it hasn&apos;t been tested with real humans. The simulations
               assume perfect scoring; reality won&apos;t be so clean. See the{" "}
-              <Link href="/aliveness" className="text-sky-400 hover:underline">Aliveness</Link> page
+              <Link href="/karma-consequences" className="text-sky-400 hover:underline">Karma &amp; Consequences</Link> page
               for how appeals work.
             </p>
           </div>
@@ -281,7 +282,7 @@ export default function WhatCouldGoWrongPage() {
               <strong className="text-gray-100">The risk:</strong> <TermTooltip term="ATP" /> transfers cost 5%, so buying
               reputation at scale is expensive but not impossible. A well-funded organization could buy thousands
               of hardware devices, create thousands of identities, and slowly build legitimate-looking
-              trust across all of them &mdash; a long-game <TermTooltip term="Sybil">Sybil attack</TermTooltip> (one person pretending to be many).
+              trust across all of them - a long-game <TermTooltip term="Sybil">Sybil attack</TermTooltip> (one person pretending to be many).
             </p>
             <p>
               <strong className="text-gray-100">Why it&apos;s real:</strong> Nation-state actors and
@@ -291,7 +292,7 @@ export default function WhatCouldGoWrongPage() {
             </p>
             <p>
               <strong className="text-gray-100">What mitigates it:</strong> Coherence scoring detects
-              behavioral patterns that are hard to fake at scale &mdash; genuine users develop
+              behavioral patterns that are hard to fake at scale - genuine users develop
               organic interaction patterns that differ from coordinated bot farms. The economic
               cost is real: $500K for 1,000 identities, each needing months of activity. It&apos;s
               not impossible, but it&apos;s orders of magnitude harder than creating 1,000 email
@@ -300,7 +301,7 @@ export default function WhatCouldGoWrongPage() {
             <div className="bg-gray-800/60 border border-gray-700/50 rounded-lg p-4 my-3">
               <p className="text-gray-300 text-sm mb-2">
                 <strong className="text-gray-100">The numbers:</strong> Web4 simulations show that honest
-                strategies yield ROI of ~0.93 while Sybil strategies yield ~0.90. The margin is small — but
+                strategies yield ROI of ~0.93 while Sybil strategies yield ~0.90. The margin is small - but
                 it&apos;s consistently in favor of honest behavior. More importantly, circular energy
                 transfers (the simplest farming tactic) lose money: 30 circular transfers destroy ~150
                 ATP (energy budget) through the 5% transfer fee. It&apos;s cheaper to just do good work.
@@ -312,13 +313,13 @@ export default function WhatCouldGoWrongPage() {
                 going undetected. Two conspirators? Only 16% undetected. Three or more? Under 7%.
                 Meanwhile, the gain per conspirator <em>shrinks</em> as N grows (split the
                 spoils). The math: <strong className="text-gray-100">coalitions become unprofitable
-                at 2&ndash;3 members</strong> at current stake levels.
+                at 2-3 members</strong> at current stake levels.
               </p>
             </div>
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
               <strong>Honest assessment:</strong> Web4 raises the floor, not the ceiling. Casual
               abuse becomes uneconomical. Sophisticated, well-funded attacks remain possible.
-              This is a design trade-off, not a flaw &mdash; but users should know the limit.
+              This is a design trade-off, not a flaw - but users should know the limit.
             </p>
           </div>
         </div>
@@ -348,7 +349,7 @@ export default function WhatCouldGoWrongPage() {
             </p>
             <p>
               <strong className="text-gray-100">What mitigates it:</strong> Web4 supports{" "}
-              <Link href="/identity-constellation" className="text-sky-400 hover:underline">identity constellations</Link> &mdash;
+              <Link href="/identity-constellation" className="text-sky-400 hover:underline">identity constellations</Link> -
               multiple devices linked to the same identity. Lose one device and your other
               devices can still attest. Witnesses (trusted contacts who can vouch for you) provide
               an additional recovery path. The design explicitly plans for device loss.
@@ -399,7 +400,7 @@ export default function WhatCouldGoWrongPage() {
             <div className="bg-gray-800/60 border border-gray-700/50 rounded-lg p-4 my-3">
               <p className="text-gray-300 text-sm">
                 <strong className="text-gray-100">Game theory check:</strong> Web4&apos;s adversarial
-                simulations tested four attacker profiles — from low-skill opportunists (200 ATP budget)
+                simulations tested four attacker profiles - from low-skill opportunists (200 ATP budget)
                 to nation-state actors (5,000 ATP, 5 coordinated agents). Key finding: when the stake
                 for misbehavior exceeds 2&times; the expected gain, <strong className="text-gray-100">cooperation
                 becomes the Nash-dominant strategy</strong>. At current parameters (200 ATP stakes + 3
@@ -433,11 +434,11 @@ export default function WhatCouldGoWrongPage() {
           </div>
           <div className="text-gray-300 leading-relaxed space-y-3">
             <p>
-              <strong className="text-gray-100">The risk:</strong> The interactive simulations on this
-              site run with 4&ndash;20 agents for visual clarity. Offline simulations have been run
+              <strong className="text-gray-100">The risk:</strong> Web4&apos;s economic model has been
+              exercised with small agent counts (4-20) for clarity. Offline modeling has been run
               with{" "}
               <Link href="/atp-economics#at-scale" className="text-sky-400 hover:underline">
-                100&ndash;200 agents
+                100-200 agents
               </Link>{" "}
               (showing stable ATP economics, Sybil unprofitability, and wealth convergence to Gini ~0.25).
               But the real internet has billions of users. Trust-filtered
@@ -447,33 +448,33 @@ export default function WhatCouldGoWrongPage() {
             <p>
               <strong className="text-gray-100">Why it&apos;s real:</strong> Many systems that work
               beautifully at small scale collapse under real-world load. Blockchain demonstrated
-              this painfully &mdash; Bitcoin processes ~7 transactions per second while Visa
+              this painfully - Bitcoin processes ~7 transactions per second while Visa
               handles ~65,000. Web4&apos;s per-action trust computation could hit similar walls.
             </p>
             <p>
               <strong className="text-gray-100">What mitigates it:</strong> <TermTooltip term="MRH" /> (context boundaries)
-              limits the trust computation to local neighborhoods &mdash; you don&apos;t need to
+              limits the trust computation to local neighborhoods - you don&apos;t need to
               verify trust against every user on the internet, just the ones in your current
               context. This is similar to how DNS scales: local resolution handles most queries
               without touching root servers.
             </p>
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
-              <strong>Honest assessment:</strong> Scalability is partially validated. The 100&ndash;200
+              <strong>Honest assessment:</strong> Scalability is partially validated. The 100-200
               agent simulations confirm that economic mechanics (transfer fees, quality incentives,
-              anti-Sybil dynamics) remain stable well beyond the small demos on this site. The architectural
+              anti-Sybil dynamics) remain stable well beyond a handful of agents. The architectural
               approach (local trust computation within bounded contexts) is sound in theory. But
-              internet scale &mdash; millions of concurrent trust computations, cross-federation
-              synchronization, witness coordination under real latency &mdash; has never been tested.
+              internet scale - millions of concurrent trust computations, cross-federation
+              synchronization, witness coordination under real latency - has never been tested.
               The simulations prove the <em>mechanics</em> work; the <em>engineering</em> at scale
               is an open challenge.
             </p>
           </div>
         </div>
 
-        {/* 8. Accessibility / Digital Divide — May 3 visitor MEDIUM friction.
+        {/* 8. Accessibility / Digital Divide - May 3 visitor MEDIUM friction.
             Visitor explicit suggestion: add as numbered risk card with Serious/Medium rating,
             paralleling the GDPR honest-limitation addition (Apr 29). The page acknowledged
-            7 risks but was silent on disability and biometric exclusion — for a hardware-anchored
+            7 risks but was silent on disability and biometric exclusion - for a hardware-anchored
             identity system, this is a real ethical gap, not a polish item. */}
         <div id="risk-accessibility" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
           <div className="flex items-start gap-3 mb-4">
@@ -489,7 +490,7 @@ export default function WhatCouldGoWrongPage() {
           <div className="text-gray-300 leading-relaxed space-y-3">
             <p>
               <strong className="text-gray-100">The risk:</strong> Web4 anchors identity in
-              hardware: TPM chips, Secure Enclaves, FIDO2 keys &mdash; usually unlocked by a
+              hardware: TPM chips, Secure Enclaves, FIDO2 keys - usually unlocked by a
               biometric (fingerprint, face, iris). Users who <em>cannot</em> use biometrics
               (no fingerprints from age or work, motor impairments, eye conditions, severe
               tremors) get pushed onto the software-only fallback at a 0.50 trust ceiling.
@@ -504,23 +505,23 @@ export default function WhatCouldGoWrongPage() {
               the dexterity to use them, and the wealth to own the hardware. Roughly 1 in 6 people
               globally has some form of disability, and the World Bank estimates ~3 billion people
               still don&apos;t own a smartphone. A trust system that gives them a structurally
-              lower ceiling isn&apos;t neutral &mdash; it codifies the existing digital divide
+              lower ceiling isn&apos;t neutral - it codifies the existing digital divide
               into the trust layer itself.
             </p>
             <p>
               <strong className="text-gray-100">What mitigates it:</strong> A few things,
               partially.{' '}
-              <strong>(1) Hardware keys with PIN unlock</strong> &mdash; YubiKey or Titan keys
+              <strong>(1) Hardware keys with PIN unlock</strong> - YubiKey or Titan keys
               accept a numeric PIN instead of a biometric, and they&apos;re hardware-bound. That
               gets users without biometric capability up to ~0.75 ceiling.
-              <strong> (2) Community vouching</strong> &mdash; trusted contacts can witness
+              <strong> (2) Community vouching</strong> - trusted contacts can witness
               behavior and raise effective trust over time, without requiring a stronger root
               of trust.
-              <strong> (3) Trusted-third-party witnessing</strong> &mdash; libraries, schools,
+              <strong> (3) Trusted-third-party witnessing</strong> - libraries, schools,
               NGOs, and clinics can serve as institutional witnesses for users who lack
               personal hardware, similar to how notaries serve as identity witnesses today.
               <strong> (4) Software-only behavior</strong> still <em>accrues</em> reputation
-              normally &mdash; the ceiling caps high-trust roles, not basic participation.
+              normally - the ceiling caps high-trust roles, not basic participation.
             </p>
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
               <strong>Honest assessment:</strong> The mitigations don&apos;t fully close the gap.
@@ -542,7 +543,7 @@ export default function WhatCouldGoWrongPage() {
           Design Tensions
         </h2>
         <p className="text-gray-400 mb-8">
-          These aren&apos;t failure modes &mdash; they&apos;re trade-offs that don&apos;t have
+          These aren&apos;t failure modes - they&apos;re trade-offs that don&apos;t have
           clean answers. Every design choice has consequences.
         </p>
 
@@ -620,20 +621,20 @@ export default function WhatCouldGoWrongPage() {
                 The design actively prevents entrenchment. Formal bootstrap convergence proofs show:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400 ml-2">
-                <li><strong>First-mover advantage has a ~30-action half-life</strong> — early adopters can&apos;t coast. Their head start decays exponentially.</li>
-                <li><strong>After ~50 quality actions, newcomers can surpass founders</strong> — stochastic dominance breaks. Quality beats seniority.</li>
-                <li><strong>Trust distribution converges to Gini ~0.25</strong> — moderate inequality (like a healthy economy), not extreme concentration.</li>
-                <li><strong>Catch-up time scales as O(log n)</strong> — joining a larger network is logarithmically, not linearly, harder.</li>
+                <li><strong>First-mover advantage has a ~30-action half-life</strong> - early adopters can&apos;t coast. Their head start decays exponentially.</li>
+                <li><strong>After ~50 quality actions, newcomers can surpass founders</strong> - stochastic dominance breaks. Quality beats seniority.</li>
+                <li><strong>Trust distribution converges to Gini ~0.25</strong> - moderate inequality (like a healthy economy), not extreme concentration.</li>
+                <li><strong>Catch-up time scales as O(log n)</strong> - joining a larger network is logarithmically, not linearly, harder.</li>
               </ul>
               <p className="mt-2">
-                Trust dimensions also decay at different rates — Temperament has a 30-day half-life, meaning recent behavior
+                Trust dimensions also decay at different rates - Temperament has a 30-day half-life, meaning recent behavior
                 matters far more than historical reputation. Established members who stop contributing lose their advantages
                 measurably fast.
               </p>
               <p>
                 But newcomer friction is real. In every reputation system, being new means
                 being untrusted. The difference: Web4&apos;s math shows the path from &ldquo;new and untrusted&rdquo;
-                to &ldquo;established and trusted&rdquo; is provably finite and fair — unlike today&apos;s internet
+                to &ldquo;established and trusted&rdquo; is provably finite and fair - unlike today&apos;s internet
                 where the path is often &ldquo;impossible without connections.&rdquo;
               </p>
               <p className="text-amber-400/80 text-xs">
@@ -657,7 +658,7 @@ export default function WhatCouldGoWrongPage() {
                 everyone&apos;s identity need to migrate?
               </p>
               <p>
-                Yes, eventually. The specification is designed to be attestation-method-agnostic &mdash;
+                Yes, eventually. The specification is designed to be attestation-method-agnostic -
                 a new hardware standard can be added alongside existing ones. During transitions,
                 both old and new attestation methods would be accepted. Identity migration would
                 use the existing multi-device recovery flow: attest your new device while your old
@@ -683,37 +684,37 @@ export default function WhatCouldGoWrongPage() {
               </p>
               <div className="space-y-2 text-gray-400">
                 <p>
-                  <strong className="text-sky-400">Actions 1–10: Genesis.</strong> A founder creates the
-                  society with a hardware-bound root LCT. They invite 2–3 trusted contacts who witness
+                  <strong className="text-sky-400">Actions 1-10: Genesis.</strong> A founder creates the
+                  society with a hardware-bound root LCT. They invite 2-3 trusted contacts who witness
                   each other&apos;s presence. Everyone starts at 0.5 trust, 100 ATP. The founder assigns
                   initial roles (treasury, governance, auditing). These first actions are cheap because
                   the society has no history to validate against.
                 </p>
                 <p>
-                  <strong className="text-sky-400">Actions 11–30: Exploration.</strong> Members start
-                  contributing — posting, reviewing, organizing. Trust scores begin diverging: active
+                  <strong className="text-sky-400">Actions 11-30: Exploration.</strong> Members start
+                  contributing - posting, reviewing, organizing. Trust scores begin diverging: active
                   contributors climb toward 0.6, while passive members stay at 0.5. ATP flows establish
-                  patterns. Quality assessment is rough because there&apos;s no baseline yet — the V3
+                  patterns. Quality assessment is rough because there&apos;s no baseline yet - the V3
                   value tensor is calibrating.
                 </p>
                 <p>
-                  <strong className="text-sky-400">Actions 31–50: Differentiation.</strong> Roles
+                  <strong className="text-sky-400">Actions 31-50: Differentiation.</strong> Roles
                   become meaningful. Members who consistently deliver quality earn trust in specific
-                  dimensions — Talent for skilled work, Training for follow-through. First-mover
+                  dimensions - Talent for skilled work, Training for follow-through. First-mover
                   advantage peaks around action 30 and begins decaying. New members who join now
                   can see established trust patterns to learn from.
                 </p>
                 <p>
-                  <strong className="text-sky-400">Actions 51–100: Stabilization.</strong> Trust
+                  <strong className="text-sky-400">Actions 51-100: Stabilization.</strong> Trust
                   distribution settles toward Gini ~0.25 (moderate, healthy inequality). Quality
                   newcomers start surpassing coasting founders. ATP circulation creates a functioning
-                  economy. The society has enough history for MRH context to be meaningful — members
+                  economy. The society has enough history for MRH context to be meaningful - members
                   can make trust-informed decisions about unfamiliar entities.
                 </p>
               </div>
               <p className="text-amber-400/80 text-xs">
                 <strong>Status:</strong> This trajectory is validated through simulation. Whether real
-                human communities follow the same curve depends on factors simulations can&apos;t model —
+                human communities follow the same curve depends on factors simulations can&apos;t model -
                 social dynamics, motivation, and the specific purpose of the community.
               </p>
             </div>
@@ -727,14 +728,14 @@ export default function WhatCouldGoWrongPage() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-3">
               <p>
-                Federation handles economic coordination — dynamic pricing, resource allocation,
+                Federation handles economic coordination - dynamic pricing, resource allocation,
                 circuit breakers. But what happens when one society considers something ethical that
                 another considers harmful?
               </p>
               <p>
                 Web4&apos;s answer is <strong>deliberate non-resolution</strong>. Unlike platforms that
                 enforce a single content policy, Web4 societies set their own rules. A society that
-                values free expression and one that values content moderation don&apos;t need to agree —
+                values free expression and one that values content moderation don&apos;t need to agree -
                 they just need to decide whether to federate.
               </p>
               <div className="space-y-2 text-gray-400">
@@ -746,19 +747,19 @@ export default function WhatCouldGoWrongPage() {
                 <p>
                   <strong className="text-gray-300">MRH creates natural boundaries.</strong> Your
                   Markov Relevancy Horizon means you only see entities within your trust graph.
-                  A society you don&apos;t federate with is invisible to you — not censored, just
+                  A society you don&apos;t federate with is invisible to you - not censored, just
                   outside your context.
                 </p>
                 <p>
                   <strong className="text-gray-300">Cross-society policies handle conflicts.</strong>{" "}
                   When federated societies have different rules, the society closer to the action
-                  takes precedence — for example, if you&apos;re posting in a coding community but also belong to a gardening
+                  takes precedence - for example, if you&apos;re posting in a coding community but also belong to a gardening
                   forum, the coding community&apos;s rules apply because that&apos;s where the action is happening (MRH-weighted priority).
                   Circuit breakers automatically isolate partners whose behavior diverges too far.
                 </p>
               </div>
               <p>
-                This doesn&apos;t solve the philosophical problem — it sidesteps it. Web4 doesn&apos;t
+                This doesn&apos;t solve the philosophical problem - it sidesteps it. Web4 doesn&apos;t
                 claim to know which values are correct. It gives each community sovereignty over its
                 own rules and lets federation economics handle the rest. Communities with compatible
                 values naturally cluster; incompatible ones naturally separate.
@@ -784,18 +785,18 @@ export default function WhatCouldGoWrongPage() {
               <div className="space-y-2 text-gray-400">
                 <p>
                   <strong className="text-gray-300">5-10 members:</strong> Trust works but converges
-                  slowly — not enough independent interactions to distinguish patterns from noise.
+                  slowly - not enough independent interactions to distinguish patterns from noise.
                   T3 scores will be heavily influenced by a few interactions. Works for tight-knit teams
                   where you already know each other.
                 </p>
                 <p>
                   <strong className="text-gray-300">10-30 members:</strong> The sweet spot for early
                   communities. Enough interaction diversity that trust scores become meaningful. The
-                  cold-start walkthrough above shows ~100 actions stabilize trust — with 20 active
+                  cold-start walkthrough above shows ~100 actions stabilize trust - with 20 active
                   members, that&apos;s about 5 actions per person.
                 </p>
                 <p>
-                  <strong className="text-gray-300">50+ members:</strong> Full dynamics emerge — MRH
+                  <strong className="text-gray-300">50+ members:</strong> Full dynamics emerge - MRH
                   neighborhoods form naturally, specialists develop role-specific reputations,
                   and the quality ramp creates real economic pressure against free-riding.
                 </p>
@@ -827,12 +828,12 @@ export default function WhatCouldGoWrongPage() {
                   <Link href="/how-it-works#governance" className="text-sky-400 hover:underline">
                     Society-Authority-Law
                   </Link>{" "}
-                  — rules that members agree to when joining. Violations trigger graduated enforcement:
+                 - rules that members agree to when joining. Violations trigger graduated enforcement:
                   warnings, trust penalties, suspension, and ultimately permanent exclusion.
                 </p>
                 <p>
                   <strong className="text-gray-300">Law oracles.</strong> For content that violates
-                  actual laws (not just community norms), societies can configure law oracles —
+                  actual laws (not just community norms), societies can configure law oracles -
                   external legal frameworks that can trigger immediate action. Think of them as
                   circuit breakers that bypass normal trust mechanics when legal thresholds are met.
                 </p>
@@ -841,12 +842,12 @@ export default function WhatCouldGoWrongPage() {
                   oracle linked to its jurisdiction&apos;s child protection laws. A member reports illegal
                   content. The law oracle evaluates the report against its legal framework and, if the
                   threshold is met, triggers immediate action: the content is flagged, the actor&apos;s
-                  account is frozen (trust set to zero, ATP locked), and the auditable trail —
-                  hardware-signed identity, timestamps, content hashes — is preserved for law enforcement.
+                  account is frozen (trust set to zero, ATP locked), and the auditable trail -
+                  hardware-signed identity, timestamps, content hashes - is preserved for law enforcement.
                   The actor can appeal through the society&apos;s{" "}
-                  <Link href="/aliveness#appeals" className="text-sky-400 hover:underline">appeals process</Link>,
+                  <Link href="/karma-consequences" className="text-sky-400 hover:underline">appeals process</Link>,
                   but the freeze is immediate. <em>Which</em> jurisdiction&apos;s laws apply depends on
-                  the society&apos;s configuration — a society based in the EU would reference EU law, while
+                  the society&apos;s configuration - a society based in the EU would reference EU law, while
                   a global society might reference international conventions.
                 </p>
                 <p>
@@ -854,7 +855,7 @@ export default function WhatCouldGoWrongPage() {
                   Web4 is signed by a hardware-bound identity. Unlike anonymous platforms where harmful
                   content is posted by throwaway accounts, Web4 actors have permanent identities with
                   real trust stakes. Publishing illegal content costs ATP, destroys trust, and creates
-                  an auditable trail — making it far riskier than on platforms where you can just
+                  an auditable trail - making it far riskier than on platforms where you can just
                   create a new account.
                 </p>
               </div>
@@ -864,7 +865,7 @@ export default function WhatCouldGoWrongPage() {
                 makes harmful content more costly and more traceable, but it doesn&apos;t eliminate
                 the need for human judgment about what crosses the line. The specific question of
                 &ldquo;whose law applies?&rdquo; in cross-jurisdiction societies is an open design
-                challenge — the protocol provides the mechanism (law oracles), but the policy decisions
+                challenge - the protocol provides the mechanism (law oracles), but the policy decisions
                 are made by each society.
               </p>
             </div>
@@ -878,14 +879,14 @@ export default function WhatCouldGoWrongPage() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                If your devices can&apos;t reach witness nodes &mdash; internet goes down, servers
-                fail, or you&apos;re simply offline for a while &mdash; what happens to your identity
+                If your devices can&apos;t reach witness nodes - internet goes down, servers
+                fail, or you&apos;re simply offline for a while - what happens to your identity
                 and trust?
               </p>
               <p>
                 <strong className="text-gray-300">Your trust doesn&apos;t vanish.</strong> Trust scores
                 are computed from your history. Being offline doesn&apos;t erase what you&apos;ve built.
-                But some dimensions decay over time &mdash; Temperament has a 30-day half-life, so
+                But some dimensions decay over time - Temperament has a 30-day half-life, so
                 extended absence does cause gradual decline. This is by design: trust should reflect
                 recent behavior, not ancient history.
               </p>
@@ -893,7 +894,7 @@ export default function WhatCouldGoWrongPage() {
                 <strong className="text-gray-300">Actions queue locally.</strong> Your devices can
                 still record actions while offline. When connectivity returns, queued actions are
                 witnessed and incorporated into your trust history. The gap doesn&apos;t create a
-                discontinuity &mdash; it creates a pause.
+                discontinuity - it creates a pause.
               </p>
               <p>
                 <strong className="text-gray-300">Coherence Index handles it gracefully.</strong> A
@@ -903,14 +904,14 @@ export default function WhatCouldGoWrongPage() {
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Status:</strong> Partition tolerance is designed at the protocol level. The
-                harder question is multi-device synchronization after extended partitions &mdash; if
+                harder question is multi-device synchronization after extended partitions - if
                 your phone and laptop both act independently while offline, reconciling their
                 histories is a known distributed systems challenge.
               </p>
             </div>
           </details>
 
-          {/* Illegal content moderation — visitor Q: "how does moderation of illegal content work?" */}
+          {/* Illegal content moderation - visitor Q: "how does moderation of illegal content work?" */}
           <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How does Web4 handle illegal content (CSAM, terrorism, etc.) without a central authority?</span>
@@ -922,17 +923,17 @@ export default function WhatCouldGoWrongPage() {
                 specific mechanisms for content that crosses legal lines:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>Law Oracles:</strong> Each community designates entities that interpret legal requirements for their jurisdiction. When content violates law (not just norms), law oracles can trigger emergency enforcement &mdash; immediate suspension of the offending entity, content quarantine, and evidence preservation for authorities.</li>
-                <li><strong>SAL enforcement tiers:</strong> The graduated enforcement system (warn → restrict → suspend → revoke) can fast-track to revocation for severe violations. An entity distributing illegal content doesn&apos;t get warnings &mdash; it gets immediate suspension pending law oracle review.</li>
-                <li><strong>Hardware-bound identity matters here:</strong> Because LCT links identity to physical devices, &ldquo;ban evasion&rdquo; requires obtaining new hardware. Revoked identities can&apos;t simply create new accounts &mdash; their devices are flagged.</li>
+                <li><strong>Law Oracles:</strong> Each community designates entities that interpret legal requirements for their jurisdiction. When content violates law (not just norms), law oracles can trigger emergency enforcement - immediate suspension of the offending entity, content quarantine, and evidence preservation for authorities.</li>
+                <li><strong>SAL enforcement tiers:</strong> The graduated enforcement system (warn → restrict → suspend → revoke) can fast-track to revocation for severe violations. An entity distributing illegal content doesn&apos;t get warnings - it gets immediate suspension pending law oracle review.</li>
+                <li><strong>Hardware-bound identity matters here:</strong> Because LCT links identity to physical devices, &ldquo;ban evasion&rdquo; requires obtaining new hardware. Revoked identities can&apos;t simply create new accounts - their devices are flagged.</li>
                 <li><strong>Tamper-evident audit trails:</strong> All trust changes and enforcement actions are logged. If a law oracle oversteps, the audit trail provides grounds for appeal. If they under-enforce, the record shows it.</li>
               </ul>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest tension:</strong> This is where decentralization and legal compliance create real friction.
-                Different jurisdictions define &ldquo;illegal&rdquo; differently &mdash; political speech that&apos;s protected in one
+                Different jurisdictions define &ldquo;illegal&rdquo; differently - political speech that&apos;s protected in one
                 country is criminal in another. Web4&apos;s approach is to let communities set their own enforcement
-                policies while providing the tools for rapid response. It&apos;s not perfect &mdash; no system&apos;s
-                moderation model is &mdash; but hardware-bound identity makes the accountability gap much smaller
+                policies while providing the tools for rapid response. It&apos;s not perfect - no system&apos;s
+                moderation model is - but hardware-bound identity makes the accountability gap much smaller
                 than in anonymous systems.
               </p>
             </div>
@@ -946,7 +947,7 @@ export default function WhatCouldGoWrongPage() {
           What&apos;s Genuinely Unsolved
         </h2>
         <p className="text-gray-400 mb-2">
-          These are open research problems. We&apos;re not hiding them &mdash; we&apos;re working on them.
+          These are open research problems. We&apos;re not hiding them - we&apos;re working on them.
         </p>
         <p className="text-gray-500 text-sm mb-8">
           Includes witness bootstrapping, appeals, governance at scale, regulatory compliance,
@@ -980,9 +981,9 @@ export default function WhatCouldGoWrongPage() {
               Who decides the rules? A Society-Authority-Law (SAL) framework has been designed
               with law oracles, graduated enforcement (critical → high → medium severity),
               emergency bypass with post-hoc audit, and panel-based appeals. The framework
-              distinguishes alignment from compliance — societies can tolerate rule-breaking
-              if the spirit is right. But decentralized governance at internet scale — where
-              communities disagree on fundamental values — remains a challenge no system has
+              distinguishes alignment from compliance - societies can tolerate rule-breaking
+              if the spirit is right. But decentralized governance at internet scale - where
+              communities disagree on fundamental values - remains a challenge no system has
               fully solved. The simulation engine validates mechanics; human behavior is the
               unknown. See the FAQs below for specifics on{" "}
               <span className="text-amber-400/80">illegal content handling</span>,{" "}
@@ -1001,7 +1002,7 @@ export default function WhatCouldGoWrongPage() {
                 incremental adoption pathway
               </Link>{" "}
               (wrapper → observable → accountable → federated → native) has been designed so
-              teams can adopt gradually and validate at each step — but no one has walked the
+              teams can adopt gradually and validate at each step - but no one has walked the
               full path yet.
             </p>
           </div>
@@ -1009,7 +1010,7 @@ export default function WhatCouldGoWrongPage() {
           <div className="bg-red-950/30 border border-red-800/30 rounded-lg p-4">
             <h3 className="text-red-400 font-semibold mb-2">Regulatory Compliance</h3>
             <p className="text-gray-400 text-sm leading-relaxed mb-2">
-              Laws like the EU AI Act (Articles 9–15) impose requirements on AI systems:
+              Laws like the EU AI Act (Articles 9-15) impose requirements on AI systems:
               risk management, data governance, transparency, human oversight. A compliance
               mapping exists (7 articles → 16 Web4 requirements) with drift detection and
               remediation advisors, but regulatory interpretation is ambiguous and evolving.
@@ -1018,7 +1019,7 @@ export default function WhatCouldGoWrongPage() {
             </p>
             <p className="text-gray-500 text-xs leading-relaxed">
               <strong className="text-gray-400">Foundation models</strong> face additional GPAI
-              obligations (Art. 51–56): model cards, systemic risk classification for models above
+              obligations (Art. 51-56): model cards, systemic risk classification for models above
               10<sup>25</sup> FLOP, adversarial testing, and 15-day incident reporting. Web4&apos;s
               T3/V3 + LCT audit trail maps to these requirements, but real regulatory audits haven&apos;t
               been attempted yet.
@@ -1031,7 +1032,7 @@ export default function WhatCouldGoWrongPage() {
               Web4 assumes reputation persists across lives and contexts. GDPR&apos;s right to
               erasure, CCPA&apos;s deletion rights, and similar laws assume individuals can request
               their data be removed. A tamper-evident audit chain that is supposed to be permanent
-              does not erase cleanly &mdash; and once a hardware key is correlated to a person,
+              does not erase cleanly - and once a hardware key is correlated to a person,
               behavioral scores become personal data under GDPR. Neither &ldquo;allow identity
               resets with trust loss&rdquo; nor &ldquo;exempt behavioral scores from deletion
               rights&rdquo; is a clean answer; this is an unresolved policy question, not a
@@ -1078,10 +1079,10 @@ export default function WhatCouldGoWrongPage() {
           &larr; Why Web4 (The Case For)
         </Link>
         <Link
-          href="/threat-model"
+          href="/the-standard"
           className="flex-1 px-6 py-3 bg-amber-700 hover:bg-amber-600 text-white font-semibold rounded-lg transition-colors text-center"
         >
-          Technical Threat Model &rarr;
+          The Web4 Standard &rarr;
         </Link>
       </section>
 

@@ -26,10 +26,10 @@ export default function HowItWorksPage() {
       <SectionTOC sections={HOW_IT_WORKS_SECTIONS} />
       <Breadcrumbs currentPath="/how-it-works" />
 
-      {/* Orientation prompt — two-sided (newcomers / returning visitors) */}
+      {/* Orientation prompt - two-sided (newcomers / returning visitors) */}
       <div className="max-w-4xl mx-auto mb-4 space-y-2 text-sm text-gray-500">
         <div>
-          <strong className="text-gray-300">New to Web4?</strong> This is the full-picture overview — pieces fit together below. If you&apos;d rather see one concept at a time first,{' '}
+          <strong className="text-gray-300">New to Web4?</strong> This is the full-picture overview - pieces fit together below. If you&apos;d rather see one concept at a time first,{' '}
           <Link href="/first-contact" className="text-sky-400 hover:underline">First Contact</Link> walks an agent through her lifecycle, the{' '}
           <Link href="/tldr" className="text-sky-400 hover:underline">2-minute TL;DR</Link> gives the high-level view, and the{' '}
           <Link href="/lct-explainer" className="text-sky-400 hover:underline">concept sequence</Link> covers each piece individually.
@@ -37,7 +37,7 @@ export default function HowItWorksPage() {
         <div>
           <strong className="text-gray-300">Already know Web4?</strong> Skip ahead to the{' '}
           <a href="#pieces" className="text-sky-400 hover:underline">full-picture diagram</a>{' '}
-          — a visual summary of how LCT, ATP, T3, MRH, and CI combine.
+ - a visual summary of how LCT, ATP, T3, MRH, and CI combine.
         </div>
       </div>
 
@@ -52,22 +52,22 @@ export default function HowItWorksPage() {
         <div className="mb-4 p-3 bg-amber-950/30 border border-amber-800/30 rounded-lg">
           <p className="text-base font-bold text-amber-200 flex items-center gap-2">
             <span aria-hidden="true">🔬</span>
-            Nothing here is live — this is a research prototype.
+            Nothing here is live - this is a research prototype.
           </p>
           <p className="mt-1.5 text-sm text-amber-200/75">
             Everything below describes how Web4 <em>would</em> work, validated through simulations and an open-source{' '}
             <Link href="/why-web4#faq-deployed" className="text-amber-300 hover:text-amber-200 underline">reference implementation</Link>{' '}
-            — no live network with real users exists yet. The present tense throughout is the model talking, not a running system.
+ - no live network with real users exists yet. The present tense throughout is the model talking, not a running system.
             {' '}Curious what early deployment could look like? See the{' '}
             <Link href="/why-web4#faq-adoption-path" className="text-amber-300 hover:text-amber-200 underline">concrete adoption path</Link>{' '}
-            — from browser extension overlays to full integration.
+ - from browser extension overlays to full integration.
           </p>
         </div>
         <div className="mb-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg text-sm text-gray-300 space-y-2">
           <p className="text-xs uppercase tracking-wide text-sky-400 mb-2 font-semibold">Key Takeaways</p>
           <p>You&apos;re born with <strong className="text-green-400">energy</strong> and <strong className="text-purple-400">neutral trust</strong>. Every action costs energy. Quality contributions earn it back; spam drains it.</p>
-          <p>Your <strong className="text-blue-400">identity</strong> is tied to your devices — no passwords, no central authority. Your <strong className="text-purple-400">trust</strong> is multi-dimensional (competence, reliability, consistency) and role-specific.</p>
-          <p>If your energy hits zero or trust collapses, you die. But good karma carries forward — you&apos;re reborn with a head start. <strong className="text-cyan-400">No moderators needed.</strong> Five interlocking systems (identity, energy, trust, consistency, context) make spam expensive and quality self-sustaining.</p>
+          <p>Your <strong className="text-blue-400">identity</strong> is tied to your devices - no passwords, no central authority. Your <strong className="text-purple-400">trust</strong> is multi-dimensional (competence, reliability, consistency) and role-specific.</p>
+          <p>If your energy hits zero or trust collapses, you die. But good karma carries forward - you&apos;re reborn with a head start. <strong className="text-cyan-400">No moderators needed.</strong> Five interlocking systems (identity, energy, trust, consistency, context) make spam expensive and quality self-sustaining.</p>
         </div>
 
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
@@ -79,7 +79,7 @@ export default function HowItWorksPage() {
         <div className="mb-6 p-4 bg-gray-800/50 border border-gray-700 rounded-xl">
           <p className="text-sm text-gray-400 mb-3">
             <strong className="text-gray-300">Five systems, in plain English:</strong>{' '}
-            Web4 has some acronyms. Here&apos;s what they mean — refer back anytime.
+            Web4 has some acronyms. Here&apos;s what they mean - refer back anytime.
           </p>
           <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs">
             <span><span className="text-blue-400 font-semibold">LCT</span> <span className="text-gray-500">= Identity</span></span>
@@ -135,7 +135,7 @@ export default function HowItWorksPage() {
             </h3>
             <p className="text-sm text-gray-400">
               Multi-dimensional trust scored across Talent, Training,
-              and Temperament — per role.
+              and Temperament - per role.
             </p>
             <Link
               href="/trust-tensor"
@@ -155,7 +155,7 @@ export default function HowItWorksPage() {
               Context (MRH)
             </h3>
             <p className="text-sm text-gray-400">
-              You only see what&apos;s relevant to your trust network — like
+              You only see what&apos;s relevant to your trust network - like
               hearing only conversations you&apos;re part of. Spam can&apos;t reach you.
             </p>
             <Link
@@ -176,7 +176,7 @@ export default function HowItWorksPage() {
               when you act, and who you interact with.
             </p>
             <p className="text-xs text-gray-500 mt-2">
-              Example: If someone usually posts coding tutorials at 9am and suddenly starts posting crypto spam at 3am from a new country, their coherence drops — making every action more expensive.
+              Example: If someone usually posts coding tutorials at 9am and suddenly starts posting crypto spam at 3am from a new country, their coherence drops - making every action more expensive.
             </p>
             <Link
               href="/coherence-index"
@@ -213,7 +213,7 @@ export default function HowItWorksPage() {
                 <span className="text-xl">🔐</span>
                 <div>
                   <span className="text-sm font-bold text-blue-400">LCT</span>
-                  <span className="text-sm text-gray-400"> — Proves you&apos;re real. Hardware-bound identity, unforgeable.</span>
+                  <span className="text-sm text-gray-400"> - Proves you&apos;re real. Hardware-bound identity, unforgeable.</span>
                 </div>
               </div>
             </div>
@@ -229,7 +229,7 @@ export default function HowItWorksPage() {
                 <span className="text-xl">🌐</span>
                 <div>
                   <span className="text-sm font-bold text-cyan-400">MRH</span>
-                  <span className="text-sm text-gray-400"> — Defines your reach. Only see what&apos;s relevant to your trust network.</span>
+                  <span className="text-sm text-gray-400"> - Defines your reach. Only see what&apos;s relevant to your trust network.</span>
                   <div className="text-xs text-cyan-300/70 mt-1.5 italic">Gates the loop below: you only <strong>spend ATP</strong> and <strong>build T3</strong> in contexts where you&apos;re visible. Actions outside your MRH don&apos;t cost energy and don&apos;t move trust.</div>
                 </div>
               </div>
@@ -243,7 +243,7 @@ export default function HowItWorksPage() {
             <div className="flex items-center gap-3">
               <div className="w-8 text-center text-gray-600 text-xs font-mono shrink-0">3</div>
               <div className="flex-1 border border-gray-600/60 rounded-lg p-4 bg-gray-900/60">
-                <div className="text-xs text-gray-500 uppercase tracking-wide mb-3">Feedback Loop — every action cycles through all three:</div>
+                <div className="text-xs text-gray-500 uppercase tracking-wide mb-3">Feedback Loop - every action cycles through all three:</div>
                 <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-1 text-center">
                   <div className="bg-green-950/40 border border-green-800/40 rounded px-3 py-2 flex-1 w-full">
                     <div className="text-xs font-bold text-green-400">ATP</div>
@@ -281,7 +281,7 @@ export default function HowItWorksPage() {
                   <span className="text-xl">✨</span>
                   <div>
                     <span className="text-sm font-bold text-emerald-400">Aliveness</span>
-                    <span className="text-sm text-gray-400"> — You&apos;re &ldquo;alive&rdquo; when: ATP &gt; 0 + Trust &gt; 0.5 + CI coherent</span>
+                    <span className="text-sm text-gray-400"> - You&apos;re &ldquo;alive&rdquo; when: ATP &gt; 0 + Trust &gt; 0.5 + CI coherent</span>
                   </div>
                 </div>
                 <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
@@ -293,7 +293,7 @@ export default function HowItWorksPage() {
           </div>
 
           <p className="text-xs text-gray-500 mt-4">
-            <strong className="text-gray-400">Why spam dies:</strong> Without LCT, you can&apos;t enter. Without MRH, you can&apos;t reach anyone. Without ATP, you can&apos;t act. Without T3, you aren&apos;t trusted. Without CI, you&apos;re flagged. Every layer filters bad actors — no single point of failure, no moderators needed.
+            <strong className="text-gray-400">Why spam dies:</strong> Without LCT, you can&apos;t enter. Without MRH, you can&apos;t reach anyone. Without ATP, you can&apos;t act. Without T3, you aren&apos;t trusted. Without CI, you&apos;re flagged. Every layer filters bad actors - no single point of failure, no moderators needed.
           </p>
         </div>
       </section>
@@ -307,7 +307,7 @@ export default function HowItWorksPage() {
         </h2>
         <p className="text-gray-400 mb-6">
           Web4 societies treat "aliveness" as a measurable property. Before the
-          step-by-step below, watch the whole arc run — 30 seconds, no navigation:
+          step-by-step below, watch the whole arc run - 30 seconds, no navigation:
         </p>
 
         <LifecycleDemo />
@@ -350,7 +350,7 @@ export default function HowItWorksPage() {
               </ul>
               <p className="text-gray-400 mt-3 text-sm italic">
                 Your LCT is registered on the society&apos;s network and becomes
-                part of the trust graph — which determines what entities and
+                part of the trust graph - which determines what entities and
                 information are visible to you (your &quot;context boundary&quot;).
               </p>
             </div>
@@ -361,7 +361,7 @@ export default function HowItWorksPage() {
               </h4>
               <p className="text-gray-300 leading-relaxed">
                 You receive an initial <strong>ATP allocation</strong> (typically
-                100). This is your energy budget — spend it wisely.
+                100). This is your energy budget - spend it wisely.
               </p>
               <div className="mt-3 p-3 bg-green-900/20 border border-green-800/30 rounded">
                 <p className="text-green-300 text-sm">
@@ -408,7 +408,7 @@ export default function HowItWorksPage() {
                 2. Life: You Act, Build Trust, Manage ATP
               </h3>
               <p className="text-gray-500 text-sm">
-                The core gameplay loop of Web4 existence
+                The core loop of Web4 existence
               </p>
             </div>
           </div>
@@ -419,7 +419,7 @@ export default function HowItWorksPage() {
                 Actions Cost ATP
               </h4>
               <p className="text-gray-300 leading-relaxed mb-3">
-                Actions that affect others cost ATP from your energy budget. Reading and browsing are free &mdash; only contributions spend energy:
+                Actions that affect others cost ATP from your energy budget. Reading and browsing are free - only contributions spend energy:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="p-3 bg-gray-800 rounded">
@@ -432,7 +432,7 @@ export default function HowItWorksPage() {
                     <p>• Observing community activity</p>
                   </div>
                   <p className="text-gray-500 text-xs mt-2 leading-relaxed">
-                    Lurking is always free. You only spend energy when you act &mdash; post, vote, transact, or create.
+                    Lurking is always free. You only spend energy when you act - post, vote, transact, or create.
                   </p>
                 </div>
                 <div className="p-3 bg-gray-800 rounded">
@@ -558,7 +558,7 @@ export default function HowItWorksPage() {
               </h4>
               <p className="text-gray-300 leading-relaxed">
                 Death in Web4 is not a timeout or suspension. Your energy budget is
-                depleted — you can no longer act.
+                depleted - you can no longer act.
               </p>
               <div className="mt-3 p-4 bg-red-900/20 border border-red-800/30 rounded">
                 <p className="text-red-300 font-semibold mb-2">
@@ -633,7 +633,7 @@ export default function HowItWorksPage() {
               </h4>
               <p className="text-gray-300 leading-relaxed mb-3">
                 Not everyone gets reborn. The society checks your T3 trust
-                tensor &mdash; specifically your <strong className="text-gray-200">overall (composite)</strong>{" "}
+                tensor - specifically your <strong className="text-gray-200">overall (composite)</strong>{" "}
                 score, the single number blended from all three dimensions
                 (talent, training, temperament), <em>not</em> each dimension
                 clearing 0.5 on its own:
@@ -730,16 +730,15 @@ export default function HowItWorksPage() {
           <p className="text-gray-300 text-sm leading-relaxed">
             So far we&apos;ve talked about individual agents surviving through energy, trust, and consistency.
             But what happens when several agents consistently cooperate?{" "}
-            When individuals build dense mutual trust, something emerges at the group level — Web4 calls
-            these <Link href="/aliveness#synthons" className="text-sky-400 hover:underline">synthons</Link>{" "}
+            When individuals build dense mutual trust, something emerges at the group level. Web4 calls
+            these <strong className="text-sky-300">synthons</strong>{" "}
             <span className="text-gray-400">(from chemistry: a unit that functions as a building block for larger structures)</span>.
             A team that consistently collaborates well develops its own collective aliveness score,
             separate from any individual member. Think of it like a band that&apos;s greater than
-            the sum of its musicians — with its own reputation, energy, and lifecycle.
+            the sum of its musicians - with its own reputation, energy, and lifecycle.
           </p>
           <p className="text-gray-400 text-xs mt-2">
-            Synthons form gradually, can dissolve if trust erodes, and you can leave without losing your personal trust.{" "}
-            <Link href="/aliveness#synthons" className="text-sky-400 hover:underline">Full details →</Link>
+            Synthons form gradually, can dissolve if trust erodes, and you can leave without losing your personal trust.
           </p>
         </div>
       </section>
@@ -773,7 +772,7 @@ export default function HowItWorksPage() {
                 <p>
                   Earning isn&apos;t a flat refund. Each contribution&apos;s earn-back depends on its
                   quality through the ATP <strong className="text-gray-300">quality ramp</strong>:
-                  below 30% quality the task pays zero, between 30&ndash;70% payouts scale linearly,
+                  below 30% quality the task pays zero, between 30-70% payouts scale linearly,
                   and above 70% the task pays near-full. A high-quality contribution can earn
                   back up to <strong className="text-gray-300">~7&times;</strong> what an equally-priced
                   low-effort one earns at the same spend.
@@ -783,10 +782,10 @@ export default function HowItWorksPage() {
                   quality contributions earned more than their cost, any low-effort attempts earned less.
                   {/* June 11 visitor HIGH (browse B): "earned more than cost" seemed to violate the
                       recharge-at-cost cap on /atp-economics. Name the channel: task payment. */}
-                  (Earning <em>above</em> cost comes from task payment &mdash; a task pays what the
+                  (Earning <em>above</em> cost comes from task payment - a task pays what the
                   work is worth to whoever commissioned it, not what it cost you to do. Only the
                   recharge of your own spend is capped at cost.)
-                  Aggregate net: <strong className="text-green-400">+45&nbsp;ATP</strong> surplus &mdash; which
+                  Aggregate net: <strong className="text-green-400">+45&nbsp;ATP</strong> surplus - which
                   becomes the carry-forward karma bonus on rebirth.
                 </p>
                 <p>
@@ -809,7 +808,7 @@ export default function HowItWorksPage() {
                 </p>
                 <p>
                   Worked step: a single contribution rated <strong className="text-gray-300">0.85 quality</strong>{" "}
-                  gives <code className="text-gray-300">base = 0.02 &times; 0.35 = +0.007</code> &mdash;
+                  gives <code className="text-gray-300">base = 0.02 &times; 0.35 = +0.007</code> -
                   so talent climbs <strong className="text-gray-300">+0.007</strong>, training{" "}
                   <strong className="text-gray-300">+0.0056</strong>, temperament{" "}
                   <strong className="text-gray-300">+0.0042</strong>. Tiny by design.
@@ -882,16 +881,16 @@ export default function HowItWorksPage() {
             </p>
           </div>
 
-          {/* May 14 MEDIUM + LOW — visitor synthesized everything here ("the synthesizing
+          {/* May 14 MEDIUM + LOW - visitor synthesized everything here ("the synthesizing
               moment") then hit the gap: this page describes mechanics but "doesn't paint a
               screen." Bridge from the abstract example to the most concrete page on the site,
               which the visitor said they "most wanted to find" but "found last." */}
           <div className="mt-4 p-4 bg-amber-900/15 border border-amber-700/30 rounded-lg">
             <p className="text-amber-200 text-sm leading-relaxed">
               👀 <strong>But what does this actually look like on a screen?</strong>{' '}
-              Everything above is the machinery. To see it as a person would — mail that
+              Everything above is the machinery. To see it as a person would - mail that
               costs energy to send, a talent marketplace, reviews you can trust, a social
-              feed without bots — walk through{' '}
+              feed without bots - walk through{' '}
               <Link href="/day-in-web4#wireframes" className="text-amber-400 hover:underline font-semibold">
                 A Day in Web4
               </Link>
@@ -953,7 +952,7 @@ export default function HowItWorksPage() {
             <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Feedback Loops</h4>
             <p className="text-xs text-gray-500 mb-3">
               Read each line as &ldquo;<strong className="text-gray-400">A → B</strong> = A shapes B.&rdquo;
-              The five systems aren&apos;t independent — each one moves the others.
+              The five systems aren&apos;t independent - each one moves the others.
             </p>
             <div className="grid md:grid-cols-2 gap-2 text-xs text-gray-400">
               <div className="flex items-start gap-2">
@@ -966,9 +965,9 @@ export default function HowItWorksPage() {
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-amber-400 shrink-0">→</span>
-                {/* June 11 visitor (browse B) LOW: "up to 1.4×" here vs "up to 10×" on /aliveness —
+                {/* June 11 visitor (browse B) LOW: "up to 1.4×" here vs "up to 10×" on /aliveness -
                     1.4× is the typical new/wobbling-pattern surcharge; the same 1/CI² formula caps at 10×. */}
-                <span><strong className="text-amber-400">CI → Both:</strong> Behavior that breaks your pattern raises your costs &mdash; 1.4&times; is the typical surcharge for a new or wobbling pattern, and the same formula scales up to a 10&times; cap for severe incoherence. A tax on inconsistency that fades as your pattern restabilizes.</span>
+                <span><strong className="text-amber-400">CI → Both:</strong> Behavior that breaks your pattern raises your costs - 1.4&times; is the typical surcharge for a new or wobbling pattern, and the same formula scales up to a 10&times; cap for severe incoherence. A tax on inconsistency that fades as your pattern restabilizes.</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-indigo-400 shrink-0">→</span>
@@ -976,7 +975,7 @@ export default function HowItWorksPage() {
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-cyan-400 shrink-0">→</span>
-                <span><strong className="text-cyan-400">MRH → All:</strong> Context bounds reach. Actions only count within your relevancy horizon — outside it, nobody witnesses, nothing cascades.</span>
+                <span><strong className="text-cyan-400">MRH → All:</strong> Context bounds reach. Actions only count within your relevancy horizon - outside it, nobody witnesses, nothing cascades.</span>
               </div>
             </div>
           </div>
@@ -1064,7 +1063,7 @@ export default function HowItWorksPage() {
         </div>
 
         <p className="text-xs text-gray-500 mt-4 italic">
-          This is why quality wins and spam dies — not because of rules or moderators, but because
+          This is why quality wins and spam dies - not because of rules or moderators, but because
           the three systems reinforce each other. Good behavior compounds upward. Bad behavior compounds downward.
         </p>
 
@@ -1088,7 +1087,7 @@ export default function HowItWorksPage() {
             </div>
             <div className="bg-gray-900/60 rounded-lg p-3">
               <div className="text-sky-400 font-semibold text-xs mb-1">Locality</div>
-              <p className="text-gray-400 text-xs">Trust changes propagate locally, not globally. When your trust changes, only entities within your MRH boundary are affected — not the entire network.</p>
+              <p className="text-gray-400 text-xs">Trust changes propagate locally, not globally. When your trust changes, only entities within your MRH boundary are affected - not the entire network.</p>
             </div>
           </div>
           <p className="text-gray-500 text-xs mt-3 italic">
@@ -1112,7 +1111,7 @@ export default function HowItWorksPage() {
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Spammers burn ATP faster than they earn it. They die. No rebirth
-              eligibility (low T3). No moderators needed — the energy economics
+              eligibility (low T3). No moderators needed - the energy economics
               enforce quality naturally.
             </p>
           </div>
@@ -1136,7 +1135,7 @@ export default function HowItWorksPage() {
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               You can&apos;t claim to be trustworthy. Your T3 tensor is built from
-              observable behavior. Talent, training, temperament &mdash; all
+              observable behavior. Talent, training, temperament - all
               verified through actions within each role.
             </p>
           </div>
@@ -1165,13 +1164,13 @@ export default function HowItWorksPage() {
           and CI consistency simultaneously, the composed system produces behaviors no single layer can:
         </p>
         <ul className="list-disc list-inside space-y-1 text-gray-400 text-sm ml-2">
-          <li><strong className="text-gray-300">Self-correcting pricing:</strong> High trust lowers ATP costs, which rewards quality contributors &mdash; an equilibrium that emerges only from ATP&times;T3 interaction</li>
+          <li><strong className="text-gray-300">Self-correcting pricing:</strong> High trust lowers ATP costs, which rewards quality contributors - an equilibrium that emerges only from ATP&times;T3 interaction</li>
           <li><strong className="text-gray-300">Unfakeable consistency:</strong> CI measures coherence across actions, but only ATP costs make faking coherence expensive, and only T3 makes faking <em>worthwhile</em> coherence impossible</li>
           <li><strong className="text-gray-300">Natural quality selection:</strong> The 7&times; quality ramp, trust decay, and cost multipliers create a fitness landscape where quality behavior is the only stable strategy</li>
         </ul>
         <p className="text-xs text-gray-500 mt-3 italic">
           Source: web4 correlated equilibrium analysis (~100 formal checks). The composite welfare exceeds
-          the sum of per-layer welfare &mdash; composition creates non-additive effects.
+          the sum of per-layer welfare - composition creates non-additive effects.
         </p>
       </div>
 
@@ -1181,7 +1180,7 @@ export default function HowItWorksPage() {
           What Happens When Things Go Wrong?
         </h2>
         <p className="text-gray-400 mb-8">
-          Energy economics handle most bad actors — spammers simply die. But what about
+          Energy economics handle most bad actors - spammers simply die. But what about
           edge cases? What if someone is falsely accused, or a crisis requires bending the rules?
           Web4 uses a governance framework called <strong className="text-gray-200">SAL (Society-Authority-Law)</strong>.
         </p>
@@ -1192,7 +1191,7 @@ export default function HowItWorksPage() {
             <h3 className="text-lg font-semibold text-sky-400 mb-2">Society</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Defines the community&apos;s purpose and membership rules. Different societies
-              can have different standards — a research group and a marketplace don&apos;t need the same rules.
+              can have different standards - a research group and a marketplace don&apos;t need the same rules.
             </p>
           </div>
 
@@ -1200,7 +1199,7 @@ export default function HowItWorksPage() {
             <div className="text-2xl mb-2">⚖️</div>
             <h3 className="text-lg font-semibold text-amber-400 mb-2">Authority</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Roles with specific responsibilities — not centralized power. Authorities are bound
+              Roles with specific responsibilities - not centralized power. Authorities are bound
               by the same trust mechanics as everyone else. Abuse trust? Lose authority.
             </p>
           </div>
@@ -1210,7 +1209,7 @@ export default function HowItWorksPage() {
             <h3 className="text-lg font-semibold text-purple-400 mb-2">Law</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Graduated severity levels (critical → high → medium). A <strong>law oracle</strong> evaluates
-              actions and produces verdicts — for example, flagging a paper submission with 40% overlap as potential plagiarism,
+              actions and produces verdicts - for example, flagging a paper submission with 40% overlap as potential plagiarism,
               or recognizing that bending formatting rules to share findings faster shows good intent.
               The key principle: alignment without compliance is acceptable;
               compliance without alignment is never acceptable.
@@ -1224,11 +1223,11 @@ export default function HowItWorksPage() {
           <div className="space-y-4 text-sm">
             <div className="flex gap-3">
               <span className="text-sky-400 font-bold shrink-0">Society:</span>
-              <p className="text-gray-300">&ldquo;Open Science Collective&rdquo; — purpose: advance reproducible research. Membership requires T3 Training ≥ 0.6 in any scientific role.</p>
+              <p className="text-gray-300">&ldquo;Open Science Collective&rdquo; - purpose: advance reproducible research. Membership requires T3 Training ≥ 0.6 in any scientific role.</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-400 font-bold shrink-0">Authority:</span>
-              <p className="text-gray-300">Three roles: <strong>Reviewer</strong> (can approve publications, needs T3 ≥ 0.8), <strong>Treasurer</strong> (manages ATP grants, elected by members), <strong>Moderator</strong> (resolves disputes, rotates monthly). All bound by the same trust mechanics — abuse power and you lose the role.</p>
+              <p className="text-gray-300">Three roles: <strong>Reviewer</strong> (can approve publications, needs T3 ≥ 0.8), <strong>Treasurer</strong> (manages ATP grants, elected by members), <strong>Moderator</strong> (resolves disputes, rotates monthly). All bound by the same trust mechanics - abuse power and you lose the role.</p>
             </div>
             <div className="flex gap-3">
               <span className="text-purple-400 font-bold shrink-0">Laws:</span>
@@ -1242,7 +1241,7 @@ export default function HowItWorksPage() {
               </div>
             </div>
             <p className="text-gray-500 text-xs italic mt-3">
-              The <strong>law oracle</strong> evaluates each action against these rules and produces verdicts: Perfect (aligned + compliant), Aligned (spirit right, letter wrong — acceptable), Warning, or Violation. The key insight: a researcher who bends formatting rules to publish breakthrough findings faster (aligned but not compliant) is treated differently from one who follows every rule while quietly undermining peers (compliant but not aligned).
+              The <strong>law oracle</strong> evaluates each action against these rules and produces verdicts: Perfect (aligned + compliant), Aligned (spirit right, letter wrong - acceptable), Warning, or Violation. The key insight: a researcher who bends formatting rules to publish breakthrough findings faster (aligned but not compliant) is treated differently from one who follows every rule while quietly undermining peers (compliant but not aligned).
             </p>
           </div>
         </div>
@@ -1251,7 +1250,7 @@ export default function HowItWorksPage() {
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 mb-6">
           <h4 className="text-lg font-semibold text-gray-200 mb-3">Walkthrough: A Plagiarism Case from Start to Finish</h4>
           <p className="text-gray-400 text-sm mb-4">
-            Here&apos;s how the Open Science Collective handles a real violation — step by step.
+            Here&apos;s how the Open Science Collective handles a real violation - step by step.
           </p>
           <div className="space-y-3 text-sm">
             <div className="flex gap-3 items-start">
@@ -1269,19 +1268,19 @@ export default function HowItWorksPage() {
             <div className="flex gap-3 items-start">
               <span className="bg-gray-700 text-gray-300 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0">3</span>
               <div>
-                <p className="text-gray-300"><strong>Notification.</strong> Dr. Chen is informed of the verdict, the evidence (the flagged overlap), and the specific rule violated. All of this is recorded in the tamper-evident audit chain — the community can inspect it.</p>
+                <p className="text-gray-300"><strong>Notification.</strong> Dr. Chen is informed of the verdict, the evidence (the flagged overlap), and the specific rule violated. All of this is recorded in the tamper-evident audit chain - the community can inspect it.</p>
               </div>
             </div>
             <div className="flex gap-3 items-start">
               <span className="bg-gray-700 text-gray-300 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0">4</span>
               <div>
-                <p className="text-gray-300"><strong>Appeal (if filed).</strong> Dr. Chen believes the overlap is from a shared dataset, not plagiarism. She files an appeal with evidence — the shared data source, timestamps showing independent work.</p>
+                <p className="text-gray-300"><strong>Appeal (if filed).</strong> Dr. Chen believes the overlap is from a shared dataset, not plagiarism. She files an appeal with evidence - the shared data source, timestamps showing independent work.</p>
               </div>
             </div>
             <div className="flex gap-3 items-start">
               <span className="bg-gray-700 text-gray-300 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0">5</span>
               <div>
-                <p className="text-gray-300"><strong>Independent review.</strong> A Moderator (rotating monthly, not the original oracle) examines the evidence. They can call witnesses — other members familiar with the dataset.</p>
+                <p className="text-gray-300"><strong>Independent review.</strong> A Moderator (rotating monthly, not the original oracle) examines the evidence. They can call witnesses - other members familiar with the dataset.</p>
               </div>
             </div>
             <div className="flex gap-3 items-start">
@@ -1290,13 +1289,13 @@ export default function HowItWorksPage() {
                 <p className="text-gray-300"><strong>Resolution.</strong> Two possible outcomes:</p>
                 <ul className="mt-1 text-gray-400 space-y-1 ml-4">
                   <li>&bull; <strong className="text-green-400">Appeal upheld:</strong> Suspension lifted, trust scores restored, the false positive is recorded (improving future oracle accuracy).</li>
-                  <li>&bull; <strong className="text-red-400">Appeal denied:</strong> Suspension stands. Dr. Chen can still participate in other communities — the penalty is society-specific, not global.</li>
+                  <li>&bull; <strong className="text-red-400">Appeal denied:</strong> Suspension stands. Dr. Chen can still participate in other communities - the penalty is society-specific, not global.</li>
                 </ul>
               </div>
             </div>
           </div>
           <p className="text-gray-500 text-xs italic mt-4">
-            The key insight: every step is inspectable, every verdict is appealable, and penalties are proportional and scoped. A &ldquo;High&rdquo; violation gets suspension, not ejection. A &ldquo;Critical&rdquo; violation (fabricating data) would result in ejection — different severity, different consequence.
+            The key insight: every step is inspectable, every verdict is appealable, and penalties are proportional and scoped. A &ldquo;High&rdquo; violation gets suspension, not ejection. A &ldquo;Critical&rdquo; violation (fabricating data) would result in ejection - different severity, different consequence.
           </p>
         </div>
 
@@ -1326,32 +1325,32 @@ export default function HowItWorksPage() {
             <div className="flex gap-3 items-start">
               <span className="text-purple-400 font-bold shrink-0">Exit rights:</span>
               <p className="text-gray-400">Members can leave any society and take their trust history with them.
-                A society with unfair rules loses members — and their ATP contributions. This creates competitive
+                A society with unfair rules loses members - and their ATP contributions. This creates competitive
                 pressure: societies that treat members well attract more participants.</p>
             </div>
             <div className="flex gap-3 items-start">
               <span className="text-purple-400 font-bold shrink-0">Authority decay:</span>
               <p className="text-gray-400">Authorities are bound by the same trust mechanics as everyone else.
                 A biased moderator or corrupt reviewer sees their own trust score drop as members flag their
-                actions. Below the threshold, they lose the role automatically — no vote needed.</p>
+                actions. Below the threshold, they lose the role automatically - no vote needed.</p>
             </div>
             <div className="flex gap-3 items-start">
               <span className="text-purple-400 font-bold shrink-0">Transparency:</span>
               <p className="text-gray-400">Law oracle verdicts are recorded in a tamper-evident audit chain.
-                Every decision is inspectable — members can see exactly how the oracle classified each action.
+                Every decision is inspectable - members can see exactly how the oracle classified each action.
                 Patterns of biased verdicts become visible over time.</p>
             </div>
             <div className="flex gap-3 items-start">
               <span className="text-purple-400 font-bold shrink-0">Federation competition:</span>
               <p className="text-gray-400">Multiple societies can serve similar purposes. If the &ldquo;Open Science
                 Collective&rdquo; becomes authoritarian, members migrate to &ldquo;Free Research Network.&rdquo;
-                Trust portability (via <Link href="/federation-economics" className="text-sky-400 hover:underline">federation</Link>)
+                Trust portability (via <Link href="/trust-neighborhood" className="text-sky-400 hover:underline">federation</Link>)
                 means switching communities doesn&apos;t mean starting over.</p>
             </div>
           </div>
           <p className="text-gray-500 text-xs italic mt-4">
             The analogy: open-source projects. If a project&apos;s governance becomes hostile, contributors fork it.
-            The ability to fork — not the act of forking — keeps governance honest. Web4 societies work the same way.
+            The ability to fork - not the act of forking - keeps governance honest. Web4 societies work the same way.
           </p>
         </div>
 
@@ -1365,12 +1364,12 @@ export default function HowItWorksPage() {
           <div className="space-y-2 text-sm text-gray-400">
             <p>
               <strong className="text-gray-300">Founding:</strong> The initial members define the society&apos;s purpose,
-              entry requirements, and starting rules. Think of it like writing a charter — &ldquo;This community requires
+              entry requirements, and starting rules. Think of it like writing a charter - &ldquo;This community requires
               T3 Training ≥ 0.6 to join, ATP cost per publication is 5 units, and moderators rotate monthly.&rdquo;
             </p>
             <p>
               <strong className="text-gray-300">Changing rules:</strong> Governed by the society&apos;s own SAL framework.
-              Most societies use some form of member voting weighted by trust score — a long-standing, high-trust member
+              Most societies use some form of member voting weighted by trust score - a long-standing, high-trust member
               has more influence than a newcomer. But the specific mechanism is the society&apos;s choice: simple majority,
               supermajority, or delegated authority.
             </p>
@@ -1383,12 +1382,12 @@ export default function HowItWorksPage() {
           </div>
           <p className="text-gray-500 text-xs italic mt-3">
             The analogy: open-source project governance. Some projects have a BDFL (founder decides), some use
-            consensus, some hold elections. Web4 doesn&apos;t prescribe the model — it provides the trust infrastructure
+            consensus, some hold elections. Web4 doesn&apos;t prescribe the model - it provides the trust infrastructure
             that makes any model accountable.
           </p>
         </div>
 
-        {/* Who validates quality? — Mar 22 visitor unanswered Q1 */}
+        {/* Who validates quality? - Mar 22 visitor unanswered Q1 */}
         <div className="bg-gradient-to-br from-sky-950/20 to-gray-900 border border-sky-800/20 rounded-xl p-6 mt-8">
           <h4 className="text-lg font-semibold text-gray-100 mb-3">
             Who Decides If Something Is &ldquo;Helpful&rdquo;?
@@ -1406,7 +1405,7 @@ export default function HowItWorksPage() {
           </p>
           <p className="text-gray-400 text-xs">
             This is called <strong>VCM (Value Confirmation Mechanism)</strong>. It&apos;s like a
-            restaurant tip that happens automatically when service is good — except it&apos;s your
+            restaurant tip that happens automatically when service is good - except it&apos;s your
             energy budget, not your wallet. See{' '}
             <Link href="/atp-economics" className="text-sky-400 hover:underline">ATP Economics</Link>{' '}
             for the full mechanics.
@@ -1417,17 +1416,17 @@ export default function HowItWorksPage() {
           Full definitions:{' '}
           <Link href="/glossary" className="text-sky-400 hover:underline">Glossary</Link>{' · '}
           Security analysis:{' '}
-          <Link href="/threat-model" className="text-sky-400 hover:underline">Threat Model</Link>
+          <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">What Could Go Wrong</Link>
         </p>
       </section>
 
-      {/* Agent Orchestration — Chains of Trust */}
+      {/* Agent Orchestration - Chains of Trust */}
       <section id="agents" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           When Agents Work Together
         </h2>
         <p className="text-gray-300 leading-relaxed mb-6">
-          Modern AI systems aren&apos;t single agents — they&apos;re chains. Agent A calls
+          Modern AI systems aren&apos;t single agents - they&apos;re chains. Agent A calls
           Agent B, which calls Tool C, which feeds Agent D. In Web4, trust doesn&apos;t just
           apply to individuals. It flows through the entire chain.
         </p>
@@ -1437,7 +1436,7 @@ export default function HowItWorksPage() {
             <h3 className="text-sm font-bold text-sky-400 mb-2">Trust Decays Through Chains</h3>
             <p className="text-sm text-gray-400">
               A 5-hop pipeline where each agent has 0.9 trust ends up at 0.59
-              end-to-end &mdash; because trust multiplies, it doesn&apos;t add:{" "}
+              end-to-end - because trust multiplies, it doesn&apos;t add:{" "}
               <span className="text-gray-300">0.9 &times; 0.9 &times; 0.9 &times; 0.9 &times; 0.9 &asymp; 0.59</span>.
               Each hop keeps only 90% of what reached it, so long chains need
               high individual trust.
@@ -1472,56 +1471,63 @@ export default function HowItWorksPage() {
 
         <div className="bg-gradient-to-br from-sky-950/30 to-blue-900/20 border border-sky-800/30 rounded-xl p-8">
           <p className="text-gray-300 leading-relaxed mb-6">
-            Everything described above is running in the{" "}
-            <strong className="text-sky-400">Society Simulator</strong>. You can watch
-            agents live, die, and be reborn. You can see energy fluctuate, trust
-            evolve, and cross-life patterns learned.
+            Everything described above is the model. To see these same mechanics as a
+            person would experience them, and to see the pieces you can actually run
+            today, follow two paths:
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div className="p-4 bg-gray-800 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-200 mb-2">
-                Cross-Life Learning
+                In everyday use
               </h3>
               <p className="text-gray-400 text-sm">
-                Watch full cross-life pattern learning across multiple lives. Pattern
-                corpus builds with each life.
+                Mail that costs energy to send, a talent marketplace, reviews you can
+                trust, a social feed without bots. A Day in Web4 shows these mechanics
+                as concrete UI mockups.
               </p>
             </div>
             <div className="p-4 bg-gray-800 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-200 mb-2">
-                Trust Maturation
+                The pieces you can run
               </h3>
               <p className="text-gray-400 text-sm">
-                Compare Web4 trust maturation vs baseline. See how T3 evolves
-                with coherent behavior.
+                The onramp is four composable pieces: the core standard (the substrate),
+                the hub (community), hestia (personal), and hardbound (enterprise). Start
+                at the standard, then pick a scale to run.
               </p>
             </div>
           </div>
 
           <div className="flex gap-4 flex-wrap">
             <Link
-              href="/society-simulator"
+              href="/day-in-web4"
               className="inline-block px-8 py-4 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors text-lg"
             >
-              Launch Society Simulator →
+              A Day in Web4 →
             </Link>
             <Link
-              href="/playground"
+              href="/onramp"
               className="inline-block px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors text-lg"
             >
-              Playground (Experiment) →
+              Explore the Onramp →
+            </Link>
+            <Link
+              href="/the-standard"
+              className="inline-block px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors text-lg"
+            >
+              The Core Standard →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Scaling Up — Federation Bridge */}
+      {/* Scaling Up - Federation Bridge */}
       <section className="max-w-4xl mx-auto mt-12">
         <div className="bg-gradient-to-r from-amber-900/15 to-purple-900/15 border border-amber-800/30 rounded-xl p-6">
           <h3 className="text-xl font-bold mb-3 text-amber-300">What About Multiple Communities?</h3>
           <p className="text-gray-300 text-sm leading-relaxed mb-2">
-            Everything above describes one community. In a real Web4 network, there are many — grouped into
+            Everything above describes one community. In a real Web4 network, there are many - grouped into
             <strong className="text-amber-300"> federations</strong> (networks of communities that share trust data
             and interoperate, like email servers that can send messages to each other even though they&apos;re run by different organizations).
             Each community has different specializations and ATP prices. Your reputation travels with you,
@@ -1530,13 +1536,13 @@ export default function HowItWorksPage() {
           </p>
           <p className="text-gray-400 text-sm leading-relaxed mb-2">
             When you belong to multiple communities with different rules, the system detects
-            policy conflicts and resolves them by proximity — your closest trust relationships
+            policy conflicts and resolves them by proximity - your closest trust relationships
             take priority. No committee needed; the trust graph itself determines precedence.
           </p>
           <p className="text-gray-400 text-sm leading-relaxed">
-            ATP prices adjust dynamically based on supply and demand — no central pricing authority needed.
+            ATP prices adjust dynamically based on supply and demand - no central pricing authority needed.
             This is{' '}
-            <Link href="/federation-economics" className="text-amber-400 hover:underline">
+            <Link href="/trust-neighborhood" className="text-amber-400 hover:underline">
               federation economics
             </Link>, and it&apos;s how Web4 scales from one society to an ecosystem of thousands.
           </p>
@@ -1559,7 +1565,7 @@ export default function HowItWorksPage() {
               Energy Budget (ATP)
             </h3>
             <p className="text-gray-400 text-sm">
-              Deep dive into energy budgets. Try the interactive simulator.
+              Deep dive into energy budgets and the ATP/ADP cycle.
             </p>
           </Link>
 
@@ -1577,28 +1583,28 @@ export default function HowItWorksPage() {
           </Link>
 
           <Link
-            href="/decision-evolution"
+            href="/karma-consequences"
             className="block p-6 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-green-500 rounded-xl transition-colors"
           >
             <div className="text-3xl mb-3">🧠</div>
             <h3 className="text-lg font-semibold text-green-400 mb-2">
-              Cross-Life Learning
+              Karma &amp; Cross-Life Learning
             </h3>
             <p className="text-gray-400 text-sm">
-              See how agents get better at making decisions across lives.
+              How consequences persist and karma carries good behavior forward across lives.
             </p>
           </Link>
 
           <Link
-            href="/federation-economics"
+            href="/trust-neighborhood"
             className="block p-6 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-amber-500 rounded-xl transition-colors"
           >
             <div className="text-3xl mb-3">📊</div>
             <h3 className="text-lg font-semibold text-amber-400 mb-2">
-              Federation Economics
+              Trust Neighborhoods
             </h3>
             <p className="text-gray-400 text-sm">
-              Watch ATP prices adjust dynamically as agents specialize and markets self-organize.
+              How trust and value travel across communities as agents specialize and markets self-organize.
             </p>
           </Link>
 

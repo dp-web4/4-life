@@ -67,25 +67,31 @@ export default function LearnJourney() {
     const exploration = loadExploration();
     if (exploration) {
       const slugToConceptIds: Record<string, string[]> = {
-        'lct-explainer': ['lct'],
-        'atp-economics': ['atp'],
-        'trust-tensor': ['t3'],
-        'coherence-index': ['ci', 'ci-modulation'],
-        'aliveness': ['aliveness', 'karma-mechanics'],
-        'society-simulator': ['run-first-sim'],
-        'karma-journey': ['karma-mechanics'],
-        'playground': ['playground'],
-        'trust-networks': ['trust-networks'],
-        'federation-economics': ['federation-econ'],
-        'coherence-framework': ['coherence-framework', 'gating-mechanisms'],
-        'narratives': ['explore-narrative'],
-        'trust-neighborhood': ['mrh'],
-        'decision-evolution': ['ep'],
+        'tldr': ['tldr'],
+        'why-web4': ['why-web4'],
+        'first-contact': ['first-contact'],
+        'how-it-works': ['how-it-works'],
+        'running-now': ['running-now'],
+        'the-standard': ['the-standard'],
+        'hub': ['hub'],
+        'hestia': ['hestia'],
+        'hardbound': ['hardbound'],
+        'onramp': ['the-standard'],
+        'lct-explainer': ['lct-explainer'],
+        'trust-tensor': ['trust-tensor'],
+        'value-tensor': ['value-tensor'],
+        'trust-neighborhood': ['trust-neighborhood'],
+        'atp-economics': ['atp-economics'],
+        'coherence-index': ['coherence-index'],
+        'karma-consequences': ['karma-consequences'],
         'identity-constellation': ['identity-constellation'],
-        'patterns': ['explore-patterns'],
-        'act-explorer': ['ask-act'],
-        'how-it-works': ['maturation', 'web4-architecture'],
-        'compare': ['compare-sims'],
+        'glossary': ['glossary'],
+        'day-in-web4': ['day-in-web4'],
+        'your-internet': ['your-internet'],
+        'web4-explainer': ['web4-explainer'],
+        'what-could-go-wrong': ['what-could-go-wrong'],
+        'coherence-framework': ['coherence-framework'],
+        'manifest': ['manifest'],
       };
       for (const slug of exploration.pagesVisited) {
         const conceptIds = slugToConceptIds[slug];
@@ -112,263 +118,319 @@ export default function LearnJourney() {
   const learningPaths: LearningPath[] = [
     {
       stage: "beginner",
-      title: "First Contact: What Makes Web4 Different?",
+      title: "Start Here: What Is Web4?",
       description:
-        "You're curious about Web4 but don't know where to start. If you haven't already, try the interactive First Contact tutorial first. This path dives deeper into the core problems Web4 solves and the foundational concepts that enable trust-native societies.",
+        "New to Web4? These five pages take you from never having heard the term to understanding what it is, why it exists, and what already runs today. Read them in order; each builds on the last.",
       concepts: [
         {
-          id: "lct",
-          title: "Identity: Verifiable Presence (LCT)",
+          id: "tldr",
+          title: "The 2-Minute Overview",
           teaser:
-            "Your phone's security chip makes your presence verifiable — no passwords, no accounts. Creating fake identities means buying fake devices.",
-          why: "Identity is the foundation. Without it, trust can't accumulate reliably and spam is free.",
-          link: "/lct-explainer",
+            "The shortest honest description of Web4: a trust-native layer for the internet, and what that actually buys you.",
+          why: "Start with the whole shape before any detail. If this resonates, the rest is worth your time.",
+          link: "/tldr",
+          duration: "2 min read",
+        },
+        {
+          id: "why-web4",
+          title: "Why Web4? The Problem It Solves",
+          teaser:
+            "Spam, fake accounts, reputation that doesn't travel, platforms that own you. Web4 starts from these problems, not from a technology.",
+          why: "Problem before solution. Understanding what's broken is what makes the mechanisms make sense.",
+          link: "/why-web4",
           duration: "6 min read",
         },
         {
-          id: "atp",
-          title: "Energy Budget: ATP Economics",
+          id: "first-contact",
+          title: "First Contact: See It in Action",
           teaser:
-            "Every action costs energy. Valuable contributions earn it back. Run out of energy? You die. This makes spam self-defeating and quality sustainable.",
-          why: "The energy budget is what makes participation meaningful. It's how Web4 prices actions.",
-          link: "/atp-economics",
-          duration: "7 min read",
+            "A guided walkthrough of a trust-native interaction, so the ideas are concrete before they're abstract.",
+          why: "Concrete before abstract. Seeing the flow once makes every later concept easier to place.",
+          link: "/first-contact",
+          duration: "5 min",
         },
         {
-          id: "t3",
-          title: "Multi-Dimensional Trust: Trust Tensors (T3)",
+          id: "how-it-works",
+          title: "How It Works: The Whole Picture",
           teaser:
-            "Trust isn't a single number. It's measured across three dimensions per role: Talent, Training, and Temperament. Gaming one while failing others doesn't work.",
-          why: "The Trust Tensor (T3) is how societies measure trustworthiness without central authorities.",
-          link: "/trust-tensor",
-          duration: "9 min read",
+            "Identity, energy, trust, and coherence fit together into one system. This page shows how the pieces connect.",
+          why: "A map of the whole before the parts. Now the individual concepts have a place to land.",
+          link: "/how-it-works",
+          duration: "10 min read",
         },
         {
-          id: "ci",
-          title: "Consistency Detection: Coherence Index (CI)",
+          id: "running-now",
+          title: "What's Actually Running Now",
           teaser:
-            "Tracks consistency across four dimensions: where you are, when you act, what you can do, and who you interact with. Inconsistent behavior tanks your trust.",
-          why: "The Coherence Index (CI) is Web4's immune system — it detects fraud automatically by spotting incoherent behavior.",
-          link: "/coherence-index",
-          duration: "8 min read",
-        },
-        {
-          id: "aliveness",
-          title: "Aliveness: Putting It All Together",
-          teaser:
-            'In Web4, "alive" means: you have energy (an energy budget), sufficient trust (across all three dimensions), and consistent behavior (coherence). Lose any of them? You die. But if you earned trust, you can be reborn.',
-          why: "Now that you know the building blocks, see how they combine. Aliveness is where identity + economics + trust + consistency become a living system.",
-          link: "/aliveness",
-          duration: "8 min read",
+            "Web4 is research, but not only theory. See exactly what is deployed and runnable today versus what is still R&D.",
+          why: "Honesty about maturity. Knowing what's real keeps expectations calibrated as you go deeper.",
+          link: "/running-now",
+          duration: "5 min read",
         },
       ],
       actions: [
         {
-          id: "run-first-sim",
-          title: "Watch an Agent Live and Die",
+          id: "act-first-contact",
+          title: "Walk Through First Contact",
           description:
-            "Watch agents earn energy, build trust, die from exhaustion, and be reborn with karma. This is Web4 in miniature.",
-          link: "/society-simulator",
-          type: "observe",
+            "Step through a trust-native interaction end to end and watch how identity and trust show up in practice.",
+          link: "/first-contact",
+          type: "interactive",
         },
         {
-          id: "explore-narrative",
-          title: "Read a Simulation Story",
+          id: "act-running-now",
+          title: "See What's Deployed Today",
           description:
-            "See how the narrative generator translates raw simulation data into human-comprehensible stories. Understand trust dynamics through narrative.",
-          link: "/narratives",
+            "Check the running-now page for the live pieces you can try yourself right now.",
+          link: "/running-now",
           type: "observe",
         },
       ],
     },
     {
       stage: "intermediate",
-      title: "Understanding Emergence: How Trust Creates Societies",
+      title: "The Onramp: Four Ways to Run Web4",
       description:
-        "The beginner concepts explain individual agents — one identity, one energy budget, one trust score. But Web4's real power emerges when hundreds of agents interact: relationships self-organize into trust networks, energy costs discover market prices without central planning, and learning compounds across generations. This section shows how simple rules create complex, resilient societies.",
+        "Web4 is a standard, and there are concrete ways to run it. The core standard is the substrate; the hub, hestia, and hardbound are three scales that build on it: community, personal, and enterprise.",
       concepts: [
         {
-          id: "mrh",
-          title: "Trust Neighborhood (MRH)",
+          id: "the-standard",
+          title: "The Standard: The Core Substrate",
           teaser:
-            "You don't see everything — you see what's relevant through your relationships. Your trust neighborhood defines who and what you can interact with.",
-          why: "MRH shows how Web4 scales: societies stay coherent without requiring global consensus.",
-          link: "/trust-neighborhood",
-          duration: "10 min read",
+            "The shared, trust-native protocol everything else builds on. Learn what the standard actually specifies.",
+          why: "The substrate comes first. The hub, hestia, and hardbound are all ways of running this one standard.",
+          link: "/the-standard",
+          duration: "8 min read",
         },
         {
-          id: "ep",
-          title: "Decision Evolution: Learning Across Lives",
+          id: "hub",
+          title: "The Hub: Community Scale",
           teaser:
-            "Agents learn which decisions work, carry patterns forward through karma, and improve across lives. Cross-life learning is how societies get smarter without anyone designing them to.",
-          why: "This reveals how Web4 societies evolve over time without centralized training.",
-          link: "/decision-evolution",
-          duration: "11 min read",
+            "A Web4 society you can fork and run. Reference code, public and AGPL, for community-scale trust.",
+          why: "The hub shows the standard as a running society, not just a spec. You can fork it today.",
+          link: "/hub",
+          duration: "8 min read",
         },
         {
-          id: "trust-networks",
-          title: "Trust Networks: Society Formation",
+          id: "hestia",
+          title: "Hestia: Personal Scale",
           teaser:
-            "Relationships aren't declared (like 'friend requests')—they're emergent. Trust forms through interactions. Cooperators cluster. Free-riders get isolated. Coalitions enable coordination.",
-          why: "Trust networks show how societies self-organize without central authority.",
-          link: "/trust-networks",
-          duration: "12 min read",
+            "The personal trust layer, deployed today. Run the real thing on your own machine.",
+          why: "Hestia is the piece that already runs. It turns reading into participation.",
+          link: "/hestia",
+          duration: "8 min read",
         },
         {
-          id: "federation-econ",
-          title: "Federation Economics: Dynamic ATP Markets",
+          id: "hardbound",
+          title: "Hardbound: Enterprise Scale",
           teaser:
-            "ATP prices adjust based on scarcity. High demand + low supply = premium. This signals profit opportunities and guides specialization. Markets self-regulate.",
-          why: "Federation economics shows how Web4 coordinates resource allocation without central planning.",
-          link: "/federation-economics",
-          duration: "13 min read",
+            "Hardware-bound accountability for agentic systems: oversight for AI at enterprise scale.",
+          why: "Hardbound shows the standard carrying real stakes: accountable agents under enterprise oversight.",
+          link: "/hardbound",
+          duration: "8 min read",
         },
       ],
       actions: [
         {
-          id: "compare-sims",
-          title: "Compare Web4 vs Baseline",
+          id: "act-onramp",
+          title: "Compare the Four Pieces",
           description:
-            "Use the comparative analysis tool to see how Web4 maturation differs from baseline. Understand why the architecture matters.",
-          link: "/compare",
+            "The onramp overview lays out the standard, hub, hestia, and hardbound side by side so you can see how they fit.",
+          link: "/onramp",
           type: "observe",
         },
         {
-          id: "explore-patterns",
-          title: "Browse Pattern Corpus",
+          id: "act-run-hestia",
+          title: "Run Hestia Yourself",
           description:
-            "Examine the cross-life pattern library. See what agents learn, how learning improves, and which scenarios teach the most valuable lessons.",
-          link: "/patterns",
-          type: "observe",
-        },
-        {
-          id: "watch-networks",
-          title: "Watch Trust Networks Form",
-          description:
-            "Run the trust network simulation. See how different agent types (cooperators, free-riders, opportunists) interact and how coalitions emerge.",
-          link: "/trust-networks",
-          type: "observe",
+            "Hestia is deployed and runnable. Follow it from concept to a trust layer on your own machine.",
+          link: "/hestia",
+          type: "build",
         },
       ],
     },
     {
       stage: "advanced",
-      title: "Deep Mechanics: How Web4 Actually Works",
+      title: "Core Concepts: The Trust Primitives",
       description:
-        "You've seen the concepts and emergent properties. Now understand the technical implementation: how coherence modulates trust, how MRH maintains context, how multi-device identity works.",
+        "These are the building blocks the standard is made of: verifiable identity, multi-dimensional trust and value, an energy budget, coherence, and the way consequences carry forward. Read the ones you're curious about; they cross-reference each other.",
       concepts: [
+        {
+          id: "lct-explainer",
+          title: "Identity: Verifiable Presence (LCT)",
+          teaser:
+            "Your device's security chip makes your presence verifiable, no passwords, no accounts. Faking identities means buying devices.",
+          why: "Identity is the foundation. Without it, trust can't accumulate reliably and spam is free.",
+          link: "/lct-explainer",
+          duration: "6 min read",
+        },
+        {
+          id: "trust-tensor",
+          title: "Multi-Dimensional Trust: Trust Tensors (T3)",
+          teaser:
+            "Trust isn't a single number. It's measured across three dimensions per role: Talent, Training, and Temperament.",
+          why: "T3 is how societies measure trustworthiness without a central authority.",
+          link: "/trust-tensor",
+          duration: "9 min read",
+        },
+        {
+          id: "value-tensor",
+          title: "Multi-Dimensional Value: Value Tensors (V3)",
+          teaser:
+            "Value is measured across Valuation, Veracity, and Validity, so no single metric can be gamed in isolation.",
+          why: "V3 is the value side of the trust equation: what a contribution is actually worth, in context.",
+          link: "/value-tensor",
+          duration: "8 min read",
+        },
+        {
+          id: "trust-neighborhood",
+          title: "Trust Neighborhood (MRH)",
+          teaser:
+            "You don't see everything, you see what's relevant through your relationships. Your neighborhood defines what you can interact with.",
+          why: "MRH shows how Web4 scales: it stays coherent without requiring global consensus.",
+          link: "/trust-neighborhood",
+          duration: "10 min read",
+        },
+        {
+          id: "atp-economics",
+          title: "Energy Budget: ATP Economics",
+          teaser:
+            "Every action costs energy. Valuable contributions earn it back. This makes spam self-defeating and quality sustainable.",
+          why: "The energy budget is what makes participation meaningful. It's how Web4 prices actions.",
+          link: "/atp-economics",
+          duration: "7 min read",
+        },
+        {
+          id: "coherence-index",
+          title: "Consistency Detection: Coherence Index (CI)",
+          teaser:
+            "Tracks consistency across where you are, when you act, what you can do, and who you interact with. Inconsistent behavior costs trust.",
+          why: "The Coherence Index is Web4's immune system: it detects fraud by spotting incoherent behavior.",
+          link: "/coherence-index",
+          duration: "8 min read",
+        },
+        {
+          id: "karma-consequences",
+          title: "Consequences: How Karma Carries Forward",
+          teaser:
+            "Good behavior compounds; bad behavior follows you. Abandoning an identity means starting over from zero, not escaping your record.",
+          why: "Consequences are what make trust more than a score. They align incentives without an enforcer.",
+          link: "/karma-consequences",
+          duration: "8 min read",
+        },
         {
           id: "identity-constellation",
           title: "Identity Constellations: Multi-Device Strength",
           teaser:
-            "More devices = stronger presence, not weaker. Each device witnesses your LCT. Attack difficulty grows exponentially. Recovery requires quorum (e.g., 2 of 3 devices).",
-          why: "Identity constellations show why Web4 verified presence is fundamentally more secure than passwords.",
+            "More devices means stronger presence, not weaker. Each device witnesses your identity; attack difficulty grows exponentially.",
+          why: "Constellations show why verified presence is fundamentally more secure than passwords.",
           link: "/identity-constellation",
-          duration: "14 min read",
-        },
-        {
-          id: "coherence-framework",
-          title: "Coherence Framework: From 4 Dimensions to 9 Domains",
-          teaser:
-            "Web4's coherence model (spatial, capability, temporal, relational) is grounded in Synchronism's 9-domain framework. Autonomous research discovered key gating mechanisms: attention gates metabolism, trust modulates coupling, and spacetime gates context.",
-          why: "Understanding the full coherence framework reveals how Web4 emerges from fundamental principles, not arbitrary design. The 0.5 threshold appears across many natural systems — it's a phase transition, not a magic number.",
-          link: "/coherence-framework",
-          duration: "18 min read",
-        },
-        {
-          id: "ci-modulation",
-          title: "CI Modulation: Trust Through Physics",
-          teaser:
-            "Effective trust = Base_trust × CI². ATP cost = Normal × (1/CI²). Coherence isn't binary—it continuously modulates your capabilities. Low coherence = expensive actions + limited trust.",
-          why: "CI modulation reveals how Web4 makes fraud expensive automatically, without human intervention.",
-          link: "/coherence-index#why-ci-squared",
-          duration: "10 min read (focus on modulation section)",
-        },
-        {
-          id: "karma-mechanics",
-          title: "Karma: Cross-Life Continuity",
-          teaser:
-            "Die with high trust? Reborn with an energy bonus and your reputation intact. Good behavior compounds across lives. Low trust means starting over from scratch — or not coming back at all.",
-          why: "Karma mechanics show how Web4 creates long-term incentive alignment without external enforcement.",
-          link: "/aliveness",
-          duration: "8 min read (focus on rebirth section)",
-        },
-        {
-          id: "maturation",
-          title: "Trust Maturation: The Thermodynamic View",
-          teaser:
-            "Trust in Web4 behaves like physical systems: requires energy (ATP) to maintain, degrades without attention, crystallizes through consistency. Phase transitions at 0.5 threshold.",
-          why: "Maturation patterns reveal why Web4 trust dynamics mirror physical reality rather than social convention.",
-          link: "/how-it-works",
           duration: "12 min read",
+        },
+        {
+          id: "glossary",
+          title: "Glossary: Every Term in One Place",
+          teaser:
+            "Canonical definitions for LCT, ATP, T3, V3, MRH, CI, and the rest of the Web4 vocabulary.",
+          why: "A reference to return to whenever a term stops being obvious.",
+          link: "/glossary",
+          duration: "browse",
         },
       ],
       actions: [
         {
-          id: "ask-act",
-          title: "Query Simulations with AI Guide",
+          id: "act-web4-explainer",
+          title: "See the Concepts Woven Together",
           description:
-            "Use the AI Guide conversational interface to ask questions about simulations. 'Why did trust decrease?' 'Show me maturation patterns.' 'Explain this decision.'",
-          link: "/act-explorer",
-          type: "interactive",
+            "The Web4 explainer walks the primitives as one connected system rather than a list of parts.",
+          link: "/web4-explainer",
+          type: "observe",
         },
         {
-          id: "analyze-corpus",
-          title: "Analyze Pattern Quality",
+          id: "act-glossary",
+          title: "Look Up Any Term",
           description:
-            "Use the pattern corpus quality metrics. Examine confidence reliability, risk calibration, and decision effectiveness. Understand cross-life learning maturity.",
-          link: "/patterns",
+            "Keep the glossary open as you read. Every acronym has a plain-language definition.",
+          link: "/glossary",
           type: "observe",
         },
       ],
     },
     {
       stage: "practitioner",
-      title: "Participation: Experiment and Build",
+      title: "Going Deeper",
       description:
-        "You understand how Web4 works. Now participate: run experiments, discover edge cases, tune parameters, contribute insights. This is the frontier.",
+        "You understand the standard and its primitives. These pages add depth: a day lived in Web4, your own frustrations mapped to fixes, the full concept explainer, the honest failure analysis, and the coherence framework underneath it all.",
       concepts: [
         {
-          id: "web4-architecture",
-          title: "Web4 Architecture: The Full Stack",
+          id: "day-in-web4",
+          title: "A Day in Web4",
           teaser:
-            "Identity (LCT) → Energy (ATP/ADP) → Trust (T3) → Consistency (CI) → Context (MRH) → Learning. Six layers that create trust-native societies. Each layer enables the one above.",
-          why: "Architecture understanding enables contribution. You can identify gaps, suggest improvements, experiment with modifications.",
-          link: "/how-it-works",
+            "Walk through an ordinary day where trust is native to the internet, from morning login to evening transaction.",
+          why: "The concrete counterpart to the abstractions: what daily life actually feels like.",
+          link: "/day-in-web4",
+          duration: "10 min read",
+        },
+        {
+          id: "your-internet",
+          title: "Your Internet: Map Your Own Frustrations",
+          teaser:
+            "Pick the internet problems that bother you most and see exactly how a trust-native layer would address each one.",
+          why: "Makes it personal. The concepts land harder against frustrations you already have.",
+          link: "/your-internet",
+          duration: "2 min",
+        },
+        {
+          id: "web4-explainer",
+          title: "The Full Web4 Explainer",
+          teaser:
+            "The primitives, the action framework (R6/R7), and how they compose into trust-native societies.",
+          why: "The single most complete concept walkthrough, once the pieces are familiar.",
+          link: "/web4-explainer",
           duration: "15 min read",
         },
         {
-          id: "gating-mechanisms",
-          title: "Gating Mechanisms: Three-Dimensional Control",
+          id: "what-could-go-wrong",
+          title: "What Could Go Wrong",
           teaser:
-            "Boredom causes failure (attention gates metabolism), confidence gates coupling (trust modulates connections), context contamination (spacetime gates relevance). Three critical gates discovered through autonomous research. All three must be functional for high performance.",
-          why: "Gating mechanisms reveal how coherence actively controls behavior, not just measures it. This is the cutting edge of Web4 research.",
+            "Sybil attacks, collusion, Goodharting, false positives. The honest failure analysis, including open problems.",
+          why: "Trusting a system means knowing how it fails. This is the skeptic's page.",
+          link: "/what-could-go-wrong",
+          duration: "12 min read",
+        },
+        {
+          id: "coherence-framework",
+          title: "The Coherence Framework",
+          teaser:
+            "How Web4's coherence model grounds in a broader framework, and why the 0.5 threshold recurs across natural systems.",
+          why: "The deepest layer: where the design stops being arbitrary and starts looking like a phase transition.",
           link: "/coherence-framework",
-          duration: "15 min read (focus on gating section)",
+          duration: "18 min read",
+        },
+        {
+          id: "manifest",
+          title: "The Manifest: Everything on One Page",
+          teaser:
+            "Canonical primitives, claims, assumptions, and known failure modes in a single reference page.",
+          why: "The compressed index. If you only keep one page open, keep this one.",
+          link: "/manifest",
+          duration: "browse",
         },
       ],
       actions: [
         {
-          id: "playground",
-          title: "Parameter Playground: Discover Tipping Points",
+          id: "act-manifest",
+          title: "Read the One-Page Manifest",
           description:
-            "Adjust ATP costs/rewards, trust dynamics, karma mechanics, risk profiles. See which parameters create sustainability vs collapse. Find emergent patterns.",
-          link: "/playground",
-          type: "experiment",
+            "Every claim and primitive condensed into one page, with links back out to each concept.",
+          link: "/manifest",
+          type: "observe",
         },
         {
-          id: "custom-sim",
-          title: "Run Custom Simulations",
+          id: "act-contribute",
+          title: "Contribute Questions or Code",
           description:
-            "Use the Playground to run simulations with your own parameters. Test hypotheses. Break things. Discover edge cases.",
-          link: "/playground",
-          type: "experiment",
-        },
-        {
-          id: "contribute",
-          title: "Contribute Insights",
-          description:
-            "Found something interesting? Open an issue on GitHub. Share your discoveries. Help build the collective understanding.",
+            "Found a gap or a sharper question? Open an issue on GitHub. The best contributions are often better questions.",
           link: "https://github.com/dp-web4/4-life/issues",
           type: "build",
         },
@@ -380,8 +442,8 @@ export default function LearnJourney() {
   const totalConcepts = learningPaths.reduce((sum, path) => sum + path.concepts.length, 0);
   const progress = (completedConcepts.size / totalConcepts) * 100;
 
-  // Detect beginner concept completion (core 5)
-  const beginnerConceptIds = ['lct', 'atp', 't3', 'ci', 'aliveness'];
+  // Detect Start Here completion (core 5)
+  const beginnerConceptIds = ['tldr', 'why-web4', 'first-contact', 'how-it-works', 'running-now'];
   const beginnerComplete = beginnerConceptIds.every(id => completedConcepts.has(id));
 
   return (
@@ -400,7 +462,7 @@ export default function LearnJourney() {
 
       <InProduction concept="stack" />
 
-      {/* Quick start for newcomers — shows until 3 concepts done */}
+      {/* Quick start for newcomers: shows until 3 concepts done */}
       {completedConcepts.size < 3 && (
         <section>
           <div
@@ -415,13 +477,13 @@ export default function LearnJourney() {
               New here? Start with these 3
             </h3>
             <p style={{ color: "var(--color-gray-400)", fontSize: "0.85rem", marginBottom: "0.75rem" }}>
-              Everything in Web4 builds on three ideas. ~22 minutes total.
+              Web4 starts with three short reads. ~13 minutes total.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
               {[
-                { num: "1", title: "Identity (LCT)", desc: "Your phone proves who you are", href: "/lct-explainer", time: "6 min" },
-                { num: "2", title: "Energy (ATP)", desc: "Every action costs something", href: "/atp-economics", time: "7 min" },
-                { num: "3", title: "Trust (T3)", desc: "Trust as 3 dimensions, not one score", href: "/trust-tensor", time: "9 min" },
+                { num: "1", title: "The 2-minute overview", desc: "The shortest honest description", href: "/tldr", time: "2 min" },
+                { num: "2", title: "Why Web4?", desc: "The problems it starts from", href: "/why-web4", time: "6 min" },
+                { num: "3", title: "First Contact", desc: "See a trust-native interaction", href: "/first-contact", time: "5 min" },
               ].map((item) => (
                 <Link
                   key={item.href}
@@ -448,7 +510,7 @@ export default function LearnJourney() {
               ))}
             </div>
             <p style={{ fontSize: "0.75rem", color: "var(--color-gray-500)", marginTop: "0.75rem", marginBottom: 0 }}>
-              After these three, the other 13 concepts will make a lot more sense.
+              After these three, the rest of the journey will make a lot more sense.
             </p>
           </div>
         </section>
@@ -502,15 +564,15 @@ export default function LearnJourney() {
             }}
           >
             <h3 style={{ color: "var(--color-accent-bright)", margin: "0 0 0.5rem", fontSize: "1.1rem" }}>
-              Core Concepts Complete
+              You've Got the Map
             </h3>
             <p style={{ color: "var(--color-gray-300)", fontSize: "0.9rem", marginBottom: "1rem" }}>
-              You understand identity, energy budgets, trust tensors, coherence, and aliveness.
-              These 5 building blocks are the foundation of every Web4 society.
+              You understand what Web4 is, why it exists, how the pieces fit, and what runs today.
+              Now see the onramp: the concrete ways to run the standard.
             </p>
             <div style={{ display: "flex", justifyContent: "center", gap: "0.75rem", flexWrap: "wrap" }}>
               <Link
-                href="/society-simulator"
+                href="/onramp"
                 style={{
                   padding: "0.6rem 1.25rem",
                   background: "rgba(56, 189, 248, 0.2)",
@@ -522,7 +584,7 @@ export default function LearnJourney() {
                   fontWeight: 500,
                 }}
               >
-                Watch a Society →
+                Explore the Onramp →
               </Link>
               <button
                 onClick={() => setActiveStage("intermediate")}
@@ -536,14 +598,14 @@ export default function LearnJourney() {
                   fontSize: "0.9rem",
                 }}
               >
-                Go Deeper — Intermediate →
+                See the Onramp path →
               </button>
             </div>
           </div>
         </section>
       )}
 
-      {/* Stage selector — lead with the recommended Beginner path; deeper
+      {/* Stage selector: lead with the recommended Start Here path; deeper
           paths stay one click away but don't compete for first-read attention
           (May 15 visitor LOW: four equal pathways shown at once overwhelm) */}
       <section>
@@ -556,7 +618,7 @@ export default function LearnJourney() {
             marginBottom: "1.25rem",
           }}
         >
-          New to Web4? Start with the Beginner path — it&apos;s built for exactly
+          New to Web4? Start Here, it&apos;s built for exactly
           that. The deeper paths are here whenever you&apos;re ready; you
           don&apos;t need to choose between four things now.
         </p>
@@ -599,7 +661,7 @@ export default function LearnJourney() {
               >
                 Recommended start
               </span>
-              <h3>Beginner</h3>
+              <h3>Start Here</h3>
               <p
                 style={{
                   fontSize: "0.85rem",
@@ -607,7 +669,7 @@ export default function LearnJourney() {
                   opacity: 0.85,
                 }}
               >
-                Core concepts: identity, energy, trust, consistency
+                Web4 in five pages: what, why, and what&apos;s real
               </p>
               <p style={{ fontSize: "0.9rem", marginTop: "0.5rem" }}>
                 {path.concepts.length} concepts · {path.actions.length} actions
@@ -615,7 +677,7 @@ export default function LearnJourney() {
             </button>
           ))}
 
-        {/* Deeper paths — subordinate, one click away */}
+        {/* Deeper paths: subordinate, one click away */}
         <p
           style={{
             color: "var(--color-gray-500)",
@@ -652,7 +714,12 @@ export default function LearnJourney() {
                 }}
               >
                 <h3 style={{ fontSize: "1rem" }}>
-                  {path.stage.charAt(0).toUpperCase() + path.stage.slice(1)}
+                  {{
+                    beginner: "Start Here",
+                    intermediate: "The Onramp",
+                    advanced: "Core Concepts",
+                    practitioner: "Going Deeper",
+                  }[path.stage]}
                 </h3>
                 <p
                   style={{
@@ -662,10 +729,10 @@ export default function LearnJourney() {
                   }}
                 >
                   {{
-                    beginner: "Core concepts: identity, energy, trust, consistency",
-                    intermediate: "Emergence: networks, markets, cross-life learning",
-                    advanced: "Deep mechanics: coherence, modulation, karma",
-                    practitioner: "Hands-on: run experiments, tune parameters",
+                    beginner: "Web4 in five pages: what, why, and what's real",
+                    intermediate: "The onramp: standard, hub, hestia, hardbound",
+                    advanced: "The trust primitives: LCT, T3, V3, ATP, CI",
+                    practitioner: "Depth: a day in Web4, failure analysis, the framework",
                   }[path.stage]}
                 </p>
                 <p style={{ fontSize: "0.85rem", marginTop: "0.5rem" }}>
@@ -865,160 +932,52 @@ export default function LearnJourney() {
           {activeStage === "beginner" && (
             <>
               <p>
-                <strong>After completing the Beginner path:</strong> You'll understand Web4's
-                core concepts (identity, energy budgets, trust tensors, coherence) and why they matter. You'll have seen simulations
-                run and narratives generated.
+                <strong>After Start Here:</strong> You know what Web4 is, why it exists, how the
+                pieces fit, and what is actually deployed today.
               </p>
               <p style={{ marginTop: "0.75rem" }}>
-                <strong>Move to Intermediate</strong> to see how these concepts combine to create
-                emergent properties: trust networks, self-organizing markets, and learning across lives.
+                <strong>Next, The Onramp</strong> shows the concrete ways to run the standard: the
+                hub (community), hestia (personal), and hardbound (enterprise).
               </p>
             </>
           )}
           {activeStage === "intermediate" && (
             <>
               <p>
-                <strong>After completing the Intermediate path:</strong> You'll understand how
-                trust networks form, how markets self-regulate, and how agents learn across lives
-                through cross-life pattern recognition.
+                <strong>After The Onramp:</strong> You know the four pieces: the core standard and
+                the three scales (hub, hestia, hardbound) that run it.
               </p>
               <p style={{ marginTop: "0.75rem" }}>
-                <strong>Move to Advanced</strong> to dive into the technical implementation:
-                coherence modulation, multi-device identity, karma mechanics, and trust maturation physics.
+                <strong>Next, Core Concepts</strong> opens up the primitives the standard is built
+                from: identity, trust, value, energy, and coherence.
               </p>
             </>
           )}
           {activeStage === "advanced" && (
             <>
               <p>
-                <strong>After completing the Advanced path:</strong> You'll understand the deep
-                mechanics of Web4: how coherence modulates trust continuously, why multi-device
-                identity is exponentially more secure, and how trust maturation mirrors physical systems.
+                <strong>After Core Concepts:</strong> You understand the primitives: LCT, T3, V3,
+                ATP, coherence, and how consequences carry forward.
               </p>
               <p style={{ marginTop: "0.75rem" }}>
-                <strong>Move to Practitioner</strong> to start experimenting: run parameter sweeps,
-                discover edge cases, contribute insights, and help build the collective understanding.
+                <strong>Next, Going Deeper</strong> adds depth: a day in Web4, the full explainer,
+                the honest failure analysis, and the coherence framework.
               </p>
             </>
           )}
           {activeStage === "practitioner" && (
             <>
               <p>
-                <strong>You're at the frontier!</strong> At this stage, you understand Web4 well
-                enough to contribute meaningfully. Run experiments, break things, discover patterns,
-                and share what you learn.
+                <strong>You've walked the whole path:</strong> Web4, the onramp, the primitives, and
+                the deeper framework.
               </p>
               <p style={{ marginTop: "0.75rem" }}>
-                <strong>Next steps:</strong> Use the playground to discover tipping points, run custom
-                simulations to test hypotheses, and contribute your insights to the GitHub repository.
-                The research advances through collective exploration.
+                <strong>Now participate:</strong> run hestia on your own machine, fork the hub, and
+                bring sharper questions back. Open an issue on GitHub. Understanding turns into
+                contribution.
               </p>
             </>
           )}
-        </div>
-      </section>
-
-      {/* Which tool should I try? */}
-      <section>
-        <h2>Which Interactive Tool Should I Try?</h2>
-        <p style={{ marginBottom: "1.25rem" }}>
-          Five tools, different depths. Pick the one that matches what you want to do right now.
-        </p>
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-          {[
-            {
-              name: "Karma Journey",
-              href: "/karma-journey",
-              what: "Make trust choices across multiple lives and watch consequences compound.",
-              bestFor: "Experiencing Web4 consequences firsthand",
-              level: "Beginner",
-              levelColor: "rgba(74, 222, 128, 0.8)",
-            },
-            {
-              name: "Society Simulator",
-              href: "/society-simulator",
-              distinguisher: "You watch; you don't steer — the hands-off counterpart to the Simulation Sandbox.",
-              what: "Watch agents with different strategies self-organize into trust networks.",
-              bestFor: "Seeing how societies emerge from simple rules",
-              level: "Beginner",
-              levelColor: "rgba(74, 222, 128, 0.8)",
-            },
-            {
-              name: "Playground",
-              href: "/playground",
-              what: "Adjust ATP costs, trust dynamics, and risk profiles. Run guided experiments.",
-              bestFor: "Testing \"what if\" scenarios with parameters",
-              level: "Intermediate",
-              levelColor: "rgba(251, 191, 36, 0.8)",
-            },
-            {
-              name: "Simulation Sandbox",
-              href: "/simulation-sandbox",
-              distinguisher: "You steer everything — the hands-on counterpart to the Society Simulator.",
-              what: "Full-control simulation with every engine parameter exposed as sliders.",
-              bestFor: "Deep parameter exploration and multi-run comparison",
-              level: "Advanced",
-              levelColor: "rgba(248, 113, 113, 0.8)",
-            },
-            {
-              name: "Lab Console",
-              href: "/lab-console",
-              what: "Research-grade visualization of agent reasoning and decision timelines.",
-              bestFor: "Understanding why agents make specific decisions",
-              level: "Advanced",
-              levelColor: "rgba(248, 113, 113, 0.8)",
-            },
-          ].map((tool) => (
-            <Link
-              key={tool.href}
-              href={tool.href}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr auto",
-                alignItems: "center",
-                gap: "0.75rem",
-                padding: "1rem 1.25rem",
-                borderRadius: "10px",
-                border: "1px solid var(--color-gray-700)",
-                background: "rgba(255,255,255,0.02)",
-                textDecoration: "none",
-                color: "var(--color-text)",
-                transition: "border-color 0.2s, background 0.2s",
-              }}
-            >
-              <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.3rem" }}>
-                  <strong style={{ fontSize: "1rem" }}>{tool.name}</strong>
-                  <span
-                    style={{
-                      fontSize: "0.7rem",
-                      fontWeight: 600,
-                      color: tool.levelColor,
-                      border: `1px solid ${tool.levelColor}`,
-                      borderRadius: "4px",
-                      padding: "0.1rem 0.45rem",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.03em",
-                    }}
-                  >
-                    {tool.level}
-                  </span>
-                </div>
-                {"distinguisher" in tool && tool.distinguisher && (
-                  <p style={{ fontSize: "0.78rem", color: "var(--color-accent)", margin: "0 0 0.3rem", fontStyle: "italic" }}>
-                    {tool.distinguisher}
-                  </p>
-                )}
-                <p style={{ fontSize: "0.88rem", color: "var(--color-gray-300)", margin: "0 0 0.25rem" }}>
-                  {tool.what}
-                </p>
-                <p style={{ fontSize: "0.8rem", color: "var(--color-gray-500)", margin: 0 }}>
-                  Best for: {tool.bestFor}
-                </p>
-              </div>
-              <span style={{ color: "var(--color-accent)", fontSize: "1.1rem" }}>→</span>
-            </Link>
-          ))}
         </div>
       </section>
 
@@ -1031,13 +990,13 @@ export default function LearnJourney() {
           </p>
           <ol>
             <li>
-              <strong>Concrete before abstract:</strong> See simulations before reading theory
+              <strong>Concrete before abstract:</strong> See it in action before reading theory
             </li>
             <li>
               <strong>Problem before solution:</strong> Understand what Web4 solves before how
             </li>
             <li>
-              <strong>Experience before explanation:</strong> Watch agents live before reading formulas
+              <strong>Experience before explanation:</strong> Walk through First Contact before reading formulas
             </li>
             <li>
               <strong>Connection before isolation:</strong> See how concepts integrate before deep-diving
@@ -1053,15 +1012,15 @@ export default function LearnJourney() {
         </div>
       </section>
 
-      {/* Capstone — the journey ends at the deployed reality, not another explainer */}
+      {/* Capstone: the journey ends at the deployed reality, not another explainer */}
       <section>
         <div className="detail-box" style={{ background: "linear-gradient(135deg, rgba(16,185,129,0.12), rgba(56,189,248,0.10))", border: "1px solid rgba(16,185,129,0.3)" }}>
           <h3 style={{ color: "#34d399" }}>The last step: stop reading, start running ⚡</h3>
           <p>
-            When the concepts make sense, don&apos;t stop at the simulation. The trust layer
+            When the concepts make sense, don&apos;t stop at the reading. The trust layer
             (<Link href="/hestia" style={{ color: "#34d399" }}>hestia</Link>) and a Web4 society
             (<Link href="/hub" style={{ color: "#c4b5fd" }}>the hub</Link>) are public,
-            AGPL code &mdash; you can run the real thing on your own machine. That&apos;s where
+            AGPL code: you can run the real thing on your own machine. That&apos;s where
             understanding turns into participation.
           </p>
           <Link

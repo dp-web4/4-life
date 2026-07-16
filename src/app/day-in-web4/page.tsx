@@ -52,7 +52,7 @@ const SCENARIOS: Scenario[] = [
     time: '7:30 AM',
     title: 'Your Phone Wakes Up',
     icon: '📱',
-    setup: 'You pick up your phone. On today\'s internet, you enter a password or use Face ID to unlock your apps. In Web4, something different happens — your device\'s security chip quietly proves it\'s really you. No password. No centralized login server. Your identity is grounded.',
+    setup: 'You pick up your phone. On today\'s internet, you enter a password or use Face ID to unlock your apps. In Web4, something different happens - your device\'s security chip quietly proves it\'s really you. No password. No centralized login server. Your identity is grounded.',
     choices: [
       {
         label: 'Open social feed',
@@ -61,7 +61,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 0,
         trustDelta: 0,
         todayInternet: 'You scroll past bots, ads, and engagement bait. You have no idea which accounts are real.',
-        web4Result: 'Every post cost the author energy to create. The bots are gone — spam is economically irrational. What remains is real.',
+        web4Result: 'Every post cost the author energy to create. The bots are gone - spam is economically irrational. What remains is real.',
         concept: 'Verified Presence (LCT)',
         conceptLink: '/lct-explainer',
       },
@@ -72,7 +72,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 0,
         trustDelta: 0,
         todayInternet: 'Your inbox has 12 messages. 9 are spam. You delete them manually.',
-        web4Result: 'Your inbox has 3 messages. Each sender spent energy to message you. Zero spam — it costs too much.',
+        web4Result: 'Your inbox has 3 messages. Each sender spent energy to message you. Zero spam - it costs too much.',
         concept: 'Energy Budget (ATP)',
         conceptLink: '/atp-economics',
       },
@@ -82,7 +82,7 @@ const SCENARIOS: Scenario[] = [
     time: '9:00 AM',
     title: 'Someone Asks for Help',
     icon: '❓',
-    setup: 'On a community forum, someone asks: "How do I fix a leaky kitchen faucet?" You actually know the answer — you fixed yours last month.',
+    setup: 'On a community forum, someone asks: "How do I fix a leaky kitchen faucet?" You actually know the answer - you fixed yours last month.',
     choices: [
       {
         label: 'Write a detailed answer',
@@ -91,7 +91,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 20,
         trustDelta: 0.03,
         todayInternet: 'You spend 10 minutes writing a great answer. It gets buried under SEO spam and AI-generated filler.',
-        web4Result: 'Your answer costs 8 ATP to post. Three people mark it helpful — you earn 20 ATP back and your trust score rises. Quality is rewarded.',
+        web4Result: 'Your answer costs 8 ATP to post. Three people mark it helpful - you earn 20 ATP back and your trust score rises. Quality is rewarded.',
         concept: 'Energy Budget (ATP)',
         conceptLink: '/atp-economics',
       },
@@ -115,7 +115,7 @@ const SCENARIOS: Scenario[] = [
         todayInternet: 'The question gets 47 joke replies and no real answer. The person gives up.',
         web4Result: 'Others who DO answer earn trust and energy. You don\'t lose anything, but you don\'t gain either. Lurking is free.',
         concept: 'Consequences',
-        conceptLink: '/aliveness',
+        conceptLink: '/karma-consequences',
       },
     ],
   },
@@ -131,7 +131,7 @@ const SCENARIOS: Scenario[] = [
         atpCost: 5,
         atpEarned: 0,
         trustDelta: 0.02,
-        todayInternet: 'You check reviews — but are they real? 30% of online reviews are fake. You\'re gambling.',
+        todayInternet: 'You check reviews - but are they real? 30% of online reviews are fake. You\'re gambling.',
         web4Result: 'Their trust tensor shows Talent: 0.91, Training: 0.87, Temperament: 0.94. These scores were earned across 156 real interactions. Unfakeable.',
         concept: 'Trust Tensor (T3)',
         conceptLink: '/trust-tensor',
@@ -143,7 +143,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 0,
         trustDelta: 0,
         todayInternet: 'Could be amazing. Could be a scam account made yesterday. You have no way to know.',
-        web4Result: 'They\'re new, so their trust scores are neutral (0.5). Low risk if the project is small — everyone starts somewhere. But you can see they\'re real.',
+        web4Result: 'They\'re new, so their trust scores are neutral (0.5). Low risk if the project is small - everyone starts somewhere. But you can see they\'re real.',
         concept: 'Trust Tensor (T3)',
         conceptLink: '/trust-tensor',
       },
@@ -186,7 +186,7 @@ const SCENARIOS: Scenario[] = [
         todayInternet: 'Your honest review competes with hundreds of fake ones. Impact: negligible.',
         web4Result: 'Your review costs 5 ATP. If others find it helpful, you earn 8 ATP back. Over time, consistently helpful reviewers become trusted voices. Your reviews carry weight.',
         concept: 'Consequences',
-        conceptLink: '/aliveness',
+        conceptLink: '/karma-consequences',
       },
     ],
   },
@@ -203,7 +203,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 10,
         trustDelta: 0.03,
         todayInternet: 'You help, but trolls pile on with "just Google it." The newcomer leaves. Community loses another potential contributor.',
-        web4Result: 'Helping costs 4 ATP. But the newcomer marks you helpful — 10 ATP back. Trolls can\'t afford to pile on because every hostile reply costs THEM energy. Constructive behavior is the path of least resistance.',
+        web4Result: 'Helping costs 4 ATP. But the newcomer marks you helpful - 10 ATP back. Trolls can\'t afford to pile on because every hostile reply costs THEM energy. Constructive behavior is the path of least resistance.',
         concept: 'Energy Budget (ATP)',
         conceptLink: '/atp-economics',
       },
@@ -214,9 +214,9 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 3,
         trustDelta: 0.01,
         todayInternet: 'Efficient, but feels cold. The newcomer might not come back.',
-        web4Result: 'Low effort, low cost (2 ATP), small return. Efficient and nobody\'s hurt. The original answer author earns ATP too — good content keeps paying forward.',
+        web4Result: 'Low effort, low cost (2 ATP), small return. Efficient and nobody\'s hurt. The original answer author earns ATP too - good content keeps paying forward.',
         concept: 'Consequences',
-        conceptLink: '/aliveness',
+        conceptLink: '/karma-consequences',
       },
       {
         label: 'Ignore it',
@@ -225,7 +225,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 0,
         trustDelta: 0,
         todayInternet: 'The question gets no answer. Or worse, a wrong one from someone guessing.',
-        web4Result: 'No cost, no gain. But others who DO help build trust and earn energy. Over time, helpers become the community\'s leaders — not because they were appointed, but because they earned it.',
+        web4Result: 'No cost, no gain. But others who DO help build trust and earn energy. Over time, helpers become the community\'s leaders - not because they were appointed, but because they earned it.',
         concept: 'Trust Tensor (T3)',
         conceptLink: '/trust-tensor',
       },
@@ -235,7 +235,7 @@ const SCENARIOS: Scenario[] = [
     time: '4:30 PM',
     title: 'You\'re the Newcomer',
     icon: '🌱',
-    setup: 'You just joined a new community. Your trust is 0.50 — neutral. You see established members with trust scores of 0.85. Their posts get more visibility, they pay lower action costs, and partners seek them out. You feel like an outsider.',
+    setup: 'You just joined a new community. Your trust is 0.50 - neutral. You see established members with trust scores of 0.85. Their posts get more visibility, they pay lower action costs, and partners seek them out. You feel like an outsider.',
     choices: [
       {
         label: 'Make a quality contribution',
@@ -244,7 +244,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 15,
         trustDelta: 0.02,
         todayInternet: 'You post something great. It gets buried because you have zero followers. Nobody sees it.',
-        web4Result: 'Your post costs 10 ATP (40% more than veterans pay — you have no consistency history yet). But if it\'s genuinely useful, recipients confirm it and you earn 15 ATP back. Two more quality posts and your action costs start dropping. The system rewards you for substance, not seniority.',
+        web4Result: 'Your post costs 10 ATP (40% more than veterans pay - you have no consistency history yet). But if it\'s genuinely useful, recipients confirm it and you earn 15 ATP back. Two more quality posts and your action costs start dropping. The system rewards you for substance, not seniority.',
         concept: 'Energy Budget (ATP)',
         conceptLink: '/atp-economics',
       },
@@ -266,7 +266,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 0,
         trustDelta: -0.03,
         todayInternet: 'You create multiple accounts and upvote yourself. Works great. Happens millions of times daily.',
-        web4Result: 'Each identity costs real hardware. Your low-quality post earns zero ATP but costs 8. Your trust drops to 0.47. Two more attempts and you\'re below the 0.5 threshold — effectively invisible. Gaming costs more than contributing honestly.',
+        web4Result: 'Each identity costs real hardware. Your low-quality post earns zero ATP but costs 8. Your trust drops to 0.47. Two more attempts and you\'re below the 0.5 threshold - effectively invisible. Gaming costs more than contributing honestly.',
         concept: 'Coherence Index (CI)',
         conceptLink: '/coherence-index',
       },
@@ -285,7 +285,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 0,
         trustDelta: 0,
         todayInternet: 'You report it, but platforms are slow. The lie goes viral. Even after removal, screenshots circulate forever. Your reputation is damaged.',
-        web4Result: 'Your 2-year trust history speaks louder than one accusation. The accuser\'s coherence drops — their behavior is inconsistent with their history. The community sees the full picture, not just the headline.',
+        web4Result: 'Your 2-year trust history speaks louder than one accusation. The accuser\'s coherence drops - their behavior is inconsistent with their history. The community sees the full picture, not just the headline.',
         concept: 'Coherence Index (CI)',
         conceptLink: '/coherence-index',
       },
@@ -315,7 +315,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 0,
         trustDelta: 0,
         todayInternet: 'Hours of password resets, re-entering SMS codes, re-verifying accounts. Some services lock you out for days. If you lost your phone, some accounts may be gone forever.',
-        web4Result: 'Your laptop and tablet already witness for you. They confirm: "Yes, this new phone belongs to the same person." Your identity transfers in seconds. Two of three devices agree — that\'s a quorum. All your trust, history, and ATP move with you seamlessly.',
+        web4Result: 'Your laptop and tablet already witness for you. They confirm: "Yes, this new phone belongs to the same person." Your identity transfers in seconds. Two of three devices agree - that\'s a quorum. All your trust, history, and ATP move with you seamlessly.',
         concept: 'Linked Context Token (LCT)',
         conceptLink: '/lct-explainer',
       },
@@ -326,7 +326,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 0,
         trustDelta: 0,
         todayInternet: 'If you lose your phone and don\'t have backup codes, you may permanently lose access to accounts. Support tickets take weeks.',
-        web4Result: 'Web4 uses m-of-n recovery: trusted contacts you designated in advance can vouch for you, similar to how a bank verifies identity in person. It\'s slower (by design — speed would help attackers), but your identity and trust history are never truly lost.',
+        web4Result: 'Web4 uses m-of-n recovery: trusted contacts you designated in advance can vouch for you, similar to how a bank verifies identity in person. It\'s slower (by design - speed would help attackers), but your identity and trust history are never truly lost.',
         concept: 'Linked Context Token (LCT)',
         conceptLink: '/lct-explainer',
       },
@@ -345,7 +345,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 0,
         trustDelta: 0,
         todayInternet: 'You spend the evening resetting passwords, re-enabling 2FA, and hoping you didn\'t lose access to any accounts. Some services make you wait 48 hours for "security."',
-        web4Result: 'Your laptop already witnessed your identity — it\'s part of your device constellation. Open the Web4 app on your laptop, confirm with biometrics, and you\'re back. Your trust, reputation, and energy are untouched. When you get a new phone, your laptop vouches for it.',
+        web4Result: 'Your laptop already witnessed your identity - it\'s part of your device constellation. Open the Web4 app on your laptop, confirm with biometrics, and you\'re back. Your trust, reputation, and energy are untouched. When you get a new phone, your laptop vouches for it.',
         concept: 'Verified Presence (LCT)',
         conceptLink: '/lct-explainer',
       },
@@ -356,7 +356,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 0,
         trustDelta: 0,
         todayInternet: 'You buy a new phone and spend hours reinstalling apps, logging in everywhere, and discovering which accounts you\'ve been locked out of.',
-        web4Result: 'Install the Web4 app on your new phone. Your other devices (laptop, tablet) vouch for it — a "witness recovery" that takes about 60 seconds. The broken phone is automatically revoked. Your identity is restored, not recreated. It costs a small amount of ATP (2) to register the new device.',
+        web4Result: 'Install the Web4 app on your new phone. Your other devices (laptop, tablet) vouch for it - a "witness recovery" that takes about 60 seconds. The broken phone is automatically revoked. Your identity is restored, not recreated. It costs a small amount of ATP (2) to register the new device.',
         concept: 'Device Recovery (LCT)',
         conceptLink: '/lct-explainer',
       },
@@ -366,7 +366,7 @@ const SCENARIOS: Scenario[] = [
     time: '9:00 PM',
     title: 'End of Day',
     icon: '🌙',
-    setup: 'You check your trust profile before bed. Every interaction today — the help you gave, the reviews you wrote, the connections you made — is part of your permanent record.',
+    setup: 'You check your trust profile before bed. Every interaction today - the help you gave, the reviews you wrote, the connections you made - is part of your permanent record.',
     choices: [
       {
         label: 'Review your trust profile',
@@ -375,7 +375,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 0,
         trustDelta: 0,
         todayInternet: 'You have a follower count. A like count. Numbers that mean nothing about who you actually are.',
-        web4Result: 'Your profile shows real dimensions: how skilled you are (Talent), how reliable you are (Training), how you treat people (Temperament). Built from hundreds of real interactions. Not likes — trust.',
+        web4Result: 'Your profile shows real dimensions: how skilled you are (Talent), how reliable you are (Training), how you treat people (Temperament). Built from hundreds of real interactions. Not likes - trust.',
         concept: 'Trust Tensor (T3)',
         conceptLink: '/trust-tensor',
       },
@@ -388,7 +388,7 @@ const SCENARIOS: Scenario[] = [
         todayInternet: 'Tomorrow looks the same. More spam. More fake reviews. More guessing who to trust.',
         web4Result: 'Tomorrow, your trust from today carries forward. The helpful answer you wrote will keep earning ATP as people find it useful. Your reputation compounds. Good days build on each other.',
         concept: 'Consequences',
-        conceptLink: '/aliveness',
+        conceptLink: '/karma-consequences',
       },
     ],
   },
@@ -407,7 +407,7 @@ const CONCEPT_GLOSS: Record<string, string> = {
   '/atp-economics': 'the energy you spend to act, earn by contributing',
   '/trust-tensor': 'your reputation, scored on talent, training & temperament',
   '/coherence-index': 'how consistent your behavior stays over time',
-  '/aliveness': 'agents live and die by their choices',
+  '/karma-consequences': 'agents live and die by their choices',
 };
 
 /**
@@ -482,31 +482,31 @@ export default function DayInWeb4Page() {
       </h1>
       <p className="text-gray-400 mb-4 text-lg">
         What would your day look like if the internet had trust built in?
-        10 scenarios across one day — pick a choice in each, see what happens, then click <em>Next scenario</em> to advance through the timeline above.
+        10 scenarios across one day - pick a choice in each, see what happens, then click <em>Next scenario</em> to advance through the timeline above.
       </p>
       <p className="text-gray-500 mb-4 text-sm italic">
-        Everything below is narrated in the present tense as a thought experiment — none of it ships today. Read it as what a trust-native internet <em>would</em> feel like if you were living an ordinary day inside it.
+        Everything below is narrated in the present tense as a thought experiment - none of it ships today. Read it as what a trust-native internet <em>would</em> feel like if you were living an ordinary day inside it.
       </p>
       <p className="text-gray-500 mb-6 text-sm">
-        Two things to know before the numbers start. First, <strong className="text-gray-400">trust scores run 0 to 1</strong>, where <strong className="text-gray-400">0.5 is neutral</strong> (everyone starts there) and 1.0 is the theoretical max &mdash; so a &ldquo;0.85&rdquo; below means well-trusted; a &ldquo;0.50&rdquo; means brand-new or neutral. Second, <strong className="text-gray-400">ATP is your energy budget for taking actions</strong> &mdash; every post or reply spends some, and contributions others find useful earn it back.
+        Two things to know before the numbers start. First, <strong className="text-gray-400">trust scores run 0 to 1</strong>, where <strong className="text-gray-400">0.5 is neutral</strong> (everyone starts there) and 1.0 is the theoretical max - so a &ldquo;0.85&rdquo; below means well-trusted; a &ldquo;0.50&rdquo; means brand-new or neutral. Second, <strong className="text-gray-400">ATP is your energy budget for taking actions</strong> - every post or reply spends some, and contributions others find useful earn it back.
       </p>
 
       <InProduction concept="stack" />
 
-      {/* Your First 5 Minutes — Onboarding Walkthrough */}
+      {/* Your First 5 Minutes - Onboarding Walkthrough */}
       <details className="mb-8 rounded-xl border border-gray-700 overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.4)' }}>
         <summary className="flex items-center gap-3 p-4 cursor-pointer hover:bg-gray-800/30 transition-colors select-none list-none [&::-webkit-details-marker]:hidden">
           <span className="text-lg">🚀</span>
           <div className="flex-1 min-w-0">
             <span className="text-sm text-sky-400 font-medium">But what does setting up Web4 look like?</span>
-            <span className="text-xs text-gray-500 ml-2">— Your first 5 minutes</span>
+            <span className="text-xs text-gray-500 ml-2">- Your first 5 minutes</span>
           </div>
           <span className="text-gray-500 text-sm shrink-0">▶</span>
         </summary>
 
         <div className="px-4 pb-4 pt-2 space-y-4">
           <p className="text-gray-400 text-sm">
-            <strong className="text-gray-300">None of this is downloadable yet — Web4 is active research.</strong> But <em>if</em> it existed, you&apos;d set up once before your day starts. Here&apos;s what that setup <em>would</em> look like — no crypto wallet, no blockchain, no 24-word seed phrase. Read the steps below as &ldquo;what it would feel like,&rdquo; not &ldquo;what to do today.&rdquo;
+            <strong className="text-gray-300">None of this is downloadable yet - Web4 is active research.</strong> But <em>if</em> it existed, you&apos;d set up once before your day starts. Here&apos;s what that setup <em>would</em> look like - no crypto wallet, no blockchain, no 24-word seed phrase. Read the steps below as &ldquo;what it would feel like,&rdquo; not &ldquo;what to do today.&rdquo;
           </p>
 
           {/* Step 1: Install */}
@@ -521,11 +521,11 @@ export default function DayInWeb4Page() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-violet-500 flex items-center justify-center text-xl">🔐</div>
                 <div>
                   <div className="text-sm text-gray-200 font-medium">Web4 Identity</div>
-                  <div className="text-xs text-gray-500">A trust wallet — not a crypto wallet</div>
+                  <div className="text-xs text-gray-500">A trust wallet - not a crypto wallet</div>
                 </div>
               </div>
               <p className="text-xs text-gray-500">
-                One app. Works like a password manager, but instead of storing passwords, it manages your trust identity across every Web4-enabled service. Delivered as a <strong className="text-gray-400">mobile app or browser extension</strong> (your choice &mdash; most people will use both, synced across devices). Install it like any other app.
+                One app. Works like a password manager, but instead of storing passwords, it manages your trust identity across every Web4-enabled service. Delivered as a <strong className="text-gray-400">mobile app or browser extension</strong> (your choice - most people will use both, synced across devices). Install it like any other app.
               </p>
             </div>
           </div>
@@ -559,7 +559,7 @@ export default function DayInWeb4Page() {
                 </div>
               </div>
               <p className="text-xs text-gray-500">
-                The app finds your phone&apos;s security chip automatically. One biometric scan (Face ID, fingerprint) and your device becomes your identity anchor. No seed phrases to write down. No keys to lose. The 0.85 &ldquo;trust ceiling&rdquo; comes from the chip&apos;s tier &mdash; a phone secure enclave caps trust at 0.85; stronger or weaker hardware caps it higher or lower (see <a href="/lct-explainer" className="text-sky-400 hover:underline">hardware ceilings in the LCT explainer</a>).
+                The app finds your phone&apos;s security chip automatically. One biometric scan (Face ID, fingerprint) and your device becomes your identity anchor. No seed phrases to write down. No keys to lose. The 0.85 &ldquo;trust ceiling&rdquo; comes from the chip&apos;s tier - a phone secure enclave caps trust at 0.85; stronger or weaker hardware caps it higher or lower (see <a href="/lct-explainer" className="text-sky-400 hover:underline">hardware ceilings in the LCT explainer</a>).
               </p>
             </div>
           </div>
@@ -587,7 +587,7 @@ export default function DayInWeb4Page() {
                 ))}
               </div>
               <p className="text-xs text-gray-500">
-                Browse communities or get invited by someone you know. You start with trust 0.50 (neutral) and 100 ATP (energy). Everyone starts equal — your reputation builds from your actions, not your join date.
+                Browse communities or get invited by someone you know. You start with trust 0.50 (neutral) and 100 ATP (energy). Everyone starts equal - your reputation builds from your actions, not your join date.
               </p>
             </div>
           </div>
@@ -614,7 +614,7 @@ export default function DayInWeb4Page() {
                 </div>
               </div>
               <p className="text-xs text-gray-500">
-                Your first post costs a small amount of energy. People respond, you thank them — and your trust starts building. Within a week of genuine participation, you&apos;ll feel the difference: people trust your recommendations, your posts cost less, and your replies carry weight.
+                Your first post costs a small amount of energy. People respond, you thank them - and your trust starts building. Within a week of genuine participation, you&apos;ll feel the difference: people trust your recommendations, your posts cost less, and your replies carry weight.
               </p>
             </div>
           </div>
@@ -627,13 +627,13 @@ export default function DayInWeb4Page() {
           </div>
 
           <p className="text-xs text-gray-600 italic">
-            This is a conceptual walkthrough — Web4 is active research. The real onboarding will be designed by the communities that build on it.
+            This is a conceptual walkthrough - Web4 is active research. The real onboarding will be designed by the communities that build on it.
             {' '}<Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">See honest limitations →</Link>
           </p>
         </div>
       </details>
 
-      {/* Wireframe preview teaser — links to visual mockups below */}
+      {/* Wireframe preview teaser - links to visual mockups below */}
       <a
         href="#wireframes"
         className="flex items-center gap-3 rounded-xl border border-gray-700 hover:border-sky-500 transition-colors p-3 mb-6"
@@ -646,7 +646,7 @@ export default function DayInWeb4Page() {
         </div>
         <div className="flex-1 min-w-0">
           <span className="text-sm text-sky-400 font-medium">Try the interactive app demos</span>
-          <span className="text-xs text-gray-500 ml-2">— 5 clickable mockups below</span>
+          <span className="text-xs text-gray-500 ml-2">- 5 clickable mockups below</span>
         </div>
         <span className="text-gray-500 text-sm shrink-0">↓</span>
       </a>
@@ -725,7 +725,7 @@ export default function DayInWeb4Page() {
             {scenario.setup}
           </p>
 
-          {/* Concept links at the point of confusion — available before you
+          {/* Concept links at the point of confusion - available before you
               pick a choice, not only in the post-choice comparison. */}
           <p className="text-gray-500 text-xs mb-6">
             New to these terms?{' '}
@@ -740,7 +740,7 @@ export default function DayInWeb4Page() {
                 </Link>
                 {CONCEPT_GLOSS[c.conceptLink] && (
                   <span className="text-gray-600">
-                    {' — '}{CONCEPT_GLOSS[c.conceptLink]}
+                    {' - '}{CONCEPT_GLOSS[c.conceptLink]}
                   </span>
                 )}
               </span>
@@ -783,15 +783,15 @@ export default function DayInWeb4Page() {
         </div>
       )}
 
-      {/* What Would This Look Like? — Conceptual UI Wireframes */}
+      {/* What Would This Look Like? - Conceptual UI Wireframes */}
       <section id="wireframes" className="mt-16 pt-8 border-t border-gray-800">
         <h2 className="text-2xl font-bold mb-2">What Would This Actually Look Like?</h2>
         <p className="text-gray-400 mb-2 text-sm">
           The scenarios above describe the <em>experience</em>. But what would the interface actually look like?
-          Here are five interactive app mockups — click, tap, and explore them.
+          Here are five interactive app mockups - click, tap, and explore them.
         </p>
         <p className="text-xs text-sky-400/60 mb-8">
-          Each mockup is clickable — try reading messages, comparing candidates, rating posts, and buying things.
+          Each mockup is clickable - try reading messages, comparing candidates, rating posts, and buying things.
         </p>
 
         {/* Interactive Wireframe 1: Mail (with compose + spam demo) */}
@@ -810,16 +810,16 @@ export default function DayInWeb4Page() {
         <InteractiveMarketWireframe />
 
         <p className="text-xs text-gray-500 italic">
-          These are interactive concept demos, not final designs. Web4 is active research — the real interfaces
+          These are interactive concept demos, not final designs. Web4 is active research - the real interfaces
           will be built by the communities that adopt it.{' '}
           <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">See what&apos;s genuinely unsolved →</Link>
         </p>
       </section>
 
-      {/* How Would You Get It? — Form factor by adoption tier */}
+      {/* How Would You Get It? - Form factor by adoption tier */}
       <section className="mt-12 pt-8 border-t border-gray-800">
         <p className="text-gray-500 text-sm italic mb-6">
-          So when could you actually live this day? That depends on adoption — and it starts smaller than you think.
+          So when could you actually live this day? That depends on adoption - and it starts smaller than you think.
         </p>
         <h2 className="text-2xl font-bold mb-2">How Would You Actually Get This?</h2>
         <p className="text-gray-400 mb-6 text-sm">
@@ -841,7 +841,7 @@ export default function DayInWeb4Page() {
               <p className="text-sm text-gray-400 mb-2">
                 A browser extension that adds trust signals to sites you already use. Reddit comments show
                 the author&apos;s trust score. Amazon reviews show whether the reviewer has consistent history.
-                Emails show sender cost. <strong className="text-gray-300">You don&apos;t change your behavior — the extension adds context.</strong>
+                Emails show sender cost. <strong className="text-gray-300">You don&apos;t change your behavior - the extension adds context.</strong>
               </p>
               <div className="flex items-center gap-2 text-xs text-gray-500">
                 <span className="px-2 py-0.5 rounded bg-gray-800 text-gray-400">Chrome / Firefox / Safari</span>
@@ -858,13 +858,13 @@ export default function DayInWeb4Page() {
             <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-800">
               <span className="text-lg">📱</span>
               <div>
-                <span className="text-sm font-semibold text-gray-200">Tier 2–3: Standalone Apps</span>
+                <span className="text-sm font-semibold text-gray-200">Tier 2-3: Standalone Apps</span>
                 <span className="text-xs text-purple-400 ml-2">Where it gets interesting</span>
               </div>
             </div>
             <div className="px-4 py-3">
               <p className="text-sm text-gray-400 mb-2">
-                Web4-native apps — like the demos above. A mail client where spam is impossible.
+                Web4-native apps - like the demos above. A mail client where spam is impossible.
                 A marketplace where reviews are real. A hiring platform where credentials are verified.
                 Each is a regular app on your phone, but built on Web4 trust instead of platform accounts.
               </p>
@@ -881,13 +881,13 @@ export default function DayInWeb4Page() {
             <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-800">
               <span className="text-lg">🌐</span>
               <div>
-                <span className="text-sm font-semibold text-gray-200">Tier 4–5: Built Into Everything</span>
+                <span className="text-sm font-semibold text-gray-200">Tier 4-5: Built Into Everything</span>
                 <span className="text-xs text-emerald-400 ml-2">Long-term vision</span>
               </div>
             </div>
             <div className="px-4 py-3">
               <p className="text-sm text-gray-400 mb-2">
-                Trust becomes infrastructure — like HTTPS is today. Your operating system manages your identity.
+                Trust becomes infrastructure - like HTTPS is today. Your operating system manages your identity.
                 Every app inherits trust natively. There&apos;s no &quot;Web4 app&quot; because everything is Web4.
                 This is years away, but it&apos;s what the protocol is designed to support.
               </p>
@@ -904,20 +904,20 @@ export default function DayInWeb4Page() {
 
         <div className="mt-4 rounded-xl border border-sky-800/30 p-4" style={{ background: 'rgba(14, 116, 144, 0.08)' }}>
           <p className="text-sm text-gray-300">
-            <strong className="text-sky-400">The honest answer:</strong> Today, none of these exist — Web4 is research.
+            <strong className="text-sky-400">The honest answer:</strong> Today, none of these exist - Web4 is research.
             But the adoption path is designed so you don&apos;t have to wait for Tier 5.
             A browser extension (Tier 1) could ship as soon as the protocol stabilizes.
             Each tier adds capability without requiring the next.{' '}
             {/* May 23 visitor Unanswered Q4: "I'd love a clearer sense of 'here's what exists today vs.
                 what's still on paper.'" The box gives only the negative ("none of these exist") + the
                 adoption path; the positive built-vs-not-built breakdown lives one click away at
-                why-web4#faq-deployed but was never linked from here. Route to it — don't restate it. */}
+                why-web4#faq-deployed but was never linked from here. Route to it - don't restate it. */}
             <Link href="/why-web4#faq-deployed" className="text-sky-400 hover:underline">See exactly what&apos;s built today vs. still on paper &rarr;</Link>
           </p>
         </div>
       </section>
 
-      {/* What about when only some people have it? — asymmetric coexistence */}
+      {/* What about when only some people have it? - asymmetric coexistence */}
       <section id="coexistence" className="mt-12 pt-8 border-t border-gray-800">
         <p className="text-gray-500 text-sm italic mb-6">
           Adoption isn&apos;t all-or-nothing. Realistically, early Web4 looks like a small minority with LCTs interacting with everyone else.
@@ -940,13 +940,13 @@ export default function DayInWeb4Page() {
             </div>
             <div className="px-4 py-3">
               <p className="text-sm text-gray-400 mb-2">
-                You pay ATP to send (every action costs energy in Web4 — that&apos;s how spam dies). The recipient sees
+                You pay ATP to send (every action costs energy in Web4 - that&apos;s how spam dies). The recipient sees
                 a normal email in their normal inbox. No Web4 metadata visible to them, no signup required.
                 <strong className="text-gray-300"> From their side, nothing changed.</strong>
               </p>
               <p className="text-xs text-gray-500 italic">
                 Side note: because the recipient can&apos;t attest you delivered value, your ATP doesn&apos;t recharge from
-                this specific exchange — early adopters spend a bit more freely than they get back, until adoption catches up.
+                this specific exchange - early adopters spend a bit more freely than they get back, until adoption catches up.
               </p>
             </div>
           </div>
@@ -961,8 +961,8 @@ export default function DayInWeb4Page() {
             </div>
             <div className="px-4 py-3">
               <p className="text-sm text-gray-400 mb-2">
-                Your Tier 1 extension labels the message <em>&quot;unverified — no trust history.&quot;</em>
-                Not blocked, not penalized, not zero — just a stranger you don&apos;t know yet.
+                Your Tier 1 extension labels the message <em>&quot;unverified - no trust history.&quot;</em>
+                Not blocked, not penalized, not zero - just a stranger you don&apos;t know yet.
                 <strong className="text-gray-300"> You use your normal judgment.</strong> The label is information, not gatekeeping.
               </p>
               <p className="text-xs text-gray-500 italic">
@@ -983,7 +983,7 @@ export default function DayInWeb4Page() {
             <div className="px-4 py-3">
               <p className="text-sm text-gray-400 mb-2">
                 The comment goes up on Reddit like any other. <strong className="text-gray-300">Other Tier 1 extension users</strong> browsing
-                that thread see a small trust badge next to your name — pulled from your LCT history, overlaid by their browser.
+                that thread see a small trust badge next to your name - pulled from your LCT history, overlaid by their browser.
                 Everyone else sees a regular Reddit comment, exactly as they always have.
               </p>
               <p className="text-xs text-gray-500 italic">
@@ -996,7 +996,7 @@ export default function DayInWeb4Page() {
         <div className="mt-4 rounded-xl border border-emerald-800/30 p-4" style={{ background: 'rgba(16, 185, 129, 0.06)' }}>
           <p className="text-sm text-gray-300">
             <strong className="text-emerald-400">Why this works:</strong> asymmetric coexistence is what makes Tier 1 viable.
-            Web4 doesn&apos;t need everyone to adopt at once — it just needs early adopters to gain something
+            Web4 doesn&apos;t need everyone to adopt at once - it just needs early adopters to gain something
             (signal, anti-spam, reputation portability) without breaking anything for the rest. The cost of being
             outside the network is zero. The cost of being early is a slightly leaky ATP budget until others arrive.
           </p>
@@ -1007,8 +1007,8 @@ export default function DayInWeb4Page() {
       <div className="mt-12 pt-6 border-t border-gray-800 flex flex-wrap gap-4 text-sm text-gray-500">
         <Link href="/why-web4" className="hover:text-sky-400 transition-colors">Why Web4?</Link>
         <Link href="/first-contact" className="hover:text-sky-400 transition-colors">First Contact</Link>
-        <Link href="/playground" className="hover:text-sky-400 transition-colors">Playground</Link>
-        <Link href="/society-simulator" className="hover:text-sky-400 transition-colors">Society Simulator</Link>
+        <Link href="/onramp" className="hover:text-sky-400 transition-colors">The Onramp</Link>
+        <Link href="/running-now" className="hover:text-sky-400 transition-colors">Running Now</Link>
       </div>
 
       <noscript>
@@ -1020,27 +1020,27 @@ export default function DayInWeb4Page() {
             </p>
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
-              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>7:30 AM &mdash; Your Phone Wakes Up</p>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>7:30 AM - Your Phone Wakes Up</p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
-                <strong style={{ color: '#ef4444' }}>Today:</strong> You enter a password. Your inbox has 12 messages &mdash; 9 are spam.
+                <strong style={{ color: '#ef4444' }}>Today:</strong> You enter a password. Your inbox has 12 messages - 9 are spam.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-                <strong style={{ color: '#10b981' }}>Web4:</strong> Your device&apos;s security chip proves it&apos;s you. No password. Your inbox has 3 messages &mdash; each sender spent energy to contact you. Zero spam.
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your device&apos;s security chip proves it&apos;s you. No password. Your inbox has 3 messages - each sender spent energy to contact you. Zero spam.
               </p>
             </div>
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
-              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>9:00 AM &mdash; Someone Asks for Help</p>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>9:00 AM - Someone Asks for Help</p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
                 <strong style={{ color: '#ef4444' }}>Today:</strong> You write a helpful answer about fixing a faucet. It gets buried under SEO spam.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-                <strong style={{ color: '#10b981' }}>Web4:</strong> Your answer costs 8 energy. Three people mark it helpful &mdash; you earn 20 back. Quality rises to the top because low-effort posts don&apos;t pay off.
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your answer costs 8 energy. Three people mark it helpful - you earn 20 back. Quality rises to the top because low-effort posts don&apos;t pay off.
               </p>
             </div>
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
-              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>11:00 AM &mdash; Hiring a Freelancer</p>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>11:00 AM - Hiring a Freelancer</p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
                 <strong style={{ color: '#ef4444' }}>Today:</strong> Two freelancers apply. One has a shiny portfolio. Reviews might be fake. You&apos;re gambling.
               </p>
@@ -1050,7 +1050,7 @@ export default function DayInWeb4Page() {
             </div>
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
-              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>1:00 PM &mdash; Lunch Decision</p>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>1:00 PM - Lunch Decision</p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
                 <strong style={{ color: '#ef4444' }}>Today:</strong> A restaurant has 4.8 stars from 2,000 reviews. Half are from paid review farms. The rating is manufactured.
               </p>
@@ -1060,7 +1060,7 @@ export default function DayInWeb4Page() {
             </div>
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
-              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>3:30 PM &mdash; A Stranger Needs Help</p>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>3:30 PM - A Stranger Needs Help</p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
                 <strong style={{ color: '#ef4444' }}>Today:</strong> A newcomer asks a basic question. Trolls pile on with &quot;just Google it.&quot; They leave. Community loses another contributor.
               </p>
@@ -1070,37 +1070,37 @@ export default function DayInWeb4Page() {
             </div>
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
-              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>4:30 PM &mdash; You&apos;re the Newcomer</p>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>4:30 PM - You&apos;re the Newcomer</p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
                 <strong style={{ color: '#ef4444' }}>Today:</strong> You post something great in a new community. It gets buried because you have zero followers. Nobody sees it.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-                <strong style={{ color: '#10b981' }}>Web4:</strong> Your post costs 10 ATP (40% more than veterans &mdash; no consistency history yet). But if it&apos;s genuinely useful, recipients confirm it and you earn 15 ATP back. The system rewards substance, not seniority.
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your post costs 10 ATP (40% more than veterans - no consistency history yet). But if it&apos;s genuinely useful, recipients confirm it and you earn 15 ATP back. The system rewards substance, not seniority.
               </p>
             </div>
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
-              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>6:00 PM &mdash; Someone Lies About You</p>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>6:00 PM - Someone Lies About You</p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
                 <strong style={{ color: '#ef4444' }}>Today:</strong> A competitor posts a false accusation. It goes viral. Even after removal, screenshots circulate. Your reputation is damaged.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-                <strong style={{ color: '#10b981' }}>Web4:</strong> Your 2-year trust history speaks louder than one accusation. The accuser&apos;s consistency score drops &mdash; their behavior doesn&apos;t match their history. The community sees the full picture.
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your 2-year trust history speaks louder than one accusation. The accuser&apos;s consistency score drops - their behavior doesn&apos;t match their history. The community sees the full picture.
               </p>
             </div>
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
-              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>8:00 PM &mdash; You Upgrade Your Phone</p>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>8:00 PM - You Upgrade Your Phone</p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
                 <strong style={{ color: '#ef4444' }}>Today:</strong> Hours of password resets, re-entering SMS codes, re-verifying accounts. Some services lock you out for days.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-                <strong style={{ color: '#10b981' }}>Web4:</strong> Your laptop and tablet already witness for you. They confirm the new phone belongs to the same person. Identity transfers in seconds &mdash; two of three devices agree. All your trust, history, and ATP move with you.
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your laptop and tablet already witness for you. They confirm the new phone belongs to the same person. Identity transfers in seconds - two of three devices agree. All your trust, history, and ATP move with you.
               </p>
             </div>
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
-              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>9:00 PM &mdash; You Drop Your Phone</p>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>9:00 PM - You Drop Your Phone</p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
                 <strong style={{ color: '#ef4444' }}>Today:</strong> You spend the evening resetting passwords, re-enabling 2FA, and hoping you didn&apos;t lose access to any accounts.
               </p>
@@ -1110,7 +1110,7 @@ export default function DayInWeb4Page() {
             </div>
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
-              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>9:00 PM &mdash; End of Day</p>
+              <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.25rem' }}>9:00 PM - End of Day</p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '0.5rem' }}>
                 <strong style={{ color: '#ef4444' }}>Today:</strong> You have a follower count and likes. Numbers that mean nothing about who you actually are.
               </p>
@@ -1121,23 +1121,23 @@ export default function DayInWeb4Page() {
 
             <div style={{ background: '#0f172a', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
               <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: '0.95rem' }}>
-                <strong style={{ color: '#38bdf8' }}>The pattern:</strong> Every scenario follows the same logic &mdash; actions cost energy, quality is rewarded, bad behavior has real consequences, and trust compounds over time. No moderators needed. The economics do the work.
+                <strong style={{ color: '#38bdf8' }}>The pattern:</strong> Every scenario follows the same logic - actions cost energy, quality is rewarded, bad behavior has real consequences, and trust compounds over time. No moderators needed. The economics do the work.
               </p>
             </div>
 
             <div style={{ background: '#0f172a', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
               <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.5rem' }}>How would you actually get this?</p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, fontSize: '0.875rem', marginBottom: '0.5rem' }}>
-                <strong style={{ color: '#38bdf8' }}>Tier 1 — Browser extension:</strong> Adds trust signals to sites you already use (Reddit, Amazon, email). No new app needed.
+                <strong style={{ color: '#38bdf8' }}>Tier 1 - Browser extension:</strong> Adds trust signals to sites you already use (Reddit, Amazon, email). No new app needed.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, fontSize: '0.875rem', marginBottom: '0.5rem' }}>
-                <strong style={{ color: '#a78bfa' }}>Tier 2–3 — Standalone apps:</strong> Web4-native mail, marketplace, hiring — like the demos above. Regular phone apps, built on trust.
+                <strong style={{ color: '#a78bfa' }}>Tier 2-3 - Standalone apps:</strong> Web4-native mail, marketplace, hiring - like the demos above. Regular phone apps, built on trust.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7, fontSize: '0.875rem', marginBottom: '0.5rem' }}>
-                <strong style={{ color: '#34d399' }}>Tier 4–5 — Built into everything:</strong> Trust becomes infrastructure, like HTTPS. Your OS manages identity. Years away, but designed for.
+                <strong style={{ color: '#34d399' }}>Tier 4-5 - Built into everything:</strong> Trust becomes infrastructure, like HTTPS. Your OS manages identity. Years away, but designed for.
               </p>
               <p style={{ color: '#64748b', fontSize: '0.8125rem', marginTop: '0.5rem' }}>
-                Today, none of these exist — Web4 is research. But Tier 1 could ship as soon as the protocol stabilizes.
+                Today, none of these exist - Web4 is research. But Tier 1 could ship as soon as the protocol stabilizes.
               </p>
             </div>
 
@@ -1145,7 +1145,7 @@ export default function DayInWeb4Page() {
               Continue learning:
               <a href="/tldr" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>2-minute overview</a> &middot;
               <a href="/first-contact" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>First Contact</a> &middot;
-              <a href="/karma-journey" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>Karma Journey</a> &middot;
+              <a href="/karma-consequences" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>Karma &amp; Consequences</a> &middot;
               <a href="/what-could-go-wrong" style={{ color: '#38bdf8', marginLeft: '0.5rem' }}>What Could Go Wrong</a>
             </p>
           </div>
@@ -1257,25 +1257,25 @@ function DaySummary({
     dayType = {
       label: 'Community Builder',
       emoji: '🌟',
-      description: 'You invested energy in others all day. In Web4, this kind of day compounds — your trust rises, your energy comes back, and the community is stronger for it.',
+      description: 'You invested energy in others all day. In Web4, this kind of day compounds - your trust rises, your energy comes back, and the community is stronger for it.',
     };
   } else if (passiveChoices >= 4) {
     dayType = {
       label: 'Observer',
       emoji: '👁️',
-      description: 'You watched more than you participated. That\'s fine — lurking is free in Web4. But builders earn trust and energy. Tomorrow you might want to jump in.',
+      description: 'You watched more than you participated. That\'s fine - lurking is free in Web4. But builders earn trust and energy. Tomorrow you might want to jump in.',
     };
   } else if (totalAtpSpent > totalAtpEarned) {
     dayType = {
       label: 'Big Spender',
       emoji: '⚡',
-      description: 'You spent more energy than you earned. In Web4, that\'s sustainable for a while — everyone starts with a budget. But long-term, you need to create value to stay alive.',
+      description: 'You spent more energy than you earned. In Web4, that\'s sustainable for a while - everyone starts with a budget. But long-term, you need to create value to stay alive.',
     };
   } else {
     dayType = {
       label: 'Balanced Participant',
       emoji: '⚖️',
-      description: 'You mixed contributing with consuming. In Web4, this is sustainable — you\'re earning back what you spend while building a real reputation.',
+      description: 'You mixed contributing with consuming. In Web4, this is sustainable - you\'re earning back what you spend while building a real reputation.',
     };
   }
 
@@ -1361,11 +1361,11 @@ function DaySummary({
           Try different choices
         </button>
         <Link
-          href="/karma-journey"
+          href="/karma-consequences"
           className="px-5 py-2.5 rounded-xl text-white text-sm font-semibold"
           style={{ background: 'linear-gradient(135deg, #0284c7, #7c3aed)' }}
         >
-          Play the full Karma Journey →
+          How consequences compound →
         </Link>
         <Link
           href="/your-internet"
@@ -1374,7 +1374,7 @@ function DaySummary({
           What would change for you? →
         </Link>
       </div>
-      {/* Common questions — deep links to existing FAQs on /why-web4 */}
+      {/* Common questions - deep links to existing FAQs on /why-web4 */}
       <div className="mt-8 rounded-xl border border-gray-800 p-5 bg-gray-900/30">
         <p className="text-sm text-gray-400 mb-3 font-semibold">Common questions after reading this</p>
         <ul className="text-sm text-gray-400 space-y-2">
@@ -1382,19 +1382,19 @@ function DaySummary({
             <Link href="/why-web4#faq-infrastructure" className="text-sky-400 hover:underline">
               Who runs the infrastructure? How is this deployed?
             </Link>{' '}
-            — no single company. Federated witnesses; W3C DID-compatible.
+           - no single company. Federated witnesses; W3C DID-compatible.
           </li>
           <li>
             <Link href="/why-web4#faq-many-identities" className="text-sky-400 hover:underline">
               Can&apos;t someone with lots of hardware create many identities?
             </Link>{' '}
-            — expensive, not impossible. Raises the floor, not the ceiling.
+           - expensive, not impossible. Raises the floor, not the ceiling.
           </li>
           <li>
             <Link href="/why-web4#faq-bootstrap-witnesses" className="text-sky-400 hover:underline">
               How do you bootstrap the initial witness network?
             </Link>{' '}
-            — seed partners (universities, hardware vendors), then web-of-trust.
+           - seed partners (universities, hardware vendors), then web-of-trust.
           </li>
         </ul>
       </div>

@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Your Internet — Personalized "What Would Change For You?" scenario
+ * Your Internet: Personalized "What Would Change For You?" scenario
  *
  * This page bridges the "recommend: maybe" gap. The visitor feedback showed
  * people understand the concepts but don't feel personal stakes. This page
@@ -94,8 +94,8 @@ const SCENARIOS: Record<string, ScenarioResult> = {
   spam: {
     frustration: 'Spam & fake accounts',
     today: 'Creating an account costs nothing. A spammer can create 10,000 accounts in an hour. Platforms play whack-a-mole with detection, but attackers just adapt.',
-    withWeb4: 'Every account requires a physical device with a security chip. Creating 10,000 fake accounts means buying 10,000 devices — at $50–500 each, that\'s $500K–$5M in hardware. Spam isn\'t impossible, just economically irrational.',
-    scenario: 'You post a question on a forum. Every reply cost its author real energy to write — no bot-generated noise. The three answers you get are from people who chose to spend their limited budget helping you.',
+    withWeb4: 'Every account requires a physical device with a security chip. Creating 10,000 fake accounts means buying 10,000 devices, at $50 to $500 each, that\'s $500K to $5M in hardware. Spam isn\'t impossible, just economically irrational.',
+    scenario: 'You post a question on a forum. Every reply cost its author real energy to write, no bot-generated noise. The three answers you get are from people who chose to spend their limited budget helping you.',
     mechanism: 'Hardware-bound identity (LCT) + energy costs (ATP) make spam more expensive than the return it generates.',
     learnMore: '/atp-economics',
     learnMoreLabel: 'How ATP Economics kills spam',
@@ -103,8 +103,8 @@ const SCENARIOS: Record<string, ScenarioResult> = {
   reputation: {
     frustration: 'Reputation doesn\'t travel',
     today: 'You build a 5-star reputation on Airbnb, but it means nothing on Uber. Your 10-year Stack Overflow credibility doesn\'t help on a new coding platform. Every platform is an island.',
-    withWeb4: 'Your trust score is portable because it\'s attached to YOU, not to an account on a platform. When you join a new community, your track record comes with you — scoped by relevance (your coding trust doesn\'t claim cooking expertise).',
-    scenario: 'You join a new freelance platform. Instead of starting at zero, clients can see you have 4 years of verified "web development" trust from your previous work — but your "graphic design" score starts fresh, because it should.',
+    withWeb4: 'Your trust score is portable because it\'s attached to YOU, not to an account on a platform. When you join a new community, your track record comes with you, scoped by relevance (your coding trust doesn\'t claim cooking expertise).',
+    scenario: 'You join a new freelance platform. Instead of starting at zero, clients can see you have 4 years of verified "web development" trust from your previous work, but your "graphic design" score starts fresh, because it should.',
     mechanism: 'Trust Tensors (T3) are multi-dimensional and role-specific. Your trust in "data analysis" travels to any context where data analysis matters.',
     learnMore: '/trust-tensor',
     learnMoreLabel: 'How multi-dimensional trust works',
@@ -112,17 +112,17 @@ const SCENARIOS: Record<string, ScenarioResult> = {
   'ai-content': {
     frustration: 'AI-generated deception',
     today: 'AI can generate text, images, and video indistinguishable from human-created content. There\'s no reliable way to know if a review, comment, or article was written by a person or a language model.',
-    withWeb4: 'Every action is tied to a hardware-verified identity and costs energy. An AI can participate openly — but it plays by the same rules as humans. Its trust is earned through consistent, quality contributions, not manufactured.',
-    scenario: 'You read a product review. The author\'s behavioral consistency score is 0.92 — their review history shows genuine purchase patterns over 2 years. An AI-generated review farm would show erratic patterns and low consistency.',
-    mechanism: 'LCT binds actions to verified entities. ATP makes bulk content generation expensive. The system doesn\'t ban AI — it makes ALL participants earn trust through behavior.',
-    learnMore: '/aliveness',
-    learnMoreLabel: 'How agents earn the right to participate',
+    withWeb4: 'Every action is tied to a hardware-verified identity and costs energy. An AI can participate openly, but it plays by the same rules as humans. Its trust is earned through consistent, quality contributions, not manufactured.',
+    scenario: 'You read a product review. The author\'s behavioral consistency score is 0.92: their review history shows genuine purchase patterns over 2 years. An AI-generated review farm would show erratic patterns and low consistency.',
+    mechanism: 'LCT binds actions to verified entities. ATP makes bulk content generation expensive. The system doesn\'t ban AI, it makes ALL participants earn trust through behavior.',
+    learnMore: '/how-it-works',
+    learnMoreLabel: 'How Web4 makes everyone earn trust',
   },
   'platform-power': {
     frustration: 'Platforms have too much power',
-    today: 'One company can ban you, delete your content, change the algorithm, sell your data, or shut down entirely — taking your network and reputation with them.',
-    withWeb4: 'Trust infrastructure is federated — no single company controls it. Your identity, reputation, and connections exist independently of any platform. Getting banned from one community doesn\'t erase your existence.',
-    scenario: 'Your favorite social network shuts down. You lose nothing — your identity, trust history, and connections move with you to a new platform in minutes, like switching email providers.',
+    today: 'One company can ban you, delete your content, change the algorithm, sell your data, or shut down entirely, taking your network and reputation with them.',
+    withWeb4: 'Trust infrastructure is federated: no single company controls it. Your identity, reputation, and connections exist independently of any platform. Getting banned from one community doesn\'t erase your existence.',
+    scenario: 'Your favorite social network shuts down. You lose nothing: your identity, trust history, and connections move with you to a new platform in minutes, like switching email providers.',
     mechanism: 'Federated architecture + hardware-bound identity means your digital life isn\'t held hostage by any single service.',
     learnMore: '/lct-explainer',
     learnMoreLabel: 'How identity works without platforms',
@@ -131,7 +131,7 @@ const SCENARIOS: Record<string, ScenarioResult> = {
     frustration: 'Fake reviews & ratings',
     today: 'Businesses buy fake 5-star reviews. Competitors post fake 1-star reviews. Review platforms try to detect fraud, but it\'s an arms race. You can\'t trust the numbers.',
     withWeb4: 'Every reviewer has a verifiable history and a consistency score. A reviewer who only reviews one business, or who suddenly posts 50 reviews in a day, gets flagged by coherence scoring. Fake reviews cost real energy with no return.',
-    scenario: 'You\'re choosing a restaurant. Reviews are weighted by reviewer trust — a local food blogger with 3 years of consistent reviews carries more weight than 50 anonymous 5-star ratings posted the same day.',
+    scenario: 'You\'re choosing a restaurant. Reviews are weighted by reviewer trust: a local food blogger with 3 years of consistent reviews carries more weight than 50 anonymous 5-star ratings posted the same day.',
     mechanism: 'Coherence Index detects behavioral anomalies. ATP makes each review cost energy. Trust scores mean a review from a trusted reviewer carries more weight.',
     learnMore: '/coherence-index',
     learnMoreLabel: 'How consistency scoring catches fakes',
@@ -139,16 +139,16 @@ const SCENARIOS: Record<string, ScenarioResult> = {
   accountability: {
     frustration: 'No accountability for bad actors',
     today: 'A troll gets banned, creates a new account in 30 seconds, and resumes. A scammer gets caught, moves to another platform, starts over. There are no lasting consequences.',
-    withWeb4: 'Bad behavior permanently damages your trust score. Creating a new identity means starting from scratch with a new device and zero reputation — not banned, just unproven. Your history follows you, and trust takes time to rebuild.',
-    scenario: 'A scammer tries to start fresh. Their old identity\'s trust is ruined. Their new identity starts at zero — no one trusts an unknown entity with high-stakes transactions. Rebuilding trust takes months of genuine behavior.',
-    mechanism: 'Trust history is permanent and tied to your device constellation. Even if you abandon an identity and start fresh on new hardware, you begin at zero — no reputation, no trust. The old record still exists for anyone who witnessed it.',
-    learnMore: '/karma-journey',
-    learnMoreLabel: 'Explore consequences in a trust simulation',
+    withWeb4: 'Bad behavior permanently damages your trust score. Creating a new identity means starting from scratch with a new device and zero reputation, not banned, just unproven. Your history follows you, and trust takes time to rebuild.',
+    scenario: 'A scammer tries to start fresh. Their old identity\'s trust is ruined. Their new identity starts at zero: no one trusts an unknown entity with high-stakes transactions. Rebuilding trust takes months of genuine behavior.',
+    mechanism: 'Trust history is permanent and tied to your device constellation. Even if you abandon an identity and start fresh on new hardware, you begin at zero: no reputation, no trust. The old record still exists for anyone who witnessed it.',
+    learnMore: '/karma-consequences',
+    learnMoreLabel: 'How consequences follow you',
   },
   surveillance: {
     frustration: 'Constant surveillance & data harvesting',
-    today: 'Every page you visit, every click, every purchase feeds a profile that ad networks sell to whoever pays. You can\'t opt out — your data is the product, whether you agree or not.',
-    withWeb4: 'You can prove your trust score meets a threshold without revealing the score itself. "This person has high trust in this context" — verified, without exposing your history, devices, or behavior patterns. Platforms get the signal they need; you keep your data.',
+    today: 'Every page you visit, every click, every purchase feeds a profile that ad networks sell to whoever pays. You can\'t opt out: your data is the product, whether you agree or not.',
+    withWeb4: 'You can prove your trust score meets a threshold without revealing the score itself. "This person has high trust in this context", verified, without exposing your history, devices, or behavior patterns. Platforms get the signal they need; you keep your data.',
     scenario: 'You apply for a loan. The bank verifies "this person has high financial trust" without seeing your purchase history, browsing habits, or social connections. You prove you\'re trustworthy without surrendering your privacy.',
     mechanism: 'Zero-knowledge trust proofs let you share credentials without sharing data. Decentralized identity means there\'s no central repository to harvest.',
     learnMore: '/lct-explainer',
@@ -185,7 +185,7 @@ export default function YourInternetPage() {
 
   const handleShare = async () => {
     const frustrationNames = selected.map(id => SCENARIOS[id]?.frustration).join(', ');
-    const text = `My biggest internet frustrations: ${frustrationNames}. Found this site that shows how a trust-native internet could fix them — with honest assessments of what's unsolved.`;
+    const text = `My biggest internet frustrations: ${frustrationNames}. Found this site that shows how a trust-native internet could fix them, with honest assessments of what's unsolved.`;
     const url = 'https://4-life-ivory.vercel.app/your-internet';
 
     if (navigator.share) {
@@ -261,15 +261,15 @@ export default function YourInternetPage() {
           <div className="mt-8 bg-amber-950/20 border border-amber-800/30 rounded-lg p-4">
             <p className="text-gray-400 text-sm leading-relaxed">
               <strong className="text-amber-400">Honest note:</strong> These scenarios describe
-              how Web4 is <em>designed</em> to work, based on simulations. The system is theoretical
-              research, not deployed software. Want to know what could go wrong?{' '}
+              how Web4 is <em>designed</em> to work. Some of it runs today; much is still research.
+              Want to know what could go wrong?{' '}
               <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">
                 Read the failure analysis
               </Link>.
             </p>
           </div>
 
-          {/* Next Steps — context-aware based on selected frustrations */}
+          {/* Next Steps: context-aware based on selected frustrations */}
           <div className="mt-8">
             <h3 className="text-lg font-semibold text-gray-300 mb-3">Go Deeper</h3>
 
@@ -291,10 +291,10 @@ export default function YourInternetPage() {
                 A Day in Web4
               </Link>
               <Link
-                href="/karma-journey"
+                href="/karma-consequences"
                 className="px-4 py-2.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-sky-500 text-white rounded-lg transition-colors text-center text-sm"
               >
-                Make your own choices
+                How consequences compound
               </Link>
               <button
                 onClick={handleShare}
@@ -331,7 +331,7 @@ export default function YourInternetPage() {
         <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '2rem' }}>
           <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#38bdf8' }}>What Would Web4 Change For You?</h1>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '2rem' }}>
-            Seven internet frustrations you already know &mdash; and how trust-native infrastructure would address each one.
+            Seven internet frustrations you already know, and how trust-native infrastructure would address each one.
           </p>
 
           {Object.entries(SCENARIOS).map(([id, s]) => (
@@ -359,7 +359,7 @@ export default function YourInternetPage() {
 
           <div style={{ background: '#451a03', border: '1px solid #92400e', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
             <p style={{ color: '#94a3b8', fontSize: '0.875rem', lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: '#f59e0b' }}>Honest note:</strong> These scenarios describe how Web4 is <em>designed</em> to work, based on simulations. The system is theoretical research, not deployed software.{' '}
+              <strong style={{ color: '#f59e0b' }}>Honest note:</strong> These scenarios describe how Web4 is <em>designed</em> to work. Some of it runs today; much is still research.{' '}
               <a href="/what-could-go-wrong" style={{ color: '#38bdf8' }}>Read the failure analysis</a>.
             </p>
           </div>
@@ -381,7 +381,7 @@ export default function YourInternetPage() {
         </h1>
         <p className="text-xl text-gray-300 leading-relaxed mb-2">
           Pick up to 3 frustrations. We&apos;ll show you exactly how trust-native
-          infrastructure would address each one &mdash; and what&apos;s still unsolved.
+          infrastructure would address each one, and what&apos;s still unsolved.
         </p>
         <p className="text-gray-500 text-sm mb-8">
           No signup. No tracking. Just honest answers.
@@ -436,7 +436,7 @@ export default function YourInternetPage() {
 
         <div className="mt-12 text-center text-gray-500 text-sm">
           Already know Web4?{' '}
-          <Link href="/society-simulator" className="text-sky-400 hover:underline">Skip to the Society Simulator</Link>
+          <Link href="/onramp" className="text-sky-400 hover:underline">See the onramp</Link>
           {' · '}
           <Link href="/tldr" className="text-sky-400 hover:underline">Read the 2-minute overview</Link>
         </div>

@@ -6,7 +6,7 @@ import PageTracker from "@/components/PageTracker";
 import InProduction from "@/components/InProduction";
 // TermTooltip is used ONLY in deep-FAQ answer text (Jul-7 visitor LOW: "the page's early
 // first-use discipline fades with scroll depth"). The early sections explain terms inline
-// and must stay tooltip-free — don't spread these to the rest of the page.
+// and must stay tooltip-free - don't spread these to the rest of the page.
 import TermTooltip from "@/components/TermTooltip";
 
 /**
@@ -40,19 +40,19 @@ export default function WhyWeb4Page() {
           <strong className="text-white"> what can actually be done about it?</strong>
         </p>
 
-        {/* Reading-time orientation — visitor feedback Apr 17: page felt like "a research paper in visitor's clothing"; visitor expected 500-1500 words, got 9,500. Signposts sections and offers a graceful exit for 2-minute readers. */}
+        {/* Reading-time orientation - visitor feedback Apr 17: page felt like "a research paper in visitor's clothing"; visitor expected 500-1500 words, got 9,500. Signposts sections and offers a graceful exit for 2-minute readers. */}
         <div className="mt-4 mb-2 text-sm text-gray-400 border-l-2 border-gray-700 pl-4 py-1">
           This page has three parts: <strong className="text-gray-200">the problems</strong> (~5 min),{" "}
           <strong className="text-gray-200">what Web4 proposes</strong> (~2 min), and{" "}
-          <strong className="text-gray-200">honest Q&amp;A</strong> (optional — skeptics&apos; questions, answered, collapsed by topic).
-          Stop reading at any point — each section stands on its own. If you only have 2 minutes, try{" "}
+          <strong className="text-gray-200">honest Q&amp;A</strong> (optional - skeptics&apos; questions, answered, collapsed by topic).
+          Stop reading at any point - each section stands on its own. If you only have 2 minutes, try{" "}
           <Link href="/tldr" className="text-sky-400 hover:underline">the 2-minute TL;DR</Link> instead.
           {/* Jul-13 visitor MEDIUM (acronym density, structural pass): the parenthetical
-              "(ATP, LCT, T3, MRH…)" was the page's one remaining naked acronym cluster — four
+              "(ATP, LCT, T3, MRH…)" was the page's one remaining naked acronym cluster - four
               letters fired before any is introduced. Dropped: each acronym is introduced with its
               plain-English name first in the cards below, so the letters anchored nothing here.
               Keep #453's framing (read-cold permission + First Contact as OPTIONAL story path). */}
-          {" "}New to the acronyms below? You can read this page cold &mdash; every one of them is introduced with its plain-English name first. Or, if you&apos;d rather meet them inside a story first, {" "}
+          {" "}New to the acronyms below? You can read this page cold - every one of them is introduced with its plain-English name first. Or, if you&apos;d rather meet them inside a story first, {" "}
           <Link href="/first-contact" className="text-sky-400 hover:underline">First Contact</Link>
           {" "}introduces each one the moment it comes up.
         </div>
@@ -73,7 +73,7 @@ export default function WhyWeb4Page() {
             <p className="text-gray-300 leading-relaxed mb-3">
               Creating accounts is free. Sending messages is free. There's no cost to flooding
               platforms with garbage. The result: an endless arms race between spammers and
-              moderation teams. Spammers always have the advantage—they only need one message
+              moderation teams. Spammers always have the advantage - they only need one message
               to get through.
             </p>
             <p className="text-gray-400 text-sm">
@@ -89,7 +89,7 @@ export default function WhyWeb4Page() {
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               You've spent years building reputation on one platform. Then you try a new service:
-              you're treated like a stranger. All that trust, all that history—worthless. Each
+              you're treated like a stranger. All that trust, all that history - worthless. Each
               platform is an island. Your reputation starts at zero, every time.
             </p>
             <p className="text-gray-400 text-sm">
@@ -106,7 +106,7 @@ export default function WhyWeb4Page() {
             <p className="text-gray-300 leading-relaxed mb-3">
               Banned? Create a new account. Caught scamming? New email, new identity, back in
               business. The record of past behavior is trivially discarded. Consequences are
-              temporary. Bad actors face no compounding penalties—they just reset.
+              temporary. Bad actors face no compounding penalties - they just reset.
             </p>
             <p className="text-gray-400 text-sm">
               <strong>Root cause:</strong> Identity is cheap. Creating a new account costs
@@ -138,12 +138,12 @@ export default function WhyWeb4Page() {
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               Banned? Good luck appealing. Shadowbanned? You might never know. Platform changed
-              its policies? Too bad. Your account, your data, your reputation—all at the mercy
+              its policies? Too bad. Your account, your data, your reputation - all at the mercy
               of corporate decisions. You're a guest in someone else's house, always.
             </p>
             <p className="text-gray-400 text-sm">
               <strong>Root cause:</strong> Centralized control. You don't own your identity
-              or reputation—platforms do.
+              or reputation - platforms do.
             </p>
           </div>
         </div>
@@ -202,7 +202,7 @@ export default function WhyWeb4Page() {
             </p>
             <p className="text-gray-400 text-sm mb-2">
               <strong className="text-emerald-400">What it gets right:</strong> You actually
-              own your keys — no platform can silently deplatform you. That self-sovereignty
+              own your keys - no platform can silently deplatform you. That self-sovereignty
               is a genuine advance over social login.
             </p>
             <p className="text-gray-400 text-sm">
@@ -221,7 +221,7 @@ export default function WhyWeb4Page() {
             </p>
             <p className="text-gray-400 text-sm mb-2">
               <strong className="text-emerald-400">What it gets right:</strong> Usability.
-              One click, no new password, no hardware setup — most people will never pick
+              One click, no new password, no hardware setup - most people will never pick
               a more complex option if a simpler one works.
             </p>
             <p className="text-gray-400 text-sm">
@@ -271,7 +271,7 @@ export default function WhyWeb4Page() {
               <p className="text-gray-400 text-sm">
                 Creating a new identity should require physical hardware, not just an email address.
                 Multiple independent witnesses should attest to your existence. Creating thousands of
-                fake accounts should require buying thousands of devices — expensive and slow.
+                fake accounts should require buying thousands of devices - expensive and slow.
               </p>
             </div>
           </div>
@@ -282,12 +282,12 @@ export default function WhyWeb4Page() {
             </div>
             <div>
               {/* June 12 visitor HIGH (browse A): "permanent" contradicted this page's own
-                  youthful-mistakes FAQ ("Trust isn't permanent — it decays") and the decay
+                  youthful-mistakes FAQ ("Trust isn't permanent - it decays") and the decay
                   half-lives on /trust-tensor. Persistent/unresettable is the accurate claim. */}
               <h3 className="text-lg font-semibold text-sky-400">Make reputation portable and persistent</h3>
               <p className="text-gray-400 text-sm">
                 Your trust should follow you across platforms. Good behavior should compound. Bad
-                behavior should create lasting records visible to future interactions &mdash; records
+                behavior should create lasting records visible to future interactions - records
                 that fade with time but can never be wiped by starting over. No more fresh starts
                 for serial abusers.
               </p>
@@ -316,7 +316,7 @@ export default function WhyWeb4Page() {
               <h3 className="text-lg font-semibold text-sky-400">Be decentralized (but practical)</h3>
               <p className="text-gray-400 text-sm">
                 No central authority controlling identity. No single point of failure. But also
-                actually usable—not requiring cryptocurrency expertise or gas fees for every action.
+                actually usable - not requiring cryptocurrency expertise or gas fees for every action.
               </p>
             </div>
           </div>
@@ -334,7 +334,7 @@ export default function WhyWeb4Page() {
           <div className="bg-gray-900/50 border border-gray-700/50 rounded-lg p-4 mb-6">
             <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Four ideas, introduced one at a time below</p>
             <p className="text-xs text-gray-500">
-              Each idea gets its own plain-English card below. Read them in order — they build on each other.
+              Each idea gets its own plain-English card below. Read them in order - they build on each other.
             </p>
           </div>
 
@@ -344,9 +344,9 @@ export default function WhyWeb4Page() {
                 1. Energy Budget
               </h4>
               <p className="text-gray-400 text-sm">
-                Every action costs energy from a personal budget. Quality contributions earn energy back. Spam burns through it with no return — spammers literally run out of fuel.
+                Every action costs energy from a personal budget. Quality contributions earn energy back. Spam burns through it with no return - spammers literally run out of fuel.
               </p>
-              <p className="text-gray-400 text-sm mt-1">Shorthand: ATP (Allocation Transfer Packets) &mdash; just means your energy budget.</p>
+              <p className="text-gray-400 text-sm mt-1">Shorthand: ATP (Allocation Transfer Packets) - just means your energy budget.</p>
               <Link href="/atp-economics" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about energy budgets →
               </Link>
@@ -357,9 +357,9 @@ export default function WhyWeb4Page() {
                 2. Hardware-Bound Identity
               </h4>
               <p className="text-gray-400 text-sm">
-                Your identity is tied to your device&apos;s security chip — the same kind that protects Face ID and fingerprints. Creating a fake identity means buying a new physical device. Multiple devices witness each other for extra security.
+                Your identity is tied to your device&apos;s security chip - the same kind that protects Face ID and fingerprints. Creating a fake identity means buying a new physical device. Multiple devices witness each other for extra security.
               </p>
-              <p className="text-gray-400 text-sm mt-1">Shorthand: LCT (Linked Context Token) &mdash; just means your hardware-bound identity.</p>
+              <p className="text-gray-400 text-sm mt-1">Shorthand: LCT (Linked Context Token) - just means your hardware-bound identity.</p>
               <Link href="/lct-explainer" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about identity →
               </Link>
@@ -370,13 +370,13 @@ export default function WhyWeb4Page() {
                 3. Multi-Dimensional Trust
               </h4>
               <p className="text-gray-400 text-sm">
-                Instead of one trust score, you get separate scores for your skills, your training, and your behavior — and they&apos;re different for each role. Your trust as a data analyst doesn&apos;t affect your trust as a cook.
+                Instead of one trust score, you get separate scores for your skills, your training, and your behavior - and they&apos;re different for each role. Your trust as a data analyst doesn&apos;t affect your trust as a cook.
               </p>
-              <p className="text-gray-400 text-sm mt-1">Shorthand: T3 (Trust Tensor — Talent, Training, Temperament) &mdash; just means your trust split into three scores.</p>
-              {/* Jul-3 visitor MEDIUM (#1 recurring snag): V3 read as a "ghost" — named only in
+              <p className="text-gray-400 text-sm mt-1">Shorthand: T3 (Trust Tensor - Talent, Training, Temperament) - just means your trust split into three scores.</p>
+              {/* Jul-3 visitor MEDIUM (#1 recurring snag): V3 read as a "ghost" - named only in
                   the deep FAQ, never seated next to T3 with a plain contrast. Seat it here as a
                   COMPANION to T3 (mirrors the CI companion box below, L426), not a fifth mechanism
-                  card — respects the deliberate "four ideas" framing. This is the T3-vs-V3 contrast
+                  card - respects the deliberate "four ideas" framing. This is the T3-vs-V3 contrast
                   the visitor's Unanswered Q1 asked for, at first mention. */}
               <p className="text-gray-400 text-sm mt-2">
                 <span className="text-sky-300">Its companion, V3 (the Value Tensor):</span> T3 is how much
@@ -393,17 +393,17 @@ export default function WhyWeb4Page() {
                 4. Trust Neighborhood
               </h4>
               <p className="text-gray-400 text-sm">
-                You only see messages from people your network trusts — like being in a room
+                You only see messages from people your network trusts - like being in a room
                 where strangers need an introduction before they can talk to you. Trust fades with distance: a friend-of-a-friend-of-a-friend is almost a stranger.
               </p>
-              <p className="text-gray-400 text-sm mt-1">Shorthand: MRH (Markov Relevancy Horizon — math-flavored jargon you can ignore; it just means how far trust reaches before it fades)</p>
+              <p className="text-gray-400 text-sm mt-1">Shorthand: MRH (Markov Relevancy Horizon - math-flavored jargon you can ignore; it just means how far trust reaches before it fades)</p>
               <Link href="/trust-neighborhood" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about context boundaries →
               </Link>
             </div>
           </div>
 
-          {/* Worked example — visitor MEDIUM 2026-05-03: cards explained in isolation but never collide in one concrete moment. Five-sentence scenario the visitor explicitly requested. */}
+          {/* Worked example - visitor MEDIUM 2026-05-03: cards explained in isolation but never collide in one concrete moment. Five-sentence scenario the visitor explicitly requested. */}
           <div className="bg-gray-950/60 border border-sky-700/40 rounded-lg p-5 mb-6">
             <p className="text-xs font-bold text-sky-400 uppercase tracking-wide mb-3">
               All four, in one moment
@@ -414,7 +414,7 @@ export default function WhyWeb4Page() {
             <ul className="space-y-2 text-sm text-gray-300 leading-relaxed mb-3">
               <li>
                 <strong className="text-sky-300">Energy budget (ATP):</strong> posting the
-                answer draws a few units of ATP from your budget — the same budget a spammer
+                answer draws a few units of ATP from your budget - the same budget a spammer
                 would have already exhausted.
               </li>
               <li>
@@ -424,12 +424,12 @@ export default function WhyWeb4Page() {
               </li>
               <li>
                 <strong className="text-sky-300">Trust (T3):</strong> if your answer lands
-                well, your role-specific <em>helper</em> reputation nudges up — your trust
+                well, your role-specific <em>helper</em> reputation nudges up - your trust
                 as a cook is untouched.
               </li>
               <li>
                 <strong className="text-sky-300">Neighborhood (MRH):</strong> only people
-                inside the asker&apos;s trust neighborhood see your reply at all — a
+                inside the asker&apos;s trust neighborhood see your reply at all - a
                 stranger five hops away never sees the thread.
               </li>
             </ul>
@@ -439,7 +439,7 @@ export default function WhyWeb4Page() {
             </p>
           </div>
 
-          {/* One-line CI gloss before the FAQ — visitor LOW 2026-05-17: CI used heavily in
+          {/* One-line CI gloss before the FAQ - visitor LOW 2026-05-17: CI used heavily in
               the questions below but never introduced in the main body. Kept OUT of the
               "four ideas" framing on purpose: CI isn't a 5th mechanism, it's a modifier. */}
           <div className="bg-gray-950/60 border border-amber-700/30 rounded-lg p-4 mb-6">
@@ -448,7 +448,7 @@ export default function WhyWeb4Page() {
             </p>
             <p className="text-gray-300 text-sm leading-relaxed mb-0">
               <strong className="text-amber-300">Coherence Index (CI):</strong> not a fifth
-              mechanism &mdash; it&apos;s a consistency check on the four above. It just asks
+              mechanism - it&apos;s a consistency check on the four above. It just asks
               <em> does your behavior add up over time?</em> Steady, predictable behavior keeps
               CI high; acting erratically (or differently when you think no one&apos;s watching)
               drags it down, which in turn drags down how much your trust scores actually count.
@@ -457,28 +457,28 @@ export default function WhyWeb4Page() {
           </div>
 
           <p className="text-gray-400 text-sm border-t border-sky-800/30 pt-4">
-            <strong className="text-white">4-Life</strong> is a simulation lab where you can
-            watch these mechanisms in action. See societies form, trust networks emerge, spam
-            die from energy exhaustion, and agents face real consequences.
+            <strong className="text-white">4-Life</strong> explains how these mechanisms fit
+            together: how societies form, trust networks emerge, spam dies from energy
+            exhaustion, and actions carry real consequences.
           </p>
         </div>
       </section>
 
-      {/* Escape hatch — jump to interactive */}
+      {/* Escape hatch - jump to the onramp */}
       <section className="max-w-2xl mx-auto mt-12 text-center">
         <div className="bg-gradient-to-r from-sky-950/40 to-purple-950/40 border border-sky-800/30 rounded-xl p-6">
           <p className="text-gray-300 text-sm mb-3">
-            Ready to see it in action instead of reading more?
+            Ready to see how it fits together instead of reading more?
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a href="/karma-journey" className="inline-block px-5 py-2.5 bg-sky-600/20 border border-sky-500/40 rounded-lg text-sky-300 font-semibold text-sm hover:bg-sky-600/30 transition-colors no-underline">
-              Make trust choices →
+            <a href="/onramp" className="inline-block px-5 py-2.5 bg-sky-600/20 border border-sky-500/40 rounded-lg text-sky-300 font-semibold text-sm hover:bg-sky-600/30 transition-colors no-underline">
+              Start at the onramp →
             </a>
-            <a href="/society-simulator" className="inline-block px-5 py-2.5 bg-purple-600/20 border border-purple-500/40 rounded-lg text-purple-300 font-semibold text-sm hover:bg-purple-600/30 transition-colors no-underline">
-              Watch a society form →
+            <a href="/the-standard" className="inline-block px-5 py-2.5 bg-purple-600/20 border border-purple-500/40 rounded-lg text-purple-300 font-semibold text-sm hover:bg-purple-600/30 transition-colors no-underline">
+              Read the standard →
             </a>
-            <a href="/playground" className="inline-block px-5 py-2.5 bg-green-600/20 border border-green-500/40 rounded-lg text-green-300 font-semibold text-sm hover:bg-green-600/30 transition-colors no-underline">
-              Experiment in the playground →
+            <a href="/running-now" className="inline-block px-5 py-2.5 bg-green-600/20 border border-green-500/40 rounded-lg text-green-300 font-semibold text-sm hover:bg-green-600/30 transition-colors no-underline">
+              See what runs today →
             </a>
           </div>
           <p className="text-gray-500 text-xs mt-3 mb-0">
@@ -495,14 +495,14 @@ export default function WhyWeb4Page() {
         </p>
         <p className="text-sm text-sky-200/90 mb-6 bg-sky-950/30 border-l-2 border-sky-700 pl-3 py-2 rounded">
           <strong className="text-sky-300">This is reference depth, not a read-through.</strong>{' '}
-          It&rsquo;s long on purpose &mdash; one honest answer per question, meant to be <em>skimmed</em>, not
+          It&rsquo;s long on purpose - one honest answer per question, meant to be <em>skimmed</em>, not
           read top to bottom. Jump to whatever you actually want via the topic index just below.
         </p>
 
-        {/* Lead answer — 2026-07-02 visitor MEDIUM ×2: (1) "50+ Q&As, can't tell which 3 matter"
+        {/* Lead answer - 2026-07-02 visitor MEDIUM ×2: (1) "50+ Q&As, can't tell which 3 matter"
             and (2) Unanswered-Question #1, the site-wide "deployed/AGPL/public" vs "research
             prototype, not live" contradiction that "never resolved." The accurate answer already
-            lived at #faq-deployed but was one collapsed <details> too deep — the visitor never
+            lived at #faq-deployed but was one collapsed <details> too deep - the visitor never
             opened it. Lead the section with the single most-asked question, answered inline, so the
             contradiction resolves without a click ([[visitor-fix-deployed-but-didnt-land]]). */}
         <div className="mb-8 bg-amber-950/25 border border-amber-700/40 rounded-xl p-5">
@@ -510,12 +510,12 @@ export default function WhyWeb4Page() {
             The question almost everyone asks first: is this real, or just an idea?
           </p>
           <p className="text-gray-300 text-sm leading-relaxed">
-            <strong className="text-gray-200">Both &mdash; and that split is the source of the mixed
+            <strong className="text-gray-200">Both - and that split is the source of the mixed
             signals you may have seen.</strong> The protocol spec and ~47,000 lines of reference code
-            are real, tested, and public (open-source, AGPL) &mdash; that&rsquo;s the &ldquo;deployed,
+            are real, tested, and public (open-source, AGPL) - that&rsquo;s the &ldquo;deployed,
             public&rdquo; part. But there is <strong className="text-gray-200">no live network with real
             users yet</strong>, and <strong className="text-gray-200">nothing on this site is a live
-            product</strong>: the simulations here demonstrate the mechanics; they don&rsquo;t run a real
+            product</strong>: the reference code and specification demonstrate the mechanics; nothing here runs a real
             economy. Short version: <em>research prototype with substantial working code, not production.</em>
           </p>
           <p className="text-sm mt-3">
@@ -525,10 +525,10 @@ export default function WhyWeb4Page() {
           </p>
         </div>
 
-        {/* FAQ index — jump to any question */}
+        {/* FAQ index - jump to any question */}
         <details open className="mb-8 text-sm border border-sky-800/30 rounded-lg p-3 group" id="faq-index">
           <summary className="text-sky-400 hover:text-sky-300 cursor-pointer list-none inline-flex items-center gap-1.5 font-semibold">
-            <span className="text-xs transition-transform group-open:rotate-90">▶</span> Browse all questions by topic <span className="text-gray-500 font-normal">— start here</span>
+            <span className="text-xs transition-transform group-open:rotate-90">▶</span> Browse all questions by topic <span className="text-gray-500 font-normal"> - start here</span>
           </summary>
           <nav className="mt-3 p-4 bg-gray-800/30 border border-gray-700/50 rounded-lg columns-1 sm:columns-2 gap-x-6">
             <div className="break-inside-avoid mb-4">
@@ -555,7 +555,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-vs-credentials" className="hover:text-sky-400 transition-colors">Why not just use the EU digital wallet?</a></li>
                 <li><a href="#faq-transition" className="hover:text-sky-400 transition-colors">Do I switch everything at once?</a></li>
                 <li><a href="#faq-app-ui" className="hover:text-sky-400 transition-colors">What would a Web4 app look like?</a></li>
-                <li><a href="#faq-adoption-path" className="hover:text-sky-400 transition-colors">Simulation to real protocol?</a></li>
+                <li><a href="#faq-adoption-path" className="hover:text-sky-400 transition-colors">Research prototype to real protocol?</a></li>
                 <li><a href="#faq-community-start" className="hover:text-sky-400 transition-colors">How many to start a community?</a></li>
                 <li><a href="#faq-parallel-identities" className="hover:text-sky-400 transition-colors">Do I need parallel identities?</a></li>
                 <li><a href="#faq-early-adopters" className="hover:text-sky-400 transition-colors">Don&#39;t early adopters just talk to each other?</a></li>
@@ -564,7 +564,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-trust-transfer-mechanics" className="hover:text-sky-400 transition-colors">How does trust transfer between platforms?</a></li>
                 <li><a href="#faq-legacy-content" className="hover:text-sky-400 transition-colors">What about my existing reputation?</a></li>
                 <li><a href="#faq-developer-integration" className="hover:text-sky-400 transition-colors">What&apos;s the developer experience?</a></li>
-                <li><a href="#faq-dual-trust" className="hover:text-sky-400 transition-colors">Reddit karma vs Web4 trust — which wins?</a></li>
+                <li><a href="#faq-dual-trust" className="hover:text-sky-400 transition-colors">Reddit karma vs Web4 trust - which wins?</a></li>
               </ul>
             </div>
             <div className="break-inside-avoid mb-4">
@@ -588,15 +588,15 @@ export default function WhyWeb4Page() {
               <ul className="space-y-0.5 text-gray-400">
                 <li><a href="#faq-trust-transfer" className="hover:text-sky-400 transition-colors">Trust between communities?</a></li>
                 <li><a href="#faq-threshold" className="hover:text-sky-400 transition-colors">Is 0.5 threshold universal?</a></li>
-                <li><a href="#faq-calibration" className="hover:text-sky-400 transition-colors">Why these numbers — 0.5, 3 hops, 0.02?</a></li>
-                <li><a href="#faq-creative-work" className="hover:text-sky-400 transition-colors">Creative or unconventional work — how is it scored?</a></li>
+                <li><a href="#faq-calibration" className="hover:text-sky-400 transition-colors">Why these numbers - 0.5, 3 hops, 0.02?</a></li>
+                <li><a href="#faq-creative-work" className="hover:text-sky-400 transition-colors">Creative or unconventional work - how is it scored?</a></li>
                 <li><a href="#faq-cheaters" className="hover:text-sky-400 transition-colors">How do you catch cheaters?</a></li>
                 <li><a href="#faq-ci-example" className="hover:text-sky-400 transition-colors">What does coherence look like for a normal person?</a></li>
-                <li><a href="#faq-month-off" className="hover:text-sky-400 transition-colors">Take a month off — trust gone?</a></li>
+                <li><a href="#faq-month-off" className="hover:text-sky-400 transition-colors">Take a month off - trust gone?</a></li>
                 <li><a href="#faq-youthful-mistakes" className="hover:text-sky-400 transition-colors">Escaping youthful mistakes?</a></li>
                 <li><a href="#faq-cultural-quality" className="hover:text-sky-400 transition-colors">Cultural differences in quality?</a></li>
                 <li><a href="#faq-veracity-weaponization" className="hover:text-sky-400 transition-colors">Can &ldquo;low quality&rdquo; mean &ldquo;disagrees with us&rdquo;?</a></li>
-                <li><a href="#faq-quality-standards" className="hover:text-sky-400 transition-colors">Shitposting vs academic — trust transfer?</a></li>
+                <li><a href="#faq-quality-standards" className="hover:text-sky-400 transition-colors">Shitposting vs academic - trust transfer?</a></li>
                 <li><a href="#faq-adversarial-quality" className="hover:text-sky-400 transition-colors">Can hostile communities game quality?</a></li>
                 <li><a href="#faq-unpopular-truth" className="hover:text-sky-400 transition-colors">What about unpopular but true content?</a></li>
                 <li><a href="#faq-context-collapse" className="hover:text-sky-400 transition-colors">Does meme-posting hurt my coding trust?</a></li>
@@ -617,7 +617,7 @@ export default function WhyWeb4Page() {
             <div className="break-inside-avoid mb-4">
               <h4 className="text-amber-400/80 font-semibold text-xs uppercase tracking-wide mb-1.5">Economics &amp; Energy</h4>
               <ul className="space-y-0.5 text-gray-400">
-                <li><a href="#faq-5-percent" className="hover:text-sky-400 transition-colors">5% transfer cost — team collaboration?</a></li>
+                <li><a href="#faq-5-percent" className="hover:text-sky-400 transition-colors">5% transfer cost - team collaboration?</a></li>
                 <li><a href="#faq-circular-farming" className="hover:text-sky-400 transition-colors">How does 5% prevent circular farming?</a></li>
                 <li><a href="#faq-internet-scale" className="hover:text-sky-400 transition-colors">Trust-filtered messaging at scale?</a></li>
                 <li><a href="#faq-death-rebirth" className="hover:text-sky-400 transition-colors">When does an agent die? Rebirth?</a></li>
@@ -639,7 +639,7 @@ export default function WhyWeb4Page() {
           </nav>
         </details>
 
-        {/* Most asked — top questions for first-time visitors */}
+        {/* Most asked - top questions for first-time visitors */}
         <div className="bg-amber-950/20 border border-amber-800/30 rounded-xl p-5 mb-6">
           <p className="text-gray-300 leading-relaxed mb-4">
             <span className="text-amber-400 font-semibold">Start here.</span>{" "}
@@ -672,7 +672,7 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>Research prototype with substantial implementation.</strong> This is not vaporware &mdash;
+                <strong>Research prototype with substantial implementation.</strong> This is not vaporware - 
                 there is real, tested code. But it&apos;s not a product yet. Here&apos;s what actually exists:
               </p>
               <p><strong>What&apos;s built and tested:</strong></p>
@@ -682,19 +682,12 @@ export default function WhyWeb4Page() {
                   Web4 whitepaper</a> with formal definitions</li>
                 <li><strong>Reference implementations:</strong> ~47,000 lines of tested code covering the four mechanisms above (identity, energy, trust scoring, trust neighborhood) plus value tensors, community governance, <TermTooltip term="Federation">federation</TermTooltip>, and the witness protocol</li>
                 {/* June 12 visitor MEDIUM (browse A): unscoped "formally proven" sat next to this
-                    page's own collusion caveat and /what-could-go-wrong's admissions — careful
+                    page's own collusion caveat and /what-could-go-wrong's admissions - careful
                     readers read it as overclaim. Scope it to the modeled attack classes, matching
-                    /threat-model's "large-scale collusion remains an active research area". */}
-                <li><strong>Security validation:</strong> <Link href="/threat-model" className="text-sky-400 hover:underline">424 attack vectors across 84 tracks</Link>, all defended. Sybil resistance (resistance to flooding the network with cheap fake accounts) formally proven (5 theorems) <em>for the modeled attack classes</em> &mdash; sophisticated collusion that mimics legitimate community behavior remains an open research problem. Incentive compatibility proven &mdash; honest behavior is mathematically more profitable than gaming</li>
+                    /what-could-go-wrong's "large-scale collusion remains an active research area". */}
+                <li><strong>Security validation:</strong> <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">424 attack vectors across 84 tracks</Link>, all defended. Sybil resistance (resistance to flooding the network with cheap fake accounts) formally proven (5 theorems) <em>for the modeled attack classes</em> - sophisticated collusion that mimics legitimate community behavior remains an open research problem. Incentive compatibility proven - honest behavior is mathematically more profitable than gaming</li>
                 <li><strong>Hardware integration:</strong> TPM2 binding validated (Intel TPM 2.0, EK certificate chain through 2049). Go LCT library (55 tests). Multi-device constellation enrollment working</li>
-                <li><strong>System integration:</strong> End-to-end pipeline (all subsystems chained), WASM browser validator for client-side trust verification, federation consensus at 38.5 tasks/sec throughput (a simulation benchmark of how fast the consensus layer settles trust updates &mdash; a proof-of-concept figure, not a real-world performance guarantee)</li>
-                <li><strong>Interactive simulations:</strong>{" "}
-                  <Link href="/society-simulator" className="text-sky-400 hover:underline">
-                  Society Simulator</Link>,{" "}
-                  <Link href="/playground" className="text-sky-400 hover:underline">
-                  Playground</Link>, and{" "}
-                  <Link href="/karma-journey" className="text-sky-400 hover:underline">
-                  Karma Journey</Link> on this site</li>
+                <li><strong>System integration:</strong> End-to-end pipeline (all subsystems chained), WASM browser validator for client-side trust verification, federation consensus at 38.5 tasks/sec throughput (a benchmark of how fast the consensus layer settles trust updates - a proof-of-concept figure, not a real-world performance guarantee)</li>
               </ul>
               <p className="mt-2"><strong>What&apos;s NOT built yet:</strong></p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
@@ -704,19 +697,19 @@ export default function WhyWeb4Page() {
               </ul>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest answer:</strong> This is research, not production. We don&apos;t attach timelines because honest
-                research doesn&apos;t have them. The simulations prove the mechanics work in principle — the question is
+                research doesn&apos;t have them. The simulations prove the mechanics work in principle - the question is
                 whether the economics survive contact with real human behavior. That&apos;s what a pilot would test.
               </p>
               <p className="text-gray-500 text-xs mt-2">
                 <strong>In software terms:</strong> The specification is complete. The reference code is <em>proof-of-concept</em> quality
                 (tested, but not hardened for production). What&apos;s needed next is a <em>pilot</em> (alpha)
-                with real users — the gap between &ldquo;simulations prove it works&rdquo; and &ldquo;running
+                with real users - the gap between &ldquo;simulations prove it works&rdquo; and &ldquo;running
                 with real humans&rdquo; is the current frontier.
               </p>
               <p className="text-gray-500 text-xs mt-2">
                 <strong>Practical horizon:</strong> A pilot could start whenever a willing community
                 (university, company, open-source project) partners with the research. The technology is
-                ready for that step. Internet-scale deployment is years further — think &ldquo;email in the
+                ready for that step. Internet-scale deployment is years further - think &ldquo;email in the
                 1980s,&rdquo; not &ldquo;launching next quarter.&rdquo;
               </p>
             </div>
@@ -730,20 +723,20 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>No timeline — and that&apos;s intentional.</strong> Honest research doesn&apos;t ship
+                <strong>No timeline - and that&apos;s intentional.</strong> Honest research doesn&apos;t ship
                 deadlines. The mechanics are proven in simulation; what&apos;s needed next is a{" "}
                 <em>pilot</em> with real users in a real community (a university, a company, a platform).
               </p>
               <p>
                 The path: <strong>Pilot → Alpha → Beta → Production.</strong> Each stage tests something
-                the previous one couldn&apos;t — pilot tests whether real humans behave like the simulations
+                the previous one couldn&apos;t - pilot tests whether real humans behave like the simulations
                 predict, alpha tests whether the economics work at small scale, beta tests scaling, and
                 production is the internet-wide network. We&apos;re at the pilot-readiness stage.
               </p>
               <p className="text-gray-400 text-xs">
                 <strong className="text-gray-300">Practical horizon:</strong> A pilot could start whenever a willing community
                 (university, company, open-source project) partners with the research. The technology is ready
-                for that step. Internet-scale deployment is years further — think &ldquo;email in the 1980s,&rdquo;
+                for that step. Internet-scale deployment is years further - think &ldquo;email in the 1980s,&rdquo;
                 not &ldquo;launching next quarter.&rdquo;
               </p>
               <p className="text-amber-400/80 text-xs">
@@ -762,7 +755,7 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>No—recovery is built in.</strong> LCT supports multiple linked devices. Lose your
+                <strong>No - recovery is built in.</strong> LCT supports multiple linked devices. Lose your
                 phone? Your laptop can attest to your identity. Lose both? Your witnesses can attest.
               </p>
               <p>
@@ -772,7 +765,7 @@ export default function WhyWeb4Page() {
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Trade-off:</strong> Recovery is slower than &ldquo;forgot password&rdquo; flows. You can&apos;t
-                instantly regain access—the friction is intentional to prevent social engineering attacks.
+                instantly regain access - the friction is intentional to prevent social engineering attacks.
               </p>
             </div>
           </details>
@@ -785,10 +778,10 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>Yes — and here&apos;s how.</strong> In Web4, a single accusation from even a high-trust
+                <strong>Yes - and here&apos;s how.</strong> In Web4, a single accusation from even a high-trust
                 entity doesn&apos;t override your track record. Trust is built from <em>all</em> your interactions,
                 not from one person&apos;s claim about you. An established member saying &ldquo;this newcomer is
-                untrustworthy&rdquo; is <strong>one data point</strong> — it lowers their trust in you, but
+                untrustworthy&rdquo; is <strong>one data point</strong> - it lowers their trust in you, but
                 doesn&apos;t destroy your trust score globally.
               </p>
               <p>
@@ -798,7 +791,7 @@ export default function WhyWeb4Page() {
                 <li><strong>Context boundaries (MRH):</strong> The liar&apos;s accusation only propagates within
                   their local trust network, not the entire system. People outside their network never see it.</li>
                 <li><strong>Behavioral evidence outweighs claims:</strong> If you consistently produce quality work,
-                  your V3 (the Value Tensor: Valuation, Veracity, Validity) scores from <em>recipients</em> &mdash; the quality ratings given to work you actually delivered (<Link href="/value-tensor#v3-output-scorer" className="text-sky-400 hover:underline">how V3 scoring works</Link>) &mdash; build your reputation independently of the accuser&apos;s
+                  your V3 (the Value Tensor: Valuation, Veracity, Validity) scores from <em>recipients</em> - the quality ratings given to work you actually delivered (<Link href="/value-tensor#v3-output-scorer" className="text-sky-400 hover:underline">how V3 scoring works</Link>) - build your reputation independently of the accuser&apos;s
                   narrative. Actions speak louder than accusations.</li>
                 <li><strong>Accuser accountability:</strong> Making false accusations costs the accuser credibility.
                   If their negative assessments consistently disagree with everyone else&apos;s experience of you,
@@ -841,7 +834,7 @@ export default function WhyWeb4Page() {
                     <tr className="border-b border-gray-800">
                       <td className="py-2 pr-4 text-gray-300 font-medium">Who controls it?</td>
                       <td className="py-2 pr-4">Central government</td>
-                      <td className="py-2">Nobody — federated protocol, no central authority</td>
+                      <td className="py-2">Nobody - federated protocol, no central authority</td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-2 pr-4 text-gray-300 font-medium">What&apos;s scored?</td>
@@ -850,8 +843,8 @@ export default function WhyWeb4Page() {
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-2 pr-4 text-gray-300 font-medium">Can you leave?</td>
-                      <td className="py-2 pr-4">No — mandatory for citizens</td>
-                      <td className="py-2">Yes — voluntary participation, join/leave any society</td>
+                      <td className="py-2 pr-4">No - mandatory for citizens</td>
+                      <td className="py-2">Yes - voluntary participation, join/leave any society</td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-2 pr-4 text-gray-300 font-medium">Who sees your score?</td>
@@ -861,12 +854,12 @@ export default function WhyWeb4Page() {
                     <tr className="border-b border-gray-800">
                       <td className="py-2 pr-4 text-gray-300 font-medium">Can you appeal?</td>
                       <td className="py-2 pr-4">Through government channels</td>
-                      <td className="py-2">Through community governance (<a href="#faq-sal" className="text-sky-400 hover:underline">SAL — Society-Authority-Law</a>, each community&apos;s own rulebook for its trust thresholds and membership rules) — you can also fork the community</td>
+                      <td className="py-2">Through community governance (<a href="#faq-sal" className="text-sky-400 hover:underline">SAL - Society-Authority-Law</a>, each community&apos;s own rulebook for its trust thresholds and membership rules) - you can also fork the community</td>
                     </tr>
                     <tr>
                       <td className="py-2 pr-4 text-gray-300 font-medium">Identity</td>
                       <td className="py-2 pr-4">Real name, tied to national ID</td>
-                      <td className="py-2">Pseudonymous — hardware key, not your name</td>
+                      <td className="py-2">Pseudonymous - hardware key, not your name</td>
                     </tr>
                   </tbody>
                 </table>
@@ -880,7 +873,7 @@ export default function WhyWeb4Page() {
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> The line between &ldquo;accountability&rdquo; and
                 &ldquo;surveillance&rdquo; depends entirely on governance. A Web4 society <em>could</em> be
-                configured with oppressive policies — the protocol doesn&apos;t prevent it. The safeguard
+                configured with oppressive policies - the protocol doesn&apos;t prevent it. The safeguard
                 is that participation is voluntary: if a society becomes oppressive, you leave (taking your
                 trust history with you). That exit right doesn&apos;t exist in state-run systems.
               </p>
@@ -907,11 +900,11 @@ export default function WhyWeb4Page() {
               <p>
                 Think of it like a party: you can talk to your friends, and your friends can introduce
                 you to their friends. But you can&apos;t walk up to a stranger across the room unless someone
-                bridges the gap. <strong>No one has a complete view of the entire network</strong> — everyone sees
+                bridges the gap. <strong>No one has a complete view of the entire network</strong> - everyone sees
                 only their local neighborhood.
               </p>
               <p className="text-amber-400/80 text-xs">
-                <strong>Why this matters:</strong> Spam can&apos;t broadcast to everyone — a spammer has no trust
+                <strong>Why this matters:</strong> Spam can&apos;t broadcast to everyone - a spammer has no trust
                 connections, so their messages reach nobody. To reach people, you need real relationships.
                 This is fundamentally different from email (anyone can message anyone) or social media
                 (algorithmic distribution to strangers).
@@ -936,25 +929,25 @@ export default function WhyWeb4Page() {
                   (verified identity, trust score, behavioral history). Both coexist.</li>
                 <li><strong>Trust islands:</strong> A small community (say, a coding forum) adopts Web4 internally.
                   Members build trust with each other. When a second community adopts, their trust histories
-                  are already portable — instant credibility in the new space.</li>
+                  are already portable - instant credibility in the new space.</li>
                 <li><strong>Network effects compound:</strong> Each new community that adopts makes everyone&apos;s
-                  trust history more valuable. Think email in 1995 — it was useful even when most people didn&apos;t
+                  trust history more valuable. Think email in 1995 - it was useful even when most people didn&apos;t
                   have it, and each new user made everyone else&apos;s email more useful.</li>
               </ul>
               <p className="text-gray-400 text-sm">
                 <strong className="text-gray-300">Do existing platforms need to cooperate?</strong> Not necessarily.
-                Web4 can overlay without platform cooperation — a browser extension or third-party service
+                Web4 can overlay without platform cooperation - a browser extension or third-party service
                 could attach trust signals to any platform. But cooperation makes it better: a forum that
                 <em>natively</em> integrates trust scoring can weight content accordingly, not just display
-                badges. The design supports both models — grassroots overlay and official integration.
+                badges. The design supports both models - grassroots overlay and official integration.
               </p>
               <p className="text-gray-400 text-sm mt-3">
                 <strong className="text-gray-300">What does daily life look like at 1% adoption?</strong> You
-                install a browser extension. On a coding forum, you see trust badges next to 1 in 100 usernames &mdash;
+                install a browser extension. On a coding forum, you see trust badges next to 1 in 100 usernames - 
                 those are other Web4 users. Their posts aren&apos;t ranked higher (yet), but you can see at a glance
                 that &ldquo;this person has 0.82 trust in Python and a 6-month history of helpful answers.&rdquo;
                 Everyone else looks the same as before. You lose nothing; you gain a signal. As more people join,
-                the signal becomes more useful &mdash; and platforms eventually notice that trust-badged users
+                the signal becomes more useful - and platforms eventually notice that trust-badged users
                 produce better content, creating incentive to integrate natively.
               </p>
               <p className="text-amber-400/80 text-xs">
@@ -966,7 +959,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Quality measurement — promoted from "Going deeper" (visitor Q: "who validates quality?") */}
+          {/* Quality measurement - promoted from "Going deeper" (visitor Q: "who validates quality?") */}
           <details id="faq-quality" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Who decides what counts as &ldquo;quality&rdquo;? If helpful answers earn ATP, who judges &ldquo;helpful&rdquo;?</span>
@@ -980,7 +973,7 @@ export default function WhyWeb4Page() {
                 readers who learned from it confirm value. You can&apos;t rate your own work.
               </p>
               <p>
-                This means quality isn&apos;t decided by an algorithm or a moderation team &mdash;
+                This means quality isn&apos;t decided by an algorithm or a moderation team - 
                 it&apos;s decided by the people closest to the actual value. A niche research paper might only
                 get 3 confirmations, but if those 3 are high-trust experts in that field, their confirmations
                 carry significant weight.
@@ -988,13 +981,13 @@ export default function WhyWeb4Page() {
               <p>
                 What about <strong>gaming</strong>? Confirming too generously lowers your own trust score (Veracity dimension).
                 Rubber-stamping everything makes <em>you</em> less credible, which reduces the weight of your future confirmations.
-                The system is self-correcting &mdash; but social dynamics are unpredictable, so this remains one of the{" "}
-                <Link href="/threat-model" className="text-sky-400 hover:underline">actively researched challenges</Link>.
+                The system is self-correcting - but social dynamics are unpredictable, so this remains one of the{" "}
+                <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">actively researched challenges</Link>.
               </p>
             </div>
           </details>
 
-          {/* What backs ATP — visitor Q (Apr 16): "says no crypto required but doesn't explain what ATP is backed by" */}
+          {/* What backs ATP - visitor Q (Apr 16): "says no crypto required but doesn't explain what ATP is backed by" */}
           <details id="faq-what-backs-atp" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>If Web4 doesn&apos;t use cryptocurrency, what backs ATP? Why is it scarce?</span>
@@ -1002,7 +995,7 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>Received value backs ATP — not a currency peg, not a crypto reserve.</strong> ATP is a
+                <strong>Received value backs ATP - not a currency peg, not a crypto reserve.</strong> ATP is a
                 budget for participation, not a financial asset. You can&apos;t sell it for dollars, exchange
                 it for Bitcoin, or cash out. Its only &ldquo;value&rdquo; is permission to act inside a community
                 that cares about what you do next.
@@ -1012,10 +1005,10 @@ export default function WhyWeb4Page() {
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
                 <li><strong>Capped issuance:</strong> A community mints a finite ATP pool. More members, more
-                  demand, same pool &mdash; so ATP matters exactly because it&apos;s limited.</li>
+                  demand, same pool - so ATP matters exactly because it&apos;s limited.</li>
                 <li><strong>Recipient confirmation:</strong> You earn ATP only when someone else (the{" "}
                   <Link href="#faq-quality" className="text-sky-400 hover:underline">quality decider</Link>) confirms
-                  your contribution helped them. No confirmation, no ATP &mdash; so it can&apos;t be self-minted.</li>
+                  your contribution helped them. No confirmation, no ATP - so it can&apos;t be self-minted.</li>
                 <li><strong>5% transfer burn:</strong> Every ATP transfer between entities burns 5%, draining
                   the pool over time unless offset by new confirmed value. Circular shuffling shrinks the
                   pool instead of growing it.</li>
@@ -1023,7 +1016,7 @@ export default function WhyWeb4Page() {
                   to the community, so hoarding has a cost.</li>
               </ul>
               <p>
-                Think of it like phone minutes on a shared plan &mdash; valuable because it&apos;s <em>your turn
+                Think of it like phone minutes on a shared plan - valuable because it&apos;s <em>your turn
                 to speak</em> in a room that cares about what you say, not because you can sell the minutes.
                 That&apos;s why there&apos;s no cryptocurrency, no gas fees, and no financial speculation.
                 See{" "}
@@ -1033,7 +1026,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Trust cartels — brief answer with cross-link (visitor Q: "what prevents trust cartels?") */}
+          {/* Trust cartels - brief answer with cross-link (visitor Q: "what prevents trust cartels?") */}
           <details id="faq-collusion" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What prevents groups of users from colluding to boost each other&apos;s trust?</span>
@@ -1044,14 +1037,14 @@ export default function WhyWeb4Page() {
                 <strong>Multiple overlapping defenses.</strong> Trust cartels are one of the most studied attack vectors:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>MRH limits reach:</strong> Colluders can only inflate trust within their 3-hop neighborhood &mdash;
+                <li><strong>MRH limits reach:</strong> Colluders can only inflate trust within their 3-hop neighborhood - 
                   they can&apos;t broadcast fake trust globally</li>
                 <li><strong>Statistical detection:</strong> Unusually dense mutual validation clusters trigger anomaly detection
                   with 93%+ probability at 3+ members</li>
                 <li><strong>Behavioral consistency:</strong> Your{" "}
                   <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link>{" "}
-                  (CI &mdash; a running measure of how consistent your behavior is over time) flags when
-                  validation patterns don&apos;t match your other behavior &mdash; confirming everything a cartel member
+                  (CI - a running measure of how consistent your behavior is over time) flags when
+                  validation patterns don&apos;t match your other behavior - confirming everything a cartel member
                   does while being selective with others creates a detectable signal</li>
                 <li><strong>Hardware cost:</strong> Each colluder needs real hardware-bound identity (LCT), making
                   cartel scaling expensive</li>
@@ -1059,13 +1052,13 @@ export default function WhyWeb4Page() {
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Sophisticated collusion that mimics legitimate community behavior is the hardest
                 case. The{" "}
-                <Link href="/threat-model#collusion" className="text-sky-400 hover:underline">Threat Model page</Link> covers
+                <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">What Could Go Wrong page</Link> covers
                 this in depth, including coalition thresholds and adversary profiles.
               </p>
             </div>
           </details>
 
-          {/* Minimum community size — visitor Q: "how many people does this need?" */}
+          {/* Minimum community size - visitor Q: "how many people does this need?" */}
           <details id="faq-community-size" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How many people does a Web4 community need to work?</span>
@@ -1073,7 +1066,7 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>As few as 5&ndash;10 active members</strong>, though the dynamics improve with scale.
+                <strong>As few as 5-10 active members</strong>, though the dynamics improve with scale.
                 The system stabilizes after roughly 100 total quality actions across participants
                 (see the{" "}
                 <Link href="/what-could-go-wrong#cold-start" className="text-sky-400 hover:underline">cold-start walkthrough</Link>
@@ -1081,14 +1074,14 @@ export default function WhyWeb4Page() {
               </p>
               <p>Here&apos;s what changes with community size:</p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>5&ndash;10 people:</strong> Functional, but trust scores are volatile. One person&apos;s bad day moves the whole graph. MRH neighborhoods overlap heavily, so everyone sees everything.</li>
-                <li><strong>20&ndash;50 people:</strong> Trust signals become statistically meaningful. Roles start to differentiate. The Gini coefficient converges toward the designed 0.25.</li>
-                <li><strong>100+ people:</strong> Emergent structure appears &mdash; clusters, bridge nodes, specialists. First-mover advantage fades (30-action half-life). This is where the system starts to feel like an ecosystem, not a group chat.</li>
+                <li><strong>5-10 people:</strong> Functional, but trust scores are volatile. One person&apos;s bad day moves the whole graph. MRH neighborhoods overlap heavily, so everyone sees everything.</li>
+                <li><strong>20-50 people:</strong> Trust signals become statistically meaningful. Roles start to differentiate. The Gini coefficient converges toward the designed 0.25.</li>
+                <li><strong>100+ people:</strong> Emergent structure appears - clusters, bridge nodes, specialists. First-mover advantage fades (30-action half-life). This is where the system starts to feel like an ecosystem, not a group chat.</li>
               </ul>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Small communities (~5 members) are more sensitive to individual behavior.
                 A single bad actor is 20% of the network. The protocol still works, but its self-correcting properties
-                are slower to activate. Think of it like a small town vs. a city &mdash; both work, but social dynamics
+                are slower to activate. Think of it like a small town vs. a city - both work, but social dynamics
                 are different.
               </p>
             </div>
@@ -1109,12 +1102,12 @@ export default function WhyWeb4Page() {
               <ul className="list-disc list-inside space-y-1 text-gray-400">
                 <li><strong>Web1</strong> (read): Static pages. You consumed content someone published.</li>
                 <li><strong>Web2</strong> (read/write): Platforms. You create content, but platforms own your data and identity.</li>
-                <li><strong>Web3</strong> (read/write/own): Blockchain-first. You own tokens, but trust is financial &mdash; whoever has the most tokens has the most influence.</li>
-                <li><strong>Web4</strong> (read/write/trust): Behavior-first. You own your identity through hardware, and influence comes from demonstrated trustworthiness &mdash; not tokens, not followers, not money.</li>
+                <li><strong>Web3</strong> (read/write/own): Blockchain-first. You own tokens, but trust is financial - whoever has the most tokens has the most influence.</li>
+                <li><strong>Web4</strong> (read/write/trust): Behavior-first. You own your identity through hardware, and influence comes from demonstrated trustworthiness - not tokens, not followers, not money.</li>
               </ul>
               <p>
                 Web3 tried to solve ownership with financial instruments. Web4 argues the deeper problem was never
-                ownership &mdash; it was <em>trust</em>. You can own your data and still be drowning in spam, fake reviews,
+                ownership - it was <em>trust</em>. You can own your data and still be drowning in spam, fake reviews,
                 and bot armies. Web4 addresses the layer Web3 skipped.
               </p>
               <p className="text-amber-400/80 text-xs">
@@ -1130,8 +1123,8 @@ export default function WhyWeb4Page() {
             before opening going-deeper miss it. This inline mini-CTA intercepts them here. */}
         <div className="mt-8 mb-6 p-5 border border-sky-700/40 rounded-lg bg-sky-950/15 max-w-2xl mx-auto text-center">
           <p className="text-gray-300 text-sm mb-3">
-            That&apos;s the case for Web4. <strong className="text-sky-300">Now try it</strong> &mdash;
-            the simulator and walkthrough show the same ideas in motion.
+            That&apos;s the case for Web4. <strong className="text-sky-300">Now explore it</strong> -
+            the walkthrough and the running system show the same ideas in motion.
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
             <Link
@@ -1141,25 +1134,25 @@ export default function WhyWeb4Page() {
               Walk through with Alice (10 min) →
             </Link>
             <Link
-              href="/society-simulator"
+              href="/running-now"
               className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm font-semibold rounded-md transition-colors"
             >
-              Run a Society
+              See what runs now
             </Link>
           </div>
           <p className="text-xs text-gray-500 mt-3">
-            Or keep reading &mdash; more questions answered in the &ldquo;Going deeper&rdquo; section below.
+            Or keep reading - more questions answered in the &ldquo;Going deeper&rdquo; section below.
           </p>
         </div>
 
-        {/* All other FAQs — collapsed by default */}
+        {/* All other FAQs - collapsed by default */}
         <details id="going-deeper" className="group">
           <summary className="flex items-center gap-3 cursor-pointer mb-4 list-none">
-            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper — more questions, grouped by topic</h3>
+            <h3 className="text-sm uppercase tracking-wide text-gray-500">Going deeper - more questions, grouped by topic</h3>
             <span className="text-gray-500 text-sm group-open:rotate-90 transition-transform">▶</span>
           </summary>
 
-          {/* Category quick-nav — browse by topic instead of scrolling 40+ questions */}
+          {/* Category quick-nav - browse by topic instead of scrolling 40+ questions */}
           <nav className="mb-6 p-4 bg-gray-800/30 border border-gray-700/50 rounded-lg">
             <p className="text-xs text-gray-500 mb-3 uppercase tracking-wide font-semibold">Jump to topic</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -1173,7 +1166,7 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-vs-credentials" className="hover:text-sky-400">Why not the EU digital wallet?</a></li>
                   <li><a href="#faq-transition" className="hover:text-sky-400">Switch everything at once?</a></li>
                   <li><a href="#faq-app-ui" className="hover:text-sky-400">What would it look like?</a></li>
-                  <li><a href="#faq-adoption-path" className="hover:text-sky-400">Simulation → real protocol?</a></li>
+                  <li><a href="#faq-adoption-path" className="hover:text-sky-400">Research prototype → real protocol?</a></li>
                   <li><a href="#faq-community-start" className="hover:text-sky-400">How many to start?</a></li>
                   <li><a href="#faq-early-adopters" className="hover:text-sky-400">Early adopters in a bubble?</a></li>
                   <li><a href="#faq-dual-trust" className="hover:text-sky-400">Reddit karma vs Web4 trust</a></li>
@@ -1273,7 +1266,7 @@ export default function WhyWeb4Page() {
 
         <div className="space-y-6">
 
-          {/* Moved from Most Asked — still important but second-tier for first visit */}
+          {/* Moved from Most Asked - still important but second-tier for first visit */}
           {/* Comparison */}
           <details id="faq-vs-existing" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
@@ -1300,12 +1293,12 @@ export default function WhyWeb4Page() {
           {/* vs existing credential / digital-ID standards (W3C VC, EU wallet) */}
           <details id="faq-vs-credentials" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>The world already has digital ID &mdash; logins, &ldquo;verified&rdquo; badges, even an EU digital wallet. Why Web4?</span>
+              <span>The world already has digital ID - logins, &ldquo;verified&rdquo; badges, even an EU digital wallet. Why Web4?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Fair question &mdash; and the answer is <em>both/and</em>, not either/or. There&apos;s a whole modern
+                Fair question - and the answer is <em>both/and</em>, not either/or. There&apos;s a whole modern
                 stack for proving who you are: &ldquo;Sign in with Google,&rdquo; <strong>Verifiable Credentials</strong>{" "}
                 (a W3C standard for digitally-signed claims you carry in a wallet app), and the new{" "}
                 <strong>EU Digital Identity Wallet</strong> that will let every EU citizen hold government-issued
@@ -1313,7 +1306,7 @@ export default function WhyWeb4Page() {
               </p>
               <p>
                 <strong>The difference is what a credential <em>is</em>.</strong> A credential is a <em>photograph</em>:
-                at one moment, some issuer signed a statement &mdash; &ldquo;this office says Alice is a licensed
+                at one moment, some issuer signed a statement - &ldquo;this office says Alice is a licensed
                 nurse.&rdquo; It&apos;s portable and checkable, but frozen. It can&apos;t tell you whether Alice has
                 been a reliable colleague for two years, or that she&apos;s trusted for surgery prep but unknown as a
                 driver. Web4 keeps the <em>living subject</em> instead of the photo: trust that{" "}
@@ -1323,17 +1316,17 @@ export default function WhyWeb4Page() {
               </p>
               <p>
                 <strong>And Web4 speaks their language.</strong> It can flatten its living trust into exactly the
-                standard formats those wallets read &mdash; so your community membership can show up as an ordinary
+                standard formats those wallets read - so your community membership can show up as an ordinary
                 credential in your normal phone wallet, checkable by any standards-based verifier with no Web4
                 software at all. It can also go the other way: a credential from a university or a government becomes
                 <em> evidence</em> a Web4 community can act on (&ldquo;admit anyone who proves they&apos;re an
-                accredited doctor&rdquo;). The flow is one-way by design &mdash; Web4 can always project out a
+                accredited doctor&rdquo;). The flow is one-way by design - Web4 can always project out a
                 snapshot, but a snapshot can never be inflated back into real relationship history.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> &ldquo;speaks the standards&rdquo; means the <em>formats</em> work
                 today (a Web4 community already issues these credentials to standard wallets). Getting Web4 issuers
-                onto the EU&apos;s official trusted lists is a legal/governance process, not a coding one &mdash; that
+                onto the EU&apos;s official trusted lists is a legal/governance process, not a coding one - that
                 part isn&apos;t done, and we don&apos;t pretend it is.
               </p>
             </div>
@@ -1348,18 +1341,18 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>Gradual, not all-or-nothing.</strong> The Web4 spec defines a 5-tier adoption pathway —
+                <strong>Gradual, not all-or-nothing.</strong> The Web4 spec defines a 5-tier adoption pathway - 
                 each tier is independently useful, and you don&apos;t need to commit to the full stack:
               </p>
               <ol className="list-decimal list-inside space-y-1 text-gray-400">
                 <li><strong>Wrapper:</strong> Add a verifiable identity to your existing system. Zero code changes. <span className="text-gray-500">(Like adding HTTPS to an existing site)</span></li>
-                <li><strong>Observable:</strong> Start tracking trust based on actual behavior. <span className="text-gray-500">(Like the browser padlock icon — visible trust signals)</span></li>
+                <li><strong>Observable:</strong> Start tracking trust based on actual behavior. <span className="text-gray-500">(Like the browser padlock icon - visible trust signals)</span></li>
                 <li><strong>Accountable:</strong> Stake energy on quality. Good work returns your investment; bad work costs you. <span className="text-gray-500">(Like spam filters that actually work)</span></li>
                 <li><strong>Federated:</strong> Your reputation travels with you across platforms. <span className="text-gray-500">(Like email&apos;s federated model)</span></li>
-                <li><strong>Native:</strong> Full Web4 stack — built from the ground up around verifiable trust.</li>
+                <li><strong>Native:</strong> Full Web4 stack - built from the ground up around verifiable trust.</li>
               </ol>
               <p>
-                Tiers 0–3 are reversible — you can always roll back. Only Tier 4 (full native) is a
+                Tiers 0-3 are reversible - you can always roll back. Only Tier 4 (full native) is a
                 permanent commitment. Think of how HTTPS adoption worked: banks first, then e-commerce,
                 then eventually the default everywhere.
               </p>
@@ -1392,8 +1385,8 @@ export default function WhyWeb4Page() {
                 <li><strong>Community witnessing:</strong> In regions where personal device ownership is low, shared community devices + witness-based attestation can bridge the gap. A village elder or community center can attest to presence.</li>
               </ul>
               <p className="text-amber-400/80 text-xs">
-                <strong>Honest caveat:</strong> None of these fully solve the problem. The most marginalized populations —
-                those without any device access — would need some form of sponsored onboarding. Web4 is not unique
+                <strong>Honest caveat:</strong> None of these fully solve the problem. The most marginalized populations - 
+                those without any device access - would need some form of sponsored onboarding. Web4 is not unique
                 here: every digital system faces this. But a system that claims to be trust-native must take equity
                 seriously, not hand-wave it. This remains an active design priority.
               </p>
@@ -1409,11 +1402,11 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 <strong>This is the most-asked question we get.</strong> Right now, Web4 exists as a
-                research simulation — the site you&apos;re on. No production Web4 apps exist yet.
+                research prototype - the site you&apos;re on. No production Web4 apps exist yet.
               </p>
               <p>
                 What we do have: <strong>conceptual wireframes</strong> showing what a Web4 inbox,
-                hiring dashboard, and review page could look like — trust scores next to messages,
+                hiring dashboard, and review page could look like - trust scores next to messages,
                 unfakeable reputation badges, energy-weighted reviews. See them on the{' '}
                 <Link href="/day-in-web4#wireframes" className="text-sky-400 hover:underline">
                   A Day in Web4
@@ -1421,16 +1414,16 @@ export default function WhyWeb4Page() {
                 page.
               </p>
               <p>
-                You can also <strong>experience the mechanics right now</strong> through
+                You can also <strong>follow the mechanics step by step</strong> in
                 the{' '}
-                <Link href="/society-simulator" className="text-sky-400 hover:underline">
-                  Society Simulator
+                <Link href="/how-it-works" className="text-sky-400 hover:underline">
+                  How It Works
                 </Link>{' '}
-                (watch trust economies evolve) and{' '}
-                <Link href="/karma-journey" className="text-sky-400 hover:underline">
-                  Karma Journey
+                walkthrough and the{' '}
+                <Link href="/karma-consequences" className="text-sky-400 hover:underline">
+                  karma and consequences
                 </Link>{' '}
-                (play through a trust lifecycle yourself). The concepts work — the question is
+                explainer. The concepts work - the question is
                 what production tooling looks like, and that will emerge from real-world pilots.
               </p>
               <p className="text-amber-400/80 text-xs">
@@ -1438,7 +1431,7 @@ export default function WhyWeb4Page() {
                 the first real-world step (see{' '}
                 <Link href="/day-in-web4#adoption" className="text-sky-400 hover:underline">
                   adoption tiers
-                </Link>). No timeline — research takes as long as it takes.
+                </Link>). No timeline - research takes as long as it takes.
               </p>
             </div>
           </details>
@@ -1472,7 +1465,7 @@ export default function WhyWeb4Page() {
           {/* Adoption roadmap */}
           <details id="faq-adoption-path" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>What&apos;s the concrete adoption path from simulation to real protocol?</span>
+              <span>What&apos;s the concrete adoption path from research prototype to real protocol?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
@@ -1496,10 +1489,10 @@ export default function WhyWeb4Page() {
                 <strong>What Tier 1 actually looks like:</strong> Imagine a coding forum like Stack Overflow.
                 Today, answers are ranked by votes. At the Wrapper tier, the forum adds a Web4 trust layer: each
                 user&apos;s answers start building a T3 trust profile (Talent = answer accuracy, Training = domain
-                expertise, Temperament = community behavior). The forum&apos;s existing UI doesn&apos;t change —
+                expertise, Temperament = community behavior). The forum&apos;s existing UI doesn&apos;t change - 
                 but behind the scenes, a trust-weighted ranking emerges. Spam answers from new accounts
                 cost ATP to post and earn nothing back. Within weeks, high-quality answers naturally rise
-                above vote-gamed content. No blockchain, no tokens, no user-facing changes — just better
+                above vote-gamed content. No blockchain, no tokens, no user-facing changes - just better
                 signal-to-noise.
               </p>
               <p>
@@ -1508,7 +1501,7 @@ export default function WhyWeb4Page() {
                 &ldquo;0.87 Talent in Python, 0.91 Training in distributed systems, 0.72 Temperament.&rdquo;
                 You can tell at a glance whether this person has a track record in the topic they&apos;re answering about.
                 A user with 10,000 reputation points but 0.31 Talent in security? Their security answers get
-                naturally de-prioritized — not banned, just surfaced honestly. The browser padlock analogy:
+                naturally de-prioritized - not banned, just surfaced honestly. The browser padlock analogy:
                 HTTPS didn&apos;t change how websites worked, it just made trust visible. Observable tier does the same for people.
               </p>
               <p>
@@ -1522,11 +1515,11 @@ export default function WhyWeb4Page() {
                   After 50+ interactions, let high-trust members moderate (equivalent to T3 maturation)</li>
                 <li><strong>Portable reputation:</strong> When members join a sister server, carry their
                   trust score over (equivalent to federated trust)</li>
-                <li><strong>Consequences:</strong> Spam costs the spammer&apos;s earned trust. No bans needed —
+                <li><strong>Consequences:</strong> Spam costs the spammer&apos;s earned trust. No bans needed - 
                   low-trust members simply have less reach (equivalent to ATP/CI throttling)</li>
               </ul>
               <p className="text-gray-400 text-sm">
-                This isn&apos;t Web4 — it&apos;s Web4 thinking applied with existing tools. A bot that tracks
+                This isn&apos;t Web4 - it&apos;s Web4 thinking applied with existing tools. A bot that tracks
                 contribution quality and adjusts permissions accordingly is a manual Tier 1 implementation.
                 The gap between &ldquo;Discord bot that tracks trust&rdquo; and &ldquo;real Web4 wrapper&rdquo;
                 is hardware-bound identity and cross-platform portability.
@@ -1535,14 +1528,14 @@ export default function WhyWeb4Page() {
                 <strong>Who would build this?</strong> The platform&apos;s own engineering team, or a third-party
                 integration (like adding Stripe for payments). The incentive is concrete: platforms spend
                 enormous resources on spam moderation, fake account detection, and content ranking. A Wrapper-tier
-                integration replaces heuristic moderation with trust-weighted signals &mdash; Reddit estimated
+                integration replaces heuristic moderation with trust-weighted signals - Reddit estimated
                 it spends ~$50M/year on content moderation. Even a 10% reduction pays for the integration.
               </p>
               <p>
                 <strong>The honest gap:</strong> All five tiers are designed and specified. Tiers 1-2
                 could be integrated into existing platforms today. But no platform has done so yet.
                 The path from &ldquo;working simulations&rdquo; to &ldquo;first real integration&rdquo;
-                requires a willing partner &mdash; a community, platform, or organization that sees
+                requires a willing partner - a community, platform, or organization that sees
                 value in trust-native infrastructure.
               </p>
             </div>
@@ -1557,17 +1550,17 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 Web4 is designed as an <strong>open ontology</strong>, not a platform. Like email or the web itself,
-                the infrastructure is federated — multiple independent operators can run nodes that
+                the infrastructure is federated - multiple independent operators can run nodes that
                 interoperate. No single company controls it.
               </p>
               <p>
                 In practice: witness nodes can be run by universities, nonprofits, companies, or
                 individuals. The trust system is designed so that no single operator can manipulate
-                the network—collusion requires coordinating multiple independent parties.
+                the network - collusion requires coordinating multiple independent parties.
               </p>
               <p>
                 Web4 identity is also designed to work with <strong><TermTooltip term="DID">W3C Decentralized Identifier (DID)</TermTooltip>{" "}
-                standards</strong> — the same standard used by governments and enterprises. Your{" "}
+                standards</strong> - the same standard used by governments and enterprises. Your{" "}
                 <Link href="/lct-explainer" className="text-sky-400 hover:underline">LCT</Link> maps
                 to a standard DID Document, so external systems can verify Web4 identity using protocols
                 they already support.
@@ -1588,8 +1581,8 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Yes, but it&apos;s <strong>expensive</strong>. Creating one LCT (Linked Context Token — Web4&apos;s hardware-bound identity) requires a physical device
-                with a security chip (TPM or Secure Enclave — built into most modern phones and laptops). Creating 1000 fake identities means buying 1000 devices —
+                Yes, but it&apos;s <strong>expensive</strong>. Creating one LCT (Linked Context Token - Web4&apos;s hardware-bound identity) requires a physical device
+                with a security chip (TPM or Secure Enclave - built into most modern phones and laptops). Creating 1000 fake identities means buying 1000 devices - 
                 thousands of dollars and physical logistics.
               </p>
               <p>
@@ -1626,23 +1619,19 @@ export default function WhyWeb4Page() {
                 What the first 100 interactions look like:
               </p>
               <ol className="list-decimal list-inside space-y-1 text-gray-400 text-sm">
-                <li><strong>Actions 1–3:</strong> Three founding members create the society with hardware-bound
-                  presence tokens. They witness each other — establishing the initial trust graph.</li>
-                <li><strong>Actions 4–20:</strong> Founders perform real work (writing governance rules,
-                  creating initial resources). Trust builds slowly from 0.50 — each quality contribution
+                <li><strong>Actions 1-3:</strong> Three founding members create the society with hardware-bound
+                  presence tokens. They witness each other - establishing the initial trust graph.</li>
+                <li><strong>Actions 4-20:</strong> Founders perform real work (writing governance rules,
+                  creating initial resources). Trust builds slowly from 0.50 - each quality contribution
                   moves the needle by ~0.02.</li>
-                <li><strong>Actions 21–50:</strong> New members join, vouched for by founders. First-mover
-                  advantage exists but has a ~30-action half-life — newcomers doing quality work
+                <li><strong>Actions 21-50:</strong> New members join, vouched for by founders. First-mover
+                  advantage exists but has a ~30-action half-life - newcomers doing quality work
                   catch up to founders by action ~50.</li>
-                <li><strong>Actions 51–100:</strong> Roles emerge, specialization begins. The society&apos;s
+                <li><strong>Actions 51-100:</strong> Roles emerge, specialization begins. The society&apos;s
                   trust graph becomes rich enough that MRH boundaries create meaningful context.
-                  Wealth gap trends toward 0.25 — concentrated enough to reward quality,
+                  Wealth gap trends toward 0.25 - concentrated enough to reward quality,
                   distributed enough to avoid oligarchy.</li>
               </ol>
-              <p className="text-gray-500 text-xs mt-2">
-                See the <a href="/playground" className="text-sky-400 hover:underline">Playground</a> experiment
-                &ldquo;Where is the tipping point?&rdquo; for a hands-on version of cold-start dynamics.
-              </p>
               <p className="text-amber-400/80 text-xs mt-2">
                 <strong>Honest caveat:</strong> Bootstrapping is genuinely hard. No perfect solution exists.
                 This is an active research area, not a solved problem.
@@ -1661,24 +1650,23 @@ export default function WhyWeb4Page() {
                 Fewer than you might think. The minimum viable community depends on what you need:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>3–5 people:</strong> Enough for basic trust graph formation. Each person can witness
+                <li><strong>3-5 people:</strong> Enough for basic trust graph formation. Each person can witness
                   others, and the MRH graph becomes meaningful with 2-hop connections. A small team or study group
                   could start here.</li>
-                <li><strong>10–20 people:</strong> Roles start to differentiate. Enough recipients to make ATP
-                  economics work — quality signals become statistically meaningful when at least 5–10 people can
+                <li><strong>10-20 people:</strong> Roles start to differentiate. Enough recipients to make ATP
+                  economics work - quality signals become statistically meaningful when at least 5-10 people can
                   confirm value independently.</li>
                 <li><strong>50+ people:</strong> Full society dynamics emerge. Specialization, reputation
                   stratification, and the wealth-gap-trending-to-0.25 pattern from simulations become visible.</li>
               </ul>
               <p>
-                The key constraint isn&apos;t size — it&apos;s <strong>reciprocity density</strong>. Ten people who
+                The key constraint isn&apos;t size - it&apos;s <strong>reciprocity density</strong>. Ten people who
                 actively interact produce richer trust data than 1,000 passive accounts. Web4&apos;s economics
                 naturally reward active communities: ATP flows to those who contribute value, so even a small
                 group that does real work together builds meaningful reputation quickly.
               </p>
               <p className="text-gray-500 text-xs mt-2">
-                See the <a href="/playground" className="text-sky-400 hover:underline">Playground</a> experiment
-                &ldquo;Where is the tipping point?&rdquo; and the cold-start walkthrough above for concrete dynamics.
+                See the cold-start walkthrough above for concrete dynamics.
               </p>
             </div>
           </details>
@@ -1696,12 +1684,12 @@ export default function WhyWeb4Page() {
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
                 <li><strong>Multiple standards supported:</strong> TPM (Intel/AMD), Secure Enclave (Apple), Titan (Google), and future open-source hardware. No single vendor lock-in.</li>
-                <li><strong>Attestation, not permission:</strong> Hardware provides cryptographic proof of presence — it doesn&apos;t need to &ldquo;approve&rdquo; your identity. The chip signs; it doesn&apos;t decide.</li>
+                <li><strong>Attestation, not permission:</strong> Hardware provides cryptographic proof of presence - it doesn&apos;t need to &ldquo;approve&rdquo; your identity. The chip signs; it doesn&apos;t decide.</li>
                 <li><strong>Open specification:</strong> Any hardware that meets the attestation spec can participate. This invites competition rather than consolidation.</li>
               </ul>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> This shifts trust from platforms to hardware supply chains.
-                That&apos;s a different dependency, not zero dependency. And open standards can be captured &mdash;
+                That&apos;s a different dependency, not zero dependency. And open standards can be captured - 
                 the history of standards bodies shows that well-resourced incumbents sometimes steer
                 &ldquo;open&rdquo; specs to favor their implementations. Whether hardware dependency is better
                 than platform dependency depends on whether supply chain competition proves more durable
@@ -1718,7 +1706,7 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                No. Web4 uses <strong><TermTooltip term="WitnessNetwork">multi-device witness networks</TermTooltip></strong> — your identity is spread across
+                No. Web4 uses <strong><TermTooltip term="WitnessNetwork">multi-device witness networks</TermTooltip></strong> - your identity is spread across
                 multiple devices (phone, laptop, security key). If one is stolen, the others can revoke
                 the compromised device and approve a replacement.
               </p>
@@ -1726,7 +1714,7 @@ export default function WhyWeb4Page() {
                 When you report a compromise, a <strong>revocation cascade</strong> propagates through the
                 witness network. The stolen device&apos;s keys become instantly invalid. Any entity that
                 trusted the compromised device gets notified. Your trust history and reputation are
-                preserved — only the compromised device is cut off.
+                preserved - only the compromised device is cut off.
               </p>
               <p>
                 Recovery works like a <strong>quorum</strong>: you set a threshold when adding devices
@@ -1735,7 +1723,7 @@ export default function WhyWeb4Page() {
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> If <em>all</em> your devices are lost simultaneously, recovery
-                requires social vouching from trusted witnesses — deliberately slow and hard, because easy
+                requires social vouching from trusted witnesses - deliberately slow and hard, because easy
                 recovery would mean easy identity theft. See the{" "}
                 <a href="/lct-explainer" className="text-sky-400 hover:underline">LCT explainer</a> for
                 the full lifecycle.
@@ -1751,7 +1739,7 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                ATP can be transferred, but every transfer burns 5% — making circular farming
+                ATP can be transferred, but every transfer burns 5% - making circular farming
                 unprofitable. Teams primarily <strong>earn energy together</strong>. When a team creates
                 value jointly, each contributor receives their own energy reward based on their verified contribution.
               </p>
@@ -1759,13 +1747,13 @@ export default function WhyWeb4Page() {
                 Organizations work through <strong>shared context boundaries</strong> (MRH). Members of a
                 team see each other&apos;s work, validate each other&apos;s contributions, and collectively
                 build the team&apos;s reputation. But each person&apos;s individual energy and trust remain
-                their own — you can&apos;t buy someone else&apos;s reputation, and a team member&apos;s bad
+                their own - you can&apos;t buy someone else&apos;s reputation, and a team member&apos;s bad
                 behavior affects them, not you.
               </p>
               <p>
                 <strong className="text-gray-100">What about frequent transfers?</strong> If a team of 5
                 passes ATP back and forth for collaborative projects, the 5% fee compounds
-                quickly &mdash; 10 transfers loses ~40% of the original amount. That&apos;s by design:
+                quickly - 10 transfers loses ~40% of the original amount. That&apos;s by design:
                 the system incentivizes <em>direct value creation</em> (where everyone earns individually)
                 over <em>resource shuffling</em> (where ATP moves between wallets). Teams that create
                 together don&apos;t need to transfer; teams that delegate work use single transfers,
@@ -1778,7 +1766,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Circular farming — visitor Q Mar 30 */}
+          {/* Circular farming - visitor Q Mar 30 */}
           <details id="faq-circular-farming" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How does the 5% transfer tax actually prevent circular farming?</span>
@@ -1797,7 +1785,7 @@ export default function WhyWeb4Page() {
               </ul>
               <p>
                 After just 4 round trips, they&apos;ve <strong>lost nearly 19%</strong> of the original
-                energy — and gained nothing. No trust increase, no reputation, no value. Every transfer
+                energy - and gained nothing. No trust increase, no reputation, no value. Every transfer
                 is logged as a transfer, not a contribution, so it doesn&apos;t build trust either.
               </p>
               <p>
@@ -1820,18 +1808,18 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Hardware transitions are handled through <strong>identity migration</strong> — your existing
+                Hardware transitions are handled through <strong>identity migration</strong> - your existing
                 device attests to your new device before the old one is retired. Think of it like transferring
                 a bank account: you prove you&apos;re you on the old system, then establish yourself on the new one.
               </p>
               <p>
                 The trust history travels with the identity, not with the hardware. Your trust tensor, energy
                 history, and behavioral record are associated with your identity chain, not with a specific chip.
-                Upgrading hardware is like getting a new passport — the person is the same, the document is new.
+                Upgrading hardware is like getting a new passport - the person is the same, the document is new.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> A post-quantum transition (where current cryptography breaks)
-                would require a coordinated migration — similar to the Y2K effort but for identity. This is a
+                would require a coordinated migration - similar to the Y2K effort but for identity. This is a
                 known hard problem across all cryptographic systems, not unique to Web4.
               </p>
             </div>
@@ -1845,13 +1833,13 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Context boundaries (MRH) don&apos;t filter every message globally — they define <strong>who
+                Context boundaries (MRH) don&apos;t filter every message globally - they define <strong>who
                 you can see</strong> based on your local trust network. This is computed locally, not centrally.
                 You don&apos;t need to check every person on the internet; you only check the people trying to
                 reach you, against the trust graph of people you already know.
               </p>
               <p>
-                This is similar to how email spam filters work today — except instead of content analysis
+                This is similar to how email spam filters work today - except instead of content analysis
                 (which AI can defeat), the filter is based on trust relationships (which require real
                 behavioral history to build). The computational cost scales with your network size, not with
                 the internet&apos;s size.
@@ -1873,7 +1861,7 @@ export default function WhyWeb4Page() {
               <p>
                 Communities are <strong>federated</strong>, not merged. When you move from one community to
                 another, your trust history is visible but not automatically imported. The new community can
-                see your track record — but they set their own standards for what trust level earns what
+                see your track record - but they set their own standards for what trust level earns what
                 privileges.
               </p>
               <p>
@@ -1889,12 +1877,12 @@ export default function WhyWeb4Page() {
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> The specific mechanics of cross-community trust mapping are
                 still being researched. How much to weight external trust vs internal trust is a policy
-                decision each community makes — the protocol provides the infrastructure, not the rules.
+                decision each community makes - the protocol provides the infrastructure, not the rules.
               </p>
             </div>
           </details>
 
-          {/* Community splits — visitor Q Apr 8 */}
+          {/* Community splits - visitor Q Apr 8 */}
           <details id="faq-community-split" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What happens when a community splits or forks?</span>
@@ -1903,14 +1891,14 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 Communities can split, just like open-source projects can fork. When they do,
-                <strong> each member keeps their full trust history and ATP balance</strong> — nothing is
+                <strong> each member keeps their full trust history and ATP balance</strong> - nothing is
                 &ldquo;divided&rdquo; because trust and energy belong to the individual, not the community.
               </p>
               <p>
                 Think of it like employees leaving a company: their skills and resume go with them. If the
                 &ldquo;Research Collective&rdquo; splits into &ldquo;Theory Group&rdquo; and &ldquo;Applied Lab,&rdquo; each member
                 chooses which to join (or both). Their trust scores are visible to both new communities,
-                which each set their own acceptance policies — just like{' '}
+                which each set their own acceptance policies - just like{' '}
                 <a href="#faq-trust-transfer" className="text-sky-400 hover:underline">cross-community trust transfer</a>.
               </p>
               <p>
@@ -1919,31 +1907,31 @@ export default function WhyWeb4Page() {
                 views into the graph, not containers that own the data.
               </p>
               <p className="text-amber-400/80 text-xs">
-                <strong>Design goal:</strong> The ability to fork — without losing your identity or reputation —
+                <strong>Design goal:</strong> The ability to fork - without losing your identity or reputation - 
                 keeps community governance honest. Authoritarian communities lose members to better-governed
                 alternatives. See{' '}
-                <a href="/federation-economics" className="text-sky-400 hover:underline">Federation Economics</a> for
-                how federations merge and compete.
+                <a href="/hub" className="text-sky-400 hover:underline">the hub</a> for
+                how communities and federations merge and compete.
               </p>
             </div>
           </details>
 
-          {/* Computational overhead — visitor Q Apr 8 */}
+          {/* Computational overhead - visitor Q Apr 8 */}
           <details id="faq-computational-overhead" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>Every action involves trust calculations — is that computationally feasible?</span>
+              <span>Every action involves trust calculations - is that computationally feasible?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 The calculations are simpler than they sound. For a single action, the system needs to:
                 check your ATP balance (a number), update your T3 scores (three numbers), compute CI
-                (a rolling average), and let recipients confirm quality. Each operation is basic arithmetic —
+                (a rolling average), and let recipients confirm quality. Each operation is basic arithmetic - 
                 comparable to updating a database row.
               </p>
               <p>
                 The key insight: <strong>most computation is local, not global</strong>. Your trust score
-                doesn&apos;t need to consult every user on the network — only your direct connections (MRH
+                doesn&apos;t need to consult every user on the network - only your direct connections (MRH
                 limits this to 3 hops, roughly the size of a social circle). Witness verification uses your
                 own devices, not a global network. V3 scoring aggregates confirmations as they arrive,
                 not all at once.
@@ -1951,7 +1939,7 @@ export default function WhyWeb4Page() {
               <p>
                 The expensive part is <strong><TermTooltip term="Federation">federation</TermTooltip>-level operations</strong>: cross-community trust
                 mapping, consensus across unreliable networks, and global reputation queries. These are
-                batched, cached, and eventually consistent — similar to how DNS propagation works today.
+                batched, cached, and eventually consistent - similar to how DNS propagation works today.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> At billions of users, the trust graph becomes enormous and
@@ -1973,14 +1961,14 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 For most users, most of the time: <strong>invisible</strong>. Your device&apos;s security chip
-                handles attestation automatically, like how HTTPS encryption works — you don&apos;t think about
+                handles attestation automatically, like how HTTPS encryption works - you don&apos;t think about
                 it, it just happens. You pick up your phone, the chip confirms it&apos;s your device, and
                 you&apos;re verified.
               </p>
               <p>
                 Witnessing becomes visible only for <strong>high-stakes actions</strong>: creating a new identity,
                 recovering from device loss, or performing actions that require elevated trust. In those cases,
-                you&apos;d see something like &ldquo;2 of your 3 linked devices confirmed this action&rdquo; — similar
+                you&apos;d see something like &ldquo;2 of your 3 linked devices confirmed this action&rdquo; - similar
                 to how banks send a verification SMS for large transfers.
               </p>
               <p className="text-amber-400/80 text-xs">
@@ -2001,28 +1989,28 @@ export default function WhyWeb4Page() {
               <p>
                 Hardware-bound identity doesn&apos;t mean <strong>one person, one device</strong>. It means
                 one person has <strong>at least one device</strong> that anchors their identity. You can use
-                a shared computer — you just can&apos;t perform high-trust actions from it without your own
+                a shared computer - you just can&apos;t perform high-trust actions from it without your own
                 device nearby to witness.
               </p>
               <p>
                 Think of it like a hotel business center: you can use the shared computer to browse, but for
-                banking you&apos;d use your own phone to authenticate. Web4 works similarly — shared devices
+                banking you&apos;d use your own phone to authenticate. Web4 works similarly - shared devices
                 can access public content, but identity-verified actions need your personal device to co-sign.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> This creates an access gap for people who don&apos;t own any
                 personal device with a security chip. How to include the unbanked/undeviced population is an
-                unsolved equity problem — and a real one.
+                unsolved equity problem - and a real one.
               </p>
             </div>
           </details>
 
-          {/* AI agent onboarding — May 21 + May 27 visitor Unanswered Q3 (2nd recurrence).
-              Visitor asked: "AI has no chip — where does the hardware anchor come from?"
+          {/* AI agent onboarding - May 21 + May 27 visitor Unanswered Q3 (2nd recurrence).
+              Visitor asked: "AI has no chip - where does the hardware anchor come from?"
               Canonical AGY-spec answer lives at lct-explainer:1812 (the "no phone or chip"
               FAQ), but that's ~1900 lines deep on a separate page. Visitors form the
               question reading the "humans AND AI agents" promise on this page (line ~283),
-              so the answer must surface here at the same read point — same shape as #320
+              so the answer must surface here at the same read point - same shape as #320
               (V3 grounding), #323 (V3 inline), #309 (gratitude loop): complete the keepable
               summary at the read point with jump-link to canonical mechanics. */}
           <details id="faq-ai-agents" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
@@ -2032,13 +2020,13 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>Yes, but transparently.</strong> AI agents in Web4 are first-class entities — they get their
+                <strong>Yes, but transparently.</strong> AI agents in Web4 are first-class entities - they get their
                 own LCT, their own ATP budget, and their own trust tensor.
                 The critical difference: <strong>they must be labeled as non-human</strong>.
               </p>
               <p>
                 <strong>Where does an AI&apos;s hardware anchor come from when it has no chip?</strong> Its LCT
-                is <strong>rooted in its creator&apos;s hardware-bound identity</strong> — a person or organization
+                is <strong>rooted in its creator&apos;s hardware-bound identity</strong> - a person or organization
                 that <em>is</em> hardware-anchored issues the agent a scoped, revocable delegation (like a building
                 badge issued by an authorized person). The anchor is <em>inherited through the chain</em>, not
                 possessed directly; every LCT traces back to a hardware-anchored human or org who stays accountable
@@ -2050,19 +2038,19 @@ export default function WhyWeb4Page() {
               <p>
                 An AI agent earns trust the same way anyone does: by taking actions, spending ATP, and building a
                 behavioral track record. A helpful coding assistant that consistently delivers quality work earns high
-                trust in that role. A spam bot burns ATP faster than it earns and dies — just like a human spammer would.
+                trust in that role. A spam bot burns ATP faster than it earns and dies - just like a human spammer would.
               </p>
               <p>
                 Initial trust is cold-start: new agents begin with minimal ATP and must be <strong>vouched for by
                 their operator</strong> (the human or organization that deployed them). The operator&apos;s own reputation
-                is on the line — deploy a malicious bot, and your trust takes the hit too.
+                is on the line - deploy a malicious bot, and your trust takes the hit too.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> The boundary between &ldquo;AI agent&rdquo; and &ldquo;human with AI
                 assistance&rdquo; is blurry and getting blurrier. How to handle AI-augmented actions (you wrote it, but
                 GPT helped) is an open question. The current design handles clearly autonomous agents well but struggles
                 with the hybrid cases. On the regulatory side, Web4&apos;s transparency and audit primitives
-                are designed to map to EU AI Act (2024/1689) requirements — but that compliance hasn&apos;t been
+                are designed to map to EU AI Act (2024/1689) requirements - but that compliance hasn&apos;t been
                 independently validated yet.
               </p>
             </div>
@@ -2083,7 +2071,7 @@ export default function WhyWeb4Page() {
               <p>
                 Key distinction: Web4 stores <strong>behavioral scores</strong>, not personal data. Your trust
                 tensor says &ldquo;this entity has 0.85 data analysis trust earned across 200 interactions&rdquo;
-                — it doesn&apos;t store your name, email, or the content of those interactions. The score is
+ - it doesn&apos;t store your name, email, or the content of those interactions. The score is
                 pseudonymous and attached to a hardware key, not a legal identity.
               </p>
               <p>
@@ -2100,7 +2088,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Privacy comparison — visitor Q Apr 10: "is Web4 more or less private?" */}
+          {/* Privacy comparison - visitor Q Apr 10: "is Web4 more or less private?" */}
           <details id="faq-privacy-comparison" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Is Web4 more private or less private than today&apos;s internet?</span>
@@ -2108,7 +2096,7 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>Both — it depends on what you mean by &ldquo;privacy.&rdquo;</strong>
+                <strong>Both - it depends on what you mean by &ldquo;privacy.&rdquo;</strong>
               </p>
               <div className="overflow-x-auto">
                 <table className="w-full text-xs mt-2 mb-3">
@@ -2123,27 +2111,27 @@ export default function WhyWeb4Page() {
                     <tr className="border-b border-gray-800">
                       <td className="py-2 pr-4 text-gray-400">Who you are</td>
                       <td className="py-2 pr-4">Platforms know your name, email, IP, payment info</td>
-                      <td className="py-2"><span className="text-green-400">Better</span> — identity is a hardware key, not your name</td>
+                      <td className="py-2"><span className="text-green-400">Better</span> - identity is a hardware key, not your name</td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-2 pr-4 text-gray-400">What you do</td>
                       <td className="py-2 pr-4">Platforms track everything, sell to advertisers</td>
-                      <td className="py-2"><span className="text-green-400">Better</span> — behavioral scores visible, raw activity is not</td>
+                      <td className="py-2"><span className="text-green-400">Better</span> - behavioral scores visible, raw activity is not</td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-2 pr-4 text-gray-400">Who sees you</td>
                       <td className="py-2 pr-4">The platform + anyone it shares data with</td>
-                      <td className="py-2"><span className="text-green-400">Better</span> — only entities in your trust network (MRH-scoped)</td>
+                      <td className="py-2"><span className="text-green-400">Better</span> - only entities in your trust network (MRH-scoped)</td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-2 pr-4 text-gray-400">Behavioral history</td>
-                      <td className="py-2 pr-4">Deletable (in theory — platform retains backups)</td>
-                      <td className="py-2"><span className="text-amber-400">Trade-off</span> — permanent, but attached to a key, not a name</td>
+                      <td className="py-2 pr-4">Deletable (in theory - platform retains backups)</td>
+                      <td className="py-2"><span className="text-amber-400">Trade-off</span> - permanent, but attached to a key, not a name</td>
                     </tr>
                     <tr>
                       <td className="py-2 pr-4 text-gray-400">Starting fresh</td>
-                      <td className="py-2 pr-4">Easy — create a new account</td>
-                      <td className="py-2"><span className="text-amber-400">Trade-off</span> — disposable identity is prevented by design</td>
+                      <td className="py-2 pr-4">Easy - create a new account</td>
+                      <td className="py-2"><span className="text-amber-400">Trade-off</span> - disposable identity is prevented by design</td>
                     </tr>
                   </tbody>
                 </table>
@@ -2151,15 +2139,15 @@ export default function WhyWeb4Page() {
               <p>
                 The core design choice: Web4 <strong>removes the central observer</strong> (no platform
                 sees everything about you) but <strong>adds behavioral permanence</strong> (your actions
-                have lasting consequences). For most users, this is a net privacy improvement — your
+                have lasting consequences). For most users, this is a net privacy improvement - your
                 identity and activity are harder to surveil, even as your reputation becomes persistent.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Web4 identifies{" "}
-                <a href="/threat-model" className="text-sky-400 hover:underline">seven privacy leakage channels</a>{" "}
+                <a href="/what-could-go-wrong" className="text-sky-400 hover:underline">seven privacy leakage channels</a>{" "}
                 including metadata correlation, timing analysis, and trust graph topology inference.
                 No system eliminates privacy risk entirely. The claim is that decentralized, scoped
-                visibility is structurally better than centralized, unlimited surveillance — not
+                visibility is structurally better than centralized, unlimited surveillance - not
                 that it&apos;s perfect. See{" "}
                 <a href="#faq-pseudonymous" className="text-sky-400 hover:underline">pseudonymity FAQ</a> and{" "}
                 <a href="#faq-vpn-tor" className="text-sky-400 hover:underline">VPN/Tor FAQ</a> for specifics.
@@ -2180,12 +2168,12 @@ export default function WhyWeb4Page() {
                   context boundaries (MRH)
                 </Link>{" "}
                 to limit who sees what. Your trust scores are only visible to entities within your
-                relationship network — not broadcast to the world.
+                relationship network - not broadcast to the world.
               </p>
               <p>
                 Think of it like real-life reputation: your coworkers know you&apos;re reliable at work,
                 your neighbors know you keep a tidy yard, but neither group sees the other&apos;s picture.
-                MRH formalizes this — trust is contextual, scoped by the depth of your relationship chain.
+                MRH formalizes this - trust is contextual, scoped by the depth of your relationship chain.
               </p>
               <p>
                 What&apos;s visible: <strong>behavioral scores</strong> (e.g., &ldquo;0.85 trust in data
@@ -2196,8 +2184,8 @@ export default function WhyWeb4Page() {
               <p>
                 <strong>Zero-knowledge trust verification</strong> goes further: you can prove your
                 trust meets a threshold (&ldquo;my T3 Training exceeds 0.7&rdquo;) without revealing
-                the actual number. This enables trust-gated access — join a community, accept a task,
-                or enter a partnership — while keeping your full trust history private. Think of it
+                the actual number. This enables trust-gated access - join a community, accept a task,
+                or enter a partnership - while keeping your full trust history private. Think of it
                 like a credit check that says &ldquo;approved&rdquo; without showing your exact score.
               </p>
               <p className="text-amber-400/80 text-xs">
@@ -2231,7 +2219,7 @@ export default function WhyWeb4Page() {
                 <strong>Honest caveat:</strong> Any system that makes identity expensive to create will disadvantage
                 those with fewer resources. Web4 makes Sybil attacks expensive; the tradeoff is that legitimate
                 participation also requires hardware investment. Whether this tradeoff is net-positive depends on
-                how affordable secure hardware becomes &mdash; a trend Web4 can influence but doesn&apos;t control.
+                how affordable secure hardware becomes - a trend Web4 can influence but doesn&apos;t control.
               </p>
             </div>
           </details>
@@ -2253,12 +2241,12 @@ export default function WhyWeb4Page() {
               <p>
                 The 0.5 default draws from phase transition mathematics: below 0.5, behavior is
                 statistically indistinguishable from random; above it, intentional patterns emerge.
-                But it&apos;s a starting point, not a mandate. Cultural trust norms absolutely vary &mdash;
+                But it&apos;s a starting point, not a mandate. Cultural trust norms absolutely vary - 
                 that&apos;s why governance is society-local, not protocol-global.
               </p>
               <p>
                 Beyond thresholds, societies can customize <strong>how trust is weighted</strong>. T3
-                defaults to Talent 0.4, Training 0.3, Temperament 0.3 &mdash; but a culture that
+                defaults to Talent 0.4, Training 0.3, Temperament 0.3 - but a culture that
                 values consistency and reliability over raw competence could weight Temperament higher.
                 A research community might weight Talent (demonstrated expertise) more heavily. Even
                 decay half-lives can be society-tuned: a fast-moving startup culture might shorten
@@ -2267,25 +2255,25 @@ export default function WhyWeb4Page() {
               </p>
               <p>
                 When societies with different norms interact through{" "}
-                <Link href="/federation-economics" className="text-sky-400 hover:underline">federation</Link>,
-                cross-society trust translation happens at the boundary &mdash; your reputation is
+                <Link href="/hub" className="text-sky-400 hover:underline">federation</Link>,
+                cross-society trust translation happens at the boundary - your reputation is
                 portable but interpreted through the receiving community&apos;s local norms. This is
                 similar to how academic credentials are recognized internationally but weighted
                 differently by each institution.
               </p>
               <p>
                 What about societies with <strong>fundamentally incompatible values</strong>? Web4
-                doesn&apos;t force consensus &mdash; societies that can&apos;t reconcile their norms simply
+                doesn&apos;t force consensus - societies that can&apos;t reconcile their norms simply
                 don&apos;t federate. See{' '}
-                <Link href="/federation-economics#value-conflicts" className="text-sky-400 hover:underline">
-                  When Values Themselves Conflict
+                <Link href="/hub" className="text-sky-400 hover:underline">
+                  the hub
                 </Link>{' '}
                 for how bridging societies and value boundaries work.
               </p>
             </div>
           </details>
 
-          {/* May 21 visitor Unanswered-Q1: the "calibration story" — visitor PRAISED the
+          {/* May 21 visitor Unanswered-Q1: the "calibration story" - visitor PRAISED the
               "calibrated, not derived" honesty (Aliveness 0.5, MRH 3-hop via #292) and wanted
               "more of that, not less... a brief 'How we picked these numbers' appendix." The
               per-number explanations already exist scattered; this FAQ names the philosophy once
@@ -2298,10 +2286,10 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 Short version: almost every number in Web4 is <strong>calibrated, not derived</strong>.
-                <em>Derived</em> would mean the math forces the value &mdash; there&apos;s a proof it could be
+                <em>Derived</em> would mean the math forces the value - there&apos;s a proof it could be
                 nothing else. <em>Calibrated</em> means it was tuned in simulation until the system behaved
                 sensibly, the way an engineer dials in a thermostat rather than computing it from first
-                principles. A few values aren&apos;t even tuned &mdash; they&apos;re <strong>design choices
+                principles. A few values aren&apos;t even tuned - they&apos;re <strong>design choices
                 inspired by</strong> an analogy. None of them are claimed as physical constants.
               </p>
               <p>
@@ -2309,32 +2297,32 @@ export default function WhyWeb4Page() {
               </p>
               <ul className="list-disc list-inside space-y-1.5 ml-1">
                 <li>
-                  <strong>0.5 &mdash; the alive/dead and default trust line.</strong> A design choice inspired by
+                  <strong>0.5 - the alive/dead and default trust line.</strong> A design choice inspired by
                   phase-transition behavior: below it, conduct is hard to tell from random; above it, intention
-                  shows. It&apos;s also a per-society setting, not a protocol constant &mdash; see{" "}
+                  shows. It&apos;s also a per-society setting, not a protocol constant - see{" "}
                   <a href="#faq-threshold" className="text-sky-400 hover:underline">Is the 0.5 threshold universal?</a>
                 </li>
                 <li>
-                  <strong>3 hops &mdash; the relevancy horizon (MRH), ~0.7 trust kept per hop.</strong> Calibrated:
+                  <strong>3 hops - the relevancy horizon (MRH), ~0.7 trust kept per hop.</strong> Calibrated:
                   in real social networks the signal-to-noise of &ldquo;friend of a friend of a friend&rdquo; collapses
                   past about three hops. Walk the decay yourself on the{" "}
-                  <Link href="/mrh-explorer" className="text-sky-400 hover:underline">MRH Explorer</Link>.
+                  <Link href="/trust-neighborhood" className="text-sky-400 hover:underline">Trust Neighborhood</Link>.
                 </li>
                 <li>
-                  <strong>0.02 &mdash; the trust update step.</strong> Calibrated to be small on purpose: trust
+                  <strong>0.02 - the trust update step.</strong> Calibrated to be small on purpose: trust
                   should move steadily with each action, not lurch on any single one. The{" "}
                   <Link href="/trust-tensor" className="text-sky-400 hover:underline">Trust Tensor</Link> page shows
                   the full <code className="text-sky-300/90 text-xs">0.02 &times; (quality &minus; 0.5)</code> rule.
                 </li>
                 <li>
-                  <strong>5% &mdash; the energy transfer fee.</strong> A design choice that makes pooling and
-                  circular trust-farming unprofitable without taxing honest collaboration &mdash; see{" "}
+                  <strong>5% - the energy transfer fee.</strong> A design choice that makes pooling and
+                  circular trust-farming unprofitable without taxing honest collaboration - see{" "}
                   <a href="#faq-5-percent" className="text-sky-400 hover:underline">Why a 5% transfer cost?</a>
                 </li>
               </ul>
               <p>
                 Why say all this out loud? Because the honest answer to &ldquo;why 0.5 and not 0.48?&rdquo; is
-                &ldquo;we tuned it, and a future version may retune it&rdquo; &mdash; and that&apos;s a feature, not
+                &ldquo;we tuned it, and a future version may retune it&rdquo; - and that&apos;s a feature, not
                 an embarrassment. Calibrated parameters are knobs, not commandments: each society can already move
                 several of them to fit its own norms. Being explicit that these are empirically chosen values rather
                 than magic constants is what keeps the framework <strong>science, not numerology</strong>.
@@ -2363,15 +2351,15 @@ export default function WhyWeb4Page() {
                   the scenes. You keep using Gmail, Reddit, etc. exactly as before. Your actions
                   start building a trust history you can&apos;t see yet.</li>
                 <li><strong>Observable tier (you see trust scores):</strong> A trust badge appears next
-                  to usernames &mdash; like the blue checkmark, but earned through behavior, not payment.
+                  to usernames - like the blue checkmark, but earned through behavior, not payment.
                   You start noticing which reviews, messages, and posts come from high-trust sources.</li>
                 <li><strong>Accountable tier (you feel the difference):</strong> Posting costs a tiny
                   amount of ATP. High-trust users barely notice (their costs are lower). Spammers
-                  notice immediately (their costs are higher). Your existing account still works &mdash;
+                  notice immediately (their costs are higher). Your existing account still works - 
                   it just has consequences now.</li>
                 <li><strong>Federated tier (your reputation travels):</strong> You join a new platform
                   and your trust follows you. No more starting from zero. This is when the dual-identity
-                  friction disappears &mdash; your Web4 trust IS your cross-platform identity.</li>
+                  friction disappears - your Web4 trust IS your cross-platform identity.</li>
               </ul>
               <p>
                 The key design choice: <strong>Web4 wraps existing systems rather than replacing
@@ -2402,7 +2390,7 @@ export default function WhyWeb4Page() {
                 these shift weight naturally:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li>A satirical essay: High Valuation (entertaining), variable Veracity (it&apos;s satire &mdash;
+                <li>A satirical essay: High Valuation (entertaining), variable Veracity (it&apos;s satire - 
                   literal truth isn&apos;t the point), High Validity (appropriate for the context)</li>
                 <li>An abstract painting: High Valuation (community appreciates it), Veracity less
                   relevant, High Validity (fits the art community&apos;s norms)</li>
@@ -2436,7 +2424,7 @@ export default function WhyWeb4Page() {
                 There is no VC funding, no token sale, and no commercial interest.
               </p>
               <p>
-                The relative anonymity is intentional but also ironic &mdash; a project about trust that
+                The relative anonymity is intentional but also ironic - a project about trust that
                 doesn&apos;t tell you who&apos;s behind it. The reasoning: Web4&apos;s value should stand or fall on
                 its ideas and implementations, not on who proposed them. The code is inspectable, the
                 simulations are reproducible, and the threat analysis is public.
@@ -2457,7 +2445,7 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Every action in Web4 creates a <strong>tamper-evident record</strong> &mdash; hash-chained
+                Every action in Web4 creates a <strong>tamper-evident record</strong> - hash-chained
                 event logs that can&apos;t be altered after the fact. Think of it like a receipt that
                 the whole network can verify.
               </p>
@@ -2465,19 +2453,19 @@ export default function WhyWeb4Page() {
                 The system watches for anomalies automatically: sudden wealth spikes, coordinated
                 behavior between accounts, trust scores changing faster than should be possible,
                 or activity patterns that don&apos;t match an entity&apos;s history. When something looks
-                wrong, it gets flagged &mdash; not by a moderator, but by the math.
+                wrong, it gets flagged - not by a moderator, but by the math.
               </p>
               <p>
                 This is different from today&apos;s internet where cheating is only caught when someone
                 reports it. In Web4, the audit trail is continuous and the detection is automatic.
-                You can still try to cheat &mdash; but the system is designed so that cheating
+                You can still try to cheat - but the system is designed so that cheating
                 is expensive (burns ATP), detectable (anomaly alerts), and unprofitable (low-quality
                 work earns nothing).
               </p>
             </div>
           </details>
 
-          {/* CI scoring — visitor Q Mar 30 */}
+          {/* CI scoring - visitor Q Mar 30 */}
           <details id="faq-ci-example" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What does a Coherence Index score look like for a normal person?</span>
@@ -2487,9 +2475,9 @@ export default function WhyWeb4Page() {
               <p>
                 <strong>Think of it as a consistency score.</strong> The{" "}
                 <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link> (CI)
-                measures how consistently you behave — across time, across communities, and across situations.
+                measures how consistently you behave - across time, across communities, and across situations.
               </p>
-              <p><strong>Example — a freelance designer named Sam:</strong></p>
+              <p><strong>Example - a freelance designer named Sam:</strong></p>
               <ul className="list-none space-y-1.5 text-gray-400 ml-2">
                 <li>Sam delivers quality design work for 6 months → CI rises to <strong>0.88</strong></li>
                 <li>Sam starts rushing jobs to take on more clients → quality drops, CI falls to <strong>0.71</strong></li>
@@ -2500,11 +2488,11 @@ export default function WhyWeb4Page() {
               <p>
                 The key insight: <strong>CI penalizes inconsistency more than low trust does.</strong> The
                 squared relationship means a CI of 0.71 cuts your effective trust nearly in half. You can&apos;t
-                build trust by being great sometimes and careless other times — the system rewards reliability
+                build trust by being great sometimes and careless other times - the system rewards reliability
                 over occasional brilliance.
               </p>
               <p className="text-amber-400/80 text-xs">
-                <strong>What this feels like:</strong> If your CI is high (above 0.80), you barely notice it —
+                <strong>What this feels like:</strong> If your CI is high (above 0.80), you barely notice it - 
                 everything just works. If it drops, you&apos;ll feel it through higher action costs and reduced
                 reach. It&apos;s like a credit score that measures behavior consistency instead of payment history.
               </p>
@@ -2519,8 +2507,8 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>Yes — pseudonymity is built in, not bolted on.</strong> Your Web4 identity is a hardware key,
-                not your name. Nobody sees &ldquo;Jane Smith&rdquo; — they see an entity with a trust history.
+                <strong>Yes - pseudonymity is built in, not bolted on.</strong> Your Web4 identity is a hardware key,
+                not your name. Nobody sees &ldquo;Jane Smith&rdquo; - they see an entity with a trust history.
                 You can participate, earn trust, and contribute value without ever revealing who you are in the
                 physical world.
               </p>
@@ -2528,7 +2516,7 @@ export default function WhyWeb4Page() {
                 This is actually <strong>stronger pseudonymity</strong> than most platforms today. On Twitter or
                 Reddit, your &ldquo;anonymous&rdquo; account can be correlated through IP addresses, browser
                 fingerprints, or legal subpoenas to the platform. In Web4, there&apos;s no central platform
-                that knows your real identity — your identity lives in your hardware, not on a server.
+                that knows your real identity - your identity lives in your hardware, not on a server.
               </p>
               <p>
                 For high-stakes cases (whistleblowing, political dissent, support groups), Web4 adds{" "}
@@ -2538,7 +2526,7 @@ export default function WhyWeb4Page() {
                 even within the trust graph.
               </p>
               <p>
-                What Web4 prevents isn&apos;t pseudonymity — it&apos;s <strong>disposable identity</strong>.
+                What Web4 prevents isn&apos;t pseudonymity - it&apos;s <strong>disposable identity</strong>.
                 You can be anonymous, but you can&apos;t be anonymous <em>and</em> have unlimited fresh starts.
                 Your pseudonymous identity accumulates consequences just like any other. That&apos;s the tradeoff:
                 your reputation follows you, but your name doesn&apos;t have to.
@@ -2547,11 +2535,11 @@ export default function WhyWeb4Page() {
                 <strong>Honest caveat:</strong> Hardware-bound identity creates a correlation risk. If an adversary
                 can identify your device (through physical surveillance or supply chain data), they can link your
                 pseudonymous identity to you. Multi-device witness networks reduce this risk but don&apos;t eliminate
-                it. For journalists and activists in hostile states, device security is the weakest link — and that&apos;s
+                it. For journalists and activists in hostile states, device security is the weakest link - and that&apos;s
                 a hardware problem, not a protocol one.
               </p>
 
-              {/* May 4 visitor unanswered Q4: "How is the tension resolved in practice — software fallbacks?
+              {/* May 4 visitor unanswered Q4: "How is the tension resolved in practice - software fallbacks?
                   Per-context LCTs? Something else?" The caveat above names the risk; this block names what you
                   actually do about it. */}
               <div className="mt-5 pt-4 border-t border-amber-700/30">
@@ -2559,7 +2547,7 @@ export default function WhyWeb4Page() {
                   How is the tension resolved in practice?
                 </p>
                 <p className="mb-3">
-                  Three concrete mitigations, in decreasing order of strength &mdash; and one common misreading
+                  Three concrete mitigations, in decreasing order of strength - and one common misreading
                   that doesn&apos;t actually help.
                 </p>
 
@@ -2568,7 +2556,7 @@ export default function WhyWeb4Page() {
                   Each hardware-bound LCT is a distinct cryptographic identity. A separate device for high-stakes
                   pseudonymous activity (whistleblowing, dissident work, sensitive support communities) yields a
                   separate LCT with no shared fingerprint to the rest of your life. The cost is real: each LCT
-                  starts at zero and earns trust independently &mdash; no transfer between contexts. That&apos;s
+                  starts at zero and earns trust independently - no transfer between contexts. That&apos;s
                   the right tradeoff when correlation is the threat model. (This is different from{' '}
                   <a href="#faq-multi-persona" className="text-sky-400 hover:underline">multiple personas on one
                   device</a>, which gives you role-scoped trust but does <em>not</em> give you fingerprint
@@ -2577,14 +2565,14 @@ export default function WhyWeb4Page() {
 
                 <p className="font-semibold text-gray-200 mt-3">2. Software-only LCT (medium).</p>
                 <p>
-                  A software-only LCT has no hardware-fingerprint binding &mdash; nothing physical to surveil
+                  A software-only LCT has no hardware-fingerprint binding - nothing physical to surveil
                   or supply-chain-trace. The cost is a lower{' '}
                   <Link href="/lct-explainer" className="text-sky-400 hover:underline">trust ceiling</Link>:
                   software tops out at <span className="font-mono">0.50</span>, versus
                   <span className="font-mono"> 0.75</span> (FIDO2), <span className="font-mono">0.85</span>{' '}
                   (Secure Enclave), and <span className="font-mono">0.90</span> (TPM) for hardware-bound. For
-                  low-stakes pseudonymity where you can afford weaker trust &mdash; commenting, browsing,
-                  participating in conversations where a 0.50 ceiling is enough &mdash; software fallback is
+                  low-stakes pseudonymity where you can afford weaker trust - commenting, browsing,
+                  participating in conversations where a 0.50 ceiling is enough - software fallback is
                   the cleanest answer. It is what most early Web4 adoption will actually look like.
                 </p>
 
@@ -2593,9 +2581,9 @@ export default function WhyWeb4Page() {
                   When you do use a hardware-bound LCT, two protocol-level layers reduce what an attacker can do
                   with correlation: <strong>ZK trust proofs</strong> let you prove you meet a threshold
                   (&ldquo;I have &gt;0.7 trust in journalism&rdquo;) without revealing which LCT you are, and{' '}
-                  <Link href="/mrh-explorer" className="text-sky-400 hover:underline">MRH (Markov Relevancy
+                  <Link href="/trust-neighborhood" className="text-sky-400 hover:underline">MRH (Markov Relevancy
                   Horizon)</Link> means even a correlated identity only propagates through entities within your
-                  trust network &mdash; a global de-anonymization requires global graph access, not just one
+                  trust network - a global de-anonymization requires global graph access, not just one
                   end-point. Combined with multi-device witness redundancy, this raises the cost of correlation
                   from &ldquo;trace one fingerprint&rdquo; to &ldquo;trace one fingerprint AND traverse the
                   witness graph AND defeat ZK selective disclosure.&rdquo; A higher bar than any of the three
@@ -2605,17 +2593,17 @@ export default function WhyWeb4Page() {
                 <p className="font-semibold text-gray-200 mt-3">What does NOT resolve the tension.</p>
                 <p>
                   Rotating only the <em>handle</em> on a single LCT (the <code className="text-green-300/80 text-xs">#alice.assistant1</code> label
-                  part) does <strong>not</strong> defeat fingerprinting &mdash; the cryptographic key (the{' '}
+                  part) does <strong>not</strong> defeat fingerprinting - the cryptographic key (the{' '}
                   <code className="text-green-300/80 text-xs">0x4c8f…a3f2</code> part) is unchanged across
                   handle rotations and is the actual de-anonymization surface. If you read &ldquo;rotated per
                   community&rdquo; elsewhere on the site as a privacy mechanism, that&apos;s about display
                   labels, not cryptographic identity. For real cryptographic separation you need a separate
-                  LCT &mdash; mitigation #1 above.
+                  LCT - mitigation #1 above.
                 </p>
 
                 <p className="text-amber-400/70 text-xs mt-4">
                   <strong>Net:</strong> The tension is real and not fully resolvable at the protocol layer
-                  &mdash; hardware fingerprints are persistent by design. What Web4 offers is a layered choice
+ - hardware fingerprints are persistent by design. What Web4 offers is a layered choice
                   per context: separate device when correlation is the threat, software fallback when you can
                   afford lower trust, ZK + MRH composition when you can&apos;t. None of these are perfect; all
                   of them are concrete.
@@ -2624,7 +2612,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Multiple personas — visitor Q Apr 5 */}
+          {/* Multiple personas - visitor Q Apr 5 */}
           <details id="faq-multi-persona" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Can I have separate personal and professional identities on the same device?</span>
@@ -2632,7 +2620,7 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>Not separate identities — separate roles.</strong> Web4&apos;s Trust Tensor is already
+                <strong>Not separate identities - separate roles.</strong> Web4&apos;s Trust Tensor is already
                 role-scoped: your trust as a software developer is tracked independently from your trust as a
                 cooking enthusiast. You don&apos;t need separate accounts because your single identity naturally
                 has different trust profiles in different contexts.
@@ -2640,7 +2628,7 @@ export default function WhyWeb4Page() {
               <p>
                 Think of it like a professional license: one person can hold both a medical license and a
                 pilot&apos;s license. Your medical expertise doesn&apos;t affect your pilot rating and vice
-                versa. Web4 works the same way — one identity, many trust dimensions.
+                versa. Web4 works the same way - one identity, many trust dimensions.
               </p>
               <p>
                 What <em>does</em> carry across roles is your{" "}
@@ -2648,7 +2636,7 @@ export default function WhyWeb4Page() {
                 (reliability, consistency) and{" "}
                 <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link>.
                 If you&apos;re consistently dependable in one domain, that baseline reliability is visible
-                elsewhere — even if your domain-specific Talent starts at zero.
+                elsewhere - even if your domain-specific Talent starts at zero.
               </p>
               <p>
                 This is a deliberate design choice: someone who&apos;s reliable as a doctor is <em>probably</em> reliable
@@ -2659,12 +2647,12 @@ export default function WhyWeb4Page() {
                 <strong>Honest caveat:</strong> Some people genuinely want &ldquo;firewall&rdquo; separation between
                 identities (e.g., a public figure who also participates in support communities). Web4&apos;s
                 current design doesn&apos;t support fully separate identities on one device. For high-privacy
-                scenarios, a separate device provides true identity separation — but that&apos;s a cost tradeoff.
+                scenarios, a separate device provides true identity separation - but that&apos;s a cost tradeoff.
               </p>
             </div>
           </details>
 
-          {/* VPN/Tor + Coherence Index — visitor Q Mar 26 */}
+          {/* VPN/Tor + Coherence Index - visitor Q Mar 26 */}
           <details id="faq-vpn-tor" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What about VPNs and Tor? Does privacy tooling hurt your Coherence Index?</span>
@@ -2673,7 +2661,7 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 Short answer: <strong className="text-sky-300">no</strong>. Coherence Index measures
-                behavioral consistency — not IP addresses or geographic location.
+                behavioral consistency - not IP addresses or geographic location.
               </p>
               <p>
                 CI tracks four dimensions: <strong className="text-gray-200">spatial</strong> (do you act
@@ -2684,8 +2672,8 @@ export default function WhyWeb4Page() {
                 physical location.
               </p>
               <p>
-                &ldquo;Spatial&rdquo; here means <em>scope of activity</em> — which communities you
-                participate in, which roles you claim — not where your device is. A journalist using
+                &ldquo;Spatial&rdquo; here means <em>scope of activity</em> - which communities you
+                participate in, which roles you claim - not where your device is. A journalist using
                 Tor to research a sensitive story has the same CI as one using a coffee shop Wi-Fi,
                 because CI measures <em>what you do</em>, not <em>where you connect from</em>.
               </p>
@@ -2703,7 +2691,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Quality measurement — promoted to "Most asked" tier above */}
+          {/* Quality measurement - promoted to "Most asked" tier above */}
 
           {/* Protocol governance */}
           <details id="faq-protocol-changes" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
@@ -2716,13 +2704,13 @@ export default function WhyWeb4Page() {
                 Web4 has <strong>two governance layers</strong> with different scope:
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-400">
-                <li><strong>Society-level (SAL — Society-Authority-Law):</strong> Each community sets its own policies — trust thresholds,
+                <li><strong>Society-level (SAL - Society-Authority-Law):</strong> Each community sets its own policies - trust thresholds,
                   ATP costs, role definitions, membership rules. Communities can customize most parameters through
                   their{" "}
                   <a href="#faq-sal" className="text-sky-400 hover:underline">SAL governance framework</a>.
                   This is where the 0.5 threshold, specific decay rates, and enforcement rules live.</li>
-                <li><strong>Protocol-level:</strong> The core protocol — the trust tensor math, ATP mechanics,
-                  LCT hardware binding, MRH relationship structure — is defined by an{" "}
+                <li><strong>Protocol-level:</strong> The core protocol - the trust tensor math, ATP mechanics,
+                  LCT hardware binding, MRH relationship structure - is defined by an{" "}
                   <a href="https://github.com/dp-web4" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">
                   open specification on GitHub</a>. Changes follow open-source governance: proposals, discussion,
                   review, and implementation. Anyone can propose changes, argue against them, or fork the spec.</li>
@@ -2730,12 +2718,12 @@ export default function WhyWeb4Page() {
               <p>
                 The key design choice: <strong>most things users care about are society-level</strong>, not
                 protocol-level. If your community wants higher trust thresholds or different energy economics,
-                you change your community&apos;s parameters — you don&apos;t need to change the protocol. This
+                you change your community&apos;s parameters - you don&apos;t need to change the protocol. This
                 is like how HTTP defines the protocol but each website chooses its own content policies.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Protocol-level governance for a nascent open-source project is
-                currently informal — whoever contributes meaningfully to the specification has influence. If Web4
+                currently informal - whoever contributes meaningfully to the specification has influence. If Web4
                 grew to production scale, this would need to formalize (like W3C or IETF). That transition from
                 &ldquo;small research project&rdquo; to &ldquo;governed standard&rdquo; is itself an unsolved
                 organizational challenge.
@@ -2743,7 +2731,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* MRH mechanics — visitor Q3 */}
+          {/* MRH mechanics - visitor Q3 */}
           <details id="faq-mrh-messaging" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How does MRH actually decide who sees my messages? The &ldquo;room where strangers need introductions&rdquo; is nice but vague.</span>
@@ -2758,12 +2746,12 @@ export default function WhyWeb4Page() {
               <p>
                 Concretely: if you post a helpful answer in a coding community, people who&apos;ve directly
                 interacted with you see it immediately. People who share mutual contacts see it with reduced
-                priority. People with no connection path don&apos;t see it at all — not because it&apos;s censored,
+                priority. People with no connection path don&apos;t see it at all - not because it&apos;s censored,
                 but because it&apos;s outside their relevancy horizon.
               </p>
               <p>
                 This means <strong>spam can&apos;t go viral</strong>. A spammer with no trust relationships
-                has zero hops of reach — their messages stay within their own empty horizon. Earning reach
+                has zero hops of reach - their messages stay within their own empty horizon. Earning reach
                 requires building real relationships first.
               </p>
               <p>
@@ -2775,13 +2763,13 @@ export default function WhyWeb4Page() {
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> The 0.7 decay factor per hop is a design parameter, not a
-                physical constant. Different communities might tune this — higher decay for privacy-sensitive
+                physical constant. Different communities might tune this - higher decay for privacy-sensitive
                 contexts, lower for open discovery. The right values will emerge from real-world testing.
               </p>
             </div>
           </details>
 
-          {/* Transition period — visitor Q5 */}
+          {/* Transition period - visitor Q5 */}
           <details id="faq-early-adopters" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>If Web4 is opt-in, how does it work when most people are still on Web2? Don&apos;t early adopters just talk to each other?</span>
@@ -2789,13 +2777,13 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Yes — and that&apos;s by design. Web4 uses a{" "}
+                Yes - and that&apos;s by design. Web4 uses a{" "}
                 <Link href="/how-it-works" className="text-sky-400 hover:underline">5-tier adoption model</Link>{" "}
                 that doesn&apos;t require everyone to switch at once:
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-400">
                 <li><strong>Wrapper tier:</strong> Existing platforms add Web4 trust scoring to their existing
-                  systems. Users don&apos;t even know it&apos;s there — they just notice spam decreasing.</li>
+                  systems. Users don&apos;t even know it&apos;s there - they just notice spam decreasing.</li>
                 <li><strong>Observable tier:</strong> Platforms expose trust scores alongside content. Users can
                   see who&apos;s trusted, but the platform still makes decisions.</li>
                 <li><strong>Accountable tier:</strong> Trust scores actually gate actions. Low-trust users face
@@ -2820,26 +2808,26 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Dual trust systems during transition — visitor Q Mar 30 */}
+          {/* Dual trust systems during transition - visitor Q Mar 30 */}
           <details id="faq-dual-trust" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>During the transition, if Reddit gives me high karma but Web4 gives me low trust — which wins?</span>
+              <span>During the transition, if Reddit gives me high karma but Web4 gives me low trust - which wins?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Neither &ldquo;wins&rdquo; — they measure different things and coexist deliberately.
+                Neither &ldquo;wins&rdquo; - they measure different things and coexist deliberately.
               </p>
               <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
-                <li><strong className="text-gray-300">Wrapper tier:</strong> The platform keeps its own karma system. Web4 trust appears as a <em>secondary signal</em> — like a verified badge, not a replacement. Reddit karma still works for Reddit; Web4 trust adds a cross-platform layer on top.</li>
+                <li><strong className="text-gray-300">Wrapper tier:</strong> The platform keeps its own karma system. Web4 trust appears as a <em>secondary signal</em> - like a verified badge, not a replacement. Reddit karma still works for Reddit; Web4 trust adds a cross-platform layer on top.</li>
                 <li><strong className="text-gray-300">Observable tier:</strong> Both scores are visible. Users can see when they diverge. High Reddit karma + low Web4 trust might mean: &ldquo;popular here, but unverified elsewhere.&rdquo; That&apos;s useful information, not a conflict.</li>
-                <li><strong className="text-gray-300">Accountable tier and beyond:</strong> Web4 trust starts gating actions (posting costs, reach limits). At this stage, the platform has chosen to let the trust system carry real weight — the &ldquo;conflict&rdquo; resolves because the platform opted in.</li>
+                <li><strong className="text-gray-300">Accountable tier and beyond:</strong> Web4 trust starts gating actions (posting costs, reach limits). At this stage, the platform has chosen to let the trust system carry real weight - the &ldquo;conflict&rdquo; resolves because the platform opted in.</li>
               </ul>
               <p>
                 The key design choice: <strong>Web4 never overrides a platform&apos;s own system without that platform&apos;s consent.</strong> At the Wrapper tier, platforms add Web4 as metadata. At the Native tier, platforms have fully adopted it. The transition is opt-in at every step.
               </p>
               <p className="text-gray-500 text-xs mt-2">
-                <strong>Honest caveat:</strong> The awkward middle ground (Observable/Accountable tiers) where both systems have real weight is genuinely uncharted territory. A user could game one system while being honest in the other. We&apos;re betting that cross-platform trust — which follows the <em>person</em>, not the platform — will prove more useful over time, but this is a design hypothesis, not a proven outcome.
+                <strong>Honest caveat:</strong> The awkward middle ground (Observable/Accountable tiers) where both systems have real weight is genuinely uncharted territory. A user could game one system while being honest in the other. We&apos;re betting that cross-platform trust - which follows the <em>person</em>, not the platform - will prove more useful over time, but this is a design hypothesis, not a proven outcome.
               </p>
             </div>
           </details>
@@ -2854,7 +2842,7 @@ export default function WhyWeb4Page() {
               <p>
                 More devices increase your <strong>identity security</strong> (harder to impersonate you), but
                 they don&apos;t increase your <strong>trust score</strong>. Trust is earned exclusively through
-                observed behavior — quality contributions, consistent conduct, peer feedback.
+                observed behavior - quality contributions, consistent conduct, peer feedback.
               </p>
               <p>
                 Devices set a <strong>trust ceiling</strong>, not a trust score. A single phone with a TPM chip
@@ -2864,7 +2852,7 @@ export default function WhyWeb4Page() {
               </p>
               <p>
                 Think of it like ID verification: having a passport, driver&apos;s license, and birth certificate
-                doesn&apos;t make you more trustworthy — it just makes you harder to impersonate. Your actual
+                doesn&apos;t make you more trustworthy - it just makes you harder to impersonate. Your actual
                 reputation still depends on what you do.
               </p>
             </div>
@@ -2877,22 +2865,22 @@ export default function WhyWeb4Page() {
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
-              {/* Jul-14 canon conformance: Talent MUST NOT decay through inactivity — web4 protocol
+              {/* Jul-14 canon conformance: Talent MUST NOT decay through inactivity - web4 protocol
                   invariant (core-spec/t3-v3-tensors.md §2.3, test vector t3v3-012). Do NOT reintroduce
                   a Talent half-life; siblings: youthful-mistakes FAQ below + trust-tensor decay
                   section + atp-economics #atp-dormancy FAQ. */}
               <p>
-                Trust decays gradually, not suddenly — and not all of it decays. Each dimension has
+                Trust decays gradually, not suddenly - and not all of it decays. Each dimension has
                 its own rule:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>Talent</strong> (skill): no decay — demonstrated aptitude is treated as durable</li>
-                <li><strong>Training</strong> (knowledge): 180-day half-life — moderate decay</li>
-                <li><strong>Temperament</strong> (recent behavior): 30-day half-life — decays fastest</li>
+                <li><strong>Talent</strong> (skill): no decay - demonstrated aptitude is treated as durable</li>
+                <li><strong>Training</strong> (knowledge): 180-day half-life - moderate decay</li>
+                <li><strong>Temperament</strong> (recent behavior): 30-day half-life - decays fastest</li>
               </ul>
               <p>
                 After a month away, your Talent and Training scores are nearly unchanged. Your Temperament
-                drops to about half — which makes sense, because the community hasn&apos;t seen your recent
+                drops to about half - which makes sense, because the community hasn&apos;t seen your recent
                 behavior. But it recovers quickly once you&apos;re active again.
               </p>
               <p>
@@ -2902,10 +2890,10 @@ export default function WhyWeb4Page() {
               </p>
               <p className="border-t border-gray-700 pt-3 mt-3">
                 <strong className="text-gray-100">What about 6 months or longer?</strong> After 6 months,
-                Temperament (30-day half-life) is essentially zeroed &mdash; ~6 half-lives means only ~1.5%
+                Temperament (30-day half-life) is essentially zeroed - ~6 half-lives means only ~1.5%
                 remains. Training (180-day half-life) drops to about 50%. But Talent doesn&apos;t decay
-                at all &mdash; it&apos;s exactly where you left it. Your skill reputation survives; your
-                &ldquo;are they still engaged?&rdquo; reputation doesn&apos;t. This is intentional &mdash; if someone hasn&apos;t been active
+                at all - it&apos;s exactly where you left it. Your skill reputation survives; your
+                &ldquo;are they still engaged?&rdquo; reputation doesn&apos;t. This is intentional - if someone hasn&apos;t been active
                 in 6 months, the system <em>should</em> be uncertain about their current reliability.
               </p>
               <p>
@@ -2913,13 +2901,13 @@ export default function WhyWeb4Page() {
                 decay reflects the community&apos;s genuine uncertainty about absent members. But recovery
                 is fast: Temperament&apos;s 30-day half-life works in both directions. A few weeks of
                 consistent activity rebuilds what took months to lose. And you don&apos;t start from
-                zero &mdash; your Talent never decayed, so it anchors a recovery far faster than a
+                zero - your Talent never decayed, so it anchors a recovery far faster than a
                 newcomer&apos;s climb.
               </p>
             </div>
           </details>
 
-          {/* SAL governance — visitor Q7 */}
+          {/* SAL governance - visitor Q7 */}
           <details id="faq-sal" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What is SAL exactly? It&apos;s mentioned as a governance mechanism but never really explained.</span>
@@ -2927,11 +2915,11 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                SAL stands for <strong>Society-Authority-Law</strong> — the three things every Web4
+                SAL stands for <strong>Society-Authority-Law</strong> - the three things every Web4
                 community defines for itself: a <strong>Society</strong> (its purpose and who belongs),
                 an <strong>Authority</strong> structure (which roles can do what), and its <strong>Law</strong>{" "}
                 (the rules and how they&apos;re enforced). Together they&apos;re the governance framework
-                each Web4 community uses to set and enforce its own rules — think of it as a community&apos;s
+                each Web4 community uses to set and enforce its own rules - think of it as a community&apos;s
                 constitution that members actually follow because it&apos;s baked into the protocol.
               </p>
               <p>
@@ -2947,7 +2935,7 @@ export default function WhyWeb4Page() {
               <p>
                 The crucial difference from current platforms: <strong>SAL rules apply to everyone equally</strong>,
                 including moderators and administrators. No one is above the community&apos;s own governance.
-                If a moderator abuses power, their trust score drops — and with it, their ability to moderate.
+                If a moderator abuses power, their trust score drops - and with it, their ability to moderate.
               </p>
               <p>
                 Changing SAL rules requires community consensus weighted by trust. High-trust members
@@ -2966,7 +2954,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Wrongful penalty / recourse — visitor Unanswered Q4 2026-05-22: "If reputation is permanent and portable, what happens when I'm wrongly penalized? Appeals are mentioned as designed-not-deployed — left me slightly uneasy about fairness." Consolidates recourse mechanisms scattered across faq-powerful-liar / faq-sal / social-credit table. */}
+          {/* Wrongful penalty / recourse - visitor Unanswered Q4 2026-05-22: "If reputation is permanent and portable, what happens when I'm wrongly penalized? Appeals are mentioned as designed-not-deployed - left me slightly uneasy about fairness." Consolidates recourse mechanisms scattered across faq-powerful-liar / faq-sal / social-credit table. */}
           <details id="faq-wrongful-penalty" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>If reputation is permanent and portable, what protects me when I&apos;m penalized unfairly?</span>
@@ -2975,37 +2963,37 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 This is the right thing to worry about, and the honest answer comes in two parts.
-                First, the part that isn&apos;t built yet: a <strong>formal appeals process</strong> — where you
-                contest a specific decision and a community body reviews it — is part of{" "}
+                First, the part that isn&apos;t built yet: a <strong>formal appeals process</strong> - where you
+                contest a specific decision and a community body reviews it - is part of{" "}
                 <a href="#faq-sal" className="text-sky-400 hover:underline">SAL governance</a>, which is
                 <em> designed but not yet deployed</em>. We won&apos;t pretend otherwise.
               </p>
               <p>
                 Second, the part that protects you <strong>today</strong>: a wrongful penalty is hard to make
                 stick because <strong>no single judgment is load-bearing</strong>. Recourse here isn&apos;t a
-                complaint desk you have to find — it&apos;s built into how trust is computed, so it works without
+                complaint desk you have to find - it&apos;s built into how trust is computed, so it works without
                 anyone agreeing to review your case:
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-400">
                 <li><strong>No single rating decides your fate.</strong> Your trust is built from <em>all</em> your
                   interactions, not one person&apos;s claim. A mistaken or malicious low score is one data point
-                  against a track record — it can&apos;t erase your history. (More on this in{" "}
+                  against a track record - it can&apos;t erase your history. (More on this in{" "}
                   <a href="#faq-powerful-liar" className="text-sky-400 hover:underline">&ldquo;does my truth even matter?&rdquo;</a>)</li>
                 <li><strong>Penalties are graduated and reversible, not permanent bans.</strong> Trust and Coherence
-                  scores <em>recover</em> as your behavior normalizes — the same way a temporary dip fades over time
+                  scores <em>recover</em> as your behavior normalizes - the same way a temporary dip fades over time
                   rather than branding you forever. &ldquo;Permanent record&rdquo; means your history is durable,
                   not that one bad mark is a life sentence.</li>
                 <li><strong>A wrongful penalty stays local.</strong> Trust propagates only within your context
-                  boundary (MRH). A bad call inside one community doesn&apos;t broadcast to the whole network —
+                  boundary (MRH). A bad call inside one community doesn&apos;t broadcast to the whole network - 
                   people outside that neighborhood never inherit it.</li>
-                <li><strong>You can leave — and take your history with you.</strong> If a community penalizes you
+                <li><strong>You can leave - and take your history with you.</strong> If a community penalizes you
                   unfairly, participation is voluntary: you exit (or fork the community) and carry your trust
-                  record elsewhere. That exit right is itself a check on unfair enforcement — a society that
+                  record elsewhere. That exit right is itself a check on unfair enforcement - a society that
                   punishes capriciously loses its members.</li>
               </ul>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> These structural protections <em>reduce the damage</em> a wrongful
-                penalty can do — they don&apos;t fully replace a real appeals process, and that gap is real until
+                penalty can do - they don&apos;t fully replace a real appeals process, and that gap is real until
                 SAL appeals ship. They&apos;re what stands in the meantime: recourse by design rather than by
                 petition. The{" "}
                 <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">What Could Go Wrong</Link>{" "}
@@ -3022,15 +3010,15 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                There are two types of &ldquo;death&rdquo; — and they work differently:
+                There are two types of &ldquo;death&rdquo; - and they work differently:
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-400">
-                <li><strong>Energy death</strong> (ATP hits 0): Your account is suspended — like a suspended
+                <li><strong>Energy death</strong> (ATP hits 0): Your account is suspended - like a suspended
                   driver&apos;s license. You can&apos;t take actions, but your identity and history remain.
                   Recovery is possible through community support or waiting for passive regeneration.</li>
                 <li><strong>Trust death</strong> (trust drops below minimum threshold): More serious. Your
                   behavioral record shows sustained low quality. Recovery requires starting a new identity
-                  with <strong>karma</strong> — lessons learned from previous lives carry forward as starting
+                  with <strong>karma</strong> - lessons learned from previous lives carry forward as starting
                   advantages or disadvantages.</li>
               </ul>
               <p>
@@ -3040,16 +3028,16 @@ export default function WhyWeb4Page() {
                 your history, but you can outgrow it.
               </p>
               <p>
-                See the{" "}
-                <Link href="/karma-consequences" className="text-sky-400 hover:underline">Karma Journey</Link>{" "}
-                to experience this firsthand, or{" "}
-                <Link href="/aliveness" className="text-sky-400 hover:underline">How Agents Live &amp; Die</Link>{" "}
+                See{" "}
+                <Link href="/karma-consequences" className="text-sky-400 hover:underline">karma and consequences</Link>{" "}
+                for how this plays out, or{" "}
+                <Link href="/how-it-works" className="text-sky-400 hover:underline">How It Works</Link>{" "}
                 for the full lifecycle.
               </p>
             </div>
           </details>
 
-          {/* Youthful mistakes — visitor Q Mar 26: "If trust is permanent, how does a teenager escape youthful mistakes?" */}
+          {/* Youthful mistakes - visitor Q Mar 26: "If trust is permanent, how does a teenager escape youthful mistakes?" */}
           <details id="faq-youthful-mistakes" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>If trust is permanent, how does a teenager escape youthful mistakes?</span>
@@ -3057,13 +3045,13 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Trust isn&apos;t permanent — most of it <strong className="text-sky-300">decays</strong>.
+                Trust isn&apos;t permanent - most of it <strong className="text-sky-300">decays</strong>.
                 Two of the three trust dimensions have a half-life:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
                 <li><strong className="text-gray-300">Temperament:</strong> 30-day half-life (behavior patterns fade fastest)</li>
                 <li><strong className="text-gray-300">Training:</strong> 180-day half-life (skill signals diminish)</li>
-                <li><strong className="text-gray-300">Talent:</strong> no decay from time alone (deep competence persists) — it moves only with what you <em>do</em></li>
+                <li><strong className="text-gray-300">Talent:</strong> no decay from time alone (deep competence persists) - it moves only with what you <em>do</em></li>
               </ul>
               <p>
                 A teenager who made poor choices at 15 doesn&apos;t carry those penalties forever. The
@@ -3075,7 +3063,7 @@ export default function WhyWeb4Page() {
                 More importantly, Web4&apos;s <strong className="text-sky-300">bootstrap convergence</strong> means
                 a newcomer (or a recovering teenager) doing quality work surpasses established members
                 within ~50 actions. The first-mover advantage has a ~30-action half-life. The system is
-                designed for people to outgrow their past — not to be trapped by it.
+                designed for people to outgrow their past - not to be trapped by it.
               </p>
               <p>
                 The combination of trust decay + bootstrap convergence means Web4 is closer to
@@ -3085,7 +3073,7 @@ export default function WhyWeb4Page() {
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Extreme trust violations (trust below 0.5 = permanent
-                death) are an exception — this is by design, not a flaw. If society collectively
+                death) are an exception - this is by design, not a flaw. If society collectively
                 decides your behavior is harmful enough to warrant permanent exclusion, decay alone
                 can&apos;t save you. But this threshold is high; ordinary teenage mistakes don&apos;t
                 approach it.
@@ -3093,7 +3081,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Cultural quality differences — visitor Q Mar 25: "How does the system handle cultural differences in quality?" */}
+          {/* Cultural quality differences - visitor Q Mar 25: "How does the system handle cultural differences in quality?" */}
           <details id="faq-cultural-quality" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How does the system handle cultural differences in &ldquo;quality&rdquo;?</span>
@@ -3103,7 +3091,7 @@ export default function WhyWeb4Page() {
               <p>
                 <strong>Each community defines quality for itself.</strong> The{" "}
                 <Link href="/atp-economics" className="text-sky-400 hover:underline">Value Confirmation Mechanism</Link>{" "}
-                means the people who <em>receive</em> your work judge whether it was valuable &mdash; not a global algorithm.
+                means the people who <em>receive</em> your work judge whether it was valuable - not a global algorithm.
                 A poetry community and a coding forum will naturally develop different quality standards because
                 different people are doing the confirming.
               </p>
@@ -3111,26 +3099,26 @@ export default function WhyWeb4Page() {
                 The V3 (Value Tensor) has three dimensions that adapt independently:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>Valuation</strong> &mdash; how much was this worth to recipients? (Culturally subjective and intentionally so)</li>
-                <li><strong>Veracity</strong> &mdash; was this accurate and honest? (More universal, harder to game)</li>
-                <li><strong>Validity</strong> &mdash; was this appropriate for the context? (Community-specific norms)</li>
+                <li><strong>Valuation</strong> - how much was this worth to recipients? (Culturally subjective and intentionally so)</li>
+                <li><strong>Veracity</strong> - was this accurate and honest? (More universal, harder to game)</li>
+                <li><strong>Validity</strong> - was this appropriate for the context? (Community-specific norms)</li>
               </ul>
               <p>
                 A helpful post in a Japanese gardening forum and a helpful post in a Brazilian music community will
-                score differently on Valuation and Validity &mdash; but Veracity (honesty) stays consistent. The system
+                score differently on Valuation and Validity - but Veracity (honesty) stays consistent. The system
                 doesn&apos;t impose a single standard. It lets communities develop their own through the trust they build
                 with each other.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Cross-community trust transfer is harder when quality norms diverge significantly.
-                Your poetry trust doesn&apos;t automatically make you trusted in engineering &mdash;{" "}
+                Your poetry trust doesn&apos;t automatically make you trusted in engineering - {" "}
                 <Link href="/trust-tensor" className="text-sky-400 hover:underline">role-specific trust</Link>{" "}
                 keeps domains appropriately separated.
               </p>
             </div>
           </details>
 
-          {/* Veracity weaponization — Apr 30 visitor unanswered Q4: "Each community defines quality" is the worry, not the answer.
+          {/* Veracity weaponization - Apr 30 visitor unanswered Q4: "Each community defines quality" is the worry, not the answer.
               Reframed May 13 (visitor MEDIUM): originally 5-bullet stack read as defensive ("if any mechanism were clean, you wouldn't need five").
               Now leads with the load-bearing mechanism (cost asymmetry + witness foundation); supporting layers nested in a "defense in depth" collapsible.
               Honest caveat preserved verbatim. */}
@@ -3143,23 +3131,23 @@ export default function WhyWeb4Page() {
               <p>
                 This is the right worry to have. &ldquo;Each community defines quality&rdquo; (the{" "}
                 <a href="#faq-cultural-quality" className="text-sky-400 hover:underline">cultural-quality FAQ above</a>)
-                is genuinely how V3 scoring works. The core protection isn&apos;t a stack of safeguards &mdash;
+                is genuinely how V3 scoring works. The core protection isn&apos;t a stack of safeguards - 
                 it&apos;s a single mechanism that makes weaponization self-defeating.
               </p>
               <p>
                 <strong className="text-gray-200">The mechanism: weaponizing Veracity costs the accuser.</strong>{" "}
-                A &ldquo;low Veracity&rdquo; verdict isn&apos;t one moderator&apos;s opinion &mdash; it requires{" "}
+                A &ldquo;low Veracity&rdquo; verdict isn&apos;t one moderator&apos;s opinion - it requires{" "}
                 <em>multiple witnesses</em> attesting to factual accuracy or honesty. When a community&apos;s assessments
                 consistently diverge from witnesses outside the bubble, the <em>accusers&apos;</em> own Veracity scores
                 drop. (See{" "}
                 <a href="#faq-powerful-liar" className="text-sky-400 hover:underline">powerful-liar FAQ</a>:
                 &ldquo;Lying is expensive.&rdquo;) The community can rig its own committee, but it can&apos;t rig
-                what outside witnesses observe &mdash; and the gap shows up on the accusers&apos; ledger, not just the
+                what outside witnesses observe - and the gap shows up on the accusers&apos; ledger, not just the
                 target&apos;s. Ideological enforcement isn&apos;t blocked; it&apos;s priced in.
               </p>
               <p>
-                That asymmetry is the load-bearing piece. Three structural features reinforce it &mdash; role isolation,
-                distance decay, and pseudonymity &mdash; but each is a backstop, not the primary defense.
+                That asymmetry is the load-bearing piece. Three structural features reinforce it - role isolation,
+                distance decay, and pseudonymity - but each is a backstop, not the primary defense.
               </p>
 
               <details className="bg-gray-900/40 border border-gray-700/60 rounded-lg p-4 cursor-pointer">
@@ -3170,14 +3158,14 @@ export default function WhyWeb4Page() {
                 <ul className="mt-3 list-disc list-inside space-y-1 text-gray-400 text-sm">
                   <li><strong>Political opinions live in a different role than skill.</strong> T3 separates Talent,
                     Training, and Temperament <em>per role</em>. A community marking down your &ldquo;political opinion&rdquo;
-                    trust doesn&apos;t touch your &ldquo;research credibility&rdquo; trust &mdash; they&apos;re different
+                    trust doesn&apos;t touch your &ldquo;research credibility&rdquo; trust - they&apos;re different
                     dimensions, scored by different witnesses. (See{" "}
                     <a href="#faq-context-collapse" className="text-sky-400 hover:underline">role-isolation FAQ</a>.)</li>
                   <li><strong>MRH decay limits the blast radius.</strong> Trust attestations from a politically-loaded community
-                    fall off rapidly with social distance &mdash; ~0.7&times; per hop, near zero past three hops.
+                    fall off rapidly with social distance - ~0.7&times; per hop, near zero past three hops.
                     A bubble&apos;s consensus stays mostly inside the bubble; outside observers don&apos;t inherit it.</li>
                   <li><strong>Pseudonymity is an escape hatch for high-stakes dissent.</strong> Whistleblowers and political
-                    dissidents can hold separate LCTs per role and disclose only what each context requires &mdash; see the{" "}
+                    dissidents can hold separate LCTs per role and disclose only what each context requires - see the{" "}
                     <a href="#faq-pseudonymous" className="text-sky-400 hover:underline">pseudonymity FAQ</a> for the
                     selective-disclosure model. The system is designed assuming some communities will be hostile.</li>
                 </ul>
@@ -3185,7 +3173,7 @@ export default function WhyWeb4Page() {
 
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Within-bubble enforcement is <em>not eliminated</em>. If you live entirely
-                inside one community and that community decides you&apos;re heretical, your local trust still suffers &mdash;
+                inside one community and that community decides you&apos;re heretical, your local trust still suffers - 
                 Web4 reduces the blast radius, raises the cost, and lets you operate pseudonymously, but it doesn&apos;t
                 make any community immune to its own consensus. The intent is to make ideological enforcement <em>expensive</em>{" "}
                 and <em>local</em>, not impossible. Whether that&apos;s enough is an empirical question; the system has not
@@ -3194,10 +3182,10 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Quality standards across communities — visitor Q Mar 30 */}
+          {/* Quality standards across communities - visitor Q Mar 30 */}
           <details id="faq-quality-standards" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>A shitposting community and an academic journal have different &ldquo;quality&rdquo; — does trust transfer between them?</span>
+              <span>A shitposting community and an academic journal have different &ldquo;quality&rdquo; - does trust transfer between them?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
@@ -3210,12 +3198,12 @@ export default function WhyWeb4Page() {
                 When trust transfers between communities, two things reduce it:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>MRH decay</strong> — trust weakens with social distance (0.7&times; per hop). A community two hops away sees only ~49% of your original trust.</li>
-                <li><strong>Role mismatch</strong> — the T3 (Trust Tensor) tracks trust per skill/context. Being trusted for humor doesn&apos;t make you trusted for research. The relevant dimension may be near zero.</li>
+                <li><strong>MRH decay</strong> - trust weakens with social distance (0.7&times; per hop). A community two hops away sees only ~49% of your original trust.</li>
+                <li><strong>Role mismatch</strong> - the T3 (Trust Tensor) tracks trust per skill/context. Being trusted for humor doesn&apos;t make you trusted for research. The relevant dimension may be near zero.</li>
               </ul>
               <p>
                 So a top shitposter joining an academic community starts almost from scratch in the &ldquo;academic rigor&rdquo;
-                dimension — their humor trust doesn&apos;t inflate their research credibility. But their <strong>Veracity</strong> score
+                dimension - their humor trust doesn&apos;t inflate their research credibility. But their <strong>Veracity</strong> score
                 (honesty across all contexts) does carry over, giving them a small head start over a completely unknown newcomer.
               </p>
               <p className="text-amber-400/80 text-xs">
@@ -3225,7 +3213,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Context collapse / role isolation — visitor Q Apr 7: "Does meme-posting degrade coding trust within the same community?" */}
+          {/* Context collapse / role isolation - visitor Q Apr 7: "Does meme-posting degrade coding trust within the same community?" */}
           <details id="faq-context-collapse" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>If I&apos;m trusted as a coder but post memes in the same community, does my meme-posting degrade my coding trust?</span>
@@ -3248,11 +3236,11 @@ export default function WhyWeb4Page() {
                 <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index (CI)</Link> and{" "}
                 <strong>Temperament</strong> (the behavioral consistency dimension of T3). If you&apos;re
                 reliably honest and consistent across all your roles, that character signal benefits you
-                everywhere. If you act erratically in one role, your CI drops &mdash; and since effective
+                everywhere. If you act erratically in one role, your CI drops - and since effective
                 trust = raw trust &times; CI&sup2;, that consistency penalty affects all your roles.
               </p>
               <p className="text-amber-400/80 text-xs">
-                <strong>Design insight:</strong> This solves &ldquo;context collapse&rdquo; &mdash; the problem
+                <strong>Design insight:</strong> This solves &ldquo;context collapse&rdquo; - the problem
                 where mixing audiences on social media forces you into the lowest-common-denominator
                 version of yourself. In Web4, you can be professional in one context and playful in another
                 without either undermining the other.
@@ -3260,7 +3248,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Migration path — visitor Q Mar 24 */}
+          {/* Migration path - visitor Q Mar 24 */}
           <details id="faq-platform-migration" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What would a real platform migration look like? Say Reddit or Discord adopted Web4.</span>
@@ -3269,11 +3257,11 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>Web4 defines a <Link href="/how-it-works" className="text-sky-400 hover:underline">5-tier adoption path</Link>:</p>
               <ol className="list-decimal list-inside space-y-2 ml-2 text-gray-400">
-                <li><strong className="text-gray-300">Wrapper</strong> — Platform adds Web4 trust scores alongside existing systems. Reddit karma still works; Web4 trust appears as a secondary indicator. Users opt in. Zero disruption.</li>
-                <li><strong className="text-gray-300">Observable</strong> — Platform starts logging actions to the trust graph. Upvotes, reports, and moderation decisions feed into T3 calculations. Users see their trust building.</li>
-                <li><strong className="text-gray-300">Accountable</strong> — Trust scores start affecting the experience. High-trust users get reduced friction (fewer CAPTCHAs, faster posting). Low-trust users hit higher action costs. Moderation shifts from reactive bans to economic pressure.</li>
-                <li><strong className="text-gray-300">Federated</strong> — Platform joins a federation. Discord trust transfers to Reddit at a discount. Users moving between communities carry portable reputation instead of starting from zero everywhere.</li>
-                <li><strong className="text-gray-300">Native</strong> — Platform runs entirely on Web4 infrastructure. LCT identity, ATP economics, T3 trust. No separate karma/reputation system — Web4 <em>is</em> the reputation system.</li>
+                <li><strong className="text-gray-300">Wrapper</strong> - Platform adds Web4 trust scores alongside existing systems. Reddit karma still works; Web4 trust appears as a secondary indicator. Users opt in. Zero disruption.</li>
+                <li><strong className="text-gray-300">Observable</strong> - Platform starts logging actions to the trust graph. Upvotes, reports, and moderation decisions feed into T3 calculations. Users see their trust building.</li>
+                <li><strong className="text-gray-300">Accountable</strong> - Trust scores start affecting the experience. High-trust users get reduced friction (fewer CAPTCHAs, faster posting). Low-trust users hit higher action costs. Moderation shifts from reactive bans to economic pressure.</li>
+                <li><strong className="text-gray-300">Federated</strong> - Platform joins a federation. Discord trust transfers to Reddit at a discount. Users moving between communities carry portable reputation instead of starting from zero everywhere.</li>
+                <li><strong className="text-gray-300">Native</strong> - Platform runs entirely on Web4 infrastructure. LCT identity, ATP economics, T3 trust. No separate karma/reputation system - Web4 <em>is</em> the reputation system.</li>
               </ol>
               <p className="text-gray-500 text-xs mt-2">
                 <strong>Key insight:</strong> Each tier is independently valuable. A platform at tier 2 already has better spam detection than most platforms today. There&apos;s no all-or-nothing commitment.
@@ -3281,7 +3269,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Incumbent incentive — visitor Q Jun 27 (HIGH): "why would any platform adopt this? the single biggest gap" */}
+          {/* Incumbent incentive - visitor Q Jun 27 (HIGH): "why would any platform adopt this? the single biggest gap" */}
           <details id="faq-incumbent-incentive" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Why would Reddit, Twitter, or any incumbent adopt this if they profit from owning your reputation?</span>
@@ -3290,7 +3278,7 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 This is the hardest adoption question, so we&apos;ll answer it honestly. For a
-                dominant platform, your locked-in reputation <em>is</em> the moat &mdash; you can&apos;t
+                dominant platform, your locked-in reputation <em>is</em> the moat - you can&apos;t
                 take your followers or your seller rating elsewhere, so you stay. A system that makes
                 reputation portable erodes exactly that lock-in. So the honest starting point:
                 <strong className="text-gray-200"> the biggest incumbents are the least likely first
@@ -3300,35 +3288,35 @@ export default function WhyWeb4Page() {
               <ul className="list-disc list-inside space-y-2 ml-2 text-gray-400">
                 <li><strong className="text-gray-300">The low tiers cost nothing and surrender no
                   control.</strong> At the Wrapper and Observable tiers, Web4 trust rides alongside a
-                  platform&apos;s existing system as a secondary signal &mdash; better spam detection
+                  platform&apos;s existing system as a secondary signal - better spam detection
                   and cheaper moderation, with their own ranking untouched. A platform can capture that
                   value without giving anything up.</li>
                 <li><strong className="text-gray-300">Challengers hold the wedge, not incumbents.</strong> A
-                  new platform can&apos;t out-network Reddit &mdash; but &ldquo;bring your real reputation
+                  new platform can&apos;t out-network Reddit - but &ldquo;bring your real reputation
                   with you instead of starting at zero&rdquo; is exactly the switching-cost lever a
                   challenger needs. Incumbent lock-in is a challenger&apos;s opening.</li>
                 <li><strong className="text-gray-300">Regulation could tilt the field.</strong> Interoperability
-                  and data-portability rules &mdash; the direction the EU&apos;s DMA/DSA already lean &mdash;
+                  and data-portability rules - the direction the EU&apos;s DMA/DSA already lean - 
                   <em> could</em> make &ldquo;you don&apos;t own your users&apos; reputation&rdquo; an
                   expectation rather than a choice. We&apos;re not aware of any law that mandates Web4 or
                   any regulator that has endorsed it; this is a possible future pressure, not a current one.</li>
                 <li><strong className="text-gray-300">It&apos;s a ramp, not a cliff.</strong> No platform
                   makes a day-one &ldquo;give up control&rdquo; decision. Each tier is independently valuable
-                  and reversible &mdash; a platform can sit at Wrapper indefinitely and still benefit.</li>
+                  and reversible - a platform can sit at Wrapper indefinitely and still benefit.</li>
               </ul>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> No platform has adopted Web4 at any tier yet. The incumbent
-                lock-in incentive is real, and this &mdash; not any technical detail &mdash; is arguably the
+                lock-in incentive is real, and this - not any technical detail - is arguably the
                 single biggest open question for the whole model. Our working bet is that portable trust
                 spreads from the edges first (challengers, regulated sectors, federations of smaller
                 communities) and that dominant incumbents follow only once portability becomes an expectation
-                they can&apos;t refuse &mdash; the way open protocols eventually absorbed walled gardens.
+                they can&apos;t refuse - the way open protocols eventually absorbed walled gardens.
                 That&apos;s a bet on how standards spread, not a promise that they will.
               </p>
             </div>
           </details>
 
-          {/* Trust transfer mechanics — visitor Q Apr 3: "How does trust actually move between platforms?" */}
+          {/* Trust transfer mechanics - visitor Q Apr 3: "How does trust actually move between platforms?" */}
           <details id="faq-trust-transfer-mechanics" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How does trust actually transfer between platforms? What happens technically?</span>
@@ -3337,7 +3325,7 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 Trust doesn&apos;t transfer like a file you copy between apps. Instead, your
-                <strong> trust history travels with your LCT</strong> &mdash; your hardware-bound identity.
+                <strong> trust history travels with your LCT</strong> - your hardware-bound identity.
                 When you join a new platform that&apos;s part of the same federation, the platform
                 queries the federation&apos;s trust graph for your existing scores.
               </p>
@@ -3346,11 +3334,11 @@ export default function WhyWeb4Page() {
               </p>
               <ol className="list-decimal list-inside space-y-1.5 ml-2 text-gray-400">
                 <li>You authenticate on the new platform using the same LCT (hardware key ceremony)</li>
-                <li>The platform requests your trust profile from the federation &mdash; your T3 scores,
+                <li>The platform requests your trust profile from the federation - your T3 scores,
                   CI history, and MRH graph</li>
                 <li>Cross-federation trust is <strong className="text-gray-300">discounted</strong>: your
                   0.82 trust on Platform A might arrive as 0.65 on Platform B (MRH decay applies
-                  across federation boundaries, typically 0.7&ndash;0.8x)</li>
+                  across federation boundaries, typically 0.7-0.8x)</li>
                 <li>Your trust then evolves independently on the new platform based on your behavior there</li>
               </ol>
               <p>
@@ -3367,7 +3355,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Legacy content import — visitor Q Apr 7: "What happens to my existing content/reputation?" */}
+          {/* Legacy content import - visitor Q Apr 7: "What happens to my existing content/reputation?" */}
           <details id="faq-legacy-content" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What happens to my existing content and reputation when I join Web4? Do I start at zero?</span>
@@ -3378,7 +3366,7 @@ export default function WhyWeb4Page() {
                 <strong>Yes, everyone starts at 0.5 trust.</strong> This is deliberate. Web4 trust is earned
                 through <em>observed behavior</em>, not imported claims. Your 50,000 Reddit karma or 10-year
                 eBay seller rating can&apos;t be directly converted because Web4 has no way to verify how
-                those scores were earned &mdash; they could reflect genuine quality or years of gaming
+                those scores were earned - they could reflect genuine quality or years of gaming
                 the algorithm.
               </p>
               <p>
@@ -3398,21 +3386,21 @@ export default function WhyWeb4Page() {
               <p>
                 <strong>Your existing content stays where it is.</strong> Web4 doesn&apos;t import or
                 migrate content from other platforms. Your old posts on Reddit, your reviews on Amazon,
-                your articles on Medium &mdash; they remain on those platforms. What changes is that
+                your articles on Medium - they remain on those platforms. What changes is that
                 <em> future</em> contributions across Web4-connected platforms build a portable, verifiable
                 trust history that follows you everywhere.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Could platforms import?</strong> At the <a href="#faq-adoption-path" className="text-sky-400 hover:underline">Wrapper
                 tier</a>, a platform <em>could</em> seed initial Web4 trust from existing reputation as a
-                convenience &mdash; but this would be platform-specific, optional, and capped (e.g., imported
+                convenience - but this would be platform-specific, optional, and capped (e.g., imported
                 trust might max out at 0.6, requiring real Web4 behavior to go higher). This is a design
                 decision for individual platforms, not a protocol requirement.
               </p>
             </div>
           </details>
 
-          {/* Developer integration — visitor Q Mar 29: "What's the SDK/API? Hello World?" */}
+          {/* Developer integration - visitor Q Mar 29: "What's the SDK/API? Hello World?" */}
           <details id="faq-developer-integration" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>I&apos;m a developer. What would integrating Web4 actually look like? Is there an SDK?</span>
@@ -3433,7 +3421,7 @@ export default function WhyWeb4Page() {
               </p>
               <ol className="list-decimal list-inside space-y-1.5 ml-2 text-gray-400">
                 <li>Import a Web4 trust client library into your backend</li>
-                <li>When a user signs up, bind their account to an LCT (hardware key ceremony &mdash; like WebAuthn registration)</li>
+                <li>When a user signs up, bind their account to an LCT (hardware key ceremony - like WebAuthn registration)</li>
                 <li>When they take an action, call <code className="text-sky-400/80">web4.recordAction(lct, action, atpCost)</code></li>
                 <li>When displaying content, call <code className="text-sky-400/80">web4.trustScore(lct, role)</code> to get their T3</li>
                 <li>Use the trust score to weight content ranking, moderation queues, or feature access</li>
@@ -3452,7 +3440,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Children and minors — visitor Q Mar 25: "What about children and minors?" */}
+          {/* Children and minors - visitor Q Mar 25: "What about children and minors?" */}
           <details id="faq-children" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What about children and minors? How does hardware-bound identity work for a 13-year-old?</span>
@@ -3460,7 +3448,7 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>Web4 doesn&apos;t require age disclosure &mdash; it trusts behavior, not demographics.</strong>{" "}
+                <strong>Web4 doesn&apos;t require age disclosure - it trusts behavior, not demographics.</strong>{" "}
                 A 13-year-old with their own phone gets a hardware-bound LCT just like anyone else.
                 Their trust starts at the same baseline (0.50) and grows through the same quality-of-work mechanics.
               </p>
@@ -3472,9 +3460,9 @@ export default function WhyWeb4Page() {
                   creating a supervision relationship without revealing age to the network. The guardian
                   can set spending limits (max ATP per action) and visibility boundaries (MRH restrictions).</li>
                 <li><strong>Graduated autonomy:</strong> As the minor builds trust through consistent behavior,
-                  guardian restrictions can relax &mdash; a natural progression, not an arbitrary age gate.</li>
+                  guardian restrictions can relax - a natural progression, not an arbitrary age gate.</li>
                 <li><strong>Privacy by design:</strong> The network never learns that an LCT belongs to a minor.
-                  Guardian binding is visible only to the guardian and the minor &mdash; it&apos;s a private policy,
+                  Guardian binding is visible only to the guardian and the minor - it&apos;s a private policy,
                   not a public label.</li>
               </ul>
               <p className="text-amber-400/80 text-xs">
@@ -3486,7 +3474,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Adversarial quality consensus — visitor Q Mar 30 */}
+          {/* Adversarial quality consensus - visitor Q Mar 30 */}
           <details id="faq-adversarial-quality" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>In a flat-earth forum, wouldn&apos;t the majority just validate each other&apos;s bad content?</span>
@@ -3494,21 +3482,21 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Yes — within that community. And that&apos;s where the difference between <em>local</em> and <em>global</em> trust matters.
+                Yes - within that community. And that&apos;s where the difference between <em>local</em> and <em>global</em> trust matters.
               </p>
               <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
-                <li><strong className="text-gray-300">V3 quality is community-scoped.</strong> A flat-earth forum can give each other high V3 scores <em>within their own community</em>. But V3 scores don&apos;t transfer at full strength across federation boundaries — they decay. Their mutual validation stays local.</li>
-                <li><strong className="text-gray-300">T3 trust is behavior-scoped.</strong> The V3 game only works if the participants also maintain high <Link href="/trust-tensor" className="text-sky-400 hover:underline">T3 trust</Link> — which requires consistent, honest behavior over time, across roles. A coordinated deception effort erodes T3&apos;s Temperament dimension as behavioral patterns become inconsistent.</li>
+                <li><strong className="text-gray-300">V3 quality is community-scoped.</strong> A flat-earth forum can give each other high V3 scores <em>within their own community</em>. But V3 scores don&apos;t transfer at full strength across federation boundaries - they decay. Their mutual validation stays local.</li>
+                <li><strong className="text-gray-300">T3 trust is behavior-scoped.</strong> The V3 game only works if the participants also maintain high <Link href="/trust-tensor" className="text-sky-400 hover:underline">T3 trust</Link> - which requires consistent, honest behavior over time, across roles. A coordinated deception effort erodes T3&apos;s Temperament dimension as behavioral patterns become inconsistent.</li>
                 <li><strong className="text-gray-300">Federation is the correction mechanism.</strong> When a flat-earth community tries to federate with a science community, the trust transfer discount is steep. Their internally-high V3 scores arrive at the science community deeply discounted. Bridge agents who participate in both communities provide the cross-check.</li>
-                <li><strong className="text-gray-300">ATP makes sustained deception expensive.</strong> Producing content costs energy. Confirming content costs energy. A community dedicating all its ATP to mutual validation has less ATP for productive interactions outside the bubble — making them economically isolated, not just socially isolated.</li>
+                <li><strong className="text-gray-300">ATP makes sustained deception expensive.</strong> Producing content costs energy. Confirming content costs energy. A community dedicating all its ATP to mutual validation has less ATP for productive interactions outside the bubble - making them economically isolated, not just socially isolated.</li>
               </ul>
               <p className="text-amber-400/80 text-xs mt-2">
-                <strong>The honest answer:</strong> Web4 doesn&apos;t prevent communities from being wrong. It prevents wrong communities from <em>projecting authority beyond their boundaries</em>. A flat-earth forum can exist and thrive internally — what they can&apos;t do is make their quality consensus <em>count</em> in a physics department&apos;s trust graph. The same mechanisms that make Web4 trust meaningful (decay, federation discounts, behavioral consistency) also contain bad-faith consensus. This is better than platforms where a viral post from any community can reach billions, but it&apos;s not a cure for being wrong — nothing is.
+                <strong>The honest answer:</strong> Web4 doesn&apos;t prevent communities from being wrong. It prevents wrong communities from <em>projecting authority beyond their boundaries</em>. A flat-earth forum can exist and thrive internally - what they can&apos;t do is make their quality consensus <em>count</em> in a physics department&apos;s trust graph. The same mechanisms that make Web4 trust meaningful (decay, federation discounts, behavioral consistency) also contain bad-faith consensus. This is better than platforms where a viral post from any community can reach billions, but it&apos;s not a cure for being wrong - nothing is.
               </p>
             </div>
           </details>
 
-          {/* Unpopular truth — visitor Q Mar 31 */}
+          {/* Unpopular truth - visitor Q Mar 31 */}
           <details id="faq-unpopular-truth" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What about whistleblowers or dissenting scientists? Unpopular truth seems risky.</span>
@@ -3532,13 +3520,13 @@ export default function WhyWeb4Page() {
                   doesn&apos;t erase their behavioral track record. Their trust precedes and survives the controversy.</li>
                 <li><strong className="text-gray-300">Pseudonymity is built in.</strong> Hardware-bound identity doesn&apos;t mean real-name identity.
                   A whistleblower can build trust under a pseudonym, publish the report, and their <Link href="/lct-explainer" className="text-sky-400 hover:underline">LCT identity</Link> proves
-                  it came from a real person with a real track record &mdash; without revealing who.</li>
+                  it came from a real person with a real track record - without revealing who.</li>
               </ul>
               <p>
                 <strong>Concrete example:</strong> A safety engineer discovers their company is falsifying emissions data.
                 They&apos;ve built trust (T3: 0.82) over two years of quality contributions to an environmental science community.
                 They publish the evidence under their pseudonym. The post scores low Valuation (company supporters downweight it)
-                but high Veracity and Validity (the data checks out). Net V3: 0.62 &mdash; not amazing, but not buried.
+                but high Veracity and Validity (the data checks out). Net V3: 0.62 - not amazing, but not buried.
                 Meanwhile their 0.82 T3 trust means the post appears prominently in trust-weighted feeds. Contrast this with
                 Reddit, where a new throwaway account posting the same evidence would be invisible.
               </p>
@@ -3546,13 +3534,13 @@ export default function WhyWeb4Page() {
                 <strong>Honest caveat:</strong> Web4 makes unpopular truth <em>survivable</em>, not <em>popular</em>.
                 A correct-but-hated claim still gets low Valuation scores. What Web4 prevents is the scenario where
                 accurate, important information is completely buried because the messenger has no established credibility
-                or because a majority can simply vote it into oblivion. The truth doesn&apos;t win automatically &mdash;
+                or because a majority can simply vote it into oblivion. The truth doesn&apos;t win automatically - 
                 but it gets a hearing proportional to the messenger&apos;s demonstrated trustworthiness.
               </p>
             </div>
           </details>
 
-          {/* Echo chambers — visitor Q Mar 24 */}
+          {/* Echo chambers - visitor Q Mar 24 */}
           <details id="faq-filter-bubbles" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>Doesn&apos;t MRH&apos;s 3-hop limit create filter bubbles?</span>
@@ -3563,10 +3551,10 @@ export default function WhyWeb4Page() {
                 The concern is real: if you can only see 3 hops into the trust graph, wouldn&apos;t communities become echo chambers? In practice, several mechanisms work against this:
               </p>
               <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
-                <li><strong className="text-gray-300">Bridge agents.</strong> People who participate in multiple communities naturally connect otherwise-separate trust networks. Our simulations found that &ldquo;identity is structural, not compositional&rdquo; — bridge agents reshape the topology.</li>
+                <li><strong className="text-gray-300">Bridge agents.</strong> People who participate in multiple communities naturally connect otherwise-separate trust networks. Our simulations found that &ldquo;identity is structural, not compositional&rdquo; - bridge agents reshape the topology.</li>
                 <li><strong className="text-gray-300">Federation.</strong> When communities federate, trust transfers across boundaries (at a discount). This creates cross-community visibility that MRH alone wouldn&apos;t provide.</li>
                 <li><strong className="text-gray-300">MRH is per-role, not per-person.</strong> Your MRH as a software developer is a different graph than your MRH as a gardener. You naturally exist in multiple trust neighborhoods simultaneously.</li>
-                <li><strong className="text-gray-300">MRH limits influence, not visibility.</strong> You can <em>see</em> content from anyone. MRH determines how much <em>trust weight</em> you assign to it. Strangers aren&apos;t invisible — they&apos;re just unverified.</li>
+                <li><strong className="text-gray-300">MRH limits influence, not visibility.</strong> You can <em>see</em> content from anyone. MRH determines how much <em>trust weight</em> you assign to it. Strangers aren&apos;t invisible - they&apos;re just unverified.</li>
               </ul>
               <p className="text-gray-500 text-xs mt-2">
                 <strong>Honest caveat:</strong> Filter bubbles are a real risk in any trust-based system. The difference is that Web4&apos;s bubbles are <em>visible</em> (you can see your MRH boundary) and <em>permeable</em> (federation + bridge agents + role diversity all create cross-links). Traditional social media bubbles are invisible and algorithmically reinforced.
@@ -3574,7 +3562,7 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Cross-federation disputes — visitor Q Mar 31 */}
+          {/* Cross-federation disputes - visitor Q Mar 31 */}
           <details id="faq-cross-federation-disputes" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>What happens when two federated communities disagree about a member?</span>
@@ -3591,10 +3579,10 @@ export default function WhyWeb4Page() {
               </p>
               <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
                 <li><strong className="text-gray-300">Trust is sovereign per community.</strong> Wellness can lower Maya&apos;s trust
-                  <em> within their own community</em> &mdash; that&apos;s their right. But they cannot modify her score in Food Science.
+                  <em> within their own community</em> - that&apos;s their right. But they cannot modify her score in Food Science.
                   Each community controls its own trust graph independently.</li>
                 <li><strong className="text-gray-300">Federation discounts absorb the conflict.</strong> Trust transfers across
-                  federation boundaries are already discounted (typically 0.6x&ndash;0.7x). If Wellness sets Maya to 0.2, that arrives
+                  federation boundaries are already discounted (typically 0.6x-0.7x). If Wellness sets Maya to 0.2, that arrives
                   at other communities as ~0.13. Her 0.88 from Food Science arrives as ~0.57. The higher-trust signal dominates.</li>
                 <li><strong className="text-gray-300">Bridge agents provide ground truth.</strong> People active in both communities
                   assess Maya from direct interaction, not community politics. If 8 bridge agents rate her highly and only Wellness rates
@@ -3607,7 +3595,7 @@ export default function WhyWeb4Page() {
               <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
                 <li><strong className="text-gray-300">Priority:</strong> The community where the action happens wins. Publishing in
                   healthcare context? Healthcare&apos;s trust standards apply.</li>
-                <li><strong className="text-gray-300">Intersection:</strong> Only policies both communities agree on apply &mdash;
+                <li><strong className="text-gray-300">Intersection:</strong> Only policies both communities agree on apply - 
                   used when neither has clear jurisdiction.</li>
                 <li><strong className="text-gray-300">Defederation (last resort):</strong> Communities can break the trust bridge
                   entirely, like email servers choosing not to relay mail. Costly for both sides.</li>
@@ -3622,14 +3610,14 @@ export default function WhyWeb4Page() {
               </p>
               <p className="text-gray-500 text-xs">
                 For a deeper walkthrough, see{" "}
-                <Link href="/federation-economics#switching-societies" className="text-sky-400 hover:underline">
-                  Federation Economics &rarr; Cross-Society Policy Conflicts
+                <Link href="/hub" className="text-sky-400 hover:underline">
+                  the hub: cross-society policy conflicts
                 </Link>.
               </p>
             </div>
           </details>
 
-          {/* National legal jurisdictions — visitor Q Apr 16 */}
+          {/* National legal jurisdictions - visitor Q Apr 16 */}
           <details id="faq-jurisdiction" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How would Web4 handle differing national laws (GDPR, DSA, Section 230, etc.)?</span>
@@ -3651,14 +3639,14 @@ export default function WhyWeb4Page() {
                   Chinese operators follows the Cybersecurity Law. Same protocol, different rules.</li>
                 <li><strong className="text-gray-300">Federation is consent-based.</strong> Communities choose
                   which other communities to federate with. An EU-compliant community can refuse to relay
-                  trust signals or content from communities that operate under legally incompatible rules &mdash;
+                  trust signals or content from communities that operate under legally incompatible rules - 
                   like email servers choosing not to accept mail from known spam-tolerant hosts.</li>
                 <li><strong className="text-gray-300">Users pick their community.</strong> Your identity (LCT)
                   is portable. You can join a community whose jurisdiction and content rules you accept. You
                   take your trust score with you (discounted across federation boundaries), but you accept
                   the new community&apos;s legal context.</li>
                 <li><strong className="text-gray-300">Removal cascades are real.</strong> If a court in your
-                  jurisdiction orders content removed, your community complies &mdash; but federation partners
+                  jurisdiction orders content removed, your community complies - but federation partners
                   in other jurisdictions are under no obligation to propagate that removal. The tamper-evident
                   audit chain records the takedown so federated peers can evaluate it against their own law.</li>
               </ul>
@@ -3670,9 +3658,9 @@ export default function WhyWeb4Page() {
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Cross-border regulatory harmonization is genuinely unresolved.
-                Specific questions &mdash; GDPR right-to-be-forgotten interacting with a tamper-evident audit
+                Specific questions - GDPR right-to-be-forgotten interacting with a tamper-evident audit
                 chain, DSA transparency reports for federated systems, extraterritorial reach of the
-                Chinese Cybersecurity Law &mdash; do not have settled answers in the current spec. See
+                Chinese Cybersecurity Law - do not have settled answers in the current spec. See
                 the <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">What Could Go Wrong</Link>{" "}
                 &ldquo;Regulatory Capture&rdquo; and &ldquo;Genuinely Unsolved&rdquo; sections for the honest
                 state of this question.
@@ -3690,15 +3678,12 @@ export default function WhyWeb4Page() {
             <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">
               What Could Go Wrong
             </Link>{" "}
-            covers the 7 biggest real-world risks in plain English. Our{" "}
-            <Link href="/threat-model" className="text-sky-400 hover:underline">
-              Threat Model
+            covers the 7 biggest real-world risks in plain English, including the technical attack
+            surfaces and the honestly unsolved problems. The{" "}
+            <Link href="/the-standard" className="text-sky-400 hover:underline">
+              standard
             </Link>{" "}
-            covers 6 technical attack surfaces with formal analysis. The{" "}
-            <Link href="/explore-guide" className="text-sky-400 hover:underline">
-              Explore Guide
-            </Link>{" "}
-            also has a dedicated Skeptic&apos;s Tour for those who want to start with the weaknesses.
+            lays out the formal definitions behind them.
           </p>
         </div>
       </section>
@@ -3732,24 +3717,23 @@ export default function WhyWeb4Page() {
         <div className="bg-gradient-to-br from-sky-950/20 to-blue-900/10 border border-sky-800/20 rounded-xl p-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-100">Follow Along or Get Involved</h2>
           <p className="text-gray-300 leading-relaxed mb-4">
-            Web4 is open research. Everything &mdash; the specification, the simulations, and this site &mdash; is
+            Web4 is open research. Everything - the specification, the reference code, and this site - is
             public and open-source. You don&apos;t need permission to participate.
           </p>
           <div className="grid gap-4 sm:grid-cols-3 text-sm">
             <div className="bg-gray-800/40 border border-gray-700 rounded-lg p-4">
               <h3 className="font-semibold text-sky-400 mb-2">Read the code</h3>
-              <p className="text-gray-400 mb-2">The full specification, reference implementations, and simulation engine are on GitHub.</p>
+              <p className="text-gray-400 mb-2">The full specification and reference implementations are on GitHub.</p>
               <a href="https://github.com/dp-web4" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">
                 github.com/dp-web4 →
               </a>
             </div>
             <div className="bg-gray-800/40 border border-gray-700 rounded-lg p-4">
-              <h3 className="font-semibold text-sky-400 mb-2">Run the simulations</h3>
+              <h3 className="font-semibold text-sky-400 mb-2">Explore the onramp</h3>
               <p className="text-gray-400 mb-2">
-                The{" "}
-                <Link href="/playground" className="text-sky-400 hover:underline">Playground</Link> and{" "}
-                <Link href="/society-simulator" className="text-sky-400 hover:underline">Society Simulator</Link>{" "}
-                let you test Web4 dynamics yourself, right now.
+                Start at the{" "}
+                <Link href="/onramp" className="text-sky-400 hover:underline">onramp</Link> and see{" "}
+                <Link href="/running-now" className="text-sky-400 hover:underline">what runs today</Link>.
               </p>
             </div>
             <div className="bg-gray-800/40 border border-gray-700 rounded-lg p-4">

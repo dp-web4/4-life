@@ -57,13 +57,13 @@ export default function FirstContactPage() {
     { tick: 8, action: "Collaboration", atp_before: 62, atp_after: 55, trust_before: 0.53, trust_after: 0.58, reason: "Working with trusted member: costs 7 ATP, significant trust gain (+0.05)", isSuccess: true },
     { tick: 9, action: "Recognition", atp_before: 55, atp_after: 80, trust_before: 0.58, trust_after: 0.62, reason: "Community recognition for consistent quality: earns 25 ATP, trust boost", isSuccess: true },
     { tick: 10, action: "Established", atp_before: 80, atp_after: 80, trust_before: 0.62, trust_after: 0.62, reason: "Alice is now a trusted community member with sustainable reputation", isSuccess: true },
-    // Life continues — what happens when things go wrong
+    // Life continues - what happens when things go wrong
     { tick: 11, action: "Overcommit", atp_before: 80, atp_after: 35, trust_before: 0.62, trust_after: 0.58, reason: "Alice takes on too many projects at once. Each costs ATP, and spreading thin hurts quality.", isWarning: true },
     { tick: 12, action: "Quality slips", atp_before: 35, atp_after: 12, trust_before: 0.58, trust_after: 0.51, reason: "Rushed work gets poor reviews. ATP drains, trust falls. The crisis spiral begins.", isWarning: true },
-    { tick: 13, action: "ATP exhaustion", atp_before: 12, atp_after: 0, trust_before: 0.51, trust_after: 0.51, reason: "No energy left to contribute. ATP hits zero — Alice's entity dies. But her record persists.", isWarning: true },
+    { tick: 13, action: "ATP exhaustion", atp_before: 12, atp_after: 0, trust_before: 0.51, trust_after: 0.51, reason: "No energy left to contribute. ATP hits zero - Alice's entity dies. But her record persists.", isWarning: true },
     // Rebirth with karma carry-forward
-    { tick: 14, action: "Rebirth", atp_before: 0, atp_after: 112, trust_before: 0.51, trust_after: 0.54, reason: "New life begins! Good karma carries forward: 112 ATP (a starting bonus above the usual 100 — the trust she built carries forward as karma) and 0.54 trust (above the 0.50 neutral baseline). Past lessons remembered.", isSuccess: true },
-    { tick: 15, action: "Wiser choices", atp_before: 112, atp_after: 104, trust_before: 0.54, trust_after: 0.57, reason: "Armed with experience, Alice paces herself — focused quality over volume. Trust rises faster than her first life.", isSuccess: true },
+    { tick: 14, action: "Rebirth", atp_before: 0, atp_after: 112, trust_before: 0.51, trust_after: 0.54, reason: "New life begins! Good karma carries forward: 112 ATP (a starting bonus above the usual 100 - the trust she built carries forward as karma) and 0.54 trust (above the 0.50 neutral baseline). Past lessons remembered.", isSuccess: true },
+    { tick: 15, action: "Wiser choices", atp_before: 112, atp_after: 104, trust_before: 0.54, trust_after: 0.57, reason: "Armed with experience, Alice paces herself - focused quality over volume. Trust rises faster than her first life.", isSuccess: true },
   ];
 
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -118,51 +118,51 @@ export default function FirstContactPage() {
 
             <div style={{ borderLeft: '3px solid #334155', paddingLeft: '1rem', marginBottom: '1.5rem' }}>
               <p style={{ color: '#cbd5e1', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                Alice starts with <strong style={{ color: '#38bdf8' }}>100 energy</strong> &mdash; called <abbr title="Allocation Transfer Packets" style={{ color: '#38bdf8', textDecoration: 'none' }}>ATP</abbr> (<em>Allocation Transfer Packets</em>, the energy budget she spends to act) &mdash; and <strong style={{ color: '#10b981' }}>neutral trust (0.50)</strong>. Every action she takes costs energy. Every contribution builds (or burns) trust.
+                Alice starts with <strong style={{ color: '#38bdf8' }}>100 energy</strong> - called <abbr title="Allocation Transfer Packets" style={{ color: '#38bdf8', textDecoration: 'none' }}>ATP</abbr> (<em>Allocation Transfer Packets</em>, the energy budget she spends to act) - and <strong style={{ color: '#10b981' }}>neutral trust (0.50)</strong>. Every action she takes costs energy. Every contribution builds (or burns) trust.
               </p>
 
               <p style={{ color: '#94a3b8', lineHeight: 1.6, marginBottom: '1rem', fontSize: '0.875rem', fontStyle: 'italic' }}>
-                Why 0.50? It&rsquo;s the neutral starting point &mdash; Alice hasn&rsquo;t earned trust yet, but she hasn&rsquo;t lost it either. Starting at 0 would mean &ldquo;guilty until proven innocent&rdquo;; starting at 1.0 would hand out a blank check. 0.50 says &ldquo;prove yourself.&rdquo;
+                Why 0.50? It&rsquo;s the neutral starting point - Alice hasn&rsquo;t earned trust yet, but she hasn&rsquo;t lost it either. Starting at 0 would mean &ldquo;guilty until proven innocent&rdquo;; starting at 1.0 would hand out a blank check. 0.50 says &ldquo;prove yourself.&rdquo;
               </p>
 
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#e2e8f0' }}>Step 1 — Quality post:</strong> Alice writes a thoughtful contribution. It costs 8 ATP but her trust rises to 0.52. Recipients who find it valuable confirm the quality — a simple thumbs-up saying &quot;this was genuinely useful&quot; is what earns Alice her reward. (In Web4, these confirmations are called <em>attestations</em> — signed receipts that can&apos;t be faked.)
+                <strong style={{ color: '#e2e8f0' }}>Step 1 - Quality post:</strong> Alice writes a thoughtful contribution. It costs 8 ATP but her trust rises to 0.52. Recipients who find it valuable confirm the quality - a simple thumbs-up saying &quot;this was genuinely useful&quot; is what earns Alice her reward. (In Web4, these confirmations are called <em>attestations</em> - signed receipts that can&apos;t be faked.)
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#e2e8f0' }}>Step 2 — Helping a newcomer:</strong> She mentors someone new. Costs 5 ATP, but trust jumps to 0.55. Generosity pays.
+                <strong style={{ color: '#e2e8f0' }}>Step 2 - Helping a newcomer:</strong> She mentors someone new. Costs 5 ATP, but trust jumps to 0.55. Generosity pays.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#10b981' }}>Step 3 — Earning recognition:</strong> People upvote her earlier work. She earns 12 ATP back &mdash; more than she spent. Quality content pays for itself.
+                <strong style={{ color: '#10b981' }}>Step 3 - Earning recognition:</strong> People upvote her earlier work. She earns 12 ATP back - more than she spent. Quality content pays for itself.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#f59e0b' }}>Step 4 — A mistake:</strong> Alice tries spamming low-effort posts. It costs 25 ATP and her trust drops to 0.48 &mdash; below the threshold. Features are restricted.
+                <strong style={{ color: '#f59e0b' }}>Step 4 - A mistake:</strong> Alice tries spamming low-effort posts. It costs 25 ATP and her trust drops to 0.48 - below the threshold. Features are restricted.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#e2e8f0' }}>Step 5 — Recovery:</strong> She returns to thoughtful replies. Trust slowly rebuilds to 0.50. The system doesn&apos;t ban her &mdash; it lets consequences teach.
+                <strong style={{ color: '#e2e8f0' }}>Step 5 - Recovery:</strong> She returns to thoughtful replies. Trust slowly rebuilds to 0.50. The system doesn&apos;t ban her - it lets consequences teach.
               </p>
               <div style={{ background: '#1e1b2e', border: '1px solid #7c3aed44', borderRadius: '8px', padding: '0.75rem 1rem', marginBottom: '0.75rem', fontSize: '0.9rem' }}>
                 <strong style={{ color: '#c4b5fd' }}>What triggers death?</strong>
                 {/* Jul-8 visitor HIGH: this sentence said "drops below 0.5" bare while Step 4/5 show
-                    Alice at 0.48 recovering — one of three conflicting rule statements across
+                    Alice at 0.48 recovering - one of three conflicting rule statements across
                     First Contact / Karma Journey / Aliveness. Canonical rule sentence below is
-                    IDENTICAL on all three pages — keep it verbatim if editing.
+                    IDENTICAL on all three pages - keep it verbatim if editing.
                     Jul-9 visitor HIGH: the Jul-8 version was read and STILL produced "First Contact says
                     0.5 is an access threshold, Aliveness says it's a death threshold." The missing piece
-                    was never dip-vs-sustained (that was there) — it was that ONE line has TWO consequences
+                    was never dip-vs-sustained (that was there) - it was that ONE line has TWO consequences
                     at TWO timescales. Plus "raw" vs effective (raw × CI²). Both now in the canonical text. */}
-                <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death &mdash; you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>raw trust falls below 0.5 and stays there</strong> (trust death &mdash; the community no longer trusts you). Energy death is recoverable through karma rebirth. Trust death is permanent &mdash; a destroyed reputation can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal &mdash; a sustained collapse, not a single stumble. The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;) &mdash; effective trust sets your karma tier, not whether you live. That&apos;s why Alice&apos;s 0.48 in Step 4 restricted her instead of killing her: she crossed the line, she didn&apos;t stay below it.</span>
+                <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death - you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>raw trust falls below 0.5 and stays there</strong> (trust death - the community no longer trusts you). Energy death is recoverable through karma rebirth. Trust death is permanent - a destroyed reputation can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal - a sustained collapse, not a single stumble. The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;) - effective trust sets your karma tier, not whether you live. That&apos;s why Alice&apos;s 0.48 in Step 4 restricted her instead of killing her: she crossed the line, she didn&apos;t stay below it.</span>
               </div>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#f87171' }}>Step 6 — Death:</strong> Alice overcommits, quality slips, ATP drains to zero. Her entity dies &mdash; but her record persists.
+                <strong style={{ color: '#f87171' }}>Step 6 - Death:</strong> Alice overcommits, quality slips, ATP drains to zero. Her entity dies - but her record persists.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#34d399' }}>Step 7 — Rebirth:</strong> Good karma carries forward. Alice is reborn with 112 ATP (a starting bonus above the usual 100 &mdash; the trust she built carries forward as karma) and 0.54 trust (above the 0.50 neutral baseline). Past lessons compound.
+                <strong style={{ color: '#34d399' }}>Step 7 - Rebirth:</strong> Good karma carries forward. Alice is reborn with 112 ATP (a starting bonus above the usual 100 - the trust she built carries forward as karma) and 0.54 trust (above the 0.50 neutral baseline). Past lessons compound.
               </p>
             </div>
 
             <div style={{ background: '#0f172a', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
               <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: '0.95rem' }}>
-                <strong style={{ color: '#38bdf8' }}>The lesson:</strong> Spam dies because it costs more than it returns. Trust builds through consistent quality. Mistakes have real consequences &mdash; but recovery is possible. Death is real (ATP hits zero), but good karma carries forward into new lives. No moderators needed. The economics do the work.
+                <strong style={{ color: '#38bdf8' }}>The lesson:</strong> Spam dies because it costs more than it returns. Trust builds through consistent quality. Mistakes have real consequences - but recovery is possible. Death is real (ATP hits zero), but good karma carries forward into new lives. No moderators needed. The economics do the work.
               </p>
             </div>
 
@@ -211,20 +211,20 @@ export default function FirstContactPage() {
                 Your First Web4 Experience
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed mb-4">
-                Today's internet rewards spam, lets trolls create unlimited accounts, and makes quality creators compete with bots. What if the system itself made that impossible? Web4 is one proposed answer &mdash; and what follows is a simulation of that idea, not a finished product.
+                Today's internet rewards spam, lets trolls create unlimited accounts, and makes quality creators compete with bots. What if the system itself made that impossible? Web4 is one proposed answer, and what follows is a guided walkthrough of that idea, not a finished product.
               </p>
               <p className="text-lg text-gray-400 leading-relaxed mb-3">
-                In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> — play, pause, scrub, replay — and watch trust and reputation respond in real time. This is a hands-on walkthrough, not a video — and a model of a <em>proposed</em> system: the rules running here are real, but Web4 itself is active research with nothing to sign up for yet. Real rules, shown by simulation — not a demo of a shipped product.
+                In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> - play, pause, scrub, replay - and watch trust and reputation respond in real time. This is a hands-on walkthrough, not a video - and a model of a <em>proposed</em> system: the rules running here are real, but Web4 itself is active research with nothing to sign up for yet. Real rules, shown by a guided walkthrough, not a demo of a shipped product.
               </p>
               <p className="text-sm text-gray-500 leading-relaxed italic">
-                Haven&apos;t read anything else on this site yet? You don&apos;t need to &mdash; this page starts from zero. Below: the two numbers to watch, then an optional reference map of the four ideas (collapsed — no need to memorize them; each is explained in the story the moment Alice uses it) and the five-act arc. Then click <span className="not-italic font-semibold text-gray-300">Start</span> to drive Alice yourself — no account, no sign-in.
+                Haven&apos;t read anything else on this site yet? You don&apos;t need to - this page starts from zero. Below: the two numbers to watch, then an optional reference map of the four ideas (collapsed - no need to memorize them; each is explained in the story the moment Alice uses it) and the five-act arc. Then click <span className="not-italic font-semibold text-gray-300">Start</span> to drive Alice yourself - no account, no sign-in.
               </p>
             </div>
 
             <InProduction concept="stack" />
 
             {/* Jul-1 visitor MEDIUM: the hero hammers "this is a simulation" and the green banner
-                directly above says hestia + the hub are "deployed in public" — the visitor
+                directly above says hestia + the hub are "deployed in public" - the visitor
                 "genuinely couldn't tell whether I'm looking at a simulation or live infrastructure."
                 Disambiguate LOCALLY (the shared InProduction copy is accurate and used elsewhere):
                 the sim you drive here MODELS the deployed system; it is not that system running.
@@ -236,36 +236,36 @@ export default function FirstContactPage() {
             <details className="-mt-3 mb-6 text-xs text-gray-500">
               <summary className="cursor-pointer leading-relaxed list-none hover:text-gray-400 transition-colors">
                 To be clear about those two things: <strong className="text-gray-400">what you drive
-                on this page is the simulation</strong>, running in your browser;{" "}
+                on this page is a guided walkthrough</strong>, running in your browser;{" "}
                 <strong className="text-gray-400">hestia</strong> and{" "}
                 <strong className="text-gray-400">the hub</strong> (the green banner) are the{" "}
-                <em>separate, real</em> system it models — not something executing inside this
+                <em>separate, real</em> system it models - not something executing inside this
                 walkthrough. <span className="underline decoration-dotted">more ▸</span>
               </summary>
               <p className="mt-2 leading-relaxed">
-                The simulation is a model with nothing deployed and nothing to sign up for. hestia
+                The walkthrough is a model with nothing deployed and nothing to sign up for. hestia
                 and the hub are public AGPL code you could run yourself (though there&apos;s no live
                 network of real users to join yet). You don&apos;t need to track these two names to
-                follow Alice&apos;s story &mdash; they&apos;re here only so the green banner above
+                follow Alice&apos;s story - they&apos;re here only so the green banner above
                 isn&apos;t a mystery.
               </p>
             </details>
 
-            {/* Two-number anchor moved ABOVE the concept grid — May 15 visitor LOW:
+            {/* Two-number anchor moved ABOVE the concept grid - May 15 visitor LOW:
                 this concrete anchor "rescued" the page; the four-acronym grid felt
                 like a vocab wall when it came first. Lead with the two numbers. */}
             <div className="bg-gray-900/60 border border-gray-700/60 rounded-xl p-5">
-              <div className="text-xs uppercase tracking-wide text-gray-400 font-semibold mb-2">Before you start — reading Alice&apos;s panel</div>
+              <div className="text-xs uppercase tracking-wide text-gray-400 font-semibold mb-2">Before you start - reading Alice&apos;s panel</div>
               <p className="text-sm text-gray-400 mb-3">Only two numbers move while she acts. This is all you need to follow the story:</p>
               <ul className="text-sm text-gray-300 space-y-2">
-                <li><span className="text-sky-300 font-semibold">🔋 Energy Budget (ATP)</span> — the resource Alice spends to act. Starts at <span className="text-gray-200">100</span>; goes down when she posts, up when others confirm her work was valuable. If it hits 0, she can&apos;t act.</li>
+                <li><span className="text-sky-300 font-semibold">🔋 Energy Budget (ATP)</span> - the resource Alice spends to act. Starts at <span className="text-gray-200">100</span>; goes down when she posts, up when others confirm her work was valuable. If it hits 0, she can&apos;t act.</li>
                 {/* Jul-9 visitor HIGH: this line taught "0.5 = access threshold" and Aliveness taught
                     "0.5 = death threshold", and the visitor never reconciled them. Name the second
                     consequence here, where the first one is introduced.
-                    Do NOT write "at or above 0.50" — whether exactly-0.50 counts as alive/full-access
+                    Do NOT write "at or above 0.50" - whether exactly-0.50 counts as alive/full-access
                     is an unresolved canon call (> vs >= in the aliveness engines); don't assert the
                     endpoint either way. */}
-                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> — her <em>raw</em> reputation, on a <span className="text-gray-200">0.00&ndash;1.00</span> scale. Starts neutral at <span className="text-gray-200">0.50</span>. Above 0.50: full access. Below 0.50: features get restricted until she rebuilds it &mdash; and if she <em>stays</em> below, that same line becomes fatal &mdash; a sustained slide, not one dip.</li>
+                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> - her <em>raw</em> reputation, on a <span className="text-gray-200">0.00-1.00</span> scale. Starts neutral at <span className="text-gray-200">0.50</span>. Above 0.50: full access. Below 0.50: features get restricted until she rebuilds it - and if she <em>stays</em> below, that same line becomes fatal - a sustained slide, not one dip.</li>
               </ul>
             </div>
 
@@ -273,35 +273,35 @@ export default function FirstContactPage() {
                 front-loaded ATP/T3/LCT/CI shorthand BEFORE the story, contradicting the page's own
                 promise that each idea is explained the moment Alice uses it. May-15 reordered (the
                 two-number anchor above stays leading and visible); Jul-13 recurred the vocab wall →
-                default-collapsed. The cards inside are unchanged — don't reword the glosses. */}
+                default-collapsed. The cards inside are unchanged - don't reword the glosses. */}
             <details className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-8 group">
               <summary className="cursor-pointer list-none">
                 <h2 className="text-2xl font-bold mb-1"><span className="text-sm text-sky-400 inline-block transition-transform group-open:rotate-90 mr-2 align-middle">▶</span>The four ideas behind it <span className="text-sm text-gray-500 font-normal">(optional)</span></h2>
-                <span className="text-sm text-gray-400 block">A reference map, not a quiz — you don&apos;t need to memorize these. Each one is explained in the story the moment Alice runs into it. Open for a preview, or skip straight to <span className="font-semibold text-gray-300">Start</span> and come back.</span>
+                <span className="text-sm text-gray-400 block">A reference map, not a quiz - you don&apos;t need to memorize these. Each one is explained in the story the moment Alice runs into it. Open for a preview, or skip straight to <span className="font-semibold text-gray-300">Start</span> and come back.</span>
               </summary>
               <div className="grid md:grid-cols-2 gap-6 mt-5">
                 <div>
                   <Link href="/atp-economics" className="text-sky-400 font-semibold mb-2 block hover:underline">🔋 Energy Budget</Link>
                   <p className="text-gray-400">
-                    Every action costs energy. Recipients who benefit confirm quality &mdash; that&apos;s what earns energy back. Spam burns out. (Shorthand: <strong>ATP</strong> &mdash; Allocation Transfer Packets.)
+                    Every action costs energy. Recipients who benefit confirm quality - that&apos;s what earns energy back. Spam burns out. (Shorthand: <strong>ATP</strong> - Allocation Transfer Packets.)
                   </p>
                 </div>
                 <div>
                   <Link href="/trust-tensor" className="text-purple-400 font-semibold mb-2 block hover:underline">🤝 Trust: Your Reputation</Link>
                   <p className="text-gray-400">
-                    Trust builds through consistent quality. It follows you everywhere. No fresh starts. (Shorthand: <strong>T3</strong> — three dimensions: talent, training, temperament.)
+                    Trust builds through consistent quality. It follows you everywhere. No fresh starts. (Shorthand: <strong>T3</strong> - three dimensions: talent, training, temperament.)
                   </p>
                 </div>
                 <div>
-                  <Link href="/aliveness" className="text-green-400 font-semibold mb-2 block hover:underline">📜 Consequences: Permanent Record</Link>
+                  <Link href="/karma-consequences" className="text-green-400 font-semibold mb-2 block hover:underline">📜 Consequences: Permanent Record</Link>
                   <p className="text-gray-400">
-                    Your record is permanent because your presence is hardware-bound (called an <strong>LCT</strong> — Linked Context Token). Good behavior compounds. Bad actors can&apos;t walk away clean.
+                    Your record is permanent because your presence is hardware-bound (called an <strong>LCT</strong> - Linked Context Token). Good behavior compounds. Bad actors can&apos;t walk away clean.
                   </p>
                 </div>
                 <div>
                   <Link href="/coherence-index" className="text-orange-400 font-semibold mb-2 block hover:underline">🔍 Consistency: Behavior Proves Identity</Link>
                   <p className="text-gray-400">
-                    Consistent behavior across time, devices, and contexts reveals who&apos;s real. Bots and fakes can&apos;t sustain coherent patterns. (Shorthand: <strong>CI</strong> — coherence index.)
+                    Consistent behavior across time, devices, and contexts reveals who&apos;s real. Bots and fakes can&apos;t sustain coherent patterns. (Shorthand: <strong>CI</strong> - coherence index.)
                   </p>
                 </div>
               </div>
@@ -310,7 +310,7 @@ export default function FirstContactPage() {
             {/* Storyboard: 5-beat preview of Alice's full arc so visitors see what they're signing up for */}
             <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/30 border border-sky-800/30 rounded-xl p-6">
               <div className="flex items-baseline justify-between mb-4 flex-wrap gap-2">
-                <div className="text-sm text-sky-400 font-semibold">Alice&apos;s Arc — The Story Ahead</div>
+                <div className="text-sm text-sky-400 font-semibold">Alice&apos;s Arc - The Story Ahead</div>
                 <div className="text-xs text-gray-500">5 acts · ~7 minutes · real consequences</div>
               </div>
 
@@ -369,21 +369,21 @@ export default function FirstContactPage() {
 
               {/* June 12 visitor MEDIUM (browse A): the Act-5 card teases "ATP=0" and "+12 bonus"
                   but the death/karma explanation lived only in the noscript block and inside the
-                  step-gated walkthrough — skimmers (and the TL;DR's "discover what death means
+                  step-gated walkthrough - skimmers (and the TL;DR's "discover what death means
                   here" promise) left with the question open. One static sentence closes it.
                   Canon: +12 = karma bonus (112 = 100 + 12) reflecting the trust/reputation Alice built,
                   carried forward per karma-journey's karma-tier model. It is NOT an ATP spending surplus:
-                  Alice dies at ATP=0 by exhaustion (tick 13), earning 37 and spending 137 — she spent MORE
+                  Alice dies at ATP=0 by exhaustion (tick 13), earning 37 and spending 137 - she spent MORE
                   than she earned. (Jul-11 numbers-integrity fix: the old "lifetime surplus / earned more than
                   spent" framing contradicted the page's own interactive ledger + Act-5 ATP=0 death. Keep the
                   bonus framed as karma, never as a spending surplus.) */}
               <p className="text-sm text-gray-400 mb-3">
                 <strong className="text-gray-300">Spoiler, so you&apos;re not left hanging:</strong>{' '}
-                &ldquo;death&rdquo; here means Alice&apos;s <em>standing</em> is suspended &mdash; she can&apos;t
-                act until rebirth &mdash; not that her account is deleted; her identity and history persist.
-                The <span className="text-emerald-300">+12 bonus</span> is karma &mdash; a head start earned by the
+                &ldquo;death&rdquo; here means Alice&apos;s <em>standing</em> is suspended - she can&apos;t
+                act until rebirth - not that her account is deleted; her identity and history persist.
+                The <span className="text-emerald-300">+12 bonus</span> is karma - a head start earned by the
                 trust and reputation she built in her first life, carried forward into her next one.{' '}
-                <Link href="/aliveness" className="text-sky-400 hover:text-sky-300 underline">How living and dying work &rarr;</Link>
+                <Link href="/karma-consequences" className="text-sky-400 hover:text-sky-300 underline">How living and dying work &rarr;</Link>
               </p>
 
               <p className="text-sm text-gray-400 italic">
@@ -399,8 +399,8 @@ export default function FirstContactPage() {
             </button>
 
             <p className="text-center text-sm text-gray-500">
-              Step 1 of 5 · Simulation · Story · Concepts · Next Steps
-              <span className="block mt-1 text-xs">You can pause, scrub, replay, and skip ahead. Nothing is saved and there&apos;s no account — you&apos;re running a simulation of the proposed model, not using a product.</span>
+              Step 1 of 5 · Walkthrough · Story · Concepts · Next Steps
+              <span className="block mt-1 text-xs">You can pause, scrub, replay, and skip ahead. Nothing is saved and there&apos;s no account - you&apos;re following a guided walkthrough of the proposed model, not using a product.</span>
             </p>
           </div>
         )}
@@ -417,7 +417,7 @@ export default function FirstContactPage() {
               </button>
               <h1 className="text-4xl font-bold mb-4">Watch Alice Build Trust</h1>
               <p className="text-gray-300">
-                Alice joins a Web4 community with 100 ATP (energy budget) and neutral trust (0.5 on a 0–1 scale). Watch how her actions affect both.
+                Alice joins a Web4 community with 100 ATP (energy budget) and neutral trust (0.5 on a 0-1 scale). Watch how her actions affect both.
               </p>
             </div>
 
@@ -425,7 +425,7 @@ export default function FirstContactPage() {
             <div className="bg-gray-800 border border-gray-700 rounded-xl p-6">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="text-xl font-semibold">Simulation Playback</h3>
+                  <h3 className="text-xl font-semibold">Story Playback</h3>
                   <p className="text-sm text-gray-400">
                     Event {playbackIndex + 1} of {simulationSnapshots.length}
                   </p>
@@ -440,7 +440,7 @@ export default function FirstContactPage() {
                   </button>
                   <button
                     onClick={handlePlayPause}
-                    aria-label={isPlaying ? "Pause simulation" : "Play simulation"}
+                    aria-label={isPlaying ? "Pause walkthrough" : "Play walkthrough"}
                     className="px-6 py-2 bg-sky-600 rounded hover:bg-sky-700 font-semibold"
                   >
                     {isPlaying ? "⏸ Pause" : "▶ Play"}
@@ -533,7 +533,7 @@ export default function FirstContactPage() {
                     <strong className="text-orange-400">⚠️ Trust Below Society Threshold</strong>
                     <p className="text-gray-300 mt-2">
                       Each society sets its own trust threshold. When Alice's trust dropped below 0.5,
-                      this community restricted her features—a mild form of ejection. She can rebuild
+                      this community restricted her features - a mild form of ejection. She can rebuild
                       trust through consistent quality, but the record of this dip is permanent and
                       <strong className="text-white"> visible to other societies</strong> she might join.
                     </p>
@@ -549,9 +549,9 @@ export default function FirstContactPage() {
                     </p>
                     <p className="text-gray-400 mt-2 text-sm">
                       <strong className="text-gray-300">How does this work?</strong> When someone finds Alice&apos;s post valuable,
-                      they confirm its quality — like an upvote, but it costs the reviewer a small amount of energy too.
+                      they confirm its quality - like an upvote, but it costs the reviewer a small amount of energy too.
                       This confirmation converts Alice&apos;s pending receipt (ADP) back into usable energy (ATP).
-                      ADP receipts aren&apos;t just bookkeeping — they&apos;re proof of what you spent energy on, visible to anyone evaluating your contributions.
+                      ADP receipts aren&apos;t just bookkeeping - they&apos;re proof of what you spent energy on, visible to anyone evaluating your contributions.
                       Because confirming quality costs energy, fake validation between friends burns resources faster than it creates them.
                     </p>
                   </div>
@@ -562,7 +562,7 @@ export default function FirstContactPage() {
                     <strong className="text-red-400">Why Spam Fails</strong>
                     <p className="text-gray-300 mt-2">
                       Low-effort bulk posts cost <strong className="text-white">more ATP than they earn</strong> and
-                      <strong className="text-white"> damage trust</strong>. This is why spam is economically impossible in Web4—
+                      <strong className="text-white"> damage trust</strong>. This is why spam is economically impossible in Web4 -
                       spammers literally run out of resources before they can do significant damage.
                     </p>
                   </div>
@@ -577,14 +577,14 @@ export default function FirstContactPage() {
                     <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
                       <div className="bg-gray-900/40 rounded p-2">
                         <div className="text-orange-400 font-semibold text-xs mb-1">Energy death (ATP = 0)</div>
-                        <p className="text-gray-400 text-xs">Run out of energy. <strong className="text-gray-200">Recoverable</strong> — if you built good karma, you can be reborn with a head start.</p>
+                        <p className="text-gray-400 text-xs">Run out of energy. <strong className="text-gray-200">Recoverable</strong> - if you built good karma, you can be reborn with a head start.</p>
                       </div>
                       <div className="bg-gray-900/40 rounded p-2">
                         <div className="text-red-400 font-semibold text-xs mb-1">Trust death (Trust &lt; 0.5 sustained)</div>
-                        <p className="text-gray-400 text-xs">Consistently untrustworthy. <strong className="text-gray-200">Permanent</strong> — no rebirth. Your identity is forever marked.</p>
+                        <p className="text-gray-400 text-xs">Consistently untrustworthy. <strong className="text-gray-200">Permanent</strong> - no rebirth. Your identity is forever marked.</p>
                       </div>
                     </div>
-                    <p className="text-gray-500 mt-2 text-xs">Alice is heading for energy death — she overspent, not misbehaved. That&apos;s the recoverable kind.</p>
+                    <p className="text-gray-500 mt-2 text-xs">Alice is heading for energy death - she overspent, not misbehaved. That&apos;s the recoverable kind.</p>
                   </div>
                 )}
 
@@ -592,15 +592,15 @@ export default function FirstContactPage() {
                   <div className="mt-4 bg-red-900/20 border border-red-800 rounded p-4">
                     <strong className="text-red-400">Death in Web4</strong>
                     <p className="text-gray-300 mt-2">
-                      When ATP reaches zero, the entity can no longer act — this is <strong className="text-white">energy death</strong>.
+                      When ATP reaches zero, the entity can no longer act - this is <strong className="text-white">energy death</strong>.
                       Unlike traditional platforms where you just create a new account, death in Web4 is meaningful.
-                      Your full history is preserved. But if you earned good karma, <strong className="text-white">rebirth is possible</strong> —
+                      Your full history is preserved. But if you earned good karma, <strong className="text-white">rebirth is possible</strong> -
                       and your next life starts with advantages from your past behavior.
                     </p>
                     <p className="text-gray-400 mt-2 text-sm">
-                      <strong className="text-gray-300">What this means in practice:</strong> In these simulations, death = the agent stops acting and must wait for rebirth.
-                      In a deployed Web4 system, it would mean temporary loss of participation rights — you can&apos;t post, vote, or transact until
-                      karma-based rebirth restores your access. It&apos;s more like a &ldquo;suspended license&rdquo; than account deletion — your history and identity persist.
+                      <strong className="text-gray-300">What this means in practice:</strong> In this walkthrough, death = the agent stops acting and must wait for rebirth.
+                      In a deployed Web4 system, it would mean temporary loss of participation rights - you can&apos;t post, vote, or transact until
+                      karma-based rebirth restores your access. It&apos;s more like a &ldquo;suspended license&rdquo; than account deletion - your history and identity persist.
                     </p>
                   </div>
                 )}
@@ -609,12 +609,12 @@ export default function FirstContactPage() {
                   <div className="mt-4 bg-emerald-900/20 border border-emerald-800 rounded p-4">
                     <strong className="text-emerald-400">Karma Carry-Forward</strong>
                     <p className="text-gray-300 mt-2">
-                      <strong className="text-white">Same LCT, license reinstated</strong> — not a new account. Alice&apos;s identity and full history persist; she&apos;s the same entity resuming after a recoverable energy-death, not a fresh signup inheriting borrowed reputation.
+                      <strong className="text-white">Same LCT, license reinstated</strong> - not a new account. Alice&apos;s identity and full history persist; she&apos;s the same entity resuming after a recoverable energy-death, not a fresh signup inheriting borrowed reputation.
                     </p>
                     <p className="text-gray-300 mt-2">
                       Her good karma from that first life-cycle gives her a head start: <strong className="text-white">more ATP</strong> and
                       <strong className="text-white"> higher starting trust</strong> than a brand-new entity. This is how Web4 makes
-                      long-term quality behavior compound across one identity&apos;s rebirth cycles — like compound interest on good reputation.
+                      long-term quality behavior compound across one identity&apos;s rebirth cycles - like compound interest on good reputation.
                     </p>
                   </div>
                 )}
@@ -624,7 +624,7 @@ export default function FirstContactPage() {
               <div>
                 <input
                   type="range"
-                  aria-label="Jump to simulation event"
+                  aria-label="Jump to walkthrough event"
                   min="0"
                   max={simulationSnapshots.length - 1}
                   value={playbackIndex}
@@ -679,10 +679,10 @@ export default function FirstContactPage() {
                   Just her actions from here on out.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  Her first few contributions were thoughtful—a quality post, helping a newcomer. Each action cost ATP
+                  Her first few contributions were thoughtful - a quality post, helping a newcomer. Each action cost ATP
                   (energy is finite), but her trust steadily climbed: 0.50 → 0.52 → 0.55. The community noticed quality.
                   <span className="text-gray-400 text-sm"> Unlike Reddit karma or eBay ratings, this trust is multi-dimensional,
-                  follows her across communities, and costs real energy to confirm — making it much harder to game.</span>
+                  follows her across communities, and costs real energy to confirm - making it much harder to game.</span>
                 </p>
               </div>
 
@@ -690,11 +690,11 @@ export default function FirstContactPage() {
               <div>
                 <h3 className="text-2xl font-bold text-orange-400 mb-3">The Test: Spam Doesn't Pay</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  Then Alice tried a shortcut. Bulk low-effort posts—the kind that work on traditional platforms where
+                  Then Alice tried a shortcut. Bulk low-effort posts - the kind that work on traditional platforms where
                   engagement = visibility. On Web4, it backfired immediately.
                 </p>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  <strong className="text-orange-400">The spam attempt cost 25 ATP</strong>—more than double a quality post—
+                  <strong className="text-orange-400">The spam attempt cost 25 ATP</strong> - more than double a quality post -
                   and <strong className="text-orange-400">trust dropped to 0.48</strong>, below the 0.5 threshold. Suddenly,
                   some features were restricted. The community was protecting itself.
                 </p>
@@ -708,12 +708,12 @@ export default function FirstContactPage() {
               <div>
                 <h3 className="text-2xl font-bold text-green-400 mb-3">The Recovery: Trust is Earned</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  Alice learned the lesson. She shifted back to quality contributions—thoughtful replies, valuable posts,
+                  Alice learned the lesson. She shifted back to quality contributions - thoughtful replies, valuable posts,
                   genuine collaboration. Trust climbed back above 0.5, restrictions lifted.
                 </p>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   The collaboration was particularly effective: working with an already-trusted member gave her a significant
-                  trust boost (+0.05). <strong className="text-white">Trust networks matter</strong>—who you work with affects
+                  trust boost (+0.05). <strong className="text-white">Trust networks matter</strong> - who you work with affects
                   how the community perceives you.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
@@ -728,19 +728,19 @@ export default function FirstContactPage() {
                 <h3 className="text-2xl font-bold text-red-400 mb-3">The Fall: Success Isn&apos;t Permanent</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   Alice&apos;s trust was solid, but she overextended. Too many projects, rushed quality, declining reviews.
-                  ATP drained from 80 to 35 to 12. Trust fell from 0.62 to 0.51 — barely above the threshold.
+                  ATP drained from 80 to 35 to 12. Trust fell from 0.62 to 0.51 - barely above the threshold.
                 </p>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   Then ATP hit zero. <strong className="text-red-400">Alice&apos;s entity died.</strong> No energy left to act,
-                  no way to recover. On a traditional platform, this is nothing — make a new account. In Web4,
+                  no way to recover. On a traditional platform, this is nothing - make a new account. In Web4,
                   death is real. Your record persists. Everyone can see your trajectory: the good work, the overreach,
                   the collapse.
                 </p>
                 <div className="bg-red-950/30 border border-red-900/50 rounded-lg p-4 mb-4">
                   <p className="text-gray-300 leading-relaxed text-sm">
-                    <strong className="text-red-400">Alice got lucky.</strong> Her trust was still 0.51 when ATP ran out — above the 0.50 threshold.
-                    That&apos;s what made rebirth possible. If her trust had dropped below 0.50 through sustained bad behavior — not just one mistake,
-                    but a pattern of deception — she would face <strong className="text-red-300">permanent trust death</strong>. No rebirth. No second chance.
+                    <strong className="text-red-400">Alice got lucky.</strong> Her trust was still 0.51 when ATP ran out - above the 0.50 threshold.
+                    That&apos;s what made rebirth possible. If her trust had dropped below 0.50 through sustained bad behavior - not just one mistake,
+                    but a pattern of deception - she would face <strong className="text-red-300">permanent trust death</strong>. No rebirth. No second chance.
                     The community decided she wasn&apos;t trustworthy, and that judgment stands. This is the highest stake in Web4: energy can be
                     replenished, but a destroyed reputation cannot be reset.
                   </p>
@@ -751,14 +751,14 @@ export default function FirstContactPage() {
               <div>
                 <h3 className="text-2xl font-bold text-emerald-400 mb-3">The Return: Karma Compounds</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  But Alice had built real value in her first life. Her karma — the accumulated record of quality contributions —
+                  But Alice had built real value in her first life. Her karma - the accumulated record of quality contributions -
                   entitled her to rebirth with advantages. She started her new life with <strong className="text-emerald-400">112 ATP</strong> (everyone
                   starts with 100, but the trust she built carried forward as a 12 ATP karma bonus)
                   and <strong className="text-emerald-400">0.54 trust</strong> (above the 0.50 neutral starting point, reflecting her proven track record).
                 </p>
                 <p className="text-gray-300 leading-relaxed">
                   Armed with experience, Alice paced herself. Focused quality over volume. By her second quality
-                  contribution, trust was already at 0.57 — <strong className="text-white">higher than it took 8 actions to reach in her first life</strong>.
+                  contribution, trust was already at 0.57 - <strong className="text-white">higher than it took 8 actions to reach in her first life</strong>.
                   Karma made the climb easier. Good behavior compounds across lifetimes.
                 </p>
               </div>
@@ -769,7 +769,7 @@ export default function FirstContactPage() {
                 <div className="space-y-3 text-gray-300">
                   <div>
                     <strong className="text-sky-400">Quality Pays:</strong> When someone finds Alice&apos;s work valuable, they
-                    confirm its quality — like an upvote, but it costs the reviewer a small amount of energy too.
+                    confirm its quality - like an upvote, but it costs the reviewer a small amount of energy too.
                     This confirmation converts her pending receipt (ADP) back into usable energy (ATP). Because confirming
                     costs energy, fake validation between friends is self-defeating.
                   </div>
@@ -779,20 +779,20 @@ export default function FirstContactPage() {
                   </div>
                   <div>
                     <strong className="text-purple-400">Trust is Visible:</strong> Everyone can see Alice's trust score.
-                    There's no hiding behind a fresh account—her history follows her.
+                    There's no hiding behind a fresh account - her history follows her.
                   </div>
                   <div>
                     <strong className="text-green-400">Recovery is Possible:</strong> Alice rebuilt from her spam mistake,
                     but the record of that dip is permanent. Future collaborators can see the full picture.
                   </div>
                   <div>
-                    <strong className="text-red-400">Death is Real:</strong> Running out of ATP means energy death — recoverable
+                    <strong className="text-red-400">Death is Real:</strong> Running out of ATP means energy death - recoverable
                     through karma if your trust is intact. But sustained bad behavior that drops trust below 0.50
-                    means permanent trust death — no rebirth, no fresh start. Your history persists either way.
+                    means permanent trust death - no rebirth, no fresh start. Your history persists either way.
                   </div>
                   <div>
                     <strong className="text-emerald-400">Karma Compounds:</strong> Good behavior in past lives gives you a head start
-                    in your next one. Alice&apos;s rebirth trust (0.54) was higher than the default (0.50) — earned through past quality.
+                    in your next one. Alice&apos;s rebirth trust (0.54) was higher than the default (0.50) - earned through past quality.
                   </div>
                 </div>
               </div>
@@ -805,7 +805,7 @@ export default function FirstContactPage() {
                     <p className="text-gray-400 font-medium mb-2">Reddit / traditional reputation:</p>
                     <ul className="space-y-1 text-gray-500">
                       <li>Karma is a single number (one-dimensional)</li>
-                      <li>Upvotes are free — no cost to inflate</li>
+                      <li>Upvotes are free - no cost to inflate</li>
                       <li>Karma trapped on one platform</li>
                       <li>Create new account = fresh start</li>
                       <li>Bad behavior → ban → new account → repeat</li>
@@ -815,7 +815,7 @@ export default function FirstContactPage() {
                     <p className="text-sky-400 font-medium mb-2">Web4 trust:</p>
                     <ul className="space-y-1 text-gray-300">
                       <li>Trust is multi-dimensional (skill, reliability, temperament)</li>
-                      <li>Confirming quality costs energy — can&apos;t inflate for free</li>
+                      <li>Confirming quality costs energy - can&apos;t inflate for free</li>
                       <li>Trust follows you across communities</li>
                       <li>New identity requires new hardware ($$$)</li>
                       <li>Bad behavior → death → rebirth with permanent record</li>
@@ -886,7 +886,7 @@ export default function FirstContactPage() {
                 </p>
                 <p className="text-gray-300 mb-4">
                   <strong>Society thresholds:</strong> Each society sets its own minimum trust. Fall below it?
-                  You're ejected from that society—but you can still participate in others. Your ejection
+                  You're ejected from that society - but you can still participate in others. Your ejection
                   is visible globally, affecting how other societies perceive you (like a DUI affecting your
                   pilot's license).
                 </p>
@@ -908,7 +908,7 @@ export default function FirstContactPage() {
                   Creating fake accounts requires buying new devices. Expensive to fake, impossible to scale.
                 </p>
                 <p className="text-gray-300 mb-4">
-                  <strong>Your benefit:</strong> The trust you build is truly yours—portable across all Web4
+                  <strong>Your benefit:</strong> The trust you build is truly yours - portable across all Web4
                   communities, accumulated over your lifetime, impossible to steal.
                 </p>
                 <Link href="/lct-explainer" className="text-green-400 hover:underline text-sm">
@@ -926,7 +926,7 @@ export default function FirstContactPage() {
                 </p>
                 <p className="text-gray-300 mb-4">
                   <strong>Web4 solution:</strong> Your track record is permanent and visible across societies.
-                  Get ejected from one community? Others can see why. Good behavior compounds—consistent quality
+                  Get ejected from one community? Others can see why. Good behavior compounds - consistent quality
                   builds trust that opens doors everywhere.
                 </p>
                 <p className="text-gray-300 mb-4">
@@ -1025,17 +1025,17 @@ export default function FirstContactPage() {
             {/* Primary CTA: Make it personal */}
             <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/30 border border-sky-800/30 rounded-xl p-8 text-center">
               <p className="text-xl text-gray-300 mb-2">
-                You watched Alice&apos;s story. Now make your own choices.
+                You watched Alice&apos;s story. Now see how Web4 actually runs.
               </p>
               <p className="text-gray-400 mb-6">
-                The Karma Journey puts you in control — every choice affects your trust, energy, and legacy across multiple lives.
-                What kind of trust archetype will you become?
+                The onramp is the four composable pieces that make Web4 real: the core standard (the substrate),
+                the hub (community), hestia (personal), and hardbound (enterprise). Start there to go from concept to code you can run.
               </p>
               <Link
-                href="/karma-journey"
+                href="/onramp"
                 className="inline-block px-8 py-4 bg-gradient-to-r from-sky-500 to-purple-600 text-white font-semibold rounded-lg hover:from-sky-600 hover:to-purple-700 transition-all text-lg"
               >
-                Start Your Karma Journey &rarr;
+                Explore the Onramp &rarr;
               </Link>
             </div>
 
@@ -1043,14 +1043,14 @@ export default function FirstContactPage() {
               <h3 className="text-2xl font-bold mb-2">Choose Your Path</h3>
               <p className="text-gray-400 mb-4">Pick what fits how you like to learn.</p>
               <div className="grid md:grid-cols-2 gap-4">
-                {/* Society Simulator */}
-                <Link href="/society-simulator">
+                {/* What's Running Now */}
+                <Link href="/running-now">
                   <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-emerald-500 transition-colors cursor-pointer">
-                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">I want to watch</div>
-                    <div className="text-2xl mb-2">🌐</div>
-                    <h4 className="text-lg font-bold text-emerald-400 mb-2">Society Simulator</h4>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">I want what&apos;s real</div>
+                    <div className="text-2xl mb-2">✅</div>
+                    <h4 className="text-lg font-bold text-emerald-400 mb-2">What&apos;s Running Now</h4>
                     <p className="text-gray-400 text-sm">
-                      Watch 12 agents form alliances, betray each other, and build trust networks. Observe how a whole society self-organizes.
+                      An honest map of what actually works today: the open-source reference implementation, what is deployed, and what is still R&amp;D.
                     </p>
                   </div>
                 </Link>
@@ -1062,19 +1062,19 @@ export default function FirstContactPage() {
                     <div className="text-2xl mb-2">☀️</div>
                     <h4 className="text-lg font-bold text-amber-400 mb-2">A Day in Web4</h4>
                     <p className="text-gray-400 text-sm">
-                      Walk through everyday scenarios — hiring, reviews, trolls — and see how each one works differently with trust built in.
+                      Walk through everyday scenarios - hiring, reviews, trolls - and see how each one works differently with trust built in.
                     </p>
                   </div>
                 </Link>
 
-                {/* Playground */}
-                <Link href="/playground">
+                {/* The Onramp */}
+                <Link href="/onramp">
                   <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-sky-500 transition-colors cursor-pointer">
-                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">I want to experiment</div>
-                    <div className="text-2xl mb-2">🎮</div>
-                    <h4 className="text-lg font-bold text-sky-400 mb-2">Playground</h4>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">I want to get involved</div>
+                    <div className="text-2xl mb-2">🛠️</div>
+                    <h4 className="text-lg font-bold text-sky-400 mb-2">The Onramp</h4>
                     <p className="text-gray-400 text-sm">
-                      Tweak energy costs, trust thresholds, and karma strength. See how different rules create different societies.
+                      The four composable pieces that make Web4 real: the core standard, the hub, hestia, and hardbound. See how to actually run it.
                     </p>
                   </div>
                 </Link>
@@ -1086,7 +1086,7 @@ export default function FirstContactPage() {
                     <div className="text-2xl mb-2">📚</div>
                     <h4 className="text-lg font-bold text-green-400 mb-2">Concepts In Depth</h4>
                     <p className="text-gray-400 text-sm">
-                      Understand the mechanics behind what you just saw. Trust tensors, coherence, identity — at your own pace.
+                      Understand the mechanics behind what you just saw. Trust tensors, coherence, identity - at your own pace.
                     </p>
                   </div>
                 </Link>
@@ -1112,8 +1112,8 @@ export default function FirstContactPage() {
                 <a href="https://github.com/dp-web4/4-life" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">
                   🧪 4-Life GitHub Repo
                 </a>
-                <Link href="/threat-model" className="text-red-400 hover:underline">
-                  🛡️ Security & Threat Model
+                <Link href="/what-could-go-wrong" className="text-red-400 hover:underline">
+                  🛡️ What Could Go Wrong
                 </Link>
               </div>
             </div>

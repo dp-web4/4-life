@@ -29,7 +29,7 @@ export default function ManifestPage() {
           <li>
             <strong>MRH (Markov Relevancy Horizon):</strong> Trust-based visibility boundaries.
             You see what's relevant through your trust network, not everything.{" "}
-            <Link href="/web4-explainer#mrh" className="text-sky-400">↗</Link>
+            <Link href="/trust-neighborhood" className="text-sky-400">↗</Link>
           </li>
           <li>
             <strong>T3 (Trust Tensor):</strong> 3D role-specific trust (Talent, Training, Temperament).
@@ -39,7 +39,7 @@ export default function ManifestPage() {
           <li>
             <strong>V3 (Value Tensor):</strong> 3D value measurement (Valuation, Veracity, Validity).
             Multi-dimensional value prevents single-metric gaming.{" "}
-            <Link href="/web4-explainer#t3-v3" className="text-sky-400">↗</Link>
+            <Link href="/value-tensor" className="text-sky-400">↗</Link>
           </li>
           <li>
             <strong>CI (Coherence Index):</strong> Behavioral consistency across time, space, capability, relationships.
@@ -47,14 +47,9 @@ export default function ManifestPage() {
             <Link href="/coherence-index" className="text-sky-400">↗</Link>
           </li>
           <li>
-            <strong>R6/R7 (Action Framework):</strong> Every action is Rules + Role + Request + Reference + Resource → Result + Reputation.
+            <strong>R6/R7 (Action Framework):</strong> Every action is Rules + Role + Request + Reference + Resource, producing Result + Reputation.
             Deterministic, auditable, trust-scored.{" "}
-            <Link href="/web4-explainer#r6-r7" className="text-sky-400">↗</Link>
-          </li>
-          <li>
-            <strong>EP (Epistemic Proprioception):</strong> Self-awareness of knowledge across lives.
-            Agents learn what they know and don't know through multi-life experience.{" "}
-            <Link href="/patterns" className="text-sky-400">↗</Link>
+            <Link href="/web4-explainer" className="text-sky-400">↗</Link>
           </li>
         </ul>
       </section>
@@ -75,12 +70,12 @@ export default function ManifestPage() {
             make creating thousands of fake presences expensive (though not impossible for resourced attackers).
           </li>
           <li>
-            <strong>Death is real but rebirth carries karma:</strong> Agents can die from ATP depletion,
-            but reincarnation preserves trust (T3) and learned patterns (EP) across lives.
+            <strong>Consequences persist:</strong> Bad behavior permanently damages trust (T3), and
+            abandoning an identity means starting over from zero. Karma follows the entity, not the account.
           </li>
           <li>
             <strong>Coherence provides behavioral signals:</strong> Physical and temporal constraints create
-            detectable inconsistencies when agents fake capabilities or teleport.
+            detectable inconsistencies when an actor fakes capabilities or claims to be in two places at once.
           </li>
           <li>
             <strong>Societies self-organize without central authority:</strong> Federation through ATP markets
@@ -105,86 +100,81 @@ export default function ManifestPage() {
       <section style={{ marginTop: "2rem" }}>
         <h2>Known Failure Modes</h2>
         <p style={{ marginTop: "0.5rem", color: "#9ca3af" }}>
-          See <Link href="/threat-model" className="text-sky-400 underline">Threat Model & Failure Modes</Link> for
+          See <Link href="/what-could-go-wrong" className="text-sky-400 underline">What Could Go Wrong</Link> for
           detailed analysis.
         </p>
         <ul style={{ marginTop: "0.75rem", lineHeight: "1.75" }}>
           <li>
             <strong id="sybil">Sybil attacks:</strong> Resourced attackers with many devices can create multiple presences.
             LCT raises cost floor but doesn't make impossible.{" "}
-            <Link href="/threat-model#sybil" className="text-sky-400">↗</Link>
+            <Link href="/what-could-go-wrong" className="text-sky-400">↗</Link>
           </li>
           <li>
             <strong id="collusion">Collusion & reputation laundering:</strong> Coordinated actors can inflate each other's trust scores.
             Detection time and accuracy unknown (open research).{" "}
-            <Link href="/threat-model#collusion" className="text-sky-400">↗</Link>
+            <Link href="/what-could-go-wrong" className="text-sky-400">↗</Link>
           </li>
           <li>
             <strong id="quality-inflation">Quality score inflation:</strong> Gaming T3 dimensions through selective
             presentation or temporary good behavior. Detection lag unknown.{" "}
-            <Link href="/threat-model#quality-inflation" className="text-sky-400">↗</Link>
+            <Link href="/what-could-go-wrong" className="text-sky-400">↗</Link>
           </li>
           <li>
             <strong id="goodharting">Goodharting T3 dimensions:</strong> Optimizing for measured dimensions while
             neglecting unmeasured aspects of trustworthiness.{" "}
-            <Link href="/threat-model#goodharting" className="text-sky-400">↗</Link>
+            <Link href="/what-could-go-wrong" className="text-sky-400">↗</Link>
           </li>
           <li>
             <strong id="mrh-limits">MRH visibility limits:</strong> Intentional trade-off between privacy and
             discoverability. Isolated clusters may form.{" "}
-            <Link href="/threat-model#mrh-limits" className="text-sky-400">↗</Link>
+            <Link href="/what-could-go-wrong" className="text-sky-400">↗</Link>
           </li>
           <li>
             <strong id="false-positives">False positives & contested events:</strong> A multi-tier appeals
             mechanism has been designed (SAL-level) but remains untested with real humans.{" "}
-            <Link href="/threat-model#false-positives" className="text-sky-400">↗</Link>
+            <Link href="/what-could-go-wrong" className="text-sky-400">↗</Link>
           </li>
         </ul>
       </section>
 
       <section style={{ marginTop: "2rem" }}>
-        <h2>Simulation Parameters</h2>
+        <h2>The Onramp</h2>
         <p style={{ marginTop: "0.5rem", color: "#9ca3af" }}>
-          Default presets used across lab console simulations. Explore via{" "}
-          <Link href="/playground" className="text-sky-400 underline">Parameter Playground</Link>.
+          The core standard is the substrate. Three scales run it: community, personal, and enterprise.{" "}
+          <Link href="/onramp" className="text-sky-400 underline">Start with the onramp overview</Link>.
         </p>
-        <div style={{ marginTop: "0.75rem", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "1rem" }}>
+        <div style={{ marginTop: "0.75rem", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1rem" }}>
           <div>
-            <h3 style={{ fontSize: "0.9rem", color: "#d1d5db" }}>ATP Economics</h3>
-            <ul style={{ fontSize: "0.85rem", marginTop: "0.5rem", lineHeight: "1.5", color: "#9ca3af" }}>
-              <li>Initial ATP: 100</li>
-              <li>Death threshold: 0</li>
-              <li>Small spend: 10 ATP</li>
-              <li>Risky spend: 25 ATP</li>
-              <li>Quality reward: +15 ATP</li>
-            </ul>
+            <h3 style={{ fontSize: "0.9rem", color: "#d1d5db" }}>
+              <Link href="/the-standard" className="text-sky-400">The Standard</Link>
+            </h3>
+            <p style={{ fontSize: "0.85rem", marginTop: "0.4rem", lineHeight: "1.5", color: "#9ca3af" }}>
+              The core Web4 substrate: the shared trust-native protocol everything else builds on.
+            </p>
           </div>
           <div>
-            <h3 style={{ fontSize: "0.9rem", color: "#d1d5db" }}>Trust (T3)</h3>
-            <ul style={{ fontSize: "0.85rem", marginTop: "0.5rem", lineHeight: "1.5", color: "#9ca3af" }}>
-              <li>Initial T3: 0.5</li>
-              <li>Maturation threshold: 0.7</li>
-              <li>Decay on failure: -0.05</li>
-              <li>Growth on success: +0.02</li>
-              <li>Karma preservation: 50-80%</li>
-            </ul>
+            <h3 style={{ fontSize: "0.9rem", color: "#d1d5db" }}>
+              <Link href="/hub" className="text-sky-400">The Hub</Link>
+            </h3>
+            <p style={{ fontSize: "0.85rem", marginTop: "0.4rem", lineHeight: "1.5", color: "#9ca3af" }}>
+              A Web4 society you can fork and run: community scale. Reference code, public and AGPL.
+            </p>
           </div>
           <div>
-            <h3 style={{ fontSize: "0.9rem", color: "#d1d5db" }}>Multi-Life</h3>
-            <ul style={{ fontSize: "0.85rem", marginTop: "0.5rem", lineHeight: "1.5", color: "#9ca3af" }}>
-              <li>Default lives: 3</li>
-              <li>Turns per life: 20</li>
-              <li>EP maturation: 3-5 lives</li>
-              <li>Pattern corpus: 250+ patterns</li>
-            </ul>
+            <h3 style={{ fontSize: "0.9rem", color: "#d1d5db" }}>
+              <Link href="/hestia" className="text-sky-400">Hestia</Link>
+            </h3>
+            <p style={{ fontSize: "0.85rem", marginTop: "0.4rem", lineHeight: "1.5", color: "#9ca3af" }}>
+              The personal trust layer, deployed today. Run the real thing on your own machine.
+            </p>
           </div>
           <div>
-            <h3 style={{ fontSize: "0.9rem", color: "#d1d5db" }}>Coherence (CI)</h3>
-            <ul style={{ fontSize: "0.85rem", marginTop: "0.5rem", lineHeight: "1.5", color: "#9ca3af" }}>
-              <li>Threshold: 0.5 (modulation floor)</li>
-              <li>Domains: 9 (time, space, capability, etc.)</li>
-              <li>Trust penalty: exponential below 0.5</li>
-            </ul>
+            <h3 style={{ fontSize: "0.9rem", color: "#d1d5db" }}>
+              <Link href="/hardbound" className="text-sky-400">Hardbound</Link>
+            </h3>
+            <p style={{ fontSize: "0.85rem", marginTop: "0.4rem", lineHeight: "1.5", color: "#9ca3af" }}>
+              Enterprise oversight: hardware-bound accountability for agentic systems at scale.
+            </p>
           </div>
         </div>
       </section>
@@ -193,33 +183,21 @@ export default function ManifestPage() {
         <h2>Deep Resources</h2>
         <div style={{ marginTop: "0.75rem", display: "grid", gap: "0.5rem" }}>
           <div>
-            <Link href="/spec.json" className="text-sky-400 font-semibold">→ /spec.json</Link>
+            <Link href="/web4-explainer" className="text-sky-400 font-semibold">→ /web4-explainer</Link>
             <span style={{ color: "#9ca3af", marginLeft: "0.5rem" }}>
-              Machine-readable specification (primitives, parameters, failure modes)
+              The full concept walkthrough: primitives, the action framework, and how they compose
             </span>
           </div>
           <div>
-            <Link href="/challenge-set" className="text-sky-400 font-semibold">→ /challenge-set</Link>
+            <Link href="/what-could-go-wrong" className="text-sky-400 font-semibold">→ /what-could-go-wrong</Link>
             <span style={{ color: "#9ca3af", marginLeft: "0.5rem" }}>
-              Research prompts for testing understanding and finding edge cases
+              Honest threat analysis: Sybil attacks, collusion, Goodharting, and open problems
             </span>
           </div>
           <div>
-            <Link href="/threat-model" className="text-sky-400 font-semibold">→ /threat-model</Link>
+            <Link href="/running-now" className="text-sky-400 font-semibold">→ /running-now</Link>
             <span style={{ color: "#9ca3af", marginLeft: "0.5rem" }}>
-              Comprehensive threat analysis with stable anchors (#sybil, #collusion, etc.)
-            </span>
-          </div>
-          <div>
-            <Link href="/lab-console" className="text-sky-400 font-semibold">→ /lab-console</Link>
-            <span style={{ color: "#9ca3af", marginLeft: "0.5rem" }}>
-              Interactive simulations (EP closed loop, maturation demo, five-domain)
-            </span>
-          </div>
-          <div>
-            <Link href="/playground" className="text-sky-400 font-semibold">→ /playground</Link>
-            <span style={{ color: "#9ca3af", marginLeft: "0.5rem" }}>
-              16 tunable parameters with instant feedback
+              Exactly what is deployed and runnable today versus still R&D
             </span>
           </div>
           <div>
@@ -246,18 +224,18 @@ export default function ManifestPage() {
       <section style={{ marginTop: "2rem", padding: "1.5rem", background: "#1e293b", borderRadius: "0.5rem", borderLeft: "4px solid #38bdf8" }}>
         <h2 style={{ marginTop: 0 }}>Research Status</h2>
         <p style={{ color: "#d1d5db", lineHeight: "1.75" }}>
-          This is research — but not <em>only</em> theory. The concepts sit on a maturity
+          This is research, but not <em>only</em> theory. The concepts sit on a maturity
           ladder: <strong style={{ color: "#7dd3fc" }}>spec</strong> (defined in the Web4
           ontology), <strong style={{ color: "#c4b5fd" }}>reference</strong> (built and
-          runnable — including <a href="/hub" style={{ color: "#c4b5fd" }}>the hub</a>, a
+          runnable, including <a href="/hub" style={{ color: "#c4b5fd" }}>the hub</a>, a
           Web4 society you can fork), and <strong style={{ color: "#34d399" }}>running</strong>
-          {" "}(deployed today — the <a href="/hestia" style={{ color: "#34d399" }}>hestia</a> trust
+          {" "}(deployed today: the <a href="/hestia" style={{ color: "#34d399" }}>hestia</a> trust
           layer). Other ideas are still evolving, and APIs are unstable.{" "}
           <a href="/running-now" style={{ color: "#34d399" }}>See exactly what runs &rarr;</a>
         </p>
         <p style={{ marginTop: "0.75rem", color: "#d1d5db", lineHeight: "1.75" }}>
           We share it publicly to invite collaboration. The best contributions are often
-          better questions, not just code — and now, also, running the deployed pieces yourself.
+          better questions, not just code, and now, also, running the deployed pieces yourself.
         </p>
       </section>
 
