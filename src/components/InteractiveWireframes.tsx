@@ -359,9 +359,15 @@ export function InteractiveMarketWireframe() {
                   The MECHANIC is canonical (peer transfers exist; 5% routes to the community
                   pool - atp-economics item 5), only the money vocabulary was the defect.
                   Keep the transfer/stake framing; never reintroduce "currency"/"medium of
-                  exchange" here. */}
+                  exchange" here.
+                  Jul-15 visitor MEDIUM (magnitude residual, distinct from the above): this page
+                  says "you start with 100 ATP" (day-in-web4 L590), then lists a 350-ATP camera - 
+                  the visitor couldn't square 350 with a 100 grant + "not money you accumulate",
+                  and it "bugged me for the rest of the session." Resolve the 100→350 arithmetic
+                  right at the number: balance grows as contributions earn ATP back (atp-economics
+                  L1118/L1927 "accumulate energy budget"). Still budget, not cash-out wealth. */}
               <p className="text-xs text-gray-600 mt-1.5 text-center">
-                ATP is your energy budget, and the same resource you spend on actions is also what you transfer or stake in exchanges like this one - inside the system only, never money you can cash out.
+                ATP is your energy budget, and the same resource you spend on actions is also what you transfer or stake in exchanges like this one - inside the system only, never money you can cash out. You start with 100, but contributing earns ATP back, so an active member&rsquo;s working balance climbs well past that; a 350-ATP exchange is earned budget in motion, not saved-up cash.
               </p>
             </div>
           ) : (

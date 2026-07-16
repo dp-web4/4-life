@@ -560,7 +560,19 @@ export default function LCTExplainerPage() {
                 ceiling is the <strong className="text-gray-300">lower of the two</strong>. One TPM laptop alone &rarr; 0.75
                 (device count is the limit, despite the chip&apos;s 0.90 rating); the same laptop plus two more
                 device witnesses &rarr; the full 0.90 (now chip class is the limit); a software-only setup stays
-                at 0.50 however many devices it spans.
+                at 0.50 however many devices it spans - which lands right on the 0.5 survival line, so it&apos;s fair to
+                ask whether a chip-less identity is dead on arrival. It isn&apos;t - {" "}
+                {/* Jul-15 visitor MEDIUM: this reader hit the 0.50-cap / 0.5-survival-line collision HERE, in the
+                    witness section, and bailed ~500 lines before the callout that resolves it (L1067). Same
+                    collision a Jul-9 visitor filed HIGH. Forward-pointer to the existing resolution; does NOT
+                    re-derive it or assert the > vs >= endpoint (standing canon escalation). */}
+                <a
+                  href="#software-only-survival"
+                  onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('software-only-survival')?.scrollIntoView({ behavior: 'smooth' }); }}
+                  className="text-green-400 hover:text-green-300 underline"
+                >
+                  what a 0.50 ceiling actually costs you &darr;
+                </a>.{" "}
                 Adding a second device later doesn&apos;t replace this factory attestation - it adds a device co-witness on top, raising the ceiling
                 toward 0.90.{" "}
                 <a
@@ -1068,7 +1080,7 @@ export default function LCTExplainerPage() {
               (aliveness/page.tsx isAlive/rebirthEligible/agency all use trust > 0.5). Do NOT assert the
               endpoint either way until web4 canon settles > vs >= (PR #444 rejection; standing
               escalation alongside the T3-weights conflict). */}
-          <p className="text-gray-400 text-xs mt-3 bg-gray-900/40 border border-gray-700/60 rounded-lg p-3">
+          <p id="software-only-survival" className="text-gray-400 text-xs mt-3 bg-gray-900/40 border border-gray-700/60 rounded-lg p-3 scroll-mt-24">
             <strong className="text-gray-300">&ldquo;Software-only caps at 0.50 - and 0.5 is the survival line. Am I dead on arrival?&rdquo;</strong>{" "}
             Trust death isn&apos;t a snapshot - it&apos;s falling <em>below</em> 0.5 <em>and staying there</em>, a
             sustained collapse. What the software-only ceiling really costs you is <em>margin</em>: you start at the
