@@ -4,51 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import { navigationTree } from "@/lib/navigation";
 
-const sections = [
-  {
-    label: "Start Here",
-    links: [
-      { href: "/tldr", title: "Web4 in 2 Minutes" },
-      { href: "/why-web4", title: "Why Web4?" },
-      { href: "/first-contact", title: "First Contact" },
-      { href: "/how-it-works", title: "How It Works" },
-      { href: "/learn", title: "Learning Journey" },
-      { href: "/glossary", title: "Glossary" },
-    ],
-  },
-  {
-    label: "Core Concepts",
-    links: [
-      { href: "/lct-explainer", title: "Linked Context Token" },
-      { href: "/trust-tensor", title: "Trust Tensor (T3)" },
-      { href: "/atp-economics", title: "ATP Economics" },
-      { href: "/trust-neighborhood", title: "MRH" },
-      // June 11 visitor MEDIUM (browse B): CI is one of the five landing-page key ideas but was
-      // the only one with no nav entry - /coherence-index was reachable only via inline links.
-      { href: "/coherence-index", title: "Coherence Index (CI)" },
-      { href: "/aliveness", title: "Aliveness" },
-    ],
-  },
-  {
-    label: "Interactive Labs",
-    links: [
-      { href: "/simulation-sandbox", title: "Simulation Sandbox" },
-      { href: "/onramp", title: "Society Simulator" },
-      { href: "/trust-tensor-explorer", title: "Trust Explorer" },
-      { href: "/karma-consequences", title: "Karma Journey" },
-      { href: "/learn", title: "Research Hub" },
-    ],
-  },
-  {
-    label: "AI Agents",
-    links: [
-      { href: "/understanding-consciousness", title: "AI Identity" },
-      { href: "/capacity-thresholds", title: "AI Trust Limits" },
-      { href: "/exploration-not-evaluation", title: "AI Learning" },
-    ],
-  },
-];
+// Driven by the single navigation registry so this menu can never drift from the
+// real IA (Start Here / The Onramp / Core Concepts / Going Deeper).
+const sections = Object.entries(navigationTree).map(([label, items]) => ({
+  label,
+  links: items.map((i) => ({ href: i.href, title: i.title })),
+}));
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);

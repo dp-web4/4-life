@@ -19,7 +19,7 @@ const CONCEPT_SEQUENCE: ConceptStep[] = [
   { path: '/trust-tensor', title: 'Trust Tensor (T3)', shortTitle: 'Trust' },
   { path: '/trust-neighborhood', title: 'Trust Neighborhood (MRH)', shortTitle: 'Neighborhood' },
   { path: '/coherence-index', title: 'Coherence Index (CI)', shortTitle: 'Coherence' },
-  { path: '/aliveness', title: 'Aliveness & Death', shortTitle: 'Aliveness' },
+  { path: '/karma-consequences', title: 'Karma & Consequences', shortTitle: 'Karma' },
 ];
 
 interface ConceptSequenceNavProps {
