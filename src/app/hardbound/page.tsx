@@ -5,7 +5,7 @@ import MaturityBadge from "@/components/MaturityBadge";
 import NewcomerOrientationBanner from "@/components/NewcomerOrientationBanner";
 
 /**
- * Hardbound — the enterprise oversight tier. Deep-dive landing page for the fourth
+ * Hardbound - the enterprise oversight tier. Deep-dive landing page for the fourth
  * of the four Web4 onramp pieces (core standard, hub, hestia, hardbound). Grounded
  * in the hardbound repo. HONESTY REQUIREMENT: does NOT call hardbound
  * "production-ready" or "production." It is a usable, actively-hardened R&D tier
@@ -15,7 +15,7 @@ import NewcomerOrientationBanner from "@/components/NewcomerOrientationBanner";
  */
 
 export const metadata = {
-  title: "Hardbound — the enterprise oversight tier | 4-Life",
+  title: "Hardbound - the enterprise oversight tier | 4-Life",
   description:
     "Hardbound governs every actor in an organization (human and AI alike) through hardware-bound identity, multi-witness trust, and pre-action policy enforcement, producing audit trails defensible to regulators. R&D, not a fielded product: honest about what is built and what is not yet validated.",
 };
@@ -80,7 +80,7 @@ export default function HardboundPage() {
         </p>
       </section>
 
-      {/* How it works — three pillars */}
+      {/* How it works - three pillars */}
       <section className="max-w-4xl mx-auto mt-12">
         <h2 className="text-2xl font-bold text-gray-100 mb-4">Three pillars</h2>
         <div className="grid sm:grid-cols-3 gap-3">
@@ -145,7 +145,7 @@ export default function HardboundPage() {
         </div>
       </section>
 
-      {/* Honest maturity — prominent, not buried */}
+      {/* Honest maturity - prominent, not buried */}
       <section className="max-w-4xl mx-auto mt-12">
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
           <h2 className="text-lg font-bold text-amber-300 mb-2">
@@ -192,7 +192,7 @@ export default function HardboundPage() {
               href="/hestia"
               className="rounded-lg border border-emerald-500/40 bg-emerald-500/15 px-4 py-2 text-emerald-200 hover:bg-emerald-500/25"
             >
-              Hestia — the local-first tier this hardens →
+              Hestia - the local-first tier this hardens →
             </Link>
             <Link
               href="/the-standard"

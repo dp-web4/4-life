@@ -209,7 +209,7 @@ export default function InteractiveMailDemo() {
                           ))}
                         </div>
                         <p className="text-xs text-gray-600 mt-2">
-                          These scores are earned through real interactions — not self-reported.{' '}
+                          These scores are earned through real interactions - not self-reported.{' '}
                           <Link href="/trust-tensor" className="text-sky-400 hover:underline">How trust works →</Link>
                         </p>
                       </div>
@@ -219,7 +219,7 @@ export default function InteractiveMailDemo() {
               ))}
             </div>
             <div className="px-4 py-2 text-xs text-gray-600 border-t border-gray-800">
-              0 spam — messages cost energy to send. Bots can&apos;t afford to reach you.
+              0 spam - messages cost energy to send. Bots can&apos;t afford to reach you.
             </div>
           </>
         )}
@@ -254,7 +254,7 @@ export default function InteractiveMailDemo() {
                   </div>
                   <div className="flex items-center justify-between text-xs mb-1.5">
                     <span className="text-gray-500">Your trust with Maya</span>
-                    <span className="text-emerald-400 font-mono">0.87 — high trust discount</span>
+                    <span className="text-emerald-400 font-mono">0.87 - high trust discount</span>
                   </div>
                   <div className="flex items-center justify-between text-xs pt-1.5 border-t border-gray-700/50">
                     <span className="text-gray-400 font-medium">Your balance after sending</span>
@@ -280,7 +280,7 @@ export default function InteractiveMailDemo() {
                 <p className="text-sm text-gray-300 mb-1">Message sent to Maya Chen</p>
                 <p className="text-xs text-gray-500 mb-4">Cost: 2 ATP · Balance: 146 ATP</p>
                 <p className="text-xs text-gray-600 mb-4">
-                  Maya will see your trust score (0.87) alongside the message —
+                  Maya will see your trust score (0.87) alongside the message - 
                   she knows you&apos;re a real person with a real reputation.
                 </p>
                 <button
@@ -299,7 +299,7 @@ export default function InteractiveMailDemo() {
           <div className="p-4">
             <p className="text-sm text-gray-300 mb-1">Why you&apos;ll never see spam in Web4 Mail</p>
             <p className="text-xs text-gray-500 mb-4">
-              On today&apos;s internet, sending email is essentially free — so spammers send millions.
+              On today&apos;s internet, sending email is essentially free - so spammers send millions.
               In Web4, every message costs the sender energy (ATP). Watch what happens when a
               spammer tries:
             </p>
@@ -361,7 +361,7 @@ export default function InteractiveMailDemo() {
                     </div>
                     <p className="text-xs text-gray-500">
                       No filters. No AI detection. No blocklists.
-                      Spam dies because it&apos;s economically impossible — the sender runs out of energy before reaching you.{' '}
+                      Spam dies because it&apos;s economically impossible - the sender runs out of energy before reaching you.{' '}
                       <Link href="/atp-economics" className="text-sky-400 hover:underline">Learn about ATP →</Link>
                     </p>
                     <button

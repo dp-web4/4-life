@@ -917,7 +917,7 @@ export default function KarmaConsequencesPage() {
             Coherence Index
           </Link>
           <Link
-            href="/threat-model"
+            href="/what-could-go-wrong"
             className="px-6 py-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg transition-colors"
           >
             Threat Model

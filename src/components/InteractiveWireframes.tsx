@@ -14,7 +14,7 @@ const CANDIDATES = [
       topSkills: ['Brand Identity', 'Typography', 'Motion Graphics'],
       recentWork: '4.9 avg quality across last 20 projects',
       responseTime: 'Usually replies within 2 hours',
-      rate: '45 ATP/hour — high-trust discount applied (30% off)',
+      rate: '45 ATP/hour - high-trust discount applied (30% off)',
     },
   },
   {
@@ -24,7 +24,7 @@ const CANDIDATES = [
       topSkills: ['Illustration', 'Photoshop'],
       recentWork: '3 projects completed, all rated above average',
       responseTime: 'Usually replies within 6 hours',
-      rate: '20 ATP/hour — newcomer rate (no discount yet)',
+      rate: '20 ATP/hour - newcomer rate (no discount yet)',
     },
   },
 ];
@@ -37,7 +37,7 @@ export function InteractiveTalentWireframe() {
       <div className="overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
         <div className="flex items-center gap-3 px-4 py-2.5 border-b border-gray-700" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
           <div className="w-2 h-2 rounded-full bg-purple-400" />
-          <span className="text-sm font-medium text-gray-300">Applicants — Logo Design</span>
+          <span className="text-sm font-medium text-gray-300">Applicants - Logo Design</span>
           <span className="text-xs text-gray-500 ml-auto">2 candidates</span>
         </div>
         <div className="p-4 space-y-3">
@@ -52,7 +52,7 @@ export function InteractiveTalentWireframe() {
                 <div className="flex items-center justify-between mb-2">
                   <span className="font-medium text-gray-200 text-sm">{c.name}</span>
                   <span className={`text-xs ${c.badgeColor} px-2 py-0.5 rounded-full`}>
-                    {c.badge} — {c.projects} projects
+                    {c.badge} - {c.projects} projects
                   </span>
                 </div>
                 <div className="grid grid-cols-3 gap-2 text-xs mb-2">
@@ -101,7 +101,7 @@ export function InteractiveTalentWireframe() {
           ))}
         </div>
         <div className="px-4 py-2 text-xs text-gray-600 border-t border-gray-800">
-          <span className="text-purple-400/70">Click a candidate</span> to see skills and rates. No fake portfolios — trust scores earned through real projects.
+          <span className="text-purple-400/70">Click a candidate</span> to see skills and rates. No fake portfolios - trust scores earned through real projects.
         </div>
       </div>
     </WireframeFrame>
@@ -133,7 +133,7 @@ export function InteractiveReviewsWireframe() {
       <div className="overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
         <div className="flex items-center gap-3 px-4 py-2.5 border-b border-gray-700" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
           <div className="w-2 h-2 rounded-full bg-amber-400" />
-          <span className="text-sm font-medium text-gray-300">Golden Dragon — 89 reviews</span>
+          <span className="text-sm font-medium text-gray-300">Golden Dragon - 89 reviews</span>
           <span className="text-xs text-amber-400 font-mono ml-auto">4.6 ★</span>
         </div>
         <div className="p-4 space-y-3">
@@ -183,7 +183,7 @@ export function InteractiveReviewsWireframe() {
           ))}
         </div>
         <div className="px-4 py-2 text-xs text-gray-600 border-t border-gray-800">
-          <span className="text-amber-400/70">Click a reviewer</span> to see their trust profile. Every review cost energy — no review farms.
+          <span className="text-amber-400/70">Click a reviewer</span> to see their trust profile. Every review cost energy - no review farms.
         </div>
       </div>
     </WireframeFrame>
@@ -306,7 +306,7 @@ export function InteractiveMarketWireframe() {
       <div className="overflow-hidden" style={{ background: 'rgba(17, 24, 39, 0.8)' }}>
         <div className="flex items-center gap-3 px-4 py-2.5 border-b border-gray-700" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
           <div className="w-2 h-2 rounded-full bg-violet-400" />
-          <span className="text-sm font-medium text-gray-300">Marketplace — Used Camera</span>
+          <span className="text-sm font-medium text-gray-300">Marketplace - Used Camera</span>
         </div>
         <div className="p-4">
           {/* Seller profile */}
@@ -322,7 +322,7 @@ export function InteractiveMarketWireframe() {
                 <div><span className="text-gray-500">Transactions</span><div className="text-gray-300">43 completed</div></div>
                 <div><span className="text-gray-500">Disputes</span><div className="text-gray-300">0</div></div>
               </div>
-              <p className="text-xs text-gray-500">Trust earned through 43 real transactions — not self-reported star ratings.</p>
+              <p className="text-xs text-gray-500">Trust earned through 43 real transactions - not self-reported star ratings.</p>
             </div>
           </div>
           {/* Trust assessment */}
@@ -341,7 +341,7 @@ export function InteractiveMarketWireframe() {
                 </span>
                 <span className="text-sky-400">0.64</span>
               </div>
-              <div className="flex justify-between"><span>Escrow cost</span><span className="text-gray-300">2 ATP (reduced — high seller trust)</span></div>
+              <div className="flex justify-between"><span>Escrow cost</span><span className="text-gray-300">2 ATP (reduced - high seller trust)</span></div>
             </div>
           </div>
           {/* Buy button / Escrow flow */}
@@ -351,17 +351,17 @@ export function InteractiveMarketWireframe() {
                 onClick={() => { setShowEscrow(true); setEscrowStep(0); }}
                 className="w-full py-2 rounded-lg bg-violet-600/30 border border-violet-500/40 text-violet-300 hover:bg-violet-600/50 transition-colors text-sm font-medium"
               >
-                Buy for 350 ATP — see how escrow works
+                Buy for 350 ATP - see how escrow works
               </button>
               {/* Jul-14 visitor MEDIUM (their #1): "currency" here directly contradicted
                   why-web4's emphatic "not a financial asset" FAQ and atp-economics's "This is
-                  not a currency." — read in one sitting, the visitor stopped and re-read.
+                  not a currency." - read in one sitting, the visitor stopped and re-read.
                   The MECHANIC is canonical (peer transfers exist; 5% routes to the community
-                  pool — atp-economics item 5), only the money vocabulary was the defect.
+                  pool - atp-economics item 5), only the money vocabulary was the defect.
                   Keep the transfer/stake framing; never reintroduce "currency"/"medium of
                   exchange" here. */}
               <p className="text-xs text-gray-600 mt-1.5 text-center">
-                ATP is your energy budget, and the same resource you spend on actions is also what you transfer or stake in exchanges like this one — inside the system only, never money you can cash out.
+                ATP is your energy budget, and the same resource you spend on actions is also what you transfer or stake in exchanges like this one - inside the system only, never money you can cash out.
               </p>
             </div>
           ) : (
@@ -406,7 +406,7 @@ export function InteractiveMarketWireframe() {
           )}
         </div>
         <div className="px-4 py-2 text-xs text-gray-600 border-t border-gray-800">
-          <span className="text-violet-400/70">{showEscrow ? 'Step through the escrow flow' : 'Click \u201CBuy\u201D'}</span> — every number traces back to real interactions with real people.
+          <span className="text-violet-400/70">{showEscrow ? 'Step through the escrow flow' : 'Click \u201CBuy\u201D'}</span> - every number traces back to real interactions with real people.
         </div>
       </div>
     </WireframeFrame>

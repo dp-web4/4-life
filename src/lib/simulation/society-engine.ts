@@ -143,12 +143,12 @@ export const DEFAULT_SOCIETY_CONFIG: SocietyConfig = {
 };
 
 // `typical` = what usually happens, for readers who don't press Run (June-12 visitor LOW).
-// Grounded in measured 30-seed runs of each preset, not guessed — re-measure if configs change.
+// Grounded in measured 30-seed runs of each preset, not guessed - re-measure if configs change.
 export const SOCIETY_PRESETS: Record<string, { label: string; description: string; typical?: string; config: Partial<SocietyConfig> }> = {
   'cooperative-majority': {
     label: 'Cooperative Majority',
     description: 'Most agents cooperate. Do defectors thrive or get isolated?',
-    typical: 'Typical run: cooperation settles near 70% and nobody dies — the defectors don\'t starve, they get isolated while the other ten agents close into a single trust coalition.',
+    typical: 'Typical run: cooperation settles near 70% and nobody dies - the defectors don\'t starve, they get isolated while the other ten agents close into a single trust coalition.',
     config: {
       numAgents: 12,
       strategies: { cooperator: 5, defector: 2, reciprocator: 3, cautious: 1, adaptive: 1 },
@@ -158,7 +158,7 @@ export const SOCIETY_PRESETS: Record<string, { label: string; description: strin
   'hostile-world': {
     label: 'Hostile World',
     description: 'Defectors outnumber cooperators. Can trust survive?',
-    typical: 'Typical run: trust survives, barely — a cooperator–reciprocator cluster of 6–7 forms, but society-wide cooperation stays near 40% and average trust ends below the 0.5 neutral line.',
+    typical: 'Typical run: trust survives, barely - a cooperator-reciprocator cluster of 6-7 forms, but society-wide cooperation stays near 40% and average trust ends below the 0.5 neutral line.',
     config: {
       numAgents: 12,
       strategies: { cooperator: 2, defector: 5, reciprocator: 2, cautious: 2, adaptive: 1 },
@@ -169,7 +169,7 @@ export const SOCIETY_PRESETS: Record<string, { label: string; description: strin
   'reciprocity-rules': {
     label: 'Reciprocity Rules',
     description: 'Tit-for-tat dominates. The evolution of cooperation.',
-    typical: 'Typical run: tit-for-tat wins — cooperation reaches about 65% and nearly the whole village (10 of 12 agents) ends up inside one coalition, defectors included.',
+    typical: 'Typical run: tit-for-tat wins - cooperation reaches about 65% and nearly the whole village (10 of 12 agents) ends up inside one coalition, defectors included.',
     config: {
       numAgents: 12,
       strategies: { cooperator: 1, defector: 2, reciprocator: 7, cautious: 1, adaptive: 1 },
@@ -179,7 +179,7 @@ export const SOCIETY_PRESETS: Record<string, { label: string; description: strin
   'trust-scarce': {
     label: 'Trust Scarce',
     description: 'Everyone starts cautious. High cost of failure.',
-    typical: 'Typical run: slow start, strong finish — caution delays trust-building, but cooperation still ends near 70% with most of the society in one coalition and no deaths.',
+    typical: 'Typical run: slow start, strong finish - caution delays trust-building, but cooperation still ends near 70% with most of the society in one coalition and no deaths.',
     config: {
       numAgents: 10,
       strategies: { cooperator: 1, defector: 1, reciprocator: 2, cautious: 5, adaptive: 1 },
@@ -192,7 +192,7 @@ export const SOCIETY_PRESETS: Record<string, { label: string; description: strin
   'all-adaptive': {
     label: 'All Adaptive',
     description: 'Pure learning society. Strategy emerges from interaction.',
-    typical: 'Typical run: the surprise of the set — with no committed cooperators to anchor trust, learning alone rarely bootstraps it. Cooperation stays near 25%, trust collapses, and about 4 agents starve and are reborn.',
+    typical: 'Typical run: the surprise of the set - with no committed cooperators to anchor trust, learning alone rarely bootstraps it. Cooperation stays near 25%, trust collapses, and about 4 agents starve and are reborn.',
     config: {
       numAgents: 10,
       strategies: { cooperator: 0, defector: 0, reciprocator: 0, cautious: 0, adaptive: 10 },
@@ -244,7 +244,7 @@ export const SOCIETY_PRESETS: Record<string, { label: string; description: strin
 export type StrategyType = 'cooperator' | 'defector' | 'reciprocator' | 'cautious' | 'adaptive' | 'human';
 
 // ============================================================================
-// Agent Roles — orthogonal to strategy (a farmer can be a cooperator OR defector)
+// Agent Roles - orthogonal to strategy (a farmer can be a cooperator OR defector)
 // ============================================================================
 
 export type AgentRoleName = 'farmer' | 'builder' | 'healer' | 'merchant' | 'teacher' | 'guard' | 'artisan' | 'scout';
@@ -1079,7 +1079,7 @@ export class SocietyEngine {
 
     let narrative: string;
     if (a1NeedsA2 && a2NeedsA1) {
-      narrative = `${a1.name} the ${role1.label} and ${a2.name} the ${role2.label} trade — ${role1.provides} for ${role2.provides}`;
+      narrative = `${a1.name} the ${role1.label} and ${a2.name} the ${role2.label} trade - ${role1.provides} for ${role2.provides}`;
     } else if (a1NeedsA2) {
       narrative = `${a1.name} the ${role1.label} needs ${role2.provides} from ${a2.name} the ${role2.label}`;
     } else if (a2NeedsA1) {
@@ -1302,7 +1302,7 @@ export class SocietyEngine {
         this.events.push({
           epoch,
           type: 'agent_death',
-          message: `${agent.name} the ${roleInfo.label} died — ran out of energy`,
+          message: `${agent.name} the ${roleInfo.label} died - ran out of energy`,
           agentIds: [agent.id],
           significance: agent.strategy === 'defector'
             ? 'Cheating catches up with you eventually'
@@ -1474,7 +1474,7 @@ export class SocietyEngine {
       return a ? `${a.name} the ${AGENT_ROLES[a.role].label}` : `Agent #${id}`;
     };
 
-    // Coalition formation — humanized
+    // Coalition formation - humanized
     if (coalitions.length > 0 && epoch > 0) {
       const largest = coalitions[0];
       if (largest.members.length >= 4) {
@@ -1491,28 +1491,28 @@ export class SocietyEngine {
         this.events.push({
           epoch,
           type: 'coalition_formed',
-          message: `The ${uniqueRoles.join('s, ')}s have formed a trade alliance — ${memberNames}${largest.members.length > 2 ? ` and ${largest.members.length - 2} others` : ''}`,
+          message: `The ${uniqueRoles.join('s, ')}s have formed a trade alliance - ${memberNames}${largest.members.length > 2 ? ` and ${largest.members.length - 2} others` : ''}`,
           agentIds: largest.members,
           significance: 'Complementary roles create natural alliances built on mutual need',
         });
       }
     }
 
-    // Defector isolation — humanized
+    // Defector isolation - humanized
     const aliveDefectors = this.agents.filter(a => a.alive && a.strategy === 'defector');
     for (const defector of aliveDefectors) {
       if (defector.coalitionPartners.size === 0 && defector.totalInteractions > 5) {
         this.events.push({
           epoch,
           type: 'defector_isolated',
-          message: `${defector.name} the ${AGENT_ROLES[defector.role].label} has been shunned — nobody trades with them`,
+          message: `${defector.name} the ${AGENT_ROLES[defector.role].label} has been shunned - nobody trades with them`,
           agentIds: [defector.id],
           significance: 'Word gets around. Communities protect themselves from exploitation.',
         });
       }
     }
 
-    // Community reputation event — most trusted person
+    // Community reputation event - most trusted person
     const aliveAgents = this.agents.filter(a => a.alive);
     const mostTrusted = aliveAgents.reduce((best, a) => a.reputation > best.reputation ? a : best, aliveAgents[0]);
     if (mostTrusted && mostTrusted.reputation > 0.7 && epoch > 0) {
@@ -1535,8 +1535,8 @@ export class SocietyEngine {
       this.events.push({
         epoch,
         type: 'cooperation_surge',
-        message: `The village is thriving — ${(epochCoopRate * 100).toFixed(0)}% of deals were fair`,
-        significance: 'Trust begets trust — cooperation becomes self-reinforcing',
+        message: `The village is thriving - ${(epochCoopRate * 100).toFixed(0)}% of deals were fair`,
+        significance: 'Trust begets trust - cooperation becomes self-reinforcing',
       });
     }
 
@@ -1545,7 +1545,7 @@ export class SocietyEngine {
       this.events.push({
         epoch,
         type: 'trust_collapse',
-        message: `Trust has collapsed — neighbors eye each other with suspicion`,
+        message: `Trust has collapsed - neighbors eye each other with suspicion`,
         significance: 'Without trust, the village economy breaks down',
       });
     }
@@ -1555,7 +1555,7 @@ export class SocietyEngine {
       this.events.push({
         epoch,
         type: 'society_stable',
-        message: `The village has found its rhythm — trust ${metrics.averageTrust.toFixed(2)}, fair deals ${(metrics.cooperationRate * 100).toFixed(0)}%`,
+        message: `The village has found its rhythm - trust ${metrics.averageTrust.toFixed(2)}, fair deals ${(metrics.cooperationRate * 100).toFixed(0)}%`,
         significance: 'A functioning society where roles complement each other',
       });
     }

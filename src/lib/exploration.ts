@@ -1,5 +1,5 @@
 /**
- * Exploration Tracker — Unified site-wide state persistence
+ * Exploration Tracker - Unified site-wide state persistence
  *
  * Tracks what the visitor has explored across sessions via localStorage.
  * Lightweight: one key, one JSON object. Read/write from any page.
@@ -95,7 +95,7 @@ export function saveExploration(profile: ExplorationProfile): void {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(profile));
   } catch {
-    // localStorage full or unavailable — fail silently
+    // localStorage full or unavailable - fail silently
   }
 }
 

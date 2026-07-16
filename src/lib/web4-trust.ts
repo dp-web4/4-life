@@ -1,11 +1,11 @@
 /**
- * Web4 Trust Engine — WASM Bridge
+ * Web4 Trust Engine - WASM Bridge
  *
  * Loads the real web4-trust-core WASM module and provides
  * a clean API for browser-side trust calculations.
  *
  * The WASM binary (66KB) contains the same trust primitives
- * used in the web4 protocol — T3/V3 tensors, entity trust,
+ * used in the web4 protocol - T3/V3 tensors, entity trust,
  * witnessing, and decay.
  */
 
@@ -14,7 +14,7 @@ let initPromise: Promise<typeof import('./wasm/web4_trust_core')> | null = null;
 
 /**
  * Initialize the WASM trust engine.
- * Safe to call multiple times — will only init once.
+ * Safe to call multiple times - will only init once.
  */
 export async function initTrustEngine() {
   if (wasmModule) return wasmModule;

@@ -21,7 +21,7 @@ export const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
     feedback: {
       ban: {
         text: 'They make a new account in 30 seconds and do it again.',
-        web4: 'Web4: every action costs attention energy (ATP — your energy budget). Spam burns through it with no return. Spammers die.',
+        web4: 'Web4: every action costs attention energy (ATP - your energy budget). Spam burns through it with no return. Spammers die.',
       },
       captcha: {
         text: 'AI solves CAPTCHAs better than humans now. Arms race never ends.',
@@ -48,11 +48,11 @@ export const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
       },
       phone: {
         text: 'Burner SIMs cost $5. Phone farms exist. This slows trolls slightly but doesn\'t stop them.',
-        web4: 'Web4: goes deeper than phone numbers — cryptographic keys in your device\'s security chip (TPM/Secure Enclave) prove it\'s really you.',
+        web4: 'Web4: goes deeper than phone numbers - cryptographic keys in your device\'s security chip (TPM/Secure Enclave) prove it\'s really you.',
       },
       hardware: {
         text: 'You\'re thinking like Web4. This mechanism is called LCT (Linked Context Token).',
-        web4: 'Identity is anchored to security chips (TPM/Secure Enclave) across your devices — phone, laptop, tablet form a constellation linked by LCTs. No new identity without new hardware. Reputation follows you, not a username.',
+        web4: 'Identity is anchored to security chips (TPM/Secure Enclave) across your devices - phone, laptop, tablet form a constellation linked by LCTs. No new identity without new hardware. Reputation follows you, not a username.',
       },
     },
   },
@@ -67,7 +67,7 @@ export const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
     feedback: {
       delete: {
         text: 'They start fresh with a new account. Three years of context erased. No lessons learned.',
-        web4: 'Web4: reputation is permanent. Bad behavior costs trust. But good history isn\'t erased — it enables recovery if they change.',
+        web4: 'Web4: reputation is permanent. Bad behavior costs trust. But good history isn\'t erased - it enables recovery if they change.',
       },
       warning: {
         text: 'Warnings without consequences teach people to push limits. Three warnings later, nothing changed.',
@@ -75,7 +75,7 @@ export const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
       },
       permanent: {
         text: 'You\'re thinking like Web4. This is how karma and the Trust Tensor (T3) work together.',
-        web4: 'Your track record is permanent. Bad behavior reduces trust across multiple dimensions — but a 3-year positive history provides resilience. One bad day doesn\'t erase years of contribution.',
+        web4: 'Your track record is permanent. Bad behavior reduces trust across multiple dimensions - but a 3-year positive history provides resilience. One bad day doesn\'t erase years of contribution.',
       },
     },
   },
@@ -89,7 +89,7 @@ export const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
     ],
     feedback: {
       'hand-over': {
-        text: 'Now they have your data forever. They get breached next year — your information is on the dark web.',
+        text: 'Now they have your data forever. They get breached next year - your information is on the dark web.',
         web4: 'Web4: zero-knowledge proofs let you prove "my trust score exceeds 0.7" without revealing the score, your history, or your identity. The verifier gets confidence; you keep your privacy.',
       },
       fake: {
@@ -98,7 +98,7 @@ export const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
       },
       prove: {
         text: 'You\'re thinking like Web4. This mechanism is called zero-knowledge trust proofs.',
-        web4: 'Cryptographic proofs let you verify claims without revealing underlying data. "This person is trustworthy for this context" — mathematically proven, without exposing who they are or how they got there.',
+        web4: 'Cryptographic proofs let you verify claims without revealing underlying data. "This person is trustworthy for this context" - mathematically proven, without exposing who they are or how they got there.',
       },
     },
   },
@@ -106,22 +106,22 @@ export const DILEMMA_QUESTIONS: DilemmaQuestion[] = [
     question: 'You\'ve built a stellar reputation on one platform. You join a new community. Should your old reputation count?',
     pillar: 'Portability',
     options: [
-      { id: 'fresh', label: 'Start from zero — everyone should', icon: '🌱' },
+      { id: 'fresh', label: 'Start from zero - everyone should', icon: '🌱' },
       { id: 'import', label: 'Import your full profile', icon: '📦' },
       { id: 'relevant', label: 'Carry over only what\'s relevant', icon: '🎯' },
     ],
     feedback: {
       fresh: {
         text: 'Fair, but punishing. Years of proven behavior mean nothing. Good actors subsidize the cost of bad ones.',
-        web4: 'Web4: you don\'t start at zero — your trust dimensions travel with you. But only the relevant ones apply. Your cooking trust doesn\'t boost your coding credibility.',
+        web4: 'Web4: you don\'t start at zero - your trust dimensions travel with you. But only the relevant ones apply. Your cooking trust doesn\'t boost your coding credibility.',
       },
       import: {
         text: 'Dangerous. A 5-star Airbnb host isn\'t automatically a trustworthy financial advisor. Importing everything conflates expertise.',
-        web4: 'Web4: trust is multi-dimensional (T3). You can\'t import "general reputation" — each dimension (Talent, Training, Temperament) is role-specific. What transfers is your behavioral consistency, not your domain expertise.',
+        web4: 'Web4: trust is multi-dimensional (T3). You can\'t import "general reputation" - each dimension (Talent, Training, Temperament) is role-specific. What transfers is your behavioral consistency, not your domain expertise.',
       },
       relevant: {
         text: 'You\'re thinking like Web4. This is how Trust Tensors (T3) and role-specific trust work together.',
-        web4: 'Trust Tensors are multi-dimensional and role-specific. When you join a new community, your relevant trust dimensions transfer automatically — but your expertise in one domain doesn\'t inflate your reputation in another.',
+        web4: 'Trust Tensors are multi-dimensional and role-specific. When you join a new community, your relevant trust dimensions transfer automatically - but your expertise in one domain doesn\'t inflate your reputation in another.',
       },
     },
   },
@@ -310,7 +310,7 @@ export default function TrustDilemma() {
         <strong>{currentQuestion!.question}</strong>
       </p>
       <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', marginBottom: '1rem' }}>
-        Pick your answer — then see how Web4 handles it.
+        Pick your answer - then see how Web4 handles it.
       </p>
       <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
         {currentQuestion!.options.map(opt => (

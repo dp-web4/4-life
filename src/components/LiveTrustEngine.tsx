@@ -1,11 +1,11 @@
 'use client';
 
 /**
- * Live Trust Engine — Real web4 trust calculations in the browser
+ * Live Trust Engine - Real web4 trust calculations in the browser
  *
  * This component loads the actual web4-trust-core WASM module (66KB)
  * and lets visitors create entities, perform actions, witness events,
- * and watch trust evolve — all using the real protocol math.
+ * and watch trust evolve - all using the real protocol math.
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';
@@ -53,8 +53,8 @@ const SCENARIOS: { label: string; description: string; actions: ActionLog[] }[] 
       { tick: 2, actor: 'bob', action: 'Collaborative project', success: true, magnitude: 0.9, result: '' },
       { tick: 3, actor: 'bob', action: 'Help a newcomer', success: true, magnitude: 0.7, result: '' },
       { tick: 4, actor: 'bob', action: 'Peer review', success: true, magnitude: 0.6, result: '' },
-      { tick: 5, actor: 'bob', action: 'SPAM — low quality post', success: false, magnitude: 0.9, result: '' },
-      { tick: 6, actor: 'bob', action: 'FRAUD — fake credentials', success: false, magnitude: 1.0, result: '' },
+      { tick: 5, actor: 'bob', action: 'SPAM - low quality post', success: false, magnitude: 0.9, result: '' },
+      { tick: 6, actor: 'bob', action: 'FRAUD - fake credentials', success: false, magnitude: 1.0, result: '' },
       { tick: 7, actor: 'bob', action: 'Quality contribution', success: true, magnitude: 0.7, result: '' },
       { tick: 8, actor: 'bob', action: 'Quality contribution', success: true, magnitude: 0.8, result: '' },
     ],
@@ -423,7 +423,7 @@ export default function LiveTrustEngine() {
                   <span className="text-gray-300 font-medium">
                     {entry.actor.charAt(0).toUpperCase() + entry.actor.slice(1)}
                   </span>
-                  {' — '}
+                  {' - '}
                   {entry.action}
                 </span>
                 <span className={`ml-auto font-mono ${entry.success ? 'text-emerald-500' : 'text-red-400'}`}>
@@ -439,7 +439,7 @@ export default function LiveTrustEngine() {
           <div className="bg-emerald-900/20 border border-emerald-800/30 rounded-lg p-4">
             <p className="text-sm text-emerald-300 font-medium mb-1">
               {selectedScenario === 0 && 'Consistent quality compounds trust exponentially.'}
-              {selectedScenario === 1 && 'Betrayal destroys trust faster than cooperation builds it — the asymmetry is by design.'}
+              {selectedScenario === 1 && 'Betrayal destroys trust faster than cooperation builds it - the asymmetry is by design.'}
               {selectedScenario === 2 && 'Witnessing creates trust that outlives any single action.'}
             </p>
             <p className="text-xs text-gray-500">

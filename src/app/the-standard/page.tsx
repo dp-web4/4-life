@@ -5,14 +5,14 @@ import MaturityBadge from "@/components/MaturityBadge";
 import NewcomerOrientationBanner from "@/components/NewcomerOrientationBanner";
 
 /**
- * The core standard — the open ontology at the base of the Web4 onramp.
+ * The core standard - the open ontology at the base of the Web4 onramp.
  * Grounded ONLY in the public web4 repo: the canonical equation, the honest
  * R&D status, and the newcomer's first-touch path. One of four onramp pieces
  * (the standard, the hub, hestia, hardbound).
  */
 
 export const metadata = {
-  title: "The core standard — the open ontology under Web4 | 4-Life",
+  title: "The core standard - the open ontology under Web4 | 4-Life",
   description:
     "The core standard is an open ontology (not infrastructure) that makes AI actions verifiable: every entity is anchored to cryptographically witnessed presence, role-contextual trust, and auditable authority, expressed as typed RDF relationships.",
 };

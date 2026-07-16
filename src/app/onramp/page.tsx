@@ -5,7 +5,7 @@ import MaturityBadge from "@/components/MaturityBadge";
 import NewcomerOrientationBanner from "@/components/NewcomerOrientationBanner";
 
 /**
- * The Web4 onramp — how the four pieces compose. The core standard is the
+ * The Web4 onramp - how the four pieces compose. The core standard is the
  * substrate; the hub, hestia, and hardbound are three ways to run it at three
  * scales (community, personal, enterprise). Grounded in the public repos.
  * The "four-piece" phrasing is a synthesizing lens, not a repo term, but it
@@ -13,7 +13,7 @@ import NewcomerOrientationBanner from "@/components/NewcomerOrientationBanner";
  */
 
 export const metadata = {
-  title: "The Web4 onramp — how the four pieces compose | 4-Life",
+  title: "The Web4 onramp - how the four pieces compose | 4-Life",
   description:
     "One substrate, three scales. The core standard is what you build on; the hub (community), hestia (personal/agent), and hardbound (enterprise) are three ways to run it. Here is the dependency order, the adoption order, and the real in-code seams that connect them.",
 };

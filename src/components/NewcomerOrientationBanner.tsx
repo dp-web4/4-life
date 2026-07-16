@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 /**
- * NewcomerOrientationBanner — a single compact row at the top of the "deployed
+ * NewcomerOrientationBanner - a single compact row at the top of the "deployed
  * reality" pages (/running-now, /hestia, /hub).
  *
  * Why: the June-21 naive-visitor browse (first test of these pages) reported that
- * all three "read like internal docs" — they tour already-running software and
+ * all three "read like internal docs" - they tour already-running software and
  * assume the Web4 vocabulary (LCT, T3/V3, witness chain, sealed channels) before
  * defining it, and a newcomer can reach them before learning any of it. Rather
  * than gloss every term inline (heavier, risks density), steer the newcomer back
@@ -16,12 +16,12 @@ import Link from "next/link";
  *
  * Jul-14 (seams-integrity pass): "software that's already running" → "real,
  * runnable software". This banner renders on /hub too, where the software is
- * canonically Reference tier — runnable but NOT running (running-now's badge
+ * canonically Reference tier - runnable but NOT running (running-now's badge
  * legend: "runnable is not the same as running"). The wording must be true on
  * all three host pages; each page states its own tier in its own copy.
  *
  * June-22 (first newcomer test of the banner): it worked ("a real save") but read
- * as a pure redirect/dead-end — no reason to return, no mental picture of what's
+ * as a pure redirect/dead-end - no reason to return, no mental picture of what's
  * here. Closing clause now adds both: a reason-to-return promise ("the proof Web4
  * works in practice") and a plain-language picture ("real, open-source software you
  * can run yourself"), accurate across all 3 pages (trust-layer daemon + society hub).
@@ -48,7 +48,7 @@ export default function NewcomerOrientationBanner({
         >
           2-minute TL;DR
         </Link>
-        , then come back &mdash; what&apos;s here is real, open-source software you
+        , then come back - what&apos;s here is real, open-source software you
         can run yourself, the proof Web4 works in practice and not just on paper.
         Every term is spelled out in the TL;DR; definitions also live in the glossary
         (<strong>Aa</strong>, bottom-left).

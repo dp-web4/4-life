@@ -150,7 +150,7 @@ function ContributeScreen() {
       {/* Compose card */}
       <div className="rounded-lg bg-gray-800/70 border border-gray-700 p-3 mb-3">
         <p className="text-xs text-gray-300 leading-snug mb-2">
-          &ldquo;Replacing a kitchen faucet washer &mdash; here’s the size chart I used.&rdquo;
+          &ldquo;Replacing a kitchen faucet washer - here’s the size chart I used.&rdquo;
         </p>
         <div className="flex items-center justify-between text-[10px] text-gray-500">
           <span>Cost: <span className="text-amber-400 font-medium">8 ATP</span></span>

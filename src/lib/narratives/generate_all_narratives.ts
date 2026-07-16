@@ -37,7 +37,7 @@ const SIMULATIONS: SimulationConfig[] = [
     id: 'ep-driven-closed-loop',
     type: 'Cross-Life Learning',
     titleOverride: (name, themes) =>
-      `${name}: Learning Through Action — Self-Aware Pattern Discovery`,
+      `${name}: Learning Through Action - Self-Aware Pattern Discovery`,
     summaryPrefix: 'This cross-life learning simulation demonstrates how an agent learns by proposing actions, observing outcomes, and refining its understanding across lives.',
     extraThemes: ['Closed-Loop Learning'],
   },
@@ -46,7 +46,7 @@ const SIMULATIONS: SimulationConfig[] = [
     id: 'ep-five-domain-multi-life',
     type: 'Five-Domain Learning',
     titleOverride: (name, themes) =>
-      `${name}: Five Domains of Knowing — Emotional, Quality, Attention, Grounding, Authorization`,
+      `${name}: Five Domains of Knowing - Emotional, Quality, Attention, Grounding, Authorization`,
     summaryPrefix: 'This five-domain simulation assesses an agent across all learning dimensions: emotional regulation, quality judgment, attention management, grounding verification, and authorization awareness.',
     extraThemes: ['Multi-Domain Assessment'],
   },
@@ -55,7 +55,7 @@ const SIMULATIONS: SimulationConfig[] = [
     id: 'maturation-web4',
     type: 'Maturation (Web4 Patterns)',
     titleOverride: (name, themes) =>
-      `${name}: Maturation with Web4 Patterns — From Immature to Wise`,
+      `${name}: Maturation with Web4 Patterns - From Immature to Wise`,
     summaryPrefix: 'This maturation demo uses the Web4-native pattern corpus (100 patterns from Session 116) to guide agent development from IMMATURE through LEARNING to MATURE.',
     extraThemes: ['Pattern-Guided Growth', 'Web4 Native Corpus'],
   },
@@ -64,8 +64,8 @@ const SIMULATIONS: SimulationConfig[] = [
     id: 'maturation-none',
     type: 'Maturation (No Patterns)',
     titleOverride: (name, themes) =>
-      `${name}: Maturation Without Patterns — Heuristic-Only Baseline`,
-    summaryPrefix: 'This baseline maturation demo runs with NO pre-existing pattern corpus. The agent must learn purely through heuristic-driven trial and error — no inherited wisdom.',
+      `${name}: Maturation Without Patterns - Heuristic-Only Baseline`,
+    summaryPrefix: 'This baseline maturation demo runs with NO pre-existing pattern corpus. The agent must learn purely through heuristic-driven trial and error - no inherited wisdom.',
     extraThemes: ['Baseline Comparison', 'Heuristic Only'],
   },
   {
@@ -73,7 +73,7 @@ const SIMULATIONS: SimulationConfig[] = [
     id: 'multi-life-policy',
     type: 'Multi-Life Policy',
     titleOverride: (name, themes) =>
-      `${name}: Multi-Life Policy Framework — Trust Across Reincarnations`,
+      `${name}: Multi-Life Policy Framework - Trust Across Reincarnations`,
     summaryPrefix: 'This multi-life simulation tests the policy integration framework, showing how agent decisions carry consequences across life cycles through karma mechanics.',
     extraThemes: ['Policy Framework'],
   },
@@ -82,7 +82,7 @@ const SIMULATIONS: SimulationConfig[] = [
     id: 'one-life-policy',
     type: 'Single-Life Policy',
     titleOverride: (name, themes) =>
-      `${name}: A Single Life in Web4 — Trust Under Pressure`,
+      `${name}: A Single Life in Web4 - Trust Under Pressure`,
     summaryPrefix: 'This single-life simulation tests how an agent performs within a single lifetime, without the safety net of karma carry-forward or rebirth.',
     extraThemes: ['Single Life', 'No Rebirth'],
   },

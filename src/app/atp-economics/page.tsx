@@ -117,7 +117,7 @@ export default function ATPEconomicsPage() {
             survivor, so the aside defended against a ghost - and by raising the alternatives only to
             negate them, it *planted* the doubt ("does ATP secretly mean something else?") it was meant
             to prevent. The original guard's root cause (old H1 "Attention Economics") was fixed May 3;
-            the expansion is now anchored positively by the H1 (line 106) + confirming badge (108–112),
+            the expansion is now anchored positively by the H1 (line 106) + confirming badge (108-112),
             so the aside is dropped and the expansion simply restated in plain positive form here. */}
         {/* Jul-1 visitor HIGH (browse #2, restored log): the page gives ATP two expansions - 
             "Allocation Transfer Packets" here vs. "adenosine triphosphate" in the biology <details>

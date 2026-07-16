@@ -137,7 +137,7 @@ export default function GlossaryPage() {
         {/* Acronyms at a glance - the "what does CI stand for again?" escape-hatch.
             Lives in the hero <section>, OUTSIDE glossaryRef, so the search filter never hides it.
             Scoped to the core acronyms a beginner collects on the on-ramp; research-tier
-            initialisms (EP, R6, SAL, DID, D1–D9) are deliberately left to the search box so
+            initialisms (EP, R6, SAL, DID, D1-D9) are deliberately left to the search box so
             this lookup doesn't re-expand the jargon iceberg. NOTE: "core acronyms" ≠ the
             "Essential only" toggle's 7 terms (which include Web4/Society/Federation). */}
         <div id="acronyms" className="bg-gray-900/40 border border-gray-700 rounded-xl p-5 mb-6 scroll-mt-20">
@@ -1046,7 +1046,7 @@ export default function GlossaryPage() {
           {/* D-Numbers (Coherence Dimensions) */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
-              D-Numbers (D1–D9)
+              D-Numbers (D1-D9)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
               <strong>Shorthand for the nine coherence dimensions in the Synchronism framework</strong>.

@@ -37,8 +37,8 @@ const DOMAINS: Domain[] = [
     icon: 'D1',
     color: '#ef4444',
     description: 'Order emerging from disorder. At a critical threshold, behavior undergoes qualitative phase transition.',
-    web4Mapping: 'Trust threshold at 0.5 — below this, behavior appears random; above it, intentional.',
-    keyInsight: 'Crossing 0.5 is like water freezing — a qualitative change, not just quantitative.',
+    web4Mapping: 'Trust threshold at 0.5 - below this, behavior appears random; above it, intentional.',
+    keyInsight: 'Crossing 0.5 is like water freezing - a qualitative change, not just quantitative.',
   },
   {
     id: 'biochemistry',
@@ -47,8 +47,8 @@ const DOMAINS: Domain[] = [
     icon: 'D2',
     color: '#f59e0b',
     description: 'Energy currency of life. All actions require attention resources.',
-    web4Mapping: 'ATP (Allocation Transfer Packets) — every action costs attention, which must be earned.',
-    keyInsight: 'ATP scarcity forces prioritization — agency under resource constraint.',
+    web4Mapping: 'ATP (Allocation Transfer Packets) - every action costs attention, which must be earned.',
+    keyInsight: 'ATP scarcity forces prioritization - agency under resource constraint.',
   },
   {
     id: 'biophysics',
@@ -97,7 +97,7 @@ const DOMAINS: Domain[] = [
     icon: 'D7',
     color: '#ec4899',
     description: 'How far influence extends in space. Social reach of trust.',
-    web4Mapping: 'Markov Relevancy Horizon (MRH) — spatial metric of social influence.',
+    web4Mapping: 'Markov Relevancy Horizon (MRH) - spatial metric of social influence.',
     keyInsight: 'Trust influence decays with distance in social spacetime.',
   },
   {
@@ -108,7 +108,7 @@ const DOMAINS: Domain[] = [
     color: '#f97316',
     description: 'Irreversible time flow. The asymmetry of building vs destroying.',
     web4Mapping: 'Trust builds slowly, collapses quickly. Time asymmetry is fundamental.',
-    keyInsight: 'Coherence gradient creates directional time — trust evolution is irreversible.',
+    keyInsight: 'Coherence gradient creates directional time - trust evolution is irreversible.',
   },
   {
     id: 'spacetime',
@@ -118,7 +118,7 @@ const DOMAINS: Domain[] = [
     color: '#a855f7',
     description: 'FOUNDATIONAL. Coherence creates spacetime itself, not the other way around.',
     web4Mapping: 'Trust dynamics occur ON coherence spacetime. High trust curves space.',
-    keyInsight: 'High-coherence regions (trust peaks) curve spacetime — creating gravity of reputation.',
+    keyInsight: 'High-coherence regions (trust peaks) curve spacetime - creating gravity of reputation.',
   },
 ];
 
@@ -147,7 +147,7 @@ const SCENARIOS: Scenario[] = [
   },
   {
     name: 'ATP Crisis',
-    description: 'Metabolic emergency — attention collapses',
+    description: 'Metabolic emergency - attention collapses',
     values: { physics: 0.3, biochemistry: 0.1, biophysics: 0.4, neuroscience: 0.1, distributed: 0.3, quantum: 0.2, magnetism: 0.2, temporal: 0.6, spacetime: 0.3 },
   },
   {
@@ -157,12 +157,12 @@ const SCENARIOS: Scenario[] = [
   },
   {
     name: 'Identity Collapse',
-    description: 'D5 drops below threshold — cascade failure',
+    description: 'D5 drops below threshold - cascade failure',
     values: { physics: 0.2, biochemistry: 0.4, biophysics: 0.5, neuroscience: 0.3, distributed: 0.15, quantum: 0.3, magnetism: 0.1, temporal: 0.4, spacetime: 0.2 },
   },
   {
     name: 'Newborn Agent',
-    description: 'First life — no patterns, no history',
+    description: 'First life - no patterns, no history',
     values: { physics: 0.5, biochemistry: 0.6, biophysics: 0.0, neuroscience: 0.5, distributed: 0.5, quantum: 0.5, magnetism: 0.3, temporal: 0.5, spacetime: 0.5 },
   },
 ];
@@ -515,7 +515,7 @@ export default function CoherenceDomainVisualizer({ height = 500 }: CoherenceDom
         The 0.5 threshold marks phase transition from random to intentional behavior.
         {' '}
         <span className="text-gray-400">
-          (D9 is foundational — spacetime emerges FROM coherence, not the other way around.)
+          (D9 is foundational - spacetime emerges FROM coherence, not the other way around.)
         </span>
       </div>
     </div>

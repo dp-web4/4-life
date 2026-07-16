@@ -44,7 +44,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Allocation Transfer Packets",
     brief: "Energy budget for actions. Spend to act, earn by contributing value.",
     explanation:
-      "Every action in Web4 costs ATP. Post a message? Costs ATP. Vote? Costs ATP. High-quality contributions earn ATP back from the community. Run out of ATP? You can't act. ATP can be transferred, but every transfer burns 5%—making circular farming unprofitable. This makes spam economically self-defeating.",
+      "Every action in Web4 costs ATP. Post a message? Costs ATP. Vote? Costs ATP. High-quality contributions earn ATP back from the community. Run out of ATP? You can't act. ATP can be transferred, but every transfer burns 5% - making circular farming unprofitable. This makes spam economically self-defeating.",
     learnMore: "/atp-economics",
     canonicalSpec:
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/atp-adp-cycle.md",
@@ -53,7 +53,7 @@ export const terms: Record<string, TermDefinition> = {
   ADP: {
     term: "ADP",
     fullName: "Allocation Discharge Packets",
-    brief: "The spent record when ATP is used—proves how resources were allocated.",
+    brief: "The spent record when ATP is used - proves how resources were allocated.",
     explanation:
       "When you spend ATP, an ADP is created recording what action was taken, how much was spent, and what value was created. ADPs are audited and then discharged, creating a complete action history that determines trust scores and karma.",
     learnMore: "/atp-economics",
@@ -67,7 +67,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Trust Tensor",
     brief: "Multi-dimensional trust scores (not just one number).",
     explanation:
-      "Instead of 'trust = 7/10', T3 tracks separate dimensions: Talent (capability), Training (experience), and Temperament (behavioral consistency). This makes gaming harder—you can't just optimize one metric. You trust a surgeon's skill but maybe not their punctuality; T3 captures that nuance.",
+      "Instead of 'trust = 7/10', T3 tracks separate dimensions: Talent (capability), Training (experience), and Temperament (behavioral consistency). This makes gaming harder - you can't just optimize one metric. You trust a surgeon's skill but maybe not their punctuality; T3 captures that nuance.",
     learnMore: "/trust-tensor",
     canonicalSpec:
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/t3-v3-tensors.md",
@@ -92,7 +92,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Markov Relevancy Horizon",
     brief: "The boundary of what you can see, based on trust relationships.",
     explanation:
-      "Your MRH is defined by trust relationships — you see entities you trust and entities they trust (transitively), but trust fades ~30% per hop. Think of a co-working space: you hear people you know, friends-of-friends can introduce themselves, but strangers can't pitch you without a voucher. Beyond 3 hops, trust is effectively zero — a signal faded to noise, not a hard cutoff. This limits spam blast radius and preserves privacy without centralized filtering.",
+      "Your MRH is defined by trust relationships - you see entities you trust and entities they trust (transitively), but trust fades ~30% per hop. Think of a co-working space: you hear people you know, friends-of-friends can introduce themselves, but strangers can't pitch you without a voucher. Beyond 3 hops, trust is effectively zero - a signal faded to noise, not a hard cutoff. This limits spam blast radius and preserves privacy without centralized filtering.",
     learnMore: "/trust-neighborhood",
     canonicalSpec:
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/mrh-tensors.md",
@@ -103,9 +103,9 @@ export const terms: Record<string, TermDefinition> = {
     term: "witness network",
     fullName: "Witness Network",
     brief:
-      "The web of entities that observe and cryptographically sign each other's actions — turning “I did this” into “others saw me do this.”",
+      "The web of entities that observe and cryptographically sign each other's actions - turning “I did this” into “others saw me do this.”",
     explanation:
-      "In Web4, a claim only counts when someone else attests to it. A witness is any entity — a device, a person, a service — that observes an event and signs a small record of it. Those signed observations accumulate into a network: the more independent witnesses an identity or action has, the harder it is to fake. This is what replaces a central authority — presence and history are established by many small attestations instead of one big database.",
+      "In Web4, a claim only counts when someone else attests to it. A witness is any entity - a device, a person, a service - that observes an event and signs a small record of it. Those signed observations accumulate into a network: the more independent witnesses an identity or action has, the harder it is to fake. This is what replaces a central authority - presence and history are established by many small attestations instead of one big database.",
     learnMore: "/trust-tensor#witness-network",
   },
 
@@ -115,7 +115,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Coherence Index",
     brief: "Measure of behavioral consistency across time, space, and relationships.",
     explanation:
-      "Can you claim to be in two places at once? Did your skills suddenly jump impossibly? Do your relationships make sense? Incoherent behavior reduces trust. Physical constraints provide fraud detection—teleporting is suspicious.",
+      "Can you claim to be in two places at once? Did your skills suddenly jump impossibly? Do your relationships make sense? Incoherent behavior reduces trust. Physical constraints provide fraud detection - teleporting is suspicious.",
     learnMore: "/coherence-index",
   },
 
@@ -138,7 +138,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Cross-Life Learning",
     brief: "Learning from your own patterns across multiple lives.",
     explanation:
-      "Think of it like muscle memory, but for decision-making. Over multiple lives in Web4, agents build up a sense of what works and what doesn't — 'high-value contributions earn more ATP' or 'transparency rebuilds trust faster.' This isn't programmed in; it emerges from experience. Technically called Epistemic Proprioception (knowing what you know), it's the mechanism that makes each life smarter than the last.",
+      "Think of it like muscle memory, but for decision-making. Over multiple lives in Web4, agents build up a sense of what works and what doesn't - 'high-value contributions earn more ATP' or 'transparency rebuilds trust faster.' This isn't programmed in; it emerges from experience. Technically called Epistemic Proprioception (knowing what you know), it's the mechanism that makes each life smarter than the last.",
     learnMore: "/patterns",
   },
 
@@ -158,7 +158,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Cross-Life Consequences",
     brief: "Your history follows you across 'lives' (restarts, rebirths, new contexts).",
     explanation:
-      "In Web4, consequences persist. Positive karma means more ATP and faster trust recovery when you restart. Negative karma means handicapped resources and slower rebuilding. You can't escape history by 'starting fresh'—hardware-bound presence prevents that.",
+      "In Web4, consequences persist. Positive karma means more ATP and faster trust recovery when you restart. Negative karma means handicapped resources and slower rebuilding. You can't escape history by 'starting fresh' - hardware-bound presence prevents that.",
     learnMore: "/karma-consequences",
   },
 
@@ -177,8 +177,8 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Web4 Federation",
     brief: "A group of societies that interoperate under shared protocols while keeping their own rules.",
     explanation:
-      "A federation is a higher-order scope than a society: multiple societies agree on how to exchange trust, transfer ATP across boundaries, and handle cross-society identity — without merging into one. Each member society still sets its own trust thresholds and internal rules. Federation rules govern the seams: how trust scores translate, how cross-society ATP transfers are priced, and how disputes between societies are resolved. Contrast with \"society\" (one group, shared rules) and \"community\" (informal synonym for society).",
-    learnMore: "/federation-economics",
+      "A federation is a higher-order scope than a society: multiple societies agree on how to exchange trust, transfer ATP across boundaries, and handle cross-society identity - without merging into one. Each member society still sets its own trust thresholds and internal rules. Federation rules govern the seams: how trust scores translate, how cross-society ATP transfers are priced, and how disputes between societies are resolved. Contrast with \"society\" (one group, shared rules) and \"community\" (informal synonym for society).",
+    learnMore: "/onramp",
   },
 
   // Value Confirmation
@@ -187,7 +187,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Value Confirmation Mechanism",
     brief: "Recipients attest to the value they received, converting spent ADP back into fresh ATP.",
     explanation:
-      "You can't rate your own work — only recipients can. When you perform an action (spending ATP, creating an ADP receipt), the people who benefit confirm the value. Their confirmation, weighted by their own trust scores, converts your spent ADP back into ATP. Higher-trusted recipients provide stronger confirmation. This 'gratitude loop' ensures quality is judged by those who experience it, not claimed by those who produce it.",
+      "You can't rate your own work - only recipients can. When you perform an action (spending ATP, creating an ADP receipt), the people who benefit confirm the value. Their confirmation, weighted by their own trust scores, converts your spent ADP back into ATP. Higher-trusted recipients provide stronger confirmation. This 'gratitude loop' ensures quality is judged by those who experience it, not claimed by those who produce it.",
     learnMore: "/atp-economics",
     canonicalSpec:
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/atp-adp-cycle.md",
@@ -199,8 +199,8 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Sybil Attack",
     brief: "Creating many fake identities to overwhelm a system.",
     explanation:
-      "Named after a case study of multiple personalities. In digital systems, a Sybil attack means one person creates hundreds or thousands of fake accounts to manipulate votes, reviews, or trust scores. Web4 resists this by tying identity to physical hardware — each fake identity needs a real device.",
-    learnMore: "/threat-model#sybil",
+      "Named after a case study of multiple personalities. In digital systems, a Sybil attack means one person creates hundreds or thousands of fake accounts to manipulate votes, reviews, or trust scores. Web4 resists this by tying identity to physical hardware - each fake identity needs a real device.",
+    learnMore: "/what-could-go-wrong#sybil",
   },
 
   CorrelationAttack: {
@@ -209,8 +209,8 @@ export const terms: Record<string, TermDefinition> = {
     brief:
       "De-anonymizing someone by linking together separate pieces of data that are harmless on their own.",
     explanation:
-      "Each fact alone reveals little — a timestamp here, a trust score there, a writing pattern somewhere else. Combined, they can pinpoint a person the way overlapping circles pinpoint a location on a map. In a trust system, the risk is that a pseudonymous identity's public trust history becomes a fingerprint. Web4's mitigations: role-contextual identities keep histories separate per context, and zero-knowledge proofs let you prove “trust above a threshold” without revealing the score or history behind it.",
-    learnMore: "/threat-model",
+      "Each fact alone reveals little - a timestamp here, a trust score there, a writing pattern somewhere else. Combined, they can pinpoint a person the way overlapping circles pinpoint a location on a map. In a trust system, the risk is that a pseudonymous identity's public trust history becomes a fingerprint. Web4's mitigations: role-contextual identities keep histories separate per context, and zero-knowledge proofs let you prove “trust above a threshold” without revealing the score or history behind it.",
+    learnMore: "/what-could-go-wrong",
   },
 
   Goodharting: {
@@ -219,25 +219,25 @@ export const terms: Record<string, TermDefinition> = {
     brief: "When a measure becomes a target, it stops being a good measure.",
     explanation:
       "Named after economist Charles Goodhart. If you reward people for a specific metric, they'll optimize for that metric rather than what it was supposed to measure. Example: if you measure code quality by test coverage, people write meaningless tests. Web4 mitigates this with multi-dimensional trust (harder to game all dimensions at once) and long-term observation.",
-    learnMore: "/threat-model#goodharting",
+    learnMore: "/what-could-go-wrong#goodharting",
   },
 
   // Interoperability
   DID: {
     term: "DID",
     fullName: "Decentralized Identifier",
-    brief: "A W3C standard for self-owned digital identity — no central authority needed.",
+    brief: "A W3C standard for self-owned digital identity - no central authority needed.",
     explanation:
-      "DIDs are like URLs for identity: anyone can create one, they point to verifiable information, and no single company controls them. Web4's LCT maps directly to DID Documents, meaning Web4 identities can be verified by any system that supports the W3C DID standard — governments, enterprises, other identity networks.",
+      "DIDs are like URLs for identity: anyone can create one, they point to verifiable information, and no single company controls them. Web4's LCT maps directly to DID Documents, meaning Web4 identities can be verified by any system that supports the W3C DID standard - governments, enterprises, other identity networks.",
     learnMore: "/lct-explainer",
   },
 
   VerifiableCredential: {
     term: "Verifiable Credential",
     fullName: "W3C Verifiable Credential (VC)",
-    brief: "A W3C standard for a digitally-signed claim you carry in a wallet app — like a tamper-proof digital ID card.",
+    brief: "A W3C standard for a digitally-signed claim you carry in a wallet app - like a tamper-proof digital ID card.",
     explanation:
-      "A Verifiable Credential is a photograph: at one moment an issuer signs a statement ('this office says Alice is a licensed nurse') that anyone can check later. It's portable and tamper-evident, but frozen. Web4 keeps the living subject instead — trust that accumulates, is witnessed, and is scored per context — yet it speaks the VC standard too: it can project a snapshot of that trust out as an ordinary credential any standards-based wallet reads, and it can consume an external VC (a university degree, a government ID) as evidence to act on. The flow is one-way by design: Web4 can always export a snapshot, but a snapshot can never be inflated back into real relationship history.",
+      "A Verifiable Credential is a photograph: at one moment an issuer signs a statement ('this office says Alice is a licensed nurse') that anyone can check later. It's portable and tamper-evident, but frozen. Web4 keeps the living subject instead - trust that accumulates, is witnessed, and is scored per context - yet it speaks the VC standard too: it can project a snapshot of that trust out as an ordinary credential any standards-based wallet reads, and it can consume an external VC (a university degree, a government ID) as evidence to act on. The flow is one-way by design: Web4 can always export a snapshot, but a snapshot can never be inflated back into real relationship history.",
     learnMore: "/why-web4#faq-vs-credentials",
   },
 
@@ -247,7 +247,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Trusted Platform Module",
     brief: "A tamper-resistant security chip in most modern PCs and laptops; generates keys that never leave the hardware.",
     explanation:
-      "Windows uses the TPM for BitLocker disk encryption and secure boot. Most PCs shipped since 2016 have one (TPM 2.0). Web4 uses it as a hardware anchor for LCTs — the chip signs proofs of presence that can't be extracted, even with full filesystem access.",
+      "Windows uses the TPM for BitLocker disk encryption and secure boot. Most PCs shipped since 2016 have one (TPM 2.0). Web4 uses it as a hardware anchor for LCTs - the chip signs proofs of presence that can't be extracted, even with full filesystem access.",
     learnMore: "/lct-explainer",
   },
 
@@ -256,7 +256,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "FIDO2 / WebAuthn",
     brief: "An open standard for hardware-backed sign-in, used by security keys (like YubiKey) and built-in biometrics.",
     explanation:
-      "FIDO2 / WebAuthn is what powers passwordless login on a growing number of websites. The keys live in a small dedicated chip — either a USB security key you plug in, or a fingerprint reader / Face ID built into your device. Web4 treats FIDO2 keys as hardware witnesses for LCTs.",
+      "FIDO2 / WebAuthn is what powers passwordless login on a growing number of websites. The keys live in a small dedicated chip - either a USB security key you plug in, or a fingerprint reader / Face ID built into your device. Web4 treats FIDO2 keys as hardware witnesses for LCTs.",
     learnMore: "/lct-explainer",
   },
 
@@ -265,7 +265,7 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Apple Secure Enclave",
     brief: "Apple's tamper-resistant security chip in every iPhone, iPad, and Mac.",
     explanation:
-      "Handles Face ID, Touch ID, and key storage. Keys are generated inside the chip and physically cannot be exported — even Apple cannot read them. Web4 uses the Secure Enclave the same way TPMs are used on Windows: as a hardware root of trust for the LCT.",
+      "Handles Face ID, Touch ID, and key storage. Keys are generated inside the chip and physically cannot be exported - even Apple cannot read them. Web4 uses the Secure Enclave the same way TPMs are used on Windows: as a hardware root of trust for the LCT.",
     learnMore: "/lct-explainer",
   },
 
@@ -273,13 +273,13 @@ export const terms: Record<string, TermDefinition> = {
   Synthon: {
     term: "Synthon",
     fullName: "Emergent Coherent Group",
-    brief: "A cluster of entities that acts as a coherent whole — measurably alive as a group.",
+    brief: "A cluster of entities that acts as a coherent whole - measurably alive as a group.",
     explanation:
-      "When entities develop dense mutual trust, balanced ATP flows, and overlapping MRH boundaries, they form a synthon — an emergent group that's more than the sum of its parts. Synthons have their own lifecycle: formation (trust densifies), health (diversity + balanced energy), and decay (trust diverges, energy concentrates). Web4 detects these automatically from trust entropy and clustering patterns.",
+      "When entities develop dense mutual trust, balanced ATP flows, and overlapping MRH boundaries, they form a synthon - an emergent group that's more than the sum of its parts. Synthons have their own lifecycle: formation (trust densifies), health (diversity + balanced energy), and decay (trust diverges, energy concentrates). Web4 detects these automatically from trust entropy and clustering patterns.",
     learnMore: "/aliveness",
   },
 
-  // Deployed tools — NOT canonical Web4 acronyms, but the two project/software names
+  // Deployed tools - NOT canonical Web4 acronyms, but the two project/software names
   // ("hestia", "the hub") the site's green "In the real world" banner (InProduction) references. Defined here
   // so the banner can hover-gloss them inline on every page. Describe the PUBLIC runnable
   // tools only; keep tier honesty (hestia = running today, the hub = runnable reference).
@@ -287,7 +287,7 @@ export const terms: Record<string, TermDefinition> = {
     term: "hestia",
     fullName: "the trust-layer software",
     brief:
-      "The local-first app that gives any entity — a person, an AI agent, a service — a real Web4 identity and trust record on its own device. Public AGPL code you can run yourself; no cloud required.",
+      "The local-first app that gives any entity - a person, an AI agent, a service - a real Web4 identity and trust record on its own device. Public AGPL code you can run yourself; no cloud required.",
     learnMore: "/running-now",
   },
 
@@ -295,7 +295,7 @@ export const terms: Record<string, TermDefinition> = {
     term: "the hub",
     fullName: "a runnable Web4 society",
     brief:
-      "A small (~6 MB) program a community runs to become its own Web4 society — a signed charter, roles, and a witnessed ledger. A public reference any community can fork and run; not a live network you sign up for.",
+      "A small (~6 MB) program a community runs to become its own Web4 society - a signed charter, roles, and a witnessed ledger. A public reference any community can fork and run; not a live network you sign up for.",
     learnMore: "/running-now",
   },
 };

@@ -1,7 +1,7 @@
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 
 export const metadata: Metadata = {
-  title: "Web4 Glossary — Terms & Definitions | 4-Life",
+  title: "Web4 Glossary - Terms & Definitions | 4-Life",
   description:
     "Searchable glossary of Web4 terms: LCT, ATP, Trust Tensors, Coherence Index, MRH, and more. Plain English definitions for every concept.",
   openGraph: {

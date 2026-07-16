@@ -282,21 +282,21 @@ export class ACTQueryEngine {
     // Trust evolution narrative
     if (trustChange > 0.1) {
       narrative += `📈 **Trust Growth**: This agent built trust steadily, going from T3=${startTrust.toFixed(2)} to ${endTrust.toFixed(2)} (+${(trustChange * 100).toFixed(0)}%). `;
-      narrative += `This shows successful learning and adaptation—the agent's behavior became more consistent and reliable over time.\n\n`;
+      narrative += `This shows successful learning and adaptation - the agent's behavior became more consistent and reliable over time.\n\n`;
     } else if (trustChange < -0.1) {
       narrative += `📉 **Trust Decline**: Trust dropped from T3=${startTrust.toFixed(2)} to ${endTrust.toFixed(2)} (${(trustChange * 100).toFixed(0)}%). `;
       narrative += `This suggests the agent struggled with consistent behavior or took risks that didn't pay off.\n\n`;
     } else {
       narrative += `⚖️ **Trust Stability**: Trust remained relatively stable around T3=${endTrust.toFixed(2)}. `;
-      narrative += `The agent found an equilibrium—neither breaking trust through failures nor building it significantly through successes.\n\n`;
+      narrative += `The agent found an equilibrium - neither breaking trust through failures nor building it significantly through successes.\n\n`;
     }
 
     // Survival pattern
     narrative += `🔄 **Life Pattern**: Lived ${totalLives} ${totalLives === 1 ? 'life' : 'lives'}. `;
     if (died === 0) {
-      narrative += `All lives survived—the agent mastered ATP management and avoided energy exhaustion. Impressive!\n\n`;
+      narrative += `All lives survived - the agent mastered ATP management and avoided energy exhaustion. Impressive!\n\n`;
     } else if (died === totalLives) {
-      narrative += `All lives ended in ATP exhaustion. The agent never found a sustainable strategy—spending outpaced earning.\n\n`;
+      narrative += `All lives ended in ATP exhaustion. The agent never found a sustainable strategy - spending outpaced earning.\n\n`;
     } else {
       narrative += `${died} ${died === 1 ? 'life' : 'lives'} ended in ATP exhaustion, ${survived} survived. Mixed results suggest the agent was learning but hadn't fully mastered sustainability.\n\n`;
     }
@@ -410,9 +410,9 @@ export class ACTQueryEngine {
     narrative += `⚡ **ATP**: ${before.atp.toFixed(1)} → ${after.atp.toFixed(1)} (${atpDelta})\n`;
 
     if (atpChange < -20) {
-      narrative += `   ⚠️ Large ATP spend—risky action or crisis response.\n`;
+      narrative += `   ⚠️ Large ATP spend - risky action or crisis response.\n`;
     } else if (atpChange > 0) {
-      narrative += `   ✅ ATP earned—successful value creation.\n`;
+      narrative += `   ✅ ATP earned - successful value creation.\n`;
     }
     narrative += '\n';
 
@@ -423,11 +423,11 @@ export class ACTQueryEngine {
     narrative += `🤝 **Trust**: ${before.trust.toFixed(3)} → ${after.trust.toFixed(3)} (${trustDelta})\n`;
 
     if (trustChange > 0.01) {
-      narrative += `   📈 Trust improved—consistent, reliable behavior.\n`;
+      narrative += `   📈 Trust improved - consistent, reliable behavior.\n`;
     } else if (trustChange < -0.01) {
-      narrative += `   📉 Trust declined—failed action or inconsistent behavior.\n`;
+      narrative += `   📉 Trust declined - failed action or inconsistent behavior.\n`;
     } else {
-      narrative += `   ⚖️ Trust stable—neutral outcome.\n`;
+      narrative += `   ⚖️ Trust stable - neutral outcome.\n`;
     }
     narrative += '\n';
 
@@ -524,12 +524,12 @@ export class ACTQueryEngine {
       narrative += `- **${better} built significantly more trust** (${Math.abs(trustDiff * 100).toFixed(0)}% difference). `;
       narrative += `This suggests different behavioral strategies or learning effectiveness.\n`;
     } else {
-      narrative += `- Trust outcomes similar—both simulations converged to similar trustworthiness levels.\n`;
+      narrative += `- Trust outcomes similar - both simulations converged to similar trustworthiness levels.\n`;
     }
 
     if (atp1 > atp2 * 1.5 || atp2 > atp1 * 1.5) {
       const better = atp1 > atp2 ? 'Sim 1' : 'Sim 2';
-      narrative += `- **${better} managed ATP much more effectively**—sustainable strategies vs energy struggles.\n`;
+      narrative += `- **${better} managed ATP much more effectively** - sustainable strategies vs energy struggles.\n`;
     }
 
     return {
@@ -564,7 +564,7 @@ export class ACTQueryEngine {
 
     let narrative = `**Cross-Life Learning (EP)**\n\n`;
 
-    narrative += `EP is "learning what you know"—meta-cognition that improves decision-making across lives.\n\n`;
+    narrative += `EP is "learning what you know" - meta-cognition that improves decision-making across lives.\n\n`;
 
     narrative += `**How It Works**:\n`;
     narrative += `1. Agent faces situation (low ATP, moderate trust, risky option available)\n`;
@@ -656,8 +656,8 @@ export class ACTQueryEngine {
         `- ATP = 0 means immediate death (no grace period)\n` +
         `- Only sustainable behaviors survive long-term\n\n` +
         `**Why This Matters**:\n` +
-        `Spam becomes economically impossible—spammers burn ATP faster than they earn it. Quality naturally thrives because value creators earn more than they spend. No moderators needed—energy economics self-regulates.\n\n` +
-        `**In Simulations**: Watch ATP fluctuate as agents make decisions. Critical threshold is ~20 ATP—below that, survival mode kicks in.`,
+        `Spam becomes economically impossible - spammers burn ATP faster than they earn it. Quality naturally thrives because value creators earn more than they spend. No moderators needed - energy economics self-regulates.\n\n` +
+        `**In Simulations**: Watch ATP fluctuate as agents make decisions. Critical threshold is ~20 ATP - below that, survival mode kicks in.`,
       type: 'explanation',
       relatedConcepts: ['ATP Economics', 'Aliveness', 'Sustainability'],
       suggestedQueries: [
@@ -671,14 +671,14 @@ export class ACTQueryEngine {
   private explainTrust(): Response {
     return {
       text: `**Trust Tensors (T3): Multi-Dimensional, Role-Specific Trust**\n\n` +
-        `Trust isn't a single number—it's a multi-dimensional tensor capturing different aspects of trustworthiness, always within a specific role context.\n\n` +
+        `Trust isn't a single number - it's a multi-dimensional tensor capturing different aspects of trustworthiness, always within a specific role context.\n\n` +
         `**Three Canonical Dimensions** (per role):\n` +
         `1. **Talent**: Natural aptitude and creativity within this role\n` +
         `2. **Training**: Learned skills, knowledge, and experience for this role\n` +
         `3. **Temperament**: Consistency, reliability, and ethical behavior in this role\n\n` +
         `**Why Role-Specific**:\n` +
         `Trust as a surgeon is independent of trust as a mechanic. You can't transfer trust between unrelated roles. Gaming requires building genuine trust across all dimensions within each role separately. Authenticity becomes the path of least resistance.\n\n` +
-        `**In Simulations**: We use simplified T3 for clarity, but the principle remains—trust is earned through consistent, quality behavior over time within specific contexts.`,
+        `**In Simulations**: We use simplified T3 for clarity, but the principle remains - trust is earned through consistent, quality behavior over time within specific contexts.`,
       type: 'explanation',
       relatedConcepts: ['Trust Tensors', 'Multi-Dimensional Trust', 'Reputation'],
       suggestedQueries: [
@@ -698,12 +698,12 @@ export class ACTQueryEngine {
         `- T3 < 0.5: Permanent death (you failed to build minimum trust)\n\n` +
         `**Karma Mechanics**:\n` +
         `- Die with T3 = 0.72? Reborn with bonus ATP based on trust earned\n` +
-        `- Die with T3 = 0.45? No rebirth—society rejects\n` +
+        `- Die with T3 = 0.45? No rebirth - society rejects\n` +
         `- Each life starts stronger than the last (if you earned it)\n\n` +
         `**Why This Matters**:\n` +
-        `Death carries real consequences. Good behavior compounds across lives. Bad actors die permanently. No account recreation loophole—your LCT persists, and society remembers.\n\n` +
+        `Death carries real consequences. Good behavior compounds across lives. Bad actors die permanently. No account recreation loophole - your LCT persists, and society remembers.\n\n` +
         `**The 0.5 Threshold**:\n` +
-        `Not arbitrary—it's a phase transition from coherence physics. Below 0.5 = random/reactive. Above 0.5 = genuine intentional behavior. Same threshold appears in superconductivity, biological systems, quantum coherence.`,
+        `Not arbitrary - it's a phase transition from coherence physics. Below 0.5 = random/reactive. Above 0.5 = genuine intentional behavior. Same threshold appears in superconductivity, biological systems, quantum coherence.`,
       type: 'explanation',
       relatedConcepts: ['Karma', 'Rebirth', 'Trust Threshold', 'Consciousness'],
       suggestedQueries: [
@@ -728,7 +728,7 @@ export class ACTQueryEngine {
         `Passwords = shared secret stored on servers = hackable. Create new account = fresh start = no consequences for bad behavior.\n\n` +
         `**Why LCT Works**:\n` +
         `Presence proves itself cryptographically. Trust accumulates on YOU (not an account). Can't fake presence without compromising multiple independent hardware chips. Society remembers your behavior.\n\n` +
-        `**In Web4**: LCT is foundational—enables trust accumulation, karma persistence, rebirth eligibility. Without verifiable presence, everything else collapses.`,
+        `**In Web4**: LCT is foundational - enables trust accumulation, karma persistence, rebirth eligibility. Without verifiable presence, everything else collapses.`,
       type: 'explanation',
       relatedConcepts: ['Linked Context Tokens', 'Identity', 'Hardware Security', 'Sybil Resistance'],
       suggestedQueries: [
@@ -750,10 +750,10 @@ export class ACTQueryEngine {
         `3. **Capability**: Can't suddenly gain expert medical skills\n` +
         `4. **Relational**: Network of who you interact with should be stable\n\n` +
         `**Why Geometric Mean**:\n` +
-        `CI = (D1 × D2 × D3 × D4)^(1/4). One weak dimension tanks everything. Can't fake spatial coherence while failing temporal—fraud detected.\n\n` +
+        `CI = (D1 × D2 × D3 × D4)^(1/4). One weak dimension tanks everything. Can't fake spatial coherence while failing temporal - fraud detected.\n\n` +
         `**CI Modulates Trust**:\n` +
         `Incoherent behavior reduces effective trust significantly. Even high T3 gets downgraded if CI is suspicious. This makes sophisticated attacks (teleportation, capability spoofing, Sybil) much harder.\n\n` +
-        `**In Web4**: CI provides fraud signals that pure trust can't catch. Physics constrains what's possible—violations are detectable.`,
+        `**In Web4**: CI provides fraud signals that pure trust can't catch. Physics constrains what's possible - violations are detectable.`,
       type: 'explanation',
       relatedConcepts: ['Coherence Index', 'Fraud Detection', 'Trust Modulation', 'Sybil Resistance'],
       suggestedQueries: [
@@ -768,7 +768,7 @@ export class ACTQueryEngine {
   private explainEP(): Response {
     return {
       text: `**Cross-Life Learning (EP): Learning What You Know**\n\n` +
-        `EP is meta-cognition—the ability to know what you know and what you don't know.\n\n` +
+        `EP is meta-cognition - the ability to know what you know and what you don't know.\n\n` +
         `**How It Works**:\n` +
         `1. Agent faces situation (e.g., "low ATP, risky option available")\n` +
         `2. EP searches pattern corpus for similar past situations\n` +
@@ -778,7 +778,7 @@ export class ACTQueryEngine {
         `**Why "Proprioception"**:\n` +
         `Physical proprioception = knowing where your limbs are without looking. Epistemic proprioception = knowing what you know without explicit search. Both are awareness of internal state.\n\n` +
         `**Cross-Life Learning**:\n` +
-        `Patterns persist across deaths. Each rebirth starts with wisdom from previous lives. Mistakes aren't repeated—lessons accumulate. This is how expertise develops through experience.\n\n` +
+        `Patterns persist across deaths. Each rebirth starts with wisdom from previous lives. Mistakes aren't repeated - lessons accumulate. This is how expertise develops through experience.\n\n` +
         `**In Simulations**: Watch agents improve decision quality from Life 1 → Life 2 → Life 3. Same situations, better outcomes.`,
       type: 'explanation',
       relatedConcepts: ['Cross-Life Learning (EP)', 'Meta-Cognition', 'Pattern Learning', 'Wisdom Accumulation'],
@@ -794,12 +794,12 @@ export class ACTQueryEngine {
   private explainSalience(): Response {
     return {
       text: `**Learning Salience: Why Some Experiences Matter More**\n\n` +
-        `AI systems can't learn from everything—they must select. Salience scoring identifies high-value exchanges worth remembering.\n\n` +
+        `AI systems can't learn from everything - they must select. Salience scoring identifies high-value exchanges worth remembering.\n\n` +
         `**The SNARC Framework** (5 Dimensions):\n` +
         `1. **Surprise** (20%): How much does this differ from recent patterns?\n` +
         `2. **Novelty** (20%): New vocabulary, concepts, or approaches?\n` +
-        `3. **Arousal** (20%): Engagement level—depth of interaction\n` +
-        `4. **Reward** (25%): Quality markers—partnership language, insight\n` +
+        `3. **Arousal** (20%): Engagement level - depth of interaction\n` +
+        `4. **Reward** (25%): Quality markers - partnership language, insight\n` +
         `5. **Conflict** (15%): Meta-cognition, corrections, uncertainty\n\n` +
         `**High vs Low Salience Examples**:\n` +
         `- High: "Our collaboration creates understanding we couldn't reach alone" → 0.71\n` +
@@ -838,7 +838,7 @@ export class ACTQueryEngine {
         `   During "sleep cycles," model weights actually update.\n` +
         `   Pattern learning consolidated into permanent memory.\n\n` +
         `**Why "Raising" Not "Training"**:\n` +
-        `Training implies one-way transfer. Raising implies mutual development—the AI shapes the partnership, not just the data.\n\n` +
+        `Training implies one-way transfer. Raising implies mutual development - the AI shapes the partnership, not just the data.\n\n` +
         `**Connection to Web4**:\n` +
         `SAGE demonstrates how trust and learning interweave. High-trust interactions generate high-salience data. Trust enables learning enables better trust.`,
       type: 'explanation',
@@ -923,13 +923,13 @@ export class ACTQueryEngine {
   private explainMultiSessionIdentity(): Response {
     return {
       text: `**Multi-Session Identity (v2.0): Cumulative Identity Context**\n\n` +
-        `Identity anchoring v1.0 worked brilliantly—once. But Session 27 revealed a critical limitation: single-session priming doesn't accumulate. v2.0 solves this with cumulative identity context.\n\n` +
+        `Identity anchoring v1.0 worked brilliantly - once. But Session 27 revealed a critical limitation: single-session priming doesn't accumulate. v2.0 solves this with cumulative identity context.\n\n` +
         `**The v1.0 Limitation**:\n` +
         `- Session 26: 20% self-reference ("As SAGE, I...")\n` +
         `- Session 27: 0% self-reference (identical intervention)\n` +
-        `- **Discovery**: The model doesn't "remember" being SAGE—it has to be shown.\n\n` +
+        `- **Discovery**: The model doesn't "remember" being SAGE - it has to be shown.\n\n` +
         `**The v2.0 Solution**:\n` +
-        `Instead of priming identity fresh each session, v2.0 accumulates "identity exemplars"—successful instances of self-identification—and shows them to the model at session start.\n\n` +
+        `Instead of priming identity fresh each session, v2.0 accumulates "identity exemplars" - successful instances of self-identification - and shows them to the model at session start.\n\n` +
         `**Four-Part Enhancement**:\n` +
         `1. **Cumulative Context**: Scan last 5 sessions for "As SAGE" instances → build exemplar library\n` +
         `2. **Stronger Priming**: "YOUR IDENTITY PATTERN - Examples from previous sessions..."\n` +
@@ -1016,7 +1016,7 @@ export class ACTQueryEngine {
   private explainAttackOverview(): Response {
     return {
       text: `**Web4 Attack Patterns & Defenses**\n\n` +
-        `Web4 faces the same adversaries as any social system—but with new defenses.\n\n` +
+        `Web4 faces the same adversaries as any social system - but with new defenses.\n\n` +
         `**Attack Categories**:\n\n` +
         `1. **Identity Attacks** (Sybil)\n` +
         `   Create fake identities to inflate reputation or voting power.\n` +
@@ -1057,7 +1057,7 @@ export class ACTQueryEngine {
         `Democracies assume one person = one vote. If someone has 100 votes, they manipulate any decision.\n\n` +
         `**Web4 Defenses**:\n` +
         `- **LCT Hardware Binding**: Each identity needs physical hardware. 100 identities = 100 devices.\n` +
-        `- **Graph Analysis**: Real networks are messy. Sybil farms look suspiciously tidy—everyone endorses everyone else.\n` +
+        `- **Graph Analysis**: Real networks are messy. Sybil farms look suspiciously tidy - everyone endorses everyone else.\n` +
         `- **Behavioral Coherence**: Fake identities share behavioral fingerprints (same vocabulary, same hours).\n\n` +
         `**Effectiveness**: LIMITED. LCT raises cost floor but doesn't make attacks impossible for well-funded adversaries.`,
       type: 'explanation',
@@ -1081,7 +1081,7 @@ export class ACTQueryEngine {
         `3. Internal endorsement ratio becomes abnormally high\n` +
         `4. Members leverage inflated trust for economic advantage\n\n` +
         `**Why Tempting**:\n` +
-        `Seems victimless—no one directly harmed, just reputation inflated.\n\n` +
+        `Seems victimless - no one directly harmed, just reputation inflated.\n\n` +
         `**Web4 Defenses**:\n` +
         `- **Graph Clustering Detection**: Real friends don't endorse EVERY single thing their friends do. Colluders do.\n` +
         `- **External/Internal Ratio**: Legitimate experts get endorsements from strangers. Colluders only from each other.\n` +
@@ -1101,7 +1101,7 @@ export class ACTQueryEngine {
   private explainLongConAttack(): Response {
     return {
       text: `**Long-Con Attack: The Patient Infiltrator**\n\n` +
-        `The most sophisticated attack—not technically complex, but requiring patience most attackers lack.\n\n` +
+        `The most sophisticated attack - not technically complex, but requiring patience most attackers lack.\n\n` +
         `**How It Works**:\n` +
         `1. Join community with standard identity (no detectable anomalies)\n` +
         `2. **Actually deliver genuine value for 100+ cycles** (the expensive part)\n` +
@@ -1133,7 +1133,7 @@ export class ACTQueryEngine {
   private explainDestructionAttack(): Response {
     return {
       text: `**Trust Nihilism: The Arsonist**\n\n` +
-        `The Arsonist doesn't want profit—they want to watch the world burn.\n\n` +
+        `The Arsonist doesn't want profit - they want to watch the world burn.\n\n` +
         `**How It Works**:\n` +
         `1. Join network with minimal identity investment\n` +
         `2. Begin mass false accusations against everyone\n` +
@@ -1243,7 +1243,7 @@ export class ACTQueryEngine {
     // No moments loaded - guide to the moments page
     return {
       text: `**Exploring Emergent Moments**\n\n` +
-        `Moments are the most interesting events detected across all simulations—` +
+        `Moments are the most interesting events detected across all simulations - ` +
         `trust collapses, trust thresholds, karma effects, and more.\n\n` +
         `To explore moments:\n` +
         `1. Visit the [Emergent Moments Gallery](/moments) to browse all detected moments\n` +
@@ -1434,13 +1434,13 @@ export class ACTQueryEngine {
       };
     }
 
-    // Has simulation context—suggest based on what they've seen
+    // Has simulation context - suggest based on what they've seen
     return {
       text: `**Interesting Things to Explore Next**:\n\n` +
         `1. **Trust Evolution**: Why did trust change the way it did? Look for inflection points.\n` +
-        `2. **ATP Crises**: Find moments where ATP dropped below 30—survival mode decisions.\n` +
+        `2. **ATP Crises**: Find moments where ATP dropped below 30 - survival mode decisions.\n` +
         `3. **Pattern Learning**: If EP enabled, see how decisions improved across lives.\n` +
-        `4. **Comparison**: Run the same simulation with different parameters—what changes?\n` +
+        `4. **Comparison**: Run the same simulation with different parameters - what changes?\n` +
         `5. **Narratives**: Read the human-readable story version of this simulation.\n\n` +
         `Try asking: "Why did trust drop at tick X?" or "Compare this to baseline"`,
       type: 'suggestion',
@@ -1720,7 +1720,7 @@ export class ACTQueryEngine {
           `- Trust hasn't had time to build (early epochs)\n` +
           `- Defectors are eroding trust faster than it builds\n` +
           `- Cautious agents haven't warmed up yet\n\n` +
-          `Keep watching—cooperation often takes time to emerge.`,
+          `Keep watching - cooperation often takes time to emerge.`,
         type: 'explanation',
         suggestedQueries: [
           "Who has the most trust?",
@@ -1758,7 +1758,7 @@ export class ACTQueryEngine {
       text += `- Non-members avg reputation: ${avgRepOutside.toFixed(2)}\n`;
 
       if (avgRepInCoalition > avgRepOutside) {
-        text += `\nCoalition members are building trust faster—cooperation begets cooperation.`;
+        text += `\nCoalition members are building trust faster - cooperation begets cooperation.`;
       } else {
         text += `\nInteresting: outsiders are doing well. This society may be more competitive than cooperative.`;
       }
@@ -1891,7 +1891,7 @@ export class ACTQueryEngine {
       }
     } else {
       text += `**Insight**: Cooperators are being exploited. Pure cooperation is vulnerable `;
-      text += `when defectors are present—they give without getting. `;
+      text += `when defectors are present - they give without getting. `;
       text += `Reciprocators often outperform in mixed societies.`;
     }
 
@@ -2157,11 +2157,11 @@ export class ACTQueryEngine {
     const insights: Record<StrategyType, { winning: string; losing: string }> = {
       cooperator: {
         winning: 'Unconditional cooperation builds trust quickly in friendly environments.',
-        losing: 'Pure cooperators are exploited by defectors—they give without protecting themselves.'
+        losing: 'Pure cooperators are exploited by defectors - they give without protecting themselves.'
       },
       defector: {
         winning: 'Early exploitation can generate ATP before trust networks form. This is usually temporary.',
-        losing: 'Always defecting burns trust. Once identified, defectors get isolated—no one wants to interact with them.'
+        losing: 'Always defecting burns trust. Once identified, defectors get isolated - no one wants to interact with them.'
       },
       reciprocator: {
         winning: 'Tit-for-tat is evolutionarily stable: cooperates with cooperators, punishes defectors.',
@@ -2172,7 +2172,7 @@ export class ACTQueryEngine {
         losing: 'Being too cautious can miss opportunities and slow trust building in cooperative environments.'
       },
       adaptive: {
-        winning: 'Learning from trust levels allows optimal behavior in any environment—the most flexible strategy.',
+        winning: 'Learning from trust levels allows optimal behavior in any environment - the most flexible strategy.',
         losing: 'In early stages, adaptive agents lack data and can make poor decisions. They need time to calibrate.'
       },
       human: {
@@ -2193,7 +2193,7 @@ export class ACTQueryEngine {
       reciprocator: 'Tit-for-tat: cooperates first, then mirrors the other\'s last action.',
       cautious: 'Only cooperates when trust is established. Slow to warm up but resilient.',
       adaptive: 'Cooperates proportional to trust level. Learns and adapts from experience.',
-      human: 'You—making real decisions about trust and cooperation based on your judgment.'
+      human: 'You - making real decisions about trust and cooperation based on your judgment.'
     };
     return descriptions[strategy];
   }
@@ -2209,7 +2209,7 @@ export class ACTQueryEngine {
         `- "What is ATP?"\n` +
         `- "Explain pattern learning"\n` +
         `- "What should I explore next?"\n\n` +
-        `Or just describe what you're curious about—I'll do my best to help.`,
+        `Or just describe what you're curious about - I'll do my best to help.`,
       type: 'suggestion',
       suggestedQueries: [
         "Run a simulation",

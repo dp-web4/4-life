@@ -4,7 +4,7 @@
  * ACT Guided Explorer
  *
  * Interactive Q&A explorer for simulation concepts.
- * Uses pattern-matched queries with pre-generated explanations — not AI chat.
+ * Uses pattern-matched queries with pre-generated explanations - not AI chat.
  *
  * Features:
  * - Clickable topic buttons for guided exploration

@@ -172,7 +172,7 @@ export class NarrativeEnrichment {
     switch (event.type) {
       case EventType.TRUST_THRESHOLD:
         if (event.data.threshold === CONSCIOUSNESS_THRESHOLD.value) {
-          return `This threshold represents a phase transition — qualitatively different behavior emerges above vs below 0.5.`;
+          return `This threshold represents a phase transition - qualitatively different behavior emerges above vs below 0.5.`;
         }
         break;
 
@@ -180,7 +180,7 @@ export class NarrativeEnrichment {
         return "Rebirth demonstrates pattern persistence through the biophysics domain - memory encoded in karma structure carries forward through life cycles.";
 
       case EventType.MATURATION:
-        return "Maturation is meta-learning — the agent learns what it knows and how to improve. This operates in the neuroscience coherence domain.";
+        return "Maturation is meta-learning - the agent learns what it knows and how to improve. This operates in the neuroscience coherence domain.";
 
       case EventType.ATP_CRISIS:
         return "ATP scarcity forces prioritization (biochemistry domain). Like biological organisms under metabolic stress, computational agents must focus on survival over exploration when energy is scarce.";

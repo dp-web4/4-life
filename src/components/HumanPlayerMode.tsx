@@ -119,7 +119,7 @@ function DecisionPanel({
 
   return (
     <div className="bg-gradient-to-br from-teal-900/30 to-gray-900 border-2 border-teal-500/50 rounded-xl p-6 mb-6">
-      {/* Interaction context — why are you meeting? */}
+      {/* Interaction context - why are you meeting? */}
       {(() => {
         const partnerRole = AGENT_ROLES[partner.role];
         const playerRole = context.player.role ? AGENT_ROLES[context.player.role] : null;
@@ -479,7 +479,7 @@ function GameOverPanel({
         </p>
       ) : (
         <p className="text-gray-300 mb-6">
-          Your energy budget (ATP) ran out — you can no longer act.
+          Your energy budget (ATP) ran out - you can no longer act.
         </p>
       )}
 

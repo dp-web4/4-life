@@ -1,5 +1,5 @@
 /**
- * WireframeFrame — wraps content in a browser/app window chrome
+ * WireframeFrame - wraps content in a browser/app window chrome
  * to make wireframes visually read as "app mockups" instead of page cards.
  */
 

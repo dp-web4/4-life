@@ -138,9 +138,9 @@ export class StoryGenerator {
     const significance = this.explainSignificance(event, lifeNumber);
     let description = this.narrateEvent(event);
 
-    // If the event has agent reasoning, lead with it as a quote — it's the most vivid part
+    // If the event has agent reasoning, lead with it as a quote - it's the most vivid part
     if (event.agent_reasoning && event.type !== EventType.STRATEGY_SHIFT && event.type !== EventType.DECISION_SUMMARY) {
-      description = `"${event.agent_reasoning}" — ${description}`;
+      description = `"${event.agent_reasoning}" - ${description}`;
     }
 
     return {
@@ -211,7 +211,7 @@ export class StoryGenerator {
     const trust = event.data.initial_trust?.toFixed(2) || "unknown";
     const atp = event.data.initial_atp || "unknown";
 
-    return `A new agent enters with ${atp} ATP and trust of ${trust}. They're unproven — everything must be earned from here.`;
+    return `A new agent enters with ${atp} ATP and trust of ${trust}. They're unproven - everything must be earned from here.`;
   }
 
   private narrateRebirth(event: SimulationEvent): string {
@@ -220,11 +220,11 @@ export class StoryGenerator {
     const newTrust = event.data.new_life_initial_trust?.toFixed(2);
 
     if (trustGain && parseFloat(trustGain) > 0) {
-      return `Reborn with karma. Consistent behavior in the last life earned a trust boost of ${trustGain} — starting this life at ${newTrust} (up from ${prevTrust}). The past matters here.`;
+      return `Reborn with karma. Consistent behavior in the last life earned a trust boost of ${trustGain} - starting this life at ${newTrust} (up from ${prevTrust}). The past matters here.`;
     } else if (trustGain && parseFloat(trustGain) < 0) {
-      return `Reborn. Karma carries a small penalty (${trustGain}), starting trust at ${newTrust}. The slate isn't fully clean — but there's room to prove otherwise.`;
+      return `Reborn. Karma carries a small penalty (${trustGain}), starting trust at ${newTrust}. The slate isn't fully clean - but there's room to prove otherwise.`;
     } else {
-      return `Reborn at trust ${newTrust}. No karma bonus this time — a fresh start with neutral standing.`;
+      return `Reborn at trust ${newTrust}. No karma bonus this time - a fresh start with neutral standing.`;
     }
   }
 
@@ -235,7 +235,7 @@ export class StoryGenerator {
     const duration = event.data.duration;
 
     if (reason === "atp_exhaustion") {
-      return `ATP hits zero — the agent's energy is spent. Final trust: ${finalTrust} after ${duration} ticks. This trust carries forward into the next life.`;
+      return `ATP hits zero - the agent's energy is spent. Final trust: ${finalTrust} after ${duration} ticks. This trust carries forward into the next life.`;
     } else if (reason === "none" || reason === "simulation_end") {
       return `Life ${event.life_number} concludes naturally. Final trust: ${finalTrust}, remaining ATP: ${finalATP}. A stable end suggests sustainable behavior patterns.`;
     } else {
@@ -247,18 +247,18 @@ export class StoryGenerator {
     const pct = (event.data.percent_change * 100).toFixed(0);
     const newTrust = event.data.new_trust?.toFixed(2);
 
-    return `Trust surges ${pct}% to ${newTrust}! Something clicked — the agent's actions resonated.`;
+    return `Trust surges ${pct}% to ${newTrust}! Something clicked - the agent's actions resonated.`;
   }
 
   private narrateTrustCollapse(event: SimulationEvent): string {
     const pct = (event.data.percent_change * 100).toFixed(0);
     const newTrust = event.data.new_trust?.toFixed(2);
 
-    return `Trust collapses ${pct}%, dropping to ${newTrust}. Something went wrong — and the society noticed.`;
+    return `Trust collapses ${pct}%, dropping to ${newTrust}. Something went wrong - and the society noticed.`;
   }
 
   private narrateTrustThreshold(event: SimulationEvent): string {
-    return `Trust crosses 0.50 — the threshold for full community access. The agent's behavior has been consistent enough that society now recognizes them as reliable. Opportunities that were closed before now open up.`;
+    return `Trust crosses 0.50 - the threshold for full community access. The agent's behavior has been consistent enough that society now recognizes them as reliable. Opportunities that were closed before now open up.`;
   }
 
   private narrateTrustPlateau(event: SimulationEvent): string {
@@ -270,14 +270,14 @@ export class StoryGenerator {
   private narrateATPCrisis(event: SimulationEvent): string {
     const atp = this.formatNumber(event.data.current_atp);
 
-    return `ATP crisis: Only ${atp} energy left. The agent is burning out — they need to earn more through contribution, or they won't survive.`;
+    return `ATP crisis: Only ${atp} energy left. The agent is burning out - they need to earn more through contribution, or they won't survive.`;
   }
 
   private narrateATPWindfall(event: SimulationEvent): string {
     const gain = this.formatNumber(event.data.gain);
     const current = this.formatNumber(event.data.current_atp);
 
-    return `ATP windfall! +${gain} energy (now at ${current}). The agent's contribution was valued — the society paid attention.`;
+    return `ATP windfall! +${gain} energy (now at ${current}). The agent's contribution was valued - the society paid attention.`;
   }
 
   private narrateDeathImminent(event: SimulationEvent): string {
@@ -290,11 +290,11 @@ export class StoryGenerator {
     const improvement = event.data.improvement?.toFixed(3);
     const currTrust = event.data.curr_final_trust?.toFixed(2);
 
-    return `The agent is getting better. Final trust of ${currTrust} exceeds the previous life by ${improvement}. Lessons are carrying forward — wisdom accumulates across lives.`;
+    return `The agent is getting better. Final trust of ${currTrust} exceeds the previous life by ${improvement}. Lessons are carrying forward - wisdom accumulates across lives.`;
   }
 
   private narrateConsistency(event: SimulationEvent): string {
-    return `Remarkable consistency — this life's trust trajectory closely matches the last. The agent found a reliable pattern and is executing it precisely.`;
+    return `Remarkable consistency - this life's trust trajectory closely matches the last. The agent found a reliable pattern and is executing it precisely.`;
   }
 
   private narrateStrategyShift(event: SimulationEvent): string {
@@ -303,7 +303,7 @@ export class StoryGenerator {
     const atp = this.formatNumber(event.data.atp_at_shift);
     const trust = event.data.trust_at_shift?.toFixed(2);
 
-    let narrative = `The agent shifts strategy — from ${this.humanizeActionType(from)} to ${this.humanizeActionType(to)}. `;
+    let narrative = `The agent shifts strategy - from ${this.humanizeActionType(from)} to ${this.humanizeActionType(to)}. `;
     narrative += `At this moment, ATP is at ${atp} and trust at ${trust}. `;
 
     if (event.agent_reasoning) {
@@ -364,7 +364,7 @@ export class StoryGenerator {
         return "Cross-life learning: the agent internalizes patterns from previous lives, gradually improving decision-making through experience.";
 
       case EventType.ATP_EXHAUSTION:
-        return "ATP is the energy budget — every action costs ATP. Earn it back through valuable contributions (which generate ADP receipts).";
+        return "ATP is the energy budget - every action costs ATP. Earn it back through valuable contributions (which generate ADP receipts).";
 
       case EventType.STRATEGY_SHIFT:
         return `Strategy shift from ${event.data.from_action} to ${event.data.to_action} at ATP=${Math.round(event.data.atp_at_shift)}, T3=${event.data.trust_at_shift?.toFixed(3)}`;
@@ -396,7 +396,7 @@ export class StoryGenerator {
         if (finalTrust !== undefined && finalTrust >= 0.5) {
           return "The life ends, but the trust earned carries forward. A legacy for the next incarnation.";
         }
-        return "Death resets ATP but not reputation. What was earned — or lost — persists.";
+        return "Death resets ATP but not reputation. What was earned - or lost - persists.";
       }
 
       case EventType.TRUST_SPIKE:
@@ -411,7 +411,7 @@ export class StoryGenerator {
         } else if (lifeNumber === 2) {
           return "Threshold crossed again. Trust resets each life, but the path back is shorter when you know the way.";
         } else {
-          return "Crossing the threshold is routine now — the real story is what happens above it.";
+          return "Crossing the threshold is routine now - the real story is what happens above it.";
         }
 
       case EventType.TRUST_PLATEAU:
@@ -553,7 +553,7 @@ export class StoryGenerator {
     );
     if (thresholdCrossings.length > 0) {
       insights.push(
-        `Trust threshold crossed in life ${thresholdCrossings[0].life_number}. Behavior shifts from reactive to intentional — full community access unlocked.`
+        `Trust threshold crossed in life ${thresholdCrossings[0].life_number}. Behavior shifts from reactive to intentional - full community access unlocked.`
       );
     }
 
@@ -583,7 +583,7 @@ export class StoryGenerator {
       if (dominant) {
         const pct = Math.round(((lastSummary.data.dominant_count || 0) / (lastSummary.data.total_actions || 1)) * 100);
         insights.push(
-          `In the final life, ${this.humanizeActionType(dominant)} dominated at ${pct}% of decisions — revealing the agent's evolved strategy after learning from previous lives.`
+          `In the final life, ${this.humanizeActionType(dominant)} dominated at ${pct}% of decisions - revealing the agent's evolved strategy after learning from previous lives.`
         );
       }
     }
@@ -678,7 +678,7 @@ export class StoryGenerator {
       return `Life ${lifeNumber}: Steady Progress (Trust: ${finalTrust})`;
     }
 
-    // Categorize the life — check most distinctive patterns first
+    // Categorize the life - check most distinctive patterns first
     const hasCrisis = events.some((e) => e.type === EventType.ATP_CRISIS);
     const hasCollapse = events.some((e) => e.type === EventType.TRUST_COLLAPSE);
     const hasMaturation = events.some((e) => e.type === EventType.MATURATION);
@@ -730,22 +730,22 @@ export class StoryGenerator {
     );
 
     if (maturationEvent) {
-      return "The agent carried forward lessons from previous lives and applied them successfully, achieving measurably better outcomes. Not external records — internalized wisdom that compounds across lives.";
+      return "The agent carried forward lessons from previous lives and applied them successfully, achieving measurably better outcomes. Not external records - internalized wisdom that compounds across lives.";
     } else if (consistencyEvent) {
-      // Consistency is more interesting than threshold for commentary — prioritize it
+      // Consistency is more interesting than threshold for commentary - prioritize it
       if (lifeNumber <= 2) {
-        return "The remarkable consistency across lives suggests the agent has found a stable attractor — a behavioral pattern that works reliably. This isn't mechanical repetition, but the demonstration of a generalizable strategy.";
+        return "The remarkable consistency across lives suggests the agent has found a stable attractor - a behavioral pattern that works reliably. This isn't mechanical repetition, but the demonstration of a generalizable strategy.";
       } else {
-        return "Three lives in, the pattern is unmistakable. The agent doesn't just repeat — it converges. Each life reinforces the same strategy, suggesting deep structural learning rather than surface-level mimicry.";
+        return "Three lives in, the pattern is unmistakable. The agent doesn't just repeat - it converges. Each life reinforces the same strategy, suggesting deep structural learning rather than surface-level mimicry.";
       }
     } else if (thresholdEvent) {
       // Vary commentary by life number to avoid identical text across acts
       if (lifeNumber === 1) {
-        return "Crossing the 0.5 trust threshold is a turning point. Below it, behavior looks random or reactive. Above it, coherent patterns emerge — the agent acts with genuine intentionality.";
+        return "Crossing the 0.5 trust threshold is a turning point. Below it, behavior looks random or reactive. Above it, coherent patterns emerge - the agent acts with genuine intentionality.";
       } else if (lifeNumber === 2) {
-        return "The threshold crossed again — the agent has to re-earn trust each life. But this time, the path to 0.5 feels more deliberate. The agent knows the territory.";
+        return "The threshold crossed again - the agent has to re-earn trust each life. But this time, the path to 0.5 feels more deliberate. The agent knows the territory.";
       } else {
-        return "By now the threshold crossing is routine. The agent has internalized what it takes to earn trust. The real question is what happens above the threshold — that's where the interesting dynamics live.";
+        return "By now the threshold crossing is routine. The agent has internalized what it takes to earn trust. The real question is what happens above the threshold - that's where the interesting dynamics live.";
       }
     }
 

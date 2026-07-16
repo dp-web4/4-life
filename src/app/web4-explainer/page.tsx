@@ -48,7 +48,7 @@ export default function Web4ExplainerPage() {
       <section>
         <h2 id="mrh">2. MRH: Markov Relevancy Horizon</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
-          MRH defines the boundary of what you can see in a Web4 society—the
+          MRH defines the boundary of what you can see in a Web4 society - the
           trust-based graph that determines which entities and information are
           visible to you. Think of it as encompassing memory (what the system remembers
           about an LCT), reputation (how behavior is recorded), and history (structured
@@ -135,7 +135,7 @@ export default function Web4ExplainerPage() {
           CI acts as a trust modulator: effective trust = base_trust &times; CI&sup2;, and ATP
           costs scale as 1/CI&sup2;. Incoherent behavior (teleporting, capability spoofing,
           broken continuity) exponentially increases the cost of acting. In 4-Life, CI
-          determines whether an entity remains &ldquo;alive&rdquo; &mdash; drop below the
+          determines whether an entity remains &ldquo;alive&rdquo; - drop below the
           coherence threshold and the society rejects you.
         </p>
       </section>
@@ -184,7 +184,7 @@ export default function Web4ExplainerPage() {
         </p>
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
           This site&apos;s <em>simulations</em> still model hardware presence with
-          stubbed signatures — but the idea has left the whiteboard. Attestation is
+          stubbed signatures - but the idea has left the whiteboard. Attestation is
           now a typed primitive in the reference library, and the deployed trust
           layer (<a href="https://github.com/dp-web4/hestia" target="_blank" rel="noreferrer" style={{ color: "#34d399" }}>hestia</a>)
           ships a <strong>device constellation</strong>: link your devices into a

@@ -5,7 +5,7 @@
  * These moments become the "highlights" that humans can explore
  * without reading full simulation logs.
  *
- * Philosophy: Humans don't want data dumps — they want stories.
+ * Philosophy: Humans don't want data dumps - they want stories.
  * Moments are story fragments that reveal trust dynamics.
  */
 
@@ -73,9 +73,9 @@ export function detectMoments(rawData: any, source: SimulationSource): Moment[] 
             ? `Karma Rewards: Life ${lifeNumber} Begins Stronger`
             : `Karma Consequences: Life ${lifeNumber} Starts Diminished`,
           narrative: karmaEffect > 0
-            ? `After ending life ${lifeNumber - 1} with trust ${prevFinal.toFixed(3)}, the agent is reborn with ${newInitial.toFixed(3)} — a ${(karmaEffect * 100).toFixed(1)}% karma bonus. Past good behavior compounds across lives.`
+            ? `After ending life ${lifeNumber - 1} with trust ${prevFinal.toFixed(3)}, the agent is reborn with ${newInitial.toFixed(3)} - a ${(karmaEffect * 100).toFixed(1)}% karma bonus. Past good behavior compounds across lives.`
             : `The agent's previous behavior carries a cost. Starting life ${lifeNumber} at ${newInitial.toFixed(3)}, down from the previous life's end of ${prevFinal.toFixed(3)}. In Web4, actions have lasting consequences.`,
-          significance: 'Demonstrates that trust is not reset on rebirth — karma carries forward.',
+          significance: 'Demonstrates that trust is not reset on rebirth - karma carries forward.',
           category: 'karma',
           severity: 'critical',
           tick: life.start_tick || 0,
@@ -101,7 +101,7 @@ export function detectMoments(rawData: any, source: SimulationSource): Moment[] 
         moments.push({
           id: `${source.id}-collapse-${lifeNumber}-${j}`,
           title: `Trust Collapse: ${(pctChange * 100).toFixed(0)}% Drop in Life ${lifeNumber}`,
-          narrative: `Trust plummets from ${prev.toFixed(3)} to ${curr.toFixed(3)} — a ${(pctChange * 100).toFixed(0)}% collapse. Something the agent did severely violated society's expectations. Recovery requires sustained consistency, and the damage may carry into future lives.`,
+          narrative: `Trust plummets from ${prev.toFixed(3)} to ${curr.toFixed(3)} - a ${(pctChange * 100).toFixed(0)}% collapse. Something the agent did severely violated society's expectations. Recovery requires sustained consistency, and the damage may carry into future lives.`,
           significance: 'Trust is asymmetric: hard to build, easy to lose. This mirrors real-world social dynamics.',
           category: 'trust',
           severity: 'critical',
@@ -119,7 +119,7 @@ export function detectMoments(rawData: any, source: SimulationSource): Moment[] 
         moments.push({
           id: `${source.id}-spike-${lifeNumber}-${j}`,
           title: `Trust Surge: +${(pctChange * 100).toFixed(0)}% in Life ${lifeNumber}`,
-          narrative: `Trust jumps from ${prev.toFixed(3)} to ${curr.toFixed(3)} — a ${(pctChange * 100).toFixed(0)}% surge. Consistent positive behavior compounds, and the society recognizes genuine contribution.`,
+          narrative: `Trust jumps from ${prev.toFixed(3)} to ${curr.toFixed(3)} - a ${(pctChange * 100).toFixed(0)}% surge. Consistent positive behavior compounds, and the society recognizes genuine contribution.`,
           significance: 'Consistent behavior compounds. Trust growth accelerates with coherent action patterns.',
           category: 'trust',
           severity: 'high',
@@ -138,7 +138,7 @@ export function detectMoments(rawData: any, source: SimulationSource): Moment[] 
           id: `${source.id}-threshold-${lifeNumber}-${j}`,
           title: `Trust Threshold Crossed in Life ${lifeNumber}`,
           narrative: `Trust reaches ${curr.toFixed(3)}, crossing the 0.5 trust threshold. Below this, behavior appears random. Above it, the agent's actions become coherent enough to be recognized as genuinely intentional. This is where true agency begins.`,
-          significance: 'The 0.5 threshold comes from Synchronism research — it marks the transition from reactive to intentional behavior.',
+          significance: 'The 0.5 threshold comes from Synchronism research - it marks the transition from reactive to intentional behavior.',
           category: 'emergence',
           severity: 'critical',
           tick,
@@ -161,7 +161,7 @@ export function detectMoments(rawData: any, source: SimulationSource): Moment[] 
         moments.push({
           id: `${source.id}-atp-crisis-${lifeNumber}-${j}`,
           title: `ATP Crisis: Only ${Math.round(curr)} Attention Remaining`,
-          narrative: `The agent's energy budget drops to ${Math.round(curr)} ATP — dangerously low. Without earning more through valuable contribution, they face death from exhaustion. Participation requires energy, and energy must be earned.`,
+          narrative: `The agent's energy budget drops to ${Math.round(curr)} ATP - dangerously low. Without earning more through valuable contribution, they face death from exhaustion. Participation requires energy, and energy must be earned.`,
           significance: 'ATP is the energy budget of Web4. Running low forces strategic decisions: conserve or contribute?',
           category: 'crisis',
           severity: 'high',
@@ -186,7 +186,7 @@ export function detectMoments(rawData: any, source: SimulationSource): Moment[] 
         moments.push({
           id: `${source.id}-maturation-${lifeNumber}`,
           title: `Maturation: Trust Improves Across Lives`,
-          narrative: `Life ${lifeNumber} ends with trust ${currFinalTrust.toFixed(3)}, up from life ${lifeNumber - 1}'s ${prevFinalTrust.toFixed(3)} — an improvement of ${((currFinalTrust - prevFinalTrust) * 100).toFixed(1)}%. The agent is learning what works and carrying that wisdom forward through karma.`,
+          narrative: `Life ${lifeNumber} ends with trust ${currFinalTrust.toFixed(3)}, up from life ${lifeNumber - 1}'s ${prevFinalTrust.toFixed(3)} - an improvement of ${((currFinalTrust - prevFinalTrust) * 100).toFixed(1)}%. The agent is learning what works and carrying that wisdom forward through karma.`,
           significance: 'Evidence of epistemic learning: the agent discovers effective behavior patterns through experience across lives.',
           category: 'learning',
           severity: 'high',
@@ -247,7 +247,7 @@ function detectNetworkMoments(rawData: any, source: SimulationSource): Moment[] 
           id: `${source.id}-coalition-${i}-${coalition.id || 'unnamed'}`,
           title: `Coalition Emerges: ${coalition.members?.length || 2} Agents Unite`,
           narrative: `A coalition forms between ${coalition.members?.join(', ') || 'multiple agents'}. Agents with mutual trust begin coordinating, creating emergent social structure. This is self-organization: no central authority, just trust dynamics producing cooperation.`,
-          significance: 'Coalition formation is emergent — societies self-organize through trust, not decree.',
+          significance: 'Coalition formation is emergent - societies self-organize through trust, not decree.',
           category: 'emergence',
           severity: 'critical',
           tick: epoch.epoch || i,
@@ -271,8 +271,8 @@ function detectNetworkMoments(rawData: any, source: SimulationSource): Moment[] 
           id: `${source.id}-network-shift-${i}`,
           title: change > 0 ? `Network Trust Surge at Epoch ${epoch.epoch || i}` : `Network Trust Decline at Epoch ${epoch.epoch || i}`,
           narrative: change > 0
-            ? `Average network trust rises from ${prevAvg.toFixed(3)} to ${currAvg.toFixed(3)}. The society is building cohesion — agents are learning to cooperate.`
-            : `Average network trust falls from ${prevAvg.toFixed(3)} to ${currAvg.toFixed(3)}. Social friction is emerging — possibly conflict or betrayal.`,
+            ? `Average network trust rises from ${prevAvg.toFixed(3)} to ${currAvg.toFixed(3)}. The society is building cohesion - agents are learning to cooperate.`
+            : `Average network trust falls from ${prevAvg.toFixed(3)} to ${currAvg.toFixed(3)}. Social friction is emerging - possibly conflict or betrayal.`,
           significance: 'Network-wide trust changes reveal macro social dynamics that individual agent stories don\'t capture.',
           category: 'trust',
           severity: Math.abs(change) > 0.15 ? 'critical' : 'high',

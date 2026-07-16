@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * V3OutputScorer — interactive "score these outputs" mini-interaction.
+ * V3OutputScorer - interactive "score these outputs" mini-interaction.
  *
  * Extracted verbatim from src/app/trust-tensor/page.tsx (Jul-9) when V3 moved to its own
  * page at /value-tensor. The 07-09 visitor filed V3 as "a first-class concept living as a
@@ -9,7 +9,7 @@
  *
  * The scores, weights (0.30/0.35/0.35) and the 0.75-vs-0.32 pair are load-bearing: the
  * niche-research-beats-clickbait number is quoted in the V3 teaser on /trust-tensor. Keep
- * the two surfaces consistent — mismatched constants across pages are exactly the defect
+ * the two surfaces consistent - mismatched constants across pages are exactly the defect
  * class PRs #442/#443 were opened to fix.
  */
 
@@ -24,7 +24,7 @@ const V3_OUTPUTS = [
     valuation: 0.85,
     veracity: 0.92,
     validity: 0.95,
-    insight: 'High across all dimensions — useful, accurate, and well-reasoned. This is how you build trust.',
+    insight: 'High across all dimensions - useful, accurate, and well-reasoned. This is how you build trust.',
   },
   {
     id: 'clickbait',
@@ -33,7 +33,7 @@ const V3_OUTPUTS = [
     valuation: 0.55,
     veracity: 0.20,
     validity: 0.25,
-    insight: 'Some popularity (Valuation) but terrible Veracity and Validity. Web4 weights truth over clicks — this earns less than half what the review earns.',
+    insight: 'Some popularity (Valuation) but terrible Veracity and Validity. Web4 weights truth over clicks - this earns less than half what the review earns.',
   },
   {
     id: 'niche-research',
@@ -60,7 +60,7 @@ const V3_OUTPUTS = [
     valuation: 0.90,
     veracity: 0.85,
     validity: 0.88,
-    insight: 'Teaching well is high-value work. The mentee\'s improved understanding is measurable value — and it builds your Temperament trust score.',
+    insight: 'Teaching well is high-value work. The mentee\'s improved understanding is measurable value - and it builds your Temperament trust score.',
   },
 ];
 

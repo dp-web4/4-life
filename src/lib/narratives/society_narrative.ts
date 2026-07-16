@@ -232,7 +232,7 @@ export class SocietyNarrativeGenerator {
       return `Built the largest alliance through consistent trustworthy behavior`;
     }
     if (agent.cooperationRate > 0.9 && agent.reputation > 0.6) {
-      return `Achieved both high cooperation and strong reputation—a rare combination`;
+      return `Achieved both high cooperation and strong reputation - a rare combination`;
     }
     if (agent.strategy === 'reciprocator' && agent.atp > 80) {
       return `Demonstrated the power of balanced reciprocity`;
@@ -245,7 +245,7 @@ export class SocietyNarrativeGenerator {
       case 'cooperator':
         return "Trust first. Not because it's naive, but because it's how communities are built.";
       case 'reciprocator':
-        return "I give what I get. It's not revenge—it's justice with a future.";
+        return "I give what I get. It's not revenge - it's justice with a future.";
       case 'adaptive':
         return "Read the room. Adjust. Survive. That's not weakness, it's wisdom.";
       case 'cautious':
@@ -296,7 +296,7 @@ export class SocietyNarrativeGenerator {
     const hasIsolation = result.events.some(e => e.type === 'defector_isolated');
     const agentCount = result.config.numAgents;
 
-    // High trust + high cooperation — many variants
+    // High trust + high cooperation - many variants
     if (finalMetrics.averageTrust > 0.6 && finalMetrics.cooperationRate > 0.7) {
       const pool = [
         "The Rise of Trust",
@@ -391,21 +391,21 @@ export class SocietyNarrativeGenerator {
     if (hasIsolation && hasCoalitions) {
       return pick([
         "When those who take are left behind by those who give",
-        "The community chose — and the defectors paid the price",
+        "The community chose - and the defectors paid the price",
         "Coalitions formed around trust. The selfish stood alone.",
       ]);
     }
     if (finalMetrics.cooperationRate > 0.8) {
       return pick([
         "How cooperation conquered competition",
-        "They chose to trust — and it changed everything",
+        "They chose to trust - and it changed everything",
         "A society where giving was the winning strategy",
       ]);
     }
     if (finalMetrics.giniCoefficient > 0.4) {
       return pick([
         "A tale of winners, losers, and the cost of inequality",
-        "Same rules, same start — wildly different outcomes",
+        "Same rules, same start - wildly different outcomes",
         "When the gap between rich and poor tells the whole story",
       ]);
     }
@@ -419,12 +419,12 @@ export class SocietyNarrativeGenerator {
     if (deaths > 0) {
       return pick([
         "Where trust is life, and betrayal has a body count",
-        "Not everyone survived — but their choices shaped what followed",
+        "Not everyone survived - but their choices shaped what followed",
       ]);
     }
     if (finalMetrics.averageTrust > 0.4) {
       return pick([
-        "Trust emerged — not because anyone planned it, but because it worked",
+        "Trust emerged - not because anyone planned it, but because it worked",
         "No rules said 'cooperate.' They did anyway.",
         "A quiet revolution: trust as emergent architecture",
       ]);
@@ -492,7 +492,7 @@ export class SocietyNarrativeGenerator {
     // Defector arc
     if (agent.strategy === 'defector') {
       if (coalitionSize > 0) {
-        return `Despite cheating as a ${roleLabel.toLowerCase()}, ${agent.name} found unexpected allies — perhaps even exploiters need community.`;
+        return `Despite cheating as a ${roleLabel.toLowerCase()}, ${agent.name} found unexpected allies - perhaps even exploiters need community.`;
       }
       if (reputation < 0.3) {
         return `${agent.name} the ${roleLabel} took from everyone, but the village eventually saw through it. Nobody trades with a known cheat.`;
@@ -508,13 +508,13 @@ export class SocietyNarrativeGenerator {
       if (agent.atp < 50) {
         return `${agent.name} the ${roleLabel} gave and gave, sometimes to those who didn't deserve it. Generosity without wisdom has a cost.`;
       }
-      return `${agent.name} the ${roleLabel} cooperated ${Math.round(coopRate * 100)}% of the time — ${agent.atp >= 80 ? 'a solid return on honest dealing' : 'generous, but the village didn\'t always reciprocate'}.`;
+      return `${agent.name} the ${roleLabel} cooperated ${Math.round(coopRate * 100)}% of the time - ${agent.atp >= 80 ? 'a solid return on honest dealing' : 'generous, but the village didn\'t always reciprocate'}.`;
     }
 
     // Reciprocator arc
     if (agent.strategy === 'reciprocator') {
       if (coalitionSize >= 3) {
-        return `${agent.name} the ${roleLabel} lived by a simple code — treat others as they treat you. It made them the backbone of the village alliance.`;
+        return `${agent.name} the ${roleLabel} lived by a simple code - treat others as they treat you. It made them the backbone of the village alliance.`;
       }
       return `${agent.name} the ${roleLabel} gave fairness for fairness, ${Math.round(coopRate * 100)}% cooperation. ${agent.atp > 90 ? 'Fair dealing proved profitable.' : 'Honest, though not always lucrative.'}`;
     }
@@ -529,7 +529,7 @@ export class SocietyNarrativeGenerator {
 
     // Adaptive arc
     if (agent.strategy === 'adaptive') {
-      return `${agent.name} the ${roleLabel} read the village mood and adapted — ${Math.round(coopRate * 100)}% cooperation, ${Math.round(agent.atp)} energy. ${coopRate > 0.6 ? 'They learned that honesty was the best policy here.' : 'Their loyalties shifted with the wind.'}`;
+      return `${agent.name} the ${roleLabel} read the village mood and adapted - ${Math.round(coopRate * 100)}% cooperation, ${Math.round(agent.atp)} energy. ${coopRate > 0.6 ? 'They learned that honesty was the best policy here.' : 'Their loyalties shifted with the wind.'}`;
     }
 
     return `${agent.name} the ${roleLabel} walked their own path through the village.`;
@@ -672,7 +672,7 @@ export class SocietyNarrativeGenerator {
     }
 
     opening += `Among them: ${breakdown.join(', ')}. `;
-    opening += `Each started with ${config.initialATP} ATP—the currency of attention that would determine their survival.`;
+    opening += `Each started with ${config.initialATP} ATP - the currency of attention that would determine their survival.`;
 
     return opening;
   }
@@ -768,7 +768,7 @@ export class SocietyNarrativeGenerator {
     if (title.includes("Alliance") || title.includes("Lines") || title.includes("Cluster") || title.includes("Partner") || title.includes("Shape")) {
       return pick([
         "As rounds passed, patterns emerged. Those who proved trustworthy found each other. Trust clustered, creating islands of cooperation in an uncertain sea.",
-        "Nobody planned it. But round by round, the cooperators gravitated toward each other — drawn together by the simple math of mutual benefit.",
+        "Nobody planned it. But round by round, the cooperators gravitated toward each other - drawn together by the simple math of mutual benefit.",
         "Trust is invisible until it isn't. The first coalitions formed not from strategy, but from repeated proof: you gave, I gave back, and we both survived.",
         "The network shifted. Where random connections once dominated, trust-weighted edges now drew clear boundaries between those who earned cooperation and those who didn't.",
       ]);
@@ -779,7 +779,7 @@ export class SocietyNarrativeGenerator {
       return pick([
         "Every society eventually faces its moment of truth. Those who took without giving found their options narrowing.",
         "The bill came due. In a society where trust is currency, running a deficit has consequences that can't be hidden.",
-        "It happened gradually, then all at once. The defectors who had been coasting on others' generosity found the network reorganizing around them — without them.",
+        "It happened gradually, then all at once. The defectors who had been coasting on others' generosity found the network reorganizing around them - without them.",
         "Trust collapses don't announce themselves. They arrive as a quiet withdrawal of cooperation, a slow closing of doors.",
       ]);
     }
@@ -789,13 +789,13 @@ export class SocietyNarrativeGenerator {
       return pick([
         "In Web4, survival is not guaranteed. ATP must be earned, and those who cannot contribute eventually fade.",
         "The society faced its ultimate test: who had built enough trust to weather the storm, and who had burned through their reserves?",
-        "Death in Web4 is not an ending — it's a transition. The question is what survives: reputation, relationships, or just the karma of actions taken.",
+        "Death in Web4 is not an ending - it's a transition. The question is what survives: reputation, relationships, or just the karma of actions taken.",
         "When resources run thin, the difference between those who invested in trust and those who exploited it becomes starkly visible.",
       ]);
     }
 
     return pick([
-      "The simulation entered a new phase — round by round, the trust dynamics shifted.",
+      "The simulation entered a new phase - round by round, the trust dynamics shifted.",
       "Something changed. The patterns that defined the early rounds gave way to new dynamics.",
       "A turning point arrived, though no single event caused it. The society was evolving.",
     ]);
@@ -896,7 +896,7 @@ export class SocietyNarrativeGenerator {
     } else if (strategy === 'cooperator') {
       quote = `${name}'s generosity wasn't enough to sustain them. Good intentions don't pay the energy bills.`;
     } else {
-      quote = `${name} ran out of ATP. In Web4, survival requires earning — not just spending — attention.`;
+      quote = `${name} ran out of ATP. In Web4, survival requires earning - not just spending - attention.`;
     }
 
     return {
@@ -912,13 +912,13 @@ export class SocietyNarrativeGenerator {
 
     return {
       description: event.message,
-      significance: `${name} begins again. Karma carries forward — a new life, but old reputations echo.`,
+      significance: `${name} begins again. Karma carries forward - a new life, but old reputations echo.`,
     };
   }
 
   private narrateCooperationSurge(event: SocietyEvent): NarrativeEvent {
     return {
-      description: "Cooperation surged through the network. Success bred success—seeing others thrive through trust encouraged more trust.",
+      description: "Cooperation surged through the network. Success bred success - seeing others thrive through trust encouraged more trust.",
       significance: event.significance,
     };
   }
@@ -926,12 +926,12 @@ export class SocietyNarrativeGenerator {
   private narrateSocietyStable(event: SocietyEvent): NarrativeEvent {
     return {
       description: "The society found equilibrium. Trust levels stabilized, coalitions solidified, and a sustainable order emerged.",
-      significance: "Stability in Web4 isn't enforced—it emerges from the sum of individual trust decisions.",
+      significance: "Stability in Web4 isn't enforced - it emerges from the sum of individual trust decisions.",
     };
   }
 
   /**
-   * Narrate the trajectory of trust across the simulation — how did things change over time?
+   * Narrate the trajectory of trust across the simulation - how did things change over time?
    * This is the most human-readable part of the narrative: describing trends, not just endpoints.
    */
   private narrateTrajectory(result: SocietyResult): string | null {
@@ -960,14 +960,14 @@ export class SocietyNarrativeGenerator {
     // Trust trajectory
     if (lateTrust > earlyTrust + 0.15) {
       if (midTrust < earlyTrust) {
-        parts.push(`Trust started at ${(earlyTrust * 100).toFixed(0)}%, dipped in the middle rounds, then climbed to ${(lateTrust * 100).toFixed(0)}% — a classic crisis-and-recovery arc`);
+        parts.push(`Trust started at ${(earlyTrust * 100).toFixed(0)}%, dipped in the middle rounds, then climbed to ${(lateTrust * 100).toFixed(0)}% - a classic crisis-and-recovery arc`);
       } else {
         parts.push(`Trust steadily grew from ${(earlyTrust * 100).toFixed(0)}% to ${(lateTrust * 100).toFixed(0)}% as agents learned who to rely on`);
       }
     } else if (lateTrust < earlyTrust - 0.15) {
-      parts.push(`Trust eroded from ${(earlyTrust * 100).toFixed(0)}% to ${(lateTrust * 100).toFixed(0)}% — the cooperative foundation crumbled under pressure`);
+      parts.push(`Trust eroded from ${(earlyTrust * 100).toFixed(0)}% to ${(lateTrust * 100).toFixed(0)}% - the cooperative foundation crumbled under pressure`);
     } else if (midTrust < earlyTrust - 0.1 && lateTrust > midTrust + 0.1) {
-      parts.push(`Trust wobbled — dropping mid-simulation before recovering to ${(lateTrust * 100).toFixed(0)}%`);
+      parts.push(`Trust wobbled - dropping mid-simulation before recovering to ${(lateTrust * 100).toFixed(0)}%`);
     }
 
     // Death toll
@@ -997,7 +997,7 @@ export class SocietyNarrativeGenerator {
 
     const events: NarrativeEvent[] = [];
 
-    // Trajectory narration — how did we get here?
+    // Trajectory narration - how did we get here?
     const trajectoryText = this.narrateTrajectory(result);
     if (trajectoryText) {
       events.push({
@@ -1021,7 +1021,7 @@ export class SocietyNarrativeGenerator {
     if (winners.length > 0) {
       const hasDefectorWinner = winners.some(a => a.strategy === 'defector');
       const winnerDesc = hasDefectorWinner
-        ? `Those who thrived: ${winners.map(a => `${a.name} (${a.strategy})`).join(', ')}. Not all succeeded through trust — some found ways to profit at others' expense.`
+        ? `Those who thrived: ${winners.map(a => `${a.name} (${a.strategy})`).join(', ')}. Not all succeeded through trust - some found ways to profit at others' expense.`
         : `Those who thrived: ${winners.map(a => `${a.name} (${a.strategy})`).join(', ')}. Their success came from earning trust that others recognized and reciprocated.`;
       events.push({
         description: winnerDesc,
@@ -1041,7 +1041,7 @@ export class SocietyNarrativeGenerator {
       events.push({
         description: loserDesc,
         significance: hasCooperatorLoser
-          ? "Trust networks don't always protect the trusting — sometimes cooperators pay the price for others' exploitation."
+          ? "Trust networks don't always protect the trusting - sometimes cooperators pay the price for others' exploitation."
           : "In transparent trust networks, strategies that don't build genuine value eventually fail.",
         epoch: finalEpochIndex,
         agentIds: losers.map(a => a.id),
@@ -1069,11 +1069,11 @@ export class SocietyNarrativeGenerator {
 
     // Translate Gini into human language
     if (metrics.giniCoefficient < 0.2) {
-      description += `. Wealth was shared remarkably equally — no one agent hoarded resources.`;
+      description += `. Wealth was shared remarkably equally - no one agent hoarded resources.`;
     } else if (metrics.giniCoefficient > 0.5) {
-      description += `. A stark wealth divide emerged — a few agents controlled most of the ATP while others scraped by.`;
+      description += `. A stark wealth divide emerged - a few agents controlled most of the ATP while others scraped by.`;
     } else if (metrics.giniCoefficient > 0.35) {
-      description += `. Wealth concentrated toward the top — the rich got richer, the poor stayed poor.`;
+      description += `. Wealth concentrated toward the top - the rich got richer, the poor stayed poor.`;
     } else {
       description += `. Resources were distributed unevenly, but not dramatically so.`;
     }
@@ -1185,22 +1185,22 @@ export class SocietyNarrativeGenerator {
 
     // Check for specific patterns that suggest morals
     if (events.some(e => e.type === 'defector_isolated') && metrics.cooperationRate > 0.6) {
-      return "In transparent societies, exploitation is a losing strategy. When trust is visible, the exploiters reveal themselves—and find themselves alone.";
+      return "In transparent societies, exploitation is a losing strategy. When trust is visible, the exploiters reveal themselves - and find themselves alone.";
     }
 
     if (metrics.averageTrust > 0.6 && metrics.giniCoefficient < 0.25) {
-      return "When trust flows freely, prosperity follows. No central authority distributed the wealth—it emerged naturally from networks of mutual benefit.";
+      return "When trust flows freely, prosperity follows. No central authority distributed the wealth - it emerged naturally from networks of mutual benefit.";
     }
 
     if (metrics.numCoalitions > 2 && metrics.averageTrust > 0.4) {
-      return "Trust creates structure without permission. These coalitions weren't designed—they emerged from countless small decisions to cooperate or defect.";
+      return "Trust creates structure without permission. These coalitions weren't designed - they emerged from countless small decisions to cooperate or defect.";
     }
 
     if (metrics.giniCoefficient > 0.4) {
       return "Even in trust-based societies, inequality can emerge. The question isn't whether there are winners and losers, but whether the game is fair.";
     }
 
-    return "Trust is not given—it's earned through consistent behavior over time. This simulation shows why that matters.";
+    return "Trust is not given - it's earned through consistent behavior over time. This simulation shows why that matters.";
   }
 
   private generateSummary(result: SocietyResult, characters: CharacterProfile[]): string {
@@ -1462,7 +1462,7 @@ function generateComparisonAspects(
   if (deadliest.deaths > 0) {
     aspects.push({
       aspect: 'Survival',
-      findings: `"${deadliest.label}" lost ${deadliest.deaths} agent${deadliest.deaths > 1 ? 's' : ''} while "${safest.label}" had ${safest.deaths === 0 ? 'no casualties' : `only ${safest.deaths}`}. In Web4, ATP exhaustion means death—and some societies are deadlier than others.`,
+      findings: `"${deadliest.label}" lost ${deadliest.deaths} agent${deadliest.deaths > 1 ? 's' : ''} while "${safest.label}" had ${safest.deaths === 0 ? 'no casualties' : `only ${safest.deaths}`}. In Web4, ATP exhaustion means death - and some societies are deadlier than others.`,
       winner: safest.deaths < deadliest.deaths ? safest.label : undefined,
     });
   }
@@ -1482,7 +1482,7 @@ function generateComparativeInsights(
 
   if (triumphs.length > 0 && tragedies.length > 0) {
     insights.push(
-      `The contrast between "${triumphs[0].name}" (triumph) and "${tragedies[0].name}" (tragedy) reveals that success isn't guaranteed—initial conditions matter enormously.`
+      `The contrast between "${triumphs[0].name}" (triumph) and "${tragedies[0].name}" (tragedy) reveals that success isn't guaranteed - initial conditions matter enormously.`
     );
   }
 
@@ -1495,7 +1495,7 @@ function generateComparativeInsights(
 
   if (mostCoalitions.coalitions > 0) {
     insights.push(
-      `"${mostCoalitions.label}" saw ${mostCoalitions.coalitions} coalition${mostCoalitions.coalitions > 1 ? 's' : ''} form—trust clusters that become power bases.`
+      `"${mostCoalitions.label}" saw ${mostCoalitions.coalitions} coalition${mostCoalitions.coalitions > 1 ? 's' : ''} form - trust clusters that become power bases.`
     );
   }
 
@@ -1523,11 +1523,11 @@ function generateComparativeInsights(
       };
       const strategyName = archetypes[dominantInTriumph] || dominantInTriumph + 's';
       if (dominantInTriumph === 'defector') {
-        insights.push(`${strategyName} thrived in "${triumphs[0].name}" — a reminder that exploitation can pay off when trust networks lack accountability mechanisms.`);
+        insights.push(`${strategyName} thrived in "${triumphs[0].name}" - a reminder that exploitation can pay off when trust networks lack accountability mechanisms.`);
       } else if (dominantInTriumph === 'reciprocator') {
-        insights.push(`${strategyName} thrived in "${triumphs[0].name}" — mirroring behavior built trust with cooperators while punishing defectors.`);
+        insights.push(`${strategyName} thrived in "${triumphs[0].name}" - mirroring behavior built trust with cooperators while punishing defectors.`);
       } else {
-        insights.push(`${strategyName} thrived in "${triumphs[0].name}" — their approach aligned with the society's dynamics.`);
+        insights.push(`${strategyName} thrived in "${triumphs[0].name}" - their approach aligned with the society's dynamics.`);
       }
     }
   }
@@ -1554,7 +1554,7 @@ function generateComparativeConclusion(scenarios: ComparativeNarrative['scenario
   const tragedies = scenarios.filter(s => s.outcome === 'tragedy');
 
   if (triumphs.length === scenarios.length) {
-    return 'All scenarios found paths to cooperation—a testament to the resilience of trust-based social organization.';
+    return 'All scenarios found paths to cooperation - a testament to the resilience of trust-based social organization.';
   }
 
   if (tragedies.length === scenarios.length) {
@@ -1562,7 +1562,7 @@ function generateComparativeConclusion(scenarios: ComparativeNarrative['scenario
   }
 
   if (triumphs.length > tragedies.length) {
-    return `Most scenarios succeeded, but the failure of "${tragedies[0]?.name || 'some'}" shows that trust is never guaranteed—it must be built.`;
+    return `Most scenarios succeeded, but the failure of "${tragedies[0]?.name || 'some'}" shows that trust is never guaranteed - it must be built.`;
   }
 
   if (tragedies.length > triumphs.length) {
@@ -1595,7 +1595,7 @@ function generateComparativeTitle(scenarios: ComparativeNarrative['scenarios']):
 function generateIntroduction(count: number, scenarios: ComparativeNarrative['scenarios']): string {
   const names = scenarios.map(s => `"${s.name}"`).join(', ');
 
-  return `We ran ${count} simulations under different conditions: ${names}. Each followed the same Web4 rules—trust built through cooperation, eroded through exploitation, with ATP economics creating life-or-death pressure. Yet the outcomes diverged dramatically. Here's what we learned.`;
+  return `We ran ${count} simulations under different conditions: ${names}. Each followed the same Web4 rules - trust built through cooperation, eroded through exploitation, with ATP economics creating life-or-death pressure. Yet the outcomes diverged dramatically. Here's what we learned.`;
 }
 
 // ============================================================================
@@ -1933,7 +1933,7 @@ function generateRelationshipMoments(
 ): RelationshipMoment[] {
   const moments: RelationshipMoment[] = [];
 
-  // First significant cooperation — use actual trust change data if available
+  // First significant cooperation - use actual trust change data if available
   if (stats.mutualCoops > 0) {
     const firstPositive = stats.trustChanges.find(tc => tc.change > 0);
     moments.push({
@@ -1943,7 +1943,7 @@ function generateRelationshipMoments(
     });
   }
 
-  // Betrayal moment — use actual trust change data if available
+  // Betrayal moment - use actual trust change data if available
   if (stats.exploitationsBy1 > 0 || stats.exploitationsBy2 > 0) {
     const betrayer = stats.exploitationsBy1 > stats.exploitationsBy2 ? name1 : name2;
     const victim = betrayer === name1 ? name2 : name1;
@@ -2046,7 +2046,7 @@ function generateRelationshipNarrative(
       return `${agent1.name} (${archetype1}) took advantage of ${agent2.name} (${archetype2}), exploiting their trust ${stats.exploitationsBy1} time${stats.exploitationsBy1 !== 1 ? 's' : ''}. This is the dark side of trusting strategies.`;
 
     case 'victim':
-      return `${agent2.name} (${archetype2}) exploited ${agent1.name} (${archetype1}) ${stats.exploitationsBy2} time${stats.exploitationsBy2 !== 1 ? 's' : ''}. ${agent1.name}'s trust was not rewarded—a cautionary tale.`;
+      return `${agent2.name} (${archetype2}) exploited ${agent1.name} (${archetype1}) ${stats.exploitationsBy2} time${stats.exploitationsBy2 !== 1 ? 's' : ''}. ${agent1.name}'s trust was not rewarded - a cautionary tale.`;
 
     case 'rebuilding':
       return `${agent1.name} and ${agent2.name} had a rocky start but are rebuilding trust. After ${stats.mutualDefects} failures, they've managed ${stats.mutualCoops} successful cooperations. Perhaps trust can be repaired.`;
@@ -2485,7 +2485,7 @@ function generateCharacterStoryArc(
     const coalitionEvent = timeline.find(e => e.type === 'coalition');
 
     if (isolationEvent) {
-      parts.push(`At round ${isolationEvent.epoch + 1}, they faced isolation from the community — no one would interact with them.`);
+      parts.push(`At round ${isolationEvent.epoch + 1}, they faced isolation from the community - no one would interact with them.`);
     } else if (coalitionEvent) {
       parts.push(`They found strength in numbers, joining forces with others to build a coalition.`);
     }
@@ -2493,13 +2493,13 @@ function generateCharacterStoryArc(
 
   // Ending - based on outcome
   if (!finalAgent.alive) {
-    parts.push(`In the end, ${finalAgent.name} ran out of resources—a stark reminder that in societies built on trust, some approaches simply don't work.`);
+    parts.push(`In the end, ${finalAgent.name} ran out of resources - a stark reminder that in societies built on trust, some approaches simply don't work.`);
   } else if (atpChange > 50 && repChange > 0.2) {
     parts.push(`By the end, ${finalAgent.name} had not only survived but thrived, emerging wealthier and more respected than when they started.`);
   } else if (atpChange < -30 || repChange < -0.2) {
     parts.push(`The journey took its toll. ${finalAgent.name} ended with less than they started, a cautionary tale about the costs of certain social strategies.`);
   } else {
-    parts.push(`${finalAgent.name} finished the simulation in a stable position, neither rising nor falling dramatically—sometimes survival is its own success.`);
+    parts.push(`${finalAgent.name} finished the simulation in a stable position, neither rising nor falling dramatically - sometimes survival is its own success.`);
   }
 
   return parts.join(' ');
@@ -2622,7 +2622,7 @@ export interface ShareableContent {
 export function generateShareableContent(
   narrative: SocietyNarrative,
   platform: SharePlatform,
-  siteUrl: string = 'https://4-life-ivory.vercel.app/society-simulator'
+  siteUrl: string = 'https://4-life-ivory.vercel.app/onramp'
 ): ShareableContent {
   switch (platform) {
     case 'twitter':

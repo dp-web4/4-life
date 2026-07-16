@@ -97,7 +97,7 @@ export default function GlossaryPanel() {
           }
         }}
         aria-label={isOpen ? "Close glossary" : "Open glossary"}
-        title="Quick glossary — look up any term"
+        title="Quick glossary - look up any term"
         className={!isOpen && !hasBeenOpened ? "glossary-pulse" : ""}
         style={{
           position: "fixed",

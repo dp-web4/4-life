@@ -624,7 +624,7 @@ export default function LCTExplainerPage() {
               <strong className="text-sky-400">What about metadata and surveillance?</strong> If devices
               are constantly attesting to each other, couldn&apos;t the attestation patterns themselves reveal
               sensitive information? Yes - this is a real concern. Web4 identifies{' '}
-              <Link href="/threat-model#privacy-leakage" className="text-sky-400 hover:underline">7 privacy
+              <Link href="/what-could-go-wrong#privacy-leakage" className="text-sky-400 hover:underline">7 privacy
               leakage channels</Link>, including graph structure (who talks to whom) and timing correlation.
               Mitigations include pseudonymous attestation, proof batching, timing jitter, and dummy edges -
               but complete prevention is impossible. The design goal is raising the cost of inference above
@@ -1177,7 +1177,7 @@ export default function LCTExplainerPage() {
                   coherence checks
                 </Link>{" "}
                 gate large transfers and{" "}
-                <Link href="/federation-economics" className="text-emerald-400 hover:text-emerald-300 underline">
+                <Link href="/onramp" className="text-emerald-400 hover:text-emerald-300 underline">
                   trust-weighted votes
                 </Link>{" "}
                 count proportionally to T3). A 0.50 ceiling caps how much weight your participation can carry
@@ -2105,7 +2105,7 @@ export default function LCTExplainerPage() {
             <p className="text-xs text-gray-500">
               This is a Sybil resistance strategy, not a Sybil prevention guarantee. The goal is to make
               real participation cheaper and more effective than fake participation - not to make fakery impossible.
-              See the <a href="/threat-model" className="text-indigo-400 hover:text-indigo-300 underline">Threat Model</a> for
+              See the <a href="/what-could-go-wrong" className="text-indigo-400 hover:text-indigo-300 underline">Threat Model</a> for
               deeper analysis.
             </p>
           </div>

@@ -1,9 +1,9 @@
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 
 export const metadata: Metadata = {
-  title: "First Contact — Your First Web4 Experience | 4-Life",
+  title: "First Contact - Your First Web4 Experience | 4-Life",
   description:
-    "Follow Alice through 16 actions in a Web4 community. Watch trust build, spam fail, death arrive, and karma carry forward — all in 7 minutes.",
+    "Follow Alice through 16 actions in a Web4 community. Watch trust build, spam fail, death arrive, and karma carry forward - all in 7 minutes.",
   openGraph: {
     title: "First Contact: Your First Web4 Experience",
     description:

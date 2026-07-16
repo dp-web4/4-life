@@ -131,7 +131,7 @@ export default function FeaturedMoment({
 
   const featuredMoment = rankedMoments[currentIndex] || null;
 
-  // Loading skeleton — shows meaningful static content for non-JS visitors
+  // Loading skeleton - shows meaningful static content for non-JS visitors
   if (loading && showSkeleton) {
     return (
       <section className="card" style={{
@@ -145,7 +145,7 @@ export default function FeaturedMoment({
           and start each new life stronger. The track record follows them forever.
         </p>
         <Link
-          href="/karma-journey"
+          href="/karma-consequences"
           style={{
             display: 'inline-block',
             marginTop: '1rem',
@@ -173,7 +173,7 @@ export default function FeaturedMoment({
           and start each new life stronger. The track record follows them forever.
         </p>
         <Link
-          href="/karma-journey"
+          href="/karma-consequences"
           style={{
             display: 'inline-block',
             marginTop: '1rem',

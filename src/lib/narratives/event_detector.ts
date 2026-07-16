@@ -471,7 +471,7 @@ export class EventDetector {
   // ============================================================================
 
   /**
-   * Detect strategy shifts — moments where the agent changes its approach.
+   * Detect strategy shifts - moments where the agent changes its approach.
    * These are narratively powerful because they reveal adaptation.
    */
   private detectStrategyShifts(
@@ -510,7 +510,7 @@ export class EventDetector {
   }
 
   /**
-   * Generate a per-life decision summary — what the agent did and why.
+   * Generate a per-life decision summary - what the agent did and why.
    */
   private generateDecisionSummary(
     actions: ActionRecord[],

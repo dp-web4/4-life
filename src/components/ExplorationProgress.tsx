@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { loadExploration } from '@/lib/exploration';
 
 /**
- * ExplorationProgress — Minimal progress bar showing site exploration.
+ * ExplorationProgress - Minimal progress bar showing site exploration.
  *
  * Appears under the navbar once a visitor has explored 2+ pages.
  * Shows progress through 11 core pages in the beginner path.

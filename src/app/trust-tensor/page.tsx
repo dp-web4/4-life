@@ -1457,7 +1457,7 @@ Temperament:  30-day half-life (recent behavior matters most)
               trust transfers across communities with different norms. This is an active area of research -
               the role-contextual design mitigates it but doesn&apos;t eliminate it entirely. Cross-community
               trust bridging ({" "}
-              <Link href="/federation-economics" className="text-sky-400 hover:underline">federation economics</Link>)
+              <Link href="/onramp" className="text-sky-400 hover:underline">federation economics</Link>)
               adds complexity that hasn&apos;t been culturally tested.
             </p>
           </div>

@@ -1,7 +1,7 @@
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 
 export const metadata: Metadata = {
-  title: "Web4 Technical Reference — All Primitives Explained | 4-Life",
+  title: "Web4 Technical Reference - All Primitives Explained | 4-Life",
   description:
     "Technical reference for all Web4 primitives: LCT (verified presence), ATP/ADP (energy budget), MRH (trust-based visibility), T3/V3 (trust and value tensors), CI (coherence index), and R6/R7 (action framework).",
   openGraph: {

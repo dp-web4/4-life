@@ -952,7 +952,7 @@ export default function CoherenceFrameworkPage() {
             </Link>
 
             <Link
-              href="/aliveness"
+              href="/karma-consequences"
               className="block p-4 bg-gray-800 hover:bg-gray-750 rounded-lg border border-gray-700 transition-colors"
             >
               <div className="text-2xl mb-2">💫</div>

@@ -1,4 +1,4 @@
-// InProduction — a standard, pre-vetted bridge from a concept to its deployed reality.
+// InProduction - a standard, pre-vetted bridge from a concept to its deployed reality.
 // The copy lives HERE (public-repo-grounded, disclosure-safe: "the tool you can run",
 // never the private fleet), so a page just places <InProduction concept="witness-chain" />
 // with zero free-form per-page text. Tier honesty: only claim "running" for what hestia's
@@ -13,7 +13,7 @@ type Entry = { tier: MaturityTier; line: string };
 // Jul-4 visitor HIGH: "hestia" and "the hub" appear on this banner across ~22 pages as
 // bare proper nouns, only defined at /running-now (which a linear reader reaches LAST).
 // Wrap each in-line occurrence in a TermTooltip so the definition is one hover away
-// everywhere the banner appears — the visitor's own suggested fix ("a hover-tooltip like
+// everywhere the banner appears - the visitor's own suggested fix ("a hover-tooltip like
 // the ATP/T3 ones would fix all sites at once").
 function glossLine(line: string): React.ReactNode[] {
   const parts: React.ReactNode[] = [];
@@ -38,7 +38,7 @@ function glossLine(line: string): React.ReactNode[] {
 const CONCEPTS: Record<string, Entry> = {
   "lct": {
     tier: "running",
-    line: "hestia gives any entity a real cryptographic LCT identity on its own hardware — this isn't only a diagram.",
+    line: "hestia gives any entity a real cryptographic LCT identity on its own hardware - this isn't only a diagram.",
   },
   "trust-tensor": {
     tier: "running",
@@ -46,7 +46,7 @@ const CONCEPTS: Record<string, Entry> = {
   },
   "witness-chain": {
     tier: "running",
-    line: "hestia keeps a real hash-linked witness chain of what happened — the deployed version of the chains shown here.",
+    line: "hestia keeps a real hash-linked witness chain of what happened - the deployed version of the chains shown here.",
   },
   "delegation": {
     tier: "running",
@@ -54,15 +54,15 @@ const CONCEPTS: Record<string, Entry> = {
   },
   "constellation": {
     tier: "running",
-    line: "hestia links your devices into a verifying constellation — multi-device proof as MFA — in shipping code.",
+    line: "hestia links your devices into a verifying constellation - multi-device proof as MFA - in shipping code.",
   },
   "policy": {
     tier: "running",
-    line: "hestia evaluates a policy gate before each consequential act — the deployed version of this check.",
+    line: "hestia evaluates a policy gate before each consequential act - the deployed version of this check.",
   },
   "society": {
     tier: "reference",
-    line: "the hub is a runnable Web4 society — seven roles, a signed charter, a witnessed ledger — that any community can fork.",
+    line: "the hub is a runnable Web4 society - seven roles, a signed charter, a witnessed ledger - that any community can fork.",
   },
   "sealed-channel": {
     tier: "reference",
@@ -74,7 +74,7 @@ const CONCEPTS: Record<string, Entry> = {
   },
   "atp": {
     tier: "reference",
-    line: "ATP/ADP is a typed primitive in the web4-core reference library — specified and built, not hand-waved.",
+    line: "ATP/ADP is a typed primitive in the web4-core reference library - specified and built, not hand-waved.",
   },
   "coherence": {
     tier: "reference",
@@ -83,10 +83,10 @@ const CONCEPTS: Record<string, Entry> = {
   "stack": {
     tier: "running",
     // Jul-10 visitor LOW (fired #431 contingency): a reader who never reaches /running-now and
-    // doesn't hover skimmed "the trust layer (hestia)" past — the whole site uses Term(gloss)
+    // doesn't hover skimmed "the trust layer (hestia)" past - the whole site uses Term(gloss)
     // order ("Energy Budget (ATP)"), so a leading gloss with the term in parens reads as noise.
     // Flip to the site-standard term-first form so the definition lands non-hover, at first read.
-    line: "this isn't only theory — hestia (the trust layer) and the hub (a runnable Web4 society) are public, AGPL code you can run yourself — though there's no live network with real users yet.",
+    line: "this isn't only theory - hestia (the trust layer) and the hub (a runnable Web4 society) are public, AGPL code you can run yourself - though there's no live network with real users yet.",
   },
 };
 
@@ -95,9 +95,9 @@ const CONCEPTS: Record<string, Entry> = {
 // label for tier="running" is the word "Running", and the header repeated it as "Running now";
 // (2) header/body/link were flex siblings with no whitespace text nodes, so the visual gap was
 // CSS-only and DOM text / copy-paste jammed the words together ("nowthis"). Fix: tier-neutral
-// header ("In the real world:") so the badge alone carries the tier — which also stops
+// header ("In the real world:") so the badge alone carries the tier - which also stops
 // reference-tier entries being captioned "Running now" (over-claiming; see MaturityBadge's
-// tier-honesty comment) — and normal inline flow with explicit {" "} spaces between the parts.
+// tier-honesty comment) - and normal inline flow with explicit {" "} spaces between the parts.
 // The /running-now hook lives in the "See what's deployed →" link, unchanged.
 export default function InProduction({
   concept = "stack",

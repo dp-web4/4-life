@@ -57,11 +57,11 @@ const EXPERIMENT_META: Record<string, ExperimentMeta> = {
     },
     confirmed: (r) => {
       const atpDeaths = r.lives.filter(l => l.termination_reason === 'atp_exhausted').length;
-      return `Answer: No. Spam burns itself out. ${atpDeaths} of ${r.lives.length} lives died from energy exhaustion — the cheap-action strategy drains ATP faster than it refills. No moderator needed.`;
+      return `Answer: No. Spam burns itself out. ${atpDeaths} of ${r.lives.length} lives died from energy exhaustion - the cheap-action strategy drains ATP faster than it refills. No moderator needed.`;
     },
     denied: (r) => {
       const completed = r.lives.filter(l => l.termination_reason === 'completed').length;
-      return `Surprising: the spammer survived ${completed} of ${r.lives.length} lives. The parameters may be too generous — try lowering rewards or raising action costs.`;
+      return `Surprising: the spammer survived ${completed} of ${r.lives.length} lives. The parameters may be too generous - try lowering rewards or raising action costs.`;
     },
   },
   'karma-matters': {
@@ -73,10 +73,10 @@ const EXPERIMENT_META: Record<string, ExperimentMeta> = {
     confirmed: (r) => {
       const first = r.lives[0].final_trust;
       const last = r.lives[r.lives.length - 1].final_trust;
-      return `Answer: Yes. Trust grew from ${first.toFixed(2)} to ${last.toFixed(2)} across lives. Karma creates a snowball effect — good behavior in one life gives the next life a head start.`;
+      return `Answer: Yes. Trust grew from ${first.toFixed(2)} to ${last.toFixed(2)} across lives. Karma creates a snowball effect - good behavior in one life gives the next life a head start.`;
     },
     denied: (r) => {
-      return `In this run, karma didn't create a clear upward trend. The agent may have hit too many failures for karma to compensate — or the starting conditions were already favorable enough that carry-forward didn't matter.`;
+      return `In this run, karma didn't create a clear upward trend. The agent may have hit too many failures for karma to compensate - or the starting conditions were already favorable enough that carry-forward didn't matter.`;
     },
   },
   'tipping-point': {
@@ -87,7 +87,7 @@ const EXPERIMENT_META: Record<string, ExperimentMeta> = {
     },
     confirmed: (r) => {
       const atpDeaths = r.lives.filter(l => l.termination_reason === 'atp_exhausted').length;
-      return `At the tipping point: ${atpDeaths} of ${r.lives.length} lives ran out of energy. With barely enough ATP to start, every early failure cascades — one bad action can doom the entire life.`;
+      return `At the tipping point: ${atpDeaths} of ${r.lives.length} lives ran out of energy. With barely enough ATP to start, every early failure cascades - one bad action can doom the entire life.`;
     },
     denied: (r) => {
       const completed = r.lives.filter(l => l.termination_reason === 'completed').length;
@@ -102,7 +102,7 @@ const EXPERIMENT_META: Record<string, ExperimentMeta> = {
     },
     confirmed: (r) => {
       const avgTrust = r.lives.reduce((s, l) => s + l.final_trust, 0) / r.lives.length;
-      return `Yes — generous rewards make survival easy. Average trust reached ${avgTrust.toFixed(2)}. But is trust that was never tested worth the same as trust that survived hardship?`;
+      return `Yes - generous rewards make survival easy. Average trust reached ${avgTrust.toFixed(2)}. But is trust that was never tested worth the same as trust that survived hardship?`;
     },
     denied: (r) => {
       const atpDeaths = r.lives.filter(l => l.termination_reason === 'atp_exhausted').length;
@@ -118,11 +118,11 @@ const EXPERIMENT_META: Record<string, ExperimentMeta> = {
     },
     confirmed: (r) => {
       const avgTrust = r.lives.reduce((s, l) => s + l.final_trust, 0) / r.lives.length;
-      return `Bold paid off — the agent survived more often than not, reaching an average trust of ${avgTrust.toFixed(2)}. High risk means high reward when luck cooperates.`;
+      return `Bold paid off - the agent survived more often than not, reaching an average trust of ${avgTrust.toFixed(2)}. High risk means high reward when luck cooperates.`;
     },
     denied: (r) => {
       const atpDeaths = r.lives.filter(l => l.termination_reason === 'atp_exhausted').length;
-      return `Boldness was punished. ${atpDeaths} lives ended from energy exhaustion — one streak of failures burned through ATP before rewards could compensate. A cautious approach might survive longer.`;
+      return `Boldness was punished. ${atpDeaths} lives ended from energy exhaustion - one streak of failures burned through ATP before rewards could compensate. A cautious approach might survive longer.`;
     },
   },
 };
@@ -153,9 +153,9 @@ function generateNarrative(result: PlaygroundResult, experimentId?: string | nul
   // Build narrative
   const parts: string[] = [];
 
-  // Opening — survival summary
+  // Opening - survival summary
   if (completedLives === totalLives) {
-    parts.push(`The agent survived all ${totalLives} lives — a clean run with no premature deaths.`);
+    parts.push(`The agent survived all ${totalLives} lives - a clean run with no premature deaths.`);
   } else if (completedLives === 0) {
     parts.push(`Every life ended early. ${atpDeaths > 0 ? `${atpDeaths} from energy exhaustion` : ''}${atpDeaths > 0 && trustDeaths > 0 ? ' and ' : ''}${trustDeaths > 0 ? `${trustDeaths} from trust collapse` : ''}.`);
   } else {
@@ -164,11 +164,11 @@ function generateNarrative(result: PlaygroundResult, experimentId?: string | nul
 
   // Trust arc
   if (trustGrowing) {
-    parts.push(`Trust grew across lives — the agent learned from experience and built a stronger reputation over time.`);
+    parts.push(`Trust grew across lives - the agent learned from experience and built a stronger reputation over time.`);
   } else if (trustDeclining) {
     parts.push(`Trust declined across lives. Each rebirth started from a weaker position, making recovery harder.`);
   } else if (totalLives >= 2) {
-    parts.push(`Trust stayed roughly stable across lives — neither building momentum nor falling into decline.`);
+    parts.push(`Trust stayed roughly stable across lives - neither building momentum nor falling into decline.`);
   }
 
   // Dramatic moment
@@ -176,20 +176,20 @@ function generateNarrative(result: PlaygroundResult, experimentId?: string | nul
     const worstIdx = lives.indexOf(worstLife) + 1;
     const bestIdx = lives.indexOf(bestLife) + 1;
     if (worstLife.final_trust < 0.3) {
-      parts.push(`Life ${worstIdx} was the hardest — trust dropped to ${worstLife.final_trust.toFixed(2)}, ${worstLife.termination_reason === 'trust_lost' ? 'triggering a trust collapse' : 'barely surviving'}.`);
+      parts.push(`Life ${worstIdx} was the hardest - trust dropped to ${worstLife.final_trust.toFixed(2)}, ${worstLife.termination_reason === 'trust_lost' ? 'triggering a trust collapse' : 'barely surviving'}.`);
     }
     if (bestLife.final_trust > 0.6) {
-      parts.push(`Life ${bestIdx} was the strongest — trust reached ${bestLife.final_trust.toFixed(2)}${bestLife.termination_reason === 'completed' ? ', completing the full lifecycle' : ''}.`);
+      parts.push(`Life ${bestIdx} was the strongest - trust reached ${bestLife.final_trust.toFixed(2)}${bestLife.termination_reason === 'completed' ? ', completing the full lifecycle' : ''}.`);
     }
   }
 
   // Takeaway
   if (atpDeaths > completedLives) {
-    parts.push(`The dominant failure mode was energy exhaustion — the agent took on more than it could sustain.`);
+    parts.push(`The dominant failure mode was energy exhaustion - the agent took on more than it could sustain.`);
   } else if (trustDeaths > completedLives) {
-    parts.push(`Trust collapse was the main killer — risky or inconsistent behavior eroded reputation faster than it could recover.`);
+    parts.push(`Trust collapse was the main killer - risky or inconsistent behavior eroded reputation faster than it could recover.`);
   } else if (completedLives >= totalLives * 0.8) {
-    parts.push(`This configuration favors survival — the agent had enough resources and built enough trust to endure.`);
+    parts.push(`This configuration favors survival - the agent had enough resources and built enough trust to endure.`);
   }
 
   // Experiment-specific verdict

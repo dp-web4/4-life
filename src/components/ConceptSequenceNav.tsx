@@ -89,7 +89,7 @@ export default function ConceptSequenceNav({ currentPath }: ConceptSequenceNavPr
         ))}
       </div>
 
-      {/* Research status — threads honesty throughout concept pages */}
+      {/* Research status - threads honesty throughout concept pages */}
       <p style={{
         fontSize: '0.7rem',
         color: 'var(--color-text-muted)',
@@ -172,7 +172,7 @@ export default function ConceptSequenceNav({ currentPath }: ConceptSequenceNavPr
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
             <Link
-              href="/society-simulator"
+              href="/onramp"
               style={{
                 padding: '0.5rem 1.25rem',
                 background: 'linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(168, 85, 247, 0.2))',
@@ -202,7 +202,7 @@ export default function ConceptSequenceNav({ currentPath }: ConceptSequenceNavPr
               See the UI →
             </Link>
             <Link
-              href="/playground"
+              href="/onramp"
               style={{
                 padding: '0.5rem 1.25rem',
                 background: 'var(--color-dark-surface)',

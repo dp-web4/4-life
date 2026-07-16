@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * NetworkGraph — Shared SVG trust network visualization
+ * NetworkGraph - Shared SVG trust network visualization
  *
  * Used by both the Society Simulator (observer mode) and HumanPlayerMode (play mode).
  * Agents are nodes in a circle, trust edges are lines, coalitions get background halos.

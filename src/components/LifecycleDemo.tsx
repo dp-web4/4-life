@@ -3,13 +3,13 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 /**
- * LifecycleDemo — a 30-second auto-run of a single agent's Web4 lifecycle:
+ * LifecycleDemo - a 30-second auto-run of a single agent's Web4 lifecycle:
  * Birth → build trust → spam backfires → rebuild → established → death → rebirth.
  *
  * Purpose: the /how-it-works `#journey` section DESCRIBED this arc entirely in
  * prose. Visitor feedback (2026-07-02 MEDIUM #5) asked to "let me run it, don't
- * just describe it." This is the lightweight, purpose-built demo — pure React +
- * CSS, no WASM — that lets a first-time reader SEE the arc before reading the prose.
+ * just describe it." This is the lightweight, purpose-built demo - pure React +
+ * CSS, no WASM - that lets a first-time reader SEE the arc before reading the prose.
  *
  * NOTE ON NUMBERS: the seven stages below are a faithful subsample of the
  * canonical 16-tick Alice narrative in src/app/first-contact/page.tsx (the
@@ -23,8 +23,8 @@ interface Stage {
   emoji: string;
   label: string;
   caption: string;
-  atp: number; // energy budget, 0–120 scale (rebirth surplus is 112)
-  trust: number; // T3, 0–1 scale (0.50 = neutral, below 0.50 = restricted)
+  atp: number; // energy budget, 0-120 scale (rebirth surplus is 112)
+  trust: number; // T3, 0-1 scale (0.50 = neutral, below 0.50 = restricted)
   tone: Tone;
 }
 
@@ -51,7 +51,7 @@ const STAGES: Stage[] = [
     emoji: '⚠️',
     label: 'Spam backfires',
     caption:
-      'A batch of low-effort spam costs 25 energy AND drops her below the 0.50 line — features get restricted.',
+      'A batch of low-effort spam costs 25 energy AND drops her below the 0.50 line - features get restricted.',
     atp: 74,
     trust: 0.48,
     tone: 'warn',
@@ -67,7 +67,7 @@ const STAGES: Stage[] = [
   {
     emoji: '✨',
     label: 'Established',
-    caption: 'Recognition for quality. Others confirm her work — energy flows back, trust climbs.',
+    caption: 'Recognition for quality. Others confirm her work - energy flows back, trust climbs.',
     atp: 80,
     trust: 0.62,
     tone: 'peak',
@@ -75,7 +75,7 @@ const STAGES: Stage[] = [
   {
     emoji: '💀',
     label: 'Death',
-    caption: 'She overcommits, quality slips, energy drains to zero. Her entity dies — but her record persists.',
+    caption: 'She overcommits, quality slips, energy drains to zero. Her entity dies - but her record persists.',
     atp: 0,
     trust: 0.51,
     tone: 'death',
@@ -155,7 +155,7 @@ export default function LifecycleDemo() {
     >
       <div className="flex items-center justify-between mb-4">
         <p className="text-xs uppercase tracking-wide text-sky-400 font-semibold">
-          Watch it run — one agent, one life
+          Watch it run - one agent, one life
         </p>
         <div className="flex items-center gap-2">
           <button
@@ -240,7 +240,7 @@ export default function LifecycleDemo() {
           />
         </div>
         <p className="text-[11px] text-gray-600 mt-1">
-          The thin line is 0.50 — neutral trust. Drop below it and the society restricts you.
+          The thin line is 0.50 - neutral trust. Drop below it and the society restricts you.
         </p>
       </div>
 

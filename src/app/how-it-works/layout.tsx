@@ -1,7 +1,7 @@
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 
 export const metadata: Metadata = {
-  title: "How Web4 Works — The Complete Lifecycle | 4-Life",
+  title: "How Web4 Works - The Complete Lifecycle | 4-Life",
   description:
     "From birth to death to rebirth: how agents join societies, build trust, spend energy, and face permanent consequences in Web4.",
   openGraph: {

@@ -37,7 +37,7 @@ export default function DeepDiveToggle({
     localStorage.setItem(storageKey, String(next));
   };
 
-  // Avoid hydration mismatch — render nothing until client mount
+  // Avoid hydration mismatch - render nothing until client mount
   if (!mounted) return null;
 
   return (
@@ -48,7 +48,7 @@ export default function DeepDiveToggle({
           <p className="text-sm text-zinc-400">
             {expanded
               ? "Reference material and deep dives"
-              : "You've got the basics — everything above covers what you need to know"}
+              : "You've got the basics - everything above covers what you need to know"}
           </p>
           <button
             onClick={toggle}

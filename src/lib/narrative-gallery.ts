@@ -1,5 +1,5 @@
 /**
- * Narrative Gallery — localStorage bridge between Society Simulator and Narratives page.
+ * Narrative Gallery - localStorage bridge between Society Simulator and Narratives page.
  *
  * Converts SocietyNarrative (simulator output) to Narrative (viewer format)
  * and persists user-generated narratives in localStorage.
@@ -79,7 +79,7 @@ export function saveToGallery(sn: SocietyNarrative, agentCount?: number, roundCo
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
   } catch {
-    // localStorage full — remove oldest and retry
+    // localStorage full - remove oldest and retry
     existing.pop();
     localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
   }

@@ -1,7 +1,7 @@
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 
 export const metadata: Metadata = {
-  title: "Identity Constellation — Multi-Device Presence | 4-Life",
+  title: "Identity Constellation - Multi-Device Presence | 4-Life",
   description:
     "Visualize how LCT presence spans multiple devices. Explore device enrollment, witness quorums, and trust inheritance across your hardware constellation.",
   openGraph: {

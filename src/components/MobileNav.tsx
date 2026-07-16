@@ -25,7 +25,7 @@ const sections = [
       { href: "/atp-economics", title: "ATP Economics" },
       { href: "/trust-neighborhood", title: "MRH" },
       // June 11 visitor MEDIUM (browse B): CI is one of the five landing-page key ideas but was
-      // the only one with no nav entry — /coherence-index was reachable only via inline links.
+      // the only one with no nav entry - /coherence-index was reachable only via inline links.
       { href: "/coherence-index", title: "Coherence Index (CI)" },
       { href: "/aliveness", title: "Aliveness" },
     ],
@@ -34,10 +34,10 @@ const sections = [
     label: "Interactive Labs",
     links: [
       { href: "/simulation-sandbox", title: "Simulation Sandbox" },
-      { href: "/society-simulator", title: "Society Simulator" },
+      { href: "/onramp", title: "Society Simulator" },
       { href: "/trust-tensor-explorer", title: "Trust Explorer" },
-      { href: "/karma-journey", title: "Karma Journey" },
-      { href: "/research-hub", title: "Research Hub" },
+      { href: "/karma-consequences", title: "Karma Journey" },
+      { href: "/learn", title: "Research Hub" },
     ],
   },
   {
