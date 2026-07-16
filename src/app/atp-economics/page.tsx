@@ -163,7 +163,17 @@ export default function ATPEconomicsPage() {
         <div className="mt-6 bg-sky-950/30 border border-sky-800/40 rounded-xl p-6">
           <h2 className="text-lg font-bold mb-3 text-sky-300">The 60-second version</h2>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li className="flex gap-2"><span className="text-sky-400 shrink-0">1.</span> ATP is your <strong className="text-gray-100">energy budget</strong> &mdash; a finite per-agent allowance, not money you accumulate, and not something you can buy, sell, or speculate on.</li>
+            {/* Jul-15 visitor MEDIUM (magnitude residual, distinct from #459's vocabulary fix):
+                a Market wireframe on /day-in-web4 prices a camera at 350 ATP while the same page
+                says "you start with 100 ATP" — the visitor read "not money you accumulate" as
+                "balance is capped at the grant" and couldn't see how 350 is reachable. That flat
+                phrasing is this page's OWN outlier: L306 ("you don't accumulate it as wealth"),
+                L1118 + L1927 ("Value creators accumulate energy budget / budget across lives") all
+                draw the budget-vs-wealth line. Reconcile item 1 to the page's established framing:
+                you DO accumulate budget (balance grows past the grant as you earn back), you do NOT
+                accumulate cash-out wealth. Guardrail: the "buy, sell, or speculate" clause is the
+                standing unresolved web4 unit-of-account-vs-currency tension — left verbatim. */}
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">1.</span> ATP is your <strong className="text-gray-100">energy budget</strong> &mdash; a per-agent allowance you spend and earn back, so an active contributor&rsquo;s balance grows well past the grant they started with. It&rsquo;s <strong className="text-gray-100">budget, not wealth</strong>: not money you can hoard or cash out, and not something you can buy, sell, or speculate on.</li>
             {/* May 23 visitor Unanswered Q2: "Who are the 'others' that confirm my value to recharge me? The
                 validating party stayed fuzzy." The full answer lives at #earning-atp (Gratitude Loop, ~line 1122)
                 but a 5-min reader builds their recharge model from this box, where "others" was ungrounded. Same
