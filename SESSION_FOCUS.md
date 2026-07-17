@@ -29,6 +29,8 @@ rebuild and is now re-enabled; resume the normal daily loop.
 - **ATP transfer fee (canonical):** a 100-ATP transfer delivers **95** to the recipient and
   **routes 5 to the community redistribution pool (not destroyed)**. Consistent across
   `atp-economics` and `why-web4`. If you touch ATP copy, keep this model and this number.
+  (PR #464, 15:40 session: swept 2 stale "burns 5%" residuals in `glossary`/`why-web4` to this
+  wording; `atp-economics` `#atp-burn-fee` keeps its "burn fee" term-of-art, locally reconciled.)
 - **MRH hop-decay (canonical):** **0.70 / 0.49 / 0.34** (0.7x per hop from hop 1). Consistent
   across `why-web4` and the glossary.
 - first-contact caveat pile-up collapsed to one line (nuance lives in the `<details>`).
