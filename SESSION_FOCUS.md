@@ -2,7 +2,7 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-15*
+*Last updated: 2026-07-17*
 
 ---
 
@@ -12,42 +12,40 @@ https://4-life-ivory.vercel.app/
 
 ---
 
-## BIG CHANGE IN FLIGHT: the onramp rebuild (2026-07)
+## Status: onramp rebuild DEPLOYED; maintenance track RE-ENABLED (2026-07-17)
 
-The site is being archived and rebuilt around the Web4 onramp: the four composable
-pieces are the **core standard**, the **hub**, **hestia**, and **hardbound**. The
-Jan-2026 exploration era and the game/simulation are retired.
+The site is the **Web4 onramp** educational explainer: the core standard plus the
+three scales (hub / hestia / hardbound). The old game/simulation is retired and
+archived on branch `archive/v1-2026-07` (tag `v1-archive-2026-07-15`). The rebuild
+is live and reviewed. The Legion 4-life maintenance track was paused during the
+rebuild and is now re-enabled; resume the normal daily loop.
 
-- Full prior 84-page site preserved on branch `archive/v1-2026-07`, tag `v1-archive-2026-07-15`.
-- Restore any old file: `git checkout archive/v1-2026-07 -- <path>`.
-- The simulation is retired (may return in another form later). The site is now a **pure explainer**.
+### Site health
+- 26 explainer routes; build green; every internal link resolves; zero em dashes.
+- Nav is driven by `src/lib/navigation.ts` (single source; `MobileNav` derives from it).
+- Deploy: push to `main` auto-deploys via Vercel.
 
-### Done (Phase 1, committed, not yet deployed)
-- Trimmed 84 routes to a lean onramp spine (removed research pages, game/sim, sim API, sim data, root cruft).
-- New pages: `/the-standard`, `/hardbound`, `/onramp` (composition + adoption order).
-- New four-piece front door home; new `navigation.ts` IA; sitemap derives from nav.
-- Layout metadata/footer reframed; every retired route redirects to its nearest surviving page.
-- Build green (26 static routes).
+### Just fixed (2026-07-17 visitor friction) — do NOT re-open these
+- **ATP transfer fee (canonical):** a 100-ATP transfer delivers **95** to the recipient and
+  **routes 5 to the community redistribution pool (not destroyed)**. Consistent across
+  `atp-economics` and `why-web4`. If you touch ATP copy, keep this model and this number.
+- **MRH hop-decay (canonical):** **0.70 / 0.49 / 0.34** (0.7x per hop from hop 1). Consistent
+  across `why-web4` and the glossary.
+- first-contact caveat pile-up collapsed to one line (nuance lives in the `<details>`).
+- onramp `R6/R7` linked to the glossary; running-now install block split onto two lines;
+  how-it-works has a "read TL;DR + Why first" orientation note.
 
-### In progress (Phase 2)
-- Rewriting kept pages against ground truth, removing the "simulation lab" framing and em dashes.
-  Priority: `/tldr`, `/running-now`, `/hub`, `/hestia` (underway), then the concept pages and the
-  larger front-door pages (`/why-web4` is ~3800 lines, `/how-it-works`, `/first-contact`).
-- Repoint visitor QA understanding-checklist (done: `visitor/CLAUDE.md`, root `CLAUDE.md`).
-- Prune dead simulation-only components/libs (`src/lib/simulation`, `src/lib/moments`,
-  `FeaturedMoment`, `EcosystemStats`, etc.). They no longer render; safe to remove after a build check.
-- Seams-integrity pass, then push (auto-deploys to Vercel).
+### Known open (from the 2026-07-17 visitor, not yet done)
+- The interactive First-Contact walkthrough (Alice's 5 acts) could not be exercised by the
+  visitor's browsing tool; the *framing* is fixed but the acts themselves are unverified from
+  a naive read. Worth a human/interactive check.
+- "How It Works" is long for a "Start Here" item; the orientation note helps, but a future
+  pass could split it or move it out of Start Here.
 
-### Ground-truth content spine
-The current canonical story of the four pieces (statuses, install commands, how they compose) was
-synthesized from the source repos (web4, 4-hub, hestia, hardbound). Honest maturity is mandatory:
-whole stack is R&D; hub pilot-ready; hestia Phase-2 working; hardbound usable/hardening but hardware
-binding NOT on-device validated (never call it "production-ready").
-
----
-
-## Notes for the daily visitor track
-Some pages still carry pre-rebuild content until the Phase 2 rewrite lands. Friction on retired
-framing (simulation, karma journey, society simulator) is expected and already being fixed; focus
-new friction reports on the onramp spine (`/`, `/onramp`, `/the-standard`, `/hub`, `/hestia`,
-`/hardbound`, `/running-now`).
+## The daily visitor loop
+A naive first-contact reader browses the live site at 05:00 and logs friction to
+`visitor/logs/YYYY-MM-DD.md` (persona: `visitor/CLAUDE.md`). On the first run after 05:00,
+read the fresh log, prioritize HIGH then MEDIUM, fix, build (`npm run build` must pass),
+seams-check, commit, push. Ground claims in the source repos (`../web4`, `../4-hub`,
+`../hestia`, `../hardbound`); stay honest about maturity (never "production-ready");
+no em dashes.
