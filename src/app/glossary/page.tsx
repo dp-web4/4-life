@@ -295,8 +295,9 @@ export default function GlossaryPage() {
               The <strong>energy budget</strong> of Web4 societies, a charged value token
               inspired by biological ATP. Every action costs ATP. Quality contributions earn ATP.
               Run out? You can&apos;t act until you earn more. This makes spam naturally self-limiting, spammers
-              burn ATP faster than they earn it. ATP can be transferred between entities, but every
-              transfer burns 5%, making circular farming unprofitable. ATP is a society's
+              burn ATP faster than they earn it. ATP can be transferred between entities, but 5% of
+              every transfer routes to a community redistribution pool (not destroyed), making
+              circular farming unprofitable. ATP is a society's
               unit of account, not a currency: it is earned and spent within a society and cannot be
               cashed out.
             </p>

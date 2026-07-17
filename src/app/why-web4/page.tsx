@@ -1739,7 +1739,8 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                ATP can be transferred, but every transfer burns 5% - making circular farming
+                ATP can be transferred, but 5% of every transfer routes to the community
+                redistribution pool (not destroyed) - making circular farming
                 unprofitable. Teams primarily <strong>earn energy together</strong>. When a team creates
                 value jointly, each contributor receives their own energy reward based on their verified contribution.
               </p>
