@@ -101,8 +101,8 @@ export default function RunningNowPage() {
           <p className="text-sm text-sky-100 leading-relaxed mb-2">
             Install the primitives with either toolchain:
           </p>
-          <pre className="text-xs text-sky-200 overflow-x-auto"><code>pip install web4-core web4-trust
-cargo add web4-core web4-trust-core</code></pre>
+          <pre className="text-xs text-sky-200 overflow-x-auto"><code>{`pip install web4-core web4-trust
+cargo add web4-core web4-trust-core`}</code></pre>
         </div>
         <p className="text-base text-gray-400 leading-relaxed">
           <Link href="/the-standard" className="text-sky-400 underline hover:text-sky-300">

@@ -49,6 +49,12 @@ export default function HowItWorksPage() {
         <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
           How Web4 Societies Work
         </h1>
+        <p className="text-sm text-gray-400 italic mb-4">
+          This is the comprehensive walkthrough, so it runs long. Brand new? Skim{" "}
+          <Link href="/tldr" className="text-sky-400 hover:underline not-italic">Web4 in 2 minutes</Link>{" "}and{" "}
+          <Link href="/why-web4" className="text-sky-400 hover:underline not-italic">Why Web4</Link>{" "}
+          first, then come here to go deep.
+        </p>
         <div className="mb-4 p-3 bg-amber-950/30 border border-amber-800/30 rounded-lg">
           <p className="text-base font-bold text-amber-200 flex items-center gap-2">
             <span aria-hidden="true">🔬</span>

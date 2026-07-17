@@ -260,8 +260,8 @@ export default function ATPEconomicsPage() {
             </li>
             <li>
               <strong className="text-gray-100">You can transfer small amounts to others</strong> - 
-              but <strong className="text-amber-300">5% burns on every transfer</strong>{' '}
-              (the burned 5 goes to a community redistribution pool, not to any central authority - {' '}
+              but <strong className="text-amber-300">5% is skimmed on every transfer</strong>{' '}
+              (that 5 routes to a community redistribution pool, not destroyed and not to any central authority - {' '}
               <a
                 href="#atp-burn-fee"
                 onClick={(e) => { e.preventDefault(); const el = document.getElementById('atp-burn-fee'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const parent = el.closest('details'); if (parent) parent.open = true; } }}
@@ -316,7 +316,7 @@ export default function ATPEconomicsPage() {
                 <li><strong className="text-gray-300">ATP is a finite per-agent budget.</strong> Every action costs from it; you don&apos;t accumulate it as wealth.</li>
                 <li><strong className="text-gray-300">Contribution recharges it.</strong> Stop contributing, it drains; keep contributing, it sustains.</li>
                 <li><strong className="text-gray-300">ATP → ADP → confirmation → recharge cycle.</strong> Spend creates an ADP receipt - <em>ADP is the spent-energy counterpart to ATP: proof an action happened, not a second currency</em>; recipients confirm; confirmation converts a share of that receipt back into fresh ATP. The cycle exists as a system.</li>
-                <li><strong className="text-gray-300">Transfer-fee <em>mechanism</em>.</strong> Fees burn on peer transfer, route to a community redistribution pool (not a central authority), and the friction makes circular farming unprofitable. The exact rate (currently 5% here) is a sim parameter; the existence of the burn is structural.</li>
+                <li><strong className="text-gray-300">Transfer-fee <em>mechanism</em>.</strong> Fees on peer transfer route to a community redistribution pool (not destroyed, not a central authority), and the friction makes circular farming unprofitable. The exact rate (currently 5% here) is a sim parameter; the existence of the fee is structural.</li>
                 <li><strong className="text-gray-300">Quality-ramp shape.</strong> Below ~30% earns ~zero, above ~70% earns ~full, linear in between. The 0.30 / 0.70 thresholds and the piecewise-linear shape are canonical (see <code className="text-emerald-300">validate_vectors.py::sliding_scale</code>).</li>
               </ul>
             </div>
@@ -430,12 +430,11 @@ export default function ATPEconomicsPage() {
             </p>
             <div className="bg-sky-950/30 border border-sky-800/30 rounded-lg p-3 my-2">
               <p>
-                ✅ <strong className="text-sky-300">ATP transfers cost 5% - the sender pays the fee</strong>.
-                Example: you send 100 ATP to Bob - <em>you pay 105, Bob receives 100</em>, and the 5 ATP
-                goes to the community redistribution pool (not to any central authority).
-                <em> Why charge the sender 105 instead of giving Bob 95?</em> Net-equivalent either way, but
-                charging the sender keeps the cost visible to the person making the decision - the friction
-                lands on the actor, not the recipient.
+                ✅ <strong className="text-sky-300">ATP transfers cost 5%</strong>.
+                Example: you send 100 ATP to Bob - <em>Bob receives 95, and the 5 ATP
+                routes to the community redistribution pool</em> (not destroyed, and not to any
+                central authority). The fee lands on the transfer itself, so genuine sharing is
+                nearly free while circular shuffling steadily bleeds the shufflers.
                 Your energy budget primarily reflects YOUR contributions, not
                 someone else&apos;s. You can share ATP, but circular farming bleeds resources.
                 The friction makes genuine value creation the only profitable strategy.

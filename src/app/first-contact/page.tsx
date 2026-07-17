@@ -214,7 +214,7 @@ export default function FirstContactPage() {
                 Today's internet rewards spam, lets trolls create unlimited accounts, and makes quality creators compete with bots. What if the system itself made that impossible? Web4 is one proposed answer, and what follows is a guided walkthrough of that idea, not a finished product.
               </p>
               <p className="text-lg text-gray-400 leading-relaxed mb-3">
-                In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> - play, pause, scrub, replay - and watch trust and reputation respond in real time. This is a hands-on walkthrough, not a video - and a model of a <em>proposed</em> system: the rules running here are real, but Web4 itself is active research with nothing to sign up for yet. Real rules, shown by a guided walkthrough, not a demo of a shipped product.
+                In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> - play, pause, scrub, replay - and watch trust and reputation respond in real time. The rules running here are real; Web4 itself is still active research, with no live network to join yet.
               </p>
               <p className="text-sm text-gray-500 leading-relaxed italic">
                 Haven&apos;t read anything else on this site yet? You don&apos;t need to - this page starts from zero. Below: the two numbers to watch, then an optional reference map of the four ideas (collapsed - no need to memorize them; each is explained in the story the moment Alice uses it) and the five-act arc. Then click <span className="not-italic font-semibold text-gray-300">Start</span> to drive Alice yourself - no account, no sign-in.

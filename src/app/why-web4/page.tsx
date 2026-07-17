@@ -1009,9 +1009,9 @@ export default function WhyWeb4Page() {
                 <li><strong>Recipient confirmation:</strong> You earn ATP only when someone else (the{" "}
                   <Link href="#faq-quality" className="text-sky-400 hover:underline">quality decider</Link>) confirms
                   your contribution helped them. No confirmation, no ATP - so it can&apos;t be self-minted.</li>
-                <li><strong>5% transfer burn:</strong> Every ATP transfer between entities burns 5%, draining
-                  the pool over time unless offset by new confirmed value. Circular shuffling shrinks the
-                  pool instead of growing it.</li>
+                <li><strong>5% transfer fee:</strong> Every ATP transfer routes 5% to the community
+                  redistribution pool (not destroyed). Circular shuffling just hands your ATP to
+                  everyone else, so it shrinks your own balance for zero real work.</li>
                 <li><strong>Decay on inactivity:</strong> Idle ATP doesn&apos;t sit forever. Disuse returns capacity
                   to the community, so hoarding has a cost.</li>
               </ul>
@@ -1778,8 +1778,8 @@ export default function WhyWeb4Page() {
                 inflate their balances by sending energy back and forth.
               </p>
               <ul className="list-none space-y-1.5 text-gray-400 ml-2">
-                <li>Round 1: Alice sends 100 to Bob. 5% burns. Bob receives 95.</li>
-                <li>Round 2: Bob sends 95 back. 5% burns. Alice receives 90.25.</li>
+                <li>Round 1: Alice sends 100 to Bob. 5 ATP routes to the pool. Bob receives 95.</li>
+                <li>Round 2: Bob sends 95 back. 5% to the pool. Alice receives 90.25.</li>
                 <li>Round 3: Alice sends 90.25. Bob receives 85.74.</li>
                 <li>Round 4: Bob sends 85.74. Alice receives 81.45.</li>
               </ul>
@@ -1789,8 +1789,8 @@ export default function WhyWeb4Page() {
                 is logged as a transfer, not a contribution, so it doesn&apos;t build trust either.
               </p>
               <p>
-                By round 14, half the energy is gone. By round 28, 75% is destroyed. The math makes
-                circular farming a guaranteed loss, not just a bad strategy.
+                By round 14, half their energy has moved to the pool. By round 28, three quarters of it.
+                The math makes circular farming a guaranteed loss, not just a bad strategy.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Why 5% specifically?</strong> It&apos;s low enough that legitimate transfers
@@ -2740,8 +2740,8 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 The Markov Relevancy Horizon (MRH) works like <strong>degrees of separation with decay</strong>.
-                Your direct contacts (1 hop) see your actions at full relevance. Their contacts (2 hops) see
-                them at 70% relevance. Three hops away: 49%. Beyond three hops: effectively invisible.
+                Your direct contacts (1 hop) see your actions at 70% relevance. Their contacts (2 hops) see
+                them at 49%. Three hops away: 34%. Beyond three hops: effectively invisible.
               </p>
               <p>
                 Concretely: if you post a helpful answer in a coding community, people who&apos;ve directly
