@@ -219,7 +219,7 @@ export default function MarkovRelevancyHorizonPage() {
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-4 text-sm text-gray-300">
             <strong className="text-cyan-400">The shortest version</strong>: A social graph says &quot;Alice knows Bob.&quot;
             A trust neighborhood says &quot;Alice trusts Bob 0.85 as a surgeon, based on 47 witnessed interactions, and that trust decays
-            to 0.62 for anyone one hop further out.&quot; It&apos;s the difference between a phone contact list and a
+            to 0.60 for anyone one hop further out.&quot; It&apos;s the difference between a phone contact list and a
             relationship with history, context, and consequences.
           </div>
         </section>
