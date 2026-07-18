@@ -179,7 +179,9 @@ export default function TrustTensorPage() {
         <p className="text-lg text-gray-400 leading-relaxed">
           You might trust a brilliant surgeon who&apos;s unreliable differently from a steady surgeon
           with less raw talent. You wouldn&apos;t trust either of them to fix your car. T3 makes these
-          distinctions explicit, measurable, and role-specific.
+          distinctions explicit, measurable, and role-specific. These three numbers also age
+          differently: the parts built on recent behavior fade if you stop showing up, while
+          demonstrated ability stays earned (how each dimension ages is spelled out below).
         </p>
 
         {/* Plain-English definition of "tensor" - visitor friction Apr 25 */}
