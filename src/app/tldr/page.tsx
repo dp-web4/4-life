@@ -89,8 +89,9 @@ export default function TLDRPage() {
         <div className="mb-10">
           <h2 className="text-2xl font-bold mb-4 text-purple-400">Four Pieces</h2>
           <p className="text-gray-300 leading-relaxed text-lg mb-5">
-            The onramp is four composable pieces: one substrate, and three scales to run it.
-            You do not adopt all four at once. You start where you are.
+            The onramp is four composable pieces: one substrate (the shared foundation
+            everything else is built on), and three scales to run it. You do not adopt all
+            four at once. You start where you are.
           </p>
           <div className="space-y-3">
             <Link
@@ -174,7 +175,8 @@ export default function TLDRPage() {
           <ul className="text-gray-300 text-sm space-y-2 list-disc list-inside mb-3">
             <li>
               <strong className="text-sky-300">The core standard</strong> is stable. The spec
-              corpus holds steady, and the primitives are installable now:{' '}
+              corpus holds steady, and the primitives (the core building blocks) are
+              installable now:{' '}
               <code className="text-gray-200 bg-gray-900/60 px-1 rounded">pip install web4-core</code>{' '}
               or <code className="text-gray-200 bg-gray-900/60 px-1 rounded">cargo add web4-core</code>.
             </li>

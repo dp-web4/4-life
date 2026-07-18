@@ -113,8 +113,8 @@ export default function OnrampPage() {
               </div>
               <div className="font-semibold text-sky-300 mb-1">hardbound</div>
               <div className="text-sm text-gray-400 leading-relaxed">
-                The oversight tier. Hardware-bound identity, RBAC, regulatory
-                evidence.
+                The oversight tier. Hardware-bound identity, role-based access
+                control (RBAC), regulatory evidence.
               </div>
             </div>
           </div>
