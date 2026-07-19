@@ -34,9 +34,12 @@ export default function TLDRPage() {
         <p className="text-base text-gray-400 leading-relaxed mb-10 border-l-2 border-sky-800/60 pl-4">
           <strong className="text-gray-200">First, what is this site?</strong>{' '}
           <span className="text-gray-300">4-Life</span> is an educational onramp to Web4: a
-          set of explainers that walk you from the problem to the working pieces. It is not
-          the system itself. <span className="text-gray-300">Web4</span> is the thing being
-          explained, and parts of it are real code you can install today (linked below).
+          set of explainers (this site, nothing you install) that walk you from the problem
+          to the working pieces. <span className="text-gray-300">Web4</span> is the thing
+          being explained, and parts of it are real code you can install today (linked
+          below). One note on wording: when a page here says &ldquo;the onramp,&rdquo; it
+          means the four pieces of Web4 you actually run (the core standard, the hub, hestia,
+          hardbound), which 4-Life teaches but is not one of.
         </p>
 
         {/* The Problem */}
