@@ -96,6 +96,13 @@ export default function HomePage() {
             See how it fits together
           </Link>
         </div>
+        <p className="mt-4 text-sm text-gray-400 leading-relaxed">
+          New to Web4? Read in this order:{" "}
+          <Link href="/tldr" className="text-sky-400 hover:underline">the 2-minute intro</Link>,{" "}
+          <Link href="/why-web4" className="text-sky-400 hover:underline">Why Web4</Link>, then{" "}
+          <Link href="/first-contact" className="text-sky-400 hover:underline">First Contact</Link>.
+          The pieces and concepts below are for when you want to go deeper.
+        </p>
       </section>
 
       {/* The onramp: four pieces */}
