@@ -246,7 +246,7 @@ export default function LCTExplainerPage() {
               consistent with the inline bridge clause (~494) to avoid a third phrasing of the same ruler. */}
           <p className="text-xs text-purple-200/80 mt-3 pt-3 border-t border-purple-800/30">
             <span className="font-semibold text-purple-300">How to read the numbers below:</span> every trust score on this page
-            runs on a <strong>0-1</strong> scale, where <strong>0.5</strong> is the survival line (only <em>staying</em> below it is fatal), <strong>0.75</strong> is solid,
+            runs on a <strong>0-1</strong> scale. <strong>0.5</strong> is the neutral midpoint (a coin-flip prior: with no track record yet, trust is neither earned nor lost), and it doubles as the survival line (only <em>staying</em> below it is fatal). <strong>0.75</strong> is solid,
             and <strong>0.90</strong> is the hardware-bound ceiling. Every decimal you meet from here on sits on that scale.
           </p>
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300">jump to the interactive security audit ↓</a></p>
@@ -367,7 +367,7 @@ export default function LCTExplainerPage() {
             <div className="mt-4 pt-4 border-t border-gray-700/60">
               <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Worked example</p>
               <p className="text-sm text-gray-300 mb-3">
-                Suppose you pick the handle <span className="font-bold">alice.assistant1</span>. Your LCT looks like this:
+                In plain English, an LCT identifier names just two things: which device it is anchored to, and which agent (the label) is using it. Suppose you pick the handle <span className="font-bold">alice.assistant1</span>. Your LCT looks like this:
               </p>
               {/* 2026-05-13 visitor MEDIUM: visitor had to infer which portion is immutable. Color-split the example and label each portion. */}
               <pre className="text-xs bg-black/40 border border-gray-700 rounded px-3 py-2 overflow-x-auto mb-2">

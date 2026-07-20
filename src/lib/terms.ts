@@ -38,13 +38,22 @@ export const terms: Record<string, TermDefinition> = {
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/LCT-linked-context-token.md",
   },
 
+  MCP: {
+    term: "MCP",
+    fullName: "Model Context Protocol",
+    brief: "The standard way an agent calls tools and exchanges context. Web4 uses it as the I/O membrane between societies.",
+    explanation:
+      "MCP (Model Context Protocol) is an open standard for how an AI agent reaches out to tools, data, and other systems. In the Web4 equation (MCP + RDF + LCT + T3/V3*MRH + ATP/ADP) it is the outward-facing interface: the membrane through which a society talks to the outside world. The trust and value primitives (LCT, T3/V3, MRH, ATP/ADP) are the internal structure behind that membrane.",
+    learnMore: "/the-standard",
+  },
+
   // Economics
   ATP: {
     term: "ATP",
     fullName: "Allocation Transfer Packets",
     brief: "Energy budget for actions. Spend to act, earn by contributing value.",
     explanation:
-      "Every action in Web4 costs ATP. Post a message? Costs ATP. Vote? Costs ATP. High-quality contributions earn ATP back from the community. Run out of ATP? You can't act. ATP can be transferred, but every transfer burns 5% - making circular farming unprofitable. This makes spam economically self-defeating.",
+      "Every action in Web4 costs ATP. Post a message? Costs ATP. Vote? Costs ATP. High-quality contributions earn ATP back from the community. Run out of ATP? You can't act. ATP can be transferred, but every transfer routes 5% to a community redistribution pool (not destroyed) - making circular farming unprofitable. This makes spam economically self-defeating.",
     learnMore: "/atp-economics",
     canonicalSpec:
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/atp-adp-cycle.md",

@@ -111,7 +111,8 @@ export default function TheStandardPage() {
           </div>
         </div>
         <p className="text-base text-gray-400 leading-relaxed">
-          MCP is the I/O membrane: the cross-society interface. The internal
+          MCP (Model Context Protocol, the standard way agents call tools and
+          exchange context) is the I/O membrane: the cross-society interface. The internal
           structure is{" "}
           <Link href="/lct-explainer" className="text-purple-300 underline hover:text-purple-200">
             LCT

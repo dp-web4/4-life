@@ -404,6 +404,7 @@ export default function TrustTensorPage() {
             <strong className="text-gray-300">0.5</strong> = newcomer baseline,{" "}
             <strong className="text-gray-300">0.7</strong> = ~70% cooperative behavior in this role,{" "}
             <strong className="text-gray-300">0.9</strong> = consistently exceptional.{" "}
+            That same <strong className="text-gray-300">0.5</strong> is what other pages call the survival line: you start at the neutral midpoint and earn your way above it, so a newcomer is not in danger. Only sinking and <em>staying</em> below it is fatal.{" "}
             <a
               href="#calibration-meaning"
               onClick={(e) => { e.preventDefault(); const el = document.getElementById('calibration-meaning'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}
