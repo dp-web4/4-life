@@ -178,6 +178,99 @@ export default function HestiaPage() {
         </div>
       </section>
 
+      {/* A day with Hestia */}
+      <section className="max-w-4xl mx-auto mt-12">
+        <h2 className="text-2xl font-bold text-gray-100 mb-4">A day with Hestia</h2>
+        <p className="text-base text-gray-400 leading-relaxed mb-5">
+          Those are the parts. Here is what they look like put together, not as a
+          feature list but as an ordinary Tuesday. Say you run an AI coding agent and
+          you want it to act for you without handing it the keys to everything.
+        </p>
+        <ol className="space-y-4">
+          <li className="flex gap-4">
+            <span className="flex-none w-7 h-7 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-sm font-semibold flex items-center justify-center mt-0.5">1</span>
+            <p className="text-base text-gray-300 leading-relaxed">
+              You open the Hestia app. It is a normal desktop app (the front door),
+              with a dashboard, your vault, your witness chain, and your delegations.
+              The first time you ran it, <code className="text-emerald-300">hestia init</code>{" "}
+              created an encrypted vault and your{" "}
+              <Link href="/lct-explainer" className="text-emerald-400 underline hover:text-emerald-300">
+                LCT
+              </Link>{" "}
+              (your local cryptographic identity) on this machine. Nothing was uploaded
+              anywhere.
+            </p>
+          </li>
+          <li className="flex gap-4">
+            <span className="flex-none w-7 h-7 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-sm font-semibold flex items-center justify-center mt-0.5">2</span>
+            <p className="text-base text-gray-300 leading-relaxed">
+              You stash the secrets your agent will need (an API key, a repo token) in
+              the vault. They sit encrypted on your disk, not pasted into a config file
+              the agent can read wholesale. The agent reaches them only through a
+              controlled interface, one secret at a time.
+            </p>
+          </li>
+          <li className="flex gap-4">
+            <span className="flex-none w-7 h-7 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-sm font-semibold flex items-center justify-center mt-0.5">3</span>
+            <p className="text-base text-gray-300 leading-relaxed">
+              You grant the agent scoped, time-boxed authority:{" "}
+              <code className="text-emerald-300">hestia delegate grant my-agent --role administrator --expires 24</code>.
+              For the next 24 hours it can act within that role, and the grant is
+              cryptographically signed and revocable. Not a shared password you can
+              never take back: a delegation you hand over on purpose.
+            </p>
+          </li>
+          <li className="flex gap-4">
+            <span className="flex-none w-7 h-7 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-sm font-semibold flex items-center justify-center mt-0.5">4</span>
+            <p className="text-base text-gray-300 leading-relaxed">
+              The agent works. Before each consequential step it asks Hestia{" "}
+              <code className="text-emerald-300">queryPolicy()</code> (&ldquo;am I allowed
+              to do this?&rdquo;), and every tool call is wrapped in{" "}
+              <code className="text-emerald-300">beginAction()</code> /{" "}
+              <code className="text-emerald-300">recordOutcome()</code>, so what it did
+              lands in your witness chain as it happens. Open the witness view and you
+              see the record: what was done, under whose authority, against which rules.
+            </p>
+          </li>
+          <li className="flex gap-4">
+            <span className="flex-none w-7 h-7 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-sm font-semibold flex items-center justify-center mt-0.5">5</span>
+            <p className="text-base text-gray-300 leading-relaxed">
+              Something looks off, so you revoke:{" "}
+              <code className="text-emerald-300">hestia delegate revoke</code>. The
+              authority is gone immediately, and the tamper-evident record of what
+              already happened stays.
+            </p>
+          </li>
+          <li className="flex gap-4">
+            <span className="flex-none w-7 h-7 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-sm font-semibold flex items-center justify-center mt-0.5">6</span>
+            <p className="text-base text-gray-300 leading-relaxed">
+              You link your laptop and phone into a{" "}
+              <Link href="/identity-constellation" className="text-emerald-400 underline hover:text-emerald-300">
+                constellation
+              </Link>
+              , so proving it is really you takes more than one device. That multi-device
+              proof is your MFA, held by you, not a login screen on someone&apos;s server.
+              When you want company, <code className="text-emerald-300">hestia connect-hub &lt;url&gt;</code>{" "}
+              carries this same presence into a shared{" "}
+              <Link href="/hub" className="text-emerald-400 underline hover:text-emerald-300">
+                hub
+              </Link>
+              .
+            </p>
+          </li>
+        </ol>
+        <p className="text-sm text-gray-500 leading-relaxed mt-5 border-l-2 border-emerald-800/60 pl-4">
+          All of this runs today at version 0.0.3 (Phase 2). One honest caveat: the
+          identity in this walkthrough is a software LCT held on your machine. Binding
+          it to a physical security chip is the job of{" "}
+          <Link href="/hardbound" className="text-emerald-400 underline hover:text-emerald-300">
+            hardbound
+          </Link>
+          , the enterprise tier, and that hardware binding is not yet validated on real
+          devices.
+        </p>
+      </section>
+
       {/* Why local-first */}
       <section className="max-w-4xl mx-auto mt-12">
         <h2 className="text-2xl font-bold text-gray-100 mb-3">Why local-first matters</h2>
