@@ -136,7 +136,8 @@ cargo add web4-core web4-trust-core`}</code></pre>
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/10 p-4 mb-4">
           <p className="text-sm text-purple-100 leading-relaxed">
             <strong>A post-MVP hardening cycle has landed</strong>, after a three-pass
-            external security review. MCP write tools moved to a loopback operator plane,
+            external security review. MCP (Model Context Protocol, the standard way agents
+            call tools) write tools moved to a loopback operator plane,
             the council gate now runs before anything persists, a production profile
             refuses to start on unsafe defaults, and law integrity fails closed. There is
             a <code className="text-purple-200">hub up</code> turnkey deploy kit for
