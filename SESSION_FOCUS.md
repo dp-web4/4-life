@@ -2,7 +2,20 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-17*
+*Last updated: 2026-07-21*
+
+## Jul-21 visitor pass (this session, PR pending)
+- **Piece-name payoffs now at first mention** (visitor's #2 standout, "delayed payoffs"):
+  "Hestia = Greek goddess of the hearth" and "Hardbound = hardware-bound" glosses added to the
+  landing PIECES cards and the /tldr cards. Full hearth metaphor still lives on /hestia.
+- **LCT seam closed**: lct-explainer headline plural -> canonical singular "Linked Context Token";
+  etymology fold now decodes all three words (added a **Token** paragraph). Every page is singular.
+- **/hestia crypto cushioned**: vault primitives (ChaCha20-Poly1305/Argon2id/SQLCipher) folded into
+  an "Under the hood" `<details>`; OID4VCI demoted to a glossed trailing clause.
+- **Deferred**: /why-web4 FAQ firehose (LOW) needs a curation/accordion design pass, not a reword.
+- **Retest gate (Jul-22 05:00)**: does the name payoff land at first mention now?
+
+
 
 ---
 
