@@ -78,7 +78,7 @@ export default function OnrampPage() {
             <div className="text-sm text-gray-300 leading-relaxed">
               The canonical libraries and primitives: LCT (identity), T3/V3*MRH
               (trust and value in context), ATP/ADP (energy), and{" "}
-              <Link href="/glossary" className="text-purple-300 underline hover:text-purple-200">R6/R7</Link> (action and consequence). Everything above is a downstream consumer.
+              <Link href="/glossary" className="text-purple-300 underline hover:text-purple-200">R6/R7</Link> (the standard shape of an action and the receipt it leaves). Everything above is a downstream consumer.
             </div>
           </div>
 
