@@ -52,12 +52,12 @@ const PIECES: {
 ];
 
 const CONCEPTS: { label: string; href: string }[] = [
-  { label: "LCT (identity)", href: "/lct-explainer" },
-  { label: "T3 (trust)", href: "/trust-tensor" },
-  { label: "V3 (value)", href: "/value-tensor" },
-  { label: "MRH (neighborhood)", href: "/trust-neighborhood" },
-  { label: "ATP/ADP (energy)", href: "/atp-economics" },
-  { label: "Karma (reputation)", href: "/karma-consequences" },
+  { label: "Identity (LCT)", href: "/lct-explainer" },
+  { label: "Trust (T3)", href: "/trust-tensor" },
+  { label: "Value (V3)", href: "/value-tensor" },
+  { label: "Neighborhood (MRH)", href: "/trust-neighborhood" },
+  { label: "Energy (ATP/ADP)", href: "/atp-economics" },
+  { label: "Reputation (Karma)", href: "/karma-consequences" },
 ];
 
 export default function HomePage() {
