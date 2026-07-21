@@ -4,7 +4,22 @@
 
 *Last updated: 2026-07-21*
 
-## Jul-21 visitor pass (this session, PR pending)
+## Jul-21 visitor pass #2 (15:02 session, PR pending)
+- **R6/R7 de-crypticked at first mention on /onramp** (Jul-21 LOW + sharpest edge of the acronym
+  MEDIUM): substrate-row gloss rewritten from the abstract "standard shape of an action and the
+  receipt it leaves" to a concrete, self-explaining line: *the standard six-part shape of any
+  action, so a request like "post this" or "spend 5 ATP" gets checked and trust-scored the same
+  way every time; R7 adds a reputation update when the stakes are high.* Grounded in
+  `terms.ts` R6 + glossary R7 (six-part grammar; R7 = reputation superset). NOTE: the visitor's
+  own literal example ("R7 = the signed receipt") is canonically WRONG (R7 is the reputation
+  superset, not a receipt) so it was deliberately NOT adopted.
+- **Acronym MEDIUM — landing half was a STALE-DEPLOY artifact**: the visitor's 8-item "wall"
+  (Coherence Index / Karma & Consequences / Identity Constellation) no longer exists; current
+  landing chips are 6 plain-English-first (#472, merged 04:01 before the 05:00 browse). No action.
+- **Still deferred**: /why-web4 FAQ firehose (LOW) needs a curation/accordion design pass.
+- **Retest gate (Jul-22 05:00)**: does R6/R7 read clearly on /onramp without a glossary click?
+
+## Jul-21 visitor pass (10:04 session, MERGED #473)
 - **Piece-name payoffs now at first mention** (visitor's #2 standout, "delayed payoffs"):
   "Hestia = Greek goddess of the hearth" and "Hardbound = hardware-bound" glosses added to the
   landing PIECES cards and the /tldr cards. Full hearth metaphor still lives on /hestia.
