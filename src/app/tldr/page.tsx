@@ -131,6 +131,7 @@ export default function TLDRPage() {
                 <MaturityBadge tier="running" />
               </div>
               <p className="text-gray-400 text-sm">
+                <span className="italic text-gray-500">Named for the Greek goddess of the hearth.</span>{' '}
                 Personal scale: a trust layer for you and your own agents, running on hardware
                 you control.
               </p>
@@ -144,6 +145,7 @@ export default function TLDRPage() {
                 <MaturityBadge tier="reference" />
               </div>
               <p className="text-gray-400 text-sm">
+                <span className="italic text-gray-500">As in hardware-bound.</span>{' '}
                 Enterprise scale: oversight for organizations that need to prove what their
                 agents did and hold them to policy.
               </p>

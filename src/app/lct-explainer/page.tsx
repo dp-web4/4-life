@@ -170,7 +170,7 @@ export default function LCTExplainerPage() {
             Web4 Verified Presence
           </div>
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">
-            Linked Context Tokens (LCT)
+            Linked Context Token (LCT)
           </h1>
           {/* Apr 29 visitor HIGH: opened with three undefined terms (security chip / hardware-bound / witnessed)
               before any everyday metaphor. Lead with a tangible analogy first, then the precise definition. */}
@@ -194,8 +194,8 @@ export default function LCTExplainerPage() {
               the Apr-29 precise definition (para above) and this content are both preserved. */}
           <details className="mt-6 max-w-2xl mx-auto bg-gray-900/40 border border-gray-700 rounded-lg p-5 text-left group">
             <summary className="cursor-pointer list-none flex items-center justify-between gap-2 text-sm uppercase tracking-wide text-gray-400">
-              <span>Why the name &ldquo;Linked Context&rdquo;?</span>
-              <span className="text-xs font-normal normal-case tracking-normal text-gray-500 group-open:hidden">optional - tap to unpack the two words</span>
+              <span>Why the name &ldquo;Linked Context Token&rdquo;?</span>
+              <span className="text-xs font-normal normal-case tracking-normal text-gray-500 group-open:hidden">optional - tap to unpack the three words</span>
               <span className="text-xs font-normal normal-case tracking-normal text-gray-500 hidden group-open:inline">tap to collapse</span>
             </summary>
             <p className="text-gray-300 leading-relaxed mt-3">
@@ -210,6 +210,12 @@ export default function LCTExplainerPage() {
               Yes, that&rsquo;s the same role-context that{" "}
               <a href="/trust-tensor" className="text-purple-400 hover:text-purple-300 underline">T3</a>
               {" "}weights - but the word here means runtime environment, not a chat thread.
+            </p>
+            <p className="text-gray-300 leading-relaxed mt-3">
+              <strong>Token</strong> - the thing itself: a cryptographic key you hold and
+              present, not a username a server looks up. It lives in your device&rsquo;s security
+              chip and signs each action, so &ldquo;showing&rdquo; your identity means proving
+              you hold the key, not typing a name someone else could type too.
             </p>
             {/* May 20 visitor LOW: existing block defined each word but didn't fuse them.
                 Visitor: "I'd guess... but I'm inferring, not being taught." Add the synthesis. */}

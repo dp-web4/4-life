@@ -14,6 +14,7 @@ const PIECES: {
   scale: string;
   title: string;
   href: string;
+  gloss?: string;
   blurb: string;
   accent: string;
 }[] = [
@@ -37,6 +38,7 @@ const PIECES: {
     scale: "Personal scale",
     title: "Hestia",
     href: "/hestia",
+    gloss: "Named for the Greek goddess of the hearth: your machine is the home fire, your agents are guests under your rules.",
     blurb:
       "Local-first identity for any human or agent: a cryptographic LCT, an encrypted vault, scoped revocable delegation, and a witnessed trust record, all on your own machine with no cloud.",
     accent: "from-amber-400 to-orange-400",
@@ -45,6 +47,7 @@ const PIECES: {
     scale: "Enterprise scale",
     title: "Hardbound",
     href: "/hardbound",
+    gloss: "As in hardware-bound: identity welded to a real security chip, for oversight you can prove to a regulator.",
     blurb:
       "The oversight tier: hardware-bound identity and pre-action policy enforcement (plugins cannot self-approve), producing audit trails built to stand up to regulators.",
     accent: "from-emerald-400 to-teal-400",
@@ -134,6 +137,11 @@ export default function HomePage() {
               >
                 {p.title}
               </div>
+              {p.gloss && (
+                <p className="text-xs italic text-gray-500 mb-2 leading-relaxed">
+                  {p.gloss}
+                </p>
+              )}
               <p className="text-sm text-gray-400 leading-relaxed">{p.blurb}</p>
               <div className="mt-3 text-sm text-sky-400 opacity-0 group-hover:opacity-100 transition-opacity">
                 Read more &rarr;

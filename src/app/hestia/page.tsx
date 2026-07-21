@@ -27,7 +27,7 @@ function Feature({
   return (
     <div className="rounded-lg border border-white/10 bg-white/5 p-4">
       <h3 className="font-semibold text-emerald-300 mb-1">{title}</h3>
-      <p className="text-sm text-gray-300 leading-relaxed">{children}</p>
+      <div className="text-sm text-gray-300 leading-relaxed">{children}</div>
     </div>
   );
 }
@@ -135,9 +135,18 @@ export default function HestiaPage() {
             the explainer describes, made concrete.
           </Feature>
           <Feature title="An encrypted credential vault">
-            Your keys and secrets sit in an encrypted store on your hardware.
-            ChaCha20-Poly1305 with Argon2id key derivation, SQLCipher at rest. No
+            Your keys and secrets sit in an encrypted store on your hardware. No
             cloud custody, no shared honeypot.
+            <details className="mt-2 group">
+              <summary className="cursor-pointer list-none text-xs uppercase tracking-wide text-gray-500 hover:text-gray-400">
+                Under the hood
+                <span className="ml-1 normal-case tracking-normal group-open:hidden">+</span>
+                <span className="ml-1 normal-case tracking-normal hidden group-open:inline">-</span>
+              </summary>
+              <span className="mt-1 block text-gray-400">
+                ChaCha20-Poly1305 encryption, Argon2id key derivation, SQLCipher at rest.
+              </span>
+            </details>
           </Feature>
           <Feature title="A witness chain">
             A hash-linked, tamper-evident record of what you did: the deployed
@@ -163,8 +172,8 @@ export default function HestiaPage() {
             back. Authority is a thing you hand over deliberately, with a record.
           </Feature>
           <Feature title="Verifiable credentials">
-            OID4VCI credential issuance, so the presence you hold can carry portable,
-            verifiable claims into any Web4 society.
+            The presence you hold can carry portable, verifiable claims into any Web4
+            society, issued over the open OID4VCI credential standard.
           </Feature>
           <Feature title="A plugin SDK">
             The same interface in Rust, TypeScript, and Python, so any program can
