@@ -4,6 +4,21 @@
 
 *Last updated: 2026-07-21*
 
+## Jul-21 visitor pass #3 (21:01 session, PR pending)
+- **ATP payment-vs-recharge grounded at the read point** (Jul-21 Unanswered Q#4): the visitor
+  understood "ATP isn't money" but, reading item #3's "someone pays you" line, re-read the page
+  and still couldn't answer "paid in WHAT, and how does it differ from the ATP I spend?" The
+  grounding that the payment IS ATP (same energy, priced by the commissioner not refunded from
+  your spend) only lived inside the collapsed #net-positive "Show me the math" fold they didn't
+  open. Promoted the missing clause to the visible summary item #3 on /atp-economics
+  (energy framing only; buy/sell/speculate currency clause untouched).
+  [[visitor-read-it-and-still-filed-it]].
+- **Rest of Jul-21 log confirmed disposed**: acronym-wall MEDIUM = stale-deploy (current landing
+  chips are 6 plain-English-first, #472); piece-names #473; hestia crypto #473; LCT drift + Token
+  paragraph #473; R6/R7 #474. Only /why-web4 FAQ firehose (LOW) remains deferred (design pass).
+- **Retest gate (Jul-22 05:00)**: does a linear reader of /atp-economics grasp that commissioned
+  payment is ATP without opening the math fold?
+
 ## Jul-21 visitor pass #2 (15:02 session, PR pending)
 - **R6/R7 de-crypticked at first mention on /onramp** (Jul-21 LOW + sharpest edge of the acronym
   MEDIUM): substrate-row gloss rewritten from the abstract "standard shape of an action and the
