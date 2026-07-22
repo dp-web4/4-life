@@ -644,6 +644,13 @@ Example (positive karma):
           This creates asymmetric consequences: building positive karma is harder than destroying it,
           mirroring real-world reputation dynamics.
         </p>
+        <p className="text-xs text-gray-500 mt-2">
+          Note the two halves of &ldquo;permanent.&rdquo; The <strong className="text-gray-400">score</strong> decays
+          (the <code className="text-amber-300">0.95</code> here carries it forward at 95% each life, and within a
+          life trust keeps fading and recovering), but the <strong className="text-gray-400">identity</strong> that
+          carries it does not reset. That is what permanence means on this page: you keep your history,
+          not a frozen penalty.
+        </p>
       </div>
     </div>
   );
@@ -774,6 +781,13 @@ export default function KarmaConsequencesPage() {
               <strong className="text-white">identity is hardware-bound</strong> via <TermTooltip term="LCT">LCT</TermTooltip>, so karma follows
               you across &ldquo;lives.&rdquo; Bad actors can&apos;t escape their history; they can only rebuild it
               through genuine behavior change.
+            </p>
+            <p className="text-gray-300 text-sm mt-3">
+              <strong className="text-orange-400">What is permanent is the identity, not the penalty.</strong>{' '}
+              You can&apos;t mint a clean-slate account, so your history follows you, but your trust{' '}
+              <em>score</em> itself keeps recovering and decaying over time (on the order of weeks to
+              months). So &ldquo;permanent&rdquo; here means you never get a fresh start, not that a past
+              mistake stays at full strength forever.
             </p>
           </div>
         </div>
