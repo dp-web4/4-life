@@ -266,7 +266,9 @@ export default function ATPEconomicsPage() {
               No market, no price, no speculation. You can&apos;t buy or sell ATP.
             </li>
             <li>
-              <strong className="text-gray-100">You can transfer small amounts to others</strong> - 
+              <strong className="text-gray-100">You can transfer small amounts to others</strong>{' '}
+              (a one-way gift or reallocation, not a sale: the system moves the ATP in one direction and
+              prices nothing, so there is no buyer, no seller, and no exchange rate) -{' '}
               but <strong className="text-amber-300">5% is skimmed on every transfer</strong>{' '}
               (that 5 routes to a community redistribution pool, not destroyed and not to any central authority - {' '}
               <a
