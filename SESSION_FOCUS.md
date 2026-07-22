@@ -2,7 +2,21 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-21*
+*Last updated: 2026-07-22*
+
+## Jul-22 pass (03:01 session, PR #476)
+- Fired before the 05:00 browse, so no Jul-22 log yet. Jul-21 HIGH/MEDIUM all disposed
+  (#473/#474/#475 merged). Triaged the Jul-21 **Unanswered Questions** and found one unaddressed
+  gap: **Q#5 "who are the witnesses, concretely?"** "Witnessed behavior" is the site's most
+  load-bearing phrase but /tldr's dedicated explanation ("The Shift") says *what* it is, never
+  *who witnesses*. The concrete answer already lives canonically in the glossary `witness network`
+  term (`terms.ts:112` — a device, a person, a service) but wasn't seated at the read point.
+  Added one plain-English clause to the /tldr Web4 row naming the witnesses. Prominence-not-absence
+  fix; no canon change; no em dashes. [[visitor-v3-ghost-pattern]].
+- **Retest gate (Jul-22 05:00)**: does a linear reader of /tldr now know witnesses are concrete
+  participants (device/person/service), not an abstraction?
+- Still deferred: /why-web4 FAQ firehose (LOW) needs a design/curation pass, not a reword
+  (page already has a topic index + "Start here" block + collapsed answers).
 
 ## Jul-21 visitor pass #3 (21:01 session, PR pending)
 - **ATP payment-vs-recharge grounded at the read point** (Jul-21 Unanswered Q#4): the visitor
