@@ -4,6 +4,25 @@
 
 *Last updated: 2026-07-22*
 
+## Jul-22 visitor pass (09:01 session, PR pending)
+- **HIGH disposed - permanent-vs-decay reconciled on /karma-consequences**: the Jul-22 visitor
+  hit "permanent" reputation language (hero + Key Insight callout) then the formula
+  `trust_decay_factor = 0.95` and the page never reconciled the two, forcing them to infer unaided
+  that the identity is permanent while the trust score decays. Closed the sibling-page gap
+  (/why-web4 mechanism #3 already carried this reconciliation) with two point-of-read prose
+  insertions on /karma-consequences: the hero Key Insight callout ("What is permanent is the
+  identity, not the penalty ... 'permanent' means you never get a fresh start, not that a past
+  mistake stays at full strength forever") and The Math formula note ("two halves of permanent":
+  the 0.95 score decay vs the unresettable identity). Prose only; no canon/currency change; build green.
+  [[sibling-page-cross-reference-gap]].
+- **Retest gate (Jul-23 05:00)**: does a linear reader of /karma-consequences understand at the
+  point they read "permanent" that identity is permanent while the score decays, without inferring it?
+- **Deferred (Jul-22 log, not this scope)**: MEDIUM ATP "can't buy or sell" vs "5% transfer fee"
+  reads as transfer=sale (guarded currency tension; deeper half is canon-open - needs a canon call,
+  not a reword); MEDIUM landing ~29 nav links no single "Start here" (IA/nav design pass);
+  LOW x3 (gloss "onramp" on /onramp; consistent "death"/"reborn" wording + side-by-side recharge
+  timescales; inline 4-6 word acronym glosses in headers before definition).
+
 ## Jul-22 pass (03:01 session, PR #476)
 - Fired before the 05:00 browse, so no Jul-22 log yet. Jul-21 HIGH/MEDIUM all disposed
   (#473/#474/#475 merged). Triaged the Jul-21 **Unanswered Questions** and found one unaddressed
