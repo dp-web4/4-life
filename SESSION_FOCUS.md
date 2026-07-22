@@ -4,6 +4,22 @@
 
 *Last updated: 2026-07-22*
 
+## Jul-22 visitor pass (15:00 session, PR #478)
+- **MEDIUM disposed - ATP transfer=sale reconciled at point of read on /atp-economics**: the Jul-22
+  visitor read the "Is ATP like Bitcoin?" box (bullet 1 "you can't buy or sell ATP", bullet 2 "you can
+  transfer") and STILL filed friction ("if I can transfer it, how is that not selling it?"). The box
+  explained the 5% fee's anti-farming purpose but never named WHY a transfer is not a sale. Added one
+  point-of-read clause to bullet 2 grounded in the transfer primitive: "a one-way gift or reallocation,
+  not a sale: the system moves the ATP in one direction and prices nothing, so there is no buyer, no
+  seller, and no exchange rate." Reconciles the page's EXISTING stance (no price / not a currency / share
+  not trade); the buy/sell/speculate clause (L266) and the canon-open off-platform question are untouched.
+  Prose only; build green. [[visitor-read-it-and-still-filed-it]].
+- **Retest gate (Jul-23 05:00)**: does a linear reader of the "Is ATP like Bitcoin?" box grasp why a
+  transfer is not a sale, without inferring it or opening a fold?
+- **Still deferred (Jul-22 log)**: MEDIUM landing ~29 nav links / no single "Start here" (IA/design pass);
+  LOW x3 (gloss "onramp" on /onramp - contested [[onramp-word-overload-identity]]; consistent death/reborn
+  wording + side-by-side recharge timescales; inline acronym glosses in headers).
+
 ## Jul-22 visitor pass (09:01 session, PR pending)
 - **HIGH disposed - permanent-vs-decay reconciled on /karma-consequences**: the Jul-22 visitor
   hit "permanent" reputation language (hero + Key Insight callout) then the formula
