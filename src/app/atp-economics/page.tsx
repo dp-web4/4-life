@@ -197,8 +197,15 @@ export default function ATPEconomicsPage() {
                 collapsed #net-positive details; above the simulator). A linear reader still hits the
                 first net numbers unanchored. This is the one PROACTIVE anchor: the two-channel model
                 stated in the intro, above every number on the page. Same pattern as the LCT scale
-                anchor (#362). */}
-            <li className="flex gap-2"><span className="text-sky-400 shrink-0">3.</span> ATP comes back through <strong className="text-gray-100">two channels</strong>: confirmations of work you initiated <em>refund</em> at most what you spent, while tasks <em>someone else commissioned</em> pay what the work is worth to them - that payment, not recharge, is where net gain comes from. <a href="#net-positive" onClick={(e) => { e.preventDefault(); const el = document.getElementById('net-positive'); if (el) { if (el instanceof HTMLDetailsElement) el.open = true; el.scrollIntoView({ behavior: 'smooth' }); } }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(recharge refunds, payment earns)</a></li>
+                anchor (#362).
+                Jul-21 visitor Unanswered Q#4: having read "ATP isn't money" (items 1/5) next to this
+                "someone pays you" line, the visitor re-read the page and still couldn't answer "paid in
+                WHAT, and how is it different from the ATP I spend?" The grounding that payment IS ATP
+                (same energy, priced by the commissioner not refunded from your spend) only lived inside
+                the collapsed #net-positive "Show me the math" fold (L739-751), which they didn't open.
+                [[visitor-read-it-and-still-filed-it]]: promote the missing clause to the read point;
+                energy framing only, do NOT reopen the buy/sell/speculate currency tension. */}
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">3.</span> ATP comes back through <strong className="text-gray-100">two channels</strong>: confirmations of work you initiated <em>refund</em> at most what you spent, while tasks <em>someone else commissioned</em> pay you (in <strong className="text-gray-100">ATP, the same energy you spend</strong>) what the work is worth to them, priced by the commissioner rather than refunded from your own outlay - that payment, not recharge, is where net gain comes from. <a href="#net-positive" onClick={(e) => { e.preventDefault(); const el = document.getElementById('net-positive'); if (el) { if (el instanceof HTMLDetailsElement) el.open = true; el.scrollIntoView({ behavior: 'smooth' }); } }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(recharge refunds, payment earns)</a></li>
             <li className="flex gap-2"><span className="text-sky-400 shrink-0">4.</span> Quality matters about <strong className="text-gray-100">7&times;</strong>: low-quality work barely recharges you, high-quality work recharges fully, up to what you spent. <a href="#quality-ramp" onClick={(e) => { e.preventDefault(); document.getElementById('quality-ramp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(the quality ramp)</a></li>
             {/* May 28 visitor Unanswered Q3: "What happens to the 5% transfer fee? Burned, pooled,
                 redistributed? I encountered the 5% reference multiple times and never saw where it
