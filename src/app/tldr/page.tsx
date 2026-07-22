@@ -80,9 +80,10 @@ export default function TLDRPage() {
             <div className="flex gap-3 items-start">
               <span className="text-sky-400 font-semibold whitespace-nowrap mt-0.5">Web4</span>
               <p className="text-gray-300">
-                Trust accrues from <em>witnessed behavior</em>. Every action leaves a verifiable
-                record of what happened, under whose authority, and against which rules. Good
-                behavior compounds. Bad behavior follows you.
+                Trust accrues from <em>witnessed behavior</em>: other participants (a device, a
+                person, or a service) observe what you do and sign a small record of it. Every
+                action leaves a verifiable record of what happened, under whose authority, and
+                against which rules. Good behavior compounds. Bad behavior follows you.
               </p>
             </div>
           </div>
