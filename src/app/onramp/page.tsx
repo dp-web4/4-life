@@ -36,6 +36,12 @@ export default function OnrampPage() {
         <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-sky-500 bg-clip-text text-transparent">
           The Web4 onramp
         </h1>
+        <p className="text-base text-gray-400 leading-relaxed mb-6 border-l-2 border-purple-800/60 pl-4">
+          <strong className="text-gray-200">One word first:</strong> the{" "}
+          <strong className="text-gray-200">onramp</strong> is the shortest path
+          from zero to running Web4 yourself, and it runs through the four pieces
+          below.
+        </p>
         <p className="text-xl text-gray-300 leading-relaxed mb-4">
           There are really only four pieces to learn. One is the substrate you
           build on: the{" "}
