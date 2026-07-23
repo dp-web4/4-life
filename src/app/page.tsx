@@ -83,7 +83,9 @@ export default function HomePage() {
         </p>
         <p className="text-xl text-gray-300 leading-relaxed mb-8">
           Web4 closes that gap. Trust is earned through witnessed behavior, not
-          declared by a platform and not assumed because someone holds a key.
+          declared by a platform and not assumed because someone holds a key. To
+          witness is to observe an action and attest to it, staking your own
+          reputation on the record.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
