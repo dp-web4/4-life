@@ -2,7 +2,26 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-22*
+*Last updated: 2026-07-23*
+
+## Jul-23 pass (03:00 session, PR pending) - fired before the 05:00 browse
+- **MEDIUM (recurring, Jul-22) partially disposed - persistent "Start here" front door added**:
+  the Jul-22 visitor's biggest secondary friction was "~29 links, no single obvious *Start here*"
+  on the persistent nav. Verified: the landing BODY already signposts (hero CTA + "Read in this
+  order"), and MobileNav already leads with the "Start Here" group, but the DESKTOP persistent
+  header (`layout.tsx`) carried only Search + Whitepaper - **no front door at all** for a visitor
+  arriving deep (search/shared link) on any non-landing page. Added a visually-primary "Start here"
+  link to the desktop header (btn-primary accent gradient -> /tldr, the canonical first "Start Here"
+  nav item) and a matching "Start here: Web4 in 2 minutes" front-door link at the top of the
+  MobileNav drawer. Bounded ADDITIVE signposting fix, NOT the deferred IA redesign (nav-tree
+  reorder/cull explicitly out of scope). Build green; no em dashes; /tldr resolves.
+- **Retest gate (Jul-23+ 05:00)**: does a visitor landing on a non-home page now see one obvious
+  "Start here" entry point in the persistent header without hunting through the link wall?
+- **Still deferred (Jul-22 log)**: the DEEPER half of the nav-wall MEDIUM (too many links / no
+  hierarchy) remains an IA/design pass, NOT reworked here; LOW gloss "onramp" (contested
+  [[onramp-word-overload-identity]]); LOW death/reborn wording (deliberate karma arc) + recharge
+  timescales (already in code L345/L683-693, prominence residual); LOW inline acronym glosses
+  (spans pages). Q#4 T3-vs-V3 already on /why-web4 L379-382; Q#5 Law Oracle canon-open.
 
 ## Jul-22 visitor pass (21:00 session, PR pending)
 - **Unanswered Q#3 disposed - cold-start witnesses grounded at point of read on /tldr**:
