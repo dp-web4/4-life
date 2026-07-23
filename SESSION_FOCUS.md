@@ -4,6 +4,33 @@
 
 *Last updated: 2026-07-22*
 
+## Jul-22 visitor pass (21:00 session, PR pending)
+- **Unanswered Q#3 disposed - cold-start witnesses grounded at point of read on /tldr**:
+  the Jul-22 visitor's biggest open question was the chicken-and-egg objection the site's
+  central "witnessed behavior" claim provokes: "Who witnesses a brand-new person with one
+  device and no existing relationships? How do I get my first witness from a standing start?"
+  The *trust-start* half (start neutral at 0.50, earn through quality) is already covered on
+  /first-contact; the unaddressed half was the *witness* half. Added one tight point-of-read
+  follow-on to the /tldr "Web4" row (the crown-jewel witnessed-behavior sentence, where the
+  objection forms): "You need no prior reputation or contacts to begin: your own device is
+  your day-zero [witness](/lct-explainer#first-device-bootstrap) for your identity, and from
+  your first action onward it is the community you join that witnesses what you do. Witnessing
+  is per action, not a standing relationship." Keeps the two halves distinct per policy review
+  (device = IDENTITY witness only; community = behavior witness), links to the fuller mechanism
+  rather than re-explaining, and does NOT contradict /what-could-go-wrong's honest "witness
+  bootstrapping is unsolved" framing (that page scopes the open problem to *genesis*-scale
+  network formation / Sybil resistance, a different scale than an individual joining a running
+  community). Prose only; build green; no canon change; no em dashes. [[visitor-v3-ghost-pattern]].
+- **Retest gate (Jul-23 05:00)**: does a linear reader of /tldr, at the point they read
+  "witnessed behavior," now know a newcomer with one device and no contacts is still witnessed
+  (own device for identity, the joined community for behavior), without it reading as a
+  contradiction of the "unsolved bootstrapping" page?
+- **Still deferred (Jul-22 log)**: MEDIUM landing ~29 nav links / no single "Start here"
+  (IA/design pass, recurring); LOW x3 (gloss "onramp" on /onramp - contested
+  [[onramp-word-overload-identity]]; consistent death/reborn wording + side-by-side recharge
+  timescales; inline acronym glosses in headers). Unanswered Q#4 (T3 vs V3 one-liner) already
+  on /why-web4 L379-382 - low priority; Q#5 R6/R7 grounded Jul-21 (#474), Law Oracle open.
+
 ## Jul-22 visitor pass (15:00 session, PR #478)
 - **MEDIUM disposed - ATP transfer=sale reconciled at point of read on /atp-economics**: the Jul-22
   visitor read the "Is ATP like Bitcoin?" box (bullet 1 "you can't buy or sell ATP", bullet 2 "you can
