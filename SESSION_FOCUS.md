@@ -4,6 +4,31 @@
 
 *Last updated: 2026-07-23*
 
+## Jul-23 visitor pass (09:00 session, PR #481) - first post-05:00-browse pass
+- **HIGH disposed - "witness" glossed at point of first read on Landing + TL;DR**: the Jul-23
+  visitor's sole HIGH was that "witness/witnessed" - the load-bearing thesis term, used from the
+  first sentence on the Landing hero and TL;DR - was only DEFINED in the glossary (reached at
+  minute 33). Every page assumed the reader already knew it. Added one tight inline gloss the
+  first time the term is leaned on, pulling the canonical glossary clause (observe + attest +
+  stake your own reputation): Landing hero "To witness is to observe an action and attest to it,
+  staking your own reputation on the record." (one sentence, hero is dense); TL;DR "The Shift"
+  intro same clause ("...on what you sign."), placed ABOVE the existing operational gloss at L83
+  ("observe what you do and sign a small record") and phrased as a compatible facet of it
+  (signing = attesting), NOT a competing definition. Both surfaces identical phrasing = no new
+  seam. Recurring-anchor-proactive pattern (one anchor in the intro above everything). Prose
+  only; no canon change; build green; no em dashes.
+- **Retest gate (Jul-24 05:00)**: does a linear reader, at the exact point they first read
+  "witnessed behavior" on the Landing hero and TL;DR intro, now learn in one sentence what
+  witnessing is (observe + attest + stake reputation) without reaching the glossary?
+- **Same-root-cause next instance**: /lct-explainer "witnessed presence" used before grounded
+  (Jul-23 MEDIUM) is the SAME defect; if witness friction recurs there, extend the same
+  point-of-read anchor to /lct-explainer.
+- **Still deferred (Jul-23 log)**: MEDIUM /onramp word-overload (contested
+  [[onramp-word-overload-identity]], branding-escalation threshold); MEDIUM /onramp R6/R7
+  (grounded #474 - prominence residual, verify next session); MEDIUM /why-web4 mechanism density
+  (recurring recap-density); LOW first-contact Act 5 foreshadow; LOW running-now hestia
+  "Running (early)" nuance.
+
 ## Jul-23 pass (03:00 session, PR pending) - fired before the 05:00 browse
 - **MEDIUM (recurring, Jul-22) partially disposed - persistent "Start here" front door added**:
   the Jul-22 visitor's biggest secondary friction was "~29 links, no single obvious *Start here*"
