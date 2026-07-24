@@ -1144,9 +1144,12 @@ export default function ATPEconomicsPage() {
               Death is Meaningful
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              When ATP hits zero, you die. Not timeout. Not suspension. Death.
-              But if you built trust (<T3>T3 score</T3>), you&apos;re reborn with karma - 
-              your ATP history carries forward. Bad actors? They die for good.
+              When ATP hits zero, your agent can no longer act. This is not a free
+              reset like abandoning a spam account and signing up fresh: your identity
+              and full history persist. If you built trust (<T3>T3 score</T3>), that
+              record carries forward and you are reborn with karma - closer to a
+              suspended license reinstated than a clean slate. Bad actors who never
+              earned that trust? They die for good.
             </p>
           </div>
 
