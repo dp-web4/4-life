@@ -266,46 +266,111 @@ cargo add web4-core web4-trust-core`}</code></pre>
         </p>
       </section>
 
-      {/* CTA */}
+      {/* CTA - reader-routed.
+          Jul-24 visitor: the ONLY unchecked box on the understanding checklist ("why any of
+          this matters") was marked partial for one reason - "I understood the mechanisms better
+          than I understood what I personally would do with any of it today" - restated as
+          Unanswered Q#5 and again in the closing line ("the site taught me the machine; it
+          hasn't quite told me where I fit in it"). Recurrence: Jul-20 Q#4 asked the same thing
+          of hestia specifically ("what does it actually DO for me day-to-day?").
+          This block already PROMISED the answer ("start with the piece that fits what you want
+          to try") and then routed by piece identity, which only helps a reader who already knows
+          which piece they are. Same links, now keyed on the reader. Rows are descriptive, not
+          promises: this page is the honest maturity ledger (see top of file), so a row states
+          what is true for that reader today and nothing more. Deliberately does NOT adjudicate
+          whether secure hardware is required to participate - why-web4's two affordability FAQs
+          and lct-explainer's software-only callout do not currently agree on that, and adding a
+          third voice here would deepen the seam rather than resolve it. */}
       <section className="max-w-4xl mx-auto mt-12 mb-8">
         <div className="rounded-xl border border-white/10 bg-gradient-to-r from-emerald-500/10 to-sky-500/10 p-6">
-          <p className="text-lg text-gray-200 leading-relaxed mb-4">
+          <h2 className="text-2xl font-bold text-gray-100 mb-3">Where you fit today</h2>
+          <p className="text-base text-gray-300 leading-relaxed mb-5">
             You do not have to take any of this on faith. The packages are on the
-            registries and the binaries are a build away. Start with the piece that fits
-            what you want to try.
+            registries and the binaries are a build away. Everything above is what is
+            real; here is which of it is real <em>for you</em>. Find the row that sounds
+            like you.
           </p>
-          <div className="flex flex-wrap gap-3 text-sm">
-            <Link
-              href="/the-standard"
-              className="rounded-lg border border-sky-500/40 bg-sky-500/15 px-4 py-2 text-sky-200 hover:bg-sky-500/25"
-            >
-              the standard (install the primitives)
-            </Link>
-            <Link
-              href="/hub"
-              className="rounded-lg border border-purple-500/40 bg-purple-500/15 px-4 py-2 text-purple-200 hover:bg-purple-500/25"
-            >
-              the hub (a Web4 society)
-            </Link>
-            <Link
-              href="/hestia"
-              className="rounded-lg border border-emerald-500/40 bg-emerald-500/15 px-4 py-2 text-emerald-200 hover:bg-emerald-500/25"
-            >
-              hestia (deployed today)
-            </Link>
-            <Link
-              href="/hardbound"
-              className="rounded-lg border border-orange-500/40 bg-orange-500/15 px-4 py-2 text-orange-200 hover:bg-orange-500/25"
-            >
-              hardbound (oversight tier)
-            </Link>
-            <Link
-              href="/onramp"
-              className="rounded-lg border border-white/15 bg-white/5 px-4 py-2 text-gray-200 hover:bg-white/10"
-            >
-              the full onramp
-            </Link>
-          </div>
+          <ul className="space-y-4 text-sm text-gray-300">
+            <li className="rounded-lg border border-white/10 bg-white/5 p-4">
+              <strong className="text-gray-100">You are here to understand it, not to run it.</strong>{" "}
+              Then nothing here needs installing for today to be worth your time. The
+              software that exists is built for people who run their own agents, machines,
+              or organizations, and this site is the part written for you. If you would rather
+              see a Web4 society than read about one, the lab behind Web4 runs as one in
+              the open, members and roles published at{" "}
+              <a
+                href="https://4-lab.io/fleet"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-400 underline hover:text-sky-300"
+              >
+                4-lab.io/fleet
+              </a>
+              . A society that isn&apos;t witnessed has no presence to trust, so it is
+              visible by design.
+            </li>
+            <li className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
+              <strong className="text-emerald-200">
+                You run AI agents on your own machine and are comfortable at a command line.
+              </strong>{" "}
+              Hestia is the piece for you, and it is the one already in day-to-day use.{" "}
+              <Link
+                href="/hestia#a-day-with-hestia"
+                className="text-emerald-400 underline hover:text-emerald-300"
+              >
+                A day with Hestia
+              </Link>{" "}
+              walks through an ordinary Tuesday with it: an encrypted vault and an identity
+              created on your machine, an agent given scoped authority that expires, and
+              every consequential act landing in your own witness chain.
+            </li>
+            <li className="rounded-lg border border-purple-500/30 bg-purple-500/10 p-4">
+              <strong className="text-purple-200">
+                You have a group that wants to govern itself.
+              </strong>{" "}
+              The hub is the program you would run, and it is complete, runnable, and
+              pilot-ready rather than deployed: you would be standing up one of the first
+              live instances, not joining an existing network.{" "}
+              <Link href="/hub" className="text-purple-400 underline hover:text-purple-300">
+                Read about the hub
+              </Link>
+              .
+            </li>
+            <li className="rounded-lg border border-sky-500/30 bg-sky-500/10 p-4">
+              <strong className="text-sky-200">You are building on the primitives.</strong>{" "}
+              The core standard is installable today from PyPI and crates.io, and the
+              identity, trust, and energy types are the same ones every piece above uses.{" "}
+              <Link
+                href="/the-standard"
+                className="text-sky-400 underline hover:text-sky-300"
+              >
+                Install the primitives
+              </Link>
+              .
+            </li>
+            <li className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4">
+              <strong className="text-orange-200">
+                Your organization has to answer to auditors.
+              </strong>{" "}
+              Hardbound is the tier aimed at you, and the honest caveat above applies: it is
+              usable and under active hardening, not production, and its hardware binding is
+              not yet validated on-device.{" "}
+              <Link
+                href="/hardbound"
+                className="text-orange-400 underline hover:text-orange-300"
+              >
+                Read about hardbound
+              </Link>
+              .
+            </li>
+          </ul>
+          <p className="text-sm text-gray-400 leading-relaxed mt-5">
+            None of these sound like you yet, or you want the whole shape before you pick?{" "}
+            <Link href="/onramp" className="text-gray-200 underline hover:text-white">
+              How the four pieces compose
+            </Link>{" "}
+            lays out the substrate and the three scales in one view.
+          </p>
         </div>
       </section>
     </>
