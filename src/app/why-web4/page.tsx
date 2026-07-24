@@ -2298,7 +2298,7 @@ export default function WhyWeb4Page() {
               </p>
               <ul className="list-disc list-inside space-y-1.5 ml-1">
                 <li>
-                  <strong>0.5 - the alive/dead and default trust line.</strong> A design choice inspired by
+                  <strong>0.5 - the survival line, and the default trust score.</strong> A design choice inspired by
                   phase-transition behavior: below it, conduct is hard to tell from random; above it, intention
                   shows. It&apos;s also a per-society setting, not a protocol constant - see{" "}
                   <a href="#faq-threshold" className="text-sky-400 hover:underline">Is the 0.5 threshold universal?</a>

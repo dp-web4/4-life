@@ -249,10 +249,18 @@ export default function LCTExplainerPage() {
               next to a number cluster (lines ~494, ~801, ~941). A top-to-bottom reader still hit decimals
               before any ruler. This is the one PROACTIVE anchor: it sits in the intro, above every decimal
               on the page, so no number is ever read without the scale already in hand. Wording kept
-              consistent with the inline bridge clause (~494) to avoid a third phrasing of the same ruler. */}
+              consistent with the inline bridge clause (~494) to avoid a third phrasing of the same ruler.
+              Jul-24 visitor MEDIUM: this anchor named the line ("survival line") and stated only the FATAL
+              half, so "only staying below it is fatal" read as a double negative and the reader could not
+              tell whether a brief dip was survivable. The recoverable half now leads, in the canonical
+              wording first-contact already uses (L153/L268), preceded by trust-tensor's byte-identical
+              newcomer reassurance. Both clauses are strictly-below on purpose: do NOT reword into anything
+              that says a reader sitting *at* 0.50 is alive, safe, or has full access (standing canon
+              escalation on > vs >=). This anchor is the ONE place on this page that defines the line;
+              other mentions name it only. */}
           <p className="text-xs text-purple-200/80 mt-3 pt-3 border-t border-purple-800/30">
             <span className="font-semibold text-purple-300">How to read the numbers below:</span> every trust score on this page
-            runs on a <strong>0-1</strong> scale. <strong>0.5</strong> is the neutral midpoint (a coin-flip prior: with no track record yet, trust is neither earned nor lost), and it doubles as the survival line (only <em>staying</em> below it is fatal). <strong>0.75</strong> is solid,
+            runs on a <strong>0-1</strong> scale. <strong>0.5</strong> is the neutral midpoint (a coin-flip prior: with no track record yet, trust is neither earned nor lost), and it doubles as the survival line: you start at the neutral midpoint and earn your way above it, so a newcomer is not in danger. Crossing below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal. <strong>0.75</strong> is solid,
             and <strong>0.90</strong> is the hardware-bound ceiling. Every decimal you meet from here on sits on that scale.
           </p>
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300">jump to the interactive security audit ↓</a></p>
@@ -529,7 +537,7 @@ export default function LCTExplainerPage() {
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500 font-bold shrink-0">4.</span>
-                  <span>More device witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90% - i.e. 0.50, 0.75, 0.90 on the 0-1 trust scale these numbers all use, where 0.5 is the survival line - only <em>staying</em> below it is fatal) - but with <em>diminishing returns</em>. Three hardware-bound device witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds)</span>
+                  <span>More device witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90% - i.e. 0.50, 0.75, 0.90 on the 0-1 trust scale these numbers all use, where 0.5 is the survival line defined in the intro above) - but with <em>diminishing returns</em>. Three hardware-bound device witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds)</span>
                 </div>
               </div>
             </div>
@@ -1003,7 +1011,18 @@ export default function LCTExplainerPage() {
 
           {/* May 21 visitor LOW #1: the ceiling numbers (0.90/0.50) appear without anchoring the 0-1 scale itself.
               A cold reader landing directly on this page has no prior calibration. Anchor the scale before the grid.
-              Phrased distinctly from line ~921's "neutral starting point" framing to avoid redundancy.
+              REVERSED Jul-24: this comment used to say the wording was "phrased distinctly from line ~921's
+              'neutral starting point' framing to avoid redundancy". That intent is now retired, because it
+              contradicted the intent recorded at the top anchor (~250: "avoid a third phrasing of the same
+              ruler") and distinctness produced a second NAME for one line ("alive/dead line" here vs
+              "survival line" everywhere else). A Jul-24 visitor filed exactly that: "is 0.5 neutral, or is
+              it a survival threshold, or both?" The TRUST line now has one name everywhere it is named
+              (here, ~263, ~540, ~577, ~1088, trust-tensor ~407, why-web4 ~2301): "survival line". Do not
+              re-diverge this wording for redundancy reasons; "alive/dead" is specifically the name to stay
+              retired, since "dead" at a line the reader is told they START on invites the unresolved
+              exactly-0.50 question. NOT renamed: coherence-index ~756 and ~1134 also say "0.5 alive/dead",
+              but those are on the CI scale, a different quantity - importing the trust-scale name there
+              would create a new seam rather than close one.
               May 30 visitor MEDIUM #2 (3rd touch of this anchor): #295 anchored at the grid, #300 at the walkthrough,
               but neither labeled the *upper-tier* numbers qualitatively. Visitor's verbatim gap: "Is 0.9 'great' or
               'the bare minimum'?" Their own table-row recommendation phrased it: "Above 0.85 is uncommon." Extend
@@ -1011,9 +1030,9 @@ export default function LCTExplainerPage() {
               so a scrolling reader notices it before the grid below - don't escalate to a colored callout. */}
           <p className="text-sm text-gray-300 mb-2">
             <span className="text-gray-400">New to the scale?</span> Trust runs from <strong>0</strong> (none) to{" "}
-            <strong>1.0</strong> (the theoretical max). Roughly: <strong>0.5</strong> is the alive/dead line -
-            fall below it <em>and stay there</em> and an entity can no longer act: its posts, votes, and ATP transfers stop being accepted
-            (a single dip just under is recoverable);{" "}
+            <strong>1.0</strong> (the theoretical max). Roughly: <strong>0.5</strong> is the survival line -
+            crossing below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal,
+            and an entity that stays below can no longer act at all (its posts, votes, and ATP transfers stop being accepted);{" "}
             <strong>0.75</strong> is solid; <strong>0.85</strong> is strong; <strong>above&nbsp;0.85 is uncommon</strong>;{" "}
             <strong>1.0</strong> is the theoretical ceiling, not a number anyone actually reaches.
             The ceilings below are points on that scale.
@@ -1069,7 +1088,7 @@ export default function LCTExplainerPage() {
             {/* June 11 visitor HIGH (browse A): "starts at 0.5" + "below 0.5 = permanent death" read
                 across pages as spawning on a permadeath knife-edge. Same resolution as First Contact:
                 small steps, sustained pattern - not one mistake. */}
-            Starting on the alive/dead line isn&apos;t a knife-edge: trust moves in small steps (an
+            Starting on the survival line isn&apos;t a knife-edge: trust moves in small steps (an
             honest mistake costs roughly a hundredth), a dip just below 0.5 is recoverable, and
             permanent trust death takes a <em>sustained</em> pattern of bad behavior, not one stumble.
             With software-only hardware, 0.5 is both where you start and the highest you can reach.

@@ -84,7 +84,7 @@ export default function OnrampPage() {
             <div className="text-sm text-gray-300 leading-relaxed">
               The canonical libraries and primitives: LCT (identity), T3/V3*MRH
               (trust and value in context), ATP/ADP (energy), and{" "}
-              <Link href="/glossary" className="text-purple-300 underline hover:text-purple-200">R6/R7</Link> (the standard six-part shape of any action, so a request like &quot;post this&quot; or &quot;spend 5 ATP&quot; gets checked and trust-scored the same way every time; R7 adds a reputation update when the stakes are high). Everything above is a downstream consumer.
+              <Link href="/glossary#r6" className="text-purple-300 underline hover:text-purple-200">R6/R7</Link> (the standard six-part shape of any action, so a request like &quot;post this&quot; or &quot;spend 5 ATP&quot; gets checked and trust-scored the same way every time; R7 adds a reputation update when the stakes are high). Everything above is a downstream consumer.
             </div>
           </div>
 
@@ -180,7 +180,7 @@ export default function OnrampPage() {
               </h3>
               <p className="text-sm text-gray-300 leading-relaxed">
                 Learn the primitives (LCT, T3/V3*MRH, ATP/ADP, and{" "}
-                <Link href="/glossary" className="text-purple-300 underline hover:text-purple-200">R6/R7</Link>). This is the
+                <Link href="/glossary#r6" className="text-purple-300 underline hover:text-purple-200">R6/R7</Link>). This is the
                 vocabulary everything else speaks, so it is worth a pass before you
                 pick a scale. See{" "}
                 <Link href="/the-standard" className="text-purple-300 underline hover:text-purple-200">
