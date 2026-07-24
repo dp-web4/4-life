@@ -187,8 +187,14 @@ export default function HestiaPage() {
         </div>
       </section>
 
-      {/* A day with Hestia */}
-      <section className="max-w-4xl mx-auto mt-12">
+      {/* A day with Hestia.
+          Anchored (Jul-24 visitor, and Jul-20 Q#4 before it: "what does hestia actually DO for
+          me day-to-day? I couldn't picture the user experience"). This walkthrough IS that
+          answer, and until now nothing could point at it: the page carried no ids at all, so
+          all 18 inbound /hestia links landed a reader at the top. /running-now's reader-routing
+          block deep-links here. If you add more anchors to this page, keep scroll-mt-20 so the
+          heading clears the fixed nav. */}
+      <section id="a-day-with-hestia" className="max-w-4xl mx-auto mt-12 scroll-mt-20">
         <h2 className="text-2xl font-bold text-gray-100 mb-4">A day with Hestia</h2>
         <p className="text-base text-gray-400 leading-relaxed mb-5">
           Those are the parts. Here is what they look like put together, not as a

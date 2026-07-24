@@ -74,6 +74,58 @@ Two MEDIUMs disposed; the third is the open operator branding call.
   get ONE consistent answer to "does zero ATP terminate or suspend?" (recoverable suspension WITH
   earned karma; bad actors / no-trust die for good)?
 
+## Jul-24 visitor pass (15:02 session) - "where do I fit?": the checklist's only unchecked box
+*Ordering note: PR #485 (14:50 session) inserts its own Jul-24 block at the top of this file; this
+block is anchored lower to avoid a merge conflict. Normalize the order when both have merged.*
+- **Disposed - the Jul-24 log's worst-rated finding, which #485 named and did not take**: six of
+  seven checklist concepts were checked; **"why any of this matters" was marked partial**, for one
+  stated reason - *"I understood the mechanisms better than I understood what I personally would do
+  with any of it today"*. Restated as Unanswered Q#5 ("as an ordinary human, is there anything here
+  for me *today*?") and as the closing line ("the site taught me the machine; it hasn't quite told
+  me where I fit in it"). **Recurrence: Jul-20 Q#4** asked it of hestia specifically ("what does it
+  actually DO for me day-to-day? I couldn't picture the user experience"). Two post-rebuild browses.
+- **The answer already existed one click past where the visitor stopped.** They read 8 pages and
+  reached none of the four piece pages. `/hestia` L190+ carries a full **"A day with Hestia"**
+  walkthrough (open the app, `hestia init` makes a vault + LCT locally, delegate scoped/expiring
+  authority, every consequential act lands in your witness chain, revoke and the record stays) -
+  and the page had **zero `id` anchors in 425 lines**, so none of its 18 inbound links could point
+  at it. Meanwhile `/running-now`'s closing block already **promised** the routing ("start with the
+  piece that fits what you want to try") and then routed by **piece identity** ("hestia (deployed
+  today)"), which only helps a reader who already knows which piece they are. Classic
+  [[visitor-read-it-and-still-filed-it]]: visible, demonstrably read, still filed -> the missing
+  clause, not missing content.
+- **Fix**: `/running-now`'s CTA rewritten as **"Where you fit today"**, five reader-keyed rows
+  (here to understand not run / runs AI agents at a command line / has a group / building on the
+  primitives / answers to auditors), same five internal links plus the `4-lab.io/fleet` living-example
+  link already used on `/hub`. Rows are **descriptive, not promises** - this page is the honest
+  maturity ledger, so each row states what is true for that reader today and nothing more, and every
+  maturity phrase mirrors the section above it (hub pilot-ready-not-deployed, hardbound
+  usable-and-hardening with TPM binding unvalidated on-device). `/hestia` got
+  `id="a-day-with-hestia"` + `scroll-mt-20` so row 2 lands on the answer. Build green; no em dashes;
+  0 new files; no number, canon, or status change.
+- **Policy review returned REVISE with 7 constraints, all accepted.** Two mattered:
+  1. The honest row must **not** say "there is nothing for you to install today" - false, and it
+     contradicts three surfaces (hestia ships a public `app-v0.1.2` release; `/running-now` L260
+     "deployed and in day-to-day use"; `/hestia` "a normal desktop app"). Scoped to **need and
+     purpose, not existence**: "nothing here needs installing for today to be worth your time".
+  2. **Do not adjudicate whether secure hardware is required** (the visitor's Q#2). Dropped that
+     clause entirely, and recorded why in the code comment.
+- **NEW STANDING SEAM (out of scope, needs its own session, possibly a web4 canon call)**:
+  `why-web4` answers the hardware-affordability question **twice, and the two answers disagree**.
+  `#faq-tpm-affordability` (L2203) states flatly that "Web4 identity **requires** hardware with
+  secure elements"; `#faq-affordability` (L1372) treats that as conditional; `lct-explainer`'s
+  `#software-only-survival` treats software-only anchoring as viable at a 0.50 ceiling with zero
+  margin. Both FAQs are indexed separately (L573/L581, L1187/L1195). Until that is reconciled, **no
+  page may assert either way whether hardware is the price of entry** - that is why Q#2 is still open.
+- **Retest gate (Jul-25 05:00+)**: does the log still mark "why any of this matters" partial, or
+  still ask "what do I do with this"? **If it recurs a third time, the residual is IA placement, not
+  wording** - the routing sits at the end of `/running-now`, and a reader who never gets there never
+  sees it. Escalate to moving it earlier in the funnel (`/tldr` or the landing page); do NOT reword
+  it a third time.
+- **Also still open**: `/hestia` has one anchor now and needs a general anchor pass (18 inbound
+  links, one target); `/hestia` L196 calls it "a normal desktop app" while the only published
+  release asset is an Android APK (accuracy check owed against the hestia repo).
+
 ## Jul-23 visitor pass (15:00 session) - /onramp word-definition + branding escalation
 - **MEDIUM/LOW disposed - the word "onramp" is now defined on /onramp**: the /onramp page
   used "onramp" only as its H1 ("The Web4 onramp"); the body never defined the metaphor.
