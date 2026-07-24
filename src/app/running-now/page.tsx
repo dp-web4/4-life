@@ -164,10 +164,20 @@ cargo add web4-core web4-trust-core`}</code></pre>
 
       {/* Hestia */}
       <section className="max-w-4xl mx-auto mt-12">
-        <div className="flex items-center gap-3 mb-3">
+        <div className="flex items-center gap-3 mb-2">
           <h2 className="text-3xl font-bold text-emerald-300">Hestia</h2>
           <MaturityBadge tier="running" />
         </div>
+        {/* Jul-23 visitor LOW: the Running badge read more finished than the fine
+            print, because the "still early" caveat sat ~27 lines below it. Pin the
+            caveat to the badge at point of first read, honoring this page's own
+            thesis (top of file) that the claim and the reality stay pinned together.
+            The fuller version stays below; no new badge tier. */}
+        <p className="text-sm text-gray-400 leading-relaxed mb-4">
+          Running end to end, with two parts honestly still early: hardware
+          binding and the AI-owned vault (both detailed below). The badge marks
+          what runs today, not a finished product.
+        </p>
         <p className="text-lg text-gray-300 leading-relaxed mb-4">
           Hestia is the software an entity runs on its own machine to hold a real Web4
           identity, with the vault, trust history, and permissions that ride with it. It
