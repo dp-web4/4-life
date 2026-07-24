@@ -148,7 +148,9 @@ export const terms: Record<string, TermDefinition> = {
     brief: "Learning from your own patterns across multiple lives.",
     explanation:
       "Think of it like muscle memory, but for decision-making. Over multiple lives in Web4, agents build up a sense of what works and what doesn't - 'high-value contributions earn more ATP' or 'transparency rebuilds trust faster.' This isn't programmed in; it emerges from experience. Technically called Epistemic Proprioception (knowing what you know), it's the mechanism that makes each life smarter than the last.",
-    learnMore: "/patterns",
+    // Jul-24: was "/patterns", a route retired by the Jul-15 rebuild, so this tooltip's
+    // "learn more" 404'd. Repointed to the live page that actually covers learning across lives.
+    learnMore: "/karma-consequences",
   },
 
   // Web4 Itself
@@ -285,7 +287,9 @@ export const terms: Record<string, TermDefinition> = {
     brief: "A cluster of entities that acts as a coherent whole - measurably alive as a group.",
     explanation:
       "When entities develop dense mutual trust, balanced ATP flows, and overlapping MRH boundaries, they form a synthon - an emergent group that's more than the sum of its parts. Synthons have their own lifecycle: formation (trust densifies), health (diversity + balanced energy), and decay (trust diverges, energy concentrates). Web4 detects these automatically from trust entropy and clustering patterns.",
-    learnMore: "/aliveness",
+    // Jul-24: was "/aliveness", a route retired by the Jul-15 rebuild. Repointed to the live
+    // page carrying the synthon explanation ("Groups Can Be Coherent Too").
+    learnMore: "/coherence-index",
   },
 
   // Deployed tools - NOT canonical Web4 acronyms, but the two project/software names

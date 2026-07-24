@@ -487,8 +487,13 @@ export default function GlossaryPage() {
             </div>
           </div>
 
-          {/* R6 */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          {/* R6 - Jul-24 visitor MEDIUM: this card and the R7 card below were the only primitive cards
+              without an id, so /onramp's "R6/R7" link dumped the reader at the top of this page while
+              every sibling acronym (#lct, #atp, #t3, #mrh, #ci, #v3) deep-links. That asymmetry read to
+              the visitor as "R6/R7 is the one primitive with nowhere to go". Keep these ids in sync with
+              the /onramp links. Note: R6 stays OUT of the "Acronyms at a glance" box by the deliberate
+              decision recorded at ~L138. */}
+          <div id="r6" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Action Framework (R6)
             </h3>
@@ -514,7 +519,7 @@ export default function GlossaryPage() {
           </div>
 
           {/* R7 */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>
+          <div id="r7" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Action Framework (R7)
             </h3>

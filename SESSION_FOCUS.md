@@ -4,6 +4,54 @@
 
 *Last updated: 2026-07-24*
 
+## Jul-24 visitor pass (15:00 session) - first pass ON the Jul-24 05:00 browse
+Log: 34 min, 9 pages, understanding "good", would return yes. Three MEDIUMs, four LOWs.
+Two MEDIUMs disposed; the third is the open operator branding call.
+
+- **MEDIUM disposed - one canonical sentence for the 0.5 line, and one name for it.** The visitor:
+  "is 0.5 neutral, or is it a survival threshold, or both? ... 'only staying below it is fatal' is a
+  double-negative that took me two reads. I still am not 100% sure whether dipping below briefly is
+  fine." Verified before acting: the site already HAS a complete formulation, on first-contact
+  (L153/L268), carrying both halves. Every other surface carried only the FATAL half, and
+  lct-explainer stated the ruler twice under two different names ("survival line" at the intro anchor
+  L255, "alive/dead line" at the ceilings anchor L1014). Two code comments recorded OPPOSITE intents
+  (L250: "avoid a third phrasing"; L1004: "phrased distinctly ... to avoid redundancy") - distinctness
+  won, and produced a second name for one line. Fix: first-contact's wording is now canonical and
+  appears byte-identical at lct-explainer L263 (intro anchor, the point of FIRST read) and
+  trust-tensor L407, always positive-first: *"Crossing below 0.5 restricts your features right away
+  and is recoverable; only staying below it is fatal."* The intro anchor also gained trust-tensor's
+  byte-identical newcomer reassurance ("you start at the neutral midpoint and earn your way above it,
+  so a newcomer is not in danger"). "alive/dead line" retired on every TRUST surface (lct-explainer
+  x2, why-web4 L2301); per-page restatement capped at name-only (lct-explainer L540/L577) so no fourth
+  paraphrase can drift in. Both clauses are strictly-below on purpose: the exactly-0.50 endpoint is
+  still a standing canon escalation and is NOT asserted anywhere.
+  - **Deliberately NOT renamed**: coherence-index L756/L1134 also say "0.5 alive/dead", but those are
+    on the **CI** scale, a different quantity. Importing the trust-scale name would open a new seam.
+    Whether the site should explain that trust and CI happen to share a 0.5 line is an open question.
+- **MEDIUM disposed - R6/R7 is deep-linkable now (3rd recurrence, mechanical root cause).** Visitor:
+  "R6/R7 ... zero explanation, no link, no page in the nav"; "every one of those acronyms has a Core
+  Concepts page except R6/R7". Literal claim is false (onramp L87 has a 45-word gloss + link), and two
+  prior inline-gloss treatments (#471, #474) had already shipped, so per [[visitor-read-it-and-still-filed-it]]
+  the session hunted the missing clause instead of re-glossing. Found it: **every** primitive card in
+  glossary has an `id` + `scroll-mt-20` (#lct, #atp, #adp, #t3, #mrh, #ci, #v3, #hub, ...) **except
+  R6 and R7**, so onramp's link dumped the reader at the top of a ~1100-line glossary while every
+  sibling acronym they compared it against deep-links. Added `id="r6"`/`id="r7"` and pointed both
+  onramp links at `/glossary#r6`. R6 stays OUT of the "Acronyms at a glance" box (deliberate decision
+  at glossary L138, not re-litigated).
+- **Link-integrity fix (surfaced by the policy reviewer)**: `src/lib/terms.ts` had two `learnMore`
+  targets pointing at routes retired by the Jul-15 rebuild - Synthon -> `/aliveness` and
+  EP -> `/patterns`. Both 404'd from TermTooltip. Repointed to `/coherence-index` ("Groups Can Be
+  Coherent Too") and `/karma-consequences`. All 26 `learnMore` routes now resolve.
+- **NOT touched**: the "onramp" word-overload MEDIUM (still the **operator branding call** below -
+  the visitor's own suggestion, renaming the four pieces, IS the escalated decision); the four LOWs
+  (landing subheading jargon; Reference/Running labels used before defined; "Die & Reborn" reads
+  literal - retest after #484 which merged AFTER this browse; software-0.50 equity cross-link).
+- **Retest gates (Jul-25 05:00+)**: (1) does a reader meeting 0.5 on any page now learn in one
+  sentence that a brief dip is recoverable and only a sustained stretch below is fatal? (2) does
+  clicking R6/R7 on /onramp land on the definition? If R6/R7 recurs a 4th time after this, the
+  residual is NOT the link and NOT the gloss: escalate as an IA question (does R6/R7 need its own
+  Core Concepts page, or should it leave the beginner-facing substrate list?).
+
 ## Jul-24 visitor pass (03:00 session, PR #484) - fired BEFORE the 05:00 browse
 - **SEAMS FIX disposed - the ATP=0 "death" contradiction between First Contact and ATP Economics**:
   the Jul-23 visitor's Unanswered Q#4 ("does an agent hitting zero ATP really terminate, or just go
