@@ -2,7 +2,29 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-23*
+*Last updated: 2026-07-24*
+
+## Jul-24 visitor pass (03:00 session, PR #484) - fired BEFORE the 05:00 browse
+- **SEAMS FIX disposed - the ATP=0 "death" contradiction between First Contact and ATP Economics**:
+  the Jul-23 visitor's Unanswered Q#4 ("does an agent hitting zero ATP really terminate, or just go
+  dormant? The story and the ATP page use 'death' slightly differently") flagged a real cross-page
+  seam. atp-economics L1147 ("Death is Meaningful" card) asserted "When ATP hits zero, you die. Not
+  timeout. Not suspension. Death." - contradicting first-contact, which frames energy-death (ATP=0)
+  as a RECOVERABLE "suspended license" (identity/history persist; rebirth via karma; only trust-death
+  is permanent). L1147 was the lone outlier: the rest of atp-economics already encodes the two-tier
+  model (L1324 "die and stay dead" + L1953 "No trust? No rebirth" both condition PERMANENT death on
+  NOT building trust); how-it-works L1119 is correctly spammer-scoped too. Reworded L1147 to keep the
+  "death is meaningful, not a free Web2 account-reset" pole while dropping the "Not suspension" denial,
+  reusing first-contact's exact "suspended license" vocabulary so both pages answer identically.
+  Prose-entailment fix, no canon/number change (policy-reviewer APPROVED); build green; no em dashes.
+- **Jul-23 residuals NOT touched (and why)**: /lct-explainer "witnessed presence" MEDIUM is
+  retest-gated (Jul-24 05:00; #481's upstream witness gloss wasn't live during the Jul-23 browse -
+  do not pre-empt); /onramp word-overload = operator branding call; R6/R7 = twice-treated (#471/#474),
+  gloss live during browse; why-web4 density = literal suggestion already shipped (#457 + per-card
+  "Shorthand:" lines); first-contact Act-5 foreshadow LOW = deferred.
+- **Retest gate (Jul-24 05:00+)**: does a reader who reads both First Contact and ATP Economics now
+  get ONE consistent answer to "does zero ATP terminate or suspend?" (recoverable suspension WITH
+  earned karma; bad actors / no-trust die for good)?
 
 ## Jul-23 visitor pass (15:00 session) - /onramp word-definition + branding escalation
 - **MEDIUM/LOW disposed - the word "onramp" is now defined on /onramp**: the /onramp page
