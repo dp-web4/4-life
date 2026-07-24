@@ -43,6 +43,13 @@ export default function RootLayout({
           <Link href="/" className="nav-logo">4-Life</Link>
           <nav className="nav-links" aria-label="Main navigation">
             <SiteSearch />
+            <Link
+              href="/tldr"
+              className="btn-primary"
+              style={{ padding: '0.4rem 1rem', fontSize: '0.85rem' }}
+            >
+              Start here
+            </Link>
             <a
               href="https://dp-web4.github.io/web4/"
               target="_blank"

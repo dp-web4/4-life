@@ -46,6 +46,23 @@ export default function MobileNav() {
         </div>
 
         <div className="mobile-nav-content">
+          <Link
+            href="/tldr"
+            className="mobile-nav-link"
+            onClick={() => setOpen(false)}
+            style={{
+              fontWeight: 600,
+              color: "var(--color-dark-bg)",
+              background:
+                "linear-gradient(135deg, var(--color-accent-green), var(--color-accent-teal))",
+              borderRadius: "8px",
+              textAlign: "center",
+              marginBottom: "1rem",
+            }}
+          >
+            Start here: Web4 in 2 minutes
+          </Link>
+
           {sections.map((section) => (
             <div key={section.label} className="mobile-nav-section">
               <div className="mobile-nav-section-label">{section.label}</div>

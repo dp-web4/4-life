@@ -2,7 +2,76 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-22*
+*Last updated: 2026-07-23*
+
+## Jul-23 visitor pass (15:00 session) - /onramp word-definition + branding escalation
+- **MEDIUM/LOW disposed - the word "onramp" is now defined on /onramp**: the /onramp page
+  used "onramp" only as its H1 ("The Web4 onramp"); the body never defined the metaphor.
+  Two consecutive browses converged: Jul-22 LOW ("'onramp'... is never actually defined - I
+  had to infer 'entry pathway'") and Jul-23 MEDIUM ("'Onramp' means three things on one page").
+  Added one hero clause defining ONLY the word, using the Jul-22 visitor's own safe gloss shape:
+  "One word first: the onramp is the shortest path from zero to running Web4 yourself, and it
+  runs through the four pieces below." No identity payload (policy-review REVISE: an
+  identity clause on a page whose H1 is "The Web4 onramp" would relocate the seam, not resolve
+  it). Prose only; no canon change; no em dashes.
+- **Retest gate (Jul-24 05:00)**: does a reader landing on /onramp now learn what "the onramp"
+  means in the hero, without inferring it?
+- **BRANDING ESCALATION (operator decision needed) - the gate has FIRED**: the deeper Jul-23
+  friction is the 4-Life / Web4 / onramp IDENTITY nesting (checklist Q3: "Is 4-Life the same
+  thing as Web4, or the site about it, or one of the four pieces?"). Per [[onramp-word-overload-identity]],
+  this is a post-#468 recurrence of the identity question, which the documented retest gate says
+  is STRUCTURAL - the site title "4-Life | The Web4 Onramp" itself frames 4-Life AS the onramp,
+  colliding with "the onramp" = the four buildable pieces. The gate says: escalate to a
+  **branding call, NOT another reword**. A session cannot resolve this: the fix is a site-title
+  decision (touches page.tsx / layout.tsx x3 / footer / CLAUDE.md), and the guardrail forbids
+  asserting "4-Life is not the onramp" (negating the title on 5 surfaces makes a new seam).
+  **Operator: does the site keep the "4-Life | The Web4 Onramp" title (accept the two-sense word),
+  or rebrand to remove the collision (e.g. "4-Life | Your guide to Web4")?** Until decided, the
+  word-definition clauses (#468 on /tldr, this on /onramp) are the ceiling of what a reword achieves.
+
+## Jul-23 visitor pass (09:00 session, PR #481) - first post-05:00-browse pass
+- **HIGH disposed - "witness" glossed at point of first read on Landing + TL;DR**: the Jul-23
+  visitor's sole HIGH was that "witness/witnessed" - the load-bearing thesis term, used from the
+  first sentence on the Landing hero and TL;DR - was only DEFINED in the glossary (reached at
+  minute 33). Every page assumed the reader already knew it. Added one tight inline gloss the
+  first time the term is leaned on, pulling the canonical glossary clause (observe + attest +
+  stake your own reputation): Landing hero "To witness is to observe an action and attest to it,
+  staking your own reputation on the record." (one sentence, hero is dense); TL;DR "The Shift"
+  intro same clause ("...on what you sign."), placed ABOVE the existing operational gloss at L83
+  ("observe what you do and sign a small record") and phrased as a compatible facet of it
+  (signing = attesting), NOT a competing definition. Both surfaces identical phrasing = no new
+  seam. Recurring-anchor-proactive pattern (one anchor in the intro above everything). Prose
+  only; no canon change; build green; no em dashes.
+- **Retest gate (Jul-24 05:00)**: does a linear reader, at the exact point they first read
+  "witnessed behavior" on the Landing hero and TL;DR intro, now learn in one sentence what
+  witnessing is (observe + attest + stake reputation) without reaching the glossary?
+- **Same-root-cause next instance**: /lct-explainer "witnessed presence" used before grounded
+  (Jul-23 MEDIUM) is the SAME defect; if witness friction recurs there, extend the same
+  point-of-read anchor to /lct-explainer.
+- **Still deferred (Jul-23 log)**: MEDIUM /onramp word-overload (contested
+  [[onramp-word-overload-identity]], branding-escalation threshold); MEDIUM /onramp R6/R7
+  (grounded #474 - prominence residual, verify next session); MEDIUM /why-web4 mechanism density
+  (recurring recap-density); LOW first-contact Act 5 foreshadow; LOW running-now hestia
+  "Running (early)" nuance.
+
+## Jul-23 pass (03:00 session, PR pending) - fired before the 05:00 browse
+- **MEDIUM (recurring, Jul-22) partially disposed - persistent "Start here" front door added**:
+  the Jul-22 visitor's biggest secondary friction was "~29 links, no single obvious *Start here*"
+  on the persistent nav. Verified: the landing BODY already signposts (hero CTA + "Read in this
+  order"), and MobileNav already leads with the "Start Here" group, but the DESKTOP persistent
+  header (`layout.tsx`) carried only Search + Whitepaper - **no front door at all** for a visitor
+  arriving deep (search/shared link) on any non-landing page. Added a visually-primary "Start here"
+  link to the desktop header (btn-primary accent gradient -> /tldr, the canonical first "Start Here"
+  nav item) and a matching "Start here: Web4 in 2 minutes" front-door link at the top of the
+  MobileNav drawer. Bounded ADDITIVE signposting fix, NOT the deferred IA redesign (nav-tree
+  reorder/cull explicitly out of scope). Build green; no em dashes; /tldr resolves.
+- **Retest gate (Jul-23+ 05:00)**: does a visitor landing on a non-home page now see one obvious
+  "Start here" entry point in the persistent header without hunting through the link wall?
+- **Still deferred (Jul-22 log)**: the DEEPER half of the nav-wall MEDIUM (too many links / no
+  hierarchy) remains an IA/design pass, NOT reworked here; LOW gloss "onramp" (contested
+  [[onramp-word-overload-identity]]); LOW death/reborn wording (deliberate karma arc) + recharge
+  timescales (already in code L345/L683-693, prominence residual); LOW inline acronym glosses
+  (spans pages). Q#4 T3-vs-V3 already on /why-web4 L379-382; Q#5 Law Oracle canon-open.
 
 ## Jul-22 visitor pass (21:00 session, PR pending)
 - **Unanswered Q#3 disposed - cold-start witnesses grounded at point of read on /tldr**:

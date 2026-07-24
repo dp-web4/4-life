@@ -59,7 +59,9 @@ export default function TLDRPage() {
           <h2 className="text-2xl font-bold mb-4 text-sky-400">The Shift</h2>
           <p className="text-gray-300 leading-relaxed text-lg mb-4">
             Web4 closes that gap with one idea: trust is earned through witnessed behavior,
-            not granted from above. That is a break from how the web has worked so far.
+            not granted from above. To witness is to observe an action and attest to it,
+            staking your own reputation on what you sign. That is a break from how the web
+            has worked so far.
           </p>
           <div className="space-y-3">
             <div className="flex gap-3 items-start">
