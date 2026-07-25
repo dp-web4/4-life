@@ -105,6 +105,25 @@ export default function TLDRPage() {
             everything else is built on), and three scales to run it. You do not adopt all
             four at once. You start where you are.
           </p>
+          {/* Jul-24 visitor LOW: "each piece has a parenthetical label (Reference),
+              (Reference), (Running), (Reference). At this point I don't know what
+              Reference vs Running means. There's no inline key here; I only learned the
+              definitions two pages later on Running Now." MaturityBadge does carry a
+              title= tooltip, but hover-only text is invisible on mobile and to anyone
+              reading rather than pointing, so the tags needed a written gloss at first
+              read. Wording is a strict subset of the /running-now legend (same page the
+              link lands on) so the two surfaces cannot drift apart, and the link names
+              the third tier (Spec) so a Spec badge met later is not a surprise. */}
+          <p className="text-gray-400 text-sm leading-relaxed mb-4">
+            The tag on each card says how far along that piece is:{' '}
+            <span className="text-purple-300 font-medium">Reference</span> means built and
+            runnable (runnable is not the same as running in production);{' '}
+            <span className="text-emerald-400 font-medium">Running</span> means deployed and
+            operational today, in day-to-day use.{' '}
+            <Link href="/running-now#badge-key" className="text-sky-400 hover:underline">
+              See the full three-tier key (Spec, Reference, Running) &rarr;
+            </Link>
+          </p>
           <div className="space-y-3">
             <Link
               href="/the-standard"
