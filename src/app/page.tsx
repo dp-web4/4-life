@@ -70,8 +70,19 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="max-w-4xl mx-auto px-6 pt-16 pb-10">
-        <div className="text-sm uppercase tracking-wide text-sky-400 mb-4">
-          A proposed open standard for agentic AI governance
+        {/* Jul-24 visitor LOW: the old eyebrow read "A proposed open standard for agentic
+            AI governance" and stacked three abstractions in a row ("read like a
+            conference-panel title, not something that tells a stranger what they're
+            looking at"), while "the body paragraph below did the real work". So the
+            eyebrow now states the same triple the body states, in the same order, in plain
+            words. "A proposed open standard for ..." stays the opening and there is no
+            present-tense capability verb: this is what the standard is FOR, not something
+            Web4 does today. Sentence case on purpose (the other page eyebrows are short
+            all-caps labels; a sentence this long in all-caps wraps to three lines and
+            reads worse than the jargon it replaced). */}
+        <div className="text-sm tracking-wide text-sky-400 mb-4">
+          A proposed open standard for proving what an AI agent did, on whose authority, and
+          by what rules.
         </div>
         <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-sky-400 via-purple-400 to-amber-400 bg-clip-text text-transparent">
           Trust, built into the internet.
@@ -180,9 +191,21 @@ export default function HomePage() {
       {/* Honesty */}
       <section className="max-w-4xl mx-auto px-6 py-10">
         <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-6">
-          <div className="flex items-center gap-3 mb-3">
+          {/* This is the landing page's only maturity badge, and for many readers it is
+              the first one they meet anywhere. The card's own prose explains the state of
+              each piece, but not what the TAG itself means, so the badge gets a quiet key
+              link. It points at the key specifically; the CTA below deliberately still
+              points at /running-now's top, because arriving at the anchor would scroll a
+              first-time reader past that page's R&D disclaimer. */}
+          <div className="flex items-center gap-3 mb-3 flex-wrap">
             <MaturityBadge tier="reference" />
             <h2 className="text-xl font-bold">Where this actually stands</h2>
+            <Link
+              href="/running-now#badge-key"
+              className="text-xs text-gray-400 hover:text-gray-200 hover:underline"
+            >
+              what does that tag mean?
+            </Link>
           </div>
           <p className="text-gray-300 leading-relaxed mb-3">
             Web4 is research and development, not a finished product. The spec

@@ -44,22 +44,29 @@ export default function RunningNowPage() {
           </Link>{" "}
           actually stands.
         </p>
-        <p className="text-lg text-gray-400 leading-relaxed">
-          Every piece carries a maturity badge, so the claim and the reality stay pinned
-          together:
-        </p>
-        <div className="mt-4 flex flex-col gap-2 text-sm text-gray-400">
-          <div className="flex items-center gap-3">
-            <MaturityBadge tier="spec" />
-            <span>defined in the Web4 standard. Written down and stable, not yet built here.</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <MaturityBadge tier="reference" />
-            <span>built and runnable. Finished code you could install and start today. Runnable is not the same as running in production.</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <MaturityBadge tier="running" />
-            <span>deployed and operational today. Live instances actually exist and are in day-to-day use.</span>
+        {/* Jul-24 visitor LOW: the reader meets (Reference)/(Running) badges on the
+            landing page and /tldr and only learns what they mean here, two pages later.
+            This key is now deep-linkable so those first-read surfaces can send the
+            reader straight to it. The id wraps the framing sentence as well as the three
+            rows, so an anchor arrival lands on explanatory text, not three loose badges. */}
+        <div id="badge-key" className="scroll-mt-20">
+          <p className="text-lg text-gray-400 leading-relaxed">
+            Every piece carries a maturity badge, so the claim and the reality stay pinned
+            together:
+          </p>
+          <div className="mt-4 flex flex-col gap-2 text-sm text-gray-400">
+            <div className="flex items-center gap-3">
+              <MaturityBadge tier="spec" />
+              <span>defined in the Web4 standard. Written down and stable, not yet built here.</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <MaturityBadge tier="reference" />
+              <span>built and runnable. Finished code you could install and start today. Runnable is not the same as running in production.</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <MaturityBadge tier="running" />
+              <span>deployed and operational today. Live instances actually exist and are in day-to-day use.</span>
+            </div>
           </div>
         </div>
       </section>

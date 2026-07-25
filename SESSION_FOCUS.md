@@ -4,6 +4,63 @@
 
 *Last updated: 2026-07-24*
 
+## Jul-24 visitor pass (21:00 session) - the two remaining actionable LOWs
+Fourth and last pass on the Jul-24 05:00 browse. All three MEDIUMs were already disposed or
+escalated (#485 x2, plus the operator branding call) and the checklist gap was disposed (#486),
+so the queue was down to the four LOWs. Two were gated (below); these two were taken.
+
+- **LOW disposed - the maturity badges are now armed at first read, and the key is deep-linkable.**
+  Visitor: *"each piece has a parenthetical label (Reference), (Reference), (Running), (Reference).
+  At this point I don't know what Reference vs Running means. There's no inline key here; I only
+  learned the definitions two pages later on Running Now."* Verified before acting: `MaturityBadge`
+  **does** define every tier, in a native `title=` tooltip, so the definition ships at every badge
+  on the site. It is **hover-only**, so it does not exist for a reader on mobile or for anyone
+  reading rather than pointing. The visitor's literal claim ("no inline key") is true for text.
+  Second finding, mechanically identical to #485's R6/R7 root cause: the full three-badge key the
+  visitor praised **does** exist (`/running-now` hero) but `/running-now` had **zero `id` anchors in
+  the whole file**, so nothing could send a reader to it. Fix: (1) `id="badge-key"` +
+  `scroll-mt-20` on `/running-now`, wrapping the *framing sentence* as well as the three rows so an
+  anchor arrival lands on explanatory text; (2) a one-line written key on `/tldr` immediately above
+  the four cards, glossing only the two tiers that appear there, worded as a **strict subset of the
+  `/running-now` legend** ("built and runnable", "runnable is not the same as running in
+  production", "deployed and operational today", "in day-to-day use" are all legend-verbatim) so the
+  two surfaces cannot drift, with the link naming the **third** tier so a `Spec` badge met later is
+  not a surprise; (3) a quiet "what does that tag mean?" link beside the landing page's single badge.
+  - **Deliberately NOT done**: landing's "What is runnable today ->" CTA still points at
+    `/running-now` (page top), **not** the anchor. Arriving at `#badge-key` scrolls the reader past
+    that page's R&D disclaimer, which is the honesty paragraph the visitor called the backbone.
+  - **Deliberately NOT done**: no general anchor pass on `/running-now` (17 inbound links, now one
+    anchor) and none on `/hestia`. Both are still owed and are their own session.
+  - **Deliberately NOT done**: no `MaturityBadge` API change. Making the badge itself the link would
+    nest anchors inside `/tldr`'s `<Link>` cards (invalid HTML).
+- **LOW disposed - the landing eyebrow no longer stacks three abstractions.** Visitor: *"'Agentic AI
+  governance' is three abstract words in a row ... they read like a conference-panel title, not
+  something that tells a stranger what they're looking at. The body paragraph below did the real work
+  of explaining. It should arguably be the subheading."* The phrase appeared exactly once site-wide,
+  so no seam. Now: *"A proposed open standard for proving what an AI agent did, on whose authority,
+  and by what rules."* That is the body's own triple, same order, same words, so the eyebrow sets up
+  the payoff two lines later. `"A proposed open standard for ..."` stays the opening and the verb
+  stays a purpose clause: no present-tense capability claim that Web4 proves anything today. The
+  slot also **drops `uppercase`** (the other page eyebrows are short all-caps labels; a sentence this
+  long in all-caps wraps to three lines and reads worse than the jargon it replaced).
+- **NOT touched, with reasons (do not re-litigate without fresher signal)**:
+  - *"Die & Reborn reads alarmingly literal"* -> **retest-gated behind #484**, which merged AFTER the
+    05:00 browse and reworded exactly this seam (ATP=0 as recoverable suspension). Per
+    [[visitor-dont-pre-empt-retest-contingency]], no second treatment until a fresher log recurs.
+  - *"Software identity capped at 0.50 reads as browser-only users can never be trusted; add a link
+    back to the Why-Web4 equity FAQ"* -> **blocked by the hardware-required standing seam** declared
+    by the 15:02 session. There are **two** such FAQs and they disagree (`#faq-tpm-affordability`
+    says identity *requires* secure-element hardware; `#faq-affordability` treats it as conditional).
+    Choosing one to link is picking a side, which is what the seam forbids. This is also why the
+    visitor's Q#2 is still open. Unblocking it needs the reconciliation, not a cross-link.
+  - *"onramp" word-overload* -> operator branding call, gate already FIRED.
+- **Retest gate (Jul-25 05:00+)**: (1) does a reader who meets a `Reference` or `Running` badge on
+  the landing page or `/tldr` now learn what the tag means without leaving the page, and does the key
+  link land on the definition? (2) does the landing page's first line read as plain English? If the
+  badge-label friction recurs after this, the residual is **not** the gloss and **not** the link:
+  escalate as a component question (should `MaturityBadge` render its own visible affordance rather
+  than each page carrying a key), since the hover-only `title=` is the real structural gap.
+
 ## Jul-24 visitor pass (15:00 session) - first pass ON the Jul-24 05:00 browse
 Log: 34 min, 9 pages, understanding "good", would return yes. Three MEDIUMs, four LOWs.
 Two MEDIUMs disposed; the third is the open operator branding call.
