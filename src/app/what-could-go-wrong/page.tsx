@@ -259,7 +259,7 @@ export default function WhatCouldGoWrongPage() {
               (SAL-level multi-tier process with witness panels, evidence phases, and escalation
               to federation), but it hasn&apos;t been tested with real humans. The simulations
               assume perfect scoring; reality won&apos;t be so clean. See the{" "}
-              <Link href="/karma-consequences" className="text-sky-400 hover:underline">Karma &amp; Consequences</Link> page
+              <Link href="/karma-consequences#recourse" className="text-sky-400 hover:underline">Karma &amp; Consequences</Link> page
               for how appeals work.
             </p>
           </div>
@@ -845,7 +845,7 @@ export default function WhatCouldGoWrongPage() {
                   account is frozen (trust set to zero, ATP locked), and the auditable trail -
                   hardware-signed identity, timestamps, content hashes - is preserved for law enforcement.
                   The actor can appeal through the society&apos;s{" "}
-                  <Link href="/karma-consequences" className="text-sky-400 hover:underline">appeals process</Link>,
+                  <Link href="/karma-consequences#recourse" className="text-sky-400 hover:underline">appeals process</Link>,
                   but the freeze is immediate. <em>Which</em> jurisdiction&apos;s laws apply depends on
                   the society&apos;s configuration - a society based in the EU would reference EU law, while
                   a global society might reference international conventions.

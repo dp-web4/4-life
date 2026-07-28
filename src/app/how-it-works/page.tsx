@@ -1385,9 +1385,20 @@ export default function HowItWorksPage() {
             evidence phase → hearing with witness panel → verdict → enforcement. Successful appeals
             restore your trust scores.
           </p>
+          {/* "(109 integration checks)" removed 2026-07-28. The number was real, not invented:
+              web4/docs/history/STATUS-2026-02.md:1109 records "109/109 checks" for a formal appeals
+              system. But it counted web4/archive/reference-implementations/sal_appeals_mechanism.py,
+              archived 2026-04-11 by commit 65cd5488 "Archive reference implementation sprawl" into a
+              directory whose README calls its contents obsolete. A precise count of a retired artifact
+              reads as live rigor. Do not restore it and do not substitute another figure.
+              Also: "formally specified" now attaches to the REQUIREMENT, not to the process. Grep
+              web4-standard/core-spec for "appeal" and you get only SAL section 5.5/5.6 plus
+              `appealPath: "defined_by_law"` in entity-types.md. The multi-tier flow described above is
+              a design; the spec corpus does not specify it. See /karma-consequences#recourse. */}
           <p className="text-gray-500 text-xs italic">
-            Honest status: the appeals mechanism is formally specified (109 integration checks) but hasn&apos;t been
-            tested with real humans yet. See{' '}
+            Honest status: the requirement is in the standard (a negative trust adjustment has to carry an
+            appeal path and a cool-down period), but the multi-tier process above is a design, and it
+            hasn&apos;t been tested with real humans yet. See{' '}
             <Link href="/what-could-go-wrong" className="text-amber-400 hover:underline">What Could Go Wrong</Link>{' '}
             for the full risk analysis.
           </p>
@@ -1430,6 +1441,20 @@ export default function HowItWorksPage() {
           <p className="text-gray-500 text-xs italic mt-4">
             The analogy: open-source projects. If a project&apos;s governance becomes hostile, contributors fork it.
             The ability to fork - not the act of forking - keeps governance honest. Web4 societies work the same way.
+          </p>
+          {/* Visitor 2026-07-28 MEDIUM. The visitor left this page believing governance checks were a
+              settled feature, and quoted a sentence ("appeals mechanisms and exit rights prevent
+              tyranny") that does not exist on the site: they merged the qualified False Positives block
+              above with THIS block, which stated four mechanisms as flat operative fact and carried no
+              maturity qualifier at all. Per [[visitor-read-it-and-still-filed-it]] the fix is the
+              missing clause here, not a second softening of the block above. */}
+          <p className="text-amber-400/70 text-xs italic mt-3 border-t border-gray-700 pt-3">
+            Status: all four are design, not track record. Each one needs a live community to work:
+            members who can leave, other societies to leave for, and a history long enough for a
+            pattern of bias to show. As the top of this page says, there is no public network open to
+            outside members yet, so none of the four has been exercised by a real community. See{' '}
+            <Link href="/what-could-go-wrong" className="text-amber-400 hover:underline">What Could Go Wrong</Link>{' '}
+            for what that leaves exposed.
           </p>
         </div>
 
