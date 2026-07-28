@@ -505,8 +505,15 @@ export default function DayInWeb4Page() {
         </summary>
 
         <div className="px-4 pb-4 pt-2 space-y-4">
+          {/* Jul-28 visitor HIGH: "None of this is downloadable yet" was flatly false against the
+              `pip install web4-core web4-trust` printed on /the-standard and /running-now, and the
+              visitor said reading it "made me distrust the install lines" - the one thing they had
+              correctly believed. Scoped to the phone-level consumer experience this section actually
+              narrates (Step 1 is literally "Download the app", which is the thing that does not exist).
+              CANONICAL SENTENCE below is IDENTICAL on /how-it-works and /hestia - keep it verbatim. */}
           <p className="text-gray-400 text-sm">
-            <strong className="text-gray-300">None of this is downloadable yet - Web4 is active research.</strong> But <em>if</em> it existed, you&apos;d set up once before your day starts. Here&apos;s what that setup <em>would</em> look like - no crypto wallet, no blockchain, no 24-word seed phrase. Read the steps below as &ldquo;what it would feel like,&rdquo; not &ldquo;what to do today.&rdquo;
+            <strong className="text-gray-300">The phone-level experience below isn&apos;t downloadable - that part is still active research.</strong> The spec is written, the code is installable today, and there is no public network open to outside members yet: what&apos;s missing here is the consumer app that would wrap it. But <em>if</em> it existed, you&apos;d set up once before your day starts. Here&apos;s what that setup <em>would</em> look like - no crypto wallet, no blockchain, no 24-word seed phrase. Read the steps below as &ldquo;what it would feel like,&rdquo; not &ldquo;what to do today.&rdquo; For what you <em>can</em> install right now, see{" "}
+            <Link href="/running-now" className="text-sky-400 hover:underline">what&apos;s actually running now</Link>.
           </p>
 
           {/* Step 1: Install */}

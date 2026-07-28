@@ -80,15 +80,29 @@ export default function HowItWorksPage() {
           <Link href="/why-web4" className="text-sky-400 hover:underline not-italic">Why Web4</Link>{" "}
           first, then come here to go deep.
         </p>
+        {/* Jul-28 visitor HIGH: the headline read "Nothing here is live - this is a research prototype",
+            which its OWN sub-paragraph already contradicted ("no live NETWORK with real users") and which
+            /running-now's badge definitions flatly refute (hestia is badged Running = "live instances
+            actually exist"). The visitor collected four different answers to "is any of this real yet"
+            and left the "what is real today" checklist box unchecked after reading the page dedicated to
+            it. Headline now does BOTH jobs the old one did: scopes the claim to the network AND keeps the
+            speculative-present-tense warning. "You can join" is load-bearing - /hub says "This isn't
+            hypothetical: we run one" (the lab fleet is real but not joinable), so a bare "no public
+            network" would re-create the contradiction one page over. CANONICAL SENTENCE below is
+            IDENTICAL on /day-in-web4 and /hestia - keep it verbatim if editing. */}
         <div className="mb-4 p-3 bg-amber-950/30 border border-amber-800/30 rounded-lg">
           <p className="text-base font-bold text-amber-200 flex items-center gap-2">
             <span aria-hidden="true">🔬</span>
-            Nothing here is live - this is a research prototype.
+            No network you can join yet - the present tense below is the model talking.
           </p>
           <p className="mt-1.5 text-sm text-amber-200/75">
-            Everything below describes how Web4 <em>would</em> work, validated through simulations and an open-source{' '}
-            <Link href="/why-web4#faq-deployed" className="text-amber-300 hover:text-amber-200 underline">reference implementation</Link>{' '}
- - no live network with real users exists yet. The present tense throughout is the model talking, not a running system.
+            The spec is written, the code is installable today, and there is no public network open to outside members yet.{' '}
+            Everything below describes how Web4 <em>would</em> work at society scale, validated through simulations and an open-source{' '}
+            <Link href="/why-web4#faq-deployed" className="text-amber-300 hover:text-amber-200 underline">reference implementation</Link>
+ . The present tense throughout is the model talking, not a running system.
+            {' '}Want the piece-by-piece breakdown of what is installable versus specified? See{' '}
+            <Link href="/running-now" className="text-amber-300 hover:text-amber-200 underline">what&apos;s actually running now</Link>
+ .
             {' '}Curious what early deployment could look like? See the{' '}
             <Link href="/why-web4#faq-adoption-path" className="text-amber-300 hover:text-amber-200 underline">concrete adoption path</Link>{' '}
  - from browser extension overlays to full integration.

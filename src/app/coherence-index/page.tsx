@@ -1353,6 +1353,17 @@ export default function CoherenceIndexPage() {
                 trust. T3 = long-term reputation. CI = current consistency.
                 Effective trust = T3 × CI².
               </p>
+              {/* Jul-28 visitor HIGH: this page stated the formula with nothing saying what it is NOT
+                  used for, so a reader carrying /lct-explainer's "software-only caps at 0.50, and 0.5 is
+                  the survival line" did the arithmetic and concluded any CI < 1.0 puts them permanently
+                  below the line. Same canonical clause as first-contact (~156), glossary (~1191),
+                  how-it-works (~608) and lct-explainer's #software-only-survival - keep verbatim. */}
+              <p className="text-sm text-gray-300 mb-2">
+                One thing this formula is <em>not</em> for: the survival line. The number compared is{" "}
+                <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;) - effective trust
+                sets your karma tier, not whether you live. So a lower CI raises your costs and narrows
+                your access; it does not push you toward trust death.
+              </p>
               <p className="text-sm text-gray-400">
                 Example: You have high T3 (0.9 across all dimensions from years of
                 good behavior). Suddenly you ground from impossible location (CI =

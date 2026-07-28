@@ -4,6 +4,95 @@
 
 *Last updated: 2026-07-28*
 
+## Jul-28 visitor pass (Jul-28 09:00 session) - unblock the funnel, one sentence for "is this real"
+Log: `visitor/logs/2026-07-28.md`. Understanding **good**, 6 of 7 boxes checked. The unchecked
+box is "what is real and runnable today" - and the visitor read `/running-now`, the page dedicated
+to that box, and still left unsure "because four other pages contradicted it." Three HIGHs, all on
+one axis: *what is real, and what can I do today?* All three treated.
+
+- **HIGH disposed - `/hestia`'s day-one path is fillable.** The visitor stopped here, 40 minutes in:
+  *"I got as far as line four and stopped. What URL?"* plus no install step, plus *"the page tells
+  me it's a desktop app and then hands me a CLI."* Three gaps at the exact end of the funnel.
+  - **The first draft of this fix was wrong and policy review caught it.** I proposed "build from
+    source" as the primary path. `gh release view v0.0.3 --repo dp-web4/hestia` lists **four
+    prebuilt CLI binaries** (macOS, Linux x2, Windows). Leading with `cargo build` would have
+    invented a Rust-toolchain prerequisite on the one page whose HIGH is "the site got me excited
+    then blocked me" - the same failure in the opposite direction. Now: download the binary
+    (primary), source build (alternative), and the honest exception where it belongs - the
+    **desktop app** is the piece with no package; shipped artifacts are the CLI binaries + an
+    Android APK. That keeps upstream's "the app is the front door" framing while explaining why
+    the walkthrough is a terminal session.
+  - **`<url>` resolved three ways**: everything above the divider needs no hub (solo hestia is the
+    normal case, not a crippled one); no network you can join yet; the URL is one you or your group
+    stand up, pointed at the **public** `dp-web4/4-hub`.
+  - **Near-miss worth recording**: my proposal sourced hub claims from `../dev-hub`. `gh repo view`
+    confirms dev-hub is **PRIVATE** and its README says it holds potentially patentable WIP.
+    Pointing public site readers at it would have been a real disclosure error. Ground hub claims
+    in `web4/hub/docs/QUICKSTART.md` and name `4-hub`, which the site already links twice.
+  - **Gate caveat added** (reviewer recommendation, taken): this page now converts browsers into
+    people who will run `hestia delegate grant <agent> --role administrator`, which is already on
+    the page. Upstream's loudest caveat (hestia README L9-20, **above the fold**) is that the policy
+    gate "stops accidents, not adversaries" with a measured two-environment-variable bypass. The
+    Honest-status box did not carry it. Shipping an install path while withholding that would be
+    dishonest by omission. Now carries it with the issue #49 link.
+- **HIGH disposed PARTIALLY - one canonical sentence for "is any of this real yet".** The visitor
+  collected four answers in one session and said an apparent contradiction about *realness* costs
+  this site more than it would cost a marketing site, because honesty is its main credibility asset.
+  Ships **verbatim** on three surfaces (`/how-it-works`, `/day-in-web4`, `/hestia`), guard-commented,
+  per the death-sentence precedent: *"The spec is written, the code is installable today, and there
+  is no public network open to outside members yet."*
+  - `/how-it-works` L86 headline was *"Nothing here is live"* - contradicted by **its own
+    sub-paragraph** three lines down ("no live *network* with real users") and flatly refuted by
+    `/running-now`'s badge definitions. Now: *"No network you can join yet - the present tense below
+    is the model talking."* **"You can join" is load-bearing**: `/hub` says *"This isn't hypothetical:
+    we run one"*, so a bare "no public network" would re-create the contradiction one page over.
+    The headline had to keep **both** jobs; a network-only narrowing would have dropped the
+    speculative-present-tense warning and created a fresh overclaim.
+  - `/day-in-web4` L509 *"None of this is downloadable yet"* was false against `pip install
+    web4-core`; the visitor said it "made me distrust the install lines," the one thing they had
+    correctly believed. Scoped to the phone-level consumer app the section actually narrates.
+  - **Why PARTIAL**: `/hub` and `/tldr` were both named in this HIGH and are **not** touched.
+    The `/hub` joinability MEDIUM stays open, and the canonical sentence is **not** license to
+    answer it.
+- **HIGH disposed - the CI² arithmetic that refuted the LCT promise.** `/coherence-index` states
+  `Effective trust = T3 × CI²`; `/lct-explainer` reassures software-only readers (ceiling exactly
+  0.50) against the 0.5 survival line **using raw T3 and never mentioning CI**. The visitor did the
+  arithmetic: any CI < 1.0 puts them permanently below the line.
+  - **I proposed escalating this and was wrong.** Policy review found the answer **already ships
+    verbatim on three pages** (`first-contact` ~156, `glossary` ~1191, `how-it-works` ~608), landed
+    by **PR #447**, which re-landed exactly this clause after #444 was rejected for asserting the
+    *endpoint*: *"The number compared is raw trust, not effective trust (raw × CI²) - effective
+    trust sets your karma tier, not whether you live."* It was missing from precisely the two pages
+    the visitor collided. **Propagation, not a canon call.** Escalating would have parked the
+    session's highest-value fix behind a false "canon is silent" label.
+  - Now on five surfaces. The `>` vs `>=` endpoint is untouched and stays Q1.
+- **Canon ledger re-verified** (`docs/WEB4-CANON-QUESTIONS.md`). Its header read *"Last verified
+  against code: 2026-07-14"* - **one day before** the Jul-15 rebuild retired `/aliveness`,
+  `/karma-journey` and ~34 other routes. **Q1 and Q2 were both citing deleted files.**
+  - Q1 is **narrowed, not vacuous, and not closed**: its `isAlive`/`rebirthEligible`/`agency`
+    predicates and SurvivalGame are gone, so the prose-vs-code contradiction that motivated it no
+    longer exists. The one surviving 0.5 predicate (`first-contact` ~515/~528, `trust_after >= 0.5`)
+    governs **feature access, not aliveness**, and **agrees** with the prose. Two guards recorded:
+    it must not become a backdoor endpoint ruling, and first-contact's `>=` must **not** be
+    "aligned" to the retired `>` (different quantity; that would manufacture the very conflict the
+    rebuild removed). Holding pattern unchanged - web4 still defines no aliveness threshold.
+  - Q2's only executable proxy (karma-journey's deep-collapse branch) is gone too, which
+    *strengthens* the question rather than resolving it.
+  - The stale comment at `lct-explainer` ~1136 that cited the deleted file is rewritten to **record
+    the reversal** per [[opposite-intents-in-code-comments]], not silently deleted.
+
+### Deliberate non-actions (Jul-28)
+- **Six MEDIUMs, four LOWs untouched**: appeals absent from `/karma-consequences` (the page a
+  worried reader actually opens); `/how-it-works` "appeals prevent tyranny" vs
+  `/what-could-go-wrong` "hasn't been tested"; ATP-zero "death" naming; T3 weights 40/35/25
+  universal-or-per-role; `/hub` 4-lab.io/fleet joinability; `/tldr` tier gloss; `/learn` buried
+  under "Going Deeper"; piece ordering; ATP/ADP plural mismatch; footer "onramp" collision; MRH
+  compounding parenthetical. **Next session's queue.** Note the death MEDIUM recurs *after* #488
+  shipped a canonical death sentence: that is a [[visitor-read-it-and-still-filed-it]] candidate
+  needing the missing clause identified, not the same treatment twice.
+- **`/hestia` software-only tier line** still deferred - collides with the standing
+  hardware-required seam. This pass added **no** claim about whether hardware is required.
+
 ## Jul-27 visitor pass, second sitting (Jul-28 03:00 session) - read the equation aloud
 The 21:00 session cleared all three Jul-27 HIGHs and both glossary MEDIUMs (#488, merged).
 Four MEDIUMs and three LOWs remained. This pass took the two that sit on `/the-standard`,

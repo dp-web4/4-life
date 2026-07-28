@@ -1133,15 +1133,35 @@ export default function LCTExplainerPage() {
               alive/dead line" sat a few lines apart, and the visitor concluded a software-only identity
               can never be alive. This callout states the death rule (strictly-below AND sustained) and
               the real cost of the ceiling (zero margin) - and deliberately STOPS there. Whether sitting
-              exactly ON 0.50 counts as alive is an unresolved canon call: the prose rule ("falls below
-              and stays there") implies yes, but every executable predicate on this site says no
-              (aliveness/page.tsx isAlive/rebirthEligible/agency all use trust > 0.5). Do NOT assert the
-              endpoint either way until web4 canon settles > vs >= (PR #444 rejection; standing
-              escalation alongside the T3-weights conflict). */}
+              exactly ON 0.50 counts as alive is an unresolved canon call. Do NOT assert the endpoint
+              either way until web4 canon settles > vs >= (PR #444 rejection; standing escalation Q1 in
+              docs/WEB4-CANON-QUESTIONS.md, alongside the T3-weights conflict).
+              EVIDENCE UPDATE Jul-28: this comment used to cite "every executable predicate on this site
+              says no (aliveness/page.tsx isAlive/rebirthEligible/agency all use trust > 0.5)". Those
+              predicates are GONE - /aliveness and /karma-journey were retired in the Jul-15 rebuild and
+              SurvivalGame greps to zero hits repo-wide. So Q1 is NARROWED, not vacuous: the prose-vs-code
+              contradiction that motivated it no longer exists. The one 0.5 predicate that survived
+              (first-contact ~515/~528, trust_after >= 0.5 ? "Full access" : "Restricted") governs FEATURE
+              ACCESS, not aliveness, and it agrees with the prose's restriction clause. The holding pattern
+              is UNCHANGED: web4 core-spec still defines no aliveness threshold, so asserting an endpoint
+              here would still be 4-Life inventing canon rather than importing it. Do NOT treat the
+              surviving >= as a backdoor endpoint ruling, and do NOT "align" first-contact's operator to
+              match - it is a different quantity, it is correct as written, and changing it would
+              manufacture the very conflict the rebuild removed. */}
           <p id="software-only-survival" className="text-gray-400 text-xs mt-3 bg-gray-900/40 border border-gray-700/60 rounded-lg p-3 scroll-mt-24">
             <strong className="text-gray-300">&ldquo;Software-only caps at 0.50 - and 0.5 is the survival line. Am I dead on arrival?&rdquo;</strong>{" "}
             Trust death isn&apos;t a snapshot - it&apos;s falling <em>below</em> 0.5 <em>and staying there</em>, a
-            sustained collapse. What the software-only ceiling really costs you is <em>margin</em>: you start at the
+            sustained collapse.{" "}
+            {/* Jul-28 visitor HIGH: this callout reassured using raw T3 and never mentioned CI, so a reader
+                who reached /coherence-index ("Effective trust = T3 x CI²") could do the arithmetic and
+                conclude a 0.50 ceiling sits permanently BELOW the line for any CI < 1.0 - one page's
+                formula refuting another page's promise. The clause below is the canonical disambiguation
+                already shipping VERBATIM on first-contact (~156), glossary (~1191) and how-it-works (~608);
+                it was missing from exactly the two pages this visitor collided. Propagated, not re-derived:
+                keep it verbatim if editing. Does NOT assert the > vs >= endpoint (still Q1). */}
+            The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;) -
+            effective trust sets your karma tier, not whether you live.{" "}
+            What the software-only ceiling really costs you is <em>margin</em>: you start at the
             line with no buffer above it, so any dip restricts your features until you climb back, and your
             reputation can never carry more weight than the line itself. Zero margin is the tradeoff you accept
             by anchoring an identity in software alone.
