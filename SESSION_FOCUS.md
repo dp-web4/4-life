@@ -4,6 +4,94 @@
 
 *Last updated: 2026-07-28*
 
+## Jul-28 visitor pass, second sitting (Jul-28 15:00 session) - recourse
+Log: `visitor/logs/2026-07-28.md`. The 09:00 session cleared the three HIGHs and handed over the two
+recourse MEDIUMs as **one defect with two symptoms**. Took both. The visitor's Unanswered Question 6
+is *"If the trust score is wrong about me, what do I do?"*, and the site's answer to that was
+routed to a page that did not contain the word.
+
+- **MEDIUM disposed - `/karma-consequences` now answers the question it was already being asked.**
+  Visitor: *"this is the page a worried person reads, and it is the page with no mention of appeals
+  at all."* Verified before acting: `grep "appeal"` on that page returned **zero hits in 945 lines**,
+  while **two** links on `/what-could-go-wrong` sent the worried reader there for exactly that
+  (L262 *"for how appeals work"*, L848 *"appeals process"*). Textbook [[promise-without-routing]],
+  with the routing intact and the destination empty. The site's most credible page was handing its
+  most worried reader a dead end.
+  - New `#recourse` section (the page had **zero** `id` attributes before this; that is the one
+    anchor this fix needs, **not** the general anchor pass, which is still owed). Both inbound links
+    repointed at it. Pointer from the header callout for readers who scroll rather than follow a link.
+  - Deliberately a **signpost, not a fourth exposition**: `/why-web4#faq-wrongful-penalty` is the de
+    facto canonical home and is good. The block states the status, the spec requirement, and hands
+    off explicitly (the handoff has to be what keeps L262's promise, since the block does not
+    re-tell the mechanism).
+- **MEDIUM disposed - `/how-it-works` "What Prevents Unfair Rules?" now carries a maturity clause.**
+  - **The visitor's quote does not exist.** *"Appeals mechanisms and exit rights prevent tyranny"*:
+    `grep -rni "tyrann" src/` → zero hits. And the appeals block they were prescribing a fix for
+    (L1382-1395) **already carried the honest status they asked for**. So the filed premise was
+    wrong and softening that block would have been a second dose of a shipped treatment.
+  - The real residual, found by reading what sits *next to* it: the visitor merged the qualified
+    False Positives block with the **"What Prevents Unfair Rules?"** block three lines below, which
+    asserted four governance mechanisms (exit rights, authority decay, transparency, federation
+    competition) as flat operative facts with **no qualifier at all** and closed on a confident
+    open-source-fork analogy. [[visitor-read-it-and-still-filed-it]]: the missing clause, not a
+    restructure. Grounded in the shipped realness phrasing (no public network open to outside
+    members yet), so no new maturity claim was minted.
+- **Accuracy defect found inside the block being edited: "(109 integration checks)" removed.**
+  Policy review called it fabricated. It was **not**: `web4/docs/history/STATUS-2026-02.md:1109`
+  records *"109/109 checks"* for a formal appeals system. But the artifact it counts is
+  `web4/archive/reference-implementations/sal_appeals_mechanism.py`, archived **2026-04-11** by
+  commit `65cd5488` *"Archive reference implementation sprawl"*, into a directory whose README calls
+  its contents obsolete. Not a fabrication, a **stale pointer wearing a precise number**, which on a
+  live page reads as ongoing rigor. Deleted with **no replacement figure** (the count does not even
+  reproduce: `grep -c "check("` gives 108).
+  - Knock-on caught by review: with the number gone, *"formally specified"* was left modifying the
+    multi-tier process, and **the spec corpus does not specify that process**. Grep
+    `web4-standard/core-spec/` for "appeal" and you get only SAL 5.5/5.6 and
+    `appealPath: "defined_by_law"` in `entity-types.md`. Rewritten so "the requirement is in the
+    standard" attaches to the requirement.
+
+### Canon grounding (verified 2026-07-28, guard-commented in both files)
+- `core-spec/web4-society-authority-law.md:221`: *"Negative adjustments **MUST** include **appeal
+  path** and **cool-down period**."* `:239` extends it to reversible enforcement rungs (the kinetic
+  class is carved out as parse-don't-enact, so the site does not generalize past trust adjustments).
+- `core-spec/entity-types.md:345, :434, :454`: the field is `appealPath: "defined_by_law"`. **My
+  first draft said the requirement is in the standard "rather than left to each community" and that
+  is backwards**: the standard requires the route to exist, and expressly delegates what the route
+  *is* to each society's law. Caught in review. The corrected version is also the better answer:
+  "every society must give you a way back, and each one defines its own."
+- **No enforcement claim.** My first draft said "the reference implementation rejects it".
+  `AuditAdjustment.is_valid()` (`federation.py:264-268`) has **no callers** outside
+  `test_federation.py`; there is no apply path in the SDK. Asserting enforcement as the fix for a
+  MEDIUM about *asserting things as settled* would have been self-defeating. Dropped.
+- Ordering stated deliberately (entailment, not quotation, per [[entailment-vs-canon-call]]): the
+  appeal path must exist when the penalty is recorded, it does not have to be heard first. Without
+  this the block would collide with `/what-could-go-wrong` L838-852, where a law-oracle freeze is
+  immediate and the appeal follows.
+
+### Deliberate non-actions (Jul-28, 15:00)
+- **Spec clause shipped on ONE surface, not two.** I proposed propagating it verbatim to
+  `/how-it-works` too, citing the #488/#490 canonical-sentence precedent. Review overruled: that
+  precedent collapses a claim **already scattered in divergent phrasings**. This claim appeared on
+  **zero** pages, so it is absent, not scattered, and birthing it on two surfaces at once copies the
+  precedent's form while inverting its function. Propagate later only if a log shows the need. This
+  also discharged a [[two-fixes-in-one-pass-can-fight]] risk: adding an operative-sounding
+  requirement to `/how-it-works` while softening the block three lines below would have re-armed the
+  reading the softening exists to defuse.
+- **`atp-economics:1164` "An appeals mechanism **exists**"** (flat present tense, no qualifier) is
+  the same defect class as the MEDIUM fixed here, on a page outside this scope. **Deferred, logged
+  so it is not rediscovered as novel.**
+- **The multi-tier appeals process ships on three surfaces** (`glossary:1455`, `how-it-works:1383`,
+  `manifest:133`) sourced from an **archived** reference implementation, not the standard. Only the
+  `/how-it-works` instance was corrected here, because it sat inside the block being edited. The
+  other two need their own pass.
+- Four Jul-28 MEDIUMs and four LOWs still open: ATP-zero death naming (still the
+  [[visitor-read-it-and-still-filed-it]] candidate; residual is `/how-it-works`'s second death
+  trigger, and it brushes the standing 0.5-endpoint escalation), T3 weights universal-or-per-role
+  (standing escalation), `/hub` 4-lab.io/fleet joinability, `/tldr` tier gloss, `/learn` buried
+  under Going Deeper, piece ordering, ATP/ADP plural mismatch, footer "onramp" collision, MRH
+  compounding parenthetical.
+- `/karma-consequences` general anchor pass still owed (this added one anchor, deliberately).
+
 ## Jul-28 visitor pass (Jul-28 09:00 session) - unblock the funnel, one sentence for "is this real"
 Log: `visitor/logs/2026-07-28.md`. Understanding **good**, 6 of 7 boxes checked. The unchecked
 box is "what is real and runnable today" - and the visitor read `/running-now`, the page dedicated

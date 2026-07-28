@@ -789,6 +789,14 @@ export default function KarmaConsequencesPage() {
               months). So &ldquo;permanent&rdquo; here means you never get a fresh start, not that a past
               mistake stays at full strength forever.
             </p>
+            {/* Visitor 2026-07-28 MEDIUM: "the page a worried person reads is the page with no mention
+                of appeals at all." Two links on /what-could-go-wrong (L262, L848) sent readers here for
+                exactly that and this page had zero occurrences of the word. Pointer up top for the
+                scroller; the answer itself is at #recourse for the two inbound anchor links. */}
+            <p className="text-gray-400 text-sm mt-3">
+              And if a penalty is <em>wrong</em> about you?{' '}
+              <a href="#recourse" className="text-sky-400 hover:underline">What recourse you have</a>, below.
+            </p>
           </div>
         </div>
 
@@ -820,6 +828,64 @@ export default function KarmaConsequencesPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-6 text-white">Real-World Impact</h2>
           <RealWorldImplications />
+        </section>
+
+        {/* Recourse - visitor 2026-07-28 MEDIUM. Destination of two inbound promises from
+            /what-could-go-wrong ("for how appeals work" L262, "appeals process" L848), so this block
+            has to keep those promises by an explicit handoff, not a bare "see also".
+            SCOPE GUARD, verified against ../web4 2026-07-28: the standard requires that an appeal
+            path exist (SAL section 5.5, "Negative adjustments MUST include appeal path and cool-down
+            period"), and names it `appealPath: "defined_by_law"` (core-spec/entity-types.md:345, :434,
+            :454) - i.e. the route itself is each society's law, NOT the standard's. Do not write that
+            the standard defines the appeal process: grep core-spec for "appeal" and it returns only
+            those sites. The multi-tier process (file/review/evidence/hearing/verdict) traces to
+            web4/archive/reference-implementations/sal_appeals_mechanism.py, archived 2026-04-11 as
+            "reference implementation sprawl", NOT to the spec corpus. Nothing in the SDK calls
+            AuditAdjustment.is_valid() at apply time either, so do not claim code enforces this. */}
+        <section id="recourse" className="mb-12 p-6 bg-gradient-to-br from-amber-950/20 to-gray-900 border border-amber-800/30 rounded-xl scroll-mt-24">
+          <h2 className="text-xl font-semibold mb-3 text-amber-300">
+            If the system gets it wrong about you
+          </h2>
+          <div className="text-gray-300 text-sm leading-relaxed space-y-3">
+            <p>
+              Everything above is about consequences that stick. That raises the fair question:
+              what happens when the consequence is a mistake? You contest it, and the standard
+              requires that contesting it be possible.
+            </p>
+            <p>
+              The standard requires that a route back <em>exist</em>, and leaves what the route
+              <em> is</em> to each community. A negative trust adjustment has to carry an appeal path
+              and a cool-down period, and the field naming that path reads{' '}
+              <code className="text-amber-300 bg-gray-900 px-1 rounded">defined_by_law</code>: the
+              society you are in writes what an appeal actually looks like there. The path has to
+              exist when the penalty is recorded, but it does not have to be heard first, so a
+              community can act immediately and still owe you a way back.
+            </p>
+            <p>
+              An appeals mechanism has been designed, but it hasn&apos;t been tested with real humans.
+              The multi-tier version you may see described elsewhere on this site (file, review,
+              evidence, hearing, verdict) is that design. It is not a requirement of the standard,
+              and no community has run it.
+            </p>
+            <p>
+              <strong className="text-gray-100">What stands in the meantime</strong> is set out in
+              full under{' '}
+              <Link href="/why-web4#faq-wrongful-penalty" className="text-sky-400 hover:underline">
+                &ldquo;What protects me when I&apos;m penalized unfairly?&rdquo;
+              </Link>{' '}
+              on Why Web4: no single rating decides your standing, penalties recover instead of
+              branding you, a bad call stays inside the community that made it, and you can leave
+              and take your record with you. That is recourse by design rather than by petition,
+              and it is weaker than a real appeal.
+            </p>
+            <p>
+              The risk that the scoring is wrong about you in the first place is treated directly as{' '}
+              <Link href="/what-could-go-wrong#risk-threshold" className="text-sky-400 hover:underline">
+                &ldquo;the trust threshold punishes the wrong people&rdquo;
+              </Link>{' '}
+              on What Could Go Wrong.
+            </p>
+          </div>
         </section>
 
         {/* Connection to Web4 */}
