@@ -19,6 +19,31 @@ const HOW_IT_WORKS_SECTIONS = [
   { id: 'deeper', label: 'Dive Deeper' },
 ];
 
+/* Jul-27 visitor HIGH: "the rule is 'When ATP = 0, You Die', but the worked example has agents
+   'Died with 145 ATP', 'Died with 130 ATP', and Life 3 'Ended strong: 165 ATP'. Nobody in the
+   example dies by the stated rule."
+   That is true and it is not fixable by copy alone. Checked before writing: web4 canon defines
+   NO life-ending path other than ATP exhaustion or sustained trust collapse (grep of
+   web4-standard/ and docs/ for natural death / bounded life / lifespan returns nothing; the LCT
+   lifecycle is NASCENT -> ACTIVE -> SUSPENDED -> REVOKED). /atp-economics writes "died naturally"
+   for two of its four lives and plain "died" for the third, so the sibling page is not clean
+   ground truth either. Inventing a second mechanism here would be a canon decision this track is
+   not authorized to make, so this note states the gap without filling it, and the question is
+   escalated as Q5 in docs/WEB4-CANON-QUESTIONS.md.
+   Rendered at BOTH places the visitor hit the numbers, from one component so they cannot drift. */
+function EndOfLifeCaveat() {
+  return (
+    <p className="text-xs text-amber-300/70 mt-3 leading-relaxed">
+      <strong className="text-amber-300">About these numbers:</strong> none of these lives ends at
+      0 ATP, so none of them is the energy death described above. What else ends a life is{" "}
+      <strong>not settled</strong>: Web4 defines what stops you acting (ATP reaches zero) and what
+      is permanent (sustained trust collapse), but it does not define a term limit or a natural end
+      of life. Read this walkthrough as showing what karma carries <em>forward</em>, not as showing
+      the death rule in action.
+    </p>
+  );
+}
+
 export default function HowItWorksPage() {
   return (
     <>
@@ -552,7 +577,7 @@ export default function HowItWorksPage() {
                 3. Death: ATP Reaches Zero
               </h3>
               <p className="text-gray-500 text-sm">
-                Energy exhaustion = end of life
+                Energy death, the recoverable kind
               </p>
             </div>
           </div>
@@ -560,15 +585,46 @@ export default function HowItWorksPage() {
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 space-y-4">
             <div>
               <h4 className="text-lg font-semibold text-gray-200 mb-2">
-                When ATP = 0, You Die
+                Two ways to die, and they are very different
               </h4>
+              {/* Jul-25 + Jul-27 visitor HIGH (recurred across two separate browses). This
+                  paragraph read "Death in Web4 is not a timeout or suspension", which flatly
+                  contradicted /first-contact ("'death' here means Alice's standing is suspended")
+                  and /atp-economics ("closer to a suspended license reinstated than a clean
+                  slate"). Two-against-one, and this wording predates #484's softening, so it is
+                  the outlier, not the canon.
+                  The canonical rule sentence already exists on /first-contact L153 and is reused
+                  VERBATIM below - keep it that way if editing. It threads the 0.5-endpoint
+                  escalation correctly (crossing vs staying, raw vs effective), so paraphrasing it
+                  would assert an endpoint canon has not settled. See WEB4-CANON-QUESTIONS Q1. */}
               <p className="text-gray-300 leading-relaxed">
-                Death in Web4 is not a timeout or suspension. Your energy budget is
-                depleted - you can no longer act.
+                Two paths: <strong className="text-red-400">ATP hits zero</strong> (energy death -
+                you can&apos;t act anymore) or{" "}
+                <strong className="text-red-400">raw trust falls below 0.5 and stays there</strong>{" "}
+                (trust death - the community no longer trusts you). Energy death is recoverable
+                through karma rebirth. Trust death is permanent - a destroyed reputation
+                can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5
+                restricts your features right away and is recoverable; only <em>staying</em> below
+                it is fatal - a sustained collapse, not a single stumble. The number compared is{" "}
+                <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;) - effective
+                trust sets your karma tier, not whether you live.
+              </p>
+              <p className="text-gray-400 leading-relaxed mt-3 text-sm">
+                So energy death is not the end of your identity. Same LCT, same history, same trust
+                record: it is{" "}
+                <Link href="/atp-economics#insights" className="text-sky-400 hover:underline">
+                  closer to a suspended license reinstated than a clean slate
+                </Link>
+                . The rest of this section is about that recoverable kind. For the walkthrough
+                version, see{" "}
+                <Link href="/first-contact#what-triggers-death" className="text-sky-400 hover:underline">
+                  what triggers death in First Contact
+                </Link>
+                .
               </p>
               <div className="mt-3 p-4 bg-red-900/20 border border-red-800/30 rounded">
                 <p className="text-red-300 font-semibold mb-2">
-                  Causes of Death
+                  What drains your ATP to zero
                 </p>
                 <ul className="space-y-1 text-gray-400 text-sm">
                   <li>
@@ -706,6 +762,7 @@ export default function HowItWorksPage() {
                 Your track record compounds across lives. Good behavior =
                 stronger starts.
               </p>
+              <EndOfLifeCaveat />
             </div>
 
             <div>
@@ -878,6 +935,8 @@ export default function HowItWorksPage() {
               </li>
             </ul>
           </div>
+
+          <EndOfLifeCaveat />
 
           <div className="mt-6 p-4 bg-sky-900/20 border border-sky-800/30 rounded-lg">
             <p className="text-sky-300 text-sm">

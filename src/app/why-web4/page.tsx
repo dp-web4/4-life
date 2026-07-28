@@ -686,7 +686,15 @@ export default function WhyWeb4Page() {
                     readers read it as overclaim. Scope it to the modeled attack classes, matching
                     /what-could-go-wrong's "large-scale collusion remains an active research area". */}
                 <li><strong>Security validation:</strong> <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">424 attack vectors across 84 tracks</Link>, all defended. Sybil resistance (resistance to flooding the network with cheap fake accounts) formally proven (5 theorems) <em>for the modeled attack classes</em> - sophisticated collusion that mimics legitimate community behavior remains an open research problem. Incentive compatibility proven - honest behavior is mathematically more profitable than gaming</li>
-                <li><strong>Hardware integration:</strong> TPM2 binding validated (Intel TPM 2.0, EK certificate chain through 2049). Go LCT library (55 tests). Multi-device constellation enrollment working</li>
+                {/* Jul-26 + Jul-27 visitor HIGH: this bullet was the third surface asserting
+                    "TPM2 binding validated" with no artifact named, while the landing page,
+                    /running-now, /onramp and /hestia say hardware binding is "not yet validated
+                    on-device". Scope named here too. EDIT SCOPE WARNING: this page also hosts the
+                    unresolved hardware-REQUIRED seam (the two affordability FAQs below, which
+                    disagree on whether secure hardware gates participation). That is a different
+                    question and is deliberately untouched; do not let a validation-scope edit
+                    drift into asserting either side of it. */}
+                <li><strong>Hardware integration:</strong> the core standard&apos;s TPM2 binding validated (Intel TPM 2.0, EK certificate chain through 2049); hardbound&apos;s own on-device binding is <em>not</em> yet validated (see <Link href="/running-now#hardbound-status" className="text-sky-400 hover:underline">status</Link>). Go LCT library (55 tests). Multi-device constellation enrollment working</li>
                 <li><strong>System integration:</strong> End-to-end pipeline (all subsystems chained), WASM browser validator for client-side trust verification, federation consensus at 38.5 tasks/sec throughput (a benchmark of how fast the consensus layer settles trust updates - a proof-of-concept figure, not a real-world performance guarantee)</li>
               </ul>
               <p className="mt-2"><strong>What&apos;s NOT built yet:</strong></p>

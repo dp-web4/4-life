@@ -243,13 +243,26 @@ cargo add web4-core web4-trust-core`}</code></pre>
           single static binary of about 3.8&nbsp;MB that cross-compiles to arm64 and
           Jetson, backed by more than 300 Rust integration tests.
         </p>
-        <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4 mb-4">
+        {/* Jul-26 + Jul-27 visitor HIGH: this caveat and /lct-explainer's "validated on real
+            hardware" claim read as a flat contradiction because neither named its artifact. Both
+            are true. Scope named on both surfaces; see the long note on /lct-explainer for the
+            ground-truth citations. Do not drop "hardbound's own" from the first sentence. */}
+        <div id="hardbound-status" className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4 mb-4 scroll-mt-20">
           <p className="text-sm text-orange-100 leading-relaxed">
-            <strong>To be precise, this is not production-ready.</strong> The hardware
-            binding (TPM 2.0) is not yet validated on-device: CI runs against mocks, and
+            <strong>To be precise, this is not production-ready.</strong> Hardbound&apos;s own
+            hardware binding (TPM 2.0) is not yet validated on-device: CI runs against mocks, and
             on-device Jetson integration is deferred. The threat model still lists about
             10 open gaps. It is usable and under active hardening, and that is exactly
             what the Reference badge claims, no more.
+          </p>
+          <p className="text-xs text-orange-200/70 leading-relaxed mt-3">
+            Not to be confused with the core standard&apos;s TPM2 work, which{" "}
+            <em>has</em> been exercised on a real Intel TPM 2.0 (key creation, signing, attestation
+            quotes, EK certificate chain). The primitive is hardware-tested upstream; what is not
+            yet validated is hardbound&apos;s own on-device integration on its Jetson target.{" "}
+            <Link href="/lct-explainer#hardware-tiers" className="text-orange-300 underline hover:text-orange-200">
+              Where that claim appears &rarr;
+            </Link>
           </p>
         </div>
         <p className="text-base text-gray-400 leading-relaxed">

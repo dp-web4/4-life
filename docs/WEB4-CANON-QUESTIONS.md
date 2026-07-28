@@ -127,6 +127,47 @@ instead of re-litigating.
 - **Holding pattern**: each sim owns its simplification in visible prose + in-code comments
   (PRs #440, #443, #447).
 
+### Q5. What ends a "life" other than ATP = 0?
+
+- **The question**: the site teaches two, and only two, ways an entity's life ends: energy
+  death (ATP reaches zero, recoverable through karma rebirth) and trust death (raw trust
+  falls below 0.5 and stays there, permanent). Both worked examples on the site then have
+  agents whose lives end at neither. Is there a third path (a bounded term, a natural end of
+  life, a voluntary exit), or are the examples simply modelling something the standard does
+  not define?
+- **Why 4-life can't answer locally**: grep of `web4-standard/` and `docs/` (history
+  excluded) for natural death / bounded life / lifespan returns nothing relevant. The LCT
+  lifecycle is NASCENT -> ACTIVE -> SUSPENDED -> REVOKED and defines no term limit. Naming a
+  third mechanism in visitor prose would be inventing canon, which this ledger exists to
+  prevent.
+- **Site symptom (Jul-27 visitor HIGH)**: *"If death is ATP hitting zero, nobody in the
+  flagship example actually died. And life 3 says 'ended' rather than 'died', which made me
+  think the label choice was deliberate, which made me more confused rather than less."*
+  The two worked examples also disagree with each other, which is the same gap seen from a
+  different angle:
+
+  | | `/how-it-works` "A Complete Example" | `/atp-economics` "Follow One Agent's ATP Journey" |
+  |---|---|---|
+  | Number of lives | 3 | 4 |
+  | Which life is the ATP crisis (drop to 15) | Life 2 | Life 3 |
+  | Final ending | "Ended strong: **165 ATP**" | "Ended strong: **140 ATP**" |
+  | Karma carry-forward | full ("Died with 145 -> Reborn with 145 (full karma bonus)") | reduced ("Reborn with **85 ATP** (reduced from the crisis)") |
+  | Wording for a non-zero ending | "Died with 145 ATP" | "Died **naturally** with 145 ATP" (Lives 1, 3) but plain "Died with 130 ATP" (Life 2) |
+
+  Note the karma row is a second, independent divergence: whether karma is the full final
+  ATP or a reduced portion of it is not settled between the two pages either. A ruling on
+  the death question does not automatically settle it.
+- **Ruling requested**: either (a) confirm ATP = 0 and sustained trust collapse are the only
+  life-ending paths, in which case both worked examples are wrong and 4-life rewrites them
+  together, or (b) name the third path so the examples can cite it. Also, if convenient, the
+  karma carry-forward rule (full vs reduced).
+- **Holding pattern**: `/how-it-works` states the gap without filling it, via a shared
+  `EndOfLifeCaveat` component rendered at both places the reader meets the numbers: *"none of
+  these lives ends at 0 ATP ... What else ends a life is not settled."* No second mechanism is
+  asserted, and the numbers are unchanged (rewriting them to end at zero would break the karma
+  model, which is canon on both pages). `/atp-economics` is deliberately untouched pending a
+  ruling, so the divergence stays visible rather than being half-papered-over.
+
 ---
 
 *Maintained by the 4-life autonomous track. Add new entries only with a policy-review-approved
