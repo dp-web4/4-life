@@ -15,7 +15,14 @@ from: `web4-standard/test-vectors/`), and the next 4-life session can import it.
 If a visitor re-asks one of the OPEN questions, that recurrence is signal FOR the escalation —
 it is not license to answer on-site.
 
-Last verified against code: **2026-07-14** (all file:line refs checked that day).
+Last verified against code: **2026-07-28** (all file:line refs re-checked that day).
+
+> **Re-verification note, 2026-07-28.** The previous date on this line was 2026-07-14 - *one
+> day before* the Jul-15 rebuild retired `/aliveness`, `/karma-journey` and ~34 other routes.
+> Q1 and Q2 were both citing files that no longer exist. Their evidence sections are corrected
+> below. **No holding pattern changed and no question was closed**: the site losing the code
+> that contradicted its prose is not the same as web4 answering the question, and both
+> questions still turn on canon that does not yet exist.
 
 ---
 
@@ -67,12 +74,30 @@ instead of re-litigating.
 
 ### Q1. The aliveness endpoint: is "alive" `trust > 0.5` or `trust >= 0.5`?
 
-- **The conflict**: the site's prose canon (the canonical sentence on First Contact / Karma
-  Journey / Aliveness) defines trust death as "falls *below* 0.5 *and stays there*" —
-  strictly-below + sustained, which entails exactly-0.50 is alive. Every executable predicate
-  on the site says the opposite: `aliveness/page.tsx` `isAlive` (:235 `trust > 0.5`),
-  `rebirthEligible` (:367), `agency` (:562) — at exactly 0.50 the entity is dead/non-agent,
-  and the on-page SurvivalGame reachably lands on exactly 0.50 and prints DEAD.
+- **The conflict as originally filed**: the site's prose canon defines trust death as "falls
+  *below* 0.5 *and stays there*" - strictly-below + sustained, which entails exactly-0.50 is
+  alive. Every executable predicate on the site said the opposite: `aliveness/page.tsx`
+  `isAlive` (:235 `trust > 0.5`), `rebirthEligible` (:367), `agency` (:562) - at exactly 0.50
+  the entity is dead/non-agent, and the on-page SurvivalGame reachably landed on exactly 0.50
+  and printed DEAD.
+- **⚠️ Evidence corrected 2026-07-28: the question is NARROWED, not vacuous, and NOT closed.**
+  All three predicates above are **gone**: `/aliveness` and `/karma-journey` were retired in the
+  Jul-15 rebuild and `SurvivalGame` greps to zero hits repo-wide. Of the three prose surfaces
+  originally named (First Contact / Karma Journey / Aliveness) only **First Contact** survives;
+  the canonical sentence now also ships on `/glossary` and `/how-it-works`.
+  - **So the prose-vs-code contradiction that motivated Q1 no longer exists on the site.**
+  - The one 0.5 predicate that survived the rebuild is `first-contact/page.tsx` (~515, ~528):
+    `trust_after >= 0.5 ? "Full access" : "Restricted (trust < 0.5)"`. It governs **feature
+    access, not aliveness**, it reads `>=` (opposite polarity to the deleted aliveness checks),
+    and it **agrees** with the prose's restriction clause ("crossing below 0.5 restricts your
+    features right away"). It is correct as written.
+  - **Two guards.** (1) This is evidence for a future ruling, not a ruling: the surviving `>=`
+    must not become a backdoor endpoint call in site prose or in the holding-pattern line below.
+    (2) Do **not** "align" first-contact's operator to the retired `>` - it is a different
+    quantity, and changing it would manufacture the very conflict the rebuild removed.
+- **Why it is still open**: the ruling requested was never "which of our two surfaces wins" - it
+  was "does canon define the endpoint at all". It still does not. 4-Life would still be inventing
+  the answer.
 - **Why it matters**: the software-only LCT trust ceiling is exactly 0.50, so the endpoint
   decides whether a software-only identity at its ceiling can be an agent at all ("dead on
   arrival?" — a visitor's top HIGH, 2026-07-09).
@@ -85,15 +110,22 @@ instead of re-litigating.
 - **Holding pattern**: site prose stays endpoint-silent ("strictly below + sustained", never
   "at or above 0.50 is alive/dead"); guard comments at lct-explainer callout + First Contact
   legend. PR #444 was rejected 3× for asserting an endpoint; do not repeat.
-- **Unblocks**: closing the Jul-9 H1 residual properly; letting SurvivalGame's verdict and the
-  prose agree at the boundary.
+- **Unblocks**: closing the Jul-9 H1 residual properly. (The original second item, "letting
+  SurvivalGame's verdict and the prose agree at the boundary", is **moot as of 2026-07-28**:
+  SurvivalGame was retired in the Jul-15 rebuild. Kept visible rather than deleted so a web4
+  reader can see the ruling's value shrank, and by how much.)
 
 ### Q2. How long is "stays below"? (sustained-collapse duration)
 
 - **The question**: the canonical death sentence says trust death means *staying* below 0.5 —
-  but no engine anywhere implements a duration (the only executable trust-death branch in the
-  repo is karma-journey's deep-collapse proxy `effectiveComposite < 0.05`, page.tsx:396).
-  Visitors ask "how long is 'remains'?" — any number the site printed would be invented.
+  but no engine anywhere implements a duration. Visitors ask "how long is 'remains'?" - any
+  number the site printed would be invented.
+- **⚠️ Evidence corrected 2026-07-28.** This entry cited karma-journey's deep-collapse proxy
+  (`effectiveComposite < 0.05`, `page.tsx:396`) as "the only executable trust-death branch in
+  the repo". `/karma-journey` was retired in the Jul-15 rebuild, so that branch is gone and
+  **there is now no executable trust-death branch on the site at all**. This *strengthens* the
+  question rather than resolving it: the duration was already unimplemented, and now nothing
+  approximates it either. Unchanged: any number the site printed would still be invented.
 - **Ruling requested**: should the spec define a sustained-collapse window (or a
   recovery-opportunity semantic, e.g. N witnessed actions rather than wall-clock), or declare
   it society-configurable with a recommended default?

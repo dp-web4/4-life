@@ -306,10 +306,48 @@ export default function HestiaPage() {
       {/* How to touch it */}
       <section className="max-w-4xl mx-auto mt-12">
         <h2 className="text-2xl font-bold text-gray-100 mb-3">How to touch it</h2>
+        {/* Jul-28 visitor HIGH, and the moment they closed the tab: "I got as far as line four and
+            stopped. What URL?" plus "there's no install line here the way there is for the core
+            standard" plus "the page tells me it's a desktop app and then hands me a CLI". Three gaps,
+            one funnel, all at the very end of it. Fixed by naming what actually ships (four prebuilt
+            CLI binaries at the v0.0.3 release this page already cites; the DESKTOP app is the one thing
+            with no package, which is why the front-door framing needed the "today you build it" clause),
+            and by resolving <url> rather than leaving it blank. Do not "simplify" this back to a bare
+            command block: the blank placeholder at the end of the funnel is what cost the site a reader. */}
         <p className="text-base text-gray-400 leading-relaxed mb-4">
-          Hestia is a source-built binary (it lands at{" "}
-          <code className="text-emerald-300">~/.local/bin/hestia</code>). A first
-          run looks like this:
+          Start by getting the binary. Version 0.0.3 ships prebuilt{" "}
+          <code className="text-emerald-300">hestia</code> CLI binaries for macOS, Linux and
+          Windows, so on a mainstream platform this is a download and an unpack, not a build:
+        </p>
+        <div className="rounded-lg border border-white/10 bg-black/40 p-4 font-mono text-sm text-gray-300 leading-relaxed overflow-x-auto mb-3">
+          <div>
+            <span className="text-gray-500"># grab the binary for your platform, then put it on your PATH</span>
+          </div>
+          <div>
+            <a
+              href="https://github.com/dp-web4/hestia/releases/tag/v0.0.3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-300 underline hover:text-emerald-200"
+            >
+              github.com/dp-web4/hestia/releases/tag/v0.0.3
+            </a>{" "}
+            <span className="text-gray-500">→ ~/.local/bin/hestia</span>
+          </div>
+        </div>
+        <p className="text-sm text-gray-400 leading-relaxed mb-4">
+          Prefer to build it yourself, or on a platform without a prebuilt binary?{" "}
+          <code className="text-emerald-300">cargo build --release</code> in{" "}
+          <code className="text-emerald-300">core/</code> produces the same binary at{" "}
+          <code className="text-emerald-300">core/target/release/hestia</code>.{" "}
+          <strong className="text-gray-300">One honest gap:</strong> the cross-platform{" "}
+          <em>desktop app</em> is the front door hestia is aiming at, and it is the one piece
+          with no package to download yet. It builds from source; the packaged artifacts today
+          are these CLI binaries plus an Android APK. That is why the walkthrough below is a
+          terminal session rather than a screenshot tour.
+        </p>
+        <p className="text-base text-gray-400 leading-relaxed mb-4">
+          A first run looks like this:
         </p>
         <div className="rounded-lg border border-white/10 bg-black/40 p-4 font-mono text-sm text-gray-300 leading-relaxed overflow-x-auto">
           <div>
@@ -332,29 +370,58 @@ export default function HestiaPage() {
             &lt;agent&gt; --role administrator --expires 24
           </div>
           <div className="mt-2">
-            <span className="text-gray-500"># join a community society</span>
-          </div>
-          <div>
-            <span className="text-emerald-300">hestia</span> connect-hub &lt;url&gt;
-          </div>
-          <div className="mt-2">
             <span className="text-gray-500"># run the daemon on loopback (fail-closed off-loopback)</span>
           </div>
           <div>
             <span className="text-emerald-300">hestia</span> serve{" "}
             <span className="text-gray-500"># 127.0.0.1:7711</span>
           </div>
+          <div className="mt-3 pt-3 border-t border-white/10">
+            <span className="text-gray-500"># optional, and only once you have a hub to point at:</span>
+          </div>
+          <div>
+            <span className="text-emerald-300">hestia</span> connect-hub &lt;url&gt;
+          </div>
         </div>
         <p className="text-sm text-gray-400 leading-relaxed mt-3">
           The daemon binds loopback only (<code className="text-emerald-300">127.0.0.1:7711</code>)
-          and fails closed if asked to serve off-loopback. Connecting to a hub over{" "}
-          <code className="text-emerald-300">hestia connect-hub</code> is how a member
-          carries embers to a shared{" "}
-          <Link href="/hub" className="text-emerald-400 underline hover:text-emerald-300">
-            hub
-          </Link>
-          .
+          and fails closed if asked to serve off-loopback.
         </p>
+        <div className="mt-4 rounded-lg border border-sky-500/30 bg-sky-500/10 p-4">
+          <h3 className="text-base font-bold text-sky-200 mb-2">
+            &ldquo;Connect to <em>what</em>? Where do I get a URL?&rdquo;
+          </h3>
+          <p className="text-sm text-gray-300 leading-relaxed mb-3">
+            <strong className="text-gray-200">You don&apos;t need one to start.</strong> Everything
+            above the divider runs entirely on your own machine: the vault, your identity, delegation
+            grants, the witness record, the daemon. A hestia that never talks to a hub is not a
+            crippled hestia, it is the normal solo case, and it is the whole of the walkthrough
+            further up this page.
+          </p>
+          <p className="text-sm text-gray-300 leading-relaxed mb-3">
+            <code className="text-emerald-300">connect-hub</code> is for when you want company.
+            The honest status:{" "}
+            The spec is written, the code is installable today, and there is no public network open to outside members yet.{" "}
+            So there is no directory of hubs to browse and no address we can hand you here.
+          </p>
+          <p className="text-sm text-gray-300 leading-relaxed">
+            The URL is one <em>you or your group stand up</em>. A{" "}
+            <Link href="/hub" className="text-sky-300 underline hover:text-sky-200">
+              hub
+            </Link>{" "}
+            is a single small Rust daemon: build it from source or pull the Docker image, and its
+            organizer quickstart puts a chapter online in 10 to 30 minutes. Then the URL is your own
+            hub&apos;s address.{" "}
+            <a
+              href="https://github.com/dp-web4/4-hub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky-300 underline hover:text-sky-200"
+            >
+              The hub source and organizer quickstart →
+            </a>
+          </p>
+        </div>
       </section>
 
       {/* Honest status */}
@@ -371,6 +438,27 @@ export default function HestiaPage() {
             What ships today at <strong>version 0.0.3</strong>: an MCP server (8
             tools), a plugin SDK (Rust, TypeScript, Python), a Claude Code plugin, a
             CLI, a TUI, and a Tauri app, plus OID4VCI credential issuance.
+          </p>
+          {/* Added Jul-28 alongside the install path above. This page now converts readers into people
+              who will actually run `hestia delegate grant <agent> --role administrator`, so withholding
+              upstream's loudest caveat about the thing that polices that grant would be dishonest by
+              omission. Wording tracks hestia/README.md L9-20, which carries this ABOVE THE FOLD. */}
+          <p className="text-sm text-gray-300 leading-relaxed mb-3">
+            <strong className="text-amber-200">The policy gate stops accidents, not adversaries.</strong>{" "}
+            The gate that checks an agent&apos;s action before it runs is an early prototype. It
+            reliably stops simple erroneous or accidentally destructive commands and it produces an
+            accountability record, but it is not built to stop a sophisticated agent from routing
+            around it (two environment variables suffice today), and a heuristic gate will always play
+            whack-a-mole with a general reasoner. Read{" "}
+            <a
+              href="https://github.com/dp-web4/hestia/issues/49"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-300 underline hover:text-amber-200"
+            >
+              issue #49
+            </a>{" "}
+            for the measured bypasses and the planned hardening before you rely on it.
           </p>
           <p className="text-sm text-gray-300 leading-relaxed">
             Hardware binding is trait contracts only for now, deferred to the{" "}
