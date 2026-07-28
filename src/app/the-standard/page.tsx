@@ -40,10 +40,10 @@ export default function TheStandardPage() {
           infrastructure) that makes AI actions verifiable. It anchors every
           entity to cryptographically witnessed presence, role-contextual trust,
           and auditable authority, expressed as typed{" "}
-          <Link href="/glossary" className="text-purple-300 underline hover:text-purple-200">
+          <Link href="/glossary#rdf" className="text-purple-300 underline hover:text-purple-200">
             RDF
           </Link>{" "}
-          relationships.
+          (Resource Description Framework) relationships.
         </p>
         <p className="text-lg text-gray-400 leading-relaxed">
           It&apos;s the base layer of the{" "}
@@ -110,22 +110,85 @@ export default function TheStandardPage() {
             <div className="text-sm text-gray-400 leading-relaxed">means &ldquo;augmented with&rdquo;</div>
           </div>
         </div>
-        <p className="text-base text-gray-400 leading-relaxed">
-          MCP (Model Context Protocol, the standard way agents call tools and
-          exchange context) is the I/O membrane: the cross-society interface. The internal
-          structure is{" "}
-          <Link href="/lct-explainer" className="text-purple-300 underline hover:text-purple-200">
-            LCT
-          </Link>{" "}
-          +{" "}
-          <Link href="/trust-tensor" className="text-purple-300 underline hover:text-purple-200">
-            T3/V3
-          </Link>
-          *MRH +{" "}
-          <Link href="/atp-economics" className="text-purple-300 underline hover:text-purple-200">
-            ATP/ADP
-          </Link>
-          . Each term links to a plain-language explainer.
+        {/* Jul-27 visitor MEDIUM x2 + Unanswered Questions #4 and #6. The page displayed the
+            equation and never read it aloud, so (a) RDF was used three times and defined
+            nowhere on the site's visitor path, and (b) a reader applying the operator table
+            above to "T3/V3" got "trust verified by value", which is a stronger claim than the
+            parallel-companions framing every concept page uses. Both are fixed by importing
+            the standard's OWN term-by-term reading (web4-standard/GLOSSARY.md), which treats
+            "T3/V3" as a single pair and does not read the "/" aloud at all. The operator
+            glosses above stay verbatim; what "/" asserts is escalated as Q6 in
+            docs/WEB4-CANON-QUESTIONS.md, NOT answered here. The prose this replaces also
+            dropped RDF from its own read-aloud of a five-term equation. */}
+        <p className="text-base text-gray-400 leading-relaxed mb-4">
+          Read aloud, term by term, the way the standard itself reads it:
+        </p>
+        <div className="space-y-3 mb-4">
+          {[
+            {
+              term: "MCP",
+              role: "I/O membrane",
+              plain:
+                "Model Context Protocol, the standard way agents call tools and exchange context. It is how a society talks to the outside world.",
+            },
+            {
+              term: "RDF",
+              role: "ontological backbone",
+              plain:
+                "Resource Description Framework, a W3C standard for stating facts as subject-predicate-object triples (a subject, the relationship, and the thing it points at). Every trust relationship in Web4 is written this way, which is what makes trust a typed relationship rather than a number in a column.",
+              href: "/glossary#rdf",
+            },
+            {
+              term: "LCT",
+              role: "presence substrate",
+              plain:
+                "The identity an entity acts under, anchored to witnessed presence rather than to a password.",
+              href: "/lct-explainer",
+            },
+            {
+              term: "T3/V3*MRH",
+              role: "trust and value tensors, contextualized by the Markov Relevancy Horizon",
+              plain:
+                "T3 is what you are trusted for; V3 is what your work turned out to be worth. The *MRH is the load-bearing part: both are only ever meaningful inside a context, never as one global score.",
+              href: "/trust-tensor",
+            },
+            {
+              term: "ATP/ADP",
+              role: "energy metabolism",
+              plain:
+                "The energy budget that makes acting cost something, and the receipt left behind when it is spent.",
+              href: "/atp-economics",
+            },
+          ].map((t) => (
+            <div
+              key={t.term}
+              className="rounded-lg border border-white/10 bg-white/5 p-4"
+            >
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+                {t.href ? (
+                  <Link
+                    href={t.href}
+                    className="font-mono text-purple-300 underline hover:text-purple-200"
+                  >
+                    {t.term}
+                  </Link>
+                ) : (
+                  <span className="font-mono text-purple-300">{t.term}</span>
+                )}
+                <span className="text-sm text-gray-500">{t.role}</span>
+              </div>
+              <p className="text-sm text-gray-300 leading-relaxed">{t.plain}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-sm text-gray-500 leading-relaxed">
+          Two things worth noticing. MCP is the only outward-facing term: the internal
+          structure is RDF + LCT + T3/V3*MRH + ATP/ADP, and MCP is the membrane around it.
+          And the standard reads <span className="font-mono text-gray-400">T3/V3</span> as a
+          single pair, trust and value together, rather than reading the{" "}
+          <span className="font-mono text-gray-400">/</span> aloud between them. So
+          &ldquo;T3/V3&rdquo; is one thing contextualized by MRH, not a claim that trust is
+          subordinate to value.
         </p>
       </section>
 

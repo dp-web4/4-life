@@ -918,7 +918,14 @@ export default function MarkovRelevancyHorizonPage() {
           <p className="text-sm text-gray-500 italic mb-4">
             You&apos;ve got the conceptual model - that&apos;s enough to use the idea. What follows is spec-level detail for developers, and you can stop here.
           </p>
-          <details className="group">
+          {/* id lives on the <details>, not on the Turtle block inside it: a fragment link into
+              a collapsed <details> is not reliably revealed across browsers, so /glossary#rdf's
+              "see a real Turtle example" link lands the reader on the summary, which is labelled
+              and openable. Landing at a visible door beats scrolling to hidden content.
+              The RDF triple gloss below uses the same wording as /glossary#rdf's and
+              /the-standard's (Jul-28 harmonization: this page said "subject-verb-object", canon
+              says "subject-predicate-object"). Three surfaces, one gloss. Edit all three or none. */}
+          <details id="rdf-internals" className="group scroll-mt-24">
           <summary className="cursor-pointer list-none flex items-center gap-3 text-gray-400 hover:text-gray-300 transition-colors mb-6">
             <span className="text-sm group-open:rotate-90 transition-transform">&#9654;</span>
             <h2 className="text-3xl font-bold text-cyan-400">
@@ -928,7 +935,7 @@ export default function MarkovRelevancyHorizonPage() {
           </summary>
 
           <p className="text-gray-400 text-sm mb-6">
-            MRH uses two web standards under the hood: <strong className="text-gray-300">RDF</strong> (Resource Description Framework - a standard way to describe relationships as subject-verb-object triples) and <strong className="text-gray-300">SPARQL</strong> (a query language for searching those relationships, like SQL for graphs).
+            MRH uses two web standards under the hood: <strong className="text-gray-300">RDF</strong> (Resource Description Framework, a W3C standard for stating facts as subject-predicate-object triples: a subject, the relationship, and the thing it points at) and <strong className="text-gray-300">SPARQL</strong> (a query language for searching those relationships, like SQL for graphs).
           </p>
 
           <div className="bg-gray-800/50 border border-cyan-500/30 rounded-lg p-6 mb-6">
