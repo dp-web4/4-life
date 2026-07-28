@@ -140,7 +140,10 @@ export default function FirstContactPage() {
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#e2e8f0' }}>Step 5 - Recovery:</strong> She returns to thoughtful replies. Trust slowly rebuilds to 0.50. The system doesn&apos;t ban her - it lets consequences teach.
               </p>
-              <div style={{ background: '#1e1b2e', border: '1px solid #7c3aed44', borderRadius: '8px', padding: '0.75rem 1rem', marginBottom: '0.75rem', fontSize: '0.9rem' }}>
+              {/* Jul-27: /how-it-works and /glossary now both send readers HERE for the canonical
+                  two-death rule, so the block needs to be anchor-linkable. This page had zero id
+                  anchors before now (same structural gap as /running-now pre-#487). */}
+              <div id="what-triggers-death" className="scroll-mt-24" style={{ background: '#1e1b2e', border: '1px solid #7c3aed44', borderRadius: '8px', padding: '0.75rem 1rem', marginBottom: '0.75rem', fontSize: '0.9rem' }}>
                 <strong style={{ color: '#c4b5fd' }}>What triggers death?</strong>
                 {/* Jul-8 visitor HIGH: this sentence said "drops below 0.5" bare while Step 4/5 show
                     Alice at 0.48 recovering - one of three conflicting rule statements across

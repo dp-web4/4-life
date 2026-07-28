@@ -430,8 +430,12 @@ export default function LCTExplainerPage() {
             </div>
           </div>
 
-          {/* Hardware explainer - collapsible to keep early-page density human-friendly (Apr 30 visitor MEDIUM) */}
-          <details className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg group">
+          {/* Hardware explainer - collapsible to keep early-page density human-friendly (Apr 30 visitor MEDIUM).
+              Jul-27: id added so /running-now can point at the validated-on-hardware claim it is
+              disambiguating. Note this is a <details>, so an anchor arrival lands on the closed
+              summary; that is fine (the summary is the "what are TPM..." question) but do not
+              re-point the link deeper without checking it still resolves when collapsed. */}
+          <details id="hardware-tiers" className="mt-6 p-4 bg-purple-950/20 border border-purple-800/30 rounded-lg group scroll-mt-24">
             <summary className="cursor-pointer text-sm font-bold text-purple-400 list-none flex items-center justify-between gap-2">
               <span>What are TPM, Secure Enclave, and FIDO2?</span>
               <span className="text-xs font-normal text-purple-300/70 group-open:hidden">tap to expand - cryptography terms defined</span>
@@ -457,9 +461,38 @@ export default function LCTExplainerPage() {
               your entire hard drive, they can&apos;t extract the keys.
             </p>
             <p className="text-xs text-green-400/70 mt-2">
-              This isn&apos;t theoretical - Web4&apos;s TPM2 binding has been validated on real hardware
-              (Intel TPM 2.0: key creation, signing, verification, attestation quotes, EK certificate
-              chain verified through 2049).
+              This isn&apos;t theoretical - the <strong>core standard&apos;s</strong> TPM2 binding has been
+              validated on real hardware (Intel TPM 2.0: key creation, signing, verification,
+              attestation quotes, EK certificate chain verified through 2049).
+            </p>
+            {/* Jul-26 + Jul-27 visitor HIGH (recurred across two browses): this page said the TPM2
+                binding "has been validated on real hardware" while the landing page, /running-now,
+                /onramp and /hestia all say hardware binding is "not yet validated on-device". The
+                visitor called it "the one claim class the whole site stakes its credibility on".
+                Both claims are TRUE, about different artifacts, and no page said which:
+                  - core standard reference implementation, Intel TPM 2.0, validated 2026-02-19
+                    (web4/docs/history/STATUS-2026-02.md items 11 + 22: 9 tests, EK chain, CRL
+                    checked, valid through 2049)
+                  - hardbound (the Rust enterprise tier, Jetson target): CI uses trait-based mocks,
+                    on-device integration deferred (see /hardbound)
+                Careful: "hardbound" is overloaded. web4 also ships a PYTHON reference
+                hardbound_cli.py with a TPM2-bound root that WAS exercised on real silicon, so a
+                bare "hardbound is not validated" would be a new inaccuracy. Name the Rust/Jetson
+                tier specifically, as below. This is a SCOPE naming, not a maturity decision.
+                Note this sits ALONGSIDE the June-14 caveat below, which scopes a different axis
+                (hardware layer proven vs trust/economic dynamics simulated). The visitor read that
+                one and filed anyway; the missing clause was always "which artifact". */}
+            <p className="text-xs text-gray-500 mt-2">
+              Which artifact, precisely: that is the <strong className="text-gray-400">core
+              standard&apos;s</strong> reference implementation, tested against an Intel TPM 2.0.
+              The <Link href="/hardbound" className="text-sky-400 hover:underline">hardbound</Link>{" "}
+              enterprise tier is a separate Rust codebase whose on-device (Jetson) binding is{" "}
+              <strong className="text-gray-400">not yet validated</strong>: its CI runs against
+              mocks. When other pages say &ldquo;hardware binding is not yet validated
+              on-device&rdquo;, that is the one they mean.{" "}
+              <Link href="/running-now#hardbound-status" className="text-sky-400 hover:underline">
+                See the status ledger &rarr;
+              </Link>
             </p>
             {/* June-14 visitor MEDIUM #1 (their explicit "one fix"): "validated on real hardware" is the
                 most deployed-sounding claim on a page they visited, and it sat with no scope caveat, so a

@@ -291,9 +291,14 @@ export default function GlossaryPage() {
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Energy Budget - ATP (Allocation Transfer Packets)
             </h3>
+            {/* Jul-27 visitor MEDIUM: this read "a charged value token inspired by biological
+                ATP", which undoes /atp-economics's core work ("budget, not wealth", "not a
+                cryptocurrency", "energy that flows, not tokens that accumulate"). The visitor:
+                "calling it a value token in the glossary undoes the work that page did." Reuse
+                that page's own one-liner instead of coining a third framing. */}
             <p className="text-gray-300 leading-relaxed mb-3">
-              The <strong>energy budget</strong> of Web4 societies, a charged value token
-              inspired by biological ATP. Every action costs ATP. Quality contributions earn ATP.
+              Your <strong>energy budget</strong>, inspired by biological ATP: energy that flows,
+              not tokens that accumulate. Every action costs ATP. Quality contributions earn ATP.
               Run out? You can&apos;t act until you earn more. This makes spam naturally self-limiting, spammers
               burn ATP faster than they earn it. ATP can be transferred between entities, but 5% of
               every transfer routes to a community redistribution pool (not destroyed), making
@@ -1089,6 +1094,54 @@ export default function GlossaryPage() {
           Web4 participation happens within societies. Each society sets its own trust thresholds.
           Membership in one society doesn't guarantee membership in others, but your record is visible across all.
         </p>
+        {/* Jul-25 + Jul-27 visitor MEDIUM (recurred): "There is no entry for 'death'. Nor
+            'rebirth', nor 'aliveness', nor 'trust death'. Death is the single most vivid word on
+            this site ... it is the thing I got contradictory answers about on three different
+            pages, and it is the one term the glossary does not define." This card is where that
+            reader lands. It spans both columns because it is the tie-breaker for the whole
+            section, not a peer of the cards below it.
+            The rule sentence is the canonical one from /first-contact (L153), de-styled for this
+            context but otherwise VERBATIM - keep it that way. It threads the 0.5-endpoint
+            escalation correctly (crossing vs staying, raw vs effective trust); paraphrasing would
+            assert an endpoint canon has not settled. See docs/WEB4-CANON-QUESTIONS.md Q1. */}
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-red-800/40 rounded-xl p-6 mb-6" id="death" data-glossary-term data-essential>
+          <h3 className="text-xl font-semibold text-red-400 mb-3 scroll-mt-20">
+            Death, Trust Death, and Rebirth
+          </h3>
+          <p className="text-gray-300 text-sm leading-relaxed mb-3">
+            Two paths: <strong className="text-red-300">ATP hits zero</strong> (energy death - you
+            can&apos;t act anymore) or{" "}
+            <strong className="text-red-300">raw trust falls below 0.5 and stays there</strong>{" "}
+            (trust death - the community no longer trusts you). Energy death is recoverable through
+            karma rebirth. Trust death is permanent - a destroyed reputation can&apos;t be reset.
+            One line, two consequences: <em>crossing</em> below 0.5 restricts your features right
+            away and is recoverable; only <em>staying</em> below it is fatal - a sustained collapse,
+            not a single stumble. The number compared is <strong>raw</strong> trust, not effective
+            trust (raw &times; CI&sup2;) - effective trust sets your karma tier, not whether you live.
+          </p>
+          <p className="text-gray-400 text-sm leading-relaxed mb-3">
+            <strong className="text-gray-300">Rebirth</strong> is what follows the recoverable kind.
+            Same LCT, same history: your identity and record persist and a portion of your final ATP
+            carries forward as <strong className="text-gray-300">karma</strong>. It is closer to a
+            suspended license reinstated than a clean slate, not a new account.
+          </p>
+          <p className="text-gray-500 text-xs mb-3">
+            Plain English: &ldquo;Running out of energy is a suspension you can come back from.
+            Losing the community&apos;s trust, and staying there, is the one you can&apos;t.&rdquo;
+          </p>
+          <div className="flex flex-wrap gap-3 text-sm">
+            <Link href="/first-contact#what-triggers-death" className="text-sky-400 hover:underline">
+              Walk through it &rarr;
+            </Link>
+            <Link href="/how-it-works#journey" className="text-sky-400 hover:underline">
+              The full lifecycle &rarr;
+            </Link>
+            <Link href="/atp-economics#insights" className="text-sky-400 hover:underline">
+              Why it works this way &rarr;
+            </Link>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6" data-glossary-term>

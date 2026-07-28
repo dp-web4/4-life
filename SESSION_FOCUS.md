@@ -2,7 +2,101 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-24*
+*Last updated: 2026-07-27*
+
+## Jul-27 visitor pass (21:00 session) - the seams pass, three HIGHs
+First pass on the Jul-25, Jul-26 AND Jul-27 browses (all three were untriaged; no content PR
+had merged since #487 on Jul-24). Two of the three Jul-27 HIGHs had already recurred across two
+separate browses, and every one of them is the defect class the visitor named in their own
+Honest Assessment: *"the individual pages are each carefully maintained, and the seams between
+them are not. Every contradiction I found is between two pages that are both individually well
+written."* Per [[visitor-numbers-integrity-class-signal]] that licenses a falsifiable-defect
+pass, not a rewording pass. Every item below was falsifiable.
+
+- **HIGH disposed - one canonical sentence for death** (Jul-25 HIGH + Jul-27 HIGH).
+  `/how-it-works` L566 read *"Death in Web4 is not a timeout or suspension"* while
+  `/first-contact` said Alice's *standing is suspended* and `/atp-economics` said *"closer to a
+  suspended license reinstated than a clean slate"*. Two-against-one, and the outlier's wording
+  predates #484's softening. Verified before acting: `/first-contact` L153 already carries the
+  COMPLETE canonical rule (energy death vs trust death, both named), and its in-code comment
+  says *"Canonical rule sentence below is IDENTICAL on all three pages - keep it verbatim if
+  editing"*. The other two pages named there are the RETIRED sim pages, so `/how-it-works` was
+  a fourth surface that never received it. Now reused **verbatim** on `/how-it-works` and in the
+  new glossary entry, cross-linked both ways.
+  - **Kept verbatim on purpose**: that sentence threads the 0.5-endpoint escalation correctly
+    (*crossing* vs *staying*, **raw** vs effective trust). Paraphrasing it would assert the `>`
+    vs `>=` endpoint that Q1 says is unsettled. If you edit these three surfaces, edit all three.
+  - `/first-contact` gained its **first `id` anchor** (`#what-triggers-death`) so the cross-links
+    can land on the definition. Same structural gap `/running-now` had pre-#487.
+- **HIGH disposed (narrowed) - the worked example no longer falsifies its own rule** (Jul-27).
+  Visitor: *"If death is ATP hitting zero, nobody in the flagship example actually died."* True.
+  The obvious fix was to copy `/atp-economics`'s qualifier ("died **naturally**"), and the policy
+  reviewer correctly **rejected** it: grep of `web4-standard/` and `docs/` returns NO canon for a
+  natural death / bounded life / lifespan (the LCT lifecycle is NASCENT->ACTIVE->SUSPENDED->
+  REVOKED), and `/atp-economics` writes "naturally" for only two of its four lives, so the
+  sibling page is not clean ground truth. Naming a third mechanism would be **inventing canon**.
+  - Shipped instead: a shared `EndOfLifeCaveat` component (one definition, rendered at BOTH
+    places the reader meets the numbers, so they cannot drift) stating the gap without filling
+    it: *"none of these lives ends at 0 ATP ... What else ends a life is not settled."*
+  - **Numbers deliberately untouched**: ending them at zero would break the karma model (karma
+    is defined on both pages as a portion of **final** ATP), which is canon on both.
+  - Escalated as **Q5** in `docs/WEB4-CANON-QUESTIONS.md`, which also records a divergence the
+    original proposal had missed *inside the lines it planned to edit*: the two worked examples
+    run **three vs four** lives, put the ATP crisis in a different life, end at **165 vs 140
+    ATP**, and disagree on whether karma carry-forward is **full or reduced**. `/atp-economics`
+    is deliberately untouched pending the ruling, so the divergence stays visible rather than
+    half-papered-over.
+- **HIGH disposed - the TPM claim now names its artifact** (Jul-26 HIGH + Jul-27 HIGH).
+  `/lct-explainer`: TPM2 binding *"has been validated on real hardware ... really is tested on
+  silicon"*. Landing, `/running-now`, `/onramp`, `/hestia`: *"not yet validated on-device"*.
+  The visitor called this *"the one claim class the whole site stakes its credibility on"* and
+  said it cost *"disproportionate credibility"*. **Both claims are true, about different
+  artifacts**, and no page said which. Ground truth: `web4/docs/history/STATUS-2026-02.md`
+  items 11 + 22 record the **core standard's** TPM2 work validated on a real Intel TPM 2.0 on
+  2026-02-19 (9 tests, EK chain, CRL checked, valid through 2049); **hardbound's** Rust/Jetson
+  on-device integration runs against mocks. Scope named on all three claiming surfaces
+  (`/lct-explainer`, `/running-now`, `/why-web4` L689), with `#hardbound-status` and
+  `#hardware-tiers` anchors added so the two surfaces point at each other.
+  - **Naming hazard, do not simplify this**: "hardbound" is overloaded. web4 also ships a
+    **Python** `implementation/reference/hardbound_cli.py` with a TPM2-bound root that WAS
+    exercised on real silicon. A bare *"hardbound's binding is not validated"* would be a NEW
+    inaccuracy. The copy says **hardbound's own ... Rust/Jetson on-device** integration.
+  - This sits ALONGSIDE the June-14 caveat on `/lct-explainer`, which scopes a different axis
+    (hardware layer proven vs trust/economic dynamics simulated). The visitor read that one and
+    filed anyway: [[visitor-read-it-and-still-filed-it]]. The missing clause was always *which
+    artifact*, so the existing axis was left intact rather than restructured.
+- **MEDIUM disposed - the glossary defines death** (Jul-25 MEDIUM + Jul-27 MEDIUM). Visitor:
+  *"Death is the single most vivid word on this site ... and it is the one term the glossary
+  does not define."* New full-width `#death` card at the head of Membership Lifecycle, carrying
+  the canonical sentence de-styled but otherwise verbatim, plus rebirth/karma and three
+  cross-links. This is where the confused reader actually lands.
+- **MEDIUM disposed - glossary ATP is a budget again** (Jul-27). *"A charged value token"*
+  contradicted `/atp-economics` (*"budget, not wealth"*, *"energy that flows, not tokens that
+  accumulate"*). Now reuses that page's own framing.
+- **NOT touched, with reasons (do not re-litigate without fresher signal)**:
+  - **Jul-25 HIGH: software-only 0.50 ceiling vs aliveness defined as "trust > 0.5"** (which
+    would make software-only users permanently unalive). Sits on **both** the 0.5-endpoint (Q1)
+    and hardware-required escalations. The policy reviewer flagged it as *"the single most
+    tempting wrong fix adjacent to this work"*. Explicitly excluded, not forgotten.
+  - The two `/why-web4` affordability FAQs (the hardware-**required** seam). Different question
+    from validation scope; the Jul-25 log carries a MEDIUM explicitly requesting the forbidden
+    fix. Edits on that page were restricted to L689.
+  - `/why-web4` FAQ length (40+ questions) and `/lct-explainer` length (~15 screens): both real,
+    both recurring, both **packaging/restructure passes**, not seam fixes. Own session each.
+  - **RDF never explained** (Jul-27 MEDIUM): real and actionable, and arguably the cheapest
+    remaining win. Deferred only to keep this pass one-shaped. **Good candidate for next session.**
+  - `T3/V3` operator-gloss MEDIUM: touches canonical-equation semantics; escalation candidate,
+    not a copy fix.
+  - `/onramp` routing MEDIUM (Jul-25 + Jul-26): #486 already treated this; retest-gated.
+  - All LOWs, including the Jul-26 FAQ topic-index miscount (13 links under "Trust & Reputation
+    (12)") which is cheap and worth grabbing next session.
+- **Retest gate (Jul-28 05:00+)**: (1) does a reader who meets "death" on `/how-it-works`,
+  `/first-contact`, `/atp-economics` or `/glossary` now get the same two-mechanism answer? (2)
+  does the worked example still read as falsifying its own rule now that the caveat names the
+  gap? If it does, that is signal FOR Q5, not license to answer it on-site. (3) does the TPM
+  claim still read as a contradiction now that each surface names its artifact? If it recurs
+  after this, the residual is not the wording: escalate as a question about whether the site
+  should carry a single canonical maturity ledger that all pages transclude.
 
 ## Jul-24 visitor pass (21:00 session) - the two remaining actionable LOWs
 Fourth and last pass on the Jul-24 05:00 browse. All three MEDIUMs were already disposed or
