@@ -2,7 +2,84 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-27*
+*Last updated: 2026-07-28*
+
+## Jul-27 visitor pass, second sitting (Jul-28 03:00 session) - read the equation aloud
+The 21:00 session cleared all three Jul-27 HIGHs and both glossary MEDIUMs (#488, merged).
+Four MEDIUMs and three LOWs remained. This pass took the two that sit on `/the-standard`,
+because they are one defect with two symptoms: **the canonical equation was displayed and
+never read aloud**. They are also the visitor's Unanswered Questions #4 and #6, and RDF is
+one of the two things they singled out in the Honest Assessment as cheap to fix early.
+
+- **MEDIUM disposed - RDF now has a definition, and the link that promised one now reaches it.**
+  Visitor: *"RDF is never expanded or explained ... MCP gets a gloss; RDF gets nothing."*
+  Verified before acting per [[visitor-deferred-low-check-shipped-first]], and the premise
+  needed a correction that changed the fix: RDF *is* expanded on `/trust-neighborhood` L931,
+  but inside a block labelled *"For developers · RDF, SPARQL, graph internals · skippable"*.
+  The real defect was sharper than "missing": **`/the-standard` linked the word "RDF" to
+  `/glossary`, and the glossary had no RDF entry.** Textbook [[promise-without-routing]].
+  - Canon supplied the whole fix including the *why*, so no canon call was needed:
+    `web4-standard/GLOSSARY.md` L36-40 defines RDF and answers the visitor's actual question
+    (*"why is it in the equation that defines the whole thing?"*) with "trust is a typed
+    relationship, not a property".
+  - Shipped: `/glossary#rdf`, the `/the-standard` link repointed at it, an inline expansion in
+    the hero, and RDF in the read-aloud below.
+- **MEDIUM disposed - the equation is now read aloud, term by term.** Visitor: applying the
+  page's own operator gloss (`/` = "verified by"), *"T3/V3 reads as trust verified by value, a
+  stronger and different claim than the parallel-companions framing every concept page uses.
+  I could not tell if I was misreading the notation."*
+  - Fixed by **importing canon's own reading** rather than by ruling on the operator.
+    `GLOSSARY.md` L15 renders the pair as "Trust/Value tensors *contextualized by* Markov
+    Relevancy Horizon": one compound noun, the `/` never read aloud. The page now says that
+    descriptively. The three operator glosses are left **verbatim and unreconciled**.
+  - Found while editing: the prose being replaced read MCP aloud and then jumped to *"the
+    internal structure is LCT + T3/V3*MRH + ATP/ADP"*, **silently dropping RDF from its own
+    read-aloud of a five-term equation**. That is very likely why RDF went undefined for so
+    long: the page's only walkthrough skipped it.
+- **NEW escalation, Q6** in `docs/WEB4-CANON-QUESTIONS.md`: what does the `/` assert? Canon
+  publishes `/` = "verified by" *and* reads both `/` pairs as compound nouns, in the same
+  files. Both readings stated, no winner picked. The spec does not contradict the
+  operator-table reading (`t3-v3-tensors.md` §3 is titled "Value Through Verification"), which
+  is exactly why a session must not settle it in visitor prose.
+- **MEDIUM disposed as a side effect - the glossary defined neither equation-leading term.**
+  Checking the visitor's *comparative* claim ("MCP gets a gloss; RDF gets nothing") showed the
+  comparison was false at the glossary: it contained **zero occurrences of "MCP"** too. Both
+  entries added, both added to "Acronyms at a glance".
+  - That block carried an in-code decision (~L138) deliberately excluding "research-tier"
+    initialisms. Per [[opposite-intents-in-code-comments]] the rationale was **rewritten to
+    record the reversal**, not silently contradicted: MCP and RDF are the first two terms of
+    the equation on a Start Here page, so they are entry-level *by position in the reader's
+    path*, not research-tier by subject. The separate R6 exclusion at ~L500 still stands.
+  - Deliberately NOT marked `data-essential`: the "Essential only" toggle's term set is its own
+    documented decision and this pass did not reopen it.
+- **Seam closed while here**: `/trust-neighborhood` glossed RDF triples as
+  "subject-**verb**-object"; canon says "subject-**predicate**-object". One wording now on all
+  three surfaces. The `/trust-neighborhood` RDF block also had no `id` (the page has only two
+  anchors), so the glossary's "see a real Turtle example" link would have been another
+  promise without routing. The `id` went on the `<details>` element, not the Turtle block
+  inside it, since a fragment link into collapsed `<details>` is not reliably revealed across
+  browsers: land the reader at a labelled door rather than at hidden content.
+
+### Deliberate non-actions (Jul-27 MEDIUMs/LOWs still open)
+- **`/why-web4` FAQ packaging** (40+ entries, no shortlist) and **`/lct-explainer` length**
+  (~15 screens on the beginner's first stop): both recurring, both need a design pass rather
+  than a copy fix. Own session each.
+- **`/hestia` software-only tier line** (Jul-27 MEDIUM). Real and probably safe, but it needs
+  its own collision check against the standing hardware-required seam before anyone writes it.
+  Next session's first candidate.
+- **All three LOWs.** Flagging one for diagnosis rather than re-fix: the `/tldr` badge-legend
+  LOW recurs *after* #487 shipped badge work that went live Jul-25, and the Jul-27 browse still
+  filed it. That is a [[visitor-read-it-and-still-filed-it]] candidate; it needs the missing
+  clause identified, not the same treatment applied twice.
+- **Item cut by policy review**: a proposed sentence saying both `/` pairs pair "a claim with
+  its check" (T3 claimed / V3 verified, ATP spent / ADP receipt). Rejected as a disguised canon
+  call, and the reviewer found three independent reasons the wording was actively wrong:
+  `t3-v3-tensors.md` §1.1 calls tensors "evidence, not verdicts" so T3 is not a *claim*;
+  `/glossary`'s V3 entry says V3 "scores the work, not the worker"; and `/atp-economics`
+  L464-467 records a June-2 visitor fix that deliberately made **confirmation, not the receipt**,
+  the refill trigger, which "ADP = the receipt proving it was spent" would have undone. It also
+  fought the fix it shipped alongside: telling readers `/` pairs a claim with its check leads
+  them straight back to "trust verified by value". Escalated as Q6 instead.
 
 ## Jul-27 visitor pass (21:00 session) - the seams pass, three HIGHs
 First pass on the Jul-25, Jul-26 AND Jul-27 browses (all three were untriaged; no content PR

@@ -137,9 +137,18 @@ export default function GlossaryPage() {
         {/* Acronyms at a glance - the "what does CI stand for again?" escape-hatch.
             Lives in the hero <section>, OUTSIDE glossaryRef, so the search filter never hides it.
             Scoped to the core acronyms a beginner collects on the on-ramp; research-tier
-            initialisms (EP, R6, SAL, DID, D1-D9) are deliberately left to the search box so
+            initialisms (EP, SAL, DID, D1-D9) are deliberately left to the search box so
             this lookup doesn't re-expand the jargon iceberg. NOTE: "core acronyms" ≠ the
-            "Essential only" toggle's 7 terms (which include Web4/Society/Federation). */}
+            "Essential only" toggle's 7 terms (which include Web4/Society/Federation).
+
+            REVERSAL (Jul-28, Jul-27 visitor MEDIUM): MCP and RDF were added. The original
+            scoping excluded them by treating them as research-tier, which was wrong about
+            where a beginner meets them: they are the FIRST TWO terms of the canonical
+            equation on /the-standard, which is a Start Here page. The visitor filed
+            "MCP gets a gloss; RDF gets nothing", and checking the premise showed the glossary
+            in fact defined NEITHER. Entry-level by position in the reader's path, not
+            research-tier by subject matter. The R6 exclusion recorded at ~L500 is a different
+            call and still stands. */}
         <div id="acronyms" className="bg-gray-900/40 border border-gray-700 rounded-xl p-5 mb-6 scroll-mt-20">
           <div className="text-sm font-semibold text-gray-200 mb-1">Acronyms at a glance</div>
           <p className="text-xs text-gray-500 mb-4">
@@ -155,6 +164,8 @@ export default function GlossaryPage() {
               { id: "v3", abbr: "V3", full: "Value Tensor", gloss: "a 3-axis score for what you produce" },
               { id: "ci", abbr: "CI", full: "Coherence Index", gloss: "a behavioral-consistency score" },
               { id: "mrh", abbr: "MRH", full: "Markov Relevancy Horizon", gloss: "how far your trust reaches" },
+              { id: "mcp", abbr: "MCP", full: "Model Context Protocol", gloss: "how a society talks to the outside world" },
+              { id: "rdf", abbr: "RDF", full: "Resource Description Framework", gloss: "the format every Web4 fact is written in" },
             ].map((a) => (
               <a
                 key={a.id}
@@ -208,6 +219,67 @@ export default function GlossaryPage() {
             <p className="text-gray-400 text-sm">
               Think: "What if trust wasn't delegated to platforms, but emerged from
               measurable actions and verifiable presence?"
+            </p>
+          </div>
+
+          {/* MCP and RDF - Jul-27 visitor MEDIUM + Unanswered Q4. Placed here, between Web4
+              and LCT, because that is the order they appear in the canonical equation
+              (Web4 = MCP + RDF + LCT + T3/V3*MRH + ATP/ADP). /the-standard links "RDF" here.
+              Deliberately NOT marked data-essential: the "Essential only" toggle's term set is
+              a separate documented decision (see ~L138) and this pass does not reopen it; the
+              "Acronyms at a glance" block already gives both terms entry-level reach.
+              The RDF triple gloss below uses the same wording as /trust-neighborhood's and
+              /the-standard's (only the surrounding punctuation differs, since one of the three
+              is already inside parentheses). Three surfaces, one gloss. If you edit one, edit
+              all three. */}
+          <div id="mcp" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">
+              MCP (Model Context Protocol)
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              An open standard for how an AI agent reaches out to tools, data, and other
+              systems. In the Web4 equation it is the <strong>outward-facing interface</strong>:
+              the membrane through which a society talks to the outside world. Everything else
+              in the equation (RDF, LCT, T3/V3*MRH, ATP/ADP) is the internal structure behind
+              that membrane.
+            </p>
+            <p className="text-gray-400 text-sm">
+              <strong>Why it matters:</strong> a society does not need a special protocol to be
+              reachable. Other societies call its scoped actions the same way any agent calls
+              any tool, with the trust machinery riding along inside the exchange.{" "}
+              <Link href="/the-standard" className="text-sky-400 underline hover:text-sky-300">
+                The core standard
+              </Link>{" "}
+              reads the whole equation aloud, term by term.
+            </p>
+          </div>
+
+          {/* RDF */}
+          <div id="rdf" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term>
+            <h3 className="text-2xl font-semibold text-sky-400 mb-3">
+              RDF (Resource Description Framework)
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-3">
+              A W3C standard for stating facts as{" "}
+              <strong>subject-predicate-object triples</strong> (a subject, the relationship,
+              and the thing it points at). &ldquo;Alice is witnessed by the timeserver&rdquo; is
+              one triple. It is the format every Web4 fact is written in.
+            </p>
+            <p className="text-gray-400 text-sm mb-3">
+              <strong>Why it is in the equation:</strong> trust here is a{" "}
+              <em>typed relationship</em>, not a property. &ldquo;Alice is trustworthy&rdquo; is
+              not a Web4 statement; &ldquo;Alice, acting as an analyst, is trusted this much by
+              Bob, witnessed by these parties&rdquo; is. A triple structure maps onto that
+              exactly, and a single number in a database column does not. Trust neighborhoods,
+              role bindings, governance chains, and translation between societies are all RDF
+              underneath.
+            </p>
+            <p className="text-gray-400 text-sm">
+              <strong>Concretely:</strong> written as JSON-LD or Turtle, queried with SPARQL.{" "}
+              <Link href="/trust-neighborhood#rdf-internals" className="text-sky-400 underline hover:text-sky-300">
+                See a real Turtle example
+              </Link>{" "}
+              (developer detail, skippable).
             </p>
           </div>
 

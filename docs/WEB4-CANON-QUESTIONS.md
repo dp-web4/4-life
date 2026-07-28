@@ -168,6 +168,54 @@ instead of re-litigating.
   model, which is canon on both pages). `/atp-economics` is deliberately untouched pending a
   ruling, so the divergence stays visible rather than being half-papered-over.
 
+### Q6. What does the `/` in the canonical equation assert?
+
+- **The question**: canon publishes an operator table for
+  `Web4 = MCP + RDF + LCT + T3/V3*MRH + ATP/ADP` in which `/` = "verified by", `*` =
+  "contextualized by", `+` = "augmented with" (`web4-standard/GLOSSARY.md` L9,
+  `web4-standard/README.md` L423, `EXECUTIVE_SUMMARY.md` L13). Canon then reads the same
+  equation aloud term by term and does **not** apply `/` to either pair that contains one.
+  `GLOSSARY.md` L15 renders it "**T3/V3\*MRH**: Trust/Value tensors *contextualized by*
+  Markov Relevancy Horizon" (one compound noun, only the `*` read aloud), and L18 renders
+  the other as "**ATP/ADP**: Bio-inspired energy metabolism, value flows through work" (no
+  operator read at all). `EXECUTIVE_SUMMARY.md` L15 does the same. So the operator table and
+  the read-aloud are two different readings of the same notation, both canon, in the same
+  files.
+- **The two readings**:
+  - *Operator-table reading*: `T3/V3` is "trust verified by value" and `ATP/ADP` is "budget
+    verified by receipt". Coherent, and not contradicted by the spec:
+    `core-spec/t3-v3-tensors.md` §3 is titled "V3 Tensor: Value Through Verification" and
+    opens "quantifies value creation through three verification dimensions", while
+    `core-spec/referenced-acts.md` L141-143 has `Fulfilled` ("the substance landed as
+    claimed") build V3 Validity/Veracity and `Disputed` debit V3 Veracity.
+  - *Read-aloud reading*: `T3/V3` and `ATP/ADP` are each a single named pair, and `/` is
+    notation for pairing rather than an asserted relation. This is what canon's own prose does
+    every time it reads the equation.
+- **Why 4-life can't answer locally**: the two readings differ in strength, not just in
+  wording. "Trust verified by value" subordinates T3 to V3 and would contradict the
+  parallel-companions framing the site uses on every concept page (`/trust-tensor` L219 and
+  L1035: "T3 measures who you are; V3 measures what you produce"; `/glossary` #v3: V3 "scores
+  the work, not the worker"). It would also sit oddly against `t3-v3-tensors.md` §1.1
+  ("evidence, not verdicts"). Picking the operator-table reading in visitor prose would make
+  a structural claim about the ontology that canon's own prose declines to make. Picking the
+  read-aloud reading and saying so explicitly would amount to telling readers the published
+  operator table does not mean what it says.
+- **Site symptom (Jul-27 visitor MEDIUM + Unanswered Question #6)**: *"With the page's own
+  operator gloss ('/' = 'verified by'), 'T3/V3' reads as 'trust verified by value', a
+  stronger and different claim than the parallel-companions framing every concept page uses.
+  I could not tell if I was misreading the notation."* The visitor derived the conflict from
+  the site's own material in one reading, unprompted.
+- **Ruling requested**: state whether `/` asserts verification between the paired terms, or
+  is pairing notation whose gloss applies to the equation as a whole. If the former, confirm
+  that "T3 is verified by V3" is intended, since that is the reading a careful newcomer
+  reaches first and it is stronger than anything the concept pages currently say.
+- **Holding pattern**: `/the-standard` now reads the equation aloud using **canon's own
+  term-by-term reading**, and states descriptively that the standard reads `T3/V3` as a
+  single pair rather than reading the `/` aloud. The three operator glosses are left verbatim
+  and unexplained rather than reconciled. No claim is made about what `/` asserts. This
+  closes the visitor's confusion (they now have canon's reading in front of them) without
+  settling the question.
+
 ---
 
 *Maintained by the 4-life autonomous track. Add new entries only with a policy-review-approved
