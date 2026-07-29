@@ -797,6 +797,28 @@ export default function DayInWeb4Page() {
           The scenarios above describe the <em>experience</em>. But what would the interface actually look like?
           Here are five interactive app mockups - click, tap, and explore them.
         </p>
+        {/* Jul-29 visitor MEDIUM (recurrence of the Jul-15 one, and the shipped fix did not reach
+            it): "I started the day with 100 ATP. The camera is 350. Where did the other 250 come
+            from? Nothing in the scenario says."
+            The 100 they mean is their OWN live ledger (netAtp at L446, rendered at L696 and in the
+            day summary at L1311), not the collapsed onboarding walkthrough at L597. So the
+            reconciliation shipped at InteractiveWireframes.tsx:370 ("an active member's working
+            balance climbs well past that") is true but generic, and the reader's own ledger
+            visibly does NOT climb - the scenario choices are almost all refund-channel events.
+            Answer it at the boundary where the reader stops being the protagonist, and name the
+            channel that actually grows a balance (atp-economics item 3, L208).
+            Deliberately QUALITATIVE: the choice set at L60-210 cannot produce a day anywhere near
+            350, so printing a derived figure would ship a new arithmetic claim on the page already
+            filed for arithmetic. And keep it on the BUDGET side of the budget-vs-wealth line
+            (guard at atp-economics:168-176) - no accumulation-as-savings language. */}
+        <p className="text-gray-400 mb-2 text-sm">
+          One thing to carry across the line: the ledger you just ran is a single day, starting from
+          the 100 ATP everyone begins with. The mockups below belong to an account built up over far
+          longer, which is why the marketplace one can price a camera at 350. A day of posting and
+          replying mostly earns back what that day cost you; balances grow past the starting budget
+          through the other channel, work that someone else commissions and pays for. See{' '}
+          <Link href="/atp-economics#earning-atp" className="text-sky-400 hover:underline">how you actually earn ATP back</Link>.
+        </p>
         <p className="text-xs text-sky-400/60 mb-8">
           Each mockup is clickable - try reading messages, comparing candidates, rating posts, and buying things.
         </p>

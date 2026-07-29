@@ -233,26 +233,53 @@ export default function WhatCouldGoWrongPage() {
             </div>
           </div>
           <div className="text-gray-300 leading-relaxed space-y-3">
+            {/* Jul-29 visitor LOW + a defect found while fixing it.
+                (a) The filed LOW was "say threshold, not ceiling" - already shipped in the heading
+                    and here. The real residual is that this page carries TWO different 0.5s, 270
+                    lines apart: this survival threshold, and risk 8's hardware trust ceiling, which
+                    happens to be 0.50 for software-only identities. The visitor "briefly thought
+                    risk 3 was about software-only users specifically." Name the distinction here,
+                    at the first of the two.
+                (b) The old text said "Fall below it and you're out - your agent 'dies' and must be
+                    reborn with reduced resources." Wrong in BOTH directions against the canonical
+                    rule (first-contact:156, how-it-works, glossary): one dip is recoverable, and
+                    the fatal branch is worse than "set back" because trust death is permanent -
+                    rebirth follows ENERGY death, not trust death. Same flat-mechanism-absolute
+                    class #494 just closed.
+                (c) The corrected rule is gentler in the common case, so it needs the compensating
+                    clause or it launders this risk into a mitigation: a scoring false positive is
+                    by construction SUSTAINED, so sustained-only protects the wrongly-scored user
+                    least. That is an entailment of shipped claims, not new canon.
+                Says nothing about which side of 0.50 the line falls on
+                ([[trust-05-endpoint-canon-conflict]]) - same guard as the sibling at L568.
+                Does NOT assert whether hardware is required to participate
+                ([[hardware-required-seam]]); mitigation (4) in risk 8 still holds that side. */}
             <p>
               <strong className="text-gray-100">The risk:</strong> Web4 uses a 0.5 trust threshold as
-              the minimum bar for continued participation. Fall below it and you&apos;re out -
-              your agent &ldquo;dies&rdquo; and must be reborn with reduced resources. But what if
-              the scoring is wrong? What if legitimate users get flagged?
+              the minimum bar for continued participation. Crossing below it restricts your features
+              right away and is recoverable; only <em>staying</em> below it is fatal, and that kind
+              of trust death is permanent - a destroyed reputation can&apos;t be reset. (This is the
+              survival line every identity is measured against. It is not the hardware trust ceiling
+              in risk 8 below, which happens to also be 0.50 for a software-only identity.) But what
+              if the scoring is wrong? What if legitimate users get flagged?
             </p>
             <p>
               <strong className="text-gray-100">Why it&apos;s real:</strong> Every automated system
               produces false positives. Credit scores, content moderation, spam filters -
               they all incorrectly flag legitimate people. A system that can &ldquo;kill&rdquo; your
               digital identity based on behavioral scoring could ruin someone&apos;s online life
-              for an algorithmic mistake.
+              for an algorithmic mistake. And the &ldquo;only staying below is fatal&rdquo; rule
+              protects you least in exactly this case: a scoring error is a sustained condition by
+              construction, so a wrongly-scored user is precisely the one who stays below.
             </p>
             <p>
               <strong className="text-gray-100">What mitigates it:</strong> Trust scores are
               multi-dimensional (Talent, Training, Temperament) and role-specific, so a bad score
               in one context doesn&apos;t affect others. The coherence index checks behavioral
               consistency across four dimensions, making false positives less likely than
-              single-score systems. And rebirth means you get another chance - you&apos;re not
-              permanently banned, just set back.
+              single-score systems. And a negative trust adjustment has to carry an appeal path and
+              a cool-down period: no single rating decides your standing, and penalties recover
+              instead of branding you.
             </p>
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
               <strong>Honest assessment:</strong> An appeals mechanism has been designed

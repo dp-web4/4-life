@@ -190,6 +190,42 @@ export default function TheStandardPage() {
           &ldquo;T3/V3&rdquo; is one thing contextualized by MRH, not a claim that trust is
           subordinate to value.
         </p>
+
+        {/* Jul-29 visitor MEDIUM: /onramp step 1 (onramp:214) sends readers HERE to "learn the
+            primitives (LCT, T3/V3*MRH, ATP/ADP, and R6/R7)", and R6/R7 was the one item on that
+            list this page never mentioned: "The onramp sent me here to learn the vocabulary and
+            the vocabulary item I did not know is not here."
+            This is a SIBLING block on purpose. R6/R7 is not a term of the equation at L93, so it
+            must NOT become a sixth card in the read-aloud array above - that array is the
+            standard's own term-by-term reading of a five-term equation (see the guard at L117)
+            and a sixth entry would stop it matching the equation it reads aloud.
+            Gloss is the one already shipping at onramp:119, not a fourth phrasing. Expansion is
+            canon: web4-standard/README.md:148 and core-spec/r7-framework.md. */}
+        <div id="r6-r7" className="mt-6 rounded-lg border border-white/10 bg-white/5 p-4 scroll-mt-24">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+            <Link
+              href="/glossary#r6"
+              className="text-lg font-bold text-purple-300 hover:underline"
+            >
+              R6/R7
+            </Link>
+            <span className="text-sm text-gray-400">action grammar</span>
+          </div>
+          <p className="text-sm text-gray-300 leading-relaxed">
+            One more piece of the vocabulary, and the reason it is not in the equation: everything
+            above describes what an entity <em>is</em>, while this describes what an entity{" "}
+            <em>does</em>. R6 is the standard six-part shape of any action, so a request like
+            &ldquo;post this&rdquo; or &ldquo;spend 5 ATP&rdquo; gets checked and trust-scored the
+            same way every time:{" "}
+            <span className="font-mono text-gray-400">
+              Rules + Role + Request + Reference + Resource
+            </span>{" "}
+            produce a <span className="font-mono text-gray-400">Result</span>. R7 adds a seventh
+            element, <span className="font-mono text-gray-400">Reputation</span>, when the stakes
+            are high enough that the trust change is worth recording as an output of the action
+            rather than a side effect of it.
+          </p>
+        </div>
       </section>
 
       {/* Honest status */}

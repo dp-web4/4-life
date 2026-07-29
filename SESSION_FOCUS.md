@@ -2,7 +2,136 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-29*
+*Last updated: 2026-07-29 (15:00 session)*
+
+## Jul-29 visitor pass, second sitting (Jul-29 15:00 session) - the unblocked MEDIUMs
+Log: `visitor/logs/2026-07-29.md` (same browse). Zero open PRs; the 09:00 session had already
+closed all three HIGHs (#494), so this sitting took the MEDIUM/LOW queue it handed off. **Three of
+the deferred rows did not survive verification**, which is most of the value of this session.
+
+- **MEDIUM disposed - `/first-contact` taught trust as a flat single number, and "raw" was
+  literally undefined for anyone with JavaScript on.**
+  - Filed friction: the Trust Score counter at `:271` reads "her *raw* reputation, on a 0.00-1.00
+    scale", `/trust-tensor` then opens with "Web4 doesn't reduce trust to a single number", and the
+    visitor read the second as a correction of the first. First Contact is page 3 of the 5-page
+    reading path, so nearly every reader forms the belief there.
+  - **The sharper defect, found while verifying**: `first-contact:110-180` is the **`<noscript>`
+    block**. Grepping the file, `raw` occurs at `:156` (inside noscript) and `:271` (the JS legend),
+    and `effective trust` occurs **only** at `:156`. So a reader with JS enabled sees the word
+    "raw" exactly once, undefined, and never sees raw-vs-effective at all. That is precisely the
+    visitor's "Raw as opposed to what? Nothing on the page answers that."
+  - **Grounding is on-site, so this is propagation not assertion**: `trust-tensor:779/793/807`
+    already renders "Role-weighted trust: 90% / 74% / 27%" and `:875` gives the composite weights.
+    Policy review recomputed all three against those weights (0.895, 0.743, 0.275) and they hold.
+  - **Split deliberately, because the two halves have different homes.** The roll-up clause went
+    **inline** in the bullet (that is the filed MEDIUM; hiding it would reproduce the failure). The
+    raw-vs-effective definition went into a **collapsed aside below the list**. Policy review
+    caught that loading both into one bullet would be three concepts in a box whose own promise is
+    *"Only two numbers move while she acts. This is all you need"*, re-arming the exact vocab-wall
+    friction its two existing guards (`:257-259` May-15 LOW, `:275-279` Jul-13 MEDIUM) hold down.
+    [[two-fixes-in-one-pass-can-fight]].
+  - "Above 0.50 / Below 0.50" at `:271` is byte-identical; the `:265-270` endpoint guard stands.
+
+- **MEDIUM disposed - `/the-standard` now defines R6/R7, in a sibling block, NOT as a sixth
+  equation term.**
+  - Half the filed row is false: `onramp:119` and `:215` both render R6/R7 as a `Link` to
+    `/glossary#r6` **with a full inline gloss**, so "could not click" is wrong. The true half is
+    that `/onramp` step 1 routes readers to `/the-standard` to "learn the vocabulary" and
+    `/the-standard` never mentioned R6/R7 at all.
+  - **My first insertion point would have created a new seam while closing one.** I read
+    `the-standard:130-180` as a generic primitives block. It is not: it is the **term-by-term
+    read-aloud of the five-term equation** at `:93`, introduced as "Read aloud, term by term, the
+    way the standard itself reads it" and guarded at `:117-127`. R6/R7 is not a term of that
+    equation, so a sixth card would make the read-aloud stop matching the equation it reads aloud.
+    Relocated to a sibling block after `:192`, which says so explicitly: everything in the equation
+    describes what an entity *is*, R6/R7 describes what an entity *does*.
+  - Canon: `web4-standard/README.md:148` and `core-spec/r7-framework.md`. Gloss reuses
+    `onramp:119` verbatim rather than coining a fourth phrasing. Added `id="r6-r7"` so it is
+    anchor-linkable (the site still owes a general anchor pass).
+
+- **MEDIUM disposed - the `/day-in-web4` 100-to-350 arithmetic, and the shipped fix could not have
+  reached it.**
+  - This is a **read-it-and-still-filed-it recurrence**. The reconciling clause shipped
+    **2026-07-16**, thirteen days before this browse, at `InteractiveWireframes.tsx:370`, carrying
+    a guard comment naming the Jul-15 visitor who filed the identical friction. This visitor quoted
+    the **first half of that exact sentence** in the ATP HIGH and still filed the arithmetic
+    separately. [[visitor-read-it-and-still-filed-it]].
+  - **I aimed at the wrong surface and policy review caught it.** I proposed editing `:597`
+    ("You start with trust 0.50 and 100 ATP"). Two problems: `:597` sits inside a
+    **default-collapsed `<details>`** opened at `:496`, so many readers never see it; and the
+    page's load-bearing 100 is a **live ledger for the reader**, `:446`
+    `netAtp = 100 + totalAtpEarned - totalAtpSpent`, rendered as a running tracker at `:696` and a
+    summary tile at `:1311`. The visitor's "I started the day with 100 ATP" was **their own
+    balance**, which the scenario choices cannot grow much.
+  - **Why the generic fix fails**: `:370` says "an active member's working balance climbs well past
+    that", but the reader's own ledger visibly does *not* climb, because the ten scenarios are
+    almost entirely refund-channel events (post, reply, review, help a newcomer). The page tells
+    the reader they are the protagonist and then shows them a number their own day cannot reach.
+  - **Fixed at the boundary** (`:794`, the `#wireframes` section), where the reader stops being the
+    protagonist, and it **names the mechanism** rather than deflecting: `atp-economics:208` item 3,
+    refunds cap at what you spent, while *commissioned* work is priced by the commissioner and is
+    where net gain comes from. Links to `/atp-economics#earning-atp`.
+  - **Two deliberate constraints.** No computed figure: summing the choice data at `:60-210`, the
+    day tops out well under 200, but the exact ceiling depends on the choice partition and printing
+    a derived number on the page already filed for arithmetic would ship a new falsifiable claim.
+    And the clause stays on the **budget** side of the budget-vs-wealth line (guard at
+    `atp-economics:168-176`); accumulation-as-savings language is the seam that produced this
+    browse's HIGH 1.
+  - **First cross-page link to `#net-positive` was retargeted.** That id is on a *collapsed*
+    `<details>` ("Show me the math") whose open behaviour is driven by an on-page `onClick`, so an
+    inbound fragment lands a reader on a collapsed summary. Every other cross-page atp anchor
+    targets a `<section>`. Retargeted to `#earning-atp`, whose visible heading is literally "How Do
+    You Actually Earn ATP Back?".
+
+- **LOW disposed - `/what-could-go-wrong` risk 3, and the paragraph turned out to be wrong about
+  the death rule.**
+  - The filed suggestion ("say threshold, not ceiling") **was already shipped**: the heading at
+    `:229` reads "The trust **threshold** punishes the wrong people" and `:237` says "a 0.5 trust
+    threshold". The only "ceiling" on the page (`:512`) is the hardware cap, used correctly.
+    [[visitor-deferred-low-check-shipped-first]] - so only the residual was taken: the page carries
+    **two different 0.5s** 270 lines apart, and the software-only ceiling happens to also be 0.50.
+    One parenthetical at the first of the two now distinguishes them.
+  - **The real find, flagged by policy review**: `:238-239` said *"Fall below it and you're out,
+    your agent 'dies' and must be reborn with reduced resources."* Wrong in **both** directions
+    against the canonical rule (`first-contact:156`): crossing below is recoverable and only
+    *staying* below is fatal, **and** trust death is *permanent* rather than followed by rebirth
+    (rebirth follows **energy** death). Same flat-mechanism-absolute class #494 closed this morning,
+    sitting two lines from the clause I was opening.
+  - **Correcting it needed a compensating clause or it would have laundered a risk into a
+    mitigation.** The accurate rule is gentler in the common case, and this is a page whose job is
+    to state risks honestly. The compensating clause is an entailment, not new canon: a scoring
+    **false positive is by construction a sustained condition**, so "only staying below is fatal"
+    protects the wrongly-scored user *least*. Added to "Why it's real".
+  - **The mitigation paragraph had the same category error** and would have contradicted the
+    repaired risk two paragraphs later: `:254` said "rebirth means you get another chance, you're
+    not permanently banned, just set back." Replaced with the recourse that actually applies to
+    false positives, grounded at `karma-consequences:857-876`: an appeal path and cool-down period
+    are required, no single rating decides your standing, penalties recover instead of branding you.
+  - Says nothing about which side of 0.50 the line falls on; guard comment added matching `:568`.
+    Mitigation (4) in risk 8 ("the ceiling caps high-trust roles, not basic participation") is
+    untouched, so [[hardware-required-seam]] is not deepened.
+
+- **LOW disposed - `/atp-economics:259` ADP plural, and my first rationale for rejecting it was
+  wrong.** I proposed rejecting the whole row on the grounds that every singular is a grammatical
+  singular that #388 permits. True at `:236`, `:529` and `:1648` ("an ADP (Allocation Discharge
+  Packet)"). **Not true at `:259`**, a naming clause that is plural for ATP and singular for ADP
+  *in the same sentence*: "**Allocation Transfer Packets** is what ATP *is* ... and the same holds
+  for ADP (... lends its name to the **Allocation Discharge Packet**)". That is exactly the
+  asymmetry the visitor spotted. One word changed; the three grammatical singulars stay.
+
+### NOT taken (unchanged from the 09:00 handoff, plus reasons)
+- **0.5-endpoint MEDIUM**: blocked by [[trust-05-endpoint-canon-conflict]]. The visitor asks the
+  page to say which side the endpoint falls on, which is the escalation itself.
+- **`/why-web4` 6-min estimate vs ~56 FAQ questions**: the split option is IA-scoped; the label
+  option is a one-word edit on a page nothing else in this pass touches. Deferred, not rejected.
+- **`/running-now` "4 machines, whose?"**: needs a deployment fact from `../hestia`. Getting it
+  wrong prints a false user-scale claim on the page the visitor praised most for scrupulousness.
+- **`/tldr` opening disambiguation placement**: [[onramp-word-overload-identity]] gate **FIRED
+  Jul-23**, escalated to an operator branding call. Do not reword a fourth time.
+- **`atp-economics` "Is ATP a currency or an energy budget? Both"**: candidate escalation for
+  `docs/WEB4-CANON-QUESTIONS.md`, carried over from 09:00. Canon itself is split
+  (`atp-adp-cycle.md:5` "native currency" vs `inter-society-protocol.md:191` "unit of account"),
+  so the site cannot resolve it by rewording. Still open.
 
 ## Jul-29 visitor pass (Jul-29 09:00 session) - all three HIGHs: the flat-absolutes class
 Log: `visitor/logs/2026-07-29.md` (fresh, browse ran 05:00, session fired 09:02). Zero open PRs.

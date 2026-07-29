@@ -268,8 +268,26 @@ export default function FirstContactPage() {
                     Do NOT write "at or above 0.50" - whether exactly-0.50 counts as alive/full-access
                     is an unresolved canon call (> vs >= in the aliveness engines); don't assert the
                     endpoint either way. */}
-                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> - her <em>raw</em> reputation, on a <span className="text-gray-200">0.00-1.00</span> scale. Starts neutral at <span className="text-gray-200">0.50</span>. Above 0.50: full access. Below 0.50: features get restricted until she rebuilds it - and if she <em>stays</em> below, that same line becomes fatal - a sustained slide, not one dip.</li>
+                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> - her <em>raw</em> reputation, on a <span className="text-gray-200">0.00-1.00</span> scale. One number, but a rolled-up one: it is her three trust dimensions weighted for the role she is acting in (<Link href="/trust-tensor" className="text-purple-300 hover:underline">Trust Tensors</Link>). Starts neutral at <span className="text-gray-200">0.50</span>. Above 0.50: full access. Below 0.50: features get restricted until she rebuilds it - and if she <em>stays</em> below, that same line becomes fatal - a sustained slide, not one dip.</li>
               </ul>
+              {/* Jul-29 visitor MEDIUM: "raw" appeared exactly once in the JS-rendered page, here,
+                  undefined. The raw-vs-effective sentence lived only in the <noscript> block above
+                  (L156), so a reader with JavaScript on never saw it: "Raw as opposed to what?
+                  Nothing on the page answers that."
+                  Deliberately a collapsed aside, NOT a third clause in the bullet. This box's own
+                  promise is "only two numbers move" and it already carries two vocab-wall guards
+                  (May-15 LOW above, Jul-13 MEDIUM below). The role-weighted roll-up went inline
+                  because that is the filed friction; raw-vs-effective is the secondary half.
+                  Sentence is the canonical one from L156 - keep it in sync if either moves. */}
+              <details className="mt-3">
+                <summary className="text-xs text-gray-500 cursor-pointer hover:text-gray-400 select-none">Why &ldquo;raw&rdquo;? <span className="text-gray-600">(optional)</span></summary>
+                <p className="text-xs text-gray-400 mt-2 leading-relaxed">
+                  Raw trust is the score before the coherence multiplier is applied. The number
+                  compared against 0.50 is <strong className="text-gray-300">raw</strong> trust, not
+                  effective trust (raw &times; CI&sup2;) - effective trust sets Alice&apos;s karma
+                  tier, not whether she lives.
+                </p>
+              </details>
             </div>
 
             {/* Jul-13 visitor MEDIUM (recurring acronym density, structural pass): this map
