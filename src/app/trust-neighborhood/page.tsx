@@ -585,7 +585,8 @@ export default function MarkovRelevancyHorizonPage() {
               </div>
             </div>
             <p className="text-center text-sm text-gray-400 mt-4">
-              Trust decays <strong className="text-cyan-300">0.7× per hop</strong>. At 3 hops, only 34% of trust remains.
+              Trust decays <strong className="text-cyan-300">0.7× per hop</strong>, and it compounds: 0.70,
+              then 0.70 × 0.7 = 0.49, then 0.49 × 0.7 = 0.34. At 3 hops, only 34% of trust remains.
               Beyond that, trust <em>weight</em> falls to zero. This natural boundary keeps the network manageable and private.
             </p>
             {/* 2026-06-07 visitor LOW + Unanswered Q3/Q4: page "read both ways" on invisible-vs-untrusted, and the

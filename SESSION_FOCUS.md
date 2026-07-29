@@ -2,7 +2,113 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-28*
+*Last updated: 2026-07-29*
+
+## Jul-28 visitor pass, fourth sitting (Jul-29 03:00 session) - the two remaining LOWs
+Log: `visitor/logs/2026-07-28.md`. Fired at 03:01, **before** the 05:00 browse, so no fresh log;
+the Jul-28 log was the freshest and its HIGHs and unblocked MEDIUMs were already cleared by
+#490/#491/#492. Zero open PRs. Took the two actionable LOWs, one of which was the 21:00 session's
+explicit named handoff. Both are now closed.
+
+- **LOW disposed - the MRH decay-rate question is resolved, and the #339 guard is STALE, not violated.**
+  - The 21:00 session deferred this *for investigation* with a precondition: *"resolve which rate
+    `/trust-neighborhood` should carry, then add the parenthetical."* The blocker was that memory's
+    #339 guard forbids saying "0.7x per hop" on the MRH page while `trust-neighborhood:588` says
+    exactly that.
+  - **Answer: keep 0.7.** The guard existed because the **MRH Explorer** rendered
+    `0.85^n x 0.9^(n-1)` (0.85/0.65/0.50/0.38) on the same page as a 0.7 claim. That widget was
+    retired in the Jul-15 rebuild. Verified independently by policy review: no `MRHExplorer` in
+    `src/`, no surviving formula, no `/mrh` route. There is no on-page contradiction left for the
+    guard to protect against, and `:588` already shipped the phrasing, so this edit does not newly
+    violate anything.
+  - **Ground truth checked in `../web4`, and it does not license either rate as universal**:
+    `web4-standard/GLOSSARY.md:204` gives *"Default: 0.9 per hop"* and
+    `mrh_rdf_implementation.py:53` sets `decay_rate: float = 0.9`, while the 0.85 is an **edge
+    probability** (`:591`), composed at `:59` as `probability * decay_rate**(distance-1)` - which is
+    precisely the retired Explorer's formula. So the site's 0.7 is a 4-Life teaching calibration and
+    `trust-neighborhood:629` already says so in those words, with a link to
+    `/why-web4#faq-mrh-messaging`. **None of these `../web4` numbers went onto the page**; putting
+    them there would be a new canon assertion. Investigation only.
+  - **The shipped edit is a PLACEMENT fix, not an absence fix.** Compounding was already stated at
+    `:640` (*"Every hop costs 30% of the remaining trust"*, where "remaining" encodes it) and
+    `:644-648`, but those sit two cards below the ring where the visitor actually read
+    0.70/0.49/0.34. Added the arithmetic to the ring caption at `:588` using only numbers already
+    rendered at `:568/:573/:578`: *"and it compounds: 0.70, then 0.70 x 0.7 = 0.49, then
+    0.49 x 0.7 = 0.34."* No rate claim, `:629` untouched, no third phrasing of the idea.
+  - **Memory `mrh-decay` entry should be updated**: the "never say 0.7/hop on the MRH page" guard is
+    superseded. The two-rates fact is still true; the prohibition is not.
+
+- **LOW disposed - `/onramp` now holds one piece order, and it is ascending scale.**
+  - Visitor: *"The four pieces are ordered Hub->Hestia->Hardbound on the landing page and
+    hestia->Hub->hardbound on /onramp"* (they flipped back twice), suggesting
+    personal->community->enterprise everywhere.
+  - **My fix direction was backwards and I nearly shipped it.** I counted order-bearing surfaces,
+    got 7 hub-first to 3 personal-first with all three of the minority on one page, and proposed
+    normalizing `/onramp` to hub-first. Policy review rejected that: two of those three blocks are
+    not listings. `onramp:98-127` is a **scale ladder** (uppercase Personal / Community / Enterprise
+    under the heading "One substrate, three scales"); reordering it yields Community / Personal /
+    Enterprise, which reads as an error, not a different order. `onramp:207-248` is ordered **by
+    friction**, stated on the page at `:215` ("The lowest-friction, hands-on entry").
+  - **Verifying that, I found two more order-bearing lines neither of us had counted**, both
+    hub-first, in "Dependency direction": `:136` renders the literal set `{ hub, hestia, hardbound }`
+    and `:162` says "The hub, hestia, and hardbound each take these as dependencies". So `/onramp`
+    was **4-vs-3 against itself**, not 2-vs-3.
+  - **The right test is not surface count but which blocks have an articulable REASON for their
+    order.** Exactly two do, and both are personal-first. Every hub-first block was a bare listing,
+    and `:136` is set notation, which asserts order-independence and so cannot be evidence of a
+    hub-first principle. I then checked the landing page for a competing principle: it has none
+    (`page.tsx:20-55` renders the same three scale words in non-scale order). **The 7-vs-3 majority
+    was measuring inherited arbitrariness, and the visitor's own suggested direction was right.**
+  - **Shipped**: the four arbitrary listings reordered to ascending scale (`:9` header comment,
+    `:18` metadata description, the intro prose, `:136`, `:162`) plus the maturity list. The
+    diagram, "Pick your scale" and the CTA were already ascending and were left alone.
+  - **The `:232` forward-reference risk disappeared with the reversal** ("Members connect to it
+    using hestia" keeps its back-reference because hestia still precedes the hub). But the reversal
+    **inherited the same shape** at the maturity list: hestia's entry read *"with hub integration
+    end to end"*, which naming hestia first would expose. Repaired by **relocating** that claim to
+    the hub's own bullet, where hestia is a back-reference. One claim, no duplication.
+  - **Ordering label added to the intro, and deliberately narrow.** *"That is the order this page
+    uses throughout: the same four pieces every time, smallest scale first."* The filed symptom is
+    **set-identity doubt** (*"to check I was looking at the same four things"*), not order
+    preference, so the label answers that and stops. It must **not** be extended to characterize how
+    other pages order the pieces: that would advertise a divergence to readers who never noticed it
+    and would go stale when the IA pass lands. Guard-commented in place and at the top of the file.
+  - **No second cue on the CTA**, checked and ruled unnecessary: `:328-351` already carries its
+    scale words inline ("hestia (personal)", "the hub (community)", "hardbound (enterprise)"), so a
+    reader arriving there cold sees a self-labelling ladder. A second cue would restate one page's
+    claim on two surfaces of that same page ([[canonical-sentence-only-collapses-scattered-claims]]).
+  - **Also absorbed: the untreated journey friction at `2026-07-28.md:37`** (*"I am one person. I
+    assumed hestia. The page didn't confirm that for me; I inferred it from the word 'Personal.'"*).
+    Review flagged that a hub-first reorder would have **re-armed** this by demoting the solo
+    reader's own case ([[two-fixes-in-one-pass-can-fight]]). The reversal keeps hestia first, and
+    "Pick your scale" now confirms it outright rather than leaving it to be inferred: *"If you are
+    one person, or one agent on your own machine, this is your scale."*
+
+### Named residual (the visitor's literal suggestion, NOT done)
+**Site-wide normalization to ascending scale remains open.** `/onramp` is now internally consistent
+but diverges from five other surfaces, so the cross-page difference is **labelled, not eliminated**.
+Doing it properly means `src/lib/navigation.ts`, `src/app/page.tsx`, `/tldr`, `/running-now`,
+`/manifest`. This is **IA-scoped, not cosmetic**: `navigation.ts` drives `Breadcrumbs` and
+`SiteSearch`, so reordering it moves those too. Deliberately not bundled into a LOW fix.
+Per [[visitor-dont-pre-empt-retest-contingency]], the correct trigger is a **fresher** log
+re-filing the divergence; the label is a cheap probe, not a dodge.
+
+### Deliberate non-actions (Jul-29, 03:00)
+- **Three MEDIUMs still escalation-blocked**, unchanged from the 21:00 session: ATP-zero death
+  naming (`/how-it-works`'s second trigger brushes standing Q1); T3 weights
+  ([[t3-weights-canon-conflict]]); `/hub` 4-lab.io/fleet joinability (ground truth is only in the
+  **private** `dev-hub`, [[dev-hub-is-private-never-link]]).
+- **Footer "onramp" collision LOW: not touched** (gate fired Jul-23, operator branding call).
+- **ATP/ADP plural LOW: still correctly dismissed.** Policy review re-verified independently this
+  session (`terms.ts:53/64`, `glossary:160/161/364/412`, `web4-explainer:81` all plural; no singular
+  "Allocation Discharge Packet" exists in `src/`). **Third session to check this. Stop rediscovering it.**
+- **`/onramp` maturity list is incomplete, and this was NOT authorized this pass.** `:299` promises
+  *"Here is where each piece stands"* and then lists **three** pieces, omitting the core standard
+  that the same page's intro counts as one of the four. Material exists (`running-now:78` badges it
+  Spec + Reference). Unfiled by any visitor. Review raised it and explicitly withheld authorization.
+  Related and worth folding into the same pass: badging in that list is uneven (only the hub carries
+  a `MaturityBadge`; hestia and hardbound are prose-only), and reordering moved the one badge down a
+  row. Candidate for a future session.
 
 ## Jul-28 visitor pass, third sitting (Jul-28 21:00 session) - the first five minutes
 Log: `visitor/logs/2026-07-28.md`. Third sitting on one log. The 09:00 session cleared the three

@@ -6,16 +6,39 @@ import NewcomerOrientationBanner from "@/components/NewcomerOrientationBanner";
 
 /**
  * The Web4 onramp - how the four pieces compose. The core standard is the
- * substrate; the hub, hestia, and hardbound are three ways to run it at three
- * scales (community, personal, enterprise). Grounded in the public repos.
+ * substrate; hestia, the hub, and hardbound are three ways to run it at three
+ * scales (personal, community, enterprise). Grounded in the public repos.
  * The "four-piece" phrasing is a synthesizing lens, not a repo term, but it
  * faithfully reflects how the pieces depend on and compose with one another.
+ *
+ * ORDERING (Jul-29, from the 2026-07-28 visitor LOW "pick one order and hold it
+ * everywhere"): this page lists the three scales ASCENDING - hestia (personal),
+ * the hub (community), hardbound (enterprise) - and says so in the intro below.
+ *
+ * The obvious-looking fix was the opposite one. Six other surfaces
+ * (src/lib/navigation.ts, the landing page, /tldr, /running-now, /manifest, and
+ * this page's own intro) list the hub before hestia, so a surface count says
+ * normalize to hub-first. Do not re-flip it on that count. The count measures
+ * inherited arbitrariness, not a principle: of this page's seven order-bearing
+ * blocks, exactly two have an articulable REASON for their order, and both are
+ * personal-first - the diagram is ordered by scale under a "three scales"
+ * heading, and "Pick your scale" is ordered by friction (it calls hestia "the
+ * lowest-friction, hands-on entry"). Every hub-first block was a bare listing,
+ * and one of them was set notation, which asserts order-independence. The
+ * landing page has no competing principle either: it renders the same three
+ * scale words in non-scale order.
+ *
+ * So the arbitrary listings were reordered to match the two principled blocks,
+ * which is also the direction the visitor asked for. Retire the intro's
+ * ordering sentence if and when the other five surfaces are normalized to
+ * ascending scale too (see SESSION_FOCUS.md; that pass is IA-scoped because
+ * navigation.ts drives Breadcrumbs and SiteSearch).
  */
 
 export const metadata = {
   title: "The Web4 onramp - how the four pieces compose | 4-Life",
   description:
-    "One substrate, three scales. The core standard is what you build on; the hub (community), hestia (personal/agent), and hardbound (enterprise) are three ways to run it. Here is the dependency order, the adoption order, and the real in-code seams that connect them.",
+    "One substrate, three scales. The core standard is what you build on; hestia (personal/agent), the hub (community), and hardbound (enterprise) are three ways to run it. Here is the dependency order, the adoption order, and the real in-code seams that connect them.",
 };
 
 export default function OnrampPage() {
@@ -49,19 +72,28 @@ export default function OnrampPage() {
             core standard
           </Link>
           . The other three are the ways you actually run it, at three scales of
-          the same posture: the{" "}
-          <Link href="/hub" className="text-purple-300 underline hover:text-purple-200">
-            hub
-          </Link>{" "}
-          for a <strong>community</strong>,{" "}
+          the same posture:{" "}
           <Link href="/hestia" className="text-emerald-400 underline hover:text-emerald-300">
             hestia
           </Link>{" "}
-          for a <strong>person or agent</strong>, and{" "}
+          for a <strong>person or agent</strong>, the{" "}
+          <Link href="/hub" className="text-purple-300 underline hover:text-purple-200">
+            hub
+          </Link>{" "}
+          for a <strong>community</strong>, and{" "}
           <Link href="/hardbound" className="text-sky-400 underline hover:text-sky-300">
             hardbound
           </Link>{" "}
           for an <strong>enterprise</strong>.
+        </p>
+        {/* Ordering label - 2026-07-28 visitor LOW: "I flipped back twice to check I was
+            looking at the same four things." The filed symptom is set-identity doubt, not
+            order preference, so answer that. Do NOT extend this to characterize how other
+            pages order the pieces. Retire it when the rest of the site is normalized to
+            ascending scale; see the ORDERING note at the top of this file. */}
+        <p className="text-base text-gray-400 leading-relaxed mb-4">
+          That is the order this page uses throughout: the same four pieces every
+          time, smallest scale first.
         </p>
         <p className="text-lg text-gray-400 leading-relaxed">
           They aren&apos;t four separate products that happen to look alike. They
@@ -133,7 +165,7 @@ export default function OnrampPage() {
         <h2 className="text-2xl font-bold text-gray-100 mb-3">Dependency direction (build order)</h2>
         <p className="text-base text-gray-400 leading-relaxed mb-4">
           The order things get built is simple: first the core standard, then{" "}
-          <span className="text-gray-200">{"{ hub, hestia, hardbound }"}</span>.
+          <span className="text-gray-200">{"{ hestia, hub, hardbound }"}</span>.
           All three products are downstream consumers of the same canonical
           libraries, and none of them reimplement the primitives.
         </p>
@@ -159,7 +191,7 @@ export default function OnrampPage() {
           </div>
         </div>
         <p className="text-base text-gray-400 leading-relaxed mt-4">
-          The hub, hestia, and hardbound each take these as dependencies. That is
+          hestia, the hub, and hardbound each take these as dependencies. That is
           why they stay consistent with each other: they are all speaking the same
           canonical primitives rather than three private copies that drift.
         </p>
@@ -211,8 +243,16 @@ export default function OnrampPage() {
                     hestia
                   </Link>
                 </h4>
+                {/* 2026-07-28 visitor journey note: "I am one person. I assumed hestia. The
+                    page didn't confirm that for me; I inferred it from the word 'Personal.'"
+                    Confirm it outright rather than leaving the solo reader to infer. This is
+                    also why the block is listed first: ordered by friction, not alphabetically. */}
                 <p className="text-sm text-gray-300 leading-relaxed">
-                  The lowest-friction, hands-on entry. One binary,{" "}
+                  <strong className="text-emerald-300">
+                    If you are one person, or one agent on your own machine, this is
+                    your scale.
+                  </strong>{" "}
+                  Start here. It is the lowest-friction, hands-on entry. One binary,{" "}
                   <code className="text-emerald-300">hestia init</code>, and your
                   agents get witnessed identity plus a vault. It is the Web4 posture
                   at personal scale: the same shape a hub has at society scale.
@@ -300,13 +340,14 @@ export default function OnrampPage() {
           </p>
           <ul className="space-y-2 text-sm text-gray-300 leading-relaxed">
             <li>
-              <strong className="text-purple-300">The hub</strong> is{" "}
-              <MaturityBadge tier="reference" /> MVP / pilot-ready.
-            </li>
-            <li>
               <strong className="text-emerald-300">hestia</strong> has its core
               (vault, policy engine, witness chain, delegation, plugin SDK) and app
-              built and working, with hub integration end to end.
+              built and working.
+            </li>
+            <li>
+              <strong className="text-purple-300">The hub</strong> is{" "}
+              <MaturityBadge tier="reference" /> MVP / pilot-ready, with hestia
+              integration working end to end.
             </li>
             <li>
               <strong className="text-sky-300">hardbound</strong> is a usable,
