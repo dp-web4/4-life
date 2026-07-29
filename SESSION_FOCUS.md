@@ -4,6 +4,108 @@
 
 *Last updated: 2026-07-28*
 
+## Jul-28 visitor pass, third sitting (Jul-28 21:00 session) - the first five minutes
+Log: `visitor/logs/2026-07-28.md`. Third sitting on one log. The 09:00 session cleared the three
+HIGHs, the 15:00 session the recourse pair. Took the two remaining MEDIUMs that are not blocked on
+an escalation, both on the beginner's entry path: the maturity badges on `/tldr` and the buried
+reading path. Same shape as the two HIGHs fixed earlier today (funnel gaps), one page earlier.
+
+- **MEDIUM disposed - the maturity ladder is now ranked where a beginner first meets it.**
+  - **My triage was wrong twice and policy review caught both.** I filed this as a fresh single
+    recurrence and as a pure wording gap. Neither held. `git log -S` puts the #487 gloss live on
+    **2026-07-24 22:04**, and it then **missed twice**: `2026-07-27.md:22` (*"Nothing on this page
+    tells me what 'Reference' means... I did not find the legend until `/running-now`"*), filed as a
+    LOW against `/tldr` at `:111` and never treated, then Jul-28 as a MEDIUM (*"with no gloss on
+    this page"*). Jul-25 read it and praised it; Jul-27 and Jul-28 looked straight at it and
+    reported it **absent**.
+  - So [[visitor-read-it-and-still-filed-it]] **splits**: its precondition is *demonstrably read*,
+    and that holds for Jul-25 and fails for the two recurrences. Two residuals, not one.
+    - **Prominence.** The gloss was `text-gray-400 text-sm` prose sitting above four bold bordered
+      cards, explaining badges that live *inside* the cards. It read as a caption. It now renders
+      the actual `MaturityBadge` chips in a bordered box, the **same form** as the
+      `/running-now#badge-key` legend visitors do find and call *"unambiguous"* and *"a good, honest
+      three-step ladder"*. Form, not word count, was doing the work.
+    - **Rank.** *"whether Running was better than Reference or just different... the site didn't
+      tell me here, I inferred it."* The gloss defined each badge and never ranked them.
+  - **Shipped on two surfaces, and that is not a violation of
+    [[canonical-sentence-only-collapses-scattered-claims]].** `tldr:114-116` carries a shipped
+    in-code invariant: its wording is *"a strict subset of the /running-now legend so the two
+    surfaces cannot drift apart."* This morning's precedent forbids birthing a claim on two surfaces
+    **with no established home**; here one surface is already *declared* derivative of the other, so
+    single-surface shipping would have violated the invariant either way. Review ruled explicitly:
+    canonical sentence lands on `/running-now#badge-key`, `/tldr` carries a **literal** subset.
+    Verified clause by clause after the edit.
+  - **Two overclaims the fix would otherwise have manufactured**, both caught by review, both with
+    their refutation on the same page:
+    - *"stages of one progression"* implies a piece occupies **one rung**. It does not:
+      `MaturityBadge.tsx` says "a concept can carry several" and `running-now:78` renders
+      **Spec + Reference** on the core standard three sections below the key. The sentence now
+      orders the **badges**, not the pieces, and states the multi-badge case with that example.
+    - A bare *"later is better"* licenses "hestia is more finished than hardbound". `running-now:238`
+      badges hardbound **Reference** and `:241` calls it *"a usable, actively-hardened layer"*;
+      `tldr:224` says the same. So: **how far a piece has travelled, not how good it is**, with
+      hardbound named. This also absorbs the untreated Jul-27 LOW at `2026-07-27.md:112` (*"Usable
+      and Reference felt like they were pulling in different directions"*).
+
+- **MEDIUM disposed - the reading path is routed to where beginners actually are.**
+  - Visitor: *"Found this last, which is funny, because it's the path I should have taken first."*
+    At minute 60 of a 60-minute session. Confirmed by grep: `/learn` had **three** inbound links,
+    all in places a beginner is not (`coherence-framework:966`, line 1086 of `/first-contact`,
+    `ConceptSequenceNav`). Landing page: none. Footer: none. [[promise-without-routing]] with the
+    routing missing outright rather than mis-keyed.
+  - **The path was already the IA and was never labelled as one.** `navigation.ts`'s `'Start Here'`
+    group is *exactly* the `/learn` beginner path in the same order. So `/learn` moved to the **head
+    of that group** as its map. Head, not tail: appending it last in a five-item list is the burial
+    being complained about. My scope note claimed the group only renders in the mobile drawer;
+    **wrong**, review caught it. `app/page.tsx:224` renders the whole tree as the landing page
+    "Explore" map, which is the surface that actually fixes this. Knock-on, accepted: `getCategory`
+    feeds `Breadcrumbs` and `SiteSearch`, so `/learn`'s breadcrumb and search category both move.
+  - **Titled "The Reading Path", not "Learn".** Review flagged a collision I had not seen: the
+    header CTA says "Start here" and goes to `/tldr`, the nav group is `'Start Here'`, and
+    `learn:121` titles its own path *"Start Here: What Is Web4?"*. Moving `/learn` in under the name
+    "Learn" would have made three "Start here" surfaces pointing at two destinations. The new title
+    says **map**, not step one, so the count stays at two.
+  - **`/tldr` hands off, above the grid, not inside it.** The visitor's own alternative suggestion.
+    `tldr:239` is a `sm:grid-cols-3` of three lateral jumps; a fourth card would have been a 3+1
+    orphan **and** would have re-created the exact burial one page earlier. The handoff is a
+    full-width primary block and the grid is demoted to *"Or jump straight to:"*.
+  - **Seam found on the destination and closed.** `/learn` leads with *"New here? Start with these
+    3... ~13 minutes total"* while its path below is five pages totalling 28 minutes. Naming 28
+    minutes on `/tldr` would have contradicted the first thing a reader sees on arrival. They are
+    **nested, not competing**: the three are steps 1-3. `/learn` now says so, so both numbers
+    survive and `/tldr` can quote either. Both numbers are sourced from `/learn`; changing one means
+    changing both files (guard-commented).
+
+### Deliberate non-actions (Jul-28, 21:00)
+- **Three MEDIUMs deferred, all blocked on something real, not on time.** ATP-zero death naming
+  (residual is `/how-it-works`'s *second* death trigger, trust below 0.5, which brushes standing
+  escalation Q1); T3 weights universal-or-per-role ([[t3-weights-canon-conflict]], standing);
+  `/hub` 4-lab.io/fleet joinability (the 09:00 session recorded that the canonical realness sentence
+  is **not** license to answer it, and the ground truth cannot be sourced from the **private**
+  `dev-hub`, per [[dev-hub-is-private-never-link]]).
+- **ATP/ADP plural LOW dismissed with no code change, verified not deferred.** Per **#388** the
+  expansion is plural on definitional surfaces and **grammatical singulars stay**.
+  `atp-economics:230` (*"an ADP (Allocation Discharge Packet)"*) and `:253` are grammatically
+  singular and correct as shipped. The residual is that the rule is invisible to a reader, which is
+  not worth a page edit. Logged so a fourth session does not rediscover it as novel.
+- **Footer "onramp" collision LOW: not touched.** Gate fired Jul-23; it is an operator branding call
+  ([[onramp-word-overload-identity]]).
+- **MRH compounding LOW: deferred for investigation, not skipped.** `trust-neighborhood:588` reads
+  *"Trust decays 0.7x per hop"*, and the #339 guard in memory forbids exactly that phrasing on the
+  MRH page (two decay rates exist; the MRH Explorer used `0.85^n x 0.9^(n-1)`). The Explorer was
+  retired in the Jul-15 rebuild, so the guard may be **stale rather than violated**. That needs
+  checking before anyone adds the visitor's requested parenthetical to a line that may itself be the
+  defect. **Next session: resolve which rate `/trust-neighborhood` should carry, then add the
+  parenthetical.**
+- **Prominence half of the badge fix is knowingly a bet.** Two readers reported an on-screen gloss
+  as absent; the treatment is a form change, not more words. If a **fresher** log still reports the
+  badges unglossed on `/tldr`, the next lever is making the badge itself the affordance, which on
+  `/tldr` means solving the nested-anchor problem first (the badges sit inside `<Link>` cards).
+  Do not re-diagnose this from scratch.
+- **`/learn`'s H1 is still "Learn Web4 Progressively"** while its nav title is now "The Reading
+  Path". Left deliberately (no restructure of a page the visitor called good); note it if a log
+  reports the mismatch.
+
 ## Jul-28 visitor pass, second sitting (Jul-28 15:00 session) - recourse
 Log: `visitor/logs/2026-07-28.md`. The 09:00 session cleared the three HIGHs and handed over the two
 recourse MEDIUMs as **one defect with two symptoms**. Took both. The visitor's Unanswered Question 6

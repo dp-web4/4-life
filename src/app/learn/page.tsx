@@ -476,8 +476,16 @@ export default function LearnJourney() {
             <h3 style={{ color: "var(--color-accent-bright)", margin: "0 0 0.5rem", fontSize: "1.05rem" }}>
               New here? Start with these 3
             </h3>
+            {/* Jul-28: this page now has inbound routing from /tldr and from the top of
+                the "Start Here" nav group, both of which name the five-page, ~28-minute
+                path. This box says "three short reads, ~13 minutes" and is the first thing
+                an arriving reader sees, so without the nesting stated it reads as a second,
+                contradictory answer to "how long is this?". It is not: these three ARE
+                steps 1-3 of the path below. Say so rather than dropping either number. */}
             <p style={{ color: "var(--color-gray-400)", fontSize: "0.85rem", marginBottom: "0.75rem" }}>
-              Web4 starts with three short reads. ~13 minutes total.
+              Web4 starts with three short reads. ~13 minutes total. These are the first
+              three steps of the five-page path below (about 28 minutes end to end), not a
+              different route.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
               {[
