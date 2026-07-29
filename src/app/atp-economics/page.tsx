@@ -256,7 +256,7 @@ export default function ATPEconomicsPage() {
             ATP <em>is</em> in Web4, which reuses that exact cycle for digital energy: you spend ATP to act, the ADP
             receipt records it, and quality work recharges your balance. So the biology is the name&rsquo;s origin
             story, not a rival definition - and the same holds for ADP (biology&rsquo;s adenosine{' '}
-            <em>di</em>phosphate lends its name to the <strong className="text-gray-100">Allocation Discharge Packet</strong>).
+            <em>di</em>phosphate lends its name to <strong className="text-gray-100">Allocation Discharge Packets</strong>).
             The metaphor is deliberate - energy that flows, not tokens that accumulate.
           </p>
         </details>
