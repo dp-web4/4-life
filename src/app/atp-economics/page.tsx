@@ -215,7 +215,13 @@ export default function ATPEconomicsPage() {
                 but not at the read point the visitor explicitly trusted as their summary. Same
                 pattern as #301 (ADP) and #309 (who-confirms) - complete the keepable summary in
                 place rather than ship the answer 1000+ lines deeper. */}
-            <li className="flex gap-2"><span className="text-sky-400 shrink-0">5.</span> It is <strong className="text-gray-100">not a cryptocurrency</strong> - no market, no price, no mining. Peer transfers exist, but 5% routes to a <strong className="text-gray-100">community redistribution pool</strong> (not destroyed, not a central authority), making collusion farming unprofitable. <a href="#atp-burn-fee" onClick={(e) => { e.preventDefault(); const el = document.getElementById('atp-burn-fee'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const parent = el.closest('details'); if (parent) parent.open = true; } }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(what the pool funds)</a></li>
+            {/* Jul-29 visitor HIGH: "no market, no price" was flat here too, and this box is
+                the summary a 5-min reader keeps. Same fix and same guardrails as the
+                "Is ATP like Bitcoin?" box below (see the long note there): scope the denial
+                to the OUTSIDE market, since in-society pricing is licensed by
+                inter-society-protocol.md:199 and is what our own Market wireframe shows.
+                Kept to one clause; the worked reconciliation lives at the Bitcoin box. */}
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">5.</span> It is <strong className="text-gray-100">not a cryptocurrency</strong> - no outside market, no price against money, no mining (goods <em>inside</em> a society can still be priced in ATP). Peer transfers exist, but 5% routes to a <strong className="text-gray-100">community redistribution pool</strong> (not destroyed, not a central authority), making collusion farming unprofitable. <a href="#atp-burn-fee" onClick={(e) => { e.preventDefault(); const el = document.getElementById('atp-burn-fee'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const parent = el.closest('details'); if (parent) parent.open = true; } }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(what the pool funds)</a></li>
             {/* June-22 visitor LOW: ADP why-first RECURRED at this summary-list item - the
                 FIRST place a linear reader meets ADP. #394 (L1490 box) and #396 (L429 box) both
                 reordered to why-first but never touched this earlier read point. Reorder here too:
@@ -261,14 +267,44 @@ export default function ATPEconomicsPage() {
             Is ATP like Bitcoin? (short answer: no)
           </p>
           <ul className="text-sm text-gray-300 space-y-1.5 leading-relaxed list-disc list-outside ml-5">
+            {/* Jul-29 visitor HIGH (their #1, and the Honest Assessment's named pattern:
+                "one page making a clean, quotable, absolute claim, and another page quietly
+                not honoring it"). This bullet used to read "No market, no price, no
+                speculation" flat. The site's OWN Market wireframe
+                (InteractiveWireframes.tsx:300+, rendered on /day-in-web4) shows a named
+                seller, a 350-ATP price, a buyer and an escrow, so the absolute was falsified
+                by our own example and the only reconciliation lived on /day-in-web4 - the
+                page that creates the problem, not the page that issues the denial.
+                Ground truth: web4-standard/core-spec/inter-society-protocol.md:191 says
+                "ATP is a unit of account, not a medium of exchange with intrinsic value",
+                and :199 says societies "that wish to embed market mechanisms in their ATP
+                policies (price discovery, auctions, etc.) MAY do so". So in-society pricing
+                is LICENSED and the wireframe is right; the flat prose was the defect.
+                The denial is scoped to the EXTERNAL claim, which is the honest and
+                still-true half: no outside market, no rate against money, no cash-out.
+                GUARDRAILS, do not undo:
+                - Canon is SPLIT on the currency word itself (atp-adp-cycle.md:5 calls ATP a
+                  society's "native currency"). Do NOT re-litigate "currency" here; L282
+                  ("This is not a currency"), glossary:378 and navigation.ts:157 stay as-is.
+                - Do NOT re-assert a flat "no exchange rate": inter-society §4.4 has societies
+                  negotiating ATP_A:ATP_B rates. The denial is a rate against MONEY.
+                - The "buy, sell, or speculate" clause in item 1 above (L176) stays verbatim
+                  per its own guardrail; nothing here reopens it. "You can't buy or sell ATP"
+                  remains true and is untouched: what changed is that buying a camera PRICED
+                  in ATP is a different act from buying the ATP itself. */}
             <li>
               <strong className="text-gray-100">It&apos;s a usage budget, not a tradeable asset.</strong>{' '}
-              No market, no price, no speculation. You can&apos;t buy or sell ATP.
+              No outside market, no price against money, no speculation, and no way to cash out.
+              You can&apos;t buy ATP or sell it. Inside a single society goods can still be{' '}
+              <em>priced</em> in ATP, which is why the used-camera listing in{' '}
+              <Link href="/day-in-web4" className="text-sky-400 hover:text-sky-300 underline">A Day in Web4</Link>{' '}
+              can ask 350: ATP is that society&apos;s unit of account, the way a company prices
+              internal work in engineering hours. What has no market is the ATP itself.
             </li>
             <li>
               <strong className="text-gray-100">You can transfer small amounts to others</strong>{' '}
-              (a one-way gift or reallocation, not a sale: the system moves the ATP in one direction and
-              prices nothing, so there is no buyer, no seller, and no exchange rate) -{' '}
+              (a one-way gift or reallocation, not a sale: the transfer mechanism itself moves ATP
+              in one direction and prices nothing, so a bare transfer has no buyer and no seller) -{' '}
               but <strong className="text-amber-300">5% is skimmed on every transfer</strong>{' '}
               (that 5 routes to a community redistribution pool, not destroyed and not to any central authority - {' '}
               <a
