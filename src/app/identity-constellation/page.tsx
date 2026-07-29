@@ -290,6 +290,65 @@ export default function IdentityConstellationPage() {
                 You need a &ldquo;quorum&rdquo; (e.g., 2 out of 3 devices) to prove you&apos;re still you.
                 No central authority needed.
               </p>
+              {/* Jul-29 visitor HIGH (their #2) + the LOW "what is the quorum when you have
+                  exactly 2 and lose 1?". The visitor arrived here FROM /what-could-go-wrong
+                  specifically looking for the one-device case and found silence: this page
+                  described only the quorum path and never said what happens below it.
+                  Silence sitting next to a confident "e.g. 2 out of 3" reads as a third,
+                  contradicting answer, which is how they came away with "three pages give
+                  three different answers".
+                  This is an OMISSION fix, not a reconciliation: the complete tiered answer
+                  already ships at lct-explainer:1026-1040, so this propagates it to the page
+                  that omits it rather than asserting anything new
+                  ([[canonical-sentence-only-collapses-scattered-claims]] - the claim is not
+                  absent from the site, only from here). lct-explainer stays the canonical
+                  home and is linked as such.
+                  The 2-device row is grounded in canon, not invented:
+                  web4-standard/core-spec/multi-device-lct-binding.md:989-990
+                  (`default_recovery_quorum`) returns `device_count` for `device_count <= 2`,
+                  i.e. ALL devices are required, so 2 minus 1 fails quorum and falls through
+                  to the vouching path.
+                  GUARDRAILS: do NOT import canon's 0.4 software-only ceiling (the site's 0.50
+                  calibration stands), and keep the "Device quorum (2 of 3)" table row below
+                  consistent with this list. */}
+              <div className="mt-3 bg-gray-900/50 border border-gray-700/60 rounded-lg p-3">
+                <p className="text-xs font-semibold text-gray-300 mb-2">
+                  And if you do not have a quorum left?
+                </p>
+                <ul className="text-xs text-gray-400 space-y-1.5 list-disc list-outside ml-4">
+                  <li>
+                    <strong className="text-gray-300">Three or more devices, lose one:</strong>{' '}
+                    the remaining devices meet quorum and authorize a replacement. This is the case above.
+                  </li>
+                  <li>
+                    <strong className="text-gray-300">Exactly two devices, lose one:</strong>{' '}
+                    with only two, the quorum is <em>both</em> of them, so one survivor is not enough
+                    on its own and you fall to the vouching path below.
+                  </li>
+                  <li>
+                    <strong className="text-amber-300">One hardware device, lose it:</strong>{' '}
+                    recovery still works, but slowly, through community vouching: trusted witnesses
+                    confirm you are you, typically over 3 to 7 days. The delay is deliberate, since a
+                    fast recovery path is also a fast impersonation path.
+                  </li>
+                  <li>
+                    <strong className="text-gray-400">Software only, lose it:</strong>{' '}
+                    there is no hardware witness to vouch for you, so there is nothing to recover
+                    <em> to</em>. You start over from zero with a fresh identity. This is the one tier
+                    where device loss is not recoverable.
+                  </li>
+                </ul>
+                <p className="text-xs text-gray-500 mt-2">
+                  Full walkthrough on the{' '}
+                  <Link href="/lct-explainer#recovery" className="text-sky-400 hover:text-sky-300 underline">
+                    LCT explainer
+                  </Link>, which is where these paths are specified. If every device is destroyed{' '}
+                  <em>and</em> no witnesses are reachable, recovery is an{' '}
+                  <Link href="/what-could-go-wrong" className="text-sky-400 hover:text-sky-300 underline">
+                    unsolved problem
+                  </Link>, and the site says so rather than pretending otherwise.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -378,7 +437,10 @@ export default function IdentityConstellationPage() {
               <tr className="border-b border-gray-700">
                 <td className="p-3 font-medium text-gray-300">Recovery</td>
                 <td className="p-3 text-gray-400">&ldquo;Forgot password&rdquo; email</td>
-                <td className="p-3 text-gray-400">Device quorum (2 of 3)</td>
+                {/* Jul-29 visitor HIGH: kept consistent with the tier list above, which now
+                    states the below-quorum fallback. A bare "2 of 3" here was part of what
+                    made the page look like it had only one answer. */}
+                <td className="p-3 text-gray-400">Device quorum (2 of 3), else witness vouching</td>
               </tr>
               <tr className="border-b border-gray-700">
                 <td className="p-3 font-medium text-gray-300">Privacy</td>

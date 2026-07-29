@@ -354,13 +354,29 @@ export default function WhatCouldGoWrongPage() {
               devices can still attest. Witnesses (trusted contacts who can vouch for you) provide
               an additional recovery path. The design explicitly plans for device loss.
             </p>
+            {/* Jul-29 visitor HIGH (their #2): the visitor quoted this line as a flat
+                "Recovery from total device loss is an unsolved problem" and read it as
+                contradicting /lct-explainer (3-7 day vouching) and /identity-constellation
+                (quorum). The qualifier "(all devices destroyed, no witnesses available)" was
+                already here and does scope it correctly to the residual case, but as a
+                mid-sentence parenthetical it was easy to read past, and the paragraph above
+                promises "the design explicitly plans for device loss" without naming any tier.
+                So the fix is legibility, not a new claim: lead with what IS answered, then name
+                the residual as residual. Numbers are propagated from lct-explainer:1026-1040,
+                not coined here. */}
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
-              <strong>Honest assessment:</strong> Recovery from total device loss (all devices
-              destroyed, no witnesses available) is an unsolved problem. The system makes this
-              scenario unlikely through redundancy, but it can&apos;t make it impossible.
-              This is an active area of research. See the{" "}
-              <Link href="/lct-explainer" className="text-sky-400 hover:underline">LCT Explainer</Link>{" "}
-              for the full device loss FAQ.
+              <strong>Honest assessment:</strong> Ordinary device loss does have answers, and which
+              one applies depends on what you have left: a quorum of your remaining devices, or, if
+              you are down to your last hardware device, community vouching over roughly 3 to 7 days.
+              The software-only tier is the exception and is covered under{" "}
+              <Link href="#risk-accessibility" className="text-sky-400 hover:underline">Accessibility</Link>{" "}
+              below. What has no answer is the residual case: every device destroyed <em>and</em> no
+              witnesses reachable at all. That one is genuinely unsolved and an active area of
+              research. Redundancy makes it unlikely; it can&apos;t make it impossible. See the{" "}
+              <Link href="/lct-explainer#recovery" className="text-sky-400 hover:underline">LCT Explainer</Link>{" "}
+              for the full device loss FAQ, or{" "}
+              <Link href="/identity-constellation" className="text-sky-400 hover:underline">identity constellations</Link>{" "}
+              for the recovery tiers side by side.
             </p>
           </div>
         </div>
@@ -523,10 +539,54 @@ export default function WhatCouldGoWrongPage() {
               <strong> (4) Software-only behavior</strong> still <em>accrues</em> reputation
               normally - the ceiling caps high-trust roles, not basic participation.
             </p>
+            {/* Jul-29 visitor HIGH (their #3), landed on the clause that was already wrong.
+                "Recovery from device loss is also slower at the lower ceiling" UNDERSTATES the
+                software-only case: lct-explainer:1040 says that with no hardware witness there
+                is "nothing to recover to". Corrected here rather than appended, and this is the
+                equity section the visitor named as the place they'd expect it.
+                The second paragraph states a consequence the site had never said out loud. The
+                visitor: the tier recommended to people who cannot afford hardware is the tier
+                where the central guarantee does not hold. That is ENTAILED by claims already
+                shipped, and nothing on the site disagrees ([[entailment-vs-canon-call]]):
+                the promise is at tldr:94 / first-contact:295 / learn:316 /
+                karma-consequences:706+787, and your-internet:142 names the enforcement
+                mechanism ("Creating a new identity means starting from scratch with a new
+                device"), i.e. it is anchored in hardware. Canon agrees the anchor is required:
+                multi-device-lct-binding.md:155 ("Software anchors ... Cannot be sole anchor for
+                recovery quorum").
+                GUARDRAILS, do not undo:
+                - Scoped to UNRESETTABILITY / anti-Sybil only. It must NOT say or imply that
+                  secure hardware is required to PARTICIPATE: that is the standing
+                  [[hardware-required-seam]] escalation (why-web4's two affordability FAQs vs
+                  lct-explainer), and asserting either side on a third page deepens it. Mitigation
+                  (4) above already holds the eligibility side ("the ceiling caps high-trust
+                  roles, not basic participation") and is deliberately left intact. Neither
+                  why-web4 FAQ was touched.
+                - Phrasing is anchored to the hedge that already ships at lct-explainer:2196
+                  ("a Sybil resistance strategy, not a Sybil prevention guarantee") rather than
+                  coining a third framing for the same idea.
+                - Says nothing about which side of 0.50 the threshold falls on
+                  ([[trust-05-endpoint-canon-conflict]]), which is live right next door. */}
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
-              <strong>Honest assessment:</strong> The mitigations don&apos;t fully close the gap.
-              Recovery from device loss is also slower at the lower ceiling, which compounds the
-              asymmetry. Designing a hardware-anchored trust system that does <em>not</em> structurally
+              <strong>Honest assessment:</strong> The mitigations don&apos;t fully close the gap,
+              and device loss is worse here than &ldquo;slower&rdquo; would suggest. A hardware-bound
+              user who loses their only device still recovers, through community vouching, typically
+              over 3 to 7 days. A software-only user has no hardware witness to vouch for them, so
+              there is nothing to recover to: they start over from zero with a fresh identity.
+            </p>
+            <p className="text-amber-400/80 text-sm">
+              That carries a consequence worth stating plainly, because it cuts against one of this
+              project&apos;s headline promises. Web4 says bad behavior follows you and there are no
+              fresh starts, and the mechanism enforcing that is hardware: minting a clean-slate
+              identity means starting over on a new device you had to obtain. At the software-only
+              tier there is no such anchor, so the very gap that makes an honest user&apos;s loss
+              unrecoverable also makes a dishonest user&apos;s record sheddable. This is why what
+              Web4 has is a Sybil <em>resistance</em> strategy rather than a Sybil <em>prevention</em>{' '}
+              guarantee. It is a genuine hole, it falls hardest on the people with the least hardware,
+              and naming it here is not the same as having closed it.
+            </p>
+            <p className="text-amber-400/80 text-sm">
+              Designing a hardware-anchored trust system that does <em>not</em> structurally
               disadvantage users with disabilities or limited hardware access is an unsolved problem,
               not a solved one. The current design picks a position on the trade-off (security floor
               over universal ceiling); a more accessibility-forward design would weight the trade-off

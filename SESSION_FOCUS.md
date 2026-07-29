@@ -4,6 +4,94 @@
 
 *Last updated: 2026-07-29*
 
+## Jul-29 visitor pass (Jul-29 09:00 session) - all three HIGHs: the flat-absolutes class
+Log: `visitor/logs/2026-07-29.md` (fresh, browse ran 05:00, session fired 09:02). Zero open PRs.
+Understanding "good", would return and recommend. The visitor's Honest Assessment named the defect
+**class** directly, and it is worth quoting because all three HIGHs are instances of it:
+*"one page making a clean, quotable, absolute claim, and another page quietly not honoring it ...
+This site's honesty muscle is very strong on maturity and comparatively weak on mechanism. The
+maturity claims are all hedged beautifully. The mechanism claims are stated flat, and the flat
+ones are the ones that broke."* Per [[visitor-numbers-integrity-class-signal]] that licenses
+falsifiable fixes, and each HIGH below is a flat mechanism absolute meeting its real exception.
+
+- **HIGH disposed - `/atp-economics` "no market, no price" was falsified by our own wireframe.**
+  - The page said, flatly, "no market, no price" (`:218`, `:266`) and that peer transfer "prices
+    nothing, so there is **no buyer, no seller, and no exchange rate**" (`:271`). The site's own
+    Market wireframe (`InteractiveWireframes.tsx:300+`, rendered on `/day-in-web4`) has a named
+    seller, a 350-ATP price, a buyer and an escrow. The only reconciliation lived on
+    `/day-in-web4`, the page that *creates* the problem, not the page that issues the denial.
+  - **Ground truth licenses the wireframe, so the PROSE was the defect, not the demo.**
+    `web4-standard/core-spec/inter-society-protocol.md:191`: *"ATP is a unit of account, not a
+    medium of exchange with intrinsic value."* `:199`: societies *"that wish to embed market
+    mechanisms in their ATP policies (price discovery, auctions, etc.) MAY do so."* Policy review
+    independently confirmed §4 is general and not cross-society-scoped (§4.4 is separately headed
+    "Implication for Cross-Society Exchange"), so in-society pricing is licensed.
+  - **My "the guard comments are stale" reasoning was an overreach and policy review killed it.**
+    The comments at `:174-175`/`:207` scope the **buy/sell/speculate** clause specifically, which
+    this fix preserves verbatim. The edit targets different claims. No staleness declaration was
+    needed; per [[opposite-intents-in-code-comments]] the recorded scope was narrowed instead.
+  - **The site already held this position, which I had not checked**: `glossary:378` reads *"ATP is
+    a society's unit of account, not a currency"* (also `navigation.ts:157`). So this was
+    **propagation, not a new assertion**, which materially lowered the risk.
+  - **Canon is SPLIT on the currency word** (`atp-adp-cycle.md:5` calls ATP a society's "native
+    currency"), so the fix is scoped to the **external** claim only: no outside market, no price
+    against money, no cash-out, no speculation. `atp-economics:282` ("This is not a currency"),
+    `glossary:378`, `navigation.ts:157` and the wireframe guardrail are all untouched. "No exchange
+    rate" was **not** re-asserted, because inter-society §4.4 has societies negotiating ATP_A:ATP_B.
+  - **The distinction that does the work**: "You can't buy or sell ATP" stays true and unchanged.
+    Buying a camera *priced* in ATP is a different act from buying the ATP itself.
+
+- **HIGH disposed - the "three answers to device loss" was one OMISSION, not a contradiction.**
+  - The visitor quoted `/what-could-go-wrong` as "Recovery from total device loss is an unsolved
+    problem". The actual line was already scoped: *"(all devices destroyed, no witnesses
+    available)"*. With the qualifier restored it is the residual case and does **not** contradict
+    `lct-explainer:1026-1040`, which carries the complete tiered answer. **Verify before acting
+    caught this**; treating it as a three-way reconciliation would have been wrong work.
+  - The real defect: `identity-constellation:287-292` described only the quorum path and said
+    nothing about one device or two. Silence next to a confident "e.g. 2 out of 3" is what
+    produced the impression of a third, contradicting answer. Fixed by propagating the tier list.
+  - **The 2-device LOW turned out to be answerable from canon**, which I had assumed it was not:
+    `multi-device-lct-binding.md:989-990` (`default_recovery_quorum`) returns `device_count` for
+    `device_count <= 2`, so with two devices the quorum is *both*, and losing one drops you to the
+    vouching path. Absorbed into the same list. Canon's 0.4 software-only ceiling was **not**
+    imported; the site's 0.50 calibration stands.
+  - `/what-could-go-wrong`'s residual line was rewritten to lead with what *is* answered and name
+    the residual as residual. Legibility fix, no new claim.
+
+- **HIGH disposed - the software-only fresh-start hole is now stated out loud.**
+  - `lct-explainer:1027`: a software-only user who loses their device "starts over from zero with a
+    fresh identity." The headline promise ("bad behavior follows you", "no fresh starts") is at
+    `tldr:94`, `first-contact:295`, `learn:316`, `karma-consequences:706/787`, and
+    `your-internet:142` names the **enforcement mechanism**: "Creating a new identity means starting
+    from scratch with **a new device**". The guarantee is anchored in hardware; the software-only
+    tier has no anchor. Canon agrees: `multi-device-lct-binding.md:155` "Software anchors ... Cannot
+    be sole anchor for recovery quorum". Nothing on the site disagrees, so per
+    [[entailment-vs-canon-call]] this is authorized prose, not an escalation.
+  - **Landed on a sentence that was already wrong**, per policy review, rather than appended:
+    `what-could-go-wrong:~527` said recovery is "also slower at the lower ceiling", which
+    *understates* it (`lct-explainer:1040`: there is "nothing to recover *to*").
+  - **Scoped to unresettability / anti-Sybil ONLY, deliberately.** It says nothing about whether
+    hardware is required to *participate*: that is the standing [[hardware-required-seam]]
+    escalation and a third page asserting either side would deepen it. Mitigation (4) on that same
+    card ("the ceiling caps high-trust roles, not basic participation") was left intact and neither
+    `why-web4` affordability FAQ was touched. Phrasing anchored to the hedge already shipping at
+    `lct-explainer:2196` ("a Sybil resistance strategy, not a Sybil prevention guarantee") rather
+    than coining a third framing.
+
+- **NOT taken, blocked by a standing escalation.** The MEDIUM at friction row 4 (software-only
+  ceiling 0.50 equals the survival line 0.50) asks the page to say *"which side the endpoint falls
+  on"*. That is exactly [[trust-05-endpoint-canon-conflict]] (`>` vs `>=` at 0.5), whose standing
+  rule is **never assert the endpoint in prose**. Cannot be answered as the visitor asks. The
+  HIGH-3 prose was written to sit beside this without drifting into it.
+
+- **Deferred MEDIUMs/LOWs for the next sitting** (none re-litigated, all fresh this browse):
+  first-contact "raw"/single-number vs `/trust-tensor`'s opening correction (their suggested
+  one-clause fix looks right); `/day-in-web4` 100 to 350 arithmetic; R6/R7 listed in `/onramp`
+  step 1 but absent from `/the-standard` and page-less; `/why-web4` 6-min estimate vs ~56 FAQ
+  questions; `/running-now` "4 machines" whose-machines; ADP singular on `/atp-economics` vs plural
+  in glossary; `/tldr` opening disambiguation placement; "ceiling" vs "threshold" wording on
+  `/what-could-go-wrong` risk 3.
+
 ## Jul-28 visitor pass, fourth sitting (Jul-29 03:00 session) - the two remaining LOWs
 Log: `visitor/logs/2026-07-28.md`. Fired at 03:01, **before** the 05:00 browse, so no fresh log;
 the Jul-28 log was the freshest and its HIGHs and unblocked MEDIUMs were already cleared by
