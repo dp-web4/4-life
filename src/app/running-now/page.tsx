@@ -68,6 +68,28 @@ export default function RunningNowPage() {
               <span>deployed and operational today. Live instances actually exist and are in day-to-day use.</span>
             </div>
           </div>
+          {/* Jul-27 LOW + Jul-28 MEDIUM, both filed against /tldr: the visitor met a
+              Reference badge and a Running badge and could not tell "whether Running was
+              better than Reference or just different. I guessed Running > Reference and
+              later found out I was right, but the site didn't tell me here, I inferred
+              it." The three rows above define each badge and never rank them. This is the
+              CANONICAL statement of the rank; /tldr carries a strict subset of it (that
+              page's gloss is declared derivative of this legend, so the rank has to land
+              here first or the two surfaces drift). Two things it must not say: that a
+              piece occupies exactly one rung (the core standard directly below carries
+              Spec AND Reference), and that a later badge means a better piece (hardbound
+              below is Reference and is called usable and actively-hardened). Both of those
+              misreads would be manufactured by the fix itself, three sections above the
+              evidence against them. */}
+          <p className="mt-4 text-sm text-gray-400 leading-relaxed">
+            The three run in that order, measured by distance from written down to in daily
+            use. A piece can carry more than one: the core standard below is both{" "}
+            <MaturityBadge tier="spec" /> and <MaturityBadge tier="reference" />, because
+            its specification is written and the primitives underneath it are built. And the
+            badge says how far a piece has travelled, not how good it is. Hardbound below is
+            badged <MaturityBadge tier="reference" /> and is a usable, actively hardened
+            tier.
+          </p>
         </div>
       </section>
 

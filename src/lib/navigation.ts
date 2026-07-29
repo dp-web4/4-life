@@ -21,6 +21,32 @@ export interface NavigationTree {
 // Master navigation structure
 export const navigationTree: NavigationTree = {
   'Start Here': [
+    // Jul-28 visitor MEDIUM: "Found this last, which is funny, because it's the path I
+    // should have taken first... 'Learn' is buried under 'Going Deeper,' which is the last
+    // place a beginner looks." It was: the only inbound links to /learn were from
+    // /coherence-framework, line 1086 of /first-contact, and ConceptSequenceNav. Neither
+    // the landing page nor the footer linked it at all.
+    //
+    // The five entries below this one ARE the /learn beginner path, in the same order.
+    // The path was already the IA; it was just never labelled as one. So /learn belongs at
+    // the head of this group as its map, not appended to the end of it (appending it last
+    // in a five-item list would reproduce the burial being complained about).
+    //
+    // Titled "The Reading Path" rather than "Learn" or anything containing "Start here" on
+    // purpose. The header CTA already says "Start here" and goes to /tldr, and this group
+    // is already headed "Start Here"; a third one pointing at a second destination would
+    // multiply the collision instead of resolving it. This title says map, not step one.
+    //
+    // Group membership is load-bearing beyond the mobile drawer: getCategory() feeds
+    // Breadcrumbs and SiteSearch, and app/page.tsx renders the whole tree as the landing
+    // page "Explore" map, which is where a beginner will now actually meet this.
+    {
+      title: 'The Reading Path',
+      href: '/learn',
+      desc: 'The recommended order to read this site in, with time estimates: five pages, about 28 minutes.',
+      keywords: ['learn', 'path', 'guide', 'sequence', 'curriculum', 'reading', 'order', 'start'],
+      related: ['/tldr', '/first-contact', '/onramp'],
+    },
     {
       title: 'Web4 in 2 Minutes',
       href: '/tldr',
@@ -205,13 +231,7 @@ export const navigationTree: NavigationTree = {
       keywords: ['manifest', 'manifesto', 'stance', 'principles', 'vision', 'values'],
       related: ['/why-web4', '/the-standard'],
     },
-    {
-      title: 'Learn',
-      href: '/learn',
-      desc: 'Suggested reading paths through the site, from newcomer to hands-on.',
-      keywords: ['learn', 'path', 'guide', 'sequence', 'curriculum', 'reading'],
-      related: ['/first-contact', '/onramp', '/glossary'],
-    },
+    // '/learn' moved to 'Start Here' (Jul-28 visitor MEDIUM). Rationale at that entry.
   ],
 };
 
