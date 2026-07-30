@@ -94,8 +94,10 @@ export default function HubPage() {
         </p>
       </section>
 
-      {/* Living example: by reference to the canonical public presence (4-lab), not duplicated here */}
-      <section className="max-w-4xl mx-auto mt-12">
+      {/* Living example: by reference to the canonical public presence (4-lab), not duplicated here.
+          id added Jul-30 so /hestia's connect-hub box can point here instead of restating the fleet
+          (this page owns that claim). First id on this file; no prior inbound /hub# links to break. */}
+      <section id="we-run-one" className="max-w-4xl mx-auto mt-12 scroll-mt-20">
         <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
           <h2 className="text-xl font-bold text-emerald-300 mb-2">This isn&apos;t hypothetical: we run one</h2>
           <p className="text-base text-gray-300 leading-relaxed">
