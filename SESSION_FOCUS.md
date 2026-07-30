@@ -2,8 +2,71 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-29 (21:00 session)*
+*Last updated: 2026-07-30 (03:00 session)*
 
+## Jul-29 visitor pass, fourth sitting (Jul-30 03:00 session) - the false inference the friction table never filed
+Log: `visitor/logs/2026-07-29.md` (same browse, fourth and **final** sitting: this session fired
+03:01, two hours before the 05:00 browse, so no Jul-30 log could exist). One open PR (#496, the
+third sitting, REVIEW_REQUIRED, no overlap with this work). **All 13 friction rows were already
+disposed** (#494 three HIGHs + one LOW, #495 four rows, #496 two rows, one MEDIUM blocked by
+`trust-05-endpoint-canon-conflict`, one LOW behind the fired `onramp-word-overload` gate). So this
+sitting worked the log's **Unanswered Questions**, which per
+[[visitor-numbers-integrity-class-signal]] license falsifiable defects the table does not name.
+**Next session: triage the fresh log, not a fifth pass on this one.**
+
+- **Unanswered Question 8 disposed - `/hestia` let the reader conclude the one Running piece has
+  never operated connected, and that is false.**
+  - The visitor asked "if trust comes from being witnessed by others, what does the one running
+    piece actually demonstrate?" and in the journey answered themselves: *"Hestia is the piece that
+    runs, and it runs alone ... the runnable thing is the one part of the system where the core
+    mechanism cannot yet operate."* Wrong in two independent ways, both already grounded.
+  - **The site predicted this failure mode in a code comment and implemented the guard on only one
+    of the two surfaces.** `how-it-works:83-92` says *"'You can join' is load-bearing - /hub says
+    'This isn't hypothetical: we run one' (the lab fleet is real but not joinable), so a bare 'no
+    public network' would re-create the contradiction one page over."* `/how-it-works` honors it
+    (headline: "No network you can **join** yet"). `/hestia`, which is where this visitor read the
+    caveat, did not.
+  - **My diagnosis was overstated and policy review corrected it.** I claimed the connect-hub box
+    lacked joinability scope. It does not: `:407-423` says the URL is one *you or your group stand
+    up*, online in 10 to 30 minutes. The real gap is narrower and the guard comment now records the
+    accurate version: the box never said the witnessing **operates solo**, and never said the
+    connected path had been **exercised at all**.
+  - **Policy review also supplied the strongest rebuttal, which I had missed, and it carries zero
+    maturity exposure.** The core mechanism already operates solo: an agent acting under your
+    delegation is checked by your policy gate and written into your witness chain, and its T3/V3
+    move with the outcomes (`hestia/README.md:43/:49/:74`, half-stated already at `hestia:115-117`
+    and `:159-164`). "Witnessed by others" does not require a hub; the owner and the delegate
+    witness each other. That became the load-bearing clause instead of the connected-path claim.
+  - **The four-word rebuttal that was already there got the specifics.** `:435` said only "hub
+    integration works end to end", ~30 lines below the caveat that raises the question. It now names
+    what that covers, per README's status table (Hub connection, Member-to-hub channel, Paired
+    member-to-member channels, Constellation, all **Working**): join a hub, an encrypted
+    member-to-hub channel, device-constellation proof in the handshake, and sealed member-to-member
+    messages the hub relays without being able to read them. **Member-to-member was absent
+    site-wide** before this ([[canonical-sentence-only-collapses-scattered-claims]]: one surface now,
+    propagate later).
+  - **Claims exercised capability, never deployment.** Policy review flagged a seam I had not:
+    `running-now:116` says "No production deployment yet" and `:373-374` calls the hub pilot-ready
+    rather than deployed. Guard comment forbids upgrading this to "deployed" or "a hub is up".
+    README's own wording was **not** copied verbatim (it carries em dashes and `↔` glyphs).
+  - **The canonical sentence is byte-identical and zero bytes changed.** Three surfaces
+    (`hestia:404`, `how-it-works:99`, `day-in-web4:515`), one occurrence each, verified after. The
+    new paragraph **points at** it with a three-word quote rather than paraphrasing, so it does not
+    become a fourth variant, and it does not collide with #496's `/running-now` wording either.
+  - The fleet is referenced, not restated: `/hub` owns that claim, so `/hub:98` got
+    `id="we-run-one"` (first `id` on that file, no inbound `/hub#` links to break) and `/hestia` got
+    `id="honest-status"`. The general anchor pass is still owed.
+
+### NOT taken this sitting
+- **The Honest Assessment's convergence ask** ("give the software-only tier one honest paragraph in
+  one place", at the `/why-web4` affordability read point, which the visitor called "the one place I
+  felt the site was not being as straight with me"). It needs the affordability FAQ to presuppose a
+  participating software-only tier, which is one side of [[hardware-required-seam]]: `:1391` states
+  the barrier conditionally, `:2216` states flatly that "Web4 identity requires hardware with secure
+  elements", and `:686-694` carries an in-code EDIT SCOPE WARNING naming those exact two FAQs. #494
+  left both alone for the same reason. **This is now the second visitor to hit the seam from the
+  equity side, and it is still not in `docs/WEB4-CANON-QUESTIONS.md`** (Q1-Q7 do not cover it).
+  Filing it is the next move, and it is a web4-side question, not a site reword.
 ## Jul-29 visitor pass, third sitting (Jul-29 21:00 session) - the last two rows, and the escalation stops being carried
 Log: `visitor/logs/2026-07-29.md` (same browse, third sitting). Zero open PRs. Of the 13 friction
 rows, #494 closed the three HIGHs and one LOW, #495 closed four more, one MEDIUM is blocked by a

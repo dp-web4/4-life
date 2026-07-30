@@ -421,18 +421,66 @@ export default function HestiaPage() {
               The hub source and organizer quickstart →
             </a>
           </p>
+          {/* Jul-29 visitor Unanswered Question 8. They read the honest-status sentence above and
+              concluded "Hestia is the piece that runs, and it runs alone ... the runnable thing is
+              the one part of the system where the core mechanism cannot yet operate." That inference
+              is false and the box did not close it: the paragraphs above say solo is "not a crippled
+              hestia" and tell you how to stand a hub up, but nothing here says the witnessing
+              actually operates solo, or that the connected path has been exercised at all. Both
+              halves are already on the site (the solo half at the "Trust that evolves" and "For AI
+              agents" cards further up this page, the fleet at /hub#we-run-one), so this is
+              propagation to the read point, not a new claim. Two hard limits: the canonical sentence
+              in the paragraph above is byte-identical on /how-it-works and /day-in-web4 (see the
+              guard at how-it-works.tsx L83-92) and is NOT paraphrased here, it is pointed at; and
+              nothing here says a hub is deployed or running continuously, which /running-now
+              contradicts. */}
+          <p className="text-sm text-gray-300 leading-relaxed mt-3">
+            <strong className="text-gray-200">Solo is not the mechanism switched off.</strong>{" "}
+            The &ldquo;no public network&rdquo; caveat above is about reach, not capability. Web4
+            trust comes from being witnessed, and a
+            solo hestia is already witnessing: every action an agent takes under your delegation is
+            checked by your policy gate and written into your witness chain, and its{" "}
+            <Link href="/trust-tensor" className="text-sky-300 underline hover:text-sky-200">
+              T3/V3
+            </Link>{" "}
+            move with the outcomes. What a hub adds is other people, and that path is not untried
+            either: hub integration has been exercised end to end, down to sealed messages between
+            two members that the hub relays without being able to read them (
+            <Link href="#honest-status" className="text-sky-300 underline hover:text-sky-200">
+              honest status
+            </Link>
+            ). The fleet that builds hestia holds roles and witnesses its own work in the open (
+            <Link href="/hub#we-run-one" className="text-sky-300 underline hover:text-sky-200">
+              we run one
+            </Link>
+            ).
+          </p>
         </div>
       </section>
 
       {/* Honest status */}
-      <section className="max-w-4xl mx-auto mt-12">
+      <section id="honest-status" className="max-w-4xl mx-auto mt-12 scroll-mt-20">
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
           <h2 className="text-lg font-bold text-amber-300 mb-2">Honest status: Phase 2, version 0.0.3</h2>
+          {/* Jul-29 visitor Unanswered Question 8: "Hestia runs but there is no public network open
+              to outside members yet. If trust comes from being witnessed by others, what does the one
+              running piece actually demonstrate?" They concluded "the runnable thing is the one part
+              of the system where the core mechanism cannot yet operate." This paragraph tracks
+              hestia/README.md L7 and was the page's ONLY rebuttal to that, four words long ("works
+              end to end") and ~30 lines below the caveat that prompted the question. Named what the
+              phrase covers, per README's status table (Hub connection, Member-to-hub channel, Paired
+              member-to-member channels, Constellation: all Working). Deliberately claims exercised
+              capability and NOT deployment: /running-now says "No production deployment yet" and the
+              hub is pilot-ready rather than deployed. Do not upgrade this to "deployed" or "a hub is
+              up". The reach caveat stays where it is, verbatim, in the connect-hub box above. */}
           <p className="text-sm text-gray-300 leading-relaxed mb-3">
             Hestia is <MaturityBadge tier="running" /> in active development, at{" "}
             <strong>Phase 2 (connected presence)</strong>. The core (vault, policy
             engine, witness chain, delegation, plugin SDK) and the cross-platform app
-            are built and working, and hub integration works end to end.
+            are built and working, and hub integration works end to end: a hestia joins
+            a hub, opens an encrypted member-to-hub channel, proves its device
+            constellation in the handshake, and exchanges sealed member-to-member
+            messages that the hub relays without being able to read them.
           </p>
           <p className="text-sm text-gray-300 leading-relaxed mb-3">
             What ships today at <strong>version 0.0.3</strong>: an MCP server (8
