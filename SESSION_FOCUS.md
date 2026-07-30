@@ -2,7 +2,83 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-30 (03:00 session)*
+*Last updated: 2026-07-30 (09:00 session)*
+
+## Jul-30 visitor pass (Jul-30 09:00 session) - the numbers, and the tier the numbers exclude
+Log: `visitor/logs/2026-07-30.md` (fresh 05:08 browse; Jul-29 is exhausted after four sittings).
+Understanding "good", would return yes, would recommend **maybe**. 5 HIGH / 7 MEDIUM / 5 LOW.
+
+The Honest Assessment names the class outright: *"the prose is trustworthy and the numbers are
+not"*, and *"/how-it-works ... is where the drift concentrates"*. Per
+`visitor-numbers-integrity-class-signal` that licenses falsifiable numeric defects, which is what
+this sitting took.
+
+### Fixed (3 HIGHs)
+- **T3 per-action deltas** (`how-it-works`). Showed Talent +0.15 / Training +0.20 / Temperament
+  +0.10 (and -0.05 / -0.25 / -0.20) against the canonical rule printed further down the same
+  page: `0.02 x (quality - 0.5)`, max magnitude **0.01**. Wrong twice: magnitude, and **ordering**
+  (canon scales talent x1.0 / training x0.8 / temperament x0.6, so talent is always the largest
+  mover; these had training largest). Recomputed at the page's own 0.85 worked step, so this
+  block, the details fold and `/trust-tensor` now agree digit for digit. Quality is now shown so
+  a reader can run it. **The two cascade instances** (`+0.02/+0.02` and the vicious twin) carried
+  the same defect and were fixed in the same pass; the trailing "different actions affect
+  different dimensions" line went too, since canon's scaling is uniform and the sentence taught a
+  rule canon does not have.
+  - **Deliberately NOT touched, different quantities**: the `+0.15` at ~L896 is the Novice's
+    *cumulative* 0.50 to 0.65 climb across a dozen+ actions (correct), and ~L1344 "Training drops
+    by 0.15" is a SAL law-oracle **prescribed penalty**, a different mechanism from the
+    incremental rule. A retest visitor greps the same string; both are correct as they stand.
+- **ATP channel labels** (`how-it-works`, `atp-economics`). **Third** visitor on this (Jun-11
+  browse B, Jun-12 browse A, now Jul-30). Both prior fixes landed in **prose**, and the prose is
+  good, and this visitor read it and filed anyway: `visitor-read-it-and-still-filed-it`. The
+  residual was the **illustrations**. Rows titled with unsolicited self-initiated work ("High-
+  quality post", "Meaningful contribution", "High-value creation") carried uncapped
+  payment-channel numbers, so the labels filed them in the capped channel and the numbers filed
+  them in the uncapped one. Their words: *"The concept is fine. The illustrations of it are
+  wrong."* Labels now name the channel **in the example**, and the capped self-initiated case is
+  shown beside the commissioned ones, which answers their Unanswered Q3 without opening anything.
+  - Worst instance, and the one the first scope missed: the **virtuous cascade** named the
+    recharge channel explicitly ("Recipients confirm value") and then returned 40 on a spend of
+    15, which that channel's own cap (`atp-economics` L775) forbids. Reframed as commissioned.
+  - **Fix direction is labels, NOT numbers**: `atp-economics` L788 cites the simulator's literal
+    `(-20 cost, +50 reward)` pair and `how-it-works` L862 leans on the same split, so
+    re-arithmetic would cascade into two pages. This page had already assigned those rows to the
+    payment channel in prose; relabelling **completes** that, it does not reverse it.
+- **`/lct-explainer` L1278** said "software-only at 0.50 is comparable to email today, **full
+  access**, but a low ceiling" - which is precisely what the standing guard at L258-259 **in the
+  same file** forbids. Two words removed, nothing else. Deleting a prohibited assertion is not
+  asserting its negation. Committed separately (`a24536e`) as a flagged deviation from the policy
+  review, so the reviewer track can drop it independently.
+
+### Routed, not answered (1 HIGH)
+- **`/hestia`** is the only **Running** piece and the recommended hands-on entry, its TPM binding
+  is deferred, so a fresh `hestia init` lands software-only, and the page never mentioned a
+  ceiling. It already **names** the tier ("a software LCT held on your machine"); what it lacked
+  was a route to what that tier costs. Added **one link** to
+  `/lct-explainer#software-only-survival` (the strictly-below callout that answers "am I dead on
+  arrival?"). Routing only, deliberately: a ceiling number or its consequence here lands a
+  position on **both** standing escalations. A link asserts neither side.
+
+### Escalated (1 HIGH) - `docs/WEB4-CANON-QUESTIONS.md` **Q8**
+Software-only conformance plus the ceiling-equals-threshold entailment. The visitor's requested
+sentence ("the ceiling equals the access line, so this tier never clears it") is the **negation**
+of the Q1 endpoint, which is what got #444 rejected three times. Q8 also **corrects Q1's live
+evidence**: Q1 was filed on "prose implies `>=`, all three executable predicates say `>`", but
+those predicates lived in `aliveness/page.tsx`, **retired in the Jul-15 rebuild**. The surviving
+predicates (`first-contact` L533/L546, `lct-explainer` L940) use **`>=`**, and `>` now survives
+mainly as displayed prose (`how-it-works` L329, L1038). **The polarity has flipped since filing.**
+Q1 is not closed by this; the endpoint is still unruled and the site is still asserting it
+accidentally, only now from the other side.
+
+### NOT taken this sitting
+- **All 7 MEDIUMs and 5 LOWs.** Next sitting. Note that MEDIUM "aliveness excludes newborns" is
+  **blocked** the same way as H1 (it is the `>` at `how-it-works` L329/L1038), and MEDIUM "died
+  with 145 ATP" is **already filed** as ledger **Q5** - do not re-fix either.
+- The `/why-web4` mechanism-2 MEDIUM ("identity is tied to your device's security chip", no
+  software tier mentioned) is the **hardware-required seam**: it needs the two `#faq-affordability`
+  / `#faq-tpm-affordability` FAQs merged first, which needs the Q8 ruling. Do not land a clause.
+- `how-it-works` L1204 "Value creators earn more than they spend" left alone: `atp-economics`
+  L786 explicitly blesses that sentence as the payment channel.
 
 ## Jul-29 visitor pass, fourth sitting (Jul-30 03:00 session) - the false inference the friction table never filed
 Log: `visitor/logs/2026-07-29.md` (same browse, fourth and **final** sitting: this session fired
