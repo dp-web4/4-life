@@ -1274,9 +1274,20 @@ export default function LCTExplainerPage() {
                 in those settings; a 0.90 ceiling lets earned trust translate into proportionally larger influence.
               </li>
             </ul>
+            {/* Jul-30 visitor HIGH, found while triaging: this line said "full access, but a low
+                ceiling", which is precisely what the standing guard ~250 lines up (L258-259) in
+                THIS FILE forbids: "do NOT reword into anything that says a reader sitting *at* 0.50
+                is alive, safe, or has full access (standing canon escalation on > vs >=)". The
+                guard was honored where it was written and violated here. Same shape as #497.
+                Removing a prohibited assertion is not asserting its negation - it restores the
+                silence the policy asks for ("state strictly-below and stop"), so this does NOT
+                answer Q1 either way. The sentence's actual job is the 0.50-vs-0.90 contrast, which
+                is untouched. Filed as evidence under Q8 in docs/WEB4-CANON-QUESTIONS.md, because a
+                surface asserting the >= side inside the file that bans it is the strongest signal
+                yet that Q1 needs a ruling rather than more guard comments. */}
             <p className="text-xs text-gray-500 mt-3 italic border-t border-gray-800 pt-2">
-              Plain framing: software-only at 0.50 is comparable to email today - full access, but a low
-              ceiling on what your reputation can carry. Hardware-bound at 0.90 is the difference between
+              Plain framing: software-only at 0.50 is comparable to email today - ubiquitous and easy
+              to stand up, with a low ceiling on what your reputation can carry. Hardware-bound at 0.90 is the difference between
               &ldquo;I&rsquo;m here&rdquo; and &ldquo;the network can verifiably stake reputation on me.&rdquo;
             </p>
           </div>
