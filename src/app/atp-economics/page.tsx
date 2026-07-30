@@ -27,12 +27,24 @@ export default function ATPEconomicsPage() {
     highValue: 0,
   });
 
-  // Action costs and rewards
+  // Action costs and rewards.
+  // Jul-30 visitor HIGH (3rd visitor on this, after Jun-11 browse B and Jun-12 browse A): the two
+  // net-positive rows were labelled "Meaningful contribution" and "High-value creation" - both
+  // unsolicited self-initiated work, which this page's own rule (L773) puts in the CAPPED recharge
+  // channel: "you can't profit on a single action, only recover its cost". The numbers, however,
+  // are payment-channel numbers, so the widget read as a live counterexample to the prose right
+  // beside it. Both prior fixes landed in PROSE (summary item 3, the #net-positive fold); the
+  // LABELS were never touched, which is why it keeps recurring.
+  // Fix direction is labels, NOT numbers: L788 cites the literal "(-20 cost, +50 reward)" pair and
+  // how-it-works L862 leans on the same channel split, so re-arithmetic would cascade. This page
+  // had ALREADY assigned these rows to the payment channel in prose at L786-790; relabelling
+  // completes that, it does not reverse it. lowQuality (10 -> 5) and spam (5 -> 0) are both within
+  // the recharge cap, so they stay self-initiated.
   const actions = {
     spam: { cost: 5, reward: 0, label: "Send spam message" },
-    lowQuality: { cost: 10, reward: 5, label: "Low-quality post" },
-    meaningful: { cost: 15, reward: 25, label: "Meaningful contribution" },
-    highValue: { cost: 20, reward: 50, label: "High-value creation" },
+    lowQuality: { cost: 10, reward: 5, label: "Low-quality post (your own)" },
+    meaningful: { cost: 15, reward: 25, label: "Commissioned task, solid work" },
+    highValue: { cost: 20, reward: 50, label: "Commissioned task, high value" },
   };
 
   const performAction = (

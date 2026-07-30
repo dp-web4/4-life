@@ -282,7 +282,27 @@ export default function HestiaPage() {
             hardbound
           </Link>
           , the enterprise tier, and that hardware binding is not yet validated on real
-          devices.
+          devices.{" "}
+          {/* Jul-30 visitor HIGH: "/hestia is the only piece tagged Running and the recommended
+              hands-on entry, and its hardware binding is deferred, i.e. software-only. /hestia
+              never mentions a trust ceiling," so "the friendliest on-ramp silently drops the
+              reader into the most constrained tier" (their Unanswered Q2). This page already
+              NAMES the tier ("a software LCT held on your machine"); what it lacked was any
+              route to what that tier costs. Routing only, deliberately: stating the ceiling or
+              its consequence here would land a position on BOTH standing escalations
+              ([[hardware-required-seam]] - this would be the third disagreeing surface; and
+              [[trust-05-endpoint-canon-conflict]] - the consequence the visitor wants stated is
+              the negation of the > vs >= endpoint, which is exactly what got #444 rejected three
+              times). A link asserts neither side. Target L1151 is the strictly-below callout
+              that answers the "am I dead on arrival?" question directly. */}
+          What anchoring in software alone costs you, in trust terms, is{" "}
+          <Link
+            href="/lct-explainer#software-only-survival"
+            className="text-emerald-400 underline hover:text-emerald-300"
+          >
+            spelled out on the LCT page
+          </Link>
+          . Worth reading before you decide this is your long-term identity.
         </p>
       </section>
 
