@@ -138,7 +138,20 @@ export default function LearnJourney() {
             "Spam, fake accounts, reputation that doesn't travel, platforms that own you. Web4 starts from these problems, not from a technology.",
           why: "Problem before solution. Understanding what's broken is what makes the mechanisms make sense.",
           link: "/why-web4",
-          duration: "6 min read",
+          // Jul-29 visitor MEDIUM: "the 6-minute estimate on the reading path is not a
+          // description of this page." /why-web4 ends in a large, open-ended FAQ (they
+          // counted roughly 56 questions across 6 categories, spent 11 minutes, and skipped
+          // five of the six). The page itself already labels the Q&A optional (why-web4:45-47),
+          // so the defect was here, in the estimate. The digit 6 stays legible and unchanged:
+          // tldr:291 pins "2+6+5+10+5 = 28 min" to these values and says changing either
+          // number means changing /learn too. Scope-only qualifier, deliberately not saying
+          // what the 6 minutes buys - why-web4's own orientation box splits the body into
+          // ~5 min + ~2 min, so "6 min for the problem statement" would manufacture a 6-vs-7
+          // seam on the destination page. No question count is printed either; that would be
+          // a new falsifiable number on a page whose FAQ grows.
+          // The FAQ firehose itself (curation / accordion design pass) stays deferred; this
+          // fixes the label, not the page it points at.
+          duration: "6 min + optional Q&A",
         },
         {
           id: "first-contact",
@@ -481,11 +494,18 @@ export default function LearnJourney() {
                 path. This box says "three short reads, ~13 minutes" and is the first thing
                 an arriving reader sees, so without the nesting stated it reads as a second,
                 contradictory answer to "how long is this?". It is not: these three ARE
-                steps 1-3 of the path below. Say so rather than dropping either number. */}
+                steps 1-3 of the path below. Say so rather than dropping either number.
+
+                Jul-29 visitor MEDIUM (same friction row as the duration qualifier on the
+                why-web4 card further down): step 2 ends in an open-ended FAQ that the 6
+                minutes does not cover. The digits stay (tldr:291 pins the arithmetic to
+                them) and the "6 min" in the narrow right column below stays short, so the
+                scope lands in this paragraph instead. */}
             <p style={{ color: "var(--color-gray-400)", fontSize: "0.85rem", marginBottom: "0.75rem" }}>
               Web4 starts with three short reads. ~13 minutes total. These are the first
               three steps of the five-page path below (about 28 minutes end to end), not a
-              different route.
+              different route. Why Web4? is the longest of the three and ends in an optional
+              Q&amp;A that is open-ended; the estimate covers the read, not the questions.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
               {[
