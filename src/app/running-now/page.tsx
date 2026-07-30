@@ -225,13 +225,39 @@ cargo add web4-core web4-trust-core`}</code></pre>
           </li>
           <li className="rounded-lg border border-white/10 bg-white/5 p-3">
             <strong className="text-emerald-300">Claude Code plugin</strong> deployed and
-            running on 4 machines.
+            running on 4 machines, all the lab&apos;s own.
           </li>
           <li className="rounded-lg border border-white/10 bg-white/5 p-3">
             <strong className="text-emerald-300">CLI, TUI, and a Tauri app</strong>, plus
             OID4VCI credential issuance.
           </li>
         </ul>
+        {/* Jul-29 visitor LOW: this is the only user-scale number on the page, and the
+            Running badge key says "in day-to-day use", so "4 machines" with no owner named
+            was read as the one place the page was not saying the quiet part ("if they are
+            the authors' own machines, Running and Reference are closer together than the
+            badge key suggests"). Grounded in hestia/README.md:22 (the lab that builds and
+            runs Hestia is itself a live Web4 society, members published at 4-lab.io/fleet)
+            and README.md:78 (the 4-machines figure). The canonical no-public-network
+            sentence is reused byte-for-byte from /hestia:404, /day-in-web4:515 and
+            /how-it-works:99, which #490 made identical on purpose.
+            Deliberately NOT saying "no outside users yet", which is what the visitor
+            suggested: the plugin and the SDKs are published on crates.io, npm and PyPI, so
+            we cannot know nobody outside installed them, and printing that absolute on the
+            page the visitor praised most for scrupulousness would be exactly the flat
+            mechanism absolute this browse's Honest Assessment indicted. Says whose the
+            deployment is, and stops there. Badge tier is NOT touched: the visitor said
+            naming the owner still leaves a legitimate Running badge, and it does.
+            Kept OUT of the "Two things are honestly still early" enumeration below, whose
+            count is load-bearing and matches the pinned caveat above ("two parts"); this
+            is scope of deployment, not immature code. */}
+        <p className="text-base text-gray-400 leading-relaxed mb-4">
+          Whose machines those are: the lab that builds Hestia runs it as its own daily
+          infrastructure, and there is no public network open to outside members yet. The
+          plugin and the SDKs are published, so anyone can install them, but the deployment
+          counted here is the lab&apos;s. Daily use by the people who build it is what the
+          Running badge claims, and it does not claim adoption.
+        </p>
         <p className="text-base text-gray-400 leading-relaxed mb-4">
           Two things are honestly still early. Hardware binding is trait contracts only
           for now, deferred to the hardbound tier below. The AI-owned autonomous vault is

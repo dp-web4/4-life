@@ -2,7 +2,90 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-29 (15:00 session)*
+*Last updated: 2026-07-29 (21:00 session)*
+
+## Jul-29 visitor pass, third sitting (Jul-29 21:00 session) - the last two rows, and the escalation stops being carried
+Log: `visitor/logs/2026-07-29.md` (same browse, third sitting). Zero open PRs. Of the 13 friction
+rows, #494 closed the three HIGHs and one LOW, #495 closed four more, one MEDIUM is blocked by a
+standing escalation and one LOW is behind a fired gate. **This sitting closed the two that were
+left and filed the escalation that both earlier sittings carried.** With this, every actionable
+row in the Jul-29 browse is disposed.
+
+- **LOW disposed - `/running-now` "4 machines, whose?", and the visitor's own suggested wording
+  was the thing not to print.**
+  - The number is grounded: `hestia/README.md:78`, "Claude Code plugin ... Deployed on 4
+    machines", with no owner named. Ownership is grounded one paragraph up at `README.md:22`: the
+    lab that builds and runs Hestia is itself a live Web4 society, members published at
+    4-lab.io/fleet. `/running-now:341` already says the same thing in the CTA rows, so naming the
+    owner in the Hestia section is internally consistent, not a new claim.
+  - **The site already had a canonical sentence for the other half and this page did not carry
+    it.** #490 made *"there is no public network open to outside members yet"* identical on
+    `/hestia:404`, `/day-in-web4:515` and `/how-it-works:99`. It was absent from `/running-now`,
+    the page that *issues* the Running badge and the page the visitor asked on. Reused
+    byte-for-byte (a paraphrase would have created a fourth variant of a sentence deliberately
+    unified). Verified: one occurrence on each of the four pages now.
+  - **Did not print the suggested clause "no outside users yet".** The plugin and the SDKs ship
+    on crates.io, npm and PyPI, so we cannot know nobody outside installed them. That clause
+    would be an unfalsifiable flat absolute on the page the visitor praised most for
+    scrupulousness, which is precisely the defect class this browse's Honest Assessment indicted
+    and #494 spent a session repairing. The fix says whose the deployment is, notes the packages
+    are public, and scopes what the badge claims ("daily use by the people who build it ... it
+    does not claim adoption") without demoting the tier. The visitor agreed a named owner still
+    leaves a legitimate Running badge.
+  - **Insertion point moved on policy review.** Both per-piece caveats on this section are
+    *counted* (`:206` "two parts honestly still early", `:262` "Two things are honestly still
+    early"), so folding a deployment-scope fact into either would falsify the count or force both
+    to change. Landed as its own paragraph after the bullet grid, outside the enumeration. The
+    hardware-required seam guard at `:311-325` is untouched.
+
+- **MEDIUM disposed - the `/why-web4` 6-minute estimate now describes the page, without touching
+  the arithmetic it is pinned to.**
+  - The estimate had a **load-bearing guard**: `tldr:291-295`, *"five concepts at 2+6+5+10+5 = 28
+    min ... Changing either number means changing /learn too."* So the 6 had to stay legible.
+    `learn:141` becomes `"6 min + optional Q&A"` (the digit is intact; `duration` already carries
+    non-time values like `"browse"` at `:337`/`:417`, and it has a single consumer at `:808`).
+  - The three-short-reads box at `:493` was **not** relengthened: `time` renders in a narrow
+    0.75rem right column. The scope clause went into that box's intro paragraph instead.
+  - **Deliberately does not say what the 6 minutes buys.** `/why-web4:45-47` splits its own body
+    into "~5 min" + "~2 min", which sums to ~7, so "6 min for the problem statement" would have
+    manufactured a 6-vs-7 seam on the destination page. Scope-only framing: the estimate covers
+    the read, not the questions. **No question count printed** either; the visitor's "~56" is a
+    number that grows.
+  - **The FAQ firehose itself stays deferred**, and the code comment says so. The split option is
+    an IA change and prior sittings already deferred the curation/accordion pass as its own work;
+    this fixes the label, not the page it points at.
+
+- **Escalation filed, not carried a third time: `docs/WEB4-CANON-QUESTIONS.md` Q7, "is ATP a
+  society's currency or a unit of account that is not a currency?"**
+  - Both the 09:00 and 15:00 sittings listed this as a candidate escalation and neither filed it.
+    Canon is split in the same directory: `core-spec/atp-adp-cycle.md:5` has ATP "managed by
+    societies as their native currency"; `core-spec/inter-society-protocol.md:191` says "ATP is a
+    unit of account, not a medium of exchange with intrinsic value". Those are the only two hits
+    repo-wide, so it is two definitions, not a stray sentence.
+  - **The entry records that the site has already asserted one side** (`atp-economics:318`,
+    `glossary:378`, `navigation.ts:157`) and that a ruling the other way means changing all three,
+    explicitly so the site's current wording is not mistaken for the answer. Two in-code guards
+    (`atp-economics:175`, `:286-288`) already named this tension while the ledger had no entry for
+    it; that gap is why this was not padding.
+  - **Zero `src/` changes** (Q5's holding pattern leaves `/atp-economics` untouched pending a
+    ruling, and Q7 must not contradict that). Scoped: the *external* denial narrowed by #494 is
+    **not** in question, only the word for what ATP is *inside* a society. The `:18`
+    "Last verified against code" date was left alone since Q1-Q6 refs were not re-checked; Q7
+    dates its own refs inline.
+  - Site symptom is this browse's Unanswered Question #2 plus the only qualified box on the
+    understanding checklist ("mechanism yes; whether it is a currency, unresolved"). The visitor
+    understood the mechanism completely and still could not name it.
+
+### NOT taken this sitting
+- **The Honest Assessment's ask to put the software-only tradeoffs into `/why-web4`'s equity
+  FAQ.** Tempting (it is the one place the visitor said the site was not being straight) and
+  rejected on review: FAQ 2 at `:2211` says hardware **is** required while FAQ 1 at `:1380`
+  hedges it, so routing a software-only-tier link into either would settle
+  [[hardware-required-seam]] by implication *on the page that hosts it*. The guard at `:693`
+  forbids exactly this. Still an operator/canon call.
+- **0.5-endpoint MEDIUM** (row 4): standing escalation, never assert the endpoint in prose.
+- **`/tldr` opening disambiguation** (row 13): gate fired Jul-23, operator branding call.
+- **Splitting the `/why-web4` FAQ onto its own page**: IA change, needs a design pass.
 
 ## Jul-29 visitor pass, second sitting (Jul-29 15:00 session) - the unblocked MEDIUMs
 Log: `visitor/logs/2026-07-29.md` (same browse). Zero open PRs; the 09:00 session had already

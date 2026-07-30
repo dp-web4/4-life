@@ -248,6 +248,60 @@ instead of re-litigating.
   closes the visitor's confusion (they now have canon's reading in front of them) without
   settling the question.
 
+### Q7. Is ATP a society's currency, or a unit of account that is not a currency?
+
+*Refs in this entry verified 2026-07-29.*
+
+- **The question**: canon says both, in the same core-spec directory.
+  `core-spec/atp-adp-cycle.md` L5: ATP packets are "semifungible tokens that exist in either
+  charged (ATP) or discharged (ADP) states, **managed by societies as their native currency**."
+  `core-spec/inter-society-protocol.md` L191 (§4.1): "**ATP is a unit of account, not a medium
+  of exchange with intrinsic value.** It is the standardized token form of a society's internal
+  resource accounting, analogous to how a company might track 'engineering hours' or 'server
+  capacity' using internal units of account that have no meaning outside the company unless
+  explicitly converted." Those are the only two hits repo-wide for either phrasing, so this is
+  not a stray sentence on one side; it is two deliberate definitions.
+- **The two readings**:
+  - *Native-currency reading*: within a society, ATP **is** the currency. It is the thing
+    goods are priced in, it transfers peer to peer, and "currency" is the ordinary word for
+    that. `inter-society-protocol.md` L199 explicitly licenses societies that "wish to embed
+    market mechanisms in their ATP policies (price discovery, auctions, etc.)".
+  - *Unit-of-account reading*: ATP is an accounting unit whose meaning is internal, closer to
+    "engineering hours" than to money, and calling it a currency imports intrinsic value,
+    savings and exchange that the mechanism does not have. This is the reading the site teaches
+    (energy budget, not wealth).
+- **Why 4-life can't answer locally**: the site has already asserted one side, flatly, on three
+  surfaces: `/atp-economics` L318 ("This is not a currency"), `/glossary` #atp L378 ("a
+  society's unit of account, not a currency"), and `src/lib/navigation.ts` L157 (same clause in
+  the nav description). A ruling for the native-currency reading would require changing all
+  three, so **the site's current wording must not be read as the answer to this question**.
+  Two in-code guards already name the tension and forbid settling it in prose
+  (`/atp-economics` L175 "standing unresolved web4 unit-of-account-vs-currency tension, left
+  verbatim", L286-288 "Canon is SPLIT on the currency word itself ... do NOT re-litigate
+  'currency' here"). The visitor keeps arriving at the conflict from the site's own material,
+  which is signal for the escalation and not license to answer it.
+- **What is NOT in question**: the *external* claim. #494 narrowed `/atp-economics` to "no
+  outside market, no price against money, no cash-out, no speculation" and left in-society
+  pricing licensed by `inter-society-protocol.md` L199, which is why the site's own Market
+  wireframe (a seller, a 350-ATP price, a buyer, escrow) no longer contradicts the page. The
+  open question is only the **word for what ATP is inside a society**.
+- **Site symptom (Jul-29 visitor Unanswered Question #2, and a qualified checklist box)**:
+  *"Is ATP a currency or not? A thing with a price, a seller, and a buy button is a market,
+  whatever the ATP page says."* The same visitor checked the ATP/ADP understanding box as
+  *"mechanism yes; whether it is a currency, unresolved"*, which is the only qualified box in
+  the browse. They understood the mechanism completely and still could not name it.
+- **Ruling requested**: state which term the standard intends for ATP **inside** a society. If
+  "native currency" in `atp-adp-cycle.md` L5 is loose phrasing for a unit of account, say so in
+  that file. If it is intended, say whether a society's ATP is a currency *in that society*
+  while remaining a unit of account across societies, since that is a coherent position no
+  single file currently states, and it is the position the site's material implies.
+- **Holding pattern**: unchanged, and this entry proposes **no site edits**. `/atp-economics`
+  L318, `/glossary` L378, `navigation.ts` L157 and the wireframe guardrail all stay exactly as
+  they are; the site keeps teaching the energy-budget framing and keeps ATP off the words
+  "currency" and "medium of exchange" in its own voice. The cost of the holding pattern is
+  recorded here: a reader who follows the site correctly ends up unable to answer a one-word
+  question about the mechanism they just learned.
+
 ---
 
 *Maintained by the 4-life autonomous track. Add new entries only with a policy-review-approved
