@@ -16,6 +16,9 @@ If a visitor re-asks one of the OPEN questions, that recurrence is signal FOR th
 it is not license to answer on-site.
 
 Last verified against code: **2026-07-28** (all file:line refs re-checked that day).
+Partial re-check **2026-07-30**: Q8's refs were verified when filed, and Q1's *live* evidence was
+re-checked and has **changed polarity** (see the correction bullet inside Q8). Q2-Q7 refs were not
+re-checked on that date and still carry their 2026-07-28 verification.
 
 > **Re-verification note, 2026-07-28.** The previous date on this line was 2026-07-14 - *one
 > day before* the Jul-15 rebuild retired `/aliveness`, `/karma-journey` and ~34 other routes.
@@ -301,6 +304,95 @@ instead of re-litigating.
   "currency" and "medium of exchange" in its own voice. The cost of the holding pattern is
   recorded here: a reader who follows the site correctly ends up unable to answer a one-word
   question about the mechanism they just learned.
+
+### Q8. Is software-only anchoring conformant, and if so, how does a software-only identity clear the survival line?
+
+*Refs in this entry verified 2026-07-30.*
+
+This is the equity half of [Q1](#q1-the-aliveness-endpoint-is-alive-trust--05-or-trust--05).
+Q1 asks what the predicate is. Q8 asks what the predicate **does to a whole tier of users**, and
+it is the question visitors keep arriving at on their own. Filed after the Jul-30 browse made it
+two HIGHs and three Unanswered Questions in a single sitting.
+
+- **The arithmetic the site presents**: the software-only LCT trust ceiling is **0.50**
+  (`/lct-explainer` L573, L1027; the chip-class table and the device-count rule both land there
+  for one un-attested device). The access line is **0.50** (`/first-contact` L271: "Above 0.50:
+  full access"). The aliveness predicate is **`trust > 0.5`** in every executable form on the
+  site (see Q1). So a software-only participant's ceiling is exactly the number they must exceed,
+  and by the site's own numbers they never do.
+- **Why 4-life cannot answer this locally**: answering requires asserting the Q1 endpoint. The
+  entailment the Jul-30 visitor asked for in as many words ("the ceiling equals the access line,
+  so this tier never gets full access and never leaves the fatal band") is the **negation** of the
+  `>=` reading, which is exactly what PR #444 was rejected three times for asserting. The
+  standing guard is `/lct-explainer` L258-259: *"do NOT reword into anything that says a reader
+  sitting at 0.50 is alive, safe, or has full access."*
+- **New evidence, and the reason this is now urgent: the site has already landed the `>=` side,
+  twice, in prose, including inside the file that bans it.**
+  - `/lct-explainer` L1278 read *"software-only at 0.50 is comparable to email today, **full
+    access**, but a low ceiling"* - about 1000 lines below the guard forbidding that exact
+    phrase. The 2026-07-30 session removed the two words (restoring silence, not asserting the
+    negation); the *reason it was there* is the point. A guard honored where it was written and
+    violated elsewhere in the same file is a sign the prohibition is not holdable indefinitely.
+  - `/first-contact` L533 and L546 gate the visible readout on **`trust_after >= 0.5`**, printing
+    "✅ Full access" at exactly 0.50, while `/how-it-works` L329 and L1038 display the aliveness
+    rule as **"ATP > 0 + Trust > 0.5 + CI coherent = alive"**. One page computes `>=` and prints
+    full access at the endpoint; the other page prints `>` as the rule. Both are live, and a
+    reader who lands on exactly 0.50 sees them disagree.
+  This is the strongest Q1 signal to date: it is no longer only that canon is ambiguous, it is
+  that the ambiguity is leaking into shipped surfaces faster than guard comments can catch it.
+- **Correction to Q1's live evidence, found 2026-07-30 (the polarity has flipped since filing)**:
+  Q1 was filed on the finding that *prose implied `>=` while all three executable predicates said
+  `>`*. Those three predicates (`isAlive`, `rebirthEligible`, `agency`) all lived in
+  `aliveness/page.tsx`, which the **Jul-15 rebuild retired**; there is no `/aliveness` route now.
+  The predicates that survive on the site today (`first-contact` L533/L546, `lct-explainer` L940)
+  use **`>=`**, and the strictly-greater form now survives mainly as *displayed prose*
+  (`how-it-works` L329, L1038). So the site's executable side and its prose side have swapped
+  positions since the question was written. Two consequences: the guard comment at
+  `/lct-explainer` L1140 still describes the retired file in the present tense and should be read
+  as history, not as current state; and **Q1 is not made stale by this** - the endpoint is still
+  unruled in canon, and the site is still asserting it accidentally, only now from the other side.
+- **The second, separable question: is software-only anchoring conformant at all?** The site does
+  not have one position, which is the [[hardware-required-seam]]:
+  - `/why-web4` L2218 (`#faq-tpm-affordability`): "Web4 identity **requires** hardware with
+    secure elements (TPM, Secure Enclave, or FIDO2)."
+  - `/why-web4` L1380 (`#faq-affordability`): the same question answered **conditionally**. Both
+    FAQs are separately listed in the page's own FAQ index (L573 and L581, again at L1195/L1203).
+  - `/lct-explainer` L1151 (`#software-only-survival`): software-only anchoring is **viable**, at
+    a 0.50 ceiling with zero margin above the line.
+  If software-only is *not* conformant, the equity question dissolves into a much starker one the
+  site would have to state plainly. If it *is* conformant, the ceiling and the predicate have to
+  be reconciled, because as published they exclude the tier by construction.
+- **What the site already says honestly, and where it stops**: `/what-could-go-wrong` risk 8 is
+  the most unflinching passage on the site: L540 "a real second-class experience baked into the
+  architecture", L551 "it codifies the existing digital divide into the trust layer itself". But
+  it stops at *"lower ceiling"* and never reaches the entailment. The Jul-30 visitor noticed
+  precisely this: *"Risk 8 says 'lower ceiling.' It does not say 'the ceiling equals the access
+  line' ... That entailment is the actual severity, and I had to derive it myself from three
+  pages."*
+- **Product stakes, not just doctrine**: `/hestia` is the site's only **Running** piece and the
+  onramp's recommended hands-on entry, and its TPM binding is deferred to hardbound, so a fresh
+  `hestia init` lands in exactly this tier. The Jul-30 visitor's closing sentence is the cost:
+  *"I would not want a friend to spend twenty minutes carefully following the arithmetic to
+  arrive where I did, which is at a tier the numbers quietly exclude, doing the one thing the
+  site actually invites them to do."*
+- **Site symptoms (Jul-30 browse)**: HIGH #1 and HIGH #2, plus Unanswered Questions 1 ("can I ever
+  have full access?"), 2 ("what tier does a fresh `hestia init` put me in?") and 9 ("do I need to
+  buy hardware? I now believe no, but /why-web4 told me yes"). The Jul-24 browse asked the same
+  requirement question; the Jul-9 browse asked the same dead-on-arrival question.
+- **Ruling requested**, in dependency order:
+  1. Is anchoring an LCT in software alone **conformant** with the standard?
+  2. If yes, what is a software-only identity's actual trust ceiling, and does the aliveness
+     predicate admit it? (Either the ceiling must exceed the line, or the line must admit its
+     endpoint, or the standard must say plainly that this tier is non-agent by design.)
+  3. Is the 0.50 software-only ceiling a spec number or a 4-life teaching calibration? The site
+     treats its ceiling table as its own calibration while upstream numbers are unsettled, so a
+     ruling that only moves the ceiling may be a 4-life-side fix rather than a spec change.
+- **Holding pattern**: this entry proposes **no further site edits**. The two `/why-web4` FAQs stay
+  unmerged, `/what-could-go-wrong` risk 8 stays at "lower ceiling", `/lct-explainer`
+  `#software-only-survival` stays strictly-below, and `/hestia` gets a **link** to that callout and
+  nothing more (routing asserts neither side). The cost of the holding pattern, recorded: the
+  site's friendliest and only running entry point drops readers into its most constrained tier,
+  and the site cannot tell them what that costs without answering Q1.
 
 ---
 
