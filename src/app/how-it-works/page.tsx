@@ -497,21 +497,43 @@ export default function HowItWorksPage() {
               <h4 className="text-lg font-semibold text-gray-200 mb-2">
                 Contributions Earn ATP
               </h4>
+              {/* Jul-30 visitor HIGH (3rd visitor on this contradiction, after Jun-11 browse B and
+                  Jun-12 browse A): these two rows were titled "High-quality post" and "Helpful
+                  contribution" (unsolicited, self-initiated work, which atp-economics puts in the
+                  CAPPED recharge channel) while carrying uncapped payment-channel numbers. Every
+                  prior fix landed in PROSE (atp-economics summary item 3, the #net-positive fold,
+                  L862 here); nobody ever fixed the example LABELS, which is why it recurs.
+                  [[visitor-read-it-and-still-filed-it]] - the visitor read the reconciliation and
+                  filed it anyway, so the residual is the illustration, not the explanation. Their
+                  words: "The concept is fine. The illustrations of it are wrong." Channel is now
+                  named IN each example rather than in an aside, and the capped case is shown
+                  alongside so the answer to "can contributing ever net me energy?" (their
+                  Unanswered Q3) is legible without opening anything. */}
               <p className="text-gray-300 leading-relaxed mb-3">
-                When you contribute value, the community validates and rewards
-                you:
+                ATP comes back two ways, and which one you are in depends on{" "}
+                <em>who asked for the work</em>:
               </p>
               <div className="space-y-2">
                 <div className="p-3 bg-green-900/20 border border-green-800/30 rounded">
                   <p className="text-green-300 text-sm">
-                    ✅ <strong>High-quality post:</strong> Cost 15 ATP → Earn
+                    ✅ <strong>Commissioned write-up</strong>{" "}
+                    <span className="text-gray-400">(someone else priced it)</span>: Cost 15 ATP → Paid
                     40 ATP = <strong className="text-green-400">+25 net</strong>
                   </p>
                 </div>
                 <div className="p-3 bg-green-900/20 border border-green-800/30 rounded">
                   <p className="text-green-300 text-sm">
-                    ✅ <strong>Helpful contribution:</strong> Cost 20 ATP → Earn
+                    ✅ <strong>Commissioned fix, delivered well</strong>{" "}
+                    <span className="text-gray-400">(someone else priced it)</span>: Cost 20 ATP → Paid
                     60 ATP = <strong className="text-green-400">+40 net</strong>
+                  </p>
+                </div>
+                <div className="p-3 bg-sky-900/20 border border-sky-800/30 rounded">
+                  <p className="text-sky-200 text-sm">
+                    ➖ <strong>A post you chose to write</strong>{" "}
+                    <span className="text-gray-400">(nobody commissioned it)</span>: Cost 15 ATP →
+                    recharges up to 15 ATP ={" "}
+                    <strong className="text-sky-300">0 net at best</strong>
                   </p>
                 </div>
                 <div className="p-3 bg-red-900/20 border border-red-800/30 rounded">
@@ -522,8 +544,9 @@ export default function HowItWorksPage() {
                 </div>
               </div>
               <p className="text-gray-400 mt-3 text-sm italic">
-                Only sustainable behaviors (earning more than spending) survive
-                long-term.
+                Work you initiate can hold you steady; work someone commissioned is what puts you
+                ahead. Either way quality is the gate, and spam runs the balance down until there
+                is nothing left to act with.
               </p>
             </div>
 
@@ -535,48 +558,65 @@ export default function HowItWorksPage() {
                 Every action updates your T3 trust tensor:
               </p>
               <div className="space-y-2">
+                {/* Jul-30 visitor HIGH: these two blocks carried +0.15/+0.20/+0.10 and
+                    -0.05/-0.25/-0.20, an order of magnitude above the canonical rule stated
+                    further down this same page (L883: base_delta = 0.02 x (quality - 0.5),
+                    max magnitude 0.01) and with the dimension ordering inverted (canon scales
+                    talent x1.0 / training x0.8 / temperament x0.6, so talent is ALWAYS the
+                    largest mover; these had training largest). Recomputed from the rule, using
+                    the same 0.85-quality worked step the details block at L884-891 and
+                    /trust-tensor already ship, so all three surfaces now agree digit for digit.
+                    The quality figure is now shown so a reader can run the arithmetic here.
+                    NOT touched, different quantities: L896 "+0.15" is the Novice's CUMULATIVE
+                    0.50->0.65 climb across a dozen+ actions (correct), and L1344 "Training
+                    drops by 0.15" is a SAL law-oracle PRESCRIBED penalty, a different mechanism
+                    from the incremental update rule. */}
                 <div className="p-3 bg-gray-800 rounded">
                   <div className="text-sm text-gray-400 mb-2">
-                    Example: Delivered high-quality work on time
+                    Example: Delivered high-quality work on time{" "}
+                    <span className="text-gray-500">(quality 0.85)</span>
                   </div>
                   <div className="grid grid-cols-3 gap-2 text-xs text-center">
                     <div>
                       <div className="text-gray-500">Talent</div>
-                      <div className="text-green-400">+0.15</div>
+                      <div className="text-green-400">+0.007</div>
                     </div>
                     <div>
                       <div className="text-gray-500">Training</div>
-                      <div className="text-green-400">+0.20</div>
+                      <div className="text-green-400">+0.0056</div>
                     </div>
                     <div>
                       <div className="text-gray-500">Temperament</div>
-                      <div className="text-green-400">+0.10</div>
+                      <div className="text-green-400">+0.0042</div>
                     </div>
                   </div>
                 </div>
                 <div className="p-3 bg-gray-800 rounded">
                   <div className="text-sm text-gray-400 mb-2">
-                    Example: Missed deadline without warning
+                    Example: Missed deadline without warning{" "}
+                    <span className="text-gray-500">(quality 0.25)</span>
                   </div>
                   <div className="grid grid-cols-3 gap-2 text-xs text-center">
                     <div>
                       <div className="text-gray-500">Talent</div>
-                      <div className="text-red-400">-0.05</div>
+                      <div className="text-red-400">-0.005</div>
                     </div>
                     <div>
                       <div className="text-gray-500">Training</div>
-                      <div className="text-red-400">-0.25</div>
+                      <div className="text-red-400">-0.004</div>
                     </div>
                     <div>
                       <div className="text-gray-500">Temperament</div>
-                      <div className="text-red-400">-0.20</div>
+                      <div className="text-red-400">-0.003</div>
                     </div>
                   </div>
                 </div>
               </div>
               <p className="text-gray-400 mt-3 text-sm italic">
-                Different actions affect different trust dimensions. Your
-                behavior creates your reputation.
+                Both examples run the same rule: quality sets the sign and the size, and each
+                dimension moves by a fixed share of it (talent full, training four fifths,
+                temperament three fifths). The steps are deliberately tiny. Reputation is the
+                accumulation of hundreds of them, not the payoff of any one.
               </p>
             </div>
           </div>
@@ -1076,19 +1116,29 @@ export default function HowItWorksPage() {
         <div className="grid gap-4">
           {/* Virtuous cascade */}
           <div className="bg-gradient-to-r from-green-950/20 to-gray-900 border border-green-800/30 rounded-xl p-5">
-            <div className="text-sm font-semibold text-green-400 mb-3">Virtuous Cascade: You write a helpful tutorial</div>
+            {/* Jul-30 visitor HIGH: this block previously read "You write a helpful tutorial" /
+                "Recipients confirm value" / "Earn 40 back" / "Net gain: +25 ATP". That names the
+                RECHARGE channel explicitly and then violates its cap: recipient confirmation of
+                work you initiated refunds at most what you spent (atp-economics L775:
+                recharge = min( sum, ATP_cost )), so 15 out could never return 40. Of the four
+                mislabeled illustrations the visitor filed, this was the only one that named its
+                channel and named it wrong. Fix direction is labels, not numbers: atp-economics
+                L788 cites the simulator's literal (-20 cost, +50 reward) pair, so changing ATP
+                arithmetic would break that sentence and L862 here. Reframed as a commissioned
+                task, which is the channel these numbers have always belonged to per L862. */}
+            <div className="text-sm font-semibold text-green-400 mb-3">Virtuous Cascade: someone commissions a tutorial from you</div>
             <div className="flex flex-col sm:flex-row items-stretch gap-2 text-xs">
               <div className="flex-1 bg-green-950/40 border border-green-800/30 rounded-lg p-3 text-center">
                 <div className="text-green-400 font-bold mb-1">ATP</div>
-                <div className="text-gray-400">Spend 15 ATP</div>
-                <div className="text-green-300 mt-1">Recipients confirm value</div>
-                <div className="text-green-400 font-bold">→ Earn 40 back</div>
+                <div className="text-gray-400">Spend 15 ATP writing it</div>
+                <div className="text-green-300 mt-1">Commissioner pays on delivery</div>
+                <div className="text-green-400 font-bold">→ Paid 40 ATP</div>
               </div>
               <div className="text-gray-600 flex items-center justify-center sm:rotate-0 rotate-90">→</div>
               <div className="flex-1 bg-purple-950/40 border border-purple-800/30 rounded-lg p-3 text-center">
                 <div className="text-purple-400 font-bold mb-1">T3</div>
-                <div className="text-gray-400">Talent +0.02</div>
-                <div className="text-gray-400">Training +0.02</div>
+                <div className="text-gray-400">Talent +0.007</div>
+                <div className="text-gray-400">Training +0.0056</div>
                 <div className="text-purple-300 mt-1">Higher trust = lower future costs</div>
               </div>
               <div className="text-gray-600 flex items-center justify-center sm:rotate-0 rotate-90">→</div>
@@ -1120,8 +1170,8 @@ export default function HowItWorksPage() {
               <div className="text-gray-600 flex items-center justify-center sm:rotate-0 rotate-90">→</div>
               <div className="flex-1 bg-purple-950/40 border border-purple-800/30 rounded-lg p-3 text-center">
                 <div className="text-purple-400 font-bold mb-1">T3</div>
-                <div className="text-gray-400">Temperament -0.05</div>
-                <div className="text-gray-400">Training -0.03</div>
+                <div className="text-gray-400">Talent -0.006</div>
+                <div className="text-gray-400">Training -0.0048</div>
                 <div className="text-red-300 mt-1">Lower trust = higher costs</div>
               </div>
               <div className="text-gray-600 flex items-center justify-center sm:rotate-0 rotate-90">→</div>
