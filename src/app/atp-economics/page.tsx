@@ -2122,7 +2122,9 @@ if agent.atp <= 0:
         </details>
       </section>
 
-      <section className="max-w-4xl mx-auto mt-6">
+      {/* Jul-30: id added so /how-it-works can route here. That page used to say reading is free;
+          this FAQ and the mechanism prose at :1485 are the reasoned position it now defers to. */}
+      <section id="faq-reading-cost" className="max-w-4xl mx-auto mt-6 scroll-mt-24">
         <details className="bg-gray-800/30 border border-gray-700/50 rounded-xl p-5">
           <summary className="text-lg font-semibold text-amber-400 cursor-pointer hover:text-amber-300 transition-colors list-none flex justify-between items-center">
             <span>Does reading and browsing cost ATP? That sounds like paying to scroll.</span>

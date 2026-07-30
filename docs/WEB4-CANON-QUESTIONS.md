@@ -192,16 +192,61 @@ instead of re-litigating.
   Note the karma row is a second, independent divergence: whether karma is the full final
   ATP or a reduced portion of it is not settled between the two pages either. A ruling on
   the death question does not automatically settle it.
+
+  **Jul-30 addendum: there is a third model, and it is on the page that OWNS karma.**
+  `/karma-consequences:629-641` states an inheritance formula that neither worked example
+  can satisfy:
+
+  ```
+  next_life_atp = base_atp + (karma * karma_multiplier)
+    base_atp = 100, karma_multiplier = 2
+  ```
+
+  Because `base_atp` is fixed at 100 and karma is a *behavior score* (that page's own
+  sources: quality contributions, trust building, collaboration, longevity; minus spam,
+  trust violations, community rejection, premature death), the carry-forward is not the
+  final balance at all, in whole or in part. It cannot produce `/how-it-works`'s
+  "145 -> 145" or `/atp-economics`'s "reduced from the crisis" except by coincidence. So
+  the site has three incompatible answers to one beginner question, which is what the
+  Jul-30 visitor filed: *"Is karma my leftover ATP, my lifetime surplus, or a bonus
+  computed from trust? I saw all three."*
+
+  | | `/how-it-works` | `/atp-economics` | `/karma-consequences` |
+  |---|---|---|---|
+  | What karma **is** | was "a portion of your final ATP" (removed Jul-30) | the balance you ended with, reduced | a behavior score, not a balance |
+  | Carry-forward **amount** | the whole final balance | a reduced portion | `100 + (karma x 2)` |
+  | Where it is stated | worked example only | worked example only | named formula with a multiplier |
+
+  One thing IS agreed across all three and was safe to land: karma is earned by the track
+  record of the previous life, and is **not** an ATP spending surplus. `/first-contact:396-399`
+  already carried that as a standing guard ("It is NOT an ATP spending surplus"), and
+  `/how-it-works` was violating it at `:905` ("+45 ATP surplus - which *becomes* the
+  carry-forward karma bonus"). That equation is severed; the amount is left to the ruling.
 - **Ruling requested**: either (a) confirm ATP = 0 and sustained trust collapse are the only
   life-ending paths, in which case both worked examples are wrong and 4-life rewrites them
   together, or (b) name the third path so the examples can cite it. Also, if convenient, the
-  karma carry-forward rule (full vs reduced).
+  karma carry-forward rule. **Jul-30: this is no longer "if convenient".** The three-way
+  divergence above means the site cannot answer a first-time reader's "what is karma?"
+  without picking one, and the choice is between three models on three live pages, one of
+  which is the page that owns the concept. A ruling on the amount would close it; a ruling
+  that karma is a behavior score rather than a carried balance would close it more cleanly,
+  since that is the only model with a stated mechanism behind it.
 - **Holding pattern**: `/how-it-works` states the gap without filling it, via a shared
   `EndOfLifeCaveat` component rendered at both places the reader meets the numbers: *"none of
   these lives ends at 0 ATP ... What else ends a life is not settled."* No second mechanism is
   asserted, and the numbers are unchanged (rewriting them to end at zero would break the karma
   model, which is canon on both pages). `/atp-economics` is deliberately untouched pending a
   ruling, so the divergence stays visible rather than being half-papered-over.
+
+  **Jul-30: the caveat now covers both halves.** Its old closer disclaimed the death rule and,
+  in the same breath, held the carry-forward up as the thing the figures legitimately show
+  (*"Read this walkthrough as showing what karma carries forward"*), which endorsed the exact
+  quantity this entry files as unsettled. It now says the amount is unsettled too and that the
+  figures are one modelling choice. Also removed from `/how-it-works` in the same pass, all
+  labels rather than numbers: *"a portion of your final ATP"* (falsified by its own next line),
+  the heading *"Karma: ATP Carried Forward"*, and the parentheticals *"(full karma bonus)"* /
+  *"(karma preserved)"*, which asserted the full-balance model in prose. The 145/130/165 figures
+  are still frozen and still untouched.
 
 ### Q6. What does the `/` in the canonical equation assert?
 

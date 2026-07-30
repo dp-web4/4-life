@@ -2,7 +2,77 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-30 (09:00 session)*
+*Last updated: 2026-07-30 (15:00 session)*
+
+## Jul-30 visitor pass, second sitting (15:00 session) - four MEDIUMs, and one fix that runs backwards
+Log: `visitor/logs/2026-07-30.md` (same 05:08 browse). #498 took the 5 HIGHs at 09:00 and left the
+7 MEDIUMs and 5 LOWs. Three MEDIUMs are blocked on unruled canon (M1 = ledger Q5, M2 = ledger Q1,
+M6 = `hardware-required-seam` / Q8). This sitting took the other **four**, all falsifiable, no
+numbers changed.
+
+### The one worth remembering: the visitor's suggested fix pointed the wrong way
+- **"Every action costs energy" vs a list of free actions** (`how-it-works:113` vs `:467/:480`).
+  The visitor asked us to soften the absolute to "every action **that affects others**". Policy
+  review caught that this would have hardened the wrong side: `atp-economics:2128-2141` is a
+  **reasoned** FAQ pricing reads at 1 ATP (anti-scraping, with the scraper arithmetic and a
+  library-card analogy), and `:1485` independently places reads inside the ATP cycle
+  ("Routine interactions (reading a post, browsing content) generate small ADP receipts"). The
+  absolute was **correct**; the free-actions list was the unreasoned side. Six surfaces say "free"
+  (`how-it-works:467/480`, `day-in-web4:116/258/1295`) and two say otherwise, but per
+  [[ordering-majority-measures-arbitrariness]] you count **reasons**, not surfaces. So the list
+  moved to "effectively free, about 1 ATP a read", with a route to the FAQ (which had no `id`;
+  added `#faq-reading-cost`). `:113` got a **scale clause** ("from about 1 ATP to read something up
+  to 10-20 to post") using only numbers that already ship. Policy review ruled the clause **not
+  optional**: without it the seam is moved, not closed, since a retest visitor still reads `:113`
+  against the reconciled block. **`day-in-web4:116/258/1295` are the same defect, deferred as
+  propagation debt.**
+
+### Fixed
+- **Overall T3 was undefined at the point it decides life or death** (`how-it-works:774`). The
+  rebirth card gates on "Overall T3 >= 0.5" and named the composite without weights; the canonical
+  roll-up (0.4/0.3/0.3) shipped in #495 but ~160 lines below and inside a **collapsed `<details>`**,
+  so the reader met the threshold before the rule computing it. Weights now land at the decision
+  point with a worked case (0.40/0.60/0.60 = 0.52) chosen to demonstrate the sentence's own claim
+  that no single dimension has to clear 0.5. Routed to a new `trust-tensor#t3-composite`. The
+  `>=` / `<` comparators are **ledger Q1 territory and untouched**.
+- **An invariant named "weakest link" that computes the product** (`how-it-works:1215`, also the
+  visitor's Unanswered Q8). "Trust through a chain can never exceed the weakest link" then
+  `0.9 x 0.6 = 0.54`, where the weakest link is 0.6. Renamed **Transitive attenuation**, and
+  written as a **strengthening** rather than an error correction: the old claim was true, just
+  weaker than the math. Matches what the rest of the site already teaches (`:1593` "trust
+  multiplies, it doesn't add"; `trust-neighborhood:588` "0.7x per hop, and it compounds"). Scoped
+  as what this site teaches on purpose: `web4-standard/core-spec/inter-society-protocol.md:380`
+  leaves transitivity-vs-attenuation society-sovereign. The "backed by automated test suites"
+  footer is a known adjacent LOW and was left alone.
+
+### Karma: the groundable half only (the rest escalated)
+The visitor found **three** karma mechanics and asked us to pick one. We cannot: `WEB4-CANON-QUESTIONS`
+Q5 already files the carry-forward amount as unsettled, and importing `/karma-consequences`' formula
+would answer it by fiat **and** break arithmetically (its `base_atp` is fixed at 100, so it can never
+produce the frozen "145 -> 145" three lines below). Per
+[[visitor-suggestion-may-be-unfalsifiable]], ship the groundable half:
+- **Severed the forbidden equation** at `:905`: "+45 ATP surplus - which **becomes** the carry-forward
+  karma bonus" is exactly what `first-contact:396-399`'s standing guard prohibits ("It is NOT an ATP
+  spending surplus"). Deleting a prohibited assertion is not asserting its negation (same move #498
+  made at `lct-explainer:1278`). Routed to a new `karma-consequences#karma-formula`, whose **sources
+  grid** is the supported half.
+- **Removed the labels that asserted "full"**, which the no-number-changes constraint did not
+  protect and policy review located precisely: "a portion of your final ATP" (falsified by its own
+  next line), the heading "Karma: **ATP Carried Forward**", and the parentheticals "(full karma
+  bonus)" / "(karma preserved)".
+- **`EndOfLifeCaveat` now covers both halves.** Its old closer disclaimed the death rule and in the
+  same breath held the carry-forward up as what the figures legitimately show, endorsing the exact
+  quantity Q5 files as unsettled. Same holding-pattern shape, second divergence. One component, both
+  hit points.
+- **Ledger Q5 extended**: `/karma-consequences:629-641` filed as a **third** model with a three-way
+  comparison table, and the karma half of the ruling request upgraded from "if convenient" to
+  blocking, since the site cannot answer "what is karma?" without a ruling.
+
+### NOT taken
+- The 3 blocked MEDIUMs above and **all 5 LOWs** (next sitting). Two LOWs are already half-shipped:
+  the spammer absolute at `:1242` carries "(low T3)", and the "raw" gloss landed Jul-29 at
+  `first-contact:283` but inside a `<details>` labelled "(optional)", so its residual is prominence.
+- `day-in-web4`'s three "lurking is free" instances (propagation debt from the M3 fix above).
 
 ## Jul-30 visitor pass (Jul-30 09:00 session) - the numbers, and the tier the numbers exclude
 Log: `visitor/logs/2026-07-30.md` (fresh 05:08 browse; Jul-29 is exhausted after four sittings).

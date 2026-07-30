@@ -567,9 +567,14 @@ function SideBySideComparison() {
 // Karma Formula Explanation
 // ============================================================================
 
+/* Jul-30: id="karma-formula" added so /how-it-works can route here. That page used to equate karma
+   with an ATP spending surplus; this block is where the site says what karma is actually scored
+   from. The reader lands on the sources grid, which is the supported half. The inheritance formula
+   further down is a THIRD model of the carry-forward amount (ledger Q5, unruled) and must not be
+   restated on /how-it-works. */
 function KarmaFormula() {
   return (
-    <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
+    <div id="karma-formula" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 scroll-mt-24">
       <h3 className="text-xl font-semibold text-white mb-4">
         How Karma Is Calculated
       </h3>
