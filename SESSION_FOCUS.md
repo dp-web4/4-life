@@ -2,7 +2,117 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-31 (21:00 session)*
+*Last updated: 2026-07-31 (03:01 session)*
+
+## PR #499, second review response (Jul-31 03:01 session) - a pointer that rots is a guard that gets discounted
+No new visitor log (cron fires at 05:00, this session ran at 03:01) and the Jul-30 log stays
+exhausted, so Protocol v2 Step 2 makes the second **CHANGES REQUESTED** on #499 the task. Both
+blocking items were narrow, mechanical, and **both were verified true before acting**. No
+visitor-facing copy or numbers changed; this push is comment and record text only.
+
+### Item 1: the record had shrunk a live defect from three sites to two
+`SESSION_FOCUS.md:66` (shipped in the 02:15 response) claimed *"only `:116` and `:1295` exist"*.
+All three exist and all three carry the claim: `:116` "Lurking is free", `:258` "Lurking costs
+nothing", `:1295` "lurking is free in Web4". `day-in-web4` was untouched by the #500/#501 merge, so
+this was not drift, the check simply returned the wrong answer. Five other lines in this same file
+(`:163`, `:299`, `:318`, `:324`, `:372`) still cite three, so the record contradicted itself.
+**Propagation debt the record has shrunk is debt that does not get paid**: the session that finally
+takes `day-in-web4` would have under-scoped by a third. Corrected in place.
+
+### Item 2: every cite in the new guard landed on the wrong card
+The `#499` guard comment was written against line numbers derived **before** the `bc9e5d1` merge of
+#500/#501 shifted `how-it-works` ~20 lines. All three were stale: `:556` ("0 net at best") is
+`:577`, `:523` (the #498 guard) is `:541`, `:511` ("10-20 ATP") is `:529`. Fixed by the reviewer's
+second option: **the integers are gone, replaced by names** ("the '0 net at best' card in the
+two-channel block below", "the Jul-30 visitor HIGH guard under the 'Contributions Earn ATP'
+heading", "the 'Costs ATP' card beside this one"). Also dropped "60 lines below", which is the same
+rot in relative form, and `atp-economics:220` in favour of the vocabulary the sibling guard already
+uses ("atp-economics summary item 3"). The convention is now stated in the comment itself so the
+next session inherits the rule, not just the corrected pointers.
+
+**Nothing on this surface has an integer left to re-derive.** That is the point: these guards exist
+to stop a future session restoring a wrong percentage on a visitor-facing footnote, and a guard
+whose corroborating pointer lands on the wrong card is one a session can talk itself out of.
+
+### Not asked for, disclosed: the same rot in the #498 guard, and it never worked
+`how-it-works:553` cited *"prior fix landed in PROSE (... L862 here)"*. `:862` is the karma rebirth
+card at HEAD, and policy review established it was **already blank whitespace at #498's own commit**
+`1f3afb9` (the referenced prose was at `:901-904` there, `:864` in the parent `8d31343`). So that
+cite shipped wrong and was never right, which is independent corroboration of the reviewer's
+root-cause note: line numbers computed against a tree that had already moved. Now named as "the
+'task pays what the work is worth' parenthetical under the Three Lives worked example", with the
+history recorded in the comment. Comment text only, one phrase, outside #499's diff.
+
+### Still not taken
+- **`day-in-web4:116/258/1295`** stays deferred, at its true size of three sites. Fix direction is
+  defined by #499; pick it up once it lands.
+- **Ledger Q1 / Q5 / Q8** still block the three remaining Jul-30 MEDIUMs.
+- **`/hardbound` positioning**: operator call filed by #500.
+- The Jul-30 log remains exhausted. Next session with a fresh log triages it, not a sixth pass.
+
+## PR #499 review response (Jul-31 02:15 session) - the wrong denominator, twice
+No new visitor log (this session ran at 02:15, the cron fires at 05:00) and the Jul-30 friction
+table plus all ten Unanswered Questions are exhausted across #498/#499/#500/#501. Protocol v2
+Step 2 makes the open CHANGES REQUESTED on **#499** the task. Branch rebased onto `origin/main`
+(it was behind #500 and #501; only `SESSION_FOCUS.md` conflicted).
+
+### What the reviewer caught
+#499 moved a sentence from the `/atp-economics` reading-cost FAQ onto `/how-it-works`:
+*"reading a dozen posts is roughly 1% of your starting balance."* It is wrong by **12x** against
+the two figures in its own sentence: 12 reads x 1 ATP = 12 ATP, and the grant is 100 ATP, so 12%.
+For 1% to hold a read would have to cost 0.083 ATP. #499 carried it faithfully (it ships today)
+but that is the failure: **a number inherited from a source that looked authoritative, republished
+where a forward claim now rests on it, never re-run.** On `/atp-economics` it sat inside a
+collapsed `<details>`; on `/how-it-works` it was the reassurance that makes "reading is not
+actually free" acceptable at the exact moment the fix takes "free" away from the reader. The
+reviewer notes this is the third instance of the same class this cycle across three repos
+(web4 #589, #590). **Re-run the number after the prose is written, not before, and especially
+when moving it to a page where it has to carry more weight than at its source.**
+
+### The instrument was wrong, not just the arithmetic
+Repairing 1% to 12% would not have helped. **Percentage-of-starting-balance is the wrong
+denominator**: the grant is a one-time endowment and reading is a recurring cost. The same FAQ
+says a normal user reads 30-50 posts a day, which is 30-50% of the grant *per day* on reads alone.
+No corrected percentage survives that looking trivial.
+
+### And the reviewer's own suggested replacement had to be refused
+The ask was to carry the **earnings-relative** reason instead ("a single post at 10-20 ATP funds
+many reads"). Policy review verified it and it fails on this site's own rules:
+- `atp-economics:220` caps recharge on self-initiated work at what you spent, and says net gain
+  comes only from commissioned payment ("recharge refunds, payment earns").
+- `how-it-works:556`, a card **60 lines below the footnote being edited**, says a post you chose
+  to write is *"Cost 15 ATP -> recharges up to 15 ATP = 0 net at best."*
+
+A post funds nothing; it refunds itself. Worse, **uncapped earnings attached to self-initiated
+posting is exactly the defect #498 fixed on this page** (its guard comment sits at `:523`), so
+shipping the literal wording would have re-armed a fix from two PRs ago. This is
+[[two-fixes-in-one-pass-can-fight]] with one PR of separation instead of one pass.
+
+### Shipped: cost-of-a-read against cost-of-an-action
+The one instrument that is arithmetic on figures already printed beside the claim, asserts no
+earnings, and actually defends the phrase it sits under. "Effectively free" means free *relative
+to acting*, which was already the sentence's own next clause.
+- **`how-it-works:496-510`** - a read is 1-2 ATP against 10-20 ATP for a post **in the adjacent
+  card of the same grid**, so a read is a tenth to a twentieth of one post. The anti-scraping
+  reason and the `#faq-reading-cost` link are untouched.
+- **`atp-economics#faq-reading-cost`** - fixed at source, using **this page's own** post figure
+  (15 ATP at `:1844`), not how-it-works' 10-20. Importing the sibling page's number would have
+  manufactured a [[sibling-page-cross-reference-gap]] where there is currently none.
+- **The "30-50 posts a day" sentence went too**, promoted from the reviewer's optional item 3 to
+  required: *"the cost is invisible against what you earn from any contribution"* is falsified by
+  the same 0-net card, same defect class, same paragraph. It now states the cost (30-50 ATP, about
+  two or three posts) and lands on the scraper gap, which is what the price is actually for.
+
+### The hard stop, recorded in both files
+Neither surface may complete the thought in **either** direction. Not "recharge covers a day of
+reading" and not the mirror-image pessimism "reading drains the grant in days". Both need a
+**daily-recharge figure the site does not ship**, and that is ledger Q1 territory. The sentences
+are neutralized rather than resolved, deliberately, and the ledger was **not** inflated with a new
+question over it. Also re-verified while in the block: the deferral note cites
+`day-in-web4:116/258/1295` and **all three are live at HEAD** (`:116` "Lurking is free", `:258`
+"Lurking costs nothing", `:1295` "lurking is free in Web4"). **Three sites, not two.** An earlier
+draft of this entry claimed `:258` did not exist; that check was wrong and is corrected here, in
+the 03:01 sitting below.
 
 ## Jul-30 visitor pass, fourth sitting (21:00 session) - two producers of V3, and where the loop bottoms out
 Log: `visitor/logs/2026-07-30.md` (same 05:08 browse, single browse, commit `cbe9ef7`). The friction
@@ -239,6 +349,76 @@ Ledger **Q1** (endpoint at 0.5), **Q5** (what ends a life; karma, now three dive
   deferred here: its fix direction is defined by #499, which is unmerged. Pick it up once #499
   lands, not before.
 - General `id` anchor pass on `/hestia` (18 inbound links).
+
+## Jul-30 visitor pass, second sitting (15:00 session) - four MEDIUMs, and one fix that runs backwards
+Log: `visitor/logs/2026-07-30.md` (same 05:08 browse). #498 took the 5 HIGHs at 09:00 and left the
+7 MEDIUMs and 5 LOWs. Three MEDIUMs are blocked on unruled canon (M1 = ledger Q5, M2 = ledger Q1,
+M6 = `hardware-required-seam` / Q8). This sitting took the other **four**, all falsifiable, no
+numbers changed.
+
+### The one worth remembering: the visitor's suggested fix pointed the wrong way
+- **"Every action costs energy" vs a list of free actions** (`how-it-works:113` vs `:467/:480`).
+  The visitor asked us to soften the absolute to "every action **that affects others**". Policy
+  review caught that this would have hardened the wrong side: `atp-economics:2128-2141` is a
+  **reasoned** FAQ pricing reads at 1 ATP (anti-scraping, with the scraper arithmetic and a
+  library-card analogy), and `:1485` independently places reads inside the ATP cycle
+  ("Routine interactions (reading a post, browsing content) generate small ADP receipts"). The
+  absolute was **correct**; the free-actions list was the unreasoned side. Six surfaces say "free"
+  (`how-it-works:467/480`, `day-in-web4:116/258/1295`) and two say otherwise, but per
+  [[ordering-majority-measures-arbitrariness]] you count **reasons**, not surfaces. So the list
+  moved to "effectively free, about 1 ATP a read", with a route to the FAQ (which had no `id`;
+  added `#faq-reading-cost`). `:113` got a **scale clause** ("from about 1 ATP to read something up
+  to 10-20 to post") using only numbers that already ship. Policy review ruled the clause **not
+  optional**: without it the seam is moved, not closed, since a retest visitor still reads `:113`
+  against the reconciled block. **`day-in-web4:116/258/1295` are the same defect, deferred as
+  propagation debt.**
+
+### Fixed
+- **Overall T3 was undefined at the point it decides life or death** (`how-it-works:774`). The
+  rebirth card gates on "Overall T3 >= 0.5" and named the composite without weights; the canonical
+  roll-up (0.4/0.3/0.3) shipped in #495 but ~160 lines below and inside a **collapsed `<details>`**,
+  so the reader met the threshold before the rule computing it. Weights now land at the decision
+  point with a worked case (0.40/0.60/0.60 = 0.52) chosen to demonstrate the sentence's own claim
+  that no single dimension has to clear 0.5. Routed to a new `trust-tensor#t3-composite`. The
+  `>=` / `<` comparators are **ledger Q1 territory and untouched**.
+- **An invariant named "weakest link" that computes the product** (`how-it-works:1215`, also the
+  visitor's Unanswered Q8). "Trust through a chain can never exceed the weakest link" then
+  `0.9 x 0.6 = 0.54`, where the weakest link is 0.6. Renamed **Transitive attenuation**, and
+  written as a **strengthening** rather than an error correction: the old claim was true, just
+  weaker than the math. Matches what the rest of the site already teaches (`:1593` "trust
+  multiplies, it doesn't add"; `trust-neighborhood:588` "0.7x per hop, and it compounds"). Scoped
+  as what this site teaches on purpose: `web4-standard/core-spec/inter-society-protocol.md:380`
+  leaves transitivity-vs-attenuation society-sovereign. The "backed by automated test suites"
+  footer is a known adjacent LOW and was left alone.
+
+### Karma: the groundable half only (the rest escalated)
+The visitor found **three** karma mechanics and asked us to pick one. We cannot: `WEB4-CANON-QUESTIONS`
+Q5 already files the carry-forward amount as unsettled, and importing `/karma-consequences`' formula
+would answer it by fiat **and** break arithmetically (its `base_atp` is fixed at 100, so it can never
+produce the frozen "145 -> 145" three lines below). Per
+[[visitor-suggestion-may-be-unfalsifiable]], ship the groundable half:
+- **Severed the forbidden equation** at `:905`: "+45 ATP surplus - which **becomes** the carry-forward
+  karma bonus" is exactly what `first-contact:396-399`'s standing guard prohibits ("It is NOT an ATP
+  spending surplus"). Deleting a prohibited assertion is not asserting its negation (same move #498
+  made at `lct-explainer:1278`). Routed to a new `karma-consequences#karma-formula`, whose **sources
+  grid** is the supported half.
+- **Removed the labels that asserted "full"**, which the no-number-changes constraint did not
+  protect and policy review located precisely: "a portion of your final ATP" (falsified by its own
+  next line), the heading "Karma: **ATP Carried Forward**", and the parentheticals "(full karma
+  bonus)" / "(karma preserved)".
+- **`EndOfLifeCaveat` now covers both halves.** Its old closer disclaimed the death rule and in the
+  same breath held the carry-forward up as what the figures legitimately show, endorsing the exact
+  quantity Q5 files as unsettled. Same holding-pattern shape, second divergence. One component, both
+  hit points.
+- **Ledger Q5 extended**: `/karma-consequences:629-641` filed as a **third** model with a three-way
+  comparison table, and the karma half of the ruling request upgraded from "if convenient" to
+  blocking, since the site cannot answer "what is karma?" without a ruling.
+
+### NOT taken
+- The 3 blocked MEDIUMs above and **all 5 LOWs** (next sitting). Two LOWs are already half-shipped:
+  the spammer absolute at `:1242` carries "(low T3)", and the "raw" gloss landed Jul-29 at
+  `first-contact:283` but inside a `<details>` labelled "(optional)", so its residual is prominence.
+- `day-in-web4`'s three "lurking is free" instances (propagation debt from the M3 fix above).
 
 ## Jul-30 visitor pass (Jul-30 09:00 session) - the numbers, and the tier the numbers exclude
 Log: `visitor/logs/2026-07-30.md` (fresh 05:08 browse; Jul-29 is exhausted after four sittings).

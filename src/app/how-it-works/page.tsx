@@ -30,7 +30,12 @@ const HOW_IT_WORKS_SECTIONS = [
    ground truth either. Inventing a second mechanism here would be a canon decision this track is
    not authorized to make, so this note states the gap without filling it, and the question is
    escalated as Q5 in docs/WEB4-CANON-QUESTIONS.md.
-   Rendered at BOTH places the visitor hit the numbers, from one component so they cannot drift. */
+   Rendered at BOTH places the visitor hit the numbers, from one component so they cannot drift.
+   Jul-30 update: the original closer disclaimed the death rule and, in the same breath, held up the
+   carry-forward as the thing these figures legitimately demonstrate. But Q5 files the carry-forward
+   AMOUNT as a second, independent divergence ("whether karma is the full final ATP or a reduced
+   portion of it is not settled between the two pages either"), and /karma-consequences:629 models
+   it a third way. So the caveat now covers BOTH halves. Do not re-endorse either quantity here. */
 function EndOfLifeCaveat() {
   return (
     <p className="text-xs text-amber-300/70 mt-3 leading-relaxed">
@@ -38,8 +43,10 @@ function EndOfLifeCaveat() {
       0 ATP, so none of them is the energy death described above. What else ends a life is{" "}
       <strong>not settled</strong>: Web4 defines what stops you acting (ATP reaches zero) and what
       is permanent (sustained trust collapse), but it does not define a term limit or a natural end
-      of life. Read this walkthrough as showing what karma carries <em>forward</em>, not as showing
-      the death rule in action.
+      of life. How <em>much</em> karma carries is also unsettled: whether you keep your whole final
+      balance or a reduced portion of it is not decided, and this walkthrough shows one modelling
+      choice, not the rule. Read it for the shape (a good track record starts your next life
+      stronger), not for the death rule or the exact carry-forward.
     </p>
   );
 }
@@ -110,7 +117,7 @@ export default function HowItWorksPage() {
         </div>
         <div className="mb-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg text-sm text-gray-300 space-y-2">
           <p className="text-xs uppercase tracking-wide text-sky-400 mb-2 font-semibold">Key Takeaways</p>
-          <p>You&apos;re born with <strong className="text-green-400">energy</strong> and <strong className="text-purple-400">neutral trust</strong>. Every action costs energy. Quality contributions earn it back; spam drains it.</p>
+          <p>You&apos;re born with <strong className="text-green-400">energy</strong> and <strong className="text-purple-400">neutral trust</strong>. Every action costs energy, from about 1 ATP to read something up to 10-20 to post. Quality contributions earn it back; spam drains it.</p>
           <p>Your <strong className="text-blue-400">identity</strong> is tied to your devices - no passwords, no central authority. Your <strong className="text-purple-400">trust</strong> is multi-dimensional (competence, reliability, consistency) and role-specific.</p>
           <p>If your energy hits zero or trust collapses, you die. But good karma carries forward - you&apos;re reborn with a head start. <strong className="text-cyan-400">No moderators needed.</strong> Five interlocking systems (identity, energy, trust, consistency, context) make spam expensive and quality self-sustaining.</p>
         </div>
@@ -464,20 +471,61 @@ export default function HowItWorksPage() {
                 Actions Cost ATP
               </h4>
               <p className="text-gray-300 leading-relaxed mb-3">
-                Actions that affect others cost ATP from your energy budget. Reading and browsing are free - only contributions spend energy:
+                {/* Jul-30 visitor MEDIUM: this block said "Reading and browsing are free", which
+                    the Key Takeaways line ("Every action costs energy") appeared to contradict. The
+                    visitor asked us to soften the takeaway. Fix direction is the OPPOSITE: /atp-economics
+                    OWNS ATP and prices reads on two independent surfaces, with a reason - the FAQ at
+                    #faq-reading-cost (1 ATP a read, 2 to view, so mass scraping is not free) and the
+                    mechanism prose at :1485 ("Routine interactions (reading a post, browsing content)
+                    generate small ADP receipts"). "Free" here was the unreasoned side, so it moved.
+                    Do not restore a bare "free" on this page. Note day-in-web4 still says
+                    "lurking is free" (two instances); same defect, deferred, propagate there next. */}
+                Actions that affect others cost ATP from your energy budget. Reading and browsing are
+                effectively free, about 1 ATP a read, so what you spend is essentially what you put out:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="p-3 bg-gray-800 rounded">
                   <div className="text-sm text-gray-400 mb-1">
-                    Free (no ATP cost)
+                    Effectively free (1-2 ATP)
                   </div>
                   <div className="text-gray-300 text-sm space-y-1">
                     <p>• Reading and browsing content</p>
                     <p>• Viewing profiles and trust scores</p>
                     <p>• Observing community activity</p>
                   </div>
+                  {/* Jul-31 (#499 review): this footnote first shipped saying a dozen reads is
+                      "roughly 1% of your starting balance", carried over from the atp-economics FAQ.
+                      That is wrong by 12x on the site's own two figures: 12 reads x 1 ATP = 12 ATP
+                      against a 100 ATP grant = 12%. Fixed at source too; do not reintroduce it here.
+                      Two instruments were rejected, not just the number:
+                      (a) percentage-of-starting-balance, because the grant is a ONE-TIME endowment
+                          and reading is a RECURRING cost, so no corrected percentage survives the
+                          FAQ's own "30-50 posts a day" (that is 30-50% of the grant per day);
+                      (b) earnings-relative ("a post funds many reads"), because atp-economics
+                          summary item 3 caps recharge on self-initiated work at what you spent, and
+                          the "0 net at best" card in the two-channel block below says a self-chosen
+                          post nets zero. A post funds nothing; it refunds itself. Shipping the
+                          earnings framing would re-arm the exact defect #498 fixed further down
+                          this page (see the Jul-30 visitor HIGH guard under the "Contributions
+                          Earn ATP" heading).
+                      What survives is cost-of-a-read against cost-of-an-action, which is arithmetic
+                      on the two cards of this same grid (1-2 ATP here, 10-20 ATP in the "Costs ATP"
+                      card beside this one), asserts no earnings claim, and is what "effectively
+                      free" means on this surface: free relative to acting, which is already the
+                      sentence's own next clause.
+                      Every cite here NAMES its target instead of numbering it. This comment first
+                      shipped with line numbers derived before the #500/#501 merge shifted this file
+                      ~20 lines, so all three landed on the wrong card. A pointer that rots silently
+                      is how a guard gets discounted by the session that follows it. */}
                   <p className="text-gray-500 text-xs mt-2 leading-relaxed">
-                    Lurking is always free. You only spend energy when you act - post, vote, transact, or create.
+                    Lurking is cheap, not literally free: a read costs about 1 ATP and viewing content
+                    about 2, against 10-20 ATP for a single post in the column beside this one. So a
+                    read runs about a tenth to a twentieth of one post, and the tiny charge exists so
+                    that scraping a million posts is not free either.{' '}
+                    <Link href="/atp-economics#faq-reading-cost" className="text-sky-400 hover:underline">
+                      Why reading costs anything at all &rarr;
+                    </Link>{' '}
+                    Real spending starts when you act - post, vote, transact, or create.
                   </p>
                 </div>
                 <div className="p-3 bg-gray-800 rounded">
@@ -502,7 +550,11 @@ export default function HowItWorksPage() {
                   contribution" (unsolicited, self-initiated work, which atp-economics puts in the
                   CAPPED recharge channel) while carrying uncapped payment-channel numbers. Every
                   prior fix landed in PROSE (atp-economics summary item 3, the #net-positive fold,
-                  L862 here); nobody ever fixed the example LABELS, which is why it recurs.
+                  and the "task pays what the work is worth" parenthetical under the Three Lives
+                  worked example here); nobody ever fixed the example LABELS, which is why it
+                  recurs. That third cite read "L862 here" until Jul-31 and was never right:
+                  :862 was already blank at #498's own commit, and it points at the karma rebirth
+                  card at HEAD. Name the target, do not number it.
                   [[visitor-read-it-and-still-filed-it]] - the visitor read the reconciliation and
                   filed it anyway, so the residual is the illustration, not the explanation. Their
                   words: "The concept is fine. The illustrations of it are wrong." Channel is now
@@ -754,6 +806,22 @@ export default function HowItWorksPage() {
                 (talent, training, temperament), <em>not</em> each dimension
                 clearing 0.5 on its own:
               </p>
+              {/* Jul-30 visitor MEDIUM: "the most consequential number on the page is undefined".
+                  The canonical weights already shipped on this page (#495) but ~160 lines below and
+                  inside a collapsed <details>, so the reader met the life-or-death threshold before
+                  the rule that computes it. Weights land here, at the decision point. Canon:
+                  trust-tensor:875 and WEB4-CANON-QUESTIONS R1. The >= / < comparators below are
+                  ledger Q1 territory and are deliberately untouched. */}
+              <p className="text-gray-400 text-sm leading-relaxed mb-3">
+                The blend uses the canonical weights{" "}
+                <strong className="text-gray-300">0.4 talent + 0.3 training + 0.3 temperament</strong>{" "}
+                (societies can retune them per role). So an agent at talent 0.40, training 0.60,
+                temperament 0.60 scores <code className="text-gray-300">0.4(0.40) + 0.3(0.60) + 0.3(0.60) = 0.52</code>{" "}
+                and stays eligible, even though one dimension is under the line on its own.{" "}
+                <Link href="/trust-tensor#t3-composite" className="text-sky-400 hover:underline">
+                  The full tensor structure and weights &rarr;
+                </Link>
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="p-4 bg-green-900/20 border border-green-800/30 rounded">
                   <p className="text-green-300 font-semibold mb-2">
@@ -764,7 +832,7 @@ export default function HowItWorksPage() {
                   </p>
                   <p className="text-green-300 text-sm">
                     You built enough trust. Society wants you back. Reborn with
-                    karma (ATP from previous life).
+                    karma (a head start earned by your previous life).
                   </p>
                 </div>
                 <div className="p-4 bg-red-900/20 border border-red-800/30 rounded">
@@ -784,11 +852,19 @@ export default function HowItWorksPage() {
 
             <div>
               <h4 className="text-lg font-semibold text-gray-200 mb-2">
-                Karma: ATP Carried Forward
+                Karma: What Carries Forward
               </h4>
+              {/* Jul-30 visitor MEDIUM ("three different karma mechanics"). This said karma was
+                  "a portion of your final ATP", which the very next line falsifies (145 -> 145 is
+                  all of it), and the heading asserted karma IS carried ATP. Both replaced with the
+                  track-record framing, which asserts NEITHER side of the open question. How much
+                  karma carries (whole balance vs reduced portion) is the second, unruled half of
+                  ledger Q5 - see WEB4-CANON-QUESTIONS.md. /karma-consequences:629 models it a third
+                  way again (next_life_atp = 100 + karma * 2). Do not import any of the three here;
+                  the figures below are one modelling choice and EndOfLifeCaveat says so. */}
               <p className="text-gray-300 leading-relaxed">
-                If eligible, you're reborn with <strong>karma</strong> - a
-                portion of your final ATP:
+                If eligible, you're reborn with <strong>karma</strong> - a head
+                start earned by the track record of your previous life:
               </p>
               <div className="mt-3 space-y-2">
                 <div className="p-3 bg-gray-800 rounded">
@@ -798,7 +874,7 @@ export default function HowItWorksPage() {
                   <p className="text-gray-300 text-sm">
                     Died with <strong className="text-blue-400">145 ATP</strong>.
                     Reborn with <strong className="text-green-400">145 ATP</strong>{" "}
-                    (full karma bonus).
+                    (karma carried forward).
                   </p>
                 </div>
                 <div className="p-3 bg-gray-800 rounded">
@@ -808,7 +884,7 @@ export default function HowItWorksPage() {
                   <p className="text-gray-300 text-sm">
                     Died with <strong className="text-blue-400">130 ATP</strong>.
                     Reborn with <strong className="text-green-400">130 ATP</strong>{" "}
-                    (karma preserved).
+                    (karma carried forward).
                   </p>
                 </div>
               </div>
@@ -902,8 +978,19 @@ export default function HowItWorksPage() {
                   (Earning <em>above</em> cost comes from task payment - a task pays what the
                   work is worth to whoever commissioned it, not what it cost you to do. Only the
                   recharge of your own spend is capped at cost.)
-                  Aggregate net: <strong className="text-green-400">+45&nbsp;ATP</strong> surplus - which
-                  becomes the carry-forward karma bonus on rebirth.
+                  {/* Jul-30 visitor MEDIUM: this used to read "+45 ATP surplus - which BECOMES the
+                      carry-forward karma bonus on rebirth", equating karma with a spending surplus.
+                      first-contact:396-399 forbids exactly that ("It is NOT an ATP spending surplus...
+                      Keep the bonus framed as karma, never as a spending surplus"), and it was the
+                      third of the three karma definitions the visitor found. The equation is severed,
+                      not replaced: what karma is computed from is /karma-consequences' call, and how
+                      much of it carries is unruled (ledger Q5). */}
+                  Aggregate net: <strong className="text-green-400">+45&nbsp;ATP</strong> surplus,
+                  which is why this life ends with more energy than it started with. Karma is a
+                  separate question - it is scored from the track record, not read off the balance.{" "}
+                  <Link href="/karma-consequences#karma-formula" className="text-sky-400 hover:underline">
+                    What karma is scored from &rarr;
+                  </Link>
                 </p>
                 <p>
                   <Link href="/atp-economics#quality-ramp" className="text-sky-400 hover:underline">
@@ -1211,8 +1298,16 @@ export default function HowItWorksPage() {
               <p className="text-gray-400 text-xs">Trust can&apos;t be created from nothing. It must be earned through actions that other entities observe and confirm. No trust printing press.</p>
             </div>
             <div className="bg-gray-900/60 rounded-lg p-3">
-              <div className="text-sky-400 font-semibold text-xs mb-1">Transitivity bounds</div>
-              <p className="text-gray-400 text-xs">Trust through a chain can never exceed the weakest link. If Alice trusts Bob 0.9 and Bob trusts Carol 0.6, Alice&apos;s transitive trust in Carol is at most 0.54 (0.9 × 0.6).</p>
+              {/* Jul-30 visitor MEDIUM + Unanswered Q8: this was named "weakest link" and then computed
+                  the PRODUCT (0.9 x 0.6 = 0.54, while the weakest link is 0.6). The old claim was true
+                  but weaker than the math, so this is a strengthening, not an error correction. The
+                  multiplicative reading is what the rest of the site teaches: :1593 "trust multiplies,
+                  it doesn't add" (0.9^5 = 0.59) and trust-neighborhood:588 "0.7x per hop, and it
+                  compounds". Scoped as what this site teaches on purpose: web4-standard's
+                  inter-society-protocol.md:380 leaves transitivity-vs-attenuation society-sovereign,
+                  so do not upgrade this to a protocol requirement. */}
+              <div className="text-sky-400 font-semibold text-xs mb-1">Transitive attenuation</div>
+              <p className="text-gray-400 text-xs">Trust through a chain multiplies, so every hop can only shrink it. If Alice trusts Bob 0.9 and Bob trusts Carol 0.6, Alice&apos;s transitive trust in Carol is 0.54 (0.9 × 0.6) - strictly below the weaker of the two links, not equal to it. Distance costs trust even when every link in the chain is strong.</p>
             </div>
             <div className="bg-gray-900/60 rounded-lg p-3">
               <div className="text-sky-400 font-semibold text-xs mb-1">Locality</div>

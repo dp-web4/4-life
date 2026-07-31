@@ -866,7 +866,9 @@ export default function TrustTensorPage() {
           </summary>
 
           <div className="mt-6 space-y-6 text-gray-300">
-            <div>
+            {/* Jul-30: id added so /how-it-works's rebirth-eligibility card can route to the
+                canonical composite weights it now states inline. */}
+            <div id="t3-composite" className="scroll-mt-24">
               <h3 className="text-xl font-semibold text-sky-400 mb-3">
                 T3 Tensor Structure
               </h3>
