@@ -685,14 +685,26 @@ export default function ATPEconomicsPage() {
           </p>
         </div>
 
-        {/* How Quality Is Measured - Mar 26 visitor MEDIUM friction + unanswered Q1 */}
+        {/* How Quality Is Measured - Mar 26 visitor MEDIUM friction + unanswered Q1.
+            REVERSED Jul-30 (visitor Unanswered Q10). This block used to answer "who decides quality?"
+            with an AGGREGATE account: "no one rates you on a scale", the system derives quality from
+            confirmation speed + diversity + confirmer trust. That is not what produces V3 anywhere
+            else on this site or in canon. /value-tensor#who-scores (the owning page, :145-175) and
+            /trust-tensor:355-362 both say V3 is per-contribution with a different scorer per
+            dimension, and web4-standard/core-spec/t3-v3-tensors.md section 3.3 computes it per
+            completed R6 action from recipient_satisfaction / witness_confidence / value_transferred.
+            Speed, diversity and confirmer trust are NOT absent from canon - section 7.1 has witness
+            diversity and temporal distribution as gaming DETECTION - they just do not produce V3.
+            On this site they drive RECHARGE (:771 and :734). Do not restore the derivation claim.
+            "no algorithm" was also dropped, not softened: /value-tensor:170 calls Validity "the most
+            automated dimension", so a flat no-algorithm claim contradicted the owning page. */}
         <div className="mt-8 bg-gradient-to-br from-emerald-950/20 to-green-900/10 border border-emerald-800/30 rounded-xl p-6">
           <h3 className="text-lg font-semibold text-emerald-400 mb-3 scroll-mt-24" id="quality-measurement">
             But Who Decides What&apos;s &ldquo;Quality&rdquo;?
           </h3>
           <p className="text-gray-300 text-sm leading-relaxed mb-3">
-            <strong className="text-gray-200">The people who received your work do.</strong> There is no central authority,
-            no algorithm scoring your posts, and no panel of judges. Quality measurement in Web4 works like this:
+            <strong className="text-gray-200">The people who received your work do.</strong> There is no central authority
+            ranking you and no panel of judges. Quality measurement in Web4 works like this:
           </p>
           <div className="grid sm:grid-cols-3 gap-3 mb-4">
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3 text-center">
@@ -707,16 +719,32 @@ export default function ATPEconomicsPage() {
             </div>
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-3 text-center">
               <div className="text-xl mb-1">3</div>
-              <div className="text-xs font-semibold text-emerald-400 mb-1">Patterns Emerge</div>
-              <div className="text-xs text-gray-400">System derives quality from confirmation speed, diversity, and confirmer trust</div>
+              <div className="text-xs font-semibold text-emerald-400 mb-1">Three Scorers, Not One</div>
+              <div className="text-xs text-gray-400">The recipient judges usefulness, witnesses judge truthfulness, the system verifies delivery</div>
             </div>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed mb-2">
-            No one rates you on a scale. The system watches <em>aggregate behavior</em>: how quickly people confirm
-            (engagement), whether diverse recipients confirm (breadth), and whether high-trust people confirm (quality signal).
-            These three signals combine into your{' '}
-            <a href="/value-tensor" className="text-sky-400 hover:text-sky-300 underline">V3 (Value Tensor) score</a> - 
+            Nobody fills in a rating form, and no single party scores the whole thing. Each part comes from
+            somewhere different: the recipients who actually used your work confirm whether it was useful,
+            witnesses and peers attest to whether it was true, and delivery is verified structurally. Those
+            three together are your{' '}
+            <a href="/value-tensor#who-scores" className="text-sky-400 hover:text-sky-300 underline">V3 (Value Tensor) score</a> -
             the output-quality half of your reputation (its three parts: <em>Valuation, Veracity, Validity</em> - usefulness, truthfulness, soundness). (Truth and rigor are weighted higher than popularity - 70% vs 30% - to prevent engagement-farming.)
+          </p>
+          {/* Jul-30 visitor Unanswered Q10. The three signals below are real and stay on the page;
+              what changed is which quantity they drive. They are recharge drivers (:734 "Earlier,
+              broader, more-trusted confirmation recharges faster"; the weighted-slice formula under
+              "Show me the math"), not V3 producers. This paragraph is the hand-off, and the second
+              half routes to the base case that terminates the confirmer-trust regress the visitor
+              could not find: "their trust came from being confirmed... I could not find where that
+              loop is anchored." */}
+          <p className="text-gray-400 text-sm leading-relaxed mb-2">
+            <strong className="text-gray-200">Then what does confirmer trust decide?</strong>{' '}
+            How much energy comes back. How quickly people confirm, how many different recipients do, and how
+            trusted those recipients are set the pace and size of your ATP <em>recharge</em>, described just
+            below, rather than what your V3 says. And if you are wondering where a confirmer&apos;s own
+            trust came from in the first place, that regress does bottom out:{' '}
+            <a href="#who-trusts-the-confirmers" onClick={(e) => { e.preventDefault(); document.getElementById('who-trusts-the-confirmers')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">everyone starts at the same baseline</a>.
           </p>
           {/* Apr 28 MEDIUM friction: visitor asked "is it instant? polled? voted?" - close the loop on timing. */}
           {/* May 31 visitor MEDIUM #2 sub-question (2) "does it expire?" - named at the read point.
@@ -818,14 +846,26 @@ export default function ATPEconomicsPage() {
             </div>
           </details>
 
-          {/* Signals → score worked example - Apr 27 visitor MEDIUM #1 */}
+          {/* Signals → score worked example - Apr 27 visitor MEDIUM #1.
+              DIRECTION REVERSED Jul-30 (visitor Unanswered Q10): this box used to read as
+              signals -> quality (the word "aggregation" was the tell). Quality is not produced by
+              these signals; see the reversal note at the "But Who Decides What's Quality?" block.
+              The 85/35 headlines are quality-ramp inputs (:596-635, :638-670) and are load-bearing
+              and correct - do NOT change them. Deliberately NOT rescoped to "these signals set how
+              much ATP comes back" either: these are PAYMENT-channel numbers and :795-808 keeps
+              payment separate from recharge, so a recharge frame here would close one seam and open
+              another. The frame is correlate: quality differs first, so the response looks
+              different. Same direction already shipping at the "high-quality work attracts
+              confirmation disproportionately" line further down. */}
           <div className="mt-3 mb-3 bg-gray-900/40 border border-emerald-800/20 rounded-lg p-4">
             <p className="text-xs font-semibold text-emerald-300 mb-2 uppercase tracking-wide">
-              What the three signals look like in practice
+              What that difference looks like from the outside
             </p>
             <p className="text-xs text-gray-400 mb-3">
-              Reusing Sam and Hannah from the worked example above. These are illustrative shapes, not a formula - 
-              the actual aggregation depends on community size and confirmer trust distribution.
+              Reusing Sam and Hannah from the worked example above. Read it in the order it happens: the quality
+              differs first, and that is why the reader response looks so different. These are illustrative
+              shapes, not a formula - what any given community&apos;s response looks like depends on its size and
+              on how trust is spread across its members.
             </p>
             <div className="grid sm:grid-cols-2 gap-3">
               <div className="bg-green-950/20 border border-green-800/30 rounded p-3">
@@ -837,7 +877,7 @@ export default function ATPEconomicsPage() {
                   <li><span className="text-gray-500">Confirmer trust:</span> avg 0.78 (mostly established members)</li>
                 </ul>
                 <p className="text-xs text-gray-400 mt-2 italic">
-                  Quick uptake, broad reach, weighted by trusted readers - all three signals point up.
+                  Quick uptake, broad reach, trusted readers - good work draws all three.
                 </p>
               </div>
               <div className="bg-red-950/20 border border-red-800/30 rounded p-3">
@@ -849,13 +889,13 @@ export default function ATPEconomicsPage() {
                   <li><span className="text-gray-500">Confirmer trust:</span> avg 0.42 (mostly new accounts)</li>
                 </ul>
                 <p className="text-xs text-gray-400 mt-2 italic">
-                  Slow, narrow, lightly weighted - the same three signals come in low.
+                  Slow, narrow, lightly weighted - weak work draws the same three thinly.
                 </p>
               </div>
             </div>
             <p className="text-xs text-gray-500 mt-3">
               Same length post, same topic, same time of day - only the <em>reader response</em> differs.
-              That&apos;s what the system measures, and that&apos;s why Hannah&apos;s ATP recharges and Sam&apos;s drains.
+              That response is what the system can see, and it&apos;s why Hannah&apos;s ATP recharges and Sam&apos;s drains.
             </p>
           </div>
 
@@ -869,10 +909,23 @@ export default function ATPEconomicsPage() {
             confirmations worth even less.
           </p>
 
-          {/* Cold-start callout - Apr 17 visitor LOW #9; May 12 unanswered Q3 reframe */}
-          <div className="mt-4 pt-4 border-t border-emerald-800/30">
+          {/* Cold-start callout - Apr 17 visitor LOW #9; May 12 unanswered Q3 reframe.
+              Jul-30 visitor Unanswered Q10: "their trust came from being confirmed... I could not
+              find where that loop is anchored." The anchor was already HERE and correct (the 0.5
+              baseline sentence below), but the callout was titled by SCENARIO, so a reader holding
+              the circularity question did not recognise it as their answer. Lead now names the loop
+              too; no new mechanism was added, the "same baseline / weigh equally low / trust starts
+              sorting" sentences below already do the work.
+              id is deliberately NOT "cold-start": this page links OUT to
+              /what-could-go-wrong#cold-start and a same-name id here would be confusing.
+              NOTE for future sessions: the regress does not vanish on the corrected account either
+              (confirmer trust weights recharge -> recharge feeds ATP_earned -> ATP_earned is a
+              Valuation input in canon section 3.3 -> V3 -> T3). It terminates on this base case.
+              Do not rewrite this as though the loop were an error. */}
+          <div id="who-trusts-the-confirmers" className="mt-4 pt-4 border-t border-emerald-800/30 scroll-mt-24">
             <p className="text-sm font-semibold text-emerald-300 mb-2">
-              What about a brand-new community - or a small group with only a few peers to confirm work?
+              If confirmers are weighted by their own trust, where did the first confirmer&apos;s trust come from?
+              (And what about a brand-new community, or a small group with only a few peers to confirm work?)
             </p>
             <p className="text-gray-400 text-sm leading-relaxed">
               Every participant starts at the same baseline - trust ≈ 0.5, 100 ATP grant.
@@ -1448,6 +1501,13 @@ export default function ATPEconomicsPage() {
             Low-quality spam? Nobody confirms it, the ADP stays discharged, and your budget shrinks.
           </div>
 
+          {/* Jul-30 visitor Unanswered Q10 - same reversal as the "But Who Decides What's Quality?"
+              block above, which routes readers straight here, so the two had to move together.
+              This toggle used to say the system DERIVES V3 from confirmation speed / breadth /
+              confirmer trust. It does not: /value-tensor#who-scores and canon
+              (t3-v3-tensors.md section 3.3) put a different scorer on each dimension, per
+              contribution. The one-click-no-rubric half is correct and pedagogically load-bearing;
+              only the derivation clause was defective. Do not restore it. */}
           <details className="bg-gray-800/40 border border-gray-700 rounded-lg p-4">
             <summary className="text-sm font-semibold text-gray-300 cursor-pointer hover:text-sky-400 transition-colors">
               What does the confirmation interface actually look like?
@@ -1456,14 +1516,14 @@ export default function ATPEconomicsPage() {
               <p>
                 Simple: a single &ldquo;this was helpful&rdquo; acknowledgment - not a multi-dimensional rating form.
                 Recipients don&apos;t score Valuation, Veracity, and Validity separately. They just confirm they
-                received value (or don&apos;t). The <strong className="text-gray-300">system derives V3 scores</strong> from
-                patterns across many confirmations: how quickly people confirm (engagement signal), whether
-                the same work gets confirmed by diverse recipients (breadth signal), and whether confirming
-                recipients are themselves high-trust (quality signal).
+                received value (or don&apos;t). That one click is the <em>Valuation</em> input; Veracity comes from
+                your witnesses and Validity from the delivery check, so no single recipient is ever asked to
+                judge all three.{' '}
+                <Link href="/value-tensor#who-scores" className="text-sky-400 hover:underline">Who scores which dimension →</Link>
               </p>
               <p>
                 Think of it like a &ldquo;helpful&rdquo; button on a Stack Overflow answer - one click, no rubric.
-                The sophistication lives in how the system aggregates those simple signals, not in what
+                The sophistication lives in what the system does with that one click, not in what
                 the user sees.
               </p>
             </div>
