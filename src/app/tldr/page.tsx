@@ -288,10 +288,17 @@ export default function TLDRPage() {
               and the grid becomes the alternative.
 
               The two numbers are load-bearing and both come from /learn, so they cannot be
-              invented here: five concepts at 2+6+5+10+5 = 28 min, and the "New here? Start
-              with these 3" box on that page says ~13 minutes. That box used to read as a
-              competing answer on arrival; it now states that the three are steps 1-3 of the
-              five. Changing either number means changing /learn too. */}
+              invented here: five concepts at 2+6+7+10+5 = 30 min, and the "New here? Start
+              with these 3" box on that page says ~15 minutes (2+6+7). That box used to read
+              as a competing answer on arrival; it now states that the three are steps 1-3 of
+              the five. Changing either number means changing /learn too.
+
+              Jul-30 visitor LOW: both totals moved (28 -> 30, 13 -> 15) because /learn's
+              first-contact estimate moved 5 -> 7 to agree with the page that owns it. The
+              reasoning lives on that card in /learn's beginner path. The complete set of
+              surfaces carrying a total is this paragraph (both numbers), /learn's "New here?
+              Start with these 3" paragraph (both numbers), and the 'The Reading Path' desc
+              in navigation.ts. */}
           <Link
             href="/learn"
             className="block bg-sky-950/40 border border-sky-700/50 rounded-lg p-5 mb-4 hover:border-sky-500 transition-colors"
@@ -300,9 +307,9 @@ export default function TLDRPage() {
               Read the site in order (recommended) &rarr;
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              There is a suggested path: five pages, about 28 minutes, and you have just
+              There is a suggested path: five pages, about 30 minutes, and you have just
               finished the first. Next is Why Web4?, then First Contact, How It Works, and
-              Running Now. Each one builds on the last, and the first three take about 13
+              Running Now. Each one builds on the last, and the first three take about 15
               minutes if that is all the time you have.
             </p>
           </Link>
