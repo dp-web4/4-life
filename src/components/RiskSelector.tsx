@@ -9,6 +9,10 @@ const RISKS = [
   { label: 'Witnesses go bad', id: 'risk-witnesses' },
   { label: 'Doesn\'t scale', id: 'risk-scale' },
   { label: 'Excludes disabled users', id: 'risk-accessibility' },
+  // Jul-31: this list is the register's index and is hardcoded, so a risk added to the page
+  // without an entry here is invisible to anyone using the jump buttons. Keep it in sync with
+  // the numbered cards in what-could-go-wrong/page.tsx.
+  { label: 'The agent ignores the rules', id: 'risk-gate-bypass' },
 ];
 
 export default function RiskSelector() {
