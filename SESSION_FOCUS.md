@@ -2,7 +2,53 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-31 (02:15 session)*
+*Last updated: 2026-07-31 (03:01 session)*
+
+## PR #499, second review response (Jul-31 03:01 session) - a pointer that rots is a guard that gets discounted
+No new visitor log (cron fires at 05:00, this session ran at 03:01) and the Jul-30 log stays
+exhausted, so Protocol v2 Step 2 makes the second **CHANGES REQUESTED** on #499 the task. Both
+blocking items were narrow, mechanical, and **both were verified true before acting**. No
+visitor-facing copy or numbers changed; this push is comment and record text only.
+
+### Item 1: the record had shrunk a live defect from three sites to two
+`SESSION_FOCUS.md:66` (shipped in the 02:15 response) claimed *"only `:116` and `:1295` exist"*.
+All three exist and all three carry the claim: `:116` "Lurking is free", `:258` "Lurking costs
+nothing", `:1295` "lurking is free in Web4". `day-in-web4` was untouched by the #500/#501 merge, so
+this was not drift, the check simply returned the wrong answer. Five other lines in this same file
+(`:163`, `:299`, `:318`, `:324`, `:372`) still cite three, so the record contradicted itself.
+**Propagation debt the record has shrunk is debt that does not get paid**: the session that finally
+takes `day-in-web4` would have under-scoped by a third. Corrected in place.
+
+### Item 2: every cite in the new guard landed on the wrong card
+The `#499` guard comment was written against line numbers derived **before** the `bc9e5d1` merge of
+#500/#501 shifted `how-it-works` ~20 lines. All three were stale: `:556` ("0 net at best") is
+`:577`, `:523` (the #498 guard) is `:541`, `:511` ("10-20 ATP") is `:529`. Fixed by the reviewer's
+second option: **the integers are gone, replaced by names** ("the '0 net at best' card in the
+two-channel block below", "the Jul-30 visitor HIGH guard under the 'Contributions Earn ATP'
+heading", "the 'Costs ATP' card beside this one"). Also dropped "60 lines below", which is the same
+rot in relative form, and `atp-economics:220` in favour of the vocabulary the sibling guard already
+uses ("atp-economics summary item 3"). The convention is now stated in the comment itself so the
+next session inherits the rule, not just the corrected pointers.
+
+**Nothing on this surface has an integer left to re-derive.** That is the point: these guards exist
+to stop a future session restoring a wrong percentage on a visitor-facing footnote, and a guard
+whose corroborating pointer lands on the wrong card is one a session can talk itself out of.
+
+### Not asked for, disclosed: the same rot in the #498 guard, and it never worked
+`how-it-works:553` cited *"prior fix landed in PROSE (... L862 here)"*. `:862` is the karma rebirth
+card at HEAD, and policy review established it was **already blank whitespace at #498's own commit**
+`1f3afb9` (the referenced prose was at `:901-904` there, `:864` in the parent `8d31343`). So that
+cite shipped wrong and was never right, which is independent corroboration of the reviewer's
+root-cause note: line numbers computed against a tree that had already moved. Now named as "the
+'task pays what the work is worth' parenthetical under the Three Lives worked example", with the
+history recorded in the comment. Comment text only, one phrase, outside #499's diff.
+
+### Still not taken
+- **`day-in-web4:116/258/1295`** stays deferred, at its true size of three sites. Fix direction is
+  defined by #499; pick it up once it lands.
+- **Ledger Q1 / Q5 / Q8** still block the three remaining Jul-30 MEDIUMs.
+- **`/hardbound` positioning**: operator call filed by #500.
+- The Jul-30 log remains exhausted. Next session with a fresh log triages it, not a sixth pass.
 
 ## PR #499 review response (Jul-31 02:15 session) - the wrong denominator, twice
 No new visitor log (this session ran at 02:15, the cron fires at 05:00) and the Jul-30 friction
@@ -62,8 +108,11 @@ Neither surface may complete the thought in **either** direction. Not "recharge 
 reading" and not the mirror-image pessimism "reading drains the grant in days". Both need a
 **daily-recharge figure the site does not ship**, and that is ledger Q1 territory. The sentences
 are neutralized rather than resolved, deliberately, and the ledger was **not** inflated with a new
-question over it. Also corrected while in the block: the deferral note cited
-`day-in-web4:116/258/1295`; only `:116` and `:1295` exist, so it now cites the file, not lines.
+question over it. Also re-verified while in the block: the deferral note cites
+`day-in-web4:116/258/1295` and **all three are live at HEAD** (`:116` "Lurking is free", `:258`
+"Lurking costs nothing", `:1295` "lurking is free in Web4"). **Three sites, not two.** An earlier
+draft of this entry claimed `:258` did not exist; that check was wrong and is corrected here, in
+the 03:01 sitting below.
 
 ## Jul-30 visitor pass, fourth sitting (21:00 session) - two producers of V3, and where the loop bottoms out
 Log: `visitor/logs/2026-07-30.md` (same 05:08 browse, single browse, commit `cbe9ef7`). The friction

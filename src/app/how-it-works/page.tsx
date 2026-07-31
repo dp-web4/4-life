@@ -501,15 +501,22 @@ export default function HowItWorksPage() {
                       (a) percentage-of-starting-balance, because the grant is a ONE-TIME endowment
                           and reading is a RECURRING cost, so no corrected percentage survives the
                           FAQ's own "30-50 posts a day" (that is 30-50% of the grant per day);
-                      (b) earnings-relative ("a post funds many reads"), because atp-economics:220
-                          caps recharge on self-initiated work at what you spent, and the card at
-                          :556 on THIS page says a self-chosen post is "0 net at best". A post funds
-                          nothing; it refunds itself. Shipping the earnings framing would re-arm the
-                          exact defect #498 fixed 60 lines below (see the guard at :523).
+                      (b) earnings-relative ("a post funds many reads"), because atp-economics
+                          summary item 3 caps recharge on self-initiated work at what you spent, and
+                          the "0 net at best" card in the two-channel block below says a self-chosen
+                          post nets zero. A post funds nothing; it refunds itself. Shipping the
+                          earnings framing would re-arm the exact defect #498 fixed further down
+                          this page (see the Jul-30 visitor HIGH guard under the "Contributions
+                          Earn ATP" heading).
                       What survives is cost-of-a-read against cost-of-an-action, which is arithmetic
-                      on the two cards of this same grid (1-2 ATP here, 10-20 ATP at :511), asserts
-                      no earnings claim, and is what "effectively free" means on this surface: free
-                      relative to acting, which is already the sentence's own next clause. */}
+                      on the two cards of this same grid (1-2 ATP here, 10-20 ATP in the "Costs ATP"
+                      card beside this one), asserts no earnings claim, and is what "effectively
+                      free" means on this surface: free relative to acting, which is already the
+                      sentence's own next clause.
+                      Every cite here NAMES its target instead of numbering it. This comment first
+                      shipped with line numbers derived before the #500/#501 merge shifted this file
+                      ~20 lines, so all three landed on the wrong card. A pointer that rots silently
+                      is how a guard gets discounted by the session that follows it. */}
                   <p className="text-gray-500 text-xs mt-2 leading-relaxed">
                     Lurking is cheap, not literally free: a read costs about 1 ATP and viewing content
                     about 2, against 10-20 ATP for a single post in the column beside this one. So a
@@ -543,7 +550,11 @@ export default function HowItWorksPage() {
                   contribution" (unsolicited, self-initiated work, which atp-economics puts in the
                   CAPPED recharge channel) while carrying uncapped payment-channel numbers. Every
                   prior fix landed in PROSE (atp-economics summary item 3, the #net-positive fold,
-                  L862 here); nobody ever fixed the example LABELS, which is why it recurs.
+                  and the "task pays what the work is worth" parenthetical under the Three Lives
+                  worked example here); nobody ever fixed the example LABELS, which is why it
+                  recurs. That third cite read "L862 here" until Jul-31 and was never right:
+                  :862 was already blank at #498's own commit, and it points at the karma rebirth
+                  card at HEAD. Name the target, do not number it.
                   [[visitor-read-it-and-still-filed-it]] - the visitor read the reconciliation and
                   filed it anyway, so the residual is the illustration, not the explanation. Their
                   words: "The concept is fine. The illustrations of it are wrong." Channel is now
