@@ -1283,24 +1283,54 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* Composition Insight */}
+      {/* Composition Insight
+
+          Jul-30 visitor LOW ("unverifiable precision ... these read as reassurance I cannot
+          check. Link them, or drop the counts. The site's honesty is its strongest asset and
+          uncheckable numbers spend that credit"). This block carried two numbers sourced to one
+          artifact, and the artifact is gone. The footer read "Source: web4 correlated equilibrium
+          analysis (~100 formal checks). The composite welfare exceeds the sum of per-layer
+          welfare - composition creates non-additive effects."
+
+          Ground truth, checked against ../web4 on 2026-07-30. The only matching artifact is
+          archive/reference-implementations/correlated_equilibrium_mechanism_design.py, moved to
+          archive/ on 2026-04-11 by web4 65cd5488 "Sprint 32 T1: Archive reference implementation
+          sprawl (#151)". There is no live successor: "composite welfare", "non-additive" and
+          "correlated equilibrium" appear nowhere in ../web4 outside archive/. So the citation is
+          not re-pointable, only removable.
+
+          Three separate defects, not one, which is why the whole footer went and the lead changed:
+          1. "~100 formal checks" - that file's docstring line 24 reads "~100 checks EXPECTED".
+             It was a plan in a header comment, never a count of anything that ran.
+          2. "The composite welfare exceeds the sum of per-layer welfare" - the s55 assertion the
+             sentence paraphrases is `check(True, f"s55: component welfare sum ({component_sum})
+             ...")` at that file's :1327. An unconditional pass whose message prints only the
+             component sum and never a composed welfare. The source never evaluated the claim.
+          3. The digit 3 - "3 emergent properties exist ONLY in composition" is that file's
+             docstring line 20, "Key insight from Session 27", i.e. imported as a premise and
+             never established there either. Deleting the parenthetical while leaving a sourced
+             3 would have removed one unsourced number and kept its sibling.
+
+          The three bullets below survive untouched: each argues from the site's OWN canon
+          (trust lowers ATP cost, CI, the 7x quality ramp, trust decay), none of which depended
+          on the archived file. What had to go was the claim that a formal analysis had verified
+          them. The count now refers to the bullets a reader can see, which is self-verifying.
+          Do not restore a "Source:" line here unless web4 publishes a LIVE analysis. */}
       <div className="max-w-4xl mx-auto mt-8 p-5 bg-amber-900/15 border border-amber-700/30 rounded-xl">
         <h3 className="text-lg font-semibold text-amber-400 mb-3">Why These Can&apos;t Work Alone</h3>
         <p className="text-gray-300 text-sm leading-relaxed mb-3">
-          Formal game theory analysis confirms: <strong>3 emergent properties exist only in composition</strong>.
-          ATP economics alone can&apos;t distinguish spam from slow learners. Trust tensors alone can&apos;t prevent
-          Sybil attacks. Coherence alone can&apos;t measure value. But when ATP costs interact with T3 reputation
-          and CI consistency simultaneously, the composed system produces behaviors no single layer can:
+          <strong>Three properties emerge only in composition</strong>, and what follows is the
+          design argument for them, not a measured result. ATP economics alone can&apos;t
+          distinguish spam from slow learners. Trust tensors alone can&apos;t prevent Sybil
+          attacks. Coherence alone can&apos;t measure value. But when ATP costs interact with T3
+          reputation and CI consistency simultaneously, the composed system produces behaviors no
+          single layer can:
         </p>
         <ul className="list-disc list-inside space-y-1 text-gray-400 text-sm ml-2">
           <li><strong className="text-gray-300">Self-correcting pricing:</strong> High trust lowers ATP costs, which rewards quality contributors - an equilibrium that emerges only from ATP&times;T3 interaction</li>
           <li><strong className="text-gray-300">Unfakeable consistency:</strong> CI measures coherence across actions, but only ATP costs make faking coherence expensive, and only T3 makes faking <em>worthwhile</em> coherence impossible</li>
           <li><strong className="text-gray-300">Natural quality selection:</strong> The 7&times; quality ramp, trust decay, and cost multipliers create a fitness landscape where quality behavior is the only stable strategy</li>
         </ul>
-        <p className="text-xs text-gray-500 mt-3 italic">
-          Source: web4 correlated equilibrium analysis (~100 formal checks). The composite welfare exceeds
-          the sum of per-layer welfare - composition creates non-additive effects.
-        </p>
       </div>
 
       {/* Governance: What Happens When Things Go Wrong */}

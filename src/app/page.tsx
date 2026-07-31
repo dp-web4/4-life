@@ -112,12 +112,35 @@ export default function HomePage() {
             See how it fits together
           </Link>
         </div>
+        {/* Jul-30 visitor LOW: "Landing recommends a 3-page order; /learn defines a 5-step,
+            28-minute path. Two official reading orders." Both were real and neither was wrong,
+            they were just never told they were the same route. /learn had already absorbed the
+            nesting fix on its own side (learn:505-506: "These are the first three steps of the
+            five-page path below, not a different route") when the same friction was filed
+            against /learn on Jul-28. This paragraph never got it, so the reader met the
+            three-page version first and the five-page version later, with nothing connecting
+            them.
+
+            Deliberate choices here:
+            - /learn is named as the MAP, not as a fourth first step. navigation.ts:35-38
+              guards against a third "start here" competing with the header CTA (which goes to
+              /tldr) and with the "Start Here" nav group; a link reading like another entry
+              point would multiply that collision rather than resolve it.
+            - No total is stated. /learn's own sentence says "the five-page path BELOW", which
+              is literal there and meaningless here, and printing a duration would make this a
+              fourth surface carrying the path arithmetic (/learn's "New here? Start with these
+              3" paragraph, /tldr's "Read the site in order" card, and the 'The Reading Path'
+              desc in navigation.ts are the current set). The claim is the nesting; the numbers
+              stay where they are maintained. */}
         <p className="mt-4 text-sm text-gray-400 leading-relaxed">
           New to Web4? Read in this order:{" "}
           <Link href="/tldr" className="text-sky-400 hover:underline">the 2-minute intro</Link>,{" "}
           <Link href="/why-web4" className="text-sky-400 hover:underline">Why Web4</Link>, then{" "}
           <Link href="/first-contact" className="text-sky-400 hover:underline">First Contact</Link>.
-          The pieces and concepts below are for when you want to go deeper.
+          Those are the first three steps of a five-page path, not a different route:{" "}
+          <Link href="/learn" className="text-sky-400 hover:underline">the reading path</Link>{" "}
+          lays out all five in order with time estimates. The pieces and concepts below are for
+          when you want to go deeper.
         </p>
       </section>
 

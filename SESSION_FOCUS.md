@@ -105,6 +105,141 @@ new anti-collusion claim was invented, per the holding pattern.
 - **The Jul-30 log is now exhausted.** Next session: triage the fresh log, not a fifth pass.
 
 
+## Jul-30 visitor pass, third sitting (Jul-30 21:00 session) - the number whose source was archived, and the two reading orders
+
+Log: `visitor/logs/2026-07-30.md` (same 05:08 browse, single browse, one commit `cbe9ef7`).
+Fourth sitting overall on this browse: HIGHs in #498, four MEDIUMs in #499 (open), this is the
+**LOW tier**. Two of the five rows taken, one escalated, three deferred.
+
+### Fixed
+
+- **`/how-it-works`, the composition footer (LOW: "unverifiable precision").** The visitor's
+  words: *"These read as reassurance I cannot check. Link them, or drop the counts. The site's
+  honesty is its strongest asset and uncheckable numbers spend that credit."* The block claimed
+  *"Formal game theory analysis confirms: 3 emergent properties exist only in composition"* over
+  a footer reading *"Source: web4 correlated equilibrium analysis (~100 formal checks). The
+  composite welfare exceeds the sum of per-layer welfare."*
+
+  Grounded against `../web4`: the only matching artifact is
+  `archive/reference-implementations/correlated_equilibrium_mechanism_design.py`, moved to
+  `archive/` on **2026-04-11** by web4 `65cd5488` *"Sprint 32 T1: Archive reference implementation
+  sprawl (#151)"*. No live successor exists ("composite welfare", "non-additive" and "correlated
+  equilibrium" appear nowhere in `../web4` outside `archive/`), so the citation was not
+  re-pointable, only removable. This is `precise-number-may-cite-archived-artifact` a second
+  time, same upstream sprint that retired the "109 integration checks" in #491.
+
+  Reading the artifact turned one defect into **three**, which is why the whole footer went and
+  the lead sentence changed too:
+  1. `~100 formal checks` is that file's docstring line 24, **"~100 checks EXPECTED"**. A plan in
+     a header comment, never a count of anything that ran.
+  2. "The composite welfare exceeds the sum of per-layer welfare" paraphrases its s55 assertion,
+     which is `check(True, f"s55: component welfare sum ({component_sum}) ...")` at `:1327`. An
+     **unconditional pass** printing only the component sum, never a composed welfare. The source
+     never evaluated the claim the site attributed to it.
+  3. The digit **3** is that file's docstring line 20, "Key insight from Session 27", imported as
+     a premise and never established there either. Deleting the parenthetical while leaving a
+     sourced 3 would have removed one unsourced number and kept its sibling.
+
+  The three bullets survive untouched: each argues from the site's **own** canon (trust lowers ATP
+  cost, CI, the 7x ramp, trust decay). What had to go was the claim that a formal analysis had
+  verified them. The count now refers to the bullets a reader can see, which is self-verifying.
+  Propagation checked: this was a single-surface claim, two hits sitewide, both in this block.
+
+- **Two official reading orders (LOW).** *"Landing recommends a 3-page order; /learn defines a
+  5-step, 28-minute path. Two official reading orders."* `/learn` had already absorbed the nesting
+  fix on its own side back on Jul-28 (*"These are the first three steps of the five-page path
+  below, not a different route"*); the **landing hero paragraph never got it**, so a reader met
+  the three-page version first and the five-page version later with nothing connecting them.
+  Added the nesting clause and a route to `/learn`, named as the **map**, not as a fourth first
+  step (`navigation.ts:35-38` guards against a third "start here" competing with the header CTA).
+  No total is printed there, deliberately: that would create a fourth surface carrying the path
+  arithmetic for no gain, and `/learn`'s own sentence says "the path **below**", which is literal
+  there and meaningless on the landing page.
+
+- **`/first-contact` is 7 minutes, `/learn` budgeted it at 5 (LOW, same row).** Fixed on the
+  **index** side. `/first-contact` owns its own read time and states 7 on four surfaces
+  (`:220`, `:335`, and both metadata fields in `layout.tsx`); `/learn`'s "5 min" carried **no
+  rationale of any kind**, in pointed contrast to the why-web4 card directly above it whose 6 is
+  defended across a dozen comment lines. Count reasons, not surfaces.
+
+  The cascade is the whole point and it is **7 rendered surfaces**, not the 4 the first scope
+  found. `src/lib/navigation.ts:46`'s `desc` carries the total and **is rendered** (by
+  `SiteSearch` and `RelatedConcepts`, though **not** by the landing Explore map, which renders
+  only `item.title`; the comment there claiming otherwise is now corrected). `/tldr` carried a
+  **second** figure two lines below the one being changed. `/learn` had a **second**
+  first-contact duration in the "Start with these 3" rows. Patching a subset would have moved
+  the seam rather than closed it. Final set: 5 -> 7 twice in `/learn`, 13 -> 15 twice
+  (`/learn`, `/tldr`), 28 -> 30 three times (`/learn`, `/tldr`, `navigation.ts`). Derived, not
+  invented: 2+6+7 = 15 and 2+6+7+10+5 = 30 from the per-card durations.
+
+  **Recorded in the guard comments and not to be forgotten**: the 7 is **not measured**. This
+  visitor's own dwell on `/first-contact` was 13:30 to 19:00, about **5.5 minutes**, closer to
+  the old 5 than to the 7. That is not enough to flip the direction (the owning page states 7 on
+  four surfaces and the index stated 5 on zero reasons) but nothing may describe the 7 as
+  observed.
+
+### Escalated, not fixed - operator positioning call on hardbound
+
+The third LOW in the same friction row was **"300+ Rust integration tests"** (`/hardbound`,
+`/running-now`). Scoped, then **cut** on policy review, because fixing the count would have
+shipped a worse claim than the one it replaced. What the grounding turned up:
+
+- `dp-web4/hardbound` is **PRIVATE**, and `LICENSE:1` reads **"Proprietary License - MetaLINXX
+  Inc."**, with a `PATENTS.md` beside it. So the count is unverifiable by construction and no
+  link can fix it. Upstream also carries two mutually inconsistent totals of its own
+  (`docs/rust-benchmark-report.md:90` "458 tests across 5 crates";
+  `docs/SPRINT_5_GOVERNED_AUTOMATION.md:169` "830 workspace tests pass"), against 805
+  `#[test]`/`#[tokio::test]` functions actually present and **44** in the one true integration
+  suite (`rust/hardbound/tests/e2e_smoke.rs`).
+- The published `hardbound` package on npm / PyPI / crates.io (**v0.0.1**, AGPL-3.0, built out of
+  the **public** `dp-web4/hestia` at `hardbound-pak/`) is **a different artifact**: a four-trait
+  contract for Hestia's hardware provider (`TrustedKeyProvider`, `SealedVault`,
+  `AttestationSigner`, `OversightPolicy`). Grepping those four names plus `hardbound-pak` across
+  `../hardbound` returns **zero files**. The private product implements none of the public
+  contract. It is a name collision, not a relationship, so "the interfaces are public, the
+  implementation is closed" is true of hardbound-pak and **unsupported** about the product
+  `/hardbound` describes.
+- The honest unit is the **page**, not the sentence. `hardbound:115-146` is a whole section,
+  "How you actually touch it", transcribed from the private repo's quick start
+  (`hardbound init --org`, `hardbound add-member`, `hardbound dev` on :9400, `docker-compose up`).
+  And `NewcomerOrientationBanner.tsx:51-52` renders as the **first element on `/hardbound`**
+  saying *"what's here is real, **open-source software you can run yourself**"*. Its own guard
+  claims accuracy "across all 3 pages"; it now renders on **six** (`onramp`, `the-standard`,
+  `hub`, `hestia`, `hardbound`, `running-now`). Stale rationale, shared component, five other
+  pages in the blast radius.
+- Deleting one count from that sentence also leaves "~3.8 MB static Rust binary that
+  cross-compiles to arm64 / Jetson" beside it, which is **equally** uncheckable against a private
+  repo. The friction row is "reassurance I cannot check"; removing one of three unverifiable
+  specifics does not dispose of it.
+
+**This needs an operator decision before any copy changes**: how the site positions a proprietary
+enterprise tier among three open pieces. No site surface currently characterizes any of the four
+as commercial or closed. Same class as the `onramp` word-overload branding call, and like that
+one it does **not** belong in `docs/WEB4-CANON-QUESTIONS.md`, which is scoped in its own header to
+Web4 **canon** ambiguities ruled on in the spec. Once decided, the follow-on is a full-page pass
+on `/hardbound` plus a `NewcomerOrientationBanner` fix, not a LOW-tier reword.
+
+**Do not copy-fix the count in the meantime.** Deleting "300+" alone reads as closing the row.
+
+### Deferred (3 LOWs, verified as half-shipped or out of class)
+- **`/first-contact` "raw" reputation.** Gloss shipped Jul-29 (#495) at `first-contact:283`, but
+  inside a `<details>` labelled "(optional)" and the guard above it says the collapse was
+  deliberate. Residual is prominence only.
+- **Spammer absolute** (`how-it-works`). Already carries the tie-back the visitor asked for:
+  "No rebirth eligibility **(low T3)**". Also sits ~24 lines from an open-PR hunk.
+- **Nav vocabulary tax** ("~30 links; collapse Core Concepts and Going Deeper by default"). An IA
+  and design change, not a content fix.
+
+### Still blocked (3 MEDIUMs, unchanged)
+Ledger **Q1** (endpoint at 0.5), **Q5** (what ends a life; karma, now three divergent models),
+**Q8** (software-only conformance). No sitting can take these without a web4 ruling.
+
+### Carried forward
+- `day-in-web4:116/258/1295` "lurking is free" propagation, deferred by #499 and **still**
+  deferred here: its fix direction is defined by #499, which is unmerged. Pick it up once #499
+  lands, not before.
+- General `id` anchor pass on `/hestia` (18 inbound links).
+
 ## Jul-30 visitor pass (Jul-30 09:00 session) - the numbers, and the tier the numbers exclude
 Log: `visitor/logs/2026-07-30.md` (fresh 05:08 browse; Jul-29 is exhausted after four sittings).
 Understanding "good", would return yes, would recommend **maybe**. 5 HIGH / 7 MEDIUM / 5 LOW.
