@@ -2,7 +2,68 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-31 (21:00 session)*
+*Last updated: 2026-07-31 (02:15 session)*
+
+## PR #499 review response (Jul-31 02:15 session) - the wrong denominator, twice
+No new visitor log (this session ran at 02:15, the cron fires at 05:00) and the Jul-30 friction
+table plus all ten Unanswered Questions are exhausted across #498/#499/#500/#501. Protocol v2
+Step 2 makes the open CHANGES REQUESTED on **#499** the task. Branch rebased onto `origin/main`
+(it was behind #500 and #501; only `SESSION_FOCUS.md` conflicted).
+
+### What the reviewer caught
+#499 moved a sentence from the `/atp-economics` reading-cost FAQ onto `/how-it-works`:
+*"reading a dozen posts is roughly 1% of your starting balance."* It is wrong by **12x** against
+the two figures in its own sentence: 12 reads x 1 ATP = 12 ATP, and the grant is 100 ATP, so 12%.
+For 1% to hold a read would have to cost 0.083 ATP. #499 carried it faithfully (it ships today)
+but that is the failure: **a number inherited from a source that looked authoritative, republished
+where a forward claim now rests on it, never re-run.** On `/atp-economics` it sat inside a
+collapsed `<details>`; on `/how-it-works` it was the reassurance that makes "reading is not
+actually free" acceptable at the exact moment the fix takes "free" away from the reader. The
+reviewer notes this is the third instance of the same class this cycle across three repos
+(web4 #589, #590). **Re-run the number after the prose is written, not before, and especially
+when moving it to a page where it has to carry more weight than at its source.**
+
+### The instrument was wrong, not just the arithmetic
+Repairing 1% to 12% would not have helped. **Percentage-of-starting-balance is the wrong
+denominator**: the grant is a one-time endowment and reading is a recurring cost. The same FAQ
+says a normal user reads 30-50 posts a day, which is 30-50% of the grant *per day* on reads alone.
+No corrected percentage survives that looking trivial.
+
+### And the reviewer's own suggested replacement had to be refused
+The ask was to carry the **earnings-relative** reason instead ("a single post at 10-20 ATP funds
+many reads"). Policy review verified it and it fails on this site's own rules:
+- `atp-economics:220` caps recharge on self-initiated work at what you spent, and says net gain
+  comes only from commissioned payment ("recharge refunds, payment earns").
+- `how-it-works:556`, a card **60 lines below the footnote being edited**, says a post you chose
+  to write is *"Cost 15 ATP -> recharges up to 15 ATP = 0 net at best."*
+
+A post funds nothing; it refunds itself. Worse, **uncapped earnings attached to self-initiated
+posting is exactly the defect #498 fixed on this page** (its guard comment sits at `:523`), so
+shipping the literal wording would have re-armed a fix from two PRs ago. This is
+[[two-fixes-in-one-pass-can-fight]] with one PR of separation instead of one pass.
+
+### Shipped: cost-of-a-read against cost-of-an-action
+The one instrument that is arithmetic on figures already printed beside the claim, asserts no
+earnings, and actually defends the phrase it sits under. "Effectively free" means free *relative
+to acting*, which was already the sentence's own next clause.
+- **`how-it-works:496-510`** - a read is 1-2 ATP against 10-20 ATP for a post **in the adjacent
+  card of the same grid**, so a read is a tenth to a twentieth of one post. The anti-scraping
+  reason and the `#faq-reading-cost` link are untouched.
+- **`atp-economics#faq-reading-cost`** - fixed at source, using **this page's own** post figure
+  (15 ATP at `:1844`), not how-it-works' 10-20. Importing the sibling page's number would have
+  manufactured a [[sibling-page-cross-reference-gap]] where there is currently none.
+- **The "30-50 posts a day" sentence went too**, promoted from the reviewer's optional item 3 to
+  required: *"the cost is invisible against what you earn from any contribution"* is falsified by
+  the same 0-net card, same defect class, same paragraph. It now states the cost (30-50 ATP, about
+  two or three posts) and lands on the scraper gap, which is what the price is actually for.
+
+### The hard stop, recorded in both files
+Neither surface may complete the thought in **either** direction. Not "recharge covers a day of
+reading" and not the mirror-image pessimism "reading drains the grant in days". Both need a
+**daily-recharge figure the site does not ship**, and that is ledger Q1 territory. The sentences
+are neutralized rather than resolved, deliberately, and the ledger was **not** inflated with a new
+question over it. Also corrected while in the block: the deferral note cited
+`day-in-web4:116/258/1295`; only `:116` and `:1295` exist, so it now cites the file, not lines.
 
 ## Jul-30 visitor pass, fourth sitting (21:00 session) - two producers of V3, and where the loop bottoms out
 Log: `visitor/logs/2026-07-30.md` (same 05:08 browse, single browse, commit `cbe9ef7`). The friction

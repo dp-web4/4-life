@@ -478,8 +478,8 @@ export default function HowItWorksPage() {
                     #faq-reading-cost (1 ATP a read, 2 to view, so mass scraping is not free) and the
                     mechanism prose at :1485 ("Routine interactions (reading a post, browsing content)
                     generate small ADP receipts"). "Free" here was the unreasoned side, so it moved.
-                    Do not restore a bare "free" on this page. Note day-in-web4:116/258/1295 still say
-                    "lurking is free"; same defect, deferred, propagate there next. */}
+                    Do not restore a bare "free" on this page. Note day-in-web4 still says
+                    "lurking is free" (two instances); same defect, deferred, propagate there next. */}
                 Actions that affect others cost ATP from your energy budget. Reading and browsing are
                 effectively free, about 1 ATP a read, so what you spend is essentially what you put out:
               </p>
@@ -493,10 +493,28 @@ export default function HowItWorksPage() {
                     <p>• Viewing profiles and trust scores</p>
                     <p>• Observing community activity</p>
                   </div>
+                  {/* Jul-31 (#499 review): this footnote first shipped saying a dozen reads is
+                      "roughly 1% of your starting balance", carried over from the atp-economics FAQ.
+                      That is wrong by 12x on the site's own two figures: 12 reads x 1 ATP = 12 ATP
+                      against a 100 ATP grant = 12%. Fixed at source too; do not reintroduce it here.
+                      Two instruments were rejected, not just the number:
+                      (a) percentage-of-starting-balance, because the grant is a ONE-TIME endowment
+                          and reading is a RECURRING cost, so no corrected percentage survives the
+                          FAQ's own "30-50 posts a day" (that is 30-50% of the grant per day);
+                      (b) earnings-relative ("a post funds many reads"), because atp-economics:220
+                          caps recharge on self-initiated work at what you spent, and the card at
+                          :556 on THIS page says a self-chosen post is "0 net at best". A post funds
+                          nothing; it refunds itself. Shipping the earnings framing would re-arm the
+                          exact defect #498 fixed 60 lines below (see the guard at :523).
+                      What survives is cost-of-a-read against cost-of-an-action, which is arithmetic
+                      on the two cards of this same grid (1-2 ATP here, 10-20 ATP at :511), asserts
+                      no earnings claim, and is what "effectively free" means on this surface: free
+                      relative to acting, which is already the sentence's own next clause. */}
                   <p className="text-gray-500 text-xs mt-2 leading-relaxed">
                     Lurking is cheap, not literally free: a read costs about 1 ATP and viewing content
-                    about 2, so reading a dozen posts is roughly 1% of your starting balance. The tiny
-                    charge exists so that scraping a million posts is not free either.{' '}
+                    about 2, against 10-20 ATP for a single post in the column beside this one. So a
+                    read runs about a tenth to a twentieth of one post, and the tiny charge exists so
+                    that scraping a million posts is not free either.{' '}
                     <Link href="/atp-economics#faq-reading-cost" className="text-sky-400 hover:underline">
                       Why reading costs anything at all &rarr;
                     </Link>{' '}
