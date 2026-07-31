@@ -2,7 +2,108 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-30 (09:00 session)*
+*Last updated: 2026-07-31 (21:00 session)*
+
+## Jul-30 visitor pass, fourth sitting (21:00 session) - two producers of V3, and where the loop bottoms out
+Log: `visitor/logs/2026-07-30.md` (same 05:08 browse, single browse, commit `cbe9ef7`). The friction
+**table is exhausted**: #498 took the 5 HIGHs, #499 (open) 4 of 7 MEDIUMs, #500 (open) 2 of 5 LOWs
+plus the hardbound escalation; the rest are blocked on ledger Q1/Q5/Q8 or verified half-shipped.
+Per [[pessimistic-absolute-nobody-catches]] that hands off to the log's **Unanswered Questions**,
+same move as #497. Nine of the ten were already disposed. **This sitting took Q10**, the last one:
+
+> *"Who decides that a 'confirmer' is honest? Quality is confirmed by recipients weighted by their
+> trust, and their trust came from being confirmed. I could not find where that loop is anchored."*
+
+### The finding: the site carried two incompatible producers of V3, and the visitor read the wrong one
+- **`/value-tensor#who-scores`** (the owning page, `:145-175`): "Not any one other party either.
+  Each dimension is scored by a different mechanism." Valuation = the **recipient** confirms
+  usefulness; Veracity = **witness attestation** and peer challenge; Validity = **structural
+  verification**. `/trust-tensor:355-362` agrees ("the V3 score **the recipient assigned** to that
+  contribution ... separate confirmers are never averaged together first"), and so does
+  `V3OutputScorer.tsx`.
+- **`/atp-economics`** (the outlier, 4 instances): "**No one rates you on a scale.** The system
+  watches *aggregate behavior*: how quickly people confirm, whether diverse recipients confirm, and
+  whether high-trust people confirm. **These three signals combine into your V3 score.**"
+- **Canon sides with the owning page.** `t3-v3-tensors.md` §3.3 computes V3 **per completed R6
+  action**: `Valuation = (ATP_earned / ATP_expected) * recipient_satisfaction`,
+  `Veracity = (verified_claims / total_claims) * witness_confidence`, `Validity = 1.0 if
+  value_transferred`. `grep -rn "confirmer" web4-standard/` returns **zero hits**.
+- **Why it is Q10's mechanism and not a nearby coincidence**: on the `/atp-economics` account
+  confirmer trust is an input to V3, V3 is the `quality` term in the canonical T3 update
+  (`trust-tensor:352`), and T3 is where confirmer trust comes from. That is the visitor's loop,
+  exactly, with no base case, and it is why they could not find one.
+- **The "different quantities at different scopes" defence was steelmanned by policy review and it
+  fails**: `trust-tensor:361` forbids the aggregate-across-confirmers reading outright, and `:711`
+  named the same 0-to-1 `quality` term the T3 formula consumes. Two producers, one named quantity.
+- **Nothing here says canon is silent on those signals.** §7.1 has witness diversity and temporal
+  distribution as gaming **detection**. They exist; they just do not produce V3.
+
+### Fixed: 4 surfaces on `/atp-economics`, rescoped, no numbers changed
+1. **Card 3 of "But Who Decides What's Quality?"** was the producer claim in three lines. Per policy
+   review, rescoping it without a replacement would have **opened a hole where it closed a seam**:
+   the block's own heading asks who decides quality, and the remaining cards answer with the
+   *interface*, not the scoring. The card now carries the **owning page's own summary**
+   (`value-tensor:173`), so zero new claims land: recipient judges usefulness, witnesses judge
+   truthfulness, the system verifies delivery. Label moved with it ("Patterns Emerge" was naming the
+   deleted mechanism).
+2. **The prose below it.** "No algorithm scoring your posts" was **dropped, not softened**:
+   `value-tensor:170` calls Validity "the most automated dimension", so the flat version contradicted
+   the owning page. What survives is "no central authority ranking you and no panel of judges", which
+   is the true part. The 70/30 truth-over-popularity weighting is untouched.
+3. **A new hand-off paragraph** puts the three signals where they belong. They are **recharge**
+   drivers and the page already said so one paragraph later ("Earlier, broader, more-trusted
+   confirmation recharges faster") and in the weighted-slice formula. So this is relocation, not
+   deletion.
+4. **The `#earning-atp` confirmation-interface toggle** carried the *more* explicit version ("the
+   system derives V3 scores from patterns across many confirmations"), and the block being fixed
+   **routes readers straight to it**, so fixing only the first block would have left the page
+   contradicting itself one link away. Its correct half ("recipients don't score Valuation, Veracity
+   and Validity separately, they just confirm they received value") is **kept and completed**: that
+   one click is the Valuation input, the other two dimensions come from elsewhere.
+5. **The Hannah/Sam illustration.** Third time this class shows up as prose-fixed-but-illustration-
+   broken ([[prose-fixed-thrice-check-the-illustration]]). The box derived "~85% quality" /
+   "~35% quality" **from** the three signals and its lead said "the actual **aggregation** depends
+   on...". **The trap policy review caught**: do NOT rescope this box to recharge. Those are
+   **quality-ramp** numbers and the ramp is the **payment** channel, kept explicitly separate from
+   recharge on the same page, so a recharge frame would close the V3 seam and open a channel seam in
+   one edit ([[two-fixes-in-one-pass-can-fight]]). Reframed as **correlate, not producer**: quality
+   differs first, so the response looks different. That direction already ships further down the
+   page. **The 85 and 35 are load-bearing ramp inputs and were not touched.**
+
+### The actual answer to Q10 is the base case, and it was already written
+`/atp-economics` already said it, correctly: *"Every participant starts at the same baseline - trust
+~ 0.5, 100 ATP grant. In that state, all confirmations weigh equally low, but they still count."*
+It had **no `id`** and was titled by **scenario** ("What about a brand-new community"), so a reader
+holding the circularity question did not recognise it as their answer. Now `id="who-trusts-the-
+confirmers"` (deliberately not `cold-start`, which this page links **out** to on
+`/what-could-go-wrong`), the lead names the loop alongside the small-community case, and the new
+hand-off paragraph routes to it from where the loop is created. **No new mechanism was added.**
+
+- **Stated honestly, in the guard comment and here: the scope repair does NOT dissolve the
+  circularity.** The regress persists on the corrected account too (confirmer trust weights recharge
+  -> recharge feeds `ATP_earned` -> `ATP_earned` is a Valuation input in canon §3.3 -> V3 -> T3).
+  It **terminates on the base case**, not on the accuracy fix. Two deliverables with two jobs.
+
+### Also: `/trust-tensor` deep-linked
+`:359` linked `/value-tensor` bare. `#who-scores` had **zero inbound links sitewide** despite being
+the page that answers "who assigns these scores?". It is now reachable from both pages this visitor
+actually read.
+
+### Ledger Q3 is a NEAR-MISS and the gate did NOT fire
+Q10's first half ("who decides a confirmer is honest") **is** Q3, whose gate fires when a visitor
+re-asks *with the current answer visible*. This visitor never opened `/value-tensor` (13 pages
+listed, it is not among them), so the condition is unmet. Recorded here so a later session does not
+read this PR as evidence the gate fired. The existing Q3 answer on this page (low-trust clicks carry
+almost no weight, indiscriminate confirming tanks your CI) was **routed to, not strengthened**; no
+new anti-collusion claim was invented, per the holding pattern.
+
+### NOT taken
+- **Ledger Q1 / Q5 / Q8** still block the three remaining Jul-30 MEDIUMs.
+- **`day-in-web4:116/258/1295`** "lurking is free" propagation: its fix direction is defined by
+  **#499, still unmerged**. Unchanged from #500's handoff. Pick it up once #499 lands.
+- **`/hardbound` positioning**: operator call filed by #500. Do not copy-fix the count.
+- **The Jul-30 log is now exhausted.** Next session: triage the fresh log, not a fifth pass.
+
 
 ## Jul-30 visitor pass (Jul-30 09:00 session) - the numbers, and the tier the numbers exclude
 Log: `visitor/logs/2026-07-30.md` (fresh 05:08 browse; Jul-29 is exhausted after four sittings).
