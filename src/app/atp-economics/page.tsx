@@ -40,6 +40,12 @@ export default function ATPEconomicsPage() {
   // had ALREADY assigned these rows to the payment channel in prose at L786-790; relabelling
   // completes that, it does not reverse it. lowQuality (10 -> 5) and spam (5 -> 0) are both within
   // the recharge cap, so they stay self-initiated.
+  // Jul-31: it recurred anyway, 4th touch, on the two surfaces this note did not cover - the
+  // "Quality Gets Rewarded" card in Key Insights and the worked example's "Hannah ... thrives"
+  // conclusion, plus a leftover copy in how-it-works' Learning Across Lives bullets. All three are
+  // fixed in that push. The generalisation is now: this claim has to name a channel EVERYWHERE it
+  // appears (prose, labels, summary cards, worked-example conclusions), because the unqualified
+  // form is false of the recharge channel and this page teaches both.
   const actions = {
     spam: { cost: 5, reward: 0, label: "Send spam message" },
     lowQuality: { cost: 10, reward: 5, label: "Low-quality post (your own)" },
@@ -663,7 +669,13 @@ export default function ATPEconomicsPage() {
           </div>
           <p className="text-gray-300 text-sm leading-relaxed">
             Same task, same spend - <strong className="text-amber-300">Hannah keeps 7x more ATP than Sam</strong> (42 ÷ 6).
-            Across a hundred tasks, Sam burns through their budget and dies of energy starvation. Hannah barely loses any and thrives.
+            Across a hundred tasks, Sam burns through their budget and dies of energy starvation. Hannah barely
+            loses any, but barely losing is not thriving: quality is what slows her burn, and{" "}
+            <a
+              href="#net-positive"
+              onClick={(e) => { e.preventDefault(); const el = document.getElementById('net-positive'); if (el) { if (el instanceof HTMLDetailsElement) el.open = true; el.scrollIntoView({ behavior: 'smooth' }); } }}
+              className="text-sky-400 hover:text-sky-300 underline"
+            >recharge refunds, payment earns</a>, so it is commissioned work rather than this refund that puts her ahead.
           </p>
           <p className="text-gray-500 text-xs mt-2">
             That&apos;s where &ldquo;~7x&rdquo; comes from: just-passing the 30% threshold returns almost nothing, while staying consistently well above 70% returns most of it.
@@ -1232,10 +1244,21 @@ export default function ATPEconomicsPage() {
             <h3 className="text-xl font-semibold text-green-400 mb-3">
               Quality Gets Rewarded
             </h3>
+            {/* Jul-31 visitor HIGH (their #3), 4th touch on this claim and the 2nd consecutive
+                browse: this card said "High-value contributions earn more ATP than they cost",
+                which the same page's cap rule forbids ("the cap means you can't profit on a single
+                action, only recover its cost", in the No quorum, no threshold paragraph of the
+                math fold). Every prior fix landed in PROSE (summary item 3, the #net-positive
+                fold) or in the simulator LABELS (Jul-30); the summary card was never touched, and
+                the card is what a skimmer keeps. Corrected to the phrasing already shipping on
+                five surfaces of this page - propagation, not a new claim. Do NOT restore the
+                unqualified version: it is true only of the payment channel, and this card names
+                no channel. */}
             <p className="text-gray-300 text-sm leading-relaxed">
-              High-value contributions earn more ATP than they cost. This isn't
-              charity - it&apos;s how the system works. Value creators accumulate
-              energy budget. They thrive.
+              Recharge refunds, payment earns. Confirming work you started refunds at most what you
+              spent, so quality shows up as how much of your outlay comes back; work someone else
+              commissioned pays what it was worth to them. This isn&apos;t charity - it&apos;s how
+              the system works. Value creators accumulate energy budget by being commissioned again.
             </p>
           </div>
 

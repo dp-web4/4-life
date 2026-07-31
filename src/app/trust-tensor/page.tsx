@@ -396,7 +396,18 @@ export default function TrustTensorPage() {
         </details>
 
         {/* Apr 30 visitor MEDIUM: "What does 0.7 actually mean?" - surface the calibration ladder
-            at the moment of first decimal exposure, link to the deeper FAQ at #calibration-meaning. */}
+            at the moment of first decimal exposure, link to the deeper FAQ at #calibration-meaning.
+            SCOPED Jul-31 (visitor HIGH, their #2), in the same push as lct-explainer's copy of this
+            sentence. The survival-line clause here is deliberately byte-identical to the anchor in
+            lct-explainer's "How to read the numbers below" intro: it was one sentence propagated to
+            two pages, and "earn your way above it" was unconditional on both. False for a
+            software-only identity, which lct-explainer's own tier grid caps at 0.50. Headroom is now
+            conditioned on a hardware anchor here too; keep the two copies in sync, and see the long
+            guard beside lct-explainer's copy for the three things this wording must not do (no
+            ruling at exactly 0.50, no second phrasing of the consequence, no "hardware required").
+            NOT the same as this log's separate MEDIUM ("/trust-tensor never mentions that hardware
+            caps the ceiling, near the Alice example"). That one is untaken: this page still teaches
+            0.90 as reachable through attestation alone where Alice is introduced. */}
         <div className="mt-4 bg-gray-900/40 border border-gray-700/50 rounded-lg px-5 py-4 text-sm">
           <p className="text-gray-400 leading-relaxed">
             <strong className="text-gray-300">What does &ldquo;0.85&rdquo; mean?</strong>{" "}
@@ -404,7 +415,8 @@ export default function TrustTensorPage() {
             <strong className="text-gray-300">0.5</strong> = newcomer baseline,{" "}
             <strong className="text-gray-300">0.7</strong> = ~70% cooperative behavior in this role,{" "}
             <strong className="text-gray-300">0.9</strong> = consistently exceptional.{" "}
-            That same <strong className="text-gray-300">0.5</strong> is what other pages call the survival line: you start at the neutral midpoint and earn your way above it, so a newcomer is not in danger. Crossing below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal.{" "}
+            That same <strong className="text-gray-300">0.5</strong> is what other pages call the survival line: you start at the neutral midpoint and, if your identity is hardware-anchored, earn your way above it, so a newcomer is not in danger. (A software-only identity is capped at that same midpoint:{" "}
+            <Link href="/lct-explainer#software-only-survival" className="text-sky-400 hover:text-sky-300 underline">what a 0.50 ceiling actually costs you</Link>.) Crossing below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal.{" "}
             <a
               href="#calibration-meaning"
               onClick={(e) => { e.preventDefault(); const el = document.getElementById('calibration-meaning'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}

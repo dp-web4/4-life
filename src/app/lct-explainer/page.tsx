@@ -257,10 +257,29 @@ export default function LCTExplainerPage() {
               newcomer reassurance. Both clauses are strictly-below on purpose: do NOT reword into anything
               that says a reader sitting *at* 0.50 is alive, safe, or has full access (standing canon
               escalation on > vs >=). This anchor is the ONE place on this page that defines the line;
-              other mentions name it only. */}
+              other mentions name it only.
+              SCOPED Jul-31 (visitor HIGH, their #2). "earn your way above it" shipped unconditional, and
+              this same page's tier grid says software-only is capped at 0.50, so the reassurance was false
+              for exactly the tier that needs it most - and the visitor did the arithmetic and caught it.
+              The headroom half is now conditioned on a hardware anchor; the death-rule clause after it is
+              untouched and still byte-identical to trust-tensor's copy, which took the same scoping in the
+              same push (keep the two in sync, they are deliberately one sentence in two places).
+              THREE things this edit refuses to do, all of them live escalations:
+              - It does NOT say the software-only newcomer IS in danger. Their status is left unstated,
+                because stating it means ruling on > vs >= at exactly 0.50 (ledger Q1).
+              - It does NOT re-author the consequence. "No buffer, zero margin" already ships in the
+                #software-only-survival callout further down this page; the parenthetical FORWARD-POINTS
+                there rather than coining a third phrasing of the same idea (see the sync note above).
+              - It does NOT imply hardware is required to participate ([[hardware-required-seam]]).
+                "Capped at that midpoint" is a ceiling claim, not an eligibility claim. */}
           <p className="text-xs text-purple-200/80 mt-3 pt-3 border-t border-purple-800/30">
             <span className="font-semibold text-purple-300">How to read the numbers below:</span> every trust score on this page
-            runs on a <strong>0-1</strong> scale. <strong>0.5</strong> is the neutral midpoint (a coin-flip prior: with no track record yet, trust is neither earned nor lost), and it doubles as the survival line: you start at the neutral midpoint and earn your way above it, so a newcomer is not in danger. Crossing below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal. <strong>0.75</strong> is solid,
+            runs on a <strong>0-1</strong> scale. <strong>0.5</strong> is the neutral midpoint (a coin-flip prior: with no track record yet, trust is neither earned nor lost), and it doubles as the survival line: you start at the neutral midpoint and, if your identity is hardware-anchored, earn your way above it, so a newcomer is not in danger. (A software-only identity is capped at that same midpoint:{" "}
+            <a
+              href="#software-only-survival"
+              onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('software-only-survival')?.scrollIntoView({ behavior: 'smooth' }); }}
+              className="text-purple-300 hover:text-purple-200 underline"
+            >what a 0.50 ceiling actually costs you &darr;</a>.) Crossing below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal. <strong>0.75</strong> is solid,
             and <strong>0.90</strong> is the hardware-bound ceiling. Every decimal you meet from here on sits on that scale.
           </p>
           <p className="text-xs text-gray-500 mt-3">Read on for the full picture, or <a href="#try-it" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('try-it')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300">jump to the interactive security audit ↓</a></p>

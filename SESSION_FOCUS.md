@@ -2,7 +2,97 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-31 (03:01 session)*
+*Last updated: 2026-07-31 (09:00 session)*
+
+## Jul-31 visitor HIGHs (09:00 session) - the comfortable version lives where the reader stops
+
+Fresh log `visitor/logs/2026-07-31.md` (05:11). **All seven** understanding boxes checked, "good"
+comprehension, would return: the strongest result the persona can report. The visitor names the
+defect class themselves and it is the whole of this session's scope:
+
+> the site states the honest version *somewhere* and the comfortable version somewhere else, and
+> the comfortable version is the one sitting in the summary card, the mitigation bullet, or the
+> worked-example conclusion, which is to say the place a reader actually stops.
+
+Three of four HIGHs fit that shape exactly. All three fixed at the **reassurance** surface, leaving
+the **mechanism** surface as the authority. No numbers changed anywhere; every edit is a claim or a
+label.
+
+### HIGH 1: the risk register reassured the excluded tier with something untrue
+`/what-could-go-wrong` Risk 8 mitigation (4) opened *"Software-only behavior still accrues
+reputation normally"*. `/lct-explainer` says *"0.5 is both where you start and the highest you can
+reach"*. A user pinned at their starting value accrues nothing, and this was the sentence doing the
+reassuring, on the page whose entire purpose is not doing that.
+
+Only the accrual half was deleted. **The eligibility clause is byte-identical and stayed that way**
+(*"the ceiling caps high-trust roles, not basic participation"*), because a Jul-29 guard marks it as
+the clause holding the eligibility side of the [[hardware-required-seam]]. Narrowing the bullet was
+safe; rewriting it would have flipped the page toward "hardware required".
+
+The replacement ships only what is grounded: participation (this page's own claim) and pseudonymity
+(lct-explainer's). The visitor's suggested third item, *"a witness record of their own actions"*,
+was **cut on policy review as ungrounded**: lct-explainer's device-loss paragraph says the
+software-only case has no hardware witness and *"nothing to recover to"*.
+
+### HIGH 2: an unconditional headroom promise, on the page that states the ceiling
+*"you start at the neutral midpoint and earn your way above it, so a newcomer is not in danger"*
+shipped byte-identically at `lct-explainer` (the page's ONE proactive anchor, in the intro above
+every decimal) and at `trust-tensor`. False for a software-only newcomer, three paragraphs from
+where the same page caps them at 0.50. Headroom is now conditioned on a hardware anchor on both
+surfaces, which remain byte-identical to each other.
+
+Three things the wording deliberately does **not** do:
+- It never says the software-only newcomer *is* in danger. Their status is left unstated, because
+  stating it rules on `>` vs `>=` at exactly 0.50 ([[trust-05-endpoint-canon-conflict]], ledger Q1).
+- It does not re-author the consequence. The visitor asked for *"you cannot build a buffer above
+  it"*; that **already ships verbatim in substance** in the `#software-only-survival` callout
+  further down lct-explainer (*"what the software-only ceiling really costs you is margin ... no
+  buffer above it"*). The parenthetical forward-points there instead of coining a third phrasing.
+- "Capped at that midpoint" is a ceiling claim, not an eligibility claim, so the hardware-required
+  seam is untouched.
+
+### HIGH 3: fourth touch, and the first one to reach the illustration
+`/atp-economics` concluded *"Hannah barely loses any and thrives"* over a card reading **Net: -8
+ATP**, and the Key Insights card asserted *"High-value contributions earn more ATP than they cost"*,
+which the same page's cap rule forbids (*"you can't profit on a single action, only recover its
+cost"*).
+
+The page's own header guard already diagnosed this in Jul-30's pass: *"Both prior fixes landed in
+PROSE ... the LABELS were never touched, which is why it keeps recurring."* Jul-30 fixed the
+simulator labels. It recurred anyway, because **the summary card and the worked-example conclusion
+were in neither set**. Chain is Jun-11 browse B, Jun-12 browse A, Jul-30, Jul-31: fourth touch,
+second consecutive browse. Also found a leftover copy of the same string in `how-it-works`'
+Learning Across Lives bullets, which #498 left behind when it fixed that page's earning examples.
+
+All three now name a channel, reusing the phrasing already shipping on five surfaces of
+`/atp-economics` (**recharge refunds, payment earns**). Propagation, not a new claim. The
+"dead by task 13" arithmetic was **not** imported: a June-11 parenthetical already frames both
+negative nets as an artifact of the example pricing the task at exactly what each contributor
+spends, and asserting a death task would contradict that fix and invent a number.
+
+### HIGH 4: NOT fixed. Second browse in a row, and the escalation is where it belongs
+`/hardbound` carries `NewcomerOrientationBanner`'s *"real, open-source software you can run
+yourself, the proof Web4 works in practice"* over a page describing a **private, proprietary**
+product. #500 scoped this, cut it on policy review, filed it as an **operator positioning call**,
+and said do not copy-fix meanwhile.
+
+What is new: Jul-30 filed it as a **LOW** about an uncheckable test count. Jul-31 files it as a
+**HIGH** and names the **banner**, arriving there by following the site's own *"don't take this on
+faith, read the code"* invitation to the GitHub org and finding no hardbound. Same escalation, and
+now the strongest evidence in it: the visitor's Honest Assessment calls this *"the one place the
+site's own standard slips"*. Recorded, not re-decided. See [[uncheckable-count-may-be-an-operator-call]].
+
+### Not taken this session (7 MEDIUMs, 5 LOWs)
+Next session triages them against a fresher log. Two worth flagging now:
+- **`/trust-tensor` never mentions the hardware ceiling near the Alice example** (MEDIUM). This
+  session's HIGH-2 edit added a ceiling mention to that page's calibration box, but the MEDIUM is
+  about the Alice-across-three-roles illustration teaching 0.90 as reachable through attestation
+  alone. Still open, and noted as such in the guard there.
+- **The policy-gate bypass is absent from the eight-risk register** (MEDIUM). The visitor's sharpest
+  structural point: the only measured, present-tense vulnerability on the site is disclosed on the
+  product page and missing from the failure analysis. Their Unanswered Q1 (does the witness chain
+  still record an action from an agent that bypassed the gate?) is the same thread and needs a
+  ground-truth check in `../hestia`, not a copy fix.
 
 ## PR #499, second review response (Jul-31 03:01 session) - a pointer that rots is a guard that gets discounted
 No new visitor log (cron fires at 05:00, this session ran at 03:01) and the Jul-30 log stays
