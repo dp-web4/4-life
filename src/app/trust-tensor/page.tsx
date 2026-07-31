@@ -356,8 +356,8 @@ export default function TrustTensorPage() {
               <strong className="text-purple-300">V3 score</strong>{" "}
               the recipient assigned to that contribution - a weighted blend of its three
               components (Valuation &middot; Veracity &middot; Validity) folded into one 0-to-1
-              number (the <Link href="/value-tensor" className="text-purple-300 underline">Value Tensor page</Link>{" "}
-              shows exactly how they combine, but it&apos;s optional here). That blending happens per
+              number (the <Link href="/value-tensor#who-scores" className="text-purple-300 underline">Value Tensor page</Link>{" "}
+              shows who scores each part and exactly how they combine, but it&apos;s optional here). That blending happens per
               contribution: each confirmer&apos;s V3 feeds the formula independently -
               separate confirmers are never averaged together first.
               A single high-quality contribution barely moves the needle - a 0.85-quality

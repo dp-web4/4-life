@@ -143,8 +143,9 @@ export default function LearnJourney() {
           // counted roughly 56 questions across 6 categories, spent 11 minutes, and skipped
           // five of the six). The page itself already labels the Q&A optional (why-web4:45-47),
           // so the defect was here, in the estimate. The digit 6 stays legible and unchanged:
-          // tldr:291 pins "2+6+5+10+5 = 28 min" to these values and says changing either
-          // number means changing /learn too. Scope-only qualifier, deliberately not saying
+          // tldr:291 pins "2+6+7+10+5 = 30 min" to these values (2+6+5+10+5 = 28 until the
+          // Jul-30 first-contact correction) and says changing either number means changing
+          // /learn too. Scope-only qualifier, deliberately not saying
           // what the 6 minutes buys - why-web4's own orientation box splits the body into
           // ~5 min + ~2 min, so "6 min for the problem statement" would manufacture a 6-vs-7
           // seam on the destination page. No question count is printed either; that would be
@@ -160,7 +161,21 @@ export default function LearnJourney() {
             "A guided walkthrough of a trust-native interaction, so the ideas are concrete before they're abstract.",
           why: "Concrete before abstract. Seeing the flow once makes every later concept easier to place.",
           link: "/first-contact",
-          duration: "5 min",
+          // Jul-30 visitor LOW: "/first-contact says '7 minutes' where /learn budgets 5."
+          // This card was the 5. /first-contact OWNS its own read time and states 7 on four
+          // surfaces (first-contact:220 "In the next 7 minutes", :335 "5 acts - ~7 minutes",
+          // and layout.tsx:6 / :10, both metadata). This card carried the 5 with no rationale
+          // of any kind, in contrast to the why-web4 card above whose 6 is defended at length.
+          // Count reasons, not surfaces: the index moves, the owning page does not.
+          // NOT measured. The Jul-30 visitor's own dwell on /first-contact was 13:30 to 19:00,
+          // about 5.5 minutes, which is closer to the old 5 than to the 7. Nothing anywhere may
+          // describe the 7 as observed; it is the page's own estimate and the site now agrees
+          // with it in one place instead of contradicting it in two.
+          // Changing this cascades to five other places, anchored by content because line
+          // numbers drift: the "New here? Start with these 3" paragraph below (both totals)
+          // and its step-3 row, the "Read the site in order (recommended)" card on /tldr
+          // (both totals), and the 'The Reading Path' desc in navigation.ts.
+          duration: "7 min",
         },
         {
           id: "how-it-works",
@@ -490,20 +505,29 @@ export default function LearnJourney() {
               New here? Start with these 3
             </h3>
             {/* Jul-28: this page now has inbound routing from /tldr and from the top of
-                the "Start Here" nav group, both of which name the five-page, ~28-minute
-                path. This box says "three short reads, ~13 minutes" and is the first thing
-                an arriving reader sees, so without the nesting stated it reads as a second,
+                the "Start Here" nav group, both of which name the five-page path. This box
+                says "three short reads" with its own total and is the first thing an
+                arriving reader sees, so without the nesting stated it reads as a second,
                 contradictory answer to "how long is this?". It is not: these three ARE
                 steps 1-3 of the path below. Say so rather than dropping either number.
 
                 Jul-29 visitor MEDIUM (same friction row as the duration qualifier on the
                 why-web4 card further down): step 2 ends in an open-ended FAQ that the 6
-                minutes does not cover. The digits stay (tldr:291 pins the arithmetic to
-                them) and the "6 min" in the narrow right column below stays short, so the
-                scope lands in this paragraph instead. */}
+                minutes does not cover. The 6 stays and the "6 min" in the narrow right
+                column below stays short, so the scope lands in this paragraph instead.
+
+                Jul-30 visitor LOW, the first-contact estimate moved 5 -> 7 to match the page
+                that owns it (see the first-contact card in the beginner path above for the
+                reasoning and the full surface list). Both totals here are DERIVED, not
+                independent claims: 2+6+7 = 15 and 2+6+7+10+5 = 30, summing the per-card
+                durations above. If any card duration changes, recompute both here, in the
+                "Read the site in order (recommended)" card on /tldr, and in the 'The Reading
+                Path' desc in navigation.ts. Those three places are the complete set as of
+                2026-07-30: there is no JSON-LD anywhere in src/, sitemap.ts carries no
+                durations, and no metadata or OG string carries a total. */}
             <p style={{ color: "var(--color-gray-400)", fontSize: "0.85rem", marginBottom: "0.75rem" }}>
-              Web4 starts with three short reads. ~13 minutes total. These are the first
-              three steps of the five-page path below (about 28 minutes end to end), not a
+              Web4 starts with three short reads. ~15 minutes total. These are the first
+              three steps of the five-page path below (about 30 minutes end to end), not a
               different route. Why Web4? is the longest of the three and ends in an optional
               Q&amp;A that is open-ended; the estimate covers the read, not the questions.
             </p>
@@ -511,7 +535,7 @@ export default function LearnJourney() {
               {[
                 { num: "1", title: "The 2-minute overview", desc: "The shortest honest description", href: "/tldr", time: "2 min" },
                 { num: "2", title: "Why Web4?", desc: "The problems it starts from", href: "/why-web4", time: "6 min" },
-                { num: "3", title: "First Contact", desc: "See a trust-native interaction", href: "/first-contact", time: "5 min" },
+                { num: "3", title: "First Contact", desc: "See a trust-native interaction", href: "/first-contact", time: "7 min" },
               ].map((item) => (
                 <Link
                   key={item.href}

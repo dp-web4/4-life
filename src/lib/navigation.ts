@@ -40,10 +40,22 @@ export const navigationTree: NavigationTree = {
     // Group membership is load-bearing beyond the mobile drawer: getCategory() feeds
     // Breadcrumbs and SiteSearch, and app/page.tsx renders the whole tree as the landing
     // page "Explore" map, which is where a beginner will now actually meet this.
+    //
+    // Precision on that last clause (checked 2026-07-30): app/page.tsx:228-244 renders only
+    // item.title. The `desc` below is NOT landing-page visible; it is rendered by
+    // SiteSearch.tsx:200 and RelatedConcepts.tsx:125. It is still a real reader-facing
+    // surface, which is why the total in it is maintained with the others.
+    //
+    // Jul-30 visitor LOW: the total here moved 28 -> 30 with the rest of the set, because
+    // /learn's first-contact estimate moved 5 -> 7 to agree with the page that owns it
+    // (reasoning on that card in /learn's beginner path). Complete set of surfaces carrying
+    // a path total: /learn's "New here? Start with these 3" paragraph, /tldr's "Read the
+    // site in order (recommended)" card, and this line. Derived from the per-card durations
+    // in learn's beginner path: 2+6+7+10+5 = 30.
     {
       title: 'The Reading Path',
       href: '/learn',
-      desc: 'The recommended order to read this site in, with time estimates: five pages, about 28 minutes.',
+      desc: 'The recommended order to read this site in, with time estimates: five pages, about 30 minutes.',
       keywords: ['learn', 'path', 'guide', 'sequence', 'curriculum', 'reading', 'order', 'start'],
       related: ['/tldr', '/first-contact', '/onramp'],
     },

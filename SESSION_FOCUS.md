@@ -2,7 +2,243 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-30 (15:00 session)*
+*Last updated: 2026-07-31 (21:00 session)*
+
+## Jul-30 visitor pass, fourth sitting (21:00 session) - two producers of V3, and where the loop bottoms out
+Log: `visitor/logs/2026-07-30.md` (same 05:08 browse, single browse, commit `cbe9ef7`). The friction
+**table is exhausted**: #498 took the 5 HIGHs, #499 (open) 4 of 7 MEDIUMs, #500 (open) 2 of 5 LOWs
+plus the hardbound escalation; the rest are blocked on ledger Q1/Q5/Q8 or verified half-shipped.
+Per [[pessimistic-absolute-nobody-catches]] that hands off to the log's **Unanswered Questions**,
+same move as #497. Nine of the ten were already disposed. **This sitting took Q10**, the last one:
+
+> *"Who decides that a 'confirmer' is honest? Quality is confirmed by recipients weighted by their
+> trust, and their trust came from being confirmed. I could not find where that loop is anchored."*
+
+### The finding: the site carried two incompatible producers of V3, and the visitor read the wrong one
+- **`/value-tensor#who-scores`** (the owning page, `:145-175`): "Not any one other party either.
+  Each dimension is scored by a different mechanism." Valuation = the **recipient** confirms
+  usefulness; Veracity = **witness attestation** and peer challenge; Validity = **structural
+  verification**. `/trust-tensor:355-362` agrees ("the V3 score **the recipient assigned** to that
+  contribution ... separate confirmers are never averaged together first"), and so does
+  `V3OutputScorer.tsx`.
+- **`/atp-economics`** (the outlier, 4 instances): "**No one rates you on a scale.** The system
+  watches *aggregate behavior*: how quickly people confirm, whether diverse recipients confirm, and
+  whether high-trust people confirm. **These three signals combine into your V3 score.**"
+- **Canon sides with the owning page.** `t3-v3-tensors.md` §3.3 computes V3 **per completed R6
+  action**: `Valuation = (ATP_earned / ATP_expected) * recipient_satisfaction`,
+  `Veracity = (verified_claims / total_claims) * witness_confidence`, `Validity = 1.0 if
+  value_transferred`. `grep -rn "confirmer" web4-standard/` returns **zero hits**.
+- **Why it is Q10's mechanism and not a nearby coincidence**: on the `/atp-economics` account
+  confirmer trust is an input to V3, V3 is the `quality` term in the canonical T3 update
+  (`trust-tensor:352`), and T3 is where confirmer trust comes from. That is the visitor's loop,
+  exactly, with no base case, and it is why they could not find one.
+- **The "different quantities at different scopes" defence was steelmanned by policy review and it
+  fails**: `trust-tensor:361` forbids the aggregate-across-confirmers reading outright, and `:711`
+  named the same 0-to-1 `quality` term the T3 formula consumes. Two producers, one named quantity.
+- **Nothing here says canon is silent on those signals.** §7.1 has witness diversity and temporal
+  distribution as gaming **detection**. They exist; they just do not produce V3.
+
+### Fixed: 4 surfaces on `/atp-economics`, rescoped, no numbers changed
+1. **Card 3 of "But Who Decides What's Quality?"** was the producer claim in three lines. Per policy
+   review, rescoping it without a replacement would have **opened a hole where it closed a seam**:
+   the block's own heading asks who decides quality, and the remaining cards answer with the
+   *interface*, not the scoring. The card now carries the **owning page's own summary**
+   (`value-tensor:173`), so zero new claims land: recipient judges usefulness, witnesses judge
+   truthfulness, the system verifies delivery. Label moved with it ("Patterns Emerge" was naming the
+   deleted mechanism).
+2. **The prose below it.** "No algorithm scoring your posts" was **dropped, not softened**:
+   `value-tensor:170` calls Validity "the most automated dimension", so the flat version contradicted
+   the owning page. What survives is "no central authority ranking you and no panel of judges", which
+   is the true part. The 70/30 truth-over-popularity weighting is untouched.
+3. **A new hand-off paragraph** puts the three signals where they belong. They are **recharge**
+   drivers and the page already said so one paragraph later ("Earlier, broader, more-trusted
+   confirmation recharges faster") and in the weighted-slice formula. So this is relocation, not
+   deletion.
+4. **The `#earning-atp` confirmation-interface toggle** carried the *more* explicit version ("the
+   system derives V3 scores from patterns across many confirmations"), and the block being fixed
+   **routes readers straight to it**, so fixing only the first block would have left the page
+   contradicting itself one link away. Its correct half ("recipients don't score Valuation, Veracity
+   and Validity separately, they just confirm they received value") is **kept and completed**: that
+   one click is the Valuation input, the other two dimensions come from elsewhere.
+5. **The Hannah/Sam illustration.** Third time this class shows up as prose-fixed-but-illustration-
+   broken ([[prose-fixed-thrice-check-the-illustration]]). The box derived "~85% quality" /
+   "~35% quality" **from** the three signals and its lead said "the actual **aggregation** depends
+   on...". **The trap policy review caught**: do NOT rescope this box to recharge. Those are
+   **quality-ramp** numbers and the ramp is the **payment** channel, kept explicitly separate from
+   recharge on the same page, so a recharge frame would close the V3 seam and open a channel seam in
+   one edit ([[two-fixes-in-one-pass-can-fight]]). Reframed as **correlate, not producer**: quality
+   differs first, so the response looks different. That direction already ships further down the
+   page. **The 85 and 35 are load-bearing ramp inputs and were not touched.**
+
+### The actual answer to Q10 is the base case, and it was already written
+`/atp-economics` already said it, correctly: *"Every participant starts at the same baseline - trust
+~ 0.5, 100 ATP grant. In that state, all confirmations weigh equally low, but they still count."*
+It had **no `id`** and was titled by **scenario** ("What about a brand-new community"), so a reader
+holding the circularity question did not recognise it as their answer. Now `id="who-trusts-the-
+confirmers"` (deliberately not `cold-start`, which this page links **out** to on
+`/what-could-go-wrong`), the lead names the loop alongside the small-community case, and the new
+hand-off paragraph routes to it from where the loop is created. **No new mechanism was added.**
+
+- **Stated honestly, in the guard comment and here: the scope repair does NOT dissolve the
+  circularity.** The regress persists on the corrected account too (confirmer trust weights recharge
+  -> recharge feeds `ATP_earned` -> `ATP_earned` is a Valuation input in canon §3.3 -> V3 -> T3).
+  It **terminates on the base case**, not on the accuracy fix. Two deliverables with two jobs.
+
+### Also: `/trust-tensor` deep-linked
+`:359` linked `/value-tensor` bare. `#who-scores` had **zero inbound links sitewide** despite being
+the page that answers "who assigns these scores?". It is now reachable from both pages this visitor
+actually read.
+
+### Ledger Q3 is a NEAR-MISS and the gate did NOT fire
+Q10's first half ("who decides a confirmer is honest") **is** Q3, whose gate fires when a visitor
+re-asks *with the current answer visible*. This visitor never opened `/value-tensor` (13 pages
+listed, it is not among them), so the condition is unmet. Recorded here so a later session does not
+read this PR as evidence the gate fired. The existing Q3 answer on this page (low-trust clicks carry
+almost no weight, indiscriminate confirming tanks your CI) was **routed to, not strengthened**; no
+new anti-collusion claim was invented, per the holding pattern.
+
+### NOT taken
+- **Ledger Q1 / Q5 / Q8** still block the three remaining Jul-30 MEDIUMs.
+- **`day-in-web4:116/258/1295`** "lurking is free" propagation: its fix direction is defined by
+  **#499, still unmerged**. Unchanged from #500's handoff. Pick it up once #499 lands.
+- **`/hardbound` positioning**: operator call filed by #500. Do not copy-fix the count.
+- **The Jul-30 log is now exhausted.** Next session: triage the fresh log, not a fifth pass.
+
+
+## Jul-30 visitor pass, third sitting (Jul-30 21:00 session) - the number whose source was archived, and the two reading orders
+
+Log: `visitor/logs/2026-07-30.md` (same 05:08 browse, single browse, one commit `cbe9ef7`).
+Fourth sitting overall on this browse: HIGHs in #498, four MEDIUMs in #499 (open), this is the
+**LOW tier**. Two of the five rows taken, one escalated, three deferred.
+
+### Fixed
+
+- **`/how-it-works`, the composition footer (LOW: "unverifiable precision").** The visitor's
+  words: *"These read as reassurance I cannot check. Link them, or drop the counts. The site's
+  honesty is its strongest asset and uncheckable numbers spend that credit."* The block claimed
+  *"Formal game theory analysis confirms: 3 emergent properties exist only in composition"* over
+  a footer reading *"Source: web4 correlated equilibrium analysis (~100 formal checks). The
+  composite welfare exceeds the sum of per-layer welfare."*
+
+  Grounded against `../web4`: the only matching artifact is
+  `archive/reference-implementations/correlated_equilibrium_mechanism_design.py`, moved to
+  `archive/` on **2026-04-11** by web4 `65cd5488` *"Sprint 32 T1: Archive reference implementation
+  sprawl (#151)"*. No live successor exists ("composite welfare", "non-additive" and "correlated
+  equilibrium" appear nowhere in `../web4` outside `archive/`), so the citation was not
+  re-pointable, only removable. This is `precise-number-may-cite-archived-artifact` a second
+  time, same upstream sprint that retired the "109 integration checks" in #491.
+
+  Reading the artifact turned one defect into **three**, which is why the whole footer went and
+  the lead sentence changed too:
+  1. `~100 formal checks` is that file's docstring line 24, **"~100 checks EXPECTED"**. A plan in
+     a header comment, never a count of anything that ran.
+  2. "The composite welfare exceeds the sum of per-layer welfare" paraphrases its s55 assertion,
+     which is `check(True, f"s55: component welfare sum ({component_sum}) ...")` at `:1327`. An
+     **unconditional pass** printing only the component sum, never a composed welfare. The source
+     never evaluated the claim the site attributed to it.
+  3. The digit **3** is that file's docstring line 20, "Key insight from Session 27", imported as
+     a premise and never established there either. Deleting the parenthetical while leaving a
+     sourced 3 would have removed one unsourced number and kept its sibling.
+
+  The three bullets survive untouched: each argues from the site's **own** canon (trust lowers ATP
+  cost, CI, the 7x ramp, trust decay). What had to go was the claim that a formal analysis had
+  verified them. The count now refers to the bullets a reader can see, which is self-verifying.
+  Propagation checked: this was a single-surface claim, two hits sitewide, both in this block.
+
+- **Two official reading orders (LOW).** *"Landing recommends a 3-page order; /learn defines a
+  5-step, 28-minute path. Two official reading orders."* `/learn` had already absorbed the nesting
+  fix on its own side back on Jul-28 (*"These are the first three steps of the five-page path
+  below, not a different route"*); the **landing hero paragraph never got it**, so a reader met
+  the three-page version first and the five-page version later with nothing connecting them.
+  Added the nesting clause and a route to `/learn`, named as the **map**, not as a fourth first
+  step (`navigation.ts:35-38` guards against a third "start here" competing with the header CTA).
+  No total is printed there, deliberately: that would create a fourth surface carrying the path
+  arithmetic for no gain, and `/learn`'s own sentence says "the path **below**", which is literal
+  there and meaningless on the landing page.
+
+- **`/first-contact` is 7 minutes, `/learn` budgeted it at 5 (LOW, same row).** Fixed on the
+  **index** side. `/first-contact` owns its own read time and states 7 on four surfaces
+  (`:220`, `:335`, and both metadata fields in `layout.tsx`); `/learn`'s "5 min" carried **no
+  rationale of any kind**, in pointed contrast to the why-web4 card directly above it whose 6 is
+  defended across a dozen comment lines. Count reasons, not surfaces.
+
+  The cascade is the whole point and it is **7 rendered surfaces**, not the 4 the first scope
+  found. `src/lib/navigation.ts:46`'s `desc` carries the total and **is rendered** (by
+  `SiteSearch` and `RelatedConcepts`, though **not** by the landing Explore map, which renders
+  only `item.title`; the comment there claiming otherwise is now corrected). `/tldr` carried a
+  **second** figure two lines below the one being changed. `/learn` had a **second**
+  first-contact duration in the "Start with these 3" rows. Patching a subset would have moved
+  the seam rather than closed it. Final set: 5 -> 7 twice in `/learn`, 13 -> 15 twice
+  (`/learn`, `/tldr`), 28 -> 30 three times (`/learn`, `/tldr`, `navigation.ts`). Derived, not
+  invented: 2+6+7 = 15 and 2+6+7+10+5 = 30 from the per-card durations.
+
+  **Recorded in the guard comments and not to be forgotten**: the 7 is **not measured**. This
+  visitor's own dwell on `/first-contact` was 13:30 to 19:00, about **5.5 minutes**, closer to
+  the old 5 than to the 7. That is not enough to flip the direction (the owning page states 7 on
+  four surfaces and the index stated 5 on zero reasons) but nothing may describe the 7 as
+  observed.
+
+### Escalated, not fixed - operator positioning call on hardbound
+
+The third LOW in the same friction row was **"300+ Rust integration tests"** (`/hardbound`,
+`/running-now`). Scoped, then **cut** on policy review, because fixing the count would have
+shipped a worse claim than the one it replaced. What the grounding turned up:
+
+- `dp-web4/hardbound` is **PRIVATE**, and `LICENSE:1` reads **"Proprietary License - MetaLINXX
+  Inc."**, with a `PATENTS.md` beside it. So the count is unverifiable by construction and no
+  link can fix it. Upstream also carries two mutually inconsistent totals of its own
+  (`docs/rust-benchmark-report.md:90` "458 tests across 5 crates";
+  `docs/SPRINT_5_GOVERNED_AUTOMATION.md:169` "830 workspace tests pass"), against 805
+  `#[test]`/`#[tokio::test]` functions actually present and **44** in the one true integration
+  suite (`rust/hardbound/tests/e2e_smoke.rs`).
+- The published `hardbound` package on npm / PyPI / crates.io (**v0.0.1**, AGPL-3.0, built out of
+  the **public** `dp-web4/hestia` at `hardbound-pak/`) is **a different artifact**: a four-trait
+  contract for Hestia's hardware provider (`TrustedKeyProvider`, `SealedVault`,
+  `AttestationSigner`, `OversightPolicy`). Grepping those four names plus `hardbound-pak` across
+  `../hardbound` returns **zero files**. The private product implements none of the public
+  contract. It is a name collision, not a relationship, so "the interfaces are public, the
+  implementation is closed" is true of hardbound-pak and **unsupported** about the product
+  `/hardbound` describes.
+- The honest unit is the **page**, not the sentence. `hardbound:115-146` is a whole section,
+  "How you actually touch it", transcribed from the private repo's quick start
+  (`hardbound init --org`, `hardbound add-member`, `hardbound dev` on :9400, `docker-compose up`).
+  And `NewcomerOrientationBanner.tsx:51-52` renders as the **first element on `/hardbound`**
+  saying *"what's here is real, **open-source software you can run yourself**"*. Its own guard
+  claims accuracy "across all 3 pages"; it now renders on **six** (`onramp`, `the-standard`,
+  `hub`, `hestia`, `hardbound`, `running-now`). Stale rationale, shared component, five other
+  pages in the blast radius.
+- Deleting one count from that sentence also leaves "~3.8 MB static Rust binary that
+  cross-compiles to arm64 / Jetson" beside it, which is **equally** uncheckable against a private
+  repo. The friction row is "reassurance I cannot check"; removing one of three unverifiable
+  specifics does not dispose of it.
+
+**This needs an operator decision before any copy changes**: how the site positions a proprietary
+enterprise tier among three open pieces. No site surface currently characterizes any of the four
+as commercial or closed. Same class as the `onramp` word-overload branding call, and like that
+one it does **not** belong in `docs/WEB4-CANON-QUESTIONS.md`, which is scoped in its own header to
+Web4 **canon** ambiguities ruled on in the spec. Once decided, the follow-on is a full-page pass
+on `/hardbound` plus a `NewcomerOrientationBanner` fix, not a LOW-tier reword.
+
+**Do not copy-fix the count in the meantime.** Deleting "300+" alone reads as closing the row.
+
+### Deferred (3 LOWs, verified as half-shipped or out of class)
+- **`/first-contact` "raw" reputation.** Gloss shipped Jul-29 (#495) at `first-contact:283`, but
+  inside a `<details>` labelled "(optional)" and the guard above it says the collapse was
+  deliberate. Residual is prominence only.
+- **Spammer absolute** (`how-it-works`). Already carries the tie-back the visitor asked for:
+  "No rebirth eligibility **(low T3)**". Also sits ~24 lines from an open-PR hunk.
+- **Nav vocabulary tax** ("~30 links; collapse Core Concepts and Going Deeper by default"). An IA
+  and design change, not a content fix.
+
+### Still blocked (3 MEDIUMs, unchanged)
+Ledger **Q1** (endpoint at 0.5), **Q5** (what ends a life; karma, now three divergent models),
+**Q8** (software-only conformance). No sitting can take these without a web4 ruling.
+
+### Carried forward
+- `day-in-web4:116/258/1295` "lurking is free" propagation, deferred by #499 and **still**
+  deferred here: its fix direction is defined by #499, which is unmerged. Pick it up once #499
+  lands, not before.
+- General `id` anchor pass on `/hestia` (18 inbound links).
 
 ## Jul-30 visitor pass, second sitting (15:00 session) - four MEDIUMs, and one fix that runs backwards
 Log: `visitor/logs/2026-07-30.md` (same 05:08 browse). #498 took the 5 HIGHs at 09:00 and left the
