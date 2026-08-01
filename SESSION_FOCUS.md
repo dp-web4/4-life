@@ -2,7 +2,115 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-31 (21:00 session)*
+*Last updated: 2026-08-01 (09:00 session)*
+
+## Aug-01 visitor HIGHs 1+3 (09:00 session) - one price for one thing, and a rate that never existed
+
+Fresh log `visitor/logs/2026-08-01.md` (browsed 05:11 against main at `21bb94a`, so **#504 was not
+live for it** and nothing here credits or blames that PR). Four HIGHs; two are not free. Taken: HIGH 1
+and HIGH 3, which are the two the log's own Honest Assessment names as the damage: *"the site argues
+with numbers, and the numbers don't hold still... this taught me to stop trusting any specific figure
+and to read only the prose."*
+
+### HIGH 3: "90% per hop" was never a rate, and the rest is a canon question
+
+`/how-it-works#agents`: *"A 5-hop pipeline where each agent has 0.9 trust ends up at 0.59... each hop
+keeps only 90% of what reached it."* `/trust-neighborhood`: *"0.7x per hop"*, 30% per hop, hard zero
+past 3. The visitor went between the pages twice and gave up: *"they must mean different things by
+'hop', but neither page says so."*
+
+The sweep settles the direction: **every other "per hop" figure on the site is 0.7** (`terms.ts:104`,
+`glossary:497`, `why-web4:2315/3174/3210`, `trust-tensor:1381`, `trust-neighborhood/layout.tsx:6`).
+The 90% was a single outlier and it was **not a rate at all**: the same sentence stipulates *"where
+each agent has 0.9 trust"*, then restates that stipulation as a law. Repaired in place (*"the 90% a
+step keeps is that agent's own trust score, not a rate charged for the hop: put an agent at 0.6 in
+the chain and that step keeps 60%"*), which is an error correction licensed by the card's own
+preceding clause. Both pages now also say what their number **composes**, and cross-link.
+
+**What was NOT written, and why it matters more than what was.** I proposed this as fully derivable
+from `trust = t1 x t2 x t3 x 0.7^depth`, and the policy reviewer rejected that premise. The formula
+separates the two factors *within one computation*; it does not license saying a delegation pipeline
+drops the depth term. That boundary appears **nowhere on the site**, and upstream leans against it:
+`mrh-tensors.md:210-214` applies `decay_factor ** (i+1)` to every path, `LCT-linked-context-token.md:546`
+states horizon depth generically, `inter-society-protocol.md:380` leaves transitivity-vs-attenuation
+society-sovereign. If the depth term does apply, `/how-it-works`'s headline is wrong by ~6x
+(`0.9^5 x 0.7^5 = 0.099`) and a 5-hop pipeline crosses a wall the other page calls hard. Filed as
+**ledger Q11**, not shipped.
+
+A third instance surfaced during the sweep and was deliberately left alone: the *Transitive
+attenuation* invariant (`how-it-works:1332`) is the neighborhood setting proper (Alice judging Carol
+through Bob) and computes `0.9 x 0.6 = 0.54` where `/trust-neighborhood` would give `0.26`. The
+invariant it asserts holds under either, so only the worked value is exposed. Patching it alone would
+put a third number on the site for one quantity. Guard comment updated in place: the pre-existing one
+cited `trust-neighborhood:588` as *supporting* this page's reading, i.e. it recorded the conflation as
+authorization. Checked and non-conflicting: `atp-economics:2032` charges 5% ATP per delegation hop,
+which is a **fee**, not trust.
+
+### HIGH 1: $500 was the top of the site's own range, quoted as a point estimate
+
+`/what-could-go-wrong` Risk 4: *"$500 in hardware"* per identity, *"$500K for 1,000 identities."*
+`/why-web4:1391-1392` and `/lct-explainer:2193-2194`: a *$50 phone*, a *~$25* FIDO2 key. The visitor:
+*"at the FAQ's own prices, 1,000 identities costs $25K-$50K and risk 4's mitigation collapses."*
+
+The number moved at Risk 4, not at the FAQ: the FAQ side states a reason (*"most devices sold since
+~2018 ship security chips"*) on two pages under an honest caveat, while Risk 4 had a bare figure with
+no source. **My first rationale for that was wrong and the reviewer caught it**: I wrote that $500 was
+outside the site's own range, and it is not. `your-internet:97` reads *"$50 to $500 each"*, so $500 is
+the range's **upper endpoint**, quoted as a point estimate. That correction changes the landing value:
+Risk 4 now carries the **existing range** ($50 to $500 per identity, $50K to $500K per thousand),
+which needs no edit to `/your-internet` and satisfies the visitor's literal ask. Landing on the low
+end instead would have discarded the site's own upper bound and left `/your-internet` as the only
+surface acknowledging spread, reproducing the complaint somewhere new.
+
+Also closed in the same push, missed by my sweep and found on review: `lct-explainer:1797` priced a
+FIDO2 key at **~$30** where `:2194` and `why-web4:1392` both say **~$25**. Same device, third figure.
+Every rendered price on the site now falls inside $25 to $500.
+
+**The entailment, because a gentler number on a risk page is a reassurance if it ships alone**: at any
+price in that range the hardware is affordable to the adversary Risk 4 names, so the barrier was never
+the hardware. The new closing paragraph rests the stakes on the per-identity **time** cost instead
+(a thousand histories other participants witnessed, accruing in calendar time), which is where the
+card's own Honest assessment already points.
+
+Two things it deliberately does **not** lean on, both reviewer conditions:
+- **`P = 1 - (1-p)^N`.** #504 adds a block ~20 lines below whose finding is that this formula presumes
+  witnesses *outside* the coalition, which a coordinated Sybil operator does not supply. Amplifying it
+  as the replacement barrier would re-arm the exact reading that block exists to defuse.
+- **The ROI ~0.93 / ~0.90 figures**, which this same log files as a MEDIUM (undefined ratio, both
+  below 1.0, *"reads as honest participation also loses money"*). Untouched, and now not load-bearing.
+- And it says nothing about whether hardware is **required**. The visitor's journal bundles the price
+  seam with the standing [[hardware-required-seam]]; the friction table row is price-only.
+
+### Registered, not fixed
+
+- **HIGH 2 (/hardbound has no reachable repo)**: the standing **operator positioning call** from #500,
+  re-registered by #504. The visitor added a datum worth keeping: they actively tried to verify the
+  *"300+ Rust integration tests"*, followed the page's only code link to `github.com/dp-web4`, found
+  no hardbound repo, and it is the one place on the site where they tried to check a claim and could
+  not. Still not a session-level fix.
+- **HIGH 4 (/lct-explainer recruits software-only users without the device-loss consequence)**: the
+  premise is **false**, and this was verified before proposing. `lct-explainer:1046` already says
+  *"Software only - no second witness to vouch. You start over from zero with a fresh identity"* and
+  `:1059` says *"there's nothing to recover to"*; `what-could-go-wrong:579` cites `lct-explainer:1040`
+  as its own source, and both sit **above** the recruit line the visitor quoted.
+  **The sharpened residual, for the next session** (verified by the policy reviewer as a real defect,
+  same class as the three reassurances #502 fixed): `lct-explainer:2100` reassures that the tiers
+  differ *"in recovery speed and trust ceiling, not in your ability to participate."* For the
+  software-only tier named in that same sentence, per this page's own `:1059`, there is no recovery
+  at all. The gap is absence, not speed. One page, one clause, no canon needed.
+- All seven MEDIUMs and five LOWs. Note for whoever takes them: the `/first-contact` MEDIUM's literal
+  suggestion (*"restate as at or above 0.50"*) is the **standing 0.50-endpoint escalation** and must
+  not be copy-fixed.
+
+### Also in this push
+- `npm run build` green, 31 static pages. 0 em dashes and 0 "production-ready" in added lines.
+- No trust number changed anywhere. The only numbers that moved are three prices, all onto values the
+  site already carried elsewhere.
+- New anchor `trust-neighborhood#hop-decay` on the section that renders the decay ring and the
+  *"0.7x per hop"* caption, **not** on the `Formula` `<details>` below it, which holds the line that
+  actually separates the two factors and arrives collapsed. The new mirror sentence lifts that line
+  out of the `<details>`, since the visitor never opened it.
+- Guard comments beside every insertion, each naming what the block must not become.
 
 ## PR #502 review response (21:00 session) - a synonym walked through a phrase-grep
 

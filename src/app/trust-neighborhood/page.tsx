@@ -538,7 +538,12 @@ export default function MarkovRelevancyHorizonPage() {
         </section>
 
         {/* Trust Propagation Section */}
-        <section className="max-w-4xl mx-auto mb-16">
+        {/* Aug-01: id added as the inbound anchor for the per-hop 0.7. Point here, at the section
+            that renders the decay ring and the "0.7x per hop" caption. Do NOT point at the
+            "Formula" <details> below (~L666): it holds the line that actually separates the two
+            factors, trust = t1 x t2 x t3 x 0.7^depth, and it arrives COLLAPSED.
+            Inbound as of this push: how-it-works #agents (Aug-01 visitor HIGH 3). */}
+        <section id="hop-decay" className="max-w-4xl mx-auto mb-16 scroll-mt-24">
           <h2 className="text-3xl font-bold mb-6 text-cyan-400">
             How Trust Spreads Through Connections
           </h2>
@@ -653,6 +658,28 @@ export default function MarkovRelevancyHorizonPage() {
                 <div className="mt-1 font-mono text-cyan-400">trust = t₁ × t₂ × t₃ × 0.7^depth</div>
                 <div className="mt-1">Example: three 0.9-trust edges at 3 hops = 0.9³ × 0.7³ = 0.25</div>
               </details>
+              {/* Aug-01 visitor HIGH 3, mirror of the block at how-it-works #agents. The visitor
+                  arrived here holding "each hop keeps only 90%" from that page and read this 30%
+                  as a second rate for the same quantity. It is not: the 0.7 is a separate factor
+                  from the links' own scores, which the formula above states and this sentence
+                  lifts OUT of the <details>, since that arrives collapsed and the visitor never
+                  opened it. Same three prohibitions as the sibling block: no claim that a
+                  delegation chain is exempt from this decay, no claim that the 3-hop horizon does
+                  or does not bound a pipeline, no second rate quoted for one quantity. Whether
+                  horizon depth applies inside a delegation pipeline is ledger Q11, not settled
+                  here or upstream (mrh-tensors.md:210-214 vs inter-society-protocol.md:380). */}
+              <p className="text-xs text-gray-400 mt-3 pt-3 border-t border-cyan-700/20 leading-relaxed">
+                The 30% is charged for the <em>distance</em>, on top of whatever the people in the
+                chain are individually worth (that is the <code className="text-cyan-400">0.7^depth</code> term
+                above, sitting beside their own scores, not replacing them). So it is not the same
+                number as the one on{" "}
+                <Link href="/how-it-works#agents" className="text-sky-400 hover:underline">
+                  agent pipelines
+                </Link>
+                , where the number shown multiplies the agents&apos; own trust scores. There you
+                know every member of the chain; here you are judging someone you have never dealt
+                with, through the people who have.
+              </p>
             </div>
 
             <div className="bg-gray-800/50 border border-cyan-700/30 rounded-lg p-6">
