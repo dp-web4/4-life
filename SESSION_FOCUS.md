@@ -2,7 +2,96 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-31 (21:00 session)*
+*Last updated: 2026-08-01 (03:00 session)*
+
+## Jul-31 visitor MEDIUMs 3+4 (Aug-01 03:00 session) - two numbers that measure different things, and a ceiling the page never mentioned
+
+No fresh visitor log (this session ran at 03:01, cron fires 05:00), no open PRs, no CHANGES_REQUESTED.
+The Jul-31 log's HIGHs went out in #502, MEDIUMs 1+2 in #503; MEDIUMs 3 and 4 were the next unclaimed
+rows in visitor table order.
+
+### MEDIUM 4: /trust-tensor taught 0.90 as reachable through attestation alone
+
+This one was **handed forward by name**. #502's guard at `trust-tensor:406` said: *"That one is
+untaken: this page still teaches 0.90 as reachable through attestation alone where Alice is
+introduced."* Alice is the analyst at role-weighted 90%, and 0.90 is what `lct-explainer:283` calls
+the hardware-bound ceiling. Nav order puts this page first.
+
+Shipped: an anchoring-ceiling block at the Alice read point, plus `id="trust-ceilings"` on
+`lct-explainer:1091` (the "maximum T3 trust score" paragraph that sits directly above the tier grid).
+
+Two traps worth recording, both caught on policy review, not in drafting:
+
+- **The link I first proposed was wrong.** `/lct-explainer#hardware-tiers` is the *"What are TPM,
+  Secure Enclave, and FIDO2?"* `<details>` glossary, and it arrives **collapsed** (its own guard at
+  `:452` warns about exactly this). The tier grid it looks like it points at had **no id at all**.
+  Anchor targets on this site need checking against what renders, not what the name suggests.
+- **"attestation is not what limits these scores" would have manufactured a contradiction.** The
+  block sits three lines under Temperament **95%**, which is above every chip ceiling. The site does
+  not settle per-dimension capping (`lct-explainer:1247` caps "your T3 trust", the composite), so the
+  wording is *"the role-weighted number they combine into"* and never "these scores". Per-dimension
+  capping stays unadjudicated, deliberately.
+
+Also exact, not vague: **three** device witnesses per `lct-explainer:1099-1103`, not "several".
+
+### MEDIUM 3: same number, opposite verdicts - and neither page can actually tell them apart
+
+`/atp-economics:960`: *"Even three founders who confirm each other's work can recharge ATP from day
+one."* `/what-could-go-wrong:343` (Risk 4): *"coalitions become unprofitable at 2-3 members."* The
+visitor: *"I cannot tell how the mechanism distinguishes the founders from the ring, and both pages
+sound confident."*
+
+**I proposed this as an explanation fix and the policy reviewer was right to reject the premise.** My
+rationale said both pages already state the distinguishing mechanism without naming it. They do not,
+and the reason is sharp enough to be the session's main finding:
+
+> **Neither candidate signal discriminates at N = 3.** The ATP page's *"work that others later also
+> confirmed"* is degenerate when the "others" are the remaining two founders. Risk 4's
+> `P = 1 - (1-p)^N` presumes each conspirator is an independent draw against witnesses **outside**
+> the coalition, which a founding group does not have.
+
+Writing a discriminator sentence would have been inventing canon under ledger **Q3**, whose holding
+pattern is explicit: *do not invent anti-collusion claims in prose*. So what shipped is a
+**measurement-scope** fix on both surfaces (what does this number measure) that ends on the limit,
+not the reconciliation. Both blocks now cross-link.
+
+Three drafting errors the reviewer caught, all worth keeping as habits:
+
+1. **I inverted the bound.** I wrote *"the largest conspiracy that still pays"* for "unprofitable at
+   2-3 members". It is already unprofitable at 2, so that phrasing is off by the whole bound, and it
+   disagreed with my own sibling sentence. Fixing a two-number seam while opening a seam between your
+   own two new sentences is the worst available outcome.
+2. **I borrowed a word that means something else on the destination page.** I lifted "cheap" from
+   `what-could-go-wrong:909` (meaning *unpoliced*) into `/atp-economics`, where "cheap" means **ATP
+   price** throughout (`:474`, `:1371`). Same word, wrong page, wrong quantity.
+3. **I miscounted the genesis group.** `#cold-start` says a founder invites 2-3 trusted contacts, so
+   it is **three or four** people, not three, and I had it wrong two paragraphs from the citation.
+
+And one thing cut on review: the closing *"Different regimes, not different verdicts"* was too
+resolving for a risk page. A tidy cadence at the end of a paragraph whose content is *this bound does
+not protect you in the founding regime* converts a disclosed gap into a reassurance, which is the
+exact defect this same log filed as HIGH 1. It now ends on the entailment instead.
+
+### Registered, not answered: ledger Q3 gate is still ARMED and UNFIRED
+
+The Jul-31 visitor re-asked the collusion question twice (their Unanswered Q4 and Q5) and **did not
+open `/value-tensor`** (their journey lists twelve pages, it is not among them). The Jul-30 visitor
+missed it the same way. Two consecutive near-misses, gate unfired both times. `docs/WEB4-CANON-QUESTIONS.md`
+Q3 now carries a dated addendum recording the near-misses, the N=3 degeneracy above, and a note that
+**`reciprocity density` is a *permitter* on both live surfaces** (`atp-economics:961`,
+`why-web4:1671`), not a detector. Visitors keep guessing it as the discriminating signal; the site
+cannot use it that way without contradicting itself, so any ruling should say so explicitly.
+
+### Also in this push
+- `npm run build` green, 31 static pages. 0 em dashes and 0 "production-ready" in added lines.
+- No trust or ATP number changed anywhere. Diff is additive apart from one guard-comment rewrite and
+  the new `id`.
+- Guard comments added beside all three insertions, in the `trust-tensor:406` style, each naming what
+  the block must not become. `trust-tensor:406` itself updated, since it declared MEDIUM 4 untaken.
+- Untouched: MEDIUM 5 (the standing **hardware-required seam**; the MEDIUM 4 fix is a *ceiling* claim,
+  not an eligibility claim, per the codification at `lct-explainer:274`), HIGH 4 (/hardbound banner,
+  operator positioning call), MEDIUMs 6+7 (die/reborn register), all five LOWs, the 0.50 endpoint, and
+  the two off-page "earn more than they spend" copies the 21:00 session left as a direction call.
 
 ## PR #502 review response (21:00 session) - a synonym walked through a phrase-grep
 

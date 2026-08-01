@@ -149,6 +149,29 @@ instead of re-litigating.
   visible): a canonical statement of the collusion-resistance model for V3 confirmations.
 - **Holding pattern**: do not invent anti-collusion claims in prose; the site states only
   what the spec supports today.
+- **2026-08-01 addendum: second consecutive near-miss, gate still ARMED and UNFIRED.** The
+  Jul-31 visitor re-asked this twice, as their Unanswered Q4 ("who stops the people scoring
+  quality from lying? Nothing I read explained what prevents a small friendly group from
+  confirming each other's mediocre work") and Q5 (how the mechanism tells three founders from
+  a three-person ring). They did **not** open `/value-tensor`: their own journey lists twelve
+  pages and it is not among them, so the retest condition ("re-asks with the current answer
+  visible") is still unmet. The Jul-30 visitor missed it the same way. Do not read either log
+  as the gate firing.
+- **What the Aug-01 session did and deliberately did not do**: it closed only the
+  *measurement seam* between two numbers, `/atp-economics` "three founders who confirm each
+  other's work can recharge from day one" vs `/what-could-go-wrong` Risk 4 "coalitions become
+  unprofitable at 2-3 members", by saying at each read point what that number measures. It
+  asserted **no** collusion-resistance mechanism. The reason is worth recording, because it
+  sharpens the question this ledger is holding: **neither of the site's two candidate signals
+  discriminates at N = 3.** "Work that others later also confirmed" is degenerate when the
+  others are the remaining two founders, and Risk 4's `P = 1 - (1-p)^N` presumes each
+  conspirator is an independent draw against witnesses outside the coalition, which a founding
+  group does not have. Both surfaces now say so as a limit.
+- **Note for whoever answers this**: `reciprocity density` (`atp-economics:961`,
+  `why-web4:1671`) is a *permitter* on both live surfaces, the reason a small group is enough.
+  Visitors keep guessing it as the discriminating signal. Any ruling should say explicitly
+  whether it is one, because the site currently cannot use it that way without contradicting
+  itself.
 
 ### Q4. Should the spec define a trust-death predicate for simulations?
 

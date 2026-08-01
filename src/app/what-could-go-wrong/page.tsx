@@ -343,6 +343,35 @@ export default function WhatCouldGoWrongPage() {
                 spoils). The math: <strong className="text-gray-100">coalitions become unprofitable
                 at 2-3 members</strong> at current stake levels.
               </p>
+              {/* Jul-31 visitor MEDIUM 3 + their Unanswered Q5: this bound and /atp-economics'
+                  "three founders who confirm each other's work can recharge from day one" name the
+                  same number with opposite verdicts. Sibling block lives at atp-economics
+                  #who-trusts-the-confirmers; keep the two in sense-sync.
+                  Three things this block must not become:
+                  - It must NOT claim the system tells honest founders from a ring. It cannot at N=3:
+                    the formula above presumes each conspirator is an independent draw against
+                    witnesses OUTSIDE the coalition, and in a founding group they are not. Naming a
+                    discriminator here would invent canon under ledger Q3.
+                  - It must NOT end on the reconciliation. "Different regimes" is true but a resolving
+                    cadence converts a disclosed gap into a reassurance, which is exactly this log's
+                    HIGH 1 defect, on the page whose purpose is not doing that. End on the entailment.
+                  - The genesis group is 3 to 4 people (#cold-start ~L906: a founder invites 2-3
+                    trusted contacts), not three. Do not "simplify" that back to three. */}
+              <p className="text-gray-300 text-sm mt-2 pt-2 border-t border-gray-700/50">
+                <strong className="text-gray-100">What that bound is not:</strong> a verdict on any
+                group of three. The detection math assumes each conspirator is an independent draw
+                against witnesses who are outside the coalition, which describes a populated society.
+                This page&apos;s own cold-start walkthrough starts elsewhere: a founder invites 2-3
+                trusted contacts who witness each other, so the coalition and its witnesses are the
+                same three or four people. That is why{" "}
+                <Link href="/atp-economics#who-trusts-the-confirmers" className="text-sky-400 hover:underline">
+                  ATP economics
+                </Link>{" "}
+                can call three founders confirming each other the intended bootstrap while this bound
+                calls 2-3 the size at which conspiracy stops paying. Different regimes. The bound above
+                is silent about the founding group itself, where there is no witness outside the
+                coalition to draw against.
+              </p>
             </div>
             <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
               <strong>Honest assessment:</strong> Web4 raises the floor, not the ceiling. Casual

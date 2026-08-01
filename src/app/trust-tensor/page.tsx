@@ -406,8 +406,10 @@ export default function TrustTensorPage() {
             guard beside lct-explainer's copy for the three things this wording must not do (no
             ruling at exactly 0.50, no second phrasing of the consequence, no "hardware required").
             NOT the same as this log's separate MEDIUM ("/trust-tensor never mentions that hardware
-            caps the ceiling, near the Alice example"). That one is untaken: this page still teaches
-            0.90 as reachable through attestation alone where Alice is introduced. */}
+            caps the ceiling, near the Alice example"). That one was TAKEN on Aug-01: see the
+            anchoring-ceiling block at the Alice example (~L825) and its guard. The two are still
+            distinct fixes and must stay so; this one owns the SURVIVAL LINE reading of 0.5, that one
+            owns the CEILING reading of 0.90, and neither may restate the other's consequence. */}
         <div className="mt-4 bg-gray-900/40 border border-gray-700/50 rounded-lg px-5 py-4 text-sm">
           <p className="text-gray-400 leading-relaxed">
             <strong className="text-gray-300">What does &ldquo;0.85&rdquo; mean?</strong>{" "}
@@ -819,6 +821,36 @@ export default function TrustTensorPage() {
                 Role-weighted trust: 27% - would you let her fix your brakes?
               </p>
             </div>
+          </div>
+
+          {/* Jul-31 visitor MEDIUM 4: "this page teaches trust as earned purely through recipient
+              attestation and never mentions that hardware caps the ceiling. Alice's 0.90 analyst
+              example is unreachable without a TPM. Nav order encourages reading this before
+              /lct-explainer." Handed forward explicitly by #502's guard at ~L406.
+              Three things this block must NOT become:
+              - It must NOT read as capping the DIMENSIONS. Temperament is 95% three lines up, above
+                every chip ceiling. The site does not settle per-dimension capping (lct-explainer
+                ~1247 says the ceiling caps "your T3 trust", the composite) and this block must not
+                adjudicate it. Hence "the role-weighted number they combine into", never "these scores".
+              - It must NOT imply hardware is required to participate ([[hardware-required-seam]]).
+                A ceiling claim is not an eligibility claim (codified at lct-explainer ~274).
+              - It must NOT coin a second phrasing of the CONSEQUENCE of a 0.50 ceiling. That ships
+                at lct-explainer#software-only-survival and is forward-pointed from ~L418 of THIS
+                page; this block states the cap only, and says nothing about exactly 0.50 (ledger Q1).
+              "three device witnesses" is exact per lct-explainer ~1099-1103, not "several". */}
+          <div className="mt-6 p-4 bg-gray-900/40 border border-gray-700/50 rounded-lg">
+            <p className="text-gray-400 text-sm leading-relaxed">
+              <strong className="text-gray-300">What this example leaves out:</strong> attestation is how
+              Alice earns these three scores, but it is not what sets the limit on the role-weighted
+              number they combine into. That limit comes from how the identity is anchored, with chip
+              class setting the maximum and device count setting how much of the maximum is reached.
+              Alice&apos;s 90% as an analyst sits at the top of that range, which takes a hardware-anchored
+              identity plus three device witnesses; a software-only identity tops out at 0.50 however
+              good the work.{" "}
+              <Link href="/lct-explainer#trust-ceilings" className="text-sky-400 hover:text-sky-300 underline">
+                What sets your trust ceiling →
+              </Link>
+            </p>
           </div>
 
           <div className="mt-6 p-4 bg-sky-900/20 border border-sky-800/30 rounded-lg">

@@ -1089,7 +1089,12 @@ export default function LCTExplainerPage() {
             <strong>1.0</strong> is the theoretical ceiling, not a number anyone actually reaches.
             The ceilings below are points on that scale.
           </p>
-          <p className="text-sm text-gray-300 mb-3">
+          {/* Aug-01: id added as the inbound anchor for the ceiling claim. Point ceiling links HERE,
+              not at #hardware-tiers - that one is the "what are TPM/Secure Enclave/FIDO2" <details>
+              glossary at ~L457 and arrives collapsed. This paragraph is the right target because the
+              tier grid itself follows immediately below and the combination rule follows it.
+              Inbound as of this push: trust-tensor's Alice block (Jul-31 visitor MEDIUM 4). */}
+          <p id="trust-ceilings" className="text-sm text-gray-300 mb-3 scroll-mt-24">
             Each number below is the <strong className="text-gray-100">maximum T3 trust score</strong> your
             hardware can vouch for - even with perfect behavior, software-only identity tops out at 0.50.
             What each cap unlocks (rewards, witness role, recovery path) is detailed below the grid.
