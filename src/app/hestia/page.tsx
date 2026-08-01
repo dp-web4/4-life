@@ -111,9 +111,19 @@ export default function HestiaPage() {
             A cross-platform Tauri app. Your keys, vault, and history live on your
             device, passphrase-first.
           </Feature>
+          {/* Jul-31 visitor MEDIUM + Unanswered Q1, and a policy-review condition on that fix:
+              this card said an agent "wires every action it takes" into its record. Upstream
+              falsifies the universal (hestia/docs/GATE_BYPASS_CATALOG.md D2: the gate hook is
+              also the witnessing hook, so anything that routes around the gate writes no entry).
+              Narrowed to governed acts here BECAUSE the completeness limit now ships at the
+              "Why local-first matters" section below; leaving this universal standing would have
+              made the page contradict itself, which is the exact defect class the Jul-31 visitor
+              filed. Same narrowing applied at the "Solo is not the mechanism switched off" block.
+              Do not restore "every action" on any of the three. */}
           <Feature title="For AI agents">
-            A Claude Code plugin plus an MCP server (8 tools), so an agent wires
-            every action it takes into its own witnessed record.
+            A Claude Code plugin plus an MCP server (8 tools), so the actions an
+            agent takes under your policy gate are wired into its own witnessed
+            record.
           </Feature>
           <Feature title="For services and the terminal">
             A CLI/TUI and a plugin SDK for scripting and headless services: the
@@ -316,10 +326,57 @@ export default function HestiaPage() {
           vault, and the history are <strong>yours</strong>, on your hardware. There
           is no central server to ask permission from, and no cloud account to lose.
         </p>
+        {/* Jul-31 visitor MEDIUM ("/hestia never reconciles 'prove what an agent did' with a
+            policy gate a capable agent can route around today") and their Unanswered Q1, which
+            they called the question that "determines whether that promise currently holds for
+            the only Running piece". They asked for a straight answer either way: "if it does,
+            that is a strong answer and should be said loudly. If it does not, say so."
+
+            The answer is no, and it is upstream's own. hestia/docs/GATE_BYPASS_CATALOG.md D2
+            ("Selective non-witnessing"): the same hook runs the gate and writes the entry, there
+            is no independent observer, so "the chain is a record of governed activity, never a
+            complete record of activity", and reading chain silence as nothing-happened is
+            unsound. That entry ends with a standing instruction: say so wherever the chain is
+            presented as evidence. Catalog section 11 repeats it in the acknowledgements meant to
+            be put in front of anyone relying on hestia. This section is that surface.
+
+            What this replaced was worse than incomplete. It asserted that the gate "runs before
+            each act" and that record and reality "can't silently diverge", both of which the
+            SAME PAGE contradicts 200 lines down (the gate is not built to stop routing around
+            it, two environment variables suffice today).
+
+            Three limits on the wording, all from policy review:
+            - The divergence absolute is NOT restated in any weaker form. It is false in the
+              other direction too: catalog D1 (MEASURED 2026-07-29) has claude-code witnessed as
+              kimi-code because identity is client-asserted, and D3 (DEMONSTRATED) has a third
+              party manufacturing 22 denials against codex. Entries that ARE written can be
+              wrong. Hence the explicit "not about whether it was right when it was written".
+            - Scoped to hestia's implementation, never to Web4. "The gate is bypassable" as a
+              claim about the standard would be a new canon assertion, not propagation.
+            - Not written as a scheduled repair. Catalog section 8 grades D2 one of two entries
+              that are an honest "no", "not detectable by any mechanism we have or plan", a
+              load-bearing limit of in-process advisory governance. Section 0: containment needs
+              an OS boundary the agent cannot reach, and that is a different project. */}
+        <p className="text-base text-gray-400 leading-relaxed mb-3">
+          The chain is also tamper-evident, which is a narrower promise than it sounds:
+          an entry that is in it cannot be quietly edited or removed later. That is
+          about what happens to an entry after it is written, not about whether it was
+          right when it was written.
+        </p>
         <p className="text-base text-gray-400 leading-relaxed">
-          That&apos;s also what makes the trust honest: because the witness chain is
-          tamper-evident and the policy gate runs before each act, what your record
-          claims and what actually happened can&apos;t silently diverge.
+          <strong className="text-gray-200">What the chain does not promise is
+          completeness</strong>, and that is worth stating plainly on the page that
+          invites you to run this. The same hook that runs the policy gate is the thing
+          that writes the entry, so an action that routes around the gate (
+          <Link href="#honest-status" className="text-sky-300 underline hover:text-sky-200">
+            see the gate caveat below
+          </Link>
+          ) writes no entry at all. Your witness chain is a record of governed activity,
+          not a record of all activity, and silence in it is not proof that nothing
+          happened. That limit comes from where the gate runs, inside the agent&apos;s own
+          process rather than outside it, so it is not the kind of thing better heuristics
+          close. It would take an observer the agent cannot reach, and that is not what
+          ships today.
         </p>
       </section>
 
@@ -453,13 +510,18 @@ export default function HestiaPage() {
               in the paragraph above is byte-identical on /how-it-works and /day-in-web4 (see the
               guard at how-it-works.tsx L83-92) and is NOT paraphrased here, it is pointed at; and
               nothing here says a hub is deployed or running continuously, which /running-now
-              contradicts. */}
+              contradicts.
+              Jul-31: this block used to open the demonstration with "every action an agent takes
+              under your delegation". The universal is falsified by the completeness limit now
+              shipping in the "Why local-first matters" section above (see the long guard there).
+              Narrowed to the governed act. The block's own job is unchanged: it still shows that
+              solo witnessing OPERATES, which is what Q8 asked for. Do not restore "every". */}
           <p className="text-sm text-gray-300 leading-relaxed mt-3">
             <strong className="text-gray-200">Solo is not the mechanism switched off.</strong>{" "}
             The &ldquo;no public network&rdquo; caveat above is about reach, not capability. Web4
             trust comes from being witnessed, and a
-            solo hestia is already witnessing: every action an agent takes under your delegation is
-            checked by your policy gate and written into your witness chain, and its{" "}
+            solo hestia is already witnessing: when an agent acts under your delegation, your
+            policy gate checks the act and your witness chain records it, and its{" "}
             <Link href="/trust-tensor" className="text-sky-300 underline hover:text-sky-200">
               T3/V3
             </Link>{" "}

@@ -2,7 +2,90 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-31 (09:00 session)*
+*Last updated: 2026-07-31 (21:00 session)*
+
+## Jul-31 visitor MEDIUMs 1+2 (15:02 session) - the failure we already measured was missing from the failure page
+
+PR #502 (09:00) took the four HIGHs and handed this scope forward explicitly, saying it needed a
+ground-truth check in `../hestia` rather than a copy fix. I did the check. The answer was in
+`hestia/docs/GATE_BYPASS_CATALOG.md`, and it is unambiguous enough that upstream attached a
+standing instruction to it.
+
+### The finding: the site said the opposite of what upstream measured
+
+Catalog **D2, "Selective non-witnessing"**: *"Any Class A/B/C bypass is also a witnessing bypass,
+since the same hook does both. There is no independent observer. Consequence: the chain is a
+record of governed activity, never a complete record of activity. Reading chain silence as
+'nothing happened' is unsound, say so wherever the chain is presented as evidence."* Catalog
+section 11 repeats it in the acknowledgements "to put in front of anyone relying on hestia".
+
+`hestia:319-323` said: *"because the witness chain is tamper-evident and the policy gate runs
+before each act, what your record claims and what actually happened can't silently diverge."*
+Both halves wrong, and **contradicted by the same page 200 lines down** (the gate "is not built to
+stop a sophisticated agent from routing around it, two environment variables suffice today").
+The comfortable version was the one under the heading "Why local-first matters". Exactly the
+defect class the Jul-31 visitor named in their Honest Assessment.
+
+### What shipped
+
+1. **`/hestia` completeness limit** at the "Why local-first matters" close. Answers the visitor's
+   **Unanswered Q1** ("does the witness chain still record actions from an agent that bypassed the
+   gate?") in the direction they asked for if the answer was no: it says so. The chain is a record
+   of governed activity; silence in it is not proof nothing happened; the limit comes from the
+   gate running inside the agent's process, so heuristics do not reach it.
+2. **The same-page universals, narrowed** at `hestia:115` ("For AI agents" card) and `hestia:461`
+   (the "Solo is not the mechanism switched off" block, whose Jul-29 Q8 job is untouched). Both
+   said "every action". Policy review caught these: shipping the limit while leaving them standing
+   would have made the page contradict itself twice, which is the defect being fixed.
+3. **`/what-could-go-wrong` Risk 9**, "The agent routes around its own safety gate". The register
+   was eight prospective risks; the one measured, present-tense, issue-numbered vulnerability the
+   site discloses was absent from it. Also a **9th `RiskSelector.tsx` entry**: that jump list is
+   hardcoded, so a card added without it is invisible to the index.
+
+### What the wording deliberately does NOT do (policy-review conditions, all six met)
+
+- **The divergence absolute is not restated in any weaker form.** Tamper-evidence survives only as
+  the narrow claim it actually is (an entry cannot be edited or removed *later*), with the explicit
+  rider that this says nothing about whether the entry was right when written. Catalog **D1**
+  (MEASURED 2026-07-29: claude-code witnessed as kimi-code, identity is client-asserted) and **D3**
+  (DEMONSTRATED: a third party manufactured 22 denials against codex, temperament fell to 0.371,
+  caught only because a human noticed) mean written entries can be false.
+- **Risk 9 does not offer the accountability record as a mitigation.** Same hook, no independent
+  observer. That bullet would have been the identical false-reassurance shape #502 deleted from
+  Risk 8's mitigation (4) one card above.
+- **Nothing generalises to Web4.** The gate is one implementation in one piece; saying "Web4 policy
+  gates are bypassable" would be a new canon claim about the standard, not propagation.
+- **Not written as a scheduled repair.** Catalog section 8 grades D2 one of two entries that are an
+  honest "no", "not detectable by any mechanism we have or plan". The structural fix (section 9,
+  config out of the environment into the vault) is named only as unbuilt.
+- **Untouched**: the hardware-required seam, the 0.50 endpoint, every trust/ATP number on the site.
+
+### Recorded decisions, not oversights
+
+- **The landing-page half of MEDIUM 2 was deliberately not taken.** `page.tsx:84-85` ("A proposed
+  open standard for proving what an AI agent did") carries a guard at `:78-82`: *"there is no
+  present-tense capability verb: this is what the standard is FOR, not something Web4 does today."*
+  Already defused. Same for `tldr:93`, which the Risk 8 guard cites as the canonical promise.
+- **`running-now:393`** ("every consequential act landing in your own witness chain") is knowingly
+  left. It is a routing blurb describing the governed walkthrough, one hop from the piece's own
+  page, which now carries the limit. Revisit if a visitor files against it.
+- **`web4-explainer:116`** ("R6/R7 makes every action deterministic, auditable, and trust-scored")
+  and **`hardbound:76`** ("records every action in signed audit bundles") are design-layer and
+  different-piece claims respectively, not hestia's prototype. Not a seam. Left.
+
+### Still open from the Jul-31 log
+- **5 MEDIUMs**: founders-vs-collusion (ledger **Q3** adjacency); `/trust-tensor` Alice 0.90 vs the
+  hardware ceiling (**waits for #502 to land**, it is open on that file); `/why-web4` affordability
+  (standing seam, do not copy-fix); `/first-contact` "no fresh starts" vs karma rebirth; the
+  die/reborn register clash. The death-definition half of the last one **already ships** at
+  `first-contact:401` ("death here means Alice's standing is suspended... her identity and history
+  persist"), so what remains there is ordering, not absence.
+- **5 LOWs**, untouched.
+- **`/hardbound`** banner remains the operator positioning call (#500), re-filed as a HIGH on
+  Jul-31 with its strongest evidence yet and correctly not re-decided by #502.
+- **Filed, not fixed**: `src/lib/terms.ts:214` and `:233` link to `/what-could-go-wrong#sybil` and
+  `#goodharting`; both `id`s live on `/manifest`. Two dead anchors, pre-existing, for an anchor
+  pass (which `/hestia` is also owed, 18 inbound links).
 
 ## Jul-31 visitor HIGHs (09:00 session) - the comfortable version lives where the reader stops
 
@@ -93,6 +176,7 @@ Next session triages them against a fresher log. Two worth flagging now:
   product page and missing from the failure analysis. Their Unanswered Q1 (does the witness chain
   still record an action from an agent that bypassed the gate?) is the same thread and needs a
   ground-truth check in `../hestia`, not a copy fix.
+
 
 ## PR #499, second review response (Jul-31 03:01 session) - a pointer that rots is a guard that gets discounted
 No new visitor log (cron fires at 05:00, this session ran at 03:01) and the Jul-30 log stays

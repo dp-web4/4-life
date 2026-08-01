@@ -5,6 +5,7 @@ import ExplorerNav from "@/components/ExplorerNav";
 import PageTracker from "@/components/PageTracker";
 import RiskSelector from "@/components/RiskSelector";
 import TermTooltip from "@/components/TermTooltip";
+import MaturityBadge from "@/components/MaturityBadge";
 
 export const metadata = {
   title: "What Could Go Wrong | 4-Life",
@@ -639,6 +640,117 @@ export default function WhatCouldGoWrongPage() {
               over universal ceiling); a more accessibility-forward design would weight the trade-off
               differently. This deserves the same honesty as the GDPR question below: this is a
               policy choice, not a technical inevitability, and the choice is contestable.
+            </p>
+          </div>
+        </div>
+
+        {/* Jul-31 visitor MEDIUM, and the structural note in their Honest Assessment: "The eight
+            risks are all prospective ... The one thing that is measurably broken today, disclosed
+            with unusual candour on /hestia, is not among them. That is backwards. A failure
+            analysis should lead with the failure you have already found."
+            They were right, and the omission is sharper than the other seven gaps they found: the
+            page's own thesis is that a project about trust which hides its weaknesses undermines
+            itself, and this is the only measured, present-tense, issue-numbered vulnerability the
+            site discloses anywhere. It also lands on the only Running piece.
+            Sources, all upstream, all in hestia/docs/GATE_BYPASS_CATALOG.md (living doc) plus
+            hestia/README.md L9-20 and hestia issue #49. Numbers and postures below are quoted
+            from the catalog, not derived here.
+
+            FOUR CONSTRAINTS from policy review, do not undo:
+            1. The accountability record is NOT offered as a mitigation. Catalog D2: any Class
+               A/B/C bypass is also a witnessing bypass, same hook, no independent observer. An
+               "it is still recorded" bullet would be the same false-reassurance shape the Jul-31
+               HIGH pass deleted from Risk 8's mitigation (4) one card above.
+            2. Scoped to hestia's implementation, never to Web4. "Web4 policy gates are
+               bypassable" would be a new canon claim about the standard.
+            3. The unbuilt direction (catalog section 9, config out of the environment and into
+               the vault; authenticate the oracle so endpoint poisoning downgrades to a denial of
+               service) is named ONLY as unbuilt, and paired with section 8's grading of D2 as an
+               accepted limit "not detectable by any mechanism we have or plan".
+            4. Nothing here touches the hardware-required seam or which side of 0.50 the threshold
+               falls on. Both are live escalations and neither is in scope for this risk. */}
+        <div id="risk-gate-bypass" className="mb-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-24">
+          <div className="flex items-start gap-3 mb-4">
+            <span className="text-2xl">9.</span>
+            <div className="flex-1">
+              <div className="flex items-center gap-3 flex-wrap">
+                <h3 className="text-xl font-semibold text-amber-400">The agent routes around its own safety gate</h3>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">Serious · High likelihood</span>
+              </div>
+              <p className="text-gray-500 text-sm">Policy Enforcement &middot; the one risk here that is measured rather than predicted</p>
+            </div>
+          </div>
+          <div className="text-gray-300 leading-relaxed space-y-3">
+            <p>
+              <strong className="text-gray-100">The risk:</strong> The other eight risks on this
+              page are things that could happen. This one already does. In{' '}
+              <Link href="/hestia" className="text-amber-300 underline hover:text-amber-200">Hestia</Link>,
+              the piece of the onramp that is actually{' '}
+              <MaturityBadge tier="running" />, the gate that checks an agent&apos;s action before
+              it runs is an early prototype, and two environment variables are enough to get past
+              it. The team measured that themselves and published it as{' '}
+              <a
+                href="https://github.com/dp-web4/hestia/issues/49"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-300 underline hover:text-amber-200"
+              >
+                issue #49
+              </a>{' '}
+              with a catalogue of the specific holes. If the thing meant to enforce your rules can
+              be stepped over, then for that action there were no rules.
+            </p>
+            <p>
+              <strong className="text-gray-100">Why it&apos;s real:</strong> The gate runs as a
+              child of the agent, with the agent&apos;s privileges, reading the agent&apos;s
+              environment. It is inside the blast radius rather than outside it, which makes it
+              governance and not containment. Two consequences follow, and the second is the one
+              that costs the most. First, the same hook that runs the gate is what writes the
+              witness entry, so a bypassed action leaves no record: the chain is a record of
+              governed activity, never a record of all activity. Second, the adversary that matters
+              is not a remote attacker. It is a well-intentioned agent taking the efficient path,
+              and on the team&apos;s own evidence that is the far more common case. A matcher that
+              is over-broad in one direction and under-broad in the other trains an agent to read
+              denials as noise, which means imprecision manufactures the disposition to route
+              around. The false positives are a security problem, not just an annoyance.
+            </p>
+            <p>
+              <strong className="text-gray-100">What mitigates it:</strong>{' '}
+              <strong>(1) It is disclosed, measured, and reproducible</strong> rather than
+              suspected: the bypass catalogue names each hole, marks which are measured and which
+              are inferred, and carries the commands to re-run them. That does not close anything,
+              but it is the difference between a limit you can plan around and one you find out
+              about later.
+              <strong> (2) One setting closes every bypass measured so far.</strong> The gate&apos;s
+              default posture is to allow when it cannot get an answer; flipping it to refuse
+              instead turns the measured silent bypasses into loud denials. It is off by default,
+              and the reason is stated honestly upstream: when the checker is genuinely down, every
+              agent stops, and that trade should be a deliberate choice rather than something
+              inherited.
+              <strong> (3) The stated fix is structural, and unbuilt.</strong> Every measured hole
+              shares one root, which is that the gate reads its own governing settings from a
+              channel the governed agent can write. Moving those into the vault removes the class
+              rather than patching instances. That work is proposed, not shipped.
+            </p>
+            <p className="text-amber-400/80 text-sm border-t border-gray-700 pt-3 mt-3">
+              <strong>Honest assessment:</strong> Two of the entries in that catalogue are graded
+              an honest &ldquo;no&rdquo;: not detectable by any mechanism the team has or plans,
+              because they are load-bearing limits of running a gate inside the process it is
+              governing. Selective non-witnessing is one of them. So this is an accepted limit
+              today, not a scheduled repair, and no amount of better heuristics reaches it.
+              Closing it needs an enforcement point the agent cannot reach, a separate account, a
+              container, or a kernel boundary, and that is a different piece of work than the one
+              that is running.
+            </p>
+            <p className="text-amber-400/80 text-sm">
+              What this does and does not undercut is worth being precise about, because it is the
+              site&apos;s headline promise. Web4 is a design for proving what an agent did, and the
+              design does not depend on this prototype: the gate is one implementation, in one
+              piece, at one stage of maturity. What is fair to say is that today, on the one piece
+              you can actually run, the record you get back is a record of the actions that went
+              through the gate. Treat an absence in it as unexamined, not as proof that nothing
+              happened. Hestia says the same thing on its own page, and it is the reason the
+              maturity badge on that piece says Running rather than finished.
             </p>
           </div>
         </div>
