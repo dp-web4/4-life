@@ -1307,11 +1307,27 @@ export default function HowItWorksPage() {
               {/* Jul-30 visitor MEDIUM + Unanswered Q8: this was named "weakest link" and then computed
                   the PRODUCT (0.9 x 0.6 = 0.54, while the weakest link is 0.6). The old claim was true
                   but weaker than the math, so this is a strengthening, not an error correction. The
-                  multiplicative reading is what the rest of the site teaches: :1593 "trust multiplies,
-                  it doesn't add" (0.9^5 = 0.59) and trust-neighborhood:588 "0.7x per hop, and it
-                  compounds". Scoped as what this site teaches on purpose: web4-standard's
-                  inter-society-protocol.md:380 leaves transitivity-vs-attenuation society-sovereign,
-                  so do not upgrade this to a protocol requirement. */}
+                  multiplicative reading is what the rest of the site teaches: the agent-pipeline card
+                  below ("trust multiplies, it doesn't add", 0.9^5 = 0.59) and trust-neighborhood:588
+                  ("0.7x per hop, and it compounds"). Scoped as what this site teaches on purpose:
+                  web4-standard's inter-society-protocol.md:380 leaves transitivity-vs-attenuation
+                  society-sovereign, so do not upgrade this to a protocol requirement.
+                  Aug-01 CORRECTION to that citation, per the Aug-01 visitor HIGH 3: those two are
+                  NOT the same quantity, and reading this comment as saying they are is what the
+                  disambiguation blocks on both pages now exist to prevent. Both compound
+                  multiplicatively, which is all this invariant claims and all it needs. But the
+                  pipeline number composes the agents' own scores, while trust-neighborhood's
+                  composes link scores AND a separate 0.7^depth distance term. Do not cite this
+                  comment as license to treat one page's number as the other's decay rate.
+                  What this card does need, and what the Aug-01 session deliberately did NOT touch:
+                  unlike the pipeline card, this one IS the neighborhood setting (Alice judging
+                  Carol through Bob), and it computes 0.9 x 0.6 = 0.54 where trust-neighborhood's
+                  own formula gives 0.9 x 0.6 x 0.7^2 = 0.26 for the same two hops. The invariant
+                  as stated ("strictly below the weaker link") holds either way, which is why this
+                  was left alone; the worked value is the exposed part. That is the same open
+                  question as the pipeline's, filed as ledger Q11. Do NOT resolve it here by
+                  quietly multiplying in a decay factor: it would put a third number on the site
+                  for one quantity, which is the defect this whole pass is closing. */}
               <div className="text-sky-400 font-semibold text-xs mb-1">Transitive attenuation</div>
               <p className="text-gray-400 text-xs">Trust through a chain multiplies, so every hop can only shrink it. If Alice trusts Bob 0.9 and Bob trusts Carol 0.6, Alice&apos;s transitive trust in Carol is 0.54 (0.9 × 0.6) - strictly below the weaker of the two links, not equal to it. Distance costs trust even when every link in the chain is strong.</p>
             </div>
@@ -1723,8 +1739,9 @@ export default function HowItWorksPage() {
               A 5-hop pipeline where each agent has 0.9 trust ends up at 0.59
               end-to-end - because trust multiplies, it doesn&apos;t add:{" "}
               <span className="text-gray-300">0.9 &times; 0.9 &times; 0.9 &times; 0.9 &times; 0.9 &asymp; 0.59</span>.
-              Each hop keeps only 90% of what reached it, so long chains need
-              high individual trust.
+              The 90% a step keeps is <em>that agent&apos;s own trust score</em>, not a rate
+              charged for the hop: put an agent at 0.6 in the chain and that step keeps 60%.
+              Long chains need high individual trust for exactly that reason.
             </p>
           </div>
           <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
@@ -1742,6 +1759,39 @@ export default function HowItWorksPage() {
             </p>
           </div>
         </div>
+
+        {/* Aug-01 visitor HIGH 3: "'hop' names two different things with two different decay
+            rates and two different limits, never disambiguated." They read "each hop keeps only
+            90%" here as a DECAY RATE, then met "each hop costs 30% of the remaining trust" with a
+            hard wall at 3 on /trust-neighborhood, and went back and forth between the pages twice.
+            The 90% was never a rate: it is this example's per-agent score (repaired in the card
+            above, which is an error correction licensed by the card's own preceding clause,
+            "where each agent HAS 0.9 trust").
+            This block is a MEASUREMENT-SCOPE clause, not a reconciliation. Three things it must
+            not become:
+            - It must NOT say a delegation chain is exempt from MRH distance decay. That boundary
+              appears nowhere on this site and upstream leans the other way: mrh-tensors.md:210-214
+              applies decay_factor**(i+1) to every path multiplicatively, and
+              inter-society-protocol.md:380 leaves transitivity-vs-attenuation society-sovereign.
+              Saying it would coin canon. It is filed instead as ledger Q11.
+            - It must NOT restate /trust-neighborhood's 3-hop horizon as a bound on pipeline
+              length, or as not being one. Same reason.
+            - It must NOT quote 0.7 as a second rate for the same quantity. It names what each
+              number COMPOSES, which is checkable from the arithmetic each page already shows
+              (here: agents' scores; there: trust = t1 x t2 x t3 x 0.7^depth). */}
+        <p className="text-gray-400 text-sm leading-relaxed mb-3 bg-gray-900/40 border border-gray-700/50 rounded-lg px-5 py-4">
+          <strong className="text-gray-300">Two different numbers, not two rates for one thing.</strong>{" "}
+          The number above composes the agents&apos; own trust scores, for a chain you assembled
+          and whose every member you can look up.{" "}
+          <Link href="/trust-neighborhood#hop-decay" className="text-sky-400 hover:underline">
+            Trust neighborhoods
+          </Link>{" "}
+          measure something else, and their per-hop 0.7 is a distance discount applied on top of
+          each link&apos;s own score, for judging a stranger you have never dealt with through
+          the people who have. One is a pipeline you built; the other is how far word of mouth
+          carries. The two numbers are not the same quantity and neither is a decay rate for the
+          other.
+        </p>
 
         <p className="text-gray-500 text-xs italic mb-2">
           This is how Web4 handles AI agent orchestration: every delegation has a trust cost,

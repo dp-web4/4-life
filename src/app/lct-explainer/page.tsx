@@ -1794,7 +1794,7 @@ export default function LCTExplainerPage() {
               Single-device users can&apos;t use quorum recovery (there&apos;s no second device to
               co-sign), so losing that device drops you straight into <strong>social recovery</strong>
               {" "}- the slow 3-7 day path above. If you plan to rely on one device, pairing it
-              with a cheap hardware security key (FIDO2, ~$30) as a second witness dramatically
+              with a cheap hardware security key (FIDO2, ~$25) as a second witness dramatically
               shortens your recovery path and raises your trust ceiling. See{" "}
               <a href="#single-device" className="text-sky-400 hover:underline">
                 Only have one device?

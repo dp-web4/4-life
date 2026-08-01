@@ -312,19 +312,70 @@ export default function WhatCouldGoWrongPage() {
               of hardware devices, create thousands of identities, and slowly build legitimate-looking
               trust across all of them - a long-game <TermTooltip term="Sybil">Sybil attack</TermTooltip> (one person pretending to be many).
             </p>
+            {/* Aug-01 visitor HIGH 1 (their #1 friction, and their Unanswered Q1): "hardware cost
+                is quoted 10-20x apart depending on which argument it serves." This card said a flat
+                $500 per identity and $500K per thousand; why-web4:1391-1392 and lct-explainer:2193-2194
+                say a $50 phone and a ~$25 FIDO2 key. The visitor: "at the FAQ's own prices, 1,000
+                identities costs $25K-$50K and risk 4's mitigation collapses."
+                FIX DIRECTION: the number moved HERE, not at the FAQ. The FAQ side owns the concept
+                (it states a reason, "most devices sold since ~2018 ship security chips", on two
+                pages, bracketed by an honest caveat); this card cited the top of the site's own
+                range as a point estimate, twice, with no source. your-internet:97 already prices the
+                same thing as a RANGE, "$50 to $500 each", so the range below is the site's existing
+                number, not a new one, and that page needs no edit.
+                Four things this must not become:
+                - It must NOT invent a reason the attacker pays more than a participant. The visitor
+                  offered one ("attestation-grade TPM?") and the site's own facts refute it: a $50
+                  phone carries a TPM, and TPM is the TOP ceiling (0.90) in lct-explainer's grid.
+                - It must NOT lean on P = 1 - (1-p)^N as the restored barrier. PR #504 adds a block
+                  ~20 lines below whose finding is that this formula presumes witnesses OUTSIDE the
+                  coalition, which a coordinated Sybil operator does not supply. Amplifying it here
+                  would re-arm the reading that block exists to defuse.
+                - It must NOT lean on the ROI ~0.93 / ~0.90 figures. This same visitor log files
+                  those as a MEDIUM (undefined ratio, both below 1.0, "reads as honest participation
+                  also loses money"). Untouched this pass, but not load-bearing either.
+                - It must NOT say anything about whether hardware is REQUIRED to participate. That
+                  is the standing [[hardware-required-seam]]; this row is price-only, and the
+                  visitor's journal bundles the two. Fix price, leave eligibility alone.
+                A gentler number on a risk page has to carry its entailment, or it converts a
+                disclosed gap into a reassurance. Hence the last two sentences: at any price in the
+                range this is affordable to the adversary the card names, so the barrier was never
+                the hardware. That is where this card's own Honest assessment already points ("Web4
+                raises the floor, not the ceiling").
+                Anchor note: why-web4#faq-affordability is a <details> and arrives COLLAPSED. Chosen
+                anyway, because its <summary> is the question verbatim, so the link text and the
+                landing line are the same sentence and the reader knows they arrived. If that link
+                text is ever reworded, reword the summary with it or repoint it.
+                Third figure closed in the same push: lct-explainer:1797 priced a FIDO2 key at ~$30
+                where :2194 and why-web4:1392 both say ~$25. Same device, three numbers. Any future
+                price added anywhere on the site has to land inside $25 to $500 or move all of them. */}
             <p>
               <strong className="text-gray-100">Why it&apos;s real:</strong> Nation-state actors and
               large corporations routinely invest millions in influence operations. If each fake
-              identity costs $500 in hardware plus months of &ldquo;reputation farming,&rdquo;
-              that&apos;s still pocket change for a well-funded adversary with strategic goals.
+              identity costs one device, $50 to $500 depending on what they buy, plus months of
+              &ldquo;reputation farming,&rdquo; that&apos;s still pocket change for a well-funded
+              adversary with strategic goals.
             </p>
             <p>
               <strong className="text-gray-100">What mitigates it:</strong> Coherence scoring detects
               behavioral patterns that are hard to fake at scale - genuine users develop
               organic interaction patterns that differ from coordinated bot farms. The economic
-              cost is real: $500K for 1,000 identities, each needing months of activity. It&apos;s
-              not impossible, but it&apos;s orders of magnitude harder than creating 1,000 email
-              accounts.
+              cost is real but it is mostly not the hardware: $50K to $500K buys the devices for
+              1,000 identities, and each one still needs months of activity that other people
+              witnessed. It&apos;s not impossible, but it&apos;s orders of magnitude harder than
+              creating 1,000 email accounts.
+            </p>
+            <p className="text-sm text-gray-400">
+              <strong className="text-gray-300">Which part money solves.</strong> An adversary can
+              buy 1,000 devices in an afternoon at any price in that range, so read the hardware
+              line as a floor on effort, not a wall. The part a budget does not compress is the
+              history: a thousand identities need a thousand records of behavior that other
+              participants observed and staked reputation on, and those accrue in calendar time
+              whether you are rich or not. The same prices, from the other direction, are what make
+              the system reachable for ordinary people:{" "}
+              <Link href="/why-web4#faq-affordability" className="text-sky-400 hover:underline">
+                what about people who can&apos;t afford devices with security chips?
+              </Link>
             </p>
             <div className="bg-gray-800/60 border border-gray-700/50 rounded-lg p-4 my-3">
               <p className="text-gray-300 text-sm mb-2">
