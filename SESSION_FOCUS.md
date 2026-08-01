@@ -2,7 +2,72 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-07-31 (15:02 session)*
+*Last updated: 2026-07-31 (21:00 session)*
+
+## PR #502 review response (21:00 session) - a synonym walked through a phrase-grep
+
+No new visitor log (cron fires 05:00; this session ran at 21:00), and Protocol v2 Step 2 puts a
+blocked PR ahead of new scope. #502 was **CHANGES REQUESTED** at 17:08Z and **BLOCK STANDS** at
+23:07Z, because the 15:02 session opened #503 on a different scope instead. One-line ask, in a
+file the PR already opens. Everything else in #502 was verified and approved by the reviewer and
+is untouched here.
+
+### The ask, and why it is the same defect twice
+
+`atp-economics` "Why This Matters" read *"Value creators earn more ATP than they spend"*: the
+claim the Key Insights card was fixed for in the same push, unqualified, in a summary conclusion,
+**835 lines below the fix on the same page**. It survived because #502's sweep was keyed to the
+string "earn more ATP than they **cost**" and this one says "than they **spend**". The visitor's
+own diagnosis names four kinds of place a reader stops (summary card, mitigation bullet,
+worked-example conclusion); "Why This Matters" is a fifth, and it was not in the set.
+
+Fixed by naming the channel and linking the canonical phrase this page already repeats on every
+surface that teaches the split: *"Value creators earn more than they spend on work someone else commissioned and
+priced: recharge refunds, payment earns."* The karma clause and the bad-actors clause are intact,
+and the bullet stays the length of its neighbours (policy-review condition: match the register,
+do not transplant the Key Insights expansion).
+
+### The rule that goes with it: sweep the claim, not the sentence
+
+The header guard now carries the synonym set to grep ("than they cost", "than they spend", "earn
+more than", "earn more ATP"), the exclusion for **comparative** uses (`terms.ts:150` compares good
+work to bad, `trust-tensor:1161` compares agents; both true of either channel, and the reviewer
+verified `terms.ts:150` as a regression risk if "fixed"), and a boundary the sweep must not
+overrun. Recurrence chain on this claim: Jun-11 → Jun-12 → Jul-30 → Jul-31 → this. Every link
+failed the same way, by scoping the next sweep to the surfaces the last fix touched.
+
+### Registered, deliberately NOT fixed: two off-page instances
+
+The claim-level grep the reviewer asked for surfaces two live unqualified copies his own grep key
+could not have found:
+
+- `src/app/how-it-works/page.tsx:1355` ("Quality Compounds" card): *"Value creators earn more than
+  they spend. ATP accumulates. Trust grows."*
+- `src/app/first-contact/page.tsx:889` (ATP Economics concept card): *"Spammers burn ATP faster
+  than they earn it. Quality creators earn more than they spend."*
+
+Widening to them was **cut on policy review**, and the reason is not scope discipline: it is that
+the fix direction is undetermined. `atp-economics:862` quotes *"value creators earn more than they
+spend"* **verbatim** and scopes the quote to *other pages*, telling the reader that this page's
+payment channel is what those pages mean. Editing the two cards silently picks one of two coherent
+end states while leaving `:862` asserting the other, which would leave a quote pointing at a phrase
+that exists nowhere. That is a fresh seam, filed against the page this PR is fixing. The choice,
+for whoever takes it:
+
+1. **Keep the shorthand** on the beginner pages and give each card a route to the reconciliation
+   (`/atp-economics#net-positive`), leaving `:862` true as written; or
+2. **Retire the phrase** everywhere and delete the "other pages" clause at `:862` with it.
+
+Note `:862` says *other* pages, so it never covered `atp-economics`' own instance. That is why the
+in-page fix above needed no direction call and these two do.
+
+### Also in this push
+- **Merged `origin/main`** (#503) rather than rebasing: force-push is hook-denied on this repo, so
+  a rebased PR branch cannot be published. The single conflict was the expected `SESSION_FOCUS.md`
+  one, both sides purely additive, concatenated in date order (21:00, 15:02, 09:00).
+- `npm run build` green, 31 static pages. 0 em dashes and 0 "production-ready" in added lines.
+- Untouched: HIGH 4 (`/hardbound` banner, operator positioning call), the hardware-required seam,
+  the 0.50 endpoint, every trust/ATP number, and the remaining Jul-31 MEDIUMs and LOWs.
 
 ## Jul-31 visitor MEDIUMs 1+2 (15:02 session) - the failure we already measured was missing from the failure page
 
@@ -86,6 +151,97 @@ defect class the Jul-31 visitor named in their Honest Assessment.
 - **Filed, not fixed**: `src/lib/terms.ts:214` and `:233` link to `/what-could-go-wrong#sybil` and
   `#goodharting`; both `id`s live on `/manifest`. Two dead anchors, pre-existing, for an anchor
   pass (which `/hestia` is also owed, 18 inbound links).
+
+## Jul-31 visitor HIGHs (09:00 session) - the comfortable version lives where the reader stops
+
+Fresh log `visitor/logs/2026-07-31.md` (05:11). **All seven** understanding boxes checked, "good"
+comprehension, would return: the strongest result the persona can report. The visitor names the
+defect class themselves and it is the whole of this session's scope:
+
+> the site states the honest version *somewhere* and the comfortable version somewhere else, and
+> the comfortable version is the one sitting in the summary card, the mitigation bullet, or the
+> worked-example conclusion, which is to say the place a reader actually stops.
+
+Three of four HIGHs fit that shape exactly. All three fixed at the **reassurance** surface, leaving
+the **mechanism** surface as the authority. No numbers changed anywhere; every edit is a claim or a
+label.
+
+### HIGH 1: the risk register reassured the excluded tier with something untrue
+`/what-could-go-wrong` Risk 8 mitigation (4) opened *"Software-only behavior still accrues
+reputation normally"*. `/lct-explainer` says *"0.5 is both where you start and the highest you can
+reach"*. A user pinned at their starting value accrues nothing, and this was the sentence doing the
+reassuring, on the page whose entire purpose is not doing that.
+
+Only the accrual half was deleted. **The eligibility clause is byte-identical and stayed that way**
+(*"the ceiling caps high-trust roles, not basic participation"*), because a Jul-29 guard marks it as
+the clause holding the eligibility side of the [[hardware-required-seam]]. Narrowing the bullet was
+safe; rewriting it would have flipped the page toward "hardware required".
+
+The replacement ships only what is grounded: participation (this page's own claim) and pseudonymity
+(lct-explainer's). The visitor's suggested third item, *"a witness record of their own actions"*,
+was **cut on policy review as ungrounded**: lct-explainer's device-loss paragraph says the
+software-only case has no hardware witness and *"nothing to recover to"*.
+
+### HIGH 2: an unconditional headroom promise, on the page that states the ceiling
+*"you start at the neutral midpoint and earn your way above it, so a newcomer is not in danger"*
+shipped byte-identically at `lct-explainer` (the page's ONE proactive anchor, in the intro above
+every decimal) and at `trust-tensor`. False for a software-only newcomer, three paragraphs from
+where the same page caps them at 0.50. Headroom is now conditioned on a hardware anchor on both
+surfaces, which remain byte-identical to each other.
+
+Three things the wording deliberately does **not** do:
+- It never says the software-only newcomer *is* in danger. Their status is left unstated, because
+  stating it rules on `>` vs `>=` at exactly 0.50 ([[trust-05-endpoint-canon-conflict]], ledger Q1).
+- It does not re-author the consequence. The visitor asked for *"you cannot build a buffer above
+  it"*; that **already ships verbatim in substance** in the `#software-only-survival` callout
+  further down lct-explainer (*"what the software-only ceiling really costs you is margin ... no
+  buffer above it"*). The parenthetical forward-points there instead of coining a third phrasing.
+- "Capped at that midpoint" is a ceiling claim, not an eligibility claim, so the hardware-required
+  seam is untouched.
+
+### HIGH 3: fourth touch, and the first one to reach the illustration
+`/atp-economics` concluded *"Hannah barely loses any and thrives"* over a card reading **Net: -8
+ATP**, and the Key Insights card asserted *"High-value contributions earn more ATP than they cost"*,
+which the same page's cap rule forbids (*"you can't profit on a single action, only recover its
+cost"*).
+
+The page's own header guard already diagnosed this in Jul-30's pass: *"Both prior fixes landed in
+PROSE ... the LABELS were never touched, which is why it keeps recurring."* Jul-30 fixed the
+simulator labels. It recurred anyway, because **the summary card and the worked-example conclusion
+were in neither set**. Chain is Jun-11 browse B, Jun-12 browse A, Jul-30, Jul-31: fourth touch,
+second consecutive browse. Also found a leftover copy of the same string in `how-it-works`'
+Learning Across Lives bullets, which #498 left behind when it fixed that page's earning examples.
+
+All three now name a channel, reusing the phrasing already shipping on five surfaces of
+`/atp-economics` (**recharge refunds, payment earns**). Propagation, not a new claim. The
+"dead by task 13" arithmetic was **not** imported: a June-11 parenthetical already frames both
+negative nets as an artifact of the example pricing the task at exactly what each contributor
+spends, and asserting a death task would contradict that fix and invent a number.
+
+### HIGH 4: NOT fixed. Second browse in a row, and the escalation is where it belongs
+`/hardbound` carries `NewcomerOrientationBanner`'s *"real, open-source software you can run
+yourself, the proof Web4 works in practice"* over a page describing a **private, proprietary**
+product. #500 scoped this, cut it on policy review, filed it as an **operator positioning call**,
+and said do not copy-fix meanwhile.
+
+What is new: Jul-30 filed it as a **LOW** about an uncheckable test count. Jul-31 files it as a
+**HIGH** and names the **banner**, arriving there by following the site's own *"don't take this on
+faith, read the code"* invitation to the GitHub org and finding no hardbound. Same escalation, and
+now the strongest evidence in it: the visitor's Honest Assessment calls this *"the one place the
+site's own standard slips"*. Recorded, not re-decided. See [[uncheckable-count-may-be-an-operator-call]].
+
+### Not taken this session (7 MEDIUMs, 5 LOWs)
+Next session triages them against a fresher log. Two worth flagging now:
+- **`/trust-tensor` never mentions the hardware ceiling near the Alice example** (MEDIUM). This
+  session's HIGH-2 edit added a ceiling mention to that page's calibration box, but the MEDIUM is
+  about the Alice-across-three-roles illustration teaching 0.90 as reachable through attestation
+  alone. Still open, and noted as such in the guard there.
+- **The policy-gate bypass is absent from the eight-risk register** (MEDIUM). The visitor's sharpest
+  structural point: the only measured, present-tense vulnerability on the site is disclosed on the
+  product page and missing from the failure analysis. Their Unanswered Q1 (does the witness chain
+  still record an action from an agent that bypassed the gate?) is the same thread and needs a
+  ground-truth check in `../hestia`, not a copy fix.
+
 
 ## PR #499, second review response (Jul-31 03:01 session) - a pointer that rots is a guard that gets discounted
 No new visitor log (cron fires at 05:00, this session ran at 03:01) and the Jul-30 log stays

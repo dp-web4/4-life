@@ -564,8 +564,15 @@ export default function WhatCouldGoWrongPage() {
               <strong> (3) Trusted-third-party witnessing</strong> - libraries, schools,
               NGOs, and clinics can serve as institutional witnesses for users who lack
               personal hardware, similar to how notaries serve as identity witnesses today.
-              <strong> (4) Software-only behavior</strong> still <em>accrues</em> reputation
-              normally - the ceiling caps high-trust roles, not basic participation.
+              <strong> (4) Participation itself isn&apos;t capped</strong> - the ceiling caps high-trust
+              roles, not basic participation. Be clear about what that leaves, though: it is not a
+              slower climb to the same place. A software-only identity starts at 0.50 and 0.50 is
+              also where it stops, so what this tier keeps is taking part, and doing it
+              pseudonymously, rather than a score that grows (
+              <Link href="/lct-explainer#software-only-survival" className="text-amber-400 hover:underline">
+                what a 0.50 ceiling actually costs you
+              </Link>
+              ).
             </p>
             {/* Jul-29 visitor HIGH (their #3), landed on the clause that was already wrong.
                 "Recovery from device loss is also slower at the lower ceiling" UNDERSTATES the
@@ -587,9 +594,22 @@ export default function WhatCouldGoWrongPage() {
                   secure hardware is required to PARTICIPATE: that is the standing
                   [[hardware-required-seam]] escalation (why-web4's two affordability FAQs vs
                   lct-explainer), and asserting either side on a third page deepens it. Mitigation
-                  (4) above already holds the eligibility side ("the ceiling caps high-trust
-                  roles, not basic participation") and is deliberately left intact. Neither
-                  why-web4 FAQ was touched.
+                  (4) above holds the eligibility side ("the ceiling caps high-trust roles, not
+                  basic participation"); that clause is byte-identical since Jul-29 and must STAY
+                  byte-identical. Neither why-web4 FAQ was touched.
+                  REVERSED Jul-31 (visitor HIGH, their #1), and only the OTHER half of bullet (4).
+                  It used to open "Software-only behavior still accrues reputation normally", which
+                  is false against lct-explainer:"0.5 is both where you start and the highest you
+                  can reach" - a user pinned at their starting value accrues nothing. The visitor
+                  named it as the site's own risk register offering the excluded tier a reassurance
+                  that isn't true. Deleted; the eligibility clause it was welded to survives intact,
+                  so this narrows the bullet, it does not flip it toward "hardware required".
+                  What replaced it is grounded, not invented: the ceiling fact is already this
+                  page's own (the risk paragraph above says "software-only fallback at a 0.50 trust
+                  ceiling"), and pseudonymity is lct-explainer's. Deliberately NOT claiming a
+                  witness record for this tier: lct-explainer's device-loss paragraph says a
+                  software-only identity has no hardware witness and "nothing to recover to", so
+                  the visitor's suggested third item was cut as ungrounded.
                 - Phrasing is anchored to the hedge that already ships at lct-explainer:2196
                   ("a Sybil resistance strategy, not a Sybil prevention guarantee") rather than
                   coining a third framing for the same idea.

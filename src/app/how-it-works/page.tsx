@@ -905,7 +905,13 @@ export default function HowItWorksPage() {
                 which strategies succeed and which fail:
               </p>
               <ul className="list-disc list-inside ml-4 mt-2 space-y-1 text-gray-400">
-                <li>"High-value contributions earn more ATP than they cost"</li>
+                {/* Jul-31 visitor HIGH (their #3): this bullet carried the same false claim as
+                    atp-economics' Key Insights card, corrected in the same push. Quoted as an
+                    in-fiction lesson, but a reader has no way to read it as fiction: the cap rule
+                    says confirmations of your own work refund at most what you spent. #498 fixed
+                    this page's earning examples in the two-channel block above and left this
+                    bullet behind. Now names the channel, which is what makes it true. */}
+                <li>"Work someone commissioned pays more than it costs; work I start myself only refunds"</li>
                 <li>"Transparency when making mistakes rebuilds trust faster"</li>
                 <li>"Consistent small wins beat sporadic big swings"</li>
               </ul>
