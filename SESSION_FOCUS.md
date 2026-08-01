@@ -4,6 +4,71 @@
 
 *Last updated: 2026-07-31 (21:00 session)*
 
+## PR #502 review response (21:00 session) - a synonym walked through a phrase-grep
+
+No new visitor log (cron fires 05:00; this session ran at 21:00), and Protocol v2 Step 2 puts a
+blocked PR ahead of new scope. #502 was **CHANGES REQUESTED** at 17:08Z and **BLOCK STANDS** at
+23:07Z, because the 15:02 session opened #503 on a different scope instead. One-line ask, in a
+file the PR already opens. Everything else in #502 was verified and approved by the reviewer and
+is untouched here.
+
+### The ask, and why it is the same defect twice
+
+`atp-economics` "Why This Matters" read *"Value creators earn more ATP than they spend"*: the
+claim the Key Insights card was fixed for in the same push, unqualified, in a summary conclusion,
+**835 lines below the fix on the same page**. It survived because #502's sweep was keyed to the
+string "earn more ATP than they **cost**" and this one says "than they **spend**". The visitor's
+own diagnosis names four kinds of place a reader stops (summary card, mitigation bullet,
+worked-example conclusion); "Why This Matters" is a fifth, and it was not in the set.
+
+Fixed by naming the channel and linking the canonical phrase this page already repeats on every
+surface that teaches the split: *"Value creators earn more than they spend on work someone else commissioned and
+priced: recharge refunds, payment earns."* The karma clause and the bad-actors clause are intact,
+and the bullet stays the length of its neighbours (policy-review condition: match the register,
+do not transplant the Key Insights expansion).
+
+### The rule that goes with it: sweep the claim, not the sentence
+
+The header guard now carries the synonym set to grep ("than they cost", "than they spend", "earn
+more than", "earn more ATP"), the exclusion for **comparative** uses (`terms.ts:150` compares good
+work to bad, `trust-tensor:1161` compares agents; both true of either channel, and the reviewer
+verified `terms.ts:150` as a regression risk if "fixed"), and a boundary the sweep must not
+overrun. Recurrence chain on this claim: Jun-11 → Jun-12 → Jul-30 → Jul-31 → this. Every link
+failed the same way, by scoping the next sweep to the surfaces the last fix touched.
+
+### Registered, deliberately NOT fixed: two off-page instances
+
+The claim-level grep the reviewer asked for surfaces two live unqualified copies his own grep key
+could not have found:
+
+- `src/app/how-it-works/page.tsx:1355` ("Quality Compounds" card): *"Value creators earn more than
+  they spend. ATP accumulates. Trust grows."*
+- `src/app/first-contact/page.tsx:889` (ATP Economics concept card): *"Spammers burn ATP faster
+  than they earn it. Quality creators earn more than they spend."*
+
+Widening to them was **cut on policy review**, and the reason is not scope discipline: it is that
+the fix direction is undetermined. `atp-economics:862` quotes *"value creators earn more than they
+spend"* **verbatim** and scopes the quote to *other pages*, telling the reader that this page's
+payment channel is what those pages mean. Editing the two cards silently picks one of two coherent
+end states while leaving `:862` asserting the other, which would leave a quote pointing at a phrase
+that exists nowhere. That is a fresh seam, filed against the page this PR is fixing. The choice,
+for whoever takes it:
+
+1. **Keep the shorthand** on the beginner pages and give each card a route to the reconciliation
+   (`/atp-economics#net-positive`), leaving `:862` true as written; or
+2. **Retire the phrase** everywhere and delete the "other pages" clause at `:862` with it.
+
+Note `:862` says *other* pages, so it never covered `atp-economics`' own instance. That is why the
+in-page fix above needed no direction call and these two do.
+
+### Also in this push
+- **Merged `origin/main`** (#503) rather than rebasing: force-push is hook-denied on this repo, so
+  a rebased PR branch cannot be published. The single conflict was the expected `SESSION_FOCUS.md`
+  one, both sides purely additive, concatenated in date order (21:00, 15:02, 09:00).
+- `npm run build` green, 31 static pages. 0 em dashes and 0 "production-ready" in added lines.
+- Untouched: HIGH 4 (`/hardbound` banner, operator positioning call), the hardware-required seam,
+  the 0.50 endpoint, every trust/ATP number, and the remaining Jul-31 MEDIUMs and LOWs.
+
 ## Jul-31 visitor MEDIUMs 1+2 (15:02 session) - the failure we already measured was missing from the failure page
 
 PR #502 (09:00) took the four HIGHs and handed this scope forward explicitly, saying it needed a

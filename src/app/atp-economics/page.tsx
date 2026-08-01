@@ -46,6 +46,21 @@ export default function ATPEconomicsPage() {
   // fixed in that push. The generalisation is now: this claim has to name a channel EVERYWHERE it
   // appears (prose, labels, summary cards, worked-example conclusions), because the unqualified
   // form is false of the recharge channel and this page teaches both.
+  // Jul-31, #502 review: a 5th instance survived that same push, in the "Why This Matters"
+  // summary conclusion, because the sweep was keyed to the STRING "earn more ATP than they cost"
+  // and that bullet said "than they SPEND". SWEEP THE CLAIM, NOT THE SENTENCE. The synonym set
+  // to grep, at minimum: "than they cost", "than they spend", "earn more than", "earn more ATP".
+  // Comparative uses are NOT instances and must be left alone (terms.ts:150 "high-value
+  // contributions earn more ATP" compares good work to bad, and trust-tensor's "higher T3 = earn
+  // more ATP" compares agents; both are true of either channel).
+  // BOUNDARY, so the next sweep does not overrun: the #net-positive fold quotes "value creators
+  // earn more than they spend" VERBATIM and scopes that quote to OTHER pages, telling the reader
+  // this page's payment channel is what those pages mean. So an unqualified instance ON THIS PAGE
+  // is always in scope and gets a channel; an unqualified instance on how-it-works or
+  // first-contact is a fix-DIRECTION decision (route those pages to the reconciliation, or retire
+  // the short phrase everywhere and delete the "other pages" clause with it), not a copy fix.
+  // Two such instances are live and registered in SESSION_FOCUS.md; do not edit one of them
+  // without deciding the direction for both plus that clause.
   const actions = {
     spam: { cost: 5, reward: 0, label: "Send spam message" },
     lowQuality: { cost: 10, reward: 5, label: "Low-quality post (your own)" },
@@ -2074,9 +2089,20 @@ if agent.atp <= 0:
             spam messages? You'll die after message 20. The economics
             enforce themselves.
           </p>
+          {/* #502 review (Jul-31): this bullet carried the same claim as the Key Insights card
+              fixed in that push, unqualified, in a summary conclusion. The sweep missed it
+              because the sweep was keyed to the string "than they cost" and this said "than they
+              spend". A summary conclusion is a place a reader stops, so it names a channel like
+              every other instance on this page. See the sweep rule in the header guard. */}
           <p className="leading-relaxed">
             <strong className="text-sky-400">Quality is sustainable.</strong>{" "}
-            Value creators earn more ATP than they spend. They accumulate budget
+            Value creators earn more than they spend on work someone else commissioned and
+            priced:{" "}
+            <a
+              href="#net-positive"
+              onClick={(e) => { e.preventDefault(); const el = document.getElementById('net-positive'); if (el) { if (el instanceof HTMLDetailsElement) el.open = true; el.scrollIntoView({ behavior: 'smooth' }); } }}
+              className="text-sky-400 hover:text-sky-300 underline"
+            >recharge refunds, payment earns</a>. That surplus is what accumulates as budget
             across lives (karma). Bad actors? They burn through ATP and die.
           </p>
           <p className="leading-relaxed">
