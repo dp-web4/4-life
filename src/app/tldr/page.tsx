@@ -288,17 +288,25 @@ export default function TLDRPage() {
               and the grid becomes the alternative.
 
               The two numbers are load-bearing and both come from /learn, so they cannot be
-              invented here: five concepts at 2+6+7+10+5 = 30 min, and the "New here? Start
-              with these 3" box on that page says ~15 minutes (2+6+7). That box used to read
-              as a competing answer on arrival; it now states that the three are steps 1-3 of
-              the five. Changing either number means changing /learn too.
+              invented here: five concepts at 2+6+7+10+5 = 30 min, and the short version on
+              that page is ~15 minutes (2+6+7). Changing either number means changing /learn
+              too.
 
               Jul-30 visitor LOW: both totals moved (28 -> 30, 13 -> 15) because /learn's
               first-contact estimate moved 5 -> 7 to agree with the page that owns it. The
               reasoning lives on that card in /learn's beginner path. The complete set of
-              surfaces carrying a total is this paragraph (both numbers), /learn's "New here?
-              Start with these 3" paragraph (both numbers), and the 'The Reading Path' desc
-              in navigation.ts. */}
+              surfaces carrying a total is this paragraph (both numbers), /learn's
+              reading-path box (both numbers), and the 'The Reading Path' desc in
+              navigation.ts.
+
+              Aug-01 visitor MEDIUM 6: this card's copy is unchanged, and it is the reason
+              /learn changed. The reader took this handoff, which names all five pages and
+              says "you have just finished the first", and landed on a box headed "New here?
+              Start with these 3" whose step 1 was /tldr. That box is now the five in order,
+              with the three-read short version as a labeled stopping point inside it, and
+              its heading is "The reading path: five pages, about 30 minutes". Anchor by that
+              heading, not the retired one. It also now carries a per-item copy of all five
+              beginner durations, so a duration change lands in six places, not four. */}
           <Link
             href="/learn"
             className="block bg-sky-950/40 border border-sky-700/50 rounded-lg p-5 mb-4 hover:border-sky-500 transition-colors"
