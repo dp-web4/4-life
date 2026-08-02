@@ -128,8 +128,14 @@ export const navigationTree: NavigationTree = {
     {
       title: 'How the Pieces Compose',
       href: '/onramp',
-      desc: 'The core standard is the substrate; hub, hestia, and hardbound are three scales of the same posture. Adoption order and the real seams.',
-      keywords: ['onramp', 'compose', 'adoption', 'order', 'architecture', 'scales', 'how to start', 'stack'],
+      // "the real seams" (bare) was read by the 2026-08-01 visitor as a promise of rough
+      // edges and limitations; they followed it to /onramp, found the joins section, and
+      // filed the destination as not delivering. /onramp owns "seams" = the in-code joins
+      // (its own metadata and the section body both say so), so the promise is what moves.
+      // This desc is the surface that renders the phrase, via RelatedConcepts and SiteSearch,
+      // not /tldr's own markup. Keep it in sync with onramp:41 metadata.description.
+      desc: 'The core standard is the substrate; hub, hestia, and hardbound are three scales of the same posture. Adoption order and the real in-code seams that connect them.',
+      keywords: ['onramp', 'compose', 'adoption', 'order', 'architecture', 'scales', 'how to start', 'stack', 'seams'],
       related: ['/the-standard', '/hub', '/hestia', '/hardbound'],
     },
   ],
