@@ -1680,11 +1680,41 @@ lenient_society = {
                   Other dimensions are unaffected unless your entire social network and activity patterns
                   also change simultaneously - which would be unusual even for a real move.
                 </p>
+                {/* Aug-01 visitor MEDIUM 5: "the reassurance and the worked example contradict."
+                    This closer used to read "real life changes affect one or two dimensions at a
+                    time. An attacker taking over your account affects all four at once." That
+                    criterion is falsified by this page's own demo: all four preset scenarios in
+                    #try-it degrade exactly ONE dimension (spatial 0.3 / capability 0.4 / temporal
+                    0.5 / relational 0.6, everything else 1.0), the panel intro at :771 says "even
+                    one compromised dimension tanks your effective trust", and the geometric-mean
+                    rationale at :1090 exists precisely so that one dropped dimension cannot be
+                    averaged away. If the old sentence were true the geometric mean would be
+                    pointless. The page's own headline takeover example falsifies the other half:
+                    Maria's stolen phone (:678) fails TWO dimensions of four, with spatial and
+                    capability explicitly OK, which is why the replacement says "several", not
+                    "all four", and does not lean on "different device, different location".
+                    FIX DIRECTION: the prose, not the widget. The visitor suggested
+                    making the worked example an all-four attack; that would destroy the page's
+                    actual argument. The FAQ also already opens (:1660) with the correct criterion,
+                    "whether changes happen at human speed or impossible speed", so this closer was
+                    contradicting its own opening paragraph. Repair is to carry the opener down.
+                    Their second suggestion (a legitimate one-axis case that stays acceptable) had
+                    already shipped as the Alice 0.5 -> 0.78 step-by-step, but inside a COLLAPSED
+                    <details> two sections up, so it is pulled inline here rather than linked.
+                    Do NOT restate the alive/dead threshold rule here in either polarity: that is
+                    the standing 0.5-endpoint escalation, and :1133 already sits on it. */}
                 <p>
-                  The core principle: <strong>real life changes affect one or two dimensions at a time</strong>.
-                  An attacker taking over your account affects <em>all four at once</em> - different device,
-                  different location, different timing, different contacts. That&apos;s what CI is actually
-                  designed to catch. Genuine life transitions look nothing like account compromise.
+                  The core principle: <strong>the signal is plausibility and speed, not how many
+                  dimensions moved</strong>. A single dimension dropping is exactly what CI is built
+                  to notice, so a genuine transition is not invisible to it either: every preset in{" "}
+                  <a href="#try-it" className="text-sky-400 hover:underline">the panel above</a>{" "}
+                  degrades one dimension and one only. What differs is what happens next, and what
+                  it costs. An impossible change (Tokyo to London in 30 minutes) has no plausible
+                  story and never settles. A real one moves at human speed and re-stabilises as the
+                  new pattern becomes your pattern. And one dimension at 0.5 with the other three
+                  strong puts CI at 0.78: pricier actions and extra witnesses for a while, not a
+                  verdict. Account takeover is usually abrupt and usually moves several dimensions
+                  at once, but what makes it catchable is the implausibility, not the count.
                 </p>
               </div>
             </details>

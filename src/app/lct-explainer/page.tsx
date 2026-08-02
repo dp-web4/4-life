@@ -1316,16 +1316,60 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
+          {/* Aug-01 visitor HIGH 4: this card recruits ("Only have one device? You're still in")
+              and then made two promises that are false for the reader at the BOTTOM of its own
+              stated range. Per L628-629 in this same file, 0.50 is precisely the software-only
+              case ("a software-only setup stays at 0.50 however many devices it spans"), so a
+              chip-less reader reads themselves into "typically 0.50-0.75" and was then told the
+              ceiling rises with a second device (it does not) with no mention of what losing the
+              one device costs. The visitor filed this as the consequence living "only in risk 8 of
+              /what-could-go-wrong"; that premise is half wrong - it already ships ~270 lines up in
+              the "drop your phone in a lake" card (L1046) and its follow-on (L1058). So the defect
+              is placement and scope, not absence, and the fix is the missing clause at the point of
+              DECISION, propagated verbatim from L1046 on this page rather than re-derived or
+              imported from risk 8's wording. Note L1045 is the HARDWARE-bound one-device bullet
+              (community vouching, 3-7 days); propagating that one here would land the wrong
+              consequence on the tier that has none.
+              Two things this deliberately does NOT do:
+              - It adds no comparison against 0.50 in either direction. Naming the software-only
+                tier next to "you can fully participate" would assert exactly what the guard at
+                L258-259 forbids (that a reader sitting *at* 0.50 has full access - standing canon
+                escalation, ledger Q1), which is the same defect #497 removed at L1307. That clause
+                is replaced with the phrasing already shipping at L1247-1250 ("what changes is the
+                terms of your participation"), which makes the same welcome without touching the
+                endpoint. Do not "simplify" it back to "fully participate".
+              - It stays a CEILING claim, never an eligibility claim (guard at L273-274, and the
+                live [[hardware-required-seam]]). The tier is still in and still welcome; it has
+                just stopped carrying two promises that do not apply to it. */}
           <div id="single-device" className="mt-3 bg-sky-950/30 border border-sky-800/20 rounded-lg p-3 scroll-mt-24">
             <p className="text-sky-300 text-xs font-semibold mb-1">
               Only have one device? You&apos;re still in.
             </p>
             <p className="text-gray-400 text-xs">
               Single-device users aren&apos;t excluded - they just have a lower trust ceiling
-              (typically 0.50-0.75 depending on hardware). You can fully participate, post, earn
-              ATP, and build karma. Adding a second device later raises your ceiling retroactively.
+              (typically 0.50-0.75 depending on hardware). At every tier you post, earn ATP, build
+              karma, and join societies; what changes is the <em>terms</em> of your participation.
+              Adding a second <em>hardware</em> device later raises your ceiling retroactively.
               This matters especially in developing countries where many people access the internet
               from a single smartphone - Web4 is designed to include them, not penalize them.
+            </p>
+            <p className="text-gray-400 text-xs mt-2">
+              <strong className="text-gray-300">If that one device has no security chip, two of
+              those things work differently.</strong> A software-only setup sits at the bottom of
+              the range above and stays there however many devices it spans, so a second device
+              does not raise your ceiling; only a hardware-anchored one does. And there is no
+              second witness to vouch for you, so if you lose that device,{" "}
+              <strong className="text-gray-300">you start over from zero with a fresh identity</strong>,
+              where a hardware-bound user who loses their only device still recovers through
+              community vouching over 3-7 days. Those are the two things to weigh before settling
+              for this tier, and neither one puts you out:{" "}
+              <a
+                href="#software-only-survival"
+                onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('software-only-survival')?.scrollIntoView({ behavior: 'smooth' }); }}
+                className="text-sky-400 hover:text-sky-300 underline"
+              >
+                what a 0.50 ceiling actually costs you &uarr;
+              </a>.
             </p>
             <p id="quorum-why" className="text-gray-500 text-xs mt-2 scroll-mt-24">
               <strong className="text-gray-400">Why a ceiling at all?</strong> A lone device has no
@@ -1395,8 +1439,16 @@ export default function LCTExplainerPage() {
               trust ceiling. Day one solo: you&apos;re a verified-real device with no continuity
               guarantee yet, capped at the software-or-single-hardware tier. Day thirty with one
               hardware device and consistent behavior: you&apos;re still capped at the
-              single-hardware ceiling but earning toward it. Add a second device any time:
-              ceiling rises retroactively.
+              single-hardware ceiling but earning toward it. Add a second <em>hardware</em> device
+              any time: ceiling rises retroactively.
+              {/* Aug-01 visitor HIGH 4, found on sweep: the same "ceiling rises retroactively"
+                  promise appears here and at the #single-device card earlier on this page, and both were
+                  unscoped. This paragraph names the software-only reader two sentences earlier
+                  ("capped at the software-or-single-hardware tier"), so context does not scope it,
+                  and L628-629 says a software-only setup stays at 0.50 however many devices it
+                  spans. One word ("hardware") aligns it with the already-correct scoping at
+                  L641-643 ("it adds a device co-witness on top, raising the ceiling toward 0.90").
+                  If a third instance of this claim ever appears, scope it at birth. */}
             </p>
           </div>
 
@@ -1799,7 +1851,7 @@ export default function LCTExplainerPage() {
               Single-device users can&apos;t use quorum recovery (there&apos;s no second device to
               co-sign), so losing that device drops you straight into <strong>social recovery</strong>
               {" "}- the slow 3-7 day path above. If you plan to rely on one device, pairing it
-              with a cheap hardware security key (FIDO2, ~$30) as a second witness dramatically
+              with a cheap hardware security key (FIDO2, ~$25) as a second witness dramatically
               shortens your recovery path and raises your trust ceiling. See{" "}
               <a href="#single-device" className="text-sky-400 hover:underline">
                 Only have one device?

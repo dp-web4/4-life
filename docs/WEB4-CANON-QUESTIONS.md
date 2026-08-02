@@ -462,6 +462,59 @@ two HIGHs and three Unanswered Questions in a single sitting.
   site's friendliest and only running entry point drops readers into its most constrained tier,
   and the site cannot tell them what that costs without answering Q1.
 
+### Q11. Does MRH horizon depth apply inside a delegation pipeline?
+
+- **Raised**: 2026-08-01, from the Aug-01 visitor browse (their HIGH 3 and Unanswered Q4,
+  *"Is a 'hop' one thing or two? 90% per hop over five hops, or 70% per hop with a hard wall at
+  three?"*). The visitor went back and forth between the two pages twice before giving up and
+  inferring that they must mean different things, which neither page said.
+- **The site's two computations**, both live and both unchanged by this entry:
+  - `/how-it-works#agents`: a 5-agent delegation pipeline, `0.9^5 = 0.59`, composing the agents'
+    own trust scores and nothing else. No distance term, and five links where the other page
+    stops at three.
+  - `/trust-neighborhood#hop-decay`: `trust = t1 x t2 x t3 x 0.7^depth`, worked as
+    `0.9^3 x 0.7^3 = 0.25`, with trust weight going to zero past 3 hops.
+- **What the Aug-01 session fixed and deliberately did not fix.** Fixed: the sentence *"each hop
+  keeps only 90% of what reached it"*, which restated that example's stipulated per-agent score
+  (*"where each agent has 0.9 trust"*) as a universal rate, and taught the visitor a decay law the
+  site does not have. That is an error correction licensed by the card's own preceding clause.
+  Both pages also now say what their number **composes**. Not fixed, because it would be coining
+  canon: any claim that a delegation chain is **exempt** from the distance term, or that the 3-hop
+  horizon does or does not bound pipeline length.
+- **Why it is not derivable downstream.** The scope boundary appears nowhere on the site, and
+  upstream leans against the exemption rather than for it:
+  - `web4-standard/core-spec/mrh-tensors.md:210-214` applies the decay factor to every path
+    multiplicatively: `trust *= edge.weight * (decay_factor ** (i + 1))`, default `0.7`. It does
+    not carve out delegation.
+  - `web4-standard/core-spec/LCT-linked-context-token.md:546` states **Horizon depth** generically:
+    *"Limits transitive trust distance."*
+  - `web4-standard/proposals/ENTITY_RELATIONSHIP_SPEC.md:403` shows the same shape,
+    `0.9 * 0.8 * decay_factor = 0.36`, again with no pipeline carve-out.
+  - `web4-standard/core-spec/inter-society-protocol.md:380` leaves transitivity-versus-attenuation
+    **society-sovereign** and unresolved, which is why neither side can simply be asserted.
+- **What follows if the depth term does apply**: `/how-it-works`'s headline pipeline number is wrong
+  by roughly 6x (`0.9^5 x 0.7^5 = 0.099`, not `0.59`), and a 5-hop pipeline crosses a horizon the
+  other page describes as a hard wall. That is a bigger edit than a wording pass, which is the
+  other reason it is filed rather than shipped.
+- **Third instance, same question, already flagged in place**: the *Transitive attenuation*
+  invariant at `how-it-works` (guard comment beside it) is the neighborhood setting proper (Alice
+  judging Carol through Bob) and computes `0.9 x 0.6 = 0.54`, where `/trust-neighborhood`'s formula
+  gives `0.9 x 0.6 x 0.7^2 = 0.26` for the same two hops. The invariant it asserts (*"strictly
+  below the weaker of the two links"*) is true under either, so only the worked value is exposed.
+  Do not patch this one alone: a unilateral decay factor here would put a third number on the site
+  for one quantity, which is the defect this pass closed.
+- **Ruling requested**:
+  1. Is a delegation pipeline (agent A calls B calls C) a path in the MRH sense, subject to
+     `decay_factor ** depth`, or a distinct composition that multiplies participant scores only?
+  2. If it is a distinct composition, what makes it distinct, so the site can state the boundary
+     rather than imply it? (The working intuition on the site is *you engaged each member of the
+     chain directly and can look each one up*, versus *you are judging a stranger through
+     intermediaries*. That is a plausible discriminator, not a cited one.)
+  3. Does the 3-hop horizon bound delegation depth, and if so what happens to a 5-agent pipeline?
+- **Holding pattern**: both pages describe what their own number composes and cross-link. Neither
+  asserts the exemption, neither asserts the horizon applies, and no trust number changes on either
+  page until this is answered.
+
 ---
 
 *Maintained by the 4-life autonomous track. Add new entries only with a policy-review-approved

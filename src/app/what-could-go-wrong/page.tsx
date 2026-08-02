@@ -312,27 +312,115 @@ export default function WhatCouldGoWrongPage() {
               of hardware devices, create thousands of identities, and slowly build legitimate-looking
               trust across all of them - a long-game <TermTooltip term="Sybil">Sybil attack</TermTooltip> (one person pretending to be many).
             </p>
+            {/* Aug-01 visitor HIGH 1 (their #1 friction, and their Unanswered Q1): "hardware cost
+                is quoted 10-20x apart depending on which argument it serves." This card said a flat
+                $500 per identity and $500K per thousand; why-web4:1391-1392 and lct-explainer:2193-2194
+                say a $50 phone and a ~$25 FIDO2 key. The visitor: "at the FAQ's own prices, 1,000
+                identities costs $25K-$50K and risk 4's mitigation collapses."
+                FIX DIRECTION: the number moved HERE, not at the FAQ. The FAQ side owns the concept
+                (it states a reason, "most devices sold since ~2018 ship security chips", on two
+                pages, bracketed by an honest caveat); this card cited the top of the site's own
+                range as a point estimate, twice, with no source. your-internet:97 already prices the
+                same thing as a RANGE, "$50 to $500 each", so the range below is the site's existing
+                number, not a new one, and that page needs no edit.
+                Four things this must not become:
+                - It must NOT invent a reason the attacker pays more than a participant. The visitor
+                  offered one ("attestation-grade TPM?") and the site's own facts refute it: a $50
+                  phone carries a TPM, and TPM is the TOP ceiling (0.90) in lct-explainer's grid.
+                - It must NOT lean on P = 1 - (1-p)^N as the restored barrier. PR #504 adds a block
+                  ~20 lines below whose finding is that this formula presumes witnesses OUTSIDE the
+                  coalition, which a coordinated Sybil operator does not supply. Amplifying it here
+                  would re-arm the reading that block exists to defuse.
+                - It must NOT lean on the ROI ~0.93 / ~0.90 figures. This same visitor log files
+                  those as a MEDIUM (undefined ratio, both below 1.0, "reads as honest participation
+                  also loses money"). Untouched this pass, but not load-bearing either.
+                - It must NOT say anything about whether hardware is REQUIRED to participate. That
+                  is the standing [[hardware-required-seam]]; this row is price-only, and the
+                  visitor's journal bundles the two. Fix price, leave eligibility alone.
+                A gentler number on a risk page has to carry its entailment, or it converts a
+                disclosed gap into a reassurance. Hence the last two sentences: at any price in the
+                range this is affordable to the adversary the card names, so the barrier was never
+                the hardware. That is where this card's own Honest assessment already points ("Web4
+                raises the floor, not the ceiling").
+                Anchor note: why-web4#faq-affordability is a <details> and arrives COLLAPSED. Chosen
+                anyway, because its <summary> is the question verbatim, so the link text and the
+                landing line are the same sentence and the reader knows they arrived. If that link
+                text is ever reworded, reword the summary with it or repoint it.
+                Third figure closed in the same push: lct-explainer:1797 priced a FIDO2 key at ~$30
+                where :2194 and why-web4:1392 both say ~$25. Same device, three numbers. Any future
+                price added anywhere on the site has to land inside $25 to $500 or move all of them. */}
             <p>
               <strong className="text-gray-100">Why it&apos;s real:</strong> Nation-state actors and
               large corporations routinely invest millions in influence operations. If each fake
-              identity costs $500 in hardware plus months of &ldquo;reputation farming,&rdquo;
-              that&apos;s still pocket change for a well-funded adversary with strategic goals.
+              identity costs one device, $50 to $500 depending on what they buy, plus months of
+              &ldquo;reputation farming,&rdquo; that&apos;s still pocket change for a well-funded
+              adversary with strategic goals.
             </p>
             <p>
               <strong className="text-gray-100">What mitigates it:</strong> Coherence scoring detects
               behavioral patterns that are hard to fake at scale - genuine users develop
               organic interaction patterns that differ from coordinated bot farms. The economic
-              cost is real: $500K for 1,000 identities, each needing months of activity. It&apos;s
-              not impossible, but it&apos;s orders of magnitude harder than creating 1,000 email
-              accounts.
+              cost is real but it is mostly not the hardware: $50K to $500K buys the devices for
+              1,000 identities, and each one still needs months of activity that other people
+              witnessed. It&apos;s not impossible, but it&apos;s orders of magnitude harder than
+              creating 1,000 email accounts.
+            </p>
+            <p className="text-sm text-gray-400">
+              <strong className="text-gray-300">Which part money solves.</strong> An adversary can
+              buy 1,000 devices in an afternoon at any price in that range, so read the hardware
+              line as a floor on effort, not a wall. The part a budget does not compress is the
+              history: a thousand identities need a thousand records of behavior that other
+              participants observed and staked reputation on, and those accrue in calendar time
+              whether you are rich or not. The same prices, from the other direction, are what make
+              the system reachable for ordinary people:{" "}
+              <Link href="/why-web4#faq-affordability" className="text-sky-400 hover:underline">
+                what about people who can&apos;t afford devices with security chips?
+              </Link>
             </p>
             <div className="bg-gray-800/60 border border-gray-700/50 rounded-lg p-4 my-3">
+              {/* Aug-01 visitor MEDIUM 2 (their Unanswered Q5): "ROI is never defined and both
+                  figures are below 1.0, which plainly reads as honest participation also loses
+                  money." This paragraph used to open with "Web4 simulations show that honest
+                  strategies yield ROI of ~0.93 while Sybil strategies yield ~0.90. The margin is
+                  small." Both figures deleted, and the adjective leaning on them ("the margin is
+                  small") deleted with them. Why deletion and not a definition of the ratio:
+                  - The instrument still exists and still runs: lib/game/agent_based_attack_simulation.py
+                    defines ROI as sum(net_profit)/sum(atp_staked) (:156,:162) and prints it signed,
+                    treating roi < 0 as UNPROFITABLE (:383). In its own units 0 is break-even, NOT
+                    1.0, so defining the ratio turns 0.93/0.90 into +93%/+90% returns and inverts
+                    the sentence they were supporting. You cannot define your way out of this.
+                  - Run today it reports honest -40.0% and malicious -98.4%. Neither 0.93 nor 0.90
+                    is reproducible, and the only measured margin is 58.4pp, so "small" was false.
+                  - The one other place Sybil ROI was ever measured (web4 federation stress, Feb-27)
+                    recorded -108%. Also nowhere near 0.90.
+                  - Upstream web4/SECURITY.md discloses the gap three times (:86, :195, :226).
+                  Do NOT import the sim's magnitudes as replacements. -98.4% is a STRONGER
+                  reassurance than the number it replaces, and the same run puts honest agents at
+                  -40%, which makes the visitor's literal complaint true in the one instrument that
+                  exists. Hence direction only, plus the sentence conceding that both sides can be
+                  down against stake. Conceding it is the fix; denying it would be the regression.
+                  Also NOT a place to reach for general deterrence: PR #504 adds a block just below
+                  whose finding is that P = 1 - (1-p)^N presumes witnesses outside the coalition.
+                  Second defect closed in the same edit, not in the visitor log: this line said
+                  circular transfers "destroy ~150 ATP." Canon since PR #464 is that the 5% ROUTES
+                  to a community redistribution pool and is not destroyed (atp-economics :245, :257,
+                  :342, :397, :513, :1328). Note atp-economics keeps "burn fee" as a locally
+                  reconciled term of art at #atp-burn-fee; that is a different shape from a bare
+                  "destroy" inside a mitigation, and is deliberately left alone. */}
               <p className="text-gray-300 text-sm mb-2">
-                <strong className="text-gray-100">The numbers:</strong> Web4 simulations show that honest
-                strategies yield ROI of ~0.93 while Sybil strategies yield ~0.90. The margin is small - but
-                it&apos;s consistently in favor of honest behavior. More importantly, circular energy
-                transfers (the simplest farming tactic) lose money: 30 circular transfers destroy ~150
-                ATP (energy budget) through the 5% transfer fee. It&apos;s cheaper to just do good work.
+                <strong className="text-gray-100">What the numbers show, and what they do not:</strong>{" "}
+                One part of this is arithmetic. Circular transfers, the simplest farming tactic, lose
+                money: 30 circular transfers of 100 ATP (energy budget) shed ~150 ATP in fees, and
+                that 5% routes to the community redistribution pool rather than back to the farmer.
+                The rest is not arithmetic. Web4 has no validated economic model of what an attack
+                returns: SECURITY.md in the core standard lists &ldquo;no cryptoeconomic modeling
+                ... what&apos;s the attacker&apos;s ROI?&rdquo; among its open gaps, and the attack
+                simulations that do exist agree on the direction (quality inflation does worse than
+                honest work once detection lands) and not on the size of the gap. They also do not
+                show that honest participation pays in the abstract: an agent whose stake is large
+                against its earnings can finish down either way. Read this row as &ldquo;farming is
+                a worse deal than working,&rdquo; not as &ldquo;the economics have been
+                proven safe.&rdquo;
               </p>
               <p className="text-gray-300 text-sm mt-2">
                 <strong className="text-gray-100">Why coordinated attacks fail:</strong> Detection

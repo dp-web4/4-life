@@ -2,7 +2,252 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-08-01 (03:00 session)*
+*Last updated: 2026-08-01 (21:00 session)*
+
+## Aug-01 visitor MEDIUMs 2+5 (21:00 session) - two figures that argue against themselves
+
+Same log, same class the Honest Assessment names: *"the site argues with numbers, and the numbers
+don't hold still."* HIGHs are disposed (1+3 merged as #505, 4 open as #506, 2 is the standing
+hardbound-is-private operator call). Took the two MEDIUMs where a figure actively undercuts the
+argument it was placed to support.
+
+### MEDIUM 2: an ROI no instrument produces, in either direction
+
+`/what-could-go-wrong` risk 4 said *"Web4 simulations show that honest strategies yield ROI of ~0.93
+while Sybil strategies yield ~0.90. The margin is small."* The visitor: both are below 1.0, so it
+*"plainly reads as honest participation also loses money."*
+
+The instrument still exists and still runs. `lib/game/agent_based_attack_simulation.py` defines ROI
+as `sum(net_profit)/sum(atp_staked)` (:156, :162), prints it signed, and treats `roi < 0` as
+UNPROFITABLE (:383). **In its own units 0 is break-even, not 1.0**, so defining the ratio (the
+visitor's suggestion) would turn 0.93/0.90 into +93% and +90% returns and invert the sentence they
+support. Run this session it reports **honest -40.0%, malicious -98.4%**, honest advantage 58.4pp,
+so neither figure is reproducible and *"the margin is small"* was false of the only measured margin.
+The one other place Sybil ROI was ever measured (web4 federation stress, Feb-27) recorded **-108%**.
+Upstream `web4/SECURITY.md` discloses the gap three times (:86, :195, :226).
+
+Both figures deleted, with the adjective leaning on them. **The sim's magnitudes were deliberately
+NOT imported**: -98.4% is a stronger reassurance than the number it replaces, and the same run has
+honest agents at -40%, which makes the visitor's complaint *true*. So the replacement concedes it
+(*"an agent whose stake is large against its earnings can finish down either way"*) rather than
+denying it, keeps only the arithmetic that is checkable (30 circular transfers of 100 ATP shed ~150
+in fees), cites the upstream gap, and closes on *"farming is a worse deal than working," not "the
+economics have been proven safe."* It does not reach for general deterrence, because #504 lands a
+block in the same card whose finding is that `P = 1 - (1-p)^N` presumes witnesses outside the coalition.
+
+**Second defect closed in the same box, not in the visitor log**: the line said circular transfers
+*"destroy ~150 ATP"*, a burn-model residual the #464 sweep missed. Canon is that the 5% routes to a
+community redistribution pool and is not destroyed.
+
+**Still open, deliberately**: `atp-economics` keeps bare burn language at `:1954` (*"5% burned per
+transfer"*, comparison table) and `:1986` (heading *"Why does every ATP transfer destroy 5%?"*).
+Those are locally reconciled two lines later at the `#atp-burn-fee` anchor, which SESSION_FOCUS has
+recorded since #464 as a kept term of art. Different shape from a bare "destroy" inside a mitigation
+argument, so out of scope here; noted so a later session does not read this as swept.
+
+### MEDIUM 5: `/coherence-index` told readers the demo would not catch them
+
+The FAQ closed with *"real life changes affect one or two dimensions at a time. An attacker taking
+over your account affects all four at once."* The visitor caught it against the collapsed math box.
+It is worse than that: **all four presets in `#try-it` degrade exactly one dimension** (spatial 0.3 /
+capability 0.4 / temporal 0.5 / relational 0.6), the panel intro says *"even one compromised dimension
+tanks your effective trust"*, and the geometric mean at :1090 exists so one dropped dimension cannot
+be averaged away. If the sentence were true the geometric mean would be pointless. The other half
+fails against the page's headline takeover example: **Maria's stolen phone fails two dimensions of
+four**, spatial and capability explicitly OK, same device and same city.
+
+Fix direction is the prose, not the widget. The visitor suggested making the worked example an
+all-four attack, which would destroy the page's argument. The FAQ already **opens** with the right
+criterion (*"human speed or impossible speed"*) and then contradicts its own opening four paragraphs
+later, so the repair is to carry the opener down: the signal is plausibility and speed, not dimension
+count; a single dropped dimension is exactly what CI notices; what a genuine transition gets is a
+recoverable dip. Their second suggestion (a legitimate one-axis case that stays acceptable) had
+already shipped as the Alice 0.5 -> 0.78 step-by-step, but inside a collapsed `<details>` two
+sections up, so it is now pulled inline into the FAQ. The alive/dead threshold is not restated in
+either polarity (standing 0.5-endpoint escalation).
+
+**Deferred from this log**: MEDIUM 1 (`/first-contact` "Above 0.50") is the standing endpoint
+escalation. MEDIUMs 3 (`/onramp` reader-keyed routing), 4 (`/tldr` promises seams `/onramp` lacks),
+6 (`/learn` weaker than the `/tldr` section that links it) are untaken and free. All five LOWs free.
+
+## Aug-01 visitor HIGH 4 (15:00 session) - the card that recruits the tier it describes wrongly
+
+Same log as the 09:00 session (`visitor/logs/2026-08-01.md`, browsed 05:11 against `21bb94a`).
+Of the four HIGHs, #505 took 1 and 3; HIGH 2 (/hardbound has no reachable repo) remains the
+settled operator positioning call from #500 and was not re-litigated. This session took **HIGH 4**,
+the one the log's Honest Assessment names as its second theme: *"where the bad news lives... The
+honest material has already been written; some of it is just filed under 'risks' when it belongs
+under 'here's your option.'"*
+
+### The visitor's premise is half wrong, and the residual is worse than the filing
+
+Filed as: the software-only device-loss consequence *"appears only in risk 8 of
+/what-could-go-wrong"*. It does not. `/lct-explainer` already carries it twice, ~270 lines above
+the card in question: **L1046** (*"Software only - no second witness to vouch. You start over from
+zero with a fresh identity"*) and **L1058** (*"there's nothing to recover to"*). So this is not an
+absent disclosure and the fix is not a relocation from the risks page. It is **placement and
+scope** at `#single-device`, the card where the tier is actually chosen, which carried **two
+statements that are false for the reader it recruits**:
+
+1. **Unscoped range.** Heading "Only have one device?", ceiling *"typically 0.50-0.75 depending on
+   hardware"*. Per this same file at **L628-629**, `0.50` is precisely the software-only case
+   (*"a software-only setup stays at 0.50 however many devices it spans"*). A chip-less reader
+   lands on the bottom of that range and reads the whole card as theirs.
+2. **"Adding a second device later raises your ceiling retroactively"** is false for exactly that
+   reader, and L628-629 says so ~690 lines up in the same file. The parallel sentence at L641-643
+   is correctly scoped (*"A single device **with this manufacturer attestation**..."*); this one
+   never was.
+
+Fixed by scoping the promise to hardware and adding one paragraph naming what changes for the
+chip-less reader (ceiling does not rise; no second witness, so device loss means starting over),
+propagated **verbatim from L1046 on this page**, not re-derived and not imported from risk 8's
+wording. The contrast with the hardware-bound path (community vouching over 3-7 days) is carried
+along so the paragraph states a tradeoff rather than a verdict, and it hands off to the existing
+`#software-only-survival` callout instead of re-deriving what a 0.50 ceiling costs.
+
+### A second instance, found on the reviewer's sweep
+
+The bootstrap FAQ's *"Add a second device any time"* line made the same unscoped promise: *"Add a second device any time:
+ceiling rises retroactively."* Context does not scope it, because the paragraph names the
+software-only reader two sentences earlier (*"capped at the software-or-single-hardware tier"*).
+One word (*hardware*), aligning it with L641-643. Fixing only the first instance would have left
+the identical false-for-software-only promise live on the same page.
+
+### What was deliberately not written
+
+- **No comparison against 0.50, in either direction.** The card's old closing clause was *"You can
+  fully participate, post, earn ATP, and build karma"*. Harmless while the card was unscoped;
+  the moment the software-only tier is named in that card, "fully participate" sits adjacent to
+  0.50 and asserts what the guard at `lct-explainer:258-259` forbids (that a reader sitting *at*
+  0.50 has full access), which is the same defect #497 removed at L1307 and still ledger **Q1**.
+  Replaced with the phrasing already shipping 55 lines up at L1247-1250 (*"what changes is the
+  **terms** of your participation"*), which the same visitor praised at another surface. This is
+  the "two fixes in one pass can fight" shape: the scoping fix would have re-armed the reading
+  #497 exists to defuse.
+- **Aug-01 MEDIUM 1** (`/first-contact`: *"Above 0.50: full access"*). Its literal suggested fix is
+  *"restate as 'at or above 0.50'"*, which is the exact wording banned by the guard at
+  `first-contact:265-270`. Not taken. Its unprohibited half (that a software-only reader sits
+  permanently on the access line) is the same knot as this HIGH and is now answered at
+  `#single-device` and `#software-only-survival` on `/lct-explainer`.
+- **Still a ceiling claim, never an eligibility claim** (guard at L273-274, live
+  `[[hardware-required-seam]]`). The inclusion message is unchanged: the tier is in, it just
+  stopped carrying two promises that do not apply to it.
+
+### Noted for a future browse, not fixed here
+
+`lct-explainer:2156-2159` (the "What if I only have one device?" FAQ) says a single-device user
+*"can reach the same trust levels as a multi-device user in most roles"* - arguably loose for the
+software-only case, by the same L628-629 authority. Pre-existing, never filed by a visitor, and
+fixing it in this pass would have been scope creep.
+
+
+## Aug-01 visitor HIGHs 1+3 (09:00 session) - one price for one thing, and a rate that never existed
+
+Fresh log `visitor/logs/2026-08-01.md` (browsed 05:11 against main at `21bb94a`, so **#504 was not
+live for it** and nothing here credits or blames that PR). Four HIGHs; two are not free. Taken: HIGH 1
+and HIGH 3, which are the two the log's own Honest Assessment names as the damage: *"the site argues
+with numbers, and the numbers don't hold still... this taught me to stop trusting any specific figure
+and to read only the prose."*
+
+### HIGH 3: "90% per hop" was never a rate, and the rest is a canon question
+
+`/how-it-works#agents`: *"A 5-hop pipeline where each agent has 0.9 trust ends up at 0.59... each hop
+keeps only 90% of what reached it."* `/trust-neighborhood`: *"0.7x per hop"*, 30% per hop, hard zero
+past 3. The visitor went between the pages twice and gave up: *"they must mean different things by
+'hop', but neither page says so."*
+
+The sweep settles the direction: **every other "per hop" figure on the site is 0.7** (`terms.ts:104`,
+`glossary:497`, `why-web4:2315/3174/3210`, `trust-tensor:1381`, `trust-neighborhood/layout.tsx:6`).
+The 90% was a single outlier and it was **not a rate at all**: the same sentence stipulates *"where
+each agent has 0.9 trust"*, then restates that stipulation as a law. Repaired in place (*"the 90% a
+step keeps is that agent's own trust score, not a rate charged for the hop: put an agent at 0.6 in
+the chain and that step keeps 60%"*), which is an error correction licensed by the card's own
+preceding clause. Both pages now also say what their number **composes**, and cross-link.
+
+**What was NOT written, and why it matters more than what was.** I proposed this as fully derivable
+from `trust = t1 x t2 x t3 x 0.7^depth`, and the policy reviewer rejected that premise. The formula
+separates the two factors *within one computation*; it does not license saying a delegation pipeline
+drops the depth term. That boundary appears **nowhere on the site**, and upstream leans against it:
+`mrh-tensors.md:210-214` applies `decay_factor ** (i+1)` to every path, `LCT-linked-context-token.md:546`
+states horizon depth generically, `inter-society-protocol.md:380` leaves transitivity-vs-attenuation
+society-sovereign. If the depth term does apply, `/how-it-works`'s headline is wrong by ~6x
+(`0.9^5 x 0.7^5 = 0.099`) and a 5-hop pipeline crosses a wall the other page calls hard. Filed as
+**ledger Q11**, not shipped.
+
+A third instance surfaced during the sweep and was deliberately left alone: the *Transitive
+attenuation* invariant (`how-it-works:1332`) is the neighborhood setting proper (Alice judging Carol
+through Bob) and computes `0.9 x 0.6 = 0.54` where `/trust-neighborhood` would give `0.26`. The
+invariant it asserts holds under either, so only the worked value is exposed. Patching it alone would
+put a third number on the site for one quantity. Guard comment updated in place: the pre-existing one
+cited `trust-neighborhood:588` as *supporting* this page's reading, i.e. it recorded the conflation as
+authorization. Checked and non-conflicting: `atp-economics:2032` charges 5% ATP per delegation hop,
+which is a **fee**, not trust.
+
+### HIGH 1: $500 was the top of the site's own range, quoted as a point estimate
+
+`/what-could-go-wrong` Risk 4: *"$500 in hardware"* per identity, *"$500K for 1,000 identities."*
+`/why-web4:1391-1392` and `/lct-explainer:2193-2194`: a *$50 phone*, a *~$25* FIDO2 key. The visitor:
+*"at the FAQ's own prices, 1,000 identities costs $25K-$50K and risk 4's mitigation collapses."*
+
+The number moved at Risk 4, not at the FAQ: the FAQ side states a reason (*"most devices sold since
+~2018 ship security chips"*) on two pages under an honest caveat, while Risk 4 had a bare figure with
+no source. **My first rationale for that was wrong and the reviewer caught it**: I wrote that $500 was
+outside the site's own range, and it is not. `your-internet:97` reads *"$50 to $500 each"*, so $500 is
+the range's **upper endpoint**, quoted as a point estimate. That correction changes the landing value:
+Risk 4 now carries the **existing range** ($50 to $500 per identity, $50K to $500K per thousand),
+which needs no edit to `/your-internet` and satisfies the visitor's literal ask. Landing on the low
+end instead would have discarded the site's own upper bound and left `/your-internet` as the only
+surface acknowledging spread, reproducing the complaint somewhere new.
+
+Also closed in the same push, missed by my sweep and found on review: `lct-explainer:1797` priced a
+FIDO2 key at **~$30** where `:2194` and `why-web4:1392` both say **~$25**. Same device, third figure.
+Every rendered price on the site now falls inside $25 to $500.
+
+**The entailment, because a gentler number on a risk page is a reassurance if it ships alone**: at any
+price in that range the hardware is affordable to the adversary Risk 4 names, so the barrier was never
+the hardware. The new closing paragraph rests the stakes on the per-identity **time** cost instead
+(a thousand histories other participants witnessed, accruing in calendar time), which is where the
+card's own Honest assessment already points.
+
+Two things it deliberately does **not** lean on, both reviewer conditions:
+- **`P = 1 - (1-p)^N`.** #504 adds a block ~20 lines below whose finding is that this formula presumes
+  witnesses *outside* the coalition, which a coordinated Sybil operator does not supply. Amplifying it
+  as the replacement barrier would re-arm the exact reading that block exists to defuse.
+- **The ROI ~0.93 / ~0.90 figures**, which this same log files as a MEDIUM (undefined ratio, both
+  below 1.0, *"reads as honest participation also loses money"*). Untouched, and now not load-bearing.
+- And it says nothing about whether hardware is **required**. The visitor's journal bundles the price
+  seam with the standing [[hardware-required-seam]]; the friction table row is price-only.
+
+### Registered, not fixed
+
+- **HIGH 2 (/hardbound has no reachable repo)**: the standing **operator positioning call** from #500,
+  re-registered by #504. The visitor added a datum worth keeping: they actively tried to verify the
+  *"300+ Rust integration tests"*, followed the page's only code link to `github.com/dp-web4`, found
+  no hardbound repo, and it is the one place on the site where they tried to check a claim and could
+  not. Still not a session-level fix.
+- **HIGH 4 (/lct-explainer recruits software-only users without the device-loss consequence)**: the
+  premise is **false**, and this was verified before proposing. `lct-explainer:1046` already says
+  *"Software only - no second witness to vouch. You start over from zero with a fresh identity"* and
+  `:1059` says *"there's nothing to recover to"*; `what-could-go-wrong:579` cites `lct-explainer:1040`
+  as its own source, and both sit **above** the recruit line the visitor quoted.
+  **The sharpened residual, for the next session** (verified by the policy reviewer as a real defect,
+  same class as the three reassurances #502 fixed): `lct-explainer:2100` reassures that the tiers
+  differ *"in recovery speed and trust ceiling, not in your ability to participate."* For the
+  software-only tier named in that same sentence, per this page's own `:1059`, there is no recovery
+  at all. The gap is absence, not speed. One page, one clause, no canon needed.
+- All seven MEDIUMs and five LOWs. Note for whoever takes them: the `/first-contact` MEDIUM's literal
+  suggestion (*"restate as at or above 0.50"*) is the **standing 0.50-endpoint escalation** and must
+  not be copy-fixed.
+
+### Also in this push
+- `npm run build` green, 31 static pages. 0 em dashes and 0 "production-ready" in added lines.
+- No trust number changed anywhere. The only numbers that moved are three prices, all onto values the
+  site already carried elsewhere.
+- New anchor `trust-neighborhood#hop-decay` on the section that renders the decay ring and the
+  *"0.7x per hop"* caption, **not** on the `Formula` `<details>` below it, which holds the line that
+  actually separates the two factors and arrives collapsed. The new mirror sentence lifts that line
+  out of the `<details>`, since the visitor never opened it.
+- Guard comments beside every insertion, each naming what the block must not become.
 
 ## Jul-31 visitor MEDIUMs 3+4 (Aug-01 03:00 session) - two numbers that measure different things, and a ceiling the page never mentioned
 
@@ -92,6 +337,7 @@ cannot use it that way without contradicting itself, so any ruling should say so
   not an eligibility claim, per the codification at `lct-explainer:274`), HIGH 4 (/hardbound banner,
   operator positioning call), MEDIUMs 6+7 (die/reborn register), all five LOWs, the 0.50 endpoint, and
   the two off-page "earn more than they spend" copies the 21:00 session left as a direction call.
+
 
 ## PR #502 review response (21:00 session) - a synonym walked through a phrase-grep
 
