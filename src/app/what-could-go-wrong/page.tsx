@@ -355,8 +355,9 @@ export default function WhatCouldGoWrongPage() {
                   - It must NOT end on the reconciliation. "Different regimes" is true but a resolving
                     cadence converts a disclosed gap into a reassurance, which is exactly this log's
                     HIGH 1 defect, on the page whose purpose is not doing that. End on the entailment.
-                  - The genesis group is 3 to 4 people (#cold-start ~L906: a founder invites 2-3
-                    trusted contacts), not three. Do not "simplify" that back to three. */}
+                  - The genesis group is 3 to 4 people (the #cold-start walkthrough's "invite 2-3
+                    trusted contacts" line: a founder plus 2-3 others), not three. Do not
+                    "simplify" that back to three. */}
               <p className="text-gray-300 text-sm mt-2 pt-2 border-t border-gray-700/50">
                 <strong className="text-gray-100">What that bound is not:</strong> a verdict on any
                 group of three. The detection math assumes each conspirator is an independent draw

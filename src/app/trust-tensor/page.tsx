@@ -828,10 +828,15 @@ export default function TrustTensorPage() {
               example is unreachable without a TPM. Nav order encourages reading this before
               /lct-explainer." Handed forward explicitly by #502's guard at ~L406.
               Three things this block must NOT become:
-              - It must NOT read as capping the DIMENSIONS. Temperament is 95% three lines up, above
-                every chip ceiling. The site does not settle per-dimension capping (lct-explainer
-                ~1247 says the ceiling caps "your T3 trust", the composite) and this block must not
-                adjudicate it. Hence "the role-weighted number they combine into", never "these scores".
+              - It must NOT read as capping the DIMENSIONS. The "Alice as Data Analyst" example on
+                this page puts Temperament at 95% and the "Alice as Project Manager" one at 91%,
+                both above every chip ceiling. (Do NOT check this by counting lines: the example
+                ADJACENT to this block is "Alice as Mechanic", whose Temperament is 50% - below
+                every chip ceiling, so it appears to SUPPORT the reading this constraint forbids.
+                The 95% is the one that makes the constraint necessary.) The site does not settle
+                per-dimension capping - lct-explainer's "The ceiling caps how high your T3 trust can
+                climb" line says the ceiling caps the composite - and this block must not adjudicate
+                it. Hence "the role-weighted number they combine into", never "these scores".
               - It must NOT imply hardware is required to participate ([[hardware-required-seam]]).
                 A ceiling claim is not an eligibility claim (codified at lct-explainer ~274).
               - It must NOT coin a second phrasing of the CONSEQUENCE of a 0.50 ceiling. That ships

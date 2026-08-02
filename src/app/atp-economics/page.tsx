@@ -984,8 +984,11 @@ export default function ATPEconomicsPage() {
                   grows, so 2-3 is where conspiracy stops paying, not the largest group that still pays.
                   Keep this sentence's phrasing identical in sense to the sibling block on Risk 4.
                 - It must NOT use "cheap" for "unpoliced". On this page "cheap" means ATP cost
-                  throughout (~474, ~1371), so the borrowed word from what-could-go-wrong ~909 would
-                  read as a price claim on the page that owns price. */}
+                  throughout (the "Abuse is cheap" bullet in the what-web3-got-wrong list, and the
+                  "economically cheaper to participate" line), so the borrowed word from
+                  what-could-go-wrong's
+                  "cheap because" sentence would read as a price claim on the page that owns
+                  price. */}
             <p className="text-gray-400 text-sm leading-relaxed mt-3 pt-3 border-t border-emerald-800/20">
               <strong className="text-gray-300">Same number, different question.</strong>{" "}
               <Link href="/what-could-go-wrong#risk-gaming" className="text-sky-400 hover:underline">
