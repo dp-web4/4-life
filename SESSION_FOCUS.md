@@ -41,7 +41,7 @@ along so the paragraph states a tradeoff rather than a verdict, and it hands off
 
 ### A second instance, found on the reviewer's sweep
 
-`L1394` in the bootstrap FAQ made the same unscoped promise: *"Add a second device any time:
+The bootstrap FAQ's *"Add a second device any time"* line made the same unscoped promise: *"Add a second device any time:
 ceiling rises retroactively."* Context does not scope it, because the paragraph names the
 software-only reader two sentences earlier (*"capped at the software-or-single-hardware tier"*).
 One word (*hardware*), aligning it with L641-643. Fixing only the first instance would have left

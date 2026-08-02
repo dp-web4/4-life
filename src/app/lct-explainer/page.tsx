@@ -1363,7 +1363,7 @@ export default function LCTExplainerPage() {
                 onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('software-only-survival')?.scrollIntoView({ behavior: 'smooth' }); }}
                 className="text-sky-400 hover:text-sky-300 underline"
               >
-                what a 0.50 ceiling actually costs you &darr;
+                what a 0.50 ceiling actually costs you &uarr;
               </a>.
             </p>
             <p id="quorum-why" className="text-gray-500 text-xs mt-2 scroll-mt-24">
@@ -1437,7 +1437,7 @@ export default function LCTExplainerPage() {
               single-hardware ceiling but earning toward it. Add a second <em>hardware</em> device
               any time: ceiling rises retroactively.
               {/* Aug-01 visitor HIGH 4, found on sweep: the same "ceiling rises retroactively"
-                  promise appears here and at the #single-device card ~70 lines up, and both were
+                  promise appears here and at the #single-device card earlier on this page, and both were
                   unscoped. This paragraph names the software-only reader two sentences earlier
                   ("capped at the software-or-single-hardware tier"), so context does not scope it,
                   and L628-629 says a software-only setup stays at 0.50 however many devices it
