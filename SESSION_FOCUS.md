@@ -70,6 +70,77 @@ either polarity (standing 0.5-endpoint escalation).
 escalation. MEDIUMs 3 (`/onramp` reader-keyed routing), 4 (`/tldr` promises seams `/onramp` lacks),
 6 (`/learn` weaker than the `/tldr` section that links it) are untaken and free. All five LOWs free.
 
+## Aug-01 visitor HIGH 4 (15:00 session) - the card that recruits the tier it describes wrongly
+
+Same log as the 09:00 session (`visitor/logs/2026-08-01.md`, browsed 05:11 against `21bb94a`).
+Of the four HIGHs, #505 took 1 and 3; HIGH 2 (/hardbound has no reachable repo) remains the
+settled operator positioning call from #500 and was not re-litigated. This session took **HIGH 4**,
+the one the log's Honest Assessment names as its second theme: *"where the bad news lives... The
+honest material has already been written; some of it is just filed under 'risks' when it belongs
+under 'here's your option.'"*
+
+### The visitor's premise is half wrong, and the residual is worse than the filing
+
+Filed as: the software-only device-loss consequence *"appears only in risk 8 of
+/what-could-go-wrong"*. It does not. `/lct-explainer` already carries it twice, ~270 lines above
+the card in question: **L1046** (*"Software only - no second witness to vouch. You start over from
+zero with a fresh identity"*) and **L1058** (*"there's nothing to recover to"*). So this is not an
+absent disclosure and the fix is not a relocation from the risks page. It is **placement and
+scope** at `#single-device`, the card where the tier is actually chosen, which carried **two
+statements that are false for the reader it recruits**:
+
+1. **Unscoped range.** Heading "Only have one device?", ceiling *"typically 0.50-0.75 depending on
+   hardware"*. Per this same file at **L628-629**, `0.50` is precisely the software-only case
+   (*"a software-only setup stays at 0.50 however many devices it spans"*). A chip-less reader
+   lands on the bottom of that range and reads the whole card as theirs.
+2. **"Adding a second device later raises your ceiling retroactively"** is false for exactly that
+   reader, and L628-629 says so ~690 lines up in the same file. The parallel sentence at L641-643
+   is correctly scoped (*"A single device **with this manufacturer attestation**..."*); this one
+   never was.
+
+Fixed by scoping the promise to hardware and adding one paragraph naming what changes for the
+chip-less reader (ceiling does not rise; no second witness, so device loss means starting over),
+propagated **verbatim from L1046 on this page**, not re-derived and not imported from risk 8's
+wording. The contrast with the hardware-bound path (community vouching over 3-7 days) is carried
+along so the paragraph states a tradeoff rather than a verdict, and it hands off to the existing
+`#software-only-survival` callout instead of re-deriving what a 0.50 ceiling costs.
+
+### A second instance, found on the reviewer's sweep
+
+The bootstrap FAQ's *"Add a second device any time"* line made the same unscoped promise: *"Add a second device any time:
+ceiling rises retroactively."* Context does not scope it, because the paragraph names the
+software-only reader two sentences earlier (*"capped at the software-or-single-hardware tier"*).
+One word (*hardware*), aligning it with L641-643. Fixing only the first instance would have left
+the identical false-for-software-only promise live on the same page.
+
+### What was deliberately not written
+
+- **No comparison against 0.50, in either direction.** The card's old closing clause was *"You can
+  fully participate, post, earn ATP, and build karma"*. Harmless while the card was unscoped;
+  the moment the software-only tier is named in that card, "fully participate" sits adjacent to
+  0.50 and asserts what the guard at `lct-explainer:258-259` forbids (that a reader sitting *at*
+  0.50 has full access), which is the same defect #497 removed at L1307 and still ledger **Q1**.
+  Replaced with the phrasing already shipping 55 lines up at L1247-1250 (*"what changes is the
+  **terms** of your participation"*), which the same visitor praised at another surface. This is
+  the "two fixes in one pass can fight" shape: the scoping fix would have re-armed the reading
+  #497 exists to defuse.
+- **Aug-01 MEDIUM 1** (`/first-contact`: *"Above 0.50: full access"*). Its literal suggested fix is
+  *"restate as 'at or above 0.50'"*, which is the exact wording banned by the guard at
+  `first-contact:265-270`. Not taken. Its unprohibited half (that a software-only reader sits
+  permanently on the access line) is the same knot as this HIGH and is now answered at
+  `#single-device` and `#software-only-survival` on `/lct-explainer`.
+- **Still a ceiling claim, never an eligibility claim** (guard at L273-274, live
+  `[[hardware-required-seam]]`). The inclusion message is unchanged: the tier is in, it just
+  stopped carrying two promises that do not apply to it.
+
+### Noted for a future browse, not fixed here
+
+`lct-explainer:2156-2159` (the "What if I only have one device?" FAQ) says a single-device user
+*"can reach the same trust levels as a multi-device user in most roles"* - arguably loose for the
+software-only case, by the same L628-629 authority. Pre-existing, never filed by a visitor, and
+fixing it in this pass would have been scope creep.
+
+
 ## Aug-01 visitor HIGHs 1+3 (09:00 session) - one price for one thing, and a rate that never existed
 
 Fresh log `visitor/logs/2026-08-01.md` (browsed 05:11 against main at `21bb94a`, so **#504 was not
