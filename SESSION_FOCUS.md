@@ -86,6 +86,81 @@ whose sibling (MCP/RDF, Jul-28) was reversed on "entry-level by position in the 
 reasoning that now arguably applies to R6 as well. `/value-tensor` collusion is standing
 ledger Q3. The offsite GitHub repo description is not a site file.
 
+## Aug-01 visitor MEDIUMs 3+4 (Aug-02 03:00 session) - the block that routes one reader in three, and a promise read in the wrong sense
+
+Same log (`visitor/logs/2026-08-01.md`, browsed 05:11 against `21bb94a`). Both items come from the
+same journey entry (`/onramp` at 41:30, Confusion points 1 and 2), so they were taken together.
+Prior disposal of this log: HIGHs 1+3 -> #505, HIGH 4 -> #506, MEDIUMs 2+5 -> #507, HIGH 2 is the
+standing hardbound-is-private operator call, MEDIUM 1 is the standing 0.5-endpoint escalation.
+
+### MEDIUM 3: two of the three "Pick your scale" cards described the binary, not the reader
+
+Retest gate first. `SESSION_FOCUS.md:1981` records an `/onramp` routing MEDIUM from Jul-25/26 as
+"#486 already treated this; retest-gated". **#486 (`735d5cc`) did not touch `/onramp`** - it
+reader-routed the `/running-now` CTA. The Aug-01 log is fresher, and the visitor quotes the Personal
+card verbatim, so this is a licensed recurrence rather than a pre-empted retest.
+
+`onramp:250-259` (Personal) already opened *to the reader*: "If you are one person, or one agent on
+your own machine, this is your scale." Community and Enterprise opened with what the binary does.
+The openers added to both are **propagated from `running-now:396-397` and `:420-421`**, the wording
+#486 shipped for this exact friction on that page, not coined fresh.
+
+Each card also now carries its own tier's state, which is #506's lesson applied: the card that
+recruits a tier discloses that tier's caveat **in its own body**, because a reader who self-selects
+at "Pick your scale" may never reach the maturity ladder further down. Community gets the
+consequence-for-the-reader register (`running-now:400-401`: "you would be standing up one of the
+first live instances, not joining an existing network"); Enterprise gets the recruitment-relevant
+half only ("usable and under active hardening, not production") and defers the on-device
+specificity to the ladder rather than echoing it 60 lines early.
+
+The Personal card is untouched. The ordering guard at `onramp:14-35` cites its phrase "the
+lowest-friction, hands-on entry" as the block's articulable reason for personal-first ordering.
+No surface was reordered. The Enterprise opener asserts nothing about hardware being *required* to
+participate (live `[[hardware-required-seam]]`) and nothing about hardbound's availability or
+openness (#500).
+
+### MEDIUM 4: the promise was right, the sense was wrong, and the surface was not /tldr
+
+Filed as "/tldr's link promised 'adoption order and **the real seams**'... there is no seams
+section". The quoted phrase is **not in `/tldr`'s markup** (its own inline card at `tldr:322-325`
+says something else). It is `navigation.ts:131`, rendered on `/tldr` by `RelatedConcepts` and also
+by `SiteSearch`. And `/onramp` **does** deliver: `onramp:295` is the section, and its first
+sentence is "These are the real, in-code seams, not aspirational ones."
+
+So the defect is **word overload**, not a missing section. This page owns "seams" = the joins
+between the pieces, in its body *and* its `metadata.description` ("the real in-code seams that
+connect them"). Bare "seams" in a link blurb reads colloquially as *rough edges*, which is what the
+visitor came for (they named hardbound's mocked TPM, hestia's gate bypass, and the hub's absent
+network as the material they expected). Growing a limitations section under that word would take
+the word away from the meaning the page already owns and deepen the overload. **The promise moved
+instead**: `navigation.ts`'s `/onramp` desc now matches `onramp:41` in sense, `seams` was added to
+that entry's `keywords` so `SiteSearch` resolves it, and the destination heading now carries the
+word so a heading-scanner lands on it.
+
+### The residual the visitor actually found, and it was a seams-integrity defect
+
+"Nothing about rough edges beyond one clause about hardbound's hardware binding" is an accurate
+reading of `onramp:341-357`: only the hardbound bullet carried a caveat. That left `/onramp` more
+optimistic about hestia and the hub than `/hestia`, `/tldr` and `/running-now` are about
+themselves. Both bullets now carry one propagated caveat (hestia's from `hestia:577-591`, the hub's
+from `tldr:255-256`) and link out. This is not a new section and does not touch the word "seams".
+
+`/onramp` had **zero** `id` attributes before this pass; `#seams` is its first. `/hub`'s honest
+boundary section also had none, so it gained `id="honest-status"` to match `/hestia:544`'s existing
+name, letting the ladder land a reader on the caveat rather than the top of the page. A general
+`/onramp` anchor pass is still owed and was deliberately not started here.
+
+### Deferred from this log
+
+- **MEDIUM 1** (`/first-contact` "Above 0.50") remains the standing endpoint escalation.
+- **MEDIUM 6** (`/learn` weaker than the `/tldr` section that links it) is untaken and free. It is a
+  page restructure rather than a clause fix, which is why it was not bundled here.
+- **All five LOWs free**, with one narrowing: the R6/R7 acronym-index LOW is **not** the filed claim.
+  The letters *are* expanded at `glossary:578` ("Rules + Role + Request + ..."), and R6's exclusion
+  from "Acronyms at a glance" is a deliberate decision documented at `glossary:567-571`. The
+  residual, if any, is that the acronym box is where a reader looks. Do not re-litigate on the
+  visitor's framing.
+
 ## Aug-01 visitor MEDIUMs 2+5 (21:00 session) - two figures that argue against themselves
 
 Same log, same class the Honest Assessment names: *"the site argues with numbers, and the numbers

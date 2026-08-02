@@ -174,8 +174,9 @@ export default function HubPage() {
         </p>
       </section>
 
-      {/* Honest boundary */}
-      <section className="max-w-4xl mx-auto mt-12">
+      {/* Honest boundary. id matches /hestia's #honest-status so the maturity ladder on
+          /onramp can land a reader on the caveat rather than the top of the page. */}
+      <section id="honest-status" className="max-w-4xl mx-auto mt-12 scroll-mt-20">
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
           <h2 className="text-lg font-bold text-amber-300 mb-2">Where it is on the maturity ladder</h2>
           <p className="text-sm text-gray-300 leading-relaxed mb-3">
