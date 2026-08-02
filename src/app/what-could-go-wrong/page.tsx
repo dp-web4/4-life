@@ -378,12 +378,49 @@ export default function WhatCouldGoWrongPage() {
               </Link>
             </p>
             <div className="bg-gray-800/60 border border-gray-700/50 rounded-lg p-4 my-3">
+              {/* Aug-01 visitor MEDIUM 2 (their Unanswered Q5): "ROI is never defined and both
+                  figures are below 1.0, which plainly reads as honest participation also loses
+                  money." This paragraph used to open with "Web4 simulations show that honest
+                  strategies yield ROI of ~0.93 while Sybil strategies yield ~0.90. The margin is
+                  small." Both figures deleted, and the adjective leaning on them ("the margin is
+                  small") deleted with them. Why deletion and not a definition of the ratio:
+                  - The instrument still exists and still runs: lib/game/agent_based_attack_simulation.py
+                    defines ROI as sum(net_profit)/sum(atp_staked) (:156,:162) and prints it signed,
+                    treating roi < 0 as UNPROFITABLE (:383). In its own units 0 is break-even, NOT
+                    1.0, so defining the ratio turns 0.93/0.90 into +93%/+90% returns and inverts
+                    the sentence they were supporting. You cannot define your way out of this.
+                  - Run today it reports honest -40.0% and malicious -98.4%. Neither 0.93 nor 0.90
+                    is reproducible, and the only measured margin is 58.4pp, so "small" was false.
+                  - The one other place Sybil ROI was ever measured (web4 federation stress, Feb-27)
+                    recorded -108%. Also nowhere near 0.90.
+                  - Upstream web4/SECURITY.md discloses the gap three times (:86, :195, :226).
+                  Do NOT import the sim's magnitudes as replacements. -98.4% is a STRONGER
+                  reassurance than the number it replaces, and the same run puts honest agents at
+                  -40%, which makes the visitor's literal complaint true in the one instrument that
+                  exists. Hence direction only, plus the sentence conceding that both sides can be
+                  down against stake. Conceding it is the fix; denying it would be the regression.
+                  Also NOT a place to reach for general deterrence: PR #504 adds a block just below
+                  whose finding is that P = 1 - (1-p)^N presumes witnesses outside the coalition.
+                  Second defect closed in the same edit, not in the visitor log: this line said
+                  circular transfers "destroy ~150 ATP." Canon since PR #464 is that the 5% ROUTES
+                  to a community redistribution pool and is not destroyed (atp-economics :245, :257,
+                  :342, :397, :513, :1328). Note atp-economics keeps "burn fee" as a locally
+                  reconciled term of art at #atp-burn-fee; that is a different shape from a bare
+                  "destroy" inside a mitigation, and is deliberately left alone. */}
               <p className="text-gray-300 text-sm mb-2">
-                <strong className="text-gray-100">The numbers:</strong> Web4 simulations show that honest
-                strategies yield ROI of ~0.93 while Sybil strategies yield ~0.90. The margin is small - but
-                it&apos;s consistently in favor of honest behavior. More importantly, circular energy
-                transfers (the simplest farming tactic) lose money: 30 circular transfers destroy ~150
-                ATP (energy budget) through the 5% transfer fee. It&apos;s cheaper to just do good work.
+                <strong className="text-gray-100">What the numbers show, and what they do not:</strong>{" "}
+                One part of this is arithmetic. Circular transfers, the simplest farming tactic, lose
+                money: 30 circular transfers of 100 ATP (energy budget) shed ~150 ATP in fees, and
+                that 5% routes to the community redistribution pool rather than back to the farmer.
+                The rest is not arithmetic. Web4 has no validated economic model of what an attack
+                returns: SECURITY.md in the core standard lists &ldquo;no cryptoeconomic modeling
+                ... what&apos;s the attacker&apos;s ROI?&rdquo; among its open gaps, and the attack
+                simulations that do exist agree on the direction (quality inflation does worse than
+                honest work once detection lands) and not on the size of the gap. They also do not
+                show that honest participation pays in the abstract: an agent whose stake is large
+                against its earnings can finish down either way. Read this row as &ldquo;farming is
+                a worse deal than working,&rdquo; not as &ldquo;the economics have been
+                proven safe.&rdquo;
               </p>
               <p className="text-gray-300 text-sm mt-2">
                 <strong className="text-gray-100">Why coordinated attacks fail:</strong> Detection
