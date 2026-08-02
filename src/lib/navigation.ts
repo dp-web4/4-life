@@ -49,9 +49,13 @@ export const navigationTree: NavigationTree = {
     // Jul-30 visitor LOW: the total here moved 28 -> 30 with the rest of the set, because
     // /learn's first-contact estimate moved 5 -> 7 to agree with the page that owns it
     // (reasoning on that card in /learn's beginner path). Complete set of surfaces carrying
-    // a path total: /learn's "New here? Start with these 3" paragraph, /tldr's "Read the
-    // site in order (recommended)" card, and this line. Derived from the per-card durations
-    // in learn's beginner path: 2+6+7+10+5 = 30.
+    // a path total: /learn's reading-path box (headed "The reading path: five pages, about
+    // 30 minutes"; it was headed "New here? Start with these 3" and listed only the first
+    // three until the Aug-01 visitor MEDIUM 6 fix), /tldr's "Read the site in order
+    // (recommended)" card, and this line. Derived from the per-card durations in learn's
+    // beginner path: 2+6+7+10+5 = 30. As of Aug-02 that box also carries its own per-item
+    // COPIES of all five durations, so a single-page estimate change now lands in six
+    // places, not four. The full list is on the box's own guard comment.
     {
       title: 'The Reading Path',
       href: '/learn',

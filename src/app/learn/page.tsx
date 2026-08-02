@@ -28,7 +28,6 @@ interface LearningPath {
   title: string;
   description: string;
   concepts: ConceptNode[];
-  actions: ActionNode[];
 }
 
 interface ConceptNode {
@@ -40,13 +39,24 @@ interface ConceptNode {
   duration: string; // Estimated time
 }
 
-interface ActionNode {
-  id: string;
-  title: string;
-  description: string;
-  link: string;
-  type: "interactive" | "observe" | "experiment" | "build";
-}
+/* Aug-01 visitor MEDIUM 6: an `ActionNode[]` used to hang off every path, rendered under a
+   "Practice Actions" heading that promised "these actions help you internalize understanding
+   through participation", with INTERACTIVE / BUILD / EXPERIMENT type badges and a "Try it"
+   button. Every single one linked to a page you read, and every path duplicated one of its
+   own concepts as an "action": beginner listed /first-contact and /running-now (its own
+   concepts 3 and 5), intermediate listed /hestia (its concept 3, and the link went to the
+   explainer page, not the software), advanced listed /glossary (its concept 9), practitioner
+   listed /manifest (its concept 6). Only the practitioner GitHub-issues link was an action
+   at all, and the practitioner "What's Next?" copy below already offers it in prose.
+
+   The visitor read the result and wrote: "Understanding emerges from participation, but there
+   is nothing to participate in. Nothing is deployed. The page's closing line promises
+   something the site can't deliver." Their premise is half wrong, which is why this is a
+   deletion rather than a rewrite: participation DOES exist (hestia runs, the hub is forkable,
+   both AGPL) and the capstone at the foot of this page already says so correctly. What did not
+   exist was any of it here. The section was offering the reader, as "participation", the same
+   pages the path above was already telling them to read. Removing it removes the overclaim at
+   its source and leaves the one honest participation offer standing alone. */
 
 export default function LearnJourney() {
   const [activeStage, setActiveStage] = useState<LearningStage>("beginner");
@@ -171,10 +181,12 @@ export default function LearnJourney() {
           // about 5.5 minutes, which is closer to the old 5 than to the 7. Nothing anywhere may
           // describe the 7 as observed; it is the page's own estimate and the site now agrees
           // with it in one place instead of contradicting it in two.
-          // Changing this cascades to five other places, anchored by content because line
-          // numbers drift: the "New here? Start with these 3" paragraph below (both totals)
-          // and its step-3 row, the "Read the site in order (recommended)" card on /tldr
-          // (both totals), and the 'The Reading Path' desc in navigation.ts.
+          // Changing this cascades, anchored by content because line numbers drift: the
+          // reading-path box below (headed "The reading path: five pages, about 30 minutes",
+          // both totals in its paragraph AND the `time` on its step-3 row), the "Read the
+          // site in order (recommended)" card on /tldr (both totals), and the 'The Reading
+          // Path' desc in navigation.ts. Aug-02: that box grew from three rows to five, so
+          // the other four beginner durations now have a per-item copy there too.
           duration: "7 min",
         },
         {
@@ -194,24 +206,6 @@ export default function LearnJourney() {
           why: "Honesty about maturity. Knowing what's real keeps expectations calibrated as you go deeper.",
           link: "/running-now",
           duration: "5 min read",
-        },
-      ],
-      actions: [
-        {
-          id: "act-first-contact",
-          title: "Walk Through First Contact",
-          description:
-            "Step through a trust-native interaction end to end and watch how identity and trust show up in practice.",
-          link: "/first-contact",
-          type: "interactive",
-        },
-        {
-          id: "act-running-now",
-          title: "See What's Deployed Today",
-          description:
-            "Check the running-now page for the live pieces you can try yourself right now.",
-          link: "/running-now",
-          type: "observe",
         },
       ],
     },
@@ -256,24 +250,6 @@ export default function LearnJourney() {
           why: "Hardbound shows the standard carrying real stakes: accountable agents under enterprise oversight.",
           link: "/hardbound",
           duration: "8 min read",
-        },
-      ],
-      actions: [
-        {
-          id: "act-onramp",
-          title: "Compare the Four Pieces",
-          description:
-            "The onramp overview lays out the standard, hub, hestia, and hardbound side by side so you can see how they fit.",
-          link: "/onramp",
-          type: "observe",
-        },
-        {
-          id: "act-run-hestia",
-          title: "Run Hestia Yourself",
-          description:
-            "Hestia is deployed and runnable. Follow it from concept to a trust layer on your own machine.",
-          link: "/hestia",
-          type: "build",
         },
       ],
     },
@@ -365,24 +341,6 @@ export default function LearnJourney() {
           duration: "browse",
         },
       ],
-      actions: [
-        {
-          id: "act-web4-explainer",
-          title: "See the Concepts Woven Together",
-          description:
-            "The Web4 explainer walks the primitives as one connected system rather than a list of parts.",
-          link: "/web4-explainer",
-          type: "observe",
-        },
-        {
-          id: "act-glossary",
-          title: "Look Up Any Term",
-          description:
-            "Keep the glossary open as you read. Every acronym has a plain-language definition.",
-          link: "/glossary",
-          type: "observe",
-        },
-      ],
     },
     {
       stage: "practitioner",
@@ -445,24 +403,6 @@ export default function LearnJourney() {
           duration: "browse",
         },
       ],
-      actions: [
-        {
-          id: "act-manifest",
-          title: "Read the One-Page Manifest",
-          description:
-            "Every claim and primitive condensed into one page, with links back out to each concept.",
-          link: "/manifest",
-          type: "observe",
-        },
-        {
-          id: "act-contribute",
-          title: "Contribute Questions or Code",
-          description:
-            "Found a gap or a sharper question? Open an issue on GitHub. The best contributions are often better questions.",
-          link: "https://github.com/dp-web4/4-life/issues",
-          type: "build",
-        },
-      ],
     },
   ];
 
@@ -478,20 +418,35 @@ export default function LearnJourney() {
     <>
       <Breadcrumbs currentPath="/learn" />
       <section>
-        <div className="hero-eyebrow">Guided Learning Journey</div>
-        <h1 className="hero-title">Learn Web4 Progressively</h1>
+        {/* Aug-01 visitor MEDIUM 6, the same row as the reading-path box below. The visitor
+            arrived from a /tldr card that told them something exact ("five pages, about 30
+            minutes, and you have just finished the first") and hit "Guided Learning Journey /
+            Learn Web4 Progressively / a curated learning pathway", which they read as "a step
+            backwards in specificity from the page that sent me here". Same complaint, one
+            section earlier, so it is fixed here too: the eyebrow and title now name the thing
+            the linking page promised. The subtitle's "from first contact to active
+            participation" went for the reason recorded above the ActionNode deletion near the
+            top of this file; the honest version of that promise is the capstone at the foot of
+            the page, and the subtitle now points at it instead of asserting it. */}
+        <div className="hero-eyebrow">The Reading Path</div>
+        <h1 className="hero-title">Read the Site in Order</h1>
         <p className="hero-subtitle">
-          Web4 is complex, but comprehensible. This page guides you from first
-          contact to active participation through a curated learning pathway.
-          Start where you are. Progress at your pace. Mark concepts as you
-          complete them.
+          Web4 is complex, but comprehensible. Five pages get you from never
+          having heard the term to knowing what runs today, and they are listed
+          below in the order they build on each other. Deeper paths follow, for
+          when you want them, and the last step is code you can run.
         </p>
       </section>
 
       <InProduction concept="stack" />
 
-      {/* Quick start for newcomers: shows until 3 concepts done */}
-      {completedConcepts.size < 3 && (
+      {/* The reading path, in order. Shows until the whole five-page path is done.
+          Aug-01 visitor MEDIUM 6: the gate used to be `completedConcepts.size < 3`, which
+          matched a box that only listed three. Now that this box IS the page's answer to
+          "what do I read, in what order", disappearing at 3 would send a reader who is
+          mid-path back to the four-pathway selector as the first thing on the page. It
+          ends when the path ends. */}
+      {!beginnerComplete && (
         <section>
           <div
             style={{
@@ -502,19 +457,36 @@ export default function LearnJourney() {
             }}
           >
             <h3 style={{ color: "var(--color-accent-bright)", margin: "0 0 0.5rem", fontSize: "1.05rem" }}>
-              New here? Start with these 3
+              The reading path: five pages, about 30 minutes
             </h3>
-            {/* Jul-28: this page now has inbound routing from /tldr and from the top of
-                the "Start Here" nav group, both of which name the five-page path. This box
-                says "three short reads" with its own total and is the first thing an
-                arriving reader sees, so without the nesting stated it reads as a second,
-                contradictory answer to "how long is this?". It is not: these three ARE
-                steps 1-3 of the path below. Say so rather than dropping either number.
+            {/* Jul-28 (SUPERSEDED Aug-02, reasoning kept because the numbers still bind):
+                this page has inbound routing from /tldr and from the top of the "Start Here"
+                nav group, both of which name the five-page path. This box used to be headed
+                "New here? Start with these 3" and list three of the five. The Jul-28 call was
+                that stating the nesting ("these three ARE steps 1-3 of the path below") was
+                enough to stop it reading as a competing answer to "how long is this?".
+
+                REVERSAL (Aug-01 visitor MEDIUM 6). It was not enough. The visitor took /tldr's
+                "Read the site in order (recommended)" handoff, which says "five pages, about
+                30 minutes, and you have just finished the first" and names all five by title,
+                and landed on a box whose STEP 1 IS /tldr, the page they had just closed. They
+                demonstrably read this box (they clicked Why Web4? out of it and called it "the
+                useful part of this page") and still filed /learn as "a step backwards in
+                specificity from the page that sent me here", because the nesting sentence says
+                the three are steps 1-3 of five without ever naming steps 4 and 5. The five-page
+                list did exist, four sections down, past the hero, the maturity banner, the
+                progress bar and the four-pathway selector. So the box now IS the five in order,
+                and the 15-minute short version survives as a labeled stopping point inside it
+                rather than as a competing list. Nothing was dropped; step 1 now says out loud
+                that a reader arriving from /tldr has already done it.
 
                 Jul-29 visitor MEDIUM (same friction row as the duration qualifier on the
                 why-web4 card further down): step 2 ends in an open-ended FAQ that the 6
                 minutes does not cover. The 6 stays and the "6 min" in the narrow right
                 column below stays short, so the scope lands in this paragraph instead.
+                This is also why the five items below are still hardcoded rather than derived
+                from learningPaths[0].concepts: that card's duration string is "6 min +
+                optional Q&A", which is exactly what this column may not render.
 
                 Jul-30 visitor LOW, the first-contact estimate moved 5 -> 7 to match the page
                 that owns it (see the first-contact card in the beginner path above for the
@@ -522,47 +494,64 @@ export default function LearnJourney() {
                 independent claims: 2+6+7 = 15 and 2+6+7+10+5 = 30, summing the per-card
                 durations above. If any card duration changes, recompute both here, in the
                 "Read the site in order (recommended)" card on /tldr, and in the 'The Reading
-                Path' desc in navigation.ts. Those three places are the complete set as of
-                2026-07-30: there is no JSON-LD anywhere in src/, sitemap.ts carries no
-                durations, and no metadata or OG string carries a total. */}
+                Path' desc in navigation.ts. Those three places are the complete set of TOTALS
+                as of 2026-07-30: there is no JSON-LD anywhere in src/, sitemap.ts carries no
+                durations, and no metadata or OG string carries a total.
+
+                Aug-02 addition to that surface list: the five `time` literals in the array
+                below are per-item COPIES of the five beginner concept-card durations. Adding
+                steps 4 and 5 added copies of 10 and 5. A duration change now has to land in
+                six places, not four: the owning concept card above, both totals here, this
+                array's matching `time`, the /tldr card (both totals), and navigation.ts. */}
             <p style={{ color: "var(--color-gray-400)", fontSize: "0.85rem", marginBottom: "0.75rem" }}>
-              Web4 starts with three short reads. ~15 minutes total. These are the first
-              three steps of the five-page path below (about 30 minutes end to end), not a
-              different route. Why Web4? is the longest of the three and ends in an optional
-              Q&amp;A that is open-ended; the estimate covers the read, not the questions.
+              Five pages, in order, each building on the last. If you came here from the
+              2-minute overview you have already finished step 1. The first three are the
+              short version, about 15 minutes, if that is all the time you have. Why Web4?
+              ends in an optional Q&amp;A that is open-ended; the estimate covers the read,
+              not the questions.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
               {[
                 { num: "1", title: "The 2-minute overview", desc: "The shortest honest description", href: "/tldr", time: "2 min" },
                 { num: "2", title: "Why Web4?", desc: "The problems it starts from", href: "/why-web4", time: "6 min" },
                 { num: "3", title: "First Contact", desc: "See a trust-native interaction", href: "/first-contact", time: "7 min" },
-              ].map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.75rem",
-                    padding: "0.5rem 0.75rem",
-                    borderRadius: "8px",
-                    textDecoration: "none",
-                    color: "var(--color-text)",
-                    background: "rgba(255,255,255,0.03)",
-                    transition: "background 0.2s",
-                  }}
-                >
-                  <span style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-accent)", minWidth: "1.25rem" }}>{item.num}</span>
-                  <span style={{ flex: 1 }}>
-                    <strong style={{ fontSize: "0.9rem" }}>{item.title}</strong>
-                    <span style={{ fontSize: "0.8rem", color: "var(--color-gray-400)", marginLeft: "0.5rem" }}>{item.desc}</span>
-                  </span>
-                  <span style={{ fontSize: "0.75rem", color: "var(--color-gray-500)" }}>{item.time}</span>
-                </Link>
+                { num: "4", title: "How It Works", desc: "How the pieces connect", href: "/how-it-works", time: "10 min" },
+                { num: "5", title: "What's Actually Running Now", desc: "What is deployed today, and what is not", href: "/running-now", time: "5 min" },
+              ].map((item, idx) => (
+                <div key={item.href}>
+                  {idx === 3 && (
+                    <p style={{ fontSize: "0.72rem", color: "var(--color-gray-500)", margin: "0.5rem 0 0.5rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                      Short on time? Stop here (~15 min). Otherwise keep going.
+                    </p>
+                  )}
+                  <Link
+                    href={item.href}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.75rem",
+                      padding: "0.5rem 0.75rem",
+                      borderRadius: "8px",
+                      textDecoration: "none",
+                      color: "var(--color-text)",
+                      background: "rgba(255,255,255,0.03)",
+                      transition: "background 0.2s",
+                    }}
+                  >
+                    <span style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-accent)", minWidth: "1.25rem" }}>{item.num}</span>
+                    <span style={{ flex: 1 }}>
+                      <strong style={{ fontSize: "0.9rem" }}>{item.title}</strong>
+                      <span style={{ fontSize: "0.8rem", color: "var(--color-gray-400)", marginLeft: "0.5rem" }}>{item.desc}</span>
+                    </span>
+                    <span style={{ fontSize: "0.75rem", color: "var(--color-gray-500)" }}>{item.time}</span>
+                  </Link>
+                </div>
               ))}
             </div>
             <p style={{ fontSize: "0.75rem", color: "var(--color-gray-500)", marginTop: "0.75rem", marginBottom: 0 }}>
-              After these three, the rest of the journey will make a lot more sense.
+              These five are the Start Here path below, expanded with a short note on why
+              each one comes where it does. Other paths, for readers who already have the
+              basics, are further down.
             </p>
           </div>
         </section>
@@ -723,8 +712,19 @@ export default function LearnJourney() {
               >
                 Web4 in five pages: what, why, and what&apos;s real
               </p>
+              {/* Aug-01 visitor MEDIUM 6: this used to read "N concepts · M actions", and the
+                  visitor named the shape ("counts like '5 concepts, 2 actions'") as part of why
+                  this page reads as less specific than the /tldr section that sent them here.
+                  The actions half is gone with the section it counted. A page count is the one
+                  thing here that is checkable against the list it summarises; a time total is
+                  deliberately not printed, because only the beginner path has an agreed one
+                  (30 min, pinned across three surfaces) and minting three more would put three
+                  new falsifiable numbers on a site whose numbers the same visitor said "don't
+                  hold still". Not even the beginner path's agreed 30 is repeated here: the
+                  reading-path box directly above already carries it, and a fourth copy would
+                  widen the cascade list in that box's guard comment for no reader benefit. */}
               <p style={{ fontSize: "0.9rem", marginTop: "0.5rem" }}>
-                {path.concepts.length} concepts · {path.actions.length} actions
+                {path.concepts.length} pages
               </p>
             </button>
           ))}
@@ -787,8 +787,9 @@ export default function LearnJourney() {
                     practitioner: "Depth: a day in Web4, failure analysis, the framework",
                   }[path.stage]}
                 </p>
+                {/* No time total on the deeper paths: see the note on the Start Here card above. */}
                 <p style={{ fontSize: "0.85rem", marginTop: "0.5rem" }}>
-                  {path.concepts.length} concepts · {path.actions.length} actions
+                  {path.concepts.length} pages
                 </p>
               </button>
             ))}
@@ -912,69 +913,6 @@ export default function LearnJourney() {
           ))}
         </div>
 
-        <h3 style={{ marginTop: "2.5rem" }}>Practice Actions</h3>
-        <p style={{ marginBottom: "1rem" }}>
-          Concepts alone aren't enough. These actions help you internalize understanding through participation.
-        </p>
-        <div
-          className="concept-grid"
-          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}
-        >
-          {currentPath.actions.map((action) => (
-            <div key={action.id} className="concept-card">
-              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
-                <div
-                  style={{
-                    fontSize: "1.2rem",
-                    padding: "0.4rem 0.6rem",
-                    borderRadius: "4px",
-                    background:
-                      action.type === "interactive"
-                        ? "var(--color-accent)"
-                        : action.type === "observe"
-                        ? "var(--color-success)"
-                        : action.type === "experiment"
-                        ? "var(--color-warning)"
-                        : "var(--color-info)",
-                  }}
-                >
-                  {action.type === "interactive"
-                    ? "⚡"
-                    : action.type === "observe"
-                    ? "👁"
-                    : action.type === "experiment"
-                    ? "🔬"
-                    : "🔧"}
-                </div>
-                <div>
-                  <h4 style={{ margin: 0 }}>{action.title}</h4>
-                  <span style={{ fontSize: "0.75rem", color: "var(--color-gray-400)", textTransform: "uppercase" }}>
-                    {action.type}
-                  </span>
-                </div>
-              </div>
-              <p style={{ fontSize: "0.9rem", marginBottom: "1rem" }}>
-                {action.description}
-              </p>
-              <Link
-                href={action.link}
-                className="cta-button"
-                style={{
-                  display: "inline-block",
-                  padding: "0.5rem 1rem",
-                  borderRadius: "4px",
-                  border: "1px solid var(--color-accent)",
-                  color: "var(--color-accent)",
-                  textDecoration: "none",
-                  fontSize: "0.85rem",
-                  transition: "all 0.2s ease",
-                }}
-              >
-                Try it →
-              </Link>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* Next steps */}
@@ -1054,11 +992,21 @@ export default function LearnJourney() {
               <strong>Connection before isolation:</strong> See how concepts integrate before deep-diving
             </li>
           </ol>
+          {/* Aug-01 visitor MEDIUM 6: this opened "Understanding emerges from participation, not
+              just observation", and the visitor read it as a promise the site cannot keep ("there
+              is nothing to participate in. Nothing is deployed."). Half of that is wrong: hestia
+              runs and the hub is forkable, both AGPL, and the capstone below says so. But the
+              sentence asserted participation in the abstract while the section that used to sit
+              above it offered, as "participation", four more pages to read. The section is gone;
+              the sentence now names where participation actually is rather than claiming it here.
+              Not deleted outright, which was the visitor's literal suggestion, because the claim
+              is true of the site, just not of this page's middle. */}
           <p style={{ marginTop: "0.75rem" }}>
             <em>
-              Understanding emerges from participation, not just observation. Mark concepts as done
-              when they make sense, not when you've read every word. Trust your intuition. Return
-              when questions arise. Learning is non-linear.
+              Reading is not the last step, but it is this page's step. When the concepts make
+              sense, the code at the bottom of this page is the part you can actually run. Until
+              then: mark concepts as done when they make sense, not when you&apos;ve read every
+              word. Trust your intuition. Return when questions arise. Learning is non-linear.
             </em>
           </p>
         </div>

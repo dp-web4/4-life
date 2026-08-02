@@ -2,7 +2,89 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-08-02 (03:00 session)*
+*Last updated: 2026-08-02 (15:00 session)*
+
+## Aug-01 visitor MEDIUM 6 (15:00 session) - the handoff that promised five and arrived at three
+
+**No 2026-08-02 visitor log exists.** The 05:00 cron produced nothing today (checked
+`git log --all -- visitor/logs/` after `git fetch --all`), so `visitor/logs/2026-08-01.md`
+is still the freshest. MEDIUM 6 was the only untaken MEDIUM in it: HIGHs 1+3 = #505,
+HIGH 4 = #506, MEDIUMs 2+5 = #507, MEDIUMs 3+4 = open as #508, MEDIUM 1 = standing
+0.5-endpoint escalation, HIGH 2 = settled hardbound-is-private operator call.
+
+### The defect: /learn told the reader to go read the page they had just closed
+
+`/tldr`'s "Read the site in order (recommended)" card names all five pages and says
+*"five pages, about 30 minutes, and you have just finished the first."* The first thing
+`/learn` rendered for that reader was a box headed **"New here? Start with these 3"**
+whose **step 1 was `/tldr`**. The five-page list did exist, four sections down, past the
+hero, the maturity banner, the progress bar and the four-pathway selector.
+
+This is the **read-it-and-still-filed-it** shape, so it is not a restructure. The visitor
+demonstrably read that box (they clicked Why Web4? out of it and called it *"the useful
+part of this page"*) and still filed `/learn` as *"a step backwards in specificity from the
+page that sent me here."* The missing clause is exact: the Jul-28 nesting sentence says the
+three are steps 1-3 of five **without ever naming steps 4 and 5**. So the box is now the
+five in order, with the 15-minute short version surviving as a labeled stopping point
+inside it rather than as a competing list, and step 1 says out loud that a reader arriving
+from `/tldr` has already done it. **Both load-bearing totals (15 and 30) are byte-identical**,
+so no cascade to `/tldr` or `navigation.ts`. The hero got the same treatment one section
+earlier, since *"Guided Learning Journey / Learn Web4 Progressively / a curated learning
+pathway"* is the same complaint: eyebrow and title now name the thing the linking page
+promised, and `layout.tsx` metadata follows (it also carried "aliveness", a route retired
+in the Jul-15 rebuild).
+
+**Render gate widened** from `completedConcepts.size < 3` to `!beginnerComplete`. The old
+gate matched a box that listed three; now that this box IS the page's answer to "what do I
+read, in what order," vanishing at 3 would send a mid-path reader back to the four-pathway
+selector as the first thing. It now ends exactly where the graduation banner begins.
+
+### Second half: "Practice Actions" was offering reading as participation
+
+The visitor's other half was *"'Understanding emerges from participation,' but there is
+nothing to participate in."* **Their premise is half wrong**, which decided the fix
+direction: participation does exist (hestia runs, the hub is forkable, both AGPL) and this
+page's own capstone already says so correctly. What did not exist was any of it in the
+section that claimed it. A `Practice Actions` grid promised *"these actions help you
+internalize understanding through participation"* with `INTERACTIVE` / `BUILD` / `EXPERIMENT`
+badges and a **"Try it"** button, and **every path duplicated one of its own concepts as an
+"action"**: beginner listed `/first-contact` and `/running-now` (its own concepts 3 and 5),
+intermediate listed `/hestia` (its concept 3, linking to the explainer page, not the
+software), advanced listed `/glossary` (its concept 9), practitioner listed `/manifest` (its
+concept 6). Only the practitioner GitHub-issues link was an action at all, and the
+practitioner "What's Next?" copy already offers it in prose.
+
+Deleted: `ActionNode`, all four `actions` arrays, the section, and the `· N actions` half of
+the path-selector counts (which the visitor also named). The philosophy note's opening clause
+was **not** deleted as the visitor literally suggested, because the claim is true of the site;
+it now points at where participation actually is instead of asserting it in the abstract.
+**No sim provenance is asserted anywhere**: the `interactive`/`build`/`experiment` typology
+looks like Society Simulator residue but `git log -S` does not establish it, and the case does
+not need it (the actions are self-duplicating regardless of origin).
+
+**Counts replaced with a page count, not a time estimate.** Only the beginner path has an
+agreed total (30 min, pinned across three surfaces); minting three more would put three new
+falsifiable numbers on a site the same visitor said "argues with numbers, and the numbers
+don't hold still." Not even the agreed 30 is repeated on the Start Here card: the box directly
+above already carries it, and a fourth copy would widen the cascade for no reader benefit.
+
+**Cascade debt grew and is recorded.** The box now carries per-item copies of all five
+beginner durations, so a single duration change lands in **six** places, not four. That is
+stated on the box's own guard comment, on the `/first-contact` card that owns the 7, in
+`navigation.ts`, and in `/tldr`'s card comment. Three guard comments that cited the retired
+`"New here? Start with these 3"` heading by name were re-anchored to the live one.
+
+**Deliberately deferred, so a recurrence stays legible**: the "Learning Philosophy" section
+itself. The visitor named it (*"I don't need a philosophy of pedagogy"*) and it is still
+standing. Removing it is a structural call about what `/learn` is for, not a defect fix, and
+this pass already moved the page's lead. If a later log complains about `/learn` bloat again,
+that is the next thing to take, and it is a **recurrence, not a new finding**.
+
+**Untouched from this log**: all five LOWs. `/glossary#acronyms` (R6/R7/SAL/RBAC) is worth a
+look but note `glossary:571` records R6's exclusion from the acronym box as a deliberate call
+whose sibling (MCP/RDF, Jul-28) was reversed on "entry-level by position in the reader's path"
+reasoning that now arguably applies to R6 as well. `/value-tensor` collusion is standing
+ledger Q3. The offsite GitHub repo description is not a site file.
 
 ## Aug-01 visitor MEDIUMs 3+4 (Aug-02 03:00 session) - the block that routes one reader in three, and a promise read in the wrong sense
 
