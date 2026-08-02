@@ -266,11 +266,27 @@ export default function OnrampPage() {
                     the hub
                   </Link>
                 </h4>
+                {/* 2026-08-01 visitor MEDIUM 3: "Pick your scale is presented as the way I
+                    choose... under Community and Enterprise I instead get descriptions of the
+                    software. So the page routes one reader out of three." The Personal card
+                    above was already reader-keyed; these two were not. The opening sentences
+                    here and in the Enterprise card are propagated from running-now:396-397 and
+                    :420-421, which shipped in #486 for the same friction on that page, rather
+                    than coined fresh. Each card also carries its own tier's caveat (#506's
+                    lesson: the card that recruits a tier discloses that tier's state in its own
+                    body, because a reader who self-selects here may never reach the maturity
+                    ladder below). */}
                 <p className="text-sm text-gray-300 leading-relaxed">
+                  <strong className="text-purple-300">
+                    You have a group that wants to govern itself, and this is your
+                    scale.
+                  </strong>{" "}
                   <code className="text-purple-300">hub init</code> bootstraps a
                   sovereign society with signed law and a witnessed ledger. Members
                   connect to it using hestia (
-                  <code className="text-purple-300">hestia connect-hub</code>).
+                  <code className="text-purple-300">hestia connect-hub</code>). Know
+                  what you are signing up for: you would be standing up one of the
+                  first live instances, not joining an existing network.
                 </p>
               </div>
 
@@ -282,8 +298,14 @@ export default function OnrampPage() {
                   </Link>
                 </h4>
                 <p className="text-sm text-gray-300 leading-relaxed">
+                  <strong className="text-sky-300">
+                    Your organization has to answer to auditors, and this is your
+                    scale.
+                  </strong>{" "}
                   The oversight tier. It swaps hestia&apos;s soft identity for
-                  hardware-bound identity and adds RBAC plus regulatory evidence.
+                  hardware-bound identity and adds RBAC plus regulatory evidence. It
+                  is usable and under active hardening, not production; the ladder
+                  below says what that means for its hardware binding.
                 </p>
               </div>
             </div>
@@ -291,9 +313,22 @@ export default function OnrampPage() {
         </div>
       </section>
 
-      {/* Composition seams */}
-      <section className="max-w-4xl mx-auto mt-12">
-        <h2 className="text-2xl font-bold text-gray-100 mb-3">Where the pieces actually connect</h2>
+      {/* Composition seams.
+          2026-08-01 visitor MEDIUM 4: they arrived from a link promising "adoption order and
+          the real seams", scanned for a seams section, and reported there wasn't one. This
+          section IS it. The defect is word overload: this page owns "seams" = the joins
+          between the pieces (metadata at L41, and the body sentence below), but bare "seams"
+          in a link blurb reads colloquially as rough edges, so they came expecting
+          limitations. Fixed at the promise (navigation.ts, the surface that actually renders
+          the quoted phrase, via RelatedConcepts and SiteSearch), not by growing a limitations
+          section here, which would take the word away from the meaning the page already owns.
+          The heading now carries the word so a heading-scanner lands on it; #seams is this
+          page's first id (a general anchor pass is still owed, see SESSION_FOCUS.md).
+          The honest-maturity residual the same visitor named went into the ladder below. */}
+      <section id="seams" className="max-w-4xl mx-auto mt-12 scroll-mt-20">
+        <h2 className="text-2xl font-bold text-gray-100 mb-3">
+          Where the pieces actually connect: the in-code seams
+        </h2>
         <p className="text-base text-gray-400 leading-relaxed mb-4">
           These are the real, in-code seams, not aspirational ones. The pieces fit
           because they were built to share an interface.
@@ -338,16 +373,33 @@ export default function OnrampPage() {
             Be honest with yourself before you build on it: the whole stack is R&amp;D,
             not production. Here is where each piece stands.
           </p>
+          {/* 2026-08-01 visitor MEDIUM 4, second half: "no limitations section, nothing about
+              rough edges beyond one clause about hardbound's hardware binding". That is an
+              accurate reading of this list as it stood - only the hardbound bullet carried a
+              caveat, which left /onramp more optimistic about hestia and the hub than
+              /hestia, /tldr and /running-now are. The two caveats added here are propagated
+              from hestia:577-591 and tldr:255-256, not re-derived, and each bullet now links
+              to the page that carries the full version. The visitor named exactly these three
+              (hardbound's hardware binding, hestia's gate bypass, the hub having no live
+              network) as the material that existed and was missing here. */}
           <ul className="space-y-2 text-sm text-gray-300 leading-relaxed">
             <li>
               <strong className="text-emerald-300">hestia</strong> has its core
               (vault, policy engine, witness chain, delegation, plugin SDK) and app
-              built and working.
+              built and working. Its{" "}
+              <Link href="/hestia#honest-status" className="text-emerald-300 underline hover:text-emerald-200">
+                policy gate stops accidents, not adversaries
+              </Link>
+              : it is an early prototype that a capable agent can route around today.
             </li>
             <li>
               <strong className="text-purple-300">The hub</strong> is{" "}
               <MaturityBadge tier="reference" /> MVP / pilot-ready, with hestia
-              integration working end to end.
+              integration working end to end. It is{" "}
+              <Link href="/hub#honest-status" className="text-purple-300 underline hover:text-purple-200">
+                runnable reference code a community can stand up
+              </Link>
+              , not yet a live network of real users.
             </li>
             <li>
               <strong className="text-sky-300">hardbound</strong> is a usable,
