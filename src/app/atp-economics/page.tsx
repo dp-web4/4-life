@@ -968,6 +968,39 @@ export default function ATPEconomicsPage() {
                 See the cold-start walkthrough →
               </Link>
             </p>
+            {/* Jul-31 visitor MEDIUM 3 + their Unanswered Q5: "three founders who confirm each other"
+                here vs "coalitions become unprofitable at 2-3 members" in Risk 4. Same number,
+                opposite verdicts, and the visitor could not tell which one a trio is.
+                This is a MEASUREMENT-SCOPE fix, not an answer. Four things it must not become:
+                - It must NOT claim a discriminator. Nothing here or on the sibling page separates
+                  three honest founders from a ring AT N=3: this callout's "work that others later
+                  also confirmed" is degenerate when "others" are the other two founders, and Risk 4's
+                  P = 1 - (1-p)^N presumes witnesses OUTSIDE the coalition. Naming a signal here would
+                  be inventing canon under ledger Q3, whose holding pattern is explicit.
+                - It must NOT repurpose "reciprocity density" (the line above, and why-web4 ~1671) as a
+                  collusion detector. There it is a PERMITTER, the reason three is enough. The visitor
+                  guessed it as the discriminating signal; that guess points backwards.
+                - It must NOT invert Risk 4's direction. Detection RISES and per-head spoils FALL as N
+                  grows, so 2-3 is where conspiracy stops paying, not the largest group that still pays.
+                  Keep this sentence's phrasing identical in sense to the sibling block on Risk 4.
+                - It must NOT use "cheap" for "unpoliced". On this page "cheap" means ATP cost
+                  throughout (the "Abuse is cheap" bullet in the what-web3-got-wrong list, and the
+                  "economically cheaper to participate" line), so the borrowed word from
+                  what-could-go-wrong's
+                  "cheap because" sentence would read as a price claim on the page that owns
+                  price. */}
+            <p className="text-gray-400 text-sm leading-relaxed mt-3 pt-3 border-t border-emerald-800/20">
+              <strong className="text-gray-300">Same number, different question.</strong>{" "}
+              <Link href="/what-could-go-wrong#risk-gaming" className="text-sky-400 hover:underline">
+                What could go wrong, Risk 4
+              </Link>{" "}
+              puts coalitions at unprofitable by 2-3 members; that prices the size at which a conspiracy
+              stops paying, inside a society that already has independent witnesses and history to check
+              against. The sentence above prices something else: the smallest group for which recharge
+              functions at all. Both hold, because they measure different things. Neither is a test that
+              separates three honest founders from three people confirming each other&apos;s junk on day
+              one. A brand-new society has nothing yet to check either group against.
+            </p>
           </div>
         </div>
       </section>
