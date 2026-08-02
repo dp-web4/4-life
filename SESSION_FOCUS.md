@@ -2,7 +2,73 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-08-01 (09:00 session)*
+*Last updated: 2026-08-01 (21:00 session)*
+
+## Aug-01 visitor MEDIUMs 2+5 (21:00 session) - two figures that argue against themselves
+
+Same log, same class the Honest Assessment names: *"the site argues with numbers, and the numbers
+don't hold still."* HIGHs are disposed (1+3 merged as #505, 4 open as #506, 2 is the standing
+hardbound-is-private operator call). Took the two MEDIUMs where a figure actively undercuts the
+argument it was placed to support.
+
+### MEDIUM 2: an ROI no instrument produces, in either direction
+
+`/what-could-go-wrong` risk 4 said *"Web4 simulations show that honest strategies yield ROI of ~0.93
+while Sybil strategies yield ~0.90. The margin is small."* The visitor: both are below 1.0, so it
+*"plainly reads as honest participation also loses money."*
+
+The instrument still exists and still runs. `lib/game/agent_based_attack_simulation.py` defines ROI
+as `sum(net_profit)/sum(atp_staked)` (:156, :162), prints it signed, and treats `roi < 0` as
+UNPROFITABLE (:383). **In its own units 0 is break-even, not 1.0**, so defining the ratio (the
+visitor's suggestion) would turn 0.93/0.90 into +93% and +90% returns and invert the sentence they
+support. Run this session it reports **honest -40.0%, malicious -98.4%**, honest advantage 58.4pp,
+so neither figure is reproducible and *"the margin is small"* was false of the only measured margin.
+The one other place Sybil ROI was ever measured (web4 federation stress, Feb-27) recorded **-108%**.
+Upstream `web4/SECURITY.md` discloses the gap three times (:86, :195, :226).
+
+Both figures deleted, with the adjective leaning on them. **The sim's magnitudes were deliberately
+NOT imported**: -98.4% is a stronger reassurance than the number it replaces, and the same run has
+honest agents at -40%, which makes the visitor's complaint *true*. So the replacement concedes it
+(*"an agent whose stake is large against its earnings can finish down either way"*) rather than
+denying it, keeps only the arithmetic that is checkable (30 circular transfers of 100 ATP shed ~150
+in fees), cites the upstream gap, and closes on *"farming is a worse deal than working," not "the
+economics have been proven safe."* It does not reach for general deterrence, because #504 lands a
+block in the same card whose finding is that `P = 1 - (1-p)^N` presumes witnesses outside the coalition.
+
+**Second defect closed in the same box, not in the visitor log**: the line said circular transfers
+*"destroy ~150 ATP"*, a burn-model residual the #464 sweep missed. Canon is that the 5% routes to a
+community redistribution pool and is not destroyed.
+
+**Still open, deliberately**: `atp-economics` keeps bare burn language at `:1954` (*"5% burned per
+transfer"*, comparison table) and `:1986` (heading *"Why does every ATP transfer destroy 5%?"*).
+Those are locally reconciled two lines later at the `#atp-burn-fee` anchor, which SESSION_FOCUS has
+recorded since #464 as a kept term of art. Different shape from a bare "destroy" inside a mitigation
+argument, so out of scope here; noted so a later session does not read this as swept.
+
+### MEDIUM 5: `/coherence-index` told readers the demo would not catch them
+
+The FAQ closed with *"real life changes affect one or two dimensions at a time. An attacker taking
+over your account affects all four at once."* The visitor caught it against the collapsed math box.
+It is worse than that: **all four presets in `#try-it` degrade exactly one dimension** (spatial 0.3 /
+capability 0.4 / temporal 0.5 / relational 0.6), the panel intro says *"even one compromised dimension
+tanks your effective trust"*, and the geometric mean at :1090 exists so one dropped dimension cannot
+be averaged away. If the sentence were true the geometric mean would be pointless. The other half
+fails against the page's headline takeover example: **Maria's stolen phone fails two dimensions of
+four**, spatial and capability explicitly OK, same device and same city.
+
+Fix direction is the prose, not the widget. The visitor suggested making the worked example an
+all-four attack, which would destroy the page's argument. The FAQ already **opens** with the right
+criterion (*"human speed or impossible speed"*) and then contradicts its own opening four paragraphs
+later, so the repair is to carry the opener down: the signal is plausibility and speed, not dimension
+count; a single dropped dimension is exactly what CI notices; what a genuine transition gets is a
+recoverable dip. Their second suggestion (a legitimate one-axis case that stays acceptable) had
+already shipped as the Alice 0.5 -> 0.78 step-by-step, but inside a collapsed `<details>` two
+sections up, so it is now pulled inline into the FAQ. The alive/dead threshold is not restated in
+either polarity (standing 0.5-endpoint escalation).
+
+**Deferred from this log**: MEDIUM 1 (`/first-contact` "Above 0.50") is the standing endpoint
+escalation. MEDIUMs 3 (`/onramp` reader-keyed routing), 4 (`/tldr` promises seams `/onramp` lacks),
+6 (`/learn` weaker than the `/tldr` section that links it) are untaken and free. All five LOWs free.
 
 ## Aug-01 visitor HIGHs 1+3 (09:00 session) - one price for one thing, and a rate that never existed
 
