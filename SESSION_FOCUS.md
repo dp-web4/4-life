@@ -2,7 +2,143 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-08-04 (21:00 session)*
+## Aug-01 visitor Unanswered Q8 (Aug-05 03:00 session) - the badge that said Running on a path nobody has driven
+
+*Last updated: 2026-08-05 (03:00 session)*
+
+**The Aug-01 friction table is exhausted.** HIGHs 1+3 = #505, 4 = #506, 2 = settled hardbound
+operator call; MEDIUMs 2+5 = #507, 3+4 = #508, 6 = #509, 1 = standing 0.5-endpoint escalation;
+LOWs = #511 plus three parked rows (glossary acronym box, narrowed Aug-02 and not to be
+re-litigated on the visitor's framing; `/value-tensor` collusion = ledger **Q3**, gate ARMED not
+fired; the offsite GitHub repo description). So this session went to the **Unanswered Questions**,
+per [[pessimistic-absolute-nobody-catches]].
+
+**Cron note**: still no visitor log for Aug-02, 03, 04 or 05. Root cause is now known and is not
+ours: `/tmp/visitor-cron.log` shows the Aug-02 05:00 run died on *"You've hit your weekly limit,
+resets Aug 3, 11pm"* and the file has not been appended to since. Separately, the Aug-01 run's
+`git push` to `main` was **rejected non-fast-forward**, so the Jul-30, Jul-31 and Aug-01 browse
+logs existed only in the shared checkout's local `main`. All three are cherry-picked into this
+PR so the feedback record reaches `origin/main`. Check with `git log --all -- visitor/logs/`,
+never `ls`.
+
+### Unanswered Q8: "If nothing has a live network, who am I being witnessed by?"
+
+Their full question: *"Hestia runs locally, the hub is pilot-ready with no users, hardbound is
+unreachable. Witnessing needs other participants, and I couldn't work out where they'd come from
+on day one of a real deployment."* This is the **Jul-29 recurrence**: the same visitor asked it
+then and it was answered at `/hestia` for the **solo** case. Per
+[[visitor-read-it-and-still-filed-it]] the residual is a missing clause, not a restructure, and
+the two questions side by side name it: Jul-29's answer covers solo capability, Aug-01 asks about
+**day one of a multi-party deployment**.
+
+**The surface that owns the question was answering it with a retired artifact.**
+`/lct-explainer`'s `#witness-infrastructure` block (heading: "Who runs witness infrastructure?",
+linked from `#first-device-bootstrap` as *"the network-side answer"*) said: **"In the current
+prototype, both are simulated."** Two defects in one clause. The referent was the game/simulation
+archived on `archive/v1-2026-07` in the Jul-15 rebuild. And it was **wrong in the honest
+direction**, which is the rarer bug: neither kind of witnessing is simulated, and the two are not
+at the same stage, so collapsing them into one word destroyed the only distinction that answers
+the question.
+
+### The root cause, found downstream: a status table moved and one badge did not
+
+`src/components/InProduction.tsx` had `"constellation": { tier: "running" }`, and
+`MaturityBadge` defines `running` as **"deployed and operational today"**. The component's own
+header rule is *"only claim running for what hestia's public README lists as built+working"*.
+That source **moved**: hestia's `docs/STATUS_AUDIT_2026-08-01.md` replaced the two-state table
+(`README.md:192`, Constellation = Working) with **three** states, on the finding that one
+"Working" column cannot distinguish *"exercised daily, with chain entries behind it"* from
+*"code and tests exist, nobody has driven the path"*. Device constellation is the second: 1,183
+lines, 21 unit tests, wired into the hub handshake, and **zero constellation events in the live
+chain window**. Policy review added that the entry has sat at `running` since the component's
+**original commit** and was never revisited, including by the #431 tier-honesty pass. It was an
+unreviewed default, not a judgment anyone made against evidence.
+
+**All 12 `CONCEPTS` entries were checked against the audit. Exactly one disagreed**, and it was
+the one about device witnessing. Five entries (`witness-chain`, `delegation`, `policy`, `society`,
+`sealed-channel`) render on no page at all and are dead; `sealed-channel` is already correctly at
+`reference`.
+
+**So the missing clause for Q8 was never more explanation of witnessing.** It is that the kind
+that needs **nobody else** is running (your own hash-linked witness chain, recording the acts an
+agent takes under your policy gate), while the kind that needs a **second device or other people**
+is **built and never driven**. Every surface touched had blurred exactly that split.
+
+### What shipped (0 new files, 0 new pages, 0 new badge tiers)
+
+- **`InProduction.tsx`**: constellation `running` -> `reference`, line rewritten. Header comment
+  now records that its stated source was superseded and names the audit, so the next editor who
+  reads `README.md:192` and finds "Working" knows why the tier disagrees. Separately `lct`'s
+  *"on its own hardware"* -> *"on its own machine"* (**tier unchanged**, this is disambiguation
+  not demotion): that banner renders on exactly one page, `/lct-explainer`, which says ~1,850
+  lines below it that hardware binding is trait contracts only.
+- **`/identity-constellation`**: had **zero** maturity markers of any kind while being where the
+  answer routes readers. Now opens with the two-kinds split and links `/hestia#solo-witnessing`.
+- **`/lct-explainer`**: the two-tier truth replaces the "simulated" clause; the witness-node
+  economy is marked design rather than observation (it described an economy in flat present tense
+  with no marker at all); the paired **June-14 guard** is rewritten to record the reversal,
+  because its last line explicitly said it *"Mirrors the prototype/simulated register"* just
+  retired, and leaving it would have had the page call witnessing simulation in one paragraph and
+  running daily ~160 lines later; the stale "current prototype" referent at the UX caveat is
+  re-pointed at the artifact that actually carries the stub.
+- **`/hestia`**: *"proves its device constellation"* -> carries a proof, plus the built-not-driven
+  clause; **step 6 of "A day with Hestia"** scoped, because `/running-now` routes readers straight
+  there calling it "an ordinary Tuesday"; the list lede "All of this runs today" narrowed to name
+  the exception. New **`id="solo-witnessing"`**: that paragraph had none and `#honest-status` is
+  the section *below* it, so an inbound link would have landed past the answer.
+- **`/web4-explainer`**: *"multi-device proof becomes your MFA, **today**"* was the strongest
+  constellation over-claim on the site. Also re-points the stale simulations referent, but **not**
+  to "the site has no simulations", which policy review caught as **false**: `/first-contact`,
+  `/atp-economics` and `/coherence-index` all still ship simulator widgets. The true, narrower
+  claim is that those model trust and ATP dynamics, not hardware presence.
+- **`/why-web4:697`** and **`/glossary:663`**: taken in a second pass under a deliberately narrow
+  test (below).
+- **`opengraph-image`**: the social card still sold *"Interactive simulations of trust-native
+  digital societies"* for a site that has been a pure explainer since Jul-15.
+
+### Two rules worth keeping
+
+**1. What licenses a second pass.** The seams sweep found `/why-web4:697` ("Multi-device
+constellation enrollment **working**") and `/glossary:663` (constellation listed as a peer of six
+daily-exercised capabilities inside a section headed "Running Now - Deployed Tools"). The test
+that admitted them, and admits nothing else, is **contradiction created by this session's own
+edits, not topical relevance**. Before the badge moved, all three surfaces agreed by over-claiming
+together; the demotion is what put these two out of step. A fix that manufactures a contradiction
+and then declines to resolve it is incomplete, not conservative. That test correctly *excludes*
+the opengraph line (nothing this session did made it contradictory) and the hardware-REQUIRED
+seam. Evidence `/glossary` was an outlier: the site's four other hestia capability enumerations
+(`page.tsx:43`, `onramp:388`, `running-now:240`, `hestia:558`) all omit constellation.
+
+**2. A three-pass sweep, because the noun alone misses things.** Both second-pass finds escaped a
+noun grep for different reasons, and both failure modes generalize:
+- **The noun, untruncated and unfiltered.** A `grep -v` on `href` hid `/why-web4`, because in JSX
+  a prose maturity claim can contain an inline link, and **citing the status ledger correlates
+  positively with being a maturity claim**. A `head -30` on a 96-line result hid the other.
+- **The periphrasis**, since the claim can be made without the noun ("link your devices",
+  "multi-device proof", "your devices witness each other", "your MFA").
+- **Containers that assert status for their members.** `/glossary:663` makes **no status claim of
+  its own**; membership in a section headed "Running Now - Deployed Tools" *is* the assertion. No
+  status-word grep in either direction finds it. Grep the section comments and read what is inside.
+
+**Phrase normalization.** The load-bearing clause had already drifted into two variants across six
+surfaces before anything shipped ("driven on" vs "run against"). All six now carry **"has not yet
+been driven on a real second device"** byte-identical, verified in the rendered HTML, with a
+cross-reference note in each guard. This is [[sibling-page-cross-reference-gap]] foreclosed before
+it could open.
+
+**Not touched, deliberately**: `MaturityBadge.tsx` (rewriting a tier title is the act #511
+declined); the collusion sentence at `lct-explainer:697-700` (ledger **Q3**, gate ARMED not
+fired, and once the paragraph above it reads as forward-looking that sentence correctly reads as a
+design property); any trust number, ceiling, or badge tier definition; the hardware-REQUIRED seam;
+"every action" was **not** reintroduced anywhere, per the guard at `hestia:117-121`. The canonical
+no-public-network sentence is reused byte-identical, verified in rendered HTML on all three pages
+that now carry it.
+
+**Retest gate (next browse)**: does a reader who asks "who is witnessing me?" now get the
+running/built split at the point of asking, rather than a badge that says Running? If Q8 recurs a
+**third** time after this, the residual is neither the badge nor the split: escalate as the
+question of whether the site should say anything about multi-party day one at all before a hub is
+actually up.
 
 ## Aug-01 visitor LOWs (Aug-04 21:00 session) - the badge that claimed adoption, and the haircut nobody upstream agrees on
 
