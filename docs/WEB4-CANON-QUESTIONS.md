@@ -458,12 +458,46 @@ two HIGHs and three Unanswered Questions in a single sitting.
   3. Is the 0.50 software-only ceiling a spec number or a 4-life teaching calibration? The site
      treats its ceiling table as its own calibration while upstream numbers are unsettled, so a
      ruling that only moves the ceiling may be a 4-life-side fix rather than a spec change.
-- **Holding pattern**: this entry proposes **no further site edits**. The two `/why-web4` FAQs stay
-  unmerged, `/what-could-go-wrong` risk 8 stays at "lower ceiling", `/lct-explainer`
-  `#software-only-survival` stays strictly-below, and `/hestia` gets a **link** to that callout and
-  nothing more (routing asserts neither side). The cost of the holding pattern, recorded: the
-  site's friendliest and only running entry point drops readers into its most constrained tier,
-  and the site cannot tell them what that costs without answering Q1.
+- **RULING 1 ANSWERED UPSTREAM, 2026-08-05.** Software-only anchoring **is conformant**, and canon
+  is stronger than "tolerated": it **forbids** protocol-level exclusion of the tier.
+  - `web4-standard/core-spec/LCT-linked-context-token.md:39` (§1.2 clause 1): an entity that can
+    present only weak evidence *"MUST NOT be excluded by the protocol"*, it is *"rightly weighed as
+    riskier"*. `web4-core/src/ratchet.rs:144` mirrors it: *"risk, not exclusion."*
+  - `multi-device-lct-binding.md:9` names *"software-only fallbacks"* among the anchor classes the
+    protocol exists to support; `:145` defines `anchor_type: "software"` as a first-class anchor
+    record (*"Ubiquity: Universal"*, *"Recommended Role: Bootstrap, low-trust contexts only"*);
+    `:154` gives it a computed ceiling, which is only meaningful for a tier that exists.
+  - The only prohibitions are **scoped**, not existential: `:155` software cannot be the **sole**
+    anchor for a recovery quorum, and §3.4 (`:626`) excludes it from hardware-**diversity**
+    counting. Both restrict what a software anchor is counted *for*.
+  - Re-ratified twice since this entry was filed: audits **C268** (2026-07-24) *"the defect is the
+    exclusion, not the scoring"* and **C308** (2026-08-01) *"the spec side here is settled."*
+  This settles the **conformance** half only. Requests 2 and 3 remain open and still need Q1.
+- **Ruling 3 is sharpened, not resolved, and upstream is internally inconsistent.** Upstream carries
+  **three** software-only ceilings at once: `multi-device:154` **0.4**, §4.2 `:875` **0.40**, and
+  `web4-core/src/lct.rs:85-93` `impl Default for HardwareBinding` shipping `trust_ceiling: 0.85` on
+  an LCT it labels *"Software-bound keys"*, which `hub/hub-lib/src/hub.rs:168` persists in real hub
+  LCT records (**C308-N2**, MEDIUM, routed and unresolved). Two of the three are **below** the
+  site's 0.50. **This is the reason the site's 0.50 calibration must not move**: adopting 0.40 would
+  put the ceiling under the survival line and answer Q1 by arithmetic; adopting 0.85 would follow a
+  value upstream has itself flagged as a defect.
+- **Holding pattern, REVISED 2026-08-05** (was: "no further site edits"). It now binds the **equity
+  half only**. Site prose stays endpoint-silent: nothing may say a reader sitting *at* 0.50 is
+  alive, dead, safe, or has full access, and `/lct-explainer` `#software-only-survival` stays
+  strictly-below. Numbers do not move. What the revision releases: a surface asserting that secure
+  hardware is **required to participate** may now be corrected against canon, because that is
+  request 1 and request 1 is answered. Done 2026-08-05 at `/why-web4` `#faq-tpm-affordability`,
+  `#faq-many-identities`, `#faq-affordability`, `#faq-gatekeepers` and the comparison-table row,
+  which resolves the conformance half of [[hardware-required-seam]]; the equity half of that seam
+  stays open. The FAQs are still **not merged** (that is a separate curation row).
+- **Correction to the superseded holding pattern**: it said *"`/what-could-go-wrong` risk 8 stays at
+  'lower ceiling'"*. That was already stale when written into this entry. PR **#502** (Jul-31) landed
+  the entailment on risk 8 bullet (4): *"it is not a slower climb to the same place. A software-only
+  identity starts at 0.50 and 0.50 is also where it stops."* A policy-reviewed PR moved a Q8 surface
+  without touching Q1, and the ledger was not updated. Read the site, not this line, for current state.
+- The cost of the holding pattern, still recorded: the site's friendliest and only running entry
+  point drops readers into its most constrained tier, and the site cannot tell them what that costs
+  without answering Q1.
 
 ### Q11. Does MRH horizon depth apply inside a delegation pipeline?
 

@@ -2,6 +2,102 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-05 visitor, all three HIGHs (Aug-05 09:00 session) - the reassuring version kept living above the honest one
+
+*Last updated: 2026-08-05 (09:00 session)*
+
+**The cron is alive again** (it died 2026-08-02 on a weekly usage limit; no logs exist for Aug-02,
+03 or 04). Fresh log `visitor/logs/2026-08-05.md` landed 05:07 on `worker/4life-visitor-20260805`,
+not on `main`, per [[visitor-cron-commits-to-stale-branch]].
+
+The visitor's own Honest Assessment named the shape better than the friction table did:
+*"the honest version of a fact keeps living further down the path than the reassuring version."*
+All three HIGHs are instances of it, and all three were fixed by moving the sharp sentence up to
+where the soft claim is made, never by writing a new sharp sentence.
+
+### HIGH 1 was not the missing clause it was filed as
+
+They asked for "one sentence at the ceiling table" stating what a 0.50 cap costs. **That sentence
+was already directly under the grid** (`lct-explainer` *"0.5 is both where you start and the highest
+you can reach"*, then the `#software-only-survival` callout). Per
+[[visitor-read-it-and-still-filed-it]] the defect was the sentence that **disarmed** it, one line
+later: *"we treat that as a feature, not a bug."* `/what-could-go-wrong` risk 8 says of the
+identical fact that it is *"a real second-class experience baked into the architecture"* which
+*"codifies the existing digital divide into the trust layer itself"*. One page called the cap a
+feature while the site's own risk register called it contestable. Fixed by deleting the judgment
+(not inverting it) and propagating risk 8's own closing sentence verbatim, linked to
+`#risk-accessibility`. The welded eligibility half (*"lets everyone participate"*) is kept
+**byte-identical**: it is what holds this from tipping into an eligibility claim.
+
+### HIGH 2 resolved the conformance half of the [[hardware-required-seam]], from canon
+
+`/why-web4` told them twice that identity **requires** a security chip; `/lct-explainer` and
+`/onramp` treat soft LCTs as normal. That seam is a standing escalation whose holding pattern said
+"no further site edits", justified by *"answering requires asserting the Q1 endpoint"*. That is true
+of the **equity** half and not of the **conformance** half, and upstream answers the conformance
+half outright:
+
+- `LCT-linked-context-token.md:39` (§1.2 clause 1): weak evidence *"MUST NOT be excluded by the
+  protocol"*, only *"rightly weighed as riskier"*. A ban on protocol-level exclusion.
+- `multi-device-lct-binding.md:9` lists *"software-only fallbacks"* as a supported anchor class;
+  `:145` makes `anchor_type: "software"` a first-class record; `:154` gives it a computed ceiling.
+- The only prohibitions are scoped (`:155` not the **sole** recovery-quorum anchor; §3.4 excluded
+  from hardware-**diversity** counting), and audits **C268** and **C308** (2026-08-01) re-ratified
+  the clause as settled.
+
+So `/why-web4:2231` was **false against canon**, which decided a fix DIRECTION the page could not
+decide locally. Swept the CLAIM, not the sentence: `#faq-tpm-affordability` (opener + honest
+caveat), `#faq-many-identities`, `#faq-affordability` and `#faq-gatekeepers` antecedents, the
+comparison-table row, plus two off-page copies that would otherwise have contradicted the
+correction (`what-could-go-wrong` risk 4, `your-internet` spam scenario). The Sybil argument is
+relocated, never silently weakened: soft identities are cheap, what costs money is an identity
+anyone **weighs**, closed with the hedge already shipping verbatim (*"a Sybil resistance strategy,
+not a Sybil prevention guarantee"*). Ledger Q8 updated: request 1 **ANSWERED**, holding pattern
+narrowed to the equity half, and the stale line claiming risk 8 still reads "lower ceiling"
+corrected (#502 changed that on Jul-31 and nobody updated the ledger).
+
+### HIGH 3 put the scope-of-record where the Running badge is granted
+
+Landing hero: *"Web4 closes that gap."* On the one piece badged **Running**, an action that routes
+around the policy gate writes **no chain entry at all**. The site says this honestly, but only on
+`/hestia` (their page 12) and risk 9 (page 13). New `#what-the-chain-records` paragraph on
+`/running-now`, wording byte-identical to `/hestia:386`, following the `#whose-machines` precedent
+on that same page and for the same reason: this is scope of what the chain **records**, not
+immaturity of a component, so it stays **out** of the "Two things are honestly still early" count,
+which is load-bearing. **Badge tier untouched**: what runs, runs; this scopes what running means.
+
+### Guardrails honored (do not undo)
+
+- **No endpoint asserted anywhere.** Nothing says a reader at exactly 0.50 is alive, dead, safe, or
+  has full access. Ledger Q1 is untouched; `#software-only-survival` stays strictly-below.
+- **No number moved.** 0.50 stays. Upstream now carries **three** software-only ceilings at once
+  (`multi-device:154` 0.4, §4.2 0.40, and `web4-core/src/lct.rs:85-93` shipping **0.85** on an LCT
+  it labels software, persisted by a live hub daemon: C308-N2, open). Adopting 0.40 would put the
+  ceiling under the survival line and answer Q1 by arithmetic. The site's calibration must not move.
+- The two `/why-web4` affordability FAQs are **narrowed but still not merged**. Deduping is the
+  Aug-05 MEDIUM firehose row, a curation pass, not this one.
+
+### Retest gate (next browse)
+
+Does a linear reader who stops at `/why-web4` still conclude they are shut out without a chip? Does
+the `/lct-explainer` ceiling grid still read as a discount tier? Does the Running badge now carry
+what the chain records at the point it is granted?
+
+### Aug-05 deferred (not this scope)
+
+- **MEDIUM**: ATP closed-loop economics (their largest Unanswered Question, and the sharpest one
+  filed in weeks: the worked example shows 85% quality work netting **minus 8 ATP**, recharge capped
+  at spend, 5% skimmed on transfer, pool "fixed" at society formation, so the naive reading is a
+  strictly deflationary system where everyone starves). This needs a **canon call on where net-new
+  energy enters**, not a reword; it is the closest thing to a new ledger question in this browse.
+- **MEDIUM**: the three jobs of 0.50 on `/trust-tensor` (baseline / restriction line / software-only
+  ceiling) in one block. Blocked by Q1: their literal ask ("say whether sitting exactly at 0.50 is
+  above or below the line") **is** the endpoint.
+- **MEDIUM**: `/why-web4` FAQ firehose (~70 entries, 6 duplicate pairs). Long-standing design row.
+- **LOWs**: "pilot-ready" vs the Reference badge legend; the 30-second mint dead-ends with no literal
+  commands; two MRH decay rates as peers; no default T3 weighting shown (note: the default **is**
+  canon, 0.4/0.3/0.3 per t3v3-001, so that one is cheap and grounded).
+
 ## Aug-01 visitor Unanswered Q8 (Aug-05 03:00 session) - the badge that said Running on a path nobody has driven
 
 *Last updated: 2026-08-05 (03:00 session)*

@@ -94,7 +94,12 @@ const SCENARIOS: Record<string, ScenarioResult> = {
   spam: {
     frustration: 'Spam & fake accounts',
     today: 'Creating an account costs nothing. A spammer can create 10,000 accounts in an hour. Platforms play whack-a-mole with detection, but attackers just adapt.',
-    withWeb4: 'Every account requires a physical device with a security chip. Creating 10,000 fake accounts means buying 10,000 devices, at $50 to $500 each, that\'s $500K to $5M in hardware. Spam isn\'t impossible, just economically irrational.',
+    // Aug-05: fourth copy of the "requires a security chip" absolute, swept with /why-web4's four
+    // and what-could-go-wrong risk 4. Canon settled ledger Q8 request 1 (software-only anchoring is
+    // conformant), so "every account requires" is false as written. The Sybil economics are
+    // unchanged, only correctly located: cheap soft accounts exist, what costs money is an account
+    // anyone weighs. Same relocation as /why-web4 #faq-many-identities; keep them consistent.
+    withWeb4: 'A software-only account is cheap, but it never climbs past the newcomer ceiling. Every account that carries weight is bound to a physical device with a security chip, so 10,000 credible fake accounts means 10,000 devices, at $50 to $500 each, that\'s $500K to $5M in hardware. Spam isn\'t impossible, just economically irrational.',
     scenario: 'You post a question on a forum. Every reply cost its author real energy to write, no bot-generated noise. The three answers you get are from people who chose to spend their limited budget helping you.',
     mechanism: 'Hardware-bound identity (LCT) + energy costs (ATP) make spam more expensive than the return it generates.',
     learnMore: '/atp-economics',

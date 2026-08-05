@@ -1299,7 +1299,11 @@ export default function WhyWeb4Page() {
                 <strong>It&apos;s not &ldquo;better&rdquo; at everything.</strong> Every system has trade-offs:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>vs Passwords:</strong> More secure, but requires hardware. Won&apos;t work on borrowed devices.</li>
+                {/* Aug-05: third copy of the "requires hardware" absolute narrowed with
+                    #faq-tpm-affordability and #faq-many-identities. Swept the CLAIM, not the
+                    sentence ([[sweep-the-claim-not-the-sentence]]): a trade-off row is exactly where
+                    a skim-reader re-forms the belief the FAQs above just corrected. */}
+                <li><strong>vs Passwords:</strong> More secure, but the higher trust tiers need hardware. Won&apos;t work on borrowed devices.</li>
                 <li><strong>vs OAuth (Google login):</strong> No central point of control, but more complex to implement.</li>
                 <li><strong>vs Blockchain wallets:</strong> Harder to create fake IDs, but not as portable across chains.</li>
                 <li><strong>vs Biometrics:</strong> Can&apos;t be stolen by breach, but requires specific device support.</li>
@@ -1397,8 +1401,15 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>This is a real equity concern, not a dismissed one.</strong> If participation requires a TPM
-                or Secure Enclave, then cost becomes a barrier. Several factors work in favor of accessibility:
+                {/* Aug-05: antecedent corrected in step with #faq-tpm-affordability. The conditional
+                    used to be "if participation requires a TPM", which after that FAQ stopped
+                    asserting it would have read as a hypothesis this page still leaves open. The
+                    true antecedent is the ceiling, and the answers below are unchanged because they
+                    were always about reaching the hardware tiers. FAQs deliberately NOT merged: the
+                    duplication is the Aug-05 MEDIUM firehose row, a curation pass, not this one. */}
+                <strong>This is a real equity concern, not a dismissed one.</strong> If reaching the higher trust
+                tiers requires a TPM or Secure Enclave, then cost becomes a barrier. Several factors work in
+                favor of accessibility:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
                 <li><strong>Hardware is already widespread:</strong> Most phones sold since ~2018 include security chips (Secure Enclave, Titan, TPM). Even budget Android devices increasingly ship with hardware-backed keystores. The threshold is a $50 phone, not a $1000 one.</li>
@@ -1601,10 +1612,21 @@ export default function WhyWeb4Page() {
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
+              {/* Aug-05 visitor HIGH #2, second of the two "requires" absolutes they read on this
+                  page ("this page told me twice, in plain words"). Same canon grounding as
+                  #faq-tpm-affordability above. The Sybil argument is NOT weakened silently: soft
+                  identities are cheap, so the scarcity claim is relocated to where it actually holds,
+                  which is TRUSTED identity, and the residual is closed with the hedge already
+                  shipping verbatim at lct-explainer:2365 and what-could-go-wrong:750 rather than a
+                  new formulation. */}
               <p>
-                Yes, but it&apos;s <strong>expensive</strong>. Creating one LCT (Linked Context Token - Web4&apos;s hardware-bound identity) requires a physical device
-                with a security chip (TPM or Secure Enclave - built into most modern phones and laptops). Creating 1000 fake identities means buying 1000 devices - 
-                thousands of dollars and physical logistics.
+                Yes, and the honest answer has two halves. Software-only identities are cheap, so nothing stops
+                someone minting a thousand of them. What they cannot cheaply mint is a thousand <em>trusted</em>{' '}
+                ones: every identity that climbs above the software-only ceiling is bound to a physical device
+                with a security chip (TPM or Secure Enclave, built into most modern phones and laptops), so a
+                thousand credible identities means a thousand devices, thousands of dollars and physical
+                logistics. This is a Sybil <em>resistance</em> strategy, not a Sybil <em>prevention</em>{' '}
+                guarantee.
               </p>
               <p>
                 Compare to email: creating 1000 accounts costs nothing. The goal isn&apos;t to make
@@ -1700,8 +1722,12 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                This is a real concern. If identity requires a TPM or Secure Enclave, then hardware
-                manufacturers have power over who can participate. Web4 mitigates this in several ways:
+                {/* Aug-05: same antecedent correction as #faq-affordability. The gatekeeper risk is
+                    real and is NOT softened, it is just correctly scoped: vendors gate the ceiling,
+                    which is where the leverage actually sits, not the door. */}
+                This is a real concern. If every identity that carries weight needs a TPM or Secure Enclave,
+                then hardware manufacturers have power over whose reputation can grow. Web4 mitigates this in
+                several ways:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
                 <li><strong>Multiple standards supported:</strong> TPM (Intel/AMD), Secure Enclave (Apple), Titan (Google), and future open-source hardware. No single vendor lock-in.</li>
@@ -2227,10 +2253,55 @@ export default function WhyWeb4Page() {
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
+              {/* Aug-05 visitor HIGH #2, and the resolution of the conformance half of the
+                  [[hardware-required-seam]]. This paragraph used to open "Web4 identity requires
+                  hardware with secure elements (TPM, Secure Enclave, or FIDO2)". The visitor read
+                  "requires", concluded "no chip, no Web4", and felt shut out; they then found soft
+                  LCTs treated as normal on /lct-explainer and /onramp and could not tell which to
+                  believe. The absolute is false against upstream canon, which settles the direction
+                  this page could not settle locally:
+                  - web4-standard/core-spec/LCT-linked-context-token.md:39 (§1.2 clause 1): an entity
+                    presenting only weak evidence "MUST NOT be excluded by the protocol", it is
+                    "rightly weighed as riskier". A ban on protocol-level exclusion, not a threshold.
+                  - web4-standard/core-spec/multi-device-lct-binding.md:9 names "software-only
+                    fallbacks" as a supported anchor class; :145 defines anchor_type "software" as a
+                    first-class anchor record ("Ubiquity: Universal", "Recommended Role: Bootstrap");
+                    :154 gives it a computed ceiling, which is only meaningful for a tier that exists.
+                  - The only real prohibitions are scoped: :155 software cannot be the SOLE anchor for
+                    a recovery quorum, and §3.4 (:626) excludes it from hardware-DIVERSITY counting.
+                    Restrictions on what a software anchor is counted FOR, not on whether it may exist.
+                  - Re-ratified twice since: audits C268 (2026-07-24) "the defect is the exclusion, not
+                    the scoring" and C308 (2026-08-01) "the spec side here is settled".
+                  This resolves ledger Q8 ruling-request 1 (conformance). It does NOT touch request 2
+                  (the equity half), which still needs Q1's endpoint, so nothing here says whether a
+                  reader sitting at 0.50 is alive, safe, or has full access. The non-asserting welcome
+                  is the formula already shipping at lct-explainer:1247-1250 ("what changes is the
+                  terms of your participation"); do not "simplify" it to "fully participate", which is
+                  what #497 had to delete. Numbers unchanged: upstream caps software-only at 0.4 and
+                  its own Rust default ships 0.85 (C308-N2, open), so the site keeps its 0.50
+                  calibration. */}
               <p>
-                This is a genuine equity concern. Web4 identity requires hardware with secure elements
-                (TPM, Secure Enclave, or FIDO2). Today, most smartphones sold since ~2018 include these
-                chips, including budget Android devices. But &ldquo;most&rdquo; isn&apos;t &ldquo;all.&rdquo;
+                This is a genuine equity concern, and it is a narrower one than &ldquo;you are shut out.&rdquo;
+                Web4 identity does not require a security chip. Anchoring an identity in software alone is a
+                supported starting point, and the standard is explicit that an entity able to offer only weak
+                evidence must not be excluded by the protocol, only weighed as riskier. What hardware buys is
+                <strong> ceiling</strong>, not entry: software-only tops out at <span className="font-mono">0.50</span>,
+                against <span className="font-mono">0.75</span> (FIDO2), <span className="font-mono">0.85</span>{' '}
+                (Secure Enclave) and <span className="font-mono">0.90</span> (TPM). So what changes without a chip
+                is the <em>terms</em> of your participation.
+              </p>
+              <p>
+                Those terms are not a rounding error, and this page will not pretend otherwise:{' '}
+                <Link href="/lct-explainer#software-only-survival" className="text-sky-400 hover:underline">
+                  what a 0.50 ceiling actually costs you
+                </Link>{' '}
+                is zero margin above the line and a reputation that cannot climb, and{' '}
+                <Link href="/what-could-go-wrong#risk-accessibility" className="text-sky-400 hover:underline">
+                  the site&apos;s own risk register
+                </Link>{' '}
+                calls that a second-class experience baked into the architecture. Today most smartphones sold
+                since ~2018 include security chips, including budget Android devices, but &ldquo;most&rdquo;
+                isn&apos;t &ldquo;all.&rdquo;
               </p>
               <p>
                 The 5-tier adoption model helps: at the <strong>Wrapper</strong> and <strong>Observable</strong> tiers,
@@ -2238,10 +2309,18 @@ export default function WhyWeb4Page() {
                 only applies at higher tiers. This creates a gradual on-ramp rather than an all-or-nothing gate.
               </p>
               <p className="text-amber-400/80 text-xs">
-                <strong>Honest caveat:</strong> Any system that makes identity expensive to create will disadvantage
-                those with fewer resources. Web4 makes Sybil attacks expensive; the tradeoff is that legitimate
-                participation also requires hardware investment. Whether this tradeoff is net-positive depends on
-                how affordable secure hardware becomes - a trend Web4 can influence but doesn&apos;t control.
+                {/* Aug-05: narrowed with the opening paragraph above, not separately. This used to
+                    say "legitimate participation also requires hardware investment", which would have
+                    re-asserted inside the same <details> the requirement the first paragraph just
+                    retired ([[second-pass-licensed-by-self-created-contradiction]]). The equity
+                    concern is NOT softened: it moves from entry to ceiling, which is where the site's
+                    risk register already puts it. */}
+                <strong>Honest caveat:</strong> Any system that makes <em>trusted</em> identity expensive to
+                build will disadvantage those with fewer resources. Web4 makes Sybil attacks expensive; the
+                tradeoff is that climbing past the software-only ceiling requires hardware investment, so the
+                people with the least hardware are the people whose reputation cannot grow. Whether this
+                tradeoff is net-positive depends on how affordable secure hardware becomes - a trend Web4 can
+                influence but doesn&apos;t control.
               </p>
             </div>
           </details>
