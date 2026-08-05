@@ -3,6 +3,20 @@
 // never the private fleet), so a page just places <InProduction concept="witness-chain" />
 // with zero free-form per-page text. Tier honesty: only claim "running" for what hestia's
 // public README lists as built+working; the hub is "reference"; federation is spec-only.
+//
+// SOURCING NOTE (Aug-05, from the Aug-01 visitor's Unanswered Q8). That rule above names a
+// source, and the source MOVED. hestia/README.md used to carry a two-state status table
+// (Working / not) whose L192 listed "Constellation: Working". hestia's 2026-08-01
+// documentation audit (hestia/docs/STATUS_AUDIT_2026-08-01.md) replaced it with THREE
+// states, on the finding that one "Working" column cannot distinguish "exercised daily,
+// with chain entries behind it" from "code and tests exist, nobody has driven the path".
+// Device constellation moved to the second of those: 1,183 lines, 21 unit tests, wired
+// into the hub handshake, and ZERO constellation events in the live chain window (never
+// driven on a real second device). So `constellation` came off the built+working list this
+// component keys on, and its tier moved running -> reference to match. If you go read
+// README.md:192 and find "Working", you are reading the superseded table; the three-tier
+// audit is the current source. Do NOT import the audit's internal tier words
+// ("Measured"/"Plumbed") into visitor-facing copy - translate them, as the line below does.
 
 import Link from "next/link";
 import MaturityBadge, { MaturityTier } from "./MaturityBadge";
@@ -37,8 +51,15 @@ function glossLine(line: string): React.ReactNode[] {
 
 const CONCEPTS: Record<string, Entry> = {
   "lct": {
+    // Aug-05: "on its own hardware" -> "on its own machine". Tier is UNCHANGED and correct;
+    // this is a disambiguation, not a demotion. This banner renders on exactly one page,
+    // /lct-explainer, whose entire subject is hardware binding, and that page now says ~1,850
+    // lines below the banner that hardware binding is trait contracts only and the interfaces
+    // are stubs. "On its own hardware" there invites the TPM reading and fights that line.
+    // The local-first reading was what was meant and is plainly true; "machine" says it and
+    // matches /running-now:422 ("an identity created on your machine").
     tier: "running",
-    line: "hestia gives any entity a real cryptographic LCT identity on its own hardware - this isn't only a diagram.",
+    line: "hestia gives any entity a real cryptographic LCT identity on its own machine - this isn't only a diagram.",
   },
   "trust-tensor": {
     tier: "running",
@@ -53,8 +74,8 @@ const CONCEPTS: Record<string, Entry> = {
     line: "hestia grants scoped, signed, revocable authority between entities for real, today.",
   },
   "constellation": {
-    tier: "running",
-    line: "hestia links your devices into a verifying constellation - multi-device proof as MFA - in shipping code.",
+    tier: "reference",
+    line: "hestia ships the constellation code - linking devices into a verifying set, wired into the hub handshake - but the multi-device path has not yet been driven on a real second device.",
   },
   "policy": {
     tier: "running",

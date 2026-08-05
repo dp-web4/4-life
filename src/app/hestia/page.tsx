@@ -275,6 +275,17 @@ export default function HestiaPage() {
               </Link>
               , so proving it is really you takes more than one device. That multi-device
               proof is your MFA, held by you, not a login screen on someone&apos;s server.
+              {/* Aug-05, Aug-01 visitor Unanswered Q8. This is the one step of an "ordinary
+                  Tuesday" that is not an ordinary Tuesday: hestia's 2026-08-01 status audit
+                  puts the constellation path at built, wired into the hub handshake, 21 unit
+                  tests, and zero constellation events in the live chain window (never driven
+                  on a real second device). /running-now routes readers straight here calling
+                  this walkthrough an ordinary Tuesday, so leaving it unscoped asserts what
+                  the /identity-constellation badge now denies. Scoped in place rather than
+                  cut: the step is real shipped code and belongs in the walkthrough. */}
+              {" "}This step is the one part of the day that is shipped code rather than daily
+              practice: the constellation is wired into the hub handshake, but the path has not
+              yet been driven on a real second device.
               When you want company, <code className="text-emerald-300">hestia connect-hub &lt;url&gt;</code>{" "}
               carries this same presence into a shared{" "}
               <Link href="/hub" className="text-emerald-400 underline hover:text-emerald-300">
@@ -285,7 +296,8 @@ export default function HestiaPage() {
           </li>
         </ol>
         <p className="text-sm text-gray-500 leading-relaxed mt-5 border-l-2 border-emerald-800/60 pl-4">
-          All of this runs today at version 0.0.3 (Phase 2). One honest caveat: the
+          All of this is shipped code at version 0.0.3 (Phase 2), and all of it but the
+          constellation step in 6 is in day-to-day use. One honest caveat: the
           identity in this walkthrough is a software LCT held on your machine. Binding
           it to a physical security chip is the job of{" "}
           <Link href="/hardbound" className="text-emerald-400 underline hover:text-emerald-300">
@@ -515,8 +527,13 @@ export default function HestiaPage() {
               under your delegation". The universal is falsified by the completeness limit now
               shipping in the "Why local-first matters" section above (see the long guard there).
               Narrowed to the governed act. The block's own job is unchanged: it still shows that
-              solo witnessing OPERATES, which is what Q8 asked for. Do not restore "every". */}
-          <p className="text-sm text-gray-300 leading-relaxed mt-3">
+              solo witnessing OPERATES, which is what Q8 asked for. Do not restore "every".
+              Aug-05: the Aug-01 visitor asked Q8 again, about a MULTI-PARTY day one rather than
+              the solo case this block answers, so /identity-constellation now points here for the
+              solo half. This paragraph had no id and #honest-status (the nearest one) is the
+              section BELOW it, so an inbound link landed past the answer. Added id="solo-witnessing".
+              Keep it in sync with that inbound link. */}
+          <p id="solo-witnessing" className="text-sm text-gray-300 leading-relaxed mt-3 scroll-mt-20">
             <strong className="text-gray-200">Solo is not the mechanism switched off.</strong>{" "}
             The &ldquo;no public network&rdquo; caveat above is about reach, not capability. Web4
             trust comes from being witnessed, and a
@@ -554,15 +571,27 @@ export default function HestiaPage() {
               member-to-member channels, Constellation: all Working). Deliberately claims exercised
               capability and NOT deployment: /running-now says "No production deployment yet" and the
               hub is pilot-ready rather than deployed. Do not upgrade this to "deployed" or "a hub is
-              up". The reach caveat stays where it is, verbatim, in the connect-hub box above. */}
+              up". The reach caveat stays where it is, verbatim, in the connect-hub box above.
+              Aug-05: the README status table this paragraph tracks (Constellation: Working) was
+              SUPERSEDED by hestia/docs/STATUS_AUDIT_2026-08-01.md, which splits "Working" into
+              three states and moves the constellation to built-but-never-driven (zero
+              constellation events in the live chain window). "proves its device constellation"
+              became "carries a device constellation proof" plus the exercised-only-in-tests
+              clause, so this page stops being the optimistic sibling of the /identity-constellation
+              badge (running -> reference, same session). The OTHER four items in the list are
+              unaffected: the audit marks them measured. If you re-check README.md:192 and find
+              "Working", you are reading the superseded table. */}
           <p className="text-sm text-gray-300 leading-relaxed mb-3">
             Hestia is <MaturityBadge tier="running" /> in active development, at{" "}
             <strong>Phase 2 (connected presence)</strong>. The core (vault, policy
             engine, witness chain, delegation, plugin SDK) and the cross-platform app
             are built and working, and hub integration works end to end: a hestia joins
-            a hub, opens an encrypted member-to-hub channel, proves its device
-            constellation in the handshake, and exchanges sealed member-to-member
-            messages that the hub relays without being able to read them.
+            a hub, opens an encrypted member-to-hub channel, carries a device
+            constellation proof in the handshake, and exchanges sealed member-to-member
+            messages that the hub relays without being able to read them. The
+            constellation is the one item in that list that has been exercised only in
+            tests: the code ships and the handshake carries it, but it has not yet run
+            against a real second device.
           </p>
           <p className="text-sm text-gray-300 leading-relaxed mb-3">
             What ships today at <strong>version 0.0.3</strong>: an MCP server (8
