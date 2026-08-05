@@ -77,7 +77,7 @@ export default async function Image() {
             fontSize: 16,
           }}
         >
-          Interactive simulations of trust-native digital societies
+          The educational onramp to trust-native digital societies
         </div>
       </div>
     ),

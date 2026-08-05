@@ -182,13 +182,32 @@ export default function Web4ExplainerPage() {
           across reboots and software upgrades, the root LCT presents a stable,
           attestable presence whose MRH and T3/V3 can evolve over time.
         </p>
+        {/* Aug-05, Aug-01 visitor Unanswered Q8. Two corrections, both about maturity register.
+            (1) "This site's simulations still model hardware presence with stubbed signatures"
+            had a stale REFERENT. Careful: the tempting rewrite ("the site has no simulations")
+            is FALSE and was caught in policy review - /first-contact, /atp-economics and
+            /coherence-index all still ship simulator widgets. What is true is narrower: those
+            surviving widgets model trust and ATP dynamics, not hardware presence. The thing that
+            modelled hardware presence with stubbed signatures was the society sim retired on
+            Jul-15, and the current owner of that stub is the reference implementation
+            (hestia/README.md:169, hardware binding = trait contracts only).
+            (2) "ships a device constellation ... so multi-device proof becomes your MFA, today"
+            was the strongest constellation over-claim on the site. hestia's 2026-08-01 status
+            audit puts that path at built, wired into the hub handshake, 21 unit tests, and zero
+            constellation events in the live chain window. "today" is exactly the word it cannot
+            carry. Same session demoted the /identity-constellation banner running -> reference;
+            leaving "today" here would have put Reference in a badge and "today" in prose.
+            What is deliberately KEPT: "the idea has left the whiteboard" and the typed-primitive
+            claim, both still true and both the point of the paragraph. */}
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
-          This site&apos;s <em>simulations</em> still model hardware presence with
-          stubbed signatures - but the idea has left the whiteboard. Attestation is
-          now a typed primitive in the reference library, and the deployed trust
-          layer (<a href="https://github.com/dp-web4/hestia" target="_blank" rel="noreferrer" style={{ color: "#34d399" }}>hestia</a>)
-          ships a <strong>device constellation</strong>: link your devices into a
-          verifying set so multi-device proof becomes your MFA, today. Full
+          Hardware presence is still stubbed in the code you can run: the trust layer
+          (<a href="https://github.com/dp-web4/hestia" target="_blank" rel="noreferrer" style={{ color: "#34d399" }}>hestia</a>)
+          carries hardware binding as trait contracts only for now. But the idea has left the
+          whiteboard. Attestation is now a typed primitive in the reference library, and hestia
+          ships the <strong>device constellation</strong> code: link your devices into a
+          verifying set so multi-device proof becomes your MFA. That path is built rather than
+          exercised, though: the code ships and the hub handshake carries it, but it has not yet
+          been driven on a real second device. Full
           TPM / secure-enclave root binding is the next rung on the ladder. Even
           then, Web4 treats hardware binding as one factor among many: witnessed
           events, pairing structures, and ATP-priced attestations together form a

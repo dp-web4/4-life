@@ -517,12 +517,25 @@ export default function LCTExplainerPage() {
                 most deployed-sounding claim on a page they visited, and it sat with no scope caveat, so a
                 reader couldn't tell what's built vs simulated. Resolve at the read point with a SCOPE
                 distinction (not a blanket "it's all simulation" disclaimer, which would be false - the
-                binding really is hardware-tested). Mirrors the prototype/simulated register at L584+. */}
+                binding really is hardware-tested).
+                REVERSAL, Aug-05 (Aug-01 visitor Unanswered Q8). The last line of this guard used to
+                read "Mirrors the prototype/simulated register at L584+", pairing this paragraph with
+                the #witness-infrastructure block below. That register is GONE: the block said "In the
+                current prototype, both are simulated", which named the retired Jul-15 simulation as the
+                current state and was also false in the honest direction (hestia's 2026-08-01 status
+                audit has the witness chain exercised daily). So the word "simulation" was retired
+                HERE too, or this page would have said witnessing is simulation in one paragraph and
+                running daily ~160 lines later. What survives unchanged is the thing the June-14 fix
+                was actually for: the SCOPE distinction between the proven hardware layer and the
+                unproven everything-above. Only the maturity word moved, from "simulation" to the
+                narrower and true "not a deployed network", which is also what the /why-web4 anchor
+                this links to actually says. Do not reintroduce a blanket simulation disclaimer on
+                this page; both halves of that framing are now false in different directions. */}
             <p className="text-xs text-gray-500 mt-1">
               To be precise about what that proves: the <em className="text-gray-400">hardware layer</em> - the
               chip-level identity binding - really is tested on silicon. The trust, witness, and economic
-              dynamics built on top of it are still{" "}
-              <Link href="/why-web4#faq-deployed" className="text-green-400/80 hover:underline">simulation, not a deployed network</Link>.
+              dynamics built on top of it are real code that runs, but they run{" "}
+              <Link href="/why-web4#faq-deployed" className="text-green-400/80 hover:underline">on their own, not on a deployed network</Link>.
               So &ldquo;validated on real hardware&rdquo; means the foundation is proven - not that you can join Web4 today.
             </p>
           </details>
@@ -680,19 +693,79 @@ export default function LCTExplainerPage() {
             <p className="text-sm text-gray-400 mb-2">
               <strong className="text-gray-300">Two kinds of witnessing:</strong> (1) your own devices witness <em>each other</em> - your phone
               witnesses your laptop, and vice versa - proving <em>you</em> are real. (2) Infrastructure witness nodes
-              validate the <em>network</em> - confirming attestations are properly formed and consistent. In the current
-              prototype, both are simulated. In a deployed system, your devices handle identity witnessing; external
+              validate the <em>network</em> - confirming attestations are properly formed and consistent.
+              In a deployed system, your devices handle identity witnessing; external
               nodes (universities, employers, individuals) add network-level verification but aren&apos;t required.
             </p>
+            {/* Aug-01 visitor Unanswered Question 8, which the friction table never filed: "If
+                nothing has a live network, who am I being witnessed by? Hestia runs locally, the
+                hub is pilot-ready with no users, hardbound is unreachable ... I couldn't work out
+                where they'd come from on day one of a real deployment." This block's heading is
+                literally "Who runs witness infrastructure?" and #first-device-bootstrap links here
+                as "the network-side answer", so this is the surface that owns the question.
+                What it said was: "In the current prototype, both are simulated." Two defects in
+                one clause. (a) RETIRED REFERENT: "the current prototype" was the game/simulation
+                archived on archive/v1-2026-07 in the Jul-15 rebuild. There is no current prototype
+                simulating witnessing. (b) WRONG IN THE HONEST DIRECTION, which is the rarer bug:
+                neither kind is simulated, and they are not at the same stage as each other, so
+                collapsing both into one word destroyed the only distinction that answers Q8.
+                Grounded in hestia/docs/STATUS_AUDIT_2026-08-01.md + hestia/README.md:130-171,
+                which replaced a two-state table with three states precisely because one "Working"
+                column cannot tell "exercised daily, with chain entries behind it" from "code and
+                tests exist, nobody has driven the path":
+                  - witness chain: exercised daily, hash-linked, every governed act lands
+                  - device constellation: built, 21 unit tests, wired into the hub handshake,
+                    ZERO constellation events in the live chain window
+                  - infrastructure witness nodes: nobody outside the lab runs one
+                Do NOT import the audit's internal tier words ("Measured"/"Plumbed") here; a page
+                answering a question about status must not coin three new status words to do it.
+                The "no public network" sentence below is byte-identical to /how-it-works:106,
+                /hestia:481 and /day-in-web4:515 (#490 made it identical on purpose, do not
+                paraphrase). Kept deliberately OUT of this: any claim about who witnesses whom on
+                the private fleet, and any restatement of /hestia#solo-witnessing, which is linked
+                rather than copied. */}
+            <p className="text-sm text-gray-400 mb-2">
+              <strong className="text-gray-300">Where each of those actually stands today:</strong>{" "}
+              the two are not at the same stage, and the difference is the answer to &ldquo;so who
+              is witnessing me right now?&rdquo; The witnessing that needs <em>nobody else</em> is
+              the part that runs: on a single machine, the acts an agent takes under your policy
+              gate are checked and recorded in a hash-linked witness chain, and your trust scores
+              move with the outcomes (
+              <Link href="/hestia#solo-witnessing" className="text-sky-400 hover:underline">
+                solo is not the mechanism switched off
+              </Link>
+              ). Device co-witnessing is <em>built</em> rather than exercised: the code ships and
+              the hub handshake carries it, but it has not yet been driven on a real second device.
+              And nobody outside the lab that builds this runs a network witness node yet. The spec
+              is written, the code is installable today, and there is no public network open to
+              outside members yet.{" "}
+              <Link href="/running-now" className="text-sky-400 hover:underline">
+                What is deployed, piece by piece &rarr;
+              </Link>
+            </p>
+            {/* Aug-05, same visitor question. This paragraph described a witness-node economy in
+                flat present tense with no maturity marker at all ("Witnesses earn ATP...", "some
+                organizations run their own for control, most individuals use shared
+                infrastructure"). Nobody runs a witness node, so every verb here was future tense
+                wearing present tense, sitting one paragraph under the block that now says so.
+                This is the class the Aug-01 Honest Assessment named: "the site is not hiding
+                anything, but it isn't always putting the disclosure where the decision is made."
+                Marked as design, no content cut, no number touched. The collusion sentence below
+                is deliberately NOT touched: it is standing canon ledger Q3 with an ARMED (not
+                fired) gate, and once this paragraph reads as forward-looking it correctly reads
+                as a design property rather than an observed one. */}
             <p className="text-sm text-gray-300 mt-3">
-              <strong className="text-sky-400">What&apos;s the incentive to run a witness node?</strong> Witnesses
+              <strong className="text-sky-400">What&apos;s the incentive to run a witness node?</strong>{" "}
+              This part is design rather than observation, since there is not yet a node to
+              observe. As specified: witnesses
               earn ATP for validation work - each attestation they process earns a small fee from the
               network&apos;s redistribution pool (not from the user being witnessed). For institutions like
               universities or employers, the incentive is also reputational: being a trusted witness
               builds their own T3 scores, making their attestations more valuable. Individual witness
-              nodes earn less per attestation but face lower operating costs. The economics parallel
-              email servers: some organizations run their own for control, most individuals use
-              shared infrastructure, and the network works regardless of the mix.
+              nodes earn less per attestation but face lower operating costs. The economics are meant
+              to parallel email servers: some organizations would run their own for control, most
+              individuals would use shared infrastructure, and the network is designed to work
+              regardless of the mix.
             </p>
             <p className="text-xs text-gray-500 mt-2">
               Collusion requires coordinating multiple independent parties simultaneously,
@@ -2017,7 +2090,16 @@ export default function LCTExplainerPage() {
           </div>
 
           <p className="text-gray-500 text-xs mt-4 italic">
-            This UX is aspirational - the current prototype uses stubbed hardware interfaces.
+            {/* Aug-05: the CLAIM here is still true, the REFERENT was stale. "The current
+                prototype" was the game/simulation archived on archive/v1-2026-07 in the Jul-15
+                rebuild; there is no current prototype. Re-pointed at the artifact that actually
+                carries the stub, using /running-now:294's existing phrasing ("trait contracts
+                only for now, deferred to the hardbound tier") so the two surfaces stay aligned.
+                Grounded in hestia/README.md:169. Deliberately says nothing about whether hardware
+                is REQUIRED to participate: that is the standing [[hardware-required-seam]]
+                escalation and this would be a third disagreeing surface. */}
+            This UX is aspirational: hardware binding is trait contracts only for now, deferred to
+            the hardbound enterprise tier, so the interfaces underneath this flow are stubs.
             The goal is zero-friction identity backed by real device attestation.
           </p>
 

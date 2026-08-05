@@ -693,8 +693,21 @@ export default function WhyWeb4Page() {
                     unresolved hardware-REQUIRED seam (the two affordability FAQs below, which
                     disagree on whether secure hardware gates participation). That is a different
                     question and is deliberately untouched; do not let a validation-scope edit
-                    drift into asserting either side of it. */}
-                <li><strong>Hardware integration:</strong> the core standard&apos;s TPM2 binding validated (Intel TPM 2.0, EK certificate chain through 2049); hardbound&apos;s own on-device binding is <em>not</em> yet validated (see <Link href="/running-now#hardbound-status" className="text-sky-400 hover:underline">status</Link>). Go LCT library (55 tests). Multi-device constellation enrollment working</li>
+                    drift into asserting either side of it.
+                    Aug-05: the last clause said "Multi-device constellation enrollment working",
+                    a flat status word in an explicitly maturity-scoped list. hestia's 2026-08-01
+                    audit moved that row off built+working (wired into the hub handshake, 21 unit
+                    tests, zero constellation events in the live chain window), and this session
+                    moved the /identity-constellation badge running -> reference to match, which
+                    is what made this line newly contradictory rather than uniformly optimistic.
+                    Kept in "What's built" with a qualifier rather than moved to the "What's NOT
+                    built yet" list below, because it IS built, mirroring how this same bullet
+                    already handles hardbound's unvalidated on-device binding. The added clause is
+                    an exercise-scope statement about one code path and says nothing about whether
+                    hardware GATES participation, so the seam above is untouched. Wording is
+                    byte-identical to the same claim on five other surfaces (see
+                    InProduction.tsx's sourcing note); if you reword it, reword all six. */}
+                <li><strong>Hardware integration:</strong> the core standard&apos;s TPM2 binding validated (Intel TPM 2.0, EK certificate chain through 2049); hardbound&apos;s own on-device binding is <em>not</em> yet validated (see <Link href="/running-now#hardbound-status" className="text-sky-400 hover:underline">status</Link>). Go LCT library (55 tests). Multi-device constellation enrollment built and wired into the hub handshake, though it has not yet been driven on a real second device</li>
                 <li><strong>System integration:</strong> End-to-end pipeline (all subsystems chained), WASM browser validator for client-side trust verification, federation consensus at 38.5 tasks/sec throughput (a benchmark of how fast the consensus layer settles trust updates - a proof-of-concept figure, not a real-world performance guarantee)</li>
               </ul>
               <p className="mt-2"><strong>What&apos;s NOT built yet:</strong></p>

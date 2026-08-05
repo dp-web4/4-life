@@ -50,6 +50,42 @@ export default function IdentityConstellationPage() {
 
       <InProduction concept="constellation" />
 
+      {/* Aug-01 visitor Unanswered Question 8, which the friction table never filed: "If nothing
+          has a live network, who am I being witnessed by? Hestia runs locally, the hub is
+          pilot-ready with no users, hardbound is unreachable. Witnessing needs other participants,
+          and I couldn't work out where they'd come from on day one of a real deployment."
+          This is the page their own question routes them to (the nav registry lists it related to
+          both /lct-explainer and /hestia), and it had NO maturity marker of any kind before Aug-05.
+          The Jul-29 recurrence of this question was answered at /hestia#solo-witnessing for SOLO
+          hestia; the missing clause is the split below, so link that block rather than restating
+          it (id added there this session; it previously had none). The wording "the acts an agent
+          takes under your policy gate" is deliberate and must NOT become "every action": the
+          universal is falsified by hestia's gate-bypass completeness limit, and a guard at
+          hestia:117-121 says do not restore it on any surface. The
+          "no public network" sentence is reused byte-for-byte from /how-it-works:106, /hestia:481
+          and /day-in-web4:515, which #490 made identical on purpose. Do not paraphrase it. */}
+      <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4 mb-8 text-sm leading-relaxed text-gray-300">
+        <strong className="text-amber-300">Which half of this runs today.</strong>{" "}
+        Web4 splits witnessing in two, and the two are at different stages. The kind that needs
+        nobody else is running: on a single machine, the acts an agent takes under your policy
+        gate are checked and recorded in your own hash-linked witness chain, and your{" "}
+        <Link href="/trust-tensor" className="text-amber-400 underline hover:text-amber-300">
+          T3/V3
+        </Link>{" "}
+        move with the outcomes (
+        <Link href="/hestia#solo-witnessing" className="text-amber-400 underline hover:text-amber-300">
+          solo is not the mechanism switched off
+        </Link>
+        ). The kind on this page is the other one: it needs a second device, and while the code
+        ships and is wired into the hub handshake, that path has not yet been driven on a real
+        second device. So read the constellation below as the design and the shipped code, not as
+        something you can currently prove. The spec is written, the code is installable today, and
+        there is no public network open to outside members yet.{" "}
+        <Link href="/running-now" className="text-amber-400 underline hover:text-amber-300">
+          See what&apos;s deployed &rarr;
+        </Link>
+      </div>
+
       {/* The Problem */}
       <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-gray-100">
