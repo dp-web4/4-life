@@ -354,6 +354,19 @@ instead of re-litigating.
   verbatim", L286-288 "Canon is SPLIT on the currency word itself ... do NOT re-litigate
   'currency' here"). The visitor keeps arriving at the conflict from the site's own material,
   which is signal for the escalation and not license to answer it.
+- **New evidence, 2026-08-05 (#514 session, evidence only, holding pattern UNCHANGED)**: the
+  characterization above, that the site's three assertions all land on the unit-of-account side,
+  is **incomplete**. `/atp-economics` also asserts the *opposite* side, on the same page as the
+  L318 denial, inside a collapsed `<details>` titled "Is ATP a currency or an energy budget?":
+  the answer given is "**Both.**", and it names a "**Transaction medium**" role outright ("ATP
+  also flows between participants. When you buy something on a marketplace or hire someone for a
+  task..."). So the site is not merely asserting one side prematurely, it is **self-contradicting
+  within one page**: a flat "This is not a currency" in the body and "Both" in an expander. This
+  was found while fixing an unrelated ATP supply defect and was **deliberately not touched**,
+  because reconciling the two would require picking a side, which is exactly what this question
+  asks canon to do. It strengthens the case for a ruling and narrows what a ruling must fix: a
+  native-currency ruling now requires editing four surfaces, not three, and a unit-of-account
+  ruling requires retiring the "Both" expander rather than merely leaving the other three as-is.
 - **What is NOT in question**: the *external* claim. #494 narrowed `/atp-economics` to "no
   outside market, no price against money, no cash-out, no speculation" and left in-society
   pricing licensed by `inter-society-protocol.md` L199, which is why the site's own Market

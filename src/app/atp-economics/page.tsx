@@ -710,6 +710,33 @@ export default function ATPEconomicsPage() {
             >recharge refunds, payment earns</a>{' '}
             below.)
           </p>
+          {/* Aug 5 visitor MEDIUM 1 + Unanswered Q1: they read the two negative nets, then the
+              "fixed pool" language further down, and concluded the system is deflationary by
+              construction ("everyone is net negative even doing great work, and eventually
+              everybody hits zero and dies"). Their last inferential step was "the only net-positive
+              channel is payment, but their ATP came from the same place mine did" - so the sentence
+              to intercept is the one about spent ATP being GONE. The answer already ships on this
+              page in the "No inflation" paragraph ("the system converts discharged ADP back into
+              fresh ATP"), but inside a collapsed <details> far below this example. Propagate it
+              here in that paragraph's own words so the two surfaces cannot drift. If you reword
+              either one, reword both. Canon: atp-adp-cycle.md 2.2 charge_atp does
+              society_pool.convert(ADP -> ATP), conditioned on a value proof the society accepts.
+              NOTE the non-guarantee clause is load-bearing: 2.2 conditions charging on "actual
+              resource availability", so the honest claim is that an input channel EXISTS, not that
+              it keeps pace. Do not upgrade it into a solvency promise. */}
+          <p className="text-gray-500 text-xs mt-2">
+            (Neither figure means the system is running down. Confirmed value is the channel where
+            charged energy enters: when recipients confirm work, the system converts discharged ADP
+            back into fresh ATP, so what Sam and Hannah spent is not gone from the society, it is
+            discharged and can be charged again. Nothing here guarantees the accounting keeps pace;
+            what it rules out is a closed loop with no input. See{' '}
+            <a
+              href="#initial-atp"
+              onClick={(e) => { e.preventDefault(); const el = document.getElementById('initial-atp'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); const details = el.querySelector('details'); if (details) details.open = true; } }}
+              className="text-sky-400 hover:text-sky-300 underline"
+            >where the society&apos;s ATP comes from</a>{' '}
+            below.)
+          </p>
         </div>
 
         {/* How Quality Is Measured - Mar 26 visitor MEDIUM friction + unanswered Q1.
@@ -1046,7 +1073,8 @@ export default function ATPEconomicsPage() {
             when you join - not printed from thin air. The pool is anchored to{' '}
             <strong className="text-gray-100">real resources members bring</strong>: CPU and storage they share,
             hours of attention they spend participating, peer relationships they&apos;ve built - witnessed
-            and signed, not declared by an admin. Each society mints a fixed pool when it forms; new members
+            and signed, not declared by an admin. A society mints its pool when it forms, in the
+            discharged (ADP) state, and charges ADP to ATP as it accounts for those resources; new members
             receive enough to participate, but must earn more through quality contributions. Pool changes are
             witnessed governance events, not silent admin actions - {' '}
             <a
@@ -1879,9 +1907,22 @@ export default function ATPEconomicsPage() {
                 an energy resource that flows through the system like calories in a body.
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
+                {/* Aug 5 visitor MEDIUM 1: "Minted when you contribute value" is the wrong verb.
+                    Per atp-adp-cycle.md 2.1 minting creates tokens in the DISCHARGED (ADP) state;
+                    2.2 "Charging (ADP -> ATP)" is what contributing value does. Left as "Minted"
+                    it also contradicted the Conservation bullet below. Canon's verb is "charged",
+                    but this is a naive-visitor bullet sitting next to "Spent", where "Charged"
+                    reads as "billed" and inverts the meaning. Use this page's own established
+                    visitor-facing verb (the etymology fold, the "Contribution recharges it" bullet
+                    and the "No inflation" paragraph all say recharge). NAME BOTH CHANNELS:
+                    on this page "recharge" specifically means the CAPPED refund of your own spend
+                    (summary item 3, cap at #net-positive), so a bare "Recharged" here would make
+                    the capped channel read as the only source of ATP, which is the very reading
+                    this pass exists to defuse. Wording tracks summary item 3. */}
                 <li>
-                  <strong>Minted</strong> when you contribute value (community
-                  validation)
+                  <strong>Recharged</strong> when recipients confirm work you initiated
+                  (refunds at most what you spent), and <strong>paid</strong> when someone
+                  else commissions the work
                 </li>
                 <li>
                   <strong>Spent</strong> when you take actions (posting,
@@ -2034,8 +2075,13 @@ export default function ATPEconomicsPage() {
                 not to any central authority. <strong className="text-gray-200">What the pool funds is set by
                 each society&apos;s published economic laws</strong>, not by the core protocol - typical uses
                 include topping up the society&apos;s pool for member recharges, paying witnesses,
-                or seeding new-member grants. ATP is formally conserved: no hidden inflation,
-                no minting events, no entity benefits from the fee except the community.
+                or seeding new-member grants. {/* Aug 5 visitor MEDIUM 1: "no minting events" was a
+                GLOBAL claim and is flatly false against atp-adp-cycle.md 2.1 (TokenMinting is a
+                canonical witnessed event) and against this page's own "What stops a society admin
+                from minting infinitely?" block, which describes "pool expansions".
+                The true half is fee-scoped, so keep that and drop the global. */}
+                The fee itself creates no ATP and no hidden inflation, and no entity benefits from
+                it except the community.
               </p>
               <p className="text-gray-400 text-sm mt-3 leading-relaxed">
                 <strong className="text-gray-300">Does buying a coffee cost 5%?</strong> It depends on the
@@ -2190,15 +2236,33 @@ if agent.atp <= 0:
           </summary>
           <div className="mt-4 text-gray-300 text-sm space-y-3">
             <p>
-              <strong className="text-amber-400/80">Each society mints a fixed ATP pool when it forms.</strong> Think
+              {/* Aug 5 visitor MEDIUM 1: "a FIXED pool when it forms" read as one-time-and-never-again,
+                  which is what sent the visitor to "eventually everybody hits zero and dies". It also
+                  stalls against the "pool expansions ... or a published mint schedule" language ~20
+                  lines below in this same <details>. Dropping "fixed" and naming the discharged state
+                  defuses both without asserting any mint cadence or rate (that is ledger Q1). */}
+              <strong className="text-amber-400/80">Each society mints its ATP pool when it forms, in the
+              discharged (ADP) state.</strong> Think
               of it like a community budget: the total amount is set by the society&apos;s parameters, and new members
               receive their starting allocation from this pool - not from thin air.
             </p>
             <p>Key properties that prevent inflation:</p>
             <ul className="list-disc list-inside space-y-1.5 ml-4 text-gray-400">
-              <li><strong>Conservation:</strong> ATP is never created during normal operation. Every transfer
+              {/* Aug 5 visitor MEDIUM 1: "ATP is never created during normal operation ... total supply
+                  is conserved" was the sentence that convinced the visitor the system is strictly
+                  deflationary. It conflates two referents. Per atp-adp-cycle.md 1.2 tokens are
+                  SEMIFUNGIBLE (charged/discharged states), and 2.2 charging converts within the pool:
+                  the TOTAL is conserved, the CHARGED fraction is not. Both halves already ship in this
+                  page's "No inflation" paragraph ("total energy in a society is bounded" AND "converts
+                  discharged ADP back into fresh ATP"); this bullet asserted the first and denied the
+                  second. Name the
+                  referent instead. Do NOT restore an unqualified "ATP is never created". */}
+              <li><strong>Conservation:</strong> transfers never create ATP. Every transfer
                 moves existing ATP - 95% to the recipient, 5% to a <em>community redistribution pool</em> that
-                pays out to quality contributors. Nothing is destroyed; total supply is conserved.</li>
+                pays out to quality contributors. Nothing is destroyed, and the society&apos;s total is
+                bounded at any given moment (it moves only through the witnessed governance events
+                described below, never through ordinary spending). What recycles inside that total is
+                the charged fraction: confirmed value converts discharged ADP back into fresh ATP.</li>
               <li><strong>Bootstrap allocation:</strong> New members receive a starter amount (typically 100 ATP)
                 from the society&apos;s reserve. This is enough to participate but not enough to dominate - 
                 you must earn more through quality contributions.</li>
