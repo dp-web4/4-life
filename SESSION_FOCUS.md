@@ -2,6 +2,54 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-05 visitor MEDIUM 1 (Aug-05 15:00 session) - the page that shipped the answer and then denied it
+
+**The friction**: the visitor's only unchecked understanding box (`[~] ATP/ADP: mechanics yes,
+economics no`), their Unanswered Q1, and the one item their Honest Assessment called *"actually
+missing rather than misplaced"*. From the worked example (85% quality nets minus 8), the capped
+recharge, and "a **fixed** pool", they concluded: *"energy only ever moves sideways or drains...
+eventually everybody hits zero and dies."*
+
+**Nothing was missing.** `/atp-economics` already ships the answer in its "No inflation"
+paragraph: *"the system converts discharged ADP back into fresh ATP."* It sits in a collapsed
+`<details>` about a thousand lines below the example that provokes the question, and two later
+surfaces contradict it outright.
+
+**The defect was one conflated word.** The page used "ATP" for both the **charged state** and the
+**token regardless of state**. Canon (`atp-adp-cycle.md` 1.2 semifungible; 2.2 `charge_atp` does
+`society_pool.convert(ADP -> ATP)`): the *total* is conserved, the *charged fraction* is not.
+"Total supply is conserved" is true of the token; "ATP is never created during normal operation"
+is false of the charged state. The page asserted both of one referent.
+
+**Five reconciliations** (near-zero new claims, no numbers changed):
+- **Worked example**: propagated the "No inflation" sentence to where the visitor broke, verbatim
+  so the two surfaces cannot drift. Intercepts their *last* inferential step (spent ATP is gone),
+  not the pricing point a June-11 fix already made and that they read and filed anyway.
+- **Conservation bullet**: named the referent rather than deleting the claim. Kept "total is
+  bounded" (already shipped); dropped the unqualified "never created".
+- **Transfer-fee block**: deleted the global "no minting events" (false against 2.1 and against
+  this page's own "What stops an admin from minting infinitely?" block). Kept the fee-scoped half.
+- **"Minted when you contribute value"** -> contributing value *charges*, it does not mint. Canon's
+  verb is "charging", but beside a "Spent" bullet "Charged" reads as *billed*, so it uses the
+  page's own verb AND names both channels, so the capped refund does not read as the only source.
+- **"a FIXED pool when it forms"** (x2): the word that made it one-time-forever and stalled against
+  the "pool expansions ... published mint schedule" text 20 lines below it.
+
+**Deliberately NOT done**: no mint cadence or rate anywhere (ledger Q1 + the #499 guard). The
+non-guarantee clause ("nothing here guarantees the accounting keeps pace") is load-bearing: 2.2
+conditions charging on a value proof the society must accept, so the honest claim is that an input
+channel *exists*, not that it keeps up. Do not upgrade it into a solvency promise.
+
+**New ledger evidence (Q7, evidence only)**: `/atp-economics` asserts **both** sides of the
+currency question, "This is not a currency" in the body and *"Both... Transaction medium"* in a
+collapsed expander. Q7 previously recorded the site as landing uniformly on the unit-of-account
+side; it does not. Left untouched, since reconciling it means picking the side Q7 asks canon to pick.
+
+**Still open from Aug-05**: MEDIUM 2 (0.50 doing three jobs on /trust-tensor) is **partly blocked**,
+its second half ("is exactly 0.50 above or below the line?") IS the standing `>` vs `>=` endpoint
+escalation; the collation half is fixable. MEDIUM 3 (/why-web4 duplicate FAQ pairs, six named
+pairs) is a mechanical dedupe and is the best next pick. All four LOWs open.
+
 ## Aug-05 visitor, all three HIGHs (Aug-05 09:00 session) - the reassuring version kept living above the honest one
 
 *Last updated: 2026-08-05 (09:00 session)*
