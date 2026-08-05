@@ -68,6 +68,33 @@ export default function RunningNowPage() {
               <span>deployed and operational today. Live instances actually exist and are in day-to-day use.</span>
             </div>
           </div>
+          {/* Aug-01 visitor LOW, second sitting on the same row. #496 (Jul-30, 94db436)
+              took the OWNERSHIP half of that visitor's suggestion and deliberately left the
+              DEFINITION half ("Badge tier is NOT touched", guard below). The Aug-01 visitor
+              demonstrably read the ownership fix ("Four machines belonging to the people who
+              built it") and filed the row again anyway, against the definition: "the badge
+              definition is stronger than the fact under it." Read-it-and-still-filed-it, so
+              the missing clause is exact, not a restructure. The scoping sentence already
+              existed on this page ("Daily use by the people who build it is what the Running
+              badge claims, and it does not claim adoption") but three sections below, inside
+              the hestia section, where a reader who formed the belief at this legend may never
+              land. Propagated up to the read point in sense from the paragraph now anchored
+              at id="whose-machines"; that paragraph is unchanged and this line links to it.
+              Two things this must NOT become: a fourth tier, or a hedge on the tier ORDER
+              stated below (the Aug-01 visitor said naming the owner still leaves a legitimate
+              Running badge, and #496's guard records the same). And it does not say "no
+              outside users": the plugin and SDKs are published, so that absolute is not ours
+              to print. It scopes the deployment this page COUNTS, which is all the anchored
+              paragraph does. */}
+          <p className="mt-4 text-sm text-gray-400 leading-relaxed">
+            What Running does not claim is adoption. The one piece badged{" "}
+            <MaturityBadge tier="running" /> today is hestia, and the daily use counted for
+            it is the lab&apos;s own:{" "}
+            <a href="#whose-machines" className="text-emerald-400 underline hover:text-emerald-300">
+              whose machines those are
+            </a>
+            .
+          </p>
           {/* Jul-27 LOW + Jul-28 MEDIUM, both filed against /tldr: the visitor met a
               Reference badge and a Running badge and could not tell "whether Running was
               better than Reference or just different. I guessed Running > Reference and
@@ -250,8 +277,12 @@ cargo add web4-core web4-trust-core`}</code></pre>
             naming the owner still leaves a legitimate Running badge, and it does.
             Kept OUT of the "Two things are honestly still early" enumeration below, whose
             count is load-bearing and matches the pinned caveat above ("two parts"); this
-            is scope of deployment, not immature code. */}
-        <p className="text-base text-gray-400 leading-relaxed mb-4">
+            is scope of deployment, not immature code.
+            Aug-04: the same visitor re-filed the row against the badge DEFINITION, so the
+            badge key now carries a one-line version of this paragraph's claim and links
+            here by id. This paragraph is the long form and did not change; if you reword
+            it, reword the badge-key line with it. */}
+        <p id="whose-machines" className="text-base text-gray-400 leading-relaxed mb-4 scroll-mt-20">
           Whose machines those are: the lab that builds Hestia runs it as its own daily
           infrastructure, and there is no public network open to outside members yet. The
           plugin and the SDKs are published, so anyone can install them, but the deployment

@@ -135,7 +135,16 @@ export default function TLDRPage() {
               "not how good it is" half is load-bearing: hardbound is badged Reference and
               this page's own prose calls it "a usable, actively hardened enterprise tier"
               (a mismatch the Jul-27 visitor filed separately), so a bare "later is better"
-              would license the misread that hestia is the more finished piece. */}
+              would license the misread that hestia is the more finished piece.
+
+              Aug-04: "in day-to-day use" is the exact phrase the Aug-01 visitor said was
+              stronger than the fact under it, and this is the surface where a reader meets
+              it FIRST (they met the badges here and only reached the full key later). The
+              scope added here is the same clause added to /running-now#badge-key, cut to a
+              parenthetical so this gloss stays a strict subset: it scopes the deployment
+              the site COUNTS and says nothing about who else may have installed the
+              published SDKs (see the long guard beside running-now's #whose-machines
+              paragraph). */}
           <div className="mb-4 rounded-lg border border-gray-700 bg-gray-800/30 p-4">
             <p className="text-gray-300 text-sm font-medium mb-3">
               The tag on each card says how far along that piece is:
@@ -149,7 +158,10 @@ export default function TLDRPage() {
               </div>
               <div className="flex items-start gap-3">
                 <span className="shrink-0 mt-0.5"><MaturityBadge tier="running" /></span>
-                <span>deployed and operational today, in day-to-day use.</span>
+                <span>
+                  deployed and operational today, in day-to-day use. The daily use counted
+                  so far is the building lab&apos;s own, so this badge does not claim adoption.
+                </span>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mt-3">
