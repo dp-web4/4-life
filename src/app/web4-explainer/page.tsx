@@ -205,9 +205,9 @@ export default function Web4ExplainerPage() {
           carries hardware binding as trait contracts only for now. But the idea has left the
           whiteboard. Attestation is now a typed primitive in the reference library, and hestia
           ships the <strong>device constellation</strong> code: link your devices into a
-          verifying set so multi-device proof becomes your MFA. That path is built and wired
-          into the hub handshake rather than exercised, though, and has not yet run against a
-          real second device. Full
+          verifying set so multi-device proof becomes your MFA. That path is built rather than
+          exercised, though: the code ships and the hub handshake carries it, but it has not yet
+          been driven on a real second device. Full
           TPM / secure-enclave root binding is the next rung on the ladder. Even
           then, Web4 treats hardware binding as one factor among many: witnessed
           events, pairing structures, and ATP-priced attestations together form a

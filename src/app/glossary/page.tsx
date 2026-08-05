@@ -657,12 +657,31 @@ export default function GlossaryPage() {
           {/* Hestia */}
           <div id="hestia" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-emerald-700/50 rounded-xl p-6 scroll-mt-20" data-glossary-term data-essential>
             <h3 className="text-2xl font-semibold text-emerald-300 mb-3">Hestia</h3>
+            {/* Aug-05, Aug-01 visitor Unanswered Q8. Two edits, one line.
+                (1) "a device constellation" was listed as a peer of six capabilities hestia's
+                2026-08-01 audit marks exercised daily, INSIDE a section whose heading and lede
+                declare its members deployed tools that actually run today. Membership in this
+                list IS the status assertion, which is why no status-word grep finds this line:
+                it makes no status claim of its own, it inherits one. The audit moved the
+                constellation off built+working, and this session moved the
+                /identity-constellation badge running -> reference, so leaving it here made the
+                glossary the optimistic outlier. Evidence it was an outlier already: the site's
+                four other hestia capability enumerations (page.tsx:43, onramp:388,
+                running-now:240, hestia:558) all omit it.
+                (2) "on its own hardware" -> "on its own machine", normalizing to page.tsx:43's
+                existing "all on your own machine". The glossary is where a reader settles what a
+                word means, and "hardware" invites the TPM reading that /lct-explainer denies.
+                The trailing sentence is byte-identical to lct-explainer:738 and four other
+                surfaces. If you reword it, reword all six (see InProduction.tsx's sourcing
+                note). */}
             <p className="text-gray-300 leading-relaxed mb-3">
               The <strong>deployed trust layer</strong> of Web4: a local-first daemon that gives any
               entity a real cryptographic LCT, an encrypted vault, a witness chain, evolving T3/V3
-              trust, a policy gate, delegation, and a device constellation - all on its own
-              hardware. The concrete, runnable version of much of what the rest of this glossary
-              defines. License: AGPL-3.0.
+              trust, a policy gate, and delegation - all on its own machine. The concrete, runnable
+              version of much of what the rest of this glossary defines. Its device constellation
+              is built rather than exercised: the code ships and the hub handshake carries it, but
+              it has not yet been driven on a real second device.
+              License: AGPL-3.0.
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: &ldquo;The parts of Web4 you can download and run right now, on your own

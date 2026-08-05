@@ -589,9 +589,9 @@ export default function HestiaPage() {
             a hub, opens an encrypted member-to-hub channel, carries a device
             constellation proof in the handshake, and exchanges sealed member-to-member
             messages that the hub relays without being able to read them. The
-            constellation is the one item in that list that has been exercised only in
-            tests: the code ships and the handshake carries it, but it has not yet run
-            against a real second device.
+            constellation is the one item in that list that is built rather than exercised:
+            the code ships and the handshake carries it, but it has not yet been driven on
+            a real second device.
           </p>
           <p className="text-sm text-gray-300 leading-relaxed mb-3">
             What ships today at <strong>version 0.0.3</strong>: an MCP server (8
