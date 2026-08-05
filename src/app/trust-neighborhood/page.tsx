@@ -631,8 +631,35 @@ export default function MarkovRelevancyHorizonPage() {
             <p className="text-gray-400 text-sm mb-3">
               0.7 also roughly tracks how humans <em>actually</em> weight trust in practice - you act on a direct friend&apos;s word, you check a friend-of-a-friend&apos;s claim carefully, and by the fourth hop you&apos;re treating them as a stranger.
             </p>
+            {/* Aug-01 visitor LOW: "why is a DIRECT connection worth only 0.70? Someone I know
+                personally gets a 30% haircut before their own trust score is even applied. That's
+                the first hop of a decay curve, but it reads as 'the site doesn't fully trust
+                anyone.'" This box answered why the RATE is 0.7 rather than 0.5 or 0.9 (Apr-19) and
+                never answered why depth 1 pays it at all, which is the question. Three surfaces
+                charge it: the ring label above ("Direct: 0.70"), the telephone list below
+                ("Direct friend -> 70%"), and the explorer widget in #try-it, whose depth-1 chips
+                for Alice are bob / timeserver / hospital, entities Alice deals with directly. The
+                #505 block below frames the whole term as "judging someone you have never dealt
+                with, through the people who have", which is exactly the case depth 1 is NOT.
+                HARD LIMIT, and the reason this is disclosure rather than explanation: upstream
+                disagrees with itself about where the exponent starts (mrh-tensors.md:214 charges
+                the first edge; mrh_trust_propagation.py:294 and :243 do not), so any REASON given
+                here for charging the first hop would be coined, not cited. Filed as Q12. Same
+                prohibition as Q11's ruling request #2: the direct-versus-through-intermediaries
+                discriminator is plausible, not cited, and must not be shipped as the answer.
+                No number on this page moves; 0.70/0.49/0.34 matches the core spec and is pinned
+                on /how-it-works, /why-web4 and the widget. */}
+            <p className="text-gray-400 text-sm mb-3">
+              <strong className="text-cyan-300">And why does a direct connection already pay it?</strong>{" "}
+              Because the count starts at your first edge: one relationship out is one 0.7, two is
+              0.49, and the only undiscounted point on the ring is you. That is a convention this
+              page follows, not a result it derives, and it is a point the standard has not
+              settled (see the caveat below). What it is not is a verdict on the person: the
+              0.7 multiplies their own score rather than replacing it, so a direct contact you rate
+              highly still outranks a distant one you don&apos;t.
+            </p>
             <p className="text-amber-400/70 text-xs">
-              <strong>Honest caveat:</strong> 0.7 is a design parameter, not a physical constant. Different communities might tune it (higher decay for privacy-sensitive contexts, lower for open discovery). The right values will emerge from real-world testing. Reference models use a finer curve (roughly 0.85 after one hop, not 0.70) that reaches the same place, since both fall below the noise floor by depth 3 to 4. See the{" "}
+              <strong>Honest caveat:</strong> 0.7 is a design parameter, not a physical constant. Different communities might tune it (higher decay for privacy-sensitive contexts, lower for open discovery). The right values will emerge from real-world testing. Reference models use a finer curve (roughly 0.85 after one hop, not 0.70) that reaches the same place, since both fall below the noise floor by depth 3 to 4. And the standard is not settled on <em>where the count starts</em>: its propagation formula charges the factor from the first edge, which is what this page implements, while the reference code published beside it starts a hop later and leaves a direct connection undiscounted. So the &ldquo;why is my own contact discounted&rdquo; reaction is a real disagreement upstream, not a misreading of this page. It is filed as an open question and no number here moves until it is answered. See the{" "}
               <Link href="/why-web4#faq-mrh-messaging" className="text-sky-400 hover:underline">fuller discussion in the FAQ</Link>.
             </p>
           </div>
@@ -667,7 +694,14 @@ export default function MarkovRelevancyHorizonPage() {
                   delegation chain is exempt from this decay, no claim that the 3-hop horizon does
                   or does not bound a pipeline, no second rate quoted for one quantity. Whether
                   horizon depth applies inside a delegation pipeline is ledger Q11, not settled
-                  here or upstream (mrh-tensors.md:210-214 vs inter-society-protocol.md:380). */}
+                  here or upstream (mrh-tensors.md:210-214 vs inter-society-protocol.md:380).
+                  Aug-04: this block's closing contrast ("here you are judging someone you have
+                  never dealt with") is written for the multi-hop case and is NOT true of depth 1,
+                  where the ring, this list and the widget all charge 0.7 to relationships the
+                  reader has directly. Left standing because its job is the /how-it-works contrast
+                  and rewriting it would re-arm the HIGH 3 conflation; the depth-1 case is answered
+                  in the "Why 0.7?" box above and filed as ledger Q12. If you ever rewrite this
+                  sentence, make it cover depth 1 rather than deleting the contrast. */}
               <p className="text-xs text-gray-400 mt-3 pt-3 border-t border-cyan-700/20 leading-relaxed">
                 The 30% is charged for the <em>distance</em>, on top of whatever the people in the
                 chain are individually worth (that is the <code className="text-cyan-400">0.7^depth</code> term

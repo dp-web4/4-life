@@ -19,6 +19,9 @@ Last verified against code: **2026-07-28** (all file:line refs re-checked that d
 Partial re-check **2026-07-30**: Q8's refs were verified when filed, and Q1's *live* evidence was
 re-checked and has **changed polarity** (see the correction bullet inside Q8). Q2-Q7 refs were not
 re-checked on that date and still carry their 2026-07-28 verification.
+Partial re-check **2026-08-04**: Q12's refs were read line by line when filed, and Q11's
+`mrh-tensors.md:210-214` cite was re-read at the same time and still holds. Q1-Q10 were not
+re-checked on that date.
 
 > **Re-verification note, 2026-07-28.** The previous date on this line was 2026-07-14 - *one
 > day before* the Jul-15 rebuild retired `/aliveness`, `/karma-journey` and ~34 other routes.
@@ -514,6 +517,55 @@ two HIGHs and three Unanswered Questions in a single sitting.
 - **Holding pattern**: both pages describe what their own number composes and cross-link. Neither
   asserts the exemption, neither asserts the horizon applies, and no trust number changes on either
   page until this is answered.
+
+### Q12. Where does the MRH decay exponent start: is a direct relationship discounted?
+
+- **Raised**: 2026-08-04, from the Aug-01 visitor browse (their `/trust-neighborhood` LOW,
+  *"why is a direct connection worth only 0.70? Someone I know personally gets a 30% haircut
+  before their own trust score is even applied. That's the first hop of a decay curve, but it
+  reads as 'the site doesn't fully trust anyone.'"*). Filed after checking upstream, where the
+  question turns out to be open rather than answered.
+- **The two upstream artifacts disagree by one**, and they ship in the same directory tree:
+  - `web4-standard/core-spec/mrh-tensors.md:214` (`TrustPropagation.multiplicative`):
+    `trust *= edge.weight * (decay_factor ** (i + 1))`, `decay_factor` default `0.7`. The first
+    edge is `i = 0`, so a **direct relationship is charged `0.7^1 = 0.70`**.
+  - `web4-standard/mrh_trust_propagation.py:294` (`compute_network_trust`):
+    `propagated_trust = current_trust * weight * (decay_factor ** distance)`, with the BFS queue
+    seeded `(source, 1.0, 0)` at `:280`. The first neighbour is reached at `distance = 0`, so a
+    **direct relationship is charged `0.7^0 = 1.00`, no discount**. Same off-by-one in
+    `find_trust_paths` (`:243` and `:249`, `decay_factor ** depth`, the DFS seeded at `depth = 0`).
+  Under the first, a chain of three 0.9 edges is `0.9^3 x 0.7^3 = 0.25`; under the second it is
+  `0.9^3 x 0.7^2 = 0.36`. Every propagated number differs by a factor of `0.7`.
+- **What the site does**: `/trust-neighborhood` implements the **core-spec** version. The decay
+  ring (`Direct: 0.70`), the telephone list (`Direct friend -> 70%`), the explorer widget's
+  `Depth 1: Direct Relationships ... trust x 0.70`, and the stated formula
+  `trust = t1 x t2 x t3 x 0.7^depth` are all consistent with `mrh-tensors.md` and with each
+  other. The `0.70 / 0.49 / 0.34` triple is also quoted on `/how-it-works` and `/why-web4`.
+- **Why it is not derivable downstream.** Nothing on the site or upstream says which indexing is
+  intended. `GLOSSARY.md:204` gives `0.9 per hop` as a *default* without saying which hop is
+  first; `QUICK_REFERENCE.md:172` says *"each hop reduces trust by ~5-10%"*, also silent on the
+  starting index. Picking the `.py` indexing downstream would renumber four surfaces and put the
+  site at odds with the core spec; picking the spec indexing *as a justified position* would coin
+  a rationale for penalising first-hand relationships that no upstream text states.
+- **This is adjacent to Q11 but distinct.** Q11 asks *whether the distance term applies at all*
+  inside a delegation pipeline. Q12 asks *where the exponent starts* in the neighbourhood case
+  where the term indisputably applies. A ruling on either does not settle the other. Note the
+  interaction: if Q11 is answered "the term applies to pipelines" and Q12 is answered "the count
+  starts at the first edge", `/how-it-works`'s 5-agent pipeline number moves twice.
+- **Ruling requested**:
+  1. Is a direct (one edge) relationship discounted by `decay_factor`, or is the factor charged
+     only from the second edge onward?
+  2. Which artifact is authoritative, `core-spec/mrh-tensors.md` or `mrh_trust_propagation.py`?
+     They are cross-referenced as companions, so the divergence is likely an unnoticed
+     off-by-one rather than a deliberate difference in model.
+  3. If the first edge *is* charged, what is the stated reason? The site can teach the
+     convention, but it cannot invent the justification, and a reader who asks *"why is someone
+     I know personally discounted?"* deserves a cited answer rather than a plausible one.
+- **Holding pattern**: no number on `/trust-neighborhood` changes. The `Why 0.7?` box now
+  discloses that the standard is unsettled on where the count starts and that the reader's
+  reaction tracks a real upstream disagreement, and it deliberately gives **no reason** for
+  charging the first hop. Do not ship the direct-versus-through-intermediaries discriminator as
+  the answer; Q11's ruling request #2 already records it as plausible and uncited.
 
 ---
 

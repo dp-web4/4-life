@@ -2,7 +2,100 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
-*Last updated: 2026-08-02 (15:00 session)*
+*Last updated: 2026-08-04 (21:00 session)*
+
+## Aug-01 visitor LOWs (Aug-04 21:00 session) - the badge that claimed adoption, and the haircut nobody upstream agrees on
+
+**No visitor log exists for 2026-08-02, 2026-08-03 or 2026-08-04.** Checked with `git fetch --all`
+plus `git log --all -- visitor/logs/`, not `ls` (the cron commits to a worker branch). The 05:00
+cron has produced nothing for three days, so `visitor/logs/2026-08-01.md` is still the freshest log
+and its **HIGHs and MEDIUMs are fully disposed** (1+3 = #505, 4 = #506, 2+5 = #507, 3+4 = #508,
+6 = #509; HIGH 2 is the settled hardbound operator call, MEDIUM 1 is the standing 0.5-endpoint
+escalation). This session took **two of the five untaken LOWs**, plus the canon entry the second
+one turned out to require. If the cron is still silent next session, the remaining LOWs are the
+`/glossary` acronym-box residual (do NOT re-litigate on the visitor's framing, see the Aug-02 03:00
+note) and `/value-tensor` collusion (standing ledger Q3, gate ARMED not fired).
+
+### LOW: `/running-now`'s Running badge said "in day-to-day use" and meant something narrower
+
+This row was filed **twice by the same visitor**. #496 (`94db436`, Jul-30, so live before the
+Aug-01 browse) took the **ownership** half of their suggestion and deliberately left the
+**definition** half (its guard says "Badge tier is NOT touched"). The Aug-01 visitor demonstrably
+read the ownership fix (*"Four machines belonging to the people who built it"*) and filed the row
+again against the definition: *"the badge definition is stronger than the fact under it."*
+Read-it-and-still-filed-it, so the missing clause is exact rather than a restructure.
+
+The scoping sentence was **already on the page** (*"Daily use by the people who build it is what
+the Running badge claims, and it does not claim adoption"*) but three sections below the legend,
+inside the hestia block, where a reader who formed the belief at the legend may never land. A
+one-line version now sits inside `#badge-key` and links down to that paragraph, which is unchanged
+and now carries `id="whose-machines"` (this page had only two ids: `#badge-key` and
+`#hardbound-status`). **Badge tier untouched** and no fourth tier: the visitor said naming the owner
+still leaves a legitimate Running badge, and it does. It also does **not** say "no outside users",
+which #496 refused for good reason (the plugin and SDKs are published, so that absolute is not ours
+to print). It scopes the deployment the page *counts*.
+
+**Cascade decision, recorded so the two surfaces cannot drift**: `/tldr:152` carries the same
+unscoped phrase and is declared a strict derivative subset of this legend. It **was** changed, in a
+parenthetical shape that keeps it a subset ("The daily use counted so far is the building lab's
+own, so this badge does not claim adoption"), because `/tldr` is where a first-time reader meets
+the badges and `/running-now` is two pages later. The rank sentence still lands on `/running-now`
+first, so the derivative rule is intact. Landing page and `MaturityBadge`'s `title` tooltip make no
+adoption claim and were not touched.
+
+### LOW: `/trust-neighborhood`'s direct connection is discounted, and upstream disagrees about that
+
+Filed as *"why is a direct connection worth only 0.70? Someone I know personally gets a 30% haircut
+before their own trust score is even applied... it reads as 'the site doesn't fully trust anyone.'"*
+The "Why 0.7?" box (Apr-19) answers why the **rate** is 0.7 and not 0.5 or 0.9. It never answered
+why depth 1 pays it at all. Three surfaces charge it: the ring label (`Direct: 0.70`), the telephone
+list (`Direct friend -> 70%`), and the explorer widget, whose depth-1 chips for Alice are `bob`,
+`timeserver`, `hospital`, entities Alice deals with **directly**. Meanwhile the block #505 shipped
+Aug-01 frames the whole `0.7^depth` term as *"here you are judging someone you have never dealt
+with, through the people who have"*, which is precisely the case depth 1 is not.
+
+**Checking upstream before writing prose is what changed the fix.** The two reference artifacts
+disagree by one:
+
+- `web4-standard/core-spec/mrh-tensors.md:214`: `trust *= edge.weight * (decay_factor ** (i + 1))`,
+  first edge `i = 0`, so a direct relationship is charged **0.70**. This is what the site implements.
+- `web4-standard/mrh_trust_propagation.py:294`: `current_trust * weight * (decay_factor ** distance)`
+  with the BFS seeded at `distance = 0`, so a direct relationship is charged **1.00**, no discount.
+  Same off-by-one in `find_trust_paths` (`:243`, `:249`).
+
+So the visitor's instinct tracks a real upstream disagreement. Filed as **Q12** in
+`docs/WEB4-CANON-QUESTIONS.md` (distinct from Q11, which asks whether the distance term applies to
+delegation at all; Q12 asks where the exponent starts where it indisputably applies). The on-page
+addition is therefore **disclosure, not explanation**: it states the convention (the count starts at
+your first edge), says it is a convention rather than a derived result, says the 0.7 multiplies the
+person's own score rather than replacing it, and the honest caveat now names the divergence and says
+the reaction is not a misreading. It deliberately gives **no reason** for charging the first hop:
+any reason would be coined, and Q11's ruling request already records the
+direct-versus-through-intermediaries discriminator as plausible and uncited.
+
+**No number moved.** `0.70 / 0.49 / 0.34` and `trust = t1 x t2 x t3 x 0.7^depth` match the core spec
+and are pinned on `/how-it-works` and `/why-web4` as well as in the widget. #505's block was not
+edited either; its guard now records that its closing contrast is false at depth 1, why it was left
+standing (rewriting it would re-arm the HIGH 3 hop conflation), and where the depth-1 answer lives.
+
+### Outside the PR: the GitHub repo description
+
+The fifth LOW (`github.com/dp-web4` describes 4-life as *"4-life game/explainer for web4 societies"*,
+and the game was retired in the Jul-15 rebuild) is org metadata, not a site file, so no PR can carry
+it. It was **applied directly** with `gh repo edit`, now reading *"4-Life: the educational onramp to
+Web4. A live explainer for the core standard, the hub, hestia and hardbound."* Recorded here because
+it is the one change in this session that no reviewer gates; revert with a single `gh repo edit`
+if the operator wants different wording.
+
+### Deliberately not taken
+
+- **Unanswered Q8** (*"if nothing has a live network, who am I being witnessed by?"*). It recurs from
+  Jul-29 Q8, which was treated on `/hestia` ("Solo is not the mechanism switched off"). The fresh
+  phrasing is about a real deployment's **cold start**, which is a design question, not a copy fix,
+  and answering it on-site would coin canon.
+- `/learn`'s Learning Philosophy section (structurally deferred by #509), the 0.5 endpoint (ledger
+  Q1, whose holding pattern explicitly forbids aligning `/first-contact`'s operator), and the
+  `atp-economics` bare-burn residuals (kept term of art since #464).
 
 ## Aug-01 visitor MEDIUM 6 (15:00 session) - the handoff that promised five and arrived at three
 
