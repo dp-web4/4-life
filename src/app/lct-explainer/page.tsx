@@ -1223,7 +1223,32 @@ export default function LCTExplainerPage() {
             permanent trust death takes a <em>sustained</em> pattern of bad behavior, not one stumble.
             With software-only hardware, 0.5 is both where you start and the highest you can reach.
             Stronger hardware lets you build higher - but you still have to earn it through behavior.
-            One honest tradeoff: the software-only ceiling means people without newer hardware are capped lower - we treat that as a feature, not a bug, because it lets everyone participate while signaling what their identity is anchored to (see below for what the ceiling actually limits).
+            {/* Aug-05 visitor HIGH #1. Their complaint was that this grid "reads like a discount
+                tier", and they only found the honest version on /what-could-go-wrong thirteen pages
+                later. The consequence clause they asked for was ALREADY here (the sentence directly
+                above), so per [[visitor-read-it-and-still-filed-it]] the defect is the sentence that
+                DISARMED it: this line used to say "we treat that as a feature, not a bug". Risk 8
+                says of the identical fact that it is "a real second-class experience baked into the
+                architecture" which "codifies the existing digital divide into the trust layer
+                itself", and closes with the words borrowed below. One page cannot call the same cap
+                a feature while the site's own risk register calls it a contestable policy choice.
+                Direction: risk 8 OWNS the equity question and carries the sourced reason
+                ([[visitor-suggestion-may-point-backwards]]).
+                GUARDRAILS, do not undo:
+                - The judgment is deleted, not inverted, and the eligibility half ("lets everyone
+                  participate") is kept BYTE-IDENTICAL. That clause is what holds the ceiling claim
+                  from tipping into an eligibility claim (guards at L273-274 and L1400-1420) and is
+                  one side of the [[hardware-required-seam]]. Deleting it would flip this page toward
+                  "hardware required".
+                - The replacement is risk 8's own shipped sentence, propagated verbatim rather than
+                  re-coined, so the two surfaces cannot drift apart again.
+                - Asserts NO endpoint. Nothing here says a reader sitting at 0.50 is alive, dead,
+                  safe, or has full access (ledger Q1). */}
+            One honest tradeoff: the software-only ceiling means people without newer hardware are capped lower. It lets everyone participate while signaling what their identity is anchored to (see below for what the ceiling actually limits), but this is a{" "}
+            <Link href="/what-could-go-wrong#risk-accessibility" className="text-gray-400 underline hover:text-gray-300">
+              policy choice, not a technical inevitability, and the choice is contestable
+            </Link>
+            .
           </p>
 
           {/* Jul-9 visitor HIGH (top friction point): "software-only caps at 0.50" and "0.5 is the

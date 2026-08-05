@@ -161,10 +161,18 @@ export default function WhatCouldGoWrongPage() {
           </div>
           <div className="text-gray-300 leading-relaxed space-y-3">
             <p>
-              <strong className="text-gray-100">The risk:</strong> Web4 identity requires hardware
-              with security chips (TPM, Secure Enclave). These chips are made by a handful of
-              companies - Intel, Apple, Google, Qualcomm. If identity depends on their hardware,
-              haven&apos;t we just replaced platform gatekeepers with hardware gatekeepers?
+              {/* Aug-05: scoped in step with /why-web4's four narrowed surfaces. This opened
+                  "Web4 identity requires hardware with security chips", which after canon settled
+                  ledger Q8 request 1 (software-only anchoring is conformant; §1.2 clause 1 forbids
+                  protocol-level exclusion) would have had risk 4 asserting the requirement two
+                  cards before risk 8 describes the software-only tier's lived experience. The
+                  gatekeeper risk is NOT softened: vendor leverage over the ceiling is leverage over
+                  whose reputation can grow, which is the same risk correctly located. */}
+              <strong className="text-gray-100">The risk:</strong> Every Web4 identity that carries
+              real weight is anchored in hardware with security chips (TPM, Secure Enclave). These
+              chips are made by a handful of companies - Intel, Apple, Google, Qualcomm. If the trust
+              ceiling depends on their hardware, haven&apos;t we just replaced platform gatekeepers
+              with hardware gatekeepers?
             </p>
             <p>
               <strong className="text-gray-100">Why it&apos;s real:</strong> Hardware supply chains are

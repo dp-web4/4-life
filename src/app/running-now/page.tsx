@@ -289,6 +289,35 @@ cargo add web4-core web4-trust-core`}</code></pre>
           counted here is the lab&apos;s. Daily use by the people who build it is what the
           Running badge claims, and it does not claim adoption.
         </p>
+        {/* Aug-05 visitor HIGH #3. The landing hero promises "Today we cannot prove what an agent
+            did, on whose authority, or by what rules. Web4 closes that gap." On the one piece
+            badged Running, an action that routes around the policy gate writes no chain entry at
+            all, so the promise does not hold there yet. The site says this honestly, but only on
+            /hestia (page 12 for them) and /what-could-go-wrong risk 9 (page 13), by which point
+            they had already formed the impression from the badge here: "nothing on the path from
+            that promise to the one running implementation warned me the promise does not hold
+            there yet." Their own suggested fix is this one: put it where the Running badge is
+            granted.
+            Wording propagated, not re-derived: "a record of governed activity, not a record of all
+            activity" is byte-identical to /hestia:386, and the two-environment-variables figure to
+            /hestia:358 and /what-could-go-wrong:808. Keep them identical if editing.
+            Placement follows the #whose-machines precedent directly above, and for the same reason:
+            this is scope of what the chain RECORDS, not immaturity of a component, so it is
+            deliberately kept OUT of the "Two things are honestly still early" enumeration below,
+            whose count is load-bearing and matches the pinned caveat under the badge ("two parts").
+            Badge tier is NOT touched: what runs, runs. This scopes what running means. */}
+        <p id="what-the-chain-records" className="text-base text-gray-400 leading-relaxed mb-4 scroll-mt-20">
+          What the chain records: the witness entry is written by the same policy gate that
+          approves an action, so an action that routes around the gate writes no entry at all
+          (today, two environment variables suffice). Hestia&apos;s chain is a record of governed
+          activity, not a record of all activity. That is an accepted limit right now rather than
+          a scheduled repair, and it is worth knowing before you read the badge as the
+          accountability gap already closed:{" "}
+          <Link href="/what-could-go-wrong#risk-gate-bypass" className="text-emerald-400 underline hover:text-emerald-300">
+            the risk register states it in full
+          </Link>
+          .
+        </p>
         <p className="text-base text-gray-400 leading-relaxed mb-4">
           Two things are honestly still early. Hardware binding is trait contracts only
           for now, deferred to the hardbound tier below. The AI-owned autonomous vault is
