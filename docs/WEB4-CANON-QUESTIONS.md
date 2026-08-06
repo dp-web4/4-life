@@ -677,6 +677,45 @@ two HIGHs and three Unanswered Questions in a single sitting.
   charging the first hop. Do not ship the direct-versus-through-intermediaries discriminator as
   the answer; Q11's ruling request #2 already records it as plausible and uncited.
 
+
+### Q13. Is an un-commissioned newcomer intended to decrease monotonically?
+
+- **Filed**: 2026-08-06, from the Aug-06 visitor's MEDIUM 3 and their Unanswered Q5/Q6. This
+  is the reason an otherwise "good" browse returned the ATP/ADP understanding box unticked.
+- **What is NOT being asked.** "Is there a protocol-level floor or allowance?" is already
+  answered upstream, and the site now teaches the answer at `/atp-economics#newcomer-solvency`.
+  `core-spec/inter-society-protocol.md` section 4.5 ("First ATP" Resolution) states there is no
+  protocol-level constraint on a society's initial issuance, and gives the reason: such a
+  constraint would require a universal measurement protocol and therefore a universal authority,
+  contradicting the anti-hierarchical-by-design property. Section 4.7 closes its table of valid
+  ATP policies with *"The Web4 standard provides the form for all of them."* Escalating the
+  floor question would be escalating something canon has deliberately closed.
+- **The open half.** Take the site's own model as given: confirmation of your own work refunds
+  **at most what you spent**, and payment for work someone else commissioned is the only channel
+  that exceeds cost. Then a participant who is never commissioned decreases monotonically from
+  the joining grant, with quality setting the slope and never the sign. The visitor did this
+  arithmetic unprompted and landed on roughly twelve actions.
+  1. **Is that intended?** Is monotonic decrease for the un-commissioned the designed incentive
+     (contribute or wind down), or an artifact of the recharge cap that a society is expected to
+     patch in its own law?
+  2. **Does any canonical bootstrap-period exemption exist?** Section 4.7 shows a recurring
+     per-role allowance as a *valid* society policy. Is there anywhere in canon a RECOMMENDED
+     newcomer provision, analogous to section 4.6's RECOMMENDED measurement practices, or is the
+     absence itself the position?
+  3. **If monotonic decrease is intended**, the cold-start story on this site has the wrong
+     shape: it currently reassures on **trust** convergence (~30-action half-life, newcomers
+     surpass established members by ~50 actions) while the **ATP** clock runs the other way over
+     a shorter horizon. A ruling on (1) tells us whether to reconcile those two clocks or to
+     teach the tension as real.
+- **Why 4-life cannot settle it.** Answering (1) either way is coining an intent. Answering (2)
+  "no" is provable by absence, but only upstream can say whether the absence is deliberate.
+- **Holding pattern**: no figure changed. `/atp-economics#newcomer-solvency` names the mechanism
+  that exists (issuance is society law, and both a recurring allowance and no allowance are legal
+  choices), states plainly that the site cannot give a rate because no public network is open to
+  outside members yet, and **declines the solvency promise**. Do not close this by writing a
+  survival guarantee, and do not print a rate. The adjacent guard at `atp-economics` L726 has
+  forbidden the same upgrade since the Aug-05 pass, for the same reason.
+
 ---
 
 *Maintained by the 4-life autonomous track. Add new entries only with a policy-review-approved

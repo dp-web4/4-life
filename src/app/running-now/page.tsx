@@ -161,9 +161,17 @@ export default function RunningNowPage() {
             <strong className="text-sky-300">Reference implementation</strong> plus a
             runnable society hub, both public. No production deployment yet.
           </li>
+          {/* Aug-06 visitor LOW: the 2,627 count named no artifact here and was attached to the
+              wrong one on /the-standard, so the visitor "could not tell which package it belongs
+              to". Three artifacts, per web4/STATUS.md:57 and :62 - and the reason the count
+              would not place is that the third one is not a package. Keep this identical to
+              the-standard:239-266; web4-trust-core carries no test count on either page because
+              its README publishes none. */}
           <li className="rounded-lg border border-white/10 bg-white/5 p-3">
-            <strong className="text-sky-300">Tested</strong>: 171 tests green in
-            web4-core; the reference Python SDK carries 2,627 tests.
+            <strong className="text-sky-300">Tested</strong>: 171 tests green in{" "}
+            <code className="text-sky-300">web4-core</code>. The 2,627-test figure you will
+            see quoted belongs to a third artifact, the standard&apos;s own reference Python
+            implementation, which ships with the spec repo rather than as a separate package.
           </li>
           {/* Aug-05 visitor LOW / Unanswered Q7. This bullet named the script and the install
               block directly below it names the packages, which together read as "install, then

@@ -236,6 +236,21 @@ export default function TheStandardPage() {
             The spec corpus is stable and reference implementations exist. There is no
             production deployment yet.
           </p>
+          {/* Aug-06 visitor LOW: "The 2,627 test count is attributed to 'the reference Python
+              SDK' on one page and appears attached to web4-trust-core v0.2.0 on the other. I
+              could not tell which package it belongs to." They were right, and the text was
+              WRONG rather than ambiguous: the SDK sentence sat inside the web4-trust-core card,
+              so the count read as that crate's. It is not. Ground truth web4/STATUS.md:62:
+              "Reference Python SDK | 2,627 tests, mypy --strict clean (not yet on PyPI
+              separately) | web4-standard/implementation/". STATUS.md:57 confirms 171 belongs to
+              web4-core v0.3.0. There are THREE artifacts here, not two, and the reason the
+              visitor could not place the count is that one of the three is not a package at
+              all - which is why the "not published separately" clause is the load-bearing part
+              and must not be trimmed as filler.
+              web4-trust-core deliberately carries NO test count: its README publishes none, and
+              substituting one from a neighbouring crate is how the confusion started.
+              /running-now:164-172 carries the matching version of this list. Keep the three
+              attributions identical on both pages or the ambiguity comes back. */}
           <div className="grid sm:grid-cols-2 gap-3">
             <div className="rounded-lg border border-white/10 bg-white/5 p-3">
               <div className="font-semibold text-purple-300 text-sm">web4-core</div>
@@ -246,8 +261,18 @@ export default function TheStandardPage() {
             <div className="rounded-lg border border-white/10 bg-white/5 p-3">
               <div className="font-semibold text-purple-300 text-sm">web4-trust-core</div>
               <div className="text-sm text-gray-400 leading-relaxed">
-                Public at v0.2.0. The reference Python SDK has 2,627 tests.
+                Public at v0.2.0.
               </div>
+            </div>
+          </div>
+          <div className="rounded-lg border border-white/10 bg-white/5 p-3 mt-3">
+            <div className="font-semibold text-purple-300 text-sm">
+              The reference Python implementation
+            </div>
+            <div className="text-sm text-gray-400 leading-relaxed">
+              2,627 tests. This is the standard&apos;s own reference implementation, a third
+              artifact rather than either package above, and it is not published to PyPI
+              separately: you get it with the spec repo.
             </div>
           </div>
           <p className="text-sm text-gray-300 leading-relaxed mt-3">

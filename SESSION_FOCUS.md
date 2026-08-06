@@ -2,6 +2,83 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-06 15:00 session - the refill nobody promised, and a fix that landed on one of two twins
+
+Same log as the 09:00 session (`visitor/logs/2026-08-06.md`). That pass took 3 of 4 HIGHs and 2 of
+3 MEDIUMs; this one takes **the residual**: the last MEDIUM and the two falsifiable LOWs.
+
+**MEDIUM 3, newcomer ATP solvency - the reason a "good" browse returned the ATP/ADP box unticked.**
+Visitor: *"At -8 per quality post I get about twelve posts before I die. Nothing on the page tells
+me how a newcomer with zero track record gets commissioned inside twelve actions, or whether there
+is any floor or refill. I looked for it and did not find it."*
+
+Read-it-and-still-filed-it, and the residual was exact: **four** surfaces on `/atp-economics` each
+answer a *neighbouring* question. L1750 answers entry (the 100 grant). L1761 answers **trust**
+convergence, and the visitor named that miss themselves (*"the cold-start section covers trust
+convergence but not ATP survival"*). L985 answers where the first confirmer's trust came from.
+L727 answers **society-level** input, and its own guard forbids upgrading it into a solvency
+promise. Individual newcomer survival was answered nowhere.
+
+Answered at a new `#newcomer-solvency` block, grounded in **core-spec only**:
+`core-spec/inter-society-protocol.md` section 4.5 (*"There is no protocol-level constraint on a
+society's initial issuance"*, plus the stated reason: such a constraint needs a universal
+measurement protocol, which needs a universal authority, contradicting anti-hierarchical-by-design)
+and section 4.7's table of valid ATP policies, closing *"The Web4 standard provides the form for
+all of them."* So: issuance is society law, a recurring per-role allowance is a legal choice and so
+is no allowance, the site cannot give a rate because no public network is open to outside members
+yet, and self-initiated work alone does not grow a balance. **It names the mechanism and declines
+the promise.** Filed as ledger **Q13**, narrowed to the genuinely open half (is monotonic decrease
+for the un-commissioned *intended*, and does any canonical bootstrap-period exemption exist) - the
+floor question itself is answered upstream, so escalating it would have re-opened something canon
+deliberately closed.
+
+**The reusable lesson, and it is bigger than the diff: a June-11 fix landed on one of two twins.**
+The reviewer required checking the caveat against the page's own illustrations, and
+`atp-economics:1486-1489` ("Life 1: The Newcomer") shows *spent 60, earned 105 back, ended with
+145* - **arithmetically impossible** under the page's own capped-refund model unless 45 of it was
+commissioned payment, which the bullets never said. The twin at `how-it-works:977-984` carries the
+identical figures and **already has the fix**, in a `<details>` at `:986-1006` whose guard reads:
+*"June 11 visitor HIGH (browse B): 'earned more than cost' seemed to violate the recharge-at-cost
+cap **on /atp-economics**. Name the channel: task payment."* The friction was filed **against
+`/atp-economics` by name**, and the fix landed on `/how-it-works` only. The page it was filed
+against carried the unfixed version for eight weeks, and #517 edited that exact block eight hours
+before this session without catching it. Channel-naming propagated in substance, not re-derived;
+**no figure moved** (105 / 145 / 130 flow into Lives 2-3 and into `/how-it-works`, which #517
+deliberately kept in sync).
+
+**And the summary box was the unqualified version of what this caveat qualifies.** `:209` said
+*"an active contributor's balance grows well past the grant they started with"* - earn-back is
+capped at spend, so that is the one channel it cannot be, and item 3 four lines below already says
+so (*"that payment, not recharge, is where net gain comes from"*). Retargeted to the commissioning
+channel. The Jul-15 guard above it justified the old wording, so **that rationale was rewritten to
+record the reversal** rather than left to invite a revert; the `"buy, sell, or speculate"` guardrail
+is untouched.
+
+**LOW 2, a test count attributed to an artifact that does not own it.** *"2,627 attributed to 'the
+reference Python SDK' on one page and attached to `web4-trust-core` v0.2.0 on the other. I could not
+tell which package it belongs to."* Wrong, not merely ambiguous: the sentence sat inside the
+`web4-trust-core` card. Per `web4/STATUS.md:57,62` there are **three** artifacts, and the reason the
+count would not place is that **one of the three is not a package** - the standard's reference Python
+implementation ships with the spec repo, not to PyPI. That clause is the load-bearing part; do not
+trim it as filler. `web4-trust-core` deliberately carries **no** test count on either page, since its
+README publishes none and substituting a neighbour's is how this started.
+
+**LOW 3**, `/onramp`: the hestia bullet's *"it is an early prototype"* could bind to hestia rather
+than to its policy gate. Subject restored, per the visitor's own suggested fix.
+
+**Deliberately not fixed, recorded so the next session does not re-litigate:**
+- **LOW 1** (`/running-now` Running-badge plurality): **4th sitting on this row**. Both halves of
+  the suggestion already ship (`:89-97` legend, `:315-321` long form), and the remaining half is the
+  visitor's inference *"That is one instance"*, which `:285` contradicts (four machines). Printing
+  "one instance" would ship a **false number** to close a LOW.
+- **HIGH 4** and Unanswered Q1/Q2 (what a permanent-0.50 user can do): ledger Q1/Q8. The site is
+  endpoint-silent by policy and **the visitor will re-file this by design**. Do not close it by
+  writing the sentence.
+- **Unanswered Q7** (a route in to an early hub): operator positioning call.
+
+**Verification**: `npm run build` green. Zero em dashes added (baseline 0 in all four page files,
+19 pre-existing in the ledger, 0 added). **No figure changed on any surface.** 0 new files.
+
 ## Aug-06 09:00 session - the example that died by no rule the page allows
 
 Fresh log (`visitor/logs/2026-08-06.md`): 52 min, 14 pages, understanding **good**, would return

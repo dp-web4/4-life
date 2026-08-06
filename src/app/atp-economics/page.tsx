@@ -203,10 +203,17 @@ export default function ATPEconomicsPage() {
                 phrasing is this page's OWN outlier: L306 ("you don't accumulate it as wealth"),
                 L1118 + L1927 ("Value creators accumulate energy budget / budget across lives") all
                 draw the budget-vs-wealth line. Reconcile item 1 to the page's established framing:
-                you DO accumulate budget (balance grows past the grant as you earn back), you do NOT
-                accumulate cash-out wealth. Guardrail: the "buy, sell, or speculate" clause is the
-                standing unresolved web4 unit-of-account-vs-currency tension - left verbatim. */}
-            <li className="flex gap-2"><span className="text-sky-400 shrink-0">1.</span> ATP is your <strong className="text-gray-100">energy budget</strong> - a per-agent allowance you spend and earn back, so an active contributor&rsquo;s balance grows well past the grant they started with. It&rsquo;s <strong className="text-gray-100">budget, not wealth</strong>: not money you can hoard or cash out, and not something you can buy, sell, or speculate on.</li>
+                you DO accumulate budget, you do NOT accumulate cash-out wealth. Guardrail: the
+                "buy, sell, or speculate" clause is the standing unresolved web4
+                unit-of-account-vs-currency tension - left verbatim.
+                Aug-06 REVERSAL, read this before reverting: the growth channel named here used to
+                be "as you earn back", which is the one thing that CANNOT be it. Confirming your own
+                work refunds at most what you spent (#net-positive, and item 3 below: "that payment,
+                not recharge, is where net gain comes from"), so earn-back sustains a balance and
+                never grows one. The Jul-15 need is unchanged and better served: a reader still
+                learns how 350 ATP is reachable from a 100 grant, and now learns by which channel.
+                If you reword this, keep item 1 and item 3 naming the same channel. */}
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">1.</span> ATP is your <strong className="text-gray-100">energy budget</strong> - a per-agent allowance you spend and earn back, and a contributor whose work others commission builds a balance well past the grant they started with. It&rsquo;s <strong className="text-gray-100">budget, not wealth</strong>: not money you can hoard or cash out, and not something you can buy, sell, or speculate on.</li>
             {/* May 23 visitor Unanswered Q2: "Who are the 'others' that confirm my value to recharge me? The
                 validating party stayed fuzzy." The full answer lives at #earning-atp (Gratitude Loop, ~line 1122)
                 but a 5-min reader builds their recharge model from this box, where "others" was ungrounded. Same
@@ -736,6 +743,77 @@ export default function ATPEconomicsPage() {
               className="text-sky-400 hover:text-sky-300 underline"
             >where the society&apos;s ATP comes from</a>{' '}
             below.)
+          </p>
+        </div>
+
+        {/* Aug-06 visitor MEDIUM 3, plus their Unanswered Q5 and Q6, and the reason the
+            ATP/ADP box came back unticked on an otherwise "good" browse: "At -8 per quality
+            post I get about twelve posts before I die. Nothing on the page tells me how a
+            newcomer with zero track record gets commissioned inside twelve actions, or
+            whether there is any floor or refill. I looked for it and did not find it."
+            Read-it-and-still-filed-it, and the residual is exact: FOUR surfaces on this page
+            each answer a NEIGHBOURING question. L1750 answers entry (the 100 grant), L1761
+            answers trust convergence (the visitor named that miss themselves: "the cold-start
+            section covers trust convergence but not ATP survival"), L985 answers where the
+            first confirmer's trust came from, and the parenthetical directly above answers
+            SOCIETY-level input. Individual newcomer survival was answered nowhere.
+            This is deliberately a separate block, not a third parenthetical stacked under
+            that paragraph. It answers "can I personally survive", which is a different
+            question from L727's "is the system a closed loop", and L726's guard on that
+            paragraph reads "Do not upgrade it into a solvency promise". Neither does this
+            one: it names the mechanism and declines the promise. Keep the two separate.
+            Grounding is core-spec ONLY:
+              - inter-society-protocol.md 4.5 ("First ATP" Resolution): "There is no
+                protocol-level constraint on a society's initial issuance", and the stated
+                reason - such a constraint would require a universal measurement protocol,
+                which would require a universal authority, contradicting
+                anti-hierarchical-by-design.
+              - 4.7's informative table for the shapes (including "Editorial collective /
+                Allocated monthly per role", i.e. a recurring allowance IS a legal choice),
+                closing "The Web4 standard provides the form for all of them."
+            Rejected in policy review, do not reinstate: hub-lib's AtpIssuancePolicy struct
+            and the law-oracle RFC's PROC-ATP-RECHARGE. Both exist and say what you would
+            want, but one is a single implementation's type layout and the other is one
+            society's worked example in a bee-hive role vocabulary. Neither can characterise
+            what THE STANDARD does or does not require.
+            The no-public-network clause is the canonical sentence #490 made identical across
+            /hestia, /how-it-works and /running-now. What this block must never become: a
+            statement that you will be fine, or a rate. */}
+        <div id="newcomer-solvency" className="mt-8 bg-gradient-to-br from-sky-950/20 to-blue-900/10 border border-sky-800/30 rounded-xl p-6 scroll-mt-24">
+          <h3 className="text-lg font-semibold text-sky-300 mb-3">
+            So is there a floor, a refill, or an allowance?
+          </h3>
+          <p className="text-gray-300 text-sm leading-relaxed mb-3">
+            Not from the protocol, and that is deliberate rather than unfinished. Web4&apos;s
+            core spec settles it in a section called <em>First ATP</em>: there is no
+            protocol-level constraint on what a society issues. The reason it gives is
+            structural. Constraining issuance at the protocol level would require a universal
+            way to measure resources, that would require a universal authority to run it, and
+            refusing to have one is the property the whole design is built around.
+          </p>
+          <p className="text-gray-300 text-sm leading-relaxed mb-3">
+            So issuance is <strong className="text-gray-100">society law</strong>, and the spec
+            lists very different arrangements as equally valid: a compute co-op mints ATP when
+            members contribute compute, an editorial collective allocates attention-hours{" "}
+            <em>monthly per role</em>, an agent fleet mints against an operator&apos;s funding.
+            A recurring allowance is a choice a society is free to write into its law. So is no
+            allowance at all. The standard provides the form, not the setting.
+          </p>
+          <p className="text-gray-300 text-sm leading-relaxed">
+            Which makes the honest answer to your question this: whether there is a floor under
+            you depends on the law of the society you join, and that law is signed and readable
+            before you join. This page cannot tell you the rate, because there is no public
+            network open to outside members yet, so nobody has run one long enough to know which
+            rates work. What the arithmetic above does settle is the direction. Confirmation of
+            your own work refunds at most what you spent, so self-initiated work alone does not
+            grow a balance;{" "}
+            <a
+              href="#net-positive"
+              onClick={(e) => { e.preventDefault(); const el = document.getElementById('net-positive'); if (el) { if (el instanceof HTMLDetailsElement) el.open = true; el.scrollIntoView({ behavior: 'smooth' }); } }}
+              className="text-sky-400 hover:text-sky-300 underline"
+            >commissioned work is the channel that does</a>. How someone with no track record
+            lands a first commission is an open question on this stack rather than a solved one,
+            and you should read it as one.
           </p>
         </div>
 
@@ -1488,6 +1566,29 @@ export default function ATPEconomicsPage() {
               <li>Community validated her work → earned 105 ATP back</li>
               <li>Ended with <strong className="text-green-400">145 ATP</strong> and growing trust</li>
             </ul>
+            {/* Aug-06 session, licensed by that visitor's MEDIUM 3 (newcomer solvency) but
+                actually an eight-week-old ONE-SURFACE fix. The June 11 visitor (browse B)
+                filed "earned more than cost seems to violate the recharge-at-cost cap"
+                AGAINST THIS PAGE BY NAME; the fix landed on the twin illustration at
+                /how-it-works only (:986-1006, the "How did the Novice earn 105 ATP from 60
+                spent?" fold), and this copy - the one the friction was filed against - kept
+                the unfixed version. So a newcomer worked example here taught unaided
+                net-positive right up until the session that added #newcomer-solvency, which
+                says the opposite. Illustration fixed, not prose: the prose was already right.
+                PROPAGATED, not re-derived: the channel-naming is how-it-works:1004-1006 in
+                substance ("Earning above cost comes from task payment - a task pays what the
+                work is worth to whoever commissioned it, not what it cost you to do. Only the
+                recharge of your own spend is capped at cost."). If you reword either one,
+                reword both, same rule as L721 above.
+                NO FIGURE MOVED. 105 / 145 / 130 propagate into Lives 2-3 below and into
+                /how-it-works:977-984, which #517 deliberately kept in sync eight hours before
+                this. The defect was never the number, it was the unnamed channel. */}
+            <p className="text-xs text-gray-500 mt-2">
+              How 60 spent becomes 105 earned: the earn-back on your own spend is capped at what
+              you spent. Earning <em>above</em> cost comes from task payment, where a task pays
+              what the work is worth to whoever commissioned it rather than what it cost you to
+              do. Her surplus is commissioned work, not a refund.
+            </p>
             <p className="text-xs text-gray-500 mt-2 italic">
               Her karma carries forward: she earned more than she spent, so her next life starts strong.
             </p>
