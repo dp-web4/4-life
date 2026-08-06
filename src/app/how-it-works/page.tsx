@@ -811,11 +811,16 @@ export default function HowItWorksPage() {
                   inside a collapsed <details>, so the reader met the life-or-death threshold before
                   the rule that computes it. Weights land here, at the decision point. Canon:
                   trust-tensor:875 and WEB4-CANON-QUESTIONS R1. The >= / < comparators below are
-                  ledger Q1 territory and are deliberately untouched. */}
+                  ledger Q1 territory and are deliberately untouched.
+                  Aug-06: the parenthetical read "(societies can retune them per role)", which is
+                  false against t3-v3-tensors.md §10.2 (the composite weights are protocol-invariant;
+                  §10.3 gives societies role requirement THRESHOLDS, not weights). Corrected in
+                  place, footprint unchanged, arithmetic and comparators still untouched. */}
               <p className="text-gray-400 text-sm leading-relaxed mb-3">
                 The blend uses the canonical weights{" "}
                 <strong className="text-gray-300">0.4 talent + 0.3 training + 0.3 temperament</strong>{" "}
-                (societies can retune them per role). So an agent at talent 0.40, training 0.60,
+                (the specification fixes them; what varies per role is the minimum each dimension
+                must clear, not the blend). So an agent at talent 0.40, training 0.60,
                 temperament 0.60 scores <code className="text-gray-300">0.4(0.40) + 0.3(0.60) + 0.3(0.60) = 0.52</code>{" "}
                 and stays eligible, even though one dimension is under the line on its own.{" "}
                 <Link href="/trust-tensor#t3-composite" className="text-sky-400 hover:underline">

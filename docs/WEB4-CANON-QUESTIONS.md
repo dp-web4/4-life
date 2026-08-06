@@ -42,7 +42,10 @@ instead of re-litigating.
 - **Canon**: test-vector **t3v3-001** (`web4-standard/test-vectors/t3v3/tensor-operations.json`)
   states `composite = talent*0.4 + training*0.3 + temperament*0.3` with weights and a worked
   example. Spec `core-spec/t3-v3-tensors.md` §10.2 invariant table carries the same row.
-- **Site state**: prose already matches (trust-tensor:866/887, how-it-works:822, why-web4:2256).
+- **Site state**: prose already matches on /trust-tensor (the composite-vs-role-weighted paragraph
+  above the role widget, and the T3 Tensor Structure block under `#t3-composite`), /how-it-works
+  (the rebirth-eligibility blend), and /why-web4 (the 0.5-threshold FAQ entry). Named by surface,
+  not line: the four integers cited here before had all drifted onto unrelated lines by Aug-06.
   The two live sim engines (karma-journey:171, trust-tensor-explorer:184) deliberately use
   0.3/0.3/0.4 (temperament-highest) with a shipped rationale box.
 - **⚠️ Standing restriction — NOT reopened by this citation**: on-page reconciliation of the
