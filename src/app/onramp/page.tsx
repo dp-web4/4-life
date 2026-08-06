@@ -390,7 +390,14 @@ export default function OnrampPage() {
               <Link href="/hestia#honest-status" className="text-emerald-300 underline hover:text-emerald-200">
                 policy gate stops accidents, not adversaries
               </Link>
-              : it is an early prototype that a capable agent can route around today.
+              : <strong className="text-gray-200">the gate</strong> is an early prototype that a
+              capable agent can route around today.
+              {/* Aug-06 visitor LOW: "Briefly alarmed by hestia described as an early prototype
+                  right after Running Now called it deployed and in daily use. Re-read it: the
+                  sentence scopes to hestia's POLICY GATE, not hestia. Fine, but I had to slow
+                  down to see it." The bullet's subject is hestia, so a bare "it" here can bind
+                  to the wrong noun on a first pass. Their own suggested fix: lead the clause
+                  with its subject. No claim, scope or figure changed. */}
             </li>
             <li>
               <strong className="text-purple-300">The hub</strong> is{" "}
