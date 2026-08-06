@@ -2345,12 +2345,26 @@ export default function WhyWeb4Page() {
                 But it&apos;s a starting point, not a mandate. Cultural trust norms absolutely vary - 
                 that&apos;s why governance is society-local, not protocol-global.
               </p>
+              {/* Aug-06: this paragraph used to open "Beyond thresholds, societies can customize
+                  how trust is weighted", then invited a culture to weight Temperament higher. That
+                  is false against t3-v3-tensors.md §10.2, which lists the T3 composite weights as
+                  protocol-invariant ("MUST produce identical results"); §10.3 gives societies role
+                  requirement THRESHOLDS (§5.1 minimum_t3 floors) and the decay rates, not the
+                  blend. It also contradicted this page's own two-layer answer at #faq-protocol-changes
+                  ("Protocol-level: the trust tensor math"), so the vocabulary here is borrowed
+                  verbatim from that entry rather than re-coined. The decay-rate half was correct
+                  and is kept. No FAQ entry removed, merged, reordered, or retitled. */}
               <p>
-                Beyond thresholds, societies can customize <strong>how trust is weighted</strong>. T3
-                defaults to Talent 0.4, Training 0.3, Temperament 0.3 - but a culture that
-                values consistency and reliability over raw competence could weight Temperament higher.
-                A research community might weight Talent (demonstrated expertise) more heavily. Even
-                decay half-lives can be society-tuned: a fast-moving startup culture might shorten
+                Not everything is society-set, though. The T3 composite blend (Talent 0.4, Training
+                0.3, Temperament 0.3) is <strong>protocol-level</strong>: the specification fixes it
+                so every conforming implementation computes the same composite, and no society can
+                vote itself different weights. See{" "}
+                <a href="#faq-protocol-changes" className="text-sky-400 hover:underline">
+                  the two governance layers
+                </a>{" "}
+                for where that line falls. What a society does set, alongside its thresholds, is the
+                bar each role has to clear (a surgeon role can demand high training, a moderator role
+                high temperament) and the decay rates: a fast-moving startup culture might shorten
                 Training decay (skills go stale faster) while a traditional guild might lengthen it
                 (craft knowledge persists).
               </p>

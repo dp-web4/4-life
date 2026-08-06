@@ -452,19 +452,28 @@ export default function TrustTensorPage() {
             role-weighted match, grounded in R6_TENSOR_GUIDE.md:566-578 match_entity_to_role) and
             covers all three roles, not just the analyst.
 
-            Two things it must not say. Not "societies can customize weights per role": that is
-            the trailing clause at :926 and it is wrong against the spec, which lists T3 composite
-            weights under §10.2 Protocol-Invariant Parameters ("MUST produce identical results")
-            while §10.3 society-configurable covers role THRESHOLDS (min_talent etc.), a different
-            field set. That defect is filed in SESSION_FOCUS.md, not fixed here. And not "fixed by
-            the spec" either, true though it is, because :926 twenty lines below would then
-            contradict this and the contradiction would be ours. Name the quantity, not the
-            authority. */}
+            Aug-06 UPDATE, read this before editing the clause below. The earlier version of this
+            comment forbade saying "fixed by the spec" here, on the sole ground that the T3 Tensor
+            Structure block under id="t3-composite" ended with "societies can customize weights per
+            role" and would have contradicted it. That clause was wrong (t3-v3-tensors.md §10.2
+            Protocol-Invariant Parameters lists the T3 composite weights and requires that all
+            conforming implementations "MUST produce identical results"; §10.3
+            Society-Configurable does NOT list them, it lists role requirement THRESHOLDS, the
+            min_talent/min_training/min_temperament floors of §5.1). The clause has been corrected,
+            so the objection is gone and the invariance clause now ships in the sentence below.
+
+            What must still not be said: that societies configure the per-role MATCH weights
+            either. Those fields (role_requirements.*_weight, R6_TENSOR_GUIDE.md:566-576) are real
+            and they are per-role, but no normative table assigns them a governance tier, so this
+            page calls them per-role and stops there. And no ordering commentary here: the
+            talent-highest vs temperament-highest question is standing restriction R1 in
+            docs/WEB4-CANON-QUESTIONS.md. Name the quantity first, the authority second. */}
         <p className="text-gray-400 mb-4">
           Two different numbers live on this page, so it is worth separating them before you
           start clicking. The canonical composite weights are{" "}
-          <strong className="text-sky-300">Talent 0.4, Training 0.3, Temperament 0.3</strong>:
-          that is the blend used when T3 is collapsed into a single overall score (
+          <strong className="text-sky-300">Talent 0.4, Training 0.3, Temperament 0.3</strong>,
+          fixed by the specification for every conforming implementation: that is the blend used
+          when T3 is collapsed into a single overall score (
           <a href="#t3-composite" className="text-sky-400 hover:underline">
             the structure behind it
           </a>
@@ -959,10 +968,24 @@ export default function TrustTensorPage() {
               <h3 className="text-xl font-semibold text-sky-400 mb-3">
                 T3 Tensor Structure
               </h3>
+              {/* Aug-06: this sentence used to end "- societies can customize weights per role",
+                  which granted societies an override the spec withholds. t3-v3-tensors.md §10.2
+                  Protocol-Invariant Parameters carries the row "T3 composite weights |
+                  talent=0.4, training=0.3, temperament=0.3 | §9.2 | t3v3-001" under "all
+                  conforming implementations MUST produce identical results". §10.3
+                  Society-Configurable lists "Role requirement thresholds" instead, and its
+                  reference §5.1 shows only role_requirements.minimum_t3, i.e. per-dimension
+                  floors. The clause had borrowed real per-role variability and attached it to the
+                  wrong quantity. Do not restore it, and do not extend society control to the
+                  *_weight fields either (see the guard above the role widget). */}
               <p className="leading-relaxed mb-3">
                 Each entity-role pair has its own T3 tensor. Tensors are never shared across roles.
                 The canonical composite weights are <strong className="text-sky-300">Talent 0.4, Training 0.3,
-                Temperament 0.3</strong> - societies can customize weights per role:
+                Temperament 0.3</strong>, and they are protocol-level: the specification fixes them,
+                so every conforming implementation collapses a tensor to the same composite. A
+                society cannot vote itself a different blend. What <em>is</em> set per role is a
+                different quantity: the minimum each dimension must clear to qualify, and the
+                per-role weighting used to score how well a qualified candidate fits.
               </p>
               <pre className="bg-gray-950 border border-gray-700 rounded-lg p-4 overflow-x-auto text-xs text-gray-400 font-mono">
 {`// T3 tensor with role binding

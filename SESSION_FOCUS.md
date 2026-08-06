@@ -2,6 +2,60 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-06 03:00 session - the override the spec never granted
+
+No fresh visitor log (browse runs 05:00, session ran 03:01), so this took the task the 21:00
+session named: the `trust-tensor` configurability clause, filed with citations and left unfixed
+because doing it properly was a canon correction rather than the prominence fix that PR was.
+
+**The defect.** *"societies can customize weights per role"* grants societies an override the spec
+withholds. `t3-v3-tensors.md` **§10.2 Protocol-Invariant Parameters** carries the row `T3 composite
+weights | talent=0.4, training=0.3, temperament=0.3 | §9.2 | t3v3-001` under *"all conforming
+implementations MUST produce identical results"*. **§10.3 Society-Configurable** does not list them;
+it lists *Role requirement thresholds*, whose reference **§5.1** shows only
+`role_requirements.minimum_t3`, per-dimension floors. The clause had taken real per-role variability
+and attached it to the wrong quantity.
+
+**It was on three surfaces, not one.** The filing named `trust-tensor` only. Sweeping the claim
+rather than the sentence found `how-it-works` (*"societies can retune them per role"*, at the
+rebirth-eligibility decision point) and `why-web4` (*"Beyond thresholds, societies can customize how
+trust is weighted"*). The `why-web4` copy was the worst: it is the only surface that draws the
+threshold/weight boundary explicitly, and it drew it backwards.
+
+**`/why-web4` already shipped the correct answer 460 lines below** (caught by the policy reviewer).
+`#faq-protocol-changes` splits *"Society-level (SAL): trust thresholds, ATP costs, role definitions
+... this is where the 0.5 threshold, specific decay rates, and enforcement rules live"* from
+*"Protocol-level: the trust tensor math"*. So the page contradicted itself, not just the spec. The
+replacement borrows that entry's vocabulary verbatim and links to it, rather than coining framing.
+Same shape as #514 and #515: the page ships the answer and then denies it elsewhere.
+
+**What each surface now says**, at its own reading depth: the blend is protocol-level and fixed;
+what varies per role is the minimum each dimension must clear. `/trust-tensor`'s technical block
+also names the per-role match weighting. Deliberately **not** said anywhere: that societies
+*configure* those match weights. `role_requirements.*_weight` (`R6_TENSOR_GUIDE.md:566-576`) is
+real and per-role, but no normative table assigns it a governance tier, so the site calls it
+per-role and stops. Correcting an unlicensed claim by inventing a smaller one is not a fix.
+
+**Also**: the `why-web4` decay-rate sentence was correct against §10.3 and survives intact, now
+without a false premise introducing it. The anchor paragraph above the role widget (#515, one day
+old) gained the invariance clause it had been forbidden, since the only objection was the
+contradiction this PR removes; nothing else in it changed and no ordering commentary was added
+(R1). Guard comments on all three pages now record the reversal instead of routing around it.
+
+### NEW, filed not fixed: R1's "Site state" block cites two engines that no longer exist
+
+`docs/WEB4-CANON-QUESTIONS.md` R1 says *"The two live sim engines (karma-journey:171,
+trust-tensor-explorer:184) deliberately use 0.3/0.3/0.4 (temperament-highest) with a shipped
+rationale box."* Neither survives: `src/app/karma-journey` and `src/app/trust-tensor-explorer` are
+absent, `src/lib/simulation` is empty, and no 0.3/0.3/0.4 T3 engine exists anywhere in `src/`. They
+were retired in the Jul-15 rebuild. This sits one line above R1's **standing restriction** (on-page
+reconciliation of the sims, REJECTED per #442, bridged per #448), and the restriction's entire
+premise is those engines being live, so this is an escalation-adjacent call and **not** a session's
+to make unilaterally. The Aug-06 session corrected only the drifted line cites in that block (all
+four had rotted onto unrelated lines) and replaced them with surface names so they cannot rot again.
+**Next session or operator: does R1's standing restriction survive the retirement of the two things
+it restricts?**
+
 ## Aug-05 visitor, the four LOWs (Aug-05 21:00 session) - the precise version living below the vague one
 
 Third session on the Aug-05 log (09:00 took the HIGHs, 15:00 took MEDIUM 1). All four LOWs share
@@ -47,7 +101,10 @@ is the correct disposition; do not re-treat without a canon ruling.
 **MEDIUM 3** (`/why-web4` ~70 FAQ entries, six duplicated pairs) remains the deferred curation
 design pass, recurring since #473. Still not a session-sized edit.
 
-### NEW, filed not fixed: `trust-tensor:926` is wrong about configurability
+### CLOSED Aug-06 (was: filed not fixed): `trust-tensor` was wrong about configurability
+
+**Fixed by the Aug-06 03:00 session, see the section at the top of this file.** The clause is gone
+from all three surfaces that rendered it. Kept below as the filing that licensed the work.
 
 Surfaced by the policy reviewer while ruling on LOW 4's wording. The canonical-weights sentence
 ends *"societies can customize weights per role"*, and that clause is a live accuracy defect:
