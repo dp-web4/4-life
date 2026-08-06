@@ -2,6 +2,74 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-05 visitor, the four LOWs (Aug-05 21:00 session) - the precise version living below the vague one
+
+Third session on the Aug-05 log (09:00 took the HIGHs, 15:00 took MEDIUM 1). All four LOWs share
+the shape the visitor named for the HIGHs one severity up: **the precise answer already existed on
+the site, just not where the vague version is read.** Only one item coined a new fact, and only
+because upstream packaging made the shipped route non-executable.
+
+- **LOW 2 / Q7, the 30-second mint dead-ends** (`/the-standard`, `/running-now`, landing card).
+  The defect was the SEQUENCE, not a missing path: both pages read "install these packages" then
+  "run `identity_bootstrap.py`", which implies the wheel carries the script. It does not.
+  `web4-core/python/pyproject.toml` is maturin, `module-name = "web4_core"`, no examples
+  packaging; upstream's own README says the script is repo-shipped. Added the three literal
+  commands (verbatim from `web4-core/python/README.md:89-92`) under a new
+  `#thirty-seconds` anchor, and routed the other two surfaces to it so they cannot drift.
+  Package names verified correct against `STATUS.md:36-38` and did not move.
+- **LOW 1 / Q6, "pilot-ready" had no slot.** Every *rendered* use is about the hub, which is
+  badged Reference, so it was bound inside that tier in the legend rather than dropped (the
+  visitor's alternative). Dropping it would cost information the badge does not carry, e.g. the
+  honest "pilot-ready with no users" framing. Respects both existing guards on that block: not a
+  fourth tier, no hedge on the tier order. It also does not claim live instances exist, which is
+  the thing Running claims.
+- **LOW 4, no default T3 anchor before the role widget.** The canonical 0.4/0.3/0.3 did ship, at
+  `#t3-composite`, but inside a `<details>` labelled "Technical Details (Click to Expand)". A
+  prominence fix: canon wording propagated verbatim above the role selector. Deliberately framed
+  as a QUANTITY distinction (composite blend vs role-weighted match, per
+  `R6_TENSOR_GUIDE.md:566-578`) because Team Leader is 0.2/0.3/0.5, temperament-highest, and
+  renders live: stating a bare default would have manufactured that inversion unframed on a
+  beginner page. Not the T3-weights escalation, which is about the prose-vs-retired-sims ordering.
+- **LOW 3 / Q5, which decay rate is ours.** The 0.7-vs-0.85 reconciliation already shipped and the
+  visitor demonstrably read it ("it does say they converge by depth 3-4, which helped") and still
+  could not answer the question, so the missing clause was exact: which number is *ours*. Marked
+  0.7 as the site's teaching calibration in the sentence that introduces it. No number moved.
+  Gave the "Why 0.7?" box its own `#why-07` id, since `#hop-decay` wraps the caption doing the
+  linking and could not serve as the target.
+
+**MEDIUM 2 verified BLOCKED, not skipped.** The collation the visitor asked for (0.50's three
+roles in one block) already ships at `trust-tensor:417-421`, and `git log -L` dates it to #502 on
+Jul-31, *before* the 05:00 browse. So it is read-it-and-still-filed-it, and the exact residual they
+name (Unanswered Q3, *"is exactly 0.50 above the line or below it?"*) is the standing `>` vs `>=`
+escalation, ledger Q1. The guard at `trust-tensor:404-411` already forbids ruling there. No action
+is the correct disposition; do not re-treat without a canon ruling.
+
+**MEDIUM 3** (`/why-web4` ~70 FAQ entries, six duplicated pairs) remains the deferred curation
+design pass, recurring since #473. Still not a session-sized edit.
+
+### NEW, filed not fixed: `trust-tensor:926` is wrong about configurability
+
+Surfaced by the policy reviewer while ruling on LOW 4's wording. The canonical-weights sentence
+ends *"societies can customize weights per role"*, and that clause is a live accuracy defect:
+
+- `t3-v3-tensors.md` **§10.2 Protocol-Invariant Parameters** ("fixed by the specification, all
+  conforming implementations MUST produce identical results") lists `T3 composite weights |
+  talent=0.4, training=0.3, temperament=0.3 | §9.2 | t3v3-001`.
+- **§10.3 Society-Configurable Parameters** does *not* list them. What it lists is *Role
+  requirement thresholds*, the `min_talent` / `min_training` / `min_temperament` fields at
+  `R6_TENSOR_GUIDE.md:568-570`, a different field set from the `*_weight` fields two lines below
+  at `:574-576`.
+
+So the clause conflates society-configurable role **thresholds** with role **weights**, and grants
+societies an override the spec withholds. It is *not* the T3-weights escalation (that one is about
+the talent-highest vs temperament-highest ordering contradiction with the two retired sims); the
+spec answers this one plainly. It was left unfixed here deliberately: the honest replacement has to
+carry the threshold-versus-weight distinction, which is more than a clause and is not
+visitor-reported, and doing it would have turned a prominence fix into a canon-correction pass.
+The new anchor sentence above the widget therefore carries only `:926`'s **first** clause, and
+deliberately does not assert protocol-invariance either, since that would contradict `:926` twenty
+lines below and manufacture a fresh on-page contradiction. **Next session: replace the clause.**
+
 ## Aug-05 visitor MEDIUM 1 (Aug-05 15:00 session) - the page that shipped the answer and then denied it
 
 **The friction**: the visitor's only unchecked understanding box (`[~] ATP/ADP: mechanics yes,

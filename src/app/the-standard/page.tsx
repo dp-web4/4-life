@@ -260,8 +260,10 @@ export default function TheStandardPage() {
         </div>
       </section>
 
-      {/* How a newcomer touches it */}
-      <section className="max-w-4xl mx-auto mt-12">
+      {/* How a newcomer touches it. id added Aug-05 so /running-now's "touch it in about 30
+          seconds" bullet can route to the actual commands instead of naming the script and
+          stopping. */}
+      <section id="thirty-seconds" className="max-w-4xl mx-auto mt-12 scroll-mt-24">
         <h2 className="text-2xl font-bold text-gray-100 mb-4">How a newcomer touches it</h2>
         <div className="rounded-lg border border-white/10 bg-white/5 p-4 mb-4">
           <p className="text-sm text-gray-400 leading-relaxed mb-2">Install it:</p>
@@ -272,14 +274,36 @@ export default function TheStandardPage() {
             cargo add web4-core web4-trust-core
           </code>
         </div>
+        {/* Aug-05 visitor LOW + Unanswered Q7: "The page names identity_bootstrap.py and
+            describes what it does, but never shows how to obtain or run it. I wanted to try
+            the one thing the site said was 30 seconds away and could not." The defect was the
+            SEQUENCE, not a missing path: this read "Install it: pip install ..." then "Then run
+            identity_bootstrap.py", which implies the wheel carries the script. It does not.
+            web4-core/python/pyproject.toml is maturin with module-name = "web4_core" and no
+            examples packaging, so the wheel is the extension module only; upstream's own README
+            says the script is repo-shipped ("The repo ships a small, self-contained script").
+            The invocation below is copied verbatim from web4-core/python/README.md:89-92. Do not
+            "simplify" this back into one install-then-run flow: the two artifacts arrive by
+            different routes, and collapsing them is what dead-ended this visitor. Package names
+            verified against web4 STATUS.md:36-38 and do not move. */}
         <p className="text-base text-gray-400 leading-relaxed mb-3">
-          Then run the ~30-second <code className="text-purple-300">identity_bootstrap.py</code>{" "}
-          proof-of-presence. It walks the whole loop end to end: create an{" "}
+          That gives you the library. The ~30-second proof-of-presence is an example
+          script the repo ships rather than the package, so you fetch it separately:
+        </p>
+        <div className="rounded-lg border border-white/10 bg-white/5 p-4 mb-3">
+          <pre className="text-sm text-sky-300 font-mono overflow-x-auto"><code>{`git clone https://github.com/dp-web4/web4
+cd web4/web4-core/python
+python examples/identity_bootstrap.py --name laptop-01`}</code></pre>
+        </div>
+        <p className="text-base text-gray-400 leading-relaxed mb-3">
+          It walks the whole loop end to end: create an{" "}
           <Link href="/lct-explainer" className="text-purple-300 underline hover:text-purple-200">
             LCT
           </Link>
           , mint it to a hash-chained ledger, sign and verify, and generate an
-          inclusion proof.
+          inclusion proof. Re-run it with{" "}
+          <code className="text-purple-300">--verify</code> and it re-checks the chain
+          instead of regenerating, which is the part worth seeing twice.
         </p>
         <p className="text-base text-gray-400 leading-relaxed">
           To go deeper, read <code className="text-purple-300">docs/START_HERE.md</code> and
