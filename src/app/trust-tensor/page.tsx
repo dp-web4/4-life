@@ -435,6 +435,44 @@ export default function TrustTensorPage() {
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           Try It: Explore Trust by Role
         </h2>
+        {/* Aug-05 visitor LOW: "The only weights I was shown are a Data Analyst example, with a
+            note that weights vary by role. No default is given anywhere, so I left with an
+            example and no anchor." The default DOES ship, at id="t3-composite" below, but inside
+            a <details> whose summary reads "Technical Details (Click to Expand)" - so this is a
+            prominence fix and the canon wording is propagated verbatim from there rather than
+            re-coined. Placed above the role selector because the first render of any weight
+            number is the caption under it.
+
+            This is NOT the T3-weights escalation (that one is about the talent-highest vs
+            temperament-highest ORDERING contradiction between prose and the two sims retired in
+            the Jul-15 rebuild). But it is adjacent, and the adjacency is live: the Team Leader
+            role below is 0.2/0.3/0.5, temperament-highest, and renders the moment a reader
+            clicks it. Stating a default without a frame would manufacture that inversion on a
+            beginner page. Hence the sentence names the QUANTITY distinction (composite blend vs
+            role-weighted match, grounded in R6_TENSOR_GUIDE.md:566-578 match_entity_to_role) and
+            covers all three roles, not just the analyst.
+
+            Two things it must not say. Not "societies can customize weights per role": that is
+            the trailing clause at :926 and it is wrong against the spec, which lists T3 composite
+            weights under §10.2 Protocol-Invariant Parameters ("MUST produce identical results")
+            while §10.3 society-configurable covers role THRESHOLDS (min_talent etc.), a different
+            field set. That defect is filed in SESSION_FOCUS.md, not fixed here. And not "fixed by
+            the spec" either, true though it is, because :926 twenty lines below would then
+            contradict this and the contradiction would be ours. Name the quantity, not the
+            authority. */}
+        <p className="text-gray-400 mb-4">
+          Two different numbers live on this page, so it is worth separating them before you
+          start clicking. The canonical composite weights are{" "}
+          <strong className="text-sky-300">Talent 0.4, Training 0.3, Temperament 0.3</strong>:
+          that is the blend used when T3 is collapsed into a single overall score (
+          <a href="#t3-composite" className="text-sky-400 hover:underline">
+            the structure behind it
+          </a>
+          ). The percentages in the widget below are a different quantity: a role-weighted
+          match, asking how well one person&apos;s three scores fit one particular role. That is
+          why they change when you switch roles, and why a role can rank the three dimensions in
+          a different order than the composite does.
+        </p>
         <p className="text-gray-400 mb-4">
           Pick a role, then apply scenarios. Watch how the same action affects trust differently
           depending on which role you&apos;re evaluating.

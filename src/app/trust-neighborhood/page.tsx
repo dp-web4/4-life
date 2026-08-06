@@ -589,10 +589,25 @@ export default function MarkovRelevancyHorizonPage() {
                 </div>
               </div>
             </div>
+            {/* Aug-05 visitor LOW / Unanswered Q5: "Two decay rates on one page. The page does
+                say they converge by depth 3-4, which helped, but I still could not answer 'what
+                is the decay rate' if asked." They demonstrably read the reconciliation, which
+                lives in the "Why 0.7?" box below, so this is not a missing fact and not a
+                restructure: the missing clause is which number is OURS. Marked here because this
+                is the sentence that INTRODUCES the rate, and it introduced it as bare fact.
+                No number moves (the guard below pins 0.70/0.49/0.34), and this says nothing
+                about where the hop count starts, which is the separate open question. */}
             <p className="text-center text-sm text-gray-400 mt-4">
               Trust decays <strong className="text-cyan-300">0.7× per hop</strong>, and it compounds: 0.70,
               then 0.70 × 0.7 = 0.49, then 0.49 × 0.7 = 0.34. At 3 hops, only 34% of trust remains.
               Beyond that, trust <em>weight</em> falls to zero. This natural boundary keeps the network manageable and private.
+            </p>
+            <p className="text-center text-xs text-gray-500 mt-3 max-w-2xl mx-auto leading-relaxed">
+              If you only remember one number here, remember this one: 0.7 is the teaching
+              calibration this site uses, and every worked example on this page runs on it. The
+              reference implementations use a finer curve (roughly 0.85 after one hop) that
+              arrives in the same place by depth 3 to 4.{" "}
+              <a href="#why-07" className="text-cyan-400 hover:underline">Why 0.7, and how the two compare, below</a>.
             </p>
             {/* 2026-06-07 visitor LOW + Unanswered Q3/Q4: page "read both ways" on invisible-vs-untrusted, and the
                 resolution was buried in the collapsed filter-bubble FAQ below. Name it at the prominent read point. */}
@@ -606,8 +621,11 @@ export default function MarkovRelevancyHorizonPage() {
             </p>
           </div>
 
-          {/* Why 0.7? - Apr 19 visitor MEDIUM: "the 'why 0.7?' question hangs there" */}
-          <div className="bg-gray-800/40 border border-cyan-500/20 rounded-lg p-6 mb-8">
+          {/* Why 0.7? - Apr 19 visitor MEDIUM: "the 'why 0.7?' question hangs there".
+              id added Aug-05: the ring caption above now routes here for the 0.7-vs-0.85
+              comparison, and #hop-decay could not serve as that target because it wraps the
+              caption itself. This box renders expanded, so the anchor lands on visible text. */}
+          <div id="why-07" className="bg-gray-800/40 border border-cyan-500/20 rounded-lg p-6 mb-8 scroll-mt-24">
             <h3 className="text-lg font-semibold text-cyan-300 mb-3">
               Why 0.7? (Not 0.5 or 0.9)
             </h3>

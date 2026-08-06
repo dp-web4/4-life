@@ -23,7 +23,10 @@ const PIECES: {
     title: "The Core Standard",
     href: "/the-standard",
     blurb:
-      "The open ontology every piece speaks: witnessed presence, role-contextual trust, and auditable authority. Install the primitives (web4-core) and mint your first identity in about 30 seconds.",
+      // Aug-05 visitor LOW / Q7: "Install ... and mint ... in 30 seconds" put both halves on one
+      // route, and the mint half is a repo example rather than part of the wheel. Split so the
+      // teaser promises what /the-standard#thirty-seconds can actually deliver.
+      "The open ontology every piece speaks: witnessed presence, role-contextual trust, and auditable authority. Install the primitives (web4-core); the repo's bootstrap example mints your first identity in about 30 seconds.",
     accent: "from-sky-400 to-cyan-400",
   },
   {

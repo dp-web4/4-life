@@ -108,6 +108,25 @@ export default function RunningNowPage() {
               below is Reference and is called usable and actively-hardened). Both of those
               misreads would be manufactured by the fix itself, three sections above the
               evidence against them. */}
+          {/* Aug-05 visitor LOW / Unanswered Q6: "'Pilot-ready' is not in the badge legend, so
+              I had a fourth status word with no slot to put it in." Every rendered use of the
+              phrase on the site is about the hub, which is badged Reference, so the fix is to
+              bind it inside that tier rather than drop it (the visitor's alternative). Dropping
+              it would cost real information the badge does not carry, e.g. the honest
+              "pilot-ready with no users" framing. Three things this must not become: a fourth
+              tier (see the guard below), a hedge on the tier ORDER, or a claim that live
+              instances exist - that last one is precisely what Running claims and this does not.
+              If you add a rendered use of "pilot-ready" for anything other than the hub, this
+              sentence stops being true and must move. */}
+          <p className="mt-4 text-sm text-gray-400 leading-relaxed">
+            One phrase you will meet below is not a badge:{" "}
+            <strong className="text-gray-300">pilot-ready</strong>, said of the hub, is a
+            statement made <em>inside</em>{" "}
+            <MaturityBadge tier="reference" />. It means the code is complete enough that a
+            group could stand up one of the first live instances. It does not claim any exist
+            yet, which is the thing{" "}
+            <MaturityBadge tier="running" /> would claim.
+          </p>
           <p className="mt-4 text-sm text-gray-400 leading-relaxed">
             The three run in that order, measured by distance from written down to in daily
             use. A piece can carry more than one: the core standard below is both{" "}
@@ -146,11 +165,22 @@ export default function RunningNowPage() {
             <strong className="text-sky-300">Tested</strong>: 171 tests green in
             web4-core; the reference Python SDK carries 2,627 tests.
           </li>
+          {/* Aug-05 visitor LOW / Unanswered Q7. This bullet named the script and the install
+              block directly below it names the packages, which together read as "install, then
+              run" - but the script ships in the repo, not the wheel (see the guard on
+              /the-standard#thirty-seconds for the packaging evidence). Naming where it comes
+              from is the fix; the literal commands live on /the-standard so they exist in one
+              place only and cannot drift. */}
           <li className="rounded-lg border border-white/10 bg-white/5 p-3">
             <strong className="text-sky-300">Touch it in about 30 seconds</strong>: run
             <code className="text-sky-300"> identity_bootstrap.py</code> to create an LCT,
             mint it to a hash-chained ledger, sign and verify, and generate an inclusion
-            proof.
+            proof. It is an example the repo ships, not part of the installed package, so
+            you clone it:{" "}
+            <Link href="/the-standard#thirty-seconds" className="text-sky-400 underline hover:text-sky-300">
+              the three commands
+            </Link>
+            .
           </li>
         </ul>
         <div className="rounded-lg border border-sky-500/30 bg-sky-500/10 p-4 mb-4">
