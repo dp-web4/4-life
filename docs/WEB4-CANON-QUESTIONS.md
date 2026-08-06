@@ -116,9 +116,38 @@ instead of re-litigating.
   (a) define the aliveness predicate endpoint in the spec (with a test vector), or (b) state
   explicitly that aliveness thresholds are implementation/society-defined, in which case
   4-Life will make its own endpoint call deliberately and document it.
-- **Holding pattern**: site prose stays endpoint-silent ("strictly below + sustained", never
-  "at or above 0.50 is alive/dead"); guard comments at lct-explainer callout + First Contact
+- **Holding pattern**: site prose stays endpoint-silent ("strictly below + sustained"). **Both
+  directions are forbidden, not just one**: never "at or above 0.50 is alive/full-access" (the
+  `>=` side) and never "above 0.50: full access" (the `>` side, because its complement puts
+  exactly-0.50 outside full access). Guard comments at lct-explainer callout + First Contact
   legend. PR #444 was rejected 3× for asserting an endpoint; do not repeat.
+- **⚠️ Evidence added 2026-08-06: third instance, and the guards are not holding.** The Aug-06
+  visitor filed this as one of four HIGHs and as Unanswered Questions 1 and 2: "Every user starts
+  [at 0.50] and the site defines only 'above' and 'below'." They found three phrasings and could
+  not tell which governed them. Two were endpoint-silent and correct (`/trust-tensor` "crossing
+  below 0.5 restricts", `/what-could-go-wrong` "the minimum bar"). The third,
+  `first-contact/page.tsx:271`, read **"Above 0.50: full access"** and had done for a month.
+  - It was written **four lines below the guard comment banning endpoint assertions**, because
+    that guard enumerated only the `>=` phrasing by name and so read as permission for the other.
+    The same half-guard shape appeared in this ledger's own holding-pattern line above, now
+    corrected.
+  - This is the **third deletion of the same prohibited assertion**: `lct-explainer:1307` (PR
+    #497), `lct-explainer:1399` (Jul-30 pass), `first-contact:271` (this entry). #497 already
+    argued that a surface asserting the endpoint inside the file that bans it is "the strongest
+    signal yet that Q1 needs a ruling rather than more guard comments". A third instance, on a
+    different page, under its own guard, is stronger still: **the prohibition is not stable under
+    editing**, because the honest thing to write next to "starts at 0.50" is a status for 0.50,
+    and every author reaches for one.
+  - **Deleted, not rewritten**, per the #497 precedent that removing a prohibited assertion is
+    not asserting its negation. The site is now endpoint-silent everywhere. But silence is what
+    the visitor is filing against, and it costs a real comprehension gap: the software-only trust
+    ceiling is exactly 0.50 (**Q8**), so the reader most affected is told what happens below the
+    line, nothing about at it, and cannot determine their own status. Deliberately kept:
+    `first-contact:~733` ("Trust climbed back above 0.5, restrictions lifted"), which narrates
+    Alice's recovery from 0.48 rather than stating a regional rule.
+  - **This entry records evidence, not a ruling.** 4-Life still declines to answer. The ask is
+    unchanged from above: define the endpoint in the spec with a test vector, or state explicitly
+    that it is society-defined, in which case 4-Life will make and document its own call.
 - **Unblocks**: closing the Jul-9 H1 residual properly. (The original second item, "letting
   SurvivalGame's verdict and the prose agree at the boundary", is **moot as of 2026-07-28**:
   SurvivalGame was retired in the Jul-15 rebuild. Kept visible rather than deleted so a web4
@@ -276,6 +305,37 @@ instead of re-litigating.
   the heading *"Karma: ATP Carried Forward"*, and the parentheticals *"(full karma bonus)"* /
   *"(karma preserved)"*, which asserted the full-balance model in prose. The 145/130/165 figures
   are still frozen and still untouched.
+
+  **⚠️ Aug-06: two prose passes did not land it, so the ILLUSTRATION moved.** The Aug-06 visitor
+  **quoted this caveat's karma half back verbatim** in their browse log and *still* filed the death
+  half as a HIGH: *"The example agent dies for no reason the page allows, on the same page that
+  just told me the rules... A site whose entire thesis is 'we will not lie about which of these is
+  which' has, in its flagship worked example, a number that cannot happen."* Read it, understood
+  it, rejected it. What survived the caveat was the **verb**, not the numbers: `/how-it-works`
+  Lives 1/2 said *"Died with"*, which claims the narrow, defined death event the page rules out
+  four screens above, while Life 3 already said *"Ended strong"*. The example contradicted itself.
+  - **Disposition**: the verb is normalized to *"Ended"* on all lives, on **both** pages, using
+    vocabulary each page already owned (`/how-it-works` Life 3 and `/atp-economics` Life 4 both
+    read "Ended strong"). `/atp-economics` was **worse and is no longer deliberately untouched**:
+    it said *"Died **naturally**"*, which names the very mechanism this entry establishes canon
+    does not define, so leaving it kept the strongest form of the invented mechanism standing.
+    Normalizing only one page would also have split two pages that share the figures exactly.
+  - **This is removal, not a ruling.** *"Ended"* claims only that the life concluded, which is
+    exactly the state this entry files as unsettled; *"Died"* claimed a defined event. No third
+    mechanism is named, no figure changed, and the ruling requested above is unchanged. The
+    caveat now says so explicitly: *"That is why they read ended and not died... rather than
+    invent a third cause to justify the figures below, this page declines to name one."*
+  - **The Q5 disclosure asymmetry is closed** (Aug-06 visitor HIGH 2): `/karma-consequences`
+    presented `next_life_atp = 100 + karma * 2` as settled arithmetic with **no caveat at all**,
+    so a reader meeting the formula there first had no way to know it was one model of three.
+    That page now carries the same disclosure, reusing the caveat's wording verbatim ("whether
+    you keep your whole final balance or a reduced portion of it is not decided") precisely
+    because it names both models and endorses neither. **The three-way divergence itself is
+    untouched and still needs the ruling** - it is now merely disclosed on every page that
+    models it, instead of on one.
+  - **Known residual, logged not fixed**: `/atp-economics` runs these figures with no caveat of
+    its own. It also defines a genuine ATP = 0 death, so it needs its own framing rather than a
+    hoisted copy of `EndOfLifeCaveat`. Follow-up for a future session.
 
 ### Q6. What does the `/` in the canonical equation assert?
 
