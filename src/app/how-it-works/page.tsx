@@ -35,18 +35,33 @@ const HOW_IT_WORKS_SECTIONS = [
    carry-forward as the thing these figures legitimately demonstrate. But Q5 files the carry-forward
    AMOUNT as a second, independent divergence ("whether karma is the full final ATP or a reduced
    portion of it is not settled between the two pages either"), and /karma-consequences:629 models
-   it a third way. So the caveat now covers BOTH halves. Do not re-endorse either quantity here. */
+   it a third way. So the caveat now covers BOTH halves. Do not re-endorse either quantity here.
+   Aug-06 update: the visitor QUOTED this caveat's karma half back in their journal and still filed
+   the death half as a HIGH. Two prose passes have not landed it, so the residual is the
+   ILLUSTRATION, not the copy. The example was inconsistent with itself: Lives 1/2 said "Died with"
+   while Life 3 said "Ended strong", and "Died" claims the narrow, defined death event this page
+   rules out four screens above. The verb is normalized to the page's own "Ended" on all lives.
+   That REMOVES an assertion; it does not add one, and it invents no second mechanism (still Q5).
+   The same four-life walkthrough with the same figures runs on /atp-economics (:1470/:1486/:1501),
+   which said "Died NATURALLY" - a strictly stronger form of the undefined mechanism. Normalized
+   there in the same pass so the two pages cannot diverge on identical numbers.
+   Do NOT hoist this component into src/components/ to share it with /atp-economics: that page has
+   no caveat of its own and defines a real ATP=0 death at :1127. Giving it one is a separate,
+   larger job than the filed friction. Logged as follow-up, not done here. */
 function EndOfLifeCaveat() {
   return (
     <p className="text-xs text-amber-300/70 mt-3 leading-relaxed">
       <strong className="text-amber-300">About these numbers:</strong> none of these lives ends at
-      0 ATP, so none of them is the energy death described above. What else ends a life is{" "}
-      <strong>not settled</strong>: Web4 defines what stops you acting (ATP reaches zero) and what
-      is permanent (sustained trust collapse), but it does not define a term limit or a natural end
-      of life. How <em>much</em> karma carries is also unsettled: whether you keep your whole final
-      balance or a reduced portion of it is not decided, and this walkthrough shows one modelling
-      choice, not the rule. Read it for the shape (a good track record starts your next life
-      stronger), not for the death rule or the exact carry-forward.
+      0 ATP, so none of them is the energy death described above. That is why they read{" "}
+      <em>ended</em> and not <em>died</em>: they are not the death this page defines, and Web4
+      does not define a second one. What else ends a life is <strong>not settled</strong>: the
+      standard says what stops you acting (ATP reaches zero) and what is permanent (sustained trust
+      collapse), and it names no term limit, no lifespan, and no natural end of life. So rather
+      than invent a third cause to justify the figures below, this page declines to name one. How{" "}
+      <em>much</em> karma carries is also unsettled: whether you keep your whole final balance or a
+      reduced portion of it is not decided, and this walkthrough shows one modelling choice, not
+      the rule. Read it for the shape (a good track record starts your next life stronger), not for
+      the death rule or the exact carry-forward.
     </p>
   );
 }
@@ -877,7 +892,7 @@ export default function HowItWorksPage() {
                     Life 1 → Life 2
                   </div>
                   <p className="text-gray-300 text-sm">
-                    Died with <strong className="text-blue-400">145 ATP</strong>.
+                    Ended with <strong className="text-blue-400">145 ATP</strong>.
                     Reborn with <strong className="text-green-400">145 ATP</strong>{" "}
                     (karma carried forward).
                   </p>
@@ -887,7 +902,7 @@ export default function HowItWorksPage() {
                     Life 2 → Life 3
                   </div>
                   <p className="text-gray-300 text-sm">
-                    Died with <strong className="text-blue-400">130 ATP</strong>.
+                    Ended with <strong className="text-blue-400">130 ATP</strong>.
                     Reborn with <strong className="text-green-400">130 ATP</strong>{" "}
                     (karma carried forward).
                   </p>
@@ -965,7 +980,7 @@ export default function HowItWorksPage() {
               </li>
               <li>• Built trust: T3 → 0.65 (talent ↑, training ↑)</li>
               <li>
-                • Died with <strong className="text-green-400">145 ATP</strong>
+                • Ended with <strong className="text-green-400">145 ATP</strong>
               </li>
             </ul>
             <details className="mt-4 text-xs">
@@ -1060,7 +1075,7 @@ export default function HowItWorksPage() {
               </li>
               <li>• Trust matured: T3 → 0.72 (all dimensions improving)</li>
               <li>
-                • Died with <strong className="text-blue-400">130 ATP</strong>
+                • Ended with <strong className="text-blue-400">130 ATP</strong>
               </li>
             </ul>
           </div>

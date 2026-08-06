@@ -645,7 +645,32 @@ Example (negative karma):
 Example (positive karma):
   karma = +10 → next_life_atp = 100 + (10 * 2) = 120 ATP`}
         </pre>
-        <p className="text-xs text-gray-500">
+        {/* Aug-06 visitor HIGH: "/how-it-works says you are reborn with the balance you died
+            holding (145 -> 145). This page says next_life_atp = 100 + karma * 2, so +10 karma ->
+            120. Those are two different rules. How It Works admits the amount is unsettled; this
+            page presents the formula as settled arithmetic with no caveat."
+            Correct, and the asymmetry was the defect: the open question (ledger Q5, second half)
+            was disclosed on one page and hidden on the other, so a reader meeting the formula here
+            first had no way to know it was a model. The disclosure is propagated, NOT the number:
+            the wording below reuses EndOfLifeCaveat's phrasing verbatim ("whether you keep your
+            whole final balance or a reduced portion of it is not decided") precisely because it
+            names both models and endorses neither. Do NOT resolve this here in either direction:
+            picking a rebirth rule is a canon decision this track cannot make.
+            Scope note: the visitor filed the ATP half only. trust_decay_factor = 0.95 above and
+            the two permanence paragraphs below are untouched and unfiled. */}
+        <p className="text-xs text-amber-300/80 border border-amber-800/40 bg-amber-900/10 rounded p-3 leading-relaxed">
+          <strong className="text-amber-300">One model, not the rule:</strong> how much carries into
+          the next life is <strong>not settled</strong>, and the arithmetic above is one way of
+          modelling it. Whether you keep your whole final balance or a reduced portion of it is not
+          decided, and{" "}
+          <Link href="/how-it-works#journey" className="text-amber-200 underline hover:text-amber-100">
+            the lifecycle walkthrough
+          </Link>{" "}
+          models it the other way, carrying the balance forward intact. Read the formula for the
+          shape it teaches (positive karma starts you stronger, negative karma starts you weaker,
+          and the two are not symmetric), not as the settled numbers.
+        </p>
+        <p className="text-xs text-gray-500 mt-2">
           This creates asymmetric consequences: building positive karma is harder than destroying it,
           mirroring real-world reputation dynamics.
         </p>

@@ -467,6 +467,14 @@ cargo add web4-core web4-trust-core`}</code></pre>
               . A society that isn&apos;t witnessed has no presence to trust, so it is
               visible by design.
             </li>
+            {/* Aug-06 visitor MEDIUM: this row promised "every consequential act landing in your
+                own witness chain", and /hestia (the destination) retracts exactly that: "Your
+                witness chain is a record of governed activity, not a record of all activity."
+                The unqualified version sat on the page that makes you decide to install, so the
+                reader met the promise first and the retraction only after committing. The visitor
+                called the retraction "more honest than the promise". Scoped here using hestia's
+                OWN words (hestia/page.tsx ~L386) rather than a coined qualifier, so the two
+                surfaces cannot drift. Do not restore "every consequential act". */}
             <li className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
               <strong className="text-emerald-200">
                 You run AI agents on your own machine and are comfortable at a command line.
@@ -479,8 +487,11 @@ cargo add web4-core web4-trust-core`}</code></pre>
                 A day with Hestia
               </Link>{" "}
               walks through an ordinary Tuesday with it: an encrypted vault and an identity
-              created on your machine, an agent given scoped authority that expires, and
-              every consequential act landing in your own witness chain.
+              created on your machine, an agent given scoped authority that expires, and each
+              governed act landing in your own witness chain. Note the scope before you install:
+              that chain is a record of governed activity, not a record of all activity, because
+              the same hook that runs the policy gate is what writes the entry. An action that
+              routes around the gate writes no entry at all.
             </li>
             <li className="rounded-lg border border-purple-500/30 bg-purple-500/10 p-4">
               <strong className="text-purple-200">

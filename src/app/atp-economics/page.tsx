@@ -1458,6 +1458,25 @@ export default function ATPEconomicsPage() {
           lives to see how ATP, trust, and karma interact:
         </p>
 
+        {/* Aug-06 visitor HIGH (filed against /how-it-works, which runs this SAME walkthrough with
+            the SAME figures: 145 -> 145, 130): the lives read "Died with 145 ATP" while the page
+            defines death as ATP = 0 or sustained trust collapse, so the flagship example met
+            neither of its own stated conditions. This page was worse: it read "Died NATURALLY" and
+            "before dying naturally", naming a mechanism canon does not define at all (grep of
+            web4-standard/ and docs/ for natural death / bounded life / lifespan returns nothing).
+            Normalized to the vocabulary BOTH pages already owned: Life 4 here has always read
+            "Ended strong: 140 ATP", as does /how-it-works Life 3. No figure changed, and no second
+            death mechanism invented - that stays ledger Q5 in docs/WEB4-CANON-QUESTIONS.md.
+            Two deliberate KEEPS, do not re-open:
+              - "Near death, she switched to small, reliable contributions" below. That one IS the
+                defined condition (ATP plunged to 15), not an end-of-life verb.
+              - "They die and stay dead" in the closing pattern box. That is the real ATP = 0 death
+                this page defines in the simulator readout above.
+            NOT done here, logged as follow-up: /how-it-works carries an EndOfLifeCaveat next to
+            these figures and this page has none. Do not hoist that component to share it; this
+            page also defines a genuine ATP = 0 death, so it needs its own framing, which is a
+            larger job than the filed friction. */}
+
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8 space-y-6">
           <div className="border-l-4 border-blue-500 pl-4">
             <h3 className="text-xl font-semibold text-blue-400 mb-2">
@@ -1467,7 +1486,7 @@ export default function ATPEconomicsPage() {
               <li>Born with <strong className="text-sky-400">100 ATP</strong> and no reputation</li>
               <li>Spent 60 ATP on meaningful contributions (posts, peer help, training)</li>
               <li>Community validated her work → earned 105 ATP back</li>
-              <li>Died naturally with <strong className="text-green-400">145 ATP</strong> and growing trust</li>
+              <li>Ended with <strong className="text-green-400">145 ATP</strong> and growing trust</li>
             </ul>
             <p className="text-xs text-gray-500 mt-2 italic">
               Her karma carries forward: she earned more than she spent, so her next life starts strong.
@@ -1483,7 +1502,7 @@ export default function ATPEconomicsPage() {
               <li>With more budget, she tried ambitious projects - some paid off, some didn&apos;t</li>
               <li>ATP swung between 80 and 180 as experiments succeeded and failed</li>
               <li>Trust continued rising: her track record earned her community respect</li>
-              <li>Died with <strong className="text-blue-400">130 ATP</strong></li>
+              <li>Ended with <strong className="text-blue-400">130 ATP</strong></li>
             </ul>
             <p className="text-xs text-gray-500 mt-2 italic">
               Notice: she could afford to fail because her earlier trust gave her a buffer.
@@ -1498,7 +1517,7 @@ export default function ATPEconomicsPage() {
               <li>Reborn with <strong className="text-green-400">130 ATP</strong></li>
               <li>A series of risky bets went wrong - ATP plunged to <strong className="text-red-400">15</strong></li>
               <li>Near death, she switched to small, reliable contributions</li>
-              <li>Slowly clawed back to 95 ATP before dying naturally</li>
+              <li>Slowly clawed back to 95 ATP before the life ended</li>
             </ul>
             <p className="text-xs text-gray-500 mt-2 italic">
               Key lesson: even trusted agents can face ATP crises. But trust gives you options a newcomer wouldn&apos;t have.

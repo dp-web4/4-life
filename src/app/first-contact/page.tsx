@@ -265,10 +265,32 @@ export default function FirstContactPage() {
                 {/* Jul-9 visitor HIGH: this line taught "0.5 = access threshold" and Aliveness taught
                     "0.5 = death threshold", and the visitor never reconciled them. Name the second
                     consequence here, where the first one is introduced.
-                    Do NOT write "at or above 0.50" - whether exactly-0.50 counts as alive/full-access
-                    is an unresolved canon call (> vs >= in the aliveness engines); don't assert the
-                    endpoint either way. */}
-                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> - her <em>raw</em> reputation, on a <span className="text-gray-200">0.00-1.00</span> scale. One number, but a rolled-up one: it is her three trust dimensions weighted for the role she is acting in (<Link href="/trust-tensor" className="text-purple-300 hover:underline">Trust Tensors</Link>). Starts neutral at <span className="text-gray-200">0.50</span>. Above 0.50: full access. Below 0.50: features get restricted until she rebuilds it - and if she <em>stays</em> below, that same line becomes fatal - a sustained slide, not one dip.</li>
+
+                    ENDPOINT RULE - both directions are forbidden, not just one.
+                    Whether exactly-0.50 counts as alive / full-access is an unresolved canon call
+                    (> vs >= in the retired aliveness engines; ledger Q1/Q8). The site's policy is
+                    "state strictly-below and stop". So do NOT write EITHER of:
+                      - "at or above 0.50" / ">= 0.50 is fine"   (asserts the >= side)
+                      - "above 0.50: full access"                (asserts the > side, because its
+                                                                  complement puts exactly-0.50
+                                                                  outside full access)
+                    Any regional claim about 0.50, in either direction, re-arms the escalation.
+
+                    Aug-06 visitor HIGH: this bullet carried "Above 0.50: full access" for a month,
+                    written four lines under the older version of this guard, which enumerated only
+                    the ">=" phrasing and so read as permission for the other one. The visitor found
+                    three phrasings across the site and could not tell which applied to them; the
+                    other two ("crossing below restricts", "minimum bar") are endpoint-silent, so
+                    this clause was the sole offender. DELETED, not rewritten: removing a prohibited
+                    assertion is not asserting its negation, it restores the silence the policy asks
+                    for (precedent: lct-explainer:1404-1406, PR #497).
+                    Do NOT patch the resulting gap by borrowing lct-explainer's non-asserting
+                    welcome ("at every tier you can post, earn ATP..."). That sentence is about a
+                    hardware CEILING; the 0.50 here is Alice's dynamic STARTING score. Wrong referent.
+                    KEPT deliberately: the Recovery section's "Trust climbed back above 0.5,
+                    restrictions lifted" (~L733). That narrates Alice's trajectory from 0.48, it does
+                    not state a regional rule, so it is not an endpoint claim. Do not re-open it. */}
+                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> - her <em>raw</em> reputation, on a <span className="text-gray-200">0.00-1.00</span> scale. One number, but a rolled-up one: it is her three trust dimensions weighted for the role she is acting in (<Link href="/trust-tensor" className="text-purple-300 hover:underline">Trust Tensors</Link>). Starts neutral at <span className="text-gray-200">0.50</span>. Below 0.50: features get restricted until she rebuilds it - and if she <em>stays</em> below, that same line becomes fatal - a sustained slide, not one dip.</li>
               </ul>
               {/* Jul-29 visitor MEDIUM: "raw" appeared exactly once in the JS-rendered page, here,
                   undefined. The raw-vs-effective sentence lived only in the <noscript> block above

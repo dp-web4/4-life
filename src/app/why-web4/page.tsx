@@ -774,10 +774,33 @@ export default function WhyWeb4Page() {
               <span>What if I lose my hardware? Is my identity gone forever?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
+            {/* Aug-06 visitor MEDIUM: this answered "No - recovery is built in" flatly and
+                unconditionally, and /what-could-go-wrong Risk 8 says the opposite for one tier:
+                "A software-only user has no hardware witness to vouch for them, so there is
+                nothing to recover to: they start over from zero with a fresh identity."
+                The FAQ was the un-swept surface (the claim was already corrected at
+                what-could-go-wrong:749, lct-explainer:1119, lct-explainer:1132 and
+                identity-constellation:372). The visitor read this FAQ first and only found the
+                contradiction two pages later: "as written it reassures precisely the readers for
+                whom it is false."
+                The CONDITION goes in the bolded lead, not appended below it - a surviving
+                unconditional "No" still reassures anyone who reads the bold line and closes the
+                <details>. Risk 8's sentence is propagated verbatim; do not re-derive it. */}
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                <strong>No - recovery is built in.</strong> LCT supports multiple linked devices. Lose your
-                phone? Your laptop can attest to your identity. Lose both? Your witnesses can attest.
+                <strong>If your identity is hardware-anchored, no - recovery is built in.</strong> LCT
+                supports multiple linked devices. Lose your phone? Your laptop can attest to your
+                identity. Lose both? Your witnesses can attest.
+              </p>
+              <p className="text-amber-300/90">
+                <strong>The condition matters.</strong> A software-only user has no hardware witness
+                to vouch for them, so there is nothing to recover to: they start over from zero with
+                a fresh identity. Recovery is a property of hardware anchoring, not of Web4 as such,
+                so check which tier you are in before you rely on it.{" "}
+                <Link href="/what-could-go-wrong#risk-accessibility" className="text-sky-400 hover:underline">
+                  What that exclusion costs, in full
+                </Link>
+                .
               </p>
               <p>
                 The design principle: make recovery possible but expensive. You need multiple witnesses

@@ -2,6 +2,84 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-06 09:00 session - the example that died by no rule the page allows
+
+Fresh log (`visitor/logs/2026-08-06.md`): 52 min, 14 pages, understanding **good**, would return
+and recommend **yes**. 4 HIGH / 3 MEDIUM / 3 LOW. The visitor called it *"the most honest technical
+site I have read"* and then filed the longest HIGH list in weeks, which is the loop working.
+
+**Shipped: two internal contradictions, one mis-scoped assertion, two oversells.**
+
+**The flagship example met neither of its own death conditions.** `/how-it-works` states death is
+ATP = 0 or sustained trust collapse, then walks an agent that *"Died with 145 ATP"* at T3 0.65. The
+visitor: *"I read that four times... the fifth failing is loud."* This was already caveated twice
+(Jul-27, Jul-30) via `EndOfLifeCaveat`, and **the visitor quoted the caveat's karma half back
+verbatim and filed the death half anyway**. Read it, understood it, rejected it. So the residual was
+the **illustration**, not the copy: Lives 1/2 said *"Died with"* while Life 3 already said *"Ended
+strong"*. The example contradicted itself, and *"Died"* claims the narrow defined event the page
+rules out four screens above. Verb normalized to the page's own *"Ended"*. **That removes an
+assertion; it adds none**, and no third death mechanism is invented (still ledger Q5).
+
+**The same walkthrough runs on `/atp-economics` with the same figures**, and there it read *"Died
+**naturally**"* plus *"before dying naturally"*. That is strictly worse: it names the mechanism Q5
+establishes canon does not define. Caught by the policy reviewer (R3), who noted that normalizing
+one page would have split two pages sharing 145/145/130 exactly. Both normalized in one pass, using
+vocabulary each page already owned (`/atp-economics` Life 4 has always read *"Ended strong: 140
+ATP"*). Deliberate keeps, recorded in-code: *"Near death"* (ATP plunged to 15, the real condition)
+and *"they die and stay dead"* (the genuine ATP = 0 death that page defines).
+
+**The rebirth rule was disclosed on one page and hidden on the other.** `/karma-consequences` stated
+`next_life_atp = 100 + karma * 2` as settled arithmetic with **no caveat at all**, while
+`/how-it-works` disclaims the amount. `how-it-works`'s own guard comment had named that line for a
+week without anyone fixing the page it named. The disclosure is propagated (reusing the caveat's
+wording verbatim, because it names both models and endorses neither); the **divergence itself is
+untouched and still needs the ruling**. `trust_decay_factor = 0.95` deliberately not touched: the
+visitor filed the ATP half only.
+
+**The endpoint guard was protecting half its own sentence.** `first-contact:271` read *"**Above
+0.50**: full access"*, four lines below a guard saying *don't assert the endpoint either way*. The
+guard enumerated only the `>=` phrasing by name, so it read as permission for the `>` one. Of the
+three phrasings the visitor found, the other two were endpoint-silent and correct; this was the sole
+offender, and it is the clause that made HIGH 4 (software-only capped at exactly 0.50) unanswerable.
+**Deleted, not rewritten** (precedent `lct-explainer:1404`, PR #497: removing a prohibited assertion
+is not asserting its negation). The reviewer blocked patching the gap with `lct-explainer`'s
+non-asserting welcome, correctly: that sentence is about a hardware *ceiling*, this 0.50 is Alice's
+dynamic *starting score*. Wrong referent. Guard rewritten to forbid **both directions by name**, and
+the same half-guard shape was found and fixed in the ledger's own holding-pattern line.
+
+**Two oversells upstream of their own retractions.** `/running-now` promised *"every consequential
+act landing in your own witness chain"* on the page that makes you decide to install; `/hestia`
+retracts exactly that. Scoped using hestia's own words. `/why-web4`'s FAQ answered *"**No** -
+recovery is built in"* flatly, which `/what-could-go-wrong` Risk 8 falsifies for software-only users
+(*"nothing to recover to"*). Fixed **in the bolded lead**, not appended below it: a surviving
+unconditional "No" still reassures anyone who reads the bold line and closes the `<details>`.
+
+### Expect Unanswered Questions 1 and 2 to RECUR next browse. By design.
+
+*"What happens at exactly 0.50?"* and *"is the software-only tier usable or permanent probation?"*
+are the standing escalation (ledger **Q1/Q8**), not a failed fix. The site is now endpoint-silent
+**everywhere**, which is the policy, and silence is precisely what the visitor is filing against.
+**Do not close it by writing the sentence.** Q1 now carries this as third-instance evidence that the
+prohibition is not stable under editing: the honest thing to write next to *"starts at 0.50"* is a
+status for 0.50, and every author reaches for one. A ruling is needed, not a fourth guard comment.
+
+### Filed, not fixed
+
+- **`/atp-economics` has no `EndOfLifeCaveat` of its own.** Do **not** hoist the component from
+  `how-it-works`: that page also defines a genuine ATP = 0 death, so it needs its own framing. A
+  larger job than the filed friction. (Reviewer note 1.)
+- **MEDIUM 3, newcomer ATP solvency**: 85%-quality work nets **-8**, recharge is capped at spend, so
+  only commissioned work grows a balance. *"At -8 per quality post I get about twelve posts before I
+  die."* Nothing names a floor, refill, or how a newcomer with no track record gets commissioned.
+  Needs a canon answer, and it is the reason the ATP/ADP checklist box came back **unticked**.
+  Unanswered Qs 5 and 6 are the same gap.
+- **LOWs**: (1) "Running" is defined as *"live instances... in day-to-day use"* but hestia's one
+  instance is the authoring lab self-hosting; (2) the 2,627 test count is attributed to the Python
+  SDK on one page and `web4-trust-core` on the other; (3) `/onramp` should lead the clause with its
+  subject (*"hestia's policy gate is an early prototype"*).
+- **Unanswered Q7**: *"if I wanted to be an early member of a hub, is there anyone to contact?"*
+  The site says no public network exists but names no route in. Operator call, not a canon question.
+
 ## Aug-06 03:00 session - the override the spec never granted
 
 No fresh visitor log (browse runs 05:00, session ran 03:01), so this took the task the 21:00
