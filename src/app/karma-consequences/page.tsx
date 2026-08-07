@@ -828,6 +828,47 @@ export default function KarmaConsequencesPage() {
               <a href="#recourse" className="text-sky-400 hover:underline">What recourse you have</a>, below.
             </p>
           </div>
+
+          {/* Aug-07 visitor MEDIUM: "The page named for dying is the one page that does not explain
+              it." Verified: grep "trust death" over this file returned ZERO hits, while TWO other
+              pages route readers here for exactly this - /first-contact:429 ("How living and dying
+              work →") and /what-could-go-wrong (for appeals). The appeals half of that promise is
+              already kept at #recourse below; this block keeps the other half.
+              The sentence is REUSED VERBATIM from the canonical copy (first-contact:156, and
+              identically at how-it-works:721-732, glossary:1207-1211, coherence-index:1364,
+              lct-explainer:1285). Keep it verbatim if editing: it threads ledger Q1 by distinguishing
+              crossing from staying and raw from effective, so paraphrasing it would assert a 0.50
+              endpoint canon has not settled.
+              WHAT THIS BLOCK DOES NOT DO, deliberately: it does not define "karma tier". That phrase
+              rides the canonical sentence on all five pages and is defined on NONE of them.
+              `grep -rni karma ../web4/web4-standard/core-spec/*.md` returns zero hits - canon has no
+              karma concept at all - and first-contact:418's own guard sources it to "karma-journey's
+              karma-tier model", /karma-journey being one of the 34 routes RETIRED in the Jul-15
+              rebuild. This page models karma with a flat karma_multiplier = 2 (:634-639) and has no
+              tiers to point at. Defining one would be inventing a model to justify an orphaned term.
+              Filed as the karma-tier follow-up in docs/WEB4-CANON-QUESTIONS.md instead. */}
+          <div className="mt-4 p-4 bg-gray-900/60 border border-red-800/30 rounded-lg">
+            <p className="text-gray-300 text-sm">
+              <strong className="text-red-300">Two ways to die, and they are very different.</strong>{' '}
+              Karma is what carries across lives, so it is worth being precise about what ends one.
+              Two paths: <strong className="text-red-400">ATP hits zero</strong> (energy death - you
+              can&apos;t act anymore) or{' '}
+              <strong className="text-red-400">raw trust falls below 0.5 and stays there</strong>{' '}
+              (trust death - the community no longer trusts you). Energy death is recoverable
+              through karma rebirth. Trust death is permanent - a destroyed reputation can&apos;t be
+              reset. One line, two consequences: <em>crossing</em> below 0.5 restricts your features
+              right away and is recoverable; only <em>staying</em> below it is fatal - a sustained
+              collapse, not a single stumble.
+            </p>
+            <p className="text-gray-400 text-sm mt-3">
+              Everything on this page about karma carrying forward describes the{' '}
+              <strong className="text-gray-300">recoverable</strong> kind. Karma is what makes energy
+              death survivable; it is not a way back from the other one.{' '}
+              <Link href="/how-it-works#two-ways-to-die" className="text-sky-400 hover:underline">
+                The fuller comparison →
+              </Link>
+            </p>
+          </div>
         </div>
 
         {/* Multi-Life Simulator */}

@@ -2,6 +2,89 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-07 09:00 session - the arithmetic the site handed the reader and would not finish
+
+**Fresh visitor log** (`visitor/logs/2026-08-07.md`, 12 pages, understanding "good", all seven
+checklist items). This is the most useful browse in weeks, and the reason is worth recording: the
+visitor **withdrew two findings mid-session** after discovering the site had already shipped the
+answers, and said so. What survived is one finding of a kind we have not had before.
+
+**The HIGH is not a contradiction, it is an entailment.** No two pages disagree. The visitor took
+the decay half-lives from `/trust-tensor`, the survival rule from `/how-it-works`, and did four
+terms of arithmetic every number of which the site supplied: a 0.90/0.90/0.90 user, six months
+away, lands at composite **0.4992**, below the line, with "and stays there" satisfied *by
+construction* because that is what absence is. Their summary is the whole diagnosis: *"the site is
+excellent at disclosing each fact and inconsistent at joining two of them."* They also noticed the
+site had already had the thought, applied elsewhere: `/what-could-go-wrong` risk 3 says *"a scoring
+error is a sustained condition by construction, so a wrongly-scored user is precisely the one who
+stays below."* Absence is also a sustained condition. The page spotted the pattern for one case and
+not the other.
+
+**The near-miss that the policy review caught, which is the real lesson of this session.** The
+first scope draft was going to reassure readers that canon's own defaults are far gentler than the
+site's half-lives (§2.3 Training is -0.001/month, additive). That is true per *increment* and false
+per *level*: `reputation-computation.md:679` aggregates onto a **0.5 neutral baseline** over a
+90-day horizon, so a six-month-idle entity's base is ~0.5 before decay, landing near **0.44**, also
+under the line. Publishing "the real spec is gentler" would have handed the next visitor a
+falsification from upstream's own code. This is [[visitor-comparative-premise-check-both-sides]]
+one level up: I checked the side of canon that supported the fix and not the side that refuted it.
+**The rule that generalizes: when canon is about to be cited as reassurance, compute the reader's
+scenario in canon's model end to end before quoting canon's parameters.**
+
+- `/trust-tensor#decay-and-survival` (new anchor, next to the rates that generate the alarm) says
+  the two things the site can defend: the 180d/30d half-lives are **4-Life's teaching calibration**
+  (§2.3 licenses societies to configure exactly those two; only Talent's no-decay is invariant),
+  and what happens at the line for an **absent** rather than **misbehaving** user is **not
+  settled**, in the voice `/how-it-works` already uses. No dormancy rule invented, no composite
+  reprinted, no conclusion drawn about being below the line.
+- `/why-web4#faq-month-off` carries the same two clauses **at the point of reassurance**, where the
+  visitor actually banked the six-month numbers. Also narrowed the absolute sitting four lines
+  above the new clause: *"There's no 'hiatus' mechanism to freeze Training or Temperament"* stated
+  as protocol fact the exact thing §2.3 hands to societies. An over-pessimistic absolute is still a
+  wrong absolute, and this one would have foreclosed the fix landing beneath it.
+- `/how-it-works` gets a **pointer only** plus a `#two-ways-to-die` anchor. Its two-deaths
+  paragraph is guarded verbatim and threads ledger Q1; it was not touched.
+- Escalated as **ledger Q14**, with an explicit "why this is neither Q4 nor Q5" paragraph (Q4 is
+  whether a sim may model a death predicate; Q5 is whether a *third* mechanism exists; Q14 asks
+  what score the *existing* predicate is read against). Canon's decay numerics live only there.
+
+**The MEDIUM that was a missed surface, not a new defect.** `/why-web4:272` still read *"Creating a
+new identity should require physical hardware"* - the claim Q8 Ruling 1 settled on **2026-08-05**
+(§1.2 clause 1: an entity presenting only weak evidence *"MUST NOT be excluded by the protocol"*).
+That pass swept four FAQs and a table row and missed the "What Would Actually Work" property list.
+Swept as a **claim, not a sentence** this time, which turned up a second one: `lct-explainer:2231`
+(*"can't create fake accounts cheaply if presence requires hardware"*) sits ~1950 lines below that
+same page's guard at `:273` saying *"It does NOT imply hardware is required to participate."* A
+page contradicting its own guard is invisible to a phrase-grep. Both now carry the true and
+stronger form: accounts are cheap, **trust** is not.
+
+**Routing, not absence.** `/why-web4`'s privacy section *recommends* software-only and disclosed
+only the lower ceiling. The zero-margin consequence already ships at
+`/lct-explainer#software-only-survival` and was already linked from `/hestia`,
+`/what-could-go-wrong` and `/trust-tensor` - just not from the one place a reader is being **advised
+to pick the tier**. One clause plus the existing link; strictly-below, no numbers moved.
+
+**The page named for dying did not explain dying.** Two pages route to `/karma-consequences` for
+"How living and dying work"; `grep "trust death"` over it returned **zero**. The appeals half of
+that promise was already kept at `#recourse`; the two-deaths half now is, by **verbatim reuse** of
+the canonical sentence (it threads Q1, so paraphrase was not an option).
+
+**Two follow-ups filed, deliberately not fixed** (both in the ledger):
+1. **"karma tier" is an orphan from the retired sim.** Asserted on **five** pages, defined on none;
+   `grep -rni karma` over `core-spec/` returns **zero** - canon has no karma concept - and
+   `first-contact:418`'s own guard sources it to *"karma-journey's karma-tier model"*, a route
+   retired in the Jul-15 rebuild. `/karma-consequences` has a flat multiplier and no tiers. The
+   likely fix (drop the rider from all five copies, keep the raw-vs-effective contrast) edits five
+   verbatim-locked surfaces and needs its own policy-reviewed pass.
+2. **`/karma-consequences` asserts "identity is hardware-bound" four times** as the load-bearing
+   premise of its no-fresh-start thesis. Under Q8 Ruling 1 software-only identities are conformant
+   and cheap to mint, so the argument is weaker for that tier than the page claims. Not a hedge:
+   it changes what the page argues.
+
+**Not done, noted**: the four LOWs (First Contact's four-layer disclaimer stack before the Start
+button, `/learn`'s ~30-minute estimate vs `/why-web4`'s 68-question index, the unstated hub-to-
+hardbound relationship on `/onramp`, `/tldr`'s badge key naming three tiers and defining two).
+
 ## Aug-07 03:00 session - the mode the site retired and canon did not
 
 **No fresh visitor log.** This session ran at 03:00, before the 05:00 browse. The freshest log
