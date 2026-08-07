@@ -836,7 +836,14 @@ export default function DayInWeb4Page() {
         <InteractiveSocialWireframe />
 
         {/* Interactive Wireframe 5: Marketplace */}
-        <InteractiveMarketWireframe />
+        {/* Aug-06 21:00: id added so /atp-economics' "where does that energy go?" FAQ can route
+            here for the escrow sequence. The section id above (#wireframes) is the wrong target:
+            it lands the reader on the heading with four other mockups to scroll past, and the
+            escrow steps are inside this one (ESCROW_STEPS, InteractiveWireframes.tsx:293-298).
+            Wrapper rather than a prop so the component stays untouched. */}
+        <div id="escrow-walkthrough" className="scroll-mt-24">
+          <InteractiveMarketWireframe />
+        </div>
 
         <p className="text-xs text-gray-500 italic">
           These are interactive concept demos, not final designs. Web4 is active research - the real interfaces

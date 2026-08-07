@@ -2,6 +2,86 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-06 21:00 session - the reward on the channel that cannot pay one
+
+Same log as the 09:00 and 15:00 sessions (`visitor/logs/2026-08-06.md`). Those two took the whole
+friction table: 3 of 4 HIGHs (HIGH 4 is ledger Q1/Q8), all 3 MEDIUMs, 2 of 3 LOWs (LOW 1 declined
+with reason). **The table is exhausted**, so this pass worked the Unanswered Questions, and the one
+live residual was **Q6**: *"How do you get commissioned work at all? The mechanism that is the only
+path to net-positive ATP is the one the site never walks through."*
+
+**Q6 splits, and #518 already fenced half of it.** Its literal first clause is the question the
+15:00 session deliberately left open at `atp-economics:814-816` (*"how someone with no track record
+lands a first commission is an open question on this stack"*). What was never answered is the other
+clause: what actually **happens**, mechanically, once work is commissioned. The site asserts
+commissioned payment as the sole net-positive channel on at least six surfaces and shows the
+outcome once (`how-it-works:1247`, *"Commissioner pays on delivery"*). It never said **when** the
+commissioner's ATP is committed, which is the load-bearing fact: it is escrowed **before the work
+starts**, against a release condition agreed in advance. That is what makes payment not a matter of
+someone's goodwill afterwards.
+
+**And the surface where that answer belongs was carrying a falsifiable claim.** The FAQ *"where does
+that energy go?"* (`:2423`) enumerates three destinations. Bullet 1 read *"Actions (posting,
+reviewing, helping): your ATP is held in escrow. If others confirm the work was valuable, you get it
+back **plus a reward**."* Those are self-initiated acts, i.e. the **capped** channel:
+`recharge = min( sum, ATP_cost )` at `:938`, glossed at `:945` as *"you can't profit on a single
+action, only recover its cost"*. The trust-not-ATP defence fails on the page's own terms, because
+`:1125` defines the word page-scoped: *"'Reward' here means payment for value delivered ... which is
+why it can exceed the action's cost. Recharge of your own spend alone never does."* So the bullet
+attached the page's own payment-channel word to the one channel that cannot pay it. **Fifth sitting
+of this class** (Jun-11, Jun-12, Jul-30 simulator labels, Aug-06 #518 summary card); the file's own
+boundary guard at `:56-63` puts any unqualified instance on this page in scope, and the FAQ was
+simply never swept. Correction propagated from `:248` and `:955-961`. **No figure moved.**
+
+So the two findings were one shape: **the FAQ put the reward on the channel that cannot pay one, and
+omitted the channel that can.** Fixed as one edit: bullet 1 corrected to the capped truth, and the
+commissioned channel added as its own bullet carrying only the **sequence** (lock before work,
+stated release condition, settle on verified result, return on non-delivery). Deliberately not a
+seventh restatement of the two-channel claim.
+
+Grounding is `r6-framework.md` 1.5 / 2.1 step 6 / 2.3, `r7-framework.md` 185, 345-346, 521-525 (both
+cited: `web4-explainer:98` calls R6 "legacy" while `r7-framework.md:7` says both are canonical, a
+**separate pre-existing seam, filed not fixed**), and `atp-adp-cycle.md:635-641`, which sanctions the
+escrow/lock state explicitly. Recorded in-code: **"commission" appears zero times in core-spec**, so
+commissioner -> R6 `actor` and worker -> `resource_providers` is an **inference** consistent with
+this page's own framing, not a canon term. Do not re-quote it as canon.
+
+**Two fences, both from policy review, both load-bearing:**
+- **The new bullet must never read as a "transfer".** The bullet directly below it asserts 5% on
+  sending ATP to someone, and `how-it-works:1247-1266` prints Spend 15 / Paid 40 / **Net gain +25**.
+  A reader applying 5% to that 40 gets +23 and the illustration is falsified. Canon 6.3 settles that
+  there is nothing to reconcile: the protocol prescribes **no** fee, and *"any specific fee rates
+  appearing in simulations, explainers, or demos (e.g., '5% transfer fee') are simulation parameters,
+  not protocol constants"*. No third rate went in (`InteractiveWireframes.tsx:294` ships a 2-ATP
+  escrow fee on 350; left alone).
+- **The `#newcomer-solvency` link is mandatory, not decorative.** Without it the mechanism reads as a
+  promise you will get commissioned, which is exactly what #518 declined to say. The bullet states
+  the open half in its own words.
+
+**The sequence already shipped, for a purchase.** `ESCROW_STEPS`
+(`InteractiveWireframes.tsx:293-298`, rendered on `/day-in-web4`) walks lock-then-release-on-delivery
+for buying a camera. So the gap was narrower than "never walks through" and the fix **links there
+rather than re-narrating it**, naming the difference out loud. `#escrow-walkthrough` added at the
+mockup itself: `#wireframes` was the wrong target, it lands the reader on a heading with four other
+mockups to scroll past.
+
+**Bonus, and it was a live rendering bug.** Five em dashes were shipping as `\u2014` escapes,
+invisible to a literal grep: `InteractiveWireframes.tsx:77,198,284,294` and
+`InteractiveMailDemo.tsx:31`. Four sit in JS string literals and rendered as real em dashes (hard
+house-rule violation). **`:284` is in JSX text, where backslash escapes are not interpreted, so the
+live site rendered the six literal characters `\u2014`** under the social-feed mockup. All five
+replaced with commas/colons/periods. Grep for the escape, not just the character.
+
+**Deliberately not touched:** HIGH 4 and Unanswered Q1/Q2 (ledger Q1/Q8, endpoint-silent by policy,
+**expected to recur by design**), Q3/Q4 (ledger Q5), Q7 (operator call), LOW 1 (4th sitting, declined
+with reason: printing "one instance" ships a false number against `running-now:285`). The R6-legacy
+seam is filed above, not fixed.
+
+**Verification**: `npm run build` green. Zero content figures added or changed on any surface (the
+only digits in added rendered lines are Tailwind classes). Em dashes: **5 removed, 0 added** to
+rendered text; the single added instance is inside a code comment quoting the string it replaced.
+0 new files.
+
 ## Aug-06 15:00 session - the refill nobody promised, and a fix that landed on one of two twins
 
 Same log as the 09:00 session (`visitor/logs/2026-08-06.md`). That pass took 3 of 4 HIGHs and 2 of
