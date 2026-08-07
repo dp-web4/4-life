@@ -94,9 +94,24 @@ export default function Web4ExplainerPage() {
 
       <section>
         <h2 id="r6-r7">5. R6/R7: Action Framework</h2>
+        {/* Aug-07: this line read "R6 (legacy) and R7 (current)" and was falsified verbatim by
+            canon. r6-framework.md:9: "R6 and R7 are both canonical. The choice is contextual...
+            Neither is deprecated." r7-framework.md:7,9: "The choice between R6 and R7 is
+            contextual, selected per action or per role based on consequence tier. Neither replaces
+            the other." r7-framework.md:15 gives the reason both modes exist: making every action
+            consequential would impose bookkeeping cost on routine tasks, making none would prevent
+            trust evolution.
+            The seam was FILED, not fixed, by PR #519 (see the guard at atp-economics:2457) because
+            that pass had to cite BOTH specs for one lifecycle and could not do so while this page
+            called one of them legacy.
+            The gloss used here is the one ALREADY SHIPPING at glossary:604-607, reused verbatim in
+            substance rather than re-worded. Do not invent a fourth phrasing: onramp:119,
+            the-standard:214-226 (which carries its own anti-re-glossing guard at 194-203),
+            glossary:573-612 and navigation.ts:193 are the other three and they are all correct. */}
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
-          <strong>R6</strong> (legacy) and <strong>R7</strong> (current) define how all Web4 actions are structured.
-          Every interaction follows this pattern:
+          <strong>R6</strong> and <strong>R7</strong> define how all Web4 actions are structured.
+          Both are canonical: R6 is the default for routine acts, R7 governs the consequential ones,
+          and the choice is made per action. Every interaction follows this pattern:
         </p>
         <div style={{ marginTop: "0.75rem", marginLeft: "1.25rem", color: "#d1d5db" }}>
           <p style={{ fontFamily: "monospace", color: "#38bdf8" }}>
@@ -116,11 +131,18 @@ export default function Web4ExplainerPage() {
           <strong>Why it matters:</strong> R6/R7 makes every action deterministic, auditable, and trust-scored.
           You can&apos;t cheat the system because every component is explicit and witnessed.
         </p>
-        <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
-          In 4-Life, nearly every game action (membership, treasury, audits,
-          cross-society policies) is encoded as an R6 envelope before being
-          written to the society&apos;s tamper-evident audit chain.
-        </p>
+        {/* Aug-07: DELETED, not reworded. The sentence here read "In 4-Life, nearly every game
+            action (membership, treasury, audits, cross-society policies) is encoded as an R6
+            envelope before being written to the society's tamper-evident audit chain."
+            Every noun in it belongs to the society simulation retired on Jul-15 and archived on
+            archive/v1-2026-07. The tempting de-sim rewrite (swap "game" for "site" or "4-Life")
+            was blocked in policy review and is FALSE: the live site is a pure explainer and
+            encodes nothing as an R6 envelope. Removing a false claim asserts nothing in its place;
+            substituting a true-sounding one would have shipped a new claim with no grounding.
+            NOT cascaded, and filed here instead: this page carries a family of seven "In 4-Life,
+            ..." sentences (L43, L58, L74, L88, this one, L137, L171) sharing the same retired
+            referent. L171 ("explicit MRH/LCT edges and R6-described events") is the closest twin.
+            De-simming that family is its own pass; do not do it piecemeal from an R6/R7 edit. */}
       </section>
 
       <section>

@@ -46,8 +46,14 @@ export default function ManifestPage() {
             Incoherent behavior (teleporting, capability spoofing) reduces trust.{" "}
             <Link href="/coherence-index" className="text-sky-400">↗</Link>
           </li>
+          {/* Aug-07: this read "producing Result + Reputation" for EVERY action, which collapses
+              the two modes. Reputation as a first-class output is exactly what R7 adds and R6 does
+              not have (R6 carries only implicit tensorUpdates, r6-framework.md section 1.6). Same
+              seam as web4-explainer:98, opposite direction: that surface deprecated R6, this one
+              erased it. Both now use the glossary:604-607 gloss. */}
           <li>
-            <strong>R6/R7 (Action Framework):</strong> Every action is Rules + Role + Request + Reference + Resource, producing Result + Reputation.
+            <strong>R6/R7 (Action Framework):</strong> Every action is Rules + Role + Request + Reference + Resource, producing a Result.
+            R7 adds a seventh output, Reputation, for consequential acts. Both modes are canonical.
             Deterministic, auditable, trust-scored.{" "}
             <Link href="/web4-explainer" className="text-sky-400">↗</Link>
           </li>

@@ -137,8 +137,14 @@ export const terms: Record<string, TermDefinition> = {
       "Every action follows R6: what rules apply, what role you're in, what you're requesting, what references you provide, what resources you need, and what result you produce. Ensures actions are auditable and trust-scored consistently.",
     canonicalSpec:
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/r6-framework.md",
+    // Aug-07: this note read "R7 adds a seventh element (Reputation) in NEWER SPECIFICATIONS",
+    // which implies R7 superseded R6. Canon says the opposite (r6-framework.md:9 "Neither is
+    // deprecated"; r7-framework.md:9 "Neither replaces the other"). This is the widest-reach R6
+    // surface on the site, since TermTooltip renders it wherever <R6> is used, and a grep for
+    // "legacy" walks straight past it. Keep BOTH modes named here: deleting the R7 clause outright
+    // would leave this surface R7-silent, which is the opposite failure.
     educationalNote:
-      "R7 adds a seventh element (Reputation) in newer specifications.",
+      "R6 and R7 are both canonical: R6 is the default for routine acts, and R7 adds a seventh element (Reputation) for consequential ones.",
   },
 
   // Agent Mechanics
