@@ -850,8 +850,54 @@ two HIGHs and three Unanswered Questions in a single sitting.
   `first-contact:834` verbatim (*"Your history persists either way"*). No verdict-propagation rule
   invented, no endpoint asserted, the guarded death sentence untouched.
 
-### Follow-up (not a canon question): "karma tier" is an orphaned term
+### Follow-up (not a canon question): "karma tier" is an orphaned term - RESOLVED 2026-08-07
 
+**Resolved by the 2026-08-07 15:00 session.** Option (b) was taken, in the propagation form rather
+than the deletion form: the orphaned rider was replaced everywhere by the positive half the site was
+**already shipping correctly** at `coherence-index:1365`, so no new claim was authored.
+
+Canonical tail, now byte-identical on all six surfaces (modulo styling and Alice's name):
+
+> The number compared is **raw** trust, not effective trust (raw x CI^2). A lower CI raises your
+> costs and narrows your access; it does not push you toward trust death.
+
+Three things the resolution turned up that the filing below did not have:
+
+1. **The filing's count of five was a truncated grep.** There is a sixth surface,
+   `first-contact:309`, inside a `<details>` ("Why 'raw'?") phrased with Alice's name. Found by
+   sweeping the *claim* (`grep -rn "effective trust"`) instead of the phrase.
+2. **A seventh surface asserted the OPPOSITE, and was deleted.** `web4-explainer:159-161` read
+   *"In 4-Life, CI determines whether an entity remains 'alive' - drop below the coherence threshold
+   and the society rejects you."* Two defects at once: it contradicted the canonical rider on all six
+   surfaces, and it asserted a mechanism the site does not have (`grep -rni "coherence threshold"`
+   over `src/` returns only that line, `coherence-index:1429`'s *configurability* statement, and the
+   `glossary:967` block fenced *"not part of the Web4 ontology"*). Deleted rather than reworded, per
+   the #520 precedent on that same page: removing a false claim asserts nothing in its place. The
+   canonical clause was **deliberately not** propagated there, because that page never mentions the
+   survival line, 0.50, trust death, or raw trust, and pasting it in would have introduced three
+   undefined nouns. That gap is recorded in a guard so a later pass does not read it as an oversight.
+3. **The first draft of the replacement was wrong and policy review caught it.** It read *"effective
+   trust sets what your actions cost and what you can do right now"*. The cost half is false: ATP
+   cost is `1/CI^2`, a function of CI alone, while effective trust is `raw x CI^2`. Raw 0.6 and raw
+   0.9 at CI 1.0 have different effective trust and **identical** cost multipliers. The site's own
+   framing (`coherence-index:249-252`, *"the same coherence factor working in two directions"*) makes
+   CI the common cause of both effects, and the draft would have inverted that into a parent-child
+   relation. **Attribute cost and access to CI, never to effective trust.**
+
+Guards updated at `first-contact:148-166` (full rationale) and `:418` (dead `/karma-journey`
+citation removed), `how-it-works:718`, `glossary:1195`, `coherence-index:1358` (marked as the
+source surface), `lct-explainer:1279`, `karma-consequences:836`, and `web4-explainer:134` +
+the new deletion-site guard. Stale line refs corrected in the same pass (`glossary ~1191` to 1211,
+`how-it-works ~608` to 731, and `web4-explainer`'s "In 4-Life" family enumeration, whose "L137"
+and "L171" were both off by +22 and whose count of seven is now five).
+
+`/karma-consequences:850` keeps its **truncated** copy, stopping at "a single stumble". That page
+never mentions CI, so the raw-vs-effective tail would disambiguate a formula the reader has not met
+there. The truncation is intentional and is now labelled as such.
+
+---
+
+*Original filing, kept for the record:*
 Filed 2026-08-07 alongside Q14, from the same browse (*"'karma tier' is introduced here and I
 never found out what one is"*). This is **not** for upstream: it is a 4-life cleanup that needs a
 design decision, recorded so the next session does not rediscover it.
@@ -882,6 +928,15 @@ of the page's whole thesis (you cannot mint a clean slate, so karma follows you)
 software-only identities are conformant and cheap to mint, so the no-fresh-start argument is
 weaker for that tier than the page claims. This is not a word-level correction: it changes what the
 page argues, and it needs its own scoped session.
+
+**Addendum 2026-08-07 (15:00 session), so the eventual sweep starts from a complete list:** there is
+a **fifth** instance, off that page. `src/lib/terms.ts:178` (the `Karma` term, rendered by
+`TermTooltip` wherever `<Karma>` appears, and by `GlossaryPanel` under "Behavior") ends: *"You can't
+escape history by 'starting fresh' - hardware-bound presence prevents that."* Same universal, same
+load-bearing role, and it is the **widest-reach** surface of the four, since a tooltip follows the
+term everywhere rather than living on one page. Found incidentally while confirming that `terms.ts`
+was free of "karma tier" (it is). Not fixed here: it is the same claim class as the four on
+`/karma-consequences` and belongs in the same scoped pass, not in a karma-tier cleanup.
 
 ---
 

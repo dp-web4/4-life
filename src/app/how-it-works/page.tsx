@@ -717,7 +717,13 @@ export default function HowItWorksPage() {
                   The canonical rule sentence already exists on /first-contact L153 and is reused
                   VERBATIM below - keep it that way if editing. It threads the 0.5-endpoint
                   escalation correctly (crossing vs staying, raw vs effective), so paraphrasing it
-                  would assert an endpoint canon has not settled. See WEB4-CANON-QUESTIONS Q1. */}
+                  would assert an endpoint canon has not settled. See WEB4-CANON-QUESTIONS Q1.
+                  Aug-07 (15:00): the tail clause changed on all six surfaces. It read "- effective
+                  trust sets your karma tier, not whether you live"; "karma tier" was defined nowhere
+                  on the site and does not exist in canon, and it came from the retired /karma-journey.
+                  The replacement is coherence-index:1365's already-shipping sentence, propagated, not
+                  re-derived. Do not re-attribute cost to effective trust: cost is 1/CI², a function of
+                  CI alone. Full rationale at first-contact:148-166. */}
               <p className="text-gray-300 leading-relaxed">
                 Two paths: <strong className="text-red-400">ATP hits zero</strong> (energy death -
                 you can&apos;t act anymore) or{" "}
@@ -727,8 +733,8 @@ export default function HowItWorksPage() {
                 can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5
                 restricts your features right away and is recoverable; only <em>staying</em> below
                 it is fatal - a sustained collapse, not a single stumble. The number compared is{" "}
-                <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;) - effective
-                trust sets your karma tier, not whether you live.
+                <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;). A lower CI
+                raises your costs and narrows your access; it does not push you toward trust death.
               </p>
               {/* Aug-07 visitor HIGH, A3. The visitor did the decay-vs-survival arithmetic HERE,
                   on this page, because this is where they finally got the survival rule. The

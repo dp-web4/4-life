@@ -1356,13 +1356,21 @@ export default function CoherenceIndexPage() {
               {/* Jul-28 visitor HIGH: this page stated the formula with nothing saying what it is NOT
                   used for, so a reader carrying /lct-explainer's "software-only caps at 0.50, and 0.5 is
                   the survival line" did the arithmetic and concluded any CI < 1.0 puts them permanently
-                  below the line. Same canonical clause as first-contact (~156), glossary (~1191),
-                  how-it-works (~608) and lct-explainer's #software-only-survival - keep verbatim. */}
+                  below the line. Same canonical clause as first-contact (~156 and ~309), glossary
+                  (~1211), how-it-works (~731) and lct-explainer's #software-only-survival - keep
+                  verbatim. (Aug-07 15:00: those two refs were stale, 1191 and 608; corrected.)
+                  THIS SURFACE IS THE SOURCE. The second sentence below ("A lower CI raises your
+                  costs and narrows your access; it does not push you toward trust death") shipped
+                  here first and was correct here while the other five carried an orphan tail,
+                  "- effective trust sets your karma tier, not whether you live". Aug-07 propagated
+                  this page's sentence outward and deleted the orphan; the only edit here was
+                  dropping that tail and the now-dangling "So". Cost is 1/CI², a function of CI
+                  alone, which is why the sentence attributes cost to CI and not to effective trust:
+                  raw 0.6 and raw 0.9 at CI 1.0 differ in effective trust and have identical cost. */}
               <p className="text-sm text-gray-300 mb-2">
                 One thing this formula is <em>not</em> for: the survival line. The number compared is{" "}
-                <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;) - effective trust
-                sets your karma tier, not whether you live. So a lower CI raises your costs and narrows
-                your access; it does not push you toward trust death.
+                <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;). A lower CI
+                raises your costs and narrows your access; it does not push you toward trust death.
               </p>
               <p className="text-sm text-gray-400">
                 Example: You have high T3 (0.9 across all dimensions from years of

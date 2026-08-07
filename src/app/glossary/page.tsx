@@ -1194,7 +1194,13 @@ export default function GlossaryPage() {
             The rule sentence is the canonical one from /first-contact (L153), de-styled for this
             context but otherwise VERBATIM - keep it that way. It threads the 0.5-endpoint
             escalation correctly (crossing vs staying, raw vs effective trust); paraphrasing would
-            assert an endpoint canon has not settled. See docs/WEB4-CANON-QUESTIONS.md Q1. */}
+            assert an endpoint canon has not settled. See docs/WEB4-CANON-QUESTIONS.md Q1.
+            Aug-07 (15:00): the TAIL clause changed on all six surfaces, so re-sync before comparing
+            against an older copy. It read "- effective trust sets your karma tier, not whether you
+            live". "Karma tier" was defined on no page, has zero hits in canon, and traces to the
+            retired /karma-journey. Replaced by coherence-index:1365's already-shipping sentence,
+            propagated verbatim. Cost is 1/CI², a function of CI alone, so do not re-attribute cost
+            to effective trust. Full rationale at first-contact:148-166. */}
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-red-800/40 rounded-xl p-6 mb-6" id="death" data-glossary-term data-essential>
           <h3 className="text-xl font-semibold text-red-400 mb-3 scroll-mt-20">
             Death, Trust Death, and Rebirth
@@ -1208,7 +1214,8 @@ export default function GlossaryPage() {
             One line, two consequences: <em>crossing</em> below 0.5 restricts your features right
             away and is recoverable; only <em>staying</em> below it is fatal - a sustained collapse,
             not a single stumble. The number compared is <strong>raw</strong> trust, not effective
-            trust (raw &times; CI&sup2;) - effective trust sets your karma tier, not whether you live.
+            trust (raw &times; CI&sup2;). A lower CI raises your costs and narrows your access; it
+            does not push you toward trust death.
           </p>
           <p className="text-gray-400 text-sm leading-relaxed mb-3">
             <strong className="text-gray-300">Rebirth</strong> is what follows the recoverable kind.

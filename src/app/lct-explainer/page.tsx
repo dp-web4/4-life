@@ -1300,11 +1300,23 @@ export default function LCTExplainerPage() {
                 who reached /coherence-index ("Effective trust = T3 x CI²") could do the arithmetic and
                 conclude a 0.50 ceiling sits permanently BELOW the line for any CI < 1.0 - one page's
                 formula refuting another page's promise. The clause below is the canonical disambiguation
-                already shipping VERBATIM on first-contact (~156), glossary (~1191) and how-it-works (~608);
-                it was missing from exactly the two pages this visitor collided. Propagated, not re-derived:
-                keep it verbatim if editing. Does NOT assert the > vs >= endpoint (still Q1). */}
-            The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;) -
-            effective trust sets your karma tier, not whether you live.{" "}
+                already shipping VERBATIM on first-contact (~156 and ~309), glossary (~1211) and
+                how-it-works (~731); it was missing from exactly the two pages this visitor collided.
+                Propagated, not re-derived: keep it verbatim if editing. Does NOT assert the > vs >=
+                endpoint (still Q1). (Aug-07 15:00: the glossary and how-it-works refs above were
+                stale, 1191 and 608; corrected.)
+                Aug-07 (15:00): the TAIL clause changed on all six surfaces. It read "- effective
+                trust sets your karma tier, not whether you live"; "karma tier" was an orphan from
+                the retired /karma-journey, defined nowhere and absent from canon. Replaced by
+                coherence-index:1365's sentence. Note for this page specifically: the paragraph
+                CONTINUES "What the software-only ceiling really costs you is margin ... any dip
+                restricts your features until you climb back", which is a RAW-trust story. The new
+                clause is a CI story. They are two independent causes of restricted access, both
+                already asserted sitewide, not one rule stated twice - keep the order (CI clause,
+                then margin) so the raw thread stays adjacent to the ceiling it explains. */}
+            The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;).
+            A lower CI raises your costs and narrows your access; it does not push you toward trust
+            death.{" "}
             What the software-only ceiling really costs you is <em>margin</em>: you start at the
             line with no buffer above it, so any dip restricts your features until you climb back, and your
             reputation can never carry more weight than the line itself. Zero margin is the tradeoff you accept

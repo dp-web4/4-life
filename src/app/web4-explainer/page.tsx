@@ -139,10 +139,15 @@ export default function Web4ExplainerPage() {
             was blocked in policy review and is FALSE: the live site is a pure explainer and
             encodes nothing as an R6 envelope. Removing a false claim asserts nothing in its place;
             substituting a true-sounding one would have shipped a new claim with no grounding.
-            NOT cascaded, and filed here instead: this page carries a family of seven "In 4-Life,
-            ..." sentences (L43, L58, L74, L88, this one, L137, L171) sharing the same retired
-            referent. L171 ("explicit MRH/LCT edges and R6-described events") is the closest twin.
-            De-simming that family is its own pass; do not do it piecemeal from an R6/R7 edit. */}
+            NOT cascaded, and filed here instead: this page carries a family of "In 4-Life, ..."
+            sentences sharing the same retired referent. De-simming that family is its own pass; do
+            not do it piecemeal from an R6/R7 edit.
+            Aug-07 (15:00) ENUMERATION CORRECTED: the line numbers above were wrong ("L137" and
+            "L171" were both off by +22) and the count of seven included one sentence that has since
+            been deleted for an unrelated false-mechanism defect. The live family is FIVE: L43
+            (wraps a line break, so a naive grep for "In 4-Life" misses it), L58, L74, L88, L193.
+            L193 is now the closest twin to the sentence deleted here. See the guard below the CI
+            section for why that deletion was in scope for a different pass than this one. */}
       </section>
 
       <section>
@@ -156,10 +161,32 @@ export default function Web4ExplainerPage() {
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
           CI acts as a trust modulator: effective trust = base_trust &times; CI&sup2;, and ATP
           costs scale as 1/CI&sup2;. Incoherent behavior (teleporting, capability spoofing,
-          broken continuity) exponentially increases the cost of acting. In 4-Life, CI
-          determines whether an entity remains &ldquo;alive&rdquo; - drop below the
-          coherence threshold and the society rejects you.
+          broken continuity) exponentially increases the cost of acting.
         </p>
+        {/* Aug-07 (15:00): DELETED, not reworded. The sentence here read "In 4-Life, CI determines
+            whether an entity remains 'alive' - drop below the coherence threshold and the society
+            rejects you." Two independent defects:
+            (1) FALSE MECHANISM. There is no coherence threshold on the live site.
+                `grep -rni "coherence threshold\|CI threshold"` over src/ returns only this line,
+                coherence-index:1429 ("each society configures CI thresholds and modulation curves",
+                a configurability statement, not a death rule), and glossary:967, which sits inside a
+                <details> fenced "not part of the Web4 ontology" and claims only that identity is
+                "fragile and prone to collapse". Nothing anywhere grants CI the power to end a life.
+            (2) It contradicted the canonical raw-vs-effective clause on SIX surfaces (first-contact
+                :156 and :309, how-it-works:731, coherence-index:1364, glossary:1211, lct-explainer
+                :1285), all of which say a lower CI "does not push you toward trust death". This page
+                said the opposite, in prose, which is the Jul-28 HIGH's exact failure mode stated
+                outright instead of left to the reader's arithmetic.
+            The canonical clause was DELIBERATELY NOT propagated here, and that gap is not an
+            oversight: this page never mentions the survival line, 0.50, trust death, or raw trust
+            (grepped: every other hit is CSS 0.5rem), and does not link /coherence-index. Pasting the
+            clause in would introduce three undefined nouns and manufacture the very cross-page
+            arithmetic gap it exists to close. The paragraph above is complete and true without it.
+            Family note, correcting the enumeration at :134-141: the live "In 4-Life, ..." sentences
+            are L43 (wraps the line break, so a naive grep misses it), L58, L74, L88 and L193. That
+            guard's "L137" and "L171" were both off by +22 and one of them was this sentence. With it
+            gone the family is FIVE, and L193 ("explicit MRH/LCT edges and R6-described events")
+            inherits the "closest twin" designation. De-simming that family is still its own pass. */}
       </section>
 
       <section>
