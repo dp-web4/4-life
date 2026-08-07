@@ -74,7 +74,7 @@ export function InteractiveTalentWireframe() {
                 <p className="text-xs text-gray-500">
                   {c.projects >= 100
                     ? "Scores from real interactions, verified by hardware-bound identity. Can\u2019t be faked."
-                    : "Limited history \u2014 lower cost, but you\u2019re taking more of a risk. Trust builds with time."}
+                    : "Limited history: lower cost, but you\u2019re taking more of a risk. Trust builds with time."}
                 </p>
               </div>
               {expanded === i && (
@@ -195,7 +195,7 @@ export function InteractiveReviewsWireframe() {
 const SOCIAL_POSTS = [
   {
     initials: 'L', name: 'Dr. Lisa Park', trust: 0.92, role: 'Nutritionist', trustColor: 'text-emerald-400',
-    text: '\u201CNew research on intermittent fasting \u2014 the 16:8 claims are overstated. Here\u2019s what the data actually shows...\u201D',
+    text: '\u201CNew research on intermittent fasting. The 16:8 claims are overstated. Here\u2019s what the data actually shows...\u201D',
     helpful: 47, earned: 94, cost: 3, flagged: 0, lowTrust: false,
   },
   {
@@ -281,7 +281,10 @@ export function InteractiveSocialWireframe() {
           })}
         </div>
         <div className="px-4 py-2 text-xs text-gray-600 border-t border-gray-800">
-          <span className="text-emerald-400/70">Try the buttons</span> \u2014 every action costs 1 ATP. Flagging low-trust content is how communities self-moderate.
+          {/* This was `\u2014` in JSX TEXT, where backslash escapes are not interpreted, so the
+              live site rendered the six literal characters. Both the escape and the em dash it
+              was reaching for are house-rule violations; replaced with a colon. */}
+          <span className="text-emerald-400/70">Try the buttons</span>: every action costs 1 ATP. Flagging low-trust content is how communities self-moderate.
         </div>
       </div>
     </WireframeFrame>
@@ -291,7 +294,7 @@ export function InteractiveSocialWireframe() {
 /* ─── Web4 Market ───────────────────────────────────────── */
 
 const ESCROW_STEPS = [
-  { label: 'You click \u201CBuy\u201D', detail: '2 ATP escrow fee deducted (reduced \u2014 seller has high trust)', icon: '\uD83D\uDED2' },
+  { label: 'You click \u201CBuy\u201D', detail: '2 ATP escrow fee deducted (reduced, seller has high trust)', icon: '\uD83D\uDED2' },
   { label: 'ATP held in escrow', detail: '350 ATP locked. Neither party can touch it until delivery confirmed.', icon: '\uD83D\uDD12' },
   { label: 'Seller ships camera', detail: 'Shipment logged. Seller\u2019s Temperament score at stake if they ghost.', icon: '\uD83D\uDCE6' },
   { label: 'You confirm receipt', detail: '350 ATP released to seller. Both trust scores updated. Transaction complete.', icon: '\u2705' },

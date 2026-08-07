@@ -2430,10 +2430,73 @@ if agent.atp <= 0:
             <p>
               It depends on what kind of action it is:
             </p>
+            {/* Aug-06 21:00. FIFTH sitting of the unqualified-net-positive class (Jun-11, Jun-12,
+                Jul-30 simulator labels, Aug-06 #518 summary card), and the first one in this FAQ.
+                Bullet 1 read "you get it back PLUS a reward" for posting/reviewing/helping, which
+                are self-initiated acts, i.e. this page's CAPPED channel: recharge = min( sum, cost )
+                at L938, glossed at L945 as "you can't profit on a single action, only recover its
+                cost". And "reward" is not ambiguous here, L1125 defines it page-scoped as "payment
+                for value delivered ... which is why it can exceed the action's cost. Recharge of
+                your own spend alone never does". So the bullet attached the page's own
+                payment-channel word to the one channel that cannot pay it. The file guard at
+                L56-63 puts any unqualified instance ON THIS PAGE in scope; the FAQ was never swept.
+                Correction is PROPAGATED from L248 and L955-961, no new claim and no figure moved.
+
+                The second bullet answers the Aug-06 visitor's Unanswered Q6 ("the mechanism that is
+                the only path to net-positive ATP is the one the site never walks through"), and it
+                is deliberately NOT a seventh restatement of the two-channel claim (already on
+                L248, L814, L955-959, how-it-works L614 + L1004-1006, day-in-web4 L819). The only
+                new information is the SEQUENCE: the commissioner's ATP is locked BEFORE the work
+                starts, against a release condition agreed in advance, and it returns to them if
+                nothing is delivered. That is what makes commissioned payment not a matter of
+                someone's goodwill afterwards, and it is the part no surface stated.
+                Canon: r6-framework.md 1.5 (escrow amount + release_condition "result_verified"),
+                2.1 step 6 (lock_resources, inside PRE-execution validation, before 2.2 Execution),
+                2.3 (transfer_atp to resource_providers + release_escrow "completed" on success;
+                calculate_refund + release_escrow "failed" otherwise); r7-framework.md 185, 345-346,
+                521-525 carry the identical lifecycle, cited because web4-explainer:98 calls R6
+                "legacy" while r7-framework.md:7 says both are canonical (that seam is a separate
+                pre-existing defect, filed not fixed); atp-adp-cycle.md:635-641 sanctions the
+                escrow/lock state explicitly. NOTE the word "commission" appears ZERO times in
+                core-spec: commissioner -> R6 actor and worker -> resource_providers is an
+                INFERENCE consistent with this page's L248 framing, not a canon term. Do not
+                re-quote it as though canon said "commissioner".
+                Two fences, both required by policy review:
+                (a) Do NOT call this settlement a "transfer". The next bullet asserts 5% on
+                    sending ATP to someone, and how-it-works:1247-1266 prints Spend 15 / Paid 40 /
+                    Net gain +25. A reader who applies 5% to that 40 gets +23 and the illustration
+                    is falsified. Canon 6.3 says the protocol prescribes NO fee and that any rate
+                    in an explainer is a simulation parameter, so there is nothing to reconcile and
+                    no third rate goes here (InteractiveWireframes.tsx:294 ships a 2-ATP escrow fee
+                    on 350; left alone).
+                (b) The literal first clause of Q6, "how do you get commissioned work at all",
+                    is the question #518 deliberately left OPEN at L814-816. This answers what
+                    happens once you have one. The #newcomer-solvency link is mandatory, not
+                    decorative: without it this reads as a promise that you will get one.
+                The lock-and-release sequence already ships for a PURCHASE (ESCROW_STEPS,
+                InteractiveWireframes.tsx:293-298, rendered on /day-in-web4), so this links there
+                rather than re-narrating it. That is also why the second bullet says whose escrow
+                it is in its first clause: bullet 1 uses the same word for the reader's own. */}
             <ul className="list-disc list-inside space-y-1.5 ml-4 text-gray-400">
-              <li><strong className="text-gray-300">Actions (posting, reviewing, helping):</strong> Your ATP is held in escrow.
-                If others confirm the work was valuable, you get it back <em>plus</em> a reward.
+              <li><strong className="text-gray-300">Actions you initiate (posting, reviewing, helping):</strong> Your ATP is held in escrow.
+                If others confirm the work was valuable, it comes back to you, scaled by quality and
+                capped at what you spent: a confirmed contribution recovers its cost rather than beating it.
                 If the work is low-quality, you lose the escrowed amount - it returns to the society pool.</li>
+              <li><strong className="text-gray-300">Work someone else commissioned:</strong> the escrow is
+                theirs, not yours. Their ATP is locked against the task <em>before you start</em>, and the
+                condition for releasing it is agreed in advance: a verified result. Deliver one and the
+                locked amount settles to you, and because they priced it against what the work is worth to
+                them rather than against your outlay, it can come to more than the task cost you to do.
+                Deliver nothing and it goes back to them. You can watch the same lock-and-release sequence
+                run step by step (there, for buying a camera rather than for commissioned work) in the{' '}
+                <Link href="/day-in-web4#escrow-walkthrough" className="text-sky-400 hover:text-sky-300 underline">marketplace mockup</Link>.
+                What this does <em>not</em> settle is how someone with no track record gets commissioned in
+                the first place, which is{' '}
+                <a
+                  href="#newcomer-solvency"
+                  onClick={(e) => { e.preventDefault(); document.getElementById('newcomer-solvency')?.scrollIntoView({ behavior: 'smooth' }); }}
+                  className="text-sky-400 hover:text-sky-300 underline"
+                >still an open question on this stack</a>.</li>
               <li><strong className="text-gray-300">Transfers (sending ATP to someone):</strong> 95% goes to the recipient,
                 5% goes to the community redistribution pool (paid back out to quality contributors - not destroyed,
                 not held by any authority). This prevents circular farming.</li>

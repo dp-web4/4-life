@@ -28,7 +28,7 @@ const INBOX_MESSAGES: MailMessage[] = [
     cost: 2,
     subject: 'Re: Kitchen faucet fix',
     time: '9:12 AM',
-    body: 'Hey! That washer replacement tip worked perfectly \u2014 no more dripping. Saved me a plumber visit. Thanks for the detailed walkthrough!',
+    body: 'Hey! That washer replacement tip worked perfectly, no more dripping. Saved me a plumber visit. Thanks for the detailed walkthrough!',
     trustBreakdown: { talent: 0.84, training: 0.89, temperament: 0.88 },
   },
   {
