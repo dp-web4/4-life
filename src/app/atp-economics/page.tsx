@@ -2454,9 +2454,14 @@ if agent.atp <= 0:
                 2.1 step 6 (lock_resources, inside PRE-execution validation, before 2.2 Execution),
                 2.3 (transfer_atp to resource_providers + release_escrow "completed" on success;
                 calculate_refund + release_escrow "failed" otherwise); r7-framework.md 185, 345-346,
-                521-525 carry the identical lifecycle, cited because web4-explainer:98 calls R6
-                "legacy" while r7-framework.md:7 says both are canonical (that seam is a separate
-                pre-existing defect, filed not fixed); atp-adp-cycle.md:635-641 sanctions the
+                521-525 carry the identical lifecycle, and BOTH are cited on purpose because both
+                are canonical (r6-framework.md:9 "Neither is deprecated"; r7-framework.md:9
+                "Neither replaces the other"). RESOLVED Aug-07: this line used to record that
+                web4-explainer:98 contradicted that by calling R6 "legacy", filed not fixed. It is
+                fixed now, along with its two unswept twins (terms.ts educationalNote, which said
+                R7 was in "newer specifications", and manifest:50, which said every action produces
+                Reputation). Do not re-file it; do not revert the dual citation on the assumption
+                that one of the two specs is stale; atp-adp-cycle.md:635-641 sanctions the
                 escrow/lock state explicitly. NOTE the word "commission" appears ZERO times in
                 core-spec: commissioner -> R6 actor and worker -> resource_providers is an
                 INFERENCE consistent with this page's L248 framing, not a canon term. Do not

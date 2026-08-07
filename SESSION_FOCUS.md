@@ -2,6 +2,74 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-07 03:00 session - the mode the site retired and canon did not
+
+**No fresh visitor log.** This session ran at 03:00, before the 05:00 browse. The freshest log
+(`visitor/logs/2026-08-06.md`) had already been worked three times: its friction table is exhausted
+and its Unanswered Questions are shipped (Q3/Q4/Q5/Q6) or on the standing-escalation list
+(Q1/Q2 = ledger Q1/Q8, endpoint-silent by policy; Q7 = operator call). So this pass took the one
+thing the previous session **filed and explicitly declined to fix**, in its own guard comment at
+`atp-economics:2457-2459`: *"web4-explainer:98 calls R6 'legacy' while r7-framework.md:7 says both
+are canonical (that seam is a separate pre-existing defect, filed not fixed)."*
+
+**The claim is falsified verbatim by canon, on both specs.** `r6-framework.md:9`: *"R6 and R7 are
+**both canonical**. The choice is contextual, selected per action or per role based on consequence
+tier. **Neither is deprecated.**"* `r7-framework.md:9`: *"**Neither replaces the other.**"* And
+`r7-framework.md:15` gives the reason both modes exist: making every action consequential would
+impose bookkeeping cost on routine tasks, making none would prevent trust evolution. R6/R7 is not a
+version history, it is a **per-action choice**, and the site was teaching it as the former.
+
+**Three surfaces, and the site's fourth was already right.** The correct gloss has been shipping at
+`glossary:604-607` the whole time (*"R6 and R7 are both canonical: R6 is the default for routine
+acts, R7 governs the consequential ones"*), alongside `onramp:119`, `the-standard:214-226` and
+`navigation.ts:193`. So this was **propagation toward the surface that is already right**, reusing
+its wording. No fourth phrasing was written; `the-standard:194-203` already forbids that by name.
+
+- `web4-explainer:98` - *"R6 (legacy) and R7 (current)"*. The headline defect, and the reason #519
+  had to file it: that pass cited **both** specs for one escrow lifecycle and could not do so while
+  this page called one of them legacy.
+- `terms.ts` `educationalNote` - *"R7 adds a seventh element (Reputation) in **newer
+  specifications**."* Same supersession claim in different words, and this is the **widest-reach R6
+  surface on the site** (`TermTooltip` renders it wherever `<R6>` appears). A phrase-grep for
+  "legacy" walks straight past it. Fixed to name **both** modes: deleting the R7 clause outright
+  would have left this surface R7-silent, which is the opposite failure.
+- `manifest:50` - *"Every action is Rules + Role + Request + Reference + Resource, producing Result
+  + Reputation."* The **opposite error on the same seam**: it erased R6 instead of deprecating it.
+  Reputation as a first-class output is exactly what R7 adds and R6 lacks (R6 carries only implicit
+  `tensorUpdates`, `r6-framework.md` section 1.6). One surface said R6 was dead, another said
+  everything was R7, and neither could tell you what distinguished them.
+
+**Two catches from policy review, both the one-of-two-twins shape.**
+- `manifest/layout.tsx:6` is the metadata twin of `manifest/page.tsx:50` and was not in the
+  proposed deliverables. It named `R6` alone, and advertised *"simulation parameters"* as a section
+  of a page whose sections are Core Primitives / Core Claims / Assumptions / Known Failure Modes /
+  The Onramp / Deep Resources / Research Status. Retired-sim residue. Both fixed.
+- The guard at `atp-economics:2457-2459` is the comment that **filed** this defect. Fixing L98
+  without it would leave a guard asserting a defect that no longer exists, which is how a fix gets
+  reverted. Rewritten to record the resolution and to protect the dual citation. **Comment-only on
+  that page: zero prose, zero figures.**
+
+**`web4-explainer:120` was a DELETE, not a de-sim word-swap.** The sentence read *"In 4-Life, nearly
+every **game** action (membership, treasury, audits, cross-society policies) is encoded as an R6
+envelope before being written to the society's tamper-evident audit chain."* Every noun in it
+belongs to the sim retired Jul-15. The tempting rewrite (swap "game" for "site") was blocked in
+policy review and is **false**: the live site is a pure explainer and encodes nothing as an R6
+envelope. Removing a false claim asserts nothing in its place; substituting a true-sounding one
+would ship a new ungrounded claim. Precedent: #517's endpoint deletion, #497's `lct-explainer:1404`.
+
+**Filed, not fixed (do not do this piecemeal):** `web4-explainer` carries a family of **seven**
+*"In 4-Life, ..."* sentences (L43, L58, L74, L88, L120, L137, L171) sharing the same retired
+referent. L171 (*"explicit MRH/LCT edges and R6-described events"*) is the closest twin to the one
+deleted here. De-simming that family is its own pass, and it is genuinely hard: the page's existing
+guard at L185-201 records that the obvious rewrite (*"the site has no simulations"*) is **also**
+false, because `/first-contact`, `/atp-economics` and `/coherence-index` still ship simulator
+widgets. Recorded in-code at the deletion site.
+
+**Verification**: `npm run build` green. **Zero figures changed on any surface.** Em dashes: 0 added
+(both the literal character and its backslash-u escape form swept in the diff). Supersession sweep across `src/`
+(`legacy|deprecat|supersed|obsolete|newer spec|replaced by`) now returns **only guard comments
+describing the fix**. 0 new files. 5 files modified.
+
 ## Aug-06 21:00 session - the reward on the channel that cannot pay one
 
 Same log as the 09:00 and 15:00 sessions (`visitor/logs/2026-08-06.md`). Those two took the whole
