@@ -2225,10 +2225,19 @@ export default function LCTExplainerPage() {
             </div>
           </div>
 
+          {/* Aug-07 visitor MEDIUM, sibling half of the why-web4:272 fix. This line read
+              "can't create fake accounts cheaply if presence requires hardware" - the same
+              hardware-is-required-to-participate absolute, on the page whose OWN guard at :273 says
+              in terms: "It does NOT imply hardware is required to participate
+              ([[hardware-required-seam]])". The page contradicted its own guard ~1950 lines later,
+              which is why a phrase-scoped grep in the Aug-05 sweep did not catch it.
+              Corrected per WEB4-CANON-QUESTIONS Q8 Ruling 1 (§1.2 clause 1: an entity presenting
+              only weak evidence "MUST NOT be excluded by the protocol"). The claim that survives is
+              the true and stronger one: cheap identities are possible, cheap TRUST is not. */}
           <div className="mt-6 p-4 bg-purple-950/20 border-l-4 border-purple-500 rounded">
             <p className="text-gray-300">
               <span className="font-bold">Foundation for everything else:</span> LCTs make <TermTooltip term="ATP">ATP economics</TermTooltip> work
-              (can&apos;t create fake accounts cheaply if presence requires hardware), <TermTooltip term="T3">Trust Tensors</TermTooltip> work (reputation bound to
+              (accounts are cheap to create, but trust is not, because a higher ceiling takes hardware-anchored presence), <TermTooltip term="T3">Trust Tensors</TermTooltip> work (reputation bound to
               verifiable presence), <TermTooltip term="CI">Coherence Index</TermTooltip> work (behavioral consistency verifiable), and <TermTooltip term="MRH">MRH</TermTooltip> work
               (context graphs rooted in verified presence).
             </p>

@@ -782,6 +782,70 @@ export default function TrustTensorPage() {
             A few weeks of consistent activity rebuilds what faded.{' '}
             <a href="/why-web4#faq" className="text-sky-400 hover:underline">Full breakdown in the FAQ →</a>
           </p>
+
+          {/* Aug-07 visitor HIGH. The visitor combined THIS section's half-lives with the survival
+              rule stated on /how-it-works ("raw trust falls below 0.5 and stays there") and worked
+              a composite for a 0.90/0.90/0.90 user after six months away that lands under the line,
+              with "stays there" satisfied by construction because absence IS a sustained condition.
+              Every number in that arithmetic is supplied by this site and no page joined the two
+              facts. Their words: "the site is excellent at disclosing each fact and inconsistent at
+              joining two of them."
+              WHAT THIS BLOCK MAY SAY:
+              - 180d/30d are 4-Life's teaching calibration. Licensed by core-spec/t3-v3-tensors.md
+                §2.3 ("Societies MAY configure custom decay policies for Training and Temperament")
+                and listed as reference defaults in §10.3 (:657). Talent's no-decay is the single
+                protocol invariant here (§2.3, test vector t3v3-012).
+              - That the survival rule's reading of a passively decayed score is NOT SETTLED, in the
+                same voice /how-it-works already uses for the life-ending gap ("not settled").
+              WHAT IT MUST NOT SAY, all six load-bearing:
+              - NOT that canon's own defaults are gentler. They are gentler per INCREMENT (§2.3
+                Training -0.001/month) and NOT in LEVEL: reputation-computation.md:679
+                compute_current_reputation() aggregates onto a 0.5 neutral baseline over a
+                time_horizon_days=90 window, so a six-month-idle entity's base is ~0.5 before decay
+                is applied, not its old score. "Canon is safer" would hand the next visitor a
+                falsification. Canon numerics stay in WEB4-CANON-QUESTIONS Q14, not on the site.
+              - NOT the worked composite reprinted, and NOT the conclusion "below the line, therefore
+                dead" - that asserts the very predicate Q14 holds open.
+              - NOTHING about a reader sitting AT 0.50, in either direction (ledger Q1 holding
+                pattern, still binding).
+              - NO invented dormancy exemption, decay floor, or "only acting entities are judged"
+                rule. None of those is written down and this page does not get to coin one.
+              - Do NOT merge the §2.3 T3-dimension policy with the role-scoped reputation aggregate
+                in reputation-computation.md §7. They are different objects; the aggregate's decay
+                function takes no dimension argument and sits awkwardly against Talent's invariant.
+              The id exists because /how-it-works points here and #why-half-lives (:1053) is a
+              collapsed <details>, the wrong element to land a reader on. */}
+          <div id="decay-and-survival" className="mt-4 bg-gray-900/60 border border-amber-800/30 rounded-lg p-5 scroll-mt-24">
+            <h4 className="text-sm font-semibold text-amber-300 mb-2">
+              Can decay alone push you below the survival line?
+            </h4>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              A fair question to ask at this point, because the site tells you elsewhere that raw
+              trust which falls below 0.5 <em>and stays there</em> is fatal, and a long absence is a
+              sustained condition by its nature. If you can do the arithmetic above, you can reach
+              that question yourself, so here is where it stands.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed mt-3">
+              <strong className="text-gray-300">First, these rates are ours, not the protocol&apos;s.</strong>{' '}
+              The standard fixes exactly one thing here: Talent must not decay through inactivity.
+              The Training and Temperament half-lives on this page are 4-Life&apos;s teaching
+              calibration, and the standard leaves those to each society, which may run them faster,
+              slower, or with a grace period before any decay starts at all. How far a long absence
+              actually moves you is a property of the community you are in, not a fact about Web4.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed mt-3">
+              <strong className="text-gray-300">Second, what happens at the line is not settled.</strong>{' '}
+              The standard names what stops you acting (ATP reaches zero) and what is permanent
+              (sustained trust collapse). It does not say whether that second rule is meant to read a
+              score that fell through <em>absence</em> rather than through <em>behavior</em>, and it
+              does not settle whether a dormancy carve-out applies to someone who is simply away.
+              We would rather tell you that than guess: this page will not invent a rule the standard
+              does not contain. The question is filed with the standard&apos;s maintainers.{' '}
+              <Link href="/how-it-works#two-ways-to-die" className="text-sky-400 hover:underline">
+                How the two deaths differ →
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
 

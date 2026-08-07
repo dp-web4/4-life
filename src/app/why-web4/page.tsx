@@ -267,11 +267,29 @@ export default function WhyWeb4Page() {
               2
             </div>
             <div>
+              {/* Aug-07 visitor MEDIUM: "on one page I was told hardware is *required* and then
+                  told how to participate without it." Correct, and this surface was MISSED by the
+                  Aug-05 Q8 sweep, which corrected #faq-tpm-affordability, #faq-many-identities,
+                  #faq-affordability, #faq-gatekeepers and the comparison-table row but not the
+                  "What Would Actually Work" property list. [[sweep-the-claim-not-the-sentence]].
+                  Licensed by WEB4-CANON-QUESTIONS Q8 Ruling 1 (ANSWERED 2026-08-05): software-only
+                  anchoring IS conformant and canon is stronger than tolerant about it -
+                  LCT-linked-context-token.md:39 §1.2 clause 1 says an entity presenting only weak
+                  evidence "MUST NOT be excluded by the protocol", it is "rightly weighed as
+                  riskier"; web4-core/src/ratchet.rs:144 mirrors it as "risk, not exclusion."
+                  The correct form is /what-could-go-wrong risk 8's: the ceiling caps high-trust
+                  roles, it is not what admits you. The anti-sybil argument survives intact because
+                  it was always about the COST OF TRUST, not the cost of entry.
+                  Endpoint-silent: says nothing about a software-only identity sitting at 0.50
+                  (ledger Q1). Sibling surface fixed in the same pass: lct-explainer:2231. */}
               <h3 className="text-lg font-semibold text-sky-400">Make identity expensive to fake</h3>
               <p className="text-gray-400 text-sm">
-                Creating a new identity should require physical hardware, not just an email address.
-                Multiple independent witnesses should attest to your existence. Creating thousands of
-                fake accounts should require buying thousands of devices - expensive and slow.
+                Earning trust should require physical hardware, not just an email address. Anyone can
+                take part with a software-only identity, and the standard is explicit that the
+                protocol must not shut them out; what hardware buys is a higher ceiling on how far
+                trust can climb. Multiple independent witnesses should attest to your existence.
+                So an attacker can still mint thousands of identities cheaply - they just cannot make
+                any of them <em>trusted</em> cheaply, which is the thing they actually wanted.
               </p>
             </div>
           </div>
@@ -2701,6 +2719,17 @@ export default function WhyWeb4Page() {
                   separation.)
                 </p>
 
+                {/* Aug-07 visitor MEDIUM: "the page that *recommends* software-only never mentions
+                    this." Verified: the zero-margin consequence already ships at
+                    /lct-explainer#software-only-survival and is already linked from /hestia:322,
+                    /what-could-go-wrong:698 and /trust-tensor:421 - just not from the one place a
+                    reader is being ADVISED to pick the tier. [[promise-without-routing]]: this is a
+                    routing gap, not an absence, which is why the fix is a clause plus the existing
+                    link rather than a third phrasing of the same idea.
+                    Q1 holding pattern: strictly-below only. This says the tier has no room ABOVE the
+                    line; it does NOT say a reader sitting AT 0.50 is alive, dead, safe, or has full
+                    access. Numbers do not move (Q8 ruling 3: the site's 0.50 must not be "aligned"
+                    to upstream's 0.40 or 0.85, both of which upstream itself carries and disputes). */}
                 <p className="font-semibold text-gray-200 mt-3">2. Software-only LCT (medium).</p>
                 <p>
                   A software-only LCT has no hardware-fingerprint binding - nothing physical to surveil
@@ -2712,6 +2741,16 @@ export default function WhyWeb4Page() {
                   low-stakes pseudonymity where you can afford weaker trust - commenting, browsing,
                   participating in conversations where a 0.50 ceiling is enough - software fallback is
                   the cleanest answer. It is what most early Web4 adoption will actually look like.
+                </p>
+                <p className="text-amber-400/80 text-xs">
+                  <strong>Before you pick this tier, one thing the ceiling number hides:</strong>{' '}
+                  <span className="font-mono">0.50</span> is not only where software-only stops, it is
+                  also the survival line every identity is measured against. A hardware-anchored
+                  identity climbs above that line and builds a buffer; this tier has no room above it
+                  to build one. What you are trading away is margin, not just reach.{' '}
+                  <Link href="/lct-explainer#software-only-survival" className="text-amber-400 hover:underline">
+                    What a 0.50 ceiling actually costs you →
+                  </Link>
                 </p>
 
                 <p className="font-semibold text-gray-200 mt-3">3. Zero-knowledge trust proofs + MRH blast radius (composition).</p>
@@ -3034,13 +3073,45 @@ export default function WhyWeb4Page() {
                 &ldquo;are they still engaged?&rdquo; reputation doesn&apos;t. This is intentional - if someone hasn&apos;t been active
                 in 6 months, the system <em>should</em> be uncertain about their current reliability.
               </p>
+              {/* Aug-07 visitor HIGH, A2. This FAQ is where the visitor READ the reassurance and
+                  banked the six-month numbers; two pages later they combined them with the survival
+                  rule and got a composite under the line. The reassurance has to carry the caveat at
+                  the point of reassurance, not only at /trust-tensor.
+                  The "no hiatus mechanism" absolute below was NARROWED in the same pass, and that is
+                  not cosmetic: it stated as protocol fact the exact thing t3-v3-tensors.md §2.3
+                  licenses societies to configure ("Societies MAY configure custom decay policies for
+                  Training and Temperament"), and it sat FOUR LINES above the new not-settled clause,
+                  where it would have foreclosed it. An over-pessimistic absolute is still a wrong
+                  absolute.
+                  Endpoint discipline: nothing here says a reader at or below 0.50 is dead, safe, or
+                  anything else (ledger Q1). No dormancy rule is coined (ledger Q14). Do not import
+                  canon's own decay numerics here; canon's per-month increment is smaller but its
+                  resulting LEVEL is not safer, so "the real spec is gentler" is falsifiable. */}
               <p>
-                There&apos;s no &ldquo;hiatus&rdquo; mechanism to freeze Training or Temperament. Their
-                decay reflects the community&apos;s genuine uncertainty about absent members. But recovery
+                Societies can configure the Training and Temperament rates, and a community may run
+                them slower or add a grace period, but the rates on this page have no hiatus switch:
+                there is nothing you file before leaving that freezes them. Their decay reflects the
+                community&apos;s genuine uncertainty about absent members. But recovery
                 is fast: Temperament&apos;s 30-day half-life works in both directions. A few weeks of
                 consistent activity rebuilds what took months to lose. And you don&apos;t start from
                 zero - your Talent never decayed, so it anchors a recovery far faster than a
                 newcomer&apos;s climb.
+              </p>
+              <p className="border-t border-gray-700 pt-3 mt-3">
+                <strong className="text-gray-100">Does that decay put me below the survival line?</strong>{' '}
+                Worth asking, because elsewhere the site says raw trust that falls below 0.5{' '}
+                <em>and stays there</em> is fatal, and being away is a sustained condition by its
+                nature. Two things are true and we would rather state both than let you assemble
+                them yourself. The half-lives above are 4-Life&apos;s teaching calibration, not
+                protocol constants: only Talent&apos;s no-decay is fixed by the standard, and how far
+                a long absence actually moves you depends on the rates your society runs. And what
+                happens at the line for someone who is <em>absent</em> rather than <em>misbehaving</em>{' '}
+                is not settled: the standard does not say whether that rule is meant to read a score
+                that fell through inactivity, and we are not going to invent a dormancy rule it does
+                not contain.{' '}
+                <Link href="/trust-tensor#decay-and-survival" className="text-sky-400 hover:underline">
+                  Where that question stands →
+                </Link>
               </p>
             </div>
           </details>

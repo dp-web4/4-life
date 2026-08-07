@@ -716,6 +716,114 @@ two HIGHs and three Unanswered Questions in a single sitting.
   survival guarantee, and do not print a rate. The adjacent guard at `atp-economics` L726 has
   forbidden the same upgrade since the Aug-05 pass, for the same reason.
 
+### Q14. Is the trust-death predicate evaluated against a passively decayed score?
+
+- **Raised**: 2026-08-07, from the Aug-07 visitor browse (their HIGH and Unanswered Q1). This is
+  the strongest form the question has taken, because the visitor did not find a contradiction
+  between two pages. They found an **entailment** of two facts the site states correctly, and did
+  the arithmetic themselves: *"the site is excellent at disclosing each fact and inconsistent at
+  joining two of them."*
+- **The arithmetic, entirely from the site's own published numbers.** A user at Talent 0.90,
+  Training 0.90, Temperament 0.90 goes inactive for six months. Talent does not decay (protocol
+  invariant): 0.90. Training at a 180-day half-life: 0.45. Temperament at a 30-day half-life, six
+  half-lives elapsed: ~0.014. Composite at the canonical weights: `0.4(0.90) + 0.3(0.45) +
+  0.3(0.014)` = **0.4992**. The site's survival rule is *"raw trust falls below 0.5 **and stays
+  there**"*. Absence satisfies "stays there" by construction, because that is what absence is.
+  So on the site's own numbers, a near-perfectly-trusted person taking parental leave, a
+  hospitalization, or a six-month field posting appears to meet the definition of permanent,
+  unrecoverable trust death.
+- **The site's own reasoning already points here, applied to a different case.** `/what-could-go-wrong`
+  risk 3 observes that *"a scoring error is a sustained condition by construction, so a
+  wrongly-scored user is precisely the one who stays below."* The visitor noted that absence is
+  also a sustained condition by construction, and that the page spotted the pattern for one case
+  and not the other. That is the shape of this entry.
+- **Why this is neither Q4 nor Q5.** Q4 asks whether the spec should define a trust-death
+  predicate **for simulations**, i.e. whether a demo may model one at all. Q5 asks what ends a
+  life **other than** ATP = 0, i.e. whether a *third* mechanism exists beyond the two the site
+  teaches. Q14 assumes both of the taught mechanisms and asks a narrower question about one of
+  them: given that sustained sub-0.5 raw trust is the trust-death predicate, **what score is it
+  read against**, and specifically whether a score that fell through *inactivity* is read the same
+  way as one that fell through *behavior*. A ruling on Q5 (is there a third cause?) would not
+  answer Q14, and a ruling on Q14 would not answer Q5.
+- **What upstream does and does not say.**
+  - `core-spec/t3-v3-tensors.md:123-131` §2.3: Talent MUST NOT decay through inactivity (protocol
+    invariant, test vector t3v3-012). The **Training and Temperament rates are society-configurable**
+    (*"Societies MAY configure custom decay policies for Training and Temperament"*), and §10.3
+    (`:657`) lists Training's −0.001/month as a **reference default**, not a constant. So 4-life's
+    180d/30d half-lives are this site's teaching calibration, which is what the on-site disclosure
+    now says.
+  - `core-spec/reputation-computation.md:756-780` gives a **separate** object: a role-scoped
+    inactivity model with no decay inside the first 30 days, then −0.01/month, ×1.5 after six
+    months, total capped at −0.5, explicitly role-contextualized (*"an entity active in role A but
+    idle in role B decays only in role B"*).
+  - **Do not read that second model as reassurance, and do not put it on the site.** Its companion
+    `compute_current_reputation` (`:679`) aggregates deltas *onto the 0.5 neutral baseline* over a
+    `time_horizon_days=90` window, and `effective_reputation` (`:785`) is `base + decay`. With no
+    deltas inside the horizon, a six-month-idle entity's base is ~0.5, so the effective value lands
+    near **0.44**, also under the line. Canon's per-month *increment* is far smaller than 4-life's
+    half-lives; canon's resulting *level* is not safer. A claim that "the real spec is gentler"
+    would be falsifiable from upstream's own code, and the policy review caught it in this
+    session's first scope draft.
+  - **The actual gap**: no entity-level *"score below threshold → REVOKED"* path exists in canon at
+    all. The LCT lifecycle is NASCENT → ACTIVE → SUSPENDED → REVOKED, and the enumerated
+    revocation reasons (`multi-device-lct-binding.md:290`) are all device-level: `lost`, `sold`,
+    `compromised`, `upgrade`, `recovery_revoked`. Nothing states what a sustained sub-threshold
+    score *does*, let alone whether it matters how the score got there.
+- **The requests.**
+  1. Is the trust-death predicate evaluated against a score that decayed through inactivity, or
+     only against one that fell through witnessed behavior?
+  2. If the former, does a dormancy carve-out, a decay floor, or a "only acting entities are
+     judged" rule exist anywhere in canon? The 30-day grace and −0.5 cap in
+     `reputation-computation.md` are floor-shaped but belong to a different object and take no
+     dimension argument, which sits awkwardly against Talent's no-decay invariant.
+  3. If neither exists, is that deliberate (societies are expected to write it into their own law,
+     as with initial ATP issuance in Q13) or an unnoticed gap?
+- **Why 4-life cannot settle it.** Answering (1) either way coins a protocol semantic. Answering
+  (2) "no" is provable by absence, but only upstream can say whether the absence is deliberate.
+  Writing a dormancy exemption into an explainer would be exactly the move `/how-it-works` refused
+  when it declined to name a third cause of death.
+- **Holding pattern**: no number changed and no rule invented. `/trust-tensor#decay-and-survival`
+  discloses that the half-lives are 4-life's calibration and that what happens at the line for an
+  absent user is not settled; `/why-web4#faq-month-off` carries the same two clauses at the point
+  of reassurance; `/how-it-works` gets a pointer only, its guarded two-deaths paragraph untouched.
+  **Do not close this by writing a dormancy guarantee, and do not publish canon's decay numerics
+  as a reassuring comparison.** Endpoint discipline from Q1 still binds: the composite lands
+  strictly below, so nothing needs to say, and nothing may say, what happens to a reader sitting
+  exactly at 0.50.
+
+### Follow-up (not a canon question): "karma tier" is an orphaned term
+
+Filed 2026-08-07 alongside Q14, from the same browse (*"'karma tier' is introduced here and I
+never found out what one is"*). This is **not** for upstream: it is a 4-life cleanup that needs a
+design decision, recorded so the next session does not rediscover it.
+
+- The clause *"effective trust (raw × CI²) sets your karma tier, not whether you live"* is
+  asserted on **five** pages, as a rider on the verbatim-locked canonical survival sentence:
+  `first-contact:156`, `how-it-works:731`, `coherence-index:1364`, `glossary:1211`,
+  `lct-explainer:1285`. It is defined on **none** of them.
+- `grep -rni karma ../web4/web4-standard/core-spec/*.md` returns **zero hits**. Canon has no karma
+  concept, so there is nothing upstream to escalate to.
+- Its provenance is a retired page. `first-contact:418`'s own guard comment reads *"carried forward
+  per **karma-journey**'s karma-tier model"*, and `/karma-journey` is one of the 34 routes retired
+  in the Jul-15 rebuild. The tier model went with it.
+- `/karma-consequences`, the only page that could plausibly own the term, models karma with a flat
+  `karma_multiplier = 2` (`:634-639`). There are no tiers.
+- **Not fixed this session, deliberately.** The options are (a) define tiers, which invents a model
+  to justify an orphaned phrase, or (b) drop the "karma tier" rider from all five copies while
+  keeping the raw-vs-effective contrast, which is load-bearing and Q1-threading. (b) is probably
+  right, but it edits five verbatim-locked surfaces and deserves its own policy-reviewed pass, not
+  a rider on a visitor-friction session.
+
+### Follow-up (not a canon question): "identity is hardware-bound" on /karma-consequences
+
+Filed 2026-08-07. Noticed while fixing Q8's hardware-required claim class, and left alone because
+the honest fix is larger than a hedge. `/karma-consequences` asserts *"In Web4, identity is
+hardware-bound"* at `:16`, `:306`, `:382` and `:811`, and that universal is the load-bearing premise
+of the page's whole thesis (you cannot mint a clean slate, so karma follows you). Under Q8 Ruling 1
+software-only identities are conformant and cheap to mint, so the no-fresh-start argument is
+weaker for that tier than the page claims. This is not a word-level correction: it changes what the
+page argues, and it needs its own scoped session.
+
 ---
 
 *Maintained by the 4-life autonomous track. Add new entries only with a policy-review-approved

@@ -703,7 +703,7 @@ export default function HowItWorksPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 space-y-4">
+          <div id="two-ways-to-die" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 space-y-4 scroll-mt-24">
             <div>
               <h4 className="text-lg font-semibold text-gray-200 mb-2">
                 Two ways to die, and they are very different
@@ -729,6 +729,24 @@ export default function HowItWorksPage() {
                 it is fatal - a sustained collapse, not a single stumble. The number compared is{" "}
                 <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;) - effective
                 trust sets your karma tier, not whether you live.
+              </p>
+              {/* Aug-07 visitor HIGH, A3. The visitor did the decay-vs-survival arithmetic HERE,
+                  on this page, because this is where they finally got the survival rule. The
+                  reconciliation itself lives at /trust-tensor#decay-and-survival, next to the rates
+                  that generate the alarm; this is the pointer, not a second copy of the answer.
+                  The paragraph ABOVE is guarded verbatim (see :711-720) and threads ledger Q1 - do
+                  not fold this into it, and do not restate the rule in different words here. This
+                  sentence asserts nothing about what happens at the line; it says where the question
+                  is addressed. */}
+              <p className="text-gray-400 leading-relaxed mt-3 text-sm">
+                <strong className="text-gray-300">A question this raises, before you do the arithmetic yourself:</strong>{" "}
+                trust dimensions also decay when you are simply inactive, which makes &ldquo;stays
+                there&rdquo; worth a second look for someone who is away rather than misbehaving.
+                Whether a passively decayed score is read against this rule is not settled, and{" "}
+                <Link href="/trust-tensor#decay-and-survival" className="text-sky-400 hover:underline">
+                  the decay page says where that stands
+                </Link>
+                .
               </p>
               <p className="text-gray-400 leading-relaxed mt-3 text-sm">
                 So energy death is not the end of your identity. Same LCT, same history, same trust
