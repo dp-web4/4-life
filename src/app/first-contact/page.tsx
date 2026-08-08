@@ -342,7 +342,16 @@ export default function FirstContactPage() {
                 front-loaded ATP/T3/LCT/CI shorthand BEFORE the story, contradicting the page's own
                 promise that each idea is explained the moment Alice uses it. May-15 reordered (the
                 two-number anchor above stays leading and visible); Jul-13 recurred the vocab wall →
-                default-collapsed. The cards inside are unchanged - don't reword the glosses. */}
+                default-collapsed. The cards inside are unchanged - don't reword the glosses.
+                Aug-08 addendum: the Consequences gloss WAS narrowed, for correctness, not style.
+                It asserted "your presence is hardware-bound ... Bad actors can't walk away clean",
+                a universal that Q8 Ruling 1 (2026-08-05) makes false: software-only anchoring is
+                conformant and canon forbids excluding the tier. The absolute was DELETED and
+                "hardware-bound" scoped to "hardware-anchored"; nothing was added, and the card got
+                shorter. The no-reword guard above stands on density grounds (Jul-13 vocab wall,
+                Jul-17 pre-Start caveat pile-up) and Ruling 1 does not reverse it, so do NOT hang a
+                tier caveat here - the argument lives on /karma-consequences, which this card links
+                to, and at /what-could-go-wrong#risk-accessibility. */}
             <details className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-8 group">
               <summary className="cursor-pointer list-none">
                 <h2 className="text-2xl font-bold mb-1"><span className="text-sm text-sky-400 inline-block transition-transform group-open:rotate-90 mr-2 align-middle">▶</span>The four ideas behind it <span className="text-sm text-gray-500 font-normal">(optional)</span></h2>
@@ -358,13 +367,13 @@ export default function FirstContactPage() {
                 <div>
                   <Link href="/trust-tensor" className="text-purple-400 font-semibold mb-2 block hover:underline">🤝 Trust: Your Reputation</Link>
                   <p className="text-gray-400">
-                    Trust builds through consistent quality. It follows you everywhere. No fresh starts. (Shorthand: <strong>T3</strong> - three dimensions: talent, training, temperament.)
+                    Trust builds through consistent quality. It follows you everywhere. (Shorthand: <strong>T3</strong> - three dimensions: talent, training, temperament.)
                   </p>
                 </div>
                 <div>
                   <Link href="/karma-consequences" className="text-green-400 font-semibold mb-2 block hover:underline">📜 Consequences: Permanent Record</Link>
                   <p className="text-gray-400">
-                    Your record is permanent because your presence is hardware-bound (called an <strong>LCT</strong> - Linked Context Token). Good behavior compounds. Bad actors can&apos;t walk away clean.
+                    Your record follows your presence, which is anchored to a device (called an <strong>LCT</strong> - Linked Context Token). Good behavior compounds.
                   </p>
                 </div>
                 <div>
@@ -460,6 +469,23 @@ export default function FirstContactPage() {
                 The <span className="text-emerald-300">+12 bonus</span> is karma - a head start earned by the
                 trust and reputation she built in her first life, carried forward into her next one.{' '}
                 <Link href="/karma-consequences" className="text-sky-400 hover:text-sky-300 underline">How living and dying work &rarr;</Link>
+              </p>
+              {/* Aug-08 visitor MEDIUM. The reader meets a carry-forward number HERE first, and
+                  three pages model it three different ways: this "+12", /how-it-works's full
+                  ending balance (145 to 145), and /karma-consequences:~640's
+                  base_atp + karma * karma_multiplier. Only /how-it-works disclosed that the rule
+                  is unsettled, and that is page 4 of a 5-page path: "I had read them 8 minutes
+                  apart ... I met the '+12' first with no such caveat attached."
+                  This is the karma half of how-it-works:61-64 (EndOfLifeCaveat) carried to the
+                  first read point, trimmed to the carry-forward and not the death rule, which is
+                  a separate open question (ledger Q5) and is not this card's subject.
+                  Do NOT let this drift into framing the bonus as a spending surplus: see the
+                  Jul-11 numbers-integrity guard above. It stays karma. */}
+              <p className="text-xs text-amber-300/70 mb-3 leading-relaxed">
+                <strong className="text-amber-300">About that number:</strong> how <em>much</em> karma
+                carries forward is not settled. Whether you keep your whole final balance or a reduced
+                portion of it is undecided, and 12 is one modelling choice, not the rule. Read it for
+                the shape (a good track record starts your next life stronger), not the amount.
               </p>
 
               <p className="text-sm text-gray-400 italic">
@@ -956,9 +982,26 @@ export default function FirstContactPage() {
                   <strong>The problem:</strong> On traditional platforms, bad actors just create new accounts.
                   Ban them? They're back tomorrow with a fresh identity.
                 </p>
+                {/* Aug-08 visitor HIGH. This is the same false universal as the four on
+                    /karma-consequences, in the same problem/solution shape, and on a page EARLIER
+                    in the five-page reading path, so the default reader met it first. Q8 Ruling 1
+                    (2026-08-05): software-only anchoring is conformant and canon forbids excluding
+                    the tier, so "no fresh starts" is not true of Web4 as such. Unlike the
+                    collapsed four-idea card above, this block is open prose stating the thesis, so
+                    it takes the qualifier rather than a deletion. Says nothing about 0.50 or any
+                    ceiling: that is the Q8 equity half, still under a holding pattern. */}
                 <p className="text-gray-300 mb-4">
-                  <strong>Web4 solution:</strong> Your presence is hardware-bound. Trust accumulates over time.
-                  Everyone can see your track record. No fresh starts.
+                  <strong>Web4 solution:</strong> Anchor your presence to a device you hold. Trust
+                  accumulates over time. Everyone can see your track record, and a fresh start costs
+                  you a new device rather than nothing.
+                </p>
+                <p className="text-gray-400 text-sm mb-4">
+                  Honestly, though: an identity anchored in software alone has no device to walk away
+                  from, so at that tier the record stays sheddable. Web4 makes fresh starts expensive,
+                  it does not abolish them.{' '}
+                  <Link href="/what-could-go-wrong#risk-accessibility" className="text-sky-400 hover:text-sky-300 underline">
+                    What that costs, and who it costs most &rarr;
+                  </Link>
                 </p>
                 <p className="text-gray-300 mb-4">
                   <strong>Society thresholds:</strong> Each society sets its own minimum trust. Fall below it?

@@ -4,16 +4,33 @@
  * Karma & Consequences Explorer
  *
  * This page makes Web4's permanent reputation system COMPREHENSIBLE to humans.
- * Explains: Why can't bad actors escape their history? How does karma carry forward?
+ * Explains: how costly is it to walk away from your history? How does karma carry forward?
  *
  * Philosophy:
- * - "You can't run from yourself" - consequences are permanent
- * - Fresh starts are a feature of weak systems, not a human right
+ * - "You can't run from yourself" - consequences persist as long as the anchor does
+ * - Cheap fresh starts are a feature of weak systems, not a human right
  * - Karma creates self-regulating communities without moderators
  * - The economic cost of misbehavior compounds over time
  *
- * Key insight: In traditional systems, bad actors create new accounts.
- * In Web4, identity is hardware-bound, so consequences persist.
+ * Key insight: In traditional systems, bad actors create new accounts for free.
+ * In Web4, karma follows a hardware-anchored identity, so a clean slate costs a
+ * new device.
+ *
+ * SCOPE GUARD (Aug-08 visitor HIGH, discharges the "identity is hardware-bound"
+ * follow-up filed in docs/WEB4-CANON-QUESTIONS.md). This page used to assert
+ * "In Web4, identity is hardware-bound" as a universal, in four places, and that
+ * universal is FALSE. Q8 Ruling 1 (2026-08-05): software-only anchoring is
+ * conformant and canon FORBIDS excluding the tier
+ * (web4-standard/core-spec/LCT-linked-context-token.md:39, §1.2 clause 1:
+ * an entity presenting only weak evidence "MUST NOT be excluded by the protocol").
+ * A software-only identity has no hardware anchor to abandon, so at that tier the
+ * record IS sheddable - which /what-could-go-wrong has said plainly all along
+ * (:752-759). The thesis here is now scoped to the hardware tiers and hands the
+ * reader the exception rather than hiding it.
+ * Do NOT restore the unqualified form. Do NOT go the other way either: this page
+ * must not import the 0.50 ceiling, the survival line, or any at-0.50 claim
+ * (ledger Q1/Q8 equity half is under a holding pattern; that argument lives at
+ * /lct-explainer#software-only-survival and /what-could-go-wrong#risk-accessibility).
  */
 
 import { useState, useEffect } from 'react';
@@ -48,6 +65,18 @@ interface ComparisonSystem {
   examples: string[];
   issues: string[];
   color: string;
+  /* Aug-08 visitor HIGH: a bare yes/no overstated the Web4 row. These three are
+     optional so the other two rows render exactly as before. Notes qualify the
+     boolean IN PLACE (the readouts are in the left column, the caveat panel is in
+     the right one, and fixing only the panel would leave a flat green "Yes"
+     sitting unqualified where a reader scanning attributes looks first).
+     Keep `issues` EMPTY for Web4: the render at the "Attack Vectors" branch below
+     keys on issues.length, so pushing a string there would delete the emerald
+     "Why This Works" panel and print a red header, overshooting into false parity
+     with the platform rows. The honest content goes in `caveat`, inside the panel. */
+  freshStartsNote?: string;
+  identityBoundNote?: string;
+  caveat?: string;
 }
 
 interface SimulationTick {
@@ -153,10 +182,16 @@ const COMPARISON_SYSTEMS: ComparisonSystem[] = [
   {
     name: 'Web4 (LCT-bound)',
     freshStarts: false,
+    freshStartsNote: 'at the hardware tiers',
     identityBound: true,
+    identityBoundNote: 'at the hardware tiers; software-only anchoring is also allowed',
     consequences: 'permanent',
-    examples: ['Hardware-bound presence', 'TPM/Secure Enclave rooted'],
-    issues: [], // It's the solution, not the problem
+    examples: ['Hardware-bound presence', 'TPM/Secure Enclave rooted', 'Software-only fallback'],
+    issues: [], // Keep empty: see the note on ComparisonSystem. Honest content goes in `caveat`.
+    caveat:
+      'Only at the hardware tiers. An identity anchored in software alone has no device to ' +
+      'abandon, so at that tier the record is sheddable and a fresh start is cheap again. ' +
+      'That makes this a Sybil resistance strategy, not a Sybil prevention guarantee.',
     color: 'emerald'
   }
 ];
@@ -302,10 +337,17 @@ function MultiLifeSimulator() {
       <div className="mt-6 p-4 bg-purple-900/20 border border-purple-800/50 rounded-lg">
         <h4 className="font-semibold text-purple-400 mb-2">The Key Insight</h4>
         <p className="text-sm text-gray-300">
-          In traditional platforms, this agent would have just created a new account after Life 1.
-          In Web4, <strong className="text-white">identity is hardware-bound</strong>, so the karma
-          follows. It took <strong className="text-white">three lives</strong> to recover from one
-          spam campaign - and recovery required genuine behavior change, not just waiting.
+          In traditional platforms, this agent would have just created a new account after Life 1,
+          for free. In Web4 this agent&apos;s karma follows it, because{' '}
+          <strong className="text-white">its identity is anchored in hardware</strong> and the only
+          clean slate is a device it does not have. It took{' '}
+          <strong className="text-white">three lives</strong> to recover from one spam campaign, and
+          recovery required genuine behavior change, not just waiting.
+        </p>
+        <p className="text-xs text-amber-400/80 mt-2">
+          That holds for a hardware-anchored agent. An identity anchored in software alone has no
+          device to walk away from, so at that tier the record stays sheddable and this walkthrough
+          does not describe it.
         </p>
       </div>
     </div>
@@ -372,16 +414,26 @@ function SystemComparison() {
           <div>
             <h4 className="font-semibold text-white mb-3">Characteristics</h4>
             <div className="space-y-2">
-              <div className="flex items-center justify-between p-2 bg-gray-900/50 rounded">
+              <div className="flex items-start justify-between gap-3 p-2 bg-gray-900/50 rounded">
                 <span className="text-sm text-gray-400">Fresh starts allowed?</span>
-                <span className={`font-semibold ${selectedSystem.freshStarts ? 'text-red-400' : 'text-emerald-400'}`}>
-                  {selectedSystem.freshStarts ? 'Yes' : 'No'}
+                <span className="text-right">
+                  <span className={`font-semibold ${selectedSystem.freshStarts ? 'text-red-400' : 'text-emerald-400'}`}>
+                    {selectedSystem.freshStarts ? 'Yes' : 'No'}
+                  </span>
+                  {selectedSystem.freshStartsNote && (
+                    <span className="block text-xs text-amber-400/80">{selectedSystem.freshStartsNote}</span>
+                  )}
                 </span>
               </div>
-              <div className="flex items-center justify-between p-2 bg-gray-900/50 rounded">
+              <div className="flex items-start justify-between gap-3 p-2 bg-gray-900/50 rounded">
                 <span className="text-sm text-gray-400">Identity hardware-bound?</span>
-                <span className={`font-semibold ${selectedSystem.identityBound ? 'text-emerald-400' : 'text-red-400'}`}>
-                  {selectedSystem.identityBound ? 'Yes' : 'No'}
+                <span className="text-right">
+                  <span className={`font-semibold ${selectedSystem.identityBound ? 'text-emerald-400' : 'text-red-400'}`}>
+                    {selectedSystem.identityBound ? 'Yes' : 'No'}
+                  </span>
+                  {selectedSystem.identityBoundNote && (
+                    <span className="block text-xs text-amber-400/80">{selectedSystem.identityBoundNote}</span>
+                  )}
                 </span>
               </div>
               <div className="flex items-center justify-between p-2 bg-gray-900/50 rounded">
@@ -417,9 +469,19 @@ function SystemComparison() {
               <div className="p-3 bg-emerald-900/30 rounded border border-emerald-800/50">
                 <h4 className="font-semibold text-emerald-400 mb-1">Why This Works</h4>
                 <p className="text-xs text-gray-300">
-                  Hardware binding (TPM, Secure Enclave) creates identity that can't be duplicated.
-                  Consequences compound because you can't escape your own hardware.
+                  Hardware binding (TPM, Secure Enclave) creates identity that can&apos;t be duplicated.
+                  Consequences compound because walking away means walking away from the device.
                 </p>
+                {selectedSystem.caveat && (
+                  <p className="text-xs text-amber-400/80 mt-2 pt-2 border-t border-emerald-800/50">
+                    <strong className="text-amber-400">Where it doesn&apos;t:</strong>{' '}
+                    {selectedSystem.caveat}{' '}
+                    <Link href="/what-could-go-wrong#risk-accessibility" className="text-amber-300 underline hover:text-amber-200">
+                      the full cost of that gap
+                    </Link>
+                    .
+                  </p>
+                )}
               </div>
             )}
           </div>
@@ -729,11 +791,11 @@ function RealWorldImplications() {
           <ul className="space-y-2 text-sm text-gray-400">
             <li className="flex items-start gap-2">
               <span className="text-emerald-500">•</span>
-              <span>Hardware-bound presence prevents account proliferation</span>
+              <span>Hardware-anchored presence puts a real cost on account proliferation</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-emerald-500">•</span>
-              <span>Karma follows you everywhere - no clean slates</span>
+              <span>Karma follows a hardware-anchored identity - a clean slate costs a device</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-emerald-500">•</span>
@@ -807,17 +869,51 @@ export default function KarmaConsequencesPage() {
           <div className="p-4 bg-gradient-to-br from-orange-900/20 to-red-900/20 border border-orange-800/30 rounded-lg">
             <p className="text-gray-300 text-sm">
               <strong className="text-orange-400">Key Insight:</strong> In traditional systems,
-              consequences are temporary - create a new account and start fresh. In Web4,{' '}
-              <strong className="text-white">identity is hardware-bound</strong> via <TermTooltip term="LCT">LCT</TermTooltip>, so karma follows
-              you across &ldquo;lives.&rdquo; Bad actors can&apos;t escape their history; they can only rebuild it
-              through genuine behavior change.
+              consequences are temporary - create a new account and start fresh. In Web4, a{' '}
+              <TermTooltip term="LCT">LCT</TermTooltip> can be{' '}
+              <strong className="text-white">anchored in hardware</strong>, and where it is, karma
+              follows you across &ldquo;lives&rdquo;: the only clean slate is a new device you had to
+              go out and obtain. Bad actors can&apos;t shed that cheaply; they mostly rebuild through
+              genuine behavior change.
             </p>
             <p className="text-gray-300 text-sm mt-3">
               <strong className="text-orange-400">What is permanent is the identity, not the penalty.</strong>{' '}
-              You can&apos;t mint a clean-slate account, so your history follows you, but your trust{' '}
+              Minting a clean-slate account is not free, so your history follows you, but your trust{' '}
               <em>score</em> itself keeps recovering and decaying over time (on the order of weeks to
-              months). So &ldquo;permanent&rdquo; here means you never get a fresh start, not that a past
-              mistake stays at full strength forever.
+              months). So &ldquo;permanent&rdquo; here means fresh starts are expensive rather than
+              free, not that a past mistake stays at full strength forever.
+            </p>
+            {/* Aug-08 visitor HIGH. The visitor read "identity is hardware-bound ... Bad actors
+                can't escape their history" here, had already read on /why-web4 and /lct-explainer
+                that software-only identity is supported, and found /what-could-go-wrong saying the
+                opposite outright. Their words: "On a site that hedges everything, an unhedged
+                absolute reads as a deliberate signal that this one is settled."
+                This paragraph is what-could-go-wrong:752-759 carried over as a UNIT, not a
+                paraphrase, and not the ":757 sentence alone" (that one opens "the very gap that",
+                whose antecedent is the device-loss paragraph above it there, and this page has no
+                such antecedent - it had zero occurrences of "software-only" before this edit).
+                Grounding is upstream, not just cross-page: Q8 Ruling 1 (2026-08-05) settles that
+                software-only anchoring is conformant and that canon FORBIDS excluding the tier.
+                Deliberately silent on which side of 0.50 anything falls, and it names no ceiling
+                number: that is the Q8 equity half, still under a holding pattern, and it is
+                argued at the two links below rather than re-argued here. */}
+            <p className="text-amber-400/80 text-sm mt-3 border-t border-orange-800/30 pt-3">
+              <strong className="text-amber-400">And where the mechanism runs out:</strong> Web4 says
+              bad behavior follows you and there are no fresh starts, and the thing enforcing that is
+              hardware. An identity anchored in software alone has no such anchor, so the very gap
+              that makes an honest user&apos;s device loss unrecoverable also makes a dishonest
+              user&apos;s record sheddable. This is why what Web4 has is a Sybil <em>resistance</em>{' '}
+              strategy rather than a Sybil <em>prevention</em> guarantee. It is a genuine hole, it
+              falls hardest on the people with the least hardware, and naming it here is not the same
+              as having closed it. The full cost is at{' '}
+              <Link href="/what-could-go-wrong#risk-accessibility" className="text-amber-300 underline hover:text-amber-200">
+                what could go wrong
+              </Link>{' '}
+              and{' '}
+              <Link href="/lct-explainer#software-only-survival" className="text-amber-300 underline hover:text-amber-200">
+                what a software-only anchor costs you
+              </Link>
+              .
             </p>
             {/* Visitor 2026-07-28 MEDIUM: "the page a worried person reads is the page with no mention
                 of appeals at all." Two links on /what-could-go-wrong (L262, L848) sent readers here for

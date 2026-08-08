@@ -147,8 +147,21 @@ export default function GlossaryPage() {
             equation on /the-standard, which is a Start Here page. The visitor filed
             "MCP gets a gloss; RDF gets nothing", and checking the premise showed the glossary
             in fact defined NEITHER. Entry-level by position in the reader's path, not
-            research-tier by subject matter. The R6 exclusion recorded at ~L500 is a different
-            call and still stands. */}
+            research-tier by subject matter.
+
+            SECOND REVERSAL (Aug-08, Aug-08 visitor MEDIUM): R6/R7 was added too, on exactly the
+            Jul-28 reasoning above, which overturns the earlier exclusion this comment used to
+            uphold ("The R6 exclusion recorded at ~L500 is a different call and still stands").
+            The routing was never the problem and was already fixed in Jul-24: /onramp deep-links
+            R6/R7 to #r6 in two places, and both cards define the terms well. What the visitor hit
+            is placement in the CURRICULUM: /onramp's adoption step 1 tells the reader to "learn
+            the primitives (LCT, T3/V3*MRH, ATP/ADP, and R6/R7)", so R6/R7 is entry-level by
+            position in the reader's path even though its subject matter is not. Their words:
+            "the site tells me to learn a primitive it never teaches ... It is the only named
+            primitive with no teaching surface." A Jul-17 browse had already called /onramp's
+            R6/R7 "naked", so this is a recurrence, not a first sighting.
+            One row, two abbreviations, both deep-linked. Kept out still: EP, SAL, DID, D1-D9,
+            which no Start Here page instructs the reader to learn. */}
         <div id="acronyms" className="bg-gray-900/40 border border-gray-700 rounded-xl p-5 mb-6 scroll-mt-20">
           <div className="text-sm font-semibold text-gray-200 mb-1">Acronyms at a glance</div>
           <p className="text-xs text-gray-500 mb-4">
@@ -166,6 +179,8 @@ export default function GlossaryPage() {
               { id: "mrh", abbr: "MRH", full: "Markov Relevancy Horizon", gloss: "how far your trust reaches" },
               { id: "mcp", abbr: "MCP", full: "Model Context Protocol", gloss: "how a society talks to the outside world" },
               { id: "rdf", abbr: "RDF", full: "Resource Description Framework", gloss: "the format every Web4 fact is written in" },
+              { id: "r6", abbr: "R6", full: "Action Framework", gloss: "the six-part shape every action takes" },
+              { id: "r7", abbr: "R7", full: "Action Framework, high-stakes", gloss: "R6 plus a reputation update" },
             ].map((a) => (
               <a
                 key={a.id}
@@ -548,14 +563,23 @@ export default function GlossaryPage() {
               negative karma means handicapped resources and slower rebuilding.
             </p>
             <p className="text-gray-400 text-sm mb-3">
-              Plain English: "You can't escape your history by 'starting fresh.' Bad choices
-              compound across lives, spam in Life 1 haunts Life 2 and 3. Good behavior also
-              compounds. This makes reputation permanent rather than disposable."
+              Plain English: "Escaping your history by 'starting fresh' costs you the device your
+              identity is anchored to. Bad choices compound across lives, spam in Life 1 haunts
+              Life 2 and 3. Good behavior also compounds. This makes reputation durable rather than
+              disposable."
             </p>
+            {/* Aug-08 visitor HIGH: this card asserted "Web4's hardware-bound presence (LCT)
+                prevents this" as a universal, and it is the glossary's ESSENTIAL tier (see
+                data-essential above), always visible, linking straight to /karma-consequences.
+                Q8 Ruling 1 (2026-08-05) makes the universal false: software-only anchoring is
+                conformant and canon forbids excluding the tier. Scoped here to match the page it
+                hands the reader off to; the argument itself lives there, not in a lookup card. */}
             <p className="text-gray-500 text-xs mb-3">
               <strong>Key insight:</strong> In traditional platforms, creating a new account
-              resets consequences. Web4's hardware-bound presence (LCT) prevents this, your
-              karma follows you because your identity follows you.
+              resets consequences for free. Where an LCT is anchored in hardware, your karma follows
+              you because your identity follows the device, so a clean slate has to be bought.
+              Anchored in software alone, there is no device to abandon and the record stays
+              sheddable.
             </p>
             <div className="flex gap-3 text-sm">
               <Link href="/karma-consequences" className="text-sky-400 hover:underline">
@@ -568,8 +592,13 @@ export default function GlossaryPage() {
               without an id, so /onramp's "R6/R7" link dumped the reader at the top of this page while
               every sibling acronym (#lct, #atp, #t3, #mrh, #ci, #v3) deep-links. That asymmetry read to
               the visitor as "R6/R7 is the one primitive with nowhere to go". Keep these ids in sync with
-              the /onramp links. Note: R6 stays OUT of the "Acronyms at a glance" box by the deliberate
-              decision recorded at ~L138. */}
+              the /onramp links.
+              REVERSED Aug-08: the note here used to read "R6 stays OUT of the 'Acronyms at a glance'
+              box by the deliberate decision recorded at ~L138". R6 and R7 are now BOTH in that box.
+              The Jul-24 fix made the destination reachable; the Aug-08 visitor showed the residual was
+              prominence, not routing, since /onramp step 1 instructs the reader to learn R6/R7 as a
+              primitive. The reversal and its reasoning are recorded in full on the acronym box itself.
+              Keep the abbr/gloss there in sync with these two cards. */}
           <div id="r6" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Action Framework (R6)
