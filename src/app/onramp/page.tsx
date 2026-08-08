@@ -331,7 +331,8 @@ export default function OnrampPage() {
         </h2>
         <p className="text-base text-gray-400 leading-relaxed mb-4">
           These are the real, in-code seams, not aspirational ones. The pieces fit
-          because they were built to share an interface.
+          because they were built to share an interface. Where an edge you would
+          expect is missing, that is named here too.
         </p>
         <div className="grid sm:grid-cols-2 gap-3">
           <div className="rounded-lg border border-white/10 bg-white/5 p-4">
@@ -353,6 +354,93 @@ export default function OnrampPage() {
               TPM-sealed key.
             </p>
           </div>
+        </div>
+        {/* 2026-08-07 visitor, filed twice: friction LOW ("Three scales, two named seams. No
+            stated relationship between the hub and hardbound. Say whether hub<->hardbound is a
+            seam, is out of scope, or is unbuilt. Even 'not built yet' would close it.") and
+            Unanswered Q3 ("Can a hub society include hardbound-tier members?"). No page named
+            the edge: /hub:65 and /hardbound:181 only list the three scales, and /hardbound
+            points HERE for how they fit together. This section owns the seams, so the absent
+            edge belongs here too.
+
+            GROUNDED IN CODE, deliberately not in roadmap docs. The hub's planning documents do
+            discuss hardbound, and every one of those lines was excluded on policy review:
+            V2-V3-ARCHITECTURE.md :37/:60/:157 (":60 out of scope entirely" scopes THAT DOCUMENT'S
+            MRH, not the product, and the same file states the relationship affirmatively twice),
+            PRD.md :69/:124 (:124's "not in MVP" is superseded by the same file's PARTLY SHIPPED
+            note; :69's separate-track clause is about the hardbound policy engine, while hub law
+            is machine-enforced hub-natively today), SPRINTS.md:186 ("inter-society primitives
+            shipped" over-reads its own code: state.rs:517 makes request_intro a member-to-member
+            introduction INSIDE one society, and rest.rs:2513 documents /.well-known/web4-hub.json
+            as shape-matched to hestia::hub::HubInfo for `hestia hub connect`, i.e. member-to-hub
+            discovery, with every in-repo consumer client-side). ../hardbound/docs/ip/ is patent
+            material naming the private dev-hub and must never be read into site copy.
+
+            What the four claims above rest on, all re-runnable:
+            - "no mention in the hub's source": `grep -ril hardbound --include=*.rs --include=*.toml`
+              over web4/hub returns nothing. SOURCE, not repo; the docs do mention it.
+            - the hestia crate: hestia/hardbound-pak/rust/Cargo.toml, package `hardbound`,
+              "public trait surface ... the contract any compatible implementation must satisfy".
+            - the join path: hub-daemon/examples/join_client.rs sends member_lct_id +
+              member_pubkey_hex in a signed envelope over plain HTTP, and "the hub pins PUBKEY_HEX
+              for MY_LCT on admission". No hestia in it. Do NOT write "members join through
+              hestia": it over-claims exclusivity AND weakens the argument, since the point is
+              that the hub keys on an LCT and a signature and does not care what holds the key.
+            - owner-committed device class: hub-lib/src/constellation.rs:100-105, where
+              `hardware_evidence` (TPM/Secure-Enclave) verification is named as future.
+              Every sentence resting on that file is scoped to "as the hub stands today", NEVER
+              to the protocol, because /identity-constellation:516-517 asserts attestation as an
+              accomplished general fact. That over-claim is logged in SESSION_FOCUS.md as its own
+              item and was NOT fixed here.
+
+            The federation half was already answered on the site and never routed here: the
+            closing sentence is running-now:427-428 propagated verbatim (/hub:197-198 carries the
+            same claim), not a fresh formulation. "Not built YET" plus any roadmap citation would
+            imply a schedule nothing supports, so the hardware clause takes the shape this site
+            already uses for a gap it accepts (running-now:351-352). */}
+        <div id="hub-and-hardbound" className="rounded-lg border border-white/10 bg-white/5 p-4 mt-3 scroll-mt-20">
+          <h3 className="font-semibold text-gray-200 mb-2">
+            the hub and hardbound: the edge that is not there
+          </h3>
+          <p className="text-sm text-gray-300 leading-relaxed mb-3">
+            Three scales and two seams, so a third edge looks like it has to
+            exist by symmetry. It does not. There is no mention of hardbound
+            anywhere in the hub&apos;s source. The seams above are real because
+            they are code, and this one is absent for the same reason.
+            hardbound&apos;s public contract ships as a Rust crate inside hestia,
+            a set of traits any hardware-bound implementation has to satisfy,
+            which is what makes the hestia edge an interface. The hub has no
+            counterpart to it.
+          </p>
+          <p className="text-sm text-gray-300 leading-relaxed mb-3">
+            <strong className="text-gray-200">
+              So can a community society include enterprise-tier members?
+            </strong>{" "}
+            Nothing in the hub excludes one. Joining means presenting an LCT and
+            a signature, and the hub pins that key when it admits you; it never
+            asks what is holding the key. What the hub cannot do is check. As it
+            stands today, a device counts as hardware because its owner
+            committed it as hardware beforehand, which is stronger than taking
+            the presenter&apos;s word for it and is still not a measurement. The
+            layer that would verify a TPM or a Secure Enclave is named in the
+            hub&apos;s code and not built. That is an accepted limit right now
+            rather than a scheduled repair.
+          </p>
+          <p className="text-sm text-gray-300 leading-relaxed">
+            <strong className="text-gray-200">
+              And can an enterprise and a community federate?
+            </strong>{" "}
+            That is a different question with a different owner. Two societies
+            meeting is the standard&apos;s business, not a hub-to-hardbound
+            feature, so the answer does not turn on which side runs which
+            software. It is also the answer the rest of the site already gives:
+            federation across societies remains <MaturityBadge tier="spec" />{" "}
+            only, specified but not yet built (see{" "}
+            <Link href="/running-now" className="text-sky-400 underline hover:text-sky-300">
+              the full maturity map
+            </Link>
+            ).
+          </p>
         </div>
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/10 p-4 mt-3">
           <p className="text-sm text-gray-300 leading-relaxed">
