@@ -1162,6 +1162,28 @@ export default function LCTExplainerPage() {
             <strong>1.0</strong> is the theoretical ceiling, not a number anyone actually reaches.
             The ceilings below are points on that scale.
           </p>
+          {/* Aug-07 visitor Unanswered Q6. Their words: "/lct-explainer says posts, votes, and ATP
+              transfers stop being accepted. Does the LCT persist as a tombstone, or is there
+              nothing left? The energy-death case is explicit ('same LCT, same history'); the
+              trust-death case is not." The clause they read is in the paragraph directly above and
+              is a VERBATIM variant of the canonical death sentence (it threads ledger Q1, crossing
+              vs staying, raw vs effective) - do not edit it, do not fold this into it.
+              The persistence sentence below is propagated verbatim from first-contact:834, which is
+              the site's only statement of it made in a death context. NOT sourced from :1121 on
+              this page ("a permanent reputation is not a permanent lockout"): read in place that is
+              about the all-devices-lost recovery path and it explicitly carves out software-only,
+              so borrowing it here would mean something else than it means there.
+              The scope half is the same entailment as /how-it-works#two-ways-to-die and is
+              deliberately a pointer, not a second copy. See WEB4-CANON-QUESTIONS Q15. */}
+          <p className="text-sm text-gray-400 mb-2">
+            &ldquo;Can no longer act&rdquo; is not erasure. Your LCT and its record survive, and
+            standing is a society&apos;s own view of you rather than one universal number. Your
+            history persists either way.{" "}
+            <Link href="/how-it-works#two-ways-to-die" className="text-sky-400 hover:underline">
+              How living and dying work, and how far a death reaches
+            </Link>
+            .
+          </p>
           {/* Aug-01: id added as the inbound anchor for the ceiling claim. Point ceiling links HERE,
               not at #hardware-tiers - that one is the "what are TPM/Secure Enclave/FIDO2" <details>
               glossary at ~L457 and arrives collapsed. This paragraph is the right target because the

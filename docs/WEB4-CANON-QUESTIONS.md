@@ -791,6 +791,65 @@ two HIGHs and three Unanswered Questions in a single sitting.
   strictly below, so nothing needs to say, and nothing may say, what happens to a reader sitting
   exactly at 0.50.
 
+### Q15. How far does a trust death reach: does it end standing in one society, or everywhere?
+
+- **Raised**: 2026-08-07, from the Aug-07 visitor browse (their Unanswered Q5, with the answerable
+  half of Q6 attached). Verbatim: *"The plagiarism walkthrough on `/how-it-works` says 'the penalty
+  is society-specific, not global.' Trust death is described as permanent and reputation-wide. If I
+  suffer trust death in one society, am I dead everywhere, given that `/why-web4` says communities
+  are federated and forks preserve your history?"* Same defect class as Q14: two of the site's own
+  correct facts, on the same page, that never meet.
+- **What canon settles, and it is only half.** Reputation scope is answered flatly and repeatedly:
+  `core-spec/r6-framework.md:76`, `core-spec/r7-framework.md:86` and `:252` (a *"Critical Design
+  Principle"*), and `core-spec/reputation-computation.md:86` (marked **CRITICAL**) all state that
+  **there is no global reputation, all reputation is role-contextualized**, with T3/V3 stored on
+  the MRH role pairing link, so *"an entity can have different reputations in different roles"*.
+  `core-spec/SOCIETY_SPECIFICATION.md` §2.3 (`:132`) and §4.2.1 (`:281`) make citizenship a
+  per-society status machine (`APPLIED / PROVISIONAL / ACTIVE / SUSPENDED / TERMINATED`) whose
+  `terminate` produces a recorded status in **that society's** ledger. So there is no single global
+  number for a global death to be read against, and ending someone's standing is a society-ledger
+  event.
+- **What canon does not settle.** Canon has **no trust-death concept at all**: `grep -riE
+  "\bdeath\b|survival"` over `core-spec/` returns nothing on point. That absence is exactly ledger
+  **Q4**. So the step from *reputation is role-scoped* to *a trust death is society-scoped* is
+  4-life's entailment, not a citation, and the site says so in the `/how-it-works` voice rather
+  than asserting it.
+- **The trap, and why the first draft of the fix was rejected in policy review.** "Trust death is
+  society-specific, not global" is the obvious clause and it is **wrong to ship**, for two
+  independent reasons:
+  1. `core-spec/mcp-protocol.md` §7.5 makes cross-society reputation propagation **normative**, not
+     future work: a per-action `propagation_scope` enum (`responding_society` / `caller_society` /
+     `both` / `encompassing_society`), plus an accumulated society-society T3/V3 tensor at the
+     encompassing society's ledger. Consequences do cross borders; what does not cross is a shared
+     score.
+  2. The site's own DUI clause says the opposite of "stops at the border": the glossary Society
+     Ejection card and `first-contact:933` both say an ejection *"is visible globally, affecting
+     how other societies perceive you (like a DUI affecting your pilot's license)"*. A clause
+     saying the verdict stops at the border would have opened a **new** two-surface seam while
+     closing one.
+  - **Do not cite `reputation-computation.md` §10** (*"Cross-Society Reputation"* under **Future
+    Evolution**) as evidence that propagation is unbuilt. Upstream's own audit
+    `docs/audits/C123-reputation-computation-3rd-delta-2026-07-01.md:116` records finding X-2 as
+    **STILL OPEN**: *"§10 frames cross-society reputation as 'Future Evolution'; mcp §7.5 already
+    makes it normative."* Quoting §10 here would be falsified by upstream's own tracker.
+- **The narrow question for upstream.** Given that reputation is role-scoped and citizenship
+  termination is a per-society status, and given that R7 Reputation propagates across societies by
+  `propagation_scope`: **is there any mechanism by which one society's termination of an entity
+  entails termination elsewhere**, or is the reach of a termination always mediated by each other
+  society's own judgment of the propagated record? A ruling either way also tells 4-life whether
+  "permanent" in *"trust death is permanent, a destroyed reputation can't be reset"* is a claim
+  about one society's ledger or about the entity.
+- **Why this is not Q4, Q5 or Q14.** Q4 asks whether the spec should define a trust-death predicate
+  at all. Q5 asks what ends a life **other than** ATP = 0. Q14 asks **what score** the existing
+  predicate is read against (passively decayed or not). Q15 assumes the predicate and the score and
+  asks **how far its result reaches**. None of the four answers any other.
+- **Holding pattern**: `/how-it-works#two-ways-to-die` now states the two things the site can
+  defend (trust is never one universal number and each society keeps its own view; the record
+  crosses the boundary and can weigh on how others judge you) and says the rest is not settled.
+  `/lct-explainer` answers the Q6 half at the sentence that prompted it, by propagating
+  `first-contact:834` verbatim (*"Your history persists either way"*). No verdict-propagation rule
+  invented, no endpoint asserted, the guarded death sentence untouched.
+
 ### Follow-up (not a canon question): "karma tier" is an orphaned term
 
 Filed 2026-08-07 alongside Q14, from the same browse (*"'karma tier' is introduced here and I
