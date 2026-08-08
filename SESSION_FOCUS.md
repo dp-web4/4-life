@@ -2,6 +2,79 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-08 03:00 session - the third edge, and why it is not there (Aug-07 `/onramp` LOW = Unanswered Q3)
+
+**No fresh log** (session ran at 03:00, before the 05:00 browse). Aug-07 has now been worked four
+times. What remained was four LOWs and two Unanswered Questions. Took the `/onramp` item because
+the visitor filed it **twice**, once in the friction table and once as Q3, and told us the
+smallest possible answer would close it: *"Even 'not built yet' would close it."* `#seams` shipped
+exactly two cards (hestia-to-hub, hestia-to-hardbound) and no page anywhere named the third edge:
+`/hub:65` and `/hardbound:181` only list the three scales, and `/hardbound` points at `/onramp`
+for how they fit together.
+
+**The answer is "there is no seam", and the interesting part is how nearly it got mis-sourced.**
+The hub's planning docs discuss hardbound at length and every one of those lines was excluded on
+policy review, each for its own reason:
+- `V2-V3-ARCHITECTURE.md:60` files "Hardbound integration deep-dive" under *"Out of scope
+  entirely"*, which reads like a product decision and is not: the header at `:44` scopes that list
+  to **that document's MRH**, and the same file states the relationship affirmatively at `:37` and
+  `:157`. [[canon-section-may-be-stale-check-audits]] one genre over: read what the *section
+  header* scopes before quoting a bullet under it.
+- `PRD.md:124` ("federation is opt-in, not in MVP") is half-superseded by its own file's PARTLY
+  SHIPPED note; `:69`'s separate-track clause is about the *hardbound* policy engine, while hub
+  law is machine-enforced hub-natively today. Either would have put a false dependency on the page.
+- `SPRINTS.md:186` ("inter-society primitives shipped") over-reads its own code. `state.rs:517`
+  makes `request_intro` a **member-to-member** introduction inside one society, and `rest.rs:2513`
+  documents `/.well-known/web4-hub.json` as shape-matched to `hestia::hub::HubInfo` so
+  `hestia hub connect` can deserialize it, i.e. **member-to-hub** discovery, with every in-repo
+  consumer client-side. I caught this one myself after the first review; it would have shipped a
+  federation capability that does not exist.
+- `../hardbound/docs/ip/` is patent-prosecution material that names the private **dev-hub**
+  by name. Never read that directory into site copy ([[dev-hub-is-private-never-link]]).
+
+**What grounds the card instead is code, all of it re-runnable**: `grep -ril hardbound
+--include=*.rs --include=*.toml` over `web4/hub` returns **nothing** (source, not repo, the docs
+do mention it); `hestia/hardbound-pak/rust/Cargo.toml` ships hardbound's *public trait surface* as
+a crate **inside hestia**, which is exactly why the neighbouring card is a real interface and this
+one has no counterpart; `hub-daemon/examples/join_client.rs` joins with `member_lct_id` +
+`member_pubkey_hex` in a signed envelope over plain HTTP, and the hub *pins* that key on
+admission.
+
+**The correction that improved the argument.** The draft said members reach a hub *through
+hestia*. Policy review found `join_client.rs`: no hestia in the join path at all. The accurate
+form is stronger, not weaker: the hub **keys on an LCT and a signature and does not care what
+holds the key**, which is precisely why a hardware-anchored member is not excluded. What the hub
+lacks is verification of the class, not accommodation of it.
+
+**What shipped** in `/onramp#seams`, as a new `#hub-and-hardbound` block plus one clause in the
+section intro so the heading's promise covers a named absence:
+- there is no hub-to-hardbound code path, and why hestia's edge is different;
+- the membership answer, scoped **to the hub as it stands today** every time it leans on
+  `constellation.rs:100-105` (device class is *owner-committed pre-challenge*, stronger than a
+  presenter label and still not a measurement; `hardware_evidence` verification is named and
+  unbuilt), closed in the site's own accepted-limit shape rather than "not built yet", which with
+  any roadmap citation implies a schedule;
+- the federation answer, which **the site already had and never routed here**:
+  `running-now:427-428` propagated verbatim (`/hub:197-198` carries the same claim), Spec-tier,
+  "specified but not yet built".
+
+**Filed, not fixed**: `/identity-constellation:516-517` asserts *"Each device proves its key came
+from genuine hardware"* as an accomplished general fact. The hub's own implementation records
+owner-committed device class with verification unbuilt. Not a contradiction of the new `/onramp`
+text (which is scoped to the hub), but the page states a protocol aspiration in the present tense.
+Its own item, needs its own pass.
+
+**Contested, deliberately not taken**: the `/tldr` badge-key LOW ("names three tiers, defines
+two"). The guard at `tldr/page.tsx:132-134` records a deliberate invariant, that the local gloss
+stays a **strict subset** of the `/running-now` legend so the two cannot drift, and no piece on
+`/tldr` is badged Spec. Defining Spec locally would break an invariant three visitor rounds
+converged on. Do not "fix" this without retiring the invariant on purpose.
+
+**Still open from the Aug-07 log**: three LOWs (`/first-contact` pre-Start disclaimer stack,
+`/learn` time estimate, `/tldr` badge key as above), and Unanswered **Q4** (what the 0.50-ceiling
+tier experiences day to day, which needs a frequency claim nothing in the repos measures). Plus
+the standing "identity is hardware-bound" five-surface follow-up.
+
 ## Aug-07 21:00 session - dead where? (Aug-07 Unanswered Q5, plus the answerable half of Q6)
 
 **No fresh log.** The Aug-07 browse was worked twice already (09:00 took the HIGH and all three
