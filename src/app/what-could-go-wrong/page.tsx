@@ -71,7 +71,11 @@ export default function WhatCouldGoWrongPage() {
             <div>
               <Link href="/lct-explainer" className="font-semibold text-purple-400 hover:underline">LCT</Link>{" "}
               <span className="text-gray-500">(Linked Context Token)</span>{" "}
-              <span className="text-gray-300">- hardware-bound digital identity, witnessed by your devices.</span>
+              {/* Aug-08 definitional sweep (Q8 Ruling 1). This gloss defined LCT as hardware-bound
+                  on the page that, at :171, is careful to scope the same claim to identities "that
+                  carry real weight", and whose risk 8 describes the software-only tier's lived
+                  experience. The acronym box was contradicting its own page. */}
+              <span className="text-gray-300">- device-anchored digital identity, witnessed by your devices.</span>
             </div>
             <div>
               <Link href="/trust-neighborhood" className="font-semibold text-cyan-400 hover:underline">MRH</Link>{" "}

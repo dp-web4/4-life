@@ -1570,8 +1570,10 @@ export default function ATPEconomicsPage() {
                 actually an eight-week-old ONE-SURFACE fix. The June 11 visitor (browse B)
                 filed "earned more than cost seems to violate the recharge-at-cost cap"
                 AGAINST THIS PAGE BY NAME; the fix landed on the twin illustration at
-                /how-it-works only (:986-1006, the "How did the Novice earn 105 ATP from 60
-                spent?" fold), and this copy - the one the friction was filed against - kept
+                /how-it-works only (inside the Life 1 fold, whose summary then read "How did the
+                Novice earn 105 ATP from 60 spent?" and now reads "The quality ramp behind those
+                figures" - retitled Aug-08 when the channel-naming was hoisted OUT of that fold to
+                the visible layer), and this copy - the one the friction was filed against - kept
                 the unfixed version. So a newcomer worked example here taught unaided
                 net-positive right up until the session that added #newcomer-solvency, which
                 says the opposite. Illustration fixed, not prose: the prose was already right.

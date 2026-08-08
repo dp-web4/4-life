@@ -2,6 +2,105 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-08 15:00 session - the example that assumed the thing the site calls open (Aug-08 MEDIUM #4 + LOW #8 + the definitional half of the HIGH)
+
+**Same log, second session.** `visitor/logs/2026-08-08.md` was triaged at 09:00 (#525: the HIGH and
+two MEDIUMs). This session worked the residue that #525 itself wrote down as open.
+
+### The one that matters: the illustration assumed the unsolved step
+
+The visitor read `/atp-economics` (*"the most intellectually honest page on the site"*), then went
+**back** to `/how-it-works` with a problem: *"'Life 1: The Novice' spends 60 ATP and earns 105. By
+the rule I just read, a net gain of +45 can only come from commissioned work. So the site's
+flagship worked example, starring a novice, quietly assumes the exact thing the site elsewhere
+calls unsolved."* Their Honest Assessment generalized it into a **defect class**: *"the site is
+more honest in its prose than in its examples ... The worked examples were probably written before
+the caveats and never re-run against them."*
+
+**Both halves were already on the site. Neither was at the layer the reader was standing on.**
+- The channel-naming existed on `/how-it-works` only **inside the collapsed fold** (`:1075-1077`),
+  while the **twin** illustration at `atp-economics:1586-1591` carries it visible.
+- The open-question half existed only at `atp-economics:814-816`.
+- So a skimmer of `/how-it-works` saw *"spent 60, earned 105, ended with 145"* and nothing else.
+
+One visible paragraph now carries both, **propagated verbatim** (`atp-economics:1587-1590` and
+`:814-816`), so the `atp-economics:1571-1586` sync guard is honored rather than tested. The policy
+reviewer's condition drove the shape: **both halves visible or neither**, because naming the
+commission channel at the skim layer while leaving the open question in the fold would have made
+the skim layer assert the unsolved step *more* loudly than it did before.
+
+Two consequences worth keeping:
+- The fold's June-11 parenthetical became word-for-word redundant with a sentence six lines above
+  it, so it was **deleted, not weakened**, and the block's net word count went down. Its guard was
+  rewritten to say the job **moved up** rather than being dropped ([[opposite-intents-in-code-comments]]).
+- The fold's summary (*"How did the Novice earn 105 ATP from 60 spent?"*) then read as the same
+  question asked twice. Retitled, and the guard at `atp-economics:1573` that **cites that exact
+  string** was updated in the same edit.
+
+**No figure moved.** `60 / 105 / 145 / 130 / 165 / +45` propagate into Lives 2-3 and into
+`/atp-economics`. Q13's fence held: no rate, no floor, no survival promise. The canon half stays open.
+
+### The definitional half of the HIGH, and a grep truncated for the third time
+
+#525 swept *"identity is hardware-bound"* out of the **argument** across 13 surfaces and logged the
+**definitional** glosses as *"Open for a later pass ... a site-copy call, not a canon one."* Ruling 1
+reaches them identically: `LCT-linked-context-token.md:39` §1.2 clause 1 (*"MUST NOT be excluded by
+the protocol"*), and §1.3 defines **Binding** with no hardware term. A definition that says an LCT
+*is* hardware-bound excludes a conformant tier by construction, and it is the tier a fresh
+`hestia init` lands in.
+
+**I proposed six surfaces. The policy reviewer's independent grep found roughly three times that**,
+including the most conspicuous one: **`/lct-explainer` itself, including its `<title>`**. That is the
+third truncation on this same claim (five became 13 at 09:00). So the scope was cut, per review, to
+a **definition-of-record slice** with a falsifiable boundary: a surface is in iff its *job* is to say
+what LCT or Web4 **is**, in a line or two, out of narrative context. Term registry, acronym index,
+page `<title>`/meta/OG, glossary term cards, one-line manifest definitions, *"Shorthand: X just
+means Y"*.
+
+Shipped: `terms.ts` (LCT brief + explanation, Web4 explanation), `/glossary` (index row, Web4 card,
+LCT card, Plain English line, the *"Web4 = ..."* one-liner), `/manifest`, `/lct-explainer/layout.tsx`
+(all three slots), `/web4-explainer:34`, `/why-web4:378+:380`, `/what-could-go-wrong:74`.
+
+Two additions to the reviewer's list, both inside the stated boundary and both because shipping
+without them would have **authored a fresh contradiction**: the glossary's own Web4 and LCT term
+cards (the acronym index would have disagreed with the card 60 lines below it), and `why-web4:378`
+(fixing the *"Shorthand:"* line alone would have left it glossing a sentence two lines up that still
+carried the universal).
+
+Vocabulary is **propagated, not coined**: `terms.ts` `Karma:183` (#525) already splits *"anchored in
+hardware"* from *"anchored in software alone"*, `first-contact:376` (#525) already says *"anchored to
+a device"*, and `why-web4:2328` already says *"what hardware buys is **ceiling**, not entry"*.
+**Device-anchored** is the tier-neutral parent, **hardware-anchored** the strong form. No ceiling
+number, no survival line, no at-0.50 claim in either direction entered any file.
+
+**The remainder is enumerated file:line in the ledger**, with the grep command recorded and the
+exclusion rule stated, and labelled a grep result requiring per-surface judgment rather than a
+verdict. The next pass does not have to re-derive it, and it should not have to correct it a fourth time.
+
+### The LOW that was reported wrong, and the report was the signal
+
+Filed: *"the clarification that this means suspended standing, not deletion, is behind a spoiler."*
+**It is not behind anything.** `first-contact:465` is a static `<p>`. What gated it in the reader's
+head was its own bold opening label, *"Spoiler, so you're not left hanging:"*, on a page whose three
+`<details>` (`:265`, `:330`, `:355`) all sit above it and look similar. The word advertised a widget
+that is not there. The visitor's literal suggestion (*"immediately under it"*) shipped in the Jun-27
+pass and Jul-14 confirmed it landed, so the residual was **framing, not placement**
+([[visitor-deferred-low-check-shipped-first]]).
+
+Label swapped to *"Suspended, not deleted:"*, which is one word shorter (the block already stacks
+three paragraphs after #525's caveat) and puts the defusal **in** the label, which was the other
+half of the suggestion. The sentence itself is byte-identical on purpose: `how-it-works:713` quotes
+it as the canonical `/first-contact` wording. The *"Die & Reborn"* card title stays; three separate
+browses recorded the hook working as a hook.
+
+### Deliberately not done, and why
+- **#3** (what ends a life) and **#7** (*"stays below 0.5"* duration): ledger **Q5** / **Q2**, both
+  disclosed on-site and escalated.
+- **#6** (0.50 ceiling on `/why-web4`): Q8 **equity** half, holding pattern.
+- **#9** (onramp word overload): gate FIRED Jul-23, operator branding call.
+- **#10** (`/atp-economics` mnemonic ordering): contested and guarded at `:135-161`, no new signal.
+- The `EndOfLifeCaveat` hoist follow-up at `how-it-works:48-50`: still open, explicitly a larger job.
+
 ## Aug-08 09:00 session - the one sentence the site would not hedge (Aug-08 HIGH + 2 MEDIUMs)
 
 **Fresh log**: `visitor/logs/2026-08-08.md`. Understanding "good", would return, would recommend

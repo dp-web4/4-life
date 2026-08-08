@@ -172,7 +172,12 @@ export default function GlossaryPage() {
             {[
               { id: "atp", abbr: "ATP", full: "Allocation Transfer Packets", gloss: "your spendable energy budget" },
               { id: "adp", abbr: "ADP", full: "Allocation Discharge Packets", gloss: "the receipt for spent energy" },
-              { id: "lct", abbr: "LCT", full: "Linked Context Token", gloss: "hardware-rooted identity" },
+              // Aug-08 definitional sweep (Q8 Ruling 1): "hardware-rooted identity" made the
+              // hardware tier definitional of LCT. Four surfaces on this page carried the same
+              // claim and all four move together, or the page contradicts itself: this row, the
+              // Web4 card gloss (~:232), the LCT card (~:310 and its Plain English line ~:315),
+              // and the "Web4 = ..." one-liner (~:1662). Vocabulary is terms.ts's, not new.
+              { id: "lct", abbr: "LCT", full: "Linked Context Token", gloss: "device-anchored identity" },
               { id: "t3", abbr: "T3", full: "Trust Tensor", gloss: "a 3-axis trust score" },
               { id: "v3", abbr: "V3", full: "Value Tensor", gloss: "a 3-axis score for what you produce" },
               { id: "ci", abbr: "CI", full: "Coherence Index", gloss: "a behavioral-consistency score" },
@@ -229,7 +234,7 @@ export default function GlossaryPage() {
               Unlike Web2 (platforms own your data/identity) or Web3 (blockchain-first -
               built on the public, shared transaction ledgers behind Bitcoin and Ethereum),
               Web4 proposes that trust, identity, and value flow from verifiable behavior
-              rooted in hardware.
+              anchored to devices you control.
             </p>
             <p className="text-gray-400 text-sm">
               Think: "What if trust wasn't delegated to platforms, but emerged from
@@ -307,12 +312,14 @@ export default function GlossaryPage() {
               Web4&apos;s <strong>foundational presence primitive</strong>: a verifiable presence
               certificate that binds an entity to its context through witnessed relationships. It
               establishes <em>where</em> you exist in a web of trust, not just who you are. An LCT is
-              rooted in physical devices (the security chip built into most modern phones and laptops:
-              a TPM, Apple&apos;s Secure Enclave, or a FIDO2 key) and witnessed by other entities,
-              creating verifiable proof of presence.
+              anchored on a device and witnessed by other entities, creating verifiable proof of
+              presence. Anchoring in a security chip (the one built into most modern phones and
+              laptops: a TPM, Apple&apos;s Secure Enclave, or a FIDO2 key) is the strong form and is
+              what raises your trust ceiling; anchoring in software alone is supported, at a lower
+              ceiling.
             </p>
             <p className="text-gray-400 text-sm mb-3">
-              Plain English: "Your presence lives in your hardware, not in a company's database.
+              Plain English: "Your presence lives on your own device, not in a company's database.
               Multiple devices witnessing each other make faking presence exponentially harder."
             </p>
             <div className="flex gap-3 text-sm">
@@ -1659,7 +1666,7 @@ export default function GlossaryPage() {
           </p>
           <p className="text-gray-300 leading-relaxed">
             We say "Web4" because Web2 = platforms own you, Web3 = blockchain-first,
-            Web4 = <strong className="text-green-400">trust-native hardware-bound presence</strong>.
+            Web4 = <strong className="text-green-400">trust-native device-anchored presence</strong>.
             It's a working label for a different architectural philosophy.
           </p>
           <p className="text-gray-400 text-sm border-t border-gray-700 pt-4">

@@ -375,9 +375,15 @@ export default function WhyWeb4Page() {
                 2. Hardware-Bound Identity
               </h4>
               <p className="text-gray-400 text-sm">
-                Your identity is tied to your device&apos;s security chip - the same kind that protects Face ID and fingerprints. Creating a fake identity means buying a new physical device. Multiple devices witness each other for extra security.
+                Your identity is anchored to your own device rather than a company database, and an identity that carries real weight is anchored in the device&apos;s security chip, the same kind that protects Face ID and fingerprints. At that tier, creating a fake identity means buying a new physical device. Multiple devices witness each other for extra security.
               </p>
-              <p className="text-gray-400 text-sm mt-1">Shorthand: LCT (Linked Context Token) - just means your hardware-bound identity.</p>
+              {/* Aug-08 definitional sweep (Q8 Ruling 1). The shorthand line is a definition of
+                  record, and fixing it alone would have left it glossing a sentence two lines up
+                  that still carried the universal, so both moved. "Carries real weight" is
+                  what-could-go-wrong:171's already-shipped scoping phrase, not a new one, and this
+                  page settles the same point in full at :2325-2333 ("Web4 identity does not require
+                  a security chip ... What hardware buys is ceiling, not entry"). No number here. */}
+              <p className="text-gray-400 text-sm mt-1">Shorthand: LCT (Linked Context Token) - just means your device-anchored identity.</p>
               <Link href="/lct-explainer" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about identity →
               </Link>

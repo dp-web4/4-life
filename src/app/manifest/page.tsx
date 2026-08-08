@@ -17,8 +17,12 @@ export default function ManifestPage() {
         <h2>Core Primitives</h2>
         <ul style={{ marginTop: "0.75rem", lineHeight: "1.75" }}>
           <li>
-            <strong>LCT (Linked Context Token):</strong> Hardware-bound verified presence, strongly resistant to impersonation.
-            Multi-device witnessing makes fake presences expensive.{" "}
+            {/* Aug-08 definitional sweep (Q8 Ruling 1). This page opens "If you only read one page,
+                read this", so its one-line primitives ARE the definition of record. "Hardware-bound
+                verified presence" made the hardware tier definitional; the impersonation-resistance
+                claim is true and is what hardware anchoring buys, so it is scoped, not dropped. */}
+            <strong>LCT (Linked Context Token):</strong> Device-anchored verified presence; anchored in hardware,
+            strongly resistant to impersonation. Multi-device witnessing makes fake presences expensive.{" "}
             <Link href="/lct-explainer" className="text-sky-400">↗</Link>
           </li>
           <li>

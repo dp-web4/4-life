@@ -462,8 +462,25 @@ export default function FirstContactPage() {
                   than she earned. (Jul-11 numbers-integrity fix: the old "lifetime surplus / earned more than
                   spent" framing contradicted the page's own interactive ledger + Act-5 ATP=0 death. Keep the
                   bonus framed as karma, never as a spending surplus.) */}
+              {/* Aug-08 visitor LOW: "the clarification that this means suspended standing, not
+                  deletion, is behind a spoiler." It is not behind anything - this is a static <p>.
+                  What gated it in their head was its own opening label: bold "Spoiler, so you're
+                  not left hanging:", on a page whose three <details> (:265, :330, :355) all sit
+                  above it and look similar, so the word advertised a widget that isn't there.
+                  Their literal suggestion ("put 'suspended, not deleted' in the act label or
+                  immediately under it") was already half-shipped: the Jun-27 pass put the defusal
+                  immediately under the grid and Jul-14 confirmed it landed. So the residual was
+                  framing, not placement ([[visitor-deferred-low-check-shipped-first]]).
+                  Label swap only, and it is one word SHORTER: the block already stacks three
+                  paragraphs after #525's carry-forward caveat below.
+                  The Act-5 card title "Die & Reborn" stays. Three separate browses (Jun-02,
+                  May-21, Jun-27) recorded the hook working as a hook; the complaint has always
+                  been about the defusal's reachability, never the word.
+                  The sentence itself is UNCHANGED and must stay that way: how-it-works:713 quotes
+                  this exact string ("'death' here means Alice's standing is suspended") as the
+                  canonical /first-contact wording. */}
               <p className="text-sm text-gray-400 mb-3">
-                <strong className="text-gray-300">Spoiler, so you&apos;re not left hanging:</strong>{' '}
+                <strong className="text-gray-300">Suspended, not deleted:</strong>{' '}
                 &ldquo;death&rdquo; here means Alice&apos;s <em>standing</em> is suspended - she can&apos;t
                 act until rebirth - not that her account is deleted; her identity and history persist.
                 The <span className="text-emerald-300">+12 bonus</span> is karma - a head start earned by the
