@@ -1356,10 +1356,17 @@ export default function CoherenceIndexPage() {
               {/* Jul-28 visitor HIGH: this page stated the formula with nothing saying what it is NOT
                   used for, so a reader carrying /lct-explainer's "software-only caps at 0.50, and 0.5 is
                   the survival line" did the arithmetic and concluded any CI < 1.0 puts them permanently
-                  below the line. Same canonical clause as first-contact (~156 and ~309), glossary
-                  (~1211), how-it-works (~731) and lct-explainer's #software-only-survival - keep
-                  verbatim. (Aug-07 15:00: those two refs were stale, 1191 and 608; corrected.)
-                  THIS SURFACE IS THE SOURCE. The second sentence below ("A lower CI raises your
+                  below the line. Same canonical clause as first-contact (x2, the second in third
+                  person), glossary, how-it-works and lct-explainer's #software-only-survival - keep
+                  verbatim. Resolve them all by anchor, never by line number:
+                    grep -rnE "narrows (your|her) access" src/app
+                  (Aug-08: the ordinals that stood here were re-numbered by the Aug-07 pass and were
+                  stale again at that same commit, because the comment blocks it inserted moved the
+                  prose below them. Removed rather than bumped a third time.)
+                  THIS SURFACE IS THE SOURCE, and PROPAGATE FROM THE PROSE, NOT FROM THIS COMMENT:
+                  the sentence is quoted just below inside this guard, so `grep` returns two hits on
+                  this file and only the non-comment one is the shipping copy.
+                  The second sentence below ("A lower CI raises your
                   costs and narrows your access; it does not push you toward trust death") shipped
                   here first and was correct here while the other five carried an orphan tail,
                   "- effective trust sets your karma tier, not whether you live". Aug-07 propagated

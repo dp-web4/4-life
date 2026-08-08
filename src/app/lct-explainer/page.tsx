@@ -1300,15 +1300,21 @@ export default function LCTExplainerPage() {
                 who reached /coherence-index ("Effective trust = T3 x CI²") could do the arithmetic and
                 conclude a 0.50 ceiling sits permanently BELOW the line for any CI < 1.0 - one page's
                 formula refuting another page's promise. The clause below is the canonical disambiguation
-                already shipping VERBATIM on first-contact (~156 and ~309), glossary (~1211) and
-                how-it-works (~731); it was missing from exactly the two pages this visitor collided.
+                already shipping VERBATIM on first-contact (x2, the second in third person), glossary
+                and how-it-works; it was missing from exactly the two pages this visitor collided.
+                Resolve every copy by anchor: `grep -rnE "narrows (your|her) access" src/app`.
                 Propagated, not re-derived: keep it verbatim if editing. Does NOT assert the > vs >=
-                endpoint (still Q1). (Aug-07 15:00: the glossary and how-it-works refs above were
-                stale, 1191 and 608; corrected.)
+                endpoint (still Q1).
+                (Aug-08: this guard's ordinals were re-numbered twice and rotted twice - the Aug-07
+                pass "corrected" 1191 to 1211 and 608 to 731, and BOTH were stale again at that same
+                commit because the comment blocks inserted above the prose moved it. Numbers removed
+                rather than bumped a third time; the quoted phrase is what resolves now.)
                 Aug-07 (15:00): the TAIL clause changed on all six surfaces. It read "- effective
                 trust sets your karma tier, not whether you live"; "karma tier" was an orphan from
                 the retired /karma-journey, defined nowhere and absent from canon. Replaced by
-                coherence-index:1365's sentence. Note for this page specifically: the paragraph
+                /coherence-index's prose sentence (the non-comment hit of
+                `grep -n "narrows your access" src/app/coherence-index/page.tsx`).
+                Note for this page specifically: the paragraph
                 CONTINUES "What the software-only ceiling really costs you is margin ... any dip
                 restricts your features until you climb back", which is a RAW-trust story. The new
                 clause is a CI story. They are two independent causes of restricted access, both

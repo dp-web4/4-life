@@ -156,14 +156,27 @@ export default function FirstContactPage() {
                     Aug-07 (15:00): the tail clause CHANGED, so re-sync before comparing to an older copy.
                     It used to read "- effective trust sets your karma tier, not whether you live". "Karma
                     tier" was an orphan: asserted on six surfaces, defined on none, zero hits in canon
-                    (`grep -rni karma ../web4/web4-standard/` returns nothing), and sourced by L418's own
-                    guard to /karma-journey, a route RETIRED in the Jul-15 rebuild. Replaced with the
-                    positive half the site was already shipping correctly at coherence-index:1365, which
-                    attributes cost and access to CI (cost is 1/CI², a function of CI alone - effective
-                    trust does NOT set cost, so do not reintroduce that phrasing).
-                    The six surfaces, now byte-identical modulo styling and Alice's name: first-contact
-                    :156 and :309, how-it-works:731, coherence-index:1364, glossary:1211, lct-explainer
-                    :1285. /karma-consequences:850 reuses the sentence but deliberately STOPS at "a single
+                    (`grep -rni karma ../web4/web4-standard/` returns nothing), and sourced by the guard on
+                    this page's own Act-5 "Karma carries forward" card (`grep -n "karma-journey's karma-tier"`)
+                    to /karma-journey, a route RETIRED in the Jul-15 rebuild. Replaced with the positive
+                    half the site was already shipping correctly on /coherence-index, which attributes cost
+                    and access to CI (cost is 1/CI², a function of CI alone - effective trust does NOT set
+                    cost, so do not reintroduce that phrasing).
+                    CITE BY ANCHOR, NOT LINE NUMBER (Aug-08). Every ordinal this guard family used went
+                    stale the moment these comment blocks were inserted above the prose they named - each
+                    by exactly the number of lines inserted above it. Quote the phrase instead; it survives
+                    any insertion and a reader can grep it.
+                    THE CANONICAL TAIL is "narrows your access; it does not push you toward trust death",
+                    byte-identical modulo styling and Alice's name across six surfaces. Resolve with:
+                      grep -rnE "narrows (your|her) access" src/app
+                    - first-contact x2: the Step-5 aside below, and the Step-6 recap, which is THIRD
+                      PERSON ("narrows her access") - that is why the regex unions your|her.
+                    - how-it-works, glossary, lct-explainer: x1 each.
+                    - coherence-index: TWO hits expected - the prose, plus the guard above it quoting the
+                      same words. The prose is the source; propagate from it, never from the comment.
+                    Grep the SHORT fragment, never the whole sentence: it wraps across JSX lines on
+                    glossary and lct-explainer, so a whole-sentence grep returns 0 there and under-reports.
+                    /karma-consequences reuses the sentence but deliberately STOPS at "a single
                     stumble" - that page never mentions CI, so the raw-vs-effective clause has nothing to
                     disambiguate there. That truncation is intentional, not drift. */}
                 <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death - you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>raw trust falls below 0.5 and stays there</strong> (trust death - the community no longer trusts you). Energy death is recoverable through karma rebirth. Trust death is permanent - a destroyed reputation can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal - a sustained collapse, not a single stumble. The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;). A lower CI raises your costs and narrows your access; it does not push you toward trust death. That&apos;s why Alice&apos;s 0.48 in Step 4 restricted her instead of killing her: she crossed the line, she didn&apos;t stay below it.</span>

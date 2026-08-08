@@ -721,9 +721,11 @@ export default function HowItWorksPage() {
                   Aug-07 (15:00): the tail clause changed on all six surfaces. It read "- effective
                   trust sets your karma tier, not whether you live"; "karma tier" was defined nowhere
                   on the site and does not exist in canon, and it came from the retired /karma-journey.
-                  The replacement is coherence-index:1365's already-shipping sentence, propagated, not
+                  The replacement is /coherence-index's already-shipping prose sentence (the non-comment
+                  hit of `grep -n "narrows your access" src/app/coherence-index/page.tsx`), propagated, not
                   re-derived. Do not re-attribute cost to effective trust: cost is 1/CI², a function of
-                  CI alone. Full rationale at first-contact:148-166. */}
+                  CI alone. Full rationale in /first-contact's Step-5 guard
+                  (`grep -n "THE CANONICAL TAIL" src/app/first-contact/page.tsx`). */}
               <p className="text-gray-300 leading-relaxed">
                 Two paths: <strong className="text-red-400">ATP hits zero</strong> (energy death -
                 you can&apos;t act anymore) or{" "}

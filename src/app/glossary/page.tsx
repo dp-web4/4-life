@@ -1198,9 +1198,11 @@ export default function GlossaryPage() {
             Aug-07 (15:00): the TAIL clause changed on all six surfaces, so re-sync before comparing
             against an older copy. It read "- effective trust sets your karma tier, not whether you
             live". "Karma tier" was defined on no page, has zero hits in canon, and traces to the
-            retired /karma-journey. Replaced by coherence-index:1365's already-shipping sentence,
+            retired /karma-journey. Replaced by /coherence-index's already-shipping prose sentence
+            (the non-comment hit of `grep -n "narrows your access" src/app/coherence-index/page.tsx`),
             propagated verbatim. Cost is 1/CI², a function of CI alone, so do not re-attribute cost
-            to effective trust. Full rationale at first-contact:148-166. */}
+            to effective trust. Full rationale in /first-contact's Step-5 guard
+            (`grep -n "THE CANONICAL TAIL" src/app/first-contact/page.tsx`). */}
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-red-800/40 rounded-xl p-6 mb-6" id="death" data-glossary-term data-essential>
           <h3 className="text-xl font-semibold text-red-400 mb-3 scroll-mt-20">
             Death, Trust Death, and Rebirth
