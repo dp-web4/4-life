@@ -152,8 +152,34 @@ export default function FirstContactPage() {
                     Jul-9 visitor HIGH: the Jul-8 version was read and STILL produced "First Contact says
                     0.5 is an access threshold, Aliveness says it's a death threshold." The missing piece
                     was never dip-vs-sustained (that was there) - it was that ONE line has TWO consequences
-                    at TWO timescales. Plus "raw" vs effective (raw × CI²). Both now in the canonical text. */}
-                <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death - you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>raw trust falls below 0.5 and stays there</strong> (trust death - the community no longer trusts you). Energy death is recoverable through karma rebirth. Trust death is permanent - a destroyed reputation can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal - a sustained collapse, not a single stumble. The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;) - effective trust sets your karma tier, not whether you live. That&apos;s why Alice&apos;s 0.48 in Step 4 restricted her instead of killing her: she crossed the line, she didn&apos;t stay below it.</span>
+                    at TWO timescales. Plus "raw" vs effective (raw × CI²). Both now in the canonical text.
+                    Aug-07 (15:00): the tail clause CHANGED, so re-sync before comparing to an older copy.
+                    It used to read "- effective trust sets your karma tier, not whether you live". "Karma
+                    tier" was an orphan: asserted on six surfaces, defined on none, zero hits in canon
+                    (`grep -rni karma ../web4/web4-standard/` returns nothing), and sourced by the guard on
+                    this page's own Act-5 "Karma carries forward" card (`grep -n "karma-journey's karma-tier"`)
+                    to /karma-journey, a route RETIRED in the Jul-15 rebuild. Replaced with the positive
+                    half the site was already shipping correctly on /coherence-index, which attributes cost
+                    and access to CI (cost is 1/CI², a function of CI alone - effective trust does NOT set
+                    cost, so do not reintroduce that phrasing).
+                    CITE BY ANCHOR, NOT LINE NUMBER (Aug-08). Every ordinal this guard family used went
+                    stale the moment these comment blocks were inserted above the prose they named - each
+                    by exactly the number of lines inserted above it. Quote the phrase instead; it survives
+                    any insertion and a reader can grep it.
+                    THE CANONICAL TAIL is "narrows your access; it does not push you toward trust death",
+                    byte-identical modulo styling and Alice's name across six surfaces. Resolve with:
+                      grep -rnE "narrows (your|her) access" src/app
+                    - first-contact x2: the Step-5 aside below, and the Step-6 recap, which is THIRD
+                      PERSON ("narrows her access") - that is why the regex unions your|her.
+                    - how-it-works, glossary, lct-explainer: x1 each.
+                    - coherence-index: TWO hits expected - the prose, plus the guard above it quoting the
+                      same words. The prose is the source; propagate from it, never from the comment.
+                    Grep the SHORT fragment, never the whole sentence: it wraps across JSX lines on
+                    glossary and lct-explainer, so a whole-sentence grep returns 0 there and under-reports.
+                    /karma-consequences reuses the sentence but deliberately STOPS at "a single
+                    stumble" - that page never mentions CI, so the raw-vs-effective clause has nothing to
+                    disambiguate there. That truncation is intentional, not drift. */}
+                <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death - you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>raw trust falls below 0.5 and stays there</strong> (trust death - the community no longer trusts you). Energy death is recoverable through karma rebirth. Trust death is permanent - a destroyed reputation can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal - a sustained collapse, not a single stumble. The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;). A lower CI raises your costs and narrows your access; it does not push you toward trust death. That&apos;s why Alice&apos;s 0.48 in Step 4 restricted her instead of killing her: she crossed the line, she didn&apos;t stay below it.</span>
               </div>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#f87171' }}>Step 6 - Death:</strong> Alice overcommits, quality slips, ATP drains to zero. Her entity dies - but her record persists.
@@ -306,8 +332,8 @@ export default function FirstContactPage() {
                 <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                   Raw trust is the score before the coherence multiplier is applied. The number
                   compared against 0.50 is <strong className="text-gray-300">raw</strong> trust, not
-                  effective trust (raw &times; CI&sup2;) - effective trust sets Alice&apos;s karma
-                  tier, not whether she lives.
+                  effective trust (raw &times; CI&sup2;). A lower CI raises Alice&apos;s costs and
+                  narrows her access; it does not push her toward trust death.
                 </p>
               </details>
             </div>
@@ -414,8 +440,15 @@ export default function FirstContactPage() {
                   but the death/karma explanation lived only in the noscript block and inside the
                   step-gated walkthrough - skimmers (and the TL;DR's "discover what death means
                   here" promise) left with the question open. One static sentence closes it.
-                  Canon: +12 = karma bonus (112 = 100 + 12) reflecting the trust/reputation Alice built,
-                  carried forward per karma-journey's karma-tier model. It is NOT an ATP spending surplus:
+                  Canon: +12 = karma bonus (112 = 100 + 12) reflecting the trust/reputation Alice built.
+                  (Aug-07 15:00: this line used to end "carried forward per karma-journey's karma-tier
+                  model". /karma-journey was retired in the Jul-15 rebuild and that model went with it,
+                  so the citation was dead. The prose below does not depend on it - it says the bonus is
+                  a head start earned by trust and reputation, which is the /karma-consequences model
+                  and is still live. Nothing user-facing changed here; the dead citation was removed so
+                  a future pass does not treat a retired sim as a source. The "karma tier" phrase this
+                  guard was the provenance for is now gone from the site entirely.) It is NOT an ATP
+                  spending surplus:
                   Alice dies at ATP=0 by exhaustion (tick 13), earning 37 and spending 137 - she spent MORE
                   than she earned. (Jul-11 numbers-integrity fix: the old "lifetime surplus / earned more than
                   spent" framing contradicted the page's own interactive ledger + Act-5 ATP=0 death. Keep the

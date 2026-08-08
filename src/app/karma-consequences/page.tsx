@@ -834,19 +834,32 @@ export default function KarmaConsequencesPage() {
               pages route readers here for exactly this - /first-contact:429 ("How living and dying
               work →") and /what-could-go-wrong (for appeals). The appeals half of that promise is
               already kept at #recourse below; this block keeps the other half.
-              The sentence is REUSED VERBATIM from the canonical copy (first-contact:156, and
-              identically at how-it-works:721-732, glossary:1207-1211, coherence-index:1364,
-              lct-explainer:1285). Keep it verbatim if editing: it threads ledger Q1 by distinguishing
+              The sentence is REUSED from the canonical copy on /first-contact, and identically on
+              how-it-works, glossary, coherence-index and lct-explainer. Cite by anchor, not line
+              number - resolve every copy with `grep -rnE "narrows (your|her) access" src/app` (short
+              fragment, because the sentence wraps across JSX lines on glossary and lct-explainer;
+              first-contact carries it twice, the second in third person).
+              Keep it verbatim if editing: it threads ledger Q1 by distinguishing
               crossing from staying and raw from effective, so paraphrasing it would assert a 0.50
               endpoint canon has not settled.
-              WHAT THIS BLOCK DOES NOT DO, deliberately: it does not define "karma tier". That phrase
-              rides the canonical sentence on all five pages and is defined on NONE of them.
-              `grep -rni karma ../web4/web4-standard/core-spec/*.md` returns zero hits - canon has no
-              karma concept at all - and first-contact:418's own guard sources it to "karma-journey's
-              karma-tier model", /karma-journey being one of the 34 routes RETIRED in the Jul-15
-              rebuild. This page models karma with a flat karma_multiplier = 2 (:634-639) and has no
-              tiers to point at. Defining one would be inventing a model to justify an orphaned term.
-              Filed as the karma-tier follow-up in docs/WEB4-CANON-QUESTIONS.md instead. */}
+              This copy deliberately TRUNCATES: it stops at "a single stumble" and omits the
+              raw-vs-effective tail the other six carry. That is intentional, not drift. This page
+              never mentions CI (`grep -ni coherence` on this file returns only the link card), so the
+              tail would disambiguate a formula the reader has not met here. Do not "complete" it.
+              KARMA-TIER FOLLOW-UP: RESOLVED 2026-08-07 (15:00 session), so the note that used to
+              live here no longer applies. The tail on the other six surfaces read "- effective trust
+              sets your karma tier, not whether you live". "Karma tier" was asserted on six surfaces
+              and defined on none; `grep -rni karma ../web4/web4-standard/` returns zero hits (canon
+              has no karma concept, and docs/SPRINT.md #14 lists karma canonicity as deferred, so it
+              is not acquiring one); and the guard on /first-contact's Act-5 "Karma carries forward"
+              card (`grep -n "karma-journey's karma-tier" src/app/first-contact/page.tsx`) sourced it
+              to "karma-journey's karma-tier model", /karma-journey being one of the 34 routes RETIRED
+              in the Jul-15 rebuild. It was dropped, not defined: this page models karma with a flat
+              karma_multiplier = 2 (`grep -n "karma_multiplier"` on this file) and has no tiers, so
+              defining one would have invented a model to justify an orphaned term. The replacement
+              propagates /coherence-index's already-shipping prose sentence (the non-comment hit of
+              `grep -n "narrows your access" src/app/coherence-index/page.tsx`).
+              See docs/WEB4-CANON-QUESTIONS.md, "karma tier" follow-up, now marked resolved. */}
           <div className="mt-4 p-4 bg-gray-900/60 border border-red-800/30 rounded-lg">
             <p className="text-gray-300 text-sm">
               <strong className="text-red-300">Two ways to die, and they are very different.</strong>{' '}

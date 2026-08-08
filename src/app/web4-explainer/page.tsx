@@ -139,10 +139,24 @@ export default function Web4ExplainerPage() {
             was blocked in policy review and is FALSE: the live site is a pure explainer and
             encodes nothing as an R6 envelope. Removing a false claim asserts nothing in its place;
             substituting a true-sounding one would have shipped a new claim with no grounding.
-            NOT cascaded, and filed here instead: this page carries a family of seven "In 4-Life,
-            ..." sentences (L43, L58, L74, L88, this one, L137, L171) sharing the same retired
-            referent. L171 ("explicit MRH/LCT edges and R6-described events") is the closest twin.
-            De-simming that family is its own pass; do not do it piecemeal from an R6/R7 edit. */}
+            NOT cascaded, and filed here instead: this page carries a family of "In 4-Life, ..."
+            sentences sharing the same retired referent. De-simming that family is its own pass; do
+            not do it piecemeal from an R6/R7 edit.
+            Aug-07 (15:00) ENUMERATION CORRECTED, then Aug-08 DE-NUMBERED. The Aug-07 pass fixed one
+            off-by-+22 pair and immediately introduced another: it named "L193" for the fifth member,
+            and L193 is a section heading (<h2>7. Pairing types between LCTs</h2>), not an "In 4-Life"
+            sentence at all - the insertions in this very diff had moved it. Ordinals are not being
+            bumped a third time. The count of seven also included one sentence since deleted for an
+            unrelated false-mechanism defect.
+            The live family is FIVE, resolved by anchor:
+              grep -n "In 4-Life" src/app/web4-explainer/page.tsx
+            returns FOUR of them - the MRH/audit-chain one, the T3-trust-vectors one, the ATP
+            treasury/budget one, and "In 4-Life, these show up as explicit MRH/LCT edges and
+            R6-described events", which is the closest twin to the sentence deleted here.
+            The FIFTH is missed by that grep because it wraps a line break ("In" ends the previous
+            line); find it with `grep -n "every agent, society, and role"`.
+            See the guard below the CI section for why that deletion was in scope for a different
+            pass than this one. */}
       </section>
 
       <section>
@@ -156,10 +170,36 @@ export default function Web4ExplainerPage() {
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
           CI acts as a trust modulator: effective trust = base_trust &times; CI&sup2;, and ATP
           costs scale as 1/CI&sup2;. Incoherent behavior (teleporting, capability spoofing,
-          broken continuity) exponentially increases the cost of acting. In 4-Life, CI
-          determines whether an entity remains &ldquo;alive&rdquo; - drop below the
-          coherence threshold and the society rejects you.
+          broken continuity) exponentially increases the cost of acting.
         </p>
+        {/* Aug-07 (15:00): DELETED, not reworded. The sentence here read "In 4-Life, CI determines
+            whether an entity remains 'alive' - drop below the coherence threshold and the society
+            rejects you." Two independent defects:
+            (1) FALSE MECHANISM. There is no coherence threshold on the live site.
+                `grep -rni "coherence threshold\|CI threshold"` over src/ returns only this line,
+                /coherence-index's "each society configures CI thresholds and modulation curves"
+                (a configurability statement, not a death rule), and one on /glossary, which sits
+                inside a
+                <details> fenced "not part of the Web4 ontology" and claims only that identity is
+                "fragile and prone to collapse". Nothing anywhere grants CI the power to end a life.
+            (2) It contradicted the canonical raw-vs-effective clause on SIX surfaces - first-contact
+                (x2, the second in third person), how-it-works, coherence-index, glossary and
+                lct-explainer, resolved by `grep -rnE "narrows (your|her) access" src/app` - all of
+                which say a lower CI "does not push you toward trust death". This page
+                said the opposite, in prose, which is the Jul-28 HIGH's exact failure mode stated
+                outright instead of left to the reader's arithmetic.
+            The canonical clause was DELIBERATELY NOT propagated here, and that gap is not an
+            oversight: this page never mentions the survival line, 0.50, trust death, or raw trust
+            (grepped: every other hit is CSS 0.5rem), and does not link /coherence-index. Pasting the
+            clause in would introduce three undefined nouns and manufacture the very cross-page
+            arithmetic gap it exists to close. The paragraph above is complete and true without it.
+            Family note, correcting the enumeration in the R6-envelope guard above
+            (`grep -n "ENUMERATION CORRECTED"` on this file): with this sentence gone the live
+            "In 4-Life, ..." family is FIVE. Resolve it by anchor, not by line number -
+            `grep -n "In 4-Life"` returns four, and the fifth wraps a line break, so it needs
+            `grep -n "every agent, society, and role"`. The twin that inherits the "closest"
+            designation is "In 4-Life, these show up as explicit MRH/LCT edges and R6-described
+            events". De-simming that family is still its own pass. */}
       </section>
 
       <section>

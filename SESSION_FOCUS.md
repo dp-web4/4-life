@@ -63,7 +63,86 @@ places say **there is no global reputation, all reputation is role-contextualize
 `/learn` time estimate, `/onramp` hub-to-hardbound seam, `/tldr` badge key naming three tiers and
 defining two), Unanswered Q3 (= the `/onramp` LOW) and Q4 (what the 0.50-ceiling tier experiences
 day to day). Plus the standing "identity is hardware-bound" five-surface follow-up.
+## Aug-07 15:00 session - the word six pages used and none owned
 
+**No new visitor log** (the Aug-07 browse landed at 05:11 and was worked at 09:00). This session
+took the follow-up that pass **filed and explicitly declined to fix**, in the ledger and in its own
+guard comment at `karma-consequences:842`: *"it does not define 'karma tier' ... deserves its own
+policy-reviewed pass"*. The visitor filed it twice, as half of a MEDIUM and as Unanswered Question
+2: *"What is a karma tier? `/first-contact` says effective trust sets one. No page I read says what
+tiers exist or what they get you."*
+
+**The term was an orphan, and the site was its only source.** The clause *"effective trust (raw x
+CI^2) sets your karma tier, not whether you live"* rode the verbatim-locked survival sentence on six
+surfaces and was defined on none. `grep -rni karma` over `../web4/web4-standard/` returns **zero**;
+`docs/SPRINT.md` #14 lists karma canonicity as a deferred, operator-design item, so canon is not
+acquiring one either. `first-contact:418`'s own guard sourced the phrase to *"karma-journey's
+karma-tier model"* - a route retired in the Jul-15 rebuild. `/karma-consequences`, the only page
+that could own it, has a flat `karma_multiplier = 2` and no tiers. Defining tiers would have
+invented a model to justify a word.
+
+**Fixed by propagation, not deletion, because the tail was load-bearing.** Its job is to stop a
+reader computing `raw x CI^2` and comparing the product to 0.50 - the Jul-28 HIGH. The site already
+shipped the correct positive half one line below the orphan, at `coherence-index:1365`. That
+sentence is now the canonical tail on all six surfaces:
+
+> The number compared is **raw** trust, not effective trust (raw x CI^2). A lower CI raises your
+> costs and narrows your access; it does not push you toward trust death.
+
+Zero new prose was authored for the six surfaces. `coherence-index` was a deletion-only surface.
+
+**Three things policy review caught, and the second is the session's real lesson.**
+
+1. **The filing's "five pages" was a truncated grep.** Sweeping the *claim* rather than the phrase
+   found a sixth at `first-contact:309`, inside a `<details>` phrased with Alice's name.
+2. **My first replacement clause was false, and I had cited its own refutation as grounding.** The
+   draft read *"effective trust sets what your actions cost and what you can do right now"*. Cost is
+   `1/CI^2`, a function of **CI alone**; effective trust is `raw x CI^2`. Raw 0.6 and raw 0.9 at CI
+   1.0 differ in effective trust and have **identical** cost. The site is deliberate about this
+   (`coherence-index:249-252`, *"the same coherence factor working in two directions"*): CI is the
+   **common cause** of both effects. My clause would have inverted that into a parent-child relation
+   and shipped the newest wrong number-claim on the site. This is the #521 lesson recurring one
+   level up: I checked that the replacement *sounded* like the shipped sentence instead of computing
+   whether it followed from the shipped formulas. **When propagating a claim, propagate the
+   sentence, not your summary of it.**
+3. **A seventh surface asserted the exact opposite, and it was on the page I cited as grounding, two
+   lines below the line I cited.** `web4-explainer:159-161`: *"In 4-Life, CI determines whether an
+   entity remains 'alive' - drop below the coherence threshold and the society rejects you."* It
+   contradicted all six surfaces **and** asserted a mechanism the site does not have:
+   `grep -rni "coherence threshold"` over `src/` returns only that line, `coherence-index:1429`'s
+   *configurability* statement, and the `glossary:967` block fenced *"not part of the Web4 ontology"*.
+   This is the Jul-28 HIGH's failure mode stated outright in prose rather than left to arithmetic.
+
+**The seventh surface was a DELETE, and policy review overruled my proposed replacement.** I wanted
+to swap in the canonical clause. That page never mentions the survival line, 0.50, trust death, or
+raw trust (every other `0.5` hit is CSS `0.5rem`) and does not link `/coherence-index`, so the clause
+would have arrived as three undefined nouns and manufactured the cross-page arithmetic gap it exists
+to close. Worse, I had already trimmed a word to avoid a stutter, which would have made it a
+**seventh bespoke phrasing** of the clause this pass exists to unify. That stutter was the tell.
+Deleted per the #520 precedent **on this same page**: removing a false claim asserts nothing in its
+place. The deliberate non-propagation is recorded in a guard so a later pass does not read the gap
+as an oversight and install the eighth variant.
+
+**Guards swept 2 to 6, plus stale refs.** Four guards still said "keep verbatim" while pointing at
+the pre-edit wording, which is how a fix gets reverted by the next propagation pass. All six now
+carry the change. Corrected in the same pass: `glossary ~1191` to 1211 and `how-it-works ~608` to
+731 (cited from two files), `karma-consequences`'s "five pages" to six, and `web4-explainer`'s
+"In 4-Life" family enumeration, whose L137/L171 were both off by +22 and whose count of seven is now
+**five**. `first-contact:418`'s dead `/karma-journey` citation was removed (comment only; the prose
+it justifies rests on the live `/karma-consequences` model).
+
+**`/karma-consequences:850` keeps its truncated copy** (stops at "a single stumble"). That page
+never mentions CI, so the raw-vs-effective tail would disambiguate a formula the reader has not met
+there. Now labelled intentional so it is not "completed" later.
+
+**One follow-up added, not fixed**: the *other* deferred item ("identity is hardware-bound",
+weakened by Q8 Ruling 1) has a **fifth** instance off `/karma-consequences`, at `src/lib/terms.ts:178`
+- the widest-reach surface of the four, since `TermTooltip` carries it wherever `<Karma>` appears.
+Recorded in its ledger entry so that scoped pass starts complete.
+
+**Still open from the Aug-07 log**: the four LOWs (First Contact disclaimer stack, `/learn` estimate
+vs `/why-web4`'s 68 questions, `/onramp` hub-to-hardbound, `/tldr` badge key), and Unanswered
+Questions 3-6.
 ## Aug-07 09:00 session - the arithmetic the site handed the reader and would not finish
 
 **Fresh visitor log** (`visitor/logs/2026-08-07.md`, 12 pages, understanding "good", all seven
