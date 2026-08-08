@@ -761,6 +761,51 @@ export default function HowItWorksPage() {
                 </Link>
                 .
               </p>
+              {/* Aug-07 visitor Unanswered Q5 ("Is trust death society-scoped or global?") plus the
+                  answerable half of Q6 ("does the LCT persist as a tombstone?"). The visitor formed
+                  Q5 on THIS page because it states both halves and joins neither: the death rule
+                  above, and "the penalty is society-specific, not global" in the plagiarism
+                  walkthrough at #plagiarism-walkthrough. Q6 formed because the paragraph directly
+                  above gives energy death an explicit "same LCT, same history" and the trust-death
+                  case gets nothing.
+                  GROUNDING, and its limits. Canon settles only the REPUTATION-scoping half:
+                  r6-framework.md:76, r7-framework.md:86 and :252 ("Critical Design Principle") and
+                  reputation-computation.md:86 (marked CRITICAL) all say there is no global
+                  reputation, all reputation is role-contextualized, stored on the MRH role pairing
+                  link; SOCIETY_SPECIFICATION.md 2.3/4.2.1 makes citizenship a per-society status
+                  machine whose `terminate` is a recorded society-ledger status. Canon has NO
+                  trust-death concept at all (that absence IS ledger Q4), so the step from
+                  reputation-scope to death-scope is 4-Life's entailment and is voiced as unsettled
+                  rather than as canon. See WEB4-CANON-QUESTIONS Q15.
+                  DO NOT reword this to "trust death is society-specific, not global". Two things
+                  refute that: mcp-protocol.md 7.5 makes cross-society reputation propagation
+                  NORMATIVE (a per-action propagation_scope enum, plus an accumulated
+                  society-society tensor at the encompassing society), and the site's own DUI clause
+                  says an ejection is visible globally (glossary Society Ejection card,
+                  first-contact:933). A verdict that stopped at the border would open a new seam
+                  with both. Also do not cite reputation-computation.md 10 ("Cross-Society
+                  Reputation" under Future Evolution) as evidence that propagation is unbuilt:
+                  upstream's own audit C123-reputation-computation-3rd-delta-2026-07-01.md:116
+                  records that framing as STILL OPEN and stale against 7.5.
+                  The two paragraphs ABOVE are guarded (see :711-720 and :733-740). This one asserts
+                  nothing about the line, the endpoint, or what ends a life. */}
+              <p className="text-gray-400 leading-relaxed mt-3 text-sm">
+                <strong className="text-gray-300">And the question after that: dead where?</strong>{" "}
+                Trust in Web4 is never one universal number. It is{" "}
+                <Link href="/trust-tensor" className="text-sky-400 hover:underline">
+                  scoped to a role
+                </Link>
+                , and each society keeps its own view of you, which is why the plagiarism
+                walkthrough further down this page can say a penalty is{" "}
+                <a href="#plagiarism-walkthrough" className="text-sky-400 hover:underline">
+                  society-specific, not global
+                </a>
+                . What crosses a society boundary is the record rather than the verdict: your
+                history is visible to other societies and can weigh on how they judge you, the way a
+                DUI affects a pilot&apos;s license. Whether that ever amounts to trust death
+                somewhere else is not settled. What is not in doubt is the part this page already
+                says of the other death: neither one erases you. Your history persists either way.
+              </p>
               <div className="mt-3 p-4 bg-red-900/20 border border-red-800/30 rounded">
                 <p className="text-red-300 font-semibold mb-2">
                   What drains your ATP to zero
@@ -1561,7 +1606,11 @@ export default function HowItWorksPage() {
         </div>
 
         {/* Step-by-step walkthrough: what happens when someone breaks a rule */}
-        <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 mb-6">
+        {/* id added Aug-07 (visitor Unanswered Q5): this walkthrough's step 6 is where the page
+            states that a penalty is society-specific and not global, and the two-ways-to-die block
+            at #two-ways-to-die now links here for the scope of the death rule. Keep the id and
+            keep step 6's wording; the inbound link quotes it. */}
+        <div id="plagiarism-walkthrough" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 mb-6 scroll-mt-24">
           <h4 className="text-lg font-semibold text-gray-200 mb-3">Walkthrough: A Plagiarism Case from Start to Finish</h4>
           <p className="text-gray-400 text-sm mb-4">
             Here&apos;s how the Open Science Collective handles a real violation - step by step.

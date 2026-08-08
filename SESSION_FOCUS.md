@@ -2,6 +2,68 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-07 21:00 session - dead where? (Aug-07 Unanswered Q5, plus the answerable half of Q6)
+
+**No fresh log.** The Aug-07 browse was worked twice already (09:00 took the HIGH and all three
+MEDIUMs as #521; 15:00 took the karma-tier orphan as #522). What was left was four LOWs and four
+Unanswered Questions. Took **Q5** because the visitor's own Honest Assessment names the defect
+class and Q5 is its purest remaining instance: *"the site is excellent at disclosing each fact and
+inconsistent at joining two of them."*
+
+**The seam, and it was on one page.** `/how-it-works` states that a penalty is *"society-specific,
+not global"* in the plagiarism walkthrough at `:1606`, and states trust death as *"permanent, a
+destroyed reputation can't be reset"* at `:725` with **no scope at all**. The visitor put those two
+side by side and asked: if I suffer trust death in one society, am I dead everywhere? `/lct-explainer:1160`
+has the same unscoped shape (*"can no longer act at all"*), which is where their Q6 formed, sharpened
+by the fact that the paragraph above it gives **energy** death an explicit *"same LCT, same history"*
+and gives trust death nothing.
+
+**The lesson of this session is the fix that policy review rejected.** The obvious clause was
+*"trust death is society-specific, not global"*, and canon appears to hand it over: four separate
+places say **there is no global reputation, all reputation is role-contextualized**
+(`r6-framework:76`, `r7-framework:86` and `:252`, `reputation-computation:86`), and
+`SOCIETY_SPECIFICATION` §2.3/§4.2.1 makes citizenship a per-society status machine whose
+`terminate` is a society-ledger event. Shipping that clause would have been wrong twice over:
+1. `mcp-protocol.md` §7.5 makes cross-society reputation propagation **normative** (a per-action
+   `propagation_scope` enum, plus a society-society tensor accumulated at the encompassing
+   society). Consequences cross borders. What does not cross is a shared *score*.
+2. The site's **own** DUI clause says the opposite of "stops at the border": the glossary Society
+   Ejection card and `first-contact:933` both say an ejection *"is visible globally, affecting how
+   other societies perceive you"*. The draft had quoted the first half of that very card as
+   support and stopped one clause short of the refutation. [[grounding-citation-may-contradict-you-nearby]],
+   caught by the reviewer rather than by me.
+- A near-identical trap sat next to it: `reputation-computation.md` §10 files "Cross-Society
+  Reputation" under **Future Evolution**, which reads like negative confirmation that propagation
+  is unbuilt. Upstream's own audit `C123-reputation-computation-3rd-delta-2026-07-01.md:116`
+  records that framing as **STILL OPEN** and stale against §7.5. Citing it would have been
+  falsified by upstream's tracker, the same failure mode #521 recorded one week earlier.
+- **The rule that generalizes**: when canon looks like it hands you a clean absolute, check
+  upstream's audit trail for that section before quoting it, and read the *site* sentence you are
+  citing to the end of the card.
+
+**What shipped**, deliberately two-sided rather than clean:
+- `/how-it-works#two-ways-to-die` gets a new paragraph **below** the guarded pair: trust is never
+  one universal number and each society keeps its own view (linked to the walkthrough's own
+  society-specific line, which now has an id, `#plagiarism-walkthrough`); what crosses a boundary
+  is the **record, not the verdict**; whether that ever amounts to trust death elsewhere is **not
+  settled**; and neither death erases you.
+- `/lct-explainer` answers Q6 at the sentence that caused it, by propagating `first-contact:834`
+  **verbatim**: *"Your history persists either way."* Not sourced from this page's own `:1121`
+  (*"a permanent reputation is not a permanent lockout"*), which read in place is about the
+  all-devices-lost recovery path and carves out software-only, so it would have meant something
+  else here.
+- Escalated as **ledger Q15**, with an explicit "why this is not Q4, Q5 or Q14" paragraph (Q4: may
+  a predicate exist; Q5: is there a third cause; Q14: what score is it read against; Q15: how far
+  does the result reach).
+
+**Untouched on purpose**: the guarded two-ways-to-die sentence and the `lct-explainer:1160` variant
+(both thread ledger Q1); the 0.50 endpoint, in either direction; anything about *what* ends a life.
+
+**Still open from the Aug-07 log**: four LOWs (`/first-contact` pre-Start disclaimer stack,
+`/learn` time estimate, `/onramp` hub-to-hardbound seam, `/tldr` badge key naming three tiers and
+defining two), Unanswered Q3 (= the `/onramp` LOW) and Q4 (what the 0.50-ceiling tier experiences
+day to day). Plus the standing "identity is hardware-bound" five-surface follow-up.
+
 ## Aug-07 09:00 session - the arithmetic the site handed the reader and would not finish
 
 **Fresh visitor log** (`visitor/logs/2026-08-07.md`, 12 pages, understanding "good", all seven
