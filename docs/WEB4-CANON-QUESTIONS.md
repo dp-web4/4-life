@@ -919,7 +919,7 @@ design decision, recorded so the next session does not rediscover it.
   right, but it edits five verbatim-locked surfaces and deserves its own policy-reviewed pass, not
   a rider on a visitor-friction session.
 
-### Follow-up (not a canon question): "identity is hardware-bound" on /karma-consequences
+### ~~Follow-up: "identity is hardware-bound" on /karma-consequences~~ DISCHARGED 2026-08-08
 
 Filed 2026-08-07. Noticed while fixing Q8's hardware-required claim class, and left alone because
 the honest fix is larger than a hedge. `/karma-consequences` asserts *"In Web4, identity is
@@ -937,6 +937,46 @@ load-bearing role, and it is the **widest-reach** surface of the four, since a t
 term everywhere rather than living on one page. Found incidentally while confirming that `terms.ts`
 was free of "karma tier" (it is). Not fixed here: it is the same claim class as the four on
 `/karma-consequences` and belongs in the same scoped pass, not in a karma-tier cleanup.
+
+**DISCHARGED 2026-08-08 (09:00 session), and the Aug-08 visitor filed it independently as their
+only HIGH before the sweep ran.** Their framing is worth keeping, because it explains why an
+under-hedged sentence was the *most* damaging kind of defect on this particular site: *"On a site
+that hedges everything, an unhedged absolute reads as a deliberate signal that this one is settled
+... I did not catch this by being clever. Any reader who reads more than one page will hit this."*
+
+- **What shipped.** The thesis is scoped to the hardware tiers rather than hedged, per Ruling 1
+  (`LCT-linked-context-token.md:39` §1.2 clause 1, *"MUST NOT be excluded by the protocol"*), and
+  the exception is handed to the reader instead of left for them to find on a Going Deeper page.
+  The load-bearing paragraph is `/what-could-go-wrong:752-759` carried over as a **unit**, not the
+  `:757` sentence alone: `:757` opens *"the very gap that"*, whose antecedent is the device-loss
+  paragraph above it there, and `/karma-consequences` had **zero** prior occurrences of
+  "software-only", "Sybil", "ceiling" or "FIDO2" to receive it.
+- **The recorded list of five was a truncated grep.** The class ran to **13** surfaces:
+  - `/karma-consequences`: `:7` and `:16` (header), `:306`, `:382-384` (the boolean readout),
+    `:420-421` (the emerald panel), `:793` and `:798` (the "Web4 Solutions" bullets, missed by
+    every grep including the policy reviewer's), `:811-812`, `:817`
+  - `/karma-consequences` `COMPARISON_SYSTEMS` (the illustration behind the `:382` label:
+    `identityBound: true` with `issues: []` and the comment *"It's the solution, not the problem"*)
+  - `src/lib/terms.ts:178`
+  - `/first-contact:367`, `:370`, `:960-961`
+  - `/glossary:551-558`
+- **Two surfaces took DELETION, not a caveat.** `/first-contact:367` and `:370` sit in a
+  default-collapsed 4-card grid before the Start button, under a standing no-reword guard whose
+  rationale is density (Jul-13 vocab wall, Jul-17 pre-Start caveat pile-up, filed LOW). Ruling 1
+  does not reverse a density guard, so the absolutes were removed and the premise scoped, adding
+  nothing: that card is now shorter. The guard got an addendum recording that a gloss was narrowed
+  for correctness, not reworded for style, so a later pass does not read it as violated.
+- **Deliberately NOT done**: no ceiling number, no survival line, and no at-0.50 claim in either
+  direction entered `/karma-consequences`. That is the Q8 **equity** half, still under its holding
+  pattern; the sweep links to `#risk-accessibility` and `#software-only-survival` rather than
+  re-arguing it. Q8 requests 2 and 3 remain open and still need Q1.
+- **Lesson for the next sweep**: the illustration is a separate surface from the prose *and it has
+  two halves*. Qualifying the caveat panel (right column) would have left the `identityBound`
+  boolean printing a flat green **"Yes"** in the left column, which is
+  `[[prose-fixed-thrice-check-the-illustration]]` in miniature. And `issues: []` was load-bearing:
+  the render branches on `issues.length`, so putting the honest text there would have deleted the
+  "Why This Works" panel and printed a red "Attack Vectors" header, overshooting into false parity
+  with the platform rows.
 
 ---
 

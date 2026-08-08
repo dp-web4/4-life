@@ -175,7 +175,12 @@ export const terms: Record<string, TermDefinition> = {
     fullName: "Cross-Life Consequences",
     brief: "Your history follows you across 'lives' (restarts, rebirths, new contexts).",
     explanation:
-      "In Web4, consequences persist. Positive karma means more ATP and faster trust recovery when you restart. Negative karma means handicapped resources and slower rebuilding. You can't escape history by 'starting fresh' - hardware-bound presence prevents that.",
+      // Aug-08 visitor HIGH: this used to end "You can't escape history by 'starting fresh' -
+      // hardware-bound presence prevents that." That universal is false (Q8 Ruling 1: software-only
+      // anchoring is conformant and canon forbids excluding the tier), and this is the WIDEST-reach
+      // copy of it, since TermTooltip carries it wherever <Karma> renders. Scoped, not deleted:
+      // the claim is true at the hardware tiers and that is where the page's thesis lives.
+      "In Web4, consequences persist. Positive karma means more ATP and faster trust recovery when you restart. Negative karma means handicapped resources and slower rebuilding. Where your presence is anchored in hardware, 'starting fresh' means starting over on a new device, so your history is expensive to escape rather than free. Anchored in software alone, there is no device to abandon and the record stays sheddable.",
     learnMore: "/karma-consequences",
   },
 

@@ -2,6 +2,94 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-08 09:00 session - the one sentence the site would not hedge (Aug-08 HIGH + 2 MEDIUMs)
+
+**Fresh log**: `visitor/logs/2026-08-08.md`. Understanding "good", would return, would recommend
+*"with one warning"*. One HIGH, seven MEDIUMs, three LOWs. The HIGH is the **same defect already
+recorded as an open follow-up** in `docs/WEB4-CANON-QUESTIONS.md` from the Aug-07 sessions, filed
+independently by the visitor before the sweep ran.
+
+**The defect**: `/karma-consequences` asserted *"In Web4, identity is hardware-bound ... Bad actors
+can't escape their history"* flat, with no caveat, as the premise of its whole no-fresh-start
+thesis. `/why-web4` and `/lct-explainer` both say software-only identity is supported, and
+`/what-could-go-wrong:757` says the opposite outright (*"a dishonest user's record sheddable"*) on
+a page filed under Going Deeper, which nav puts *below* Core Concepts. The visitor's read of why
+this was the worst kind of defect on this particular site is the part worth keeping: *"On a site
+that hedges everything, an unhedged absolute reads as a deliberate signal that this one is settled
+... I did not catch this by being clever. Any reader who reads more than one page will hit this."*
+They closed by saying they would tell a friend to read `/what-could-go-wrong` **before**
+`/karma-consequences`.
+
+**Not a hedge, a change to what the page argues.** Grounding is upstream, not just cross-page:
+Q8 **Ruling 1** (2026-08-05) settles that software-only anchoring is conformant and that canon
+*forbids* protocol-level exclusion of the tier (`LCT-linked-context-token.md:39` §1.2 clause 1,
+*"MUST NOT be excluded by the protocol"*). So the universal was **false**, not under-hedged. The
+thesis is now scoped to the hardware tiers, and the exception is handed to the reader.
+
+**The recorded list of five surfaces was a truncated grep; the class ran to 13.** Missed by the
+ledger note *and* by the policy reviewer's own grep: `/karma-consequences:793` and `:798` (the
+"Web4 Solutions" bullets), `:420-421` (the emerald panel), `first-contact:367`, `:370`, `:960-961`,
+`glossary:551-558`. `first-contact:960` was the decisive one: the same false universal, in the same
+problem/solution shape, on a page **earlier in the five-page reading path**, so the default reader
+met it first.
+
+**Three things this pass got right only because it checked, and they generalize:**
+- **The propagated sentence was anaphoric.** `what-could-go-wrong:757` opens *"the very gap that"*,
+  whose antecedent is the device-loss paragraph above it *there*. `/karma-consequences` had **zero**
+  occurrences of "software-only", "Sybil", "ceiling" or "FIDO2". Carried alone it would have
+  dangled. Shipped the self-contained unit `:752-759` instead.
+  ([[propagate-the-sentence-not-your-summary]], and the destination-vocabulary check from
+  [[borrowed-word-means-something-else-there]].)
+- **The illustration has two halves.** Qualifying the caveat panel (right column) would have left
+  the `identityBound` boolean printing a flat green **"Yes"** in the left column. Both got the fix.
+  And `issues: []` was **load-bearing**: the render branches on `issues.length`, so putting the
+  honest text there would have deleted the "Why This Works" panel and printed a red "Attack
+  Vectors" header, overshooting into false parity with Twitter.
+  ([[prose-fixed-thrice-check-the-illustration]].)
+- **Two surfaces took DELETION, not a caveat.** `first-contact:367`/`:370` sit in a
+  default-collapsed 4-card grid before the Start button, under a standing no-reword guard whose
+  rationale is *density* (Jul-13 vocab wall; Jul-17 filed the pre-Start caveat pile-up as LOW).
+  Ruling 1 does not reverse a density guard. So: absolutes removed, premise scoped, **nothing
+  added**, card is shorter. The guard got an addendum saying a gloss was narrowed for correctness,
+  not reworded for style, so a later pass does not read it as violated.
+
+**Also shipped, both from the same log:**
+- **MEDIUM**: the karma-carryover disclosure now lands at `/first-contact`'s `+12`, the first place
+  a reader meets a carry-forward number. Three pages model it three ways and only `/how-it-works`
+  (page 4 of 5) disclosed the rule is unsettled. Karma half of `how-it-works:61-64` only; the death
+  half is ledger Q5 and is not that card's subject.
+- **MEDIUM**: R6/R7 added to the glossary acronym index. This one was **not** the gap it looked
+  like. Routing already shipped in Jul-24 (`/onramp` deep-links `#r6` twice; both cards define the
+  terms well), and the index omission was a **deliberate, twice-recorded** call. So this is a
+  reversal, argued on the Jul-28 MCP/RDF precedent (*entry-level by position in the reader's path,
+  not research-tier by subject matter*) because `/onramp` step 1 instructs the reader to learn
+  R6/R7. **Both** guard comments rewritten to record the reversal
+  ([[opposite-intents-in-code-comments]]). Jul-17 had already called `/onramp`'s R6/R7 "naked", so
+  this was a recurrence.
+
+**Deliberately not done**, and why:
+- **#3** (what ends a life) and **#7** ("stays below 0.5" duration) are ledger **Q5** and **Q2**.
+  Both already disclosed on-site; the divergence itself is escalated. The visitor is right that
+  the silence is conspicuous, and that is exactly what the escalation is for.
+- **#4** (Life 1 nets +45, which needs the commission the site calls unsolved) is ledger **Q13**,
+  taught at `/atp-economics#newcomer-solvency` (#518). The *illustration* half may be a fresh
+  angle; noted, not taken, because the Complete Example was just worked in #521.
+- **#6** (0.50 ceiling framed only as a growth limit on `/why-web4`) is the Q8 **equity** half,
+  under an explicit holding pattern. **No ceiling number, no survival line, and no at-0.50 claim in
+  either direction entered any file this session.**
+- **#9** (onramp word overload) - gate FIRED Jul-23, operator branding call. The visitor says
+  `/tldr` defuses it, which it does.
+- **#8**, **#10** - LOW.
+
+**Open for a later pass**: `src/lib/terms.ts:33` glosses LCT as *"Your hardware-bound proof of
+verifiable presence"*, and the acronym index at `glossary:~160` glosses it *"hardware-rooted
+identity"*. Those are **definitional** claims about LCT rather than the no-fresh-start argument, so
+they were left out of this sweep on purpose, but they are the same shape and Ruling 1 touches them.
+Not filed as a canon question: it is a site-copy call, not a canon one.
+
+**Ledger**: the "identity is hardware-bound" follow-up is marked **DISCHARGED** with the final
+13-surface list. Q8 requests 2 and 3 remain open and still need Q1.
+
 ## Aug-08 03:00 session - the third edge, and why it is not there (Aug-07 `/onramp` LOW = Unanswered Q3)
 
 **No fresh log** (session ran at 03:00, before the 05:00 browse). Aug-07 has now been worked four
