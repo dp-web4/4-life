@@ -23,7 +23,7 @@ interface Stage {
   emoji: string;
   label: string;
   caption: string;
-  atp: number; // energy budget, 0-120 scale (rebirth surplus is 112)
+  atp: number; // energy budget, 0-120 scale (rebirth total is 112 = the usual 100 + 12 karma)
   trust: number; // T3, 0-1 scale (0.50 = neutral, below 0.50 = restricted)
   tone: Tone;
 }
@@ -84,7 +84,17 @@ const STAGES: Stage[] = [
     emoji: '🌅',
     label: 'Rebirth',
     caption:
-      'Good karma carries forward: she is reborn with a surplus (112 energy) and trust above neutral. Lessons compound.',
+      // Aug-09: this caption said "reborn with a surplus (112 energy)". Two problems.
+      // (1) "surplus" is forbidden framing. first-contact:459-464 is a standing numbers-integrity
+      //     guard on this exact figure: Alice dies at ATP=0 by exhaustion, earning 37 and spending
+      //     137, so she spent MORE than she earned. "Keep the bonus framed as karma, never as a
+      //     spending surplus." Same Alice, same numbers, and this component went unswept
+      //     ([[prose-fixed-thrice-check-the-illustration]]).
+      // (2) It showed the total with no base, the same omission as the /first-contact Act-5 badge
+      //     that produced the Aug-09 HIGH. This component renders on /how-it-works:380, so it is a
+      //     rebirth-number surface on a page that also shows 145 -> 145 further down.
+      // Wording propagated from first-contact:857-858, not re-authored.
+      'Good karma carries forward: she restarts at 112 energy, the usual 100 plus a 12 karma bonus her track record earned, and trust above neutral. Lessons compound.',
     atp: 112,
     trust: 0.54,
     tone: 'reborn',
