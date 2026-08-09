@@ -2,6 +2,72 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-09 03:00 session - four under-counts, two bugs (the /lct-explainer remainder)
+
+**No fresh log** (03:00, before the 05:00 browse). The Aug-08 friction table is exhausted: the HIGH
+and three MEDIUMs shipped in #525/#526, and everything left is fenced (#3/#7 = ledger Q5/Q2, #6 =
+Q8 equity holding pattern, #9 = branding gate fired Jul-23, #10 = contested, and its current
+ordering is itself a **Jul-1 HIGH fix**, so the literal suggestion would invert a treatment). What
+was **not** fenced: #526 closed by enumerating, file:line, a remainder it deliberately did not
+work, and flagged that this claim class had been under-counted three times running.
+
+**So the session did the one thing that actually generalizes: it re-ran the recorded grep instead
+of trusting the recorded list.** #526 enumerated 13 lines on `/lct-explainer/page.tsx`, the page it
+called *"the big one, the page that owns the definition"*. The grep returns **39**. With `-i`,
+**47**.
+
+**The mechanism, which is the finding.** Four under-counts in a row were **four instances of the
+same two bugs**, not four lapses of diligence:
+- the recorded grep is **case-sensitive**, missing 8 sentence-initial `Hardware-bound` lines,
+  including one in the *same data array* as a line that was on the list;
+- the recorded grep is **per-line**, and cannot see JSX prose wrapped at ~100 columns
+  (`:216-217`, the "Token" clause of the name etymology, sitting inside the hero);
+- and a sixth blind spot no version of the grep ever caught: the pattern is anchored on
+  `hardware-<suffix>` compounds, so **hardware as a bare noun or subject** is invisible
+  (`keys in hardware`, `Hardware requires`, `Hardware attestation`, `rooted in physical chips`,
+  `a presence your hardware proves`, `Web4 trusts what hardware proves`).
+
+It happened **twice more inside this session**, both caught only by checking: my own "34" was an
+eyeball miscount of terminal output, and the policy reviewer's `:1466` pointer was a line number
+transcribed from a different `sed` window (the rendered line is `:386`). Three for three, one
+mechanism: **a number transcribed instead of derived.** The corrected grep is now in the ledger.
+
+**21 surfaces fixed, and the shape of the fixes is the point.** Two are **pure deletions** where
+the correct word was already sitting next to the wrong one: `:386` drops four words because `:363`
+already ships *"Identity is: What witnesses verify"* 23 lines above in the same block, and `:1856`
+drops *"hardware-bound"* because the sentence directly before it already said *"Verified presence
+is the foundation."* Four more are one-word swaps into vocabulary #525/#526 already shipped.
+Nothing was coined. ([[density-guard-means-delete-not-caveat]],
+[[propagate-the-sentence-not-your-summary]].)
+
+**The `attackScenarios` panel was one surface, not seven cells.** The reader drives it with a
+scenario selector, so the seven Web4 results are read consecutively, and **five** of them answered
+*"why is Web4 safe?"* with *"hardware"*. Fixing only the two the grep could see would have left the
+panel making the same move three more times. That is exactly visitor log line **120**, which is the
+honest provenance for this whole slice: *"the site is more honest in its prose than in its examples
+... Every place I found a gap, the prose already conceded it and the illustration did not."*
+Two cells were **kept**, with the distinction recorded: `:105`'s condition sits in a **restrictive
+noun phrase** (*"Keys in TPM/Secure Enclave"*), so a software-only reader is not told their keys
+are safe, whereas `:133`'s *"Keys hardware-bound"* was a **predicate about Web4 keys as such**.
+
+**One fix was invisible to every grep and found only by reading.** `:845`'s *"not a key file you
+store"* is the Web3 contrast, and it is false at the software-only tier, where the key **is** a
+file. It sat between two lines that were on the list. Replaced with `:215`'s already-shipped
+*"not a username a server looks up"*.
+
+**Honest about provenance.** The Aug-08 visitor did **not** file `/lct-explainer` as
+self-contradictory; at log lines 62-65 they read it and came away with the *correct* model. This is
+ledger-handoff work licensed by line 120, not fresh friction, and the session log says so.
+
+**Fences held.** No ceiling number, no survival line, no at-0.50 claim in either direction. `:277`
+untouched (explicit do-NOT-reword guard). `:2302-2305` and `:2406` are Q8-**equity** adjacent and
+were left alone. A **KEEP list with a reason each** is in the ledger so the next pass does not
+re-litigate 20-odd correct surfaces, including one tripwire: `:2536` is correct only because
+`:2535` stipulates a chip in the walkthrough's first clause.
+
+**Open**: every other file in #526's remainder list. Assume the same ~3x understatement and re-run
+the corrected grep, do not trust the enumerations.
+
 ## Aug-08 15:00 session - the example that assumed the thing the site calls open (Aug-08 MEDIUM #4 + LOW #8 + the definitional half of the HIGH)
 
 **Same log, second session.** `visitor/logs/2026-08-08.md` was triaged at 09:00 (#525: the HIGH and

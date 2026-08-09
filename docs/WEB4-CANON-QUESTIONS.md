@@ -1056,6 +1056,120 @@ mechanics passage.
 site-copy sweep with a known remainder, tracked here only because the remainder has now been
 truncated three times.
 
+### Disposition: `/lct-explainer/page.tsx`, the whole page, and why the grep kept lying
+
+Worked 2026-08-09 (03:00 session). The section above named this file *"the big one, the page that
+owns the definition"* and listed **13** lines on it. That list was short a **fourth** time.
+
+**The count, three ways.** The recorded grep returns **39** on this file, not 13. Adding `-i`
+returns **47**. A whitespace-normalized pass adds two more spans. The reason is not diligence, and
+this is the part worth keeping:
+
+- **The recorded grep is case-sensitive.** It misses 8 sentence-initial `Hardware-bound` lines,
+  including `:112` in the *same data array* as the `:133` that was on the list.
+- **The recorded grep is per-line.** It cannot see JSX prose wrapped at ~100 columns. Two true
+  wrap spans on this page: `:216-217` (*"It lives in your device's security / chip"*, the "Token"
+  clause of the name etymology, a definition-of-record surface sitting inside the hero) and
+  `:464-465` (*"tamper-resistant security / chips"*, correct as-is).
+- **The pattern is anchored on `hardware-<suffix>` compounds and cannot see hardware as a bare
+  noun or subject.** This is the sixth blind spot and the one no version of the grep has ever
+  caught: `keys in hardware` (`:91`), `Hardware requires` (`:98`), `Hardware attestation` (`:119`),
+  `rooted in physical chips` (`:54`), `a presence your hardware proves` (`:846`),
+  `Web4 trusts what hardware proves` (`:386`).
+
+**Corrected grep. Record this one, and run a normalized pass beside it.**
+
+```
+grep -rniE "hardware.?(bound|rooted|anchored|backed|based|tied|locked)|rooted in (hardware|physical chips|the silicon)|bound to (physical )?(hardware|a device|your device)|security chips?|hardware proves|keys in hardware|[Hh]ardware (requires|attestation)" src/ --include=*.ts --include=*.tsx
+```
+
+Four under-counts in a row on this claim class were **four instances of the same two bugs**, not
+four lapses of diligence. Two more of the same shape happened inside this session: my own count
+of "34" was an eyeball miscount of terminal output, and the policy reviewer's `:1466` pointer was
+a line number transcribed from a different `sed` window (the rendered line is `:386`). Three for
+three, same mechanism: **a number transcribed instead of derived.**
+
+**FIX, 21 surfaces**, all propagation, no coined vocabulary:
+
+| Line | What it said | Why defective |
+|---|---|---|
+| `:22` | JSDoc header, *"your hardware-bound ... participation"* | file's own self-description; not rendered, fixed so the next grepper is not misled |
+| `:54` | *"Your presence is rooted in physical chips"* | component-registry definition of **presence as such**; component name `"Hardware Binding"` kept, it genuinely is that |
+| `:91` `:98` `:112` `:119` `:133` | the `attackScenarios` Web4 column | see below |
+| `:182` | hero *"More precisely"* definition | the page's **first** definition |
+| `:216-217` | the "Token" clause of the name etymology | definition-of-record, inside the hero |
+| `:242` | Key Takeaway 1, **first clause only** | the silicon / key-non-extraction mechanism after it is correctly tier-descriptive and survives untouched |
+| `:372` | Web4 *"Strength:"* cell | comparison-grid illustration |
+| `:386` | *"Web4 trusts what hardware proves and witnesses verify"* | **pure deletion of four words.** `:363` already ships *"Identity is: What witnesses verify"* 23 lines above in the same block, so this makes them byte-consistent, preserves the triad's `memorize / store / X` parallelism, and takes net words down |
+| `:393` | *"Hardware-bound identity doesn't mean real-name identity"* | one word |
+| `:466` | skip-ahead gloss | matched to the shorthand shipped at `why-web4:380` |
+| `:798` | comparison-table cell, *"Pseudonymous - hardware-bound"* | the row's subject is pseudonymity; hardware was gratuitous |
+| `:844` `:845` `:846` | *"What Is an LCT?"* informal definition | three fixes in one sentence, see note |
+| `:852` | *"In short, a hardware-bound, witnessed, contextual proof of presence"* | the formal recap on the definition-owning page |
+| `:1856` | *"Without hardware-bound presence, energy budgets don't work"* | **deletion**; the sentence immediately before it already says *"Verified presence is the foundation"*, so the correct word was sitting in front of it |
+| `:2205` | *"Because LCTs are hardware-bound and multi-witnessed, they resist forgery"* | the bullets under it name TPM/Secure Enclave/FIDO2 and stay |
+| `:2335` `:2340` `:2343` | `faq-ai-agents`, *"there's always a hardware-anchored human or org at the root"* | the card's real point is that an AI **inherits** an anchor through a delegation chain rather than possessing one; the hardware qualifier does no work in that argument and makes the root tier-exclusive |
+| `:2394` | *"An LCT is bound to hardware that only you control"* | falsified by `:2400`, six lines down on the **same card** |
+
+**The `attackScenarios` panel is one surface, not seven cells.** The reader drives it with a
+scenario selector, so all seven Web4 results are read consecutively. Five of them answered
+*"why is Web4 safe?"* with *"hardware"*. Fixing the two the grep could see would have left the
+panel making the same move three more times, which is exactly the shape visitor log line 120
+describes (*"the site is more honest in its prose than in its examples"*).
+
+- `:91` -> the no-passwords / no-central-database facts are true at **every** tier; *"keys in
+  hardware"* was doing no work in the verdict. Deletion.
+- `:98` -> phishing fails because there is no secret to type, not because of biometrics. The
+  stated reason was both hardware-definitional **and** not the actual mechanism.
+- `:112` -> *"Key-based identity"*. True at every tier, which is the point.
+- `:119` -> signatures do the work; *"Hardware attestation + "* deleted.
+- `:133` -> *"IMPOSSIBLE"* is false at the software-only tier, where the key **is** a file.
+  Now scoped, and the tier asymmetry is stated rather than deleted.
+- **KEEP `:105`** (Device Theft): its condition sits inside a **restrictive noun phrase**,
+  *"Keys in TPM/Secure Enclave"*, so a software-only reader is not told their keys are safe.
+  This is the exact distinction from `:133`, whose *"Keys hardware-bound"* was a **predicate
+  about Web4 keys as such**. Do not "align" these two.
+- **KEEP `:126`** (Insider Threat): no hardware claim at all.
+
+**Safe to edit, and why it was not last time.** `web4Result` has **no load-bearing render
+structure**: `:1774/:1779/:1784` are three flat `<div className="text-sm text-gray-400">{...}</div>`,
+no `issues.length` branch, no color derived from the string. Unlike #525's `identityBound` case,
+editing these cells cannot silently delete a panel.
+
+**Note on `:844-846`.** Three fixes in one sentence. The middle one was **not** in the grep class
+and was found only by reading: *"not a key file you store"* was the Web3 contrast, and it is false
+at the software-only tier where the key **is** a file. Replaced with `:215`'s already-shipped
+*"not a username a server looks up"* contrast. The Web2/Web3/Web4 comparison it used to carry
+lives intact at `:384-386`.
+
+**KEEP, with a reason each, so the next pass does not re-litigate:**
+`:70`, `:105`, `:126`, `:277`/`:283` (**explicit do-NOT-reword guard**), `:411`, `:419`,
+`:464-465`, `:469-475`, `:605`, `:616`, `:1117`, `:1118`, `:1406`, `:1452`, `:1495-1502`,
+`:2012`, `:2123`, `:2180` (the code block's own comment; the block renders the Face ID + chip
+flow, so it is scenario-scoped), `:2189`, `:2280` (already fixed by #525), `:2302-2305`, `:2406`,
+`:2535`, `:2536`. All are tier-descriptive: they say what hardware anchoring **buys**, which is
+the correct claim.
+
+- **`:2302-2305` and `:2406` are Q8-EQUITY adjacent** and were not touched. They carry the
+  ceiling number and the affordability framing, and the equity half is under a holding pattern.
+- **`:2536` is the one KEEP whose correctness depends on a sentence above it** rather than on its
+  own content: *"identity lives in the hardware, not usernames"* is **scenario-scoped by
+  `:2535`'s stipulation** that the app detects a TPM or Secure Enclave in the walkthrough's first
+  clause. Tripwire: if that walkthrough ever gains a software-only variant, or if `:2535` is
+  edited, `:2536` becomes defective silently.
+
+**Render honesty.** `:1856` is gated behind `exploredAttacks.size >= 5 && exploredComponents.size
+>= 4` and `:2205` sits inside a collapsed `<details>`. Both ship, neither is a front-page surface.
+
+**Fences held.** No ceiling number, no survival line, and no at-0.50 claim in either direction
+entered any file. `:277` untouched.
+
+**Still open**, unchanged by this session: every non-`/lct-explainer` file in the remainder list
+above (`/how-it-works`, `/first-contact`, `/your-internet`, `/identity-constellation`,
+`/why-web4` body prose, `/glossary:1642`, `/atp-economics`, `InteractiveWireframes.tsx`,
+`/learn`, `/day-in-web4`). Re-run the **corrected** grep against each; the 13-line list for this
+page understated it by roughly 3x, and the same understatement should be assumed everywhere else.
+
 ---
 
 *Maintained by the 4-life autonomous track. Add new entries only with a policy-review-approved
