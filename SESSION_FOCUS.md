@@ -2,6 +2,78 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-09 15:00 session - the fence that named two of the models it already knew about
+
+**No fresh log** (today's was triaged at 09:00 by #528; its HIGHs and MEDIUMs are discharged).
+This session took the residual that session **logged and bounded out**, and found the fix had
+a wider blast radius than the note said.
+
+### The residual, and why it was worse than logged
+
+#528 rewrote `LifecycleDemo`'s rebirth caption to state the model outright (*"she restarts at
+112 energy, the usual 100 plus a 12 karma bonus"*). That made `/how-it-works` a **two-model
+page**: base-plus-bonus in the demo at the top of `#journey`, intact balance (145 -> 145)
+further down. The 09:00 note said *"Both are individually caveated"*. **The demo is not.** The
+component is 280 lines and contains zero fence text; the fence for that exact figure lives on
+`/first-contact:519-525`. So the page showed two models, fenced one, and said nothing about
+the other being a choice at all.
+
+### The fence disclosed two of the three models this track had already recorded
+
+`EndOfLifeCaveat` (rendered twice) fenced the amount as *"whether you keep your whole final
+balance or a reduced portion of it"*. That dichotomy reads as exhaustive, and the ledger's own
+**Jul-30 table in Q5 records three models**, the third being `/karma-consequences`'s
+`100 + karma * 2`, which is the shape the demo above now visibly uses. A fence can be honest
+about uncertainty and still under-count it. Widened to three branches, in this page's own
+vocabulary (**+8 words**, on a component that renders twice), plus a **44-word** fence under the
+demo propagated from the caveat's own phrases, pointing by **prose**: the page has no anchor
+between `#journey` and `#two-ways-to-die`, and the karma examples have no id
+([[check-what-renders-at-the-anchor]], inverted - here the anchor does not exist yet).
+
+### The cross-page pointer became false when the demo got its caption
+
+`/karma-consequences` told the reader *"the lifecycle walkthrough models it the other way,
+carrying the balance forward intact"* and linked `/how-it-works#journey`. Since #528 that
+anchor **opens** with the demo, which models it that page's way. Narrowed to *"the lifecycle
+walkthrough's karma examples"*. Two words, and the sentence stops being wrong about its own
+target. Worth recording: this is a fix in one PR sharpening a seam in another page's prose,
+found only by reading the destination.
+
+### The two surfaces the proposal missed, both found by the policy reviewer's own grep
+
+- **`/glossary:1253`** still read *"a portion of your final ATP carries forward as karma"*,
+  stated flat as the **definition** of rebirth, four lines above a link into
+  `/how-it-works#journey`. That is verbatim the framing `/how-it-works` **removed on Jul-30 as
+  falsified by its own next line**, logged as removed in the ledger, and the last live instance
+  in the repo. The `/what-could-go-wrong:253-256` guard that fixed this class named
+  `first-contact`, `how-it-works`, `glossary` as canonical and never swept it
+  ([[guard-comment-names-the-un-swept-page]], now four for four). Replaced with the
+  track-record framing `/how-it-works` already ships verbatim. **No fence added**: a
+  definitional card names the term, it does not illustrate an amount, so it has nothing to fence.
+- **`/atp-economics:2264`** ships `agent.reborn(karma=agent.atp_history)` in pseudocode - karma
+  as the whole ATP **history**, a **fourth** shape, on the page already logged as having no
+  caveat. **Recorded in the ledger, not fixed.** Anywhere Q5 said "three models", it now reads
+  "at least four".
+
+**Nothing was ruled.** No figure moved (112 / 145 / 130 / 165 / `100 + karma * 2` /
+`atp_history`), no branch endorsed. This widens a disclosure; Q5 is still the open question.
+The `/first-contact:505-518` guard was amended in place to record that widening an enumeration
+is **not** re-syncing the sentence it forbids propagating, and that the divergence still holds.
+
+### Deliberately not done
+- **`/why-web4:3226-3232`** attaches rebirth to **trust** death (*"Recovery requires starting a
+  new identity with karma"*), which `/glossary` and `/karma-consequences` call permanent and
+  which `T3 >= 0.5` eligibility excludes. Higher severity than what was fixed here, and **not a
+  one-clause job**: the same card's next paragraph carries *"a new identity is created by the
+  same hardware (LCT)"*, the absolute class Q8 Ruling 1 and #525 constrain. Two entangled claim
+  classes in one card. Logged in Q5 with file:lines. **Take this next.**
+- `/atp-economics`'s own end-of-life caveat: still the logged larger job (that page defines a
+  real ATP = 0 death).
+- Aug-09 LOWs: `raw x CI^2` placement (note: that sentence is already inside an opt-in
+  `<details>`, so re-check what the visitor actually read before treating it as prominence),
+  /tldr vs /running-now tag tiers, "no live network" reconciliation placement, nav visual
+  weight. Unanswered Q3 (the 0.50 endpoint escalation), Q5, Q6.
+
 ## Aug-09 09:00 session - the caveat that could not produce its own number (Aug-09 both HIGHs + all 3 MEDIUMs)
 
 **Fresh log**: `visitor/logs/2026-08-09.md`. Understanding "good", would return, would recommend

@@ -511,11 +511,21 @@ export default function FirstContactPage() {
                   The replacement fences the axis that can actually produce 12: how much karma
                   converts. The fence itself is unchanged in force ("one modelling choice, not the
                   rule") and no figure moved.
-                  Do NOT propagate this wording back to karma-consequences:726 or
-                  how-it-works's EndOfLifeCaveat. The balance-carry dichotomy is correct THERE, and
+                  Do NOT propagate this wording back to karma-consequences (its fence is the one
+                  ending "not as the settled numbers") or to how-it-works's EndOfLifeCaveat. The
+                  balance-carry dichotomy is correct THERE, and
                   atp-economics:1633 ("85 ATP, reduced from the crisis") actually instantiates the
                   reduced-portion branch. This divergence is the fix, not a drift to be re-synced.
-                  Base grant propagated from :857-858, not re-derived. Net word count is flat. */}
+                  Base grant propagated from :857-858, not re-derived. Net word count is flat.
+                  Aug-09 (15:00) addendum, so a later pass does not mistake one act for the other:
+                  EndOfLifeCaveat's dichotomy was WIDENED to three branches, because the demo above
+                  it on that page shows a model the two branches excluded. Widening an enumeration
+                  is not propagating this sentence, and this card's wording was NOT carried over
+                  there (that fence uses its own page's vocabulary). The divergence recorded above
+                  still holds and is still deliberate. karma-consequences was checked and left
+                  alone: the formula it fences IS the third branch, named in the line before, so
+                  its two-branch sentence is complete in its own context. Line numbers deliberately
+                  replaced with grep targets here ([[guard-comment-cites-rot-name-the-target]]). */}
               <p className="text-xs text-amber-300/70 mb-3 leading-relaxed">
                 <strong className="text-amber-300">About that number:</strong> everyone starts a life
                 with 100, and the 12 is what her track record earned on top, so she restarts at 112.

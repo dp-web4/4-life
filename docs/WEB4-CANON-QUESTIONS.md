@@ -337,6 +337,46 @@ instead of re-litigating.
     its own. It also defines a genuine ATP = 0 death, so it needs its own framing rather than a
     hoisted copy of `EndOfLifeCaveat`. Follow-up for a future session.
 
+  **⚠️ Aug-09: the count is at least FOUR, and the fences disclosed two of them.** Two findings
+  from the Aug-09 15:00 session, both from surfaces this entry's own tables did not cover:
+  - **A fourth shape ships in pseudocode.** `/atp-economics:2264`, inside a `<details>` fold,
+    runs `agent.reborn(karma=agent.atp_history)` - karma as the whole ATP **history**, which is
+    neither the final balance, nor a portion of it, nor `100 + karma * 2`. It is on the page this
+    entry already lists as having no caveat, so it is **recorded, not fixed**; the fix is the same
+    logged larger job. Anywhere this entry said "three models", read "at least four".
+  - **The on-page fences enumerated two of the three this entry already knew about.**
+    `EndOfLifeCaveat` and the `/karma-consequences` copy of its wording both fenced the amount as
+    *"whether you keep your whole final balance or a reduced portion of it"*, a dichotomy that
+    reads as exhaustive and excludes the `100 + karma * 2` shape recorded in the Jul-30 table
+    above. That became visible on one page when PR #528 rewrote `/how-it-works`'s
+    `LifecycleDemo` rebirth caption to state the model outright (*"she restarts at 112 energy, the
+    usual 100 plus a 12 karma bonus"*): the page then showed the base-plus-bonus model at the top
+    of `#journey` and the intact-balance model further down, with a fence naming only the second.
+    - **Disposition** (widening a disclosure, not a ruling): `EndOfLifeCaveat`'s karma half now
+      names three branches, in that page's own vocabulary; a 44-word fence under the demo says the
+      112 is one modelling choice and that the karma examples below show a different one; and
+      `/karma-consequences`'s pointer, which claimed *"the lifecycle walkthrough models it the
+      other way"*, is narrowed to *"the lifecycle walkthrough's karma examples"*, since the
+      walkthrough's opening demo models it that page's way. No figure moved (112 / 145 / 130 / 165
+      / `100 + karma * 2` / `atp_history` all untouched), no branch endorsed, and the ruling
+      requested above is unchanged.
+    - **`/glossary` was the last live instance of a framing removed on Jul-30.** `:1253` still
+      read *"a portion of your final ATP carries forward as karma"*, stated flat as the definition
+      of rebirth, four lines above a link into `/how-it-works#journey`. That is the wording the
+      Jul-30 table records as *removed* from `/how-it-works` because its own next line falsifies
+      it. Replaced with the track-record framing `/how-it-works` already ships verbatim, which is
+      the one thing all four models agree on. A definitional card gets no fence: it names the
+      term, it does not illustrate an amount.
+    - **Not this entry, logged for its own pass**: `/why-web4:3226-3232` attaches rebirth to
+      **trust** death (*"Recovery requires starting a new identity with karma"*), which
+      `/glossary` and `/karma-consequences` both call permanent and which the `T3 >= 0.5`
+      eligibility rule excludes. `/what-could-go-wrong:253-256` is a standing guard that fixed
+      exactly this error on its own page and names `first-contact`, `how-it-works`, `glossary` as
+      canonical; `/why-web4` was never swept. It is not a one-clause job: the same card's next
+      paragraph carries *"a new identity is created by the same hardware (LCT)"*, the
+      hardware-bound absolute class that Q8 Ruling 1 and PR #525 constrain. Two entangled claim
+      classes in one card.
+
 ### Q6. What does the `/` in the canonical equation assert?
 
 - **The question**: canon publishes an operator table for

@@ -47,7 +47,17 @@ const HOW_IT_WORKS_SECTIONS = [
    there in the same pass so the two pages cannot diverge on identical numbers.
    Do NOT hoist this component into src/components/ to share it with /atp-economics: that page has
    no caveat of its own and defines a real ATP=0 death at :1127. Giving it one is a separate,
-   larger job than the filed friction. Logged as follow-up, not done here. */
+   larger job than the filed friction. Logged as follow-up, not done here.
+   Aug-09 (15:00): the karma half was a DICHOTOMY ("whole final balance or a reduced portion"),
+   which read as exhaustive and excluded the model this same page shows above it - the demo's
+   base-plus-bonus 112, stated outright by #528. This track's own ledger has recorded three models
+   since Jul-30 (WEB4-CANON-QUESTIONS.md Q5, the addendum table), so the fence disclosed two of the
+   three it already knew about. Third branch added, in this page's vocabulary. That WIDENS a
+   disclosure; it endorses no branch, moves no figure, and is not the ruling (still Q5).
+   Not exhaustive even now: /atp-economics:2264 ships a fourth shape in pseudocode
+   (`agent.reborn(karma=agent.atp_history)`), on the page that still has no caveat. Logged in Q5.
+   Do NOT re-sync this sentence with /first-contact:519-525. That card fences a different axis on
+   purpose and its guard at :505-518 says so. */
 function EndOfLifeCaveat() {
   return (
     <p className="text-xs text-amber-300/70 mt-3 leading-relaxed">
@@ -58,9 +68,9 @@ function EndOfLifeCaveat() {
       standard says what stops you acting (ATP reaches zero) and what is permanent (sustained trust
       collapse), and it names no term limit, no lifespan, and no natural end of life. So rather
       than invent a third cause to justify the figures below, this page declines to name one. How{" "}
-      <em>much</em> karma carries is also unsettled: whether you keep your whole final balance or a
-      reduced portion of it is not decided, and this walkthrough shows one modelling choice, not
-      the rule. Read it for the shape (a good track record starts your next life stronger), not for
+      <em>much</em> karma carries is also unsettled: whether you keep your whole final balance, a
+      reduced portion of it, or a fresh starting balance plus a karma bonus is not decided, and
+      this walkthrough shows one modelling choice, not the rule. Read it for the shape (a good track record starts your next life stronger), not for
       the death rule or the exact carry-forward.
     </p>
   );
@@ -398,6 +408,28 @@ export default function HowItWorksPage() {
         </p>
 
         <LifecycleDemo />
+
+        {/* Aug-09 (15:00): the residual the 09:00 session logged and bounded out. #528 rewrote the
+            demo's rebirth caption to state the model outright ("she restarts at 112 energy, the
+            usual 100 plus a 12 karma bonus"), which made THIS page a surface for two different
+            carry-forward models: the demo's base-plus-bonus here, and the karma examples' intact
+            balance (145 -> 145) at :1000 and :1210. Nothing said they were two choices, and the
+            demo's figure carried no fence at all, while the identical figure on
+            /first-contact:519-525 does. That is the Aug-09 visitor's MEDIUM #3 ("three different
+            rebirth-ATP models ... extend the cross-reference so it names every surface that shows
+            a rebirth number") seen from inside one page.
+            Wording is propagated from this page's own EndOfLifeCaveat below ("How much karma
+            carries", "one modelling choice, not the rule", "read it for the shape"), NOT from
+            /first-contact's version - that card's guard at :513-518 keeps the two deliberately
+            divergent, because it fences a different axis. Points by PROSE, not by link: this page
+            has no anchor between #journey and #two-ways-to-die, and the karma examples have no id.
+            Do not add a figure here; 112 is already on screen in the demo. */}
+        <p className="text-xs text-amber-300/70 mb-8 leading-relaxed">
+          <strong className="text-amber-300">About that 112:</strong> how much karma carries is not
+          settled, and this is one modelling choice, not the rule. The karma examples further down
+          this section show a different one, carrying the whole ending balance forward. Read both
+          for the shape, not the amount.
+        </p>
 
         {/* Birth */}
         <div className="mb-12">

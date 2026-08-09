@@ -1248,11 +1248,26 @@ export default function GlossaryPage() {
             trust (raw &times; CI&sup2;). A lower CI raises your costs and narrows your access; it
             does not push you toward trust death.
           </p>
+          {/* Aug-09 (15:00): this said "a portion of your final ATP carries forward as karma",
+              which is the exact framing /how-it-works REMOVED on Jul-30 as falsified by its own
+              next line (see its guard, `grep -n "a portion of your final ATP" src/app/how-it-works`;
+              logged in WEB4-CANON-QUESTIONS.md Q5's Jul-30 table as "removed Jul-30"). It survived
+              here stated as settled fact, on the page a reader consults precisely to settle a term,
+              four lines above a link into /how-it-works#journey - the anchor whose own figures
+              contradict it. The guard that fixed this class on /what-could-go-wrong named
+              first-contact, how-it-works and glossary as canonical and never swept the wording
+              here ([[guard-comment-names-the-un-swept-page]]).
+              Replaced with the track-record framing /how-it-works already ships verbatim ("a head
+              start earned by the track record of your previous life"), which is the ONE thing all
+              the models agree on. No figure added and no fence added: this card defines the term,
+              it does not illustrate an amount, so it has nothing to fence. Do not re-attach karma
+              to a balance here in either direction; the amount is ledger Q5. */}
           <p className="text-gray-400 text-sm leading-relaxed mb-3">
             <strong className="text-gray-300">Rebirth</strong> is what follows the recoverable kind.
-            Same LCT, same history: your identity and record persist and a portion of your final ATP
-            carries forward as <strong className="text-gray-300">karma</strong>. It is closer to a
-            suspended license reinstated than a clean slate, not a new account.
+            Same LCT, same history: your identity and record persist, and{" "}
+            <strong className="text-gray-300">karma</strong> carries forward: a head start earned by
+            the track record of your previous life. It is closer to a suspended license reinstated
+            than a clean slate, not a new account.
           </p>
           <p className="text-gray-500 text-xs mb-3">
             Plain English: &ldquo;Running out of energy is a suspension you can come back from.
