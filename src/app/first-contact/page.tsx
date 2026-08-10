@@ -502,7 +502,8 @@ export default function FirstContactPage() {
                   of zero is also zero. Neither of the two options the caveat offers can produce 12."
                   They are right, and the guard above says why. The "whole final balance vs reduced
                   portion" sentence was PROPAGATED VERBATIM from how-it-works's EndOfLifeCaveat
-                  (:479 records the propagation as deliberate). But that caveat captions the
+                  (the Aug-08 guard immediately above this one records the propagation as
+                  deliberate). But that caveat captions the
                   BALANCE-CARRY model (145 -> 145). This card does not use that model. The sentence
                   was carried onto an illustration with a different subject, so it fenced a question
                   this card never asks and left the one it does ask unfenced
@@ -516,7 +517,9 @@ export default function FirstContactPage() {
                   balance-carry dichotomy is correct THERE, and
                   atp-economics:1633 ("85 ATP, reduced from the crisis") actually instantiates the
                   reduced-portion branch. This divergence is the fix, not a drift to be re-synced.
-                  Base grant propagated from :857-858, not re-derived. Net word count is flat.
+                  Base grant propagated from this page's own rebirth paragraph
+                  (grep -n "starts with 100, but the trust she built" src/app/first-contact),
+                  not re-derived. Net word count is flat.
                   Aug-09 (15:00) addendum, so a later pass does not mistake one act for the other:
                   EndOfLifeCaveat's dichotomy was WIDENED to three branches, because the demo above
                   it on that page shows a model the two branches excluded. Widening an enumeration

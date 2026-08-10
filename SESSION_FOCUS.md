@@ -15,7 +15,8 @@ a wider blast radius than the note said.
 page**: base-plus-bonus in the demo at the top of `#journey`, intact balance (145 -> 145)
 further down. The 09:00 note said *"Both are individually caveated"*. **The demo is not.** The
 component is 280 lines and contains zero fence text; the fence for that exact figure lives on
-`/first-contact:519-525`. So the page showed two models, fenced one, and said nothing about
+`/first-contact` (`grep -n "About that number" src/app/first-contact`). So the page showed two
+models, fenced one, and said nothing about
 the other being a choice at all.
 
 ### The fence disclosed two of the three models this track had already recorded
@@ -41,7 +42,8 @@ found only by reading the destination.
 
 ### The two surfaces the proposal missed, both found by the policy reviewer's own grep
 
-- **`/glossary:1253`** still read *"a portion of your final ATP carries forward as karma"*,
+- **`/glossary`'s Rebirth definition card** (`grep -n "is what follows the recoverable kind"
+  src/app/glossary`) still read *"a portion of your final ATP carries forward as karma"*,
   stated flat as the **definition** of rebirth, four lines above a link into
   `/how-it-works#journey`. That is verbatim the framing `/how-it-works` **removed on Jul-30 as
   falsified by its own next line**, logged as removed in the ledger, and the last live instance
@@ -57,7 +59,8 @@ found only by reading the destination.
 
 **Nothing was ruled.** No figure moved (112 / 145 / 130 / 165 / `100 + karma * 2` /
 `atp_history`), no branch endorsed. This widens a disclosure; Q5 is still the open question.
-The `/first-contact:505-518` guard was amended in place to record that widening an enumeration
+The `/first-contact` guard (`grep -n "Aug-09 visitor HIGH, second half" src/app/first-contact`)
+was amended in place to record that widening an enumeration
 is **not** re-syncing the sentence it forbids propagating, and that the divergence still holds.
 
 ### Deliberately not done
@@ -73,6 +76,48 @@ is **not** re-syncing the sentence it forbids propagating, and that the divergen
   `<details>`, so re-check what the visitor actually read before treating it as prominence),
   /tldr vs /running-now tag tiers, "no live network" reconciliation placement, nav visual
   weight. Unanswered Q3 (the 0.50 endpoint escalation), Q5, Q6.
+
+### Aug-09 21:00 addendum - the cite pass this PR was blocked on
+
+The review blocked on one class: `/first-contact:519-525` was published **three times** as the
+location of the *"About that number"* fence (here, the `EndOfLifeCaveat` guard, and the new
+`#journey` fence comment), and all three had drifted by **+10, exactly this PR's own net
+insertion into that file**. Third consecutive PR in the class, and this one had applied
+*"name the target, don't number it"* to the cites it was **rewriting** while authoring three
+fresh numbered ones in the same commit, pointing at the very file it was de-numbering.
+
+Rule applied in both directions now. Every cite this branch authors or touches that points
+**into a file this branch also modifies** names its target instead:
+
+| was | now |
+|---|---|
+| `/first-contact:519-525` (x3) | `grep -n "About that number" src/app/first-contact` |
+| `first-contact` guard `:505-518` / `:513-518` | its opening phrase / its closing line |
+| `:479` (propagation record) | *"the Aug-08 guard immediately above this one"* |
+| `:857-858` (base grant) | `grep -n "starts with 100, but the trust she built" src/app/first-contact` |
+| `:1000 and :1210` (intact balance) | `grep -n "Life 1 → Life 2"` + `grep -n "Learning Across Lives"` |
+| `/glossary:1253` (x2, here and in Q5) | `grep -n "is what follows the recoverable kind" src/app/glossary` |
+
+The reviewer flagged `:1210` as pointing at a **130** figure rather than the `145 -> 145` the
+sentence names; it did, and so did `:1000`. Both were wrong at the **parent** commit too, so
+this was inherited drift, not only self-drift. `:479` and `:857-858` were likewise already
+stale when #528 wrote them. Same for the two grep targets: they resolve today and will keep
+resolving after the next pass shifts either file.
+
+**Left numbered on purpose**: `/atp-economics:2264`, `/what-could-go-wrong:253-256`,
+`/why-web4:3226-3232`. Those files are **not modified by this branch**, so the cites cannot rot
+by its own diff, and all three were re-verified to resolve. The invariant is not *"never write a
+line number"*; it is **no line-number cite into a file the same commit modifies**.
+
+**Candidate scope for a later session**: make that invariant mechanical. Not a lint over
+`path:NNN` (SESSION_FOCUS.md alone carries ~535 such hits from prior sessions, nearly all sound),
+but a **pre-push check that reads `git diff --numstat` and flags only cites pointing into files
+the commit itself touches**. Four PRs have now carried this defect; a grep in a checklist has
+not stopped it.
+
+**Known remainder, out of scope here**: the already-merged #528 section further down this file
+still cites `:469`, `:479`, `:857-858` into `/first-contact`. Those are historical record from a
+merged commit, not cites this branch authored, and rewriting merged sections is a separate pass.
 
 ## Aug-09 09:00 session - the caveat that could not produce its own number (Aug-09 both HIGHs + all 3 MEDIUMs)
 

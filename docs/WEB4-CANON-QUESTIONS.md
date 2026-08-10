@@ -360,7 +360,8 @@ instead of re-litigating.
       walkthrough's opening demo models it that page's way. No figure moved (112 / 145 / 130 / 165
       / `100 + karma * 2` / `atp_history` all untouched), no branch endorsed, and the ruling
       requested above is unchanged.
-    - **`/glossary` was the last live instance of a framing removed on Jul-30.** `:1253` still
+    - **`/glossary` was the last live instance of a framing removed on Jul-30.** Its Rebirth
+      definition card (`grep -n "is what follows the recoverable kind" src/app/glossary`) still
       read *"a portion of your final ATP carries forward as karma"*, stated flat as the definition
       of rebirth, four lines above a link into `/how-it-works#journey`. That is the wording the
       Jul-30 table records as *removed* from `/how-it-works` because its own next line falsifies

@@ -56,8 +56,11 @@ const HOW_IT_WORKS_SECTIONS = [
    disclosure; it endorses no branch, moves no figure, and is not the ruling (still Q5).
    Not exhaustive even now: /atp-economics:2264 ships a fourth shape in pseudocode
    (`agent.reborn(karma=agent.atp_history)`), on the page that still has no caveat. Logged in Q5.
-   Do NOT re-sync this sentence with /first-contact:519-525. That card fences a different axis on
-   purpose and its guard at :505-518 says so. */
+   Do NOT re-sync this sentence with /first-contact's rebirth fence
+   (grep -n "About that number" src/app/first-contact). That card fences a different axis on
+   purpose and its guard, the block ending "Line numbers deliberately replaced with grep
+   targets here", says so. Cites named rather than numbered: both files move under edit and a
+   number here rots by this file's own insertion ([[guard-comment-cites-rot-name-the-target]]). */
 function EndOfLifeCaveat() {
   return (
     <p className="text-xs text-amber-300/70 mt-3 leading-relaxed">
@@ -413,15 +416,22 @@ export default function HowItWorksPage() {
             demo's rebirth caption to state the model outright ("she restarts at 112 energy, the
             usual 100 plus a 12 karma bonus"), which made THIS page a surface for two different
             carry-forward models: the demo's base-plus-bonus here, and the karma examples' intact
-            balance (145 -> 145) at :1000 and :1210. Nothing said they were two choices, and the
-            demo's figure carried no fence at all, while the identical figure on
-            /first-contact:519-525 does. That is the Aug-09 visitor's MEDIUM #3 ("three different
+            balance (145 -> 145), which renders on two surfaces further down this section
+            (grep -n "Life 1 → Life 2" and grep -n "Learning Across Lives", both in this file).
+            Nothing said they were two choices, and the demo's figure carried no fence at all,
+            while the identical figure on /first-contact does
+            (grep -n "About that number" src/app/first-contact).
+            That is the Aug-09 visitor's MEDIUM #3 ("three different
             rebirth-ATP models ... extend the cross-reference so it names every surface that shows
             a rebirth number") seen from inside one page.
             Wording is propagated from this page's own EndOfLifeCaveat below ("How much karma
             carries", "one modelling choice, not the rule", "read it for the shape"), NOT from
-            /first-contact's version - that card's guard at :513-518 keeps the two deliberately
-            divergent, because it fences a different axis. Points by PROSE, not by link: this page
+            /first-contact's version - that card's guard keeps the two deliberately divergent,
+            because it fences a different axis (the guard block whose closing line reads "Line
+            numbers deliberately replaced with grep targets here"). Cites into that file are
+            named rather than numbered on purpose: it moves under edit, and a number here rots
+            by that file's own insertion ([[guard-comment-cites-rot-name-the-target]]).
+            Points by PROSE, not by link: this page
             has no anchor between #journey and #two-ways-to-die, and the karma examples have no id.
             Do not add a figure here; 112 is already on screen in the demo. */}
         <p className="text-xs text-amber-300/70 mb-8 leading-relaxed">
