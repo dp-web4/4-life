@@ -94,6 +94,127 @@ reconciliation.
   guard that now lives ~60 lines lower. Replaced the integers with a grep target
   ([[guard-comment-cites-rot-name-the-target]]).
 
+## Aug-09 03:00 session - four under-counts, two bugs (the /lct-explainer remainder)
+
+**No fresh log** (03:00, before the 05:00 browse). The Aug-08 friction table is exhausted: the HIGH
+and three MEDIUMs shipped in #525/#526, and everything left is fenced (#3/#7 = ledger Q5/Q2, #6 =
+Q8 equity holding pattern, #9 = branding gate fired Jul-23, #10 = contested, and its current
+ordering is itself a **Jul-1 HIGH fix**, so the literal suggestion would invert a treatment). What
+was **not** fenced: #526 closed by enumerating, file:line, a remainder it deliberately did not
+work, and flagged that this claim class had been under-counted three times running.
+
+**So the session did the one thing that actually generalizes: it re-ran the recorded grep instead
+of trusting the recorded list.** #526 enumerated 13 lines on `/lct-explainer/page.tsx`, the page it
+called *"the big one, the page that owns the definition"*. The grep returns **39**. With `-i`,
+**47**.
+
+**The mechanism, which is the finding.** Four under-counts in a row were **four instances of the
+same two bugs**, not four lapses of diligence:
+- the recorded grep is **case-sensitive**, missing 8 sentence-initial `Hardware-bound` lines,
+  including one in the *same data array* as a line that was on the list;
+- the recorded grep is **per-line**, and cannot see JSX prose wrapped at ~100 columns
+  (the "Token" clause of the name etymology, sitting inside the hero, wrapped across two lines);
+- and a sixth blind spot no version of the grep ever caught: the pattern is anchored on
+  `hardware-<suffix>` compounds, so **hardware as a bare noun or subject** is invisible
+  (`keys in hardware`, `Hardware requires`, `Hardware attestation`, `rooted in physical chips`,
+  `a presence your hardware proves`, `Web4 trusts what hardware proves`).
+
+It happened **twice more inside this session**, both caught only by checking: my own "34" was an
+eyeball miscount of terminal output, and the policy reviewer's `:1466` pointer was a line number
+transcribed from a different `sed` window (the surface it meant is the Key-insight triad). Three
+for three, one mechanism: **a number transcribed instead of derived.** The corrected grep is now
+in the ledger, and so is the consequence: **the ledger no longer carries line numbers into this
+file.** See the Aug-09 21:00 addendum below.
+
+**21 surfaces fixed, and the shape of the fixes is the point.** Two are **pure deletions** where
+the correct word was already sitting next to the wrong one: the Key-insight triad's Web4 line
+drops four words because the *"Identity is: What witnesses verify"* row already ships that wording
+23 lines above in the same block, and the *"energy budgets don't work"* sentence drops *"hardware-bound"* because the sentence directly before it already said *"Verified presence
+is the foundation."* Four more are one-word swaps into vocabulary #525/#526 already shipped.
+Nothing was coined. ([[density-guard-means-delete-not-caveat]],
+[[propagate-the-sentence-not-your-summary]].)
+
+**The `attackScenarios` panel was one surface, not seven cells.** The reader drives it with a
+scenario selector, so the seven Web4 results are read consecutively, and **five** of them answered
+*"why is Web4 safe?"* with *"hardware"*. Fixing only the two the grep could see would have left the
+panel making the same move three more times. That is exactly visitor log line **120**, which is the
+honest provenance for this whole slice: *"the site is more honest in its prose than in its examples
+... Every place I found a gap, the prose already conceded it and the illustration did not."*
+Two cells were **kept**, with the distinction recorded: `Device Theft`'s condition sits in a
+**restrictive noun phrase** (*"Keys in TPM/Secure Enclave"*), so a software-only reader is not told
+their keys are safe, whereas `Key Duplication`'s *"Keys hardware-bound"* was a **predicate about
+Web4 keys as such**.
+
+**One fix was invisible to every grep and found only by reading.** In the *"What Is an LCT?"*
+informal definition, *"not a key file you store"* is the Web3 contrast, and it is false at the
+software-only tier, where the key **is** a file. It sat between two lines that were on the list.
+Replaced with the already-shipped *"not a username a server looks up"* from the "Token" clause.
+
+**Honest about provenance.** The Aug-08 visitor did **not** file `/lct-explainer` as
+self-contradictory; at log lines 62-65 they read it and came away with the *correct* model. This is
+ledger-handoff work licensed by line 120, not fresh friction, and the session log says so.
+
+**Fences held.** No ceiling number, no survival line, no at-0.50 claim in either direction. The
+trust-scale explainer's do-NOT-reword guard was untouched. The older/cheaper-devices FAQ and the
+`$50 phone` line are Q8-**equity** adjacent and were left alone. The ledger now states the KEEP set
+as a **rule you can re-derive** (run the corrected grep, subtract the FIX table) rather than a list
+of numbers, plus the ones carrying a reason beyond "tier-descriptive", including one tripwire: the
+walkthrough's Minute 0:30 line is correct only because Minute 0:00 stipulates a chip.
+
+**Open**: every other file in #526's remainder list. Assume the same ~3x understatement and re-run
+the corrected grep, do not trust the enumerations.
+
+### Aug-09 21:00 addendum - the three items this PR was blocked on
+
+**1. The branch carried a blocked head.** This branch is based on `worker/4life-20260808-150110`
+(#526), which had a live CHANGES REQUESTED against exactly the head this branch contains, so
+merging here would merge #526 past its own block. #526's two items are now fixed on that branch
+and it is **merged in** rather than rebased (force-push is hook-denied on this repo, so the
+review's *"rebase this branch onto it"* is not an available shape; the merge is the deviation and
+this is it stated). `origin/main` came in with it. Both `SESSION_FOCUS.md` conflicts resolved
+append-both, newest section first.
+
+**2. This PR reproduced the defect class it was documenting, at 55x the sampled size.** The review
+found two stale cites (`why-web4:380`, `glossary:1642`). Checking the whole set found **55 of this
+PR's 56 line cites into `/lct-explainer/page.tsx` were already stale**, each off by this session's
+own net insertion (+51/-30) into the file it was enumerating. The one that still resolved did so
+because it sits above every hunk.
+
+That is the sharpest possible version of this session's own finding: the entry whose thesis is
+*"a number transcribed instead of derived"* was **made of transcribed numbers**, and the KEEP list
+whose stated job was *"so the next pass does not re-litigate"* would have sent that pass to ~25
+wrong lines.
+
+Rewritten to name targets, applying the invariant **no line-number cite into a file the same
+commit modifies**:
+- The FIX table's key column is now the `grep -n` anchor, not the line.
+- The `attackScenarios` cells are keyed by **scenario name** (`Password Database Breach`,
+  `Phishing Attack`, `Credential Stuffing`, `Man-in-the-Middle`, `Key Duplication`, and the two
+  KEEPs `Device Theft` / `Insider Threat`). Those names are the data's own identifiers and do not
+  move with edits at all, which is strictly better than a quoted string.
+- The **KEEP list is no longer a list.** It is stated as a rule you can re-derive: run the
+  corrected grep, subtract the FIX table, everything remaining on this file is tier-descriptive.
+  Only the KEEPs carrying a reason beyond that are named. A list of 25 numbers could not survive
+  its own session; a rule can.
+- #526's `/lct-explainer` row in the section above is marked **SUPERSEDED**, since this session
+  edited that file and worked the row out.
+
+**3. A fresh instance of the same shape this PR was fixing, in a block it edited.** The lead at
+*"Because LCTs are device-anchored and multi-witnessed, they resist forgery"* was softened here,
+and the **first bullet under it** was left reading *"Keys exist only in secure hardware (TPM,
+Secure Enclave, FIDO2), never exported"*: the universal, three lines down, stated harder than the
+lead. Same predicate-about-Web4-keys-as-such shape as the `Key Duplication` cell this PR fixed,
+and the exact opposite of the restrictive `Device Theft` cell it kept.
+
+**Fixed** into the restrictive form, propagated not coined: the component registry already ships
+*"chips ... that generate keys internally and never export them"* and the `Device Theft` verdict
+already ships *"Keys in TPM/Secure Enclave"*. **KEPT**, with the reason recorded in the file and
+the ledger: the *"Hardware attestation proves keys are in real chips"* bullet in the same list
+says what hardware attestation **does**, the tier-descriptive class the ledger already excludes as
+correct. The generalizable bit: **softening a lead puts every line under it in scope**, because a
+bullet list inherits its lead's subject.
+
+
 ## Aug-08 15:00 session - the example that assumed the thing the site calls open (Aug-08 MEDIUM #4 + LOW #8 + the definitional half of the HIGH)
 
 **Same log, second session.** `visitor/logs/2026-08-08.md` was triaged at 09:00 (#525: the HIGH and

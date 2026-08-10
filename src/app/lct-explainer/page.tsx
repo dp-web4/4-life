@@ -19,7 +19,7 @@ import { trackPageVisit, trackConceptInteraction } from "@/lib/exploration";
  *
  * Core insight: Presence isn't what you know (passwords), what you have (wallet keys),
  * or what you claim (self-issued tokens). It's what witnesses can verify about
- * your hardware-bound, behavior-proven, multi-device participation.
+ * your device-anchored, behavior-proven, multi-device participation.
  *
  * Session #14: Foundational presence primitive - the missing piece.
  */
@@ -51,7 +51,7 @@ export default function LCTExplainerPage() {
   const lctComponents: LCTComponent[] = [
     {
       name: "Hardware Binding",
-      description: "Your presence is rooted in physical chips (Secure Enclave, TPM, FIDO2) that generate keys internally and never export them",
+      description: "Presence that carries real weight is rooted in physical chips (Secure Enclave, TPM, FIDO2) that generate keys internally and never export them",
       example: "Your phone's Secure Enclave generates a key that physically cannot leave the chip"
     },
     {
@@ -82,20 +82,29 @@ export default function LCTExplainerPage() {
   ];
 
   // Attack scenarios
+  // Aug-09 sweep (Q8 Ruling 1): the reader drives this panel with a scenario selector, so all
+  // seven web4Result strings are ONE surface read consecutively, and five of them answered
+  // "why is Web4 safe?" with "hardware". That is false at the software-only tier, which canon
+  // forbids the protocol from excluding. Three of the five (this one, Phishing, Man-in-the-Middle)
+  // were invisible to every grep run on this claim class, because the pattern is anchored on
+  // hardware-<suffix> compounds and cannot see hardware as a BARE NOUN or subject.
+  // KEEP, deliberately: "Device Theft" names its condition inside a restrictive noun phrase
+  // ("keys in TPM/Secure Enclave"), so a software-only reader is not told their keys are safe;
+  // "Insider Threat" makes no hardware claim at all. Do not "align" those two.
   const attackScenarios: AttackScenario[] = [
     {
       name: "Password Database Breach",
       description: "Attacker hacks a company's server and steals the password database",
       web2Result: "🔴 CATASTROPHIC - Millions of accounts compromised instantly",
       web3Result: "🟢 SAFE - No central database to breach (keys on user devices)",
-      web4Result: "🟢 SAFE - No passwords, no central database, keys in hardware"
+      web4Result: "🟢 SAFE - No passwords and no central database to breach"
     },
     {
       name: "Phishing Attack",
       description: "Attacker tricks user into entering credentials on a fake website",
       web2Result: "🔴 COMPROMISED - User enters password, attacker gains full access",
       web3Result: "🟠 MIXED - Seed phrase phishing possible, signature requests less so",
-      web4Result: "🟢 SAFE - Hardware requires biometric + device presence, can't be remotely phished"
+      web4Result: "🟢 SAFE - No secret to type into a fake site; your own device signs the challenge"
     },
     {
       name: "Device Theft",
@@ -109,14 +118,14 @@ export default function LCTExplainerPage() {
       description: "Attacker uses leaked passwords from one site to try accessing others",
       web2Result: "🔴 WIDESPREAD - Password reuse means one breach compromises many accounts",
       web3Result: "🟢 SAFE - Each wallet has unique keys, no password reuse",
-      web4Result: "🟢 SAFE - Hardware-bound identity, no passwords to reuse"
+      web4Result: "🟢 SAFE - Key-based identity, no passwords to reuse"
     },
     {
       name: "Man-in-the-Middle",
       description: "Attacker intercepts communication between you and a service",
       web2Result: "🔴 COMPROMISED - Password sent over network can be intercepted (if not using HTTPS)",
       web3Result: "🟢 SAFE - Cryptographic signatures, no secrets sent over network",
-      web4Result: "🟢 SAFE - Hardware attestation + signatures, tampering immediately detected"
+      web4Result: "🟢 SAFE - Signed messages, tampering immediately detected"
     },
     {
       name: "Insider Threat",
@@ -130,7 +139,7 @@ export default function LCTExplainerPage() {
       description: "Attacker copies your identity credentials to another device",
       web2Result: "🔴 TRIVIAL - Copy password to any device, works everywhere",
       web3Result: "🟠 POSSIBLE - If attacker gets seed phrase or private key file, can recreate wallet anywhere",
-      web4Result: "🟢 IMPOSSIBLE - Keys hardware-bound, copying files doesn't copy hardware chip internals"
+      web4Result: "🟢 HARD - At the hardware tiers the key is generated inside the chip and copying files can't copy chip internals; a software-only key is a file, which is part of why it carries less weight"
     }
   ];
 
@@ -173,15 +182,19 @@ export default function LCTExplainerPage() {
             Linked Context Token (LCT)
           </h1>
           {/* Apr 29 visitor HIGH: opened with three undefined terms (security chip / hardware-bound / witnessed)
-              before any everyday metaphor. Lead with a tangible analogy first, then the precise definition. */}
+              before any everyday metaphor. Lead with a tangible analogy first, then the precise definition.
+              Aug-09 (Q8 Ruling 1): the precise definition below said an LCT IS hardware-bound, which
+              excludes a conformant tier by construction. The Apr-29 guard is about ORDER (analogy first),
+              not about hardware, so scoping the claim honors it. "Carries real weight" is
+              what-could-go-wrong:171's already-shipped phrase, propagated, not coined. */}
           <p className="text-lg text-gray-200 max-w-2xl mx-auto mb-3">
             Imagine your phone becoming your driver&rsquo;s license - but one that can&rsquo;t be
             photocopied, faked from a stolen photo, or impersonated from a remote computer.
           </p>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            More precisely: a digital ID card that lives in your device&apos;s security chip - hardware-bound,
-            witnessed by your other devices (each one independently co-signs that it&rsquo;s really you),
-            and resistant to faking.
+            More precisely: a digital ID card that lives on your own device, anchored in that device&apos;s
+            security chip when the identity carries real weight, witnessed by your other devices (each one
+            independently co-signs that it&rsquo;s really you), and resistant to faking.
           </p>
 
           {/* Plain-English etymology of "Linked" and "Context" - visitor friction Apr 25.
@@ -213,9 +226,10 @@ export default function LCTExplainerPage() {
             </p>
             <p className="text-gray-300 leading-relaxed mt-3">
               <strong>Token</strong> - the thing itself: a cryptographic key you hold and
-              present, not a username a server looks up. It lives in your device&rsquo;s security
-              chip and signs each action, so &ldquo;showing&rdquo; your identity means proving
-              you hold the key, not typing a name someone else could type too.
+              present, not a username a server looks up. It lives on your own device, in that
+              device&rsquo;s security chip where there is one, and signs each action, so
+              &ldquo;showing&rdquo; your identity means proving you hold the key, not typing a
+              name someone else could type too.
             </p>
             {/* May 20 visitor LOW: existing block defined each word but didn't fuse them.
                 Visitor: "I'd guess... but I'm inferring, not being taught." Add the synthesis. */}
@@ -239,7 +253,7 @@ export default function LCTExplainerPage() {
         <div className="bg-purple-950/30 border border-purple-800/40 rounded-xl p-6 mb-8">
           <h2 className="text-lg font-bold mb-3 text-purple-300">Key Takeaways</h2>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li className="flex gap-2"><span className="text-purple-400 shrink-0">1.</span> Your identity lives in your devices&apos; security chips - not in passwords or company databases. The chip&apos;s private key is generated <em>inside</em> the silicon and physically can&apos;t leave it: not even the operating system or malware can read it out, so it can&apos;t be copied or forged. <span className="text-gray-500">(This is <em>the</em> reason hardware identity works.)</span></li>
+            <li className="flex gap-2"><span className="text-purple-400 shrink-0">1.</span> Your identity lives on your own devices, not in passwords or company databases. Where a device has a security chip, the chip&apos;s private key is generated <em>inside</em> the silicon and physically can&apos;t leave it: not even the operating system or malware can read it out, so it can&apos;t be copied or forged. <span className="text-gray-500">(This is <em>the</em> reason hardware identity works.)</span></li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">2.</span> Multiple devices (phone, laptop, security key) witness each other, making faking exponentially harder. <span className="text-gray-500">Heads-up: &ldquo;witness&rdquo; means two distinct things on this page - (a) your <em>own</em> devices co-signing each other, and (b) optional outside infrastructure nodes. Most of the page means sense (a).</span> <a href="#device-witnesses" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('device-witnesses')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(both senses explained)</a></li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">3.</span> If you lose a device, your other devices can recover your identity - no &quot;forgot password&quot; needed <a href="#recovery" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('recovery')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-purple-400 hover:text-purple-300 underline whitespace-nowrap">(minutes to hours with multi-device; days if only one)</a></li>
             <li className="flex gap-2"><span className="text-purple-400 shrink-0">4.</span> This is pseudonymous - your reputation follows you, but your real name doesn&apos;t have to</li>
@@ -369,7 +383,7 @@ export default function LCTExplainerPage() {
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-gray-400 mb-1">Strength:</div>
-                  <div className="text-sm text-green-400">Hardware-bound, multi-witness, revocable</div>
+                  <div className="text-sm text-green-400">Device-anchored, multi-witness, revocable</div>
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-gray-400 mb-1">Attack surface:</div>
@@ -383,14 +397,14 @@ export default function LCTExplainerPage() {
             <p className="text-sm text-gray-300">
               <span className="font-bold">Key insight:</span> Web2 trusts what you memorize (forgettable, shareable).
               Web3 trusts what you store (copyable, stealable).
-              Web4 trusts what hardware proves and witnesses verify (verifiable, revocable).
+              Web4 trusts what witnesses verify (verifiable, revocable).
             </p>
           </div>
 
           <div className="mt-4 p-4 bg-gray-800/40 border border-gray-700 rounded-lg">
             <p className="text-sm text-gray-300">
               <span className="font-bold text-green-400">But what about pseudonymity?</span>{' '}
-              Hardware-bound identity doesn&apos;t mean real-name identity. Your LCT is a cryptographic key, not your name.
+              A device-anchored identity doesn&apos;t mean a real-name identity. Your LCT is a cryptographic key, not your name.
               Nobody sees &ldquo;Jane Smith&rdquo; - they see an entity with a trust history. You can participate, earn trust,
               and contribute value without ever revealing who you are. What Web4 prevents isn&apos;t anonymity - it&apos;s{' '}
               <em>disposable</em> identity. Your reputation follows you, but your name doesn&apos;t have to.{' '}
@@ -463,7 +477,7 @@ export default function LCTExplainerPage() {
             <p className="text-xs text-gray-400 italic mt-3 mb-3">
               You don&apos;t need to memorize these to use Web4 - they&apos;re tamper-resistant security
               chips already in devices you probably own. Skip ahead if the high-level idea
-              (&ldquo;hardware-bound identity&rdquo;) is enough; expand for the specifics.
+              (&ldquo;device-anchored identity&rdquo;) is enough; expand for the specifics.
             </p>
             <p className="text-sm text-gray-300 mb-2">
               These are <span className="font-bold">tamper-resistant security chips</span> already
@@ -795,7 +809,7 @@ export default function LCTExplainerPage() {
                   <tr className="border-b border-gray-800">
                     <td className="py-1.5 pr-2 text-gray-300">Your identity</td>
                     <td className="py-1.5 pr-2 text-red-400/80">Real name, email, phone sold to data brokers</td>
-                    <td className="py-1.5 text-green-400/80">Pseudonymous - hardware-bound, no personal info required</td>
+                    <td className="py-1.5 text-green-400/80">Pseudonymous - a key you hold, no personal info required</td>
                   </tr>
                   <tr className="border-b border-gray-800">
                     <td className="py-1.5 pr-2 text-gray-300">Your content</td>
@@ -839,17 +853,24 @@ export default function LCTExplainerPage() {
           <h2 className="text-2xl font-bold mb-6 text-gray-100">What Is a Linked Context Token?</h2>
 
           <div className="space-y-4 mb-6">
+            {/* Aug-09 sweep (Q8 Ruling 1). Three fixes in one sentence, all propagation:
+                (a) the informal definition no longer puts the LCT *in* the chip;
+                (b) "not a key file you store" was the Web3 contrast, and it is false at the
+                    software-only tier where the key IS a file, so it is replaced with L215's
+                    already-shipped "not a username a server looks up" contrast;
+                (c) "a presence your hardware proves" -> "your device proves".
+                The Web2/Web3/Web4 contrast this used to carry lives intact at L384-386. */}
             <p className="text-gray-300">
               Think of an <span className="font-bold text-purple-400">LCT</span> as a
-              <span className="font-bold"> digital ID card that lives in your device&apos;s security chip</span>{" "}
-              - not a password you type and not a key file you store, but a presence your
-              hardware proves and your other devices witness.
+              <span className="font-bold"> digital ID card that lives on your own device</span>{" "}
+              - not a password you type and not an account a server looks up, but a presence your
+              device proves and your other devices witness.
             </p>
             <p className="text-gray-300">
               More formally, an LCT is Web4&apos;s foundational presence primitive: a verifiable digital
               presence certificate that binds an entity to its context through witnessed relationships. It
               establishes <em>where you exist</em> in a web of trust, not merely <em>who you are</em>. In
-              short, a {" "}<span className="font-bold">hardware-bound, witnessed, contextual proof of presence</span>{" "}
+              short, a {" "}<span className="font-bold">device-anchored, witnessed, contextual proof of presence</span>{" "}
               that verifies:
             </p>
 
@@ -1853,7 +1874,7 @@ export default function LCTExplainerPage() {
               {exploredAttacks.size >= 5 && exploredComponents.size >= 4 && (
                 <div className="bg-gray-800/60 border border-gray-600 rounded-lg p-4 mt-4 text-sm text-gray-300">
                   <strong className="text-gray-100">The key takeaway:</strong> Verified presence is the foundation
-                  everything else in Web4 builds on. Without hardware-bound presence, energy budgets don&apos;t
+                  everything else in Web4 builds on. Without verified presence, energy budgets don&apos;t
                   work (you&apos;d create free accounts), trust doesn&apos;t stick (you&apos;d reset reputations),
                   and consequences don&apos;t matter (you&apos;d just start over). Presence - not identity,
                   not credentials - makes the whole system possible.
@@ -2202,10 +2223,25 @@ export default function LCTExplainerPage() {
             <div>
               <h3 className="text-xl font-bold mb-3 text-purple-400">1. Verifiable Presence</h3>
               <p className="text-gray-300 mb-2">
-                Because LCTs are hardware-bound and multi-witnessed, they resist forgery:
+                Because LCTs are device-anchored and multi-witnessed, they resist forgery:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400 ml-4">
-                <li>Keys exist only in secure hardware (TPM, Secure Enclave, FIDO2), never exported</li>
+                {/* Aug-09 (21:00) sweep, Q8 Ruling 1. This read "Keys exist only in secure
+                    hardware (TPM, Secure Enclave, FIDO2), never exported" - a predicate about
+                    Web4 keys AS SUCH, stated three lines under a lead this same pass had just
+                    softened to "device-anchored", and stated harder than the lead. Same shape as
+                    the "Keys hardware-bound" cell fixed in the attackScenarios panel, and the
+                    opposite of the "Device Theft" cell KEPT because its condition sits in a
+                    RESTRICTIVE noun phrase. Rewritten into that restrictive form, which is
+                    propagation and not new vocabulary: the component registry already ships
+                    "chips ... that generate keys internally and never export them" (grep -n
+                    "generate keys internally"), and the Device Theft verdict already ships
+                    "Keys in TPM/Secure Enclave" (grep -n "Keys in TPM"). No ceiling number and
+                    no tier claim added.
+                    KEEP, deliberately, the "Hardware attestation" bullet below: it describes what
+                    hardware attestation DOES, which is the tier-descriptive class the ledger
+                    excludes as already correct, not a claim that every LCT has one. */}
+                <li>Keys in a security chip (TPM, Secure Enclave, FIDO2) are generated there and never exported</li>
                 <li>Birth certificates prove when/where/by whom this LCT was created</li>
                 <li>Multiple independent witnesses must attest (can't fool them all)</li>
                 <li>Hardware attestation proves keys are in real chips, not software emulation</li>
@@ -2332,15 +2368,15 @@ export default function LCTExplainerPage() {
               Good catch - an AI doesn&apos;t carry a Secure Enclave in its pocket, so it
               can&apos;t anchor itself the way you do. It doesn&apos;t have to. An AI agent gets
               its identity the way a new hire gets a building badge: <strong>a person or
-              organization that <em>is</em> hardware-anchored creates the agent and hands it a
+              organization that <em>is</em> device-anchored creates the agent and hands it a
               scoped, revocable permission slip</strong> (Web4 calls this a delegation).
             </p>
             <p className="text-sm text-gray-300 mb-2">
               So the agent&apos;s LCT doesn&apos;t need its own chip - it&apos;s
-              <strong> rooted in its creator&apos;s hardware-bound identity</strong>. The
+              <strong> rooted in its creator&apos;s device-anchored identity</strong>. The
               anchor is <em>inherited</em> through the chain, not possessed directly. Every
               LCT points back to the one that created it, so there&apos;s always a
-              hardware-anchored human or org at the root who stays accountable for what the
+              device-anchored human or org at the root who stays accountable for what the
               agent does (the same accountability chain described above).
             </p>
             <p className="text-sm text-gray-300 mb-2">
@@ -2391,7 +2427,7 @@ export default function LCTExplainerPage() {
               What about shared devices? Family tablets, library computers, school Chromebooks?
             </h3>
             <p className="text-sm text-gray-300 mb-2">
-              <strong>Shared devices can&apos;t host identity.</strong> An LCT is bound to hardware that only <em>you</em> control -
+              <strong>Shared devices can&apos;t host identity.</strong> An LCT is anchored to a device that only <em>you</em> control -
               your personal phone, your laptop, your security key. A family tablet or library computer doesn&apos;t qualify
               because the system can&apos;t distinguish who is using it.
             </p>

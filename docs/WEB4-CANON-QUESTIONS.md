@@ -1060,9 +1060,12 @@ In files this session edited, quote the string to `grep -n`:
   *"the same hardware-bound device chain that signs everything else"*
 
 In files this session did not touch, the numbers still hold:
-- `/lct-explainer/page.tsx` (the big one, the page that owns the definition): `:22` (file header),
-  `:133` (comparison data literal), `:182`, `:242`, `:466`, `:798`, `:844`, `:852`, `:1856`,
-  `:2180`, `:2189`, `:2205`, `:2394`
+- `/lct-explainer/page.tsx` (the big one, the page that owns the definition): **SUPERSEDED and
+  worked.** This row listed 13 lines; the corrected grep returned 39, and 47 case-insensitively.
+  Do not use these numbers: the Aug-09 03:00 pass edited this file, so they are stale, and the
+  row was a truncated enumeration to begin with. See the disposition section below,
+  *"`/lct-explainer/page.tsx`, the whole page, and why the grep kept lying"*, which names its
+  targets by string.
 - `/your-internet/page.tsx`: `:104`, `:131`. Note `:104` contradicts `:102` **on the same card**,
   which already ships the correct scoped version
 - `/identity-constellation/page.tsx`: `:44`, `:125`, `:403`
@@ -1077,6 +1080,156 @@ mechanics passage.
 **Not escalated.** Nothing here needs a canon ruling: Ruling 1 already settles it. This is a
 site-copy sweep with a known remainder, tracked here only because the remainder has now been
 truncated three times.
+
+### Disposition: `/lct-explainer/page.tsx`, the whole page, and why the grep kept lying
+
+Worked 2026-08-09 (03:00 session). The section above named this file *"the big one, the page that
+owns the definition"* and listed **13** lines on it. That list was short a **fourth** time.
+
+**The count, three ways.** The recorded grep returns **39** on this file, not 13. Adding `-i`
+returns **47**. A whitespace-normalized pass adds two more spans. The reason is not diligence, and
+this is the part worth keeping:
+
+- **The recorded grep is case-sensitive.** It misses 8 sentence-initial `Hardware-bound` lines,
+  including the `Credential Stuffing` verdict in the *same data array* as the `Key Duplication`
+  one that was on the list.
+- **The recorded grep is per-line.** It cannot see JSX prose wrapped at ~100 columns. Two true
+  wrap spans on this page: the "Token" clause of the name etymology (*"It lives in your device's
+  security / chip"*, a definition-of-record surface sitting inside the hero, `grep -n "the thing
+  itself: a cryptographic key"`) and the *"tamper-resistant security / chips"* span, correct as-is
+  (`grep -n "tamper-resistant security"`).
+- **The pattern is anchored on `hardware-<suffix>` compounds and cannot see hardware as a bare
+  noun or subject.** This is the sixth blind spot and the one no version of the grep has ever
+  caught: `keys in hardware` (the `Password Database Breach` verdict), `Hardware requires`
+  (`Phishing Attack`), `Hardware attestation` (`Man-in-the-Middle`), `rooted in physical chips`
+  (the `Hardware Binding` component-registry entry), `a presence your hardware proves` (the
+  *"What Is an LCT?"* informal definition), `Web4 trusts what hardware proves` (the Key-insight
+  triad).
+
+**Corrected grep. Record this one, and run a normalized pass beside it.**
+
+```
+grep -rniE "hardware.?(bound|rooted|anchored|backed|based|tied|locked)|rooted in (hardware|physical chips|the silicon)|bound to (physical )?(hardware|a device|your device)|security chips?|hardware proves|keys in hardware|[Hh]ardware (requires|attestation)" src/ --include=*.ts --include=*.tsx
+```
+
+Four under-counts in a row on this claim class were **four instances of the same two bugs**, not
+four lapses of diligence. Two more of the same shape happened inside this session: my own count
+of "34" was an eyeball miscount of terminal output, and the policy reviewer's `:1466` pointer was
+a line number transcribed from a different `sed` window (the surface it meant is the Key-insight
+triad). Three for three, same mechanism: **a number transcribed instead of derived.**
+
+**Which is why this entry no longer carries line numbers into this file.** Every cite below names
+the string to `grep -n` in `src/app/lct-explainer/page.tsx`. The first version of this table
+numbered them, and 55 of its 56 cites were stale by the time it was written, each off by this
+session's own net insertion into the file it was enumerating
+([[guard-comment-cites-rot-name-the-target]]). A transcribed number was the finding; the table was
+made of them.
+
+**FIX, 21 surfaces**, all propagation, no coined vocabulary:
+
+| Anchor (`grep -n` in `src/app/lct-explainer/page.tsx`) | What it said | Why defective |
+|---|---|---|
+| `behavior-proven` | JSDoc header, *"your hardware-bound ... participation"* | file's own self-description; not rendered, fixed so the next grepper is not misled |
+| `Hardware Binding` component-registry entry | *"Your presence is rooted in physical chips"* | component-registry definition of **presence as such**; component name `"Hardware Binding"` kept, it genuinely is that |
+| `attackScenarios`: `Password Database Breach`, `Phishing Attack`, `Credential Stuffing`, `Man-in-the-Middle`, `Key Duplication` | the panel's Web4 verdict column | see below |
+| `More precisely: a digital ID` | the hero's *"More precisely"* definition | the page's **first** definition |
+| `the thing itself: a cryptographic key` | the "Token" clause of the name etymology | definition-of-record, inside the hero |
+| Key Takeaway 1 (`grep -n "Your identity lives"`), **first clause only**| the takeaway list's opening claim | the silicon / key-non-extraction mechanism after it is correctly tier-descriptive and survives untouched |
+| `multi-witness, revocable` | the comparison grid's Web4 *"Strength:"* cell | comparison-grid illustration |
+| `Web4 trusts what` (the Key-insight triad) | *"Web4 trusts what hardware proves and witnesses verify"* | **pure deletion of four words.** the *"Identity is: What witnesses verify"* row already ships *"Identity is: What witnesses verify"* 23 lines above in the same block, so this makes them byte-consistent, preserves the triad's `memorize / store / X` parallelism, and takes net words down |
+| `mean a real-name identity` | *"Hardware-bound identity doesn't mean real-name identity"* | one word |
+| `is enough; expand for the specifics` | the skip-ahead gloss | matched to the shorthand shipped in `/why-web4`'s *"2. Device-Anchored Identity"* card |
+| `Pseudonymous` | comparison-table cell, *"Pseudonymous - hardware-bound"* | the row's subject is pseudonymity; hardware was gratuitous |
+| `not a password you type` (and the two lines bracketing it) | the *"What Is an LCT?"* informal definition | three fixes in one sentence, see note |
+| `contextual proof of presence` | *"In short, a hardware-bound, witnessed, contextual proof of presence"* | the formal recap on the definition-owning page |
+| `energy budgets don` | *"Without hardware-bound presence, energy budgets don't work"* | **deletion**; the sentence immediately before it already says *"Verified presence is the foundation"*, so the correct word was sitting in front of it |
+| `they resist forgery` | *"Because LCTs are hardware-bound and multi-witnessed, they resist forgery"* | the bullets under it name TPM/Secure Enclave/FIDO2 and stay |
+| `faq-ai-agents` (`grep -n "human or org at the root"`) | *"there's always a hardware-anchored human or org at the root"* | the card's real point is that an AI **inherits** an anchor through a delegation chain rather than possessing one; the hardware qualifier does no work in that argument and makes the root tier-exclusive |
+| `Shared devices can` | *"An LCT is bound to hardware that only you control"* | falsified by the *"you can still participate at the"* sentence six lines down on the **same card** |
+
+**The `attackScenarios` panel is one surface, not seven cells.** The reader drives it with a
+scenario selector, so all seven Web4 results are read consecutively. Five of them answered
+*"why is Web4 safe?"* with *"hardware"*. Fixing the two the grep could see would have left the
+panel making the same move three more times, which is exactly the shape visitor log line 120
+describes (*"the site is more honest in its prose than in its examples"*).
+
+- `Password Database Breach` -> the no-passwords / no-central-database facts are true at **every** tier; *"keys in
+  hardware"* was doing no work in the verdict. Deletion.
+- `Phishing Attack` -> phishing fails because there is no secret to type, not because of biometrics. The
+  stated reason was both hardware-definitional **and** not the actual mechanism.
+- `Credential Stuffing` -> *"Key-based identity"*. True at every tier, which is the point.
+- `Man-in-the-Middle` -> signatures do the work; *"Hardware attestation + "* deleted.
+- `Key Duplication` -> *"IMPOSSIBLE"* is false at the software-only tier, where the key **is** a file.
+  Now scoped, and the tier asymmetry is stated rather than deleted.
+- **KEEP `Device Theft`**: its condition sits inside a **restrictive noun phrase**,
+  *"Keys in TPM/Secure Enclave"*, so a software-only reader is not told their keys are safe.
+  This is the exact distinction from `Key Duplication`, whose *"Keys hardware-bound"* was a **predicate
+  about Web4 keys as such**. Do not "align" these two.
+- **KEEP `Insider Threat`**: no hardware claim at all.
+
+**Safe to edit, and why it was not last time.** `web4Result` has **no load-bearing render
+structure**: the three `{attackScenarios[attackScenario].web2Result}` / `.web4Result` render sites
+(`grep -n "attackScenarios\[attackScenario\]"`) are flat `<div className="text-sm ...">{...}</div>`,
+no `issues.length` branch, no color derived from the string. Unlike #525's `identityBound` case,
+editing these cells cannot silently delete a panel.
+
+**Note on the *"What Is an LCT?"* informal definition** (`grep -n "not a password you type"`, plus
+the lines bracketing it)**.** Three fixes in one sentence. The middle one was **not** in the grep class
+and was found only by reading: *"not a key file you store"* was the Web3 contrast, and it is false
+at the software-only tier where the key **is** a file. Replaced with the already-shipped
+*"not a username a server looks up"* contrast from the "Token" clause of the name etymology
+(`grep -n "the thing itself: a cryptographic key"`). The Web2/Web3/Web4 comparison it used to
+carry lives intact in the Key-insight triad (`grep -n "Web2 trusts what you memorize"`).
+
+**KEEP: ~25 surfaces, stated as a rule you can re-derive rather than a list you must trust.**
+Run the corrected grep above and subtract the FIX table: **every remaining hit on this file is
+tier-descriptive**, saying what hardware anchoring **buys** rather than making it definitional,
+which is the correct claim. That rule regenerates the list; the numeric version of it did not
+survive its own session. The ones carrying a reason beyond "tier-descriptive":
+
+- **The trust-scale explainer** (`grep -n "is the neutral midpoint"` and the *"hardware-bound
+  ceiling"* sentence under it) carries an **explicit do-NOT-reword guard** and was untouched.
+- **The code block's own comment** (`grep -n "// Web4 flow"`) is scenario-scoped: the block
+  renders the Face ID plus chip flow, so naming hardware there is describing that scenario.
+- **The `TermTooltip` ceiling gloss** (`grep -n "takes hardware-anchored presence"`) was already
+  fixed by #525.
+- **Q8-EQUITY adjacent, deliberately not touched**: the older/cheaper-devices FAQ
+  (`grep -n "What about older/cheaper devices"`) and the `$50 phone` affordability line
+  (`grep -n "is roughly a \$50 phone"`). They carry the ceiling number and the affordability
+  framing, and the equity half is under a holding pattern.
+- **The one KEEP whose correctness depends on a sentence above it** rather than on its own
+  content: the walkthrough's *"identity lives in the hardware, not usernames"*
+  (`grep -n "not unique - identity lives"`) is **scenario-scoped by the Minute 0:00 stipulation**
+  (`grep -n "The app detects your device"`) that the app finds a TPM or Secure Enclave. Tripwire:
+  if that walkthrough ever gains a software-only variant, or if the Minute 0:00 line is edited,
+  the Minute 0:30 line becomes defective **silently**.
+
+**Aug-09 (21:00) addendum, one more surface, found by the review of this pass.** Under the
+*"Because LCTs are device-anchored and multi-witnessed, they resist forgery"* lead that this
+session softened, the **first bullet** still read *"Keys exist only in secure hardware (TPM,
+Secure Enclave, FIDO2), never exported"* - the universal, three lines below the lead, stated
+**harder** than the lead. Same shape as the `Key Duplication` cell this session fixed, and the
+exact opposite of the `Device Theft` cell it kept. Rewritten into the restrictive form, which is
+propagation rather than new vocabulary (`grep -n "generate keys internally"` and
+`grep -n "Keys in TPM"` both already ship it). **KEEP** the *"Hardware attestation proves keys
+are in real chips"* bullet in the same list: it says what hardware attestation **does**, which is
+the tier-descriptive class this entry already excludes as correct, not a claim that every LCT has
+one. The lesson generalizes past this bullet: **softening a lead puts every line under it in
+scope**, because a bullet list inherits its lead's subject.
+
+**Render honesty.** The *"energy budgets don't work"* sentence is gated behind
+`exploredAttacks.size >= 5 && exploredComponents.size >= 4`, and *"they resist forgery"* sits
+inside a collapsed `<details>`. Both ship, neither is a front-page surface.
+
+**Fences held.** No ceiling number, no survival line, and no at-0.50 claim in either direction
+entered any file. The trust-scale explainer and its do-NOT-reword guard were untouched.
+
+**Still open**, unchanged by this session: every non-`/lct-explainer` file in the remainder list
+above (`/how-it-works`, `/first-contact`, `/your-internet`, `/identity-constellation`,
+`/why-web4` body prose, `/glossary`'s *"share hardware-bound presence"* line, `/atp-economics`,
+`InteractiveWireframes.tsx`,
+`/learn`, `/day-in-web4`). Re-run the **corrected** grep against each; the 13-line list for this
+page understated it by roughly 3x, and the same understatement should be assumed everywhere else.
 
 ---
 
