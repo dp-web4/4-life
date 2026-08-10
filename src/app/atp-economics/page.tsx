@@ -184,9 +184,22 @@ export default function ATPEconomicsPage() {
           whether you&rsquo;re a person or an AI. It isn&rsquo;t a separate bot you deploy; when this page
           says &ldquo;your agent,&rdquo; it means <em>you</em>, acting in the system.
         </p>
+        {/* Aug-10 (15:00). This page asserts ATP exhaustion as terminal EIGHT times
+            (`grep -rniE "run out|you die|you'll die|your agent dies|death\.|you died"` on this file),
+            and its own recovery clause does not arrive until the "Death is real" bullet
+            (`grep -n "reborn with a head start - your reputation"`), ~350 lines below. So the defect
+            was ORDERING, not wording: a reader met "your agent dies" here and again in the Key
+            Takeaways before the page ever said energy death is the recoverable kind. Fixing eight
+            strings would have ballooned the page and treated symptoms; the clause lands at the two
+            surfaces that come FIRST (here and the Key Takeaways below), and every later "death" on
+            the page is then correct shorthand under an established page-level frame. Clause
+            propagated verbatim from that same bullet, which is also the conditional this page uses
+            at `grep -n "not a free reset"` ("If you built trust..."), so no new recoverability
+            variant is coined. */}
         <p className="text-lg text-gray-400 leading-relaxed">
           Every action costs ATP. Every contribution others find valuable earns it back.
-          Stay above zero by contributing - run out and your agent dies.
+          Stay above zero by contributing - run out and your agent dies. But if you built
+          trust, you&rsquo;re reborn with a head start.
         </p>
 
         {/* Key Takeaways - May 15 visitor LOW (friction row 7 / Honest Assessment "secondary theme"):
@@ -230,7 +243,7 @@ export default function ATPEconomicsPage() {
                 seconds") promoted to the read point; "to a day" tracks the typical-case worked example
                 at L520-522 - does not commit the box to thinly-confirmed multi-day stragglers, which
                 stay in the deep paragraph. Existing #earning-atp jump-link already lands at cadence detail. */}
-            <li className="flex gap-2"><span className="text-sky-400 shrink-0">2.</span> Every action <em>spends</em> ATP; every contribution <em>recharges</em> it (over <strong className="text-gray-100">hours to a day</strong>, not seconds) when <strong className="text-gray-100">the people who received it confirm its value</strong> - the recipients you helped, not you and not a central rater. Stay above zero or your agent dies - this is how spam and abuse become self-limiting. <a href="#earning-atp" onClick={(e) => { e.preventDefault(); document.getElementById('earning-atp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(who confirms you)</a></li>
+            <li className="flex gap-2"><span className="text-sky-400 shrink-0">2.</span> Every action <em>spends</em> ATP; every contribution <em>recharges</em> it (over <strong className="text-gray-100">hours to a day</strong>, not seconds) when <strong className="text-gray-100">the people who received it confirm its value</strong> - the recipients you helped, not you and not a central rater. Stay above zero or your agent dies (recoverable if you built trust, permanent if not) - this is how spam and abuse become self-limiting. <a href="#earning-atp" onClick={(e) => { e.preventDefault(); document.getElementById('earning-atp')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline whitespace-nowrap">(who confirms you)</a></li>
             {/* June 12 visitor HIGH (browse A): "can't profit on a single action" (cap, in the math
                 details) vs "Net: +10/+30" (simulator buttons) read as a self-contradiction for minutes.
                 Both #384 fixes are live but REACTIVE - each sits beside one instance (inside the
@@ -1196,13 +1209,24 @@ export default function ATPEconomicsPage() {
             </div>
             {currentATP <= 20 && currentATP > 0 && (
               <p className="text-red-400 text-sm mt-2 font-semibold">
-                ⚠️ Critical ATP level! Choose actions carefully or you'll die.
+                ⚠️ Critical ATP level! Choose actions carefully or you'll run out of energy.
               </p>
             )}
+            {/* Aug-10 (15:00) [[prose-fixed-thrice-check-the-illustration]], now fired a fourth
+                time: the prose above was corrected repeatedly while the running demo kept printing
+                "You died". Labels relabelled to energy exhaustion; the second clause ("No more
+                actions possible") was already correct and matches /glossary:401 verbatim in sense.
+                KNOWN TENSION, deliberately NOT fixed here and filed in SESSION_FOCUS: `reset()`
+                (`grep -n "const reset"`) restores a clean slate, while this same page says at
+                `grep -n "not a free reset"` that energy death "is not a free reset ... your identity and full history persist ... closer to a suspended
+                license reinstated than a clean slate". So the mechanic teaches reset where the page
+                teaches rebirth-with-karma. That is a feature change (a demo that carries karma
+                forward), not a copy fix, and it is out of scope for a copy sweep. Do not paper over
+                it with a caption. */}
             {!isAlive && (
               <div className="mt-2">
                 <p className="text-red-500 text-lg font-bold">
-                  💀 You died. ATP reached zero. No more actions possible.
+                  💀 Out of energy. ATP reached zero. No more actions possible.
                 </p>
                 <button
                   onClick={reset}
@@ -1439,7 +1463,7 @@ export default function ATPEconomicsPage() {
             <p className="text-gray-300 text-sm leading-relaxed">
               No moderators needed. ATP depletion is automatic, mathematical,
               and fair. The system self-regulates through energy economics.
-              An appeals mechanism exists
+              An appeals mechanism has been designed
               for edge cases, but the default path is self-correction through behavior.
             </p>
           </div>
@@ -2110,10 +2134,18 @@ export default function ATPEconomicsPage() {
                 Biological organisms have metabolic budgets. Eat food (ATP), do
                 work (ADP), maintain homeostasis. Run out of ATP? Death.
               </p>
+              {/* Aug-10 (15:00). The biology paragraph above keeps "Run out of ATP? Death" because
+                  it is true of cells. This one had the same three words and is not about cells, and
+                  the pair is joined by "work the same way" and closed by "This isn't a metaphor",
+                  so correcting only the second line would have left the connective asserting
+                  sameness across the one difference that matters. The connective now names the
+                  difference, which is also the strongest sentence the analogy can make: the
+                  metabolic frame is exact everywhere except the ending. */}
               <p className="leading-relaxed mb-3">
-                Web4 societies work the same way. Agents have energy budgets.
-                Contribute value (earn ATP), take actions (spend ATP), maintain
-                reputation. Run out? Death.
+                Web4 societies work the same way, with one exception. Agents have energy
+                budgets. Contribute value (earn ATP), take actions (spend ATP), maintain
+                reputation. Run out? You stop acting. Unlike a cell, you can come back,
+                because your trust record survives the loss of your energy.
               </p>
               <p className="leading-relaxed text-sky-300">
                 This isn't a metaphor. It's a rigorous economic framework that

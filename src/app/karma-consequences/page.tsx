@@ -975,6 +975,41 @@ export default function KarmaConsequencesPage() {
               right away and is recoverable; only <em>staying</em> below it is fatal - a sustained
               collapse, not a single stumble.
             </p>
+            {/* Aug-10 (15:00) visitor MEDIUM: "this is the page named after the concept, and the
+                page /first-contact sends me to, and it never states WHO qualifies for rebirth. I
+                had to find the rule back on /how-it-works."
+                Deferred by #532 because the rule as shipped reads `Overall T3 >= 0.5`, and copying
+                that comparator onto a new page would assert the 0.50 endpoint that ledger Q1 has
+                not settled. The endpoint-silent formulation is /how-it-works's own eligibility-card
+                sentence (`grep -n "specifically your" src/app/how-it-works/page.tsx`), which names
+                WHICH QUANTITY is checked without naming the comparator. Propagated, not paraphrased.
+                THREE things this paragraph must keep doing:
+                (1) No comparator, no threshold number, and no owner for the threshold. Nothing on
+                    the site says societies set the REBIRTH threshold; §10.3 gives societies role
+                    requirement thresholds, and `grep -rni karma ../web4/web4-standard/` returns
+                    zero. "The society checks" is verbatim from the eligibility card and names the
+                    checker, not the setter. Do not upgrade it.
+                (2) It must keep naming the quantity seam. The locked paragraph above reads RAW
+                    trust; this gate reads COMPOSITE T3. Two different numbers, both around 0.5, in
+                    one card. Dropping the distinction ships the [[borrowed-word-means-something-
+                    else-there]] defect #532 had just fixed on /trust-tensor.
+                (3) It must NOT restate a recoverability condition. The site currently carries three
+                    (/how-it-works:166 unconditional, /first-contact:750 "if you built good karma",
+                    the aliveness fix "if trust held up"); this paragraph is scoped to the GATE only
+                    so it does not recruit them. That divergence is filed in SESSION_FOCUS, unfixed.
+                The paragraph above this one is verbatim-locked (see the guard on it). Leave it byte
+                for byte; this one is deliberately adjacent, not merged. */}
+            <p className="text-gray-400 text-sm mt-3">
+              <strong className="text-gray-300">Who comes back.</strong> Recoverable is not the same
+              as automatic. The society checks your T3 trust tensor, specifically your{' '}
+              <strong className="text-gray-300">overall (composite)</strong> score, the single number
+              blended from all three dimensions. That is a different number from the raw trust in the
+              paragraph above: raw trust is what the permanent death tracks, and the composite score
+              is what the rebirth gate reads.{' '}
+              <Link href="/how-it-works#journey" className="text-sky-400 hover:underline">
+                The eligibility check, with the weights and the arithmetic &rarr;
+              </Link>
+            </p>
             <p className="text-gray-400 text-sm mt-3">
               Everything on this page about karma carrying forward describes the{' '}
               <strong className="text-gray-300">recoverable</strong> kind. Karma is what makes energy

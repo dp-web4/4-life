@@ -2,6 +2,173 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-10 15:00 session - the enumeration that was truncated three times in one session
+
+**Same visitor log as #532** (`visitor/logs/2026-08-10.md`, 05:08; the cron runs once at 05:00 and
+this is the 15:00 slot). **No open PRs.** This session took the two MEDIUMs and the low-medium that
+#532 left under "Take this next", and the interesting part is not any of the three fixes.
+
+### The finding: an enumeration anchored on the visitor's quoted phrase misses synonyms by construction
+
+Three enumerations of the same claim class were run today, by three different readers, and the first
+two were both wrong:
+
+1. **#532 (09:00)** swept the two-deaths class with the predicate *"does this surface condition on
+   trust, or on which death fired"* and recorded *"These two lines were the only defect."* A surface
+   that makes **no conditional claim at all** is invisible to that predicate. The visitor's own log
+   already listed one (`/how-it-works`'s summary card, filed low-medium).
+2. **This session's Step 3** enumerated with `grep -rn "Run out" src/app/`, the phrase the visitor
+   happened to quote. Found 3 surfaces on `/atp-economics`.
+3. **The policy reviewer** found 3 more that grep missed, on files already in the deliverables.
+4. **The broadened command** found the real count:
+
+   ```
+   grep -rniE "run out|you die|you'll die|your agent dies|death\.|you died" src/app/
+   ```
+
+   **Eight** non-comment surfaces on `/atp-economics` alone, not three.
+
+`[[claim-class-grep-truncated-enumerate-remainder]]` fires again, but with a sharper rule than
+"re-derive the count". **The pattern was anchored on the visitor's wording.** A visitor quotes the
+one phrasing that stopped them; the site expresses the same claim as "you die", "your agent dies",
+"until death", "Death.", "you'll die", "You died". Any grep seeded from the friction log inherits
+the visitor's vocabulary and will systematically under-count. **Seed the pattern from the CLAIM's
+synonyms, not from the quoted sentence.**
+
+### The fix that fell out of it: the defect was ordering, not wording
+
+Eight surfaces, and rewriting eight strings would have ballooned a page that already carries the
+correct sentence. `/atp-economics` ships its recovery clause at its `"Death is real"` bullet
+(`grep -n "reborn with a head start - your reputation"`) and asserted termination ~350 lines
+**earlier**, in the intro (`grep -n "Stay above zero by contributing"`) and again in the Key
+Takeaways (`grep -n "Stay above zero or your agent dies"`). So a reader met "your agent dies" twice before the page ever said energy death is the
+recoverable kind, and every later "death" string was correct shorthand under a frame the page had
+not yet established.
+
+The clause landed at the two surfaces that come **first**. The five later ones (the widget's two labels, the two
+`projectedActionsLeft` strings, and the spam example `grep -n "after message 20"`) are untouched and now
+inherit an established page-level frame. `[[maturity-claim-inherited-from-container]]` used
+**constructively**: normally that memory warns that a claim silently borrows its container's status.
+Here the container was made to grant the right status on purpose, which is cheaper and more honest
+than five caveats.
+
+### Two-deaths class: full disposition (command above, every non-comment hit)
+
+| Surface | Disposition |
+|---|---|
+| `how-it-works`, summary card `grep -n "Every action costs energy"` | **FIXED**: "Run out? You die." -> "You stop acting", propagated from this page's own intro (`grep -n "you stop acting - but that death"`), which #532 wrote 6 hours earlier ~50 lines above. Recoverability clause deliberately NOT restated here, see below |
+| `atp-economics` intro `grep -n "Stay above zero by contributing"` | **FIXED**, recovery clause added, verbatim from this page's `grep -n "reborn with a head start - your reputation"` |
+| `atp-economics` Key Takeaways `grep -n "Stay above zero or your agent dies"` | **FIXED**, "(recoverable if you built trust, permanent if not)", the conditional this page already uses at `grep -n "not a free reset"` |
+| `atp-economics` `grep -n "Web4 societies work the same way"` (was "Run out? Death.") | **FIXED** + the connective repaired, see below |
+| `atp-economics` widget `grep -n "Critical ATP level"` and `grep -n "ATP reached zero"` | **FIXED** (labels only): "you'll die" -> "run out of energy", "You died." -> "Out of energy." `[[prose-fixed-thrice-check-the-illustration]]`, 4th firing |
+| `atp-economics` `grep -n projectedActionsLeft` ("before death" / "until death... or die") | Correct as-is under the frame now set by the two surfaces above |
+| `atp-economics` `grep -n "after message 20"` | Same |
+| `atp-economics` `grep -n "Death is real"` | Already carried the recovery clause in the same sentence |
+| `atp-economics` `grep -n "maintain homeostasis"` ("Run out of ATP? Death.") | **Exempt**: about biological cells, and true of cells |
+| `glossary:401` "you can't act until you earn more", `:410` | Already correct |
+| `first-contact:736`, `:750` | Already correct |
+| `why-web4` `grep -n "run out of fuel"` | Already correct |
+| `how-it-works` `grep -n "you stop acting - but that death"` | Already correct (#532) |
+
+**The connective.** The biology paragraph and the Web4 paragraph beneath it are a rhetorical pair
+joined by *"Web4 societies work the same way"* and closed by *"This isn't a metaphor."* Correcting only the second line would
+have left the connective asserting sameness across the one difference that matters, so the connective
+now names it: the metabolic frame is exact everywhere except the ending.
+
+### Appeals class: full disposition (`grep -rni "appeal" src/app/`)
+
+| Surface | Disposition |
+|---|---|
+| `atp-economics` `grep -n "An appeals mechanism"` *("exists")* | **FIXED** -> "has been designed". Was the only fully unhedged surface site-wide. **Unfiled by the visitor**, found by enumerating |
+| `how-it-works` walkthrough intro `grep -n "Open Science Collective, the hypothetical"` (was *"handles a real violation"*) | **FIXED** -> hypothetical + conditional. **Root-cause fix**: scopes *"Appeal upheld: Suspension lifted, trust scores restored"* and *"every verdict is appealable"* inside the same `#plagiarism-walkthrough` div, at near-zero word cost |
+| `how-it-works` `grep -n "ending in restored"` (was a standalone *"Successful appeals restore your trust scores."*) | **FIXED**: folded INTO the designed flow rather than caveated separately, so the "has been designed" scope reaches it. `/glossary:1543` ships that shape |
+| `how-it-works` `grep -n "suspension + appeals available"` | Correct as-is. **NOT covered by the walkthrough fix**: it sits in the *sibling* div, the one headed *"Example: How a Research Community Sets Its Rules"*, and is scoped by that heading plus the fictional society name. If that heading is ever rewritten, this line loses its cover |
+| `how-it-works` `grep -n "every verdict is appealable"` | **Correct as-is, do not hedge.** Requirement-level, grounded in SAL 5.5 (`web4-society-authority-law.md:221`). Same altitude as the `/why-web4:932` table row |
+| `why-web4` `grep -n "Disputes can be appealed"` | **DELETED** the *"(up to 2 appeals per resolution)"* parenthetical, see below |
+| `why-web4` social-credit table, `grep -n "Can you appeal"` | **Untouched by ruling.** Requirement-level and grounded; no other row carries a maturity hedge; `#faq-wrongful-penalty` already consolidates the unbuilt-appeals answer and names this table |
+| `what-could-go-wrong:1197`, `:294`, `:304`, `:1279`, `:1303` | Correct as-is: requirement-level, or inside a hypothetical scenario, or already routing to the hedged `/karma-consequences#recourse` |
+| `glossary:1543`, `manifest:143`, `karma-consequences` (`grep -n "hasn&apos;t been tested with real humans"`), `coherence-index:903`, `why-web4` `grep -n "formal appeals process"` | Already correctly hedged |
+
+### `[[precise-number-may-cite-archived-artifact]]`, second instance, same source directory
+
+`/why-web4`'s *"Disputes can be appealed (up to 2 appeals per resolution)"* traced to
+`web4/archive/reference-implementations/cross_society_policy_conflicts.py:451`
+(`self.max_appeals_per_resolution: int = 2`). That is the **same directory** archived 2026-04-11 by
+commit `65cd5488` "Archive reference implementation sprawl", whose README calls its contents
+obsolete, and the **same directory** the *"(109 integration checks)"* figure was deleted from on
+2026-07-28. Two precise parameters for unbuilt processes, from one archived source, three months
+apart, neither filed by any visitor. **Worth a proactive pass**: grep the site for other numbers
+whose only provenance is `web4/archive/`.
+
+Deleted with no replacement; nothing above or below leaned on it.
+
+### `/karma-consequences` finally states who comes back
+
+The visitor's point was structural: it is the page named after the concept and the page
+`/first-contact` routes to, and it stopped after the energy/trust distinction. #532 deferred it
+because the shipped rule reads `Overall T3 >= 0.5` and copying that comparator to a new page asserts
+the 0.50 endpoint ledger Q1 has not settled.
+
+The endpoint-silent formulation was already on the site: `/how-it-works`'s eligibility card names
+**which quantity** is checked without naming the comparator. Propagated verbatim, landing **adjacent**
+to the verbatim-locked two-ways-to-die sentence (which is byte-identical). No comparator, no number,
+and **no owner for the threshold**: the first draft said "the society's threshold", which is a coined
+claim (nothing on the site says societies set the *rebirth* threshold; §10.3 gives them role
+*requirement* thresholds, and `grep -rni karma ../web4/web4-standard/` returns zero). "The society
+checks" is the eligibility card's own subject and names the checker, not the setter.
+
+The paragraph also has to name a **quantity seam**: the locked sentence above it reads **raw trust**,
+the gate reads **composite T3**. Two different numbers, both near 0.5, in one card. Shipping it
+without the distinction would have reproduced the `[[borrowed-word-means-something-else-there]]`
+defect #532 had just fixed on `/trust-tensor`.
+
+### Word deltas (measured, not projected)
+
+Comments stripped, so these are rendered words:
+
+| Page | Delta |
+|---|---|
+| `how-it-works` | **+8** (flat, as projected; density guards respected) |
+| `why-web4` | **-6** (deletion) |
+| `karma-consequences` | **+85** (one paragraph, on the page that omitted the answer entirely) |
+| `atp-economics` | **+47** |
+
+**`/atp-economics` did not net down, and I projected that it would.** The projection was wrong
+because I attributed the `/why-web4` deletion to the wrong page when estimating. The content was not
+trimmed to hit the number: +22 of it is the connective repair the policy review required, and +11 is
+the intro clause it also required. Recording the miss rather than the estimate, because a session
+that quietly reconciles its own projection is doing the thing this whole log is about.
+
+### Filed, not fixed (two honest debts)
+
+1. **The `reset()` tension on `/atp-economics`.** The demo's Try Again button (`grep -n "const reset"`) restores a
+   **clean slate**, which is precisely what the same page denies at `grep -n "not a free reset"`: *"This is not a free
+   reset like abandoning a spam account and signing up fresh: your identity and full history
+   persist ... closer to a suspended license reinstated than a clean slate."* So the mechanic teaches
+   reset where the page teaches rebirth-with-karma. That is a **feature** change (a demo that carries
+   karma forward), not a copy fix, and it was out of scope for a copy sweep. Do not paper over it
+   with a caption.
+2. **Three divergent recoverability conditions**, none wrong on its own, never compared:
+   `/how-it-works` (`grep -n "you stop acting - but that death"`) states it **unconditionally**,
+   `/first-contact:750` conditions on *"if you built good karma"*, and #532's aliveness fix conditions on *"if trust held up"*. Karma and trust
+   are not the same quantity. Today's edits were deliberately scoped so they do **not** restate any
+   of the three (the `/how-it-works` summary card carries no clause; the `/karma-consequences`
+   paragraph is scoped to the gate). `[[adding-a-distinction-creates-a-sweep-obligation]]`: whoever reconciles these owes
+   a sweep of all three plus the two `/atp-economics` surfaces fixed today, which now use
+   "if you built trust".
+
+### Take this next (from the same log, still open)
+
+1. **LOW, `/first-contact`'s "Why raw?" box** introduces `raw x CI2` before CI is named; CI arrives
+   in the next collapsed section down. Carried over from #532's list.
+2. **LOW, `/trust-tensor` has two casts of roles** (widget: Surgeon / Data Analyst / Team Leader;
+   examples: Data Analyst / Project Manager / Mechanic). Carried over.
+3. **The archived-provenance sweep** described above. Two instances now, from one directory.
+4. **Unfiled by anyone**: `#faq-community-size` grounds a band in *"the Gini coefficient converges
+   toward the designed 0.25"*, and `../web4` carries Gini only under `simulations/`. A
+   retired-simulation provenance leak into live FAQ prose. Noted by #532, still untouched.
+
+
 ## Aug-10 09:00 session - the two lines under the sentence #531 had just fixed, and a label that named the wrong quantity
 
 **Fresh visitor log** (`visitor/logs/2026-08-10.md`, 05:08). Understanding **7 of 7**, would
