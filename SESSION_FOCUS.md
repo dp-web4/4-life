@@ -110,13 +110,15 @@ more honest in its prose than in its examples ... The worked examples were proba
 the caveats and never re-run against them."*
 
 **Both halves were already on the site. Neither was at the layer the reader was standing on.**
-- The channel-naming existed on `/how-it-works` only **inside the collapsed fold** (`:1075-1077`),
-  while the **twin** illustration at `atp-economics:1586-1591` carries it visible.
-- The open-question half existed only at `atp-economics:814-816`.
+- The channel-naming existed on `/how-it-works` only **inside the collapsed fold**, in a June-11
+  parenthetical this same pass then deleted as redundant, while the **twin** illustration on
+  `/atp-economics` carries it visible (`grep -n "How 60 spent becomes 105 earned"`).
+- The open-question half existed only in that page's newcomer-solvency sentence
+  (`grep -n "commissioned work is the channel that does" src/app/atp-economics`).
 - So a skimmer of `/how-it-works` saw *"spent 60, earned 105, ended with 145"* and nothing else.
 
-One visible paragraph now carries both, **propagated verbatim** (`atp-economics:1587-1590` and
-`:814-816`), so the `atp-economics:1571-1586` sync guard is honored rather than tested. The policy
+One visible paragraph now carries both, **propagated verbatim** from those two surfaces, so the
+`/atp-economics` sync guard (`grep -n "If you reword either one"`) is honored rather than tested. The policy
 reviewer's condition drove the shape: **both halves visible or neither**, because naming the
 commission channel at the skim layer while leaving the open question in the fold would have made
 the skim layer assert the unsolved step *more* loudly than it did before.
@@ -126,8 +128,8 @@ Two consequences worth keeping:
   it, so it was **deleted, not weakened**, and the block's net word count went down. Its guard was
   rewritten to say the job **moved up** rather than being dropped ([[opposite-intents-in-code-comments]]).
 - The fold's summary (*"How did the Novice earn 105 ATP from 60 spent?"*) then read as the same
-  question asked twice. Retitled, and the guard at `atp-economics:1573` that **cites that exact
-  string** was updated in the same edit.
+  question asked twice. Retitled, and the `/atp-economics` guard that **cites that exact string**
+  (`grep -n "The quality ramp behind those"`) was updated in the same edit.
 
 **No figure moved.** `60 / 105 / 145 / 130 / 165 / +45` propagate into Lives 2-3 and into
 `/atp-economics`. Q13's fence held: no rate, no floor, no survival promise. The canon half stays open.
@@ -151,17 +153,19 @@ means Y"*.
 
 Shipped: `terms.ts` (LCT brief + explanation, Web4 explanation), `/glossary` (index row, Web4 card,
 LCT card, Plain English line, the *"Web4 = ..."* one-liner), `/manifest`, `/lct-explainer/layout.tsx`
-(all three slots), `/web4-explainer:34`, `/why-web4:378+:380`, `/what-could-go-wrong:74`.
+(all three slots), `/web4-explainer`'s opening LCT definition, `/why-web4`'s
+*"2. Device-Anchored Identity"* card (body plus the `Shorthand: LCT` line it glosses), and
+`/what-could-go-wrong`'s acronym-box LCT gloss.
 
 Two additions to the reviewer's list, both inside the stated boundary and both because shipping
 without them would have **authored a fresh contradiction**: the glossary's own Web4 and LCT term
-cards (the acronym index would have disagreed with the card 60 lines below it), and `why-web4:378`
-(fixing the *"Shorthand:"* line alone would have left it glossing a sentence two lines up that still
-carried the universal).
+cards (the acronym index would have disagreed with the card 60 lines below it), and the `/why-web4`
+card body (fixing the *"Shorthand:"* line alone would have left it glossing a sentence two lines up
+that still carried the universal).
 
-Vocabulary is **propagated, not coined**: `terms.ts` `Karma:183` (#525) already splits *"anchored in
-hardware"* from *"anchored in software alone"*, `first-contact:376` (#525) already says *"anchored to
-a device"*, and `why-web4:2328` already says *"what hardware buys is **ceiling**, not entry"*.
+Vocabulary is **propagated, not coined**: `terms.ts`'s Karma entry (#525) already splits *"anchored in
+hardware"* from *"anchored in software alone"*, `/first-contact`'s trust-record line (#525) already
+says *"anchored to a device"*, and `/why-web4`'s equity card already says *"what hardware buys is **ceiling**, not entry"*.
 **Device-anchored** is the tier-neutral parent, **hardware-anchored** the strong form. No ceiling
 number, no survival line, no at-0.50 claim in either direction entered any file.
 
@@ -172,17 +176,17 @@ verdict. The next pass does not have to re-derive it, and it should not have to 
 ### The LOW that was reported wrong, and the report was the signal
 
 Filed: *"the clarification that this means suspended standing, not deletion, is behind a spoiler."*
-**It is not behind anything.** `first-contact:465` is a static `<p>`. What gated it in the reader's
+**It is not behind anything.** That clarification is a static `<p>`. What gated it in the reader's
 head was its own bold opening label, *"Spoiler, so you're not left hanging:"*, on a page whose three
-`<details>` (`:265`, `:330`, `:355`) all sit above it and look similar. The word advertised a widget
+`<details>` elements all sit above it and look similar. The word advertised a widget
 that is not there. The visitor's literal suggestion (*"immediately under it"*) shipped in the Jun-27
 pass and Jul-14 confirmed it landed, so the residual was **framing, not placement**
 ([[visitor-deferred-low-check-shipped-first]]).
 
 Label swapped to *"Suspended, not deleted:"*, which is one word shorter (the block already stacks
 three paragraphs after #525's caveat) and puts the defusal **in** the label, which was the other
-half of the suggestion. The sentence itself is byte-identical on purpose: `how-it-works:713` quotes
-it as the canonical `/first-contact` wording. The *"Die & Reborn"* card title stays; three separate
+half of the suggestion. The sentence itself is byte-identical on purpose: `/how-it-works` quotes
+it as the canonical `/first-contact` wording (`grep -n "standing is suspended" src/app/how-it-works`). The *"Die & Reborn"* card title stays; three separate
 browses recorded the hook working as a hook.
 
 ### Deliberately not done, and why
@@ -190,9 +194,54 @@ browses recorded the hook working as a hook.
   disclosed on-site and escalated.
 - **#6** (0.50 ceiling on `/why-web4`): Q8 **equity** half, holding pattern.
 - **#9** (onramp word overload): gate FIRED Jul-23, operator branding call.
-- **#10** (`/atp-economics` mnemonic ordering): contested and guarded at `:135-161`, no new signal.
-- The `EndOfLifeCaveat` hoist follow-up at `how-it-works:48-50`: still open, explicitly a larger job.
+- **#10** (`/atp-economics` mnemonic ordering): contested and guarded (`grep -n "Attention Economics"`), no new signal.
+- The `EndOfLifeCaveat` hoist follow-up (`grep -n "Do NOT hoist this component" src/app/how-it-works`):
+  still open, explicitly a larger job.
 
+### Aug-09 21:00 addendum - the two items this PR was blocked on
+
+**1. The heading was the loudest text in the card this PR fixed.** `/why-web4`'s
+`<h4>2. Hardware-Bound Identity` was left asserting the universal above the two lines the sweep
+had just softened. Before the sweep the card was internally consistent and wrong; after it, the
+heading contradicted the body directly under it. **Swept**, not KEEP-listed, because the
+replacement needed no judgment call and no new vocabulary: the card's own `Shorthand:` line
+already read *"your device-anchored identity"* **byte for byte**, so the heading is now
+**"2. Device-Anchored Identity"**. Checked first that the old string has no inbound quotes
+anywhere in `src/` or `docs/` (one hit, the heading itself), so nothing else had to move with it.
+No ceiling number, no tier claim, no at-0.50 claim entered the file.
+
+**2. Every cite in the remainder ledger was stale by exactly this PR's own insertion.** 6 of 6
+sampled by the reviewer landed on the wrong line, each off by the PR's net insertion into that
+file, and the same drift sat in the in-file comments (`atp-economics:1587-1590` was really
+`:1589-1592`). The entry's whole stated value is that *"the next pass does not have to
+re-derive it"*, so a ledger of ~35 wrong numbers **is** the re-derivation it was written to prevent.
+
+Rewritten to name targets. The invariant applied, stated so it can be checked:
+**no line-number cite into a file the same commit modifies.**
+
+- **De-numbered** (files this PR edits): the remainder ledger's `/how-it-works`, `/first-contact`,
+  `/why-web4`, `/glossary` and `/atp-economics` rows, all now quoted strings to `grep -n`; the
+  shipped-slice list; the `atp-economics` <-> `how-it-works` sync guards **in both directions**
+  (the reciprocal cites on `/atp-economics` had been broken by this PR's edit to `/how-it-works`
+  and were not in the review's list); the `glossary` four-surface comment; the `terms.ts`
+  vocabulary guard; the `what-could-go-wrong` acronym-box guard; the `first-contact` label-swap
+  guard; and this file's own copies of all of the above.
+- **Left numbered on purpose**: `/lct-explainer/page.tsx`, `/your-internet`,
+  `/identity-constellation`, `InteractiveWireframes.tsx`, `/learn`, `/day-in-web4`,
+  `/trust-tensor`, `/tldr`, and the upstream `LCT-linked-context-token.md:39`. This PR does not
+  modify any of them (it touches `lct-explainer/layout.tsx`, not its `page.tsx`), so nothing here
+  can rot those numbers, and de-numbering them would be a different job. The ledger now says
+  which list is which and why.
+- One target named as **deleted** rather than repointed: the June-11 fold parenthetical at
+  `how-it-works:1075-1077` no longer exists, this pass removed it, so the guard quoting it now
+  says so instead of pointing at whatever occupies those lines today.
+
+**This branch also needed `origin/main` merged in.** #528 landed on `main` after this PR opened
+and conflicts with it in `SESSION_FOCUS.md`. Resolved append-both, newest section first. Worth
+recording: `git merge-tree --write-tree origin/main <branch>` reports this (exit 1), while the
+deprecated 3-arg `git merge-tree <base> <a> <b>` prints conflict markers and **still exits 0**,
+which is how a "0 conflicts" check passed on a branch that does not merge. Same shape as the
+`reviewDecision` false-clear: the artifact stood in for the check.
 
 ## Aug-08 09:00 session - the one sentence the site would not hedge (Aug-08 HIGH + 2 MEDIUMs)
 

@@ -1083,21 +1083,29 @@ export default function HowItWorksPage() {
                 is more honest in its prose than in its examples ... The worked examples were
                 probably written before the caveats and never re-run against them."
                 Both halves were already on the site; neither was HERE at the visible layer.
-                The channel-naming existed only inside the fold below (:1075-1077), while the twin
-                illustration at atp-economics:1586-1591 carries it VISIBLE. The open-question half
-                existed only at atp-economics:814-816. So a skimmer of this page saw "spent 60,
-                earned 105, ended with 145" and nothing else.
-                Both sentences PROPAGATED VERBATIM, not summarized: sentence 1 is
-                atp-economics:1587-1590, sentence 2 is atp-economics:814-816. The sync guard at
-                atp-economics:1571-1586 says "If you reword either one, reword both" - nothing was
+                The channel-naming existed only inside the Life 1 fold below, in a June-11
+                parenthetical this same pass then deleted as word-for-word redundant with the
+                paragraph above, while the twin illustration on /atp-economics carries it VISIBLE
+                (grep -n "How 60 spent becomes 105 earned" src/app/atp-economics). The
+                open-question half existed only in that page's newcomer-solvency link
+                (grep -n "commissioned work is the channel that does"). So a skimmer of this page
+                saw "spent 60, earned 105, ended with 145" and nothing else.
+                Both sentences PROPAGATED VERBATIM, not summarized: sentence 1 is the twin
+                illustration's paragraph, sentence 2 is the newcomer-solvency sentence, both
+                grepped above. The sync guard on that page
+                (grep -n "If you reword either one" src/app/atp-economics) says "If you reword
+                either one, reword both" - nothing was
                 reworded, so it is honored rather than tested. Same rule now binds this copy.
                 Deliberately one paragraph at ONE layer, per the policy reviewer's condition:
                 naming the commission channel at the skim layer while leaving the open question in
                 the fold would make the skim layer assert the unsolved step MORE loudly than it
                 does today. Both halves visible or neither.
                 NO FIGURE MOVED. 60 / 105 / 145 propagate into Lives 2-3 below, into
-                atp-economics:1560-1594, and #517 keeps them in sync. The defect was never the
-                number.
+                /atp-economics's own Life 1 block (the one carrying the guard grepped above), and
+                #517 keeps them in sync. The defect was never the number.
+                Cites here name their targets rather than numbering them: both files move under
+                edit, and the first version of this comment went stale by this very pass's own
+                insertion ([[guard-comment-cites-rot-name-the-target]]).
                 Q13 fence respected: this states no rate, no floor, and no survival promise. It
                 discloses that the bootstrap is open, which is what /atp-economics#newcomer-solvency
                 already says. Do not close it here. */}
@@ -1118,7 +1126,8 @@ export default function HowItWorksPage() {
                   above it ("How 60 spent becomes 105 earned:"), so the two stacked as the same
                   question asked twice. Retitled to what the fold actually still contains: the
                   quality-ramp arithmetic and the karma separation. The old string is cited by a
-                  guard at atp-economics:1573; that citation was updated in the same edit. */}
+                  guard on /atp-economics (grep -n "The quality ramp behind those"
+                  src/app/atp-economics); that citation was updated in the same edit. */}
               <summary className="cursor-pointer text-gray-400 hover:text-gray-300">
                 The quality ramp behind those figures
               </summary>

@@ -175,8 +175,13 @@ export default function GlossaryPage() {
               // Aug-08 definitional sweep (Q8 Ruling 1): "hardware-rooted identity" made the
               // hardware tier definitional of LCT. Four surfaces on this page carried the same
               // claim and all four move together, or the page contradicts itself: this row, the
-              // Web4 card gloss (~:232), the LCT card (~:310 and its Plain English line ~:315),
-              // and the "Web4 = ..." one-liner (~:1662). Vocabulary is terms.ts's, not new.
+              // Web4 card gloss (grep -n "anchored to devices you control"), the LCT card
+              // (grep -n "anchoring in software alone is supported") and its Plain English line
+              // (grep -n "Your presence lives on your own device"), and the "Web4 = ..." one-liner
+              // (grep -n "trust-native device-anchored presence"), all in this file.
+              // Vocabulary is terms.ts's, not new. Targets named, not numbered: this file moves
+              // under edit and the ~: numbers were stale on arrival
+              // ([[guard-comment-cites-rot-name-the-target]]).
               { id: "lct", abbr: "LCT", full: "Linked Context Token", gloss: "device-anchored identity" },
               { id: "t3", abbr: "T3", full: "Trust Tensor", gloss: "a 3-axis trust score" },
               { id: "v3", abbr: "V3", full: "Value Tensor", gloss: "a 3-axis score for what you produce" },
