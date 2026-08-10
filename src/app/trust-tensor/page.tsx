@@ -675,9 +675,9 @@ export default function TrustTensorPage() {
               Trust Is Role-Specific
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Try switching roles in the interactive tool above. The same tensor scores produce different
-              overall trust because each role weights dimensions differently. A leader needs
-              Temperament; an analyst needs Talent.
+              Try switching roles in the interactive tool above. The same tensor scores produce a different
+              role-match score because each role weights the dimensions differently when it asks how well
+              a candidate fits. A leader needs Temperament; an analyst needs Talent.
             </p>
           </div>
 
@@ -885,9 +885,41 @@ export default function TrustTensorPage() {
           Real Example: Same Person, Different Roles
         </h2>
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8">
-          <p className="text-gray-300 leading-relaxed mb-6">
+          <p className="text-gray-300 leading-relaxed mb-4">
             Alice has spent years as a data analyst and recently started managing projects.
             Her T3 tensors reflect this asymmetry:
+          </p>
+
+          {/* Aug-10 visitor HIGH #2. They checked the arithmetic and it did not check out against
+              the label. The three totals below are computed with the CANONICAL COMPOSITE weights
+              0.4/0.3/0.3, which is correct and is what t3-v3-tensors.md §10.2 fixes as
+              protocol-invariant. But all three were labelled "Role-weighted trust", which is this
+              page's OWN name, assigned above at the widget intro (grep "a different quantity: a
+              role-weighted"), for a DIFFERENT quantity: the per-role match weighting (grep
+              `const roleWeights`, analyst 0.4/0.35/0.25). So a reader
+              who takes the page's distinction seriously and reaches for a calculator finds that no
+              per-role weighting reproduces any of the three cards (analyst under 0.4/0.35/0.25 is
+              0.8925, which displays as 89, not 90), and concludes the role-specific thesis is
+              unsupported by its own illustration. That is exactly what happened.
+              [[borrowed-word-means-something-else-there]]: the carried word already meant
+              something else HERE, on the same page that coined the distinction.
+              The visitor's suggested fix points BACKWARDS ([[visitor-suggestion-may-point-backwards]]):
+              they proposed recomputing the examples with genuinely per-role weights, which would
+              move the site off canon. The numbers were right and the label was wrong, so the label
+              moved. Weights are now stated at the point of the claim so the arithmetic is
+              checkable where it is made, not only in the collapsed <details> under id="t3-composite"
+              (grep "DataAnalyst: 0.4(0.85)").
+              Rounding: Mechanic was 27 for 0.275 while Analyst was 90 for 0.895, i.e. two rounding
+              rules on three cards. Mechanic corrected to 28. Analyst stays 90 - the anchoring-ceiling
+              block below quotes "Alice's 90% as an analyst" and the t3-composite block prints 0.895;
+              do not "normalise" by rounding 0.895 down.
+              No ordering commentary here (restriction R1), and nothing about the 0.50 endpoint. */}
+          <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            Each role gets its own tensor, and every tensor collapses with the same canonical
+            weights: <strong className="text-sky-300">Talent 0.4, Training 0.3, Temperament 0.3</strong>.
+            So the three totals below differ because Alice&apos;s <em>scores</em> differ by role, not
+            because the blend does. (The percentages in the widget above are the other quantity,
+            the per-role match.)
           </p>
 
           <div className="space-y-6">
@@ -901,7 +933,10 @@ export default function TrustTensorPage() {
                 <p>Temperament: <span className="text-green-400">95%</span> (rock-solid reliability)</p>
               </div>
               <p className="text-gray-300 mt-3 text-sm italic">
-                Role-weighted trust: 90% - she&apos;s deeply trusted in this domain.
+                Composite T3: 90% - she&apos;s deeply trusted in this domain.
+              </p>
+              <p className="text-gray-500 mt-1 text-xs font-mono">
+                0.4(85) + 0.3(90) + 0.3(95) = 89.5
               </p>
             </div>
 
@@ -915,7 +950,10 @@ export default function TrustTensorPage() {
                 <p>Temperament: <span className="text-green-400">91%</span> (her reliability carries over naturally)</p>
               </div>
               <p className="text-gray-300 mt-3 text-sm italic">
-                Role-weighted trust: 74% - trusted, but still growing into this role.
+                Composite T3: 74% - trusted, but still growing into this role.
+              </p>
+              <p className="text-gray-500 mt-1 text-xs font-mono">
+                0.4(65) + 0.3(70) + 0.3(91) = 74.3
               </p>
             </div>
 
@@ -929,7 +967,10 @@ export default function TrustTensorPage() {
                 <p>Temperament: <span className="text-yellow-400">50%</span> (untested in this context)</p>
               </div>
               <p className="text-gray-300 mt-3 text-sm italic">
-                Role-weighted trust: 27% - would you let her fix your brakes?
+                Composite T3: 28% - would you let her fix your brakes?
+              </p>
+              <p className="text-gray-500 mt-1 text-xs font-mono">
+                0.4(20) + 0.3(15) + 0.3(50) = 27.5
               </p>
             </div>
           </div>
@@ -947,7 +988,11 @@ export default function TrustTensorPage() {
                 The 95% is the one that makes the constraint necessary.) The site does not settle
                 per-dimension capping - lct-explainer's "The ceiling caps how high your T3 trust can
                 climb" line says the ceiling caps the composite - and this block must not adjudicate
-                it. Hence "the role-weighted number they combine into", never "these scores".
+                it. Hence "the composite number they combine into", never "these scores". (Aug-10:
+                this clause read "the role-weighted number" until the three cards above were
+                relabelled; "role-weighted" is this page's name for the widget's per-role MATCH, and
+                the ceiling caps the composite, not the match. Wording only, the constraint is
+                unchanged.)
               - It must NOT imply hardware is required to participate ([[hardware-required-seam]]).
                 A ceiling claim is not an eligibility claim (codified at lct-explainer ~274).
               - It must NOT coin a second phrasing of the CONSEQUENCE of a 0.50 ceiling. That ships
@@ -957,7 +1002,7 @@ export default function TrustTensorPage() {
           <div className="mt-6 p-4 bg-gray-900/40 border border-gray-700/50 rounded-lg">
             <p className="text-gray-400 text-sm leading-relaxed">
               <strong className="text-gray-300">What this example leaves out:</strong> attestation is how
-              Alice earns these three scores, but it is not what sets the limit on the role-weighted
+              Alice earns these three scores, but it is not what sets the limit on the composite
               number they combine into. That limit comes from how the identity is anchored, with chip
               class setting the maximum and device count setting how much of the maximum is reached.
               Alice&apos;s 90% as an analyst sits at the top of that range, which takes a hardware-anchored
@@ -971,9 +1016,10 @@ export default function TrustTensorPage() {
 
           <div className="mt-6 p-4 bg-sky-900/20 border border-sky-800/30 rounded-lg">
             <p className="text-sky-300 text-sm">
-              <strong>This is the power of role-specific trust.</strong> A single &ldquo;overall trust
-              score&rdquo; for Alice would average these wildly different capabilities into a meaningless
-              number. T3 keeps the roles separate so societies can make informed decisions.
+              <strong>This is the power of role-specific trust.</strong> Each of those composites is
+              Alice&apos;s score <em>in one role</em>. One trust score for Alice across all roles would
+              average 90, 74 and 28 into something like 64, which describes none of them. T3 keeps the
+              roles separate so societies can make informed decisions.
             </p>
           </div>
         </div>
