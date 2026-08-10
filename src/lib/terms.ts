@@ -39,12 +39,16 @@ export const terms: Record<string, TermDefinition> = {
     // A definition that says an LCT *is* hardware-bound excludes a conformant tier by construction,
     // and it is the tier a fresh `hestia init` lands in. This brief has the widest reach on the
     // site: TermTooltip carries it wherever <LCT> renders.
-    // Vocabulary PROPAGATED from Karma:183 in this same file (#525), not coined: hardware-anchored
+    // Vocabulary PROPAGATED from the Karma entry in this same file (#525), not coined
+    // (grep -n "faster trust recovery when you restart" src/lib/terms.ts): hardware-anchored
     // is the strong form, "anchored in software alone" is the supported weak one, "anchored to a
-    // device" is the tier-neutral parent. Same split the site already ships at
-    // why-web4:2325-2333 ("Web4 identity does not require a security chip ... What hardware buys
-    // is ceiling, not entry") and what-could-go-wrong:171 ("every Web4 identity that carries real
-    // weight is anchored in hardware").
+    // device" is the tier-neutral parent. Same split the site already ships on /why-web4's equity
+    // card (grep -n "What hardware buys is" src/app/why-web4) - "Web4 identity does not require a
+    // security chip ... What hardware buys is ceiling, not entry" - and in /what-could-go-wrong's
+    // risk 4 (grep -n "Every Web4 identity that carries" src/app/what-could-go-wrong):
+    // "every Web4 identity that carries real weight is anchored in hardware".
+    // Targets named, not numbered: all three files move under edit
+    // ([[guard-comment-cites-rot-name-the-target]]).
     // The tier list stays: it is accurate about the hardware tiers. What was wrong is that it read
     // as EXHAUSTIVE. No ceiling number and no at-0.50 claim in either direction belongs here.
     brief: "Your proof of verifiable presence in Web4, anchored to a device you control.",

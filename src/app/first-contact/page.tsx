@@ -440,7 +440,23 @@ export default function FirstContactPage() {
                   <div className="text-xs text-gray-400 mb-2">Karma carries forward</div>
                   <div className="flex gap-1 text-xs">
                     <span className="bg-red-900/40 text-red-300 px-1.5 py-0.5 rounded">ATP=0</span>
+                    {/* Aug-09 visitor HIGH x2, and they are one defect. This badge row was the
+                        first place a reader met the rebirth number, and it showed only the DELTA:
+                        "ATP=0" next to "+12 bonus". The page already states the TOTAL three times
+                        (:65 ledger data, :188 noscript step 7, :857-858 walkthrough recap) and the
+                        guard at :452 states the canon outright ("+12 = karma bonus, 112 = 100+12").
+                        The two surfaces the visitor actually read are the only two that dropped the
+                        base ([[page-ships-the-answer-and-denies-it]]).
+                        Both HIGHs followed from that omission, and the second one is the expensive
+                        one: having read /atp-economics ("new participants receive a 100 ATP starter
+                        grant"), they concluded rebirth leaves you 8x worse off than never joining,
+                        which inverts this card's own stated moral. Their words: "the illustration
+                        argues against its own moral." It does not. 112 > 100. Only the badge did.
+                        "112 total" is ADDED, not swapped in for "+12 bonus": :469 four lines below
+                        refers back to "the +12 bonus" by name, so replacing the delta badge would
+                        orphan that sentence. Keep both badges in sync with :857-858 if either moves. */}
                     <span className="bg-emerald-900/40 text-emerald-300 px-1.5 py-0.5 rounded">+12 bonus</span>
+                    <span className="bg-emerald-900/40 text-emerald-300 px-1.5 py-0.5 rounded">112 total</span>
                   </div>
                 </div>
               </div>
@@ -465,7 +481,7 @@ export default function FirstContactPage() {
               {/* Aug-08 visitor LOW: "the clarification that this means suspended standing, not
                   deletion, is behind a spoiler." It is not behind anything - this is a static <p>.
                   What gated it in their head was its own opening label: bold "Spoiler, so you're
-                  not left hanging:", on a page whose three <details> (:265, :330, :355) all sit
+                  not left hanging:", on a page whose three <details> elements all sit
                   above it and look similar, so the word advertised a widget that isn't there.
                   Their literal suggestion ("put 'suspended, not deleted' in the act label or
                   immediately under it") was already half-shipped: the Jun-27 pass put the defusal
@@ -476,9 +492,11 @@ export default function FirstContactPage() {
                   The Act-5 card title "Die & Reborn" stays. Three separate browses (Jun-02,
                   May-21, Jun-27) recorded the hook working as a hook; the complaint has always
                   been about the defusal's reachability, never the word.
-                  The sentence itself is UNCHANGED and must stay that way: how-it-works:713 quotes
+                  The sentence itself is UNCHANGED and must stay that way: /how-it-works quotes
                   this exact string ("'death' here means Alice's standing is suspended") as the
-                  canonical /first-contact wording. */}
+                  canonical /first-contact wording (grep -n "standing is suspended"
+                  src/app/how-it-works). Named, not numbered: both files move under edit
+                  ([[guard-comment-cites-rot-name-the-target]]). */}
               <p className="text-sm text-gray-400 mb-3">
                 <strong className="text-gray-300">Suspended, not deleted:</strong>{' '}
                 &ldquo;death&rdquo; here means Alice&apos;s <em>standing</em> is suspended - she can&apos;t
@@ -498,11 +516,31 @@ export default function FirstContactPage() {
                   a separate open question (ledger Q5) and is not this card's subject.
                   Do NOT let this drift into framing the bonus as a spending surplus: see the
                   Jul-11 numbers-integrity guard above. It stays karma. */}
+              {/* Aug-09 visitor HIGH, second half. The caveat's dichotomy could not explain the
+                  number it was captioning: "Alice's whole final balance is zero. A reduced portion
+                  of zero is also zero. Neither of the two options the caveat offers can produce 12."
+                  They are right, and the guard above says why. The "whole final balance vs reduced
+                  portion" sentence was PROPAGATED VERBATIM from how-it-works's EndOfLifeCaveat
+                  (:479 records the propagation as deliberate). But that caveat captions the
+                  BALANCE-CARRY model (145 -> 145). This card does not use that model. The sentence
+                  was carried onto an illustration with a different subject, so it fenced a question
+                  this card never asks and left the one it does ask unfenced
+                  ([[propagate-the-sentence-not-your-summary]], in reverse: verbatim propagation is
+                  wrong when the SUBJECT differs, not just when the words drift).
+                  The replacement fences the axis that can actually produce 12: how much karma
+                  converts. The fence itself is unchanged in force ("one modelling choice, not the
+                  rule") and no figure moved.
+                  Do NOT propagate this wording back to karma-consequences:726 or
+                  how-it-works's EndOfLifeCaveat. The balance-carry dichotomy is correct THERE, and
+                  atp-economics:1633 ("85 ATP, reduced from the crisis") actually instantiates the
+                  reduced-portion branch. This divergence is the fix, not a drift to be re-synced.
+                  Base grant propagated from :857-858, not re-derived. Net word count is flat. */}
               <p className="text-xs text-amber-300/70 mb-3 leading-relaxed">
-                <strong className="text-amber-300">About that number:</strong> how <em>much</em> karma
-                carries forward is not settled. Whether you keep your whole final balance or a reduced
-                portion of it is undecided, and 12 is one modelling choice, not the rule. Read it for
-                the shape (a good track record starts your next life stronger), not the amount.
+                <strong className="text-amber-300">About that number:</strong> everyone starts a life
+                with 100, and the 12 is what her track record earned on top, so she restarts at 112.
+                How <em>much</em> karma converts is not settled, and 12 is one modelling choice, not
+                the rule. Read it for the shape (a good track record starts your next life stronger),
+                not the amount.
               </p>
 
               <p className="text-sm text-gray-400 italic">

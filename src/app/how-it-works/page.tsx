@@ -348,7 +348,27 @@ export default function HowItWorksPage() {
                   <span className="text-xl">✨</span>
                   <div>
                     <span className="text-sm font-bold text-emerald-400">Aliveness</span>
-                    <span className="text-sm text-gray-400"> - You&apos;re &ldquo;alive&rdquo; when: ATP &gt; 0 + Trust &gt; 0.5 + CI coherent</span>
+                    {/* Aug-09 visitor, two MEDIUMs that are one line. It read "ATP > 0 + Trust >
+                        0.5 + CI coherent", and both complaints are correct:
+                        (1) ENDPOINT. /trust-tensor says 0.5 is the newcomer baseline and you
+                        "start at the neutral midpoint", so on a strict reading every newcomer is
+                        born not-alive. This is the standing 0.50-endpoint escalation (ledger
+                        Q1/Q8). The ENDPOINT RULE at first-contact:295-303 forbids BOTH directions
+                        and prescribes "state strictly-below and stop", with DELETE rather than
+                        rewrite as the precedent (PR #497). So this is NOT flipped to ">= 0.5", and
+                        it is NOT phrased as "not below 0.5" either - that is the >= side wearing a
+                        negation. Restated as the DEATH rule, which is the only endpoint-silent
+                        form available. Note first-contact:296-297 named "the retired aliveness
+                        engines" as the contested call while this page went unswept for a month
+                        ([[guard-comment-names-the-un-swept-page]]).
+                        (2) DURABILITY. The line dropped the qualifier the rest of the site is
+                        careful about, so a momentary dip read as death - which is exactly Alice's
+                        recoverable 0.48 on /first-contact. Fixed by propagating this page's OWN
+                        sentence from :732 verbatim ("raw trust falls below 0.5 and stays there"),
+                        the same string karma-consequences:965 carries. Do not reword it here only.
+                        Sibling surface: :1222 carries the identical claim and got the identical
+                        treatment. If either moves, move both. */}
+                    <span className="text-sm text-gray-400"> - it ends when: ATP hits 0, raw trust falls below 0.5 and stays there, or CI goes incoherent</span>
                   </div>
                 </div>
                 <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
@@ -1063,21 +1083,29 @@ export default function HowItWorksPage() {
                 is more honest in its prose than in its examples ... The worked examples were
                 probably written before the caveats and never re-run against them."
                 Both halves were already on the site; neither was HERE at the visible layer.
-                The channel-naming existed only inside the fold below (:1075-1077), while the twin
-                illustration at atp-economics:1586-1591 carries it VISIBLE. The open-question half
-                existed only at atp-economics:814-816. So a skimmer of this page saw "spent 60,
-                earned 105, ended with 145" and nothing else.
-                Both sentences PROPAGATED VERBATIM, not summarized: sentence 1 is
-                atp-economics:1587-1590, sentence 2 is atp-economics:814-816. The sync guard at
-                atp-economics:1571-1586 says "If you reword either one, reword both" - nothing was
+                The channel-naming existed only inside the Life 1 fold below, in a June-11
+                parenthetical this same pass then deleted as word-for-word redundant with the
+                paragraph above, while the twin illustration on /atp-economics carries it VISIBLE
+                (grep -n "How 60 spent becomes 105 earned" src/app/atp-economics). The
+                open-question half existed only in that page's newcomer-solvency link
+                (grep -n "commissioned work is the channel that does"). So a skimmer of this page
+                saw "spent 60, earned 105, ended with 145" and nothing else.
+                Both sentences PROPAGATED VERBATIM, not summarized: sentence 1 is the twin
+                illustration's paragraph, sentence 2 is the newcomer-solvency sentence, both
+                grepped above. The sync guard on that page
+                (grep -n "If you reword either one" src/app/atp-economics) says "If you reword
+                either one, reword both" - nothing was
                 reworded, so it is honored rather than tested. Same rule now binds this copy.
                 Deliberately one paragraph at ONE layer, per the policy reviewer's condition:
                 naming the commission channel at the skim layer while leaving the open question in
                 the fold would make the skim layer assert the unsolved step MORE loudly than it
                 does today. Both halves visible or neither.
                 NO FIGURE MOVED. 60 / 105 / 145 propagate into Lives 2-3 below, into
-                atp-economics:1560-1594, and #517 keeps them in sync. The defect was never the
-                number.
+                /atp-economics's own Life 1 block (the one carrying the guard grepped above), and
+                #517 keeps them in sync. The defect was never the number.
+                Cites here name their targets rather than numbering them: both files move under
+                edit, and the first version of this comment went stale by this very pass's own
+                insertion ([[guard-comment-cites-rot-name-the-target]]).
                 Q13 fence respected: this states no rate, no floor, and no survival promise. It
                 discloses that the bootstrap is open, which is what /atp-economics#newcomer-solvency
                 already says. Do not close it here. */}
@@ -1098,7 +1126,8 @@ export default function HowItWorksPage() {
                   above it ("How 60 spent becomes 105 earned:"), so the two stacked as the same
                   question asked twice. Retitled to what the fold actually still contains: the
                   quality-ramp arithmetic and the karma separation. The old string is cited by a
-                  guard at atp-economics:1573; that citation was updated in the same edit. */}
+                  guard on /atp-economics (grep -n "The quality ramp behind those"
+                  src/app/atp-economics); that citation was updated in the same edit. */}
               <summary className="cursor-pointer text-gray-400 hover:text-gray-300">
                 The quality ramp behind those figures
               </summary>
@@ -1128,7 +1157,8 @@ export default function HowItWorksPage() {
                       defect comes back and the parenthetical has to come with it. */}
                   {/* Jul-30 visitor MEDIUM: this used to read "+45 ATP surplus - which BECOMES the
                       carry-forward karma bonus on rebirth", equating karma with a spending surplus.
-                      first-contact:396-399 forbids exactly that ("It is NOT an ATP spending surplus...
+                      the Act-5 numbers-integrity guard in first-contact/page.tsx (grep: "NOT an ATP
+                      spending surplus") forbids exactly that ("It is NOT an ATP spending surplus...
                       Keep the bonus framed as karma, never as a spending surplus"), and it was the
                       third of the three karma definitions the visitor found. The equation is severed,
                       not replaced: what karma is computed from is /karma-consequences' call, and how
@@ -1270,7 +1300,10 @@ export default function HowItWorksPage() {
             <div className="bg-green-950/30 border border-green-800/40 rounded-lg p-3 text-center">
               <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Outcome</div>
               <div className="text-sm font-bold text-green-400">Aliveness</div>
-              <div className="text-xs text-gray-500">ATP &gt; 0 + Trust &gt; 0.5 + CI coherent = alive</div>
+              {/* Aug-09: sibling of :351, same claim, same treatment. Endpoint-silent (strictly
+                  below, per the ENDPOINT RULE at first-contact:295-303) and carrying the
+                  durability qualifier from this page's own :732. Keep in sync with :351. */}
+              <div className="text-xs text-gray-500">Ends when: ATP hits 0, raw trust stays below 0.5, or CI goes incoherent</div>
             </div>
             <div className="text-center text-gray-600">↑ determined by ↑</div>
 
