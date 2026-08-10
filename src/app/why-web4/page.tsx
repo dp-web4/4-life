@@ -1123,8 +1123,9 @@ export default function WhyWeb4Page() {
                   (CI - a running measure of how consistent your behavior is over time) flags when
                   validation patterns don&apos;t match your other behavior - confirming everything a cartel member
                   does while being selective with others creates a detectable signal</li>
-                <li><strong>Hardware cost:</strong> Each colluder needs real hardware-bound identity (LCT), making
-                  cartel scaling expensive</li>
+                <li><strong>Hardware cost:</strong> A cartel needs identities credible enough to move a score,
+                  and every identity that climbs above the software-only ceiling is bound to a physical
+                  device, making cartel scaling expensive</li>
               </ul>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Sophisticated collusion that mimics legitimate community behavior is the hardest
@@ -1610,7 +1611,7 @@ export default function WhyWeb4Page() {
                 This isn&apos;t Web4 - it&apos;s Web4 thinking applied with existing tools. A bot that tracks
                 contribution quality and adjusts permissions accordingly is a manual Tier 1 implementation.
                 The gap between &ldquo;Discord bot that tracks trust&rdquo; and &ldquo;real Web4 wrapper&rdquo;
-                is hardware-bound identity and cross-platform portability.
+                is an LCT and cross-platform portability.
               </p>
               <p>
                 <strong>Who would build this?</strong> The platform&apos;s own engineering team, or a third-party
@@ -2133,8 +2134,8 @@ export default function WhyWeb4Page() {
                 is <strong>rooted in its creator&apos;s hardware-bound identity</strong> - a person or organization
                 that <em>is</em> hardware-anchored issues the agent a scoped, revocable delegation (like a building
                 badge issued by an authorized person). The anchor is <em>inherited through the chain</em>, not
-                possessed directly; every LCT traces back to a hardware-anchored human or org who stays accountable
-                for what the agent does.{" "}
+                possessed directly; the agent&apos;s LCT traces back to whoever issued it, and that issuer stays
+                accountable for what the agent does.{" "}
                 <Link href="/lct-explainer#faq-ai-agents" className="text-amber-400 hover:text-amber-300 underline">
                   LCT page has the longer mechanics →
                 </Link>
@@ -2724,7 +2725,7 @@ export default function WhyWeb4Page() {
 
                 <p className="font-semibold text-gray-200 mt-3">1. Per-context LCTs on separate devices (strongest).</p>
                 <p>
-                  Each hardware-bound LCT is a distinct cryptographic identity. A separate device for high-stakes
+                  Each LCT is a distinct cryptographic identity. A separate device for high-stakes
                   pseudonymous activity (whistleblowing, dissident work, sensitive support communities) yields a
                   separate LCT with no shared fingerprint to the rest of your life. The cost is real: each LCT
                   starts at zero and earns trust independently - no transfer between contexts. That&apos;s
@@ -3227,6 +3228,44 @@ export default function WhyWeb4Page() {
           </details>
 
           {/* How does karma/rebirth work? */}
+          {/* Aug-10: this card had the canonical two-deaths rule BACKWARDS in both directions, and
+              was the last unswept surface of that class (ledger Q5, "logged for its own pass").
+                (a) The energy-death bullet offered "community support or waiting for passive
+                    regeneration". "passive regeneration" and "community support" were each a
+                    SINGLE site-wide hit, both on this line: an inflow mechanism no other page has,
+                    and one /atp-economics spends a page denying (grep -n "recharges from"
+                    src/app/atp-economics: "ATP recharges from contribution, not purchase"; the only
+                    inflows are refund-capped confirmations and commissioned payment). It would also
+                    dissolve /karma-consequences's "Bad actors exhaust themselves economically".
+                (b) The trust-death bullet gave rebirth to the death canon calls PERMANENT. The rule
+                    ships VERBATIM on FOUR prose surfaces: how-it-works, glossary, first-contact,
+                    karma-consequences. Grep it as "Energy death is recoverable" and NOT as
+                    "...recoverable through" - the longer string wraps mid-phrase in two of the four
+                    files and silently returns 2, which is how this session's own first count came
+                    back one short ([[claim-class-grep-truncated-enumerate-remainder]]).
+                    /what-could-go-wrong states the permanence half in its own words, a fifth surface
+                    for that claim but not a copy of this sentence (grep -n "of trust death is
+                    permanent" src/app/what-could-go-wrong - and note THAT one wraps too, after
+                    "that kind", so the natural phrase to reach for returns nothing. Three of the
+                    five surfaces in this class wrap mid-sentence; single-line grep is the wrong
+                    instrument for it).
+                    /how-it-works's eligibility card (grep -n "Society doesn't want you back") reads
+                    "No rebirth. Permanent death." for T3 under the line. /atp-economics agrees
+                    (grep -n "No trust? No rebirth" src/app/atp-economics).
+                    The /what-could-go-wrong guard that fixed this exact error on its own page
+                    (grep -n "rebirth follows ENERGY death" src/app/what-could-go-wrong) named
+                    first-contact, how-it-works and glossary as canonical and never swept THIS page.
+                (c) "When a new identity is created by the same hardware (LCT)" was two errors
+                    welded together: energy-death rebirth keeps the SAME LCT (grep -n "Same LCT,
+                    same history" src/app/how-it-works), so there is no new identity to re-link;
+                    and the hardware universal is the class Q8 Ruling 1 constrains.
+              Both bullets and the karma paragraph are PROPAGATED, not re-derived: the death rule
+              from how-it-works, the suspended-license framing from its "closer to a suspended
+              license reinstated" link target, the hardware scoping from terms.ts's Karma entry
+              (grep -n "there is no device to abandon" src/lib/terms.ts).
+              Rules NOTHING. No rebirth amount enters this card (ledger Q5's open half), and the
+              0.5 wording is the five-surface verbatim, so it asserts no endpoint in either
+              direction (ledger Q1, [[trust-05-endpoint-canon-conflict]]). */}
           <details id="faq-death-rebirth" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>When does an agent &ldquo;die&rdquo; and how does rebirth work?</span>
@@ -3239,17 +3278,26 @@ export default function WhyWeb4Page() {
               <ul className="list-disc list-inside space-y-2 text-gray-400">
                 <li><strong>Energy death</strong> (ATP hits 0): Your account is suspended - like a suspended
                   driver&apos;s license. You can&apos;t take actions, but your identity and history remain.
-                  Recovery is possible through community support or waiting for passive regeneration.</li>
-                <li><strong>Trust death</strong> (trust drops below minimum threshold): More serious. Your
-                  behavioral record shows sustained low quality. Recovery requires starting a new identity
-                  with <strong>karma</strong> - lessons learned from previous lives carry forward as starting
-                  advantages or disadvantages.</li>
+                  This is <strong>the recoverable one</strong>: energy death is recoverable through karma
+                  rebirth, and you come back as the same entity - same LCT, same history, same trust record.
+                  ATP itself only comes back through contribution, so recovery means being able to work
+                  again, not waiting for a refill.</li>
+                <li><strong>Trust death</strong> (raw trust falls below 0.5 and stays there): More serious.
+                  Your behavioral record shows sustained low quality. This one is{" "}
+                  <strong>permanent</strong> - a destroyed reputation can&apos;t be reset, and there is no
+                  rebirth on the far side of it: rebirth is checked against your <strong>T3</strong> score,
+                  and a burned record is exactly what fails that check. Crossing below 0.5 restricts your
+                  features right away and is recoverable; only <em>staying</em> below it is fatal.</li>
               </ul>
               <p>
-                Karma transfer is <strong>automatic</strong>. When a new identity is created by the same
-                hardware (LCT), the system recognizes it as a continuation. Good patterns from past lives
-                give a head start; harmful patterns impose higher initial costs. You can&apos;t escape
-                your history, but you can outgrow it.
+                So <strong>karma</strong> is what carries across an energy death, not a way back from a
+                trust death. It transfers <strong>automatically</strong>, and it does not require minting a
+                new identity: the continuation is literally the same LCT, so there is nothing for the system
+                to re-link. Good patterns from past lives give a head start; harmful patterns impose higher
+                initial costs. Where your presence is anchored in hardware, &ldquo;starting fresh&rdquo;
+                means starting over on a new device, so your history is expensive to escape rather than
+                free. Anchored in software alone, there is no device to abandon and the record stays
+                sheddable.
               </p>
               <p>
                 See{" "}
@@ -3549,7 +3597,7 @@ export default function WhyWeb4Page() {
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 Trust doesn&apos;t transfer like a file you copy between apps. Instead, your
-                <strong> trust history travels with your LCT</strong> - your hardware-bound identity.
+                <strong> trust history travels with your LCT</strong>.
                 When you join a new platform that&apos;s part of the same federation, the platform
                 queries the federation&apos;s trust graph for your existing scores.
               </p>

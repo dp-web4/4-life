@@ -368,15 +368,52 @@ instead of re-litigating.
       it. Replaced with the track-record framing `/how-it-works` already ships verbatim, which is
       the one thing all four models agree on. A definitional card gets no fence: it names the
       term, it does not illustrate an amount.
-    - **Not this entry, logged for its own pass**: `/why-web4:3226-3232` attaches rebirth to
-      **trust** death (*"Recovery requires starting a new identity with karma"*), which
-      `/glossary` and `/karma-consequences` both call permanent and which the `T3 >= 0.5`
-      eligibility rule excludes. `/what-could-go-wrong:253-256` is a standing guard that fixed
-      exactly this error on its own page and names `first-contact`, `how-it-works`, `glossary` as
-      canonical; `/why-web4` was never swept. It is not a one-clause job: the same card's next
-      paragraph carries *"a new identity is created by the same hardware (LCT)"*, the
-      hardware-bound absolute class that Q8 Ruling 1 and PR #525 constrain. Two entangled claim
-      classes in one card.
+    - ~~**Not this entry, logged for its own pass**: `/why-web4` attaches rebirth to **trust**
+      death~~ **DISCHARGED 2026-08-10 (03:00 session).** The card (`grep -n "faq-death-rebirth"
+      src/app/why-web4`) had the two-deaths rule backwards in **both** directions, not one:
+      - Rebirth-with-karma was attached to **trust** death, which **four** prose surfaces call
+        permanent verbatim (`how-it-works`, `glossary`, `first-contact`, `karma-consequences`; grep
+        it as `"Energy death is recoverable"` and **not** as `"...recoverable through"`, since the
+        longer string wraps mid-phrase in two of the four files and quietly returns 2), plus
+        `/what-could-go-wrong` stating the permanence half in its own words (`grep -n "of trust
+        death is permanent"`, which itself wraps after *"that kind"*, so the natural phrase to reach
+        for returns nothing). **Three of these five surfaces wrap mid-sentence**, and this session's
+        own first count came back one short from exactly that, twice, before being corrected.
+        Generalise it: **for this claim class, single-line `grep` is the wrong instrument.** Use
+        `grep -rzoP "Energy death is recoverable\s+through karma rebirth" src/app --include=*.tsx -l`
+        or reflow-tolerant matching, and treat any count from a plain `grep` as a lower bound. Fifth
+        instance of `[[claim-class-grep-truncated-enumerate-remainder]]` in this file, and the first
+        with a mechanical fix rather than a "be careful" note. And which `how-it-works`'s eligibility card
+        (`grep -n "Society doesn't want you back" src/app/how-it-works`) answers with *"No rebirth.
+        Permanent death."*
+      - **Energy** death, the recoverable one, was given an inflow that exists nowhere else on the
+        site: *"community support or waiting for passive regeneration"*. `passive regeneration` and
+        `community support` were each a **single site-wide hit**, both on that one line.
+        `/atp-economics` argues the opposite across the whole page (`grep -n "recharges from"`:
+        *"ATP recharges from contribution, not purchase"*; the only inflows are refund-capped
+        confirmations and commissioned payment), and a passive refill would dissolve
+        `/karma-consequences`'s *"Bad actors exhaust themselves economically"*. **This half was not
+        in the original log entry** and is the more serious of the two: a wrong recovery mechanism
+        is harder for a reader to detect than a wrong recovery target.
+      - The entangled hardware clause resolved without needing Q8: *"when a new identity is created
+        by the same hardware (LCT)"* rests on a **false premise**, since energy-death rebirth keeps
+        the **same** LCT (`grep -n "Same LCT, same history" src/app/how-it-works`). With the premise
+        corrected there is no new identity for hardware to re-link, so the sentence goes rather than
+        gets hedged. The karma-continuity point it was making is propagated from `terms.ts`'s Karma
+        entry (`grep -n "there is no device to abandon" src/lib/terms.ts`), already scoped per
+        Ruling 1.
+      **Nothing ruled.** No rebirth amount entered the card (Q5's open half is untouched), and the
+      0.5 wording is the five-surface verbatim, so it asserts no endpoint in either direction (Q1).
+
+      **A sixth surface, found only because the reviewer read the citation**: `/how-it-works`'s own
+      **Key Takeaways** box (`grep -n "recoverable through karma rebirth, and good karma"
+      src/app/how-it-works`) read *"If your energy hits zero **or trust collapses**, you die. But
+      good karma carries forward - you're reborn with a head start."* One disjunction, one
+      consequence, true of only the first branch, ~640 lines **above** the canonical sentence on the
+      same page and absent from this ledger and from `SESSION_FOCUS.md`. This session was
+      propagating **from** that page while its summary carried the same inversion
+      (`[[grounding-citation-may-contradict-you-nearby]]` at page scale). Fixed in the same pass,
+      wording propagated from the page's own canonical paragraph.
 
 ### Q6. What does the `/` in the canonical equation assert?
 
@@ -1043,6 +1080,24 @@ independent grep found roughly three times that, including the single most consp
 grep -rnE "hardware.?(bound|rooted|anchored|backed|based|tied|locked)|rooted in hardware|bound to (physical )?(hardware|a device|your device)|security chip" src/ --include=*.ts --include=*.tsx
 ```
 
+**2026-08-10: that pattern is structurally blind to the bare-noun form, which is why the worst
+instance was missing from every enumeration above.** `hardware.?(bound|rooted|anchored|backed|
+based|tied|locked)` requires one of the enumerated adjectives to follow the noun. It therefore
+**cannot** match `/why-web4`'s *"when a new identity is created by the same **hardware (LCT)**"*,
+where what follows is a parenthesised acronym. That sentence sat on a beginner-path page for four
+enumerations of this class and was found only by reading the card for an unrelated reason (ledger
+Q5). Fourth truncation of this grep, and the first caused by the *pattern* rather than by stopping
+early: `[[claim-class-grep-truncated-enumerate-remainder]]`. Add the bare-noun alternation, and run
+both:
+
+```
+grep -rnE "hardware \((LCT|the LCT)\)|same hardware" src/ --include=*.ts --include=*.tsx
+```
+
+Site-wide that now returns only two innocuous hits (`/coherence-index` device fingerprint,
+`/atp-economics` device chain) plus the `/why-web4` guard comment quoting the sentence it removed,
+so it is cheap to keep in the checklist and will stay quiet until a new instance appears.
+
 ~120 hits. **Most are correct and out of scope**: anything describing the hardware tiers *as* the
 hardware tiers (hardbound's product copy, TPM/Secure Enclave/FIDO2 mechanics, `/what-could-go-wrong`
 risk 4 and the device-loss risk, `/why-web4`'s equity card (`grep -n "What hardware buys is"
@@ -1091,11 +1146,30 @@ In files this session edited, quote the string to `grep -n`:
 - `/first-contact/page.tsx`: the section heading *"Presence: Hardware-Bound"*; the Web4-solution
   line *"is bound to physical hardware"*; the *"What You Now Understand"* checklist item
   *"be faked (hardware-bound)"*
-- `/why-web4/page.tsx`: *"is hardware-bound identity and cross-platform portability"*;
-  *"Each hardware-bound LCT is a distinct cryptographic identity"*;
-  *"trust history travels with your LCT"*; and the minors FAQ, both its question
-  *"How does hardware-bound identity work for a 13-year-old"* and its answer
-  *"A 13-year-old with their own phone gets a hardware-bound LCT"*
+- ~~`/why-web4/page.tsx`~~ **row WORKED 2026-08-10 (03:00 session)**, while that session was in the
+  file for the Q5 card above. All three definitional universals took **bare deletion of the
+  adjective**, which is the whole fix here: the surrounding claim is true of every LCT, and only the
+  hardware word narrowed it to one tier.
+  - *"is hardware-bound identity and cross-platform portability"* -> *"is an LCT and cross-platform
+    portability"* (this one was the worst of the three: it made hardware the thing that separates a
+    *"real Web4 wrapper"* from a Discord bot, i.e. definitional of Web4 itself)
+  - *"Each hardware-bound LCT is a distinct cryptographic identity"* -> *"Each LCT is a distinct
+    cryptographic identity"* (its own heading, *"Per-context LCTs on separate devices"*, already
+    scopes the strategy, so the adjective added nothing but the universal)
+  - *"trust history travels with your LCT - your hardware-bound identity"* -> appositive deleted
+  - **The minors FAQ pair is NOT defective, and this is a boundary ruling for the next pass, not a
+    skip.** Applying this section's own test (*"defective iff it makes hardware definitional of LCT,
+    or of Web4 identity as such, rather than describing what hardware anchoring buys"*): the answer
+    reads *"A 13-year-old **with their own phone** gets a hardware-bound LCT just like anyone
+    else"*, whose antecedent scopes it to the hardware tier, and the question is asking **about**
+    hardware-bound identity rather than defining LCT as such. Reworded, it would say less. Left
+    verbatim on purpose; do not re-file it.
+  - Two further `/why-web4` surfaces the recorded grep matched but this list never contained, both
+    **entry** claims rather than definitions, both fixed the same way (narrow the quantifier, explain
+    nothing): *"Each colluder needs real hardware-bound identity (LCT)"* now borrows this page's own
+    already-scoped sentence 550 lines away (`grep -n "climbs above the software-only ceiling"`), and
+    *"every LCT traces back to a hardware-anchored human or org"* is narrowed to the agent's own LCT
+    and its issuer. Neither touches Q3 or the Q8 equity half.
 - `/glossary/page.tsx`: *"share hardware-bound presence"*
 - `/atp-economics/page.tsx`: *"5 theorems, hardware-bound identity"*;
   *"the same hardware-bound device chain that signs everything else"*

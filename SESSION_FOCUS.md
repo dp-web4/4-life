@@ -2,6 +2,120 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-10 03:00 session - the FAQ that gave rebirth to the death canon calls permanent
+
+**No fresh log** (it is 03:00; the visitor cron runs at 05:00, and Aug-09's HIGHs, MEDIUMs and
+residual were discharged by #528 and #529). **No open PRs.** This session took the item the Aug-09
+15:00 session marked **"Take this next."**
+
+### The card had the rule backwards in BOTH directions, and only one direction was logged
+
+`/why-web4`'s `#faq-death-rebirth` (`grep -n "faq-death-rebirth" src/app/why-web4`) is on the
+site's own recommended reading path (step 2 of 5) and is linked twice from that page's TOCs.
+
+| the card said | what four surfaces ship **verbatim** |
+|---|---|
+| Energy death: *"Recovery is possible through community support or waiting for **passive regeneration**"* | *"Energy death is recoverable through **karma rebirth**"*, and *"Same LCT, same history, same trust record"* |
+| Trust death: *"Recovery requires **starting a new identity with karma**"* | *"Trust death is **permanent** - a destroyed reputation can't be reset"* |
+
+The logged half was the trust-death one. **The energy-death half was worse and nobody had filed
+it.** `passive regeneration` and `community support` were each a **single site-wide hit**, both on
+that one line: an ATP inflow mechanism that exists nowhere else, and one `/atp-economics` spends a
+whole page denying (`grep -n "recharges from" src/app/atp-economics`: *"ATP recharges from
+contribution, not purchase. Stop contributing and it drains"*; the only inflows are refund-capped
+confirmations and commissioned payment). A passive refill also dissolves `/karma-consequences`'s
+*"Bad actors exhaust themselves economically"*, which is the load-bearing claim of that page.
+
+A wrong recovery **target** is something a careful reader catches by cross-referencing. A wrong
+recovery **mechanism**, stated once, on the only page that states it, is invisible: there is nothing
+to cross-reference it against. That is why it survived four sweeps of the surrounding class.
+
+### The entangled hardware clause dissolved instead of needing a hedge
+
+The Aug-09 note flagged *"when a new identity is created by the same hardware (LCT)"* as the Q8
+Ruling 1 class and called the card *"not a one-clause job"*. It was right that it is not one clause,
+but the fix was not a hedge: the sentence rests on a **false premise**. Energy-death rebirth keeps
+the **same** LCT (`grep -n "Same LCT, same history" src/app/how-it-works`), so there is no new
+identity for hardware to re-link. Correct the premise and the hardware universal has nothing to
+attach to. The karma-continuity point it was making is propagated from `terms.ts`'s Karma entry
+(`grep -n "there is no device to abandon" src/lib/terms.ts`), already scoped per Ruling 1.
+
+Worth keeping as a shape: **an entangled second claim class may not need its own ruling.** Check
+whether it is load-bearing or parasitic on the first error before scoping a bigger job.
+
+### The page this session was propagating FROM had the same inversion in its summary
+
+Found by the policy reviewer, not by the proposal. `/how-it-works`'s **Key Takeaways** box
+(`grep -n "recoverable through karma rebirth, and good karma" src/app/how-it-works`) read *"If your
+energy hits zero **or trust collapses**, you die. But good karma carries forward - you're reborn
+with a head start."* One disjunction, one consequence, true of only the first branch, sitting ~640
+lines **above** the canonical sentence on the same page and ~850 above that page's own *"No rebirth.
+Permanent death."* It appeared in **neither** the ledger nor this file and carried no guard.
+
+This is `[[grounding-citation-may-contradict-you-nearby]]` at page scale: the memory says your
+grounding citation may be refuted two lines down, and here it was refuted 640 lines **up**, in the
+summary rather than the body. It is also, again, the structural finding the Aug-09 visitor wrote
+themselves: *"the summaries are where the precision leaked out, and summaries are what a first-time
+visitor reads."* #528 fixed two instances of that shape on this same page two days ago.
+
+### Also worked: the `/why-web4` row of the Q8 definitional remainder
+
+Since the file was open. All three logged universals took **bare deletion of the adjective** (*"is
+hardware-bound identity and cross-platform portability"* -> *"is an LCT and..."*, *"Each
+hardware-bound LCT"* -> *"Each LCT"*, and the *"your hardware-bound identity"* appositive), because
+in each case the surrounding claim is true of every LCT and only the hardware word narrowed it. Plus
+two entry-claim surfaces the recorded grep matched but the remainder list never contained (the
+colluder cost bullet, the *"every LCT traces back to a hardware-anchored human"* universal), both
+fixed by narrowing the quantifier and explaining nothing, so neither touches Q3 or the Q8 equity
+half.
+
+**The minors FAQ is deliberately left verbatim**, with the reasoning recorded in the ledger so the
+next pass does not re-file it: its answer is scoped by its own antecedent (*"with their own
+phone"*), and the question asks **about** hardware-bound identity rather than defining LCT as such.
+Reworded it would say less.
+
+### Why the grep kept missing the worst instance
+
+`hardware.?(bound|rooted|anchored|backed|based|tied|locked)` **cannot match** `hardware (LCT)`: the
+pattern requires one of those adjectives to follow the noun, and what follows there is a
+parenthesised acronym. Fourth truncation of this class, and the first caused by the **pattern**
+rather than by stopping early ([[claim-class-grep-truncated-enumerate-remainder]]). The ledger now
+carries the bare-noun alternation alongside the original.
+
+The canonical sentence is on `how-it-works`, `glossary`, `first-contact` and `karma-consequences`;
+`/what-could-go-wrong` states the permanence half in its own words. **Grep it as `"Energy death is
+recoverable"`, never as `"...recoverable through"`**: the longer string wraps mid-phrase in two of
+the four files and returns 2. **Three of the five surfaces in this class wrap mid-sentence**, and
+this session's first count came back one short from exactly that, twice, before being corrected.
+The generalisation is worth more than the count: **for this claim class, single-line `grep` is the
+wrong instrument.** Use `grep -rzoP "...\s+..." src/app --include=*.tsx -l`, and treat any plain
+`grep` count as a lower bound. ([[claim-class-grep-truncated-enumerate-remainder]], and a live
+demonstration of why that memory says never carry a count forward without re-deriving it.)
+
+### Nothing ruled
+No rebirth amount entered any card (ledger **Q5**'s open half is untouched: 112 / 145 / 130 / 165 /
+`100 + karma * 2` / `atp_history` all unmoved, no branch endorsed). The 0.5 wording is the
+five-surface verbatim, so it asserts no endpoint in either direction ([[trust-05-endpoint-canon-conflict]],
+ledger **Q1**). **Q3**, **Q8** requests 2-3 unchanged.
+
+### Still open, for the next session
+- `/atp-economics`'s own end-of-life caveat (that page defines a real ATP = 0 death). Unchanged, and
+  it is now the largest logged item in this class.
+- Aug-09 LOWs: `raw x CI^2` placement (check what the visitor actually read: it is already inside an
+  opt-in `<details>`), /tldr vs /running-now tag tiers, "no live network" reconciliation placement,
+  nav visual weight. Unanswered Q3 / Q5 / Q6.
+- The pre-push cite check proposed by #529 (read `git diff --numstat`, flag only cites pointing into
+  files the commit itself touches). Not attempted here.
+- The remainder of the Q8 definitional sweep on pages this session did not open
+  (`/lct-explainer`, `/your-internet`, `/identity-constellation`, `/learn`, `/day-in-web4`,
+  `InteractiveWireframes.tsx`, and the `/first-contact`, `/glossary`, `/atp-economics`,
+  `/how-it-works` rows).
+
+**Cites**: every cite this session authored into `/why-web4`, `/how-it-works` or the ledger names a
+`grep` target rather than a line number, since this branch modifies all three
+([[cite-invariant-diff-aware-not-lint]]). `npm run build` green. No em dashes added (`grep -c` is 0
+on both edited pages, and `u2014` is absent).
+
 ## Aug-09 15:00 session - the fence that named two of the models it already knew about
 
 **No fresh log** (today's was triaged at 09:00 by #528; its HIGHs and MEDIUMs are discharged).
