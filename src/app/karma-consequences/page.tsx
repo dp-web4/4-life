@@ -719,16 +719,22 @@ Example (positive karma):
             names both models and endorses neither. Do NOT resolve this here in either direction:
             picking a rebirth rule is a canon decision this track cannot make.
             Scope note: the visitor filed the ATP half only. trust_decay_factor = 0.95 above and
-            the two permanence paragraphs below are untouched and unfiled. */}
+            the two permanence paragraphs below are untouched and unfiled.
+            Aug-09 (15:00): the pointer said "the lifecycle walkthrough models it the other way".
+            After #528 that stopped being true of the whole target: /how-it-works#journey now OPENS
+            with a demo whose rebirth caption models it THIS page's way (a 100 base plus a karma
+            bonus), and only the karma examples further down carry the balance forward intact. So
+            the link text is narrowed to the examples it actually describes. Nothing else moved;
+            the do-not-resolve rule above still stands. */}
         <p className="text-xs text-amber-300/80 border border-amber-800/40 bg-amber-900/10 rounded p-3 leading-relaxed">
           <strong className="text-amber-300">One model, not the rule:</strong> how much carries into
           the next life is <strong>not settled</strong>, and the arithmetic above is one way of
           modelling it. Whether you keep your whole final balance or a reduced portion of it is not
           decided, and{" "}
           <Link href="/how-it-works#journey" className="text-amber-200 underline hover:text-amber-100">
-            the lifecycle walkthrough
+            the lifecycle walkthrough&apos;s karma examples
           </Link>{" "}
-          models it the other way, carrying the balance forward intact. Read the formula for the
+          model it the other way, carrying the balance forward intact. Read the formula for the
           shape it teaches (positive karma starts you stronger, negative karma starts you weaker,
           and the two are not symmetric), not as the settled numbers.
         </p>
