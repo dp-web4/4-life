@@ -348,7 +348,27 @@ export default function HowItWorksPage() {
                   <span className="text-xl">✨</span>
                   <div>
                     <span className="text-sm font-bold text-emerald-400">Aliveness</span>
-                    <span className="text-sm text-gray-400"> - You&apos;re &ldquo;alive&rdquo; when: ATP &gt; 0 + Trust &gt; 0.5 + CI coherent</span>
+                    {/* Aug-09 visitor, two MEDIUMs that are one line. It read "ATP > 0 + Trust >
+                        0.5 + CI coherent", and both complaints are correct:
+                        (1) ENDPOINT. /trust-tensor says 0.5 is the newcomer baseline and you
+                        "start at the neutral midpoint", so on a strict reading every newcomer is
+                        born not-alive. This is the standing 0.50-endpoint escalation (ledger
+                        Q1/Q8). The ENDPOINT RULE at first-contact:295-303 forbids BOTH directions
+                        and prescribes "state strictly-below and stop", with DELETE rather than
+                        rewrite as the precedent (PR #497). So this is NOT flipped to ">= 0.5", and
+                        it is NOT phrased as "not below 0.5" either - that is the >= side wearing a
+                        negation. Restated as the DEATH rule, which is the only endpoint-silent
+                        form available. Note first-contact:296-297 named "the retired aliveness
+                        engines" as the contested call while this page went unswept for a month
+                        ([[guard-comment-names-the-un-swept-page]]).
+                        (2) DURABILITY. The line dropped the qualifier the rest of the site is
+                        careful about, so a momentary dip read as death - which is exactly Alice's
+                        recoverable 0.48 on /first-contact. Fixed by propagating this page's OWN
+                        sentence from :732 verbatim ("raw trust falls below 0.5 and stays there"),
+                        the same string karma-consequences:965 carries. Do not reword it here only.
+                        Sibling surface: :1222 carries the identical claim and got the identical
+                        treatment. If either moves, move both. */}
+                    <span className="text-sm text-gray-400"> - it ends when: ATP hits 0, raw trust falls below 0.5 and stays there, or CI goes incoherent</span>
                   </div>
                 </div>
                 <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
@@ -1128,7 +1148,8 @@ export default function HowItWorksPage() {
                       defect comes back and the parenthetical has to come with it. */}
                   {/* Jul-30 visitor MEDIUM: this used to read "+45 ATP surplus - which BECOMES the
                       carry-forward karma bonus on rebirth", equating karma with a spending surplus.
-                      first-contact:396-399 forbids exactly that ("It is NOT an ATP spending surplus...
+                      the Act-5 numbers-integrity guard in first-contact/page.tsx (grep: "NOT an ATP
+                      spending surplus") forbids exactly that ("It is NOT an ATP spending surplus...
                       Keep the bonus framed as karma, never as a spending surplus"), and it was the
                       third of the three karma definitions the visitor found. The equation is severed,
                       not replaced: what karma is computed from is /karma-consequences' call, and how
@@ -1270,7 +1291,10 @@ export default function HowItWorksPage() {
             <div className="bg-green-950/30 border border-green-800/40 rounded-lg p-3 text-center">
               <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Outcome</div>
               <div className="text-sm font-bold text-green-400">Aliveness</div>
-              <div className="text-xs text-gray-500">ATP &gt; 0 + Trust &gt; 0.5 + CI coherent = alive</div>
+              {/* Aug-09: sibling of :351, same claim, same treatment. Endpoint-silent (strictly
+                  below, per the ENDPOINT RULE at first-contact:295-303) and carrying the
+                  durability qualifier from this page's own :732. Keep in sync with :351. */}
+              <div className="text-xs text-gray-500">Ends when: ATP hits 0, raw trust stays below 0.5, or CI goes incoherent</div>
             </div>
             <div className="text-center text-gray-600">↑ determined by ↑</div>
 

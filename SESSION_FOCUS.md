@@ -2,6 +2,98 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-09 09:00 session - the caveat that could not produce its own number (Aug-09 both HIGHs + all 3 MEDIUMs)
+
+**Fresh log**: `visitor/logs/2026-08-09.md`. Understanding "good", would return, would recommend
+"with one warning". Two HIGHs, three MEDIUMs, five LOWs. **Both HIGHs are one defect, and the page
+already shipped the fix three times.**
+
+### The defect: a summary surface dropped the base
+
+`/first-contact` Act 5 showed Alice dying at `ATP = 0` with a badge reading `+12 bonus`, and the
+caveat under it fenced the number as *"whether you keep your whole final balance or a reduced
+portion of it"*. The visitor did the arithmetic the site handed them: *"Her whole final balance is
+zero. A reduced portion of zero is also zero. Neither of the two options the caveat offers can
+produce 12."*
+
+They are right, and the same page states the answer at **three** other surfaces: `:65` (ledger
+data), `:188` (noscript step 7), and `:857-858` (*"112 ATP (everyone starts with 100, but the trust
+she built carried forward as a 12 ATP karma bonus)"*), with the guard at `:452` stating the canon
+outright. **The two surfaces the visitor actually read are the only two that dropped the base**
+([[page-ships-the-answer-and-denies-it]]).
+
+**HIGH #2 is what that omission cost.** Having read `/atp-economics` (*"new participants receive a
+100 ATP starter grant"*), they concluded rebirth leaves a trusted agent **8x worse off than never
+having joined**, inverting the card's own moral: *"the illustration argues against its own moral."*
+It does not. **112 > 100.** Only the badge did. One omitted base grant turned a working illustration
+into an argument against itself, which is the log's own structural finding: *"a summary surface
+stating a rule more crudely than the detailed surface. The summaries are where the precision leaked
+out, and summaries are what a first-time visitor reads."*
+
+Fixed by **adding** a `112 total` badge (not swapping out `+12 bonus`, which `:469` refers to by
+name) and rewriting the caveat onto the axis that can actually produce 12. Wording propagated from
+`:857-858`. No figure moved, no model coined.
+
+**Why the caveat was wrong is worth keeping.** That sentence was propagated *verbatim* from
+`how-it-works`'s `EndOfLifeCaveat`, and the guard at `:479` records the propagation as deliberate.
+But that caveat captions the **balance-carry** model (145 -> 145), and this card does not use that
+model. Verbatim propagation still failed, because the **subject** differed
+([[propagate-the-sentence-not-your-summary]], inverted). The divergence is deliberate and guarded:
+`karma-consequences:726` and `atp-economics:1633` keep the balance-carry dichotomy, where it is
+correct and actually instantiated.
+
+### The 0.50 endpoint, on the page a guard had already named
+
+`/how-it-works` carried `ATP > 0 + Trust > 0.5 + CI coherent` at **two** surfaces (`:351`, `:1222`),
+which the visitor filed twice: every newcomer starts at exactly 0.50, so on a strict reading
+**everyone is born not-alive**; and it drops the durability qualifier, so Alice's recoverable 0.48
+reads as death.
+
+This is the standing endpoint escalation. The ENDPOINT RULE at `first-contact:295-303` forbids
+**both** directions and prescribes *"state strictly-below and stop"*, with **DELETE, not rewrite**
+as precedent (#497). So it was **not** flipped to `>=`, and not phrased as *"not below 0.5"* either,
+which is the `>=` side wearing a negation. Both restated as the **death rule**, propagating this
+page's own `:732` verbatim (*"raw trust falls below 0.5 and stays there"*), which is the only
+endpoint-silent form available and discharges the durability MEDIUM in the same clause.
+
+Worth recording: `first-contact:296-297` named *"the retired aliveness engines"* as the contested
+call, and this page went unswept for a month underneath that pointer
+([[guard-comment-names-the-un-swept-page]], now three for three).
+
+### The surface four passes missed, found by the policy reviewer
+
+`src/components/LifecycleDemo.tsx:26,:87` captioned the rebirth *"reborn with a **surplus** (112
+energy)"*. Two defects at once: **"surplus" is forbidden framing** under the standing
+numbers-integrity guard on this exact figure (Alice dies at ATP=0 by exhaustion, earning 37 and
+spending 137, so she spent *more* than she earned), and it showed the total with no base, the same
+omission as the badge. It renders on **`/how-it-works:380`**, making that page a rebirth-number
+surface carrying 112 *and* 145. The proposal missed it; the reviewer's independent grep caught it
+([[prose-fixed-thrice-check-the-illustration]] - the prose was fixed twice and the component never was).
+
+### MEDIUM #3 (three rebirth models): resolved by fix 1, not by new copy
+
+The visitor counted three models and noted `karma-consequences`'s cross-reference reaches only
+`/how-it-works`. Once Act 5 reads `100 + 12`, it shares a **shape** with `karma-consequences:696`
+(`100 + karma * 2`), so there are two models, and the existing cross-reference names both. No new
+sentence was authored. `first-contact` never states a karma *score* for Alice, so the visitor's
+"should be 124" does not bind.
+
+**Residual, logged and deliberately not taken**: `/how-it-works` now visibly shows 112 (the demo)
+and 145 (the karma examples). Both are individually caveated and they are different illustrations
+(Alice's arc vs generic karma arithmetic), but nothing on the page says so. That is a one-clause
+job for a later pass, and it was bounded out per policy review rather than opening a four-page
+reconciliation.
+
+### Deliberately not done
+- **LOW "what ended the 145 -> 145 lives"**: ledger **Q5**, escalated and fenced.
+- **Unanswered Q3** (alive at exactly 0.50): the escalation itself. Visitors re-file it by design.
+- **Q6** (5% fee on karma carry): unfiled canon question, not a copy call.
+- LOWs: `raw x CI^2` placement, /tldr-vs-/running-now tag tiers, nav visual weight, and the
+  "no live network" reconciliation placement. Noted, not taken.
+- Pre-existing guard rot fixed in passing: `how-it-works:1099` cited `first-contact:396-399` for a
+  guard that now lives ~60 lines lower. Replaced the integers with a grep target
+  ([[guard-comment-cites-rot-name-the-target]]).
+
 ## Aug-08 15:00 session - the example that assumed the thing the site calls open (Aug-08 MEDIUM #4 + LOW #8 + the definitional half of the HIGH)
 
 **Same log, second session.** `visitor/logs/2026-08-08.md` was triaged at 09:00 (#525: the HIGH and
@@ -100,6 +192,7 @@ browses recorded the hook working as a hook.
 - **#9** (onramp word overload): gate FIRED Jul-23, operator branding call.
 - **#10** (`/atp-economics` mnemonic ordering): contested and guarded at `:135-161`, no new signal.
 - The `EndOfLifeCaveat` hoist follow-up at `how-it-works:48-50`: still open, explicitly a larger job.
+
 
 ## Aug-08 09:00 session - the one sentence the site would not hedge (Aug-08 HIGH + 2 MEDIUMs)
 
