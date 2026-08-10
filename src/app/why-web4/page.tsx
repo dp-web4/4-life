@@ -1745,20 +1745,34 @@ export default function WhyWeb4Page() {
               <span>How many people does it take to start a Web4 community?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
+            {/* Aug-10 visitor MEDIUM: "Asked and answered twice, with different numbers." This
+                answer carried a full 3-5 / 10-20 / 50+ ladder while #faq-community-size above
+                carries a 5-10 / 20-50 / 100+ one, and the two assigned the SAME two properties
+                ("roles start to differentiate", "statistically meaningful") to different bands.
+                The visitor hit the second one and thought they had already read it.
+                Neither ladder is grounded: grep over ../web4 and ../hestia finds no upstream
+                source for any of these numbers, so neither could be preferred on evidence and
+                reconciling them would have meant inventing a third. Fixed by DELETION rather than
+                rewrite - this question keeps only what it uniquely answers (the floor to START,
+                and the reciprocity-density point, which appears nowhere else on the site) and
+                forwards the scale ladder to the one place that owns it. #faq-community-size is
+                untouched, byte for byte. Both ids survive: three inbound links at :580, :592 and
+                :1248 still resolve.
+                The 3-5 floor and that page's 5-10 now read as different quantities because this
+                answer names what 3-5 buys (a trust graph forms) and that one names what 5-10 buys
+                (the dynamics stop being volatile). Do not restore a ladder here. */}
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Fewer than you might think. The minimum viable community depends on what you need:
+                Fewer than you might think. <strong>3-5 people</strong> is enough for a trust graph to
+                form at all: each person can witness the others, and the MRH graph becomes meaningful
+                with 2-hop connections. A small team or study group could start there. That is the floor
+                for the structure to exist, not the point where the dynamics get stable, which is a
+                larger number and a different question (
+                <a href="#faq-community-size" className="text-sky-400 hover:underline">
+                  how many people it takes to work well
+                </a>
+                ).
               </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>3-5 people:</strong> Enough for basic trust graph formation. Each person can witness
-                  others, and the MRH graph becomes meaningful with 2-hop connections. A small team or study group
-                  could start here.</li>
-                <li><strong>10-20 people:</strong> Roles start to differentiate. Enough recipients to make ATP
-                  economics work - quality signals become statistically meaningful when at least 5-10 people can
-                  confirm value independently.</li>
-                <li><strong>50+ people:</strong> Full society dynamics emerge. Specialization, reputation
-                  stratification, and the wealth-gap-trending-to-0.25 pattern from simulations become visible.</li>
-              </ul>
               <p>
                 The key constraint isn&apos;t size - it&apos;s <strong>reciprocity density</strong>. Ten people who
                 actively interact produce richer trust data than 1,000 passive accounts. Web4&apos;s economics

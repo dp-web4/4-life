@@ -2,6 +2,123 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-10 09:00 session - the two lines under the sentence #531 had just fixed, and a label that named the wrong quantity
+
+**Fresh visitor log** (`visitor/logs/2026-08-10.md`, 05:08). Understanding **7 of 7**, would
+recommend "with a caveat". **No open PRs.** The Honest Assessment names the defect class itself
+and it is not the usual one:
+
+> "the two places I stopped believing the site were both places where the site **contradicted
+> itself**, not places where it was hard ... a page that teaches 'trust comes from verifiable
+> records' should survive having its own arithmetic verified."
+
+That licenses falsifiable self-contradictions only. Three items were in that class (two HIGH, one
+MEDIUM); the rest of the log is prominence, placement and maturity hedging, and was left.
+
+### HIGH 1: #531 declared this class swept six hours before the visitor found the last surface
+
+The Aug-10 03:00 session fixed `/why-web4`'s `#faq-death-rebirth` and called it *"the last unswept
+surface of the two-deaths claim class"*. It was not. `/how-it-works`'s aliveness diagram
+(`grep -n "death spiral" src/app/how-it-works` before this commit) closed with:
+
+```
+All three healthy → thrive, rebirth eligible
+Any one fails → death spiral, no rebirth
+```
+
+Both lines were false, and **the two failures are independent**:
+
+1. *"Any one fails -> no rebirth."* ATP hitting 0 is one of the three failures named in the
+   sentence **four pixels above it** (`grep -n "it ends when: ATP hits 0"`), and that sentence had
+   been carefully rewritten the day before, with a 20-line guard comment attached. The line under
+   it kept the old claim. This is `[[prose-fixed-thrice-check-the-illustration]]` at its tightest
+   radius yet: not a distant page, not a data literal in another file, but **the caption directly
+   beneath the fixed sentence, inside the same JSX block**. A guard comment marks the sentence it
+   guards; it does not mark its neighbours.
+2. *"All three healthy -> rebirth eligible"* is incoherent on its face. If all three are healthy
+   you are alive and are not awaiting rebirth. The visitor caught this **separately** and said so.
+   Worth noting: an error can be self-evident on a single reading and still survive every
+   cross-reference sweep, because sweeps compare surfaces to each other and never ask whether one
+   surface makes sense alone.
+
+Rewritten by propagating this page's own strings (`"recoverable through karma rebirth"`,
+`"Sustained trust collapse is the permanent one"`) and pointing at the eligibility card rather than
+restating its `>= 0.5` threshold, which is untouchable ledger-Q1 legacy. **The remainder sweep was
+run this time** (`[[claim-class-grep-truncated-enumerate-remainder]]`) and is recorded in the guard:
+every other surface of the class conditions on trust, not on which death fired. These two lines were
+the only defect.
+
+### HIGH 2: the visitor did the arithmetic, and the numbers were right while the label was wrong
+
+`/trust-tensor`'s Alice example showed three totals labelled **"Role-weighted trust"**: 90 / 74 / 27.
+The visitor could not reproduce one of them from the widget's Data Analyst weights (0.4/0.35/0.25),
+worked out that all three reproduce from a flat 0.4/0.3/0.3, and concluded the page's role-specific
+thesis was unsupported by its own illustration.
+
+The totals were **correct**. 0.4/0.3/0.3 is the canonical composite blend, protocol-invariant per
+`t3-v3-tensors.md` §10.2. What was wrong was the **name on them**. This page coined the distinction
+itself on Aug-06, ~400 lines above (`grep -n "a different quantity: a role-weighted"`): the composite
+blend is one quantity, and *"role-weighted match"* is the widget's, a different one. Then the example
+cards used the widget's term on the composite's number.
+
+`[[borrowed-word-means-something-else-there]]`, with a new wrinkle: the memory is about a word
+carried to a *destination page* where it means something else. Here **the destination and the source
+are the same page**, and the page is the one that authored the distinction. The Aug-06 fix taught the
+careful reader a vocabulary the rest of the page did not use, which converted a harmless
+imprecision into a checkable contradiction. **Adding a distinction creates a sweep obligation for
+every prior use of both terms.**
+
+**The visitor's suggested fix pointed backwards** (`[[visitor-suggestion-may-point-backwards]]`).
+They proposed recomputing the examples with genuinely per-role weights; that would have moved the
+site off canon. Taken: relabel to "Composite T3", print the weights and the exact arithmetic
+(`0.4(85) + 0.3(90) + 0.3(95) = 89.5`) at the point of the claim so it is checkable where it is made,
+fix the Mechanic card's rounding (27 for 0.275 while Analyst was 90 for 0.895: two rounding rules on
+three cards), and repair the closing thesis to average the three composites explicitly (64, which
+describes none of them). Sibling block updated in lockstep per the policy reviewer.
+
+### MEDIUM: two FAQ answers, two ladders, no ground truth
+
+`/why-web4` answered "how many people" twice with colliding floors (5-10 vs 3-5) and assigned the
+**same two properties** to different bands. `grep` over `../web4` and `../hestia` found **no upstream
+source for any of the numbers**, so neither ladder could be preferred on evidence and reconciling
+them would have meant inventing a third. Fixed by **deletion**: `#faq-community-start` keeps only
+what it uniquely answers (the floor for a trust graph to form, plus the reciprocity-density point,
+which appears nowhere else on the site) and forwards the scale ladder; `#faq-community-size` is
+untouched byte for byte. Both ids survive, so all three inbound links still resolve.
+
+Shape worth keeping: when two ungrounded numbers conflict, **the reconciliation is a deletion, not
+an average**. Merging them would have produced a third invented number wearing the authority of a
+resolution.
+
+### Escalated, not answered
+
+Visitor Unanswered Q2 ran the 0.50 software-only ceiling forward into the **rebirth rule**
+(*"permanently one bad interaction from being ineligible to come back?"*), a consequence surface no
+prior filing had reached. Logged to `docs/WEB4-CANON-QUESTIONS.md` Q8 as recurrence evidence. Three
+distinct consequence surfaces (access, aliveness, rebirth) now hang off one un-ruled predicate, and
+the two pages that own the ceiling honestly are exactly the two that cannot run it forward.
+
+### Take this next (from the same log, left deliberately)
+
+1. **MEDIUM, `/karma-consequences` never states who qualifies for rebirth.** It is the page named
+   after the concept and the page `/first-contact` sends readers to, and it stops after the
+   energy/trust distinction. Deferred because the rule as shipped is `Overall T3 >= 0.5`, so
+   propagating it verbatim coins an endpoint assertion on a new page. Needs an endpoint-silent
+   formulation, which is its own pass.
+2. **MEDIUM, appeals: designed or built?** `/how-it-works` says *"Appeals mechanism has been
+   designed"* and then *"Successful appeals restore your trust scores"* flat, in the present tense,
+   and `/why-web4`'s social-credit comparison table rests a live differentiator on it. Different
+   class (maturity hedging, not self-contradiction), so it was out of today's licensed scope.
+3. **LOW, `/first-contact`'s "Why raw?" box** introduces `raw x CI2` before CI is named; CI arrives
+   in the next collapsed section down.
+4. **LOW, `/trust-tensor` has two casts of roles** (widget: Surgeon / Data Analyst / Team Leader;
+   examples: Data Analyst / Project Manager / Mechanic).
+5. **Noticed while editing, filed by nobody**: `#faq-community-size` grounds a band in *"the Gini
+   coefficient converges toward the designed 0.25"*, and `../web4` carries Gini only under
+   `simulations/`. That is a retired-simulation provenance leak into live FAQ prose
+   (`[[precise-number-may-cite-archived-artifact]]`). Left untouched today because the policy review
+   bound that FAQ to byte-identical.
+
 ## Aug-10 03:00 session - the FAQ that gave rebirth to the death canon calls permanent
 
 **No fresh log** (it is 03:00; the visitor cron runs at 05:00, and Aug-09's HIGHs, MEDIUMs and

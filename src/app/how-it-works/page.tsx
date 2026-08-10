@@ -400,10 +400,47 @@ export default function HowItWorksPage() {
                     <span className="text-sm text-gray-400"> - it ends when: ATP hits 0, raw trust falls below 0.5 and stays there, or CI goes incoherent</span>
                   </div>
                 </div>
+                {/* Aug-10 visitor HIGH, their single biggest finding. These two lines were the
+                    last defective surface of the two-deaths claim class: #531 (Aug-10 03:00)
+                    swept /why-web4's #faq-death-rebirth card and called it the last one, having
+                    missed the two lines sitting directly under the aliveness sentence it had
+                    just rewritten (the span above, grep "it ends when: ATP hits 0")
+                    ([[prose-fixed-thrice-check-the-illustration]] - the guard got the prose, the
+                    illustration under it kept the old claim).
+                    Both lines were false, in different ways:
+                    (1) "Any one fails -> no rebirth". ATP hitting 0 IS one of the three failures
+                        that span names, and the summary card in this file (grep "Sustained trust
+                        collapse is the permanent one") says that death "is recoverable through
+                        karma rebirth"; /first-contact's Act 5 walks Alice through exactly that,
+                        reborn with +12 karma. The rebirth gate is the composite-T3 eligibility
+                        card below (grep "Eligibility Check: Trust Threshold"), which does not
+                        care WHICH condition fired.
+                    (2) "All three healthy -> rebirth eligible" is incoherent on its face: if all
+                        three are healthy you are alive and are not awaiting rebirth. The visitor
+                        caught this independently of (1).
+                    Rewritten by propagating this page's own strings rather than authoring a
+                    variant: "recoverable through karma rebirth" and "Sustained trust collapse is
+                    the permanent one" are both verbatim from that summary card, and the spam
+                    section ships the same shape ("They die. No rebirth eligibility (low T3)").
+                    If the summary card moves, move this too.
+                    ENDPOINT: no comparator here, in either direction, and no "not below 0.5"
+                    (that is the >= side wearing a negation) - the eligibility card's >= 0.5 / <
+                    0.5 pair is deliberately untouched ledger-Q1 territory, so this points AT the
+                    card instead of restating its threshold. See the ENDPOINT RULE guard in
+                    src/app/first-contact/page.tsx.
+                    Remainder sweep, Aug-10: every other surface of this class conditions on trust
+                    rather than on which death fired (first-contact:754,913,961; atp-economics:2320;
+                    coherence-framework:879; karma-consequences:969-980; glossary:1252-1278; plus
+                    the eligibility card and spam section in this file). These two were the only
+                    defect. */}
                 <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                  <div className="text-green-400/80">All three healthy → thrive, rebirth eligible</div>
-                  <div className="text-red-400/80">Any one fails → death spiral, no rebirth</div>
+                  <div className="text-green-400/80">All three healthy → you keep acting, and keep earning</div>
+                  <div className="text-red-400/80">Any one fails → that life ends. ATP hitting 0 is recoverable through karma rebirth; sustained trust collapse is the permanent one</div>
                 </div>
+                <p className="text-xs text-gray-500 mt-2">
+                  Which of the two you get is decided by your composite T3 when the life ends, not by which condition fired.{" "}
+                  <a href="#journey" className="text-sky-400 hover:underline">The eligibility check ↓</a>
+                </p>
               </div>
             </div>
           </div>

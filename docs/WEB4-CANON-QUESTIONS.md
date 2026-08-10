@@ -649,6 +649,23 @@ two HIGHs and three Unanswered Questions in a single sitting.
   the entailment on risk 8 bullet (4): *"it is not a slower climb to the same place. A software-only
   identity starts at 0.50 and 0.50 is also where it stops."* A policy-reviewed PR moved a Q8 surface
   without touching Q1, and the ledger was not updated. Read the site, not this line, for current state.
+- **Recurrence evidence, 2026-08-10 browse (their Unanswered Q2), a NEW consequence surface.**
+  Every prior recurrence ran the 0.50 ceiling forward into *access* or into *aliveness*. This
+  visitor ran it forward into **rebirth eligibility**, which no earlier filing had reached:
+
+  > "`/how-it-works` says 'Overall T3 score >= 0.5.' A software-only identity is capped at exactly
+  > 0.50. So such a user sits permanently *on* the threshold, passing by exactly zero margin,
+  > forever, and only while behaving perfectly. `/lct-explainer` and `/what-could-go-wrong` both
+  > own the ceiling honestly, but neither runs it forward into the rebirth rule. Is a software-only
+  > identity permanently one bad interaction from being ineligible to come back?"
+
+  Recorded as evidence, **not answered**, and no site edit made: answering it in either direction
+  asserts the Q1 endpoint (here the `>=` side is the one already shipped, in the eligibility card,
+  and it is the deliberately-untouched legacy comparator). Note what the visitor demonstrated
+  incidentally: the two pages that own the ceiling honestly are exactly the two that cannot run it
+  forward, so a reader who does the composition themselves lands on the unanswered question every
+  time. That is now three distinct consequence surfaces (access, aliveness, rebirth) reachable from
+  one un-ruled predicate.
 - The cost of the holding pattern, still recorded: the site's friendliest and only running entry
   point drops readers into its most constrained tier, and the site cannot tell them what that costs
   without answering Q1.
