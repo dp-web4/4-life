@@ -147,7 +147,23 @@ export default function HowItWorksPage() {
           <p className="text-xs uppercase tracking-wide text-sky-400 mb-2 font-semibold">Key Takeaways</p>
           <p>You&apos;re born with <strong className="text-green-400">energy</strong> and <strong className="text-purple-400">neutral trust</strong>. Every action costs energy, from about 1 ATP to read something up to 10-20 to post. Quality contributions earn it back; spam drains it.</p>
           <p>Your <strong className="text-blue-400">identity</strong> is tied to your devices - no passwords, no central authority. Your <strong className="text-purple-400">trust</strong> is multi-dimensional (competence, reliability, consistency) and role-specific.</p>
-          <p>If your energy hits zero or trust collapses, you die. But good karma carries forward - you&apos;re reborn with a head start. <strong className="text-cyan-400">No moderators needed.</strong> Five interlocking systems (identity, energy, trust, consistency, context) make spam expensive and quality self-sustaining.</p>
+          {/* Aug-10: this read "If your energy hits zero or trust collapses, you die. But good karma
+              carries forward - you're reborn with a head start." One disjunction, one consequence,
+              and the consequence is only true of the first branch. This page's OWN canonical
+              sentence, ~640 lines below (grep -n "Energy death is recoverable through"
+              src/app/how-it-works), splits them: energy death is the recoverable one, trust death is
+              permanent, and the eligibility card (grep -n "Society doesn't want you back") prints
+              "No rebirth. Permanent death." for a burned record.
+              This is the SUMMARY-drops-the-qualifier shape the Aug-09 visitor named structurally
+              ("the summaries are where the precision leaked out, and summaries are what a
+              first-time visitor reads"), and #528 fixed two other instances of it on this page.
+              Found while sweeping /why-web4 for the same inversion: the citation this session was
+              propagating FROM had it wrong in its own takeaways box
+              ([[grounding-citation-may-contradict-you-nearby]] at page scale).
+              Wording propagated from the canonical paragraph named above, not re-derived (that
+              paragraph is itself guarded verbatim - see the "keep it that way if editing" comment
+              directly preceding it). Asserts no 0.5 endpoint in either direction. */}
+          <p>If your energy hits zero, you stop acting - but that death is recoverable through karma rebirth, and good karma carries forward, so you come back with a head start. Sustained trust collapse is the permanent one. <strong className="text-cyan-400">No moderators needed.</strong> Five interlocking systems (identity, energy, trust, consistency, context) make spam expensive and quality self-sustaining.</p>
         </div>
 
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
