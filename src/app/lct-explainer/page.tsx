@@ -2226,7 +2226,22 @@ export default function LCTExplainerPage() {
                 Because LCTs are device-anchored and multi-witnessed, they resist forgery:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400 ml-4">
-                <li>Keys exist only in secure hardware (TPM, Secure Enclave, FIDO2), never exported</li>
+                {/* Aug-09 (21:00) sweep, Q8 Ruling 1. This read "Keys exist only in secure
+                    hardware (TPM, Secure Enclave, FIDO2), never exported" - a predicate about
+                    Web4 keys AS SUCH, stated three lines under a lead this same pass had just
+                    softened to "device-anchored", and stated harder than the lead. Same shape as
+                    the "Keys hardware-bound" cell fixed in the attackScenarios panel, and the
+                    opposite of the "Device Theft" cell KEPT because its condition sits in a
+                    RESTRICTIVE noun phrase. Rewritten into that restrictive form, which is
+                    propagation and not new vocabulary: the component registry already ships
+                    "chips ... that generate keys internally and never export them" (grep -n
+                    "generate keys internally"), and the Device Theft verdict already ships
+                    "Keys in TPM/Secure Enclave" (grep -n "Keys in TPM"). No ceiling number and
+                    no tier claim added.
+                    KEEP, deliberately, the "Hardware attestation" bullet below: it describes what
+                    hardware attestation DOES, which is the tier-descriptive class the ledger
+                    excludes as already correct, not a claim that every LCT has one. */}
+                <li>Keys in a security chip (TPM, Secure Enclave, FIDO2) are generated there and never exported</li>
                 <li>Birth certificates prove when/where/by whom this LCT was created</li>
                 <li>Multiple independent witnesses must attest (can't fool them all)</li>
                 <li>Hardware attestation proves keys are in real chips, not software emulation</li>
