@@ -30,9 +30,30 @@ export const terms: Record<string, TermDefinition> = {
   LCT: {
     term: "LCT",
     fullName: "Linked Context Token",
-    brief: "Your hardware-bound proof of verifiable presence in Web4.",
+    // Aug-08 (second pass on the same log). #525 swept the false universal "identity is
+    // hardware-bound" out of the no-fresh-start ARGUMENT across 13 surfaces and deliberately left
+    // the DEFINITIONAL glosses, logging them in SESSION_FOCUS as open. Q8 Ruling 1 reaches them
+    // identically: LCT-linked-context-token.md:39 (1.2 clause 1) says an entity that can present
+    // only weak evidence "MUST NOT be excluded by the protocol", and 1.3 defines Binding as a
+    // "permanent, verifiable cryptographic link between entity and LCT" with no hardware term.
+    // A definition that says an LCT *is* hardware-bound excludes a conformant tier by construction,
+    // and it is the tier a fresh `hestia init` lands in. This brief has the widest reach on the
+    // site: TermTooltip carries it wherever <LCT> renders.
+    // Vocabulary PROPAGATED from the Karma entry in this same file (#525), not coined
+    // (grep -n "faster trust recovery when you restart" src/lib/terms.ts): hardware-anchored
+    // is the strong form, "anchored in software alone" is the supported weak one, "anchored to a
+    // device" is the tier-neutral parent. Same split the site already ships on /why-web4's equity
+    // card (grep -n "What hardware buys is" src/app/why-web4) - "Web4 identity does not require a
+    // security chip ... What hardware buys is ceiling, not entry" - and in /what-could-go-wrong's
+    // risk 4 (grep -n "Every Web4 identity that carries" src/app/what-could-go-wrong):
+    // "every Web4 identity that carries real weight is anchored in hardware".
+    // Targets named, not numbered: all three files move under edit
+    // ([[guard-comment-cites-rot-name-the-target]]).
+    // The tier list stays: it is accurate about the hardware tiers. What was wrong is that it read
+    // as EXHAUSTIVE. No ceiling number and no at-0.50 claim in either direction belongs here.
+    brief: "Your proof of verifiable presence in Web4, anchored to a device you control.",
     explanation:
-      "An LCT is bound to physical devices (TPM, Secure Enclave, FIDO2 keys) and witnessed by other entities, creating verifiable proof of your presence. Unlike passwords (knowledge) or wallet keys (possession), LCTs prove what hardware and witnesses can verify.",
+      "An LCT is anchored on a device and witnessed by other entities, creating verifiable proof of your presence. Anchoring in a security chip (a TPM, Apple's Secure Enclave, or a FIDO2 key) is the strong form and is what raises your trust ceiling; anchoring in software alone is supported, at a lower ceiling. Unlike passwords (knowledge) or wallet keys (possession), LCTs prove what a device and its witnesses can verify.",
     learnMore: "/lct-explainer",
     canonicalSpec:
       "https://github.com/dp-web4/web4/blob/main/web4-standard/core-spec/LCT-linked-context-token.md",
@@ -164,8 +185,12 @@ export const terms: Record<string, TermDefinition> = {
     term: "Web4",
     fullName: "Trust-Native Internet",
     brief: "Internet infrastructure where trust, identity, and value flow from verifiable behavior.",
+    // Aug-08: same definitional sweep as LCT above. "rooted in hardware" made the hardware tier
+    // definitional of Web4 itself, which is a wider claim than the LCT one and equally false under
+    // Q8 Ruling 1. The Web2 contrast the sentence is actually drawing is device-vs-company-database,
+    // and that contrast survives intact at every anchoring tier.
     explanation:
-      "Unlike Web2 (platforms own your data) or Web3 (blockchain-first), Web4 proposes that trust emerges from measurable actions and verified presence rooted in hardware. It's a working label for a different architectural philosophy.",
+      "Unlike Web2 (platforms own your data) or Web3 (blockchain-first), Web4 proposes that trust emerges from measurable actions and verified presence anchored to devices you control. It's a working label for a different architectural philosophy.",
     learnMore: "/why-web4",
   },
 

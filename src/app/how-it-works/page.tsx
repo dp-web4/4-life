@@ -1074,9 +1074,62 @@ export default function HowItWorksPage() {
                 • Ended with <strong className="text-green-400">145 ATP</strong>
               </li>
             </ul>
+            {/* Aug-08 visitor MEDIUM #4, the illustration half (#525 logged this as "may be a
+                fresh angle; noted, not taken"). The visitor read /atp-economics first, then came
+                back here: "Life 1: The Novice spends 60 ATP and earns 105. By the rule I just
+                read, a net gain of +45 can only come from commissioned work. So the site's
+                flagship worked example, starring a novice, quietly assumes the exact thing the
+                site elsewhere calls unsolved." Their Honest Assessment generalized it: "the site
+                is more honest in its prose than in its examples ... The worked examples were
+                probably written before the caveats and never re-run against them."
+                Both halves were already on the site; neither was HERE at the visible layer.
+                The channel-naming existed only inside the Life 1 fold below, in a June-11
+                parenthetical this same pass then deleted as word-for-word redundant with the
+                paragraph above, while the twin illustration on /atp-economics carries it VISIBLE
+                (grep -n "How 60 spent becomes 105 earned" src/app/atp-economics). The
+                open-question half existed only in that page's newcomer-solvency link
+                (grep -n "commissioned work is the channel that does"). So a skimmer of this page
+                saw "spent 60, earned 105, ended with 145" and nothing else.
+                Both sentences PROPAGATED VERBATIM, not summarized: sentence 1 is the twin
+                illustration's paragraph, sentence 2 is the newcomer-solvency sentence, both
+                grepped above. The sync guard on that page
+                (grep -n "If you reword either one" src/app/atp-economics) says "If you reword
+                either one, reword both" - nothing was
+                reworded, so it is honored rather than tested. Same rule now binds this copy.
+                Deliberately one paragraph at ONE layer, per the policy reviewer's condition:
+                naming the commission channel at the skim layer while leaving the open question in
+                the fold would make the skim layer assert the unsolved step MORE loudly than it
+                does today. Both halves visible or neither.
+                NO FIGURE MOVED. 60 / 105 / 145 propagate into Lives 2-3 below, into
+                /atp-economics's own Life 1 block (the one carrying the guard grepped above), and
+                #517 keeps them in sync. The defect was never the number.
+                Cites here name their targets rather than numbering them: both files move under
+                edit, and the first version of this comment went stale by this very pass's own
+                insertion ([[guard-comment-cites-rot-name-the-target]]).
+                Q13 fence respected: this states no rate, no floor, and no survival promise. It
+                discloses that the bootstrap is open, which is what /atp-economics#newcomer-solvency
+                already says. Do not close it here. */}
+            <p className="text-xs text-gray-400 mt-3 leading-relaxed">
+              How 60 spent becomes 105 earned: the earn-back on your own spend is capped at what
+              you spent. Earning <em>above</em> cost comes from task payment, where a task pays
+              what the work is worth to whoever commissioned it rather than what it cost you to
+              do. The Novice&apos;s surplus is commissioned work, not a refund. How someone with
+              no track record lands a first commission is an open question on this stack rather
+              than a solved one, and you should read it as one.{" "}
+              <Link href="/atp-economics#newcomer-solvency" className="text-sky-400 hover:underline">
+                Where that stands &rarr;
+              </Link>
+            </p>
             <details className="mt-4 text-xs">
+              {/* Aug-08: this summary used to read "How did the Novice earn 105 ATP from 60
+                  spent?", which became a near-duplicate of the visible paragraph now directly
+                  above it ("How 60 spent becomes 105 earned:"), so the two stacked as the same
+                  question asked twice. Retitled to what the fold actually still contains: the
+                  quality-ramp arithmetic and the karma separation. The old string is cited by a
+                  guard on /atp-economics (grep -n "The quality ramp behind those"
+                  src/app/atp-economics); that citation was updated in the same edit. */}
               <summary className="cursor-pointer text-gray-400 hover:text-gray-300">
-                How did the Novice earn 105 ATP from 60 spent?
+                The quality ramp behind those figures
               </summary>
               <div className="mt-3 pl-3 border-l-2 border-gray-700 text-gray-400 leading-relaxed space-y-2">
                 <p>
@@ -1091,10 +1144,17 @@ export default function HowItWorksPage() {
                   So <em>&ldquo;spent 60, earned 105&rdquo;</em> is the sum across a dozen+ actions:
                   quality contributions earned more than their cost, any low-effort attempts earned less.
                   {/* June 11 visitor HIGH (browse B): "earned more than cost" seemed to violate the
-                      recharge-at-cost cap on /atp-economics. Name the channel: task payment. */}
-                  (Earning <em>above</em> cost comes from task payment - a task pays what the
-                  work is worth to whoever commissioned it, not what it cost you to do. Only the
-                  recharge of your own spend is capped at cost.)
+                      recharge-at-cost cap on /atp-economics. The fix was to name the channel (task
+                      payment) in a parenthetical right here.
+                      Aug-08: that job MOVED UP, it was not dropped. The Aug-08 visitor showed the
+                      fold was the wrong layer for it (they never opened it, and read the visible
+                      bullets as a novice netting +45 unaided), so the channel-naming now sits in
+                      the always-visible paragraph above this <details>, together with the open
+                      question it depends on. The parenthetical here became word-for-word redundant
+                      with a sentence six lines above it, so it is DELETED, not weakened, and net
+                      words on this block go down.
+                      If you ever remove or move that visible paragraph, this guard's original
+                      defect comes back and the parenthetical has to come with it. */}
                   {/* Jul-30 visitor MEDIUM: this used to read "+45 ATP surplus - which BECOMES the
                       carry-forward karma bonus on rebirth", equating karma with a spending surplus.
                       the Act-5 numbers-integrity guard in first-contact/page.tsx (grep: "NOT an ATP

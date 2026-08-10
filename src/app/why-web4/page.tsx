@@ -372,12 +372,27 @@ export default function WhyWeb4Page() {
 
             <div className="bg-gray-900/50 rounded-lg p-4">
               <h4 className="font-semibold text-sky-400 mb-2">
-                2. Hardware-Bound Identity
+                2. Device-Anchored Identity
               </h4>
               <p className="text-gray-400 text-sm">
-                Your identity is tied to your device&apos;s security chip - the same kind that protects Face ID and fingerprints. Creating a fake identity means buying a new physical device. Multiple devices witness each other for extra security.
+                Your identity is anchored to your own device rather than a company database, and an identity that carries real weight is anchored in the device&apos;s security chip, the same kind that protects Face ID and fingerprints. At that tier, creating a fake identity means buying a new physical device. Multiple devices witness each other for extra security.
               </p>
-              <p className="text-gray-400 text-sm mt-1">Shorthand: LCT (Linked Context Token) - just means your hardware-bound identity.</p>
+              {/* Aug-08 definitional sweep (Q8 Ruling 1). The shorthand line is a definition of
+                  record, and fixing it alone would have left it glossing a sentence two lines up
+                  that still carried the universal, so both moved. "Carries real weight" is
+                  /what-could-go-wrong's already-shipped scoping phrase, not a new one
+                  (grep -n "Every Web4 identity that carries" src/app/what-could-go-wrong), and this
+                  page settles the same point in full in its equity card ("Web4 identity does not
+                  require a security chip ... What hardware buys is ceiling, not entry";
+                  grep -n "What hardware buys is" in this file). No number here.
+                  Aug-09 (21:00): the <h4> above was still "2. Hardware-Bound Identity", the loudest
+                  text in the card and the universal stated harder than the two lines this comment
+                  describes softening. Swept to "2. Device-Anchored Identity", which is this card's
+                  OWN vocabulary: the shorthand line below already reads "your device-anchored
+                  identity" byte for byte. No new word coined, no ceiling number, no tier claim.
+                  Cites here name their target rather than numbering it: both files move under edit
+                  ([[guard-comment-cites-rot-name-the-target]]). */}
+              <p className="text-gray-400 text-sm mt-1">Shorthand: LCT (Linked Context Token) - just means your device-anchored identity.</p>
               <Link href="/lct-explainer" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about identity →
               </Link>

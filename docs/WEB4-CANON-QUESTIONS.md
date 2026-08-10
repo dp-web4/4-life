@@ -978,6 +978,106 @@ that hedges everything, an unhedged absolute reads as a deliberate signal that t
   "Why This Works" panel and printed a red "Attack Vectors" header, overshooting into false parity
   with the platform rows.
 
+### Follow-up: the DEFINITIONAL half of the same claim - definition-of-record slice done, body prose open
+
+Filed 2026-08-08 (15:00 session, the second session on the Aug-08 log). The sweep above discharged
+the claim where it was **arguing** something (the no-fresh-start thesis). It deliberately left the
+places where the site simply **defines** LCT, and `SESSION_FOCUS.md` logged two of them as *"Open
+for a later pass ... a site-copy call, not a canon one."*
+
+Ruling 1 reaches the definitional half identically. `LCT-linked-context-token.md:39` (§1.2 clause 1)
+says an entity that can present only weak evidence *"MUST NOT be excluded by the protocol"*, and
+§1.3 defines **Binding** as a *"permanent, verifiable cryptographic link between entity and LCT"*
+with no hardware term. A definition that says an LCT *is* hardware-bound excludes a conformant tier
+by construction, and it is the tier a fresh `hestia init` lands in.
+
+**The list logged as "two surfaces" was a truncated grep, for the third time on this claim.** The
+09:00 session's recorded five ran to 13. This session proposed six and the policy reviewer's
+independent grep found roughly three times that, including the single most conspicuous surface:
+`/lct-explainer` itself, the page whose entire job is to define LCT, **including its `<title>`**.
+
+**How the grep was run**, so the next pass can reproduce and extend it rather than re-derive it:
+
+```
+grep -rnE "hardware.?(bound|rooted|anchored|backed|based|tied|locked)|rooted in hardware|bound to (physical )?(hardware|a device|your device)|security chip" src/ --include=*.ts --include=*.tsx
+```
+
+~120 hits. **Most are correct and out of scope**: anything describing the hardware tiers *as* the
+hardware tiers (hardbound's product copy, TPM/Secure Enclave/FIDO2 mechanics, `/what-could-go-wrong`
+risk 4 and the device-loss risk, `/why-web4`'s equity card (`grep -n "What hardware buys is"
+src/app/why-web4`), `/lct-explainer#software-only-survival`, `/trust-tensor:420`,
+`/karma-consequences` after the sweep above). The defective class is narrower:
+**a surface is defective iff it makes hardware definitional of LCT, or of Web4 identity as such,
+rather than describing what hardware anchoring buys.**
+
+**Shipped this session: the definition-of-record slice.** Boundary, stated so it can be falsified:
+a surface is in the slice iff its *job* is to say what LCT or Web4 **is**, in a line or two, out of
+narrative context. That means term-registry entries, acronym-index rows, page `<title>`/meta/OG,
+one-line manifest definitions, glossary term cards, and *"Shorthand: X just means Y"* restatements.
+- `src/lib/terms.ts` LCT `brief` and `explanation`; Web4 `explanation`
+- `src/app/glossary/page.tsx` acronym-index LCT row; Web4 card; LCT card and its Plain English line;
+  the *"Web4 = ..."* one-liner (all four move together or the page contradicts itself)
+- `src/app/manifest/page.tsx` LCT primitive line
+- `src/app/lct-explainer/layout.tsx` `title`, `description`, `openGraph.description`
+- `src/app/web4-explainer/page.tsx`, the opening LCT definition
+  (`grep -n "linked context token</strong>"`)
+- `src/app/why-web4/page.tsx`, the *"2. Device-Anchored Identity"* card: its body and the
+  *"Shorthand: LCT ..."* line it glosses (`grep -n "Shorthand: LCT"`)
+- `src/app/what-could-go-wrong/page.tsx`, the LCT gloss in the opening definition list
+  (`grep -n "witnessed by your devices"`)
+
+Vocabulary is **propagated, not coined**: `terms.ts`'s Karma entry (from the sweep above,
+`grep -n "faster trust recovery when you restart" src/lib/terms.ts`) already splits *"anchored in
+hardware"* from *"anchored in software alone"*, and `/why-web4` already says *"what hardware buys
+is **ceiling**, not entry"* (`grep -n "What hardware buys is" src/app/why-web4`).
+**Device-anchored** is the tier-neutral
+parent, **hardware-anchored** the strong form. No ceiling number, no survival line, and no at-0.50
+claim in either direction entered any file.
+
+**NOT done, enumerated so the next pass starts complete.** These are body prose and illustrations,
+several under their own guards, and several need the surrounding paragraph read before they can be
+classified. This is a **grep result requiring per-surface judgment, not a verdict**: some will turn
+out to be correctly tier-descriptive.
+
+Surfaces in files **this session edited** are named by their text, not numbered: a line number
+written here rots by this session's own insertion into that file, which is exactly what happened
+to the first version of this list ([[guard-comment-cites-rot-name-the-target]]). Files this
+session did **not** touch keep their numbers, since nothing here can move them.
+
+In files this session edited, quote the string to `grep -n`:
+- `/how-it-works/page.tsx`: *"Unforgeable identity rooted in hardware"*;
+  *"Hardware-bound identity, unforgeable"*; *"Hardware-bound identity proves you"*
+- `/first-contact/page.tsx`: the section heading *"Presence: Hardware-Bound"*; the Web4-solution
+  line *"is bound to physical hardware"*; the *"What You Now Understand"* checklist item
+  *"be faked (hardware-bound)"*
+- `/why-web4/page.tsx`: *"is hardware-bound identity and cross-platform portability"*;
+  *"Each hardware-bound LCT is a distinct cryptographic identity"*;
+  *"trust history travels with your LCT"*; and the minors FAQ, both its question
+  *"How does hardware-bound identity work for a 13-year-old"* and its answer
+  *"A 13-year-old with their own phone gets a hardware-bound LCT"*
+- `/glossary/page.tsx`: *"share hardware-bound presence"*
+- `/atp-economics/page.tsx`: *"5 theorems, hardware-bound identity"*;
+  *"the same hardware-bound device chain that signs everything else"*
+
+In files this session did not touch, the numbers still hold:
+- `/lct-explainer/page.tsx` (the big one, the page that owns the definition): `:22` (file header),
+  `:133` (comparison data literal), `:182`, `:242`, `:466`, `:798`, `:844`, `:852`, `:1856`,
+  `:2180`, `:2189`, `:2205`, `:2394`
+- `/your-internet/page.tsx`: `:104`, `:131`. Note `:104` contradicts `:102` **on the same card**,
+  which already ships the correct scoped version
+- `/identity-constellation/page.tsx`: `:44`, `:125`, `:403`
+- `src/components/InteractiveWireframes.tsx:76`
+- `/learn/page.tsx:266`, `/day-in-web4/page.tsx:55`
+
+**Explicitly excluded as already correct**: `/web4-explainer`'s society-root line (*"A society's root LCT is
+**intended to be** hardware-bound"*, hedged and scoped to society roots), `/tldr:226` and
+`page.tsx:53` (glossing the **hardbound** product name, not LCT), and every TPM/Secure Enclave
+mechanics passage.
+
+**Not escalated.** Nothing here needs a canon ruling: Ruling 1 already settles it. This is a
+site-copy sweep with a known remainder, tracked here only because the remainder has now been
+truncated three times.
+
 ---
 
 *Maintained by the 4-life autonomous track. Add new entries only with a policy-review-approved

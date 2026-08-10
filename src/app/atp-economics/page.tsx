@@ -1570,19 +1570,27 @@ export default function ATPEconomicsPage() {
                 actually an eight-week-old ONE-SURFACE fix. The June 11 visitor (browse B)
                 filed "earned more than cost seems to violate the recharge-at-cost cap"
                 AGAINST THIS PAGE BY NAME; the fix landed on the twin illustration at
-                /how-it-works only (:986-1006, the "How did the Novice earn 105 ATP from 60
-                spent?" fold), and this copy - the one the friction was filed against - kept
+                /how-it-works only (inside the Life 1 fold, whose summary then read "How did the
+                Novice earn 105 ATP from 60 spent?" and now reads "The quality ramp behind those
+                figures" - retitled Aug-08 when the channel-naming was hoisted OUT of that fold to
+                the visible layer), and this copy - the one the friction was filed against - kept
                 the unfixed version. So a newcomer worked example here taught unaided
                 net-positive right up until the session that added #newcomer-solvency, which
                 says the opposite. Illustration fixed, not prose: the prose was already right.
-                PROPAGATED, not re-derived: the channel-naming is how-it-works:1004-1006 in
-                substance ("Earning above cost comes from task payment - a task pays what the
+                PROPAGATED, not re-derived: the channel-naming is /how-it-works's Life 1 fold in
+                substance (grep -n "How 60 spent becomes 105 earned" src/app/how-it-works; the
+                parenthetical this text quotes was deleted Aug-08 when the channel-naming was
+                hoisted out of that fold, so the quote below is the historical wording, not a
+                live target) ("Earning above cost comes from task payment - a task pays what the
                 work is worth to whoever commissioned it, not what it cost you to do. Only the
                 recharge of your own spend is capped at cost."). If you reword either one,
                 reword both, same rule as L721 above.
                 NO FIGURE MOVED. 105 / 145 / 130 propagate into Lives 2-3 below and into
-                /how-it-works:977-984, which #517 deliberately kept in sync eight hours before
-                this. The defect was never the number, it was the unnamed channel. */}
+                /how-it-works's Life 1 block (grep -n "Life 1: The Novice" src/app/how-it-works),
+                which #517 deliberately kept in sync eight hours before
+                this. The defect was never the number, it was the unnamed channel.
+                Cites named rather than numbered: /how-it-works moves under edit and these went
+                stale by an Aug-08 pass ([[guard-comment-cites-rot-name-the-target]]). */}
             <p className="text-xs text-gray-500 mt-2">
               How 60 spent becomes 105 earned: the earn-back on your own spend is capped at what
               you spent. Earning <em>above</em> cost comes from task payment, where a task pays

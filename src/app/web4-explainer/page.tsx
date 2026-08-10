@@ -31,10 +31,12 @@ export default function Web4ExplainerPage() {
       <section>
         <h2 id="lct">1. LCT: Linked Context Token</h2>
         <p style={{ marginTop: "0.75rem", maxWidth: "40rem", color: "#d1d5db" }}>
-          An LCT is a <strong>linked context token</strong>: a hardware-bound
+          An LCT is a <strong>linked context token</strong>: a device-anchored
           verified presence token that represents a subject in a society&apos;s
           context (an agent, society, role, resource, or task) and carries
-          MRH and T3/V3 views.
+          MRH and T3/V3 views. Anchoring in hardware is the strong form and is
+          what raises the trust ceiling; anchoring in software alone is
+          supported, at a lower ceiling.
         </p>
         <p style={{ marginTop: "0.5rem", maxWidth: "40rem", color: "#9ca3af" }}>
           LCTs are linked together by RDF-like graph edges (for example:
