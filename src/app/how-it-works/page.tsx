@@ -207,6 +207,18 @@ export default function HowItWorksPage() {
             </Link>
           </div>
 
+          {/* Aug-10 (15:00) visitor low-medium: this card read "Run out? You die." The page's own
+              intro (`grep -n "you stop acting - but that death"`), rewritten by #532 six hours
+              earlier the same day, already ships "If your energy hits zero, you stop acting - but
+              that death is recoverable through karma rebirth". ~50 lines apart, same page, opposite
+              claims. #532's remainder sweep predicate was "does
+              this surface condition on trust or on which death fired"; a surface that makes no
+              conditional claim at all falls outside that predicate, which is why it was not counted.
+              Fixed by propagating that intro's own verb, NOT by restating its recoverability clause:
+              the clause is ~50 lines above in the same reading order, so this card inherits it, and
+              restating it here would recruit the three-way divergence recorded in SESSION_FOCUS
+              (the intro states it unconditionally / first-contact:750 conditions on "if you built
+              good karma" / the aliveness fix conditions on "if trust held up"). Keep this card endpoint-silent and clause-free. */}
           <div className="bg-gradient-to-br from-green-950/30 to-green-900/20 border border-green-800/30 rounded-lg p-6">
             <div className="text-3xl mb-2">⚡</div>
             <h3 className="text-lg font-semibold text-green-400 mb-2">
@@ -214,7 +226,7 @@ export default function HowItWorksPage() {
             </h3>
             <p className="text-sm text-gray-400">
               Every action costs energy (<TermTooltip term="ATP" />). Run out? You
-              die. Contribute value? You thrive.
+              stop acting. Contribute value? You thrive.
             </p>
             <Link
               href="/atp-economics"
@@ -1799,8 +1811,28 @@ export default function HowItWorksPage() {
             keep step 6's wording; the inbound link quotes it. */}
         <div id="plagiarism-walkthrough" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 mb-6 scroll-mt-24">
           <h4 className="text-lg font-semibold text-gray-200 mb-3">Walkthrough: A Plagiarism Case from Start to Finish</h4>
+          {/* Aug-10 (15:00) visitor MEDIUM, root-cause fix for THREE appeals surfaces in this div.
+              The visitor read the walkthrough's ":Appeal upheld: Suspension lifted, trust scores
+              restored" (below) and the closer's "every verdict is appealable" as operative fact.
+              This div is a SIBLING of the div headed "Example: How a Research Community Sets Its
+              Rules" (`grep -n "How a Research Community Sets Its Rules"`), and closes before this
+              one opens, so this div inherits nothing from that heading. Its own intro said "handles
+              a real violation", which actively asserts realness. Scoping the
+              container is the whole fix: everything inside it is now explicitly hypothetical, at
+              near-zero word cost, instead of four separate caveats on a page with density guards.
+              SCOPE NOTE, do not let a later session over-read this: it does NOT cover
+              `grep -n "suspension + appeals available"`, which sits in the OTHER div and is scoped
+              by that div's own "Example:" heading plus the fictional society name. If that heading
+              is ever rewritten, that line loses its cover.
+              And the closer's "every verdict is appealable" is NOT a defect and must not be hedged:
+              it is a requirement-level claim, grounded in SAL 5.5 ("Negative adjustments MUST
+              include appeal path and cool-down period", web4-standard/core-spec/
+              web4-society-authority-law.md:221). Same altitude as /why-web4's social-credit table
+              row, deliberately left alone for the same reason. The defect class is claiming the
+              multi-tier PROCESS is built, not claiming a path exists. */}
           <p className="text-gray-400 text-sm mb-4">
-            Here&apos;s how the Open Science Collective handles a real violation - step by step.
+            Here&apos;s how the Open Science Collective, the hypothetical society above, would handle
+            a violation - step by step.
           </p>
           <div className="space-y-3 text-sm">
             <div className="flex gap-3 items-start">
@@ -1853,9 +1885,19 @@ export default function HowItWorksPage() {
           <h4 className="text-lg font-semibold text-amber-300 mb-2">What About False Positives?</h4>
           <p className="text-gray-300 text-sm leading-relaxed mb-3">
             A multi-tier <strong>appeals mechanism</strong> has been designed: file a claim → independent review →
-            evidence phase → hearing with witness panel → verdict → enforcement. Successful appeals
-            restore your trust scores.
+            evidence phase → hearing with witness panel → verdict → enforcement, ending in restored
+            trust scores if the appeal succeeds.
           </p>
+          {/* Aug-10 (15:00) visitor MEDIUM: the flow was correctly scoped ("has been designed") and
+              then the consequence shipped as its own flat present-tense sentence ("Successful
+              appeals restore your trust scores."), so a reader could consistently take the process
+              as designed and the restoration as operative. The "Honest status" line below qualifies
+              the PROCESS only, which is why reading it did not resolve the friction
+              ([[visitor-read-it-and-still-filed-it]]: the fix is the missing clause, not a second
+              softening). Folded the consequence INTO the designed flow rather than caveating it
+              separately, so the scope set at the head of the sentence now reaches it. /glossary:1543
+              ships the same claim with the qualifier attached in the same breath; that is the shape
+              propagated here. Do not restore it as a standalone sentence. */}
           {/* "(109 integration checks)" removed 2026-07-28. The number was real, not invented:
               web4/docs/history/STATUS-2026-02.md:1109 records "109/109 checks" for a formal appeals
               system. But it counted web4/archive/reference-implementations/sal_appeals_mechanism.py,

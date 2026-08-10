@@ -3886,8 +3886,19 @@ export default function WhyWeb4Page() {
                 <li><strong className="text-gray-300">Defederation (last resort):</strong> Communities can break the trust bridge
                   entirely, like email servers choosing not to relay mail. Costly for both sides.</li>
               </ul>
+              {/* Aug-10 (15:00) [[precise-number-may-cite-archived-artifact]], SECOND instance from
+                  the SAME source directory. "(up to 2 appeals per resolution)" traced to
+                  web4/archive/reference-implementations/cross_society_policy_conflicts.py:451
+                  (`self.max_appeals_per_resolution: int = 2`) - the directory archived 2026-04-11 by
+                  commit 65cd5488 "Archive reference implementation sprawl", whose README calls its
+                  contents obsolete. That is the same directory the "(109 integration checks)" figure
+                  was deleted from on 2026-07-28 (see the guard at /how-it-works's False Positives
+                  block). A precise parameter for an unbuilt process reads as live rigor. Deleted
+                  with no replacement: nothing above or below leaned on it (the Honest caveat that
+                  follows names discount rates and mediation protocols, not the appeal cap). Do not
+                  restore it and do not substitute another figure. */}
               <p>
-                Every resolution is recorded in an audit trail. Disputes can be appealed (up to 2 appeals per resolution).
+                Every resolution is recorded in an audit trail. Disputes can be appealed.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Cross-federation disputes are one of the least-tested parts of the design.
