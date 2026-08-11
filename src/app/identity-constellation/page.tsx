@@ -400,7 +400,25 @@ export default function IdentityConstellationPage() {
             <div>
               <h3 className="font-bold text-gray-100">No Password Leaks</h3>
               <p className="text-gray-300">
-                Your identity isn&apos;t stored on a server that can be hacked. It&apos;s rooted in hardware you control.
+                {/* Aug-11 visitor HIGH, the claim class rather than the quoted page. The visitor
+                    said the site sells "identity bound to your device's security chip" as the
+                    mechanism, then the one piece badged Running is not hardware-anchored, and
+                    the phrase "hardware you control" is "true about the machine and
+                    false-sounding about the identity". A whitespace-tolerant sweep for
+                    /hardware\s+you\s+control/ over src/app returned TWO live surfaces (a
+                    line-based grep returns only this one; the /tldr instance wraps across a JSX
+                    line break). This card was the un-swept one, and it is the worse of the two
+                    because its subject is the identity. This page already ships the honest
+                    tiered answer ~30 lines above, in the "And if you do not have a quorum left?"
+                    list ("Software only, lose it: there is no hardware witness to vouch for
+                    you"), so this REUSES that list's vocabulary and points at it rather than
+                    coining a variant of it ([[page-ships-the-answer-and-denies-it]]).
+                    Deliberately NO ceiling number here: the guardrail above governs this region,
+                    /hestia is where the Aug-11 pass states the cost, and duplicating it here
+                    would be scope the visitor did not raise. */}
+                Your identity isn&apos;t stored on a server that can be hacked. It&apos;s rooted in hardware you
+                control, or, at the software-only tier, in a key on your own machine with no hardware witness
+                behind it (the recovery list above).
               </p>
             </div>
           </div>

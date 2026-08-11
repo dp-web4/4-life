@@ -197,6 +197,18 @@ export default function RunningNowPage() {
           </p>
           <pre className="text-xs text-sky-200 overflow-x-auto"><code>{`pip install web4-core web4-trust
 cargo add web4-core web4-trust-core`}</code></pre>
+          {/* Aug-11 visitor LOW: the two-package form here and on /the-standard versus the
+              single-package form on /tldr. Kept SHORT here and stated in full on /the-standard,
+              which is the canonical install home this page already routes to; keep the two in
+              agreement if either is edited. Grounding: web4/STATUS.md:46 and :58. */}
+          <p className="text-xs text-sky-200/70 leading-relaxed mt-2">
+            <code>web4-core</code> is the primitives; <code>web4-trust</code> adds trust
+            storage, witnessing and decay.{" "}
+            <Link href="/the-standard#thirty-seconds" className="text-sky-300 underline hover:text-sky-200">
+              What each one gives you
+            </Link>
+            .
+          </p>
         </div>
         <p className="text-base text-gray-400 leading-relaxed">
           <Link href="/the-standard" className="text-sky-400 underline hover:text-sky-300">

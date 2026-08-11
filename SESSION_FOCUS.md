@@ -2,6 +2,104 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-11 09:00 session - the pointer that should have been the number
+
+**No open PRs.** Fresh log `visitor/logs/2026-08-11.md` (05:00, unhandled; this is the first slot
+after it). Understanding **good**, all seven boxes, 1 HIGH / 5 MEDIUM / 4 LOW. The Honest
+Assessment names one seam twice: *"the gap between what the site sells and what the site runs ...
+That is not dishonesty, because every individual page says the true thing about itself. It is a
+**routing failure**."*
+
+### The finding: routing was the right fix in July and the wrong shape in August
+
+The Jul-30 visitor filed the same seam and got **routing only**, deliberately: `/hestia` named the
+tier (*"a software LCT held on your machine"*) and linked `/lct-explainer#software-only-survival`,
+under a guard saying that stating the ceiling *"would land a position on BOTH standing
+escalations."* Today's visitor read that pointer and filed the sharper complaint:
+
+> *"it hands me a pointer instead of the number, at the exact moment I am deciding whether to
+> install."*
+
+The three facts are now **on the page**. What licenses that is **not** the Aug-05 Q8 release, and
+the first draft of this session's scope got that wrong. Q8 records RULING 1 ANSWERED UPSTREAM and
+says exactly what it releases: a surface asserting hardware is *required to participate* may be
+corrected. It also says *"Requests 2 and 3 remain open and still need Q1"* and *"the equity half of
+that seam stays open"*. **What the ceiling costs IS the equity half.**
+
+What licenses it instead: all three sentences **already ship, policy-reviewed, on other pages**, so
+carrying them is **propagation, not assertion**. The distinction that makes it safe was already
+written down in a guard on the destination page: *"'Capped at that midpoint' is a **ceiling** claim,
+not an **eligibility** claim"* (`lct-explainer`, `grep -n "is a ceiling claim"`).
+
+> **Rule.** A fence on a CLAIM does not fence a SENTENCE that already ships elsewhere under
+> review. Before treating a guard as blocking, check whether the text you want is propagation.
+> And check the guard's **scope**: a two-reason guard can go stale in one reason and stand in the
+> other, and Q8 states its own release scope in a sentence you can quote.
+
+### The Q1 fence held, via the words rather than the claim
+
+`/hestia` carries no other decimal and had **no 0-1 scale anchor at all**, so the ruler travels
+with the number in the same sentence, and the words **survival line / midpoint / threshold /
+eligible** are kept off the page's rendered prose on purpose. Each is a synonym that re-imports the
+endpoint. The strictly-below story stays behind the `#software-only-survival` link where it is
+fenced. Nothing new says what a reader sitting at exactly 0.50 is, in either direction.
+
+### The evidence lesson: two of five claims were false, from one truncated pipe
+
+The policy reviewer was asked to verify five named claims in source rather than accept them, and
+falsified two:
+
+| I claimed | Actually |
+|---|---|
+| `grep -rn "hardware you control"` returns one hit, on `/tldr` | Returns `identity-constellation:403`. The `/tldr` instance is real but **wraps across a JSX line break**, so the grep I recorded could not have produced it. **Two** live surfaces. |
+| `/hestia` and `/lct-explainer` link `/what-could-go-wrong` zero times | `/hestia` zero, correct. `/lct-explainer` links it **four** times, one of them `#risk-accessibility` **inside the tier-grid paragraph this visitor was reading**. `lct-explainer:1485` is a guard recording that a *previous* visitor made the same claim and it was half wrong then too. |
+
+Both came from **one** command: `grep -rn ... | sed ... | head -30`. The `head` ate the
+`lct-explainer` hits; the `sed` and the line-based match hid the wrapped one.
+`[[claim-class-grep-truncated-enumerate-remainder]]` fired again in a session that had that memory
+loaded. The remainder was re-derived with `perl -0777` for `/hardware\s+you\s+control/`.
+
+`glossary:767` (*"identity rooted in hardware you cannot copy"*) matches a line-based grep and is
+**excluded with reason**: it is the **hardbound** definition, where hardware binding is the
+definitional content and the predicate is a different claim.
+
+### Disposition: all 10 friction items
+
+| # | Sev | Item | Disposition |
+|---|---|---|---|
+| 1 | **HIGH** | `/hestia` routes the cost instead of naming it | **Shipped.** Cap + ruler, device-loss, sheddable, all propagated whole-clause. Both routing links kept. |
+| 2 | MED | 0.50 ceiling vs `>= 0.5` eligibility, never joined | **FENCED.** Ledger **Q1 + Q8 requests 2-3**. Q8 already records *this exact visitor formulation*, from the Aug-10 browse, as *"Recorded as evidence, not answered, and no site edit made."* The answerable half (*can it climb back?*) already ships at `#software-only-survival` and now arrives at the decision point via item 1's link. |
+| 3 | MED | `/how-it-works` "Ended with **145 ATP**" | **FENCED.** Ledger **Q5**. `EndOfLifeCaveat` renders **directly adjacent** to both surfaces, so this is read-it-and-still-filed-it, not placement, and the log's suggested clause (*"the deployment ended"*) is the coined cause that caveat exists to refuse. Four prior passes. |
+| 4 | MED | `/the-standard` MCP + RDF are jargon-for-jargon | **Shipped**, reshaped. The plain clauses **already ship** in the read-aloud `plain` fields; what reads as jargon is the upstream `role` label. Bridge paragraph added above the operator table. |
+| 5 | MED | `/what-could-go-wrong` is unreachable from the pages that raise its questions | **Shipped for `/hestia` only.** `/lct-explainer` was already linked 4x incl. at the read point; `/learn` already carries it as a curated card, and its step count is guarded with durations that ripple into two totals. |
+| 6 | LOW | device-loss "3 to 7 days" assumes a community | **Deferred.** Same `lct-explainer` region item 1 propagates from; item 5's link now carries *witness network bootstrapping* to `/hestia`. Re-check on recurrence rather than stack a fourth edit in one region. |
+| 7 | LOW | `/tldr` badge flattening (3 pieces, identical **Reference**) | **Deferred**, take-this-next. |
+| 8 | LOW | install command differs across three pages | **Shipped.** Half was a misread (`/running-now` prints the two-package form too; only `/tldr` prints the short one, correctly, since that bullet is scoped to *the primitives*). Took the log's second option: say what the second package adds. |
+| 9 | LOW | `/glossary` R6 "six-part shape" counts as five | **Deferred**, take-this-next. |
+| - | - | `/tldr` + `/identity-constellation` "hardware you control" | **Shipped, both.** `/tldr` takes the landing card's accurate *"on your own machine with no cloud"*. `identity-constellation:403` is tier-qualified by **reusing the block already ~30 lines above it** on that same page ([[page-ships-the-answer-and-denies-it]]), with **no ceiling number**, per that region's own guardrail. |
+
+### Grounding
+
+- Package split: `web4/STATUS.md:46` (what `web4-core` holds) and `:58` (*"Trust storage,
+  witnessing, decay"*). `:58` names the **Rust** crate `web4-trust-core` while the site prints the
+  **PyPI** package `web4-trust`; what licenses carrying it across is `:46`'s closing sentence,
+  *"The Python wheels are PyO3-built bindings over the same Rust core."* Cite that, not `:58` alone.
+- MCP/RDF counts re-derived per page, and they are **not symmetric**: RDF is 0 across all six
+  reading-path pages; MCP is 0 on five and glossed once at `running-now:233`. Do not flatten that
+  into "neither appears", which is what the log says.
+
+### Take this next
+
+1. **The `/atp-economics` twin.** It runs the same four-life walkthrough with the same figures
+   (`:1470`, `:1486`, `:1501`) and has **no `EndOfLifeCaveat` at all**, and it defines a real
+   ATP=0 death at `:1127`. That is the stronger move on the 145-ATP class than a fifth sentence on
+   the `/how-it-works` caveat, which is already long enough to be a density risk.
+2. The un-shipped **illustration-boundary** half of item 3: the caveat scopes *"one modelling
+   choice"* to the carry-forward **amount** and *"declines to name one"* to the **cause**, but says
+   nothing about the life **boundary** being a device of the illustration. That is
+   illustration-scoped, not a cause, so it is not Q5-fenced. Density is the reason it waited.
+3. The two deferred LOWs above (`/tldr` badge qualifiers, `/glossary` R6 count).
+
 ## Aug-10 21:00 session - the page that said "no formal economic modeling" and "formally proven" 540 lines apart
 
 **No open PRs.** Same visitor log as #532 and #533 (`visitor/logs/2026-08-10.md`, 05:08; this is the
