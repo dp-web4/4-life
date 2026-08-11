@@ -231,7 +231,15 @@ export default function TheStandardPage() {
             standard's own term-by-term reading of a five-term equation (see the guard at L117)
             and a sixth entry would stop it matching the equation it reads aloud.
             Gloss is the one already shipping at onramp:119, not a fourth phrasing. Expansion is
-            canon: web4-standard/README.md:148 and core-spec/r7-framework.md. */}
+            canon: web4-standard/README.md:148 and core-spec/r7-framework.md.
+            Aug-11 visitor LOW (filed against /glossary, same defect here): this block asserts
+            "six-part shape" and then enumerated five nouns producing "a Result", so a reader
+            counting finds five and a verb clause. The count is NOT the defect and does not change
+            (upstream numbers six Core Components with Result as the sixth); the enumeration now
+            counts itself, which also makes the "R7 adds a seventh element" sentence below read as
+            6 -> 7 rather than 5 -> 7. The GLOSS above is untouched, so it still matches
+            onramp:119 and glossary's acronym box as the guard line above requires. The read-aloud
+            array must still NOT gain a sixth card; that is a different "sixth". */}
         <div id="r6-r7" className="mt-6 rounded-lg border border-white/10 bg-white/5 p-4 scroll-mt-24">
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
             <Link
@@ -247,11 +255,11 @@ export default function TheStandardPage() {
             above describes what an entity <em>is</em>, while this describes what an entity{" "}
             <em>does</em>. R6 is the standard six-part shape of any action, so a request like
             &ldquo;post this&rdquo; or &ldquo;spend 5 ATP&rdquo; gets checked and trust-scored the
-            same way every time:{" "}
+            same way every time: five inputs,{" "}
             <span className="font-mono text-gray-400">
               Rules + Role + Request + Reference + Resource
-            </span>{" "}
-            produce a <span className="font-mono text-gray-400">Result</span>. R7 adds a seventh
+            </span>
+            , produce the sixth, a <span className="font-mono text-gray-400">Result</span>. R7 adds a seventh
             element, <span className="font-mono text-gray-400">Reputation</span>, when the stakes
             are high enough that the trust change is worth recording as an output of the action
             rather than a side effect of it.

@@ -610,15 +610,31 @@ export default function GlossaryPage() {
               The Jul-24 fix made the destination reachable; the Aug-08 visitor showed the residual was
               prominence, not routing, since /onramp step 1 instructs the reader to learn R6/R7 as a
               primitive. The reversal and its reasoning are recorded in full on the acronym box itself.
-              Keep the abbr/gloss there in sync with these two cards. */}
+              Keep the abbr/gloss there in sync with these two cards.
+              Aug-11 visitor LOW: the acronym box gloss above asserts "the six-part shape every
+              action takes" while this card enumerated five nouns plus a participle ("producing a
+              Result"), so a reader counting stalled working out that Result is the sixth. The
+              COUNT is right and stays: upstream's core-spec/r6-framework.md numbers six Core
+              Components with Result as the sixth, and r7-framework.md says R7 "adds the seventh
+              component (Reputation)". So the fix makes the sixth countable at the point of
+              enumeration; it does NOT touch the word "six" on any of the three surfaces that
+              assert it (this file's acronym box, the-standard's R6/R7 block, onramp's core-standard
+              bullet), which a guard on the-standard requires to stay one phrasing.
+              the-standard had the IDENTICAL stall shape (it asserts "six-part" four lines above an
+              enumeration reading "... produce a Result") and was fixed in the same pass.
+              Deliberately NOT changed: /manifest and /web4-explainer enumerate the elements but
+              make no count claim next to them, so there is nothing there to reconcile; and
+              the-standard's read-aloud array must NOT gain a sixth card, which is a different
+              "sixth" its own guard forbids ([[borrowed-word-means-something-else-there]]). */}
           <div id="r6" className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-6 scroll-mt-20" data-glossary-term>
             <h3 className="text-2xl font-semibold text-sky-400 mb-3">
               Action Framework (R6)
             </h3>
             <p className="text-gray-300 leading-relaxed mb-3">
-              The <strong>base action grammar</strong> for Web4 entities: Rules + Role + Request +
-              Reference + Resource, producing a Result. It is the default for routine acts, and it
-              makes every action auditable and trust-scored consistently.
+              The <strong>base action grammar</strong> for Web4 entities: five inputs (Rules +
+              Role + Request + Reference + Resource) producing one Result, which is the sixth R.
+              It is the default for routine acts, and it makes every action auditable and
+              trust-scored consistently.
             </p>
             <p className="text-gray-400 text-sm mb-3">
               Plain English: "A structured way to describe any action in a Web4 society, so the same

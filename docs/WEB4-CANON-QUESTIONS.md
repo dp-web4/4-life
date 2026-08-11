@@ -336,6 +336,7 @@ instead of re-litigating.
   - **Known residual, logged not fixed**: `/atp-economics` runs these figures with no caveat of
     its own. It also defines a genuine ATP = 0 death, so it needs its own framing rather than a
     hoisted copy of `EndOfLifeCaveat`. Follow-up for a future session.
+    **Aug-11 (15:00): discharged. See the Aug-11 addendum at the end of this entry.**
 
   **⚠️ Aug-09: the count is at least FOUR, and the fences disclosed two of them.** Two findings
   from the Aug-09 15:00 session, both from surfaces this entry's own tables did not cover:
@@ -414,6 +415,50 @@ instead of re-litigating.
       propagating **from** that page while its summary carried the same inversion
       (`[[grounding-citation-may-contradict-you-nearby]]` at page scale). Fixed in the same pass,
       wording propagated from the page's own canonical paragraph.
+
+  **⚠️ Aug-11 (15:00): the `/atp-economics` half of the holding pattern now ships, and two of this
+  entry's own descriptions of that page were wrong.** The residual logged Aug-06 ("runs these
+  figures with no caveat of its own") is discharged: `/atp-economics`'s `#agent-journey` now
+  carries a page-native `About these numbers` block, rendered after Life 4 and **before** the
+  closing pattern box so it cannot read as retracting *"They die and stay dead"*. The death-rule
+  clauses are propagated whole-clause from `EndOfLifeCaveat`; only the bridge to this page's own
+  ATP = 0 death and the boundary clause are authored here. **Still not a ruling**: no figure moved,
+  no branch endorsed, no third cause named, and the requested ruling above is unchanged.
+  - **New: the life BOUNDARY is now disclosed, which the cause fence never covered.** The Aug-11
+    visitor filed the gap precisely: *"The page discloses that 'what else ends a life is not
+    settled,' but never says what this example assumed. Disclosing the open question is not the
+    same as explaining the illustration built on top of it."* The shipped sentence is
+    illustration-scoped, not a branch: *"The life boundaries are drawn by the walkthrough itself:
+    the standard states no rule that draws them, and this page does not invent one to fill the
+    gap."* The silence half already ships verbatim in `EndOfLifeCaveat`. **Barred wordings**, for
+    any future pass: anything implying no such rule *could* exist (that is branch (a)), and any
+    in-fiction cause. The visitor's own suggestion, *"the deployment ended"*, is the coined cause
+    this fence exists to refuse; so are term, contract, retirement, project end, voluntary exit.
+  - **CORRECTION to the Jul-27 table above.** Its `/atp-economics` karma row reads *reduced
+    ("Reborn with 85 ATP (reduced from the crisis)")*. That under-describes the page: the
+    walkthrough has **three** rebirths and uses **two** shapes, whole balance twice
+    (145 -> 145, 130 -> 130) and reduced once (95 -> 85). So the divergence is not only
+    *between* the two pages, it is *inside* one of them, and it is the reason
+    `EndOfLifeCaveat`'s closer (*"this walkthrough shows one modelling choice, not the rule"*)
+    could **not** be propagated verbatim: that sentence is false here. The new block says so and
+    quotes both shapes.
+  - **CORRECTION to the Aug-09 addendum's cite.** The `agent.reborn(karma=agent.atp_history)`
+    pseudocode is at `/atp-economics:2305`, not `:2264` (`:2264` is now the dormancy paragraph).
+    `/how-it-works`'s guard carried the same stale number. Both are now grep targets rather than
+    line numbers (`[[guard-comment-cites-rot-name-the-target]]`).
+  - **CORRECTION to a premise this ledger never asserted but `SESSION_FOCUS.md` did**: the two
+    walkthroughs do **not** "run the same figures". This entry's Jul-27 table has recorded the
+    opposite since it was written (3 lives vs 4, crisis in Life 2 vs Life 3, ending 165 vs 140).
+    Only 100/60/105/145/130/15 are shared. A session that propagates the "same figures" phrasing
+    will make a false statement in prose; found by the policy reviewer, not by a visitor.
+  - **Deliberate asymmetry, do NOT "align" it away**: the new block names **four** carry-forward
+    branches (whole balance / reduced portion / fresh start plus bonus / computed from whole
+    history) where `EndOfLifeCaveat` names three. The fourth is the pseudocode that ships on
+    *this* page, so this is the page that owes its disclosure
+    (`[[fence-may-undercount-its-own-ledger]]`). Widening a disclosure, not a ruling.
+  - **Residual, logged not fixed**: `EndOfLifeCaveat` on `/how-it-works` still enumerates three
+    branches. Whether to widen it to four is a density call on a caveat already flagged as long,
+    and that page ships no fourth-shape surface of its own. Not done here.
 
 ### Q6. What does the `/` in the canonical equation assert?
 
