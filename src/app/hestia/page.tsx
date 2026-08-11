@@ -310,21 +310,68 @@ export default function HestiaPage() {
               never mentions a trust ceiling," so "the friendliest on-ramp silently drops the
               reader into the most constrained tier" (their Unanswered Q2). This page already
               NAMES the tier ("a software LCT held on your machine"); what it lacked was any
-              route to what that tier costs. Routing only, deliberately: stating the ceiling or
-              its consequence here would land a position on BOTH standing escalations
-              ([[hardware-required-seam]] - this would be the third disagreeing surface; and
-              [[trust-05-endpoint-canon-conflict]] - the consequence the visitor wants stated is
-              the negation of the > vs >= endpoint, which is exactly what got #444 rejected three
-              times). A link asserts neither side. Target L1151 is the strictly-below callout
-              that answers the "am I dead on arrival?" question directly. */}
-          What anchoring in software alone costs you, in trust terms, is{" "}
+              route to what that tier costs. That pass shipped ROUTING ONLY, deliberately.
+
+              Aug-11 REVERSAL, read the scope carefully before widening it further. The visitor
+              re-filed this as their HIGH and as Unanswered Q1, with the sharper complaint that
+              routing is the wrong shape here: "it hands me a pointer instead of the number, at
+              the exact moment I am deciding whether to install." The facts below are now stated
+              on-page. What changed, and what did NOT:
+
+              - [[hardware-required-seam]] released in PART. WEB4-CANON-QUESTIONS Q8 records
+                RULING 1 ANSWERED UPSTREAM 2026-08-05, and it says exactly what it releases: a
+                surface asserting that secure hardware is REQUIRED TO PARTICIPATE may now be
+                corrected against canon. It also says "Requests 2 and 3 remain open and still
+                need Q1" and "the equity half of that seam stays open". What the ceiling COSTS
+                is the equity half. So the release is not what licenses the sentences below.
+              - What licenses them is that they are PROPAGATION, not new assertions. All three
+                already ship, policy-reviewed, elsewhere: the cap and its ruler from
+                /lct-explainer's "How to read the numbers below" block, the device-loss sentence
+                from that page's drop-your-phone-in-a-lake list, and the sheddable clause from
+                /karma-consequences (cut at the clause boundary; its trailing "and this
+                walkthrough does not describe it" is walkthrough-scoped and does not travel).
+                The distinction that makes this safe is already drawn in a guard on that page:
+                "Capped at that midpoint" is a CEILING claim, not an ELIGIBILITY claim.
+              - [[trust-05-endpoint-canon-conflict]] (ledger Q1) is UNCHANGED and still fences
+                this block. Nothing here may say or imply what a reader sitting at exactly 0.50
+                is: not alive, not dead, not safe, not eligible. The words "survival line",
+                "midpoint", "threshold" and "eligible" are kept OFF this page on purpose, because
+                each of them re-imports the endpoint through a synonym. The strictly-below story
+                stays where it is fenced, behind the #software-only-survival link.
+              - The ruler travels WITH the number. This page carries no other decimal and no
+                0-1 scale anchor, so importing 0.50 bare would recreate the "numbers before any
+                ruler" defect the May-21 guard fixed on /lct-explainer. Do not drop the scale
+                clause to shorten this. */}
+          What anchoring in software alone costs you, in trust terms, is three specific
+          things, and they are worth knowing before you decide this is your long-term
+          identity. A software-only identity is capped at <strong>0.50</strong> on the 0-1
+          scale every trust number on this site uses, where 0.90 is the hardware-bound
+          ceiling (4-Life&apos;s calibration). Lose the machine and there is no second
+          witness to vouch for you: you start over from zero with a fresh identity. And an
+          identity anchored in software alone has no device to walk away from, so at that
+          tier the record stays sheddable. The longer version is{" "}
           <Link
             href="/lct-explainer#software-only-survival"
             className="text-emerald-400 underline hover:text-emerald-300"
           >
             spelled out on the LCT page
           </Link>
-          . Worth reading before you decide this is your long-term identity.
+          , and what this tier costs people who cannot get a security chip is{" "}
+          {/* Aug-11 visitor MEDIUM: "every one of my sharpest worries turned out to be answered,
+              in full, on the page furthest from the front door ... I found it because I got
+              stubborn." Verified before adding: /hestia linked /what-could-go-wrong ZERO times,
+              while /lct-explainer already links it four times (one of them, #risk-accessibility,
+              inside the tier-grid paragraph this same visitor was reading). So the gap was this
+              page, not that one, and the visitor's other suggestion (a 6th step on /learn) is
+              moot: it is already a curated card there. Link only, by name; the accessibility
+              risk is not restated here. */}
+          <Link
+            href="/what-could-go-wrong#risk-accessibility"
+            className="text-emerald-400 underline hover:text-emerald-300"
+          >
+            the accessibility risk on what could go wrong
+          </Link>
+          .
         </p>
       </section>
 

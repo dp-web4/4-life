@@ -93,6 +93,37 @@ export default function TheStandardPage() {
             Web4 = MCP + RDF + LCT + T3/V3*MRH + ATP/ADP
           </code>
         </div>
+        {/* Aug-11 visitor MEDIUM + their Unanswered Q7 ("What does MCP have to do with any of
+            this?"), and the second of the two things their Honest Assessment named: "the site's
+            promise to spell out every term on first use is kept everywhere except /the-standard,
+            which opens with a five-term equation containing two terms the reading path never
+            introduced ... that page reads like it was written for a different audience."
+            The plain-English clauses they asked for ALREADY SHIP, in the `plain` field of the
+            read-aloud array below ([[visitor-deferred-low-check-shipped-first]]): what renders on
+            the term line is the upstream `role` label ("I/O membrane", "ontological backbone"),
+            which is what they read as jargon-for-jargon. So the residual is ORDERING, plus the
+            second half of their suggestion, which is the real one: introduce the two terms the
+            path never met, so the equation is a recap and not a first contact.
+            The counts are re-derived, not the visitor's summary, and they are not symmetric.
+            `grep -c` for MCP and RDF over the six reading-path pages (/, /tldr, /why-web4,
+            /first-contact, /how-it-works, /running-now): RDF is 0 on all six. MCP is 0 on five
+            and 2 on /running-now, where :233 already glosses it. So MCP is introduced once, late
+            and in passing; RDF is introduced nowhere. Do not flatten that into "neither
+            appears", which is what the log says and what a coarser grep would have confirmed.
+            The read-aloud array and the operator glosses below are untouched: both are guarded
+            as the standard's own reading. This paragraph sits ABOVE them on purpose, because the
+            defect is that ~25 lines of operator table stand between the equation and any gloss. */}
+        <p className="text-base text-gray-400 leading-relaxed mb-3">
+          Five terms, and this is where two of them arrive. LCT, T3/V3*MRH and ATP/ADP each
+          have their own page earlier in the reading path. RDF appears nowhere else on that
+          path, and MCP only once, in passing, on{" "}
+          <Link href="/running-now" className="text-sky-400 underline hover:text-sky-300">
+            what is running now
+          </Link>
+          . Both are existing standards borrowed from outside Web4 rather than Web4
+          coinages, and both are spelled out in plain English in the term-by-term reading
+          further down. If the equation reads as jargon, that is the place to start.
+        </p>
         <p className="text-base text-gray-400 leading-relaxed mb-3">
           The operators carry meaning, and the terms must not be redefined:
         </p>
@@ -298,6 +329,27 @@ export default function TheStandardPage() {
           <code className="block text-sm text-sky-300 font-mono leading-relaxed">
             cargo add web4-core web4-trust-core
           </code>
+          {/* Aug-11 visitor LOW: "/tldr and /running-now tell me `pip install web4-core`. This
+              page tells me `pip install web4-core web4-trust`. Small, but I am at a terminal and
+              I do not know which one I need." Half of that is a misread (/running-now prints the
+              same two-package form this page does; only /tldr prints the short one, and it is
+              correct there because that bullet is scoped to "the primitives"). The real residual
+              is the log's second option: say what the second package adds.
+              Grounded in web4/STATUS.md, not inferred. :46 gives web4-core's contents and :58
+              gives "Trust storage, witnessing, decay". Note :58 attributes that to the RUST crate
+              web4-trust-core while the line above prints the PYPI package web4-trust; what
+              licenses carrying it across is :46's closing sentence, "The Python wheels are
+              PyO3-built bindings over the same Rust core". Cite that if this is ever re-checked. */}
+          <p className="text-xs text-gray-400 leading-relaxed mt-3">
+            Two packages, because they are two jobs.{" "}
+            <code className="text-gray-300">web4-core</code> is the primitives: LCT identity,
+            the T3/V3 tensors, identity coherence, ledger anchoring.{" "}
+            <code className="text-gray-300">web4-trust</code> (
+            <code className="text-gray-300">web4-trust-core</code> in Rust; the Python wheels
+            are bindings over the same core) adds trust storage, witnessing and decay, which
+            is what you need the moment trust has to persist and age rather than just be
+            computed once.
+          </p>
         </div>
         {/* Aug-05 visitor LOW + Unanswered Q7: "The page names identity_bootstrap.py and
             describes what it does, but never shows how to obtain or run it. I wanted to try

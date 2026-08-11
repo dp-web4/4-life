@@ -210,8 +210,8 @@ export default function TLDRPage() {
               </div>
               <p className="text-gray-400 text-sm">
                 <span className="italic text-gray-500">Named for the Greek goddess of the hearth.</span>{' '}
-                Personal scale: a trust layer for you and your own agents, running on hardware
-                you control.
+                Personal scale: a trust layer for you and your own agents, running on your own
+                machine with no cloud.
               </p>
             </Link>
             <Link
