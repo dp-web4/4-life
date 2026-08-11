@@ -2,6 +2,174 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-10 21:00 session - the page that said "no formal economic modeling" and "formally proven" 540 lines apart
+
+**No open PRs.** Same visitor log as #532 and #533 (`visitor/logs/2026-08-10.md`, 05:08; this is the
+21:00 slot). Both HIGHs, both MEDIUMs and the low-medium were already disposed, so this session took
+the **"Take this next"** items #3 (archived-provenance sweep) and #4 (the Gini leak) and found they
+are **one defect**, plus the two carried-over LOWs.
+
+### The finding: four site claims are the docstring of a file upstream archived as obsolete
+
+`web4/archive/reference-implementations/bootstrap_convergence_proofs.py` opens with a **"Key
+findings"** docstring. Four of its five findings were on the site, in substance and mostly verbatim:
+
+| Docstring finding | Was on |
+|---|---|
+| "Gini converges to ~0.25 (moderate inequality)" | `why-web4` x2, `atp-economics` x2, `what-could-go-wrong` x3 |
+| "First-mover advantage decays exponentially with half-life ~30 actions" | `why-web4` x3, `atp-economics` x2, `what-could-go-wrong` x2 |
+| "Newcomer catch-up time is O(log(n))" | `what-could-go-wrong` x1 |
+| "Stochastic dominance breaks after ~50 actions" | `why-web4` x3, `atp-economics` x3, `what-could-go-wrong` x2 |
+
+That file exists **only** under `archive/`, whose `README.md` opens *"historical documents and
+obsolete content from earlier development phases."* It is the **third** precise figure deleted from
+that one directory, after *"(109 integration checks)"* and *"(up to 2 appeals per resolution)"*.
+`[[precise-number-may-cite-archived-artifact]]`, third instance, and the first one that was
+**load-bearing**: it was the whole answer `/what-could-go-wrong` gave to *"does Web4 create an
+entrenched elite?"*
+
+**Two things made caveating impossible and deletion mandatory.**
+
+1. **A maintained upstream file falsifies the status words.** `web4/SECURITY.md` says
+   *"No formal economic modeling"*, *"No cryptoeconomic modeling"*, *"No economic modeling of
+   attacker ROI"*. The site said *"Formal bootstrap convergence proofs show"* and *"Bootstrap
+   convergence is formally proven with simulation validation."* And `/what-could-go-wrong`
+   **already quoted SECURITY.md itself**, ~540 lines above the entrenchment answer, at
+   `grep -n "no validated economic model"`. One page, both claims. This is exactly the class the
+   visitor named in today's Honest Assessment (*"the two places I stopped believing the site were
+   both places where the site contradicted itself"*), found by enumeration rather than by a visitor.
+2. **Gini 0.25 was an INPUT, not a finding.** `web4/private-context/moments/2026-02-28-legion-session19.md:32`
+   lists *"target Gini"* among that model's **tunable parameters**, and `session18.md:64` records a
+   different run holding *"Gini < 0.6"*. So `/why-web4`'s *"the **designed** 0.25"* was the one
+   phrasing accidentally closest to true, which made it the most misleading of the four: it read as
+   a design commitment while sourcing to an unpublished session note.
+
+### The enumeration lesson: seeding from UPSTREAM's vocabulary fails the same way
+
+#533's rule was *"seed the pattern from the CLAIM's synonyms, not from the quoted sentence"*,
+because a grep seeded on the visitor's wording inherits the visitor's vocabulary. This session
+seeded from something that should have been better still, the **archived docstring's own five
+findings**, and still under-counted: **12 found, 23 real**. The policy reviewer caught it.
+
+The surface that proves why is `why-web4`, `grep -n "Wealth gap trends toward"`: **"Wealth gap
+trends toward 0.25"**. Same number, same claim, and the word *Gini* never appears. The site
+paraphrases upstream, so seeding on upstream's vocabulary misses exactly what seeding on the
+visitor's vocabulary misses.
+
+> **Sharpened rule.** `[[claim-class-grep-truncated-enumerate-remainder]]` is not about *which*
+> vocabulary you seed from. Any single vocabulary is one paraphrase away from wrong. **The only
+> reliable seed is the bare NUMBER.** Six of the seven surfaces the reviewer added are returned by
+> `grep -rn "0\.25\|30-action\|50 action" src/app/` and by no word-based pattern.
+
+The command of record, run before and after:
+
+```
+grep -rnE "0\.25|30-action|50 action|action ~?[35]0|bootstrap convergence|provably|formally proven|validated through simulation|500\+ rounds|wealth gap|Gini|O\(log" src/app/
+```
+
+### Disposition: all 23 surfaces
+
+**Read the locators carefully.** `grep:` resolves in the tree today. `was:` is a string this commit
+**deleted**, so grepping it returns zero by design; find it with
+`git show d252f34:src/app/<page>/page.tsx`. Mixing the two is how a disposition table rots into a
+list of phantom line references.
+
+**`/what-could-go-wrong` (12)**
+
+| Surface | Disposition |
+|---|---|
+| `was:` *"Formal bootstrap convergence proofs show"* + its 4 bullets | **DELETED**, replaced by the mechanism (below) |
+| `was:` *"provably finite and fair"* | **DELETED** the word *provably*; it was the adjective leaning on the deleted numbers. Now `grep:` *"written down and open to anyone who does the"* |
+| `was:` *"formally proven with simulation validation"* | **REWRITTEN**: direction is readable off the update rule, rate has never been measured, SECURITY.md quoted. Now `grep:` *"The direction you can read off the update rule"* |
+| `was:` *"~50-action threshold"* | Deleted with the sentence above it |
+| `was:` *"wealth convergence to Gini"* (scalability card) | **DELETED** the parenthetical only. `grep:` *"Offline modeling has been run"* is the correct altitude and is untouched |
+| `was:` *"advantage peaks around action 30"* | **DELETED** the integer; replaced with why a head start does not compound |
+| `was:` *"settles toward Gini"* | **DELETED** the figure; now *"trust scores spread out by how people actually behaved"* |
+| `was:` *"This trajectory is validated through simulation"* | **REWRITTEN**: `grep:` *"a sketch of what the rules imply"* |
+| guard, `grep:` *"discloses the gap three times"* | **CITE FIXED**: read `:226`, had rotted to `:223`. Replaced the three line numbers with the three quoted strings, per `[[cite-invariant-diff-aware-not-lint]]` |
+
+**`/atp-economics` (5)**: `was:` *"First-mover advantage fades on a"* (numbers out, update-rule
+sentence in); `was:` *"The modeled wealth gap"* (Gini and the `~0.6-0.7` comparison out, replaced by
+the recharge cap this page already teaches at `grep:` *"capped at cost"*); `grep:` *"What about
+newcomers"* (three figures out, heading survives); `was:` *"From web4 economic equilibrium
+analysis"* including **"Gini convergence verified across 500+ rounds"** (the run count had the same
+archived provenance), now `grep:` *"From web4 offline modeling"*; `grep:` *"Bootstrap convergence:"*
+(label survives, numbers out, *"a starting balance, not a multiplier"* in).
+
+**`/why-web4` (6)**, all `was:` strings, all numbers deleted and the qualitative direction kept:
+*"the designed 0.25"*, *"First-mover advantage fades (30-action"*, *"catch up to founders by
+action"*, *"Wealth gap trends toward"*, *"surpasses established members within"*, *"who contribute
+quality work surpass early adopters"*.
+
+**Caution for the next session**: *"the designed 0.25"* now returns exactly one hit, and it is the
+**guard comment on `/what-could-go-wrong`** quoting the deleted `/why-web4` string. Do not read that
+hit as an unswept surface.
+
+**Declared out of bounds in writing, before starting**: `atp-economics` `grep -n "Formally proven: one honest identity"` and `why-web4` `grep -n "424 attack vectors"` (the Sybil "5 theorems / 4.6x / 13x" family: same shape, **different** provenance, already hedged at the `why-web4` surface); `why-web4` `grep -n "first ~30 actions are the most"` (shares the integer, different claim, and it is a caveat *against* the site).
+
+### What replaced them, and the canon trap on the way
+
+The reviewer proposed grounding the answer in the decay rates ("Temperament 30-day, Training
+180-day"). **Checked, and that would have committed the same defect being fixed.**
+`t3-v3-tensors.md` §10.3 lists Temperament recovery and Training decay as
+**society-configurable**, with reference defaults of `+0.01/month` and `-0.001/month`, and the spec
+states **no half-life at all**. The site's 30-day figure is a 4-Life calibration.
+`[[grounding-citation-may-contradict-you-nearby]]`: the citation that was supposed to ground the fix
+refuted it four lines down. The calibration is left alone as a calibration and was **not** promoted
+to ground truth.
+
+What is genuinely protocol-invariant is the update rule itself: **`0.02 x (quality - 0.5)`**
+(§10.2, vector `t3v3-003`), and it is a *better* answer to "does Web4 create an entrenched elite"
+than a predicted Gini ever was, because it answers structurally: the update reads the quality of one
+action and nothing about who took it. Not coined here either, the site already teaches it at
+`/why-web4#faq-calibration`, which the new paragraph links.
+
+### Word deltas (measured, comments AND JSX tags stripped)
+
+| Page | Delta |
+|---|---|
+| `what-could-go-wrong` | **+74** |
+| `why-web4` | **+38** |
+| `first-contact` | **+28** |
+| `atp-economics` | **+16** |
+
+**I projected net DOWN, on `[[density-guard-means-delete-not-caveat]]`, and it went up on every
+page.** Recording the miss rather than trimming to hit it (#533 set that precedent). The reason the
+rule did not apply: in the two prior instances from this directory the figure was **decorative** and
+deletion left a complete sentence behind. Here the figures **were** the answer, so something had to
+stand where they stood, and a mechanism costs more words than a number. One real trim was made after
+measuring: the first `Status:` rewrite recited the three deleted figures back to the reader, which is
+changelog on a risk page. That archaeology now lives in the guard comment instead.
+
+### The two carried-over LOWs, both closed
+
+1. **`/first-contact` used CI before naming it.** Fixed at **both** surfaces, not the one the visitor
+   quoted: the `<details>` box *and* `#what-triggers-death`, the anchor div `/how-it-works` and
+   `/glossary` both deep-link to, so a reader can arrive there having never seen this page's CI card.
+   **The sentence is verbatim-locked across six surfaces**, so the gloss was **appended after** the
+   locked tail (and on the recap, put in that box's own preamble). Verified:
+   `grep -rnE "narrows (your|her) access" src/app` still returns the same 6 prose hits, all
+   byte-identical through *"trust death"*. Do not put this inside the sentence; that desyncs 6 pages.
+2. **`/trust-tensor`'s two casts of roles.** Fixed by **bridging**, not unifying. Unifying was
+   scoped and rejected: the worked-example cast is cited by name in three guard blocks, a code block,
+   and a cross-page hardware-ceiling argument, and the widget's third role sits adjacent to the
+   standing **T3-weights escalation** with a no-ordering-commentary restriction. Rationale recorded
+   in a guard next to the new sentence.
+
+### Take this next
+
+1. **The `web4/archive/` provenance sweep is still open beyond this family.** Three instances now
+   from `reference-implementations/` alone. The bare-number seeding rule above is the tool: pull the
+   precise figures out of the site and grep each one against the **maintained** tree only.
+2. **`/atp-economics` `grep -n "session 32, 84 checks"`** was left in place this pass (it is a
+   provenance caption, not a claim about the world) but it is unverified and from the same era.
+3. Still open from #533, untouched: the `reset()` mechanic vs *"not a free reset"*, and the **three
+   divergent recoverability conditions** (unconditional / *"if you built good karma"* / *"if trust
+   held up"*), which owes a five-surface sweep.
+4. Remaining Aug-10 visitor LOWs, none of them accuracy defects: FAQ scale (60+ questions),
+   `/what-could-go-wrong` filed under "Going Deeper" rather than the main path, R6/R7 in the glossary
+   acronym index with no gloss.
+
 ## Aug-10 15:00 session - the enumeration that was truncated three times in one session
 
 **Same visitor log as #532** (`visitor/logs/2026-08-10.md`, 05:08; the cron runs once at 05:00 and

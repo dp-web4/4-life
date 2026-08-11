@@ -178,8 +178,15 @@ export default function FirstContactPage() {
                     glossary and lct-explainer, so a whole-sentence grep returns 0 there and under-reports.
                     /karma-consequences reuses the sentence but deliberately STOPS at "a single
                     stumble" - that page never mentions CI, so the raw-vs-effective clause has nothing to
-                    disambiguate there. That truncation is intentional, not drift. */}
-                <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death - you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>raw trust falls below 0.5 and stays there</strong> (trust death - the community no longer trusts you). Energy death is recoverable through karma rebirth. Trust death is permanent - a destroyed reputation can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal - a sustained collapse, not a single stumble. The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;). A lower CI raises your costs and narrows your access; it does not push you toward trust death. That&apos;s why Alice&apos;s 0.48 in Step 4 restricted her instead of killing her: she crossed the line, she didn&apos;t stay below it.</span>
+                    disambiguate there. That truncation is intentional, not drift.
+                    Aug-10 visitor LOW: "a squared unknown is a bad first impression of a formula" -
+                    this sentence uses CI before the page names it (the CI card is ~200 lines below).
+                    The gloss was APPENDED AFTER the locked sentence, and on the Step-6 recap it went
+                    into that box's own preamble ("the coherence multiplier, CI"). Neither edit
+                    touches a locked byte, so `grep -rnE "narrows (your|her) access" src/app` still
+                    returns the same six hits and the other four surfaces are unchanged. If you ever
+                    need to say this INSIDE the sentence, you are desyncing six pages: don't. */}
+                <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death - you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>raw trust falls below 0.5 and stays there</strong> (trust death - the community no longer trusts you). Energy death is recoverable through karma rebirth. Trust death is permanent - a destroyed reputation can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal - a sustained collapse, not a single stumble. The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;). A lower CI raises your costs and narrows your access; it does not push you toward trust death. That&apos;s why Alice&apos;s 0.48 in Step 4 restricted her instead of killing her: she crossed the line, she didn&apos;t stay below it. <em style={{ color: '#64748b' }}>(CI is the coherence index: how consistent your behavior looks across time, devices and contexts. It gets its own card further down this page.)</em></span>
               </div>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#f87171' }}>Step 6 - Death:</strong> Alice overcommits, quality slips, ATP drains to zero. Her entity dies - but her record persists.
@@ -330,7 +337,8 @@ export default function FirstContactPage() {
               <details className="mt-3">
                 <summary className="text-xs text-gray-500 cursor-pointer hover:text-gray-400 select-none">Why &ldquo;raw&rdquo;? <span className="text-gray-600">(optional)</span></summary>
                 <p className="text-xs text-gray-400 mt-2 leading-relaxed">
-                  Raw trust is the score before the coherence multiplier is applied. The number
+                  Raw trust is the score before the coherence multiplier, CI (the coherence index),
+                  is applied. The number
                   compared against 0.50 is <strong className="text-gray-300">raw</strong> trust, not
                   effective trust (raw &times; CI&sup2;). A lower CI raises Alice&apos;s costs and
                   narrows her access; it does not push her toward trust death.
