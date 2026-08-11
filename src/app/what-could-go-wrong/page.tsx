@@ -406,7 +406,11 @@ export default function WhatCouldGoWrongPage() {
                     is reproducible, and the only measured margin is 58.4pp, so "small" was false.
                   - The one other place Sybil ROI was ever measured (web4 federation stress, Feb-27)
                     recorded -108%. Also nowhere near 0.90.
-                  - Upstream web4/SECURITY.md discloses the gap three times (:86, :195, :226).
+                  - Upstream web4/SECURITY.md discloses the gap three times. Quoted, not numbered,
+                    because the third cite here read ":226" and had rotted to :223 by Aug-10:
+                    "No economic modeling of attacker ROI", "No cryptoeconomic modeling",
+                    "No formal economic modeling". The last of those is what falsified the
+                    "formally proven" claim deleted from the entrenchment answer below.
                   Do NOT import the sim's magnitudes as replacements. -98.4% is a STRONGER
                   reassurance than the number it replaces, and the same run puts honest agents at
                   -40%, which makes the visitor's literal complaint true in the one instrument that
@@ -615,7 +619,7 @@ export default function WhatCouldGoWrongPage() {
               <Link href="/atp-economics#at-scale" className="text-sky-400 hover:underline">
                 100-200 agents
               </Link>{" "}
-              (showing stable ATP economics, Sybil unprofitability, and wealth convergence to Gini ~0.25).
+              (showing stable ATP economics and Sybil unprofitability).
               But the real internet has billions of users. Trust-filtered
               message delivery, coherence scoring across four dimensions, and real-time witness
               verification all have computational costs that might not scale.
@@ -967,15 +971,44 @@ export default function WhatCouldGoWrongPage() {
                 more ATP reserves, and richer histories. Does Web4 create an entrenched elite
                 that&apos;s impossible for newcomers to challenge?
               </p>
+              {/* Aug-10 21:00: this block used to open "Formal bootstrap convergence proofs show:"
+                  over four bullets (~30-action half-life, surpass after ~50 actions, Gini ~0.25,
+                  catch-up O(log n)). All four are the "Key findings" docstring of
+                  web4/archive/reference-implementations/bootstrap_convergence_proofs.py :27-31, a
+                  file that exists ONLY under archive/, whose README opens "historical documents and
+                  obsolete content from earlier development phases". Third precise figure deleted
+                  from that one directory (after "(109 integration checks)" and "(up to 2 appeals
+                  per resolution)"). Two independent reasons it could not be caveated in place:
+                  - "Formal ... proofs" and ":991"'s "formally proven" are FALSIFIED by a maintained
+                    file: web4/SECURITY.md:223 reads "No formal economic modeling" (also :86, :195).
+                    This page already says so itself, ~540 lines above, in the block at
+                    grep -n "no validated economic model".
+                  - Gini 0.25 was a tunable INPUT to that model, not an output finding: web4
+                    private-context/moments/2026-02-28-legion-session19.md:32 lists "target Gini"
+                    among its parameters, and session18.md:64 reports a different run holding
+                    "Gini < 0.6". So "the designed 0.25" (why-web4, deleted this pass) was the one
+                    phrasing accidentally closest to true, which made it the most misleading.
+                  Replaced with the mechanism rather than a predicted outcome, because the mechanism
+                  IS canonical where the outcome never was: 0.02 x (quality - 0.5) is protocol
+                  invariant per t3-v3-tensors.md 10.2 / vector t3v3-003, and this site already
+                  teaches it at /why-web4#faq-calibration and /how-it-works.
+                  Do NOT reach for the decay rates as the canonical half of this answer. They are
+                  NOT canonical: 10.3 lists Temperament recovery and Training decay as SOCIETY-
+                  CONFIGURABLE with reference defaults (+0.01/month, -0.001/month), and the spec
+                  states no half-life at all. The "30-day half-life" below and at :1239 is a 4-Life
+                  calibration and is left alone as such, not promoted to ground truth. */}
               <p>
-                The design actively prevents entrenchment. Formal bootstrap convergence proofs show:
+                The design works against entrenchment, and the part that is settled is the update
+                rule rather than any predicted outcome. Trust moves by{" "}
+                <code className="text-sky-300/90 text-xs">0.02 &times; (quality &minus; 0.5)</code>{" "}
+                per action, a protocol invariant that keys the size of the change to the quality of
+                that one action: not to how long you have been a member, not to how much ATP you
+                already hold, not to who vouched for you. A founder and a newcomer doing equally
+                good work move by the same amount.{" "}
+                <Link href="/why-web4#faq-calibration" className="text-sky-400 hover:underline">
+                  Why 0.02?
+                </Link>
               </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-400 ml-2">
-                <li><strong>First-mover advantage has a ~30-action half-life</strong> - early adopters can&apos;t coast. Their head start decays exponentially.</li>
-                <li><strong>After ~50 quality actions, newcomers can surpass founders</strong> - stochastic dominance breaks. Quality beats seniority.</li>
-                <li><strong>Trust distribution converges to Gini ~0.25</strong> - moderate inequality (like a healthy economy), not extreme concentration.</li>
-                <li><strong>Catch-up time scales as O(log n)</strong> - joining a larger network is logarithmically, not linearly, harder.</li>
-              </ul>
               <p className="mt-2">
                 Trust dimensions also decay at different rates - Temperament has a 30-day half-life, meaning recent behavior
                 matters far more than historical reputation. Established members who stop contributing lose their advantages
@@ -983,14 +1016,16 @@ export default function WhatCouldGoWrongPage() {
               </p>
               <p>
                 But newcomer friction is real. In every reputation system, being new means
-                being untrusted. The difference: Web4&apos;s math shows the path from &ldquo;new and untrusted&rdquo;
-                to &ldquo;established and trusted&rdquo; is provably finite and fair - unlike today&apos;s internet
-                where the path is often &ldquo;impossible without connections.&rdquo;
+                being untrusted. The difference: the path from &ldquo;new and untrusted&rdquo;
+                to &ldquo;established and trusted&rdquo; is written down and open to anyone who does the
+                work - unlike today&apos;s internet where the path is often &ldquo;impossible without
+                connections.&rdquo;
               </p>
               <p className="text-amber-400/80 text-xs">
-                <strong>Status:</strong> Bootstrap convergence is formally proven with simulation validation.
-                Whether the ~50-action threshold feels fast enough for real humans is a question
-                real-world testing would need to answer.
+                <strong>Status:</strong> The direction you can read off the update rule. The{" "}
+                <em>rate</em> you cannot: how many actions it actually takes a newcomer to catch up
+                has never been measured, and the core standard&apos;s SECURITY.md lists &ldquo;no
+                formal economic modeling&rdquo; among its open gaps.
               </p>
             </div>
           </details>
@@ -1050,22 +1085,25 @@ export default function WhatCouldGoWrongPage() {
                 <p>
                   <strong className="text-sky-400">Actions 31-50: Differentiation.</strong> Roles
                   become meaningful. Members who consistently deliver quality earn trust in specific
-                  dimensions - Talent for skilled work, Training for follow-through. First-mover
-                  advantage peaks around action 30 and begins decaying. New members who join now
-                  can see established trust patterns to learn from.
+                  dimensions - Talent for skilled work, Training for follow-through. The founders&apos;
+                  head start stops compounding: it was never a bonus to their scores, only more
+                  actions on the record, and newcomers are now adding records of their own. New
+                  members who join now can see established trust patterns to learn from.
                 </p>
                 <p>
                   <strong className="text-sky-400">Actions 51-100: Stabilization.</strong> Trust
-                  distribution settles toward Gini ~0.25 (moderate, healthy inequality). Quality
-                  newcomers start surpassing coasting founders. ATP circulation creates a functioning
+                  scores spread out by how people actually behaved. Quality newcomers start
+                  surpassing coasting founders. ATP circulation creates a functioning
                   economy. The society has enough history for MRH context to be meaningful - members
                   can make trust-informed decisions about unfamiliar entities.
                 </p>
               </div>
               <p className="text-amber-400/80 text-xs">
-                <strong>Status:</strong> This trajectory is validated through simulation. Whether real
-                human communities follow the same curve depends on factors simulations can&apos;t model -
-                social dynamics, motivation, and the specific purpose of the community.
+                <strong>Status:</strong> This is a sketch of what the rules imply, not a measurement.
+                The action counts are there to give the phases an order, and no Web4 society has been
+                run with real people to check them. Whether real human communities follow this curve
+                depends on factors nobody has modelled: social dynamics, motivation, and the specific
+                purpose of the community.
               </p>
             </div>
           </details>

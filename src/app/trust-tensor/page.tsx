@@ -919,8 +919,21 @@ export default function TrustTensorPage() {
             weights: <strong className="text-sky-300">Talent 0.4, Training 0.3, Temperament 0.3</strong>.
             So the three totals below differ because Alice&apos;s <em>scores</em> differ by role, not
             because the blend does. (The percentages in the widget above are the other quantity,
-            the per-role match.)
+            the per-role match. The widget also offers a different set of roles than the three worked
+            out here: you can try any role up there, these are simply the three with the arithmetic
+            written out.)
           </p>
+          {/* Aug-10 visitor LOW: "the interactive widget offers Surgeon / Data Analyst / Team Leader,
+              the worked example uses Data Analyst / Project Manager / Mechanic ... I was unsure
+              whether Project Manager was a role I was supposed to have seen configured."
+              Fixed by BRIDGING the two casts, not by unifying them. Unifying was considered and
+              rejected: the worked-example cast is cited by name in three guard blocks on this page
+              (grep -n "the Team Leader role", grep -n "Analyst stays 90", grep -n "Alice as Mechanic"),
+              in the code block at grep -n "Alice as Data Analyst:", and in a cross-page
+              hardware-ceiling argument, and the widget's third role sits adjacent to the standing
+              T3-weights canon escalation with an explicit no-ordering-commentary restriction. A
+              rename touches all of that; a sentence touches none of it. If a future session wants
+              one cast, it needs its own scope and its own review. */}
 
           <div className="space-y-6">
             <div className="border-l-4 border-blue-500 pl-6">

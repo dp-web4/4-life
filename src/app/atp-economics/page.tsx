@@ -1079,9 +1079,10 @@ export default function ATPEconomicsPage() {
               the system requires <em>reciprocity density</em> (peers who actually engage), not a minimum head-count.
               Over roughly <strong className="text-gray-300">100 quality actions across the community</strong>,
               trust starts sorting: people who confirmed work that others later also confirmed gain
-              confirmer-trust; people who confirmed spam lose it. First-mover advantage fades on a
-              <strong className="text-gray-300"> ~30-action half-life</strong>, and newcomers doing quality
-              work routinely surpass early members within ~50 actions.{" "}
+              confirmer-trust; people who confirmed spam lose it. Arriving first is not itself worth
+              anything: <strong className="text-gray-300">the trust update reads the quality of the
+              action, not the seniority of whoever took it</strong>, so newcomers doing quality work
+              can and do pass early members who coast.{" "}
               <Link href="/what-could-go-wrong#cold-start" className="text-sky-400 hover:underline">
                 See the cold-start walkthrough →
               </Link>
@@ -1520,8 +1521,8 @@ export default function ATPEconomicsPage() {
             <p className="text-gray-300 text-sm leading-relaxed">
               Unlike cryptocurrency, ATP reaches economic equilibrium through fee redistribution.
               ATP velocity keeps resources circulating - hoarding is penalized by decay, and
-              the 5% burn on transfers prevents accumulation loops. The modeled wealth gap
-              (Gini coefficient) converges to ~0.25, well below real economies (~0.6-0.7).
+              the 5% burn on transfers prevents accumulation loops. Recharge is capped at what you
+              spend, so a balance grows only through work others commissioned.
             </p>
           </div>
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
@@ -1534,17 +1535,16 @@ export default function ATPEconomicsPage() {
               isn&apos;t just morally rewarded - it&apos;s economically cheaper to participate.
             </p>
             <p className="text-gray-400 text-xs mt-3 leading-relaxed">
-              <strong className="text-gray-300">What about newcomers?</strong> New entities aren&apos;t locked out - 
-              bootstrap convergence means a newcomer doing quality work surpasses established members within
-              ~50 actions. The first-mover advantage has a ~30-action half-life, and wealth inequality
-              naturally converges to a Gini of 0.25. Trust-based pricing rewards <em>earned</em> trust,
-              not seniority.
+              <strong className="text-gray-300">What about newcomers?</strong> New entities aren&apos;t locked out.
+              The discount tracks your trust score, and the trust score tracks the quality of what you
+              did, so it is reachable by working rather than by waiting. Trust-based pricing rewards{" "}
+              <em>earned</em> trust, not seniority.
             </p>
           </div>
         </div>
         <p className="text-gray-500 text-xs mt-4 italic">
-          From web4 economic equilibrium analysis - ATP circulation, velocity tracking, and Gini convergence verified across 500+ rounds.
-          Trust-based dynamic pricing: session 32, 84 checks.
+          From web4 offline modeling of ATP circulation and velocity. Trust-based dynamic pricing:
+          session 32, 84 checks.
         </p>
         </details>
       </section>
@@ -1892,9 +1892,10 @@ export default function ATPEconomicsPage() {
             </p>
             <p>
               <strong className="text-sky-400">Bootstrap convergence:</strong> The initial 100 ATP
-              advantage fades quickly. After about 30 quality actions, early participants have no
-              meaningful edge over newcomers. By ~50 actions, a talented newcomer routinely surpasses
-              a mediocre founder. The system rewards ongoing quality, not first-mover privilege.
+              advantage is a starting balance, not a multiplier. It buys a founder some early actions
+              and then it is spent, and what refills it is the same thing that refills anyone
+              else&apos;s: work that other people confirmed. The system rewards ongoing quality, not
+              first-mover privilege.
             </p>
             <details className="mt-2">
               <summary className="text-sky-400 cursor-pointer hover:text-sky-300 text-sm">

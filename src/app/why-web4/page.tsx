@@ -1153,8 +1153,8 @@ export default function WhyWeb4Page() {
               <p>Here&apos;s what changes with community size:</p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
                 <li><strong>5-10 people:</strong> Functional, but trust scores are volatile. One person&apos;s bad day moves the whole graph. MRH neighborhoods overlap heavily, so everyone sees everything.</li>
-                <li><strong>20-50 people:</strong> Trust signals become statistically meaningful. Roles start to differentiate. The Gini coefficient converges toward the designed 0.25.</li>
-                <li><strong>100+ people:</strong> Emergent structure appears - clusters, bridge nodes, specialists. First-mover advantage fades (30-action half-life). This is where the system starts to feel like an ecosystem, not a group chat.</li>
+                <li><strong>20-50 people:</strong> Trust signals become statistically meaningful. Roles start to differentiate, because there are now enough observers for one person&apos;s assessment not to be the whole picture.</li>
+                <li><strong>100+ people:</strong> Emergent structure appears - clusters, bridge nodes, specialists. Founding early stops being the thing that distinguishes people, because most members did not found anything. This is where the system starts to feel like an ecosystem, not a group chat.</li>
               </ul>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Small communities (~5 members) are more sensitive to individual behavior.
@@ -1724,13 +1724,12 @@ export default function WhyWeb4Page() {
                 <li><strong>Actions 4-20:</strong> Founders perform real work (writing governance rules,
                   creating initial resources). Trust builds slowly from 0.50 - each quality contribution
                   moves the needle by ~0.02.</li>
-                <li><strong>Actions 21-50:</strong> New members join, vouched for by founders. First-mover
-                  advantage exists but has a ~30-action half-life - newcomers doing quality work
-                  catch up to founders by action ~50.</li>
+                <li><strong>Actions 21-50:</strong> New members join, vouched for by founders. The
+                  founders are ahead on record length, not on rate: the same ~0.02 step is available
+                  to a newcomer doing the same quality of work.</li>
                 <li><strong>Actions 51-100:</strong> Roles emerge, specialization begins. The society&apos;s
                   trust graph becomes rich enough that MRH boundaries create meaningful context.
-                  Wealth gap trends toward 0.25 - concentrated enough to reward quality,
-                  distributed enough to avoid oligarchy.</li>
+                  Some members hold more ATP than others, having been paid for more confirmed work.</li>
               </ol>
               <p className="text-amber-400/80 text-xs mt-2">
                 <strong>Honest caveat:</strong> Bootstrapping is genuinely hard. No perfect solution exists.
@@ -3347,9 +3346,9 @@ export default function WhyWeb4Page() {
               </p>
               <p>
                 More importantly, Web4&apos;s <strong className="text-sky-300">bootstrap convergence</strong> means
-                a newcomer (or a recovering teenager) doing quality work surpasses established members
-                within ~50 actions. The first-mover advantage has a ~30-action half-life. The system is
-                designed for people to outgrow their past - not to be trapped by it.
+                a newcomer (or a recovering teenager) doing quality work can pass established members
+                who have stopped doing it. Nothing in the trust update pays you for having been here
+                longer. The system is designed for people to outgrow their past - not to be trapped by it.
               </p>
               <p>
                 The combination of trust decay + bootstrap convergence means Web4 is closer to
@@ -3663,9 +3662,9 @@ export default function WhyWeb4Page() {
                 <li>The <strong className="text-gray-300">quality ramp</strong> means high-quality actions earn
                   full ATP rewards immediately. If your Reddit contributions were genuinely valuable, you&apos;ll
                   produce the same quality on Web4 and build trust quickly.</li>
-                <li><strong className="text-gray-300">First-mover advantage has a ~30-action half-life.</strong> Newcomers
-                  who contribute quality work surpass early adopters within about 50 actions. Your existing
-                  skills translate directly into faster trust growth.</li>
+                <li><strong className="text-gray-300">Arriving early is not itself an advantage.</strong> The
+                  trust update reads the quality of each action, not how long its author has been a member,
+                  so your existing skills translate directly into faster trust growth.</li>
                 <li>The <strong className="text-gray-300">1.4x newcomer premium</strong> expires as you build history.
                   Within a few weeks of active participation, your costs normalize.</li>
               </ul>
