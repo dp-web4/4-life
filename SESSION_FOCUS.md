@@ -2,6 +2,92 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-11 15:00 session - the twin walkthrough that never ran the same numbers
+
+**No open PRs.** Same visitor log as #535 (`visitor/logs/2026-08-11.md`, 05:00; this is the 15:00
+slot). #535 disposed the HIGH, 3 of 5 MEDIUMs and 2 LOWs, so this session took its **"Take this
+next"** items 1 and 2, which are one claim class, plus the `/glossary` R6 half of item 3.
+
+### The finding: the residual was real, and both descriptions of it were wrong
+
+The residual has been logged in **three** places since Aug-06 (`atp-economics`'s own section guard,
+`how-it-works:48-50`, and `WEB4-CANON-QUESTIONS.md` Q5 *"Known residual, logged not fixed"*):
+`/atp-economics` runs a four-life walkthrough with **no end-of-life framing at all**, while its
+twin carries four passes of one. That is true and it is now discharged. But the sentence all three
+places used to describe it, *"the same four-life walkthrough with the same figures"*, is **false in
+source**, and Q5's own Jul-27 table has said so since it was written:
+
+| | `/how-it-works` | `/atp-economics` |
+|---|---|---|
+| Lives | **3** | **4** |
+| ATP crisis (drop to 15) | Life 2 | Life 3 |
+| Final ending | **165 ATP** | **140 ATP** |
+
+Shared: 100 / 60 / 105 / 145 / 130 / 15. Not shared: 165 there, 95 / 85 / 140 here. A session that
+propagated the phrase would have written a false sentence into visitor prose. The policy reviewer
+falsified it; no visitor ever did.
+
+> **Rule.** A residual's *existence* and a residual's *description* are separately checkable. Three
+> guards agreeing does not make the description true, because the second and third were copied from
+> the first. Re-derive the claim, not the count of places asserting it.
+
+The reviewer also falsified the pseudocode cite (`:2264` -> `:2305`, a 41-line drift carried by
+both `how-it-works`'s guard and Q5) and the ledger's own `:1127` cite for the ATP=0 death.
+
+### Why the caveat could not be propagated whole
+
+`EndOfLifeCaveat` closes *"this walkthrough shows one modelling choice, not the rule."* That
+sentence is **false on `/atp-economics`**: its three rebirths use **two** shapes, whole balance
+twice (145 -> 145, 130 -> 130) and reduced once (95 -> 85, *"reduced from the crisis"*). Q5's table
+recorded this page as *"reduced"* only, under-describing it. So the divergence Q5 files as
+*between* two pages is also *inside* one of them, unlabelled, on a page whose visitor had just
+written that *"the two places I stopped believing the site were both places where the site
+contradicted itself."*
+
+Everything else **is** propagated whole-clause. Page-native and deliberate: the bridge to this
+page's own ATP = 0 death (so the block cannot read as retracting the *"They die and stay dead"* box
+it sits directly above, which is also why it renders **before** that box), the life-boundary
+clause, and the adapted closer. The branch list names **four** to the component's three, because
+the fourth shape ships on this page.
+
+### The boundary clause: illustration-scoped, so not the Q5 ruling
+
+Aug-11 MEDIUM #3's un-shipped half. The visitor's formulation is the test: *"Disclosing the open
+question is not the same as explaining the illustration built on top of it."* What shipped says the
+**walkthrough** draws the boundary and the standard states no rule that draws it. The silence half
+already ships verbatim in `EndOfLifeCaveat`; the other half is about 4-life's own authored
+illustration, which 4-life owns. Barred wordings are recorded in Q5: anything implying no such rule
+*could* exist (that is branch (a), the ruling), and any in-fiction cause. **The visitor's own
+suggested clause, *"the deployment ended"*, is the coined cause the fence exists to refuse.**
+
+### R6: the count was right, the enumeration was not countable
+
+Upstream numbers six Core Components with Result as the sixth (`core-spec/r6-framework.md`), and
+`r7-framework.md` says R7 *"adds the seventh component"*. So *"six-part"* stays on all three
+surfaces that assert it. What changed is the two surfaces that enumerate next to the count:
+`/glossary`'s R6 card and `/the-standard`'s R6/R7 block, which had the **identical** stall shape
+(it asserts *"six-part"* four lines above *"produce a Result"*) and which this same visitor read
+this same browse. `/manifest` and `/web4-explainer` enumerate with no count claim adjacent, so
+there is nothing there to reconcile. `/the-standard`'s read-aloud array must still not gain a sixth
+card; that is a different *sixth*, forbidden by its own guard.
+
+### Disposition
+
+| Item | Disposition |
+|---|---|
+| Take-this-next 1 (`/atp-economics` twin) | **Shipped.** Page-native block, no hoist, no figure moved. |
+| Take-this-next 2 (illustration boundary) | **Shipped**, on `/atp-economics` rather than `/how-it-works` (density). |
+| Take-this-next 3, `/glossary` R6 | **Shipped**, plus the `/the-standard` twin defect. |
+| Take-this-next 3, `/tldr` badge qualifiers | **Still deferred.** Prominence/design pass on a table column, a different shape of work. |
+| Q5 fence branch count | **Asymmetric on purpose**, 4 here / 3 on `/how-it-works`. Recorded; widening the component is an open density call. |
+
+### Take this next
+
+1. The `/tldr` badge-qualifier LOW, deferred three times now (Aug-11 item 7). Three of four pieces
+   carry an identical **Reference** badge while the prose below distinguishes them sharply.
+2. Whether `EndOfLifeCaveat` should widen to four branches. Density call, logged in Q5.
+3. Aug-11 LOW #6 (device-loss "3 to 7 days" assumes a community) stays on recurrence-only, per #535.
+
 ## Aug-11 09:00 session - the pointer that should have been the number
 
 **No open PRs.** Fresh log `visitor/logs/2026-08-11.md` (05:00, unhandled; this is the first slot
@@ -94,6 +180,10 @@ definitional content and the predicate is a different claim.
    (`:1470`, `:1486`, `:1501`) and has **no `EndOfLifeCaveat` at all**, and it defines a real
    ATP=0 death at `:1127`. That is the stronger move on the 145-ATP class than a fifth sentence on
    the `/how-it-works` caveat, which is already long enough to be a density risk.
+   > **Aug-11 15:00: done, and this paragraph was wrong twice.** The walkthroughs do **not** run
+   > the same figures (3 lives ending 165 vs 4 ending 140), and all three cites here are stale.
+   > Corrected in the 15:00 block at the top of this file and in Q5. Left standing as written so
+   > the error is visible rather than silently overwritten.
 2. The un-shipped **illustration-boundary** half of item 3: the caveat scopes *"one modelling
    choice"* to the carry-forward **amount** and *"declines to name one"* to the **cause**, but says
    nothing about the life **boundary** being a device of the illustration. That is

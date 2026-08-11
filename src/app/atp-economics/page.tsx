@@ -1577,7 +1577,20 @@ export default function ATPEconomicsPage() {
             NOT done here, logged as follow-up: /how-it-works carries an EndOfLifeCaveat next to
             these figures and this page has none. Do not hoist that component to share it; this
             page also defines a genuine ATP = 0 death, so it needs its own framing, which is a
-            larger job than the filed friction. */}
+            larger job than the filed friction.
+            Aug-11 (15:00): that follow-up is DONE. See JourneyCaveat below, rendered after Life 4
+            and before the closing pattern box. It is page-native, not a hoist, per the paragraph
+            above and the matching guard in /how-it-works (grep -n "Do NOT hoist this component").
+            Two premises this comment and SESSION_FOCUS both carried were FALSE in source and are
+            corrected here rather than propagated:
+              - The two walkthroughs do NOT run "the same figures". /how-it-works runs THREE lives
+                ending 165; this page runs FOUR ending 140, and the ATP crisis is its Life 2 vs our
+                Life 3. Shared: 100/60/105/145/130/15/80-180. Not shared: 165 there, 95/85/140
+                here. WEB4-CANON-QUESTIONS.md Q5's own table has recorded that divergence since
+                Jul-27; the "same figures" phrasing above overstates it.
+              - The pseudocode cite `:2264` in /how-it-works's guard and in Q5 is stale; the
+                `agent.reborn(karma=agent.atp_history)` line is now :2305. Named rather than
+                numbered below ([[guard-comment-cites-rot-name-the-target]]). */}
 
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8 space-y-6">
           <div className="border-l-4 border-blue-500 pl-4">
@@ -1671,6 +1684,67 @@ export default function ATPEconomicsPage() {
               Four lives of accumulated wisdom. This is what karma is for.
             </p>
           </div>
+
+          {/* Aug-11 (15:00), discharging the follow-up logged at the top of this section and in
+              WEB4-CANON-QUESTIONS.md Q5 ("Known residual, logged not fixed"). This is the
+              /atp-economics half of the Q5 holding pattern. Written page-native ON PURPOSE - both
+              pages' guards forbid hoisting /how-it-works's EndOfLifeCaveat here, because this page
+              defines a genuine ATP = 0 death that page does not.
+              PROPAGATED WHOLE-CLAUSE from EndOfLifeCaveat (grep -n "About these numbers"
+              src/app/how-it-works), not paraphrased ([[propagate-the-sentence-not-your-summary]]):
+              the "none of these lives ends at 0 ATP" clause, the ended/died clause, the
+              not-settled clause naming what the standard does and does not say, and the
+              declines-to-name-one clause. If you reword those there, reword them here.
+              THREE things are page-native and deliberate:
+              1. The bridge to the deaths this page DOES define. The card above ("When ATP hits
+                 zero, your agent can no longer act") and the closing box directly below ("They
+                 die and stay dead") are both the real ATP = 0 death. Naming them first is what
+                 stops this caveat from reading as a retraction of the box it sits above, which is
+                 also why it renders HERE and not after that box.
+              2. The life-BOUNDARY clause. This is the un-shipped half of the Aug-11 visitor's
+                 MEDIUM ("Disclosing the open question is not the same as explaining the
+                 illustration built on top of it"). It is illustration-scoped, so it is NOT the
+                 Q5 ruling: it says the walkthrough draws the boundary and the standard states no
+                 rule that draws it, which is the silence EndOfLifeCaveat already ships. It must
+                 NOT be written to imply no such rule COULD exist (that is Q5 branch (a)), and it
+                 must NOT name an in-fiction cause. The visitor's own suggested clause ("the
+                 deployment ended") is exactly the coined cause the fence exists to refuse; so are
+                 term, contract, retirement, project end, and voluntary exit.
+              3. The carry-forward closer is ADAPTED, not propagated. EndOfLifeCaveat closes with
+                 "this walkthrough shows one modelling choice, not the rule". That sentence is
+                 FALSE on this page: our three rebirths use two shapes, whole balance twice
+                 (145 -> 145, 130 -> 130) and reduced once (95 -> 85, "reduced from the crisis"),
+                 and a fourth shape ships further down this same page in pseudocode
+                 (grep -n "agent.reborn" - karma from the whole ATP history). Q5's table row for
+                 this page said "reduced" only, which under-described it; corrected in the ledger
+                 in the same pass.
+              The branch list names FOUR where EndOfLifeCaveat names three, because the fourth is
+              on THIS page ([[fence-may-undercount-its-own-ledger]]). That asymmetry is deliberate
+              and recorded in Q5; do not "align" it by deleting the fourth here.
+              NO FIGURE MOVED. 145 / 130 / 95 / 85 are quoted, not changed, and they are the
+              frozen set Q5 depends on. */}
+          <p className="text-xs text-amber-300/70 mt-3 leading-relaxed">
+            <strong className="text-amber-300">About these numbers:</strong> none of these lives
+            ends at 0 ATP, so none of them is the death this page defines: ATP hitting zero, the
+            one in the card further up and in the closing line just below, where agents who never
+            built karma do not come back. That is why they read <em>ended</em> and not{" "}
+            <em>died</em>: they are not the death this page defines, and Web4 does not define a
+            second one. What else ends a life is <strong>not settled</strong>: the standard says
+            what stops you acting (ATP reaches zero) and what is permanent (sustained trust
+            collapse), and it names no term limit, no lifespan, and no natural end of life. So
+            rather than invent a third cause to justify the figures above, this page declines to
+            name one. The life boundaries are drawn by the walkthrough itself: the standard states
+            no rule that draws them, and this page does not invent one to fill the gap.
+          </p>
+          <p className="text-xs text-amber-300/70 mt-2 leading-relaxed">
+            How <em>much</em> karma carries is also unsettled: whether you keep your whole final
+            balance, a reduced portion of it, a fresh starting balance plus a karma bonus, or
+            something computed from your whole history is not decided, and the code sketch further
+            down this page uses that last one. This walkthrough does not settle it either. Its
+            three rebirths use two of those shapes: 145 and 130 carry whole, while 95 becomes 85
+            (&ldquo;reduced from the crisis&rdquo;). Read it for the shape (a good track record
+            starts your next life stronger), not for the death rule or the exact carry-forward.
+          </p>
 
           <div className="p-4 bg-sky-900/20 border border-sky-800/30 rounded-lg">
             <p className="text-sky-300 text-sm">

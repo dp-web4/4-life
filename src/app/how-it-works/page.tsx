@@ -42,20 +42,32 @@ const HOW_IT_WORKS_SECTIONS = [
    while Life 3 said "Ended strong", and "Died" claims the narrow, defined death event this page
    rules out four screens above. The verb is normalized to the page's own "Ended" on all lives.
    That REMOVES an assertion; it does not add one, and it invents no second mechanism (still Q5).
-   The same four-life walkthrough with the same figures runs on /atp-economics (:1470/:1486/:1501),
-   which said "Died NATURALLY" - a strictly stronger form of the undefined mechanism. Normalized
-   there in the same pass so the two pages cannot diverge on identical numbers.
-   Do NOT hoist this component into src/components/ to share it with /atp-economics: that page has
-   no caveat of its own and defines a real ATP=0 death at :1127. Giving it one is a separate,
-   larger job than the filed friction. Logged as follow-up, not done here.
+   A SIBLING walkthrough runs on /atp-economics (grep -n "Life 1: The Newcomer"), which said
+   "Died NATURALLY" - a strictly stronger form of the undefined mechanism. Normalized there in the
+   same pass so the two pages cannot diverge on the verb.
+   CORRECTED Aug-11: this line used to read "the same four-life walkthrough with the same figures".
+   Both halves are false and the ledger's own Q5 table has said so since Jul-27. THIS page runs
+   THREE lives ending 165 with the crisis in Life 2; that page runs FOUR ending 140 with the
+   crisis in Life 3. Shared: 100/60/105/145/130/15. Not shared: 165 here, 95/85/140 there. Do not
+   propagate "same figures" into prose.
+   Do NOT hoist this component into src/components/ to share it with /atp-economics: that page
+   defines a real ATP=0 death this one does not (grep -n "no longer act" src/app/atp-economics),
+   so it needs its own framing. It now HAS one, written page-native for exactly that reason
+   (grep -n "About these numbers" src/app/atp-economics). The no-hoist rule still stands.
    Aug-09 (15:00): the karma half was a DICHOTOMY ("whole final balance or a reduced portion"),
    which read as exhaustive and excluded the model this same page shows above it - the demo's
    base-plus-bonus 112, stated outright by #528. This track's own ledger has recorded three models
    since Jul-30 (WEB4-CANON-QUESTIONS.md Q5, the addendum table), so the fence disclosed two of the
    three it already knew about. Third branch added, in this page's vocabulary. That WIDENS a
    disclosure; it endorses no branch, moves no figure, and is not the ruling (still Q5).
-   Not exhaustive even now: /atp-economics:2264 ships a fourth shape in pseudocode
-   (`agent.reborn(karma=agent.atp_history)`), on the page that still has no caveat. Logged in Q5.
+   Not exhaustive even now: /atp-economics ships a fourth shape in pseudocode
+   (grep -n "agent.reborn" src/app/atp-economics: `agent.reborn(karma=agent.atp_history)`).
+   Logged in Q5. Aug-11 (15:00): that page is no longer "the page that still has no caveat" - it
+   now carries its own page-native block (grep -n "About these numbers" src/app/atp-economics),
+   which names FOUR branches to this component's three, because the fourth ships there. Do not
+   sync the counts by deleting the fourth there; widening THIS one is an open density call
+   recorded in Q5. The `:2264` cite this line used to carry was stale by 41 lines, which is why
+   it is a grep target now.
    Do NOT re-sync this sentence with /first-contact's rebirth fence
    (grep -n "About that number" src/app/first-contact). That card fences a different axis on
    purpose and its guard, the block ending "Line numbers deliberately replaced with grep
