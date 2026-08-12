@@ -1016,10 +1016,15 @@ export default function LearnJourney() {
       <section>
         <div className="detail-box" style={{ background: "linear-gradient(135deg, rgba(16,185,129,0.12), rgba(56,189,248,0.10))", border: "1px solid rgba(16,185,129,0.3)" }}>
           <h3 style={{ color: "#34d399" }}>The last step: stop reading, start running ⚡</h3>
+          {/* Aug-12: the capstone of the whole learn path says "stop reading, start running"
+              and "you can run the real thing on your own machine", then sent the reader to two
+              page tops. Both links now land on the section that shows the commands. Both
+              halves move together: the sentence makes the identical promise about each piece,
+              so deep-linking one and not the other would leave the hub half undelivered. */}
           <p>
             When the concepts make sense, don&apos;t stop at the reading. The trust layer
-            (<Link href="/hestia" style={{ color: "#34d399" }}>hestia</Link>) and a Web4 society
-            (<Link href="/hub" style={{ color: "#c4b5fd" }}>the hub</Link>) are public,
+            (<Link href="/hestia#how-to-touch-it" style={{ color: "#34d399" }}>hestia</Link>) and a Web4 society
+            (<Link href="/hub#how-to-touch-it" style={{ color: "#c4b5fd" }}>the hub</Link>) are public,
             AGPL code: you can run the real thing on your own machine. That&apos;s where
             understanding turns into participation.
           </p>

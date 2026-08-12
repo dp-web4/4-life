@@ -166,11 +166,53 @@ export default function HubPage() {
             </p>
           </div>
         </div>
-        <p className="text-base text-gray-400 leading-relaxed mt-4">
+        {/* Aug-12: the Jul-31 visitor LOW asked that /onramp link each of `hestia init`,
+            `hub init` and `hestia connect-hub` to its piece's install section. `hub init` had
+            no destination: this page's CTA told a reader to "fork it, write your community's
+            charter, and run your own society" and never said how, the same shape as the Jul-28
+            /hestia HIGH. Policy review rejected authoring a new install section here (the
+            "turnkey deploy kit" sentence in the maturity-ladder section already names
+            `hub up`, and leading with a public-internet profile would read against that same
+            section's "ready for a supervised pilot, not a fielded production product" and
+            /running-now's "No production deployment yet"). So the existing operational
+            paragraph gets the id and two grounded sentences instead.
+            Both sentences track the organizer quickstart: the archetype-picking `hub up`
+            form, and Step 0, which exists because several commands refuse to write a
+            plaintext private key. The passphrase half is NOT optional colour: omitting the
+            step that fails closed is exactly what cost /hestia a reader in July.
+            CORRECTED Aug-12 after review: the first version of that half said the commands
+            "will not run until it is set", which is Step 0's heading, not the mechanism.
+            `require_passphrase` (hub-daemon/src/main.rs) reads HUB_PASSPHRASE, else PROMPTS
+            at a TTY, and only hard-errors with no terminal to ask. QUICKSTART.md says the
+            same four lines below the heading ("Unset + no terminal = hard error"), and
+            `hub up`'s own printed runbook says `hub gen-lct` prompts. Every reader this
+            paragraph addresses is at a terminal, so the refusal is the branch they will not
+            hit. State the mechanism, not the precondition: a conditional refusal restated as
+            an unconditional one reads stricter than reality, and a reader who meets a prompt
+            where they were promised a wall learns the page does not know the software.
+            Rule: when a claim is about what a COMMAND does, a doc is the narration; ground it
+            in the code path that decides it. Deliberately
+            NOT restated here: the pilot-ready / federation-is-spec-only sentences below, and
+            any claim that a hub is deployed. Do not link a docs path for this: the hub doc
+            tree is private, the only public artifact is github.com/dp-web4/4-hub, already
+            linked from the CTA at the foot of this page. */}
+        <p id="how-to-touch-it" className="text-base text-gray-400 leading-relaxed mt-4 scroll-mt-20">
           Operationally it&apos;s mundane in the best way: an admin CLI and Docker
           deployment, one small static binary. The radical part isn&apos;t the ops,
           it&apos;s that the society&apos;s rules and history are cryptographically
-          honest.
+          honest. Standing one up starts with{" "}
+          <code className="text-purple-300">hub up ./my-hub --profile &lt;archetype&gt;</code>,
+          which picks a deployment shape (anything from a local{" "}
+          <code className="text-purple-300">dev</code> hub to a public, TLS-terminated one),
+          writes a fail-closed config plus a starter
+          law and an operator token, and prints the go-live runbook. Set{" "}
+          <code className="text-purple-300">HUB_PASSPHRASE</code> before any of that. A hub
+          never writes a private key to disk in the clear, so{" "}
+          <code className="text-purple-300">hub init</code> and the commands around it take the
+          passphrase from that variable, or prompt you for it at a terminal, and refuse
+          outright where there is no terminal to ask (a script, a CI job, a container).
+          Choosing to have no passphrase is allowed, but it has to be explicit rather than a
+          silent default.
         </p>
       </section>
 

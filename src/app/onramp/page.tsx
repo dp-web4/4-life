@@ -234,6 +234,19 @@ export default function OnrampPage() {
               2
             </div>
             <div className="w-full">
+              {/* Jul-31 visitor LOW: "Instructs `hestia init`, `hub init`, `hestia connect-hub`
+                  under a banner promising runnable software, with no install link anywhere on
+                  the page. Link each command to its piece's install section." Aug-12: all three
+                  now route (/hestia#how-to-touch-it, /hub#how-to-touch-it), which took adding
+                  both destination ids; neither existed when the log was filed, which is why the
+                  literal fix had gone unattempted for eleven days.
+                  The SAME two commands appear again in the #seams grid below (`hestia
+                  connect-hub`, `hub init --sovereign-hestia`) and are deliberately left bare.
+                  That section opens "These are the real, in-code seams, not aspirational ones":
+                  it describes where two pieces meet, it does not tell a reader to type
+                  anything. This block does. If a later visitor files the seams grid too, that
+                  is new signal and the reason above is what it would be overturning, not an
+                  oversight. */}
               <h3 className="font-semibold text-purple-300 mb-3">Pick your scale</h3>
 
               <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 mb-3">
@@ -253,7 +266,10 @@ export default function OnrampPage() {
                     your scale.
                   </strong>{" "}
                   Start here. It is the lowest-friction, hands-on entry. One binary,{" "}
-                  <code className="text-emerald-300">hestia init</code>, and your
+                  <Link href="/hestia#how-to-touch-it" className="underline hover:text-emerald-200">
+                    <code className="text-emerald-300">hestia init</code>
+                  </Link>
+                  , and your
                   agents get witnessed identity plus a vault. It is the Web4 posture
                   at personal scale: the same shape a hub has at society scale.
                 </p>
@@ -281,10 +297,16 @@ export default function OnrampPage() {
                     You have a group that wants to govern itself, and this is your
                     scale.
                   </strong>{" "}
-                  <code className="text-purple-300">hub init</code> bootstraps a
+                  <Link href="/hub#how-to-touch-it" className="underline hover:text-purple-200">
+                    <code className="text-purple-300">hub init</code>
+                  </Link>{" "}
+                  bootstraps a
                   sovereign society with signed law and a witnessed ledger. Members
                   connect to it using hestia (
-                  <code className="text-purple-300">hestia connect-hub</code>). Know
+                  <Link href="/hestia#how-to-touch-it" className="underline hover:text-purple-200">
+                    <code className="text-purple-300">hestia connect-hub</code>
+                  </Link>
+                  ). Know
                   what you are signing up for: you would be standing up one of the
                   first live instances, not joining an existing network.
                 </p>
