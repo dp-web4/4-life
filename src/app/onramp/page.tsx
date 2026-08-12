@@ -466,7 +466,11 @@ export default function OnrampPage() {
               accurate reading of this list as it stood - only the hardbound bullet carried a
               caveat, which left /onramp more optimistic about hestia and the hub than
               /hestia, /tldr and /running-now are. The two caveats added here are propagated
-              from hestia:577-591 and tldr:255-256, not re-derived, and each bullet now links
+              from hestia's honest-status block and from the bullets under tldr's
+              "How real is it, honestly?" heading (re-anchored 2026-08-11 from a line cite
+              that the /tldr badge-qualifier fix shifted; those same bullets are now also
+              the source of truth for /tldr's own per-card status lines, so all three
+              surfaces move together), not re-derived, and each bullet now links
               to the page that carries the full version. The visitor named exactly these three
               (hardbound's hardware binding, hestia's gate bypass, the hub having no live
               network) as the material that existed and was missing here. */}

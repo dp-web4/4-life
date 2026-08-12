@@ -1919,11 +1919,55 @@ export default function HowItWorksPage() {
               Also: "formally specified" now attaches to the REQUIREMENT, not to the process. Grep
               web4-standard/core-spec for "appeal" and you get only SAL section 5.5/5.6 plus
               `appealPath: "defined_by_law"` in entity-types.md. The multi-tier flow described above is
-              a design; the spec corpus does not specify it. See /karma-consequences#recourse. */}
+              a design; the spec corpus does not specify it. See /karma-consequences#recourse.
+              2026-08-11: that pointer is no longer developer-only. The "Honest status" line below
+              now links #recourse in rendered output, because a visitor asked this block's
+              unanswered staffing question while this comment was the only thing pointing at the
+              answer. A guard comment naming the page that should carry the fix is not the fix. */}
+          {/* Aug-11 visitor Unanswered Question 4: "Who are the 'independent reviewers' and the
+              'witness panel'? In a system whose whole premise is no central authority, someone
+              still has to be the neutral party. Are they paid? Elected? Randomly drawn from
+              high-trust members? The design lists the steps but not the staffing."
+
+              Note this is READ-IT-AND-STILL-FILED-IT twice over: step 5 above already names a
+              staffer ("A Moderator (rotating monthly, not the original oracle)") and the
+              governance section below carries the same rotation as a CHARTER example. The reader
+              saw staffing and still asked, because nothing said whose call it is. So the missing
+              clause is the attribution, not a third example.
+
+              PROPAGATION, not assertion: the two facts below already ship, policy-reviewed, at
+              /karma-consequences#recourse ("The standard requires that a route back exist, and
+              leaves what the route is to each community ... the field naming that path reads
+              defined_by_law: the society you are in writes what an appeal actually looks like
+              there" and "no community has run it").
+
+              SCOPE GUARD. defined_by_law RELOCATES this question, it does not answer it, and the
+              copy must not read as if it did. The visitor's three sub-questions (paid? elected?
+              drawn from high-trust members?) have no answer anywhere upstream, because the
+              multi-tier flow itself is not in the spec corpus. Do NOT reach for
+              entity-types.md's "who fills it, its thresholds, and when it acts are each
+              society's law": that sentence is scoped to the EFFECTOR role (the enforcement side),
+              not to an appeals reviewer, and its only other occurrence is an unadopted W4IP
+              draft. Ground on SAL 5.5 ("Negative adjustments MUST include appeal path and
+              cool-down period") plus appealPath: "defined_by_law" (core-spec/entity-types.md),
+              which is what #recourse already does.
+
+              The #recourse link is the reciprocal the guard 20 lines above has been asking for
+              in a source comment ("See /karma-consequences#recourse") that no reader could see.
+              #recourse itself points back here ("the multi-tier version you may see described
+              elsewhere on this site"); that reference was one-way until now. Folded into the
+              existing sentence rather than added as a paragraph: this block already carries two
+              stacked paragraphs and a prior visitor fix here was explicitly "the missing clause,
+              not a second softening". */}
           <p className="text-gray-500 text-xs italic">
             Honest status: the requirement is in the standard (a negative trust adjustment has to carry an
             appeal path and a cool-down period), but the multi-tier process above is a design, and it
-            hasn&apos;t been tested with real humans yet. See{' '}
+            hasn&apos;t been tested with real humans yet. Who fills the review and witness roles is not
+            in the standard either: the field naming the appeal path reads{' '}
+            <code className="text-amber-300/90 bg-gray-900 px-1 rounded not-italic">defined_by_law</code>,
+            so each society writes its own staffing, and no community has run one yet. See{' '}
+            <Link href="/karma-consequences#recourse" className="text-amber-400 hover:underline">what recourse you have</Link>{' '}
+            for what that leaves you, and{' '}
             <Link href="/what-could-go-wrong" className="text-amber-400 hover:underline">What Could Go Wrong</Link>{' '}
             for the full risk analysis.
           </p>

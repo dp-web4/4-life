@@ -174,6 +174,36 @@ export default function TLDRPage() {
               </Link>
             </p>
           </div>
+          {/* Aug-11 visitor LOW 7: "Three of four pieces carry the identical Reference
+              badge, while the honest-status prose below distinguishes them sharply
+              (installable ... vs. no live user network vs. hardware binding unvalidated).
+              Skimmers read the badge, not the paragraph." Deferred three times as a
+              design pass; it is not one. The gloss box above is per-TIER (what Reference
+              and Running mean, and that later is not better) and says nothing per PIECE,
+              so three cards really do read identically to a skimmer while the page's own
+              "How real is it, honestly?" bullets, ~60 lines down, tell them apart.
+
+              The fix shape is already shipped and visitor-validated on /running-now, at
+              its Hestia block: a Jul-23 LOW ("the Running badge read more finished than
+              the fine print, because the caveat sat ~27 lines below it") was fixed by
+              PINNING the caveat directly under the badge at point of first read, with no
+              new badge tier. Same defect, same fix, one page earlier.
+
+              SOURCE OF TRUTH: each line below is a strict subset of that piece's own
+              bullet in "How real is it, honestly?" on this page. Do not re-derive them
+              and do not reword the bullets without moving these too; a subset cannot
+              contradict its source, a paraphrase can.
+
+              Hardbound carries BOTH halves on purpose. "usable, actively hardened" and
+              "hardware binding not yet validated" travel as a pair on four surfaces (/,
+              /onramp, /running-now, and the gloss box 50 lines above this, which calls
+              hardbound usable while badging it Reference). A negative-only chip here
+              would contradict all four.
+
+              Hestia gets no line. Its badge is already the distinct one, so it is not
+              part of the flattening the visitor filed, "runs end to end today" adds
+              nothing its badge does not, and this card's blurb was rewritten by #535 to
+              settle the same browse's HIGH. Do not add hardware wording here. */}
           <div className="space-y-3">
             <Link
               href="/the-standard"
@@ -183,6 +213,9 @@ export default function TLDRPage() {
                 <span className="text-sky-300 font-semibold">The core standard</span>
                 <MaturityBadge tier="reference" />
               </div>
+              <p className="text-gray-300 text-xs mb-1.5">
+                Stable; the primitives are installable now.
+              </p>
               <p className="text-gray-400 text-sm">
                 The substrate: an open ontology (a shared, written set of definitions) that
                 makes actions verifiable. Everything else is built on it.
@@ -196,6 +229,9 @@ export default function TLDRPage() {
                 <span className="text-purple-300 font-semibold">The hub</span>
                 <MaturityBadge tier="reference" />
               </div>
+              <p className="text-gray-300 text-xs mb-1.5">
+                Runnable, but not yet a live network of real users.
+              </p>
               <p className="text-gray-400 text-sm">
                 Community scale: the program a group runs to become its own small Web4 society.
               </p>
@@ -222,6 +258,10 @@ export default function TLDRPage() {
                 <span className="text-amber-300 font-semibold">Hardbound</span>
                 <MaturityBadge tier="reference" />
               </div>
+              <p className="text-gray-300 text-xs mb-1.5">
+                Usable and actively hardened; its hardware binding is not yet validated on
+                real devices.
+              </p>
               <p className="text-gray-400 text-sm">
                 <span className="italic text-gray-500">As in hardware-bound.</span>{' '}
                 Enterprise scale: oversight for organizations that need to prove what their
