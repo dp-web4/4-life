@@ -1695,6 +1695,12 @@ export default function ATPEconomicsPage() {
               the "none of these lives ends at 0 ATP" clause, the ended/died clause, the
               not-settled clause naming what the standard does and does not say, and the
               declines-to-name-one clause. If you reword those there, reword them here.
+              EXEMPT, recorded Aug-12 (15:00): the DIRECTIONAL word inside the declines-to-name-one
+              clause is position-local and always has been. This copy says "the figures above"
+              because here they are; that copy said "the figures below" and was corrected to "these
+              figures" in the same pass, because its own render sits below its figures too. That is
+              not a rewording of the clause and does not travel. Everything else in the four clauses
+              still does.
               THREE things are page-native and deliberate:
               1. The bridge to the deaths this page DOES define. The card above ("When ATP hits
                  zero, your agent can no longer act") and the closing box directly below ("They

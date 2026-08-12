@@ -30,7 +30,24 @@ const HOW_IT_WORKS_SECTIONS = [
    ground truth either. Inventing a second mechanism here would be a canon decision this track is
    not authorized to make, so this note states the gap without filling it, and the question is
    escalated as Q5 in docs/WEB4-CANON-QUESTIONS.md.
-   Rendered at BOTH places the visitor hit the numbers, from one component so they cannot drift.
+   Rendered at BOTH places the visitor hit the numbers.
+   Aug-12 (15:00) visitor MEDIUM: the second render is no longer this full component. Two faults,
+   one edit. (1) The ~150 words rendered twice verbatim, two screens apart ("Reading a dense
+   150-word caveat a second time verbatim is jarring"). (2) The clause "to justify the figures
+   BELOW" was false in the second position, where its figures are above; it now reads "these
+   figures", which is true in the one position this component keeps. #example instead renders
+   EndOfLifeCaveatShort, defined directly below: sentences 1-2 VERBATIM (including "and Web4 does
+   not define a second one", which is what keeps that position fenced after the not-settled and
+   declines-to-name-one elaborations are dropped), plus a karma clause that enumerates ZERO
+   branches, plus a link back here. It cannot out-assert this one; it is a strict subset.
+   The anti-drift property that motivated one shared component is kept a different way: the two
+   texts sit five lines apart in this file under this one guard. So: do NOT inline either of them
+   into the page body, and do NOT re-render the full component at #example - that is the
+   duplication the visitor filed. If you shorten the long one, check the short one is still a
+   subset of it.
+   Why #example needs its own text at all rather than a bare "see above": SectionTOC offers a
+   direct jump to #example (the HOW_IT_WORKS_SECTIONS array at the top of this file), so a reader
+   can land there having never passed the karma section.
    Jul-30 update: the original closer disclaimed the death rule and, in the same breath, held up the
    carry-forward as the thing these figures legitimately demonstrate. But Q5 files the carry-forward
    AMOUNT as a second, independent divergence ("whether karma is the full final ATP or a reduced
@@ -82,11 +99,34 @@ function EndOfLifeCaveat() {
       does not define a second one. What else ends a life is <strong>not settled</strong>: the
       standard says what stops you acting (ATP reaches zero) and what is permanent (sustained trust
       collapse), and it names no term limit, no lifespan, and no natural end of life. So rather
-      than invent a third cause to justify the figures below, this page declines to name one. How{" "}
+      than invent a third cause to justify these figures, this page declines to name one. How{" "}
       <em>much</em> karma carries is also unsettled: whether you keep your whole final balance, a
       reduced portion of it, or a fresh starting balance plus a karma bonus is not decided, and
       this walkthrough shows one modelling choice, not the rule. Read it for the shape (a good track record starts your next life stronger), not for
       the death rule or the exact carry-forward.
+    </p>
+  );
+}
+
+/* The #example position's disclosure. Governed by the guard above EndOfLifeCaveat; read it before
+   editing either. Sentences 1-2 are that component's, VERBATIM
+   ([[propagate-the-sentence-not-your-summary]]): trimming a word here would make this variant N+1
+   of a claim the site carries on four surfaces. The karma sentence is NOT propagated, because the
+   long form's is an enumeration (three branches) and a truncated enumeration reads as exhaustive
+   ([[fence-may-undercount-its-own-ledger]]); this one enumerates zero and routes to the full list
+   instead. Q5 stays fenced: three branches here, three in EndOfLifeCaveat, four on /atp-economics.
+   Nothing in this file endorses a branch or moves a figure. */
+function EndOfLifeCaveatShort() {
+  return (
+    <p className="text-xs text-amber-300/70 mt-6 leading-relaxed">
+      <strong className="text-amber-300">About these numbers:</strong> none of these lives ends at
+      0 ATP, so none of them is the energy death described above. That is why they read{" "}
+      <em>ended</em> and not <em>died</em>: they are not the death this page defines, and Web4
+      does not define a second one. How <em>much</em> karma carries is not settled either, so read
+      these three lives for the shape, not for the death rule or the exact carry-forward.{" "}
+      <a href="#karma-carries" className="text-amber-300 hover:text-amber-200 underline">
+        What the standard does and does not say &uarr;
+      </a>
     </p>
   );
 }
@@ -508,13 +548,22 @@ export default function HowItWorksPage() {
             numbers deliberately replaced with grep targets here"). Cites into that file are
             named rather than numbered on purpose: it moves under edit, and a number here rots
             by that file's own insertion ([[guard-comment-cites-rot-name-the-target]]).
-            Points by PROSE, not by link: this page
-            has no anchor between #journey and #two-ways-to-die, and the karma examples have no id.
+            Pointed by PROSE and not by link until Aug-12 (15:00), for two stated reasons: this page
+            has no anchor between #journey and #two-ways-to-die, which is STILL TRUE, and the karma
+            examples had no id, which is no longer true. #karma-carries was added for an unrelated
+            demand (EndOfLifeCaveatShort at the end of #example needs a route back to the full
+            caveat), so the second blocker cleared and the prose pointer below is now a link. That
+            is the whole change here: no figure moved, and the "About that 112:" heading is a
+            separate Aug-12 MEDIUM (the callout names a number the reader may never have seen,
+            because the demo reaches 112 about 30 seconds in) that this pass does NOT treat.
             Do not add a figure here; 112 is already on screen in the demo. */}
         <p className="text-xs text-amber-300/70 mb-8 leading-relaxed">
           <strong className="text-amber-300">About that 112:</strong> how much karma carries is not
-          settled, and this is one modelling choice, not the rule. The karma examples further down
-          this section show a different one, carrying the whole ending balance forward. Read both
+          settled, and this is one modelling choice, not the rule. The{" "}
+          <a href="#karma-carries" className="text-amber-300 hover:text-amber-200 underline">
+            karma examples further down this section
+          </a>{" "}
+          show a different one, carrying the whole ending balance forward. Read both
           for the shape, not the amount.
         </p>
 
@@ -742,10 +791,37 @@ export default function HowItWorksPage() {
                     <strong className="text-sky-300">0 net at best</strong>
                   </p>
                 </div>
+                {/* Aug-12 (15:00) visitor MEDIUM: "Spam costs 10 ATP on one page (three times) and
+                    5 in the simulator on the other. Pick one and sweep."
+                    This row was the defect: it prices a MESSAGE, and the price of a message is
+                    5 (public/spec.json simulation_parameters.atp.spam_cost, which is also the
+                    /atp-economics ladder's `spam` row, labelled "Send spam message"). At 10 this
+                    page's own death illustration overshot its own birth grant by 2x: it says
+                    "Born with 100 ATP" and then priced 20 messages at -200. At 5 that example is
+                    exact, and it agrees with /atp-economics ("Send 1000 spam messages? You'll die
+                    after message 20"), which is only arithmetic at 5.
+                    THE UNIT IS THE THING. This site prices three different spam-shaped actions and
+                    they are NOT one number to be swept together:
+                      - one MESSAGE = 5 (spec.json spam_cost; ladder row "Send spam message");
+                      - one POST = 10-20 (this page publishes that range three times: the "10-20 to
+                        post" line in the summary, the lurking-is-cheap paragraph, and the "Posting
+                        content" card; the ladder's `lowQuality` row, "Low-quality post (your own)",
+                        is 10, and the sibling row in this very card prices a self-initiated post at
+                        15). The Death Spiral card further down this page is a POST price and stays
+                        at 10 - see its own guard;
+                      - a BATCH = 25 (spec.json risky_spend; /first-contact's Alice, and the
+                        LifecycleDemo stage that samples her).
+                    A campaign price also exists (karma-consequences' bad actor, -40 then -35 for
+                    a 50-message run) and matches none of the three because it is a fourth unit.
+                    Deliberately left. Do not "align" any of these to any other: they are different
+                    actions, and the visitor's count of three was a unit conflation, not a price
+                    conflict. The REWARD column is untouched and is not from spec.json either -
+                    spec.json says spam_reward 1 while this card and the widget both show 0. That
+                    divergence is pre-existing and out of this pass. */}
                 <div className="p-3 bg-red-900/20 border border-red-800/30 rounded">
                   <p className="text-red-300 text-sm">
-                    ❌ <strong>Spam message:</strong> Cost 10 ATP → Earn 0 ATP =
-                    <strong className="text-red-400"> -10 net</strong>
+                    ❌ <strong>Spam message:</strong> Cost 5 ATP → Earn 0 ATP =
+                    <strong className="text-red-400"> -5 net</strong>
                   </p>
                 </div>
               </div>
@@ -958,9 +1034,14 @@ export default function HowItWorksPage() {
                   What drains your ATP to zero
                 </p>
                 <ul className="space-y-1 text-gray-400 text-sm">
+                  {/* -200 was derived from the 10 ATP message price this pass corrected; at 5 a
+                      20-message run is -100, which is exactly the 100 ATP birth grant this page
+                      states further down ("Born with 100 ATP"), so the example now lands on zero
+                      instead of overshooting it. The three-unit criterion is in the guard on the
+                      "Spam message" row above (grep -n "THE UNIT IS THE THING"). */}
                   <li>
                     • <strong>Spam yourself to death:</strong> Send 20 spam
-                    messages = -200 ATP
+                    messages = -100 ATP
                   </li>
                   <li>
                     • <strong>Low-quality contributions:</strong> Earn less than
@@ -1080,7 +1161,16 @@ export default function HowItWorksPage() {
               </div>
             </div>
 
-            <div>
+            {/* Anchor added Aug-12 (15:00). Demand-driven, like every id on this site, and this
+                one has TWO inbound links, both in this file:
+                (1) the "About that 112:" callout above the Birth section, whose own guard used to
+                    say it pointed by prose because "the karma examples have no id";
+                (2) EndOfLifeCaveatShort at the end of #example, which needs to route a reader to
+                    the full caveat 40 lines below these examples.
+                It sits on the container rather than on the caveat because one landing serves both
+                demands within a screen: (1) wants the examples, (2) wants the caveat under them.
+                If both inbound links ever go, this id goes with them. */}
+            <div id="karma-carries" className="scroll-mt-24">
               <h4 className="text-lg font-semibold text-gray-200 mb-2">
                 Karma: What Carries Forward
               </h4>
@@ -1374,7 +1464,7 @@ export default function HowItWorksPage() {
             </ul>
           </div>
 
-          <EndOfLifeCaveat />
+          <EndOfLifeCaveatShort />
 
           <div className="mt-6 p-4 bg-sky-900/20 border border-sky-800/30 rounded-lg">
             <p className="text-sky-300 text-sm">
@@ -1550,7 +1640,20 @@ export default function HowItWorksPage() {
             <div className="flex flex-col sm:flex-row items-stretch gap-2 text-xs">
               <div className="flex-1 bg-red-950/40 border border-red-800/30 rounded-lg p-3 text-center">
                 <div className="text-red-400 font-bold mb-1">ATP</div>
-                <div className="text-gray-400">Spend 10 ATP per post</div>
+                {/* The Aug-12 visitor counted this as the third place "spam costs 10 ATP", and the
+                    first read of that row was to sweep it to 5 with the other two. That is wrong,
+                    and the reason is the unit: this card prices a POST, named twice (its own
+                    heading, and this line). It is the /atp-economics ladder's `lowQuality` row
+                    ("Low-quality post (your own)", cost 10), not its `spam` row ("Send spam
+                    message", cost 5), and 10 is the bottom of the 10-20 posting range this page
+                    publishes three separate times. Pricing a post at 5 would have contradicted all
+                    three of those to satisfy a count the visitor derived from the missing label.
+                    So the numeral stays and the LABEL is the fix.
+                    Do NOT "align" the 0 payout to the ladder's lowQuality reward of 5 either: that
+                    5 models partial confirmation, and this card stipulates none one line below
+                    ("Nobody confirms value"). Both are correct. The full three-unit criterion is on
+                    the "Spam message" row far above (grep -n "THE UNIT IS THE THING"). */}
+                <div className="text-gray-400">Spend 10 ATP per low-quality post</div>
                 <div className="text-red-300 mt-1">Nobody confirms value</div>
                 <div className="text-red-400 font-bold">→ Earn 0 back</div>
               </div>
