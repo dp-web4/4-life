@@ -285,10 +285,31 @@ export default function LCTExplainerPage() {
                 #software-only-survival callout further down this page; the parenthetical FORWARD-POINTS
                 there rather than coining a third phrasing of the same idea (see the sync note above).
               - It does NOT imply hardware is required to participate ([[hardware-required-seam]]).
-                "Capped at that midpoint" is a ceiling claim, not an eligibility claim. */}
+                "Capped at that midpoint" is a ceiling claim, not an eligibility claim.
+              NARROWED Aug-12 (visitor HIGH 3, and they falsified it with this site's own numbers).
+              "so a newcomer is not in danger" was DELETED from both copies. The Jul-31 scoping
+              conditioned the HEADROOM half on a hardware anchor but left the reassurance itself
+              unconditional in the other direction: it read as a standing guarantee when it was only
+              ever a claim about a STARTING POSITION. This site publishes everything needed to break
+              it (start 0.50 in all three dimensions, Talent no decay, Training 180d, Temperament
+              30d, decay runs toward zero, composite 0.4/0.3/0.3) and the visitor ran it in five
+              minutes. Replaced with a claim that is true and a route, not a better reassurance.
+              What this edit REFUSES, and why the arithmetic is not printed anywhere:
+              - It does NOT state what an absence computes to, here or at the destination. That is
+                a worked composite, independently forbidden by the guard at trust-tensor:807 under
+                ledger Q14, whatever conclusion it is drawn toward.
+              - It does NOT assert that an idle newcomer IS restricted. Asserting no dormancy
+                carve-out applies is the mirror image of inventing one, and neither is written down:
+                WEB4-CANON-QUESTIONS Q14 records that canon has no entity-level "score below
+                threshold" path at all. The restriction rule is this site's own teaching construct.
+              - The replacement clause is strictly-below-safe because it names no threshold at all,
+                so ledger Q1 stays untouched.
+              Keep the new clause byte-identical to trust-tensor's copy too; only the link ELEMENT
+              differs (in-page anchor there, cross-page Link here). */}
           <p className="text-xs text-purple-200/80 mt-3 pt-3 border-t border-purple-800/30">
             <span className="font-semibold text-purple-300">How to read the numbers below:</span> every trust score on this page
-            runs on a <strong>0-1</strong> scale. <strong>0.5</strong> is the neutral midpoint (a coin-flip prior: with no track record yet, trust is neither earned nor lost), and it doubles as the survival line: you start at the neutral midpoint and, if your identity is hardware-anchored, earn your way above it, so a newcomer is not in danger. (A software-only identity is capped at that same midpoint:{" "}
+            runs on a <strong>0-1</strong> scale. <strong>0.5</strong> is the neutral midpoint (a coin-flip prior: with no track record yet, trust is neither earned nor lost), and it doubles as the survival line: you start at the neutral midpoint and, if your identity is hardware-anchored, earn your way above it. Where you start is not a promise about where you stay:{" "}
+            <Link href="/trust-tensor#decay-and-survival" className="text-purple-300 hover:text-purple-200 underline">what a long absence does to a score</Link>. (A software-only identity is capped at that same midpoint:{" "}
             <a
               href="#software-only-survival"
               onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('software-only-survival')?.scrollIntoView({ behavior: 'smooth' }); }}
@@ -637,16 +658,36 @@ export default function LCTExplainerPage() {
                 calling it a third kind of &ldquo;witness.&rdquo; No central notary, no government issuer, no
                 self-attestation waiting period - the chip&apos;s own factory certificate is the proof.
               </p>
-              {/* June 12 visitor MEDIUM (browse B): the device-count rule (1=0.50, 2=0.75, 3+=0.90)
-                  and the chip-class table (TPM max 0.90 etc.) were never reconciled - visitor stalled
-                  for minutes on "one TPM laptop: 0.50, 0.75, or 0.90?" and had to guess min-of-two.
+              {/* Aug-12 visitor HIGH 2 read this paragraph against the device-count list ~30 lines
+                  up and could not compute their own ceiling ("one Mac, Secure Enclave"). The
+                  trailing equation "- the same 50-75% as just above" was deleted: it is false on
+                  every reading, because "just above" is a DEVICE-COUNT schedule (one device is 50
+                  flat there) and this is a CHIP-CLASS range for one device. Two different axes.
+                  The 0.50-0.75 numeral SURVIVES and is correct: under the min-rule below with
+                  device-count-1 at 0.75, TPM/SE/FIDO2 all land on 0.75 and software-only on 0.50.
+                  What did NOT get fixed here, deliberately, and is FILED: the device-count list at
+                  :619 ("1 device: 50%") is the outlier on this page and the only surface that
+                  collapses a lone HARDWARE device onto the software floor. Upstream forbids that
+                  collapse structurally (web4-standard/core-spec/multi-device-lct-binding.md:875-878
+                  and the impl at :629-637: single software 0.40, single phone SE 0.75, single TPM2
+                  0.75, single FIDO2 0.80), and six surfaces here already say 0.75 (:648, :653,
+                  :1223, :2411 among them). Do NOT "fix" this by re-calibrating in a hurry:
+                  - canon's numerals are NOT importable. Its SE row sits under a 0.95 anchor weight;
+                    this site's SE tier is 0.85, so the same numeral is a different fraction of a
+                    different ceiling. Canon constrains the STRUCTURE, not the values.
+                  - device-count-2 must stay strictly BELOW 0.90, or :654-655 ("the same laptop plus
+                    TWO more device witnesses -> the full 0.90") breaks.
+                  Full surface list for whoever takes it: :619, the // SYNC: comment at :147-152,
+                  calculateTrust at :154, the band labels at :1054, and glossary/page.tsx:363.
+                  Original June 12 visitor MEDIUM (browse B), which created the rule below: the
+                  device-count rule and the chip-class table (TPM max 0.90 etc.) were never
+                  reconciled - visitor stalled on "one TPM laptop: 0.50, 0.75, or 0.90?".
                   State the combination rule where the two rules first co-occur. 4-Life calibration
                   framing (like the ceilings themselves) so future web4 spec settlement reads as a
                   calibration update, not a contradiction. Retires the long canon-blocked carry-forward:
                   the rule below restates what this page's own copy already implies, no new canon. */}
               <p className="text-xs text-gray-400">
-                A single device with this manufacturer attestation gets a trust ceiling of 0.50-0.75 (depending on chip class)
-                - the same 50-75% as just above.{" "}
+                A single device with this manufacturer attestation gets a trust ceiling of 0.50-0.75 (depending on chip class).{" "}
                 <strong className="text-gray-300">How the two ceiling rules combine</strong> (in 4-Life&apos;s calibration):
                 your <em>chip class</em> sets the hardware maximum (the tier table further down), and your{" "}
                 <em>device count</em> sets how much of that maximum you can actually reach - your effective

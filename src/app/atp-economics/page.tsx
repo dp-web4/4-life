@@ -1462,7 +1462,7 @@ export default function ATPEconomicsPage() {
               Self-Regulating System
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              No moderators needed. ATP depletion is automatic, mathematical,
+              No moderators needed to police spam. ATP depletion is automatic, mathematical,
               and fair. The system self-regulates through energy economics.
               An appeals mechanism has been designed
               for edge cases, but the default path is self-correction through behavior.

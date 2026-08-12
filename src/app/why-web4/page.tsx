@@ -3050,11 +3050,27 @@ export default function WhyWeb4Page() {
                 they don&apos;t increase your <strong>trust score</strong>. Trust is earned exclusively through
                 observed behavior - quality contributions, consistent conduct, peer feedback.
               </p>
+              {/* Aug-12 visitor HIGH 2 (ceiling numbers that do not reconcile). Deleted from here:
+                  "A single phone with a TPM chip gives you a ceiling of 0.90" and "raises that
+                  ceiling slightly". The 0.90 was a THIRD position on a lone hardware device's
+                  ceiling, wrong under every schedule the site holds and under upstream
+                  (multi-device-lct-binding.md:876: single TPM2 is 0.75). "Slightly" was false with
+                  it and stays false without it. Both were doing rhetorical work here - starting a
+                  single device at the top is what made the marginal gain look small enough to
+                  defeat the 50-devices attack - but the answer does not need them: the ceiling is
+                  capped and trust is still earned, which the paragraphs either side already say.
+                  Deliberately NO replacement numeral. This page carries none of the machinery that
+                  derives one (no chip tiers, no device-count axis, no min-rule), so a bare 0.75
+                  here would be an unexplained third number for this reader. Route instead.
+                  #trust-ceilings is the right target and NOT #hardware-tiers, which is a collapsed
+                  <details> glossary - see the guard at lct-explainer:1206-1211. */}
               <p>
-                Devices set a <strong>trust ceiling</strong>, not a trust score. A single phone with a TPM chip
-                gives you a ceiling of 0.90. Adding more devices raises that ceiling slightly (through redundancy),
-                but your actual trust starts at 0.50 regardless. You still have to earn every point above that
-                through real work.
+                Devices set a <strong>trust ceiling</strong>, not a trust score. Adding more devices raises
+                that ceiling (through redundancy), but your actual trust starts at 0.50 regardless. You
+                still have to earn every point above that through real work.{" "}
+                <Link href="/lct-explainer#trust-ceilings" className="text-amber-400 hover:underline">
+                  What each kind of chip actually caps you at &rarr;
+                </Link>
               </p>
               <p>
                 Think of it like ID verification: having a passport, driver&apos;s license, and birth certificate

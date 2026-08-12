@@ -175,12 +175,12 @@ export default function HowItWorksPage() {
               Wording propagated from the canonical paragraph named above, not re-derived (that
               paragraph is itself guarded verbatim - see the "keep it that way if editing" comment
               directly preceding it). Asserts no 0.5 endpoint in either direction. */}
-          <p>If your energy hits zero, you stop acting - but that death is recoverable through karma rebirth, and good karma carries forward, so you come back with a head start. Sustained trust collapse is the permanent one. <strong className="text-cyan-400">No moderators needed.</strong> Five interlocking systems (identity, energy, trust, consistency, context) make spam expensive and quality self-sustaining.</p>
+          <p>If your energy hits zero, you stop acting - but that death is recoverable through karma rebirth, and good karma carries forward, so you come back with a head start. Sustained trust collapse is the permanent one. <strong className="text-cyan-400">No moderators needed to police spam</strong> (settling a dispute between two people is a different job, and societies do staff that one - see <a href="#governance" className="text-cyan-400 hover:underline">governance</a> below). Five interlocking systems (identity, energy, trust, consistency, context) make spam expensive and quality self-sustaining.</p>
         </div>
 
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
           Web4 is trust-native infrastructure for humans and AI. Instead of
-          relying on platforms, moderators, or authorities, Web4 societies
+          relying on platforms, moderation armies, or outside authorities, Web4 societies
           self-regulate through five foundational mechanisms:
         </p>
 
@@ -470,7 +470,7 @@ export default function HowItWorksPage() {
           </div>
 
           <p className="text-xs text-gray-500 mt-4">
-            <strong className="text-gray-400">Why spam dies:</strong> Without LCT, you can&apos;t enter. Without MRH, you can&apos;t reach anyone. Without ATP, you can&apos;t act. Without T3, you aren&apos;t trusted. Without CI, you&apos;re flagged. Every layer filters bad actors - no single point of failure, no moderators needed.
+            <strong className="text-gray-400">Why spam dies:</strong> Without LCT, you can&apos;t enter. Without MRH, you can&apos;t reach anyone. Without ATP, you can&apos;t act. Without T3, you aren&apos;t trusted. Without CI, you&apos;re flagged. Every layer filters bad actors - no single point of failure, no moderators needed to police spam.
           </p>
         </div>
       </section>
@@ -1579,7 +1579,7 @@ export default function HowItWorksPage() {
         </div>
 
         <p className="text-xs text-gray-500 mt-4 italic">
-          This is why quality wins and spam dies - not because of rules or moderators, but because
+          This is why quality wins and spam dies - not because rules or moderators police it, but because
           the three systems reinforce each other. Good behavior compounds upward. Bad behavior compounds downward.
         </p>
 
@@ -1651,8 +1651,8 @@ export default function HowItWorksPage() {
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Spammers burn ATP faster than they earn it. They die. No rebirth
-              eligibility (low T3). No moderators needed - the energy economics
-              enforce quality naturally.
+              eligibility (low T3). No moderators needed to police spam - the energy
+              economics enforce quality naturally.
             </p>
           </div>
 
@@ -1744,13 +1744,30 @@ export default function HowItWorksPage() {
         </ul>
       </div>
 
-      {/* Governance: What Happens When Things Go Wrong */}
+      {/* Aug-12 visitor HIGH 1: the page asserted a bare "No moderators needed" four times and
+          then staffed a Moderator as one of three Authority roles, hinged the plagiarism
+          walkthrough on one, and priced a biased one's trust drop. The visitor called it "the
+          single clearest self-contradiction I found and it is in the page that is meant to be
+          the map", and guessed the reconciliation the page never states.
+          The distinction is NOT coined here: four of the five denials already sat in explicit
+          spam contexts (:178 "make spam expensive", :473 "Why spam dies", :1582 "spam dies",
+          :1654 "Spam Dies Naturally") and this section already opened on "energy economics
+          handle most bad actors ... but what about edge cases". What was missing was the JOIN:
+          every denial said "moderators" and every human-judgment passage avoided the word, so
+          nothing a reader could grep connected them. Each denial is now scoped to policing, and
+          this intro says the word out loud.
+          The human-judgment sentence below is borrowed VERBATIM from /why-web4:166-168 rather
+          than re-authored, so the two pages cannot drift into variant phrasings of one claim.
+          #governance is the inbound target of the new pointer in the Key Takeaways box at :178.
+          Do NOT "simplify" any denial back to the bare absolute: the bare form is false on this
+          page's own governance content, whatever it is true of. */}
       <section id="governance" className="max-w-4xl mx-auto mt-16 scroll-mt-24">
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           What Happens When Things Go Wrong?
         </h2>
         <p className="text-gray-400 mb-8">
-          Energy economics handle most bad actors - spammers simply die. But what about
+          Energy economics handle most bad actors - spammers simply die, and that is the whole
+          of what &ldquo;no moderators needed&rdquo; claims elsewhere on this page. But what about
           edge cases? What if someone is falsely accused, or a crisis requires bending the rules?
           Web4 uses a governance framework called <strong className="text-gray-200">SAL (Society-Authority-Law)</strong>.
         </p>
@@ -1797,7 +1814,7 @@ export default function HowItWorksPage() {
             </div>
             <div className="flex gap-3">
               <span className="text-amber-400 font-bold shrink-0">Authority:</span>
-              <p className="text-gray-300">Three roles: <strong>Reviewer</strong> (can approve publications, needs T3 ≥ 0.8), <strong>Treasurer</strong> (manages ATP grants, elected by members), <strong>Moderator</strong> (resolves disputes, rotates monthly). All bound by the same trust mechanics - abuse power and you lose the role.</p>
+              <p className="text-gray-300">Three roles: <strong>Reviewer</strong> (can approve publications, needs T3 ≥ 0.8), <strong>Treasurer</strong> (manages ATP grants, elected by members), <strong>Moderator</strong> (resolves disputes, rotates monthly). All bound by the same trust mechanics - abuse power and you lose the role. Human judgment catches context and nuance that rules miss. Skilled moderators are a real backstop against the worst abuse.</p>
             </div>
             <div className="flex gap-3">
               <span className="text-purple-400 font-bold shrink-0">Laws:</span>
@@ -2351,8 +2368,9 @@ export default function HowItWorksPage() {
       {/* Alternative paths */}
       <section className="max-w-4xl mx-auto mt-16 text-center pb-12">
         <p className="text-gray-500 text-sm">
-          This is trust-native infrastructure. No platforms, no moderators, no
-          central authority. Just math, incentives, and verifiable behavior.
+          This is trust-native infrastructure. No platforms, no moderation armies, no
+          outside authority. Just math, incentives, and verifiable behavior - plus the
+          roles a society elects for itself.
         </p>
         <p className="text-gray-500 text-xs mt-4">
           Short on time? Read the{' '}
