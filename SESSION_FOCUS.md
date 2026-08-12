@@ -2,6 +2,84 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-12 15:00 session - the price that was three prices in three units, and a caveat read twice
+
+**No open PRs.** Same log as #539 (`visitor/logs/2026-08-12.md`, 05:00; second slot on it). All four
+HIGHs were disposed there, so this session took the MEDIUM row: two filed items plus one un-filed
+defect of the class the visitor named in the Honest Assessment.
+
+### Finding 1 (visitor MEDIUM): the visitor's count of three was the symptom, not the defect
+
+*"Spam costs 10 ATP on one page (three times) and 5 in the simulator on the other. Pick one and
+sweep."* Sweeping to 5 was the wrong fix, and the policy reviewer and I each had to be talked out of
+it in turn. The three surfaces are **not one claim**:
+
+| surface | action | correct price | anchor |
+|---|---|---|---|
+| `how-it-works` "Spam message" card | one **message** | **5** | `spec.json` `atp.spam_cost`; ladder row *"Send spam message"* |
+| `how-it-works` "Send 20 spam messages" | 20 **messages** | **-100** | 20 x 5 = the page's own 100 ATP birth grant |
+| `how-it-works` "Death Spiral" card | one **post** | **10, unchanged** | ladder row *"Low-quality post (your own)"*; this page publishes 10-20 for a post three times |
+
+The first two were defects and are fixed. The third was **correct and mislabelled**: it says *"per
+post"* and the page prices posts at 10-20 in three places, so pricing it 5 would have contradicted
+three same-page surfaces to satisfy the visitor's tally. It got the word *"low-quality"* and no new
+numeral. The reviewer's proposed discriminator (its *"Earn 0 back"* matches the ladder's `spam`
+reward of 0, not `lowQuality`'s 5) does not survive `atp-economics:1826`: the reward is a function of
+**confirmation**, and the card stipulates none one line above the payout. The **cost** side is the
+discriminator, and it is the unit.
+
+> **Rule.** When a visitor counts N instances of a number, the count is evidence of a **missing
+> label**, not proof of N contradictions. Check the unit on each before sweeping: the fix for a unit
+> conflation is naming the unit. `[[visitor-suggestion-may-point-backwards]]`, in tally form.
+
+Four units now live on the site and each names its own anchor in the guard: message 5, post 10-20,
+batch 25 (`risky_spend`), campaign -40/-35 (`karma-consequences`, deliberately left). Guard landed in
+**two** places, at the corrected row and at the row that stays, 800 lines apart, because the second
+is where the next sweeper will arrive. Not fixed and filed: `spec.json` says `spam_reward: 1` while
+both the card and the widget show **0**.
+
+### Finding 2 (un-filed, same class): a subsample cannot skip ticks under a caption that states a delta
+
+`LifecycleDemo` captions its spam stage *"costs 25 energy"* while the readout moved **18**, and
+`/first-contact` states that step's trust drop as **-0.08** while the readout moved **0.04**. Every
+value was a faithful sample of Alice's ledger; the stage before it sampled tick **1** where the stage
+after sampled tick **4**, and the two skipped ticks (-5 mentoring, +12 confirmations) were the
+difference. Re-sampled to tick 3 (99 / 0.56, both verbatim from that array), so 99 - 25 = 74 and
+0.56 - 0.08 = 0.48 are now true on screen. **No figure invented, no price moved.** The caption covers
+the whole span it compresses and names no per-post earn-back, because attributing +12 to one post
+would contradict the recharge cap on the very page it renders on.
+
+> **Rule.** A stage caption may name a per-step delta ONLY if the preceding stage samples the
+> immediately preceding tick. Otherwise **re-sample, do not re-price**.
+
+### Finding 3 (visitor MEDIUM): the guard that made the duplication deliberate
+
+`EndOfLifeCaveat` rendered twice, ~150 words each, two screens apart, and said *"to justify the
+figures **below**"* in a position where its figures are above. The fix looked like a clean deletion
+until the reviewer found `how-it-works:33`: *"Rendered at BOTH places the visitor hit the numbers,
+from one component so they cannot drift."* The duplication was the Jul-27 fix, not an accident.
+
+So the anti-drift property is kept a different way: `#example` now renders **`EndOfLifeCaveatShort`,
+defined five lines below the long one in the same file** under the same guard. Sentences 1-2 are
+propagated **verbatim** (including *"and Web4 does not define a second one"*, which is what keeps
+that position fenced once the elaborations are dropped); the karma clause enumerates **zero**
+branches rather than truncating three. Q5 untouched: three branches here, three in `EndOfLifeCaveat`,
+four on `/atp-economics`. `SectionTOC` offers a direct jump to `#example`, which is why that position
+needed its own text rather than a bare "see above".
+
+Two guards this change falsified, both discharged rather than left: `atp-economics:1693`'s *"if you
+reword those there, reword them here"* now records the directional word as position-local and exempt
+(that copy already said *"the figures above"*); and the `About that 112:` guard's *"the karma
+examples have no id"* is struck, its prose pointer promoted to a link, and its **other** clause left
+standing because it is still true.
+
+### Not taken
+
+Four MEDIUMs (`/lct-explainer`'s V3 ramp attached to T3 values, the `About that 112:` heading naming
+a number the reader may never have seen, the `/how-it-works` reading-time estimate, `/first-contact`'s
+Act 5 rail) and all five LOWs. The `112` heading is the natural next pick and is now one edit smaller:
+its callout's blocker guard is already updated.
+
 ## Aug-12 09:00 session - the reassurance, the map that refuted itself, and a ceiling I got backwards
 
 Fresh log `visitor/logs/2026-08-12.md` (05:00), the first slot on it. Four HIGHs.

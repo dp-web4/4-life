@@ -13,8 +13,26 @@ import { useState, useEffect, useRef, useCallback } from 'react';
  *
  * NOTE ON NUMBERS: the seven stages below are a faithful subsample of the
  * canonical 16-tick Alice narrative in src/app/first-contact/page.tsx (the
- * `simulationEvents` array, ticks 0/1/4-5/6/9-10/13/14). If Alice's numbers ever
+ * `simulationSnapshots` array, ticks 0/3/4-5/6/9-10/13/14). If Alice's numbers ever
  * change there, mirror the change here so the two pages don't silently diverge.
+ *
+ * Aug-12: stage 2 used to sample tick 1 (92 / 0.52) while stage 3 samples tick 4
+ * (74 / 0.48). Faithful values, but a subsample cannot skip ticks under a caption
+ * that states a DELTA: stage 3 says the batch "costs 25 energy" and the readout
+ * moved 18, and first-contact states the same step's trust drop as -0.08 while the
+ * readout moved 0.04. The two skipped ticks (mentoring -5, confirmations +12) were
+ * doing the difference. Stage 2 now samples tick 3 (99 / 0.56), so 99 - 25 = 74 and
+ * 0.56 - 0.08 = 0.48 are both true on screen. No figure was invented: every value
+ * here is still verbatim from that array.
+ * RULE for the next edit: a stage caption may name a per-step cost ONLY if the
+ * preceding stage samples the immediately preceding tick. Otherwise re-sample, do
+ * not re-price - the price is `spec.json` risky_spend and is not this component's
+ * to move.
+ * Stage 2's caption covers the whole SPAN it now compresses (post + mentoring +
+ * confirmations, 100 -> 99 net) and names no per-post earn-back on purpose: the
+ * page this renders on prices a self-initiated post at "recharges up to 15 ATP =
+ * 0 net at best" (grep -n "A post you chose to write" src/app/how-it-works), so a
+ * caption attributing +12 to one post would contradict it.
  */
 
 type Tone = 'neutral' | 'grow' | 'warn' | 'peak' | 'death' | 'reborn';
@@ -42,9 +60,10 @@ const STAGES: Stage[] = [
   {
     emoji: '🌱',
     label: 'Build trust',
-    caption: 'She posts something useful. It costs a little energy, but earns a little trust.',
-    atp: 92,
-    trust: 0.52,
+    caption:
+      'She posts something useful and mentors a newcomer. Others confirm the work, so most of that energy comes back, and trust climbs.',
+    atp: 99,
+    trust: 0.56,
     tone: 'grow',
   },
   {
@@ -91,7 +110,9 @@ const STAGES: Stage[] = [
       //     spending surplus." Same Alice, same numbers, and this component went unswept
       //     ([[prose-fixed-thrice-check-the-illustration]]).
       // (2) It showed the total with no base, the same omission as the /first-contact Act-5 badge
-      //     that produced the Aug-09 HIGH. This component renders on /how-it-works:380, so it is a
+      //     that produced the Aug-09 HIGH. This component renders inside /how-it-works's #journey
+      //     section (grep -n "<LifecycleDemo" src/app/how-it-works) - the ":380" this line used to
+      //     carry was 110 lines stale - so it is a
       //     rebirth-number surface on a page that also shows 145 -> 145 further down.
       // Wording propagated from first-contact:857-858, not re-authored.
       'Good karma carries forward: she restarts at 112 energy, the usual 100 plus a 12 karma bonus her track record earned, and trust above neutral. Lessons compound.',
