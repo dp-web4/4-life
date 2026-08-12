@@ -179,7 +179,19 @@ export default function HubPage() {
             Both sentences track the organizer quickstart: the archetype-picking `hub up`
             form, and Step 0, which exists because several commands refuse to write a
             plaintext private key. The passphrase half is NOT optional colour: omitting the
-            step that fails closed is exactly what cost /hestia a reader in July. Deliberately
+            step that fails closed is exactly what cost /hestia a reader in July.
+            CORRECTED Aug-12 after review: the first version of that half said the commands
+            "will not run until it is set", which is Step 0's heading, not the mechanism.
+            `require_passphrase` (hub-daemon/src/main.rs) reads HUB_PASSPHRASE, else PROMPTS
+            at a TTY, and only hard-errors with no terminal to ask. QUICKSTART.md says the
+            same four lines below the heading ("Unset + no terminal = hard error"), and
+            `hub up`'s own printed runbook says `hub gen-lct` prompts. Every reader this
+            paragraph addresses is at a terminal, so the refusal is the branch they will not
+            hit. State the mechanism, not the precondition: a conditional refusal restated as
+            an unconditional one reads stricter than reality, and a reader who meets a prompt
+            where they were promised a wall learns the page does not know the software.
+            Rule: when a claim is about what a COMMAND does, a doc is the narration; ground it
+            in the code path that decides it. Deliberately
             NOT restated here: the pilot-ready / federation-is-spec-only sentences below, and
             any claim that a hub is deployed. Do not link a docs path for this: the hub doc
             tree is private, the only public artifact is github.com/dp-web4/4-hub, already
@@ -194,11 +206,13 @@ export default function HubPage() {
           <code className="text-purple-300">dev</code> hub to a public, TLS-terminated one),
           writes a fail-closed config plus a starter
           law and an operator token, and prints the go-live runbook. Set{" "}
-          <code className="text-purple-300">HUB_PASSPHRASE</code> before any of that, because a
-          hub never writes a private key to disk in the clear:{" "}
-          <code className="text-purple-300">hub init</code> and the commands around it will not
-          run until it is set, and choosing to have no passphrase has to be explicit rather
-          than a silent default.
+          <code className="text-purple-300">HUB_PASSPHRASE</code> before any of that. A hub
+          never writes a private key to disk in the clear, so{" "}
+          <code className="text-purple-300">hub init</code> and the commands around it take the
+          passphrase from that variable, or prompt you for it at a terminal, and refuse
+          outright where there is no terminal to ask (a script, a CI job, a container).
+          Choosing to have no passphrase is allowed, but it has to be explicit rather than a
+          silent default.
         </p>
       </section>
 
