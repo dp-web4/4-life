@@ -409,7 +409,15 @@ export default function TrustTensorPage() {
             caps the ceiling, near the Alice example"). That one was TAKEN on Aug-01: see the
             anchoring-ceiling block at the Alice example (~L825) and its guard. The two are still
             distinct fixes and must stay so; this one owns the SURVIVAL LINE reading of 0.5, that one
-            owns the CEILING reading of 0.90, and neither may restate the other's consequence. */}
+            owns the CEILING reading of 0.90, and neither may restate the other's consequence.
+            NARROWED Aug-12 (visitor HIGH 3): "so a newcomer is not in danger" deleted from both
+            copies, replaced byte-identically with "Where you start is not a promise about where you
+            stay:" plus a route to #decay-and-survival below. The long guard beside lct-explainer's
+            copy carries the full reasoning and the three things this must not become; the short
+            version is that the sentence was a claim about a STARTING POSITION shipping as a
+            standing guarantee, and this site publishes every number needed to break it. The
+            arithmetic itself is printed NOWHERE, here or at the destination: a worked composite is
+            independently forbidden by the guard below under ledger Q14. */}
         <div className="mt-4 bg-gray-900/40 border border-gray-700/50 rounded-lg px-5 py-4 text-sm">
           <p className="text-gray-400 leading-relaxed">
             <strong className="text-gray-300">What does &ldquo;0.85&rdquo; mean?</strong>{" "}
@@ -417,7 +425,12 @@ export default function TrustTensorPage() {
             <strong className="text-gray-300">0.5</strong> = newcomer baseline,{" "}
             <strong className="text-gray-300">0.7</strong> = ~70% cooperative behavior in this role,{" "}
             <strong className="text-gray-300">0.9</strong> = consistently exceptional.{" "}
-            That same <strong className="text-gray-300">0.5</strong> is what other pages call the survival line: you start at the neutral midpoint and, if your identity is hardware-anchored, earn your way above it, so a newcomer is not in danger. (A software-only identity is capped at that same midpoint:{" "}
+            That same <strong className="text-gray-300">0.5</strong> is what other pages call the survival line: you start at the neutral midpoint and, if your identity is hardware-anchored, earn your way above it. Where you start is not a promise about where you stay:{" "}
+            <a
+              href="#decay-and-survival"
+              onClick={(e) => { e.preventDefault(); document.getElementById('decay-and-survival')?.scrollIntoView({ behavior: 'smooth' }); }}
+              className="text-sky-400 hover:text-sky-300 cursor-pointer underline"
+            >what a long absence does to a score</a>. (A software-only identity is capped at that same midpoint:{" "}
             <Link href="/lct-explainer#software-only-survival" className="text-sky-400 hover:text-sky-300 underline">what a 0.50 ceiling actually costs you</Link>.) Crossing below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal.{" "}
             <a
               href="#calibration-meaning"
@@ -814,7 +827,12 @@ export default function TrustTensorPage() {
                 in reputation-computation.md §7. They are different objects; the aggregate's decay
                 function takes no dimension argument and sits awkwardly against Talent's invariant.
               The id exists because /how-it-works points here and #why-half-lives (:1053) is a
-              collapsed <details>, the wrong element to land a reader on. */}
+              collapsed <details>, the wrong element to land a reader on.
+              Inbound as of Aug-12: two more, both from the narrowed newcomer sentence, one on this
+              page (~:420) and one on /lct-explainer (~:291). They arrive carrying the question this
+              block declines to compute, which is the point: the reader is routed to the honest
+              "not settled" rather than to a number. Do NOT let that traffic argue this block into
+              printing one. */}
           <div id="decay-and-survival" className="mt-4 bg-gray-900/60 border border-amber-800/30 rounded-lg p-5 scroll-mt-24">
             <h4 className="text-sm font-semibold text-amber-300 mb-2">
               Can decay alone push you below the survival line?

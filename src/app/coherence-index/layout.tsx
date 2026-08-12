@@ -3,7 +3,7 @@ import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 export const metadata: Metadata = {
   title: "Coherence Index (CI) - Consistency Detection | 4-Life",
   description:
-    "The Coherence Index measures behavioral consistency across space, capability, time, and relationships. Inconsistent behavior tanks your score - no moderator needed.",
+    "The Coherence Index measures behavioral consistency across space, capability, time, and relationships. Inconsistent behavior tanks your score - no moderator needed to catch it.",
   openGraph: {
     title: "Coherence Index: Consistency Detection",
     description:

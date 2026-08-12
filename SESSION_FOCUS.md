@@ -2,6 +2,132 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-12 09:00 session - the reassurance, the map that refuted itself, and a ceiling I got backwards
+
+Fresh log `visitor/logs/2026-08-12.md` (05:00), the first slot on it. Four HIGHs.
+**PR #538 was blocked and was fixed first**, before any scope was proposed.
+
+### #538: a conditional refusal restated as an unconditional one
+
+`/hub` said `hub init` "and the commands around it will not run until [HUB_PASSPHRASE] is set."
+`require_passphrase` (`web4/hub/hub-daemon/src/main.rs:1877`) reads the env var, else **prompts at
+a TTY**, and only bails at `:1891` when it is both unset and there is no terminal. The bail text
+carries its own condition. Every reader that paragraph addresses is at a shell, so they meet a
+**prompt** where the page promised a **wall**. The claim had been grounded in `QUICKSTART.md`'s
+Step 0 *heading*, dropping the qualifier four lines below it.
+
+> **Rule.** When a claim is about what a **command** does, the doc is the narration. Ground it in
+> the code path that decides it. A conditional refusal restated as unconditional reads *stricter*
+> than reality, and that is the direction that erodes a page whose value is that it is runnable.
+
+### Finding 1 (visitor HIGH 1): the map page refuted itself, and nothing greppable joined the halves
+
+`/how-it-works` asserted a bare **"No moderators needed"** four times, then made **Moderator** one
+of three Authority roles, hinged its plagiarism walkthrough on one, and priced a biased one's trust
+drop. The visitor: *"the single clearest self-contradiction I found and it is in the page that is
+meant to be the map."*
+
+The distinction was **not** missing and **not** coined here. Four of five denials already sat in
+explicit spam contexts, and the governance section already opened on *"energy economics handle most
+bad actors ... but what about edge cases."* What was missing was the **JOIN**: every denial said
+*moderators*, and every human-judgment passage avoided the word, so nothing a reader could grep
+connected them.
+
+> **Rule.** When two halves of a page contradict, check whether they share any **vocabulary** before
+> concluding one half is absent. A reconciliation that never says the other half's word is not
+> reachable by the reader who noticed the collision.
+
+Human-judgment sentence borrowed **verbatim** from `why-web4:166-168` rather than re-authored
+([[propagate-the-sentence-not-your-summary]]). Sweep criterion recorded, because the sweep is
+deliberately partial: **statements scoped to detection stay** ("caught by math, not moderators",
+"flagged - not by a moderator") because they are true; statements asserting moderators are not
+needed **at all** got scoped. Left standing on that criterion: `why-web4:2641`,
+`coherence-index/layout.tsx:10`, `coherence-index/page.tsx:377` (scenario-scoped),
+`atp-economics:502` (a Web2 critique), `lct-explainer:901` (a role example).
+
+### Finding 2 (visitor HIGH 2): I had the fix direction exactly backwards, and the policy reviewer caught it
+
+Three incompatible ceiling statements on `/lct-explainer`. I proposed correcting the worked examples
+**down** to the device-count schedule (lone TPM laptop 0.75 -> 0.50), reasoning that `calculateTrust`
+at `:154` is data-owned and drives a slider the reader can operate.
+
+Wrong twice over:
+
+1. **`calculateTrust` is a mirror, not an owner.** Its own `// SYNC:` comment says its values must
+   match *the prose*. A value defined as downstream of the prose cannot adjudicate the prose.
+2. **Upstream forbids the collapse.** `multi-device-lct-binding.md:875-878` and the impl at
+   `:629-637`: single software 0.40, single phone SE **0.75**, single TPM2 **0.75**, single FIDO2
+   0.80. Canon does not drop a lone hardware device onto the software floor. Six site surfaces
+   already say 0.75. I would have shipped a fresh contradiction with `:2411` on the same page.
+
+> **Rule.** Before letting a **widget** settle a numbers dispute, read its own sync comment. An
+> illustration that is *declared* downstream of the prose is evidence of what the prose once said,
+> not an arbiter of what it should say. Check upstream owns the axis before ruling on it.
+
+Second reviewer pass also killed my proposed recalibration `[0.75, 0.90, 0.90]`: it would set
+device-count-2 to 0.90 and thereby falsify `:654-655` (*"the same laptop plus **two more** device
+witnesses -> the full 0.90"*), the exact worked example the settled direction had just validated.
+And canon's numerals are not importable: its SE row sits under a **0.95** anchor weight where this
+site's SE tier is **0.85**, so the same numeral is a different fraction of a different ceiling
+([[borrowed-word-means-something-else-there]], applied to a number).
+
+**Shipped: two deletions only**, both false under every reading, neither a calibration call.
+`lct-explainer:648-649` lost *"the same 50-75% as just above"* (a device-count schedule equated with
+a chip-class range: two different axes). `why-web4:3055` lost *"a single phone with a TPM chip gives
+you a ceiling of 0.90"* **and** its *"raises that ceiling slightly"* clause, which was false with the
+0.90 and stays false without it. **No replacement numeral**: that page carries none of the machinery
+that derives one, so a bare 0.75 would be an unexplained third number. Routed to
+`/lct-explainer#trust-ceilings` instead.
+
+### FILED, not fixed: the device-count axis vs the chip-class axis
+
+`:619`'s **"1 device: 50%"** is the outlier and the only surface collapsing a lone hardware device
+onto the software floor. Surfaces for whoever takes it: `lct-explainer:619`, the `// SYNC:` comment
+at `:147-152`, `calculateTrust` at `:154`, the band labels at `:1054`, and **`glossary/page.tsx:363`**
+(the identical schedule, which is why deleting `:619` alone would have been another partial sweep).
+Constraints on any future fix: canon constrains the **structure**, not the values; and
+**device-count-2 must stay strictly below 0.90** or `:654-655` breaks. The full enumeration is in
+the guard at the `:648` paragraph.
+
+### Finding 3 (visitor HIGH 3): a claim about a starting position, shipping as a standing guarantee
+
+*"so a newcomer is not in danger"* was one sentence propagated to `lct-explainer:291` and
+`trust-tensor:420`. A Jul-31 pass conditioned its **headroom** half on a hardware anchor but left the
+reassurance unconditional in the other direction. The visitor broke it in five minutes with numbers
+this site publishes: start 0.50 in all three dimensions, Talent no decay, Training 180d, Temperament
+30d, decay toward zero, composite 0.4/0.3/0.3.
+
+Deleted from both copies, byte-identically, and replaced with a claim that is true plus a route:
+*"Where you start is not a promise about where you stay:"* -> `#decay-and-survival`.
+
+**The arithmetic is printed nowhere.** I proposed running it at `#decay-and-survival` and the policy
+reviewer blocked that on the guard's own prohibition 2 (*"NOT the worked composite reprinted"*),
+establishing that it is **independently load-bearing** and not a subordinate clause of the death
+rationale: the guard says "all six load-bearing" over five bullets, and the count only reaches six
+if that bullet splits.
+
+> **Rule.** A restriction/death split can be real and still not reach. Asserting an idle newcomer
+> **is** restricted asserts that no dormancy carve-out applies, which is the **mirror image** of
+> inventing one. Neither direction is written down (`WEB4-CANON-QUESTIONS` Q14: canon has no
+> entity-level "score below threshold" path at all). The honest move was to stop reassuring, not
+> to reassure more precisely.
+
+### Determination, no code (visitor HIGH 4): already shipped, both sides
+
+Cold-start *"three founders"* vs *"coalitions unprofitable at 2-3 members"*. The reconciliation ships
+at `what-could-go-wrong:466-480` and `atp-economics:1111-1122`, reciprocally linked, landed for a
+Jul-31 item, and both correctly **decline** the discriminator under ledger Q3. The visitor's *"it is
+not on either page"* is factually wrong; their literal ask is the fenced sentence. Not folded. No
+second treatment without a fresher log recurring.
+
+### Not taken this session
+
+All six MEDIUMs and five LOWs, including the two the visitor themselves called tidying: spam priced
+**10 ATP** on `/how-it-works` (three places) and **5** in the `/atp-economics` simulator; the
+*"About that 112:"* callout naming a number no static text on the page prints; the ~150-word *"About
+these numbers:"* paragraph appearing **twice verbatim**, whose second copy says *"the figures below"*
+when its figures are above. That last one is a clean deletion and is the obvious next pick.
+
 ## Aug-11 21:00 session - the guard comment that had been naming the fix, to nobody
 
 **No open PRs.** Same visitor log as #535 and #536 (`visitor/logs/2026-08-11.md`, 05:00; this is

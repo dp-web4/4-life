@@ -198,7 +198,7 @@ export default function FirstContactPage() {
 
             <div style={{ background: '#0f172a', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
               <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: '0.95rem' }}>
-                <strong style={{ color: '#38bdf8' }}>The lesson:</strong> Spam dies because it costs more than it returns. Trust builds through consistent quality. Mistakes have real consequences - but recovery is possible. Death is real (ATP hits zero), but good karma carries forward into new lives. No moderators needed. The economics do the work.
+                <strong style={{ color: '#38bdf8' }}>The lesson:</strong> Spam dies because it costs more than it returns. Trust builds through consistent quality. Mistakes have real consequences - but recovery is possible. Death is real (ATP hits zero), but good karma carries forward into new lives. No moderators needed to police spam. The economics do that work; people still settle disputes.
               </p>
             </div>
 

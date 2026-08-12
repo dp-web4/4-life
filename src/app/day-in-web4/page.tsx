@@ -1157,7 +1157,7 @@ export default function DayInWeb4Page() {
 
             <div style={{ background: '#0f172a', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
               <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: '0.95rem' }}>
-                <strong style={{ color: '#38bdf8' }}>The pattern:</strong> Every scenario follows the same logic - actions cost energy, quality is rewarded, bad behavior has real consequences, and trust compounds over time. No moderators needed. The economics do the work.
+                <strong style={{ color: '#38bdf8' }}>The pattern:</strong> Every scenario follows the same logic - actions cost energy, quality is rewarded, bad behavior has real consequences, and trust compounds over time. No moderators needed to police spam. The economics do that work; people still settle disputes.
               </p>
             </div>
 
