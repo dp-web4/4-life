@@ -2,6 +2,91 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-11 21:00 session - the guard comment that had been naming the fix, to nobody
+
+**No open PRs.** Same visitor log as #535 and #536 (`visitor/logs/2026-08-11.md`, 05:00; this is
+the third and last slot on it). The table was down to **one** non-fenced item, so this session
+took it plus one **Unanswered Question**, which is what a near-exhausted table licenses.
+
+### Finding 1: a fix instruction addressed to developers, in the file that needed it
+
+`how-it-works`'s appeals guard has ended with *"See /karma-consequences#recourse."* since
+2026-07-28. The **rendered** page pointed only at `/what-could-go-wrong`. Meanwhile `#recourse`
+refers back to *"the multi-tier version you may see described elsewhere on this site"*: a one-way
+reference to a page that did not point home. So the answer to Aug-11's Unanswered Question 4
+(*"who are the independent reviewers and the witness panel?"*) existed, was policy-reviewed, and
+was named **in a comment in the exact block that needed it**.
+
+> **Rule.** A guard comment that names where the fix belongs is not the fix.
+> `[[guard-comment-names-the-un-swept-page]]` in its purest form yet: not a neighbouring page,
+> the same block. When a guard ends in a route, check that route is rendered somewhere clickable.
+
+This is also **read-it-and-still-filed-it twice over**. Step 5 of the walkthrough already names a
+staffer (*"A Moderator (rotating monthly, not the original oracle)"*) and `:1997` echoes the same
+rotation as a **charter** example. The visitor saw staffing and still asked, because nothing said
+**whose call** it is. The missing clause was the attribution, not a third example.
+
+### Finding 2: "design pass" was the wrong label, for three sessions
+
+Friction item 7 (`/tldr`'s three identical **Reference** badges) was deferred three times as
+*"prominence/design pass on a table column, a different shape of work."* It is not a design pass.
+The identical fix for the identical defect **already ships** on `/running-now`'s Hestia block,
+where a Jul-23 LOW (*"the Running badge read more finished than the fine print, because the caveat
+sat ~27 lines below it"*) was closed by **pinning the caveat directly under the badge**. No new
+tier, no layout work, just copy.
+
+> **Rule.** Before deferring an item as a design pass, grep for the defect's **shape** on other
+> pages. A visitor-validated fix for "the caveat is N lines below the claim" is copy, and a track
+> that has solved it once has already priced it.
+
+### Why the qualifiers are subsets, not the asked-for 3-to-5 words
+
+Each new `/tldr` line is a strict subset of that piece's own bullet in the same page's "How real
+is it, honestly?" list. A subset cannot contradict its source; a paraphrase can. Compressing
+*"a usable, actively hardened enterprise tier"* **plus** *"hardware binding not yet validated on
+real devices"* into five words would have authored variant N+1 of a two-part claim that travels as
+a **pair** on four surfaces (`/`, `/onramp`, `/hardbound`, `/running-now`). Fidelity beat brevity.
+Hestia gets **no** line: its badge is already the distinct one, so it is not part of the
+flattening, and its blurb was rewritten by #535 to settle this same browse's HIGH.
+
+### The reviewer falsified three of eight claims
+
+| I claimed | Actually |
+|---|---|
+| `/onramp` renders a single badge; 9 files import `MaturityBadge` | **Three** badges on `/onramp`; **11** files match, incl. `InProduction.tsx`, a 10th consumer rendering on 13 pages. Conclusion survived: `/tldr` is still the only surface badging 2+ pieces adjacently with no distinguishing text. |
+| `/how-it-works` never links `/karma-consequences` in rendered output | It links it **twice** (`#karma-formula`, footer card), just never `#recourse`; and its `/what-could-go-wrong` link lands on a page that does link `#recourse`. The reader was two clicks away, not stranded. Real finding, **smaller** than filed. |
+| `entity-types.md`'s *"who fills it ... each society's law"* grounds appeals staffing | **Scoped to the EFFECTOR role** (enforcement), not to an appeals reviewer; its only other hit is an unadopted W4IP draft. **Barred by name in the new guard**, not merely avoided. |
+
+Also caught: the visitor's own phrase *"installable with 171 tests green"* is **not** derivable on
+`/tldr` (`171` lives only on `/running-now` and `/the-standard`). Not imported.
+
+### What the copy must not say
+
+`defined_by_law` **relocates** the staffing question, it does not answer it. The multi-tier flow's
+roles are not in the spec corpus at all, so there are no upstream staffing rules for roles that are
+not upstream, and the visitor's three sub-questions (paid? elected? drawn from high-trust members?)
+have no answer anywhere. The shipped line says the standard declines and no community has run one.
+
+### Disposition
+
+| Item | Disposition |
+|---|---|
+| Friction 7 (`/tldr` badge flattening) | **Shipped.** Status line pinned under the badge on the three Reference cards. |
+| Unanswered Q4 (appeals staffing) | **Shipped**, folded into the existing "Honest status" sentence + the `#recourse` reciprocal link. |
+| `/onramp` guard citing `tldr:255-256` | **Re-anchored** to a quoted heading; item A shifted those lines. |
+
+**The Aug-11 table is now fully disposed.**
+
+### Take this next
+
+1. Triage the Aug-12 05:00 log first.
+2. Unanswered Q6 (*"what does a 0.50 person actually experience day to day?"*) is the strongest
+   remaining item on the Aug-11 log and is **blocked**: it is the equity half of the hardware
+   seam, still escalated under Q8. Do not work it without an upstream ruling.
+3. `EndOfLifeCaveat` four-branch widening (density call, Q5). Unchanged.
+4. Aug-11 LOW 6 (device-loss "3 to 7 days" assumes a community): recurrence-only.
+5. Standing: `/hestia` has 18 inbound links and one anchor. A general anchor pass is still owed.
+
 ## Aug-11 15:00 session - the twin walkthrough that never ran the same numbers
 
 **No open PRs.** Same visitor log as #535 (`visitor/logs/2026-08-11.md`, 05:00; this is the 15:00
