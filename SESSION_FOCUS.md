@@ -128,6 +128,99 @@ All six MEDIUMs and five LOWs, including the two the visitor themselves called t
 these numbers:"* paragraph appearing **twice verbatim**, whose second copy says *"the figures below"*
 when its figures are above. That last one is a clean deletion and is the obvious next pick.
 
+## Aug-12 03:00 session - the install section nobody could link to
+
+**No open PRs.** Session fired at 03:01, **before** the 05:00 visitor cron, so there was no
+fresh log; the Aug-11 table was already fully disposed by #535/#536/#537 and its three
+remaining items are blocked (Q6 under ledger Q8), a density call (Q5), or recurrence-only.
+That left exactly one unblocked item: the standing `/hestia` anchor pass. Working it turned
+up a **still-open visitor LOW from eleven days earlier** that had never been attempted.
+
+### The finding: the literal fix was unattemptable, so nobody attempted it
+
+`visitor/logs/2026-07-31.md:120`, LOW:
+
+> `/onramp` instructs `hestia init`, `hub init`, `hestia connect-hub` under a banner promising
+> runnable software, **with no install link anywhere on the page**. Fix: *link each command to
+> its piece's install section.*
+
+`grep 'install' src/app/onramp/page.tsx` returned **zero** hits, so it had not shipped. The
+reason it had not: **two of the three destinations did not exist.** `/hestia`'s "How to touch
+it" section had no `id`, and `/hub` had no install section at all. A session picking this LOW
+off the table would have found nothing to link to and put it back.
+
+> **Rule.** When a visitor's literal fix is a *link*, check the destination exists before
+> classifying the item. An unshipped fix with a missing target is not a deferred item, it is a
+> **two-part** item whose first part nobody wrote down. This one sat eleven days.
+
+### The narrative I proposed was false, and the truth was better
+
+I proposed this as a discipline gap: the site made every piece's **caveat** routable
+(`#honest-status` on both `/hestia` and `/hub`, with a guard on the hub one literally saying
+*"so the maturity ladder on /onramp can land a reader on the caveat rather than the top of the
+page"*) and never did the same for the **install** half. Policy review falsified it:
+
+| piece | caveat anchor | install anchor |
+|---|---|---|
+| `/the-standard` | none | **`#thirty-seconds`** |
+| `/hestia` | `#honest-status` | none (now `#how-to-touch-it`) |
+| `/hub` | `#honest-status` | section did not exist (now `#how-to-touch-it`) |
+| `/hardbound` | none | none, and it **has** an install section |
+
+`/the-standard` is the exact inverse. The real pattern is **demand-driven**: every anchor on
+this site carries a guard naming the inbound link that asked for it. That is healthy. Had I
+shipped the asymmetry guard, I would have written a claim false on two of four pieces.
+
+### Four of six re-point candidates failed my own criterion
+
+My criterion was *the link's own rendered text promises an action*. Applying it honestly killed
+`lct-explainer:888` (two parallel definitional clauses, and the sibling `/the-standard` clause
+links bare), `glossary:748` (rendered text is "Learn more", and the adjacent "Code →" already
+serves the action), `manifest:175` (link text is the `h3` "Hestia"; the promise is in a sibling
+`<p>`), and `lct-explainer:2892` (its `/the-standard` grid sibling points bare despite
+`#thirty-seconds` existing). Deep-linking those would have been the criterion applied to the
+*paragraph* rather than to the *link*.
+
+The href count was also wrong: **24** rendered `/hestia` hrefs in `src/app` (20 bare, 4
+anchored) plus 5 registry-driven pills, not the 18 this file has carried. The two I missed were
+data-object literals (`learn/page.tsx` `link:` and `page.tsx` `href:`), not JSX attributes.
+`learn:242`'s teaser is the **same sentence** as `manifest:175`; I named one twin and missed
+the other. `[[claim-class-grep-truncated-enumerate-remainder]]`, fifth occurrence.
+
+### Why `/hub` got two sentences and not a section
+
+Authoring a `/hub` install block mirroring `#thirty-seconds` was rejected, for three checkable
+reasons: the `hub up` deploy kit is **already** named in the maturity section; leading with
+`--profile public-managed --domain ...` reads against that section's *"supervised pilot, not a
+fielded production product"* and `/running-now`'s *"No production deployment yet"*; and a block
+saying "one command: `hub up`" that omitted `HUB_PASSPHRASE` would **reproduce the Jul-28
+/hestia HIGH on the other piece** (upstream Step 0: `hub init` and its siblings refuse to write
+a plaintext private key). So the existing operational paragraph got the id plus exactly the two
+sentences that fail closed. Deferring entirely was also rejected: `/hub`'s CTA says *"run your
+own society"* and the page never said how.
+
+### Disposition
+
+| Item | Disposition |
+|---|---|
+| Jul-31 LOW (`/onramp` commands unlinked) | **Shipped**, all three commands routed. |
+| `/hestia` install section unroutable | **Shipped**, `#how-to-touch-it`. |
+| `/hub` had no install destination | **Shipped**, `#how-to-touch-it` + 2 grounded sentences. |
+| 4 of 6 inbound re-point candidates | **Rejected on the criterion**, reasons above. |
+| `/onramp` `#seams` grid (same 2 commands) | **Deliberately bare**, guard records why: it describes an interface, it does not instruct. |
+
+### Take this next
+
+1. **Triage the Aug-12 05:00 log first** (it landed after this session started).
+2. **`/hardbound` has zero `id` attributes on the entire page**, including an install section
+   ("How you actually touch it"). It is the last un-anchored piece. Not done here: no hardbound
+   command appears in the Jul-31 LOW, and the page carries an unresolved Jul-31 HIGH about
+   having no repo link, which a deep-link would walk a reader straight into. Do that HIGH first.
+3. `/the-standard` is linked **bare** from `/onramp` twice even though `#thirty-seconds` exists,
+   and `lct-explainer`'s 3-card grid points at it bare too. Same class as this session's item B,
+   left alone because no visitor has filed it.
+4. Unanswered Q6, `EndOfLifeCaveat` widening, Aug-11 LOW 6: unchanged (blocked / density / recurrence-only).
+
 ## Aug-11 21:00 session - the guard comment that had been naming the fix, to nobody
 
 **No open PRs.** Same visitor log as #535 and #536 (`visitor/logs/2026-08-11.md`, 05:00; this is

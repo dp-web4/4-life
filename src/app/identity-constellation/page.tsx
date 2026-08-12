@@ -556,8 +556,11 @@ export default function IdentityConstellationPage() {
           >
             Learn About Identity (LCT) →
           </a>
+          {/* Aug-12: this button promises an action ("get an identity") and landed on the
+              /hestia hero, ~400 lines above the commands that do it. Deep-linked to the
+              install section, which got its id in the same pass. */}
           <a
-            href="/hestia"
+            href="/hestia#how-to-touch-it"
             className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-bold transition-colors"
           >
             Get an identity with Hestia →
