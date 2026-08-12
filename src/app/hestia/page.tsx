@@ -439,8 +439,20 @@ export default function HestiaPage() {
         </p>
       </section>
 
-      {/* How to touch it */}
-      <section className="max-w-4xl mx-auto mt-12">
+      {/* How to touch it.
+          id added Aug-12 for the Jul-31 visitor LOW: "/onramp instructs `hestia init`,
+          `hub init`, `hestia connect-hub` under a banner promising runnable software, with
+          no install link anywhere on the page. Link each command to its piece's install
+          section." That fix was not attemptable before, because this section (the install
+          section for two of those three commands, since the walkthrough below ends with the
+          "optional, and only once you have a hub to point at" connect-hub line) had no id,
+          so every inbound link landed hundreds of lines above it on the hero. Inbound
+          links now pointing here: /onramp's `hestia init` and `hestia connect-hub`,
+          /identity-constellation's "Get an identity with Hestia", /learn's "stop reading,
+          start running". /hub#how-to-touch-it is the deliberate twin id for the hub half.
+          Anchors on this page are demand-driven (see #solo-witnessing's guard below): each
+          one records which inbound link asked for it. Keep this list in sync. */}
+      <section id="how-to-touch-it" className="max-w-4xl mx-auto mt-12 scroll-mt-20">
         <h2 className="text-2xl font-bold text-gray-100 mb-3">How to touch it</h2>
         {/* Jul-28 visitor HIGH, and the moment they closed the tab: "I got as far as line four and
             stopped. What URL?" plus "there's no install line here the way there is for the core

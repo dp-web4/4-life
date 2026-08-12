@@ -166,11 +166,39 @@ export default function HubPage() {
             </p>
           </div>
         </div>
-        <p className="text-base text-gray-400 leading-relaxed mt-4">
+        {/* Aug-12: the Jul-31 visitor LOW asked that /onramp link each of `hestia init`,
+            `hub init` and `hestia connect-hub` to its piece's install section. `hub init` had
+            no destination: this page's CTA told a reader to "fork it, write your community's
+            charter, and run your own society" and never said how, the same shape as the Jul-28
+            /hestia HIGH. Policy review rejected authoring a new install section here (the
+            "turnkey deploy kit" sentence in the maturity-ladder section already names
+            `hub up`, and leading with a public-internet profile would read against that same
+            section's "ready for a supervised pilot, not a fielded production product" and
+            /running-now's "No production deployment yet"). So the existing operational
+            paragraph gets the id and two grounded sentences instead.
+            Both sentences track the organizer quickstart: the archetype-picking `hub up`
+            form, and Step 0, which exists because several commands refuse to write a
+            plaintext private key. The passphrase half is NOT optional colour: omitting the
+            step that fails closed is exactly what cost /hestia a reader in July. Deliberately
+            NOT restated here: the pilot-ready / federation-is-spec-only sentences below, and
+            any claim that a hub is deployed. Do not link a docs path for this: the hub doc
+            tree is private, the only public artifact is github.com/dp-web4/4-hub, already
+            linked from the CTA at the foot of this page. */}
+        <p id="how-to-touch-it" className="text-base text-gray-400 leading-relaxed mt-4 scroll-mt-20">
           Operationally it&apos;s mundane in the best way: an admin CLI and Docker
           deployment, one small static binary. The radical part isn&apos;t the ops,
           it&apos;s that the society&apos;s rules and history are cryptographically
-          honest.
+          honest. Standing one up starts with{" "}
+          <code className="text-purple-300">hub up ./my-hub --profile &lt;archetype&gt;</code>,
+          which picks a deployment shape (anything from a local{" "}
+          <code className="text-purple-300">dev</code> hub to a public, TLS-terminated one),
+          writes a fail-closed config plus a starter
+          law and an operator token, and prints the go-live runbook. Set{" "}
+          <code className="text-purple-300">HUB_PASSPHRASE</code> before any of that, because a
+          hub never writes a private key to disk in the clear:{" "}
+          <code className="text-purple-300">hub init</code> and the commands around it will not
+          run until it is set, and choosing to have no passphrase has to be explicit rather
+          than a silent default.
         </p>
       </section>
 
