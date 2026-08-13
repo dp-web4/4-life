@@ -1631,6 +1631,57 @@ export default function LCTExplainerPage() {
               &ldquo;this is real hardware, not a virtual machine pretending&rdquo; - the
               vendor certificate chain settles that question on its own.
             </p>
+            {/* Aug-13 visitor Unanswered Question 2: "What witnesses a software-only newcomer on
+                day zero? The bootstrap answer given is a manufacturer key in a security chip,
+                which by definition that user does not have." Correct as filed: this FAQ answered
+                "the chip itself does" and enumerated NO branch for a reader with no chip - the
+                tier /onramp and /hestia route an individual onto
+                ([[fence-may-undercount-its-own-ledger]]: a single-branch answer reads as
+                exhaustive, and nothing greps a missing branch).
+                GROUNDING, and it is affirmative rather than a gap:
+                web4-standard/core-spec/multi-device-lct-binding.md 2.2.4 "Software-Only Fallback"
+                gives Security Level Low, Ubiquity Universal, and Recommended Role: "Bootstrap,
+                low-trust contexts only", with key_storage encrypted_file|browser_crypto|keyring.
+                Canon NAMES software-only as the bootstrap-role anchor, so the software key is the
+                day-zero anchor in its weak form, not the absence of one. The sole-anchor sentence
+                is that section's own Constraints line ("Cannot be sole anchor for recovery
+                quorum").
+                POSITION IS LOAD-BEARING: this sits directly under the short answer and two
+                paragraphs ABOVE the "what triggers NASCENT -> ACTIVE for a solo-device user"
+                paragraph, whose two branches BOTH presume a well-formed hardware attestation.
+                NASCENT appears nowhere in web4-standard/, so any promotion claim for a chipless
+                reader would be coined. Do not merge this into that paragraph and do not add a
+                lifecycle state to it. Above rather than below because a chipless reader otherwise
+                reads three chip-scoped paragraphs before anything addresses them.
+                WHAT IT DELIBERATELY DOES NOT SAY:
+                - Not "nothing corroborates it". Canon's software verifier returns
+                  anchor_verified=True (web4-core/python/web4_core/trust/attestation/anchors/software.py,
+                  "Software verification is always 'verified' (it's just weak)") and
+                  LCT-linked-context-token.md 1.2 clause 1 says weak evidence MUST NOT be excluded
+                  by the protocol, only weighed as riskier. What is absent is proof of BINDING, not
+                  corroboration ([[pessimistic-absolute-nobody-catches]]).
+                - No number. Both grounding sources carry ceiling 0.4 against this site's 0.50
+                  calibration, and this paragraph renders about one screen above
+                  #software-only-survival, which is fenced under Q1. Mechanism only, never the
+                  figure, and nothing about a reader sitting at any score in either direction.
+                - The recovery-quorum clause says "which is why this page says" and NOT "the same
+                  fact": canon's rule is anchor-CLASS, this page's line at the drop-your-phone list
+                  is witness-COUNT, and they come apart for a two-software-device user who has a
+                  second witness and still no eligible anchor ([[borrowed-word-means-something-else-there]]:
+                  canon's "anchor" is not this page's "witness"). */}
+            <p className="text-sm text-gray-300 mb-2">
+              <strong className="text-amber-300">And if there is no security chip?</strong>{" "}
+              Software-only is the fallback the standard names for exactly this position, and the
+              role it names for it is <em>bootstrap</em>. The key lives in an encrypted file on
+              your machine rather than inside a chip, so what day zero establishes is that the
+              signature is valid and current, not that it is bound to a particular device. That is
+              enough to start. What it is not enough for is standing in as a witness later: the
+              standard says a software anchor cannot be the sole anchor for a recovery quorum,
+              which is why this page says, further down, that a software-only setup has no second
+              witness to vouch for it. Either way the day-zero step begins the record rather than
+              finishing it. From your first interaction onward, what witnesses you is the community
+              you are acting in.
+            </p>
             <p className="text-sm text-gray-300 mb-2">
               <strong className="text-amber-300">What hardware attestation <em>doesn&apos;t</em> prove:</strong> that this
               specific chip belongs to a unique person - vs. someone running a phone farm

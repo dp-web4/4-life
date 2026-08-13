@@ -79,6 +79,37 @@ export default function TLDRPage() {
                 appropriate.
               </p>
             </div>
+            {/* Aug-13 visitor MEDIUM: "'your own device is your day-zero witness for your
+                identity' reads as 'you can start alone, no hardware needed.' /lct-explainer shows
+                the bootstrap actually rests on a manufacturer-burned key in a security element and
+                a vendor certificate chain. The reassurance is a hardware feature described without
+                the word hardware." True of the link destination: #first-device-bootstrap opens
+                "Short answer: the chip itself does" and was chip-scoped throughout.
+                The added sentence names both branches. It does NOT take the visitor's literal
+                suggestion ("say the day-zero witness is the device's security chip"), which alone
+                would push this page toward hardware-as-entry - the claim Q8 Ruling 1 answered
+                AGAINST (web4-standard/core-spec/LCT-linked-context-token.md 1.2 clause 1: an
+                entity presenting only weak evidence MUST NOT be excluded by the protocol, only
+                weighed as riskier; the conformance half of [[hardware-required-seam]] is closed on
+                that ruling). Do not "complete" the unfollowed suggestion by deleting the software
+                branch. The irony worth keeping: the visitor's naive reading of this line ("you can
+                start alone") was CORRECT against canon. The defective surface was the explainer
+                that offered no chipless branch, which is fixed in the same push
+                (grep -n "And if there is no security chip" src/app/lct-explainer).
+                "carries less weight" is propagated, not coined: it is this site's own phrase at
+                lct-explainer's Key Duplication row (grep -n "which is part of why it carries less
+                weight" src/app/lct-explainer). No ceiling number is imported here, in either
+                page's calibration, and nothing is asserted about a reader at any score (Q1).
+                SWEEP OBLIGATION, discharged and recorded ([[adding-a-distinction-creates-a-sweep-obligation]]):
+                `grep -rn "day-zero" src/app`, minus comment lines and minus the new
+                lct-explainer paragraph this push adds, RENDERS on four surfaces. This one was the
+                only unqualified use; the other three (lct-explainer's bootstrap FAQ short answer,
+                the crypto-glossary hardware-attestation entry, and the Minute 0:00 walkthrough)
+                each name the chip INSIDE their own clause, so none of them can be read as
+                chip-free and none is owed this distinction. If a further rendered use appears
+                without the chip in its own clause, it belongs in this sweep. Count deliberately
+                stated with its exclusions rather than as a bare integer
+                ([[claim-class-grep-truncated-enumerate-remainder]]). */}
             <div className="flex gap-3 items-start">
               <span className="text-sky-400 font-semibold whitespace-nowrap mt-0.5">Web4</span>
               <p className="text-gray-300">
@@ -89,7 +120,10 @@ export default function TLDRPage() {
                   witness
                 </Link>{" "}
                 for your identity, and from your first action onward it is the community you join
-                that witnesses what you do. Witnessing is per action, not a standing relationship.
+                that witnesses what you do. On a device with a security chip, that day-zero witness
+                is the chip itself; with software alone it is a key on your machine, which starts
+                you the same way and carries less weight. Witnessing is per action, not a standing
+                relationship.
                 Every action leaves a verifiable record of what happened, under whose authority, and
                 against which rules. Good behavior compounds. Bad behavior follows you.
               </p>
@@ -134,7 +168,18 @@ export default function TLDRPage() {
               the third tier (Spec) so a Spec badge met later is not a surprise.
               (Aug-13: the closing paragraph now carries one clause that is NOT from that
               legend, by necessity, and the guard beside it says which and why. Read that
-              before "restoring" the subset.) The
+              before "restoring" the subset.)
+              DIRECTION NOTE, Aug-13 15:00: the subset rule says canonical statements land on
+              /running-now FIRST. The Reference and Running rows below were reconciled the other
+              way round, by DELETING from /running-now to match this page, because on those two
+              rows this page was the more careful of the two (its Reference row never carried
+              "Finished code you could install and start today", which the Aug-13 visitor read
+              against hardbound's own not-production-ready wording on that same page; and its
+              Running row already carried the adoption scope inline, which /running-now's had one
+              paragraph too late). Both rows are now byte-identical across the two pages, so the
+              invariant HOLDS in outcome. The rule is not repealed: a NEW tier claim still lands on
+              /running-now first. What happened here was a deletion and a relocation, not a new
+              claim. The
               "not how good it is" half is load-bearing: hardbound is badged Reference and
               this page's own prose calls it "a usable, actively hardened enterprise tier"
               (a mismatch the Jul-27 visitor filed separately), so a bare "later is better"
@@ -143,11 +188,16 @@ export default function TLDRPage() {
               Aug-04: "in day-to-day use" is the exact phrase the Aug-01 visitor said was
               stronger than the fact under it, and this is the surface where a reader meets
               it FIRST (they met the badges here and only reached the full key later). The
-              scope added here is the same clause added to /running-now#badge-key, cut to a
-              parenthetical so this gloss stays a strict subset: it scopes the deployment
-              the site COUNTS and says nothing about who else may have installed the
-              published SDKs (see the long guard beside running-now's #whose-machines
-              paragraph). */}
+              scope added here is the same clause added to /running-now#badge-key: it scopes
+              the deployment the site COUNTS and says nothing about who else may have
+              installed the published SDKs (see the long guard beside running-now's
+              #whose-machines paragraph).
+              (This line used to end "cut to a parenthetical so this gloss stays a strict subset".
+              That was already false before Aug-13 touched anything: the Running row below is two
+              full sentences and no parenthetical. Corrected rather than bumped, per
+              [[opposite-intents-in-code-comments]]. Pre-existing rot, not a description of the
+              Aug-13 edit. As of Aug-13 15:00 the same two sentences render on /running-now's
+              Running row too, so "subset" on this row now means byte-identical.) */}
           <div className="mb-4 rounded-lg border border-gray-700 bg-gray-800/30 p-4">
             <p className="text-gray-300 text-sm font-medium mb-3">
               The tag on each card says how far along that piece is:
