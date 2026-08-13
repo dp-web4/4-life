@@ -2,6 +2,95 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-13 09:00 session - the promise on page 1 and the reckoning on page 9
+
+**No open PRs at start.** First slot on the fresh `visitor/logs/2026-08-13.md`. Took **HIGH 1 and
+HIGH 2**; **HIGH 3 is fenced** and was recorded, not fixed.
+
+The visitor diagnosed this session better than the friction table did, so their sentence is the
+thesis: *"The fix is not more honesty. The honesty is already written. It is in the wrong place."*
+They described the site as having **two voices**: a recruiting voice on the reading path (2
+Minutes, First Contact, the Onramp, Hestia) and a reckoning voice on the pages off it (Karma &
+Consequences, What Could Go Wrong, the LCT device-loss section), which *"do not agree about what
+it is like to use it."* Both voices are accurate. Only their ordering is wrong.
+
+### HIGH 1 was already shipped. The residual was WEIGHT, and it is the third treatment.
+
+The visitor said `/hestia` *"says the cap. It does not say what the cap costs me"* and attributed
+the other two consequences to other pages. All three already ship on `/hestia`, verbatim and
+policy-reviewed, and the visitor **quoted the two sentences immediately before them**.
+
+Cause: lines 298-376 were a **single `<p className="text-sm text-gray-500">`**. The version note,
+the tier disclosure and all three costs were one footnote-weight block whose only visual emphasis
+in ~15 lines was `<strong>0.50</strong>`. A scanner took the number and left.
+
+So this one item has now been treated three times, each pass changing a different thing:
+
+| Pass | Shipped | Visitor still filed it because |
+|---|---|---|
+| Jul-30 | **routing** (links out to the costs) | *"hands me a pointer instead of the number, at the exact moment I am deciding whether to install"* |
+| Aug-11 | **the statement** (costs on-page) | it landed at footnote weight inside a version note |
+| Aug-13 | **the weight** (own paragraph, readable) | pending Aug-14 retest |
+
+**Not one sentence was rewritten or added.** The "One honest caveat" antecedent moved down with
+the costs rather than staying with the version note, because it is what names the tier that
+"anchoring in software alone" refers back to.
+
+> **Rule.** Routing, stating and weighting are three different fixes. A visitor re-filing an item
+> you already shipped is not necessarily wrong about the page; check which of the three you
+> actually did. If the only bolded thing in a gray block is a number, the number is all that gets
+> read.
+
+### HIGH 2: the Aug-08 sweep's own lesson, recurring in the Aug-08 sweep's own claim class
+
+`/tldr`'s "The Result" asserted *"Reputation is portable and cannot be reset by deleting an
+account or switching platforms"* with no qualifier, on **page 1** of the five-page path. The
+visitor: *"I filed that as a headline promise. Six pages later I learned it is not true for the
+tier I would actually be using."*
+
+This is a missed member of the class the Aug-08 sweep discharged. It survived because it states
+the claim **by synonym**: "reset by deleting an account" never says "fresh start" or
+"hardware-bound", so every phrase-grep walked past it. Four surfaces were still unscoped, all of
+them **ahead of** or **above** the pages carrying the qualifier:
+
+- `/tldr` "The Result" (page 1) and `/why-web4` design-goal 3 (page 2). Goal **2 in the same
+  list on the same page** was corrected Aug-07; the pass fixed one sibling and left the next,
+  even though this one carries the **literal** phrase "no more fresh starts".
+- `/learn`'s teaser cards for `/lct-explainer` and `/karma-consequences`, both contradicting
+  destinations that had already been fixed.
+
+### The finding worth keeping: `/learn`'s teasers are invisible to page-level sweeps by construction
+
+`/learn`'s `LEARNING_PATH` teasers are data literals that summarize **other pages'** claims. Every
+sweep this project runs is page-scoped, so every page fix since Aug-05 has corrected a page and
+left its teaser. `/learn` also owns the reading path, so those teasers are read *first*. Filed in
+`docs/WEB4-CANON-QUESTIONS.md` as a class with a reproducible predicate; **deliberately not swept
+this session** on proportionality.
+
+Two reusable tests came out of it, both in the ledger:
+
+> **Two valences, one phrase.** *"start(ing) over from zero"* means "you cannot escape
+> consequences" (true at the **hardware** tiers, this is the claim) or "device loss destroys you"
+> (true at the **software** tier, already correct everywhere). The grep returns 9 hits of which 7
+> are already right, which is how two sweeps read the noise as handled. **Discriminate by
+> grammatical subject**: a bad actor *abandoning* vs an honest user who *lost*.
+
+> **Falsification test for a replacement.** It must be **false of no software-only user**. The
+> policy reviewer caught a draft teaser of mine, *"earning trust is what takes a device"*, which
+> read **stricter** than the sentence it was propagating. Keep the ceiling / high-trust-roles
+> qualifier; import no number.
+
+### HIGH 3: fenced, recorded, not fixed
+
+The ask (state that a software-only identity *"lives permanently at the threshold with no margin
+it can ever build"*) is an assertion about a reader at exactly 0.50, which **Q1 fences in either
+direction**. The **Aug-10** visitor filed the same composition three days earlier. Logged as
+evidence that Q1's cost is now visitor-visible, which strengthens the escalation; it does not
+license the claim. No ceiling number, no survival line and no at-0.50 claim entered any file.
+
+**Retest gates (Aug-14 05:00):** does the `/hestia` cost paragraph get read now that it has its
+own weight? Does a reader reaching "The Result" on `/tldr` still take portability as unconditional?
+
 ## Aug-13 03:00 session - three chips that never said which moment they belonged to
 
 **No open PRs.** Fired 03:01, before the 05:00 cron, so `visitor/logs/2026-08-12.md` is still the
