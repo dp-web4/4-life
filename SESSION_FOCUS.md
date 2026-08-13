@@ -2,6 +2,108 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-12 21:00 session - the ramp that was measuring the other tensor (twice, on one page)
+
+**No open PRs.** Third slot on `visitor/logs/2026-08-12.md` (#539 took the four HIGHs, #540 took
+MEDIUM 6+8). This took **MEDIUM 5**, the first MEDIUM in the visitor's own ordering, plus the
+un-filed instance of the same defect the reviewer found 1150 lines below it on the same page.
+
+### Finding 1 (visitor MEDIUM 5): the bullet imported the ramp's axis labels and called them trust
+
+`/lct-explainer`'s ceiling bullet said *"The **quality ramp** rewards a **0.85-trust** account roughly
+**7x more** per quality action than a **0.30-trust** account."* The ramp on `/atp-economics` keys on
+the **quality of the work (V3)**: its bars are labelled *Quality 30% / 50% / 70% / 85%* and the 7x is
+derived there at 85% vs 35% quality at the same spend. The bullet took the ramp's two endpoint labels
+and relabelled them **trust**.
+
+It landed on the worst possible page for it. **0.85 is this page's Secure Enclave ceiling** (rendered
+`max 0.85`, graded *"0.85 is strong"*) a few hundred lines above, so a reader holding 0.85 as a chip
+class met *"a 0.85-trust account"*. Visitor: *"After the site spent real effort teaching me those are
+different things, that hurt."*
+
+The page **already shipped the correct sentence**: *"low-trust actions cost more ATP and earn less
+back"*, in the ten-phones sybil FAQ. Propagated verbatim rather than re-authored
+`[[page-ships-the-answer-and-denies-it]]` + `[[propagate-the-sentence-not-your-summary]]`. Canon backs
+the cost half outright, `mcp-protocol.md` section 9.1:
+`trust_modifier = 1.0 - (context.t3_in_role.average() * 0.2)  # Higher trust = lower cost`.
+
+**No numeral replaces the deleted one.** Section 9.1's formula is bounded to `[0.8, 1.0]`, section 9.2
+is marked *informative* and calls the modifier society-configurable, and the site's one published
+numeral for it is an open item (below). A deletion needed no replacement figure.
+
+### Finding 2 (un-filed, same class, same page): the 1.4x surcharge read off the wrong tensor
+
+The LCT setup walkthrough put *"Your trust starts at the default newcomer level"* immediately before
+*"Actions cost 1.4x until you prove yourself"*, and then *"Your trust has already started building.
+The 1.4x premium is slightly lower."* **1.4x is not a trust effect.** `/coherence-index` owns and
+derives it (*"with CI 0.85, actions cost about 1.4x their base price (1/0.85^2 ~ 1.38)"*), and trust
+cannot produce it at any value, because section 9.1's bound means trust moves you between base and a
+discount, never above base.
+
+The two findings could have fought (`[[two-fixes-in-one-pass-can-fight]]`): Finding 1 propagates
+"low trust costs more" onto the same page. The reconciliation is in both guards and it is not a
+hedge, it is the baseline: **low trust costs more than a high-trust actor; low CI costs more than
+base price.** Different levers, different baselines. No T3 numeral was published to make the point
+(the standing 0.5-endpoint escalation forbids picking one, and *"low but nonzero"* stays numeral-free).
+
+> **Rule.** Two economic multipliers on one page are only "the same claim" if they share a baseline.
+> Check what each is measured *against* before reconciling or before letting one refute the other.
+
+### The sweep, and what was deliberately left
+
+Naming the axis makes every prior loose use falsifiable `[[adding-a-distinction-creates-a-sweep-obligation]]`.
+Criterion: **an instance is in scope only if it NAMES TRUST as the cause.**
+
+| surface | disposition |
+|---|---|
+| `/lct-explainer` minute 2:00 + minute 5:00 | **fixed**, names CI, deep-links `#why-ci-starts-low` |
+| `/why-web4` *"1.4x newcomer premium"* bullet | **fixed** (one clause). Names no cause itself, but both siblings in its list are trust-keyed and the nearest CI mention is ~35 lines up |
+| `LCTSetupMockup`'s *"Newcomer rate: 1.4x"* chip | **left**: states the surcharge, names no cause, and renders *above* the paragraph that introduces CI |
+| `/how-it-works` x2, `/day-in-web4`'s *"40% more than veterans pay"* | **left**: already CI-keyed |
+
+**A guard whose named target had been retired.** `#why-ci-starts-low` carried *"A future post-#266
+session can wire up a deep-link from Karma Journey to #why-ci-starts-low."* `/karma-journey` was
+retired in the Jul-15 rebuild, so that link was never coming `[[guard-comment-names-the-un-swept-page]]`.
+The anchor's only named inbound demand pointed at a dead route while the live surface reproducing its
+exact friction sat on `/lct-explainer` with the wrong axis. Guard now records this. The item is closed
+**by the retirement of its source**, not by the new links; it is not marked delivered.
+
+### Filed, not fixed: the 30% trust discount (do not "correct" it to 20% without reading this)
+
+I proposed correcting `/atp-economics`'s *"up to a **30% discount** to entities with trust near 1.0"*
+to canon's 20% endpoint, on the theory that both it and its paired *"50% premium"* were transcribed
+off `mcp-protocol.md` section 9.2's `high_trust_discount: 0.8` / `peak_demand_surge: 1.5`. **The
+policy reviewer refuted it and was right.** `../web4/archive/reference-implementations/trust_auction_mechanisms.py`
+(header *"Session 32, Track 8"*) line 230:
+
+```python
+trust_discount = 1.0 - 0.3 * trust_score   # up to 30% discount for trust=1
+demand_factor  = 1.0 + 0.5 * max(0, demand_ratio - 1.0)  # surge pricing
+```
+
+Both numerals come from that one function, and the 4-life commit that introduced the card cites it.
+The 50%-matching-canon is **evidence against** the transcription theory, not for it. The real question
+is different and unresolved: the site asserts a numeral from an **archived** artifact against a live
+canon section that names a different endpoint `[[precise-number-may-cite-archived-artifact]]`.
+
+Sweep set for whoever takes it, all four parts:
+1. `/atp-economics` "Trust Earns Better Terms" card (the 30%).
+2. `InteractiveWireframes.tsx` -> *"high-trust discount applied (30% off)"*, a **data-object literal**
+   rendering on `/day-in-web4`, invisible to a JSX-attribute grep (the #538 class).
+3. The attribution line *"session 32, 84 checks"*: the named artifact is archived and reports **22/22**
+   when run today.
+4. Framing: section 9.2 is *informative* and calls the modifier society-configurable, so a flat "20%"
+   would be a **new over-assertion**. Deletion is the likelier correct shape than substitution.
+
+Also filed: the card sits inside a collapsed `<details>` (`#at-scale`) with no id of its own, so it
+cannot be deep-linked as-is. That is why Finding 1 routes nowhere near it.
+
+### Not taken
+
+Three MEDIUMs (`About that 112:` naming a number no static text prints, the `/how-it-works` reading-time
+estimate, `/first-contact`'s Act 5 rail) and all five LOWs. The `112` pair is still the natural next
+pick and is still one edit smaller than it was.
+
 ## Aug-12 15:00 session - the price that was three prices in three units, and a caveat read twice
 
 **No open PRs.** Same log as #539 (`visitor/logs/2026-08-12.md`, 05:00; second slot on it). All four

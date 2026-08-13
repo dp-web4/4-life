@@ -1455,14 +1455,36 @@ export default function LCTExplainerPage() {
               what changes is the <em>terms</em> of your participation:
             </p>
             <ul className="text-xs text-gray-400 space-y-2 list-disc pl-5">
+              {/* Aug-12 visitor MEDIUM: this bullet used to read "The quality ramp rewards a
+                  0.85-trust account roughly 7x more per quality action than a 0.30-trust account."
+                  The ramp on /atp-economics keys on the QUALITY OF THE WORK (V3): its bars are
+                  labelled Quality 30% / 50% / 70% / 85%, and the 7x is derived there at 85% vs 35%
+                  quality at the same spend. This bullet imported the ramp's two endpoint labels and
+                  relabelled them TRUST - on the one page where 0.85 already means the Secure Enclave
+                  CEILING (rendered "max 0.85", graded "0.85 is strong" a few hundred lines up), so a
+                  reader holding 0.85 as a chip class met "a 0.85-trust account". Visitor: "After the
+                  site spent real effort teaching me those are different things, that hurt."
+                  The replacement is PROPAGATED, not re-authored: "low-trust actions cost more ATP and
+                  earn less back" is this page's own sentence, in the ten-phones sybil FAQ
+                  (grep -n "low-trust actions cost more ATP" on this file). Canon backs the cost half
+                  outright - web4-standard/core-spec/mcp-protocol.md section 9.1:
+                    trust_modifier = 1.0 - (context.t3_in_role.average() * 0.2)  # Higher trust = lower cost
+                  Do NOT restore a percentage here. That formula is bounded to [0.8, 1.0] of base,
+                  section 9.2 is marked informative and calls the modifier society-configurable, and
+                  the site's one published numeral for it (30%) is an OPEN item in SESSION_FOCUS.md,
+                  not a settled one. The [0.8, 1.0] bound is also why this bullet is NOT the source of
+                  the 1.4x newcomer surcharge in the setup walkthrough further down this page: trust
+                  can make you pay more than a high-trust actor, but it can never take you above base
+                  price. See that guard (grep -n "the 1.4x is not a trust effect" on this file). */}
               <li>
-                <strong className="text-gray-300">Cost &amp; reward economics.</strong> Higher trust pays
-                less per action and earns more back. The{" "}
+                <strong className="text-gray-300">Cost &amp; reward economics.</strong> Low-trust actions
+                cost more ATP and earn less back, so your ceiling also caps how far you can work your own
+                costs down. This is a different lever from the{" "}
                 <Link href="/atp-economics#quality-ramp" className="text-emerald-400 hover:text-emerald-300 underline">
                   quality ramp
-                </Link>{" "}
-                rewards a 0.85-trust account roughly <strong className="text-gray-300">7&times; more</strong> per quality
-                action than a 0.30-trust account - so a higher ceiling means your good behavior compounds faster.
+                </Link>
+                , which keys on the quality of the work you made (V3) rather than on your trust: the
+                percentages on that ramp are quality scores, not trust values.
               </li>
               <li>
                 <strong className="text-gray-300">Witness role.</strong> Hardware-bound devices (TPM /
@@ -2612,9 +2634,33 @@ export default function LCTExplainerPage() {
             <p><strong className="text-sky-300">Minute 0:00</strong> - The app detects your device&apos;s security chip (TPM or Secure Enclave) and generates a cryptographic key pair. The chip&apos;s manufacturer-burned key is itself the day-zero <a href="#first-device-bootstrap" onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('first-device-bootstrap')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sky-400 hover:text-sky-300 underline">witness</a> - no peer device required to start. You don&apos;t see any of this; it feels like tapping &ldquo;Create Account.&rdquo;</p>
             <p><strong className="text-sky-300">Minute 0:30</strong> - You pick a display name (not unique - identity lives in the hardware, not usernames). No email required. No password to remember.</p>
             <p><strong className="text-sky-300">Minute 1:00</strong> - The app suggests linking a second device for higher trust. You scan a QR code with your phone. Your two devices witness each other, forming your first identity constellation.</p>
-            <p><strong className="text-sky-300">Minute 2:00</strong> - You browse available communities. You join one that interests you. Your trust starts at the default newcomer level - low but nonzero. Actions cost 1.4x until you prove yourself.</p>
+            {/* Aug-12, found while fixing the ceiling bullet above (same class, same page): these two
+                lines put "Your trust starts at the default newcomer level" immediately before
+                "Actions cost 1.4x", so the walkthrough read the surcharge off the wrong tensor.
+                THE 1.4X IS NOT A TRUST EFFECT. /coherence-index owns that number and derives it:
+                "with CI 0.85, actions cost about 1.4x their base price (1/0.85^2 ~ 1.38)". Trust
+                cannot produce it at any value - canon section 9.1's trust_modifier is bounded to
+                [0.8, 1.0] of base, so trust moves you between base and a discount, never above base.
+                Both effects are real and they are not the same lever: low trust costs more THAN A
+                HIGH-TRUST ACTOR (the ceiling bullet above), a low CI costs more THAN BASE PRICE.
+                No numeral is imported here and none is moved: /coherence-index's 1.4x and ~38% are
+                the same figure under a "change both or neither" guard, and this page cites neither.
+                Deliberately NOT touched: /coherence-index says CI above 0.9 makes the surcharge
+                disappear entirely, which sits oddly with minute 5:00's "slightly lower". That
+                mismatch predates this fix; do not sharpen it here without deciding it there.
+                SWEEP CRITERION for the next session, because naming the axis here makes every loose
+                use falsifiable: an instance is in scope only if it NAMES TRUST as the cause. Fixed:
+                these two. Also fixed under it: /why-web4's "1.4x newcomer premium" bullet, whose two
+                siblings in the same list are trust-keyed. Left, and why: LCTSetupMockup's
+                "Newcomer rate: 1.4x" chip (states the surcharge, names no cause, and sits above the
+                paragraph that introduces CI, so labelling it there would front-load the acronym) and
+                how-it-works' two instances (already CI-keyed) and /day-in-web4's "40% more than
+                veterans pay - you have no consistency history yet" (already CI-keyed). */}
+            <p><strong className="text-sky-300">Minute 2:00</strong> - You browse available communities. You join one that interests you. Your trust starts at the default newcomer level - low but nonzero. Actions cost about 1.4&times; base price, and that surcharge comes from your{" "}
+              <a href="/coherence-index#why-ci-starts-low" className="text-sky-400 hover:text-sky-300 underline">Coherence Index</a>
+              {" "}rather than from your trust: the system has no established pattern of yours to check this behavior against yet.</p>
             <p><strong className="text-sky-300">Minute 3:00</strong> - You make your first contribution. It costs ATP, and you see your balance update. The community sees you as a new member with no history - but with verified identity (not a throwaway bot).</p>
-            <p><strong className="text-sky-300">Minute 5:00</strong> - You&apos;ve made 2-3 contributions. Your trust has already started building. The 1.4x premium is slightly lower. It feels like any other community - except there&apos;s no spam in your feed.</p>
+            <p><strong className="text-sky-300">Minute 5:00</strong> - You&apos;ve made 2-3 contributions. Your trust has already started building, and so has the consistency record that sets the surcharge. The 1.4x premium is slightly lower. It feels like any other community - except there&apos;s no spam in your feed.</p>
           </div>
           <p className="text-xs text-gray-500 mt-3">
             <strong>Key difference from Web2:</strong> No email. No password. No CAPTCHA. No phone number. Identity is your device, not a string you type. The tradeoff: you need to keep your device, and adding devices later strengthens your identity.
