@@ -2,6 +2,126 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-13 15:00 session - the hardware sentence with the word hardware taken out
+
+**No open PRs at start.** Second slot on `visitor/logs/2026-08-13.md` (the 09:00 session took HIGH
+1 + HIGH 2 as #543 and fenced HIGH 3). Took **MEDIUM 7 with its Unanswered Question 2**, and
+**MEDIUM 8 + LOW 10**, which are two rows of one badge key.
+
+### MEDIUM 7 + Unanswered Q2: the answer was on page 1 already, one clause later
+
+`/tldr` said *"your own device is your day-zero witness for your identity"* with no qualifier, and
+linked to a FAQ whose first words are *"Short answer: the chip itself does."* The visitor:
+*"The reassurance is a hardware feature described without the word hardware."* Their Q2 followed
+from it: *"What witnesses a software-only newcomer on day zero? The bootstrap answer given is a
+manufacturer key in a security chip, which by definition that user does not have."*
+
+This is an **entailment, not a contradiction**. Both halves already shipped and never met: the
+same `/tldr` sentence continues *"from your first action onward it is the community you join that
+witnesses what you do"*, which IS the software-only answer. The defect was that the reader takes
+the whole sentence as the hardware story because nothing marks the branch.
+
+Two edits, one on each side of the link:
+
+- `/tldr`: one sentence added after the existing one. Both branches named. `carries less weight`
+  is propagated from this site's own `lct-explainer` Key Duplication row, not coined.
+- `/lct-explainer#first-device-bootstrap`: the chipless branch, which the FAQ had never
+  enumerated. Placed directly under the short answer and two paragraphs **above** the
+  NASCENT/ACTIVE paragraph, deliberately.
+
+> **The visitor's literal suggestion points backwards, and the guard now says so.** They asked us
+> to *"say the day-zero witness is the device's security chip."* Taken alone that pushes `/tldr`
+> toward hardware-as-entry, which is the claim **Q8 Ruling 1 answered against**
+> (`LCT-linked-context-token.md` 1.2 clause 1: weak evidence MUST NOT be excluded, only weighed as
+> riskier). The irony worth keeping: **the visitor's naive reading of the line was correct against
+> canon.** "You can start alone" is true. The defective surface was the explainer with no chipless
+> branch, which is what actually got fixed.
+
+**Grounding, affirmative rather than a gap.** `web4-standard/core-spec/multi-device-lct-binding.md`
+2.2.4 "Software-Only Fallback" gives Security Level Low, Ubiquity **Universal**, and Recommended
+Role **"Bootstrap, low-trust contexts only"**, with the Constraints line *"Cannot be sole anchor
+for recovery quorum"*. Canon **names** software-only as the bootstrap-role anchor, so the software
+key is the day-zero anchor in its weak form, not the absence of one.
+
+Three things the new paragraph deliberately does not say, each one caught by the policy review:
+
+1. Not *"nothing external corroborates it"*. Canon's software verifier returns
+   `anchor_verified=True` ("Software verification is always 'verified' (it's just weak)"). What is
+   absent is proof of **binding**, not corroboration. An over-pessimistic absolute is as wrong as
+   an over-optimistic one.
+2. **No number.** Both grounding sources carry ceiling **0.4** against this site's 0.50
+   calibration, and the paragraph renders about a screen above `#software-only-survival`, fenced
+   under Q1. Mechanism only.
+3. The recovery-quorum clause reads *"which is why this page says, further down, ..."* and **not**
+   *"the same fact"*. Canon's rule is **anchor-class**; this page's drop-your-phone line is
+   **witness-count**. They come apart for a two-software-device user, who has a second witness and
+   still no eligible anchor. [[borrowed-word-means-something-else-there]]: canon's *anchor* is not
+   this page's *witness*.
+
+**Sweep obligation, stated rather than left implicit.** "day-zero witness" renders on four
+surfaces. `/tldr` was the only unqualified one; the other three each name the chip inside their own
+clause, so none can be read as chip-free. The criterion is in the guard, with its exclusions, so
+the count is re-derivable instead of a bare integer.
+
+### MEDIUM 8 + LOW 10: the page that owns the badge key was less careful than the page that borrows it
+
+Both rows of `/running-now#badge-key`, and both fixes make the page **shorter**. Rendered words in
+the key: **63 before, 49 after (-14)**.
+
+| Row | Was | Now | Shape |
+|---|---|---|---|
+| Reference | "built and runnable. **Finished code you could install and start today.** Runnable is not the same as running in production." | the same minus the middle sentence | bare **deletion** |
+| Running | "deployed and operational today. Live instances actually exist and are in day-to-day use." | `/tldr`'s two sentences, verbatim | **relocation** |
+
+MEDIUM 8: hardbound is badged Reference on that same page, which also calls it not
+production-ready with hardware binding unvalidated on device. `/tldr` was more careful **by
+subtraction**: its row never had the "Finished code" sentence. So the fix is to delete, not to
+caveat, and nothing replaced it.
+
+LOW 10 is the **third** sitting on the Running row, and the third different fix:
+
+| Pass | Shipped | Filed again because |
+|---|---|---|
+| Jul-30 (#496) | ownership (whose machines) | "the badge definition is stronger than the fact under it" |
+| Aug-04 | the scope, as a paragraph under the rows | it read as body text: third of three same-weight gray paragraphs |
+| Aug-13 | the scope, **inside the row** | pending Aug-14 retest |
+
+The tell that it is placement and not wording: the Aug-13 visitor credited the caveat to `/tldr`
+and to the hestia entry three sections down, **never to the paragraph sitting immediately under the
+rows**. What stayed in that paragraph is only what a row cannot carry (which piece is badged
+Running, plus the link down); it is now routing, not statement. Both rows are byte-identical to
+`/tldr`'s, so that page's declared strict-subset relation holds in outcome.
+
+> **A subset invariant can be satisfied from the wrong side.** `/tldr`'s guard says canonical
+> statements land on `/running-now` first. Here the reconciliation ran the other way, by deleting
+> from the canonical page, because on these two rows the derivative was the careful one. That is
+> allowed for a deletion or a relocation and not for a new claim, and the guard now records the
+> distinction rather than reading as violated.
+
+### Guard hygiene done in the same pass
+
+- `/tldr`'s Aug-04 guard claimed the scope was *"cut to a parenthetical"*. The row is two full
+  sentences. **Stale before this session touched it**; corrected and attributed to Aug-04, not to
+  this edit.
+- `/running-now`'s Aug-04 guard narrated the paragraph as the read-point fix. Item C moves that
+  clause into the row, so the narration was inverted. Rewritten; its three prohibitions (no fourth
+  tier, no hedge on tier ORDER, no "no outside users" absolute) survive verbatim and now bind the
+  row.
+
+### Verified but NOT taken (next session, do not re-derive)
+
+- **LOW 9 / Unanswered Q6** is answered and cheap: `../web4/web4-core/web4-trust-core/` holds
+  **both** manifests. `Cargo.toml` name = `web4-trust-core`, `pyproject.toml` name = `web4-trust`.
+  One library, two language-native names. `/the-standard` needs one clause saying so.
+- **Unanswered Q3** ("if I start on hestia, does my software-only history transfer when I upgrade
+  to hardware?") is the one the visitor called *"the single most practical question I had."*
+  Researching A2 did **not** surface an answer in canon, so it is an escalation rather than a fix.
+  Not filed this session because it was out of the approved scope; file it before treating it.
+- HIGH 3 stays fenced under Q1. MEDIUM 4/5/6 stay fenced under Q5.
+
+**Retest gates (Aug-14 05:00):** does a reader of `/tldr` page 1 still take the day-zero witness as
+hardware-free, or as hardware-only? Does the Running row still read as an unscoped adoption claim?
+
 ## Aug-13 09:00 session - the promise on page 1 and the reckoning on page 9
 
 **No open PRs at start.** First slot on the fresh `visitor/logs/2026-08-13.md`. Took **HIGH 1 and

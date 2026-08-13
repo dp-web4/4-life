@@ -59,37 +59,74 @@ export default function RunningNowPage() {
               <MaturityBadge tier="spec" />
               <span>defined in the Web4 standard. Written down and stable, not yet built here.</span>
             </div>
+            {/* Aug-13 visitor, both rows, one edit each. Net words DOWN.
+
+                MEDIUM, Reference row: "The key defines Reference as 'Finished code you could
+                install and start today,' but hardbound is badged Reference while the same page
+                says 'This is not production-ready' and its hardware binding is not validated on
+                real devices. Hardware binding is hardbound's whole purpose." Their suggestion was
+                to move /tldr's more careful wording here, and /tldr's row is more careful by
+                SUBTRACTION: it never had the "Finished code" sentence. So this is a bare deletion
+                ([[density-guard-means-delete-not-caveat]]). "built and runnable" already carries
+                installable-today, which is what the Spec row above contrasts against. Nothing
+                replaced it and nothing should.
+
+                LOW, Running row: the scope now IN this row is /tldr's, verbatim. It already
+                existed on this page, as the paragraph below - which was itself the Aug-01
+                visitor's fix for this identical complaint. The Aug-13 visitor filed the row again
+                and credited the caveat to /tldr and to the hestia section further down, never to
+                the paragraph sitting immediately under these rows. Read-it-and-still-filed-it
+                twice, so the residual is PLACEMENT, not wording
+                ([[routing-stating-weighting-three-fixes]]): on /tldr the scope is inside the row,
+                here it was one paragraph too late, in the third of three same-weight gray
+                paragraphs a reader takes as body text after the key.
+
+                Both rows are now byte-identical to /tldr's, which keeps that page's declared
+                strict-subset relation intact in the only way that survives a deletion from the
+                canonical side. */}
             <div className="flex items-center gap-3">
               <MaturityBadge tier="reference" />
-              <span>built and runnable. Finished code you could install and start today. Runnable is not the same as running in production.</span>
+              <span>built and runnable. Runnable is not the same as running in production.</span>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-start gap-3">
               <MaturityBadge tier="running" />
-              <span>deployed and operational today. Live instances actually exist and are in day-to-day use.</span>
+              <span>deployed and operational today, in day-to-day use. The daily use counted so far is the building lab&apos;s own, so this badge does not claim adoption.</span>
             </div>
           </div>
-          {/* Aug-01 visitor LOW, second sitting on the same row. #496 (Jul-30, 94db436)
-              took the OWNERSHIP half of that visitor's suggestion and deliberately left the
-              DEFINITION half ("Badge tier is NOT touched", guard below). The Aug-01 visitor
-              demonstrably read the ownership fix ("Four machines belonging to the people who
-              built it") and filed the row again anyway, against the definition: "the badge
-              definition is stronger than the fact under it." Read-it-and-still-filed-it, so
-              the missing clause is exact, not a restructure. The scoping sentence already
-              existed on this page ("Daily use by the people who build it is what the Running
-              badge claims, and it does not claim adoption") but three sections below, inside
-              the hestia section, where a reader who formed the belief at this legend may never
-              land. Propagated up to the read point in sense from the paragraph now anchored
-              at id="whose-machines"; that paragraph is unchanged and this line links to it.
-              Two things this must NOT become: a fourth tier, or a hedge on the tier ORDER
-              stated below (the Aug-01 visitor said naming the owner still leaves a legitimate
-              Running badge, and #496's guard records the same). And it does not say "no
-              outside users": the plugin and SDKs are published, so that absolute is not ours
-              to print. It scopes the deployment this page COUNTS, which is all the anchored
-              paragraph does. */}
+          {/* HISTORY, and the reason this is now two lines instead of one paragraph.
+
+              Aug-01 visitor LOW, second sitting on the Running row. #496 (Jul-30, 94db436) took
+              the OWNERSHIP half of that visitor's suggestion and deliberately left the DEFINITION
+              half ("Badge tier is NOT touched", guard below). The Aug-01 visitor demonstrably read
+              the ownership fix ("Four machines belonging to the people who built it") and filed
+              the row again anyway, against the definition: "the badge definition is stronger than
+              the fact under it." The scoping sentence already existed on this page ("Daily use by
+              the people who build it is what the Running badge claims, and it does not claim
+              adoption") but three sections below, inside the hestia section. Aug-04 propagated it
+              up to the read point AS THIS PARAGRAPH.
+
+              Aug-13: that was still not the read point. The visitor filed the row a third time
+              ("The Running key says ... with no caveat") and credited the caveat to /tldr and to
+              the hestia entry below, never to this paragraph, which sits immediately under the
+              rows. So the clause moved INTO the row itself (guard above the rows), in /tldr's
+              wording, and what stayed here is only what a row cannot carry: which piece is badged
+              Running, and the link down. This paragraph is no longer the statement of the scope;
+              it is the routing. Do not re-add "does not claim adoption" here - it would then
+              render twice within about forty pixels, and the density call was the whole reason
+              the Aug-04 version read as body text.
+
+              UNCHANGED PROHIBITIONS, all three still binding on the row above:
+              - it must not become a fourth tier;
+              - it must not hedge the tier ORDER stated below (the Aug-01 visitor said naming the
+                owner still leaves a legitimate Running badge, and #496's guard records the same);
+              - it must not say "no outside users": the plugin and SDKs are published, so that
+                absolute is not ours to print. It scopes the deployment this page COUNTS, which is
+                all the anchored paragraph below does.
+              The id="whose-machines" paragraph itself is still unchanged, and its own guard's
+              instruction ("if you reword it, reword the badge-key line with it") now points at the
+              row rather than at this paragraph. */}
           <p className="mt-4 text-sm text-gray-400 leading-relaxed">
-            What Running does not claim is adoption. The one piece badged{" "}
-            <MaturityBadge tier="running" /> today is hestia, and the daily use counted for
-            it is the lab&apos;s own:{" "}
+            The one piece badged <MaturityBadge tier="running" /> today is hestia:{" "}
             <a href="#whose-machines" className="text-emerald-400 underline hover:text-emerald-300">
               whose machines those are
             </a>
