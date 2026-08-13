@@ -556,9 +556,21 @@ export default function HowItWorksPage() {
             is the whole change here: no figure moved, and the "About that 112:" heading is a
             separate Aug-12 MEDIUM (the callout names a number the reader may never have seen,
             because the demo reaches 112 about 30 seconds in) that this pass does NOT treat.
-            Do not add a figure here; 112 is already on screen in the demo. */}
+            Do not add a figure here; 112 is already on screen in the demo.
+
+            Aug-13: that MEDIUM taken, and the prohibition above is honored rather than reasoned
+            away. The visitor offered two fixes ("print the ending balance in text before
+            disclaiming it, OR reword to not name a number the reader may never have seen"); the
+            line above forbids exactly the first, so this is the second, and NO figure was added.
+            The defect was never that 112 is unexplained, it was that the heading pointed at
+            nothing: "I was reading a disclaimer about a number that did not exist." Four words
+            name the referent. The literal string "About that 112" is preserved because the
+            #karma-carries guard further down this file cites this callout by that string.
+            Do not "improve" this by glossing 100 + 12 here: that gloss is the demo's own
+            rebirth caption, one screen up, and this page is the one the same browse called a
+            30-to-40 minute read sold as 10 ([[density-guard-means-delete-not-caveat]]). */}
         <p className="text-xs text-amber-300/70 mb-8 leading-relaxed">
-          <strong className="text-amber-300">About that 112:</strong> how much karma carries is not
+          <strong className="text-amber-300">About that 112 in the demo above:</strong> how much karma carries is not
           settled, and this is one modelling choice, not the rule. The{" "}
           <a href="#karma-carries" className="text-amber-300 hover:text-amber-200 underline">
             karma examples further down this section
@@ -1163,7 +1175,7 @@ export default function HowItWorksPage() {
 
             {/* Anchor added Aug-12 (15:00). Demand-driven, like every id on this site, and this
                 one has TWO inbound links, both in this file:
-                (1) the "About that 112:" callout above the Birth section, whose own guard used to
+                (1) the "About that 112" callout above the Birth section, whose own guard used to
                     say it pointed by prose because "the karma examples have no id";
                 (2) EndOfLifeCaveatShort at the end of #example, which needs to route a reader to
                     the full caveat 40 lines below these examples.

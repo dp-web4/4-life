@@ -446,25 +446,46 @@ export default function FirstContactPage() {
                   <div className="text-xs text-red-400 font-semibold mb-1">Act 5</div>
                   <div className="text-sm font-bold mb-1">Die &amp; Reborn</div>
                   <div className="text-xs text-gray-400 mb-2">Karma carries forward</div>
-                  <div className="flex gap-1 text-xs">
-                    <span className="bg-red-900/40 text-red-300 px-1.5 py-0.5 rounded">ATP=0</span>
-                    {/* Aug-09 visitor HIGH x2, and they are one defect. This badge row was the
-                        first place a reader met the rebirth number, and it showed only the DELTA:
-                        "ATP=0" next to "+12 bonus". The page already states the TOTAL three times
-                        (:65 ledger data, :188 noscript step 7, :857-858 walkthrough recap) and the
-                        guard at :452 states the canon outright ("+12 = karma bonus, 112 = 100+12").
-                        The two surfaces the visitor actually read are the only two that dropped the
-                        base ([[page-ships-the-answer-and-denies-it]]).
-                        Both HIGHs followed from that omission, and the second one is the expensive
-                        one: having read /atp-economics ("new participants receive a 100 ATP starter
-                        grant"), they concluded rebirth leaves you 8x worse off than never joining,
-                        which inverts this card's own stated moral. Their words: "the illustration
-                        argues against its own moral." It does not. 112 > 100. Only the badge did.
-                        "112 total" is ADDED, not swapped in for "+12 bonus": :469 four lines below
-                        refers back to "the +12 bonus" by name, so replacing the delta badge would
-                        orphan that sentence. Keep both badges in sync with :857-858 if either moves. */}
-                    <span className="bg-emerald-900/40 text-emerald-300 px-1.5 py-0.5 rounded">+12 bonus</span>
-                    <span className="bg-emerald-900/40 text-emerald-300 px-1.5 py-0.5 rounded">112 total</span>
+                  {/* Aug-09 visitor HIGH x2, and they are one defect. This badge row was the
+                      first place a reader met the rebirth number, and it showed only the DELTA:
+                      "ATP=0" next to "+12 bonus". The page already states the TOTAL three times
+                      (the `simulationSnapshots` tick-14 row, the <noscript> "Step 7 - Rebirth",
+                      and the walkthrough recap: grep -n "The Return: Karma Compounds") and the
+                      guard below this row states the canon outright ("+12 = karma bonus,
+                      112 = 100+12"). The two surfaces the visitor actually read are the only two
+                      that dropped the base ([[page-ships-the-answer-and-denies-it]]).
+                      Both HIGHs followed from that omission, and the second one is the expensive
+                      one: having read /atp-economics ("new participants receive a 100 ATP starter
+                      grant"), they concluded rebirth leaves you 8x worse off than never joining,
+                      which inverts this card's own stated moral. Their words: "the illustration
+                      argues against its own moral." It does not. 112 > 100. Only the badge did.
+                      "+12 bonus" must survive AS A NAMED CHIP: the "Suspended, not deleted"
+                      paragraph below the grid refers back to "the +12 bonus" by name, so
+                      dropping the delta would orphan that sentence.
+
+                      Aug-13 (Aug-12 visitor MEDIUM): the base was there and the row still did not
+                      read. Three chips stated three quantities with no marker for WHICH MOMENT
+                      each belonged to, so "ATP=0" and "112 total" landed as simultaneous:
+                      "ATP equals zero and also 112? I stared at that for a while ... nothing next
+                      to it says which." This card compresses two events (death, then rebirth) that
+                      every other act on this rail does not, and it was the only card whose chips
+                      did not say so. The chips now carry the moment, not just the number.
+                      Same defect, second half: Acts 1-4 each end on a trust chip (0.50 / 0.56 /
+                      0.48 / 0.62) and Act 5 had none, "in the act about death and rebirth", which
+                      is where they most wanted it. 0.54 is NOT a new figure: it is
+                      `simulationSnapshots` tick 14 `trust_after`, and it already renders in the
+                      <noscript> step 7 and the recap named above.
+                      NO ARROW on it, deliberately, and this is the one thing not to "fix": Acts
+                      2-4 arrow against the PREVIOUS act, and Alice ends Act 4 at 0.62, so an up
+                      arrow here would be false and a down arrow would read as rebirth costing her
+                      trust. It is a restart value, exactly like Act 1's bare "0.50", and the
+                      parallel with 0.50 is the card's moral (you restart above neutral).
+                      flex-wrap added because the chips no longer fit one line of a
+                      sm:grid-cols-5 column. Keep every figure here in sync with the recap. */}
+                  <div className="flex flex-wrap gap-1 text-xs">
+                    <span className="bg-red-900/40 text-red-300 px-1.5 py-0.5 rounded">dies at ATP 0</span>
+                    <span className="bg-emerald-900/40 text-emerald-300 px-1.5 py-0.5 rounded">+12 bonus &rarr; 112</span>
+                    <span className="bg-emerald-900/40 text-emerald-300 px-1.5 py-0.5 rounded">reborn at 0.54</span>
                   </div>
                 </div>
               </div>
