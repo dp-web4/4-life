@@ -131,7 +131,10 @@ export default function TLDRPage() {
 
               Wording remains a strict subset of the /running-now legend (same page the
               link lands on) so the two surfaces cannot drift apart, and the link names
-              the third tier (Spec) so a Spec badge met later is not a surprise. The
+              the third tier (Spec) so a Spec badge met later is not a surprise.
+              (Aug-13: the closing paragraph now carries one clause that is NOT from that
+              legend, by necessity, and the guard beside it says which and why. Read that
+              before "restoring" the subset.) The
               "not how good it is" half is load-bearing: hardbound is badged Reference and
               this page's own prose calls it "a usable, actively hardened enterprise tier"
               (a mismatch the Jul-27 visitor filed separately), so a bare "later is better"
@@ -164,9 +167,57 @@ export default function TLDRPage() {
                 </span>
               </div>
             </div>
+            {/* Aug-12 visitor, two items on this one paragraph.
+
+                (a) "They run in that order" was read as the PIECES running, not the badges
+                ordering: "I read 'they run' as the pieces running, not the badges ordering.
+                Took two passes." On a site where Running is itself a badge name, "they" was
+                doing too much work. /running-now#badge-key ALREADY says "The three run in that
+                order" and needed no change; this copy was the one that had drifted off it.
+                Mirrored rather than re-authored, because the subset invariant above runs in
+                that direction ([[propagate-the-sentence-not-your-summary]]).
+
+                (b) LOW: "The core standard card is badged just Reference here. On /running-now
+                the same piece is badged Spec + Reference. Small, but I noticed, because badges
+                were being sold to me as precise." The gloss defined two tiers, ranked them, and
+                never said a piece can carry MORE THAN ONE, so a card showing one tier read as
+                the whole claim about that piece. "A piece can carry more than one" and "the core
+                standard below is both Spec and Reference" are verbatim from the canonical legend
+                (grep -n "carry more than one" src/app/running-now), so the TIER claims stay a
+                strict subset.
+
+                One clause is deliberately NOT from the source and cannot be: "these cards show
+                only the furthest it has reached" is a statement about THIS grid's rendering, which
+                /running-now does not own and could not make. It is true of all four cards today
+                (core standard Spec+Reference -> Reference, hub Reference, hestia Running,
+                hardbound Reference) and is now a CONSTRAINT on this grid: if a card here ever
+                renders a non-furthest tier, or MaturityBadges replaces MaturityBadge on one of
+                them, this clause is falsified and must move with it. The subset invariant is
+                about tier DEFINITIONS drifting apart, and that is intact.
+
+                NOT fixed by badging the card <MaturityBadge tier="spec" /> + Reference to match
+                /running-now, which is the visitor's first option and looks cheaper. It would put
+                an UNDEFINED tier chip on this page: the two rows above define Reference and
+                Running only, and they exist because the absence of a tier key HERE was filed
+                three separate times (Jul-24 LOW, Jul-27 LOW, Jul-28 MEDIUM). Matching the chips
+                would re-open three items to close one.
+
+                Sweep: /the-standard's hero eyebrow also badges the core standard bare Reference
+                and is deliberately LEFT ([[adding-a-distinction-creates-a-sweep-obligation]]).
+                Criterion: this clause is owed where a reader COMPARES pieces, and only the two
+                card grids do that (this page and /running-now). /the-standard badges one piece
+                on its own page with nothing to be inconsistent with. /onramp's and the landing
+                page's badges are not core-standard badges at all (they badge "How the pieces
+                compose" and "Where this actually stands"), so they are outside this class.
+
+                Both edits are additive to a box LOW 14 calls too long. Deliberate: a badge that
+                contradicts the maturity ledger is a correctness defect and outranks the density
+                LOW. The clause is load-bearing; a density pass must not trim it back out. */}
             <p className="text-gray-400 text-sm leading-relaxed mt-3">
-              They run in that order, measured by distance from written down to in daily
-              use. The badge says how far a piece has travelled, not how good it is:
+              The three run in that order, measured by distance from written down to in daily
+              use. A piece can carry more than one, and these cards show only the furthest it
+              has reached: the core standard below is both Spec and Reference. The badge says
+              how far a piece has travelled, not how good it is:
               hardbound below is badged <MaturityBadge tier="reference" /> and is a usable,
               actively hardened tier.{' '}
               <Link href="/running-now#badge-key" className="text-sky-400 hover:underline">

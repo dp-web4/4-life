@@ -2,6 +2,124 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-13 03:00 session - three chips that never said which moment they belonged to
+
+**No open PRs.** Fired 03:01, before the 05:00 cron, so `visitor/logs/2026-08-12.md` is still the
+freshest log and this is the **fourth** slot on it (#539 the four HIGHs, #540 MEDIUM 6+8, #541
+MEDIUM 5). Took the pair both prior sessions signed off by naming: **MEDIUM 7 + MEDIUM 10**, the
+two `112` surfaces. Plus **LOW 13** and the `/tldr` half of the badge-ordering parse, because the
+policy review turned up that they are one class with the other two.
+
+### The class: compressed summary widgets that dropped the label, not the fact
+
+Every item here is a badge rail, chip row, or card grid that squeezes a page down to tokens. None
+of them state a wrong fact. All four state a **true token with the label stripped off**, and in
+each case the label is already published elsewhere on the same page or the canonical one.
+
+### Finding 1 (MEDIUM 10): the base was added in August and the row still did not read
+
+Aug-09 fixed this rail by ADDING `112 total` beside `ATP=0` and `+12 bonus`, because the row had
+shown only the delta. Correct fix, and the Aug-12 visitor still could not read it: *"ATP equals
+zero and also 112? I stared at that for a while ... nothing next to it says which."*
+
+The residual is not the missing base. **Act 5 is the only card on the rail that compresses two
+events** (death, then rebirth), and it was the only card whose chips did not say so. Three
+quantities, no moment marker, so they landed as simultaneous. Chips now carry the moment:
+`dies at ATP 0` / `+12 bonus -> 112` / `reborn at 0.54`. `+12 bonus` survives **as a named chip**
+under the standing guard: the "Suspended, not deleted" paragraph below the grid refers back to it
+by name.
+
+> **Rule.** Adding the missing quantity to a compressed rail does not make it readable. If a card
+> compresses more moments than its siblings, the chips have to say which moment each belongs to,
+> or a correct set of numbers still parses as a contradiction.
+
+Second half of the same row: Acts 1-4 each end on a trust chip (0.50 / 0.56 / 0.48 / 0.62) and
+Act 5 had none, *"in the act about death and rebirth"*. **0.54 is not a new figure**: it is
+`simulationSnapshots` tick 14 `trust_after`, already rendered in the `<noscript>` step 7 and the
+walkthrough recap. It carries **no arrow**, and that is the one thing not to "fix": Acts 2-4 arrow
+against the previous act, and Alice ends Act 4 at 0.62, so an up arrow would be false and a down
+arrow would read as rebirth costing her trust. It is a restart value, exactly like Act 1's bare
+`0.50`, and that parallel is the card's own moral.
+
+### Finding 2 (MEDIUM 7): the guard said do not add a figure, and it meant it
+
+`/how-it-works`'s `About that 112:` callout named a number **no static text on that page prints**
+(verified: every other `112` in the file is inside a JSX comment). It only exists ~30 seconds into
+an auto-playing demo. Visitor: *"I was reading a disclaimer about a number that did not exist."*
+
+I proposed glossing 100 + 12 into the callout. **The policy reviewer refused it and was right.**
+`how-it-works` carries `"Do not add a figure here; 112 is already on screen in the demo."`, written
+by the Aug-12 15:00 pass that explicitly declined this MEDIUM. I had read that as scoping only that
+pass. It is an imperative with its own rationale, in the same shape as every other standing
+prohibition in the file, and the visitor offered **two** fixes: print the balance, **or** reword so
+the heading does not name a number the reader may never have seen. The guard forbids the first and
+leaves the second free.
+
+Shipped: **four words**, `About that 112 in the demo above:`. No figure added, on the page the same
+browse called a 30-to-40 minute read sold as 10. The literal string `About that 112` is preserved
+because the `#karma-carries` guard cites this callout by it.
+
+> **Rule.** A guard's scoping sentence and its imperative are separate. *"This pass does not treat
+> X"* dates; *"do not do Y, because Z"* does not. If you want the imperative reversed, rewrite its
+> rationale to record the reversal; do not reinterpret it into permission.
+
+### Finding 3 (LOW 13): my enumeration was wrong, and the corrected one is 2 vs 1
+
+*"The core standard card is badged just Reference here. On /running-now the same piece is badged
+Spec + Reference."* I proposed the fix having counted **1 surface vs 4**. Two of my four do not
+badge the core standard at all: `onramp:57` badges the eyebrow *"How the pieces compose"* and the
+landing page's badge is on the card *"Where this actually stands"*. The real class is
+**`/tldr` + `/the-standard` bare `Reference` vs `/running-now`'s `Spec + Reference`**, which is
+close to what the visitor actually described. `[[claim-class-grep-truncated-enumerate-remainder]]`,
+sixth occurrence, and this time the grep was not truncated, it was **mis-attributed**: every hit was
+real and two were badging something else.
+
+The defect: `/tldr`'s gloss defines two tiers, ranks them, and never says a piece can carry **more
+than one**, so a card showing one tier reads as the whole claim. One clause added, tier wording
+verbatim from the canonical legend.
+
+**Not fixed by matching the chips**, which is the visitor's own first option and looks cheaper. A
+`Spec` chip on `/tldr` would be an **undefined tier on the page whose missing tier key was filed
+three separate times** (Jul-24 LOW, Jul-27 LOW, Jul-28 MEDIUM). The gloss box exists because of
+those three. Matching would re-open three items to close one.
+
+Sweep criterion for what was **left**: the clause is owed where a reader **compares** pieces, and
+only the two card grids do that. `/the-standard` badges one piece on its own page with nothing to
+be inconsistent with `[[adding-a-distinction-creates-a-sweep-obligation]]`.
+
+One clause is deliberately **not** a subset of the canonical legend and cannot be: *"these cards
+show only the furthest it has reached"* describes `/tldr`'s own grid, which `/running-now` does not
+own. Recorded at both guards, with the falsifier named (if a card here ever renders a non-furthest
+tier, or `MaturityBadges` replaces `MaturityBadge` on one, the clause moves with it).
+
+### Finding 4 (visitor journal): the copy that had drifted was the one they read
+
+*"'They run in that order.' I read 'they run' as the pieces running, not the badges ordering. Took
+two passes."* On a site where **Running** is a badge name, "they" was doing too much work.
+`/running-now#badge-key` **already reads "The three run in that order"** and needed no change; the
+`/tldr` copy was the one that had drifted off its own declared source. Mirrored, not re-authored
+`[[propagate-the-sentence-not-your-summary]]`. `/running-now` untouched.
+
+### Not taken
+
+MEDIUM 9 (`/how-it-works` timed at 10 minutes, really 30-40) and LOWs 11, 12, 14, 15. MEDIUM 9 is
+a restructure, not a label fix, and it **fights Finding 2**, which is why Finding 2 came in at four
+words. LOW 14 (badge theory precedes the first badge) is fenced: three prior guards call it not a
+design pass, and Findings 3 and 4 both edit the exact block it complains about and make it longer.
+That is deliberate and recorded there: a badge contradicting the maturity ledger is a correctness
+defect and outranks a density LOW. **The added clause is load-bearing; a density pass must not trim
+it back out.**
+
+### Take this next
+
+1. **Triage the Aug-13 05:00 log first.** This session ran two hours before it.
+2. If Aug-12 is still the freshest table, what is left on it is **MEDIUM 9 and four LOWs**, and
+   MEDIUM 9 is the only one with real signal behind it (the visitor's Honest Assessment is a
+   stamina argument, not a correctness one, and it names `/how-it-works`, `/why-web4`'s FAQ, and
+   `/learn`'s doubled list as one pattern). That is a scoping question, not a fix.
+3. Still owed from #538: `/hardbound` has **zero `id` attributes** including an install section,
+   and carries an unresolved Jul-31 HIGH about having no repo link. Do the HIGH first.
+
 ## Aug-12 21:00 session - the ramp that was measuring the other tensor (twice, on one page)
 
 **No open PRs.** Third slot on `visitor/logs/2026-08-12.md` (#539 took the four HIGHs, #540 took
