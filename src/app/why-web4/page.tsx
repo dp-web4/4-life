@@ -281,7 +281,10 @@ export default function WhyWeb4Page() {
                   roles, it is not what admits you. The anti-sybil argument survives intact because
                   it was always about the COST OF TRUST, not the cost of entry.
                   Endpoint-silent: says nothing about a software-only identity sitting at 0.50
-                  (ledger Q1). Sibling surface fixed in the same pass: lct-explainer:2231. */}
+                  (ledger Q1). Sibling surface fixed in the same pass: /lct-explainer, grep
+                  "accounts are cheap to create, but trust is not" (was cited as :2231, which
+                  had rotted to ~:2372 by Aug-13; named rather than numbered per
+                  [[guard-comment-cites-rot-name-the-target]]). */}
               <h3 className="text-lg font-semibold text-sky-400">Make identity expensive to fake</h3>
               <p className="text-gray-400 text-sm">
                 Earning trust should require physical hardware, not just an email address. Anyone can
@@ -301,13 +304,35 @@ export default function WhyWeb4Page() {
             <div>
               {/* June 12 visitor HIGH (browse A): "permanent" contradicted this page's own
                   youthful-mistakes FAQ ("Trust isn't permanent - it decays") and the decay
-                  half-lives on /trust-tensor. Persistent/unresettable is the accurate claim. */}
+                  half-lives on /trust-tensor. Persistent/unresettable is the accurate claim.
+
+                  Aug-13: "No more fresh starts for serial abusers" was the last unscoped
+                  instance of the no-fresh-starts universal in this list. Property 2 directly
+                  above was corrected on Aug-07 under Q8 Ruling 1 and its guard cites
+                  [[sweep-the-claim-not-the-sentence]]; that pass fixed property 2 and left
+                  property 3, its immediate sibling in the same list on the same page. The
+                  phrase here is the LITERAL "no more fresh starts", so it was missed even by a
+                  literal grep of the phrase the sweep was named for
+                  ([[claim-class-grep-truncated-enumerate-remainder]]).
+
+                  Same license as property 2: Q8 Ruling 1 (ANSWERED 2026-08-05), canon forbids
+                  excluding the software-only tier, so "no more fresh starts" is not true of
+                  Web4 as such. The claim that survives is the stronger one this page already
+                  makes two properties up: fresh starts get expensive, they are not abolished.
+
+                  The replacement clause is the formulation ALREADY SHIPPED on this page at the
+                  device-loss FAQ (grep "not of Web4 as such"), reused rather than re-derived so
+                  this page carries one phrasing of the claim and not two
+                  ([[propagate-the-sentence-not-your-summary]]). Endpoint-silent: no ceiling
+                  number, no 0.50, no at-threshold claim (Q1 and the Q8 equity half stay
+                  fenced). */}
               <h3 className="text-lg font-semibold text-sky-400">Make reputation portable and persistent</h3>
               <p className="text-gray-400 text-sm">
                 Your trust should follow you across platforms. Good behavior should compound. Bad
                 behavior should create lasting records visible to future interactions - records
-                that fade with time but can never be wiped by starting over. No more fresh starts
-                for serial abusers.
+                that fade with time but cannot be wiped by starting over. That last part is a
+                property of hardware anchoring, not of Web4 as such: anchored in software alone
+                there is no device to walk away from, so at that tier the record stays sheddable.
               </p>
             </div>
           </div>

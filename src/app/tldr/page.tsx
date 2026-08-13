@@ -331,11 +331,60 @@ export default function TLDRPage() {
         {/* The Result */}
         <div className="mb-10">
           <h2 className="text-2xl font-bold mb-4 text-green-400">The Result</h2>
+          {/* Aug-13 visitor HIGH. "Reputation is portable and cannot be reset by deleting an
+              account or switching platforms" carried no qualifier, on the FIRST page of the
+              five-page reading path, under a heading reading "The Result". The visitor filed it
+              as a headline promise on page 1 and found it false for their own tier six pages
+              later: "I filed that as a headline promise. Six pages later I learned it is not
+              true for the tier I would actually be using."
+
+              This is a missed member of the claim class the Aug-08 sweep discharged (ledger Q8
+              follow-up). It survived because it states the claim by SYNONYM: "reset by deleting
+              an account" never says "fresh start" or "hardware-bound", so every phrase-grep in
+              that sweep walked past it ([[sweep-the-claim-not-the-sentence]]).
+
+              Licensed by Q8 Ruling 1 (ANSWERED 2026-08-05): software-only anchoring is
+              conformant and canon forbids excluding the tier, so an unresettable record is not
+              true of Web4 as such.
+
+              SCOPING ONLY, deliberately, and NOT the /karma-consequences-style propagated
+              paragraph. Two reasons, both about this page rather than about density:
+              - This page has ZERO occurrences of "sheddable", "software-only" or "software
+                alone" to receive that paragraph, and the Aug-08 remedy for a receiving page
+                with no antecedents was to carry the unit whole. The 2-minute page cannot take
+                a unit.
+              - "tier" is NOT available as a word here. It appears 20+ times on this page
+                meaning the MATURITY badge (Spec / Reference / Running), under a guard that
+                exists because tier definitions drifting apart was filed three times. Anchor-tier
+                language would collide ([[borrowed-word-means-something-else-there]]). Hence
+                "anchored in hardware", and hence the why-web4:831 formulation below with its
+                "check which tier you are in" clause dropped.
+
+              Scope alone was judged insufficient: under a heading reading "The Result" a reader
+              defaults to assuming they are the described case, and /onramp actively recruits
+              them into the other one ([[keeping-the-true-half-can-still-reassure]]). So the
+              scope carries one routing clause. Formulation propagated verbatim in shape from
+              why-web4:831 ("X is a property of hardware anchoring, not of Web4 as such"); link
+              text propagated from first-contact:1100, the reading-path sibling that already
+              carries this exception. Do not re-derive either into a fresh variant
+              ([[propagate-the-sentence-not-your-summary]]).
+
+              Carries no ceiling number, no survival line, and no claim about a reader at
+              exactly 0.50 in either direction: that is Q1 and the Q8 equity half, both still
+              fenced. */}
           <p className="text-gray-300 leading-relaxed text-lg">
-            Actions carry proof. Authority is checkable. Reputation is portable and cannot be
-            reset by deleting an account or switching platforms. Humans and AI play by the same
+            Actions carry proof. Authority is checkable. Reputation is portable, and where your
+            presence is anchored in hardware it cannot be reset by deleting an account or
+            switching platforms. Humans and AI play by the same
             rules, because the rules are about behavior, not about who or what you are. And it
             works without a central authority deciding who counts as trustworthy.
+          </p>
+          <p className="text-gray-400 text-sm mt-3">
+            Unresettable reputation is narrower than it sounds: it is a property of hardware
+            anchoring, not of Web4 as such.{' '}
+            <Link href="/what-could-go-wrong#risk-accessibility" className="text-sky-400 hover:underline">
+              What that costs, and who it costs most &rarr;
+            </Link>
           </p>
         </div>
 

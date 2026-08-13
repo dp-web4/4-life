@@ -297,7 +297,38 @@ export default function HestiaPage() {
         </ol>
         <p className="text-sm text-gray-500 leading-relaxed mt-5 border-l-2 border-emerald-800/60 pl-4">
           All of this is shipped code at version 0.0.3 (Phase 2), and all of it but the
-          constellation step in 6 is in day-to-day use. One honest caveat: the
+          constellation step in 6 is in day-to-day use.
+        </p>
+        <p className="text-gray-300 leading-relaxed mt-4 border-l-2 border-amber-600/60 pl-4">
+          {/* Aug-13 SPLIT, weight only. Read this before the Jul-30/Aug-11 guard below it.
+
+              Everything from "One honest caveat" through the closing link used to be the tail
+              of the version note above, inside ONE <p className="text-sm text-gray-500">. The
+              Aug-11 pass put the three costs on the page (see below) and the Aug-13 visitor
+              STILL filed their absence as a HIGH, attributing all three facts to other pages:
+              "The page says the cap. It does not say what the cap costs me, which I only found
+              out by wandering off the reading path." They had quoted the two sentences
+              immediately before them, so they read past them.
+
+              Why: the only visual emphasis in ~15 lines of small gray text was the 0.50, so a
+              scanner took the number and left. A paragraph whose own first sentence says the
+              reader should know this "before you decide this is your long-term identity" was
+              rendering as footnote print appended to a version number. That is
+              [[visitor-v3-ghost-pattern]]: prominence, not absence.
+
+              So this is the third treatment of one item and each changed a different thing:
+              Jul-30 shipped ROUTING, Aug-11 shipped the STATEMENT, Aug-13 shipped the WEIGHT.
+              NOT ONE SENTENCE WAS REWRITTEN OR ADDED HERE. If a later pass diffs this and sees
+              a new paragraph, it is the split, not new content. Do not read it as license to
+              widen: the visitor's literal ask already shipped, and a fourth consequence would
+              be re-litigation.
+
+              The "One honest caveat" sentence moved DOWN into this paragraph rather than
+              staying with the version note, because it is the antecedent that names the tier
+              ("a software LCT held on your machine") for "anchoring in software alone" below.
+              Splitting them would have promoted the costs while orphaning the thing they are
+              costs OF ([[disclosure-both-halves-same-layer]]). */}
+          One honest caveat: the
           identity in this walkthrough is a software LCT held on your machine. Binding
           it to a physical security chip is the job of{" "}
           <Link href="/hardbound" className="text-emerald-400 underline hover:text-emerald-300">

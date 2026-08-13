@@ -262,8 +262,21 @@ export default function LearnJourney() {
         {
           id: "lct-explainer",
           title: "Identity: Verifiable Presence (LCT)",
+          // Aug-13: BOTH sentences carried the hardware-required universal, and the first was
+          // the load-bearing half. "makes your presence verifiable" asserted the chip as what
+          // MAKES presence verifiable; under Q8 Ruling 1 (2026-08-05) presence is verifiable
+          // without a chip, at a lower ceiling, so the repair is comparative ("harder to fake")
+          // rather than constitutive. "Faking identities means buying devices" was the
+          // consequence half. Both replaced with the destination page's own surviving claim:
+          // lct-explainer (grep "accounts are cheap to create, but trust is not") and
+          // why-web4 (grep "what hardware buys is a higher ceiling"), whose guard states the
+          // form exactly: "the ceiling caps high-trust roles, it is not what admits you ...
+          // it was always about the COST OF TRUST, not the cost of entry."
+          // The destination was corrected Aug-07 and this teaser was not, which is the
+          // /learn teaser-layer blind spot filed in WEB4-CANON-QUESTIONS. Test any rewording
+          // against: it must be false of NO software-only user.
           teaser:
-            "Your device's security chip makes your presence verifiable, no passwords, no accounts. Faking identities means buying devices.",
+            "Your device's security chip makes your presence harder to fake, no passwords, no accounts. Identities stay cheap to create; what hardware buys is a higher ceiling on how far trust can climb.",
           why: "Identity is the foundation. Without it, trust can't accumulate reliably and spam is free.",
           link: "/lct-explainer",
           duration: "6 min read",
@@ -316,8 +329,13 @@ export default function LearnJourney() {
         {
           id: "karma-consequences",
           title: "Consequences: How Karma Carries Forward",
+          // Aug-13: unscoped no-fresh-starts universal, and it contradicted the page it
+          // advertises. The Aug-08 sweep scoped the destination (karma-consequences, grep
+          // "Karma follows a hardware-anchored identity") but never touched its teaser.
+          // Scoped per Q8 Ruling 1: canon forbids excluding the software-only tier, where the
+          // record stays sheddable, so this is true of the hardware tiers only.
           teaser:
-            "Good behavior compounds; bad behavior follows you. Abandoning an identity means starting over from zero, not escaping your record.",
+            "Good behavior compounds; bad behavior follows you. Where identity is anchored in hardware, abandoning it means starting over from zero rather than escaping your record.",
           why: "Consequences are what make trust more than a score. They align incentives without an enforcer.",
           link: "/karma-consequences",
           duration: "8 min read",

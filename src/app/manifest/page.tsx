@@ -79,9 +79,16 @@ export default function ManifestPage() {
             <strong>Hardware-bound presence raises impersonation cost:</strong> LCTs bound to TPM/Secure Enclave
             make creating thousands of fake presences expensive (though not impossible for resourced attackers).
           </li>
+          {/* Aug-13: unscoped no-fresh-starts universal, same class as /learn:320 and the
+              Aug-08 /karma-consequences sweep. Scoped per Q8 Ruling 1 (2026-08-05): canon
+              forbids excluding the software-only tier, and at that tier there is no device to
+              abandon, so the record stays sheddable. The bullet directly above already
+              establishes the hardware vocabulary this borrows. No ceiling number and no
+              endpoint claim: Q1 and the Q8 equity half stay fenced. */}
           <li>
             <strong>Consequences persist:</strong> Bad behavior permanently damages trust (T3), and
-            abandoning an identity means starting over from zero. Karma follows the entity, not the account.
+            where presence is anchored in hardware, abandoning an identity means starting over from
+            zero rather than escaping the record. Karma follows the entity, not the account.
           </li>
           <li>
             <strong>Coherence provides behavioral signals:</strong> Physical and temporal constraints create

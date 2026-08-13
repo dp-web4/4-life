@@ -1408,6 +1408,80 @@ above (`/how-it-works`, `/first-contact`, `/your-internet`, `/identity-constella
 `/learn`, `/day-in-web4`). Re-run the **corrected** grep against each; the 13-line list for this
 page understated it by roughly 3x, and the same understatement should be assumed everywhere else.
 
+### Follow-up: `/learn`'s teaser layer is structurally invisible to page-level sweeps
+
+Filed 2026-08-13 (09:00 session), while fixing the Aug-13 visitor's two HIGHs. Not a canon
+question: Ruling 1 already settles the licensing. This records a **class of surface**, because
+the two stale instances found here are evidence of it rather than the point.
+
+**The structural finding.** `/learn`'s `LEARNING_PATH` is a data structure of `teaser` strings,
+each one a one-line summary of a *different* page's claim. A teaser therefore lives on a
+different page from the claim it restates. Every sweep this project has run has been
+page-scoped, so **every page-level fix since Aug-05 has corrected a page and left its teaser**,
+by construction and not by accident. `/learn` also owns the five-page reading path, so its
+teasers are read before the pages they summarize.
+
+**Evidence (both fixed this session).** Each contradicted a destination that had already been
+corrected:
+
+| Teaser | Destination | Destination fixed | Teaser was |
+|---|---|---|---|
+| the `/lct-explainer` card, *"Faking identities means buying devices"* | grep `accounts are cheap to create, but trust is not` | Aug-07 | untouched |
+| the `/karma-consequences` card, *"Abandoning an identity means starting over from zero"* | grep `Karma follows a hardware-anchored identity` | Aug-08 | untouched |
+
+**No count is published here, deliberately.** This ledger has recorded this one claim class at
+5, then 13, then found more twice again. The reproducible predicate instead:
+`grep -c '^\s*teaser:' src/app/learn/page.tsx` for the population, and for the class,
+`grep -rniE "start(ing)? over from zero|not escaping|abandoning an identity" src/`. **Derive
+your own total; do not carry one forward from this entry.**
+
+**The discriminator that makes the class greppable.** The phrase *"start(ing) over from zero"*
+carries **two opposite valences**, and only one of them is the claim:
+
+- **Deterrent sense** ("you cannot escape consequences"). True at the **hardware** tiers only.
+  This is the no-fresh-starts thesis and is what Ruling 1 licenses scoping.
+- **Harm sense** ("device loss destroys you"). True at the **software** tier only, and already
+  correctly scoped everywhere it appears.
+
+At the time of writing the grep returns 9 hits, 7 of them harm-sense and already correct, which
+is how two consecutive sweeps read the noise as handled and moved on. **Test by grammatical
+subject**: a bad actor *abandoning* an identity is the deterrent sense and needs the hardware
+scope; an honest user who *lost* a device is the harm sense and is already right.
+
+**Falsification test for any replacement wording**, adopted after the policy reviewer caught a
+draft of the `/lct-explainer` teaser that read *stricter* than the sentence it propagated
+(*"earning trust is what takes a device"*, which is false of every software-only user who earns
+trust below their ceiling): **the sentence must be false of no software-only user.** Preserve
+the ceiling / high-trust-roles qualifier without importing a number. The canonical form is
+`/why-web4`'s: *"the ceiling caps high-trust roles, it is not what admits you"*, and *"it was
+always about the COST OF TRUST, not the cost of entry."*
+
+**Scope call: FILE, do not sweep.** Auditing the remaining teasers against their destination
+pages is a larger task than the visitor friction that surfaced it, and running it hastily would
+manufacture exactly the truncated artifact this entry exists to prevent. Left for a scoped
+session.
+
+**One candidate flagged, deliberately NOT touched.** The `/coherence-framework` teaser
+(grep `the 0.5 threshold recurs`) is Q1-adjacent. Its destination does carry `C >= 0.5` and a
+`T3 >= 0.5` rebirth-eligibility comparator, which **Q1 above calls the deliberately-untouched
+legacy comparator**. The teaser asserts only that the threshold *recurs*, not what sitting at it
+means, so it is **not in this class and not urgent**. Recorded with that reasoning so a later
+pass does not read the flag as licence to touch the comparator.
+
+### Recurrence log: Q1 demanded again by the Aug-13 visitor, not answered
+
+The Aug-13 visitor filed as a HIGH that the site should state, where the software-only cap is
+stated, that such an identity *"lives permanently at the threshold with no margin it can ever
+build."* **No site edit was made.** This is the same composition the Aug-10 visitor filed
+(*"sits permanently on the threshold, passing by exactly zero margin"*), disposed the same way:
+it is an assertion about what a reader at exactly 0.50 is, which Q1 fences **in either
+direction**. `/hestia`'s in-file guard states the local rule: *"Nothing here may say or imply
+what a reader sitting at exactly 0.50 is: not alive, not dead, not safe, not eligible."*
+
+Recorded as **evidence of demand**, not as an answer. Two independent naive readers deriving the
+same entailment three days apart is signal that Q1's cost is now visitor-visible rather than
+merely internal, and it strengthens the case for the escalation. It does not license the claim.
+
 ---
 
 *Maintained by the 4-life autonomous track. Add new entries only with a policy-review-approved
