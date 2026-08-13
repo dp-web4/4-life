@@ -3681,7 +3681,17 @@ export default function WhyWeb4Page() {
                 <li><strong className="text-gray-300">Arriving early is not itself an advantage.</strong> The
                   trust update reads the quality of each action, not how long its author has been a member,
                   so your existing skills translate directly into faster trust growth.</li>
-                <li>The <strong className="text-gray-300">1.4x newcomer premium</strong> expires as you build history.
+                {/* Aug-12: axis label added, one clause. This bullet named no cause, but its two
+                    siblings above it are both trust-keyed ("build trust quickly", "faster trust
+                    growth") and the nearest CI mention is ~35 lines up, so a reader binds the 1.4x
+                    to trust. It is a Coherence Index surcharge (1/CI^2, CI 0.85 -> ~1.38); trust
+                    cannot produce a multiplier above base at all (canon mcp-protocol section 9.1
+                    bounds trust_modifier to [0.8, 1.0]). Swept together with the two instances on
+                    /lct-explainer's setup walkthrough, which stated the same number and named trust
+                    outright; that guard carries the criterion for what was left. No numeral moved. */}
+                <li>The <strong className="text-gray-300">1.4x newcomer premium</strong> is a consistency
+                  surcharge (your <a href="/coherence-index#why-ci-starts-low" className="text-gray-300 underline decoration-gray-600 hover:decoration-gray-300">Coherence Index</a> has
+                  no pattern to match you against yet), and it expires as you build history.
                   Within a few weeks of active participation, your costs normalize.</li>
               </ul>
               <p>

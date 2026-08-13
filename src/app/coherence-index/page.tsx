@@ -279,7 +279,15 @@ export default function CoherenceIndexPage() {
               hit (CI 0.85 → ~1.4× costs), but that page is in #266's hunk region;
               land the canonical answer here (mirrors #281's pattern for "why CI²?").
               A future post-#266 session can wire up a deep-link from Karma Journey
-              to #why-ci-starts-low. */}
+              to #why-ci-starts-low.
+              Aug-12: that wire-up is UNDISCHARGEABLE as written. /karma-journey was retired in
+              the Jul-15 rebuild, so no link is ever coming from there, and this anchor sat with
+              its only named inbound demand pointing at a dead route. The live surface that hits
+              this exact friction (CI 0.85 -> ~1.4x costs, met by a brand-new account) is now
+              /lct-explainer's LCT setup walkthrough, which stated the same 1.4x and attributed it
+              to TRUST; that is fixed and now deep-links here, as does /why-web4's "1.4x newcomer
+              premium" bullet. The original item is closed by the retirement of its source, NOT by
+              those links - do not record it as delivered. */}
           <div id="why-ci-starts-low" className="bg-orange-950/20 border border-orange-800/30 rounded-lg p-5 mb-6 scroll-mt-24">
             <div className="text-sm font-semibold text-orange-300 mb-2">
               Why doesn&rsquo;t a new account start at CI 1.0?
