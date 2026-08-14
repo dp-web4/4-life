@@ -460,6 +460,92 @@ instead of re-litigating.
     branches. Whether to widen it to four is a density call on a caveat already flagged as long,
     and that page ships no fourth-shape surface of its own. Not done here.
 
+  **⚠️ Aug-13 (21:00): the FOURTH filing, and the first arrived at by ELIMINATION. Two defects,
+  both in the fence itself rather than in the figures.** The Aug-13 visitor read the caveat, quoted
+  its karma half back in their journal, and still filed the death half. That is the third pass in a
+  row to be read and rejected, so the residual was never the death rule and never the numbers.
+  Their route in is new and is the diagnostic:
+
+  > "The page just told me the only two ways a life ends are ATP hitting zero, or trust death. If
+  > she ended with 145 ATP, she did not die of energy death. So she died of trust death, which the
+  > site says is permanent and has no rebirth. How does this example exist? Either there is a third
+  > way a life ends that I was not told about, or the example breaks the rules stated one section
+  > earlier."
+
+  - **Defect 1: the fence excluded ONE of the two deaths the page defines.** *"None of these lives
+    ends at 0 ATP, so none of them is the energy death described above"* rules out exactly one
+    candidate on a page that names two, so a reader taking "Two paths" as exhaustive eliminates
+    into the other one and lands on a contradiction the caveat never addresses. **Disposition**:
+    the trust-death exclusion is added on all three surfaces. This is REMOVAL of a candidate, the
+    same class of move as Aug-06's *"Died"* -> *"Ended"*: it names no third cause, endorses no
+    branch, moves no figure, and the ruling requested above is unchanged.
+  - **The exclusion's REASON is position-local, and the obvious one is false.** A draft read *"that
+    one is permanent, and these lives come back"*. True under the karma cards, where both examples
+    are rebirths; **false at `#example`**, where Life 3 (*"Ended strong: 165 ATP"*) is not shown
+    coming back, and false on `/atp-economics`, where Life 4 (140) is not either. Caught in policy
+    review, not by a visitor. What shipped is the trust TRAJECTORY, which is true of every life at
+    every position: `/how-it-works` has 0.65 -> 0.72 -> 0.85, and `/atp-economics` states it
+    verbally, so that copy says *"still trusted at the end of every life here"*. Both are
+    endpoint-silent by construction: a direction, never a threshold (**Q1 untouched in both
+    directions**).
+  - **Defect 2: the fence contained a false sentence, and this ledger's holding pattern quoted it
+    approvingly.** *"They are not the death this page defines, and Web4 does not define a second
+    one"* was followed, one sentence later in the same paragraph, by *"the standard says what stops
+    you acting (ATP reaches zero) and what is permanent (sustained trust collapse)"*. That is the
+    second one, denied and then named two clauses apart, on all three surfaces. **Deleted, not
+    reworded.** The short variant at `#example` had been carrying it as its ONLY fence (its guard
+    said so explicitly); its fence is now the long form's own sentence head, *"What else ends a
+    life is not settled"*, propagated verbatim so the strict-subset property holds and the karma
+    sentence's *"either"* still refers to something. Any future fence here must assert **no
+    count**: this claim has now been wrong about the count twice.
+
+  **⚠️ Aug-13 (21:00): the site was NAMING a third life-ending path, on the page this entry is
+  about, while the caveat 700 lines below said it "declines to name one".** Found while grounding
+  the elimination fix. `/how-it-works` carried *"it ends when: ATP hits 0, raw trust falls below
+  0.5 and stays there, **or CI goes incoherent**"* in its feedback-loop aliveness span and again in
+  the full-pipeline card, plus the same claim implicitly in the red cell beneath the first
+  (*"Any one fails -> that life ends"*, the three being ATP, trust and CI). Grounding, three ways
+  and all one direction:
+  - **Canon has no CI-termination rule.** The only hits are `proposals/ENTITY_RELATIONSHIP_SPEC.md`
+    §8.2, whose row reads *"Incoherent | Possible adversarial, **consider** termination"* (a
+    recommended action, in a proposal), a WIP proposal's `DEATH_SPIRAL_THRESHOLD`, and the archived
+    original whitepaper. Nothing in `web4-standard/`.
+  - **The page's own Death section says the opposite**, in the sentence locked byte-identical
+    across six surfaces: *"A lower CI raises your costs and narrows your access; it does not push
+    you toward trust death."* `/coherence-index` agrees and gives the mechanism: low CI raises cost
+    up to 10x, which makes incoherence *"economically unsustainable"*, i.e. it acts **through** the
+    ATP path rather than beside it.
+  - **Four surfaces state "Two paths" and only two**: `/first-contact`, `/karma-consequences`,
+    `/glossary`, and `/how-it-works` itself.
+
+  **How it got there**: the Aug-09 pass restated the aliveness CONJUNCTION (*"ATP > 0 + Trust > 0.5
+  + CI coherent"*) as a death rule to get clear of the Q1 endpoint, and an aliveness conjunct
+  silently became a life-ending condition (`[[explainer-gap-may-be-upstream-off-by-one]]`). The
+  Aug-10 sweep then quoted that very span while rewriting the two cells under it and closed with
+  *"these two were the only defect"* (`[[claim-class-grep-truncated-enumerate-remainder]]`, sixth
+  instance in this file: the sweep greppped the rebirth claim and never re-read the ending list it
+  was standing on).
+
+  - **Disposition**: the CI disjunct is deleted from all three surfaces. **Pure deletion, no
+    replacement claim** - nothing new is asserted about what a low CI does, since the Death section
+    already owns that, and the Aug-09 endpoint wording is untouched byte for byte. This is the
+    primer constraint being enforced, not a ruling: the site may not name a third life-ending
+    cause, and it was naming one. **If a ruling on this entry ever names CI as a path, restore the
+    disjunct on all three surfaces.**
+
+  - **New finding, FILED not fixed: the base-100 grant on `/first-contact` is unfenced.** The
+    Aug-13 visitor's MEDIUM 4 ("three rebirth arithmetics, and each page fences the amount while
+    telling me to trust the shape, but the shapes are what differ") lands on a half-protected
+    sentence, not on a fence mismatch. `/first-contact` asserts *"everyone starts a life with 100,
+    and the 12 is what her track record earned on top"* and then fences only *"how much karma
+    converts"*. The base-100 grant is a STRUCTURAL claim, and `/how-it-works`'s 145 -> 145 model has
+    no base grant at all, so the sentence asserts as settled the exact half that diverges
+    (`[[guard-may-protect-half-a-sentence]]`). Not fixed in this pass for two recorded reasons:
+    the Aug-09 pass narrowed that fence to the conversion axis **deliberately** and wrote down why,
+    and a second rebirth-fence edit in the same pass would fight the first
+    (`[[two-fixes-in-one-pass-can-fight]]`). A ruling on the carry-forward shape closes it
+    directly; absent one, it is a candidate for a dedicated pass.
+
 ### Q6. What does the `/` in the canonical equation assert?
 
 - **The question**: canon publishes an operator table for

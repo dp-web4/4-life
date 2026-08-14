@@ -1701,6 +1701,23 @@ export default function ATPEconomicsPage() {
               figures" in the same pass, because its own render sits below its figures too. That is
               not a rewording of the clause and does not travel. Everything else in the four clauses
               still does.
+              Aug-13 (21:00), Q5's fourth filing, arrived by ELIMINATION ("not energy death, so
+              trust death, which is permanent - how does this example exist?"). Two changes here,
+              both propagated clause-wise from EndOfLifeCaveat in the same pass:
+              1. The trust-death exclusion is ADDED. Both caveats excluded one of the two deaths
+                 and left the reader to eliminate into the other.
+              2. "and Web4 does not define a second one" is DELETED as false: the very next
+                 sentence of this same paragraph names the second one ("what is permanent
+                 (sustained trust collapse)"). Do not restore it on either page.
+              The exclusion's REASON is page-native for the same reason clause 1 is. The
+              /how-it-works copy cites its trust trajectory (0.65 -> 0.72 -> 0.85); this page states
+              trust verbally instead ("growing trust", "Trust continued rising", "even trusted
+              agents", "deeply trusted"), so it says "still trusted at the end of every life here",
+              which is true of all FOUR lives including the Life 3 crisis - that crisis is an ATP
+              crisis, not a trust one, and the card says so. A draft reason ("these lives come
+              back") was rejected in policy review: it is false of the last life rendered above
+              each caveat on both pages ([[borrowed-word-means-something-else-there]]).
+              Endpoint-silent in both copies: a direction, never a threshold (ledger Q1).
               THREE things are page-native and deliberate:
               1. The bridge to the deaths this page DOES define. The card above ("When ATP hits
                  zero, your agent can no longer act") and the closing box directly below ("They
@@ -1733,9 +1750,11 @@ export default function ATPEconomicsPage() {
             <strong className="text-amber-300">About these numbers:</strong> none of these lives
             ends at 0 ATP, so none of them is the death this page defines: ATP hitting zero, the
             one in the card further up and in the closing line just below, where agents who never
-            built karma do not come back. That is why they read <em>ended</em> and not{" "}
-            <em>died</em>: they are not the death this page defines, and Web4 does not define a
-            second one. What else ends a life is <strong>not settled</strong>: the standard says
+            built karma do not come back. Neither is any of them the trust death: that one takes a
+            sustained collapse, and this agent is still trusted at the end of every life here.
+            That is why they read <em>ended</em> and not{" "}
+            <em>died</em>: neither of those two deaths fits
+            them. What else ends a life is <strong>not settled</strong>: the standard says
             what stops you acting (ATP reaches zero) and what is permanent (sustained trust
             collapse), and it names no term limit, no lifespan, and no natural end of life. So
             rather than invent a third cause to justify the figures above, this page declines to
