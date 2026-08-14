@@ -2,6 +2,165 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-14 03:00 session - four numbers, and the proof the repo lists under "missing"
+
+**No open PRs at start.** Fired 03:01, before the 05:00 cron, so `visitor/logs/2026-08-13.md` is
+still the freshest log and this is the **fifth** slot on it (#543 HIGH 1+2, #544 MEDIUM 7+8 and
+LOW 10, #545 MEDIUM 5). Took **LOW 12**, the only row no prior session claimed or deferred with a
+written criterion.
+
+> "Number blizzard I could not evaluate: '424 attack vectors across 84 tracks,' '38.5 tasks/sec
+> throughput,' '5 theorems,' '~47,000 lines of tested code.' Throughput of what, measured how,
+> compared to what? These read as reassurance rather than evidence, on a page that is otherwise
+> careful."
+
+Third browse to name this class (`2026-07-31.md:122`, and the Jul-30 LOW pass, which declared it
+out of bounds). The visitor also supplied the target shape: `/running-now`'s *"The 2,627-test
+figure you will see quoted belongs to a third artifact"*, which they credited as the reason they
+believed every other number on the site.
+
+**Criterion applied**: a number stays only if the page can name what produced it and what it is
+evidence *for*. Otherwise it goes, with no replacement numeral.
+
+### It was not a density complaint. Three of the four numbers do not survive grounding.
+
+| Number | Verdict | Ground |
+|---|---|---|
+| `424` / `84 tracks` | **stays, re-qualified** | Live in `web4/STATUS.md:64` and `README.md:161`, but with a scope the site had dropped: *"~85% detection rate against **synthetic** adversaries. No red team engagement yet."* |
+| "**all defended**" | **deleted** | **No live upstream source at all.** Only `docs/history/STATUS-2026-02.md:22` and `forum/kimi2_6_review.md:119,160`, and the forum file quotes the phrase in order to **reject** it. |
+| `38.5 tasks/sec` | **deleted** | `FEDERATION_CONSENSUS_ATP_INTEGRATION.md:364-368` derives it: *"~7.7 blocks/second (from Session #43)"* times *"**Assume** 5 tasks per block (practical limit)"*. An assumption times a block rate, published as a benchmark. Only executable artifact is `archive/reference-implementations/federation_consensus_atp.py:909`, archived in the same sprint-32 sweep behind #491 and #498. |
+| `~47,000 lines of tested code` | **deleted, both positions** | `docs/history/STATUS-2026-02.md:30`: *"~47,000 lines of code across **game simulation**, authorization, and coordination framework."* A February whole-repo LOC count whose largest named component is the sim this site archived in July. |
+| `5 theorems` / "formally proven" | **deleted, claim and all** | see below |
+
+### The finding: the site asserted a proof that Web4's own repo lists under "What's Missing"
+
+Three live upstream files, unqualified: `README.md:166` and `AGENTS.md:56` read *"Formal
+Sybil-resistance proofs (empirical defenses only)"*; `STATUS.md:77` gives the same row as
+*"Empirical defenses only | Open research"*. So `(5 theorems)` was not merely an unsourced
+parenthetical. Deleting only the parenthetical would have left a **refuted** claim standing.
+
+Same for the clause two positions later. *"Incentive compatibility proven"* is refuted by
+`SECURITY.md:194`, *"No game-theoretic analysis: Are proposed incentives actually
+Nash-equilibrium resistant?"*, on its own subject. It came out in the same pass because it is in
+the same sentence, refuted by the same arbiter, and already conceded on the page this bullet
+links to. Splitting it out would have shipped a bullet that deletes "formally proven (5 theorems)"
+and leaves "proven" two clauses later.
+
+### Re-opening a surface a prior session closed in writing, and the one argument that did NOT hold
+
+`SESSION_FOCUS.md:1192` (Aug-10) declared `atp-economics` `grep -n "Formally proven: one honest
+identity"` and `why-web4` `grep -n "424 attack vectors"` **out of bounds in writing**: *"the Sybil
+'5 theorems / 4.6x / 13x' family: same shape, **different** provenance, already hedged at the
+`why-web4` surface"*. Two prongs, and only one is falsified:
+
+- **Prong 1 (different provenance) STANDS. Do not record it as refuted.** It plainly meant
+  *different from the bootstrap-convergence family that pass was treating*
+  (`archive/reference-implementations/bootstrap_convergence_proofs.py:27-31`). Showing the three
+  Sybil numerals share provenance *with each other* is a different proposition and does not touch
+  the claim made. A draft of this entry argued otherwise; the policy review named it as
+  rationalization and it was cut.
+- **Prong 2 (already hedged) is falsified, and is sufficient alone.** The hedge scoped the proofs
+  to *"the modeled attack classes"*. Upstream does not say the proofs are narrow, it says they do
+  not exist. A scope hedge cannot rescue a claim whose subject is absent.
+
+> **The clean license, and it is not a judgment call**: `web4/SECURITY.md:107` reads **"No formal
+> Sybil-resistance proof"**. That is the **same file the Aug-10 pass named as its arbiter**, on
+> the **exact subject** it fenced. That pass quoted `:223` (economic modeling) while `:107` sat
+> **116 lines above it, unread**. The out-of-bounds declaration rested on an unread line of its
+> own arbiter.
+>
+> Scoping caveat, so the next session does not over-cite it: `:107` is component-scoped (its
+> section's implementation is under `archive/game-prototype/`) and `SECURITY.md` is stamped
+> "Last Updated: April 27, 2026". Lead with the three repo-level Gaps rows, which are unqualified,
+> and use `:107` as same-arbiter corroboration, not the other way round.
+
+### Surfaces, enumerated, because the first sweep was truncated twice
+
+| Surface | What changed |
+|---|---|
+| `why-web4:572` (lead answer, uncollapsed) | `~47,000` deleted |
+| `why-web4:741` | `~47,000` deleted |
+| `why-web4:746` | "all defended", the proof claim, `5 theorems`, "Incentive compatibility proven" deleted; `~85%`/synthetic/no-red-team restored; `<Link>` moved off the count onto the collusion clause |
+| `why-web4:769` | `38.5` and its parenthetical deleted |
+| `atp-economics:1511-1516` | card rewritten to the transfer-fee mechanism; `4.6x`, `13x`, `5 theorems`, "Formally proven" and the closing absolute deleted |
+| `atp-economics:2332-2333` | *"The math bears this out: one honest identity outearns five fake identities"* deleted |
+
+The first two additions came from the policy review, not from me. Both are lessons:
+
+> **A page-scoped sweep is not the same as a claim-scoped one.** `why-web4:572` is the **lead
+> answer**, uncollapsed, above the `<details>`. Fixing the number inside the fold and leaving the
+> one the reader meets first is the failure mode this project keeps re-learning.
+>
+> **A case-sensitive grep is half a sweep.** `grep "formally proven"` does not match
+> `"Formally proven:"`. The `atp-economics` card was caught incidentally, via `4.6`. And
+> `atp-economics:2333` carries the claim by **synonym**, *"The math bears this out"*, with no form
+> of "proven" anywhere, so no spelling of that grep would ever have returned it. Sweep by claim,
+> case-insensitively, plus synonyms.
+
+Predicate for the next session:
+`grep -rniE "424|84 tracks|38\.5|47,000|theorem|formally proven|the math bears this out|all defended" src/ --include=*.tsx --include=*.ts`
+After this pass the only **rendered** hit is `why-web4`'s re-qualified `424` line. Everything else
+returns guard comments, including the two pre-existing ones on `/what-could-go-wrong`.
+
+### Left alone, with the criterion stated
+
+- **Transfer-fee "unprofitable" claims** (`atp-economics:277,370,417`, `/lct-explainer`,
+  `/why-web4`, `terms.ts`, `/glossary`) are **mechanism** claims, not proof claims. This page
+  already marks the mechanism structural and the rate a sim parameter at `:417`, and canon agrees
+  it is society-scoped (`atp-adp-cycle.md:595` *"The core protocol does not prescribe transfer
+  fees"*, `:599` societies *"MAY implement"*, `:609` rates are *"simulation parameters"*). That is
+  why the rewritten card says "burns a share of what moves" and quotes **no rate**.
+- **`/what-could-go-wrong:585`** (*"cooperation becomes the Nash-dominant strategy"*) names its
+  instrument (adversarial simulations) and claims a **finding**, not a proof, which is the shape
+  this pass normalizes toward. A candidate for a later look, not a defect this bullet's fix
+  reaches. `:448` carries its own adjudication guard at `atp-economics:1091`.
+- **No replacement numeral was imported.** `web4-core`'s 171 and the reference SDK's 2,627 are
+  live and correct, but they already ship with their artifacts on `/running-now` and
+  `/the-standard` under a guard keeping those two identical. A third surface would make it a
+  three-way sync.
+
+### Outbound signal for web4 (not fixed here, not ours)
+
+`web4/STATUS.md:64` routes the reader to `simulations/README.md` for the *"honest breakdown"* of
+the 424 figure. **That file does not exist.** `simulations/` has been frozen since `a5fa4433`
+(2026-04-27), and *"all defended"* appears nowhere in the simulation code. So there is currently
+no artifact a reader can check behind the one number this pass kept, which is the strongest
+argument for having kept only its qualified form.
+
+### Visitor Unanswered Q3 (upgrade path): canon ANSWERS it. Deferred as a site fix, not escalated.
+
+#544 owed a ledger filing for *"the single most practical question I had"*. **No ledger entry was
+filed, because the premise was wrong.** `web4-standard/core-spec/multi-device-lct-binding.md`
+answers the mechanism four ways, and the next session should not re-derive these:
+
+1. **§3.2** `enroll_additional_device(root_lct, existing_device, new_device, society)`, *"Requires:
+   At least one existing device in constellation."* The **Root LCT is not reissued**, so upgrading
+   is enrollment, not re-genesis, and everything hanging off that LCT persists by construction.
+2. **§2.2.4** makes software-only a first-class **anchor type** (Recommended Role *"Bootstrap,
+   low-trust contexts only"*), so a software-only user **qualifies** as that existing device.
+3. **§3.4** computes the ceiling as a pure function of the **current** device set, keyed to
+   nothing about origin.
+4. **§3.5** accepts `revocation_reason` `"upgrade"` and recomputes constellation trust
+   immediately after. Canon names the visitor's exact move.
+
+**So the answer is yes: your history transfers.** The genuine residue is narrow and mostly
+unsayable here (§4.2 lists no mixed row and §3.4 aggregates by uniform average, which are Q1/Q8
+numerics the site must stay silent on), so it belongs under **existing Q8**, whose subject is
+already this tier, rather than as a new question.
+
+> **The page that actually owes this**: `src/app/identity-constellation/page.tsx:44` calls a
+> constellation *"a constellation of **hardware-bound** keys"*, which defines software anchors out
+> of the mechanism and is why a software-only reader cannot see the upgrade path at all. It
+> contradicts §2.2.4 and §4.1's mixed band. **Not touched this session** (out of the approved
+> scope), and it is the natural next task. No numerals from §4.1/§4.2 may enter the fix.
+
+**Files**: `src/app/why-web4/page.tsx`, `src/app/atp-economics/page.tsx`. `npm run build` green.
+
+**Retest gates (Aug-14 05:00 and after):** does a reader of `/why-web4`'s status FAQ still describe
+the numbers as reassurance rather than evidence? Does the `424` line now read as a scoped finding?
+Does anyone read the `Sybils Lose Money` card as weaker than it should be now that the proof
+language is gone, or as honest?
+
 ## Aug-13 21:00 session - the death that was ruled out by elimination, and the third one the page was naming
 
 **No open PRs at start.** Third slot on `visitor/logs/2026-08-13.md` (#543 took HIGH 1+2 and

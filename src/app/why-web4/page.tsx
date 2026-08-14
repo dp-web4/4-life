@@ -569,7 +569,7 @@ export default function WhyWeb4Page() {
           </p>
           <p className="text-gray-300 text-sm leading-relaxed">
             <strong className="text-gray-200">Both - and that split is the source of the mixed
-            signals you may have seen.</strong> The protocol spec and ~47,000 lines of reference code
+            signals you may have seen.</strong> The protocol spec and the reference code
             are real, tested, and public (open-source, AGPL) - that&rsquo;s the &ldquo;deployed,
             public&rdquo; part. But there is <strong className="text-gray-200">no live network with real
             users yet</strong>, and <strong className="text-gray-200">nothing on this site is a live
@@ -738,12 +738,52 @@ export default function WhyWeb4Page() {
                 <li><strong>Protocol specification:</strong> 100+ page{" "}
                   <a href="https://dp-web4.github.io/web4/" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
                   Web4 whitepaper</a> with formal definitions</li>
-                <li><strong>Reference implementations:</strong> ~47,000 lines of tested code covering the four mechanisms above (identity, energy, trust scoring, trust neighborhood) plus value tensors, community governance, <TermTooltip term="Federation">federation</TermTooltip>, and the witness protocol</li>
-                {/* June 12 visitor MEDIUM (browse A): unscoped "formally proven" sat next to this
-                    page's own collusion caveat and /what-could-go-wrong's admissions - careful
-                    readers read it as overclaim. Scope it to the modeled attack classes, matching
-                    /what-could-go-wrong's "large-scale collusion remains an active research area". */}
-                <li><strong>Security validation:</strong> <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">424 attack vectors across 84 tracks</Link>, all defended. Sybil resistance (resistance to flooding the network with cheap fake accounts) formally proven (5 theorems) <em>for the modeled attack classes</em> - sophisticated collusion that mimics legitimate community behavior remains an open research problem. Incentive compatibility proven - honest behavior is mathematically more profitable than gaming</li>
+                {/* Aug-13 visitor LOW 12 ("number blizzard I could not evaluate"). This bullet and
+                    the lead answer above both carried "~47,000 lines". Deleted at both positions
+                    with NO replacement numeral. It is not a count of tested code covering these
+                    mechanisms: web4/docs/history/STATUS-2026-02.md:30 reads "~47,000 lines of code
+                    across game simulation, authorization, and coordination framework" (a February
+                    whole-repo LOC figure whose largest named component is the sim this site
+                    archived in July), and WEB4_REPOSITORY_ANALYSIS.md:13 gives the same number as
+                    "512 Python files, 371 markdown files, ~47,000 LOC".
+                    Do NOT import web4-core's 171 or the reference SDK's 2,627 as a replacement
+                    here. Both are live and correct, but they already ship WITH their artifacts on
+                    /running-now and /the-standard under a guard requiring those two to stay
+                    identical; a third surface would make that a three-way sync. The claim that
+                    survives is coverage, which the spec corpus and those two test suites support
+                    without a line count. */}
+                <li><strong>Reference implementations:</strong> tested code covering the four mechanisms above (identity, energy, trust scoring, trust neighborhood) plus value tensors, community governance, <TermTooltip term="Federation">federation</TermTooltip>, and the witness protocol</li>
+                {/* June 12 visitor MEDIUM (browse A) SCOPED "formally proven" to the modeled attack
+                    classes. Aug-14: that instruction is SUPERSEDED, not ignored. A scope hedge
+                    cannot rescue a claim whose subject three live upstream files list as absent:
+                    web4/README.md:166 and web4/AGENTS.md:56 read "Formal Sybil-resistance proofs
+                    (empirical defenses only)" under What's Missing, and web4/STATUS.md:77 gives the
+                    same row as "Empirical defenses only | Open research". Corroborated in the very
+                    file this site already accepted as arbiter on Aug-10: web4/SECURITY.md:107 "No
+                    formal Sybil-resistance proof". (That Aug-10 pass deleted "formally proven" from
+                    /what-could-go-wrong citing SECURITY.md:223, and declared this surface out of
+                    bounds; :107 sat 116 lines above :223, unread, on the exact subject it fenced.)
+                    So the proof claim is DELETED, not re-hedged, and the honest positive is
+                    upstream's own parenthetical: the defenses are empirical.
+                    "all defended" also deleted: it has NO live upstream source. Its only hits are
+                    docs/history/STATUS-2026-02.md:22 and forum/kimi2_6_review.md:119,160, where it
+                    is quoted in order to be REJECTED. What upstream states live (STATUS.md:64,
+                    README.md:161) is ~85% detection against synthetic adversaries with no red team
+                    engagement, which is what this bullet now carries. Do not restore a qualifier
+                    STRONGER than upstream's own, in either direction.
+                    "Incentive compatibility proven" deleted for the same reason, one clause later:
+                    web4/SECURITY.md:194 lists "No game-theoretic analysis: Are proposed incentives
+                    actually Nash-equilibrium resistant?" under What's Missing, and incentive
+                    compatibility IS a game-theoretic property (also :86, :195, :223, :226 on
+                    attacker ROI). This page's link target already concedes it on-page.
+                    The <Link> moved off the count and onto the collusion clause: /what-could-go-wrong
+                    does not carry the 424 figure (grep returns 0) but does treat collusion at
+                    length, so the citation now points at something it actually cites.
+                    NOT touched, with the criterion: /what-could-go-wrong:585 ("cooperation becomes
+                    the Nash-dominant strategy") names its instrument (adversarial simulations) and
+                    claims a finding, not a proof, which is the shape this pass is normalizing TO.
+                    It is a candidate for a later look, not a defect this bullet's fix reaches. */}
+                <li><strong>Security validation:</strong> 424 attack vectors across 84 tracks, with ~85% detection against synthetic adversaries and no red-team engagement yet. Sybil resistance (resistance to flooding the network with cheap fake accounts) is defended empirically rather than proven: Web4&apos;s own repository lists formal Sybil-resistance proofs among what is still missing, and sophisticated collusion that mimics legitimate community behavior remains an <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">open research problem</Link></li>
                 {/* Jul-26 + Jul-27 visitor HIGH: this bullet was the third surface asserting
                     "TPM2 binding validated" with no artifact named, while the landing page,
                     /running-now, /onramp and /hestia say hardware binding is "not yet validated
@@ -766,7 +806,18 @@ export default function WhyWeb4Page() {
                     byte-identical to the same claim on five other surfaces (see
                     InProduction.tsx's sourcing note); if you reword it, reword all six. */}
                 <li><strong>Hardware integration:</strong> the core standard&apos;s TPM2 binding validated (Intel TPM 2.0, EK certificate chain through 2049); hardbound&apos;s own on-device binding is <em>not</em> yet validated (see <Link href="/running-now#hardbound-status" className="text-sky-400 hover:underline">status</Link>). Go LCT library (55 tests). Multi-device constellation enrollment built and wired into the hub handshake, though it has not yet been driven on a real second device</li>
-                <li><strong>System integration:</strong> End-to-end pipeline (all subsystems chained), WASM browser validator for client-side trust verification, federation consensus at 38.5 tasks/sec throughput (a benchmark of how fast the consensus layer settles trust updates - a proof-of-concept figure, not a real-world performance guarantee)</li>
+                {/* Aug-13 visitor LOW 12: "38.5 of what, on what hardware, compared to what?" The
+                    honest answer is that it was never measured, so it is DELETED with no
+                    replacement figure. web4/docs/what/specifications/FEDERATION_CONSENSUS_ATP_INTEGRATION.md:364-368
+                    derives it: "~7.7 blocks/second (from Session #43)" times "Assume 5 tasks per
+                    block (practical limit)" = 38.5. An assumption multiplied by a cited block rate,
+                    called a benchmark here. Its only executable artifact is
+                    archive/reference-implementations/federation_consensus_atp.py:909, archived in
+                    the same sprint-32 sweep that retired the figures deleted in #491 and #498.
+                    The reader was already told this was not a performance guarantee and still could
+                    not evaluate it, so the caveat was not the missing piece. Restore a throughput
+                    number here only if one is ever measured on named hardware. */}
+                <li><strong>System integration:</strong> End-to-end pipeline (all subsystems chained), WASM browser validator for client-side trust verification, federation consensus</li>
               </ul>
               <p className="mt-2"><strong>What&apos;s NOT built yet:</strong></p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">

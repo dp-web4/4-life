@@ -1504,15 +1504,43 @@ export default function ATPEconomicsPage() {
               but excellence compounds.
             </p>
           </div>
+          {/* Aug-14, licensed by the Aug-13 visitor's LOW 12 sweep on /why-web4. This card carried
+              four claims from one dead sentence and one archived sim, and closed on an absolute:
+              - "Formally proven" / "(5 theorems, hardware-bound identity)" / "4.6x Proof-of-Work" /
+                "13x Proof-of-Stake" all trace to ONE line, web4/docs/history/STATUS-2026-02.md:5
+                ("Sybil resistance formally proven (17 checks): 5 theorems, Web4 4.6x PoW / 13x
+                PoS"). The proof claim is refuted live: web4/README.md:166, STATUS.md:77 and
+                AGENTS.md:56 list "Formal Sybil-resistance proofs (empirical defenses only)" under
+                What's Missing, corroborated by SECURITY.md:107 "No formal Sybil-resistance proof".
+                See the fuller guard on why-web4's Security-validation bullet.
+              - "one honest identity outearns five fake identities splitting the same ATP budget"
+                is an ARCHIVED sim's setup, not a finding of the standard:
+                archive/reference-implementations/atp_market_dynamics.py:701 seeds
+                'sybil.add_agent(f"sybil_{i}", 100.0)  # 5 fake identities'.
+              - "Cheating is literally unprofitable" was the closing absolute. Deleting the proof
+                basis and keeping the conclusion is the true-half-still-reassures failure, so it
+                went with the rest rather than surviving unsupported.
+              What replaced them is the MECHANISM this page already publishes as structural, in its
+              own words at the "Settled (canonical to Web4)" list above: fees on peer transfer
+              "make circular farming unprofitable", with "the exact rate (currently 5% here)" a sim
+              parameter and "the existence of the fee ... structural". So no rate is quoted here.
+              Note the mechanism is society-scoped, not protocol-mandated:
+              web4-standard/core-spec/atp-adp-cycle.md:595 "The core protocol does not prescribe
+              transfer fees", :599 societies "MAY implement transfer fees as economic law", :609
+              rates like "5% transfer fee" are "simulation parameters, not protocol". Hence
+              "burns a share of what moves" and not a number.
+              LEFT ALONE, with the criterion: the other "unprofitable" hits on this page (:277,
+              :370, :417) and on /lct-explainer and /why-web4 are transfer-fee MECHANISM claims of
+              exactly this kind, not proof claims, so they are outside this sweep.
+              /what-could-go-wrong:448 carries its own adjudication guard at :1091. */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
             <div className="text-2xl mb-2">👥</div>
             <h3 className="text-lg font-semibold text-sky-400 mb-2">Sybils Lose Money</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Formally proven: one honest identity outearns five fake identities
-              splitting the same ATP budget. Transfer fees between sybil accounts bleed
-              resources. Web4&apos;s Sybil resistance is <strong>4.6&times; Proof-of-Work</strong> and{' '}
-              <strong>13&times; Proof-of-Stake</strong> (5 theorems, hardware-bound identity).
-              Cheating is literally unprofitable.
+              Every transfer between sybil accounts burns a share of what moves, so splitting
+              a budget across fake identities bleeds it on every hop. That is friction, not a
+              proof: Web4&apos;s own repository lists formal Sybil-resistance proofs among what
+              is still missing.
             </p>
           </div>
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-5">
@@ -2328,10 +2356,16 @@ export default function ATPEconomicsPage() {
                 ATP can be transferred, but every transfer burns 5% of the amount. This
                 prevents circular farming (A → B → C → A loops bleed resources). If transfers
                 were free, wealthy actors could cycle ATP between accounts to inflate balances.
-                The burn fee means the only profitable strategy is genuine value creation - 
-                you earn more by contributing than by moving ATP around. The math bears this out:
-                one honest identity outearns five fake identities splitting the same budget.
-                The burned ATP goes to a <strong className="text-gray-300">redistribution pool</strong> - 
+                The burn fee means the only profitable strategy is genuine value creation -
+                you earn more by contributing than by moving ATP around.
+                {/* Aug-14: "The math bears this out: one honest identity outearns five fake
+                    identities splitting the same budget" deleted here as well as from the "Sybils
+                    Lose Money" card above. It is a proof assertion by SYNONYM (no form of "proven"
+                    appears, so the case-insensitive grep for the claim class missed it on the first
+                    pass), and its source is an archived sim's setup, not a result. See the card's
+                    guard for the citations. The mechanism sentence immediately above it survives
+                    untouched: it is the burn-fee claim this page marks structural. */}
+                The burned ATP goes to a <strong className="text-gray-300">redistribution pool</strong> -
                 not to any central authority. <strong className="text-gray-200">What the pool funds is set by
                 each society&apos;s published economic laws</strong>, not by the core protocol - typical uses
                 include topping up the society&apos;s pool for member recharges, paying witnesses,
