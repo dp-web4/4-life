@@ -2,6 +2,91 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-13 21:00 session - the death that was ruled out by elimination, and the third one the page was naming
+
+**No open PRs at start.** Third slot on `visitor/logs/2026-08-13.md` (#543 took HIGH 1+2 and
+fenced HIGH 3; #544 took MEDIUM 7+8 and LOW 10). Took **MEDIUM 5 with its Unanswered Question 1**,
+the **fourth** filing of ledger Q5 and the first arrived at by **elimination**:
+
+> "The page just told me the only two ways a life ends are ATP hitting zero, or trust death. If she
+> ended with 145 ATP, she did not die of energy death. So she died of trust death, which the site
+> says is permanent and has no rebirth. How does this example exist?"
+
+Read the caveat, quoted its karma half, still filed the death half. Third pass in a row to be read
+and rejected, so the residual was never the death rule and never the figures.
+
+### Defect 1: the fence excluded one of the two deaths the page defines
+
+*"None of these lives ends at 0 ATP, so none of them is the energy death described above"* rules
+out exactly **one** candidate on a page that names **two**. A reader taking "Two paths" as
+exhaustive eliminates into the other one and hits a contradiction the caveat never addresses. The
+trust-death exclusion is now on all three surfaces. **Removal of a candidate, not a ruling**: same
+class of move as Aug-06's *"Died"* -> *"Ended"*. No third cause named, no figure moved.
+
+**The reason clause is position-local, and the obvious one is false.** A draft read *"that one is
+permanent, and these lives come back"*. True under the karma cards (both are rebirths), **false at
+`#example`** where Life 3 ("Ended strong: 165 ATP") never comes back, and false on
+`/atp-economics` where Life 4 (140) does not either. Caught in policy review, not by a visitor.
+What shipped is the trust **trajectory** (0.65 -> 0.72 -> 0.85 on `/how-it-works`; stated verbally
+on `/atp-economics`, so that copy says "still trusted at the end of every life here"), which is
+true of every life at every render position. Endpoint-silent by construction: a direction, never a
+threshold, so **Q1 is untouched in both directions**.
+
+### Defect 2: the fence contained a sentence its own next sentence refutes
+
+*"They are not the death this page defines, and Web4 does not define a second one"* was followed,
+one sentence later in the same paragraph, by *"the standard says what stops you acting (ATP reaches
+zero) and what is permanent (sustained trust collapse)"*. **Deleted as false, on all three
+surfaces, not reworded.** The short variant at `#example` had been carrying it as its **only**
+fence; its fence is now the long form's own sentence head, *"What else ends a life is not
+settled"*, propagated verbatim so the strict-subset property holds and the karma sentence's
+*"either"* still refers to something. Any future fence here must assert **no count**.
+
+### The finding: the site was naming a third life-ending path, on this same page
+
+Found while grounding the fix. `/how-it-works` carried *"it ends when: ATP hits 0, raw trust falls
+below 0.5 and stays there, **or CI goes incoherent**"* in two aliveness surfaces, plus the same
+claim implicitly in the red cell under the first (*"Any one fails"*, the three being ATP, trust and
+CI). So the page named a third cause 700 lines above a caveat saying it *"declines to name one"*.
+
+Grounding, three ways, all one direction: canon has no CI-termination rule (the only hits are
+`proposals/ENTITY_RELATIONSHIP_SPEC.md` §8.2, *"Possible adversarial, **consider** termination"*, a
+recommended action in a proposal, plus a WIP proposal and the archived whitepaper; nothing in
+`web4-standard/`); the page's own Death section says the opposite in the sentence locked across six
+surfaces (*"A lower CI raises your costs and narrows your access; it does not push you toward trust
+death"*), and `/coherence-index` gives the mechanism (low CI raises cost up to 10x, making
+incoherence *"economically unsustainable"*, so it acts **through** the ATP path); and four surfaces
+state *"Two paths"* and only two.
+
+**How it got there**: Aug-09 restated the aliveness **conjunction** ("ATP > 0 + Trust > 0.5 + CI
+coherent") as a death rule to get clear of the Q1 endpoint, and an aliveness conjunct silently
+became a life-ending condition. Aug-10 then quoted that very span while rewriting the two cells
+under it and closed with *"these two were the only defect"*: the sweep greppped the rebirth claim
+and never re-read the ending list it was standing on.
+
+Deleted from all three surfaces. **Pure deletion, no replacement claim**, and the Aug-09 endpoint
+wording is untouched byte for byte. This is the primer constraint being enforced (the site may not
+name a third life-ending cause), not a ruling on Q5. If a ruling ever names CI as a path, restore
+the disjunct on all three.
+
+### Verified and NOT taken, with the criterion
+
+- **LOW 9** (pip `web4-trust` vs cargo `web4-trust-core`): already shipped. The paragraph directly
+  under the two code lines on `/the-standard` says *"`web4-trust-core` in Rust; the Python wheels
+  are bindings over the same core"*. The visitor read past it; residual is prominence only, and
+  #543 just spent a pass on a prominence fix.
+- **LOW 11** (`/first-contact` "Suspended, not deleted" does not say which death): the page's
+  `#what-triggers-death` box states both deaths in full, and the Aug-10 remainder sweep recorded a
+  stated criterion for leaving that page's surfaces alone. Not re-litigated without new evidence.
+- **MEDIUM 4** (three rebirth arithmetics): filed under Q5 as a **half-fenced sentence**, not a
+  fence mismatch. `/first-contact` asserts *"everyone starts a life with 100"* and then fences only
+  *"how much karma converts"*; the base-100 grant is a structural claim `/how-it-works`'s 145 -> 145
+  model has no room for. Not fixed here because the Aug-09 pass narrowed that fence deliberately
+  and wrote down why, and a second rebirth-fence edit in this pass would fight the first.
+
+**Files**: `src/app/how-it-works/page.tsx`, `src/app/atp-economics/page.tsx`,
+`docs/WEB4-CANON-QUESTIONS.md`. `npm run build` green.
+
 ## Aug-13 15:00 session - the hardware sentence with the word hardware taken out
 
 **No open PRs at start.** Second slot on `visitor/logs/2026-08-13.md` (the 09:00 session took HIGH

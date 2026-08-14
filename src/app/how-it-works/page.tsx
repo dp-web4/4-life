@@ -36,10 +36,18 @@ const HOW_IT_WORKS_SECTIONS = [
    150-word caveat a second time verbatim is jarring"). (2) The clause "to justify the figures
    BELOW" was false in the second position, where its figures are above; it now reads "these
    figures", which is true in the one position this component keeps. #example instead renders
-   EndOfLifeCaveatShort, defined directly below: sentences 1-2 VERBATIM (including "and Web4 does
-   not define a second one", which is what keeps that position fenced after the not-settled and
-   declines-to-name-one elaborations are dropped), plus a karma clause that enumerates ZERO
-   branches, plus a link back here. It cannot out-assert this one; it is a strict subset.
+   EndOfLifeCaveatShort, defined directly below: sentences 1-2 VERBATIM, plus a fence, plus a karma
+   clause that enumerates ZERO branches, plus a link back here. It cannot out-assert this one; it is
+   a strict subset.
+   CORRECTED Aug-13 (21:00): that fence used to be the clause "and Web4 does not define a second
+   one", and this line used to instruct a future editor to keep it. It was FALSE, not merely
+   awkward - the next sentence of the same paragraph names the second one ("what is permanent
+   (sustained trust collapse)"), so the caveat denied a death it went on to define two clauses
+   later. Deleted from all three surfaces, not reworded. The short position's fence is now the
+   long form's own sentence head, "What else ends a life is not settled", propagated verbatim so
+   the strict-subset property survives and so the karma sentence's "either" still refers to
+   something. Do NOT restore the old clause. Any replacement fence must assert no COUNT: this page
+   has been wrong about the count twice.
    The anti-drift property that motivated one shared component is kept a different way: the two
    texts sit five lines apart in this file under this one guard. So: do NOT inline either of them
    into the page body, and do NOT re-render the full component at #example - that is the
@@ -85,6 +93,23 @@ const HOW_IT_WORKS_SECTIONS = [
    sync the counts by deleting the fourth there; widening THIS one is an open density call
    recorded in Q5. The `:2264` cite this line used to carry was stale by 41 lines, which is why
    it is a grep target now.
+   Aug-13 (21:00) visitor MEDIUM + their Unanswered Q1, the FOURTH filing of Q5 and the first by
+   ELIMINATION: "the only two ways a life ends are ATP hitting zero, or trust death. If she ended
+   with 145 ATP, she did not die of energy death. So she died of trust death, which the site says
+   is permanent and has no rebirth. How does this example exist?" Read the caveat, quoted its karma
+   half, still filed the death half ([[visitor-read-it-and-still-filed-it]] for the third time).
+   The missing clause was never the death rule or the figures: this excluded ONE of the two deaths
+   the page defines and left the reader to eliminate into the other. Both are now excluded.
+   The trust-death exclusion is REMOVAL of a candidate, the same move as Aug-06's "Died" -> "Ended",
+   and it rules nothing: the reason given is the page's own "sustained collapse" durability rule,
+   which no life here undergoes.
+   The REASON clause is position-sensitive and a draft of it was wrong. "That one is permanent, and
+   these lives come back" is true under the karma cards (both are rebirths) and FALSE at #example,
+   where Life 3 "Ended strong: 165 ATP" is not shown coming back
+   ([[borrowed-word-means-something-else-there]], with a whole clause). The shipped reason is the
+   trust TRAJECTORY (0.65 -> 0.72 -> 0.85 across the three lives), which is true of every life at
+   both positions. It quotes no figure, and it is endpoint-silent on purpose: "rises life over life"
+   states a direction, never a threshold, so ledger Q1 is untouched in both directions.
    Do NOT re-sync this sentence with /first-contact's rebirth fence
    (grep -n "About that number" src/app/first-contact). That card fences a different axis on
    purpose and its guard, the block ending "Line numbers deliberately replaced with grep
@@ -94,9 +119,11 @@ function EndOfLifeCaveat() {
   return (
     <p className="text-xs text-amber-300/70 mt-3 leading-relaxed">
       <strong className="text-amber-300">About these numbers:</strong> none of these lives ends at
-      0 ATP, so none of them is the energy death described above. That is why they read{" "}
-      <em>ended</em> and not <em>died</em>: they are not the death this page defines, and Web4
-      does not define a second one. What else ends a life is <strong>not settled</strong>: the
+      0 ATP, so none of them is the energy death described above. Neither is any of them the trust
+      death: that one takes a sustained collapse, and the trust in this walkthrough rises life over
+      life instead. That is why they read{" "}
+      <em>ended</em> and not <em>died</em>: neither death this page defines fits
+      them. What else ends a life is <strong>not settled</strong>: the
       standard says what stops you acting (ATP reaches zero) and what is permanent (sustained trust
       collapse), and it names no term limit, no lifespan, and no natural end of life. So rather
       than invent a third cause to justify these figures, this page declines to name one. How{" "}
@@ -120,9 +147,12 @@ function EndOfLifeCaveatShort() {
   return (
     <p className="text-xs text-amber-300/70 mt-6 leading-relaxed">
       <strong className="text-amber-300">About these numbers:</strong> none of these lives ends at
-      0 ATP, so none of them is the energy death described above. That is why they read{" "}
-      <em>ended</em> and not <em>died</em>: they are not the death this page defines, and Web4
-      does not define a second one. How <em>much</em> karma carries is not settled either, so read
+      0 ATP, so none of them is the energy death described above. Neither is any of them the trust
+      death: that one takes a sustained collapse, and the trust in this walkthrough rises life over
+      life instead. That is why they read{" "}
+      <em>ended</em> and not <em>died</em>: neither death this page defines fits
+      them. What else ends a life is <strong>not settled</strong>. How <em>much</em> karma carries
+      is not settled either, so read
       these three lives for the shape, not for the death rule or the exact carry-forward.{" "}
       <a href="#karma-carries" className="text-amber-300 hover:text-amber-200 underline">
         What the standard does and does not say &uarr;
@@ -460,8 +490,30 @@ export default function HowItWorksPage() {
                         sentence from :732 verbatim ("raw trust falls below 0.5 and stays there"),
                         the same string karma-consequences:965 carries. Do not reword it here only.
                         Sibling surface: :1222 carries the identical claim and got the identical
-                        treatment. If either moves, move both. */}
-                    <span className="text-sm text-gray-400"> - it ends when: ATP hits 0, raw trust falls below 0.5 and stays there, or CI goes incoherent</span>
+                        treatment. If either moves, move both.
+                        Aug-13 (21:00): the disjunct "or CI goes incoherent" is DELETED here, on the
+                        sibling, and in the red cell below ("Any one fails" -> "Energy or trust
+                        fails"). It made CI a THIRD life-ending path, which is the exact thing
+                        ledger Q5 forbids the site from naming, and it did so while the caveat under
+                        the karma examples said this page "declines to name one". Three groundings,
+                        all pointing the same way: (1) canon has no CI-termination rule - the only
+                        hits are proposals/ENTITY_RELATIONSHIP_SPEC.md 8.2, whose cell reads
+                        "Incoherent | Possible adversarial, CONSIDER termination", a recommended
+                        action in a proposal, plus a WIP proposal and the archived original
+                        whitepaper; nothing in web4-standard/. (2) This page's own Death section
+                        says the opposite, in the sentence locked across six surfaces: "A lower CI
+                        raises your costs and narrows your access; it does not push you toward trust
+                        death". (3) Four surfaces state "Two paths" and only two
+                        (first-contact, karma-consequences, glossary, and this page's :957).
+                        How it got here: Aug-09 restated the ALIVENESS conjunction ("ATP > 0 +
+                        Trust > 0.5 + CI coherent") as a DEATH rule to dodge the endpoint, and an
+                        aliveness conjunct silently became a life-ending condition
+                        ([[explainer-gap-may-be-upstream-off-by-one]]). The endpoint wording that
+                        pass shipped is untouched here, byte for byte; only the CI disjunct went.
+                        PURE DELETION, no replacement claim. Nothing new is asserted about what a
+                        low CI does or does not do - the Death section already owns that. If a
+                        ruling on Q5 ever names CI as a path, restore the disjunct on all three. */}
+                    <span className="text-sm text-gray-400"> - it ends when: ATP hits 0, or raw trust falls below 0.5 and stays there</span>
                   </div>
                 </div>
                 {/* Aug-10 visitor HIGH, their single biggest finding. These two lines were the
@@ -496,10 +548,18 @@ export default function HowItWorksPage() {
                     rather than on which death fired (first-contact:754,913,961; atp-economics:2320;
                     coherence-framework:879; karma-consequences:969-980; glossary:1252-1278; plus
                     the eligibility card and spam section in this file). These two were the only
-                    defect. */}
+                    defect.
+                    CORRECTED Aug-13 (21:00): "these two were the only defect" was wrong, and the
+                    third was inside the span that sweep quoted while rewriting these cells - the
+                    "or CI goes incoherent" disjunct at the end of it
+                    ([[claim-class-grep-truncated-enumerate-remainder]]: the sweep greppped the
+                    rebirth claim and never re-read the ending list it was standing on). The red
+                    cell here carried it implicitly too, as "Any one fails", the three being ATP,
+                    trust and CI. Both gone; rationale and grounding in the guard above the
+                    aliveness span. The rebirth half of these two cells is unchanged. */}
                 <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                   <div className="text-green-400/80">All three healthy → you keep acting, and keep earning</div>
-                  <div className="text-red-400/80">Any one fails → that life ends. ATP hitting 0 is recoverable through karma rebirth; sustained trust collapse is the permanent one</div>
+                  <div className="text-red-400/80">Energy or trust fails → that life ends. ATP hitting 0 is recoverable through karma rebirth; sustained trust collapse is the permanent one</div>
                 </div>
                 <p className="text-xs text-gray-500 mt-2">
                   Which of the two you get is decided by your composite T3 when the life ends, not by which condition fired.{" "}
@@ -1523,8 +1583,11 @@ export default function HowItWorksPage() {
               <div className="text-sm font-bold text-green-400">Aliveness</div>
               {/* Aug-09: sibling of :351, same claim, same treatment. Endpoint-silent (strictly
                   below, per the ENDPOINT RULE at first-contact:295-303) and carrying the
-                  durability qualifier from this page's own :732. Keep in sync with :351. */}
-              <div className="text-xs text-gray-500">Ends when: ATP hits 0, raw trust stays below 0.5, or CI goes incoherent</div>
+                  durability qualifier from this page's own :732. Keep in sync with the aliveness
+                  span in the feedback-loop card (grep -n "it ends when: ATP hits 0").
+                  Aug-13 (21:00): "or CI goes incoherent" deleted from both. Full grounding is in
+                  the guard above that span; do not restore it on one surface only. */}
+              <div className="text-xs text-gray-500">Ends when: ATP hits 0, or raw trust stays below 0.5</div>
             </div>
             <div className="text-center text-gray-600">↑ determined by ↑</div>
 
