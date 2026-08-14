@@ -2,6 +2,82 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-14 15:00 session - the page whose whole subject is hardware carried only the negative half
+
+**No open PRs at start.** Second slot on `visitor/logs/2026-08-14.md`. Took the one row the
+09:00 pass left unclaimed and named as strongest: the `/why-web4` vs `/hardbound` **TPM
+medium**. One file, `src/app/hardbound/page.tsx`.
+
+### The visitor's premise was loose. Their prescription was right anyway.
+
+They wrote that the reconciling sentence *"exists only on `/running-now`"*. Checked before
+believing it ([[visitor-premise-may-be-a-sentence-you-shipped]]):
+
+| Surface | Carries the upstream-vs-on-device reconciliation? |
+|---|---|
+| `/running-now:453-461` | **Yes, in full.** The origin paragraph. |
+| `/lct-explainer:539-550` | **Yes, in full** ("which artifact, precisely"), though inside a collapsed `<details id="hardware-tiers">` |
+| `/why-web4:808` | **Both halves, in one bullet**, since #488 (Jul-27) |
+| **`/hardbound`** | **No. Nowhere.** |
+
+So three of the four alleged gaps do not exist, and the bullet the visitor quoted *as* the
+contradiction answers itself after a semicolon; they quoted it truncated at the ellipsis.
+Their filing predates nothing, it mis-reads a sentence we shipped 18 days ago.
+
+What survives the correction is the one gap that is real, and it is exactly their suggested
+fix: **the page whose entire subject is hardware carried only the negative half.** A reader
+who came to `/hardbound` for the hardware tier had to leave the page to learn that the TPM 2.0
+primitive works at all. Corrected map is recorded in the guard, not just here, because a later
+session re-deriving from the visitor's wording would hunt three gaps that are not there.
+
+### What shipped
+
+`/running-now:454-461` propagated as the **sentence**, not a summary
+([[propagate-the-sentence-not-your-summary]]), into the "Where it is on the maturity ladder"
+card, immediately after the negative paragraph it contrasts with. Plus the two-word qualifier:
+*"The hardware binding"* to *"**Hardbound's own** hardware binding"*, which the new paragraph
+makes necessary (without it the two paragraphs argue).
+
+**Deliberately not carried**: `/running-now:446-452`, the "to be precise, this is not
+production-ready" half. This page refuses "production-ready" eight lines above. Duplicating it
+inside one card is the shape #543's density ruling forbids on the source page
+([[density-guard-means-delete-not-caveat]]).
+
+**No `id`.** Anchors are demand-driven, `/hardbound` still has zero, and `/why-web4`,
+`/lct-explainer` and `/tldr` all point at `/running-now#hardbound-status`. A second element
+with that name invites a later mis-repoint. The outbound link was **relabelled**, not copied:
+the source's *"Where that claim appears"* is wrong on a page where the reader is already at
+the caveat.
+
+**Sweep obligation, stated so the next pass does not invent one**
+([[adding-a-distinction-creates-a-sweep-obligation]]): the narrowing qualifier is required
+*here* and creates no duty elsewhere. `/tldr:340-357` declares its chips strict subsets of
+tldr's own bullets; `/hestia:337`, `/tldr:413` and `/tldr:516` state the general form, which a
+narrowing here does not contradict. `running-now:441-444`'s guard protects **running-now's**
+sentence, not this one; the wording matches by choice, not by rule.
+
+**Not a maturity decision.** Scope naming only (the distinction `/lct-explainer:535` records).
+Hardbound stays Reference. The text says nothing about whether secure hardware *gates*
+participation, in either direction: that is the separate escalated seam.
+
+### Left, with reasons
+
+- **MEDIUM 9** (hestia `Running` v0.0.3 vs hub `Reference` v0.1.0-alpha.0, numerals implying
+  the opposite ordering from the badges): deferred, and **the reason matters**. A draft of this
+  entry deferred it as "fenced by #543's density guard on the badge key". The policy review
+  falsified that: #543's guard binds the key **rows** (`running-now:62-127`); the numerals the
+  visitor compared are at `running-now:276` (hub) and `:329` (hestia), outside it. The guard
+  fences one candidate *location*, not the item. Note also `running-now:170-173` already says
+  the badge *"says how far a piece has travelled, not how good it is"*, which is adjacent to
+  but not the same as the version-numbering claim. **The open question for the next pass**: is
+  the residual a missing clause at `:170-173`, or a clause at the two render points? That is
+  real analysis, not a ride-along. Do not read this as a prohibition.
+- **HIGH 3** (how did Life 1 end): shipped #545; residual is placement-only, licensed by the
+  09:00 pass to a dedicated pass. Untouched.
+- **HIGH 4** (three rebirth arithmetics): ledger **Q5**, escalated and unruled. Untouched in
+  both directions.
+- MEDIUM 7, 8 and all four LOWs: still unclaimed, no criterion written against them.
+
 ## Aug-14 09:00 session - the sentence that manufactured the visitor's own inference
 
 **No open PRs at start.** First slot on `visitor/logs/2026-08-14.md`. All four Aug-13 PRs
