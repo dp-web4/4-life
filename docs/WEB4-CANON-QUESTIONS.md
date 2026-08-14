@@ -1016,6 +1016,34 @@ two HIGHs and three Unanswered Questions in a single sitting.
   as a reassuring comparison.** Endpoint discipline from Q1 still binds: the composite lands
   strictly below, so nothing needs to say, and nothing may say, what happens to a reader sitting
   exactly at 0.50.
+- **Follow-up, 2026-08-14: which quantity, resolved on-site; whose scope, still open.** The Aug-14
+  visitor filed as HIGH *"the fatal 0.5 threshold is described against four different quantities:
+  raw trust, Overall T3 score, composite trust score, and the Trust Score shown in First Contact ...
+  T3 also has published weights (0.4/0.3/0.3), so raw and composite are not the same number."*
+  Their inference was manufactured by the site, not by canon. `/karma-consequences` shipped (#533)
+  *"raw trust is what the permanent death tracks, and the composite score is what the rebirth gate
+  reads."* That is **false**, five surfaces to one: the site's own byte-identical six-page rider
+  reads *"the number compared is raw trust, not effective trust (raw x CI^2)"*, so the contrast is
+  with **effective**, never with **blended**; `/why-web4` renders `Effective trust = raw trust
+  (0.72) x CI^2` with raw as a single scalar; and **Q14 above applies the survival rule to a
+  canonical-weighted composite it computes itself** (`0.4(0.90)+0.3(0.45)+0.3(0.014) = 0.4992`).
+  Upstream closes it by absence: `grep -c raw core-spec/t3-v3-tensors.md` is **zero**, so canon
+  defines no second quantity the sentence could have been naming. #533's own cited precedent
+  refutes it too: it grounded the clause in #532's `/trust-tensor` fix, and that fix says the
+  composite **is** the single-overall-score blend and that the *different* quantity is the widget's
+  **role-weighted match**. #532's axis is composite-vs-role-match; #533 transposed it onto
+  raw-vs-composite. **Disposition**: the clause is deleted, and `/how-it-works` now defines "raw
+  trust" adjacent to (never inside) its byte-locked death paragraph, propagated from that page's own
+  eligibility card: the blend, not one dimension. No comparator, no endpoint, so Q1 is untouched in
+  both directions.
+- **What this follow-up does NOT settle, and what may not be written on-site.** The site now names
+  the death rule's quantity and the rebirth gate's quantity and stops. It does **not** assert that
+  the two gates read the same number, and nothing may assert it: the open sliver is whether the
+  rebirth gate is **entity-wide or role-scoped**, which lands back on this entry's own finding that
+  no entity-level *"score below threshold"* path exists in canon at all. Deleting a false
+  distinction is not asserting its negation. Do not "finish" this by writing an identity claim, and
+  do not force one phrase onto all four pages (the visitor's literal suggestion), which would decide
+  the role-scoping question by vocabulary.
 
 ### Q15. How far does a trust death reach: does it end standing in one society, or everywhere?
 
