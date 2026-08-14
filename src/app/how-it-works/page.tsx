@@ -1025,6 +1025,52 @@ export default function HowItWorksPage() {
                 <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;). A lower CI
                 raises your costs and narrows your access; it does not push you toward trust death.
               </p>
+              {/* Aug-14 visitor HIGH 2 and their Unanswered Q1: "the fatal 0.5 threshold is
+                  described against four different quantities ... T3 also has published weights
+                  (0.4/0.3/0.3), so raw and composite are not the same number. For a threshold that
+                  means permanent death, I could not tell which quantity is being measured."
+                  Their inference was MANUFACTURED by the site: /karma-consequences shipped
+                  "raw trust is what the permanent death tracks, and the composite score is what the
+                  rebirth gate reads" (#533). That clause is deleted in this same push and its guard
+                  records why (`grep -n "REVERSED Aug-14" src/app/karma-consequences`). This is the
+                  other half: the death rule is TAUGHT here, and here "raw trust" was never defined.
+                  Propagated, not coined, and from THIS page: the sentence is the eligibility card's
+                  own, ~160 lines below (`grep -n "specifically your" in this file`). Deliberately
+                  NOT /first-contact's version of the same clause, which reads "weighted for the role
+                  she is acting in": role-weighting is the OTHER quantity
+                  (`grep -n "Two different numbers live on this page" src/app/trust-tensor`), and the
+                  guard on the eligibility card below records that this page already shipped a
+                  role-varying claim once, on Aug-06, and had to correct it against §10.2. Importing
+                  it here would re-open that ([[borrowed-word-means-something-else-there]]).
+                  ADJACENT, never inside: the paragraph above is byte-locked across six pages and
+                  /first-contact's guard says outright that editing inside it desyncs all of them.
+                  It asserts NO comparator and no endpoint: it says which number is read, never what
+                  happens at 0.50 (ledger Q1 untouched, in both directions). It does not say the
+                  death rule and the rebirth gate read the same number either; whether that gate is
+                  entity-wide or role-scoped is Q14 and is unruled.
+                  SWEEP OBLIGATION, discharged and recorded
+                  ([[adding-a-distinction-creates-a-sweep-obligation]]): the non-comment renders of
+                  "raw trust falls below 0.5" are six (this file, /first-contact, /karma-consequences,
+                  /glossary, /why-web4, /trust-tensor's decay block). Criterion for what is LEFT: the
+                  definition is owed where a reader MEETS the survival rule as the page's own subject
+                  with no definition in reach. That is here (this page's own Aug-07 guard, two lines
+                  down, says "this is where they finally got the survival rule"). /first-contact
+                  already defines its Trust Score inline at the point it first renders one
+                  (`grep -n "rolled-up one" src/app/first-contact`); /glossary is a definitions
+                  surface reached BY the term; the /why-web4 and /trust-tensor renders are FAQ and
+                  decay context where the blend is not the subject and the reader arrives having been
+                  taught it. Stated with its exclusions rather than as a bare count
+                  ([[claim-class-grep-truncated-enumerate-remainder]]). If a further render appears
+                  that teaches the rule cold, it belongs in this sweep. */}
+              <p className="text-gray-400 leading-relaxed mt-3 text-sm">
+                <strong className="text-gray-300">Which number is &ldquo;raw trust&rdquo;:</strong>{" "}
+                the blend, not one dimension. It is your{" "}
+                <strong className="text-gray-300">overall (composite)</strong> score, the single
+                number blended from all three dimensions (talent, training, temperament),{" "}
+                <em>not</em> each dimension clearing 0.5 on its own. &ldquo;Raw&rdquo; marks the
+                contrast with <em>effective</em> trust in the sentence above, not a contrast with
+                the blend.
+              </p>
               {/* Aug-07 visitor HIGH, A3. The visitor did the decay-vs-survival arithmetic HERE,
                   on this page, because this is where they finally got the survival rule. The
                   reconciliation itself lives at /trust-tensor#decay-and-survival, next to the rates

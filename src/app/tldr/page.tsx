@@ -100,6 +100,26 @@ export default function TLDRPage() {
                 lct-explainer's Key Duplication row (grep -n "which is part of why it carries less
                 weight" src/app/lct-explainer). No ceiling number is imported here, in either
                 page's calibration, and nothing is asserted about a reader at any score (Q1).
+                Aug-14, SECOND filing, and the imperative above is unchanged by it: the visitor read
+                this exact clause and reported "I read 'carries less weight' as 'a bit slower to
+                build up'. It does not mean that", closing with "I would rather be told hard news in
+                two minutes than discover it on page nine." Aug-13's HIGH 3 is the same claim.
+                Three fixes were available and they are not the same
+                ([[routing-stating-weighting-three-fixes]]): STATE the ceiling here (forbidden by
+                the sentence above, and it is a Q8-equity claim this page does not own), WEIGHT it
+                (a density call this box has already lost twice), or ROUTE. Routing is the one that
+                was actually missing, and the honest account is not "no link existed" but "the link
+                pointed elsewhere": the clause above already links #first-device-bootstrap, which is
+                correct for the WITNESS question and silent on what the tier costs.
+                Destination is the anchor that already answers it and stops in the same place this
+                page does (grep -n 'id="software-only-survival"' src/app/lct-explainer): it states
+                the ceiling and the sustained-collapse rule and asserts nothing at exactly 0.50.
+                This is the site's fifth link into it; the four already shipping are on /hestia,
+                /what-could-go-wrong, /why-web4 and /trust-tensor, and /trust-tensor's link text
+                names the ceiling number outright. Routing to a fence-compliant destination carries
+                no claim across ([[fence-does-not-cover-already-shipped-sentence]] in reverse): the
+                anchor's demand-driven guard covers the new inbound link. Do NOT "finish" this by
+                importing the number into the link text here.
                 SWEEP OBLIGATION, discharged and recorded ([[adding-a-distinction-creates-a-sweep-obligation]]):
                 `grep -rn "day-zero" src/app`, minus comment lines and minus the new
                 lct-explainer paragraph this push adds, RENDERS on four surfaces. This one was the
@@ -122,7 +142,11 @@ export default function TLDRPage() {
                 for your identity, and from your first action onward it is the community you join
                 that witnesses what you do. On a device with a security chip, that day-zero witness
                 is the chip itself; with software alone it is a key on your machine, which starts
-                you the same way and carries less weight. Witnessing is per action, not a standing
+                you the same way and{" "}
+                <Link href="/lct-explainer#software-only-survival" className="text-sky-400 hover:underline">
+                  carries less weight
+                </Link>
+                . Witnessing is per action, not a standing
                 relationship.
                 Every action leaves a verifiable record of what happened, under whose authority, and
                 against which rules. Good behavior compounds. Bad behavior follows you.
@@ -203,6 +227,24 @@ export default function TLDRPage() {
               The tag on each card says how far along that piece is:
             </p>
             <div className="flex flex-col gap-2 text-sm text-gray-400">
+              {/* Aug-14 visitor MEDIUM: "Defines two tags (Reference, Running), then says 'The
+                  three run in that order' and links to 'the full three-tier key (Spec, Reference,
+                  Running).' A cold reader is told about three after being shown two, and scrolls
+                  back looking for the missing one." They scrolled back twice. The paragraph below
+                  also USES the word twice on its own ("the core standard below is both Spec and
+                  Reference"), so this page names Spec three times and defined it zero.
+                  Row propagated verbatim from the canonical legend this box links to
+                  (`grep -n 'tier="spec"' src/app/running-now`, first hit), so the strict-subset
+                  invariant recorded at the head of this box holds by construction.
+                  Placed FIRST because the paragraph below asserts an order ("The three run in that
+                  order, measured by distance from written down to in daily use") and a Spec row
+                  under Running would falsify it. */}
+              <div className="flex items-start gap-3">
+                <span className="shrink-0 mt-0.5"><MaturityBadge tier="spec" /></span>
+                <span>
+                  defined in the Web4 standard. Written down and stable, not yet built here.
+                </span>
+              </div>
               <div className="flex items-start gap-3">
                 <span className="shrink-0 mt-0.5"><MaturityBadge tier="reference" /></span>
                 <span>
@@ -246,11 +288,19 @@ export default function TLDRPage() {
                 about tier DEFINITIONS drifting apart, and that is intact.
 
                 NOT fixed by badging the card <MaturityBadge tier="spec" /> + Reference to match
-                /running-now, which is the visitor's first option and looks cheaper. It would put
-                an UNDEFINED tier chip on this page: the two rows above define Reference and
-                Running only, and they exist because the absence of a tier key HERE was filed
-                three separate times (Jul-24 LOW, Jul-27 LOW, Jul-28 MEDIUM). Matching the chips
-                would re-open three items to close one.
+                /running-now, which is the visitor's first option and looks cheaper.
+                Aug-14: the reason this refusal USED to give is now spent, and saying so is the
+                point of this paragraph ([[opposite-intents-in-code-comments]]). It read "It would
+                put an UNDEFINED tier chip on this page: the two rows above define Reference and
+                Running only" (those rows existing because the absence of a tier key HERE was filed
+                three separate times: Jul-24 LOW, Jul-27 LOW, Jul-28 MEDIUM). The Aug-14 visitor got
+                Spec DEFINED in the box above, so that premise is false and a later pass reading it
+                would find rot.
+                The refusal stands on the ground that survives, which was always the independent
+                one: the clause two sentences down, "these cards show only the furthest it has
+                reached", is a live rendering CONSTRAINT on this grid. Badging one card Spec +
+                Reference falsifies it directly, and it is true of all four cards today. That
+                constraint never depended on whether Spec was defined.
 
                 Sweep: /the-standard's hero eyebrow also badges the core standard bare Reference
                 and is deliberately LEFT ([[adding-a-distinction-creates-a-sweep-obligation]]).

@@ -989,10 +989,39 @@ export default function KarmaConsequencesPage() {
                     requirement thresholds, and `grep -rni karma ../web4/web4-standard/` returns
                     zero. "The society checks" is verbatim from the eligibility card and names the
                     checker, not the setter. Do not upgrade it.
-                (2) It must keep naming the quantity seam. The locked paragraph above reads RAW
-                    trust; this gate reads COMPOSITE T3. Two different numbers, both around 0.5, in
-                    one card. Dropping the distinction ships the [[borrowed-word-means-something-
-                    else-there]] defect #532 had just fixed on /trust-tensor.
+                (2) It must name WHICH quantity the gate reads, and stop there.
+                    REVERSED Aug-14, and the reversal is the point of this clause, not a footnote
+                    to it ([[opposite-intents-in-code-comments]]). #533 shipped a second sentence
+                    here reading "That is a different number from the raw trust in the paragraph
+                    above: raw trust is what the permanent death tracks, and the composite score is
+                    what the rebirth gate reads." That is FALSE and it is the sentence the Aug-14
+                    visitor's HIGH 2 and their Unanswered Q1 were both built out of: they read it
+                    and correctly inferred "T3 has published weights, so raw and composite are not
+                    the same number", then could not tell which of four phrasings the survival line
+                    is measured against.
+                    Five surfaces against one. The site's own six-page byte-identical rider states
+                    the axis outright: "The number compared is raw trust, not effective trust
+                    (raw x CI^2)" (the non-comment hits of `grep -rn "not effective trust" src/app`).
+                    Raw contrasts with EFFECTIVE, never with BLENDED. /why-web4 renders "Effective
+                    trust = raw trust (0.72) x CI^2" with raw as a single scalar
+                    (`grep -n "Effective trust = raw trust" src/app/why-web4`), and
+                    docs/WEB4-CANON-QUESTIONS.md Q14 computes `0.4(0.90)+0.3(0.45)+0.3(0.014)` and
+                    applies the survival rule to the result, so the ledger itself reads raw trust as
+                    the canonical-weighted composite. Upstream settles the rest by absence:
+                    `grep -c raw ../web4/web4-standard/core-spec/t3-v3-tensors.md` is ZERO, so canon
+                    defines no second quantity for that sentence to have been naming.
+                    #533's own cited precedent refutes it. It grounded this clause in "the
+                    [[borrowed-word-means-something-else-there]] defect #532 had just fixed on
+                    /trust-tensor", and that fix (`grep -n "Two different numbers live on this page"
+                    src/app/trust-tensor`) says the composite IS "the blend used when T3 is collapsed
+                    into a single overall score", and that the different quantity is the widget's
+                    ROLE-WEIGHTED MATCH. #532's axis is composite-vs-role-match; #533 transposed it
+                    into raw-vs-composite, an axis its source never supported.
+                    So: delete, do not replace. Naming the gate's quantity is this paragraph's job;
+                    asserting that the two gates read the SAME number is not, and would close the
+                    axis in the other direction. What stays unruled after the delete is whether the
+                    rebirth gate is entity-wide or role-scoped, which is filed under Q14 (canon has
+                    no entity-level score-threshold path at all). Do not answer it here.
                 (3) It must NOT restate a recoverability condition. The site currently carries three
                     (/how-it-works:166 unconditional, /first-contact:750 "if you built good karma",
                     the aliveness fix "if trust held up"); this paragraph is scoped to the GATE only
@@ -1003,9 +1032,7 @@ export default function KarmaConsequencesPage() {
               <strong className="text-gray-300">Who comes back.</strong> Recoverable is not the same
               as automatic. The society checks your T3 trust tensor, specifically your{' '}
               <strong className="text-gray-300">overall (composite)</strong> score, the single number
-              blended from all three dimensions. That is a different number from the raw trust in the
-              paragraph above: raw trust is what the permanent death tracks, and the composite score
-              is what the rebirth gate reads.{' '}
+              blended from all three dimensions.{' '}
               <Link href="/how-it-works#journey" className="text-sky-400 hover:underline">
                 The eligibility check, with the weights and the arithmetic &rarr;
               </Link>

@@ -2,6 +2,88 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-14 09:00 session - the sentence that manufactured the visitor's own inference
+
+**No open PRs at start.** First slot on `visitor/logs/2026-08-14.md`. All four Aug-13 PRs
+(#543-#546) merged before the 05:07 browse, so this log reads the current site with no
+post-browse ambiguity. Took **HIGH 2 + their Unanswered Q1**, **HIGH 1** (second filing) and
+**MEDIUM 6**.
+
+Visitor ticked **all seven** understanding boxes. Their own statement of the residual:
+*"the gaps that remain are not 'what does this word mean,' they are 'these two pages disagree
+and I do not know which to believe.'"* Every item taken is of that shape.
+
+### HIGH 2: the visitor's premise was ours, and it was false
+
+They reasoned *"T3 has published weights (0.4/0.3/0.3), so raw and composite are not the same
+number"* and could not tell which quantity the death line reads. They did not invent that
+premise. `/karma-consequences` shipped it as a claim (#533): *"raw trust is what the permanent
+death tracks, and the composite score is what the rebirth gate reads."*
+
+Five surfaces to one:
+
+| Surface | Reads |
+|---|---|
+| the six-page byte-identical rider | *"the number compared is raw trust, **not effective trust** (raw x CI^2)"* - the contrast is CI, never the blend |
+| `/why-web4` | `Effective trust = raw trust (0.72) x CI^2`, raw as a single scalar |
+| ledger **Q14** | computes `0.4(0.90)+0.3(0.45)+0.3(0.014)` and applies the survival rule to it |
+| `/trust-tensor` guard | applies *"raw trust falls below 0.5"* to a worked composite |
+| upstream `t3-v3-tensors.md` | `grep -c raw` = **zero**. Canon defines no second quantity |
+
+And **#533's own cited precedent refutes it**: it grounded the clause in the borrowed-word
+defect #532 had just fixed on `/trust-tensor`, but that fix says the composite **is** the
+single-overall-score blend and the *different* quantity is the widget's **role-weighted match**.
+#532's axis is composite-vs-role-match; #533 transposed it onto raw-vs-composite.
+
+**Deleted, not replaced.** The other half: the death rule is *taught* on `/how-it-works`, where
+"raw trust" was undefined. That page now defines it adjacent to (never inside) its byte-locked
+death paragraph, propagated from its own eligibility card: the blend, not one dimension.
+Deliberately **not** `/first-contact`'s version of the clause (*"weighted for the role she is
+acting in"*), which would import the other false axis into a page that already had to correct a
+role-varying claim against 10.2 on Aug-06.
+
+Q1 untouched in both directions (no comparator, no endpoint). The open sliver, whether the
+rebirth gate is entity-wide or role-scoped, is **filed under Q14**, not answered. Deleting a
+false distinction is not asserting its negation, and the ledger note says so explicitly.
+The visitor's literal suggestion (force one phrase onto all four pages) was **refused**: it would
+decide the role-scoping question by vocabulary.
+
+### HIGH 1 (second filing): routing was the missing one of three
+
+Aug-13 HIGH 3 is the same claim. Visitor: *"I read 'carries less weight' as 'a bit slower to
+build up'. It does not mean that ... I would rather be told hard news in two minutes than
+discover it on page nine."* Three available fixes are not the same
+(`routing-stating-weighting-three-fixes`): **state** the ceiling here (forbidden by the guard,
+and a Q8-equity claim `/tldr` does not own), **weight** it, or **route**. The honest account is
+not "no link existed" but *the link pointed elsewhere*: the clause already linked
+`#first-device-bootstrap`, correct for the witness question and silent on cost. Now routes to
+`#software-only-survival`, the site's fifth inbound link to that anchor. No number in the link
+text.
+
+### MEDIUM 6: a spent reason, rewritten rather than dropped
+
+`/tldr` defined two tags, then used "Spec" three times without defining it, and linked to "the
+full three-tier key". Spec row added **first** (the paragraph below asserts an order), verbatim
+from the legend it links to. Consequence worth recording: the guard refusing to re-badge the
+cards rested on *"it would put an UNDEFINED tier chip on this page"*. That premise is now spent,
+so the refusal was rewritten onto the ground that survives ("these cards show only the furthest
+it has reached" is a live rendering constraint that never depended on Spec being undefined).
+Leaving it would have been rot a later pass would read as still-live reasoning.
+
+### Left, with reasons
+
+- **HIGH 3** ("how did Life 1 end?"): **shipped** in #545, which merged 22:13 Aug-13, seven
+  hours before the browse. So this is a **recurrence against the fix**, not a stale filing. The
+  residual is **placement, not absence**: `EndOfLifeCaveat` renders *after* the table the visitor
+  read top-down, so they built the contradiction before reaching the disclosure. Licensed for a
+  later placement-only pass; do not re-treat the content.
+- **HIGH 4** (three rebirth arithmetics): ledger **Q5**, escalated and unruled, fenced at four
+  surfaces.
+- MEDIUM 4 (`/why-web4` vs `/hardbound` TPM: put the upstream-vs-on-device reconciliation on
+  `/hardbound` itself, where it currently lives only on `/running-now`), MEDIUM 5, 7, 8, 9 and
+  all four LOWs: unclaimed, no criterion written against them. MEDIUM 4 is the strongest
+  remaining row and is a straight propagation.
+
 ## Aug-14 03:00 session - four numbers, and the proof the repo lists under "missing"
 
 **No open PRs at start.** Fired 03:01, before the 05:00 cron, so `visitor/logs/2026-08-13.md` is
