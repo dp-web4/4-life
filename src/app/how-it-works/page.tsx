@@ -114,7 +114,27 @@ const HOW_IT_WORKS_SECTIONS = [
    (grep -n "About that number" src/app/first-contact). That card fences a different axis on
    purpose and its guard, the block ending "Line numbers deliberately replaced with grep
    targets here", says so. Cites named rather than numbered: both files move under edit and a
-   number here rots by this file's own insertion ([[guard-comment-cites-rot-name-the-target]]). */
+   number here rots by this file's own insertion ([[guard-comment-cites-rot-name-the-target]]).
+   Aug-15 visitor HIGH, the FIFTH filing of Q5 and the first to name the READING ORDER: "First
+   Contact told me: everyone starts a life with 100 ... This page tells me 145 -> 145. Those are
+   not the same rule", and "under the version on this page, dying costs you nothing". Their premise
+   ("This page states its version flat, with no hedge at all") is FALSE - this caveat renders
+   directly under the cards they quoted and has enumerated their branch since Aug-09. Read it and
+   filed it anyway, for the third time ([[visitor-read-it-and-still-filed-it]]).
+   So the residual was never the fence: it was the JOIN
+   ([[friction-may-be-an-entailment-not-a-contradiction]]). The enumeration was abstract, and the
+   reader arrives carrying a CONCRETE 112 from the page before this one on the reading path.
+   Nothing told them the 112 they already held IS branch three. Added: which instance shows which
+   branch. That endorses no branch, widens no enumeration (still three), moves no figure, and
+   imports no wording from the /first-contact card, which the paragraph above forbids.
+   The pointer is SYMMETRIC on purpose. An instance-pointer attached to one branch of three reads
+   as weighting it, so the balance-carry branch is attributed to the cards below in the same
+   sentence. Both third-branch instances are named, not only the off-page one: LifecycleDemo
+   renders a 112 restart on THIS page (grep -n "<LifecycleDemo" here, and "atp: 112" in
+   src/components/LifecycleDemo.tsx), which is why the third branch was added to this enumeration
+   in the first place. A pointer that went only off-page would have been incomplete.
+   EndOfLifeCaveatShort's strict-subset property is UNAFFECTED: sentences 1-2, the only propagated
+   ones, are untouched. Re-check it if you ever edit sentences 1-2. */
 function EndOfLifeCaveat() {
   return (
     <p className="text-xs text-amber-300/70 mt-3 leading-relaxed">
@@ -129,7 +149,13 @@ function EndOfLifeCaveat() {
       than invent a third cause to justify these figures, this page declines to name one. How{" "}
       <em>much</em> karma carries is also unsettled: whether you keep your whole final balance, a
       reduced portion of it, or a fresh starting balance plus a karma bonus is not decided, and
-      this walkthrough shows one modelling choice, not the rule. Read it for the shape (a good track record starts your next life stronger), not for
+      this walkthrough shows one modelling choice, not the rule. The two lives above show the first
+      of those branches. The lifecycle demo further up this page and the{" "}
+      <Link href="/first-contact" className="text-amber-300 hover:text-amber-200 underline">
+        First Contact walkthrough
+      </Link>{" "}
+      both show the third, so a restart figure that does not match these is the same open question
+      showing its other side, not a second rule. Read it for the shape (a good track record starts your next life stronger), not for
       the death rule or the exact carry-forward.
     </p>
   );
@@ -228,7 +254,20 @@ export default function HowItWorksPage() {
         <div className="mb-6 p-4 bg-sky-950/20 border border-sky-800/30 rounded-lg text-sm text-gray-300 space-y-2">
           <p className="text-xs uppercase tracking-wide text-sky-400 mb-2 font-semibold">Key Takeaways</p>
           <p>You&apos;re born with <strong className="text-green-400">energy</strong> and <strong className="text-purple-400">neutral trust</strong>. Every action costs energy, from about 1 ATP to read something up to 10-20 to post. Quality contributions earn it back; spam drains it.</p>
-          <p>Your <strong className="text-blue-400">identity</strong> is tied to your devices - no passwords, no central authority. Your <strong className="text-purple-400">trust</strong> is multi-dimensional (competence, reliability, consistency) and role-specific.</p>
+          {/* Aug-15 visitor MEDIUM, and the one thing on the site that taught them something
+              outright false: this box named the trust dimensions "(competence, reliability,
+              consistency)". The site's T3 is Talent / Training / Temperament, including 96 lines
+              below in this same file (grep -n "Multi-dimensional trust scored across"), so the
+              first box on the page contradicted the page. "The Key Takeaways box is the first
+              thing I read on the page. I learned 'competence, reliability, consistency', carried
+              it for several minutes, and then had to unlearn it."
+              The replacement triple is PROPAGATED from that line, not re-derived
+              ([[propagate-the-sentence-not-your-summary]]). Site-wide sweep for the old triple
+              found no other prose instance; the only remaining hits are the WASM engine's
+              constructor arguments (src/lib/wasm/web4_trust_core.js), which render nowhere and are
+              an upstream API signature this track does not own. If that engine is ever regenerated
+              with Web4 naming, this comment is the record of why the names differed. */}
+          <p>Your <strong className="text-blue-400">identity</strong> is tied to your devices - no passwords, no central authority. Your <strong className="text-purple-400">trust</strong> is multi-dimensional (Talent, Training, Temperament) and role-specific.</p>
           {/* Aug-10: this read "If your energy hits zero or trust collapses, you die. But good karma
               carries forward - you're reborn with a head start." One disjunction, one consequence,
               and the consequence is only true of the first branch. This page's OWN canonical
