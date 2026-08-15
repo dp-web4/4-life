@@ -481,9 +481,45 @@ export default function FirstContactPage() {
                       trust. It is a restart value, exactly like Act 1's bare "0.50", and the
                       parallel with 0.50 is the card's moral (you restart above neutral).
                       flex-wrap added because the chips no longer fit one line of a
-                      sm:grid-cols-5 column. Keep every figure here in sync with the recap. */}
+                      sm:grid-cols-5 column. Keep every figure here in sync with the recap.
+
+                      Aug-14 (Aug-14 visitor MEDIUM 8): the trust half was still half-done, and
+                      the paragraph directly above is where to see why. Aug-13 gave the REBIRTH
+                      moment a trust chip; the DEATH moment never got one. So the rail's only
+                      readable trust transition across this card was Act 4's 0.62 to this card's
+                      0.54, a drop, on the card whose moral is that you restart above neutral.
+                      The visitor read exactly that: "Alice ends around 0.62 trust, dies at ATP 0,
+                      and is 'reborn at 0.54' ... But her trust went down, 0.62 to 0.54. Nothing
+                      tells me why a head start includes a trust haircut."
+                      Note what the no-arrow paragraph above already says: "a down arrow would
+                      read as rebirth costing her trust." That is the misreading, and it arrived
+                      with no arrow at all, because the number it would have been measured
+                      against was missing.
+                      0.51 is NOT a new figure either: `simulationSnapshots` tick 13
+                      `trust_after`, and it already rendered twice, in "Trust fell from 0.62 to
+                      0.51" and in the load-bearing "Alice got lucky. Her trust was still 0.51
+                      when ATP ran out" box. Both are POST-Start (grep -n "0\.51"), i.e. behind
+                      the walkthrough button, and this rail is pre-Start. That pre-vs-post-Start
+                      test is also why Act 3's bare "0.48" was left alone in the same pass: its
+                      meaning ships pre-Start and ABOVE this rail, in the Trust Score bullet
+                      ("Below 0.50: features get restricted until she rebuilds it"). 0.51's did
+                      not ship anywhere a reader of this rail could reach.
+                      FOLDED into the death chip rather than added as a fourth: a fourth chip
+                      would have to render before the +12/0.54 pair or it destroys the ordering
+                      the fix exists to create. It is deliberately BARE. Do not gloss it with
+                      "above 0.50" / "barely above" / "still alive at": the endpoint guard on
+                      the Trust Score bullet forbids any regional claim about 0.50 in either
+                      direction, and the "Alice got lucky" box is where that argument belongs.
+                      And do not state any arithmetic relating 0.51 to 0.54: how a rebirth trust
+                      value is derived is unstated on this site and unruled in canon.
+                      STILL NO ARROW on 0.54, and re-read the reason, because the old one is now
+                      spent. It used to rest on 0.62 being the only preceding trust value; 0.51
+                      now precedes it, so 0.54 IS an up-move from the chip beside it. The rule
+                      that survives is the rail's convention: Acts 2-4 arrow against the previous
+                      ACT, and Alice ends Act 4 at 0.62, so an up arrow is still false. It stays
+                      a restart value, exactly like Act 1's bare "0.50". */}
                   <div className="flex flex-wrap gap-1 text-xs">
-                    <span className="bg-red-900/40 text-red-300 px-1.5 py-0.5 rounded">dies at ATP 0</span>
+                    <span className="bg-red-900/40 text-red-300 px-1.5 py-0.5 rounded">dies at ATP 0, trust 0.51</span>
                     <span className="bg-emerald-900/40 text-emerald-300 px-1.5 py-0.5 rounded">+12 bonus &rarr; 112</span>
                     <span className="bg-emerald-900/40 text-emerald-300 px-1.5 py-0.5 rounded">reborn at 0.54</span>
                   </div>

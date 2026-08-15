@@ -164,6 +164,34 @@ export default function RunningNowPage() {
             yet, which is the thing{" "}
             <MaturityBadge tier="running" /> would claim.
           </p>
+          {/* Aug-14 visitor MEDIUM 9: "Hestia is badged Running at version 0.0.3. The hub is
+              badged Reference at version 0.1.0-alpha.0. As a normal person, 0.1.0 sounds
+              further along than 0.0.3. The badges say the opposite. Nothing addresses this and
+              I spent a minute assuming I had misread one of them."
+              The Aug-14 15:00 pass deferred this and left the choice of home as an open
+              question: a clause HERE, or a clause at the two render points (the hub's version
+              sentence and hestia's). Answered HERE, for the reason this paragraph already
+              exists: it is the canonical statement of the ladder and it owns every "what the
+              badge is NOT" claim (see "not how good it is" beside it, and note /tldr's gloss
+              is declared a strict subset of this legend, so a rank claim has to land here
+              first). It also renders before both numerals, so the reader meets the disclaimer
+              before the comparison that provokes it.
+              Placement chosen WITH the precedent against it in view, so a re-file is read
+              correctly: this page has a three-strike history (Aug-01, Aug-04, Aug-13) of
+              caveats that only stuck once they moved INTO the row they qualified. The
+              distinguishing argument is that the ordering model is FORMED here and the
+              comparison the visitor made can only complete at the second numeral, which is
+              hestia's, ~160 lines below. If the Aug-15+ visitor files this again, the residual
+              is PLACEMENT, not wording: move it to the two render points, do not reword it.
+              NO VERSION LITERALS here, deliberately, and do not "improve" it by adding them or
+              by naming which of the two is lower. Both numerals render on their own pages too
+              (grep -rn "0\.0\.3\|0\.1\.0-alpha" src/app), so a third copy 100+ lines above the
+              two sources on THIS page rots on the next bump, and so does any comparative
+              between them. The general form does not.
+              Sweep criterion for what this leaves alone: the clause is owed only where two
+              pieces' version numerals render on one page against differing badges, which is
+              this page alone. /hub and /hestia each state one version and one badge, so
+              neither surface can produce the comparison. */}
           <p className="mt-4 text-sm text-gray-400 leading-relaxed">
             The three run in that order, measured by distance from written down to in daily
             use. A piece can carry more than one: the core standard below is both{" "}
@@ -171,7 +199,9 @@ export default function RunningNowPage() {
             its specification is written and the primitives underneath it are built. And the
             badge says how far a piece has travelled, not how good it is. Hardbound below is
             badged <MaturityBadge tier="reference" /> and is a usable, actively hardened
-            tier.
+            tier. Nor does it track version numbers: each piece numbers its own releases on
+            its own schedule, so a piece on a lower version number can carry a further badge
+            than a piece on a higher one.
           </p>
         </div>
       </section>
