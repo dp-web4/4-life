@@ -380,9 +380,12 @@ cargo add web4-core web4-trust-core`}</code></pre>
             Running badge key says "in day-to-day use", so "4 machines" with no owner named
             was read as the one place the page was not saying the quiet part ("if they are
             the authors' own machines, Running and Reference are closer together than the
-            badge key suggests"). Grounded in hestia/README.md:22 (the lab that builds and
-            runs Hestia is itself a live Web4 society, members published at 4-lab.io/fleet)
-            and README.md:78 (the 4-machines figure). The canonical no-public-network
+            badge key suggests"). Grounded in hestia/README.md, its "A living example" callout
+            (the lab that builds and runs Hestia is itself a live Web4 society, members published
+            at 4-lab.io/fleet) and the status table's Claude Code plugin row ("Deployed on 4
+            machines"). Cited by content, not by line: the two integers this guard used to carry
+            (:22 and :78) had both rotted to unrelated sections by Aug-15, though both claims
+            still hold. The canonical no-public-network
             sentence is reused byte-for-byte from /hestia:404, /day-in-web4:515 and
             /how-it-works:99, which #490 made identical on purpose.
             Deliberately NOT saying "no outside users yet", which is what the visitor
@@ -404,8 +407,36 @@ cargo add web4-core web4-trust-core`}</code></pre>
           infrastructure, and there is no public network open to outside members yet. The
           plugin and the SDKs are published, so anyone can install them, but the deployment
           counted here is the lab&apos;s. Daily use by the people who build it is what the
-          Running badge claims, and it does not claim adoption.
+          Running badge claims, and it does not claim adoption. Which lab, and who is in it, is
+          checkable rather than asserted: its members and roles are published at{" "}
+          <a
+            href="https://4-lab.io/fleet"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 underline hover:text-emerald-300"
+          >
+            4-lab.io/fleet
+          </a>
+          .
         </p>
+        {/* Aug-14 visitor LOW: "the 4-lab.io/fleet link, which is the only concrete evidence of
+            Web4 actually being used by anyone, is the fifth bullet of a 'where you fit' list."
+            The position is wrong (it is the FIRST row, :547 in the section at :538) and the
+            residual is not prominence in the list: that row is keyed on a READER ("You are here
+            to understand it, not to run it"), so a reader who identifies as a runner skips the
+            one link that checks a claim made 145 lines above it. The claim keyed on the THING is
+            here, and it was the paragraph that had no link, while this very guard cited the
+            roster as its own grounding.
+            Link target decided, not defaulted: /hub#we-run-one owns the living-example CLAIM
+            (see hub/page.tsx, "this page owns that claim"), and /hestia:642 complies by linking
+            there rather than restating it. This clause does not restate that claim: it makes no
+            society, witnessing or presence assertion, it only says where the roster is. On the
+            page whose entire job is letting a reader check the ledger, a hop through an internal
+            restatement is the wrong end of the trade, and the "Where you fit" row on this same
+            page already links the roster raw. If a later pass wants one convention for the whole
+            site, change both render points together, not this one alone.
+            Deliberately NOT repeating "a society that isn't witnessed has no presence to trust",
+            which is the sentence /hub owns and the row below already carries. */}
         {/* Aug-05 visitor HIGH #3. The landing hero promises "Today we cannot prove what an agent
             did, on whose authority, or by what rules. Web4 closes that gap." On the one piece
             badged Running, an action that routes around the policy gate writes no chain entry at

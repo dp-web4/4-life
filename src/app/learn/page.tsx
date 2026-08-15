@@ -585,8 +585,25 @@ export default function LearnJourney() {
               0
             )}{" "}
             concepts completed ({progress.toFixed(0)}%)
-            <span style={{ fontSize: '0.75rem', color: 'var(--color-gray-500)', marginLeft: '0.5rem' }}>
-              (saved in your browser)
+            {/* Aug-14 visitor LOW: "'0 / 24 concepts completed (0%)' appears with no explanation
+                that I am the one who marks them. I briefly thought I was being tracked."
+                Their literal suggestion ("mark these yourself as you go") would have shipped a
+                falsehood: this counter is NOT self-marked only. The effect above merges saved
+                localStorage progress with auto-completion derived from pagesVisited, so a reader
+                who browsed the onramp first opens this page to a non-zero count they never
+                touched, and their instinct was right, they ARE being tracked. What makes that
+                benign is where it goes, not whether it happens: src/lib/exploration.ts is
+                localStorage only, with no network call anywhere in it, and the repo has no
+                analytics package at all (grep across src/ and package.json = 0).
+                So the clause states both halves plus the destination. The old "(saved in your
+                browser)" said where the data lives and never said who creates it, which is the
+                half the visitor asked about; it is folded in rather than dropped.
+                "some are ticked for you" is deliberately not "any page you open": only the slugs
+                in the map above, reached through trackPageVisit, tick anything. */}
+            <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--color-gray-500)', marginTop: '0.35rem' }}>
+              You tick these off yourself with the Mark Done buttons below; some are ticked for
+              you automatically, from pages you have already opened. Nothing is sent anywhere:
+              the count is kept in this browser only.
             </span>
           </div>
           <div

@@ -2,6 +2,97 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-15 03:00 session - the counter that marks itself
+
+**No open PRs at start.** Fourth and final pass on `visitor/logs/2026-08-14.md` (the Aug-15
+browse fires at 05:00, after this session). Took the three unclaimed **LOWs that survive a
+source check**: LOW 11 (`/why-web4`), LOW 13 (`/running-now`), LOW 12 (`/learn`). Three files,
+none shared. LOW 10 refused with its reason. The log now has no unclaimed row.
+
+### LOW 11: the guard cited the sentence and carried half of it
+
+Visitor: *"'424 attack vectors across 84 tracks, with ~85% detection...' I cannot judge whether
+85% is good. The undetected 15% is about 64 attacks, and I do not know what kind."* Their
+suggestion has two branches and only one is groundable. **(a) what the misses have in common:
+refused**, no upstream artifact characterizes a missed set. **(b) why 85% is or is not the
+meaningful figure: already written upstream, in the same sentence we quoted from.**
+
+The bullet's Aug-14 guard says what upstream states live *"is ~85% detection against synthetic
+adversaries with no red team engagement, which is what this bullet now carries."* It stopped at
+the semicolon. `README.md:161` and `STATUS.md:64` both continue: *some "defenses" are standard
+infosec practices (EM shielding, TEMPEST) documented for completeness, not Web4-novel*. Shipped
+**verbatim from README's render** (shorter; its parenthetical leads with the plain-language
+term). Not merged with STATUS's wording, which would be variant three
+([[propagate-the-sentence-not-your-summary]]).
+
+**No arithmetic inference.** The clause does not say those practices sit inside the 85% or
+inflate it: upstream says neither, and manufacturing the reader's own inference is the defect
+#547 repaired on this same page.
+
+**"across 84 tracks" deleted in the same edit**, and the criterion is recorded because the
+bullet one row up deleted its number outright (#525's density ruling, a rotted LOC figure). The
+difference: there the subject had rotted; here the numbers are live, and what was missing was
+upstream's own qualifier. 84 goes because it is a second uncalibratable numeral doing no work in
+a complaint whose denominator was 424. Net words near flat.
+
+**Found and deliberately not used**: the Aug-14 guard's grep for *"all defended"* was truncated.
+The phrase is also live in `simulations/docs/ATTACK_CATALOG_SUMMARY.md`. It stays deleted, and
+the finding is why: that same table gives *"Average Detection Rate ~70%"* for the same 424
+vectors, disagreeing with the STATUS/README figure the site prints. An upstream inconsistency is
+not a licence to strengthen a claim ([[claim-class-grep-truncated-enumerate-remainder]]).
+
+### LOW 13: the claim keyed on the THING had no link; the one link was keyed on the READER
+
+Their premise is wrong on position (the roster is the **first** row of "Where you fit today", not
+the fifth) and right on function. That row opens *"You are here to understand it, not to run
+it,"* so a reader who identifies as a runner skips the only external check on a claim made 145
+lines above. `#whose-machines` (*"the deployment counted here is the lab's"*) is the claim keyed
+on the thing, and it was unlinked while **its own guard cited the roster as its grounding**
+([[promise-without-routing]], [[guard-comment-names-the-un-swept-page]]).
+
+**Link target decided, not defaulted.** `/hub#we-run-one` owns the living-example claim and
+`/hestia:642` complies by linking there. This clause makes no society/witnessing/presence
+assertion, only "here is where the roster is", so it links the roster raw, as the row on this
+same page already does; on the maturity ledger a hop through an internal restatement is the
+wrong end of the trade. Recorded so a later convention pass changes both render points together.
+
+**Two rotted citations repaired while the guard was open**: `hestia/README.md:22` and `:78` now
+point at unrelated sections (the live homes are the "A living example" callout and the plugin
+row). Re-cited **by content, not by line** ([[guard-comment-cites-rot-name-the-target]]).
+
+### LOW 12: the visitor's literal suggestion would have shipped a falsehood
+
+They asked for *"mark these yourself as you go"* next to `0 / 24`. The counter is **not
+self-marked only**: the mount effect merges saved localStorage progress with auto-completion
+derived from `pagesVisited`, so a reader who browsed the onramp first opens `/learn` to a
+non-zero count they never touched. Their instinct (*"I briefly thought I was being tracked"*)
+was **correct**, and reassuring them with a sentence denying it is
+[[keeping-the-true-half-can-still-reassure]] in its exact shape. The policy reviewer caught this;
+the proposed clause was wrong before it shipped.
+
+So the clause carries both halves plus the destination: you tick them with the Mark Done
+buttons, some are ticked for you from pages you have opened, and nothing is sent anywhere
+(`src/lib/exploration.ts` is localStorage only, no network call, and the repo has no analytics
+package at all). *"some"*, not *"any page you open"*: only the mapped slugs reached through
+`trackPageVisit` tick anything. The old *"(saved in your browser)"* is folded in, not dropped:
+it answered where the data lives and never who creates it, which was the visitor's actual gap.
+
+### LOW 10 refused, with the criterion
+
+Whether a 5-hop pipeline is reachable inside a ~3-hop neighborhood is fenced at
+`how-it-works:2376-2394` **in both directions** (*"must NOT restate /trust-neighborhood's 3-hop
+horizon as a bound on pipeline length, or as not being one"*) and filed as ledger **Q11**. The
+answerable half of the visitor's row, whether the two hops are the same kind of thing, already
+ships in the rendered paragraph below that guard (*"One is a pipeline you built; the other is how
+far word of mouth carries"*). The residual is the fenced half only, so there is no
+fenced-plus-answerable split to exploit here.
+
+### Left, with reasons
+
+- **HIGH 3** residual (placement-only) and **MEDIUM 7** (declined 21:00 on the pre-vs-post-Start
+  criterion): untouched, both already have written criteria.
+- **HIGH 4**: ledger **Q5**, escalated and unruled.
+
 ## Aug-14 21:00 session - the visitor who never pressed Start
 
 **No open PRs at start.** Third slot on `visitor/logs/2026-08-14.md`. Took **MEDIUM 8**
