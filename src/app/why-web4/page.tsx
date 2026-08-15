@@ -616,7 +616,6 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-adoption-path" className="hover:text-sky-400 transition-colors">Research prototype to real protocol?</a></li>
                 <li><a href="#faq-community-start" className="hover:text-sky-400 transition-colors">How many to start a community?</a></li>
                 <li><a href="#faq-parallel-identities" className="hover:text-sky-400 transition-colors">Do I need parallel identities?</a></li>
-                <li><a href="#faq-early-adopters" className="hover:text-sky-400 transition-colors">Don&#39;t early adopters just talk to each other?</a></li>
                 <li><a href="#faq-platform-migration" className="hover:text-sky-400 transition-colors">What if Reddit/Discord adopted Web4?</a></li>
                 <li><a href="#faq-incumbent-incentive" className="hover:text-sky-400 transition-colors">Why would an incumbent give up lock-in?</a></li>
                 <li><a href="#faq-trust-transfer-mechanics" className="hover:text-sky-400 transition-colors">How does trust transfer between platforms?</a></li>
@@ -636,7 +635,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-hardware-standards" className="hover:text-sky-400 transition-colors">TPM v2 → v3, post-quantum?</a></li>
                 <li><a href="#faq-witnessed-presence" className="hover:text-sky-400 transition-colors">What does witnessed presence look like?</a></li>
                 <li><a href="#faq-shared-devices" className="hover:text-sky-400 transition-colors">Shared devices / borrowed phone?</a></li>
-                <li><a href="#faq-tpm-affordability" className="hover:text-sky-400 transition-colors">Can&#39;t afford TPM chips?</a></li>
+                <li><a href="#faq-tpm-affordability" className="hover:text-sky-400 transition-colors">Shut out without a chip?</a></li>
                 <li><a href="#faq-buy-50-devices" className="hover:text-sky-400 transition-colors">Buy 50 devices for super-trust?</a></li>
                 <li><a href="#faq-children" className="hover:text-sky-400 transition-colors">Children and minors?</a></li>
               </ul>
@@ -1352,7 +1351,6 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-app-ui" className="hover:text-sky-400">What would it look like?</a></li>
                   <li><a href="#faq-adoption-path" className="hover:text-sky-400">Research prototype → real protocol?</a></li>
                   <li><a href="#faq-community-start" className="hover:text-sky-400">How many to start?</a></li>
-                  <li><a href="#faq-early-adopters" className="hover:text-sky-400">Early adopters in a bubble?</a></li>
                   <li><a href="#faq-dual-trust" className="hover:text-sky-400">Reddit karma vs Web4 trust</a></li>
                   <li><a href="#faq-platform-migration" className="hover:text-sky-400">If Reddit adopted Web4?</a></li>
                   <li><a href="#faq-incumbent-incentive" className="hover:text-sky-400">Why give up lock-in?</a></li>
@@ -1376,7 +1374,7 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-hardware-standards" className="hover:text-sky-400">TPM v2 → v3?</a></li>
                   <li><a href="#faq-witnessed-presence" className="hover:text-sky-400">Witnessed presence UX?</a></li>
                   <li><a href="#faq-shared-devices" className="hover:text-sky-400">Shared/borrowed devices?</a></li>
-                  <li><a href="#faq-tpm-affordability" className="hover:text-sky-400">Can&apos;t afford TPM?</a></li>
+                  <li><a href="#faq-tpm-affordability" className="hover:text-sky-400">Shut out without a chip?</a></li>
                   <li><a href="#faq-buy-50-devices" className="hover:text-sky-400">Buy 50 devices?</a></li>
                   <li><a href="#faq-children" className="hover:text-sky-400">Children and minors?</a></li>
                 </ul>
@@ -1544,10 +1542,40 @@ export default function WhyWeb4Page() {
                 permanent commitment. Think of how HTTPS adoption worked: banks first, then e-commerce,
                 then eventually the default everywhere.
               </p>
+              {/* Aug-15 visitor MEDIUM (duplicate FAQ pairs), third pair, and the strongest true
+                  duplicate on the page: #faq-early-adopters asked this same question in near-verbatim
+                  words ("If Web4 is opt-in, how does it work when most people are still on Web2?"
+                  against #faq-opt-in's "If Web4 is opt-in, what happens when most people are still on
+                  Web2?") and answered it with a second copy of this ladder. That entry is DELETED and
+                  its one genuinely unique sentence, the caveat below, landed here.
+                  Grounding, re-derived rather than assumed: the ladder ships FOUR times, all four on
+                  THIS page (#faq-transition, #faq-adoption-path, the deleted #faq-early-adopters,
+                  #faq-platform-migration). It is NOT on /how-it-works - grep for
+                  wrapper|observable tier|5-tier|five-tier over that page returns zero - even though
+                  the deleted entry and #faq-platform-migration both LINK the phrase "5-tier adoption
+                  model" there. Deleting the entry closes one of those two dangling promises; the
+                  #faq-platform-migration one survives and is logged, not chased, because picking its
+                  target means deciding which of the four copies owns the ladder, which is the
+                  page-wide curation row this pass is not.
+                  Landed here and not at #faq-opt-in because the caveat qualifies the LADDER, and this
+                  is the first ladder in document order. Reconciled rather than stacked: this caveat's
+                  middle sentence used to be verbatim identical to one inside #faq-opt-in's caveat
+                  ("A trust score based on 2 platforms is less meaningful than one based on 200"), so
+                  adding a third caveat unchanged would have shipped the filed defect inside the pair
+                  being fixed. The coverage point is routed to #faq-opt-in, which owns low adoption as
+                  its whole subject, instead of restated. Sentences below are #faq-early-adopters'
+                  own words, not a summary of them. */}
               <p className="text-amber-400/80 text-xs">
-                <strong>Honest caveat:</strong> Gradual adoption means the system is only as strong as its
-                coverage. A trust score based on 2 platforms is less meaningful than one based on 200.
-                Network effects work both for and against adoption.
+                <strong>Honest caveat:</strong> This adoption path is a design proposal, not a proven
+                playbook. Whether the Wrapper&rarr;Native progression actually happens smoothly is an open
+                question. Network effects could help (more participants = more value) or hurt (fragmented
+                early adoption = no critical mass). We&apos;re designing for graceful degradation, not
+                assuming universal adoption. Gradual adoption also means the system is only as strong as
+                its coverage while the transition is under way, which is{" "}
+                <a href="#faq-opt-in" className="hover:underline">
+                  what low adoption actually feels like
+                </a>
+                .
               </p>
               <p className="text-gray-500 text-xs mt-2">
                 Want a concrete example? See &ldquo;What&apos;s the concrete adoption path?&rdquo; below
@@ -1571,8 +1599,12 @@ export default function WhyWeb4Page() {
                     were always about reaching the hardware tiers. FAQs deliberately NOT merged: the
                     duplication is the Aug-05 MEDIUM firehose row, a curation pass, not this one. */}
                 <strong>This is a real equity concern, not a dismissed one.</strong> If reaching the higher trust
-                tiers requires a TPM or Secure Enclave, then cost becomes a barrier. Several factors work in
-                favor of accessibility:
+                tiers requires a TPM or Secure Enclave, then cost becomes a barrier. This answer is about the
+                price and the ways around it; whether you are shut out without a chip at all is{' '}
+                <a href="#faq-tpm-affordability" className="text-sky-400 hover:underline">
+                  a different question, answered separately
+                </a>
+                . Several factors work in favor of accessibility:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
                 <li><strong>Hardware is already widespread:</strong> Most phones sold since ~2018 include security chips (Secure Enclave, Titan, TPM). Even budget Android devices increasingly ship with hardware-backed keystores. The threshold is a $50 phone, not a $1000 one.</li>
@@ -1731,7 +1763,17 @@ export default function WhyWeb4Page() {
                 could be integrated into existing platforms today. But no platform has done so yet.
                 The path from &ldquo;working simulations&rdquo; to &ldquo;first real integration&rdquo;
                 requires a willing partner - a community, platform, or organization that sees
-                value in trust-native infrastructure.
+                value in trust-native infrastructure. Whether platforms that do start would then
+                climb the rest of the ladder is a second open question:{" "}
+                {/* Aug-15: the relocated #faq-early-adopters caveat qualifies the LADDER, which
+                    renders here as well as at #faq-transition, so this ladder gets a pointer rather
+                    than a second copy of the caveat. #faq-platform-migration's copy is deliberately
+                    left alone: it is a worked Reddit/Discord example, not a claim about the
+                    progression. */}
+                <a href="#faq-transition" className="text-sky-400 hover:underline">
+                  the adoption path is a design proposal, not a proven playbook
+                </a>
+                .
               </p>
             </div>
           </details>
@@ -1796,6 +1838,26 @@ export default function WhyWeb4Page() {
                 fake-identity attacks impossible (nothing can), but to make them economically irrational for most
                 attackers. Nation-state adversaries can always outspend; the system is designed to
                 resist <em>casual</em> abuse, not unlimited resources.
+              </p>
+              {/* Aug-15 visitor MEDIUM (duplicate FAQ pairs), second pair. The visitor read this
+                  and #faq-buy-50-devices as the same question asked twice with different attitudes,
+                  and they are right about the attitudes: this one opens "Yes, and the honest answer
+                  has two halves", that one opens "they don't increase your trust score". They are
+                  NOT duplicates, so the fix is a join and not a merge: this answers BREADTH (how
+                  many trusted identities a budget buys) and that answers DEPTH (whether stacking
+                  devices onto one identity buys a higher score). The differing attitudes are correct
+                  for their different questions; nothing on the page said the questions differed, so
+                  the reader had to read them as a contradiction. One clause each, both directions,
+                  because #faq-buy-50-devices is also reachable from the Most Asked list ("Can a
+                  wealthy attacker buy 50 devices?") near the top of this FAQ and
+                  so is not reliably the second one read. Neither answer's position is touched. */}
+              <p className="text-gray-400 text-sm">
+                <strong className="text-gray-300">This is the breadth question.</strong> Whether a
+                pile of hardware behind a <em>single</em> identity buys that one identity a higher
+                score is the other half, and the answer there is no:{" "}
+                <a href="#faq-buy-50-devices" className="text-sky-400 hover:underline">
+                  can someone buy 50 devices to create a super-trusted identity?
+                </a>
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> A sufficiently motivated adversary with a large budget
@@ -2425,9 +2487,33 @@ export default function WhyWeb4Page() {
           {/* Hardware equity / digital divide */}
           <details id="faq-tpm-affordability" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>What about people who can&apos;t afford devices with TPM chips?</span>
+              <span>Without a security chip, am I shut out of Web4?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
+            {/* Aug-15 visitor MEDIUM (duplicate FAQ pairs), curation pass. This is the pair the
+                Aug-05 guard at #faq-affordability deferred ("FAQs deliberately NOT merged... a
+                curation pass, not this one"). The visitor's premise is FALSE AS FILED: they report
+                the two equity answers leading with opposite attitudes and quote "does not require a
+                security chip / ceiling, not entry" against "This is a genuine equity concern", but
+                BOTH quotes are the opening paragraph of THIS answer, and #faq-affordability opens
+                "This is a real equity concern, not a dismissed one." Same valence, not opposite ones.
+                What is real: the two <summary> lines were near-indistinguishable ("security chips"
+                vs "TPM chips"), and the ~2018 / budget-Android prevalence fact shipped in both.
+                NOT MERGED, and that is a constraint rather than a preference. The two entries answer
+                different axes (this one: eligibility and what the ceiling costs; #faq-affordability:
+                price and the paths to a chip), and a merge is tied to the UNRULED equity half of
+                ledger Q8 (request 2), per WEB4-CANON-QUESTIONS.md:777. Two entries in, two out.
+                So: summary retitled to name this entry's axis, the duplicated prevalence detail
+                deleted HERE (the $50/$25 literals belong at #faq-affordability, where
+                what-could-go-wrong:362-364 makes them load-bearing for a cross-page price band and
+                lct-explainer:2555 mirrors them), and the pair joined in both directions.
+                The "most isn't all" hedge is KEPT: dropping it would trade a duplication for an
+                honest-maturity loss, which is the wrong side of this site's trade.
+                The id is deliberately UNCHANGED. Four guards in this file, SESSION_FOCUS.md and
+                WEB4-CANON-QUESTIONS.md:712/774 all address this entry by anchor name. Only the
+                <summary> and the two in-page index rows that name it (both now read "Shut out
+                without a chip?") moved; this entry has zero
+                external inbound links, which is why it was the safe side to retitle. */}
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               {/* Aug-05 visitor HIGH #2, and the resolution of the conformance half of the
                   [[hardware-required-seam]]. This paragraph used to open "Web4 identity requires
@@ -2475,9 +2561,12 @@ export default function WhyWeb4Page() {
                 <Link href="/what-could-go-wrong#risk-accessibility" className="text-sky-400 hover:underline">
                   the site&apos;s own risk register
                 </Link>{' '}
-                calls that a second-class experience baked into the architecture. Today most smartphones sold
-                since ~2018 include security chips, including budget Android devices, but &ldquo;most&rdquo;
-                isn&apos;t &ldquo;all.&rdquo;
+                calls that a second-class experience baked into the architecture. Most modern devices already
+                have a chip, but &ldquo;most&rdquo; isn&apos;t &ldquo;all,&rdquo; and what one costs, or what to
+                do if you cannot buy one, is a different question:{' '}
+                <a href="#faq-affordability" className="text-sky-400 hover:underline">
+                  what about people who can&apos;t afford devices with security chips?
+                </a>
               </p>
               <p>
                 The 5-tier adoption model helps: at the <strong>Wrapper</strong> and <strong>Observable</strong> tiers,
@@ -3081,45 +3170,6 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Transition period - visitor Q5 */}
-          <details id="faq-early-adopters" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
-            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>If Web4 is opt-in, how does it work when most people are still on Web2? Don&apos;t early adopters just talk to each other?</span>
-              <span className="text-gray-500 text-xl">+</span>
-            </summary>
-            <div className="mt-4 text-gray-300 text-sm space-y-2">
-              <p>
-                Yes - and that&apos;s by design. Web4 uses a{" "}
-                <Link href="/how-it-works" className="text-sky-400 hover:underline">5-tier adoption model</Link>{" "}
-                that doesn&apos;t require everyone to switch at once:
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-gray-400">
-                <li><strong>Wrapper tier:</strong> Existing platforms add Web4 trust scoring to their existing
-                  systems. Users don&apos;t even know it&apos;s there - they just notice spam decreasing.</li>
-                <li><strong>Observable tier:</strong> Platforms expose trust scores alongside content. Users can
-                  see who&apos;s trusted, but the platform still makes decisions.</li>
-                <li><strong>Accountable tier:</strong> Trust scores actually gate actions. Low-trust users face
-                  higher costs or reduced reach. This is where the economics start biting.</li>
-                <li><strong>Federated tier:</strong> Multiple communities share trust data across boundaries.
-                  Your reputation in one community carries (with decay) to others.</li>
-                <li><strong>Native tier:</strong> Fully trust-native platforms where every interaction flows
-                  through the Web4 protocol.</li>
-              </ul>
-              <p>
-                The key insight: <strong>early adopters get value immediately</strong>. A coding forum that
-                adopts Web4 at the Wrapper tier instantly gets better spam filtering. It doesn&apos;t need
-                the rest of the internet to follow. Each community can adopt at its own pace, and the value
-                compounds as more communities join the federation.
-              </p>
-              <p className="text-amber-400/80 text-xs">
-                <strong>Honest caveat:</strong> This adoption path is a design proposal, not a proven playbook.
-                Whether the Wrapper→Native progression actually happens smoothly is an open question. Network
-                effects could help (more participants = more value) or hurt (fragmented early adoption = no
-                critical mass). We&apos;re designing for graceful degradation, not assuming universal adoption.
-              </p>
-            </div>
-          </details>
-
           {/* Dual trust systems during transition - visitor Q Mar 30 */}
           <details id="faq-dual-trust" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
@@ -3182,6 +3232,17 @@ export default function WhyWeb4Page() {
                 Think of it like ID verification: having a passport, driver&apos;s license, and birth certificate
                 doesn&apos;t make you more trustworthy - it just makes you harder to impersonate. Your actual
                 reputation still depends on what you do.
+              </p>
+              {/* Aug-15 visitor MEDIUM (duplicate FAQ pairs), the reciprocal half of the clause at
+                  #faq-many-identities. Depth here, breadth there. See the guard on that entry for
+                  why this pair is joined rather than merged. */}
+              <p className="text-gray-400 text-sm">
+                <strong className="text-gray-300">This is the depth question,</strong> one identity with
+                a lot of hardware behind it. Whether a budget buys <em>many</em> credible identities at
+                once is a different question, and there the cost is real:{" "}
+                <a href="#faq-many-identities" className="text-sky-400 hover:underline">
+                  can&apos;t someone with lots of hardware create many identities?
+                </a>
               </p>
             </div>
           </details>
