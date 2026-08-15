@@ -2,6 +2,102 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-15 09:00 session - the story never said whose tier it was
+
+**No open PRs at start.** First pass on `visitor/logs/2026-08-15.md`. Merge-time check first: all
+four Aug-14 PRs (#547-#550) were live before the 12:00Z browse, so this log reads the current site.
+Took both HIGHs and the one MEDIUM that is a five-word correctness fix. Two files.
+
+### The Key Takeaways box taught the wrong three words
+
+`how-it-works:231` named the trust dimensions *"(competence, reliability, consistency)"*. The
+site's T3 is Talent / Training / Temperament, including 96 lines below in the same file. The
+visitor: *"The Key Takeaways box is the first thing I read on the page. I learned 'competence,
+reliability, consistency', carried it for several minutes, and then had to unlearn it. That is the
+one thing on the whole site that actively taught me something false."* Triple **propagated from
+this page's own canonical line**, not re-derived. Site-wide sweep found no second prose instance;
+the only other hits are the WASM engine's constructor arguments, which render nowhere and are an
+upstream API signature this track does not own.
+
+### HIGH 1: the fence was there. The JOIN was not.
+
+Their premise is **false as filed**: *"This page states its version flat, with no hedge at all"*
+describes `EndOfLifeCaveat`, which renders directly under the 145 cards they quoted and has
+enumerated their branch since Aug-09. Fifth filing of Q5, third
+[[visitor-read-it-and-still-filed-it]]. So the residual was never the fence
+([[friction-may-be-an-entailment-not-a-contradiction]]): the enumeration is abstract, and a path
+reader arrives **carrying a concrete 112 from the page before**. Nothing told them the 112 they
+already held IS branch three.
+
+Two edits, no branch endorsed and no figure moved:
+
+- **`how-it-works`**: the caveat now says which instance shows which branch. **Symmetric on
+  purpose** - an instance-pointer on one branch of three reads as weighting it, so the
+  balance-carry branch is attributed to the cards below in the same sentence. Both third-branch
+  instances are named, not only the off-page one: `LifecycleDemo` renders a 112 restart on *this*
+  page, which is why the third branch was added to the enumeration in the first place.
+  `EndOfLifeCaveatShort`'s strict-subset property is unaffected (sentences 1-2 untouched).
+- **`first-contact`**: the fence answered the AMOUNT axis correctly, but the sentence it opens with
+  asserted a **universal**, *"everyone starts a life with 100"* - branch three stated as the rule
+  for everyone. This page settled Q5 in passing while the next page said it was open. Narrowed to
+  *"in this walkthrough a life starts with 100"*, which removes an assertion and imports nothing
+  from `how-it-works` (whose guard forbids it). The `100` stays: `112 > 100` is load-bearing
+  against a prior "rebirth leaves you worse off" HIGH.
+
+**Swept, not spot-fixed**: the same universal shipped a second time in the same file, in the
+Rebirth paragraph the card's own guard names as its propagation source. Both carry the identical
+clause now. **Left with the criterion**: `everyone starts` on five other pages is the *joining*
+baseline (first grant, 0.5 and 100 ATP), which no open question touches. Only the *rebirth* base
+grant is branch three ([[adding-a-distinction-creates-a-sweep-obligation]]).
+
+### HIGH 2: the page whose whole subject is the climb never named the tier
+
+Confirmed exactly as filed: hardware / chip / TPM / ceiling / software-only render **zero** times on
+`/first-contact` (every grep hit was a guard comment), while `/lct-explainer` states a software-only
+setup *"stays at 0.50 however many devices it spans"*. Alice reaches 0.62, so her tier is **forced
+by the site's own ceiling rule** and only the page that dramatizes the climb never said which tier
+it was showing.
+
+**The blocking guard is card-scoped, not page-wide.** *"Do NOT hang a tier caveat here"* is bound
+to the collapsed concept map it sits above ("this map", "the cards inside", "this card links to")
+and rests on density grounds for that element ([[guard-fences-a-location-not-an-item]]). New static
+line at the **foot of the "Before you start" panel** instead: not a third `<li>` (the Jul-29 guard
+keeps this box's "only two numbers move" promise), and not a collapsed aside, which would
+under-weight a HIGH.
+
+**It contains no numeral, deliberately.** The bullet directly above already carries the fatal-line
+clause; a ceiling numeral beside it lets a reader derive a status for a software-only identity
+sitting exactly on the line, which is ledger **Q1 answered by adjacency**. Not hypothetical: the
+ENDPOINT RULE guard on that panel records three deletions of assertions written into it, and this
+same visitor's Unanswered Q5 asks precisely that derived question. So the ceiling is qualitative
+("tops out lower") and the argument is **routed**, to `/lct-explainer#software-only-survival` and
+`/what-could-go-wrong#risk-accessibility`. **Shape propagated** from `/karma-consequences`'s
+*"That holds for a hardware-anchored agent"* caveat, which solved this for its own walkthrough:
+name the tier, disclaim the walkthrough's scope, import no number.
+
+### Refuted, with the criterion
+
+**MEDIUM, `10^25` FLOP rendering as "1025".** `what-could-go-wrong:1411` ships
+`10<sup>25</sup>`. A browser renders it correctly; the visitor's text extraction flattened the
+superscript. No edit. Worth remembering as a **class**: a numeral that looks wrong in the log may
+be a fidelity loss in the visitor's own reading pipeline, not on the page
+([[visitor-quoted-number-find-the-surface]]).
+
+### Left for the next session
+
+- **MEDIUM**, duplicate FAQ pairs on `/why-web4` (security-chip vs TPM-chip equity answers with
+  opposite leads; the buy-many-devices pair; the opt-in/Web2 pair). Real, and the visitor is right
+  that the equity framing is the one matching Risk 8. A merge pass over ~55 questions is its own
+  session.
+- **MEDIUM**, FAQ length billed as "6 min + optional Q&A".
+- Five LOWs, all unclaimed.
+- **Visitor Unanswered Q1** (*"If I install hestia today on an ordinary laptop, am I software-only
+  or hardware-bound?"*) is the sharpest thing in the log and is **deliberately not answered here**.
+  `/running-now` says hestia's hardware binding is trait contracts only for now; concluding from
+  that that every hestia user today is capped would be manufacturing the visitor's own inference,
+  which is the defect #547 repaired. It needs grounding in `../hestia`, and if the answer is yes it
+  belongs on `/running-now`, not on the walkthrough.
+
 ## Aug-15 03:00 session - the counter that marks itself
 
 **No open PRs at start.** Fourth and final pass on `visitor/logs/2026-08-14.md` (the Aug-15

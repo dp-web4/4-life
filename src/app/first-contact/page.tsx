@@ -325,6 +325,49 @@ export default function FirstContactPage() {
                     not state a regional rule, so it is not an endpoint claim. Do not re-open it. */}
                 <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> - her <em>raw</em> reputation, on a <span className="text-gray-200">0.00-1.00</span> scale. One number, but a rolled-up one: it is her three trust dimensions weighted for the role she is acting in (<Link href="/trust-tensor" className="text-purple-300 hover:underline">Trust Tensors</Link>). Starts neutral at <span className="text-gray-200">0.50</span>. Below 0.50: features get restricted until she rebuilds it - and if she <em>stays</em> below, that same line becomes fatal - a sustained slide, not one dip.</li>
               </ul>
+              {/* Aug-15 visitor HIGH: "the whole walkthrough quietly assumes something it never
+                  tells you ... The words hardware, chip, TPM, ceiling, and software-only do not
+                  appear anywhere on the First Contact page. I checked. Alice's tier is never
+                  stated. I walked away from page 3 of 5 believing a story that does not apply to
+                  the tier I would actually be on if I installed anything today."
+                  Verified before writing: zero renders of any of those five words on this page (all
+                  grep hits were guard comments), while /lct-explainer states that a software-only
+                  setup "stays at 0.50 however many devices it spans". Alice reaches 0.62. Her tier
+                  is therefore FORCED by the site's own ceiling rule, and only this page, the one
+                  that dramatizes the climb, never said which tier it was showing.
+                  WHY THIS SENTENCE CONTAINS NO NUMBER, and do not "complete" it with one. Ledger Q1
+                  (is exactly-0.50 alive / full access) is unresolved and the site's policy is to
+                  state strictly-below and stop. The bullet directly above already carries the
+                  fatal-line clause; a ceiling numeral placed beside it lets a reader derive a
+                  status for a software-only identity sitting exactly at the line, which is Q1
+                  answered by adjacency. That is not hypothetical: the ENDPOINT RULE guard above
+                  records three deletions of assertions written into this very panel, and the same
+                  visitor's Unanswered Question 5 asks precisely that derived question. So the
+                  ceiling is stated qualitatively ("tops out lower") and the argument is ROUTED, not
+                  re-argued, to the two places the site has designated for it.
+                  SHAPE PROPAGATED from /karma-consequences (grep -n "That holds for a
+                  hardware-anchored agent"), which solved this exact problem for its own
+                  walkthrough: name the tier, disclaim the walkthrough's scope, import no number.
+                  Not that page's words, whose subject is a shed record, but its structure.
+                  PLACEMENT is deliberate: a static line at the foot of the panel, not a third <li>
+                  (the Jul-29 guard below keeps this box's "only two numbers move" promise) and not
+                  inside the collapsed concept map further down, where a guard bars a tier caveat on
+                  density grounds. A collapsed aside would under-weight a HIGH
+                  ([[two-fixes-one-page-needs-own-home]]). */}
+              <p className="text-xs text-amber-300/70 mt-3 leading-relaxed">
+                <strong className="text-amber-300">Whose identity this is:</strong> the walkthrough
+                follows a hardware-anchored identity. How far trust can climb depends on how an
+                identity is anchored, and anchoring in software alone tops out lower, so Alice&apos;s
+                climb is not the shape every tier sees.{" "}
+                <Link href="/lct-explainer#software-only-survival" className="text-amber-300 hover:text-amber-200 underline">
+                  What a software-only ceiling costs
+                </Link>{" "}
+                and{" "}
+                <Link href="/what-could-go-wrong#risk-accessibility" className="text-amber-300 hover:text-amber-200 underline">
+                  the equity question it raises
+                </Link>
+                .
+              </p>
               {/* Jul-29 visitor MEDIUM: "raw" appeared exactly once in the JS-rendered page, here,
                   undefined. The raw-vs-effective sentence lived only in the <noscript> block above
                   (L156), so a reader with JavaScript on never saw it: "Raw as opposed to what?
@@ -612,10 +655,35 @@ export default function FirstContactPage() {
                   still holds and is still deliberate. karma-consequences was checked and left
                   alone: the formula it fences IS the third branch, named in the line before, so
                   its two-branch sentence is complete in its own context. Line numbers deliberately
-                  replaced with grep targets here ([[guard-comment-cites-rot-name-the-target]]). */}
+                  replaced with grep targets here ([[guard-comment-cites-rot-name-the-target]]).
+                  Aug-15 visitor HIGH: "First Contact told me: everyone starts a life with 100 ...
+                  How It Works tells me 145 -> 145. Those are not the same rule", filed after
+                  reading both. The fence above answers the AMOUNT axis and that is still right, but
+                  the sentence it opens with asserted a UNIVERSAL: "everyone starts a life with
+                  100". That is branch three of the trichotomy /how-it-works fences as undecided
+                  (whole balance / reduced portion / fresh base plus bonus), stated as the rule for
+                  everyone. So this page settled Q5 in passing while the next page said it was open,
+                  and the visitor could not tell which was the site's position.
+                  NARROWED to "in this walkthrough a life starts with 100". That REMOVES an
+                  assertion; it adds none, imports no wording from /how-it-works (still forbidden
+                  above), and keeps the divergence recorded in this guard intact.
+                  The 100 itself is LOAD-BEARING and must not be deleted: the Aug-09 guard on this
+                  same card records that 112 > 100 is what defeats the "rebirth leaves you worse
+                  off" reading. Narrow the scope, never drop the baseline.
+                  SWEPT, not spot-fixed: the same universal shipped a second time in this file, in
+                  the Rebirth paragraph the guard above names as this card's propagation source
+                  (grep -n "started her new life with"). Both now carry the identical clause, so the
+                  card and its source cannot drift ([[propagate-the-sentence-not-your-summary]]).
+                  DELIBERATELY LEFT, with the criterion: "everyone starts" also renders on
+                  /day-in-web4, /what-could-go-wrong, /why-web4, /atp-economics and /lct-explainer.
+                  Every one of those is the JOINING baseline (a new agent's first grant, trust 0.5
+                  and 100 ATP), which no open question touches. Only the REBIRTH base grant is
+                  branch three of Q5, and only this file asserted it
+                  ([[adding-a-distinction-creates-a-sweep-obligation]]). */}
               <p className="text-xs text-amber-300/70 mb-3 leading-relaxed">
-                <strong className="text-amber-300">About that number:</strong> everyone starts a life
-                with 100, and the 12 is what her track record earned on top, so she restarts at 112.
+                <strong className="text-amber-300">About that number:</strong> in this walkthrough a
+                life starts with 100, and the 12 is what her track record earned on top, so she
+                restarts at 112.
                 How <em>much</em> karma converts is not settled, and 12 is one modelling choice, not
                 the rule. Read it for the shape (a good track record starts your next life stronger),
                 not the amount.
@@ -987,8 +1055,8 @@ export default function FirstContactPage() {
                 <h3 className="text-2xl font-bold text-emerald-400 mb-3">The Return: Karma Compounds</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   But Alice had built real value in her first life. Her karma - the accumulated record of quality contributions -
-                  entitled her to rebirth with advantages. She started her new life with <strong className="text-emerald-400">112 ATP</strong> (everyone
-                  starts with 100, but the trust she built carried forward as a 12 ATP karma bonus)
+                  entitled her to rebirth with advantages. She started her new life with <strong className="text-emerald-400">112 ATP</strong> (in
+                  this walkthrough a life starts with 100, but the trust she built carried forward as a 12 ATP karma bonus)
                   and <strong className="text-emerald-400">0.54 trust</strong> (above the 0.50 neutral starting point, reflecting her proven track record).
                 </p>
                 <p className="text-gray-300 leading-relaxed">
