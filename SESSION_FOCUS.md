@@ -2,6 +2,80 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-14 21:00 session - the visitor who never pressed Start
+
+**No open PRs at start.** Third slot on `visitor/logs/2026-08-14.md`. Took **MEDIUM 8**
+(`/first-contact` Act 5) and **MEDIUM 9** (`/running-now` badge key, the item the 15:00 pass
+left with a written open question). Two files.
+
+### MEDIUM 8: the number was on the page, behind a button
+
+The visitor: *"Alice ends around 0.62 trust, dies at ATP 0, and is 'reborn at 0.54' with a
+'+12 bonus.' ... But her trust went down, 0.62 to 0.54. Nothing tells me why a head start
+includes a trust haircut."*
+
+Every phrase they quoted is a **pre-Start literal**. `↑ 0.62`, `dies at ATP 0`,
+`+12 bonus → 112`, `reborn at 0.54` are storyboard-rail chips; their *"karma, a head start
+earned by the trust and reputation she built in her first life"* is the static paragraph under
+the rail, **verbatim** (the policy reviewer found that one, not me). This visitor never pressed
+Start.
+
+Alice's trust at the moment of death is **0.51**, and the page says so three times: the
+`simulationSnapshots` tick-13 row, *"Trust fell from 0.62 to 0.51"*, and the load-bearing
+*"Alice got lucky. Her trust was still 0.51 when ATP ran out"* box. `grep -n "0\.51"` returns
+exactly those, and **all three are post-Start**. So the rail's only readable trust transition
+across a card that compresses two moments was 0.62 to 0.54: a drop, on the card whose moral is
+that you restart above neutral.
+
+#542's guard on this very card *names the misreading*: *"a down arrow would read as rebirth
+costing her trust."* It arrived with no arrow, because the value the arrow would have measured
+against was missing. Aug-13 gave the rebirth moment a trust chip and the death moment none;
+this closes the half that was left.
+
+**Folded into the death chip** (`dies at ATP 0, trust 0.51`), not added as a fourth, which
+would have to precede the +12/0.54 pair or destroy the ordering the fix creates. Deliberately
+**bare**: no *"above 0.50"*, no *"barely above"*. The endpoint escalation forbids a regional
+claim about 0.50 in either direction, and the "Alice got lucky" box already owns that argument.
+**No arithmetic relating 0.51 to 0.54** (Q5 territory; the visitor's *"how 0.54 was arrived at"*
+is deliberately unanswered rather than coined).
+
+**The no-arrow rationale was rewritten, not just extended.** Its old reason rested on 0.62
+being the only preceding trust value, so with 0.51 rendering it read as spent and would have
+licensed the arrow it forbids. The rule that survives is the rail's convention: Acts 2-4 arrow
+against the previous **act**, and Alice ends Act 4 at 0.62, so an up arrow is still false
+([[opposite-intents-in-code-comments]]).
+
+### MEDIUM 7 declined, and the criterion is the same test
+
+Act 3's bare `↓ 0.48` was left alone. Its content ships **pre-Start and above the rail**, in
+the Trust Score bullet: *"Below 0.50: features get restricted until she rebuilds it - and if she
+stays below, that same line becomes fatal - a sustained slide, not one dip."* That is the
+visitor's own suggested sentence, already upstream of the chip. 0.51's meaning shipped nowhere
+a rail reader could reach. **Pre-vs-post-Start is the discriminator**, and it licenses one item
+and refuses the other for the same reason.
+
+### MEDIUM 9: answered the 15:00 pass's open question
+
+It asked: a clause at the key, or at the two render points? **At the key.** That paragraph is
+the canonical statement of the ladder, `/tldr`'s gloss is declared a strict subset of it, it
+already owns every "what the badge is NOT" claim, and it renders before both numerals.
+
+**No version literals in the clause**, and no comparative between them: both numerals also
+render on `/hub` and `/hestia`, so a third copy above its own sources rots on the next bump.
+The general form does not. Sweep criterion: the clause is owed only where two pieces' numerals
+render on one page against differing badges, which is `/running-now` alone (`/hub` and
+`/hestia` each state one version and one badge, so neither can produce the comparison).
+
+**Recorded against the precedent that cuts the other way**: this page has a three-strike
+history (Aug-01, Aug-04, Aug-13) of caveats that only stuck once they moved **into** the row.
+The guard says so, and says that a re-file means the residual is **placement, not wording**.
+
+### Left, with reasons
+
+- **HIGH 3** residual (placement-only): licensed to a dedicated pass, untouched.
+- **HIGH 4**: ledger **Q5**, escalated and unruled. Untouched in both directions.
+- **LOW 10-13**: unclaimed, no criterion written against them.
+
 ## Aug-14 15:00 session - the page whose whole subject is hardware carried only the negative half
 
 **No open PRs at start.** Second slot on `visitor/logs/2026-08-14.md`. Took the one row the
