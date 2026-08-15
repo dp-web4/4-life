@@ -2,6 +2,96 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-15 15:00 session - the same question twice, and two answers that were never opposite
+
+**No open PRs at start.** Second pass on `visitor/logs/2026-08-15.md`, taking the duplicate-FAQ-pairs
+MEDIUM that the 09:00 session explicitly handed off (*"A merge pass over ~55 questions is its own
+session"*). One file, `src/app/why-web4/page.tsx`. **None of the three pairs got the merge the
+visitor asked for**, and each refusal is on different grounds.
+
+### Pair A, equity: the premise was false, the duplication was not
+
+The visitor reports the two equity answers leading with opposite attitudes, quoting *"Hardware-bound
+identity does not require a security chip ... What hardware buys is ceiling, not entry"* against
+*"This is a genuine equity concern"*. **Both quotes are the same opening paragraph** of
+`#faq-tpm-affordability`, and their first string appears nowhere on the site (it is their paraphrase).
+`#faq-affordability` opens *"This is a real equity concern, not a dismissed one."* Same valence.
+Fifth [[visitor-premise-may-be-a-sentence-you-shipped]] in a month.
+
+What was real: the two `<summary>` lines were near-indistinguishable ("security chips" vs "TPM
+chips"), and the ~2018 / budget-Android prevalence fact shipped in both bodies.
+
+**Not merged, and that is a constraint.** `docs/WEB4-CANON-QUESTIONS.md` records the FAQs as
+deliberately unmerged pending the **unruled equity half of Q8 (request 2)**; the policy reviewer made
+*two entries in, two entries out* a binding condition. The entries answer different axes (price and
+paths to a chip / eligibility and what the ceiling costs). So: summary retitled to *"Without a
+security chip, am I shut out of Web4?"*, the duplicated prevalence detail deleted on that side, the
+pair joined in both directions by axis. **The `"most" isn't "all"` hedge is kept** rather than traded
+away with the duplication ([[keeping-the-true-half-can-still-reassure]] in reverse: the hedge is the
+honest half).
+
+**The retitle side was chosen, not defaulted.** `#faq-affordability` has two *external* inbound links
+and a guard at `what-could-go-wrong` requiring its `<summary>` and that link's text to stay the same
+sentence; `#faq-tpm-affordability` has zero. Retitling the unlinked one leaves that guard untouched
+and no cross-page edit needed. **Its `id` is deliberately unchanged**: four guards in-file,
+`SESSION_FOCUS.md` and the canon ledger all address it by anchor name.
+
+### Pair B: not a duplicate at all, so a join and not a merge
+
+`#faq-many-identities` answers **breadth** (how many trusted identities a budget buys),
+`#faq-buy-50-devices` answers **depth** (whether stacking devices on one identity buys score). The
+visitor is right that the attitudes differ; they are correct for their different questions, and
+nothing on the page said the questions differed, so the reader had to read them as a contradiction
+([[friction-may-be-an-entailment-not-a-contradiction]]). One clause each, **both directions**,
+because `#faq-buy-50-devices` is also reachable from the Most Asked list and so is not reliably the
+second one read.
+
+### Pair C: the strongest true duplicate, which the visitor described most loosely
+
+`#faq-early-adopters` asked `#faq-opt-in`'s question in near-verbatim words and answered it with a
+**fourth** copy of the tier ladder. Deleted, with its one genuinely unique sentence (*the adoption
+path is a design proposal, not a proven playbook*) relocated to `#faq-transition`, the first ladder
+in document order. Shipped in that entry's **own words**, not a summary of them
+([[propagate-the-sentence-not-your-summary]]).
+
+**Reconciled, not stacked.** `#faq-transition`'s existing caveat carried a sentence **verbatim
+identical** to one in `#faq-opt-in`'s caveat (*"A trust score based on 2 platforms is less meaningful
+than one based on 200"*). Landing a third caveat unchanged would have shipped the filed defect inside
+the pair being fixed. The coverage point is now **routed** to `#faq-opt-in`, which owns low adoption
+as its whole subject, instead of restated. One forward pointer added from `#faq-adoption-path`, whose
+ladder the relocated caveat also qualifies; `#faq-platform-migration` deliberately left alone (a
+worked example, not a claim about the progression).
+
+### Corrected by the policy reviewer, before it became a guard
+
+My Step 3 said `/how-it-works` co-owned the tier ladder. It does **not**: `grep -ci
+"wrapper\|observable tier\|5-tier\|five-tier"` over that page returns **0**. All four copies are on
+`/why-web4`. A wrong reason inside a guard is worse than no guard
+([[guard-fences-a-location-not-an-item]]).
+
+### Found and logged, not chased
+
+- **`#faq-platform-migration` links the phrase "5-tier adoption model" to `/how-it-works`, which does
+  not contain it.** The deleted entry had the same dangling link; deleting it closed one of two.
+  Picking the survivor's target means deciding which of the four copies owns the ladder, which is the
+  page-wide curation row this pass is not.
+- **The ladder ships four times** and the `$50 phone` / `~$25 FIDO2` figures three times
+  (`#faq-affordability`, `lct-explainer`, `what-could-go-wrong`'s price band). The latter is a
+  deliberate cross-page band with a guard, not a defect.
+- **74 FAQ entries, not the visitor's ~55.** Their count is off by nineteen, which is itself evidence
+  for their other MEDIUM.
+
+### Left for the next session
+
+- **MEDIUM**, the FAQ billed as "6 min + optional Q&A" while carrying 73 entries. Untouched: it is a
+  billing/curation decision about the whole list, not a by-product of three merges. The corrected
+  count (73) is the number that row should be argued against.
+- **Five LOWs**, all unclaimed: the `0.02` gloss, the illegal-content merge on
+  `/what-could-go-wrong`, the site's own name, the `/tldr` 2-minute estimate, the `/onramp`
+  hardbound-mention ambiguity.
+- **Visitor Unanswered Q1** (am I software-only on an ordinary laptop), still deliberately open
+  pending grounding in `../hestia`, per the 09:00 session's reasoning.
+
 ## Aug-15 09:00 session - the story never said whose tier it was
 
 **No open PRs at start.** First pass on `visitor/logs/2026-08-15.md`. Merge-time check first: all
