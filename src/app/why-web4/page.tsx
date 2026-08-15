@@ -782,8 +782,38 @@ export default function WhyWeb4Page() {
                     NOT touched, with the criterion: /what-could-go-wrong:585 ("cooperation becomes
                     the Nash-dominant strategy") names its instrument (adversarial simulations) and
                     claims a finding, not a proof, which is the shape this pass is normalizing TO.
-                    It is a candidate for a later look, not a defect this bullet's fix reaches. */}
-                <li><strong>Security validation:</strong> 424 attack vectors across 84 tracks, with ~85% detection against synthetic adversaries and no red-team engagement yet. Sybil resistance (resistance to flooding the network with cheap fake accounts) is defended empirically rather than proven: Web4&apos;s own repository lists formal Sybil-resistance proofs among what is still missing, and sophisticated collusion that mimics legitimate community behavior remains an <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">open research problem</Link></li>
+                    It is a candidate for a later look, not a defect this bullet's fix reaches.
+                    Aug-15 (visitor LOW): the guard above says what upstream states live "is ~85%
+                    detection against synthetic adversaries with no red team engagement, which is
+                    what this bullet now carries". It carried the first half of that sentence and
+                    stopped at the semicolon. Both cited lines continue: README.md:161 'some
+                    "defenses" are standard infosec practices (EM shielding, TEMPEST) documented for
+                    completeness, not Web4-novel', STATUS.md:64 the same with "rather than as
+                    Web4-novel mechanisms". README's render is used VERBATIM (shorter, and its
+                    parenthetical leads with the plain-language term). Do not merge the two
+                    parentheticals into a third variant.
+                    What this clause must NOT become: an arithmetic claim that those practices sit
+                    inside the 85%, or inflate it. Upstream says neither. The visitor's own
+                    inference ("the undetected 15% is about 64 attacks") is a reading the phrasing
+                    invites and the sources do not support, and manufacturing the reader's inference
+                    is the exact defect the Aug-14 pass on this page repaired.
+                    "across 84 tracks" DELETED in the same edit, and the criterion matters because
+                    the bullet one up deleted its number outright: there, the subject had rotted
+                    (a February whole-repo LOC figure). Here the numbers are live and correct
+                    upstream, so the fix is upstream's own qualifier on the same sentence, not a
+                    coined caveat. 84 goes because it is a second uncalibratable numeral doing no
+                    work in the visitor's complaint, which used 424 as its denominator. Net words
+                    stay near flat. Both figures render on this surface only (grep 424 / "84
+                    tracks" across src/ = this line), so there is no sync obligation.
+                    NOT restored: "all defended". The Aug-14 guard reports its only hits as
+                    docs/history/STATUS-2026-02.md and forum/kimi2_6_review.md (where it is quoted
+                    to be rejected); that grep was incomplete, the phrase is also live in
+                    simulations/docs/ATTACK_CATALOG_SUMMARY.md under "Defense Statistics". It stays
+                    deleted anyway, and the finding is why: that same table gives "Average Detection
+                    Rate ~70%" for the same 424 vectors, so it disagrees with the STATUS/README
+                    figure this bullet prints. An upstream inconsistency is not a licence to
+                    strengthen the claim. Left for a canon question if it recurs. */}
+                <li><strong>Security validation:</strong> 424 attack vectors, with ~85% detection against synthetic adversaries and no red-team engagement yet; some &quot;defenses&quot; are standard infosec practices (EM shielding, TEMPEST) documented for completeness, not Web4-novel. Sybil resistance (resistance to flooding the network with cheap fake accounts) is defended empirically rather than proven: Web4&apos;s own repository lists formal Sybil-resistance proofs among what is still missing, and sophisticated collusion that mimics legitimate community behavior remains an <Link href="/what-could-go-wrong" className="text-sky-400 hover:underline">open research problem</Link></li>
                 {/* Jul-26 + Jul-27 visitor HIGH: this bullet was the third surface asserting
                     "TPM2 binding validated" with no artifact named, while the landing page,
                     /running-now, /onramp and /hestia say hardware binding is "not yet validated
