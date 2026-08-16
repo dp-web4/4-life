@@ -2,6 +2,83 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-15 21:00 session - the index said "all" and listed 69 of 73
+
+**No open PRs at start.** Third and final pass on `visitor/logs/2026-08-15.md`, taking the last
+unclaimed **MEDIUM** (the FAQ firehose, handed off twice) plus the one **LOW** inside the same entry.
+One file plus a one-line anchor repair in a second.
+
+### Both halves of the visitor's suggestion pointed somewhere other than where they pointed
+
+*"Surface only a 'Most Asked' handful inline and move the long tail behind an explicit link, or add a
+count up front."* The **structure half already ships** in full: lead answer, Most Asked group, Most
+Asked section, and the whole tail already inside `<details id="going-deeper">`
+([[visitor-deferred-low-check-shipped-first]]). So the residual was never structure. It was that the
+apparatus answering the firehose is **incomplete and prints false numbers**:
+
+- `#faq-index` says *"Browse all questions by topic"* and linked **69 of 73**.
+- The Going-deeper quick-nav linked **56 of the 61** entries in its own section.
+- `#faq-who-building`, `#faq-community-split`, `#faq-computational-overhead`: reachable from **neither**.
+- **Two of six printed category counts were wrong.** `Adoption (14)` listed 13, a regression #552 left
+  five hours earlier by deleting `#faq-early-adopters` from both navs without decrementing.
+  `Trust (12)` listed 13, pre-existing.
+
+**The visitor's own count is the evidence.** 69 index links minus the 12 Most Asked repeats is 57,
+against their *"~55 across 7 categories"*. The size they perceived **was** the broken index. A count
+row filed against a page is not always a request for a number; here it was a symptom of the index.
+
+### The unindexed entry was a duplicate the visitor never saw
+
+`#faq-who-building` deleted, not indexed: a second copy of `#faq-who-builds` (same three paragraphs,
+open research project / no company-token-funding / honest caveat), in neither nav, **zero inbound
+links in `src/`** while both live links point at the survivor. Survivor chosen on merit, not position:
+it answers the harder second half (*why anonymous*) and its caveat **concedes** the transparency
+tension where the deleted one asserted the site already meets it. The one non-duplicated sentence (the
+research question) carried in **verbatim**, not summarized ([[propagate-the-sentence-not-your-summary]]);
+`grep` confirms it ships nowhere else in `src/`.
+
+### The /learn fence was honored, not routed around
+
+`learn/page.tsx:161` forbids a question count on that card: *"a new falsifiable number on a page whose
+FAQ grows."* The policy reviewer rejected my first argument for printing one here (*"the fence is
+location-bound"*) as **end-run shaped**, because that reason travels. The sound argument, now in the
+guard: the maintenance obligation is **already resident on `/why-web4`**, which prints six exact
+category counts (two of them wrong when this began), and the total sits three lines above the lists
+that determine it, where `/learn`'s would be falsifiable at a distance and invisible to anyone editing
+this file ([[summary-layer-invisible-to-page-sweeps]] in reverse). What `/learn:164` defers, the
+curation/accordion redesign, **stays deferred and is named as such** so nobody reads the row as closed.
+
+**Three counts must agree and do: 72.** Entries, unique index links, and `12 + sum(category counts)`.
+The guard carries the command. It strips JSX comments first, because the first two versions **matched
+their own guard**: the comment quotes its slice markers, and one draft contained a literal comment
+terminator and broke the build. A derivation printed inside the thing it derives has to exclude itself.
+
+### LOW, same entry
+
+`#faq-calibration` asked *"how were 0.5, 3 hops, and 0.02 chosen?"* while `0.02` is introduced only on
+`/how-it-works` and `/what-could-go-wrong`, both later than this page in the path. Glossed **in the
+question**, in the answer's own words (*"the trust update step"*), not the visitor's *"per-action trust
+update rate"*, or the summary and its own answer become variant N+1. The nav label is deliberately not
+glossed: a label under a topic heading is not a claim met cold.
+
+### Found by this pass's instrument, fixed in flight and disclosed as scope
+
+`trust-tensor:796` linked *"Full breakdown in the FAQ"* to **`/why-web4#faq`, an id that does not
+exist** (the ids are `faq-index` and the 72 `faq-*`). Retargeted to `#faq-month-off`, the entry that
+answers that paragraph's own six-month-break question, rather than to the index
+([[promise-without-routing]]: key the promise on the thing).
+
+### Left for the next session
+
+- **Four LOWs**, unclaimed: the illegal-content merge on `/what-could-go-wrong`, the site's own name,
+  the `/tldr` 2-minute estimate, the `/onramp` hardbound-mention ambiguity. (The `0.02` LOW is closed.)
+- **Visitor Unanswered Q1** (am I software-only on an ordinary laptop), still open pending `../hestia`
+  grounding, per the 09:00 session's reasoning. Unchanged.
+- **Still open from #552**: `#faq-platform-migration` links *"5-tier adoption model"* to
+  `/how-it-works`, which does not contain it. Picking a target means deciding which of the four ladder
+  copies owns it. Untouched here; this pass repaired index coverage, not link targets, with the one
+  disclosed exception above.
+
 ## Aug-15 15:00 session - the same question twice, and two answers that were never opposite
 
 **No open PRs at start.** Second pass on `visitor/logs/2026-08-15.md`, taking the duplicate-FAQ-pairs
