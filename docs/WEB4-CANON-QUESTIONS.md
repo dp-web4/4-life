@@ -1350,6 +1350,45 @@ In files this session edited, quote the string to `grep -n`:
 - `/atp-economics/page.tsx`: *"5 theorems, hardware-bound identity"*;
   *"the same hardware-bound device chain that signs everything else"*
 
+**2026-08-16: fifth truncation, and this one is on the page that supplied the fix.** The Aug-08
+sweep carried `/what-could-go-wrong:752-759` out to thirteen surfaces as the canonical scoped
+paragraph, and never checked the FAQ accordion on the same page. Two entries there carried the
+universal in its strongest form, in the answer about **CSAM and terrorism**, where it overstates
+what enforcement can actually reach:
+- *"Every action in Web4 is signed by a hardware-bound identity"* (matched by the recorded grep,
+  so this one was simply never read)
+- *"Because LCT links identity to physical devices, 'ban evasion' requires obtaining new hardware.
+  Revoked identities can't simply create new accounts - their devices are flagged"*
+- *"the auditable trail - hardware-signed identity, timestamps, content hashes"* inside the worked
+  law-oracle example
+
+Both entries said, in a CSAM answer, the opposite of what risk 8 says 560 lines below on the same
+page (*"a dishonest user's record is sheddable"*). All three are fixed, and the two entries are
+merged into one (Aug-15 visitor LOW). Nothing was escalated: Ruling 1 covers it.
+
+**The recorded grep is blind to the second one, and the blindness is a NEW shape.** The Aug-10
+note added the bare-noun form (`hardware (LCT)`). This instance states the binding as a **verb
+phrase with no `hardware` adjective at all**: *"LCT links identity to physical devices"*. Neither
+recorded pattern can match it. Third pattern-caused truncation of this class. Add and run:
+
+```
+grep -rnE "(links|ties|binds|linking|tying|binding) (your |an? )?identit(y|ies) to|new hardware|devices are flagged" src/ --include=*.ts --include=*.tsx
+```
+
+**It returns three surfaces outside this session's file, none of which appears anywhere above.**
+Not fixed here (out of an approved one-file scope), enumerated so the next pass starts complete,
+and all three need the per-surface judgment this section already requires:
+- `src/lib/terms.ts:249`, the **Sybil** term: *"Web4 resists this by tying identity to physical
+  hardware - each fake identity needs a real device."* Definitional of Web4 as such, and rendered
+  by `TermTooltip` and `GlossaryPanel` wherever `<Sybil>` appears, so it is the same
+  widest-reach shape as the Karma entry the Aug-07 addendum caught. Note the page just fixed
+  says the opposite in its own words (Sybil *resistance*, not prevention).
+- `/your-internet/page.tsx:149`: *"Even if you abandon an identity and start fresh on new
+  hardware, you begin at zero"*. The no-fresh-start thesis, unscoped. This file already has
+  `:104` and `:131` listed above; `:149` was missed by both.
+- `/first-contact/page.tsx:1123`: *"New identity requires new hardware ($$$)"*. This file already
+  has three listed surfaces; `:1123` was missed by all of them.
+
 In files this session did not touch, the numbers still hold:
 - `/lct-explainer/page.tsx` (the big one, the page that owns the definition): **SUPERSEDED and
   worked.** This row listed 13 lines; the corrected grep returned 39, and 47 case-insensitively.

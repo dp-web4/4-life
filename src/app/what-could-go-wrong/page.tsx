@@ -1198,10 +1198,41 @@ export default function WhatCouldGoWrongPage() {
             </div>
           </details>
 
-          {/* Illegal content moderation */}
+          {/* Illegal content moderation. MERGED 2026-08-16 from two near-duplicate entries
+              (Aug-15 visitor LOW: "two separate sections about handling illegal content with
+              heavily overlapping law-oracle answers"). This entry is the survivor; the second,
+              "How does Web4 handle illegal content (CSAM, terrorism, etc.) without a central
+              authority?", is deleted. Neither carried an id and neither had an inbound link, so
+              nothing was retargeted; the in-page pointer at "specifics on illegal content
+              handling" still resolves to this one.
+
+              Survivor chosen on content, not position: it owned the worked law-oracle example and
+              the appeals link, and its caveat conceded "design, not deployment" where the deleted
+              one only conceded that moderation is hard. Three things the deleted entry owned
+              alone were carried in rather than summarized: the named SAL tiers with the
+              severe-violation fast-track (which also resolved a real disagreement, this entry
+              said violations trigger warnings and that one said they do not), content quarantine
+              plus evidence preservation, and the bidirectional audit point (oversteps AND
+              under-enforcement). Everything else in it duplicated text already here.
+
+              The merge exposed a false universal that both copies carried, and it is the reason
+              this is not a curation edit. "Every action in Web4 is signed by a hardware-bound
+              identity" (here) and "ban evasion requires obtaining new hardware ... their devices
+              are flagged" (deleted entry) both contradict THIS PAGE at risk 8, whose
+              already-shipped paragraph says that at the software-only tier "the very gap that
+              makes an honest user's loss unrecoverable also makes a dishonest user's record
+              sheddable". The enforcement claim in a CSAM and terrorism answer was the strong
+              version of a claim the page itself retracts 560 lines below.
+
+              Licensed by Q8 Ruling 1 (ANSWERED 2026-08-05), which released "a surface asserting
+              that secure hardware is required to participate may now be corrected against canon".
+              Vocabulary propagated, not coined: "sheddable" and the clean-slate framing come from
+              this page's own risk-8 paragraph, and the fix routes to #risk-accessibility rather
+              than re-arguing it. Deliberately says nothing about 0.50 in either direction, which
+              is the Q8 equity half and still under its holding pattern. */}
           <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>How does Web4 handle genuinely illegal content?</span>
+              <span>How does Web4 handle illegal content (CSAM, terrorism) without a central authority?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-3">
@@ -1216,14 +1247,18 @@ export default function WhatCouldGoWrongPage() {
                   <Link href="/how-it-works#governance" className="text-sky-400 hover:underline">
                     Society-Authority-Law
                   </Link>{" "}
-                 - rules that members agree to when joining. Violations trigger graduated enforcement:
-                  warnings, trust penalties, suspension, and ultimately permanent exclusion.
+                 - rules that members agree to when joining. Violations trigger graduated
+                  enforcement (warn → restrict → suspend → revoke), and severe ones fast-track:
+                  an entity distributing illegal content does not get warnings, it gets immediate
+                  suspension pending law oracle review.
                 </p>
                 <p>
                   <strong className="text-gray-300">Law oracles.</strong> For content that violates
                   actual laws (not just community norms), societies can configure law oracles -
-                  external legal frameworks that can trigger immediate action. Think of them as
-                  circuit breakers that bypass normal trust mechanics when legal thresholds are met.
+                  external legal frameworks that can trigger immediate action: suspension of the
+                  offending entity, content quarantine, and evidence preservation for authorities.
+                  Think of them as circuit breakers that bypass normal trust mechanics when legal
+                  thresholds are met.
                 </p>
                 <p className="text-gray-400 text-xs pl-4 border-l-2 border-gray-600">
                   <strong className="text-gray-300">Concrete example:</strong> A society configures a law
@@ -1231,7 +1266,7 @@ export default function WhatCouldGoWrongPage() {
                   content. The law oracle evaluates the report against its legal framework and, if the
                   threshold is met, triggers immediate action: the content is flagged, the actor&apos;s
                   account is frozen (trust set to zero, ATP locked), and the auditable trail -
-                  hardware-signed identity, timestamps, content hashes - is preserved for law enforcement.
+                  the actor&apos;s signed LCT, timestamps, content hashes - is preserved for law enforcement.
                   The actor can appeal through the society&apos;s{" "}
                   <Link href="/karma-consequences#recourse" className="text-sky-400 hover:underline">appeals process</Link>,
                   but the freeze is immediate. <em>Which</em> jurisdiction&apos;s laws apply depends on
@@ -1239,12 +1274,22 @@ export default function WhatCouldGoWrongPage() {
                   a global society might reference international conventions.
                 </p>
                 <p>
-                  <strong className="text-gray-300">Accountability by design.</strong> Every action in
-                  Web4 is signed by a hardware-bound identity. Unlike anonymous platforms where harmful
-                  content is posted by throwaway accounts, Web4 actors have permanent identities with
-                  real trust stakes. Publishing illegal content costs ATP, destroys trust, and creates
-                  an auditable trail - making it far riskier than on platforms where you can just
-                  create a new account.
+                  <strong className="text-gray-300">Tamper-evident audit trails.</strong> Every trust
+                  change and enforcement action is logged. If a law oracle oversteps, the audit trail
+                  is what gives the actor grounds for appeal. If it under-enforces, the record shows
+                  that too.
+                </p>
+                <p>
+                  <strong className="text-gray-300">What identity buys here.</strong> Every action is
+                  signed by the actor&apos;s LCT, so enforcement has something to act on and the record
+                  outlives the account: publishing illegal content costs ATP, destroys trust, and is
+                  traceable. What starting over costs an offender depends on their tier. At a
+                  hardware-anchored tier, minting a clean slate means starting again on a new device
+                  you had to obtain, and that is the mechanism behind this project&apos;s claim that
+                  bad behavior follows you. At the software-only tier there is no such anchor, so a
+                  dishonest user&apos;s record is sheddable and ban evasion is correspondingly cheap.
+                  That is a known hole rather than a solved problem, and it is set out in full under{" "}
+                  <Link href="#risk-accessibility" className="text-sky-400 hover:underline">Accessibility</Link>.
                 </p>
               </div>
               <p className="text-amber-400/80 text-xs">
@@ -1254,7 +1299,8 @@ export default function WhatCouldGoWrongPage() {
                 the need for human judgment about what crosses the line. The specific question of
                 &ldquo;whose law applies?&rdquo; in cross-jurisdiction societies is an open design
                 challenge - the protocol provides the mechanism (law oracles), but the policy decisions
-                are made by each society.
+                are made by each society, and jurisdictions disagree: political speech that is
+                protected in one country is criminal in another.
               </p>
             </div>
           </details>
@@ -1299,33 +1345,6 @@ export default function WhatCouldGoWrongPage() {
             </div>
           </details>
 
-          {/* Illegal content moderation - visitor Q: "how does moderation of illegal content work?" */}
-          <details className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer">
-            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>How does Web4 handle illegal content (CSAM, terrorism, etc.) without a central authority?</span>
-              <span className="text-gray-500 text-xl">+</span>
-            </summary>
-            <div className="mt-4 text-gray-300 text-sm space-y-2">
-              <p>
-                <strong>Web4 is decentralized, not lawless.</strong> The governance framework includes
-                specific mechanisms for content that crosses legal lines:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>Law Oracles:</strong> Each community designates entities that interpret legal requirements for their jurisdiction. When content violates law (not just norms), law oracles can trigger emergency enforcement - immediate suspension of the offending entity, content quarantine, and evidence preservation for authorities.</li>
-                <li><strong>SAL enforcement tiers:</strong> The graduated enforcement system (warn → restrict → suspend → revoke) can fast-track to revocation for severe violations. An entity distributing illegal content doesn&apos;t get warnings - it gets immediate suspension pending law oracle review.</li>
-                <li><strong>Hardware-bound identity matters here:</strong> Because LCT links identity to physical devices, &ldquo;ban evasion&rdquo; requires obtaining new hardware. Revoked identities can&apos;t simply create new accounts - their devices are flagged.</li>
-                <li><strong>Tamper-evident audit trails:</strong> All trust changes and enforcement actions are logged. If a law oracle oversteps, the audit trail provides grounds for appeal. If they under-enforce, the record shows it.</li>
-              </ul>
-              <p className="text-amber-400/80 text-xs">
-                <strong>Honest tension:</strong> This is where decentralization and legal compliance create real friction.
-                Different jurisdictions define &ldquo;illegal&rdquo; differently - political speech that&apos;s protected in one
-                country is criminal in another. Web4&apos;s approach is to let communities set their own enforcement
-                policies while providing the tools for rapid response. It&apos;s not perfect - no system&apos;s
-                moderation model is - but hardware-bound identity makes the accountability gap much smaller
-                than in anonymous systems.
-              </p>
-            </div>
-          </details>
         </div>
       </section>
 
