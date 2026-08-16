@@ -793,7 +793,12 @@ export default function TrustTensorPage() {
             Temperament (30-day half-life) is essentially gone and Training (180-day half-life)
             is at about half - but Talent doesn&apos;t decay: it&apos;s exactly where you left it.
             A few weeks of consistent activity rebuilds what faded.{' '}
-            <a href="/why-web4#faq" className="text-sky-400 hover:underline">Full breakdown in the FAQ →</a>
+            {/* Aug-15: was href="/why-web4#faq", an anchor that does not exist on that page (no
+                id="faq"; the ids there are faq-index and the 72 faq-* entries), so "full breakdown"
+                dropped the reader at the top of /why-web4 to hunt. Found by the coverage script the
+                FAQ-index guard on that page records. Retargeted to the entry that answers THIS
+                paragraph's question rather than to the index: the promise is keyed on the thing. */}
+            <a href="/why-web4#faq-month-off" className="text-sky-400 hover:underline">Full breakdown in the FAQ →</a>
           </p>
 
           {/* Aug-07 visitor HIGH. The visitor combined THIS section's half-lives with the survival

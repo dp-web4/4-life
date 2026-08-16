@@ -584,9 +584,44 @@ export default function WhyWeb4Page() {
         </div>
 
         {/* FAQ index - jump to any question */}
+        {/* Aug-15 visitor MEDIUM, the FAQ firehose: "~55 questions ... billed as '6 min + optional
+            Q&A' ... add a count up front so I know what I am walking into." Their two suggestions
+            resolved to different things. The structure half (surface a few, collapse the tail) was
+            ALREADY shipped: lead answer, Most Asked, and everything else inside #going-deeper. The
+            count half landed HERE and nowhere else, for a reason worth keeping:
+
+            learn/page.tsx:161 forbids a question count on the /learn card, because it would be "a
+            new falsifiable number on a page whose FAQ grows". That reason is not location-only, so
+            the fence is honored there and not routed around: a count on /learn is falsifiable at a
+            distance and invisible to anyone editing THIS file. On this page the obligation is
+            already resident - the Going-deeper quick-nav below prints six exact category counts,
+            two of which were wrong when this was written (Adoption said 14 and listed 13 after
+            #552's deletion; Trust said 12 and listed 13). This number is three lines above the
+            lists that determine it and is re-derivable in one command.
+
+            The word "all" was also false when this was written: this index linked 69 of 73 entries
+            and the quick-nav 56 of its 61, with three entries (#faq-who-building, #faq-community-split,
+            #faq-computational-overhead) reachable from neither. That is why "~55 across 7 categories"
+            was the size the visitor perceived: 69 links minus the 12 Most Asked repeats is 57.
+
+            Re-derive all three numbers (they must agree, and equal the count in the summary line
+            below) before changing any of them. Comments are stripped first because this one quotes
+            its own slice markers and would otherwise match itself:
+              python3 - <<'EOF'
+              import re
+              CM=re.compile(r'\{/'+r'\*[\s\S]*?\*'+r'/\}')   # split, or it would close THIS comment
+              s=CM.sub('',open('src/app/why-web4/page.tsx').read())
+              e=[m for m in re.findall(r'<details[^>]*id="(faq-[a-z0-9-]+)"',s) if m!='faq-index']
+              i=s.index('columns-1 sm:columns-2')          # the topic index nav element
+              print('entries', len(e))                                                   # -> 72
+              print('index links', len(set(re.findall(r'href="#(faq-[a-z0-9-]+)"', s[i:s.index('</nav>',i)]))))
+              print('12 + category counts', 12+sum(int(n) for n in re.findall(r'\((\d+)\)\s*\n\s*</summary>', s)))
+              EOF
+            What this does NOT do: the curation/accordion redesign that learn/page.tsx:164 defers.
+            That row stays open. This makes the existing apparatus complete and its numbers true. */}
         <details open className="mb-8 text-sm border border-sky-800/30 rounded-lg p-3 group" id="faq-index">
           <summary className="text-sky-400 hover:text-sky-300 cursor-pointer list-none inline-flex items-center gap-1.5 font-semibold">
-            <span className="text-xs transition-transform group-open:rotate-90">▶</span> Browse all questions by topic <span className="text-gray-500 font-normal"> - start here</span>
+            <span className="text-xs transition-transform group-open:rotate-90">▶</span> Browse all 72 questions by topic <span className="text-gray-500 font-normal"> - start here</span>
           </summary>
           <nav className="mt-3 p-4 bg-gray-800/30 border border-gray-700/50 rounded-lg columns-1 sm:columns-2 gap-x-6">
             <div className="break-inside-avoid mb-4">
@@ -662,6 +697,7 @@ export default function WhyWeb4Page() {
             <div className="break-inside-avoid mb-4">
               <h4 className="text-amber-400/80 font-semibold text-xs uppercase tracking-wide mb-1.5">Privacy &amp; Rights</h4>
               <ul className="space-y-0.5 text-gray-400">
+                <li><a href="#faq-privacy-comparison" className="hover:text-sky-400 transition-colors">More private or less private than today?</a></li>
                 <li><a href="#faq-gdpr" className="hover:text-sky-400 transition-colors">GDPR right to be forgotten?</a></li>
                 <li><a href="#faq-reputation-visibility" className="hover:text-sky-400 transition-colors">Who can see my reputation?</a></li>
                 <li><a href="#faq-pseudonymous" className="hover:text-sky-400 transition-colors">Pseudonymity &amp; whistleblowers?</a></li>
@@ -679,6 +715,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-internet-scale" className="hover:text-sky-400 transition-colors">Trust-filtered messaging at scale?</a></li>
                 <li><a href="#faq-death-rebirth" className="hover:text-sky-400 transition-colors">When does an agent die? Rebirth?</a></li>
                 <li><a href="#faq-cross-federation-disputes" className="hover:text-sky-400 transition-colors">Two communities disagree about a member?</a></li>
+                <li><a href="#faq-computational-overhead" className="hover:text-sky-400 transition-colors">Is a trust calculation per action feasible?</a></li>
               </ul>
             </div>
             <div className="break-inside-avoid mb-4">
@@ -691,6 +728,7 @@ export default function WhyWeb4Page() {
                 <li><a href="#faq-sal" className="hover:text-sky-400 transition-colors">How does community governance work?</a></li>
                 <li><a href="#faq-wrongful-penalty" className="hover:text-sky-400 transition-colors">What if I&apos;m penalized unfairly?</a></li>
                 <li><a href="#faq-jurisdiction" className="hover:text-sky-400 transition-colors">Differing national laws?</a></li>
+                <li><a href="#faq-community-split" className="hover:text-sky-400 transition-colors">When a community splits or forks?</a></li>
               </ul>
             </div>
           </nav>
@@ -1342,7 +1380,7 @@ export default function WhyWeb4Page() {
               <details className="group/cat">
                 <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
                   <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
-                  Adoption (14)
+                  Adoption (13)
                 </summary>
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
                   <li><a href="#faq-vs-existing" className="hover:text-sky-400">Why better than X?</a></li>
@@ -1382,11 +1420,12 @@ export default function WhyWeb4Page() {
               <details className="group/cat">
                 <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
                   <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
-                  Trust (12)
+                  Trust (14)
                 </summary>
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
                   <li><a href="#faq-trust-transfer" className="hover:text-sky-400">Trust between communities?</a></li>
                   <li><a href="#faq-threshold" className="hover:text-sky-400">Is 0.5 universal?</a></li>
+                  <li><a href="#faq-calibration" className="hover:text-sky-400">Why these numbers?</a></li>
                   <li><a href="#faq-creative-work" className="hover:text-sky-400">Creative or unconventional work?</a></li>
                   <li><a href="#faq-cheaters" className="hover:text-sky-400">Catching cheaters?</a></li>
                   <li><a href="#faq-ci-example" className="hover:text-sky-400">Coherence for normal people?</a></li>
@@ -1419,7 +1458,7 @@ export default function WhyWeb4Page() {
               <details className="group/cat">
                 <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
                   <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
-                  Economics (5)
+                  Economics (6)
                 </summary>
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
                   <li><a href="#faq-5-percent" className="hover:text-sky-400">5% transfer cost?</a></li>
@@ -1427,12 +1466,13 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-internet-scale" className="hover:text-sky-400">Trust at internet scale?</a></li>
                   <li><a href="#faq-death-rebirth" className="hover:text-sky-400">Death and rebirth?</a></li>
                   <li><a href="#faq-cross-federation-disputes" className="hover:text-sky-400">Cross-federation disputes?</a></li>
+                  <li><a href="#faq-computational-overhead" className="hover:text-sky-400">Is a trust calculation per action feasible?</a></li>
                 </ul>
               </details>
               <details className="group/cat">
                 <summary className="text-amber-400/80 font-semibold text-sm cursor-pointer list-none flex items-center gap-1.5">
                   <span className="text-xs text-gray-500 group-open/cat:rotate-90 transition-transform">▶</span>
-                  Governance (6)
+                  Governance (8)
                 </summary>
                 <ul className="mt-1.5 ml-4 space-y-0.5 text-xs text-gray-400">
                   <li><a href="#faq-who-builds" className="hover:text-sky-400">Who builds this?</a></li>
@@ -1441,6 +1481,8 @@ export default function WhyWeb4Page() {
                   <li><a href="#faq-protocol-changes" className="hover:text-sky-400">Protocol governance?</a></li>
                   <li><a href="#faq-sal" className="hover:text-sky-400">Community governance basics?</a></li>
                   <li><a href="#faq-wrongful-penalty" className="hover:text-sky-400">Penalized unfairly?</a></li>
+                  <li><a href="#faq-jurisdiction" className="hover:text-sky-400">Differing national laws?</a></li>
+                  <li><a href="#faq-community-split" className="hover:text-sky-400">When a community splits or forks?</a></li>
                 </ul>
               </details>
             </div>
@@ -1663,31 +1705,15 @@ export default function WhyWeb4Page() {
             </div>
           </details>
 
-          {/* Who builds this? */}
-          <details id="faq-who-building" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
-            <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>Who is building this?</span>
-              <span className="text-gray-500 text-xl">+</span>
-            </summary>
-            <div className="mt-4 text-gray-300 text-sm space-y-2">
-              <p>
-                Web4 is an <strong>open research project</strong>. The specification, implementation,
-                and this site are all{" "}
-                <a href="https://github.com/dp-web4" target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
-                open source on GitHub</a>. The work is research-driven, not commercially motivated.
-              </p>
-              <p>
-                There is no company, no token sale, no funding round. This is an attempt to answer a
-                genuine research question: <em>can you build internet infrastructure where trust is
-                native rather than bolted on?</em>
-              </p>
-              <p className="text-amber-400/80 text-xs">
-                <strong>Why this matters:</strong> A project about trust should be transparent about
-                its own origins. The code is readable, the reasoning is documented, and the limitations
-                are stated honestly. Judge the ideas on their merit, not on who&apos;s behind them.
-              </p>
-            </div>
-          </details>
+          {/* Aug-15: #faq-who-building deleted here, a second copy of #faq-who-builds below
+              (same three paragraphs: open research project / no company-token-funding / honest
+              caveat about the transparency tension). The survivor was not chosen by position: it
+              owns both inbound links on this page (the Governance group in #faq-index and the
+              Governance list in the Going-deeper quick-nav), answers the harder second half of the
+              question (why the project is anonymous), and its caveat concedes the tension instead
+              of asserting the site already meets it. The deleted copy was in NEITHER index and had
+              zero inbound links anywhere in src/. Its one non-duplicated sentence, the research
+              question, moved into the survivor verbatim; it ships nowhere else on the site. */}
 
           {/* Adoption roadmap */}
           <details id="faq-adoption-path" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
@@ -2660,7 +2686,16 @@ export default function WhyWeb4Page() {
               and ROUTES to each owner. Introduces zero new numeric figures (policy guardrail). */}
           <details id="faq-calibration" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>Why these specific numbers? How were 0.5, 3 hops, and 0.02 chosen?</span>
+              {/* Aug-15 visitor LOW: "I had met 0.5 and 3 hops by then. I had never seen 0.02
+                  anywhere. The question assumes I know a number the page has not shown me." True
+                  of the reading path: 0.02 is introduced on /how-it-works and /what-could-go-wrong,
+                  both of which come after this page. Glossed in the QUESTION, since the body
+                  already defines it four paragraphs down. The gloss is that line's own words
+                  ("the trust update step"), not the visitor's phrasing, so the summary and the
+                  answer stay one sentence rather than two variants. The Trust group's label for
+                  this entry in the index above is deliberately not glossed: it is a nav label
+                  under a topic heading, not a claim a reader meets cold. */}
+              <span>Why these specific numbers? How were 0.5, 3 hops, and 0.02 (the trust update step) chosen?</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
@@ -2802,6 +2837,11 @@ export default function WhyWeb4Page() {
                 The code is fully open-source on{" "}
                 <a href="https://github.com/dp-web4" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">GitHub</a>.
                 There is no VC funding, no token sale, and no commercial interest.
+                {/* Aug-15: carried verbatim from the deleted #faq-who-building, whose other two
+                    paragraphs this entry already said. This sentence was the only thing in that
+                    copy that is not written anywhere else in src/. */}
+                {" "}This is an attempt to answer a genuine research question: <em>can you build
+                internet infrastructure where trust is native rather than bolted on?</em>
               </p>
               <p>
                 The relative anonymity is intentional but also ironic - a project about trust that
