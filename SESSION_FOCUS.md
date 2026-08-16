@@ -2,6 +2,101 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-16 03:00 session - the CSAM answer said ban evasion costs hardware, and risk 8 says it does not
+
+**No open PRs at start.** Fourth pass on `visitor/logs/2026-08-15.md` (today's log lands at 05:00,
+after this fire). Both HIGHs and all three MEDIUMs were already closed by #551/#552/#553. Took the
+illegal-content merge LOW. One page file plus a ledger addendum.
+
+### The merge was the visitor's filing; the defect underneath it was not
+
+Two `<details>` on `/what-could-go-wrong` answered the same question with heavily overlapping
+law-oracle text. Decomposed per [[duplicate-pair-filing-decomposes]]: genuinely duplicative (yes,
+on law oracles, SAL enforcement, audit trails and the jurisdiction caveat), and **both answers
+carried a false universal**. *"Every action in Web4 is signed by a hardware-bound identity"* and
+*"ban evasion requires obtaining new hardware ... their devices are flagged"* both contradict
+**this same page** at risk 8, whose already-shipped paragraph says that at the software-only tier
+*"a dishonest user's record is sheddable"*. The strongest form of the claim was sitting in the
+answer about CSAM and terrorism, where it overstates what enforcement reaches.
+
+Survivor chosen on content, not document order: it owned the worked law-oracle example, the
+appeals link, and the *"design, not deployment"* caveat. Three units the deleted entry owned alone
+were carried in **verbatim** rather than summarized ([[propagate-the-sentence-not-your-summary]]):
+the named SAL tiers with the severe-violation fast-track, content quarantine plus evidence
+preservation, and the bidirectional audit point (oversteps **and** under-enforcement). The named
+tiers also settled a real disagreement between the two: one said violations trigger warnings, the
+other said an entity distributing illegal content does not get them.
+
+**The correction adds the entailment rather than deleting the absolute**
+([[correcting-an-absolute-on-a-risk-page]]): what starting over costs depends on the tier, and at
+the software-only tier ban evasion is correspondingly cheap, routed to `#risk-accessibility`.
+Vocabulary propagated from this page's own risk 8, not coined. Says nothing about 0.50 in either
+direction (Q8 equity half, still under its holding pattern). Licensed by Q8 Ruling 1, whose
+released half is exactly *"a surface asserting that secure hardware is required to participate"*.
+Two entries in, one out, 580 prose words to 495.
+
+### Fifth truncation of the hardware-bound claim class, on the page that supplied the fix
+
+The Aug-08 sweep propagated `/what-could-go-wrong:752-759` to thirteen surfaces and never read the
+FAQ accordion on the same file. Worse, the recorded grep **cannot match** the ban-evasion sentence:
+it states the binding as a verb phrase with no `hardware` adjective (*"LCT links identity to
+physical devices"*), where both recorded patterns require the adjective or the bare-noun form.
+Third pattern-caused truncation. The new pattern and **three more surfaces it finds**
+(`terms.ts:249` Sybil, `/your-internet:149`, `/first-contact:1123`, none of them in any prior
+enumeration) are in `docs/WEB4-CANON-QUESTIONS.md`. Not fixed here: out of a one-file scope.
+
+### Deferred with the analysis, so the next session inherits rather than redoes it
+
+The `/tldr` **2-minute** LOW was proposed first and the policy reviewer blocked it on evidence.
+Both instruments were run and the work is worth keeping:
+
+- **Enumeration (correct, do not re-derive).** `grep -rnoiE "(2|two)[- ]?(minute|min\b)[s]?" src/
+  --include=*.tsx --include=*.ts` returns 34 hits: **20 live surfaces in 9 files** (`page.tsx:109`
+  the landing CTA and `:140`; `tldr:9,:24,:27`; `learn:137,:142,:526,:533`; `navigation.ts:67,:70`;
+  `NewcomerOrientationBanner:49`; `MobileNav:63`; `your-internet:373,:446`; `day-in-web4:1182`;
+  `how-it-works:202,:222,:2640`; `why-web4:48,:49`), **3 comment surfaces** (`tldr:454`,
+  `why-web4:43`, `NewcomerOrientationBanner:12`), and **8 verified out of class**
+  (`your-internet:12` that quiz's completion time, `learn:385` /your-internet, `learn:350` and
+  `:403` substrings of "12 min read", `why-web4:46` that page's own section budget,
+  `lct-explainer:2256` hestia device setup, `day-in-web4:579` a narrative step, and **`tldr:106`,
+  which is a verbatim visitor quotation inside a comment and must not be edited**).
+- **A partial sweep is not available.** At 20 surfaces, fixing `/learn` alone prints
+  *"The 2-Minute Overview ... 5 min read"* adjacent on one card. It is the whole class or none.
+- **`why-web4:48-49` cannot be renumbered mechanically.** *"If you only have 2 minutes, try the
+  2-minute TL;DR instead"* is an Apr-17 graceful exit; at 5 it promises an exit that no longer
+  exists. It needs *"a few minutes"* / *"the short version"*, asserting no duration.
+- **THE BLOCKER, and it is one number.** The choice of 5 rested on `/first-contact` implying
+  185 wpm, since that is the site's only estimate ever corrected against a reader (5 to 7,
+  Jul-30). But `/first-contact` is a **five-panel gated wizard** (`currentStep === "welcome"`
+  :234, `"simulation"` :712, `"narrative"` :960, `"concepts"` :1141, `"next-steps"` :1316, plus an
+  animated playback). Rendered HTML gives ~1293 words (one panel); source stripped of comments and
+  JSX gives ~3458 (all five, plus transcript the reader does not self-pace). That is 185 wpm
+  versus 494 wpm, and applied to `/tldr`'s 1142 words it is **6.2 min (billed 2 is badly wrong)
+  versus 2.2 min (billed 2 is right and there is no defect)**. Resolve *which of those two is the
+  reading volume* and the row decides itself.
+- The 25 post-rebuild browse logs put `/tldr` at median 4.5 with **no browse ever at or under 2**
+  (fastest 2.5), while the other four path pages track their billed numbers. Those markers are
+  persona-authored, not measured (`(02:10)` repeats in three consecutive logs), so they are
+  corroboration only. The suggestive part: the persona **reads** the billed numbers on `/learn`,
+  so anchoring explains the four that agree and makes the one that overrides the anchor 25/25 the
+  signal.
+- **Operator note, contingent on the above.** If the anchor resolves to 185 wpm, the fix renames
+  *"Web4 in 2 Minutes"* to 5 across the h1, `<title>`, both navs and every inbound label. Recorded
+  cost: this visitor clicked it *"because it was the smallest promise on the page"*, and at 5 it
+  ties `/running-now` and sits under `/why-web4`. The reviewer and I agreed this is a cost to
+  record, not a veto, since it is a numeral with a falsifiable answer and `first-contact` 5 to 7 is
+  precedent for sweeping one without escalation.
+
+### Still open
+
+- **Three Aug-15 LOWs**: the site's own name (also visitor Unanswered Q4), the `/tldr` estimate
+  above, the `/onramp` hardbound-mention ambiguity.
+- **Closed as a non-defect**: the `/what-could-go-wrong` "1025 FLOP" MEDIUM. Source is
+  `10<sup>25</sup>`, landed 2026-03-01 and unchanged; the visitor's extraction flattened the
+  markup ([[visitor-quoted-number-find-the-surface]]).
+- Unchanged from prior sessions: visitor Unanswered Q1, and `#faq-platform-migration`'s
+  *"5-tier adoption model"* link to `/how-it-works`, which does not contain one.
+
 ## Aug-15 21:00 session - the index said "all" and listed 69 of 73
 
 **No open PRs at start.** Third and final pass on `visitor/logs/2026-08-15.md`, taking the last
