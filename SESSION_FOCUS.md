@@ -2,6 +2,85 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-18 03:00 session - the sentence that answered a question it had already dropped
+
+**No open PRs at start, and no fresh visitor log.** Five fires (Aug-16 09:00 through Aug-17 21:00)
+all died on *"You've hit your weekly limit"*, and the visitor cron died with them: there is **no
+`2026-08-16.md` or `2026-08-17.md`**, on any branch. So this is a **fifth pass** on
+`visitor/logs/2026-08-15.md`, and the policy reviewer set it as the **last** one: every remaining
+row is blocked, and the next session should wait for the 05:00 log rather than open the FAQ
+curation pass. Three files plus this note.
+
+### `/onramp`: the topic sentence asserted design and evidenced absence
+
+Visitor LOW, `#hub-and-hardbound`: *"I could not tell if this is a candid gap or an intentional
+design statement."* This section **is** the Aug-07 fix for the same axis (*"say whether
+hub<->hardbound is a seam, is out of scope, or is unbuilt"*), so read-it-and-still-filed-it applies
+([[visitor-read-it-and-still-filed-it]]): find the missing clause, do not restructure.
+
+My first diagnosis was wrong and the reviewer caught it. I proposed labelling the split
+(membership by design, verification unbuilt) as though the section never states it. **It states
+both, plainly, in its second paragraph.** Implementing that would have restated paragraph 2 inside
+paragraph 1 and shipped the duplicate-clause defect this page keeps filing. The real residual is
+one sentence: *"a third edge looks like it has to exist by symmetry. **It does not.**"* elides its
+verb, so it reads as *"does not have to exist"*, a **design conclusion**, while the only support
+offered is **absence evidence**. Design claim, gap evidence, no label.
+
+*"There is none:"* **drops** the unsupported design claim rather than caveating it, and one added
+clause routes the two verdicts to where they already live. Routed to *"the next paragraph"*, not
+*"the paragraphs below"*: both verdicts sit in the next one, and the one after it opens by
+disowning federation as a different question with a different owner. Grounding re-run rather than
+inherited (hub grep still zero; `constellation.rs` still owner-committed with `hardware_evidence`
+future) and **paraphrased, never pasted**, because that upstream comment contains an em dash.
+Says nothing about whether a non-hardware participant is advantaged, disadvantaged, alive, safe, or
+has full access (Q8 request 2, unruled).
+
+### `/why-web4`: a carry-over from #552/#553, and the class was three, not one
+
+Not a visitor row. #553 logged *"the `#faq-platform-migration` one survives and is logged, not
+chased, because picking its target means deciding which of the four copies owns the ladder."*
+
+The reviewer found a second member and my re-grep found a third
+([[claim-class-grep-truncated-enumerate-remainder]], and the pattern is the cause again):
+
+- `#faq-platform-migration`, link text *"5-tier adoption path"*, to `/how-it-works`.
+- `#faq-parallel-identities`, link text *"adoption tier"*, to `/how-it-works`. Missed by #553
+  because its list runs **four** tiers (no Native), so `5-tier|five-tier` walks past it.
+- `#faq-app-ui`, link text *"adoption tiers"*, to **`/day-in-web4#adoption`, an id that does not
+  exist**. Missed by an href-scoped grep, which only looks at `/how-it-works`.
+
+**Two remedies, chosen by what the destination actually holds**, not by uniformity. The
+`/how-it-works` pair is **circular**: that page has no ladder and links back to `/why-web4` for
+one, and in both entries the ladder is rendered in the very next element. So the wrapper is deleted
+and the prose kept, which **also means no target had to be picked** and the four-copies question
+stayed deferred exactly as #553 left it. The `/day-in-web4` promise is **accurate and merely
+unanchored**: `day-in-web4`'s *"How Would You Actually Get This?"* section is precisely what the
+sentence promises, its first card being *"Tier 1: Browser Extension"*. That one got the anchor
+instead, demand-driven with a guard naming the inbound link, and the `#faq-app-ui` sentence was not
+touched.
+
+The instrument that finds all three, recorded in the guard so the next session inherits it:
+`grep -rnoiE '(adoption (tier|path|pathway|model|ladder)s?|[0-9]+-tier [a-z ]*|tier (0|1|2|3|4)\b)' src/`
+
+Excluded after checking: `/why-web4`'s two other `/how-it-works` links (the *"walkthrough"* one in
+`#faq-app-ui`, the *"full lifecycle"* one in `#faq-death-rebirth`) promise no ladder.
+
+### Still open
+
+- **Unclaimed, surfaced by this pass's grep**: the ladder ships **three numbering schemes**.
+  `#faq-parallel-identities` runs four tiers, `#faq-transition` runs five then says *"Tiers 0-3 are
+  reversible ... only Tier 4"*, and `day-in-web4:944` says *"you don't have to wait for Tier 5"* on
+  a page whose cards number from Tier 1. That is a curation row, not a link row.
+- **Made more visible by this pass, deliberately not absorbed**: `/identity-constellation` asserts
+  attestation as an accomplished general fact, against the hub's unbuilt `hardware_evidence` layer
+  that `/onramp` now points at more sharply. Fourth file, out of scope, still open.
+- **Two Aug-15 LOWs, both blocked, do not re-derive**: the `/tldr` 2-minute estimate (blocked on one
+  number, 185 wpm vs 494 wpm for `/first-contact`'s five-panel gated wizard; the full analysis is
+  banked in the Aug-16 entry below) and the site's-own-name row / Unanswered Q4 (no in-repo
+  grounding, an operator branding call).
+- **Visitor Unanswered Q1** (software-only on an ordinary laptop), still pending `../hestia`
+  grounding. Unchanged.
+
 ## Aug-16 03:00 session - the CSAM answer said ban evasion costs hardware, and risk 8 says it does not
 
 **No open PRs at start.** Fourth pass on `visitor/logs/2026-08-15.md` (today's log lands at 05:00,

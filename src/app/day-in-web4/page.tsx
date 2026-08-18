@@ -852,8 +852,14 @@ export default function DayInWeb4Page() {
         </p>
       </section>
 
-      {/* How Would You Get It? - Form factor by adoption tier */}
-      <section className="mt-12 pt-8 border-t border-gray-800">
+      {/* How Would You Get It? - Form factor by adoption tier.
+          2026-08-18: id added on demand. why-web4 #faq-app-ui says "A browser extension or
+          community plugin would be the first real-world step (see adoption tiers)" and linked
+          /day-in-web4#adoption, an id that did not exist, so the link silently landed at page
+          top. This section is what that sentence promises: its first card is "Tier 1: Browser
+          Extension". The inbound sentence was left exactly as written; only the destination
+          was missing. */}
+      <section id="adoption" className="mt-12 pt-8 border-t border-gray-800 scroll-mt-24">
         <p className="text-gray-500 text-sm italic mb-6">
           So when could you actually live this day? That depends on adoption - and it starts smaller than you think.
         </p>

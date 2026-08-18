@@ -1595,10 +1595,29 @@ export default function WhyWeb4Page() {
                   #faq-platform-migration). It is NOT on /how-it-works - grep for
                   wrapper|observable tier|5-tier|five-tier over that page returns zero - even though
                   the deleted entry and #faq-platform-migration both LINK the phrase "5-tier adoption
-                  model" there. Deleting the entry closes one of those two dangling promises; the
-                  #faq-platform-migration one survives and is logged, not chased, because picking its
-                  target means deciding which of the four copies owns the ladder, which is the
-                  page-wide curation row this pass is not.
+                  model" there. Deleting the entry closed one of those dangling promises.
+                  2026-08-18 closed the rest, and there were THREE, not the one this comment implied:
+                  #faq-platform-migration ("5-tier adoption path") and #faq-parallel-identities
+                  ("adoption tier") both pointed at /how-it-works, and #faq-app-ui ("adoption tiers")
+                  pointed at /day-in-web4#adoption, an id that did not exist. Two remedies, chosen by
+                  what the destination actually holds: the /how-it-works pair is CIRCULAR (that page
+                  has no ladder and links back HERE at :250), and each link is immediately followed by
+                  the ladder it promises, so the wrapper is deleted and the prose kept, which also
+                  means no target had to be picked and the four-copies question stayed deferred. The
+                  /day-in-web4 promise is accurate and merely unanchored, so it got the anchor instead.
+                  INHERIT THE INSTRUMENT, NOT THE CONCLUSION: an href-scoped grep finds two of three
+                  and a 5-tier|five-tier grep finds one, because #faq-parallel-identities enumerates
+                  FOUR tiers (no Native) and #faq-app-ui names no number at all. What finds all three
+                  is the vocabulary:
+                  grep -rnoiE '(adoption (tier|path|pathway|model|ladder)s?|[0-9]+-tier [a-z ]*|tier (0|1|2|3|4)\b)' src/
+                  Excluded from the class after checking, not by assumption: this page's two other
+                  /how-it-works links (the "walkthrough" one in #faq-app-ui and the "full lifecycle"
+                  one in #faq-death-rebirth) are generic page references promising no ladder.
+                  STILL UNCLAIMED, surfaced by that grep and deliberately not chased: the ladder has
+                  three numbering schemes. #faq-parallel-identities runs four tiers, #faq-transition
+                  runs five and then says "Tiers 0-3 are reversible ... only Tier 4", and
+                  day-in-web4:944 says "you don't have to wait for Tier 5" on a page whose cards
+                  number from Tier 1. That is the page-wide curation row this pass is still not.
                   Landed here and not at #faq-opt-in because the caveat qualifies the LADDER, and this
                   is the first ladder in document order. Reconciled rather than stacked: this caveat's
                   middle sentence used to be verbatim identical to one inside #faq-opt-in's caveat
@@ -2758,8 +2777,7 @@ export default function WhyWeb4Page() {
                 accounts, like adding a reputation layer over what you already use.
               </p>
               <p>
-                Here&apos;s what the transition actually looks like at each{" "}
-                <Link href="/how-it-works" className="text-sky-400 hover:underline">adoption tier</Link>:
+                Here&apos;s what the transition actually looks like at each adoption tier:
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-400">
                 <li><strong>Wrapper tier (you won&apos;t notice):</strong> Platforms add trust scoring behind
@@ -3763,7 +3781,7 @@ export default function WhyWeb4Page() {
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
-              <p>Web4 defines a <Link href="/how-it-works" className="text-sky-400 hover:underline">5-tier adoption path</Link>:</p>
+              <p>Web4 defines a 5-tier adoption path:</p>
               <ol className="list-decimal list-inside space-y-2 ml-2 text-gray-400">
                 <li><strong className="text-gray-300">Wrapper</strong> - Platform adds Web4 trust scores alongside existing systems. Reddit karma still works; Web4 trust appears as a secondary indicator. Users opt in. Zero disruption.</li>
                 <li><strong className="text-gray-300">Observable</strong> - Platform starts logging actions to the trust graph. Upvotes, reports, and moderation decisions feed into T3 calculations. Users see their trust building.</li>

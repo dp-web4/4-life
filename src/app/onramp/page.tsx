@@ -419,16 +419,40 @@ export default function OnrampPage() {
             closing sentence is running-now:427-428 propagated verbatim (/hub:197-198 carries the
             same claim), not a fresh formulation. "Not built YET" plus any roadmap citation would
             imply a schedule nothing supports, so the hardware clause takes the shape this site
-            already uses for a gap it accepts (running-now:351-352). */}
+            already uses for a gap it accepts (running-now:351-352).
+
+            2026-08-15 visitor re-files the SAME axis against this section's fix: "I could not
+            tell if this is a candid gap or an intentional design statement." Read it and still
+            filed it, so the residual is a missing clause, not a missing section. It was in the
+            topic sentence: "a third edge looks like it has to exist by symmetry. It does not."
+            elides its verb, so it reads as "does not HAVE TO exist" (a design conclusion) while
+            the only support offered is absence evidence. Design claim, gap evidence, no label.
+            "There is none:" drops the unsupported design claim instead of caveating it, and the
+            added clause LABELS the split this section already answers: membership by design,
+            verification unbuilt. Deliberately does NOT restate the paragraph below (the
+            LCT-and-signature mechanism, the constellation.rs gap); restating it here would ship
+            the duplicate-clause defect this page keeps filing. Routes to "the next paragraph",
+            not "the paragraphs below": BOTH verdicts live in the next one, and the one after it
+            opens by disowning federation as a different question with a different owner.
+            Says nothing about whether a non-hardware participant is thereby advantaged,
+            disadvantaged, alive, safe, or has full access (Q8 request 2, still unruled).
+            Grounding re-run this pass, not inherited: the hub grep still returns zero, and
+            constellation.rs still documents device_class as owner-committed with hardware_evidence
+            named as future. That upstream comment is PARAPHRASED, never pasted: it contains an
+            em dash. STILL OPEN and made more visible by this clause, not absorbed here:
+            /identity-constellation asserts attestation as an accomplished general fact. */}
         <div id="hub-and-hardbound" className="rounded-lg border border-white/10 bg-white/5 p-4 mt-3 scroll-mt-20">
           <h3 className="font-semibold text-gray-200 mb-2">
             the hub and hardbound: the edge that is not there
           </h3>
           <p className="text-sm text-gray-300 leading-relaxed mb-3">
             Three scales and two seams, so a third edge looks like it has to
-            exist by symmetry. It does not. There is no mention of hardbound
-            anywhere in the hub&apos;s source. The seams above are real because
-            they are code, and this one is absent for the same reason.
+            exist by symmetry. There is none: no mention of hardbound anywhere
+            in the hub&apos;s source. That absence carries two verdicts rather
+            than one, and the next paragraph takes them in turn: for membership
+            nothing is missing, and for verification something is. The seams
+            above are real because they are code, and this one is absent for the
+            same reason.
             hardbound&apos;s public contract ships as a Rust crate inside hestia,
             a set of traits any hardware-bound implementation has to satisfy,
             which is what makes the hestia edge an interface. The hub has no
