@@ -1405,7 +1405,37 @@ export default function WhatCouldGoWrongPage() {
               Simulations prove the mechanics work in principle. Whether they work with real
               humans, real incentives, and real adversaries is an empirical question that
               requires deployment to answer. A 5-tier{" "}
-              <Link href="/why-web4" className="text-sky-400 hover:underline">
+              {/* Aug-18 visitor MEDIUM: "'5-tier adoption pathway' is used as a known term with no
+                  link and no enumeration ... I had to go hunting." Both halves of that are false as
+                  filed: this sentence links, and it enumerates the five tiers inline on the very
+                  next line. What is true is the residual behind "I had to go hunting": the href was
+                  bare /why-web4, which lands the reader at the top of a 72-entry FAQ page with the
+                  definitions collapsed somewhere inside it. Promise-link class, unanchored variant
+                  ([[promise-link-class-grep-text-not-href]]): the link text names a specific
+                  subject, so the href owes that subject's anchor. Same defect the Aug-15 pass fixed
+                  at /trust-tensor, where "Full breakdown in the FAQ" pointed at /why-web4#faq, an id
+                  that does not exist. Retargeted to #faq-platform-migration (why-web4:3778), the
+                  entry that defines all five with a sentence each.
+                  PROVENANCE, because this is not a new class: #555 swept it three days ago with a
+                  vocabulary grep recorded at why-web4:1630, and that grep DOES match this line
+                  ("incremental adoption pathway"). It was not missed by the instrument, it was
+                  excluded by the criterion: #555's class was links whose DESTINATION lacked the
+                  ladder, and /why-web4 has it four times over. But that same guard states both
+                  remedies and the rule for choosing between them ("The /day-in-web4 promise is
+                  accurate and merely unanchored, so it got the anchor instead"), and this link is
+                  the accurate-but-unanchored case, so it takes the same remedy. A criterion with two
+                  branches was applied on one ([[claim-class-grep-truncated-enumerate-remainder]]).
+                  What #555 explicitly deferred and this pass also does NOT touch: the ladder's three
+                  numbering schemes (four tiers at #faq-parallel-identities, five at #faq-transition
+                  with "Tiers 0-3 reversible", and day-in-web4:944's "Tier 5" on a page numbering
+                  from Tier 1). That is a page-wide curation row and needs its own scope.
+                  Their alternative suggestion, "or add a glossary entry", is DECLINED rather than
+                  dropped silently: the tiers are genuinely absent from /glossary, but four copies of
+                  the ladder already ship on /why-web4 and the guard there (grep -n "5-tier" on that
+                  file) records the four-copies question as deliberately deferred. A fifth copy is
+                  the wrong response to a routing defect ([[routing-stating-weighting-three-fixes]]);
+                  this was a routing fix and the routing is now correct. */}
+              <Link href="/why-web4#faq-platform-migration" className="text-sky-400 hover:underline">
                 incremental adoption pathway
               </Link>{" "}
               (wrapper → observable → accountable → federated → native) has been designed so

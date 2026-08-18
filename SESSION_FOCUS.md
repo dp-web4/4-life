@@ -78,6 +78,95 @@ boundaries rather than a mechanism) is recorded at the `/how-it-works` site.
 
 **Filed, not fixed**: `/trust-neighborhood` says ~65% cross-society weight, `/why-web4` says
 "typically 0.7-0.8x" for the same transfer. Numbers seam, wants its own pass.
+## Aug-18 09:00 session - the page that proved role-scoping never said it where the 28% renders
+
+**No open PRs at start** (`gh pr list` returned `[]`), and the 05:00 visitor cron **fired**:
+`visitor/logs/2026-08-18.md` is fresh (~48 min, 15 pages, understanding "good", would return and
+would recommend). 1 HIGH, 5 MEDIUM, 4 LOW. Three rows fixed, three files plus this note.
+
+**Two of the three filings were false as written and had to be narrowed before they were
+actionable.** That is now the third session running where the visitor's *reading* was right and
+their *suggestion* pointed at something that does not exist.
+
+### `/trust-tensor`: the HIGH, and the first draft of it was fenced
+
+Visitor HIGH: the role example renders *"Composite T3: 28%"* for Alice as a Mechanic, and the
+site's most severe rule is stated on *"the composite"* with no role qualifier, so *"the naive
+inference is that being bad at one job permanently kills you, which I assume is wrong."* They are
+reading correctly: this page ships three composites, one of them 0.28, and makes no join at the
+point of the number.
+
+Their literal ask (*"state that Alice's 28% as Mechanic is not a survival risk"*) is **not
+writable**: it adjudicates the consequence, which is ledger Q14/Q15 and unruled. But my first
+draft went wrong in the other direction and **the policy review caught it**. I proposed publishing
+*"which composite the survival rule reads, an entity-wide one or the role you are acting in, is not
+settled."* Canon settles that: `r7-framework.md:252` is a marked **Critical Design Principle**
+(*"There is no global reputation, only reputation within specific role contexts"*), with the same
+note at `r6-framework.md:76` and `r7-framework.md:86`, and `reputation-computation.md:86` marked
+**CRITICAL** puts t3/v3 deltas on the MRH role pairing link and *"NOT globally to the entity."* An
+entity-wide T3 composite is not an open candidate for what the rule reads, it is an object canon
+says **does not exist**. Publishing it as open would have manufactured uncertainty canon has
+closed, and would have repeated exactly the transposition the ledger records against #533. **The
+open sliver is the consequence's reach, not the quantity's identity**, and those are different
+questions.
+
+The decisive find came while rewriting, not while triaging: **`/how-it-works` already ships the
+join**, three paragraphs below its own death rule, and **cites this page as the authority for it**
+(`grep -n "never one universal number"`): *"Trust in Web4 is never one universal number. It is
+[scoped to a role -> /trust-tensor], and each society keeps its own view of you."* The page that
+states the rule links here for the proof; the page it links to never made the join where the number
+renders. Sibling gap in the direction where the **derivative page was the careful one**
+([[subset-invariant-satisfied-from-wrong-side]]), which means the fix is a **propagation**
+([[propagate-the-sentence-not-your-summary]]), not a new claim.
+
+One more self-inflicted defect, caught on re-read: the draft block restated the rule as *"trust
+which falls below 0.5 and stays there"*, **dropping `raw`** from a rider the site keeps
+byte-identical across six surfaces precisely because that word marks the contrast with *effective*
+trust (raw x CI^2). Trimming a word ships variant N+1, and this page already carries one exact
+render of the rider in `#decay-and-survival`. The block now **references the rule and never
+restates it**, names only which quantity it is stated on, and prints **no numeral from the rule at
+all**, so ledger Q1 is untouched by construction rather than by care. It also avoids the word
+*"overall"*, which `how-it-works:1113` uses for a different axis (blend-vs-dimension, not
+entity-vs-role); that paragraph is byte-lock-adjacent and was **filed, not fixed**.
+
+### `/why-web4`: ADP, where the premise held and both locations were wrong
+
+Visitor MEDIUM: *"ADP is in the nav label and the landing page's core-vocabulary strip, but does
+not appear in the five-page reading path. I learned what it stands for on page 13."* My proposal
+said ADP renders nowhere on the path; **the reviewer proved that false**. It renders twice:
+`how-it-works:2352` in unconditional prose as a bare, undefined `(ADP)`, and `first-contact:856`
+with a full gloss **behind a step gate** (`isSuccess && atp_after > atp_before`) this visitor
+plausibly never fired ([[visitor-quoted-number-find-the-surface]] again, third time a step gate has
+hidden a surface from a browse). What is genuinely absent across all five pages is the
+**expansion**: the acronym is used and never unpacked, which is precisely what *"page 13"* reports.
+Their suggested home, *"the tldr's energy paragraph"*, does not exist either: `/tldr` has **zero**
+ATP mentions. Landed at `why-web4:392`, the path's first ATP expansion line and already an
+acronym-unpacking line, propagating the glossary card's own clause rather than coining a variant.
+
+### `/what-could-go-wrong`: #555's sweep had two remedies and shipped one
+
+Visitor MEDIUM: *"'5-tier adoption pathway' is used as a known term with no link and no
+enumeration."* **Both halves false**: `:1407-1413` links it *and* enumerates all five inline on the
+next line. The true residual is behind their *"I had to go hunting"*: the href was bare
+`/why-web4`, landing them at the top of a 72-entry FAQ page with the definitions collapsed inside
+it. Unanchored promise-link ([[promise-link-class-grep-text-not-href]]).
+
+Worth recording *why it survived*: **#555 swept this class three days ago** and its recorded
+vocabulary grep (`why-web4:1630`) **does match this line**. It was not missed by the instrument, it
+was excluded by the **criterion** (that pass's class was links whose *destination lacked* the
+ladder, and `/why-web4` has it four times). But that same guard states **both** remedies and the
+rule for choosing (*"the /day-in-web4 promise is accurate and merely unanchored, so it got the
+anchor instead"*). A criterion with two branches was applied on one
+([[claim-class-grep-truncated-enumerate-remainder]]). Their alternative, *"add a glossary entry"*,
+is **declined on the record** rather than dropped: four copies of the ladder already ship and the
+four-copies question stays deferred, and a fifth copy is the wrong answer to a routing defect.
+
+### Deliberately not touched
+The ladder's **three numbering schemes** (four tiers, five tiers, and a "Tier 5" on a page
+numbering from Tier 1) stay deferred, as #555 left them: that is a page-wide curation row needing
+its own scope. Visitor MEDIUMs on the three-life example (Q5), the Act 4->5 cards (Q1 territory,
+0.51 vs 0.50), and the karma cross-reference (Q5, three surfaces already disclose) are all ledger
+rows. All four LOWs deferred. `npm run build` green.
 
 ## Aug-18 03:00 session - the sentence that answered a question it had already dropped
 
