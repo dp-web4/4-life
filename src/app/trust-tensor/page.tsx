@@ -1058,6 +1058,73 @@ export default function TrustTensorPage() {
               roles separate so societies can make informed decisions.
             </p>
           </div>
+
+          {/* Aug-18 visitor HIGH. "The example gives Alice a 28% composite as Mechanic. Two other
+              pages say raw composite T3 staying below 0.5 is permanent, unrecoverable trust death.
+              T3 is role-specific everywhere on the site, but the death rule is stated on 'the
+              composite' with no role qualifier. Nothing on the trust-tensor page says a low score
+              in one role is harmless. The naive inference is that being bad at one job permanently
+              kills you." They are reading correctly: this page renders three composites, one of
+              them 0.28, on a site whose most severe rule is stated on "the composite", and makes no
+              join at the point of the number.
+              WHY THIS IS A PROPAGATION AND NOT A NEW CLAIM. /how-it-works already ships the join,
+              three paragraphs below its own death rule, and cites THIS PAGE as the authority for it
+              (grep -n "never one universal number" src/app/how-it-works): "Trust in Web4 is never
+              one universal number. It is [scoped to a role -> /trust-tensor], and each society keeps
+              its own view of you." The page that states the rule links here for the proof, and the
+              page it links to did not state it where the 28% renders. Sibling gap in the direction
+              where the DERIVATIVE page was the careful one. The sentence is propagated, not summarised.
+              GROUNDING (canon, not this site's entailment): core-spec/r7-framework.md:252, a marked
+              Critical Design Principle, "There is no global reputation - only reputation within
+              specific role contexts"; same note at r6-framework.md:76 and r7-framework.md:86; and
+              reputation-computation.md:86, marked CRITICAL, puts t3/v3 deltas on the MRH role
+              pairing link and "NOT globally to the entity". So an entity-wide T3 composite is not an
+              open candidate for what the rule reads, it is an object canon says does not exist.
+              WHAT THIS BLOCK MUST NOT SAY, all load-bearing:
+              - NOT the visitor's literal ask ("Alice's 28% as Mechanic is not a survival risk") and
+                NOT its converse. That adjudicates the CONSEQUENCE, which is ledger Q14/Q15 and
+                unruled: canon carries no trust-death concept at all (that absence is Q4) and no
+                entity-level "score below threshold -> REVOKED" path (Q14's own finding).
+              - NOT "which composite the survival rule reads is not settled". Canon settles the
+                QUANTITY (above); only the consequence's reach is open. Framing a closed question as
+                open would repeat the transposition the ledger records against #533, which moved
+                #532's composite-vs-role-match axis onto raw-vs-composite. The policy review this
+                session caught the same error in the first draft of this block.
+              - NO comparison of 0.28 to 0.5 that concludes, and NOTHING about a reader sitting at
+                exactly 0.50, in either direction (ledger Q1 holding pattern, still binding).
+              - NOT the word "overall". /how-it-works:1113 defines raw trust as "your overall
+                (composite) score"; its axis is blend-vs-dimension, not entity-vs-role, and that
+                paragraph is byte-lock-adjacent and was not edited. Avoiding the word keeps the two
+                surfaces from colliding on a word each uses for a different axis
+                ([[borrowed-word-means-something-else-there]]).
+              The link goes to #two-ways-to-die because that container holds BOTH halves the reader
+              needs: the rule itself, and the "dead where?" paragraph that already says how far the
+              consequence does and does not travel.
+              THE RULE IS REFERENCED, NEVER RESTATED, and a draft of this block got that wrong. It
+              read "trust which falls below 0.5 and stays there", which drops "raw" from a rider the
+              site keeps byte-identical across six surfaces precisely because that word marks the
+              contrast with EFFECTIVE trust (raw x CI^2). Trimming a word ships variant N+1
+              ([[propagate-the-sentence-not-your-summary]]), and this page already carries one exact
+              render of the rider in #decay-and-survival, so a second would duplicate as well as
+              drift. The block now names only WHICH QUANTITY it is stated on, which is the axis it
+              is here to fix, and prints no numeral from the rule at all. That also keeps ledger Q1
+              untouched by construction: 0.5 never appears in this block. */}
+          <div className="mt-6 p-4 bg-gray-900/40 border border-gray-700/50 rounded-lg">
+            <p className="text-gray-400 text-sm leading-relaxed">
+              <strong className="text-gray-300">If you have already met the survival rule:</strong>{" "}
+              it is stated on &ldquo;the composite&rdquo;, and this page has just shown you three of
+              them. Every composite here is a composite <em>in a role</em>. Trust in Web4 is never one
+              universal number, and the standard is explicit about it: there is no global
+              reputation, only reputation inside a specific role context. So the 28% is Alice&apos;s
+              composite <em>as a Mechanic</em>. It is not a second, whole-person score for her, and
+              it does not pull down the 90% she holds as an analyst. What a sustained low score
+              costs you in the role you earned it in, and how far that reaches, is taken up where
+              the rule is stated.{" "}
+              <Link href="/how-it-works#two-ways-to-die" className="text-sky-400 hover:text-sky-300 underline">
+                The two ways a life ends &rarr;
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
 

@@ -389,7 +389,27 @@ export default function WhyWeb4Page() {
               <p className="text-gray-400 text-sm">
                 Every action costs energy from a personal budget. Quality contributions earn energy back. Spam burns through it with no return - spammers literally run out of fuel.
               </p>
-              <p className="text-gray-400 text-sm mt-1">Shorthand: ATP (Allocation Transfer Packets) - just means your energy budget.</p>
+              {/* Aug-18 visitor MEDIUM: "ADP is in the nav label and the landing page's
+                  core-vocabulary strip, but does not appear in the five-page reading path. I
+                  learned what it stands for on page 13 of my session."
+                  Their premise needed narrowing before it was actionable. ADP DOES render on the
+                  path, twice: /how-it-works:2352 in unconditional prose as a bare, undefined
+                  "(ADP)", and /first-contact:856 with a full gloss but behind a step gate
+                  (isSuccess && atp_after > atp_before), which this visitor plausibly never fired
+                  ([[visitor-quoted-number-find-the-surface]]). What is genuinely absent across all
+                  five pages is the EXPANSION: the acronym is used and never unpacked, which is
+                  exactly what "I learned what it stands for on page 13" reports. Their suggested
+                  home, "the tldr's energy paragraph", does not exist: /tldr has no ATP mention at
+                  all (grep -c ATP src/app/tldr/page.tsx is 0). This line is the reading path's
+                  first ATP expansion and already does this job for ATP alone, so it is where the
+                  pair stops being half-defined, and it is where the visitor FIRST reads.
+                  Wording propagated from the glossary's own ADP card (grep -n "Allocation Discharge
+                  Packets" src/app/glossary), not re-summarised: "a receipt recording what you did
+                  and what it cost" is that card's clause
+                  ([[propagate-the-sentence-not-your-summary]]). The existing /atp-economics link
+                  below stays the route to the full spend/confirm/recharge cycle; this clause names
+                  the pair and stops, so it does not become a second home for the economics. */}
+              <p className="text-gray-400 text-sm mt-1">Shorthand: ATP (Allocation Transfer Packets) - just means your energy budget. Spending it produces an ADP (Allocation Discharge Packets), a receipt recording what you did and what it cost, which is why the pair is always written together.</p>
               <Link href="/atp-economics" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
                 Learn about energy budgets →
               </Link>
