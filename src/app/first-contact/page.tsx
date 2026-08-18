@@ -488,7 +488,33 @@ export default function FirstContactPage() {
                 <div className="bg-gray-800/60 rounded-lg p-3 border border-red-900/50">
                   <div className="text-xs text-red-400 font-semibold mb-1">Act 5</div>
                   <div className="text-sm font-bold mb-1">Die &amp; Reborn</div>
-                  <div className="text-xs text-gray-400 mb-2">Karma carries forward</div>
+                  {/* Aug-18 visitor MEDIUM: "Alice ends Act 4 at trust 0.62 and enters Act 5 at
+                      0.51. An 11-point drop appears between two cards with no stated cause ...
+                      give the trust movement a one-word reason on the card, the way Acts 2-4
+                      have one." They are right about the rail's own convention: every other act
+                      pairs its trust chip with a subtitle naming the cause ("Quality earns trust
+                      back", "Spam costs more than it pays", "Consistency rebuilds"). This card
+                      compresses two events, and its subtitle named only the second one, so the
+                      rebirth had a reason and the fall had none.
+                      Cause propagated from this page's own post-Start prose, not re-authored
+                      (grep -n "she overextended"): "Too many projects, rushed quality, declining
+                      reviews. ATP drained from 80 to 35 to 12. Trust fell from 0.62 to 0.51."
+                      That one cause drives BOTH movements on this card, which is why one clause
+                      closes both halves of the visitor's row.
+                      PREPENDED, not replaced: "Karma carries forward" is a literal string two
+                      guards elsewhere cite this card by (this file's canonical-rule guard, whose
+                      grep target is "karma-journey's karma-tier", and karma-consequences's
+                      karma-tier resolution note). Replacing it would rot both
+                      ([[guard-comment-cites-rot-name-the-target]]). Cite this card as the Act-5
+                      SUBTITLE if you add another: a bare grep for the phrase returns four hits.
+                      Prints NO numeral and says nothing about 0.50 in either direction, so ledger
+                      Q1 is untouched by construction. In particular this does NOT gloss the 0.51
+                      chip beside it: the Aug-14 guard below says that chip is deliberately bare
+                      and that the "above the line" argument belongs in the "Alice got lucky" box.
+                      The energy half of the visitor's row was already shipped by that chip
+                      ("dies at ATP 0"); "and energy" here only makes the two chips agree in
+                      words as well as symbols. */}
+                  <div className="text-xs text-gray-400 mb-2">Overextending costs trust and energy. Karma carries forward</div>
                   {/* Aug-09 visitor HIGH x2, and they are one defect. This badge row was the
                       first place a reader met the rebirth number, and it showed only the DELTA:
                       "ATP=0" next to "+12 bonus". The page already states the TOTAL three times

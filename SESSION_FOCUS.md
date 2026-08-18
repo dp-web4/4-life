@@ -2,6 +2,82 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-18 15:00 session - the caveat that arrived after the illustration, and the mechanism that had no date
+
+Second pass on `visitor/logs/2026-08-18.md`. PR #556 (09:00) took the HIGH plus 2 MEDIUM and was
+CLEAR of standing blocks; my branch is not stacked on it. Three files plus this note.
+
+**Four of the remaining rows were verified false-or-contested at the source and are recorded, not
+fixed**, so a later pass does not re-derive them:
+
+- *Karma cross-reference* (MEDIUM): the filing says "neither page says another models it
+  differently". `/how-it-works`'s `EndOfLifeCaveat` names both other instances by link, and
+  `/karma-consequences` points back. Only `/first-contact` lacks a pointer, and that card's guard
+  family forbids importing `/how-it-works` wording in either direction. Declined.
+- *`/why-web4` validation numbers* (LOW): `why-web4:853` already scopes 424 and ~85%. `171` and
+  `2,627` do not render on that page at all; the only hits are inside a guard forbidding their
+  import. The visitor pooled numbers from two pages.
+- *`/why-web4` V3* (LOW): their literal suggestion already ships (`grep -n "V3 rates how good"`).
+  Their real residual is their Unanswered Q7 ("what does V3 do that quality attestation does
+  not"), which is a comprehension build and not this row. **Flagged for a later session.**
+- *`/tldr` badge rows* (2 LOW): answered by a standing guard that refuses the badge change on a
+  live rendering constraint. Contested LOW, no new signal.
+
+### `/first-contact`: the rail named the rebirth's reason and not the fall's
+
+MEDIUM: *"Alice ends Act 4 at trust 0.62 and enters Act 5 at 0.51. An 11-point drop appears between
+two cards with no stated cause."* They named the fix themselves by pointing at the rail's own
+convention: every other act pairs its trust chip with a subtitle giving the cause. Act 5 compresses
+two events and its subtitle, *"Karma carries forward"*, named only the second, so the rebirth had a
+reason and the fall had none.
+
+Cause **propagated from this page's own post-Start prose** (`grep -n "she overextended"`), not
+re-authored. One cause drives both movements, which is why one clause closes both halves of the row.
+**Prepended, not replaced**: two guards cite this card by the literal string *"Karma carries
+forward"* ([[guard-comment-cites-rot-name-the-target]]).
+
+The row's second half (*"the card does not say she died of energy"*) **was already shipped** and the
+policy reviewer caught me over-claiming it: the chip reads `dies at ATP 0`. The edit prints **no
+numeral** and says nothing about 0.50 in either direction, so **ledger Q1 is untouched by
+construction**, and it does not gloss the bare 0.51 chip, which the Aug-14 guard reserves for the
+"Alice got lucky" box.
+
+### `/how-it-works`: the deferral had two prongs and only one was out of bounds
+
+MEDIUM, the three-life example. My scope did not list this row at all and the reviewer required it
+back ([[out-of-bounds-may-rest-on-unread-arbiter-line]]). Prong (a), *"build the example on one of
+the two deaths the page does define"*, **is** ledger Q5 and stays refused: rewriting an illustration
+to fit an unruled rule is exactly what the caveat exists to prevent. Prong (b), *"move the caveat
+above the example"*, is live, cheap, and **a position move of an existing render**.
+`EndOfLifeCaveatShort` now renders under the section `<h2>`, above Life 1, instead of after Life 3.
+Their reason is the point: *"Being told after the fact feels like the example was retrofitted."*
+
+Not one word changed: sentences 1-2 are verbatim-shared with `EndOfLifeCaveat`, so a trim would ship
+variant N+1 ([[propagate-the-sentence-not-your-summary]]). Two things were **checked, not assumed**:
+"the energy death described above" still resolves, and the back-link still points **up** to
+`#karma-carries` (1337, above the new position at 1459). Two guard citations said "at the end of
+#example" and are now position-free.
+
+### The federation seam: fenced on both ends of its own link
+
+LOW: *"Written in confident present tense ... for a component `/running-now` calls Spec only. The
+page's global caveat is far above it."* It is ~2280 lines above. Same gap as their Unanswered Q5
+(*"on one page it is a mechanism, on another it is a plan"*).
+
+The site's canonical sentence already ships on three surfaces (`/running-now`, `/onramp`, `/hub`) and
+is grounded upstream: `../web4/STATUS.md` lists the inter-society protocol at **v0.1.2 DRAFT**. It is
+propagated verbatim, not re-authored.
+
+**The sweep enumeration I wrote was incomplete and the reviewer found the missing member**:
+`/trust-neighborhood`'s "What happens when you join a new community?" block states the same
+mechanism as operating today, with a number (~65% weight), no marker, **and is the destination of
+the very link inside the block I was fixing**. Fencing one and not the other routes a reader out of
+a fenced claim into a sharper unfenced one. Both taken. Criterion for the four members **left**
+(each carries an in-block provenance line, "Limitation:" fence, "Honest caveat:", or describes
+boundaries rather than a mechanism) is recorded at the `/how-it-works` site.
+
+**Filed, not fixed**: `/trust-neighborhood` says ~65% cross-society weight, `/why-web4` says
+"typically 0.7-0.8x" for the same transfer. Numbers seam, wants its own pass.
 ## Aug-18 09:00 session - the page that proved role-scoping never said it where the 28% renders
 
 **No open PRs at start** (`gh pr list` returned `[]`), and the 05:00 visitor cron **fired**:
