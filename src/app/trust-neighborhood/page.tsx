@@ -7,6 +7,7 @@ import RelatedConcepts from "@/components/RelatedConcepts";
 import ConceptSequenceNav from "@/components/ConceptSequenceNav";
 import ExplorerNav from "@/components/ExplorerNav";
 import InProduction from "@/components/InProduction";
+import MaturityBadge from "@/components/MaturityBadge";
 import { trackPageVisit } from "@/lib/exploration";
 
 export default function MarkovRelevancyHorizonPage() {
@@ -855,6 +856,32 @@ export default function MarkovRelevancyHorizonPage() {
               <Link href="/trust-tensor" className="text-sky-400 hover:underline">
                 See how trust scores work →
               </Link>
+            </p>
+            {/* Aug-18 visitor LOW, swept here from /how-it-works rather than filed against this
+                page. Their row was against how-it-works's federation block ("written in confident
+                present tense ... for a component /running-now calls 'Spec only'"), and this block
+                is the DESTINATION of that block's "federation economics" link. Marking one and not
+                the other would route a reader out of a newly fenced claim into a sharper unfenced
+                version of the same claim, with a number attached (~65% weight). The criterion for
+                the whole class, and what it leaves alone, is recorded in full at the source site
+                (grep -n "Where this actually stands" src/app/how-it-works/page.tsx).
+                Sentence propagated verbatim from the three surfaces that already ship it
+                (grep -n "specified but not yet built" on src/app/running-now and src/app/onramp).
+                Deliberately NOT the page's own "Honest caveat" phrasing used for the 0.7 decay
+                factor further down: that one fences a TUNABLE PARAMETER inside a mechanism that
+                exists, and this one fences whether the mechanism exists yet. Different claims,
+                and collapsing them would weaken both.
+                NOT touched, and filed instead: this block says ~65% cross-society weight while
+                why-web4 (grep -n "0.7-0.8x") says "typically 0.7-0.8x" for the same transfer.
+                That is a numbers seam, not a maturity one, and it wants its own pass. */}
+            <p className="text-xs text-gray-400 mt-3 leading-relaxed">
+              <strong className="text-amber-300">Where this actually stands:</strong> this describes
+              the design, not something running. Federation across societies remains{" "}
+              <MaturityBadge tier="spec" /> only, specified but not yet built (see{" "}
+              <Link href="/running-now" className="text-sky-400 hover:underline">
+                the full maturity map
+              </Link>
+              ).
             </p>
           </div>
         </section>

@@ -7,6 +7,7 @@ import PageTracker from "@/components/PageTracker";
 import SectionTOC from "@/components/SectionTOC";
 import InProduction from "@/components/InProduction";
 import LifecycleDemo from "@/components/LifecycleDemo";
+import MaturityBadge from "@/components/MaturityBadge";
 
 const HOW_IT_WORKS_SECTIONS = [
   { id: 'journey', label: 'Birth → Life → Death → Rebirth' },
@@ -650,7 +651,7 @@ export default function HowItWorksPage() {
             Pointed by PROSE and not by link until Aug-12 (15:00), for two stated reasons: this page
             has no anchor between #journey and #two-ways-to-die, which is STILL TRUE, and the karma
             examples had no id, which is no longer true. #karma-carries was added for an unrelated
-            demand (EndOfLifeCaveatShort at the end of #example needs a route back to the full
+            demand (EndOfLifeCaveatShort in #example needs a route back to the full
             caveat), so the second blocker cleared and the prose pointer below is now a link. That
             is the whole change here: no figure moved, and the "About that 112:" heading is a
             separate Aug-12 MEDIUM (the callout names a number the reader may never have seen,
@@ -1322,10 +1323,16 @@ export default function HowItWorksPage() {
                 one has TWO inbound links, both in this file:
                 (1) the "About that 112" callout above the Birth section, whose own guard used to
                     say it pointed by prose because "the karma examples have no id";
-                (2) EndOfLifeCaveatShort at the end of #example, which needs to route a reader to
-                    the full caveat 40 lines below these examples.
+                (2) EndOfLifeCaveatShort in #example, which needs to route a reader to
+                    the full caveat above it.
                 It sits on the container rather than on the caveat because one landing serves both
                 demands within a screen: (1) wants the examples, (2) wants the caveat under them.
+                Aug-18: (2) MOVED. That caveat used to render at the END of #example and now
+                renders directly under its h2, above Life 1, because a caveat that arrives after
+                the illustration reads as a retrofit (Aug-18 visitor MEDIUM). The inbound demand
+                on this id is unchanged in kind and the link still points UP, so this anchor
+                stays exactly where it is. Position words in these two citations were the only
+                thing that rotted; both are now position-free.
                 If both inbound links ever go, this id goes with them. */}
             <div id="karma-carries" className="scroll-mt-24">
               <h4 className="text-lg font-semibold text-gray-200 mb-2">
@@ -1424,6 +1431,33 @@ export default function HowItWorksPage() {
         <h2 className="text-3xl font-bold mb-6 text-gray-100">
           Putting It All Together: A Complete Example
         </h2>
+
+        {/* Aug-18 visitor MEDIUM: "The page's only end-to-end example has three lives that end for
+            a reason the page then admits it cannot name ... I finished 'The Complete Lifecycle'
+            without knowing what ends a life." Their row offered two remedies. The first, "build
+            the worked example on one of the two deaths the page does define (let Life 1 hit 0
+            ATP)", is refused: which deaths exist is ledger Q5, and rewriting the illustration to
+            fit an unruled rule is the exact move the caveat below exists to prevent. The second,
+            "move the 'About these numbers' caveat above the example so I know before reading it
+            that the endings are illustrative", is taken, and it is the whole change here.
+            Their reason for preferring it is the point: "Being told after the fact feels like the
+            example was retrofitted."
+            This is a POSITION MOVE of an existing render. Not one word of EndOfLifeCaveatShort
+            changed, and it must not: its sentences 1-2 are VERBATIM-shared with EndOfLifeCaveat
+            above (see the guard on that component), so trimming a word here would make this
+            variant N+1 of a claim the site carries on four surfaces
+            ([[propagate-the-sentence-not-your-summary]]). No figure moved, no branch endorsed,
+            enumeration still zero-plus-route.
+            Two things survive the move and were checked, not assumed: "the energy death described
+            above" still resolves (both deaths are defined in #two-ways-to-die, far above this
+            section), and the caveat's back-link "What the standard does and does not say" still
+            points UP to #karma-carries (that anchor is ~50 lines above this h2). Its up-arrow is
+            still true.
+            The forward reference in "none of these lives" is deliberate and is what the visitor
+            asked for. Do not "fix" it by rewording; the sentence is byte-locked. */}
+        <div className="mb-6">
+          <EndOfLifeCaveatShort />
+        </div>
 
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8 space-y-6">
           <div className="border-l-4 border-blue-500 pl-4">
@@ -1620,8 +1654,6 @@ export default function HowItWorksPage() {
               </li>
             </ul>
           </div>
-
-          <EndOfLifeCaveatShort />
 
           <div className="mt-6 p-4 bg-sky-900/20 border border-sky-800/30 rounded-lg">
             <p className="text-sky-300 text-sm">
@@ -2532,6 +2564,51 @@ export default function HowItWorksPage() {
             <Link href="/trust-neighborhood" className="text-amber-400 hover:underline">
               federation economics
             </Link>, and it&apos;s how Web4 scales from one society to an ecosystem of thousands.
+          </p>
+          {/* Aug-18 visitor LOW: "Written in confident present tense (prices 'adjust dynamically',
+              the system 'detects policy conflicts') for a component /running-now calls 'Spec only,
+              specified but not yet built'. The page's global present-tense caveat is far above it
+              ... Every other maturity claim on this site is local to the claim; this one relies on
+              a caveat several screens up." The caveat they mean is ~2280 lines above this block,
+              at the top of the file. They also filed the same gap as Unanswered Q5: "on one page
+              it is a mechanism, on another it is a plan."
+              The sentence below is the site's canonical one, propagated verbatim modulo Alice-free
+              phrasing from the three surfaces that already ship it (grep -n "specified but not yet
+              built" on src/app/running-now and src/app/onramp; src/app/hub carries the same claim
+              as "specified, not yet built"). NOT re-authored: a trimmed variant of a claim carried
+              on three surfaces is variant N+1 ([[propagate-the-sentence-not-your-summary]]).
+              Grounded upstream, not in marketing: ../web4/STATUS.md lists the inter-society
+              protocol (genesis, first contact, federation, secession) at v0.1.2 DRAFT.
+              SWEEP, with the criterion stated for what is LEFT
+              ([[adding-a-distinction-creates-a-sweep-obligation]]). Class: a block that presents a
+              federation MECHANISM as operating today. Members and dispositions:
+                - this block: no marker of any kind. TAKEN.
+                - trust-neighborhood's "What happens when you join a new community?" block: no
+                  marker, and it is the destination of this very block's "federation economics"
+                  link, so fencing here and not there would route a reader from a fenced claim
+                  into a sharper unfenced one. TAKEN in the same commit.
+                - atp-economics "Trust Earns Better Terms" (grep -n "In federated markets"): LEFT,
+                  it carries an in-block provenance line ("From web4 offline modeling ... session
+                  32, 84 checks") that already marks it as modelling.
+                - what-could-go-wrong's cross-value-communities FAQ (grep -n "Federation handles
+                  economic coordination"): LEFT, in-block "Limitation:" fence, on the risk register.
+                - why-web4's federation-transfer FAQ (grep -n "federation trust transfer protocol"):
+                  LEFT, in-block "Honest caveat:" already says it is specified, not tested.
+                - trust-neighborhood's "Federated Societies" card: LEFT, it describes membership
+                  boundaries (open vs invitation-only), not a mechanism doing work.
+                - this page's governance "Federation competition" bullet: LEFT, already covered by
+                  its own "all four are design, not track record" status clause.
+              NOT deleted, and deliberately so: the block teaches the shape, which is what a
+              reader needs from it. What was missing was only that it is a design and not a
+              deployment. */}
+          <p className="text-gray-400 text-xs leading-relaxed mt-3">
+            <strong className="text-amber-300">Where this actually stands:</strong> the paragraphs
+            above describe the design, not something running. Federation across societies remains{" "}
+            <MaturityBadge tier="spec" /> only, specified but not yet built (see{" "}
+            <Link href="/running-now" className="text-amber-400 hover:underline">
+              the full maturity map
+            </Link>
+            ).
           </p>
         </div>
       </section>
