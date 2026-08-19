@@ -687,15 +687,54 @@ export default function WhatCouldGoWrongPage() {
               lower ceiling isn&apos;t neutral - it codifies the existing digital divide
               into the trust layer itself.
             </p>
+            {/* Aug-19 visitor MEDIUM: mitigation (2) contradicted its own section. It said
+                vouching lets contacts "witness behavior and raise effective trust over time",
+                while mitigation (4) below says a software-only identity "starts at 0.50 and 0.50
+                is also where it stops" and this section's Honest assessment says that tier "has no
+                hardware witness to vouch for them". Read plainly, those point opposite ways, and
+                the visitor said so.
+                THREE DEFECTS IN ONE CLAUSE, all falsifiable:
+                (i) It welded two words canon separates. web4/docs/specs/heterogeneous-identity.md
+                    has a section headed "Witnessing, not vouching": a witness statement says "I
+                    observed entity X at time T", it "does not say: I endorse X", "No transitive
+                    trust is implied. No reputation is staked." Rendered here in plain English, not
+                    pasted: that source line carries a literal em dash and a non-equals glyph, and
+                    the em dash rule is absolute (check u2014 before pushing).
+                (ii) "effective trust" is a DEFINED term on this site, raw x CI squared, canonical
+                     on /coherence-index and propagated to six surfaces. Vouching moves neither
+                     factor, so the bullet borrowed a term that means something else here
+                     ([[borrowed-word-means-something-else-there]]).
+                (iii) It offered the excluded tier a mitigation the same section withdraws two
+                      paragraphs later. That is the SECOND time this bullet run has done exactly
+                      that: see the Jul-31 reversal recorded below, which deleted "Software-only
+                      behavior still accrues reputation normally" from bullet (4) for the same
+                      reason. Same defect class, different bullet.
+                SCOPED, not deleted: vouching IS real on the hardware-backed routes, at 3-7 days,
+                stated on this page and on /lct-explainer and /identity-constellation. What was
+                false was the tier it was offered to and the quantity it was said to move.
+                GUARDRAILS, do not undo:
+                - Says nothing about whether secure hardware is required to PARTICIPATE. That is
+                  the standing [[hardware-required-seam]] escalation, and mitigation (4)'s
+                  eligibility clause ("the ceiling caps high-trust roles, not basic participation")
+                  is byte-identical since Jul-29 and stays that way. It was not touched here.
+                - Makes NO accrual claim for the software-only tier at its ceiling, in either
+                  direction, and no paraphrase of the Jul-31 deleted sentence. It states only what
+                  vouching does not do.
+                - No numeral, and nothing about which side of 0.50 anything falls on (ledger Q1).
+                - The join to the trust side of this seam is stated at
+                  /lct-explainer #software-only-survival, same pass. */}
             <p>
               <strong className="text-gray-100">What mitigates it:</strong> A few things,
               partially.{' '}
               <strong>(1) Hardware keys with PIN unlock</strong> - YubiKey or Titan keys
               accept a numeric PIN instead of a biometric, and they&apos;re hardware-bound. That
               gets users without biometric capability up to ~0.75 ceiling.
-              <strong> (2) Community vouching</strong> - trusted contacts can witness
-              behavior and raise effective trust over time, without requiring a stronger root
-              of trust.
+              <strong> (2) Community vouching</strong> - trusted contacts can witness what you
+              do, and on the hardware-backed routes in this list, (1) and (3), that record is what
+              re-establishes an identity after a lost device. Be precise about what it is not: it does not raise the
+              software-only ceiling, and Web4 witnessing is an observation (&ldquo;I saw this
+              happen&rdquo;) rather than an endorsement that lends you someone else&apos;s
+              standing.
               <strong> (3) Trusted-third-party witnessing</strong> - libraries, schools,
               NGOs, and clinics can serve as institutional witnesses for users who lack
               personal hardware, similar to how notaries serve as identity witnesses today.
