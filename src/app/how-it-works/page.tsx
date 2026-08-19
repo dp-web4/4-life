@@ -937,10 +937,81 @@ export default function HowItWorksPage() {
                   </p>
                 </div>
               </div>
+              {/* Aug-19 visitor MEDIUM, and their Unanswered Q1, and two paragraphs of their
+                  Honest Assessment: "Self-initiated work recharges up to 15 ATP = 0 net at best.
+                  Commissioned work is where the surplus is (+25, +40). To be commissioned, someone
+                  has to trust me. To be trusted, I have to act ... How does anybody bootstrap? I
+                  could not find this answered anywhere." Triple-filed, and the strongest untaken
+                  row carried forward from the Aug-19 09:00 pass.
+                  IT IS A SEQUENCE DEFECT, NOT AN ABSENCE. The bootstrap IS disclosed on this page,
+                  verbatim, with a link: grep -n "lands a first commission" in this file. But that
+                  disclosure hangs off the Life 1 Novice illustration, far below THIS card, and this
+                  card is the exhibit the visitor actually quoted. They met the trap, derived it
+                  correctly from our own figures, and met the disclosure nowhere near it
+                  ([[promise-artifact-arrives-by-another-route]]: fix the SEQUENCE).
+                  THE CRITERION WAS ALREADY WRITTEN, by the pass that created the disclosure. Its
+                  guard (grep -n "Both halves visible or neither" in this file) records a policy
+                  reviewer's condition: naming the commission channel at the skim layer while
+                  leaving the open question elsewhere makes the skim layer assert the unsolved step
+                  MORE loudly. By that criterion this card was the forbidden configuration: it named
+                  the channel at the skim layer and offered no open half and no route to one. The
+                  criterion was applied to one exhibit and never swept to the sibling exhibit on the
+                  same page making the identical claim
+                  ([[adding-a-distinction-creates-a-sweep-obligation]]).
+                  /atp-economics already carries the same rule as policy, in stronger terms:
+                  "The #newcomer-solvency link is mandatory, not decorative: without it this reads
+                  as a promise that you will get one" (grep -n "mandatory, not decorative"
+                  src/app/atp-economics). This card had the promise and not the link.
+                  PROPAGATED VERBATIM, not summarized ([[propagate-the-sentence-not-your-summary]]):
+                  the sentence and the link label are byte-identical to the Life 1 copy in this file
+                  and to its source at /atp-economics #newcomer-solvency. That sentence now renders
+                  TWICE on this page, deliberately. Do NOT de-duplicate: the two copies sit far
+                  apart, serve different exhibits, and the source page's sync guard (grep -n "If you
+                  reword either one" src/app/atp-economics) forbids trimming either.
+                  APPEND ONLY. The card's existing closing sentence is untouched, and no figure in
+                  this card moved. The defect was never a number.
+                  Q13 FENCE RESPECTED: this states no rate, no floor, and no survival promise. It
+                  discloses that the bootstrap is open, which is what #newcomer-solvency already
+                  says. Do not close it here. The visitor's own premise ("to be commissioned,
+                  someone has to trust me") is asserted nowhere on this site and is not adopted
+                  here; acknowledgment is the maximum this fence permits, and the visitor's own
+                  suggestion offered it ("Or say it is an open question").
+                  THE CLASS, re-derived rather than trusted. My first grep of it was truncated and
+                  found four surfaces; there are nine, and this file's own sibling page already
+                  enumerated most of them (grep -n "seventh restatement" src/app/atp-economics).
+                  Each one left is left for a reason true OF IT:
+                    - the reborn-agent lesson bullet below (grep -n "only refunds" here): spoken by
+                      an agent with prior lives. It teaches which channel pays, not that a newcomer
+                      can reach it.
+                    - the Life 1 Novice paragraph: both halves already there, plus the link.
+                    - the Virtuous Cascade block (grep -n "Virtuous Cascade" here): the commission
+                      is the scenario's PREMISE, not a claim about reachability.
+                    - /day-in-web4's "the other channel" sentence: its own rendered text scopes it
+                      to "an account built up over far longer", explicitly not a newcomer.
+                    - /atp-economics Life 1 "Her surplus is commissioned work": #newcomer-solvency
+                      renders ABOVE it, so a linear reader has already met the open half.
+                    - /atp-economics summary items 1 and 3: UN-SWEPT REMAINDER, recorded rather than
+                      excused. #newcomer-solvency renders BELOW them, so the reachability reason
+                      does NOT hold there; item 3's link goes to #net-positive, the arithmetic, not
+                      the open question. Left because it is a second file and those two carry a live
+                      sync constraint (grep -n "keep item 1 and item 3" src/app/atp-economics).
+                      Next pass on this class starts there.
+                  Also left, and named so nobody trusts it: that sibling enumeration's own cites
+                  into this file are ALREADY stale, and this insert shifts them further
+                  ([[guard-comment-cites-rot-name-the-target]]). Repairing them means a second file.
+                  Cites here name their targets by grep string rather than by line, because this
+                  file moves under edit and did so in this very commit. */}
               <p className="text-gray-400 mt-3 text-sm italic">
                 Work you initiate can hold you steady; work someone commissioned is what puts you
                 ahead. Either way quality is the gate, and spam runs the balance down until there
                 is nothing left to act with.
+              </p>
+              <p className="text-xs text-gray-400 mt-3 leading-relaxed">
+                How someone with no track record lands a first commission is an open question on
+                this stack rather than a solved one, and you should read it as one.{" "}
+                <Link href="/atp-economics#newcomer-solvency" className="text-sky-400 hover:underline">
+                  Where that stands &rarr;
+                </Link>
               </p>
             </div>
 
