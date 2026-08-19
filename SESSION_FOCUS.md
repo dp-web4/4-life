@@ -2,6 +2,91 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-18 21:00 session - three rival rates for a number the standard says is not the protocol's to set
+
+**No open PRs at start** (`gh pr list` -> `[]`), no fresh visitor log (today's is `2026-08-18.md`,
+already worked twice), and **the friction table is exhausted**: all 11 rows were fixed by #556/#557
+or verified false-or-contested and recorded there. So this is the pass #557 explicitly deferred:
+*"That is a numbers seam, not a maturity one, and it wants its own pass."* Three files plus this note.
+
+**It was not a two-surface seam. It was six surfaces on two axes**, and the policy reviewer found the
+member that made the difference.
+
+*Axis A, the mechanism.* Canon rules it. `../web4/web4-standard/core-spec/inter-society-protocol.md`
+section 9 is an open-items list (resolved siblings are struck through and marked RESOLVED); the
+**unstruck** trust-attenuation bullet says *"whether T3 in society A propagates to D's level and at
+what discount ... this spec leaves the trust math society-sovereign."* Three surfaces named MRH
+per-hop decay as the thing that discounts a score at a community **boundary**. That is the
+within-community quantity (`/trust-neighborhood#hop-decay`), and the boundary discount is the
+**receiving** society's federation policy.
+
+*Axis B, the number.* Three rival *"typically"* rates for one quantity: `~65%`, `0.7-0.8x`,
+`0.6x-0.7x`. **"Typically" is itself the defect**, since it asserts protocol typicality for a value
+canon makes sovereign, so it came out of the **anchor** too and not just the two rivals. `~65%` is
+4-Life's teaching calibration (`git log -S`: `eb16a51`, #121, Apr 16, no grounding; canon has no
+figure) and now says so, once, at the anchor.
+
+### What the reviewer caught that the proposal had wrong
+
+- **The missed member.** `/why-web4#faq-quality-standards` enumerated *"two things reduce it"* and
+  named MRH decay first, with the boundary weight **absent from a list of what reduces trust at the
+  boundary**. It is also the destination of the *second* outbound link in the `/trust-tensor`
+  paragraph I was already fixing, so fixing that paragraph alone would have repeated
+  [[sweep-must-include-the-link-destination]] on the other link of the same block. Ruling: the count
+  change and the re-scope are **one edit, not alternatives**. Re-scoping alone leaves "two" false
+  less visibly; adding alone ships bullet 1 contradicting bullet 3.
+- **My derivation was arithmetically false.** I wrote that ~65% is the mid-band of 40-80%. The
+  midpoint of 40 and 80 is **60**. Struck; the figure is stated as an illustration, never derived.
+- **The inversion, the highest-risk thing in the pass.** 65% weight is a **35% discount**. Surface 4
+  reads *"already discounted (...)"*, so dropping 65% into that parenthetical would have rendered *a
+  65% discount* and shipped a **seventh** wrong number. Every propagated site now says share-of-home-
+  value or multiplier, never "a 65% discount".
+- **Opposite treatment for two look-alike surfaces.** Surface 4's worked numerals were **already
+  exactly 0.65x** (0.2 -> ~0.13, 0.88 -> ~0.572) and did not move; only its stated range disagreed
+  with its own arithmetic. Surface 3's operand **had** to move (0.82 -> 0.80, arriving 0.52), because
+  0.82 x 0.65 = 0.53 breaks its worked value *and* because leaving `0.65` as an arrival value one
+  screen from `65%` as a weight is [[borrowed-word-means-something-else-there]].
+- **A Q15 trap I was walking into.** ISP section 9's *"society-society trust tensors"* bullet is
+  **struck and RESOLVED** at `mcp-protocol.md` section 7.5, which makes cross-society reputation
+  propagation normative. Canon leaves the **discount** open, **not the mechanism**. Nothing here says
+  the protocol lacks a cross-society trust mechanism; the anchor's provenance line says the opposite
+  explicitly (*"What the standard does specify is the machinery underneath"*).
+
+### The anchor, and why the hedge word could not just be dropped at the four sites
+
+`/trust-neighborhood#cross-society` is a new **demand-driven anchor**: four inbound links asked for
+it in this same push, all four from surfaces that used to name the wrong mechanism. The reviewer
+rejected "no hedge word plus a link" for the propagated sites: a bare `~65%` whose only qualifier is
+an outbound link is indistinguishable from a protocol constant to a reader who does not click, and
+that is the same routing failure #557 recorded at this very anchor. Each of the four carries a short
+**attributive clause inline** naming *who sets the weight*, which is content rather than a softener;
+the 40-80% band and the provenance live once, at the anchor, behind the links.
+
+**The membership test is recorded at the anchor**, because the two quantities are confusable in both
+directions: a surface is in this class only if it says what happens to a score **crossing a
+boundary**. `/why-web4` (grep `limits the blast radius`) carries `0.7x` *and* the words "MRH decay"
+and is **correctly not a member**: it states #hop-decay's own claim accurately and mentions no
+boundary. Eight further members pass the boundary test but carry no number and no MRH attribution;
+all eight are enumerated by grep at the anchor.
+
+### Filed, not fixed: the axis-C seam (named next pass)
+
+All three files I had open give a **different** answer to "what carries across communities":
+
+- `/trust-tensor` (grep `Temperament does transfer`) says **Temperament**
+- `/why-web4` (grep `carry over; <em>role-specific</em>`) says **"temperament, consistency"**
+- `/why-web4` (grep `does carry over, giving them a small head start`) says **Veracity**, which is a
+  **V3** dimension, not T3
+
+Third name for one quantity inside the same claim class. Pulled into this pass it would have fought
+the mechanism fix ([[two-fixes-in-one-pass-can-fight]]), so it is filed here with its three greps
+rather than left for the next session to re-derive, which is exactly how #557's filing produced this
+session.
+
+Also still open from the prior passes: the visitor's Unanswered Q7 (**what does V3 do that quality
+attestation does not**), which their checklist marks `[~]`. It is a comprehension build, not a defect
+row, and wants its own scope. `npm run build` green. No em dashes (literal or `u2014`). No new files.
+
 ## Aug-18 15:00 session - the caveat that arrived after the illustration, and the mechanism that had no date
 
 Second pass on `visitor/logs/2026-08-18.md`. PR #556 (09:00) took the HIGH plus 2 MEDIUM and was

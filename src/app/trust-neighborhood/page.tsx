@@ -838,14 +838,22 @@ export default function MarkovRelevancyHorizonPage() {
           </div>
 
           {/* Cross-society trust transfer */}
-          <div className="bg-sky-950/20 border border-sky-800/30 rounded-lg p-4 mt-6">
+          {/* Aug-18 (3rd pass): id added, demand-driven. Four inbound links asked for it in the
+              same push, all of them sites that used to name the WRONG mechanism and now point here
+              for the right one: why-web4 #faq-trust-transfer-mechanics (step 3),
+              #faq-cross-federation-disputes, #faq-quality-standards (bullet 1), and trust-tensor
+              (grep -n "portable but not dictatorial"). Point at THIS block, not at #hop-decay:
+              #hop-decay owns the per-hop 0.7 within one community, which is the quantity these
+              four surfaces were confusing this one with. The two anchors are each other's contrast
+              and must not be collapsed. */}
+          <div id="cross-society" className="bg-sky-950/20 border border-sky-800/30 rounded-lg p-4 mt-6 scroll-mt-24">
             <h4 className="text-sm font-semibold text-sky-400 mb-2">What happens when you join a new community?</h4>
             <p className="text-sm text-gray-400">
               Your trust doesn&apos;t reset to zero - but it doesn&apos;t transfer at full value either.
               When communities federate, your trust from Community A travels to Community B at a discount
-              (typically ~65% weight - a separate federation-policy number, not the per-hop 0.7&times; decay
-              you saw within a single community above). Think of it like transferring schools: your grades come with you,
-              but you still need to prove yourself to new teachers.
+              (this site illustrates with ~65% weight - a separate federation-policy number, not the
+              per-hop 0.7&times; decay you saw within a single community above). Think of it like transferring
+              schools: your grades come with you, but you still need to prove yourself to new teachers.
             </p>
             <p className="text-sm text-gray-400 mt-2">
               <strong className="text-sky-300">Who sets the discount?</strong> The <em>receiving</em> community
@@ -856,6 +864,15 @@ export default function MarkovRelevancyHorizonPage() {
               <Link href="/trust-tensor" className="text-sky-400 hover:underline">
                 See how trust scores work →
               </Link>
+            </p>
+            <p className="text-xs text-gray-400 mt-3 leading-relaxed">
+              <strong className="text-sky-300">Where the 65% comes from:</strong> this site, not the
+              standard. The specification is explicit that it &ldquo;leaves the trust math
+              society-sovereign&rdquo;, and it lists trust attenuation across federation levels
+              (whether a score propagates, and at what discount) as an open question. So there is no
+              protocol figure to quote. ~65% is 4-Life&apos;s illustration inside the 40% to 80% band
+              above, and it is the only such figure the site uses. What the standard does specify is
+              the machinery underneath: how reputation propagates between societies at all.
             </p>
             {/* Aug-18 visitor LOW, swept here from /how-it-works rather than filed against this
                 page. Their row was against how-it-works's federation block ("written in confident
@@ -871,9 +888,44 @@ export default function MarkovRelevancyHorizonPage() {
                 factor further down: that one fences a TUNABLE PARAMETER inside a mechanism that
                 exists, and this one fences whether the mechanism exists yet. Different claims,
                 and collapsing them would weaken both.
-                NOT touched, and filed instead: this block says ~65% cross-society weight while
-                why-web4 (grep -n "0.7-0.8x") says "typically 0.7-0.8x" for the same transfer.
-                That is a numbers seam, not a maturity one, and it wants its own pass. */}
+                The numbers seam this comment used to file (~65% here vs "typically 0.7-0.8x" on
+                why-web4) is CLOSED by the Aug-18 21:00 pass. It turned out to be six surfaces on two
+                axes, not two on one:
+                  AXIS A, the mechanism. THREE surfaces named MRH per-hop decay as the thing that
+                  discounts trust at a community BOUNDARY. Canon rules against that: inter-society-
+                  protocol.md section 9 (an open-items list; resolved siblings are struck through and
+                  marked RESOLVED) leaves the trust math society-sovereign and lists the cross-level
+                  discount as unresolved. The boundary weight is the RECEIVING society's policy.
+                  Fixed at why-web4 (grep -n "faq-trust-transfer-mechanics" and
+                  grep -n "three things reduce it") and trust-tensor
+                  (grep -n "portable but not dictatorial").
+                  AXIS B, the number. THREE rival "typically" rates for one quantity: ~65% here,
+                  "0.7-0.8x" and "0.6x-0.7x" on why-web4. "Typically" is itself the defect, since it
+                  asserts protocol typicality for a sovereign policy value, so it was removed HERE
+                  too and not just at the two rivals.
+                DO NOT reintroduce a typicality word for this figure, and DO NOT phrase the weight as
+                a discount percentage: 65% weight is a 35% discount, and "a 65% discount" inverts it.
+                The propagated sites each carry an inline attributive clause naming who sets the
+                weight; the band and this provenance live once, here, behind their links.
+                MEMBERSHIP TEST, since the two quantities are easy to confuse in the other
+                direction: a surface is in this class only if it says what happens to a score when it
+                CROSSES A COMMUNITY OR FEDERATION BOUNDARY. A surface about distance within the trust
+                graph is the OTHER quantity and belongs to #hop-decay, even though it carries 0.7 and
+                the words "MRH decay". By that test why-web4 (grep -n "limits the blast radius") is
+                NOT a member and was correctly left: it says attestations "fall off with social
+                distance", which is #hop-decay's claim stated accurately, and it never mentions a
+                boundary crossing. Do not "normalize" it to this block.
+                LEFT ALONE, and why: eight members pass the boundary test but state the transfer with
+                no number AND without attributing it to MRH decay, so they are defective on neither
+                axis. They are why-web4 (grep -n "interpreted through the receiving community",
+                grep -n "the trust transfer discount is steep",
+                grep -n "trust transfers across boundaries (at a discount)",
+                grep -n "discounted across federation boundaries",
+                grep -n "Discord trust transfers to Reddit at a discount"),
+                trust-tensor (grep -n "trust bridging"),
+                atp-economics (grep -n "plus trust discounting when societies federate"),
+                and lib/terms.ts (grep -n "how trust scores translate").
+                A number or an MRH-decay attribution appearing at any of those makes it a member. */}
             <p className="text-xs text-gray-400 mt-3 leading-relaxed">
               <strong className="text-amber-300">Where this actually stands:</strong> this describes
               the design, not something running. Federation across societies remains{" "}

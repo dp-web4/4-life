@@ -1686,11 +1686,26 @@ Temperament:  30-day half-life (recent behavior matters most)
             patterns are visible to the new community. You don&apos;t start from absolute zero - you start
             with evidence that you&apos;re a reliable person, even if you&apos;re an unproven cook.
           </p>
+          {/* Aug-18 (3rd pass), axis A. This used to say cross-community transfer "applies MRH decay
+              (0.7x per hop of social distance)". That is the within-community quantity, and this
+              paragraph's own outbound link pointed at /trust-neighborhood, the page that explicitly
+              says the cross-society weight is "a separate federation-policy number, not the per-hop
+              0.7x decay". The block was routing a reader to its own refutation
+              ([[sweep-must-include-the-link-destination]]). Both links below are deliberate: one to
+              #hop-decay for the contrast, one to #cross-society for the mechanism that actually
+              governs a boundary. "portable but not dictatorial" is kept verbatim: it is shared with
+              why-web4 (grep -n "portable but not dictatorial") and trimming it ships variant N+1. */}
           <p className="text-gray-300 text-sm mb-2">
-            Cross-community transfer also applies{" "}
-            <Link href="/trust-neighborhood" className="text-sky-400 hover:underline">MRH decay</Link>{" "}
-            (0.7&times; per hop of social distance), so distant communities see a discounted version
-            of your trust - portable but not dictatorial.
+            Cross-community transfer is discounted too, but not by the{" "}
+            <Link href="/trust-neighborhood#hop-decay" className="text-sky-400 hover:underline">
+              per-hop MRH decay
+            </Link>{" "}
+            that measures social distance inside one community. The <em>receiving</em> community sets the
+            weight as federation policy (
+            <Link href="/trust-neighborhood#cross-society" className="text-sky-400 hover:underline">
+              this site illustrates with ~65%
+            </Link>
+            ), so your trust arrives reduced but not erased - portable but not dictatorial.
           </p>
           <p className="text-xs text-gray-500">
             For the full mechanics of how trust moves between communities, see the{" "}

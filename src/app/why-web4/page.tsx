@@ -3740,11 +3740,31 @@ export default function WhyWeb4Page() {
                 community-scoped. Your trust as a meme creator in a humor community is a separate dimension
                 from your trust as a researcher in an academic one.
               </p>
+              {/* Aug-18 (3rd pass), axis A. This list said "two things reduce it" and named MRH
+                  decay first, with the thing that actually operates AT the boundary missing
+                  entirely. Two edits, and they are one edit: the count goes to three AND the MRH
+                  bullet is re-scoped. Re-scoping alone would have left "two" false, just less
+                  visibly, since a within-neighborhood quantity is no longer a thing that reduces
+                  trust "when trust transfers between communities". Adding alone would have left
+                  bullet 1 contradicting bullet 3.
+                  The 0.7x and ~49% numerals are NOT touched (they are /trust-neighborhood#hop-decay's
+                  quantity, guarded since Aug-01); only their SUBJECT is corrected from "a community"
+                  to "a contact", which is what the ring on that page actually renders.
+                  Boundary weight goes first, matching the anchor's own order (grep -n "Who sets the
+                  discount?"). This adds a bullet inside an existing <details>, so the #faq-index
+                  re-derivation guard, which counts FAQ entries, is unaffected. */}
               <p>
-                When trust transfers between communities, two things reduce it:
+                When trust transfers between communities, three things reduce it:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>MRH decay</strong> - trust weakens with social distance (0.7&times; per hop). A community two hops away sees only ~49% of your original trust.</li>
+                <li><strong>The receiving community&apos;s weight</strong> - the community you are joining decides
+                  how much of an outside score it will accept, as federation policy. That is the discount that
+                  applies at the boundary itself, and no protocol constant sets it (
+                  <Link href="/trust-neighborhood#cross-society" className="text-amber-400 hover:underline">
+                    this site illustrates with ~65%
+                  </Link>
+                  ).</li>
+                <li><strong>MRH decay</strong> - <em>within</em> a community, trust also weakens with social distance (0.7&times; per hop). A contact two hops away sees only ~49% of your original trust.</li>
                 <li><strong>Role mismatch</strong> - the T3 (Trust Tensor) tracks trust per skill/context. Being trusted for humor doesn&apos;t make you trusted for research. The relevant dimension may be near zero.</li>
               </ul>
               <p>
@@ -3882,9 +3902,21 @@ export default function WhyWeb4Page() {
                 <li>You authenticate on the new platform using the same LCT (hardware key ceremony)</li>
                 <li>The platform requests your trust profile from the federation - your T3 scores,
                   CI history, and MRH graph</li>
-                <li>Cross-federation trust is <strong className="text-gray-300">discounted</strong>: your
-                  0.82 trust on Platform A might arrive as 0.65 on Platform B (MRH decay applies
-                  across federation boundaries, typically 0.7-0.8x)</li>
+                {/* Aug-18 (3rd pass), axis A + axis B. This step used to read "MRH decay applies
+                    across federation boundaries, typically 0.7-0.8x". Both halves were wrong. MRH
+                    per-hop decay measures social distance INSIDE one community
+                    (/trust-neighborhood#hop-decay owns it); what discounts a score at a BOUNDARY is
+                    the receiving society's federation policy, which the standard leaves sovereign
+                    and lists as open. And no protocol-typical rate exists to quote.
+                    The operand moved 0.82 -> 0.80 deliberately: under a 0.65 weight, 0.82 arrives at
+                    0.53, and leaving 0.65 as an ARRIVAL VALUE beside 65% as a WEIGHT is the same
+                    numeral doing two jobs one screen apart. 0.80 x 0.65 = 0.52. */}
+                <li>Cross-federation trust is <strong className="text-gray-300">discounted</strong> by the
+                  weight the receiving platform sets as federation policy, not by the protocol and not by
+                  the per-hop decay that operates inside a single community: at the{" "}
+                  <Link href="/trust-neighborhood#cross-society" className="text-amber-400 hover:underline">
+                    ~65% this site illustrates with
+                  </Link>, your 0.80 trust on Platform A arrives as 0.52 on Platform B</li>
                 <li>Your trust then evolves independently on the new platform based on your behavior there</li>
               </ol>
               <p>
@@ -4137,8 +4169,20 @@ export default function WhyWeb4Page() {
                 <li><strong className="text-gray-300">Trust is sovereign per community.</strong> Wellness can lower Maya&apos;s trust
                   <em> within their own community</em> - that&apos;s their right. But they cannot modify her score in Food Science.
                   Each community controls its own trust graph independently.</li>
-                <li><strong className="text-gray-300">Federation discounts absorb the conflict.</strong> Trust transfers across
-                  federation boundaries are already discounted (typically 0.6x-0.7x). If Wellness sets Maya to 0.2, that arrives
+                {/* Aug-18 (3rd pass), axis B only. The parenthetical used to read "typically
+                    0.6x-0.7x", a third rival rate for a quantity the standard leaves society-
+                    sovereign. The WORKED NUMERALS were already right and did not move: 0.2 x 0.65 =
+                    0.13 and 0.88 x 0.65 = 0.572, so this block was already computing at the site's
+                    ~65%, and only its stated range disagreed with its own arithmetic.
+                    Phrased as a SHARE OF HOME VALUE, never as "a 65% discount": 65% weight is a 35%
+                    discount and the two invert each other. */}
+                <li><strong className="text-gray-300">Federation discounts absorb the conflict.</strong> Trust crossing a
+                  federation boundary arrives at whatever share of its home value the receiving community&apos;s policy
+                  sets ({" "}
+                  <Link href="/trust-neighborhood#cross-society" className="text-amber-400 hover:underline">
+                    ~65% in this site&apos;s illustration
+                  </Link>
+                  ). If Wellness sets Maya to 0.2, that arrives
                   at other communities as ~0.13. Her 0.88 from Food Science arrives as ~0.57. The higher-trust signal dominates.</li>
                 <li><strong className="text-gray-300">Bridge agents provide ground truth.</strong> People active in both communities
                   assess Maya from direct interaction, not community politics. If 8 bridge agents rate her highly and only Wellness rates
