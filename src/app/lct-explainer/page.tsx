@@ -2605,15 +2605,29 @@ export default function LCTExplainerPage() {
               trust as a cooking enthusiast. One identity, many trust dimensions - like holding both a
               medical license and a pilot&apos;s license.
             </p>
+            {/* Aug-19. This used to name TWO things as carrying across roles, Temperament and the
+                Coherence Index. Only the second survives canon: t3-v3-tensors.md 6.3 requires each
+                role to keep separate tensors and a new role to start "not inherited from other
+                roles", and 2.1 defines Temperament as "Role-Contextual Reliability". The deletion,
+                not a caveat, is the fix ([[density-guard-means-delete-not-caveat]]): the correct
+                answer was already standing beside the wrong one.
+                The link to #faq-multi-persona is kept because that destination carried the SAME
+                pair and was corrected in this same push; fixing this teaser alone would have routed
+                a reader out of a corrected sentence into the uncorrected original
+                ([[sweep-must-include-the-link-destination]]). */}
             <p className="text-sm text-gray-300">
-              What <em>does</em> carry across roles is your <strong>Temperament</strong> (reliability,
-              consistency) and your <strong>Coherence Index</strong> (behavioral patterns). So your professional
-              reputation for meeting deadlines benefits you in hobby communities too - without your cooking
-              skills affecting your developer trust score.
-              See the{" "}
+              What <em>does</em> carry across roles is your <strong>Coherence Index</strong> (behavioral
+              patterns), which multiplies each role&apos;s trust rather than being carried into it.
+              Temperament is not the portable one: it is scored per role, like Talent and Training. So your
+              professional reputation for meeting deadlines is visible in hobby communities as evidence,
+              without your cooking skills affecting your developer trust score.
+              See{" "}
+              <Link href="/trust-tensor#temperament-scope" className="text-green-400 hover:text-green-300 underline">
+                what the standard says about role scope
+              </Link>, or the{" "}
               <Link href="/why-web4#faq-multi-persona" className="text-green-400 hover:text-green-300 underline">
                 full multi-persona FAQ
-              </Link> for details.
+              </Link>.
             </p>
           </div>
 
