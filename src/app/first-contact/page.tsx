@@ -294,7 +294,36 @@ export default function FirstContactPage() {
               <div className="text-xs uppercase tracking-wide text-gray-400 font-semibold mb-2">Before you start - reading Alice&apos;s panel</div>
               <p className="text-sm text-gray-400 mb-3">Only two numbers move while she acts. This is all you need to follow the story:</p>
               <ul className="text-sm text-gray-300 space-y-2">
-                <li><span className="text-sky-300 font-semibold">🔋 Energy Budget (ATP)</span> - the resource Alice spends to act. Starts at <span className="text-gray-200">100</span>; goes down when she posts, up when others confirm her work was valuable. If it hits 0, she can&apos;t act.</li>
+                {/* Aug-19 visitor HIGH #1: "the two-number tutorial contradicts itself". This
+                    bullet said only "she can't act"; the Act-5 chip four screens down says "dies at
+                    ATP 0". The reader concluded energy is a pause and trust is the fatal one, then
+                    met "dies" and could not tell which was true.
+                    The vocabulary that resolves it ("energy death, recoverable through karma
+                    rebirth" / "trust death, permanent") already ships on this page THREE times and
+                    a pre-Start reader can reach none of them: once in the <noscript> block (grep
+                    -n "Two paths:"), and twice behind the Start button (the Step-5 death panel and
+                    the "Death is Real" recap): [[page-ships-the-answer-and-denies-it]], the answer
+                    is here and the reader cannot get to it.
+                    SHARPER THAN FILED, and this is what decides the fix. The term "trust death" IS
+                    used pre-Start, in the "Why raw?" details in this same box ("it does not push
+                    her toward trust death"), undefined, while "energy death" appears nowhere. So
+                    the reader meets one half of a named pair with no definition and the other half
+                    described without its name. The gap is the NAMING, not an explanation
+                    ([[visitor-read-it-and-still-filed-it]]).
+                    LANDED AS PARENTHETICALS INSIDE THE TWO EXISTING BULLETS, deliberately, and do
+                    not promote either to a sentence, a third <li>, or a box. This panel carries
+                    three density guards (May-15 vocab wall, Jul-13 collapse, Jul-17 pre-Start
+                    caveat pile-up cited below) and this same visitor's assessment asks for
+                    everything before Start to be SHORTER ([[density-guard-means-delete-not-caveat]]).
+                    Net addition is ten words across both bullets, and the box's "only two numbers
+                    move" promise is untouched: no third quantity is introduced, both names attach
+                    to numbers already in the list.
+                    Wording PROPAGATED, not re-coined, from the <noscript> copy ("Energy death is
+                    recoverable through karma rebirth", "Trust death is permanent")
+                    ([[propagate-the-sentence-not-your-summary]]).
+                    Prints NO numeral and makes NO regional claim about 0.50 in either direction, so
+                    the ENDPOINT RULE guard below is satisfied by construction (ledger Q1). */}
+                <li><span className="text-sky-300 font-semibold">🔋 Energy Budget (ATP)</span> - the resource Alice spends to act. Starts at <span className="text-gray-200">100</span>; goes down when she posts, up when others confirm her work was valuable. If it hits 0, she can&apos;t act (<strong className="text-gray-200">energy death</strong>, recoverable through karma rebirth).</li>
                 {/* Jul-9 visitor HIGH: this line taught "0.5 = access threshold" and Aliveness taught
                     "0.5 = death threshold", and the visitor never reconciled them. Name the second
                     consequence here, where the first one is introduced.
@@ -323,7 +352,7 @@ export default function FirstContactPage() {
                     KEPT deliberately: the Recovery section's "Trust climbed back above 0.5,
                     restrictions lifted" (~L733). That narrates Alice's trajectory from 0.48, it does
                     not state a regional rule, so it is not an endpoint claim. Do not re-open it. */}
-                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> - her <em>raw</em> reputation, on a <span className="text-gray-200">0.00-1.00</span> scale. One number, but a rolled-up one: it is her three trust dimensions weighted for the role she is acting in (<Link href="/trust-tensor" className="text-purple-300 hover:underline">Trust Tensors</Link>). Starts neutral at <span className="text-gray-200">0.50</span>. Below 0.50: features get restricted until she rebuilds it - and if she <em>stays</em> below, that same line becomes fatal - a sustained slide, not one dip.</li>
+                <li><span className="text-purple-300 font-semibold">🤝 Trust Score</span> - her <em>raw</em> reputation, on a <span className="text-gray-200">0.00-1.00</span> scale. One number, but a rolled-up one: it is her three trust dimensions weighted for the role she is acting in (<Link href="/trust-tensor" className="text-purple-300 hover:underline">Trust Tensors</Link>). Starts neutral at <span className="text-gray-200">0.50</span>. Below 0.50: features get restricted until she rebuilds it - and if she <em>stays</em> below, that same line becomes fatal (<strong className="text-gray-200">trust death</strong>, permanent) - a sustained slide, not one dip.</li>
               </ul>
               {/* Aug-15 visitor HIGH: "the whole walkthrough quietly assumes something it never
                   tells you ... The words hardware, chip, TPM, ceiling, and software-only do not

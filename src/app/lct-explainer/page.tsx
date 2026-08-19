@@ -1388,7 +1388,46 @@ export default function LCTExplainerPage() {
             What the software-only ceiling really costs you is <em>margin</em>: you start at the
             line with no buffer above it, so any dip restricts your features until you climb back, and your
             reputation can never carry more weight than the line itself. Zero margin is the tradeoff you accept
-            by anchoring an identity in software alone.
+            by anchoring an identity in software alone.{" "}
+            {/* Aug-19 visitor HIGH #2: "the reassurance is offered to the one tier whose recovery
+                mechanism is never stated". They read this callout, accepted that trust death is a
+                sustained collapse rather than a snapshot, and then could not find what the climb
+                back actually IS for a tier the site tells them has no witnesses. Their words: every
+                recovery route the site names elsewhere, it also says this tier lacks.
+                THE MECHANISM ALREADY SHIPS ON THIS PAGE, about a screen below, in the "What does my
+                ceiling actually let me do?" box (grep -n "caps how high your"): the ceiling caps how
+                high trust can climb THROUGH BEHAVIOR. A cap on the top is not a freeze on movement,
+                and that entailment was never said anywhere the reader of this callout could reach
+                ([[page-ships-the-answer-and-denies-it]]).
+                WHAT THEY COLLIDED WITH is the drop-your-phone list far above (grep -n "no second
+                witness to vouch"), which is DEVICE-LOSS RECOVERY, a different quantity that shares
+                the word "recover" and the word "vouching" with this one
+                ([[friction-may-be-an-entailment-not-a-contradiction]], [[borrowed-word-means-something-else-there]]).
+                Canon scopes that rule exactly and only that way: multi-device-lct-binding.md
+                constraint "Cannot be sole anchor for recovery QUORUM", and the 7.2 society MUST
+                "Enforce recovery quorum for IDENTITY RECOVERY". Neither touches what moves a trust
+                score. So the join is stated here rather than either fact being changed.
+                DESTINATION FENCE, and this is the guard not to relax (policy review, Aug-19).
+                For THIS tier ceiling and survival line are the same value, so a climb-back with a
+                named destination answers ledger Q1 by arithmetic. The Q8-Ruling-3 holding pattern
+                in docs/WEB4-CANON-QUESTIONS.md says in terms that #software-only-survival "stays
+                strictly-below". Do NOT write any of: "climb back to 0.50", "back to the line",
+                "back to full access", "back to where you started", or any climb-back paired with a
+                ceiling numeral inside this block. What is permitted is a pure MOVEMENT claim:
+                headroom exists below the cap and behavior traverses it. Nothing about the top of
+                the traverse, nothing about a reader sitting at any score, in either direction.
+                NOT the clause deleted Jul-31 from what-could-go-wrong ("Software-only behavior
+                still accrues reputation normally"). That was false because a user pinned AT the
+                ceiling accrues nothing. This sentence is about the region BELOW a dip, where
+                headroom demonstrably exists, and it names the cap in the same breath. Do not
+                generalise it back into an unqualified accrual claim. */}
+            Climbing back is not a separate mechanism you have to be granted: a ceiling caps how
+            high behavior can carry your trust, not whether behavior moves it. A dip leaves headroom
+            below the cap, and the same witnessed conduct that moves anyone else&apos;s trust is
+            what crosses it. Do not read this page&apos;s device-loss list (the dropped-phone one)
+            into this one: &ldquo;no second witness to vouch&rdquo; there is about
+            re-establishing an{" "}
+            <em>identity</em> after a device is lost, not about what moves <em>trust</em>.
           </p>
 
           {/* May 4 visitor LOW: "those numbers feel declared, not derived. Why is software only 0.50? Why isn't TPM 1.00?"

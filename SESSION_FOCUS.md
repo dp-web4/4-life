@@ -2,6 +2,131 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-19 09:00 session - the two words the page used and never defined, and the mitigation its own section withdrew
+
+**No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main`, one 4life session
+running. **Fresh visitor log** `visitor/logs/2026-08-19.md`: 2 HIGH, 4 MEDIUM, 4 LOW, understanding
+checklist **7/7** ("All seven, which is unusual"). Took both HIGHs plus the MEDIUM in the same
+claim class. Three prose fixes, three files, zero new files.
+
+### The two HIGHs were both "the answer ships on this page and the reader cannot reach it"
+
+**HIGH 1, `/first-contact`.** The pre-Start panel said ATP at 0 means "she can't act"; the Act-5
+chip four screens down says "dies at ATP 0". Visitor: "Which is it, can't act or death?"
+The resolving vocabulary ships on this page **three times** and a pre-Start reader can reach none
+of them: once inside `<noscript>` (invisible to any JS visitor,
+[[visitor-quoted-number-find-the-surface]]) and twice behind the Start button.
+
+**The policy reviewer corrected my premise, and the correction is the interesting part.** I filed
+it as "the vocabulary is absent pre-Start". It is not. The term **"trust death" is used pre-Start,
+undefined**, in the "Why raw?" details in the very box I was editing, while "energy death" appears
+nowhere. So the reader meets **one half of a named pair with no definition**, and the other half
+described without its name. The defect is the naming, not an explanation
+([[visitor-read-it-and-still-filed-it]]). Landed as two parentheticals inside the existing bullets,
+net ten words, because the panel carries three density guards and this same visitor asked for
+everything before Start to be *shorter* ([[density-guard-means-delete-not-caveat]]).
+
+**HIGH 2, `/lct-explainer#software-only-survival`.** The callout ends "any dip restricts your
+features until you climb back" and never says how, for the one tier the site tells the reader has
+no witnesses. The mechanism ships **a screen below on the same page**: *"The ceiling caps how high
+your T3 trust can climb through behavior."* A cap on the top is not a freeze on movement, and that
+entailment was never stated anywhere a reader of the callout could reach.
+
+**What they actually collided with was a different quantity wearing the same word.** The
+drop-your-phone list far above says "Software only, no second witness to vouch. You start over from
+zero." That is **device-loss identity recovery**, and canon scopes it exactly and only that way:
+`multi-device-lct-binding.md` *"Cannot be sole anchor for recovery **quorum**"* and the 7.2 society
+MUST *"Enforce recovery quorum for **identity recovery**"*. Neither touches what moves a trust
+score. Two correct facts joined by the word "recover"
+([[friction-may-be-an-entailment-not-a-contradiction]]). The join is now stated; neither fact moved.
+
+### MEDIUM 3 was the same seam's other end, and canon separates the two words the bullet welded
+
+`/what-could-go-wrong` risk 8 mitigation (2) said community vouching lets contacts "witness
+behavior and **raise effective trust** over time". Three falsifiable defects:
+- **Canon separates them.** `web4/docs/specs/heterogeneous-identity.md` has a section headed
+  **"Witnessing, not vouching"**: a witness says "I observed X at time T", it *"does not say: I
+  endorse X"*, *"No transitive trust is implied. No reputation is staked."*
+- **"effective trust" is a defined term here** (raw x CI squared, propagated to six surfaces) and
+  vouching moves neither factor ([[borrowed-word-means-something-else-there]]).
+- **It contradicted its own section**, which says two paragraphs later that this tier stops at 0.50
+  and "has no hardware witness to vouch for them". That is the **second time this same bullet run
+  has offered the excluded tier a reassurance the section withdraws**: the Jul-31 reversal deleted
+  "Software-only behavior still accrues reputation normally" from bullet (4) for the identical
+  reason. Same defect class, adjacent bullet.
+Scoped, not deleted: vouching is real on hardware-backed **route (1)**, at 3-7 days.
+
+**Reviewer block on this bullet, and it was right (Aug-19 15:00 pass).** The first landed scoping
+said "on the hardware-backed routes in this list, **(1) and (3)**" - which commits defect (iii) a
+third time, inside the fix for defect (iii). Route (3) is institutional witnessing *"for users who
+lack personal hardware"*, and this section's Honest assessment tells that same reader they have
+*"no hardware witness to vouch for them, so there is nothing to recover to"*. Nothing on the site
+or in canon says institutional witnessing enables device-loss recovery or makes its user
+hardware-backed: route (1) states a tier effect (~0.75 ceiling), route (3) states none. And the
+direction of the error was the reassuring one, which is the direction this bullet run has now been
+reverted in twice. Landed remedy: delete the route list down to `(1)`, which costs nothing, since
+the sentence's real work is its **negative** half. The criterion for what may be named there is now
+written into the file rather than left implied.
+**The tell, worth carrying:** both HIGHs landed clean because each only *named* something already
+true on the page. The MEDIUM's positive clause was the one place the pass added a **capability**,
+and it was the one place it reached past what it had measured.
+
+### What the policy review changed, beyond the premise
+
+- **A destination fence on HIGH 2, which a no-assertion line would not have caught.** For this tier
+  ceiling **and** survival line are the same value, so a climb-back with a *named destination*
+  answers ledger **Q1 by arithmetic** - entailment, not assertion. Q8 Ruling 3's holding pattern
+  says in terms that `#software-only-survival` "stays strictly-below". Now written into the file as
+  a forbidden-phrasings list ("climb back to 0.50", "back to the line", "back to full access",
+  "back to where you started", or any climb-back paired with a ceiling numeral in the block). What
+  is permitted is a pure **movement** claim: headroom exists below the cap, behavior traverses it,
+  nothing about the top of the traverse.
+- **Where the Jul-31 deleted clause was actually at risk.** I had fenced it on HIGH 2; the reviewer
+  moved the fence to MEDIUM 3, correctly. HIGH 2 concerns the region *below* a dip, where headroom
+  demonstrably exists. MEDIUM 3 rewrites a bullet four lines from that clause's grave.
+- **An em dash import path I would have walked into.** The canon line MEDIUM 3 quotes carries a
+  literal em dash and a non-equals glyph. Paraphrased into plain English, never pasted.
+
+### Corrections to this repo's own record
+
+- **The 0.4 ceiling is not a new finding.** I logged canon's `multi-device:154` **0.4** against the
+  site's 0.50 as a Step-1 discovery. It is already ruled at `WEB4-CANON-QUESTIONS.md` **Q8 Ruling
+  3**, which records **three** conflicting upstream ceilings at once (0.4, 0.40, and `web4-core`
+  shipping `trust_ceiling: 0.85` on an LCT labelled "Software-bound keys", C308-N2 unresolved) and
+  gives a stronger reason than my "disclosed calibration" framing: *adopting 0.40 would put the
+  ceiling under the survival line and answer Q1 by arithmetic.* No action; cite the ruling.
+- **Row 6 (the "72 questions" prominence) is a DEFERRAL, not settled, and my stated reason was
+  wrong.** I claimed #553 settled it. #553's own guard closes: *"the curation/accordion redesign
+  that learn/page.tsx:164 defers. That row stays open."* #553 did **stating** (make the number true
+  and re-derivable); Aug-19 asks for **weighting** (its prominence deters reading), which is
+  [[routing-stating-weighting-three-fixes]]. The signal is new, not absent: **Aug-15 asked for a
+  count up front and Aug-19 says the count up front is the deterrent** - two visitors pointing
+  opposite ways on one element. Deferred on size: `#faq-index` is `<details open>`, so flipping
+  `open` collapses **Most Asked** too, and Most Asked is the one part this visitor read. Keeping
+  Most Asked open while collapsing the other six categories *is* the deferred curation redesign.
+
+### Open rows carried forward
+
+- **MEDIUM 4, the bootstrap loop** (`/how-it-works`), the strongest untaken row and the visitor's
+  own Unanswered Question 1. Their arithmetic: self-initiated work recharges "up to 15 ATP = 0 net
+  at best", commissioned work (+25/+40) needs pre-existing trust, posting costs 10-20 of a starting
+  100, so a newcomer gets five to ten self-directed actions and no path to a growing budget.
+  Derivable from the site's own numbers, which is a compliment to the page and a request for the
+  next paragraph. Partial canon exists and needs checking before anything is written:
+  `heterogeneous-identity.md` *"ATP is not granted by an authority. It is reified from observation
+  of available resources ... Existence is witnessed, and ATP follows from witnessed existence"* -
+  that is about **initial allocation**, not the ongoing loop, so the honest answer may be "open
+  question". Do not coin a mechanism ([[explainer-gap-may-be-upstream-off-by-one]]).
+- **Row 6** as re-filed above, feeding the open curation row.
+- **Not on the checklist, filed by the visitor as a gap: V3.** "V3 is in the nav and appears inside
+  the formula T3/V3*MRH on /onramp, but nothing on the five-page reading path ever introduces it.
+  T3, LCT, ATP and CI all get a card on /first-contact. V3 does not." `/value-tensor` exists and
+  builds; this is routing/prominence, not absence ([[visitor-v3-ghost-pattern]] recurring).
+- LOWs noted only: CI first-mention link on `/first-contact`, hestia's **Running** badge vs "lab
+  machines only" (badge-legend seam), three next-life ATP starting rules across three pages with
+  per-page hedges but no cross-page one, 26 nav links.
+
+
 ## Aug-19 03:00 session - the dimension the site called portable, that canon scores per role
 
 **No open PRs at start** (`gh pr list` -> `[]`) and **no fresh visitor log**: the 05:00 cron has
