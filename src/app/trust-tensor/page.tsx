@@ -983,7 +983,7 @@ export default function TrustTensorPage() {
               <div className="text-sm text-gray-400 space-y-1">
                 <p>Talent: <span className="text-yellow-400">65%</span> (developing leadership instincts)</p>
                 <p>Training: <span className="text-yellow-400">70%</span> (some PM experience)</p>
-                <p>Temperament: <span className="text-green-400">91%</span> (her reliability carries over naturally)</p>
+                <p>Temperament: <span className="text-green-400">91%</span> (a separate score for this role, not her 95% as an analyst)</p>
               </div>
               <p className="text-gray-300 mt-3 text-sm italic">
                 Composite T3: 74% - trusted, but still growing into this role.
@@ -1633,18 +1633,37 @@ Temperament:  30-day half-life (recent behavior matters most)
             A brilliant surgeon might be a terrible hospital administrator. A top sales rep might
             struggle as a manager. Web4 takes this seriously rather than assuming skills transfer.
           </p>
+          {/* Aug-19. This used to read "Temperament carries across roles ... so it transfers
+              naturally" and "Their Temperament score gives them a head start". Canon refutes it four
+              ways: t3-v3-tensors.md 6.3 Role-Based Segregation ("Each role MUST maintain separate
+              T3/V3 tensors"; "New roles MUST start with minimal trust, not inherited from other
+              roles"), 2.1's heading "Temperament (Role-Contextual Reliability)" with "Context:
+              Role-dependent", reputation-computation.md (grep "Reputation is role-specific")
+              "(can't transfer across roles)", and canon's OWN worked example, which is the one this
+              page renders ABOVE this FAQ: temperament 0.95 / 0.91 / 0.50 for one entity in three
+              roles. The illustration was already right; the prose was the defect.
+              Do NOT restate this as "trust never crosses roles". 6.3's fourth MUST is "Cross-role
+              trust transfer MUST require explicit bridging", so the rule is NOT-AUTOMATIC, not
+              impossible. The cross-role carrier named here is the Coherence Index, which was already
+              the co-answer on three of this class's surfaces; its provenance is stated once, at
+              #temperament-scope below. */}
           <p className="text-gray-400 text-sm mb-3">
-            That said, <strong className="text-gray-300">Temperament carries across roles</strong>.
+            That said, <strong className="text-gray-300">a role-switcher is not a stranger</strong>.
             If you&apos;ve built a track record of meeting deadlines, communicating well, and acting
-            ethically, those behavioral patterns are visible in every role context. Temperament is
-            about <em>how</em> you work, not <em>what</em> you work on - so it transfers naturally.
+            ethically, those behavioral patterns are visible to the new role context as evidence. What
+            does not happen is inheritance: Temperament is scored per role just like Talent and Training,
+            which is why Alice above reads 95% on that dimension as an analyst and 50% as a mechanic,
+            where the card&apos;s own note says why (untested in this context).
           </p>
           <p className="text-gray-400 text-sm">
-            The practical effect: role-switchers aren&apos;t starting from zero. Their Temperament
-            score gives them a head start on trust in the new role - they just need to prove
-            Talent and Training through actual work. Think of it like changing careers: your references
-            from your old job vouch for your character (Temperament), but you still have to demonstrate
-            competence (Talent) and credentials (Training) in the new field.
+            What crosses every role is your{" "}
+            <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link>,
+            and it is not one of the three dimensions: it multiplies each role&apos;s trust rather than
+            being carried into it. So acting erratically in one role costs you everywhere, while being
+            reliable in one role does not hand you a score in another.{" "}
+            <Link href="#temperament-scope" className="text-sky-400 hover:underline">
+              What the standard actually says
+            </Link>
           </p>
           <div className="mt-4 pt-4 border-t border-gray-700">
             <h4 className="text-md font-semibold text-sky-400 mb-2">What about gradual role evolution?</h4>
@@ -1667,6 +1686,44 @@ Temperament:  30-day half-life (recent behavior matters most)
               to draw these lines based on how different the competencies actually are.
             </p>
           </div>
+
+          {/* Demand-driven anchor, Aug-19. SIX inbound links asked for it, all six added in this
+              same push and all six from surfaces that used to name Temperament as the cross-role
+              carrier. Enumerated so the count cannot drift from its own ledger
+              ([[fence-may-undercount-its-own-ledger]]): this page's role-switch FAQ (above) and its
+              cross-community block (below); /lct-explainer (grep "carry across roles"); and three
+              on /why-web4 (#faq-multi-persona, #faq-context-collapse, #faq-federation-trust).
+              This block is the ONLY place the 6.3 citations and the Coherence Index provenance are
+              stated; the inbound sites carry the short form and link here
+              ([[propagate-the-sentence-not-your-summary]]).
+              It prints NO trust numeral. Canon's own two candidates for what a new role starts at
+              disagree (6.3 says "minimal trust"; reputation-computation.md, grep "Neutral starting
+              point for new role pairings", returns 0.5), and that disagreement is escalated as
+              ledger Q16 rather than resolved here. */}
+          <div id="temperament-scope" className="mt-6 pt-4 border-t border-gray-700 scroll-mt-24">
+            <h4 className="text-md font-semibold text-sky-400 mb-2">What the standard actually says</h4>
+            <p className="text-gray-400 text-sm mb-2">
+              The core standard scores all three dimensions the same way, per role. Its role-segregation
+              rules require that each role keep separate trust tensors, that implementations not compute
+              a global role-agnostic trust score, and that a new role start <em>not inherited from other
+              roles</em>. Temperament is defined there as role-contextual reliability, measured as
+              consistency <em>in role</em>, which is why one person can hold a high Temperament in one
+              role and a middling one in another.
+            </p>
+            <p className="text-gray-400 text-sm mb-2">
+              That is not the same as saying trust can never move between roles. The same rules allow it
+              and require that it be deliberate: cross-role transfer needs explicit bridging, rather than
+              happening by default the moment you pick up a new role. What the standard rules out is the
+              automatic version, where a score you earned somewhere else shows up in a new role without
+              anyone deciding it should.
+            </p>
+            <p className="text-gray-500 text-xs">
+              On the Coherence Index: it is specified in a Web4 proposal document rather than in the core
+              standard, so treat it as designed rather than settled. It is the quantity that crosses roles
+              because of what it is, a multiplier applied to each role&apos;s trust, rather than a fourth
+              dimension travelling between them.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -1676,15 +1733,27 @@ Temperament:  30-day half-life (recent behavior matters most)
           <h3 className="text-lg font-semibold text-purple-400 mb-2">What about moving to a completely different community?</h3>
           <p className="text-gray-300 text-sm mb-3">
             Switching roles within a community is one thing - but what happens when a data analyst joins
-            a cooking community? Your <strong className="text-white">Talent</strong> (data analysis skill)
-            doesn&apos;t transfer at all - it&apos;s irrelevant in a kitchen. Your <strong className="text-white">Training</strong>{" "}
-            (formal credentials) similarly doesn&apos;t carry over.
+            a cooking community? Two things happen at once. Taking up <em>cook</em> is a new role, so all
+            three dimensions start uninherited there, <strong className="text-white">Temperament</strong>{" "}
+            included: your data-analysis <strong className="text-white">Talent</strong> is irrelevant in a
+            kitchen, and your <strong className="text-white">Training</strong> does not carry into it either.
           </p>
+          {/* Aug-19. This used to say "But your Temperament does transfer", the per-dimension
+              decomposition canon does not have: it discounts the role tensor AS A WHOLE and never
+              splits it into dimensions that carry and dimensions that reset (t3-v3-tensors.md 6.3).
+              Do NOT propagate #temperament-scope's role-axis sentence into this block verbatim.
+              This block is ALSO the community axis, where trust genuinely does travel at the
+              receiving community's weight (#558; the paragraph directly below, and its destination
+              /trust-neighborhood#cross-society). A flat "no score is inherited" sentence here would
+              contradict both ([[sweep-must-include-the-link-destination]], committed backwards). */}
           <p className="text-gray-300 text-sm mb-3">
-            But your <strong className="text-purple-300">Temperament does transfer</strong>. If you&apos;re
-            known for meeting deadlines, communicating clearly, and acting ethically, those behavioral
-            patterns are visible to the new community. You don&apos;t start from absolute zero - you start
-            with evidence that you&apos;re a reliable person, even if you&apos;re an unproven cook.
+            What you keep is the analyst role you already hold, and your{" "}
+            <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link>,
+            which multiplies each role&apos;s trust rather than being carried into any of them. So you
+            arrive with a visible record rather than as an unknown, without arriving as a trusted cook.{" "}
+            <Link href="#temperament-scope" className="text-sky-400 hover:underline">
+              What the standard actually says
+            </Link>
           </p>
           {/* Aug-18 (3rd pass), axis A. This used to say cross-community transfer "applies MRH decay
               (0.7x per hop of social distance)". That is the within-community quantity, and this

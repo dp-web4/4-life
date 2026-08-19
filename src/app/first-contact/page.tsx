@@ -418,7 +418,7 @@ export default function FirstContactPage() {
                 <div>
                   <Link href="/trust-tensor" className="text-purple-400 font-semibold mb-2 block hover:underline">🤝 Trust: Your Reputation</Link>
                   <p className="text-gray-400">
-                    Trust builds through consistent quality. It follows you everywhere. (Shorthand: <strong>T3</strong> - three dimensions: talent, training, temperament.)
+                    Trust builds through consistent quality, and it is scored per role: your trust as a reviewer is tracked separately from your trust as a cook. (Shorthand: <strong>T3</strong> - three dimensions: talent, training, temperament.)
                   </p>
                 </div>
                 <div>

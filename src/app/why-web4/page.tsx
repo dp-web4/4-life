@@ -3109,18 +3109,30 @@ export default function WhyWeb4Page() {
                 pilot&apos;s license. Your medical expertise doesn&apos;t affect your pilot rating and vice
                 versa. Web4 works the same way - one identity, many trust dimensions.
               </p>
+              {/* Aug-19. Two fixes in one block. (1) This named Temperament AND the Coherence Index
+                  as carrying across roles; only CI survives canon (t3-v3-tensors.md 6.3: separate
+                  tensors per role, new roles "not inherited from other roles"; 2.1: "Temperament
+                  (Role-Contextual Reliability)"). This block is the DESTINATION of /lct-explainer's
+                  teaser, which shipped the same pair and was corrected in the same push.
+                  (2) "even if your domain-specific Talent starts at zero" contradicted this same
+                  page's "Yes, everyone starts at 0.5 trust" (grep) and /lct-explainer (grep "start
+                  0.50 in all three dimensions"). Changed to "starts fresh", this page's own word in
+                  #faq-federation-trust. No numeral is added; canon's two candidates for what a new
+                  role starts at disagree, escalated as ledger Q16 rather than resolved here. */}
               <p>
                 What <em>does</em> carry across roles is your{" "}
-                <Link href="/trust-tensor" className="text-sky-400 hover:underline">Temperament</Link> score
-                (reliability, consistency) and{" "}
-                <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link>.
-                If you&apos;re consistently dependable in one domain, that baseline reliability is visible
-                elsewhere - even if your domain-specific Talent starts at zero.
+                <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link>,
+                which multiplies each role&apos;s trust rather than being carried into it.{" "}
+                <Link href="/trust-tensor#temperament-scope" className="text-sky-400 hover:underline">Temperament</Link>{" "}
+                is not the portable one: it is scored per role, like Talent and Training. If you&apos;re
+                consistently dependable in one domain, that record is visible elsewhere as evidence, even
+                though your trust in the new role starts fresh.
               </p>
               <p>
                 This is a deliberate design choice: someone who&apos;s reliable as a doctor is <em>probably</em> reliable
-                as a neighbor, even though their medical trust doesn&apos;t transfer to home repair.
-                The system captures that intuition without collapsing everything into a single score.
+                as a neighbor, but the standard makes anyone acting on that inference do it deliberately, rather
+                than having a score arrive on its own. The system captures the intuition without collapsing
+                everything into a single score.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> Some people genuinely want &ldquo;firewall&rdquo; separation between
@@ -3651,8 +3663,10 @@ export default function WhyWeb4Page() {
               </ul>
               <p>
                 A helpful post in a Japanese gardening forum and a helpful post in a Brazilian music community will
-                score differently on Valuation and Validity - but Veracity (honesty) stays consistent. The system
-                doesn&apos;t impose a single standard. It lets communities develop their own through the trust they build
+                score differently on Valuation and Validity. Veracity is the dimension that varies least, because it
+                asks a factual question rather than a taste one, but it is still checked against each domain&apos;s own
+                verification standards rather than being one score that follows you around. The system doesn&apos;t
+                impose a single standard. It lets communities develop their own through the trust they build
                 with each other.
               </p>
               <p className="text-amber-400/80 text-xs">
@@ -3767,14 +3781,29 @@ export default function WhyWeb4Page() {
                 <li><strong>MRH decay</strong> - <em>within</em> a community, trust also weakens with social distance (0.7&times; per hop). A contact two hops away sees only ~49% of your original trust.</li>
                 <li><strong>Role mismatch</strong> - the T3 (Trust Tensor) tracks trust per skill/context. Being trusted for humor doesn&apos;t make you trusted for research. The relevant dimension may be near zero.</li>
               </ul>
+              {/* Aug-19. This used to say their "Veracity score (honesty across all contexts) does
+                  carry over", with the design-principle line under it saying "what transfers between
+                  them is character (honesty, consistency)". Both are the per-dimension decomposition
+                  canon does not have. t3-v3-tensors.md 1.1: "T3/V3 tensors are not absolute
+                  properties - they exist only within role contexts" (it scopes V3 too), and
+                  Veracity's own row in 3.1 reads "Context: Domain-specific verification standards",
+                  so it is not an across-all-contexts quantity. Canon discounts a tensor AS A WHOLE at
+                  a boundary; it never carries some dimensions across and resets others.
+                  DELIBERATELY NOT TOUCHED: the passage above (grep "More universal, harder to game")
+                  compares the three dimensions' SEMANTICS rather than a score's portability, and
+                  canon backs that one (Veracity "Objective Accuracy" vs Valuation "Subjective Worth
+                  ... Recipient-specific"). Criterion recorded so a later pass does not read it as
+                  missed ([[adding-a-distinction-creates-a-sweep-obligation]]). */}
               <p>
                 So a top shitposter joining an academic community starts almost from scratch in the &ldquo;academic rigor&rdquo;
-                dimension - their humor trust doesn&apos;t inflate their research credibility. But their <strong>Veracity</strong> score
-                (honesty across all contexts) does carry over, giving them a small head start over a completely unknown newcomer.
+                dimension - their humor trust doesn&apos;t inflate their research credibility. What they bring is not one
+                portable honesty score: it is the record they already hold, arriving at whatever weight the academic
+                community sets for outside scores. That is still more than a completely unknown newcomer has.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>The design principle:</strong> Communities should be free to define quality on their own terms.
-                What transfers between them is character (honesty, consistency), not status.
+                What crosses a boundary is your whole record, at a discount the receiving community sets, not a
+                selected dimension that travels for free.
               </p>
             </div>
           </details>
@@ -3797,13 +3826,19 @@ export default function WhyWeb4Page() {
                 meme trust. Each role earns and loses trust independently based on the quality of actions
                 <em> in that role</em>.
               </p>
+              {/* Aug-19. Same pair as /lct-explainer and #faq-multi-persona: CI and Temperament
+                  named together as crossing roles. Only CI does; Temperament is role-scoped
+                  (t3-v3-tensors.md 2.1, 6.3). The paragraph's own mechanism sentence already
+                  identified the right carrier: the cross-role effect it describes runs through CI
+                  squared, not through a T3 dimension. */}
               <p>
                 <strong>What <em>does</em> cross roles:</strong> your{" "}
-                <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index (CI)</Link> and{" "}
-                <strong>Temperament</strong> (the behavioral consistency dimension of T3). If you&apos;re
-                reliably honest and consistent across all your roles, that character signal benefits you
-                everywhere. If you act erratically in one role, your CI drops - and since effective
-                trust = raw trust &times; CI&sup2;, that consistency penalty affects all your roles.
+                <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index (CI)</Link>.
+                Not{" "}
+                <Link href="/trust-tensor#temperament-scope" className="text-sky-400 hover:underline">Temperament</Link>,
+                which is scored per role like the other two dimensions. If you act erratically in one role,
+                your CI drops - and since effective trust = raw trust &times; CI&sup2;, that consistency
+                penalty affects all your roles. Consistency is the thing that genuinely is not siloed.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Design insight:</strong> This solves &ldquo;context collapse&rdquo; - the problem
@@ -3919,11 +3954,23 @@ export default function WhyWeb4Page() {
                   </Link>, your 0.80 trust on Platform A arrives as 0.52 on Platform B</li>
                 <li>Your trust then evolves independently on the new platform based on your behavior there</li>
               </ol>
+              {/* Aug-19. This split T3 into "general" dimensions that carry over and "role-specific"
+                  ones that start fresh. Canon has no such split: t3-v3-tensors.md 2.1 marks all three
+                  role-scoped (Temperament is "Role-Contextual Reliability"), and 6.3 requires separate
+                  tensors per role. "consistency" was not a dimension at all; it is what 2.1 says
+                  Temperament MEASURES ("Consistency in role"), listed here as its coordinate.
+                  The TRANSFER claim itself is correct and stays: on the community axis trust does
+                  travel at the receiving platform's weight (#558, and the step directly above this
+                  one). What is removed is the per-dimension decomposition, not the transfer. */}
               <p>
                 <strong>What doesn&apos;t transfer:</strong> Platform-specific context. Your role as
                 &ldquo;trusted code reviewer&rdquo; on a developer community doesn&apos;t automatically make you
-                a trusted recipe critic on a cooking platform. <em>General</em> trust dimensions (temperament,
-                consistency) carry over; <em>role-specific</em> trust (talent, training) starts fresh.
+                a trusted recipe critic on a cooking platform. Your reviewer record travels, discounted; taking up
+                a new role means building{" "}
+                <Link href="/trust-tensor#temperament-scope" className="text-sky-400 hover:underline">
+                  all three of its dimensions
+                </Link>{" "}
+                there, rather than importing some and starting the rest fresh.
               </p>
               <p className="text-amber-400/80 text-xs">
                 <strong>Honest caveat:</strong> The federation trust transfer protocol is specified
@@ -4074,7 +4121,15 @@ export default function WhyWeb4Page() {
               </p>
               <ul className="list-disc list-inside space-y-1.5 ml-2 text-gray-400">
                 <li><strong className="text-gray-300">V3 quality is community-scoped.</strong> A flat-earth forum can give each other high V3 scores <em>within their own community</em>. But V3 scores don&apos;t transfer at full strength across federation boundaries - they decay. Their mutual validation stays local.</li>
-                <li><strong className="text-gray-300">T3 trust is behavior-scoped.</strong> The V3 game only works if the participants also maintain high <Link href="/trust-tensor" className="text-sky-400 hover:underline">T3 trust</Link> - which requires consistent, honest behavior over time, across roles. A coordinated deception effort erodes T3&apos;s Temperament dimension as behavioral patterns become inconsistent.</li>
+                {/* Aug-19. Re-attribution only; the argument's force is unchanged. This read
+                    "consistent, honest behavior over time, across roles" and put the cross-role
+                    integration in T3's Temperament dimension, which is the global role-agnostic
+                    score t3-v3-tensors.md 6.3 forbids computing. The cross-role quantity is CI,
+                    which this page already says "affects all your roles" via CI squared. Ledger
+                    Q3's holding pattern (do not invent anti-collusion claims in prose) is
+                    respected: no mechanism is added or removed, only the name of the quantity that
+                    integrates across roles is corrected. */}
+                <li><strong className="text-gray-300">T3 trust is behavior-scoped.</strong> The V3 game only works if the participants also maintain high <Link href="/trust-tensor" className="text-sky-400 hover:underline">T3 trust</Link> - which requires consistent, honest behavior over time in each role they act in. A coordinated deception effort erodes T3&apos;s Temperament dimension inside those roles, and erodes their <Link href="/coherence-index" className="text-sky-400 hover:underline">Coherence Index</Link> everywhere at once, as behavioral patterns become inconsistent.</li>
                 <li><strong className="text-gray-300">Federation is the correction mechanism.</strong> When a flat-earth community tries to federate with a science community, the trust transfer discount is steep. Their internally-high V3 scores arrive at the science community deeply discounted. Bridge agents who participate in both communities provide the cross-check.</li>
                 <li><strong className="text-gray-300">ATP makes sustained deception expensive.</strong> Producing content costs energy. Confirming content costs energy. A community dedicating all its ATP to mutual validation has less ATP for productive interactions outside the bubble - making them economically isolated, not just socially isolated.</li>
               </ul>

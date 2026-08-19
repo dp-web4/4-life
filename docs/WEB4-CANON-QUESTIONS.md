@@ -1104,6 +1104,41 @@ two HIGHs and three Unanswered Questions in a single sitting.
   `first-contact:834` verbatim (*"Your history persists either way"*). No verdict-propagation rule
   invented, no endpoint asserted, the guarded death sentence untouched.
 
+### Q16. What does a new role start at: "minimal trust", or a neutral 0.5?
+
+- **The question**: canon gives two answers for the value a freshly created entity-role pairing
+  begins with, and they are not obviously the same number.
+  - `web4-standard/core-spec/t3-v3-tensors.md` section 6.3 *Role-Based Segregation*, fourth MUST
+    list: *"New roles MUST start with **minimal trust**, not inherited from other roles."*
+  - `web4-standard/core-spec/reputation-computation.md` (grep `Neutral starting point for new role
+    pairings`) returns `0.5` from the lookup path for an unseen entity-role pair.
+  "Minimal" reads as near the bottom of the range; `0.5` is the midpoint. If both are normative,
+  a conformant implementation cannot satisfy them at once.
+- **Why it surfaced now**: the Aug-19 pass corrected twelve surfaces that claimed a Temperament or
+  Veracity *score* carries into a new role or community. Canon refutes that clearly (6.3's first
+  three MUSTs, 2.1's *"Temperament (Role-Contextual Reliability)"*, `reputation-computation.md`
+  *"Reputation is role-specific (can't transfer across roles)"*, and two worked examples giving one
+  entity 0.95/0.91/0.50 and 0.88/0.30 on that dimension across roles). Several of those surfaces
+  were phrased as a *head start* ("their Temperament score gives them a head start on trust in the
+  new role"). Deleting the false mechanism leaves a reader with the obvious next question, **so what
+  does a new role start with?**, and canon cannot currently be quoted for an answer.
+- **Site state**: the corrected surfaces answer it **qualitatively only**, in 6.3's own words: a new
+  role starts *not inherited from other roles*. **No numeral is printed at any of the twelve
+  surfaces or at the new `/trust-tensor#temperament-scope` anchor**, and the anchor records why.
+- **This is NOT ledger Q1.** Q1 fences the *aliveness endpoint* at 0.50 (`>` versus `>=`), not the
+  *starting value*, and the site already publishes the starting value elsewhere: `/why-web4` (grep
+  `everyone starts at 0.5 trust`) and `/lct-explainer` (grep `start 0.50 in all three dimensions`).
+  A draft of the Aug-19 scope refused the numeral citing Q1 and the policy reviewer caught that the
+  stated reason was **false on the very page being edited**. The refusal stands on this entry's
+  ground, not Q1's: canon disagrees with itself, so the site quotes neither figure.
+- **Ruling requested**: which of the two governs a new entity-role pairing, and if both stand, what
+  distinguishes their scopes (is `0.5` a per-dimension seed and "minimal" a statement about the
+  composite, or is one of them stale?). A test vector would settle it outright.
+- **Holding pattern**: do not print a starting figure for a *new role* anywhere on the site, in
+  either direction, and do not "reconcile" the two by asserting that minimal means 0.5. The existing
+  surfaces that print 0.5 as the starting trust of a **new identity** are a different claim and are
+  untouched by this entry.
+
 ### Follow-up (not a canon question): "karma tier" is an orphaned term - RESOLVED 2026-08-07
 
 **Resolved by the 2026-08-07 15:00 session.** Option (b) was taken, in the propagation form rather

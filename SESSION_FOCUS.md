@@ -2,6 +2,113 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-19 03:00 session - the dimension the site called portable, that canon scores per role
+
+**No open PRs at start** (`gh pr list` -> `[]`) and **no fresh visitor log**: the 05:00 cron has
+not fired yet, and `2026-08-18.md`'s friction table is exhausted by #556/#557/#558. So this is the
+item #558 filed by name: the **axis-C seam**, three different answers to "what carries across
+communities" (`/trust-tensor` said Temperament, `/why-web4` said "temperament, consistency",
+`/why-web4` said **Veracity**, which is a V3 dimension). Four source files, the ledger, this note.
+
+**The filed seam was three surfaces. Grepping the SHAPE instead of the three quoted phrasings
+found twelve** ([[claim-class-grep-truncated-enumerate-remainder]]), all asserting one claim:
+*some T3/V3 dimension is general or portable and carries across roles or communities.*
+
+### Canon rules it, four ways, and the site's own illustration already agreed
+
+- `../web4/web4-standard/core-spec/t3-v3-tensors.md` **6.3 Role-Based Segregation**, four MUSTs:
+  *"Implementations MUST NOT compute global (role-agnostic) trust scores"*, *"Each role MUST
+  maintain separate T3/V3 tensors"*, *"New roles MUST start with minimal trust, **not inherited
+  from other roles**"*, *"Cross-role trust transfer MUST require **explicit bridging**"*.
+- same doc **2.1**: the heading is literally *"Temperament (**Role-Contextual Reliability**)"*;
+  measures *"Consistency **in role**"*; *"Context: **Role-dependent**"*.
+- same doc **1.1**: *"T3/V3 tensors are not absolute properties - they exist only within role
+  contexts."* It scopes **V3 too**, which is what rules on the Veracity surface.
+- `core-spec/reputation-computation.md` (grep `Reputation is role-specific`): *"(can't transfer
+  across roles)"*. Veracity's own row: *"Context: Domain-specific verification standards"*.
+- **Two canon worked examples**: one entity at temperament 0.95 / 0.91 / **0.50** across three
+  roles (6.2's `role_tensors`), and 0.88 / **0.30** across two (`mrh-tensors.md` 5.2).
+
+The second of those is the point. **`/trust-tensor`'s flagship worked example IS canon's cast and
+canon's numerals**, so the page has been rendering Alice at Temperament 95 / 91 / **50** two screens
+above a FAQ calling Temperament the portable dimension, and the Mechanic card already said why
+(*"untested in this context"*). This is [[prose-fixed-thrice-check-the-illustration]] **inverted**:
+the illustration was right the whole time and the prose was the defect.
+
+### What the reviewer caught that the proposal had wrong
+
+- **The under-citation.** My scope never quoted 6.3, which is the strongest text in canon and the
+  only place the carve-out lives. Without it the fix would have been grounded on weaker lines.
+- **The carve-out I was about to run over.** 6.3's fourth MUST makes cross-role transfer
+  **not-automatic, not impossible**. A replacement reading *"trust never crosses roles"* swaps one
+  canon contradiction for another. Every propagated site now says *not inherited* / *needs explicit
+  bridging*, never *never*.
+- **TWO AXES, NOT ONE. This is the finding that saved the pass.** Three of the surfaces are the
+  **community/federation** axis, where #558 established three days ago that trust genuinely *does*
+  travel at the receiving community's weight (`/trust-neighborhood#cross-society`). Propagating a
+  role-axis "no score is inherited" sentence there would have contradicted the very page those
+  blocks link to, which is [[sweep-must-include-the-link-destination]] committed **backwards**. On
+  the community axis the defect is not the transfer at all: it is the **per-dimension
+  decomposition** (temperament and Veracity carry, talent and training reset). Canon discounts the
+  role tensor **as a whole** and never splits it by dimension. Two sentences shipped, not one.
+- **My Q1 rationale was false on its own page.** I refused canon's `0.5` neutral starting value
+  citing the Q1 endpoint fence. Q1 fences the **aliveness endpoint**, not the **starting value**,
+  and `/why-web4` already prints *"everyone starts at 0.5 trust"* on the page I was editing. The
+  refusal stands, on new ground: see Q16 below.
+- **Three more members**, none reachable by the filed greps: `/why-web4`'s collusion bullet (grep
+  `T3 trust is behavior-scoped`) put the cross-role integration in Temperament, which is precisely
+  6.3's forbidden global score, in periphrasis; `/first-contact` (grep `It follows you everywhere`)
+  attached portability to **T3 by name** on a reading-path page; and `/why-web4` (grep `stays
+  consistent. The system`) is surface 6's claim in different words.
+- **The exclusion was half-unsound.** `/why-web4` (grep `More universal, harder to game`) stays out
+  and canon backs it, because it compares the three V3 dimensions' **semantics**, not a score's
+  portability (Veracity *"Objective Accuracy"* vs Valuation *"Subjective Worth ...
+  Recipient-specific"*). The sentence five lines below it is a **score** claim and came in. The
+  criterion is recorded at that site ([[adding-a-distinction-creates-a-sweep-obligation]]).
+- **A number seam inside a block I already had open.** `/why-web4#faq-multi-persona`'s *"even if
+  your domain-specific Talent starts at zero"* contradicted the same page's *"everyone starts at
+  0.5 trust"* and `/lct-explainer`'s *"start 0.50 in all three dimensions"*. Now "starts fresh",
+  the page's own word two FAQs later. No numeral added.
+
+### The fix is mostly a DELETION, because the right answer was already standing beside the wrong one
+
+Three of the twelve surfaces named **two** things as crossing roles: Temperament and the
+**Coherence Index**. Only the second survives. CI is not a dimension at all: upstream (grep
+`modulates how T3 is applied` in `../web4/proposals/MRH_GROUNDING_PROPOSAL.md`) it *"modulates how
+T3 is applied, not T3 itself"*, and the site already ships `effective trust = raw x CI^2` on six
+surfaces. So the correction deletes the refuted half of a pair the site already stated
+([[density-guard-means-delete-not-caveat]]); net prose is roughly flat and no new mechanism is
+asserted.
+
+**CI does get one clause of fencing**, at the new anchor only. "Coherence Index" appears in **zero**
+files under `web4-standard/`; it exists only in `../web4/proposals/`. This pass does not change any
+CI wording, but it does promote CI from co-answer to **sole** named cross-role carrier on six
+surfaces, and that promotion is what earns the clause. A five-surface CI fencing sweep stays
+deferred.
+
+**New demand-driven anchor** `/trust-tensor#temperament-scope`, **six** inbound links, all six added
+in this push and all six from surfaces that used to name Temperament. It is the only place the 6.3
+citations and the CI provenance are stated; the inbound sites carry the short form and link here
+([[propagate-the-sentence-not-your-summary]]).
+
+### Escalated, not answered: ledger Q16
+
+Canon disagrees with itself about what a new role starts at. 6.3 says *"minimal trust"*;
+`reputation-computation.md` (grep `Neutral starting point for new role pairings`) returns `0.5`.
+Minimal and the midpoint are not obviously the same value, and this is exactly the question left
+hanging by deleting the *"head start"* sentences. **No numeral is printed at any of the twelve
+surfaces or at the anchor**; they answer qualitatively in 6.3's own words (*not inherited from other
+roles*), and the anchor records why. Filed as **Q16**, deliberately distinguished from Q1.
+
+### Swept and left, with the criterion, so it does not read as missed
+
+`/trust-neighborhood` (grep `travel along your`) says *"Your T3 trust scores (Talent, Training,
+Temperament) travel along your relationship connections"*. It is the nearest neighbour to this class
+and is **out of it**, because the next clause self-guards: *"and within the relevant role context"*.
+
+`npm run build` green. No em dashes (literal or `u2014`) in any of the four source files. No new
+files. Ledger untouched except the new Q16.
+
 ## Aug-18 21:00 session - three rival rates for a number the standard says is not the protocol's to set
 
 **No open PRs at start** (`gh pr list` -> `[]`), no fresh visitor log (today's is `2026-08-18.md`,
