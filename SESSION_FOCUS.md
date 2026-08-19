@@ -54,9 +54,22 @@ behavior and **raise effective trust** over time". Three falsifiable defects:
   has offered the excluded tier a reassurance the section withdraws**: the Jul-31 reversal deleted
   "Software-only behavior still accrues reputation normally" from bullet (4) for the identical
   reason. Same defect class, adjacent bullet.
-Scoped, not deleted: vouching is real on the hardware-backed routes (1) and (3), at 3-7 days.
-Also corrected a factual slip of my own in the first draft: I wrote "the routes above", but (3)
-renders *below* (2).
+Scoped, not deleted: vouching is real on hardware-backed **route (1)**, at 3-7 days.
+
+**Reviewer block on this bullet, and it was right (Aug-19 15:00 pass).** The first landed scoping
+said "on the hardware-backed routes in this list, **(1) and (3)**" - which commits defect (iii) a
+third time, inside the fix for defect (iii). Route (3) is institutional witnessing *"for users who
+lack personal hardware"*, and this section's Honest assessment tells that same reader they have
+*"no hardware witness to vouch for them, so there is nothing to recover to"*. Nothing on the site
+or in canon says institutional witnessing enables device-loss recovery or makes its user
+hardware-backed: route (1) states a tier effect (~0.75 ceiling), route (3) states none. And the
+direction of the error was the reassuring one, which is the direction this bullet run has now been
+reverted in twice. Landed remedy: delete the route list down to `(1)`, which costs nothing, since
+the sentence's real work is its **negative** half. The criterion for what may be named there is now
+written into the file rather than left implied.
+**The tell, worth carrying:** both HIGHs landed clean because each only *named* something already
+true on the page. The MEDIUM's positive clause was the one place the pass added a **capability**,
+and it was the one place it reached past what it had measured.
 
 ### What the policy review changed, beyond the premise
 

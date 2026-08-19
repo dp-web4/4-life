@@ -709,9 +709,33 @@ export default function WhatCouldGoWrongPage() {
                       that: see the Jul-31 reversal recorded below, which deleted "Software-only
                       behavior still accrues reputation normally" from bullet (4) for the same
                       reason. Same defect class, different bullet.
-                SCOPED, not deleted: vouching IS real on the hardware-backed routes, at 3-7 days,
-                stated on this page and on /lct-explainer and /identity-constellation. What was
-                false was the tier it was offered to and the quantity it was said to move.
+                SCOPED, not deleted: vouching IS real on the hardware-backed route (1), at 3-7
+                days, stated on this page and on /lct-explainer and /identity-constellation. What
+                was false was the tier it was offered to and the quantity it was said to move.
+                REVIEW CORRECTION, and it is the point of this whole entry: the first landed
+                version of this scoping said "on the hardware-backed routes in this list, (1) and
+                (3)". That committed defect (iii) a THIRD time, in the fix for defect (iii). Route
+                (3) is defined two bullets on as institutional witnessing "for users who lack
+                personal hardware", and this section's Honest assessment tells that same reader
+                they have "no hardware witness to vouch for them, so there is nothing to recover
+                to". So the sentence promised device-loss recovery to the tier the section
+                withdraws it from, three paragraphs apart, in the reassuring direction: exactly
+                the shape of the Jul-31 bullet (4) reversal recorded below. The route list was
+                scaffolding; the sentence's real work is its negative half.
+                CRITERION FOR WHAT MAY BE NAMED HERE, state it rather than leave it implied
+                ([[adding-a-distinction-creates-a-sweep-obligation]]): a route may be named as
+                re-establishing an identity after device loss only where the site already says so
+                of a user who HAS hardware. Today that is route (1) alone. Grounded on this page
+                at "you are down to your last hardware device, community vouching over roughly 3
+                to 7 days" and at the Honest assessment's "A hardware-bound user who loses their
+                only device still recovers", and mirrored on /identity-constellation and
+                /lct-explainer. Route (1) states a tier effect (~0.75 ceiling); route (3) states
+                none, and a sweep for "institutional witness", "third-party witness" and "notar"
+                across src/ turns up no claim anywhere that institutional witnessing enables
+                recovery or makes its user hardware-backed. Do not re-add (3) without canon for
+                it PLUS an amendment to the Honest assessment: asserting that the
+                no-personal-hardware route yields recovery is a claim about what the excluded
+                tier gets, which is the standing [[hardware-required-seam]] escalation.
                 GUARDRAILS, do not undo:
                 - Says nothing about whether secure hardware is required to PARTICIPATE. That is
                   the standing [[hardware-required-seam]] escalation, and mitigation (4)'s
@@ -730,7 +754,7 @@ export default function WhatCouldGoWrongPage() {
               accept a numeric PIN instead of a biometric, and they&apos;re hardware-bound. That
               gets users without biometric capability up to ~0.75 ceiling.
               <strong> (2) Community vouching</strong> - trusted contacts can witness what you
-              do, and on the hardware-backed routes in this list, (1) and (3), that record is what
+              do, and on the hardware-backed route above, (1), that record is what
               re-establishes an identity after a lost device. Be precise about what it is not: it does not raise the
               software-only ceiling, and Web4 witnessing is an observation (&ldquo;I saw this
               happen&rdquo;) rather than an endorsement that lends you someone else&apos;s
