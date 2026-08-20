@@ -692,21 +692,22 @@ function KarmaFormula() {
       {/* The formula */}
       <div className="p-4 bg-gray-900/50 rounded-lg">
         <h4 className="font-semibold text-white mb-3">Karma Inheritance Formula</h4>
-        <pre className="text-sm text-gray-400 bg-gray-900/80 p-4 rounded overflow-x-auto mb-4">
-{`next_life_atp = base_atp + (karma * karma_multiplier)
-next_life_trust = prev_trust * trust_decay_factor
-
-Where:
-  base_atp = 100 (standard starting resources)
-  karma_multiplier = 2 (each karma point = 2 ATP)
-  trust_decay_factor = 0.95 (trust carries over with 5% decay)
-
-Example (negative karma):
-  karma = -15 → next_life_atp = 100 + (-15 * 2) = 70 ATP
-
-Example (positive karma):
-  karma = +10 → next_life_atp = 100 + (10 * 2) = 120 ATP`}
-        </pre>
+        {/* Aug-19 visitor LOW, and they filed the same thing in their journal at 38:00 with the
+            remedy in it: "I followed a link that said 'the number is not the rule' and arrived at
+            a page that says 'here is a formula, also not the rule.' ... That is fine as an answer,
+            but IT SHOULD HAVE BEEN THE FIRST SENTENCE, NOT THE SENTENCE AFTER THE ARITHMETIC."
+            The caveat below used to render under the <pre>. Moved above it, unchanged except for
+            the single directional word ("the arithmetic above" -> "below"), which is the only
+            thing the move makes false. A position move is not a new claim
+            ([[a-fence-on-content-does-not-fence-placement]]), so the Aug-06 do-not-resolve rule in
+            the caveat's own guard is untouched: nothing here picks a rebirth rule.
+            #557 set the precedent on the sibling walkthrough: EndOfLifeCaveatShort now renders
+            under the h2, above Life 1, "not one word changed".
+            The visitor's LOW names three pages. /how-it-works was done by #557; this is the
+            second. /atp-economics is deliberately NOT the third, and the criterion is recorded at
+            that page's own caveat, because there this is not a position move: that block is welded
+            to its position in five directional references and is a whole-clause propagation whose
+            guard requires both copies be reworded together. */}
         {/* Aug-06 visitor HIGH: "/how-it-works says you are reborn with the balance you died
             holding (145 -> 145). This page says next_life_atp = 100 + karma * 2, so +10 karma ->
             120. Those are two different rules. How It Works admits the amount is unsettled; this
@@ -726,9 +727,9 @@ Example (positive karma):
             bonus), and only the karma examples further down carry the balance forward intact. So
             the link text is narrowed to the examples it actually describes. Nothing else moved;
             the do-not-resolve rule above still stands. */}
-        <p className="text-xs text-amber-300/80 border border-amber-800/40 bg-amber-900/10 rounded p-3 leading-relaxed">
+        <p className="text-xs text-amber-300/80 mb-4 border border-amber-800/40 bg-amber-900/10 rounded p-3 leading-relaxed">
           <strong className="text-amber-300">One model, not the rule:</strong> how much carries into
-          the next life is <strong>not settled</strong>, and the arithmetic above is one way of
+          the next life is <strong>not settled</strong>, and the arithmetic below is one way of
           modelling it. Whether you keep your whole final balance or a reduced portion of it is not
           decided, and{" "}
           <Link href="/how-it-works#journey" className="text-amber-200 underline hover:text-amber-100">
@@ -738,6 +739,21 @@ Example (positive karma):
           shape it teaches (positive karma starts you stronger, negative karma starts you weaker,
           and the two are not symmetric), not as the settled numbers.
         </p>
+        <pre className="text-sm text-gray-400 bg-gray-900/80 p-4 rounded overflow-x-auto mb-4">
+{`next_life_atp = base_atp + (karma * karma_multiplier)
+next_life_trust = prev_trust * trust_decay_factor
+
+Where:
+  base_atp = 100 (standard starting resources)
+  karma_multiplier = 2 (each karma point = 2 ATP)
+  trust_decay_factor = 0.95 (trust carries over with 5% decay)
+
+Example (negative karma):
+  karma = -15 → next_life_atp = 100 + (-15 * 2) = 70 ATP
+
+Example (positive karma):
+  karma = +10 → next_life_atp = 100 + (10 * 2) = 120 ATP`}
+        </pre>
         <p className="text-xs text-gray-500 mt-2">
           This creates asymmetric consequences: building positive karma is harder than destroying it,
           mirroring real-world reputation dynamics.
