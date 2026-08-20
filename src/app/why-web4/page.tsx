@@ -754,27 +754,76 @@ export default function WhyWeb4Page() {
           </nav>
         </details>
 
-        {/* Most asked - top questions for first-time visitors */}
+        {/* Aug-19 visitor MEDIUM (the FAQ firehose) and their Unanswered Question 3, which have
+            the same mechanical cause: THIS PAGE STATED THE FIRST-TIMER QUESTION SET TWICE, WITH
+            TWO DIFFERENT SETS.
+
+            The visitor: "The 'Most Asked' group of 12 is a good idea and is what I actually read."
+            They finished the session with Unanswered Question 3 still open: "Who witnesses the
+            first participants in a brand-new society? ... I carried this question for the rest of
+            the session and never found a direct answer." The answer is #faq-bootstrap-witnesses,
+            which this box linked, under a heading calling it a first-timer question. Measured
+            (comments stripped first, or the derivation guard above matches itself):
+              INDEX CAT 'Most Asked'  12  |  rendered <h3>Most asked</h3> group  12  |  identical
+              this box                 9  |  overlap with those 12: 4
+              box-only, all five inside "Going deeper": faq-infrastructure,
+                faq-bootstrap-witnesses, faq-buy-50-devices, faq-youthful-mistakes,
+                faq-jurisdiction
+            A reader who followed the <h3> read a 12 that excluded five questions the element
+            three lines above had just called first-timer questions. Third instance, now fixed:
+            this comment itself used to read "Most asked - top questions for first-time visitors",
+            labelling THIS BOX with the heading that belongs to the group ~23 lines below.
+
+            The cut is the box's own originating criterion, not a fresh judgement of what matters.
+            eb16a51 (#121, Apr-17) created it and its message states both the membership rule and
+            the reason: "4 already had FAQs that the visitor didn't discover, BECAUSE THE FAQ TOPIC
+            INDEX IS INSIDE A COLLAPSED <details> ELEMENT ... Covers the Apr 16 visitor's four
+            missed questions (bootstrap witnesses, infrastructure operators, youthful mistakes,
+            buy-50-devices) plus the pre-existing top hits (what backs ATP, social credit, lose
+            hardware) and the new jurisdiction FAQ."
+            Two cohorts, and only one of them still has a job:
+              - the "missed because buried" cohort (4 + the jurisdiction FAQ added with them) is
+                still buried, verified: all five render after the "Going deeper" h3, inside
+                collapsed category accordions. KEPT.
+              - the "pre-existing top hits" cohort is the Most Asked group's entire job now. Each
+                of the three held three surfaces (index category, rendered group, here). DROPPED.
+              - faq-deployed was appended later by 4a99759 (#429, Jul-3), whose stated purpose was
+                to make that answer the FAQ's LEAD. It has four surfaces. DROPPED.
+            The box's stated premise was falsified on 2026-05-19 by 6d4c15e (#262), whose diff is
+            literally -<details id="faq-index"> / +<details open ... id="faq-index">. The index has
+            been open for three months and nobody re-derived the box against it. Note the direction
+            of that history before re-expanding this list: the split (8e71a0a, Feb-26) is SEVEN
+            WEEKS OLDER than the box, so the box was never the origin of the top-question claim.
+
+            NOTHING LOSES A SURFACE. The four dropped keep two each (index category + rendered
+            group); the five kept keep theirs and stop competing with a 12-item list beside them.
+            No <details id="faq-..."> and no #faq-index nav link is added or removed, so the three
+            numbers in the derivation guard above are unaffected by construction (this box renders
+            AFTER the </nav> that guard's second number measures). Re-derived after this edit:
+            72 / 72 / 72, unchanged.
+
+            Do NOT restore "Start here." here: #faq-index's summary already ends "- start here"
+            three lines above, and two of them in a row is the bulk this MEDIUM is about.
+            If a question is later promoted INTO the Most asked group, drop it from this box in
+            the same edit: the invariant this box now carries is that its entries are exactly the
+            ones NOT in that group ([[adding-a-distinction-creates-a-sweep-obligation]]). */}
         <div className="bg-amber-950/20 border border-amber-800/30 rounded-xl p-5 mb-6">
           <p className="text-gray-300 leading-relaxed mb-4">
-            <span className="text-amber-400 font-semibold">Start here.</span>{" "}
-            First-time visitors most often want to know:
+            <span className="text-amber-400 font-semibold">Easy to miss.</span>{" "}
+            These get asked just as early, but their answers sit further down, past the
+            Most asked group below:
           </p>
           <ul className="grid sm:grid-cols-2 gap-x-5 gap-y-2 text-sm">
-            <li><a href="#faq-deployed" className="text-sky-400 hover:text-sky-300 hover:underline">Is this deployed, or purely theoretical?</a></li>
-            <li><a href="#faq-what-backs-atp" className="text-sky-400 hover:text-sky-300 hover:underline">If not crypto, what backs ATP?</a></li>
             <li><a href="#faq-infrastructure" className="text-sky-400 hover:text-sky-300 hover:underline">Who runs the infrastructure?</a></li>
             <li><a href="#faq-bootstrap-witnesses" className="text-sky-400 hover:text-sky-300 hover:underline">How does the witness network bootstrap?</a></li>
             <li><a href="#faq-buy-50-devices" className="text-sky-400 hover:text-sky-300 hover:underline">Can a wealthy attacker buy 50 devices?</a></li>
             <li><a href="#faq-youthful-mistakes" className="text-sky-400 hover:text-sky-300 hover:underline">Do youthful mistakes follow you forever?</a></li>
             <li><a href="#faq-jurisdiction" className="text-sky-400 hover:text-sky-300 hover:underline">What about differing national laws?</a></li>
-            <li><a href="#faq-social-credit" className="text-sky-400 hover:text-sky-300 hover:underline">Isn&apos;t this just social credit?</a></li>
-            <li><a href="#faq-lose-hardware" className="text-sky-400 hover:text-sky-300 hover:underline">What if I lose my hardware?</a></li>
           </ul>
           <p className="text-gray-400 text-xs mt-4">
             Click any question to jump to it. The{" "}
             <a href="#faq-index" className="text-sky-400 hover:underline">full topic index above</a>{" "}
-            has the rest, grouped by topic.
+            has everything, grouped by topic.
           </p>
         </div>
         <h3 className="text-sm uppercase tracking-wide text-amber-400/80 mb-4">Most asked</h3>
@@ -1913,9 +1962,16 @@ export default function WhyWeb4Page() {
                   devices onto one identity buys a higher score). The differing attitudes are correct
                   for their different questions; nothing on the page said the questions differed, so
                   the reader had to read them as a contradiction. One clause each, both directions,
-                  because #faq-buy-50-devices is also reachable from the Most Asked list ("Can a
-                  wealthy attacker buy 50 devices?") near the top of this FAQ and
-                  so is not reliably the second one read. Neither answer's position is touched. */}
+                  because #faq-buy-50-devices is also reachable from the "Easy to miss" jump box
+                  ("Can a wealthy attacker buy 50 devices?") near the top of this FAQ and
+                  so is not reliably the second one read. Neither answer's position is touched.
+                  Aug-19: that box used to be captioned as the most-asked list, and this citation
+                  said "the Most Asked list". It was never that list - #faq-buy-50-devices is not
+                  in the Most asked group and never has been - so a later editor checking this
+                  sentence against the group would have found it refuted and deleted the clause it
+                  justifies. Re-cited to the box, whose link text is quoted above verbatim; the
+                  reachability the clause depends on is unchanged, the box still carries that link.
+                  ([[guard-comment-cites-rot-name-the-target]]) */}
               <p className="text-gray-400 text-sm">
                 <strong className="text-gray-300">This is the breadth question.</strong> Whether a
                 pile of hardware behind a <em>single</em> identity buys that one identity a higher

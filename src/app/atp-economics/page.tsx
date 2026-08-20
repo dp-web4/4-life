@@ -1773,7 +1773,33 @@ export default function ATPEconomicsPage() {
               on THIS page ([[fence-may-undercount-its-own-ledger]]). That asymmetry is deliberate
               and recorded in Q5; do not "align" it by deleting the fourth here.
               NO FIGURE MOVED. 145 / 130 / 95 / 85 are quoted, not changed, and they are the
-              frozen set Q5 depends on. */}
+              frozen set Q5 depends on.
+
+              Aug-19 (21:00), why this block was NOT hoisted above Life 1 when its two siblings
+              were. The Aug-19 visitor filed a LOW naming three pages: "Put the 'how much karma
+              carries is not settled' sentence first on each page, ahead of the arithmetic."
+              /how-it-works was done by #557 (EndOfLifeCaveatShort under the h2, "not one word
+              changed") and /karma-consequences by this session (one directional word changed).
+              On THIS page the same edit is not a position move, for two reasons that are
+              falsifiable rather than a preference:
+                1. The two paragraphs below are welded to their position in FIVE directional
+                   references: "the card further up", "the closing line just below", "the figures
+                   above", "the code sketch further down this page", plus the deictic "none of
+                   these lives" / "this walkthrough" pointing at the four lives they follow. The
+                   Aug-12 exemption above covers ONE such word as position-local; five is past
+                   what it licenses.
+                2. Four of the clauses are a WHOLE-CLAUSE PROPAGATION from /how-it-works's
+                   EndOfLifeCaveat under the standing obligation recorded above ("If you reword
+                   those there, reword them here"). Rewriting five pointers to hoist it is a
+                   two-page rewrite of a ledger-Q5 holding-pattern block.
+              The remedy that IS available, left open deliberately so this reads as deferred and
+              not missed: a SHORT page-native lead line above Life 1 carrying only the
+              not-settled claim, mirroring what #557 did with EndOfLifeCaveatShort, leaving this
+              block where its five pointers still resolve. That is a new rendered sentence on a
+              Q5 surface, so it wants its own pass and its own review, not a drive-by. Do not
+              satisfy it by hoisting THIS block, and do not satisfy it by importing
+              /how-it-works's component: the no-hoist rule at the top of this section still
+              stands, because this page defines a genuine ATP = 0 death that page does not. */}
           <p className="text-xs text-amber-300/70 mt-3 leading-relaxed">
             <strong className="text-amber-300">About these numbers:</strong> none of these lives
             ends at 0 ATP, so none of them is the death this page defines: ATP hitting zero, the

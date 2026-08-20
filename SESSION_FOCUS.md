@@ -2,6 +2,130 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-19 21:00 session - the page that named its top-question set twice, with two different sets
+
+**No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `3a63543`, not
+stacked. Today's log already had its 2 HIGHs and 2 MEDIUMs taken by #560/#561 this afternoon. Two
+rows left that were neither fenced nor deferred. Three files, zero new files, and **one of the
+three has no rendered change at all** (a criterion recorded so a deferral does not read as missed).
+
+### `/why-web4` stated "what first-time visitors ask" TWICE, and the two answers were 56% disjoint
+
+MEDIUM row 6 (the "72 questions" firehose) and **Unanswered Question 3** turn out to have one
+mechanical cause. The visitor said *"The 'Most Asked' group of 12 is a good idea and is what I
+actually read"*, then ended the session with Q3 open: *"Who witnesses the first participants in a
+brand-new society? ... I carried this question for the rest of the session and never found a
+direct answer."* The answer is `#faq-bootstrap-witnesses`, and a box three lines above the group
+they read had it linked under **"Start here. First-time visitors most often want to know:"**.
+
+Measured, comments stripped first (the `#faq-index` derivation guard matches itself otherwise):
+
+    INDEX CAT 'Most Asked'  12  |  rendered <h3>Most asked</h3> group  12  |  set-identical
+    the standalone box       9  |  overlap with those 12: 4
+    box-only, all five verified inside "Going deeper": faq-infrastructure,
+      faq-bootstrap-witnesses, faq-buy-50-devices, faq-youthful-mistakes, faq-jurisdiction
+
+So a reader who followed the `<h3>` (this visitor) read a 12 that **excluded five questions the
+element above had just called first-timer questions**. A third instance was in the source: the
+JSX comment over the box read `Most asked - top questions for first-time visitors`, labelling the
+box with the heading that belongs to the group ~23 lines below.
+
+**The policy reviewer overturned my provenance, and the true version supplied the criterion.** I
+argued the Most-asked/Going-deeper split was a later commit that never re-derived the box. It is
+the reverse: the split is `8e71a0a` **Feb-26**, the box `eb16a51` **Apr-17**, seven weeks later.
+Had I written my version into the guard I would have shipped a claim the next pass greps and
+refutes. What `eb16a51`'s message actually records is the box's membership rule *and* its
+premise: *"4 already had FAQs that the visitor didn't discover, **because the FAQ topic index is
+inside a collapsed `<details>` element**"* + four missed questions + *"the pre-existing top hits"*
++ the new jurisdiction FAQ. That premise was **falsified on May-19 by `6d4c15e` (#262)**, whose
+diff is literally `-<details id="faq-index">` / `+<details open ... id="faq-index">`. The index has
+been open three months and nobody re-derived the box against it.
+
+That converts an arbitrary cut into the box's own criterion: **keep the "missed because buried"
+cohort (still buried, verified), drop the "pre-existing top hits" cohort whose job the Most Asked
+group now does**, plus `faq-deployed`, appended later by `4a99759` (#429) whose purpose was to
+make that answer the FAQ *lead*, giving it four surfaces. Box 9 -> 5, retitled "Easy to miss",
+saying truthfully that these are answered further down. **Nothing loses a surface**: the four
+dropped keep two each, the five kept stop competing with a 12-item list beside them, and
+`faq-bootstrap-witnesses` goes from one-of-nine to one-of-five. Net rendered words go DOWN, which
+is the direction this MEDIUM asks for ([[density-guard-means-delete-not-caveat]]).
+
+**"Start here." was deliberately not reused**: `#faq-index`'s summary already ends `- start here`
+three lines above, and two of them in a row is the bulk the visitor complained about.
+
+**A guard elsewhere on the page cited the box by the wrong name**, found by the reviewer, not me:
+`#faq-adoption-path`'s Aug-15 guard justifies a shipped clause by `#faq-buy-50-devices` being
+*"reachable from the Most Asked list"* and then quotes **the box's** link text. That entry is not
+in the Most asked group and never was, so a later editor checking the sentence against the group
+would have found it refuted and deleted the clause it justifies. Re-cited to the box.
+
+### `/karma-consequences`: the hedge rendered under the arithmetic it hedges
+
+Filed twice by this visitor, and the second filing contains the remedy: *"it should have been the
+first sentence, not the sentence after the arithmetic."* The amber "One model, not the rule"
+paragraph moved above the `<pre>`, **unchanged except one directional word** (`the arithmetic
+above` -> `below`) plus a margin class. A position move is not a new claim
+([[a-fence-on-content-does-not-fence-placement]]), so the Aug-06 *"Do NOT resolve this here in
+either direction"* rule is untouched. #557 set the precedent on the sibling page.
+
+### The row named THREE pages and I proposed one. The third is deferred, with the criterion in the file
+
+The reviewer caught the truncation. `/how-it-works` was #557, `/karma-consequences` is this pass,
+and **`/atp-economics` I had not mentioned**. It is deliberately out, and the criterion now lives
+at that page's own caveat rather than only here, because there **this is not a position move**:
+
+- the block is welded to its position in **five** directional references (*"the card further up"*,
+  *"the closing line just below"*, *"the figures above"*, *"the code sketch further down this
+  page"*, plus the deictic *"none of these lives"*). The Aug-12 guard exempts **one** such word as
+  position-local; five is past what that licenses.
+- four of its clauses are a **whole-clause propagation** from `/how-it-works`'s `EndOfLifeCaveat`
+  under a standing *"if you reword those there, reword them here"* obligation. Hoisting it is a
+  two-page rewrite of a **ledger-Q5 holding-pattern block**.
+
+The available remedy is named at the site so the row is actionable, not just refused: a short
+page-native lead line above Life 1 mirroring #557's `EndOfLifeCaveatShort`, leaving the full block
+where its five pointers resolve. That is a new rendered sentence on a Q5 surface and wants its own
+review.
+
+### MEDIUM 5 (the act-preview spoiler) is deferred by SIZE, not by fence. The distinction matters
+
+My proposal said prior guards forbid it. **Half true, and the reviewer made me write the accurate
+version**, because writing the wrong one into this file would fence a row that is open. Chip-level
+fixes ARE blocked, and harder than I claimed: all three Act-5 chips were placed by explicit
+visitor request (`+12` Aug-09, `0.54` Aug-13, `0.51` Aug-14), so four visitors now point against
+Aug-19's suggestion to strip the terminal numbers. But **nothing guards the storyboard's
+container** (its only comment is `Storyboard: 5-beat preview of Alice's full arc`). Collapsing it
+into a `<details>` or moving it below Start addresses both halves of the complaint (spoiler, and
+"a lot before Start") touching zero chips, and the four-ideas map directly above already ships
+that exact pattern (*"Open for a preview, or skip straight to Start and come back"*). That is an
+IA change deserving its own pass.
+
+### Open rows carried forward
+
+- **MEDIUM 5**, container-level only, per above. Chip-level is closed.
+- **Row 6's remainder**: this pass removed the rival claim and shortened the run-up. The `72` in
+  `#faq-index`'s summary and the accordion/curation redesign `learn/page.tsx:164` defers are still
+  untaken, and Aug-15 vs Aug-19 still point opposite ways on whether a count up front helps.
+- **`/atp-economics` short lead line**, per the criterion above.
+- **V3** (Unanswered Q4): `/why-web4` DOES introduce it (grep `Its companion, V3`), so the
+  visitor's "nothing on the five-page reading path ever introduces it" is false as stated; their
+  falsifiable half is *"T3, LCT, ATP and CI all get a card on /first-contact. V3 does not"*, which
+  is true. A fifth card fights this same visitor's density complaint, so it is routing, not a card
+  ([[visitor-v3-ghost-pattern]], third recurrence).
+- **Unanswered Q3 is not fully closed**, only routed. `/tldr`'s Web4 bullet says *"it is the
+  community you join that witnesses what you do"*, which presupposes a community exists, and the
+  reader forms the genesis question there. `/tldr` links only `#first-device-bootstrap`, which
+  answers a **different** bootstrap (your first device), and that box has lost two density calls
+  already. Two questions wearing one word ([[borrowed-word-means-something-else-there]]).
+- LOWs still noted only: CI first-mention link on `/first-contact` (#553-shaped: prior passes did
+  *stating*, the missing one is *routing*), hestia's **Running** badge vs "lab machines only",
+  26 nav links.
+
+`npm run build` green. `#faq-index` derivation re-run: **72 / 72 / 72**, unchanged. New invariant
+checked: box entries and the Most asked group now have **zero** overlap, and all five box anchors
+resolve to real `<details>`. No em dashes (literal or `u2014`) in any of the three files.
+
+
 ## Aug-19 09:00 session - the two words the page used and never defined, and the mitigation its own section withdrew
 
 **No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main`, one 4life session
