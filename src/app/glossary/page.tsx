@@ -1264,12 +1264,17 @@ export default function GlossaryPage() {
           <h3 className="text-xl font-semibold text-red-400 mb-3 scroll-mt-20">
             Death, Trust Death, and Rebirth
           </h3>
+          {/* AUG-20: the recoverability sentence in the rider below was replaced on all FOUR rider
+              surfaces in one pass (cause-framed -> score-framed). The Q1 tail is untouched and
+              cross-surface identity is preserved by editing the four together. Do not edit it here
+              alone. Rationale: `grep -n "AUG-20 visitor HIGH #1" src/app/how-it-works/page.tsx`. */}
           <p className="text-gray-300 text-sm leading-relaxed mb-3">
             Two paths: <strong className="text-red-300">ATP hits zero</strong> (energy death - you
             can&apos;t act anymore) or{" "}
             <strong className="text-red-300">raw trust falls below 0.5 and stays there</strong>{" "}
-            (trust death - the community no longer trusts you). Energy death is recoverable through
-            karma rebirth. Trust death is permanent - a destroyed reputation can&apos;t be reset.
+            (trust death - the community no longer trusts you). Which one you can come back from
+            is not decided by which of them fired: recoverable if you built trust, permanent if not.
+            A trust death is that check failing - a destroyed reputation can&apos;t be reset.
             One line, two consequences: <em>crossing</em> below 0.5 restricts your features right
             away and is recoverable; only <em>staying</em> below it is fatal - a sustained collapse,
             not a single stumble. The number compared is <strong>raw</strong> trust, not effective

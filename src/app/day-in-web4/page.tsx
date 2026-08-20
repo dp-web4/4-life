@@ -556,7 +556,7 @@ export default function DayInWeb4Page() {
                     <span className="text-gray-300">iPhone 15 / Pixel 8 / Galaxy S24 (built-in security chip: Secure Enclave / Titan M2 / Knox)</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-500">Trust ceiling</span>
+                    <span className="text-gray-500">Chip tier max</span>
                     <span className="text-emerald-400">0.85</span>
                   </div>
                   <div className="flex justify-between">
@@ -565,8 +565,28 @@ export default function DayInWeb4Page() {
                   </div>
                 </div>
               </div>
+              {/* AUG-20 visitor HIGH #3: "a single freshly-bound iPhone is shown with Trust
+                  ceiling 0.85; the /lct-explainer page this step LINKS TO for exactly this says
+                  device count and chip class combine and the lower wins". Two pages that link to
+                  each other, disagreeing on the number.
+                  HALF THE FIX WAS ALREADY HERE ([[page-ships-the-answer-and-denies-it]]): the prose
+                  below already said the 0.85 "comes from the chip's tier". What contradicted it was
+                  the STAT ROW eight lines up, still labelled a flat "Trust ceiling". Relabelled
+                  "Chip tier max", matching how /lct-explainer renders the same tier ("max 0.85").
+                  The residual was that the SECOND rule was named nowhere on this page, so nothing
+                  told the reader another cap exists. Added, and deliberately with NO device-count
+                  numeral: /lct-explainer is itself unreconciled on what one device gets (its
+                  device-count list says 50% while its own combination rule and six other surfaces
+                  say 0.75, filed in that file's Aug-12 guard, `grep -n "The 0.50-0.75 numeral
+                  SURVIVES" src/app/lct-explainer/page.tsx`, which says outright not to recalibrate
+                  in a hurry). Any numeral here picks a side of a filed, deliberately-untaken row.
+                  The visitor's own suggested replacement (0.50) is that outlier, so it is NOT what
+                  shipped ([[naive-reading-right-suggestion-wrong]]).
+                  The link also promised "hardware ceilings" while pointing at bare /lct-explainer
+                  ([[promise-link-class-grep-text-not-href]]); now anchored to #device-witnesses,
+                  the block that actually carries the combination rule. */}
               <p className="text-xs text-gray-500">
-                The app finds your phone&apos;s security chip automatically. One biometric scan (Face ID, fingerprint) and your device becomes your identity anchor. No seed phrases to write down. No keys to lose. The 0.85 &ldquo;trust ceiling&rdquo; comes from the chip&apos;s tier - a phone secure enclave caps trust at 0.85; stronger or weaker hardware caps it higher or lower (see <a href="/lct-explainer" className="text-sky-400 hover:underline">hardware ceilings in the LCT explainer</a>).
+                The app finds your phone&apos;s security chip automatically. One biometric scan (Face ID, fingerprint) and your device becomes your identity anchor. No seed phrases to write down. No keys to lose. The 0.85 comes from the chip&apos;s tier - a phone secure enclave caps trust at 0.85; stronger or weaker hardware caps it higher or lower. That is the chip&apos;s rating, not your ceiling on day one: how many devices witness you sets how much of that maximum you can actually reach, and the lower of the two rules wins. One device is where that climb starts; adding a second raises it (see <a href="/lct-explainer#device-witnesses" className="text-sky-400 hover:underline">hardware ceilings in the LCT explainer</a>).
               </p>
             </div>
           </div>
@@ -613,15 +633,23 @@ export default function DayInWeb4Page() {
                   &quot;Hi everyone! Just moved to Oak Street. Anyone know a good plumber? Our kitchen sink has been leaking.&quot;
                 </div>
                 <div className="flex items-center gap-3 text-xs">
-                  <span className="text-orange-400">-3 ATP</span>
+                  <span className="text-orange-400">-10 ATP</span>
                   <span className="text-gray-600">|</span>
                   <span className="text-gray-500">Your trust: <span className="text-sky-400 font-mono">0.50</span> (new member)</span>
                   <span className="text-gray-600">|</span>
                   <span className="text-gray-500">Post visible to: <span className="text-gray-300">89 members</span></span>
                 </div>
               </div>
+              {/* AUG-20 visitor MEDIUM #4: same page, same brand-new member, two post costs. This
+                  step showed "-3 ATP" while the day timeline and the Web2/Web4 comparison both say
+                  a newcomer's post costs 10 ATP with a 40% no-history surcharge
+                  (`grep -n "40% more than veterans" src/app/day-in-web4/page.tsx`, two hits), and
+                  /how-it-works puts posting at 10-20 ATP. The 3 was out of family with both. Moved
+                  onto 10 and the surcharge REASON propagated from those two lines rather than
+                  restated, which turns the inconsistency into the teaching moment the visitor asked
+                  for. No running balance in this mockup depends on the old figure (checked). */}
               <p className="text-xs text-gray-500">
-                Your first post costs a small amount of energy. People respond, you thank them - and your trust starts building. Within a week of genuine participation, you&apos;ll feel the difference: people trust your recommendations, your posts cost less, and your replies carry weight.
+                Your first post costs 10 ATP - 40% more than veterans pay, because you have no consistency history yet. People respond, you thank them - and your trust starts building. Within a week of genuine participation, you&apos;ll feel the difference: people trust your recommendations, your posts cost less, and your replies carry weight.
               </p>
             </div>
           </div>

@@ -3607,7 +3607,15 @@ export default function WhyWeb4Page() {
               (grep -n "there is no device to abandon" src/lib/terms.ts).
               Rules NOTHING. No rebirth amount enters this card (ledger Q5's open half), and the
               0.5 wording is the five-surface verbatim, so it asserts no endpoint in either
-              direction (ledger Q1, [[trust-05-endpoint-canon-conflict]]). */}
+              direction (ledger Q1, [[trust-05-endpoint-canon-conflict]]).
+              AUG-20 visitor HIGH #1: the energy-death bullet still said recoverability follows the
+              CAUSE ("energy death is recoverable through karma rebirth"), which the trust-death
+              bullet ten lines below already refutes in its own words ("rebirth is checked against
+              your T3 score, and a burned record is exactly what fails that check"). One card,
+              opposite rules, and the correct one was already sitting in it. The energy bullet now
+              carries /atp-economics's conditional so the two bullets agree. The permanence half is
+              unchanged, and no comparator or quantity name entered the energy bullet. Class guard:
+              `grep -n "AUG-20 visitor HIGH #1" src/app/how-it-works/page.tsx`. */}
           <details id="faq-death-rebirth" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>When does an agent &ldquo;die&rdquo; and how does rebirth work?</span>
@@ -3620,8 +3628,9 @@ export default function WhyWeb4Page() {
               <ul className="list-disc list-inside space-y-2 text-gray-400">
                 <li><strong>Energy death</strong> (ATP hits 0): Your account is suspended - like a suspended
                   driver&apos;s license. You can&apos;t take actions, but your identity and history remain.
-                  This is <strong>the recoverable one</strong>: energy death is recoverable through karma
-                  rebirth, and you come back as the same entity - same LCT, same history, same trust record.
+                  This is <strong>the recoverable one</strong> - though recoverable is not automatic:
+                  recoverable if you built trust, permanent if not. If you do come back it is as the
+                  same entity - same LCT, same history, same trust record.
                   ATP itself only comes back through contribution, so recovery means being able to work
                   again, not waiting for a refill.</li>
                 <li><strong>Trust death</strong> (raw trust falls below 0.5 and stays there): More serious.

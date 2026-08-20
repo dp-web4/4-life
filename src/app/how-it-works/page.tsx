@@ -285,7 +285,7 @@ export default function HowItWorksPage() {
               Wording propagated from the canonical paragraph named above, not re-derived (that
               paragraph is itself guarded verbatim - see the "keep it that way if editing" comment
               directly preceding it). Asserts no 0.5 endpoint in either direction. */}
-          <p>If your energy hits zero, you stop acting - but that death is recoverable through karma rebirth, and good karma carries forward, so you come back with a head start. Sustained trust collapse is the permanent one. <strong className="text-cyan-400">No moderators needed to police spam</strong> (settling a dispute between two people is a different job, and societies do staff that one - see <a href="#governance" className="text-cyan-400 hover:underline">governance</a> below). Five interlocking systems (identity, energy, trust, consistency, context) make spam expensive and quality self-sustaining.</p>
+          <p>If your energy hits zero, you stop acting - and whether you come back is decided by your trust, not by which way the life ended: recoverable if you built trust, permanent if not. Good karma carries forward, so a return comes with a head start; a sustained trust collapse is that check failing. <strong className="text-cyan-400">No moderators needed to police spam</strong> (settling a dispute between two people is a different job, and societies do staff that one - see <a href="#governance" className="text-cyan-400 hover:underline">governance</a> below). Five interlocking systems (identity, energy, trust, consistency, context) make spam expensive and quality self-sustaining.</p>
         </div>
 
         <p className="text-xl text-gray-300 leading-relaxed mb-6">
@@ -579,6 +579,14 @@ export default function HowItWorksPage() {
                     the permanent one" are both verbatim from that summary card, and the spam
                     section ships the same shape ("They die. No rebirth eligibility (low T3)").
                     If the summary card moves, move this too.
+                    AUG-20: both cells and the summary card were rewritten in the SAME pass, so the
+                    binding holds. The red cell no longer conditions on which death fired; the `<p>`
+                    under this grid lost the sentence that restated the rule (it sat directly under
+                    the cell it contradicted - the Aug-20 visitor's top finding) and KEPT its
+                    #journey link, which is the Q1-compliant "point AT the card, do not restate its
+                    threshold" behaviour this guard requires. What remains in that `<p>` names WHICH
+                    quantity the gate reads and stops there, matching /karma-consequences's "Who
+                    comes back" paragraph in intent.
                     ENDPOINT: no comparator here, in either direction, and no "not below 0.5"
                     (that is the >= side wearing a negation) - the eligibility card's >= 0.5 / <
                     0.5 pair is deliberately untouched ledger-Q1 territory, so this points AT the
@@ -599,10 +607,10 @@ export default function HowItWorksPage() {
                     aliveness span. The rebirth half of these two cells is unchanged. */}
                 <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                   <div className="text-green-400/80">All three healthy → you keep acting, and keep earning</div>
-                  <div className="text-red-400/80">Energy or trust fails → that life ends. ATP hitting 0 is recoverable through karma rebirth; sustained trust collapse is the permanent one</div>
+                  <div className="text-red-400/80">Energy or trust fails → that life ends. Whether you come back is decided by your trust, not by which one fired: recoverable if you built trust, permanent if not</div>
                 </div>
                 <p className="text-xs text-gray-500 mt-2">
-                  Which of the two you get is decided by your composite T3 when the life ends, not by which condition fired.{" "}
+                  The gate reads your composite T3 score.{" "}
                   <a href="#journey" className="text-sky-400 hover:underline">The eligibility check ↓</a>
                 </p>
               </div>
@@ -1123,13 +1131,50 @@ export default function HowItWorksPage() {
                   hit of `grep -n "narrows your access" src/app/coherence-index/page.tsx`), propagated, not
                   re-derived. Do not re-attribute cost to effective trust: cost is 1/CI², a function of
                   CI alone. Full rationale in /first-contact's Step-5 guard
-                  (`grep -n "THE CANONICAL TAIL" src/app/first-contact/page.tsx`). */}
+                  (`grep -n "THE CANONICAL TAIL" src/app/first-contact/page.tsx`).
+                  AUG-20 visitor HIGH #1, their "if it were one thing" pick, and the deepest form of
+                  this class yet. The sentence this rider carried - "Energy death is recoverable
+                  through karma rebirth. Trust death is permanent" - frames the CAUSE as decisive,
+                  and the rule is that the SCORE is. Three things on this page already refuted it:
+                  the eligibility card (`grep -n "Society doesn't want you back"` in this file), the
+                  spam section ("They die. No rebirth eligibility (low T3)"), and the line that used
+                  to sit directly UNDER the aliveness cell restating the rule instead of replacing
+                  it. The visitor read that pair four times and left not knowing the answer, and
+                  filed it as the single most consequential rule on the site.
+                  PROPAGATED, not coined: the conditional is /atp-economics's already-shipping nine
+                  words (`grep -rn "recoverable if you built trust" src/app`)
+                  ([[propagate-the-sentence-not-your-summary]]).
+                  THE BYTE-LOCK SURVIVES BY CONSTRUCTION. Every lock guard on this rider states its
+                  reason as the Q1 threading (crossing vs staying, raw vs effective), and that
+                  threading lives entirely in the TAIL, which is untouched. The replaced sentence
+                  sits before "One line, two consequences" and carries no comparator, no numeral, no
+                  raw/effective distinction. What the lock still binds is cross-surface IDENTITY, so
+                  the new sentence went onto all FOUR surfaces in one pass: this file,
+                  /first-contact's <noscript>, /karma-consequences, /glossary. Wrapping differs per
+                  file, rendered text does not. Verify with a whitespace-normalized scan, never
+                  single-line grep - three of the four wrap mid-phrase.
+                  DELIBERATELY NOT SHARPENED. "if you built trust" is not upgraded to name the
+                  gate's quantity or a threshold: a comparator re-arms ledger Q1 and an entity-level
+                  score threshold re-arms Q14. The vagueness is the feature.
+                  LEFT AS SHORTHAND, by the /atp-economics ordering precedent (`grep -n "correct
+                  shorthand under an established page-level frame" src/app/atp-economics`): a bare
+                  "the recoverable kind" is correct once the corrected rule PRECEDES it in reading
+                  order. That covers, on this page, the Death section subtitle "Energy death, the
+                  recoverable kind" and "The rest of this section is about that recoverable kind";
+                  on /karma-consequences "Karma is what makes energy death survivable"; on /glossary
+                  "Rebirth is what follows the recoverable kind"; on /first-contact "That's the
+                  recoverable kind" and "resuming after a recoverable energy-death". Excluded by
+                  criterion, not missed by instrument
+                  ([[adding-a-distinction-creates-a-sweep-obligation]]).
+                  ALREADY CORRECT, do not "fix" it into a variant: /first-contact's Death-is-Real
+                  recap (`grep -n "if your trust is intact" src/app/first-contact`). */}
               <p className="text-gray-300 leading-relaxed">
                 Two paths: <strong className="text-red-400">ATP hits zero</strong> (energy death -
                 you can&apos;t act anymore) or{" "}
                 <strong className="text-red-400">raw trust falls below 0.5 and stays there</strong>{" "}
-                (trust death - the community no longer trusts you). Energy death is recoverable
-                through karma rebirth. Trust death is permanent - a destroyed reputation
+                (trust death - the community no longer trusts you). Which one you can come back
+                from is not decided by which of them fired: recoverable if you built trust,
+                permanent if not. A trust death is that check failing - a destroyed reputation
                 can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5
                 restricts your features right away and is recoverable; only <em>staying</em> below
                 it is fatal - a sustained collapse, not a single stumble. The number compared is{" "}

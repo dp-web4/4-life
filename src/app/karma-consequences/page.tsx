@@ -957,6 +957,11 @@ export default function KarmaConsequencesPage() {
               number - resolve every copy with `grep -rnE "narrows (your|her) access" src/app` (short
               fragment, because the sentence wraps across JSX lines on glossary and lct-explainer;
               first-contact carries it twice, the second in third person).
+              AUG-20: the recoverability sentence inside this rider was replaced on all four rider
+              surfaces in one pass (cause-framed -> score-framed). The lock is UNBROKEN: its stated
+              reason is the Q1 tail, which is untouched, and cross-surface identity was preserved by
+              editing all four together. Rationale: `grep -n "AUG-20 visitor HIGH #1"
+              src/app/how-it-works/page.tsx`.
               Keep it verbatim if editing: it threads ledger Q1 by distinguishing
               crossing from staying and raw from effective, so paraphrasing it would assert a 0.50
               endpoint canon has not settled.
@@ -985,9 +990,10 @@ export default function KarmaConsequencesPage() {
               Two paths: <strong className="text-red-400">ATP hits zero</strong> (energy death - you
               can&apos;t act anymore) or{' '}
               <strong className="text-red-400">raw trust falls below 0.5 and stays there</strong>{' '}
-              (trust death - the community no longer trusts you). Energy death is recoverable
-              through karma rebirth. Trust death is permanent - a destroyed reputation can&apos;t be
-              reset. One line, two consequences: <em>crossing</em> below 0.5 restricts your features
+              (trust death - the community no longer trusts you). Which one you can come back
+              from is not decided by which of them fired: recoverable if you built trust,
+              permanent if not. A trust death is that check failing - a destroyed reputation
+              can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5 restricts your features
               right away and is recoverable; only <em>staying</em> below it is fatal - a sustained
               collapse, not a single stumble.
             </p>
@@ -1038,10 +1044,16 @@ export default function KarmaConsequencesPage() {
                     axis in the other direction. What stays unruled after the delete is whether the
                     rebirth gate is entity-wide or role-scoped, which is filed under Q14 (canon has
                     no entity-level score-threshold path at all). Do not answer it here.
-                (3) It must NOT restate a recoverability condition. The site currently carries three
-                    (/how-it-works:166 unconditional, /first-contact:750 "if you built good karma",
-                    the aliveness fix "if trust held up"); this paragraph is scoped to the GATE only
-                    so it does not recruit them. That divergence is filed in SESSION_FOCUS, unfixed.
+                (3) It must NOT restate a recoverability condition. WRITTEN when the site carried
+                    THREE divergent ones (unconditional on /how-it-works, conditioned on KARMA at
+                    /first-contact, conditioned on TRUST at the aliveness cell). CLOSED Aug-20: the
+                    Aug-20 visitor filed the divergence as their top HIGH and all three collapsed
+                    onto /atp-economics's single conditional (`grep -rn "recoverable if you built
+                    trust" src/app`). The scoping still holds, for a NEW reason: the conditional is
+                    now stated in the locked rider directly above this paragraph, so restating it
+                    here would duplicate an adjacent sentence rather than diverge from one. Do not
+                    read this clause as evidence the divergence is still open; full class guard is
+                    `grep -n "AUG-20 visitor HIGH #1" src/app/how-it-works/page.tsx`.
                 The paragraph above this one is verbatim-locked (see the guard on it). Leave it byte
                 for byte; this one is deliberately adjacent, not merged. */}
             <p className="text-gray-400 text-sm mt-3">
