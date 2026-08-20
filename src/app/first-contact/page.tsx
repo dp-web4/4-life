@@ -186,7 +186,11 @@ export default function FirstContactPage() {
                     touches a locked byte, so `grep -rnE "narrows (your|her) access" src/app` still
                     returns the same six hits and the other four surfaces are unchanged. If you ever
                     need to say this INSIDE the sentence, you are desyncing six pages: don't. */}
-                <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death - you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>raw trust falls below 0.5 and stays there</strong> (trust death - the community no longer trusts you). Energy death is recoverable through karma rebirth. Trust death is permanent - a destroyed reputation can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal - a sustained collapse, not a single stumble. The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;). A lower CI raises your costs and narrows your access; it does not push you toward trust death. That&apos;s why Alice&apos;s 0.48 in Step 4 restricted her instead of killing her: she crossed the line, she didn&apos;t stay below it. <em style={{ color: '#64748b' }}>(CI is the coherence index: how consistent your behavior looks across time, devices and contexts. It gets its own card further down this page.)</em></span>
+                {/* AUG-20: the recoverability sentence in this <noscript> rider was replaced on all FOUR
+                    rider surfaces in one pass (cause-framed -> score-framed). Q1 tail untouched;
+                    cross-surface identity preserved by editing the four together. Do not edit it here
+                    alone. Rationale: `grep -n "AUG-20 visitor HIGH #1" src/app/how-it-works/page.tsx`. */}
+                <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death - you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>raw trust falls below 0.5 and stays there</strong> (trust death - the community no longer trusts you). Which one you can come back from is not decided by which of them fired: recoverable if you built trust, permanent if not. A trust death is that check failing - a destroyed reputation can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal - a sustained collapse, not a single stumble. The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;). A lower CI raises your costs and narrows your access; it does not push you toward trust death. That&apos;s why Alice&apos;s 0.48 in Step 4 restricted her instead of killing her: she crossed the line, she didn&apos;t stay below it. <em style={{ color: '#64748b' }}>(CI is the coherence index: how consistent your behavior looks across time, devices and contexts. It gets its own card further down this page.)</em></span>
               </div>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#f87171' }}>Step 6 - Death:</strong> Alice overcommits, quality slips, ATP drains to zero. Her entity dies - but her record persists.
@@ -343,8 +347,19 @@ export default function FirstContactPage() {
                     recoverable through karma rebirth", "Trust death is permanent")
                     ([[propagate-the-sentence-not-your-summary]]).
                     Prints NO numeral and makes NO regional claim about 0.50 in either direction, so
-                    the ENDPOINT RULE guard below is satisfied by construction (ledger Q1). */}
-                <li><span className="text-sky-300 font-semibold">🔋 Energy Budget (ATP)</span> - the resource Alice spends to act. Starts at <span className="text-gray-200">100</span>; goes down when she posts, up when others confirm her work was valuable. If it hits 0, she can&apos;t act (<strong className="text-gray-200">energy death</strong>, recoverable through karma rebirth).</li>
+                    the ENDPOINT RULE guard below is satisfied by construction (ledger Q1).
+                    AUG-20, AND THIS IS THE INTERESTING PART: the phrase propagated here the day
+                    before ("recoverable through karma rebirth") is exactly what the Aug-20 visitor
+                    filed as their top HIGH. Propagating faithfully is not the same as propagating a
+                    TRUE sentence: the source string attached recoverability to the CAUSE, and the
+                    rule is that the SCORE decides ([[fix-may-commit-the-defect-it-diagnoses]]).
+                    Re-said as "recoverable if she built trust", which is /atp-economics's
+                    conditional, costs ONE net word against the three density guards above, stays a
+                    parenthetical inside the existing bullet, introduces no third quantity, and
+                    still prints no numeral. The naming fix this guard was written for is intact:
+                    "energy death" is still named here and "trust death" still in the bullet below.
+                    Class guard: `grep -n "AUG-20 visitor HIGH #1" src/app/how-it-works/page.tsx`. */}
+                <li><span className="text-sky-300 font-semibold">🔋 Energy Budget (ATP)</span> - the resource Alice spends to act. Starts at <span className="text-gray-200">100</span>; goes down when she posts, up when others confirm her work was valuable. If it hits 0, she can&apos;t act (<strong className="text-gray-200">energy death</strong>, recoverable if she built trust).</li>
                 {/* Jul-9 visitor HIGH: this line taught "0.5 = access threshold" and Aliveness taught
                     "0.5 = death threshold", and the visitor never reconciled them. Name the second
                     consequence here, where the first one is introduced.
@@ -1025,9 +1040,17 @@ export default function FirstContactPage() {
                       There are two ways to &ldquo;die&rdquo; in Web4, and they&apos;re very different:
                     </p>
                     <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                      {/* AUG-20 visitor HIGH #1. This cell read "Recoverable - if you built good
+                          KARMA", and the ATP-exhaustion panel below it ("if you earned good karma,
+                          rebirth is possible") said the same thing. Karma is what CARRIES across a
+                          rebirth, not what gates it: the gate reads trust
+                          (`grep -rn "recoverable if you built trust" src/app`, and this page's own
+                          Death-is-Real recap already said "if your trust is intact"). Both re-said
+                          on trust, with karma kept in its real role as the head start. Class guard:
+                          `grep -n "AUG-20 visitor HIGH #1" src/app/how-it-works/page.tsx`. */}
                       <div className="bg-gray-900/40 rounded p-2">
                         <div className="text-orange-400 font-semibold text-xs mb-1">Energy death (ATP = 0)</div>
-                        <p className="text-gray-400 text-xs">Run out of energy. <strong className="text-gray-200">Recoverable</strong> - if you built good karma, you can be reborn with a head start.</p>
+                        <p className="text-gray-400 text-xs">Run out of energy. <strong className="text-gray-200">Recoverable if you built trust</strong> - and good karma then adds a head start.</p>
                       </div>
                       <div className="bg-gray-900/40 rounded p-2">
                         <div className="text-red-400 font-semibold text-xs mb-1">Trust death (Trust &lt; 0.5 sustained)</div>
@@ -1044,8 +1067,8 @@ export default function FirstContactPage() {
                     <p className="text-gray-300 mt-2">
                       When ATP reaches zero, the entity can no longer act - this is <strong className="text-white">energy death</strong>.
                       Unlike traditional platforms where you just create a new account, death in Web4 is meaningful.
-                      Your full history is preserved. But if you earned good karma, <strong className="text-white">rebirth is possible</strong> -
-                      and your next life starts with advantages from your past behavior.
+                      Your full history is preserved. But if you built trust, <strong className="text-white">rebirth is possible</strong> -
+                      and good karma from your past behavior gives that next life a head start.
                     </p>
                     <p className="text-gray-400 mt-2 text-sm">
                       <strong className="text-gray-300">What this means in practice:</strong> In this walkthrough, death = the agent stops acting and must wait for rebirth.

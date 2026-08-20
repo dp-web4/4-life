@@ -2,6 +2,146 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-20 09:00 session - the rule that said the cause decides, when the score decides
+
+**No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `1be74ef`, not
+stacked. **Fresh visitor log** (`visitor/logs/2026-08-20.md`, 3 HIGH / 4 MEDIUM / 4 LOW), first
+session after the 05:00 browse. Took **HIGH 1 in full** and **HIGH 3 part (a) + MEDIUM 4**. Six
+files, zero new files.
+
+### HIGH 1: the site answered "can this kill me, and can I come back?" four different ways
+
+The visitor's own "if it were one thing" pick, and they were right that it is the most consequential
+rule on the site for a prospective user. The defect is one sentence shape: *"Energy death is
+recoverable through karma rebirth. Trust death is permanent."* It frames the **cause** as decisive.
+The rule is that the **score** is, and three things already on `/how-it-works` said so: the
+eligibility card, the spam section (*"They die. No rebirth eligibility (low T3)"*), and a line
+sitting **directly underneath** the aliveness cell restating the rule instead of replacing it. The
+visitor read that pair four times and left not knowing the answer.
+
+The correct sentence already shipped, in nine words, on the page fewest people reach:
+`/atp-economics`'s *"recoverable if you built trust, permanent if not"*. Every fix propagates it
+([[propagate-the-sentence-not-your-summary]]).
+
+**Ten surfaces, two shapes.** The byte-identical **"Two paths ..." rider** carries the sentence
+verbatim on exactly **four** surfaces (`/first-contact`'s `<noscript>`, `/karma-consequences`,
+`/how-it-works`, `/glossary`); three of the four wrap mid-phrase, so single-line grep undercounts
+and a whitespace-normalized whole-file scan is the only correct instrument. Six more surfaces carry
+the claim in their own words.
+
+**The byte-lock survives by construction, and that was the load-bearing call.** Every lock guard on
+that rider states its reason as the **ledger Q1 threading** (crossing vs staying, raw vs effective),
+which lives entirely in the **tail**. The replaced sentence sits before *"One line, two
+consequences"* and carries no comparator, no numeral, no raw/effective distinction. What the lock
+still binds is **cross-surface identity**, so all four were edited in one pass with byte-identical
+rendered text. Post-edit self-test: `grep -rnE "narrows (your|her) access" src/app` still returns
+the same **six** rendered hits.
+
+**Deliberately not sharpened.** "if you built trust" was NOT upgraded to name the gate's quantity or
+a threshold: a comparator re-arms Q1 and an entity-level score threshold re-arms Q14. The vagueness
+is the feature.
+
+### The fix I shipped yesterday was the defect I filed today
+
+`/first-contact`'s Energy Budget bullet got *"recoverable through karma rebirth"* from #560, on
+Aug-19, propagated faithfully from this page's own `<noscript>` copy. Propagating faithfully is not
+the same as propagating a **true** sentence
+([[fix-may-commit-the-defect-it-diagnoses]]). Re-said as *"recoverable if she built trust"*: **one
+net word** against the three density guards on that panel, still a parenthetical inside the existing
+bullet, no third quantity, no numeral. Two more surfaces on that page conditioned on **karma**
+rather than trust; karma is what *carries across* a rebirth, not what *gates* it. Both re-said, with
+karma kept in its real role as the head start.
+
+### What the policy reviewer caught
+
+Four things, all incorporated. (1) My surface list was **one short**: `/first-contact`'s
+ATP-exhaustion panel (*"if you earned good karma, rebirth is possible"*) is not shorthand, it is a
+full conditional stating the wrong condition. Exactly
+[[claim-class-grep-truncated-enumerate-remainder]], on a proposal that cited that memory.
+(2) `/day-in-web4` **already ships half of HIGH 3a** in prose ([[page-ships-the-answer-and-denies-it]])
+- do not re-author it. (3) When deleting the contradicting line under the aliveness cell, **keep the
+`#journey` link**: pointing AT the eligibility card instead of restating its threshold is deliberate
+Q1 compliance. (4) `/karma-consequences` carries a guard whose clause (3) ledgers "the site
+currently carries three recoverability conditions ... filed in SESSION_FOCUS, unfixed". This pass
+**closes** that divergence, so the guard would have read as still-open. Updated in place.
+
+**Left as shorthand, by criterion not by omission** ([[adding-a-distinction-creates-a-sweep-obligation]]):
+a bare "the recoverable kind" is correct once the corrected rule PRECEDES it in reading order (the
+`/atp-economics` ordering precedent). That covers six surfaces, enumerated in the class guard.
+`/first-contact`'s Death-is-Real recap was **already correct** (*"if your trust is intact"*) and is
+recorded as such so a later pass does not "fix" it into a variant. `/learn` and `/tldr` carry no
+death-rule teaser (zero hits), so the [[summary-layer-invisible-to-page-sweeps]] obligation is
+discharged by absence, not skipped.
+
+### HIGH 3: the visitor's number was wrong, and the page was still wrong
+
+`/day-in-web4` Step 2 showed one freshly-bound iPhone at **Trust ceiling 0.85** while the
+`/lct-explainer` page it links to for exactly that says chip class and device count combine and the
+lower wins. Real defect. But the visitor's replacement (**0.50**) is the **outlier**, not the rule:
+`/lct-explainer`'s Aug-12 guard records that its own device-count list ("1 device: 50%") is the only
+surface collapsing a lone hardware device onto the software floor, that six surfaces and its own
+combination rule say **0.75**, that upstream `multi-device-lct-binding.md:875-878` forbids the
+collapse, and that recalibrating in a hurry is exactly what not to do
+([[naive-reading-right-suggestion-wrong]]).
+
+So the fix prints **no device-count numeral at all**: the stat row is relabelled from a flat "Trust
+ceiling" to **"Chip tier max"** (matching how `/lct-explainer` renders the same tier), the missing
+second rule is named in words, and the link, which promised "hardware ceilings" while pointing at
+bare `/lct-explainer` ([[promise-link-class-grep-text-not-href]]), is anchored to
+`#device-witnesses`, the block that actually carries the combination rule.
+
+**MEDIUM 4** was mechanical: same page, same brand-new member, `-3 ATP` in the setup mockup vs
+`10 ATP` twice in the timeline. Moved to 10 with the surcharge **reason** propagated from those two
+lines. No running balance depended on the 3 (checked).
+
+### HIGH 2 deferred, and SIZED not just fenced
+
+`/karma-consequences`'s three-lives demo is out of bounds this session
+([[deferral-fenced-vs-sized-say-which]] - so here is the size). **Four defects**, two more than the
+visitor found:
+
+1. Life 1 ends at `endTrust: 0.35` and is reborn; the eligibility gate this page routes to reads the
+   composite score. Life 1 is the flagship karma illustration and the rules forbid it.
+2. **Life 2 ends at `0.42` and is also reborn.** Same defect, unfiled.
+3. **Life 3's `startTrust: 0.40` does not inherit Life 2's `endTrust: 0.42`.** Life 2's start (0.35)
+   correctly inherits Life 1's end; the chain breaks at the second handoff only.
+4. **Life 3's `startAtp: 60` contradicts the page's own formula** (`base_atp + karma * 2` ->
+   `100 + (-8 * 2) = 84`). Life 2's 70 checks out; Life 3's 60 does not.
+
+The page's headline (*"three lives to recover from one spam campaign"*) rests on the trajectory, so
+this is a re-derivation, not a numeral swap, and it sits on ledger **Q5** and **Q14**. It also needs
+**this** pass to land first: HIGH 1 establishes the rule the demo has to satisfy. Do **not** close it
+with a caption - `/atp-economics` already ships that exact prohibition for the sibling demo.
+
+### Open rows carried forward
+
+- **Aug-20 MEDIUM 5** (`/onramp` orders hestia -> hub, every other surface orders hub -> hestia).
+  Untaken. The visitor argues smallest-scale-first is better pedagogy AND matches the recommended
+  adoption order, so the sweep would run toward `/onramp`, not away from it. That is a nav-registry
+  change touching every surface: its own pass.
+- **Aug-20 MEDIUM 6** (`/day-in-web4` promises "No keys to lose" after binding one device, then the
+  8/9 PM scenarios need a constellation). Partially eased by this pass, since Step 2 now says adding
+  a second device raises the ceiling, but the enrolment STEP is still missing. Also the visitor's
+  **Unanswered Q3** ("how do I get a second device onto my identity?"). Routing, not stating.
+- **Aug-20 MEDIUM 7** (`/first-contact`: eight hedge blocks before Start). Third distinct visitor to
+  ask that screen to be shorter. #563 moved the arc rail below the button on Aug-20 03:00, hours
+  before this browse, so the visitor did not see it - check the NEXT log before treating this as a
+  recurrence ([[visitor-friction-may-be-fixed-post-browse]]).
+- **Aug-20 LOWs**: `/tldr` Web4 cell ~5x its neighbours; `/why-web4` requirement #2 lead order;
+  `/first-contact` no-JS fallback numbers vs the arc map; `/why-web4` 7-min vs `/learn` 6-min.
+- **The 0.50-vs-0.75 device-count row** stays filed at `/lct-explainer`'s Aug-12 guard, now with a
+  second inbound reason to take it (the guard's own `:619` cite has rotted; the list is elsewhere in
+  the file now).
+- Still carried from before: `/atp-economics` short lead line; **V3** routing (Unanswered Q4, now a
+  4th recurrence); the `72` in `#faq-index` + `learn` curation defer; CI first-mention routing;
+  hestia's Running badge vs "lab machines only"; 26 nav links; the ladder's three numbering schemes.
+
+**Verification**: `npm run build` green. Rendered-content diff (comments stripped, compared against
+`HEAD`) is exactly the intended set and nothing else. Normalized scan: **zero** rendered instances of
+the old sentence remain, **four** identical instances of the new one. `narrows (your|her) access`
+still returns six. No em dashes (literal or `u2014`).
+
+
 ## Aug-20 03:00 session - the preview that told you the ending before it let you start
 
 **No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `c7a0377`, not
