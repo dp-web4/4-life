@@ -2,6 +2,120 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-20 15:00 session - the illustration that reincarnated an agent its own page had killed
+
+**No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `9714b4f`, not
+stacked, one 4life session running. Took **Aug-20 HIGH 2**, the last unaddressed HIGH in
+`visitor/logs/2026-08-20.md` and the row #564 deferred with a stated unblocking condition: *"it
+needs this pass to land first: HIGH 1 establishes the rule the demo has to satisfy."* It landed.
+One file, zero new files.
+
+### The defect, and the two more underneath it
+
+`/karma-consequences`'s "One Agent, Three Lives" demo reincarnated Life 1 from `endTrust: 0.35`
+and Life 2 from `0.42`. The gate the same page routes to (`/how-it-works#journey`) prints
+`Overall T3 score >= 0.5` for eligible and `< 0.5` for permanent death. So the site's most
+memorable karma example was the one its own rules forbid, twice, and the visitor did the
+arithmetic in their journal before they filed it.
+
+Two more, both against **formulas this page prints four sections below the demo**:
+
+- `next_life_atp = 100 + karma * 2`. Life 2's `startAtp: 70` checks out from Life 1's `-15`.
+  Life 3's `60` does not: Life 2's `-8` gives **84**, and the cumulative reading gives 54. The
+  60 was unsourced under either.
+- `next_life_trust = prev_trust * 0.95`. **#564's own sizing of this row was inverted, and that
+  is the reusable lesson.** It called Life 3's `startTrust: 0.40` the broken handoff for not
+  inheriting Life 2's `0.42`. But 0.42 x 0.95 = 0.399, so Life 3 was the *correct* one. The
+  broken handoff was Life **2**'s `0.35`, an exact carry from Life 1's end, with its inheritance
+  note stating the exact carry in words (*"Trust also carried forward at 0.35"*). A demo that
+  prints a decay factor demonstrated it exactly once, by accident, and the sizing pass mistook
+  the one correct handoff for the defect. Re-derive from the printed formula; do not inherit a
+  prior session's arithmetic.
+
+### Why the failure mode had to change, not just the numbers
+
+Life 1 is a fresh identity, so it starts at 0.50 site-wide. Any life ending eligible must end at
+or above where it started, and a spam campaign that leaves trust intact is not credible. It would
+also contradict **this page's own side-by-side simulation**, where the spammer runs 0.50 -> 0.20
+and is never reborn. So the demo cannot be repaired by moving trust numbers under a spam story:
+the story is what forbids the rebirth. The visitor's second option was the right one (*"make Life
+1 a different failure mode"*), and the page's own Negative Karma Sources list licenses the
+replacement: *"Premature death - ATP exhaustion indicates poor resource management."*
+
+The three lives are now derived end to end: Life 2 starts at 0.61 (= 0.64 x 0.95) with 70 ATP
+(= 100 + -15x2); Life 3 starts at 0.63 (= 0.66 x 0.95) with 84 ATP (= 100 + -8x2). The demo now
+**demonstrates** the 0.95 factor twice instead of printing it and violating it.
+
+**The emerald End Trust is the fix's best artifact.** Life 1 renders green trust beside a red End
+ATP, red karma and a red "ATP Exhaustion" outcome. That is #564's rule rendered rather than
+asserted: which death fired does not decide whether you come back.
+
+### What the policy reviewer caught, in two rounds
+
+Round 1, four items, all incorporated. The sharpest: my new numbers would have had **two of three
+lives starve while behaving well**, which answers ledger **Q13**'s open half in the pessimistic
+direction as surely as a survival guarantee answers it in the optimistic one, and this very
+visitor filed that as their Unanswered Q4. Both exhaustions were re-authored as identifiable
+spending **choices** ("scaling spend faster than confirmations came back", "committed to a second
+self-funded push anyway"), with Life 3's "work sized to the budget this time" as the
+counterfactual that makes them choices rather than a floor. Also: my proposed join sentence
+(*"trust decides whether there is a next life"*) was a **new paraphrase of a sentence byte-locked
+sixteen hours earlier**, against that class guard's explicit *"PROPAGATED, not coined"*.
+
+Round 2 caught two clauses that were **falsifiable against the component shipping them**:
+
+1. *"It took three lives to work that handicap off"* is refuted by the demo's own Life 3: karma
+   `+5` gives `100 + 10 = 110` under the printed formula, so the handicap clears on a **fourth**
+   life the demo never shows, and the Life 3 inheritance note one card away says *"Still short of
+   a full 100."* [[fix-may-commit-the-defect-it-diagnoses]] in its purest form: a prose claim its
+   own illustration refutes, shipped by the pass whose thesis is that the illustration must not
+   refute the prose.
+2. Life 3's *"Still alive at the end of the life"* contradicts the outcome chip (**Still Alive**)
+   and implies a life ending at neither ATP zero nor trust death, which is the **Q5** shape filed
+   five times and the reason two sibling pages had to normalize *"Died"* to *"Ended"*.
+
+### What is deliberately not here
+
+The demo is the **FIRST** section on this page; the corrected death rule and the "One model, not
+the rule" caveat both render four sections below it. So even the bare shorthand back-reference
+the Aug-20 class guard licenses would be unlicensed at this position. The added subtitle sentence
+therefore **restates no condition at all**: it claims only that karma decides what each next life
+starts with, *not whether there is one*, routes the word "karma" to `#karma-formula` so the Q5
+caveat arrives before the arithmetic, and routes the rest to the eligibility check rather than
+characterizing it (**Q14**: nothing rendered explains why this agent is eligible). No comparator,
+no threshold, nothing at-0.50 (**Q1** and this file's own SCOPE GUARD). The side-by-side spammer
+is untouched: adding a permanent-death conclusion to a worked agent is the fenced move, not the
+fix. `/learn`'s karma teaser carries no demo numeral and no "spam campaign", so the summary-layer
+obligation is discharged by **absence**.
+
+### Open rows carried forward
+
+- **New, from the reviewer**: `/how-it-works#journey` now takes **two** inbound links from
+  `/karma-consequences` both asking for one specific card (the eligibility check). Under the
+  demand-driven anchor policy that justifies an eligibility-specific id on `/how-it-works`. Not
+  taken here.
+- **Pre-existing rot, unrelated to this pass**: `how-it-works:63` cites `/karma-consequences:629`
+  for the karma formula, which now lives ~745. Cite by grep target when someone next edits it.
+- **Aug-20 MEDIUM 5** (`/onramp` orders hestia -> hub, every other surface hub -> hestia).
+  Untaken; nav-registry change touching every surface, its own pass.
+- **Aug-20 MEDIUM 6** / **Unanswered Q3** (`/day-in-web4` second-device enrolment step). Routing,
+  not stating. Untaken.
+- **Aug-20 MEDIUM 7** (`/first-contact` hedge stack). Under the do-not-pre-empt retest gate: #563
+  landed hours before this browse, so check the NEXT log first.
+- **Aug-20 LOWs**: `/tldr` Web4 cell ~5x its neighbours; `/why-web4` requirement #2 lead order;
+  `/first-contact` no-JS fallback numbers vs the arc map; `/why-web4` 7-min vs `/learn` 6-min.
+- Still carried: the 0.50-vs-0.75 device-count row at `/lct-explainer`'s Aug-12 guard;
+  `/atp-economics` short lead line; **V3** routing (Unanswered Q4, 4th recurrence); the `72` in
+  `#faq-index` + `/learn` curation defer; CI first-mention routing; hestia's Running badge vs
+  "lab machines only"; 26 nav links; the ladder's three numbering schemes.
+
+**Verification**: `npm run build` green. Rendered-content diff (comments stripped, vs `HEAD`) is
+exactly the intended set and nothing else. The four byte-locked rider surfaces still normalize to
+3/1/1/1 unchanged; `grep -rnE "narrows (your|her) access" src/app` still 14. Zero em dashes
+(literal), one `u2014` (the pre-existing guard that names the rule). Outcome chip and Life 3's
+event agree. Both new link targets resolve (`#karma-formula`, `#journey`).
+
+
 ## Aug-20 09:00 session - the rule that said the cause decides, when the score decides
 
 **No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `1be74ef`, not
