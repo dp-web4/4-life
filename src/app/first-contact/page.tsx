@@ -252,8 +252,25 @@ export default function FirstContactPage() {
               <p className="text-lg text-gray-400 leading-relaxed mb-3">
                 In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> - play, pause, scrub, replay - and watch trust and reputation respond in real time. The rules running here are real; Web4 itself is still active research, with no live network to join yet.
               </p>
+              {/* This sentence narrates the page's OWN order, so it rots whenever a pre-Start
+                  block moves. Aug-20: the five-act arc moved below the Start button (see the
+                  storyboard guard, grep -n "Storyboard: 5-beat"), so "and the five-act arc" was
+                  false here and is now stated as a pointer under the button instead.
+                  NET WORDS DOWN, not up (47 -> 43 in this sentence), which is required: this
+                  screen carries three density guards (May-15 vocab wall, Jul-13 collapse, Jul-17
+                  pre-Start caveat pile-up) and the Aug-19 visitor asked for everything before
+                  Start to be SHORTER ([[density-guard-means-delete-not-caveat]]).
+                  What paid for the pointer: "no need to memorize them; each is explained in the
+                  story the moment Alice uses it" was a restatement of the four-ideas <summary>
+                  ~15 lines below ("A reference map, not a quiz - you don't need to memorize these.
+                  Each one is explained in the story the moment Alice runs into it."). The claim
+                  did not lose a surface; it lost a duplicate, and it still ships attached to the
+                  element it describes. Do not re-expand it here.
+                  "endings included" is deliberate and is half the fix: the Aug-19 MEDIUM is that
+                  the arc spoils the walkthrough, so a reader routed to it must be told before
+                  they follow the pointer, not after. */}
               <p className="text-sm text-gray-500 leading-relaxed italic">
-                Haven&apos;t read anything else on this site yet? You don&apos;t need to - this page starts from zero. Below: the two numbers to watch, then an optional reference map of the four ideas (collapsed - no need to memorize them; each is explained in the story the moment Alice uses it) and the five-act arc. Then click <span className="not-italic font-semibold text-gray-300">Start</span> to drive Alice yourself - no account, no sign-in.
+                Haven&apos;t read anything else on this site yet? You don&apos;t need to - this page starts from zero. Below: the two numbers to watch, then an optional reference map of the four ideas (collapsed - you don&apos;t need to memorize them). Then click <span className="not-italic font-semibold text-gray-300">Start</span> to drive Alice yourself - no account, no sign-in. The five-act arc, endings included, is mapped under the button.
               </p>
             </div>
 
@@ -295,8 +312,12 @@ export default function FirstContactPage() {
               <p className="text-sm text-gray-400 mb-3">Only two numbers move while she acts. This is all you need to follow the story:</p>
               <ul className="text-sm text-gray-300 space-y-2">
                 {/* Aug-19 visitor HIGH #1: "the two-number tutorial contradicts itself". This
-                    bullet said only "she can't act"; the Act-5 chip four screens down says "dies at
-                    ATP 0". The reader concluded energy is a pause and trust is the fatal one, then
+                    bullet said only "she can't act"; the Act-5 chip says "dies at ATP 0". (As
+                    filed, that chip was four screens down and above the Start button. Aug-20 moved
+                    the whole rail BELOW the button, still on the welcome step, so it is now
+                    further from this bullet, not nearer: the reason this bullet must carry the
+                    vocabulary itself got stronger, not weaker.)
+                    The reader concluded energy is a pause and trust is the fatal one, then
                     met "dies" and could not tell which was true.
                     The vocabulary that resolves it ("energy death, recoverable through karma
                     rebirth" / "trust death, permanent") already ships on this page THREE times and
@@ -465,12 +486,89 @@ export default function FirstContactPage() {
               </div>
             </details>
 
-            {/* Storyboard: 5-beat preview of Alice's full arc so visitors see what they're signing up for */}
+            <button
+              onClick={() => setCurrentStep("simulation")}
+              className="w-full bg-gradient-to-r from-sky-500 to-purple-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-sky-600 hover:to-purple-700 transition-all text-lg"
+            >
+              Start the 5-act Walkthrough &rarr;
+            </button>
+
+            <p className="text-center text-sm text-gray-500">
+              Step 1 of 5 · Walkthrough · Story · Concepts · Next Steps
+              <span className="block mt-1 text-xs">You can pause, scrub, replay, and skip ahead. Nothing is saved and there&apos;s no account - you&apos;re following a guided walkthrough of the proposed model, not using a product.</span>
+            </p>
+
+            {/* Storyboard: 5-beat map of Alice's full arc.
+                It used to read "a preview ... so visitors see what they're signing up for", and it
+                used to render immediately ABOVE the Start button. Aug-19 visitor MEDIUM 5 is that
+                those two facts fight: "The five-act preview prints Act 5's outcome (dies at ATP 0,
+                +12 bonus, reborn at 0.54) before you press Start, spoiling the walkthrough it is
+                previewing", and, in the same log's assessment, "By the time I reached Start I had
+                already been told the ending ... Everything in front of the Start button should be
+                shorter and consistent with itself." Two halves: the SPOILER and the RUN-UP.
+
+                MOVED BELOW THE BUTTON, intact. Read the next four paragraphs before undoing this,
+                because the three cheaper-looking fixes are all closed and the reasons are not
+                obvious.
+
+                (1) The visitor's own suggestion, "show act titles and the arc shape without the
+                terminal numbers", is CHIP-LEVEL and fenced. Every Act-5 chip was placed by an
+                explicit earlier visitor request: "+12 bonus -> 112" (Aug-09 HIGH x2), "reborn at
+                0.54" (Aug-13), "trust 0.51" folded into the death chip (Aug-14). Three visitors
+                asked for these numbers and a fourth asks to remove them; the guards on the chips
+                below record what each one closed. Do not strip them
+                ([[visitor-suggestion-may-be-unfalsifiable]]: the reading is right, the suggestion
+                is not the remedy).
+
+                (2) FOLDING this container into a <details> is closed, and this is the one that
+                looks safest and is not. The "Suspended, not deleted" paragraph below the grid
+                carries an Aug-08 guard whose load-bearing sentence is "It is NOT behind anything -
+                this is a static <p>": that visitor filed the defusal as being behind a spoiler
+                widget when it was not, and the fix was the LABEL. Folding makes their complaint
+                true. The Jun-12 guard above the same paragraph records that the death/karma
+                explanation once lived only in <noscript> and behind the step gate, and that "one
+                static sentence closes it" for skimmers; a fold takes that back.
+
+                (3) Folding only the CARD GRID and leaving the two paragraphs static is closed by
+                deixis. Both paragraphs point INTO the grid ("The +12 bonus is karma", "About that
+                number"), so a grid-only fold orphans them, and re-pointing them is not available:
+                the "standing is suspended" string is quoted by /how-it-works as this page's
+                canonical wording, and the "About that number" fence is deliberately divergent from
+                /how-it-works's EndOfLifeCaveat per its own guard. Both are out of bounds to reword
+                ([[disclosure-both-halves-same-layer]]).
+
+                So the container-level options were fold or move, and a MOVE is the one that
+                changes only ORDER. A position move is not a new claim
+                ([[a-fence-on-content-does-not-fence-placement]]; precedent #557, #562), so not one
+                of the eight content fences inside this block is re-opened, and nothing loses a
+                surface: this rail still renders on the WELCOME step (the gate is
+                `currentStep === "welcome"`), so every chip is still reachable without pressing
+                Start. What it costs is prominence, which is what the row asks for.
+
+                THE BLOCK'S ROLE CHANGED, which is why the old purpose line is gone. It is no
+                longer a preview you are shown before deciding; it is a map you can consult if you
+                would rather read the shape than drive it. That is also why the header now warns
+                that it contains the ending: a move alone only RE-ORDERS a spoiler, it does not
+                warn anyone, and a reader who keeps scrolling meets Act 5 with no notice at all.
+                The warning line's shape is propagated from the four-ideas <summary> directly above
+                the button ("Open for a preview, or skip straight to Start and come back"), the
+                pattern this page already uses for an optional block.
+                It prints NO numeral and makes NO claim about 0.50 in either direction, so ledger
+                Q1 is untouched by construction.
+                POSITION WORDS in the guards inside this block were swept in the same pass; two
+                were falsified by the move and re-said in STEP terms: the Aug-19 HIGH #1 guard on
+                the energy-budget bullet ("four screens down") and the Aug-14 guard on the Act-5
+                chips ("behind the walkthrough button"). Both now say WELCOME step vs SIMULATION
+                step, which a reorder cannot falsify. If you move this block again, sweep them again. */}
             <div className="bg-gradient-to-br from-sky-950/30 to-purple-950/30 border border-sky-800/30 rounded-xl p-6">
-              <div className="flex items-baseline justify-between mb-4 flex-wrap gap-2">
+              <div className="flex items-baseline justify-between mb-2 flex-wrap gap-2">
                 <div className="text-sm text-sky-400 font-semibold">Alice&apos;s Arc - The Story Ahead</div>
                 <div className="text-xs text-gray-500">5 acts · ~7 minutes · real consequences</div>
               </div>
+              <p className="text-xs text-amber-300/70 mb-4 leading-relaxed">
+                This map includes how her story ends. Skip it and press Start above if you would
+                rather find out by driving.
+              </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-5 gap-2 mb-4">
                 {/* Act 1: Join */}
@@ -596,9 +694,15 @@ export default function FirstContactPage() {
                       0.51 is NOT a new figure either: `simulationSnapshots` tick 13
                       `trust_after`, and it already rendered twice, in "Trust fell from 0.62 to
                       0.51" and in the load-bearing "Alice got lucky. Her trust was still 0.51
-                      when ATP ran out" box. Both are POST-Start (grep -n "0\.51"), i.e. behind
-                      the walkthrough button, and this rail is pre-Start. That pre-vs-post-Start
-                      test is also why Act 3's bare "0.48" was left alone in the same pass: its
+                      when ATP ran out" box. Both are POST-Start (grep -n "0\.51"), i.e. they
+                      render only on the SIMULATION step, and this rail is on the welcome step.
+                      The test is the STEP, not the document order: Aug-20 moved this rail
+                      below the Start button and it is still pre-Start, because it is still inside
+                      `currentStep === "welcome"` and a reader reaches it without pressing
+                      anything. Do not re-say this test as "above/below the button"; that phrasing
+                      was falsified by one reorder and would be again.
+                      That pre-vs-post-Start test is also why Act 3's bare "0.48" was left alone
+                      in the same pass: its
                       meaning ships pre-Start and ABOVE this rail, in the Trust Score bullet
                       ("Below 0.50: features get restricted until she rebuilds it"). 0.51's did
                       not ship anywhere a reader of this rail could reach.
@@ -748,18 +852,6 @@ export default function FirstContactPage() {
                 You control the pace. At every turning point the system pauses to explain <em>why</em> it worked that way, and you see every trust/ATP change the moment it happens.
               </p>
             </div>
-
-            <button
-              onClick={() => setCurrentStep("simulation")}
-              className="w-full bg-gradient-to-r from-sky-500 to-purple-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-sky-600 hover:to-purple-700 transition-all text-lg"
-            >
-              Start the 5-act Walkthrough &rarr;
-            </button>
-
-            <p className="text-center text-sm text-gray-500">
-              Step 1 of 5 · Walkthrough · Story · Concepts · Next Steps
-              <span className="block mt-1 text-xs">You can pause, scrub, replay, and skip ahead. Nothing is saved and there&apos;s no account - you&apos;re following a guided walkthrough of the proposed model, not using a product.</span>
-            </p>
           </div>
         )}
 

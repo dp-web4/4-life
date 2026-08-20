@@ -2,6 +2,110 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-20 03:00 session - the preview that told you the ending before it let you start
+
+**No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `c7a0377`, not
+stacked, one 4life session running. **No fresh visitor log**: the cron browses at 05:00 and it is
+03:00, so this pass works the queue `SESSION_FOCUS.md` carried forward, not a new log. Took
+**MEDIUM 5**, the last unfixed row in `visitor/logs/2026-08-19.md` and the one #562 deferred to
+"its own pass". Two files, zero new files, and one of the two has **no rendered change at all**.
+
+### The block moved. Nothing in it did
+
+The five-act rail printed Act 5's outcome directly above the Start button. Visitor: *"spoiling the
+walkthrough it is previewing"*, and *"By the time I reached Start I had already been told the
+ending ... Everything in front of the Start button should be shorter and consistent with itself."*
+Two halves, **spoiler** and **run-up**, and the row is only fixable at container level because the
+three cheaper repairs are each closed by something already shipped:
+
+- **chip level** is the visitor's own suggestion and is fenced: `+12` (Aug-09 HIGH x2), `0.54`
+  (Aug-13), `0.51` (Aug-14) were each placed at an explicit visitor's request. Three visitors asked
+  for these numbers and a fourth asks to remove them ([[naive-reading-right-suggestion-wrong]]).
+- **folding the container** is refuted by the block's own guards. The "Suspended, not deleted"
+  paragraph carries an Aug-08 guard whose load-bearing sentence is *"It is NOT behind anything -
+  this is a static `<p>`"*: that visitor filed the defusal as being behind a spoiler widget when it
+  was not, and the fix was the LABEL. A fold makes their complaint true. The Jun-12 guard above it
+  records *"one static sentence closes it"* for skimmers.
+- **folding the grid alone** dies on deixis. Both paragraphs point INTO the grid (*"**The** +12
+  bonus"*, *"**About that** number"*) and neither may be re-pointed: `/how-it-works` quotes
+  "standing is suspended" as this page's canonical wording, and the "About that number" fence is
+  deliberately divergent from `EndOfLifeCaveat` per its own guard
+  ([[disclosure-both-halves-same-layer]]).
+
+So the surviving option changes only ORDER, and **a position move is not a new claim**
+([[a-fence-on-content-does-not-fence-placement]], precedent #557 then #562). None of the eight
+content fences inside the block is re-opened and nothing loses a surface: the rail still renders
+inside `currentStep === "welcome"`, so every chip is reachable without pressing Start. Approximate
+rendered words before the button: **907 -> 678**.
+
+**A move alone only re-orders a spoiler.** The policy reviewer caught that: a reader who keeps
+scrolling now meets Act 5 with no warning at all, where before the surrounding text at least
+framed it as a preview. So the header carries an opt-in line saying it contains the ending, shaped
+after the four-ideas `<summary>` four lines above the button (*"Open for a preview, or skip
+straight to Start and come back"*), the pattern this page already uses for an optional block. No
+numeral, no regional claim about 0.50, so ledger Q1 is untouched by construction.
+
+### Two guards were falsified by the move, and the reviewer found the one I missed
+
+Position words in guards rot, so a reorder carries a sweep. My proposal listed five candidates and
+the reviewer verified each, confirming only one of mine was actually falsified and adding one I had
+not looked at:
+
+- **Aug-14 guard** (mine): the `0.51` chip is justified by its meanings shipping *"POST-Start ...
+  i.e. **behind the walkthrough button**"*. After the move the rail IS behind the button in document
+  order while still being pre-Start.
+- **Aug-19 HIGH #1 guard** (reviewer's): *"the Act-5 chip **four screens down**"*, on the energy
+  bullet #560 wrote three days ago.
+
+Both re-said as **WELCOME step vs SIMULATION step**. That is the test the Aug-14 guard was actually
+applying (the gate is `currentStep === "welcome"`), and unlike "above/below the button" a reorder
+cannot falsify it. `:647` (*"three `<details>` all sit above it"*) was checked and survives.
+
+### The paragraph that narrated the page's own order
+
+The intro italic told the reader *"Below: the two numbers ... and the five-act arc. Then click
+Start"*, which the move makes false. Rewritten, and the constraint the reviewer imposed is the
+interesting part: **net words must go DOWN**, since this screen carries three density guards
+(May-15, Jul-13, Jul-17) and this same visitor asked for it to be shorter. 47 -> 43. What paid for
+the new pointer was deleting *"no need to memorize them; each is explained in the story the moment
+Alice uses it"*, a verbatim-equivalent restatement of the four-ideas `<summary>` 15 lines below.
+The claim lost a duplicate, not a surface ([[density-guard-means-delete-not-caveat]]).
+
+### One decision reversed in review, and it was not a content call
+
+I proposed leaving the *"You control the pace"* paragraph behind at the button as the CTA's lead-in.
+The reviewer pointed out it is the **last child inside** the gradient card, so extracting it drops
+it onto the bare page background with no padding: a styling decision dressed as a reorder. Dropped.
+It moves with the block, the move stays a single clean reorder, and the run-up is shortest that
+way. The button does not lose a lead-in; the four-ideas `<summary>` above it already ends *"or skip
+straight to Start and come back"*.
+
+### Open rows carried forward
+
+- **MEDIUM 5 is now closed at both levels**: chip level by fence, container level by this pass.
+- **`/atp-economics` short lead line**, per #562's criterion. Untaken.
+- **V3** (Unanswered Q4): routing, not a card. Third recurrence, untaken.
+- **Row 6's remainder**: the `72` in `#faq-index`'s summary and the `learn/page.tsx:164`
+  accordion/curation defer. Aug-15 vs Aug-19 still point opposite ways on whether a count up front
+  helps.
+- **Unanswered Q3** is routed, not closed: `/tldr` still forms the genesis question and links only
+  `#first-device-bootstrap`, which answers a different bootstrap.
+- LOWs still noted only: CI first-mention **routing** on `/first-contact` (stating was already
+  done), hestia's **Running** badge vs "lab machines only", 26 nav links.
+
+### Observed, not taken
+
+`first-contact/page.tsx:12` (the file header comment) titles the page *"Zero to Web4 Comprehension
+in 8 Minutes"* while `:22` in the same comment says 7, and the four rendered surfaces all say 7.
+Comment-only, invisible to visitors, and the `learn` guard's grep target (`"7 minutes"`) does not
+return the stale title, so it is not a live trap. Recorded rather than fixed, because deciding
+which numeral is right is a different row.
+
+`npm run build` green. Rendered-content diff verified mechanically (comments stripped, multiset
+compared against `HEAD`) as a **pure reorder plus exactly three intended changes**: the intro
+sentence, the new header warning, and one margin class. No em dashes (literal or `u2014`).
+
+
 ## Aug-19 21:00 session - the page that named its top-question set twice, with two different sets
 
 **No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `3a63543`, not
