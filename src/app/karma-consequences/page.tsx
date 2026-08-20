@@ -51,7 +51,7 @@ interface AgentHistory {
   endTrust: number;
   startAtp: number;
   endAtp: number;
-  behavior: 'quality' | 'spam' | 'mixed';
+  behavior: 'quality' | 'overspent' | 'mixed';
   deathCause: 'atp_exhaustion' | 'trust_collapse' | 'natural' | 'alive';
   karmaScore: number;
   events: string[];
@@ -96,28 +96,88 @@ interface SimulationTick {
 // Core Data
 // ============================================================================
 
+/* AUG-20 visitor HIGH #2: "the illustration refutes the prose." Life 1 ended at endTrust 0.35 and
+   was reborn; Life 2 ended at 0.42 and was reborn again. The gate this page routes to is
+   /how-it-works#journey (the card whose grep target is "Society doesn't want you back"), so the
+   page's flagship karma example was the one its own rules forbid, twice. #564 had just made that
+   rule correct on four surfaces the day before; this demo was the surface still contradicting it.
+
+   WHY THE FAILURE MODE CHANGED AND NOT JUST THE NUMBERS. Life 1 is a fresh identity, so it starts
+   at 0.50 site-wide. Any life ending eligible must end at or above where it started, and a spam
+   campaign that leaves trust intact is not credible. It would also contradict this page's own
+   side-by-side simulation, where the spammer runs 0.50 -> 0.20 and is never reborn. That demo is
+   UNTOUCHED, deliberately: /how-it-works guards its -40/-35 figures (grep -n "bad actor" there),
+   and adding a permanent-death conclusion to it would be the Q14 move, not the fix. The visitor's
+   own second option was to "make Life 1 a different failure mode". The replacement is licensed by
+   this page's own Negative Karma Sources entry, "Premature death - ATP exhaustion indicates poor
+   resource management", which is also what scores the -15 on a life whose trust rose.
+
+   EVERY FIGURE IS NOW DERIVED FROM A FORMULA THIS PAGE PRINTS (grep "next_life_atp"):
+     next_life_atp   = 100 + karma * 2   -> Life 2's 70 = 100 + (-15*2); Life 3's 84 = 100 + (-8*2)
+     next_life_trust = prev_trust * 0.95 -> Life 2's 0.61 = 0.64*0.95; Life 3's 0.63 = 0.66*0.95
+   Life 3's startAtp used to be 60, which neither the last life's karma (-8 -> 84) nor the
+   cumulative (-23 -> 54) produces. And the decay factor was demonstrated exactly once, by
+   accident. RE-DERIVE BEFORE TRUSTING ANY SUMMARY OF THIS: the previous session's written sizing
+   had it inverted, calling the old Life 3 (0.40, which is 0.42*0.95 rounded to 2dp) the broken
+   handoff. The broken one was Life 2's 0.35, an exact carry whose inheritance note stated the
+   exact carry in words.
+
+   FOUR FENCES, AND WHAT EACH FORBADE HERE.
+   Q1 + this file's own SCOPE GUARD at the top: no comparator, no threshold, no "above the line",
+     nothing at-0.50. The reasoning that these values sit clear of the gate lives in this comment
+     and is never rendered. The new values (0.61/0.63/0.64/0.66/0.73) are zero-hit site-wide, so
+     none of them collides with /first-contact's Alice arc.
+   Q14: nothing rendered explains WHY this agent is eligible. Removing a contradiction is not
+     asserting that the two gates read the same number.
+   Q13: both exhaustions had to read as a spending CHOICE, not as the ambient economics of an
+     un-commissioned newcomer. An illustration in which a well-behaved participant inevitably
+     starves answers Q13's open half in the pessimistic direction as surely as a survival
+     guarantee answers it in the optimistic one, and this visitor filed exactly that as their
+     Unanswered Q4. Hence "scaling spend faster than confirmations came back", "committed to a
+     second self-funded push anyway", and Life 3's counterfactual "work sized to the budget this
+     time". No rate, no floor, no monotonic-decrease claim.
+   Q5: the 100 + karma*2 model stays one branch of three. No figure moves to or from
+     /how-it-works, and the subtitle routes to #karma-formula so the "One model, not the rule"
+     caveat reaches the reader BEFORE the arithmetic does. That routing matters because this demo
+     is the FIRST section on the page: the corrected death rule and the caveat both render four
+     sections below it, so even the bare shorthand back-reference the Aug-20 class guard licenses
+     (grep -n "AUG-20 visitor HIGH #1" src/app/how-it-works/page.tsx) would be unlicensed at this
+     position. The subtitle therefore restates no condition at all. It makes a claim about KARMA's
+     scope and routes the rest.
+
+   THE EMERALD END TRUST IS DELIBERATE, NOT A RENDERING BUG. The stat colours End Trust green when
+   it exceeds Start Trust, so Life 1 now renders green trust beside a red End ATP, red karma and a
+   red "ATP Exhaustion" outcome. That is the lesson #564 established, rendered instead of
+   asserted: which death fired does not decide whether you come back. The events name both axes so
+   the contrast reads as designed.
+
+   NOT FIXED BY CAPTION. /atp-economics's demo guard (grep -n "Do not paper over it with a
+   caption" there) forbids exactly that move for the sibling demo, and /how-it-works's
+   EndOfLifeCaveat escape ("none of these lives ends at 0 ATP") is unavailable here because two of
+   these three do. /learn's karma teaser carries no demo numeral and no "spam campaign", so the
+   summary-layer obligation is discharged by ABSENCE, not skipped. */
 const AGENT_LIVES: AgentHistory[] = [
   {
     life: 1,
     startTrust: 0.5,
-    endTrust: 0.35,
+    endTrust: 0.64,
     startAtp: 100,
     endAtp: 0,
-    behavior: 'spam',
+    behavior: 'overspent',
     deathCause: 'atp_exhaustion',
     karmaScore: -15,
     events: [
-      'Started with neutral trust (0.5) and full ATP (100)',
-      'Spam campaign: sent 50 low-effort messages',
-      'Trust dropped rapidly as community rejected spam',
-      'ATP burned 3x faster than earned from any engagement',
-      'Exhausted ATP - unable to act - "died" in society'
+      'Started with neutral trust (0.50) and full ATP (100)',
+      'Went all-in on one self-funded launch, scaling spend faster than confirmations came back',
+      'The work itself was good: trust climbed from 0.50 to 0.64 over the life',
+      'No pacing and no reserve - each confirmation landed after the money was already committed',
+      'ATP hit zero, so it could not act and the life ended. Poor resource management, not a bad reputation'
     ]
   },
   {
     life: 2,
-    startTrust: 0.35,
-    endTrust: 0.42,
+    startTrust: 0.61,
+    endTrust: 0.66,
     startAtp: 70,
     endAtp: 0,
     behavior: 'mixed',
@@ -125,27 +185,27 @@ const AGENT_LIVES: AgentHistory[] = [
     karmaScore: -8,
     events: [
       'Reborn with karma penalty: only 70 ATP (not 100)',
-      'Started with damaged trust (0.35) from previous life',
-      'Tried quality content but community skeptical',
-      'Upvotes discounted by low trust multiplier',
-      'Couldn\'t earn ATP fast enough, exhausted again'
+      'Trust carried forward with the 5% decay: 0.64 became 0.61',
+      'Committed to a second self-funded push anyway, on 30% less runway',
+      'The work landed and trust kept climbing to 0.66, but the spending outran it again',
+      'Ran the balance to zero a second time: same choice, smaller budget'
     ]
   },
   {
     life: 3,
-    startTrust: 0.40,
-    endTrust: 0.58,
-    startAtp: 60,
+    startTrust: 0.63,
+    endTrust: 0.73,
+    startAtp: 84,
     endAtp: 45,
     behavior: 'quality',
     deathCause: 'alive',
     karmaScore: 5,
     events: [
-      'Third chance: even lower starting ATP (60)',
-      'Committed to quality-only strategy',
-      'Slow trust recovery - took 10x effort vs new account',
+      'Third start: 84 ATP, because karma improved from -15 to -8 and the handicap shrank',
+      'Trust carried forward at 95% again: 0.66 became 0.63',
+      'Work sized to the budget this time, one commitment at a time',
       'Finally built positive karma through consistency',
-      'Now sustainable, but permanently marked by early choices'
+      'Still alive, with 45 ATP in hand, and permanently marked by the early choices'
     ]
   }
 ];
@@ -220,7 +280,7 @@ function MultiLifeSimulator() {
   const life = AGENT_LIVES[currentLife];
 
   const colorMap = {
-    spam: 'border-red-700 bg-red-900/20',
+    overspent: 'border-red-700 bg-red-900/20',
     mixed: 'border-yellow-700 bg-yellow-900/20',
     quality: 'border-emerald-700 bg-emerald-900/20',
   };
@@ -245,7 +305,12 @@ function MultiLifeSimulator() {
         Interactive: One Agent, Three Lives
       </h3>
       <p className="text-sm text-gray-400 mb-6">
-        Watch how karma carries forward. Bad choices in Life 1 haunt Lives 2 and 3.
+        Watch how karma carries forward. Bad choices in Life 1 haunt Lives 2 and 3:{' '}
+        <a href="#karma-formula" className="text-sky-400 hover:underline">karma</a> decides what
+        each next life starts with, not whether there is one.{' '}
+        <Link href="/how-it-works#journey" className="text-sky-400 hover:underline">
+          What decides that &rarr;
+        </Link>
       </p>
 
       {/* Life selector */}
@@ -261,11 +326,11 @@ function MultiLifeSimulator() {
             }`}
           >
             <div className="text-2xl mb-1">
-              {l.behavior === 'quality' ? '✨' : l.behavior === 'spam' ? '💀' : '⚖️'}
+              {l.behavior === 'quality' ? '✨' : l.behavior === 'overspent' ? '💀' : '⚖️'}
             </div>
             <div className="font-semibold text-white">Life {l.life}</div>
             <div className="text-xs text-gray-400">
-              {l.behavior === 'quality' ? 'Quality' : l.behavior === 'spam' ? 'Spam' : 'Mixed'}
+              {l.behavior === 'quality' ? 'Quality' : l.behavior === 'overspent' ? 'Overspent' : 'Mixed'}
             </div>
           </button>
         ))}
@@ -326,8 +391,8 @@ function MultiLifeSimulator() {
           <div className="mt-4 p-3 bg-gray-900/50 rounded border border-gray-700">
             <p className="text-xs text-gray-400">
               <strong className="text-yellow-400">Karma inheritance:</strong>{' '}
-              {currentLife === 1 && 'Started with only 70 ATP (not 100) due to -15 karma from Life 1. Trust also carried forward at 0.35.'}
-              {currentLife === 2 && 'Started with only 60 ATP due to continued negative karma. Previous lives\' reputations still affect community perception.'}
+              {currentLife === 1 && 'Started with only 70 ATP (not 100) due to -15 karma from Life 1. Trust carried across at 95%, so 0.64 became 0.61.'}
+              {currentLife === 2 && 'Started with 84 ATP: karma improved to -8, so the penalty shrank rather than deepened. Still short of a full 100. Trust carried across at 95% again: 0.66 became 0.63.'}
             </p>
           </div>
         )}
@@ -337,12 +402,13 @@ function MultiLifeSimulator() {
       <div className="mt-6 p-4 bg-purple-900/20 border border-purple-800/50 rounded-lg">
         <h4 className="font-semibold text-purple-400 mb-2">The Key Insight</h4>
         <p className="text-sm text-gray-300">
-          In traditional platforms, this agent would have just created a new account after Life 1,
-          for free. In Web4 this agent&apos;s karma follows it, because{' '}
+          In traditional platforms a bankrupt account is a throwaway: register again and the
+          balance is back to full. In Web4 the handicap follows this agent, because{' '}
           <strong className="text-white">its identity is anchored in hardware</strong> and the only
           clean slate is a device it does not have. It took{' '}
-          <strong className="text-white">three lives</strong> to recover from one spam campaign, and
-          recovery required genuine behavior change, not just waiting.
+          <strong className="text-white">three lives</strong> to reach one this agent could sustain,
+          and the handicap moved only as the record improved: 100 ATP, then 70, then 84. What
+          follows you here is not a punishment, it is your own track record priced in.
         </p>
         <p className="text-xs text-amber-400/80 mt-2">
           That holds for a hardware-anchored agent. An identity anchored in software alone has no
@@ -633,7 +699,12 @@ function SideBySideComparison() {
    with an ATP spending surplus; this block is where the site says what karma is actually scored
    from. The reader lands on the sources grid, which is the supported half. The inheritance formula
    further down is a THIRD model of the carry-forward amount (ledger Q5, unruled) and must not be
-   restated on /how-it-works. */
+   restated on /how-it-works.
+   Aug-20: SECOND inbound demand, and this one is same-page. The Multi-Life demo's subtitle (grep
+   "not whether there is one") routes here on the word "karma", because that demo is the FIRST
+   section on the page and its karma arithmetic would otherwise read as settled four sections
+   before the "One model, not the rule" caveat reaches the reader. If both demands ever go, this
+   id goes with them. */
 function KarmaFormula() {
   return (
     <div id="karma-formula" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 scroll-mt-24">
