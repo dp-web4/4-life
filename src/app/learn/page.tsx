@@ -173,8 +173,13 @@ export default function LearnJourney() {
           link: "/first-contact",
           // Jul-30 visitor LOW: "/first-contact says '7 minutes' where /learn budgets 5."
           // This card was the 5. /first-contact OWNS its own read time and states 7 on four
-          // surfaces (first-contact:220 "In the next 7 minutes", :335 "5 acts - ~7 minutes",
-          // and layout.tsx:6 / :10, both metadata). This card carried the 5 with no rationale
+          // surfaces: grep -n "7 minutes" src/app/first-contact/ returns the rendered intro
+          // ("In the next 7 minutes"), the arc header ("5 acts - ~7 minutes"), the file header
+          // comment, and layout.tsx's metadata. (Aug-20: cited by line until now, and both line
+          // numbers had already rotted, one of them twice, because the arc header moves whenever
+          // that page reorders its pre-Start blocks. Named, not numbered
+          // ([[guard-comment-cites-rot-name-the-target]]) - do not put line numbers back.)
+          // This card carried the 5 with no rationale
           // of any kind, in contrast to the why-web4 card above whose 6 is defended at length.
           // Count reasons, not surfaces: the index moves, the owning page does not.
           // NOT measured. The Jul-30 visitor's own dwell on /first-contact was 13:30 to 19:00,
