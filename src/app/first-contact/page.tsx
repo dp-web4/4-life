@@ -1115,6 +1115,68 @@ export default function FirstContactPage() {
                   <span>Rebirth</span>
                 </div>
               </div>
+
+              {/* Aug-21 visitor HIGH 3. The visitor took /how-it-works at its word ("Same rules,
+                  same numbers you can drive yourself in First Contact"), went and did the
+                  arithmetic, and found the trust column does not obey the update rule that page
+                  publishes. They are right. base_delta = 0.02 x (quality - 0.5), scaled 1.0 / 0.8 /
+                  0.6 and composited 0.4 / 0.3 / 0.3, moves a SINGLE action's composite by a
+                  fraction of what any tick here shows; /how-it-works works that case itself at
+                  quality 0.85 and calls the result "Tiny by design". The ticks move by multiples
+                  of it.
+
+                  WHY THE FIX IS A DISCLOSURE AND NOT A RENUMBERING. Every trust value in
+                  simulationSnapshots is load-bearing three ways over: the narrative Acts below
+                  quote them in prose, the Act 5 rail chips them, and src/components/LifecycleDemo
+                  samples seven of them verbatim (its guard says so: grep -n "Same Alice" there).
+                  Renumbering to satisfy the rule would break all three and would still have to
+                  invent a per-tick action count to do it ([[illustration-story-forbids-the-numeric-fix]]).
+
+                  WHY NO BATCH SIZE IS NAMED, and read this before "improving" it. The tempting
+                  reason is the visitor's own: 25 ATP at a 10-20 ATP post price buys two posts, not
+                  the ten a -0.08 move would need. That reason is WRONG and shipping it would
+                  commit an error the link target explicitly forbids. /how-it-works prices three
+                  different spam-shaped actions and warns against aligning them (grep -n
+                  "THE UNIT IS THE THING" there); Alice's 25 is listed there as a BATCH, a single
+                  priced unit from public/spec.json risky_spend, naming this walkthrough and the
+                  LifecycleDemo stage that samples it. A batch is not N posts. The true reason is
+                  simpler: the site prices a batch as one unit and states NOWHERE how many actions
+                  a batch contains. The size is unstated, not unaffordable. So this declines to
+                  name one, which is the discipline /how-it-works already models under its
+                  three-life example ("rather than invent a third cause to justify these figures,
+                  this page declines to name one") and which this same visitor called the site's
+                  best property.
+
+                  WORDING CONSTRAINTS. No numeral is printed here on purpose, in particular not the
+                  derived per-action ceiling: it is a derivation, not a published figure, and a
+                  numeral here would immediately become a fourth thing to keep in sync. And do not
+                  write "more than the rule allows" or any other permission verb. That asserts the
+                  per-action rule is EXHAUSTIVE of trust movement, which this site denies elsewhere:
+                  /karma-consequences moves trust at rebirth by a different mechanism, and trust
+                  also fades over absence. Compare magnitudes for the single-action case and stop.
+
+                  ANCHOR CHOICE, and why it is not the obvious one. The rule itself has no id: it
+                  renders inside a COLLAPSED details fold headed "How did the Novice's T3 climb from
+                  0.5 to 0.65?", which is why a reader can browse that whole page and never meet it
+                  ([[visitor-quoted-number-find-the-surface]]). The nearest real id is the section
+                  around it, #example, so the link routes there and the sentence names the fold by
+                  its heading rather than pretending the destination is the rule itself. Minting an
+                  id on the fold would have been cleaner and was deliberately NOT done: this pass's
+                  approved deliverable set excludes how-it-works/page.tsx, and a demand-driven
+                  anchor is its own filing. If a later pass adds one, this is the inbound link that
+                  asked for it. */}
+              <p className="text-xs text-gray-500 leading-relaxed border-t border-gray-800 pt-3">
+                <strong className="text-gray-400">About these per-event figures:</strong> they are
+                illustrative. A single action moves composite trust far less than any event here
+                shows, as the{" "}
+                <Link href="/how-it-works#example" className="text-sky-500 hover:underline">
+                  How It Works complete example
+                </Link>{" "}
+                works out step by step, under the fold headed &ldquo;How did the Novice&apos;s T3
+                climb?&rdquo;. How many actions one event stands for is not stated anywhere
+                on this site, and rather than invent a number, this walkthrough declines to name one.
+                Read the arc for its shape, not its arithmetic.
+              </p>
             </div>
 
             <button
@@ -1184,11 +1246,27 @@ export default function FirstContactPage() {
                   Alice learned the lesson. She shifted back to quality contributions - thoughtful replies, valuable posts,
                   genuine collaboration. Trust climbed back above 0.5, restrictions lifted.
                 </p>
-                <p className="text-gray-300 leading-relaxed mb-4">
-                  The collaboration was particularly effective: working with an already-trusted member gave her a significant
-                  trust boost (+0.05). <strong className="text-white">Trust networks matter</strong> - who you work with affects
-                  how the community perceives you.
-                </p>
+                {/* Aug-21 visitor HIGH 3, second prong. A paragraph here read "The collaboration
+                    was particularly effective: working with an already-trusted member gave her a
+                    significant trust boost (+0.05). Trust networks matter - who you work with
+                    affects how the community perceives you." DELETED, not caveated.
+                    The +0.05 magnitude is covered by the scale disclosure on the simulation panel
+                    above (grep -n "About these per-event figures" in this file). This paragraph was
+                    a separate and worse defect: it asserted a MECHANISM, a trust multiplier for
+                    working with an already-trusted counterparty, and no such rule exists anywhere
+                    on this site or in the canon this track may cite. A magnitude disclosure does
+                    not cover an invented cause ([[fix-may-commit-the-defect-it-diagnoses]]).
+                    Deletion rather than rewording follows this file's own stated precedent at the
+                    0.50 endpoint guard (grep -n "DELETED, not rewritten"): removing a prohibited
+                    assertion is not asserting its negation.
+                    CRITERION FOR WHAT IS LEFT. The tick reason in simulationSnapshots ("Working
+                    with trusted member: costs 7 ATP, significant trust gain") names an action and
+                    its cost, which the disclosure covers. This paragraph named a rule, which the
+                    disclosure does not. Do not go looking in ../web4 for a collaboration
+                    multiplier to ground it: its absence there is a new escalation, not a licence
+                    to restore this. The neighbouring "Trust networks matter" phrasing has no other
+                    hit site-wide; the other "trust network" hits are MRH visibility claims, a
+                    different subject, and are untouched. */}
                 <p className="text-gray-300 leading-relaxed">
                   By the end, Alice had <strong className="text-green-400">80 ATP</strong> (sustainable) and
                   <strong className="text-green-400"> 0.62 trust</strong> (well above threshold). She's now an established
@@ -1228,6 +1306,33 @@ export default function FirstContactPage() {
                   entitled her to rebirth with advantages. She started her new life with <strong className="text-emerald-400">112 ATP</strong> (in
                   this walkthrough a life starts with 100, but the trust she built carried forward as a 12 ATP karma bonus)
                   and <strong className="text-emerald-400">0.54 trust</strong> (above the 0.50 neutral starting point, reflecting her proven track record).
+                </p>
+                {/* Aug-21 visitor HIGH 2. Their Unanswered Question 1 was "what actually happens to
+                    my trust score when I die and come back? The site tells me twice, in opposite
+                    directions, and fences neither." /karma-consequences publishes
+                    next_life_trust = prev_trust * trust_decay_factor with 0.95, i.e. trust FALLS at
+                    rebirth; this walkthrough has it not fall. That page's fence was extended in the
+                    same pass to cover its trust line; this is the other side, so the reader meeting
+                    the divergence here learns it is open rather than meeting one direction stated
+                    flatly.
+                    WHAT THIS MAY NOT SAY. The visitor's argument was that 0.51 * 0.95 = 0.4845 puts
+                    the rebirth below the line this walkthrough says made it possible. Correct, and
+                    deliberately not rendered. Two separate guards forbid it: ledger Q1 bars any
+                    regional claim about 0.50 in either direction, and this file's Act 5 rail guard
+                    (grep -n "do not state any arithmetic relating 0.51 to 0.54") bars the
+                    derivation. So this names the disagreement and routes, and prints no product,
+                    no comparator and no second figure. It also does NOT resolve which page is
+                    right: that is ledger Q5 and not this track's call.
+                    The sentence above is untouched. "above the 0.50 neutral starting point" is a
+                    pre-existing regional claim that predates this pass and sits under the endpoint
+                    escalation; re-opening it needs its own filing, not a drive-by. */}
+                <p className="text-xs text-gray-500 leading-relaxed mb-4 border-l-2 border-gray-700 pl-3">
+                  How much trust carries into a next life is <strong className="text-gray-400">not settled</strong>.{" "}
+                  <Link href="/karma-consequences#karma-formula" className="text-sky-500 hover:underline">
+                    The karma page
+                  </Link>{" "}
+                  models it as falling at each rebirth, which is not what happens here. Both are
+                  models, and the site does not claim to know which one a real society would run.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
                   Armed with experience, Alice paced herself. Focused quality over volume. By her second quality
@@ -1287,7 +1392,29 @@ export default function FirstContactPage() {
                   <div>
                     <p className="text-sky-400 font-medium mb-2">Web4 trust:</p>
                     <ul className="space-y-1 text-gray-300">
-                      <li>Trust is multi-dimensional (skill, reliability, temperament)</li>
+                      {/* Aug-21 visitor HIGH 1: this bullet read "(skill, reliability,
+                          temperament)". Two defects in three words. It drops TRAINING, and
+                          "reliability" is Temperament's own gloss (grep -n "Temperament (reliability)"
+                          src/app/glossary/page.tsx), so the list named one dimension twice and
+                          another not at all. Wording is propagated verbatim from this page's own
+                          concept card, NOT re-authored: grep -n "Shorthand: <strong>T3" in this
+                          file, which already reads "three dimensions: talent, training,
+                          temperament" in lowercase ([[propagate-the-sentence-not-your-summary]]).
+
+                          WHY EVERY PRIOR T3 SWEEP MISSED IT, and this is the reusable part.
+                          The string has ZERO hits in the served HTML for /first-contact. This
+                          bullet lives in the Act 5 branch of a client component and renders only
+                          after the visitor presses Start and steps through to the end, so a
+                          fetch-and-grep audit of the route cannot see it. Any future audit of T3
+                          wording has to RENDER the walkthrough, not grep the page
+                          ([[visitor-quoted-number-find-the-surface]]). The same caveat applies to
+                          every other literal in simulationSnapshots and in the Act panels.
+
+                          Scope note: the sibling bullet "New identity requires new hardware ($$$)"
+                          is in the same list and is NOT touched. "identity is hardware-bound" was
+                          closed as a live question in #525 and re-opening it here would be a new
+                          claim, not this fix. */}
+                      <li>Trust is multi-dimensional (talent, training, temperament)</li>
                       <li>Confirming quality costs energy - can&apos;t inflate for free</li>
                       <li>Trust follows you across communities</li>
                       <li>New identity requires new hardware ($$$)</li>

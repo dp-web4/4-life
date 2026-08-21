@@ -289,12 +289,35 @@ export default function LifecycleDemo() {
           />
         ))}
       </div>
+      {/* Aug-21 visitor HIGH 3. This line read "Same rules, same numbers you can drive yourself
+          in First Contact." The NUMBERS half is true and stays: the STAGES above are seven of
+          /first-contact's simulationSnapshots verbatim (see the Rebirth caption's guard, which
+          keeps them in sync deliberately). The RULES half is false, and it is the half that sent
+          this visitor to check. The stages move trust by multiples of what the canonical update
+          rule produces for a single action, and that rule is published further down this very
+          page (grep -n "base_delta" in src/app/how-it-works/page.tsx). So the demo was standing
+          under the rule it violates and vouching for a second surface as obeying it.
+
+          DELETED, not rewritten. No substitute clause is minted, on the precedent recorded in
+          src/app/first-contact/page.tsx at the 0.50 endpoint guard (grep -n "DELETED, not
+          rewritten" there): removing a false assertion is not asserting its negation. In
+          particular NOT "Same Alice", which is guard-comment phrasing meant for a future editor
+          and would be a category error as reader-facing prose.
+
+          The caveat below is not optional decoration. With "same rules" gone, it is the only
+          thing on this page that tells a reader the demo's deltas are illustrative, so it must
+          render in this block, immediately after the sentence it qualifies. A reader who meets
+          "the same numbers you can drive yourself" and only finds the caveat further down has
+          been told the wrong thing first. The fuller version of this disclosure, including why no
+          per-tick action count is named, lives at the sibling surface: grep -n "About these
+          per-event figures" in src/app/first-contact/page.tsx. Keep the two consistent; if one
+          is reworded, reword both. */}
       <p className="text-center text-[11px] text-gray-600 mt-2">
-        Same rules, same numbers you can drive yourself in{' '}
+        The same numbers you can drive yourself in{' '}
         <a href="/first-contact" className="text-sky-500 hover:underline">
           First Contact
         </a>
-        .
+        . Both are illustrative: a single action moves trust far less than the steps here show.
       </p>
     </div>
   );

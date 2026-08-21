@@ -2,6 +2,110 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-21 09:00 session - the walkthrough that vouched for rules it never obeyed
+
+**No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `794d329`, not
+stacked. All three Aug-20 PRs (#564, #565, #566) merged **before** the 05:12 browse, so nothing in
+today's log was already-fixed-post-browse; the log confirms it by praising #565's karma fence.
+Took **all three Aug-21 HIGHs plus MEDIUM 4**. Four files, zero new files.
+
+### The visitor named the theme, and it held
+
+*"The site's prose is far more careful than its illustrations. Every contradiction I found is a
+number or a label inside a demo."* All three HIGHs sit on `/first-contact`, the page the reading
+path sends newcomers to **third**, before they have any way to check it. This is
+[[prose-fixed-thrice-check-the-illustration]] at site scale.
+
+**HIGH 1** - an Act 5 bullet read *"Trust is multi-dimensional (skill, reliability, temperament)"*.
+It drops **Training** and lists Temperament's own glossary gloss ("reliability") beside Temperament.
+Fixed by propagating this page's own concept card verbatim (`grep -n "Shorthand: <strong>T3"`).
+The reusable part is **why every prior T3 sweep missed it**: the string has zero hits in the served
+HTML. It renders only in the client bundle after you press Start and step to Act 5. **A T3 wording
+audit has to render the walkthrough, not grep the route** ([[visitor-quoted-number-find-the-surface]]).
+
+**HIGH 2** - `/karma-consequences` publishes `next_life_trust = prev_trust * 0.95` (trust falls at
+rebirth); `/first-contact` has Alice reborn with trust not falling. Three careful fences guarded the
+ATP half of that same `<pre>` and none guarded the trust line beside it. The page's own Aug-06 guard
+had already recorded the gap in writing: *"the visitor filed the ATP half only. trust_decay_factor =
+0.95 above ... untouched and unfiled."* Today filed it. [[guard-may-protect-half-a-sentence]], and a
+scope note left in a guard is a **standing invitation** a later browse will accept. Fence extended
+to "both lines of it" plus a pointer each way. Neither figure reconciled: that is ledger Q5.
+
+**HIGH 3** - `/first-contact`'s ticks move trust +0.02 / +0.03 / +0.05 / -0.08, and the canonical
+rule the site publishes moves a single action by a fraction of that. `LifecycleDemo`, rendered on
+`/how-it-works` directly under that rule, vouched for the walkthrough: *"Same rules, same numbers
+you can drive yourself in First Contact."* Disclosure shipped on both surfaces; no number moved.
+
+### Two reviewer catches, both of which would have shipped the defect being diagnosed
+
+**I diagnosed HIGH 3 backwards.** I proposed deleting *"same numbers"* as the false half. It is the
+**true** half: `LifecycleDemo`'s STAGES are seven of `simulationSnapshots` verbatim and a guard keeps
+them in sync deliberately. The false clause is *"Same rules"*. My fix would have deleted the accurate
+clause and kept the inaccurate one.
+
+**My reason for declining a batch size was itself a unit conflation.** I had adopted the visitor's
+arithmetic (*"25 ATP at a 10-20 ATP post price buys two posts, not the ten a -0.08 needs"*) as the
+justification. `/how-it-works` carries a guard (`grep -n "THE UNIT IS THE THING"`) pricing three
+distinct spam-shaped actions and naming Alice's 25 as a **BATCH**, a single unit from
+`spec.json risky_spend`, explicitly not N posts, and closing *"do not align any of these to any
+other ... a unit conflation, not a price conflict."* Shipping my reason would have committed, inside
+a guard, the exact error the page I was linking to exists to forbid. The conclusion survived; the
+reason did not. **The true reason: a batch size is unstated, not unaffordable.**
+
+Both are [[fix-may-commit-the-defect-it-diagnoses]], twice in one session, and both were caught by
+checking the guard on the page the fix *links to*. Generalisable: **when your fix cites another
+page, read that page's guards before you write the citation.**
+
+### The visitor was right about the deltas and wrong about the ATP
+
+Worth keeping as a triage rule. A single friction row can be **correct in its conclusion and wrong
+in its supporting arithmetic**. HIGH 3's trust-column analysis is exact; its ATP-column analysis
+conflates units the site deliberately separates. Adopting a visitor's reasoning wholesale, because
+their conclusion checks out, imports their errors into a guard where they harden.
+
+### MEDIUM 4 needed a criterion, not just a number
+
+`0.91 avg` for an 89-member community exceeds the 0.90 the site calls its ceiling. But 0.91 also
+renders correctly at `/trust-neighborhood` (a transitive path combination from its own published
+formula) and per-dimension T3 values of 0.91 / 0.94 render twice on `/day-in-web4` itself. So the
+edit states **which quantity the ceiling binds** (a mean of member composite scores) and which it
+does not ([[adding-a-distinction-creates-a-sweep-obligation]]). All three averages moved to
+0.64 / 0.68 / 0.71, grounded in the site's own device-count rule: a one-device person caps at 0.75,
+so the old set quietly asserted near-ceiling hardware for an entire neighbourhood.
+
+### NEXT SESSION: MEDIUM 5, and do not re-derive the arithmetic
+
+Deferred **deliberately**, and it is the visitor's own second-ranked item. `/how-it-works` is badged
+10 min and its `<main>` is 6,476 words. The trap is re-badging that one page: **the visitor's
+control set is not clean.** Their own word counts, at their own 238 wpm instrument, give:
+
+| page | words | badge | implied wpm |
+|---|---|---|---|
+| `/tldr` | 1,156 | 2 min | **578** |
+| `/why-web4` | 1,627 (pre-FAQ) | 6 min | 271 |
+| `/first-contact` | 1,648 (shell) | 7 min | 235 |
+| `/running-now` | 1,737 | 5 min | 347 |
+| `/how-it-works` | 6,476 | 10 min | **648** |
+
+`/tldr` at 578 wpm is nearly as mis-rated as `/how-it-works` at 648, and the visitor passed it as
+"fine". Re-badging page 4 alone hard-codes an inconsistent rate. The real job is **pick one rate and
+re-derive all five**, plus the "about 30 minutes" total, which is pinned across three surfaces
+(`learn` twice and `tldr`'s `2+6+7+10+5` formula; see the guards at `learn` grepping "pinned across
+three surfaces"). That is a session, not a tail. [[instrument-choice-decides-the-verdict]].
+
+Also open from this browse: **MEDIUM 6** (`/day-in-web4` Step 2 offers biometrics as the only way to
+bind a first device, while `/what-could-go-wrong` risk #8 is "Hardware-Bound Identity Excludes
+Disabled Users" and lists the alternatives), **MEDIUM 7** (*"Everyone starts equal"* one step above
+*"your first post costs 10 ATP, 40% more than veterans pay"*, twice on the page), and two LOWs
+(the "onramp" double meaning, a standing operator call; landing-card density vs `/tldr`'s calibration).
+
+### Flagged, not touched
+
+`/first-contact` carries three pre-existing regional claims about 0.50 (`"above the 0.50 neutral
+baseline"` twice, `"Trust climbed back above 0.5, restrictions lifted"` once) that sit under the
+endpoint escalation guard in that same file. A session already carrying three HIGHs should not
+re-open ledger Q1. Own filing needed.
+
 ## Aug-20 21:00 session - the constellation the setup never told you to build
 
 **No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `25f70fa`, not
