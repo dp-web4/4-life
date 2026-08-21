@@ -50,16 +50,18 @@ export const navigationTree: NavigationTree = {
     // /learn's first-contact estimate moved 5 -> 7 to agree with the page that owns it
     // (reasoning on that card in /learn's beginner path). Complete set of surfaces carrying
     // a path total: /learn's reading-path box (headed "The reading path: five pages, about
-    // 30 minutes"; it was headed "New here? Start with these 3" and listed only the first
+    // 45 minutes"; it was headed "New here? Start with these 3" and listed only the first
     // three until the Aug-01 visitor MEDIUM 6 fix), /tldr's "Read the site in order
     // (recommended)" card, and this line. Derived from the per-card durations in learn's
-    // beginner path: 2+6+7+10+5 = 30. As of Aug-02 that box also carries its own per-item
+    // beginner path: 2+6+7+25+5 = 45 (30 until Aug-21 visitor MEDIUM 5 moved the how-it-works
+    // badge 10 -> 25; the reasoning and the test for what was left are on that card in /learn's
+    // beginner path). As of Aug-02 that box also carries its own per-item
     // COPIES of all five durations, so a single-page estimate change now lands in six
     // places, not four. The full list is on the box's own guard comment.
     {
       title: 'The Reading Path',
       href: '/learn',
-      desc: 'The recommended order to read this site in, with time estimates: five pages, about 30 minutes.',
+      desc: 'The recommended order to read this site in, with time estimates: five pages, about 45 minutes.',
       keywords: ['learn', 'path', 'guide', 'sequence', 'curriculum', 'reading', 'order', 'start'],
       related: ['/tldr', '/first-contact', '/onramp'],
     },

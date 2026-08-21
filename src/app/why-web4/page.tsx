@@ -1409,8 +1409,19 @@ export default function WhyWeb4Page() {
           </details>
 
         {/* May 4 visitor MEDIUM: "the page ends without a clear 'now go do this' CTA. I had to go back to the nav."
-            The CTA exists at line 3291 but sits AFTER the 2200-line going-deeper collapsible. Visitors who stop
-            before opening going-deeper miss it. This inline mini-CTA intercepts them here. */}
+            The CTA exists further down (anchor: the heading "Ready to See It Work?") but sits AFTER the
+            going-deeper collapsible. Visitors who stop before opening going-deeper miss it. This inline
+            mini-CTA intercepts them here.
+            Aug-21: that cite read "line 3291" and had rotted by ~1,100 lines, because everything above it
+            grows. Named, not numbered ([[guard-comment-cites-rot-name-the-target]]); do not put a line
+            number back.
+
+            Aug-21 (reading-time sweep, Aug-21 visitor MEDIUM 5): the button below read "(10 min)".
+            /first-contact OWNS 7 and states it on four surfaces (layout.tsx description and openGraph,
+            the rendered "In the next 7 minutes", and the "5 acts - ~7 minutes" arc header). This surface
+            was not in the list the Jul-30 pass swept, so it kept the retired 10. The owning page's number
+            wins: "count reasons, not surfaces" (the sentence is on /learn's first-contact card guard).
+            Do not restate a read time for a page this page does not own. */}
         <div className="mt-8 mb-6 p-5 border border-sky-700/40 rounded-lg bg-sky-950/15 max-w-2xl mx-auto text-center">
           <p className="text-gray-300 text-sm mb-3">
             That&apos;s the case for Web4. <strong className="text-sky-300">Now explore it</strong> -
@@ -1421,7 +1432,7 @@ export default function WhyWeb4Page() {
               href="/first-contact"
               className="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold rounded-md transition-colors"
             >
-              Walk through with Alice (10 min) →
+              Walk through with Alice (7 min) →
             </Link>
             <Link
               href="/running-now"
@@ -4425,7 +4436,15 @@ export default function WhyWeb4Page() {
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8 text-center">
           <h3 className="text-2xl font-bold mb-4 text-gray-100">Ready to See It Work?</h3>
           <p className="text-gray-400 mb-6">
-            Start with our 10-minute interactive tutorial. Zero to understanding, no jargon.
+            {/* Aug-21 (same sweep as the mini-CTA guard above): this read "our 10-minute interactive
+                tutorial" above TWO buttons with different times. The 10 was /first-contact's, which owns 7;
+                /day-in-web4 owns no read time at all (no duration string in its page, no layout file), so
+                the 10 was never its number either, it exists only as /learn's badge for it. Fixed by NAMING
+                the referent rather than only moving the digit, which is what removed the two-destination
+                ambiguity. The wording "7-minute interactive walkthrough" is /first-contact's own openGraph
+                description verbatim, not a summary of it ([[propagate-the-sentence-not-your-summary]]).
+                If /first-contact's 7 ever moves, this sentence and the mini-CTA above both move with it. */}
+            Start with First Contact, our 7-minute interactive walkthrough. Zero to understanding, no jargon.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link

@@ -2,6 +2,102 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-21 15:00 session - the badge that was filed twice and read as a density complaint
+
+**No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `fbe0da8`, not
+stacked, one 4life session running. #567 merged 10:14, after the 05:12 browse, so its items (HIGH
+1/2/3, MEDIUM 4) were already shipped. Took the item the 09:00 session reserved: **MEDIUM 5**, plus
+two unfiled surfaces of the same claim class. Five files, zero new files.
+
+### It was a REPEAT filing, and the first filing is quoted inside a guard
+
+The reusable finding. `/how-it-works` carries an Aug-13 guard whose closing line calls this page
+*"a 30-to-40 minute read sold as 10"*. That guard took the browse's **density** half (a standing
+"do not add words here" prohibition, which still stands) and **dropped its arithmetic half**. Nobody
+read "sold as 10" as a claim about the 10. The badge then sat wrong for 8 days and was re-filed on
+Aug-21 with a word count. [[guard-may-protect-half-a-sentence]], but the half that was dropped is
+the one carrying the number, and it was dropped **into a guard**, which is where it went quiet.
+Generalisable: **when a guard quotes a visitor complaint as the reason for one prohibition, check
+whether the same sentence also carries a falsifiable claim nobody actioned.**
+
+### The visitor's control set refuted the visitor's own verdict
+
+I reproduced their instrument exactly (`curl` the live pages, strip `<script>`/`<style>`, count
+words in `<main>`): 1,156 / 1,627-pre-FAQ / 1,648 / **6,490** / 1,737. They logged 6,476, so within
+0.2%.
+
+But they **pass** `/tldr` (1,156 w at 2 min = **578 wpm**) as "fine" and **fail** `/how-it-works`
+(6,490 w at 10 min = **648 wpm**) as "off by 3x". Those are nearly the same rate. That is why the
+09:00 session deferred this, and it is why re-badging page 4 at their 238 wpm would have hard-coded
+an inconsistency. I also tested and **rejected** the obvious escape, that content type explains the
+spread: `/tldr` is 75% flowing prose and `/how-it-works` is 78%, so "tldr is scannable cards" is
+false. The two pages are structurally alike.
+
+### What separates them is OWNERSHIP, and the rule is one the page already stated
+
+`/tldr`'s 2 is not an estimate, it is the page's **name** (title, H1, eyebrow, nav entry, and every
+inbound link that names it). `/first-contact`'s 7 is owned on four surfaces. `/how-it-works` owns
+**nothing**: it prints no read time and has no duration in its layout, so its 10 lived on exactly two
+surfaces, both inside `/learn`, with **no rationale in any guard** while the `/why-web4` and
+`/first-contact` cards beside it are defended at length.
+
+This is not a new criterion. It is the sentence already on `/learn`'s first-contact card: *"count
+reasons, not surfaces: the index moves, the owning page does not."* [[ordering-majority-measures-arbitrariness]].
+**Prefer restating the page's existing rule to minting a rival one.**
+
+### The test is two prongs IN ORDER, and it produces a counterexample I had to write down
+
+1. **Ownership**, tested first, **short-circuits**. Owned time = a RENAME, not a re-derivation.
+   `/tldr`'s is additionally an operator branding call.
+2. **Magnitude**, tested ONLY on a bare unowned badge: re-derive when the error exceeds the badge.
+
+The reviewer ran the threshold across all five and found it **fires on `/tldr`** (4.16 derived vs 2
+badged, 2.16 out on a 2 min badge). Ownership short-circuits before magnitude is reached, so the
+scope holds, but only because the order is stated. The guard now writes the counterexample its own
+rule generates, which is what makes it a rule rather than a rationalization, and pre-empts a future
+sweep citing the threshold to justify the rename being declined.
+`/running-now` is also a bare unowned badge and does **not** fire (1.25 min out; the visitor checked
+it and passed it). `/why-web4` is excluded for a third, separate reason already written on its card:
+re-deriving it manufactures a 6-vs-7 seam against that page's own `~5 min + ~2 min` orientation box.
+
+**Three exclusions, three different grounded reasons.** My first draft said "all three are within
+rounding", which the reviewer refuted with my own arithmetic. [[adding-a-distinction-creates-a-sweep-obligation]].
+
+### The number, and the fence around the rate
+
+6,490 words. The **reproducible** band is **23** (the ~278 wpm the site's own three
+undefended-but-passed badges imply) to **27** (standard 238 wpm). Shipped **25**, the center, and the
+visitor's own ask. New total 2+6+7+25+5 = **45**, the number they said they would believe. The 15
+short-version total did not move (steps 1-3; how-it-works is step 4).
+
+Aug-13's "30 to 40" is a **felt** estimate, not a reproducible count, so it did not set the number,
+but it is the top of the observed range and the guard records that a re-file above 25 would not be a
+surprise. **278 wpm is fenced in the guard as corroboration for one number and explicitly NOT a site
+reading-rate standard**, so a later session does not re-derive the other four against it.
+
+### Two unfiled surfaces, same claim class, found by sweeping
+
+`/why-web4` stated `/first-contact`'s read time as **10** in two places while that page owns 7:
+the Alice mini-CTA, and *"Start with our 10-minute interactive tutorial"* above a CTA block offering
+**two** destinations. Neither was in the surface list the Jul-30 pass swept, so both kept the retired
+10. The second was fixed by **naming the referent**, not just moving the digit, which is what removed
+the two-destination ambiguity; `/day-in-web4` owns no read time either, so the 10 was never its
+number. The replacement wording is `/first-contact`'s **own openGraph description verbatim**
+([[propagate-the-sentence-not-your-summary]]). I found the first surface; the reviewer found the
+second, from the first. [[claim-class-grep-truncated-enumerate-remainder]].
+
+Also re-anchored a `/why-web4` guard citing "line 3291" for a CTA now at ~4424, rotted by 1,100
+lines ([[guard-comment-cites-rot-name-the-target]]).
+
+### Still open from this browse
+
+**MEDIUM 6** (`/day-in-web4` Step 2 offers biometrics as the only way to bind a first device, while
+`/what-could-go-wrong` risk #8 is "Hardware-Bound Identity Excludes Disabled Users" and lists the
+alternatives), **MEDIUM 7** (*"Everyone starts equal"* one step above *"your first post costs 10 ATP,
+40% more than veterans pay"*, twice on the page), and both LOWs (the "onramp" double meaning, a
+standing operator call; landing-card density vs `/tldr`'s calibration). Also still flagged and
+untouched: the three `/first-contact` regional claims about 0.50 (ledger Q1, needs its own filing).
+
 ## Aug-21 09:00 session - the walkthrough that vouched for rules it never obeyed
 
 **No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `794d329`, not
