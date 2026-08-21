@@ -2,6 +2,144 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-20 21:00 session - the constellation the setup never told you to build
+
+**No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `25f70fa`, not
+stacked, one 4life session running. Both Aug-20 HIGHs and MEDIUM 4 landed earlier today (#564,
+#565). Took **Aug-20 MEDIUM 6 + Unanswered Q3**. Four files, zero new files.
+
+### The defect
+
+`/day-in-web4`'s "Your first 5 minutes" walkthrough bound **one** device and closed with *"No seed
+phrases to write down. No keys to lose."* Two evening scenarios on the same page then rest on a
+constellation it never told the reader to build: *"Your laptop and tablet already witness for you ...
+two of three devices agree"* (8 PM) and *"Your laptop already witnessed your identity"* (9 PM). The
+friendliest page on the site made a reassurance for a user it never produced.
+
+### The mechanism shipped on TWO other pages and nothing routed here
+
+[[page-ships-the-answer-and-denies-it]], but at **site** scale rather than page scale.
+`/identity-constellation`'s "How It Works: The Enrollment Ceremony" step 2 answers Unanswered Q3
+verbatim (*"You scan a QR code from your phone to your laptop. Your phone signs a witness statement
+..."*), and `/lct-explainer#first-5-minutes` narrates the **same five minutes** with pairing at
+minute 1:00. `/day-in-web4` linked to `/identity-constellation` from nowhere, and the nav registry's
+`related` for it (`['/tldr','/why-web4','/your-internet']`) does not surface it either. So this was a
+routing + sequencing fix, not a writing one: Step 2 already promised *"adding a second raises it"*
+and the artifact arrived 600 lines away on another page
+([[promise-artifact-arrives-by-another-route]]).
+
+New Step 3 inserted **before** "Join your first community", because `/lct-explainer` orders the same
+five minutes pair-then-join. Two narrations of one setup must not disagree on sequence. Durations now
+sum to 5:00 exactly (30+60+30+120+60) against the label both pages use.
+
+### The sentence I was going to propagate was the site's minority reading
+
+The policy reviewer's sharpest catch. Three surfaces say who scans: `/lct-explainer`'s prose says the
+**phone** does; `LCTSetupMockup`'s PairScreen, rendered **ten lines below it inside the same FAQ**,
+says the laptop does; `/identity-constellation` says phone-to-laptop. My source was the outlier.
+Propagating it would have shipped a fresh cross-page contradiction from the pass whose thesis is that
+the pages must agree. [[propagate-the-sentence-not-your-summary]] has a precondition: **check the
+source sentence is true first** (#564's own lesson). The step now asserts no scan direction at all.
+
+### The fix made a 270-line-older sentence contradict it, so that one moved too
+
+Checking the grounding for the consequence clause surfaced a defect the step does not create but does
+make **visible for the first time**. The "What if I lost all my devices?" choice on this page answered
+with *"trusted contacts **you designated in advance** can vouch for you"*. For a single-device reader,
+which is exactly who Step 3 addresses, losing the one device **is** losing all devices, so the page
+would have answered one event twice.
+
+That sentence was the defective one and a **site-wide singleton**:
+`grep -rniE "designat|in advance|m-of-n" src/app` returns no other pre-designation claim, the
+canonical card says the signers are *"people you've previously interacted with (their LCTs)"* with a
+worked example choosing Bob and Carol *because* Alice had interacted with them, and that same card
+says outright that *"how peers are selected ... [is] designed but not yet pinned in spec"*. So the
+site's only pre-designation claim asserted a mechanism its own canon calls unpinned. Corrected by
+propagation. Leaving a pre-existing gap open is legitimate; shipping a sentence that newly contradicts
+an uncorrected outlier on the same page and calling it out of scope is
+[[fix-may-commit-the-defect-it-diagnoses]]. It also **shrank** the sweep obligation: with
+pre-designation gone there is no designated-contacts prerequisite left to disclose, only the device
+half being closed, so the guard's criterion clause was re-derived rather than shipped as drafted.
+
+### The welcome I drafted was variant N+1
+
+*"Skip it and nothing stops you"* cleared the eligibility wire (no ceiling, no participation, nothing
+at 0.50, so [[trust-05-endpoint-canon-conflict]] and Q8 stay clear) but tripped two others: it is a
+bare absolute whose counterexample is the next clause, which is the shape **this same visitor** filed
+as a LOW against `/why-web4` requirement #2 in this browse; and it is a third paraphrase of
+`/lct-explainer`'s *"Only have one device? You're still in"* and *"what changes is the terms of your
+participation"*, the second of which a prior pass deliberately chose over "fully participate".
+Rebuilt from shipped clauses: *"The app suggests this rather than requires it. What changes if you
+skip it: ..."*.
+
+The 3-to-7-day figure kept its **hedge**. All three shipped instances say "typically" or "roughly",
+and hardening a figure whose canonical card calls the mechanism unpinned is this pass's own defect
+class in miniature.
+
+### What is deliberately not here, by criterion
+
+- **No scan direction** (above). The `/lct-explainer` prose-vs-mockup contradiction is filed, not fixed.
+- **No device-count numeral.** `/lct-explainer` is unreconciled on what one device gets; #564 shipped
+  Step 2 numeral-free for the same reason.
+- **No ATP cost.** Device registration is priced at 2 ATP in the 9 PM choice, but this step lands
+  **before** the block that first gives the reader 100 ATP. Steps 1 and 2 carry no ATP chip either.
+- **No 8 PM quorum claim.** That scenario needs *"two of three devices agree"*; one added device gives
+  two. The prose says "when a phone breaks" and stops, licensing the 9 PM story only.
+- **Q3's third sub-question** ("is there a window where I am vulnerable?"). Nothing on-site or in
+  `../web4` grounds a pairing-window claim; coining one is the failure mode.
+- Step 1's *"synced across devices"* became *"paired into one identity"*: three words, no new claim,
+  removing the mental model `/identity-constellation` explicitly rejects (*"a key ... never leaves the
+  device"*) two blocks above a step that now teaches witnessing.
+
+### Cites converted, three of them already rot
+
+The diff-aware rule bars a line number into a file this commit modifies. The in-file netAtp guard
+cited `L446` (right), `L696` and `L1311` (**both already wrong**, the renders are at 724 and 1374),
+and `L597` for "not the collapsed onboarding walkthrough", which after insertion would have pointed at
+**the new pairing step**. Cross-file, `why-web4` and `what-could-go-wrong` both cite `day-in-web4:944`
+for the "Tier 5" line, which is at **978**. All converted to grep targets; boundary held to cites
+pointing **into** `day-in-web4` so this did not become a cite audit. Verified after the edit that
+`day-in-web4:515` still lands on the byte-locked "no public network" sentence three other files cite.
+
+### Anchor added under the demand-driven policy
+
+`/identity-constellation` had **zero** `id=` attributes. Step 3's link is the demand;
+`#enrollment-ceremony` sits on the container div (not the h2), matching `/lct-explainer`'s pattern, so
+the whole ceremony lands in view ([[check-what-renders-at-the-anchor]]).
+
+### Open rows carried forward
+
+- **NEW: `/lct-explainer` scan direction.** Its prose says the phone scans; the mockup it renders ten
+  lines below says the laptop does; `/identity-constellation` agrees with the mockup. One-line fix on
+  the prose, needs a `/lct-explainer` pass.
+- **NEW: nav registry gap.** `/day-in-web4`'s `related` does not include `/identity-constellation`
+  despite now linking to it in body text. Belongs with the MEDIUM 5 registry pass, since `related`
+  changes rendered `RelatedConcepts` output.
+- **NEW: the `<noscript>` recap** re-renders the 8 PM and 9 PM scenarios but carries no setup section
+  at all, so there is no pairing step to add there. Confirmed the setup `<details>` is native HTML with
+  no mount gate, so a no-JS reader does get Step 3; the residual is only that the recap's constellation
+  stories stand alone. Different shape, not this pass.
+- **Aug-20 MEDIUM 5** (`/onramp` orders hestia -> hub, every other surface hub -> hestia). Untaken;
+  nav-registry sweep touching every surface, its own pass. Deliberately not combined with this one
+  ([[two-fixes-in-one-pass-can-fight]]).
+- **Aug-20 MEDIUM 7** (`/first-contact` hedge stack). Still under the do-not-pre-empt retest gate:
+  #563 landed hours before this browse. Check the NEXT log.
+- **Aug-20 LOWs**: `/tldr` Web4 cell ~5x its neighbours; `/why-web4` requirement #2 lead order;
+  `/first-contact` no-JS fallback numbers vs the arc map; `/why-web4` 7-min vs `/learn` 6-min.
+- Still carried: the 0.50-vs-0.75 device-count row at `/lct-explainer`'s Aug-12 guard;
+  `/how-it-works#journey`'s two inbound links wanting an eligibility-specific id; the rotted
+  `how-it-works:63` cite; `/atp-economics` short lead line; **V3** routing (Unanswered Q4);
+  the `72` in `#faq-index` + `/learn` curation defer; CI first-mention routing; hestia's Running badge
+  vs "lab machines only"; 26 nav links; the ladder's three numbering schemes.
+
+**Verification**: `npm run build` green. Rendered-content diff (comments stripped, vs `HEAD`) is
+exactly the intended set and nothing else; `why-web4` and `what-could-go-wrong` show **zero** rendered
+change (comment-only). Steps render 1..5 in order, durations sum to 5:00. Zero rendered instances of
+"No keys to lose" and zero of "designated in advance" site-wide. `day-in-web4:515` unmoved. Both new
+link targets resolve (`/identity-constellation#enrollment-ceremony` route + id). No em dashes (literal
+or `u2014`).
+
+
 ## Aug-20 15:00 session - the illustration that reincarnated an agent its own page had killed
 
 **No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `9714b4f`, not

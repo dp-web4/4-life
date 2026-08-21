@@ -1490,7 +1490,8 @@ export default function WhatCouldGoWrongPage() {
                   branches was applied on one ([[claim-class-grep-truncated-enumerate-remainder]]).
                   What #555 explicitly deferred and this pass also does NOT touch: the ladder's three
                   numbering schemes (four tiers at #faq-parallel-identities, five at #faq-transition
-                  with "Tiers 0-3 reversible", and day-in-web4:944's "Tier 5" on a page numbering
+                  with "Tiers 0-3 reversible", and day-in-web4's "Tier 5" - grep -n "wait for Tier 5"
+                  on that file - on a page numbering
                   from Tier 1). That is a page-wide curation row and needs its own scope.
                   Their alternative suggestion, "or add a glossary entry", is DECLINED rather than
                   dropped silently: the tiers are genuinely absent from /glossary, but four copies of
