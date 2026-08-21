@@ -683,10 +683,39 @@ export default function DayInWeb4Page() {
             </div>
             <div className="p-3">
               <div className="space-y-2 mb-2">
+                {/* Aug-21 visitor MEDIUM 4: "0.91 avg exceeds the site's own maximum achievable
+                    trust. An average cannot exceed the maximum of its members, so an 89-member
+                    community cannot average 0.91." Correct and unarguable: /lct-explainer calls
+                    0.90 "the hardware-bound ceiling" (grep -n "hardware-bound ceiling" there) and
+                    /trust-tensor tops its calibration scale at the same value.
+
+                    WHICH QUANTITY THE CEILING BINDS, and state it, because fixing this without a
+                    criterion creates a sweep obligation across surfaces that are NOT wrong
+                    ([[adding-a-distinction-creates-a-sweep-obligation]]). The ceiling binds a
+                    MEAN OF MEMBER COMPOSITE SCORES, which is what this row renders, and a mean
+                    cannot exceed its members' maximum. It does not bind:
+                      - a per-dimension T3 value. This same page renders "Talent: 0.91 ...
+                        Temperament: 0.94" twice (grep -n "156 real interactions" here). Those are
+                        dimensions, not a composite, and they are deliberately untouched.
+                      - a transitive path combination. /trust-neighborhood renders 0.91 as the
+                        correct output of its own published formula combined = 1 - prod(1 - path_i)
+                        from two 0.7 paths. Different quantity, also untouched.
+
+                    ALL THREE VALUES MOVED, not just the illegal one, and the reason is not
+                    tidiness. The visitor's parenthetical is the real finding: "the neighbouring
+                    0.82 and 0.78 averages are legal but imply near-ceiling hardware for
+                    essentially everyone". /lct-explainer's device-count rule caps a one-device
+                    person at 0.75 whatever their chip (grep -n "device count is the limit" there),
+                    and a mock general-population community is mostly one-device people. So 0.6x
+                    is what this site's own model predicts for a neighbourhood group, and the old
+                    set quietly asserted a hardware distribution the site says is unusual. The
+                    values are the visitor's own suggested set, mapped to preserve the rendered
+                    ascending order and the story it tells (the smallest community has the highest
+                    trust). Nothing else in Step 4 moved. */}
                 {[
-                  { name: 'Local Photographers', members: '342 members', trust: '0.78 avg', icon: '📸' },
-                  { name: 'Home Cooking', members: '1,204 members', trust: '0.82 avg', icon: '🍳' },
-                  { name: 'Neighborhood Help', members: '89 members', trust: '0.91 avg', icon: '🏘️' },
+                  { name: 'Local Photographers', members: '342 members', trust: '0.64 avg', icon: '📸' },
+                  { name: 'Home Cooking', members: '1,204 members', trust: '0.68 avg', icon: '🍳' },
+                  { name: 'Neighborhood Help', members: '89 members', trust: '0.71 avg', icon: '🏘️' },
                 ].map((c, i) => (
                   <div key={i} className="flex items-center gap-2 rounded-lg bg-gray-900/30 px-3 py-2 text-xs">
                     <span>{c.icon}</span>

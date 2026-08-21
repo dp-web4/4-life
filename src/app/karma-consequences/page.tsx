@@ -792,6 +792,27 @@ function KarmaFormula() {
             picking a rebirth rule is a canon decision this track cannot make.
             Scope note: the visitor filed the ATP half only. trust_decay_factor = 0.95 above and
             the two permanence paragraphs below are untouched and unfiled.
+            Aug-21 (09:00): FILED. That scope note was the standing invitation and this browse took
+            it up, correctly: "three careful fences guard the ATP number and none guards the trust
+            number sitting next to it". The fence above now says "both lines of it", and a second
+            pointer names /first-contact, where the same event runs the other way (Alice's rebirth
+            trust does not fall). The do-not-resolve rule directly above is HONORED, not weakened:
+            the two figures are still not reconciled here, because which one is right is ledger Q5
+            and not this track's call. What shipped is the disclosure, in the shape the ATP half
+            already had ([[guard-may-protect-half-a-sentence]]).
+            WHAT THE POINTER MAY NOT SAY, and this is the constraint that shaped the wording.
+            The visitor's own argument was "0.51 x 0.95 = 0.4845, i.e. BELOW the 0.50 line that the
+            same walkthrough says made her rebirth possible". That reasoning is correct and is
+            deliberately NOT rendered, on either page: ledger Q1 forbids any regional claim about
+            0.50 in either direction, and /first-contact's own rebirth guard separately forbids
+            stating any arithmetic relating 0.51 to 0.54. So the pointer says only that the two
+            surfaces move trust in different directions, and names neither the product nor the line.
+            The permanence note also lost a flat assertion. It read "the 0.95 here carries it
+            forward at 95% each life", which states the modelled rate as fact one paragraph under
+            a fence calling it a model. "Modelled above" restores the hedge. "Decays" became
+            "moves" for a separate reason: the sentence's own parenthetical already says trust
+            "keeps fading and recovering" within a life, so "decays" was doing double duty for two
+            different mechanisms. Neither edit picks a rebirth rule.
             Aug-09 (15:00): the pointer said "the lifecycle walkthrough models it the other way".
             After #528 that stopped being true of the whole target: /how-it-works#journey now OPENS
             with a demo whose rebirth caption models it THIS page's way (a 100 base plus a karma
@@ -801,14 +822,20 @@ function KarmaFormula() {
         <p className="text-xs text-amber-300/80 mb-4 border border-amber-800/40 bg-amber-900/10 rounded p-3 leading-relaxed">
           <strong className="text-amber-300">One model, not the rule:</strong> how much carries into
           the next life is <strong>not settled</strong>, and the arithmetic below is one way of
-          modelling it. Whether you keep your whole final balance or a reduced portion of it is not
-          decided, and{" "}
+          modelling it. That applies to <strong>both</strong> lines of it, the energy you restart with
+          and the trust you restart with. Whether you keep your whole final balance or a reduced
+          portion of it is not decided, and{" "}
           <Link href="/how-it-works#journey" className="text-amber-200 underline hover:text-amber-100">
             the lifecycle walkthrough&apos;s karma examples
           </Link>{" "}
-          model it the other way, carrying the balance forward intact. Read the formula for the
-          shape it teaches (positive karma starts you stronger, negative karma starts you weaker,
-          and the two are not symmetric), not as the settled numbers.
+          model it the other way, carrying the balance forward intact. The trust line is open in the
+          same way: the{" "}
+          <Link href="/first-contact" className="text-amber-200 underline hover:text-amber-100">
+            First Contact walkthrough
+          </Link>{" "}
+          shows a rebirth where trust does not fall, which the decay factor below does not produce.
+          Read the formula for the shape it teaches (positive karma starts you stronger, negative
+          karma starts you weaker, and the two are not symmetric), not as the settled numbers.
         </p>
         <pre className="text-sm text-gray-400 bg-gray-900/80 p-4 rounded overflow-x-auto mb-4">
 {`next_life_atp = base_atp + (karma * karma_multiplier)
@@ -830,8 +857,8 @@ Example (positive karma):
           mirroring real-world reputation dynamics.
         </p>
         <p className="text-xs text-gray-500 mt-2">
-          Note the two halves of &ldquo;permanent.&rdquo; The <strong className="text-gray-400">score</strong> decays
-          (the <code className="text-amber-300">0.95</code> here carries it forward at 95% each life, and within a
+          Note the two halves of &ldquo;permanent.&rdquo; The <strong className="text-gray-400">score</strong> moves
+          (the <code className="text-amber-300">0.95</code> modelled above reduces it at each rebirth, and within a
           life trust keeps fading and recovering), but the <strong className="text-gray-400">identity</strong> that
           carries it does not reset. That is what permanence means on this page: you keep your history,
           not a frozen penalty.
