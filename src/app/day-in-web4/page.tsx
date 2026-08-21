@@ -326,7 +326,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 0,
         trustDelta: 0,
         todayInternet: 'If you lose your phone and don\'t have backup codes, you may permanently lose access to accounts. Support tickets take weeks.',
-        web4Result: 'Web4 uses m-of-n recovery: trusted contacts you designated in advance can vouch for you, similar to how a bank verifies identity in person. It\'s slower (by design - speed would help attackers), but your identity and trust history are never truly lost.',
+        web4Result: 'Web4 uses m-of-n recovery: trusted contacts who have interacted with you before can vouch for you, similar to how a bank verifies identity in person. It\'s slower (by design - speed would help attackers), but your identity and trust history are never truly lost.',
         concept: 'Linked Context Token (LCT)',
         conceptLink: '/lct-explainer',
       },
@@ -532,7 +532,7 @@ export default function DayInWeb4Page() {
                 </div>
               </div>
               <p className="text-xs text-gray-500">
-                One app. Works like a password manager, but instead of storing passwords, it manages your trust identity across every Web4-enabled service. Delivered as a <strong className="text-gray-400">mobile app or browser extension</strong> (your choice - most people will use both, synced across devices). Install it like any other app.
+                One app. Works like a password manager, but instead of storing passwords, it manages your trust identity across every Web4-enabled service. Delivered as a <strong className="text-gray-400">mobile app or browser extension</strong> (your choice - most people will use both, paired into one identity). Install it like any other app.
               </p>
             </div>
           </div>
@@ -586,15 +586,98 @@ export default function DayInWeb4Page() {
                   ([[promise-link-class-grep-text-not-href]]); now anchored to #device-witnesses,
                   the block that actually carries the combination rule. */}
               <p className="text-xs text-gray-500">
-                The app finds your phone&apos;s security chip automatically. One biometric scan (Face ID, fingerprint) and your device becomes your identity anchor. No seed phrases to write down. No keys to lose. The 0.85 comes from the chip&apos;s tier - a phone secure enclave caps trust at 0.85; stronger or weaker hardware caps it higher or lower. That is the chip&apos;s rating, not your ceiling on day one: how many devices witness you sets how much of that maximum you can actually reach, and the lower of the two rules wins. One device is where that climb starts; adding a second raises it (see <a href="/lct-explainer#device-witnesses" className="text-sky-400 hover:underline">hardware ceilings in the LCT explainer</a>).
+                The app finds your phone&apos;s security chip automatically. One biometric scan (Face ID, fingerprint) and your device becomes your identity anchor. No seed phrases to write down. The 0.85 comes from the chip&apos;s tier - a phone secure enclave caps trust at 0.85; stronger or weaker hardware caps it higher or lower. That is the chip&apos;s rating, not your ceiling on day one: how many devices witness you sets how much of that maximum you can actually reach, and the lower of the two rules wins. One device is where that climb starts; adding a second raises it (see <a href="/lct-explainer#device-witnesses" className="text-sky-400 hover:underline">hardware ceilings in the LCT explainer</a>).
               </p>
             </div>
           </div>
 
-          {/* Step 3: Join a community */}
+          {/* AUG-20 visitor MEDIUM #6 + their Unanswered Q3. Filed as: setup binds exactly ONE
+              device and closes with "No keys to lose", then the 8 PM and 9 PM scenarios lean on
+              "your laptop and tablet already witness for you" - a constellation the walkthrough
+              never told the reader to build. Their Q3: "How do I get a second device onto my
+              identity? Nothing showed me the enrolment step."
+              THE MECHANISM ALREADY SHIPPED, ON TWO OTHER PAGES, AND NOTHING ROUTED HERE
+              ([[page-ships-the-answer-and-denies-it]] at site scale). /identity-constellation's
+              "How It Works: The Enrollment Ceremony" step 2 answers Q3 outright, and
+              /lct-explainer's minute-1:00 line narrates the SAME five minutes with pairing in it.
+              So this is a routing + sequencing fix: Step 2 already promised "adding a second
+              raises it", and the artifact arrived 600 lines away on another page
+              ([[promise-artifact-arrives-by-another-route]]).
+              POSITION: before "Join your first community", because /lct-explainer orders the same
+              five minutes pair-then-join (grep -n "linking a second device" on that file, minute
+              1:00, vs joining at 2:00). Two narrations of one setup must not disagree on sequence.
+              WHAT THIS DELIBERATELY DOES NOT SAY, so a later pass does not "complete" it:
+              (1) WHICH DEVICE SCANS. Three surfaces disagree: /lct-explainer's prose says the
+                  phone scans, while LCTSetupMockup's PairScreen rendered ten lines below it says
+                  the laptop does, and /identity-constellation says phone-to-laptop. That is a real
+                  defect on /lct-explainer, filed in SESSION_FOCUS, NOT fixed here. Propagating the
+                  minority reading would have shipped a fresh cross-page contradiction
+                  ([[propagate-the-sentence-not-your-summary]]: check the source sentence is TRUE).
+              (2) A DEVICE-COUNT NUMERAL. /lct-explainer is itself unreconciled on what one device
+                  gets (grep -n "The 0.50-0.75 numeral SURVIVES" on that file). Step 2 above shipped
+                  numeral-free for the same reason; any numeral here picks a side of a filed,
+                  deliberately-untaken row.
+              (3) AN ATP COST. Registering a device is priced at 2 ATP in the 9 PM choice
+                  (grep -n "witness recovery" in this file), but this step lands BEFORE the block
+                  that first gives the reader 100 ATP, so a priced action here would precede their
+                  having any. Steps 1 and 2 carry no ATP chip either; silence is consistent.
+              (4) THE 8 PM QUORUM. That scenario needs "two of three devices agree"; one added
+                  device gives two. This step licenses the 9 PM "your laptop already witnessed you"
+                  story only, which is why the sentence says "when a phone breaks" and not "or gets
+                  replaced".
+              (5) Q3's THIRD sub-question ("is there a window where I am vulnerable?"). Nothing
+                  on-site or in ../web4 grounds a pairing-window claim; coining one is the failure
+                  mode. Filed forward.
+              DURATION: ~30 seconds, not the "about 60 seconds" the 9 PM witness recovery prints.
+              Different events (first pairing vs replacing a lost device through witnesses you
+              already have), and the steps must still sum to the "Your first 5 minutes" label above
+              (30+60+30+120+60 = 5:00 exactly), which /lct-explainer's sibling narration also uses.
+              HEDGE KEPT: all three shipped instances of the recovery figure say "typically" or
+              "roughly" (grep -rn "3 to 7 days" src/app), and /lct-explainer's own card says peer
+              selection is "designed but not yet pinned in spec". Do not harden it.
+              HARDWARE QUALIFIER KEPT on the ceiling clause: /lct-explainer#single-device says a
+              software-only setup's ceiling does NOT rise with a second device, only a
+              hardware-anchored one does.
+              SWEEP CRITERION for what this leaves: this closes the DEVICE half of the
+              constellation-prerequisite class. The sibling prerequisite in the "What if I lost all
+              my devices?" choice was NOT left open - it asserted contacts "you designated in
+              advance", the site's only pre-designation claim, against /lct-explainer's canonical
+              "people you've previously interacted with", so it was corrected in the same pass
+              rather than allowed to contradict this step. Nothing of that shape remains. */}
+          {/* Step 3: Pair a second device */}
           <div className="rounded-lg border border-gray-700 overflow-hidden" style={{ background: 'rgba(15, 23, 42, 0.6)' }}>
             <div className="flex items-center gap-2 px-3 py-2 border-b border-gray-800">
               <span className="text-xs font-mono text-sky-400">Step 3</span>
+              <span className="text-sm text-gray-300 font-medium">Pair a second device</span>
+              <span className="text-xs text-gray-600 ml-auto">~30 seconds</span>
+            </div>
+            <div className="p-3">
+              <div className="rounded-lg bg-gray-900/50 border border-gray-800 p-3 mb-2">
+                <div className="space-y-1.5 text-xs">
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Device 1</span>
+                    <span className="text-gray-300">The phone you just bound</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Device 2</span>
+                    <span className="text-gray-300">A laptop, a tablet, or a hardware security key</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Action required</span>
+                    <span className="text-gray-300">One shows a QR code, the other scans it</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500">
+                From then on the two devices witness each other. That is the identity constellation the evening scenarios below lean on when a phone breaks. The app suggests this rather than requires it. What changes if you skip it: there is no second witness, so losing your one device means community vouching, typically over 3 to 7 days, rather than just opening the app on your laptop. A second <strong className="text-gray-400">hardware</strong> device also raises how much of the chip&apos;s rating you can reach. <Link href="/identity-constellation#enrollment-ceremony" className="text-sky-400 hover:underline">See the enrollment ceremony step by step &rarr;</Link>
+              </p>
+            </div>
+          </div>
+
+          {/* Step 4: Join a community */}
+          <div className="rounded-lg border border-gray-700 overflow-hidden" style={{ background: 'rgba(15, 23, 42, 0.6)' }}>
+            <div className="flex items-center gap-2 px-3 py-2 border-b border-gray-800">
+              <span className="text-xs font-mono text-sky-400">Step 4</span>
               <span className="text-sm text-gray-300 font-medium">Join your first community</span>
               <span className="text-xs text-gray-600 ml-auto">~2 minutes</span>
             </div>
@@ -619,10 +702,10 @@ export default function DayInWeb4Page() {
             </div>
           </div>
 
-          {/* Step 4: First interaction */}
+          {/* Step 5: First interaction */}
           <div className="rounded-lg border border-gray-700 overflow-hidden" style={{ background: 'rgba(15, 23, 42, 0.6)' }}>
             <div className="flex items-center gap-2 px-3 py-2 border-b border-gray-800">
-              <span className="text-xs font-mono text-sky-400">Step 4</span>
+              <span className="text-xs font-mono text-sky-400">Step 5</span>
               <span className="text-sm text-gray-300 font-medium">Your first action</span>
               <span className="text-xs text-gray-600 ml-auto">~1 minute</span>
             </div>
@@ -657,7 +740,7 @@ export default function DayInWeb4Page() {
           <div className="rounded-lg bg-sky-950/20 border border-sky-800/30 p-3">
             <p className="text-xs text-sky-300">
               <strong>That&apos;s it.</strong> No blockchain to sync. No gas fees. No wallet addresses to copy.
-              Install an app, scan your face, join a community, say hello. The rest unfolds through the day below.
+              Install an app, scan your face, pair a second device, join a community, say hello. The rest unfolds through the day below.
             </p>
           </div>
 
@@ -828,14 +911,18 @@ export default function DayInWeb4Page() {
         {/* Jul-29 visitor MEDIUM (recurrence of the Jul-15 one, and the shipped fix did not reach
             it): "I started the day with 100 ATP. The camera is 350. Where did the other 250 come
             from? Nothing in the scenario says."
-            The 100 they mean is their OWN live ledger (netAtp at L446, rendered at L696 and in the
-            day summary at L1311), not the collapsed onboarding walkthrough at L597. So the
+            The 100 they mean is their OWN live ledger (the `const netAtp =` derivation, rendered
+            once beside "Energy:" above the wireframes and again in the day-summary card), not the
+            collapsed onboarding walkthrough in the "Your first 5 minutes" details block. Cites are
+            grep targets, not line numbers: three of the four integers that stood here had already
+            rotted, and a fourth would have pointed at the pairing step added in the same commit
+            that says it is NOT the walkthrough. So the
             reconciliation shipped at InteractiveWireframes.tsx:370 ("an active member's working
             balance climbs well past that") is true but generic, and the reader's own ledger
             visibly does NOT climb - the scenario choices are almost all refund-channel events.
             Answer it at the boundary where the reader stops being the protagonist, and name the
             channel that actually grows a balance (atp-economics item 3, L208).
-            Deliberately QUALITATIVE: the choice set at L60-210 cannot produce a day anywhere near
+            Deliberately QUALITATIVE: the SCENARIOS choice set cannot produce a day anywhere near
             350, so printing a derived figure would ship a new arithmetic claim on the page already
             filed for arithmetic. And keep it on the BUDGET side of the budget-vs-wealth line
             (guard at atp-economics:168-176) - no accumulation-as-savings language. */}

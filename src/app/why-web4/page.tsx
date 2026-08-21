@@ -1685,7 +1685,8 @@ export default function WhyWeb4Page() {
                   STILL UNCLAIMED, surfaced by that grep and deliberately not chased: the ladder has
                   three numbering schemes. #faq-parallel-identities runs four tiers, #faq-transition
                   runs five and then says "Tiers 0-3 are reversible ... only Tier 4", and
-                  day-in-web4:944 says "you don't have to wait for Tier 5" on a page whose cards
+                  day-in-web4 says "you don't have to wait for Tier 5" (grep -n "wait for Tier 5"
+                  on that file) on a page whose cards
                   number from Tier 1. That is the page-wide curation row this pass is still not.
                   Landed here and not at #faq-opt-in because the caveat qualifies the LADDER, and this
                   is the first ladder in document order. Reconciled rather than stacked: this caveat's

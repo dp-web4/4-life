@@ -270,7 +270,22 @@ export default function IdentityConstellationPage() {
       </div>
 
       {/* How It Works */}
-      <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8">
+      {/* Anchor added Aug-20 21:00 under the demand-driven anchor policy: this page had ZERO ids
+          before this commit. The inbound link that asked for it is /day-in-web4's setup Step 3
+          ("Pair a second device"), added in the same commit, whose link text promises "the
+          enrollment ceremony step by step". That step exists because the Aug-20 visitor filed
+          MEDIUM 6 and Unanswered Q3 ("nothing showed me the enrolment step") - and step 2 of the
+          ceremony below already answered them, on a page /day-in-web4 linked to from nowhere and
+          that the nav registry does not list among its related pages either.
+          Id sits on the CONTAINER div, not the h2, matching the pattern at /lct-explainer's
+          #single-device, #first-5-minutes and #device-witnesses cards, so the whole ceremony
+          lands in view rather than the heading alone.
+          NOT changed here: the ceremony's own wording. It says "You scan a QR code from your
+          phone to your laptop", which agrees with LCTSetupMockup's PairScreen and disagrees with
+          /lct-explainer's prose ("scan a QR code WITH your phone") ten lines above that mockup.
+          That contradiction is filed in SESSION_FOCUS and belongs to a /lct-explainer pass; the
+          inbound step deliberately asserts no scan direction so it does not take a side. */}
+      <div id="enrollment-ceremony" className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 mb-8 scroll-mt-24">
         <h2 className="text-2xl font-bold mb-6 text-gray-100">How It Works: The Enrollment Ceremony</h2>
 
         <div className="space-y-6">
