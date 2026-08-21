@@ -540,7 +540,7 @@ export default function TLDRPage() {
               and the grid becomes the alternative.
 
               The two numbers are load-bearing and both come from /learn, so they cannot be
-              invented here: five concepts at 2+6+7+10+5 = 30 min, and the short version on
+              invented here: five concepts at 2+6+7+25+5 = 45 min, and the short version on
               that page is ~15 minutes (2+6+7). Changing either number means changing /learn
               too.
 
@@ -551,12 +551,20 @@ export default function TLDRPage() {
               reading-path box (both numbers), and the 'The Reading Path' desc in
               navigation.ts.
 
+              Aug-21 visitor MEDIUM 5: the five-page total moved 30 -> 45 because /learn's
+              how-it-works estimate moved 10 -> 25 to match the page's measured length. The
+              reasoning, the instrument, and the two-prong test for the four badges deliberately
+              NOT moved all live on that card in /learn's beginner path. The ~15 did not move:
+              it sums steps 1-3 and how-it-works is step 4. Only ONE digit is independent here;
+              both totals are derived from /learn's per-card durations.
+
               Aug-01 visitor MEDIUM 6: this card's copy is unchanged, and it is the reason
               /learn changed. The reader took this handoff, which names all five pages and
               says "you have just finished the first", and landed on a box headed "New here?
               Start with these 3" whose step 1 was /tldr. That box is now the five in order,
               with the three-read short version as a labeled stopping point inside it, and
-              its heading is "The reading path: five pages, about 30 minutes". Anchor by that
+              its heading is "The reading path: five pages, about 45 minutes" (30 until Aug-21).
+              Anchor by that
               heading, not the retired one. It also now carries a per-item copy of all five
               beginner durations, so a duration change lands in six places, not four. */}
           <Link
@@ -567,7 +575,7 @@ export default function TLDRPage() {
               Read the site in order (recommended) &rarr;
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              There is a suggested path: five pages, about 30 minutes, and you have just
+              There is a suggested path: five pages, about 45 minutes, and you have just
               finished the first. Next is Why Web4?, then First Contact, How It Works, and
               Running Now. Each one builds on the last, and the first three take about 15
               minutes if that is all the time you have.

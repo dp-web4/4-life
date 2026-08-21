@@ -153,9 +153,11 @@ export default function LearnJourney() {
           // counted roughly 56 questions across 6 categories, spent 11 minutes, and skipped
           // five of the six). The page itself already labels the Q&A optional (why-web4:45-47),
           // so the defect was here, in the estimate. The digit 6 stays legible and unchanged:
-          // tldr:291 pins "2+6+7+10+5 = 30 min" to these values (2+6+5+10+5 = 28 until the
-          // Jul-30 first-contact correction) and says changing either number means changing
-          // /learn too. Scope-only qualifier, deliberately not saying
+          // /tldr's "Read the site in order" card pins the sum to these values (anchor by that
+          // card's heading, not by a line number) and says changing either number means changing
+          // /learn too. The formula was 2+6+5+10+5 = 28 until the Jul-30 first-contact
+          // correction, then 2+6+7+10+5 = 30, and is 2+6+7+25+5 = 45 since the Aug-21 MEDIUM 5
+          // re-derivation of the how-it-works badge. The 6 itself has never moved. Scope-only qualifier, deliberately not saying
           // what the 6 minutes buys - why-web4's own orientation box splits the body into
           // ~5 min + ~2 min, so "6 min for the problem statement" would manufacture a 6-vs-7
           // seam on the destination page. No question count is printed either; that would be
@@ -187,7 +189,8 @@ export default function LearnJourney() {
           // describe the 7 as observed; it is the page's own estimate and the site now agrees
           // with it in one place instead of contradicting it in two.
           // Changing this cascades, anchored by content because line numbers drift: the
-          // reading-path box below (headed "The reading path: five pages, about 30 minutes",
+          // reading-path box below (headed "The reading path: five pages, about 45 minutes", 30
+          // until the Aug-21 MEDIUM 5 pass moved how-it-works 10 -> 25,
           // both totals in its paragraph AND the `time` on its step-3 row), the "Read the
           // site in order (recommended)" card on /tldr (both totals), and the 'The Reading
           // Path' desc in navigation.ts. Aug-02: that box grew from three rows to five, so
@@ -201,7 +204,53 @@ export default function LearnJourney() {
             "Identity, energy, trust, and coherence fit together into one system. This page shows how the pieces connect.",
           why: "A map of the whole before the parts. Now the individual concepts have a place to land.",
           link: "/how-it-works",
-          duration: "10 min read",
+          // Aug-21 visitor MEDIUM 5, a REPEAT filing: the Aug-13 browse already called this page
+          // "a 30-to-40 minute read sold as 10" (that phrase is quoted in a guard on how-it-works
+          // itself, grep it there). That guard took the browse's DENSITY half ("do not add words
+          // here") and dropped its ARITHMETIC half, which is why the badge sat wrong for 8 days
+          // ([[guard-may-protect-half-a-sentence]]).
+          //
+          // This card carried a bare 10 with no rationale of any kind, in contrast to the
+          // why-web4 and first-contact cards above. That is the whole reason it was the one to
+          // move: /how-it-works OWNS no read time. It prints none in its page and has no duration
+          // in its layout metadata, so the 10 lived on exactly two surfaces, this card and the
+          // reading-path box's step-4 copy below, and nothing upstream defended it.
+          //
+          // THE NUMBER. Measured the way the visitor measured, words inside <main> of the served
+          // page with <script>/<style> stripped: 6,490 (they logged 6,476, so within 0.2%). The
+          // reproducible band is 23 min to 27 min: 23 at the ~278 wpm the site's own three
+          // undefended-but-passed badges imply, 27 at the standard 238 wpm. 25 is the CENTER of
+          // that band, and it is also what the visitor asked for. Aug-13's "30 to 40" is a felt
+          // estimate rather than a reproducible count, so it does not move the center, but the
+          // felt band runs HIGHER than 25 and a re-file at 30+ would not be a surprise.
+          //
+          // 278 wpm is CORROBORATION for this one number. It is NOT a site reading-rate standard
+          // and a later session must not re-derive the other four badges against it.
+          //
+          // WHAT WAS LEFT, AND WHY. Two prongs, tested IN THIS ORDER:
+          //   1. OWNERSHIP, and it short-circuits. A page that states its own read time keeps it;
+          //      a disagreeing index gets corrected toward the page. That is not a new rule, it is
+          //      the sentence already on the first-contact card above: "count reasons, not
+          //      surfaces: the index moves, the owning page does not." /tldr owns its 2 (its
+          //      title, H1, eyebrow, nav entry and every inbound link that names it) and
+          //      /first-contact owns its 7 (four surfaces). Moving either is a RENAME, not a
+          //      re-derivation, and /tldr's is an operator branding call.
+          //   2. MAGNITUDE, tested ONLY on a bare unowned badge: re-derive when the error exceeds
+          //      the badge itself. /running-now is also a bare unowned badge (it prints no read
+          //      time either) and does NOT fire: 1,737 words is ~6.25 min against a badged 5, so
+          //      1.25 min out, and the visitor checked it and passed it. /how-it-works is 13+ min
+          //      out, an error larger than the badge.
+          // THE COUNTEREXAMPLE THIS RULE PRODUCES, stated so it is a rule and not a rationalization:
+          // /tldr WOULD fire the magnitude test (1,156 words is ~4.16 min against a badged 2, so
+          // 2.16 min out on a 2 min badge). It is excluded because ownership is tested first and
+          // short-circuits, NOT because it is accurate. Do not cite this threshold as a licence to
+          // rename /tldr; that is the operator's call.
+          // /why-web4's 6 is excluded for a third and separate reason, already written on its card
+          // above: re-deriving it manufactures a 6-vs-7 seam against that page's own orientation
+          // box, which splits the body into ~5 min + ~2 min.
+          //
+          // Cascade: see the reading-path box guard below for the complete six-place surface list.
+          duration: "25 min read",
         },
         {
           id: "running-now",
@@ -442,8 +491,8 @@ export default function LearnJourney() {
       <Breadcrumbs currentPath="/learn" />
       <section>
         {/* Aug-01 visitor MEDIUM 6, the same row as the reading-path box below. The visitor
-            arrived from a /tldr card that told them something exact ("five pages, about 30
-            minutes, and you have just finished the first") and hit "Guided Learning Journey /
+            arrived from a /tldr card that told them something exact ("five pages, about 45
+            minutes, and you have just finished the first"; it said 30 at the time) and hit "Guided Learning Journey /
             Learn Web4 Progressively / a curated learning pathway", which they read as "a step
             backwards in specificity from the page that sent me here". Same complaint, one
             section earlier, so it is fixed here too: the eyebrow and title now name the thing
@@ -480,7 +529,7 @@ export default function LearnJourney() {
             }}
           >
             <h3 style={{ color: "var(--color-accent-bright)", margin: "0 0 0.5rem", fontSize: "1.05rem" }}>
-              The reading path: five pages, about 30 minutes
+              The reading path: five pages, about 45 minutes
             </h3>
             {/* Jul-28 (SUPERSEDED Aug-02, reasoning kept because the numbers still bind):
                 this page has inbound routing from /tldr and from the top of the "Start Here"
@@ -491,7 +540,8 @@ export default function LearnJourney() {
 
                 REVERSAL (Aug-01 visitor MEDIUM 6). It was not enough. The visitor took /tldr's
                 "Read the site in order (recommended)" handoff, which says "five pages, about
-                30 minutes, and you have just finished the first" and names all five by title,
+                45 minutes, and you have just finished the first" (30 at the time) and names all
+                five by title,
                 and landed on a box whose STEP 1 IS /tldr, the page they had just closed. They
                 demonstrably read this box (they clicked Why Web4? out of it and called it "the
                 useful part of this page") and still filed /learn as "a step backwards in
@@ -514,8 +564,11 @@ export default function LearnJourney() {
                 Jul-30 visitor LOW, the first-contact estimate moved 5 -> 7 to match the page
                 that owns it (see the first-contact card in the beginner path above for the
                 reasoning and the full surface list). Both totals here are DERIVED, not
-                independent claims: 2+6+7 = 15 and 2+6+7+10+5 = 30, summing the per-card
-                durations above. If any card duration changes, recompute both here, in the
+                independent claims: 2+6+7 = 15 and 2+6+7+25+5 = 45, summing the per-card
+                durations above. (The second was 2+6+7+10+5 = 30 until the Aug-21 visitor
+                MEDIUM 5 pass re-derived the how-it-works badge; the reasoning is on that card
+                above, including the two-prong test for what was deliberately LEFT. The 15 did
+                NOT move: it sums steps 1-3 and how-it-works is step 4.) If any card duration changes, recompute both here, in the
                 "Read the site in order (recommended)" card on /tldr, and in the 'The Reading
                 Path' desc in navigation.ts. Those three places are the complete set of TOTALS
                 as of 2026-07-30: there is no JSON-LD anywhere in src/, sitemap.ts carries no
@@ -538,7 +591,7 @@ export default function LearnJourney() {
                 { num: "1", title: "The 2-minute overview", desc: "The shortest honest description", href: "/tldr", time: "2 min" },
                 { num: "2", title: "Why Web4?", desc: "The problems it starts from", href: "/why-web4", time: "6 min" },
                 { num: "3", title: "First Contact", desc: "See a trust-native interaction", href: "/first-contact", time: "7 min" },
-                { num: "4", title: "How It Works", desc: "How the pieces connect", href: "/how-it-works", time: "10 min" },
+                { num: "4", title: "How It Works", desc: "How the pieces connect", href: "/how-it-works", time: "25 min" },
                 { num: "5", title: "What's Actually Running Now", desc: "What is deployed today, and what is not", href: "/running-now", time: "5 min" },
               ].map((item, idx) => (
                 <div key={item.href}>
@@ -758,7 +811,7 @@ export default function LearnJourney() {
                   The actions half is gone with the section it counted. A page count is the one
                   thing here that is checkable against the list it summarises; a time total is
                   deliberately not printed, because only the beginner path has an agreed one
-                  (30 min, pinned across three surfaces) and minting three more would put three
+                  (45 min, pinned across three surfaces) and minting three more would put three
                   new falsifiable numbers on a site whose numbers the same visitor said "don't
                   hold still". Not even the beginner path's agreed 30 is repeated here: the
                   reading-path box directly above already carries it, and a fourth copy would

@@ -676,7 +676,20 @@ export default function HowItWorksPage() {
             #karma-carries guard further down this file cites this callout by that string.
             Do not "improve" this by glossing 100 + 12 here: that gloss is the demo's own
             rebirth caption, one screen up, and this page is the one the same browse called a
-            30-to-40 minute read sold as 10 ([[density-guard-means-delete-not-caveat]]). */}
+            30-to-40 minute read sold as 10 ([[density-guard-means-delete-not-caveat]]).
+
+            Aug-21: the ARITHMETIC half of that Aug-13 complaint is now taken. This guard had
+            absorbed only its DENSITY half (the "do not add words here" prohibition above, which
+            still stands), and the badge it names went on being wrong for 8 days because nobody
+            read "sold as 10" as a claim about the 10 ([[guard-may-protect-half-a-sentence]]).
+            The Aug-21 browse re-filed it with a word count. This page OWNS no read time and
+            still does not: do NOT add one here. The badge lives on /learn, on the how-it-works
+            card in its beginner path, and it is now 25. That card carries the measurement, the
+            23-to-27 reproducible band, and the two-prong test for the four badges that were
+            deliberately left alone. Aug-13's "30 to 40" is a felt estimate rather than a
+            reproducible count, so it did not set the number, but it is the top of the observed
+            range and a re-file above 25 would not be a surprise. The density prohibition above
+            is the reason this page must not answer such a re-file by growing. */}
         <p className="text-xs text-amber-300/70 mb-8 leading-relaxed">
           <strong className="text-amber-300">About that 112 in the demo above:</strong> how much karma carries is not
           settled, and this is one modelling choice, not the rule. The{" "}
