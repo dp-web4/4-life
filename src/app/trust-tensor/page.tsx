@@ -383,14 +383,33 @@ export default function TrustTensorPage() {
                 attest to over time.
               </li>
             </ul>
+            {/* AUG-22 (09:00), found while verifying the Aug-22 visitor's HIGH on the recharge
+                cap; no visitor has filed this one. This sentence read "a 15-ATP tutorial post
+                EARNS 40 ATP BACK WHEN RECIPIENTS CONFIRM IT HELPED". Recipient confirmation is the
+                recharge channel BY NAME, and its cap is recharge = min( sum of slices, ATP_cost ),
+                so 15 out could never return 40.
+                THIS IS THE PRE-JUL-30 WORDING OF THE VERY BLOCK IT CITES. The guard on the
+                "Virtuous Cascade" block in /how-it-works (grep -n "Virtuous Cascade" there) records
+                that the block once read "You write a helpful tutorial / Recipients confirm value /
+                Earn 40 back", that this "names the RECHARGE channel explicitly and then violates
+                its cap", and that the fix was to reframe it as a COMMISSIONED task, "which is the
+                channel these numbers have always belonged to". That page now prices the
+                self-initiated case at "0 net at best" in the same section. The citing page had
+                quietly reverted the cited page's own correction
+                ([[cited-page-guards-before-the-citation]]).
+                ONLY ONE HALF WAS WRONG. Confirmation genuinely does move T3, so the fix re-channels
+                the ATP half (the commissioner pays the 40) and leaves the T3 half attached to
+                confirmation, which is the split /how-it-works already models ("someone commissions
+                a tutorial from you" / "Commissioner pays on delivery"). Do not re-attach the 40 to
+                confirmation, and do not delete the confirmation clause: it is the true half. */}
             <p className="m-0 text-gray-500 text-xs border-t border-gray-700/50 pt-3">
               See the{" "}
               <Link href="/how-it-works#trust" className="text-sky-400 hover:text-sky-300 underline">
                 full cascade on How It Works
               </Link>{" "}
-              for a worked example: a 15-ATP tutorial post earns 40 ATP back when recipients
-              confirm it helped, and that same confirmation nudges T3 upward by a few thousandths.
-              No single party controls the score.
+              for a worked example: a tutorial someone commissions costs 15 ATP to write and pays
+              40 ATP on delivery, and the recipients&apos; confirmation of that work nudges T3 upward
+              by a few thousandths. No single party controls the score.
             </p>
           </div>
         </details>

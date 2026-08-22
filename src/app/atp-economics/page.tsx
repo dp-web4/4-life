@@ -703,9 +703,9 @@ export default function ATPEconomicsPage() {
             </div>
           </div>
           <p className="text-gray-300 text-sm leading-relaxed">
-            Same task, same spend - <strong className="text-amber-300">Hannah keeps 7x more ATP than Sam</strong> (42 ÷ 6).
-            Across a hundred tasks, Sam burns through their budget and dies of energy starvation. Hannah barely
-            loses any, but barely losing is not thriving: quality is what slows her burn, and{" "}
+            Same task, same spend - <strong className="text-amber-300">Hannah earns back 7x more ATP than Sam</strong> (42 ÷ 6).
+            Across a hundred tasks, Sam burns through their budget and dies of energy starvation. Quality is what
+            slows Hannah&apos;s burn, and{" "}
             <a
               href="#net-positive"
               onClick={(e) => { e.preventDefault(); const el = document.getElementById('net-positive'); if (el) { if (el instanceof HTMLDetailsElement) el.open = true; el.scrollIntoView({ behavior: 'smooth' }); } }}
@@ -717,7 +717,31 @@ export default function ATPEconomicsPage() {
           </p>
           {/* June 11 visitor HIGH (browse B): even Hannah nets −8 here, which read as "the best
               you can do is lose slowly." The negative nets are an artifact of this example's
-              setup (spend = task value = 50), chosen to isolate the quality gap. Say so. */}
+              setup (spend = task value = 50), chosen to isolate the quality gap. Say so.
+              AUG-22 visitor, HIGH 1: THAT GUARD ANSWERED ONE HALF OF ITS COMPLAINT AND LEFT THE
+              OTHER STANDING, which is why the same example re-filed at a higher severity. It
+              answered "lose slowly" by scoping the negative nets to the pricing. It did not touch
+              the arithmetic in the sentence above, which said "Across a hundred tasks ... Hannah
+              barely loses any." At −8 a task that is −800 against the 100 ATP a member starts
+              with, and the visitor did the multiplication because the sentence invited it: "she is
+              bankrupt at task 13 ... She does not 'barely lose any'." They also noticed the
+              self-contradiction: "The clause immediately after ('quality is what slows her burn')
+              is right and contradicts the clause before it in the same sentence."
+              FIX IS DELETION OF THE FALSE CLAUSE, AND DELIBERATELY PRINTS NO COUNTDOWN. Neither
+              "bankrupt at task 13" nor "about a dozen tasks" may appear here. This page states two
+              lines below that "how someone with no track record lands a first commission is an
+              open question"; a countdown next to that sentence entails, by adjacency, that a
+              well-behaved participant inevitably starves, and WEB4-CANON-QUESTIONS Q13 cuts BOTH
+              ways: an illustration in which a well-behaved participant inevitably starves is a
+              ruling exactly as a survival guarantee is ([[fix-may-install-the-opposite-false-
+              claim]]). The surviving clause ("quality is what slows her burn ... commissioned work
+              rather than this refund puts her ahead") was already the true one and now stands
+              alone. Sam's death line is untouched and unfenced: at 35% quality he is not the
+              well-behaved case Q13 protects.
+              SAME-LINE LOW, fixed in the same edit rather than in a second pass over a line this
+              commit already moves: "Hannah KEEPS 7x more ATP than Sam (42 ÷ 6)" - 42 ÷ 6 is the
+              EARN-BACK ratio. What she keeps is 92 against Sam's 56, which is 1.6x. Now "earns
+              back", which also matches the ramp sentence above it (grep -n "earns"). */}
           <p className="text-gray-500 text-xs mt-2">
             (Notice both net out negative here - that&apos;s because this example prices the
             task at exactly what each contributor spends, to isolate the effect of quality alone.

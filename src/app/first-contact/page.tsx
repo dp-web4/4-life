@@ -43,24 +43,51 @@ export default function FirstContactPage() {
   const [playbackIndex, setPlaybackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
+  /* AUG-22 visitor, HIGH 3: the <noscript> Step 3 said "She earns 12 ATP back - MORE THAN SHE
+     SPENT. Quality content pays for itself." /atp-economics: "The cap means you can't profit on a
+     single action, only recover its cost." The visitor added the reason a cumulative defence does
+     not rescue it: "The claim is made in words, so a cumulative reading does not rescue it."
+     FIXING THE PROSE WITHOUT THE LEDGER WOULD HAVE LEFT THE ILLUSTRATION SAYING IT. This array is
+     the data literal behind that sentence, so both moved together ([[prose-fixed-thrice-check-the-
+     illustration]]).
+     TICK 9 WAS THE NAKED VIOLATION: 55 -> 80, "earns 25 ATP", pure profit on self-initiated work.
+     Capped at 19, which is exactly what ticks 6, 7 and 8 cost (4 + 8 + 7). The tick-4 spam's 25 is
+     deliberately NOT refunded: nobody confirms spam, and refunding it would make the mistake free.
+     THIS IS A CHAIN, NOT A ROW. 55 -> 74 propagates: tick 10 74, tick 11 74 -> 29, tick 12 29 -> 6,
+     tick 13 6 -> 0. The tick-11 and tick-12 SPEND magnitudes (-45, -23) are preserved rather than
+     shrunk to protect the old endpoints, because those two ticks are the overcommit story and
+     shrinking them would soften it. Tick 13 still lands exactly at 0, so energy death still fires.
+     WHAT THE CHAIN DOES NOT TOUCH, CHECKED: tick 14's rebirth is RULE-SET, not balance-carried
+     (0 -> 112, "a starting bonus above the usual 100"), so 112, 0.51 and 0.54 are unmoved and the
+     Act Map still reads as before. The pre-Start rail's guard (grep -n "0.51 is NOT a new figure")
+     cites tick 13's trust_after, not its ATP, so it is unaffected. One prose mirror of tick 10's
+     balance existed and moved with it (grep -n "(sustainable)").
+     TICK 3'S NUMBERS ARE CORRECT AND DELIBERATELY UNCHANGED, BUT ITS STRING WAS NOT. 12 against
+     the 13 spent on ticks 1-2 obeys the cap. The problem was that the ledger renders ONE event at
+     a time with a per-tick delta, green when positive (grep -n "atp_after > currentSnapshot"), and
+     never shows a running spend total, so the cumulative defence is arithmetic THE SURFACE CANNOT
+     EXPRESS: a bare green +12 labelled "earns 12 ATP back!" read identically to the +25 being
+     capped. A guard asserting a criterion the reader cannot see would not have closed that. So the
+     reason now states the criterion on the surface, and the exclamation mark is gone. Do NOT
+     "fix" tick 3's numbers; they are not the defect. */
   // Simplified simulation data - single life, human-relatable scenario
   // Alice is a content creator building reputation in a Web4 community
   const simulationSnapshots: SimulationSnapshot[] = [
     { tick: 0, action: "Join community", atp_before: 100, atp_after: 100, trust_before: 0.5, trust_after: 0.5, reason: "Alice joins with starter resources (100 ATP) and neutral trust (0.5)" },
     { tick: 1, action: "Quality post", atp_before: 100, atp_after: 92, trust_before: 0.5, trust_after: 0.52, reason: "Thoughtful contribution: costs 8 ATP but builds trust (+0.02)" },
     { tick: 2, action: "Help newcomer", atp_before: 92, atp_after: 87, trust_before: 0.52, trust_after: 0.55, reason: "Mentoring others: costs 5 ATP, trust rises (+0.03)", isSuccess: true },
-    { tick: 3, action: "Receive upvotes", atp_before: 87, atp_after: 99, trust_before: 0.55, trust_after: 0.56, reason: "Community appreciates quality: earns 12 ATP back!", isSuccess: true },
+    { tick: 3, action: "Receive upvotes", atp_before: 87, atp_after: 99, trust_before: 0.55, trust_after: 0.56, reason: "Confirmations arrive on her first two posts and recover 12 of the 13 ATP they cost. Confirmation refunds at most what you spent, so recovery is the ceiling.", isSuccess: true },
     { tick: 4, action: "Spam attempt", atp_before: 99, atp_after: 74, trust_before: 0.56, trust_after: 0.48, reason: "Low-effort bulk posts: costs 25 ATP, trust drops sharply (-0.08)", isWarning: true },
     { tick: 5, action: "Trust warning", atp_before: 74, atp_after: 74, trust_before: 0.48, trust_after: 0.48, reason: "Trust below 0.5 threshold! Features restricted until trust recovers", isWarning: true },
     { tick: 6, action: "Thoughtful reply", atp_before: 74, atp_after: 70, trust_before: 0.48, trust_after: 0.50, reason: "Consistent quality rebuilds trust: costs 4 ATP, trust rises (+0.02)" },
     { tick: 7, action: "Quality post", atp_before: 70, atp_after: 62, trust_before: 0.50, trust_after: 0.53, reason: "Another valuable contribution: costs 8 ATP, trust continues rising" },
     { tick: 8, action: "Collaboration", atp_before: 62, atp_after: 55, trust_before: 0.53, trust_after: 0.58, reason: "Working with trusted member: costs 7 ATP, significant trust gain (+0.05)", isSuccess: true },
-    { tick: 9, action: "Recognition", atp_before: 55, atp_after: 80, trust_before: 0.58, trust_after: 0.62, reason: "Community recognition for consistent quality: earns 25 ATP, trust boost", isSuccess: true },
-    { tick: 10, action: "Established", atp_before: 80, atp_after: 80, trust_before: 0.62, trust_after: 0.62, reason: "Alice is now a trusted community member with sustainable reputation", isSuccess: true },
+    { tick: 9, action: "Recognition", atp_before: 55, atp_after: 74, trust_before: 0.58, trust_after: 0.62, reason: "Recognition for consistent quality: confirmations on her last three posts recover the 19 ATP they cost, and trust rises.", isSuccess: true },
+    { tick: 10, action: "Established", atp_before: 74, atp_after: 74, trust_before: 0.62, trust_after: 0.62, reason: "Alice is now a trusted community member with sustainable reputation", isSuccess: true },
     // Life continues - what happens when things go wrong
-    { tick: 11, action: "Overcommit", atp_before: 80, atp_after: 35, trust_before: 0.62, trust_after: 0.58, reason: "Alice takes on too many projects at once. Each costs ATP, and spreading thin hurts quality.", isWarning: true },
-    { tick: 12, action: "Quality slips", atp_before: 35, atp_after: 12, trust_before: 0.58, trust_after: 0.51, reason: "Rushed work gets poor reviews. ATP drains, trust falls. The crisis spiral begins.", isWarning: true },
-    { tick: 13, action: "ATP exhaustion", atp_before: 12, atp_after: 0, trust_before: 0.51, trust_after: 0.51, reason: "No energy left to contribute. ATP hits zero - Alice's entity dies. But her record persists.", isWarning: true },
+    { tick: 11, action: "Overcommit", atp_before: 74, atp_after: 29, trust_before: 0.62, trust_after: 0.58, reason: "Alice takes on too many projects at once. Each costs ATP, and spreading thin hurts quality.", isWarning: true },
+    { tick: 12, action: "Quality slips", atp_before: 29, atp_after: 6, trust_before: 0.58, trust_after: 0.51, reason: "Rushed work gets poor reviews. ATP drains, trust falls. The crisis spiral begins.", isWarning: true },
+    { tick: 13, action: "ATP exhaustion", atp_before: 6, atp_after: 0, trust_before: 0.51, trust_after: 0.51, reason: "No energy left to contribute. ATP hits zero - Alice's entity dies. But her record persists.", isWarning: true },
     // Rebirth with karma carry-forward
     { tick: 14, action: "Rebirth", atp_before: 0, atp_after: 112, trust_before: 0.51, trust_after: 0.54, reason: "New life begins! Good karma carries forward: 112 ATP (a starting bonus above the usual 100 - the trust she built carries forward as karma) and 0.54 trust (above the 0.50 neutral baseline). Past lessons remembered.", isSuccess: true },
     { tick: 15, action: "Wiser choices", atp_before: 112, atp_after: 104, trust_before: 0.54, trust_after: 0.57, reason: "Armed with experience, Alice paces herself - focused quality over volume. Trust rises faster than her first life.", isSuccess: true },
@@ -132,7 +159,7 @@ export default function FirstContactPage() {
                 <strong style={{ color: '#e2e8f0' }}>Step 2 - Helping a newcomer:</strong> She mentors someone new. Costs 5 ATP, but trust jumps to 0.55. Generosity pays.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#10b981' }}>Step 3 - Earning recognition:</strong> People upvote her earlier work. She earns 12 ATP back - more than she spent. Quality content pays for itself.
+                <strong style={{ color: '#10b981' }}>Step 3 - Earning recognition:</strong> People upvote her earlier work. Their confirmations recover 12 of the 13 ATP those two posts cost her. A confirmed contribution recovers its cost rather than beating it, so quality pays for itself rather than paying more than itself.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#f59e0b' }}>Step 4 - A mistake:</strong> Alice tries spamming low-effort posts. It costs 25 ATP and her trust drops to 0.48 - below the threshold. Features are restricted.
@@ -1268,7 +1295,7 @@ export default function FirstContactPage() {
                     hit site-wide; the other "trust network" hits are MRH visibility claims, a
                     different subject, and are untouched. */}
                 <p className="text-gray-300 leading-relaxed">
-                  By the end, Alice had <strong className="text-green-400">80 ATP</strong> (sustainable) and
+                  By the end, Alice had <strong className="text-green-400">74 ATP</strong> (sustainable) and
                   <strong className="text-green-400"> 0.62 trust</strong> (well above threshold). She's now an established
                   community member with a permanent track record.
                 </p>
