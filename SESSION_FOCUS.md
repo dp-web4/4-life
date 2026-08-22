@@ -2,6 +2,108 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-22 09:00 session - the profits the cap forbids, and 14 links that went nowhere
+
+**No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `10be8d8`, not
+stacked. The 05:00 browse landed after #570 merged (04:16, live before the browse), so its residue
+is fair signal. All four HIGH rows worked. Nine files, **zero new files**, two commits.
+
+### The visitor could not run JavaScript, and that is most of the log
+
+Their opening paragraph: *"JavaScript did not run for me on some pages... I did not know that was a
+different version of the content until I noticed the numbers disagreeing with the rest of the
+site."* #570 capped all six earning choices in `/day-in-web4`'s `SCENARIOS` array and fixed the
+interactive prose, but never touched the hand-mirrored `<noscript>` block. **The cap landed on the
+version most readers see and missed the only version a non-JS reader, a search engine or a reading
+assistant gets.** Same on `/first-contact`. This is the un-swept-surface shape, one browse later.
+
+- **9:00 AM (8/20) and 3:30 PM (4/10)** capped, propagating #570's shipped sentences verbatim.
+- **4:30 PM deliberately left alone**, with a guard so it does not re-file as un-handled: *"the 10
+  comes back"* IS the cap, and #570's guard forbids restoring a partial refund. Their second
+  objection to that scenario (the *"substance, not seniority"* moral one clause after a 40%
+  newcomer surcharge) is a live MEDIUM, a different class, untouched.
+- The **both-halves note** #570 added at the live ATP ledger now also appears in the fallback.
+
+### Fixing the prose would have left the illustration saying it
+
+`/first-contact`'s `simulationSnapshots` is the data literal behind the `<noscript>` sentence, so
+both moved together. **Tick 9 was the naked violation** (55 -> 80, *"earns 25 ATP"*): capped at 19,
+exactly what ticks 6/7/8 cost. The tick-4 spam's 25 is **not** refunded; nobody confirms spam.
+
+**A chain, not a row.** 74 / 74 -> 29 / 29 -> 6 / 6 -> 0, with the tick-11 and tick-12 spend
+magnitudes preserved rather than shrunk to protect the old endpoints. Tick 13 still lands exactly
+at 0. Checked and unmoved: tick 14's rebirth is **rule-set, not balance-carried**, so 112 / 0.51 /
+0.54 hold and the Act Map reads as before; the pre-Start rail's guard cites tick 13's *trust*, not
+its ATP. One prose mirror (`"(sustainable)"`) moved with it.
+
+**Tick 3's numbers are correct and unchanged; its string was not.** 12 against the 13 spent obeys
+the cap. But the ledger renders one event at a time with a per-tick delta, green when positive, and
+never shows a running spend total, so the cumulative defence is **arithmetic the surface cannot
+express**: a bare green **+12** labelled *"earns 12 ATP back!"* read identically to the +25 being
+capped. A guard asserting a criterion the reader cannot see would not have closed that seam, so the
+reason now states it on the surface. Do not "fix" tick 3's numbers.
+
+### Found while verifying, filed by nobody
+
+`/trust-tensor` described `/how-it-works`' cascade as *"a 15-ATP tutorial post earns 40 ATP back
+**when recipients confirm it helped**"*. That is the **pre-Jul-30 wording of the very block it
+cites**, whose own guard records reframing it as *commissioned* precisely because confirmation
+refunds at most what you spent, and that page now prices the self-initiated case at *"0 net at
+best"*. The citing page had quietly reverted the cited page's correction. **Only the ATP half was
+wrong**: confirmation does move T3, so the ATP half is re-channelled to the commissioner and the T3
+half stays on confirmation.
+
+### The guard that answered half a complaint
+
+`/atp-economics`: *"Across a hundred tasks... Hannah barely loses any"* is false by the page's own
+table (-8 a task against a 100 ATP start is -800; the visitor got bankruptcy at task 13). The
+**June-11 guard on this same example answered the "lose slowly" half and left the arithmetic half
+standing**, which is why it re-filed a severity higher.
+
+Fixed by **deleting the false clause**; the clause after it was already the true one. It
+deliberately prints **no countdown**. This page says two lines below that landing a first
+commission is an open question, and a countdown beside that entails a well-behaved participant
+inevitably starving, which **Q13 forbids as much as it forbids a survival guarantee**. Sam's death
+line is untouched: at 35% quality he is not the case Q13 protects. Same-line LOW fixed in the same
+edit: 42/6 is the *earn-back* ratio, so "keeps 7x" -> "earns back 7x" (she *keeps* 92 against 56,
+1.6x).
+
+### Ten broken anchors were fourteen, and were two defects
+
+Enumerating every cross-page hash link **with comments stripped**, then checking each id against
+**live served HTML** with `#newcomer-solvency` as a positive control: **14 broken, not 10**. Their
+`/why-web4#faq` is a false positive living only inside an Aug-15 guard comment. Comment-stripping
+also surfaced five they missed, three of them `learnMore` values in `src/lib/terms.ts`, reached
+from a `TermTooltip` and invisible to any page-scoped read.
+
+- **Cause A, nine links**: the id exists but sits inside `<DeepDiveToggle>`, which returns `null`
+  until mount and renders children only when expanded. Fixed once, in the component. Must not write
+  `localStorage`; must be **two passes** (at detection time the children do not exist, so one pass
+  expands and never scrolls); must open **every `<details>` between the target and the toggle**.
+  **This is the JS click path only and the row STAYS OPEN** - the visitor who filed it had no JS,
+  and deep-dive content is still absent from the served HTML.
+- **Cause B, five links**: the id does not exist at all. `#trust` -> a demand-driven
+  `#virtuous-cascade` (cited by link **text**, not line, because the sibling commit edits that
+  block); `#false-positives` -> `#risk-threshold` (its own subtitle is "Fairness & False
+  Positives"); `#sybil` -> `#risk-gaming`; `#goodharting` -> `/trust-tensor`, **not** bare
+  `/what-could-go-wrong`, which has zero Goodhart content and would only move the broken promise
+  from the fragment to the page; `#privacy-leakage` **deleted, not repointed** - the text promised
+  "7 privacy leakage channels", that page says "privacy" once in an unrelated line, and the figure
+  grounds only in `web4/archive/`. Swept the second copy on `/why-web4`, which links to the same
+  page with **no fragment** and so was invisible to a fragment grep.
+
+Verified in a real browser against a local production build, not by a green build.
+
+### Left for the next pass, with reasons
+
+Six MEDIUMs and three LOWs. Several sit on one seam: **rebirth trust**. `/first-contact` shows
+0.51 -> 0.54, `/karma-consequences` gives `prev_trust x 0.95` (0.4845), and the karma page
+discloses the conflict while the page making the claim does not and is 40 minutes earlier in the
+reading order. That is their Unanswered Q3 and two MEDIUMs, and it is **Q16 territory** (canon
+disagrees on what a new role starts at), so it wants a dedicated pass, not a corner of this one.
+Also open: Act 4's 0.62 -> Act 5's 0.51 gap; five root causes against four mechanisms; the `/learn`
+count excluding `/onramp`; "raw" vs "rolled-up"; and the 0.50 knife edge on `/what-could-go-wrong`.
+
 ## Aug-22 03:00 session - the walkthrough where every helpful act turned a profit
 
 **No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `262867c`, not

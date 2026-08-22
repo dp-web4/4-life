@@ -1913,7 +1913,15 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Cascade Scenarios */}
-      <section className="max-w-4xl mx-auto mt-12">
+      {/* AUG-22 visitor, HIGH 4: this id exists because /trust-tensor's "full cascade on How It
+          Works" link (the one that promises "a worked example") pointed at /how-it-works#trust,
+          an id this page has never had. Demand-driven, per the site's anchor rule: named here so
+          the next pass knows which inbound link asked for it, and can delete it if that link
+          goes. Cited by link text rather than by line because this commit's sibling also edits
+          that block of /trust-tensor. The section, not the Virtuous Cascade div inside it, is the
+          target: the link promises the cascade walkthrough, and landing on the heading keeps the
+          vicious cascade below it in view. */}
+      <section id="virtuous-cascade" className="max-w-4xl mx-auto mt-12 scroll-mt-24">
         <h3 className="text-xl font-bold text-gray-200 mb-4">What Does This Look Like in Practice?</h3>
         <p className="text-gray-400 mb-6 text-sm">
           Pick a starting event. Watch how it cascades through all three systems:

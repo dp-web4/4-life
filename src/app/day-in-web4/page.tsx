@@ -1356,6 +1356,32 @@ export default function DayInWeb4Page() {
         <Link href="/running-now" className="hover:text-sky-400 transition-colors">Running Now</Link>
       </div>
 
+      {/* AUG-22 visitor, HIGH 2: "Three scenarios net a profit on self-initiated work: 9:00 AM
+          'costs 8 energy... you earn 20 back'; 3:30 PM 'Helping costs 4 energy but earns 10 back';
+          4:30 PM 'the 10 comes back'. All three are forbidden by the recharge cap that the same
+          page states above them."
+          THIS BLOCK IS THE UN-SWEPT HALF OF #570. That pass capped all six earning choices in the
+          SCENARIOS array at their own cost and fixed the interactive prose, but this hand-mirrored
+          <noscript> copy was never touched, so the cap landed on the version most readers see and
+          missed the only version a non-JS reader, a search engine, or a reading assistant gets.
+          The visitor read this fallback and not the walkthrough, and said so in their opening
+          paragraph. Sentences PROPAGATED from the post-#570 interactive copy, not re-coined: "the
+          full 8 comes back" (grep -n "the full 8 comes back") and "so the 4 comes back" (grep -n
+          "so the 4 comes back"). The "energy" register is this block's own and pre-dates the fix;
+          it is not a reword.
+          THE VISITOR'S THIRD BULLET IS CORRECTLY LEFT ALONE. 4:30 PM already reads "the 10 comes
+          back", which IS the cap: recharge = min( sum of slices, ATP_cost ) permits FULL recovery,
+          and the line is byte-identical in substance to the post-#570 interactive copy for the
+          same choice. Their objection to it was that a full refund exceeds what /atp-economics'
+          quality ramp pays, but #570 ruled on exactly that and its guard says the ATP column
+          deliberately does not exhibit the ramp: "Do NOT 'restore' a partial refund here." Their
+          second objection to 4:30 PM (the "substance, not seniority" moral sitting one clause
+          after a 40% newcomer surcharge) is a live MEDIUM, not this claim class, and is untouched.
+          THE NOTE BELOW CARRIES BOTH HALVES, which is the condition /how-it-works' guard states.
+          Naming the payment channel at a skim layer while leaving the open question somewhere else
+          makes the skim layer assert the unsolved step more loudly. Propagated verbatim from the
+          note #570 added at this page's live ATP ledger (grep -n "recovers its cost rather than
+          beating it"); the /atp-economics#newcomer-solvency link is mandatory, not decorative. */}
       <noscript>
         <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '2rem' }}>
           <div style={{ background: '#1e293b', border: '1px solid #475569', borderRadius: '12px', padding: '2rem' }}>
@@ -1380,7 +1406,7 @@ export default function DayInWeb4Page() {
                 <strong style={{ color: '#ef4444' }}>Today:</strong> You write a helpful answer about fixing a faucet. It gets buried under SEO spam.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-                <strong style={{ color: '#10b981' }}>Web4:</strong> Your answer costs 8 energy. Three people mark it helpful - you earn 20 back. Quality rises to the top because low-effort posts don&apos;t pay off.
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your answer costs 8 energy. Three people mark it helpful - the full 8 comes back. Quality rises to the top because low-effort posts don&apos;t pay off.
               </p>
             </div>
 
@@ -1410,7 +1436,7 @@ export default function DayInWeb4Page() {
                 <strong style={{ color: '#ef4444' }}>Today:</strong> A newcomer asks a basic question. Trolls pile on with &quot;just Google it.&quot; They leave. Community loses another contributor.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-                <strong style={{ color: '#10b981' }}>Web4:</strong> Helping costs 4 energy but earns 10 back. Trolling costs energy with no return. Constructive behavior becomes the path of least resistance.
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Helping costs 4 energy. But the newcomer marks you helpful, so the 4 comes back. Trolling costs energy with no return. Constructive behavior becomes the path of least resistance.
               </p>
             </div>
 
@@ -1467,6 +1493,18 @@ export default function DayInWeb4Page() {
             <div style={{ background: '#0f172a', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
               <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: '0.95rem' }}>
                 <strong style={{ color: '#38bdf8' }}>The pattern:</strong> Every scenario follows the same logic - actions cost energy, quality is rewarded, bad behavior has real consequences, and trust compounds over time. No moderators needed to police spam. The economics do that work; people still settle disputes.
+              </p>
+            </div>
+
+            <div style={{ background: '#0f172a', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
+              <p style={{ color: '#94a3b8', lineHeight: 1.7, fontSize: '0.875rem' }}>
+                <strong style={{ color: '#38bdf8' }}>Reading those energy numbers:</strong> a confirmed
+                contribution recovers its cost rather than beating it. Earning <em>above</em> cost comes
+                from task payment, where a task pays what the work is worth to whoever commissioned it
+                rather than what it cost you to do. How someone with no track record lands a first
+                commission is an open question on this stack rather than a solved one, and you should
+                read it as one.{' '}
+                <a href="/atp-economics#newcomer-solvency" style={{ color: '#38bdf8' }}>Where that stands &rarr;</a>
               </p>
             </div>
 

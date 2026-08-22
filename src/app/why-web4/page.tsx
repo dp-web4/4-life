@@ -2562,9 +2562,8 @@ export default function WhyWeb4Page() {
                 identity and activity are harder to surveil, even as your reputation becomes persistent.
               </p>
               <p className="text-amber-400/80 text-xs">
-                <strong>Honest caveat:</strong> Web4 identifies{" "}
-                <a href="/what-could-go-wrong" className="text-sky-400 hover:underline">seven privacy leakage channels</a>{" "}
-                including metadata correlation, timing analysis, and trust graph topology inference.
+                <strong>Honest caveat:</strong> Known privacy leakage channels include metadata
+                correlation, timing analysis, and trust graph topology inference.
                 No system eliminates privacy risk entirely. The claim is that decentralized, scoped
                 visibility is structurally better than centralized, unlimited surveillance - not
                 that it&apos;s perfect. See{" "}
