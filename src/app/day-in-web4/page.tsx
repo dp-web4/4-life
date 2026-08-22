@@ -88,10 +88,10 @@ const SCENARIOS: Scenario[] = [
         label: 'Write a detailed answer',
         icon: '✍️',
         atpCost: 8,
-        atpEarned: 20,
+        atpEarned: 8,
         trustDelta: 0.03,
         todayInternet: 'You spend 10 minutes writing a great answer. It gets buried under SEO spam and AI-generated filler.',
-        web4Result: 'Your answer costs 8 ATP to post. Three people mark it helpful - you earn 20 ATP back and your trust score rises. Quality is rewarded.',
+        web4Result: 'Your answer costs 8 ATP to post. Three people mark it helpful - the full 8 comes back and your trust score rises. Quality is rewarded.',
         concept: 'Energy Budget (ATP)',
         conceptLink: '/atp-economics',
       },
@@ -99,7 +99,7 @@ const SCENARIOS: Scenario[] = [
         label: 'Post a quick one-liner',
         icon: '💨',
         atpCost: 3,
-        atpEarned: 5,
+        atpEarned: 3,
         trustDelta: 0.01,
         todayInternet: 'Your quick reply gets lost in a sea of similar low-effort responses.',
         web4Result: 'Low-cost post, small return. Not harmful, but the community doesn\'t reward it much. You break even.',
@@ -181,10 +181,10 @@ const SCENARIOS: Scenario[] = [
         label: 'Leave a review after eating',
         icon: '📝',
         atpCost: 5,
-        atpEarned: 8,
+        atpEarned: 5,
         trustDelta: 0.02,
         todayInternet: 'Your honest review competes with hundreds of fake ones. Impact: negligible.',
-        web4Result: 'Your review costs 5 ATP. If others find it helpful, you earn 8 ATP back. Over time, consistently helpful reviewers become trusted voices. Your reviews carry weight.',
+        web4Result: 'Your review costs 5 ATP. If others find it helpful, the 5 comes back. Over time, consistently helpful reviewers become trusted voices. Your reviews carry weight.',
         concept: 'Consequences',
         conceptLink: '/karma-consequences',
       },
@@ -200,10 +200,10 @@ const SCENARIOS: Scenario[] = [
         label: 'Welcome them and help',
         icon: '🌱',
         atpCost: 4,
-        atpEarned: 10,
+        atpEarned: 4,
         trustDelta: 0.03,
         todayInternet: 'You help, but trolls pile on with "just Google it." The newcomer leaves. Community loses another potential contributor.',
-        web4Result: 'Helping costs 4 ATP. But the newcomer marks you helpful - 10 ATP back. Trolls can\'t afford to pile on because every hostile reply costs THEM energy. Constructive behavior is the path of least resistance.',
+        web4Result: 'Helping costs 4 ATP. But the newcomer marks you helpful, so the 4 comes back. Trolls can\'t afford to pile on because every hostile reply costs THEM energy. Constructive behavior is the path of least resistance.',
         concept: 'Energy Budget (ATP)',
         conceptLink: '/atp-economics',
       },
@@ -211,10 +211,10 @@ const SCENARIOS: Scenario[] = [
         label: 'Link to existing answer',
         icon: '🔗',
         atpCost: 2,
-        atpEarned: 3,
+        atpEarned: 2,
         trustDelta: 0.01,
         todayInternet: 'Efficient, but feels cold. The newcomer might not come back.',
-        web4Result: 'Low effort, low cost (2 ATP), small return. Efficient and nobody\'s hurt. The original answer author earns ATP too - good content keeps paying forward.',
+        web4Result: 'Low effort, low cost (2 ATP), small return. Efficient and nobody\'s hurt. The original answer author is credited too - confirmations keep recovering what that post cost them.',
         concept: 'Consequences',
         conceptLink: '/karma-consequences',
       },
@@ -241,10 +241,10 @@ const SCENARIOS: Scenario[] = [
         label: 'Make a quality contribution',
         icon: '✨',
         atpCost: 10,
-        atpEarned: 15,
+        atpEarned: 10,
         trustDelta: 0.02,
         todayInternet: 'You post something great. It gets buried because you have zero followers. Nobody sees it.',
-        web4Result: 'Your post costs 10 ATP - a 40% newcomer surcharge, because you have no consistency history yet. But if it\'s genuinely useful, recipients confirm it and you earn 15 ATP back. Two more quality posts and your action costs start dropping. The system rewards you for substance, not seniority.',
+        web4Result: 'Your post costs 10 ATP - a 40% newcomer surcharge, because you have no consistency history yet. But if it\'s genuinely useful, recipients confirm it and the 10 comes back. Two more quality posts and your action costs start dropping. The system rewards you for substance, not seniority.',
         concept: 'Energy Budget (ATP)',
         conceptLink: '/atp-economics',
       },
@@ -386,7 +386,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 0,
         trustDelta: 0,
         todayInternet: 'Tomorrow looks the same. More spam. More fake reviews. More guessing who to trust.',
-        web4Result: 'Tomorrow, your trust from today carries forward. The helpful answer you wrote will keep earning ATP as people find it useful. Your reputation compounds. Good days build on each other.',
+        web4Result: 'Tomorrow, your trust from today carries forward. Confirmations on the answer you wrote keep arriving until it has recovered what it cost you. Your reputation compounds. Good days build on each other.',
         concept: 'Consequences',
         conceptLink: '/karma-consequences',
       },
@@ -923,6 +923,57 @@ export default function DayInWeb4Page() {
               Trust: <span className="text-emerald-400 font-mono font-bold">{currentTrust.toFixed(2)}</span>
             </span>
           </div>
+          {/* AUG-21 visitor, Unanswered Q3: "/day-in-web4 shows a first post earning 15 ATP back on
+              a 10 ATP spend, which is the self-initiated case netting positive - the case
+              /how-it-works says caps at zero. I could not tell which is right."
+              THE WALKTHROUGH WAS WRONG AND THE PROSE PAGES WERE RIGHT. /atp-economics publishes the
+              rule as a formula (grep -n "capped at" there: recharge = min( sum of slices, ATP_cost ))
+              and again in summary item 3; /how-it-works prices a self-initiated post at "0 net at
+              best"; and WEB4-CANON-QUESTIONS Q13 takes that model AS GIVEN, so the walkthrough was
+              not just contradicting two sibling pages, it was contradicting the premise of a live
+              escalation. All six earning choices on this page broke it: 8/20, 3/5, 5/8, 4/10, 2/3,
+              10/15. Every one is now capped at its own cost.
+              WHY NUMBERS AND NOT LABELS. The Jul-30 /atp-economics pass on this same claim class
+              wrote "Fix direction is labels, NOT numbers" and reassigned its rows to the payment
+              channel, because its rows were generic ("Meaningful contribution", "High-value
+              creation"). That escape does not exist here: nobody commissions you to welcome a
+              newcomer or to leave a restaurant review. The labels are narrative acts, so the
+              numbers were what was wrong.
+              THE ATP COLUMN DELIBERATELY DOES NOT EXHIBIT THE QUALITY RAMP. Every confirmed act
+              recovers its cost in full, including the low-quality ones. A partial refund for the
+              two trustDelta-0.01 acts was considered and rejected: "Post a quick one-liner" (3) and
+              "Link to existing answer" (2) carry the IDENTICAL quality signal, so refunding one at
+              33% and the other at 100% would ship a seam nothing on this page derives. Full for all
+              six also makes an already-shipped sentence true with no edit: the one-liner's own
+              result copy reads "You break even", which was false at 3/5. Quality still separates
+              these acts through cost and through trustDelta, and /atp-economics' quality ramp is
+              one click away through the link below. Do NOT "restore" a partial refund here.
+              Q13 IS NOT ANSWERED, IN EITHER DIRECTION. The best day this page can produce is now
+              100 - 5 - 3 = 92: every earning choice nets zero, and only the 11:00 AM hire (both
+              options 5/0) and the 6:00 PM response (3/0 or 10/0) are forced spends. 92 is
+              REACHABLE, which is the point - the page states no rate, no floor, no survival
+              promise, and nowhere claims the day repeats or that the decline is inevitable. An
+              illustration in which a well-behaved participant inevitably starves would be a ruling
+              on Q13 exactly as a survival guarantee would be (#565). No commissioned-work choice
+              was added either; that would assert the bootstrap is solved.
+              THIS NOTE CARRIES BOTH HALVES, which is the condition /how-it-works' guard states
+              (grep -n "Both halves visible or neither" there): naming the payment channel at a skim
+              layer while leaving the open question somewhere else makes the skim layer assert the
+              unsolved step more loudly. Propagated, not summarized: the two sentences come verbatim
+              from /how-it-works (grep -n "lands a first commission") and from /atp-economics'
+              escrow bullet ("recovers its cost rather than beating it"), both under a live
+              "reword either one, reword both" sync guard. The #newcomer-solvency link is mandatory,
+              not decorative - without it this reads as a promise that you will get commissioned. */}
+          <p className="text-xs text-gray-500 mt-3 leading-relaxed max-w-3xl">
+            Reading that energy number: a confirmed contribution recovers its cost rather than
+            beating it. Earning <em>above</em> cost comes from task payment, where a task pays what
+            the work is worth to whoever commissioned it rather than what it cost you to do. How
+            someone with no track record lands a first commission is an open question on this stack
+            rather than a solved one, and you should read it as one.{" "}
+            <Link href="/atp-economics#newcomer-solvency" className="text-sky-400 hover:underline">
+              Where that stands &rarr;
+            </Link>
+          </p>
         </div>
       )}
 
@@ -1033,18 +1084,42 @@ export default function DayInWeb4Page() {
             reconciliation shipped at InteractiveWireframes.tsx:370 ("an active member's working
             balance climbs well past that") is true but generic, and the reader's own ledger
             visibly does NOT climb - the scenario choices are almost all refund-channel events.
+            AUG-22 CORRECTION, one half of that sentence only. The classification is right and is
+            what licensed this whole pass: these choices ARE refund-channel events. But "the
+            reader's own ledger visibly does NOT climb" was FALSE when written and stayed false
+            for three weeks: every earning choice on the page returned more than it cost, so the
+            best path ended the day at 118 of a 100 start. The six literals are capped as of this
+            commit and the claim is now true, with a ceiling of 92. The cited reconciliation was
+            also false rather than merely generic and is fixed in the same push - see the guard on
+            it in InteractiveWireframes.tsx.
             Answer it at the boundary where the reader stops being the protagonist, and name the
             channel that actually grows a balance (atp-economics item 3, L208).
             Deliberately QUALITATIVE: the SCENARIOS choice set cannot produce a day anywhere near
             350, so printing a derived figure would ship a new arithmetic claim on the page already
             filed for arithmetic. And keep it on the BUDGET side of the budget-vs-wealth line
-            (guard at atp-economics:168-176) - no accumulation-as-savings language. */}
+            (guard at atp-economics:168-176) - no accumulation-as-savings language.
+            AUG-22: this paragraph names the payment channel with no open half and no route to one,
+            which is the configuration /how-it-works' guard forbids (grep -n "Both halves visible
+            or neither" there). A prior sweep EXCLUDED it by a stated criterion, and that exclusion
+            was correct when it was written: the sentence scopes itself to "an account built up
+            over far longer", explicitly not a newcomer, so it did not read as a promise to the
+            reader. THIS PASS CHANGED THE PREMISE THAT CRITERION TESTED. With every earning choice
+            now capped, the reader's own ledger cannot climb at all, so this became the page's only
+            account of how any balance ever grows, and "will I ever?" is the question the capped
+            ledger now provokes. The scoping is kept and the open half is appended, propagated from
+            /how-it-works (grep -n "lands a first commission") rather than reworded. The
+            "mostly earns back what that day cost you" clause is left exactly as it was: it was
+            already the correct sentence, and it is now also true of the data beneath it. */}
         <p className="text-gray-400 mb-2 text-sm">
           One thing to carry across the line: the ledger you just ran is a single day, starting from
           the 100 ATP everyone begins with. The mockups below belong to an account built up over far
           longer, which is why the marketplace one can price a camera at 350. A day of posting and
           replying mostly earns back what that day cost you; balances grow past the starting budget
-          through the other channel, work that someone else commissions and pays for. See{' '}
+          through the other channel, work that someone else commissions and pays for. How someone
+          with no track record lands a first commission is an open question on this stack rather
+          than a solved one, and you should read it as one
+          (<Link href="/atp-economics#newcomer-solvency" className="text-sky-400 hover:underline">where that stands</Link>).
+          See{' '}
           <Link href="/atp-economics#earning-atp" className="text-sky-400 hover:underline">how you actually earn ATP back</Link>.
         </p>
         <p className="text-xs text-sky-400/60 mb-8">
@@ -1345,7 +1420,7 @@ export default function DayInWeb4Page() {
                 <strong style={{ color: '#ef4444' }}>Today:</strong> You post something great in a new community. It gets buried because you have zero followers. Nobody sees it.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-                <strong style={{ color: '#10b981' }}>Web4:</strong> Your post costs 10 ATP - a 40% newcomer surcharge, no consistency history yet. But if it&apos;s genuinely useful, recipients confirm it and you earn 15 ATP back. The system rewards substance, not seniority.
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your post costs 10 ATP - a 40% newcomer surcharge, no consistency history yet. But if it&apos;s genuinely useful, recipients confirm it and the 10 comes back. The system rewards substance, not seniority.
               </p>
             </div>
 
@@ -1522,30 +1597,54 @@ function DaySummary({
     return choice.atpCost === 0 && choice.atpEarned === 0;
   }).length;
 
+  // AUG-22 pass, second defect, found while capping the earn-backs above and NOT filed by any
+  // visitor: this if-chain had THREE branches and TWO of them could never fire.
+  //   - Community Builder gated on helpfulChoices >= 4, where helpfulChoices counts trustDelta
+  //     > 0.02. Exactly two choices in the whole day exceed 0.02 (the 8:15 AM detailed answer and
+  //     the 2:00 PM welcome, both 0.03), so the maximum is 2 and the gate was never satisfiable.
+  //     Pre-existing, not caused by the cap. Re-thresholded to >= 2, which is its real maximum,
+  //     and its copy needed no edit: "your energy comes back" is exactly true of a full refund.
+  //   - Big Spender gated on totalAtpSpent > totalAtpEarned. Under the cap that is true on every
+  //     contributing path, so the gate stopped discriminating; and the zero-earned day it was
+  //     written for cannot reach it either, because declining every earning option forces at
+  //     least five passive picks (7:00 AM and 9:00 PM are 0/0-only, and the non-earning option in
+  //     each of 8:15 AM / lunch / 2:00 PM is 0/0), which tripped the old Observer gate first.
+  //     Re-gated on totalAtpEarned === 0, which is what the branch was always about: a day spent
+  //     without contributing anything anyone confirmed.
+  //   - Observer raised 4 -> 6 so the re-gated Big Spender is reachable (the minimum-passive
+  //     zero-earned day is 5 passive: take "Try to game the system" at 8/0 rather than "Watch and
+  //     learn"). Observer stays reachable, maximum passive is 8. 6 of 10 is also the honest
+  //     threshold for copy that says "you watched more than you participated"; at 5 of 10 that
+  //     sentence was false.
+  // The two re-copied descriptions are recharge-accurate rather than growth-accurate: under the
+  // cap, confirmed contributions recover what an action cost and nothing more. Neither names the
+  // payment channel, because the channel plus its open half is stated once, at the ledger note
+  // above; repeating the channel HERE without the open half is the configuration /how-it-works'
+  // "Both halves visible or neither" guard forbids.
   let dayType: { label: string; emoji: string; description: string };
-  if (helpfulChoices >= 4) {
+  if (helpfulChoices >= 2) {
     dayType = {
       label: 'Community Builder',
       emoji: '🌟',
       description: 'You invested energy in others all day. In Web4, this kind of day compounds - your trust rises, your energy comes back, and the community is stronger for it.',
     };
-  } else if (passiveChoices >= 4) {
+  } else if (passiveChoices >= 6) {
     dayType = {
       label: 'Observer',
       emoji: '👁️',
       description: 'You watched more than you participated. That\'s fine - lurking is free in Web4. But builders earn trust and energy. Tomorrow you might want to jump in.',
     };
-  } else if (totalAtpSpent > totalAtpEarned) {
+  } else if (totalAtpEarned === 0) {
     dayType = {
       label: 'Big Spender',
       emoji: '⚡',
-      description: 'You spent more energy than you earned. In Web4, that\'s sustainable for a while - everyone starts with a budget. But long-term, you need to create value to stay alive.',
+      description: 'You spent energy without contributing anything others confirmed, so none of it came back. In Web4 that\'s sustainable for a while - everyone starts with a budget - but confirmed contributions are what recharge it.',
     };
   } else {
     dayType = {
       label: 'Balanced Participant',
       emoji: '⚖️',
-      description: 'You mixed contributing with consuming. In Web4, this is sustainable - you\'re earning back what you spend while building a real reputation.',
+      description: 'You mixed contributing with consuming. Confirmed contributions recharged what those actions cost you, so it is the rest of the day\'s spending that moved your balance.',
     };
   }
 
