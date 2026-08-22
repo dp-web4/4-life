@@ -2,6 +2,126 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-22 03:00 session - the walkthrough where every helpful act turned a profit
+
+**No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `262867c`, not
+stacked, one 4life session running. The Aug-21 friction table was exhausted by #567/#568/#569 and
+both remaining LOWs are parked with reasons, so this pass took that browse's **Unanswered Q3**.
+Three files, zero new files.
+
+### The walkthrough was wrong and the prose pages were right
+
+Q3: *"`/day-in-web4` shows a first post earning 15 ATP back on a 10 ATP spend, which is the
+self-initiated case netting positive, the case `/how-it-works` says caps at zero. I could not tell
+which is right."* The site publishes the rule three times and owns it as a formula:
+`/atp-economics` (`recharge = min( sum of slices , ATP_cost )`, and summary item 3 *"refund at most
+what you spent"*), `/how-it-works` (*"0 net at best"*), and **`docs/WEB4-CANON-QUESTIONS.md` Q13
+takes that model AS GIVEN**. So the walkthrough was not merely contradicting two sibling pages, it
+was contradicting the premise of a live escalation.
+
+**All six earning choices broke it**: 8/20, 3/5, 5/8, 4/10, 2/3, 10/15. Best path ended the day at
+**118** of a 100 start. This is the un-swept remainder of a class fixed **five times** on the two
+prose pages, whose own generalisation says the claim *"has to name a channel EVERYWHERE it
+appears"*. The sweep never reached the walkthrough pages, which is exactly the Aug-21 Honest
+Assessment's named theme: **the site's prose is far more careful than its illustrations.**
+
+### Numbers, not labels, and the reason is specific
+
+The Jul-30 `/atp-economics` pass on this same class wrote *"Fix direction is labels, NOT numbers"*
+and reassigned its rows to the payment channel. That escape does not exist here: its rows were
+generic (`Meaningful contribution`), and **nobody commissions you to welcome a newcomer or to leave
+a restaurant review**. The labels are narrative acts, so the numbers were what was wrong.
+
+**Full refund for all six, including the low-quality ones**, and the ATP column deliberately does
+not exhibit the quality ramp. A partial refund for the two `trustDelta: 0.01` acts was drafted and
+rejected: *"Post a quick one-liner"* (3) and *"Link to existing answer"* (2) carry the **identical**
+quality signal, so refunding one at 33% and the other at 100% would ship a seam nothing on the page
+derives. Full also makes an already-shipped sentence true with no edit: the one-liner's own result
+copy reads *"You break even"*, which was false at 3/5. Quality still separates the acts through cost
+and through trustDelta. **Do not "restore" a partial refund.**
+
+### Q13 was the live risk, and the policy review is what caught it
+
+Capping every earning choice makes the reader's day decline on every branch, and #565 established
+that **an illustration in which a well-behaved participant inevitably starves is a ruling on Q13,
+exactly as a survival guarantee is.** The reviewer re-derived the ledger: 11:00 AM is forced
+negative (both options 5/0) and 6:00 PM is forced negative (3/0 or 10/0), so the best day is
+`100 - 5 - 3 = 92`. **92 is reachable**, which is the point. The page states no rate, no floor, no
+survival promise, nowhere claims the day repeats, and **no commissioned-work choice was added** (that
+would assert the bootstrap is solved).
+
+### The both-halves guard, which the first draft read backwards
+
+`/how-it-works`' *"Both halves visible or neither"* does **not** say "do not name the channel". Its
+own statement of the forbidden configuration is *"it named the channel at the skim layer and offered
+no open half and no route to one."* The first draft chose "neither" exactly where the decline became
+universal, the worst available option. Corrected: the new ledger note carries the cap, the channel,
+the open question, and the mandatory `#newcomer-solvency` link, **propagated verbatim** from
+`/how-it-works` and from `/atp-economics`' escrow bullet rather than reworded, both being under a
+live *"reword either one, reword both"* sync guard.
+
+**A prior exclusion whose PREMISE this pass changed.** `/day-in-web4`'s wireframes-intro "other
+channel" sentence was explicitly excluded by an earlier sweep, by a stated criterion: it scopes
+itself to *"an account built up over far longer"*, so it did not read as a promise to the reader.
+That was correct when written. With the six capped, the reader's own ledger can no longer climb at
+all, so it became the page's **only** account of how any balance grows and *"will I ever?"* became
+the reader's own question. Scoping kept, open half appended, and the sibling enumeration in
+`/how-it-works` updated so the stale exclusion does not mislead the next sweep.
+
+### Two dead branches, unfiled by any visitor, found while capping
+
+`DaySummary`'s if-chain had three branches and **two could never fire**:
+
+- **Community Builder** gated on `helpfulChoices >= 4`, where `helpfulChoices` counts
+  `trustDelta > 0.02`. Exactly **two** choices in the whole day exceed 0.02, so the maximum is 2 and
+  the gate was never satisfiable. Pre-existing. Re-thresholded to its real maximum; its copy needed
+  no edit, since *"your energy comes back"* is exactly true of a full refund.
+- **Big Spender** gated on `totalAtpSpent > totalAtpEarned`. Under the cap that is true on every
+  contributing path, so it stopped discriminating; and the zero-earned day it was written for could
+  not reach it either, because declining every earning option forces at least **five** passive picks,
+  which tripped the old `passiveChoices >= 4` Observer gate first. Re-gated on
+  `totalAtpEarned === 0`, and Observer raised **4 -> 6** so Big Spender is reachable (the
+  minimum-passive zero-earned day is 5). Observer stays reachable, maximum passive is 8. 6 of 10 is
+  also the honest threshold for copy that says *"you watched more than you participated"*.
+
+Both re-copied descriptions are **recharge-accurate rather than growth-accurate**, and neither names
+the payment channel: the channel plus its open half is stated once, at the ledger note, because
+repeating it here without the open half is the forbidden configuration.
+
+### `InteractiveWireframes.tsx` was false, not merely generic
+
+*"contributing earns ATP back, so an active member's working balance climbs well past that"* is the
+sentence the `/day-in-web4` guard cited as its reconciliation. Under the cap, contributing sustains
+a balance and never climbs past the grant on its own. So **a false claim was being cited as the
+answer to a visitor's arithmetic**. Re-keyed to the channel that does grow a balance. No figure
+moved: 100 and 350 are untouched and the budget-not-wealth framing is preserved verbatim.
+
+### Filed forward, deliberately not fixed
+
+1. **`/first-contact`'s Alice snapshots.** Tick 9 (*"earns 25 ATP"* against 19 spent since tick 3)
+   clearly breaks the cap. Tick 3 (*"earns 12 ATP back - more than she spent"*) refunds against
+   8+5 = 13 of prior spend, so **on a cumulative reading it already conforms** and only its prose
+   comparative is wrong. Left because her figures are a running `atp_before`/`atp_after` chain that
+   terminates in the tick-13 death and the 112-ATP rebirth, both pinned by #565 and by Q13's
+   requirement that a worked death come from an identifiable spending choice. Re-arithmetic there is
+   its own pass, not a rider. Start at tick 9, not tick 3.
+2. **`/atp-economics` summary items 1 and 3**, the remainder the `/how-it-works` guard already names
+   (*"Next pass on this class starts there"*). A routing defect, not an arithmetic one.
+3. **`/day-in-web4`'s two "lurking is free" instances**, deferred by an existing `/how-it-works`
+   guard (*"same defect, deferred, propagate there next"*). One of them is the Observer copy this
+   pass re-gated; the wording was left untouched because it is a read-pricing claim, a different
+   class from the recharge cap.
+
+### Still open from the Aug-21 browse
+
+Both **LOWs**, unchanged: the "onramp" double meaning is the standing operator branding call, and
+the landing-card density needs four cards written rather than moved. Unanswered **Q2** (how many
+actions is a "life"), **Q4** (what a 0.75 ceiling actually buys), and **Q5** (who assigns the
+quality score: `/first-contact` says "a simple thumbs-up", `/value-tensor` implies three scored
+dimensions) are untouched and unfiled. Q5 is the strongest of the three: it is a concrete cross-page
+divergence, not a request for more prose.
+
+
 ## Aug-21 21:00 session - the walkthrough that named a seniority class the derivation never uses
 
 **No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `9cd6e26`, not
