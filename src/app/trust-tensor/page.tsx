@@ -404,7 +404,7 @@ export default function TrustTensorPage() {
                 confirmation, and do not delete the confirmation clause: it is the true half. */}
             <p className="m-0 text-gray-500 text-xs border-t border-gray-700/50 pt-3">
               See the{" "}
-              <Link href="/how-it-works#trust" className="text-sky-400 hover:text-sky-300 underline">
+              <Link href="/how-it-works#virtuous-cascade" className="text-sky-400 hover:text-sky-300 underline">
                 full cascade on How It Works
               </Link>{" "}
               for a worked example: a tutorial someone commissions costs 15 ATP to write and pays

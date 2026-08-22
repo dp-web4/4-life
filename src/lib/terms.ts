@@ -247,7 +247,12 @@ export const terms: Record<string, TermDefinition> = {
     brief: "Creating many fake identities to overwhelm a system.",
     explanation:
       "Named after a case study of multiple personalities. In digital systems, a Sybil attack means one person creates hundreds or thousands of fake accounts to manipulate votes, reviews, or trust scores. Web4 resists this by tying identity to physical hardware - each fake identity needs a real device.",
-    learnMore: "/what-could-go-wrong#sybil",
+    // AUG-22: was "#sybil", an id that does not exist on that page - it numbers its sections
+    // risk-*, and this link had no live target. #risk-gaming ("Rich actors game the system
+    // anyway", subtitled "Economic Attack Surface") is where the long-game Sybil attack is
+    // actually treated, by name, as the risk. Reached from a TermTooltip, so a page-scoped
+    // grep for broken anchors never sees it.
+    learnMore: "/what-could-go-wrong#risk-gaming",
   },
 
   CorrelationAttack: {
@@ -266,7 +271,15 @@ export const terms: Record<string, TermDefinition> = {
     brief: "When a measure becomes a target, it stops being a good measure.",
     explanation:
       "Named after economist Charles Goodhart. If you reward people for a specific metric, they'll optimize for that metric rather than what it was supposed to measure. Example: if you measure code quality by test coverage, people write meaningless tests. Web4 mitigates this with multi-dimensional trust (harder to game all dimensions at once) and long-term observation.",
-    learnMore: "/what-could-go-wrong#goodharting",
+    // AUG-22: was "/what-could-go-wrong#goodharting". That id does not exist, and neither does
+    // the content: /what-could-go-wrong has ZERO Goodhart material, so repointing to the bare
+    // page would only move the broken promise from the fragment to the page. Retargeted by
+    // asking which page answers what this entry promises - /trust-tensor carries exactly the
+    // mitigation the explanation above names ("Gaming is exponentially harder", the "Gaming Is
+    // Exponentially Harder" heading, "Gaming becomes genuinely hard"). Do NOT normalise this
+    // back to a bare /what-could-go-wrong to match CorrelationAttack below: that sibling is
+    // plausibly the same defect, not a precedent licensing it.
+    learnMore: "/trust-tensor",
   },
 
   // Interoperability

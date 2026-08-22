@@ -829,9 +829,28 @@ export default function LCTExplainerPage() {
             <p className="text-sm text-gray-300 mt-3">
               <strong className="text-sky-400">What about metadata and surveillance?</strong> If devices
               are constantly attesting to each other, couldn&apos;t the attestation patterns themselves reveal
-              sensitive information? Yes - this is a real concern. Web4 identifies{' '}
-              <Link href="/what-could-go-wrong#privacy-leakage" className="text-sky-400 hover:underline">7 privacy
-              leakage channels</Link>, including graph structure (who talks to whom) and timing correlation.
+              sensitive information? Yes - this is a real concern. Known leakage channels include
+              graph structure (who talks to whom) and timing correlation.
+              {/* AUG-22 visitor, HIGH 4 (the /lct-explainer half of it) plus this second copy, which
+     their instrument could not see. Both said Web4 "identifies 7 / seven privacy leakage
+     channels"; /lct-explainer wrapped it in a link to /what-could-go-wrong#privacy-leakage.
+     THREE THINGS WERE WRONG AND ONLY ONE WAS THE ANCHOR.
+     (1) The id does not exist. (2) Neither does the content: /what-could-go-wrong contains the
+     word "privacy" exactly ONCE, in an unrelated architecture-status line, so repointing the
+     href anywhere on that page would have left the text promising an enumeration the
+     destination has never carried. (3) The FIGURE itself grounds only in
+     ../web4/archive/reference-implementations/privacy_utility_pareto_frontier.py ("Session 27
+     identified 7 leakage channels"), an ARCHIVED artifact. A precise count whose only source is
+     archived is deleted with no replacement ([[precise-number-may-cite-archived-artifact]]);
+     "7" must not come back from that file.
+     So: the count and the link wrapper go, the substance stays. Both sentences already name
+     concrete channels inline (graph structure, timing correlation / metadata correlation,
+     timing analysis, trust graph topology inference), and both keep their honest bottom line,
+     so nothing a reader could act on was lost and net words go down.
+     WHY BOTH CALL SITES IN ONE PASS: this one links to /what-could-go-wrong with NO fragment,
+     so neither the visitor's list nor a "/page#id" grep can see it. Fixing only the one with the
+     visible anchor would have shipped the seam. Grep the CLAIM ("leakage channel"), not the
+     href. */}
               Mitigations include pseudonymous attestation, proof batching, timing jitter, and dummy edges -
               but complete prevention is impossible. The design goal is raising the cost of inference above
               the value of the leaked information.

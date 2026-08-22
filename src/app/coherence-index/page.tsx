@@ -908,9 +908,18 @@ export default function CoherenceIndexPage() {
                       re-establish coherent behavior before the society will engage with you again.
                     </p>
                     <p className="text-xs text-gray-400 mt-2">
+                      {/* AUG-22 visitor, HIGH 4: the href was "#false-positives", an id that does
+                          not exist on that page; the reader landed at the top. Retargeted by
+                          reading the destination rather than guessing a name: #risk-threshold is
+                          "The trust threshold punishes the wrong people", its own subtitle is
+                          literally "Fairness & False Positives", and its honest assessment says
+                          the appeals mechanism is designed but untested, which is exactly the
+                          "open problem" this sentence promises. That section also carries the
+                          onward link to /karma-consequences#recourse for how appeals work, so the
+                          reader lands one hop from both halves. */}
                       What if the system is wrong? Good question. Appeals and false-positive
                       recovery are an{' '}
-                      <Link href="/what-could-go-wrong#false-positives" className="text-red-300 underline hover:text-red-200">
+                      <Link href="/what-could-go-wrong#risk-threshold" className="text-red-300 underline hover:text-red-200">
                         open problem
                       </Link>{' '}
                       in the current design.
