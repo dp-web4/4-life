@@ -244,7 +244,7 @@ const SCENARIOS: Scenario[] = [
         atpEarned: 15,
         trustDelta: 0.02,
         todayInternet: 'You post something great. It gets buried because you have zero followers. Nobody sees it.',
-        web4Result: 'Your post costs 10 ATP (40% more than veterans pay - you have no consistency history yet). But if it\'s genuinely useful, recipients confirm it and you earn 15 ATP back. Two more quality posts and your action costs start dropping. The system rewards you for substance, not seniority.',
+        web4Result: 'Your post costs 10 ATP - a 40% newcomer surcharge, because you have no consistency history yet. But if it\'s genuinely useful, recipients confirm it and you earn 15 ATP back. Two more quality posts and your action costs start dropping. The system rewards you for substance, not seniority.',
         concept: 'Energy Budget (ATP)',
         conceptLink: '/atp-economics',
       },
@@ -584,9 +584,55 @@ export default function DayInWeb4Page() {
                   shipped ([[naive-reading-right-suggestion-wrong]]).
                   The link also promised "hardware ceilings" while pointing at bare /lct-explainer
                   ([[promise-link-class-grep-text-not-href]]); now anchored to #device-witnesses,
-                  the block that actually carries the combination rule. */}
+                  the block that actually carries the combination rule.
+                  AUG-21 visitor MEDIUM 6: this step offered a biometric as the ONLY way to bind a
+                  first device ("Action required: Face ID to confirm", "One biometric scan ... and
+                  your device becomes your identity anchor"), while /what-could-go-wrong risk 8 is
+                  "Hardware-bound identity excludes users who can't use it" and lists the routes out.
+                  THE ANSWER ALREADY SHIPPED ON TWO OTHER PAGES AND NOTHING ROUTED HERE
+                  ([[page-ships-the-answer-and-denies-it]]): risk 8 mitigation (1), and
+                  /lct-explainer's "What if biometrics aren't an option for me?" block. This step was
+                  already deep-linking /lct-explainer, i.e. a DIFFERENT ANCHOR ON THE PAGE THAT
+                  CARRIES THE ANSWER. The added clause is risk 8 mitigation (1) propagated near
+                  verbatim ([[propagate-the-sentence-not-your-summary]]).
+                  IT OFFERS A DIFFERENT ANCHOR TYPE, NOT A DIFFERENT UNLOCK, and that distinction is
+                  canon's: multi-device-lct-binding.md puts "biometric_gate": true on the phone
+                  secure element specifically, while FIDO2 uses "user_verification": "required",
+                  which WebAuthn satisfies by PIN or biometric. So "no biometric? use a PIN on your
+                  phone" would be false against canon; "bind a security key instead of the phone" is
+                  the true form ([[fix-may-commit-the-defect-it-diagnoses]]).
+                  NO NUMERAL, for a second reason on top of the device-count one above: risk 8 rates
+                  this route "~0.75", below this step's "Chip tier max 0.85", but canon's anchor
+                  table INVERTS that ordering (2.2.1 phone secure enclave "Security Level: High",
+                  2.2.2 FIDO2 "Security Level: Very High"). Printing 0.75 beside 0.85 here would
+                  render an ordering canon reverses. That inversion is a real latent defect and is
+                  FILED FORWARD, not fixed here; it belongs to whoever owns the tier ladder on
+                  /lct-explainer. Nothing here says the key tier caps higher or lower.
+                  THE DESTINATION IS /what-could-go-wrong, NOT /lct-explainer, and that was a
+                  correction. /lct-explainer's "What if biometrics aren't an option for me?" block is
+                  the gentler answer-first prose, so it was the first choice and an id was drafted on
+                  it. It is UNREACHABLE by a deep link: everything on that page below
+                  `grep -n "<DeepDiveToggle" src/app/lct-explainer/page.tsx` sits inside
+                  DeepDiveToggle, which returns null until mount and renders children only when the
+                  reader has opted in (localStorage, default off). Verified against the live site,
+                  not the source: curl /lct-explainer and that block is absent from the served HTML,
+                  while risk 8 is present in /what-could-go-wrong's ([[check-what-renders-at-the-anchor]],
+                  [[ui-claim-check-the-mount-effect]]). #risk-accessibility is server-rendered, owns
+                  the sentence propagated above, and is the honest framing the visitor said was the
+                  site's strongest argument. Link TEXT names what is actually at the other end
+                  ([[promise-link-class-grep-text-not-href]]).
+                  LEFT, with the criterion: an instance is in scope only if it presents a biometric
+                  as the sole route to ANCHORING AN IDENTITY. The stat row above ("Face ID to
+                  confirm") is left because it mocks up one named handset (iPhone 15 / Pixel 8 /
+                  Galaxy S24) doing what that handset asks, and the prose beneath it now names the
+                  alternative. The 8 PM device-loss scenario and its comparison-card twin ("confirm
+                  with biometrics" on an already-bound laptop) are left because that is re-auth on a
+                  device the reader bound by whatever method they chose at this step, not a claim
+                  about how an identity is anchored. If either is re-filed, change BOTH: they are a
+                  data-object / rendered-JSX pair, like the surcharge line below
+                  ([[duplicate-pair-filing-decomposes]]). */}
               <p className="text-xs text-gray-500">
-                The app finds your phone&apos;s security chip automatically. One biometric scan (Face ID, fingerprint) and your device becomes your identity anchor. No seed phrases to write down. The 0.85 comes from the chip&apos;s tier - a phone secure enclave caps trust at 0.85; stronger or weaker hardware caps it higher or lower. That is the chip&apos;s rating, not your ceiling on day one: how many devices witness you sets how much of that maximum you can actually reach, and the lower of the two rules wins. One device is where that climb starts; adding a second raises it (see <a href="/lct-explainer#device-witnesses" className="text-sky-400 hover:underline">hardware ceilings in the LCT explainer</a>).
+                The app finds your phone&apos;s security chip automatically. One biometric scan (Face ID, fingerprint) and your device becomes your identity anchor. No seed phrases to write down. If biometrics are not an option for you, a hardware security key can be your anchor instead of the phone: YubiKey or Titan keys accept a numeric PIN instead of a biometric, and they are hardware-bound (<a href="/what-could-go-wrong#risk-accessibility" className="text-sky-400 hover:underline">what a biometric requirement excludes, and the routes around it</a>). The 0.85 comes from the chip&apos;s tier - a phone secure enclave caps trust at 0.85; stronger or weaker hardware caps it higher or lower. That is the chip&apos;s rating, not your ceiling on day one: how many devices witness you sets how much of that maximum you can actually reach, and the lower of the two rules wins. One device is where that climb starts; adding a second raises it (see <a href="/lct-explainer#device-witnesses" className="text-sky-400 hover:underline">hardware ceilings in the LCT explainer</a>).
               </p>
             </div>
           </div>
@@ -725,8 +771,44 @@ export default function DayInWeb4Page() {
                   </div>
                 ))}
               </div>
+              {/* AUG-21 visitor MEDIUM 7: "Everyone starts equal" sat one step above "your first
+                  post costs 10 ATP, 40% more than veterans pay", twice on this page. The visitor
+                  said the REASON given ("no consistency history yet") is fine and they accepted it;
+                  it is the unqualified word "equal" that snags.
+                  THE DEFECT WAS ONE WORD FURTHER ALONG, and it is why the page read as self-refuting:
+                  "than VETERANS pay" names a seniority class the owning derivation does not use.
+                  /coherence-index #why-ci-starts-low owns and derives this number ("with CI 0.85,
+                  actions cost about 1.4x their base price (1/0.85^2 ~ 1.38) - new accounts really do
+                  pay ~38% more per action until behavior is established") and says the gap closes on
+                  "a handful of consistent grounding events ... and it closes fast". So the payer of
+                  the lower price is anyone with an established consistency record, which a three-day
+                  -old account can have. That is exactly why "the system rewards substance, not
+                  seniority" one sentence later read as a contradiction: the sentence was true and
+                  the contrast class beside it was wrong.
+                  Re-keyed on all THREE surfaces, not two: the scenario data object, its rendered
+                  twin in the Web2-vs-Web4 comparison, and this setup step's Step 5 prose. A
+                  JSX-attribute grep misses the data-object literal.
+                  THE NUMERAL DID NOT MOVE. 40% / 1.4x / ~38% are one figure under an explicit
+                  "change both or neither" guard on /coherence-index. For the same reason the
+                  replacement is NOT "40% more than the listed price": that phrasing makes the base
+                  (~7.1 ATP) computable, and /how-it-works puts posting at 10-20 ATP, so naming the
+                  base would promote a latent entailment into a stated seam. Dissolving the person
+                  class keeps the entailment exactly as implicit as it already was.
+                  "Established members" was NOT available as the swap: this page already uses that
+                  phrase at the top of the same scenario ("You see established members with trust
+                  scores of 0.85") for a TRUST story, and the surcharge is a CI effect
+                  ([[borrowed-word-means-something-else-there]]). That line is LEFT, and the
+                  criterion for leaving it: higher trust genuinely does buy cheaper access
+                  (/atp-economics, "high-trust entities pay less for resource access"), so it is
+                  trust-keyed and true. An instance is in scope here only if it attributes the
+                  newcomer surcharge to time served.
+                  DELIBERATELY NOT TOUCHED: /atp-economics' "not the seniority of whoever took it"
+                  and "earned trust, not seniority" are about the TRUST lever, not this one.
+                  /lct-explainer's Aug-12 guard: "Both effects are real and they are not the same
+                  lever." They explain why the adjacent sentence read wrong; they do not ground the
+                  number. */}
               <p className="text-xs text-gray-500">
-                Browse communities or get invited by someone you know. You start with trust 0.50 (neutral) and 100 ATP (energy). Everyone starts equal - your reputation builds from your actions, not your join date.
+                Browse communities or get invited by someone you know. You start with trust 0.50 (neutral) and 100 ATP (energy). Everyone starts with the same reputation, and it builds from your actions, not your join date. Action costs are the one thing that differs: a new account has no established pattern to check new behavior against, so its actions cost more until a handful of consistent ones close the gap (<a href="/coherence-index#why-ci-starts-low" className="text-sky-400 hover:underline">why a new account pays more</a>).
               </p>
             </div>
           </div>
@@ -755,13 +837,15 @@ export default function DayInWeb4Page() {
               {/* AUG-20 visitor MEDIUM #4: same page, same brand-new member, two post costs. This
                   step showed "-3 ATP" while the day timeline and the Web2/Web4 comparison both say
                   a newcomer's post costs 10 ATP with a 40% no-history surcharge
-                  (`grep -n "40% more than veterans" src/app/day-in-web4/page.tsx`, two hits), and
+                  (the 4:30 PM "You're the Newcomer" scenario and the Web2-vs-Web4 comparison card;
+                  both said "40% more than veterans pay" until the Aug-21 pass re-keyed all three
+                  surfaces, see the Step 4 note below), and
                   /how-it-works puts posting at 10-20 ATP. The 3 was out of family with both. Moved
                   onto 10 and the surcharge REASON propagated from those two lines rather than
                   restated, which turns the inconsistency into the teaching moment the visitor asked
                   for. No running balance in this mockup depends on the old figure (checked). */}
               <p className="text-xs text-gray-500">
-                Your first post costs 10 ATP - 40% more than veterans pay, because you have no consistency history yet. People respond, you thank them - and your trust starts building. Within a week of genuine participation, you&apos;ll feel the difference: people trust your recommendations, your posts cost less, and your replies carry weight.
+                Your first post costs 10 ATP - a 40% newcomer surcharge, because you have no consistency history yet. People respond, you thank them - and your trust starts building. Within a week of genuine participation, you&apos;ll feel the difference: people trust your recommendations, your posts cost less, and your replies carry weight.
               </p>
             </div>
           </div>
@@ -769,7 +853,7 @@ export default function DayInWeb4Page() {
           <div className="rounded-lg bg-sky-950/20 border border-sky-800/30 p-3">
             <p className="text-xs text-sky-300">
               <strong>That&apos;s it.</strong> No blockchain to sync. No gas fees. No wallet addresses to copy.
-              Install an app, scan your face, pair a second device, join a community, say hello. The rest unfolds through the day below.
+              Install an app, bind your first device, pair a second, join a community, say hello. The rest unfolds through the day below.
             </p>
           </div>
 
@@ -1261,7 +1345,7 @@ export default function DayInWeb4Page() {
                 <strong style={{ color: '#ef4444' }}>Today:</strong> You post something great in a new community. It gets buried because you have zero followers. Nobody sees it.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-                <strong style={{ color: '#10b981' }}>Web4:</strong> Your post costs 10 ATP (40% more than veterans - no consistency history yet). But if it&apos;s genuinely useful, recipients confirm it and you earn 15 ATP back. The system rewards substance, not seniority.
+                <strong style={{ color: '#10b981' }}>Web4:</strong> Your post costs 10 ATP - a 40% newcomer surcharge, no consistency history yet. But if it&apos;s genuinely useful, recipients confirm it and you earn 15 ATP back. The system rewards substance, not seniority.
               </p>
             </div>
 

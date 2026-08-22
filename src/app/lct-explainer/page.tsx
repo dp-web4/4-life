@@ -2494,11 +2494,59 @@ export default function LCTExplainerPage() {
               with a basic smartphone can join - the hardware barrier is &ldquo;own a phone,&rdquo; not &ldquo;buy specialized equipment.&rdquo;
             </p>
             {/* May 3 visitor LOW: biometric-blocked users - accessibility silence on this page */}
+            {/* AUG-21, and NO id was added here. /day-in-web4 Step 2 needed a destination for the
+                non-biometric binding route; this block is the gentler answer-first prose, so it was
+                the first choice. THIS BLOCK CANNOT BE DEEP-LINKED. This file wraps its whole tail
+                (roughly the last 40%, opening just above the "Security Comparison: Web2 vs Web3 vs
+                Web4" section and closing at the end of the page, this block included) in the
+                DeepDiveToggle component, which returns null until mount and renders its children
+                only when the reader has opted in, persisted in localStorage and defaulting to OFF.
+                Named rather than grepped: any predicate short enough to find the wrapper would match
+                this comment too ([[derivation-guard-must-exclude-itself]]). Confirmed against the LIVE site rather than the
+                source: curl /lct-explainer and neither "Do I need special hardware" nor "What if
+                biometrics" appears in the served HTML, though "Climbing back is not a separate
+                mechanism" (above the toggle) does ([[ui-claim-check-the-mount-effect]],
+                [[check-what-renders-at-the-anchor]]). That link went to
+                /what-could-go-wrong#risk-accessibility instead, which is server-rendered and owns
+                the sentence. Anchors on this page are demand-driven; with no inbound link, this
+                block gets none.
+                WORTH KNOWING FOR THE NEXT SWEEP, because it is the same shape as Aug-21 HIGH 1 (the
+                First Contact Act 5 bullet that greps found zero hits for): a page-scoped grep of
+                served HTML silently MISSES this file's whole tail, and so does any audit that reads
+                the live page without clicking "Show deep dives". Read the source, or click first.
+                DELETED here, found while reading this block as a candidate destination
+                ([[sweep-must-include-the-link-destination]]): "Your reputation accrues normally; ".
+                THIS FILE ALREADY DECLARES THAT CLAUSE FALSE, 1,000 lines up, in the Aug-19
+                DESTINATION FENCE guard sitting above the paragraph that opens "Climbing back is not
+                a separate mechanism you have to be granted". That guard records the Jul-31 deletion
+                of the same clause from what-could-go-wrong and its reason: it was false because a
+                user pinned AT the ceiling accrues nothing. (Cited by name, not by grep: the phrase
+                is line-wrapped there, so no single-line predicate finds it, and any predicate short
+                enough to match would match this comment too,
+                [[derivation-guard-must-exclude-itself]].) /what-could-go-wrong
+                deleted the equivalent sentence from risk 8 bullet (4) on Jul-31 for that reason and
+                now ships the positive form there: what that tier keeps is "taking part, and doing it
+                pseudonymously, rather than a score that grows". So this was a live instance of an
+                already-adjudicated false reassurance, not a new question.
+                DELETED rather than rewritten, and that is deliberate. The sentence spanned BOTH the
+                software-only tier and the hardware-key tier in one breath, so any narrowing ("accrues
+                normally on the key route") would assert the negative for the software-only tier by
+                implicature, in a fresh phrasing the site does not own. Risk 8's Aug-19 guardrail
+                binds that bullet to "no accrual claim for the software-only tier at its ceiling, in
+                either direction, and no paraphrase of the Jul-31 deleted sentence"; the honest way to
+                honor it here is to say nothing and let the link below carry the reader to the page
+                that does own it ([[density-guard-means-delete-not-caveat]]).
+                NOT TOUCHED, do not undo: "not in your ability to participate" and the sibling
+                paragraph's "the hardware barrier is 'own a phone,' not 'buy specialized equipment'"
+                are the ELIGIBILITY side of [[hardware-required-seam]], whose conformance half is
+                answered and whose wording is byte-locked in spirit by the Jul-29/Jul-31 pair on
+                /what-could-go-wrong. Neither numeral moved (0.50, 0.75), and nothing here says which
+                side of 0.50 anything falls on (ledger Q1). */}
             <p className="text-sm text-gray-300 mb-2">
               <strong>What if biometrics aren&apos;t an option for me?</strong> Some users can&apos;t use fingerprint,
               face, or iris recognition (no fingerprints, motor impairments, eye conditions, etc.). Software-only
               identity is supported (trust ceiling 0.50), and you can also use a hardware security key (YubiKey, Titan)
-              with a PIN instead of biometrics - that gets you to 0.75. Your reputation accrues normally; the gap is
+              with a PIN instead of biometrics - that gets you to 0.75. The gap is
               in <em>recovery speed</em> and <em>trust ceiling</em>, not in your ability to participate. We treat this
               gap as a real, ongoing accessibility limitation rather than a solved problem - see{' '}
               <a href="/what-could-go-wrong#risk-accessibility" className="text-amber-400 hover:underline">
@@ -2759,7 +2807,16 @@ export default function LCTExplainerPage() {
                 "Newcomer rate: 1.4x" chip (states the surcharge, names no cause, and sits above the
                 paragraph that introduces CI, so labelling it there would front-load the acronym) and
                 how-it-works' two instances (already CI-keyed) and /day-in-web4's "40% more than
-                veterans pay - you have no consistency history yet" (already CI-keyed). */}
+                veterans pay - you have no consistency history yet" (already CI-keyed).
+                AUG-21 UPDATE, so this quote still resolves: that /day-in-web4 line now reads "a 40%
+                newcomer surcharge, because you have no consistency history yet", on all three of its
+                surfaces. It was re-keyed on an axis this criterion does not test. The exclusion above
+                is still correct as written: the line named CI as the CAUSE and always did. What was
+                wrong was its CONTRAST CLASS, "than veterans pay", which imported seniority into a
+                figure /coherence-index derives from a consistency record that closes fast. A cause
+                sweep would never have caught it ([[claim-class-grep-truncated-enumerate-remainder]]:
+                excluded by criterion, not missed by instrument). If a later pass widens this sweep,
+                the second predicate to run is "who is named as paying less". */}
             <p><strong className="text-sky-300">Minute 2:00</strong> - You browse available communities. You join one that interests you. Your trust starts at the default newcomer level - low but nonzero. Actions cost about 1.4&times; base price, and that surcharge comes from your{" "}
               <a href="/coherence-index#why-ci-starts-low" className="text-sky-400 hover:text-sky-300 underline">Coherence Index</a>
               {" "}rather than from your trust: the system has no established pattern of yours to check this behavior against yet.</p>

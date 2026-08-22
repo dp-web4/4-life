@@ -2,6 +2,115 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-21 21:00 session - the walkthrough that named a seniority class the derivation never uses
+
+**No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `9cd6e26`, not
+stacked, one 4life session running. #567 and #568 both merged after the 05:12 browse. Took the two
+remaining rows from that browse: **MEDIUM 6** and **MEDIUM 7**. Two files, zero new files.
+
+### MEDIUM 7's defect was one word past where the visitor pointed
+
+They filed *"Everyone starts equal"* sitting one step above *"your first post costs 10 ATP, 40% more
+than veterans pay"*, and then said the thing that mattered: the REASON given ("no consistency history
+yet") **is fine and they accepted it**, it is the unqualified word "equal" that snags. So the number
+was never the problem, and neither was the cause.
+
+The problem was the **contrast class**. `/coherence-index#why-ci-starts-low` owns and derives this
+figure (*"with CI 0.85, actions cost about 1.4x their base price (1/0.85^2 ~ 1.38) - new accounts
+really do pay ~38% more per action until behavior is established"*) and says the gap closes on *"a
+handful of consistent grounding events ... and it closes fast"*. The payer of the lower price is
+therefore anyone with an established consistency record, which a three-day-old account can have.
+**"Veterans" is a seniority class the owning derivation does not use**, and that is precisely why
+*"the system rewards substance, not seniority"* one sentence later read as self-refutation: the
+sentence was true and the contrast class beside it was wrong. Re-keyed to "a 40% newcomer surcharge"
+on all three surfaces.
+
+**The replacement had two candidates and the obvious one was a trap.** `/coherence-index` offers a
+contrast that is not a class of people at all ("their base price", "the listed price"), which is
+tempting. Rejected: at 10 ATP a 40% surcharge makes the base **~7.1**, and `/how-it-works` puts
+posting at **10-20 ATP**. Naming the base would have promoted a latent entailment into a stated seam.
+Dissolving the person class keeps that entailment exactly as implicit as it already was.
+**"Established members" was also unavailable**: this same page already uses it, at the top of the
+same scenario, for a TRUST story ("established members with trust scores of 0.85"), and the surcharge
+is a CI effect. Those are different levers.
+
+### A prior sweep considered this exact line and left it, correctly
+
+`/lct-explainer`'s Aug-12 CI guard names the target verbatim as a deliberate exclusion: *"and
+/day-in-web4's '40% more than veterans pay - you have no consistency history yet' (already
+CI-keyed)"*. That sweep's stated criterion was **"in scope only if it NAMES TRUST as the cause"**,
+and this line names CI as the cause and always did. It was excluded by criterion, not missed by
+instrument. The defect lives on an axis that criterion does not test. Both guards quoting the changed
+string were re-anchored so they still resolve.
+
+### MEDIUM 6: the answer shipped on two other pages and nothing routed here
+
+Step 2 offered a biometric as the only way to bind a first device while `/what-could-go-wrong` risk 8
+is *"Hardware-bound identity excludes users who can't use it"*. Added risk 8 mitigation (1)
+propagated near verbatim. Two things it must not become:
+
+- **A different anchor TYPE, not a different unlock.** Canon puts `"biometric_gate": true` on the
+  phone secure element specifically, while FIDO2 uses `"user_verification": "required"`, which
+  WebAuthn satisfies by PIN or biometric. "No biometric? use a PIN on your phone" would be **false
+  against canon**; "bind a security key instead of the phone" is the true form.
+- **No numeral.** On top of the Aug-20 device-count prohibition already on this block: risk 8 rates
+  this route ~0.75, below Step 2's "Chip tier max 0.85", but canon's anchor table **inverts that
+  ordering** (2.2.1 phone secure enclave "Security Level: High", 2.2.2 FIDO2 "Security Level: Very
+  High"). Printing 0.75 beside 0.85 would render an ordering canon reverses.
+
+### The destination was wrong, and the live site is what proved it
+
+The first-choice destination was `/lct-explainer`'s "What if biometrics aren't an option for me?"
+block, and an id was drafted on it. **It cannot be deep-linked.** `/lct-explainer` wraps its whole
+tail (roughly the last 40%, from just above "Security Comparison: Web2 vs Web3 vs Web4" to the end)
+in `DeepDiveToggle`, which returns `null` until mount and renders children only when the reader has
+opted in, persisted in localStorage and **defaulting to off**. Confirmed by curling the live page:
+neither "Do I need special hardware" nor "What if biometrics" is in the served HTML, while "Climbing
+back is not a separate mechanism" (above the toggle) is. Repointed at
+`/what-could-go-wrong#risk-accessibility`, which is server-rendered and owns the sentence, and the
+link text was written to name what is at the other end. The drafted id was **removed**: anchors here
+are demand-driven and the demand went away.
+
+**Generalisable, and it is the same shape as this browse's own HIGH 1** (the First Contact Act 5
+bullet that page-scoped greps found zero hits for): **a grep of served HTML silently misses
+`/lct-explainer`'s entire tail**, and so does any audit that reads the live page without clicking
+"Show deep dives". Check the mount path before citing a destination, not just that the id exists.
+
+### Also landed, found while reading the link destination
+
+Deleted *"Your reputation accrues normally; "* from that `/lct-explainer` block. **This file already
+declares that clause false 1,000 lines up**, in the Aug-19 fence above "Climbing back is not a
+separate mechanism": it records the Jul-31 deletion of the same clause from `/what-could-go-wrong`
+risk 8 bullet (4), because a user pinned AT the ceiling accrues nothing. It was a live instance of an
+already-adjudicated false reassurance. **Deleted rather than narrowed**: the sentence spanned both the
+software-only and hardware-key tiers, so scoping it to the key route would assert the negative for the
+software-only tier by implicature, in a phrasing the site does not own, against risk 8's standing
+"no accrual claim in either direction, and no paraphrase of the Jul-31 sentence". Neither numeral
+moved and the eligibility clauses were not touched.
+
+### Filed forward, deliberately not fixed
+
+1. **Canon inverts the site's anchor-tier ordering.** `multi-device-lct-binding.md` 2.2.1 rates the
+   phone secure enclave "Security Level: High" and 2.2.2 rates FIDO2 keys "Security Level: Very
+   High"; the site's ceilings put Secure Enclave 0.85 **above** FIDO2 0.75. Real, unfiled, and it
+   belongs to whoever owns the tier ladder on `/lct-explainer`, not to a walkthrough page.
+2. **The ~7.1 ATP base entailment.** "10 ATP, 40% more" entails a base below `/how-it-works`'
+   stated 10-20 ATP posting band. Ships today, not made worse by this pass, and the numerals are
+   under `/coherence-index`'s explicit "change both or neither" guard.
+3. **`/day-in-web4`:238** *"established members with trust scores of 0.85 ... they pay lower action
+   costs"* was **left**, with the criterion written into the guard: higher trust genuinely does buy
+   cheaper access (`/atp-economics`), so it is trust-keyed and true. An instance is in scope only if
+   it attributes the newcomer surcharge to time served.
+
+### Still open from this browse
+
+Both **LOWs**. The "onramp" double meaning is the standing operator branding call (gate fired
+Jul-23). The landing-card density is **not** the byte-swap the visitor implies: `src/app/page.tsx`
+carries the "~6MB / seven roles" Hub copy but `/tldr` has no matching card string, so "use the /tldr
+copy" requires writing four cards, not moving them. Also still flagged and untouched: the three
+`/first-contact` regional claims about 0.50 (ledger Q1, needs its own filing).
+
+
 ## Aug-21 15:00 session - the badge that was filed twice and read as a density complaint
 
 **No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `fbe0da8`, not
