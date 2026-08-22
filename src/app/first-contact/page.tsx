@@ -164,8 +164,53 @@ export default function FirstContactPage() {
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#f59e0b' }}>Step 4 - A mistake:</strong> Alice tries spamming low-effort posts. It costs 25 ATP and her trust drops to 0.48 - below the threshold. Features are restricted.
               </p>
+              {/* Aug-22 visitor, three MEDIUM rows that are one defect: this fallback and the Act
+                  Map beside it told two different stories, and the fallback is the ONLY version a
+                  non-JS reader, a search engine or a reading assistant gets
+                  ([[noscript-mirror-is-the-unswept-half]], the same shape #571 fixed here for ATP
+                  one browse earlier).
+                  ROW 1, "map vs fallback": Step 5 ended the recovery at 0.50 (ledger tick 6) and
+                  ticks 7/8/9 were absent entirely, so the fallback never reached the 0.62 the map
+                  prints for the same act. Their words: "Same page, two stories." Carried to where
+                  the recovery actually lands. 0.62 is NOT a new figure (tick 9 `trust_after`,
+                  already on the Act Map and in the post-Start prose).
+                  Wording PROPAGATED from the post-Start Recovery sentence
+                  (grep -n "climbed back above"), which the endpoint guard on the Trust Score
+                  bullet KEEPS by name as trajectory narration rather than a regional rule
+                  (grep -n "KEPT deliberately"). "restrictions lifted" comes with it and is
+                  load-bearing: it closes the loop Step 4 opens ("Features are restricted"), which
+                  this fallback previously left open. Net for Q1 this is an IMPROVEMENT: the old
+                  copy rested the recovery exactly ON 0.50, which is the endpoint the escalation
+                  says the site must never adjudicate.
+                  ROW 2, and this one is a defect the row-1 fix CREATES if shipped alone. The old
+                  trust story ran 0.50 / 0.52 / 0.55 / 0.48 / 0.50 / (death, no figure) / 0.54, so
+                  it read as a rise and nobody filed it. Ending Step 5 at 0.62 puts 0.54 directly
+                  against 0.62 with nothing in between, which is byte-for-byte the configuration
+                  the Act Map solved by folding 0.51 into its death chip (grep -n "Aug-14 (Aug-14
+                  visitor MEDIUM 8)"), and whose misreading that guard quotes: "Nothing tells me
+                  why a head start includes a trust haircut." This fallback has no chips, so
+                  Step 6 carries the figure instead. 0.51 is tick 13 `trust_after`, not a new
+                  figure. It is deliberately BARE, under the same rules as the chip: no "above
+                  0.50", no "barely above", no "still alive at", and no arithmetic relating 0.51
+                  to 0.54.
+                  ROW 3, the trust fence: see the guard on the pre-Start "About that number"
+                  paragraph (grep -n "The trust line is open in the same way"). The clause
+                  "models it as falling at each rebirth, which is not what happens here" is now on
+                  THREE surfaces in this file (narrative fence, pre-Start caveat, this one) and
+                  they are one sync unit. Reword one, reword all three.
+                  DELIBERATELY LEFT, so it is not mistaken for an oversight and so the next pass
+                  has the invitation in writing ([[guard-scope-note-is-a-standing-invitation]]):
+                  (a) Step 7's "above the 0.50 neutral baseline" is this fallback's twin of the
+                  post-Start "above the 0.50 neutral starting point" that the Aug-21 guard reserves
+                  for its own filing. Both are pre-existing regional claims under the endpoint
+                  escalation; they belong to ONE filing and were not harmonized on the way past.
+                  (b) Step 7 states 112 and "the usual 100" with no ATP fence, which is the same
+                  gap this pass closed for trust. It was left because the pre-Start ATP fence's
+                  wording is guarded as deliberately divergent from /how-it-works's
+                  EndOfLifeCaveat, so propagating it to a new surface needs its own reasoning
+                  rather than a drive-by. Untouched and unfiled. */}
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#e2e8f0' }}>Step 5 - Recovery:</strong> She returns to thoughtful replies. Trust slowly rebuilds to 0.50. The system doesn&apos;t ban her - it lets consequences teach.
+                <strong style={{ color: '#e2e8f0' }}>Step 5 - Recovery:</strong> She returns to thoughtful replies. Trust climbs back above 0.5, restrictions lifted, and it keeps climbing to 0.62 as she becomes an established member. The system doesn&apos;t ban her - it lets consequences teach.
               </p>
               {/* Jul-27: /how-it-works and /glossary now both send readers HERE for the canonical
                   two-death rule, so the block needs to be anchor-linkable. This page had zero id
@@ -220,10 +265,10 @@ export default function FirstContactPage() {
                 <span style={{ color: '#94a3b8' }}> Two paths: <strong style={{ color: '#f87171' }}>ATP hits zero</strong> (energy death - you can&apos;t act anymore) or <strong style={{ color: '#f87171' }}>raw trust falls below 0.5 and stays there</strong> (trust death - the community no longer trusts you). Which one you can come back from is not decided by which of them fired: recoverable if you built trust, permanent if not. A trust death is that check failing - a destroyed reputation can&apos;t be reset. One line, two consequences: <em>crossing</em> below 0.5 restricts your features right away and is recoverable; only <em>staying</em> below it is fatal - a sustained collapse, not a single stumble. The number compared is <strong>raw</strong> trust, not effective trust (raw &times; CI&sup2;). A lower CI raises your costs and narrows your access; it does not push you toward trust death. That&apos;s why Alice&apos;s 0.48 in Step 4 restricted her instead of killing her: she crossed the line, she didn&apos;t stay below it. <em style={{ color: '#64748b' }}>(CI is the coherence index: how consistent your behavior looks across time, devices and contexts. It gets its own card further down this page.)</em></span>
               </div>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#f87171' }}>Step 6 - Death:</strong> Alice overcommits, quality slips, ATP drains to zero. Her entity dies - but her record persists.
+                <strong style={{ color: '#f87171' }}>Step 6 - Death:</strong> Alice overcommits, quality slips, ATP drains to zero and trust to 0.51. Her entity dies - but her record persists.
               </p>
               <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#34d399' }}>Step 7 - Rebirth:</strong> Good karma carries forward. Alice is reborn with 112 ATP (a starting bonus above the usual 100 - the trust she built carries forward as karma) and 0.54 trust (above the 0.50 neutral baseline). Past lessons compound.
+                <strong style={{ color: '#34d399' }}>Step 7 - Rebirth:</strong> Good karma carries forward. Alice is reborn with 112 ATP (a starting bonus above the usual 100 - the trust she built carries forward as karma) and 0.54 trust (above the 0.50 neutral baseline). Past lessons compound. How much trust carries into a next life is <strong style={{ color: '#cbd5e1' }}>not settled</strong>: <a href="/karma-consequences#karma-formula" style={{ color: '#38bdf8' }}>the karma page</a> models it as falling at each rebirth, which is not what happens here.
               </p>
             </div>
 
@@ -281,7 +326,7 @@ export default function FirstContactPage() {
                 Today's internet rewards spam, lets trolls create unlimited accounts, and makes quality creators compete with bots. What if the system itself made that impossible? Web4 is one proposed answer, and what follows is a guided walkthrough of that idea, not a finished product.
               </p>
               <p className="text-lg text-gray-400 leading-relaxed mb-3">
-                In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> - play, pause, scrub, replay - and watch trust and reputation respond in real time. The rules running here are real; Web4 itself is still active research, with no live network to join yet.
+                In the next 7 minutes, <strong className="text-gray-200">you&apos;ll drive Alice&apos;s choices</strong> - play, pause, scrub, replay - and watch trust and energy respond in real time. The rules running here are real; Web4 itself is still active research, with no live network to join yet.
               </p>
               {/* This sentence narrates the page's OWN order, so it rots whenever a pre-Start
                   block moves. Aug-20: the five-act arc moved below the Start button (see the
@@ -761,9 +806,35 @@ export default function FirstContactPage() {
                       now precedes it, so 0.54 IS an up-move from the chip beside it. The rule
                       that survives is the rail's convention: Acts 2-4 arrow against the previous
                       ACT, and Alice ends Act 4 at 0.62, so an up arrow is still false. It stays
-                      a restart value, exactly like Act 1's bare "0.50". */}
+                      a restart value, exactly like Act 1's bare "0.50".
+
+                      Aug-22 (Aug-22 visitor MEDIUM): "Act 4 ends at trust 0.62; Act 5 opens at
+                      0.51. The map reads as a ledger, and that row does not follow from the one
+                      above it. Show the fall, or label Act 5 as containing it." The Aug-18 pass
+                      above did the LABEL half (the subtitle now names overextending as the cause);
+                      this is the SHOW half, re-filed because the chip still printed the only
+                      trust movement on the rail that carried no direction marker
+                      ([[visitor-read-it-and-still-filed-it]]).
+                      A DOWN ARROW ON 0.51, and read the two guards above carefully before
+                      touching it, because they say less than they look like they say
+                      ([[byte-lock-reason-may-cover-only-part]]).
+                      - "It is deliberately BARE" is glossed by its own following colon: do not
+                        write "above 0.50" / "barely above" / "still alive at". Those are regional
+                        claims about 0.50 and ledger Q1 forbids them in either direction. A
+                        direction marker is not a gloss: it names movement, not a region, and it
+                        prints no second numeral. The bareness that guard asked for is intact.
+                      - "STILL NO ARROW" names 0.54 explicitly, and that rule is UNTOUCHED. The
+                        convention it rests on is the thing that licenses this one: Acts 2-4 arrow
+                        against the PREVIOUS act. Alice ends Act 4 at 0.62, so a down arrow on the
+                        death value is the convention applied, and an up arrow on 0.54 would still
+                        be false against that same 0.62. Do not read this arrow as permission to
+                        arrow the restart chip.
+                      No arithmetic relating 0.51 to 0.54 is stated or implied: the arrow measures
+                      0.51 against Act 4, which is the only comparison the rail's convention makes.
+                      The <noscript> half of this same row was fixed in the same pass (grep -n
+                      "Step 6 - Death"), because the fallback tells the same story with no chips. */}
                   <div className="flex flex-wrap gap-1 text-xs">
-                    <span className="bg-red-900/40 text-red-300 px-1.5 py-0.5 rounded">dies at ATP 0, trust 0.51</span>
+                    <span className="bg-red-900/40 text-red-300 px-1.5 py-0.5 rounded">dies at ATP 0, trust &darr; 0.51</span>
                     <span className="bg-emerald-900/40 text-emerald-300 px-1.5 py-0.5 rounded">+12 bonus &rarr; 112</span>
                     <span className="bg-emerald-900/40 text-emerald-300 px-1.5 py-0.5 rounded">reborn at 0.54</span>
                   </div>
@@ -805,13 +876,45 @@ export default function FirstContactPage() {
                   this exact string ("'death' here means Alice's standing is suspended") as the
                   canonical /first-contact wording (grep -n "standing is suspended"
                   src/app/how-it-works). Named, not numbered: both files move under edit
-                  ([[guard-comment-cites-rot-name-the-target]]). */}
+                  ([[guard-comment-cites-rot-name-the-target]]).
+                  Aug-22 visitor MEDIUM: "Death appears to be an upgrade: 112 ATP and 0.54 trust
+                  after a life containing spam, restriction and death, against 100 ATP and 0.50 for
+                  someone who never misbehaved. The page pre-empts 'is she deleted?' but not 'so
+                  why avoid dying?'. Right now the only visible delta is positive." Their
+                  Unanswered Q2.
+                  ONE SENTENCE APPENDED, and note what it does NOT do. It prints no figure, so
+                  the Aug-09 guard's load-bearing "112 > 100" is un-softened: this does not argue
+                  rebirth leaves you worse off, it argues rebirth was not owed to her
+                  ([[fix-may-install-the-opposite-false-claim]]).
+                  IT DOES NOT PAIR 0.62 WITH 0.54, deliberately, and this was the draft the policy
+                  review killed. That pair is not caught by the 0.51-to-0.54 ban, but the Aug-14
+                  chip guard below exists precisely to break that adjacency, and saying it in prose
+                  re-installs the "head start includes a trust haircut" reading the 0.51 chip was
+                  inserted to prevent. It would also tacitly endorse the karma page decay direction
+                  the fence above declines to pick.
+                  IT RESTATES NOTHING. "What she lost" was already in this paragraph, in the
+                  byte-locked clause ("she can't act until rebirth"); the sentence re-points that
+                  clause as the answer rather than repeating it. And "coming back at all was never
+                  guaranteed" is licensed by READING ORDER, not asserted here: the Energy Budget
+                  bullet ABOVE this rail already ships the conditional in third person
+                  (grep -n "recoverable if she built trust")
+                  ([[reading-order-decides-if-shorthand-is-licensed]]).
+                  DO NOT append "recoverable if you built trust, permanent if not" here. That
+                  clause is a synchronized cross-surface string (`grep -rn "recoverable if you
+                  built trust" src/app` returns eight hits across five files, under an Aug-20
+                  "do not edit it here alone" guard), and a fifth surface on this page buys
+                  nothing the bullet above does not already give.
+                  Q13: this REMOVES a guarantee rather than asserting one, and Alice's death is
+                  attributable to an identifiable avoidable choice, named on this card's own
+                  subtitle ("Overextending costs trust and energy"). Keep that attribution visible
+                  in any rewording. */}
               <p className="text-sm text-gray-400 mb-3">
                 <strong className="text-gray-300">Suspended, not deleted:</strong>{' '}
                 &ldquo;death&rdquo; here means Alice&apos;s <em>standing</em> is suspended - she can&apos;t
                 act until rebirth - not that her account is deleted; her identity and history persist.
                 The <span className="text-emerald-300">+12 bonus</span> is karma - a head start earned by the
-                trust and reputation she built in her first life, carried forward into her next one.{' '}
+                trust and reputation she built in her first life, carried forward into her next one.
+                That suspension is what dying cost her, and coming back at all was never guaranteed.{' '}
                 <Link href="/karma-consequences" className="text-sky-400 hover:text-sky-300 underline">How living and dying work &rarr;</Link>
               </p>
               {/* Aug-08 visitor MEDIUM. The reader meets a carry-forward number HERE first, and
@@ -880,19 +983,71 @@ export default function FirstContactPage() {
                   Every one of those is the JOINING baseline (a new agent's first grant, trust 0.5
                   and 100 ATP), which no open question touches. Only the REBIRTH base grant is
                   branch three of Q5, and only this file asserted it
-                  ([[adding-a-distinction-creates-a-sweep-obligation]]). */}
+                  ([[adding-a-distinction-creates-a-sweep-obligation]]).
+                  Aug-22 visitor MEDIUM ("the ATP half carries a caveat; the trust half carries
+                  none, even though /karma-consequences names precisely this as unsettled"), and
+                  their Unanswered Q3. They are right about the surfaces they read. The trust fence
+                  DID ship on Aug-21, but inside `currentStep === "narrative"`, i.e. step 3 of 5,
+                  which is absent from served HTML; this fence is on the WELCOME step. So the
+                  reader who meets 0.54 first met it unfenced
+                  ([[page-ships-the-answer-and-denies-it]], step-gated variant).
+                  PROPAGATED, not re-coined, from two shipped sentences:
+                  "The trust line is open in the same way" is /karma-consequences's own device for
+                  this exact pair, and its wording there wraps across a <strong> tag, so grep the tail:
+                  grep -n "lines of it, the energy you restart with" src/app/karma-consequences
+                  (a grep for "both lines of it" returns only that page's own COMMENT, not the
+                  prose that is the source), and
+                  "models it as falling at each rebirth, which is not what happens here" is
+                  byte-identical to this file's narrative fence AND to the <noscript> Step 7 copy
+                  this pass added. `grep -n "falling at each rebirth" src/app/first-contact` returns
+                  THREE prose hits (the <noscript>, this caveat, the narrative fence) plus the
+                  guard comments naming them. They are ONE sync unit: reword one, reword all three.
+                  It binds to the sentence before it for its force, which is why it can be short:
+                  "one modelling choice, not the rule" already governs, and "Read both lines"
+                  extends the closing instruction rather than repeating the fence.
+                  WHAT IT MAY NOT SAY, unchanged from Aug-21: no product of 0.51 and 0.95, no
+                  comparator, no second figure, and it does NOT resolve which page is right (Q5's
+                  trust half, not this track's call). It states no arithmetic relating 0.51 to
+                  0.54 and makes no regional claim about 0.50 in either direction. */}
               <p className="text-xs text-amber-300/70 mb-3 leading-relaxed">
                 <strong className="text-amber-300">About that number:</strong> in this walkthrough a
                 life starts with 100, and the 12 is what her track record earned on top, so she
                 restarts at 112.
                 How <em>much</em> karma converts is not settled, and 12 is one modelling choice, not
-                the rule. Read it for the shape (a good track record starts your next life stronger),
-                not the amount.
+                the rule. The trust line is open in the same way:{' '}
+                <Link href="/karma-consequences#karma-formula" className="text-amber-200 underline hover:text-amber-100">
+                  the karma page
+                </Link>{' '}
+                models it as falling at each rebirth, which is not what happens here.
+                Read <em>both lines</em> for the shape (a good track record starts your next life
+                stronger), not the amount.
               </p>
 
-              <p className="text-sm text-gray-400 italic">
-                You control the pace. At every turning point the system pauses to explain <em>why</em> it worked that way, and you see every trust/ATP change the moment it happens.
-              </p>
+              {/* Aug-22 (15:00): the closing italic that stood here was DELETED, and it is the
+                  density payment for the two clauses this pass adds to the two paragraphs above
+                  ([[density-guard-means-delete-not-caveat]]). It read "You control the pace. At
+                  every turning point the system pauses to explain why it worked that way, and you
+                  see every trust/ATP change the moment it happens."
+                  It was the FOURTH pre-Start statement of drivability, not the second: the badge
+                  (grep -n "Interactive &middot; you drive it"), the intro sentence
+                  (grep -n "drive Alice"), the line under the Start button
+                  (grep -n "pause, scrub, replay, and skip ahead"), then this.
+                  The exit-ramp job it might look like it was doing is discharged by this block's
+                  own warning line ("Skip it and press Start above if you would rather find out by
+                  driving"), which the Aug-20 move installed for exactly that purpose.
+                  ONE ASYMMETRY, recorded rather than left to be discovered: the ATP half of the
+                  real-time-visibility claim existed pre-Start only in the deleted clause, because
+                  the intro said "trust and reputation". That intro word was swapped to "energy"
+                  in the same pass: net ZERO words, "reputation" was already redundant with
+                  "trust" in that sentence, and its own guard forbids words going UP, not this.
+                  Arithmetic for the three density guards on this screen (May-15 vocab wall,
+                  Jul-13 collapse, Jul-17 pre-Start caveat pile-up): -28 here, +15 on "Suspended,
+                  not deleted", +24 on "About that number" = +11 net. The comparable precedent is
+                  the Aug-19 pass immediately above the Start button, which spent +10 and said so.
+                  Note also that Aug-19's own words were "everything in front of the Start button
+                  should be shorter" and the Aug-20 move put this block BEHIND it, so this block
+                  is outside that row's literal scope; the Jul-17 pile-up guard is step-scoped and
+                  does reach it, which is why the payment was made anyway. */}
             </div>
           </div>
         )}

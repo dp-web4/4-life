@@ -818,7 +818,20 @@ function KarmaFormula() {
             with a demo whose rebirth caption models it THIS page's way (a 100 base plus a karma
             bonus), and only the karma examples further down carry the balance forward intact. So
             the link text is narrowed to the examples it actually describes. Nothing else moved;
-            the do-not-resolve rule above still stands. */}
+            the do-not-resolve rule above still stands.
+            Aug-22 (15:00), reciprocal now complete, recorded here so the next sweep does not
+            re-file the asymmetry this fence was written for. The Aug-22 visitor filed the other
+            side: "the karma page discloses the conflict; the page making the claim does not, and
+            is 40 minutes earlier in the recommended reading order." /first-contact DID have a
+            fence, but only on its narrative step (step 3 of 5, absent from served HTML). It now
+            carries the same disclosure on its pre-Start Act Map and in its <noscript> fallback,
+            both pointing at #karma-formula here. The clause "models it as falling at each
+            rebirth, which is not what happens here" is now a THREE-surface sync unit inside
+            first-contact; this paragraph is its counterpart here. Reword one, reword all.
+            THIS PAGE'S LINK TEXT STAYS TRUE and was re-checked: /first-contact still "shows a
+            rebirth where trust does not fall", because no figure moved there. The bare
+            /first-contact href also still lands where the new fence renders (the welcome step),
+            so it does not want an anchor ([[sweep-must-include-the-link-destination]]). */}
         <p className="text-xs text-amber-300/80 mb-4 border border-amber-800/40 bg-amber-900/10 rounded p-3 leading-relaxed">
           <strong className="text-amber-300">One model, not the rule:</strong> how much carries into
           the next life is <strong>not settled</strong>, and the arithmetic below is one way of
