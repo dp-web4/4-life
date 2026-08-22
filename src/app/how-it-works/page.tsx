@@ -1009,6 +1009,14 @@ export default function HowItWorksPage() {
                       is the scenario's PREMISE, not a claim about reachability.
                     - /day-in-web4's "the other channel" sentence: its own rendered text scopes it
                       to "an account built up over far longer", explicitly not a newcomer.
+                      AUG-22: that exclusion was correct when written and its premise has since
+                      changed. All six earning choices on /day-in-web4 returned MORE than they cost
+                      until that date, so the reader's own ledger could climb and this sentence was
+                      not the only account of how a balance grows. With the six capped, it became
+                      the only one, and the question it provokes is now the reader's own. The
+                      scoping is kept and the open half plus the #newcomer-solvency link were
+                      appended there, so it is no longer a bare channel mention. That page now
+                      states this pair TWICE, at its live ATP ledger and in the wireframes intro.
                     - /atp-economics Life 1 "Her surplus is commissioned work": #newcomer-solvency
                       renders ABOVE it, so a linear reader has already met the open half.
                     - /atp-economics summary items 1 and 3: UN-SWEPT REMAINDER, recorded rather than

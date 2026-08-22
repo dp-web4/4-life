@@ -368,9 +368,26 @@ export function InteractiveMarketWireframe() {
                   the visitor couldn't square 350 with a 100 grant + "not money you accumulate",
                   and it "bugged me for the rest of the session." Resolve the 100→350 arithmetic
                   right at the number: balance grows as contributions earn ATP back (atp-economics
-                  L1118/L1927 "accumulate energy budget"). Still budget, not cash-out wealth. */}
+                  L1118/L1927 "accumulate energy budget"). Still budget, not cash-out wealth.
+                  AUG-22: "contributing earns ATP back, so an active member's working balance climbs
+                  well past that" was FALSE, not merely generic. /atp-economics publishes the rule
+                  as a formula (grep -n "capped at" there) and again in summary item 3: confirmation
+                  of work you initiated refunds AT MOST what you spent, and payment for work someone
+                  else commissioned is the only channel that exceeds cost. So contributing sustains
+                  a balance; it never climbs past the starting grant on its own. This sentence was
+                  the reconciliation the /day-in-web4 wireframes intro leaned on (grep -n
+                  "an active member's working balance" in src/app/day-in-web4/page.tsx), which is
+                  how a false claim came to be cited as the answer to a visitor's arithmetic.
+                  Re-keyed to the channel that does grow a balance. NO FIGURE MOVED: 100 and 350 are
+                  untouched, and the budget-not-wealth framing above is preserved verbatim.
+                  The scoping does the work the "Both halves visible or neither" guard asks for
+                  here: the sentence is about "an active member" whose account, per the paragraph
+                  this mockup sits under, was "built up over far longer" than the reader's day. The
+                  open half plus the mandatory /atp-economics#newcomer-solvency link is stated twice
+                  on the page that renders this component (at the live ATP ledger and in that
+                  wireframes intro), so it is not being asserted here without a route to one. */}
               <p className="text-xs text-gray-600 mt-1.5 text-center">
-                ATP is your energy budget, and the same resource you spend on actions is also what you transfer or stake in exchanges like this one - inside the system only, never money you can cash out. You start with 100, but contributing earns ATP back, so an active member&rsquo;s working balance climbs well past that; a 350-ATP exchange is earned budget in motion, not saved-up cash.
+                ATP is your energy budget, and the same resource you spend on actions is also what you transfer or stake in exchanges like this one - inside the system only, never money you can cash out. You start with 100, and contributing earns that spend back; what carries an active member&rsquo;s working balance well past 100 is the other channel, work someone else commissioned and priced against what it was worth to them. A 350-ATP exchange is earned budget in motion, not saved-up cash.
               </p>
             </div>
           ) : (
