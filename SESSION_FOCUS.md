@@ -2,6 +2,98 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-22 15:00 session - the fence that only rendered on step 3 of 5
+
+**No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `2e7591d`, not
+stacked, one 4life session running. #571 disposed all four Aug-22 HIGHs and deferred the rebirth
+seam as wanting its own pass. This is that pass: **five MEDIUM rows, all `/first-contact`-implicated,
+closed by six edits in one file** plus a guard addendum on `/karma-consequences`. Zero new files.
+
+### Every one of them lived on a surface you reach without pressing Start
+
+The Act Map renders under `currentStep === "welcome"` and the `<noscript>` fallback renders always,
+so both are in served HTML. The **narrative** step is not. That one fact explains the whole cluster.
+
+- **The trust fence already existed** (#567, Aug-21) and pointed at `#karma-formula`. It sits inside
+  `currentStep === "narrative"`, **step 3 of 5**. The pre-Start caveat fenced only the ATP half. So
+  *"the ATP half carries a caveat; the trust half carries none"* was exactly right about the surfaces
+  the visitor read. Shipped pre-Start and in the `<noscript>`, **propagating two shipped sentences**:
+  `/karma-consequences`' *"both lines of it"* device and this file's own *"models it as falling at
+  each rebirth, which is not what happens here"*, now a **three-surface sync unit** inside the file.
+  Prints no product, no comparator, no second figure. Q5's trust half stays open.
+- **Their MEDIUM 2** (karma page discloses, `/first-contact` does not, and is 40 minutes earlier in
+  the reading order) is the same fix. The reciprocal is now complete on both sides, and the karma
+  page's guard records it so the next sweep does not re-file the asymmetry.
+
+### The fix for one row would have created the defect another row is about
+
+`<noscript>` Step 5 ended the recovery at **0.50** (ledger tick 6) and skipped ticks 7-10, so the
+fallback never reached the **0.62** the map beside it prints for the same act. Carried to where it
+lands. But the old fallback trust story ran 0.50 / 0.52 / 0.55 / 0.48 / 0.50 / (death, no figure) /
+0.54, which reads as a **rise**, which is why nobody filed it. Ending Step 5 at 0.62 puts 0.54
+directly against 0.62 with nothing between: **byte-for-byte the configuration the Act Map solved by
+folding 0.51 into its death chip**, whose guard quotes the misreading it produced (*"nothing tells me
+why a head start includes a trust haircut"*). The fallback has no chips, so **Step 6 now carries the
+bare 0.51**. The policy reviewer caught this, not the implementation.
+
+Net for the endpoint escalation this is an **improvement**: the old copy rested the recovery exactly
+ON 0.50. `"Trust climbs back above 0.5, restrictions lifted"` is propagated from the post-Start
+sentence the Q1 guard **keeps by name** as trajectory narration, and it closes Step 4's open
+*"Features are restricted"* loop.
+
+### A down arrow, and what "deliberately BARE" actually forbade
+
+Act 5's death chip was the only trust movement on the rail carrying **no direction marker**, so the
+map stopped reading as a ledger (their words: *"that row does not follow from the one above it"*).
+The Aug-18 pass did the LABEL half; this is the SHOW half. The two guards on the chip say less than
+they look like they say: **"BARE" is glossed by its own following colon** (no *"above 0.50"* /
+*"barely above"* / *"still alive at"*, all regional Q1 claims), and **"STILL NO ARROW" names 0.54**.
+The convention those guards rest on is what licenses this arrow: Acts 2-4 arrow against the PREVIOUS
+act, and Alice ends Act 4 at 0.62. The guard now splits reason from identity so the arrow is not read
+as permission to arrow the restart chip.
+
+### The answer to "why avoid dying" was already in the paragraph
+
+The rail's only visible death delta was positive (112 / 0.54 against a newcomer's 100 / 0.50). The
+first draft grounded on **0.62 -> 0.54** and the policy review killed it: that pair is the adjacency
+the 0.51 chip exists to break, and stating it in prose would tacitly endorse the karma page's decay
+direction the fence declines to pick. Re-grounded with **no figures at all**, re-pointing the
+byte-locked *"she can't act until rebirth"* clause as the answer. **"112 > 100" is un-softened** (the
+Aug-09 guard's load-bearing defence against the opposite misreading). The second drafted sentence was
+also dropped: *"recoverable if you built trust, permanent if not"* is an eight-hit synchronized
+cross-surface string, and it already ships pre-Start in third person **above** this rail, which is
+what licenses the shorthand.
+
+**Q13 is satisfied by construction**: the sentence *removes* a guarantee rather than asserting one,
+and Alice's death is attributable to an identifiable avoidable choice already named on the card's own
+subtitle.
+
+### Density was paid for, not argued away
+
+Three guards on this screen plus Aug-19's *"everything before Start should be SHORTER"*. The closing
+italic was the **fourth** pre-Start statement of drivability (badge, intro, the line under the Start
+button, then it) and its exit-ramp job is discharged by the block's own spoiler warning. Deleted:
+**-28** against **+39** folded into existing paragraphs, net **+11** (the comparable precedent spent
++10 and said so). One asymmetry recorded: the ATP half of the real-time-visibility claim existed
+pre-Start only in the deleted clause, preserved at **net-zero** by swapping the intro's redundant
+*"reputation"* for *"energy"*.
+
+Verified against the **prerendered HTML**, not a green build: all six edits render, the deleted
+italic is gone, and the fallback now tells the same trust story as the map beside it.
+
+### Left with reasons
+
+Two standing invitations written into the `<noscript>` guard: its *"above the 0.50 neutral baseline"*
+is the fallback's **twin** of the post-Start regional claim the Aug-21 guard reserves for its own
+filing (one filing, not harmonized on the way past), and Step 7 states 112 with **no ATP fence**,
+left because the pre-Start ATP fence is guarded as deliberately divergent from `/how-it-works`'
+`EndOfLifeCaveat`.
+
+Still open from this browse: `/why-web4`'s **five root causes against four mechanisms** (their
+Unanswered Q4, a different page and class) and all three LOWs (the `keeps`/`earns back` 7x line was
+already fixed by #571; the `/learn` count excluding `/onramp`; "raw" vs "rolled-up"; the 0.50 knife
+edge on `/what-could-go-wrong`).
+
 ## Aug-22 09:00 session - the profits the cap forbids, and 14 links that went nowhere
 
 **No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `10be8d8`, not
