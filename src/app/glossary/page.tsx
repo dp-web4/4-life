@@ -360,8 +360,15 @@ export default function GlossaryPage() {
                 <strong className="text-gray-100">Device co-witness</strong> - your own
                 devices attest to each other. Your phone, laptop, and security key independently
                 co-sign that &ldquo;yes, this is really you.&rdquo; More devices co-signing = higher
-                trust ceiling (1 device caps at 0.50, 2 devices at 0.75, 3+ up to 0.90). This is
+                trust ceiling (for hardware-backed devices, 1 device caps at 0.75, 2 at 0.85,
+                3+ up to 0.90; your chip class sets its own maximum and the lower of the two rules
+                wins, so a software-only identity stays at 0.50 however many devices co-sign). This is
                 what the LCT page mostly means by &ldquo;witness.&rdquo;
+                {/* SYNC with lct-explainer: device-count schedule 0.75/0.85/0.90 (hardware) +
+                    min-rule + software 0.50 floor. Aug-26, Aug-24 visitor HIGH (their exact
+                    stall: "a single TPM phone is 0.50 under one rule and 0.90 under the other";
+                    the answer both surfaces now give is 0.75). Change all synced surfaces or none
+                    - the list lives in the lct-explainer combination-rule guard. */}
               </li>
               <li>
                 <strong className="text-gray-100">Network witness</strong> - optional

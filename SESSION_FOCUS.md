@@ -2,6 +2,103 @@
 
 *Current priorities, visitor friction queue, concept coverage. Updated by operator and autonomous sessions.*
 
+## Aug-26 03:00 session - three days of untriaged logs, three HIGH clusters, one pass
+
+**Backlog, not appetite**: Aug-23/24 sessions died on the weekly limit, Aug-25 sessions were
+bricked by the hestia empty-floor outage (restored by this fire), so THREE visitor logs were
+untriaged. #572 (the Aug-22 session's rebirth-seam pass) merged Aug-25 16:36, AFTER the Aug-25
+05:08 browse, and treats that log's HIGH + trust-rise MEDIUM: those are AWAITING RETEST, not
+open, and were not re-treated. Policy APPROVED (conditions A-H), commit per cluster.
+
+### 1. MRH: weight, not visibility (Aug-23 HIGH rows 1+2, one fix)
+/why-web4 (path step 2) and /how-it-works (path step 4) taught visibility-gating ("You only see
+messages from people your network trusts", "Beyond 3 hops: Invisible", "hearing only
+conversations you're part of. Spam can't reach you") while /trust-neighborhood, the page both
+link to, deliberately teaches the opposite axis, and why-web4's own portability FAQ ("the new
+community can see your track record") REQUIRES the weight model - that was the visitor's second
+HIGH row, the same-page contradiction, resolved by the same fix. Metaphors CHANGED, not caveated
+(their explicit instruction): review-from-a-friend on the card, hear-everyone-listen-differently
+at the party. Hop weights 0.70/0.49/0.34 untouched. Spam claims moved to the weight model
+without installing "spam is unfiltered" (zero weight + ATP cost, not unreadable). The
+#faq-message-visibility QUESTION deliberately keeps its naive visibility phrasing (policy
+ruling: the entry catches the reader who searches in the wrong vocabulary; the answer's first
+line corrects the premise). #faq-mrh-messaging's question changed because it QUOTED the room
+metaphor being replaced. Swept the arbiter's own two strays (ring label "0 (invisible)", the
+0.5-decay cell). Left with criteria: tn depth-explorer copy (describes the widget's render),
+tn role-facet "only see the roles where you share a context" (context separation, different
+claim), why-web4's Reddit-throwaway "invisible" (a Web2 claim), day-in-web4's "below 0.5 -
+effectively invisible" (trust-score axis, mechanism stated correctly in-sentence).
+
+### 2. Ceiling axes reconciled: a lone hardware device is 0.75 (Aug-24 HIGH = the #539 filing)
+The standing invitation in lct-explainer's combination-rule guard was TAKEN exactly as written.
+Device-count schedule for hardware-backed devices is now 0.75/0.85/0.90 with the software-only
+0.50 floor stated in the same breath, on every synced surface (witness-step list, SYNC +
+calculateTrust, slider bands, glossary Witness entry). The visitor's exact stall ("a single TPM
+phone is 0.50 under one rule and 0.90 under the other") now answers 0.75 from both reference
+surfaces. count-1 = 0.75 forced by the shipped min-rule sentence; count-2 = 0.85 is 4-Life's
+OWN calibration (constraints: monotone, strictly < 0.90); canon numerals NOT imported. Slider
+bands RE-DERIVED (old <0.5 and 0.5-0.75 branches were dead under the new minimum; the survivor
+would have called one device a "multi-device constellation").
+
+### 3. /learn: the fenced HIGH's one unfenced sliver + a MEDIUM
+Time-estimate HIGH is mostly fenced by /learn's own two-prong guard. Shipped: "optional Q&A" ->
+"a big optional Q&A" (their words: "'optional' hides scale rather than communicating it"; one
+non-numeric word, count fence intact, 6 and 45 unmoved). why-web4's no-chip FAQ: "zero margin
+above the line" -> "above the 0.50 survival line" (endpoint-silent).
+
+**OPERATOR FLAG**: /tldr's "2 min" has now been measured wrong by a visitor twice (Aug-23 HIGH:
+~7 minutes, ~1,150 words; the /learn guard's own magnitude test would fire at 2.16 min out on a
+2-min badge). The ownership fence routes a rename to YOU (title, H1, nav, inbound links move
+together). This session honored the fence and did not touch it.
+
+### Deferred, with reasons (next sessions' queue, roughly in order)
+- **Aug-25 MEDIUM camera fee**: /day-in-web4 market mockup itemizes a 2 ATP escrow on a 350 ATP
+  sale but never mentions the 5% transfer fee /atp-economics calls universal (17.5 ATP). Top
+  candidate: one line in the mockup, or state why escrow is exempt. Ground in atp-economics'
+  own fee copy first.
+- **Aug-25 MEDIUM circular-transfer convention**: /what-could-go-wrong "30 circular transfers of
+  100 ATP shed ~150 ATP" is flat-per-transfer (topped back up); /why-web4's Alice & Bob teaches
+  shrinking-amount (asymptote 100). State the convention at the ~150 figure; the visitor's
+  arithmetic (78.5 shed after 30 shrinking hops) is right.
+- **R6/R7 gloss on /onramp**: filed TWICE now (Aug-24 MEDIUM: no link, asterisk in T3/V3*MRH
+  unexplained; Aug-25 LOW: "action-checking framework" gloss explains nothing). Glossary defs
+  exist and are good; the fix is a real gloss + link, and the * needs one clause.
+- **Aug-24 MEDIUM oracle 0.15 vs "deliberately tiny" deltas** (/how-it-works): needs canon
+  grounding that governance penalties are a separate channel from the 0.02 update rule BEFORE
+  writing the sentence; if the spec doesn't say it, escalate, don't invent.
+- **Aug-24 MEDIUM Key Takeaways cost range** (/how-it-works): summary says "up to 10-20 to
+  post", table prices broadcasts 20-50. Bounded copy fix.
+- **Aug-23 MEDIUM glossary scale** ("a handful of primitives" -> 55 entries incl. Synchronism/
+  SAGE material): structural (split onramp terms from research appendix, or reword the landing
+  promise). Needs its own pass.
+- **Aug-23 MEDIUM /learn "0/24 concepts" counter**: unexplained unit on a five-step page.
+  Decide: explain or drop.
+- **Aug-23 MEDIUM /karma-consequences permanence wording**: "permanent" vs "the penalty is not
+  permanent, the identity is" in one section. Touches #484 canon (permanent trust-death only
+  for sustained bad behavior) - ground before editing.
+- **Aug-23 MEDIUM day-zero-on-the-line** (+ Aug-24 UQ1 software-only life at the line): borders
+  ledger Q1 / the 0.5-endpoint escalation (never assert the endpoint either direction). The
+  answerable half, if any, is naming the crossing-vs-staying grace mechanics where 0.50 is
+  first introduced; do NOT invent a buffer or grace period canon doesn't have.
+- **Aug-23/24 LOWs**: newcomer-surcharge label rename; ADP section on /atp-economics (VERIFY
+  first: the #437/#438 ADP boxes exist - read-it-and-still-filed pattern likely); LCT
+  etymology sentence; tldr Hestia card caveat line (material exists on /running-now); tldr
+  badge "furthest achievement" wording vs /running-now's "can carry more than one"; badge/
+  version-order juxtaposition on /running-now; atp-economics quality-ramp preposition +
+  the ~12-vs-15 midpoint (visitor self-flagged low confidence; verify exact sentence first).
+
+### Retest gates live for the next browse
+- **#572 (rebirth seam)**: Aug-25's HIGH (death-farming) + trust-rise MEDIUM browsed BEFORE the
+  merge. If a post-#572 browse still files rebirth-as-profitable or the 0.51->0.54 rise, the
+  residual is the CROSS-PAGE halves (/atp-economics "is death a PAID reset" and
+  /what-could-go-wrong death economics), which #572's /first-contact-scoped pass deliberately
+  did not touch - treat there, not by rewording /first-contact again.
+- **MRH axis**: if visibility-gating is still reported on a path page, grep "only see" /
+  "invisible" for a surface this sweep's criteria excluded, and re-read the leave-criteria list
+  in the Aug-26 commit before re-treating.
+- **Ceilings**: if a browse still can't compute one phone's ceiling, the residual is the
+  combination-rule's placement (witness section vs tier table), not the schedule.
+
 ## Aug-22 15:00 session - the fence that only rendered on step 3 of 5
 
 **No open PRs at start** (`gh pr list` -> `[]`), branch exactly `origin/main` at `2e7591d`, not

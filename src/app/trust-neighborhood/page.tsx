@@ -566,7 +566,9 @@ export default function MarkovRelevancyHorizonPage() {
               <div className="relative" style={{ width: '320px', height: '320px' }}>
                 {/* Depth 3 ring */}
                 <div className="absolute inset-0 rounded-full border-2 border-cyan-800/30 flex items-center justify-center">
-                  <span className="absolute top-2 text-xs text-gray-500">Beyond: 0 (invisible)</span>
+                  {/* Aug-23 sweep: this ring label said "0 (invisible)", contradicting this
+                      page's own axis ("0% trust weight - treated as a stranger, not invisible"). */}
+                  <span className="absolute top-2 text-xs text-gray-500">Beyond: 0 weight (still visible)</span>
                 </div>
                 {/* Depth 3 */}
                 <div className="absolute rounded-full border-2 border-cyan-700/40 flex items-center justify-center"
@@ -636,7 +638,7 @@ export default function MarkovRelevancyHorizonPage() {
             <div className="grid md:grid-cols-3 gap-3 text-xs mb-4">
               <div className="bg-gray-900/40 border border-red-500/20 rounded-md p-3">
                 <div className="text-red-400 font-semibold mb-1">0.5 - too harsh</div>
-                <div className="text-gray-400">3 hops = 12.5%. Friends-of-friends-of-friends are effectively invisible; the horizon collapses before it becomes useful.</div>
+                <div className="text-gray-400">3 hops = 12.5%. Friends-of-friends-of-friends carry almost no weight at all; the horizon collapses before it becomes useful.</div>
               </div>
               <div className="bg-gray-900/40 border border-cyan-500/30 rounded-md p-3">
                 <div className="text-cyan-300 font-semibold mb-1">0.7 - the cliff</div>

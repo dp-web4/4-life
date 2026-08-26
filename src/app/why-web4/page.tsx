@@ -470,9 +470,19 @@ export default function WhyWeb4Page() {
               <h4 className="font-semibold text-sky-400 mb-2">
                 4. Trust Neighborhood
               </h4>
+              {/* Aug-23 visitor HIGH (rows 1+2): this card taught visibility-gating ("You only
+                  see messages from people your network trusts", a room where strangers need an
+                  introduction) while /trust-neighborhood, the page it links to, deliberately
+                  teaches the opposite axis ("MRH limits trust influence, not visibility";
+                  "strangers aren't invisible, they're unverified") - and this page's own
+                  portability FAQ ("the new community can see your track record") requires the
+                  weight model. The METAPHOR had to change, not gain a caveat: any only-see
+                  metaphor re-teaches the wrong model. Weight, not visibility, on every
+                  reading-path surface. */}
               <p className="text-gray-400 text-sm">
-                You only see messages from people your network trusts - like being in a room
-                where strangers need an introduction before they can talk to you. Trust fades with distance: a friend-of-a-friend-of-a-friend is almost a stranger.
+                Everyone stays visible - what changes is <em>weight</em>. A stranger&apos;s message reaches
+                you, but it counts for little until someone you trust vouches for them, the way a
+                review from a friend outweighs a review from an account you&apos;ve never seen. Trust fades with distance: a friend-of-a-friend-of-a-friend is almost a stranger.
               </p>
               <p className="text-gray-400 text-sm mt-1">Shorthand: MRH (Markov Relevancy Horizon - math-flavored jargon you can ignore; it just means how far trust reaches before it fades)</p>
               <Link href="/trust-neighborhood" className="text-sky-400 text-sm hover:underline mt-2 inline-block">
@@ -1168,7 +1178,11 @@ export default function WhyWeb4Page() {
               </p>
             </div>
           </details>
-          {/* How MRH determines visibility */}
+          {/* How MRH weights messages. The question line below deliberately KEEPS the naive
+              visibility phrasing (Aug-26 policy ruling): a reader arriving with the wrong model
+              searches in the wrong model's vocabulary, and this entry exists to catch exactly
+              that reader. The ANSWER's first line corrects the premise. Do not "align" the
+              question to the weight model. Axis rule: weight, not visibility (Aug-23 HIGH). */}
           <details id="faq-message-visibility" className="bg-gray-800/50 border border-amber-700/40 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
               <span>How does the system decide who can see my messages?</span>
@@ -1176,27 +1190,30 @@ export default function WhyWeb4Page() {
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
-                Through your <strong>trust network</strong>, not a central server.
+                Everyone <em>can</em> see them - nothing is hidden or censored. What the system decides is
+                how much <strong>weight</strong> your messages carry when they arrive, and it decides that
+                through your <strong>trust network</strong>, not a central server.
                 Every entity has a <Link href="/trust-neighborhood" className="text-sky-400 hover:underline">context boundary (MRH)</Link> that
                 extends 3 hops through their trust relationships:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-400">
-                <li><strong>Direct contacts (1 hop):</strong> People you&apos;ve interacted with directly. Full visibility. Trust weight: 0.70</li>
-                <li><strong>Friends of friends (2 hops):</strong> People your contacts vouch for. Reduced visibility. Trust weight: 0.49</li>
-                <li><strong>3rd degree (3 hops):</strong> Barely visible, minimal trust. Trust weight: 0.34</li>
-                <li><strong>Beyond 3 hops:</strong> Invisible. You don&apos;t exist to each other until someone in between introduces you</li>
+                <li><strong>Direct contacts (1 hop):</strong> People you&apos;ve interacted with directly. Your word lands at near-full weight. Trust weight: 0.70</li>
+                <li><strong>Friends of friends (2 hops):</strong> People your contacts vouch for. Weight reduced. Trust weight: 0.49</li>
+                <li><strong>3rd degree (3 hops):</strong> A weak signal, minimal trust. Trust weight: 0.34</li>
+                <li><strong>Beyond 3 hops:</strong> Zero trust weight. Still visible - you&apos;re just unverified strangers to each other until someone in between vouches</li>
               </ul>
               <p>
-                Think of it like a party: you can talk to your friends, and your friends can introduce
-                you to their friends. But you can&apos;t walk up to a stranger across the room unless someone
-                bridges the gap. <strong>No one has a complete view of the entire network</strong> - everyone sees
-                only their local neighborhood.
+                Think of it like a party: you can hear everyone in the room, but you don&apos;t listen to
+                everyone the same way. A friend&apos;s word lands; a stranger&apos;s carries next to nothing until
+                someone you know vouches for them. <strong>No one has a complete map of the entire
+                network</strong> - everyone weighs the world from their own local neighborhood.
               </p>
               <p className="text-amber-400/80 text-xs">
-                <strong>Why this matters:</strong> Spam can&apos;t broadcast to everyone - a spammer has no trust
-                connections, so their messages reach nobody. To reach people, you need real relationships.
-                This is fundamentally different from email (anyone can message anyone) or social media
-                (algorithmic distribution to strangers).
+                <strong>Why this matters:</strong> Spam stops paying - a spammer with no trust
+                connections sends messages that arrive with zero trust weight and no standing in anyone&apos;s
+                view, and every send still costs energy (ATP). To earn real reach, you need real relationships.
+                This is fundamentally different from email (anyone lands in your inbox with full standing) or
+                social media (algorithmic distribution to strangers).
               </p>
             </div>
           </details>
@@ -2689,7 +2706,11 @@ export default function WhyWeb4Page() {
                 <Link href="/lct-explainer#software-only-survival" className="text-sky-400 hover:underline">
                   what a 0.50 ceiling actually costs you
                 </Link>{' '}
-                is zero margin above the line and a reputation that cannot climb, and{' '}
+                {/* Aug-23 visitor MEDIUM: "the line" had no antecedent in this entry, and an
+                    indexed FAQ this size is read out of sequence - name the line once. Endpoint
+                    stays unasserted (standing 0.5-endpoint escalation): "survival line" names
+                    the threshold, not which side of it is fatal. */}
+                is zero margin above the 0.50 survival line and a reputation that cannot climb, and{' '}
                 <Link href="/what-could-go-wrong#risk-accessibility" className="text-sky-400 hover:underline">
                   the site&apos;s own risk register
                 </Link>{' '}
@@ -3292,25 +3313,27 @@ export default function WhyWeb4Page() {
           {/* MRH mechanics - visitor Q3 */}
           <details id="faq-mrh-messaging" className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 cursor-pointer scroll-mt-24">
             <summary className="text-lg font-semibold text-amber-400 list-none flex justify-between items-center">
-              <span>How does MRH actually decide who sees my messages? The &ldquo;room where strangers need introductions&rdquo; is nice but vague.</span>
+              <span>How does MRH actually decide how much weight my messages carry? &ldquo;Trust fades with distance&rdquo; is nice but vague.</span>
               <span className="text-gray-500 text-xl">+</span>
             </summary>
             <div className="mt-4 text-gray-300 text-sm space-y-2">
               <p>
                 The Markov Relevancy Horizon (MRH) works like <strong>degrees of separation with decay</strong>.
-                Your direct contacts (1 hop) see your actions at 70% relevance. Their contacts (2 hops) see
-                them at 49%. Three hops away: 34%. Beyond three hops: effectively invisible.
+                Your direct contacts (1 hop) weigh your actions at 70%. Their contacts (2 hops) weigh
+                them at 49%. Three hops away: 34%. Beyond three hops: zero trust weight - still visible
+                to anyone who goes looking, just carrying no vouch behind it.
               </p>
               <p>
                 Concretely: if you post a helpful answer in a coding community, people who&apos;ve directly
                 interacted with you see it immediately. People who share mutual contacts see it with reduced
-                priority. People with no connection path don&apos;t see it at all - not because it&apos;s censored,
-                but because it&apos;s outside their relevancy horizon.
+                priority. People with no connection path aren&apos;t shown it by default - it isn&apos;t censored,
+                and they can still find and read it deliberately; it just arrives with no trust weight,
+                because it&apos;s outside their relevancy horizon.
               </p>
               <p>
                 This means <strong>spam can&apos;t go viral</strong>. A spammer with no trust relationships
-                has zero hops of reach - their messages stay within their own empty horizon. Earning reach
-                requires building real relationships first.
+                sends messages that carry zero weight everywhere - no one&apos;s trust amplifies them, so
+                nothing surfaces them. Earning reach requires building real relationships first.
               </p>
               <p>
                 It also means <strong>context stays contextual</strong>. Your coding expertise is visible
