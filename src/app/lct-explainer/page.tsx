@@ -145,13 +145,19 @@ export default function LCTExplainerPage() {
 
   // Calculate trust based on device count (simplified model).
   // SYNC: these values MUST match the device rule this page's prose states
-  // ("1 device: 50%, 2 devices: 75%, 3+: up to 90%" - witness-count list item)
+  // ("1 device: 75%, 2 devices: 85%, 3+: up to 90%" for HARDWARE-backed devices -
+  // witness-count list item; the software-only 0.50 floor is a chip-class fact this
+  // hardware-device slider does not model)
   // and the 0.90 "hardware-bound ceiling" the scale-anchor paragraph declares.
-  // The old formula (0.40 + 0.15/device + diversity, capped 0.98) let the slider
-  // print 0.98 - above the ceiling the page itself calls the maximum (Jul-14
+  // Aug-26 (Aug-24 visitor HIGH, the standing device-count-axis filing): the old
+  // schedule [0.50, 0.75, 0.90] collapsed a lone hardware device onto the software
+  // floor; count-1 is 0.75 per the min-rule prose, and 0.85 for count-2 is 4-Life's
+  // own calibration (only constraint: monotone, strictly below 0.90).
+  // The still-older formula (0.40 + 0.15/device + diversity, capped 0.98) let the
+  // slider print 0.98 - above the ceiling the page itself calls the maximum (Jul-14
   // seams-integrity pass). Diminishing returns past 3 devices is prose canon too.
   const calculateTrust = (devices: number): number => {
-    const trustByDevices = [0.50, 0.75, 0.90]; // 1 / 2 / 3+ devices
+    const trustByDevices = [0.75, 0.85, 0.90]; // 1 / 2 / 3+ hardware devices
     return trustByDevices[Math.min(devices, 3) - 1];
   };
 
@@ -637,7 +643,7 @@ export default function LCTExplainerPage() {
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-green-500 font-bold shrink-0">4.</span>
-                  <span>More device witnesses = higher trust ceiling (1 device: 50%, 2 devices: 75%, 3+: up to 90% - i.e. 0.50, 0.75, 0.90 on the 0-1 trust scale these numbers all use, where 0.5 is the survival line defined in the intro above) - but with <em>diminishing returns</em>. Three hardware-bound device witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds)</span>
+                  <span>More device witnesses = higher trust ceiling (for hardware-backed devices: 1 device: 75%, 2 devices: 85%, 3+: up to 90% - i.e. 0.75, 0.85, 0.90 on the 0-1 trust scale these numbers all use, where 0.5 is the survival line defined in the intro above; a software-only identity stays at 0.50 however many devices co-sign) - but with <em>diminishing returns</em>. Three hardware-bound device witnesses provides most of the security benefit; adding many more past that has limited marginal value (information-theoretic bounds). Your chip class caps this too - how the two rules combine is spelled out just below</span>
                 </div>
               </div>
             </div>
@@ -665,20 +671,25 @@ export default function LCTExplainerPage() {
                   flat there) and this is a CHIP-CLASS range for one device. Two different axes.
                   The 0.50-0.75 numeral SURVIVES and is correct: under the min-rule below with
                   device-count-1 at 0.75, TPM/SE/FIDO2 all land on 0.75 and software-only on 0.50.
-                  What did NOT get fixed here, deliberately, and is FILED: the device-count list at
-                  :619 ("1 device: 50%") is the outlier on this page and the only surface that
-                  collapses a lone HARDWARE device onto the software floor. Upstream forbids that
-                  collapse structurally (web4-standard/core-spec/multi-device-lct-binding.md:875-878
-                  and the impl at :629-637: single software 0.40, single phone SE 0.75, single TPM2
-                  0.75, single FIDO2 0.80), and six surfaces here already say 0.75 (:648, :653,
-                  :1223, :2411 among them). Do NOT "fix" this by re-calibrating in a hurry:
-                  - canon's numerals are NOT importable. Its SE row sits under a 0.95 anchor weight;
-                    this site's SE tier is 0.85, so the same numeral is a different fraction of a
-                    different ceiling. Canon constrains the STRUCTURE, not the values.
-                  - device-count-2 must stay strictly BELOW 0.90, or :654-655 ("the same laptop plus
-                    TWO more device witnesses -> the full 0.90") breaks.
-                  Full surface list for whoever takes it: :619, the // SYNC: comment at :147-152,
-                  calculateTrust at :154, the band labels at :1054, and glossary/page.tsx:363.
+                  The standing filing this guard used to carry was TAKEN on Aug-26 (Aug-24 visitor
+                  HIGH: "a single TPM phone is 0.50 under one rule and 0.90 under the other"): the
+                  device-count list at the witness steps above was the outlier, the only surface
+                  that collapsed a lone HARDWARE device onto the software floor ("1 device: 50%").
+                  It now reads 0.75 / 0.85 / 0.90 for hardware-backed devices, with the
+                  software-only 0.50 floor stated in the same breath. Consistent with the min-rule
+                  below: device count 1 caps at 0.75, so TPM/SE/FIDO2 all land on 0.75 alone, and
+                  the "same laptop plus two more witnesses -> the full 0.90" sentence stays true
+                  (count 3 is chip-limited). The 0.85 for two devices is 4-Life's OWN calibration
+                  choice, not imported from canon - the structural constraints are only monotone
+                  growth and strictly below 0.90. Upstream forbids the old collapse structurally
+                  (web4-standard/core-spec/multi-device-lct-binding.md:875-878 and the impl at
+                  :629-637: single software 0.40, single phone SE 0.75, single TPM2 0.75, single
+                  FIDO2 0.80), but canon's numerals are NOT importable: its SE row sits under a
+                  0.95 anchor weight; this site's SE tier is 0.85, so the same numeral is a
+                  different fraction of a different ceiling. Canon constrains the STRUCTURE, not
+                  the values. Synced surfaces (change all or none): the witness-step list above,
+                  the // SYNC: comment + calculateTrust near the top of this file, the slider band
+                  labels, and glossary/page.tsx (Witness entry, device co-witness bullet).
                   Original June 12 visitor MEDIUM (browse B), which created the rule below: the
                   device-count rule and the chip-class table (TPM max 0.90 etc.) were never
                   reconciled - visitor stalled on "one TPM laptop: 0.50, 0.75, or 0.90?".
@@ -1108,10 +1119,14 @@ export default function LCTExplainerPage() {
                   </div>
                 </div>
               </div>
+              {/* Aug-26: bands re-derived from the new hardware schedule [0.75, 0.85, 0.90].
+                  The old <0.5 and 0.5-0.75 branches were DEAD under the new minimum of 0.75
+                  (and the surviving 0.75-0.9 branch would have mislabelled a single device
+                  "multi-device constellation"). Bands must partition the schedule's actual
+                  range, not the 0-1 scale. */}
               <div className="mt-3 text-sm text-gray-400">
-                {trust < 0.5 && "⚠️ Low trust - vulnerable to compromise"}
-                {trust >= 0.5 && trust < 0.75 && "🟡 Moderate trust - single device"}
-                {trust >= 0.75 && trust < 0.9 && "🟢 Good trust - multi-device constellation"}
+                {trust < 0.85 && "🟡 Single hardware device - device count caps you at 0.75"}
+                {trust >= 0.85 && trust < 0.9 && "🟢 Good trust - two-device constellation"}
                 {trust >= 0.9 && "✅ Excellent trust - strong multi-device network"}
               </div>
             </div>
@@ -1276,7 +1291,9 @@ export default function LCTExplainerPage() {
             What each cap unlocks (rewards, witness role, recovery path) is detailed below the grid.
           </p>
           {/* June 12 visitor MEDIUM (browse B): echo of the combination rule AT the table - this is
-              where the "TPM max 0.90 vs 1 device = 0.50" contradiction actually forms. */}
+              where the "TPM max 0.90 vs 1 device = 0.50" contradiction actually formed (historical:
+              the device-count list starts at 0.75 since Aug-26; the echo below still earns its place
+              because the two axes still co-occur here). */}
           <p className="text-sm text-gray-400 mb-3">
             These caps combine with the device-count rule above: chip class sets the maximum, device count
             sets how much of it you reach - <strong className="text-gray-300">the lower wins</strong>.
