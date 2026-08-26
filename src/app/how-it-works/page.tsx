@@ -384,9 +384,13 @@ export default function HowItWorksPage() {
             <h3 className="text-lg font-semibold text-cyan-400 mb-2">
               Context (MRH)
             </h3>
+            {/* Aug-23 visitor HIGH: was "You only see what's relevant... hearing only
+                conversations you're part of. Spam can't reach you." - visibility-gating,
+                contradicting /trust-neighborhood's deliberate "MRH limits trust influence,
+                not visibility". Weight, not visibility; do not reintroduce only-see phrasing. */}
             <p className="text-sm text-gray-400">
-              You only see what&apos;s relevant to your trust network - like
-              hearing only conversations you&apos;re part of. Spam can&apos;t reach you.
+              Everyone stays visible - your trust network decides how much <em>weight</em> each
+              voice carries. Spam arrives with zero weight, and sending it still costs energy.
             </p>
             <Link
               href="/trust-neighborhood"
