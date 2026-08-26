@@ -2706,7 +2706,11 @@ export default function WhyWeb4Page() {
                 <Link href="/lct-explainer#software-only-survival" className="text-sky-400 hover:underline">
                   what a 0.50 ceiling actually costs you
                 </Link>{' '}
-                is zero margin above the line and a reputation that cannot climb, and{' '}
+                {/* Aug-23 visitor MEDIUM: "the line" had no antecedent in this entry, and an
+                    indexed FAQ this size is read out of sequence - name the line once. Endpoint
+                    stays unasserted (standing 0.5-endpoint escalation): "survival line" names
+                    the threshold, not which side of it is fatal. */}
+                is zero margin above the 0.50 survival line and a reputation that cannot climb, and{' '}
                 <Link href="/what-could-go-wrong#risk-accessibility" className="text-sky-400 hover:underline">
                   the site&apos;s own risk register
                 </Link>{' '}

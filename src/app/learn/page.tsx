@@ -164,7 +164,15 @@ export default function LearnJourney() {
           // a new falsifiable number on a page whose FAQ grows.
           // The FAQ firehose itself (curation / accordion design pass) stays deferred; this
           // fixes the label, not the page it points at.
-          duration: "6 min + optional Q&A",
+          // Aug-23 visitor HIGH (time estimates), the one unfenced sliver: "the word
+          // 'optional' hides scale rather than communicating it" - they entered the Q&A
+          // expecting an appendix and "only understood the scale of what I'd entered
+          // several minutes in". Added ONE non-numeric size word. The count fence above
+          // still binds (no digits, no question count); the 6 and the 45 are unmoved.
+          // The other two prongs of that HIGH are fenced elsewhere: /tldr's "2 min" is
+          // excluded by the ownership prong below (rename = operator call, flagged in
+          // SESSION_FOCUS Aug-26), and the 45 total is the exact sum of the five badges.
+          duration: "6 min + a big optional Q&A",
         },
         {
           id: "first-contact",
