@@ -974,6 +974,42 @@ export default function LCTExplainerPage() {
             </p>
           </div>
 
+          {/* Sep-02 (dp): the "you already do this" framing. An LCT formalizes how human
+              identity already works — the name is an alias; the birth certificate, degrees,
+              licenses and references are the links, each held by someone else too; trust
+              scales with how complete that record is AND with what is being asked. Mirrors
+              LCT spec §3.4.6 rationale (web4 PR #819). Keep this visitor-level: no MRH/T3
+              jargon in the body — the tooltip/link carries it. */}
+          <div id="already-how-you-work" className="mb-6 p-4 border border-purple-800/40 rounded-lg bg-purple-950/20 scroll-mt-24">
+            <p className="text-xs uppercase tracking-wider text-purple-400 font-semibold mb-2">You already work this way</p>
+            <p className="text-sm text-gray-300 leading-relaxed mb-3">
+              Your <span className="font-semibold">name</span> doesn&apos;t make you unique - lots of people share it.
+              What makes you <em>you</em> is the record around you that other people hold:
+              a <span className="font-semibold">birth certificate</span> a society issued and witnessed;{" "}
+              <span className="font-semibold">degrees, licenses, and accreditations</span> that other institutions
+              conferred and can confirm; employers, memberships, references. A r&eacute;sum&eacute; is a claim - the
+              reference check is what makes it count, because the university and the employer hold the
+              other half of every link. An LCT is exactly that: an identity that lives in the
+              <span className="font-semibold"> witnessed links</span> around it, not in a number.
+            </p>
+            <p className="text-sm text-gray-300 leading-relaxed mb-3">
+              And trust already scales with how complete that record is - and with what&apos;s being asked.
+              A first name gets you a conversation, not a loan. A landlord wants references; a hospital
+              wants the license; a bank wants the whole file. Nobody demands everything for everything -
+              the more consequential the act, the more of the record it takes. A brand-new LCT is like a
+              newborn with only a birth certificate: real, welcome, and correctly trusted with very little
+              until it earns more. Identity theft gets caught the same way in both worlds - the impostor&apos;s
+              <em> life</em> diverges from the real record, and the people holding the other half of the links notice.
+            </p>
+            <p className="text-xs text-gray-400 leading-relaxed">
+              One deliberate difference: there&apos;s no Social-Security-style number. That central number is
+              the thing that gets stolen, because a copy of it carries your whole identity along. An LCT&apos;s
+              identifier comes from a key only you hold, and the identity lives in the links - so there&apos;s
+              nothing to steal that carries the person with it.{" "}
+              <Link href="/trust-tensor" className="text-sky-400 hover:underline">How trust is scored &rarr;</Link>
+            </p>
+          </div>
+
           {/* LCT Format Example - collapsed for newcomers */}
           <details className="mb-6">
             <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300 flex items-center gap-2">
