@@ -70,7 +70,14 @@ You are starting a fresh visitor session. Your mission is defined in CLAUDE.md i
 Begin your browse now.
 EOF
 
-echo "Visitor browse complete. Log: $LOG_FILE"
+# The banner used to print unconditionally, so a fire that was denied at the gate and
+# wrote nothing still reported success in /tmp/visitor-cron.log -- the only place anyone
+# looks. Report what is on disk, not what we asked for. (legion-supervisor, 2026-09-20)
+if [ -s "$LOG_FILE" ]; then
+    echo "Visitor browse complete. Log: $LOG_FILE"
+else
+    echo "ERROR: visitor session wrote no log at $LOG_FILE -- browse did NOT complete" >&2
+fi
 
 # Commit and push results
 cd "$PROJECT_DIR"
