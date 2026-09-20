@@ -7,6 +7,10 @@ set -e
 # Ensure claude is in PATH (cron doesn't inherit user profile)
 export PATH="$HOME/.local/bin:$PATH"
 
+# hestia gate bootstrap (cron does not read environment.d): the pre-tool hook has no default
+# for HESTIA_HOME and denies every call [no-shared-authority] without it. No-op on seats without hestia.
+[ -d "$HOME/.hestia" ] && export HESTIA_HOME="${HESTIA_HOME:-$HOME/.hestia}"
+
 # Account routing: synth token for working sessions
 ENV_FILE="/mnt/c/exe/projects/ai-agents/.env"
 if [ -f "$ENV_FILE" ]; then
